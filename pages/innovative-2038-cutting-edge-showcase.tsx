@@ -255,6 +255,7 @@ const Innovative2038CuttingEdgeShowcase: React.FC = () => {
                       <div className="flex gap-2">
                         <a
                           href={`tel:${'phone' in service.contactInfo ? service.contactInfo.phone : service.contactInfo.mobile}`}
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
                           className="flex-1 flex items-center justify-center gap-2 px-3 py-2 bg-white/10 text-gray-300 text-sm rounded-lg hover:bg-white/20 transition-colors"
                         >
                           <Phone className="w-4 h-4" />
@@ -316,6 +317,7 @@ const Innovative2038CuttingEdgeShowcase: React.FC = () => {
                       <div className="lg:w-64 space-y-4">
                         <div className="text-center">
                           <div className="text-3xl font-bold text-purple-400 mb-1">
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
                             {'pricing' in service ? service.pricing.starter : service.price}
                           </div>
                           <div className="text-sm text-gray-400 mb-2">Starting price</div>
@@ -325,6 +327,7 @@ const Innovative2038CuttingEdgeShowcase: React.FC = () => {
                             ) : (
                               <>Period: {service.period}</>
                             )}
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
                           </div>
                         </div>
 
@@ -339,6 +342,7 @@ const Innovative2038CuttingEdgeShowcase: React.FC = () => {
                           <div className="grid grid-cols-2 gap-2">
                             <a
                               href={`tel:${'phone' in service.contactInfo ? service.contactInfo.phone : service.contactInfo.mobile}`}
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
                               className="flex items-center justify-center gap-2 px-3 py-2 bg-white/10 text-gray-300 text-sm rounded-lg hover:bg-white/20 transition-colors"
                             >
                               <Phone className="w-4 h-4" />

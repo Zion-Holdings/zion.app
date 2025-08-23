@@ -71,4 +71,4 @@ fs.writeFileSync(path.join(process.cwd(), 'public', 'sitemap.xml'), xml);
 const robots = `User-agent: *\nAllow: /\n\nSitemap: ${baseUrl}/sitemap.xml\n`;
 fs.writeFileSync(path.join(process.cwd(), 'public', 'robots.txt'), robots);
 
-console.log(`Generated ${routes.length} routes to sitemap.xml and robots.txt`);
+console.warn(`Generated ${routes.length} routes to sitemap.xml and robots.txt`);

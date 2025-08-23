@@ -6,6 +6,7 @@ import {
   BookOpen, DollarSign, BarChart3, Users, Star, 
   Building, Play, Calculator,
   Grid, FileText, Code, Video
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
 } from 'lucide-react';
 import Link from 'next/link';
 
@@ -68,12 +69,14 @@ const navigationItems: NavigationItem[] = [
         href: '/ai-services', 
         description: 'Advanced AI solutions',
         icon: <Play className="w-4 h-4" />
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
       },
       { 
         name: 'Quantum Technology', 
         href: '/quantum-services', 
         description: 'Quantum computing solutions',
         icon: <Play className="w-4 h-4" />
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
       },
       { 
         name: 'Space Technology', 
@@ -88,6 +91,7 @@ const navigationItems: NavigationItem[] = [
         icon: <Shield className="w-4 h-4" />
       },
       { 
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
         name: 'Specialized Solutions', 
         href: '/solutions', 
         description: 'Industry-specific solutions',
@@ -100,6 +104,7 @@ const navigationItems: NavigationItem[] = [
         icon: <Star className="w-4 h-4" />,
         featured: true,
         badge: 'New'
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
       }
     ]
   },
@@ -123,6 +128,7 @@ const navigationItems: NavigationItem[] = [
         href: '/pricing',
         description: 'Flexible pricing options',
         icon: <Calculator className="w-4 h-4" />
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
       },
       {
         name: 'Enterprise Solutions',
@@ -145,6 +151,7 @@ const navigationItems: NavigationItem[] = [
         description: 'Our story and mission',
         icon: <Users className="w-4 h-4" />,
         featured: true
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
       },
       {
         name: 'Leadership',
@@ -159,6 +166,7 @@ const navigationItems: NavigationItem[] = [
         icon: <Play className="w-4 h-4" />
       }
     ]
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
   }
 ];
 
@@ -170,6 +178,7 @@ const UltraFuturisticNavigation2036: React.FC = () => {
   const dropdownRefs = useRef<{ [key: string]: HTMLDivElement | null }>({});
 
   // Close mobile menu when clicking outside
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
       if (mobileMenuRef.current && !mobileMenuRef.current.contains(event.target as HTMLElement)) {
@@ -201,6 +210,7 @@ const UltraFuturisticNavigation2036: React.FC = () => {
         duration: 0.2,
         ease: "easeOut" as const
       }
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
     }
   };
 
@@ -223,6 +233,7 @@ const UltraFuturisticNavigation2036: React.FC = () => {
               href="/" 
               className="flex items-center space-x-2 group"
               aria-label="Zion Tech Group - Home"
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
             >
               <div className="w-10 h-10 bg-gradient-to-r from-cyan-500 to-purple-600 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform">
                 <span className="text-white font-bold text-lg">Z</span>
@@ -362,6 +373,7 @@ const UltraFuturisticNavigation2036: React.FC = () => {
                 <div className="flex items-center space-x-3">
                   <div className="w-8 h-8 bg-gradient-to-r from-cyan-400 to-purple-500 rounded-lg"></div>
                   <span className="text-white font-bold text-lg">ZionTech Group</span>
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
                 </div>
                 <button
                   onClick={() => setMobileMenuOpen(false)}
@@ -438,12 +450,14 @@ const UltraFuturisticNavigation2036: React.FC = () => {
                   <button className="w-full px-4 py-3 bg-gradient-to-r from-cyan-500 to-purple-500 text-white rounded-lg font-medium hover:from-cyan-600 hover:to-purple-600 transition-all duration-300">
                     Contact Us
                   </button>
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
                 </Link>
                 <Link href="/get-started" onClick={() => setMobileMenuOpen(false)}>
                   <button className="w-full px-4 py-3 text-sm font-medium bg-gradient-to-r from-cyan-500 to-purple-600 text-white rounded-lg hover:from-cyan-600 hover:to-purple-700 transition-all duration-200 transform hover:scale-105">
                     Get Started
                   </button>
                 </Link>
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
               </div>
             </div>
           </motion.div>

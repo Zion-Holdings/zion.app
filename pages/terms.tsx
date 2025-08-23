@@ -1,13 +1,4 @@
 import React from 'react';
-import Layout from '../components/layout/Layout';
-import { motion } from 'framer-motion';
-import { 
-  FileText, Shield, CheckCircle, AlertTriangle, 
-  ArrowRight, Users, Globe, Database, 
-  Calendar, Phone, Mail, MapPin
-} from 'lucide-react';
-import Link from 'next/link';
-=======
 =======
 import { FileText, Shield, Users, Globe, Clock, CheckCircle, AlertTriangle, Scale } from 'lucide-react';
 
@@ -137,27 +128,31 @@ const TermsPage: React.FC = () => {
   ];
 
   return (
-    <Layout 
-      title="Terms of Service - Zion Tech Group"
-      description="Read the terms and conditions governing the use of Zion Tech Group's AI consciousness, quantum computing, and cybersecurity services."
-      keywords="terms of service, terms and conditions, service agreement, Zion Tech Group"
-    >
-      <div className="min-h-screen bg-gradient-to-br from-black via-gray-900 to-black">
-        {/* Hero Section */}
-        <section className="relative pt-32 pb-20 overflow-hidden">
-          <div className="absolute inset-0 bg-gradient-to-r from-blue-900/20 to-purple-900/20"></div>
-          <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-            >
-              <h1 className="text-5xl md:text-7xl font-bold text-white mb-6">
-                Terms of Service
-              </h1>
-              <p className="text-xl md:text-2xl text-gray-300 mb-8 max-w-4xl mx-auto">
-                Please read these terms carefully before using our revolutionary AI consciousness, 
-                quantum computing, and cybersecurity services.
+    <>
+      <SEO title="Terms of Service | Zion Tech Group" description="Terms of Service for Zion Tech Group - Learn about our service terms and conditions." url="https://ziontechgroup.com/terms/" />
+
+      {/* Hero Section */}
+      <section className="relative py-24 bg-gradient-to-br from-cursor-darker via-cursor-dark to-cursor-darker overflow-hidden">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(0,122,204,0.08),transparent_50%)]" />
+        
+        <div className="relative z-10 container-cursor text-center">
+          <h1 className="text-5xl md:text-7xl lg:text-8xl font-black mb-8 gradient-text">
+            Terms of Service
+          </h1>
+          <p className="text-xl md:text-2xl lg:text-3xl text-gray-300 max-w-5xl mx-auto leading-relaxed">
+            Our terms and conditions for using Zion Tech Group services
+          </p>
+        </div>
+      </section>
+
+      {/* Terms Content */}
+      <section className="py-24 bg-gradient-to-b from-cursor-dark to-cursor-darker">
+        <div className="container-cursor">
+          <div className="max-w-4xl mx-auto space-y-12">
+            <Card className="hover:border-cursor-blue/30">
+              <h2 className="text-3xl font-bold mb-6 text-cursor-blue">1. Acceptance of Terms</h2>
+              <p className="text-gray-300 leading-relaxed mb-4">
+                By accessing and using Zion Tech Group services, you accept and agree to be bound by the terms and provision of this agreement.
               </p>
               <div className="flex items-center justify-center gap-4 text-gray-400">
                 <Clock className="w-5 h-5" />
@@ -596,3 +591,10 @@ const TermsPage: React.FC = () => {
 };
 
 export default TermsPage;
+=======
+import Head from 'next/head';
+  return (
+    <>
+      <Head><title>terms - Zion App</title><meta name="description" content="terms page" /></Head><div className="container mx-auto px-4 py-8"><h1 className="text-3xl font-bold mb-6">terms</h1><p className="text-lg mb-4">This page is under construction.</p><div className="mt-4"><a href="/" className="text-blue-600 hover:underline">;
+            ← Back to Home</a></div></div></>;
+  );

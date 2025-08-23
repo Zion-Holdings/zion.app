@@ -48,6 +48,7 @@ interface UnifiedService {
   rating?: number;
   reviews?: number;
 }
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
 
 const Comprehensive2025ServicesShowcase: React.FC = () => {
   const [selectedCategory, setSelectedCategory] = useState('all');
@@ -162,6 +163,7 @@ const Comprehensive2025ServicesShowcase: React.FC = () => {
                   <Building className="w-4 h-4 text-green-400" />
                   <span>Address: 364 E Main St STE 1008 Middletown DE 19709</span>
                 </div>
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
               </div>
             </div>
           </motion.div>
@@ -197,6 +199,7 @@ const Comprehensive2025ServicesShowcase: React.FC = () => {
                   }`}
                 >
                   {category}
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
                 </button>
               ))}
             </div>
@@ -247,6 +250,7 @@ const Comprehensive2025ServicesShowcase: React.FC = () => {
 
           {viewMode === 'grid' ? (
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
               {filteredServices.map((service, index) => (
                 <motion.div
                   key={service.id}
@@ -428,3 +432,4 @@ const Comprehensive2025ServicesShowcase: React.FC = () => {
 };
 
 export default Comprehensive2025ServicesShowcase;
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96

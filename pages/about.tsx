@@ -7,7 +7,6 @@ import {
   Zap, 
   Brain, 
   Atom, 
-  Rocket, 
   Shield, 
   Cloud, 
   TrendingUp,

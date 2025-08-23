@@ -1,5 +1,6 @@
 
 import React, { useState, useEffect, useCallback, useRef } from 'react';
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
 import { motion, AnimatePresence } from 'framer-motion';
 import Link from 'next/link';
 import { 
@@ -102,6 +103,7 @@ const EnhancedNavigation: React.FC = () => {
         setActiveDropdown(null);
       }
     };
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
 
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);

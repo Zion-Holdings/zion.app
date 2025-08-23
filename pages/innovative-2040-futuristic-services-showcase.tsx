@@ -349,6 +349,7 @@ const Innovative2040FuturisticServicesShowcase: React.FC = () => {
                     {/* Service Icon */}
                     <div className={`w-16 h-16 bg-gradient-to-r ${service.color || 'from-blue-600 to-purple-700'} rounded-2xl flex items-center justify-center text-3xl mb-4 group-hover:scale-110 transition-transform duration-300`}>
                       {service.icon}
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
                     </div>
 
                     {/* Service Info */}
@@ -365,6 +366,7 @@ const Innovative2040FuturisticServicesShowcase: React.FC = () => {
                         {typeof service.price === 'string' ? service.price : `$${service.price.monthly}/${service.price.currency}`}
                         <span className="text-sm text-gray-400">
                           {typeof service.price === 'string' ? (service as any).period || '/month' : '/month'}
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
                         </span>
                       </div>
                       <div className="flex items-center space-x-1 text-yellow-400">
@@ -439,6 +441,7 @@ const Innovative2040FuturisticServicesShowcase: React.FC = () => {
                       {/* Service Icon */}
                       <div className={`w-20 h-20 bg-gradient-to-r ${service.color || 'from-blue-600 to-purple-700'} rounded-2xl flex items-center justify-center text-4xl group-hover:scale-110 transition-transform duration-300 flex-shrink-0`}>
                         {service.icon}
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
                       </div>
 
                       {/* Service Details */}
@@ -456,6 +459,7 @@ const Innovative2040FuturisticServicesShowcase: React.FC = () => {
                                 {service.category}
                               </span>
                               {service.popular && (
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
                                 <span className="inline-block px-3 py-1 bg-gradient-to-r from-yellow-500 to-orange-500 text-white text-sm font-bold rounded-full">
                                   Popular
                                 </span>
@@ -468,6 +472,7 @@ const Innovative2040FuturisticServicesShowcase: React.FC = () => {
                                                            <span className="text-lg text-gray-400">
                                 /month
                               </span>
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
                            </div>
                             <div className="flex items-center justify-end space-x-1 text-yellow-400 mb-2">
                               <Star className="w-4 h-4 fill-current" />

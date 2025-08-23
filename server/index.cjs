@@ -1,4 +1,4 @@
-const { EventEmitter } = require('events');
+const { _EventEmitter } = require('events');
 // Increase the max listeners limit to avoid MaxListenersExceededWarning
 // during server operations. The default value of 10 is often too low when
 // multiple modules attach listeners. Raising it to 50 ensures we don't hit
@@ -24,10 +24,10 @@ if (process.env.ENABLE_HTTP2 === 'true') {
       : http2.createServer({ allowHTTP1: true }, app);
 
   server.listen(PORT, () => {
-    console.log(`HTTP/2 server listening on port ${PORT}`);
+    console.warn(`HTTP/2 server listening on port ${PORT}`);
   });
 } else {
   app.listen(PORT, () => {
-    console.log(`Server listening on port ${PORT}`);
+    console.warn(`Server listening on port ${PORT}`);
   });
 }

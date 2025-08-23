@@ -7,6 +7,7 @@ import {
   ArrowRight, Zap, Cpu, Database, Cloud, Palette,
   Play, FileText, Video, Download, Calendar, Clock,
   Code
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
 } from 'lucide-react';
 import Link from 'next/link';
 
@@ -119,6 +120,7 @@ const GetStarted: React.FC = () => {
         'Documentation delivery',
         'Ongoing support setup'
       ]
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
     }
   ];
 
@@ -163,6 +165,7 @@ const GetStarted: React.FC = () => {
 
   return (
     <Layout>
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
       <div className="min-h-screen bg-gradient-to-br from-gray-900 via-black to-gray-900 text-white">
         {/* Hero Section */}
         <section className="relative py-20 lg:py-32 overflow-hidden">
@@ -403,6 +406,7 @@ const GetStarted: React.FC = () => {
                     {resource.download && (
                       <Download className="w-4 h-4 text-cyan-400" />
                     )}
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
                   </div>
                   
                   <button className="w-full inline-flex items-center justify-center px-4 py-2 bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-semibold rounded-lg hover:from-cyan-600 hover:to-blue-700 transition-all duration-300 text-sm">
@@ -418,6 +422,7 @@ const GetStarted: React.FC = () => {
         {/* Quick Start Options */}
         <section className="py-20 bg-gray-900">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -512,6 +517,7 @@ const GetStarted: React.FC = () => {
                 <a href="tel:+13024640950" className="inline-flex items-center px-8 py-4 border border-cyan-500/30 text-cyan-400 font-semibold rounded-xl hover:bg-cyan-500/10 transition-all duration-300">
                   <Phone className="w-5 h-5 mr-2" />
                   Call Now
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
                 </a>
               </div>
             </motion.div>

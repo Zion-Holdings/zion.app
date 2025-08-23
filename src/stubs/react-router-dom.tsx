@@ -1,64 +1,10 @@
-import React, { createContext, useContext, useEffect } from 'react';
-import { useRouter } from 'next/router';
-
-// Minimal router context so React Router hooks don't throw errors
-const RouterContext = createContext<{ navigate: (url: string) => void }>({
-  navigate: () => {},
-});
-
-export const BrowserRouter = ({ children }: { children: React.ReactNode }) => {
-  const nextRouter = useRouter();
-  const navigate = (url: string) => {
-    if (url) nextRouter.push(url);
-  };
+import React from 'react'
+;
+export export export default function react-router-dom()   {;
   return (
-    <RouterContext.Provider value={{ navigate }}>
-      {children}
-    </RouterContext.Provider>
+    <div>
+      <h1>Component</h1>
+      <p>Component placeholder</p>
+    </div>
   );
-};
-export const Routes = ({ children }: { children: React.ReactNode }) => children;
-export const Route = ({ element }: { element: React.ReactNode }) => element;
-export interface LinkProps
-  extends React.AnchorHTMLAttributes<HTMLAnchorElement> {
-  to?: string;
 }
-
-export const Link = ({ to, href, ...props }: LinkProps) => {
-  return <a href={href ?? to} {...props} />;
-};
-export const NavLink = Link;
-export const Navigate = ({ to }: { to: string }) => {
-  const nextRouter = useRouter();
-  useEffect(() => {
-    if (to) nextRouter.push(to);
-  }, [to, nextRouter]);
-  return null;
-};
-export const MemoryRouter = BrowserRouter;
-export const Outlet = () => null;
-
-// Provide a simple shim that delegates to Next.js routing. This prevents
-// "useNavigate() may be used only in the context of a <Router>" errors when
-// components relying on React Router are used in the Next.js environment.
-export const useNavigate = () => {
-  const context = useContext(RouterContext);
-  return context.navigate;
-};
-export const useLocation = () => ({ pathname: '/' });
-export const useParams = () => ({ });
-export const useSearchParams = () => [new URLSearchParams(), () => {}] as [URLSearchParams, () => void];
-export default {
-  BrowserRouter,
-  Routes,
-  Route,
-  Link,
-  NavLink,
-  Navigate,
-  MemoryRouter,
-  Outlet,
-  useNavigate,
-  useLocation,
-  useParams,
-  useSearchParams,
-};

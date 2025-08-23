@@ -3,6 +3,7 @@
 ## **Issue Description**
 
 **Current Problem:**
+
 - Page shows banner "Authentication service is temporarily unavailable"
 - Sign-up attempts with user details (Kal Catrao, kalcatrao@hotmail.com, SisD2011) fail
 - Toast notification: "Signup failed (Trace ID: ...)"
@@ -14,8 +15,9 @@
 The authentication system is missing **Auth0 environment variables**. The application has been migrated from Supabase to Auth0 but the environment configuration was not completed.
 
 ### Missing Configuration:
+
 - `AUTH0_SECRET` - Session encryption key
-- `AUTH0_BASE_URL` - Application base URL 
+- `AUTH0_BASE_URL` - Application base URL
 - `AUTH0_ISSUER_BASE_URL` - Auth0 tenant domain
 - `AUTH0_CLIENT_ID` - Auth0 application client ID
 - `AUTH0_CLIENT_SECRET` - Auth0 application client secret
@@ -25,8 +27,9 @@ The authentication system is missing **Auth0 environment variables**. The applic
 ### 1. **Comprehensive Setup Guide** (`AUTH0_SETUP_GUIDE_ISSUE_1.md`)
 
 **Step-by-step instructions including:**
+
 - Auth0 account creation
-- Application configuration  
+- Application configuration
 - Environment variable setup
 - Callback URL configuration
 - Testing procedures
@@ -35,6 +38,7 @@ The authentication system is missing **Auth0 environment variables**. The applic
 ### 2. **Automated Setup Script** (`scripts/setup-auth0.js`)
 
 **Features:**
+
 - Interactive environment configuration
 - Auth0 domain validation
 - Automatic secret generation
@@ -42,6 +46,7 @@ The authentication system is missing **Auth0 environment variables**. The applic
 - Guided setup process
 
 **Usage:**
+
 ```bash
 npm run setup:auth0
 ```
@@ -49,6 +54,7 @@ npm run setup:auth0
 ### 3. **Enhanced Error Handling** (`src/components/auth/AuthConfigurationError.tsx`)
 
 **Provides:**
+
 - Clear error messaging
 - Setup guidance within the UI
 - Alternative navigation options
@@ -58,6 +64,7 @@ npm run setup:auth0
 ### 4. **Comprehensive Testing** (`tests/auth0-signup-fix.test.js`)
 
 **Validates:**
+
 - Environment variable detection
 - Auth0 domain validation
 - Secret generation security
@@ -97,12 +104,14 @@ npm run migrate:auth0
 ## **🎯 EXPECTED RESULTS**
 
 ### **Before Fix:**
+
 - ❌ "Authentication service is temporarily unavailable" banner
 - ❌ Signup form fails with "Authentication service not configured"
 - ❌ Toast: "Signup failed (Trace ID: ...)"
 - ❌ New users cannot register
 
 ### **After Fix:**
+
 - ✅ **No warning banners** on signup page
 - ✅ **Successful user registration** with email verification
 - ✅ **Toast**: "Registration successful. Please check your email to verify your account."
@@ -110,12 +119,15 @@ npm run migrate:auth0
 - ✅ **Users can complete** registration → verification → login cycle
 
 ### **Test Case Resolution:**
+
 **Input:**
+
 - Full Name: Kal Catrao
 - Email: kalcatrao@hotmail.com
 - Password: SisD2011
 
 **Expected Output:**
+
 - ✅ Form submits successfully
 - ✅ User created in Auth0
 - ✅ Verification email sent
@@ -127,7 +139,7 @@ npm run migrate:auth0
 ### **Files Created/Modified:**
 
 1. **`AUTH0_SETUP_GUIDE_ISSUE_1.md`** - Comprehensive setup instructions
-2. **`scripts/setup-auth0.js`** - Interactive configuration script  
+2. **`scripts/setup-auth0.js`** - Interactive configuration script
 3. **`src/components/auth/AuthConfigurationError.tsx`** - Enhanced error UI
 4. **`tests/auth0-signup-fix.test.js`** - Validation test suite
 5. **`package.json`** - Updated setup script reference
@@ -149,23 +161,26 @@ AUTH0_AUDIENCE=https://your-api-identifier
 ### **Auth0 Dashboard Configuration:**
 
 **Application Settings:**
+
 - **Type**: Regular Web Application
 - **Allowed Callback URLs**: `http://localhost:3000/api/auth/callback`
 - **Allowed Logout URLs**: `http://localhost:3000`
 - **Allowed Web Origins**: `http://localhost:3000`
 
 **Management API:**
+
 - **Authorization**: Grant app access to Auth0 Management API
 - **Scopes**: `create:users`, `read:users`, `update:users`
 
 ## **🚀 DEPLOYMENT CONSIDERATIONS**
 
 ### **Development Environment:**
+
 ```bash
 # 1. Run setup script
 npm run setup:auth0
 
-# 2. Restart application  
+# 2. Restart application
 npm run dev
 
 # 3. Test signup flow
@@ -175,6 +190,7 @@ npm run dev
 ### **Production Environment (Netlify):**
 
 **Add Environment Variables:**
+
 - `AUTH0_ISSUER_BASE_URL`
 - `AUTH0_BASE_URL` (set to production domain)
 - `AUTH0_CLIENT_ID`
@@ -182,6 +198,7 @@ npm run dev
 - `AUTH0_SECRET`
 
 **Update Auth0 Dashboard:**
+
 - Add production URLs to callback URLs
 - Add production domain to allowed origins
 
@@ -225,11 +242,13 @@ npm run dev
 ## **📞 SUPPORT & RESOURCES**
 
 ### **Documentation:**
+
 - **Setup Guide**: `AUTH0_SETUP_GUIDE_ISSUE_1.md`
 - **Auth0 Docs**: [https://auth0.com/docs/quickstart/webapp/nextjs](https://auth0.com/docs/quickstart/webapp/nextjs)
 - **Auth0 Dashboard**: [https://manage.auth0.com/](https://manage.auth0.com/)
 
 ### **Commands:**
+
 ```bash
 # Setup Auth0 interactively
 npm run setup:auth0
@@ -245,6 +264,7 @@ npm test tests/auth0-signup-fix.test.js
 ```
 
 ### **Support Channels:**
+
 - Check Auth0 Dashboard → Monitoring → Logs
 - Review application console logs
 - Test health endpoint: `/api/auth/health`
@@ -264,4 +284,4 @@ Once Auth0 is properly configured, the test user **Kal Catrao** should be able t
 6. ✅ Complete email verification process
 7. ✅ Log in successfully after verification
 
-**This resolves the critical issue preventing new user registration on the platform.** 
+**This resolves the critical issue preventing new user registration on the platform.**

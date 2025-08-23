@@ -1,5 +1,9 @@
 import React from 'react';
-
-const ProductsList = () => <div>Products List Placeholder</div>;
-
-export default ProductsList; 
+export function ProductsList() {
+  return (
+    <div>
+      <h1>Component</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

@@ -1,11 +1,13 @@
 import React, { useState } from 'react';
 import SEO from '../components/SEO';
 import Layout from '../components/layout/Layout';
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
 import { motion } from 'framer-motion';
 import { 
   Brain, Atom, Rocket, Shield, Zap, Target, Star,
   ArrowRight, Check, TrendingUp, Users, Globe, Cpu,
   Database, Cloud, Lock, Settings, Eye, Award, Clock
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
 } from 'lucide-react';
 
 // Import our new 2037 service data
@@ -21,6 +23,7 @@ const contact = {
 };
 
 const ServiceCard = ({ service, index }: { service: any; index: number }) => (
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
   <motion.div
     initial={{ opacity: 0, y: 20 }}
     animate={{ opacity: 1, y: 0 }}
@@ -54,6 +57,7 @@ const ServiceCard = ({ service, index }: { service: any; index: number }) => (
             <Check className="w-4 h-4 text-green-400 flex-shrink-0" />
             <span className="text-gray-300 text-sm">{feature}</span>
           </div>
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
         </motion.div>
 
         <motion.div
@@ -430,6 +434,7 @@ const ServicesShowcase2037: React.FC = () => {
         </div>
       </section>
     </div>
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
   );
 };
 

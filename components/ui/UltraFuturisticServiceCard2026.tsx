@@ -1,6 +1,7 @@
 import React, { useState, useCallback, useMemo } from 'react';
 import { motion } from 'framer-motion';
 import { ArrowRight, Crown, Building, Rocket } from 'lucide-react';
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
 
 interface Service {
   id?: string;
@@ -28,6 +29,7 @@ const UltraFuturisticServiceCard2026: React.FC<UltraFuturisticServiceCard2026Pro
   variant = 'default',
   className = '',
   onClick
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
 }) => {
   const [isHovered, setIsHovered] = useState(false);
   const [isExpanded, setIsExpanded] = useState(false);
@@ -66,6 +68,7 @@ const UltraFuturisticServiceCard2026: React.FC<UltraFuturisticServiceCard2026Pro
       accent: 'bg-cyan-400'
     };
   }, [variant]);
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
 
   const handleCardClick = useCallback(() => {
     if (onClick) {

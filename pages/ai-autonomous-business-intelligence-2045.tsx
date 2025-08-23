@@ -2,6 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { BarChart3, Zap, Eye, Heart, Globe, ArrowRight, Shield, Cpu, Database, Cloud, Users, Lock, Star, Rocket, Atom, Network, Server, Globe2 } from 'lucide-react';
 import Link from 'next/link';
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
 
 const AIAutonomousBusinessIntelligence2045: React.FC = () => {
   const features = [
@@ -193,3 +194,4 @@ const AIAutonomousBusinessIntelligence2045: React.FC = () => {
 };
 
 export default AIAutonomousBusinessIntelligence2045;
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
