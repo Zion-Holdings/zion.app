@@ -2,10 +2,26 @@ import React, { useState } from 'react';
 import Layout from '../components/layout/Layout';
 import { motion } from 'framer-motion';
 import { 
+<<<<<<< HEAD
+  Search, 
+  Star, 
+  Users, 
+  Award,
+  ArrowRight,
+  Phone,
+  Mail,
+  MapPin,
+  Filter,
+  SortAsc,
+  SortDesc,
+  Zap,
+  Atom
+=======
   Search, Grid, List,
   Brain, Atom, Shield, Target, Rocket,
   ArrowRight, Check, Palette, Heart, Truck, GraduationCap,
   Building, Lock, Database
+>>>>>>> origin/cursor/add-and-advertise-new-services-then-build-ff3f
 } from 'lucide-react';
 import { innovative2025MicroSaasExpansionV2 } from '../data/innovative-2025-micro-saas-expansion-v2';
 import { innovative2025ITServicesExpansionV2 } from '../data/innovative-2025-it-services-expansion-v2';
@@ -181,12 +197,22 @@ const allServices = [
   ...real2036ServiceExpansions,
   ...innovative2036MicroSaasServices,
   ...innovative2036ITServices,
+<<<<<<< HEAD
+  ...innovative2037MicroSaasServices,
+  ...innovative2037ITServices,
+  ...innovative2037AIServices,
+  // Add our new 2037 Q1 innovative services
+  ...real2037Q1InnovativeAdditions,
+  ...real2037Q1ITInnovations,
+  ...real2037Q1MicroSaasInnovations
+=======
   // 2026 Innovative Services
   ...innovative2026AIServicesAdditions,
   ...innovative2026ITServicesAdditions,
   ...innovative2026MicroSaasAdditions,
   ...innovative2026IndustryAIServices,
   ...innovative2026EmergingTechServices
+>>>>>>> origin/cursor/add-and-advertise-new-services-then-build-ff3f
 ];
 
 const categories = [
@@ -261,6 +287,69 @@ const categories = [
     description: 'Learning and research platforms'
   },
   {
+<<<<<<< HEAD
+    id: 'ai-emotional',
+    name: 'AI & Emotional Intelligence',
+    icon: <Brain className="w-6 h-6" />,
+    color: 'from-pink-500 to-purple-600',
+    description: 'AI-powered emotional intelligence and consciousness'
+  },
+  {
+    id: 'quantum-security',
+    name: 'Quantum Security',
+    icon: <Shield className="w-6 h-6" />,
+    color: 'from-indigo-600 to-purple-700',
+    description: 'Quantum-resistant security and communication'
+  },
+  {
+    id: 'autonomous-systems',
+    name: 'Autonomous Systems',
+    icon: <Cpu className="w-6 h-6" />,
+    color: 'from-green-600 to-teal-700',
+    description: 'AI-powered autonomous decision-making systems'
+  },
+  {
+    id: 'metaverse-business',
+    name: 'Metaverse Business',
+    icon: <Globe className="w-6 h-6" />,
+    color: 'from-blue-500 to-cyan-600',
+    description: 'Business infrastructure for the metaverse'
+  },
+  {
+    id: 'neural-quantum',
+    name: 'Neural & Quantum',
+    icon: <Atom className="w-6 h-6" />,
+    color: 'from-purple-600 to-pink-700',
+    description: 'Neural networks and quantum computing fusion'
+  },
+  {
+    id: 'space-technology',
+    name: 'Space & Technology',
+    icon: <Rocket className="w-6 h-6" />,
+    color: 'from-indigo-600 to-purple-700',
+    description: 'Space exploration and advanced technology solutions'
+  },
+  {
+    id: 'climate-sustainability',
+    name: 'Climate & Sustainability',
+    icon: <Globe className="w-6 h-6" />,
+    color: 'from-teal-600 to-green-700',
+    description: 'Climate change mitigation and environmental optimization'
+  },
+  {
+    id: 'digital-twin-iot',
+    name: 'Digital Twin & IoT',
+    icon: <Cpu className="w-6 h-6" />,
+    color: 'from-violet-600 to-purple-700',
+    description: 'Digital twin technology and IoT integration'
+  },
+  {
+    id: 'biotech-ai',
+    name: 'Biotech & AI',
+    icon: <Heart className="w-6 h-6" />,
+    color: 'from-emerald-600 to-green-700',
+    description: 'AI-powered biotechnology and research acceleration'
+=======
     id: 'cybersecurity',
     name: 'Cybersecurity & Security',
     icon: <Shield className="w-6 h-6" />,
@@ -280,6 +369,7 @@ const categories = [
     icon: <Lock className="w-6 h-6" />,
     color: 'from-purple-500 to-indigo-500',
     description: 'Biometric authentication and identity management'
+>>>>>>> origin/cursor/add-and-advertise-new-services-then-build-ff3f
   }
 ];
 
