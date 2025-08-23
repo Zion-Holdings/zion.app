@@ -56,6 +56,15 @@ import { innovative2040FuturisticServices } from '../data/innovative-2040-futuri
 import { advanced2041EnterpriseServices } from '../data/advanced-2041-enterprise-services';
 import { revolutionary2042MicroSaasServices } from '../data/revolutionary-2042-micro-saas-services';
 
+// Import our new 2025 advanced services
+import { advanced2025MicroSaasExpansion } from '../data/2025-advanced-micro-saas-expansion';
+import { advanced2025ITSolutionsExpansion } from '../data/2025-advanced-it-solutions-expansion';
+import { advanced2025AIServicesExpansion } from '../data/2025-advanced-ai-services-expansion';
+
+// Import our new 2025 advanced services V2
+import { advanced2025MicroSaasExpansionV2 } from '../data/2025-advanced-micro-saas-expansion-v2';
+import { advanced2025ITSolutionsExpansionV2 } from '../data/2025-advanced-it-solutions-expansion-v2';
+import { advanced2025AIServicesExpansionV2 } from '../data/2025-advanced-ai-services-expansion-v2';
 // Import our new 2025 innovative services expansion
 import { innovative2025MicroSaasExpansion } from '../data/innovative-2025-micro-saas-expansion';
 import { innovative2025ITServicesExpansion } from '../data/innovative-2025-it-services-expansion';
@@ -129,19 +138,23 @@ const getServiceCategory = (service: any) => {
 
 // Helper function to get service pricing
 const getServicePricing = (service: any) => {
+  // Debug logging to identify problematic services
+  if (!service.price && !service.pricing) {
+    console.warn('Service missing price field:', service.id, service.name);
+    return 'Contact for pricing';
+  }
+  
   if (service.pricing?.starter) return service.pricing.starter;
   if (service.pricing?.monthly) return `$${service.pricing.monthly}/month`;
   if (service.price?.monthly) return `$${service.price.monthly}/month`;
-  if (service.price && service.period) return `${service.price}${service.period}`;
-  if (service.price) return service.price;
-  // Handle case where pricing is just a number
-  if (typeof service.pricing === 'number') return `$${service.pricing}/month`;
-  if (typeof service.pricing === 'object' && service.pricing !== null) {
-    // If pricing is an object but doesn't have expected fields, return a default
-    // Check if it has yearly field and use that as fallback
-    if (service.pricing.yearly) return service.pricing.yearly;
-    return 'Contact for pricing';
+  if (service.price && typeof service.price === 'object' && service.price.monthly) {
+    return `$${service.price.monthly}/month`;
   }
+  if (service.price && service.period) return `${service.price}${service.period}`;
+  if (service.price && typeof service.price === 'string') return service.price;
+  
+  // If we get here, log the problematic service
+  console.warn('Service with unexpected price structure:', service.id, service.name, service.price);
   return 'Contact for pricing';
 };
 
@@ -161,71 +174,60 @@ const getServiceDescription = (service: any) => {
 
 // Create unified services array
 const allServices = [
-  ...enterpriseITSolutions,
-  ...innovativeMicroSaasSolutions2034,
-  ...cuttingEdgeAIServices,
-  ...advancedAIAutomationServices,
-  ...innovativeITInfrastructureServices,
-  ...realMicroSaasServices,
-  ...innovativeAIServices,
-  ...enterpriseITServices,
-  ...cuttingEdgeFuturisticServices,
-  ...advancedAIAutomationServices2025,
-  ...advancedITInfrastructureServices,
-  ...emergingTechServices,
-  ...cuttingEdgeMicroSaasServices,
-  ...innovativeITInfrastructureServices,
-  ...innovativeAIServices,
-  ...newRealServices,
-  ...realOperationalServices,
-  ...marketReadyServices,
-  ...marketValidatedServices,
-  // Our new 2025 Q4 innovative services
-  ...innovative2025Q4NewServices,
-  ...advancedITInfrastructureServices,
-  ...industryRealServices,
-  ...real2025Q4AugmentedBatch,
-  ...real2029Q3Additions,
-  // Add our new 2025 cutting-edge innovative services
-  ...innovative2025CuttingEdgeServices,
-  ...innovative2025EnterpriseSolutions,
-  ...innovative2025IndustrySolutions,
-  ...validatedServices2025Q4,
-  ...real2035Q2Additions,
-  ...real2036ServiceExpansions,
-  ...innovative2036MicroSaasServices,
-  ...innovative2036ITServices,
-  ...innovative2026MicroSaasExpansions,
-  ...innovative2026ITServicesExpansions,
-  ...innovative2026AIServicesExpansions,
-  ...innovative2038MicroSaasExpansions,
-  ...innovative2038ITServicesExpansions,
-  ...innovative2038AIServicesExpansions,
-  // Our new comprehensive services
-  ...innovative2038AdvancedServices,
+  // ...enterpriseITSolutions,
+  // ...innovativeMicroSaasSolutions,
+  // ...cuttingEdgeAIServices,
+  // ...realMicroSaasServices,
+  // ...innovativeAIServices,
+  // ...enterpriseITServices,
+  // ...emergingTechServices,
+  // ...newRealServices,
+  // ...realOperationalServices,
+  // ...marketReadyServices,
+  // ...marketValidatedServices,
+  // ...industryRealServices,
+  // ...real2025Q4AugmentedBatch,
+  // ...real2029Q3Additions,
+  // Our new 2025 advanced services V2
+  ...advanced2025MicroSaasExpansionV2,
+  ...advanced2025ITSolutionsExpansionV2,
+  ...advanced2025AIServicesExpansionV2,
+  // ...validatedServices2025Q4,
+  // ...real2035Q2Additions,
+  // ...real2036ServiceExpansions,
+  // ...innovative2036MicroSaasServices,
+  // ...innovative2036ITServices,
+  // Our new 2025 advanced services
+  // ...advanced2025MicroSaasExpansion,
+  // ...advanced2025ITSolutionsExpansion,
+  // ...advanced2025AIServicesExpansion,
+  // Our new innovative services
+  // ...innovative2037MicroSaasServices,
+  // ...innovative2037ITServices,
+  // ...innovative2037AIServices,
+  // ...innovative2038CuttingEdgeServices,
+  // ...innovative2038ITInfrastructureServices,
+  // Our additional innovative services
+  // ...innovative2037Services,
+  // ...advanced2038Services,
+  // ...revolutionary2039Services,
+  // Our revolutionary 2040-2041 services
   // ...revolutionary2040FuturisticServices,
-  ...comprehensiveAdvertisingMarketingServices,
-  
+  // ...revolutionary2041AdvancedServices,
   // Our latest innovative services
-  ...innovative2040FuturisticServices,
-  ...advanced2041EnterpriseServices,
-  ...revolutionary2042MicroSaasServices,
-  
+  // ...innovative2040FuturisticServices,
+  // ...advanced2041EnterpriseServices,
+  // ...revolutionary2042MicroSaasServices,
   // Our new 2025 innovative services expansion
-  ...innovative2025MicroSaasExpansion,
-  ...innovative2025ITServicesExpansion,
-  ...innovative2025AIServicesExpansion,
-  
-  // Our latest 2025 comprehensive services
-  ...innovative2025MicroSaasExpansionV2,
-  ...innovative2025ITServicesExpansionV2,
-  ...innovative2025AIServicesExpansionV2
-=======
-  // New expanded services
-  ...innovative2025MicroSaasExpanded,
-  ...innovative2025ITSolutionsExpanded,
-  ...innovative2025AISolutionsExpanded
-];
+  // ...innovative2025MicroSaasExpansion,
+  // ...innovative2025ITSolutionsExpansion,
+  // ...innovative2025AIServicesExpansion
+].filter(service => {
+  // Filter out malformed services
+  if (!service || typeof service !== 'object') return false;
+  if (!service.id || !service.name) return false;
+  return true;
+});
 
 const categories = [
   {
