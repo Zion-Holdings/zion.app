@@ -85,6 +85,10 @@ const navigationItems: NavigationItem[] = [
     badge: 'New',
     children: [
       { name: 'AI & Data', href: '/services#ai', description: 'AI, data, ML services' },
+<<<<<<< HEAD
+      { name: 'Developer Tools', href: '/services#developer-tools', description: 'Dev productivity & tooling' },
+=======
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-0a60
       { name: 'Cloud & FinOps', href: '/services#cloud', description: 'Cloud, cost, platform' },
       { name: 'Observability', href: '/services#observability', description: 'Monitoring & telemetry' },
       { name: 'Developer Tools', href: '/services#developer-tools', description: 'Developer productivity' },
@@ -93,6 +97,15 @@ const navigationItems: NavigationItem[] = [
       { name: 'IT Asset Discovery Agent', href: '/it-asset-discovery-agent', description: 'Agentless discovery' },
       { name: 'Managed Postgres HA', href: '/managed-postgres-ha', description: 'HA Postgres ops' },
       { name: 'Micro SAAS', href: '/micro-saas', description: 'Business tools and automation' },
+<<<<<<< HEAD
+      { name: 'DORA Metrics Dashboard', href: '/dora-metrics-dashboard', description: 'DevOps performance analytics' },
+      { name: 'Kubernetes Cost Guardrails', href: '/kubernetes-cost-guardrails', description: 'Policy-driven cost controls' },
+      { name: 'OpenTelemetry Quickstart', href: '/opentelemetry-quickstart', description: 'Traces, metrics, logs in days' },
+      { name: 'API Usage Billing Meter', href: '/api-usage-billing-meter', description: 'Metered billing for APIs' },
+      { name: 'Data Quality Monitor', href: '/data-quality-monitor', description: 'Freshness and anomaly checks' },
+      { name: 'Consent & Cookie Manager', href: '/consent-cookie-manager', description: 'GDPR/CCPA consent' },
+      { name: 'Edge Redirect Manager', href: '/edge-redirect-manager', description: 'Safe redirects at edge' }
+=======
       { name: 'New 2034 Services', href: '/services?sort=newest', description: 'Latest additions' },
       { name: 'RAG Evaluation Lab', href: '/rag-evaluation-lab', description: 'Measure RAG quality & cost' },
       { name: 'SOC 2 Compliance Automation', href: '/soc2-compliance-automation', description: 'Automate evidence & controls' },
@@ -102,6 +115,7 @@ const navigationItems: NavigationItem[] = [
       { name: 'AI Sales Email Autopilot', href: '/services/ai-sales-email-autopilot', description: 'Personalized outbound at scale' },
       { name: 'Kubernetes Cost & Rightsizing', href: '/services/kubernetes-cost-rightsizing', description: 'SLO-aware cost optimization' },
       { name: 'CI Flaky Test Detector', href: '/services/ci-flaky-test-detector', description: 'Auto quarantine and PR insights' }
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-0a60
     ]
   },
   {

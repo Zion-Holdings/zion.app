@@ -1,6 +1,13 @@
 import type { NextPage } from 'next';
 import Head from 'next/head';
 import React from 'react';
+<<<<<<< HEAD
+import EnhancedMarketplaceCard, { ServiceItem } from '../../components/ui/EnhancedMarketplaceCard';
+import QuoteRequestModal, { QuoteFormValues } from '../../components/ui/QuoteRequestModal';
+import MarketplaceFilters, { Filters } from '../../components/ui/MarketplaceFilters';
+import { supabase } from '../../utils/supabase/client';
+import localServices from '../../data/services/services.json';
+=======
 import SEO from '../../components/SEO';
 import UltraFuturisticBackground from '../../components/ui/UltraFuturisticBackground';
 import Card from '../../components/ui/Card';
@@ -47,6 +54,7 @@ import { real2030Q2Additions } from '../../data/real-2030-q2-additions';
 import { real2027Q3Additions } from '../../data/real-2027-q3-additions';
 import { real2032ServiceExpansions } from '../../data/real-2032-service-expansions';
 import { real2025Q4FreshAdditions } from '../../data/real-2025-q4-fresh-additions';
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-0a60
 
 const mapLocalToServiceItem = (item: any): ServiceItem => ({
   slug: item.slug,
@@ -65,6 +73,46 @@ const ServicesPage: NextPage = () => {
   const [modalOpen, setModalOpen] = React.useState(false);
   const [selected, setSelected] = React.useState<ServiceItem | null>(null);
 
+<<<<<<< HEAD
+  React.useEffect(() => {
+    let mounted = true;
+    const fetchServices = async () => {
+      try {
+        const hasSupabase =
+          process.env.NEXT_PUBLIC_SUPABASE_URL &&
+          process.env.NEXT_PUBLIC_SUPABASE_URL !== 'https://placeholder.supabase.co' &&
+          process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY &&
+          process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY !== 'placeholder-key';
+        if (hasSupabase) {
+          const { data, error } = await supabase.from('services').select('*').limit(100);
+          if (!error && data && data.length > 0) {
+            const mapped: ServiceItem[] = data.map((s: any) => ({
+              id: s.id,
+              slug: s.slug,
+              title: s.title || s.name,
+              description: s.description,
+              provider: s.provider || 'Marketplace Provider',
+              priceFromUSD: s.price_from_usd ?? undefined,
+              priceRangeUSD: s.price_min_usd && s.price_max_usd ? [s.price_min_usd, s.price_max_usd] : undefined,
+              categories: Array.isArray(s.categories) ? s.categories : (s.category ? [s.category] : []),
+              rating: s.rating ?? 4.5,
+            }));
+            if (mounted) {
+              setServices(mapped);
+              setFiltered(mapped);
+            }
+            return;
+          }
+        }
+      } catch {}
+      const mappedLocal = (localServices as any[]).map(mapLocalToServiceItem);
+      setServices(mappedLocal);
+      setFiltered(mappedLocal);
+    };
+    fetchServices();
+    return () => { mounted = false; };
+  }, []);
+=======
 export default function ServicesIndexPage() {
   const all = (enhancedRealMicroSaasServices as unknown[])
     .concat(
@@ -134,6 +182,7 @@ export default function ServicesIndexPage() {
     const mapped = categoryAliases[rawCat] || (categories.includes(rawCat) ? rawCat : 'Developer Tools');
     byCategory[mapped].push(s);
   }
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-0a60
 
   React.useEffect(() => {
     const next = services.filter((s) => {

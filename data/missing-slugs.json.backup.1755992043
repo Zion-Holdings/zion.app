@@ -1,4 +1,37 @@
 [
+<<<<<<< HEAD
+  "accessibility",
+  "ai-consciousness-evolution",
+  "ai-content-marketing-automation",
+  "ai-creativity-orchestrator",
+  "ai-customer-intelligence-platform",
+  "ai-customer-success-automation",
+  "ai-dream-interpreter-platform",
+  "ai-ethics-governance",
+  "ai-financial-fraud-detection",
+  "ai-powered-enterprise-security",
+  "autonomous-devops-platform",
+  "autonomous-it-operations",
+  "autonomous-vehicle-ai",
+  "blockchain-enterprise-platform",
+  "compliance",
+  "metaverse-digital-reality-platform",
+  "quantum-compliance-automation",
+  "quantum-creativity-studio",
+  "quantum-data-center",
+  "quantum-encryption-gateway",
+  "quantum-identity-verification",
+  "quantum-internet-security",
+  "quantum-internet-security-gateway",
+  "quantum-learning-accelerator",
+  "quantum-materials-discovery",
+  "quantum-network-security",
+  "quantum-networking",
+  "quantum-threat-detection",
+  "services/data-contracts-hub",
+  "services/serverless-lakehouse-starter",
+  "space-mining-automation-platform"
+=======
 =======
   "ai-autonomous-business-intelligence",
   "ai-autonomous-business-process-automation",
@@ -71,12 +104,19 @@
   "quantum-supply-chain-optimizer",
   "quantum-threat-detection",
   "real-estate-technology-solutions",
+<<<<<<< HEAD
+  "satellite-technology-solutions",
+  "services/data-contracts-hub",
+  "services/it-infrastructure",
+  "services/quantum-technology",
+=======
   "services/ai-knowledge-graph-studio",
   "services/ai-sales-email-autopilot",
   "services/ci-flaky-test-detector",
   "services/data-contracts-hub",
   "services/kubernetes-cost-rightsizing",
   "services/llm-guarded-api-gateway",
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-0a60
   "services/serverless-lakehouse-starter",
   "space-colonization-services",
   "space-communications-network",
@@ -84,4 +124,5 @@
   "space-mining-automation-platform",
   "space-mining-platform",
   "space-robotics-platform"
+>>>>>>> 4e26761e9808218b595a40eae6dfbc7c204b5906
 ]
