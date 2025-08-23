@@ -89,7 +89,30 @@ const Homepage2044: React.FC = () => {
     window.location.href = service.slug;
   }, []);
 
+  if (isLoading) {
+    return <LoadingSpinner />;
+  }
 
+  if (error) {
+    return (
+      <div className="min-h-screen flex items-center justify-center bg-black text-white">
+        <div className="text-center">
+          <h1 className="text-2xl font-bold text-red-400 mb-4">Error Loading Page</h1>
+          <p className="text-gray-400 mb-6">{error}</p>
+          <button 
+            onClick={() => window.location.reload()} 
+            className="px-6 py-3 bg-cyan-500 text-white rounded-lg hover:bg-cyan-600 transition-colors"
+          >
+            Retry
+          </button>
+        </div>
+      </div>
+    );
+  }
+
+  return (
+    <Layout>
+      <main className="min-h-screen bg-black text-white">
         {/* Hero Section */}
         <section 
           className="min-h-screen flex items-center justify-center px-4 relative overflow-hidden"
