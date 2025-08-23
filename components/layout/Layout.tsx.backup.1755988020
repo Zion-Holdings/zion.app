@@ -1,11 +1,19 @@
 import React, { useState, useEffect } from 'react';
 import Head from 'next/head';
+<<<<<<< HEAD
+import EnhancedNavigation2025 from './EnhancedNavigation2025';
+import EnhancedFooter2025 from './EnhancedFooter2025';
+=======
 import UltraFuturisticNavigation2047 from './UltraFuturisticNavigation2047';
 import UltraFuturisticFooter2048 from './UltraFuturisticFooter2048';
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-bde9
 import EnhancedSidebar2025 from './EnhancedSidebar2025';
 import UltraFuturisticBackground2037 from '../backgrounds/UltraFuturisticBackground2037';
 import TopContactBar from './TopContactBar';
+<<<<<<< HEAD
+=======
 import UltraFuturisticBackground2047 from '../backgrounds/UltraFuturisticBackground2047';
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-bde9
 import EnhancedPerformanceMonitor from '../EnhancedPerformanceMonitor';
 import AccessibilityEnhancer from '../EnhancedAccessibilityEnhancer';
 import CookieConsentBanner from '../CookieConsentBanner';
@@ -170,6 +178,10 @@ export default function Layout({ children }: LayoutProps) {
           Skip to main content
         </a>
         
+<<<<<<< HEAD
+        {/* Background Effects */}
+        <UltraFuturisticBackground2045 theme={theme === 'dark' ? 'quantum-neon' : 'holographic'} />
+=======
         {/* Online/Offline Status Indicator */}
         {!isOnline && (
           <div className="fixed top-0 left-0 right-0 bg-red-600 text-white text-center py-2 z-50">
@@ -182,14 +194,20 @@ export default function Layout({ children }: LayoutProps) {
         
         {/* Futuristic Background */}
         <UltraFuturisticBackground2047 />
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-bde9
         
         {/* Layout Structure */}
         <div className="relative z-10">
           {/* Top Contact Bar */}
           <TopContactBar />
           
+<<<<<<< HEAD
+          {/* Enhanced Navigation */}
+          <EnhancedNavigation2025 />
+=======
           {/* Navigation */}
           <UltraFuturisticNavigation2047 />
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-bde9
           
           {/* Enhanced Sidebar */}
           <EnhancedSidebar2025 isOpen={sidebarOpen} onClose={() => setSidebarOpen(false)} />
@@ -201,6 +219,27 @@ export default function Layout({ children }: LayoutProps) {
             </EnhancedErrorBoundary>
           </main>
           
+<<<<<<< HEAD
+          {/* Enhanced Footer */}
+          <EnhancedFooter2025 />
+          
+          {/* Performance Monitor */}
+          <EnhancedPerformanceMonitor />
+          
+          {/* Accessibility Enhancer */}
+          <AccessibilityEnhancer />
+          
+          {/* Cookie Consent Banner */}
+          <CookieConsentBanner />
+          
+          {/* Offline Indicator */}
+          {!isOnline && (
+            <div className="fixed bottom-4 right-4 bg-red-600 text-white px-4 py-2 rounded-lg shadow-lg z-50">
+              <div className="flex items-center space-x-2">
+                <div className="w-2 h-2 bg-white rounded-full animate-pulse"></div>
+                <span className="text-sm">You are offline</span>
+              </div>
+=======
           {/* Footer */}
           <UltraFuturisticFooter2048 />
         </div>
@@ -237,6 +276,7 @@ export default function Layout({ children }: LayoutProps) {
               >
                 Later
               </button>
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-bde9
             </div>
           )}
         </div>
