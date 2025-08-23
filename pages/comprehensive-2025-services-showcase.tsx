@@ -18,21 +18,115 @@ import { realMicroSaasServices } from '../data/real-micro-saas-services';
 import { innovativeAIServices } from '../data/innovative-ai-services';
 import { enterpriseITServices } from '../data/enterprise-it-services';
 
+// Unified service interface for showcase display
+interface UnifiedService {
+  id: string;
+  name: string;
+  tagline: string;
+  description: string;
+  category: string;
+  icon?: string;
+  popular?: boolean;
+  link?: string;
+  price?: string | number;
+  pricing?: {
+    starter: string;
+    professional: string;
+    enterprise: string;
+    custom: string;
+  };
+  price_monthly?: number;
+  price_yearly?: number;
+  trialDays?: number;
+  setupTime?: string;
+  features?: string[];
+  benefits?: string[];
+  rating?: number;
+  reviews?: number;
+}
+
 const Comprehensive2025ServicesShowcase: React.FC = () => {
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedCategory, setSelectedCategory] = useState('All');
   const [viewMode, setViewMode] = useState<'grid' | 'list'>('grid');
   const [sortBy, setSortBy] = useState('name');
 
+  // Normalize services to unified format
+  const normalizeService = (service: any): UnifiedService => {
+    if (service.pricing) {
+      // IT Infrastructure service format
+      return {
+        id: service.id,
+        name: service.name,
+        tagline: service.description || '',
+        description: service.description || '',
+        category: service.category || service.type || '',
+        icon: '⚡',
+        popular: false,
+        link: service.website || `https://ziontechgroup.com${service.slug}`,
+        pricing: service.pricing,
+        price_monthly: 0,
+        price_yearly: 0,
+        trialDays: 14,
+        setupTime: '1-2 weeks',
+        features: service.features || [],
+        benefits: service.benefits || [],
+        rating: service.rating || 0,
+        reviews: service.reviews || 0
+      };
+    } else if (service.price && typeof service.price === 'object') {
+      // Emerging technology service format
+      return {
+        id: service.id,
+        name: service.name,
+        tagline: service.tagline || '',
+        description: service.description || '',
+        category: service.category || '',
+        icon: service.icon || '🚀',
+        popular: service.popular || false,
+        link: service.link || `https://ziontechgroup.com/${service.id}`,
+        price_monthly: service.price.monthly,
+        price_yearly: service.price.yearly,
+        trialDays: service.price.trialDays || 14,
+        setupTime: service.price.setupTime || '1-2 weeks',
+        features: service.features || [],
+        benefits: service.benefits || [],
+        rating: service.rating || 0,
+        reviews: service.reviews || 0
+      };
+    } else {
+      // AI Automation and Micro SAAS format
+      return {
+        id: service.id,
+        name: service.name,
+        tagline: service.tagline || '',
+        description: service.description || '',
+        category: service.category || '',
+        icon: service.icon || '🤖',
+        popular: service.popular || false,
+        link: service.link || `https://ziontechgroup.com/${service.id}`,
+        price: service.price,
+        price_monthly: typeof service.price === 'string' ? 0 : 0,
+        price_yearly: typeof service.price === 'string' ? 0 : 0,
+        trialDays: service.trialDays || 14,
+        setupTime: service.setupTime || '1-2 weeks',
+        features: service.features || [],
+        benefits: service.benefits || [],
+        rating: service.rating || 0,
+        reviews: service.reviews || 0
+      };
+    }
+  };
+
   // Combine all services
-  const allServices = [
-    ...advancedAIAutomationServices2025,
-    ...innovativeITInfrastructureServices2025,
-    ...innovativeMicroSaasSolutions2025,
-    ...cuttingEdgeAIServices2025,
-    ...realMicroSaasServices,
-    ...innovativeAIServices,
-    ...enterpriseITServices
+  const allServices: UnifiedService[] = [
+    ...advancedAIAutomationServices2025.map(normalizeService),
+    ...innovativeITInfrastructureServices2025.map(normalizeService),
+    ...innovativeMicroSaasSolutions2025.map(normalizeService),
+    ...cuttingEdgeAIServices2025.map(normalizeService),
+    ...realMicroSaasServices.map(normalizeService),
+    ...innovativeAIServices.map(normalizeService),
+    ...enterpriseITServices.map(normalizeService)
   ];
 
   // Get unique categories
@@ -53,8 +147,8 @@ const Comprehensive2025ServicesShowcase: React.FC = () => {
           return a.name.localeCompare(b.name);
         }
         case 'price': {
-          const priceA = typeof a.price === 'string' ? parseFloat(a.price.replace(/[^0-9.]/g, '')) : (a.price?.monthly || 0);
-          const priceB = typeof b.price === 'string' ? parseFloat(b.price.replace(/[^0-9.]/g, '')) : (b.price?.monthly || 0);
+          const priceA = a.price_monthly || (typeof a.price === 'string' ? parseFloat(a.price.replace(/[^0-9.]/g, '')) : 0);
+          const priceB = b.price_monthly || (typeof b.price === 'string' ? parseFloat(b.price.replace(/[^0-9.]/g, '')) : 0);
           return priceA - priceB;
         }
         case 'rating': {
@@ -68,7 +162,7 @@ const Comprehensive2025ServicesShowcase: React.FC = () => {
       }
     });
 
-  const getServiceIcon = (service: any) => {
+  const getServiceIcon = (service: UnifiedService) => {
     if (service.icon) return service.icon;
     switch (service.category) {
       case 'AI Automation':
@@ -247,10 +341,10 @@ const Comprehensive2025ServicesShowcase: React.FC = () => {
                     {/* Price */}
                     <div className="mb-4">
                       <span className="text-2xl font-bold text-cyan-400">
-                        {typeof service.price === 'string' ? service.price : `$${service.price?.monthly || 0}`}
+                        {service.price_monthly ? `$${service.price_monthly}` : (service.price || 'Contact for pricing')}
                       </span>
                       <span className="text-gray-400">
-                        {typeof service.price === 'string' ? ((service as any).period || '/month') : '/month'}
+                        {service.price_monthly ? '/month' : ''}
                       </span>
                     </div>
 
@@ -280,11 +374,11 @@ const Comprehensive2025ServicesShowcase: React.FC = () => {
                       </div>
                       <div className="flex justify-between">
                         <span>Setup Time:</span>
-                        <span>{(service as any).setupTime || 'N/A'}</span>
+                        <span>{service.setupTime || 'N/A'}</span>
                       </div>
                       <div className="flex justify-between">
                         <span>Rating:</span>
-                        <span className="text-yellow-400">{service.rating}/5.0 ({service.reviews} reviews)</span>
+                        <span className="text-yellow-400">{service.rating}/5.0 ({service.reviews || 0} reviews)</span>
                       </div>
                     </div>
 
@@ -322,17 +416,17 @@ const Comprehensive2025ServicesShowcase: React.FC = () => {
                             </span>
                           )}
                           <span className="text-2xl font-bold text-cyan-400">
-                            {typeof service.price === 'string' ? service.price : `$${service.price?.monthly || 0}`}
+                            {service.price_monthly ? `$${service.price_monthly}` : (service.price || 'Contact for pricing')}
                           </span>
                           <span className="text-gray-400">
-                            {typeof service.price === 'string' ? ((service as any).period || '/month') : '/month'}
+                            {service.price_monthly ? '/month' : ''}
                           </span>
                         </div>
                       </div>
                       <p className="text-gray-300 mb-3">{service.tagline}</p>
                       <div className="flex items-center space-x-4 text-sm text-gray-400">
                         <span>Category: <span className="text-cyan-400">{service.category}</span></span>
-                        <span>Setup: {(service as any).setupTime || 'N/A'}</span>
+                        <span>Setup: {service.setupTime || 'N/A'}</span>
                         <span>Rating: <span className="text-yellow-400">{service.rating}/5.0</span></span>
                       </div>
                     </div>
