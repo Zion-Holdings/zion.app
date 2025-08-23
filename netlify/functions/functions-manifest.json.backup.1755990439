@@ -1,5 +1,9 @@
 {
+<<<<<<< HEAD
+  "generatedAt": "2025-08-12T01:33:28.556Z",
+=======
   "generatedAt": "2025-08-12T01:33:30.600Z",
+>>>>>>> origin/cursor/develop-autonomous-cloud-agents-for-automation-orchestration-f951
   "functions": [
     "a11y-alt-text-runner",
     "accelerated-sync-orchestrator",
@@ -17,7 +21,11 @@
     "broken-image-scanner",
     "broken-image-scanner-runner",
     "canonical-auditor",
+<<<<<<< HEAD
+    "cloud-brain-orchestrator",
+=======
     "cloud-trigger-hub",
+>>>>>>> origin/cursor/develop-autonomous-cloud-agents-for-automation-orchestration-f951
     "cloud_orchestrator",
     "code-smell-audit-runner",
     "component-props-docs-runner",
