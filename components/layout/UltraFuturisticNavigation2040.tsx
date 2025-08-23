@@ -143,25 +143,32 @@ const navigationItems: NavigationItem[] = [
     neonColor: 'shadow-orange-400/50',
     children: [
       {
+        label: 'Documentation',
+        href: '/docs',
+        icon: <Code className="w-4 h-4" />,
+        description: 'Technical documentation and guides',
+        neonColor: 'shadow-green-400/50'
+      },
+      {
+        label: 'API Reference',
+        href: '/api-documentation',
+        icon: <Code className="w-4 h-4" />,
+        description: 'Complete API documentation',
+        neonColor: 'shadow-blue-400/50'
+      },
+      {
         label: 'Blog',
         href: '/blog',
         icon: <FileText className="w-4 h-4" />,
         description: 'Latest insights and updates',
-        neonColor: 'shadow-blue-400/50'
+        neonColor: 'shadow-purple-400/50'
       },
       {
         label: 'Webinars',
         href: '/webinars',
         icon: <Video className="w-4 h-4" />,
         description: 'Educational webinars and events',
-        neonColor: 'shadow-purple-400/50'
-      },
-      {
-        label: 'Documentation',
-        href: '/docs',
-        icon: <Code className="w-4 h-4" />,
-        description: 'Technical documentation',
-        neonColor: 'shadow-green-400/50'
+        neonColor: 'shadow-orange-400/50'
       }
     ]
   },

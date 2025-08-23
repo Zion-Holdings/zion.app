@@ -12,6 +12,7 @@ import {
   Brain,
   Atom,
   Shield,
+  Target,
   Linkedin,
   Twitter,
   Github,
@@ -43,6 +44,14 @@ const footerData = {
     { label: 'Cloud Infrastructure', href: '/services?category=cloud' },
     { label: 'Enterprise Solutions', href: '/solutions/enterprise' }
   ],
+  solutions: [
+    { label: 'Enterprise Solutions', href: '/solutions/enterprise' },
+    { label: 'Startup Solutions', href: '/solutions/startup' },
+    { label: 'Government Solutions', href: '/solutions/government' },
+    { label: 'Healthcare Solutions', href: '/healthcare-solutions' },
+    { label: 'Financial Solutions', href: '/financial-solutions' },
+    { label: 'Education Solutions', href: '/education-technology-solutions' }
+  ],
   resources: [
     { label: 'Documentation', href: '/docs' },
     { label: 'API Reference', href: '/api-documentation' },
@@ -67,7 +76,7 @@ const UltraFuturisticFooter2040: React.FC = () => {
     <footer className="bg-gradient-to-br from-gray-900 via-black to-gray-900 border-t border-cyan-400/20" role="contentinfo">
       {/* Main Footer Content */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 lg:gap-12">
           
           {/* Company Information */}
           <div className="lg:col-span-1">
@@ -175,6 +184,34 @@ const UltraFuturisticFooter2040: React.FC = () => {
                       aria-label={`Explore ${service.label} services`}
                     >
                       {service.label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </motion.div>
+          </div>
+
+          {/* Solutions */}
+          <div>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.25 }}
+            >
+              <h3 className="text-lg font-semibold text-white mb-6 flex items-center">
+                <Target className="w-4 h-4 mr-2 text-green-400" />
+                Solutions
+              </h3>
+              <ul className="space-y-3">
+                {footerData.solutions.map((solution) => (
+                  <li key={solution.label}>
+                    <Link
+                      href={solution.href}
+                      className="text-gray-300 hover:text-green-400 transition-colors duration-300 hover:underline focus:outline-none focus:ring-2 focus:ring-green-400/50 rounded"
+                      aria-label={`Explore ${solution.label} solutions`}
+                    >
+                      {solution.label}
                     </Link>
                   </li>
                 ))}
