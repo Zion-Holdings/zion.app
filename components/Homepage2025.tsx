@@ -1,401 +1,289 @@
-import React from 'react';
+import React, { Suspense, lazy } from 'react';
 import Layout from './layout/Layout';
-import UltraFuturisticServiceCard2026 from './ui/UltraFuturisticServiceCard2026';
 import { motion } from 'framer-motion';
-import Link from 'next/link';
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, Play, Star, Users, Award, TrendingUp, Brain, Shield, Rocket } from 'lucide-react';
+
+// Lazy load components for better performance
+const UltraFuturisticServiceCard2026 = lazy(() => import('./ui/UltraFuturisticServiceCard2026'));
 
 const Homepage2025: React.FC = () => {
-  const featuredServices = [
-    {
-      id: 'quantum-ai-orchestrator',
-      name: 'Quantum AI Orchestrator',
-      tagline: 'Orchestrate AI workflows with quantum computing power',
-      description: 'Advanced AI workflow orchestration platform that leverages quantum computing to optimize and accelerate complex AI pipelines, enabling faster model training and deployment.',
-      price: '$1,299',
-      period: '/month',
-      features: [
-        'Quantum-enhanced workflow optimization',
-        'Intelligent resource allocation',
-        'Automated pipeline management',
-        'Real-time performance monitoring',
-        'Advanced scheduling algorithms',
-        'Multi-cloud orchestration',
-        'Custom workflow templates',
-        'API for integration',
-        'Enterprise-grade security'
-      ],
-      popular: true,
-      category: 'AI Orchestration',
-      icon: '⚛️🎭',
-      variant: 'quantum-futuristic'
-    },
-    {
-      id: 'ai-ethics-compliance-suite',
-      name: 'AI Ethics & Compliance Suite',
-      tagline: 'Ensure responsible AI with comprehensive ethics and compliance',
-      description: 'Comprehensive AI ethics and compliance platform that helps organizations develop, deploy, and monitor AI systems in accordance with ethical principles and regulatory requirements.',
-      price: '$899',
-      period: '/month',
-      features: [
-        'AI ethics assessment and monitoring',
-        'Compliance automation and reporting',
-        'Bias detection and mitigation',
-        'Transparency and explainability tools',
-        'Regulatory compliance tracking',
-        'Ethics training and education',
-        'Audit trail and documentation',
-        'Integration with AI platforms',
-        'Custom compliance workflows'
-      ],
-      popular: false,
-      category: 'AI Ethics',
-      icon: '🤖⚖️',
-      variant: 'ai-futuristic'
-    },
-    {
-      id: 'metaverse-business-platform',
-      name: 'Metaverse Business Platform',
-      tagline: 'Build your business in the metaverse with AI-powered tools',
-      description: 'Comprehensive metaverse business platform that enables organizations to create, manage, and monetize virtual experiences, digital assets, and immersive business solutions.',
-      price: '$1,599',
-      period: '/month',
-      features: [
-        '3D virtual environment creation',
-        'Digital asset management and monetization',
-        'AI-powered avatar customization',
-        'Virtual event hosting and management',
-        'E-commerce integration and payments',
-        'Analytics and performance tracking',
-        'Multi-platform compatibility',
-        'Custom branding and theming',
-        '24/7 technical support'
-      ],
-      popular: true,
-      category: 'Metaverse',
-      icon: '🌐🏢',
-      variant: 'metaverse-futuristic'
-    },
-    {
-      id: 'quantum-financial-modeling',
-      name: 'Quantum Financial Modeling Platform',
-      tagline: 'Revolutionize financial modeling with quantum computing',
-      description: 'Advanced financial modeling platform that leverages quantum computing to solve complex financial problems, optimize portfolios, and provide unprecedented insights for investment decisions.',
-      price: '$2,199',
-      period: '/month',
-      features: [
-        'Quantum-enhanced portfolio optimization',
-        'Advanced risk assessment and modeling',
-        'Real-time market analysis and predictions',
-        'Multi-asset class modeling',
-        'Scenario analysis and stress testing',
-        'Regulatory compliance and reporting',
-        'API for financial data integration',
-        'Custom model development',
-        'Enterprise-grade security'
-      ],
-      popular: true,
-      category: 'Quantum Finance',
-      icon: '⚛️💰',
-      variant: 'quantum-futuristic'
-    },
-    {
-      id: 'ai-powered-content-automation',
-      name: 'AI-Powered Content Automation',
-      tagline: 'Automate content creation and management with AI',
-      description: 'Intelligent content automation platform that uses artificial intelligence to create, optimize, and manage content across multiple channels, improving engagement and ROI.',
-      price: '$799',
-      period: '/month',
-      features: [
-        'AI-powered content generation',
-        'Multi-channel content management',
-        'Automated content optimization',
-        'SEO and performance analytics',
-        'Content scheduling and automation',
-        'Brand voice and style consistency',
-        'Multi-language content support',
-        'Integration with marketing tools',
-        'Custom content workflows'
-      ],
-      popular: false,
-      category: 'Content Automation',
-      icon: '🤖✍️',
-      variant: 'ai-futuristic'
-    },
-    {
-      id: 'quantum-supply-chain-optimization',
-      name: 'Quantum Supply Chain Optimization',
-      tagline: 'Optimize supply chains with quantum computing power',
-      description: 'Advanced supply chain optimization platform that uses quantum computing to solve complex logistics problems, reduce costs, and improve efficiency across global supply networks.',
-      price: '$1,899',
-      period: '/month',
-      features: [
-        'Quantum-enhanced route optimization',
-        'Real-time supply chain monitoring',
-        'Predictive demand forecasting',
-        'Inventory optimization and management',
-        'Supplier performance analytics',
-        'Risk assessment and mitigation',
-        'Multi-modal transportation planning',
-        'Custom optimization algorithms',
-        'Enterprise integration capabilities'
-      ],
-      popular: true,
-      category: 'Quantum Supply Chain',
-      icon: '⚛️🚚',
-      variant: 'quantum-futuristic'
-    }
-  ];
+  const fadeInUp = {
+    initial: { opacity: 0, y: 60 },
+    animate: { opacity: 1, y: 0 },
+    transition: { duration: 0.6 }
+  };
 
-  const stats = [
-    { number: '500+', label: 'Active Services', icon: '🚀' },
-    { number: '10,000+', label: 'Happy Customers', icon: '😊' },
-    { number: '99.9%', label: 'Uptime SLA', icon: '⚡' },
-    { number: '24/7', label: 'Support', icon: '🛡️' }
-  ];
+  const staggerContainer = {
+    animate: {
+      transition: {
+        staggerChildren: 0.1
+      }
+    }
+  };
 
   return (
     <Layout>
       {/* Main Content */}
-      <main className="relative z-10">
+      <main className="relative z-10" role="main">
         {/* Hero Section */}
-        <section className="min-h-screen flex items-center justify-center px-4 relative overflow-hidden">
-          {/* Background Effects */}
-          <div className="absolute inset-0 overflow-hidden">
-            <motion.div
-              className="absolute top-1/4 left-1/4 w-96 h-96 bg-gradient-to-r from-cyan-500/20 to-purple-500/20 rounded-full blur-3xl"
-              animate={{
-                scale: [1, 1.2, 1],
-                opacity: [0.3, 0.6, 0.3],
-                x: [0, 50, 0],
-                y: [0, -50, 0]
-              }}
-              transition={{
-                duration: 8,
-                repeat: Infinity,
-                ease: "easeInOut"
-              }}
-            />
-            <motion.div
-              className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-gradient-to-r from-purple-500/20 to-pink-500/20 rounded-full blur-3xl"
-              animate={{
-                scale: [1.2, 1, 1.2],
-                opacity: [0.6, 0.3, 0.6],
-                x: [0, -50, 0],
-                y: [0, 50, 0]
-              }}
-              transition={{
-                duration: 10,
-                repeat: Infinity,
-                ease: "easeInOut"
-              }}
-            />
+        <section 
+          className="min-h-screen flex items-center justify-center px-4 relative overflow-hidden"
+          aria-labelledby="hero-heading"
+        >
+          {/* Background Elements */}
+          <div className="absolute inset-0 -z-10">
+            <div className="absolute top-20 left-20 w-72 h-72 bg-cyan-500/20 rounded-full blur-3xl animate-pulse"></div>
+            <div className="absolute bottom-20 right-20 w-96 h-96 bg-blue-500/20 rounded-full blur-3xl animate-pulse delay-1000"></div>
+            <div className="absolute top-1/2 left-1/2 w-64 h-64 bg-purple-500/20 rounded-full blur-3xl animate-pulse delay-500"></div>
           </div>
 
-          <div className="text-center max-w-6xl mx-auto relative z-10">
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-            >
-              <h1 className="text-6xl md:text-8xl font-bold mb-6 bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 bg-clip-text text-transparent leading-tight">
+          <motion.div 
+            className="text-center max-w-5xl mx-auto"
+            initial="initial"
+            animate="animate"
+            variants={staggerContainer}
+          >
+            <motion.div variants={fadeInUp}>
+              <h1 
+                id="hero-heading"
+                className="text-5xl md:text-7xl lg:text-8xl font-bold mb-6 bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 bg-clip-text text-transparent leading-tight"
+              >
                 Zion Tech Group
               </h1>
             </motion.div>
             
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-            >
-              <p className="text-xl md:text-3xl text-gray-300 mb-8 max-w-4xl mx-auto leading-relaxed">
-                Pioneering the future of technology with innovative solutions that drive business transformation
+            <motion.div variants={fadeInUp}>
+              <p className="text-xl md:text-2xl lg:text-3xl text-gray-300 mb-8 max-w-3xl mx-auto leading-relaxed">
+                Pioneering the future of technology with innovative solutions that drive business transformation and unlock human potential
               </p>
             </motion.div>
 
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.4 }}
-              className="flex flex-col sm:flex-row gap-6 justify-center mb-12"
+            <motion.div 
+              className="flex flex-col sm:flex-row gap-6 justify-center items-center mb-12"
+              variants={fadeInUp}
             >
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="px-10 py-5 bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-semibold text-lg rounded-xl hover:from-cyan-600 hover:to-blue-700 transition-all duration-300 shadow-2xl shadow-cyan-500/25"
+              <button 
+                className="group px-8 py-4 bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-semibold rounded-xl hover:from-cyan-600 hover:to-blue-700 transition-all duration-300 transform hover:scale-105 hover:shadow-2xl hover:shadow-cyan-500/25 flex items-center gap-2"
+                aria-label="Get started with Zion Tech Group services"
               >
                 Get Started
-              </motion.button>
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="px-10 py-5 border-2 border-cyan-400 text-cyan-400 font-semibold text-lg rounded-xl hover:bg-cyan-400 hover:text-black transition-all duration-300"
+                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+              </button>
+              
+              <button 
+                className="px-8 py-4 border-2 border-cyan-400 text-cyan-400 font-semibold rounded-xl hover:bg-cyan-400 hover:text-black transition-all duration-300 transform hover:scale-105 flex items-center gap-2"
+                aria-label="Learn more about Zion Tech Group"
               >
+                <Play className="w-5 h-5" />
                 Learn More
-              </motion.button>
+              </button>
             </motion.div>
 
-            {/* Stats Section */}
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.6 }}
-              className="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl mx-auto"
+            {/* Social Proof */}
+            <motion.div 
+              className="flex flex-wrap justify-center items-center gap-8 text-gray-400"
+              variants={fadeInUp}
             >
-              {stats.map((stat, index) => (
-                <motion.div
-                  key={stat.label}
-                  initial={{ opacity: 0, scale: 0.8 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  transition={{ duration: 0.5, delay: 0.8 + index * 0.1 }}
-                  className="text-center"
-                >
-                  <div className="text-3xl mb-2">{stat.icon}</div>
-                  <div className="text-3xl md:text-4xl font-bold text-cyan-400 mb-1">
-                    {stat.number}
-                  </div>
-                  <div className="text-sm text-gray-400">{stat.label}</div>
-                </motion.div>
-              ))}
+              <div className="flex items-center gap-2">
+                <Users className="w-5 h-5 text-cyan-400" />
+                <span>500+ Clients Worldwide</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <Award className="w-5 h-5 text-blue-400" />
+                <span>Industry Leader 2024</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <TrendingUp className="w-5 h-5 text-purple-400" />
+                <span>99.9% Uptime</span>
+              </div>
             </motion.div>
-          </div>
+          </motion.div>
         </section>
 
         {/* Services Preview */}
-        <section className="py-24 px-4 relative">
-          {/* Section Background */}
-          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-black/20 to-black/40" />
-          
-          <div className="max-w-7xl mx-auto relative z-10">
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-              viewport={{ once: true }}
-              className="text-center mb-20"
-            >
-              <h2 className="text-5xl md:text-6xl font-bold mb-8 bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
-                Our Services
-              </h2>
-              <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-                Discover our comprehensive suite of cutting-edge technology solutions designed to transform your business
-              </p>
-            </motion.div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {featuredServices.map((service, index) => (
-                <motion.div
-                  key={service.id}
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: index * 0.1 }}
-                  viewport={{ once: true }}
-                >
-                  <UltraFuturisticServiceCard2026
-                    service={service}
-                    variant={service.variant as any}
-                  />
-                </motion.div>
-              ))}
-            </div>
-
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.4 }}
-              viewport={{ once: true }}
-              className="text-center mt-16"
-            >
-              <Link
-                href="/services"
-                className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-purple-500 to-pink-600 text-white font-semibold rounded-xl hover:from-purple-600 hover:to-pink-700 transition-all duration-300 transform hover:scale-105"
-              >
-                View All Services
-                <ArrowRight className="ml-2 w-5 h-5" />
-              </Link>
-            </motion.div>
-          </div>
-        </section>
-
-        {/* Technology Stack Section */}
-        <section className="py-24 px-4 bg-gradient-to-b from-black to-gray-900">
+        <section 
+          className="py-24 px-4 relative"
+          aria-labelledby="services-heading"
+        >
           <div className="max-w-7xl mx-auto">
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-              viewport={{ once: true }}
+            <motion.div 
               className="text-center mb-20"
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
             >
-              <h2 className="text-5xl md:text-6xl font-bold mb-8 bg-gradient-to-r from-purple-400 to-pink-500 bg-clip-text text-transparent">
-                Technology Stack
+              <h2 
+                id="services-heading"
+                className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent"
+              >
+                Our Revolutionary Services
               </h2>
               <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-                Built with cutting-edge technologies and frameworks to deliver exceptional performance and scalability
+                Cutting-edge technology solutions designed to transform your business and accelerate growth
               </p>
             </motion.div>
 
-            <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-8">
-              {[
-                { name: 'Quantum Computing', icon: '⚛️', color: 'from-purple-500 to-pink-600' },
-                { name: 'AI/ML', icon: '🧠', color: 'from-cyan-500 to-blue-600' },
-                { name: 'Cloud Native', icon: '☁️', color: 'from-blue-500 to-indigo-600' },
-                { name: 'Blockchain', icon: '🔗', color: 'from-green-500 to-emerald-600' },
-                { name: 'IoT', icon: '🌐', color: 'from-orange-500 to-red-600' },
-                { name: 'AR/VR', icon: '🥽', color: 'from-pink-500 to-purple-600' }
-              ].map((tech, index) => (
-                <motion.div
-                  key={tech.name}
-                  initial={{ opacity: 0, scale: 0.8 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  transition={{ duration: 0.5, delay: index * 0.1 }}
-                  viewport={{ once: true }}
-                  className="text-center group"
-                >
-                  <div className={`w-20 h-20 mx-auto mb-4 bg-gradient-to-br ${tech.color} rounded-2xl flex items-center justify-center text-3xl group-hover:scale-110 transition-transform duration-300`}>
-                    {tech.icon}
-                  </div>
-                  <h3 className="text-lg font-semibold text-white group-hover:text-cyan-400 transition-colors">
-                    {tech.name}
-                  </h3>
-                </motion.div>
-              ))}
-            </div>
+            <motion.div 
+              className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+              variants={staggerContainer}
+              initial="initial"
+              whileInView="animate"
+              viewport={{ once: true }}
+            >
+              <Suspense fallback={
+                <div className="h-96 bg-gray-800/50 rounded-2xl animate-pulse flex items-center justify-center">
+                  <div className="text-gray-400">Loading...</div>
+                </div>
+              }>
+                <UltraFuturisticServiceCard2026
+                  service={{
+                    id: 'ai-ml',
+                    name: 'AI & Machine Learning',
+                    tagline: 'Advanced artificial intelligence solutions',
+                    description: 'Revolutionary AI and machine learning solutions that transform how businesses operate, make decisions, and serve customers',
+                    price: '$999',
+                    period: 'month',
+                    features: ['Machine Learning', 'Deep Learning', 'NLP', 'Computer Vision', 'AI Ethics'],
+                    popular: true,
+                    category: 'AI',
+                    icon: '🧠'
+                  }}
+                  variant="ai"
+                />
+              </Suspense>
+
+              <Suspense fallback={
+                <div className="h-96 bg-gray-800/50 rounded-2xl animate-pulse flex items-center justify-center">
+                  <div className="text-gray-400">Loading...</div>
+                </div>
+              }>
+                <UltraFuturisticServiceCard2026
+                  service={{
+                    id: 'quantum-computing',
+                    name: 'Quantum Computing',
+                    tagline: 'Next-generation computing solutions',
+                    description: 'Breakthrough quantum computing solutions that solve previously impossible problems and unlock new possibilities',
+                    price: '$1999',
+                    period: 'month',
+                    features: ['Quantum Algorithms', 'Quantum Security', 'Quantum Simulation', 'Quantum ML'],
+                    popular: false,
+                    category: 'Quantum',
+                    icon: '⚛️'
+                  }}
+                  variant="quantum"
+                />
+              </Suspense>
+
+              <Suspense fallback={
+                <div className="h-96 bg-gray-800/50 rounded-2xl animate-pulse flex items-center justify-center">
+                  <div className="text-gray-400">Loading...</div>
+                </div>
+              }>
+                <UltraFuturisticServiceCard2026
+                  service={{
+                    id: 'process-automation',
+                    name: 'Process Automation',
+                    tagline: 'Intelligent automation solutions',
+                    description: 'Intelligent automation that streamlines operations, reduces costs, and enhances productivity across your organization',
+                    price: '$799',
+                    period: 'month',
+                    features: ['Workflow Automation', 'RPA', 'AI Integration', 'Analytics', 'Process Mining'],
+                    popular: true,
+                    category: 'Automation',
+                    icon: '⚡'
+                  }}
+                  variant="automation"
+                />
+              </Suspense>
+            </motion.div>
+
+            {/* Call to Action */}
+            <motion.div 
+              className="text-center mt-16"
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+            >
+              <button 
+                className="px-10 py-5 bg-gradient-to-r from-purple-500 to-pink-600 text-white font-semibold rounded-xl hover:from-purple-600 hover:to-pink-700 transition-all duration-300 transform hover:scale-105 hover:shadow-2xl hover:shadow-purple-500/25 flex items-center gap-3 mx-auto"
+                aria-label="Explore all services offered by Zion Tech Group"
+              >
+                <Star className="w-6 h-6" />
+                Explore All Services
+                <ArrowRight className="w-5 h-5" />
+              </button>
+            </motion.div>
           </div>
         </section>
 
-        {/* CTA Section */}
-        <section className="py-24 px-4 bg-gradient-to-r from-cyan-900/20 to-purple-900/20">
-          <div className="max-w-4xl mx-auto text-center">
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
+        {/* Features Section */}
+        <section 
+          className="py-24 px-4 bg-gradient-to-b from-black to-gray-900/50 relative"
+          aria-labelledby="features-heading"
+        >
+          <div className="max-w-7xl mx-auto">
+            <motion.div 
+              className="text-center mb-20"
+              initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+            >
+              <h2 
+                id="features-heading"
+                className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 bg-gradient-to-r from-purple-400 to-pink-500 bg-clip-text text-transparent"
+              >
+                Why Choose Zion Tech Group?
+              </h2>
+              <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+                We combine cutting-edge technology with proven expertise to deliver exceptional results
+              </p>
+            </motion.div>
+
+            <motion.div 
+              className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8"
+              variants={staggerContainer}
+              initial="initial"
+              whileInView="animate"
               viewport={{ once: true }}
             >
-              <h2 className="text-4xl md:text-5xl font-bold mb-8 bg-gradient-to-r from-cyan-400 to-purple-500 bg-clip-text text-transparent">
-                Ready to Transform Your Business?
-              </h2>
-              <p className="text-xl text-gray-300 mb-12 max-w-2xl mx-auto">
-                Join thousands of businesses already leveraging our cutting-edge technology solutions to stay ahead of the competition
-              </p>
-              
-              <div className="flex flex-col sm:flex-row gap-6 justify-center">
-                <motion.button
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  className="px-10 py-5 bg-gradient-to-r from-cyan-500 to-purple-600 text-white font-semibold text-lg rounded-xl hover:from-cyan-600 hover:to-purple-700 transition-all duration-300 shadow-2xl shadow-cyan-500/25"
+              {[
+                {
+                  icon: <Brain className="w-12 h-12 text-cyan-400" />,
+                  title: "AI-First Approach",
+                  description: "Every solution is built with artificial intelligence at its core"
+                },
+                {
+                  icon: <Shield className="w-12 h-12 text-blue-400" />,
+                  title: "Enterprise Security",
+                  description: "Bank-level security and compliance for your peace of mind"
+                },
+                {
+                  icon: <Rocket className="w-12 h-12 text-purple-400" />,
+                  title: "Rapid Deployment",
+                  description: "Get up and running in days, not months"
+                },
+                {
+                  icon: <Users className="w-12 h-12 text-pink-400" />,
+                  title: "24/7 Support",
+                  description: "Round-the-clock expert support when you need it most"
+                }
+              ].map((feature, index) => (
+                <motion.div
+                  key={index}
+                  className="text-center p-8 rounded-2xl bg-gray-800/30 backdrop-blur-sm border border-gray-700/50 hover:border-cyan-500/50 transition-all duration-300 hover:transform hover:scale-105"
+                  variants={fadeInUp}
+                  whileHover={{ y: -10 }}
                 >
-                  Start Free Trial
-                </motion.button>
-                <motion.button
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  className="px-10 py-5 border-2 border-purple-400 text-purple-400 font-semibold text-lg rounded-xl hover:bg-purple-400 hover:text-black transition-all duration-300"
-                >
-                  Schedule Demo
-                </motion.button>
-              </div>
+                  <div className="mb-4 flex justify-center">
+                    {feature.icon}
+                  </div>
+                  <h3 className="text-xl font-semibold mb-3 text-white">{feature.title}</h3>
+                  <p className="text-gray-300">{feature.description}</p>
+                </motion.div>
+              ))}
             </motion.div>
           </div>
         </section>
