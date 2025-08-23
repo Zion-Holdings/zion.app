@@ -2,6 +2,7 @@ import React, { Suspense, lazy, useState, useEffect } from 'react';
 import Layout from './layout/Layout';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ArrowRight, Play, Star, Users, Award, TrendingUp, Brain, Shield, Rocket, Loader2 } from 'lucide-react';
+import Link from 'next/link';
 
 // Lazy load components for better performance
 const UltraFuturisticServiceCard2026 = lazy(() => import('./ui/UltraFuturisticServiceCard2026'));
@@ -267,6 +268,107 @@ const Homepage2025: React.FC = () => {
                 </motion.div>
               ))}
             </div>
+          </div>
+        </motion.section>
+
+        {/* Revolutionary 2036 Services Preview */}
+        <motion.section 
+          className="py-20 px-4 bg-gradient-to-r from-purple-500/5 to-pink-500/5 relative"
+          initial={{ opacity: 0, y: 100 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.8 }}
+        >
+          <div className="max-w-6xl mx-auto">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+              className="text-center mb-16"
+            >
+              <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-purple-400 via-pink-500 to-cyan-400 bg-clip-text text-transparent">
+                Revolutionary 2036 Services
+              </h2>
+              <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+                Experience the future of technology with our revolutionary services that combine quantum computing, consciousness AI, and holographic technology
+              </p>
+            </motion.div>
+            
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              viewport={{ once: true }}
+              className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12"
+            >
+              {[
+                {
+                  icon: '🧠⚛️',
+                  title: 'Quantum Neural Network Platform',
+                  description: 'Next-generation quantum AI with neural consciousness',
+                  price: '$2,999/month',
+                  link: '/revolutionary-2036-futuristic-services-showcase'
+                },
+                {
+                  icon: '🌐✨',
+                  title: 'Holographic Metaverse Platform',
+                  description: 'Immersive holographic reality experiences',
+                  price: '$1,499/month',
+                  link: '/revolutionary-2036-futuristic-services-showcase'
+                },
+                {
+                  icon: '🛡️⚛️',
+                  title: 'Quantum Cybersecurity Platform',
+                  description: 'Unbreakable quantum-resistant security',
+                  price: '$3,999/month',
+                  link: '/revolutionary-2036-futuristic-services-showcase'
+                }
+              ].map((service, index) => (
+                <motion.div
+                  key={service.title}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: 0.3 + index * 0.1 }}
+                  viewport={{ once: true }}
+                  className="group"
+                >
+                  <div className="p-6 rounded-2xl bg-gradient-to-br from-purple-600/20 to-indigo-700/20 border border-purple-400/30 hover:bg-opacity-30 transition-all duration-300 transform hover:scale-105 h-full">
+                    <div className="text-4xl mb-4">{service.icon}</div>
+                    <h3 className="text-xl font-bold text-white mb-3 group-hover:text-purple-300 transition-colors">
+                      {service.title}
+                    </h3>
+                    <p className="text-gray-300 text-sm mb-4">
+                      {service.description}
+                    </p>
+                    <div className="text-2xl font-bold text-white mb-4">{service.price}</div>
+                    <Link href={service.link}>
+                      <button className="w-full px-6 py-3 bg-gradient-to-r from-purple-500 to-pink-600 text-white font-semibold rounded-lg hover:from-purple-600 hover:to-pink-700 transition-all duration-300 transform hover:scale-105 shadow-lg shadow-purple-500/25">
+                        <span className="flex items-center justify-center gap-2">
+                          Learn More
+                          <ArrowRight className="w-4 h-4" />
+                        </span>
+                      </button>
+                    </Link>
+                  </div>
+                </motion.div>
+              ))}
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.4 }}
+              viewport={{ once: true }}
+              className="text-center"
+            >
+              <Link href="/revolutionary-2036-futuristic-services-showcase">
+                <button className="px-10 py-4 bg-gradient-to-r from-purple-500 via-pink-500 to-cyan-500 text-white font-semibold rounded-xl hover:from-purple-600 hover:via-pink-600 hover:to-cyan-600 transition-all duration-300 transform hover:scale-105 flex items-center gap-3 mx-auto shadow-2xl shadow-purple-500/25">
+                  Explore All Revolutionary 2036 Services
+                  <ArrowRight className="w-6 h-6" />
+                </button>
+              </Link>
+            </motion.div>
           </div>
         </motion.section>
 
