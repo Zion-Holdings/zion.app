@@ -1,1 +1,1 @@
-export default function SustainableTechnologyPractices() { return <div>Sustainable Technology Practices</div>; }
+export default function Page(){return null}

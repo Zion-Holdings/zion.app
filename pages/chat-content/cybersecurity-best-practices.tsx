@@ -1,1 +1,1 @@
-export default function CybersecurityBestPractices() { return <div>Cybersecurity Best Practices</div>; }
+export default function Page(){return null}

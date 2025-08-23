@@ -1,5 +1,3 @@
-export default Contact;
-=======
 export default function Contact() {
   return (
     <div className="space-y-2">
@@ -12,3 +10,5 @@ export default function Contact() {
 export default function Contact() {
   return <div>Contact Us</div>;
 }
+=======
+export default function Page(){return null}

@@ -1,3 +1,1 @@
-export default function TalentIndex() {
-  return <div>Talent Directory</div>;
-}
+export default function Page(){return null}

@@ -1,1 +1,1 @@
-export default function TechnologyImplementationStrategies() { return <div>Technology Implementation Strategies</div>; }
+export default function Page(){return null}

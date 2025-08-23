@@ -1,1 +1,1 @@
-export default function DataAnalyticsImplementation() { return <div>Data Analytics Implementation</div>; }
+export default function Page(){return null}

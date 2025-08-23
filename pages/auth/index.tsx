@@ -1,3 +1,1 @@
-export default function AuthIndex() {
-  return <div>Auth</div>;
-}
+export default function Page(){return null}
