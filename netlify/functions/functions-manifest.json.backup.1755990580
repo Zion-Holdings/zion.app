@@ -1,5 +1,9 @@
 {
+<<<<<<< HEAD
+  "generatedAt": "2025-08-11T23:48:32.854Z",
+=======
   "generatedAt": "2025-08-11T23:48:15.348Z",
+>>>>>>> origin/cursor/invent-and-deploy-autonomous-cloud-automations-846d
   "functions": [
     "a11y-alt-text-runner",
     "adaptive-orchestrator",
@@ -97,7 +101,11 @@
     "site-crawler",
     "site-promo-orchestrator",
     "sitemap_runner",
+<<<<<<< HEAD
+    "smart-redirects-manager",
+=======
     "smart-redirector",
+>>>>>>> origin/cursor/invent-and-deploy-autonomous-cloud-automations-846d
     "stale-content-auditor-runner",
     "structured-data-generator",
     "todo-scanner-runner",
