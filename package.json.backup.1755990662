@@ -394,6 +394,15 @@
     "automation:pm2:cron": "npm run pm2:cron:start && npm run pm2:bootstrap:logrotate && pm2 save",
     "postautomation": "npm run automation:git-sync",
     "lint:staged": "lint-staged",
+<<<<<<< HEAD
+    "performance:audit": "node automation/performance-audit.cjs",
+    "supervisor:start": "bash automation/supervisor/supervisor-cron.sh start",
+    "supervisor:stop": "bash automation/supervisor/supervisor-cron.sh stop",
+    "supervisor:status": "bash automation/supervisor/supervisor-cron.sh status",
+    "supervisor:run-once": "node automation/supervisor/supervisor-orchestrator.cjs run-once",
+    "supervisor:discover": "node automation/supervisor-agents-factory.cjs"
+  },
+=======
     "ui-evolution:start": "node automation/ui-evolution-launcher.js start",
     "ui-evolution:once": "node automation/ui-evolution-launcher.js once",
     "ui-evolution:analyze": "node automation/ui-evolution-launcher.js analyze",
@@ -419,6 +428,7 @@
       "cron:remove": "bash automation/install-cron.sh remove",
       "cron:status": "bash automation/install-cron.sh status"
     },
+>>>>>>> origin/cursor/automate-error-fixing-and-deploy-to-main-8fed
   "dependencies": {
     "@google-analytics/data": "^5.2.0",
     "@google/generative-ai": "^0.24.1",
