@@ -297,6 +297,20 @@
   name = "duplicate-media-finder-runner"
   schedule = "0 2 * * *"
 
+<<<<<<< HEAD
+# Cron Hub — intelligent cloud schedulers
+[[scheduled.functions]]
+  name = "cron-hub"
+  schedule = "*/1 * * * *"
+
+[[scheduled.functions]]
+  name = "cron-supervisor"
+  schedule = "*/5 * * * *"
+
+[[scheduled.functions]]
+  name = "cron-heartbeat"
+=======
 [[scheduled.functions]]
   name = "autonomous-master-orchestrator"
+>>>>>>> origin/cursor/develop-autonomous-cloud-agents-for-automation-orchestration-2dcc
   schedule = "*/1 * * * *"
