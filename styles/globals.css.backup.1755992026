@@ -69,6 +69,113 @@
   box-shadow: var(--holographic-glow);
 }
 
+<<<<<<< HEAD
+/* Enhanced Selection */
+::selection {
+  background: rgba(0, 255, 255, 0.4);
+  color: white;
+  text-shadow: 0 0 10px rgba(0, 255, 255, 0.8);
+}
+
+::-moz-selection {
+  background: rgba(0, 255, 255, 0.4);
+  color: white;
+  text-shadow: 0 0 10px rgba(0, 255, 255, 0.8);
+}
+
+/* Enhanced Body Styles */
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  background: #000;
+  color: white;
+  overflow-x: hidden;
+  position: relative;
+  line-height: 1.6;
+}
+
+/* Futuristic font for special elements */
+.futuristic-font {
+  font-family: 'Orbitron', monospace;
+  letter-spacing: 0.1em;
+}
+
+.particles-bg::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: 
+    radial-gradient(circle at 20% 80%, rgba(0, 255, 255, 0.15) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(139, 92, 246, 0.15) 0%, transparent 50%),
+    radial-gradient(circle at 40% 40%, rgba(236, 73, 153, 0.15) 0%, transparent 50%),
+    radial-gradient(circle at 60% 60%, rgba(16, 185, 129, 0.15) 0%, transparent 50%),
+    radial-gradient(circle at 90% 10%, rgba(245, 158, 11, 0.15) 0%, transparent 50%),
+    radial-gradient(circle at 10% 50%, rgba(59, 130, 246, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 70% 70%, rgba(168, 85, 247, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 30% 90%, rgba(236, 72, 153, 0.12) 0%, transparent 50%),
+    radial-gradient(circle at 85% 60%, rgba(16, 185, 129, 0.08) 0%, transparent 50%),
+    radial-gradient(circle at 15% 30%, rgba(139, 92, 246, 0.1) 0%, transparent 50%);
+  pointer-events: none;
+  z-index: -1;
+  animation: backgroundFloat 30s ease-in-out infinite;
+}
+
+/* Futuristic Grid Pattern */
+body::after {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: 
+    radial-gradient(circle at 20% 80%, rgba(0, 255, 255, 0.15) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(139, 92, 246, 0.15) 0%, transparent 50%),
+    radial-gradient(circle at 40% 40%, rgba(236, 73, 153, 0.15) 0%, transparent 50%),
+    radial-gradient(circle at 60% 60%, rgba(16, 185, 129, 0.1) 0%, transparent 50%);
+  pointer-events: none;
+  z-index: -1;
+  animation: backgroundFloat 25s ease-in-out infinite;
+}
+
+/* Enhanced Quantum Matrix Background */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    linear-gradient(90deg, rgba(0, 255, 255, 0.02) 1px, transparent 1px),
+    linear-gradient(0deg, rgba(139, 92, 246, 0.02) 1px, transparent 1px);
+  background-size: 50px 50px;
+  pointer-events: none;
+  z-index: -1;
+  animation: matrixFlow 30s linear infinite;
+}
+
+/* Enhanced Neural Network Background */
+body::after {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: 
+    radial-gradient(circle at 25% 25%, rgba(16, 185, 129, 0.05) 0%, transparent 40%),
+    radial-gradient(circle at 75% 75%, rgba(236, 73, 153, 0.05) 0%, transparent 40%),
+    radial-gradient(circle at 50% 50%, rgba(0, 255, 255, 0.03) 0%, transparent 60%);
+  pointer-events: none;
+  z-index: -1;
+  animation: neuralPulse 25s ease-in-out infinite;
+}
+
+@keyframes backgroundFloat {
+=======
 /* Focus styles */
 *:focus {
   outline: 2px solid var(--primary);
@@ -94,6 +201,7 @@
 }
 
 @keyframes float {
+>>>>>>> origin/cursor/enhance-app-with-micro-saas-and-website-improvements-eee8
   0%, 100% {
     transform: translateY(0px) rotate(0deg);
   }
@@ -503,6 +611,17 @@
   }
 }
 
+<<<<<<< HEAD
+.autonomous-flow {
+  background: linear-gradient(90deg, 
+    transparent 0%, 
+    rgba(59, 130, 246, 0.1) 25%, 
+    rgba(147, 51, 234, 0.1) 50%, 
+    rgba(16, 185, 129, 0.1) 75%, 
+    transparent 100%);
+  background-size: 200% 100%;
+  animation: autonomousFlow 3s ease-in-out infinite;
+=======
 /* New enhanced animations */
 @keyframes shimmer {
   0% {
@@ -563,6 +682,7 @@
 /* Animation classes */
 .animate-fade-in {
   animation: fade-in 0.8s ease-out forwards;
+>>>>>>> origin/cursor/enhance-app-with-micro-saas-and-website-improvements-eee8
 }
 
 @keyframes autonomousFlow {
@@ -610,6 +730,197 @@
   100% { left: 100%; }
 }
 
+<<<<<<< HEAD
+.manufacturing-pulse {
+  animation: manufacturingPulse 1.5s ease-in-out infinite;
+}
+
+@keyframes manufacturingPulse {
+  0%, 100% { 
+    transform: scale(1) rotate(0deg);
+    filter: hue-rotate(0deg);
+  }
+  50% { 
+    transform: scale(1.02) rotate(1deg);
+    filter: hue-rotate(10deg);
+  }
+}
+
+.futuristic-text-gradient {
+  background: linear-gradient(
+    45deg,
+    #3b82f6,
+    #8b5cf6,
+    #ec4899,
+    #f59e0b,
+    #10b981,
+    #3b82f6
+  );
+  background-size: 300% 300%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  animation: futuristicTextGradient 4s ease-in-out infinite;
+}
+
+@keyframes futuristicTextGradient {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+.quantum-matrix {
+  background-image: 
+    radial-gradient(circle at 25% 25%, rgba(16, 185, 129, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 75% 75%, rgba(59, 130, 246, 0.1) 0%, transparent 50%),
+    linear-gradient(45deg, transparent 49%, rgba(147, 51, 234, 0.1) 50%, transparent 51%);
+  background-size: 100px 100px, 100px 100px, 20px 20px;
+  animation: quantumMatrix 10s linear infinite;
+}
+
+@keyframes quantumMatrix {
+  0% { transform: translate(0, 0) rotate(0deg); }
+  100% { transform: translate(100px, 100px) rotate(360deg); }
+}
+
+/* New futuristic effects */
+.quantum-glow {
+  box-shadow: 
+    0 0 20px rgba(59, 130, 246, 0.3),
+    0 0 40px rgba(147, 51, 234, 0.2),
+    0 0 60px rgba(16, 185, 129, 0.1);
+  animation: quantumPulse 4s ease-in-out infinite;
+}
+
+@keyframes quantumPulse {
+  0%, 100% { 
+    box-shadow: 
+      0 0 20px rgba(59, 130, 246, 0.3),
+      0 0 40px rgba(147, 51, 234, 0.2),
+      0 0 60px rgba(16, 185, 129, 0.1);
+  }
+  50% { 
+    box-shadow: 
+      0 0 30px rgba(59, 130, 246, 0.5),
+      0 0 60px rgba(147, 51, 234, 0.3),
+      0 0 90px rgba(16, 185, 129, 0.2);
+  }
+}
+
+.holographic-border {
+  position: relative;
+  border: 2px solid transparent;
+  background: linear-gradient(45deg, #3b82f6, #8b5cf6, #06b6d4, #10b981);
+  background-clip: padding-box;
+  border-radius: 1rem;
+}
+
+.holographic-border::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: linear-gradient(45deg, #3b82f6, #8b5cf6, #06b6d4, #10b981);
+  border-radius: 1rem;
+  z-index: -1;
+  animation: holographicRotate 8s linear infinite;
+}
+
+@keyframes holographicRotate {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.neural-network-bg {
+  background-image: 
+    radial-gradient(circle at 20% 50%, rgba(59, 130, 246, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(147, 51, 234, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 40% 80%, rgba(16, 185, 129, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 60% 40%, rgba(239, 68, 68, 0.1) 0%, transparent 50%);
+  background-size: 200px 200px;
+  animation: neuralFlow 20s ease-in-out infinite;
+}
+
+@keyframes neuralFlow {
+  0%, 100% { 
+    background-position: 0% 0%, 100% 0%, 0% 100%, 100% 100%;
+  }
+  25% { 
+    background-position: 100% 0%, 0% 0%, 100% 100%, 0% 100%;
+  }
+  50% { 
+    background-position: 100% 100%, 0% 100%, 100% 0%, 0% 0%;
+  }
+  75% { 
+    background-position: 0% 100%, 100% 100%, 0% 0%, 100% 0%;
+  }
+}
+
+.cyberpunk-glow {
+  box-shadow: 
+    0 0 10px rgba(239, 68, 68, 0.5),
+    0 0 20px rgba(239, 68, 68, 0.3),
+    0 0 30px rgba(239, 68, 68, 0.1);
+  animation: cyberpunkFlicker 3s ease-in-out infinite;
+}
+
+@keyframes cyberpunkFlicker {
+  0%, 100% { 
+    box-shadow: 
+      0 0 10px rgba(239, 68, 68, 0.5),
+      0 0 20px rgba(239, 68, 68, 0.3),
+      0 0 30px rgba(239, 68, 68, 0.1);
+  }
+  50% { 
+    box-shadow: 
+      0 0 15px rgba(239, 68, 68, 0.7),
+      0 0 30px rgba(239, 68, 68, 0.5),
+      0 0 45px rgba(239, 68, 68, 0.3);
+  }
+}
+
+.quantum-holographic {
+  background: linear-gradient(135deg, 
+    rgba(59, 130, 246, 0.1) 0%, 
+    rgba(147, 51, 234, 0.1) 25%, 
+    rgba(16, 185, 129, 0.1) 50%, 
+    rgba(239, 68, 68, 0.1) 75%, 
+    rgba(59, 130, 246, 0.1) 100%);
+  border: 1px solid rgba(59, 130, 246, 0.3);
+  position: relative;
+  overflow: hidden;
+}
+
+.quantum-holographic::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: conic-gradient(
+    from 0deg,
+    transparent,
+    rgba(59, 130, 246, 0.1),
+    transparent,
+    rgba(147, 51, 234, 0.1),
+    transparent,
+    rgba(16, 185, 129, 0.1),
+    transparent,
+    rgba(239, 68, 68, 0.1),
+    transparent
+  );
+  animation: quantumRotate 10s linear infinite;
+}
+
+@keyframes quantumRotate {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Enhanced hover effects */
+=======
 /* New animation classes */
 .animate-shimmer {
   background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
@@ -641,6 +952,7 @@
 .animate-stagger-5 { animation-delay: 0.5s; }
 
 /* Hover effects */
+>>>>>>> origin/cursor/enhance-app-with-micro-saas-and-website-improvements-eee8
 .hover-lift {
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -658,6 +970,31 @@
     0 0 40px rgba(147, 51, 234, 0.2);
 }
 
+<<<<<<< HEAD
+/* Advanced text effects */
+.text-gradient-animated {
+  background: linear-gradient(45deg, #3b82f6, #8b5cf6, #06b6d4, #10b981, #3b82f6);
+  background-size: 300% 300%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  animation: textGradient 6s ease infinite;
+}
+
+@keyframes textGradient {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+/* Enhanced scrollbar */
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(31, 41, 55, 0.5);
+  border-radius: 6px;
+=======
 /* Enhanced hover effects */
 .hover-scale {
   transition: transform 0.2s ease;
@@ -695,6 +1032,7 @@
 
 .gradient-text-purple {
   @apply bg-gradient-to-r from-purple-400 via-purple-500 to-purple-600 bg-clip-text text-transparent;
+>>>>>>> origin/cursor/enhance-app-with-micro-saas-and-website-improvements-eee8
 }
 
 ::-webkit-scrollbar-thumb {
@@ -707,6 +1045,12 @@
   background: linear-gradient(45deg, #2563eb, #7c3aed);
 }
 
+<<<<<<< HEAD
+/* Enhanced selection */
+::selection {
+  background: rgba(59, 130, 246, 0.3);
+  color: #ffffff;
+=======
 /* Enhanced glass effects */
 .glass-strong {
   @apply bg-white/10 backdrop-blur-2xl border border-white/20;
@@ -719,6 +1063,7 @@
 /* Responsive utilities */
 .container-cursor {
   @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+>>>>>>> origin/cursor/enhance-app-with-micro-saas-and-website-improvements-eee8
 }
 
 ::-moz-selection {
@@ -734,6 +1079,16 @@
     0 0 0 6px rgba(147, 51, 234, 0.1);
 }
 
+<<<<<<< HEAD
+/* Enhanced loading states */
+.loading-pulse {
+  animation: loadingPulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes loadingPulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+=======
 /* Custom cursor styles */
 .cursor-dot {
   @apply w-2 h-2 bg-blue-500 rounded-full;
@@ -741,6 +1096,7 @@
 
 .cursor-dot-outline {
   @apply w-4 h-4 border border-blue-500 rounded-full;
+>>>>>>> origin/cursor/enhance-app-with-micro-saas-and-website-improvements-eee8
 }
 
 /* Enhanced backdrop blur effects */
@@ -812,6 +1168,17 @@
   }
 }
 
+<<<<<<< HEAD
+/* Enhanced Accessibility */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+=======
 /* Enhanced background patterns */
 .bg-grid-dense {
   background-image: 
@@ -827,6 +1194,7 @@
 /* Gradient backgrounds */
 .bg-gradient-cursor {
   @apply bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900;
+>>>>>>> origin/cursor/enhance-app-with-micro-saas-and-website-improvements-eee8
 }
 
 /* Enhanced Focus States */
@@ -850,6 +1218,8 @@
     background: none !important;
   }
 }
+<<<<<<< HEAD
+=======
 
 /* Enhanced gradient backgrounds */
 .bg-gradient-rainbow {
@@ -997,3 +1367,4 @@
     page-break-before: always;
   }
 }
+>>>>>>> origin/cursor/enhance-app-with-micro-saas-and-website-improvements-eee8

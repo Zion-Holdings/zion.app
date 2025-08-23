@@ -1476,6 +1476,17 @@ export default function MicroSaasPage() {
         'API access'
       ],
       popular: false,
+<<<<<<< HEAD
+      icon: '⚙️',
+      color: 'from-gray-500 to-slate-600',
+      textColor: 'text-gray-400',
+      link: 'https://workflow.ziontechgroup.com',
+      marketPosition: 'Competitive with Zapier ($0-599), Make ($0-29), and n8n ($0-20)',
+      targetAudience: 'Operations teams, process managers, and automation specialists',
+      trialDays: 14,
+      setupTime: '30 minutes',
+      category: 'Operations & Automation'
+=======
       icon: '🎯',
       color: 'from-teal-500 to-cyan-600',
       textColor: 'text-teal-400',
@@ -1771,6 +1782,7 @@ export default function MicroSaasPage() {
       link: 'https://ziontechgroup.com/ai-social-media-automation',
       marketPosition: 'Competitive with Buffer ($15-99), Hootsuite ($29-599), and Later ($18-40)',
       targetAudience: 'Social media managers, marketers, and content creators'
+>>>>>>> origin/cursor/enhance-app-with-micro-saas-and-website-improvements-eee8
     }
   ];
 
@@ -1801,9 +1813,15 @@ export default function MicroSaasPage() {
 
   const competitiveAdvantages = [
     {
+<<<<<<< HEAD
+      icon: '⚡',
+      title: 'Lightning Fast Setup',
+      description: 'Get started in minutes, not weeks. Our services are designed for immediate value delivery with intuitive interfaces and automated onboarding.'
+=======
       title: "Specialized Focus",
       description: "Each of our 65+ services is designed for a specific business need, ensuring deep functionality and expertise without feature bloat.",
       icon: "🎯"
+>>>>>>> origin/cursor/enhance-app-with-micro-saas-and-website-improvements-eee8
     },
     {
       icon: '💰',
@@ -1870,7 +1888,11 @@ export default function MicroSaasPage() {
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-emerald-400"> Every Business Need</span>
             </h1>
             <p className="text-xl text-gray-400 max-w-5xl mx-auto leading-relaxed mb-12">
+<<<<<<< HEAD
+              75+ specialized micro SaaS solutions covering AI-powered content creation, video generation, design systems, performance monitoring, 
+=======
               65+ specialized micro SaaS solutions covering AI-powered content creation, video generation, design systems, performance monitoring, 
+>>>>>>> origin/cursor/enhance-app-with-micro-saas-and-website-improvements-eee8
               SEO automation, chatbots, business intelligence, email marketing, social media management, 
               customer feedback, billing, project management, API infrastructure, e-commerce analytics, legal document generation, 
               HR management, AI customer support, data backup, AI code assistance, cybersecurity monitoring, supply chain analytics, 
@@ -1878,8 +1900,13 @@ export default function MicroSaasPage() {
               meeting transcription, invoice automation, churn prediction, lead scoring, real-time analytics, content optimization, 
               predictive maintenance, email security, dynamic pricing, customer segmentation, sales intelligence, content calendar optimization, 
               email deliverability, landing page building, customer journey mapping, contract analysis, sales forecasting, customer service analytics,
+<<<<<<< HEAD
+              product recommendations, fraud detection, inventory forecasting, customer onboarding, social media automation, lead generation, 
+              churn prediction, and advanced analytics. Focused, affordable solutions that deliver specific value 
+=======
               product recommendations, fraud detection, inventory forecasting, customer onboarding, social media automation, fraud detection, 
               inventory forecasting, and more. Focused, affordable solutions that deliver specific value 
+>>>>>>> origin/cursor/enhance-app-with-micro-saas-and-website-improvements-eee8
               without the complexity of enterprise platforms. Start with a free trial and scale as you grow.
             </p>
             

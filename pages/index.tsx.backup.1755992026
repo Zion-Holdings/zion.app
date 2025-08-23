@@ -595,6 +595,67 @@ export default function HomePage() {
                 </motion.div>
               ))}
             </div>
+<<<<<<< HEAD
+          </div>
+
+        {/* Contact CTA Section */}
+        <section className="py-20 px-4 sm:px-6 lg:px-8">
+          <div className="max-w-4xl mx-auto text-center">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+            >
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-6">
+                Ready to Experience the
+                <span className="bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
+                  {' '}Future of Technology?
+                </span>
+              </h2>
+              <p className="text-xl text-gray-300 mb-8">
+                Contact our team of technology experts to discuss how our revolutionary 2029 services 
+                can transform your business and propel you into the future.
+              </p>
+              
+              <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8">
+                <motion.button
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  className="px-8 py-4 bg-gradient-to-r from-cyan-500 to-blue-500 text-white rounded-xl font-semibold text-lg hover:from-cyan-600 hover:to-blue-600 transition-all duration-200"
+                >
+                  Schedule Consultation
+                </motion.button>
+                <motion.button
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  className="px-8 py-4 border-2 border-cyan-400 text-cyan-400 rounded-xl font-semibold text-lg hover:bg-cyan-400 hover:text-black transition-all duration-200"
+                >
+                  View Pricing
+                </motion.button>
+              </div>
+
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 text-gray-300">
+                <div className="flex items-center justify-center space-x-2">
+                  <Phone className="w-5 h-5 text-cyan-400" />
+                  <span>{contactInfo.mobile}</span>
+                </div>
+                <div className="flex items-center justify-center space-x-2">
+                  <Mail className="w-5 h-5 text-purple-400" />
+                  <span>{contactInfo.email}</span>
+                </div>
+                <div className="flex items-center justify-center space-x-2">
+                  <MapPin className="w-5 h-5 text-pink-400" />
+                  <span className="text-sm">{contactInfo.address}</span>
+                </div>
+              </div>
+            </motion.div>
+          </div>
+          
+          <div className="text-center mt-12">
+            <p className="text-gray-300 mb-6">
+              All plans include 99.9% uptime guarantee, enterprise-grade security, and 14-day free trials
+=======
             <h2 className="text-4xl sm:text-5xl font-bold mb-8 text-white leading-tight">
               Specialized Tools for Every Business Need
             </h2>
@@ -603,6 +664,7 @@ export default function HomePage() {
               SEO automation, chatbots, business intelligence, email marketing, social media, project management, 
               billing, HR operations, video editing, cloud optimization, legal automation, sales intelligence, customer analytics, 
               fraud detection, inventory forecasting, contract analysis, and more. Focused value with transparent pricing and 14-day free trials.
+>>>>>>> origin/cursor/enhance-app-with-micro-saas-and-website-improvements-eee8
             </p>
           </div>
 
@@ -984,8 +1046,13 @@ export default function HomePage() {
             </p>
           </div>
 
+<<<<<<< HEAD
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+            <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20 hover:border-white/40 transition-all duration-300 hover:scale-105">
+=======
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
             <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20 hover:border-white/40 transition-all duration-300">
+>>>>>>> origin/cursor/enhance-app-with-micro-saas-and-website-improvements-eee8
               <div className="text-3xl mb-4">📝</div>
               <h3 className="text-xl font-bold text-white mb-2">AI Content Generator Pro</h3>
               <p className="text-green-100 text-sm mb-4">Professional AI-powered content creation with SEO optimization</p>
