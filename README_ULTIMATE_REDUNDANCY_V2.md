@@ -231,7 +231,7 @@ The system uses a comprehensive health scoring system:
 
 ### Monitoring Dashboard
 
-Access the monitoring dashboard at `http://localhost:3001` to view:
+Access the monitoring dashboard at `https://bolt.new.zion.app/monitoring` to view:
 
 - Real-time system status
 - Health metrics and scores

@@ -146,7 +146,7 @@ LHCI_GITHUB_APP_TOKEN=your_lighthouse_token  # Optional
 ```bash
 NODE_VERSION=20
 NPM_VERSION=10
-BASE_URL=http://localhost:3000
+BASE_URL=https://bolt.new.zion.app
 ```
 
 ## 📈 Expected Benefits

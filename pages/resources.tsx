@@ -64,6 +64,31 @@ const ResourcesPage: React.FC = () => {
     }
   ];
 
+  const tools = [
+    {
+      id: 'automation-assessment',
+      title: 'Automation Readiness Assessment',
+      description: 'Evaluate your organization\'s readiness for AI automation implementation.',
+      type: 'Interactive Tool',
+      estimatedTime: '15 minutes'
+    },
+    {
+      id: 'ai-maturity-model',
+      title: 'AI Maturity Model',
+      description: 'Assess your current AI capabilities and plan your transformation journey.',
+      type: 'Framework',
+      estimatedTime: '30 minutes'
+    },
+    {
+      id: 'performance-benchmark',
+      title: 'Performance Benchmarking Tool',
+      description: 'Compare your automation performance against industry standards.',
+      type: 'Analytics Tool',
+      estimatedTime: '20 minutes'
+    }
+  ];
+  ];
+
   return (
     <div className="min-h-screen bg-black text-white">
       <SEO 
