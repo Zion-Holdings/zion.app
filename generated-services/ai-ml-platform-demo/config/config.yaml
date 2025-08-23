@@ -1,0 +1,15 @@
+# Configuration for {{SERVICE_NAME}}
+service:
+  name: {{SERVICE_NAME}}
+  version: {{VERSION}}
+  environment: development
+
+api:
+  host: 0.0.0.0
+  port: 8000
+  debug: true
+
+ml:
+  model_path: ./models/
+  batch_size: 32
+  learning_rate: 0.001

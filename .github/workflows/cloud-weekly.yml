@@ -1,0 +1,32 @@
+name: Cloud Automation (Weekly)
+
+on:
+  schedule:
+    - cron: '0 4 * * 1'
+  workflow_dispatch: {}
+
+jobs:
+  weekly:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci --no-audit --no-fund
+
+      - name: Generate venture report
+        run: npm run venture:report || true
+
+      - name: Design audit and beautify
+        run: npm run design:analyze || true
+
+      - name: Repo conflicts check
+        run: npm run conflicts:check || true
