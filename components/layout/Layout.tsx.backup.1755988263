@@ -1,5 +1,9 @@
+<<<<<<< HEAD
+import React, { useState, useEffect, useCallback } from 'react';
+=======
 import React, { useState } from 'react';
 import Head from 'next/head';
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-6fab
 import UltraFuturisticNavigation2040 from './UltraFuturisticNavigation2040';
 import UltraFuturisticFooter2040 from './UltraFuturisticFooter2040';
 import EnhancedSidebar2025 from './EnhancedSidebar2025';
@@ -24,28 +28,104 @@ interface LayoutProps {
   keywords?: string;
   ogImage?: string;
   canonicalUrl?: string;
+<<<<<<< HEAD
+  structuredData?: object;
+=======
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-6fab
 }
 
 export default function Layout({ 
   children, 
+<<<<<<< HEAD
+  title = "Zion Tech Group - Revolutionary 2045 Technology",
+  description = "Pioneering the future of technology with revolutionary AI consciousness, quantum computing, and autonomous solutions that transform businesses worldwide.",
+  keywords = "AI consciousness, quantum computing, autonomous solutions, space technology, cybersecurity, business intelligence, Zion Tech Group, 2045 technology",
+  ogImage = "/og-image.jpg",
+  canonicalUrl,
+  structuredData
+=======
   title = "Zion Tech Group - Revolutionary AI, Quantum Computing & Space Technology Solutions",
   description = "Pioneering the future of technology with revolutionary AI consciousness, quantum computing, and autonomous solutions that transform businesses worldwide.",
   keywords = "AI, artificial intelligence, quantum computing, space technology, cybersecurity, cloud infrastructure, enterprise solutions, autonomous systems, consciousness AI",
   ogImage = "https://ziontechgroup.com/og-image.jpg",
   canonicalUrl
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-6fab
 }: LayoutProps) {
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const [isPerformanceMonitoringEnabled, setIsPerformanceMonitoringEnabled] = useState(false);
   const [isAccessibilityEnabled, setIsAccessibilityEnabled] = useState(true);
   const [isCookieConsentEnabled, setIsCookieConsentEnabled] = useState(true);
 
+<<<<<<< HEAD
+  // Performance optimization: Check user preferences
+  useEffect(() => {
+    // Check if user has enabled performance monitoring
+    const perfEnabled = localStorage.getItem('performance-monitoring-enabled') === 'true';
+    setIsPerformanceMonitoringEnabled(perfEnabled);
+
+    // Check if user has disabled accessibility features
+    const accessibilityDisabled = localStorage.getItem('accessibility-disabled') === 'true';
+    setIsAccessibilityEnabled(!accessibilityDisabled);
+
+    // Check if user has disabled cookie consent
+    const cookieConsentDisabled = localStorage.getItem('cookie-consent-disabled') === 'true';
+    setIsCookieConsentEnabled(!cookieConsentDisabled);
+  }, []);
+
+  // Performance optimization: Handle sidebar state
+  const handleSidebarToggle = useCallback(() => {
+    setSidebarOpen(prev => !prev);
+  }, []);
+
+  const handleSidebarClose = useCallback(() => {
+    setSidebarOpen(false);
+  }, []);
+
+  // Performance optimization: Keyboard shortcuts
+  useEffect(() => {
+    const handleKeyPress = (event: KeyboardEvent) => {
+      // Toggle sidebar with Ctrl+Shift+S
+      if (event.ctrlKey && event.shiftKey && event.key === 'S') {
+        event.preventDefault();
+        handleSidebarToggle();
+      }
+      
+      // Toggle performance monitoring with Ctrl+Shift+P
+      if (event.ctrlKey && event.shiftKey && event.key === 'P') {
+        event.preventDefault();
+        setIsPerformanceMonitoringEnabled(prev => !prev);
+        localStorage.setItem('performance-monitoring-enabled', (!isPerformanceMonitoringEnabled).toString());
+      }
+      
+      // Toggle accessibility with Ctrl+Shift+A
+      if (event.ctrlKey && event.shiftKey && event.key === 'A') {
+        event.preventDefault();
+        setIsAccessibilityEnabled(prev => !prev);
+        localStorage.setItem('accessibility-disabled', (!isAccessibilityEnabled).toString());
+      }
+    };
+
+    document.addEventListener('keydown', handleKeyPress);
+    return () => document.removeEventListener('keydown', handleKeyPress);
+  }, [handleSidebarToggle, isPerformanceMonitoringEnabled, isAccessibilityEnabled]);
+
+  // Default structured data for Zion Tech Group
+  const defaultStructuredData = {
+=======
   // Structured data for better SEO
   const structuredData = {
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-6fab
     "@context": "https://schema.org",
     "@type": "Organization",
     "name": "Zion Tech Group",
     "url": "https://ziontechgroup.com",
     "logo": "https://ziontechgroup.com/logo.png",
+<<<<<<< HEAD
+    "description": "Pioneering the future of technology with revolutionary AI consciousness, quantum computing, and autonomous solutions that transform businesses worldwide.",
+    "foundingDate": "2020",
+    "address": {
+      "@type": "PostalAddress",
+=======
     "description": description,
     "address": {
       "@type": "PostalAddress",
@@ -53,10 +133,71 @@ export default function Layout({
       "addressLocality": "Middletown",
       "addressRegion": "DE",
       "postalCode": "19709",
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-6fab
       "addressCountry": "US"
     },
     "contactPoint": {
       "@type": "ContactPoint",
+<<<<<<< HEAD
+      "contactType": "customer service",
+      "email": "contact@ziontechgroup.com"
+    },
+    "sameAs": [
+      "https://linkedin.com/company/zion-tech-group",
+      "https://twitter.com/ziontechgroup",
+      "https://github.com/zion-tech-group"
+    ],
+    "serviceType": [
+      "AI & Machine Learning",
+      "Quantum Computing",
+      "Cybersecurity",
+      "Business Intelligence",
+      "Space Technology",
+      "Autonomous Systems"
+    ],
+    "areaServed": "Worldwide",
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Revolutionary Technology Services",
+      "itemListElement": [
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "AI Consciousness Evolution Platform",
+            "description": "Next-generation AI consciousness with emotional intelligence"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Quantum AI Hybrid Computing",
+            "description": "Quantum-powered AI with consciousness integration"
+          }
+        }
+      ]
+    }
+  };
+
+  const finalStructuredData = structuredData || defaultStructuredData;
+
+  useEffect(() => {
+    // Check for saved theme preference or default to dark mode
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme) {
+      setDarkMode(savedTheme === 'dark');
+    }
+  }, []);
+
+    <PerformanceOptimizer>
+      <div className="min-h-screen bg-black text-white relative overflow-x-hidden">
+        {/* Skip to content link for accessibility */}
+        <a href="#main" className="skip-link">Skip to main content</a>
+        
+        {/* Futuristic Background */}
+        <UltraFuturisticBackground2036 />
+=======
   return (
     <div className="min-h-screen bg-black text-white relative overflow-x-hidden">
       {/* Skip to content link for accessibility */}
@@ -236,5 +377,6 @@ export default function Layout({
         <CookieConsentBanner />
       </div>
     </>
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-6fab
   );
 }
