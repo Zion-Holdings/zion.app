@@ -1,11 +1,3 @@
-import type { NextPage } from 'next';
-import Head from 'next/head';
-import Link from 'next/link';
-
-export default function Contact() {
-  return <div className="p-6">Contact us</div>;
-}
-=======
 export default function ContactPage() {
   return (
     <>
@@ -229,5 +221,15 @@ export default function ContactPage() {
       <h1>Contact</h1>
       <p>Email us at founders@zion.example.com</p>
     </div>
+  );
+}
+=======
+import EnhancedLayout from '../components/layout/EnhancedLayout';
+
+export default function Contact() {
+  return (
+    <EnhancedLayout>
+      <div className="py-10">Contact Zion</div>
+    </EnhancedLayout>
   );
 }

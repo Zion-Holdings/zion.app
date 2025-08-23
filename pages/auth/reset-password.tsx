@@ -1,1 +1,9 @@
-export default function ResetPassword(){return <div className="p-6">Reset Password</div>;}
+import EnhancedLayout from '../../components/layout/EnhancedLayout';
+
+export default function ResetPassword() {
+  return (
+    <EnhancedLayout>
+      <div className="py-10">Reset Password</div>
+    </EnhancedLayout>
+  );
+}

@@ -1,1 +1,1 @@
-export default function Auto(){return <div className="p-6">Auto Update</div>;}
+export default function Page() { return <div className="py-10">Auto Update 16:30:00</div>; }

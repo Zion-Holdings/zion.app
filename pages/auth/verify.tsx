@@ -1,1 +1,9 @@
-export default function Verify(){return <div className="p-6">Verify</div>;}
+import EnhancedLayout from '../../components/layout/EnhancedLayout';
+
+export default function Verify() {
+  return (
+    <EnhancedLayout>
+      <div className="py-10">Verify</div>
+    </EnhancedLayout>
+  );
+}

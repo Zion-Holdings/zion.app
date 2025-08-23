@@ -1,1 +1,9 @@
-export default function AuthIndex(){return <div className="p-6">Auth</div>;}
+import EnhancedLayout from '../../components/layout/EnhancedLayout';
+
+export default function AuthIndex() {
+  return (
+    <EnhancedLayout>
+      <div className="py-10">Auth</div>
+    </EnhancedLayout>
+  );
+}

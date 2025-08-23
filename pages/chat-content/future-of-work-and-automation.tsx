@@ -1,1 +1,1 @@
-export default function Page(){return <div className="p-6">Future of Work & Automation</div>;}
+export default function Page() { return <div className="py-10">Future of Work and Automation</div>; }

@@ -1,8 +1,9 @@
-export default function BlockchainSolutionsPage() {
+import EnhancedLayout from '../components/layout/EnhancedLayout';
+
+export default function BlockchainSolutions() {
   return (
-    <div className="prose dark:prose-invert">
-      <h1>Blockchain Solutions</h1>
-      <p>Content coming soon.</p>
-    </div>
+    <EnhancedLayout>
+      <div className="py-10">Blockchain Solutions</div>
+    </EnhancedLayout>
   );
 }
