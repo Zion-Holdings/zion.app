@@ -4,8 +4,8 @@ import UltraFuturisticServiceCard2026 from './ui/UltraFuturisticServiceCard2026'
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { 
-  ArrowRight, Star, Users, Award, Clock, 
-  Brain, Atom, Rocket, Shield, Zap
+  ArrowRight, Star,
+  Brain, Atom, Shield, Zap
 } from 'lucide-react';
 
 const Homepage2025: React.FC = () => {
@@ -146,12 +146,21 @@ const Homepage2025: React.FC = () => {
               viewport={{ once: true }}
               className="text-center mt-12"
             >
-              <Link href="/services">
-                <button className="px-8 py-4 bg-gradient-to-r from-purple-500 to-pink-600 text-white font-semibold rounded-lg hover:from-purple-600 hover:to-pink-700 transition-all duration-300 transform hover:scale-105 flex items-center gap-2 mx-auto">
-                  View All Services
-                  <ArrowRight className="w-5 h-5" />
-                </button>
-              </Link>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <Link href="/comprehensive-2036-services-showcase">
+                  <button className="px-8 py-4 bg-gradient-to-r from-purple-500 to-pink-600 text-white font-semibold rounded-lg hover:from-purple-600 hover:to-pink-700 transition-all duration-300 transform hover:scale-105 flex items-center gap-2">
+                    <Star className="w-5 h-5" />
+                    2036 Services Showcase
+                    <ArrowRight className="w-5 h-5" />
+                  </button>
+                </Link>
+                <Link href="/services">
+                  <button className="px-8 py-4 border-2 border-purple-400 text-purple-400 font-semibold rounded-lg hover:bg-purple-400 hover:text-black transition-all duration-300 transform hover:scale-105 flex items-center gap-2">
+                    View All Services
+                    <ArrowRight className="w-5 h-5" />
+                  </button>
+                </Link>
+              </div>
             </motion.div>
           </div>
         </section>

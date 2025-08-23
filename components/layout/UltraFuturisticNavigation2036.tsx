@@ -3,15 +3,14 @@ import Link from 'next/link';
 import { motion, AnimatePresence } from 'framer-motion';
 import { 
   Menu, ChevronDown, X, Phone, Mail, MapPin, ArrowRight,
-  Brain, Rocket, Shield, Zap, Target, Atom, BookOpen,
-  Truck, DollarSign, BarChart3, Globe, Users, Star, Sparkles, 
-  Cpu, Lock, Cloud, Settings, Eye, Award, Clock, Heart, Lightbulb,
-  Search, Grid, List, TrendingUp, Shield as ShieldIcon, Globe as GlobeIcon,
-  User, ShoppingCart, Bell, HelpCircle, FileText, Video, Headphones, 
-  Code, Database, Network, Server, Monitor, Smartphone,
-  Camera, Gamepad2, Palette, Music, Film, BookOpenCheck,
-  Building, MessageCircle, Sparkles as SparklesIcon, Zap as ZapIcon,
-  Target as TargetIcon, Atom as AtomIcon, Brain as BrainIcon
+  Rocket, Shield, Target, BookOpen,
+  DollarSign, BarChart3, Users, Star,
+  Cpu, Settings, Heart,
+  Grid,
+  ShoppingCart, HelpCircle, FileText,
+  BookOpenCheck,
+  Building, MessageCircle,
+  Target as TargetIcon, Brain as BrainIcon
 } from 'lucide-react';
 
 interface NavigationItem {
@@ -70,7 +69,7 @@ const navigationItems: NavigationItem[] = [
         name: 'Quantum Technology', 
         href: '/quantum-services', 
         description: 'Quantum computing solutions',
-        icon: <AtomIcon className="w-4 h-4" />
+        icon: <TargetIcon className="w-4 h-4" />
       },
       { 
         name: 'Space Technology', 
@@ -94,7 +93,7 @@ const navigationItems: NavigationItem[] = [
   },
   {
     name: 'Showcase & Pricing',
-    href: '/comprehensive-services-showcase-2025',
+    href: '/comprehensive-2036-services-showcase',
     icon: <Star className="w-5 h-5" />,
     description: 'Services portfolio & pricing',
     badge: 'Showcase',
@@ -102,11 +101,17 @@ const navigationItems: NavigationItem[] = [
     featured: true,
     children: [
       { 
-        name: 'Services Showcase', 
-        href: '/comprehensive-services-showcase-2025', 
-        description: 'Complete services overview',
+        name: '2036 Services Showcase', 
+        href: '/comprehensive-2036-services-showcase', 
+        description: 'Latest innovative services',
         icon: <Grid className="w-4 h-4" />,
         featured: true
+      },
+      { 
+        name: '2025 Services Showcase', 
+        href: '/comprehensive-services-showcase-2025', 
+        description: 'Previous services overview',
+        icon: <Grid className="w-4 h-4" />
       },
       { 
         name: 'Pricing Plans', 
@@ -184,7 +189,7 @@ const navigationItems: NavigationItem[] = [
         name: 'Case Studies', 
         href: '/case-studies', 
         description: 'Success stories',
-        icon: <Award className="w-4 h-4" />
+        icon: <Star className="w-4 h-4" />
       },
       { 
         name: 'Support', 

@@ -51,6 +51,9 @@ import { real2025ExtraServices } from '../../data/real-2025-extra-services';
 import { real2026Q4ExpansionsV2 } from '../../data/real-2026-q4-expansions-v2';
 import { real2036ServiceExpansions } from '../../data/real-2036-service-expansions';
 import { real2026Q4ExpansionsV3 } from '../../data/real-2026-q4-expansions-v3';
+import { innovativeServices2036 } from '../../data/real-2036-innovative-services';
+import { itInfrastructureServices2036 } from '../../data/real-2036-it-infrastructure-services';
+import { specializedSolutions2036 } from '../../data/real-2036-specialized-solutions';
 
 function toSlug(value: string) {
   return value.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
@@ -112,7 +115,10 @@ export default function ServicesIndexPage() {
       real2035Q2AdditionsExtra as unknown[],
       real2025ExtraServices as unknown[],
       real2026Q4ExpansionsV2 as unknown[],
-      real2026Q4ExpansionsV3 as unknown[]
+      real2026Q4ExpansionsV3 as unknown[],
+      innovativeServices2036 as unknown[],
+      itInfrastructureServices2036 as unknown[],
+      specializedSolutions2036 as unknown[]
     )
     .concat(real2036ServiceExpansions as unknown[]);
   const byCategory: Record<string, unknown[]> = {};
@@ -151,14 +157,9 @@ export default function ServicesIndexPage() {
   const [shownCounts, setShownCounts] = React.useState<Record<string, number>>(() => Object.fromEntries(categories.map(c => [c, 12])));
   const [searchQuery, setSearchQuery] = React.useState('');
 
-  const normalized = (value: unknown) => {
-    const obj = value as { id?: string; name?: string; tagline?: string; description?: string };
-    return `${obj.id || ''} ${obj.name || ''} ${obj.tagline || ''} ${obj.description || ''}`.toLowerCase();
-  };
 
-  const filteredAll = searchQuery.trim().length
-    ? all.filter((s) => normalized(s).includes(searchQuery.toLowerCase()))
-    : all;
+
+
 
   return (
     <UltraFuturisticBackground variant="quantum" intensity="high">
