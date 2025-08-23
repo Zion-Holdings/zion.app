@@ -4,22 +4,18 @@ import SEOOptimizer from '../components/SEOOptimizer';
 import AnalyticsTracker from '../components/AnalyticsTracker';
 import ErrorBoundary from '../components/ErrorBoundary';
 import AccessibilityEnhancer from '../components/AccessibilityEnhancer';
-import PerformanceMonitor from '../components/PerformanceMonitor';
-import MobileOptimizer from '../components/MobileOptimizer';
-import PerformanceDashboard from '../components/PerformanceDashboard';
+import PerformanceOptimizer from '../components/PerformanceOptimizer';
 
 const HomePage: React.FC = () => {
   return (
     <ErrorBoundary>
       <SEOOptimizer />
       <AnalyticsTracker />
-      <PerformanceOptimizer />
-      <MobileOptimizer showDebugInfo={false}>
-        <AccessibilityEnhancer />
+      <PerformanceOptimizer>
         <Homepage2025 />
-        <PerformanceMonitor showUI={true} />
-        <PerformanceDashboard />
-      </MobileOptimizer>
+      </PerformanceOptimizer>
+      <PerformanceMonitor />
+      <AccessibilityEnhancer />
     </ErrorBoundary>
   );
 };
