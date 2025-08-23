@@ -1,0 +1,31 @@
+<<<<<<< HEAD
+echo "🚀 Enhanced Commit Message Validation..."
+
+# Validate commit message format
+COMMIT_MSG_FILE=$1
+COMMIT_MSG=$(cat "$COMMIT_MSG_FILE")
+
+# Ensure not empty
+if [ -z "$commit_msg" ]; then
+  echo "❌ Error: Commit message cannot be empty"
+  exit 1
+fi
+
+# Enforce Conventional Commits with commitlint if installed
+if [ -x "./node_modules/.bin/commitlint" ]; then
+  if npx --no-install commitlint --edit "$1"; then
+    echo "✅ Commit message validation passed"
+    exit 0
+  else
+    echo "❌ Commit message does not follow Conventional Commits"
+    exit 1
+  fi
+else
+  echo "ℹ️  commitlint not installed locally; skipping strict check"
+fi 
+=======
+#!/usr/bin/env sh
+. "$(dirname "$0")/_/husky.sh"
+
+npx --no commitlint --edit "$1"
+>>>>>>> origin/cursor/automate-continuous-development-processes-4d04

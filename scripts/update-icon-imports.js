@@ -1,49 +1,99 @@
 
-/**
- * Helper script to update icon imports across the codebase
- * 
- * Usage:
- * 1. Run: node scripts/update-icon-imports.js
- * 2. This will find and replace lucide-react icon imports with imports from our custom icons package
- */
+const winston = require('winston');
 
-const fs = require('fs');
-const path = require('path');
+const logger = winston.createLogger({
+  level: 'info',
+  format: winston.format.combine(
+    winston.format.timestamp(),
+    winston.format.errors({ stack: true }),
+    winston.format.json()
+  ),
+  defaultMeta: { service: 'automation-script' },
+  transports: [
+    new winston.transports.File({ filename: 'logs/error.log', level: 'error' }),
+    new winston.transports.File({ filename: 'logs/combined.log' })
+  ]
+});
+
+if (process.env.NODE_ENV !== 'production') {
+  logger.add(new winston.transports.Console({
+    format: winston.format.simple()
+  }));
+}
+
+
+class  {
+  constructor() {
+    this.isRunning = false;
+  }
+
+  async start() {
+    this.isRunning = true;
+    logger.info('Starting ...');
+    
+    try {
+      const fs = require('fs')
 const glob = require('glob');
-
 // Helper to replace imports in a file
 function updateIconImportsInFile(filePath) {
   try {
-    const content = fs.readFileSync(filePath, 'utf8');
-    
+    const content = fs.readFileSync(filePath, 'utf8');    
     // Replace direct lucide imports with our custom icons
     const updatedContent = content.replace(
-      /import\s+{([^}]*)}\s+from\s+['"]lucide-react['"]/g,
-      'import {$1} from "@/components/icons"'
-    );
+      /import\s+{([^}]*)}\s+from\s+['"]lucide-react['"]/g,"      import {$1} from "@/components/icons";    );
     
     // Only write if changes were made
     if (content !== updatedContent) {
-      fs.writeFileSync(filePath, updatedContent, 'utf8');
-      console.log(`✅ Updated imports in ${filePath}`);
-      return true;
+      fs.writeFileSync(filePath, updatedContent, utf8');      return true;
     }
     
     return false;
-  } catch (err) {
-    console.error(`❌ Error processing ${filePath}:`, err);
-    return false;
+  } catch {
+    console.'Error occurred'or(`❌ Error processing ${filePath}:`, err);    return false;
   }
 }
 
 // Find all TypeScript/JavaScript/JSX/TSX files
-const files = glob.sync('src/**/*.{js,jsx,ts,tsx}');
-let updatedFiles = 0;
+const files = glob.sync('src*.{js,jsx,ts,tsx});let _updatedFiles = 0;
 
 files.forEach(file => {
   const updated = updateIconImportsInFile(file);
-  if (updated) updatedFiles++;
+  if (updated) _updatedFiles++;
+});
+    } catch (error) {
+      logger.error('Error in :', error);
+      throw error;
+    }
+  }
+
+  stop() {
+    this.isRunning = false;
+    logger.info('Stopping ...');
+  }
+}
+
+// Start the script
+if (require.main === module) {
+  const script = new ();
+  script.start().catch(error => {
+    logger.error('Failed to start :', error);
+    process.exit(1);
+  });
+}
+
+module.exports = ;
+
+
+// Graceful shutdown handling
+process.on('SIGINT', () => {
+  console.log('\n🛑 Received SIGINT, shutting down gracefully...');
+  // Add cleanup logic here
+  process.exit(0);
 });
 
-console.log(`\n🎉 Updated icon imports in ${updatedFiles} files`);
-console.log(`\nℹ️ Make sure to run 'npm install glob' if needed to support this script`);
+process.on('SIGTERM', () => {
+  console.log('\n🛑 Received SIGTERM, shutting down gracefully...');
+  // Add cleanup logic here
+  process.exit(0);
+});
+
