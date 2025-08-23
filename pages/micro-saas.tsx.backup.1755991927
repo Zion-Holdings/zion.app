@@ -1,6 +1,10 @@
 import React from 'react';
 import Head from 'next/head';
+<<<<<<< HEAD
+import Card from '../components/ui/Card';
+=======
 import { Check, Star, Zap, Shield, Users, Globe, ArrowRight, ExternalLink, TrendingUp, BarChart3, Mail, MessageSquare, Headphones, FolderOpen, Database } from 'lucide-react';
+>>>>>>> origin/cursor/enhance-app-with-micro-saas-and-deploy-832b
 import Button from '../components/ui/Button';
 import { 
   FileText, 
@@ -18,11 +22,17 @@ import {
 export default function MicroSaasPage() {
   const microSaasServices = [
     {
+<<<<<<< HEAD
+      icon: <FileText className="w-8 h-8 text-white" />,
+      title: 'AI Content Generator Pro',
+      description: 'Generate high-quality, SEO-optimized content in seconds using advanced AI. Perfect for blogs, articles, and marketing copy.',
+=======
       name: 'AI Content Generator Pro',
       tagline: 'Professional AI-powered content creation',
       price: '$49',
       period: '/month',
       description: 'Create high-quality, SEO-optimized content at scale with our advanced AI writing assistant. Supports 15+ languages, brand voice customization, and 100+ content templates.',
+>>>>>>> origin/cursor/enhance-app-with-micro-saas-and-deploy-832b
       features: [
         'AI-powered content generation',
         'SEO optimization suggestions',
@@ -30,6 +40,24 @@ export default function MicroSaasPage() {
         'Plagiarism-free content',
         'Brand voice customization'
       ],
+<<<<<<< HEAD
+      pricing: {
+        starter: '$19/month',
+        pro: '$49/month',
+        enterprise: '$199/month'
+      },
+      marketPrice: '$29-99/month',
+      website: 'https://contentgen.ai',
+      color: 'bg-gradient-to-br from-blue-500 to-indigo-600',
+      textColor: 'text-blue-400',
+      gradient: 'from-blue-400 to-indigo-500',
+      popular: true
+    },
+    {
+      icon: <BarChart3 className="w-8 h-8 text-white" />,
+      title: 'Website Performance Monitor',
+      description: 'Real-time website performance monitoring with detailed analytics, uptime tracking, and performance optimization recommendations.',
+=======
       popular: true,
       icon: '📝',
       color: 'from-pink-500 to-rose-600',
@@ -182,6 +210,7 @@ export default function MicroSaasPage() {
       price: '$79',
       period: '/month',
       description: 'Build and maintain consistent design systems with automated component generation and team collaboration. Includes design tokens, style guides, and developer handoff.',
+>>>>>>> origin/cursor/enhance-app-with-micro-saas-and-deploy-832b
       features: [
         'Real-time performance monitoring',
         'Uptime tracking (99.9%+)',
@@ -189,6 +218,27 @@ export default function MicroSaasPage() {
         'Performance optimization tips',
         'Custom alerting system'
       ],
+<<<<<<< HEAD
+      pricing: {
+        starter: '$15/month',
+        pro: '$39/month',
+        enterprise: '$99/month'
+      },
+      marketPrice: '$20-80/month',
+      website: 'https://perfmonitor.com',
+      color: 'bg-gradient-to-br from-green-500 to-emerald-600',
+      textColor: 'text-green-400',
+      gradient: 'from-green-400 to-emerald-500',
+      popular: false
+    },
+    {
+      icon: <Search className="w-8 h-8 text-white" />,
+      title: 'SEO Audit Tool',
+      description: 'Comprehensive SEO analysis with actionable insights, keyword research, competitor analysis, and ranking tracking.',
+      features: [
+        'Complete SEO audit reports',
+        'Keyword research & tracking',
+=======
       popular: false,
       icon: '🎨',
       color: 'from-violet-500 to-purple-600',
@@ -237,10 +287,29 @@ export default function MicroSaasPage() {
         'Keyword research automation',
         'On-page optimization',
         'Technical SEO audits',
+>>>>>>> origin/cursor/enhance-app-with-micro-saas-and-deploy-832b
         'Competitor analysis',
         'Technical SEO insights',
         'Ranking position monitoring'
       ],
+<<<<<<< HEAD
+      pricing: {
+        starter: '$25/month',
+        pro: '$59/month',
+        enterprise: '$149/month'
+      },
+      marketPrice: '$30-120/month',
+      website: 'https://seoauditpro.com',
+      color: 'bg-gradient-to-br from-purple-500 to-pink-600',
+      textColor: 'text-purple-400',
+      gradient: 'from-purple-400 to-pink-500',
+      popular: false
+    },
+    {
+      icon: <Share2 className="w-8 h-8 text-white" />,
+      title: 'Social Media Scheduler',
+      description: 'Schedule and automate your social media posts across multiple platforms with advanced analytics and engagement tracking.',
+=======
       popular: false,
       icon: '🔍',
       color: 'from-emerald-500 to-green-600',
@@ -258,6 +327,7 @@ export default function MicroSaasPage() {
       price: '$69',
       period: '/month',
       description: 'Build intelligent chatbots for customer support, lead generation, and user engagement. Includes natural language processing, multi-channel integration, and analytics.',
+>>>>>>> origin/cursor/enhance-app-with-micro-saas-and-deploy-832b
       features: [
         'Multi-platform scheduling',
         'Content calendar management',
@@ -265,6 +335,65 @@ export default function MicroSaasPage() {
         'Auto-posting capabilities',
         'Team collaboration tools'
       ],
+<<<<<<< HEAD
+      pricing: {
+        starter: '$12/month',
+        pro: '$29/month',
+        enterprise: '$79/month'
+      },
+      marketPrice: '$15-60/month',
+      website: 'https://socialscheduler.com',
+      color: 'bg-gradient-to-br from-orange-500 to-red-600',
+      textColor: 'text-orange-400',
+      gradient: 'from-orange-400 to-red-500',
+      popular: false
+    },
+    {
+      icon: <Mail className="w-8 h-8 text-white" />,
+      title: 'Email Marketing Automation',
+      description: 'Powerful email marketing platform with automation workflows, segmentation, A/B testing, and detailed analytics.',
+      features: [
+        'Drag-and-drop email builder',
+        'Automation workflows',
+        'Advanced segmentation',
+        'A/B testing tools',
+        'Comprehensive analytics'
+      ],
+      pricing: {
+        starter: '$20/month',
+        pro: '$45/month',
+        enterprise: '$120/month'
+      },
+      marketPrice: '$25-100/month',
+      website: 'https://emailautomation.com',
+      color: 'bg-gradient-to-br from-teal-500 to-cyan-600',
+      textColor: 'text-teal-400',
+      gradient: 'from-teal-400 to-cyan-500',
+      popular: false
+    },
+    {
+      icon: <Users className="w-8 h-8 text-white" />,
+      title: 'Lead Generation Tool',
+      description: 'Capture, qualify, and nurture leads with intelligent forms, lead scoring, and CRM integration capabilities.',
+      features: [
+        'Smart lead capture forms',
+        'Lead scoring & qualification',
+        'CRM integrations',
+        'Lead nurturing workflows',
+        'Conversion tracking'
+      ],
+      pricing: {
+        starter: '$18/month',
+        pro: '$42/month',
+        enterprise: '$110/month'
+      },
+      marketPrice: '$22-90/month',
+      website: 'https://leadgenpro.com',
+      color: 'bg-gradient-to-br from-indigo-500 to-purple-600',
+      textColor: 'text-indigo-400',
+      gradient: 'from-indigo-400 to-purple-500',
+      popular: false
+=======
       popular: false,
       icon: '💬',
       color: 'from-sky-500 to-blue-600',
@@ -275,11 +404,36 @@ export default function MicroSaasPage() {
       marketSize: '$1.6B',
       growthRate: '30% YoY',
       competitors: ['Intercom', 'Drift', 'ManyChat', 'MobileMonkey']
+>>>>>>> origin/cursor/enhance-app-with-micro-saas-and-deploy-832b
     }
   ];
 
   const marketInsights = [
     {
+<<<<<<< HEAD
+      title: 'Content Generation Market',
+      size: '$1.2B',
+      growth: '+45% YoY',
+      description: 'AI-powered content creation tools are experiencing explosive growth'
+    },
+    {
+      title: 'Performance Monitoring',
+      size: '$3.8B',
+      growth: '+28% YoY',
+      description: 'Website performance monitoring is critical for modern businesses'
+    },
+    {
+      title: 'SEO Tools Market',
+      size: '$2.1B',
+      growth: '+32% YoY',
+      description: 'SEO tools continue to be essential for digital marketing success'
+    },
+    {
+      title: 'Social Media Management',
+      size: '$4.2B',
+      growth: '+38% YoY',
+      description: 'Social media automation tools are in high demand'
+=======
       title: 'Growing Market Demand',
       description: 'The micro SaaS market is experiencing rapid growth, with businesses increasingly seeking specialized, affordable solutions over complex enterprise platforms.',
       stats: '32% annual growth rate',
@@ -348,19 +502,37 @@ export default function MicroSaasPage() {
         { name: 'Monday.com', price: '$8-16/month', features: 'Limited advanced features' },
         { name: 'Our Solution', price: '$99/month', features: 'Advanced planning, time tracking, 20 team members' }
       ]
+>>>>>>> origin/cursor/enhance-app-with-micro-saas-and-deploy-832b
     }
   ];
 
   return (
     <>
       <Head>
+<<<<<<< HEAD
+        <title>Micro SaaS Services | Zion Tech Group - Real Tools for Real Business</title>
+        <meta name="description" content="Discover real, useful micro SaaS services including AI content generation, performance monitoring, SEO tools, and more. All services include market pricing and direct links." />
+=======
         <title>Micro SaaS Services | Zion Tech Group - Specialized Business Solutions</title>
         <meta name="description" content="Discover our specialized micro SaaS solutions for content creation, email marketing, social media, customer support, project management, and data analytics. Competitive pricing with 14-day free trials." />
+>>>>>>> origin/cursor/enhance-app-with-micro-saas-and-deploy-832b
         <meta property="og:title" content="Micro SaaS Services | Zion Tech Group" />
         <meta property="og:description" content="Real micro SaaS tools with market pricing and direct links to help grow your business." />
         <meta name="twitter:card" content="summary_large_image" />
       </Head>
 
+<<<<<<< HEAD
+      {/* Hero Section */}
+      <section className="relative section-padding bg-gradient-cursor overflow-hidden">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(0,122,204,0.08),transparent_50%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_80%,rgba(0,122,204,0.06),transparent_50%)]" />
+        <div className="absolute inset-0 bg-grid opacity-10" />
+        
+        <div className="relative z-10 container-cursor text-center">
+          <div className="inline-flex items-center px-4 py-2 rounded-full bg-cursor-blue/10 border border-cursor-blue/20 text-cursor-blue text-sm font-medium mb-6">
+            <span className="w-2 h-2 bg-cursor-blue rounded-full mr-2 animate-pulse" />
+            Micro SaaS Services
+=======
       <div className="min-h-screen bg-black">
         {/* Hero Section */}
         <section className="pt-32 pb-20 relative overflow-hidden">
@@ -401,6 +573,7 @@ export default function MicroSaasPage() {
                 View Pricing
               </Button>
             </div>
+>>>>>>> origin/cursor/enhance-app-with-micro-saas-and-deploy-832b
           </div>
           <h1 className="text-responsive-xl font-black mb-8 gradient-text text-shadow-lg">
             Real Tools for Real Business Growth
@@ -412,6 +585,17 @@ export default function MicroSaasPage() {
         </div>
       </section>
 
+<<<<<<< HEAD
+      {/* Market Insights */}
+      <section className="section-padding bg-gradient-cursor-accent">
+        <div className="container-cursor">
+          <div className="text-center mb-20">
+            <h2 className="text-responsive-lg font-bold mb-8 gradient-text text-shadow">
+              Market Insights & Pricing
+            </h2>
+            <p className="text-responsive-md text-gray-400 max-w-4xl mx-auto leading-relaxed">
+              Understanding the market helps you make informed decisions. Here's what's happening in the micro SaaS space.
+=======
         {/* Market Analysis */}
         <section className="py-20 bg-gray-900">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -661,6 +845,7 @@ export default function MicroSaasPage() {
             <p className="text-xl text-green-100 mb-12 max-w-4xl mx-auto leading-relaxed">
               Choose the solution that fits your needs. All services include comprehensive documentation, 
               dedicated support, and enterprise-grade reliability. Start with a free trial today.
+>>>>>>> origin/cursor/enhance-app-with-micro-saas-and-deploy-832b
             </p>
           </div>
 
