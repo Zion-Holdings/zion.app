@@ -65,68 +65,6 @@ declare global {
     connection?: NetworkInformation;
     hardwareConcurrency?: number;
   }
-
-  // Add missing global interfaces
-  interface EventTarget {
-    addEventListener(type: string, listener: EventListener | null, options?: boolean | AddEventListenerOptions): void;
-    removeEventListener(type: string, listener: EventListener | null, options?: boolean | EventListenerOptions): void;
-    dispatchEvent(event: Event): boolean;
-  }
-
-  interface Performance {
-    memory?: {
-      totalJSHeapSize: number;
-      usedJSHeapSize: number;
-      jsHeapSizeLimit: number;
-    };
-    getEntriesByType(type: string): PerformanceEntry[];
-    getEntriesByName(name: string, type?: string): PerformanceEntry[];
-    mark(name: string): void;
-    measure(name: string, startMark?: string, endMark?: string): void;
-    clearMarks(markName?: string): void;
-    clearMeasures(measureName?: string): void;
-    now(): number;
-  }
-
-  interface Navigator {
-    getBattery(): Promise<BatteryManager>;
-    connection?: NetworkInformation;
-    hardwareConcurrency?: number;
-    userAgent: string;
-    language: string;
-    languages: readonly string[];
-    cookieEnabled: boolean;
-    onLine: boolean;
-    platform: string;
-    vendor: string;
-  }
-
-  interface Node extends EventTarget {
-    nodeType: number;
-    nodeName: string;
-    nodeValue: string | null;
-    textContent: string | null;
-    ownerDocument: Document | null;
-    parentNode: Node | null;
-    parentElement: Element | null;
-    childNodes: NodeListOf<ChildNode>;
-    firstChild: ChildNode | null;
-    lastChild: ChildNode | null;
-    previousSibling: ChildNode | null;
-    nextSibling: ChildNode | null;
-    appendChild<T extends Node>(newChild: T): T;
-    cloneNode(deep?: boolean): Node;
-    compareDocumentPosition(other: Node): number;
-    contains(other: Node | null): boolean;
-    getRootNode(options?: GetRootNodeOptions): Node;
-    hasChildNodes(): boolean;
-    insertBefore<T extends Node>(newChild: T, refChild: Node | null): T;
-    isEqualNode(otherNode: Node | null): boolean;
-    isSameNode(otherNode: Node | null): boolean;
-    normalize(): void;
-    removeChild<T extends Node>(oldChild: T): T;
-    replaceChild<T extends Node>(newChild: Node, oldChild: T): T;
-  }
 }
 
 interface PerformanceMetrics {
