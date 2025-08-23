@@ -56,6 +56,9 @@ const nextConfig = {
     // Bundle analysis optimizations moved to root level
     // Disable profiling for faster builds
     swcTraceProfiling: false,
+<<<<<<< HEAD
+    
+=======
     // Removed esmExternals to prevent external module dynamic import issues
     esmExternals: undefined,
     // Enable React 19 streaming features
@@ -63,6 +66,7 @@ const nextConfig = {
     // Enable React Compiler for automatic memoization optimizations (experimental)
     reactCompiler: true,
     // Partial Prerendering currently requires canary – disabled for now
+>>>>>>> origin/cursor/check-logs-and-improve-project-quality-a28f
   },
 
   images: {
@@ -905,6 +909,8 @@ const nextConfig = {
       },
     ];
   },
+<<<<<<< HEAD
+=======
   
   // Skip ESLint during build for faster deployment  
   eslint: {
@@ -914,6 +920,7 @@ const nextConfig = {
   // Enable SWC minification explicitly (already default in Next 15)
   swcMinify: true,
 
+>>>>>>> origin/cursor/check-logs-and-improve-project-quality-a28f
 };
 
 module.exports = withSentryConfig(baseConfig);
