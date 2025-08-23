@@ -2,8 +2,20 @@
   "generatedAt": "2025-08-14T14:20:38.397Z",
   "items": [
     {
+<<<<<<< HEAD
+      "title": "Runbook: LLM Apps",
+      "subtitle": "Patterns to increase accuracy.",
+      "path": "/reports/innovations/insight-2025-08-14-1420",
+      "createdAt": "2025-08-14T14:20:16.588Z",
+      "kind": "insight"
+    },
+    {
+      "title": "Innovation Insight — 2025-08-14 14-10",
+      "href": "/reports/innovations/insight-2025-08-14T14-10",
+=======
       "title": "Reference Architecture — Autonomous Content Mesh",
       "href": "/reports/blueprints/blueprint-2025-08-14-142038",
+>>>>>>> 55fa91364e (chore(sync): advanced autonomous sync)
       "desc": "New autonomous content",
       "createdAt": "2025-08-14T14:20:38.366Z",
       "source": "cloud-blueprint-factory"
