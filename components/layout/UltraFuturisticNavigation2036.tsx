@@ -3,15 +3,8 @@ import Link from 'next/link';
 import { motion, AnimatePresence } from 'framer-motion';
 import { 
   Menu, ChevronDown, X, Phone, Mail, MapPin, ArrowRight,
-  Brain, Rocket, Shield, Zap, Target, Atom, BookOpen,
-  Truck, DollarSign, BarChart3, Globe, Users, Star, Sparkles, 
-  Cpu, Lock, Cloud, Settings, Eye, Award, Clock, Heart, Lightbulb,
-  Search, Grid, List, TrendingUp, Shield as ShieldIcon, Globe as GlobeIcon,
-  User, ShoppingCart, Bell, HelpCircle, FileText, Video, Headphones, 
-  Code, Database, Network, Server, Monitor, Smartphone,
-  Camera, Gamepad2, Palette, Music, Film, BookOpenCheck,
-  Building, MessageCircle, Sparkles as SparklesIcon, Zap as ZapIcon,
-  Target as TargetIcon, Atom as AtomIcon, Brain as BrainIcon
+  Rocket, BookOpen, DollarSign, BarChart3, Globe, Star, 
+  Cpu, Grid, Building, MessageCircle, Brain, Atom, Target
 } from 'lucide-react';
 
 interface NavigationItem {
@@ -64,13 +57,13 @@ const navigationItems: NavigationItem[] = [
         name: 'AI & Machine Learning', 
         href: '/ai-services', 
         description: 'Advanced AI solutions',
-        icon: <BrainIcon className="w-4 h-4" />
+        icon: <Brain className="w-4 h-4" />
       },
       { 
         name: 'Quantum Technology', 
         href: '/quantum-services', 
         description: 'Quantum computing solutions',
-        icon: <AtomIcon className="w-4 h-4" />
+        icon: <Atom className="w-4 h-4" />
       },
       { 
         name: 'Space Technology', 
@@ -88,7 +81,7 @@ const navigationItems: NavigationItem[] = [
         name: 'Specialized Solutions', 
         href: '/solutions', 
         description: 'Industry-specific solutions',
-        icon: <TargetIcon className="w-4 h-4" />
+        icon: <Target className="w-4 h-4" />
       }
     ]
   },
@@ -102,11 +95,17 @@ const navigationItems: NavigationItem[] = [
     featured: true,
     children: [
       { 
-        name: 'Services Showcase', 
-        href: '/comprehensive-services-showcase-2025', 
-        description: 'Complete services overview',
+        name: 'Services Showcase 2027', 
+        href: '/ultimate-2037-futuristic-services-showcase', 
+        description: 'Complete services overview with latest tech',
         icon: <Grid className="w-4 h-4" />,
         featured: true
+      },
+      { 
+        name: 'Services Showcase 2025', 
+        href: '/comprehensive-services-showcase-2025', 
+        description: 'Previous services overview',
+        icon: <Grid className="w-4 h-4" />
       },
       { 
         name: 'Pricing Plans', 
@@ -145,7 +144,7 @@ const navigationItems: NavigationItem[] = [
         name: 'Partners', 
         href: '/partners', 
         description: 'Partnership opportunities',
-        icon: <Users className="w-4 h-4" />
+        icon: <div className="w-4 h-4" />
       },
       { 
         name: 'Investors', 
@@ -166,7 +165,7 @@ const navigationItems: NavigationItem[] = [
         name: 'Documentation', 
         href: '/docs', 
         description: 'Technical documentation',
-        icon: <FileText className="w-4 h-4" />
+        icon: <div className="w-4 h-4" />
       },
       { 
         name: 'Blog', 
@@ -178,13 +177,13 @@ const navigationItems: NavigationItem[] = [
         name: 'Case Studies', 
         href: '/case-studies', 
         description: 'Success stories',
-        icon: <Award className="w-4 h-4" />
+        icon: <div className="w-4 h-4" />
       },
       { 
         name: 'Support', 
         href: '/support', 
         description: 'Technical support',
-        icon: <HelpCircle className="w-4 h-4" />
+        icon: <div className="w-4 h-4" />
       }
     ]
   }
