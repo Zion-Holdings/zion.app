@@ -5,6 +5,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
 :root {
+<<<<<<< HEAD
+  --foreground-rgb: 255, 255, 255;
+  --background-start-rgb: 17, 24, 39;
+  --background-end-rgb: 0, 0, 0;
+=======
   --neon-cyan: #00d4ff;
   --neon-purple: #a855f7;
   --neon-pink: #ec4899;
@@ -19,6 +24,7 @@
   --neon-emerald: #10b981;
   --neon-rose: #f43f5e;
   --neon-violet: #8b5cf6;
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-73aa
 }
 
 * {
@@ -67,6 +73,9 @@ body {
   background: linear-gradient(135deg, #0891b2, #2563eb);
 }
 
+<<<<<<< HEAD
+/* Enhanced Animations */
+=======
 /* Selection Styles */
 ::selection {
   background: rgba(0, 212, 255, 0.3);
@@ -265,6 +274,7 @@ body {
 }
 
 /* Floating Animation */
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-73aa
 @keyframes float {
   0%, 100% {
     transform: translateY(0px);

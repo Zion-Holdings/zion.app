@@ -1,6 +1,24 @@
 import React from 'react';
+<<<<<<< HEAD
+import Head from 'next/head';
+import { motion } from 'framer-motion';
+import { 
+  Star, ArrowRight, Check, Play, 
+  Brain, Atom, Shield, Rocket, Target,
+  Users, Globe, Zap, TrendingUp, Award,
+  ChevronRight, ExternalLink
+} from 'lucide-react';
+import Layout from '../components/layout/Layout';
+import { realMicroSaasServices2025 } from '../data/2025-real-micro-saas-services';
+import { innovativeAIServices2025 } from '../data/2025-innovative-ai-services';
+import { innovativeITServices2025 } from '../data/2025-innovative-it-services';
+import { emergingTechServices2025 } from '../data/2025-emerging-tech-services';
+import { additionalRealServices2025 } from '../data/2025-additional-real-services';
+import { innovativeAIServices2025 as newInnovativeAIServices } from '../data/2025-innovative-ai-it-services';
+=======
 import Homepage2047 from '../components/Homepage2047';
 import ErrorBoundary from '../components/ErrorBoundary';
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-73aa
 
 const heroStats = [
   { label: 'Revolutionary Services', value: '800+', icon: <Star className="w-5 h-5" /> },
@@ -116,11 +134,25 @@ const testimonials = [
 
 export default function Home() {
   return (
+<<<<<<< HEAD
+    <Layout>
+      <Head>
+        <title>Zion Tech Group - Revolutionary 2045 Technology Solutions</title>
+        <meta name="description" content="Leading provider of cutting-edge AI consciousness, quantum computing, and emerging technology solutions. Transform your business with revolutionary innovations." />
+        <meta name="keywords" content="AI consciousness, quantum computing, autonomous solutions, space technology, cybersecurity, business intelligence, Zion Tech Group, 2045 technology" />
+        <meta property="og:title" content="Zion Tech Group - Revolutionary 2045 Technology Solutions" />
+        <meta property="og:description" content="Leading provider of cutting-edge AI consciousness, quantum computing, and emerging technology solutions." />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://ziontechgroup.com" />
+        <link rel="canonical" href="https://ziontechgroup.com" />
+      </Head>
+=======
     <ErrorBoundary>
       <Homepage2047 />
     </ErrorBoundary>
   );
 };
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-73aa
 
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
