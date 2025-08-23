@@ -46,7 +46,11 @@ const Header = () => {
     { name: 'Resources', href: '/resources' },
     { name: 'Company', href: '/about' },
     { name: 'Pricing', href: '/pricing' },
+<<<<<<< HEAD
+    { name: 'Contact', href: '/contact' }
+=======
     { name: 'Compare', href: '/pricing-comparison' },
+>>>>>>> origin/cursor/enhance-app-with-micro-saas-and-deploy-3e2f
   ];
 
   const productDropdown = [
