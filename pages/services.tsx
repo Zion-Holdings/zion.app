@@ -55,6 +55,12 @@ import { quantumEmergingTechServices } from '../data/2025-quantum-emerging-tech-
 import { spaceMetaverseServices } from '../data/2025-space-metaverse-services';
 import { advancedITInfrastructureServices } from '../data/2025-advanced-it-infrastructure-services';
 
+// Import our NEW 2025 advanced services
+import { advancedAIAutomationPlatforms2025 } from '../data/2025-advanced-ai-automation-platforms';
+import { innovativeITInfrastructureSolutions2025 } from '../data/2025-innovative-it-infrastructure-solutions';
+import { specializedMicroSaasSolutions2025 } from '../data/2025-specialized-micro-saas-solutions';
+import { emergingTechnologyServices2025 } from '../data/2025-emerging-technology-services';
+
 // Import existing service data
 import { realMicroSaasServices } from '../data/real-micro-saas-services';
 import { innovativeAIServices } from '../data/innovative-ai-services';
@@ -89,7 +95,13 @@ const getServiceCategory = (service: any) => {
       'IT Infrastructure & Cloud': 'it-infrastructure',
       'IT Infrastructure & DevOps': 'it-infrastructure',
       'IT Infrastructure & Database': 'it-infrastructure',
-      'IT Infrastructure & AI': 'it-infrastructure'
+      'IT Infrastructure & AI': 'it-infrastructure',
+      'IT Infrastructure & Edge Computing': 'it-infrastructure',
+      'Industry-Specific Solutions': 'industry-solutions',
+      'Quantum Computing & AI': 'quantum-tech',
+      'Metaverse & Virtual Reality': 'metaverse-dev',
+      'Blockchain & AI': 'blockchain-tech',
+      'Robotics & Automation': 'robotics-tech'
     };
     
     return categoryMap[service.category] || service.category.toLowerCase().replace(/\s+/g, '-');
@@ -142,9 +154,10 @@ const allServices = [
   // ...innovative2036MicroSaasServices,
   // ...innovative2036ITServices,
   // Our new 2025 advanced services
-  // ...advanced2025MicroSaasExpansion,
-  // ...advanced2025ITSolutionsExpansion,
-  // ...advanced2025AIServicesExpansion,
+  ...advancedAIAutomationPlatforms2025,
+  ...innovativeITInfrastructureSolutions2025,
+  ...specializedMicroSaasSolutions2025,
+  ...emergingTechnologyServices2025,
   // Our new innovative services
   // ...innovative2037MicroSaasServices,
   // ...innovative2037ITServices,
@@ -272,6 +285,27 @@ const categories = [
     icon: <Server className="w-6 h-6" />,
     color: 'from-slate-500 to-gray-500',
     description: 'Advanced IT infrastructure and DevOps'
+  },
+  {
+    id: 'industry-solutions',
+    name: 'Industry Solutions',
+    icon: <Building className="w-6 h-6" />,
+    color: 'from-amber-500 to-orange-500',
+    description: 'Specialized solutions for specific industries'
+  },
+  {
+    id: 'blockchain-tech',
+    name: 'Blockchain Technology',
+    icon: <Target className="w-6 h-6" />,
+    color: 'from-yellow-500 to-orange-500',
+    description: 'Blockchain and decentralized applications'
+  },
+  {
+    id: 'robotics-tech',
+    name: 'Robotics & Automation',
+    icon: <Rocket className="w-6 h-6" />,
+    color: 'from-gray-500 to-slate-600',
+    description: 'Autonomous robotics and automation systems'
   }
 ];
 
