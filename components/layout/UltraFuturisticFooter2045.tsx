@@ -11,9 +11,10 @@ const UltraFuturisticFooter2045: React.FC = () => {
   const currentYear = new Date().getFullYear();
 
   const contactInfo = {
-    mobile: '+1 (555) 123-4567',
-    email: 'info@ziontechgroup.com',
-    address: '123 Innovation Drive, Tech Valley, CA 94000'
+    mobile: '+1 302 464 0950',
+    email: 'kleber@ziontechgroup.com',
+    address: '364 E Main St STE 1008 Middletown DE 19709',
+    website: 'https://ziontechgroup.com'
   };
 
   const footerSections = [
@@ -155,7 +156,7 @@ const UltraFuturisticFooter2045: React.FC = () => {
                         className="flex items-center space-x-3 text-gray-400 hover:text-cyan-400 transition-all duration-200 group hover:translate-x-1"
                       >
                         <div className="w-5 h-5 text-cyan-400 group-hover:scale-110 transition-transform duration-200">
-                          {link.icon}
+                          <ArrowRight className="w-4 h-4" />
                         </div>
                         <span className="text-sm group-hover:text-cyan-400 transition-colors duration-200">
                           {link.name}
@@ -216,7 +217,7 @@ const UltraFuturisticFooter2045: React.FC = () => {
                     className={`p-2 rounded-lg bg-gray-900/50 border border-cyan-500/20 text-gray-400 ${social.color} transition-all duration-200 hover:scale-110 hover:border-cyan-500/50`}
                     aria-label={social.name}
                   >
-                    {social.icon}
+                    <social.icon className="w-5 h-5" />
                   </Link>
                 ))}
               </div>
