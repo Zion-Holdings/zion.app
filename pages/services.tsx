@@ -42,6 +42,11 @@ import { innovative2025MicroSaasExpansion } from '../data/innovative-2025-micro-
 import { innovative2025ITSolutionsExpansion } from '../data/innovative-2025-it-solutions-expansion';
 import { innovative2025AIServicesExpansion } from '../data/innovative-2025-ai-services-expansion';
 
+// Import our new 2025 innovative services
+import { innovative2025AIAutonomousServices } from '../data/innovative-2025-ai-autonomous-services';
+import { innovative2025ITInfrastructureServices } from '../data/innovative-2025-it-infrastructure-services';
+import { innovative2025MicroSaasExpansionV2 } from '../data/innovative-2025-micro-saas-expansion-v2';
+
 // Import existing service data
 import { realMicroSaasServices } from '../data/real-micro-saas-services';
 import { innovativeAIServices } from '../data/innovative-ai-services';
@@ -65,6 +70,13 @@ const getServicePricing = (service: any) => {
   if (service.pricing?.starter) return service.pricing.starter;
   if (service.pricing?.monthly) return `$${service.pricing.monthly}/month`;
   if (service.price?.monthly) return `$${service.price.monthly}/month`;
+  if (service.price && typeof service.price === 'object') {
+    // Handle complex price objects
+    if (service.price.monthly) return `$${service.price.monthly}/month`;
+    if (service.price.starter) return service.price.starter;
+    return 'Contact for pricing';
+  }
+  if (service.price && typeof service.price === 'string') return service.price;
   return 'Contact for pricing';
 };
 
@@ -82,7 +94,16 @@ const getServiceDescription = (service: any) => {
   return 'No description available';
 };
 
-// Create unified services array
+// Helper function to validate service object
+const isValidService = (service: any) => {
+  return service && 
+         typeof service === 'object' && 
+         service.name && 
+         typeof service.name === 'string' &&
+         service.name.trim() !== '';
+};
+
+// Create unified services array with validation
 const allServices = [
   ...enterpriseITSolutions,
   ...innovativeMicroSaasSolutions,
@@ -127,8 +148,12 @@ const allServices = [
   // Our new 2025 innovative services expansion
   ...innovative2025MicroSaasExpansion,
   ...innovative2025ITSolutionsExpansion,
-  ...innovative2025AIServicesExpansion
-];
+  ...innovative2025AIServicesExpansion,
+  // Our new 2025 innovative services
+  ...innovative2025AIAutonomousServices,
+  ...innovative2025ITInfrastructureServices,
+  ...innovative2025MicroSaasExpansionV2
+].filter(isValidService); // Filter out any malformed services
 
 const categories = [
   {
@@ -486,88 +511,96 @@ export default function Services() {
                   : "space-y-6"
                 }
               >
-                {paginatedServices.map((service, index) => (
-                  <motion.div
-                    key={(service as any).id || (service as any).slug || (service as any).name}
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.5, delay: index * 0.1 }}
-                    whileHover={{ y: -8 }}
-                    className={`group relative ${
-                      viewMode === 'list' ? 'flex items-start space-x-6' : ''
-                    }`}
-                  >
-                    <div className="relative bg-gradient-to-br from-gray-500/20 to-slate-500/20 border border-cyan-500/30 rounded-2xl p-6 h-full backdrop-blur-sm hover:border-cyan-500/50 transition-all duration-300">
-                      {/* Category Badge */}
-                      <div className="absolute top-4 right-4 flex items-center space-x-2">
-                        {getCategoryIcon(getServiceCategory(service))}
-                        <span className="text-xs font-medium text-cyan-300 bg-black/50 px-2 py-1 rounded-full">
-                          {getServiceCategory(service)}
-                        </span>
-                      </div>
-
-                      {/* Service Header */}
-                      <div className="mb-6">
-                        <h3 className="text-xl font-bold text-white mb-3 group-hover:text-cyan-400 transition-colors">
-                          {service.name}
-                        </h3>
-                        <p className="text-gray-300 text-sm leading-relaxed">
-                          {getServiceDescription(service)}
-                        </p>
-                      </div>
-
-                      {/* Features Preview */}
-                      <div className="mb-6">
-                        <h4 className="text-sm font-semibold text-cyan-300 mb-3">Key Features</h4>
-                        <div className="space-y-2">
-                          {getServiceFeatures(service).slice(0, 3).map((feature, idx) => (
-                            <div key={idx} className="flex items-start space-x-2">
-                              <Check className="w-4 h-4 text-green-400 mt-0.5 flex-shrink-0" />
-                              <span className="text-xs text-gray-300">{feature}</span>
-                            </div>
-                          ))}
-                          {getServiceFeatures(service).length > 3 && (
-                            <div className="text-xs text-cyan-400">
-                              +{getServiceFeatures(service).length - 3} more features
-                            </div>
-                          )}
+                {paginatedServices.map((service, index) => {
+                  // Additional safety check for each service
+                  if (!isValidService(service)) {
+                    console.warn('Invalid service found:', service);
+                    return null; // Skip rendering invalid services
+                  }
+                  
+                  return (
+                    <motion.div
+                      key={(service as any).id || (service as any).slug || (service as any).name || `service-${index}`}
+                      initial={{ opacity: 0, y: 20 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.5, delay: index * 0.1 }}
+                      whileHover={{ y: -8 }}
+                      className={`group relative ${
+                        viewMode === 'list' ? 'flex items-start space-x-6' : ''
+                      }`}
+                    >
+                      <div className="relative bg-gradient-to-br from-gray-500/20 to-slate-500/20 border border-cyan-500/30 rounded-2xl p-6 h-full backdrop-blur-sm hover:border-cyan-500/50 transition-all duration-300">
+                        {/* Category Badge */}
+                        <div className="absolute top-4 right-4 flex items-center space-x-2">
+                          {getCategoryIcon(getServiceCategory(service))}
+                          <span className="text-xs font-medium text-cyan-300 bg-black/50 px-2 py-1 rounded-full">
+                            {getServiceCategory(service)}
+                          </span>
                         </div>
-                      </div>
 
-                      {/* Pricing */}
-                      <div className="mb-6">
-                        <h4 className="text-sm font-semibold text-cyan-300 mb-2">Starting at</h4>
-                        <div className="text-2xl font-bold text-white">
-                          {getServicePricing(service)}
+                        {/* Service Header */}
+                        <div className="mb-6">
+                          <h3 className="text-xl font-bold text-white mb-3 group-hover:text-cyan-400 transition-colors">
+                            {service.name || 'Unnamed Service'}
+                          </h3>
+                          <p className="text-gray-300 text-sm leading-relaxed">
+                            {getServiceDescription(service)}
+                          </p>
                         </div>
-                      </div>
 
-                      {/* Action Button */}
-                      <div className="flex flex-col space-y-3">
-                        <motion.a
-                          href={(service as any).link || `/services/${((service as any).slug || (service as any).name || 'service').toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '')}`}
-                          whileHover={{ scale: 1.02 }}
-                          whileTap={{ scale: 0.98 }}
-                          className="flex items-center justify-center space-x-2 px-4 py-3 bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-medium rounded-lg hover:from-cyan-600 hover:to-blue-700 transition-all duration-200 shadow-lg shadow-cyan-500/25"
-                        >
-                          <span>Learn More</span>
-                          <ArrowRight className="w-4 h-4" />
-                        </motion.a>
-                        <motion.a
-                          href="/contact"
-                          whileHover={{ scale: 1.02 }}
-                          whileTap={{ scale: 0.98 }}
-                          className="flex items-center justify-center space-x-2 px-4 py-3 border border-gray-600 text-gray-200 font-medium rounded-lg hover:bg-white/5 transition-all duration-200"
-                        >
-                          <span>Contact Sales</span>
-                        </motion.a>
-                      </div>
+                        {/* Features Preview */}
+                        <div className="mb-6">
+                          <h4 className="text-sm font-semibold text-cyan-300 mb-3">Key Features</h4>
+                          <div className="space-y-2">
+                            {getServiceFeatures(service).slice(0, 3).map((feature, idx) => (
+                              <div key={idx} className="flex items-start space-x-2">
+                                <Check className="w-4 h-4 text-green-400 mt-0.5 flex-shrink-0" />
+                                <span className="text-xs text-gray-300">{feature}</span>
+                              </div>
+                            ))}
+                            {getServiceFeatures(service).length > 3 && (
+                              <div className="text-xs text-cyan-400">
+                                +{getServiceFeatures(service).length - 3} more features
+                              </div>
+                            )}
+                          </div>
+                        </div>
 
-                      {/* Hover Effect Overlay */}
-                      <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/5 to-blue-600/5 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
-                    </div>
-                  </motion.div>
-                ))}
+                        {/* Pricing */}
+                        <div className="mb-6">
+                          <h4 className="text-sm font-semibold text-cyan-300 mb-2">Starting at</h4>
+                          <div className="text-2xl font-bold text-white">
+                            {getServicePricing(service)}
+                          </div>
+                        </div>
+
+                        {/* Action Button */}
+                        <div className="flex flex-col space-y-3">
+                          <motion.a
+                            href={(service as any).link || `/services/${((service as any).slug || (service as any).name || 'service').toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '')}`}
+                            whileHover={{ scale: 1.02 }}
+                            whileTap={{ scale: 0.98 }}
+                            className="flex items-center justify-center space-x-2 px-4 py-3 bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-medium rounded-lg hover:from-cyan-600 hover:to-blue-700 transition-all duration-200 shadow-lg shadow-cyan-500/25"
+                          >
+                            <span>Learn More</span>
+                            <ArrowRight className="w-4 h-4" />
+                          </motion.a>
+                          <motion.a
+                            href="/contact"
+                            whileHover={{ scale: 1.02 }}
+                            whileTap={{ scale: 0.98 }}
+                            className="flex items-center justify-center space-x-2 px-4 py-3 border border-gray-600 text-gray-200 font-medium rounded-lg hover:bg-white/5 transition-all duration-200"
+                          >
+                            <span>Contact Sales</span>
+                          </motion.a>
+                        </div>
+
+                        {/* Hover Effect Overlay */}
+                        <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/5 to-blue-600/5 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
+                      </div>
+                    </motion.div>
+                  );
+                })}
               </motion.div>
               {/* Pagination Controls */}
               {totalPages > 1 && (

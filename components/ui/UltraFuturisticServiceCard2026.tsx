@@ -2,6 +2,21 @@ import React, { useState, useCallback } from 'react';
 import { motion } from 'framer-motion';
 import { ArrowRight, Star, CheckCircle, Zap, Brain, Atom, Rocket } from 'lucide-react';
 
+// Helper function to get service pricing safely
+const getServicePricing = (service: any) => {
+  if (service.pricing?.starter) return service.pricing.starter;
+  if (service.pricing?.monthly) return `$${service.pricing.monthly}/month`;
+  if (service.price?.monthly) return `$${service.price.monthly}/month`;
+  if (service.price && typeof service.price === 'object') {
+    // Handle complex price objects
+    if (service.price.monthly) return `$${service.price.monthly}/month`;
+    if (service.price.starter) return service.price.starter;
+    return 'Contact for pricing';
+  }
+  if (service.price && typeof service.price === 'string') return service.price;
+  return 'Contact for pricing';
+};
+
 interface Service {
   id: string;
   name: string;
@@ -195,7 +210,7 @@ const UltraFuturisticServiceCard2026: React.FC<UltraFuturisticServiceCard2026Pro
             animate={{ opacity: 1 }}
             transition={{ delay: 0.3 }}
           >
-            <span className="text-2xl font-bold text-white">{service.price}</span>
+            <span className="text-2xl font-bold text-white">{getServicePricing(service)}</span>
             <span className="text-gray-400 text-sm ml-1">{service.period}</span>
           </motion.div>
 
