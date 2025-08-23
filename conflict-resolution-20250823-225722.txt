@@ -317,3 +317,12 @@
 2025-08-23 22:58:12 - Resolving conflicts in src/context/ThemeContext.tsx for branch 8z9e37-codex/implement-light/dark-theme-with-persistence
 2025-08-23 22:58:12 - Resolving conflicts in tailwind.config.js for branch 8z9e37-codex/implement-light/dark-theme-with-persistence
 2025-08-23 22:58:12 - Resolving conflicts in tailwind.config.ts for branch 8z9e37-codex/implement-light/dark-theme-with-persistence
+2025-08-23 22:58:13 - Merge conflicts detected in 8ztzgg-codex/add-i18n-support-with-next-i18next
+2025-08-23 22:58:13 - Resolving conflicts in next.config.js for branch 8ztzgg-codex/add-i18n-support-with-next-i18next
+2025-08-23 22:58:13 - Resolving conflicts in package.json for branch 8ztzgg-codex/add-i18n-support-with-next-i18next
+2025-08-23 22:58:13 - Resolving conflicts in public/locales/en-US/common.json for branch 8ztzgg-codex/add-i18n-support-with-next-i18next
+2025-08-23 22:58:13 - Resolving conflicts in public/locales/es-ES/common.json for branch 8ztzgg-codex/add-i18n-support-with-next-i18next
+2025-08-23 22:58:13 - Resolving conflicts in src/context/LanguageContext.tsx for branch 8ztzgg-codex/add-i18n-support-with-next-i18next
+2025-08-23 22:58:13 - Resolving conflicts in src/i18n/locales/ar/translation.json for branch 8ztzgg-codex/add-i18n-support-with-next-i18next
+2025-08-23 22:58:13 - Resolving conflicts in src/i18n/locales/pt/translation.json for branch 8ztzgg-codex/add-i18n-support-with-next-i18next
+2025-08-23 22:58:13 - Resolving conflicts in src/pages/Marketplace.tsx for branch 8ztzgg-codex/add-i18n-support-with-next-i18next
