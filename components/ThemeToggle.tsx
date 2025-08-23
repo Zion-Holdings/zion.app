@@ -1,40 +1,90 @@
-import React from 'react';
-import { motion } from 'framer-motion';
-import { Sun, Moon } from 'lucide-react';
+import React, { useState, useEffect } from 'react';
+import { Sun, Moon, Monitor } from 'lucide-react';
+import { motion, AnimatePresence } from 'framer-motion';
+
+type Theme = 'dark' | 'light' | 'system';
 
 interface ThemeToggleProps {
-  theme: 'dark' | 'light';
-  onToggle: () => void;
+  className?: string;
 }
 
-const ThemeToggle: React.FC<ThemeToggleProps> = ({ theme, onToggle }) => {
+const ThemeToggle: React.FC<ThemeToggleProps> = ({ className = '' }) => {
+  const [theme, setTheme] = useState<Theme>('dark');
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+    const savedTheme = localStorage.getItem('theme') as Theme;
+    if (savedTheme) {
+      setTheme(savedTheme);
+    } else if (window.matchMedia('(prefers-color-scheme: light)').matches) {
+      setTheme('system');
+    }
+  }, []);
+
+  useEffect(() => {
+    if (!mounted) return;
+
+    const root = document.documentElement;
+    const systemTheme = window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+    const activeTheme = theme === 'system' ? systemTheme : theme;
+
+    root.classList.remove('light', 'dark');
+    root.classList.add(activeTheme);
+    localStorage.setItem('theme', theme);
+  }, [theme, mounted]);
+
+  const handleThemeChange = (newTheme: Theme) => {
+    setTheme(newTheme);
+  };
+
+  const themes = [
+    { value: 'light', icon: Sun, label: 'Light theme', color: 'from-yellow-400 to-orange-500' },
+    { value: 'dark', icon: Moon, label: 'Dark theme', color: 'from-blue-600 to-purple-600' },
+    { value: 'system', icon: Monitor, label: 'System theme', color: 'from-gray-500 to-gray-700' }
+  ] as const;
+
+  if (!mounted) {
+    return (
+      <div className={`w-12 h-12 rounded-lg bg-gray-200 animate-pulse ${className}`} />
+    );
+  }
+
   return (
-    <motion.button
-      onClick={onToggle}
-      className={`fixed bottom-6 right-6 z-50 p-4 rounded-full shadow-lg backdrop-blur-sm transition-all duration-300 ${
-        theme === 'dark' 
-          ? 'bg-gray-800/80 text-yellow-400 hover:bg-gray-700/90 border border-gray-600/50' 
-          : 'bg-white/80 text-gray-800 hover:bg-white/90 border border-gray-200/50'
-      }`}
-      whileHover={{ scale: 1.1 }}
-      whileTap={{ scale: 0.9 }}
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.3 }}
-      aria-label={`Switch to ${theme === 'dark' ? 'light' : 'dark'} theme`}
-    >
+    <div className={`relative ${className}`}>
       <motion.div
-        initial={false}
-        animate={{ rotate: theme === 'dark' ? 0 : 180 }}
-        transition={{ duration: 0.3 }}
+        className="flex items-center space-x-1 p-1 bg-gray-800/50 backdrop-blur-sm rounded-lg border border-gray-700/50"
+        initial={{ opacity: 0, scale: 0.9 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 0.2 }}
       >
-        {theme === 'dark' ? (
-          <Sun className="w-6 h-6" />
-        ) : (
-          <Moon className="w-6 h-6" />
-        )}
+        {themes.map(({ value, icon: Icon, label, color }) => (
+          <motion.button
+            key={value}
+            onClick={() => handleThemeChange(value)}
+            className={`relative p-2 rounded-md transition-all duration-200 ${
+              theme === value
+                ? 'bg-gradient-to-r ' + color + ' text-white shadow-lg'
+                : 'text-gray-400 hover:text-white hover:bg-gray-700/50'
+            }`}
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            aria-label={label}
+            title={label}
+          >
+            <Icon className="w-4 h-4" />
+            {theme === value && (
+              <motion.div
+                className="absolute inset-0 rounded-md bg-gradient-to-r opacity-20"
+                style={{ background: `linear-gradient(to right, var(--${color.split('-')[1]}-500), var(--${color.split('-')[3]}-500))` }}
+                layoutId="activeTheme"
+                transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
+              />
+            )}
+          </motion.button>
+        ))}
       </motion.div>
-    </motion.button>
+    </div>
   );
 };
 

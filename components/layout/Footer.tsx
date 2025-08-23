@@ -1,62 +1,93 @@
 import React from 'react';
 import Link from 'next/link';
-import { motion } from 'framer-motion';
 import { 
-  Star, Phone, Mail, MapPin, Globe, Twitter, Linkedin, 
-  Github, Youtube, Instagram, Facebook, ArrowUp, Heart,
-  Brain, Atom, Shield, Rocket, Cpu, Target
+  Phone, 
+  Mail, 
+  MapPin, 
+  Globe, 
+  Zap, 
+  Sparkles, 
+  Shield, 
+  Rocket,
+  Twitter,
+  Linkedin,
+  Github,
+  Facebook,
+  Instagram,
+  Youtube
 } from 'lucide-react';
 
 const Footer: React.FC = () => {
-  const currentYear = new Date().getFullYear();
+  const contactInfo = {
+    mobile: '+1 302 464 0950',
+    email: 'kleber@ziontechgroup.com',
+    address: '364 E Main St STE 1008 Middletown DE 19709',
+    website: 'https://ziontechgroup.com'
+  };
 
   const services = [
-    { name: 'AI & Consciousness', href: '/ai-services', icon: Brain },
-    { name: 'Quantum Technology', href: '/quantum-services', icon: Atom },
-    { name: 'Cybersecurity', href: '/cybersecurity', icon: Shield },
-    { name: 'Business Solutions', href: '/business-solutions', icon: Target },
-    { name: 'IT Infrastructure', href: '/it-infrastructure', icon: Cpu },
-    { name: 'Space Technology', href: '/space-tech', icon: Rocket }
+    { name: 'AI & Machine Learning', href: '/ai-services' },
+    { name: 'Quantum Technology', href: '/quantum-services' },
+    { name: 'Space Technology', href: '/space-technology' },
+    { name: 'IT Solutions', href: '/it-services' },
+    { name: 'Cybersecurity', href: '/cybersecurity' },
+    { name: 'Cloud Platform', href: '/cloud-platform' },
+    { name: 'View All Services', href: '/services' }
+  ];
+
+  const solutions = [
+    { name: 'Enterprise Solutions', href: '/solutions/enterprise' },
+    { name: 'Healthcare Solutions', href: '/solutions/healthcare' },
+    { name: 'Financial Solutions', href: '/solutions/financial' },
+    { name: 'Government Solutions', href: '/solutions/government' },
+    { name: 'Manufacturing Solutions', href: '/solutions/manufacturing' },
+    { name: 'Retail Solutions', href: '/solutions/retail' },
+    { name: 'Education Solutions', href: '/solutions/education' },
+    { name: 'Energy Solutions', href: '/solutions/energy' },
+    { name: 'Transportation Solutions', href: '/solutions/transportation' },
+    { name: 'Case Studies', href: '/case-studies' }
   ];
 
   const company = [
     { name: 'About Us', href: '/about' },
-    { name: 'Leadership', href: '/leadership' },
+    { name: 'Mission', href: '/mission' },
+    { name: 'Values', href: '/values' },
     { name: 'Team', href: '/team' },
+    { name: 'Leadership', href: '/leadership' },
+    { name: 'Culture', href: '/culture' },
     { name: 'Careers', href: '/careers' },
-    { name: 'Press', href: '/press' },
-    { name: 'Contact', href: '/contact' }
+    { name: 'Partners', href: '/partners' },
+    { name: 'Investors', href: '/investors' }
   ];
 
   const resources = [
-    { name: 'Blog', href: '/blog' },
-    { name: 'Case Studies', href: '/case-studies' },
-    { name: 'White Papers', href: '/white-papers' },
-    { name: 'Webinars', href: '/webinars' },
     { name: 'Documentation', href: '/docs' },
-    { name: 'Support', href: '/support' }
+    { name: 'API Reference', href: '/api-docs' },
+    { name: 'Blog', href: '/blog' },
+    { name: 'Webinars', href: '/webinars' },
+    { name: 'Events', href: '/events' },
+    { name: 'Training', href: '/training' },
+    { name: 'Support Center', href: '/support' },
+    { name: 'White Papers', href: '/white-papers' },
+    { name: 'Press', href: '/press' },
+    { name: 'Media Kit', href: '/media-kit' }
   ];
 
   const legal = [
     { name: 'Privacy Policy', href: '/privacy' },
     { name: 'Terms of Service', href: '/terms' },
     { name: 'Cookie Policy', href: '/cookies' },
-    { name: 'Security', href: '/security' },
-    { name: 'Compliance', href: '/compliance' }
+    { name: 'Security', href: '/security' }
   ];
 
-  const social = [
-    { name: 'Twitter', href: '#', icon: Twitter },
-    { name: 'LinkedIn', href: '#', icon: Linkedin },
-    { name: 'GitHub', href: '#', icon: Github },
-    { name: 'YouTube', href: '#', icon: Youtube },
-    { name: 'Instagram', href: '#', icon: Instagram },
-    { name: 'Facebook', href: '#', icon: Facebook }
+  const socialLinks = [
+    { name: 'LinkedIn', href: 'https://linkedin.com/company/zion-tech-group', icon: Linkedin },
+    { name: 'GitHub', href: 'https://github.com/Zion-Holdings', icon: Github },
+    { name: 'Twitter', href: 'https://twitter.com/ziontechgroup', icon: Twitter },
+    { name: 'Facebook', href: 'https://facebook.com/ziontechgroup', icon: Facebook },
+    { name: 'Instagram', href: 'https://instagram.com/ziontechgroup', icon: Instagram },
+    { name: 'YouTube', href: 'https://youtube.com/@ziontechgroup', icon: Youtube }
   ];
-
-  const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  };
 
   return (
     <footer className="bg-gray-950/95 backdrop-blur-xl border-t border-gray-800/20 relative overflow-hidden">
@@ -102,7 +133,7 @@ const Footer: React.FC = () => {
             <ul className="space-y-3">
               {services.map((service) => (
                 <li key={service.name}>
-                  <Link
+                  <a
                     href={service.href}
                     className="text-gray-400 hover:text-blue-500 transition-all duration-200 hover:translate-x-1 inline-block group focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-gray-950 rounded"
                   >
@@ -123,7 +154,7 @@ const Footer: React.FC = () => {
             <ul className="space-y-3">
               {company.map((item) => (
                 <li key={item.name}>
-                  <Link
+                  <a
                     href={item.href}
                     className="text-gray-400 hover:text-blue-500 transition-all duration-200 hover:translate-x-1 inline-block group focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-gray-950 rounded"
                   >

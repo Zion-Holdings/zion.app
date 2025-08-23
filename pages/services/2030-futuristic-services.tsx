@@ -70,9 +70,11 @@ export default function FuturisticServices2030Page() {
   return (
     <>
       <SEO 
-        title="2030 Futuristic Technology Services | Zion Tech Group - Revolutionary AI, Quantum, Space Tech" 
-        description="Experience the future with our revolutionary 2030 technology services. From AI consciousness to space mining, quantum computing to metaverse development - we're building tomorrow's solutions today." 
-        canonical="https://ziontechgroup.com/services/2030-futuristic-services/"
+        data={{
+          pageTitle: "2030 Futuristic Technology Services | Zion Tech Group - Revolutionary AI, Quantum, Space Tech",
+          pageDescription: "Experience the future with our revolutionary 2030 technology services. From AI consciousness to space mining, quantum computing to metaverse development - we're building tomorrow's solutions today.",
+          pageKeywords: ['AI Consciousness', 'Quantum Computing', 'Space Mining', 'Metaverse Development', 'Biotechnology', '2030 technology', 'futuristic services', 'Zion Tech Group']
+        }}
       />
 
       <UltraFuturisticBackground2031>

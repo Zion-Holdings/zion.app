@@ -87,9 +87,11 @@ export default function ServicesAdvertising2025() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900">
       <SEO 
-        title="Innovative Services 2025 - Zion Tech Group"
-        description="Discover our cutting-edge micro SAAS services, IT solutions, and AI platforms. Transform your business with our innovative technology solutions."
-        keywords={["micro SAAS", "AI services", "cybersecurity", "cloud optimization", "blockchain", "IoT", "quantum computing", "space technology"]}
+        data={{
+          pageTitle: "Innovative Services 2025 - Zion Tech Group",
+          pageDescription: "Discover our cutting-edge micro SAAS services, IT solutions, and AI platforms. Transform your business with our innovative technology solutions.",
+          pageKeywords: ["micro SAAS", "AI services", "cybersecurity", "cloud optimization", "blockchain", "IoT", "quantum computing", "space technology"]
+        }}
       />
 
       {/* Hero Section */}

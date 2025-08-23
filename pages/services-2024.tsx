@@ -171,12 +171,17 @@ const Services2024: React.FC = () => {
   ];
 
   return (
-    <Layout
-      title="Services 2024 - Zion Tech Group"
-      description="Explore Zion Tech Group's revolutionary technology services from 2024. AI consciousness, quantum computing, cybersecurity, and space technology solutions."
-      keywords="AI consciousness 2024, quantum computing 2024, cybersecurity 2024, space technology 2024, Zion Tech Group services"
-    >
-      <div className="min-h-screen bg-gradient-to-br from-gray-900 via-black to-gray-900 text-white">
+    <>
+      <Head>
+        <title>2024 Revolutionary Services - Zion Tech Group</title>
+        <meta name="description" content="Discover our revolutionary 2024 services including AI automation, quantum security, and enterprise IT solutions. Transform your business with cutting-edge technology." />
+        <meta name="keywords" content="AI services, quantum security, enterprise IT, automation, 2024 technology, Zion Tech Group" />
+        <link rel="canonical" href="https://ziontechgroup.com/services-2024" />
+      </Head>
+
+      <UltraFuturisticBackground2034 intensity={0.8} />
+
+      <div className="relative z-10 min-h-screen">
         {/* Hero Section */}
         <section className="relative overflow-hidden py-20 lg:py-32">
           <div className="absolute inset-0 bg-gradient-to-r from-purple-900/20 via-blue-900/20 to-cyan-900/20" />

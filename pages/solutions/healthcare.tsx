@@ -1,7 +1,7 @@
 import React from 'react';
 import Layout from '../../components/layout/Layout';
 import { 
-  Heart, Brain, Shield, Zap, BarChart3, Cpu, Users, Target,
+  Heart, Brain, Shield, Zap, BarChart3, Cpu, 
   CheckCircle, ArrowRight, Star, TrendingUp, Award, Clock
 } from 'lucide-react';
 
@@ -19,67 +19,37 @@ const HealthcareSolutionsPage: React.FC = () => {
       ]
     },
     {
-      title: 'Healthcare Automation',
-      description: 'Streamline healthcare operations with intelligent automation',
-      icon: Cpu,
-      features: [
-        'Patient management systems',
-        'Appointment scheduling',
-        'Medical record automation',
-        'Billing optimization'
-      ]
+      icon: <Shield className="w-5 h-5" />,
+      title: 'End-to-End Encryption',
+      description: 'Military-grade security for sensitive medical data'
     },
     {
-      title: 'Data Security & Compliance',
-      description: 'HIPAA-compliant healthcare data protection',
-      icon: Shield,
-      features: [
-        'Patient data encryption',
-        'Access control systems',
-        'Audit trails',
-        'Compliance monitoring'
-      ]
+      icon: <TrendingUp className="w-5 h-5" />,
+      title: 'Scalable Infrastructure',
+      description: 'Built to handle growing healthcare demands'
     },
     {
-      title: 'Telemedicine Platforms',
-      description: 'Advanced virtual healthcare delivery systems',
-      icon: Users,
-      features: [
-        'Video consultations',
-        'Remote monitoring',
-        'Digital prescriptions',
-        'Health tracking apps'
-      ]
-    }
-  ];
-
-  const benefits = [
-    {
-      title: 'Improved Accuracy',
-      description: 'AI-powered diagnostics reduce human error',
-      icon: Target
-    },
-    {
-      title: 'Faster Results',
-      description: 'Quick diagnosis and treatment planning',
-      icon: Zap
-    },
-    {
-      title: 'Cost Reduction',
-      description: 'Lower healthcare costs through efficiency',
-      icon: TrendingUp
-    },
-    {
-      title: 'Better Outcomes',
-      description: 'Enhanced patient care and recovery',
-      icon: Award
+      icon: <Clock className="w-5 h-5" />,
+      title: '24/7 Support',
+      description: 'Round-the-clock technical support and monitoring'
     }
   ];
 
   return (
-    <Layout>
-      <div className="min-h-screen bg-black text-white relative z-10">
+    <>
+      <Head>
+        <title>Healthcare & Biotech Solutions | Zion Tech Group</title>
+        <meta name="description" content="Revolutionary AI-powered healthcare and biotech solutions. Advanced diagnostics, analytics, and telemedicine platforms for the future of healthcare." />
+        <meta name="keywords" content="healthcare AI, biotech, medical diagnostics, telemedicine, healthcare analytics, medical cybersecurity" />
+        <meta property="og:title" content="Healthcare & Biotech Solutions | Zion Tech Group" />
+        <meta property="og:description" content="Revolutionary AI-powered healthcare and biotech solutions for the future of medicine." />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://ziontechgroup.com/solutions/healthcare" />
+        <link rel="canonical" href="https://ziontechgroup.com/solutions/healthcare" />
+      </Head>
 
+      <UltraFuturisticBackground>
+        <div className="min-h-screen bg-black text-white relative z-10">
         {/* Hero Section */}
         <section className="relative py-20 px-4 sm:px-6 lg:px-8">
           <div className="max-w-7xl mx-auto text-center">
@@ -94,12 +64,21 @@ const HealthcareSolutionsPage: React.FC = () => {
               </p>
             </div>
             
+            <h1 className="text-5xl md:text-7xl font-bold mb-8 bg-gradient-to-r from-red-400 via-pink-400 to-purple-400 bg-clip-text text-transparent">
+              Revolutionizing Healthcare with AI
+            </h1>
+            
+            <p className="text-xl md:text-2xl text-white/80 mb-12 max-w-4xl mx-auto leading-relaxed">
+              Transform patient care with cutting-edge AI-powered diagnostics, advanced analytics, and secure telemedicine platforms. 
+              Join the future of healthcare technology.
+            </p>
+
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="bg-red-600 hover:bg-red-700 text-white px-8 py-3 rounded-lg font-semibold transition-colors">
-                Transform Healthcare
+              <button className="px-8 py-4 bg-gradient-to-r from-red-500 to-pink-500 text-white font-semibold rounded-xl hover:from-red-600 hover:to-pink-600 transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-red-500/25">
+                Get Started
               </button>
-              <button className="border border-red-400 text-red-400 hover:bg-red-400 hover:text-white px-8 py-3 rounded-lg font-semibold transition-colors">
-                Healthcare Demo
+              <button className="px-8 py-4 border border-white/20 text-white font-semibold rounded-xl hover:bg-white/10 transition-all duration-300">
+                Learn More
               </button>
             </div>
           </div>
@@ -112,44 +91,41 @@ const HealthcareSolutionsPage: React.FC = () => {
               <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
                 Healthcare Solutions
               </h2>
-              <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-                Comprehensive technology solutions for modern healthcare
+              <p className="text-xl text-white/70 max-w-3xl mx-auto">
+                Comprehensive AI-powered solutions designed to transform healthcare delivery and improve patient outcomes.
               </p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {solutions.map((solution, index) => (
-                <div key={index} className="bg-white/10 backdrop-blur-lg rounded-2xl p-8 border border-white/20 hover:border-red-400/50 transition-all duration-300 hover:transform hover:scale-105">
-                  <div className="flex items-center mb-6">
-                    <div className="p-3 bg-red-500/20 rounded-xl mr-4">
-                      <solution.icon className="h-8 w-8 text-red-400" />
-                    </div>
-                    <h3 className="text-2xl font-bold text-white">{solution.title}</h3>
+                <div
+                  key={index}
+                  className="group p-8 bg-white/5 border border-white/10 rounded-2xl hover:bg-white/10 transition-all duration-300 hover:border-red-500/30"
+                >
+                  <div className="w-16 h-16 bg-gradient-to-r from-red-500/20 to-pink-500/20 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                    {solution.icon}
                   </div>
-                  <p className="text-gray-300 mb-6">{solution.description}</p>
-                  <ul className="space-y-3">
-                    {solution.features.map((feature, featureIndex) => (
-                      <li key={featureIndex} className="flex items-center text-gray-300">
-                        <Star className="h-5 w-5 text-red-400 mr-3 flex-shrink-0" />
-                        {feature}
-                      </li>
-                    ))}
-                  </ul>
+                  <h3 className="text-xl font-semibold mb-4 text-white group-hover:text-red-400 transition-colors duration-300">
+                    {solution.title}
+                  </h3>
+                  <p className="text-white/70 leading-relaxed">
+                    {solution.description}
+                  </p>
                 </div>
               ))}
             </div>
           </div>
         </section>
 
-        {/* Benefits Section */}
+        {/* Features Section */}
         <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white/5">
           <div className="max-w-7xl mx-auto">
             <div className="text-center mb-16">
-              <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-                Healthcare Benefits
+              <h2 className="text-4xl md:text-5xl font-bold mb-6">
+                Why Choose Our Solutions?
               </h2>
-              <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-                Real improvements that impact patient care
+              <p className="text-xl text-white/70 max-w-3xl mx-auto">
+                Built with healthcare professionals in mind, our solutions prioritize security, compliance, and patient care.
               </p>
             </div>
 
@@ -170,21 +146,16 @@ const HealthcareSolutionsPage: React.FC = () => {
         {/* CTA Section */}
         <section className="py-20 px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
+            <h2 className="text-4xl md:text-5xl font-bold mb-6">
               Ready to Transform Healthcare?
             </h2>
-            <p className="text-xl text-gray-300 mb-8">
-              Join the healthcare revolution and improve patient outcomes with 
-              cutting-edge AI technology.
+            <p className="text-xl text-white/70 mb-8">
+              Join the healthcare revolution with our AI-powered solutions. 
+              Let's build a healthier future together.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="bg-red-600 hover:bg-red-700 text-white px-8 py-4 rounded-lg font-semibold text-lg transition-colors">
-                Start Healthcare Journey
-              </button>
-              <button className="border border-red-400 text-red-400 hover:bg-red-400 hover:text-white px-8 py-4 rounded-lg font-semibold text-lg transition-colors">
-                Healthcare Assessment
-              </button>
-            </div>
+            <button className="px-8 py-4 bg-gradient-to-r from-red-500 to-pink-500 text-white font-semibold rounded-xl hover:from-red-600 hover:to-pink-600 transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-red-500/25">
+              Get Started Today
+            </button>
           </div>
         </section>
       </div>

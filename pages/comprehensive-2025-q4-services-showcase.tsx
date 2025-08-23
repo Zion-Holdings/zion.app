@@ -73,9 +73,11 @@ const Comprehensive2025Q4ServicesShowcase: React.FC = () => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900">
       <SEO 
-        title="Comprehensive 2025 Q4 Services Showcase - Zion Tech Group"
-        description="Discover our comprehensive portfolio of innovative micro SAAS services, IT solutions, and AI-powered platforms. Transform your business with cutting-edge technology."
-        keywords={["micro SAAS", "IT services", "AI services", "business intelligence", "cybersecurity", "DevOps automation", "customer experience", "fintech", "healthcare technology"]}
+        data={{
+          pageTitle: "Comprehensive 2025 Q4 Services Showcase - Zion Tech Group",
+          pageDescription: "Discover our comprehensive portfolio of innovative micro SAAS services, IT solutions, and AI-powered platforms. Transform your business with cutting-edge technology.",
+          pageKeywords: ["micro SAAS", "IT services", "AI services", "business intelligence", "cybersecurity", "DevOps automation", "customer experience", "fintech", "healthcare technology"]
+        }}
       />
 
       {/* Hero Section */}

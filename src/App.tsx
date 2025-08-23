@@ -17,7 +17,8 @@ import {
   ErrorRoutes,
   EnterpriseRoutes,
   CommunityRoutes,
-  DeveloperRoutes
+  DeveloperRoutes,
+  SellerRoutes
 } from './routes';
 const Home = React.lazy(() => import('./pages/Home'));
 const AIMatcherPage = React.lazy(() => import('./pages/AIMatcher'));
@@ -72,6 +73,7 @@ const App = () => {
             <Route path="/enterprise/*" element={<EnterpriseRoutes />} />
             <Route path="/community/*" element={<CommunityRoutes />} />
             <Route path="/developers/*" element={<DeveloperRoutes />} />
+            <Route path="/seller/*" element={<SellerRoutes />} />
             <Route path="*" element={<ErrorRoutes />} />
           </Routes>
         </Suspense>

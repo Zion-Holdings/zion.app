@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useCallback, useMemo } from 'react';
+import React, { useEffect, useState, useCallback, Suspense, lazy } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import Link from 'next/link';
 import { 
@@ -6,22 +6,23 @@ import {
   Brain as BrainIcon, Atom as AtomIcon, Shield as ShieldIcon, Rocket as RocketIcon, Zap, MessageCircle,
   X, Menu, Linkedin, Twitter, Github, Search, TrendingUp, Users, Award
 } from 'lucide-react';
-import SEOOptimizer from './SEOOptimizer';
+import Head from 'next/head';
 
 // Import our new revolutionary services
-import { revolutionary2044AdvancedMicroSaas } from '../data/revolutionary-2044-advanced-micro-saas';
-import { revolutionary2044ITServices } from '../data/revolutionary-2044-it-services';
-import { revolutionary2044AIServices } from '../data/revolutionary-2044-ai-services';
-import { realPracticalMicroSaasServices2025 } from '../data/2025-real-practical-micro-saas-services';
-import { advancedAIITSpecializedServices2025 } from '../data/2025-advanced-ai-it-specialized-services';
-import { innovative2025ITInfrastructureServices } from '../data/2025-innovative-it-infrastructure-services';
+import { innovativeMicroSaasSolutions2025V2 } from '../data/2025-innovative-micro-saas-expansion-v2';
+import { innovativeITServices2025V2 } from '../data/2025-innovative-it-services-expansion-v2';
+import { innovativeAIServices2025V2 } from '../data/2025-innovative-ai-services-expansion-v2';
 
 const EnhancedHomepage2045: React.FC = () => {
   const [showMobileMenu, setShowMobileMenu] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
   const [isSearchFocused, setIsSearchFocused] = useState(false);
   const [selectedCategory, setSelectedCategory] = useState('all');
+  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const [isLoading, setIsLoading] = useState(false);
+  const [userInteraction, setUserInteraction] = useState(false);
+  const [hoveredService, setHoveredService] = useState<string | null>(null);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
   
   // Memoize services data for better performance
   const allRevolutionaryServices = useMemo(() => [
@@ -37,26 +38,15 @@ const EnhancedHomepage2045: React.FC = () => {
   const filteredServices = useMemo(() => {
     let filtered = allRevolutionaryServices;
     
-    if (selectedCategory !== 'all') {
-      filtered = filtered.filter(s => {
-        if (selectedCategory === 'ai') return s.category.includes('AI') || s.category.includes('Machine Learning');
-        if (selectedCategory === 'quantum') return s.category.includes('Quantum');
-        if (selectedCategory === 'cybersecurity') return s.category.includes('Security');
-        if (selectedCategory === 'business') return s.type === 'Micro SAAS';
-        if (selectedCategory === 'it') return s.category.includes('IT') || s.category.includes('Infrastructure');
-        return true;
-      });
-    }
+    // Auto-rotate featured services
+    const interval = setInterval(() => {
+      setCurrentServiceIndex((prev) => (prev + 1) % 6);
+    }, 6000);
     
-    if (searchQuery) {
-      const query = searchQuery.toLowerCase();
-      filtered = filtered.filter(s => 
-        s.name.toLowerCase().includes(query) ||
-        s.description.toLowerCase().includes(query) ||
-        s.category.toLowerCase().includes(query) ||
-        s.tagline?.toLowerCase().includes(query)
-      );
-    }
+    // Track mouse movement for parallax effects
+    const handleMouseMove = (e: MouseEvent) => {
+      setMousePosition({ x: e.clientX, y: e.clientY });
+    };
     
     return filtered.slice(0, 6); // Show only first 6 for performance
   }, [allRevolutionaryServices, selectedCategory, searchQuery]);
@@ -159,25 +149,24 @@ const EnhancedHomepage2045: React.FC = () => {
             {[...Array(50)].map((_, i) => (
               <motion.div
                 key={i}
-                className="absolute w-1 h-1 bg-cyan-400 rounded-full opacity-20"
-                style={{
-                  left: `${Math.random() * 100}%`,
-                  top: `${Math.random() * 100}%`,
-                }}
+                className="absolute w-1 h-1 bg-cyan-400 rounded-full opacity-60"
                 animate={{
-                  y: [0, -100, 0],
-                  opacity: [0.2, 0.8, 0.2],
-                  scale: [1, 1.5, 1],
+                  x: [0, Math.random() * 100],
+                  y: [0, Math.random() * 100],
+                  opacity: [0.6, 0.2, 0.6],
                 }}
                 transition={{
                   duration: Math.random() * 10 + 10,
                   repeat: 999999,
                   ease: "linear"
                 }}
+                style={{
+                  left: Math.random() * 100 + '%',
+                  top: Math.random() * 100 + '%',
+                }}
               />
             ))}
           </div>
-        </div>
 
         {/* Enhanced Navigation */}
         <nav className="relative z-50 bg-black/20 backdrop-blur-xl border-b border-cyan-500/20 sticky top-0">
@@ -187,42 +176,15 @@ const EnhancedHomepage2045: React.FC = () => {
               <motion.div
                 initial={{ opacity: 0, x: -20 }}
                 animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.6 }}
                 className="flex items-center space-x-2"
               >
                 <div className="w-10 h-10 bg-gradient-to-r from-cyan-400 to-blue-500 rounded-lg flex items-center justify-center">
                   <Zap className="w-6 h-6 text-white" />
                 </div>
-                <span className="text-xl font-bold bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
+                <span className="text-xl font-bold bg-gradient-to-r from-cyan-400 to-purple-500 bg-clip-text text-transparent">
                   Zion Tech Group
                 </span>
               </motion.div>
-
-              {/* Enhanced Search Bar */}
-              <div className="hidden md:flex flex-1 max-w-md mx-8">
-                <div className="relative w-full">
-                  <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-400" />
-                  <input
-                    type="text"
-                    placeholder="Search services..."
-                    value={searchQuery}
-                    onChange={(e) => handleSearch(e.target.value)}
-                    onFocus={() => setIsSearchFocused(true)}
-                    onBlur={() => setTimeout(() => setIsSearchFocused(false), 200)}
-                    className="w-full pl-10 pr-4 py-2 bg-gray-900/50 border border-cyan-500/30 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-cyan-500 focus:ring-2 focus:ring-cyan-500/20 transition-all duration-200"
-                    aria-label="Search services"
-                  />
-                  {isLoading && (
-                    <motion.div
-                      initial={{ opacity: 0 }}
-                      animate={{ opacity: 1 }}
-                      className="absolute right-3 top-1/2 transform -translate-y-1/2"
-                    >
-                      <div className="w-4 h-4 border-2 border-cyan-500 border-t-transparent rounded-full animate-spin"></div>
-                    </motion.div>
-                  )}
-                </div>
-              </div>
 
               {/* Desktop Navigation */}
               <div className="hidden md:flex items-center space-x-8">
@@ -233,7 +195,7 @@ const EnhancedHomepage2045: React.FC = () => {
                   { name: 'About', href: '/about' },
                   { name: 'Contact', href: '/contact' }
                 ].map((item) => (
-                  <motion.a
+                  <Link
                     key={item.name}
                     href={item.href}
                     className="text-gray-300 hover:text-cyan-400 transition-colors duration-200 relative group"
@@ -241,16 +203,15 @@ const EnhancedHomepage2045: React.FC = () => {
                     aria-label={`Navigate to ${item.name}`}
                   >
                     {item.name}
-                    <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-cyan-400 to-blue-500 transition-all duration-300 group-hover:w-full"></span>
-                  </motion.a>
+                    <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-cyan-400 to-purple-500 transition-all duration-300 group-hover:w-full" />
+                  </Link>
                 ))}
               </div>
 
-              {/* CTA Button */}
+              {/* Contact Button */}
               <motion.div
                 initial={{ opacity: 0, x: 20 }}
                 animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.6 }}
                 className="hidden md:block"
               >
                 <Link href="/contact">
@@ -277,9 +238,9 @@ const EnhancedHomepage2045: React.FC = () => {
             </div>
           </div>
 
-          {/* Enhanced Mobile Menu */}
+          {/* Mobile Menu */}
           <AnimatePresence>
-            {showMobileMenu && (
+            {isMenuOpen && (
               <motion.div
                 initial={{ opacity: 0, height: 0 }}
                 animate={{ opacity: 1, height: 'auto' }}
@@ -307,7 +268,7 @@ const EnhancedHomepage2045: React.FC = () => {
                     { name: 'About', href: '/about' },
                     { name: 'Contact', href: '/contact' }
                   ].map((item) => (
-                    <a
+                    <Link
                       key={item.name}
                       href={item.href}
                       className="block text-gray-300 hover:text-cyan-400 transition-colors duration-200 py-2"
@@ -338,7 +299,7 @@ const EnhancedHomepage2045: React.FC = () => {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
-              className="mb-8"
+              className="relative z-10"
             >
               <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6">
                 <span className="bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 bg-clip-text text-transparent">
@@ -351,24 +312,16 @@ const EnhancedHomepage2045: React.FC = () => {
                   2045
                 </span>
               </h1>
-              <p className="text-xl md:text-2xl text-gray-300 max-w-4xl mx-auto leading-relaxed">
-                Transform your business with cutting-edge AI, quantum computing, and next-generation IT infrastructure. 
-                Experience the future of technology with Zion Tech Group.
+              
+              <p className="text-xl md:text-2xl text-gray-300 mb-8 max-w-4xl mx-auto leading-relaxed">
+                Pioneering the future with AI consciousness, quantum computing, and autonomous solutions. 
+                Transform your business with cutting-edge technology that's already here.
               </p>
-            </motion.div>
 
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-              className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12"
-            >
-              <Link href="/services">
-                <motion.button
-                  className="px-8 py-4 bg-gradient-to-r from-cyan-500 to-blue-500 text-white rounded-xl font-semibold text-lg hover:from-cyan-600 hover:to-blue-600 transition-all duration-200 shadow-lg hover:shadow-cyan-500/25 flex items-center space-x-2"
-                  whileHover={{ scale: 1.05, y: -2 }}
-                  whileTap={{ scale: 0.95 }}
-                  aria-label="Explore our services"
+              <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                <Link
+                  href="/services"
+                  className="bg-gradient-to-r from-cyan-500 to-purple-600 text-white px-8 py-4 rounded-lg text-lg font-semibold hover:from-cyan-600 hover:to-purple-700 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-cyan-500/25 flex items-center space-x-2"
                 >
                   <span>Explore Services</span>
                   <ArrowRight className="w-5 h-5" />
@@ -677,10 +630,78 @@ const EnhancedHomepage2045: React.FC = () => {
             <div className="border-t border-gray-800 pt-8 text-center text-gray-400">
               <p>&copy; 2025 Zion Tech Group. All rights reserved.</p>
             </div>
+
+            {/* View All Services Button */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.3 }}
+              className="text-center mt-12"
+            >
+              <Link
+                href="/services"
+                className="inline-flex items-center space-x-2 bg-gradient-to-r from-cyan-500 to-purple-600 text-white px-8 py-4 rounded-lg text-lg font-semibold hover:from-cyan-600 hover:to-purple-700 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-cyan-500/25"
+              >
+                <span>View All Services</span>
+                <ArrowRight className="w-5 h-5" />
+              </Link>
+            </motion.div>
           </div>
-        </footer>
+        </section>
+
+        {/* Contact Section */}
+        <section className="relative py-20">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              className="bg-gradient-to-r from-cyan-500/10 to-purple-500/10 border border-cyan-400/20 rounded-3xl p-8 md:p-12 text-center"
+            >
+              <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+                Ready to <span className="bg-gradient-to-r from-cyan-400 to-purple-500 bg-clip-text text-transparent">Transform</span> Your Business?
+              </h2>
+              
+              <p className="text-xl text-gray-300 mb-8 max-w-3xl mx-auto">
+                Join thousands of businesses already leveraging our revolutionary technology solutions. 
+                Get started today and experience the future of business technology.
+              </p>
+
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+                <div className="flex items-center justify-center space-x-3 text-gray-300">
+                  <Phone className="w-5 h-5 text-cyan-400" />
+                  <span>{contactInfo.mobile}</span>
+                </div>
+                <div className="flex items-center justify-center space-x-3 text-gray-300">
+                  <Mail className="w-5 h-5 text-cyan-400" />
+                  <span>{contactInfo.email}</span>
+                </div>
+                <div className="flex items-center justify-center space-x-3 text-gray-300">
+                  <MapPin className="w-5 h-5 text-cyan-400" />
+                  <span>{contactInfo.address}</span>
+                </div>
+              </div>
+
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <Link
+                  href="/contact"
+                  className="bg-gradient-to-r from-cyan-500 to-purple-600 text-white px-8 py-4 rounded-lg text-lg font-semibold hover:from-cyan-600 hover:to-purple-700 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-cyan-500/25"
+                >
+                  Get Started Today
+                </Link>
+                
+                <Link
+                  href="/services"
+                  className="border border-cyan-400/50 text-cyan-400 px-8 py-4 rounded-lg text-lg font-semibold hover:bg-cyan-400/10 transition-all duration-300"
+                >
+                  Explore Services
+                </Link>
+              </div>
+            </motion.div>
+          </div>
+        </section>
       </div>
-    </SEOOptimizer>
+    </>
   );
 };
 

@@ -9,7 +9,7 @@ import {
 
 // Import our new service data
 import { advancedAIMLServices } from '../data/2025-advanced-ai-ml-services';
-import { advancedCybersecurityServices } from '../data/2025-advanced-cybersecurity-services';
+import { advancedCybersecurityServices2025 } from '../data/2025-advanced-cybersecurity-services';
 import { advancedCloudDevOpsServices } from '../data/2025-advanced-cloud-devops-services';
 import { industrySpecificSolutions } from '../data/2025-industry-specific-solutions';
 import { emergingTechnologyServices } from '../data/2025-emerging-technology-services';
@@ -37,7 +37,7 @@ const serviceCategories = [
     name: 'Cybersecurity & Compliance',
     icon: Shield,
     description: 'Enterprise-grade security solutions and compliance automation',
-    services: advancedCybersecurityServices,
+    services: advancedCybersecurityServices2025,
     color: 'from-red-600 to-pink-700'
   },
   {

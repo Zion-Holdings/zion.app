@@ -5,6 +5,18 @@ set -e
 
 echo "Setting up offline development environment..."
 
+# If node_modules doesn't exist, attempt an automatic install when online
+if [ ! -d node_modules ]; then
+  if curl -Is --connect-timeout 5 https://registry.npmjs.org >/dev/null 2>&1; then
+    echo "Internet detected. Running setup to install dependencies..."
+    chmod +x setup.sh
+    ./setup.sh npm
+    exit 0
+  else
+    echo "No internet connection detected. Continuing in offline mode."
+  fi
+fi
+
 # Create necessary directories
 mkdir -p src/types
 

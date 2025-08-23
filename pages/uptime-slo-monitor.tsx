@@ -11,7 +11,11 @@ export default function UptimeSLOMonitorPage() {
 
   return (
     <UltraAdvancedFuturisticBackground>
-      <SEO title={`${service.name} - Zion Tech Group`} description={service.description} canonical="https://ziontechgroup.com/uptime-slo-monitor/" />
+      <SEO data={{
+        pageTitle: `${service.name} - Zion Tech Group`,
+        pageDescription: service.description,
+        pageKeywords: ["uptime monitoring", "SLO monitoring", "service level objectives", "availability", "performance monitoring", "Zion Tech Group"]
+      }} />
       <div className="min-h-screen pt-24 pb-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-10">

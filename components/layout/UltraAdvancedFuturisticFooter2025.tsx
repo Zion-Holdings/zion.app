@@ -8,6 +8,86 @@ import {
   Users, Award, TrendingUp, Star, Zap, Lock, Server,
   Network, ShieldCheck, BrainCircuit, Atom, Satellite
 } from 'lucide-react';
+import Link from 'next/link';
+import { AnimatePresence } from 'framer-motion';
+
+interface FooterLink {
+  label: string;
+  href: string;
+  description?: string;
+  external?: boolean;
+}
+
+interface FooterSection {
+  title: string;
+  links: FooterLink[];
+}
+
+const footerSections: FooterSection[] = [
+  {
+    title: 'Services',
+    links: [
+      { label: 'AI & Machine Learning', href: '/ai-services', description: 'Advanced AI solutions' },
+      { label: 'Quantum Computing', href: '/quantum-computing', description: 'Next-gen quantum tech' },
+      { label: 'Space Technology', href: '/space-tech', description: 'Innovative space solutions' },
+      { label: 'Cybersecurity', href: '/cybersecurity', description: 'Enterprise security' },
+      { label: 'Cloud Solutions', href: '/cloud-platform', description: 'Scalable cloud infrastructure' },
+      { label: 'Enterprise IT', href: '/enterprise-it', description: 'Enterprise technology' },
+      { label: 'View All Services', href: '/services', description: 'Complete service portfolio' }
+    ]
+  },
+  {
+    title: 'Industries',
+    links: [
+      { label: 'Healthcare & Biotech', href: '/healthcare-solutions', description: 'Medical technology' },
+      { label: 'Financial Services', href: '/financial-solutions', description: 'Fintech solutions' },
+      { label: 'Manufacturing', href: '/manufacturing-ai-solutions', description: 'Industry 4.0' },
+      { label: 'Retail & E-commerce', href: '/retail-technology-solutions', description: 'Digital commerce' },
+      { label: 'Government', href: '/government-technology-solutions', description: 'Public sector' },
+      { label: 'Education', href: '/education-technology-solutions', description: 'EdTech solutions' }
+    ]
+  },
+  {
+    title: 'Company',
+    links: [
+      { label: 'About Us', href: '/about', description: 'Our mission and values' },
+      { label: 'Leadership', href: '/about#leadership', description: 'Meet our team' },
+      { label: 'Careers', href: '/careers', description: 'Join our team' },
+      { label: 'News & Updates', href: '/news', description: 'Latest company news' },
+      { label: 'Case Studies', href: '/case-studies', description: 'Success stories' },
+      { label: 'Partners', href: '/partners', description: 'Strategic partnerships' },
+      { label: 'Contact', href: '/contact', description: 'Get in touch' }
+    ]
+  },
+  {
+    title: 'Resources',
+    links: [
+      { label: 'Blog', href: '/blog', description: 'Industry insights' },
+      { label: 'Whitepapers', href: '/white-papers', description: 'In-depth research' },
+      { label: 'Webinars', href: '/webinars', description: 'Educational content' },
+      { label: 'Documentation', href: '/docs', description: 'Technical guides' },
+      { label: 'API Reference', href: '/api-documentation', description: 'Developer resources' },
+      { label: 'Support', href: '/support', description: 'Help & assistance' },
+      { label: 'Training', href: '/training', description: 'Learn our platforms' },
+      { label: 'Community', href: '/community', description: 'Connect with users' }
+    ]
+  }
+];
+
+const socialLinks = [
+  { icon: <Linkedin className="w-5 h-5" />, href: 'https://linkedin.com/company/ziontechgroup', label: 'LinkedIn', external: true },
+  { icon: <Twitter className="w-5 h-5" />, href: 'https://twitter.com/ziontechgroup', label: 'Twitter', external: true },
+  { icon: <Github className="w-5 h-5" />, href: 'https://github.com/ziontechgroup', label: 'GitHub', external: true },
+  { icon: <Youtube className="w-5 h-5" />, href: 'https://youtube.com/@ziontechgroup', label: 'YouTube', external: true },
+  { icon: <Facebook className="w-5 h-5" />, href: 'https://facebook.com/ziontechgroup', label: 'Facebook', external: true }
+];
+
+const contactInfo = {
+  phone: '+1 (302) 464-0950',
+  email: 'contact@ziontechgroup.com',
+  address: '364 E Main St STE 1008, Middletown, DE 19709',
+  website: 'https://ziontechgroup.com'
+};
 
 const UltraAdvancedFuturisticFooter2025: React.FC = () => {
   const currentYear = new Date().getFullYear();

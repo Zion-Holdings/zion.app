@@ -1,6 +1,6 @@
 import React from 'react';
 import Head from 'next/head';
-import UltraFuturisticNavigation2045 from './UltraFuturisticNavigation2045';
+import EnhancedNavigation2025 from './EnhancedNavigation2025';
 import UltraFuturisticFooter2044 from './UltraFuturisticFooter2044';
 
 interface UltraFuturisticLayout2045Props {
@@ -95,7 +95,7 @@ const UltraFuturisticLayout2045: React.FC<UltraFuturisticLayout2045Props> = ({
 
       <div className="min-h-screen bg-gradient-to-br from-gray-900 via-black to-gray-900">
         {/* Navigation */}
-        <UltraFuturisticNavigation2045 />
+        <EnhancedNavigation2025 />
         
         {/* Main Content */}
         <main className="relative z-10">

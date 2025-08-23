@@ -45,6 +45,12 @@ export default [
         PerformanceObserver: 'readonly',
         PerformanceEntry: 'readonly',
         PerformanceNavigationTiming: 'readonly',
+        PerformanceEventTiming: 'readonly',
+        // Intersection Observer API
+        IntersectionObserver: 'readonly',
+        IntersectionObserverEntry: 'readonly',
+        IntersectionObserverCallback: 'readonly',
+        IntersectionObserverInit: 'readonly',
         // DOM types
         HTMLElement: 'readonly',
         HTMLFormElement: 'readonly',
@@ -58,6 +64,7 @@ export default [
         HTMLImageElement: 'readonly',
         // Event types
         Event: 'readonly',
+        EventTarget: 'readonly',
         MouseEvent: 'readonly',
         KeyboardEvent: 'readonly',
         MediaQueryListEvent: 'readonly',

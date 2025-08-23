@@ -3,13 +3,15 @@ import Head from 'next/head';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { 
-  CheckCircle, ArrowRight, Star, TrendingUp, Phone, 
-  Brain, Sparkles, Users, 
-  BarChart3, Settings, 
-  Award, Code, TestTube, Server, Database, Shield as SecurityIcon, Mail
+  CheckCircle, ArrowRight, Star, TrendingUp, Phone, Zap, DollarSign, 
+  Shield, Mail, MapPin, Rocket, Brain, Sparkles, Atom, Dna, Users, 
+  Globe, Cpu, Target, Microscope, Lock, Cloud, BarChart3, Settings, 
+  Eye, Award, Clock, Heart, Lightbulb, Target as TargetIcon, 
+  Zap as ZapIcon, Shield as ShieldIcon, Globe as GlobeIcon,
+  Search, Code, TestTube, Server, Database, Network, Shield as SecurityIcon
 } from 'lucide-react';
 import Layout from '../components/layout/Layout';
-import { advancedAIAutomationServices } from '../data/2026-advanced-ai-automation-services';
+import { advancedAIAutomationServices } from '../data/2025-advanced-ai-automation-services';
 
 const contactInfo = {
   mobile: '+1 302 464 0950',
@@ -284,8 +286,8 @@ export default function AdvancedAIAutomationServices() {
                           <h4 className="text-xl font-semibold text-white mb-2">{service.name}</h4>
                           <p className="text-gray-300 text-sm mb-4">{service.tagline}</p>
                           <div className="flex items-center justify-between mb-4">
-                            <span className="text-2xl font-bold text-white">{service.price}</span>
-                            <span className="text-gray-400">{service.period}</span>
+                            <span className="text-2xl font-bold text-white">${service.price.monthly}</span>
+                            <span className="text-gray-400">/month</span>
                           </div>
                           <p className="text-gray-300 text-sm mb-4">{service.description}</p>
                           <div className="space-y-2 mb-6">

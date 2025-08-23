@@ -1,13 +1,13 @@
 import React from 'react';
 import Head from 'next/head';
-import { Phone, Mail, MapPin, Check, ArrowRight, Search, Star } from 'lucide-react';
+import { Database, Check, Phone, Mail, MapPin, ArrowRight } from 'lucide-react';
 import UltraAdvancedFuturisticBackground from '../components/ui/UltraAdvancedFuturisticBackground';
 import Button from '../components/ui/Button';
-import { enhancedRealMicroSaasServices } from '../data/enhanced-real-micro-saas-services';
+import { real2029Q3Additions } from '../data/real-2029-q3-additions';
 
 export default function DataQualityMonitorPage() {
-  const service = enhancedRealMicroSaasServices.find(s => s.link.endsWith('/data-quality-monitor'));
-  if (!service) return null;
+	const service = real2029Q3Additions.find(s => s.id === 'data-quality-monitor');
+	if (!service) return null;
 
   return (
     <UltraAdvancedFuturisticBackground>

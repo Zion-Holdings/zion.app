@@ -5,8 +5,59 @@ import {
   Search, Grid, List,
   Brain, Atom, Shield, Target, Rocket,
   ArrowRight, Check, Palette, Heart, Truck, GraduationCap,
-  Building
+  Building, Cpu, BarChart3, TrendingUp
 } from 'lucide-react';
+
+// Import our new innovative 2025 services
+import { realInnovativeMicroSaasServices2025 } from '../data/2025-real-innovative-micro-saas-expansion';
+import { innovativeITInfrastructureServices2025 } from '../data/2025-innovative-it-infrastructure-services-expansion';
+import { innovativeAIServices2025 } from '../data/2025-innovative-ai-services-expansion';
+
+// Import our new 2025 innovative breakthrough services
+import { innovativeMicroSaasBreakthroughs2025 } from '../data/2025-innovative-micro-saas-breakthroughs';
+import { innovativeITInfrastructureBreakthroughs2025 } from '../data/2025-innovative-it-infrastructure-breakthroughs';
+import { innovativeAIBreakthroughs2025 } from '../data/2025-innovative-ai-breakthroughs';
+
+// Import our new 2025 advanced services
+import { advancedBusinessIntelligenceServices2025 } from '../data/2025-advanced-business-intelligence-services';
+import { advancedITInfrastructureServices2025 } from '../data/2025-advanced-it-infrastructure-services';
+
+// Import our new real services
+import { realMicroSaas2025Expansion } from '../data/real-micro-saas-2025-expansion';
+import { realITServices2025Expansion } from '../data/real-it-services-2025-expansion';
+import { realAIServices2025Expansion } from '../data/real-ai-services-2025-expansion';
+
+// Import our new comprehensive 2025 service data
+import { advancedAIAutomationPlatforms2025 } from '../data/2025-advanced-ai-automation-platforms';
+import { emergingTechBreakthroughServices2025 } from '../data/2025-emerging-tech-breakthrough-services';
+import { advancedITInfrastructurePlatforms2025 } from '../data/2025-advanced-it-infrastructure-platforms';
+import { advancedBusinessIntelligencePlatforms2025 } from '../data/2025-advanced-business-intelligence-platforms';
+
+// Import our new innovative 2025 enterprise services
+import { innovativeAIEnterpriseServices2025 } from '../data/2025-innovative-ai-enterprise-services';
+import { innovativeITInfrastructureEnterpriseServices2025 } from '../data/2025-innovative-it-infrastructure-enterprise';
+import { innovativeMicroSaasEnterpriseServices2025 } from '../data/2025-innovative-micro-saas-enterprise';
+import { innovativeCybersecurityServices2025 } from '../data/2025-innovative-cybersecurity-services';
+import { innovativeDataAnalyticsServices2025 } from '../data/2025-innovative-data-analytics-services';
+
+// Import our comprehensive new 2025 services
+import { aiBusinessIntelligencePlatform2025 } from '../data/2025-ai-business-intelligence-platform';
+import { cybersecurityCompliancePlatform2025 } from '../data/2025-cybersecurity-compliance-platform';
+import { cloudDevOpsAutomationPlatform2025 } from '../data/2025-cloud-devops-automation-platform';
+import { digitalTransformationInnovationPlatform2025 } from '../data/2025-digital-transformation-innovation-platform';
+import { healthcareBiotechInnovationPlatform2025 } from '../data/2025-healthcare-biotech-innovation-platform';
+import { fintechInnovationPlatform2025 } from '../data/2025-fintech-innovation-platform';
+import { sustainabilityGreenTechPlatform2025 } from '../data/2025-sustainability-green-tech-platform';
+import { spaceTechAerospaceInnovationPlatform2025 } from '../data/2025-space-tech-aerospace-innovation-platform';
+import { quantumComputingAdvancedTechPlatform2025 } from '../data/2025-quantum-computing-advanced-tech-platform';
+import { comprehensiveNewServices2025 } from '../data/2025-comprehensive-new-services-summary';
+
+// Import our new innovative 2025 enterprise services
+import { innovativeAIEnterpriseServices2025 } from '../data/2025-innovative-ai-enterprise-services';
+import { innovativeITInfrastructureEnterpriseServices2025 } from '../data/2025-innovative-it-infrastructure-enterprise';
+import { innovativeMicroSaasEnterpriseServices2025 } from '../data/2025-innovative-micro-saas-enterprise';
+import { innovativeCybersecurityServices2025 } from '../data/2025-innovative-cybersecurity-services';
+import { innovativeDataAnalyticsServices2025 } from '../data/2025-innovative-data-analytics-services';
 
 // Import our new service data
 import { enterpriseITSolutions } from '../data/2034-enterprise-it-solutions';
@@ -32,14 +83,21 @@ import { revolutionary2041AdvancedServices } from '../data/revolutionary-2041-ad
 import { advanced2041EnterpriseServices } from '../data/advanced-2041-enterprise-services';
 import { revolutionary2042MicroSaasServices } from '../data/revolutionary-2042-micro-saas-services';
 
-// Import our new 2025 ultimate services expansion
-import { ultimate2025MicroSaasExpansion } from '../data/2025-ultimate-micro-saas-expansion';
-import { ultimate2025ITServicesExpansion } from '../data/2025-ultimate-it-services-expansion';
-import { ultimate2025AIServicesExpansion } from '../data/2025-ultimate-ai-services-expansion';
+// Import our new 2025 advanced services
+import { advanced2025MicroSaasExpansion } from '../data/2025-advanced-micro-saas-expansion';
+import { advanced2025ITSolutionsExpansion } from '../data/2025-advanced-it-solutions-expansion';
+import { advanced2025AIServicesExpansion } from '../data/2025-advanced-ai-services-expansion';
 
-// Import our new 2025 Q4 innovative services
-import { innovative2025Q4NewServices } from '../data/innovative-2025-q4-new-services';
-import { comprehensiveServicesAdvertising2025 } from '../data/comprehensive-services-advertising-2025';
+// Import our new comprehensive advanced services
+import { advancedCybersecurityServices2025 } from '../data/2025-advanced-cybersecurity-services';
+import { advancedDevOpsInfrastructure2025 } from '../data/2025-advanced-devops-infrastructure';
+import { advancedDataAnalyticsBI2025 } from '../data/2025-advanced-data-analytics-bi';
+import { advancedFintechBlockchain2025 } from '../data/2025-advanced-fintech-blockchain';
+import { advancedHealthcareBiotech2025 } from '../data/2025-advanced-healthcare-biotech';
+// Import our new 2025 innovative services expansion
+
+import { innovative2025ITSolutionsExpansion } from '../data/innovative-2025-it-solutions-expansion';
+import { innovative2025AIServicesExpansion } from '../data/innovative-2025-ai-services-expansion';
 
 // Import our new innovative 2040 services
 import { innovative2040ITServices } from '../data/innovative-2040-it-services';
@@ -47,7 +105,19 @@ import { innovative2040FuturisticServices } from '../data/innovative-2040-futuri
 
 // Import our new 2025 advanced enterprise services
 import { advancedEnterpriseServices } from '../data/2025-advanced-enterprise-services-expansion';
+import { innovative2025MicroSaasExpansion } from '../data/2025-innovative-micro-saas-expansion';
 import { cuttingEdgeITInfrastructureServices } from '../data/2025-cutting-edge-it-infrastructure';
+// Import our new Q4 2025 innovative services
+import { innovative2025Q4MicroSaasServices } from '../data/innovative-2025-q4-micro-saas-services';
+import { innovative2025Q4ITServices } from '../data/innovative-2025-q4-it-services';
+import { innovative2025Q4AIServices } from '../data/innovative-2025-q4-ai-services';
+
+// Import our new innovative 2025 service suites
+import { innovativeAIAutomationSuite } from '../data/2025-innovative-ai-automation-suite';
+import { innovativeITInfrastructureSuite } from '../data/2025-innovative-it-infrastructure-suite';
+import { innovativeCybersecuritySuite } from '../data/2025-innovative-cybersecurity-suite';
+import { innovativeDataAnalyticsSuite } from '../data/2025-innovative-data-analytics-suite';
+import { innovativeBusinessAutomationSuite } from '../data/2025-innovative-business-automation-suite';
 
 // Import our new 2025 cutting-edge futuristic services
 import { cuttingEdgeFuturisticServices } from '../data/2025-cutting-edge-futuristic-services';
@@ -56,23 +126,14 @@ import { advancedITInfrastructureServices } from '../data/2025-advanced-it-infra
 
 // Import our new 2025 advanced real micro SAAS expansion
 import { advancedRealMicroSaasExpansion2025 } from '../data/2025-advanced-real-micro-saas-expansion';
+import { emergingTechBreakthroughServices2025 } from '../data/2025-emerging-tech-breakthrough-services';
+import { practicalBusinessSolutions2025 } from '../data/2025-practical-business-solutions';
 
-// Import our new 2025 advanced IT infrastructure expansion
-import { advancedITInfrastructureExpansion2025 } from '../data/2025-advanced-it-infrastructure-expansion';
-
-// Import our new 2025 advanced AI services expansion
-import { advancedAIServicesExpansion2025 } from '../data/2025-advanced-ai-services-expansion';
-
-// Import our new 2025 emerging tech innovations expansion
-import { emergingTechInnovationsExpansion2025 } from '../data/2025-emerging-tech-innovations-expansion';
-
-// Import our new 2025 innovative business solutions expansion
-import { innovativeBusinessSolutionsExpansion2025 } from '../data/2025-innovative-business-solutions-expansion';
-
-// Import our new 2025 innovative services
-import { innovativeITInfrastructureServices2025 } from '../data/2025-innovative-it-infrastructure-services';
-import { innovativeMicroSaasSolutions2025 } from '../data/2025-innovative-micro-saas-solutions';
-import { cuttingEdgeAIServices2025 } from '../data/2025-cutting-edge-ai-services';
+// Import our new 2025 comprehensive service categories
+import { advancedCybersecuritySolutions2025 } from '../data/2025-advanced-cybersecurity-solutions';
+import { advancedAIAutomationSuite2025 } from '../data/2025-advanced-ai-automation-suite';
+import { innovativeITInfrastructureSolutions2025 } from '../data/2025-innovative-it-infrastructure-solutions';
+import { emergingTechnologyBreakthroughs2025 } from '../data/2025-emerging-technology-breakthroughs';
 
 // Import existing service data
 import { realMicroSaasServices } from '../data/real-micro-saas-services';
@@ -85,6 +146,10 @@ import { marketReadyServices } from '../data/market-ready-services';
 import { marketValidatedServices } from '../data/market-validated-services';
 import { industryRealServices } from '../data/industry-real-services';
 
+// Import our new 2025 innovative real-world services
+import { innovativeRealWorldServices } from '../data/2025-innovative-real-world-services';
+import { cuttingEdgeEnterpriseSolutions } from '../data/2025-cutting-edge-enterprise-solutions';
+
 // Helper function to get service category
 const getServiceCategory = (service: any) => {
   if (service.category) return service.category;
@@ -96,7 +161,14 @@ const getServiceCategory = (service: any) => {
 const getServicePricing = (service: any) => {
   if (service.pricing?.starter) return service.pricing.starter;
   if (service.pricing?.monthly) return `$${service.pricing.monthly}/month`;
-  if (service.price?.monthly) return `$${service.price.monthly}/month`;
+  if (typeof service.price === 'string') return service.price;
+  if (service.price && typeof service.price === 'object') {
+    if (service.price.monthly) return `$${service.price.monthly}/month`;
+    if (service.price.yearly) return `$${service.price.yearly}/year`;
+    if (service.price.currency && service.price.monthly) {
+      return `${service.price.currency}${service.price.monthly}/month`;
+    }
+  }
   return 'Contact for pricing';
 };
 
@@ -116,6 +188,72 @@ const getServiceDescription = (service: any) => {
 
 // Create unified services array
 const allServices = [
+  // Our comprehensive new 2025 services
+  ...aiBusinessIntelligencePlatform2025,
+  ...cybersecurityCompliancePlatform2025,
+  ...cloudDevOpsAutomationPlatform2025,
+  ...digitalTransformationInnovationPlatform2025,
+  ...healthcareBiotechInnovationPlatform2025,
+  ...fintechInnovationPlatform2025,
+  ...sustainabilityGreenTechPlatform2025,
+  ...spaceTechAerospaceInnovationPlatform2025,
+  ...quantumComputingAdvancedTechPlatform2025,
+  ...comprehensiveNewServices2025,
+  
+  // Our existing 2025 services
+  ...advancedAIAutomationServices2025,
+  ...innovativeITInfrastructureServices2025,
+  ...innovativeAIServices2025,
+=======
+  
+  // Our new comprehensive 2025 services expansion
+  ...comprehensiveRealServicesExpansion2025,
+  ...advancedITAISpecializedServices2025,
+  ...emergingTechInnovativeServices2025,
+  
+  // Our new 2025 advanced services
+  ...advancedBusinessIntelligenceServices2025,
+  ...advancedITInfrastructureServices2025,
+  
+  // Our new real services 2025
+  ...realMicroSaas2025Expansion,
+  ...realITServices2025Expansion,
+  ...realAIServices2025Expansion,
+  
+  // Our new comprehensive 2025 service platforms
+  ...advancedAIAutomationPlatforms2025,
+  ...emergingTechBreakthroughServices2025,
+  ...advancedITInfrastructurePlatforms2025,
+  ...advancedBusinessIntelligencePlatforms2025,
+  
+  // Our new 2025 advanced specialized services
+  ...advancedFinancialTechServices2025,
+  ...advancedHealthcareTechServices2025,
+  ...advancedLogisticsSupplyChainServices2025,
+  ...advancedCybersecurityServices2025,
+  
+  // Our new 2025 innovative services
+  ...advancedCybersecurityAutomationServices,
+  ...aiPoweredBusinessAutomationServices,
+  ...advancedCloudDevOpsSolutions,
+  ...advancedDataAnalyticsSolutions,
+  ...fintechBlockchainInnovations,
+  ...healthcareBiotechInnovations,
+  
+  // Our new innovative 2025 enterprise services
+  ...innovativeAIEnterpriseServices2025,
+  ...innovativeITInfrastructureEnterpriseServices2025,
+  ...innovativeMicroSaasEnterpriseServices2025,
+  ...innovativeCybersecurityServices2025,
+  ...innovativeDataAnalyticsServices2025,
+  
+  // Our new innovative 2025 enterprise services
+  ...innovativeAIEnterpriseServices2025,
+  ...innovativeITInfrastructureEnterpriseServices2025,
+  ...innovativeMicroSaasEnterpriseServices2025,
+  ...innovativeCybersecurityServices2025,
+  ...innovativeDataAnalyticsServices2025,
+  
   ...enterpriseITSolutions,
   ...innovativeMicroSaasSolutions,
   ...cuttingEdgeAIServices,
@@ -142,9 +280,16 @@ const allServices = [
   ...innovative2036MicroSaasServices,
   ...innovative2036ITServices,
   // Our new 2025 advanced services
-  ...ultimate2025MicroSaasExpansion,
-  ...ultimate2025ITServicesExpansion,
-  ...ultimate2025AIServicesExpansion,
+  ...advanced2025MicroSaasExpansion,
+  ...advanced2025ITSolutionsExpansion,
+  ...advanced2025AIServicesExpansion,
+  
+  // Our new comprehensive advanced services (Priority)
+  ...advancedCybersecurityServices2025,
+  ...advancedDevOpsInfrastructure2025,
+  ...advancedDataAnalyticsBI2025,
+  ...advancedFintechBlockchain2025,
+  ...advancedHealthcareBiotech2025,
   // Our new innovative services
   ...innovative2037MicroSaasServices,
   ...innovative2037ITServices,
@@ -177,22 +322,8 @@ const allServices = [
   ...ultimate2025AIServicesExpansion,
   // Our new 2025 advanced enterprise services
   ...advancedEnterpriseServices,
-  ...cuttingEdgeITInfrastructureServices,
-  
-  // Our new 2025 advanced real micro SAAS expansion
-  ...advancedRealMicroSaasExpansion2025,
-  
-  // Our new 2025 advanced IT infrastructure expansion
-  ...advancedITInfrastructureExpansion2025,
-  
-  // Our new 2025 advanced AI services expansion
-  ...advancedAIServicesExpansion2025,
-  
-  // Our new 2025 emerging tech innovations expansion
-  ...emergingTechInnovationsExpansion2025,
-  
-  // Our new 2025 innovative business solutions expansion
-  ...innovativeBusinessSolutionsExpansion2025
+  ...innovative2025MicroSaasExpansion,
+  ...cuttingEdgeITInfrastructureServices
 ];
 
 const categories = [
@@ -202,6 +333,97 @@ const categories = [
     icon: <Grid className="w-6 h-6" />,
     color: 'from-gray-500 to-slate-500',
     description: 'Complete portfolio of all services'
+  },
+  {
+    id: 'ai-business-intelligence',
+    name: 'AI & Business Intelligence',
+    icon: <Brain className="w-6 h-6" />,
+    color: 'from-purple-600 via-blue-600 to-cyan-600',
+    description: 'AI-powered business intelligence and analytics'
+  },
+  {
+    id: 'cybersecurity-compliance',
+    name: 'Cybersecurity & Compliance',
+    icon: <Shield className="w-6 h-6" />,
+    color: 'from-red-600 via-orange-600 to-yellow-600',
+    description: 'Advanced security and compliance solutions'
+  },
+  {
+    id: 'cloud-devops',
+    name: 'Cloud & DevOps',
+    icon: <Cpu className="w-6 h-6" />,
+    color: 'from-blue-600 via-cyan-600 to-teal-600',
+    description: 'Cloud orchestration and DevOps automation'
+  },
+  {
+    id: 'digital-transformation',
+    name: 'Digital Transformation',
+    icon: <Rocket className="w-6 h-6" />,
+    color: 'from-purple-600 via-pink-600 to-red-600',
+    description: 'Business transformation and innovation'
+  },
+  {
+    id: 'healthcare-biotech',
+    name: 'Healthcare & Biotech',
+    icon: <Heart className="w-6 h-6" />,
+    color: 'from-blue-600 via-cyan-600 to-teal-600',
+    description: 'Healthcare analytics and biotech innovation'
+  },
+  {
+    id: 'fintech',
+    name: 'Fintech Innovation',
+    icon: <Target className="w-6 h-6" />,
+    color: 'from-green-600 via-emerald-600 to-teal-600',
+    description: 'Financial technology and blockchain solutions'
+  },
+  {
+    id: 'sustainability-green-tech',
+    name: 'Sustainability & Green Tech',
+    icon: <Palette className="w-6 h-6" />,
+    color: 'from-green-600 via-emerald-600 to-teal-600',
+    description: 'Environmental sustainability and green technology'
+  },
+  {
+    id: 'space-tech-aerospace',
+    name: 'Space Tech & Aerospace',
+    icon: <Atom className="w-6 h-6" />,
+    color: 'from-blue-600 via-indigo-600 to-purple-600',
+    description: 'Space technology and aerospace innovation'
+  },
+  {
+    id: 'quantum-computing',
+    name: 'Quantum Computing',
+    icon: <Brain className="w-6 h-6" />,
+    color: 'from-purple-600 via-violet-600 to-indigo-600',
+    description: 'Quantum computing and advanced technology'
+  },
+  {
+    id: 'ai-automation',
+    name: 'AI Automation',
+    icon: <Brain className="w-6 h-6" />,
+    color: 'from-blue-500 to-purple-500',
+    description: 'AI-powered automation solutions'
+  },
+  {
+    id: 'it-infrastructure',
+    name: 'IT Infrastructure',
+    icon: <Building className="w-6 h-6" />,
+    color: 'from-indigo-500 to-purple-500',
+    description: 'Enterprise infrastructure and cloud solutions'
+  },
+  {
+    id: 'micro-saas',
+    name: 'Micro SAAS',
+    icon: <Target className="w-6 h-6" />,
+    color: 'from-green-500 to-emerald-500',
+    description: 'Innovative business solutions'
+  },
+  {
+    id: 'ai-services',
+    name: 'AI Services',
+    icon: <Cpu className="w-6 h-6" />,
+    color: 'from-purple-500 to-pink-500',
+    description: 'Cutting-edge AI and machine learning services'
   },
   {
     id: 'enterprise-it',
@@ -253,6 +475,34 @@ const categories = [
     description: 'Advanced healthcare solutions'
   },
   {
+    id: 'financial-tech',
+    name: 'Financial Technology',
+    icon: <DollarSign className="w-6 h-6" />,
+    color: 'from-green-500 to-emerald-500',
+    description: 'Advanced financial technology solutions'
+  },
+  {
+    id: 'healthcare-tech',
+    name: 'Healthcare Technology',
+    icon: <Heart className="w-6 h-6" />,
+    color: 'from-blue-500 to-cyan-500',
+    description: 'Cutting-edge healthcare technology platforms'
+  },
+  {
+    id: 'logistics-supply-chain',
+    name: 'Logistics & Supply Chain',
+    icon: <Truck className="w-6 h-6" />,
+    color: 'from-orange-500 to-red-500',
+    description: 'Intelligent logistics and supply chain solutions'
+  },
+  {
+    id: 'cybersecurity',
+    name: 'Cybersecurity',
+    icon: <Shield className="w-6 h-6" />,
+    color: 'from-purple-500 to-indigo-500',
+    description: 'Advanced cybersecurity and data protection'
+  },
+  {
     id: 'transportation-logistics',
     name: 'Transportation & Logistics',
     icon: <Truck className="w-6 h-6" />,
@@ -265,6 +515,27 @@ const categories = [
     icon: <GraduationCap className="w-6 h-6" />,
     color: 'from-yellow-500 to-orange-500',
     description: 'Learning and research platforms'
+  },
+  {
+    id: 'cybersecurity',
+    name: 'Cybersecurity',
+    icon: <Shield className="w-6 h-6" />,
+    color: 'from-red-500 to-orange-500',
+    description: 'Advanced security and threat protection'
+  },
+  {
+    id: 'ai-ml',
+    name: 'AI & Machine Learning',
+    icon: <Brain className="w-6 h-6" />,
+    color: 'from-purple-500 to-pink-600',
+    description: 'Intelligent automation and analytics'
+  },
+  {
+    id: 'fintech-blockchain',
+    name: 'Fintech & Blockchain',
+    icon: <Target className="w-6 h-6" />,
+    color: 'from-green-500 to-emerald-600',
+    description: 'Financial technology and blockchain solutions'
   }
 ];
 
@@ -304,9 +575,52 @@ export default function Services() {
     
     if (selectedCategory === 'all') return matchesSearch;
     
-    const serviceCategory = getServiceCategory(service).toLowerCase();
+    const serviceCategory = getServiceDescription(service).toLowerCase();
     const categoryName = categories.find(cat => cat.id === selectedCategory)?.name.toLowerCase();
     
+    // Handle specialized category filtering
+    if (selectedCategory === 'cybersecurity') {
+      return matchesSearch && (
+        serviceCategory.includes('cybersecurity') || 
+        serviceCategory.includes('security') || 
+        serviceCategory.includes('threat') ||
+        serviceCategory.includes('vulnerability') ||
+        serviceCategory.includes('compliance')
+      );
+    }
+    
+    if (selectedCategory === 'ai-ml') {
+      return matchesSearch && (
+        serviceCategory.includes('ai') || 
+        serviceCategory.includes('machine learning') || 
+        serviceCategory.includes('artificial intelligence') ||
+        serviceCategory.includes('neural') ||
+        serviceCategory.includes('automation')
+      );
+    }
+    
+    if (selectedCategory === 'fintech-blockchain') {
+      return matchesSearch && (
+        serviceCategory.includes('fintech') || 
+        serviceCategory.includes('blockchain') || 
+        serviceCategory.includes('crypto') ||
+        serviceCategory.includes('defi') ||
+        serviceCategory.includes('nft') ||
+        serviceCategory.includes('payment')
+      );
+    }
+    
+    if (selectedCategory === 'healthcare-biotech') {
+      return matchesSearch && (
+        serviceCategory.includes('healthcare') || 
+        serviceCategory.includes('biotech') || 
+        serviceCategory.includes('medical') ||
+        serviceCategory.includes('pharmaceutical') ||
+        serviceCategory.includes('clinical')
+      );
+    }
+    
+    // Default category matching
     return matchesSearch && serviceCategory.includes(categoryName || '');
   });
 
@@ -346,16 +660,45 @@ export default function Services() {
 
   const getCategoryIcon = (category: string) => {
     switch (category.toLowerCase()) {
+      case 'ai & business intelligence':
+        return <Brain className="w-6 h-6 text-purple-400" />;
+      case 'cybersecurity & compliance':
+        return <Shield className="w-6 h-6 text-red-400" />;
+      case 'cloud & devops':
+        return <Cpu className="w-6 h-6 text-blue-400" />;
+      case 'digital transformation':
+        return <Rocket className="w-6 h-6 text-pink-400" />;
+      case 'healthcare & biotech':
+        return <Heart className="w-6 h-6 text-blue-400" />;
+      case 'fintech':
+        return <Target className="w-6 h-6 text-green-400" />;
+      case 'sustainability & green tech':
+        return <Palette className="w-6 h-6 text-green-400" />;
+      case 'space technology':
+      case 'aerospace':
+        return <Atom className="w-6 h-6 text-blue-400" />;
+      case 'quantum computing':
+        return <Brain className="w-6 h-6 text-purple-400" />;
+      case 'ai automation':
+        return <Brain className="w-6 h-6 text-blue-400" />;
+      case 'it infrastructure':
+        return <Building className="w-6 h-6 text-indigo-400" />;
+      case 'micro saas':
+        return <Target className="w-6 h-6 text-green-400" />;
+      case 'ai services':
+        return <Cpu className="w-6 h-6 text-purple-400" />;
       case 'enterprise it':
       case 'enterprise security':
       case 'devops & automation':
       case 'data & analytics':
       case 'cloud services':
-      case 'cybersecurity':
         return <Building className="w-6 h-6 text-blue-400" />;
+      case 'cybersecurity':
+        return <Shield className="w-6 h-6 text-red-400" />;
       case 'ai & consciousness':
       case 'ai services':
       case 'artificial intelligence':
+      case 'ai & machine learning':
         return <Brain className="w-6 h-6 text-cyan-400" />;
       case 'quantum':
       case 'quantum & emerging tech':
@@ -369,15 +712,15 @@ export default function Services() {
       case 'creative':
       case 'creative & media':
         return <Palette className="w-6 h-6 text-indigo-400" />;
-      case 'healthcare':
-      case 'healthcare & biotech':
-        return <Heart className="w-6 h-6 text-red-400" />;
       case 'transportation':
       case 'transportation & logistics':
         return <Truck className="w-6 h-6 text-blue-400" />;
       case 'education':
       case 'education & research':
         return <GraduationCap className="w-6 h-6 text-yellow-400" />;
+      case 'fintech':
+      case 'fintech & blockchain':
+        return <Target className="w-6 h-6 text-green-400" />;
       default:
         return <Shield className="w-6 h-6 text-gray-400" />;
     }
@@ -438,9 +781,33 @@ export default function Services() {
                 From enterprise IT solutions to cutting-edge AI services and innovative micro SAAS platforms, 
                 we provide the technology you need to succeed in the digital age.
               </p>
+              
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.4 }}
+                className="flex flex-wrap justify-center gap-6 text-sm text-gray-400"
+              >
+                <div className="flex items-center">
+                  <div className="w-2 h-2 bg-green-400 rounded-full mr-2"></div>
+                  AI & Consciousness
+                </div>
+                <div className="flex items-center">
+                  <div className="w-2 h-2 bg-purple-400 rounded-full mr-2"></div>
+                  Quantum Computing
+                </div>
+                <div className="flex items-center">
+                  <div className="w-2 h-2 bg-blue-400 rounded-full mr-2"></div>
+                  Enterprise IT
+                </div>
+                <div className="flex items-center">
+                  <div className="w-2 h-2 bg-pink-400 rounded-full mr-2"></div>
+                  Micro SAAS
+                </div>
+              </motion.div>
             </motion.div>
 
-            {/* Search and Filters */}
+            {/* Enhanced Search and Filters */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -721,6 +1088,16 @@ export default function Services() {
                 >
                   <span>Get Started Today</span>
                   <ArrowRight className="w-6 h-6" />
+                </motion.a>
+                
+                <motion.a
+                  href="/2025-comprehensive-services-showcase"
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  className="inline-flex items-center space-x-3 px-8 py-4 bg-gradient-to-r from-purple-500 to-pink-600 text-white font-bold text-lg rounded-xl hover:from-purple-600 hover:to-pink-700 transition-all duration-200 shadow-2xl shadow-purple-500/25"
+                >
+                  <Rocket className="w-6 h-6" />
+                  <span>View All Services</span>
                 </motion.a>
                 
                 <motion.a

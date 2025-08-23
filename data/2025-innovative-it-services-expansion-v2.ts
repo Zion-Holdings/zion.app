@@ -1,462 +1,291 @@
-import { ServiceVariant } from '../types/service-variants';
-
-export interface InnovativeITService2025V2 {
-  id: string;
-  name: string;
-  tagline: string;
-  price?: string;
-  period?: string;
-  pricing?: {
-    starter: string;
-    professional: string;
-    enterprise: string;
-    custom: string;
-  };
-  description: string;
-  features: string[];
-  benefits?: string[];
-  popular: boolean;
-  icon: string;
-  color: string;
-  textColor: string;
-  link: string;
-  marketPosition?: string;
-  targetAudience: string;
-  trialDays?: number;
-  setupTime?: string;
-  category: string;
-  realService: boolean;
-  technology: string[];
-  integrations: string[];
-  useCases: string[];
-  roi: string;
-  competitors: string[];
-  marketSize: string;
-  growthRate: string;
-  variant: ServiceVariant;
-  contactInfo: {
-    mobile: string;
-    email: string;
-    address: string;
-    website: string;
-  };
-  realImplementation: boolean;
-  implementationDetails: string;
-  launchDate: string;
-  customers: number;
-  rating: number;
-  reviews: number;
-  slug?: string;
-  contact?: string;
-  mobile?: string;
-  address?: string;
-  website?: string;
-  competitiveAdvantage?: string;
-}
-
-export const innovativeITServices2025V2: InnovativeITService2025V2[] = [
-  // Quantum-Safe Cybersecurity Platform
+export const innovativeITServicesExpansionV2 = [
+  // Cloud-Native Application Development
   {
-    id: 'quantum-safe-cybersecurity-platform',
-    name: 'Quantum-Safe Cybersecurity Platform',
-    tagline: 'Future-proof security against quantum computing threats',
-    description: 'Advanced cybersecurity platform that implements post-quantum cryptography algorithms, quantum-resistant encryption, and AI-powered threat detection to protect against current and future quantum computing attacks.',
-    category: 'Cybersecurity',
+    id: 'cloud-native-application-development',
+    name: 'Cloud-Native Application Development Services',
+    tagline: 'Build scalable, resilient applications for the cloud era',
+    description: 'Comprehensive cloud-native application development services that leverage microservices architecture, containerization, and cloud-native technologies to build scalable, resilient, and maintainable applications. Includes CI/CD pipeline setup, monitoring, and DevOps automation.',
+    category: 'Cloud Development & DevOps',
+    type: 'IT Services',
     pricing: {
-      starter: '$299/month',
-      professional: '$799/month',
-      enterprise: '$1,999/month',
+      starter: '$5,000/project',
+      professional: '$15,000/project',
+      enterprise: '$50,000/project',
       custom: 'Contact for pricing'
     },
     features: [
-      'Post-quantum cryptography',
-      'Quantum-resistant encryption',
-      'AI-powered threat detection',
-      'Zero-trust architecture',
-      'Multi-factor authentication',
-      'Advanced endpoint protection',
-      'Network security monitoring',
-      'Incident response automation',
-      'Compliance management',
-      'Security analytics dashboard',
-      '24/7 monitoring',
-      'Expert security team'
+      'Microservices architecture design',
+      'Container orchestration with Kubernetes',
+      'CI/CD pipeline implementation',
+      'Cloud-native monitoring and logging',
+      'Auto-scaling and load balancing',
+      'Security and compliance implementation',
+      'Performance optimization',
+      'Disaster recovery planning',
+      'API gateway implementation',
+      'Service mesh configuration',
+      'Cloud cost optimization',
+      'DevOps automation'
     ],
     benefits: [
-      'Future-proof security',
-      'Protection against quantum attacks',
-      'Reduced security incidents',
-      'Compliance assurance',
-      'Cost-effective security',
-      'Scalable protection',
-      'Real-time threat response',
-      'Peace of mind'
+      'Reduce infrastructure costs by 40%',
+      'Improve application scalability by 300%',
+      'Decrease deployment time by 80%',
+      'Enhance system reliability by 99.9%',
+      'Faster time to market',
+      'Better resource utilization',
+      'Improved developer productivity',
+      'Enhanced security posture'
     ],
     useCases: [
-      'Financial institutions',
-      'Healthcare organizations',
-      'Government agencies',
-      'Technology companies',
-      'Critical infrastructure',
-      'Defense contractors',
-      'Research institutions',
-      'Large enterprises'
+      'E-commerce platforms',
+      'SaaS applications',
+      'Mobile app backends',
+      'Data processing pipelines',
+      'IoT platforms',
+      'Financial applications',
+      'Healthcare systems',
+      'Government applications'
     ],
     marketSize: '$18.7B by 2025',
-    targetAudience: 'CISOs, security managers, IT directors, compliance officers',
-    competitiveAdvantage: 'Quantum-safe cryptography, AI-powered threat detection, and comprehensive security management',
+    targetAudience: 'Startups, enterprises, government agencies, healthcare organizations',
+    competitiveAdvantage: 'Full-stack cloud-native expertise with proven enterprise implementations',
     contact: 'kleber@ziontechgroup.com',
     mobile: '+1 302 464 0950',
     address: '364 E Main St STE 1008 Middletown DE 19709',
     website: 'https://ziontechgroup.com',
-    slug: '/quantum-safe-cybersecurity-platform',
-    realService: true,
-    technology: ['Post-Quantum Cryptography', 'Machine Learning', 'Zero-Trust Architecture', 'React', 'Python', 'AWS'],
-    integrations: ['Active Directory', 'Okta', 'CrowdStrike', 'Palo Alto Networks', 'Cisco', 'Microsoft 365', 'Google Workspace'],
-    roi: '350% within 12 months',
-    competitors: ['CrowdStrike', 'Palo Alto Networks', 'Cisco', 'Fortinet'],
-    growthRate: '48% monthly',
-    variant: 'security-futuristic',
-    contactInfo: {
-      mobile: '+1 302 464 0950',
-      email: 'kleber@ziontechgroup.com',
-      address: '364 E Main St STE 1008 Middletown DE 19709',
-      website: 'https://ziontechgroup.com'
-    },
-    realImplementation: true,
-    implementationDetails: 'Cloud-native security platform with quantum-safe cryptography, AI-powered threat detection, and comprehensive security management tools',
-    launchDate: '2025-01-25',
-    customers: 680,
-    rating: 4.9,
-    reviews: 156,
-    popular: true,
-    icon: 'shield',
-    color: 'from-red-500 to-orange-500',
-    textColor: 'text-white',
-    link: '/quantum-safe-cybersecurity-platform'
+    slug: '/cloud-native-application-development'
   },
 
-  // Autonomous DevOps Intelligence Platform
+  // Cybersecurity Assessment & Penetration Testing
   {
-    id: 'autonomous-devops-intelligence-platform',
-    name: 'Autonomous DevOps Intelligence Platform',
-    tagline: 'AI-powered DevOps automation and optimization',
-    description: 'Intelligent DevOps platform that uses AI to automate deployment pipelines, optimize resource utilization, predict failures, and provide autonomous infrastructure management with minimal human intervention.',
-    category: 'DevOps',
+    id: 'cybersecurity-assessment-penetration-testing',
+    name: 'Comprehensive Cybersecurity Assessment & Penetration Testing',
+    tagline: 'Identify and eliminate security vulnerabilities before they become threats',
+    description: 'Professional cybersecurity assessment and penetration testing services that identify vulnerabilities in applications, networks, and infrastructure. Includes detailed reporting, remediation guidance, and ongoing security monitoring to protect against cyber threats.',
+    category: 'Cybersecurity & Testing',
+    type: 'IT Services',
     pricing: {
-      starter: '$199/month',
-      professional: '$599/month',
-      enterprise: '$1,499/month',
+      starter: '$3,500/assessment',
+      professional: '$8,500/assessment',
+      enterprise: '$25,000/assessment',
       custom: 'Contact for pricing'
     },
     features: [
-      'AI-powered CI/CD automation',
-      'Intelligent resource optimization',
-      'Predictive failure detection',
-      'Autonomous scaling',
-      'Performance monitoring',
-      'Cost optimization',
-      'Security scanning',
-      'Compliance automation',
-      'Multi-cloud management',
-      'Real-time analytics',
-      'Mobile app',
-      'API integration'
+      'Vulnerability assessment',
+      'Penetration testing (web, mobile, network)',
+      'Social engineering testing',
+      'Physical security assessment',
+      'Compliance auditing (SOC2, HIPAA, PCI)',
+      'Security architecture review',
+      'Incident response planning',
+      'Security awareness training',
+      'Ongoing security monitoring',
+      'Threat intelligence integration',
+      'Security policy development',
+      'Compliance reporting'
     ],
     benefits: [
-      '90% faster deployments',
-      '50% cost reduction',
-      'Zero-downtime deployments',
-      'Automated optimization',
-      'Improved reliability',
-      'Better resource utilization',
-      'Enhanced security',
-      'Reduced manual work'
+      'Identify security vulnerabilities before exploitation',
+      'Meet regulatory compliance requirements',
+      'Reduce security breach risks by 90%',
+      'Improve security posture and awareness',
+      'Protect customer data and trust',
+      'Reduce potential financial losses',
+      'Enhance insurance coverage eligibility',
+      'Demonstrate security commitment to stakeholders'
     ],
     useCases: [
-      'Software development teams',
-      'DevOps engineers',
-      'Platform teams',
-      'SRE teams',
-      'Startups',
-      'Enterprises',
-      'Cloud-native companies',
-      'Microservices architectures'
-    ],
-    marketSize: '$14.2B by 2025',
-    targetAudience: 'DevOps engineers, SREs, platform engineers, development teams',
-    competitiveAdvantage: 'AI-powered automation, predictive analytics, and autonomous infrastructure management',
-    contact: 'kleber@ziontechgroup.com',
-    mobile: '+1 302 464 0950',
-    address: '364 E Main St STE 1008 Middletown DE 19709',
-    website: 'https://ziontechgroup.com',
-    slug: '/autonomous-devops-intelligence-platform',
-    realService: true,
-    technology: ['Machine Learning', 'Kubernetes', 'Docker', 'Terraform', 'React', 'Go', 'Python'],
-    integrations: ['GitHub', 'GitLab', 'Jenkins', 'AWS', 'Azure', 'GCP', 'Kubernetes', 'Docker'],
-    roi: '400% within 8 months',
-    competitors: ['GitLab', 'Jenkins', 'CircleCI', 'GitHub Actions'],
-    growthRate: '55% monthly',
-    variant: 'devops-futuristic',
-    contactInfo: {
-      mobile: '+1 302 464 0950',
-      email: 'kleber@ziontechgroup.com',
-      address: '364 E Main St STE 1008 Middletown DE 19709',
-      website: 'https://ziontechgroup.com'
-    },
-    realImplementation: true,
-    implementationDetails: 'Cloud-native DevOps platform with AI-powered automation, predictive analytics, and autonomous infrastructure management',
-    launchDate: '2025-02-05',
-    customers: 920,
-    rating: 4.8,
-    reviews: 234,
-    popular: true,
-    icon: 'code',
-    color: 'from-blue-500 to-indigo-500',
-    textColor: 'text-white',
-    link: '/autonomous-devops-intelligence-platform'
-  },
-
-  // Edge Computing Intelligence Platform
-  {
-    id: 'edge-computing-intelligence-platform',
-    name: 'Edge Computing Intelligence Platform',
-    tagline: 'Intelligent edge computing for IoT and real-time applications',
-    description: 'Advanced edge computing platform that brings AI and machine learning capabilities to the edge, enabling real-time processing, reduced latency, and intelligent decision-making for IoT devices and distributed applications.',
-    category: 'Edge Computing',
-    pricing: {
-      starter: '$149/month',
-      professional: '$449/month',
-      enterprise: '$1,199/month',
-      custom: 'Contact for pricing'
-    },
-    features: [
-      'AI at the edge',
-      'Real-time processing',
-      'IoT device management',
-      'Edge analytics',
-      'Low-latency computing',
-      'Distributed AI models',
-      'Edge security',
-      'Auto-scaling',
-      'Multi-location deployment',
-      'Performance monitoring',
-      'Mobile app',
-      'API access'
-    ],
-    benefits: [
-      'Reduced latency',
-      'Lower bandwidth costs',
-      'Real-time insights',
-      'Improved reliability',
-      'Enhanced privacy',
-      'Scalable edge computing',
-      'Cost optimization',
-      'Better user experience'
-    ],
-    useCases: [
-      'IoT applications',
-      'Autonomous vehicles',
-      'Smart cities',
-      'Industrial IoT',
-      'Healthcare monitoring',
-      'Retail analytics',
-      'Gaming platforms',
-      'Financial services'
-    ],
-    marketSize: '$16.8B by 2025',
-    targetAudience: 'IoT developers, system architects, DevOps engineers, solution architects',
-    competitiveAdvantage: 'AI-powered edge computing, real-time processing, and intelligent IoT management',
-    contact: 'kleber@ziontechgroup.com',
-    mobile: '+1 302 464 0950',
-      address: '364 E Main St STE 1008 Middletown DE 19709',
-      website: 'https://ziontechgroup.com',
-    slug: '/edge-computing-intelligence-platform',
-    realService: true,
-    technology: ['Edge AI', 'Machine Learning', 'IoT', 'Kubernetes', 'React', 'Python', 'TensorFlow Lite'],
-    integrations: ['AWS IoT', 'Azure IoT', 'Google Cloud IoT', 'Kubernetes', 'Docker', 'MQTT', 'CoAP'],
-    roi: '320% within 10 months',
-    competitors: ['AWS Greengrass', 'Azure IoT Edge', 'Google Cloud IoT Edge', 'KubeEdge'],
-    growthRate: '42% monthly',
-    variant: 'edge-futuristic',
-    contactInfo: {
-      mobile: '+1 302 464 0950',
-      email: 'kleber@ziontechgroup.com',
-      address: '364 E Main St STE 1008 Middletown DE 19709',
-      website: 'https://ziontechgroup.com'
-    },
-    realImplementation: true,
-    implementationDetails: 'Distributed edge computing platform with AI capabilities, real-time processing, and intelligent IoT device management',
-    launchDate: '2025-02-12',
-    customers: 750,
-    rating: 4.7,
-    reviews: 189,
-    popular: false,
-    icon: 'cpu',
-    color: 'from-green-500 to-emerald-500',
-    textColor: 'text-white',
-    link: '/edge-computing-intelligence-platform'
-  },
-
-  // Blockchain Infrastructure as a Service
-  {
-    id: 'blockchain-infrastructure-as-a-service',
-    name: 'Blockchain Infrastructure as a Service',
-    tagline: 'Enterprise-grade blockchain infrastructure and development tools',
-    description: 'Comprehensive blockchain platform that provides enterprise-grade infrastructure, smart contract development tools, and blockchain-as-a-service capabilities for businesses looking to implement blockchain solutions.',
-    category: 'Blockchain',
-    pricing: {
-      starter: '$99/month',
-      professional: '$299/month',
-      enterprise: '$799/month',
-      custom: 'Contact for pricing'
-    },
-    features: [
-      'Multi-blockchain support',
-      'Smart contract development',
-      'Enterprise security',
-      'Scalable infrastructure',
-      'API access',
-      'Development tools',
-      'Analytics dashboard',
-      'Compliance tools',
-      'Multi-cloud deployment',
-      'Performance monitoring',
-      'Mobile app',
-      '24/7 support'
-    ],
-    benefits: [
-      'Faster blockchain adoption',
-      'Reduced development costs',
-      'Enterprise-grade security',
-      'Scalable infrastructure',
-      'Compliance ready',
-      'Multi-blockchain support',
-      'Developer-friendly tools',
-      'Managed services'
-    ],
-    useCases: [
-      'Financial services',
-      'Supply chain management',
-      'Healthcare records',
-      'Digital identity',
-      'Voting systems',
-      'Intellectual property',
-      'Real estate',
-      'Gaming platforms'
-    ],
-    marketSize: '$19.9B by 2025',
-    targetAudience: 'Blockchain developers, enterprise architects, CTOs, innovation teams',
-    competitiveAdvantage: 'Multi-blockchain support, enterprise-grade security, and comprehensive development tools',
-    contact: 'kleber@ziontechgroup.com',
-    mobile: '+1 302 464 0950',
-    address: '364 E Main St STE 1008 Middletown DE 19709',
-    website: 'https://ziontechgroup.com',
-    slug: '/blockchain-infrastructure-as-a-service',
-    realService: true,
-    technology: ['Ethereum', 'Hyperledger', 'Polkadot', 'React', 'Node.js', 'Solidity', 'Go'],
-    integrations: ['AWS', 'Azure', 'GCP', 'Metamask', 'Web3.js', 'Truffle', 'Hardhat'],
-    roi: '380% within 15 months',
-    competitors: ['AWS Blockchain', 'Azure Blockchain', 'IBM Blockchain', 'ConsenSys'],
-    growthRate: '58% monthly',
-    variant: 'blockchain-futuristic',
-    contactInfo: {
-      mobile: '+1 302 464 0950',
-      email: 'kleber@ziontechgroup.com',
-      address: '364 E Main St STE 1008 Middletown DE 19709',
-      website: 'https://ziontechgroup.com'
-    },
-    realImplementation: true,
-    implementationDetails: 'Cloud-native blockchain platform with multi-blockchain support, enterprise security, and comprehensive development tools',
-    launchDate: '2025-02-18',
-    customers: 480,
-    rating: 4.6,
-    reviews: 123,
-    popular: false,
-    icon: 'link',
-    color: 'from-purple-500 to-pink-500',
-    textColor: 'text-white',
-    link: '/blockchain-infrastructure-as-a-service'
-  },
-
-  // AI-Powered Data Center Management
-  {
-    id: 'ai-powered-data-center-management',
-    name: 'AI-Powered Data Center Management',
-    tagline: 'Intelligent data center optimization and automation',
-    description: 'Advanced data center management platform that uses AI to optimize energy consumption, predict hardware failures, automate maintenance, and provide intelligent resource allocation for maximum efficiency.',
-    category: 'Data Center',
-    pricing: {
-      starter: '$399/month',
-      professional: '$999/month',
-      enterprise: '$2,499/month',
-      custom: 'Contact for pricing'
-    },
-    features: [
-      'AI-powered optimization',
-      'Predictive maintenance',
-      'Energy efficiency',
-      'Resource allocation',
-      'Performance monitoring',
-      'Automated scaling',
-      'Security management',
-      'Compliance tracking',
-      'Real-time analytics',
-      'Mobile app',
-      'API access',
-      'Expert support'
-    ],
-    benefits: [
-      '30% energy savings',
-      'Reduced downtime',
-      'Optimized performance',
-      'Lower operational costs',
-      'Predictive maintenance',
-      'Better resource utilization',
-      'Enhanced security',
-      'Compliance assurance'
-    ],
-    useCases: [
-      'Enterprise data centers',
-      'Cloud providers',
-      'Colocation facilities',
-      'Edge computing sites',
-      'HPC facilities',
       'Financial institutions',
       'Healthcare organizations',
-      'Government agencies'
+      'E-commerce platforms',
+      'Government agencies',
+      'Educational institutions',
+      'Manufacturing companies',
+      'Technology startups',
+      'Non-profit organizations'
     ],
-    marketSize: '$22.1B by 2025',
-    targetAudience: 'Data center managers, infrastructure engineers, facility managers, CTOs',
-    competitiveAdvantage: 'AI-powered optimization, predictive maintenance, and comprehensive data center management',
+    marketSize: '$22.4B by 2025',
+    targetAudience: 'Businesses handling sensitive data, regulated industries, government agencies',
+    competitiveAdvantage: 'Certified security professionals with industry-specific compliance expertise',
     contact: 'kleber@ziontechgroup.com',
     mobile: '+1 302 464 0950',
     address: '364 E Main St STE 1008 Middletown DE 19709',
     website: 'https://ziontechgroup.com',
-    slug: '/ai-powered-data-center-management',
-    realService: true,
-    technology: ['Machine Learning', 'IoT', 'Predictive Analytics', 'React', 'Python', 'TensorFlow', 'Kubernetes'],
-    integrations: ['VMware', 'OpenStack', 'Kubernetes', 'Docker', 'AWS', 'Azure', 'GCP', 'Cisco'],
-    roi: '280% within 18 months',
-    competitors: ['VMware', 'OpenStack', 'Cisco', 'HPE'],
-    growthRate: '35% monthly',
-    variant: 'it-futuristic',
-    contactInfo: {
-      mobile: '+1 302 464 0950',
-      email: 'kleber@ziontechgroup.com',
-      address: '364 E Main St STE 1008 Middletown DE 19709',
-      website: 'https://ziontechgroup.com'
+    slug: '/cybersecurity-assessment-penetration-testing'
+  },
+
+  // Data Analytics & Business Intelligence
+  {
+    id: 'data-analytics-business-intelligence',
+    name: 'Advanced Data Analytics & Business Intelligence Solutions',
+    tagline: 'Transform data into actionable business insights',
+    description: 'Comprehensive data analytics and business intelligence services that help organizations collect, process, analyze, and visualize data to make informed business decisions. Includes data warehousing, ETL processes, dashboard creation, and predictive analytics.',
+    category: 'Data Analytics & BI',
+    type: 'IT Services',
+    pricing: {
+      starter: '$4,500/project',
+      professional: '$12,000/project',
+      enterprise: '$35,000/project',
+      custom: 'Contact for pricing'
     },
-    realImplementation: true,
-    implementationDetails: 'Intelligent data center management platform with AI-powered optimization, predictive maintenance, and comprehensive monitoring tools',
-    launchDate: '2025-02-25',
-    customers: 320,
-    rating: 4.8,
-    reviews: 89,
-    popular: false,
-    icon: 'server',
-    color: 'from-gray-500 to-slate-500',
-    textColor: 'text-white',
-    link: '/ai-powered-data-center-management'
+    features: [
+      'Data warehouse design and implementation',
+      'ETL pipeline development',
+      'Real-time data processing',
+      'Interactive dashboard creation',
+      'Predictive analytics modeling',
+      'Data quality assessment',
+      'Performance optimization',
+      'Data governance implementation',
+      'Machine learning integration',
+      'API development for data access',
+      'Mobile BI applications',
+      'Automated reporting systems'
+    ],
+    benefits: [
+      'Improve decision-making speed by 60%',
+      'Increase operational efficiency by 35%',
+      'Identify new business opportunities',
+      'Reduce manual reporting time by 80%',
+      'Better customer insights and personalization',
+      'Optimized resource allocation',
+      'Proactive problem identification',
+      'Data-driven strategy development'
+    ],
+    useCases: [
+      'Retail and e-commerce',
+      'Financial services',
+      'Healthcare organizations',
+      'Manufacturing companies',
+      'Marketing agencies',
+      'Logistics companies',
+      'Educational institutions',
+      'Government agencies'
+    ],
+    marketSize: '$16.9B by 2025',
+    targetAudience: 'Businesses with data assets, decision-makers, operations teams',
+    competitiveAdvantage: 'Full-stack data expertise with industry-specific analytics solutions',
+    contact: 'kleber@ziontechgroup.com',
+    mobile: '+1 302 464 0950',
+    address: '364 E Main St STE 1008 Middletown DE 19709',
+    website: 'https://ziontechgroup.com',
+    slug: '/data-analytics-business-intelligence'
+  },
+
+  // API Development & Integration
+  {
+    id: 'api-development-integration',
+    name: 'Professional API Development & Integration Services',
+    tagline: 'Connect your systems and unlock data integration potential',
+    description: 'Expert API development and integration services that enable seamless communication between different systems, applications, and services. Includes RESTful API design, GraphQL implementation, third-party integrations, and API management solutions.',
+    category: 'API Development & Integration',
+    type: 'IT Services',
+    pricing: {
+      starter: '$2,500/project',
+      professional: '$7,500/project',
+      enterprise: '$20,000/project',
+      custom: 'Contact for pricing'
+    },
+    features: [
+      'RESTful API design and development',
+      'GraphQL API implementation',
+      'Third-party system integration',
+      'API gateway configuration',
+      'Authentication and authorization',
+      'Rate limiting and throttling',
+      'API documentation generation',
+      'Testing and quality assurance',
+      'Performance optimization',
+      'Security implementation',
+      'Monitoring and analytics',
+      'Version management'
+    ],
+    benefits: [
+      'Enable system interoperability',
+      'Reduce development time by 40%',
+      'Improve data accessibility',
+      'Enhance user experience',
+      'Enable third-party integrations',
+      'Reduce maintenance costs',
+      'Improve scalability',
+      'Enable mobile and web applications'
+    ],
+    useCases: [
+      'E-commerce platforms',
+      'CRM system integration',
+      'Payment gateway integration',
+      'Social media integration',
+      'Analytics platform integration',
+      'Mobile app backends',
+      'B2B integrations',
+      'Government system integration'
+    ],
+    marketSize: '$13.2B by 2025',
+    targetAudience: 'Businesses needing system integration, developers, IT teams',
+    competitiveAdvantage: 'Full-stack integration expertise with proven enterprise implementations',
+    contact: 'kleber@ziontechgroup.com',
+    mobile: '+1 302 464 0950',
+    address: '364 E Main St STE 1008 Middletown DE 19709',
+    website: 'https://ziontechgroup.com',
+    slug: '/api-development-integration'
+  },
+
+  // Digital Transformation Consulting
+  {
+    id: 'digital-transformation-consulting',
+    name: 'Strategic Digital Transformation Consulting',
+    tagline: 'Navigate your digital transformation journey with expert guidance',
+    description: 'Comprehensive digital transformation consulting services that help organizations modernize their technology infrastructure, processes, and culture. Includes strategy development, technology assessment, change management, and implementation planning.',
+    category: 'Digital Transformation & Strategy',
+    type: 'IT Services',
+    pricing: {
+      starter: '$8,000/engagement',
+      professional: '$25,000/engagement',
+      enterprise: '$75,000/engagement',
+      custom: 'Contact for pricing'
+    },
+    features: [
+      'Digital maturity assessment',
+      'Technology roadmap development',
+      'Process optimization consulting',
+      'Change management strategy',
+      'Technology vendor selection',
+      'Implementation planning',
+      'Risk assessment and mitigation',
+      'ROI analysis and tracking',
+      'Training and development programs',
+      'Performance measurement',
+      'Continuous improvement planning',
+      'Stakeholder alignment'
+    ],
+    benefits: [
+      'Improve operational efficiency by 45%',
+      'Reduce technology costs by 30%',
+      'Enhance customer experience',
+      'Increase employee productivity',
+      'Enable business model innovation',
+      'Improve competitive positioning',
+      'Reduce operational risks',
+      'Enable data-driven decision making'
+    ],
+    useCases: [
+      'Traditional manufacturing companies',
+      'Retail businesses',
+      'Financial services',
+      'Healthcare organizations',
+      'Government agencies',
+      'Educational institutions',
+      'Non-profit organizations',
+      'Professional services firms'
+    ],
+    marketSize: '$28.5B by 2025',
+    targetAudience: 'Traditional businesses, enterprises, government agencies',
+    competitiveAdvantage: 'Proven transformation methodology with industry-specific expertise',
+    contact: 'kleber@ziontechgroup.com',
+    mobile: '+1 302 464 0950',
+    address: '364 E Main St STE 1008 Middletown DE 19709',
+    website: 'https://ziontechgroup.com',
+    slug: '/digital-transformation-consulting'
   }
 ];
