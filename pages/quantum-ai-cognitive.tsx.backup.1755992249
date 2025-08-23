@@ -15,7 +15,11 @@ export default function QuantumAICognitivePage() {
   const contactInfo = service.contactInfo;
 
   return (
+<<<<<<< HEAD
+    <UltraAdvancedFuturisticBackground intensity="high" colorScheme="holographic-matrix" particleCount={300} animationSpeed={1.5} enableHolographic={true} enableQuantumEffects={true}>
+=======
     <UltraAdvancedFuturisticBackground>
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-41c6
       <Head>
         <title>{service.name} - Zion Tech Group</title>
         <meta name="description" content={service.description} />

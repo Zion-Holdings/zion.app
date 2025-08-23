@@ -1,8 +1,12 @@
 import type { GetServerSideProps, NextPage } from 'next';
 import Head from 'next/head';
 import Link from 'next/link';
+<<<<<<< HEAD
+import Layout from '../../components/layout/Layout';
+=======
 import UltraAdvancedFuturisticBackground from '../../components/ui/UltraAdvancedFuturisticBackground';
 import Card from '../../components/ui/Card';
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-41c6
 
 type Props = { posts: BlogPost[]; authors: string[]; topics: string[]; tags: string[] };
 
@@ -22,7 +26,11 @@ const BlogHome: NextPage<Props> = ({ posts, authors, topics, tags }) => {
   const rest = filtered.slice(1);
 
   return (
+<<<<<<< HEAD
+    <Layout>
+=======
     <UltraAdvancedFuturisticBackground>
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-41c6
       <Head>
         <title>Blog - Zion AI Marketplace</title>
         <meta name="description" content="Insights on AI, DevOps, and digital transformation." />
@@ -58,7 +66,11 @@ const BlogHome: NextPage<Props> = ({ posts, authors, topics, tags }) => {
           ))}
         </div>
       </div>
+<<<<<<< HEAD
+    </Layout>
+=======
     </UltraAdvancedFuturisticBackground>
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-41c6
   );
 };
 

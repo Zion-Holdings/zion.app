@@ -1,8 +1,12 @@
 import React from 'react';
 import Head from 'next/head';
+<<<<<<< HEAD
+import Layout from '../../components/layout/Layout';
+=======
 import UltraAdvancedFuturisticBackground from '../../components/ui/UltraAdvancedFuturisticBackground';
 import Button from '../../components/ui/Button';
 import Card from '../../components/ui/Card';
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-41c6
 import { Check, Mail, MapPin, Phone, ExternalLink } from 'lucide-react';
 import { enhancedRealMicroSaasServices } from '../../data/enhanced-real-micro-saas-services';
 import { extraServices } from '../../data/extra-services';
@@ -129,7 +133,11 @@ export async function getStaticProps({ params }: { params: { slug: string } }) {
 
 export default function ServiceDetailPage({ service }: { service: Service }) {
 	return (
+<<<<<<< HEAD
+		<Layout>
+=======
 		    <UltraAdvancedFuturisticBackground>
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-41c6
 			<Head>
 				<title>{service.name} | Zion Tech Group</title>
 				<meta name="description" content={service.tagline || service.description} />
@@ -248,10 +256,22 @@ export default function ServiceDetailPage({ service }: { service: Service }) {
 						</div>
 					</div>
 				</div>
+<<<<<<< HEAD
+			</div>
+		</Layout>
+	);
+import type { NextPage } from 'next';
+import Head from 'next/head';
+import { useRouter } from 'next/router';
+import Link from 'next/link';
+import EnhancedLayout from '@/components/layout/EnhancedLayout';
+import services from '@/data/services/services.json';
+=======
 			      </div>
     </UltraAdvancedFuturisticBackground>
   );
 }
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-41c6
 
 const ServiceDetail: NextPage = () => {
   const router = useRouter();

@@ -9,6 +9,13 @@ interface UltraAdvancedFuturisticBackgroundProps {
   enableHolographic?: boolean;
   enableQuantumEffects?: boolean;
   children: React.ReactNode;
+<<<<<<< HEAD
+}
+
+export default function UltraAdvancedFuturisticBackground(props: UltraAdvancedFuturisticBackgroundProps) {
+  return <UltraAdvancedFuturisticBackgroundV2 {...props} />;
+}
+=======
   className?: string;
 }
 
@@ -421,3 +428,4 @@ const UltraAdvancedFuturisticBackground: React.FC<UltraAdvancedFuturisticBackgro
 };
 
 export default UltraAdvancedFuturisticBackground;
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-41c6

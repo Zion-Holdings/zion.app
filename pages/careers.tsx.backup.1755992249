@@ -6,7 +6,10 @@ import {
   Users, Rocket, Brain, Globe, Award, Zap, 
   Heart, Star, ArrowRight, CheckCircle, Briefcase
 } from 'lucide-react';
+<<<<<<< HEAD
+=======
 import UltraAdvancedFuturisticBackground from '../components/ui/UltraAdvancedFuturisticBackground';
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-41c6
 
 export default function Careers() {
   const [selectedDepartment, setSelectedDepartment] = useState('all');
@@ -139,7 +142,11 @@ export default function Careers() {
     : jobOpenings.filter(job => job.department === selectedDepartment);
 
   return (
+<<<<<<< HEAD
+    <UltraFuturisticBackground>
+=======
     <UltraAdvancedFuturisticBackground>
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-41c6
       <div className="min-h-screen">
         <Head>
           <title>Careers - Zion Tech Group | Join Our Revolutionary Technology Team</title>
@@ -326,7 +333,11 @@ export default function Careers() {
           </div>
         </motion.div>
       </div>
+<<<<<<< HEAD
+    </Layout>
+=======
     </UltraAdvancedFuturisticBackground>
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-41c6
   );
 };
 
