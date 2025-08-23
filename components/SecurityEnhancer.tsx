@@ -112,6 +112,7 @@ const SecurityEnhancer: React.FC<SecurityEnhancerProps> = ({
 
   const checkXSSProtection = (): boolean => {
     if (typeof window === 'undefined') return false;
+    
     // Check for XSS protection headers (client-side approximation)
     // In a real implementation, this would check HTTP headers
     return true; // Assume enabled for now
@@ -119,6 +120,7 @@ const SecurityEnhancer: React.FC<SecurityEnhancerProps> = ({
 
   const checkClickjackingProtection = (): boolean => {
     if (typeof window === 'undefined') return false;
+    
     // Check for X-Frame-Options or frame-ancestors CSP directive
     // This is a client-side approximation
     return true; // Assume enabled for now
