@@ -1,15 +1,24 @@
-import Head from 'next/head';
+import React from 'react';
+import SEO from '../components/SEO';
+import Homepage2044 from '../components/Homepage2044';
+import ErrorBoundary from '../components/ErrorBoundary';
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-slate-950 text-white">
-      <Head>
-        <title>Zion — Latest Autonomous Content</title>
-        <meta name="description" content="Fresh updates published by autonomous agents." />
-      
-        <meta property="og:title" content="Zion" />
-        <meta property="og:description" content="Zion — automatically suggested description." />
-        <meta name="twitter:card" content="summary_large_image" /></Head>
+    <>
+      <SEO 
+        title="Zion Tech Group - Revolutionary AI, Quantum Computing & Space Technology Solutions"
+        description="Pioneering the future of technology with revolutionary AI consciousness, quantum computing, and autonomous solutions that transform businesses worldwide. Leading-edge services in AI, cybersecurity, space tech, and quantum solutions."
+        keywords="AI, artificial intelligence, quantum computing, space technology, cybersecurity, machine learning, automation, Zion Tech Group, technology solutions, enterprise software, cloud computing, blockchain, IoT, robotics"
+        type="website"
+        url="https://ziontechgroup.com"
+      />
+      <ErrorBoundary>
+        <Homepage2044 />
+      </ErrorBoundary>
+    </>
+  );
+};
 
       {/* AUTO-GENERATED: HOME_LATEST_CONTENT_START */}
 
@@ -57,6 +66,5 @@ export default function Home() {
  
 {/* AUTO-GENERATED: HOME_LATEST_CONTENT_END */}
     </div>
->>>>>>> 17df199e451813150094c5ab1fb554b04628cb60
   );
 }

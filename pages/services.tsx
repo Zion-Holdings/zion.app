@@ -79,7 +79,7 @@ const sortOptions = [
   return (
 >>>>>>> 916d02471c24718d698d51219f240472f9d52b96
     <>
-      <SEO title="Services | Zion Tech Group - Enterprise IT, AI, Micro SAAS Solutions" description="Discover our comprehensive portfolio of enterprise IT solutions, AI services, and innovative micro SAAS platforms. Transform your business with cutting-edge technology." canonical="https://ziontechgroup.com/services/" />
+      <SEO title="Services | Zion Tech Group - Enterprise IT, AI, Micro SAAS Solutions" description="Discover our comprehensive portfolio of enterprise IT solutions, AI services, and innovative micro SAAS platforms. Transform your business with cutting-edge technology." url="https://ziontechgroup.com/services/" />
 
 const ServicesPage: React.FC = () => {
   return (

@@ -86,13 +86,12 @@ const Solutions: React.FC = () => {
     { label: 'Client Satisfaction', value: '99.9%', icon: <Star className="w-6 h-6" /> },
     { label: 'Global Reach', value: '50+ Countries', icon: <Globe className="w-6 h-6" /> },
     { label: 'Users Experts', value: '100+', icon: <Users className="w-6 h-6" /> }
->>>>>>> 916d02471c24718d698d51219f240472f9d52b96
   ];
 
   return (
     <UltraFuturisticBackground variant="quantum">
       <div className="min-h-screen">
-        <SEO title="Solutions - Zion Tech Group | Revolutionary AI, Quantum Computing & Emerging Technology Solutions" description="Discover Zion Tech Group's comprehensive solutions portfolio including Micro SaaS platforms, AI-powered tools, Business Intelligence, Process Automation, and Cloud platforms." canonicalUrl="https://ziontechgroup.com/solutions/" />
+        <SEO title="Solutions - Zion Tech Group | Revolutionary AI, Quantum Computing & Emerging Technology Solutions" description="Discover Zion Tech Group's comprehensive solutions portfolio including Micro SaaS platforms, AI-powered tools, Business Intelligence, Process Automation, and Cloud platforms." url="https://ziontechgroup.com/solutions/" />
 
         {/* Hero Section */}
         <section className="relative py-20 px-4 overflow-hidden">
