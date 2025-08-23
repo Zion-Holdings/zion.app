@@ -1,12 +1,13 @@
 
 import { useState } from "react";
+import { useRouter } from 'next/router';
 import { useForm } from "react-hook-form";
+import type { ControllerRenderProps } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import { LogIn, User, Eye, EyeOff } from "lucide-react";
 
 import { useAuth } from "@/hooks/useAuth";
-import { toast } from "@/hooks/use-toast";
 import { loginUser } from "@/services/authService";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -31,8 +32,9 @@ const loginSchema = z.object({
 type LoginFormValues = z.infer<typeof loginSchema>;
 
 export function LoginForm() {
-  const { isLoading } = useAuth();
+  const { isLoading, login } = useAuth();
   const navigate = useNavigate();
+  const [searchParams] = useSearchParams();
   const [showPassword, setShowPassword] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   
@@ -74,7 +76,12 @@ export function LoginForm() {
         </Alert>
       )}
       <form
-        onSubmit={form.handleSubmit(onSubmit)}
+        onSubmit={form.handleSubmit(onSubmit, (errors) => {
+          const firstError = Object.keys(errors)[0] as keyof LoginFormValues;
+          if (firstError) {
+            form.setFocus(firstError);
+          }
+        })}
         className="space-y-6"
         autoComplete="off" // Disable browser autofill
       >
@@ -88,7 +95,9 @@ export function LoginForm() {
                 <div className="relative">
                   <Input
                     placeholder="you@example.com"
-                    className="bg-zion-blue pl-10 text-gray-900 dark:text-gray-100 placeholder:text-zion-slate border-zion-blue-light focus:border-zion-purple"
+                    aria-label="Email address"
+                    aria-invalid={!!form.formState.errors.email}
+                    className="bg-zion-blue pl-10 text-white placeholder:text-zion-blue-light border-zion-blue-light focus:border-zion-purple"
                     {...field}
                     autoComplete="off" // Disable browser autofill
                   />
@@ -110,8 +119,10 @@ export function LoginForm() {
                 <div className="relative">
                   <Input
                     type={showPassword ? "text" : "password"}
-                    placeholder="••••••••"
-                    className="bg-zion-blue pl-10 text-gray-900 dark:text-gray-100 border-zion-blue-light focus:border-zion-purple"
+                    placeholder="Enter password"
+                    aria-label="Password"
+                    aria-invalid={!!form.formState.errors.password}
+                    className="bg-zion-blue pl-10 text-white placeholder:text-zion-blue-light border-zion-blue-light focus:border-zion-purple"
                     {...field}
                     autoComplete="off" // Disable browser autofill
                   />

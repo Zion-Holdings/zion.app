@@ -1,0 +1,55 @@
+name: Visual Regression
+
+on:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install Playwright
+        run: |
+          npm -y init -f >/dev/null 2>&1 || true
+          npm i -D @playwright/test@1.x http-server
+          npx playwright install --with-deps
+
+      - name: Start server
+        run: |
+          nohup npx http-server -p 8080 -c-1 . >/dev/null 2>&1 &
+          sleep 2
+
+      - name: Write test file
+        run: |
+          mkdir -p tests
+          cat > tests/home.spec.ts << 'EOF'
+          import { test, expect } from '@playwright/test';
+
+          test('homepage visual', async ({ page }) => {
+            await page.goto('http://localhost:8080/');
+            await page.waitForLoadState('networkidle');
+            await page.setViewportSize({ width: 1280, height: 900 });
+            const screenshot = await page.screenshot();
+            expect(screenshot).toMatchSnapshot('home.png', { threshold: 0.2 });
+          });
+          EOF
+
+      - name: Run tests
+        run: npx playwright test --config=none --reporter=line
+
+      - name: Upload snapshot artifacts
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: visual-regression-snapshots
+          path: tests/**
