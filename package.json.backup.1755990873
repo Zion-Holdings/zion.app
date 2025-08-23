@@ -401,7 +401,11 @@
     "git:cron:start": "bash automation/git-sync-cron.sh start",
     "git:cron:stop": "bash automation/git-sync-cron.sh stop",
     "git:cron:status": "bash automation/git-sync-cron.sh status",
+<<<<<<< HEAD
+    "home:update": "node automation/homepage-updater.cjs"
+=======
     "homepage:update": "node automation/homepage-auto-updater.cjs"
+>>>>>>> origin/cursor/autonomous-cloud-page-enhancer-and-advertiser-e70a
   },
   "dependencies": {
     "@google-analytics/data": "^5.2.0",
