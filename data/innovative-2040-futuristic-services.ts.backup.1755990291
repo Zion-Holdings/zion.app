@@ -9,8 +9,14 @@ export interface Innovative2040FuturisticService {
   features: string[];
   benefits: string[];
   link: string;
+<<<<<<< HEAD
+  icon?: string;
+  color?: string;
+  textColor?: string;
+=======
   color?: string;
   icon?: string;
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-58a2
   popular?: boolean;
   contactInfo: {
     phone: string;
@@ -62,8 +68,14 @@ export const innovative2040FuturisticServices: RealMarketService[] = [
     category: 'AI & Consciousness',
     price: '$15,000',
     period: '/month',
+<<<<<<< HEAD
+    icon: '🧠',
+    color: 'from-purple-600 to-indigo-700',
+    textColor: 'text-purple-400',
+=======
     color: 'from-purple-500 to-pink-500',
     icon: '🧠',
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-58a2
     popular: true,
     features: [
       'Quantum-enhanced neural signal processing',
@@ -93,6 +105,14 @@ export const innovative2040FuturisticServices: RealMarketService[] = [
 
   // Quantum Computing Services
   {
+<<<<<<< HEAD
+    id: 'quantum-entanglement-network',
+    name: 'Quantum Entanglement Network',
+    tagline: 'Instant global communication network using quantum entanglement for unbreakable security',
+    price: '$2,499',
+    period: '/month',
+    description: 'Revolutionary communication network that leverages quantum entanglement to enable instant, secure data transmission across any distance with unbreakable quantum encryption.',
+=======
     id: 'holographic-quantum-workspace',
     name: 'Holographic Quantum Workspace',
     tagline: 'Immersive 3D workspace powered by quantum computing',
@@ -103,6 +123,7 @@ export const innovative2040FuturisticServices: RealMarketService[] = [
     color: 'from-blue-500 to-cyan-500',
     icon: '🌐',
     popular: true,
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-58a2
     features: [
       'Quantum entanglement-based communication',
       'Instant data transmission across any distance',
@@ -180,6 +201,14 @@ export const innovative2040FuturisticServices: RealMarketService[] = [
 
   // Neural Interface Services
   {
+<<<<<<< HEAD
+    id: 'neural-interface-development-platform',
+    name: 'Neural Interface Development Platform',
+    tagline: 'Advanced platform for developing brain-computer interfaces and neural control systems',
+    price: '$1,799',
+    period: '/month',
+    description: 'Cutting-edge platform that enables developers to create advanced brain-computer interfaces, neural control systems, and direct brain-to-computer communication applications.',
+=======
     id: 'ai-time-series-prediction',
     name: 'AI-Powered Time Series Prediction Engine',
     tagline: 'Predict the future with unprecedented accuracy',
@@ -188,6 +217,7 @@ export const innovative2040FuturisticServices: RealMarketService[] = [
     price: '$12,000',
     period: '/month',
     popular: true,
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-58a2
     features: [
       'Neural signal processing and analysis',
       'Brain-computer interface development tools',

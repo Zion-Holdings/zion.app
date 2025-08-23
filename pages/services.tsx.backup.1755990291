@@ -193,7 +193,20 @@ const allServices = [
   ...innovative2025AIServicesExpansion,
   // Our new 2025 advanced enterprise services
   ...advancedEnterpriseServices,
+<<<<<<< HEAD
+  ...innovativeMicroSaasServices,
+  ...cuttingEdgeITInfrastructureServices,
+  // Our new 2025 innovative AI automation services
+  ...innovativeAIAutomationServices2025,
+  // Our new 2025 quantum and emerging tech services
+  ...quantumEmergingTechServices2025,
+  // Our new 2025 innovative IT infrastructure services
+  ...innovativeITInfrastructureServices2025,
+  // Our new 2025 innovative business automation services
+  ...innovativeBusinessAutomationServices2025
+=======
   ...cuttingEdgeITInfrastructureServices
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-58a2
 ];
 
 const categories = [
