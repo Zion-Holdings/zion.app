@@ -1,3 +1,6 @@
+<<<<<<< HEAD
+export default function Talent(){return <div className="p-6">Talent</div>;}
+=======
 import Link from 'next/link';
 
 export default function TalentIndex() {
@@ -9,3 +12,4 @@ export default function TalentIndex() {
     </div>
   );
 }
+>>>>>>> origin/cursor/build-interactive-talent-resume-and-portfolio-39e4
