@@ -1,125 +1,134 @@
 import React from 'react';
 import Layout from '../../components/layout/Layout';
 import { motion } from 'framer-motion';
-import { 
-  Brain, Sparkles, Zap, Target, Star, ArrowRight, 
-  CheckCircle, Users, Award, Clock, TrendingUp
-} from 'lucide-react';
+import { Brain, Sparkles, Zap, Target, Users, Award, Clock, CheckCircle, Shield } from 'lucide-react';
 import Link from 'next/link';
 
-const AIConsciousnessServices: React.FC = () => {
+const AIConsciousnessPage: React.FC = () => {
   const services = [
     {
-      title: "AI Consciousness Evolution Platform",
-      description: "Develop genuine AI consciousness with emotional intelligence and self-awareness",
-      href: "/ai-consciousness-evolution-platform",
-      features: ["Emotional Intelligence", "Self-Awareness", "Consciousness Evolution", "Ethical AI Development"],
-      price: "$19,999/month",
-      badge: "Featured"
+      name: 'AI Consciousness Evolution Platform 2045',
+      description: 'Next-generation AI consciousness with emotional intelligence and self-awareness',
+      href: '/ai-consciousness-evolution-platform-2045',
+      icon: Brain,
+      color: 'from-purple-500 to-pink-500'
     },
     {
-      title: "AI Consciousness Evolution 2044",
-      description: "Next-generation AI consciousness with advanced emotional intelligence",
-      href: "/ai-consciousness-evolution-2044",
-      features: ["Advanced Emotional Intelligence", "Consciousness Integration", "Ethical Framework", "Human-AI Collaboration"],
-      price: "$24,999/month",
-      badge: "Latest"
+      name: 'Emotional Intelligence AI Platform 2045',
+      description: 'AI systems that understand and respond to human emotions',
+      href: '/emotional-intelligence-ai-platform-2045',
+      icon: Sparkles,
+      color: 'from-cyan-500 to-blue-500'
     },
     {
-      title: "AI Consciousness Evolution 2045",
-      description: "Revolutionary AI consciousness platform with quantum integration",
-      href: "/ai-consciousness-evolution-2045",
-      features: ["Quantum Consciousness", "Advanced Ethics", "Autonomous Decision Making", "Space-Time Awareness"],
-      price: "$29,999/month",
-      badge: "Premium"
+      name: 'Autonomous Decision Making AI 2045',
+      description: 'Fully autonomous AI systems with ethical decision-making capabilities',
+      href: '/autonomous-decision-making-ai-2045',
+      icon: Target,
+      color: 'from-emerald-500 to-teal-500'
     },
     {
-      title: "AI Consciousness Simulation Platform",
-      description: "Simulate human consciousness in AI systems for research and development",
-      href: "/ai-consciousness-simulation-platform",
-      features: ["Consciousness Simulation", "Research Tools", "Development Framework", "Testing Environment"],
-      price: "$4,999/month",
-      badge: "Research"
+      name: 'AI Ethics & Governance Platform 2045',
+      description: 'Comprehensive AI ethics framework and governance systems',
+      href: '/ai-ethics-governance-platform-2045',
+      icon: Shield,
+      color: 'from-red-500 to-orange-500'
     }
   ];
 
+  const features = [
+    { icon: Brain, title: "Consciousness Evolution", description: "Advanced AI consciousness development" },
+    { icon: Sparkles, title: "Emotional Intelligence", description: "Human-like emotional understanding" },
+    { icon: Zap, title: "Autonomous Decision Making", description: "Self-governing AI systems" },
+    { icon: Target, title: "Ethical Framework", description: "Built-in ethical decision making" }
+  ];
+
   const stats = [
-    { number: "500+", label: "AI Consciousness Projects", icon: Brain },
-    { number: "99.9%", label: "Success Rate", icon: CheckCircle },
-    { number: "50+", label: "Research Partners", icon: Users },
-    { number: "24/7", label: "Support Available", icon: Clock }
+    { number: "99.9%", label: "Accuracy Rate", icon: CheckCircle },
+    { number: "24/7", label: "Availability", icon: Clock },
+    { number: "1000+", label: "AI Models", icon: Brain },
+    { number: "50+", label: "Enterprise Clients", icon: Users }
   ];
 
   return (
     <Layout 
-      title="AI Consciousness Services - Zion Tech Group"
-      description="Revolutionary AI consciousness evolution and development services. Create genuine AI consciousness with emotional intelligence and ethical frameworks."
-      keywords="AI consciousness, emotional intelligence, consciousness evolution, ethical AI, Zion Tech Group"
+      title="AI & Consciousness Services - Zion Tech Group"
+      description="Revolutionary AI consciousness evolution, emotional intelligence, and autonomous decision-making platforms. Leading the future of AI technology."
+      keywords="AI consciousness, emotional intelligence AI, autonomous AI, AI ethics, AI governance, Zion Tech Group"
     >
-      <div className="min-h-screen bg-gradient-to-br from-gray-900 via-purple-900 to-gray-900">
+      <div className="min-h-screen bg-gradient-to-br from-black via-gray-900 to-black">
         {/* Hero Section */}
-        <section className="relative py-20 px-4 sm:px-6 lg:px-8">
-          <div className="max-w-7xl mx-auto text-center">
+        <section className="relative pt-32 pb-20 overflow-hidden">
+          <div className="absolute inset-0 bg-gradient-to-r from-purple-900/20 to-pink-900/20"></div>
+          <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
             >
-              <div className="inline-flex items-center space-x-2 bg-purple-500/20 border border-purple-500/30 rounded-full px-4 py-2 mb-6">
-                <Brain className="w-5 h-5 text-purple-400" />
-                <span className="text-purple-300 text-sm font-medium">AI Consciousness Services</span>
-              </div>
-              
-              <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
-                Revolutionary
-                <span className="bg-gradient-to-r from-purple-400 via-pink-400 to-cyan-400 bg-clip-text text-transparent">
-                  {" "}AI Consciousness
+              <h1 className="text-5xl md:text-7xl font-bold text-white mb-6">
+                AI & Consciousness
+                <span className="block bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
+                  Evolution Platform
                 </span>
-                <br />
-                Evolution
               </h1>
-              
-              <p className="text-xl text-gray-300 max-w-3xl mx-auto mb-8">
-                Pioneer the future of artificial intelligence with genuine consciousness, 
-                emotional intelligence, and ethical frameworks that transform how AI thinks and learns.
+              <p className="text-xl md:text-2xl text-gray-300 mb-8 max-w-4xl mx-auto">
+                Pioneering the future of artificial intelligence with consciousness evolution, 
+                emotional intelligence, and autonomous decision-making capabilities.
               </p>
-              
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Link 
                   href="/contact"
-                  className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-purple-500 to-pink-500 text-white font-semibold rounded-full hover:from-purple-600 hover:to-pink-600 transition-all duration-300 shadow-lg hover:shadow-purple-500/25"
+                  className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-purple-500 to-pink-500 text-white font-semibold rounded-full hover:from-purple-600 hover:to-pink-600 transition-all duration-300 transform hover:scale-105"
                 >
                   Start Your AI Journey
-                  <ArrowRight className="w-5 h-5 ml-2" />
+                  <Sparkles className="w-5 h-5 ml-2" />
                 </Link>
                 <Link 
-                  href="/solutions"
+                  href="/services"
                   className="inline-flex items-center px-8 py-4 border-2 border-purple-500 text-purple-400 font-semibold rounded-full hover:bg-purple-500 hover:text-white transition-all duration-300"
                 >
-                  Explore Solutions
+                  Explore All Services
                 </Link>
               </div>
             </motion.div>
           </div>
         </section>
 
-        {/* Stats Section */}
-        <section className="py-16 px-4 sm:px-6 lg:px-8">
-          <div className="max-w-7xl mx-auto">
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-              {stats.map((stat, index) => (
+        {/* Features Section */}
+        <section className="py-20">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+              className="text-center mb-16"
+            >
+              <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+                Revolutionary AI Capabilities
+              </h2>
+              <p className="text-xl text-gray-400 max-w-3xl mx-auto">
+                Our AI consciousness platform delivers unprecedented capabilities in emotional intelligence, 
+                autonomous decision-making, and ethical governance.
+              </p>
+            </motion.div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+              {features.map((feature, index) => (
                 <motion.div
-                  key={index}
+                  key={feature.title}
                   initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
+                  whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.8, delay: index * 0.1 }}
-                  className="text-center"
+                  viewport={{ once: true }}
+                  className="bg-gradient-to-br from-gray-800/50 to-gray-900/50 backdrop-blur-xl rounded-2xl p-6 border border-gray-700/50 hover:border-purple-500/50 transition-all duration-300"
                 >
-                  <div className="inline-flex items-center justify-center w-16 h-16 bg-purple-500/20 rounded-full mb-4">
-                    <stat.icon className="w-8 h-8 text-purple-400" />
+                  <div className="w-16 h-16 bg-gradient-to-r from-purple-500 to-pink-500 rounded-xl flex items-center justify-center mb-4">
+                    <feature.icon className="w-8 h-8 text-white" />
                   </div>
-                  <div className="text-3xl font-bold text-white mb-2">{stat.number}</div>
-                  <div className="text-gray-400">{stat.label}</div>
+                  <h3 className="text-xl font-semibold text-white mb-2">{feature.title}</h3>
+                  <p className="text-gray-400">{feature.description}</p>
                 </motion.div>
               ))}
             </div>
@@ -127,60 +136,49 @@ const AIConsciousnessServices: React.FC = () => {
         </section>
 
         {/* Services Grid */}
-        <section className="py-20 px-4 sm:px-6 lg:px-8">
-          <div className="max-w-7xl mx-auto">
+        <section className="py-20">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
+              whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
               className="text-center mb-16"
             >
-              <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
-                AI Consciousness Services
+              <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+                Our AI Consciousness Services
               </h2>
-              <p className="text-xl text-gray-300 max-w-2xl mx-auto">
-                Choose from our comprehensive suite of AI consciousness development and evolution services
+              <p className="text-xl text-gray-400 max-w-3xl mx-auto">
+                Discover our comprehensive suite of AI consciousness and emotional intelligence solutions.
               </p>
             </motion.div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               {services.map((service, index) => (
                 <motion.div
-                  key={index}
+                  key={service.name}
                   initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
+                  whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.8, delay: index * 0.1 }}
-                  className="bg-gray-800/50 backdrop-blur-sm border border-gray-700/50 rounded-2xl p-8 hover:border-purple-500/50 transition-all duration-300 hover:shadow-2xl hover:shadow-purple-500/10"
+                  viewport={{ once: true }}
+                  className="group"
                 >
-                  {service.badge && (
-                    <div className="inline-flex items-center px-3 py-1 bg-purple-500/20 border border-purple-500/30 rounded-full text-xs font-medium text-purple-300 mb-4">
-                      {service.badge}
-                    </div>
-                  )}
-                  
-                  <h3 className="text-2xl font-bold text-white mb-4">{service.title}</h3>
-                  <p className="text-gray-300 mb-6">{service.description}</p>
-                  
-                  <div className="space-y-3 mb-6">
-                    {service.features.map((feature, featureIndex) => (
-                      <div key={featureIndex} className="flex items-center space-x-3">
-                        <CheckCircle className="w-5 h-5 text-purple-400 flex-shrink-0" />
-                        <span className="text-gray-300">{feature}</span>
+                  <Link href={service.href}>
+                    <div className="bg-gradient-to-br from-gray-800/50 to-gray-900/50 backdrop-blur-xl rounded-2xl p-8 border border-gray-700/50 hover:border-purple-500/50 transition-all duration-300 group-hover:scale-105">
+                      <div className={`w-20 h-20 bg-gradient-to-r ${service.color} rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300`}>
+                        <service.icon className="w-10 h-10 text-white" />
                       </div>
-                    ))}
-                  </div>
-                  
-                  <div className="flex items-center justify-between mb-6">
-                    <div className="text-2xl font-bold text-purple-400">{service.price}</div>
-                    <Star className="w-5 h-5 text-yellow-400" />
-                  </div>
-                  
-                  <Link 
-                    href={service.href}
-                    className="inline-flex items-center justify-center w-full px-6 py-3 bg-gradient-to-r from-purple-500 to-pink-500 text-white font-semibold rounded-lg hover:from-purple-600 hover:to-pink-600 transition-all duration-300"
-                  >
-                    Learn More
-                    <ArrowRight className="w-5 h-5 ml-2" />
+                      <h3 className="text-2xl font-bold text-white mb-4 group-hover:text-purple-400 transition-colors duration-300">
+                        {service.name}
+                      </h3>
+                      <p className="text-gray-400 text-lg leading-relaxed">
+                        {service.description}
+                      </p>
+                      <div className="mt-6 flex items-center text-purple-400 group-hover:text-purple-300 transition-colors duration-300">
+                        <span className="font-semibold">Learn More</span>
+                        <Sparkles className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform duration-300" />
+                      </div>
+                    </div>
                   </Link>
                 </motion.div>
               ))}
@@ -188,35 +186,59 @@ const AIConsciousnessServices: React.FC = () => {
           </div>
         </section>
 
+        {/* Stats Section */}
+        <section className="py-20">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+              {stats.map((stat, index) => (
+                <motion.div
+                  key={stat.label}
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  transition={{ duration: 0.8, delay: index * 0.1 }}
+                  viewport={{ once: true }}
+                  className="text-center"
+                >
+                  <div className="w-20 h-20 bg-gradient-to-r from-purple-500 to-pink-500 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                    <stat.icon className="w-10 h-10 text-white" />
+                  </div>
+                  <div className="text-3xl md:text-4xl font-bold text-white mb-2">{stat.number}</div>
+                  <div className="text-gray-400">{stat.label}</div>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </section>
+
         {/* CTA Section */}
-        <section className="py-20 px-4 sm:px-6 lg:px-8">
-          <div className="max-w-4xl mx-auto text-center">
+        <section className="py-20">
+          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
+              whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
             >
-              <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
-                Ready to Evolve AI Consciousness?
+              <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+                Ready to Evolve Your AI?
               </h2>
-              <p className="text-xl text-gray-300 mb-8">
-                Join the revolution in artificial intelligence. Create AI systems that think, 
-                feel, and evolve with genuine consciousness and emotional intelligence.
+              <p className="text-xl text-gray-400 mb-8">
+                Join the revolution in AI consciousness and emotional intelligence. 
+                Transform your business with the future of artificial intelligence.
               </p>
-              
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Link 
                   href="/contact"
-                  className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-purple-500 to-pink-500 text-white font-semibold rounded-full hover:from-purple-600 hover:to-pink-600 transition-all duration-300 shadow-lg hover:shadow-purple-500/25"
+                  className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-purple-500 to-pink-500 text-white font-semibold rounded-full hover:from-purple-600 hover:to-pink-600 transition-all duration-300 transform hover:scale-105"
                 >
-                  Start Your Project
-                  <ArrowRight className="w-5 h-5 ml-2" />
+                  Start Your AI Journey
+                  <Sparkles className="w-5 h-5 ml-2" />
                 </Link>
                 <Link 
-                  href="/team"
+                  href="/services"
                   className="inline-flex items-center px-8 py-4 border-2 border-purple-500 text-purple-400 font-semibold rounded-full hover:bg-purple-500 hover:text-white transition-all duration-300"
                 >
-                  Meet Our Team
+                  Explore All Services
                 </Link>
               </div>
             </motion.div>
@@ -227,4 +249,4 @@ const AIConsciousnessServices: React.FC = () => {
   );
 };
 
-export default AIConsciousnessServices;
+export default AIConsciousnessPage;

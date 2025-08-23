@@ -4,7 +4,7 @@ import UltraFuturisticBackground from '../components/ui/UltraFuturisticBackgroun
 
 export default function ManufacturingAISolutions() {
 	return (
-		<UltraFuturisticBackground variant="quantum" intensity="high">
+		<UltraFuturisticBackground variant="holographic" intensity="high">
 			<Head>
 				<title>Manufacturing AI Solutions | Zion Tech Group</title>
 				<meta name="description" content="AI manufacturing optimization, predictive maintenance, and quality control." />

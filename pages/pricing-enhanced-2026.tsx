@@ -225,7 +225,7 @@ export default function PricingEnhanced2026Page() {
   ];
 
   return (
-    <UltraFuturisticBackground variant="quantum" intensity="high">
+    <UltraFuturisticBackground variant="holographic" intensity="high">
       <div className="min-h-screen bg-gradient-to-br from-black via-gray-900 to-black text-white relative overflow-hidden">
         <Head>
           <title>Enhanced 2026 Pricing - Zion Tech Group</title>
@@ -357,7 +357,7 @@ export default function PricingEnhanced2026Page() {
                       </ul>
                       
                                              <Button
-                         variant={tier.variant === 'quantum' ? 'quantum' : tier.variant === 'holographic' ? 'futuristic' : 'quantum'}
+                                                   variant="primary"
                          size="lg"
                          className="w-full"
                          onClick={() => {
@@ -431,7 +431,7 @@ export default function PricingEnhanced2026Page() {
                       </ul>
                       
                       <Button
-                        variant="futuristic"
+                        variant="primary"
                         size="sm"
                         className="w-full"
                         onClick={() => window.open(`/2026-services-showcase-enhanced`, '_blank')}
@@ -498,7 +498,7 @@ export default function PricingEnhanced2026Page() {
                       
                       <div className="flex space-x-2">
                         <Button
-                          variant="quantum"
+                          variant="primary"
                           size="sm"
                           className="flex-1"
                           onClick={() => window.open(service.link, '_blank')}
@@ -507,7 +507,7 @@ export default function PricingEnhanced2026Page() {
                           <ArrowRight className="w-4 h-4 ml-1" />
                         </Button>
                         <Button
-                          variant="futuristic"
+                          variant="secondary"
                           size="sm"
                           onClick={() => window.open(`mailto:${contactInfo.email}?subject=Inquiry about ${service.name}`, '_blank')}
                         >
@@ -540,7 +540,7 @@ export default function PricingEnhanced2026Page() {
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Button
-                  variant="quantum"
+                  variant="primary"
                   size="lg"
                   onClick={() => window.open(`mailto:${contactInfo.email}?subject=Business Transformation Consultation`, '_blank')}
                 >
@@ -548,7 +548,7 @@ export default function PricingEnhanced2026Page() {
                   Schedule Consultation
                 </Button>
                 <Button
-                  variant="futuristic"
+                  variant="secondary"
                   size="lg"
                   onClick={() => window.open(`tel:${contactInfo.mobile}`, '_blank')}
                 >

@@ -459,8 +459,6 @@ const Homepage2043: React.FC = () => {
                   >
                     <ServiceCard
                       service={service}
-                      onClick={() => handleServiceClick(service)}
-                      featured={index < 3}
                     />
                   </motion.div>
                 ))}
