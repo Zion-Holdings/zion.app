@@ -4,7 +4,11 @@
 const { spawnSync, execSync } = require("child_process");
 const fs = require("fs");
 const path = require("path");
+<<<<<<< HEAD
+const crypto = require("crypto");
+=======
 const https = require("https");
+>>>>>>> origin/cursor/automate-deployment-redundancy-and-clean-up-e342
 
 class EnhancedPM2Redundancy {
   constructor() {
@@ -13,6 +17,12 @@ class EnhancedPM2Redundancy {
     this.logFile = path.join(this.logDir, "enhanced-pm2-redundancy.log");
     this.ensureLogDir();
     this.config = this.loadConfig();
+<<<<<<< HEAD
+    this.monitoring = false;
+    this.checkInterval = null;
+    this.healthChecks = new Map();
+    this.recoveryAttempts = new Map();
+=======
     this.healthMetrics = {
       totalChecks: 0,
       successfulChecks: 0,
@@ -21,6 +31,7 @@ class EnhancedPM2Redundancy {
       lastCheck: null,
       uptime: Date.now()
     };
+>>>>>>> origin/cursor/automate-deployment-redundancy-and-clean-up-e342
   }
 
   ensureLogDir() {
@@ -33,13 +44,45 @@ class EnhancedPM2Redundancy {
     const configPath = path.join(this.workspace, "automation/redundancy-config.json");
     if (fs.existsSync(configPath)) {
       try {
+<<<<<<< HEAD
+        const config = JSON.parse(fs.readFileSync(configPath, "utf8"));
+        return config.pm2 || {};
+      } catch (error) {
+        this.log(`Error loading PM2 config: ${error.message}`);
+=======
         return JSON.parse(fs.readFileSync(configPath, "utf8"));
       } catch (error) {
         this.log(`Error loading config: ${error.message}`);
+>>>>>>> origin/cursor/automate-deployment-redundancy-and-clean-up-e342
       }
     }
     
     return {
+<<<<<<< HEAD
+      enabled: true,
+      checkInterval: 30000,
+      maxRestartAttempts: 5,
+      restartDelay: 5000,
+      healthCheckTimeout: 15000,
+      autoRecovery: true,
+      ecosystemFiles: [
+        "ecosystem.pm2.cjs",
+        "ecosystem.redundancy.cjs"
+      ],
+      criticalProcesses: [
+        "zion-auto-sync",
+        "zion-auto-sync-cron",
+        "redundancy-automation-system",
+        "redundancy-health-monitor",
+        "redundancy-git-sync",
+        "redundancy-build-monitor"
+      ],
+      monitoring: {
+        memoryThreshold: 80, // 80% memory usage
+        cpuThreshold: 90,    // 90% CPU usage
+        restartThreshold: 3, // restart after 3 failures
+        logRotation: true
+=======
       pm2: {
         enabled: true,
         checkInterval: 30000,
@@ -53,6 +96,7 @@ class EnhancedPM2Redundancy {
         restartDelay: 5000,
         memoryThreshold: 80,
         cpuThreshold: 90
+>>>>>>> origin/cursor/automate-deployment-redundancy-and-clean-up-e342
       }
     };
   }
@@ -77,7 +121,11 @@ class EnhancedPM2Redundancy {
         shell: false,
         encoding: "utf8",
         maxBuffer: 1024 * 1024 * 10,
+<<<<<<< HEAD
+        timeout: options.timeout || this.config.healthCheckTimeout || 15000,
+=======
         timeout: options.timeout || 30000,
+>>>>>>> origin/cursor/automate-deployment-redundancy-and-clean-up-e342
         ...options
       });
       
@@ -90,6 +138,14 @@ class EnhancedPM2Redundancy {
     });
   }
 
+<<<<<<< HEAD
+  async checkPM2Status() {
+    try {
+      const result = await this.runCommand("pm2", ["status", "--no-daemon"]);
+      return result.status === 0;
+    } catch (error) {
+      this.log(`PM2 status check failed: ${error.message}`, "ERROR");
+=======
   async checkPM2Health() {
     this.log("🔍 Starting enhanced PM2 health check...");
     this.healthMetrics.totalChecks++;
@@ -152,23 +208,114 @@ class EnhancedPM2Redundancy {
     } catch (error) {
       this.log(`❌ Enhanced PM2 health check failed: ${error.message}`, "ERROR");
       this.healthMetrics.failedChecks++;
+>>>>>>> origin/cursor/automate-deployment-redundancy-and-clean-up-e342
       return false;
     }
   }
 
   async getPM2Processes() {
     try {
+<<<<<<< HEAD
+      const result = await this.runCommand("pm2", ["jlist", "--no-daemon"]);
+=======
       const result = await this.runCommand("pm2", ["jlist"]);
+>>>>>>> origin/cursor/automate-deployment-redundancy-and-clean-up-e342
       if (result.status === 0) {
         return JSON.parse(result.stdout);
       }
       return [];
     } catch (error) {
+<<<<<<< HEAD
+      this.log(`Failed to get PM2 processes: ${error.message}`, "ERROR");
+=======
       this.log(`Error getting PM2 processes: ${error.message}`, "ERROR");
+>>>>>>> origin/cursor/automate-deployment-redundancy-and-clean-up-e342
       return [];
     }
   }
 
+<<<<<<< HEAD
+  async checkProcessHealth(processName) {
+    try {
+      const result = await this.runCommand("pm2", ["show", processName, "--no-daemon"]);
+      if (result.status !== 0) {
+        return { healthy: false, reason: "Process not found" };
+      }
+
+      const output = result.stdout;
+      const isOnline = output.includes("online");
+      const isErrored = output.includes("errored");
+      const isStopped = output.includes("stopped");
+
+      if (isErrored || isStopped) {
+        return { healthy: false, reason: isErrored ? "Process errored" : "Process stopped" };
+      }
+
+      if (!isOnline) {
+        return { healthy: false, reason: "Process not online" };
+      }
+
+      // Check memory and CPU usage
+      const memoryMatch = output.match(/memory\s+(\d+)/);
+      const cpuMatch = output.match(/cpu\s+(\d+)/);
+      
+      if (memoryMatch && cpuMatch) {
+        const memory = parseInt(memoryMatch[1]);
+        const cpu = parseInt(cpuMatch[1]);
+        
+        if (memory > this.config.monitoring.memoryThreshold || cpu > this.config.monitoring.cpuThreshold) {
+          return { 
+            healthy: false, 
+            reason: `High resource usage: Memory ${memory}%, CPU ${cpu}%` 
+          };
+        }
+      }
+
+      return { healthy: true };
+    } catch (error) {
+      this.log(`Health check failed for ${processName}: ${error.message}`, "ERROR");
+      return { healthy: false, reason: "Health check error" };
+    }
+  }
+
+  async restartProcess(processName) {
+    try {
+      this.log(`Restarting PM2 process: ${processName}`, "WARN");
+      
+      const result = await this.runCommand("pm2", ["restart", processName]);
+      if (result.status === 0) {
+        this.log(`Successfully restarted ${processName}`, "INFO");
+        return true;
+      } else {
+        this.log(`Failed to restart ${processName}: ${result.stderr}`, "ERROR");
+        return false;
+      }
+    } catch (error) {
+      this.log(`Error restarting ${processName}: ${error.message}`, "ERROR");
+      return false;
+    }
+  }
+
+  async startProcess(processName) {
+    try {
+      this.log(`Starting PM2 process: ${processName}`, "WARN");
+      
+      // Try to start from ecosystem files
+      for (const ecosystemFile of this.config.ecosystemFiles) {
+        if (fs.existsSync(ecosystemFile)) {
+          const result = await this.runCommand("pm2", ["start", ecosystemFile, "--only", processName]);
+          if (result.status === 0) {
+            this.log(`Successfully started ${processName} from ${ecosystemFile}`, "INFO");
+            return true;
+          }
+        }
+      }
+      
+      this.log(`Failed to start ${processName} from any ecosystem file`, "ERROR");
+      return false;
+    } catch (error) {
+      this.log(`Error starting ${processName}: ${error.message}`, "ERROR");
+=======
   async analyzeProcessHealth(process) {
     const issues = [];
     let critical = false;
@@ -420,10 +567,178 @@ class EnhancedPM2Redundancy {
       }
     } catch (error) {
       this.log(`❌ Failed to start PM2 services: ${error.message}`, "ERROR");
+>>>>>>> origin/cursor/automate-deployment-redundancy-and-clean-up-e342
       return false;
     }
   }
 
+<<<<<<< HEAD
+  async recoverProcess(processName) {
+    const attempts = this.recoveryAttempts.get(processName) || 0;
+    
+    if (attempts >= this.config.maxRestartAttempts) {
+      this.log(`Max recovery attempts reached for ${processName}, trying full restart`, "WARN");
+      
+      // Kill and restart the process completely
+      await this.runCommand("pm2", ["delete", processName]);
+      await this.startProcess(processName);
+      
+      this.recoveryAttempts.set(processName, 0);
+      return;
+    }
+
+    this.recoveryAttempts.set(processName, attempts + 1);
+    
+    if (attempts === 0) {
+      // First attempt: simple restart
+      await this.restartProcess(processName);
+    } else {
+      // Subsequent attempts: wait and restart
+      await new Promise(resolve => setTimeout(resolve, this.config.restartDelay));
+      await this.restartProcess(processName);
+    }
+  }
+
+  async checkAllProcesses() {
+    this.log("Starting comprehensive PM2 health check...", "INFO");
+    
+    if (!(await this.checkPM2Status())) {
+      this.log("PM2 daemon is not running, attempting to start", "WARN");
+      await this.runCommand("pm2", ["start"]);
+      return;
+    }
+
+    const processes = await this.getPM2Processes();
+    const criticalProcesses = this.config.criticalProcesses;
+    let issuesFound = 0;
+
+    for (const processName of criticalProcesses) {
+      const process = processes.find(p => p.name === processName);
+      
+      if (!process) {
+        this.log(`Critical process ${processName} not found, attempting to start`, "WARN");
+        await this.startProcess(processName);
+        issuesFound++;
+        continue;
+      }
+
+      const health = await this.checkProcessHealth(processName);
+      if (!health.healthy) {
+        this.log(`Process ${processName} unhealthy: ${health.reason}`, "WARN");
+        await this.recoverProcess(processName);
+        issuesFound++;
+      } else {
+        this.log(`Process ${processName} is healthy`, "INFO");
+        this.recoveryAttempts.set(processName, 0);
+      }
+    }
+
+    // Check for orphaned processes
+    for (const process of processes) {
+      if (!criticalProcesses.includes(process.name)) {
+        this.log(`Found non-critical process: ${process.name}`, "INFO");
+      }
+    }
+
+    if (issuesFound === 0) {
+      this.log("All critical PM2 processes are healthy", "INFO");
+    } else {
+      this.log(`Found ${issuesFound} issues, recovery attempts initiated`, "WARN");
+    }
+
+    return issuesFound;
+  }
+
+  async startMonitoring() {
+    if (this.monitoring) {
+      this.log("Monitoring already active", "WARN");
+      return;
+    }
+
+    this.monitoring = true;
+    this.log("Starting enhanced PM2 redundancy monitoring", "INFO");
+
+  async startMonitoring() {
+    if (this.monitoring) {
+      this.log("⚠️ Monitoring is already running");
+      return;
+    }
+
+    this.log("🚀 Starting enhanced PM2 redundancy monitoring...");
+    this.monitoring = true;
+
+    // Initial health check
+    await this.performHealthCheck();
+
+    // Start monitoring loop
+    this.checkInterval = setInterval(async () => {
+      try {
+        await this.performHealthCheck();
+      } catch (error) {
+        this.log(`❌ Error in monitoring loop: ${error.message}`, "ERROR");
+      }
+    }, this.config.healthCheckInterval);
+
+    this.log(`✅ Enhanced PM2 redundancy monitoring started with ${this.config.healthCheckInterval}ms intervals`);
+  }
+
+  async stopMonitoring() {
+    if (this.checkInterval) {
+      clearInterval(this.checkInterval);
+      this.checkInterval = null;
+    }
+    
+    this.monitoring = false;
+    this.log("🛑 Enhanced PM2 redundancy monitoring stopped");
+  }
+
+  sleep(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
+  }
+
+  async cleanup() {
+    this.log("🧹 Cleaning up enhanced PM2 redundancy system...");
+    
+    try {
+      await this.stopMonitoring();
+      
+      // Remove backup ecosystem file if it exists
+      const backupPath = path.join(this.workspace, "ecosystem.backup.pm2.cjs");
+      if (fs.existsSync(backupPath)) {
+        fs.unlinkSync(backupPath);
+        this.log("🗑️ Removed backup ecosystem file");
+      }
+      
+      this.log("✅ Cleanup completed");
+    } catch (error) {
+      this.log(`❌ Error during cleanup: ${error.message}`, "ERROR");
+    }
+  }
+}
+
+// Start the enhanced PM2 redundancy system
+if (require.main === module) {
+  const system = new EnhancedPM2Redundancy();
+  
+  // Handle graceful shutdown
+  process.on('SIGINT', async () => {
+    system.log("🛑 Shutting down enhanced PM2 redundancy system...");
+    await system.cleanup();
+    process.exit(0);
+  });
+  
+  process.on('SIGTERM', async () => {
+    system.log("🛑 Shutting down enhanced PM2 redundancy system...");
+    await system.cleanup();
+    process.exit(0);
+  });
+  
+  // Start monitoring
+  system.startMonitoring();
+}
+
+module.exports = EnhancedPM2Redundancy;
+=======
     const monitor = async () => {
       if (!this.monitoring) return;
       
@@ -533,19 +848,43 @@ class EnhancedPM2Redundancy {
     await this.checkPM2Health();
     
     this.log(`✅ Enhanced PM2 redundancy monitoring started (interval: ${interval}ms)`);
+>>>>>>> origin/cursor/automate-deployment-redundancy-and-clean-up-e342
   }
 }
 
 // CLI interface
 if (require.main === module) {
   const redundancy = new EnhancedPM2Redundancy();
+<<<<<<< HEAD
+  const command = process.argv[2];
+
+=======
   
   const command = process.argv[2];
   
+>>>>>>> origin/cursor/automate-deployment-redundancy-and-clean-up-e342
   switch (command) {
     case "start":
       redundancy.startMonitoring();
       break;
+<<<<<<< HEAD
+    case "stop":
+      redundancy.stopMonitoring();
+      break;
+    case "check":
+      redundancy.checkAllProcesses();
+      break;
+    case "restart":
+      redundancy.emergencyRestart();
+      break;
+    case "report":
+      redundancy.generateHealthReport().then(report => {
+        console.log(JSON.stringify(report, null, 2));
+      });
+      break;
+    default:
+      console.log("Usage: node enhanced-pm2-redundancy.cjs [start|stop|check|restart|report]");
+=======
     case "check":
       redundancy.checkPM2Health().then(() => process.exit(0));
       break;
@@ -554,8 +893,13 @@ if (require.main === module) {
       break;
     default:
       console.log("Usage: node enhanced-pm2-redundancy.cjs [start|check|status]");
+>>>>>>> origin/cursor/automate-deployment-redundancy-and-clean-up-e342
       process.exit(1);
   }
 }
 
+<<<<<<< HEAD
 module.exports = { EnhancedPM2Redundancy };
+=======
+module.exports = { EnhancedPM2Redundancy };
+>>>>>>> origin/cursor/automate-deployment-redundancy-and-clean-up-e342

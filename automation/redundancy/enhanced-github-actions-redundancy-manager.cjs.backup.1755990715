@@ -1,6 +1,29 @@
 #!/usr/bin/env node
 'use strict';
 
+<<<<<<< HEAD
+const fs = require('fs');
+const path = require('path');
+const { spawnSync } = require('child_process');
+
+class EnhancedGitHubActionsRedundancyManager {
+  constructor() {
+    this.workflowsDir = path.join(process.cwd(), '.github', 'workflows');
+    this.backupWorkflowsDir = path.join(process.cwd(), '.github', 'workflows', 'backup');
+    this.logDir = path.join(process.cwd(), 'automation', 'logs');
+    this.ensureDirectories();
+    this.backupWorkflows = new Map();
+    this.healthChecks = new Map();
+  }
+
+  ensureDirectories() {
+    if (!fs.existsSync(this.logDir)) {
+      fs.mkdirSync(this.logDir, { recursive: true });
+    }
+    if (!fs.existsSync(this.backupWorkflowsDir)) {
+      fs.mkdirSync(this.backupWorkflowsDir, { recursive: true });
+    }
+=======
 const { spawnSync } = require('child_process');
 const fs = require('fs');
 const path = require('path');
@@ -21,6 +44,7 @@ class EnhancedGitHubActionsRedundancyManager {
     if (!fs.existsSync(this.logDir)) {
       fs.mkdirSync(this.logDir, { recursive: true });
     }
+>>>>>>> origin/cursor/automate-deployment-redundancy-and-clean-up-e342
   }
 
   log(message, level = 'INFO') {
@@ -28,7 +52,11 @@ class EnhancedGitHubActionsRedundancyManager {
     const logMessage = `[${timestamp}] [${level}] [ENHANCED-GITHUB] ${message}`;
     console.log(logMessage);
     
+<<<<<<< HEAD
+    const logFile = path.join(this.logDir, 'enhanced-github-redundancy.log');
+=======
     const logFile = path.join(this.logDir, 'enhanced-github-actions-redundancy.log');
+>>>>>>> origin/cursor/automate-deployment-redundancy-and-clean-up-e342
     fs.appendFileSync(logFile, logMessage + '\n');
   }
 
@@ -48,16 +76,74 @@ class EnhancedGitHubActionsRedundancyManager {
     };
   }
 
+<<<<<<< HEAD
+  async scanExistingWorkflows() {
+    this.log('Scanning existing GitHub Actions workflows...');
+    
+    if (!fs.existsSync(this.workflowsDir)) {
+      this.log('No workflows directory found', 'WARN');
+=======
   async scanWorkflows() {
     this.log('Scanning GitHub Actions workflows...');
     
     if (!fs.existsSync(this.workflowsDir)) {
       this.log('Workflows directory not found', 'WARN');
+>>>>>>> origin/cursor/automate-deployment-redundancy-and-clean-up-e342
       return [];
     }
 
     const workflowFiles = fs.readdirSync(this.workflowsDir)
       .filter(file => file.endsWith('.yml') || file.endsWith('.yaml'))
+<<<<<<< HEAD
+      .filter(file => !file.includes('backup'));
+
+    this.log(`Found ${workflowFiles.length} primary workflows`);
+    return workflowFiles;
+  }
+
+  async createAllBackupWorkflows() {
+    this.log('Creating all enhanced backup workflows...');
+    
+    const workflows = await this.scanExistingWorkflows();
+    
+    for (const workflow of workflows) {
+      await this.createBackupWorkflow(workflow);
+    }
+    
+    // Create additional specialized backup workflows
+    await this.createSpecializedBackupWorkflows();
+    
+    this.log('All backup workflows created');
+  }
+
+  async createBackupWorkflow(workflowFile) {
+    const workflowPath = path.join(this.workflowsDir, workflowFile);
+    const backupWorkflowPath = path.join(this.backupWorkflowsDir, `${workflowFile.replace('.yml', '-backup.yml').replace('.yaml', '-backup.yaml')}`);
+    
+    if (!fs.existsSync(workflowPath)) {
+      this.log(`Workflow not found: ${workflowPath}`, 'ERROR');
+      return false;
+    }
+
+    try {
+      const workflowContent = fs.readFileSync(workflowPath, 'utf8');
+      const backupContent = this.generateBackupWorkflow(workflowContent, workflowFile);
+      
+      fs.writeFileSync(backupWorkflowPath, backupContent);
+      
+      const backupName = path.basename(backupWorkflowPath);
+      this.backupWorkflows.set(backupName, {
+        original: workflowFile,
+        created: new Date(),
+        status: 'created'
+      });
+      
+      this.log(`Created backup workflow: ${backupName}`);
+      return true;
+      
+    } catch (error) {
+      this.log(`Failed to create backup for ${workflowFile}: ${error.message}`, 'ERROR');
+=======
       .map(file => path.join(this.workflowsDir, file));
 
     this.log(`Found ${workflowFiles.length} workflow files`);
@@ -79,10 +165,109 @@ class EnhancedGitHubActionsRedundancyManager {
       
     } catch (error) {
       this.log(`Failed to create backup workflows: ${error.message}`, 'ERROR');
+>>>>>>> origin/cursor/automate-deployment-redundancy-and-clean-up-e342
       return false;
     }
   }
 
+<<<<<<< HEAD
+  generateBackupWorkflow(originalContent, originalName) {
+    // Parse the original workflow and create a backup version
+    let backupContent = originalContent;
+    
+    // Update the name to indicate it's a backup
+    backupContent = backupContent.replace(
+      /^name:\s*([^\n]+)/m,
+      `name: $1 (Backup)`
+    );
+    
+    // Adjust schedules to run less frequently (daily backups)
+    backupContent = backupContent.replace(
+      /cron:\s*'([^']+)'/g,
+      (match, cron) => {
+        // Convert to daily backup schedule
+        if (cron.includes('*/15') || cron.includes('*/10')) {
+          return `cron: '0 2 * * *'`; // Daily at 2 AM
+        } else if (cron.includes('0 */12')) {
+          return `cron: '0 6 * * *'`; // Daily at 6 AM
+        } else {
+          return `cron: '0 10 * * *'`; // Daily at 10 AM
+        }
+      }
+    );
+    
+    // Add backup-specific environment variables
+    backupContent = backupContent.replace(
+      /env:/,
+      `env:
+        IS_BACKUP_WORKFLOW: 'true'
+        BACKUP_ORIGINAL: '${originalName}'
+        BACKUP_TIMESTAMP: '${new Date().toISOString()}'
+        `
+    );
+    
+    // Add backup-specific steps
+    const backupSteps = `
+      - name: Backup Workflow Notification
+        run: |
+          echo "🔄 Running backup workflow for ${originalName}"
+          echo "Backup timestamp: ${{ env.BACKUP_TIMESTAMP }}"
+          echo "Original workflow: ${{ env.BACKUP_ORIGINAL }}"
+          
+      - name: Backup Health Check
+        run: |
+          echo "✅ Backup workflow health check passed"
+          echo "This is a backup workflow running with reduced frequency"
+          
+`;
+    
+    // Insert backup steps after checkout
+    backupContent = backupContent.replace(
+      /- name: Checkout repository/,
+      `${backupSteps}      - name: Checkout repository`
+    );
+    
+    return backupContent;
+  }
+
+  async createSpecializedBackupWorkflows() {
+    this.log('Creating specialized backup workflows...');
+    
+    // Create a comprehensive backup workflow that covers all automations
+    await this.createComprehensiveBackupWorkflow();
+    
+    // Create a health monitoring backup workflow
+    await this.createHealthMonitoringBackupWorkflow();
+    
+    // Create a recovery backup workflow
+    await this.createRecoveryBackupWorkflow();
+  }
+
+  async createComprehensiveBackupWorkflow() {
+    const comprehensiveBackup = `name: Comprehensive Automation Backup
+
+on:
+  schedule:
+    - cron: '0 4 * * *'  # Daily at 4 AM
+  workflow_dispatch:
+  repository_dispatch:
+    types: [backup-trigger]
+
+permissions:
+  contents: write
+  actions: read
+
+jobs:
+  comprehensive-backup:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Backup Workflow Notification
+        run: |
+          echo "🔄 Running comprehensive backup workflow"
+          echo "Backup timestamp: ${{ github.event.head_commit.timestamp || github.event.schedule || 'manual' }}"
+          echo "This workflow provides backup coverage for all automations"
+          
+=======
   async createBackupWorkflow(workflowPath) {
     const workflowName = path.basename(workflowPath, path.extname(workflowPath));
     const backupName = `${workflowName}-enhanced-backup`;
@@ -363,6 +548,7 @@ jobs:
   health-check:
     runs-on: ubuntu-latest
     steps:
+>>>>>>> origin/cursor/automate-deployment-redundancy-and-clean-up-e342
       - name: Checkout repository
         uses: actions/checkout@v4
         with:
@@ -373,6 +559,21 @@ jobs:
         with:
           node-version: '20'
 
+<<<<<<< HEAD
+}
+
+// Export for use in other modules
+module.exports = { EnhancedGitHubActionsRedundancyManager };
+
+// If run directly, start the manager
+if (require.main === module) {
+  const manager = new EnhancedGitHubActionsRedundancyManager();
+  manager.start().catch(error => {
+    console.error('Failed to start Enhanced GitHub Actions Redundancy Manager:', error);
+    process.exit(1);
+  });
+}
+=======
       - name: Backup PM2 Auto-Sync
         run: |
           echo "🔄 Running backup PM2 auto-sync..."
@@ -1076,3 +1277,4 @@ if (require.main === module) {
 }
 
 module.exports = EnhancedGitHubActionsRedundancyManager;
+>>>>>>> origin/cursor/automate-deployment-redundancy-and-clean-up-e342
