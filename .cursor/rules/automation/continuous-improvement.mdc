@@ -1,0 +1,35 @@
+# Continuous Improvement Rules
+
+## Automatic Improvements
+- Code quality monitoring and fixes
+- Performance optimization suggestions
+- Security vulnerability detection
+- Accessibility improvements
+- Test coverage enhancement
+
+## Monitoring Cycles
+- Every 30 seconds: Health check
+- Every 5 minutes: Issue detection
+- Every hour: Performance analysis
+- Daily: Security audit
+
+## Improvement Categories
+1. **Code Quality**: Linting, formatting, best practices
+2. **Performance**: Bundle size, loading speed, runtime
+3. **Security**: Vulnerabilities, best practices, audits
+4. **Accessibility**: WCAG compliance, screen readers
+5. **Testing**: Coverage, reliability, automation
+
+## Triggers
+- Build failures
+- Linting errors
+- Test failures
+- Performance regressions
+- Security alerts
+
+## Actions
+- Automatic fix application
+- Chat request generation
+- Issue reporting
+- Performance monitoring
+- Security scanning

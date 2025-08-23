@@ -1,107 +1,54 @@
 [build]
-  # Use `npm ci` for deterministic installs
-  # Generate Prisma client before building to ensure models are up to date
-  command = "npm run build:netlify:prepare"
-  # Netlify UI sets `publish` to `out` which causes the Next.js plugin to fail
-  # because no exported directory exists. Explicitly publish the `.next`
-  # directory so the plugin can run correctly.
-  publish = ".next"
-  # Increase build timeout for 176+ pages
-  command_timeout = "30m"
+  command = "npm ci && npm install react@18.3.1 react-dom@18.3.1 && npm run build"
+  publish = "out"
+  functions = "netlify/functions"
 
 [build.environment]
-  NODE_OPTIONS = "--no-deprecation --max-old-space-size=6144 --no-warnings"
-  NPM_FLAGS = "--prefer-offline --legacy-peer-deps"
-  NEXT_PUBLIC_APP_ENV = "production"
-  NODE_VERSION = "22"
-  NEXT_TELEMETRY_DISABLED = "1"
-  CI = "true"
-  SKIP_TYPE_CHECK = "true"
-  
-  # Performance optimizations for large builds (with Netlify plugin)
-  NEXT_DISABLE_CSS_INLINE = "true"
-  NEXT_DISABLE_SOURCE_MAPS = "true"
-  GENERATE_SOURCEMAP = "false"
-  NEXT_BUILD_WORKERS = "1"
-  NEXT_PRIVATE_BUILD_CACHE = "false"
-  NEXT_PRIVATE_STATIC_OPTIMIZATION = "false"
-  
-  # CRITICAL FIX: Completely disable build trace collection to prevent hanging
-  NEXT_DISABLE_TRACE_COLLECTION = "true"
-  NEXT_PRIVATE_OUTPUT_TRACE = "false"
-  # NEXT_PRIVATE_OUTPUT_FILE_TRACING = "false" # Allowing Next.js default / plugin to manage this
-  UV_THREADPOOL_SIZE = "4"
-  NODE_NO_WARNINGS = "1"
-  NEXT_PRIVATE_MINIMIZE_BUILD_TIME = "true"
-  
-  # Configure secrets scanning to omit legitimate public environment variables
-  # NEXT_PUBLIC_* variables are meant to be public and embedded in client bundles
-  SECRETS_SCAN_OMIT_KEYS = "NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME,SENTRY_DSN"
-  
+  NODE_OPTIONS = "--max-old-space-size=6144 --openssl-legacy-provider"
 
-# Skip Husky for CI builds
-[build.processing]
-  skip_processing = false
-
-[build.processing.css]
-  bundle = true
-  minify = true
-
-[build.processing.js]
-  bundle = true
-  minify = true
-
-[build.processing.html]
-  pretty_urls = true
-
-# Deploy contexts for different environments
-
-# Headers for security and performance
-[[headers]]
-  for = "/*"
-  [headers.values]
-    X-Frame-Options = "DENY"
-    X-XSS-Protection = "1; mode=block"
-    X-Content-Type-Options = "nosniff"
-    Referrer-Policy = "strict-origin-when-cross-origin"
-    Permissions-Policy = "camera=(), microphone=(), geolocation=()"
-    # Strict CSP without unsafe-eval for maximum security
-    Content-Security-Policy = "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://js.stripe.com https://*.launchdarkly.com https://www.googletagmanager.com https://widget.intercom.io https://*.googleapis.com https://*.gstatic.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://*.supabase.co https://*.stripe.com https://*.sentry.io; object-src 'none'; base-uri 'self'"
-
-[[headers]]
-  for = "/_next/static/*"
-  [headers.values]
-    Cache-Control = "public, max-age=31536000, immutable"
-
-[[headers]]
-  for = "/logos/*"
-  [headers.values]
-    Cache-Control = "public, max-age=31536000, immutable"
-
-# Redirects
-[[redirects]]
-  from = "/home"
-  to = "/"
-  status = 301
-
-[functions.environment]
-  SENTRY_LOG_LEVEL = "debug"
-
-[functions.sentryDsnCheckCron]
-  schedule = "@daily"
-
-[functions.healthCheckCron]
-    schedule = "*/5 * * * *"
+[[plugins]]
+  package = "@netlify/plugin-nextjs"
 
 [[plugins]]
   package = "netlify-plugin-cloudinary"
-  [plugins.inputs]
-    # Point to the correct images directory
-    imagesPath = "public/logos"
-    # Use production domain  
-    deliveryType = "fetch"
-    # Set max file size to optimize performance
-    maxSize = 1048576
-    # Set concurrent uploads
-    uploadConcurrency = 10
 
+# Static redirects for exported site
+[[redirects]]
+  from = "/ai-customer-success-platform"
+  to = "/services/ai-customer-success-platform/"
+  status = 301
+
+[[redirects]]
+  from = "/ai-sales-intelligence-platform"
+  to = "/services/ai-sales-intelligence-platform/"
+  status = 301
+
+[[redirects]]
+  from = "/ai-financial-planning-platform"
+  to = "/services/ai-financial-planning-platform/"
+  status = 301
+
+[[redirects]]
+  from = "/ai-powered-decision-engine"
+  to = "/services/ai-powered-decision-engine/"
+  status = 301
+
+[[redirects]]
+  from = "/intelligent-content-automation-platform"
+  to = "/services/intelligent-content-automation-platform/"
+  status = 301
+
+[[redirects]]
+  from = "/intelligent-hr-analytics-platform"
+  to = "/services/intelligent-hr-analytics-platform/"
+  status = 301
+
+[[redirects]]
+  from = "/smart-crm-intelligence-suite"
+  to = "/services/smart-crm-intelligence-suite/"
+  status = 301
+
+[[redirects]]
+  from = "/affiliate-attribution-suite"
+  to = "/services/affiliate-attribution-suite/"
+  status = 301

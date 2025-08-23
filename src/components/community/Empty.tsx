@@ -1,9 +1,9 @@
 import React from 'react';
-
-export default function Empty({ message }: { message: string }) {
+export function Empty() {
   return (
-    <div className="text-center py-16 text-muted-foreground" data-testid="empty">
-      {message}
+    <div>
+      <h1>Component</h1>
+      <p>Component placeholder</p>
     </div>
   );
 }

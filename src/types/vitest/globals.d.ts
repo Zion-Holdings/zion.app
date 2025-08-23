@@ -1,4 +1,4 @@
-declare module 'vitest/globals' {
-  const vitestGlobals: any;
-  export = vitestGlobals;
+// Type definitions for globals.d;
+export interface globals.d {;
+  // TODO: Add proper type definitions;
 }

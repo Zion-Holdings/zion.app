@@ -1,5 +1,4 @@
-declare module 'fs' {
-  export function readFileSync(path: string, opts?: any): string | Buffer;
-  export function writeFileSync(path: string, data: any, opts?: any): void;
-  export function existsSync(path: string): boolean;
+declare module fs' {'  function readFileSync(path: string, opts?: unknown): string | Buffer;
+  function writeFileSync(path: string, data: unknown, opts?: unknown): void;
+  function existsSync(path: string): boolean;
 }

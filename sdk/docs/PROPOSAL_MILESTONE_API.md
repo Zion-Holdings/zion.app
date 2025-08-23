@@ -8,11 +8,11 @@ _Detailed function definitions, parameters, and return types will be specified h
 
 **Examples:**
 
-*   `createProjectProposal(proposalData)`
-*   `getProjectProposal(proposalId)`
-*   `listProjectProposals(filterOptions, pagination)`
-*   `addMilestone(proposalId, milestoneData)`
-*   `getMilestones(proposalId)`
-*   `updateMilestoneStatus(milestoneId, status, evidenceLink)`
-*   `requestMilestonePayment(milestoneId)`
-*   `approveMilestonePayment(milestoneId, transactionDetails)`
+- `createProjectProposal(proposalData)`
+- `getProjectProposal(proposalId)`
+- `listProjectProposals(filterOptions, pagination)`
+- `addMilestone(proposalId, milestoneData)`
+- `getMilestones(proposalId)`
+- `updateMilestoneStatus(milestoneId, status, evidenceLink)`
+- `requestMilestonePayment(milestoneId)`
+- `approveMilestonePayment(milestoneId, transactionDetails)`

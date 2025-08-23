@@ -2,6 +2,7 @@ import json
 import datetime
 import os
 import traceback
+import argparse
 
 # Allow customizing the log file location via environment variable
 # Default to storing bug logs under logs/bug/bug_log.json so logs remain organized
@@ -94,11 +95,32 @@ def log_bug(
     except Exception as e:
         print(f"An unexpected error occurred during logging: {e}")
 
-if __name__ == "__main__":
-    # Example usage:
+def list_bugs(log_file: str = LOG_FILE) -> None:
+    """Print all logged bugs in a simple human-readable format."""
+    if not os.path.exists(log_file):
+        print(f"No bug log found at {log_file}")
+        return
+    try:
+        with open(log_file, "r") as f:
+            logs = json.load(f)
+    except json.JSONDecodeError as e:
+        print(f"Failed to parse log file {log_file}: {e}")
+        return
+
+    if not isinstance(logs, list):
+        print(f"Unexpected log format in {log_file}")
+        return
+
+    for entry in logs:
+        timestamp = entry.get("timestamp", "unknown")
+        severity = entry.get("severity", "Unknown")
+        message = entry.get("error_message", "")
+        print(f"[{timestamp}] ({severity}) {message}")
+
+def _run_examples() -> None:
+    """Log a few example entries for demonstration purposes."""
     print("Running example logging...")
 
-    # Example 1: Basic error
     log_bug(
         error_message="Null pointer access",
         severity="Critical",
@@ -106,27 +128,44 @@ if __name__ == "__main__":
         steps_to_reproduce="1. Go to checkout. 2. Enter card details. 3. Click 'Pay'.",
         expected_behavior="Payment processes successfully.",
         actual_behavior="Application crashes.",
-        environment="Production Server, Python 3.9, Ubuntu 20.04"
+        environment="Production Server, Python 3.9, Ubuntu 20.04",
     )
 
-    # Example 2: Logging an exception
     try:
         x = 1 / 0
-    except Exception as e:
+    except Exception:
         import sys
         log_bug(
-            error_message="Division by zero in calculation module.", # Overriding default from exception
+            error_message="Division by zero in calculation module.",
             module="calculator.py",
             severity="High",
-            exc_info=sys.exc_info() # Pass exception info
+            exc_info=sys.exc_info(),
         )
 
-    # Example 3: Minimal log
     log_bug(error_message="Failed to load user settings.")
 
     print(f"Check {LOG_FILE} for logged bugs.")
-    # To demonstrate reading it back (optional)
     if os.path.exists(LOG_FILE):
         with open(LOG_FILE, "r") as f:
             print("\nContent of bug_log.json:")
             print(f.read())
+
+
+if __name__ == "__main__":
+    parser = argparse.ArgumentParser(description="Log a bug entry")
+    parser.add_argument("message", nargs="?", help="Error message to log")
+    parser.add_argument("--severity", default="Medium", help="Severity level")
+    parser.add_argument("--module", help="Module or file where the error occurred")
+    parser.add_argument("--examples", action="store_true", help="Run example logs")
+    parser.add_argument("--list", action="store_true", help="List current bug log entries")
+    args = parser.parse_args()
+
+    if args.examples:
+        _run_examples()
+    elif args.list:
+        list_bugs()
+    elif args.message:
+        log_bug(args.message, severity=args.severity, module=args.module)
+        print(f"Check {LOG_FILE} for logged bugs.")
+    else:
+        parser.print_help()

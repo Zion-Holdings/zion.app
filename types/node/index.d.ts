@@ -1,6 +1,7 @@
-// eslint-disable-next-line @typescript-eslint/no-empty-object-type
 interface Buffer {
   // Buffer interface for Node.js compatibility
+  readonly length: number;
+  toString(encoding?: string): string;
 }
 
 declare const __dirname: string;
@@ -16,13 +17,11 @@ declare namespace NodeJS {
   }
 
   /** Minimal representation of NodeJS.Timeout used in our codebase */
-  interface Timeout {
-    // Timeout interface for Node.js compatibility
-  }
+  type Timeout = number | object;
 }
 
 declare const process: NodeJS.Process;
 
-declare const Buffer: typeof globalThis extends { Buffer: infer B } ? B : any;
-
-export {};
+declare const Buffer: typeof globalThis extends { Buffer: infer B }
+  ? B
+  : unknown;

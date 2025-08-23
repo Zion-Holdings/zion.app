@@ -1,2 +1,2 @@
-import ForumCategoryPage from '@/pages/ForumCategoryPage';
-export default ForumCategoryPage;
+import React from 'react';
+import Head from 'next/head';
