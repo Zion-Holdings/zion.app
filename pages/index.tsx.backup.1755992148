@@ -18,7 +18,11 @@ import Revolutionary2027Hero from '../components/sections/Revolutionary2027Hero'
 import EnhancedHero2026 from '../components/sections/EnhancedHero2026';
 import UltraFuturisticHero2030 from '../components/sections/UltraFuturisticHero2030';
 import UltraFuturisticServiceShowcase2029 from '../components/sections/UltraFuturisticServiceShowcase2029';
+<<<<<<< HEAD
+import Enhanced2029ServicesShowcase from '../components/sections/Enhanced2029ServicesShowcase';
+=======
 import UltraFuturisticServiceShowcase2030 from '../components/sections/UltraFuturisticServiceShowcase2030';
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-32b6
 import { motion } from 'framer-motion';
 import { enhancedRealMicroSaasServices } from '../data/enhanced-real-micro-saas-services';
 import { extraServices } from '../data/extra-services';
@@ -38,6 +42,9 @@ import { realMarketServices } from '../data/real-market-services';
 import { serviceExpansions2025 } from '../data/service-expansions-2025';
 import { verifiedRealServices2025Batch2 } from '../data/verified-real-services-2025-batch2';
 import { realOperationalServices } from '../data/real-operational-services';
+<<<<<<< HEAD
+import { realVerifiedServices } from '../data/real-verified-services';
+=======
 import { newOperationalServices2025 } from '../data/new-operational-services-2025';
 import { innovative2025Services } from '../data/innovative-2025-services';
 import { revolutionary2025Services } from '../data/revolutionary-2025-services';
@@ -81,6 +88,7 @@ import { innovativeMicroSaasServices2029 } from '../data/2029-innovative-micro-s
 import { cuttingEdgeInnovations2029 } from '../data/2029-cutting-edge-innovations';
 import { enterpriseITServices2029 } from '../data/2029-enterprise-it-services';
 import { emergingTechServices2029 } from '../data/2029-emerging-tech-services';
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-32b6
 
 const heroStats = [
   { label: 'Revolutionary Services', value: '600+', icon: <Star className="w-5 h-5" /> },
@@ -263,11 +271,99 @@ const heroStats = [
                     <div className="text-sm text-gray-400">Technology Categories</div>
                   </motion.div>
 
+<<<<<<< HEAD
+                  <motion.div
+                    initial={{ opacity: 0, scale: 0.8 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    transition={{ duration: 0.8, delay: 0.6 }}
+                    className="text-center"
+                  >
+                    <div className="text-3xl md:text-4xl font-bold text-neon-pink animate-cyberpunk-flicker">
+                      100%
+                    </div>
+                    <div className="text-sm text-gray-400">Real Services</div>
+                  </motion.div>
+
+                  <motion.div
+                    initial={{ opacity: 0, scale: 0.8 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    transition={{ duration: 0.8, delay: 0.8 }}
+                    className="text-center"
+                  >
+                    <div className="text-3xl md:text-4xl font-bold text-neon-green animate-neural-wave">
+                      24/7
+                    </div>
+                    <div className="text-sm text-gray-400">Support Available</div>
+                  </motion.div>
+                </div>
+
+                {/* Enhanced CTA Buttons */}
+                <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                  <motion.div
+                    initial={{ opacity: 0, x: -30 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.8, delay: 1 }}
+                  >
+                    <Button
+                      href="/services"
+                      className="btn-futuristic glow-quantum hover-glow-quantum text-lg px-8 py-4"
+                    >
+                      <Rocket className="w-5 h-5 mr-2" />
+                      Explore Services
+                    </Button>
+                  </motion.div>
+
+                  <motion.div
+                    initial={{ opacity: 0, x: 30 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.8, delay: 1.2 }}
+                  >
+                    <Button
+                      href="/pricing"
+                      variant="outline"
+                      className="border-neon-purple text-neon-purple hover:bg-neon-purple hover:text-black text-lg px-8 py-4 transition-all duration-300"
+                    >
+                      <DollarSign className="w-5 h-5 mr-2" />
+                      View Pricing
+                    </Button>
+                  </motion.div>
+                </div>
+
+                {/* Enhanced Contact Info */}
+                <motion.div
+                  initial={{ opacity: 0, y: 30 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.8, delay: 1.4 }}
+                  className="flex flex-col sm:flex-row gap-6 justify-center items-center text-sm text-gray-400"
+                >
+                  <div className="flex items-center gap-2">
+                    <Phone className="w-4 h-4 text-neon-cyan" />
+                    <a href={`tel:${contactInfo.mobile}`} className="link-futuristic">
+                      {contactInfo.mobile}
+                    </a>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <Mail className="w-4 h-4 text-neon-purple" />
+                    <a href={`mailto:${contactInfo.email}`} className="link-futuristic">
+                      {contactInfo.email}
+                    </a>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <MapPin className="w-4 h-4 text-neon-pink" />
+                    <span>{contactInfo.address}</span>
+                  </div>
+                </motion.div>
+              </motion.div>
+            </div>
+          </UltraFuturisticBackground2031>
+        </section>
+=======
         {/* Ultra Futuristic 2030 Services Showcase */}
         <UltraFuturisticServiceShowcase2030 />
 
         {/* Revolutionary 2026 Services Showcase */}
         <Revolutionary2026ServiceShowcase />
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-32b6
 
         {/* Enhanced Services Showcase */}
         <section className="py-20 px-4 sm:px-6 lg:px-8">

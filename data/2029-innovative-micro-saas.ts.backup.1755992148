@@ -1,3 +1,8 @@
+<<<<<<< HEAD
+import { ServiceVariant } from '../types/service-variants';
+
+=======
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-32b6
 export interface InnovativeMicroSaas2029 {
   id: string;
   name: string;
@@ -41,6 +46,46 @@ export interface InnovativeMicroSaas2029 {
 
 export const innovativeMicroSaas2029: InnovativeMicroSaas2029[] = [
   {
+<<<<<<< HEAD
+    id: 'ai-emotion-based-marketing',
+    name: 'AI Emotion-Based Marketing',
+    tagline: 'Emotion-driven marketing campaigns that convert',
+    price: '$899',
+    period: '/month',
+    description: 'Revolutionary marketing platform that uses AI to analyze customer emotions and create highly targeted, emotion-driven marketing campaigns that significantly improve conversion rates.',
+    features: [
+      'Emotion analysis and targeting',
+      'AI-powered content generation',
+      'Emotional response optimization',
+      'Real-time campaign adjustment',
+      'Customer emotion tracking',
+      'Personalized messaging',
+      'A/B testing automation',
+      'Conversion rate optimization',
+      'Emotional analytics dashboard',
+      'Multi-channel integration'
+    ],
+    popular: true,
+    icon: '💝',
+    color: 'from-pink-600 via-rose-600 to-red-600',
+    textColor: 'text-pink-400',
+    link: 'https://ziontechgroup.com/ai-emotion-based-marketing',
+    marketPosition: 'First-to-market emotion-based marketing platform. Uses AI to create emotionally resonant campaigns that significantly improve conversion rates.',
+    targetAudience: 'Marketing agencies, E-commerce businesses, SaaS companies, Retail companies, B2B companies, Digital marketers',
+    trialDays: 14,
+    setupTime: '1 week',
+    category: 'AI Marketing & Conversion',
+    realService: true,
+    technology: ['AI, Machine Learning, Emotion Recognition, Marketing Automation, Analytics, Personalization'],
+    integrations: ['Email marketing platforms, Social media, CRM systems, E-commerce platforms, Analytics tools, Marketing tools'],
+    useCases: ['Email marketing, Social media campaigns, E-commerce optimization, Lead generation, Customer retention, Brand building'],
+    roi: 'Average customer sees 300% ROI through improved conversion rates and customer engagement.',
+    competitors: ['Traditional marketing tools, Early AI marketing platforms'],
+    marketSize: '$5B+ AI marketing market',
+    growthRate: '250%+ annual growth',
+    variant: 'ai-futuristic',
+    contactInfo: {
+=======
     id: 'ai-emotion-based-marketing-2029',
     name: 'AI Emotion-Based Marketing Platform',
     description: 'Revolutionary marketing platform that uses AI to analyze customer emotions and create personalized, emotionally resonant marketing campaigns.',
@@ -98,6 +143,7 @@ export const innovativeMicroSaas2029: InnovativeMicroSaas2029[] = [
     funding: 'Series A funding', '$50M valuation',
     exit: 'IPO or acquisition by major marketing company',
     contact: {
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-32b6
       mobile: '+1 302 464 0950',
       email: 'kleber@ziontechgroup.com',
       address: '364 E Main St STE 1008 Middletown DE 19709',
@@ -111,6 +157,46 @@ export const innovativeMicroSaas2029: InnovativeMicroSaas2029[] = [
     reviews: 245
   },
   {
+<<<<<<< HEAD
+    id: 'biotech-personalized-nutrition',
+    name: 'Biotech Personalized Nutrition',
+    tagline: 'DNA-based nutrition plans for optimal health',
+    price: '$599',
+    period: '/month',
+    description: 'Revolutionary nutrition platform that uses biotechnology and DNA analysis to create personalized nutrition plans, optimizing health outcomes based on individual genetic makeup.',
+    features: [
+      'DNA-based nutrition analysis',
+      'Personalized meal planning',
+      'Genetic health insights',
+      'Nutritional optimization',
+      'Health tracking integration',
+      'Dietary restriction support',
+      'Supplement recommendations',
+      'Progress monitoring',
+      'Health outcome prediction',
+      'Professional consultation tools'
+    ],
+    popular: true,
+    icon: '🥗',
+    color: 'from-green-600 via-emerald-600 to-teal-600',
+    textColor: 'text-green-400',
+    link: 'https://ziontechgroup.com/biotech-personalized-nutrition',
+    marketPosition: 'Leading biotech-based personalized nutrition platform. Combines DNA analysis with nutrition science for optimal health outcomes.',
+    targetAudience: 'Healthcare providers, Nutritionists, Fitness centers, Wellness companies, Individuals seeking health optimization, Research institutions',
+    trialDays: 7,
+    setupTime: 'Immediate',
+    category: 'Biotech Health & Nutrition',
+    realService: true,
+    technology: ['DNA Analysis, Biotechnology, Machine Learning, Health Analytics, Nutrition Science, Personalization'],
+    integrations: ['Health tracking devices, Fitness apps, Healthcare platforms, Laboratory systems, E-commerce platforms'],
+    useCases: ['Personal nutrition planning, Health optimization, Weight management, Disease prevention, Athletic performance, Wellness programs'],
+    roi: 'Health optimization platform with potential for significant health improvements and cost savings.',
+    competitors: ['Traditional nutrition apps, Early DNA nutrition companies'],
+    marketSize: '$8B+ personalized nutrition market',
+    growthRate: '200%+ annual growth',
+    variant: 'biotech-futuristic',
+    contactInfo: {
+=======
     id: 'biotech-personalized-nutrition-2029',
     name: 'Biotech Personalized Nutrition Platform',
     description: 'Advanced platform that uses DNA analysis and AI to create personalized nutrition plans, meal recommendations, and health optimization.',
@@ -168,6 +254,7 @@ export const innovativeMicroSaas2029: InnovativeMicroSaas2029[] = [
     funding: 'Series B funding', '$100M valuation',
     exit: 'IPO or acquisition by major health technology company',
     contact: {
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-32b6
       mobile: '+1 302 464 0950',
       email: 'kleber@ziontechgroup.com',
       address: '364 E Main St STE 1008 Middletown DE 19709',
@@ -181,6 +268,46 @@ export const innovativeMicroSaas2029: InnovativeMicroSaas2029[] = [
     reviews: 1420
   },
   {
+<<<<<<< HEAD
+    id: 'quantum-learning-accelerator',
+    name: 'Quantum Learning Accelerator',
+    tagline: 'Quantum-enhanced education and skill development',
+    price: '$799',
+    period: '/month',
+    description: 'Revolutionary learning platform that uses quantum computing principles to accelerate learning, optimize knowledge retention, and provide personalized educational experiences.',
+    features: [
+      'Quantum learning algorithms',
+      'Personalized learning paths',
+      'Knowledge optimization',
+      'Memory enhancement',
+      'Adaptive content delivery',
+      'Learning analytics',
+      'Skill assessment tools',
+      'Progress tracking',
+      'Collaborative learning',
+      'Certification management'
+    ],
+    popular: true,
+    icon: '🎓',
+    color: 'from-blue-600 via-indigo-600 to-purple-600',
+    textColor: 'text-blue-400',
+    link: 'https://ziontechgroup.com/quantum-learning-accelerator',
+    marketPosition: 'First-to-market quantum-enhanced learning platform. Uses quantum principles to accelerate learning and improve knowledge retention.',
+    targetAudience: 'Educational institutions, Corporate training departments, Online learning platforms, Skill development companies, Individual learners, Research institutions',
+    trialDays: 21,
+    setupTime: '1 week',
+    category: 'Quantum Education & Learning',
+    realService: true,
+    technology: ['Quantum Computing, Machine Learning, Educational Technology, Personalization, Analytics, Adaptive Learning'],
+    integrations: ['Learning management systems, Educational platforms, Corporate training tools, Assessment platforms, Analytics tools'],
+    useCases: ['Corporate training, Academic education, Skill development, Professional certification, Personal learning, Research and development'],
+    roi: 'Learning platform with potential for significant skill development and career advancement benefits.',
+    competitors: ['Traditional learning platforms, Early adaptive learning tools'],
+    marketSize: '$10B+ online learning market',
+    growthRate: '300%+ annual growth',
+    variant: 'quantum-futuristic',
+    contactInfo: {
+=======
     id: 'quantum-learning-accelerator-2029',
     name: 'Quantum Learning Accelerator Platform',
     description: 'Revolutionary educational platform that uses quantum computing and AI to accelerate learning, personalize education, and optimize knowledge retention.',
@@ -302,6 +429,7 @@ export const innovativeMicroSaas2029: InnovativeMicroSaas2029[] = [
     funding: 'Series C funding', '$300M valuation',
     exit: 'IPO or acquisition by major data management company',
     contact: {
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-32b6
       mobile: '+1 302 464 0950',
       email: 'kleber@ziontechgroup.com',
       address: '364 E Main St STE 1008 Middletown DE 19709',
