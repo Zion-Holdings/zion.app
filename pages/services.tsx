@@ -8,17 +8,10 @@ import {
   Building, Cpu
 } from 'lucide-react';
 
-// Import our new 2025 service data
-import { advancedAIAutomationServices2025 } from '../data/2025-advanced-ai-automation-services';
-import { innovativeITInfrastructureServices2025 } from '../data/2025-innovative-it-infrastructure-services';
-import { innovativeMicroSaasSolutions2025 } from '../data/2025-innovative-micro-saas-solutions';
-import { cuttingEdgeAIServices2025 } from '../data/2025-cutting-edge-ai-services';
-import { realEnterpriseMicroSaas2025 } from '../data/2025-real-enterprise-micro-saas';
-import { innovativeAIAutonomousServices2025 } from '../data/2025-innovative-ai-autonomous-services';
-
-// Import our new practical and specialized services
-import { realPracticalMicroSaasServices2025 } from '../data/2025-real-practical-micro-saas-services';
-import { advancedAIITSpecializedServices2025 } from '../data/2025-advanced-ai-it-specialized-services';
+// Import our new innovative 2025 services
+import { realInnovativeMicroSaasServices2025 } from '../data/2025-real-innovative-micro-saas-expansion';
+import { innovativeITInfrastructureServices2025 } from '../data/2025-innovative-it-infrastructure-services-expansion';
+import { innovativeAIServices2025 } from '../data/2025-innovative-ai-services-expansion';
 
 // Import our new service data
 import { enterpriseITSolutions } from '../data/2034-enterprise-it-solutions';
@@ -67,6 +60,11 @@ import { cuttingEdgeFuturisticServices } from '../data/2025-cutting-edge-futuris
 import { advancedAIAutomationServices } from '../data/2026-advanced-ai-automation-services';
 import { advancedITInfrastructureServices } from '../data/2025-advanced-it-infrastructure-services';
 
+// Import our new 2025 cutting-edge innovative services expansion
+import { cuttingEdgeInnovativeServices2025 } from '../data/2025-cutting-edge-innovative-services-expansion';
+import { advancedITInfrastructureSolutions2025 } from '../data/2025-advanced-it-infrastructure-solutions';
+import { advancedAIAutomationSolutions2025 } from '../data/2025-advanced-ai-automation-solutions';
+
 // Import existing service data
 import { realMicroSaasServices } from '../data/real-micro-saas-services';
 import { innovativeAIServices } from '../data/innovative-ai-services';
@@ -107,22 +105,31 @@ const getServiceDescription = (service: any) => {
   return 'No description available';
 };
 
-// Combine all services including new ones
+// Create unified services array
 const allServices = [
-  // New practical and specialized services
-  ...realPracticalMicroSaasServices2025,
-  ...advancedAIITSpecializedServices2025,
-  
-  // Existing services
-  ...realEnterpriseMicroSaas2025,
+  // Our new 2025 services
+  ...realInnovativeMicroSaasServices2025,
   ...innovativeITInfrastructureServices2025,
-  ...innovativeAIAutonomousServices2025,
-  ...advancedAIAutomationServices2025,
-  ...cuttingEdgeAIServices2025,
-  ...innovativeMicroSaasSolutions2025,
+  ...innovativeAIServices2025,
+  
   ...enterpriseITSolutions,
   ...innovativeMicroSaasSolutions,
   ...cuttingEdgeAIServices,
+  ...realMicroSaasServices,
+  ...innovativeAIServices,
+  ...enterpriseITServices,
+  ...cuttingEdgeFuturisticServices,
+  ...advancedAIAutomationServices,
+  ...advancedITInfrastructureServices,
+  ...emergingTechServices,
+  ...newRealServices,
+  ...realOperationalServices,
+  ...marketReadyServices,
+  ...marketValidatedServices,
+  // Our new 2025 Q4 innovative services
+  ...innovative2025Q4NewServices,
+  ...advancedITInfrastructureServices2025,
+  ...industryRealServices,
   ...real2025Q4AugmentedBatch,
   ...real2029Q3Additions,
   ...validatedServices2025Q4,
@@ -130,38 +137,42 @@ const allServices = [
   ...real2036ServiceExpansions,
   ...innovative2036MicroSaasServices,
   ...innovative2036ITServices,
+  // Our new 2025 advanced services
+  ...ultimate2025MicroSaasExpansion,
+  ...ultimate2025ITServicesExpansion,
+  ...ultimate2025AIServicesExpansion,
+  // Our new innovative services
   ...innovative2037MicroSaasServices,
   ...innovative2037ITServices,
   ...innovative2037AIServices,
   ...innovative2038CuttingEdgeServices,
   ...innovative2038ITInfrastructureServices,
+  // Our additional innovative services
   ...innovative2037Services,
   ...advanced2038Services,
   ...revolutionary2039Services,
+  
+  // Our new innovative 2040 services
+  ...innovative2040FuturisticServices,
+  ...innovative2040ITServices,
+  // Our new comprehensive services
   ...revolutionary2040FuturisticServices,
   ...revolutionary2041AdvancedServices,
+  // Our latest innovative services
   ...advanced2041EnterpriseServices,
   ...revolutionary2042MicroSaasServices,
+  // Our new 2025 ultimate services expansion
   ...ultimate2025MicroSaasExpansion,
   ...ultimate2025ITServicesExpansion,
   ...ultimate2025AIServicesExpansion,
-  ...innovative2025Q4NewServices,
-  ...advancedITInfrastructureServices2025,
-  ...innovative2040ITServices,
-  ...innovative2040FuturisticServices,
+  // Our new 2025 advanced enterprise services
   ...advancedEnterpriseServices,
   ...cuttingEdgeITInfrastructureServices,
-  ...cuttingEdgeFuturisticServices,
-  ...advancedAIAutomationServices,
-  ...realMicroSaasServices,
-  ...innovativeAIServices,
-  ...enterpriseITServices,
-  ...emergingTechServices,
-  ...newRealServices,
-  ...realOperationalServices,
-  ...marketReadyServices,
-  ...marketValidatedServices,
-  ...industryRealServices
+  
+  // Our new 2025 cutting-edge innovative services expansion
+  ...cuttingEdgeInnovativeServices2025,
+  ...advancedITInfrastructureSolutions2025,
+  ...advancedAIAutomationSolutions2025
 ];
 
 const categories = [
@@ -379,11 +390,7 @@ export default function Services() {
 
   return (
     <>
-      <SEO data={{
-          pageTitle: "Services | Zion Tech Group - Enterprise IT, AI, Micro SAAS Solutions",
-          pageDescription: "Discover our comprehensive portfolio of enterprise IT solutions, AI services, and innovative micro SAAS platforms. Transform your business with cutting-edge technology.",
-          pageKeywords: ["services", "enterprise IT", "AI services", "micro SAAS", "technology solutions", "Zion Tech Group"]
-        }} />
+      <SEO title="Services | Zion Tech Group - Enterprise IT, AI, Micro SAAS Solutions" description="Discover our comprehensive portfolio of enterprise IT solutions, AI services, and innovative micro SAAS platforms. Transform your business with cutting-edge technology." canonical="https://ziontechgroup.com/services/" />
 
       <div className="min-h-screen bg-black text-white pt-24">
         {/* Loading State */}
@@ -719,16 +726,6 @@ export default function Services() {
                 >
                   <span>Get Started Today</span>
                   <ArrowRight className="w-6 h-6" />
-                </motion.a>
-                
-                <motion.a
-                  href="/2025-ultimate-services-showcase"
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  className="inline-flex items-center space-x-3 px-8 py-4 bg-gradient-to-r from-purple-500 to-pink-600 text-white font-bold text-lg rounded-xl hover:from-purple-600 hover:to-pink-700 transition-all duration-200 shadow-2xl shadow-purple-500/25"
-                >
-                  <Rocket className="w-6 h-6" />
-                  <span>2025 Ultimate Services</span>
                 </motion.a>
                 
                 <motion.a

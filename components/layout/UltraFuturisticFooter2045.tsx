@@ -153,11 +153,9 @@ const UltraFuturisticFooter2045: React.FC = () => {
                     <li key={link.name}>
                       <Link
                         href={link.href}
-                        className="flex items-center space-x-3 text-gray-400 hover:text-cyan-400 transition-all duration-200 group hover:translate-x-1"
+                        className="text-gray-400 hover:text-cyan-400 transition-all duration-200 group hover:translate-x-1"
                       >
-                        <div className="w-5 h-5 text-cyan-400 group-hover:scale-110 transition-transform duration-200">
-                          <ArrowRight className="w-4 h-4" />
-                        </div>
+
                         <span className="text-sm group-hover:text-cyan-400 transition-colors duration-200">
                           {link.name}
                         </span>
