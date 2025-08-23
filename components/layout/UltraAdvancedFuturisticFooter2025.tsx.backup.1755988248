@@ -39,10 +39,17 @@ const footerSections: FooterSection[] = [
   {
     title: 'Industries',
     links: [
+<<<<<<< HEAD
+      { label: 'Healthcare', href: '/healthcare-solutions', description: 'Medical technology' },
+      { label: 'Finance', href: '/financial-solutions', description: 'Fintech solutions' },
+      { label: 'Manufacturing', href: '/manufacturing-ai-solutions', description: 'Industry 4.0' },
+      { label: 'Retail', href: '/retail-technology-solutions', description: 'E-commerce tech' },
+=======
       { label: 'Healthcare & Biotech', href: '/healthcare-solutions', description: 'Medical technology' },
       { label: 'Financial Services', href: '/financial-solutions', description: 'Fintech solutions' },
       { label: 'Manufacturing', href: '/manufacturing-ai-solutions', description: 'Industry 4.0' },
       { label: 'Retail & E-commerce', href: '/retail-technology-solutions', description: 'Digital commerce' },
+>>>>>>> origin/cursor/website-audit-content-update-and-deployment-a91c
       { label: 'Government', href: '/government-technology-solutions', description: 'Public sector' },
       { label: 'Education', href: '/education-technology-solutions', description: 'EdTech solutions' }
     ]
