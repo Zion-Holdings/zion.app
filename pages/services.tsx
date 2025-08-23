@@ -49,6 +49,11 @@ import { advancedEnterpriseServices } from '../data/2025-advanced-enterprise-ser
 import { innovativeMicroSaasServices } from '../data/2025-innovative-micro-saas-expansion';
 import { cuttingEdgeITInfrastructureServices } from '../data/2025-cutting-edge-it-infrastructure';
 
+// Import our new Q4 2025 innovative services
+import { innovative2025Q4MicroSaasExpansion } from '../data/innovative-2025-q4-micro-saas-expansion';
+import { innovative2025Q4ITServicesExpansion } from '../data/innovative-2025-q4-it-services-expansion';
+import { innovative2025Q4AIServicesExpansion } from '../data/innovative-2025-q4-ai-services-expansion';
+
 // Import existing service data
 import { realMicroSaasServices } from '../data/real-micro-saas-services';
 import { innovativeAIServices } from '../data/innovative-ai-services';
@@ -98,6 +103,9 @@ const allServices = [
   ...innovativeAIServices,
   ...enterpriseITServices,
   ...emergingTechServices,
+  ...innovative2025Q4MicroSaasExpansion,
+  ...innovative2025Q4ITServicesExpansion,
+  ...innovative2025Q4AIServicesExpansion,
   ...newRealServices,
   ...realOperationalServices,
   ...marketReadyServices,

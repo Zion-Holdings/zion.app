@@ -38,7 +38,7 @@ const Homepage2025: React.FC = () => {
 
   const statsData = [
     {
-      number: "50+",
+      number: "75+",
       label: "AI Services",
       description: "Cutting-edge solutions",
       icon: Brain,
@@ -46,25 +46,25 @@ const Homepage2025: React.FC = () => {
       hoverColor: "group-hover:text-cyan-300"
     },
     {
-      number: "100+",
+      number: "150+",
       label: "Quantum Solutions",
       description: "Next-gen computing",
       icon: Atom,
       color: "text-blue-400",
-      hoverColor: "group-hover:text-blue-300"
+      hoverColor: "group-hover:text-blue-400"
     },
     {
-      number: "24/7",
-      label: "Autonomous Operations",
-      description: "Always available",
+      number: "200+",
+      label: "Micro SAAS Solutions",
+      description: "Innovative platforms",
       icon: Cpu,
       color: "text-purple-400",
       hoverColor: "group-hover:text-purple-300"
     },
     {
-      number: "∞",
-      label: "Future Possibilities",
-      description: "Unlimited potential",
+      number: "24/7",
+      label: "Autonomous Operations",
+      description: "Always available",
       icon: Rocket,
       color: "text-green-400",
       hoverColor: "group-hover:text-green-300"
@@ -73,52 +73,52 @@ const Homepage2025: React.FC = () => {
 
   const featuredServices = [
     {
-      id: 'ai-consciousness',
-      name: 'AI Consciousness Evolution',
-      tagline: 'Advanced AI consciousness development',
-      description: 'Revolutionary platform for developing AI systems with advanced consciousness capabilities',
+      id: 'ai-consciousness-evolution',
+      name: 'AI Consciousness Evolution Platform',
+      tagline: 'Developing AI with advanced consciousness',
+      description: 'Revolutionary platform for developing AI systems with advanced consciousness, emotional intelligence, and ethical reasoning capabilities',
       price: '$8,999',
       period: '/month',
-      features: ['Consciousness Development', 'Ethical Training', 'Safety Protocols'],
+      features: ['Consciousness Development', 'Ethical Training', 'Safety Protocols', 'Emotional Intelligence'],
       popular: true,
       category: 'AI & Consciousness',
       icon: '🧠'
     },
     {
-      id: 'quantum-cybersecurity',
-      name: 'Quantum Cybersecurity',
-      tagline: 'Quantum-resistant security platform',
-      description: 'Advanced cybersecurity with quantum-resistant encryption and AI threat detection',
+      id: 'quantum-cybersecurity-suite',
+      name: 'Quantum Cybersecurity Suite',
+      tagline: 'Quantum-resistant security for the future',
+      description: 'Advanced cybersecurity platform that combines quantum-resistant encryption, AI threat detection, and autonomous incident response',
       price: '$2,499',
       period: '/month',
-      features: ['Quantum Encryption', 'AI Threat Detection', 'Zero Trust'],
+      features: ['Quantum Encryption', 'AI Threat Detection', 'Zero Trust', 'Autonomous Response'],
       popular: true,
       category: 'Quantum & Security',
       icon: '🛡️'
     },
     {
-      id: 'autonomous-content',
-      name: 'AI Content Factory',
-      tagline: 'Fully automated content creation',
-      description: 'End-to-end autonomous content creation, optimization, and distribution platform',
+      id: 'ai-autonomous-customer-success',
+      name: 'AI Autonomous Customer Success',
+      tagline: 'Self-learning customer success automation',
+      description: 'Revolutionary AI platform that autonomously manages customer success, predicts churn, and drives retention',
       price: '$1,299',
       period: '/month',
-      features: ['Content Automation', 'AI Writing', 'Multi-platform Publishing'],
+      features: ['Autonomous Management', 'Churn Prediction', 'Retention Optimization', '24/7 Operation'],
       popular: true,
-      category: 'AI & Content',
-      icon: '🏭'
+      category: 'AI & Customer Success',
+      icon: '🤖'
     },
     {
-      id: 'quantum-supply-chain',
-      name: 'Quantum Supply Chain',
-      tagline: 'Quantum-optimized logistics',
-      description: 'Revolutionary supply chain optimization using quantum algorithms and AI',
+      id: 'quantum-cloud-infrastructure',
+      name: 'Quantum Cloud Infrastructure',
+      tagline: 'Quantum-powered cloud computing',
+      description: 'Revolutionary cloud infrastructure that leverages quantum computing principles for unprecedented performance and security',
       price: '$3,999',
       period: '/month',
-      features: ['Quantum Optimization', 'Real-time Tracking', 'Predictive Analytics'],
+      features: ['Quantum Processing', 'Quantum Security', 'Autonomous Scaling', 'Global Edge'],
       popular: false,
-      category: 'Quantum & Logistics',
-      icon: '🚚'
+      category: 'Quantum & Cloud',
+      icon: '☁️'
     }
   ];
 
@@ -168,7 +168,7 @@ const Homepage2025: React.FC = () => {
                 variants={itemVariants}
                 className="text-xl md:text-2xl text-gray-300 mb-8 max-w-2xl mx-auto leading-relaxed"
               >
-                Pioneering the future of technology with innovative solutions that drive business transformation
+                Pioneering the future of technology with revolutionary AI consciousness, quantum computing, and autonomous solutions that transform businesses worldwide
               </motion.p>
               
               {/* Enhanced CTA Section */}
@@ -176,22 +176,22 @@ const Homepage2025: React.FC = () => {
                 variants={itemVariants}
                 className="flex flex-col sm:flex-row gap-4 justify-center mb-8"
               >
-                <Link href="/get-started" aria-label="Get started with our services">
+                <Link href="/services" aria-label="Explore our services">
                   <button className="group px-8 py-4 bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-semibold rounded-lg hover:from-cyan-600 hover:to-blue-700 transition-all duration-300 transform hover:scale-105 shadow-lg shadow-cyan-500/25 focus:outline-none focus:ring-2 focus:ring-cyan-300 focus:ring-offset-2 focus:ring-offset-black">
                     <span className="flex items-center gap-2">
-                      Get Started
+                      Explore Services
                       <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
                     </span>
                   </button>
                 </Link>
-                <Link href="/services" aria-label="Learn more about our services">
+                <Link href="/contact" aria-label="Contact us">
                   <button className="px-8 py-4 border-2 border-cyan-400 text-cyan-400 font-semibold rounded-lg hover:bg-cyan-400 hover:text-black transition-all duration-300 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-cyan-300 focus:ring-offset-2 focus:ring-offset-black">
-                    Learn More
+                    Contact Us
                   </button>
                 </Link>
-                <Link href="/comprehensive-2025-services-showcase" aria-label="View our 2025 services showcase">
+                <Link href="/innovative-2040-futuristic-services-showcase" aria-label="View our futuristic services">
                   <button className="px-8 py-4 border-2 border-purple-400 text-purple-400 font-semibold rounded-lg hover:bg-purple-400 hover:text-black transition-all duration-300 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-purple-300 focus:ring-offset-2 focus:ring-offset-black">
-                    2025 Services Showcase
+                    Futuristic Services
                   </button>
                 </Link>
               </motion.div>
@@ -214,6 +214,14 @@ const Homepage2025: React.FC = () => {
                 <div className="flex items-center space-x-2">
                   <TrendingUp className="w-4 h-4 text-purple-400" aria-hidden="true" />
                   <span>Proven Results</span>
+                </div>
+                <div className="flex items-center space-x-2">
+                  <Brain className="w-4 h-4 text-cyan-400" aria-hidden="true" />
+                  <span>AI Innovation</span>
+                </div>
+                <div className="flex items-center space-x-2">
+                  <Atom className="w-4 h-4 text-purple-400" aria-hidden="true" />
+                  <span>Quantum Technology</span>
                 </div>
               </motion.div>
             </motion.div>
@@ -291,7 +299,7 @@ const Homepage2025: React.FC = () => {
               viewport={{ once: true }}
               className="text-xl text-gray-300 mb-16 text-center max-w-3xl mx-auto"
             >
-              Discover cutting-edge AI, quantum computing, and autonomous solutions that transform businesses and industries
+              Discover revolutionary AI consciousness, quantum computing, autonomous solutions, and innovative micro SAAS platforms that transform businesses and industries worldwide
             </motion.p>
             
             <motion.div 

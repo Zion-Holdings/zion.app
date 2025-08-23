@@ -11,13 +11,14 @@ const contactInfo = {
   email: 'kleber@ziontechgroup.com',
   address: '364 E Main St STE 1008 Middletown DE 19709',
   website: 'https://ziontechgroup.com',
-  hours: 'Mon-Fri: 9AM-6PM EST',
-  rating: '4.9/5 (200+ Reviews)'
+  hours: '24/7 AI Support Available',
+  rating: '4.9/5 (500+ Reviews)'
 };
 
 const quickActions = [
   { name: 'Get Quote', href: '/contact', icon: <MessageCircle className="w-4 h-4" /> },
   { name: 'Book Demo', href: '/contact', icon: <Calendar className="w-4 h-4" /> },
+  { name: 'Q4 2025 Services', href: '/q4-2025-innovative-services-showcase', icon: <Star className="w-4 h-4" /> },
   { name: 'Live Chat', href: '/support', icon: <MessageCircle className="w-4 h-4" /> }
 ];
 

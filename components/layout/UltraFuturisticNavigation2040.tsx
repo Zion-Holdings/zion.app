@@ -4,7 +4,7 @@ import { useRouter } from 'next/router';
 import { motion, AnimatePresence } from 'framer-motion';
 import { 
   Menu, X, Search, ChevronDown, Zap, Globe, Lock, 
-  Phone, Mail, MapPin, ArrowRight, Star, Users, Award
+  Phone, Mail, MapPin, ArrowRight, Star, Users, Award, Building, Cpu, Rocket, Shield, Heart
 } from 'lucide-react';
 
 interface NavigationItem {
@@ -37,6 +37,12 @@ const navigationItems: NavigationItem[] = [
         description: 'Cutting-edge futuristic technology solutions'
       },
       {
+        label: 'Q4 2025 Services',
+        href: '/q4-2025-innovative-services-showcase',
+        icon: <Star className="w-4 h-4" />,
+        description: 'Latest innovative services and solutions'
+      },
+      {
         label: 'Quantum Computing',
         href: '/quantum-computing',
         icon: <Zap className="w-4 h-4" />,
@@ -61,10 +67,51 @@ const navigationItems: NavigationItem[] = [
         description: 'Scalable cloud infrastructure'
       },
       {
+        label: 'Micro SAAS Solutions',
+        href: '/micro-saas',
+        icon: <Building className="w-4 h-4" />,
+        description: 'Innovative micro SAAS platforms'
+      },
+      {
+        label: 'IT Infrastructure',
+        href: '/it-services',
+        icon: <Cpu className="w-4 h-4" />,
+        description: 'Enterprise IT solutions'
+      },
+      {
         label: 'View All Services',
         href: '/services',
         icon: <ArrowRight className="w-4 h-4" />,
         description: 'Complete service portfolio'
+      }
+    ]
+  },
+  {
+    label: 'Solutions',
+    children: [
+      {
+        label: 'Enterprise Solutions',
+        href: '/solutions',
+        icon: <Building className="w-4 h-4" />,
+        description: 'Large-scale enterprise solutions'
+      },
+      {
+        label: 'Startup Solutions',
+        href: '/startup-solutions',
+        icon: <Rocket className="w-4 h-4" />,
+        description: 'Solutions for growing startups'
+      },
+      {
+        label: 'Government Solutions',
+        href: '/government-solutions',
+        icon: <Shield className="w-4 h-4" />,
+        description: 'Secure government solutions'
+      },
+      {
+        label: 'Healthcare Solutions',
+        href: '/healthcare-solutions',
+        icon: <Heart className="w-4 h-4" />,
+        description: 'Healthcare technology solutions'
       }
     ]
   },

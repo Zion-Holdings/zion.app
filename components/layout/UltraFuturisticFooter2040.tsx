@@ -29,6 +29,24 @@ const footerSections = [
     ]
   },
   {
+    title: 'New Q4 2025 Services',
+    description: 'Latest innovative services and solutions',
+    icon: <Rocket className="w-5 h-5 text-green-400" />,
+    color: 'from-green-500 to-emerald-500',
+    links: [
+      { name: 'AI Autonomous Customer Success', href: '/ai-autonomous-customer-success', featured: true },
+      { name: 'Quantum Cybersecurity Suite', href: '/quantum-cybersecurity-suite', featured: true },
+      { name: 'AI Autonomous Research Platform', href: '/ai-autonomous-research-platform' },
+      { name: 'Space Resource Intelligence Platform', href: '/space-resource-intelligence-platform' },
+      { name: 'Brain-Computer Interface Platform', href: '/brain-computer-interface-platform' },
+      { name: 'Quantum Cloud Infrastructure', href: '/quantum-cloud-infrastructure' },
+      { name: 'Autonomous DevOps Platform', href: '/autonomous-devops-platform' },
+      { name: 'AI-Powered Data Warehouse', href: '/ai-powered-data-warehouse' },
+      { name: 'Zero Trust Security Platform', href: '/zero-trust-security-platform' },
+      { name: 'Edge Computing Orchestrator', href: '/edge-computing-orchestrator' }
+    ]
+  },
+  {
     title: 'AI & Consciousness',
     description: 'Revolutionary AI consciousness platforms',
     icon: <Brain className="w-5 h-5 text-cyan-400" />,

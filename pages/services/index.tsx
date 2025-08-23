@@ -72,10 +72,12 @@ import { innovative2025EnterpriseSolutions } from '../../data/innovative-2025-en
 
 // Define a proper interface for services
 interface Service {
-  id?: string;
+  id: string;
   name: string;
   description: string;
-  price?: string;
+  tagline: string;
+  price: string;
+  period: string;
   pricing?: {
     starter?: { price: string; period?: string };
     monthly?: string;
@@ -84,6 +86,8 @@ interface Service {
   category: string;
   popular?: boolean;
   launchDate?: string;
+  features: string[];
+  icon: string;
   [key: string]: unknown;
 }
 
