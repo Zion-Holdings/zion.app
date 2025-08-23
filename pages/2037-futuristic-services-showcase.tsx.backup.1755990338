@@ -295,7 +295,11 @@ export default function FuturisticServicesShowcase2037() {
                     <div className="space-y-3 mb-4">
                       <div className="flex items-center justify-between">
                         <span className="text-white/50 text-sm">Starting Price:</span>
+<<<<<<< HEAD
+                        <span className="text-cyan-400 font-semibold">{service.price || 'Contact Us'}</span>
+=======
                         <span className="text-cyan-400 font-semibold">{service.price || 'Contact for pricing'}</span>
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-3063
                       </div>
                       <div className="flex items-center justify-between">
                         <span className="text-white/50 text-sm">Rating:</span>

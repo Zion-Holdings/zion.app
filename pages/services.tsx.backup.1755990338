@@ -53,6 +53,8 @@ import { innovative2025MicroSaasExpansion } from '../data/innovative-2025-micro-
 import { innovative2025ITSolutionsExpansion } from '../data/innovative-2025-it-solutions-expansion';
 import { innovative2025AIServicesExpansion } from '../data/innovative-2025-ai-services-expansion';
 
+<<<<<<< HEAD
+=======
 // Import our new 2025 innovative services expansion v2
 import { innovativeMicroSaasServices2025 } from '../data/2025-innovative-micro-saas-expansion-v2';
 import { innovativeAIServices2025 } from '../data/2025-innovative-ai-services-expansion-v2';
@@ -65,6 +67,7 @@ import { emergingTech2025Innovations } from '../data/emerging-tech-2025-innovati
 // Import additional 2038 services
 import { innovative2038ITMicroSaasServices } from '../data/innovative-2038-it-micro-saas-services';
 
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-3063
 // Import existing service data
 import { realMicroSaasServices } from '../data/real-micro-saas-services';
 import { innovativeAIServices } from '../data/innovative-ai-services';
@@ -159,6 +162,9 @@ const allServices = [
   // Our new 2025 innovative services expansion
   ...innovative2025MicroSaasExpansion,
   ...innovative2025ITSolutionsExpansion,
+<<<<<<< HEAD
+  ...innovative2025AIServicesExpansion
+=======
   ...innovative2025AIServicesExpansion,
   // Our new 2025 Q4 innovative services
   ...innovative2025Q4NewServices,
@@ -170,6 +176,7 @@ const allServices = [
   ...innovativeMicroSaasServices2025,
   ...innovativeAIServices2025,
   ...innovativeITServices2025
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-3063
 ];
 
 // Enhanced service categories for better organization
