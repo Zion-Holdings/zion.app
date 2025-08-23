@@ -1,109 +1,116 @@
 import React from 'react';
+<<<<<<< HEAD
+import Head from 'next/head';
+import { Phone, Mail, MapPin, Check, ArrowRight, Rocket, Star } from 'lucide-react';
+import UltraAdvancedFuturisticBackground from '../components/ui/UltraAdvancedFuturisticBackground';
+import { Button } from '../components/ui/Button';
+import { enhancedRealMicroSaasServices } from '../data/enhanced-real-micro-saas-services';
+=======
 import Layout from '../components/layout/Layout';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { 
-  Shield, Server, Cloud, Database, Network, Lock, 
-  Zap, Users, BarChart3, ArrowRight, Star, CheckCircle,
-  Globe, Cpu, HardDrive, Wifi
+  Rocket, Satellite, Globe, Zap, Target, Users, 
+  Database, Shield, ArrowRight, Star, CheckCircle,
+  Cpu, HardDrive, Network, BarChart3
 } from 'lucide-react';
+>>>>>>> origin/cursor/website-audit-content-update-and-deployment-05bf
 
-const ITServicesPage: React.FC = () => {
-  const itServices = [
+const SpaceTechnologyPage: React.FC = () => {
+  const spaceServices = [
     {
-      category: 'Cloud Infrastructure',
+      category: 'Space Infrastructure',
       services: [
         {
-          name: 'Quantum-Secure Cloud Infrastructure',
-          description: 'Next-generation cloud platforms with quantum encryption and advanced security',
-          href: '/quantum-secure-cloud-infrastructure',
+          name: 'Space Resource Mining Platform',
+          description: 'Advanced platforms for extracting and processing resources from space',
+          href: '/space-resource-mining-platform',
           featured: true,
-          icon: <Cloud className="w-6 h-6" />
+          icon: <Rocket className="w-6 h-6" />
         },
         {
-          name: 'Edge Computing Orchestration',
-          description: 'Distributed edge computing solutions for low-latency applications',
-          href: '/edge-computing-orchestration-platform',
-          featured: true,
-          icon: <Zap className="w-6 h-6" />
-        },
-        {
-          name: 'Multi-Cloud Disaster Recovery',
-          description: 'Comprehensive disaster recovery across multiple cloud providers',
-          href: '/multi-cloud-disaster-recovery',
-          icon: <Server className="w-6 h-6" />
-        }
-      ]
-    },
-    {
-      category: 'Security & Compliance',
-      services: [
-        {
-          name: 'Zero Trust Security Platform',
-          description: 'Advanced security framework with continuous verification',
-          href: '/zero-trust-security-platform',
-          featured: true,
-          icon: <Lock className="w-6 h-6" />
-        },
-        {
-          name: 'SOC 2 Compliance Automation',
-          description: 'Automated compliance management and evidence collection',
-          href: '/soc2-compliance-automation',
-          icon: <Shield className="w-6 h-6" />
-        },
-        {
-          name: 'Vulnerability Assessment & Penetration Testing',
-          description: 'Comprehensive security testing and vulnerability management',
-          href: '/vulnerability-assessment-penetration-testing',
-          icon: <CheckCircle className="w-6 h-6" />
-        }
-      ]
-    },
-    {
-      category: 'DevOps & Automation',
-      services: [
-        {
-          name: 'AI-Powered DevOps Platform',
-          description: 'Intelligent automation for development and operations',
-          href: '/ai-powered-devops-platform',
+          name: 'AI-Powered Space Technology',
+          description: 'Intelligent systems for space exploration and operations',
+          href: '/ai-powered-space-technology',
           featured: true,
           icon: <Cpu className="w-6 h-6" />
         },
         {
-          name: 'Autonomous IT Operations Center',
-          description: 'Self-managing IT infrastructure with AI-driven operations',
-          href: '/autonomous-it-operations-center',
-          icon: <BarChart3 className="w-6 h-6" />
-        },
-        {
-          name: 'Infrastructure Drift Detector',
-          description: 'Automated detection and remediation of configuration drift',
-          href: '/infrastructure-drift-detector',
-          icon: <HardDrive className="w-6 h-6" />
+          name: 'Space Technology AI Platform',
+          description: 'Comprehensive AI solutions for space industry applications',
+          href: '/space-technology-ai-platform',
+          icon: <Target className="w-6 h-6" />
         }
       ]
     },
     {
-      category: 'Data & Analytics',
+      category: 'Satellite & Communication',
       services: [
         {
-          name: 'RAG Evaluation Lab',
-          description: 'Advanced evaluation and testing for RAG systems',
-          href: '/rag-evaluation-lab',
+          name: '5G Private Network Solutions',
+          description: 'Advanced 5G networks for space and terrestrial applications',
+          href: '/5g-private-network-solutions',
           featured: true,
-          icon: <Database className="w-6 h-6" />
+          icon: <Network className="w-6 h-6" />
         },
         {
-          name: 'Data Pipeline Health Monitor',
-          description: 'Real-time monitoring and optimization of data pipelines',
-          href: '/data-pipeline-health',
+          name: 'Satellite Communication Systems',
+          description: 'Reliable communication infrastructure for space operations',
+          href: '/satellite-communication-systems',
+          icon: <Satellite className="w-6 h-6" />
+        },
+        {
+          name: 'Space Internet Infrastructure',
+          description: 'Global internet connectivity through space-based systems',
+          href: '/space-internet-infrastructure',
+          icon: <Globe className="w-6 h-6" />
+        }
+      ]
+    },
+    {
+      category: 'Space Exploration & Research',
+      services: [
+        {
+          name: 'Space Colonization Services',
+          description: 'Comprehensive solutions for establishing human presence in space',
+          href: '/space-colonization-services',
+          featured: true,
+          icon: <Users className="w-6 h-6" />
+        },
+        {
+          name: 'Space Mining Automation',
+          description: 'Automated systems for resource extraction and processing in space',
+          href: '/space-mining-automation-platform',
+          icon: <HardDrive className="w-6 h-6" />
+        },
+        {
+          name: 'Space Research Platforms',
+          description: 'Advanced research tools and platforms for space science',
+          href: '/space-research-platforms',
+          icon: <Database className="w-6 h-6" />
+        }
+      ]
+    },
+    {
+      category: 'Space Security & Monitoring',
+      services: [
+        {
+          name: 'Space Security Systems',
+          description: 'Comprehensive security solutions for space assets and operations',
+          href: '/space-security-systems',
+          icon: <Shield className="w-6 h-6" />
+        },
+        {
+          name: 'Space Traffic Management',
+          description: 'Advanced systems for managing space traffic and preventing collisions',
+          href: '/space-traffic-management',
           icon: <BarChart3 className="w-6 h-6" />
         },
         {
-          name: 'Database Performance Monitor',
-          description: 'Comprehensive database performance optimization',
-          href: '/database-performance-monitor',
-          icon: <Server className="w-6 h-6" />
+          name: 'Space Debris Monitoring',
+          description: 'Real-time monitoring and tracking of space debris',
+          href: '/space-debris-monitoring',
+          icon: <Target className="w-6 h-6" />
         }
       ]
     }
@@ -120,13 +127,13 @@ const ITServicesPage: React.FC = () => {
             transition={{ duration: 0.8 }}
           >
             <div className="w-20 h-20 bg-gradient-to-r from-blue-500 to-indigo-500 rounded-2xl flex items-center justify-center mx-auto mb-6">
-              <Shield className="w-10 h-10 text-white" />
+              <Rocket className="w-10 h-10 text-white" />
             </div>
             <h1 className="text-5xl md:text-6xl font-bold text-white mb-6">
-              IT Services
+              Space Technology
             </h1>
             <p className="text-xl md:text-2xl text-gray-300 max-w-3xl mx-auto mb-8">
-              Enterprise-grade IT infrastructure, security, and automation solutions that power modern businesses.
+              Revolutionary space solutions that push the boundaries of human exploration and unlock the potential of the cosmos.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
@@ -158,15 +165,15 @@ const ITServicesPage: React.FC = () => {
             className="text-center mb-16"
           >
             <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-              Enterprise IT Solutions
+              Space Technology Solutions
             </h2>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              From cloud infrastructure to security automation, our IT services ensure your business operates at peak efficiency.
+              From resource mining to space colonization, our technology enables humanity's expansion into space.
             </p>
           </motion.div>
 
           <div className="space-y-16">
-            {itServices.map((category, categoryIndex) => (
+            {spaceServices.map((category, categoryIndex) => (
               <motion.div
                 key={category.category}
                 initial={{ opacity: 0, y: 30 }}
@@ -209,8 +216,20 @@ const ITServicesPage: React.FC = () => {
                     </motion.div>
                   ))}
                 </div>
+<<<<<<< HEAD
+                <div className="flex items-center text-yellow-400"><Star className="w-4 h-4 mr-1" />{service.rating.toFixed(1)}</div>
+              </div>
+              <Link href="/contact" variant="quantum" size="lg" className="w-full">Schedule a Mission Demo<ArrowRight className="w-5 h-5 ml-2" /></Button>
+              <div className="mt-6 space-y-3 text-sm text-slate-300">
+                <div className="flex items-center space-x-2"><Phone className="w-4 h-4 text-cyan-400" /><span>{service.contactInfo.mobile}</span></div>
+                <div className="flex items-center space-x-2"><Mail className="w-4 h-4 text-purple-400" /><span>{service.contactInfo.email}</span></div>
+                <div className="flex items-center space-x-2"><MapPin className="w-4 h-4 text-green-400" /><span className="text-xs">{service.contactInfo.address}</span></div>
+              </div>
+            </div>
+=======
               </motion.div>
             ))}
+>>>>>>> origin/cursor/website-audit-content-update-and-deployment-05bf
           </div>
         </div>
       </section>
@@ -225,17 +244,17 @@ const ITServicesPage: React.FC = () => {
             viewport={{ once: true }}
           >
             <h2 className="text-4xl font-bold text-white mb-6">
-              Ready to Modernize Your IT Infrastructure?
+              Ready to Explore the Final Frontier?
             </h2>
             <p className="text-xl text-gray-300 mb-8">
-              Let's discuss how our IT solutions can optimize your operations and enhance security.
+              Let's discuss how our space technology solutions can advance your mission.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
                 href="/contact"
                 className="bg-gradient-to-r from-blue-500 to-indigo-600 text-white px-8 py-4 rounded-full text-lg font-semibold hover:shadow-2xl hover:shadow-blue-500/25 transition-all duration-300"
               >
-                Start Your IT Transformation
+                Start Your Space Journey
                 <ArrowRight className="inline-block ml-2 w-5 h-5" />
               </Link>
               <Link
@@ -252,5 +271,5 @@ const ITServicesPage: React.FC = () => {
   );
 };
 
-export default ITServicesPage;
+export default SpaceTechnologyPage;
 
