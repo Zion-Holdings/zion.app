@@ -1,24 +1,76 @@
 #!/bin/bash
 
+<<<<<<< HEAD
+# Comprehensive Redundancy Automation System v3.0
+# This script provides complete redundancy for all automation systems:
+# - PM2 automations
+# - GitHub Actions automations
+# - Netlify functions automations
+# - NPM scripts automations
+# - All other automation systems
+
+set -e
+
+# Configuration
+=======
 # Comprehensive Redundancy V3 Startup Script
 # This script provides redundancy for all PM2, GitHub Actions, and Netlify Functions automations
 
 set -e
 
+>>>>>>> origin/cursor/automate-all-existing-automations-and-clean-up-0259
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 WORKSPACE_DIR="$(dirname "$SCRIPT_DIR")"
 LOG_DIR="$WORKSPACE_DIR/automation/logs"
 PID_FILE="$LOG_DIR/comprehensive-redundancy-v3.pid"
 LOG_FILE="$LOG_DIR/comprehensive-redundancy-v3.log"
+<<<<<<< HEAD
+CONFIG_FILE="$WORKSPACE_DIR/automation/redundancy-config.json"
+STATUS_FILE="$LOG_DIR/comprehensive-redundancy-v3-status.json"
+=======
 
 # Ensure log directory exists
 mkdir -p "$LOG_DIR"
+>>>>>>> origin/cursor/automate-all-existing-automations-and-clean-up-0259
 
 # Colors for output
 RED='\033[0;31m'
 GREEN='\033[0;32m'
 YELLOW='\033[1;33m'
 BLUE='\033[0;34m'
+<<<<<<< HEAD
+PURPLE='\033[0;35m'
+CYAN='\033[0;36m'
+NC='\033[0m' # No Color
+
+# Ensure log directory exists
+mkdir -p "$LOG_DIR"
+
+# Logging function
+log() {
+    local level="$1"
+    local message="$2"
+    local timestamp=$(date '+%Y-%m-%d %H:%M:%S')
+    echo -e "[$timestamp] [$level] $message" | tee -a "$LOG_FILE"
+}
+
+# Error handling
+error_exit() {
+    log "ERROR" "Script failed: $1"
+    exit 1
+}
+
+# Check if script is already running
+check_running() {
+    if [ -f "$PID_FILE" ]; then
+        local pid=$(cat "$PID_FILE")
+        if ps -p "$pid" > /dev/null 2>&1; then
+            log "WARN" "Comprehensive redundancy system already running (PID: $pid)"
+            return 0
+        else
+            log "WARN" "Stale PID file found, removing"
+            rm -f "$PID_FILE"
+=======
 NC='\033[0m' # No Color
 
 # Function to print colored output
@@ -48,11 +100,357 @@ is_running() {
             # Remove stale PID file
             rm -f "$PID_FILE"
             return 1
+>>>>>>> origin/cursor/automate-all-existing-automations-and-clean-up-0259
         fi
     fi
     return 1
 }
 
+<<<<<<< HEAD
+# Update status file
+update_status() {
+    local component="$1"
+    local status="$2"
+    local details="$3"
+    
+    if [ ! -f "$STATUS_FILE" ]; then
+        echo '{}' > "$STATUS_FILE"
+    fi
+    
+    # Try to use jq if available, otherwise use simple JSON
+    if command -v jq &> /dev/null; then
+        local temp_file=$(mktemp)
+        jq --arg comp "$component" --arg stat "$status" --arg det "$details" \
+           '. + {($comp): {"status": $stat, "details": $det, "timestamp": now}}' \
+           "$STATUS_FILE" > "$temp_file" && mv "$temp_file" "$STATUS_FILE"
+    else
+        # Simple JSON update without jq
+        local temp_file=$(mktemp)
+        if [ -s "$STATUS_FILE" ]; then
+            # Remove last closing brace and add new entry
+            head -n -1 "$STATUS_FILE" > "$temp_file"
+            echo "  \"$component\": {\"status\": \"$status\", \"details\": \"$details\", \"timestamp\": \"$(date -Iseconds)\"},"
+            echo "}" >> "$temp_file"
+        else
+            echo "{\"$component\": {\"status\": \"$status\", \"details\": \"$details\", \"timestamp\": \"$(date -Iseconds)\"}}" > "$temp_file"
+        fi
+        mv "$temp_file" "$STATUS_FILE"
+    fi
+}
+
+# Start PM2 redundancy systems
+start_pm2_redundancy() {
+    log "INFO" "Starting PM2 redundancy systems..."
+    
+    # Check if PM2 is installed
+    if ! command -v pm2 &> /dev/null; then
+        log "ERROR" "PM2 is not installed. Please install PM2 first."
+        update_status "pm2" "error" "PM2 not installed"
+        return 1
+    fi
+    
+    # Start all PM2 ecosystems in order of priority
+    local ecosystems=(
+        "ecosystem.pm2.cjs"
+        "ecosystem.redundancy.cjs"
+        "ecosystem.comprehensive-redundancy.cjs"
+        "ecosystem.ultimate-redundancy.pm2.cjs"
+    )
+    
+    for ecosystem in "${ecosystems[@]}"; do
+        if [ -f "$WORKSPACE_DIR/$ecosystem" ]; then
+            log "INFO" "Starting PM2 ecosystem: $ecosystem"
+            cd "$WORKSPACE_DIR" && pm2 start "$ecosystem" --update-env || log "WARN" "Failed to start $ecosystem"
+        else
+            log "WARN" "PM2 ecosystem not found: $ecosystem"
+        fi
+    done
+    
+    # Install and configure PM2 logrotate
+    log "INFO" "Configuring PM2 logrotate..."
+    pm2 install pm2-logrotate || log "WARN" "Failed to install pm2-logrotate"
+    pm2 set pm2-logrotate:max_size 10M || true
+    pm2 set pm2-logrotate:retain 30 || true
+    pm2 set pm2-logrotate:compress true || true
+    pm2 set pm2-logrotate:workerInterval 60 || true
+    pm2 set pm2-logrotate:rotateInterval '0 0 * * *' || true
+    
+    # Save PM2 configuration
+    pm2 save || log "WARN" "Failed to save PM2 configuration"
+    
+    # Verify PM2 processes
+    local pm2_status=$(pm2 status --no-daemon 2>/dev/null || echo "PM2 status unavailable")
+    log "INFO" "PM2 Status: $pm2_status"
+    
+    update_status "pm2" "running" "All PM2 ecosystems started"
+    log "INFO" "PM2 redundancy systems started successfully"
+}
+
+# Start GitHub Actions redundancy
+start_github_redundancy() {
+    log "INFO" "Starting GitHub Actions redundancy..."
+    
+    # Check if .github/workflows directory exists
+    if [ ! -d "$WORKSPACE_DIR/.github/workflows" ]; then
+        log "WARN" "GitHub workflows directory not found"
+        update_status "github_actions" "warning" "Workflows directory not found"
+        return 0
+    fi
+    
+    # Validate all workflow files
+    local workflows=(
+        "marketing-sync.yml"
+        "sync-health.yml"
+        "marketing-sync-backup.yml"
+        "sync-health-backup.yml"
+    )
+    
+    local valid_workflows=0
+    for workflow in "${workflows[@]}"; do
+        if [ -f "$WORKSPACE_DIR/.github/workflows/$workflow" ]; then
+            log "INFO" "Found workflow: $workflow"
+            ((valid_workflows++))
+        else
+            log "WARN" "Missing workflow: $workflow"
+        fi
+    done
+    
+    # Validate workflow syntax (basic YAML check)
+    for workflow in "${workflows[@]}"; do
+        if [ -f "$WORKSPACE_DIR/.github/workflows/$workflow" ]; then
+            if command -v python3 &> /dev/null; then
+                python3 -c "import yaml; yaml.safe_load(open('$WORKSPACE_DIR/.github/workflows/$workflow'))" 2>/dev/null && \
+                    log "INFO" "Workflow $workflow syntax valid" || \
+                    log "WARN" "Workflow $workflow syntax invalid"
+            fi
+        fi
+    done
+    
+    log "INFO" "GitHub Actions redundancy configured with $valid_workflows valid workflows"
+    update_status "github_actions" "running" "$valid_workflows workflows validated"
+}
+
+# Start Netlify functions redundancy
+start_netlify_redundancy() {
+    log "INFO" "Starting Netlify functions redundancy..."
+    
+    # Check if netlify/functions directory exists
+    if [ ! -d "$WORKSPACE_DIR/netlify/functions" ]; then
+        log "WARN" "Netlify functions directory not found"
+        update_status "netlify_functions" "warning" "Functions directory not found"
+        return 0
+    fi
+    
+    # Regenerate functions manifest
+    log "INFO" "Regenerating Netlify functions manifest..."
+    cd "$WORKSPACE_DIR" && npm run netlify:manifest || log "WARN" "Failed to regenerate manifest"
+    
+    # Check functions manifest
+    if [ -f "$WORKSPACE_DIR/netlify/functions/functions-manifest.json" ]; then
+        if command -v jq &> /dev/null; then
+            local function_count=$(jq '.functions | length' "$WORKSPACE_DIR/netlify/functions/functions-manifest.json" 2>/dev/null || echo "0")
+            log "INFO" "Netlify functions manifest found with $function_count functions"
+            
+            # Validate function files exist
+            local missing_functions=0
+            local total_functions=0
+            for func in $(jq -r '.functions[]' "$WORKSPACE_DIR/netlify/functions/functions-manifest.json" 2>/dev/null); do
+                ((total_functions++))
+                if [ ! -f "$WORKSPACE_DIR/netlify/functions/$func.js" ] && [ ! -f "$WORKSPACE_DIR/netlify/functions/$func.mjs" ]; then
+                    log "WARN" "Function file missing: $func"
+                    ((missing_functions++))
+                fi
+            done
+            
+            if [ "$missing_functions" -eq 0 ]; then
+                log "INFO" "All $total_functions Netlify functions validated"
+                update_status "netlify_functions" "running" "$total_functions functions validated"
+            else
+                log "WARN" "$missing_functions out of $total_functions functions missing"
+                update_status "netlify_functions" "warning" "$missing_functions/$total_functions functions missing"
+            fi
+        else
+            log "WARN" "jq not available for manifest validation"
+            update_status "netlify_functions" "running" "Manifest regenerated (jq not available)"
+        fi
+    else
+        log "WARN" "Netlify functions manifest not found"
+        update_status "netlify_functions" "error" "Manifest not found"
+    fi
+    
+    log "INFO" "Netlify functions redundancy configured"
+}
+
+# Start NPM scripts redundancy
+start_npm_redundancy() {
+    log "INFO" "Starting NPM scripts redundancy..."
+    
+    # Check if package.json exists
+    if [ ! -f "$WORKSPACE_DIR/package.json" ]; then
+        log "ERROR" "package.json not found"
+        update_status "npm_scripts" "error" "package.json not found"
+        return 1
+    fi
+    
+    # Validate critical npm scripts
+    local critical_scripts=(
+        "build"
+        "dev"
+        "start"
+        "pm2:start"
+        "redundancy:start"
+        "redundancy:ultimate:start"
+        "automation:all"
+        "git:sync"
+        "build:health-check"
+        "build:validate"
+        "lint"
+        "type-check"
+    )
+    
+    local available_scripts=0
+    local total_scripts=${#critical_scripts[@]}
+    
+    for script in "${critical_scripts[@]}"; do
+        if npm run --silent "$script" --dry-run &>/dev/null; then
+            log "INFO" "NPM script available: $script"
+            ((available_scripts++))
+        else
+            log "WARN" "NPM script not available: $script"
+        fi
+    done
+    
+    # Check script dependencies
+    log "INFO" "Validating NPM dependencies..."
+    if [ -f "$WORKSPACE_DIR/package-lock.json" ]; then
+        log "INFO" "package-lock.json found, dependencies locked"
+    else
+        log "WARN" "package-lock.json not found, dependencies not locked"
+    fi
+    
+    # Check for outdated packages
+    if command -v npm &> /dev/null && command -v jq &> /dev/null; then
+        local outdated_count=$(npm outdated --json 2>/dev/null | jq 'length' 2>/dev/null || echo "0")
+        if [ "$outdated_count" -gt 0 ]; then
+            log "WARN" "$outdated_count packages are outdated"
+        else
+            log "INFO" "All packages are up to date"
+        fi
+    elif command -v npm &> /dev/null; then
+        log "INFO" "NPM outdated check skipped (jq not available)"
+    fi
+    
+    log "INFO" "NPM scripts redundancy configured: $available_scripts/$total_scripts critical scripts available"
+    update_status "npm_scripts" "running" "$available_scripts/$total_scripts scripts available"
+}
+
+# Start automation systems redundancy
+start_automation_redundancy() {
+    log "INFO" "Starting automation systems redundancy..."
+    
+    # Check and start various automation systems
+    local automation_systems=(
+        "automation/ultimate-redundancy-master.cjs"
+        "automation/comprehensive-redundancy-orchestrator.cjs"
+        "automation/master-automation-coordinator.js"
+        "automation/continuous-automation-improvement-system.js"
+        "automation/automation-guardian-10min.cjs"
+    )
+    
+    local running_systems=0
+    local total_systems=${#automation_systems[@]}
+    
+    for system in "${automation_systems[@]}"; do
+        if [ -f "$WORKSPACE_DIR/$system" ]; then
+            log "INFO" "Found automation system: $system"
+            ((running_systems++))
+        else
+            log "WARN" "Automation system not found: $system"
+        fi
+    done
+    
+    # Start the master automation coordinator if available
+    if [ -f "$WORKSPACE_DIR/automation/master-automation-coordinator.js" ]; then
+        log "INFO" "Starting master automation coordinator..."
+        cd "$WORKSPACE_DIR" && node automation/master-automation-coordinator.js start || log "WARN" "Failed to start master coordinator"
+    fi
+    
+    # Start continuous automation improvement system
+    if [ -f "$WORKSPACE_DIR/automation/continuous-automation-improvement-system.js" ]; then
+        log "INFO" "Starting continuous automation improvement system..."
+        cd "$WORKSPACE_DIR" && node automation/continuous-automation-improvement-system.js start || log "WARN" "Failed to start improvement system"
+    fi
+    
+    log "INFO" "Automation systems redundancy configured: $running_systems/$total_systems systems available"
+    update_status "automation_systems" "running" "$running_systems/$total_systems systems available"
+}
+
+# Start monitoring and health checks
+start_monitoring() {
+    log "INFO" "Starting monitoring and health checks..."
+    
+    # Create monitoring script
+    local monitor_script="$LOG_DIR/monitor-comprehensive-redundancy.sh"
+    cat > "$monitor_script" << 'EOF'
+#!/bin/bash
+# Comprehensive redundancy monitoring script
+
+WORKSPACE_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/../.." && pwd)"
+LOG_DIR="$WORKSPACE_DIR/automation/logs"
+STATUS_FILE="$LOG_DIR/comprehensive-redundancy-v3-status.json"
+
+# Check PM2 status
+check_pm2() {
+    if command -v pm2 &> /dev/null; then
+        local pm2_status=$(pm2 status --no-daemon 2>/dev/null | grep -c "online" || echo "0")
+        echo "PM2: $pm2_status processes online"
+    else
+        echo "PM2: not installed"
+    fi
+}
+
+# Check GitHub Actions
+check_github() {
+    if [ -d "$WORKSPACE_DIR/.github/workflows" ]; then
+        local workflow_count=$(find "$WORKSPACE_DIR/.github/workflows" -name "*.yml" | wc -l)
+        echo "GitHub Actions: $workflow_count workflows found"
+    else
+        echo "GitHub Actions: workflows directory not found"
+    fi
+}
+
+# Check Netlify functions
+check_netlify() {
+    if [ -f "$WORKSPACE_DIR/netlify/functions/functions-manifest.json" ]; then
+        if command -v jq &> /dev/null; then
+            local func_count=$(jq '.functions | length' "$WORKSPACE_DIR/netlify/functions/functions-manifest.json" 2>/dev/null || echo "0")
+            echo "Netlify: $func_count functions in manifest"
+        else
+            echo "Netlify: manifest found (jq not available)"
+        fi
+    else
+        echo "Netlify: manifest not found"
+    fi
+}
+
+# Check NPM scripts
+check_npm() {
+    if [ -f "$WORKSPACE_DIR/package.json" ]; then
+        local script_count=$(jq '.scripts | keys | length' "$WORKSPACE_DIR/package.json" 2>/dev/null || echo "0")
+        echo "NPM: $script_count scripts available"
+    else
+        echo "NPM: package.json not found"
+    fi
+}
+
+# Main monitoring loop
+while true; do
+    echo "=== Comprehensive Redundancy Status $(date) ==="
+    check_pm2
+    check_github
+    check_netlify
+    check_npm
+    echo "================================================"
     sleep 60
 done
 EOF
@@ -687,3 +1085,4 @@ case "${1:-help}" in
         exit 1
         ;;
 esac
+>>>>>>> origin/cursor/automate-all-existing-automations-and-clean-up-0259
