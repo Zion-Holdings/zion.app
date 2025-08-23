@@ -964,6 +964,12 @@ const nextConfig = {
   eslint: {
     ignoreDuringBuilds: true,
   },
+<<<<<<< HEAD
+
+  // Enable SWC minification explicitly (already default in Next 15)
+  swcMinify: true,
+
+=======
   pageExtensions: ['page.tsx', 'page.ts', 'page.jsx', 'page.js'],
   async redirects() {
     return [
@@ -977,6 +983,7 @@ const nextConfig = {
     config.resolve.alias['@'] = path.resolve(__dirname);
     return config;
   },
+>>>>>>> origin/cursor/create-mobile-launch-landing-and-support-toolkit-3ea3
 };
 
 module.exports = withSentryConfig(baseConfig);
