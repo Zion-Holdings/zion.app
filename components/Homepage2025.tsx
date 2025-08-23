@@ -244,13 +244,6 @@ const Homepage2025: React.FC = () => {
             </div>
           </div>
         </section>
-              <button className="px-8 py-4 border-2 border-cyan-400 text-cyan-400 font-semibold rounded-lg hover:bg-cyan-400 hover:text-black transition-all duration-300 transform hover:scale-105 flex items-center gap-2 mx-auto">
-                View All Services
-                <ArrowRight className="w-5 h-5" />
-              </button>
-            </motion.div>
-          </div>
-        </section>
 
         {/* Testimonials Section */}
         <section className="py-20 px-4 bg-gradient-to-r from-gray-900/30 to-black/30">
