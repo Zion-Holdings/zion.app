@@ -5,7 +5,7 @@ import { Star, Flag, User } from 'lucide-react';
 
 
 
-import { Review } from "@/types/reviews";
+import type { Review } from "@/types/reviews";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";

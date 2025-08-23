@@ -1,27 +1,30 @@
-import { Component, ReactNode, ErrorInfo } from 'react';
+import React from 'react';
+import { captureException } from '@/lib/sentry';
 
 interface Props {
-  children: ReactNode;
+  children: React.ReactNode;
+  fallback?: React.ReactNode;
 }
 
 interface State {
   hasError: boolean;
 }
 
-export class ErrorBoundary extends Component<Props, State> {
+export class ErrorBoundary extends React.Component<Props, State> {
   state: State = { hasError: false };
 
   static getDerivedStateFromError() {
     return { hasError: true };
   }
 
-  componentDidCatch(error: Error, info: ErrorInfo) {
-    console.error('Uncaught error:', error, info);
+  componentDidCatch(error: any, errorInfo: any) {
+    captureException(error);
+    console.error(error, errorInfo);
   }
 
   render() {
     if (this.state.hasError) {
-      return <div className="p-4 text-center">Something went wrong.</div>;
+      return this.props.fallback || <div>Something went wrong.</div>;
     }
     return this.props.children;
   }

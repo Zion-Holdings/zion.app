@@ -1,4 +1,5 @@
 import React from 'react';
+=======
 import Head from 'next/head';
 import { PenTool, Target, Users, TrendingUp, Zap, Globe, BarChart3, Smartphone } from 'lucide-react';
 
@@ -343,6 +344,7 @@ const AIContentMarketingAutomationPage: React.FC = () => {
             </div>
           </div>
         </section>
+=======
       </div>
     </>
   );

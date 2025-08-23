@@ -1,4 +1,5 @@
 import Head from 'next/head'
+import { useRouter } from 'next/router'
 import { motion } from 'framer-motion'
 import { WifiOff, RefreshCw, Home, ShoppingCart, Clock, Bookmark, Search } from 'lucide-react';
 
@@ -16,6 +17,7 @@ import { useState, useEffect } from 'react'
 import {logErrorToProduction} from '@/utils/productionLogger'
 
 export default function OfflinePage() {
+  const router = useRouter()
 
   const [isOnline, setIsOnline] = useState(false)
   const [lastUpdate, setLastUpdate] = useState<string>('')
@@ -84,71 +86,37 @@ export default function OfflinePage() {
   ]
 
   return (
-    <>
-      <Head>
-        <title>You're Offline - Zion Tech Marketplace</title>
-        <meta name="description" content="You're currently offline. Some features may not be available." />
-        <meta name="robots" content="noindex, nofollow" />
-      </Head>
-
-      <div className="min-h-screen bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50 dark:from-gray-900 dark:via-blue-900 dark:to-indigo-900">
-        <div className="container mx-auto px-4 py-8">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="text-center mb-8"
-          >
-            {/* Connection Status */}
-            <div className="mb-6">
-              <motion.div
-                animate={isOnline ? { scale: [1, 1.1, 1] } : { rotate: [0, -10, 10, -10, 0] }}
-                transition={{ duration: isOnline ? 0.6 : 2, repeat: isOnline ? 1 : Infinity }}
-                className={`mx-auto w-24 h-24 rounded-full flex items-center justify-center mb-4 ${
-                  isOnline 
-                    ? 'bg-green-100 dark:bg-green-900/20' 
-                    : 'bg-orange-100 dark:bg-orange-900/20'
-                }`}
-              >
-                <WifiOff className={`w-12 h-12 ${
-                  isOnline ? 'text-green-600' : 'text-orange-600'
-                }`} />
-              </motion.div>
-              
-              <Badge 
-                variant={isOnline ? "default" : "secondary"}
-                className="text-sm px-3 py-1"
-              >
-                {isOnline ? 'Connection Restored' : 'Offline Mode'}
-              </Badge>
+    <div className="min-h-screen bg-gray-900 flex items-center justify-center px-4">
+      <div className="max-w-md mx-auto text-center">
+        <motion.div
+          initial={{ opacity: 0, scale: 0.8 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.5 }}
+          className="space-y-8"
+        >
+          {/* Offline Icon */}
+          <div className="relative">
+            <div className="w-24 h-24 bg-gradient-to-r from-red-500 to-orange-500 rounded-full flex items-center justify-center mx-auto mb-6">
+              <WifiOff className="w-12 h-12 text-white" />
             </div>
+            <div className="absolute inset-0 bg-gradient-to-r from-red-500 to-orange-500 rounded-full blur-xl opacity-20 animate-pulse"></div>
+          </div>
 
-            <h1 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-              {isOnline ? 'You\'re Back Online!' : 'You\'re Offline'}
+          {/* Main Content */}
+          <div className="space-y-4">
+            <h1 className="text-3xl font-bold text-white">
+              You're Offline
             </h1>
-            
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto mb-6">
-              {isOnline 
-                ? 'Your internet connection has been restored. You can now access all features.'
-                : 'No internet connection detected. Don\'t worry - you can still access cached content and use offline features.'
-              }
+            <p className="text-gray-300 leading-relaxed">
+              It looks like you've lost your internet connection. Don't worry - some of our content is available offline.
             </p>
-
-            {lastUpdate && (
-              <p className="text-sm text-muted-foreground flex items-center justify-center gap-2">
-                <Clock className="w-4 h-4" />
-                Last updated: {lastUpdate}
-              </p>
-            )}
-          </motion.div>
+          </div>
 
           {/* Action Buttons */}
-          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
-            <Button 
-              onClick={handleRetry}
-              size="lg"
-              className="flex items-center gap-2"
-              disabled={isOnline}
+          <div className="space-y-4">
+            <button
+              onClick={handleRefresh}
+              className="w-full px-6 py-3 bg-gradient-to-r from-cyan-400 to-blue-500 text-white font-semibold rounded-xl hover:from-cyan-500 hover:to-blue-600 transition-all duration-300 focus:outline-none focus:ring-4 focus:ring-cyan-400/50 flex items-center justify-center space-x-2"
             >
               <RefreshCw className="w-5 h-5" />
               {retryCount > 0 ? `Retry (${retryCount})` : 'Try Again'}
@@ -231,74 +199,39 @@ export default function OfflinePage() {
                 </motion.div>
               ))}
             </div>
-          </motion.div>
+          </div>
 
-          {/* Tips Section */}
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.6, delay: 0.8 }}
-            className="mt-16"
-          >
-            <Card className="max-w-2xl mx-auto">
-              <CardHeader>
-                <CardTitle className="text-center">💡 Offline Tips</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <div className="space-y-3 text-sm">
-                  <div className="flex items-start gap-2">
-                    <span className="text-blue-600 font-semibold">•</span>
-                    <span>Recently viewed pages are cached and available offline</span>
-                  </div>
-                  <div className="flex items-start gap-2">
-                    <span className="text-blue-600 font-semibold">•</span>
-                    <span>Your bookmarks and saved items can be accessed anytime</span>
-                  </div>
-                  <div className="flex items-start gap-2">
-                    <span className="text-blue-600 font-semibold">•</span>
-                    <span>Form submissions will be synced when you reconnect</span>
-                  </div>
-                  <div className="flex items-start gap-2">
-                    <span className="text-blue-600 font-semibold">•</span>
-                    <span>Check your internet connection and try refreshing the page</span>
-                  </div>
-                  <div className="flex items-start gap-2">
-                    <span className="text-blue-600 font-semibold">•</span>
-                    <span>If you still see a blank screen when back online, run <code>./setup.sh npm</code> to reinstall dependencies</span>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-          </motion.div>
+          {/* Contact Information */}
+          <div className="pt-6 border-t border-gray-700">
+            <p className="text-sm text-gray-400 mb-3">
+              Need immediate assistance?
+            </p>
+            <div className="space-y-2 text-sm">
+              <div className="text-cyan-400">
+                <strong>Phone:</strong> +1 302 464 0950
+              </div>
+              <div className="text-blue-400">
+                <strong>Email:</strong> kleber@ziontechgroup.com
+              </div>
+            </div>
+          </div>
 
-          {/* Auto-refresh when online */}
-          {isOnline && (
-            <motion.div
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
-              className="fixed bottom-6 right-6 z-50"
-            >
-              <Card className="bg-green-50 border-green-200 dark:bg-green-900/20 dark:border-green-800">
-                <CardContent className="p-4">
-                  <div className="flex items-center gap-3">
-                    <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />
-                    <span className="text-sm font-medium text-green-700 dark:text-green-300">
-                      Connection restored
-                    </span>
-                    <Button
-                      size="sm"
-                      onClick={() => window.location.reload()}
-                      className="bg-green-600 hover:bg-green-700"
-                    >
-                      Refresh
-                    </Button>
-                  </div>
-                </CardContent>
-              </Card>
-            </motion.div>
-          )}
-        </div>
+          {/* Offline Features Info */}
+          <div className="bg-gray-800/50 rounded-xl p-4 border border-gray-700/50">
+            <h3 className="text-sm font-semibold text-white mb-2">
+              Available Offline
+            </h3>
+            <ul className="text-xs text-gray-400 space-y-1 text-left">
+              <li>• Basic service information</li>
+              <li>• Contact details</li>
+              <li>• Company overview</li>
+              <li>• Cached pages</li>
+            </ul>
+          </div>
+        </motion.div>
       </div>
-    </>
-  )
-} 
+    </div>
+  );
+};
+
+export default OfflinePage;

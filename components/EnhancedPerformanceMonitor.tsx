@@ -191,80 +191,88 @@ const EnhancedPerformanceMonitor: React.FC = () => {
     return 'text-red-400';
   };
 
-  const getScoreIcon = (score: number) => {
-    if (score >= 90) return <CheckCircle className="w-5 h-5 text-green-400" />;
-    if (score >= 70) return <AlertTriangle className="w-5 h-5 text-yellow-400" />;
-    return <AlertTriangle className="w-5 h-5 text-red-400" />;
+  const getOverallScoreBg = (score: number) => {
+    if (score >= 90) return 'bg-green-500/20';
+    if (score >= 70) return 'bg-yellow-500/20';
+    return 'bg-red-500/20';
   };
 
-  useEffect(() => {
-    if (isVisible) {
-      measurePerformance();
-    }
-  }, [isVisible, measurePerformance]);
+  if (!performanceData) {
+    return (
+      <div className={`p-4 bg-gray-900 rounded-lg border border-gray-700 ${className}`}>
+        <div className="animate-pulse">
+          <div className="h-4 bg-gray-700 rounded w-1/3 mb-4"></div>
+          <div className="space-y-3">
+            <div className="h-3 bg-gray-700 rounded"></div>
+            <div className="h-3 bg-gray-700 rounded w-5/6"></div>
+            <div className="h-3 bg-gray-700 rounded w-4/6"></div>
+          </div>
+        </div>
+      </div>
+    );
+  }
 
   return (
-    <>
-      {/* Floating Action Button */}
-      <motion.button
-        onClick={() => setIsVisible(!isVisible)}
-        className="fixed bottom-6 right-6 z-50 bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-600 hover:to-blue-700 text-white p-3 rounded-full shadow-lg hover:shadow-xl transition-all duration-300"
-        whileHover={{ scale: 1.1 }}
-        whileTap={{ scale: 0.95 }}
-        initial={{ opacity: 0, y: 100 }}
-        animate={{ opacity: 1, y: 0 }}
-      >
-        <Activity className="w-6 h-6" />
-      </motion.button>
-
-      {/* Performance Monitor Panel */}
-      <AnimatePresence>
-        {isVisible && (
-          <motion.div
-            initial={{ opacity: 0, x: 400 }}
-            animate={{ opacity: 1, x: 0 }}
-            exit={{ opacity: 0, x: 400 }}
-            className="fixed top-0 right-0 h-full w-96 bg-gray-900 border-l border-gray-700 shadow-2xl z-40 overflow-y-auto"
-          >
-            {/* Header */}
-            <div className="sticky top-0 bg-gray-800 border-b border-gray-700 p-4">
-              <div className="flex items-center justify-between">
-                <div className="flex items-center space-x-3">
-                  <Gauge className="w-6 h-6 text-cyan-400" />
-                  <h2 className="text-xl font-bold text-white">Performance Monitor</h2>
-                </div>
-                <button
-                  onClick={() => setIsVisible(false)}
-                  className="text-gray-400 hover:text-white transition-colors"
-                >
-                  <X className="w-5 h-5" />
-                </button>
-              </div>
-              
-              {lastUpdate && (
-                <p className="text-sm text-gray-400 mt-2">
-                  Last updated: {lastUpdate.toLocaleTimeString()}
-                </p>
-              )}
+    <motion.div
+      className={`bg-gray-900 rounded-lg border border-gray-700 overflow-hidden ${className}`}
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+    >
+      {/* Header */}
+      <div className="p-4 bg-gray-800/50 border-b border-gray-700">
+        <div className="flex items-center justify-between">
+          <div className="flex items-center space-x-3">
+            <div className="p-2 bg-blue-500/20 rounded-lg">
+              <Activity className="w-5 h-5 text-blue-400" />
             </div>
+            <div>
+              <h3 className="text-white font-semibold">Performance Monitor</h3>
+              <p className="text-gray-400 text-sm">
+                Last updated: {lastUpdate.toLocaleTimeString()}
+              </p>
+            </div>
+          </div>
+          <div className="flex items-center space-x-2">
+            <button
+              onClick={() => setShowDetails(!showDetails)}
+              className="p-2 text-gray-400 hover:text-white hover:bg-gray-700/50 rounded-lg transition-colors"
+              title={showDetails ? 'Hide details' : 'Show details'}
+            >
+              <BarChart3 className="w-4 h-4" />
+            </button>
+            <button
+              onClick={updatePerformanceData}
+              disabled={isLoading}
+              className="p-2 text-gray-400 hover:text-white hover:bg-gray-700/50 rounded-lg transition-colors disabled:opacity-50"
+              title="Refresh data"
+            >
+              <RefreshCw className={`w-4 h-4 ${isLoading ? 'animate-spin' : ''}`} />
+            </button>
+            <button
+              onClick={() => setIsExpanded(!isExpanded)}
+              className="p-2 text-gray-400 hover:text-white hover:bg-gray-700/50 rounded-lg transition-colors"
+              title={isExpanded ? 'Collapse' : 'Expand'}
+            >
+              <Settings className="w-4 h-4" />
+            </button>
+          </div>
+        </div>
+      </div>
 
-            {/* Content */}
-            <div className="p-4 space-y-6">
-              {/* Performance Score */}
-              {metrics && (
-                <div className="bg-gray-800 rounded-lg p-4 border border-gray-700">
-                  <div className="flex items-center justify-between mb-3">
-                    <h3 className="text-lg font-semibold text-white">Performance Score</h3>
-                    {getScoreIcon(getPerformanceScore(metrics))}
-                  </div>
-                  <div className="text-center">
-                    <div className={`text-4xl font-bold ${getScoreColor(getPerformanceScore(metrics))}`}>
-                      {getPerformanceScore(metrics)}
-                    </div>
-                    <div className="text-sm text-gray-400">out of 100</div>
-                  </div>
-                </div>
-              )}
+      {/* Overall Score */}
+      <div className="p-4">
+        <div className="text-center mb-6">
+          <div className={`inline-flex items-center justify-center w-20 h-20 rounded-full ${getOverallScoreBg(performanceData.overallScore)} mb-3`}>
+            <span className={`text-2xl font-bold ${getOverallScoreColor(performanceData.overallScore)}`}>
+              {performanceData.overallScore}
+            </span>
+          </div>
+          <h4 className="text-white font-semibold mb-1">Performance Score</h4>
+          <p className="text-gray-400 text-sm">
+            {performanceData.overallScore >= 90 ? 'Excellent' : 
+             performanceData.overallScore >= 70 ? 'Good' : 'Needs Improvement'}
+          </p>
+        </div>
 
               {/* Metrics */}
               {metrics && (

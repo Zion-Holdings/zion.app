@@ -2,9 +2,8 @@ import React, { useState, useEffect } from 'react';
 import SEO from '../components/SEO';
 import { motion, AnimatePresence } from 'framer-motion';
 import { 
-  Search, Grid, List, Filter, Star, Users, TrendingUp,
-  Brain, Atom, Shield, Target, Rocket, ArrowRight, Check,
-  Zap, Globe, Lock, Cpu, Database, Cloud, Palette, Heart, Phone, Mail, MapPin
+  Search, Grid, List, Star, Check,
+  Phone, Mail, MapPin
 } from 'lucide-react';
 
 // Import our new innovative services
@@ -23,12 +22,12 @@ interface Service {
   price: string | { monthly: number; yearly: number; currency: string; trialDays: number; setupTime: string };
   period?: string;
   description: string;
-  features?: string[];
+  features: string[];
   popular?: boolean;
   icon?: string;
   color?: string;
   textColor?: string;
-  link?: string;
+  link: string;
   category: string;
   realService?: boolean;
   technology?: string[];
@@ -44,52 +43,15 @@ interface Service {
     email: string;
     address?: string;
     website: string;
+    phone?: string;
   };
   realImplementation?: boolean | string;
   implementationDetails?: string;
-  launchDate: string;
+  launchDate?: string;
   customers: number | string;
   rating: number;
   reviews: number;
-}
-
-// Utility function to get service properties with defaults
-function getServiceProperty<T>(service: any, property: string, defaultValue: T): T {
-  return service && service[property] !== undefined ? service[property] : defaultValue;
-}
-
-// Default icon mapping based on category
-function getDefaultIcon(category: string): string {
-  const iconMap: { [key: string]: string } = {
-    'AI & Consciousness': '🧠',
-    'Quantum & Emerging Tech': '⚛️',
-    'AI & Machine Learning': '🤖',
-    'Cybersecurity': '🛡️',
-    'Space Technology': '🚀',
-    'Business Solutions': '💼',
-    'IT Services': '💻',
-    'Content Marketing & AI': '📝',
-    'Cybersecurity & Communication': '🔐',
-    'default': '✨'
-  };
-  return iconMap[category] || iconMap.default;
-}
-
-// Default color mapping based on category
-function getDefaultColor(category: string): string {
-  const colorMap: { [key: string]: string } = {
-    'AI & Consciousness': 'from-purple-500 to-pink-500',
-    'Quantum & Emerging Tech': 'from-blue-500 to-cyan-500',
-    'AI & Machine Learning': 'from-emerald-500 to-teal-500',
-    'Cybersecurity': 'from-red-500 to-orange-500',
-    'Space Technology': 'from-indigo-500 to-purple-500',
-    'Business Solutions': 'from-yellow-500 to-orange-500',
-    'IT Services': 'from-gray-500 to-blue-500',
-    'Content Marketing & AI': 'from-green-500 to-blue-500',
-    'Cybersecurity & Communication': 'from-red-500 to-purple-500',
-    'default': 'from-cyan-500 to-blue-600'
-  };
-  return colorMap[category] || colorMap.default;
+  benefits?: string[];
 }
 
 const Innovative2040FuturisticServicesShowcase: React.FC = () => {
@@ -99,13 +61,59 @@ const Innovative2040FuturisticServicesShowcase: React.FC = () => {
   const [sortBy, setSortBy] = useState<'name' | 'price' | 'popularity' | 'category'>('name');
   const [isLoading, setIsLoading] = useState(true);
 
-  // Combine all services
-  const allServices = [
-    ...innovative2040FuturisticServices,
-    ...innovative2040ITServices,
+  // Combine all services and ensure they have required properties
+  const allServices: Service[] = [
+    ...innovative2040FuturisticServices.map(service => ({
+      ...service,
+      popular: service.rating >= 4.5,
+      icon: '🚀',
+      color: 'from-blue-600 to-purple-700',
+      period: '/month',
+      realService: true,
+      customers: typeof service.customers === 'string' ? parseInt(service.customers) || 0 : service.customers,
+      contactInfo: {
+        ...service.contactInfo,
+        mobile: service.contactInfo.phone,
+        address: '364 E Main St STE 1008 Middletown DE 19709'
+      }
+    })),
+    ...innovative2040ITServices.map(service => ({
+      ...service,
+      popular: service.rating >= 4.5,
+      icon: '💻',
+      color: 'from-green-600 to-blue-700',
+      period: '/month',
+      realService: true,
+      customers: typeof service.customers === 'string' ? parseInt(service.customers) || 0 : service.customers,
+      contactInfo: {
+        ...service.contactInfo,
+        phone: service.contactInfo.mobile,
+        address: '364 E Main St STE 1008 Middletown DE 19709'
+      }
+    })),
     ...realMicroSaasServices,
-    ...innovativeAIServices,
-    ...enterpriseITServices
+    ...innovativeAIServices.map(service => ({
+      ...service,
+      customers: typeof service.customers === 'string' ? parseInt(service.customers) || 0 : service.customers,
+      contactInfo: {
+        ...service.contactInfo,
+        phone: service.contactInfo.mobile
+      }
+    })),
+    ...enterpriseITServices.map(service => ({
+      ...service,
+      popular: service.rating >= 4.5,
+      icon: '🏢',
+      color: 'from-indigo-600 to-cyan-700',
+      period: '/month',
+      realService: true,
+      customers: typeof service.customers === 'string' ? parseInt(service.customers) || 0 : service.customers,
+      contactInfo: {
+        ...service.contactInfo,
+        phone: service.contactInfo.mobile,
+        address: '364 E Main St STE 1008 Middletown DE 19709'
+      }
+    }))
   ];
 
   // Get unique categories
@@ -123,12 +131,12 @@ const Innovative2040FuturisticServicesShowcase: React.FC = () => {
     .sort((a, b) => {
       switch (sortBy) {
         case 'price': {
-          const aPrice = typeof a.price === 'string' ? parseFloat(a.price.replace(/[^0-9.]/g, '')) : a.price.monthly;
-          const bPrice = typeof b.price === 'string' ? parseFloat(b.price.replace(/[^0-9.]/g, '')) : b.price.monthly;
+          const aPrice = typeof a.price === 'string' ? parseFloat(a.price.replace(/[^0-9.]/g, '')) : (a.price as any)?.monthly || 0;
+          const bPrice = typeof b.price === 'string' ? parseFloat(b.price.replace(/[^0-9.]/g, '')) : (b.price as any)?.monthly || 0;
           return aPrice - bPrice;
         }
         case 'popularity':
-          return b.rating - a.rating;
+          return (b.popular ? 1 : 0) - (a.popular ? 1 : 0) || b.rating - a.rating;
         case 'category':
           return a.category.localeCompare(b.category);
         default:
@@ -182,7 +190,7 @@ const Innovative2040FuturisticServicesShowcase: React.FC = () => {
       <SEO 
         title="Innovative 2040 Futuristic Services Showcase | Zion Tech Group"
         description="Explore our comprehensive collection of innovative 2040 futuristic services including quantum computing, AI-powered solutions, and cutting-edge technology offerings. Contact us at +1 302 464 0950 or kleber@ziontechgroup.com"
-        keywords={["innovative services", "futuristic technology", "quantum computing", "AI services", "IT solutions", "micro SaaS", "Zion Tech Group"]}
+        keywords="innovative services, futuristic technology, quantum computing, AI services, IT solutions, micro SaaS, Zion Tech Group"
 
       />
 
@@ -331,10 +339,10 @@ const Innovative2040FuturisticServicesShowcase: React.FC = () => {
                     variants={fadeInUp}
                     className="group relative bg-gray-800/50 border border-gray-700/50 rounded-2xl p-6 hover:border-cyan-500/50 hover:bg-gray-800/70 transition-all duration-300 hover:shadow-2xl hover:shadow-cyan-500/10"
                   >
-                    {/* Popular Badge */}
-                    {'popular' in service && service.popular && (
+                    {/* Rating Badge */}
+                    {service.rating >= 4.5 && (
                       <div className="absolute -top-3 -right-3 bg-gradient-to-r from-yellow-500 to-orange-500 text-white text-xs font-bold px-3 py-1 rounded-full">
-                        Popular
+                        Top Rated
                       </div>
                     )}
 
@@ -348,7 +356,7 @@ const Innovative2040FuturisticServicesShowcase: React.FC = () => {
                       {service.name}
                     </h3>
                     <p className="text-gray-300 mb-4 line-clamp-2">
-                      {getServiceProperty(service, 'tagline', service.description.substring(0, 100) + '...')}
+                      {getServiceTagline(service)}
                     </p>
 
                     {/* Price */}
@@ -421,7 +429,7 @@ const Innovative2040FuturisticServicesShowcase: React.FC = () => {
                 animate="animate"
                 className="space-y-6"
               >
-                {filteredServices.map((service, index) => (
+                {filteredServices.map((service) => (
                   <motion.div
                     key={service.id}
                     variants={fadeInUp}
@@ -447,7 +455,7 @@ const Innovative2040FuturisticServicesShowcase: React.FC = () => {
                               <span className="inline-block px-3 py-1 bg-gray-700 text-cyan-400 text-sm font-medium rounded-full">
                                 {service.category}
                               </span>
-                              {getServiceProperty(service, 'popular', false) && (
+                              {service.popular && (
                                 <span className="inline-block px-3 py-1 bg-gradient-to-r from-yellow-500 to-orange-500 text-white text-sm font-bold rounded-full">
                                   Popular
                                 </span>
@@ -458,7 +466,7 @@ const Innovative2040FuturisticServicesShowcase: React.FC = () => {
                                                        <div className="text-3xl font-bold text-cyan-400 mb-1">
                              {typeof service.price === 'string' ? service.price : `$${service.price.monthly}/${service.price.currency}`}
                                                            <span className="text-lg text-gray-400">
-                                {typeof service.price === 'string' ? (service as any).period || '/month' : '/month'}
+                                /month
                               </span>
                            </div>
                             <div className="flex items-center justify-end space-x-1 text-yellow-400 mb-2">

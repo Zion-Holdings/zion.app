@@ -25,30 +25,6 @@ async function siteHasDomain(siteId) {
   return domains.some((d) => d.name === domain);
 }
 
-async function assignDomain(siteId) {
-  const res = await fetch(`https://api.netlify.com/api/v1/sites/${siteId}/domains`, {
-    method: 'POST',
-    headers,
-    body: JSON.stringify({ domain }),
-  });
-  if (!res.ok && res.status !== 422) {
-    throw new Error(`Assign domain failed: ${res.statusText}`);
-  }
-  // Return true if the domain was newly assigned (status 201)
-  return res.status === 201;
-}
-
-async function removeDomain(siteId) {
-  const res = await fetch(`https://api.netlify.com/api/v1/sites/${siteId}/domains/${domain}`, {
-    method: 'DELETE',
-    headers,
-  });
-  if (!res.ok && res.status !== 404) {
-    throw new Error(`Remove domain failed: ${res.statusText}`);
-  }
-  return res.status === 200;
-}
-
 export async function switchNetlifySite() {
   const greenActive = await siteHasDomain(greenId);
   const newSite = greenActive ? blueId : greenId;
@@ -56,22 +32,20 @@ export async function switchNetlifySite() {
 
   console.log(`Switching ${domain} from ${oldSite} to ${newSite}`);
 
-  let assigned = false;
-  try {
-    assigned = await assignDomain(newSite);
-    await removeDomain(oldSite);
-    console.log('DNS switch complete');
-  } catch (err) {
-    if (assigned) {
-      try {
-        await removeDomain(newSite);
-        console.log('Rolled back domain assignment to new site');
-      } catch (rollbackErr) {
-        console.error('Failed to rollback new site assignment:', rollbackErr);
-      }
-    }
-    throw err;
-  }
+  let res = await fetch(`https://api.netlify.com/api/v1/sites/${newSite}/domains`, {
+    method: 'POST',
+    headers,
+    body: JSON.stringify({ domain }),
+  });
+  if (!res.ok && res.status !== 422) throw new Error(`Assign domain failed: ${res.statusText}`);
+
+  res = await fetch(`https://api.netlify.com/api/v1/sites/${oldSite}/domains/${domain}`, {
+    method: 'DELETE',
+    headers,
+  });
+  if (!res.ok) throw new Error(`Remove domain failed: ${res.statusText}`);
+
+  console.log('DNS switch complete');
 }
 
 if (import.meta.url === `file://${process.argv[1]}`) {

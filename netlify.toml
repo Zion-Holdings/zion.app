@@ -105,6 +105,10 @@
   name = "ultrafast-front-orchestrator"
   schedule = "*/5 * * * *" # every 5 minutes
 
+[[scheduled.functions]]
+  name = "autonomous-meta-orchestrator"
+  schedule = "*/1 * * * *" # every minute
+
 # New ultra-fast tools
 [[scheduled.functions]]
   name = "features-capabilities-benefits-advertiser"
@@ -167,22 +171,6 @@
   schedule = "53 */6 * * *"
 
 [[scheduled.functions]]
-  name = "redirect-healer"
-  schedule = "*/15 * * * *"
-
-[[scheduled.functions]]
-  name = "sitemap-prioritizer"
-  schedule = "17 */6 * * *"
-
-[[scheduled.functions]]
-  name = "redirect-manager"
-  schedule = "*/30 * * * *"
-
-[[scheduled.functions]]
-  name = "a11y-audit-runner"
-  schedule = "*/20 * * * *"}  
-
-[[scheduled.functions]]
   name = "todo-summary-runner"
   schedule = "*/30 * * * *"
 
@@ -203,39 +191,21 @@
   name = "auto-scheduler"
   schedule = "*/15 * * * *" # every 15 minutes
 
-# From main (keep)
 [[scheduled.functions]]
-  name = "autonomous-innovation-generator"
-  schedule = "*/2 * * * *" # every 2 minutes
-
-[[scheduled.functions]]
-  name = "seo-audit-runner"
-  schedule = "17 */6 * * *"
-
-[[scheduled.functions]]
-  name = "ai-trends-radar-runner"
-  schedule = "0 * * * *"
-
-[[scheduled.functions]]
-  name = "website-search-index-runner"
-  schedule = "29 */4 * * *"
-
-# From feature branch (keep)
-[[scheduled.functions]]
-  name = "automation-guardian-runner"
+  name = "a11y-alt-text-runner"
   schedule = "*/10 * * * *" # every 10 minutes
 
 [[scheduled.functions]]
-  name = "auto-discovery-runner"
-  schedule = "*/30 * * * *" # every 30 minutes
-
-[[scheduled.functions]]
-  name = "cloud-autonomous-orchestrator-runner"
+  name = "metadata-optimizer-runner"
   schedule = "*/15 * * * *" # every 15 minutes
 
 [[scheduled.functions]]
-  name = "branch-cleanup-runner"
-  schedule = "0 3 * * *" # daily at 03:00 UTC
+  name = "seo-audit-runner"
+  schedule = "0 */2 * * *"
+
+[[scheduled.functions]]
+  name = "ai-trends-radar-runner"
+  schedule = "*/30 * * * *"
 
 [[scheduled.functions]]
   name = "stale-content-auditor-runner"
@@ -245,14 +215,81 @@
   name = "deps-auto-upgrade-runner"
   schedule = "7 */12 * * *"
 
+# New autonomous cloud scanners
 [[scheduled.functions]]
-  name = "content-gap-analyzer"
-  schedule = "*/7 * * * *"
+  name = "unused-media-scanner"
+  schedule = "*/10 * * * *"
 
 [[scheduled.functions]]
-  name = "cta-optimizer"
-  schedule = "*/9 * * * *"
+  name = "orphan-pages-detector"
+  schedule = "*/15 * * * *"
 
 [[scheduled.functions]]
-  name = "ultra-innovation-accelerator"
+  name = "component-size-report"
+  schedule = "*/5 * * * *"
+
+[[scheduled.functions]]
+  name = "license-compliance-auditor"
+  schedule = "0 2 * * 1"
+
+[[scheduled.functions]]
+  name = "pagespeed-insights-runner"
+  schedule = "11 */6 * * *" # every 6 hours, offset
+
+[[scheduled.functions]]
+  name = "knowledge-pack-runner"
+  schedule = "*/10 * * * *"
+
+[[scheduled.functions]]
+  name = "adaptive-orchestrator"
+  schedule = "*/5 * * * *"
+
+[[scheduled.functions]]
+  name = "site-404-map-runner"
+  schedule = "17 */6 * * *"
+
+[[scheduled.functions]]
+  name = "component-coupling-graph-runner"
+  schedule = "29 */6 * * *"
+
+[[scheduled.functions]]
+  name = "content-freshness-score-runner"
+  schedule = "*/10 * * * *"
+
+[[scheduled.functions]]
+  name = "internal-link-graph-runner"
+  schedule = "*/5 * * * *"
+
+[[scheduled.functions]]
+  name = "anchor-links-auto-fixer"
+  schedule = "*/5 * * * *"
+
+[[scheduled.functions]]
+  name = "pagespeed-insights-runner"
+  schedule = "11 */6 * * *"
+
+# New autonomous orchestrations
+[[scheduled.functions]]
+  name = "roadmap-curator"
+  schedule = "*/30 * * * *"
+
+[[scheduled.functions]]
+  name = "revenue-ideas-lab"
+  schedule = "7 */6 * * *"
+
+[[scheduled.functions]]
+  name = "auto-discovery-runner"
+  schedule = "*/15 * * * *"
+
+[[scheduled.functions]]
+  name = "code-smell-audit-runner"
+  schedule = "23 */6 * * *"
+
+[[scheduled.functions]]
+  name = "duplicate-media-finder-runner"
+  schedule = "0 2 * * *"
+
+# Newly added intelligent meta orchestrator
+[[scheduled.functions]]
+  name = "intelligent-meta-orchestrator"
   schedule = "*/3 * * * *"

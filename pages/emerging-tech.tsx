@@ -1,7 +1,8 @@
 import React from 'react';
-import Layout from '../components/layout/Layout';
-import { Zap, Sparkles, Brain, Atom, Rocket, Target, Users, Award, Clock, CheckCircle } from 'lucide-react';
-import Link from 'next/link';
+import Head from 'next/head';
+import UltraAdvancedFuturisticBackground from '../components/ui/UltraAdvancedFuturisticBackground';
+import { Button } from '../components/ui/Button';
+import { Rocket, Network, Boxes, CheckCircle } from 'lucide-react';
 
 export default function EmergingTechnology() {
   return (
@@ -191,20 +192,11 @@ export default function EmergingTechnology() {
                 </div>
               </div>
             </div>
-          </div>
-        </section>
-
-        {/* Technology Benefits */}
-        <section className="py-20 px-4 bg-gradient-to-r from-yellow-500/5 to-orange-500/5">
-          <div className="max-w-7xl mx-auto">
-            <div className="text-center mb-16">
-              <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-                Why Choose Emerging Technology?
-              </h2>
-              <p className="text-xl text-gray-400 max-w-3xl mx-auto">
-                Stay ahead of the competition with cutting-edge technologies that provide 
-                unprecedented advantages and capabilities.
-              </p>
+            <h1 className="text-5xl md:text-7xl font-bold bg-gradient-to-r from-cyan-400 via-purple-500 to-pink-500 bg-clip-text text-transparent mb-4">Emerging Technology</h1>
+            <p className="text-gray-300 text-lg max-w-3xl mx-auto">Accelerate innovation responsibly across blockchain, IoT/edge, 5G, and spatial computing.</p>
+            <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
+              <Link href="/contact" className="px-8 py-4">Start a Pilot</Button>
+              <Link href="/market-pricing" variant="outline" className="px-8 py-4">See Market Pricing</Button>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">

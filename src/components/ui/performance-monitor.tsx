@@ -16,7 +16,7 @@ interface PerformanceMetrics {
 export function PerformanceMonitor() {
   const { user } = useAuth();
   const isAdmin = user?.userType === 'admin' || user?.role === 'admin';
-  const isAllowed = process.env.NODE_ENV !== 'production' || isAdmin;
+  const isAllowed = process.env.NODE_ENV !== 'production' || isAdmin || localStorage.getItem('performance-monitoring') === 'true';
 
   if (!isAllowed) {
     return null;

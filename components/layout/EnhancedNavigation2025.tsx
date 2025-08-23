@@ -2,14 +2,12 @@ import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { motion, AnimatePresence } from 'framer-motion';
 import { 
-  Menu, ChevronDown, X, Phone, Mail, ArrowRight,
-  Brain, Rocket, Target, Atom, Shield,
-  DollarSign, BarChart3, Globe, Grid, Heart, Database,
-  Cpu, Palette, Cloud, Network, TrendingUp, ShoppingCart, Settings, Building, Monitor,
-  Zap, Eye, Infinity, Sparkles, Users, Lock, Code, Server, Layers, Globe2, Truck,
-  Home, Info, FileText, Briefcase, BookOpen, Calendar, MessageCircle, ShieldCheck,
-  Zap as ZapIcon, Star, Award, Lightbulb, Wrench, Cog, BarChart, PieChart
+  Menu, X, ChevronDown, Phone, Mail, 
+  Globe, Shield, Cpu, Brain, Rocket, Zap, BarChart3,
+  Home, Briefcase, Users, FileText, MessageCircle
 } from 'lucide-react';
+import SearchComponent from '../SearchComponent';
+import ThemeToggle from '../ThemeToggle';
 
 interface NavigationItem {
   name: string;
@@ -161,16 +159,7 @@ const navigationItems: NavigationItem[] = [
 const EnhancedNavigation2025: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
-  const [isScrolled, setIsScrolled] = useState(false);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 10);
-    };
-
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  // Removed unused isScrolled state and duplicate scroll handler
 
   const toggleDropdown = (name: string) => {
     setActiveDropdown(activeDropdown === name ? null : name);
@@ -180,11 +169,7 @@ const EnhancedNavigation2025: React.FC = () => {
     setActiveDropdown(null);
   };
 
-  const contactInfo = {
-    phone: '+1 302 464 0950',
-    email: 'kleber@ziontechgroup.com',
-    address: '364 E Main St STE 1008 Middletown DE 19709'
-  };
+
 
   return (
     <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
@@ -299,11 +284,38 @@ const EnhancedNavigation2025: React.FC = () => {
                               </Link>
                             ))}
                           </div>
-                        </div>
-                      </motion.div>
-                    )}
-                  </AnimatePresence>
-                )}
+                        </motion.div>
+                      )}
+                    </AnimatePresence>
+                  )}
+                </div>
+              ))}
+            </div>
+
+            {/* Right Side Actions */}
+            <div className="hidden lg:flex items-center gap-4">
+              {/* Search Component */}
+              <SearchComponent />
+
+              {/* Theme Toggle */}
+              <ThemeToggle />
+
+              {/* Action Buttons */}
+              <div className="flex items-center gap-3">
+                <Link
+                  href="/contact"
+                  className="px-6 py-2 border border-cyan-400 text-cyan-400 rounded-xl hover:bg-cyan-400 hover:text-black transition-all duration-200 font-medium focus:outline-none focus:ring-2 focus:ring-cyan-400/50"
+                  aria-label="Get a quote for our services"
+                >
+                  Get Quote
+                </Link>
+                <Link
+                  href="/get-started"
+                  className="px-6 py-2 bg-gradient-to-r from-cyan-500 to-blue-600 text-white rounded-xl hover:from-cyan-600 hover:to-blue-700 transition-all duration-200 font-medium focus:outline-none focus:ring-2 focus:ring-cyan-500/50"
+                  aria-label="Get started with Zion Tech Group"
+                >
+                  Get Started
+                </Link>
               </div>
             ))}
           </div>
@@ -327,6 +339,7 @@ const EnhancedNavigation2025: React.FC = () => {
           {/* Mobile menu button */}
           <div className="lg:hidden">
             <button
+              className="lg:hidden p-2 text-gray-300 hover:text-white transition-colors focus:outline-none focus:ring-2 focus:ring-cyan-500/50 rounded-lg"
               onClick={() => setIsOpen(!isOpen)}
               className="p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
             >

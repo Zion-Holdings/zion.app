@@ -8,7 +8,7 @@ import { Bell, Calendar, X } from 'lucide-react';
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { useProjects } from "@/hooks/useProjects";
-import { Project } from "@/types/projects";
+import type { Project } from "@/types/projects";
 
 export function ProjectOfferBanner() {
   const router = useRouter();

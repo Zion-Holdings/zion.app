@@ -1,4 +1,3 @@
-
 import { useQuery } from "@tanstack/react-query";
 import { supabase } from "@/integrations/supabase/client";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
@@ -22,6 +21,10 @@ export function PageViewsTable() {
   const { data: pageViews, isLoading } = useQuery({
     queryKey: ['page-views-data', timeRange],
     queryFn: async () => {
+      if (!supabase) {
+        throw new Error('Supabase client not available');
+      }
+      
       const { days } = timeRangeToInterval[timeRange];
       
       // Get top pages by views

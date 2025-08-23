@@ -6,11 +6,11 @@ import {logErrorToProduction} from '@/utils/productionLogger';
 const PROD_DOMAIN = 'app.ziontechgroup.com';
 
 function isProdDomain() {
-  const context = process.env.CONTEXT;
+  const context = process.env['CONTEXT'];
   if (context && context !== 'production') {
     return false;
   }
-  const url = process.env.URL || '';
+  const url = process.env['URL'] || '';
   try {
     return new URL(url).hostname === PROD_DOMAIN;
   } catch {
@@ -19,14 +19,14 @@ function isProdDomain() {
 }
 
 async function handler(req: any, res: any) {
-  if (req.method !== 'POST') {
+  if (req['method'] !== 'POST') {
     res.statusCode = 405;
     res.setHeader('Allow', 'POST');
     res.end('Method Not Allowed');
     return;
   }
 
-  const { amount, userId } = req.body || {};
+  const { amount, userId } = req['body'] || {};
   if (typeof amount !== 'number') {
     res.statusCode = 400;
     res.json({ error: 'Invalid amount' });
@@ -34,20 +34,20 @@ async function handler(req: any, res: any) {
   }
 
   try {
-    const liveKey = process.env.STRIPE_SECRET_KEY || '';
-    const testKey = process.env.STRIPE_TEST_SECRET_KEY || liveKey;
+    const liveKey = process.env['STRIPE_SECRET_KEY'] || '';
+    const testKey = process.env['STRIPE_TEST_SECRET_KEY'] || liveKey;
     const useTest =
-      process.env.STRIPE_TEST_MODE === 'true' ||
+      process.env['STRIPE_TEST_MODE'] === 'true' ||
       (!isProdDomain() && liveKey.startsWith('sk_live'));
 
-    if (!isProdDomain() && liveKey.startsWith('sk_live') && !process.env.STRIPE_TEST_SECRET_KEY) {
+    if (!isProdDomain() && liveKey.startsWith('sk_live') && !process.env['STRIPE_TEST_SECRET_KEY']) {
       throw new Error('Refusing to use live Stripe key on non-production domain');
     }
 
     // This route uses the official Stripe Node.js SDK for server-to-server communication.
     // The getStripe() client-side helper (from src/utils/getStripe.ts) and its
     // advancedFraudSignals option are not applicable to this server-side implementation.
-    const stripe = new Stripe(useTest ? testKey : liveKey, {
+    const stripe = new (Stripe as any)(useTest ? testKey : liveKey, {
       apiVersion: '2023-10-16',
     });
     const intent = await stripe.paymentIntents.create({

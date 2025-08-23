@@ -106,7 +106,7 @@ export const QuotesFilter: React.FC<QuotesFilterProps> = ({
                 <CalendarComponent
                   initialFocus
                   mode="range"
-                  defaultMonth={dateRange?.from}
+                  {...(dateRange?.from ? { defaultMonth: dateRange.from } : {})}
                   selected={dateRange}
                   onSelect={setDateRange}
                   numberOfMonths={2}

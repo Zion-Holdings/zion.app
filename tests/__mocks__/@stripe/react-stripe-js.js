@@ -1,4 +1,4 @@
-// eslint-disable-next-line @typescript-eslint/no-require-imports
+ 
 // tests/__mocks__/@stripe/react-stripe-js.js
 import React from 'react';
 

@@ -2,15 +2,16 @@ import { readFileSync, writeFileSync } from 'fs';
 import { resolve } from 'path';
 import { build } from 'esbuild';
 import React from 'react';
-import { HelmetProvider } from 'react-helmet-async';
 import { renderToString } from 'react-dom/server';
+import pkg from 'react-helmet-async';
+const { HelmetProvider } = pkg;
 
 const aliasPlugin = {
   name: 'alias',
   setup(build) {
-    build.onResolve({ filter: /^@\// }, (args) => {
-      return { path: resolve('src', args.path.slice(2)) };
-    });
+    build.onResolve({ filter: /^@\// }, args => ({
+      path: resolve('src', args.path.slice(2)),
+    }));
   },
 };
 
@@ -20,8 +21,8 @@ async function prerender() {
     bundle: true,
     platform: 'node',
     format: 'esm',
-    write: false,
     plugins: [aliasPlugin],
+    write: false,
   });
 
   const text = result.outputFiles[0].text;
@@ -29,11 +30,20 @@ async function prerender() {
   const Home = mod.default;
   const helmetContext = {};
   const html = renderToString(
-    React.createElement(HelmetProvider, { context: helmetContext }, React.createElement(Home))
+    React.createElement(
+      HelmetProvider,
+      { context: helmetContext },
+      React.createElement(Home)
+    )
   );
 
   const template = readFileSync(resolve('dist/index.html'), 'utf8');
-  const rendered = template.replace('<!--app-html-->', html);
+  const head = helmetContext.helmet
+    ? `${helmetContext.helmet.title.toString()}${helmetContext.helmet.meta.toString()}${helmetContext.helmet.link.toString()}`
+    : '';
+  const rendered = template
+    .replace('<!--app-html-->', html)
+    .replace('</head>', `${head}</head>`);
   writeFileSync(resolve('dist/index.html'), rendered);
   console.log('Pre-rendered homepage to dist/index.html');
 }

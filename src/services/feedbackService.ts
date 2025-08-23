@@ -34,8 +34,6 @@ export function saveFeedback(entry: Omit<FeedbackEntry, 'id' | 'createdAt'>): Fe
   return newEntry;
 }
 
-import axios from 'axios';
-
 export async function postFeedback(entry: Omit<FeedbackEntry, 'id' | 'createdAt'>) {
   try {
     const res = await fetch('/api/feedback', {
@@ -48,8 +46,9 @@ export async function postFeedback(entry: Omit<FeedbackEntry, 'id' | 'createdAt'
       throw new Error(data?.error || `Error ${res.status}: Failed to submit feedback`);
     }
     return data;
-  } catch (err: any) {
-    throw new Error(err.message || 'Failed to submit feedback');
+  } catch (err) {
+    const message = err instanceof Error ? err.message : String(err);
+    throw new Error(message || 'Failed to submit feedback');
   }
 }
 

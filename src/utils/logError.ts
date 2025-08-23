@@ -38,8 +38,14 @@ export function logError(
     errorToSend = new Error(message);
     try {
       // Preserve original error's stack or name if they exist (though less likely for non-Errors)
-      errorToSend.stack = (error as any)?.stack || errorToSend.stack;
-      errorToSend.name = (error as any)?.name || errorToSend.name;
+      if (typeof error === 'object' && error !== null) {
+        if ('stack' in error && typeof (error as { stack?: unknown }).stack === 'string') {
+          errorToSend.stack = (error as { stack: string }).stack;
+        }
+        if ('name' in error && typeof (error as { name?: unknown }).name === 'string') {
+          errorToSend.name = (error as { name: string }).name;
+        }
+      }
     } catch {
       // ignore if properties can't be set
     }
@@ -68,7 +74,7 @@ export function logError(
           }
         }
       }).catch(ddImportError => {
-        logWarn('Failed to import or use Datadog logger:', { data: ddImportError });
+        logWarn('Failed to import or use Datadog logger:', { data:  { data: ddImportError } });
       });
 
       // LogRocket logging
@@ -82,7 +88,7 @@ export function logError(
           }
         }
       }).catch(lrError => {
-        logWarn('Failed to log error to LogRocket:', { data: lrError });
+        logWarn('Failed to log error to LogRocket:', { data:  { data: lrError } });
       });
     }
   } catch (err) {
@@ -91,13 +97,32 @@ export function logError(
   }
 
   try {
+    let filename: string | null = null;
+    let lineno: number | null = null;
+    let colno: number | null = null;
+    // Basic stack parsing for filename, lineno, colno (optional, can be enhanced)
+    if (errorToSend.stack) {
+      const stackLines: string[] = errorToSend.stack.split('\n');
+      const regex = /\(?(.+?):(\d+):(\d+)\)?$/;
+      // Try to find a relevant line, skipping anonymous or internal calls if possible
+      for (const line of stackLines) {
+        if (line.includes('node_modules')) continue; // Simple heuristic to skip library code
+        const match = regex.exec(line.trim());
+        if (match) {
+          filename = match[1]?.trim() || null;
+          lineno = match[2] ? parseInt(match[2], 10) : null;
+          colno = match[3] ? parseInt(match[3], 10) : null;
+          break;
+        }
+      }
+    }
     const errorDetails = {
       message: errorToSend.message,
-      stack: errorToSend.stack,
-      componentStack: context?.componentStack as string | undefined,
-      filename: undefined as string | undefined, // Potentially parse from stack if needed and not too complex
-      lineno: undefined as number | undefined,   // Potentially parse from stack
-      colno: undefined as number | undefined,     // Potentially parse from stack
+      stack: errorToSend.stack || '',
+      componentStack: typeof context?.componentStack === 'string' ? context.componentStack : '',
+      filename,
+      lineno,
+      colno,
       url: typeof window !== 'undefined' ? window.location.href : '',
       userAgent: typeof navigator !== 'undefined' ? navigator.userAgent : '',
       timestamp: new Date().toISOString(),
@@ -106,23 +131,6 @@ export function logError(
       traceId,
       ...(context && { customContext: context }),
     };
-
-    // Basic stack parsing for filename, lineno, colno (optional, can be enhanced)
-    if (errorToSend.stack) {
-      const stackLines = errorToSend.stack.split('\n');
-      const regex = /\(?(.+?):(\d+):(\d+)\)?$/;
-      // Try to find a relevant line, skipping anonymous or internal calls if possible
-      for (const line of stackLines) {
-        if (line.includes('node_modules')) continue; // Simple heuristic to skip library code
-        const match = regex.exec(line.trim());
-        if (match) {
-          errorDetails.filename = match[1]?.trim();
-          errorDetails.lineno = parseInt(match[2] || '0', 10);
-          errorDetails.colno = parseInt(match[3] || '0', 10);
-          break;
-        }
-      }
-    }
 
     // Non-blocking call
     sendErrorToBackend(errorDetails).catch(err => {

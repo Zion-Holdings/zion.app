@@ -2,7 +2,7 @@ import React from 'react';
 import SEO from '../components/SEO';
 import { Phone, Mail, MapPin, Check, ArrowRight, Activity } from 'lucide-react';
 import UltraAdvancedFuturisticBackground from '../components/ui/UltraAdvancedFuturisticBackground';
-import Button from '../components/ui/Button';
+import { Button } from '../components/ui/Button';
 import { enhancedRealMicroSaasServices } from '../data/enhanced-real-micro-saas-services';
 
 export default function UptimeSLOMonitorPage() {
@@ -11,11 +11,7 @@ export default function UptimeSLOMonitorPage() {
 
   return (
     <UltraAdvancedFuturisticBackground>
-      <SEO data={{
-        pageTitle: `${service.name} - Zion Tech Group`,
-        pageDescription: service.description,
-        pageKeywords: ["uptime monitoring", "SLO monitoring", "service level objectives", "availability", "performance monitoring", "Zion Tech Group"]
-      }} />
+      <SEO title={`${service.name} - Zion Tech Group`} description={service.description} canonicalUrl="https://ziontechgroup.com/uptime-slo-monitor/" />
       <div className="min-h-screen pt-24 pb-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-10">
@@ -39,7 +35,7 @@ export default function UptimeSLOMonitorPage() {
                   <div className="text-slate-400">{service.trialDays}-day free trial • Setup: {service.setupTime}</div>
                 </div>
               </div>
-              <Button href="/contact" variant="primary" size="lg" className="w-full">Start Trial<ArrowRight className="w-5 h-5 ml-2" /></Button>
+              <Link href="/contact" variant="quantum" size="lg" className="w-full">Start Trial<ArrowRight className="w-5 h-5 ml-2" /></Button>
               <div className="mt-6 space-y-3 text-sm text-slate-300">
                 <div className="flex items-center space-x-2"><Phone className="w-4 h-4 text-cyan-400" /><span>{service.contactInfo.mobile}</span></div>
                 <div className="flex items-center space-x-2"><Mail className="w-4 h-4 text-purple-400" /><span>{service.contactInfo.email}</span></div>

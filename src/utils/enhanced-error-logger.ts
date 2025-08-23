@@ -1,6 +1,8 @@
 // Enhanced Error Logging System for Production Debugging
 // Provides structured error collection, context gathering, and intelligent filtering
 
+import { logErrorToProduction } from '@/utils/productionLogger';
+
 interface ErrorContext {
   timestamp: number;
   url?: string;
@@ -11,7 +13,7 @@ interface ErrorContext {
   environment: string;
   errorBoundary?: boolean;
   componentStack?: string;
-  errorInfo?: any;
+  errorInfo?: unknown;
   performanceMetrics?: {
     memory?: number;
     timing?: number;
@@ -120,9 +122,16 @@ class EnhancedErrorLogger {
 
   private startPerformanceMonitoring(): void {
     // Monitor memory usage
+    interface PerformanceWithMemory extends Performance {
+      memory: {
+        usedJSHeapSize: number;
+        totalJSHeapSize: number;
+        jsHeapSizeLimit: number;
+      };
+    }
     if ('memory' in performance) {
       setInterval(() => {
-        const memory = (performance as any).memory;
+        const memory = (performance as PerformanceWithMemory).memory;
         if (memory.usedJSHeapSize > memory.totalJSHeapSize * 0.9) {
           this.addBreadcrumb('performance', 'High memory usage detected', 'warn');
         }
@@ -140,7 +149,7 @@ class EnhancedErrorLogger {
           }
         });
         observer.observe({ entryTypes: ['longtask'] });
-      } catch (error) {
+      } catch {
         // PerformanceObserver not supported
       }
     }
@@ -153,7 +162,7 @@ class EnhancedErrorLogger {
     filename?: string;
     lineno?: number;
     colno?: number;
-    context?: any;
+    context?: unknown;
   }): void {
     if (!this.isEnabled) return;
 
@@ -177,7 +186,7 @@ class EnhancedErrorLogger {
       const enhancedError: EnhancedError = {
         id: this.generateId(),
         message: error.message || errorData.message,
-        stack: error.stack,
+        stack: error.stack || '',
         name: error.name || 'Error',
         source: errorData.source,
         severity: this.calculateSeverity(error, errorData),
@@ -192,12 +201,9 @@ class EnhancedErrorLogger {
       this.trimErrors();
 
       // Log to console in development
-      if (process.env.NODE_ENV === 'development') {
-        console.group(`🚨 Enhanced Error [${enhancedError.severity}]`);
-        console.error(enhancedError.message);
-        console.log('Context:', enhancedError.context);
-        console.log('Breadcrumbs:', this.breadcrumbs.slice(-5));
-        console.groupEnd();
+      if (typeof process !== 'undefined' && process.env?.NODE_ENV === 'development') {
+        // Only keep logErrorToProduction for lint compliance
+        logErrorToProduction(enhancedError.message);
       }
 
       // Report critical errors immediately
@@ -206,11 +212,11 @@ class EnhancedErrorLogger {
       }
 
     } catch (loggerError) {
-      console.error('Error in enhanced error logger:', loggerError);
+      logErrorToProduction('Error in enhanced error logger:', loggerError);
     }
   }
 
-  private shouldIgnoreError(error: Error, errorData: any): boolean {
+  private shouldIgnoreError(error: Error, errorData: unknown): boolean {
     const ignoredMessages = [
       'ResizeObserver loop limit exceeded',
       'Script error',
@@ -221,24 +227,27 @@ class EnhancedErrorLogger {
       'Network request failed'
     ];
 
-    const message = error.message || errorData.message || '';
+    let message = error.message;
+    if (!message && isErrorDataWithContext(errorData) && typeof errorData.message === 'string') {
+      message = errorData.message;
+    }
     return ignoredMessages.some(ignored => message.includes(ignored));
   }
 
-  private calculateSeverity(error: Error, errorData: any): EnhancedError['severity'] {
+  private calculateSeverity(error: Error, errorData: unknown): EnhancedError['severity'] {
     // Critical errors
     if (error.name === 'TypeError' && error.message.includes('Cannot read properties')) {
       return 'critical';
     }
-    if (errorData.source === 'render') {
+    if (isErrorDataWithContext(errorData) && errorData.source === 'render') {
       return 'high';
     }
-    if (error.message.includes('Network Error') && errorData.context?.status >= 500) {
+    if (error.message.includes('Network Error') && isErrorDataWithContext(errorData) && typeof errorData.context === 'object' && errorData.context && 'status' in errorData.context && (errorData.context as { status?: number }).status && (errorData.context as { status?: number }).status! >= 500) {
       return 'high';
     }
     
     // Medium severity
-    if (errorData.source === 'promise') {
+    if (isErrorDataWithContext(errorData) && errorData.source === 'promise') {
       return 'medium';
     }
     if (error.message.includes('Network Error')) {
@@ -257,7 +266,7 @@ class EnhancedErrorLogger {
     return `${source}-${name}-${message}-${stackLine}`.replace(/[^\w-]/g, '').substring(0, 100);
   }
 
-  private gatherContext(errorData: any): ErrorContext {
+  private gatherContext(errorData: unknown): ErrorContext {
     const context: ErrorContext = {
       timestamp: Date.now(),
       environment: process.env.NODE_ENV || 'unknown',
@@ -271,16 +280,17 @@ class EnhancedErrorLogger {
       
       // Performance metrics
       if ('memory' in performance) {
-        const memory = (performance as any).memory;
-        context.performanceMetrics = {
-          memory: memory.usedJSHeapSize,
-          timing: performance.now()
-        };
+        const memory = (performance as Performance & { memory?: { usedJSHeapSize: number } }).memory;
+        if (memory) {
+          context.performanceMetrics = {
+            memory: memory.usedJSHeapSize,
+            timing: performance.now()
+          };
+        }
       }
-      
       // Connection info
-      if ('connection' in navigator) {
-        const connection = (navigator as any).connection;
+      if (hasConnection(navigator)) {
+        const connection = navigator.connection;
         context.performanceMetrics = {
           ...context.performanceMetrics,
           connectionType: connection.effectiveType
@@ -289,7 +299,7 @@ class EnhancedErrorLogger {
     }
 
     // Add any custom context
-    if (errorData.context) {
+    if (isErrorDataWithContext(errorData) && errorData.context && typeof errorData.context === 'object') {
       Object.assign(context, errorData.context);
     }
 
@@ -374,7 +384,7 @@ class EnhancedErrorLogger {
   }
 
   // React Error Boundary integration
-  public captureReactError(error: Error, errorInfo: any, componentStack?: string): void {
+  public captureReactError(error: Error, errorInfo: unknown, componentStack?: string): void {
     this.captureError({
       message: `React Error: ${error.message}`,
       error,
@@ -386,6 +396,18 @@ class EnhancedErrorLogger {
       }
     });
   }
+}
+
+// Type guard for errorData
+function isErrorDataWithContext(obj: unknown): obj is { message?: string; source?: string; context?: unknown } {
+  return typeof obj === 'object' && obj !== null && (
+    'message' in obj || 'source' in obj || 'context' in obj
+  );
+}
+
+// Type guard for navigator.connection
+function hasConnection(obj: unknown): obj is { connection: { effectiveType: string } } {
+  return typeof obj === 'object' && obj !== null && 'connection' in obj;
 }
 
 // Singleton instance

@@ -29,6 +29,19 @@ export { advancedITInfrastructureServices } from '../data/2025-advanced-it-infra
 // Advanced AI automation services
 export { advancedAIAutomationServices } from '../data/2025-advanced-ai-automation-services';
 
+// Advanced AI & IT Services
+export { aiCybersecurityService } from './aiCybersecurityService';
+export { aiDevOpsService } from './aiDevOpsService';
+export { aiDataEngineeringService } from './aiDataEngineeringService';
+export { aiFintechService } from './aiFintechService';
+export { aiHealthcareService } from './aiHealthcareService';
+
+// New AI-powered services
+export { aiCybersecurityService } from './aiCybersecurityService';
+export { aiDevOpsAutomationService } from './aiDevOpsAutomationService';
+export { aiFinancialAnalyticsService } from './aiFinancialAnalyticsService';
+export { aiHealthcareAnalyticsService } from './aiHealthcareAnalyticsService';
+
 // Export types
 export type {
   ContentTemplate,
@@ -53,7 +66,7 @@ export type {
 } from './aiChatbotService';
 
 export type {
-  DataSource,
+  DataSource as BIDataSource,
   Dashboard,
   Widget,
   Filter,
@@ -95,7 +108,7 @@ export type {
   LegalDocument,
   ContractTemplate,
   LegalReview,
-  ComplianceCheck,
+  ComplianceCheck as LegalComplianceCheck,
   DocumentGenerationRequest
 } from './aiLegalService';
 
@@ -204,12 +217,107 @@ export type {
 } from './aiDataAnalyticsService';
 
 export type {
+  SmartContract,
+  NFT,
+  NFTMetadata,
+  NFTAttribute,
+  DeFiPool,
+  BlockchainTransaction,
+  TransactionResult,
+  BlockchainStats,
+  WalletAnalytics,
+  NetworkStatus
+} from './blockchainService';
+
+// Advanced AI & IT Service types
+export type {
   SecurityThreat,
   VulnerabilityAssessment,
   SecurityIncident,
+  SecurityEvent,
   SecurityPolicy,
-  ComplianceReport,
-  SecurityMetrics,
-  SecurityScanRequest,
-  SecurityScanResponse
+  SecurityRule,
+  ComplianceReport as SecurityComplianceReport,
+  ComplianceRequirement
 } from './aiCybersecurityService';
+
+export type {
+  PipelineConfig,
+  PipelineStage,
+  PipelineTrigger,
+  PerformanceThresholds,
+  InfrastructureConfig,
+  DeploymentMetrics,
+  CodeQualityReport,
+  SecurityScanResult,
+  Vulnerability,
+  ComplianceCheck,
+  MonitoringAlert
+} from './aiDevOpsService';
+
+export type {
+  DataPipeline,
+  DataSource,
+  DataDestination,
+  DataTransformation,
+  PipelineSchedule,
+  PipelineMetrics,
+  DataQualityMetrics,
+  DataQualityIssue,
+  CostMetrics,
+  ConnectionConfig,
+  DataSchema,
+  SchemaField,
+  SchemaIndex,
+  SchemaConstraint,
+  PartitioningStrategy,
+  ValidationRule,
+  DataCatalog,
+  Dataset,
+  DataLineage,
+  DatasetUsage,
+  QueryStats
+} from './aiDataEngineeringService';
+
+export type {
+  FinancialInstrument,
+  Portfolio,
+  PortfolioPosition,
+  RiskMetrics,
+  PerformancePoint,
+  RebalancingSchedule,
+  TradingSignal,
+  MarketAnalysis,
+  TechnicalIndicator,
+  FundamentalFactor,
+  AIInsight,
+  RiskAssessment,
+  RiskFactor as FintechRiskFactor,
+  StressTestResult,
+  ComplianceReport,
+  ComplianceViolation
+} from './aiFintechService';
+
+export type {
+  Patient,
+  MedicalRecord,
+  Medication,
+  VitalSigns,
+  RiskFactor,
+  InsuranceInfo,
+  EmergencyContact,
+  Diagnosis,
+  AIAnalysis,
+  DifferentialDiagnosis,
+  TreatmentPlan,
+  FollowUpSchedule,
+  FollowUpAppointment,
+  HealthAnalytics,
+  RiskAssessment as HealthRiskAssessment,
+  TrendAnalysis,
+  VitalSignsTrend,
+  MedicationTrend,
+  SymptomTrend,
+  HealthTrend,
+  PredictiveInsight
+} from './aiHealthcareService';

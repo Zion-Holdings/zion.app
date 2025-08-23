@@ -1,31 +1,52 @@
 import type { GetServerSideProps } from 'next';
 import type { ProductListing } from '@/types/listings';
 import { MARKETPLACE_LISTINGS } from '@/data/marketplaceData';
-import { INITIAL_MARKETPLACE_PRODUCTS } from '@/data/initialMarketplaceProducts';
 import { SERVICES } from '@/data/servicesData';
-import * as Sentry from '@sentry/nextjs';
 import Head from 'next/head';
 import Link from 'next/link';
 import { RatingStars } from '@/components/RatingStars';
 import ProductReviews from '@/components/ProductReviews';
-import { ProductGallery } from '@/components/gallery/ProductGallery';
-import { useRouter } from 'next/router';
-import { useDispatch } from 'react-redux';
-import type { AppDispatch } from '@/store';
-import { addItem } from '@/store/cartSlice';
-import { toast } from '@/hooks/use-toast';
-import { getBreadcrumbsForPath } from '@/utils/routeUtils';
-import BreadcrumbJsonLd from '@/components/BreadcrumbJsonLd';
-import { logInfo, logWarn, logErrorToProduction } from '@/utils/productionLogger';
-import { fetchProducts, validateProductData, ensureProductIntegrity } from '@/services/marketplace';
-import { AppLayout } from '@/layout/AppLayout';
-import {
-  Breadcrumb,
-  BreadcrumbList,
-  BreadcrumbItem,
-  BreadcrumbLink,
-  BreadcrumbSeparator,
-} from '@/components/ui/breadcrumb';
+import type { Product } from '@/types/product';
+
+// Alias the Prisma generated Product model type.
+type ProductModel = Product;
+// Define ProductWithReviewStats here or import from a shared types file
+// This should match the type returned by `/api/products/[productId]/details`
+export type ProductWithReviewStats = ProductModel & {
+  averageRating: number | null;
+  reviewCount: number;
+  // Adding fields to match the enriched type from the API / product card expectations
+  title?: string; // Usually mapped from product.name
+  category?: string;
+  images?: { url: string; alt?: string }[];
+  price?: number | null;
+  currency?: string;
+  tags?: string[];
+};
+
+interface RatingStarsProps {
+  value: number;
+  count?: number;
+}
+
+// Using a more robust placeholder that handles null/undefined values for rating
+const RatingStarsDisplay: React.FC<RatingStarsProps> = ({ value, count }) => {
+  const ratingValue = value ?? 0; // Default to 0 if value is null
+  const roundedRating = Math.round(ratingValue);
+  return (
+    <div className="flex items-center">
+      {Array.from({ length: 5 }, (_, i) => (
+        <span key={i} className={i < roundedRating ? 'text-yellow-400' : 'text-gray-300'}>★</span>
+      ))}
+      <span className="ml-1 text-sm text-gray-600 dark:text-gray-400">
+        {ratingValue > 0 ? `${ratingValue.toFixed(1)}/5` : 'Not rated'}
+      </span>
+      {typeof count !== 'undefined' && (
+        <span className="ml-2 text-sm text-gray-600 dark:text-gray-400">({count} reviews)</span>
+      )}
+    </div>
+  );
+};
 
 interface ListingPageProps {
   listing: ProductListing | null;
@@ -89,7 +110,11 @@ const ListingPage: React.FC<ListingPageProps> = ({ listing }) => {
         ) : null}
         {typeof listing.rating === 'number' && (
           <div className="mb-2">
-            <RatingStars value={listing.rating} count={listing.reviewCount} />
+            {typeof listing.reviewCount === 'number' ? (
+              <RatingStars value={listing.rating} count={listing.reviewCount} />
+            ) : (
+              <RatingStars value={listing.rating} />
+            )}
           </div>
         )}
         <div className="font-bold mb-2">
@@ -116,12 +141,6 @@ const ListingPage: React.FC<ListingPageProps> = ({ listing }) => {
 export const getServerSideProps: GetServerSideProps<ListingPageProps> = async ({ params }: { params: { slug: string } }) => {
   const slug = params?.slug as string;
   let listing: ProductListing | null = null;
-
-  Sentry.addBreadcrumb({
-    category: 'ssr',
-    message: `getServerSideProps for Marketplace Listing: ${slug}`,
-    level: 'info',
-  });
 
   try {
     // Step 1: Try to fetch directly by ID from API
@@ -153,7 +172,6 @@ export const getServerSideProps: GetServerSideProps<ListingPageProps> = async ({
             author: { name: 'Unknown', id: 'unknown' },
             availability: 'Available',
           } as ProductListing;
-          Sentry.addBreadcrumb({ message: `Found product ${slug} via API direct ID match.` });
         } else {
           // Handle case where product cannot be ensured
           return {
@@ -162,23 +180,34 @@ export const getServerSideProps: GetServerSideProps<ListingPageProps> = async ({
         }
       }
     } catch (apiError) {
-      logWarn('API fetch for product ${slug} (attempting ID match) failed:', { data: apiError });
-      Sentry.captureMessage(`API fetch for product ${slug} (attempting ID match) failed`);
-      Sentry.addBreadcrumb({ message: `API error: ${apiError}` });
+      logWarn('API fetch for product ${slug} (attempting ID match) failed:', { data:  { data: apiError } });
+      if (typeof window === 'undefined') {
+        const Sentry = await import('@sentry/nextjs');
+        Sentry.captureMessage(`API fetch for product ${slug} (attempting ID match) failed`);
+      }
+      if (typeof window === 'undefined') {
+        const Sentry = await import('@sentry/nextjs');
+        Sentry.addBreadcrumb({ message: `API error: ${apiError}` });
+      }
     }
 
     // Step 2: If not found via direct API ID lookup, try static data by ID
     if (!listing) {
-      Sentry.addBreadcrumb({ message: `Product ${slug} not found via API ID match. Trying static data.` });
+      if (typeof window === 'undefined') {
+        const Sentry = await import('@sentry/nextjs');
+        Sentry.addBreadcrumb({ message: `Product ${slug} not found via API ID match. Trying static data.` });
+      }
       const staticListing =
-        INITIAL_MARKETPLACE_PRODUCTS.find((l) => l.id === slug) ||
         MARKETPLACE_LISTINGS.find((l) => l.id === slug) ||
         SERVICES.find((s) => s.id === slug) ||
         null;
 
       if (staticListing) {
         listing = staticListing as ProductListing; // Assuming static data is already in correct format
-        Sentry.addBreadcrumb({ message: `Found product ${slug} in static data.` });
+        if (typeof window === 'undefined') {
+          const Sentry = await import('@sentry/nextjs');
+          Sentry.addBreadcrumb({ message: `Found product ${slug} in static data.` });
+        }
       }
     }
     
@@ -191,9 +220,11 @@ export const getServerSideProps: GetServerSideProps<ListingPageProps> = async ({
 
     // Step 4: If still not found, try title-based fuzzy matching on static data
     if (!listing) {
-      Sentry.addBreadcrumb({ message: `Product ${slug} not found by ID (API or static). Trying title match on static data.` });
+      if (typeof window === 'undefined') {
+        const Sentry = await import('@sentry/nextjs');
+        Sentry.addBreadcrumb({ message: `Product ${slug} not found by ID (API or static). Trying title match on static data.` });
+      }
       const allListings = [
-        ...INITIAL_MARKETPLACE_PRODUCTS,
         ...MARKETPLACE_LISTINGS,
         ...SERVICES,
       ];
@@ -204,21 +235,33 @@ export const getServerSideProps: GetServerSideProps<ListingPageProps> = async ({
 
       if (matchedByTitle) {
         listing = matchedByTitle as ProductListing;
-        Sentry.addBreadcrumb({ message: `Found product ${slug} by title match in static data.` });
+        if (typeof window === 'undefined') {
+          const Sentry = await import('@sentry/nextjs');
+          Sentry.addBreadcrumb({ message: `Found product ${slug} by title match in static data.` });
+        }
       }
     }
     
     if (!listing) {
       logInfo(`Listing not found for slug: ${slug}`);
-      Sentry.captureMessage(`Listing not found for slug: ${slug}`);
-      Sentry.addBreadcrumb({ message: `Listing not found for slug: ${slug}` });
+      if (typeof window === 'undefined') {
+        const Sentry = await import('@sentry/nextjs');
+        Sentry.captureMessage(`Listing not found for slug: ${slug}`);
+      }
+      if (typeof window === 'undefined') {
+        const Sentry = await import('@sentry/nextjs');
+        Sentry.addBreadcrumb({ message: `Listing not found for slug: ${slug}` });
+      }
       return { notFound: true };
     }
     
     return { props: { listing } };
 
   } catch (error) {
-    Sentry.captureException(error);
+    if (typeof window === 'undefined') {
+      const Sentry = await import('@sentry/nextjs');
+      Sentry.captureException(error);
+    }
     logErrorToProduction('Critical error in getServerSideProps for marketplace listing ${slug}:', { data: error });
     return { notFound: true }; // Ensure 404 for any unhandled errors
   }

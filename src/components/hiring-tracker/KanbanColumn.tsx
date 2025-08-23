@@ -1,7 +1,7 @@
 
 // Local stub implementation used because the original package is unavailable.
 import { Droppable } from "@/lib/dnd-stub";
-import { JobApplication } from "@/types/jobs";
+import type { JobApplication } from "@/types/jobs";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { CandidateCard } from "./CandidateCard";

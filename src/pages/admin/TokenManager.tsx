@@ -5,11 +5,11 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { useAuth } from '@/hooks/useAuth';
 import { supabase } from '@/integrations/supabase/client';
-import { TokenTransaction } from '@/types/tokens';
+import type { TokenTransaction } from '@/types/tokens';
 import { ProtectedRoute } from '@/components/ProtectedRoute';
 import { Tabs, TabsList, TabsTrigger, TabsContent } from '@/components/ui/tabs';
 import { useToast } from '@/hooks/use-toast';
-import {logErrorToProduction} from '@/utils/productionLogger';
+import { apiClient } from '@/utils/apiClient';
 
 export default function TokenManager() {
 
@@ -27,6 +27,7 @@ export default function TokenManager() {
   }, [isAdmin]);
 
   const fetchTransactions = async () => {
+    if (!supabase) throw new Error('Supabase client not initialized');
     const { data, error } = await supabase
       .from('token_transactions')
       .select('*')
@@ -36,28 +37,23 @@ export default function TokenManager() {
   };
 
   const handleIssue = async (type: 'earn' | 'burn') => {
-    if (!userId || amount <= 0 || processing) return;
-    setProcessing(true);
-    try {
-      const res = await fetch(`/functions/v1/token-manager/${type === 'earn' ? 'earn' : 'burn'}`, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ userId, amount }),
-      });
-      const data = await res.json().catch(() => ({}));
-      if (!res.ok) {
-        throw new Error(data.error || `Error ${res.status}`);
-      }
+    if (!userId || amount <= 0) return;
+    const res = await apiClient(`/functions/v1/token-manager/${type === 'earn' ? 'earn' : 'burn'}`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ userId, amount }),
+    });
+    if (res.ok) {
       toast({
         title: 'Success',
         description: 'Transaction processed'
       });
       fetchTransactions();
-    } catch (err: any) {
+    } catch (err: unknown) {
       logErrorToProduction('Failed to process transaction:', { data: err });
       toast({
         title: 'Error',
-        description: err.message || 'Failed',
+        description: (typeof err === 'object' && err && 'message' in err ? (err as { message?: string }).message : 'Failed') || 'Unknown error occurred',
         variant: 'destructive'
       });
     } finally {

@@ -1,10 +1,7 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { useNotifications } from '@/context/notifications/NotificationContext';
 import { Bell, Check, Trash2, ChevronRight, CheckCircle, AlertCircle, MessageCircle, Briefcase, UserCheck, Settings, Package } from 'lucide-react';
-import {
-  NotificationType,
-  NotificationContextType
-} from "@/context/notifications";
+import type { NotificationType, NotificationContextType, FilterType } from '@/context/notifications';
 import { formatDistanceToNow } from 'date-fns';
 
 
@@ -228,7 +225,7 @@ export default function NotificationsPage() {
         <div className="mb-8">
           <Tabs
             defaultValue={filter}
-            onValueChange={(value) => setFilter(value as any)}
+            onValueChange={(value) => setFilter(value as FilterType)}
           >
             <TabsList className="grid w-full max-w-md grid-cols-6">
               <TabsTrigger value="all">All</TabsTrigger>

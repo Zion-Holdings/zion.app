@@ -16,7 +16,7 @@ interface Options {
  * If the import fails, a simple fallback component is rendered and the error
  * is logged via `logErrorToProduction`.
  */
-export function safeDynamicImport<T extends React.ComponentType<any>>(
+export function safeDynamicImport<T extends React.ComponentType<unknown>>(
   importer: () => Promise<{ default: T }>,
   options: Options
 ) {
@@ -30,11 +30,13 @@ export function safeDynamicImport<T extends React.ComponentType<any>>(
         if (typeof window !== 'undefined') {
           console.error(`Dynamic import failed for ${name}:`, err);
         }
-        return () => (
-          <div style={{ padding: '1rem', textAlign: 'center', color: 'red' }}>
-            Failed to load {name}. Check console for details.
-          </div>
-        );
+        return {
+          default: (() => (
+            <div style={{ padding: '1rem', textAlign: 'center', color: 'red' }}>
+              Failed to load {name}. Check console for details.
+            </div>
+          )) as unknown as T,
+        };
       }),
     {
       ssr,

@@ -14,7 +14,7 @@ import { ProtectedRoute } from "@/components/ProtectedRoute";
 
 export default function RequestsPanel() {
   const { user } = useAuth();
-  const isTalent = (user?.userType as 'creator' | 'jobSeeker' | 'client') === 'creator' || (user?.userType as 'creator' | 'jobSeeker' | 'client') === 'jobSeeker';
+  const _isTalent = (user?.userType as 'creator' | 'jobSeeker' | 'client') === 'creator' || (user?.userType as 'creator' | 'jobSeeker' | 'client') === 'jobSeeker';
   
   const [selectedQuote, setSelectedQuote] = useState<QuoteRequest | null>(null);
   const [showDetails, setShowDetails] = useState(false);

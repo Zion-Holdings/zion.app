@@ -8,7 +8,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { useProjects } from "@/hooks/useProjects";
-import { Project } from "@/types/projects";
+import type { Project } from "@/types/projects";
 
 export function ActiveProjectsCard() {
   const { projects, isLoading } = useProjects();

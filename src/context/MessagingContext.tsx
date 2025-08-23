@@ -1,7 +1,8 @@
 
-import React, { createContext, useContext, useEffect, ReactNode } from 'react';
+import React, { createContext, useContext, useEffect } from 'react';
+import type { ReactNode } from 'react';
 import { useAuth } from '@/hooks/useAuth';
-import { MessagingContextType } from '@/types/messaging';
+import type { MessagingContextType } from '@/types/messaging';
 import { useMessagingOperations, useMessagingRealtime } from '@/hooks/messaging';
 
 // Default context used when React type definitions are missing

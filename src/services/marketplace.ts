@@ -1,12 +1,10 @@
 import axios from 'axios';
-import * as Sentry from '@sentry/nextjs';
-import { MARKETPLACE_LISTINGS } from '@/data/marketplaceData';
-import { ProductListing } from '@/types/listings';
-import { TalentProfile as TalentProfileType } from '@/types/talent';
-import { ApiResponse, PaginatedResponse, SearchFilters } from '@/types/common';
+import type { ApiResponse, SearchFilters } from '@/types/common';
+import type { AxiosResponse, InternalAxiosRequestConfig } from 'axios';
 
 // TypeScript interfaces
 import { logInfo, logErrorToProduction } from '@/utils/productionLogger';
+import type { Product } from './marketplace';
 
 export interface MarketplaceItem {
 
@@ -96,7 +94,7 @@ export interface Product {
 }
 
 // Use internal Next.js API routes instead of external URLs
-const createMarketplaceClient = (): any => {
+const createMarketplaceClient = () => {
   const client = axios.create({
     baseURL: '', // Use relative URLs for internal API routes
     withCredentials: false,
@@ -104,13 +102,13 @@ const createMarketplaceClient = (): any => {
 
   // Request interceptor for debugging
   client.interceptors.request.use(
-    async (config: any) => {
+    async (config: InternalAxiosRequestConfig) => {
       if (process.env.NODE_ENV === 'development' && process.env.DEBUG_MARKETPLACE) {
         logInfo(`Marketplace API Request: ${config.method?.toUpperCase() || 'UNKNOWN'} ${config.url || 'UNKNOWN_URL'}`);
       }
       return config;
     },
-    (error: any) => {
+    (error: unknown) => {
       if (process.env.NODE_ENV === 'development') {
         logErrorToProduction('Marketplace request interceptor error:', error);
       }
@@ -120,19 +118,22 @@ const createMarketplaceClient = (): any => {
 
   // Response interceptor with error logging
   client.interceptors.response.use(
-    (response: any) => {
+    (response: AxiosResponse) => {
       if (process.env.NODE_ENV === 'development' && process.env.DEBUG_MARKETPLACE) {
         logInfo(`Marketplace API Response: ${response.status}`);
       }
       return response;
     },
-    (error: any) => {
+    (error: unknown) => {
       if (process.env.NODE_ENV === 'development') {
+        const status = typeof error === 'object' && error !== null && 'response' in error && error.response && typeof error.response === 'object' && error.response !== null && 'status' in error.response ? (error.response as { status?: number }).status : undefined;
+        const url = typeof error === 'object' && error !== null && 'config' in error && error.config && typeof error.config === 'object' && error.config !== null && 'url' in error.config ? (error.config as { url?: string }).url : undefined;
+        const method = typeof error === 'object' && error !== null && 'config' in error && error.config && typeof error.config === 'object' && error.config !== null && 'method' in error.config ? (error.config as { method?: string }).method : undefined;
         logErrorToProduction('Marketplace API Error:', {
-          message: error.message,
-          status: error.response?.status,
-          url: error.config?.url,
-          method: error.config?.method,
+          message: (error as { message?: string }).message,
+          status,
+          url,
+          method,
         });
       }
       return Promise.reject(error);
@@ -144,99 +145,17 @@ const createMarketplaceClient = (): any => {
 
 const marketplaceClient = createMarketplaceClient();
 
-// Helper function to get fallback categories
-const getFallbackCategories = (): Category[] => {
-  return [
-    { id: '1', name: 'AI Models & APIs', description: 'Pre-trained models and API endpoints', product_count: 25 },
-    { id: '2', name: 'Services', description: 'Professional AI and tech services', product_count: 18 },
-    { id: '3', name: 'Equipment', description: 'Hardware and computing equipment', product_count: 12 },
-    { id: '4', name: 'Content Creation', description: 'AI-powered content tools', product_count: 15 },
-    { id: '5', name: 'Data Analysis', description: 'Analytics and BI solutions', product_count: 20 },
-  ];
-};
-
-// Helper function to get fallback equipment
-const getFallbackEquipment = (filters: SearchFilters = {}): Equipment[] => {
-  const fallbackEquipment: Equipment[] = [
-    {
-      id: 'eq-1',
-      name: 'AI Workstation Pro',
-      description: 'High-performance workstation optimized for AI development',
-      category: 'Hardware',
-      price: 4999,
-      currency: 'USD',
-      availability: 'In Stock',
-      location: 'San Francisco, CA',
-      specifications: ['NVIDIA RTX 4090', '128GB RAM', '2TB NVMe SSD'],
-      rating: 4.8,
-      reviewCount: 23
-    },
-    {
-      id: 'eq-2', 
-      name: 'Cloud GPU Cluster',
-      description: 'Scalable GPU cluster for machine learning training',
-      category: 'Cloud',
-      price: 2.50,
-      currency: 'USD',
-      availability: 'Available',
-      location: 'Global',
-      specifications: ['NVIDIA A100', 'Auto-scaling', 'Kubernetes'],
-      rating: 4.9,
-      reviewCount: 67
-    }
-  ];
-  
-  // Apply basic filtering
-  if (filters.category) {
-    return fallbackEquipment.filter(eq => 
-      eq.category.toLowerCase() === filters.category?.toLowerCase()
-    );
-  }
-  
-  return fallbackEquipment;
-};
-
-// Helper function to get fallback talent profiles
-const getFallbackTalent = (): TalentProfile[] => {
-  return [
-    {
-      id: 'talent-1',
-      full_name: 'Alex Chen',
-      professional_title: 'Senior AI Engineer',
-      description: 'Specialized in computer vision and deep learning with 8+ years experience',
-      skills: ['TensorFlow', 'PyTorch', 'Computer Vision', 'MLOps'],
-      hourly_rate: 150,
-      currency: 'USD',
-      availability: 'Available',
-      location: 'San Francisco, CA',
-      rating: 4.9,
-      reviewCount: 34
-    },
-    {
-      id: 'talent-2',
-      full_name: 'Sarah Rodriguez',
-      professional_title: 'ML Data Scientist',
-      description: 'Expert in NLP and recommendation systems with proven track record',
-      skills: ['Python', 'R', 'NLP', 'Recommendation Systems'],
-      hourly_rate: 120,
-      currency: 'USD',
-      availability: 'Available',
-      location: 'New York, NY',
-      rating: 4.7,
-      reviewCount: 28
-    }
-  ];
-};
-
 // Helper function to get error message for UI display
-export const getMarketplaceErrorMessage = (error: any): string => {
-  if (error.response?.status === 404) {
+export const getMarketplaceErrorMessage = (error: unknown): string => {
+  const status = typeof error === 'object' && error !== null && 'response' in error && error.response && typeof error.response === 'object' && error.response !== null && 'status' in error.response ? (error.response as { status?: number }).status : undefined;
+  const code = typeof error === 'object' && error !== null && 'code' in error ? (error as { code?: string }).code : undefined;
+  if (status === 404) {
     return 'The requested marketplace data was not found.';
-  } else if (error.response?.status === 500) {
+  } else if (status === 500) {
     return 'Our servers are experiencing issues. Please try again later.';
-  } else if (error.response?.status === 401) {
+  } else if (status === 401) {
     return 'Please log in to access marketplace data.';
-  } else if (error.code === 'ECONNABORTED') {
+  } else if (code === 'ECONNABORTED') {
     return 'Request timeout. Please check your connection and try again.';
   } else if (typeof navigator !== 'undefined' && !navigator.onLine) {
     return 'No internet connection. Please check your network.';
@@ -249,9 +168,12 @@ export const getMarketplaceErrorMessage = (error: any): string => {
 export { marketplaceClient };
 
 // Add product validation and auto-generation utilities
-export const validateProductData = (product: any): boolean => {
-  const requiredFields = ['id', 'title', 'description', 'category'];
-  return requiredFields.every(field => product[field] && product[field].toString().trim() !== '');
+export const validateProductData = (product: Product): boolean => {
+  const requiredFields: (keyof Product)[] = ['id', 'title', 'description', 'category'];
+  return requiredFields.every(field => {
+    const value = product[field];
+    return typeof value === 'string' && value.trim() !== '';
+  });
 };
 
 export const generateProductId = (name: string): string => {
@@ -325,10 +247,10 @@ export async function fetchCategories(): Promise<Category[]> {
       throw new Error(data.error);
     }
 
-    return data.data || getFallbackCategories();
+    return data.data || [];
   } catch (error) {
     logErrorToProduction('Failed to fetch categories:', { data: error });
-    return getFallbackCategories();
+    return [];
   }
 }
 
@@ -352,10 +274,10 @@ export async function fetchTalent(filters: SearchFilters = {}): Promise<TalentPr
       throw new Error(data.error);
     }
 
-    return data.data || getFallbackTalent();
+    return data.data || [];
   } catch (error) {
     logErrorToProduction('Failed to fetch talent:', { data: error });
-    return getFallbackTalent();
+    return [];
   }
 }
 
@@ -379,9 +301,9 @@ export async function fetchEquipment(filters: SearchFilters = {}): Promise<Equip
       throw new Error(data.error);
     }
 
-    return data.data || getFallbackEquipment(filters);
+    return data.data || [];
   } catch (error) {
     logErrorToProduction('Failed to fetch equipment:', { data: error });
-    return getFallbackEquipment(filters);
+    return [];
   }
 }

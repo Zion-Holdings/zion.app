@@ -5,7 +5,7 @@ import { Search, X } from 'lucide-react';
 
 import { Input } from "@/components/ui/input";
 import { AutocompleteSuggestions } from "@/components/search/AutocompleteSuggestions";
-import { SearchSuggestion } from "@/types/search";
+import type { SearchSuggestion } from "@/types/search";
 import { useDebounce } from "@/hooks/useDebounce";
 import { useRouter } from "next/router";
 import { slugify } from "@/lib/slugify";
@@ -70,12 +70,12 @@ export function EnhancedSearchInput({
             }
           } else {
             // Silently fail for search suggestions - don't show error toast
-            logWarn('Search suggestions API error:', { data: response.status });
+            logWarn('Search suggestions API error:', { data:  { data: response.status } });
             setApiSuggestions([]);
           }
         } catch (error) {
           // Silently fail for search suggestions - don't show error toast
-          logWarn('Search suggestions fetch error:', { data: error });
+          logWarn('Search suggestions fetch error:', { data:  { data: error } });
           setApiSuggestions([]);
         } finally {
           setLoading(false);
@@ -132,10 +132,10 @@ export function EnhancedSearchInput({
   const router = useRouter();
 
   const handleSelectSuggestion = (suggestionObj: SearchSuggestion) => {
-    logInfo('EnhancedSearchInput handleSelectSuggestion called:', { data: suggestionObj });
+    logInfo('EnhancedSearchInput handleSelectSuggestion called:', { data:  { data: suggestionObj } });
     onChange(suggestionObj.text);
     if (onSelectSuggestion) {
-      logInfo('Calling onSelectSuggestion with:', { data: suggestionObj });
+      logInfo('Calling onSelectSuggestion with:', { data:  { data: suggestionObj } });
       onSelectSuggestion(suggestionObj);
     } else {
       // Provide a sensible default navigation if the parent did not supply a handler
@@ -176,7 +176,7 @@ export function EnhancedSearchInput({
         } else if (value.trim()) {
           // Manually trigger search navigation to ensure consistent behavior
           e.preventDefault();
-          logInfo('EnhancedSearchInput manual submit:', { data: value });
+          logInfo('EnhancedSearchInput manual submit:', { data:  { data: value } });
           router.push(`/search?q=${encodeURIComponent(value)}`);
           setIsFocused(false);
           setHighlightedIndex(-1);

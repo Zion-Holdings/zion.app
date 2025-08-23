@@ -1,10 +1,10 @@
 
 import React from "react";
-import { UseFormReturn } from "react-hook-form";
+import type { UseFormReturn } from "react-hook-form";
 import { FormField, FormItem, FormLabel, FormControl, FormMessage } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
-import { TalentProfile } from "@/types/talent";
-import { FormValues } from "./useHireRequestForm";
+import type { TalentProfile } from "@/types/talent";
+import type { FormValues } from "./useHireRequestForm";
 
 interface BudgetFieldsProps {
   form: UseFormReturn<FormValues>;

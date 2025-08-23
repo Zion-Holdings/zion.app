@@ -7,11 +7,12 @@ import { Textarea } from "@/components/ui/textarea";
 import { Select, SelectTrigger, SelectValue, SelectContent, SelectItem } from "@/components/ui/select";
 import { Calendar } from "@/components/ui/calendar";
 import { Popover, PopoverTrigger, PopoverContent } from "@/components/ui/popover";
-import { TalentProfile } from "@/types/talent";
+import type { TalentProfile } from "@/types/talent";
 import type { UserProfile } from "@/types/auth";
 import { cn } from "@/lib/utils";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { useForm, ControllerRenderProps } from "react-hook-form";
+import { useForm } from "react-hook-form";
+import type { ControllerRenderProps } from "react-hook-form";
 import { z } from "zod";
 import { format, addDays } from "date-fns";
 import { CalendarIcon } from 'lucide-react';
@@ -81,11 +82,11 @@ export function InterviewRequestForm({ talent, onClose, userDetails }: Interview
         client_id: userDetails.id,
         scheduled_date: scheduledDate.toISOString(),
         duration_minutes: durationMinutes,
-        notes: values.notes,
+        ...(values.notes ? { notes: values.notes } : {}),
         meeting_platform: values.platform as any,
-        meeting_link: values.meetingLink,
+        ...(values.meetingLink ? { meeting_link: values.meetingLink } : {}),
         interview_type: "video",
-        title: values.title
+        title: values.title,
       });
 
       toast({

@@ -1,14 +1,15 @@
 import { renderHook, act } from '@testing-library/react';
 import { useDelayedError } from '../useDelayedError';
+import { vi } from 'vitest';
 
 describe('useDelayedError', () => {
   beforeEach(() => {
-    jest.useFakeTimers();
+    vi.useFakeTimers();
   });
 
   afterEach(() => {
-    jest.runOnlyPendingTimers();
-    jest.useRealTimers();
+    vi.runOnlyPendingTimers();
+    vi.useRealTimers();
   });
 
   test('returns error only after the specified delay', () => {
@@ -22,15 +23,17 @@ describe('useDelayedError', () => {
     rerender({ err: new Error('fail') });
 
     act(() => {
-      jest.advanceTimersByTime(500);
+      vi.advanceTimersByTime(500);
     });
     expect(result.current).toBeNull();
 
     act(() => {
-      jest.advanceTimersByTime(500);
+      vi.advanceTimersByTime(500);
     });
-    expect(result.current).toEqual(expect.any(Error));
-    expect(result.current?.message).toBe('fail');
+    expect(result.current).toBeInstanceOf(Error);
+    if (result.current instanceof Error) {
+      expect(result.current.message).toBe('fail');
+    }
   });
 
   test('resets timer if error changes before delay elapses', () => {
@@ -40,19 +43,21 @@ describe('useDelayedError', () => {
     );
 
     act(() => {
-      jest.advanceTimersByTime(500);
+      vi.advanceTimersByTime(500);
     });
 
     rerender({ err: new Error('second') });
 
     act(() => {
-      jest.advanceTimersByTime(999);
+      vi.advanceTimersByTime(999);
     });
     expect(result.current).toBeNull();
 
     act(() => {
-      jest.advanceTimersByTime(1);
+      vi.advanceTimersByTime(1);
     });
-    expect(result.current?.message).toBe('second');
+    if (result.current instanceof Error) {
+      expect(result.current.message).toBe('second');
+    }
   });
 });

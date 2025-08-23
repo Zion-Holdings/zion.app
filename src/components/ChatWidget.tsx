@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
+import { io } from 'socket.io-client';
 import { useAuth } from '@/hooks/useAuth';
 import { MessageBubble } from '@/components/messaging/MessageBubble';
 import { Button } from '@/components/ui/button';
@@ -22,17 +23,13 @@ export function ChatWidget({ roomId, recipientId, isOpen, onClose }: ChatWidgetP
   useEffect(() => {
     if (!isOpen) return;
 
-    async function setup() {
-      const { io } = await import('socket.io-client');
-      socketRef.current = io({ path: '/api/socket', transports: ['websocket'] });
-      socketRef.current.emit('join-room', roomId);
-      socketRef.current.on('receive-message', (msg: ChatMessage) => {
-        setMessages(prev => [...prev, msg]);
-        triggerNotification('New message', msg.content);
-      });
-    }
+    socketRef.current = io({ path: '/api/socket', transports: ['websocket'] });
+    socketRef.current.emit('join-room', roomId);
+    socketRef.current.on('receive-message', (msg: Message) => {
+      setMessages(prev => [...prev, msg]);
+      triggerNotification('New message', msg.content);
+    });
 
-    setup();
     return () => {
       socketRef.current?.disconnect();
     };
@@ -54,11 +51,12 @@ export function ChatWidget({ roomId, recipientId, isOpen, onClose }: ChatWidgetP
       recipient_id: recipientId,
       content: text,
       created_at: new Date().toISOString(),
-      read: false
+      read: false,
     };
     socketRef.current.emit('send-message', { roomId, message: msg });
     setMessages(prev => [...prev, msg]);
     setText('');
+    // TODO: persist message via backend
   };
 
   if (!isOpen) return null;

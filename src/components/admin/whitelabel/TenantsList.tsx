@@ -19,7 +19,7 @@ import {
 } from '@/components/ui/dropdown-menu';
 import { Badge } from '@/components/ui/badge';
 import { toast } from '@/hooks/use-toast';
-import { WhitelabelTenant } from '@/hooks/useWhitelabelTenant';
+import type { WhitelabelTenant } from '@/hooks/useWhitelabelTenant';
 import { format } from 'date-fns';
 
 export function TenantsList() {
@@ -33,6 +33,10 @@ export function TenantsList() {
   const loadTenants = async () => {
     try {
       setIsLoading(true);
+      if (!supabase) {
+        throw new Error('Supabase client not available');
+      }
+      
       const { data, error } = await supabase
         .from('whitelabel_tenants')
         .select('*')
@@ -54,6 +58,10 @@ export function TenantsList() {
 
   const toggleTenantStatus = async (tenant: WhitelabelTenant) => {
     try {
+      if (!supabase) {
+        throw new Error('Supabase client not available');
+      }
+      
       const { error } = await supabase
         .from('whitelabel_tenants')
         .update({ is_active: !(tenant as any).is_active })
@@ -82,6 +90,10 @@ export function TenantsList() {
 
   const verifyDns = async (tenant: WhitelabelTenant) => {
     try {
+      if (!supabase) {
+        throw new Error('Supabase client not available');
+      }
+      
       // In a real implementation, this would verify DNS records
       // For now, we'll just mark it as verified
       const { error } = await supabase

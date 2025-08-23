@@ -48,37 +48,48 @@ export default function AccountSettings() {
   const handleConnectWallet = async () => {
     try {
       // Check if wallet is available
-      const ethereum = (window as any).ethereum;
-      if (!ethereum) {
+      const ethereum = (window as unknown as { ethereum?: unknown }).ethereum;
+      if (!ethereum || typeof ethereum !== 'object') {
         toast.error('No wallet detected. Please install MetaMask or another compatible wallet.');
         return;
       }
       
       // Request accounts
-      const accounts = await ethereum.request({ method: 'eth_requestAccounts' });
+      const accounts = await (ethereum as { request: (args: { method: string; params?: unknown[] }) => Promise<string[]> }).request({ method: 'eth_requestAccounts' });
       const address = accounts[0];
       
       // Sign message to verify ownership
       const message = `Zion AI Marketplace wallet verification\nAddress: ${address}\nTime: ${new Date().toISOString()}`;
-      await ethereum.request({
+      await (ethereum as { request: (args: { method: string; params?: unknown[] }) => Promise<unknown> }).request({
         method: 'personal_sign',
         params: [address, message]
       });
       
       // Auto-set DID handle if ENS is available
+      if (!address) {
+        toast.error('Wallet address not found.');
+        return;
+      }
       try {
-        const provider = new (window as any).ethers.providers.Web3Provider(ethereum);
-        const ensName = await provider.lookupAddress(address);
-        if (ensName) {
-          setDidHandle(ensName);
+        const ethers = (window as unknown as { ethers?: unknown }).ethers;
+        if (ethers && typeof ethers === 'object' && 'providers' in ethers && typeof (ethers as { providers: unknown }).providers === 'object') {
+          const Web3Provider = (ethers as { providers: { Web3Provider: new (eth: unknown) => { lookupAddress: (address: string) => Promise<string | null> } } }).providers.Web3Provider;
+          const provider = new Web3Provider(ethereum);
+          const ensName = await provider.lookupAddress(address);
+          if (ensName) {
+            setDidHandle(ensName);
+          }
         }
       } catch (error) {
         logErrorToProduction('ENS lookup error:', { data: error });
       }
-      
       toast.success(`Wallet connected: ${address.slice(0, 6)}...${address.slice(-4)}`);
-    } catch (error: any) {
-      toast.error(error.message || 'Failed to connect wallet');
+    } catch (error) {
+      if (error && typeof error === 'object' && 'message' in error && typeof (error as { message?: unknown }).message === 'string') {
+        toast.error((error as { message: string }).message);
+      } else {
+        toast.error('Failed to connect wallet');
+      }
     }
   };
 

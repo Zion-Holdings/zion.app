@@ -61,10 +61,17 @@ class AppHealthMonitor {
         let status: 'pass' | 'warn' | 'fail' = 'pass';
         let message = 'Memory usage is normal';
 
-        if ('memory' in performance) {
-          const memory = (performance as any).memory;
+        interface PerformanceMemory {
+          usedJSHeapSize: number;
+          totalJSHeapSize: number;
+          jsHeapSizeLimit: number;
+        }
+        function hasMemory(perf: Performance): perf is Performance & { memory: PerformanceMemory } {
+          return 'memory' in perf && typeof (perf as { memory?: unknown }).memory === 'object';
+        }
+        if (hasMemory(performance)) {
+          const memory = performance.memory;
           memoryUsage = memory.usedJSHeapSize / 1024 / 1024; // MB
-          
           if (memoryUsage > 100) {
             status = 'fail';
             message = `High memory usage: ${memoryUsage.toFixed(2)}MB`;
@@ -191,13 +198,19 @@ class AppHealthMonitor {
       const startTime = performance.now();
       
       try {
-        if ('connection' in navigator) {
-          const connection = (navigator as any).connection;
+        interface NetworkInformation {
+          effectiveType: string;
+          downlink: number;
+          rtt: number;
+        }
+        function hasConnection(nav: Navigator): nav is Navigator & { connection: NetworkInformation } {
+          return 'connection' in nav && typeof (nav as { connection?: unknown }).connection === 'object';
+        }
+        if (hasConnection(navigator)) {
+          const connection = navigator.connection;
           const effectiveType = connection.effectiveType;
-          
           let status: 'pass' | 'warn' | 'fail' = 'pass';
           let message = `Connection: ${effectiveType}`;
-
           if (effectiveType === 'slow-2g') {
             status = 'fail';
             message = 'Very slow connection detected';
@@ -205,7 +218,6 @@ class AppHealthMonitor {
             status = 'warn';
             message = 'Slow connection detected';
           }
-
           return {
             name: 'connectivity',
             status,
@@ -424,12 +436,18 @@ class AppHealthMonitor {
 
   private getRecentErrorCount(): number {
     // Try to get error count from enhanced error logger if available
+    interface EnhancedErrorLogger {
+      getErrors: () => Array<{ lastSeen: number }>;
+    }
+    function hasEnhancedErrorLogger(obj: unknown): obj is { enhancedErrorLogger: EnhancedErrorLogger } {
+      return typeof obj === 'object' && obj !== null && 'enhancedErrorLogger' in obj;
+    }
     try {
-      if (typeof window !== 'undefined' && (window as any).enhancedErrorLogger) {
-        const errorLogger = (window as any).enhancedErrorLogger;
+      if (typeof window !== 'undefined' && hasEnhancedErrorLogger(window)) {
+        const errorLogger = window.enhancedErrorLogger;
         const errors = errorLogger.getErrors();
         const fiveMinutesAgo = Date.now() - (5 * 60 * 1000);
-        return errors.filter((error: any) => error.lastSeen > fiveMinutesAgo).length;
+        return errors.filter((error) => typeof error === 'object' && error !== null && 'lastSeen' in error && typeof (error as { lastSeen: unknown }).lastSeen === 'number' && (error as { lastSeen: number }).lastSeen > fiveMinutesAgo).length;
       }
     } catch {
       // Fallback to simple error counting
@@ -442,9 +460,7 @@ class AppHealthMonitor {
     // Update metrics every 30 seconds
     setInterval(() => {
       this.performHealthCheck().then(report => {
-        // Store latest report for quick access
-        (window as any).latestHealthReport = report;
-        
+        window.latestHealthReport = report;
         // Log warnings and critical issues
         if (report.status !== 'healthy') {
           console.warn('🏥 Health issue detected:', report);
@@ -453,14 +469,13 @@ class AppHealthMonitor {
         console.error('Health monitoring error:', error);
       });
     }, 30000);
-
     // Expose health monitor globally for debugging
-    (window as any).appHealthMonitor = this;
+    window.appHealthMonitor = this;
   }
 
   public getLatestReport(): HealthReport | null {
-    if (typeof window !== 'undefined') {
-      return (window as any).latestHealthReport || null;
+    if (typeof window !== 'undefined' && window.latestHealthReport) {
+      return window.latestHealthReport;
     }
     return null;
   }
@@ -478,6 +493,14 @@ class AppHealthMonitor {
       status: report.status,
       issues
     };
+  }
+}
+
+// Type-safe augmentation for window globals
+declare global {
+  interface Window {
+    latestHealthReport?: HealthReport;
+    appHealthMonitor?: AppHealthMonitor;
   }
 }
 

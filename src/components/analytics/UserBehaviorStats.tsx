@@ -1,4 +1,3 @@
-
 import { useQuery } from "@tanstack/react-query";
 import { supabase } from "@/integrations/supabase/client";
 import { Card, CardContent } from "@/components/ui/card";
@@ -21,6 +20,10 @@ export function UserBehaviorStats() {
   const { data: behaviorData, isLoading } = useQuery({
     queryKey: ['user-behavior-data', timeRange],
     queryFn: async () => {
+      if (!supabase) {
+        throw new Error('Supabase client not available');
+      }
+      
       // Convert timeRange to days
       const days = parseInt(timeRange.replace('d', ''));
       

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { 
@@ -10,7 +10,40 @@ import {
 } from 'lucide-react';
 
 const EnhancedFooter2025: React.FC = () => {
-  const currentYear = new Date().getFullYear();
+  const [email, setEmail] = useState('');
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const handleNewsletterSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!email.trim()) return;
+
+    setIsSubmitting(true);
+    // Simulate API call
+    await new Promise(resolve => setTimeout(resolve, 1000));
+    setIsSubmitting(false);
+    setEmail('');
+    // Show success message
+  };
+
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
+  const stats = [
+    { number: "500+", label: "Clients Worldwide", icon: Users, color: "from-cyan-500 to-blue-500" },
+    { number: "50+", label: "Industry Awards", icon: Award, color: "from-yellow-500 to-orange-500" },
+    { number: "24/7", label: "Support Available", icon: Clock, color: "from-purple-500 to-pink-500" },
+    { number: "50+", label: "Countries Served", icon: Globe, color: "from-emerald-500 to-teal-500" }
+  ];
+
+  const socialLinks = [
+    { href: "https://linkedin.com/company/ziontechgroup", icon: Linkedin, label: "LinkedIn", color: "hover:bg-blue-600" },
+    { href: "https://twitter.com/ziontechgroup", icon: Twitter, label: "Twitter", color: "hover:bg-sky-500" },
+    { href: "https://github.com/ziontechgroup", icon: Github, label: "GitHub", color: "hover:bg-gray-700" },
+    { href: "https://youtube.com/@ziontechgroup", icon: Youtube, label: "YouTube", color: "hover:bg-red-600" },
+    { href: "https://facebook.com/ziontechgroup", icon: Facebook, label: "Facebook", color: "hover:bg-blue-700" },
+    { href: "https://instagram.com/ziontechgroup", icon: Instagram, label: "Instagram", color: "hover:bg-pink-600" }
+  ];
 
   const contactInfo = {
     mobile: '+1 302 464 0950',
@@ -21,7 +54,7 @@ const EnhancedFooter2025: React.FC = () => {
 
   const footerSections = [
     {
-      title: 'Services',
+      title: "Services",
       links: [
         { name: 'AI & Machine Learning', href: '/ai-services', icon: <Brain className="w-4 h-4" /> },
         { name: 'Quantum Technology', href: '/quantum-services', icon: <Atom className="w-4 h-4" /> },
@@ -33,7 +66,7 @@ const EnhancedFooter2025: React.FC = () => {
       ]
     },
     {
-      title: 'Solutions',
+      title: "Solutions",
       links: [
         { name: 'Enterprise Solutions', href: '/solutions/enterprise', icon: <Building className="w-4 h-4" /> },
         { name: 'Healthcare Solutions', href: '/solutions/healthcare', icon: <HeartIcon className="w-4 h-4" /> },
@@ -44,7 +77,7 @@ const EnhancedFooter2025: React.FC = () => {
       ]
     },
     {
-      title: 'Company',
+      title: "Company",
       links: [
         { name: 'About Us', href: '/about', icon: <Info className="w-4 h-4" /> },
         { name: 'Our Mission', href: '/mission', icon: <TargetIcon className="w-4 h-4" /> },
@@ -56,7 +89,7 @@ const EnhancedFooter2025: React.FC = () => {
       ]
     },
     {
-      title: 'Resources',
+      title: "Resources",
       links: [
         { name: 'Documentation', href: '/docs', icon: <FileText className="w-4 h-4" /> },
         { name: 'Blog & Articles', href: '/blog', icon: <BookOpen className="w-4 h-4" /> },
@@ -265,26 +298,25 @@ const EnhancedFooter2025: React.FC = () => {
           whileInView="animate"
           viewport={{ once: true }}
         >
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
-            <div className="flex flex-col md:flex-row items-center justify-between space-y-4 md:space-y-0">
-              <div className="flex items-center space-x-6 text-sm text-gray-400">
-                <span>&copy; {currentYear} Zion Tech Group. All rights reserved.</span>
-                <div className="flex items-center space-x-4">
-                  <Link href="/privacy" className="hover:text-cyan-300 transition-colors">
-                    Privacy Policy
-                  </Link>
-                  <Link href="/terms" className="hover:text-cyan-300 transition-colors">
-                    Terms of Service
-                  </Link>
-                  <Link href="/cookies" className="hover:text-cyan-300 transition-colors">
-                    Cookie Policy
-                  </Link>
-                </div>
-              </div>
-              
+          <div className="text-center max-w-2xl mx-auto">
+            <h3 className="text-2xl font-bold text-white mb-4">
+              Stay Updated with the Latest Tech Trends
+            </h3>
+            <p className="text-gray-300 mb-6 leading-relaxed">
+              Get insights on AI, quantum computing, cybersecurity, and emerging technologies delivered to your inbox.
+            </p>
+            <form onSubmit={handleNewsletterSubmit} className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
+              <input
+                type="email"
+                placeholder="Enter your email"
+                required
+                className="flex-1 px-4 py-3 bg-gray-800/50 border border-gray-700/50 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:border-cyan-500/50 transition-all duration-200"
+                aria-label="Email address for newsletter"
+              />
               <button
-                onClick={scrollToTop}
-                className="flex items-center space-x-2 text-cyan-400 hover:text-cyan-300 transition-colors duration-200 group"
+                type="submit"
+                className="px-6 py-3 bg-gradient-to-r from-cyan-500 to-blue-600 text-white rounded-xl hover:from-cyan-600 hover:to-blue-700 transition-all duration-200 font-medium flex items-center justify-center gap-2 focus:outline-none focus:ring-2 focus:ring-cyan-500"
+                aria-label="Subscribe to newsletter"
               >
                 <span className="text-sm">Back to top</span>
                 <ArrowUp className="w-4 h-4 group-hover:-translate-y-1 transition-transform duration-200" />

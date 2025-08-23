@@ -1,14 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
 import { 
-  Phone, 
-  Mail, 
-  MapPin, 
-  Globe, 
-  Zap, 
-  Sparkles, 
-  Shield, 
-  Rocket,
+  Zap,
   Twitter,
   Linkedin,
   Github,
@@ -18,59 +11,32 @@ import {
 } from 'lucide-react';
 
 const Footer: React.FC = () => {
-  const contactInfo = {
-    mobile: '+1 302 464 0950',
-    email: 'kleber@ziontechgroup.com',
-    address: '364 E Main St STE 1008 Middletown DE 19709',
-    website: 'https://ziontechgroup.com'
-  };
 
   const services = [
-    { name: 'AI & Machine Learning', href: '/ai-services' },
-    { name: 'Quantum Technology', href: '/quantum-services' },
-    { name: 'Space Technology', href: '/space-technology' },
-    { name: 'IT Solutions', href: '/it-services' },
-    { name: 'Cybersecurity', href: '/cybersecurity' },
-    { name: 'Cloud Platform', href: '/cloud-platform' },
-    { name: 'View All Services', href: '/services' }
-  ];
-
-  const solutions = [
-    { name: 'Enterprise Solutions', href: '/solutions/enterprise' },
-    { name: 'Healthcare Solutions', href: '/solutions/healthcare' },
-    { name: 'Financial Solutions', href: '/solutions/financial' },
-    { name: 'Government Solutions', href: '/solutions/government' },
-    { name: 'Manufacturing Solutions', href: '/solutions/manufacturing' },
-    { name: 'Retail Solutions', href: '/solutions/retail' },
-    { name: 'Education Solutions', href: '/solutions/education' },
-    { name: 'Energy Solutions', href: '/solutions/energy' },
-    { name: 'Transportation Solutions', href: '/solutions/transportation' },
-    { name: 'Case Studies', href: '/case-studies' }
+    { name: 'AI & Consciousness', href: '/ai-services', icon: Brain },
+    { name: 'Quantum Technology', href: '/quantum-services', icon: Atom },
+    { name: 'Cybersecurity', href: '/cybersecurity', icon: Shield },
+    { name: 'Business Solutions', href: '/business-solutions', icon: Target },
+    { name: 'IT Infrastructure', href: '/it-infrastructure', icon: Cpu },
+    { name: 'Space Technology', href: '/space-tech', icon: Rocket }
   ];
 
   const company = [
     { name: 'About Us', href: '/about' },
-    { name: 'Mission', href: '/mission' },
-    { name: 'Values', href: '/values' },
-    { name: 'Team', href: '/team' },
     { name: 'Leadership', href: '/leadership' },
-    { name: 'Culture', href: '/culture' },
+    { name: 'Team', href: '/team' },
     { name: 'Careers', href: '/careers' },
-    { name: 'Partners', href: '/partners' },
-    { name: 'Investors', href: '/investors' }
+    { name: 'Press', href: '/press' },
+    { name: 'Contact', href: '/contact' }
   ];
 
   const resources = [
-    { name: 'Documentation', href: '/docs' },
-    { name: 'API Reference', href: '/api-docs' },
     { name: 'Blog', href: '/blog' },
-    { name: 'Webinars', href: '/webinars' },
-    { name: 'Events', href: '/events' },
-    { name: 'Training', href: '/training' },
-    { name: 'Support Center', href: '/support' },
+    { name: 'Case Studies', href: '/case-studies' },
     { name: 'White Papers', href: '/white-papers' },
-    { name: 'Press', href: '/press' },
-    { name: 'Media Kit', href: '/media-kit' }
+    { name: 'Webinars', href: '/webinars' },
+    { name: 'Documentation', href: '/docs' },
+    { name: 'Support', href: '/support' }
   ];
 
   const legal = [
@@ -80,13 +46,13 @@ const Footer: React.FC = () => {
     { name: 'Security', href: '/security' }
   ];
 
-  const socialLinks = [
-    { name: 'LinkedIn', href: 'https://linkedin.com/company/zion-tech-group', icon: Linkedin },
-    { name: 'GitHub', href: 'https://github.com/Zion-Holdings', icon: Github },
-    { name: 'Twitter', href: 'https://twitter.com/ziontechgroup', icon: Twitter },
-    { name: 'Facebook', href: 'https://facebook.com/ziontechgroup', icon: Facebook },
-    { name: 'Instagram', href: 'https://instagram.com/ziontechgroup', icon: Instagram },
-    { name: 'YouTube', href: 'https://youtube.com/@ziontechgroup', icon: Youtube }
+  const social = [
+    { name: 'Twitter', href: '#', icon: Twitter },
+    { name: 'LinkedIn', href: '#', icon: Linkedin },
+    { name: 'GitHub', href: '#', icon: Github },
+    { name: 'YouTube', href: '#', icon: Youtube },
+    { name: 'Instagram', href: '#', icon: Instagram },
+    { name: 'Facebook', href: '#', icon: Facebook }
   ];
 
   return (

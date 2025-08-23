@@ -7,7 +7,7 @@ const originalConsoleError = console.error;
 // Add recursion prevention
 let isProcessingError = false;
 
-console.error = (...args: any[]) => {
+console.error = (...args: unknown[]) => {
   // Prevent infinite recursion
   if (isProcessingError) {
     originalConsoleError(...args);
@@ -69,7 +69,6 @@ console.error = (...args: any[]) => {
              message.includes('initialization');
     };
 
-    let traceId: string | undefined;
     try {
       logErrorToProduction(first instanceof Error ? first.message : message, first instanceof Error ? first : undefined);
     } catch (sentryError) {

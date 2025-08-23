@@ -1,7 +1,7 @@
 import React from 'react';
 import Head from 'next/head';
 import UltraFuturisticBackground from '../../components/ui/UltraFuturisticBackground';
-import Button from '../../components/ui/Button';
+import { Button } from '../../components/ui/Button';
 import Card from '../../components/ui/Card';
 import { Check, Mail, MapPin, Phone, ExternalLink } from 'lucide-react';
 import { enhancedRealMicroSaasServices } from '../../data/enhanced-real-micro-saas-services';
@@ -24,6 +24,7 @@ import { realServicesQ22025 } from '../../data/real-services-q2-2025';
 import { realServicesQ32025 } from '../../data/real-services-q3-2025';
 import { realQ4Services2025, } from '../../data/real-2025-q4-additions';
 import { real2025Q4Additions } from '../../data/real-2025-q4-additions';
+import { real2025Q4AugmentedBatch } from '../../data/real-2025-q4-augmented-batch';
 import { realMarketServicesExtended } from '../../data/real-market-services-extended';
 import { real2026Additions } from '../../data/real-2026-additions';
 import { real2026Q1Additions } from '../../data/real-2026-q1-additions';
@@ -52,7 +53,12 @@ import { real2027Q3Additions } from '../../data/real-2027-q3-additions';
 import { aiAutonomousEcosystemServices2029 } from '../../data/2029-ai-autonomous-ecosystem';
 import { emergingTechBreakthroughServices2029 } from '../../data/2029-emerging-tech-breakthroughs';
 import { practicalBusinessSolutionServices2029 } from '../../data/2029-practical-business-solutions';
-import { real2032Q1Additions } from '../../data/real-2032-q1-additions';
+import { professionalServices } from '../../data/professional-services';
+import { real2032ServiceExpansions } from '../../data/real-2032-service-expansions';
+import { real2035Q1Additions } from '../../data/real-2035-q1-additions';
+import { real2035Q2AdditionsExtra } from '../../data/real-2035-q2-additions-extra';
+import { real2036ServiceExpansions } from '../../data/real-2036-service-expansions';
+import { real2026Q4ExpansionsV3 } from '../../data/real-2026-q4-expansions-v3';
 
 type Service = typeof enhancedRealMicroSaasServices[number];
 
@@ -83,6 +89,7 @@ function getAllServices(): Service[] {
 		.concat(realServicesQ32025 as unknown as Service[])
 		.concat(realQ4Services2025 as unknown as Service[])
 		.concat(real2025Q4Additions as unknown as Service[])
+		.concat(real2025Q4AugmentedBatch as unknown as Service[])
 		.concat(realMarketServicesExtended as unknown as Service[])
 		.concat(real2026Q1Additions as unknown as Service[])
 		.concat(real2026Additions as unknown as Service[])
@@ -104,18 +111,16 @@ function getAllServices(): Service[] {
 		.concat(real2031ITServicesAdditions as unknown as Service[])
 		.concat(real2031AIServicesAdditions as unknown as Service[])
 		.concat(real2027Q3Additions as unknown as Service[])
-		.concat(real2032Q1Additions as unknown as Service[])
 		// 2029 showcase/pricing arrays to ensure matching /services/* pages are generated
 		.concat(aiAutonomousEcosystemServices2029 as unknown as Service[])
 		.concat(emergingTechBreakthroughServices2029 as unknown as Service[])
 		.concat(practicalBusinessSolutionServices2029 as unknown as Service[])
-		// Additive 2034 and 2029 datasets
-		.concat(enterpriseITSolutions2034Additions as unknown as Service[])
-		.concat(innovativeMicroSaasSolutions2034Additions as unknown as Service[])
-		.concat(cuttingEdgeAIServices2034Additions as unknown as Service[])
-		.concat(aiAutonomousEcosystemServices2029Additions as unknown as Service[])
-		.concat(emergingTechBreakthroughServices2029Additions as unknown as Service[])
-		.concat(practicalBusinessSolutionServices2029Additions as unknown as Service[]);
+		.concat(professionalServices as unknown as Service[])
+		.concat(real2032ServiceExpansions as unknown as Service[])
+		.concat(real2035Q1Additions as unknown as Service[])
+		.concat(real2035Q2AdditionsExtra as unknown as Service[])
+		.concat(real2026Q4ExpansionsV3 as unknown as Service[])
+		.concat(real2036ServiceExpansions as unknown as Service[]);
 }
 
 function toSlug(value: string): string {
@@ -139,16 +144,31 @@ export async function getStaticPaths() {
 	const services = getAllServices();
 	const slugs = new Set<string>();
 
+	// Define static service slugs that should not be handled by this dynamic route
+	const staticServiceSlugs = [
+		'ai-evaluation-orchestrator',
+		'ai-support-triage-router', 
+		'ai-code-review-assistant-pro',
+		'ai-revenue-forecasting-copilot'
+	];
+
 	for (const s of services) {
 		// Prefer explicit link under /services/* when available
 		const fromLink = s.link ? extractServiceSlugFromLink(s.link) : null;
-		if (fromLink) {
+		if (fromLink && !staticServiceSlugs.includes(fromLink)) {
 			slugs.add(fromLink);
 			continue;
 		}
 		// Fall back to normalized id or name to provide a stable URL under /services/*
-		if (s.id) slugs.add(toSlug(s.id));
-		else if (s.name) slugs.add(toSlug(s.name));
+		const idSlug = s.id ? toSlug(s.id) : '';
+		const nameSlug = s.name ? toSlug(s.name) : '';
+		
+		if (idSlug && !staticServiceSlugs.includes(idSlug)) {
+			slugs.add(idSlug);
+		}
+		if (nameSlug && !staticServiceSlugs.includes(nameSlug)) {
+			slugs.add(nameSlug);
+		}
 	}
 
 	return {
@@ -270,10 +290,16 @@ export default function ServiceDetailPage({ service }: { service: Service }) {
 					<div className="space-y-6">
 						<Card className="p-6 bg-black/40 border border-gray-700/50">
 							<div className="text-sm text-gray-400 mb-1">Pricing</div>
-							<div className="text-3xl font-bold text-white">{service.price}<span className="text-base font-medium text-gray-400">{service.period}</span></div>
+							<div className="text-3xl font-bold text-white">
+								{typeof service.price === 'string' ? service.price : 
+								 (typeof service.price === 'object' && service.price && 'monthly' in service.price) ? 
+								 `$${(service.price as any).monthly}/month` : 
+								 'Contact for pricing'}
+								<span className="text-base font-medium text-gray-400">{service.period}</span>
+							</div>
 							<div className="text-sm text-gray-400 mt-2">Trial: {service.trialDays || 14} days • Setup: {service.setupTime || 'Fast'} • Competitors: {(service.competitors || []).slice(0,3).join(', ')}</div>
 							<div className="mt-6 flex gap-3">
-								<Button href="/contact" className="flex-1 bg-gradient-to-r from-cyan-500 to-blue-600 text-white">Contact Sales</Button>
+								<Link href="/contact" className="flex-1 bg-gradient-to-r from-cyan-500 to-blue-600 text-white">Contact Sales</Button>
 								<Button href={service.link} variant="outline" className="flex-1 border border-gray-600 text-gray-200"><ExternalLink className="w-4 h-4 mr-2" /> Learn More</Button>
 							</div>
 						</Card>

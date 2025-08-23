@@ -16,7 +16,7 @@ import {
   FormLabel,
   FormMessage
 } from "@/components/ui/form";
-import { WorkExperience } from '@/types/resume';
+import type { WorkExperience } from '@/types/resume';
 
 
 
@@ -78,10 +78,10 @@ export function WorkExperienceForm({ resumeId, workExperiences, onComplete, onBa
         company_name: data.company_name, // Required field
         role_title: data.role_title, // Required field
         start_date: data.start_date, // Required field
-        end_date: data.is_current ? undefined : (data.end_date || undefined),
         is_current: data.is_current ?? false, // Default undefined to false
-        description: data.description,
-        location: data.location,
+        ...(data.is_current ? {} : { end_date: data.end_date || '' }),
+        ...(data.description && { description: data.description }),
+        ...(data.location && { location: data.location }),
       };
 
       if (editingId) {

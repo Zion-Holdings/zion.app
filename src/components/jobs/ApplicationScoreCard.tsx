@@ -1,16 +1,11 @@
-
 import { useState } from "react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
 import { supabase } from "@/integrations/supabase/client";
 import { Loader2, Star, BarChart2, Lightbulb } from 'lucide-react';
-
-
-
-
 import { toast } from "sonner";
-import { JobApplication } from "@/types/jobs";
+import type { JobApplication } from "@/types/jobs";
 
 interface ApplicationScoreCardProps {
   application: JobApplication;
@@ -45,6 +40,11 @@ export function ApplicationScoreCard({ application, onScoreUpdated }: Applicatio
   // Trigger the scoring process
   const handleScore = async () => {
     try {
+      if (!supabase) {
+        toast.error("Database connection not available");
+        return;
+      }
+      
       setIsScoring(true);
       
       // Call the trigger_resume_scoring function
@@ -63,6 +63,12 @@ export function ApplicationScoreCard({ application, onScoreUpdated }: Applicatio
       
       const checkScore = async () => {
         attempts++;
+        
+        if (!supabase) {
+          setIsScoring(false);
+          toast.error("Database connection not available");
+          return;
+        }
         
         const { data, error } = await supabase
           .from("job_applications")

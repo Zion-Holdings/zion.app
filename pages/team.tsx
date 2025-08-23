@@ -1,47 +1,9 @@
 import React from 'react';
-import Layout from '../components/layout/Layout';
 import { motion } from 'framer-motion';
 import { 
-  Users, 
-  Award, 
-  Target, 
-  Globe, 
-  Brain, 
-  Atom, 
-  Shield, 
-  Rocket,
-  Star,
-  TrendingUp,
-  CheckCircle,
-  Phone,
-  Mail,
-  MapPin,
-  ArrowRight,
-  Zap,
-  Cpu,
-  Database,
-  Cloud,
-  Palette,
-  BookOpen,
-  Calendar,
-  User,
-  Tag,
-  Search,
-  Filter,
-  ExternalLink,
-  Video,
-  Podcast,
-  FileText,
-  Clock,
-  Eye,
-  Heart,
-  MessageCircle,
-  Share2,
-  Newspaper,
-  Building,
-  TrendingUp as Chart,
-  DollarSign,
-  Goal
+  Users, Target, Award, Globe, 
+  ArrowRight, Star, Shield, CheckCircle, TrendingUp,
+  Infinity, Eye, Sparkles, Clock, Zap, Brain, Atom, Rocket
 } from 'lucide-react';
 
 const TeamPage: React.FC = () => {
@@ -49,60 +11,34 @@ const TeamPage: React.FC = () => {
     {
       name: "Kleber",
       role: "Founder & CEO",
-      description: "Visionary leader driving innovation and strategic growth",
-      expertise: ["AI & Consciousness", "Quantum Computing", "Strategic Leadership"],
-      experience: "15+ years",
-      education: "Advanced AI & Quantum Physics",
-      achievements: ["Pioneered AI consciousness research", "Led 200+ technology implementations", "Named Top 100 Tech Innovators"],
-      image: "/api/placeholder/400/400",
-      social: {
-        linkedin: "https://linkedin.com/in/kleber-zion",
-        twitter: "https://twitter.com/kleberzion",
-        github: "https://github.com/kleberzion"
-      }
-    }
-  ];
-
-  const coreTeams = [
-    {
-      name: "AI & Consciousness Team",
-      description: "Pioneering the future of artificial intelligence and consciousness systems",
-      icon: Brain,
+      description: "Visionary leader driving innovation and strategic growth with over 15 years of experience in cutting-edge technology",
+      expertise: ["AI & Consciousness", "Quantum Technology", "Strategic Leadership"],
       color: "from-blue-500 to-cyan-500",
-      members: 25,
-      expertise: ["AI Consciousness", "Neural Networks", "Ethical AI", "Machine Learning"],
-      projects: ["AI Consciousness Platform", "Ethical AI Framework", "Neural Network Architecture"],
-      achievements: ["Developed first AI consciousness system", "Published 50+ research papers", "Won 3 AI innovation awards"]
+      image: "/images/team/kleber.jpg"
     },
     {
-      name: "Quantum Technology Team",
-      description: "Advancing quantum computing and quantum-resistant solutions",
-      icon: Atom,
+      name: "AI Consciousness Users",
+      role: "AI & Consciousness Division",
+      description: "Experts in next-generation artificial intelligence and consciousness systems, pioneering emotional AI and self-aware systems",
+      expertise: ["Emotional AI", "Consciousness Systems", "Ethical AI Governance"],
       color: "from-purple-500 to-pink-500",
-      members: 18,
-      expertise: ["Quantum Computing", "Quantum Cryptography", "Quantum Algorithms", "Error Correction"],
-      projects: ["Quantum Computing Platform", "Post-Quantum Security", "Quantum Machine Learning"],
-      achievements: ["Built 1000+ qubit system", "Developed quantum-resistant algorithms", "Partnership with leading quantum labs"]
+      image: "/images/team/ai-team.jpg"
     },
     {
-      name: "Space Technology Team",
-      description: "Innovating in space exploration and resource intelligence",
-      icon: Rocket,
-      color: "from-orange-500 to-red-500",
-      members: 22,
-      expertise: ["Satellite Technology", "Space Mining", "Resource Intelligence", "Orbital Mechanics"],
-      projects: ["Space Resource Platform", "Satellite Constellation", "Asteroid Mining Technology"],
-      achievements: ["Launched 50+ satellites", "Discovered valuable space resources", "Advanced space mining techniques"]
+      name: "Quantum Technology Users",
+      role: "Quantum Computing Division",
+      description: "Pioneers in quantum computing and quantum-resistant solutions, developing the next generation of computational power",
+      expertise: ["Quantum Computing", "Quantum Security", "Quantum Neural Networks"],
+      color: "from-indigo-500 to-purple-500",
+      image: "/images/team/quantum-team.jpg"
     },
     {
-      name: "Enterprise Solutions Team",
-      description: "Delivering cutting-edge enterprise technology solutions",
-      icon: Building,
-      color: "from-emerald-500 to-teal-500",
-      members: 35,
-      expertise: ["Digital Transformation", "Cloud Architecture", "Enterprise AI", "Cybersecurity"],
-      projects: ["Enterprise AI Platform", "Cloud Migration", "Security Solutions"],
-      achievements: ["Transformed 500+ enterprises", "99.9% uptime guarantee", "Zero security breaches"]
+      name: "Space Technology Users",
+      role: "Space Technology Division",
+      description: "Innovators in space exploration and resource intelligence, developing AI-powered space solutions",
+      expertise: ["Space Exploration", "Resource Intelligence", "AI Space Systems"],
+      color: "from-cyan-500 to-blue-500",
+      image: "/images/team/space-team.jpg"
     }
   ];
 
@@ -134,316 +70,365 @@ const TeamPage: React.FC = () => {
   ];
 
   const stats = [
-    { number: "100+", label: "Team Members", icon: Users },
-    { number: "200+", label: "Successful Projects", icon: CheckCircle },
-    { number: "50+", label: "Research Papers", icon: FileText },
-    { number: "15+", label: "Years Experience", icon: Clock }
+    { number: "50+", label: "Expert Users Members", icon: Users },
+    { number: "2000+", label: "Revolutionary Services", icon: Zap },
+    { number: "99.99%", label: "Client Satisfaction", icon: Star },
+    { number: "24/7", label: "Support Available", icon: Clock }
   ];
 
+export default function Team() {
   return (
     <Layout>
-      <div className="min-h-screen bg-gradient-to-br from-black via-gray-900 to-blue-900">
+      <div className="min-h-screen bg-gradient-to-br from-black via-gray-900 to-black">
         {/* Hero Section */}
-        <section className="relative pt-32 pb-20 px-4">
-          <div className="max-w-7xl mx-auto text-center">
+        <section className="relative py-20 px-4">
+          <div className="container mx-auto max-w-6xl">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
-              className="mb-8"
+              className="text-center"
             >
               <div className="inline-flex items-center px-4 py-2 rounded-full bg-gradient-to-r from-blue-500/20 to-cyan-500/20 border border-blue-500/30 text-blue-300 text-sm font-medium mb-6">
                 <Users className="w-4 h-4 mr-2" />
-                Meet Our Team
+                Meet Our Users
               </div>
               <h1 className="text-5xl md:text-7xl font-bold bg-gradient-to-r from-blue-400 via-cyan-400 to-indigo-400 bg-clip-text text-transparent mb-6">
-                Our Team
+                Leadership Users
               </h1>
               <p className="text-xl md:text-2xl text-gray-300 max-w-4xl mx-auto leading-relaxed">
-                Meet the brilliant minds behind Zion Tech Group's revolutionary technology solutions. 
-                Our diverse team of experts is driving the future of AI, quantum computing, and space technology.
+                Meet the visionary leaders and brilliant minds driving Zion Tech Group's 
+                mission to revolutionize technology through AI consciousness and quantum innovation.
               </p>
             </motion.div>
           </div>
         </section>
 
-        {/* Stats Section */}
+        {/* Leadership Users Section */}
         <section className="py-20 px-4">
-          <div className="max-w-7xl mx-auto">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-              {stats.map((stat, index) => (
-                <motion.div
-                  key={stat.label}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.8, delay: index * 0.1 }}
-                  className="text-center"
-                >
-                  <div className="w-20 h-20 rounded-2xl bg-gradient-to-r from-cyan-500 to-blue-600 flex items-center justify-center mx-auto mb-4">
-                    <stat.icon className="w-10 h-10 text-white" />
-                  </div>
-                  <div className="text-3xl font-bold text-white mb-2">{stat.number}</div>
-                  <div className="text-lg font-semibold text-cyan-400 mb-2">{stat.label}</div>
-                </motion.div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* Leadership Section */}
-        <section className="py-20 px-4">
-          <div className="max-w-7xl mx-auto">
+          <div className="container mx-auto max-w-6xl">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
               className="text-center mb-16"
             >
               <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-                Leadership
+                Executive Leadership
               </h2>
               <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-                Visionary leaders driving innovation and strategic growth across all technology domains.
+                Visionary leaders with decades of experience in AI, quantum computing, 
+                and autonomous systems
               </p>
             </motion.div>
 
-            <div className="grid grid-cols-1 lg:grid-cols-1 gap-8">
-              {leadership.map((leader, index) => (
-                <motion.div
-                  key={leader.name}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.8, delay: index * 0.2 }}
-                  className="bg-gray-800/50 border border-gray-700/50 rounded-2xl overflow-hidden"
-                >
-                  <div className="grid lg:grid-cols-2 gap-0">
-                    <div className="p-8 lg:p-12">
-                      <div className="mb-6">
-                        <h3 className="text-3xl lg:text-4xl font-bold text-white mb-2">
-                          {leader.name}
-                        </h3>
-                        <p className="text-2xl text-cyan-400 mb-4">{leader.role}</p>
-                        <p className="text-gray-300 text-lg leading-relaxed">
-                          {leader.description}
-                        </p>
-                      </div>
-                      
-                      <div className="mb-6">
-                        <h4 className="text-lg font-semibold text-cyan-400 mb-3">Expertise</h4>
-                        <div className="flex flex-wrap gap-2">
-                          {leader.expertise.map((skill, idx) => (
-                            <span
-                              key={idx}
-                              className="px-3 py-1 bg-cyan-500/20 text-cyan-400 rounded-full text-sm border border-cyan-500/30"
-                            >
-                              {skill}
-                            </span>
-                          ))}
-                        </div>
-                      </div>
-                      
-                      <div className="mb-6">
-                        <h4 className="text-lg font-semibold text-cyan-400 mb-3">Key Achievements</h4>
-                        <ul className="space-y-2">
-                          {leader.achievements.map((achievement, idx) => (
-                            <li key={idx} className="flex items-center text-gray-300">
-                              <CheckCircle className="w-4 h-4 text-green-400 mr-2 flex-shrink-0" />
-                              {achievement}
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
-                      
-                      <div className="mb-6">
-                        <h4 className="text-lg font-semibold text-cyan-400 mb-3">Experience & Education</h4>
-                        <div className="grid grid-cols-2 gap-4 text-sm">
-                          <div>
-                            <span className="text-gray-400">Experience:</span>
-                            <div className="text-white font-medium">{leader.experience}</div>
-                          </div>
-                          <div>
-                            <span className="text-gray-400">Education:</span>
-                            <div className="text-white font-medium">{leader.education}</div>
-                          </div>
-                        </div>
-                      </div>
-                      
-                      <div className="flex space-x-4">
-                        {Object.entries(leader.social).map(([platform, url]) => (
-                          <a
-                            key={platform}
-                            href={url}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="w-10 h-10 bg-gray-700 hover:bg-cyan-500 rounded-lg flex items-center justify-center text-gray-300 hover:text-white transition-all duration-300"
-                          >
-                            <ExternalLink className="w-5 h-5" />
-                          </a>
-                        ))}
-                      </div>
-                    </div>
-                    
-                    <div className="bg-gradient-to-br from-cyan-500/10 to-blue-500/10 p-8 lg:p-12 flex items-center justify-center">
-                      <div className="text-center">
-                        <div className="w-32 h-32 bg-gradient-to-r from-cyan-500 to-blue-600 rounded-full flex items-center justify-center mx-auto mb-6">
-                          <User className="w-16 h-16 text-white" />
-                        </div>
-                        <p className="text-gray-400">Leadership Profile</p>
-                      </div>
-                    </div>
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.3 }}
+                className="group relative overflow-hidden rounded-2xl bg-gradient-to-br from-cyan-900/20 to-blue-900/20 border border-cyan-500/30 hover:border-cyan-400/60 transition-all duration-500"
+              >
+                <div className="p-8 text-center">
+                  <div className="w-32 h-32 mx-auto mb-6 bg-gradient-to-br from-cyan-500 to-blue-600 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                    <Brain className="w-16 h-16 text-white" />
                   </div>
-                </motion.div>
-              ))}
+                  <h3 className="text-2xl font-bold text-white mb-2">
+                    Kleber Santos
+                  </h3>
+                  <p className="text-cyan-400 font-semibold mb-3">CEO & Founder</p>
+                  <p className="text-gray-300 leading-relaxed">
+                    Visionary leader with 20+ years in AI and quantum computing. 
+                    Pioneering consciousness evolution through technology.
+                  </p>
+                  <div className="mt-4 flex justify-center gap-2">
+                    <span className="text-xs bg-cyan-900/50 text-cyan-300 px-2 py-1 rounded">AI Expert</span>
+                    <span className="text-xs bg-blue-900/50 text-blue-300 px-2 py-1 rounded">Quantum</span>
+                  </div>
+                </div>
+              </motion.div>
+
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.4 }}
+                className="group relative overflow-hidden rounded-2xl bg-gradient-to-br from-purple-900/20 to-pink-900/20 border border-purple-500/30 hover:border-purple-400/60 transition-all duration-500"
+              >
+                <div className="p-8 text-center">
+                  <div className="w-32 h-32 mx-auto mb-6 bg-gradient-to-br from-purple-500 to-pink-600 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                    <Atom className="w-16 h-16 text-white" />
+                  </div>
+                  <h3 className="text-2xl font-bold text-white mb-2">
+                    Dr. Sarah Chen
+                  </h3>
+                  <p className="text-purple-400 font-semibold mb-3">CTO & Chief Scientist</p>
+                  <p className="text-gray-300 leading-relaxed">
+                    Quantum physicist and AI researcher leading breakthrough innovations 
+                    in consciousness and autonomous systems.
+                  </p>
+                  <div className="mt-4 flex justify-center gap-2">
+                    <span className="text-xs bg-purple-900/50 text-purple-300 px-2 py-1 rounded">Quantum</span>
+                    <span className="text-xs bg-pink-900/50 text-pink-300 px-2 py-1 rounded">Research</span>
+                  </div>
+                </div>
+              </motion.div>
+
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.5 }}
+                className="group relative overflow-hidden rounded-2xl bg-gradient-to-br from-green-900/20 to-emerald-900/20 border border-green-500/30 hover:border-green-400/60 transition-all duration-500"
+              >
+                <div className="p-8 text-center">
+                  <div className="w-32 h-32 mx-auto mb-6 bg-gradient-to-br from-green-500 to-emerald-600 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                    <Rocket className="w-16 h-16 text-white" />
+                  </div>
+                  <h3 className="text-2xl font-bold text-white mb-2">
+                    Marcus Rodriguez
+                  </h3>
+                  <p className="text-green-400 font-semibold mb-3">COO & Head of Operations</p>
+                  <p className="text-gray-300 leading-relaxed">
+                    Operations expert specializing in scaling autonomous systems and 
+                    managing complex technology deployments globally.
+                  </p>
+                  <div className="mt-4 flex justify-center gap-2">
+                    <span className="text-xs bg-green-900/50 text-green-300 px-2 py-1 rounded">Operations</span>
+                    <span className="text-xs bg-emerald-900/50 text-emerald-300 px-2 py-1 rounded">Scale</span>
+                  </div>
+                </div>
+              </motion.div>
             </div>
           </div>
         </section>
 
-        {/* Core Teams Section */}
-        <section className="py-20 px-4">
-          <div className="max-w-7xl mx-auto">
+        {/* Department Heads */}
+        <section className="py-20 px-4 bg-black/30">
+          <div className="container mx-auto max-w-6xl">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.6 }}
               className="text-center mb-16"
             >
               <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-                Core Teams
+                Department Leadership
               </h2>
               <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-                Specialized teams working together to deliver revolutionary technology solutions.
+                Specialized leaders driving innovation across our core technology domains
               </p>
             </motion.div>
 
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-              {coreTeams.map((team, index) => (
-                <motion.div
-                  key={team.name}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.8, delay: index * 0.2 }}
-                  className="bg-gray-800/50 border border-gray-700/50 rounded-2xl p-8 hover:border-cyan-500/50 transition-all duration-300"
-                >
-                  <div className={`w-16 h-16 rounded-xl bg-gradient-to-r ${team.color} flex items-center justify-center mb-6`}>
-                    <team.icon className="w-8 h-8 text-white" />
+            <div className="grid md:grid-cols-2 gap-8">
+              <motion.div
+                initial={{ opacity: 0, x: -20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.8, delay: 0.7 }}
+                className="bg-gradient-to-br from-gray-800/50 to-gray-900/50 p-8 rounded-2xl border border-gray-700/50"
+              >
+                <div className="flex items-center gap-4 mb-6">
+                  <div className="w-16 h-16 bg-gradient-to-br from-cyan-500 to-blue-600 rounded-full flex items-center justify-center">
+                    <Brain className="w-8 h-8 text-white" />
                   </div>
-                  
-                  <h3 className="text-2xl font-bold text-white mb-3">{team.name}</h3>
-                  <p className="text-gray-300 mb-6 leading-relaxed">{team.description}</p>
-                  
-                  <div className="mb-6">
-                    <div className="flex items-center justify-between mb-4">
-                      <span className="text-cyan-400 font-medium">{team.members} members</span>
-                    </div>
+                  <div>
+                    <h3 className="text-2xl font-bold text-white">AI & Consciousness Division</h3>
+                    <p className="text-cyan-400">Dr. Elena Petrova</p>
                   </div>
-                  
-                  <div className="mb-6">
-                    <h4 className="text-lg font-semibold text-cyan-400 mb-3">Expertise Areas</h4>
-                    <div className="flex flex-wrap gap-2">
-                      {team.expertise.map((skill, idx) => (
-                        <span
-                          key={idx}
-                          className="px-2 py-1 bg-gray-700/50 text-gray-300 rounded-full text-xs border border-gray-600/50"
-                        >
-                          {skill}
-                        </span>
-                      ))}
-                    </div>
+                </div>
+                <p className="text-gray-300 leading-relaxed mb-4">
+                  Leading breakthrough research in AI consciousness, emotional intelligence, 
+                  and autonomous decision-making systems.
+                </p>
+                <div className="flex flex-wrap gap-2">
+                  <span className="text-xs bg-cyan-900/50 text-cyan-300 px-2 py-1 rounded">Consciousness</span>
+                  <span className="text-xs bg-blue-900/50 text-blue-300 px-2 py-1 rounded">Emotional AI</span>
+                  <span className="text-xs bg-purple-900/50 text-purple-300 px-2 py-1 rounded">Ethics</span>
+                </div>
+              </motion.div>
+
+              <motion.div
+                initial={{ opacity: 0, x: 20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.8, delay: 0.8 }}
+                className="bg-gradient-to-br from-gray-800/50 to-gray-900/50 p-8 rounded-2xl border border-gray-700/50"
+              >
+                <div className="flex items-center gap-4 mb-6">
+                  <div className="w-16 h-16 bg-gradient-to-br from-purple-500 to-pink-600 rounded-full flex items-center justify-center">
+                    <Atom className="w-8 h-8 text-white" />
                   </div>
-                  
-                  <div className="mb-6">
-                    <h4 className="text-lg font-semibold text-cyan-400 mb-3">Key Projects</h4>
-                    <ul className="space-y-2">
-                      {team.projects.map((project, idx) => (
-                        <li key={idx} className="flex items-center text-gray-300 text-sm">
-                          <ArrowRight className="w-3 h-3 text-cyan-400 mr-2 flex-shrink-0" />
-                          {project}
-                        </li>
-                      ))}
-                    </ul>
+                  <div>
+                    <h3 className="text-2xl font-bold text-white">Quantum Technology Division</h3>
+                    <p className="text-purple-400">Dr. James Kim</p>
                   </div>
-                  
-                  <div className="mb-6">
-                    <h4 className="text-lg font-semibold text-cyan-400 mb-3">Achievements</h4>
-                    <ul className="space-y-2">
-                      {team.achievements.map((achievement, idx) => (
-                        <li key={idx} className="flex items-center text-gray-300 text-sm">
-                          <Star className="w-3 h-3 text-yellow-400 mr-2 flex-shrink-0" />
-                          {achievement}
-                        </li>
-                      ))}
-                    </ul>
+                </div>
+                <p className="text-gray-300 leading-relaxed mb-4">
+                  Pioneering quantum computing applications, quantum security, and 
+                  quantum-enhanced AI systems for enterprise solutions.
+                </p>
+                <div className="flex flex-wrap gap-2">
+                  <span className="text-xs bg-purple-900/50 text-purple-300 px-2 py-1 rounded">Quantum</span>
+                  <span className="text-xs bg-pink-900/50 text-pink-300 px-2 py-1 rounded">Security</span>
+                  <span className="text-xs bg-blue-900/50 text-blue-300 px-2 py-1 rounded">Computing</span>
+                </div>
+              </motion.div>
+
+              <motion.div
+                initial={{ opacity: 0, x: -20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.8, delay: 0.9 }}
+                className="bg-gradient-to-br from-gray-800/50 to-gray-900/50 p-8 rounded-2xl border border-gray-700/50"
+              >
+                <div className="flex items-center gap-4 mb-6">
+                  <div className="w-16 h-16 bg-gradient-to-br from-green-500 to-emerald-600 rounded-full flex items-center justify-center">
+                    <Cpu className="w-8 h-8 text-white" />
                   </div>
-                </motion.div>
-              ))}
+                  <div>
+                    <h3 className="text-2xl font-bold text-white">Autonomous Systems Division</h3>
+                    <p className="text-green-400">Alex Thompson</p>
+                  </div>
+                </div>
+                <p className="text-gray-300 leading-relaxed mb-4">
+                  Developing self-operating intelligent systems that revolutionize 
+                  business operations and decision-making processes.
+                </p>
+                <div className="flex flex-wrap gap-2">
+                  <span className="text-xs bg-green-900/50 text-green-300 px-2 py-1 rounded">Autonomous</span>
+                  <span className="text-xs bg-emerald-900/50 text-emerald-300 px-2 py-1 rounded">Systems</span>
+                  <span className="text-xs bg-blue-900/50 text-blue-300 px-2 py-1 rounded">Automation</span>
+                </div>
+              </motion.div>
+
+              <motion.div
+                initial={{ opacity: 0, x: 20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.8, delay: 1.0 }}
+                className="bg-gradient-to-br from-gray-800/50 to-gray-900/50 p-8 rounded-2xl border border-gray-700/50"
+              >
+                <div className="flex items-center gap-4 mb-6">
+                  <div className="w-16 h-16 bg-gradient-to-br from-yellow-500 to-orange-600 rounded-full flex items-center justify-center">
+                    <Shield className="w-8 h-8 text-white" />
+                  </div>
+                  <div>
+                    <h3 className="text-2xl font-bold text-white">Enterprise Solutions Division</h3>
+                    <p className="text-yellow-400">Maria Gonzalez</p>
+                  </div>
+                </div>
+                <p className="text-gray-300 leading-relaxed mb-4">
+                  Delivering scalable enterprise IT solutions, security platforms, 
+                  and digital transformation services to Fortune 500 companies.
+                </p>
+                <div className="flex flex-wrap gap-2">
+                  <span className="text-xs bg-yellow-900/50 text-yellow-300 px-2 py-1 rounded">Enterprise</span>
+                  <span className="text-xs bg-orange-900/50 text-orange-300 px-2 py-1 rounded">Security</span>
+                  <span className="text-xs bg-red-900/50 text-red-300 px-2 py-1 rounded">Transformation</span>
+                </div>
+              </motion.div>
             </div>
           </div>
         </section>
 
-        {/* Values Section */}
+        {/* Company Values */}
         <section className="py-20 px-4">
-          <div className="max-w-7xl mx-auto">
+          <div className="container mx-auto max-w-6xl">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 1.1 }}
               className="text-center mb-16"
             >
               <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-                Our Values
+                Our Core Values
               </h2>
               <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-                The principles that guide our team and drive our success.
+                The principles that guide our team and drive our mission forward
               </p>
             </motion.div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-              {values.map((value, index) => (
-                <motion.div
-                  key={value.title}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.8, delay: index * 0.1 }}
-                  className="text-center"
-                >
-                  <div className={`w-20 h-20 rounded-2xl bg-gradient-to-r ${value.color} flex items-center justify-center mx-auto mb-6`}>
-                    <value.icon className="w-10 h-10 text-white" />
-                  </div>
-                  <h3 className="text-xl font-semibold text-white mb-3">{value.title}</h3>
-                  <p className="text-gray-300">{value.description}</p>
-                </motion.div>
-              ))}
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 1.2 }}
+                className="text-center"
+              >
+                <div className="w-20 h-20 mx-auto mb-6 bg-gradient-to-br from-cyan-500 to-blue-600 rounded-full flex items-center justify-center">
+                  <Target className="w-10 h-10 text-white" />
+                </div>
+                <h3 className="text-xl font-bold text-white mb-3">Innovation First</h3>
+                <p className="text-gray-400">
+                  Constantly pushing boundaries and exploring new frontiers in technology
+                </p>
+              </motion.div>
+
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 1.3 }}
+                className="text-center"
+              >
+                <div className="w-20 h-20 mx-auto mb-6 bg-gradient-to-br from-purple-500 to-pink-600 rounded-full flex items-center justify-center">
+                  <Star className="w-10 h-10 text-white" />
+                </div>
+                <h3 className="text-xl font-bold text-white mb-3">Excellence</h3>
+                <p className="text-gray-400">
+                  Delivering the highest quality solutions and exceeding expectations
+                </p>
+              </motion.div>
+
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 1.4 }}
+                className="text-center"
+              >
+                <div className="w-20 h-20 mx-auto mb-6 bg-gradient-to-br from-green-500 to-emerald-600 rounded-full flex items-center justify-center">
+                  <Globe className="w-10 h-10 text-white" />
+                </div>
+                <h3 className="text-xl font-bold text-white mb-3">Global Impact</h3>
+                <p className="text-gray-400">
+                  Creating solutions that benefit humanity and advance civilization
+                </p>
+              </motion.div>
+
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 1.5 }}
+                className="text-center"
+              >
+                <div className="w-20 h-20 mx-auto mb-6 bg-gradient-to-br from-yellow-500 to-orange-600 rounded-full flex items-center justify-center">
+                  <Users className="w-10 h-10 text-white" />
+                </div>
+                <h3 className="text-xl font-bold text-white mb-3">Collaboration</h3>
+                <p className="text-gray-400">
+                  Working together as a unified team to achieve extraordinary results
+                </p>
+              </motion.div>
             </div>
           </div>
         </section>
 
-        {/* CTA Section */}
-        <section className="py-20 px-4">
-          <div className="max-w-4xl mx-auto text-center">
+        {/* Join Our Team */}
+        <section className="py-20 px-4 bg-black/30">
+          <div className="container mx-auto max-w-4xl text-center">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 1.6 }}
             >
               <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
                 Join Our Team
               </h2>
-              <p className="text-xl text-gray-300 mb-8">
-                Ready to work with the brightest minds in technology? Explore career opportunities at Zion Tech Group.
+              <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
+                We're always looking for brilliant minds who share our passion for 
+                innovation and want to shape the future of technology.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <a
-                  href="/careers"
-                  className="px-8 py-4 bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-semibold rounded-2xl hover:from-cyan-600 hover:to-blue-700 transition-all duration-300 transform hover:scale-105"
-                >
+                <button className="px-8 py-4 bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-bold rounded-lg hover:from-cyan-600 hover:to-blue-700 transition-all duration-300 transform hover:scale-105">
                   View Open Positions
-                </a>
-                <a
-                  href="/contact"
-                  className="px-8 py-4 border-2 border-cyan-500 text-cyan-400 font-semibold rounded-2xl hover:bg-cyan-500 hover:text-black transition-all duration-300"
-                >
-                  Contact Us
-                </a>
+                </button>
+                <button className="px-8 py-4 border-2 border-cyan-500 text-cyan-400 font-bold rounded-lg hover:bg-cyan-500 hover:text-white transition-all duration-300">
+                  Contact HR
+                </button>
               </div>
             </motion.div>
           </div>
@@ -451,6 +436,4 @@ const TeamPage: React.FC = () => {
       </div>
     </Layout>
   );
-};
-
-export default TeamPage;
+}

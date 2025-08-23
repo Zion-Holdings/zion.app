@@ -5,20 +5,24 @@ import { TALENT_PROFILES } from '@/data/talentData';
 function handler(req: NextApiRequest, res: NextApiResponse) {
   if (req.method !== 'GET') {
     res.setHeader('Allow', 'GET');
-    return res.status(405).json({ error: `Method ${req.method} Not Allowed` });
+    res.status(405).json({ error: `Method ${req.method} Not Allowed` });
+    return;
   }
 
   const { id } = req.query as { id: string | string[] };
   if (typeof id !== 'string') {
-    return res.status(400).json({ error: 'Invalid id' });
+    res.status(400).json({ error: 'Invalid id' });
+    return;
   }
 
   const profile = TALENT_PROFILES.find((p) => p.id === id);
   if (!profile) {
-    return res.status(404).json({ error: 'Talent not found' });
+    res.status(404).json({ error: 'Talent not found' });
+    return;
   }
 
-  return res.status(200).json({ profile });
+  res.status(200).json({ profile });
+  return;
 }
 
 export default withErrorLogging(handler);

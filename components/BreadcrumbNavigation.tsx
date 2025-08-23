@@ -13,35 +13,31 @@ interface BreadcrumbNavigationProps {
   className?: string;
 }
 
-const BreadcrumbNavigation: React.FC<BreadcrumbNavigationProps> = ({ 
-  items, 
-  className = "" 
-}) => {
+const BreadcrumbNavigation: React.FC<BreadcrumbNavigationProps> = ({ items, className = '' }) => {
   return (
-    <nav 
+    <nav
       className={`flex items-center space-x-2 text-sm ${className}`}
       aria-label="Breadcrumb"
     >
       <ol className="flex items-center space-x-2">
-        {/* Home Link */}
         <li>
           <Link
             href="/"
-            className="flex items-center text-gray-400 hover:text-white transition-colors duration-200"
+            className="flex items-center text-gray-400 hover:text-cyan-400 transition-colors"
             aria-label="Go to homepage"
           >
             <Home className="w-4 h-4" />
+            <span className="sr-only">Home</span>
           </Link>
         </li>
         
-        {/* Breadcrumb Items */}
         {items.map((item, index) => (
           <li key={index} className="flex items-center">
-            <ChevronRight className="w-4 h-4 text-gray-500 mx-2" />
+            <ChevronRight className="w-4 h-4 text-gray-600 mx-2" />
             
             {item.current ? (
-              <span 
-                className="text-white font-medium"
+              <span
+                className="text-cyan-400 font-medium"
                 aria-current="page"
               >
                 {item.label}
@@ -49,7 +45,7 @@ const BreadcrumbNavigation: React.FC<BreadcrumbNavigationProps> = ({
             ) : item.href ? (
               <Link
                 href={item.href}
-                className="text-gray-400 hover:text-white transition-colors duration-200"
+                className="text-gray-400 hover:text-cyan-400 transition-colors"
               >
                 {item.label}
               </Link>

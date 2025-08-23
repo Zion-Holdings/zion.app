@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import SEO from '../components/SEO';
+import Head from 'next/head';
 import { motion } from 'framer-motion';
 import { 
   Search, Grid, List, Star, Users, TrendingUp,
@@ -76,13 +76,11 @@ const ComprehensiveServicesShowcase: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-900 via-purple-900 to-gray-900 text-white">
-      <SEO 
-        data={{
-          pageTitle: "Comprehensive Services Showcase - Zion Tech Group",
-          pageDescription: "Explore our complete portfolio of innovative micro SAAS, IT services, and AI solutions. From quantum computing to autonomous systems, discover the future of technology.",
-          pageKeywords: ["micro SAAS", "IT services", "AI solutions", "quantum computing", "cybersecurity", "enterprise IT", "cloud infrastructure"]
-        }}
-      />
+      <Head>
+        <title>Comprehensive Services Showcase - Zion Tech Group</title>
+        <meta name="description" content="Explore our complete portfolio of innovative micro SAAS, IT services, and AI solutions. From quantum computing to autonomous systems, discover the future of technology." />
+        <meta name="keywords" content="micro SAAS, IT services, AI solutions, quantum computing, cybersecurity, enterprise IT, cloud infrastructure" />
+      </Head>
 
       {/* Header Section */}
       <section className="py-20 px-4 relative overflow-hidden">
@@ -149,7 +147,7 @@ const ComprehensiveServicesShowcase: React.FC = () => {
                     placeholder="Search services..."
                     value={searchQuery}
                     onChange={(e) => setSearchQuery(e.target.value)}
-                    className="w-full pl-10 pr-4 py-3 bg-gray-700/50 border border-gray-600/50 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:border-cyan-500/50"
+                    className="w-full pl-10 pr-4 py-3 bg-gray-700/50 border border-gray-600/50 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:border-cyan-500"
                   />
                 </div>
               </div>

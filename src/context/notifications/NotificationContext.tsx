@@ -1,8 +1,9 @@
-import React, { createContext, useContext, useEffect, ReactNode } from 'react';
+import React, { createContext, useContext, useEffect } from 'react';
+import type { ReactNode } from 'react';
 import { supabase } from '@/integrations/supabase/client';
 import { useAuth } from '@/hooks/useAuth';
 import { useNotificationOperations } from './useNotificationOperations';
-import { NotificationContextType } from './types';
+import type { NotificationContextType, Notification } from './types';
 import { subscribeToPush } from '@/utils/pushSubscription';
 import { safeStorage } from '@/utils/safeStorage';
 import { logInfo } from '@/utils/productionLogger';
@@ -22,6 +23,7 @@ const defaultContext: NotificationContextType = {
   dismissNotification: async () => {},
   setFilter: () => {},
   fetchNotifications: async () => {},
+  setNotifications: () => {},
 };
 
 // Cast the default context value to avoid issues when React types are missing.
@@ -46,25 +48,38 @@ export const NotificationProvider = ({ children }: { children: ReactNode }): Rea
     notificationOps.fetchNotifications();
     
     // Set up real-time subscription for new notifications
-    if (user) {
+    if (user && supabase) {
       const channel = supabase
         .channel('notifications-changes')
         .on('postgres_changes', 
           {
-            event: '*', 
+            event: 'INSERT',
             schema: 'public',
             table: 'notifications',
             filter: `user_id=eq.${user.id}`
           },
-          (payload: any) => {
-            logInfo('Notification change received:', { data: payload });
-            notificationOps.fetchNotifications();
+          (payload) => {
+            const newNotification = payload.new as Notification;
+            // Type guard: check required fields
+            if (
+              newNotification &&
+              typeof newNotification.id === 'string' &&
+              typeof newNotification.type === 'string' &&
+              typeof newNotification.user_id === 'string' &&
+              typeof newNotification.message === 'string'
+            ) {
+              notificationOps.setNotifications(prev => [newNotification, ...prev]);
+            } else {
+              notificationOps.fetchNotifications();
+            }
           }
         )
         .subscribe();
         
       return () => {
-        supabase.removeChannel(channel);
+        if (supabase) {
+          supabase.removeChannel(channel);
+        }
       };
     }
     return undefined;

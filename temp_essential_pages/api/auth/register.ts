@@ -19,7 +19,7 @@ async function handler(req: NextApiRequest, res: NextApiResponse) {
     return res.status(405).end();
   }
 
-  const result = schema.safeParse(req.body);
+  const result = schema.safeParse(req['body']);
   if (!result.success) {
     const errorMessage = result.error.errors[0].message;
     return res.status(400).json({ 

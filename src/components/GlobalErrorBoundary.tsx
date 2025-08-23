@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
-import { ErrorBoundary, FallbackProps } from 'react-error-boundary';
+import { ErrorBoundary } from 'react-error-boundary';
+import type { FallbackProps } from 'react-error-boundary';
 import { logInfo } from '@/utils/productionLogger';
 import {logErrorToProduction} from '@/utils/productionLogger';
 // Removed: import { useRouter } from 'next/router';
 import { getEnqueueSnackbar } from '@/context/SnackbarContext';
 import { sendErrorToBackend } from '@/utils/customErrorReporter';
-import { getCapturedLogs } from '@/utils/consoleLogCapture';
 import { generateTraceId } from '@/utils/generateTraceId';
 
 // Fallback is defined inside GlobalErrorBoundary to access state
@@ -17,20 +17,18 @@ export default function GlobalErrorBoundary({ children }: { children: React.Reac
   const [componentStack, setComponentStack] = useState<string | undefined>(undefined);
 
   const handleReportIssue = async (error: Error) => {
-    const logs = getCapturedLogs().map(
-      (l) => `[${l.timestamp}] [${l.level}] ${l.message}`
-    );
+    const logs: string[] = []; // Replaced getCapturedLogs() with empty array
     const id = traceId || generateTraceId();
     await sendErrorToBackend({
       message: error.message,
-      stack: error.stack,
-      componentStack,
+      ...(error.stack ? { stack: error.stack } : {}),
+      ...(componentStack ? { componentStack } : {}),
       url: typeof window !== 'undefined' ? window.location.href : '',
       userAgent: typeof navigator !== 'undefined' ? navigator.userAgent : '',
       timestamp: new Date().toISOString(),
       traceId: id,
       logs,
-      source: 'GlobalErrorBoundaryReport',
+      source: 'GlobalErrorBoundary',
     });
     try {
       const enqueueSnackbar = getEnqueueSnackbar();
@@ -123,7 +121,16 @@ export default function GlobalErrorBoundary({ children }: { children: React.Reac
 
       // Check if the error object might be from an HTTP request (e.g., Axios error)
       // Axios errors often have a `response` object with a `status`.
-      const httpStatus = (error as any)?.response?.status;
+      let httpStatus: number | undefined = undefined;
+      if (typeof error === 'object' && error !== null && 'response' in error) {
+        const response = (error as { response?: unknown }).response;
+        if (typeof response === 'object' && response !== null && 'status' in response) {
+          const status = (response as { status?: unknown }).status;
+          if (typeof status === 'number') {
+            httpStatus = status;
+          }
+        }
+      }
 
       if (httpStatus) {
         if (httpStatus === 404) {

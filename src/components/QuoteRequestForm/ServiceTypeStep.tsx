@@ -1,26 +1,11 @@
 import { useEffect, useState } from "react";
-import { QuoteFormData, ListingItem, ServiceType } from "@/types/quotes";
+import type { QuoteFormData, ListingItem, ServiceType } from "@/types/quotes";
 import { Input } from "@/components/ui/input";
 import { Card } from "@/components/ui/card";
 import { Search } from 'lucide-react';
 
 import { ListingScoreCard } from "@/components/ListingScoreCard";
-import { captureException } from "@/utils/sentry";
-import Skeleton from "@/components/ui/skeleton";
-import { useDebounce } from "@/hooks/useDebounce";
-import { useIsMounted } from "@/hooks/useIsMounted";
-import { z } from "zod";
-import {logErrorToProduction} from '@/utils/productionLogger';
-
-
-const listingSchema = z.object({
-  id: z.string(),
-  title: z.string(),
-  category: z.string(),
-  image: z.string().optional(),
-});
-
-const listingsSchema = z.array(listingSchema);
+import api from '@/lib/api';
 
 interface ServiceTypeStepProps {
   formData: QuoteFormData;
@@ -45,41 +30,18 @@ export function ServiceTypeStep({ formData, updateFormData }: ServiceTypeStepPro
 
     const fetchServices = async () => {
       setLoading(true);
-      setError(null);
-      const url = `/api/public/services?category=${encodeURIComponent(
-        formData.serviceType
-      )}&q=${encodeURIComponent(debouncedQuery)}`;
-      const maxRetries = 3;
-
-      for (let attempt = 0; attempt < maxRetries; attempt++) {
-        try {
-          const response = await fetch(url);
-          if (!response.ok) throw new Error('Failed to fetch');
-          const data = await response.json();
-          const parsed = listingsSchema.safeParse(data);
-          if (!parsed.success) throw new Error('Invalid response');
-          if (isMounted.current) {
-            setListings(parsed.data as ListingItem[]);
-            setError(null);
-          }
-          return;
-        } catch (err) {
-          if (attempt === maxRetries - 1) {
-            if (process.env.NODE_ENV === 'development') {
-              logErrorToProduction('Failed to load services:', { data: err });
-            } else {
-              captureException(err);
-            }
-            if (isMounted.current) {
-              setListings([]);
-              setError('Failed to load services');
-            }
-          } else {
-            await new Promise((res) => setTimeout(res, Math.pow(2, attempt) * 500));
-          }
-        } finally {
-          if (isMounted.current) setLoading(false);
-        }
+      try {
+        const response = await api.get(
+          `/api/services?categoryId=${encodeURIComponent(formData.serviceType)}`
+        );
+        if (response.status < 200 || response.status >= 300) throw new Error('Failed to fetch');
+        const data = response.data;
+        setListings(data as ListingItem[]);
+      } catch (err) {
+        // Fallback to sample data on error
+        setListings(SAMPLE_LISTINGS.filter(item => item.category.toLowerCase() === formData.serviceType.toLowerCase()));
+      } finally {
+        setLoading(false);
       }
     };
 

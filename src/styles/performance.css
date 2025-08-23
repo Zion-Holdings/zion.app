@@ -139,7 +139,7 @@
 
 /* Prevent reflow during image loading */
 .image-stable {
-  aspect-ratio: attr(width) / attr(height);
+  aspect-ratio: 16/9;
   object-fit: cover;
 }
 

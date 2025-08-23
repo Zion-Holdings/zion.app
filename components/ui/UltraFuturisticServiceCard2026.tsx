@@ -1,264 +1,230 @@
-import React, { useState } from 'react';
+import React, { useState, useCallback, useMemo } from 'react';
 import { motion } from 'framer-motion';
-import { 
-  Check, 
-  Star, 
-  ArrowRight, 
-  Zap, 
-  Brain, 
-  Atom, 
-  Rocket,
-  Shield,
-  Cpu,
-  Target,
-  TrendingUp,
-  Users,
-  Clock,
-  Award
-} from 'lucide-react';
+import { ArrowRight, Crown, Building, Rocket } from 'lucide-react';
 
 interface Service {
-  id: string;
+  id?: string;
   name: string;
-  tagline: string;
+  tagline?: string;
   description: string;
-  price: string;
-  period: string;
-  features: string[];
+  price?: string;
+  period?: string;
+  features?: string[];
   popular?: boolean;
   category: string;
-  icon: string;
+  icon?: string;
 }
 
 interface UltraFuturisticServiceCard2026Props {
   service: Service;
-  variant?: 'ai' | 'quantum' | 'automation' | 'space' | 'enterprise';
+  variant?: 'default' | 'quantum' | 'ai' | 'automation' | 'it' | 'emerging' | 'enterprise' | 'premium';
+  theme?: 'quantum' | 'cyber' | 'neon';
+  className?: string;
+  onClick?: () => void;
 }
 
-const UltraFuturisticServiceCard2026: React.FC<UltraFuturisticServiceCard2026Props> = ({
+const UltraFuturisticServiceCard2026: React.FC<UltraFuturisticServiceCard2026Props> = memo(({
   service,
-  variant = 'ai'
+  variant = 'default',
+  className = '',
+  onClick
 }) => {
   const [isHovered, setIsHovered] = useState(false);
+  const [isExpanded, setIsExpanded] = useState(false);
 
-  const getVariantStyles = () => {
-    switch (variant) {
+  // Get variant-specific styles
+  const variantStyles = useMemo(() => {
+    if (variant === 'premium') {
+      return {
+        container: 'border-cyan-400/50 bg-gradient-to-br from-cyan-900/20 to-blue-900/20',
+        icon: <Crown className="w-5 h-5 text-yellow-400" />,
+        badge: 'bg-gradient-to-r from-yellow-400 to-orange-500 text-black',
+        button: 'bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-600 hover:to-blue-700',
+        text: 'text-cyan-50',
+        accent: 'bg-cyan-400'
+      };
+    }
+    
+    if (variant === 'enterprise') {
+      return {
+        container: 'border-purple-400/50 bg-gradient-to-br from-purple-900/20 to-pink-900/20',
+        icon: <Building className="w-5 h-5 text-purple-400" />,
+        badge: 'bg-gradient-to-r from-purple-500 to-pink-600',
+        button: 'bg-gradient-to-r from-purple-500 to-pink-600 hover:from-purple-600 hover:to-pink-700',
+        text: 'text-purple-50',
+        accent: 'bg-purple-400'
+      };
+    }
+    
+    // Default variant
+    return {
+      container: 'border-gray-600/50 bg-gradient-to-br from-gray-800/20 to-gray-700/20',
+      icon: <Rocket className="w-5 h-5 text-cyan-400" />,
+      badge: 'bg-gradient-to-r from-cyan-500 to-blue-600',
+      button: 'bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-600 hover:to-blue-700',
+      text: 'text-gray-50',
+      accent: 'bg-cyan-400'
+    };
+  }, [variant]);
+
+  const handleCardClick = useCallback(() => {
+    if (onClick) {
+      onClick();
+    } else {
+      setIsExpanded(!isExpanded);
+    }
+  }, [onClick, isExpanded]);
+
+  const getCategoryIcon = (category: string) => {
+    switch (category.toLowerCase()) {
       case 'ai':
-        return {
-          gradient: 'from-cyan-500 to-blue-600',
-          border: 'border-cyan-400/30',
-          hoverBorder: 'hover:border-cyan-400/60',
-          iconBg: 'bg-gradient-to-br from-cyan-400 to-blue-500',
-          badgeBg: 'bg-gradient-to-r from-cyan-500 to-blue-600',
-          featureIcon: <Brain className="w-4 h-4 text-cyan-400" />
-        };
+        return <Brain className="w-5 h-5" />;
       case 'quantum':
-        return {
-          gradient: 'from-purple-500 to-pink-600',
-          border: 'border-purple-400/30',
-          hoverBorder: 'hover:border-purple-400/60',
-          iconBg: 'bg-gradient-to-br from-purple-400 to-pink-500',
-          badgeBg: 'bg-gradient-to-r from-purple-500 to-pink-600',
-          featureIcon: <Atom className="w-4 h-4 text-purple-400" />
-        };
+        return <Atom className="w-5 h-5" />;
       case 'automation':
-        return {
-          gradient: 'from-green-500 to-emerald-600',
-          border: 'border-green-400/30',
-          hoverBorder: 'hover:border-green-400/60',
-          iconBg: 'bg-gradient-to-br from-green-400 to-emerald-500',
-          badgeBg: 'bg-gradient-to-r from-green-500 to-emerald-600',
-          featureIcon: <Zap className="w-4 h-4 text-green-400" />
-        };
-      case 'space':
-        return {
-          gradient: 'from-blue-500 to-indigo-600',
-          border: 'border-blue-400/30',
-          hoverBorder: 'hover:border-blue-400/60',
-          iconBg: 'bg-gradient-to-br from-blue-400 to-indigo-500',
-          badgeBg: 'bg-gradient-to-r from-blue-500 to-indigo-600',
-          featureIcon: <Rocket className="w-4 h-4 text-blue-400" />
-        };
+        return <Zap className="w-5 h-5" />;
+      case 'it':
+        return <Shield className="w-5 h-5" />;
+      case 'emerging':
+        return <Rocket className="w-5 h-5" />;
       case 'enterprise':
-        return {
-          gradient: 'from-gray-500 to-slate-600',
-          border: 'border-gray-400/30',
-          hoverBorder: 'hover:border-gray-400/60',
-          iconBg: 'bg-gradient-to-br from-gray-400 to-slate-500',
-          badgeBg: 'bg-gradient-to-r from-gray-500 to-slate-600',
-          featureIcon: <Cpu className="w-4 h-4 text-gray-400" />
-        };
+        return <TrendingUp className="w-5 h-5" />;
       default:
-        return {
-          gradient: 'from-cyan-500 to-blue-600',
-          border: 'border-cyan-400/30',
-          hoverBorder: 'hover:border-cyan-400/60',
-          iconBg: 'bg-gradient-to-br from-cyan-400 to-blue-500',
-          badgeBg: 'bg-gradient-to-r from-cyan-500 to-blue-600',
-          featureIcon: <Target className="w-4 h-4 text-cyan-400" />
-        };
+        return <Award className="w-5 h-5" />;
     }
   };
 
-  const styles = getVariantStyles();
-
   return (
     <motion.div
-      className={`relative group p-8 bg-gradient-to-br from-gray-800/50 to-gray-900/50 border ${styles.border} ${styles.hoverBorder} rounded-3xl transition-all duration-500 hover:transform hover:scale-105 hover:shadow-2xl hover:shadow-cyan-500/20 overflow-hidden`}
-      onHoverStart={() => setIsHovered(true)}
-      onHoverEnd={() => setIsHovered(false)}
-      whileHover={{ y: -8 }}
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6 }}
       viewport={{ once: true }}
+      whileHover={{ y: -5 }}
+      className={`relative group cursor-pointer transition-all duration-500 ${className}`}
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
+      onClick={handleCardClick}
     >
-      {/* Background Glow Effect */}
-      <div className={`absolute inset-0 bg-gradient-to-br ${styles.gradient} opacity-0 group-hover:opacity-5 transition-opacity duration-500 rounded-3xl`} />
-      
       {/* Popular Badge */}
       {service.popular && (
         <motion.div
-          className={`absolute -top-3 left-1/2 transform -translate-x-1/2 px-4 py-2 ${styles.badgeBg} text-white text-sm font-semibold rounded-full shadow-lg flex items-center gap-2`}
-          initial={{ scale: 0 }}
-          animate={{ scale: 1 }}
+          initial={{ opacity: 0, scale: 0.8 }}
+          animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.3, delay: 0.2 }}
+          className="absolute -top-3 left-1/2 transform -translate-x-1/2 z-10"
         >
-          <Star className="w-4 h-4" />
-          Most Popular
+          <div className="px-4 py-1 bg-gradient-to-r from-yellow-500 to-orange-500 text-white text-xs font-semibold rounded-full shadow-lg flex items-center space-x-1">
+            <Star className="w-3 h-3 fill-current" />
+            <span>Most Popular</span>
+          </div>
         </motion.div>
       )}
 
-      {/* Header Section */}
-      <div className="relative z-10 mb-6">
-        <div className="flex items-start justify-between mb-4">
-          <div className={`w-16 h-16 ${styles.iconBg} rounded-2xl flex items-center justify-center text-2xl shadow-lg`}>
-            {service.icon}
-          </div>
-          
-          <div className="text-right">
-            <div className="text-3xl font-bold text-white mb-1">
-              {service.price}
-            </div>
-            <div className="text-sm text-gray-400">
-              per {service.period}
-            </div>
-          </div>
-        </div>
-
-        <h3 className="text-2xl font-bold text-white mb-2 group-hover:text-cyan-400 transition-colors duration-300">
-          {service.name}
-        </h3>
-        
-        <p className="text-gray-300 text-lg mb-3">
-          {service.tagline}
-        </p>
-        
-        <p className="text-gray-400 leading-relaxed">
-          {service.description}
-        </p>
-      </div>
-
-      {/* Features Section */}
-      <div className="relative z-10 mb-8">
-        <h4 className="text-lg font-semibold text-white mb-4 flex items-center gap-2">
-          <TrendingUp className="w-5 h-5 text-cyan-400" />
-          Key Features
-        </h4>
-        
-        <div className="space-y-3">
-          {service.features.map((feature, index) => (
-            <motion.div
-              key={index}
-              className="flex items-center gap-3 text-gray-300"
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.3, delay: index * 0.1 }}
-              viewport={{ once: true }}
-            >
-              <div className="flex-shrink-0 w-5 h-5 bg-cyan-400/20 rounded-full flex items-center justify-center">
-                <Check className="w-3 h-3 text-cyan-400" />
-              </div>
-              <span className="text-sm">{feature}</span>
-            </motion.div>
-          ))}
-        </div>
-      </div>
-
-      {/* Stats Section */}
-      <div className="relative z-10 mb-8">
-        <div className="grid grid-cols-3 gap-4">
-          <div className="text-center p-3 bg-gray-800/30 rounded-xl border border-gray-700/30">
-            <Users className="w-5 h-5 text-cyan-400 mx-auto mb-2" />
-            <div className="text-sm font-semibold text-white">500+</div>
-            <div className="text-xs text-gray-400">Clients</div>
-          </div>
-          <div className="text-center p-3 bg-gray-800/30 rounded-xl border border-gray-700/30">
-            <Clock className="w-5 h-5 text-blue-400 mx-auto mb-2" />
-            <div className="text-sm font-semibold text-white">24/7</div>
-            <div className="text-xs text-gray-400">Support</div>
-          </div>
-          <div className="text-center p-3 bg-gray-800/30 rounded-xl border border-gray-700/30">
-            <Award className="w-5 h-5 text-purple-400 mx-auto mb-2" />
-            <div className="text-sm font-semibold text-white">99.9%</div>
-            <div className="text-xs text-gray-400">Uptime</div>
-          </div>
-        </div>
-      </div>
-
-      {/* CTA Button */}
-      <motion.button
-        className={`w-full py-4 bg-gradient-to-r ${styles.gradient} text-white font-semibold rounded-xl hover:shadow-lg hover:shadow-cyan-500/25 transition-all duration-300 flex items-center justify-center gap-2 group/btn`}
-        whileHover={{ scale: 1.02 }}
-        whileTap={{ scale: 0.98 }}
-      >
-        <span>Get Started</span>
-        <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform duration-200" />
-      </motion.button>
-
-      {/* Hover Effects */}
+      {/* Main Card */}
       <motion.div
-        className="absolute inset-0 bg-gradient-to-br from-cyan-500/5 to-blue-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-3xl"
-        initial={false}
-        animate={isHovered ? { opacity: 1 } : { opacity: 0 }}
-      />
+        animate={{
+          scale: isHovered ? 1.02 : 1,
+          rotateY: isHovered ? 2 : 0
+        }}
+        transition={{ duration: 0.3 }}
+        className={`relative overflow-hidden rounded-2xl border-2 ${variantStyles.border} bg-gradient-to-br ${variantStyles.gradient} backdrop-blur-sm transition-all duration-500 ${variantStyles.shadow}`}
+      >
+        {/* Background Pattern */}
+        <div className="absolute inset-0 opacity-5">
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(255,255,255,0.1),transparent_50%)]" />
+        </div>
+      )}
 
-      {/* Floating Elements */}
-      <div className="absolute inset-0 pointer-events-none overflow-hidden">
-        <motion.div
-          className={`absolute top-4 right-4 w-2 h-2 ${styles.iconBg} rounded-full opacity-60`}
-          animate={{
-            scale: [1, 1.5, 1],
-            opacity: [0.6, 1, 0.6]
-          }}
-          transition={{
-            duration: 3,
-            repeat: Infinity,
-            ease: "easeInOut"
-          }}
-        />
-        
-        <motion.div
-          className={`absolute bottom-4 left-4 w-1 h-1 ${styles.iconBg} rounded-full opacity-40`}
-          animate={{
-            scale: [1, 2, 1],
-            opacity: [0.4, 0.8, 0.4]
-          }}
-          transition={{
-            duration: 4,
-            repeat: Infinity,
-            ease: "easeInOut",
-            delay: 1
-          }}
-        />
-      </div>
+        {/* Content */}
+        <div className="relative p-6">
+          {/* Header */}
+          <div className="flex items-start justify-between mb-4">
+            <div className="flex items-center space-x-3">
+              <div className={`w-12 h-12 ${variantStyles.accent} rounded-xl flex items-center justify-center text-2xl`}>
+                {service.icon}
+              </div>
+              <div>
+                <h3 className="text-xl font-bold text-white mb-1">{service.name}</h3>
+                <p className="text-sm text-gray-300">{service.tagline}</p>
+              </div>
+            </div>
+            <div className="flex items-center space-x-1 text-yellow-400">
+              {getCategoryIcon(service.category)}
+            </div>
+          </div>
 
-      {/* Category Badge */}
-      <div className={`absolute top-4 left-4 px-3 py-1 ${styles.badgeBg} text-white text-xs font-medium rounded-full opacity-80`}>
-        {service.category}
+          {/* Description */}
+          <p className="text-gray-300 mb-6 leading-relaxed">{service.description}</p>
+
+          {/* Price */}
+          <div className="mb-6">
+            <div className="flex items-baseline space-x-2">
+              <span className="text-3xl font-bold text-white">{service.price}</span>
+              <span className="text-gray-400">/{service.period}</span>
+            </div>
+          </div>
+        </div>
+
+          {/* Features */}
+          <div className="mb-6">
+            <h4 className="text-sm font-semibold text-gray-300 mb-3">Key Features:</h4>
+            <div className="space-y-2">
+              {service.features.slice(0, isExpanded ? service.features.length : 3).map((feature, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, x: -10 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.3, delay: index * 0.1 }}
+                  className="flex items-center space-x-2 text-sm text-gray-300"
+                >
+                  <Check className="w-4 h-4 text-emerald-400 flex-shrink-0" />
+                  <span>{feature}</span>
+                </motion.div>
+              ))}
+            </div>
+            
+            {/* Show More/Less */}
+            {service.features.length > 3 && (
+              <button
+                onClick={(e) => {
+                  e.stopPropagation();
+                  setIsExpanded(!isExpanded);
+                }}
+                className="mt-3 text-sm text-cyan-400 hover:text-cyan-300 transition-colors duration-200 flex items-center space-x-1"
+              >
+                <span>{isExpanded ? 'Show Less' : `Show ${service.features.length - 3} More`}</span>
+                <motion.div
+                  animate={{ rotate: isExpanded ? 180 : 0 }}
+                  transition={{ duration: 0.2 }}
+                >
+                  <ArrowRight className="w-3 h-3" />
+                </motion.div>
+              </button>
+            )}
+          </div>
+
+          {/* CTA Button */}
+          <motion.button
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            className={`w-full py-3 px-6 bg-gradient-to-r ${variantStyles.button} text-white font-semibold rounded-xl transition-all duration-300 flex items-center justify-center space-x-2 group/btn`}
+          >
+            <span>Get Started</span>
+            <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform duration-200" />
+          </motion.button>
+        </div>
+
+        {/* Hover Effects */}
+        <motion.div
+          className="absolute inset-0 bg-gradient-to-r from-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+          initial={false}
+        />
       </div>
     </motion.div>
   );
-};
+});
+
+UltraFuturisticServiceCard2026.displayName = 'UltraFuturisticServiceCard2026';
 
 export default UltraFuturisticServiceCard2026;

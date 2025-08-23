@@ -1,6 +1,5 @@
-import { toast as sonnerToast } from 'sonner';
 import { logInfo, logWarn, logErrorToProduction } from '@/utils/productionLogger';
-
+import { toast as sonnerToast } from 'sonner';
 
 // Toast configuration constants
 const TOAST_CONFIG = {
@@ -47,7 +46,7 @@ export interface GlobalToast {
     onClick: () => void;
   };
   onRetry?: () => void;
-  metadata?: Record<string, any>;
+  metadata?: Record<string, unknown>;
   createdAt: number;
   expiresAt?: number;
 }
@@ -224,7 +223,7 @@ class GlobalToastManager {
   private showToastInternal(toast: GlobalToast): void {
     this.activeToasts.set(toast.id, toast);
 
-    const options: any = {
+    const options: Record<string, unknown> = {
       id: toast.id,
       duration: toast.persistent ? Infinity : (toast.duration || this.durationMap[toast.type]),
     };
@@ -246,31 +245,36 @@ class GlobalToastManager {
     const message = toast.title ? toast.title : toast.message;
     const description = toast.title ? toast.message : undefined;
 
-    switch (toast.type) {
-      case ToastType.SUCCESS:
-        sonnerToast.success(message, { ...options, description });
-        break;
-      case ToastType.ERROR:
-      case ToastType.NETWORK_ERROR:
-      case ToastType.AUTH_ERROR:
-      case ToastType.CRITICAL_ERROR:
-        sonnerToast.error(message, { 
-          ...options, 
-          description,
-          style: { background: '#7f1d1d', color: '#fff' }
-        });
-        break;
-      case ToastType.WARNING:
-      case ToastType.VALIDATION_ERROR:
-        sonnerToast.warning(message, { ...options, description });
-        break;
-      default:
-        sonnerToast(message, { ...options, description });
-        break;
-    }
+    if (typeof window !== 'undefined') {
+      switch (toast.type) {
+        case ToastType.SUCCESS:
+          sonnerToast.success(message, { ...options, description });
+          break;
+        case ToastType.ERROR:
+        case ToastType.NETWORK_ERROR:
+        case ToastType.AUTH_ERROR:
+        case ToastType.CRITICAL_ERROR:
+          sonnerToast.error(message, {
+            ...options,
+            description,
+            style: { background: '#7f1d1d', color: '#fff' }
+          });
+          break;
+        case ToastType.WARNING:
+        case ToastType.VALIDATION_ERROR:
+          sonnerToast.warning(message, { ...options, description });
+          break;
+        default:
+          sonnerToast(message, { ...options, description });
+          break;
+      }
 
-    // Set up auto-dismissal
-    this.setupAutoDismissal(toast);
+      // Set up auto-dismissal only on client-side as it involves setTimeout
+      this.setupAutoDismissal(toast);
+    } else {
+      // Log to console or a server-side logger if attempting to show toast on server
+      console.warn(`[SSR Toast Attempt]: ${toast.type} - ${message} (Sonner UI not rendered on server)`);
+    }
 
     // Log error toasts for debugging
     if (toast.type.includes('error')) {
@@ -299,7 +303,7 @@ class GlobalToastManager {
     persistent?: boolean;
     action?: { label: string; onClick: () => void };
     onRetry?: () => void;
-    metadata?: Record<string, any>;
+    metadata?: Record<string, unknown>;
   }): string {
     const {
       message,
@@ -322,14 +326,14 @@ class GlobalToastManager {
     const toast: GlobalToast = {
       id: `toast-${Date.now()}-${Math.random().toString(36).substr(2, 9)}`,
       message,
-      title,
+      title: title ?? '',
       type,
-      priority: priority || this.priorityMap[type],
-      duration,
+      priority: priority !== undefined ? priority : this.priorityMap[type],
+      duration: duration !== undefined ? duration : 0,
       persistent,
-      action,
-      onRetry,
-      metadata,
+      action: action ?? { label: '', onClick: () => {} },
+      onRetry: onRetry ?? (() => {}),
+      metadata: metadata ?? {},
       createdAt: Date.now(),
     };
 
@@ -418,7 +422,7 @@ export class EnhancedGlobalErrorHandler {
     type?: ToastType;
     priority?: ToastPriority;
     retryAction?: () => void;
-    metadata?: Record<string, any>;
+    metadata?: Record<string, unknown>;
     showToast?: boolean;
   }): string | null {
     const {
@@ -473,13 +477,13 @@ export class EnhancedGlobalErrorHandler {
     if (actualShowToastFlag) {
       const toastId = globalToastManager.showToast({
         message: this.getErrorMessage(errorMessage),
-        title: this.getErrorTitle(type),
+        title: this.getErrorTitle(type) ?? '',
         type,
-        priority,
+        priority: priority !== undefined ? priority : ToastPriority.HIGH,
         onRetry: retryAction ? () => {
           this.retryCount.set(errorKey, currentRetries + 1);
           retryAction();
-        } : undefined,
+        } : (() => {}),
         metadata: {
           ...metadata,
           originalError: error,

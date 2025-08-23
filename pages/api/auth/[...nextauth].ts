@@ -36,6 +36,10 @@ const WalletConnectProvider = CredentialsProvider({
         let userProfile = null;
         let authUserId = null;
 
+        if (!supabase) {
+          logErrorToProduction('Supabase client is null in WalletConnectProvider authorize. Cannot query profiles.');
+          return null;
+        }
         const { data: existingProfile, error: lookupError } = await supabase
           .from('profiles') // Assuming 'profiles' table
           .select('*, user_id (id, email)') // Adjust based on your actual table and foreign key to auth.users
@@ -72,6 +76,10 @@ const WalletConnectProvider = CredentialsProvider({
           const dummyPassword = Math.random().toString(36).slice(-16) + Math.random().toString(36).slice(-16);
 
 
+          if (!supabase) {
+            logErrorToProduction('Supabase client is null in WalletConnectProvider authorize. Cannot sign up user.');
+            return null;
+          }
           const { data: signUpData, error: signUpError } = await supabase.auth.signUp({
             email: dummyEmail,
             password: dummyPassword,
@@ -97,12 +105,16 @@ const WalletConnectProvider = CredentialsProvider({
 
             // Now, create a corresponding profile in your public 'profiles' table
             // linking it to the new auth.users.id and storing the wallet_address.
+            if (!supabase) {
+              logErrorToProduction('Supabase client is null in WalletConnectProvider authorize. Cannot create profile.');
+              return null;
+            }
             const { error: profileCreateError } = await supabase
               .from('profiles')
               .insert({
                 user_id: authUserId, // Link to auth.users table
                 wallet_address: recoveredAddress.toLowerCase(),
-                display_name: signUpData.user.user_metadata?.display_name || `User ${recoveredAddress.substring(0, 6)}...`,
+                display_name: signUpData.user.user_metadata?.['display_name'] || `User ${recoveredAddress.substring(0, 6)}...`,
                 // email: signUpData.user.email, // email is already in auth.users, no need to duplicate unless denormalizing
               });
 
@@ -117,7 +129,7 @@ const WalletConnectProvider = CredentialsProvider({
             logInfo(`WalletConnectProvider: User profile created and linked for ${authUserId}`);
             return {
               id: authUserId,
-              name: signUpData.user.user_metadata?.display_name || `User ${recoveredAddress.substring(0, 6)}...`,
+              name: signUpData.user.user_metadata?.['display_name'] || `User ${recoveredAddress.substring(0, 6)}...`,
               email: signUpData.user.email, // The dummy email
               walletAddress: recoveredAddress.toLowerCase(), // Ensure this is the original mixed-case address if needed, but usually stored lowercase.
             };
@@ -140,16 +152,16 @@ const WalletConnectProvider = CredentialsProvider({
 export const authOptions: NextAuthOptions = {
   providers: [
     GoogleProvider({
-      clientId: process.env.GOOGLE_CLIENT_ID || "",
-      clientSecret: process.env.GOOGLE_CLIENT_SECRET || "",
+      clientId: process.env['GOOGLE_CLIENT_ID'] || "",
+      clientSecret: process.env['GOOGLE_CLIENT_SECRET'] || "",
     }),
     GitHubProvider({ // Added GitHubProvider configuration
-      clientId: process.env.GITHUB_CLIENT_ID || "",
-      clientSecret: process.env.GITHUB_CLIENT_SECRET || "",
+      clientId: process.env['GITHUB_CLIENT_ID'] || "",
+      clientSecret: process.env['GITHUB_CLIENT_SECRET'] || "",
     }),
     FacebookProvider({
-      clientId: process.env.FACEBOOK_CLIENT_ID || "",
-      clientSecret: process.env.FACEBOOK_CLIENT_SECRET || "",
+      clientId: process.env['FACEBOOK_CLIENT_ID'] || "",
+      clientSecret: process.env['FACEBOOK_CLIENT_SECRET'] || "",
     }),
     CredentialsProvider({
       name: "Credentials",
@@ -163,7 +175,11 @@ export const authOptions: NextAuthOptions = {
           return null;
         }
 
-        logInfo('Attempting Supabase sign-in for:', { data: credentials.email });
+        logInfo('Attempting Supabase sign-in for:', { data:  { data: credentials.email } });
+        if (!supabase) {
+          logErrorToProduction('Supabase client is null in CredentialsProvider authorize. Cannot sign in user.');
+          return null;
+        }
         const { data, error } = await supabase.auth.signInWithPassword({
           email: credentials.email,
           password: credentials.password,
@@ -180,13 +196,13 @@ export const authOptions: NextAuthOptions = {
         }
 
         if (data && data.user) {
-          logInfo('Supabase sign-in successful for:', { data: data.user.email });
+          logInfo('Supabase sign-in successful for:', { data:  { data: data.user.email } });
           // Ensure the object returned conforms to NextAuth's User model expectations
           // It must have an `id`. `name` and `email` are common.
           return {
             id: data.user.id,
-            email: data.user.email,
-            name: data.user.user_metadata?.display_name || data.user.email, // Fallback for name
+            email: data.user.email ?? null,
+            name: data.user.user_metadata?.['display_name'] || data.user.email, // Fallback for name
             // Include any other fields you want in the JWT/session user object
           };
         }
@@ -204,10 +220,10 @@ export const authOptions: NextAuthOptions = {
     async jwt({ token, user, account }) {
       // Persist the OAuth access_token or user.id to the token right after signin
       if (account && user) {
-        token.accessToken = account.access_token; // For OAuth
-        token.id = user.id; // For all users
+        token['accessToken'] = account.access_token; // For OAuth
+        token['id'] = user.id; // For all users
         if ((user as any).walletAddress) { // For wallet users
-            token.walletAddress = (user as any).walletAddress;
+            token['walletAddress'] = (user as any).walletAddress;
         }
       }
       return token;
@@ -215,9 +231,9 @@ export const authOptions: NextAuthOptions = {
     async session({ session, token }) {
       // Send properties to the client, like an access_token and user id from the token
       if (session.user) {
-         (session.user as any).id = token.id as string;
-        if (token.walletAddress) {
-                 (session.user as any).walletAddress = token.walletAddress as string;
+         (session.user as any).id = token['id'] as string;
+        if (token['walletAddress']) {
+                 (session.user as any).walletAddress = token['walletAddress'] as string;
         }
       }
       // session.accessToken = token.accessToken; // If using OAuth and need token client-side

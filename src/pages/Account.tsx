@@ -11,7 +11,7 @@ import { ApiKeysManager } from '@/components/developers/ApiKeysManager';
 import { SEO } from '@/components/SEO';
 import ProtectedRoute from '@/components/ProtectedRoute';
 import type { Order } from '@/hooks/useOrders';
-import { NextApiRequest } from 'next';
+import type { NextApiRequest } from 'next';
 import {logErrorToProduction} from '@/utils/productionLogger';
 
 
@@ -40,11 +40,15 @@ function Account({ user: initialUser, orders }: AccountProps) {
       });
       const data = await res.json();
       setUser(data);
-    } catch (error: any) {
+    } catch (error) {
       logErrorToProduction('Error updating profile:', { data: error });
+      let description = 'Failed to update profile. Please try again.';
+      if (error && typeof error === 'object' && 'message' in error && typeof (error as { message?: unknown }).message === 'string') {
+        description = (error as { message: string }).message;
+      }
       toast({
         title: 'Error updating profile',
-        description: error.message || 'Failed to update profile. Please try again.',
+        description,
         variant: 'destructive',
       });
     }

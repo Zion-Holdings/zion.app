@@ -2,15 +2,14 @@ import React from 'react';
 import SEO from '../components/SEO';
 import { Check, ExternalLink } from 'lucide-react';
 
-const BrowserAutomationCloud: React.FC = () => {
-  const features = [
-    'Scalable Cloud Infrastructure',
-    'Multi-browser Support',
-    'Real-time Monitoring',
-    'Automated Testing',
-    'Performance Analytics',
-    'CI/CD Integration'
-  ];
+export default function BrowserAutomationCloudPage() {
+	const features = [
+		'Parallel Playwright/Puppeteer execution',
+		'Queued jobs with retries and rate limits',
+		'Artifacts: HAR, traces, screenshots, videos',
+		'Rotating proxies and geo targeting',
+		'Webhook callbacks and REST API'
+	];
 
 	return (
 		<>

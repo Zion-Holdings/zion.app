@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback } from 'react';
+import React, { useState, useEffect, useRef, useCallback } from 'react';
 import Link from 'next/link';
 import { motion, AnimatePresence } from 'framer-motion';
 import { 
@@ -11,28 +11,33 @@ import {
 
 const UltraFuturisticNavigation2040: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
   const [isScrolled, setIsScrolled] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
   const [searchQuery, setSearchQuery] = useState('');
 
+  // Handle scroll effect with throttling for better performance
   useEffect(() => {
+    let ticking = false;
+    
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
+      setIsScrolled(window.scrollY > 20);
     };
 
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const handleDropdownToggle = useCallback((dropdown: string) => {
-    setActiveDropdown(activeDropdown === dropdown ? null : dropdown);
-  }, [activeDropdown]);
+  // Enhanced accessibility: Close dropdowns when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (navRef.current && !navRef.current.contains(event.target as Node)) {
+        setActiveDropdown(null);
+        setIsSearchOpen(false);
+      }
+    };
 
-  const closeMobileMenu = useCallback(() => {
-    setIsOpen(false);
-    setActiveDropdown(null);
-    setIsSearchOpen(false);
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
   }, []);
 
   const navigationItems = [
@@ -211,12 +216,23 @@ const UltraFuturisticNavigation2040: React.FC = () => {
       icon: Phone,
       description: 'Get in touch with our experts'
     }
-  ];
+  }, []);
 
-  const contactInfo = {
-    phone: '+1 302 464 0950',
-    email: 'kleber@ziontechgroup.com',
-    address: '364 E Main St STE 1008 Middletown DE 19709'
+    const results: NavigationItem[] = [];
+    const searchInItems = (items: NavigationItem[]) => {
+      items.forEach(item => {
+        if (item.label.toLowerCase().includes(query.toLowerCase()) ||
+            item.description?.toLowerCase().includes(query.toLowerCase())) {
+          results.push(item);
+        }
+        if (item.children) {
+          searchInItems(item.children);
+        }
+      });
+    };
+
+    searchInItems(navigationItems);
+    setSearchResults(results.slice(0, 8)); // Limit results
   };
 
   return (
@@ -395,28 +411,25 @@ const UltraFuturisticNavigation2040: React.FC = () => {
                           }`} />
                         </button>
                         
-                        {activeDropdown === item.label && (
+                        {activeDropdown === item.name && (
                           <motion.div
                             initial={{ opacity: 0, height: 0 }}
                             animate={{ opacity: 1, height: 'auto' }}
                             exit={{ opacity: 0, height: 0 }}
                             transition={{ duration: 0.2 }}
-                            className="ml-8 mt-2 space-y-2"
+                            className="ml-4 mt-2 space-y-2"
                           >
-                            {item.children.map((child) => (
+                            {item.dropdown.map((dropdownItem) => (
                               <Link
-                                key={child.label}
-                                href={child.href}
-                                className="flex items-center space-x-3 px-4 py-2 text-gray-400 hover:text-white transition-colors duration-300 rounded-lg"
-                                onClick={closeNavigation}
+                                key={dropdownItem.name}
+                                href={dropdownItem.href}
+                                onClick={closeMobileMenu}
+                                className="flex items-center space-x-3 p-3 text-white/80 hover:text-white transition-colors duration-300 rounded-lg hover:bg-white/5"
                               >
-                                {child.icon}
-                                <span>{child.label}</span>
-                                {child.featured && (
-                                  <span className="ml-auto px-2 py-1 text-xs bg-gradient-to-r from-yellow-400 to-orange-500 text-black font-bold rounded-full">
-                                    Featured
-                                  </span>
-                                )}
+                                <div className={`w-8 h-8 rounded-lg bg-gradient-to-r ${dropdownItem.color} flex items-center justify-center`}>
+                                  <dropdownItem.icon className="w-4 h-4 text-white" />
+                                </div>
+                                <span className="text-sm">{dropdownItem.name}</span>
                               </Link>
                             ))}
                           </motion.div>
@@ -425,35 +438,45 @@ const UltraFuturisticNavigation2040: React.FC = () => {
                     ) : (
                       <Link
                         href={item.href}
-                        className="flex items-center space-x-3 px-4 py-3 text-gray-300 hover:text-white transition-colors duration-300 rounded-lg"
-                        onClick={closeNavigation}
+                        onClick={closeMobileMenu}
+                        className="block p-3 text-white hover:text-cyan-400 transition-colors duration-300 rounded-lg hover:bg-white/5"
                       >
-                        {item.icon}
-                        <span>{item.label}</span>
-                        {item.badge && (
-                          <span className="ml-auto px-2 py-1 text-xs bg-gradient-to-r from-cyan-500 to-purple-600 text-white rounded-full">
-                            {item.badge}
-                          </span>
-                        )}
+                        <span className="font-medium">{item.name}</span>
                       </Link>
                     )}
                   </div>
                 ))}
-                
-                {/* Mobile CTA */}
-                <div className="pt-4 border-t border-gray-700">
-                  <Link href="/contact">
-                    <motion.button
-                      className="w-full px-6 py-3 bg-gradient-to-r from-cyan-500 to-purple-600 text-white font-semibold rounded-lg hover:from-cyan-600 hover:to-purple-700 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-cyan-400/50"
-                      whileHover={{ scale: 1.02 }}
-                      whileTap={{ scale: 0.98 }}
-                      onClick={closeNavigation}
-                      aria-label="Contact us"
-                    >
-                      Get Started
-                    </motion.button>
-                  </Link>
+
+                {/* Contact Info */}
+                <div className="pt-4 border-t border-white/10">
+                  <div className="space-y-3">
+                    <div className="flex items-center space-x-3 text-white/80">
+                      <Phone className="w-4 h-4 text-cyan-400" />
+                      <a href={`tel:${contactInfo.phone}`} className="text-sm hover:text-white transition-colors duration-300">
+                        {contactInfo.phone}
+                      </a>
+                    </div>
+                    <div className="flex items-center space-x-3 text-white/80">
+                      <Mail className="w-4 h-4 text-cyan-400" />
+                      <a href={`mailto:${contactInfo.email}`} className="text-sm hover:text-white transition-colors duration-300">
+                        {contactInfo.email}
+                      </a>
+                    </div>
+                    <div className="flex items-center space-x-3 text-white/80">
+                      <MapPin className="w-4 h-4 text-cyan-400" />
+                      <span className="text-sm">{contactInfo.address}</span>
+                    </div>
+                  </div>
                 </div>
+
+                {/* CTA Button */}
+                <Link
+                  href="/contact"
+                  onClick={closeMobileMenu}
+                  className="block w-full text-center px-6 py-3 bg-gradient-to-r from-cyan-500 to-purple-500 text-white font-medium rounded-xl hover:from-cyan-600 hover:to-purple-600 transition-all duration-300"
+                >
+                  Get Started Today
+                </Link>
               </div>
             </motion.div>
           )}

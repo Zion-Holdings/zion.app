@@ -1,7 +1,7 @@
 declare module 'react-dom' {
-  const ReactDOM: any;
+  const ReactDOM: unknown;
   export default ReactDOM;
-  export const render: any;
-  export const hydrate: any;
-  export const createPortal: any;
+  export const render: unknown;
+  export const hydrate: unknown;
+  export const createPortal: unknown;
 }

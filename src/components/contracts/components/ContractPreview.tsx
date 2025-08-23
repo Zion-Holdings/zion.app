@@ -2,8 +2,8 @@
 import React from "react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { TalentProfile } from "@/types/talent";
-import { SmartContractInfo } from "@/types/smart-contracts";
+import type { TalentProfile } from "@/types/talent";
+import type { SmartContractInfo } from "@/types/smart-contracts";
 
 interface ContractPreviewProps {
   contractContent?: string;

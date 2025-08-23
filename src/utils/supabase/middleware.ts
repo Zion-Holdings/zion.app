@@ -1,4 +1,4 @@
-// @ts-nocheck
+/// <reference types="node" />
 import { createServerClient, type CookieOptions } from '@supabase/ssr';
 import { NextResponse, type NextRequest } from 'next/server';
 // Import proper logging instead of using console directly
@@ -9,18 +9,14 @@ import { logErrorToProduction, logInfo, logWarn } from '@/utils/productionLogger
  * Optimized for production deployment
  */
 export async function updateSession(request: NextRequest) {
-  let response = NextResponse.next({
-    request: {
-      headers: request.headers,
-    },
-  });
+  const response = NextResponse.next();
 
   // Validate environment variables
   const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
   const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
 
   if (!supabaseUrl || !supabaseAnonKey) {
-    console.warn('Supabase environment variables not configured, skipping auth middleware');
+    logWarn('Supabase environment variables not configured, skipping auth middleware');
     return response;
   }
 
@@ -35,28 +31,22 @@ export async function updateSession(request: NextRequest) {
             return request.cookies.get(name)?.value;
           },
           set(name: string, value: string, options: CookieOptions) {
-            request.cookies.set({ name, value, ...options });
-            response = NextResponse.next({
-              request: {
-                headers: request.headers,
-              },
-            });
-            response.cookies.set({ name, value, ...options });
+            const cookies = (response as any).cookies;
+            if (cookies && typeof cookies.set === 'function') {
+              cookies.set(name, value, options);
+            }
           },
           remove(name: string, options: CookieOptions) {
-            request.cookies.set({ name, value: '', ...options });
-            response = NextResponse.next({
-              request: {
-                headers: request.headers,
-              },
-            });
-            response.cookies.set({ name, value: '', ...options });
+            const cookies = (response as any).cookies;
+            if (cookies && typeof cookies.set === 'function') {
+              cookies.set(name, '', options);
+            }
           },
         },
       }
     );
-  } catch (initError) {
-    console.error('Failed to initialize Supabase client in middleware:', initError);
+  } catch (initError: unknown) {
+    logErrorToProduction('Failed to initialize Supabase client in middleware', initError);
     return response;
   }
 
@@ -79,17 +69,16 @@ export async function updateSession(request: NextRequest) {
     const { data: { user }, error } = await supabase.auth.getUser();
 
     if (error || !user) {
-      const redirectUrl = new URL('/auth/login', request.url);
+      const redirectUrl = new URL('/auth/login', request.nextUrl.href);
       redirectUrl.searchParams.set('redirectTo', request.nextUrl.pathname);
       return NextResponse.redirect(redirectUrl);
     }
     
     return response;
-  } catch (authError) {
-    console.error('Error during authentication check:', authError);
-    
+  } catch (authError: unknown) {
+    logErrorToProduction('Error during authentication check', authError);
     // Redirect to login on authentication errors
-    const redirectUrl = new URL('/auth/login', request.url);
+    const redirectUrl = new URL('/auth/login', request.nextUrl.href);
     redirectUrl.searchParams.set('redirectTo', request.nextUrl.pathname);
     return NextResponse.redirect(redirectUrl);
   }

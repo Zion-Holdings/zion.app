@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import SEO from '../components/SEO';
-import Layout from '../components/layout/Layout';
+import { Layout } from '../components/layout/Layout';
 import { motion } from 'framer-motion';
 import { 
   Search, Grid, List, Star, Phone, Mail, MapPin,
@@ -69,19 +69,9 @@ const Innovative2038CuttingEdgeShowcase: React.FC = () => {
   return (
     <Layout>
       <SEO 
-        data={{
-          pageTitle: "Innovative 2038 Cutting-Edge Services Showcase | Zion Tech Group",
-          pageDescription: "Discover our revolutionary 2038 cutting-edge services including AI holographic meetings, quantum drug discovery, autonomous legal assistance, and more. Transform your business with next-generation technology.",
-          pageKeywords: [
-            '2038 services',
-            'cutting-edge technology',
-            'AI holographic',
-            'quantum computing',
-            'autonomous systems',
-            'space technology',
-            'Zion Tech Group'
-          ]
-        }}
+        title="Innovative 2038 Cutting-Edge Services Showcase | Zion Tech Group"
+        description="Discover our revolutionary 2038 cutting-edge services including AI holographic meetings, quantum drug discovery, autonomous legal assistance, and more. Transform your business with next-generation technology."
+        keywords="2038 services, cutting-edge technology, AI holographic, quantum computing, autonomous systems, space technology, Zion Tech Group"
       />
       
       <main className="relative z-10 pt-24 lg:pt-28">
@@ -325,12 +315,16 @@ const Innovative2038CuttingEdgeShowcase: React.FC = () => {
                       {/* Pricing and Actions */}
                       <div className="lg:w-64 space-y-4">
                         <div className="text-center">
-                                                  <div className="text-3xl font-bold text-purple-400 mb-1">
-                          {'pricing' in service ? service.pricing.starter : service.price}
-                        </div>
+                          <div className="text-3xl font-bold text-purple-400 mb-1">
+                            {'pricing' in service ? service.pricing.starter : service.price}
+                          </div>
                           <div className="text-sm text-gray-400 mb-2">Starting price</div>
                           <div className="text-xs text-gray-500">
-                            {'pricing' in service ? `${service.pricing.starter} | ${service.pricing.enterprise}` : `${service.price} ${service.period}`}
+                            {'pricing' in service ? (
+                              <>Pro: {service.pricing.pro} | Enterprise: {service.pricing.enterprise}</>
+                            ) : (
+                              <>Period: {service.period}</>
+                            )}
                           </div>
                         </div>
 

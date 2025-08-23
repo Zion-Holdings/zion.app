@@ -245,9 +245,6 @@ export function useInfiniteScrollPagination<T>(
   };
 }
 
-function getErrorMessage(err: any): string {
-  if (err instanceof Error) return err.message;
-  if (typeof err === 'string') return err;
-  if (err && typeof err === 'object' && 'message' in err && typeof err.message === 'string') return err.message;
-  return 'Unknown error';
+function getErrorMessage(err: unknown): string {
+  return err instanceof Error ? err.message : String(err);
 } 

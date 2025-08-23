@@ -55,8 +55,9 @@ export default function ResetPassword() {
       await resetPassword(token, password) // token is now from state, derived from router.query
       toast.success('Password has been reset successfully!')
       router.push('/login') // Changed to router.push
-    } catch (err: any) {
-      toast.error(err.message || 'Reset failed')
+    } catch (err: unknown) {
+      const message = typeof err === 'object' && err !== null && 'message' in err ? (err as { message?: string }).message : undefined;
+      toast.error(message || 'Reset failed')
     } finally {
       setLoading(false)
     }

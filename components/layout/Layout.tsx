@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import Head from 'next/head';
+import { Sun, Moon } from 'lucide-react';
 import EnhancedNavigation2025 from './EnhancedNavigation2025';
 import EnhancedFooter2025 from './EnhancedFooter2025';
 import EnhancedSidebar2025 from './EnhancedSidebar2025';
-import UltraFuturisticBackground2037 from '../backgrounds/UltraFuturisticBackground2037';
+import UltraFuturisticBackground2045 from '../backgrounds/UltraFuturisticBackground2045';
 import TopContactBar from './TopContactBar';
 import EnhancedPerformanceMonitor from '../EnhancedPerformanceMonitor';
 import AccessibilityEnhancer from '../EnhancedAccessibilityEnhancer';
@@ -14,21 +15,29 @@ import LoadingSpinner from '../LoadingSpinner';
 import ServiceWorkerRegistration from '../ServiceWorkerRegistration';
 
 interface LayoutProps {
-	children: React.ReactNode;
+  children: React.ReactNode;
+  title?: string;
+  description?: string;
+  keywords?: string;
+  ogImage?: string;
+  canonicalUrl?: string;
 }
 
-export default function Layout({ children }: LayoutProps) {
+export default function Layout({ 
+  children, 
+  title = "Zion Tech Group - Revolutionary AI, Quantum Computing & Space Technology Solutions",
+  description = "Pioneering the future of technology with revolutionary AI consciousness, quantum computing, and autonomous solutions that transform businesses worldwide.",
+  keywords = "AI, artificial intelligence, quantum computing, space technology, cybersecurity, cloud infrastructure, enterprise solutions, autonomous systems, consciousness AI",
+  ogImage = "https://ziontechgroup.com/og-image.jpg",
+  canonicalUrl
+}: LayoutProps) {
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const [isOnline, setIsOnline] = useState(true);
   const [isLoading, setIsLoading] = useState(true);
   const [theme, setTheme] = useState<'dark' | 'light'>('dark');
 
-  useEffect(() => {
-    // Check for saved theme preference
-    const savedTheme = localStorage.getItem('theme') as 'dark' | 'light';
-    if (savedTheme) {
-      setTheme(savedTheme);
-    }
+    window.addEventListener('online', handleOnline);
+    window.addEventListener('offline', handleOffline);
 
     // Simulate loading time for better UX
     const timer = setTimeout(() => setIsLoading(false), 1000);
@@ -38,12 +47,37 @@ export default function Layout({ children }: LayoutProps) {
       setIsOnline(navigator.onLine);
     };
 
-    if (sidebarOpen) {
-      document.addEventListener('keydown', handleEscape);
-      // Prevent body scroll when sidebar is open
-      document.body.style.overflow = 'hidden';
-    } else {
-      document.body.style.overflow = 'unset';
+    window.addEventListener('online', updateOnlineStatus);
+    window.addEventListener('offline', updateOnlineStatus);
+    updateOnlineStatus();
+
+    // Register service worker
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('/sw.js')
+        .then((registration) => {
+          // Check for updates
+          registration.addEventListener('updatefound', () => {
+            const newWorker = registration.installing;
+            if (newWorker) {
+              newWorker.addEventListener('statechange', () => {
+                if (newWorker.state === 'installed' && navigator.serviceWorker.controller) {
+                  // New version available
+                  if (typeof window !== 'undefined' && window.confirm) {
+                    if (window.confirm('A new version is available! Would you like to update?')) {
+                      newWorker.postMessage({ type: 'SKIP_WAITING' });
+                      window.location.reload();
+                    }
+                  }
+                }
+              });
+            }
+          });
+        })
+        .catch((error) => {
+          // Silently handle service worker registration errors
+          // eslint-disable-next-line no-console
+          console.error('Service Worker registration failed:', error);
+        });
     }
 
     return () => {
@@ -51,18 +85,7 @@ export default function Layout({ children }: LayoutProps) {
       window.removeEventListener('online', updateOnlineStatus);
       window.removeEventListener('offline', updateOnlineStatus);
     };
-  }, [sidebarOpen]);
-
-  // Handle focus management for accessibility
-  useEffect(() => {
-    if (sidebarOpen) {
-      // Focus the first focusable element in the sidebar
-      const firstFocusable = document.querySelector('.sidebar-focusable') as HTMLElement;
-      if (firstFocusable) {
-        firstFocusable.focus();
-      }
-    }
-  }, [sidebarOpen]);
+  }, []);
 
   useEffect(() => {
     // Apply theme to document
@@ -70,13 +93,51 @@ export default function Layout({ children }: LayoutProps) {
     localStorage.setItem('theme', theme);
   }, [theme]);
 
-  const handleThemeToggle = () => {
-    setTheme(prev => prev === 'dark' ? 'light' : 'dark');
+  useEffect(() => {
+    // Check for saved theme preference or default to dark mode
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme) {
+      setDarkMode(savedTheme === 'dark');
+    }
+  }, []);
+
+  // Structured data for better SEO
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Zion Tech Group",
+    "url": "https://ziontechgroup.com",
+    "logo": "https://ziontechgroup.com/logo.png",
+    "description": description,
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "364 E Main St STE 1008",
+      "addressLocality": "Middletown",
+      "addressRegion": "DE",
+      "postalCode": "19709",
+      "addressCountry": "US"
+    },
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "telephone": "+1-302-464-0950",
+      "contactType": "customer service",
+      "email": "kleber@ziontechgroup.com"
+    },
+    "sameAs": [
+      "https://linkedin.com/company/ziontechgroup",
+      "https://twitter.com/ziontechgroup",
+      "https://github.com/ziontechgroup",
+      "https://youtube.com/ziontechgroup"
+    ]
   };
 
   if (isLoading) {
     return <LoadingSpinner />;
   }
+
+  // Add missing variables and functions
+  const darkMode = theme === 'dark';
+  const toggleDarkMode = () => setTheme(prev => prev === 'dark' ? 'light' : 'dark');
 
   return (
     <>
@@ -85,10 +146,7 @@ export default function Layout({ children }: LayoutProps) {
         <meta name="description" content={description} />
         <meta name="keywords" content={keywords} />
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-        <meta charSet="utf-8" />
-        <meta name="robots" content="index, follow" />
-        <meta name="author" content="Zion Tech Group" />
-        <meta name="theme-color" content="#06b6d4" />
+        <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
         
         {/* Canonical URL */}
         {canonicalUrl && <link rel="canonical" href={canonicalUrl} />}
@@ -163,60 +221,51 @@ export default function Layout({ children }: LayoutProps) {
 
       <div className={`min-h-screen ${theme === 'dark' ? 'bg-black text-white' : 'bg-gray-50 text-gray-900'} relative overflow-hidden transition-colors duration-300`}>
         {/* Skip to content link for accessibility */}
-        <a href="#main" className="skip-link sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2 focus:bg-blue-600 focus:text-white focus:rounded">
+        <a href="#main" className="skip-link sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-cyan-500 text-black px-4 py-2 rounded z-50">
           Skip to main content
         </a>
         
-        {/* Background Effects */}
-        <UltraFuturisticBackground2045 theme={theme === 'dark' ? 'quantum-neon' : 'holographic'} />
+        {/* Futuristic Background */}
+        <UltraFuturisticBackground2036 />
         
-        {/* Layout Structure */}
-        <div className="relative z-10">
-          {/* Top Contact Bar */}
-          <TopContactBar />
-          
-          {/* Enhanced Navigation */}
-          <EnhancedNavigation2025 />
-          
-          {/* Enhanced Sidebar */}
-          <EnhancedSidebar2025 isOpen={sidebarOpen} onClose={() => setSidebarOpen(false)} />
-          
-          {/* Main Content */}
-          <main id="main" role="main" className="pt-32 pb-16 relative z-10">
-            <EnhancedErrorBoundary>
-              {children}
-            </EnhancedErrorBoundary>
-          </main>
-          
-          {/* Enhanced Footer */}
-          <EnhancedFooter2025 />
-          
-          {/* Performance Monitor */}
-          <EnhancedPerformanceMonitor />
-          
-          {/* Accessibility Enhancer */}
-          <AccessibilityEnhancer />
-          
-          {/* Cookie Consent Banner */}
-          <CookieConsentBanner />
-          
-          {/* Offline Indicator */}
-          {!isOnline && (
-            <div className="fixed bottom-4 right-4 bg-red-600 text-white px-4 py-2 rounded-lg shadow-lg z-50">
-              <div className="flex items-center space-x-2">
-                <div className="w-2 h-2 bg-white rounded-full animate-pulse"></div>
-                <span className="text-sm">You are offline</span>
-              </div>
+        {/* Top Contact Bar */}
+        <TopContactBar />
+        
+        {/* Navigation */}
+        <UltraFuturisticNavigation2036 />
+        
+        {/* Enhanced Sidebar */}
+        <EnhancedSidebar2025 isOpen={sidebarOpen} onClose={() => setSidebarOpen(false)} />
+        
+        {/* Main Content */}
+        <main className="pt-32 pb-16 relative z-10">
+          <EnhancedErrorBoundary>
+            {children}
+          </EnhancedErrorBoundary>
+        </main>
+        
+        {/* Enhanced Footer */}
+        <EnhancedFooter2025 />
+        
+        {/* Performance Monitor */}
+        <EnhancedPerformanceMonitor />
+        
+        {/* Accessibility Enhancer */}
+        <AccessibilityEnhancer />
+        
+        {/* Cookie Consent Banner */}
+        <CookieConsentBanner />
+        
+        {/* Offline Indicator */}
+        {!isOnline && (
+          <div className="fixed bottom-4 right-4 bg-red-600 text-white px-4 py-2 rounded-lg shadow-lg z-50">
+            <div className="flex items-center space-x-2">
+              <div className="w-2 h-2 bg-white rounded-full animate-pulse"></div>
+              <span className="text-sm">You are offline</span>
             </div>
-          )}
-        </div>
-
-        {/* Theme Toggle Floating Button */}
-        <ThemeToggle theme={theme} onToggle={handleThemeToggle} />
-        
-        {/* Service Worker Registration */}
-        <ServiceWorkerRegistration />
+          </div>
+        )}
       </div>
     </>
   );
-}
+};

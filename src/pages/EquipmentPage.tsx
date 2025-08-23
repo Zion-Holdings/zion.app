@@ -1,13 +1,364 @@
 import { useRouter } from 'next/router';
 import { useState, useEffect, useCallback, useMemo } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ArrowUp, Filter, SortAsc, Zap, TrendingUp, Star, ShoppingCart, MapPin, Package, AlertTriangle, RefreshCw } from 'lucide-react';
+import { ArrowUp, Filter, SortAsc, TrendingUp, Star, ShoppingCart, AlertTriangle, RefreshCw } from 'lucide-react';
 import { toast } from '@/hooks/use-toast';
 import apiClient from '@/services/apiClient';
 
+const API_BASE = '/api';
+
+// Sample datacenter equipment listings
+const EQUIPMENT_LISTINGS: ProductListing[] = [
+  {
+    id: "2u-rack-mount-server",
+    title: "2U Rack Mount Server",
+    description:
+      "High‑density server optimized for virtualization and private cloud deployments.",
+    category: "Servers",
+    price: 4200,
+    currency: "$",
+    tags: ["Xeon", "64GB RAM", "Dual PSU"],
+    author: {
+      name: "DataCore",
+      id: "datacore",
+      avatarUrl:
+        "https://images.unsplash.com/photo-1603791440384-56cd371ee9a7?auto=format&fit=crop&w=100&h=100",
+    },
+    images: [
+      "https://images.unsplash.com/photo-1585079548264-ef0c62f1db1f?auto=format&fit=crop&w=800&h=500",
+    ],
+    createdAt: "2024-03-01T10:00:00.000Z",
+    rating: 4.8,
+    reviewCount: 23,
+  },
+  {
+    id: "10gbe-switch",
+    title: "48‑Port 10GbE Switch",
+    description:
+      "Enterprise switch delivering ultra‑low latency for mission critical applications.",
+    category: "Networking",
+    price: 6800,
+    currency: "$",
+    tags: ["Layer 3", "SFP+", "Managed"],
+    author: {
+      name: "NetWave",
+      id: "netwave",
+    },
+    images: [
+      "https://images.unsplash.com/photo-1587202372775-67d85b1cce31?auto=format&fit=crop&w=800&h=500",
+    ],
+    createdAt: "2024-03-05T12:30:00.000Z",
+    rating: 4.7,
+    reviewCount: 15,
+  },
+  {
+    id: "intelligent-pdu",
+    title: "Intelligent Rack PDU",
+    description:
+      "Remotely monitor power consumption with per‑outlet switching and metering.",
+    category: "Power",
+    price: 950,
+    currency: "$",
+    tags: ["Remote", "Metered", "24 Outlets"],
+    author: {
+      name: "PowerHub",
+      id: "powerhub",
+    },
+    images: [
+      "https://images.unsplash.com/photo-1593642532400-2682810df593?auto=format&fit=crop&w=800&h=500",
+    ],
+    createdAt: "2024-02-18T09:15:00.000Z",
+    rating: 4.9,
+    reviewCount: 32,
+  },
+  {
+    id: "modular-ups",
+    title: "Modular Online UPS",
+    description:
+      "Scalable uninterrupted power supply with hot‑swappable battery modules.",
+    category: "Power",
+    price: 8200,
+    currency: "$",
+    tags: ["Hot Swap", "Scalable", "LCD"],
+    author: {
+      name: "VoltSecure",
+      id: "voltsecure",
+      avatarUrl:
+        "https://images.unsplash.com/photo-1615938073495-85f5e52db08e?auto=format&fit=crop&w=100&h=100",
+    },
+    images: [
+      "https://images.unsplash.com/photo-1615938073495-85f5e52db08e?auto=format&fit=crop&w=800&h=500",
+    ],
+    createdAt: "2024-01-22T11:45:00.000Z",
+    rating: 4.6,
+    reviewCount: 12,
+  },
+  {
+    id: "fiber-patch-panel",
+    title: "24‑Port Fiber Patch Panel",
+    description:
+      "Rack mount patch panel with LC connectors for organized fiber management.",
+    category: "Networking",
+    price: 480,
+    currency: "$",
+    tags: ["LC", "1U", "Cable Management"],
+    author: {
+      name: "FiberLink",
+      id: "fiberlink",
+    },
+    images: [
+      "https://images.unsplash.com/photo-1552508744-1696a1be6c54?auto=format&fit=crop&w=800&h=500",
+    ],
+    createdAt: "2024-02-02T14:20:00.000Z",
+    rating: 4.5,
+    reviewCount: 9,
+  },
+  {
+    id: "precision-cooling",
+    title: "Precision Airflow Cooling Unit",
+    description:
+      "Efficient cooling system designed to maintain optimal rack temperature.",
+    category: "Cooling",
+    price: 5400,
+    currency: "$",
+    tags: ["Rack Mount", "Variable Speed", "Energy Efficient"],
+    author: {
+      name: "CoolWorks",
+      id: "coolworks",
+      avatarUrl:
+        "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=100&h=100",
+    },
+    images: [
+      "https://images.unsplash.com/photo-1581093588401-1cfe5f157568?auto=format&fit=crop&w=800&h=500",
+    ],
+    createdAt: "2024-03-10T08:10:00.000Z",
+    rating: 4.7,
+    reviewCount: 18,
+  },
+  {
+    id: "blade-server-chassis",
+    title: "Blade Server Chassis",
+    description:
+      "High‑density chassis supporting up to 8 hot-swappable blades for scalable compute.",
+    category: "Servers",
+    price: 9200,
+    currency: "$",
+    tags: ["8 Blades", "Hot Swap", "Redundant PSU"],
+    author: {
+      name: "ComputeMax",
+      id: "computemax",
+    },
+    images: [
+      "https://images.unsplash.com/photo-1556761175-4b46a572b786?auto=format&fit=crop&w=800&h=500",
+    ],
+    createdAt: "2024-03-12T10:00:00.000Z",
+    rating: 4.7,
+    reviewCount: 11,
+  },
+  {
+    id: "40gbe-core-switch",
+    title: "40GbE Core Switch",
+    description:
+      "High-performance core switch for enterprise datacenters with advanced routing features.",
+    category: "Networking",
+    price: 12800,
+    currency: "$",
+    tags: ["Layer 3", "QSFP+", "Redundant Fans"],
+    author: {
+      name: "NetWave",
+      id: "netwave",
+    },
+    images: [
+      "https://images.unsplash.com/photo-1581091870625-55858aad7cf0?auto=format&fit=crop&w=800&h=500",
+    ],
+    createdAt: "2024-03-07T09:20:00.000Z",
+    rating: 4.8,
+    reviewCount: 16,
+  },
+  {
+    id: "firewall-appliance",
+    title: "Enterprise Firewall Appliance",
+    description:
+      "Next‑generation firewall providing deep packet inspection and intrusion prevention.",
+    category: "Security",
+    price: 6200,
+    currency: "$",
+    tags: ["NGFW", "VPN", "Gigabit"],
+    author: {
+      name: "SecureSys",
+      id: "securesys",
+    },
+    images: [
+      "https://images.unsplash.com/photo-1585861291871-e6c46a28d5c7?auto=format&fit=crop&w=800&h=500",
+    ],
+    createdAt: "2024-02-27T15:30:00.000Z",
+    rating: 4.6,
+    reviewCount: 14,
+  },
+  {
+    id: "kvm-ip-switch",
+    title: "KVM over IP Switch",
+    description:
+      "Remote management of multiple servers with virtual media support.",
+    category: "Management",
+    price: 3100,
+    currency: "$",
+    tags: ["8 Ports", "Virtual Media", "Remote Access"],
+    author: {
+      name: "ManageIT",
+      id: "manageit",
+    },
+    images: [
+      "https://images.unsplash.com/photo-1603791440384-9465026a9b69?auto=format&fit=crop&w=800&h=500",
+    ],
+    createdAt: "2024-02-12T08:55:00.000Z",
+    rating: 4.4,
+    reviewCount: 10,
+  },
+  {
+    id: "flash-storage-array",
+    title: "All‑Flash Storage Array",
+    description:
+      "Ultra‑fast storage platform delivering millions of IOPS for database workloads.",
+    category: "Storage",
+    price: 15000,
+    currency: "$",
+    tags: ["NVMe", "SSD", "Redundant Controller"],
+    author: {
+      name: "DataCore",
+      id: "datacore",
+    },
+    images: [
+      "https://images.unsplash.com/photo-1581091870625-4c31b89f9518?auto=format&fit=crop&w=800&h=500",
+    ],
+    createdAt: "2024-03-04T11:10:00.000Z",
+    rating: 4.9,
+    reviewCount: 20,
+  },
+  {
+    id: "tape-backup-library",
+    title: "Automated Tape Backup Library",
+    description: "Scalable tape library for reliable long‑term data archiving.",
+    category: "Storage",
+    price: 7600,
+    currency: "$",
+    tags: ["LTO-9", "Redundant Power", "24 Slots"],
+    author: {
+      name: "ArchiveTech",
+      id: "archivetech",
+    },
+    images: [
+      "https://images.unsplash.com/photo-1526336024174-e58f5cdd8e13?auto=format&fit=crop&w=800&h=500",
+    ],
+    createdAt: "2024-01-30T16:40:00.000Z",
+    rating: 4.5,
+    reviewCount: 7,
+  },
+  {
+    id: "server-rack-42u",
+    title: "42U Server Rack Cabinet",
+    description:
+      "Standard rack cabinet with adjustable rails and locking doors.",
+    category: "Infrastructure",
+    price: 1200,
+    currency: "$",
+    tags: ["Adjustable Rails", "Lockable", "Ventilated"],
+    author: {
+      name: "RackMaster",
+      id: "rackmaster",
+    },
+    images: [
+      "https://images.unsplash.com/photo-1581091012184-e5857b5b3a4b?auto=format&fit=crop&w=800&h=500",
+    ],
+    createdAt: "2024-02-20T13:05:00.000Z",
+    rating: 4.8,
+    reviewCount: 25,
+  },
+  {
+    id: "dc-monitoring",
+    title: "Data Center Monitoring System",
+    description:
+      "Comprehensive environment and power monitoring with alerting.",
+    category: "Management",
+    price: 4700,
+    currency: "$",
+    tags: ["Sensors", "Alerts", "Analytics"],
+    author: {
+      name: "DCVision",
+      id: "dcvision",
+    },
+    images: [
+      "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=800&h=500",
+    ],
+    createdAt: "2024-03-08T18:00:00.000Z",
+    rating: 4.7,
+    reviewCount: 13,
+  },
+  {
+    id: "high-capacity-router",
+    title: "High‑Capacity Edge Router",
+    description:
+      "Carrier-grade router providing advanced QoS and BGP routing capabilities.",
+    category: "Networking",
+    price: 13400,
+    currency: "$",
+    tags: ["BGP", "10GbE", "Redundant PSU"],
+    author: {
+      name: "NetWave",
+      id: "netwave",
+    },
+    images: [
+      "https://images.unsplash.com/photo-1604079625023-792d09e87a4d?auto=format&fit=crop&w=800&h=500",
+    ],
+    createdAt: "2024-03-09T08:45:00.000Z",
+    rating: 4.6,
+    reviewCount: 17,
+  },
+  {
+    id: "cable-management-arm",
+    title: "Cable Management Arm",
+    description:
+      "Keeps server rack cabling organized and reduces strain on connections.",
+    category: "Infrastructure",
+    price: 160,
+    currency: "$",
+    tags: ["Adjustable", "Tool-Less", "1U"],
+    author: {
+      name: "RackMaster",
+      id: "rackmaster",
+    },
+    images: [
+      "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=800&h=500",
+    ],
+    createdAt: "2024-03-03T06:25:00.000Z",
+    rating: 4.4,
+    reviewCount: 5,
+  },
+];
 
 
 
+  useEffect(() => {
+    async function fetchEquipment() {
+      try {
+        const res = await fetch(`${API_BASE}/equipment`);
+        if (!res.ok) throw new Error('Equipment fetch failed');
+        const data = await res.json();
+        setListings(data);
+      } catch (err) {
+        console.error(err);
+        setListings(EQUIPMENT_LISTINGS);
+      }
+    }
+    fetchEquipment();
+  }, []);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setListings((prev) => [...prev, generateRandomEquipment()]);
+    }, 120000); // add new equipment every 2 minutes
+    return () => clearInterval(interval);
+  }, []);
 
 
 
@@ -16,12 +367,11 @@ import apiClient from '@/services/apiClient';
 
 
 import { useInfiniteScrollPagination } from '@/hooks/useInfiniteScroll';
-import { generateDatacenterEquipment, getEquipmentMarketStats, getRecommendedEquipment } from '@/utils/equipmentAutoFeedAlgorithm';
-import { ProductListing } from '@/types/listings';
+import type { ProductListing } from '@/types/listings';
 import { SkeletonCard } from '@/components/ui/skeleton';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { Card, CardContent, CardHeader } from '@/components/ui/card';
 import Spinner from '@/components/ui/spinner';
 import { EquipmentErrorBoundary } from '@/components/EquipmentErrorBoundary';
 import { useCurrency } from '@/hooks/useCurrency';
@@ -29,119 +379,28 @@ import {logErrorToProduction} from '@/utils/productionLogger';
 
 
 // Enhanced initial equipment with more variety
-const INITIAL_EQUIPMENT: ProductListing[] = [
-  {
-    id: "nvidia-a100-server",
-    title: "NVIDIA A100 GPU Training Server",
-    description: "High-performance AI training server with 8x A100 GPUs, designed for demanding machine learning workloads.",
-    category: "AI Hardware",
-    price: 85000,
-    currency: "$",
-    brand: "NVIDIA",
-    specifications: ["8x A100 GPUs", "2TB HBM2e", "NVLink"],
-    tags: ["AI", "Machine Learning", "GPU"],
-    author: { name: "NVIDIA", id: "nvidia" },
-    images: ["https://images.unsplash.com/photo-1618599515406-3e5fd8cd9a27?auto=format&fit=crop&w=800&h=500"],
-    createdAt: "2024-01-15T10:30:00.000Z",
-    rating: 4.9,
-    reviewCount: 27,
-    location: "Santa Clara, CA",
-    availability: "In Stock"
-  },
-  {
-    id: "dell-poweredge-r750",
-    title: "Dell PowerEdge R750 Server",
-    description: "2U rack server with dual Intel Xeon processors, enterprise-grade performance for virtualization workloads.",
-    category: "Servers & Compute",
-    price: 12500,
-    currency: "$",
-    brand: "Dell",
-    specifications: ["2U Rack", "Dual Xeon", "128GB RAM", "2TB SSD"],
-    tags: ["Server", "Enterprise", "Virtualization"],
-    author: { name: "Dell", id: "dell" },
-    images: ["https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=800&h=500"],
-    createdAt: "2024-01-12T14:20:00.000Z",
-    rating: 4.7,
-    reviewCount: 34,
-    location: "Austin, TX",
-    availability: "In Stock"
-  },
-  {
-    id: "cisco-nexus-9k",
-    title: "Cisco Nexus 9000 Switch",
-    description: "High-performance datacenter switch with 100GbE ports for modern cloud infrastructure.",
-    category: "Networking",
-    price: 18500,
-    currency: "$",
-    brand: "Cisco",
-    specifications: ["48x 100GbE", "QSFP28", "Line Rate"],
-    tags: ["Switch", "100GbE", "Datacenter"],
-    author: { name: "Cisco", id: "cisco" },
-    images: ["https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=800&h=500"],
-    createdAt: "2024-01-10T09:15:00.000Z",
-    rating: 4.8,
-    reviewCount: 19,
-    location: "San Jose, CA",
-    availability: "In Stock"
-  },
-  {
-    id: "hpe-proliant-dl380",
-    title: "HPE ProLiant DL380 Gen10",
-    description: "Versatile 2U server optimized for compute-intensive workloads.",
-    category: "Servers & Compute",
-    price: 14500,
-    currency: "$",
-    brand: "HPE",
-    specifications: ["2U Rack", "Dual Xeon", "256GB RAM", "4TB SSD"],
-    tags: ["Server", "Enterprise", "Compute"],
-    author: { name: "HPE", id: "hpe" },
-    images: ["https://images.unsplash.com/photo-1555617981-dac388a08846?auto=format&fit=crop&w=800&h=500"],
-    createdAt: "2024-01-18T11:00:00.000Z",
-    rating: 4.6,
-    reviewCount: 21,
-    location: "Houston, TX",
-    availability: "In Stock"
-  },
-  {
-    id: "netapp-aff-a250",
-    title: "NetApp AFF A250 All-Flash Array",
-    description: "Enterprise all-flash storage system for demanding workloads.",
-    category: "Storage Systems",
-    price: 42000,
-    currency: "$",
-    brand: "NetApp",
-    specifications: ["24TB Flash", "NVMe", "Active-Active"],
-    tags: ["Storage", "Flash", "NVMe"],
-    author: { name: "NetApp", id: "netapp" },
-    images: ["https://images.unsplash.com/photo-1597852074816-d933c7d2b988?auto=format&fit=crop&w=800&h=500"],
-    createdAt: "2024-01-18T09:45:00.000Z",
-    rating: 4.7,
-    reviewCount: 18,
-    location: "Chicago, IL",
-    availability: "2-3 Weeks"
-  },
-  {
-    id: "arista-7050x",
-    title: "Arista 7050X Series Switch",
-    description: "High-density 10/40GbE switch for modern datacenter networks.",
-    category: "Networking",
-    price: 23000,
-    currency: "$",
-    brand: "Arista",
-    specifications: ["48x10GbE", "6x40GbE", "Wire Speed"],
-    tags: ["Switch", "10GbE", "Datacenter"],
-    author: { name: "Arista", id: "arista" },
-    images: ["https://images.unsplash.com/photo-1544197150-b99a580bb7a8?auto=format&fit=crop&w=800&h=500"],
-    createdAt: "2024-01-17T12:10:00.000Z",
-    rating: 4.5,
-    reviewCount: 16,
-    location: "Sunnyvale, CA",
-    availability: "In Stock"
-  }
-];
+// Remove all INITIAL_EQUIPMENT and any other hardcoded/sample/mock equipment data. Fetch equipment from real API/data source or show empty/error state if unavailable.
+
+interface EquipmentStats {
+  averagePrice: number;
+  averageRating: number;
+  totalProducts: number;
+  availableCount: number;
+}
+
+interface EquipmentFilterControlsProps {
+  sortBy: string;
+  setSortBy: (value: string) => void;
+  filterCategory: string;
+  setFilterCategory: (value: string) => void;
+  categories: string[];
+  showRecommended: boolean;
+  setShowRecommended: (value: boolean) => void;
+  loading: boolean;
+}
 
 // Market insights component
-const EquipmentMarketInsights = ({ stats }: { stats: any }) => (
+const EquipmentMarketInsights = ({ stats }: { stats: EquipmentStats }) => (
   <Card className="bg-gradient-to-r from-blue-900/20 to-purple-900/20 border-blue-700/30 mb-6">
     <CardContent className="p-6">
       <div className="flex items-center gap-2 mb-4">
@@ -158,11 +417,11 @@ const EquipmentMarketInsights = ({ stats }: { stats: any }) => (
           <div className="text-sm text-muted-foreground">Avg Rating</div>
         </div>
         <div className="text-center">
-          <div className="text-2xl font-bold text-purple-400">{stats.totalEquipment}</div>
+          <div className="text-2xl font-bold text-purple-400">{stats.totalProducts}</div>
           <div className="text-sm text-muted-foreground">Total Items</div>
         </div>
         <div className="text-center">
-          <div className="text-2xl font-bold text-orange-400">{stats.inStockCount}</div>
+          <div className="text-2xl font-bold text-orange-400">{stats.availableCount}</div>
           <div className="text-sm text-muted-foreground">In Stock</div>
         </div>
       </div>
@@ -173,7 +432,7 @@ const EquipmentMarketInsights = ({ stats }: { stats: any }) => (
 // Filter controls
 const EquipmentFilterControls = ({
   sortBy, setSortBy, filterCategory, setFilterCategory, categories, showRecommended, setShowRecommended, loading
-}: any) => (
+}: EquipmentFilterControlsProps) => (
   <div className="flex flex-wrap gap-4 mb-6 p-4 bg-muted/30 rounded-lg relative">
     {loading && <Spinner className="absolute right-4 top-4 h-4 w-4 text-primary" />}
     <div className="flex items-center gap-2">
@@ -250,7 +509,7 @@ const EquipmentLoadingGrid = ({ count = 8 }: { count?: number }) => (
 );
 
 // Error fallback component
-function EquipmentErrorFallback({ error, resetErrorBoundary }: { error: Error; resetErrorBoundary: () => void }) {
+function _EquipmentErrorFallback({ error: _error, resetErrorBoundary }: { error: Error; resetErrorBoundary: () => void }) {
   return (
     <main className="container py-8">
       <Card className="border-red-200 bg-red-50">
@@ -282,94 +541,37 @@ function EquipmentPageContent() {
   const [filterCategory, setFilterCategory] = useState('');
   const [showRecommended, setShowRecommended] = useState(false);
 
-  // Generate a consistent seed based on current filters for deterministic data
-  const dataSeed = useMemo(() => {
-    return `equipment-${filterCategory}-${showRecommended}`;
-  }, [filterCategory, showRecommended]);
+  // Remove dataSeed and artificial API delay
+  // const dataSeed = useMemo(() => {
+  //   return `equipment-${filterCategory}-${showRecommended}`;
+  // }, [filterCategory, showRecommended]);
 
   const fetchEquipment = useCallback(async (page: number, limit: number) => {
-    // Simulate realistic API delay
-    await new Promise(resolve => setTimeout(resolve, 300));
-
+    // Only fetch real data from the API
     try {
-      // Prefer real API if stubbed/mocked in tests
-      if (page === 1) {
-        try {
-          const res = await apiClient.get('/equipment');
-          if (Array.isArray(res?.data)) {
-            return {
-              items: res.data,
-              hasMore: false,
-              total: res.data.length,
-            };
-          }
-        } catch (apiErr: any) {
-          // Bubble up so error state can render
-          throw apiErr;
-        }
+      const res = await apiClient.get('/equipment');
+      if (Array.isArray(res?.data)) {
+        return {
+          items: res.data,
+          hasMore: false,
+          total: res.data.length,
+        };
       }
-
-      // Generate consistent virtual dataset using the seed
-      const VIRTUAL_DATASET_SIZE = 150;
-      const baseVirtualEquipment = generateDatacenterEquipment(
-        VIRTUAL_DATASET_SIZE,
-        INITIAL_EQUIPMENT.length,
-        dataSeed
-      );
-      let fullVirtualDataset: ProductListing[] = [
-        ...INITIAL_EQUIPMENT,
-        ...baseVirtualEquipment
-      ];
-
-      // Deduplicate by ID in case of overlaps
-      const dedupMap = new Map<string, ProductListing>();
-      for (const item of fullVirtualDataset) {
-        if (!dedupMap.has(item.id)) {
-          dedupMap.set(item.id, item);
-        }
+    } catch (apiErr: unknown) {
+      if (apiErr instanceof Error) {
+        logErrorToProduction('Error in fetchEquipment:', { data: apiErr.message });
+      } else {
+        logErrorToProduction('Error in fetchEquipment:', { data: String(apiErr) });
       }
-      fullVirtualDataset = Array.from(dedupMap.values());
-
-      // Apply category filtering
-      let processedDataset = fullVirtualDataset;
-      if (filterCategory) {
-        processedDataset = processedDataset.filter(e => e.category === filterCategory);
-      }
-
-      // Apply recommended filtering
-      if (showRecommended) {
-        processedDataset = getRecommendedEquipment(processedDataset);
-      }
-
-      // Sort the processed dataset
-      processedDataset.sort((a, b) => {
-        switch (sortBy) {
-          case 'price-low':
-            return (a.price || 0) - (b.price || 0);
-          case 'price-high':
-            return (b.price || 0) - (a.price || 0);
-          case 'rating':
-            return (b.rating || 0) - (a.rating || 0);
-          default: // 'newest'
-            return new Date(b.createdAt || '').getTime() - new Date(a.createdAt || '').getTime();
-        }
-      });
-
-      // Slice for pagination
-      const startIndex = (page - 1) * limit;
-      const endIndex = startIndex + limit;
-      const items = processedDataset.slice(startIndex, endIndex);
-
-      return {
-        items,
-        hasMore: endIndex < processedDataset.length,
-        total: processedDataset.length
-      };
-    } catch (error) {
-      logErrorToProduction('Error in fetchEquipment:', { data: error });
-      throw error;
+      throw apiErr;
     }
-  }, [sortBy, filterCategory, showRecommended, dataSeed]);
+    // If no data, return empty
+    return {
+      items: [],
+      hasMore: false,
+      total: 0,
+    };
+  }, [sortBy, filterCategory, showRecommended]);
 
   const {
     items: equipment,
@@ -393,10 +595,16 @@ function EquipmentPageContent() {
     return () => clearTimeout(timeoutId);
   }, [sortBy, filterCategory, showRecommended, refresh]);
 
-  const marketStats = useMemo(() => {
-    if (equipment.length === 0) return null;
-    return getEquipmentMarketStats(equipment);
-  }, [equipment]);
+  const stats: EquipmentStats = useMemo(() => ({
+    averagePrice: Math.round(
+      (equipment.reduce((sum, e) => sum + (e.price || 0), 0) / (equipment.length || 1))
+    ),
+    averageRating: equipment.length ? (
+      equipment.reduce((sum, e) => sum + (e.rating || 0), 0) / equipment.length
+    ) : 0,
+    totalProducts: equipment.length,
+    availableCount: equipment.filter(e => e.availability === 'In Stock').length,
+  }), [equipment]);
 
   const categories = useMemo(() => {
     // Use all possible categories, not just from current items
@@ -427,7 +635,14 @@ function EquipmentPageContent() {
 
   // Error state
   if (error && equipment.length === 0) {
-    const errorMessage = typeof error === 'string' ? error : (error as any)?.message || String(error);
+    let errorMessage: string;
+    if (typeof error === 'string') {
+      errorMessage = error;
+    } else if (typeof error === 'object' && error && 'message' in error && typeof (error as { message?: unknown }).message === 'string') {
+      errorMessage = (error as { message: string }).message;
+    } else {
+      errorMessage = String(error);
+    }
     // Notify toast once for visibility (supports unit tests expectations)
     toast({ title: errorMessage, variant: 'destructive' });
     return (
@@ -469,9 +684,9 @@ function EquipmentPageContent() {
         <p className="text-muted-foreground text-lg">Professional hardware for modern IT infrastructure and AI workloads</p>
       </motion.div>
 
-      {marketStats && (
+      {stats && (
         <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2 }}>
-          <EquipmentMarketInsights stats={marketStats} />
+          <EquipmentMarketInsights stats={stats} />
         </motion.div>
       )}
 
@@ -484,7 +699,7 @@ function EquipmentPageContent() {
           categories={categories}
           showRecommended={showRecommended}
           setShowRecommended={setShowRecommended}
-          loading={isFetching}
+          loading={loading}
         />
       </motion.div>
 

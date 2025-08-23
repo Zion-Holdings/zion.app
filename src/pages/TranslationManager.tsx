@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Header } from "@/components/Header";
 import { SEO } from "@/components/SEO";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
@@ -15,7 +15,8 @@ import { AlertTriangle, Check, Globe, Search, Loader2 } from 'lucide-react';
 
 
 import { useIsMobile } from "@/hooks/use-mobile";
-import { useLanguage, SupportedLanguage } from "@/context/LanguageContext";
+import { useLanguage } from "@/context/LanguageContext";
+import type { SupportedLanguage } from "@/context/LanguageContext";
 import { useTranslationService } from "@/hooks/useTranslationService";
 import {logErrorToProduction} from '@/utils/productionLogger';
 
@@ -28,7 +29,7 @@ export default function TranslationManager() {
   
   const [selectedNamespace, setSelectedNamespace] = useState("translation");
   const [searchQuery, setSearchQuery] = useState("");
-  const [translations, setTranslations] = useState<Record<string, any>>({});
+  const [translations, setTranslations] = useState<Record<string, Record<string, string>>>({});
   const [filteredKeys, setFilteredKeys] = useState<string[]>([]);
   const [editingKey, setEditingKey] = useState<string | null>(null);
   const [editedTranslations, setEditedTranslations] = useState<Record<string, Record<SupportedLanguage, string>>>({});
@@ -37,19 +38,21 @@ export default function TranslationManager() {
   // Simulated translation data - in a real app, this would come from your backend
   useEffect(() => {
     // For demo purposes, we're using the loaded translations from i18next
-    const currentTranslations: Record<string, any> = {};
+    const currentTranslations: Record<string, Record<string, string>> = {};
     
     supportedLanguages.forEach(lang => {
       const res = i18n.getResourceBundle(lang.code, selectedNamespace);
       if (res) {
         // Flatten nested objects for easier management
-        const flattenObject = (obj: any, prefix = '') => {
+        const flattenObject = (obj: unknown, prefix = ''): Record<string, string> => {
+          if (typeof obj !== 'object' || obj === null) return {};
           return Object.keys(obj).reduce((acc, key) => {
             const pre = prefix.length ? `${prefix}.` : '';
-            if (typeof obj[key] === 'object' && obj[key] !== null) {
-              Object.assign(acc, flattenObject(obj[key], `${pre}${key}`));
-            } else {
-              acc[`${pre}${key}`] = obj[key];
+            const value = (obj as Record<string, unknown>)[key];
+            if (typeof value === 'object' && value !== null) {
+              Object.assign(acc, flattenObject(value, `${pre}${key}`));
+            } else if (typeof value === 'string') {
+              acc[`${pre}${key}`] = value;
             }
             return acc;
           }, {} as Record<string, string>);
@@ -64,7 +67,9 @@ export default function TranslationManager() {
     // Get all unique keys across all languages
     const allKeys = new Set<string>();
     Object.values(currentTranslations).forEach(langTranslations => {
-      Object.keys(langTranslations).forEach(key => allKeys.add(key));
+      if (typeof langTranslations === 'object' && langTranslations !== null) {
+        Object.keys(langTranslations as Record<string, string>).forEach(key => allKeys.add(key));
+      }
     });
     
     setFilteredKeys(Array.from(allKeys));
@@ -76,7 +81,9 @@ export default function TranslationManager() {
       // Get all unique keys across all languages
       const allKeys = new Set<string>();
       Object.values(translations).forEach(langTranslations => {
-        Object.keys(langTranslations).forEach(key => allKeys.add(key));
+        if (typeof langTranslations === 'object' && langTranslations !== null) {
+          Object.keys(langTranslations as Record<string, string>).forEach(key => allKeys.add(key));
+        }
       });
       setFilteredKeys(Array.from(allKeys));
       return;
@@ -87,14 +94,16 @@ export default function TranslationManager() {
     
     // Search in keys and values
     Object.values(translations).forEach(langTranslations => {
-      Object.entries(langTranslations).forEach(([key, value]) => {
-        if (
-          key.toLowerCase().includes(query) || 
-          (typeof value === 'string' && value.toLowerCase().includes(query))
-        ) {
-          filtered.push(key);
-        }
-      });
+      if (typeof langTranslations === 'object' && langTranslations !== null) {
+        Object.entries(langTranslations as Record<string, string>).forEach(([key, value]) => {
+          if (
+            key.toLowerCase().includes(query) || 
+            (typeof value === 'string' && value.toLowerCase().includes(query))
+          ) {
+            filtered.push(key);
+          }
+        });
+      }
     });
     
     setFilteredKeys([...new Set(filtered)]);
@@ -106,7 +115,8 @@ export default function TranslationManager() {
     // Initialize edited translations for this key
     const initialEdits: Record<SupportedLanguage, string> = {} as Record<SupportedLanguage, string>;
     supportedLanguages.forEach(lang => {
-      initialEdits[lang.code] = translations[lang.code]?.[key] || '';
+      const langTranslations = translations[lang.code];
+      initialEdits[lang.code] = (typeof langTranslations === 'object' && langTranslations !== null && langTranslations[key]) || '';
     });
     
     setEditedTranslations({
@@ -127,7 +137,10 @@ export default function TranslationManager() {
         if (!updatedTranslations[lang.code]) {
           updatedTranslations[lang.code] = {};
         }
-        updatedTranslations[lang.code][key] = editedTranslations[key]?.[lang.code] || '';
+        const editedKey = editedTranslations[key];
+        if (editedKey && typeof editedKey === 'object' && editedKey[lang.code] !== undefined) {
+          updatedTranslations[lang.code][key] = editedKey[lang.code];
+        }
       });
       
       setTranslations(updatedTranslations);
@@ -143,13 +156,14 @@ export default function TranslationManager() {
   
   const handleTranslateKey = async (key: string) => {
     // Find first non-empty translation to use as source
-    let sourceLanguage: SupportedLanguage = 'en';
+    let sourceLanguage: SupportedLanguage = 'en-US';
     let sourceText = '';
     
     for (const lang of supportedLanguages.map(l => l.code)) {
-      if (translations[lang]?.[key]) {
+      const langTranslations = translations[lang];
+      if (typeof langTranslations === 'object' && langTranslations !== null && langTranslations[key]) {
         sourceLanguage = lang;
-        sourceText = translations[lang][key];
+        sourceText = langTranslations[key];
         break;
       }
     }
@@ -216,7 +230,10 @@ export default function TranslationManager() {
   const getMissingLanguages = (key: string): SupportedLanguage[] => {
     return supportedLanguages
       .map(lang => lang.code)
-      .filter(lang => !translations[lang]?.[key]);
+      .filter(lang => {
+        const langTranslations = translations[lang];
+        return !(typeof langTranslations === 'object' && langTranslations !== null && langTranslations[key]);
+      });
   };
   
   return (
@@ -345,17 +362,21 @@ export default function TranslationManager() {
                         ) : (
                           <div className="p-3">
                             <div className="space-y-2">
-                              {supportedLanguages.slice(0, 2).map((lang) => (
-                                <div key={lang.code} className="flex items-start gap-2">
-                                  <span className="mt-0.5 flex-shrink-0">{lang.flag}</span>
-                                  <span 
-                                    className={`${!translations[lang.code]?.[key] ? 'text-zion-purple italic' : ''}`}
-                                    dir={lang.code === 'ar' ? 'rtl' : 'ltr'}
-                                  >
-                                    {translations[lang.code]?.[key] || t('translation.missing')}
-                                  </span>
-                                </div>
-                              ))}
+                              {supportedLanguages.slice(0, 2).map((lang) => {
+                                const langTranslations = translations[lang.code];
+                                const hasTranslation = typeof langTranslations === 'object' && langTranslations !== null && langTranslations[key];
+                                return (
+                                  <div key={lang.code} className="flex items-start gap-2">
+                                    <span className="mt-0.5 flex-shrink-0">{lang.flag}</span>
+                                    <span 
+                                      className={`${!hasTranslation ? 'text-zion-purple italic' : ''}`}
+                                      dir={lang.code === 'ar' ? 'rtl' : 'ltr'}
+                                    >
+                                      {hasTranslation ? langTranslations[key] : t('translation.missing')}
+                                    </span>
+                                  </div>
+                                );
+                              })}
                               {getMissingLanguages(key).length > 0 && (
                                 <div className="flex items-center gap-2 text-sm text-zion-purple">
                                   <AlertTriangle className="h-4 w-4" />

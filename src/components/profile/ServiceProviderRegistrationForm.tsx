@@ -113,11 +113,11 @@ export function ServiceProviderRegistrationForm() {
 
   // Generate enhanced profile with AI
   const generateEnhancedProfile = async () => {
-    const formData = form.getValues();
-    if (!formData.bio || formData.bio.length < 20) {
+    if (!supabase) {
       toast({
-        title: "More information needed",
-        description: "Please provide at least a detailed bio before generating enhanced content.",
+        title: "Database connection error",
+        description: "Unable to connect to the database. Please try again later.",
+        variant: "destructive",
       });
       return;
     }
@@ -129,11 +129,11 @@ export function ServiceProviderRegistrationForm() {
       const { data, error } = await supabase.functions.invoke('service-profile-enhancer', {
         body: {
           providerData: {
-            name: formData.name,
-            title: formData.title,
-            bio: formData.bio,
+            name: form.getValues().name,
+            title: form.getValues().title,
+            bio: form.getValues().bio,
             services: serviceTags,
-            location: formData.location
+            location: form.getValues().location
           }
         }
       });
@@ -199,6 +199,15 @@ export function ServiceProviderRegistrationForm() {
       toast({
         title: "Services required",
         description: "Please add at least one service to your profile.",
+        variant: "destructive",
+      });
+      return;
+    }
+
+    if (!supabase) {
+      toast({
+        title: "Database connection error",
+        description: "Unable to connect to the database. Please try again later.",
         variant: "destructive",
       });
       return;
@@ -323,7 +332,7 @@ export function ServiceProviderRegistrationForm() {
     } catch (error: any) {
       logErrorToProduction('Error creating profile:', { data: error });
       toast({
-        title: "Error Creating Profile",
+        title: "Profile Creation Failed",
         description: error.message || "There was an error creating your profile. Please try again.",
         variant: "destructive",
       });

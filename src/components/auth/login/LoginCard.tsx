@@ -19,19 +19,14 @@ export function LoginCard() {
           {isSignUpView ? "Create your account" : "Welcome back"}
         </h2>
         <div className="mt-2 text-sm text-zion-slate-light flex justify-center space-x-1">
-          {!isSignUpView && ( // Only show "Don't have an account? Create account" on Login view
-            <>
-              <span>Don't have an account?</span>
-              <button
-                onClick={showSignUpView} // Use specific function
-                className="font-medium text-zion-cyan hover:text-zion-cyan-light"
-                style={{ color: "#0af", background: "none", border: "none", padding: 0, cursor: "pointer" }}
-              >
-                Create account
-              </button>
-            </>
-          )}
-          {/* The "Already have an account? Sign In" link is now part of SignUpForm itself */}
+          <span>Don't have an account?</span>
+          <Link
+            to="/signup"
+            className="font-medium text-zion-cyan hover:text-zion-cyan-light"
+            style={{ color: "#0af" }}
+          >
+            Sign up
+          </Link>
         </div>
       </div>
 

@@ -5,8 +5,13 @@ import type { OrderDetail } from '@/hooks/useOrder';
 // Generates a simple PDF invoice for an order using jsPDF which is already
 // included in the project dependencies. The returned Blob can be downloaded by
 // the browser.
+interface JsPDFWithAutoTable extends jsPDF {
+  autoTable: (options: unknown) => void;
+  lastAutoTable?: { finalY: number };
+}
+
 export async function generateInvoicePdf(order: OrderDetail): Promise<Blob> {
-  const doc = new jsPDF();
+  const doc = new jsPDF() as unknown as JsPDFWithAutoTable;
 
   doc.setFontSize(18);
   doc.text(`Invoice #${order.orderId}`, 20, 20);
@@ -21,13 +26,13 @@ export async function generateInvoicePdf(order: OrderDetail): Promise<Blob> {
 
   // Items table
   const items = order.items.map(i => [i.name, String(i.quantity), `$${i.price.toFixed(2)}`]);
-  (doc as any).autoTable({
+  doc.autoTable({
     head: [['Item', 'Qty', 'Price']],
     body: items,
     startY: 70,
   });
 
-  const finalY = ((doc as any).lastAutoTable?.finalY || 70) + 10;
+  const finalY = (doc.lastAutoTable?.finalY || 70) + 10;
   doc.text(`Total: $${order.total.toFixed(2)}`, 20, finalY);
 
   return doc.output('blob');

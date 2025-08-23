@@ -1,7 +1,7 @@
 
 import { useState } from 'react';
 import { supabase } from '@/integrations/supabase/client';
-import { Skill } from '@/types/resume';
+import type { Skill } from '@/types/resume';
 import { useAuth } from '@/hooks/useAuth';
 import { handleResumeError, showSuccessToast } from './useResumeUtils';
 
@@ -12,9 +12,10 @@ export function useSkills() {
   
   const addSkill = async (resumeId: string, skill: Skill): Promise<boolean> => {
     if (!user) {
-      setError('You must be logged in to add skills');
+      setError('You must be logged in to update skills');
       return false;
     }
+    if (!supabase) throw new Error('Supabase client not initialized');
     
     setIsLoading(true);
     setError(null);
@@ -45,6 +46,7 @@ export function useSkills() {
       setError('You must be logged in to delete skills');
       return false;
     }
+    if (!supabase) throw new Error('Supabase client not initialized');
     
     setIsLoading(true);
     setError(null);

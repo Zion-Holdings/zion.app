@@ -6,7 +6,6 @@ import { Textarea } from "@/components/ui/textarea";
 import { Input } from "@/components/ui/input";
 import { Switch } from "@/components/ui/switch";
 import { Label } from "@/components/ui/label";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { toast } from "sonner";
 import { Loader2 } from 'lucide-react';
@@ -16,6 +15,13 @@ import { useAuth } from "@/hooks/useAuth";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { useRouter } from 'next/router';
 import {logErrorToProduction} from '@/utils/productionLogger';
+
+interface PreviewContent {
+  subject?: string;
+  previewText?: string;
+  body?: string;
+  generatedContent?: string;
+}
 
 export default function ContentGenerator() {
 
@@ -28,7 +34,7 @@ export default function ContentGenerator() {
   const [autoPublish, setAutoPublish] = useState(false);
   const [includeImage, setIncludeImage] = useState(true);
   const [isGenerating, setIsGenerating] = useState(false);
-  const [previewContent, setPreviewContent] = useState<any>(null);
+  const [previewContent, setPreviewContent] = useState<PreviewContent | null>(null);
   const [testEmail, setTestEmail] = useState('');
 
   useEffect(() => {
@@ -42,8 +48,9 @@ export default function ContentGenerator() {
     setPreviewContent(null);
     
     try {
+      if (!supabase) throw new Error('Supabase client not initialized');
       const keywordsArray = keywords.split(',').map(k => k.trim()).filter(k => k.length > 0);
-      const { data, error } = await supabase.functions.invoke('generate-seo-content', {
+      const { data: _data, error } = await supabase.functions.invoke('generate-seo-content', {
         body: {
           contentType,
           userPrompt: customPrompt || topic, // Use customPrompt if available, else topic
@@ -57,7 +64,7 @@ export default function ContentGenerator() {
       
       if (error) throw error;
       
-      setPreviewContent(data); // Expecting { generatedContent: "..." }
+      setPreviewContent(_data); // Expecting { generatedContent: "..." }
       toast.success(`Content for "${contentType}" generated successfully!`);
     } catch (error) {
       logErrorToProduction('Error generating content:', { data: error });
@@ -79,7 +86,8 @@ export default function ContentGenerator() {
     }
     
     try {
-      const { data, error } = await supabase.functions.invoke('send-newsletter', {
+      if (!supabase) throw new Error('Supabase client not initialized');
+      const { data: _data, error } = await supabase.functions.invoke('send-newsletter', {
         body: {
           subject: previewContent.subject,
           previewText: previewContent.previewText,

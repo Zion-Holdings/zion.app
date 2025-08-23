@@ -4,16 +4,9 @@ import { useRouter } from 'next/router';
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { ProductListing } from "@/types/listings";
-import { DollarSign } from 'lucide-react';
-
-import { RatingStars } from "@/components/RatingStars";
+import { DollarSign } from "lucide-react";
+import { RatingStars } from "./RatingStars";
 import { FavoriteButton } from "@/components/FavoriteButton";
-import { useDispatch } from 'react-redux';
-import type { AppDispatch } from '@/store';
-import { addItem } from '@/store/cartSlice';
-import { toast } from '@/hooks/use-toast';
-import { useCurrency } from '@/hooks/useCurrency';
-import Image from 'next/image'; // Import next/image
 
 interface ProductListingCardProps {
   listing: ProductListing;
@@ -29,10 +22,13 @@ const ProductListingCardComponent = ({
   detailBasePath = '/marketplace/listing'
 }: ProductListingCardProps) => {
   const isGrid = view === 'grid';
-  const router = useRouter();
-  const [loading, setLoading] = useState(false);
-  const [imageSrc, setImageSrc] = useState(
-    listing.images && listing.images.length > 0 && listing.images[0]
+  const navigate = useNavigate();
+  const location = useLocation();
+  const { user } = useAuth();
+  const dispatch = useAppDispatch();
+  
+  // Get the first image or use a placeholder
+  const imageUrl = listing.images && listing.images.length > 0 
     ? listing.images[0] 
     : '/placeholder.svg'
   );
@@ -73,9 +69,9 @@ const ProductListingCardComponent = ({
   const handleViewListing = () => {
     // Debug logging for development
     if (process.env.NODE_ENV === 'development') {
-      logDebug('[ProductCard] Navigating to:', { path: `${detailBasePath}/${listing.id}` });
-      logDebug('[ProductCard] Listing ID:', { id: listing.id });
-      logDebug('[ProductCard] Listing Title:', { title: listing.title });
+      logDebug('[ProductCard] Navigating to:', { data:  { path: `${detailBasePath}/${listing.id}` } });
+      logDebug('[ProductCard] Listing ID:', { data:  { id: listing.id } });
+      logDebug('[ProductCard] Listing Title:', { data:  { title: listing.title } });
     }
     
     // Validate listing ID exists before navigation
@@ -119,6 +115,22 @@ const ProductListingCardComponent = ({
     } else {
       router.push(`/request-quote?listing=${listing.id}`);
     }
+  };
+
+  const handleSave = (e: React.MouseEvent) => {
+    e.preventDefault();
+    e.stopPropagation();
+    if (!user) {
+      toast.info('Log in to save favorites');
+      navigate(`/login?next=${encodeURIComponent(location.pathname + location.search)}`);
+      return;
+    }
+    dispatch(addToWishlist({ id: listing.id, type: 'product', data: listing }));
+    fetch(`${getApiUrl()}/wishlist`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ id: listing.id, type: 'product' }),
+    }).catch(() => {});
   };
   
   const imageContainerClasses = isGrid ? 'h-48' : 'h-32 w-48';
@@ -186,7 +198,13 @@ const ProductListingCardComponent = ({
               {listing.category}
             </Badge>
             {listing.rating && (
-              <RatingStars value={listing.rating} count={listing.reviewCount} />
+              <div className="flex items-center text-zion-slate-light">
+                <RatingStars value={listing.rating} />
+                <span className="ml-1">{listing.rating.toFixed(1)}</span>
+                {listing.reviewCount && (
+                  <span className="text-xs ml-1">({listing.reviewCount})</span>
+                )}
+              </div>
             )}
           </div>
           
@@ -237,13 +255,17 @@ const ProductListingCardComponent = ({
           
           <div className="flex gap-2">
             <Button
-              size="sm"
-              className="bg-primary hover:bg-primary/80 text-primary-foreground"
-              onClick={(e) => {
-                e.stopPropagation(); // Prevent card click event
-                addToCart();
-              }}
-              disabled={loading}
+              variant="ghost"
+              size="icon"
+              onClick={handleSave}
+              aria-label="save-to-wishlist"
+              className="text-zion-slate-light hover:text-zion-cyan"
+            >
+              <Heart className="h-5 w-5" />
+            </Button>
+            <Link
+              to={`${detailBasePath}/${listing.id}`}
+              onClick={(e) => e.stopPropagation()}
             >
               {loading ? (
                 <>

@@ -34,7 +34,7 @@ vi.mock('@prisma/client', () => ({
 // This allows us to control the behavior of the Codex script execution.
 const mockExec = vi.fn();
 vi.mock('child_process', async () => {
-  const actual = await vi.importActual<any>('child_process');
+  const actual = await vi.importActual('child_process');
   return {
     ...actual,
     exec: mockExec,

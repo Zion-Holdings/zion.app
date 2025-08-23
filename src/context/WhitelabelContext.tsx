@@ -1,5 +1,7 @@
-import React, { createContext, useContext, useState, useEffect, ReactNode } from 'react';
-import { useWhitelabelTenant, WhitelabelTenant } from '@/hooks/useWhitelabelTenant';
+import React, { createContext, useContext, useState, useEffect } from 'react';
+import type { ReactNode } from 'react';
+import { useWhitelabelTenant } from '@/hooks/useWhitelabelTenant';
+import type { WhitelabelTenant } from '@/hooks/useWhitelabelTenant';
 
 import { logErrorToProduction, logInfo } from "@/utils/productionLogger";
 

@@ -5,15 +5,15 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { toast } from "sonner";
 import { useRouter } from 'next/router';
 
-import { jobSchema, JobSchemaType } from './validation';
+import { jobSchema } from './validation';
+import type { JobSchemaType } from './validation';
 import { useAuth } from "@/hooks/useAuth";
 
 import {logErrorToProduction} from "@/utils/productionLogger";
 
 export interface JobPostingProps {
-  jobId?: string;
-  
-  onSuccess?: () => void;
+  jobId: string | undefined;
+  onSuccess: (() => void) | undefined;
 }
 
 export const useJobForm = ({ jobId, onSuccess }: JobPostingProps) => {

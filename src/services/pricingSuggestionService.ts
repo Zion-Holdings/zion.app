@@ -28,68 +28,21 @@ export interface TalentRateParams {
 // In production, this would call an AI service or API
 export async function getClientBudgetSuggestion(params: ClientBudgetParams): Promise<PricingSuggestion> {
   try {
-    // This would be replaced with an actual API call to an AI model
-    // For now, we'll simulate a response based on job category
-    const { jobTitle, category } = params;
-    
-    // Simulate API call delay
-    await new Promise(resolve => setTimeout(resolve, 1000));
-    
-    // Basic logic to determine budget range based on category
-    let minRate = 25;
-    let maxRate = 50;
-    let confidence: "High" | "Medium" | "Low" = "Medium";
-    
-    if (category === "development") {
-      minRate = 40;
-      maxRate = 80;
-      confidence = "High";
-    } else if (category === "design") {
-      minRate = 35;
-      maxRate = 70;
-      confidence = "High";
-    } else if (category === "marketing") {
-      minRate = 30;
-      maxRate = 60;
-      confidence = "Medium";
-    } else if (category === "data") {
-      minRate = 45;
-      maxRate = 90;
-      confidence = "High";
-    } else {
-      minRate = 25;
-      maxRate = 50;
-      confidence = "Low";
-    }
-    
-    // Adjust based on job title keywords
-    const lowercaseTitle = jobTitle.toLowerCase();
-    if (lowercaseTitle.includes("senior") || lowercaseTitle.includes("lead")) {
-      minRate += 20;
-      maxRate += 30;
-    } else if (lowercaseTitle.includes("junior")) {
-      minRate -= 10;
-      maxRate -= 15;
-      minRate = Math.max(minRate, 15); // Ensure minimum doesn't go too low
-    }
-    
-    // Generate explanation
-    const explanation = `Based on market rates for ${category} projects, particularly for roles similar to "${jobTitle}", we recommend a budget range of $${minRate}-$${maxRate}/hour. This aligns with current market trends for similar projects.`;
-    
-    return {
-      minRate,
-      maxRate,
-      confidence,
-      explanation
-    };
+    // Replace mock logic with real API call
+    const response = await fetch('/api/pricing-suggestion', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(params),
+    });
+    if (!response.ok) throw new Error('Failed to fetch pricing suggestion');
+    const data = await response.json();
+    return data;
   } catch (error) {
-    logErrorToProduction('Error generating budget suggestion:', { data: error });
-    // Return a fallback suggestion
     return {
-      minRate: 30,
-      maxRate: 60,
-      confidence: "Low",
-      explanation: "We encountered an issue generating a precise recommendation. This is a general market rate - consider your specific requirements when setting your budget."
+      minRate: 0,
+      maxRate: 0,
+      confidence: 'Low',
+      explanation: 'Unable to fetch pricing suggestion.'
     };
   }
 }
@@ -181,6 +134,7 @@ export async function trackPricingSuggestion(data: {
   accepted: boolean;
 }) {
   try {
+    if (!supabase) throw new Error('Supabase client not initialized');
     const { error } = await supabase
       .from('pricing_suggestions')
       .insert({

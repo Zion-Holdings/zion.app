@@ -5,7 +5,7 @@ import { SEO } from "@/components/SEO";
 import JsonLd from "@/components/JsonLd";
 import { Button } from "@/components/ui/button";
 import ImageWithRetry from '@/components/ui/ImageWithRetry';
-import { ArrowLeft, Calendar, Clock, ChevronLeft, ChevronRight, Share2, Facebook, Twitter, Linkedin } from 'lucide-react';
+import { ArrowLeft, Calendar, Clock, ChevronLeft, Share2, Facebook, Twitter, Linkedin } from 'lucide-react';
 
 
 
@@ -24,6 +24,7 @@ import {logErrorToProduction} from '@/utils/productionLogger';
 import { BLOG_POSTS } from "@/data/blog-posts";
 import { useSkeletonTimeout } from '@/hooks/useSkeletonTimeout';
 import { fetchWithRetry } from '@/utils/fetchWithRetry';
+import type { BlogPost } from "@/types/blog";
 
 export default function BlogPost() {
 
@@ -41,7 +42,7 @@ export default function BlogPost() {
       setIsLoading(true);
       setError(null);
       try {
-        const data = await fetchWithRetry(`/api/blog/${slug}`);
+        const data = await fetchWithRetry(`/api/blog/${slug}`) as BlogPost;
         setPost(data);
         const related = BLOG_POSTS.filter(
           (p) =>

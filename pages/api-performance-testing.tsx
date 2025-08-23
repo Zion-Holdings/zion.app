@@ -3,8 +3,6 @@ import SEO from '../components/SEO';
 import { Check, ExternalLink } from 'lucide-react';
 
 export default function ApiPerformanceTestingPage() {
-	const title = 'API Performance Testing — Zion Tech Group';
-	const description = 'Load, soak, and stress testing with CI quality gates. Metrics, thresholds, and regression detection for APIs.';
 	const features = [
 		'k6/Gatling-compatible test runner',
 		'SLO-aware latency reports',

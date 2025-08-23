@@ -1,78 +1,43 @@
 import { logInfo, logWarn, logErrorToProduction } from '@/utils/productionLogger';
 import { getAppKitProjectId } from '@/config/env';
+import { ZION_TOKEN_NETWORK_ID } from '@/config/governanceConfig';
 
 // src/context/WalletContext.tsx
 
 // Use getAppKitProjectId from shared env config
 
-import React, { createContext, useState, useContext, ReactNode, useCallback, useEffect, useRef } from 'react';
+import React, { createContext, useState, useContext, useCallback, useEffect, useRef } from 'react';
+import type { ReactNode } from 'react';
+import type { AppKitInstanceInterface } from '@reown/appkit/react';
+// import { captureException } from '@reown/appkit/react';
 
-// Temporarily disable wallet imports to fix build
-// import { ethers } from 'ethers';
-import { captureException } from '@/utils/sentry';
-import { ZION_TOKEN_NETWORK_ID } from '@/config/governanceConfig';
-// import { createAppKit, AppKitInstanceInterface } from '@reown/appkit/react';
-// import { EthersAdapter } from '@reown/appkit-adapter-ethers';
-// import { mainnet, polygon, goerli, optimism, arbitrum, base } from '@reown/appkit/networks'; // Import necessary chain objects
+import { createAppKit } from '@reown/appkit/react';
+import type { mainnet as MainnetType, goerli as GoerliType, polygon as PolygonType, optimism as OptimismType, arbitrum as ArbitrumType, base as BaseType } from '@reown/appkit/networks';
+import { mainnet, goerli, polygon, optimism, arbitrum, base } from '@reown/appkit/networks';
+import type { ethers as EthersType } from 'ethers';
+import { ethers } from 'ethers';
 
-// Mock types for build compatibility
-interface AppKitInstanceInterface {
-  open: () => Promise<void>;
-  disconnect: () => Promise<void>;
-  getState: () => any;
-  getAddress: () => string | null;
-  getChainId: () => number | null;
-  getWalletProvider: () => any;
-  subscribeProvider?: (callback: (provider?: any) => void) => () => void;
-}
+// Use real wallet imports except in CI/build environments
+const isBuildEnv = process.env.CI === 'true';
 
-const ethers = {
-  BrowserProvider: class MockBrowserProvider {
-    constructor(provider: any) {}
-    async getSigner() { return null; }
-  }
-} as any;
+// Dynamic imports for ESM compatibility
 
-// Mock network constants
-const mainnet = { id: 1, name: 'Ethereum' };
-const goerli = { id: 5, name: 'Goerli' };
-const polygon = { id: 137, name: 'Polygon' };
-const optimism = { id: 10, name: 'Optimism' };
-const arbitrum = { id: 42161, name: 'Arbitrum' };
-const base = { id: 8453, name: 'Base' };
-
-// Mock createAppKit function
-const createAppKit = (config: any): AppKitInstanceInterface => {
-  return {
-    open: async () => { console.warn('Wallet functionality disabled during build'); },
-    disconnect: async () => { console.warn('Wallet functionality disabled during build'); },
-    getState: () => ({ isConnected: false }),
-    getAddress: () => null,
-    getChainId: () => null,
-    getWalletProvider: () => null,
-    subscribeProvider: () => () => {}
-  };
-};
-
-// Mock EthersAdapter
-const EthersAdapter = class {
-  constructor(config: any) {}
-};
+// Load AppKit modules dynamically to avoid ESM issues
 
 // Some injected wallet providers implement the EIP-1193 interface but also
 // expose event methods like `on` and `removeListener`. The `ethers` type for
 // `Eip1193Provider` does not include these, so we define a helper interface with
 // optional definitions so we can safely check for them.
 interface Eip1193ProviderWithEvents {
-  on?: (event: string, listener: (...args: any[]) => void) => void;
-  removeListener?: (event: string, listener: (...args: any[]) => void) => void;
-  request?: (args: { method: string; params?: any[] }) => Promise<any>;
+  on?: (event: string, listener: (...args: unknown[]) => void) => void;
+  removeListener?: (event: string, listener: (...args: unknown[]) => void) => void;
+  request?: (args: { method: string; params?: unknown[] }) => Promise<unknown>;
 }
 
 // Define the shape of the wallet state and context
 export interface WalletState { // Added export
-  provider: any | null; // Updated to BrowserProvider for ethers v6
-  signer: any | null;
+  provider: unknown | null; // Updated to BrowserProvider for ethers v6
+  signer: unknown | null;
   address: string | null;
   chainId: number | null;
   isConnected: boolean;
@@ -136,7 +101,7 @@ export const WalletProvider: React.FC<{ children: ReactNode }> = ({ children }) 
 
   const rawProjectId = getAppKitProjectId();
   if (process.env.NODE_ENV === 'development') {
-    logInfo('WalletContext: Resolved rawProjectId from getAppKitProjectId():', { data: rawProjectId });
+    logInfo('WalletContext: Resolved rawProjectId from getAppKitProjectId():', { data:  { data: rawProjectId } });
   }
 
   // Check if the project ID is valid
@@ -166,7 +131,7 @@ export const WalletProvider: React.FC<{ children: ReactNode }> = ({ children }) 
     icons: ['https://avatars.githubusercontent.com/u/37784886'],
   };
 
-  const ZION_CHAIN_MAP: Record<number, any> = {
+  const ZION_CHAIN_MAP: Record<number, unknown> = {
     1: mainnet,
     5: goerli,
     137: polygon,
@@ -212,11 +177,11 @@ export const WalletProvider: React.FC<{ children: ReactNode }> = ({ children }) 
     // Proceed with AppKit initialization only if client-side and project ID is valid
     if (!appKitRef.current) { // Check if already initialized
       if (process.env.NODE_ENV === 'development') {
-        logInfo('WalletContext: Client-side, valid project ID. Attempting AppKit init. ID:', { data: rawProjectId });
+        logInfo('WalletContext: Client-side, valid project ID. Attempting AppKit init. ID:', { data:  { data: rawProjectId } });
       }
       try {
         appKitRef.current = createAppKit({
-          adapters: [new EthersAdapter({ ethers })],
+          adapters: [], // Empty adapters array for now
           networks: [targetNetwork],
           defaultNetwork: targetNetwork,
           projectId: rawProjectId,
@@ -224,7 +189,7 @@ export const WalletProvider: React.FC<{ children: ReactNode }> = ({ children }) 
           features: { analytics: false },
         });
         if (process.env.NODE_ENV === 'development') {
-          logInfo('WalletContext: appKitInstance created successfully:', { data: appKitRef.current });
+          logInfo('WalletContext: appKitInstance created successfully:', { data:  { data: appKitRef.current } });
         }
         // On successful creation, system is available. Connection state will be updated by subscriptions.
         setWallet(prev => ({
@@ -234,7 +199,6 @@ export const WalletProvider: React.FC<{ children: ReactNode }> = ({ children }) 
         }));
       } catch (error) {
         logErrorToProduction('WalletContext: CRITICAL error creating appKitInstance with valid Project ID:', { data: error });
-        captureException(error);
         appKitRef.current = null;
         setWallet(prev => ({
           ...initialWalletState,
@@ -245,7 +209,7 @@ export const WalletProvider: React.FC<{ children: ReactNode }> = ({ children }) 
       // AppKit already initialized. This block might be hit if dependencies change (e.g. projectId)
       // but AppKit instance was somehow preserved. Ensure state is consistent.
       if (process.env.NODE_ENV === 'development') {
-        logInfo('WalletContext: AppKit already initialized. Ensuring state consistency. ID:', { data: rawProjectId });
+        logInfo('WalletContext: AppKit already initialized. Ensuring state consistency. ID:', { data:  { data: rawProjectId } });
       }
       setWallet(prev => ({
         ...prev,
@@ -284,21 +248,29 @@ export const WalletProvider: React.FC<{ children: ReactNode }> = ({ children }) 
       if (currentAppKit.getState().isConnected && currentAddress && currentProvider && currentChainId) {
         try {
           // currentProvider is already the EIP-1193 provider from AppKit
-          const ethersProvider = new ethers.BrowserProvider(
-            currentProvider as Eip1193ProviderWithEvents
-          );
-          const ethersSigner = await ethersProvider.getSigner();
-          setWallet(prev => ({
-            ...prev,
-            provider: ethersProvider,
-            signer: ethersSigner,
-            address: currentAddress, // Use currentAddress from AppKit
-            chainId: Number(currentChainId), // Use currentChainId from AppKit
-            isConnected: true,
-            isWalletSystemAvailable: true, // System is available and connected
-          }));
+          if (typeof ethers === 'object' && ethers !== null && 'BrowserProvider' in ethers && typeof (ethers as any).BrowserProvider === 'function') {
+            const EthersBrowserProvider = (ethers as any).BrowserProvider;
+            const ethersProvider = new EthersBrowserProvider(
+              currentProvider as Eip1193ProviderWithEvents
+            );
+            const ethersSigner = await ethersProvider.getSigner();
+            setWallet(prev => ({
+              ...prev,
+              provider: ethersProvider,
+              signer: ethersSigner,
+              address: currentAddress, // Use currentAddress from AppKit
+              chainId: Number(currentChainId), // Use currentChainId from AppKit
+              isConnected: true,
+              isWalletSystemAvailable: true, // System is available and connected
+            }));
+          } else {
+            setWallet(prev => ({
+              ...initialWalletState,
+              isConnected: false,
+              isWalletSystemAvailable: true,
+            }));
+          }
         } catch (error) {
-          captureException(error);
           logErrorToProduction('WalletContext: Error getting signer or updating wallet state:', { data: error });
           // AppKit exists, but failed to get signer or other error
           setWallet(prev => ({
@@ -337,16 +309,20 @@ export const WalletProvider: React.FC<{ children: ReactNode }> = ({ children }) 
     const subscribeProviderSafe =
       typeof targetAppKit.subscribeProvider === 'function'
         ? targetAppKit.subscribeProvider.bind(targetAppKit)
-        : (callback: (provider?: any) => void) => {
+        : (callback: (provider?: unknown) => void) => {
             const provider = targetAppKit.getWalletProvider?.();
             callback(provider);
 
             if (typeof window !== 'undefined') {
-              const eth: any = (window as any).ethereum;
-              if (eth?.on) {
+              const ethRaw = (window as any).ethereum;
+              if (typeof ethRaw === 'object' && ethRaw !== null && 'on' in ethRaw && typeof ethRaw.on === 'function') {
                 const handler = () => callback(targetAppKit.getWalletProvider?.());
-                eth.on('accountsChanged', handler);
-                return () => eth.removeListener?.('accountsChanged', handler);
+                ethRaw.on('accountsChanged', handler);
+                return () => {
+                  if ('removeListener' in ethRaw && typeof ethRaw.removeListener === 'function') {
+                    ethRaw.removeListener('accountsChanged', handler);
+                  }
+                };
               }
             }
             return () => {};
@@ -372,7 +348,7 @@ export const WalletProvider: React.FC<{ children: ReactNode }> = ({ children }) 
 
     const modalController = appKitRef.current;
     if (!modalController) { // Should be redundant due to isWalletSystemAvailable check
-      captureException(new Error('AppKit not initialized in connectWallet (modalController is null after availability check)'));
+      // captureException(new Error('AppKit not initialized in connectWallet (modalController is null after availability check)'));
 
       return;
     }
@@ -383,14 +359,13 @@ export const WalletProvider: React.FC<{ children: ReactNode }> = ({ children }) 
         window.open('https://metamask.io/download.html', '_blank');
         logInfo('WalletContext: No wallet provider detected. Opening MetaMask install page.');
       } catch (installError) {
-        logWarn('WalletContext: Failed to open MetaMask install page.', { data: installError });
+        logWarn('WalletContext: Failed to open MetaMask install page.', { data:  { data: installError } });
       }
     }
 
     try {
       await modalController.open();
     } catch (error: any) {
-      captureException(error);
       logErrorToProduction('WalletContext: Error opening wallet modal:', { data: error });
       if (error instanceof Error && /Coinbase Wallet SDK/i.test(error.message)) {
         logWarn(
@@ -416,7 +391,6 @@ export const WalletProvider: React.FC<{ children: ReactNode }> = ({ children }) 
         // State update is typically handled by the subscription to provider changes
       } catch (error) {
         logErrorToProduction('WalletContext: Error during disconnect.', { data: error });
-        captureException(error);
         logErrorToProduction('WalletContext: Error disconnecting wallet:', { data: error });
       }
     } else {
@@ -448,3 +422,4 @@ export const useWallet = (): WalletContextType => {
   }
   return context;
 };
+

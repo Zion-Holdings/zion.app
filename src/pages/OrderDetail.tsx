@@ -17,6 +17,8 @@ export default function OrderDetailPage() {
   const { user } = useAuth();
   const { data: order, isLoading } = useGetOrderQuery(orderId);
 
+  if (!supabase) throw new Error('Supabase client not initialized');
+
   const handleDownload = async () => {
     if (!order) return;
     const blob = await generateInvoicePdf(order);
@@ -33,6 +35,7 @@ export default function OrderDetailPage() {
   const handleResend = async () => {
     if (!order || !user?.email) return;
     try {
+      if (!supabase) throw new Error('Supabase client not initialized');
       await supabase.functions.invoke('send-email', {
         body: {
           to: user.email,
@@ -41,8 +44,12 @@ export default function OrderDetailPage() {
         }
       });
       toast({ title: 'Receipt sent!' });
-    } catch (err) {
-      toast({ title: 'Failed to send receipt', variant: 'destructive' });
+    } catch (err: unknown) {
+      let message = 'Failed to send receipt';
+      if (typeof err === 'object' && err !== null && 'message' in err) {
+        message = (err as { message?: string }).message || message;
+      }
+      toast({ title: message, variant: 'destructive' });
     }
   };
 
@@ -100,7 +107,7 @@ export default function OrderDetailPage() {
 
       <div>
         <h2 className="font-semibold mb-2">Tracking</h2>
-        <OrderTimeline events={order.trackingEvents} />
+        <OrderTimeline events={order.trackingEvents ?? []} />
       </div>
 
       <div className="flex gap-3">
