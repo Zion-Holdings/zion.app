@@ -1,8 +1,9 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import UltraFuturisticNavigation2040 from './UltraFuturisticNavigation2040';
-import UltraFuturisticFooter2040 from './UltraFuturisticFooter2040';
 import EnhancedSidebar2025 from './EnhancedSidebar2025';
-import UltraFuturisticBackground2043 from '../backgrounds/UltraFuturisticBackground2043';
+import UltraFuturisticBackground2036 from '../backgrounds/UltraFuturisticBackground2036';
+import Analytics from '../Analytics';
+
 import TopContactBar from './TopContactBar';
 import PerformanceMonitor from '../PerformanceMonitor';
 import AccessibilityEnhancer from '../AccessibilityEnhancer';
@@ -14,6 +15,72 @@ interface LayoutProps {
 
 export default function Layout({ children }: LayoutProps) {
   const [sidebarOpen, setSidebarOpen] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    // Simulate initial loading
+    const timer = setTimeout(() => {
+      setIsLoading(false);
+    }, 100);
+
+    return () => clearTimeout(timer);
+  }, []);
+
+  // Handle escape key to close sidebar
+  useEffect(() => {
+    const handleEscape = (e: KeyboardEvent) => {
+      if (e.key === 'Escape' && sidebarOpen) {
+        setSidebarOpen(false);
+      }
+    };
+
+    if (sidebarOpen) {
+      document.addEventListener('keydown', handleEscape);
+      // Prevent body scroll when sidebar is open
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+
+    return () => {
+      document.removeEventListener('keydown', handleEscape);
+      document.body.style.overflow = 'unset';
+    };
+  }, [sidebarOpen]);
+
+  // Handle focus trap for sidebar
+  useEffect(() => {
+    if (sidebarOpen) {
+      const focusableElements = document.querySelectorAll(
+        'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
+      );
+      const firstElement = focusableElements[0] as HTMLElement;
+      const lastElement = focusableElements[focusableElements.length - 1] as HTMLElement;
+
+      const handleTabKey = (e: KeyboardEvent) => {
+        if (e.key === 'Tab') {
+          if (e.shiftKey) {
+            if (document.activeElement === firstElement) {
+              e.preventDefault();
+              lastElement.focus();
+            }
+          } else {
+            if (document.activeElement === lastElement) {
+              e.preventDefault();
+              firstElement.focus();
+            }
+          }
+        }
+      };
+
+      document.addEventListener('keydown', handleTabKey);
+      firstElement?.focus();
+
+      return () => {
+        document.removeEventListener('keydown', handleTabKey);
+      };
+    }
+  }, [sidebarOpen]);
 
   return (
     <div className="min-h-screen bg-black text-white relative overflow-x-hidden">
@@ -21,7 +88,7 @@ export default function Layout({ children }: LayoutProps) {
       <a href="#main" className="skip-link">Skip to main content</a>
       
       {/* Futuristic Background */}
-      <UltraFuturisticBackground2043 theme="consciousness" intensity="high" />
+      <UltraFuturisticBackground2036 theme="consciousness" intensity="high" />
       
       {/* Layout Structure */}
       <div className="relative z-10">
@@ -43,8 +110,11 @@ export default function Layout({ children }: LayoutProps) {
           </main>
         </div>
         
-        {/* Footer */}
-        <UltraFuturisticFooter2040 />
+        {/* Cookie Consent Banner */}
+        <CookieConsentBanner />
+        
+        {/* Analytics Dashboard */}
+        <Analytics showUI={true} autoRefresh={true} refreshInterval={60000} />
       </div>
 
       {/* Accessibility and Performance Tools */}

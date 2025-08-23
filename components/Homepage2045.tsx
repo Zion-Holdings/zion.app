@@ -14,6 +14,9 @@ import { innovative2045AdvancedServices } from '../data/innovative-2045-advanced
 import { innovative2045ITServices } from '../data/innovative-2045-it-services';
 import { innovative2045MicroSAASServices } from '../data/innovative-2045-micro-saas-services';
 
+// Import enhanced components
+import EnhancedContactForm from './EnhancedContactForm';
+
 // Loading fallback component with enhanced animations
 const LoadingFallback = () => (
   <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-gray-900 via-purple-900 to-gray-900 relative overflow-hidden">
@@ -244,9 +247,13 @@ const Homepage2045: React.FC = () => {
                     </span>
                   </h2>
                   
-                  <p className="text-xl md:text-2xl text-gray-300 mb-12 max-w-4xl mx-auto leading-relaxed">
+                  <p className="text-xl md:text-2xl text-gray-300 mb-8 max-w-4xl mx-auto leading-relaxed">
                     Pioneering the future with revolutionary AI, quantum computing, and space technology solutions. 
                     Transform your business with cutting-edge innovations that define tomorrow.
+                  </p>
+                  
+                  <p className="text-lg text-gray-400 mb-12 max-w-3xl mx-auto">
+                    Join 2,500+ enterprises already leveraging our AI-powered solutions for unprecedented growth and innovation
                   </p>
                 </motion.div>
 
@@ -259,19 +266,29 @@ const Homepage2045: React.FC = () => {
                   <motion.button
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
-                    className="px-8 py-4 bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-bold rounded-full text-lg shadow-2xl hover:shadow-cyan-500/50 transition-all duration-300 flex items-center gap-2"
+                    className="px-8 py-4 bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-bold rounded-full text-lg shadow-2xl hover:shadow-cyan-500/50 transition-all duration-300 flex items-center gap-2 group"
                   >
-                    <Rocket className="w-5 h-5" />
+                    <Rocket className="w-5 h-5 group-hover:animate-bounce" />
                     Explore Services
+                    <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                   </motion.button>
                   
                   <motion.button
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
-                    className="px-8 py-4 border-2 border-cyan-400 text-cyan-400 font-bold rounded-full text-lg hover:bg-cyan-400 hover:text-gray-900 transition-all duration-300 flex items-center gap-2"
+                    className="px-8 py-4 border-2 border-cyan-400 text-cyan-400 font-bold rounded-full text-lg hover:bg-cyan-400 hover:text-gray-900 transition-all duration-300 flex items-center gap-2 group"
                   >
-                    <Play className="w-5 h-5" />
+                    <Play className="w-5 h-5 group-hover:scale-110 transition-transform" />
                     Watch Demo
+                  </motion.button>
+                  
+                  <motion.button
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                    className="px-8 py-4 bg-gradient-to-r from-purple-500 to-pink-600 text-white font-bold rounded-full text-lg shadow-2xl hover:shadow-purple-500/50 transition-all duration-300 flex items-center gap-2 group"
+                  >
+                    <Phone className="w-5 h-5 group-hover:animate-pulse" />
+                    Get Free Consultation
                   </motion.button>
                 </motion.div>
 
@@ -283,21 +300,110 @@ const Homepage2045: React.FC = () => {
                   className="grid grid-cols-1 md:grid-cols-4 gap-8 mt-20"
                 >
                   {[
-                    { icon: Users, value: '2,500+', label: 'Enterprise Clients' },
-                    { icon: Award, value: '99.9%', label: 'Uptime SLA' },
-                    { icon: TrendingUp, value: '500%', label: 'Performance Boost' },
-                    { icon: Star, value: '4.9/5', label: 'Customer Rating' }
+                    { icon: Users, value: '2,500+', label: 'Enterprise Clients', color: 'from-blue-400 to-cyan-500' },
+                    { icon: Award, value: '99.9%', label: 'Uptime SLA', color: 'from-green-400 to-emerald-500' },
+                    { icon: TrendingUp, value: '500%', label: 'Performance Boost', color: 'from-purple-400 to-pink-500' },
+                    { icon: Star, value: '4.9/5', label: 'Customer Rating', color: 'from-yellow-400 to-orange-500' }
                   ].map((stat, index) => (
                     <motion.div
                       key={index}
-                      whileHover={{ scale: 1.05 }}
-                      className="text-center p-6 rounded-2xl bg-gradient-to-br from-white/5 to-white/10 border border-white/10 backdrop-blur-sm"
+                      whileHover={{ scale: 1.05, y: -5 }}
+                      className="text-center p-6 rounded-2xl bg-gradient-to-br from-white/5 to-white/10 border border-white/10 backdrop-blur-sm hover:border-white/20 transition-all duration-300"
                     >
-                      <div className="inline-block p-3 rounded-full bg-gradient-to-r from-cyan-400/20 to-blue-500/20 mb-4">
-                        <stat.icon className="w-8 h-8 text-cyan-400" />
+                      <div className={`inline-block p-3 rounded-full bg-gradient-to-r ${stat.color}/20 mb-4`}>
+                        <stat.icon className={`w-8 h-8 bg-gradient-to-r ${stat.color} bg-clip-text text-transparent`} />
                       </div>
                       <div className="text-3xl font-bold text-white mb-2">{stat.value}</div>
                       <div className="text-gray-300">{stat.label}</div>
+                    </motion.div>
+                  ))}
+                </motion.div>
+              </div>
+            </section>
+
+            {/* Social Proof Section */}
+            <section className="relative py-20 px-4 bg-gradient-to-r from-gray-900/50 to-purple-900/50">
+              <div className="max-w-7xl mx-auto">
+                <motion.div
+                  initial={{ opacity: 0, y: 50 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.8 }}
+                  viewport={{ once: true }}
+                  className="text-center mb-16"
+                >
+                  <h2 className="text-4xl md:text-5xl font-bold mb-6">
+                    <span className="bg-gradient-to-r from-purple-400 to-pink-500 bg-clip-text text-transparent">
+                      Trusted by Industry Leaders
+                    </span>
+                  </h2>
+                  <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+                    Join thousands of enterprises that have transformed their operations with our cutting-edge solutions
+                  </p>
+                </motion.div>
+
+                {/* Client Logos */}
+                <motion.div
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6 }}
+                  viewport={{ once: true }}
+                  className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-8 mb-16"
+                >
+                  {[
+                    'Fortune 500', 'Tech Giants', 'Healthcare Leaders', 'Financial Institutions',
+                    'Government Agencies', 'Space Companies'
+                  ].map((client, index) => (
+                    <motion.div
+                      key={index}
+                      whileHover={{ scale: 1.1 }}
+                      className="text-center p-4 rounded-lg bg-white/5 border border-white/10 hover:border-cyan-400/50 transition-all duration-300"
+                    >
+                      <div className="text-lg font-semibold text-gray-300">{client}</div>
+                    </motion.div>
+                  ))}
+                </motion.div>
+
+                {/* Testimonials */}
+                <motion.div
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6 }}
+                  viewport={{ once: true }}
+                  className="grid grid-cols-1 md:grid-cols-3 gap-8"
+                >
+                  {[
+                    {
+                      quote: "Zion Tech Group's AI solutions have revolutionized our customer service operations, resulting in a 300% increase in efficiency.",
+                      author: "Sarah Chen",
+                      title: "CTO, GlobalTech Solutions",
+                      rating: 5
+                    },
+                    {
+                      quote: "The quantum computing platform has given us unprecedented insights into complex data patterns, driving innovation across all departments.",
+                      author: "Dr. Michael Rodriguez",
+                      title: "Head of R&D, QuantumCorp",
+                      rating: 5
+                    },
+                    {
+                      quote: "Implementing their space technology solutions has opened new frontiers for our research capabilities and market positioning.",
+                      author: "Alexandra Kim",
+                      title: "CEO, SpaceInnovate",
+                      rating: 5
+                    }
+                  ].map((testimonial, index) => (
+                    <motion.div
+                      key={index}
+                      whileHover={{ y: -5 }}
+                      className="p-6 rounded-2xl bg-gradient-to-br from-white/5 to-white/10 border border-white/10 backdrop-blur-sm"
+                    >
+                      <div className="flex mb-4">
+                        {[...Array(testimonial.rating)].map((_, i) => (
+                          <Star key={i} className="w-5 h-5 text-yellow-400 fill-current" />
+                        ))}
+                      </div>
+                      <p className="text-gray-300 mb-4 italic">"{testimonial.quote}"</p>
+                      <div className="text-cyan-400 font-semibold">{testimonial.author}</div>
+                      <div className="text-gray-400 text-sm">{testimonial.title}</div>
                     </motion.div>
                   ))}
                 </motion.div>
@@ -520,12 +626,29 @@ const Homepage2045: React.FC = () => {
                   <motion.button
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
-                    className="px-10 py-4 bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-bold rounded-full text-xl shadow-2xl hover:shadow-cyan-500/50 transition-all duration-300 flex items-center gap-3 mx-auto"
+                    className="px-10 py-4 bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-bold rounded-full text-xl shadow-2xl hover:shadow-cyan-500/50 transition-all duration-300 flex items-center gap-3 mx-auto mb-12"
                   >
                     <Rocket className="w-6 h-6" />
                     Start Your Journey
                     <ArrowRight className="w-6 h-6" />
                   </motion.button>
+
+                  {/* Enhanced Contact Form */}
+                  <motion.div
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.8 }}
+                    viewport={{ once: true }}
+                    className="mt-16"
+                  >
+                    <EnhancedContactForm 
+                      variant="full"
+                      onSuccess={(data) => {
+                        console.log('Contact form submitted:', data);
+                        // Here you would typically send the data to your backend
+                      }}
+                    />
+                  </motion.div>
                 </motion.div>
               </div>
             </section>
