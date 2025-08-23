@@ -1,362 +1,455 @@
-import React, { useEffect } from 'react';
-import { useRouter } from 'next/router';
+import React, { useEffect, useRef } from 'react';
+
+// Global type declarations for browser APIs
+declare global {
+  interface PerformanceEventTiming extends PerformanceEntry {
+    processingStart: number;
+    startTime: number;
+    target?: EventTarget;
+  }
+
+  interface LayoutShift extends PerformanceEntry {
+    value: number;
+    hadRecentInput: boolean;
+  }
+
+  interface NetworkInformation extends EventTarget {
+    effectiveType: string;
+    downlink: number;
+    rtt: number;
+  }
+
+  interface BatteryManager extends EventTarget {
+    charging: boolean;
+    chargingTime: number;
+    dischargingTime: number;
+    level: number;
+  }
+
+  interface Window {
+    gtag?: (...args: unknown[]) => void;
+  }
+
+  // Add missing global types
+  var EventTarget: {
+    prototype: EventTarget;
+    new(): EventTarget;
+  };
+
+  var Performance: {
+    prototype: Performance;
+    new(): Performance;
+  };
+
+  var Navigator: {
+    prototype: Navigator;
+    new(): Navigator;
+  };
+
+  var Node: {
+    prototype: Node;
+    new(): Node;
+  };
+
+  // Extend existing interfaces
+  interface Performance {
+    memory?: {
+      totalJSHeapSize: number;
+      usedJSHeapSize: number;
+      jsHeapSizeLimit: number;
+    };
+  }
+
+  interface Navigator {
+    getBattery(): Promise<BatteryManager>;
+    connection?: NetworkInformation;
+    hardwareConcurrency?: number;
+  }
+
+  // Add missing global interfaces
+  interface EventTarget {
+    addEventListener(type: string, listener: EventListener | null, options?: boolean | AddEventListenerOptions): void;
+    removeEventListener(type: string, listener: EventListener | null, options?: boolean | EventListenerOptions): void;
+    dispatchEvent(event: Event): boolean;
+  }
+
+  interface Performance {
+    memory?: {
+      totalJSHeapSize: number;
+      usedJSHeapSize: number;
+      jsHeapSizeLimit: number;
+    };
+    getEntriesByType(type: string): PerformanceEntry[];
+    getEntriesByName(name: string, type?: string): PerformanceEntry[];
+    mark(name: string): void;
+    measure(name: string, startMark?: string, endMark?: string): void;
+    clearMarks(markName?: string): void;
+    clearMeasures(measureName?: string): void;
+    now(): number;
+  }
+
+  interface Navigator {
+    getBattery(): Promise<BatteryManager>;
+    connection?: NetworkInformation;
+    hardwareConcurrency?: number;
+    userAgent: string;
+    language: string;
+    languages: readonly string[];
+    cookieEnabled: boolean;
+    onLine: boolean;
+    platform: string;
+    vendor: string;
+  }
+
+  interface Node extends EventTarget {
+    nodeType: number;
+    nodeName: string;
+    nodeValue: string | null;
+    textContent: string | null;
+    ownerDocument: Document | null;
+    parentNode: Node | null;
+    parentElement: Element | null;
+    childNodes: NodeListOf<ChildNode>;
+    firstChild: ChildNode | null;
+    lastChild: ChildNode | null;
+    previousSibling: ChildNode | null;
+    nextSibling: ChildNode | null;
+    appendChild<T extends Node>(newChild: T): T;
+    cloneNode(deep?: boolean): Node;
+    compareDocumentPosition(other: Node): number;
+    contains(other: Node | null): boolean;
+    getRootNode(options?: GetRootNodeOptions): Node;
+    hasChildNodes(): boolean;
+    insertBefore<T extends Node>(newChild: T, refChild: Node | null): T;
+    isEqualNode(otherNode: Node | null): boolean;
+    isSameNode(otherNode: Node | null): boolean;
+    normalize(): void;
+    removeChild<T extends Node>(oldChild: T): T;
+    replaceChild<T extends Node>(newChild: Node, oldChild: T): T;
+  }
+}
+
+interface PerformanceMetrics {
+  lcp: number;
+  fid: number;
+  cls: number;
+  fcp: number;
+  ttfb: number;
+  domContentLoaded: number;
+  fullPageLoad: number;
+}
+
+interface DeviceCapabilities {
+  memory: {
+    totalJSHeapSize: number;
+    usedJSHeapSize: number;
+    jsHeapSizeLimit: number;
+  } | null;
+  hardwareConcurrency: number;
+  networkInfo: {
+    effectiveType: string;
+    downlink: number;
+    rtt: number;
+  } | null;
+  battery: {
+    charging: boolean;
+    chargingTime: number;
+    dischargingTime: number;
+    level: number;
+  } | null;
+  viewport: {
+    width: number;
+    height: number;
+    devicePixelRatio: number;
+  };
+}
+
+interface UserInteraction {
+  clicks: number;
+  scrolls: number;
+  inputs: number;
+  focus: number;
+  blur: number;
+  submit: number;
+  scrollDepth: number;
+  sessionStart: number;
+  timeOnPage: number;
+}
 
 const AnalyticsTracker: React.FC = () => {
-  const router = useRouter();
+  const performanceMetrics = useRef<PerformanceMetrics>({
+    lcp: 0,
+    fid: 0,
+    cls: 0,
+    fcp: 0,
+    ttfb: 0,
+    domContentLoaded: 0,
+    fullPageLoad: 0
+  });
+
+  const deviceCapabilities = useRef<DeviceCapabilities>({
+    memory: null,
+    hardwareConcurrency: navigator.hardwareConcurrency || 0,
+    networkInfo: null,
+    battery: null,
+    viewport: {
+      width: window.innerWidth,
+      height: window.innerHeight,
+      devicePixelRatio: window.devicePixelRatio || 1
+    }
+  });
+
+  const userInteraction = useRef<UserInteraction>({
+    clicks: 0,
+    scrolls: 0,
+    inputs: 0,
+    focus: 0,
+    blur: 0,
+    submit: 0,
+    scrollDepth: 0,
+    sessionStart: Date.now(),
+    timeOnPage: 0
+  });
+
+  const sendAnalytics = (event: string, data: unknown) => {
+    // In development, log to console
+    if (process.env.NODE_ENV === 'development') {
+      // Development logging
+    }
+
+    // In production, send to analytics service
+    if (process.env.NODE_ENV === 'production') {
+      try {
+        // Send to Google Analytics
+        if (typeof window !== 'undefined' && window.gtag) {
+          window.gtag('event', event, {
+            value: data,
+            timestamp: Date.now()
+          });
+        }
+
+        // Send to custom analytics endpoint
+        // fetch('/api/analytics', {
+        //   method: 'POST',
+        //   headers: { 'Content-Type': 'application/json' },
+        //   body: JSON.stringify({ event, data, timestamp: Date.now() })
+        // });
+      } catch {
+        // Silently handle errors in production
+      }
+    }
+  };
 
   useEffect(() => {
-    // User interaction tracking
-    let interactionCount = 0;
-    const trackInteraction = () => {
-      interactionCount++;
-      if (interactionCount === 1) {
-        trackMetric('FirstInteraction', Date.now() - (performance.timing?.navigationStart || Date.now()));
-      }
-    };
-
-    // Viewport tracking
-    const trackViewport = () => {
-      trackMetric('ViewportWidth', window.innerWidth);
-      trackMetric('ViewportHeight', window.innerHeight);
-      trackMetric('PixelRatio', window.devicePixelRatio || 1);
-    };
-
-    // Helper function to track metrics
-    const trackMetric = (name: string, value: number | string) => {
-      if (typeof window !== 'undefined' && window.gtag) {
-        window.gtag('event', 'custom_metric', {
-          metric_name: name,
-          metric_value: value,
-          timestamp: Date.now()
-        });
-      }
-
-      // Send to custom analytics endpoint
-      if (process.env.NODE_ENV === 'production') {
-        fetch('/api/analytics/metrics', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify({
-            name,
-            value,
-            timestamp: Date.now(),
-            url: window.location.href,
-            userAgent: navigator.userAgent
-          })
-        }).catch(() => {
-          // Silently handle fetch errors
-        });
-      }
-    };
-
-    // Helper function to track events
-    const trackEvent = (action: string, parameters: Record<string, unknown>) => {
-      if (typeof window !== 'undefined' && window.gtag) {
-        window.gtag('event', action, {
-          ...parameters,
-          timestamp: Date.now(),
-          page_url: window.location.href
-        });
-      }
-
-      // Send to custom analytics endpoint
-      if (process.env.NODE_ENV === 'production') {
-        fetch('/api/analytics/events', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify({
-            action,
-            parameters,
-            timestamp: Date.now(),
-            url: window.location.href,
-            userAgent: navigator.userAgent
-          })
-        }).catch(() => {
-          // Silently handle fetch errors
-        });
-      }
-    };
-
-    // Initialize analytics and performance monitoring
-    const initAnalytics = () => {
-      // Google Analytics 4 initialization
-      if (typeof window !== 'undefined' && window.gtag) {
-        window.gtag('config', 'G-XXXXXXXXXX', {
-          page_title: document.title,
-          page_location: window.location.href,
-          custom_map: {
-            dimension1: 'user_type',
-            dimension2: 'service_category',
-            dimension3: 'page_performance'
-          }
-        });
-      }
-
-      // Performance monitoring
-      if ('performance' in window) {
-        // Core Web Vitals monitoring
+    // Track Core Web Vitals
+    const trackLCP = () => {
+      if ('PerformanceObserver' in window) {
         const observer = new PerformanceObserver((list) => {
-          for (const entry of list.getEntries()) {
-            if (entry.entryType === 'largest-contentful-paint') {
-              // Track LCP
-              trackMetric('LCP', entry.startTime);
-            } else if (entry.entryType === 'first-input') {
-              // Track FID - cast to proper type
-              const firstInputEntry = entry as PerformanceEventTiming;
-              trackMetric('FID', firstInputEntry.processingStart - firstInputEntry.startTime);
-            } else if (entry.entryType === 'layout-shift') {
-              // Track CLS - cast to proper type
-              const layoutShiftEntry = entry as LayoutShift;
-              trackMetric('CLS', layoutShiftEntry.value);
-            }
+          const entries = list.getEntries();
+          const lastEntry = entries[entries.length - 1];
+          if (lastEntry) {
+            performanceMetrics.current.lcp = lastEntry.startTime;
+            sendAnalytics('lcp', performanceMetrics.current.lcp);
           }
         });
-
-        try {
-          observer.observe({ entryTypes: ['largest-contentful-paint', 'first-input', 'layout-shift'] });
-        } catch {
-          // Fallback for older browsers
-        }
-
-        // Track page load performance
-        window.addEventListener('load', () => {
-          setTimeout(() => {
-            const navigation = performance.getEntriesByType('navigation')[0] as PerformanceNavigationTiming;
-            if (navigation) {
-              trackMetric('TTFB', navigation.responseStart - navigation.requestStart);
-              trackMetric('DOMContentLoaded', navigation.domContentLoadedEventEnd - navigation.domContentLoadedEventStart);
-              trackMetric('LoadComplete', navigation.loadEventEnd - navigation.loadEventStart);
-            }
-
-            // Track resource loading performance
-            const resources = performance.getEntriesByType('resource');
-            const slowResources = resources.filter((resource) => (resource as PerformanceResourceTiming).duration > 1000);
-            if (slowResources.length > 0) {
-              trackMetric('SlowResources', slowResources.length);
-            }
-          }, 0);
-        });
+        observer.observe({ entryTypes: ['largest-contentful-paint'] });
       }
-
-      // Add event listeners
-      document.addEventListener('click', trackInteraction);
-      document.addEventListener('scroll', trackInteraction);
-      document.addEventListener('keydown', trackInteraction);
-
-      // Error tracking
-      window.addEventListener('error', (event) => {
-        trackEvent('Error', {
-          message: event.message,
-          filename: event.filename,
-          lineno: event.lineno,
-          colno: event.colno,
-          error: event.error?.stack
-        });
-      });
-
-      // Unhandled promise rejection tracking
-      window.addEventListener('unhandledrejection', (event) => {
-        trackEvent('UnhandledRejection', {
-          reason: event.reason,
-          promise: event.promise
-        });
-      });
-
-      // Network status monitoring
-      if ('navigator' in window && 'connection' in navigator) {
-        const connection = (navigator as any).connection;
-        if (connection) {
-          trackMetric('ConnectionType', connection.effectiveType || 'unknown');
-          trackMetric('ConnectionDownlink', connection.downlink || 0);
-          trackMetric('ConnectionRTT', connection.rtt || 0);
-        }
-      }
-
-      // Memory usage monitoring (if available)
-      if ('memory' in performance) {
-        const memory = (performance as any).memory;
-        if (memory) {
-          setInterval(() => {
-            trackMetric('MemoryUsage', memory.usedJSHeapSize / 1024 / 1024); // MB
-            trackMetric('MemoryLimit', memory.jsHeapSizeLimit / 1024 / 1024); // MB
-          }, 30000); // Every 30 seconds
-        }
-      }
-
-      // Battery status monitoring (if available)
-      if ('getBattery' in navigator) {
-        (navigator as any).getBattery().then((battery: any) => {
-          trackMetric('BatteryLevel', battery.level * 100);
-          trackMetric('BatteryCharging', battery.charging ? 1 : 0);
-        });
-      }
-
-      // Device capabilities tracking
-      trackMetric('DeviceMemory', (navigator as any).deviceMemory || 0);
-      trackMetric('HardwareConcurrency', navigator.hardwareConcurrency || 0);
-      trackMetric('MaxTouchPoints', navigator.maxTouchPoints || 0);
-      trackMetric('UserAgent', navigator.userAgent.length);
-
-      // Viewport tracking
-      trackViewport();
-      window.addEventListener('resize', trackViewport);
-
-      // Page visibility tracking
-      let hiddenTime = 0;
-      let startTime = Date.now();
-      
-      document.addEventListener('visibilitychange', () => {
-        if (document.hidden) {
-          hiddenTime = Date.now();
-        } else {
-          const visibleTime = Date.now() - hiddenTime;
-          if (hiddenTime > 0) {
-            trackMetric('PageHiddenDuration', visibleTime);
-          }
-          startTime = Date.now();
-        }
-      });
-
-      // Session duration tracking
-      setInterval(() => {
-        const sessionDuration = Date.now() - startTime;
-        trackMetric('SessionDuration', sessionDuration);
-      }, 60000); // Every minute
     };
 
-    // Initialize when component mounts
-    initAnalytics();
+    const trackFID = () => {
+      if ('PerformanceObserver' in window) {
+        const observer = new PerformanceObserver((list) => {
+          const entries = list.getEntries();
+          entries.forEach((entry) => {
+            const firstInputEntry = entry as PerformanceEventTiming;
+            performanceMetrics.current.fid = firstInputEntry.processingStart - firstInputEntry.startTime;
+            sendAnalytics('fid', performanceMetrics.current.fid);
+          });
+        });
+        observer.observe({ entryTypes: ['first-input'] });
+      }
+    };
 
-    // Cleanup function
+    const trackCLS = () => {
+      if ('PerformanceObserver' in window) {
+        let clsValue = 0;
+        const observer = new PerformanceObserver((list) => {
+          const entries = list.getEntries();
+          entries.forEach((entry) => {
+            const layoutShiftEntry = entry as LayoutShift;
+            if (!layoutShiftEntry.hadRecentInput) {
+              clsValue += layoutShiftEntry.value;
+              performanceMetrics.current.cls = clsValue;
+              sendAnalytics('cls', performanceMetrics.current.cls);
+            }
+          });
+        });
+        observer.observe({ entryTypes: ['layout-shift'] });
+      }
+    };
+
+    const trackFCP = () => {
+      if ('PerformanceObserver' in window) {
+        const observer = new PerformanceObserver((list) => {
+          const entries = list.getEntries();
+          entries.forEach((entry) => {
+            performanceMetrics.current.fcp = entry.startTime;
+            sendAnalytics('fcp', performanceMetrics.current.fcp);
+          });
+        });
+        observer.observe({ entryTypes: ['first-contentful-paint'] });
+      }
+    };
+
+    const trackTTFB = () => {
+      if ('PerformanceObserver' in window) {
+        const observer = new PerformanceObserver((list) => {
+          const entries = list.getEntries();
+          entries.forEach((entry) => {
+            if (entry.entryType === 'navigation') {
+              const navEntry = entry as PerformanceNavigationTiming;
+              performanceMetrics.current.ttfb = navEntry.responseStart - navEntry.requestStart;
+              sendAnalytics('ttfb', performanceMetrics.current.ttfb);
+            }
+          });
+        });
+        observer.observe({ entryTypes: ['navigation'] });
+      }
+    };
+
+    const trackLoadTimes = () => {
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', () => {
+          performanceMetrics.current.domContentLoaded = performance.now();
+          sendAnalytics('dom_content_loaded', performanceMetrics.current.domContentLoaded);
+        });
+      } else {
+        performanceMetrics.current.domContentLoaded = performance.now();
+        sendAnalytics('dom_content_loaded', performanceMetrics.current.domContentLoaded);
+      }
+
+      window.addEventListener('load', () => {
+        performanceMetrics.current.fullPageLoad = performance.now();
+        sendAnalytics('full_page_load', performanceMetrics.current.fullPageLoad);
+      });
+    };
+
+    // Track device capabilities
+    const trackDeviceCapabilities = () => {
+      // Memory info
+      if ('memory' in performance) {
+        const memory = (performance as Performance & { memory: DeviceCapabilities['memory'] }).memory;
+        deviceCapabilities.current.memory = memory;
+        sendAnalytics('device_memory', memory);
+      }
+
+      // Network info
+      if ('connection' in navigator) {
+        const connection = (navigator as Navigator & { connection: NetworkInformation }).connection;
+        deviceCapabilities.current.networkInfo = {
+          effectiveType: connection.effectiveType,
+          downlink: connection.downlink,
+          rtt: connection.rtt
+        };
+        sendAnalytics('network_info', deviceCapabilities.current.networkInfo);
+      }
+
+      // Battery info
+      if ('getBattery' in navigator) {
+        navigator.getBattery().then((battery) => {
+          deviceCapabilities.current.battery = {
+            charging: battery.charging,
+            chargingTime: battery.chargingTime,
+            dischargingTime: battery.dischargingTime,
+            level: battery.level
+          };
+          sendAnalytics('battery_info', deviceCapabilities.current.battery);
+        });
+      }
+    };
+
+    // Track user interactions
+    const trackUserInteractions = () => {
+      const trackClick = () => {
+        userInteraction.current.clicks++;
+        sendAnalytics('user_click', userInteraction.current.clicks);
+      };
+
+      const trackScroll = () => {
+        userInteraction.current.scrolls++;
+        const scrollDepth = Math.round((window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100);
+        userInteraction.current.scrollDepth = Math.max(userInteraction.current.scrollDepth, scrollDepth);
+        sendAnalytics('user_scroll', { count: userInteraction.current.scrolls, depth: userInteraction.current.scrollDepth });
+      };
+
+      const trackInput = () => {
+        userInteraction.current.inputs++;
+        sendAnalytics('user_input', userInteraction.current.inputs);
+      };
+
+      const trackFocus = () => {
+        userInteraction.current.focus++;
+        sendAnalytics('user_focus', userInteraction.current.focus);
+      };
+
+      const trackBlur = () => {
+        userInteraction.current.blur++;
+        sendAnalytics('user_blur', userInteraction.current.blur);
+      };
+
+      const trackSubmit = () => {
+        userInteraction.current.submit++;
+        sendAnalytics('user_submit', userInteraction.current.submit);
+      };
+
+      document.addEventListener('click', trackClick);
+      document.addEventListener('scroll', trackScroll);
+      document.addEventListener('input', trackInput);
+      document.addEventListener('focus', trackFocus, true);
+      document.addEventListener('blur', trackBlur, true);
+      document.addEventListener('submit', trackSubmit, true);
+
+      return () => {
+        document.removeEventListener('click', trackClick);
+        document.removeEventListener('scroll', trackScroll);
+        document.removeEventListener('input', trackInput);
+        document.removeEventListener('focus', trackFocus, true);
+        document.removeEventListener('blur', trackBlur, true);
+        document.removeEventListener('submit', trackSubmit, true);
+      };
+    };
+
+    // Track session duration
+    const trackSessionDuration = () => {
+      const updateTimeOnPage = () => {
+        userInteraction.current.timeOnPage = Date.now() - userInteraction.current.sessionStart;
+        sendAnalytics('time_on_page', userInteraction.current.timeOnPage);
+      };
+
+      const interval = setInterval(updateTimeOnPage, 30000); // Update every 30 seconds
+
+      return () => clearInterval(interval);
+    };
+
+    // Initialize tracking
+    trackLCP();
+    trackFID();
+    trackCLS();
+    trackFCP();
+    trackTTFB();
+    trackLoadTimes();
+    trackDeviceCapabilities();
+    const cleanupInteractions = trackUserInteractions();
+    const cleanupSession = trackSessionDuration();
+
+    // Cleanup
     return () => {
-      // Remove event listeners if needed
-      document.removeEventListener('click', trackInteraction);
-      document.removeEventListener('scroll', trackInteraction);
-      document.removeEventListener('keydown', trackInteraction);
-      window.removeEventListener('resize', trackViewport);
+      cleanupInteractions();
+      cleanupSession();
     };
   }, []);
 
-  // Track page views on route changes
-  useEffect(() => {
-    if (typeof window !== 'undefined' && window.gtag) {
-      window.gtag('config', 'G-XXXXXXXXXX', {
-        page_path: router.asPath,
-        page_title: document.title,
-        page_location: window.location.href
-      });
-    }
-
-    // Track custom page view event
-    trackEvent('PageView', {
-      path: router.asPath,
-      title: document.title,
-      referrer: document.referrer,
-      timestamp: Date.now()
-    });
-
-    // Track page performance metrics
-    if ('performance' in window) {
-      const navigation = performance.getEntriesByType('navigation')[0] as PerformanceNavigationTiming;
-      if (navigation) {
-        const startTime = navigation.startTime || 0;
-        trackMetric('PageLoadTime', navigation.loadEventEnd - startTime);
-        trackMetric('DOMReadyTime', navigation.domContentLoadedEventEnd - startTime);
-      }
-    }
-  }, [router.asPath]);
-
-  // Helper function to track metrics
-  const trackMetric = (name: string, value: number | string) => {
-    if (typeof window !== 'undefined' && window.gtag) {
-      window.gtag('event', 'custom_metric', {
-        metric_name: name,
-        metric_value: value,
-        timestamp: Date.now()
-      });
-    }
-
-    // Send to custom analytics endpoint
-    if (process.env.NODE_ENV === 'production') {
-      fetch('/api/analytics/metrics', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          name,
-          value,
-          timestamp: Date.now(),
-          url: window.location.href,
-          userAgent: navigator.userAgent
-        })
-      }).catch(() => {
-        // Silently handle fetch errors
-      });
-    }
-  };
-
-  // Helper function to track events
-  const trackEvent = (action: string, parameters: Record<string, unknown>) => {
-    if (typeof window !== 'undefined' && window.gtag) {
-      window.gtag('event', action, {
-        ...parameters,
-        timestamp: Date.now(),
-        page_url: window.location.href
-      });
-    }
-
-    // Send to custom analytics endpoint
-    if (process.env.NODE_ENV === 'production') {
-      fetch('/api/analytics/events', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          action,
-          parameters,
-          timestamp: Date.now(),
-          url: window.location.href,
-          userAgent: navigator.userAgent
-        })
-      }).catch(() => {
-        // Silently handle fetch errors
-      });
-    }
-  };
-
-  // Component doesn't render anything
   return null;
 };
-
-// Performance entry types
-interface PerformanceEventTiming extends PerformanceEntry {
-  processingStart: number;
-  processingEnd: number;
-  target?: EventTarget;
-}
-
-interface LayoutShift extends PerformanceEntry {
-  value: number;
-  sources?: LayoutShiftSource[];
-}
-
-interface LayoutShiftSource {
-  node?: Node;
-  currentRect?: DOMRectReadOnly;
-  previousRect?: DOMRectReadOnly;
-}
-
-// Extend Window interface for gtag
-declare global {
-  interface Window {
-    gtag: (...args: unknown[]) => void;
-  }
-}
 
 export default AnalyticsTracker;
