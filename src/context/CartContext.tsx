@@ -1,5 +1,5 @@
 import React, { createContext, useContext, useEffect } from 'react';
-import { CartContextType, CartAction, CartItem } from '@/types/cart';
+import type { CartContextType, CartAction, CartItem } from '@/types/cart';
 import { useSelector, useDispatch } from 'react-redux';
 import type { RootState, AppDispatch } from '@/store';
 import { addItem, removeItem, clear, setItems } from '@/store/cartSlice';
@@ -66,7 +66,7 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
   // Persist cart items to localStorage whenever they change from Redux state
   useEffect(() => {
     if (process.env.NODE_ENV === 'development') {
-      logInfo('[CartProvider] Persisting items to localStorage:', { data: items });
+      logInfo('[CartProvider] Persisting items to localStorage:', { data:  { data: items } });
     }
     try {
       // Only persist if localStorage is actually available.

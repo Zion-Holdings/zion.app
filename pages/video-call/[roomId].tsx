@@ -1,14 +1,16 @@
 import { useRouter } from 'next/router';
+import { VideoCallRoom } from '@/components/VideoCall/VideoCallRoom';
 
 const VideoCallPage = () => {
   const router = useRouter();
   const { roomId } = router.query;
 
+  if (!roomId || typeof roomId !== 'string') {
+    return <div>Loading...</div>;
+  }
+
   return (
-    <div>
-      <h1>Video Call</h1>
-      <p>Room ID: {roomId}</p>
-    </div>
+    <VideoCallRoom roomId={roomId} />
   );
 };
 

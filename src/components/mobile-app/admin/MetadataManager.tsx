@@ -46,7 +46,7 @@ export const MetadataManager: React.FC = () => {
     
     try {
       // This would be implemented with actual API calls in production
-      logInfo(`Saving metadata for ${currentPlatform}`, { data });
+      logInfo('Saving metadata for ${currentPlatform}', { data:  { data } });
       
       // Simulate API call
       await new Promise(resolve => setTimeout(resolve, 1000));

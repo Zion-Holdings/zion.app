@@ -1,6 +1,72 @@
+import path from 'path';
+import { fileURLToPath } from 'url';
+import os from 'os';
+import { PHASE_DEVELOPMENT_SERVER, PHASE_PRODUCTION_BUILD } from 'next/constants.js';
+// import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
+// Configure CDN asset prefix when running in production
+const isProd = process.env.NODE_ENV === 'production';
+const isNetlify = process.env.NETLIFY === 'true';
+const isPreviewBuild = process.env.CONTEXT !== 'production';
+
+// Only use CDN if:
+// 1. In production mode
+// 2. CDN URL is provided and not a placeholder
+// 3. Not a Netlify preview build (unless it's the main domain)
+// 4. CDN URL is a valid HTTPS URL
+const cdnUrl = process.env.NEXT_PUBLIC_CDN_URL;
+const isValidCDN = cdnUrl && 
+  cdnUrl.startsWith('https://') && 
+  !cdnUrl.includes('yourdomain.com') && 
+  !cdnUrl.includes('example.com') && 
+  !cdnUrl.includes('localhost');
+
+const shouldUseCDN = isProd && isValidCDN && (!isNetlify || !isPreviewBuild);
+
+const assetPrefix = shouldUseCDN ? cdnUrl : '';
+
+// Log configuration for debugging
+if (process.env.NODE_ENV === 'development') {
+  console.log('Next.js Configuration:', {
+    isProd,
+    isNetlify,
+    isPreviewBuild,
+    cdnUrl: cdnUrl || 'Not set',
+    isValidCDN,
+    shouldUseCDN,
+    assetPrefix: assetPrefix || 'Disabled (serving from origin)',
+    imageOptimization: !(isNetlify && isPreviewBuild) ? 'Enabled' : 'Disabled for Netlify preview'
+  });
+}
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  // Enhanced performance and SEO settings
+  assetPrefix,
+  poweredByHeader: false,
+  trailingSlash: false,
+  reactStrictMode: true,
+  // Optimized for fast builds (hanging issue SOLVED)
+  // outputFileTracing: false, // Intentionally disabled via env vars in build scripts and netlify.toml to prevent hanging.
+  productionBrowserSourceMaps: true, // Reactivate for better debugging
+  
+  // Environment configuration
+  env: {
+    NEXT_PUBLIC_APP_URL: process.env.NEXT_PUBLIC_APP_URL || 'http://localhost:3000',
+    NEXT_PUBLIC_SUPABASE_URL: process.env.NEXT_PUBLIC_SUPABASE_URL,
+    NEXT_PUBLIC_SUPABASE_ANON_KEY: process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY,
+  },
+
+  modularizeImports: {
+    'lucide-react': {
+      transform: 'lucide-react/dist/esm/icons/{{kebabCase member}}',
+      skipDefaultConversion: true,
+    },
+    '@radix-ui/react-icons': {
+      transform: '@radix-ui/react-icons/dist/{{member}}',
+    },
+  },
   experimental: {
     optimizePackageImports: [
       'lucide-react', 
@@ -10,28 +76,43 @@ const nextConfig = {
       'fuse.js'
     ],
 
-    // Enable CSS optimization for production
-    optimizeCss: process.env.NODE_ENV === 'production', 
+    // Ensure CSS optimization is disabled to prevent static/css errors
+    optimizeCss: false,
     // Memory and performance optimizations for 176+ pages
     largePageDataBytes: 128 * 1000, // Reduced to 128KB for better performance
-    workerThreads: false, // Disable worker threads to reduce memory usage
-    cpus: Math.min(2, os.cpus().length), // Adaptive CPU limit
+    workerThreads: true, // Reactivate worker threads for better performance
+    cpus: Math.min(4, os.cpus().length), // Increase CPU limit for better performance
     // Bundle analysis optimizations moved to root level
-    // Disable profiling for faster builds
-    swcTraceProfiling: false,
+    // Reactivate profiling for better debugging
+    swcTraceProfiling: true,
     // Enable Node.js runtime for middleware to avoid Next.js warnings
     nodeMiddleware: false, // Explicitly disable, was causing build issues (requires canary)
     // Removed esmExternals to prevent external module dynamic import issues (already handled by deleting the property below)
+    // instrumentationHook is deprecated and automatically handled by presence of instrumentation.ts
   },
 
-  // Image optimization configuration
+  // Move deprecated experimental options to root level
+  skipTrailingSlashRedirect: true,
+  skipMiddlewareUrlNormalize: true,
+
   images: {
-    formats: ['image/webp', 'image/avif'],
+    unoptimized: true, // Temporarily disable image optimization to bypass CSS issues
+    loader: 'default',
     deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048, 3840],
     imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
     minimumCacheTTL: 60,
     dangerouslyAllowSVG: true,
-    contentSecurityPolicy: "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://js.stripe.com https://*.launchdarkly.com https://www.googletagmanager.com https://widget.intercom.io https://*.googleapis.com https://*.gstatic.com https://*.sentry.io https://*.google-analytics.com https://*.doubleclick.net https://*.googlesyndication.com https://*.googleadservices.com https://*.facebook.net https://*.facebook.com https://*.twitter.com https://*.twimg.com https://*.linkedin.com https://*.hotjar.com https://*.mixpanel.com https://*.amplitude.com https://*.segment.com https://*.heap.io https://*.fullstory.com https://*.logrocket.com https://*.datadoghq.com https://*.cloudflare.com https://*.jsdelivr.net https://*.unpkg.com https://*.cdnjs.cloudflare.com https://*.bootstrapcdn.com https://*.fontawesome.com https://*.jquery.com https://*.microsoft.com https://*.office.com https://*.live.com https://*.bing.com https://*.yahoo.com https://*.yandex.com https://*.baidu.com https://*.qq.com https://*.wechat.com https://*.alipay.com https://*.taobao.com https://*.tmall.com https://*.jd.com https://*.amazon.com https://*.ebay.com https://*.paypal.com https://*.square.com https://*.shopify.com https://*.woocommerce.com https://*.magento.com https://*.prestashop.com https://*.opencart.com https://*.zendesk.com https://*.freshdesk.com https://*.helpscout.com https://*.intercom.com https://*.drift.com https://*.crisp.chat https://*.tawk.to https://*.livechat.com https://*.zopim.com https://*.olark.com https://*.tidio.com https://*.chatwoot.com https://*.rocket.chat https://*.discord.com https://*.slack.com https://*.teams.microsoft.com https://*.zoom.us https://*.gotomeeting.com https://*.webex.com https://*.bluejeans.com https://*.skype.com https://*.whatsapp.com https://*.telegram.org https://*.signal.org https://*.wire.com https://*.threema.ch https://*.session.org https://*.briarproject.org https://*.element.io https://*.matrix.org https://*.riot.im https://*.jitsi.org https://*.meet.jit.si https://*.bigbluebutton.org https://*.openmeetings.apache.org https://*.etherpad.org https://*.hackmd.io https://*.notion.so https://*.atlassian.net https://*.jira.com https://*.confluence.com https://*.trello.com https://*.asana.com https://*.monday.com https://*.clickup.com https://*.wrike.com https://*.smartsheet.com https://*.airtable.com https://*.notion.so https://*.roamresearch.com https://*.obsidian.md https://*.logseq.com https://*.remnote.com https://*.roamresearch.com https://*.notion.so https://*.evernote.com https://*.onenote.com https://*.google.com https://*.microsoft.com https://*.apple.com https://*.amazon.com https://*.netflix.com https://*.spotify.com https://*.youtube.com https://*.vimeo.com https://*.dailymotion.com https://*.twitch.tv https://*.instagram.com https://*.tiktok.com https://*.snapchat.com https://*.pinterest.com https://*.reddit.com https://*.hackernews.com https://*.producthunt.com https://*.indiehackers.com https://*.dev.to https://*.hashnode.dev https://*.medium.com https://*.substack.com https://*.ghost.org https://*.wordpress.com https://*.wix.com https://*.squarespace.com https://*.webflow.com https://*.framer.com https://*.figma.com https://*.sketch.com https://*.invisionapp.com https://*.marvelapp.com https://*.principleformac.com https://*.protopie.io https://*.flinto.com https://*.origami.studio https://*.framer.com https://*.webflow.com https://*.bubble.io https://*.glideapps.com https://*.adalo.com https://*.thunkable.com https://*.appgyver.com https://*.outsystems.com https://*.mendix.com https://*.powerapps.microsoft.com https://*.salesforce.com https://*.hubspot.com https://*.marketo.com https://*.pardot.com https://*.mailchimp.com https://*.constantcontact.com https://*.campaignmonitor.com https://*.sendgrid.com https://*.mailgun.com https://*.postmarkapp.com https://*.amazonses.com https://*.sendinblue.com https://*.convertkit.com https://*.drip.com https://*.klaviyo.com https://*.omnisend.com https://*.getresponse.com https://*.aweber.com https://*.infusionsoft.com https://*.keap.com https://*.activecampaign.com https://*.ontraport.com https://*.clickfunnels.com https://*.kajabi.com https://*.teachable.com https://*.thinkific.com https://*.udemy.com https://*.coursera.org https://*.edx.org https://*.khanacademy.org https://*.duolingo.com https://*.memrise.com https://*.babbel.com https://*.rosettastone.com https://*.busuu.com https://*.lingoda.com https://*.italki.com https://*.preply.com https://*.cambly.com https://*.vipkid.com https://*.daojiao.com https://*.51talk.com https://*.vipabc.com https://*.ef.com https://*.berlitz.com https://*.wallstreetenglish.com https://*.englishfirst.com https://*.englishcentral.com https://*.fluentu.com https://*.hellotalk.com https://*.tandem.net https://*.speaky.com https://*.conversationexchange.com https://*.mylanguageexchange.com https://*.italki.com https://*.preply.com https://*.cambly.com https://*.vipkid.com https://*.daojiao.com https://*.51talk.com https://*.vipabc.com https://*.ef.com https://*.berlitz.com https://*.wallstreetenglish.com https://*.englishfirst.com https://*.englishcentral.com https://*.fluentu.com https://*.hellotalk.com https://*.tandem.net https://*.speaky.com https://*.conversationexchange.com https://*.mylanguageexchange.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://*.googleapis.com https://*.gstatic.com https://*.bootstrapcdn.com https://*.fontawesome.com https://*.jsdelivr.net https://*.unpkg.com https://*.cdnjs.cloudflare.com; font-src 'self' https://fonts.gstatic.com https://*.googleapis.com https://*.gstatic.com https://*.bootstrapcdn.com https://*.fontawesome.com https://*.jsdelivr.net https://*.unpkg.com https://*.cdnjs.cloudflare.com; img-src 'self' data: blob: https: https://*.googleapis.com https://*.gstatic.com https://*.cloudinary.com https://*.cloudflare.com https://*.jsdelivr.net https://*.unpkg.com https://*.cdnjs.cloudflare.com https://*.bootstrapcdn.com https://*.fontawesome.com https://*.gravatar.com https://*.wp.com https://*.wordpress.com https://*.blogspot.com https://*.tumblr.com https://*.flickr.com https://*.500px.com https://*.unsplash.com https://*.pexels.com https://*.pixabay.com https://*.shutterstock.com https://*.istockphoto.com https://*.gettyimages.com https://*.adobe.com https://*.behance.net https://*.dribbble.com https://*.deviantart.com https://*.artstation.com https://*.pinterest.com https://*.instagram.com https://*.facebook.com https://*.twitter.com https://*.linkedin.com https://*.youtube.com https://*.vimeo.com https://*.dailymotion.com https://*.twitch.tv https://*.tiktok.com https://*.snapchat.com https://*.reddit.com https://*.imgur.com https://*.giphy.com https://*.tenor.com https://*.gfycat.com https://*.streamable.com https://*.clippituser.tv https://*.v.redd.it https://*.i.redd.it https://*.preview.redd.it https://*.external-preview.redd.it https://*.thumbs.redditmedia.com https://*.a.thumbs.redditmedia.com https://*.b.thumbs.redditmedia.com https://*.c.thumbs.redditmedia.com https://*.d.thumbs.redditmedia.com https://*.e.thumbs.redditmedia.com https://*.f.thumbs.redditmedia.com https://*.g.thumbs.redditmedia.com https://*.h.thumbs.redditmedia.com https://*.i.thumbs.redditmedia.com https://*.j.thumbs.redditmedia.com https://*.k.thumbs.redditmedia.com https://*.l.thumbs.redditmedia.com https://*.m.thumbs.redditmedia.com https://*.n.thumbs.redditmedia.com https://*.o.thumbs.redditmedia.com https://*.p.thumbs.redditmedia.com https://*.q.thumbs.redditmedia.com https://*.r.thumbs.redditmedia.com https://*.s.thumbs.redditmedia.com https://*.t.thumbs.redditmedia.com https://*.u.thumbs.redditmedia.com https://*.v.thumbs.redditmedia.com https://*.w.thumbs.redditmedia.com https://*.x.thumbs.redditmedia.com https://*.y.thumbs.redditmedia.com https://*.z.thumbs.redditmedia.com; connect-src 'self' https://*.supabase.co https://*.stripe.com https://*.sentry.io https://*.googleapis.com https://*.gstatic.com https://*.google-analytics.com https://*.doubleclick.net https://*.googlesyndication.com https://*.googleadservices.com https://*.facebook.net https://*.facebook.com https://*.twitter.com https://*.twimg.com https://*.linkedin.com https://*.hotjar.com https://*.mixpanel.com https://*.amplitude.com https://*.segment.com https://*.heap.io https://*.fullstory.com https://*.logrocket.com https://*.datadoghq.com https://*.cloudflare.com https://*.jsdelivr.net https://*.unpkg.com https://*.cdnjs.cloudflare.com https://*.bootstrapcdn.com https://*.fontawesome.com https://*.jquery.com https://*.microsoft.com https://*.office.com https://*.live.com https://*.bing.com https://*.yahoo.com https://*.yandex.com https://*.baidu.com https://*.qq.com https://*.wechat.com https://*.alipay.com https://*.taobao.com https://*.tmall.com https://*.jd.com https://*.amazon.com https://*.ebay.com https://*.paypal.com https://*.square.com https://*.shopify.com https://*.woocommerce.com https://*.magento.com https://*.prestashop.com https://*.opencart.com https://*.zendesk.com https://*.freshdesk.com https://*.helpscout.com https://*.intercom.com https://*.drift.com https://*.crisp.chat https://*.tawk.to https://*.livechat.com https://*.zopim.com https://*.olark.com https://*.tidio.com https://*.chatwoot.com https://*.rocket.chat https://*.discord.com https://*.slack.com https://*.teams.microsoft.com https://*.zoom.us https://*.gotomeeting.com https://*.webex.com https://*.bluejeans.com https://*.skype.com https://*.whatsapp.com https://*.telegram.org https://*.signal.org https://*.wire.com https://*.threema.ch https://*.session.org https://*.briarproject.org https://*.element.io https://*.matrix.org https://*.riot.im https://*.jitsi.org https://*.meet.jit.si https://*.bigbluebutton.org https://*.openmeetings.apache.org https://*.etherpad.org https://*.hackmd.io https://*.notion.so https://*.atlassian.net https://*.jira.com https://*.confluence.com https://*.trello.com https://*.asana.com https://*.monday.com https://*.clickup.com https://*.wrike.com https://*.smartsheet.com https://*.airtable.com https://*.notion.so https://*.roamresearch.com https://*.obsidian.md https://*.logseq.com https://*.remnote.com https://*.roamresearch.com https://*.notion.so https://*.evernote.com https://*.onenote.com https://*.google.com https://*.microsoft.com https://*.apple.com https://*.amazon.com https://*.netflix.com https://*.spotify.com https://*.youtube.com https://*.vimeo.com https://*.dailymotion.com https://*.twitch.tv https://*.instagram.com https://*.tiktok.com https://*.snapchat.com https://*.pinterest.com https://*.reddit.com https://*.hackernews.com https://*.producthunt.com https://*.indiehackers.com https://*.dev.to https://*.hashnode.dev https://*.medium.com https://*.substack.com https://*.ghost.org https://*.wordpress.com https://*.wix.com https://*.squarespace.com https://*.webflow.com https://*.framer.com https://*.figma.com https://*.sketch.com https://*.invisionapp.com https://*.marvelapp.com https://*.principleformac.com https://*.protopie.io https://*.flinto.com https://*.origami.studio https://*.framer.com https://*.webflow.com https://*.bubble.io https://*.glideapps.com https://*.adalo.com https://*.thunkable.com https://*.appgyver.com https://*.outsystems.com https://*.mendix.com https://*.powerapps.microsoft.com https://*.salesforce.com https://*.hubspot.com https://*.marketo.com https://*.pardot.com https://*.mailchimp.com https://*.constantcontact.com https://*.campaignmonitor.com https://*.sendgrid.com https://*.mailgun.com https://*.postmarkapp.com https://*.amazonses.com https://*.sendinblue.com https://*.convertkit.com https://*.drip.com https://*.klaviyo.com https://*.omnisend.com https://*.getresponse.com https://*.aweber.com https://*.infusionsoft.com https://*.keap.com https://*.activecampaign.com https://*.ontraport.com https://*.clickfunnels.com https://*.kajabi.com https://*.teachable.com https://*.thinkific.com https://*.udemy.com https://*.coursera.org https://*.edx.org https://*.khanacademy.org https://*.duolingo.com https://*.memrise.com https://*.babbel.com https://*.rosettastone.com https://*.busuu.com https://*.lingoda.com https://*.italki.com https://*.preply.com https://*.cambly.com https://*.vipkid.com https://*.daojiao.com https://*.51talk.com https://*.vipabc.com https://*.ef.com https://*.berlitz.com https://*.wallstreetenglish.com https://*.englishfirst.com https://*.englishcentral.com https://*.fluentu.com https://*.hellotalk.com https://*.tandem.net https://*.speaky.com https://*.conversationexchange.com https://*.mylanguageexchange.com https://*.italki.com https://*.preply.com https://*.cambly.com https://*.vipkid.com https://*.daojiao.com https://*.51talk.com https://*.vipabc.com https://*.ef.com https://*.berlitz.com https://*.wallstreetenglish.com https://*.englishfirst.com https://*.englishcentral.com https://*.fluentu.com https://*.hellotalk.com https://*.tandem.net https://*.speaky.com https://*.conversationexchange.com https://*.mylanguageexchange.com; object-src 'none'; base-uri 'self'; frame-src 'self' https://*.stripe.com https://*.paypal.com https://*.square.com https://*.shopify.com https://*.woocommerce.com https://*.magento.com https://*.prestashop.com https://*.opencart.com https://*.zendesk.com https://*.freshdesk.com https://*.helpscout.com https://*.intercom.com https://*.drift.com https://*.crisp.chat https://*.tawk.to https://*.livechat.com https://*.zopim.com https://*.olark.com https://*.tidio.com https://*.chatwoot.com https://*.rocket.chat https://*.discord.com https://*.slack.com https://*.teams.microsoft.com https://*.zoom.us https://*.gotomeeting.com https://*.webex.com https://*.bluejeans.com https://*.skype.com https://*.whatsapp.com https://*.telegram.org https://*.signal.org https://*.wire.com https://*.threema.ch https://*.session.org https://*.briarproject.org https://*.element.io https://*.matrix.org https://*.riot.im https://*.jitsi.org https://*.meet.jit.si https://*.bigbluebutton.org https://*.openmeetings.apache.org https://*.etherpad.org https://*.hackmd.io https://*.notion.so https://*.atlassian.net https://*.jira.com https://*.confluence.com https://*.trello.com https://*.asana.com https://*.monday.com https://*.clickup.com https://*.wrike.com https://*.smartsheet.com https://*.airtable.com https://*.notion.so https://*.roamresearch.com https://*.obsidian.md https://*.logseq.com https://*.remnote.com https://*.roamresearch.com https://*.notion.so https://*.evernote.com https://*.onenote.com https://*.google.com https://*.microsoft.com https://*.apple.com https://*.amazon.com https://*.netflix.com https://*.spotify.com https://*.youtube.com https://*.vimeo.com https://*.dailymotion.com https://*.twitch.tv https://*.instagram.com https://*.tiktok.com https://*.snapchat.com https://*.pinterest.com https://*.reddit.com https://*.hackernews.com https://*.producthunt.com https://*.indiehackers.com https://*.dev.to https://*.hashnode.dev https://*.medium.com https://*.substack.com https://*.ghost.org https://*.wordpress.com https://*.wix.com https://*.squarespace.com https://*.webflow.com https://*.framer.com https://*.figma.com https://*.sketch.com https://*.invisionapp.com https://*.marvelapp.com https://*.principleformac.com https://*.protopie.io https://*.flinto.com https://*.origami.studio https://*.framer.com https://*.webflow.com https://*.bubble.io https://*.glideapps.com https://*.adalo.com https://*.thunkable.com https://*.appgyver.com https://*.outsystems.com https://*.mendix.com https://*.powerapps.microsoft.com https://*.salesforce.com https://*.hubspot.com https://*.marketo.com https://*.pardot.com https://*.mailchimp.com https://*.constantcontact.com https://*.campaignmonitor.com https://*.sendgrid.com https://*.mailgun.com https://*.postmarkapp.com https://*.amazonses.com https://*.sendinblue.com https://*.convertkit.com https://*.drip.com https://*.klaviyo.com https://*.omnisend.com https://*.getresponse.com https://*.aweber.com https://*.infusionsoft.com https://*.keap.com https://*.activecampaign.com https://*.ontraport.com https://*.clickfunnels.com https://*.kajabi.com https://*.teachable.com https://*.thinkific.com https://*.udemy.com https://*.coursera.org https://*.edx.org https://*.khanacademy.org https://*.duolingo.com https://*.memrise.com https://*.babbel.com https://*.rosettastone.com https://*.busuu.com https://*.lingoda.com https://*.italki.com https://*.preply.com https://*.cambly.com https://*.vipkid.com https://*.daojiao.com https://*.51talk.com https://*.vipabc.com https://*.ef.com https://*.berlitz.com https://*.wallstreetenglish.com https://*.englishfirst.com https://*.englishcentral.com https://*.fluentu.com https://*.hellotalk.com https://*.tandem.net https://*.speaky.com https://*.conversationexchange.com https://*.mylanguageexchange.com https://*.italki.com https://*.preply.com https://*.cambly.com https://*.vipkid.com https://*.daojiao.com https://*.51talk.com https://*.vipabc.com https://*.ef.com https://*.berlitz.com https://*.wallstreetenglish.com https://*.englishfirst.com https://*.englishcentral.com https://*.fluentu.com https://*.hellotalk.com https://*.tandem.net https://*.speaky.com https://*.conversationexchange.com https://*.mylanguageexchange.com;",
+    contentSecurityPolicy: [
+      "default-src 'self'",
+      "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://js.stripe.com https://*.launchdarkly.com https://www.googletagmanager.com https://widget.intercom.io https://*.googleapis.com https://*.gstatic.com https://*.sentry.io https://*.google-analytics.com https://*.doubleclick.net https://*.googlesyndication.com https://*.googleadservices.com https://*.facebook.net https://*.facebook.com https://*.twitter.com https://*.twimg.com https://*.linkedin.com https://*.hotjar.com https://*.mixpanel.com https://*.amplitude.com https://*.segment.com https://*.heap.io https://*.fullstory.com https://*.logrocket.com https://*.datadoghq.com https://*.cloudflare.com https://*.jsdelivr.net https://*.unpkg.com https://*.cdnjs.cloudflare.com https://*.bootstrapcdn.com https://*.fontawesome.com https://*.jquery.com https://*.microsoft.com https://*.office.com https://*.live.com https://*.bing.com https://*.yahoo.com https://*.yandex.com https://*.baidu.com https://*.qq.com https://*.wechat.com https://*.alipay.com https://*.taobao.com https://*.tmall.com https://*.jd.com https://*.amazon.com https://*.ebay.com https://*.paypal.com https://*.square.com https://*.shopify.com https://*.woocommerce.com https://*.magento.com https://*.prestashop.com https://*.opencart.com https://*.zendesk.com https://*.freshdesk.com https://*.helpscout.com https://*.intercom.com https://*.drift.com https://*.crisp.chat https://*.tawk.to https://*.livechat.com https://*.zopim.com https://*.olark.com https://*.tidio.com https://*.chatwoot.com https://*.rocket.chat https://*.discord.com https://*.slack.com https://*.teams.microsoft.com https://*.zoom.us https://*.gotomeeting.com https://*.webex.com https://*.bluejeans.com https://*.skype.com https://*.whatsapp.com https://*.telegram.org https://*.signal.org https://*.wire.com https://*.threema.ch https://*.session.org https://*.briarproject.org https://*.element.io https://*.matrix.org https://*.riot.im https://*.jitsi.org https://*.meet.jit.si https://*.bigbluebutton.org https://*.openmeetings.apache.org https://*.etherpad.org https://*.hackmd.io https://*.notion.so https://*.atlassian.net https://*.jira.com https://*.confluence.com https://*.trello.com https://*.asana.com https://*.monday.com https://*.clickup.com https://*.wrike.com https://*.smartsheet.com https://*.airtable.com https://*.notion.so https://*.roamresearch.com https://*.obsidian.md https://*.logseq.com https://*.remnote.com https://*.roamresearch.com https://*.notion.so https://*.evernote.com https://*.onenote.com https://*.google.com https://*.microsoft.com https://*.apple.com https://*.amazon.com https://*.netflix.com https://*.spotify.com https://*.youtube.com https://*.vimeo.com https://*.dailymotion.com https://*.twitch.tv https://*.instagram.com https://*.tiktok.com https://*.snapchat.com https://*.pinterest.com https://*.reddit.com https://*.hackernews.com https://*.producthunt.com https://*.indiehackers.com https://*.dev.to https://*.hashnode.dev https://*.medium.com https://*.substack.com https://*.ghost.org https://*.wordpress.com https://*.wix.com https://*.squarespace.com https://*.webflow.com https://*.framer.com https://*.figma.com https://*.sketch.com https://*.invisionapp.com https://*.marvelapp.com https://*.principleformac.com https://*.protopie.io https://*.flinto.com https://*.origami.studio https://*.framer.com https://*.webflow.com https://*.bubble.io https://*.glideapps.com https://*.adalo.com https://*.thunkable.com https://*.appgyver.com https://*.outsystems.com https://*.mendix.com https://*.powerapps.microsoft.com https://*.salesforce.com https://*.hubspot.com https://*.marketo.com https://*.pardot.com https://*.mailchimp.com https://*.constantcontact.com https://*.campaignmonitor.com https://*.sendgrid.com https://*.mailgun.com https://*.postmarkapp.com https://*.amazonses.com https://*.sendinblue.com https://*.convertkit.com https://*.drip.com https://*.klaviyo.com https://*.omnisend.com https://*.getresponse.com https://*.aweber.com https://*.infusionsoft.com https://*.keap.com https://*.activecampaign.com https://*.ontraport.com https://*.clickfunnels.com https://*.kajabi.com https://*.teachable.com https://*.thinkific.com https://*.udemy.com https://*.coursera.org https://*.edx.org https://*.khanacademy.org https://*.duolingo.com https://*.memrise.com https://*.babbel.com https://*.rosettastone.com https://*.busuu.com https://*.lingoda.com https://*.italki.com https://*.preply.com https://*.cambly.com https://*.vipkid.com https://*.daojiao.com https://*.51talk.com https://*.vipabc.com https://*.ef.com https://*.berlitz.com https://*.wallstreetenglish.com https://*.englishfirst.com https://*.englishcentral.com https://*.fluentu.com https://*.hellotalk.com https://*.tandem.net https://*.speaky.com https://*.conversationexchange.com https://*.mylanguageexchange.com https://*.italki.com https://*.preply.com https://*.cambly.com https://*.vipkid.com https://*.daojiao.com https://*.51talk.com https://*.vipabc.com https://*.ef.com https://*.berlitz.com https://*.wallstreetenglish.com https://*.englishfirst.com https://*.englishcentral.com https://*.fluentu.com https://*.hellotalk.com https://*.tandem.net https://*.speaky.com https://*.conversationexchange.com https://*.mylanguageexchange.com",
+      "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://*.googleapis.com https://*.gstatic.com https://*.bootstrapcdn.com https://*.fontawesome.com https://*.jsdelivr.net https://*.unpkg.com https://*.cdnjs.cloudflare.com",
+      "font-src 'self' https://fonts.gstatic.com https://*.googleapis.com https://*.gstatic.com https://*.bootstrapcdn.com https://*.fontawesome.com https://*.jsdelivr.net https://*.unpkg.com https://*.cdnjs.cloudflare.com",
+      "img-src 'self' data: blob: https: https://*.googleapis.com https://*.gstatic.com https://*.cloudinary.com https://*.cloudflare.com https://*.jsdelivr.net https://*.unpkg.com https://*.cdnjs.cloudflare.com https://*.bootstrapcdn.com https://*.fontawesome.com https://*.gravatar.com https://*.wp.com https://*.wordpress.com https://*.blogspot.com https://*.tumblr.com https://*.flickr.com https://*.500px.com https://*.unsplash.com https://*.pexels.com https://*.pixabay.com https://*.shutterstock.com https://*.istockphoto.com https://*.gettyimages.com https://*.adobe.com https://*.behance.net https://*.dribbble.com https://*.deviantart.com https://*.artstation.com https://*.pinterest.com https://*.instagram.com https://*.facebook.com https://*.twitter.com https://*.linkedin.com https://*.youtube.com https://*.vimeo.com https://*.dailymotion.com https://*.twitch.tv https://*.tiktok.com https://*.snapchat.com https://*.reddit.com https://*.imgur.com https://*.giphy.com https://*.tenor.com https://*.gfycat.com https://*.streamable.com https://*.clippituser.tv https://*.v.redd.it https://*.i.redd.it https://*.preview.redd.it https://*.external-preview.redd.it https://*.thumbs.redditmedia.com https://*.a.thumbs.redditmedia.com https://*.b.thumbs.redditmedia.com https://*.c.thumbs.redditmedia.com https://*.d.thumbs.redditmedia.com https://*.e.thumbs.redditmedia.com https://*.f.thumbs.redditmedia.com https://*.g.thumbs.redditmedia.com https://*.h.thumbs.redditmedia.com https://*.i.thumbs.redditmedia.com https://*.j.thumbs.redditmedia.com https://*.k.thumbs.redditmedia.com https://*.l.thumbs.redditmedia.com https://*.m.thumbs.redditmedia.com https://*.n.thumbs.redditmedia.com https://*.o.thumbs.redditmedia.com https://*.p.thumbs.redditmedia.com https://*.q.thumbs.redditmedia.com https://*.r.thumbs.redditmedia.com https://*.s.thumbs.redditmedia.com https://*.t.thumbs.redditmedia.com https://*.u.thumbs.redditmedia.com https://*.v.thumbs.redditmedia.com https://*.w.thumbs.redditmedia.com https://*.x.thumbs.redditmedia.com https://*.y.thumbs.redditmedia.com https://*.z.thumbs.redditmedia.com",
+      "connect-src 'self' https://*.supabase.co https://*.stripe.com https://*.sentry.io https://*.googleapis.com https://*.gstatic.com https://*.google-analytics.com https://*.doubleclick.net https://*.googlesyndication.com https://*.googleadservices.com https://*.facebook.net https://*.facebook.com https://*.twitter.com https://*.twimg.com https://*.linkedin.com https://*.hotjar.com https://*.mixpanel.com https://*.amplitude.com https://*.segment.com https://*.heap.io https://*.fullstory.com https://*.logrocket.com https://*.datadoghq.com https://*.cloudflare.com https://*.jsdelivr.net https://*.unpkg.com https://*.cdnjs.cloudflare.com https://*.bootstrapcdn.com https://*.fontawesome.com https://*.jquery.com https://*.microsoft.com https://*.office.com https://*.live.com https://*.bing.com https://*.yahoo.com https://*.yandex.com https://*.baidu.com https://*.qq.com https://*.wechat.com https://*.alipay.com https://*.taobao.com https://*.tmall.com https://*.jd.com https://*.amazon.com https://*.ebay.com https://*.paypal.com https://*.square.com https://*.shopify.com https://*.woocommerce.com https://*.magento.com https://*.prestashop.com https://*.opencart.com https://*.zendesk.com https://*.freshdesk.com https://*.helpscout.com https://*.intercom.com https://*.drift.com https://*.crisp.chat https://*.tawk.to https://*.livechat.com https://*.zopim.com https://*.olark.com https://*.tidio.com https://*.chatwoot.com https://*.rocket.chat https://*.discord.com https://*.slack.com https://*.teams.microsoft.com https://*.zoom.us https://*.gotomeeting.com https://*.webex.com https://*.bluejeans.com https://*.skype.com https://*.whatsapp.com https://*.telegram.org https://*.signal.org https://*.wire.com https://*.threema.ch https://*.session.org https://*.briarproject.org https://*.element.io https://*.matrix.org https://*.riot.im https://*.jitsi.org https://*.meet.jit.si https://*.bigbluebutton.org https://*.openmeetings.apache.org https://*.etherpad.org https://*.hackmd.io https://*.notion.so https://*.atlassian.net https://*.jira.com https://*.confluence.com https://*.trello.com https://*.asana.com https://*.monday.com https://*.clickup.com https://*.wrike.com https://*.smartsheet.com https://*.airtable.com https://*.notion.so https://*.roamresearch.com https://*.obsidian.md https://*.logseq.com https://*.remnote.com https://*.roamresearch.com https://*.notion.so https://*.evernote.com https://*.onenote.com https://*.google.com https://*.microsoft.com https://*.apple.com https://*.amazon.com https://*.netflix.com https://*.spotify.com https://*.youtube.com https://*.vimeo.com https://*.dailymotion.com https://*.twitch.tv https://*.instagram.com https://*.tiktok.com https://*.snapchat.com https://*.pinterest.com https://*.reddit.com https://*.hackernews.com https://*.producthunt.com https://*.indiehackers.com https://*.dev.to https://*.hashnode.dev https://*.medium.com https://*.substack.com https://*.ghost.org https://*.wordpress.com https://*.wix.com https://*.squarespace.com https://*.webflow.com https://*.framer.com https://*.figma.com https://*.sketch.com https://*.invisionapp.com https://*.marvelapp.com https://*.principleformac.com https://*.protopie.io https://*.flinto.com https://*.origami.studio https://*.framer.com https://*.webflow.com https://*.bubble.io https://*.glideapps.com https://*.adalo.com https://*.thunkable.com https://*.appgyver.com https://*.outsystems.com https://*.mendix.com https://*.powerapps.microsoft.com https://*.salesforce.com https://*.hubspot.com https://*.marketo.com https://*.pardot.com https://*.mailchimp.com https://*.constantcontact.com https://*.campaignmonitor.com https://*.sendgrid.com https://*.mailgun.com https://*.postmarkapp.com https://*.amazonses.com https://*.sendinblue.com https://*.convertkit.com https://*.drip.com https://*.klaviyo.com https://*.omnisend.com https://*.getresponse.com https://*.aweber.com https://*.infusionsoft.com https://*.keap.com https://*.activecampaign.com https://*.ontraport.com https://*.clickfunnels.com https://*.kajabi.com https://*.teachable.com https://*.thinkific.com https://*.udemy.com https://*.coursera.org https://*.edx.org https://*.khanacademy.org https://*.duolingo.com https://*.memrise.com https://*.babbel.com https://*.rosettastone.com https://*.busuu.com https://*.lingoda.com https://*.italki.com https://*.preply.com https://*.cambly.com https://*.vipkid.com https://*.daojiao.com https://*.51talk.com https://*.vipabc.com https://*.ef.com https://*.berlitz.com https://*.wallstreetenglish.com https://*.englishfirst.com https://*.englishcentral.com https://*.fluentu.com https://*.hellotalk.com https://*.tandem.net https://*.speaky.com https://*.conversationexchange.com https://*.mylanguageexchange.com https://*.italki.com https://*.preply.com https://*.cambly.com https://*.vipkid.com https://*.daojiao.com https://*.51talk.com https://*.vipabc.com https://*.ef.com https://*.berlitz.com https://*.wallstreetenglish.com https://*.englishfirst.com https://*.englishcentral.com https://*.fluentu.com https://*.hellotalk.com https://*.tandem.net https://*.speaky.com https://*.conversationexchange.com https://*.mylanguageexchange.com",
+      "object-src 'none'",
+      "base-uri 'self'",
+      "frame-src 'self' https://*.stripe.com https://*.paypal.com https://*.square.com https://*.shopify.com https://*.woocommerce.com https://*.magento.com https://*.prestashop.com https://*.opencart.com https://*.zendesk.com https://*.freshdesk.com https://*.helpscout.com https://*.intercom.com https://*.drift.com https://*.crisp.chat https://*.tawk.to https://*.livechat.com https://*.zopim.com https://*.olark.com https://*.tidio.com https://*.chatwoot.com https://*.rocket.chat https://*.discord.com https://*.slack.com https://*.teams.microsoft.com https://*.zoom.us https://*.gotomeeting.com https://*.webex.com https://*.bluejeans.com https://*.skype.com https://*.whatsapp.com https://*.telegram.org https://*.signal.org https://*.wire.com https://*.threema.ch https://*.session.org https://*.briarproject.org https://*.element.io https://*.matrix.org https://*.riot.im https://*.jitsi.org https://*.meet.jit.si https://*.bigbluebutton.org https://*.openmeetings.apache.org https://*.etherpad.org https://*.hackmd.io https://*.notion.so https://*.atlassian.net https://*.jira.com https://*.confluence.com https://*.trello.com https://*.asana.com https://*.monday.com https://*.clickup.com https://*.wrike.com https://*.smartsheet.com https://*.airtable.com https://*.notion.so https://*.roamresearch.com https://*.obsidian.md https://*.logseq.com https://*.remnote.com https://*.roamresearch.com https://*.notion.so https://*.evernote.com https://*.onenote.com https://*.google.com https://*.microsoft.com https://*.apple.com https://*.amazon.com https://*.netflix.com https://*.spotify.com https://*.youtube.com https://*.vimeo.com https://*.dailymotion.com https://*.twitch.tv https://*.instagram.com https://*.tiktok.com https://*.snapchat.com https://*.pinterest.com https://*.reddit.com https://*.hackernews.com https://*.producthunt.com https://*.indiehackers.com https://*.dev.to https://*.hashnode.dev https://*.medium.com https://*.substack.com https://*.ghost.org https://*.wordpress.com https://*.wix.com https://*.squarespace.com https://*.webflow.com https://*.framer.com https://*.figma.com https://*.sketch.com https://*.invisionapp.com https://*.marvelapp.com https://*.principleformac.com https://*.protopie.io https://*.flinto.com https://*.origami.studio https://*.framer.com https://*.webflow.com https://*.bubble.io https://*.glideapps.com https://*.adalo.com https://*.thunkable.com https://*.appgyver.com https://*.outsystems.com https://*.mendix.com https://*.powerapps.microsoft.com https://*.salesforce.com https://*.hubspot.com https://*.marketo.com https://*.pardot.com https://*.mailchimp.com https://*.constantcontact.com https://*.campaignmonitor.com https://*.sendgrid.com https://*.mailgun.com https://*.postmarkapp.com https://*.amazonses.com https://*.sendinblue.com https://*.convertkit.com https://*.drip.com https://*.klaviyo.com https://*.omnisend.com https://*.getresponse.com https://*.aweber.com https://*.infusionsoft.com https://*.keap.com https://*.activecampaign.com https://*.ontraport.com https://*.clickfunnels.com https://*.kajabi.com https://*.teachable.com https://*.thinkific.com https://*.udemy.com https://*.coursera.org https://*.edx.org https://*.khanacademy.org https://*.duolingo.com https://*.memrise.com https://*.babbel.com https://*.rosettastone.com https://*.busuu.com https://*.lingoda.com https://*.italki.com https://*.preply.com https://*.cambly.com https://*.vipkid.com https://*.daojiao.com https://*.51talk.com https://*.vipabc.com https://*.ef.com https://*.berlitz.com https://*.wallstreetenglish.com https://*.englishfirst.com https://*.englishcentral.com https://*.fluentu.com https://*.hellotalk.com https://*.tandem.net https://*.speaky.com https://*.conversationexchange.com https://*.mylanguageexchange.com"
+    ].join('; '),
     // Add error handling for Netlify
     ...(isNetlify && {
       // For Netlify, use more conservative settings
@@ -46,7 +127,7 @@ const nextConfig = {
     } : false,
     // Remove React DevTools in production
     reactRemoveProperties: process.env.NODE_ENV === 'production' ? { properties: ['data-testid'] } : false,
-    // Enable SWC minification optimizations
+    // Disable SWC minification to prevent CSS parsing errors
     styledComponents: false, // Disable if not using styled-components
   },
 
@@ -151,6 +232,13 @@ const nextConfig = {
     '@reown/appkit-ui',
     '@reown/appkit-wallet',
     '@reown/appkit-utils',
+    '@lit/reactive-element',
+    'lit',
+    '@lit-labs/ssr-dom-shim',
+    'lit-element',
+    'lit-html',
+    'big.js',
+    'bs58',
     'ethers',
     'viem',
     '@wagmi/core',
@@ -211,9 +299,96 @@ const nextConfig = {
     'ajv-keywords',
     '@ungap/structured-clone',
     'axios-retry',
+    '@reown/appkit',
+    '@reown/appkit-adapter-ethers',
+    '@reown/appkit-scaffold-ui',
+    '@noble/hashes',
+    '@coinbase/wallet-sdk',
   ],
 
   webpack: (config, { dev, isServer, webpack }) => {
+    // Use the 'require' from the top of the file, do not redeclare it here
+    
+    // Skip CSS processing for static directories
+    config.module.rules.forEach(rule => {
+      if (rule.test && rule.test.toString().includes('css')) {
+        if (!rule.exclude) {
+          rule.exclude = [];
+        }
+        rule.exclude.push(/static\/css/);
+      }
+    });
+
+    // Externalize problematic modules
+    config.externals = config.externals || [];
+    config.externals.push({
+      '@reown/appkit/react': 'commonjs @reown/appkit/react',
+      '@reown/appkit/networks': 'commonjs @reown/appkit/networks',
+      'lit': 'commonjs lit'
+    });
+
+    // Externalize node: modules to prevent UnhandledSchemeError
+    const nodeModules = [
+      'node:child_process',
+      'node:fs',
+      'node:http',
+      'node:https',
+      'node:diagnostics_channel'
+    ];
+    nodeModules.forEach(module => {
+      config.externals.push({
+        [module]: `commonjs ${module}`
+      });
+    });
+
+    // Simplified webpack configuration to bypass CSS issues
+    
+    // Disable CSS minimization to prevent syntax errors
+    if (config.optimization && config.optimization.minimizer) {
+      config.optimization.minimizer = config.optimization.minimizer.filter(
+        minimizer => !minimizer.constructor.name.includes('CssMinimizer')
+      );
+    }
+    if (config.optimization) {
+      config.optimization.minimize = false;
+      config.optimization.minimizer = [];
+    }
+    
+    // Prevent Node.js core modules from being polyfilled in the client bundle
+    if (!isServer) {
+      config.resolve.fallback = {
+        ...config.resolve.fallback,
+        http: false,
+        https: false,
+        zlib: false,
+        stream: false,
+        buffer: false,
+        util: false,
+        process: false,
+        path: false,
+        os: false,
+        fs: false,
+        child_process: false,
+        net: false,
+        tls: false,
+        crypto: false,
+        assert: false,
+        url: false,
+        querystring: false,
+        constants: false,
+        domain: false,
+        events: false,
+        punycode: false,
+        readline: false,
+        string_decoder: false,
+        sys: false,
+        timers: false,
+        tty: false,
+        vm: false,
+        worker_threads: false,
+      };
+    }
+    
     // Fix EventEmitter memory leak by increasing max listeners
     // events.EventEmitter.defaultMaxListeners = 20; // Will be set by build script
     
@@ -225,8 +400,9 @@ const nextConfig = {
         
         // Create comprehensive polyfill array
         const polyfills = [
-          './src/utils/serverless-polyfill.ts',  // New serverless polyfill
-          './src/utils/env-polyfill.ts'         // Existing env polyfill
+          './src/utils/immediate-process-polyfill.ts',  // Immediate process polyfill
+          './src/utils/serverless-polyfill.ts',        // Serverless polyfill
+          './src/utils/env-polyfill.ts'                // Existing env polyfill
         ];
         
         // Add polyfills to every entry point
@@ -287,8 +463,9 @@ const nextConfig = {
         },
       };
 
-      // SIMPLIFIED DefinePlugin 
+      // CRITICAL: Enhanced process polyfill configuration
       config.plugins.push(
+        // DefinePlugin for environment variables and TypeScript helpers
         new webpack.DefinePlugin({
           'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV || 'production'),
           'process.env': JSON.stringify({
@@ -296,7 +473,143 @@ const nextConfig = {
             NEXT_PUBLIC_APP_URL: process.env.NEXT_PUBLIC_APP_URL || '',
             NEXT_PUBLIC_SUPABASE_URL: process.env.NEXT_PUBLIC_SUPABASE_URL || '',
             NEXT_PUBLIC_SUPABASE_ANON_KEY: process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || '',
+            NEXT_PUBLIC_SENTRY_DSN: process.env.NEXT_PUBLIC_SENTRY_DSN || '',
+            NEXT_PUBLIC_REOWN_PROJECT_ID: process.env.NEXT_PUBLIC_REOWN_PROJECT_ID || '',
+            NEXT_PUBLIC_DD_CLIENT_TOKEN: process.env.NEXT_PUBLIC_DD_CLIENT_TOKEN || '',
+            NEXT_PUBLIC_LOGROCKET_ID: process.env.NEXT_PUBLIC_LOGROCKET_ID || '',
+            NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY: process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY || '',
+            NEXT_PUBLIC_STRIPE_TEST_MODE: process.env.NEXT_PUBLIC_STRIPE_TEST_MODE || '',
+            NEXT_PUBLIC_INTERCOM_APP_ID: process.env.NEXT_PUBLIC_INTERCOM_APP_ID || '',
+            NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME: process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME || '',
+            NEXT_PUBLIC_API_URL: process.env.NEXT_PUBLIC_API_URL || '',
+            NEXT_PUBLIC_STATUS_PAGE_URL: process.env.NEXT_PUBLIC_STATUS_PAGE_URL || '',
+            NEXT_PUBLIC_SITE_URL: process.env.NEXT_PUBLIC_SITE_URL || '',
+            NEXT_PUBLIC_APP_ENV: process.env.NEXT_PUBLIC_APP_ENV || '',
+            NEXT_PUBLIC_APP_VERSION: process.env.NEXT_PUBLIC_APP_VERSION || '',
+            NEXT_PUBLIC_BUILD_TIME: process.env.NEXT_PUBLIC_BUILD_TIME || '',
+            NEXT_PUBLIC_SOCIAL_TWITTER_URL: process.env.NEXT_PUBLIC_SOCIAL_TWITTER_URL || '',
+            NEXT_PUBLIC_SOCIAL_LINKEDIN_URL: process.env.NEXT_PUBLIC_SOCIAL_LINKEDIN_URL || '',
+            NEXT_PUBLIC_SOCIAL_FACEBOOK_URL: process.env.NEXT_PUBLIC_SOCIAL_FACEBOOK_URL || '',
+            NEXT_PUBLIC_SOCIAL_INSTAGRAM_URL: process.env.NEXT_PUBLIC_SOCIAL_INSTAGRAM_URL || '',
+            NEXT_PUBLIC_SOCIAL_GITHUB_URL: process.env.NEXT_PUBLIC_SOCIAL_GITHUB_URL || '',
           }),
+          // TypeScript helpers
+          '__extends': `(function(d, b) { 
+            if (typeof b !== "function" && b !== null) 
+              throw new TypeError("Class extends value " + String(b) + " is not a constructor or null"); 
+            function __constructor() { this.constructor = d; } 
+            d.prototype = b === null ? Object.create(b) : (__constructor.prototype = b.prototype, new __constructor()); 
+          })`,
+          '__assign': `(Object.assign || function(t) { 
+            for (var i = 1; i < arguments.length; i++) { 
+              var s = arguments[i]; 
+              for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p)) t[p] = s[p]; 
+            } 
+            return t; 
+          })`,
+          '__rest': `(function(s, e) { 
+            var t = {}; 
+            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0) t[p] = s[p]; 
+            if (s != null && typeof Object.getOwnPropertySymbols === "function") { 
+              var symbols = Object.getOwnPropertySymbols(s); 
+              for (var i = 0; i < symbols.length; i++) { 
+                var symbol = symbols[i]; 
+                if (symbol && e.indexOf(symbol) < 0 && Object.prototype.propertyIsEnumerable.call(s, symbol)) { 
+                  t[symbol] = s[symbol]; 
+                } 
+              } 
+            } 
+            return t; 
+          })`,
+          '__decorate': `(function(decorators, target, key, desc) { 
+            var c = arguments.length; 
+            var r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc; 
+            var d; 
+            if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc); 
+            else for (var i = decorators.length - 1; i >= 0; i--) if ((d = decorators[i])) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r; 
+            return c > 3 && r && Object.defineProperty(target, key, r), r; 
+          })`,
+          '__awaiter': `(function(thisArg, _arguments, P, generator) { 
+            function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); } 
+            return new (P || (P = Promise))(function (resolve, reject) { 
+              function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } } 
+              function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } } 
+              function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); } 
+              step((generator = generator.apply(thisArg, _arguments || [])).next()); 
+            }); 
+          })`,
+          // HTTP/HTTPS polyfills to prevent "http is not defined" errors
+          'http': `({ 
+            request: function() { throw new Error('http.request is not available in the browser'); },
+            get: function() { throw new Error('http.get is not available in the browser'); }
+          })`,
+          'https': `({ 
+            request: function() { throw new Error('https.request is not available in the browser'); },
+            get: function() { throw new Error('https.get is not available in the browser'); }
+          })`,
+        }),
+        // ProvidePlugin to ensure process, Buffer, and stream are always available (only for client-side)
+        new webpack.ProvidePlugin({
+          process: path.resolve(__dirname, 'src/utils/immediate-process-polyfill.ts'),
+          Buffer: ['buffer', 'Buffer'],
+          stream: path.resolve(__dirname, 'src/utils/stream-polyfill.ts'),
+        }),
+        // BannerPlugin to inject polyfills at the very beginning of every chunk
+        new webpack.BannerPlugin({
+          banner: `/* EMERGENCY POLYFILL INJECTION */
+(function() {
+  'use strict';
+  var g = typeof globalThis !== 'undefined' ? globalThis : 
+          typeof global !== 'undefined' ? global : 
+          typeof window !== 'undefined' ? window : 
+          typeof self !== 'undefined' ? self : {};
+  
+  // TypeScript helpers
+  var e = function(d, b) { 
+    if (typeof b !== "function" && b !== null) 
+      throw new TypeError("Class extends value " + String(b) + " is not a constructor or null"); 
+    function __constructor() { this.constructor = d; } 
+    d.prototype = b === null ? Object.create(b) : (__constructor.prototype = b.prototype, new __constructor()); 
+  };
+  
+  var a = Object.assign || function(t) { 
+    for (var i = 1; i < arguments.length; i++) { 
+      var s = arguments[i]; 
+      for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p)) t[p] = s[p]; 
+    } 
+    return t; 
+  };
+  
+  // Process polyfill
+  var p = { env: { NODE_ENV: 'production' }, browser: true };
+  
+  // HTTP/HTTPS polyfills
+  var h = { 
+    request: function() { throw new Error('http.request is not available in the browser'); },
+    get: function() { throw new Error('http.get is not available in the browser'); }
+  };
+  
+  var s = { 
+    request: function() { throw new Error('https.request is not available in the browser'); },
+    get: function() { throw new Error('https.get is not available in the browser'); }
+  };
+  
+  // Inject into all possible global contexts
+  var contexts = [g, typeof window !== 'undefined' ? window : null, typeof global !== 'undefined' ? global : null, typeof self !== 'undefined' ? self : null];
+  for (var i = 0; i < contexts.length; i++) {
+    var ctx = contexts[i];
+    if (ctx) {
+      ctx.__extends = ctx.__extends || e;
+      ctx.__assign = ctx.__assign || a;
+      ctx.process = ctx.process || p;
+      ctx.http = ctx.http || h;
+      ctx.https = ctx.https || s;
+    }
+  }
+})();`,
+          test: /\.js$/,
+          entryOnly: false,
+          raw: true
         })
       );
     }
@@ -345,37 +658,23 @@ const nextConfig = {
       });
     }
 
-    // Smart Sentry detection: Disable automatically if would cause build issues
-    const shouldDisableSentry = process.env.SKIP_SENTRY_BUILD === 'true' || 
-                                process.env.CI === 'true' ||
-                                process.env.NODE_ENV === 'production' ||
-                                !process.env.SENTRY_DSN ||
-                                process.env.SENTRY_DSN?.includes('dummy') ||
-                                process.env.SENTRY_DSN?.includes('placeholder');
-    
-    if (shouldDisableSentry) {
-      console.log('🚫 Sentry disabled - using mock implementation (Smart Detection)');
-      
-      // Use webpack aliases to completely replace all Sentry imports with mocks
-      config.resolve.alias = {
-        ...config.resolve.alias,
-        '@sentry/nextjs': path.resolve(__dirname, 'src/utils/sentry-mock.ts'),
-        '@sentry/node': path.resolve(__dirname, 'src/utils/sentry-mock.ts'),
-        '@sentry/tracing': path.resolve(__dirname, 'src/utils/sentry-mock.ts'),
-        '@sentry/react': path.resolve(__dirname, 'src/utils/sentry-mock.ts'),
-        '@sentry/browser': path.resolve(__dirname, 'src/utils/sentry-mock.ts'),
-      };
+    // Always use real Sentry SDK unless in CI or SKIP_SENTRY_BUILD is set
+    if (!(process.env.SKIP_SENTRY_BUILD === 'true' || process.env.CI === 'true')) {
+      if (config.resolve.alias) {
+        delete config.resolve.alias['@sentry/nextjs'];
+        delete config.resolve.alias['@sentry/node'];
+        delete config.resolve.alias['@sentry/tracing'];
+        delete config.resolve.alias['@sentry/react'];
+        delete config.resolve.alias['@sentry/browser'];
+        delete config.resolve.alias['@sentry/node-core'];
+      }
     }
 
-    // Completely exclude dd-trace during CI builds to prevent native module issues  
-    if (process.env.SKIP_DATADOG === 'true' || process.env.CI === 'true') {
-      console.log('🚫 DD-Trace disabled for CI build - using mock implementation');
-      
-      // Use webpack alias to replace dd-trace with mock implementation
-      config.resolve.alias = {
-        ...config.resolve.alias,
-        'dd-trace': path.resolve(__dirname, 'src/utils/dd-trace-mock.ts'),
-      };
+    // Only mock dd-trace in CI or if SKIP_DATADOG is set
+    if (!(process.env.SKIP_DATADOG === 'true' || process.env.CI === 'true')) {
+      if (config.resolve.alias) {
+        delete config.resolve.alias['dd-trace'];
+      }
     }
 
     // PHASE 3: Advanced Performance Optimizations and Error Handling
@@ -445,9 +744,62 @@ const nextConfig = {
       });
       console.log('🚫 Native modules externalized for server build:', nativeModules.length);
     } else {
-      // For client-side, bundle problematic UI libraries instead of externalizing
+      // For client-side, completely exclude libp2p modules to prevent Z_SYNC_FLUSH errors
       config.externals = config.externals || [];
-      // Don't externalize UI libraries on client side
+      
+      // Add libp2p modules as externals for client-side to prevent bundling
+      const clientExternals = [
+        'libp2p',
+        '@libp2p/identify',
+        '@libp2p/tcp',
+        '@chainsafe/libp2p-noise',
+        '@chainsafe/libp2p-gossipsub',
+        '@chainsafe/libp2p-yamux',
+        '@orbitdb/core',
+        'helia',
+        '@helia/json',
+        'blockstore-core',
+        'datastore-core',
+        'multiformats'
+      ];
+      
+      clientExternals.forEach(module => {
+        config.externals.push({
+          [module]: `commonjs ${module}`
+        });
+      });
+      
+      // Fix @reown/appkit and Lit dependencies to prevent dynamic import errors
+      const reownModules = [
+        '@reown/appkit',
+        '@reown/appkit-adapter-ethers',
+        '@reown/appkit-common',
+        '@reown/appkit-controllers',
+        '@reown/appkit-pay',
+        '@reown/appkit-ui',
+        '@reown/appkit-wallet',
+        '@reown/appkit-utils',
+        '@lit/reactive-element',
+        '@lit/reactive-element/decorators/custom-element.js',
+        '@lit/reactive-element/decorators/event-options.js',
+        '@lit/reactive-element/decorators/property.js',
+        '@lit/reactive-element/decorators/query-all.js',
+        '@lit-labs/ssr-dom-shim',
+        'lit',
+        'lit-element/lit-element.js',
+        'lit-html',
+        'big.js',
+        'bs58'
+      ];
+      
+      reownModules.forEach(module => {
+        config.externals.push({
+          [module]: `commonjs ${module}`
+        });
+      });
+      
+      console.log('🚫 Libp2p modules externalized for client build to prevent Z_SYNC_FLUSH errors');
+      console.log('🚫 @reown/appkit and Lit modules externalized as ESM to prevent dynamic import errors');
     }
 
     // Fix webpack cache configuration to prevent build errors and warnings
@@ -457,13 +809,6 @@ const nextConfig = {
           type: 'memory',
           maxGenerations: dev ? 1 : 5,
           // Disable cacheUnaffected to avoid Webpack usedExports conflict
-          cacheUnaffected: false,
-        };
-      } else {
-        // Ensure memory cache is properly configured
-        config.cache = {
-          type: 'memory',
-          maxGenerations: dev ? 1 : 5,
           cacheUnaffected: false,
         };
       }
@@ -476,14 +821,14 @@ const nextConfig = {
     };
 
     // Add optimization to prevent temporal dead zone issues
-    if (!dev && isServer) {
-      config.optimization = {
-        ...config.optimization,
-        concatenateModules: false, // Disable module concatenation which can cause TDZ issues
-        minimize: false, // Disable minimization on server side to preserve variable names
-        mangleExports: false,
-      };
-    }
+    // if (!dev && isServer) {
+    //   config.optimization = {
+    //     ...config.optimization,
+    //     concatenateModules: false, // Disable module concatenation which can cause TDZ issues
+    //     minimize: false, // Disable minimization on server side to preserve variable names
+    //     mangleExports: false,
+    //   };
+    // }
 
     // Suppress warnings in both dev and production
     config.ignoreWarnings = [
@@ -507,7 +852,104 @@ const nextConfig = {
       /memory.*cache/i,
     ];
 
-
+    // Provide global polyfills for browser environment
+    config.plugins.push(
+      new webpack.ProvidePlugin({
+        process: 'process/browser',
+        Buffer: ['buffer', 'Buffer'],
+      })
+    );
+    
+    // CRITICAL: Ensure Buffer is available globally for all modules
+    config.plugins.push(
+      new webpack.DefinePlugin({
+        'global.Buffer': 'Buffer',
+        'globalThis.Buffer': 'Buffer',
+        'window.Buffer': 'Buffer',
+        'self.Buffer': 'Buffer',
+      })
+    );
+    
+    // CRITICAL: Add Buffer polyfill as webpack banner to ensure it loads first
+    config.plugins.push(
+      new webpack.BannerPlugin({
+        banner: `
+          // CRITICAL: Buffer polyfill - must be first
+          if (typeof Buffer === 'undefined') {
+            function BufferPolyfill(input, encoding, offset) {
+              if (typeof input === 'string') {
+                var encoder = new TextEncoder();
+                var bytes = encoder.encode(input);
+                return new Uint8Array(bytes);
+              } else if (input instanceof ArrayBuffer) {
+                return new Uint8Array(input);
+              } else if (Array.isArray(input)) {
+                return new Uint8Array(input);
+              } else if (input instanceof Uint8Array) {
+                return input;
+              } else {
+                return new Uint8Array(input || 0);
+              }
+            }
+            
+            BufferPolyfill.from = function(input, encoding) {
+              return new BufferPolyfill(input, encoding);
+            };
+            
+            BufferPolyfill.alloc = function(size, fill, encoding) {
+              var buffer = new BufferPolyfill(size);
+              if (fill !== undefined) {
+                if (typeof fill === 'string') {
+                  var encoder = new TextEncoder();
+                  var fillBytes = encoder.encode(fill);
+                  buffer.set(fillBytes, 0);
+                } else {
+                  buffer.fill(fill);
+                }
+              }
+              return buffer;
+            };
+            
+            BufferPolyfill.allocUnsafe = function(size) {
+              return new BufferPolyfill(size);
+            };
+            
+            BufferPolyfill.isBuffer = function(obj) {
+              return obj instanceof Uint8Array;
+            };
+            
+            // Add toString method to Uint8Array prototype for Buffer compatibility
+            if (!Uint8Array.prototype.toString) {
+              Uint8Array.prototype.toString = function(encoding, start, end) {
+                var decoder = new TextDecoder(encoding || 'utf8');
+                var slice = this.slice(start, end);
+                return decoder.decode(slice);
+              };
+            }
+            
+            // Add toJSON method to Uint8Array prototype for Buffer compatibility
+            if (!Uint8Array.prototype.toJSON) {
+              Uint8Array.prototype.toJSON = function() {
+                return {
+                  type: 'Buffer',
+                  data: Array.from(this)
+                };
+              };
+            }
+            
+            // Define Buffer in global scope
+            if (typeof globalThis !== 'undefined') globalThis.Buffer = BufferPolyfill;
+            if (typeof global !== 'undefined') global.Buffer = BufferPolyfill;
+            if (typeof window !== 'undefined') window.Buffer = BufferPolyfill;
+            if (typeof self !== 'undefined') self.Buffer = BufferPolyfill;
+            if (typeof this !== 'undefined') this.Buffer = BufferPolyfill;
+            if (typeof module !== 'undefined' && module.exports) module.exports.Buffer = BufferPolyfill;
+          }
+        `,
+        raw: true,
+        entryOnly: false,
+      })
+    );
 
     // PHASE 2: Enhanced Bundle Splitting for Performance Optimization
     if (!isServer) {
@@ -677,6 +1119,8 @@ const nextConfig = {
         fullySpecified: false,
       },
     });
+    
+    // CRITICAL: Buffer fallback is now handled in the main fallback configuration below
 
     // COMPREHENSIVE ESM FIX for Next.js 15 + React 19
     // Handle formik and lodash ESM issues with multiple strategies
@@ -694,7 +1138,7 @@ const nextConfig = {
 
     // Add webpack rules to force ESM handling
     config.module.rules.push({
-      test: /node_modules\/(formik|date-fns|lodash|react-day-picker)/,
+      test: /node_modules\/(formik|date-fns|lodash|react-day-picker|@reown|@lit|lit)/,
       type: 'javascript/auto',
       resolve: {
         fullySpecified: false,
@@ -728,6 +1172,9 @@ const nextConfig = {
     // Add polyfills for Node.js APIs
     config.resolve.fallback = {
       ...config.resolve.fallback,
+      buffer: 'buffer', // Ensure Buffer polyfill is available
+      stream: path.resolve(__dirname, 'src/utils/stream-polyfill.ts'), // Custom stream polyfill
+      events: path.resolve(__dirname, 'src/utils/events-polyfill.ts'), // Events polyfill for client-side
       fs: false,
       net: false,
       tls: false,
@@ -741,27 +1188,55 @@ const nextConfig = {
       https: false,
       os: false,
       path: false,
-      stream: false,
       util: false,
       zlib: false,
       url: false,
       // Handle native modules
       'dd-trace': false,
-      // Handle node: imports
-      'node:http': false,
-      'node:https': false,
-      'node:fs': false,
-      'node:path': false,
-      'node:stream': false,
-      'node:util': false,
-      'node:crypto': false,
-      'node:os': false,
-      'node:url': false,
-      'node:worker_threads': false,
-      'node:async_hooks': false,
-      'node:child_process': false,
-      'node:diagnostics_channel': false,
+      // Remove all node: protocol module assignments
     };
+
+    // Externalize compression libraries to prevent Z_SYNC_FLUSH errors
+    if (!isServer) {
+      config.externals = {
+        ...config.externals,
+        'pako': 'pako',
+        'zlib': 'zlib',
+        // Removed 'buffer': 'buffer' to allow Buffer polyfill to work
+        // Removed 'stream': 'stream' to allow stream polyfill to work
+        'util': 'util',
+        // Removed 'events': 'events' to prevent client-side errors
+
+        'assert': 'assert',
+        'constants': 'constants',
+        'path': 'path',
+        'fs': 'fs',
+        'os': 'os',
+        'crypto': 'crypto',
+        'http': 'http',
+        'https': 'https',
+        'url': 'url',
+        'querystring': 'querystring',
+        'punycode': 'punycode',
+        'string_decoder': 'string_decoder',
+        'timers': 'timers',
+        'tty': 'tty',
+        'vm': 'vm',
+        'zlib': 'zlib',
+      };
+    }
+
+    // Externalize @lit/reactive-element modules to prevent dynamic import errors
+    if (isServer) {
+      config.externals = config.externals || [];
+      config.externals.push({
+        '@lit/reactive-element': 'commonjs @lit/reactive-element',
+        '@lit/reactive-element/decorators/custom-element.js': 'commonjs @lit/reactive-element/decorators/custom-element.js',
+        '@lit/reactive-element/decorators/event-options.js': 'commonjs @lit/reactive-element/decorators/event-options.js',
+        '@lit/reactive-element/decorators/property.js': 'commonjs @lit/reactive-element/decorators/property.js',
+        '@lit/reactive-element/decorators/query-all.js': 'commonjs @lit/reactive-element/decorators/query-all.js',
+      });
+    }
 
     // Optimize bundle size
     if (!dev && !isServer) {
@@ -783,70 +1258,61 @@ const nextConfig = {
     }
 
     // Ensure consistent optimization settings in all environments
-  config.optimization = {
-    ...config.optimization,
-    // Explicitly disable usedExports to prevent cacheUnaffected conflicts
-    usedExports: false,
-  };
+    config.optimization = {
+      ...config.optimization,
+      // Explicitly disable usedExports to prevent cacheUnaffected conflicts
+      usedExports: false,
+    };
 
+    // Remove cacheUnaffected in case any plugin re-added it
+    if (config.cache && config.cache.cacheUnaffected !== undefined) {
+      delete config.cache.cacheUnaffected;
+    }
+    if (config.optimization && 'cacheUnaffected' in config.optimization) {
+      delete config.optimization.cacheUnaffected;
+    }
+    if (config.experiments && 'cacheUnaffected' in config.experiments) {
+      config.experiments.cacheUnaffected = false;
+    }
 
-  // Remove cacheUnaffected in case any plugin re-added it
-  if (config.cache && config.cache.cacheUnaffected !== undefined) {
-    delete config.cache.cacheUnaffected;
-  }
-  if (config.optimization && 'cacheUnaffected' in config.optimization) {
-    delete config.optimization.cacheUnaffected;
-  }
-  if (config.experiments && 'cacheUnaffected' in config.experiments) {
-    config.experiments.cacheUnaffected = false;
-  }
+    // Remove node: protocol module fallbacks and aliases
+    // Remove the nodeCoreModules array and its forEach logic for alias and fallback
+    // Only keep standard fallbacks and aliases, do not reference node: protocol modules anywhere.
+
+    // Add problematic ESM modules as externals for both server and client
+    const problematicESMModules = [
+      '@safe-global/safe-apps-sdk',
+      'eventemitter3',
+      'preact',
+      'preact/hooks',
+      'valtio/vanilla',
+    ];
+    if (Array.isArray(config.externals)) {
+      problematicESMModules.forEach(module => {
+        config.externals.push({
+          [module]: `commonjs ${module}`
+        });
+      });
+    } else if (typeof config.externals === 'object' && config.externals !== null) {
+      problematicESMModules.forEach(module => {
+        config.externals[module] = `commonjs ${module}`;
+      });
+    }
 
     return config;
   },
 
-  // Enhanced headers for security and performance
-  async headers() {
-    return [
-      {
-        source: '/(.*)',
-        headers: [
-          {
-            key: 'X-Frame-Options',
-            value: 'DENY',
-          },
-          {
-            key: 'X-Content-Type-Options',
-            value: 'nosniff',
-          },
-          {
-            key: 'Referrer-Policy',
-            value: 'origin-when-cross-origin',
-          },
-          {
-            key: 'Permissions-Policy',
-            value: 'camera=(), microphone=(), geolocation=()',
-          },
-        ],
-      },
-      {
-        source: '/api/(.*)',
-        headers: [
-          {
-            key: 'Cache-Control',
-            value: 'public, max-age=3600, s-maxage=3600',
-          },
-        ],
-      },
-      {
-        source: '/_next/static/(.*)',
-        headers: [
-          {
-            key: 'Cache-Control',
-            value: 'public, max-age=31536000, immutable',
-          },
-        ],
-      },
-    ];
+  // Note: headers, redirects, and rewrites don't work with output: 'export'
+  // These are handled by Netlify via _headers and _redirects files
+
+  // Skip TypeScript checking during build if SKIP_TYPE_CHECK is set
+  typescript: {
+    ignoreBuildErrors: false, // Reactivate TypeScript checking for better code quality
+  },
+  
+  // Skip ESLint during build for faster deployment  
+  eslint: {
+    ignoreDuringBuilds: false, // Reactivate ESLint for better code quality
   },
 
   // Enhanced redirects for better SEO
@@ -900,3 +1366,16 @@ if (nextConfig.experimental && 'esmExternals' in nextConfig.experimental) {
 }
 
 export default nextConfig;
+
+
+
+
+
+
+
+
+
+if (nextConfig.experimental && "esmExternals" in nextConfig.experimental) {
+  delete nextConfig.experimental.esmExternals;
+}
+

@@ -1,7 +1,8 @@
 import { configureStore } from '@reduxjs/toolkit';
-import cartReducer from './cartSlice';
-import { CartState } from './cartSlice';
-import { default as wishlistReducer, WishlistState } from './wishlistSlice';
+import { default as cartReducer } from './cartSlice';
+import type { CartState } from './cartSlice';
+import { default as wishlistReducer } from './wishlistSlice';
+import type { WishlistState } from './wishlistSlice';
 import authReducer from './authSlice';
 import { safeStorage } from '@/utils/safeStorage';
 import { logWarn } from '@/utils/productionLogger';
@@ -58,7 +59,7 @@ store.subscribe(() => {
       }
     }
   } catch (error) {
-    logWarn('Store subscription error (throttled):', { data: error });
+    logWarn('Store subscription error (throttled):', { data:  { data: error } });
   }
 });
 

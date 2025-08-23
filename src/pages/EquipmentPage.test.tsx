@@ -1,8 +1,8 @@
 import { describe, it, expect, vi, beforeEach } from 'vitest';
 import { http, HttpResponse } from 'msw';
 import { server } from '../mocks/server';
-import { toast } from '@/hooks/use-toast';
-import { fetchEquipment } from './EquipmentPage'; // Import the actual function
+import { toast } from '../../hooks/use-toast';
+import fetchEquipment from './EquipmentPage'; // Use default import if fetchEquipment is the default export
 
 // Mock the toast hook
 vi.mock('@/hooks/use-toast', () => ({
@@ -49,17 +49,22 @@ describe('fetchEquipment', () => {
     // Check specific parts of the error and toast
     try {
       await fetchEquipment();
-    } catch (error: any) {
-      expect(error.message).toBeDefined(); // Actual message can vary, just check it exists
-      expect(error.response).toBeDefined();
-      if (error.response) {
-        expect(error.response.data).toEqual(errorResponseData);
-        expect(error.response.status).toBe(500);
+    } catch (error) {
+      if (error && typeof error === 'object') {
+        const err = error as { message?: string; response?: { data?: unknown; status?: number } };
+        expect(err.message).toBeDefined();
+        expect(err.response).toBeDefined();
+        if (err.response) {
+          expect(err.response.data).toEqual(errorResponseData);
+          expect(err.response.status).toBe(500);
+        }
+        expect(toast).toHaveBeenCalledWith({
+          title: err.message,
+          variant: 'destructive',
+        });
+      } else {
+        throw error;
       }
-      expect(toast).toHaveBeenCalledWith({
-        title: error.message, // Use the actual error message passed to toast
-        variant: 'destructive',
-      });
     }
 
 
@@ -92,13 +97,18 @@ describe('fetchEquipment', () => {
 
     try {
       await fetchEquipment();
-    } catch (error: any) {
-      expect(error.message).toBe(networkErrorMessage); // Or similar, depending on environment
-      expect(error.response).toBeUndefined();
-      expect(toast).toHaveBeenCalledWith({
-        title: networkErrorMessage,
-        variant: 'destructive',
-      });
+    } catch (error) {
+      if (error && typeof error === 'object') {
+        const err = error as { message?: string; response?: unknown };
+        expect(err.message).toBe(networkErrorMessage);
+        expect(err.response).toBeUndefined();
+        expect(toast).toHaveBeenCalledWith({
+          title: networkErrorMessage,
+          variant: 'destructive',
+        });
+      } else {
+        throw error;
+      }
     }
 
     expect(consoleErrorSpy).toHaveBeenCalledWith("Raw error object in fetchEquipment:", expect.any(Error));
@@ -146,17 +156,16 @@ describe('fetchEquipment', () => {
 
     try {
       await fetchEquipment();
-    } catch (e: any) {
-      // We expect toast to be called with the default if e.message was empty.
-      // In this MSW setup, e.message will likely be "Request failed with status code 500".
-      // To test the fallback, we'd need to ensure `e.message` is empty.
-      // This test case might need more direct mocking of the error object if the goal is to specifically
-      // test the `|| 'Failed to fetch equipment'` part.
-      // For now, let's assume the message exists.
-       expect(toast).toHaveBeenCalledWith({
-        title: e.message, // This will be "Request failed with status code 500"
-        variant: 'destructive',
-      });
+    } catch (e) {
+      if (e && typeof e === 'object') {
+        const err = e as { message?: string };
+        expect(toast).toHaveBeenCalledWith({
+          title: err.message,
+          variant: 'destructive',
+        });
+      } else {
+        throw e;
+      }
     }
 
     // If we wanted to test the fallback message, the assertion would be:

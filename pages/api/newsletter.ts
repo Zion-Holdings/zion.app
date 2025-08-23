@@ -12,13 +12,13 @@ export default async function handler(
   res: NextApiResponse<ResponseData>
 ) {
   // Only allow POST requests
-  if (req.method !== 'POST') {
+  if (req['method'] !== 'POST') {
     res.setHeader('Allow', 'POST');
-    return res.status(405).json({ error: `Method ${req.method} Not Allowed` });
+    return res.status(405).json({ error: `Method ${req['method']} Not Allowed` });
   }
 
   try {
-    const { email } = req.body as { email?: unknown };
+    const { email } = req['body'] as { email?: unknown };
 
     // Validate email
     if (!email || typeof email !== 'string') {

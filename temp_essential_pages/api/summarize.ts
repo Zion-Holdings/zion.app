@@ -7,7 +7,7 @@ async function handler(req: NextApiRequest, res: NextApiResponse) {
     return res.status(405).end(`Method ${req.method} Not Allowed`);
   }
 
-  const { text = '' } = req.body || {};
+  const { text = '' } = req['body'] || {};
   const summary = text.split('.').slice(0, 2).join('.').trim();
 
   return res.status(200).json({ summary });

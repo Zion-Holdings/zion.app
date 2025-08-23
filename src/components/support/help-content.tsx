@@ -1,6 +1,6 @@
 
 import React from "react";
-import { HelpCategory } from "./types";
+import type { HelpCategory } from "./types";
 import { HelpCircle, CreditCard, Users, Calendar, Briefcase } from 'lucide-react';
 
 

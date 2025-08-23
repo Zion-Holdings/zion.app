@@ -55,16 +55,20 @@ export function RouteChangeHandler({
       logWarn('Route change error occurred');
     };
 
-    router.events.on('routeChangeStart', handleRouteChangeStart);
-    router.events.on('routeChangeComplete', handleRouteChangeComplete);
-    router.events.on('routeChangeError', handleRouteChangeError);
+    // Only add event listeners if router.events exists
+    if (router.events) {
+      router.events.on('routeChangeStart', handleRouteChangeStart);
+      router.events.on('routeChangeComplete', handleRouteChangeComplete);
+      router.events.on('routeChangeError', handleRouteChangeError);
 
-    return () => {
-      router.events.off('routeChangeStart', handleRouteChangeStart);
-      router.events.off('routeChangeComplete', handleRouteChangeComplete);
-      router.events.off('routeChangeError', handleRouteChangeError);
-    };
-  }, [router.events, onRouteChange, resetScrollOnChange, forceRerender]);
+      return () => {
+        router.events.off('routeChangeStart', handleRouteChangeStart);
+        router.events.off('routeChangeComplete', handleRouteChangeComplete);
+        router.events.off('routeChangeError', handleRouteChangeError);
+      };
+    }
+    return undefined;
+  }, [onRouteChange, resetScrollOnChange, forceRerender]); // Removed router.events from dependencies
 
   return null;
 } 

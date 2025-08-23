@@ -1,7 +1,8 @@
 // pages/governance/index.tsx
 import React, { useEffect, useState, useMemo } from 'react';
 import Link from 'next/link';
-import ProposalCard, { Proposal } from '@/components/governance/ProposalCard'; // Adjust path if needed
+import ProposalCard from '@/components/governance/ProposalCard'; // Adjust path if needed
+import type { Proposal } from '@/components/governance/ProposalCard';
 // import MainLayout from '@/components/layout/MainLayout'; // If exists
 import { Button } from '@/components/ui/button'; // Adjust path
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select'; // Adjust path

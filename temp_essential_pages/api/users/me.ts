@@ -23,7 +23,7 @@ function handler(req: Req, res: JsonRes) {
   }
 
   if (req.method === 'PUT') {
-    mockUser = { ...mockUser, ...req.body };
+    mockUser = { ...mockUser, ...req['body'] };
     users[mockUser.id] = mockUser;
     res.status(200).json(mockUser);
     return;

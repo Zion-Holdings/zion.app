@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { useRouter } from 'next/router'; // Changed from useParams
 import Skeleton from 'react-loading-skeleton';
-import 'react-loading-skeleton/dist/skeleton.css';
 import { Alert } from '@/components/ui/alert';
 import PostCard from '@/components/community/PostCard';
 import Empty from '@/components/community/Empty';

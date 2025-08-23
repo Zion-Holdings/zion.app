@@ -20,7 +20,7 @@ export default function TalentDetail() {
       try {
         const profile = await getTalentBySlug(slug);
         setTalent(profile);
-      } catch (err) {
+      } catch (_err) {
         setTalent(null);
       } finally {
         setLoading(false);

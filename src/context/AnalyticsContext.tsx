@@ -1,4 +1,5 @@
-import React, { createContext, useState, useContext, useEffect, ReactNode } from 'react';
+import React, { createContext, useState, useContext, useEffect } from 'react';
+import type { ReactNode } from 'react';
 import { useRouter } from 'next/router';
 import { useAuth } from '@/hooks/useAuth';
 import { supabase } from '@/integrations/supabase/client';
@@ -69,7 +70,7 @@ export function AnalyticsProvider({ children }: { children: ReactNode }) {
       type,
       path: router.pathname,
       timestamp: Date.now(),
-      userId: user?.id,
+      userId: user?.id ?? null,
       metadata
     };
     
@@ -78,15 +79,17 @@ export function AnalyticsProvider({ children }: { children: ReactNode }) {
     
     try {
       // Store event in Supabase for persistent analytics
-      await supabase.from('analytics_events').insert([{
-        event_type: type,
-        path: router.pathname,
-        user_id: user?.id,
-        metadata: metadata
-      }]);
+      if (supabase) {
+        await supabase.from('analytics_events').insert([{
+          event_type: type,
+          path: router.pathname,
+          user_id: user?.id,
+          metadata: metadata
+        }]);
+      }
       
       if (process.env.NODE_ENV === 'development') {
-        logInfo(`Analytics event tracked: ${type}`, { data: metadata });
+        logInfo('Analytics event tracked: ${type}', { data:  { data: metadata } });
       }
     } catch (error) {
       if (process.env.NODE_ENV === 'development') {

@@ -14,6 +14,7 @@ const VerifyEmailPage = () => {
   useEffect(() => {
     const confirmVerification = async () => {
       try {
+        if (!supabase) throw new Error('Supabase client not initialized');
         // Supabase client automatically handles session from URL fragment or cookie after redirect
         // We need to ensure a session is active, which implies Supabase confirmed the email.
         const { data: { session }, error: sessionError } = await supabase.auth.getSession();
@@ -21,7 +22,7 @@ const VerifyEmailPage = () => {
         if (sessionError) {
           logErrorToProduction(sessionError instanceof Error ? sessionError.message : String(sessionError), sessionError instanceof Error ? sessionError : undefined, { message: 'Supabase getSession error' });
           setStatus('error');
-          setMessage((sessionError as any)?.message || 'Verification failed: Could not retrieve session.');
+          setMessage((sessionError as { message?: string })?.message ?? 'Verification failed: Could not retrieve session.');
           return;
         }
 
@@ -58,10 +59,14 @@ const VerifyEmailPage = () => {
           setStatus('error');
           setMessage(responseData.message || 'Failed to finalize email verification in our system. Please try again or contact support.');
         }
-      } catch (error: any) {
+      } catch (error: unknown) {
         logErrorToProduction(error instanceof Error ? error.message : String(error), error instanceof Error ? error : undefined, { message: 'Verification page error' });
         setStatus('error');
-        setMessage(error.message || 'An unexpected error occurred during verification.');
+        setMessage(
+          (typeof error === 'object' && error && 'message' in error
+            ? (error as { message?: string }).message
+            : undefined) ?? 'An unexpected error occurred during verification.'
+        );
       }
     };
 

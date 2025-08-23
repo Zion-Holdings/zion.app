@@ -1,8 +1,9 @@
 import { useQueryClient } from '@tanstack/react-query';
 import { useCallback } from 'react';
-import * as Sentry from '@sentry/nextjs';
 import { toast } from '@/hooks/use-toast';
 import {logErrorToProduction} from '@/utils/productionLogger';
+// Remove static import
+// import * as Sentry from '@sentry/nextjs';
 
 
 interface ApiErrorHandlingOptions {
@@ -41,16 +42,7 @@ export const useApiErrorHandling = () => {
 
       // Log to Sentry
       if (logToSentry) {
-        Sentry.withScope((scope) => {
-          scope.setTag('source', 'useApiErrorHandling');
-          scope.setLevel('error');
-          scope.setContext('errorDetails', {
-            message: error.message,
-            stack: error.stack,
-            name: error.name,
-          });
-          Sentry.captureException(error);
-        });
+        // Remove all imports and dynamic imports of @sentry/nextjs from this file.
       }
 
       // Show toast notification

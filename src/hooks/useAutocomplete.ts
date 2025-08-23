@@ -1,7 +1,7 @@
 import { useState, useMemo, useCallback, useEffect } from 'react';
 import Fuse from 'fuse.js';
 import debounce from 'lodash.debounce';
-import { ProductListing } from '@/types/listings';
+import type { ProductListing } from '@/types/listings';
 
 export function useAutocomplete(products: ProductListing[]) {
   const [suggestions, setSuggestions] = useState<ProductListing[]>([]);
@@ -27,7 +27,9 @@ export function useAutocomplete(products: ProductListing[]) {
   useEffect(() => {
     return () => {
       // cancel pending debounced calls on unmount
-      (getSuggestions as any).cancel?.();
+      if (typeof (getSuggestions as { cancel?: unknown }).cancel === 'function') {
+        (getSuggestions as { cancel: () => void }).cancel();
+      }
     };
   }, [getSuggestions]);
 

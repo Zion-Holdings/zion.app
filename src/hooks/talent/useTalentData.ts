@@ -1,7 +1,7 @@
 
 import { useQuery } from '@tanstack/react-query';
 import { TALENT_PROFILES } from '@/data/talentData';
-import { TalentListResponse, TalentProfile } from '@/types/talent';
+import type { TalentListResponse, TalentProfile } from '@/types/talent';
 import { fetchWithRetry } from '@/utils/fetchWithRetry';
 
 async function fetchTalentProfiles(page = 1, limit = 12): Promise<TalentListResponse> {
@@ -11,7 +11,7 @@ async function fetchTalentProfiles(page = 1, limit = 12): Promise<TalentListResp
     3,
     500,
     10000
-  );
+  ) as Promise<TalentListResponse>;
 }
 
 export function useTalentData(page = 1, limit = 12) {

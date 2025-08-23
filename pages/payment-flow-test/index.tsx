@@ -3,7 +3,6 @@ import { useDispatch } from 'react-redux';
 import axios from 'axios';
 import { useAuth } from '@/hooks/useAuth';
 import { addItem } from '@/store/cartSlice';
-import { MARKETPLACE_LISTINGS } from '@/data/listingData';
 import {logErrorToProduction} from '@/utils/productionLogger';
 
 export default function PaymentFlowTest() {
@@ -16,7 +15,11 @@ export default function PaymentFlowTest() {
     intent?: string;
   }>({});
 
-  const testProducts = MARKETPLACE_LISTINGS.slice(0, 3);
+  const testProducts = [
+    { id: '1', title: 'Test Product 1', price: 10.50 },
+    { id: '2', title: 'Test Product 2', price: 20.00 },
+    { id: '3', title: 'Test Product 3', price: 5.75 },
+  ];
 
   const addToCart = (p: { id: string; title: string; price: number }) => {
     dispatch(addItem({ id: p.id, title: p.title, price: p.price }));

@@ -126,7 +126,7 @@ console.log('Supabase configured:', !!window.location.origin.includes('localhost
 7.  **Running the application:**
     - **Next.js frontend**: `npm run dev` *(automatically validates your development environment)*
     - **Django backend**: `python backend/manage.py runserver`
-    - **Node.js server**: `node server/index.js` (or via npm script)
+    - **Node.js server**: `node server/index.cjs` (or via npm script)
 
 8.  **Verify authentication setup:**
     - Test user registration at `/auth/register`

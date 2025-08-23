@@ -30,8 +30,8 @@ export interface QuoteFormData {
   specificItem: ListingItem | null;
   projectName: string;
   projectDescription: string;
-  startDate?: Date;
-  endDate?: Date;
+  startDate: Date | undefined;
+  endDate: Date | undefined;
   timeline: TimelineType;
   budget: Budget;
   contactInfo: ContactInfo;

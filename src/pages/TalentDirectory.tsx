@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import { useRouter } from 'next/router'; // Changed from useNavigate
 import Link from 'next/link';
 import { useAuth } from '@/hooks/useAuth';
 import { useRouterReady, useRouteChange } from '@/hooks/useRouterReady';
@@ -14,7 +13,7 @@ import { X } from 'lucide-react';
 
 import { Button } from '@/components/ui/button';
 import Image from 'next/image';
-import { TalentProfile } from '@/types/talent';
+import type { TalentProfile } from '@/types/talent';
 import {
   Pagination,
   PaginationContent,
@@ -54,9 +53,9 @@ export default function TalentDirectory() {
     setSortOption,
     isMobileFilterOpen,
     setIsMobileFilterOpen,
-    isHireModalOpen,
+    _isHireModalOpen: _isHireModalOpen,
     setIsHireModalOpen,
-    selectedTalent,
+    _selectedTalent: _selectedTalent,
     setSelectedTalent,
     expandedSections,
     error,

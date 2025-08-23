@@ -2,7 +2,7 @@ import React from 'react';
 import { render, screen, fireEvent } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { AutocompleteSuggestions } from './AutocompleteSuggestions';
-import { SearchSuggestion } from '@/types/search';
+import type { SearchSuggestion } from '@/types/search';
 
 const mockOnSelectSuggestion = jest.fn();
 

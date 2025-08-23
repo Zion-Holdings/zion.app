@@ -1,5 +1,6 @@
 import { useRouter } from 'next/router';
-import { useEffect, useState, FormEvent } from 'react';
+import { useEffect, useState } from 'react';
+import type { FormEvent } from 'react';
 import Link from 'next/link';
 import { Mail, Clock, RefreshCw } from 'lucide-react';
 
@@ -59,6 +60,11 @@ const LoginPage = () => {
 
       setIsCheckingSession(true);
       try {
+        if (!supabase) {
+          logErrorToProduction('LoginPage: Supabase client not available');
+          return;
+        }
+        
         logInfo('LoginPage: Calling supabase.auth.getSession()');
         const { data: { session }, error: sessionError } = await supabase.auth.getSession();
         clearTimeout(sessionTimeoutId); // Clear timeout once getSession completes
@@ -68,7 +74,7 @@ const LoginPage = () => {
           logErrorToProduction('LoginPage: Error getting session:', { data: sessionError });
           setError(sessionError as any); // Cast to any if type is too strict
         } else {
-          logInfo('LoginPage: getSession returned, user:', { data: session?.user?.id });
+          logInfo('LoginPage: getSession returned, user:', { data:  { data: session?.user?.id } });
           setUser(session?.user ?? null);
         }
       } catch (e) {
@@ -85,6 +91,11 @@ const LoginPage = () => {
       }
 
       // Listener for auth state changes
+      if (!supabase) {
+        logErrorToProduction('LoginPage: Supabase client not available for auth listener');
+        return;
+      }
+      
       logInfo('LoginPage: Setting up onAuthStateChange listener.');
       const { data: authListener } = supabase.auth.onAuthStateChange((event: AuthChangeEvent, session: any) => {
         if (!mounted) return;
@@ -130,7 +141,7 @@ const LoginPage = () => {
         try {
           returnTo = decodeURIComponent(router.query.returnTo);
         } catch (e) {
-          logWarn('Failed to decode returnTo parameter:', { data: router.query.returnTo });
+          logWarn('Failed to decode returnTo parameter:', { data:  { data: router.query.returnTo } });
           returnTo = '/dashboard';
         }
       }
@@ -229,7 +240,13 @@ const LoginPage = () => {
     setVerificationEmailSent(false);
     
     try {
-      logInfo('Attempting Supabase login with email:', { data: email });
+      if (!supabase) {
+        logErrorToProduction('LoginPage: Supabase client not available for login');
+        setError({ name: 'AuthServiceError', message: 'Authentication service unavailable. Please try again later.' });
+        return;
+      }
+      
+      logInfo('Attempting Supabase login with email:', { data:  { data: email } });
       const { data, error: signInError } = await supabase.auth.signInWithPassword({
         email,
         password,
@@ -275,7 +292,7 @@ const LoginPage = () => {
           setError({ name: signInError.name || 'AuthApiError', message: displayMessage });
         }
       } else if (data.user) {
-        logInfo('Supabase sign-in successful, user:', { data: data.user });
+        logInfo('Supabase sign-in successful, user:', { data:  { data: data.user } });
         setUser(data.user); // setUser to trigger useEffect for redirection
         // Redirection is now handled by the useEffect hook
       } else {

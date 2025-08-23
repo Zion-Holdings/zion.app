@@ -2,9 +2,9 @@ import React, {
   useState,
   useEffect,
   useRef,
-  ReactNode,
   useContext,
 } from 'react';
+import type { ReactNode } from 'react';
 import { X } from 'lucide-react';
 import { AuthContext } from '../../context/auth/AuthContext';
 import { useDebounce } from '../../hooks/useDebounce';
@@ -70,7 +70,7 @@ export function ChatAssistant({
   const messagesEndRef = useRef<HTMLDivElement | null>(null);
   const [pendingApiCallParams, setPendingApiCallParams] = useState<{
     message: string;
-    conversationId?: string;
+    conversationId?: string | undefined;
   } | null>(null);
   const [showGuestModal, setShowGuestModal] = useState(false);
   const [guestMessage, setGuestMessage] = useState<string | null>(null);

@@ -1,4 +1,4 @@
-import { ProductDetailsData } from '../types/product';
+import type { ProductDetailsData } from '../types/product';
 import { logWarn, logErrorToProduction } from '@/utils/productionLogger';
 
 export async function fetchProductById(productId: string): Promise<ProductDetailsData | null> {

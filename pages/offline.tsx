@@ -1,12 +1,89 @@
-import React from 'react';
-import { motion } from 'framer-motion';
-import { WifiOff, RefreshCw, Home, Phone } from 'lucide-react';
-import Link from 'next/link';
+import Head from 'next/head'
+import { useRouter } from 'next/router'
+import { motion } from 'framer-motion'
+import { WifiOff, RefreshCw, Home, ShoppingCart, Clock, Bookmark, Search } from 'lucide-react';
 
-const OfflinePage: React.FC = () => {
-  const handleRefresh = () => {
-    window.location.reload();
-  };
+
+
+
+
+
+
+import { Button } from '@/components/ui/button'
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
+import { Badge } from '@/components/ui/badge'
+import Link from 'next/link'
+import { useState, useEffect } from 'react'
+import {logErrorToProduction} from '@/utils/productionLogger'
+
+export default function OfflinePage() {
+  const router = useRouter()
+
+  const [isOnline, setIsOnline] = useState(false)
+  const [lastUpdate, setLastUpdate] = useState<string>('')
+  const [retryCount, setRetryCount] = useState(0)
+
+  useEffect(() => {
+    // Check online status
+    const updateOnlineStatus = () => {
+      setIsOnline(navigator.onLine)
+      if (navigator.onLine) {
+        setLastUpdate(new Date().toLocaleTimeString())
+      }
+    }
+
+    // Set initial status
+    updateOnlineStatus()
+
+    // Listen for online/offline events
+    window.addEventListener('online', updateOnlineStatus)
+    window.addEventListener('offline', updateOnlineStatus)
+
+    return () => {
+      window.removeEventListener('online', updateOnlineStatus)
+      window.removeEventListener('offline', updateOnlineStatus)
+    }
+  }, [])
+
+  const handleRetry = () => {
+    try {
+      setRetryCount(prev => prev + 1)
+      window.location.reload()
+    } catch (err) {
+      logErrorToProduction('Failed to reload page', err)
+    }
+  }
+
+  const quickActions = [
+    {
+      title: 'Browse Cached Equipment',
+      description: 'View recently visited equipment listings',
+      icon: Search,
+      href: '/equipment',
+      available: true
+    },
+    {
+      title: 'View Bookmarks',
+      description: 'Access your saved items',
+      icon: Bookmark,
+      href: '/bookmarks',
+      available: true
+    },
+    {
+      title: 'Visit Marketplace',
+      description: 'Browse all available services and gear',
+      icon: ShoppingCart,
+      href: '/marketplace',
+      available: true
+    },
+    {
+      title: 'Go to Homepage',
+      description: 'Return to the main page',
+      icon: Home,
+      href: '/',
+      available: true
+    }
+  ]
 
   return (
     <div className="min-h-screen bg-gray-900 flex items-center justify-center px-4">

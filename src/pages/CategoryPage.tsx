@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
-import { useRouter } from 'next/router';
 import Link from 'next/link';
 import { CategoryListingPage } from '@/components/CategoryListingPage'; // Ensure this path is correct
+import type { Listing } from '@/components/CategoryListingPage';
 import ListingGridSkeleton from '@/components/skeletons/ListingGridSkeleton';
 import { useRouterReady } from '@/hooks/useRouterReady';
 import { logInfo, logErrorToProduction } from '@/utils/productionLogger';
@@ -15,7 +15,7 @@ interface CategoryData {
 
 interface ApiResponse {
   category: CategoryData;
-  items: any[]; // Define a more specific type for items if possible
+  items: Listing[];
   message?: string; // For API error messages
   available_categories?: string[];
 }
@@ -87,39 +87,43 @@ export default function CategoryPage() {
         if (json.category?.name) {
           document.title = `${json.category.name} | Zion Marketplace`;
         }
-      } catch (e: any) {
+      } catch (e) {
         logErrorToProduction('Failed to load category items:', { data:  e });
-        
+        // Type guard for error object
+        let errorName = '';
+        let errorMessage = 'Failed to load category items. Please try again.';
+        if (e && typeof e === 'object') {
+          if ('name' in e && typeof (e as { name?: unknown }).name === 'string') {
+            errorName = (e as { name: string }).name;
+          }
+          if ('message' in e && typeof (e as { message?: unknown }).message === 'string') {
+            errorMessage = (e as { message: string }).message;
+          }
+        }
         // Auto-retry for network errors
         if (retryCount < maxRetries && (
-          e.name === 'AbortError' || 
-          e.message.includes('Failed to fetch') ||
-          e.message.includes('timeout') ||
-          e.message.includes('500')
+          errorName === 'AbortError' || 
+          errorMessage.includes('Failed to fetch') ||
+          errorMessage.includes('timeout') ||
+          errorMessage.includes('500')
         )) {
           logInfo(`Retrying request (attempt ${retryCount + 1}/${maxRetries})`);
           setRetryCount(prev => prev + 1);
           setTimeout(() => load(), 1000 * (retryCount + 1)); // Exponential backoff
           return;
         }
-        
         // Provide specific error messages based on the error type
-        let errorMessage = 'Failed to load category items. Please try again.';
-        
-        if (e.name === 'AbortError' || e.message.includes('timeout')) {
+        if (errorName === 'AbortError' || errorMessage.includes('timeout')) {
           errorMessage = 'Request timed out. The server might be temporarily unavailable. Please try again.';
-        } else if (e.message.includes('Failed to fetch')) {
+        } else if (errorMessage.includes('Failed to fetch')) {
           errorMessage = 'Unable to connect to the server. Please check your internet connection and try again.';
-        } else if (e.message.includes('Unexpected token')) {
+        } else if (errorMessage.includes('Unexpected token')) {
           errorMessage = 'Server configuration error. The development team has been notified.';
-        } else if (e.message.includes('non-JSON response')) {
+        } else if (errorMessage.includes('non-JSON response')) {
           errorMessage = 'Server returned an unexpected response format. Please try again or contact support.';
-        } else if (e.message.includes('not found')) {
+        } else if (errorMessage.includes('not found')) {
           errorMessage = `Category "${slug}" not found. Please check the URL or browse available categories.`;
-        } else {
-          errorMessage = e.message || errorMessage;
         }
-        
         setError(errorMessage);
       } finally {
         setLoading(false);

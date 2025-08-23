@@ -5,7 +5,7 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Download } from 'lucide-react';
 
-import { Resume } from "@/types/resume";
+import type { Resume } from "@/types/resume";
 
 interface ResumePreviewCardProps {
   resume: Resume;

@@ -9,16 +9,16 @@ interface HealthCheckResult {
     supabase: {
       configured: boolean;
       status: 'ok' | 'warning' | 'error';
-      details?: string;
+      details?: string | undefined;
     };
     sentry: {
       configured: boolean;
       status: 'ok' | 'warning' | 'error';
-      details?: string;
+      details?: string | undefined;
     };
     authentication: {
       status: 'ok' | 'warning' | 'error';
-      details?: string;
+      details?: string | undefined;
     };
   };
   warnings: string[];
@@ -43,9 +43,9 @@ export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse<HealthCheckResult>
 ) {
-  if (req.method !== 'GET') {
+  if (req['method'] !== 'GET') {
     res.setHeader('Allow', ['GET']);
-    return res.status(405).end(`Method ${req.method} Not Allowed`);
+    return res.status(405).end(`Method ${req['method']} Not Allowed`);
   }
 
   const warnings: string[] = [];
@@ -53,8 +53,8 @@ export default async function handler(
   
   // Check Supabase configuration
   const supabaseConfigured = ENV_CONFIG.supabase.isConfigured;
-  const supabaseUrlValid = !checkPlaceholder(process.env.NEXT_PUBLIC_SUPABASE_URL);
-  const supabaseKeyValid = !checkPlaceholder(process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY);
+  const supabaseUrlValid = !checkPlaceholder(process.env['NEXT_PUBLIC_SUPABASE_URL']);
+  const supabaseKeyValid = !checkPlaceholder(process.env['NEXT_PUBLIC_SUPABASE_ANON_KEY']);
   
   let supabaseStatus: 'ok' | 'warning' | 'error' = 'ok';
   let supabaseDetails = '';
@@ -74,7 +74,7 @@ export default async function handler(
   let sentryStatus: 'ok' | 'warning' | 'error' = 'ok';
   let sentryDetails = '';
   
-  if (!sentryConfigured && process.env.NODE_ENV === 'production') {
+  if (!sentryConfigured && process.env['NODE_ENV'] === 'production') {
     sentryStatus = 'warning';
     sentryDetails = 'Sentry not configured - error monitoring disabled';
     warnings.push('Error monitoring not configured for production');
@@ -112,21 +112,21 @@ export default async function handler(
   const result: HealthCheckResult = {
     status: overallStatus,
     timestamp: new Date().toISOString(),
-    environment: process.env.NODE_ENV || 'unknown',
+    environment: process.env['NODE_ENV'] || 'unknown',
     services: {
       supabase: {
         configured: !!supabaseConfigured,
         status: supabaseStatus,
-        details: supabaseDetails || undefined
+        ...(supabaseDetails ? { details: supabaseDetails } : {})
       },
       sentry: {
         configured: sentryConfigured,
         status: sentryStatus,
-        details: sentryDetails || undefined
+        ...(sentryDetails ? { details: sentryDetails } : {})
       },
       authentication: {
         status: authStatus,
-        details: authDetails || undefined
+        ...(authDetails ? { details: authDetails } : {})
       }
     },
     warnings,

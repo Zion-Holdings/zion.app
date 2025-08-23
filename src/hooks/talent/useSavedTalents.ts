@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { supabase } from "@/integrations/supabase/client";
-import { TalentProfile } from "@/types/talent";
+import type { TalentProfile } from "@/types/talent";
 import { toast } from "@/hooks/use-toast";
 import { showApiError } from "@/utils/apiErrorHandler";
 import { useAuthStatus } from "@/hooks/talent";
@@ -26,6 +26,7 @@ export function useSavedTalents() {
       setIsLoading(true);
       
       try {
+        if (!supabase) throw new Error('Supabase client not initialized');
         // Get saved talent IDs
         const { data: savedData, error: savedError } = await supabase
           .from('saved_talents')
@@ -35,10 +36,22 @@ export function useSavedTalents() {
         if (savedError) throw savedError;
 
         if (savedData) {
-          const talentIds = savedData.map((item: any) => item.talent_id);
+          // Type guard for savedData items
+          const talentIds = savedData
+            .map((item: unknown) => {
+              if (
+                typeof item === 'object' && item !== null &&
+                'talent_id' in item && typeof (item as { talent_id: unknown }).talent_id === 'string'
+              ) {
+                return (item as { talent_id: string }).talent_id;
+              }
+              return undefined;
+            })
+            .filter((id): id is string => typeof id === 'string');
           setSavedTalentIds(talentIds);
           
           if (talentIds.length > 0) {
+            if (!supabase) throw new Error('Supabase client not initialized');
             // Fetch full talent profiles for saved talents
             const { data: talentData, error: talentError } = await supabase
               .from('talent_profiles')
@@ -83,6 +96,7 @@ export function useSavedTalents() {
     const isSaved = savedTalentIds.includes(talent.id);
     
     try {
+      if (!supabase) throw new Error('Supabase client not initialized');
       if (isSaved) {
         // Remove from saved_talents
         const { error } = await supabase

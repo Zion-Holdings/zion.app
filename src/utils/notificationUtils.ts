@@ -37,6 +37,7 @@ export async function createNotification({
 }) {
   void actionUrl;
   void actionText;
+  if (!supabase) throw new Error('Supabase client not initialized');
   try {
     // Call the create_notification database function
     const { data, error } = await supabase.rpc('create_notification', {
@@ -217,6 +218,7 @@ export async function createSystemNotification({
   actionText?: string | null;
   sendEmail?: boolean;
 }) {
+  if (!supabase) throw new Error('Supabase client not initialized');
   return createNotification({
     userId,
     title,

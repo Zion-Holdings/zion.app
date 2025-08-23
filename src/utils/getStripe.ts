@@ -1,4 +1,5 @@
-import { loadStripe, Stripe } from '@stripe/stripe-js';
+import { loadStripe } from '@stripe/stripe-js';
+import type { Stripe, StripeConstructorOptions } from '@stripe/stripe-js';
 import { logInfo, logWarn, logErrorToProduction } from '@/utils/productionLogger';
 
 export const PROD_DOMAIN = 'app.ziontechgroup.com';
@@ -90,7 +91,7 @@ export function getStripe() {
       logErrorToProduction('Stripe: Publishable key could not be determined. Stripe will not be loaded.');
       stripePromise = Promise.resolve(null);
     } else {
-      stripePromise = loadStripe(selectedKey, { advancedFraudSignals: false } as any);
+      stripePromise = loadStripe(selectedKey, { advancedFraudSignals: false } as StripeConstructorOptions);
     }
   }
   return stripePromise;

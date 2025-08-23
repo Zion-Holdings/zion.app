@@ -1,4 +1,4 @@
-import { SearchSuggestion } from "@/types/search";
+import type { SearchSuggestion } from "@/types/search";
 
 export interface DocsSearchItem extends SearchSuggestion {
   path: string;

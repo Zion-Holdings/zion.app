@@ -1,12 +1,4 @@
-import React from 'react';
-import { motion } from 'framer-motion';
-import { 
-  BookOpen, Code, Database, Server, Shield, Brain, Atom, Rocket,
-  FileText, Video, Headphones, HelpCircle, Search, Download,
-  ExternalLink, ArrowRight, BookOpenCheck, Settings, Cpu, Globe
-} from 'lucide-react';
-import Layout from '../../components/layout/Layout';
-import Link from 'next/link';
+import type { GetServerSideProps } from 'next';
 
 const documentationCategories = [
   {

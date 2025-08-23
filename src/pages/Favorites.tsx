@@ -5,7 +5,7 @@ import { NEW_PRODUCTS } from '@/data/newProductsData';
 export default function FavoritesPage() {
   const { favorites } = useFavorites();
 
-  const map: Record<string, any> = {};
+  const map: Record<string, unknown> = {};
   for (const p of NEW_PRODUCTS) {
     map[p.id] = p;
   }

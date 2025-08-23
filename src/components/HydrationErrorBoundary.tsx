@@ -1,4 +1,5 @@
-import React, { ErrorInfo, ReactNode } from 'react';
+import React from 'react';
+import type { ErrorInfo, ReactNode } from 'react';
 import { logWarn, logErrorToProduction } from '@/utils/productionLogger';
 
 
@@ -32,34 +33,32 @@ export class HydrationErrorBoundary extends React.Component<Props, State> {
     return { hasError: true, error };
   }
 
-  componentDidCatch(error: Error, errorInfo: ErrorInfo) {
+  override componentDidCatch(error: Error, errorInfo: ErrorInfo) {
     logErrorToProduction('[HydrationErrorBoundary] Caught error:', error, { componentStack: errorInfo.componentStack });
     
     // If it's a hydration error, try to recover by forcing a client-side render
-    if (this.state.error?.message?.includes('hydrat')) {
-      setTimeout(() => {
-        this.setState({ hasError: false, error: undefined });
-      }, 100);
+    if (typeof window !== 'undefined' && error.message && error.message.toLowerCase().includes('hydration')) {
+      this.setState({ hasError: true, error });
     }
   }
 
-  render() {
+  override render() {
     if (this.state.hasError) {
       return (
         <div className="flex items-center justify-center min-h-screen bg-zion-blue">
-          <div className="text-center max-w-md p-6">
-            <div className="text-white text-xl mb-4">🔄 Loading Zion App</div>
-            <div className="animate-pulse text-zion-cyan">
-              Initializing secure connection...
-            </div>
-            <div className="mt-4 text-zion-slate-light text-sm">
-              If this persists, please refresh the page
-            </div>
+          <div className="bg-white p-8 rounded shadow-md text-center">
+            <h2 className="text-2xl font-bold mb-4">A hydration error occurred</h2>
+            <p className="mb-4">Please refresh the page or contact support if the problem persists.</p>
+            <button
+              className="bg-zion-blue text-white px-4 py-2 rounded"
+              onClick={() => window.location.reload()}
+            >
+              Refresh Page
+            </button>
           </div>
         </div>
       );
     }
-
     return this.props.children;
   }
 } 

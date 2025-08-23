@@ -61,6 +61,13 @@ export interface SystemHealthMetrics {
   lastHealthCheck: string;
 }
 
+interface PerformanceWithMemory extends Performance {
+  memory?: {
+    usedJSHeapSize: number;
+    jsHeapSizeLimit: number;
+  };
+}
+
 class EnhancedErrorCollector {
   private errors: Map<string, ErrorDetails> = new Map();
   private sessionId: string;
@@ -98,7 +105,7 @@ class EnhancedErrorCollector {
     this.startHealthChecks();
     
     this.isInitialized = true;
-    logInfo('Enhanced Error Collector initialized', { sessionId: this.sessionId });
+    logInfo('Enhanced Error Collector initialized', { data:  { sessionId: this.sessionId } });
   }
 
   private setupPerformanceMonitoring(): void {
@@ -129,7 +136,7 @@ class EnhancedErrorCollector {
 
       this.performanceObserver.observe({ entryTypes: ['navigation', 'resource'] });
     } catch (error) {
-      logWarn('Failed to setup performance monitoring:', { data: error });
+      logWarn('Failed to setup performance monitoring:', { data:  { data: error } });
     }
   }
 
@@ -159,9 +166,9 @@ class EnhancedErrorCollector {
     if (typeof window === 'undefined' || !('memory' in performance)) return;
 
     setInterval(() => {
-      const memory = (performance as any).memory;
-      if (memory) {
-        const memoryPressure = memory.usedJSHeapSize / memory.jsHeapSizeLimit;
+      const perf = performance as PerformanceWithMemory;
+      if (perf.memory) {
+        const memoryPressure = perf.memory.usedJSHeapSize / perf.memory.jsHeapSizeLimit;
         this.healthMetrics.memoryPressure = memoryPressure;
 
         if (memoryPressure > 0.9) {
@@ -172,8 +179,8 @@ class EnhancedErrorCollector {
               category: 'performance',
               tags: ['memory-pressure', 'performance'],
               context: {
-                memoryUsage: memory.usedJSHeapSize,
-                memoryLimit: memory.jsHeapSizeLimit,
+                memoryUsage: perf.memory.usedJSHeapSize,
+                memoryLimit: perf.memory.jsHeapSizeLimit,
                 memoryPressure,
               },
             }
@@ -203,13 +210,13 @@ class EnhancedErrorCollector {
     };
 
     // Log health summary
-    logInfo('System health check', {
+    logInfo('System health check', { data: {
       uptime: Math.round(uptime / 1000 / 60), // minutes
       errorRate: Math.round(errorRate * 100) / 100,
       errorCount,
       memoryPressure: Math.round(this.healthMetrics.memoryPressure * 100),
       networkStatus: this.healthMetrics.networkStatus,
-    });
+    }});
   }
 
   private generateFingerprint(error: Error, context: ErrorContext): string {
@@ -281,8 +288,8 @@ class EnhancedErrorCollector {
     
     const context: ErrorContext = {
       sessionId: this.sessionId,
-      route: typeof window !== 'undefined' ? window.location.pathname : undefined,
-      userAgent: typeof navigator !== 'undefined' ? navigator.userAgent : undefined,
+      route: typeof window !== 'undefined' && window.location.pathname ? window.location.pathname : '',
+      userAgent: typeof navigator !== 'undefined' ? navigator.userAgent : '',
       timestamp,
       buildVersion: process.env.NEXT_PUBLIC_BUILD_VERSION || 'unknown',
       ...options.context,
@@ -307,7 +314,7 @@ class EnhancedErrorCollector {
       errorDetails = {
         id: traceId,
         message: errorObj.message,
-        stack: errorObj.stack,
+        stack: errorObj.stack || '',
         name: errorObj.name,
         cause: errorObj.cause,
         severity: options.severity || categorization.severity,
@@ -422,7 +429,7 @@ class EnhancedErrorCollector {
 
   public clearErrors(): void {
     this.errors.clear();
-    logInfo('Error collection cleared', { sessionId: this.sessionId });
+    logInfo('Error collection cleared', { data:  { sessionId: this.sessionId } });
   }
 
   public getHealthScore(): number {
@@ -445,7 +452,7 @@ class EnhancedErrorCollector {
       this.performanceObserver.disconnect();
     }
     this.isInitialized = false;
-    logInfo('Enhanced Error Collector destroyed', { sessionId: this.sessionId });
+    logInfo('Enhanced Error Collector destroyed', { data:  { sessionId: this.sessionId } });
   }
 }
 

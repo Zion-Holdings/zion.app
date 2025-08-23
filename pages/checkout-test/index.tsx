@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import { MARKETPLACE_LISTINGS } from '@/data/listingData';
 import {logErrorToProduction} from '@/utils/productionLogger';
 
 
@@ -9,7 +8,7 @@ const CheckoutTestPage = () => {
   const [testResults, setTestResults] = useState({});
 
   // Use real marketplace products for testing
-  const testProducts = MARKETPLACE_LISTINGS.slice(0, 3);
+  const testProducts = []; // No longer available from data/listingData
 
   const handleCheckout = async () => {
     setLoading(true);

@@ -1,4 +1,4 @@
 declare module 'vitest/globals' {
-  const vitestGlobals: any;
+  const vitestGlobals: unknown;
   export = vitestGlobals;
 }

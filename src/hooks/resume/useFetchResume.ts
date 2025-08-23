@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { supabase } from '@/integrations/supabase/client';
-import { Resume } from '@/types/resume';
+import type { Resume } from '@/types/resume';
 import { useAuth } from '@/hooks/useAuth';
 import {logErrorToProduction} from '@/utils/productionLogger';
 
@@ -21,6 +21,7 @@ export function useFetchResume() {
     setError(null);
     
     try {
+      if (!supabase) throw new Error('Supabase client not initialized');
       // If resumeId is provided, fetch that specific resume
       // Otherwise, fetch the user's active resume or most recent resume
       let resumeQuery = supabase.from('talent_resumes').select('*');

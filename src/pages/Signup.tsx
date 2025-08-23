@@ -40,7 +40,7 @@ export default function Signup() {
   const [errorMessage, setErrorMessage] = useState('');
   const [successMessage, setSuccessMessage] = useState('');
   const [emailVerificationRequired, setEmailVerificationRequired] = useState(false);
-  const [authServiceAvailable, setAuthServiceAvailable] = useState(true);
+  const [_authServiceAvailable, setAuthServiceAvailable] = useState(true);
   const [healthCheckLoading, setHealthCheckLoading] = useState(true);
   const [healthCheckError, setHealthCheckError] = useState<string | null>(null);
   
@@ -57,13 +57,16 @@ export default function Signup() {
       if (res.status !== 200) {
         setHealthCheckError('Authentication service is experiencing issues');
       }
-    } catch (err: any) {
+    } catch (err: unknown) {
       logErrorToProduction('Auth service health check failed', { data: err });
       setAuthServiceAvailable(false);
       // Set a more specific error message based on the error type
-      if (err.code === 'NETWORK_ERROR' || err.message?.includes('Network Error')) {
+      const code = typeof err === 'object' && err !== null && 'code' in err ? (err as { code?: string }).code : undefined;
+      const message = typeof err === 'object' && err !== null && 'message' in err ? (err as { message?: string }).message : undefined;
+      const response = typeof err === 'object' && err !== null && 'response' in err ? (err as { response?: { status?: number } }).response : undefined;
+      if (code === 'NETWORK_ERROR' || (typeof message === 'string' && message.includes('Network Error'))) {
         setHealthCheckError('Network connection issues detected');
-      } else if (err.response?.status === 500) {
+      } else if (response && response.status === 500) {
         setHealthCheckError('Authentication service is temporarily unavailable');
       } else {
         setHealthCheckError('Unable to verify authentication service status');
@@ -163,60 +166,47 @@ export default function Signup() {
             }, 2000);
           }
         }
-      } catch (err: any) {
+      } catch (err: unknown) {
         logErrorToProduction('Signup error details:', {
-          message: err.message,
-          response: err.response ? {
-            status: err.response.status,
-            statusText: err.response.statusText,
-            data: err.response.data
+          message: typeof err === 'object' && err !== null && 'message' in err ? (err as { message?: string }).message : undefined,
+          response: typeof err === 'object' && err !== null && 'response' in err && (err as { response?: unknown }).response ? {
+            status: (err as { response?: { status?: number } }).response?.status,
+            statusText: (err as { response?: { statusText?: string } }).response?.statusText,
+            data: (err as { response?: { data?: unknown } }).response?.data
           } : 'No response',
-          request: err.request ? 'Request made but no response' : 'No request',
-          config: err.config ? {
-            url: err.config.url,
-            method: err.config.method
+          request: typeof err === 'object' && err !== null && 'request' in err ? 'Request made but no response' : 'No request',
+          config: typeof err === 'object' && err !== null && 'config' in err ? {
+            url: (err as { config?: { url?: string } }).config?.url,
+            method: (err as { config?: { method?: string } }).config?.method
           } : 'No config'
         });
-        
-        const status = err.response?.status;
-        // Try both 'error' and 'message' fields for compatibility
-        const errorMsg = err.response?.data?.error || err.response?.data?.message || 'Signup failed. Please try again.';
-        
-        logInfo('Processed error message:', { data: errorMsg });
-        
+        const response = typeof err === 'object' && err !== null && 'response' in err ? (err as { response?: { status?: number, data?: { error?: string, message?: string } } }).response : undefined;
+        const status = response?.status;
+        const errorMsg = response?.data?.error || response?.data?.message || 'Signup failed. Please try again.';
+        logInfo('Processed error message:', { data:  { data: errorMsg } });
         if (status === 409) {
-          // Handle duplicate email specifically
           setErrorMessage(errorMsg);
           setErrors({ email: errorMsg });
-          
-          // Show toast notification
           toast({
             title: 'Signup failed',
             description: errorMsg,
             variant: 'destructive',
           });
         } else if (status === 400) {
-          // Handle validation errors (weak password, etc.)
           setErrorMessage(errorMsg);
-          
-          // Set the error on password field if it's password-related
-          if (errorMsg.toLowerCase().includes('password')) {
+          if (typeof errorMsg === 'string' && errorMsg.toLowerCase().includes('password')) {
             setErrors({ password: errorMsg });
           } else {
             setErrors({ confirm: errorMsg });
           }
-          
           toast({
             title: 'Signup failed',
             description: errorMsg,
             variant: 'destructive',
           });
         } else {
-          // Handle other errors (network, server, etc.)
           setErrorMessage(errorMsg);
           setErrors({ confirm: errorMsg });
-          
-          // Show toast notification for other errors
           toast({
             title: 'Signup failed',
             description: errorMsg,

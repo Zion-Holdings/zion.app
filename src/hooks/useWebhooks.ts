@@ -46,6 +46,7 @@ export function useWebhooks() {
   // Fetch user's webhooks
   const fetchWebhooks = async () => {
     if (!user) return;
+    if (!supabase) throw new Error('Supabase client not initialized');
     
     setLoading(true);
     setError(null);
@@ -57,11 +58,16 @@ export function useWebhooks() {
         return;
       }
 
-      const response = await api.get(`${getWebhookUrl()}/webhooks`, {
+      const authHeader = (typeof session === 'object' && session !== null && 'access_token' in session && typeof (session as { access_token: unknown }).access_token === 'string')
+        ? `Bearer ${(session as { access_token: string }).access_token}`
+        : undefined;
+
+      const response = await fetch(`${getWebhookUrl()}/webhooks`, {
+        method: 'GET',
         headers: {
-          Authorization: `Bearer ${session.access_token}`,
+          ...(authHeader ? { 'Authorization': authHeader } : {}),
           'Content-Type': 'application/json'
-        }
+        } as HeadersInit,
       });
 
       if (response.status < 200 || response.status >= 300) {
@@ -85,6 +91,7 @@ export function useWebhooks() {
   // Create new webhook
   const createWebhook = async (name: string, url: string, eventTypes: WebhookEventType[], secret?: string) => {
     if (!user) return;
+    if (!supabase) throw new Error('Supabase client not initialized');
     
     setLoading(true);
     setError(null);
@@ -96,16 +103,23 @@ export function useWebhooks() {
         return;
       }
 
-      const response = await api.post(
-        `${getWebhookUrl()}/create`,
-        { name, url, eventTypes, secret },
-        {
-          headers: {
-            Authorization: `Bearer ${session.access_token}`,
-            'Content-Type': 'application/json'
-          }
-        }
-      );
+      const authHeader = (typeof session === 'object' && session !== null && 'access_token' in session && typeof (session as { access_token: unknown }).access_token === 'string')
+        ? `Bearer ${(session as { access_token: string }).access_token}`
+        : undefined;
+
+      const response = await fetch(`${getWebhookUrl()}/create`, {
+        method: 'POST',
+        headers: {
+          ...(authHeader ? { 'Authorization': authHeader } : {}),
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          name,
+          url,
+          eventTypes,
+          secret
+        })
+      });
 
       if (response.status < 200 || response.status >= 300) {
         throw new Error(response.data.error || 'Failed to create webhook');
@@ -138,6 +152,7 @@ export function useWebhooks() {
   // Toggle webhook active status
   const toggleWebhook = async (webhookId: string, isActive: boolean) => {
     if (!user) return;
+    if (!supabase) throw new Error('Supabase client not initialized');
     
     setLoading(true);
     setError(null);
@@ -149,16 +164,18 @@ export function useWebhooks() {
         return;
       }
 
-      const response = await api.post(
-        `${getWebhookUrl()}/toggle`,
-        { webhookId, isActive },
-        {
-          headers: {
-            Authorization: `Bearer ${session.access_token}`,
-            'Content-Type': 'application/json'
-          }
-        }
-      );
+      const authHeader = (typeof session === 'object' && session !== null && 'access_token' in session && typeof (session as { access_token: unknown }).access_token === 'string')
+        ? `Bearer ${(session as { access_token: string }).access_token}`
+        : undefined;
+
+      const response = await fetch(`${getWebhookUrl()}/toggle`, {
+        method: 'POST',
+        headers: {
+          ...(authHeader ? { 'Authorization': authHeader } : {}),
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ webhookId, isActive })
+      });
 
       if (response.status < 200 || response.status >= 300) {
         throw new Error(response.data.error || 'Failed to update webhook');
@@ -193,6 +210,7 @@ export function useWebhooks() {
   // Delete webhook
   const deleteWebhook = async (webhookId: string) => {
     if (!user) return;
+    if (!supabase) throw new Error('Supabase client not initialized');
     
     setLoading(true);
     setError(null);
@@ -204,16 +222,18 @@ export function useWebhooks() {
         return;
       }
 
-      const response = await api.post(
-        `${getWebhookUrl()}/delete`,
-        { webhookId },
-        {
-          headers: {
-            Authorization: `Bearer ${session.access_token}`,
-            'Content-Type': 'application/json'
-          }
-        }
-      );
+      const authHeader = (typeof session === 'object' && session !== null && 'access_token' in session && typeof (session as { access_token: unknown }).access_token === 'string')
+        ? `Bearer ${(session as { access_token: string }).access_token}`
+        : undefined;
+
+      const response = await fetch(`${getWebhookUrl()}/delete`, {
+        method: 'POST',
+        headers: {
+          ...(authHeader ? { 'Authorization': authHeader } : {}),
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ webhookId })
+      });
 
       if (response.status < 200 || response.status >= 300) {
         throw new Error(response.data.error || 'Failed to delete webhook');
@@ -246,6 +266,7 @@ export function useWebhooks() {
   // Test webhook
   const testWebhook = async (webhookId: string, eventType: WebhookEventType) => {
     if (!user) return;
+    if (!supabase) throw new Error('Supabase client not initialized');
     
     setLoading(true);
     setError(null);
@@ -258,16 +279,18 @@ export function useWebhooks() {
         return;
       }
 
-      const response = await api.post(
-        `${getWebhookUrl()}/test`,
-        { webhookId, eventType },
-        {
-          headers: {
-            Authorization: `Bearer ${session.access_token}`,
-            'Content-Type': 'application/json'
-          }
-        }
-      );
+      const authHeader = (typeof session === 'object' && session !== null && 'access_token' in session && typeof (session as { access_token: unknown }).access_token === 'string')
+        ? `Bearer ${(session as { access_token: string }).access_token}`
+        : undefined;
+
+      const response = await fetch(`${getWebhookUrl()}/test`, {
+        method: 'POST',
+        headers: {
+          ...(authHeader ? { 'Authorization': authHeader } : {}),
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ webhookId, eventType })
+      });
 
       if (response.status < 200 || response.status >= 300) {
         throw new Error(response.data.error || 'Failed to test webhook');

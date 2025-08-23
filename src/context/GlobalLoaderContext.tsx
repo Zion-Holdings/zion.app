@@ -3,17 +3,18 @@ import React, {
   useContext,
   useEffect,
   useState,
-  ReactNode,
   useRef,
 } from 'react';
+import type { ReactNode } from 'react';
 import { useRouter } from 'next/router'; // Changed from useLocation
 import axios from 'axios';
+import type { InternalAxiosRequestConfig, AxiosResponse } from 'axios';
 
 export interface GlobalLoaderContextType {
   loading: boolean;
   setLoading: (value: boolean) => void;
-  error: any;
-  setError: (error: any) => void;
+  error: unknown;
+  setError: (error: unknown) => void;
   showLoader: () => void;
   hideLoader: () => void;
 }
@@ -29,11 +30,11 @@ const defaultState: GlobalLoaderContextType = {
 
 const GlobalLoaderContext = createContext<GlobalLoaderContextType>(defaultState);
 
-export const useGlobalLoader = () => useContext(GlobalLoaderContext);
+export const useGlobalLoader = (): GlobalLoaderContextType => useContext(GlobalLoaderContext);
 
 export function AppLoaderProvider({ children }: { children: ReactNode }) {
   const [loading, setLoading] = useState(false);
-  const [error, setError] = useState<any>(null);
+  const [error, setError] = useState<unknown>(null);
   const router = useRouter(); // Changed from useLocation
   const timeoutRef = useRef<NodeJS.Timeout | null>(null);
 
@@ -41,11 +42,11 @@ export function AppLoaderProvider({ children }: { children: ReactNode }) {
   const hideLoader = () => setLoading(false);
 
   useEffect(() => {
-    const onRequest = (config: any) => {
+    const onRequest = (config: InternalAxiosRequestConfig) => {
       showLoader();
       return config;
     };
-    const onResponse = (response: any) => {
+    const onResponse = (response: AxiosResponse) => {
       hideLoader();
       return response;
     };
@@ -55,20 +56,27 @@ export function AppLoaderProvider({ children }: { children: ReactNode }) {
       return Promise.reject(err);
     };
 
-    const reqInterceptor = (axios.interceptors as any).request.use(onRequest, onError);
-    const resInterceptor = axios.interceptors.response.use(onResponse, onError);
+    // Type guard for axios.interceptors
+    const reqInterceptors = (axios.interceptors as { request: { use: Function; eject: Function } }).request;
+    const resInterceptors = (axios.interceptors as { response: { use: Function; eject: Function } }).response;
+    const reqInterceptor = reqInterceptors.use(onRequest, onError);
+    const resInterceptor = resInterceptors.use(onResponse, onError);
 
     const originalCreate = axios.create;
     axios.create = (...args: Parameters<typeof originalCreate>) => {
       const instance = originalCreate(...args);
-      (instance.interceptors as any).request.use(onRequest, onError);
-      instance.interceptors.response.use(onResponse, onError);
+      if (instance.interceptors && instance.interceptors.request && typeof instance.interceptors.request.use === 'function') {
+        instance.interceptors.request.use(onRequest, onError);
+      }
+      if (instance.interceptors && instance.interceptors.response && typeof instance.interceptors.response.use === 'function') {
+        instance.interceptors.response.use(onResponse, onError);
+      }
       return instance;
     };
 
     return () => {
-      ((axios.interceptors as any).request as any).eject(reqInterceptor);
-      (axios.interceptors.response as any).eject(resInterceptor);
+      if (typeof reqInterceptors.eject === 'function') reqInterceptors.eject(reqInterceptor);
+      if (typeof resInterceptors.eject === 'function') resInterceptors.eject(resInterceptor);
       axios.create = originalCreate;
     };
   }, []);

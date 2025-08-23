@@ -7,7 +7,7 @@ import { CalendarIcon } from 'lucide-react';
 
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
 import { cn } from "@/lib/utils";
-import { QuoteFormData } from "@/types/quotes";
+import type { QuoteFormData } from "@/types/quotes";
 
 interface TimelineStepProps {
   formData: QuoteFormData;

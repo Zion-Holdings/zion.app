@@ -8,6 +8,7 @@ export const holdInEscrow = withAsyncErrorGuard(async (params: {
   providerAccountId: string;
   orderId: string;
 }) => {
+  if (!supabase) throw new Error('Supabase client not initialized');
   const { data, error } = await supabase.functions.invoke('escrow-service', {
     body: { action: 'hold', ...params },
   });
@@ -17,6 +18,7 @@ export const holdInEscrow = withAsyncErrorGuard(async (params: {
 });
 
 export const releaseEscrow = withAsyncErrorGuard(async (paymentIntentId: string) => {
+  if (!supabase) throw new Error('Supabase client not initialized');
   const { data, error } = await supabase.functions.invoke('escrow-service', {
     body: { action: 'release', paymentIntentId },
   });
@@ -26,6 +28,7 @@ export const releaseEscrow = withAsyncErrorGuard(async (paymentIntentId: string)
 });
 
 export const disputeOrder = withAsyncErrorGuard(async (orderId: string) => {
+  if (!supabase) throw new Error('Supabase client not initialized');
   const { data, error } = await supabase.functions.invoke('escrow-service', {
     body: { action: 'dispute', orderId },
   });

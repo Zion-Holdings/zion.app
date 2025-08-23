@@ -1,7 +1,7 @@
 
 import React from "react";
 import { Button } from "@/components/ui/button";
-import { Interview } from "@/types/interview";
+import type { Interview } from "@/types/interview";
 import { format, parseISO } from "date-fns";
 
 interface InterviewResponseFormProps {

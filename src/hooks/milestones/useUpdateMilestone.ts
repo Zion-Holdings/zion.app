@@ -3,7 +3,7 @@ import { useState } from 'react';
 import { supabase } from '@/integrations/supabase/client';
 import { useAuth } from '@/hooks/useAuth';
 import { toast } from 'sonner';
-import { Milestone, MilestoneStatus } from './types';
+import type { Milestone, MilestoneStatus } from './types';
 import { useRecordActivity } from './useRecordActivity';
 import { createNotification } from '@/utils/notifications';
 import {logErrorToProduction} from '@/utils/productionLogger';
@@ -20,6 +20,7 @@ export const useUpdateMilestone = () => {
     try {
       setIsSubmitting(true);
       
+      if (!supabase) throw new Error('Supabase client not initialized');
       // Get the current status
       const { data: milestoneData, error: fetchError } = await supabase
         .from('project_milestones')
@@ -33,6 +34,7 @@ export const useUpdateMilestone = () => {
       const previousStatus = milestoneData.status;
       
       // Update the milestone status
+      if (!supabase) throw new Error('Supabase client not initialized');
       const { error } = await supabase
         .from('project_milestones')
         .update({ status: newStatus })
@@ -50,6 +52,7 @@ export const useUpdateMilestone = () => {
       );
 
       if (milestoneData?.project_id) {
+        if (!supabase) throw new Error('Supabase client not initialized');
         const { data: project } = await supabase
           .from('projects')
           .select('client_id, talent_id')
@@ -98,6 +101,7 @@ export const useUpdateMilestone = () => {
     try {
       setIsSubmitting(true);
       
+      if (!supabase) throw new Error('Supabase client not initialized');
       const { error } = await supabase
         .from('project_milestones')
         .update(data)

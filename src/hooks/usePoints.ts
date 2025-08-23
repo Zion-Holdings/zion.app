@@ -17,6 +17,8 @@ export function usePoints() {
       return;
     }
 
+    if (!supabase) throw new Error('Supabase client not initialized');
+
     setLoading(true);
     const { data, error } = await supabase
       .from('points_ledger')

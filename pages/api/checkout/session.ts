@@ -5,17 +5,17 @@ import path from 'path';
 import {logErrorToProduction} from '@/utils/productionLogger';
 
 
-const stripe = new Stripe(process.env.STRIPE_TEST_SECRET_KEY || '', {
+const stripe = new (Stripe as any)(process.env['STRIPE_TEST_SECRET_KEY'] || '', {
   apiVersion: '2023-10-16',
 });
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
-  if (req.method !== 'POST') {
+  if (req['method'] !== 'POST') {
     res.setHeader('Allow', 'POST');
     return res.status(405).end('Method Not Allowed');
   }
 
-  const { cart = [] } = (req.body as { cart?: any[] }) || {};
+  const { cart = [] } = (req['body'] as { cart?: any[] }) || {};
   if (!Array.isArray(cart) || cart.length === 0) {
     return res.status(400).json({ error: 'Missing cart' });
   }
@@ -34,8 +34,8 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     const session = await stripe.checkout.sessions.create({
       line_items,
       mode: 'payment',
-      success_url: `${req.headers.origin}/order-success?session_id={CHECKOUT_SESSION_ID}`,
-      cancel_url: `${req.headers.origin}/cart`,
+      success_url: `${req['headers']['origin']}/order-success?session_id={CHECKOUT_SESSION_ID}`,
+      cancel_url: `${req['headers']['origin']}/cart`,
       metadata: { orderId },
     });
 

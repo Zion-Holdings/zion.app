@@ -1,7 +1,8 @@
 
 import { useAuthStatus } from "./talent/useAuthStatus";
 import { useTalentData } from "./talent/useTalentData";
-import { useFilterTalents, TalentFilterOptions } from "./talent/useFilterTalents";
+import { useFilterTalents } from "./talent/useFilterTalents";
+import type { TalentFilterOptions } from "./talent/useFilterTalents";
 import { useUIState } from "./talent/useUIState";
 
 export function useTalentDirectory(

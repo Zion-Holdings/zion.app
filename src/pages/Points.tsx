@@ -15,7 +15,6 @@ import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { ScrollArea } from '@/components/ui/scroll-area';
 import { formatDistanceToNow } from 'date-fns';
-import Link from 'next/link';
 import { LoginModal } from '@/components/auth/LoginModal';
 
 export default function PointsPage() {
@@ -145,10 +144,22 @@ export default function PointsPage() {
           <Card className="text-center">
             <CardContent className="pt-6">
               <Star className="h-12 w-12 text-primary mx-auto mb-4" />
-              <h3 className="text-2xl font-bold mb-2">Coming Soon</h3>
+              <h3 className="text-2xl font-bold mb-2">Redeem Your Points</h3>
               <p className="text-muted-foreground mb-4">
-                Our full rewards system is launching soon! Sign up now to start earning points immediately.
+                Try out our new rewards system! Earn points and redeem them for exclusive rewards below.
               </p>
+              <div className="grid md:grid-cols-2 gap-4 mb-4">
+                {upcomingRewards.map((reward, _idx) => (
+                  <Card key={reward.id} className="p-4 flex flex-col items-center">
+                    <div className="font-bold text-lg mb-1">{reward.title}</div>
+                    <div className="text-zion-cyan mb-1">{reward.category}</div>
+                    <Badge variant="outline" className="mb-2">{reward.cost} pts</Badge>
+                    <Button size="sm" disabled>
+                      Redeem (Login Required)
+                    </Button>
+                  </Card>
+                ))}
+              </div>
               <Button onClick={() => setLoginOpen(true)}>
                 Create Account
               </Button>
@@ -272,24 +283,6 @@ export default function PointsPage() {
               </div>
             </ScrollArea>
           )}
-        </CardContent>
-      </Card>
-
-      <Card className="text-center">
-        <CardContent className="pt-6">
-          <Star className="h-12 w-12 text-primary mx-auto mb-4" />
-          <h3 className="text-2xl font-bold mb-2">Full Rewards System Coming Soon</h3>
-          <p className="text-muted-foreground mb-4">
-            We're finalizing the redemption system. Keep earning points - they'll be ready to spend soon!
-          </p>
-          <div className="flex gap-4 justify-center">
-            <Button variant="outline" asChild>
-              <Link href="/marketplace">Browse Marketplace</Link>
-            </Button>
-            <Button variant="outline" asChild>
-              <Link href="/community">Join Community</Link>
-            </Button>
-          </div>
         </CardContent>
       </Card>
     </div>

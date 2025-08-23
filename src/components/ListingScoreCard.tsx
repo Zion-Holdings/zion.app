@@ -9,15 +9,15 @@ import React, { useState } from 'react'; // Import useState
 interface ListingScoreCardProps {
   title: string;
   description: string;
-  image?: string;
+  image?: string | undefined;
   category: string;
-  tags?: string[];
-  author?: string;
-  authorImage?: string;
-  aiScore?: number;
-  rating?: number;
-  reviewCount?: number;
-  className?: string;
+  tags?: string[] | undefined;
+  author?: string | undefined;
+  authorImage?: string | undefined;
+  aiScore?: number | undefined;
+  rating?: number | undefined;
+  reviewCount?: number | undefined;
+  className?: string | undefined;
 }
 
 export function ListingScoreCard({ 

@@ -62,8 +62,8 @@ export default function Dashboard() {
 
   // Type assertion to work around Supabase User type limitations - userWithExtendedProps can remain for now if it accesses non-standard props.
   // Standard props like user_metadata should resolve correctly on the original 'user' object.
-  const userWithExtendedProps = user as any; // Keep for potential non-standard props like 'displayName' if not on User type
-  const userType = userWithExtendedProps?.userType || user?.user_metadata?.userType || 'talent';
+  const userWithExtendedProps = user as unknown as { displayName?: string; email?: string; userType?: string; user_metadata?: { userType?: string } };
+  const userType = userWithExtendedProps?.userType || userWithExtendedProps?.user_metadata?.userType || 'talent';
   const roleForTour = userType === 'client' || userType === 'admin' ? 'client' : 'talent';
 
   if (loading) {
@@ -93,7 +93,7 @@ export default function Dashboard() {
     try {
       const { createTestNotification } = await loadNotificationFunctions();
       // Using type assertion as a workaround for persistent TS error.
-      const result = await createTestNotification((user as any)?.id ?? "");
+      const result = await createTestNotification((user as { id?: string })?.id ?? "");
       if (result.success) {
         toast({
           title: "Test notification created",
@@ -106,7 +106,7 @@ export default function Dashboard() {
           variant: "destructive",
         });
       }
-    } catch (error) {
+    } catch {
       toast({
         title: "Error loading notification system",
         description: "Please try again",
@@ -202,7 +202,7 @@ export default function Dashboard() {
                             title: "Onboarding notification sent",
                             description: "Check your notification center"
                           });
-                        } catch (error) {
+                        } catch {
                           toast({
                             title: "Error sending notification",
                             description: "Please try again",
@@ -232,7 +232,7 @@ export default function Dashboard() {
                             title: "System notification sent",
                             description: "Check your notification center"
                           });
-                        } catch (error) {
+                        } catch {
                           toast({
                             title: "Error sending notification",
                             description: "Please try again",

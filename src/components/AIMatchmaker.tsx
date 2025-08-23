@@ -3,7 +3,8 @@ import { toast } from "@/hooks/use-toast";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { AIMatchingResults } from "@/components/AIMatchingResults";
-import { findMatches, MatchResult } from "@/lib/ai-matchmaking";
+import { findMatches } from "@/lib/ai-matchmaking";
+import type { MatchResult } from "@/lib/ai-matchmaking";
 import { Textarea } from "@/components/ui/textarea";
 import { Sparkles, Search } from 'lucide-react';
 
@@ -13,7 +14,7 @@ import { logInfo, logErrorToProduction } from '@/utils/productionLogger';
 
 interface AIMatchmakerProps {
   serviceType?: string;
-  onMatchSelect?: (match: any) => void;
+  onMatchSelect?: (match: MatchResult) => void;
   className?: string;
 }
 
@@ -46,7 +47,7 @@ export function AIMatchmaker({ serviceType = "", onMatchSelect, className }: AIM
         3
       );
       
-      logInfo('AI matching results:', { data: results });
+      logInfo('AI matching results:', { data:  { data: results } });
       setMatches(results);
       
       toast({
@@ -67,12 +68,12 @@ export function AIMatchmaker({ serviceType = "", onMatchSelect, className }: AIM
     }
   };
   
-  const handleItemSelect = (item: any) => {
-    if (onMatchSelect) {
-      // Find the original MatchResult that contains this item
-      const matchResult = matches.find(match => match.item.id === item.id);
-      if (matchResult) {
-        onMatchSelect(matchResult);
+  const handleItemSelect = (item: unknown) => {
+    if (onMatchSelect && typeof item === 'object' && item !== null) {
+      // Find the corresponding match from matches array
+      const match = matches.find(m => m.item === item);
+      if (match) {
+        onMatchSelect(match);
       }
     }
   };

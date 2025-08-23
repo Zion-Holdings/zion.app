@@ -1,5 +1,6 @@
 
-import { onsiteServicePricing, CountryPricing } from "@/data/onsiteServicePricing";
+import { onsiteServicePricing } from "@/data/onsiteServicePricing";
+import type { CountryPricing } from "@/data/onsiteServicePricing";
 import { CountrySelector } from "./CountrySelector";
 import { PaymentSection } from "./PaymentSection";
 import { ServiceDetails } from "./ServiceDetails";

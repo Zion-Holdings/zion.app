@@ -6,6 +6,7 @@ async function logEventToSupabase(
   eventParams?: Record<string, any>
 ) {
   if (!isSupabaseConfigured) return;
+  if (!supabase) throw new Error('Supabase client not initialized');
 
   try {
     await supabase.from('analytics_events').insert([
@@ -29,7 +30,7 @@ export const initGA = () => {
 
   const doNotTrack = navigator.doNotTrack;
   if (doNotTrack === '1' || doNotTrack === 'yes') {
-    logInfo('Do Not Track is enabled. GA4 initialization skipped.', { context: 'GoogleAnalyticsInit' });
+    logInfo('Do Not Track is enabled. GA4 initialization skipped.', { data:  { context: 'GoogleAnalyticsInit' } });
     return;
   }
 

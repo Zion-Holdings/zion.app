@@ -16,83 +16,101 @@ export function FeaturedListingsSection({
   className,
   style,
 }: FeaturedListingsSectionProps) {
+  // Reactivate: Use a mock or real data source for featured listings
+  // For now, use a simple mock array to restore functionality
   const featuredListings = [
     {
-      id: "ai-innovation-bootcamp",
-      title: "AI Innovation Bootcamp",
-      uspHeadline: "Master AI Skills Fast",
-      description:
-        "Join a focused, project-based bootcamp where industry mentors guide you through building real AI solutions. Perfect for jump-starting your career or expanding your capabilities in just weeks.",
-      price: 4999,
-      currency: "$",
-      category: "Training",
-      tags: ["AI", "Bootcamp"],
-      images: ["https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=800&h=500"],
-      createdAt: "2024-05-01T09:00:00.000Z",
+      id: '1',
+      title: 'AI Copywriter',
+      description: 'Generate high-quality marketing copy in seconds.',
+      category: 'AI Tools',
+      subcategory: 'Copywriting',
+      price: 49,
+      currency: 'USD',
+      tags: ['copywriting', 'ai', 'marketing'],
+      author: { name: 'AI Tools Inc.', id: 'ai-tools', avatarUrl: '/images/ai-copywriter.svg', email: 'info@aitools.com' },
+      images: ['/images/ai-copywriter.svg'],
+      createdAt: '2024-01-01T00:00:00.000Z',
       rating: 4.8,
-      reviewCount: 124,
-      author: {
-        name: "Zion Academy",
-        id: "zion-academy"
-      }
+      reviewCount: 120,
+      featured: true,
+      aiScore: 92,
+      location: 'Global',
+      availability: 'In Stock',
+      stock: 10,
+      brand: 'AI Tools',
+      specifications: ['GPT-4', 'API Access'],
+      uspHeadline: 'Instant copy generation',
     },
     {
-      id: "freelance-ai-engineer",
-      title: "Freelance AI Engineer",
-      uspHeadline: "Expert Dev, On Demand",
-      description:
-        "Hire a seasoned AI engineer who integrates seamlessly with your team. From model design to deployment, get top-tier skills without the overhead of a full-time hire.",
-      price: null,
-      currency: "$",
-      category: "Services",
-      tags: ["AI", "Freelance"],
-      images: ["https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?auto=format&fit=crop&w=800&h=500"],
-      createdAt: "2024-06-10T10:30:00.000Z",
-      rating: 4.9,
-      reviewCount: 56,
-      author: {
-        name: "TopTalent",
-        id: "toptalent"
-      }
-    },
-    {
-      id: "cloud-gpu-rental",
-      title: "Cloud GPU Rental",
-      uspHeadline: "Powerful GPUs, Anytime, Anywhere",
-      description:
-        "Access high-performance GPU instances in the cloud whenever you need them. Scale effortlessly for training, inference, or rendering tasks and only pay for what you use.",
-      price: 1299,
-      currency: "$",
-      category: "Infrastructure",
-      tags: ["GPU", "Cloud"],
-      images: ["https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=800&h=500"],
-      createdAt: "2024-03-20T11:15:00.000Z",
+      id: '2',
+      title: 'Vision API',
+      description: 'Advanced image recognition for your apps.',
+      category: 'APIs',
+      subcategory: 'Vision',
+      price: 99,
+      currency: 'USD',
+      tags: ['vision', 'api', 'image-recognition'],
+      author: { name: 'Visionary', id: 'visionary', avatarUrl: '/images/vision-api.svg', email: 'contact@visionary.com' },
+      images: ['/images/vision-api.svg'],
+      createdAt: '2024-01-02T00:00:00.000Z',
       rating: 4.7,
-      reviewCount: 89,
-      author: {
-        name: "ComputeHub",
-        id: "computehub"
-      }
+      reviewCount: 98,
+      featured: true,
+      aiScore: 89,
+      location: 'Global',
+      availability: 'In Stock',
+      stock: 7,
+      brand: 'Visionary',
+      specifications: ['Image Recognition', 'Fast API'],
+      uspHeadline: 'See the unseen',
     },
     {
-      id: "ai-optimized-cloud-storage",
-      title: "AI-Optimized Cloud Storage",
-      uspHeadline: "Secure Storage for AI Workloads",
-      description:
-        "Store and retrieve massive datasets with lightning-fast throughput. Our AI-optimized cloud storage ensures efficient pipeline performance, built-in redundancy, and encryption for your machine learning workflows.",
-      price: 299,
-      currency: "$",
-      category: "Infrastructure",
-      tags: ["Storage", "Cloud"],
-      images: ["https://images.unsplash.com/photo-1518779578993-ec3579fee39f?auto=format&fit=crop&w=800&h=500"],
-      createdAt: "2024-04-05T08:00:00.000Z",
+      id: '3',
+      title: 'Chatbot Pro',
+      description: 'Conversational AI for customer support.',
+      category: 'AI Tools',
+      subcategory: 'Chatbot',
+      price: 29,
+      currency: 'USD',
+      tags: ['chatbot', 'ai', 'support'],
+      author: { name: 'Chatbotics', id: 'chatbotics', avatarUrl: '/images/chatbot-pro.svg', email: 'hello@chatbotics.com' },
+      images: ['/images/chatbot-pro.svg'],
+      createdAt: '2024-01-03T00:00:00.000Z',
       rating: 4.6,
-      reviewCount: 72,
-      author: {
-        name: "DataCloud",
-        id: "datacloud"
-      }
-    }
+      reviewCount: 75,
+      featured: true,
+      aiScore: 87,
+      location: 'Global',
+      availability: 'In Stock',
+      stock: 15,
+      brand: 'Chatbotics',
+      specifications: ['Conversational AI', '24/7 Support'],
+      uspHeadline: 'Always-on support',
+    },
+    {
+      id: '4',
+      title: 'Data Insights',
+      description: 'Turn raw data into actionable insights.',
+      category: 'Analytics',
+      subcategory: 'Data',
+      price: 199,
+      currency: 'USD',
+      tags: ['data', 'analytics', 'insights'],
+      author: { name: 'DataWiz', id: 'datawiz', avatarUrl: '/images/data-insights.svg', email: 'info@datawiz.com' },
+      images: ['/images/data-insights.svg'],
+      createdAt: '2024-01-04T00:00:00.000Z',
+      rating: 4.9,
+      reviewCount: 150,
+      featured: true,
+      aiScore: 95,
+      location: 'Global',
+      availability: 'In Stock',
+      stock: 5,
+      brand: 'DataWiz',
+      specifications: ['Big Data', 'AI Analytics'],
+      uspHeadline: 'Insights at your fingertips',
+    },
   ];
 
   return (
@@ -136,3 +154,4 @@ export function FeaturedListingsSection({
     </section>
   );
 }
+

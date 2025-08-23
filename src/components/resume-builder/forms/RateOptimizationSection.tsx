@@ -1,6 +1,7 @@
 
 import React, { useState } from "react";
-import { Control, UseFormSetValue } from "react-hook-form";
+import type { Control } from "react-hook-form";
+import type { UseFormSetValue } from "react-hook-form";
 import {
   FormField,
   FormItem,
@@ -64,7 +65,7 @@ export const RateOptimizationSection: React.FC<RateOptimizationSectionProps> = (
           <TalentRateRecommender
             skills={skills}
             yearsExperience={yearsExperience}
-            location={location}
+            location={location || ""}
             onSuggestionApplied={handleSuggestionApplied}
             rateType={rateType}
           />

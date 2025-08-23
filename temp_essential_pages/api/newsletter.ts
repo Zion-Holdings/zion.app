@@ -12,7 +12,7 @@ async function handler(
     return res.status(405).end(`Method ${req.method} Not Allowed`);
   }
 
-  const email = (req.body && req.body.email) || '';
+  const email = (req['body'] && req['body'].email) || '';
   if (typeof email !== 'string' || !isEmail(email)) {
     return res.status(400).json({ error: 'Invalid email' });
   }

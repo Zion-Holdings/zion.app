@@ -3,7 +3,7 @@ import { SEO } from "@/components/SEO";
 import { TalentCard } from "@/components/talent/TalentCard";
 import { useAuth } from "@/hooks/useAuth";
 import { supabase } from "@/integrations/supabase/client";
-import { TalentProfile } from "@/types/talent";
+import type { TalentProfile } from "@/types/talent";
 import { toast } from "@/components/ui/use-toast";
 import { useRouter } from 'next/router';
 import { logErrorToProduction } from '@/utils/productionLogger';
@@ -35,6 +35,7 @@ export default function SavedTalentsPage() {
           return;
         }
 
+        if (!supabase) throw new Error('Supabase client is not initialized');
         const { data, error } = await supabase
           .from("saved_talents")
           .select(
@@ -65,9 +66,8 @@ export default function SavedTalentsPage() {
         if (data) {
           // Extract talent profiles and convert to TalentProfile type.
           // Use an empty array as fallback to avoid runtime errors
-          const talentProfiles = (data ?? []).map(
-            (item: any) => item.talent_profile as unknown as TalentProfile
-          );
+          const savedTalentItems = data as unknown as { talent_profile: TalentProfile }[];
+          const talentProfiles = savedTalentItems.map((item: unknown) => (item as { talent_profile: TalentProfile }).talent_profile);
           setSavedTalents(talentProfiles);
         }
       } catch (error) {
@@ -90,14 +90,14 @@ export default function SavedTalentsPage() {
   };
 
   const handleRequestHire = (talent: TalentProfile) => {
-    logInfo('Request to hire:', { data: talent });
+    logInfo('Request to hire:', { data:  { data: talent } });
     toast({
       title: "Hire Request Sent",
       description: `A hire request has been sent to ${talent.full_name}.`,
     });
   };
 
-  const handleToggleSave = async (talentId: string, isCurrentlySaved: boolean) => {
+  const _handleToggleSave = async (talentId: string, isCurrentlySaved: boolean) => {
     try {
       if (!user) {
         logWarn("User not authenticated.");
@@ -105,6 +105,7 @@ export default function SavedTalentsPage() {
       }
   
       if (isCurrentlySaved) {
+        if (!supabase) throw new Error('Supabase client is not initialized');
         // Remove from saved talents
         const { error } = await supabase
           .from('saved_talents')
@@ -124,6 +125,7 @@ export default function SavedTalentsPage() {
           description: "Talent removed from saved list.",
         });
       } else {
+        if (!supabase) throw new Error('Supabase client is not initialized');
         // Add to saved talents
         const { error } = await supabase
           .from('saved_talents')
@@ -134,6 +136,7 @@ export default function SavedTalentsPage() {
         }
   
         // Fetch the updated talent profile and add it to the list
+        if (!supabase) throw new Error('Supabase client is not initialized');
         const { data: talentData, error: talentError } = await supabase
           .from('talent_profiles')
           .select('*')

@@ -4,7 +4,7 @@
 
 
 
-import { Badge } from "@/types/community";
+import type { Badge } from "@/types/community";
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
 import { Trophy, Award, BadgeCheck, Star, MessageSquare } from 'lucide-react';
 

@@ -15,8 +15,6 @@ interface ErrorDetails {
   source: 'GlobalErrorBoundary' | 'logError' | 'window.onerror' | 'unhandledrejection' | string; // string for flexibility
 }
 
-const DEFAULT_ENDPOINT = 'http://localhost:3001/webhook/trigger-fix';
-
 export async function sendErrorToBackend(errorDetails: ErrorDetails): Promise<void> {
   const webhookUrl = process.env.NEXT_PUBLIC_AUTOFIX_WEBHOOK_URL;
 
@@ -51,7 +49,7 @@ export async function sendErrorToBackend(errorDetails: ErrorDetails): Promise<vo
   }
 }
 
-export function reportError(error: Error | string, context?: Record<string, any>) {
+export async function reportError() {
   const webhookUrl = process.env.NEXT_PUBLIC_AUTOFIX_WEBHOOK_URL;
   
   if (!webhookUrl || webhookUrl.trim() === '') {

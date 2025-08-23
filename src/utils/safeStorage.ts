@@ -36,7 +36,7 @@ function isLocalStorageAvailable(): boolean {
   }
 }
 
-function safeConsoleError(message: string, error?: any) {
+function safeConsoleError(message: string, error?: unknown) {
   // Prevent infinite recursion in console logging
   if (isLoggingError || (typeof process !== 'undefined' && process.env.NODE_ENV === 'production')) return;
   

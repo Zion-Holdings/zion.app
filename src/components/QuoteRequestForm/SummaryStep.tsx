@@ -1,9 +1,10 @@
 import { useEffect, useState } from "react";
-import { QuoteFormData } from "@/types/quotes";
+import type { QuoteFormData } from "@/types/quotes";
 import { Card, CardContent } from "@/components/ui/card";
 import { Label } from "@/components/ui/label";
 import { AIMatchingResults } from "@/components/AIMatchingResults";
-import { findMatches, MatchResult } from "@/lib/ai-matchmaking";
+import { findMatches } from "@/lib/ai-matchmaking";
+import type { MatchResult } from "@/lib/ai-matchmaking";
 import { toast } from "@/hooks/use-toast";
 import {logErrorToProduction} from '@/utils/productionLogger';
 

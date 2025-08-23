@@ -7,7 +7,7 @@ import {
   DialogTitle,
 } from '@/components/ui/dialog';
 import { AIEnhancementPanel } from './AIEnhancementPanel';
-import { AIEnhancementOptions } from '@/hooks/useAIContentEnhancer';
+import type { AIEnhancementOptions } from '@/hooks/useAIContentEnhancer';
 
 interface AIEnhancementDialogProps {
   title: string;
@@ -41,7 +41,7 @@ export function AIEnhancementDialog({
           title={title}
           defaultOptions={defaultOptions}
           onApply={handleApply}
-          initialContent={initialContent}
+          initialContent={initialContent ?? ''}
         />
       </DialogContent>
     </Dialog>

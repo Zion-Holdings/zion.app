@@ -1,7 +1,7 @@
 
 import { useState } from 'react';
 import { supabase } from '@/integrations/supabase/client';
-import { Resume, ResumeBasicInfo } from '@/types/resume';
+import type { Resume, ResumeBasicInfo } from '@/types/resume';
 import { useAuth } from '@/hooks/useAuth';
 import { formatDateForDB, handleResumeError, showSuccessToast } from './useResumeUtils';
 
@@ -20,6 +20,7 @@ export function useResumeActions() {
     setError(null);
     
     try {
+      if (!supabase) throw new Error('Supabase client not initialized');
       const { data, error } = await supabase
         .from('talent_resumes')
         .insert({
@@ -53,6 +54,7 @@ export function useResumeActions() {
     setError(null);
     
     try {
+      if (!supabase) throw new Error('Supabase client not initialized');
       const { error } = await supabase
         .from('talent_resumes')
         .update({
@@ -83,6 +85,7 @@ export function useResumeActions() {
     setError(null);
     
     try {
+      if (!supabase) throw new Error('Supabase client not initialized');
       // First, set all user's resumes to inactive
       const { error: resetError } = await supabase
         .from('talent_resumes')

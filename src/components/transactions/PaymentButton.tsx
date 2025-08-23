@@ -36,6 +36,8 @@ export function PaymentButton({
   const { isAuthenticated, user } = useAuth();
   const navigate = useNavigate();
   
+  if (!supabase) throw new Error('Supabase client not initialized');
+
   const handlePaymentClick = async () => {
     if (!isAuthenticated) {
       toast({
@@ -51,6 +53,14 @@ export function PaymentButton({
       return;
     }
     
+    if (!supabase) {
+      toast({
+        title: "Payment error",
+        description: "Supabase client not initialized.",
+        variant: "destructive",
+      });
+      return;
+    }
     try {
       setIsProcessing(true);
       

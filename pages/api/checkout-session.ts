@@ -1,4 +1,4 @@
-import { NextApiRequest, NextApiResponse } from 'next';
+import type { NextApiRequest, NextApiResponse } from 'next';
 import Stripe from 'stripe';
 import fs from 'fs';
 import path from 'path';
@@ -10,12 +10,12 @@ import { logInfo, logWarn, logErrorToProduction } from '@/utils/productionLogger
 // Helper to determine if the current environment is production-like
 function isProductionEnvironment(req: NextApiRequest): boolean {
   // Check common environment variables that indicate production
-  if (process.env.NODE_ENV === 'production') return true;
-  if (process.env.VERCEL_ENV === 'production') return true; // Vercel
-  if (process.env.CONTEXT === 'production') return true; // Netlify
+  if (process.env['NODE_ENV'] === 'production') return true;
+  if (process.env['VERCEL_ENV'] === 'production') return true; // Vercel
+  if (process.env['CONTEXT'] === 'production') return true; // Netlify
 
   // Fallback: check host if available (less reliable for API routes)
-  const hostHeader = req.headers.host || process.env.NEXT_PUBLIC_APP_URL || process.env.VERCEL_URL || process.env.URL;
+  const hostHeader = req['headers']['host'] || process.env['NEXT_PUBLIC_APP_URL'] || process.env['VERCEL_URL'] || process.env['URL'];
   if (hostHeader) {
     try {
       // Convert to string if it's an array
@@ -33,12 +33,12 @@ function isProductionEnvironment(req: NextApiRequest): boolean {
 }
 
 function getStripeSecretKey(isProdEnv: boolean): string {
-  const liveSecretKey = process.env.STRIPE_SECRET_KEY;
-  const testSecretKey = process.env.STRIPE_TEST_SECRET_KEY;
-  const forceTestMode = process.env.STRIPE_TEST_MODE === 'true';
+  const liveSecretKey = process.env['STRIPE_SECRET_KEY'];
+  const testSecretKey = process.env['STRIPE_TEST_SECRET_KEY'];
+  const forceTestMode = process.env['STRIPE_TEST_MODE'] === 'true';
 
   // For development/test environments, always use test keys
-  if (process.env.NODE_ENV !== 'production' || forceTestMode) {
+  if (process.env['NODE_ENV'] !== 'production' || forceTestMode) {
     if (!testSecretKey) {
       logWarn('No STRIPE_TEST_SECRET_KEY configured, using dummy key for development');
       return 'sk_test_dummy_key_for_development_only';
@@ -83,9 +83,9 @@ export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse
 ) {
-  if (req.method !== 'POST') {
+  if (req['method'] !== 'POST') {
     res.setHeader('Allow', 'POST');
-    return res.status(405).json({ error: `Method ${req.method} Not Allowed` });
+    return res.status(405).json({ error: `Method ${req['method']} Not Allowed` });
   }
 
   try {
@@ -98,16 +98,16 @@ export default async function handler(
       logInfo('Using dummy Stripe key - returning mock checkout session');
       return res.status(200).json({
         sessionId: 'cs_test_mock_session_id_' + Date.now(),
-        url: `${req.headers.origin}/checkout-test?mock=true`,
+        url: `${req['headers']['origin']}/checkout-test?mock=true`,
         message: 'Mock checkout session created for development'
       });
     }
     
-    const stripe = new Stripe(stripeKey, {
+    const stripe = new (Stripe as any)(stripeKey, {
       apiVersion: '2024-06-20',
     });
 
-    const { cartItems, customer_email, shipping_address }: CheckoutRequest = req.body as CheckoutRequest;
+    const { cartItems, customer_email, shipping_address }: CheckoutRequest = req['body'] as CheckoutRequest;
 
     // Validate required fields
     if (!cartItems || !Array.isArray(cartItems) || cartItems.length === 0) {
@@ -165,8 +165,8 @@ export default async function handler(
       customer_email,
       line_items: lineItems,
       mode: 'payment',
-      success_url: `${process.env.NEXT_PUBLIC_SITE_URL || req.headers.origin}/order-confirmation/{CHECKOUT_SESSION_ID}`,
-      cancel_url: `${process.env.NEXT_PUBLIC_SITE_URL || req.headers.origin}/cart`,
+      success_url: `${process.env['NEXT_PUBLIC_SITE_URL'] || req['headers']['origin']}/order-confirmation/{CHECKOUT_SESSION_ID}`,
+      cancel_url: `${process.env['NEXT_PUBLIC_SITE_URL'] || req['headers']['origin']}/cart`,
       metadata: {
         customer_email,
         shipping_address: shipping_address || '',
@@ -222,7 +222,7 @@ export default async function handler(
     if (error.message?.includes('No API key provided')) {
       return res.status(500).json({
         error: 'Payment system configuration error',
-        details: process.env.NODE_ENV === 'development' 
+        details: process.env['NODE_ENV'] === 'development' 
           ? 'Stripe secret key not configured' 
           : 'Payment system temporarily unavailable',
       });
@@ -231,7 +231,7 @@ export default async function handler(
     // Generic error response
     return res.status(500).json({
       error: 'Failed to create checkout session',
-      details: process.env.NODE_ENV === 'development' ? error.message : 'Internal server error',
+      details: process.env['NODE_ENV'] === 'development' ? error.message : 'Internal server error',
     });
   }
 }

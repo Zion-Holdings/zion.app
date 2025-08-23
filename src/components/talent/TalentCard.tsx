@@ -9,7 +9,7 @@ import { MapPin, Clock, ArrowRight, CheckCircle2 } from 'lucide-react';
 
 
 import { FavoriteButton } from "@/components/FavoriteButton";
-import { TalentProfile } from "@/types/talent";
+import type { TalentProfile } from "@/types/talent";
 import { RatingStars } from '@/components/RatingStars';
 import { useAuth } from '@/context/auth/AuthProvider';
 import { useCart } from '@/context/CartContext';

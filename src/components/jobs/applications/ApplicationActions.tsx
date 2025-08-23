@@ -11,7 +11,7 @@ import { Button } from "@/components/ui/button";
 
 
 
-import { JobApplication, ApplicationStatus } from "@/types/jobs";
+import type { JobApplication, ApplicationStatus } from "@/types/jobs";
 
 interface ApplicationActionsProps {
   application: JobApplication;

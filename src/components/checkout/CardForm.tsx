@@ -39,11 +39,11 @@ export default function CardForm({ amount, onSuccess }: Props) {
           payment_method: {
             card: elements.getElement(CardElement)!,
             billing_details: {
-              email: (user && typeof user !== 'boolean' ? user.email : undefined),
+              email: (user && typeof user !== 'boolean' ? user.email : null),
               name:
                 user && typeof user !== 'boolean'
-                  ? user.displayName || user.name
-                  : undefined,
+                  ? user.displayName || user.name || null
+                  : null,
             },
           },
         },

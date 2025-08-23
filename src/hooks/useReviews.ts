@@ -2,7 +2,7 @@
 import { useState } from "react";
 import { supabase } from "@/integrations/supabase/client";
 import { useAuth } from "@/hooks/useAuth";
-import { Review, ReviewReport } from "@/types/reviews";
+import type { Review, ReviewReport } from '@/types/reviews';
 import { toast } from "@/hooks/use-toast";
 import {logErrorToProduction} from '@/utils/productionLogger';
 
@@ -21,6 +21,7 @@ export function useReviews(projectId?: string) {
     setIsLoading(true);
     
     try {
+      if (!supabase) throw new Error('Supabase client not initialized');
       const { data, error } = await supabase
         .from("reviews")
         .select(`
@@ -37,6 +38,7 @@ export function useReviews(projectId?: string) {
       
       // Check if current user has already submitted a review
       if (user) {
+        if (!supabase) throw new Error('Supabase client not initialized');
         const { data: userReviewData, error: userReviewError } = await supabase
           .from("reviews")
           .select("*")
@@ -48,8 +50,9 @@ export function useReviews(projectId?: string) {
           setUserReview(userReviewData);
         }
       }
-    } catch (err: any) {
-      logErrorToProduction('Error fetching reviews:', { data: err });
+    } catch (err: unknown) {
+      const message = err instanceof Error ? err.message : String(err);
+      logErrorToProduction('Error fetching reviews:', { data: message });
       toast({
         title: "Error",
         description: "Failed to load reviews",
@@ -67,6 +70,7 @@ export function useReviews(projectId?: string) {
     setIsLoading(true);
     
     try {
+      if (!supabase) throw new Error('Supabase client not initialized');
       const { data, error } = await supabase
         .from("reviews")
         .select(`
@@ -81,8 +85,9 @@ export function useReviews(projectId?: string) {
       if (error) throw error;
       
       setReviews(data || []);
-    } catch (err: any) {
-      logErrorToProduction('Error fetching user reviews:', { data: err });
+    } catch (err: unknown) {
+      const message = err instanceof Error ? err.message : String(err);
+      logErrorToProduction('Error fetching user reviews:', { data: message });
       toast({
         title: "Error",
         description: "Failed to load reviews",
@@ -117,6 +122,7 @@ export function useReviews(projectId?: string) {
     setIsSubmitting(true);
     
     try {
+      if (!supabase) throw new Error('Supabase client not initialized');
       const { data, error } = await supabase
         .from("reviews")
         .insert({
@@ -135,11 +141,12 @@ export function useReviews(projectId?: string) {
       
       setUserReview(data);
       return true;
-    } catch (err: any) {
-      logErrorToProduction('Error submitting review:', { data: err });
+    } catch (err: unknown) {
+      const message = err instanceof Error ? err.message : String(err);
+      logErrorToProduction('Error submitting review:', { data: message });
       
       // Check for unique constraint violation
-      if (err.code === "23505") {
+      if (message.includes("23505")) {
         toast({
           title: "Error",
           description: "You have already submitted a review for this project",
@@ -165,6 +172,7 @@ export function useReviews(projectId?: string) {
     setIsSubmitting(true);
     
     try {
+      if (!supabase) throw new Error('Supabase client not initialized');
       const { error } = await supabase
         .from("reviews")
         .update(updates)
@@ -184,8 +192,9 @@ export function useReviews(projectId?: string) {
       }
       
       return true;
-    } catch (err: any) {
-      logErrorToProduction('Error updating review:', { data: err });
+    } catch (err: unknown) {
+      const message = err instanceof Error ? err.message : String(err);
+      logErrorToProduction('Error updating review:', { data: message });
       toast({
         title: "Error",
         description: "Failed to update review",
@@ -202,6 +211,7 @@ export function useReviews(projectId?: string) {
     if (!user) return false;
     
     try {
+      if (!supabase) throw new Error('Supabase client not initialized');
       const { error } = await supabase
         .from("review_reports")
         .insert({
@@ -228,8 +238,9 @@ export function useReviews(projectId?: string) {
         });
         return true;
       }
-    } catch (err: any) {
-      logErrorToProduction('Error reporting review:', { data: err });
+    } catch (err: unknown) {
+      const message = err instanceof Error ? err.message : String(err);
+      logErrorToProduction('Error reporting review:', { data: message });
       toast({
         title: "Error",
         description: "Failed to report review",

@@ -1,12 +1,11 @@
 
 import React, { useEffect, useState } from "react";
 import { useInterviews } from "@/hooks/useInterviews";
-import { Interview } from "@/types/interview";
+import type { Interview } from "@/types/interview";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { SEO } from "@/components/SEO";
 import { ProtectedRoute } from "@/components/ProtectedRoute";
 import { InterviewCard } from "@/components/interviews/InterviewCard";
-import { Button } from "@/components/ui/button";
 import { Calendar, Clock, Video } from 'lucide-react';
 
 
@@ -28,7 +27,7 @@ function InterviewsContent() {
 
   // Filter interviews based on status and date
   const now = new Date();
-  const today = startOfDay(now);
+  const _today = startOfDay(now);
   
   const upcomingInterviews = interviews
     .filter((interview) => {

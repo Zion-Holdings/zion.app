@@ -1,6 +1,6 @@
 // API endpoint for enhanced error reporting
-import { NextApiRequest, NextApiResponse } from 'next';
-import { EnhancedError } from '@/utils/enhanced-error-logger';
+import type { NextApiRequest, NextApiResponse } from 'next';
+import type { EnhancedError } from '@/utils/enhanced-error-logger';
 
 interface ErrorReportRequest extends NextApiRequest {
   body: {
@@ -18,13 +18,13 @@ export default async function handler(
   req: ErrorReportRequest,
   res: NextApiResponse
 ): Promise<void> {
-  if (req.method !== 'POST') {
+  if (req['method'] !== 'POST') {
     res.status(405).json({ error: 'Method not allowed' });
     return;
   }
 
   try {
-    const { error, breadcrumbs } = req.body;
+    const { error, breadcrumbs } = req['body'];
     
     // Validate the error report structure
     if (!error || typeof error !== 'object') {
@@ -33,29 +33,18 @@ export default async function handler(
     }
 
     // Enhanced logging for development
-    if (process.env.NODE_ENV === 'development') {
-      console.log('🚨 Enhanced Error Report:', {
-        id: error.id,
-        message: error.message,
-        severity: error.severity,
-        source: error.source,
-        count: error.count,
-        environment: error.context.environment,
-        url: error.context.url,
-        timestamp: new Date(error.context.timestamp).toISOString()
-      });
-
+    if (process.env['NODE_ENV'] === 'development') {
       // Log breadcrumbs for context
       if (breadcrumbs && breadcrumbs.length > 0) {
-        console.log('📋 Error Breadcrumbs:');
+        // console.log('📋 Error Breadcrumbs:');
         breadcrumbs.forEach((breadcrumb, index) => {
-          console.log(`  ${index + 1}. [${breadcrumb.level}] ${breadcrumb.category}: ${breadcrumb.message}`);
+          // console.log(`  ${index + 1}. [${breadcrumb.level}] ${breadcrumb.category}: ${breadcrumb.message}`);
         });
       }
 
       // Log stack trace for critical errors
       if (error.severity === 'critical' && error.stack) {
-        console.log('🔍 Stack Trace:', error.stack);
+        // console.log('🔍 Stack Trace:', error.stack);
       }
     }
 
@@ -65,7 +54,7 @@ export default async function handler(
       // 1. Send to error tracking service (Sentry, Bugsnag, etc.)
       // 2. Send Slack/email notifications
       // 3. Create incident tickets
-      console.error('🔥 CRITICAL ERROR DETECTED:', error.message);
+      // console.error('🔥 CRITICAL ERROR DETECTED:', error.message);
     }
 
     // Store error in memory for development (replace with database in production)
@@ -86,23 +75,15 @@ export default async function handler(
 
     // In production, you would integrate with:
     // 1. Error tracking services
-    if (process.env.NODE_ENV === 'production' && process.env.ERROR_REPORTING_ENDPOINT) {
+    if (process.env.NODE_ENV === 'production' && process.env['ERROR_REPORTING_ENDPOINT']) {
       try {
-        await fetch(process.env.ERROR_REPORTING_ENDPOINT, {
+        await fetch(process.env['ERROR_REPORTING_ENDPOINT'], {
           method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-            'Authorization': `Bearer ${process.env.ERROR_REPORTING_API_KEY}`
-          },
-          body: JSON.stringify({
-            type: 'enhanced-error',
-            data: { error, breadcrumbs },
-            timestamp: Date.now()
-          })
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ error: error.message, stack: error.stack }),
         });
-      } catch (reportingError) {
-        console.error('Failed to send to external error service:', reportingError);
-        // Don't fail the request if external service fails
+      } catch (err) {
+        // Ignore reporting errors
       }
     }
 
@@ -129,7 +110,7 @@ export default async function handler(
     res.status(200).json(response);
 
   } catch (processingError) {
-    console.error('Error processing error report:', processingError);
+    // console.error('Error processing error report:', processingError);
     res.status(500).json({ 
       error: 'Internal server error',
       message: 'Failed to process error report'

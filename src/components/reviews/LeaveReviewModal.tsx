@@ -11,6 +11,7 @@ import {
 import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { ReviewForm } from "./ReviewForm";
+import type { ReviewFormValues } from "./ReviewForm";
 import { useReviews } from "@/hooks/useReviews";
 
 interface LeaveReviewModalProps {
@@ -42,18 +43,29 @@ export function LeaveReviewModal({
     }
   };
   
-  const handleSubmit = async (formValues: any) => {
+  const handleSubmit = async (formValues: ReviewFormValues) => {
     if (userReview) {
       // Update existing review
-      const { project_id, reviewee_id, ...updates } = formValues;
+      const updates = formValues;
       const success = await updateReview(userReview.id, updates);
       if (success) {
         handleOpenChange(false);
       }
       return success;
     } else {
-      // Create new review
-      const success = await submitReview(formValues);
+      // Create new review - ensure required fields are provided
+      if (!formValues.rating || !formValues.review_text) {
+        return false;
+      }
+      
+      const success = await submitReview({
+        ...formValues,
+        rating: formValues.rating,
+        review_text: formValues.review_text,
+        project_id: projectId,
+        reviewee_id: revieweeId,
+        is_anonymous: formValues.is_anonymous ?? false,
+      });
       if (success) {
         handleOpenChange(false);
       }
@@ -78,8 +90,8 @@ export function LeaveReviewModal({
           revieweeId={revieweeId}
           revieweeName={revieweeName}
           onSubmit={handleSubmit}
-          defaultValues={userReview || undefined}
           isSubmitting={isSubmitting}
+          defaultValues={userReview ?? undefined}
         />
       </DialogContent>
     </Dialog>

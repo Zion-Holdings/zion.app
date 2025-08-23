@@ -1,5 +1,5 @@
 import React from 'react';
-import { GetServerSideProps } from 'next';
+import type { GetServerSideProps } from 'next';
 import CommunityPage from '@/pages/CommunityPage';
 
 export const getServerSideProps: GetServerSideProps = async () => {
