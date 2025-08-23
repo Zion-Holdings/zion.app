@@ -426,6 +426,9 @@ body::before {
   ring-offset-color: #000000;
 }
 
+<<<<<<< HEAD
+/* Smooth Transitions */
+=======
 .glass-dark {
   background: rgba(0, 0, 0, 0.3);
   backdrop-filter: blur(15px);
@@ -570,6 +573,7 @@ body::before {
 }
 
 /* Enhanced Transitions */
+>>>>>>> 0f8f34f79a240b91d4992261cb0e4f4ff09ab0f5
 .transition-smooth {
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }

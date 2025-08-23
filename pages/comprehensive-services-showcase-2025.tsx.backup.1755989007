@@ -1,3 +1,12 @@
+<<<<<<< HEAD
+import React from 'react';
+import Layout from '../components/layout/Layout';
+import { motion } from 'framer-motion';
+import { Brain, Atom, Rocket, Shield, Zap, Target, Star } from 'lucide-react';
+import Link from 'next/link';
+
+const ComprehensiveServicesShowcase: React.FC = () => {
+=======
 import React, { useState, useEffect } from 'react';
 import Layout from '../components/layout/Layout';
 import SEO from '../components/SEO';
@@ -40,6 +49,7 @@ const ComprehensiveServicesShowcase: React.FC = () => {
   // Get unique categories
   const categories = ['all', ...Array.from(new Set(allServices.map(service => service.category)))];
 
+>>>>>>> 0f8f34f79a240b91d4992261cb0e4f4ff09ab0f5
   const serviceCategories = [
     {
       name: 'AI & Machine Learning',
@@ -186,6 +196,13 @@ const ComprehensiveServicesShowcase: React.FC = () => {
           </div>
         </section>
 
+<<<<<<< HEAD
+        {/* Services Overview */}
+        <section className="py-20 px-4">
+          <div className="max-w-7xl mx-auto">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+=======
         {/* Success Metrics */}
         <section className="py-20">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -395,6 +412,7 @@ const ComprehensiveServicesShowcase: React.FC = () => {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <motion.div
               initial={{ opacity: 0, y: 30 }}
+>>>>>>> 0f8f34f79a240b91d4992261cb0e4f4ff09ab0f5
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
               viewport={{ once: true }}
@@ -770,6 +788,8 @@ const ComprehensiveServicesShowcase: React.FC = () => {
             </motion.div>
           </div>
         </section>
+<<<<<<< HEAD
+=======
 
         {/* Contact Section */}
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
@@ -830,6 +850,7 @@ const ComprehensiveServicesShowcase: React.FC = () => {
             </div>
           </div>
         </footer>
+>>>>>>> 0f8f34f79a240b91d4992261cb0e4f4ff09ab0f5
       </div>
     </Layout>
   );

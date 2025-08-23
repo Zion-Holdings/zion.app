@@ -16,6 +16,40 @@ import {
   Menu, X, Search, Globe, TrendingUp, Lightbulb, Sparkles
 } from 'lucide-react';
 
+<<<<<<< HEAD
+// Enhanced types for better TypeScript support
+interface HeroSlide {
+  title: string;
+  subtitle: string;
+  description: string;
+  icon: React.ReactNode;
+  color: string;
+  textColor: string;
+  link: string;
+  bgImage?: string;
+}
+
+// Loading fallback component with better performance
+const LoadingFallback = React.memo(() => (
+  <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-gray-900 via-gray-800 to-black">
+    <motion.div
+      initial={{ opacity: 0, scale: 0.5 }}
+      animate={{ opacity: 1, scale: 1 }}
+      transition={{ duration: 0.5 }}
+      className="text-center"
+    >
+      <div className="relative">
+        <Loader2 className="w-16 h-16 text-cyan-400 animate-spin mx-auto mb-4" />
+        <div className="absolute inset-0 bg-gradient-to-r from-cyan-400 to-blue-500 rounded-full blur-xl opacity-20 animate-pulse"></div>
+      </div>
+      <p className="text-xl text-gray-300 mb-2 font-medium">Loading Zion Tech Group 2040...</p>
+      <p className="text-sm text-gray-500">Preparing your futuristic digital transformation journey</p>
+    </motion.div>
+  </div>
+));
+
+LoadingFallback.displayName = 'LoadingFallback';
+=======
 // Import the new service data
 import { ultimate2025MicroSaasExpansion } from '../data/2025-ultimate-micro-saas-expansion';
 import { ultimate2025ITServicesExpansion } from '../data/2025-ultimate-it-services-expansion';
@@ -24,6 +58,7 @@ import { revolutionary2041AdvancedServices } from '../data/revolutionary-2041-ad
 
 // Lazy load heavy components for better performance
 const LazyServiceCard = lazy(() => import('./ui/UltraFuturisticServiceCard2026'));
+>>>>>>> 0f8f34f79a240b91d4992261cb0e4f4ff09ab0f5
 
 const Homepage2040: React.FC = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -47,6 +82,13 @@ const Homepage2040: React.FC = () => {
     }
   }), []);
 
+<<<<<<< HEAD
+  const backgroundVariants = useMemo(() => ({
+    initial: { opacity: 0, scale: 0.8 },
+    animate: { opacity: 1, scale: 1 },
+    transition: { duration: 1.2, ease: "easeOut" }
+  }), []);
+=======
   const itemVariants = {
     hidden: { opacity: 0, y: 20 },
     visible: {
@@ -61,6 +103,7 @@ const Homepage2040: React.FC = () => {
 
   // Combine all revolutionary services
   const allRevolutionaryServices = [...revolutionary2041AdvancedServices];
+>>>>>>> 0f8f34f79a240b91d4992261cb0e4f4ff09ab0f5
 
   // Memoized color classes for better performance
   const getColorClasses = useCallback((index: number) => {

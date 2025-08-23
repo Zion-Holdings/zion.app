@@ -1,4 +1,13 @@
 import React from 'react';
+<<<<<<< HEAD
+import Homepage2026 from '../components/Homepage2026';
+import SEOOptimizer from '../components/SEOOptimizer';
+import AnalyticsTracker from '../components/AnalyticsTracker';
+import ErrorBoundary from '../components/ErrorBoundary';
+import EnhancedPerformanceOptimizer from '../components/EnhancedPerformanceOptimizer';
+import EnhancedAccessibilityEnhancer from '../components/EnhancedAccessibilityEnhancer';
+import SecurityEnhancer from '../components/SecurityEnhancer';
+=======
 import EnhancedHomepage2026 from '../components/EnhancedHomepage2026';
 import SEOOptimizer from '../components/SEOOptimizer';
 import AnalyticsTracker from '../components/AnalyticsTracker';
@@ -6,18 +15,28 @@ import PerformanceOptimizer from '../components/PerformanceOptimizer';
 import AccessibilityEnhancer from '../components/AccessibilityEnhancer';
 import ErrorBoundary from '../components/ErrorBoundary';
 import PerformanceMonitor from '../components/PerformanceMonitor';
+>>>>>>> 0f8f34f79a240b91d4992261cb0e4f4ff09ab0f5
 
 const HomePage: React.FC = () => {
   return (
     <ErrorBoundary>
       <SEOOptimizer />
       <AnalyticsTracker />
+<<<<<<< HEAD
+      <PerformanceOptimizer />
+      <AccessibilityEnhancer />
+      <MobileOptimizer showDebugInfo={false}>
+        <Homepage2025 />
+        <PerformanceMonitor showUI={true} />
+      </MobileOptimizer>
+=======
       <PerformanceOptimizer onMetricsUpdate={handlePerformanceMetrics}>
         <AccessibilityEnhancer>
           <EnhancedHomepage2026 />
         </AccessibilityEnhancer>
       </PerformanceOptimizer>
       <PerformanceMonitor />
+>>>>>>> 0f8f34f79a240b91d4992261cb0e4f4ff09ab0f5
     </ErrorBoundary>
   );
 };
