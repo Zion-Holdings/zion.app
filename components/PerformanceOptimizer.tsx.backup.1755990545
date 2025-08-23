@@ -1,7 +1,31 @@
 import React, { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 
+<<<<<<< HEAD
+interface PerformanceOptimizerProps {
+  enableMonitoring?: boolean;
+  showMetrics?: boolean;
+  enableImageOptimization?: boolean;
+  enableLazyLoading?: boolean;
+}
+
+interface FirstInputEntry extends PerformanceEntry {
+  processingStart: number;
+  processingEnd: number;
+  target?: any | null;
+}
+
+// Global type declarations for browser APIs
+declare global {
+  interface Performance {
+    memory?: {
+      usedJSHeapSize: number;
+    };
+  }
+}
+=======
 // gtag is already declared in AnalyticsTracker.tsx
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-0eac
 
 interface LayoutShiftEntry extends PerformanceEntry {
   value: number;

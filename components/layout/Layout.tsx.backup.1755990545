@@ -1,3 +1,10 @@
+<<<<<<< HEAD
+import React, { useState } from 'react';
+import UltraFuturisticNavigation2036 from './UltraFuturisticNavigation2036';
+import UltraFuturisticFooter2038 from './UltraFuturisticFooter2038';
+import EnhancedSidebar2025 from './EnhancedSidebar2025';
+import UltraFuturisticBackground2038 from '../backgrounds/UltraFuturisticBackground2038';
+=======
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import UltraAdvancedFuturisticNavigation2038 from './UltraAdvancedFuturisticNavigation2038';
@@ -5,6 +12,7 @@ import UltraAdvancedFuturisticFooter2038 from './UltraAdvancedFuturisticFooter20
 import EnhancedSidebar2025 from './EnhancedSidebar2025';
 import UltraAdvancedFuturisticBackground2038 from '../backgrounds/UltraAdvancedFuturisticBackground2038';
 import UltraAdvancedNeonEffects2038 from '../effects/UltraAdvancedNeonEffects2038';
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-0eac
 import TopContactBar from './TopContactBar';
 import PerformanceMonitor from '../PerformanceMonitor';
 import AccessibilityEnhancer from '../AccessibilityEnhancer';
@@ -25,10 +33,14 @@ export default function Layout({ children, seo }: LayoutProps) {
       <a href="#main" className="skip-link">Skip to main content</a>
       
       {/* Futuristic Background */}
+<<<<<<< HEAD
+      <UltraFuturisticBackground2038 />
+=======
       <UltraAdvancedFuturisticBackground2038 intensity="high" theme="quantum-neon" />
       
       {/* Advanced Neon Effects */}
       <UltraAdvancedNeonEffects2038 intensity="high" theme="quantum-neon" />
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-0eac
       
       {/* Layout Structure */}
       <div className="relative z-10">
@@ -36,7 +48,11 @@ export default function Layout({ children, seo }: LayoutProps) {
         <TopContactBar />
         
         {/* Navigation */}
+<<<<<<< HEAD
+        <UltraFuturisticNavigation2038 />
+=======
         <UltraAdvancedFuturisticNavigation2038 />
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-0eac
         
         {/* Sidebar and Main Content */}
         <div className="flex">
@@ -53,7 +69,11 @@ export default function Layout({ children, seo }: LayoutProps) {
         </div>
         
         {/* Footer */}
+<<<<<<< HEAD
+        <UltraFuturisticFooter2038 />
+=======
         <UltraAdvancedFuturisticFooter2038 />
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-0eac
       </div>
 
       {/* Performance Tools */}

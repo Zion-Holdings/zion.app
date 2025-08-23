@@ -5,7 +5,11 @@ import {
   Search, Grid, List,
   Brain, Atom, Shield, Target, Rocket,
   ArrowRight, Check, Palette, Heart, Truck, GraduationCap,
+<<<<<<< HEAD:pages/services.tsx.backup.1755988043
+  Building
+=======
   Building, Database, Cloud, Lock
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-0eac:pages/services.tsx
 } from 'lucide-react';
 
 // Import our new innovative 2025 services
@@ -146,12 +150,15 @@ const allServices = [
   ...innovative2037MicroSaasServices,
   ...innovative2037ITServices,
   ...innovative2037AIServices,
+<<<<<<< HEAD:pages/services.tsx.backup.1755988043
+=======
   // Add our new innovative 2027 services
   ...innovative2027AIBusinessIntelligenceServices,
   ...innovative2027CybersecurityComplianceServices,
   ...innovative2027CloudDevOpsServices,
   ...innovative2027IndustrySolutions,
   // Add our new innovative 2038 services
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-0eac:pages/services.tsx
   ...innovative2038MicroSaasServices,
   ...innovative2038ITServices,
   ...innovative2038AIServices

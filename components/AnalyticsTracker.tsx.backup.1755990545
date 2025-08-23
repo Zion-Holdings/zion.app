@@ -210,11 +210,15 @@ declare global {
 // Extend Window interface for gtag
 declare global {
   interface Window {
+<<<<<<< HEAD
+    gtag?: (...args: unknown[]) => void;
+=======
     gtag?: (
       command: string,
       action: string,
       params?: Record<string, unknown>
     ) => void;
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-0eac
   }
 }
 

@@ -138,6 +138,11 @@ const navigationItems: NavigationItem[] = [
     category: 'showcase',
     children: [
       { 
+<<<<<<< HEAD
+        name: '2038 Services Showcase', 
+        href: '/comprehensive-2038-services-showcase', 
+        description: 'Latest revolutionary services',
+=======
         name: 'Innovative 2027 Services', 
         href: '/innovative-2027-services-showcase', 
         description: 'Cutting-edge 2027 services showcase',
@@ -156,6 +161,7 @@ const navigationItems: NavigationItem[] = [
         name: 'Services Showcase', 
         href: '/comprehensive-services-showcase-2025', 
         description: 'Complete services overview',
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-0eac
         icon: <Calculator className="w-4 h-4" />,
         featured: true
       },
