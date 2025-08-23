@@ -3,9 +3,10 @@ import Layout from './layout/Layout';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { 
-  ArrowRight, Brain, Atom, Shield, Zap, Search, MessageCircle, Phone, Mail
+  ArrowRight, Brain, Atom, Shield, Search, MessageCircle, Phone, Mail, Globe, Award, Users, Rocket
 } from 'lucide-react';
 import { AnimatePresence } from 'framer-motion';
+import ThemeToggle from './ThemeToggle';
 
 /* eslint-disable no-undef */
 const Homepage2025: React.FC = () => {
@@ -26,7 +27,7 @@ const Homepage2025: React.FC = () => {
       { threshold: 0.1 }
     );
 
-    const sections = document.querySelectorAll('section');
+    const sections = document.querySelectorAll('section[id]');
     sections.forEach((section) => observer.observe(section));
 
     return () => observer.disconnect();
@@ -71,8 +72,13 @@ const Homepage2025: React.FC = () => {
 
   return (
     <Layout>
+      {/* Theme Toggle - Fixed Position */}
+      <div className="fixed top-24 right-6 z-50">
+        <ThemeToggle />
+      </div>
+
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+      <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden">
         {/* Animated Background Elements */}
         <div className="absolute inset-0 overflow-hidden">
           <motion.div
@@ -98,6 +104,17 @@ const Homepage2025: React.FC = () => {
         </div>
 
         <div className="relative z-10 text-center px-4 max-w-6xl mx-auto">
+          {/* Company Badge */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            className="inline-flex items-center space-x-2 bg-gradient-to-r from-cyan-500/20 to-purple-500/20 border border-cyan-500/30 rounded-full px-4 py-2 mb-8 backdrop-blur-sm"
+          >
+            <Award className="w-5 h-5 text-cyan-400" />
+            <span className="text-cyan-400 font-semibold text-sm">Innovation Leader 2025</span>
+          </motion.div>
+
           <motion.h1
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -158,7 +175,7 @@ const Homepage2025: React.FC = () => {
             </Link>
             <Link
               href="/demo"
-              className="border border-white/30 hover:border-white/50 text-white px-8 py-4 rounded-full text-lg font-semibold transition-all duration-300 backdrop-blur-md hover:bg-white/10"
+              className="border border-white/30 hover:border-white/50 text-white px-8 py-4 rounded-full text-lg font-semibold transition-colors transition-all duration-300 backdrop-blur-md hover:bg-white/10"
             >
               Request Demo
             </Link>
@@ -171,28 +188,83 @@ const Homepage2025: React.FC = () => {
             transition={{ duration: 0.8, delay: 0.8 }}
             className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto"
           >
+            <motion.div 
+              className="text-center group cursor-pointer"
+              whileHover={{ scale: 1.05 }}
+              transition={{ duration: 0.2 }}
+            >
+              <div className="text-3xl md:text-4xl font-bold text-cyan-400 mb-2 group-hover:text-cyan-300 transition-colors">500+</div>
+              <div className="text-gray-400 text-sm group-hover:text-gray-300 transition-colors">Projects Delivered</div>
+              <div className="text-xs text-cyan-400/60 mt-1 opacity-0 group-hover:opacity-100 transition-opacity">Global Success Stories</div>
+            </motion.div>
+            <motion.div 
+              className="text-center group cursor-pointer"
+              whileHover={{ scale: 1.05 }}
+              transition={{ duration: 0.2 }}
+            >
+              <div className="text-3xl md:text-4xl font-bold text-purple-400 mb-2 group-hover:text-purple-300 transition-colors">50+</div>
+              <div className="text-gray-400 text-sm group-hover:text-gray-300 transition-colors">AI Solutions</div>
+              <div className="text-xs text-purple-400/60 mt-1 opacity-0 group-hover:opacity-100 transition-opacity">Cutting-Edge AI</div>
+            </motion.div>
+            <motion.div 
+              className="text-center group cursor-pointer"
+              whileHover={{ scale: 1.05 }}
+              transition={{ duration: 0.2 }}
+            >
+              <div className="text-3xl md:text-4xl font-bold text-blue-400 mb-2 group-hover:text-blue-300 transition-colors">25+</div>
+              <div className="text-gray-400 text-sm group-hover:text-blue-300 transition-colors">Quantum Services</div>
+              <div className="text-xs text-blue-400/60 mt-1 opacity-0 group-hover:opacity-100 transition-opacity">Quantum Innovation</div>
+            </motion.div>
+            <motion.div 
+              className="text-center group cursor-pointer"
+              whileHover={{ scale: 1.05 }}
+              transition={{ duration: 0.2 }}
+            >
+              <div className="text-3xl md:text-4xl font-bold text-green-400 mb-2 group-hover:text-green-300 transition-colors">99.9%</div>
+              <div className="text-gray-400 text-sm group-hover:text-green-300 transition-colors">Uptime SLA</div>
+              <div className="text-xs text-green-400/60 mt-1 opacity-0 group-hover:opacity-100 transition-opacity">Reliable Service</div>
+            </motion.div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Trust Indicators */}
+      <section className="py-16 px-4 bg-gradient-to-r from-gray-900/50 to-black/50">
+        <div className="max-w-6xl mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="grid grid-cols-1 md:grid-cols-3 gap-8"
+          >
             <div className="text-center">
-              <div className="text-3xl md:text-4xl font-bold text-cyan-400 mb-2">500+</div>
-              <div className="text-gray-400 text-sm">Projects Delivered</div>
+              <div className="w-16 h-16 bg-gradient-to-r from-green-500 to-emerald-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                <Shield className="w-8 h-8 text-white" />
+              </div>
+              <h3 className="text-xl font-semibold text-white mb-2">Enterprise Security</h3>
+              <p className="text-gray-400">Bank-grade security protocols and compliance standards</p>
             </div>
             <div className="text-center">
-              <div className="text-3xl md:text-4xl font-bold text-purple-400 mb-2">50+</div>
-              <div className="text-gray-400 text-sm">AI Solutions</div>
+              <div className="w-16 h-16 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                <Globe className="w-8 h-8 text-white" />
+              </div>
+              <h3 className="text-xl font-semibold text-white mb-2">Global Reach</h3>
+              <p className="text-gray-400">Serving clients across 25+ countries worldwide</p>
             </div>
             <div className="text-center">
-              <div className="text-3xl md:text-4xl font-bold text-blue-400 mb-2">25+</div>
-              <div className="text-gray-400 text-sm">Quantum Services</div>
-            </div>
-            <div className="text-center">
-              <div className="text-3xl md:text-4xl font-bold text-green-400 mb-2">99.9%</div>
-              <div className="text-gray-400 text-sm">Uptime SLA</div>
+              <div className="w-16 h-16 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                <Users className="w-8 h-8 text-white" />
+              </div>
+              <h3 className="text-xl font-semibold text-white mb-2">Proven Results</h3>
+              <p className="text-gray-400">Track record of successful transformations and ROI</p>
             </div>
           </motion.div>
         </div>
       </section>
 
       {/* Services Preview */}
-      <section className="py-20 px-4 bg-gradient-to-b from-black to-gray-900">
+      <section id="services" className="py-20 px-4 bg-gradient-to-b from-black to-gray-900">
         <div className="max-w-7xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -216,9 +288,9 @@ const Homepage2025: React.FC = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.1 }}
               viewport={{ once: true }}
-              className="bg-gradient-to-br from-cyan-900/20 to-blue-900/20 border border-cyan-500/20 rounded-2xl p-8 backdrop-blur-sm hover:border-cyan-500/40 transition-all duration-300"
+              className="bg-gradient-to-br from-cyan-900/20 to-blue-900/20 border border-cyan-500/20 rounded-2xl p-8 backdrop-blur-sm hover:border-cyan-500/40 transition-all duration-300 group hover:scale-105"
             >
-              <div className="w-16 h-16 bg-gradient-to-r from-cyan-500 to-blue-500 rounded-2xl flex items-center justify-center mb-6">
+              <div className="w-16 h-16 bg-gradient-to-r from-cyan-500 to-blue-500 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
                 <Brain className="w-8 h-8 text-white" />
               </div>
               <h3 className="text-2xl font-bold text-white mb-4">AI Consciousness Evolution</h3>
@@ -227,7 +299,7 @@ const Homepage2025: React.FC = () => {
               </p>
               <Link
                 href="/ai-services"
-                className="inline-flex items-center text-cyan-400 hover:text-cyan-300 transition-colors"
+                className="inline-flex items-center text-cyan-400 hover:text-cyan-300 transition-colors group-hover:translate-x-1"
               >
                 Learn More <ArrowRight className="ml-2 w-4 h-4" />
               </Link>
@@ -239,9 +311,9 @@ const Homepage2025: React.FC = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
               viewport={{ once: true }}
-              className="bg-gradient-to-br from-purple-900/20 to-pink-900/20 border border-purple-500/20 rounded-2xl p-8 backdrop-blur-sm hover:border-purple-500/40 transition-all duration-300"
+              className="bg-gradient-to-br from-purple-900/20 to-pink-900/20 border border-purple-500/20 rounded-2xl p-8 backdrop-blur-sm hover:border-purple-500/40 transition-all duration-300 group hover:scale-105"
             >
-              <div className="w-16 h-16 bg-gradient-to-r from-purple-500 to-pink-500 rounded-2xl flex items-center justify-center mb-6">
+              <div className="w-16 h-16 bg-gradient-to-r from-purple-500 to-pink-500 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
                 <Atom className="w-8 h-8 text-white" />
               </div>
               <h3 className="text-2xl font-bold text-white mb-4">Quantum Computing</h3>
@@ -250,7 +322,7 @@ const Homepage2025: React.FC = () => {
               </p>
               <Link
                 href="/quantum-services"
-                className="inline-flex items-center text-purple-400 hover:text-purple-300 transition-colors"
+                className="inline-flex items-center text-purple-400 hover:text-purple-300 transition-colors group-hover:translate-x-1"
               >
                 Learn More <ArrowRight className="ml-2 w-4 h-4" />
               </Link>
@@ -262,10 +334,10 @@ const Homepage2025: React.FC = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.3 }}
               viewport={{ once: true }}
-              className="bg-gradient-to-br from-blue-900/20 to-indigo-900/20 border border-blue-500/20 rounded-2xl p-8 backdrop-blur-sm hover:border-blue-500/40 transition-all duration-300"
+              className="bg-gradient-to-br from-blue-900/20 to-indigo-900/20 border border-blue-500/20 rounded-2xl p-8 backdrop-blur-sm hover:border-blue-500/40 transition-all duration-300 group hover:scale-105"
             >
-              <div className="w-16 h-16 bg-gradient-to-r from-blue-500 to-indigo-500 rounded-2xl flex items-center justify-center mb-6">
-                <Zap className="w-8 h-8 text-white" />
+              <div className="w-16 h-16 bg-gradient-to-r from-blue-500 to-indigo-500 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                <Rocket className="w-8 h-8 text-white" />
               </div>
               <h3 className="text-2xl font-bold text-white mb-4">Space Technology</h3>
               <p className="text-gray-300 mb-6">
@@ -273,7 +345,7 @@ const Homepage2025: React.FC = () => {
               </p>
               <Link
                 href="/space-technology"
-                className="inline-flex items-center text-blue-400 hover:text-blue-300 transition-colors"
+                className="inline-flex items-center text-blue-400 hover:text-blue-300 transition-colors group-hover:translate-x-1"
               >
                 Learn More <ArrowRight className="ml-2 w-4 h-4" />
               </Link>
@@ -283,7 +355,7 @@ const Homepage2025: React.FC = () => {
       </section>
 
       {/* Performance & Innovation */}
-      <section className="py-20 px-4 bg-black">
+      <section id="performance" className="py-20 px-4 bg-black">
         <div className="max-w-7xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -300,146 +372,94 @@ const Homepage2025: React.FC = () => {
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          {/* Performance Metrics Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.1 }}
               viewport={{ once: true }}
-              className="text-center"
+              className="text-center p-6 bg-gradient-to-br from-cyan-900/20 to-transparent border border-cyan-500/20 rounded-xl"
             >
-              <div className="w-20 h-20 bg-gradient-to-r from-green-500 to-emerald-500 rounded-full flex items-center justify-center mx-auto mb-6">
-                <Shield className="w-10 h-10 text-white" />
-              </div>
-              <h3 className="text-2xl font-bold text-white mb-4">Enterprise Security</h3>
-              <p className="text-gray-300">
-                Military-grade security protocols protecting your most valuable assets.
-              </p>
+              <div className="text-4xl font-bold text-cyan-400 mb-2">10x</div>
+              <div className="text-gray-400">Performance Improvement</div>
             </motion.div>
-
+            
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
               viewport={{ once: true }}
-              className="text-center"
+              className="text-center p-6 bg-gradient-to-br from-purple-900/20 to-transparent border border-purple-500/20 rounded-xl"
             >
-              <div className="w-20 h-20 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full flex items-center justify-center mx-auto mb-6">
-                <Zap className="w-10 h-10 text-white" />
-              </div>
-              <h3 className="text-2xl font-bold text-white mb-4">Lightning Fast</h3>
-              <p className="text-gray-300">
-                Optimized performance delivering results in milliseconds, not minutes.
-              </p>
+              <div className="text-4xl font-bold text-purple-400 mb-2">24/7</div>
+              <div className="text-gray-400">Support Availability</div>
             </motion.div>
-
+            
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.3 }}
               viewport={{ once: true }}
-              className="text-center"
+              className="text-center p-6 bg-gradient-to-br from-blue-900/20 to-transparent border border-blue-500/20 rounded-xl"
             >
-              <div className="w-20 h-20 bg-gradient-to-r from-cyan-500 to-blue-500 rounded-full flex items-center justify-center mx-auto mb-6">
-                <Brain className="w-10 h-10 text-white" />
-              </div>
-              <h3 className="text-2xl font-bold text-white mb-4">AI-Powered</h3>
-              <p className="text-gray-300">
-                Intelligent automation that learns and adapts to your business needs.
-              </p>
+              <div className="text-4xl font-bold text-blue-400 mb-2">100%</div>
+              <div className="text-gray-400">Client Satisfaction</div>
+            </motion.div>
+            
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.4 }}
+              viewport={{ once: true }}
+              className="text-center p-6 bg-gradient-to-br from-green-900/20 to-transparent border border-green-500/20 rounded-xl"
+            >
+              <div className="text-4xl font-bold text-green-400 mb-2">50+</div>
+              <div className="text-gray-400">Patents Filed</div>
             </motion.div>
           </div>
-        </div>
-      </section>
-
-      {/* Call to Action */}
-      <section className="py-20 px-4 bg-gradient-to-r from-blue-900/20 via-purple-900/20 to-cyan-900/20">
-        <div className="max-w-4xl mx-auto text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-          >
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-              Ready to Transform Your Business?
-            </h2>
-            <p className="text-xl text-gray-300 mb-8">
-              Join the future of technology with Zion Tech Group
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link
-                href="/contact"
-                className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-full text-lg font-semibold transition-all duration-300 transform hover:scale-105"
-              >
-                Get Started Today
-              </Link>
-              <Link
-                href="/demo"
-                className="border border-white/30 hover:border-white/50 text-white px-8 py-4 rounded-full text-lg font-semibold transition-all duration-300 backdrop-blur-md hover:bg-white/10"
-              >
-                Request Demo
-              </Link>
-            </div>
-          </motion.div>
         </div>
       </section>
 
       {/* Floating Action Buttons */}
       <AnimatePresence>
         {showFloatingActions && (
-          <>
-            {/* Contact Button */}
-            <motion.div
-              initial={{ opacity: 0, scale: 0.8, x: 100 }}
-              animate={{ opacity: 1, scale: 1, x: 0 }}
-              exit={{ opacity: 0, scale: 0.8, x: 100 }}
-              transition={{ duration: 0.3 }}
-              className="fixed bottom-24 right-6 z-50"
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: 20 }}
+            className="fixed bottom-6 right-6 flex flex-col space-y-3 z-40"
+          >
+            <motion.a
+              href="tel:+1-555-0123"
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.9 }}
+              className="w-14 h-14 bg-gradient-to-r from-green-500 to-emerald-600 text-white rounded-full flex items-center justify-center shadow-lg hover:shadow-xl transition-all duration-300"
+              title="Call Us"
             >
-              <Link
-                href="/contact"
-                className="flex items-center justify-center w-14 h-14 bg-gradient-to-r from-cyan-500 to-purple-500 text-white rounded-full shadow-2xl hover:shadow-cyan-500/25 transition-all duration-300 hover:scale-110 group"
-                aria-label="Contact Us"
-              >
-                <MessageCircle className="w-6 h-6 group-hover:rotate-12 transition-transform" />
-              </Link>
-            </motion.div>
-
-            {/* Phone Button */}
-            <motion.div
-              initial={{ opacity: 0, scale: 0.8, x: 100 }}
-              animate={{ opacity: 1, scale: 1, x: 0 }}
-              exit={{ opacity: 0, scale: 0.8, x: 100 }}
-              transition={{ duration: 0.3, delay: 0.1 }}
-              className="fixed bottom-36 right-6 z-50"
+              <Phone className="w-6 h-6" />
+            </motion.a>
+            
+            <motion.a
+              href="mailto:contact@ziontechgroup.com"
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.9 }}
+              className="w-14 h-14 bg-gradient-to-r from-blue-500 to-cyan-600 text-white rounded-full flex items-center justify-center shadow-lg hover:shadow-xl transition-all duration-300"
+              title="Email Us"
             >
-              <a
-                href="tel:+1-302-464-0950"
-                className="flex items-center justify-center w-14 h-14 bg-gradient-to-r from-green-500 to-emerald-500 text-white rounded-full shadow-2xl hover:shadow-green-500/25 transition-all duration-300 hover:scale-110 group"
-                aria-label="Call Us"
-              >
-                <Phone className="w-6 h-6 group-hover:rotate-12 transition-transform" />
-              </a>
-            </motion.div>
-
-            {/* Email Button */}
-            <motion.div
-              initial={{ opacity: 0, scale: 0.8, x: 100 }}
-              animate={{ opacity: 1, scale: 1, x: 0 }}
-              exit={{ opacity: 0, scale: 0.8, x: 100 }}
-              transition={{ duration: 0.3, delay: 0.2 }}
-              className="fixed bottom-48 right-6 z-50"
+              <Mail className="w-6 h-6" />
+            </motion.a>
+            
+            <motion.a
+              href="/contact"
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.9 }}
+              className="w-14 h-14 bg-gradient-to-r from-purple-500 to-pink-600 text-white rounded-full flex items-center justify-center shadow-lg hover:shadow-xl transition-all duration-300"
+              title="Contact Form"
             >
-              <a
-                href="mailto:kleber@ziontechgroup.com"
-                className="flex items-center justify-center w-14 h-14 bg-gradient-to-r from-blue-500 to-indigo-500 text-white rounded-full shadow-2xl hover:shadow-blue-500/25 transition-all duration-300 hover:scale-110 group"
-                aria-label="Email Us"
-              >
-                <Mail className="w-6 h-6 group-hover:rotate-12 transition-transform" />
-              </a>
-            </motion.div>
-          </>
+              <MessageCircle className="w-6 h-6" />
+            </motion.a>
+          </motion.div>
         )}
       </AnimatePresence>
     </Layout>
