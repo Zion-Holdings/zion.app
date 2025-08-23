@@ -1,0 +1,25 @@
+<<<<<<< HEAD
+export default function About() { return <main className="p-10"><h1 className="text-2xl font-bold">About Zion</h1><p>We build the Zion AI Marketplace.</p></main>; }
+=======
+export default function AboutPage() {
+  return (
+    <div className="container mx-auto px-4 py-10">
+      <h1 className="text-2xl font-semibold">About Zion</h1>
+      <p className="mt-2 text-gray-600">Information about the Zion AI Marketplace is coming soon.</p>
+    </div>
+  );
+}
+=======
+import type { NextPage } from 'next';
+import Head from 'next/head';
+
+const About: NextPage = () => (
+  <div className="py-10">
+    <Head><title>About - Zion</title></Head>
+    <h1 className="text-2xl font-semibold text-white">About</h1>
+    <p className="text-white/80 mt-2">About page content coming soon.</p>
+  </div>
+);
+
+export default About;
+>>>>>>> origin/cursor/build-zion-ai-marketplace-service-listing-9ebf

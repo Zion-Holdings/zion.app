@@ -1,0 +1,491 @@
+
+const winston = require('winston');
+
+const logger = winston.createLogger({
+  level: 'info',
+  format: winston.format.combine(
+    winston.format.timestamp(),
+    winston.format.errors({ stack: true }),
+    winston.format.json()
+  ),
+  defaultMeta: { service: 'automation-script' },
+  transports: [
+    new winston.transports.File({ filename: 'logs/error.log', level: 'error' }),
+    new winston.transports.File({ filename: 'logs/combined.log' })
+  ]
+});
+
+if (process.env.NODE_ENV !== 'production') {
+  logger.add(new winston.transports.Console({
+    format: winston.format.simple()
+  }));
+}
+
+
+/**
+ * Netlify Healing Daemon
+ * Runs the self-healing system continuously in the background
+ */
+
+const fs = require('fs')
+const path = require('path')
+const { spawn } = require('child_process')
+class NetlifyHealingDaemon {
+  constructor() {
+    this.isRunning = false;
+    this.processes = new Map();
+    this.logFile = 'logs/healing-daemon.log';
+    this.pidFile = 'logs/healing-daemon.pid';
+    this.ensureLogsDirectory();
+  }
+
+  log(message, level = 'INFO') {
+    const timestamp = new Date().toISOString()
+const logEntry = `[${timestamp}] [${level}] ${message}`;
+
+    logger.info(logEntry);
+    fs.appendFileSync(this.logFile, logEntry + '\n');
+  }
+
+  ensureLogsDirectory() {
+    const logsDir = path.dirname(this.logFile);
+    if (!fs.existsSync(logsDir)) {
+      fs.mkdirSync(logsDir, { recursive: true });
+    }
+  }
+
+  async start() {
+    if (this.isRunning) {
+      this.log('Daemon is already running');
+      return;
+    }
+
+    this.log('Starting Netlify Healing Daemon...');
+    this.isRunning = true;
+
+    // Write PID file
+    fs.writeFileSync(this.pidFile, process.pid.toString());
+
+    // Start self-healing system
+    await this.startSelfHealing();
+
+    // Start build monitor
+    await this.startBuildMonitor();
+
+    // Start periodic health checks
+    this.startHealthChecks();
+
+    // Handle graceful shutdown
+    this.setupGracefulShutdown();
+
+    this.log('Netlify Healing Daemon started successfully');
+  }
+
+  async startSelfHealing() {
+    this.log('Starting self-healing system...')
+const selfHealing = spawn(
+      'node',
+      ['scripts/netlify-self-healing.cjs', 'start'],
+      {
+        stdio: ['pipe', 'pipe', 'pipe'],
+        detached: false,
+      },
+    );
+
+    selfHealing.stdout.on('data', (data) => {
+      this.log(`Self-healing: ${data.toString().trim()}`);
+    });
+
+    selfHealing.stderr.on('data', (data) => {
+      this.log(`Self-healing error: ${data.toString().trim()}`, 'ERROR');
+    });
+
+    selfHealing.on('close', (code) => {
+      this.log(`Self-healing process exited with code ${code}`);
+      if (this.isRunning) {
+        this.log('Restarting self-healing system...');
+        
+const timeoutId = 
+const timeoutId = 
+const timeoutId = setTimeout(() => this.startSelfHealing(),    5000);
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+      }
+    });
+
+    this.processes.set('self-healing', selfHealing);
+  }
+
+  async startBuildMonitor() {
+    this.log('Starting build monitor...')
+const buildMonitor = spawn(
+      'node',
+      ['scripts/netlify-build-monitor.cjs', 'start'],
+      {
+        stdio: ['pipe', 'pipe', 'pipe'],
+        detached: false,
+      },
+    );
+
+    buildMonitor.stdout.on('data', (data) => {
+      this.log(`Build monitor: ${data.toString().trim()}`);
+    });
+
+    buildMonitor.stderr.on('data', (data) => {
+      this.log(`Build monitor error: ${data.toString().trim()}`, 'ERROR');
+    });
+
+    buildMonitor.on('close', (code) => {
+      this.log(`Build monitor process exited with code ${code}`);
+      if (this.isRunning) {
+        this.log('Restarting build monitor...');
+        
+const timeoutId = 
+const timeoutId = 
+const timeoutId = setTimeout(() => this.startBuildMonitor(),    5000);
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+      }
+    });
+
+    this.processes.set('build-monitor', buildMonitor);
+  }
+
+  startHealthChecks() {
+    this.log('Starting periodic health checks...');
+
+    // Check every 10 minutes
+    setInterval(
+      () => {
+        this.performHealthCheck();
+      },
+      10 * 60 * 1000,
+    );
+  }
+
+  async performHealthCheck() {
+    this.log('Performing daemon health check...');
+
+    // Check if processes are still running
+    for (const [name, process] of this.processes.entries()) {
+      if (process.killed) {
+        this.log(`Process ${name} is dead, restarting...`);
+        this.restartProcess(name);
+      }
+    }
+
+    // Check system resources
+    this.checkSystemResources();
+
+    // Check for build issues
+    this.checkForBuildIssues();
+  }
+
+  async restartProcess(name) {
+    this.log(`Restarting process: ${name}`)
+const process = this.processes.get(name);
+    if (process) {
+      process.kill();
+      this.processes.delete(name);
+    }
+
+    switch (name) {
+      case 'self-healing':
+        await this.startSelfHealing();
+        break;
+      case 'build-monitor':
+        await this.startBuildMonitor();
+        break;
+    }
+  }
+
+  checkSystemResources() {
+    try {
+      const { execSync } = require('child_process');
+
+      // Check memory usage
+      const memory = execSync('free -m', { encoding: 'utf8' })
+const memoryLines = memory.split('\n');
+      if (memoryLines.length > 1) {
+        const memInfo = memoryLines[1].split(/\s+/)
+const usedPercent = (parseInt(memInfo[2]) / parseInt(memInfo[1])) * 100;
+
+        if (usedPercent > 90) {
+          this.log('High memory usage detected, triggering cleanup...');
+          this.triggerCleanup();
+        }
+      }
+
+      // Check disk space
+      const disk = execSync('df .', { encoding: 'utf8' })
+const diskLines = disk.split('\n');
+      if (diskLines.length > 1) {
+        const diskInfo = diskLines[1].split(/\s+/)
+const usedPercent = parseInt(diskInfo[4].replace('%', ''));
+
+        if (usedPercent > 90) {
+          this.log('Low disk space detected, triggering cleanup...');
+          this.triggerCleanup();
+        }
+      }
+    } catch (error) {
+      this.log(`System resource check failed: ${error.message}`, 'WARN');
+    }
+  }
+
+  checkForBuildIssues() {
+    // Check for recent build failures
+    const buildLogs = ['build.log', 'error.log', 'lint.log'];
+
+    for (const logFile of buildLogs) {
+      if (fs.existsSync(logFile)) {
+        const stats = fs.statSync(logFile)
+const lastModified = stats.mtime.getTime();
+
+        // If log was modified in the last 5 minutes, check for issues
+        if (Date.now() - lastModified < 5 * 60 * 1000) {
+          const content = fs.readFileSync(logFile, 'utf8');
+
+          if (content.includes('Build failed') || content.includes('Error:')) {
+            this.log(
+              `Build issues detected in ${logFile}, triggering auto-fix...`,
+            );
+            this.triggerAutoFix();
+            break;
+          }
+        }
+      }
+    }
+  }
+
+  async triggerCleanup() {
+    this.log('Triggering system cleanup...')
+const cleanup = spawn('node', ['scripts/netlify-auto-fix.cjs', 'all'], {
+      stdio: ['pipe', 'pipe', 'pipe'],
+      detached: false,
+    });
+
+    cleanup.stdout.on('data', (data) => {
+      this.log(`Cleanup: ${data.toString().trim()}`);
+    });
+
+    cleanup.stderr.on('data', (data) => {
+      this.log(`Cleanup error: ${data.toString().trim()}`, 'ERROR');
+    });
+
+    cleanup.on('close', (code) => {
+      this.log(`Cleanup completed with code ${code}`);
+    });
+  }
+
+  async triggerAutoFix() {
+    this.log('Triggering auto-fix...')
+const autoFix = spawn('node', ['scripts/netlify-auto-fix.cjs', 'all'], {
+      stdio: ['pipe', 'pipe', 'pipe'],
+      detached: false,
+    });
+
+    autoFix.stdout.on('data', (data) => {
+      this.log(`Auto-fix: ${data.toString().trim()}`);
+    });
+
+    autoFix.stderr.on('data', (data) => {
+      this.log(`Auto-fix error: ${data.toString().trim()}`, 'ERROR');
+    });
+
+    autoFix.on('close', (code) => {
+      this.log(`Auto-fix completed with code ${code}`);
+    });
+  }
+
+  setupGracefulShutdown() {
+    const shutdown = () => {
+      this.log('Shutting down daemon gracefully...');
+      this.isRunning = false;
+
+      // Kill all child processes
+      for (const [name, process] of this.processes.entries()) {
+        this.log(`Stopping ${name}...`);
+        process.kill();
+      }
+
+      // Remove PID file
+      if (fs.existsSync(this.pidFile)) {
+        fs.unlinkSync(this.pidFile);
+      }
+
+      this.log('Daemon shutdown complete');
+      process.exit(0);
+    };
+
+    process.on('SIGINT', shutdown);
+    process.on('SIGTERM', shutdown);
+    process.on('SIGQUIT', shutdown);
+  }
+
+  async stop() {
+    if (!this.isRunning) {
+      this.log('Daemon is not running');
+      return;
+    }
+
+    this.log('Stopping Netlify Healing Daemon...');
+    this.isRunning = false;
+
+    // Kill all child processes
+    for (const [name, process] of this.processes.entries()) {
+      this.log(`Stopping ${name}...`);
+      process.kill();
+    }
+
+    this.processes.clear();
+
+    // Remove PID file
+    if (fs.existsSync(this.pidFile)) {
+      fs.unlinkSync(this.pidFile);
+    }
+
+    this.log('Netlify Healing Daemon stopped');
+  }
+
+  getStatus() {
+    const status = {
+      isRunning: this.isRunning,
+      processes: {},
+      timestamp: new Date().toISOString(),
+    };
+
+    for (const [name, process] of this.processes.entries()) {
+      status.processes[name] = {
+        pid: process.pid,
+        killed: process.killed,
+      };
+    }
+
+    return status;
+  }
+
+  static isRunning() {
+    try {
+      if (fs.existsSync('logs/healing-daemon.pid')) {
+        const pid = parseInt(
+          fs.readFileSync('logs/healing-daemon.pid', 'utf8'),
+        );
+
+        // Check if process is still running
+        try {
+          process.kill(pid, 0);
+          return true;
+        } catch (error) {
+          // Process is not running
+          return false;
+        }
+      }
+      return false;
+    } catch (error) {
+      return false;
+    }
+  }
+}
+
+// CLI interface
+if (require.main === module) {
+  const daemon = new NetlifyHealingDaemon()
+const command = process.argv[2];
+
+  switch (command) {
+    case 'start':
+      if (NetlifyHealingDaemon.isRunning()) {
+        logger.info('Daemon is already running');
+        process.exit(1);
+      }
+      daemon.start();
+      break;
+
+    case 'stop':
+      if (!NetlifyHealingDaemon.isRunning()) {
+        logger.info('Daemon is not running');
+        process.exit(1);
+      }
+
+      // Send SIGTERM to daemon process
+      try {
+        const pid = parseInt(
+          fs.readFileSync('logs/healing-daemon.pid', 'utf8'),
+        );
+        process.kill(pid, 'SIGTERM');
+        logger.info('Stop signal sent to daemon');
+      } catch (error) {
+        logger.info('Failed to stop daemon:', error.message);
+      }
+      break;
+
+    case 'status':
+      if (NetlifyHealingDaemon.isRunning()) {
+        logger.info('Daemon is running');
+        logger.info(JSON.stringify(daemon.getStatus(), null, 2));
+      } else {
+        logger.info('Daemon is not running');
+      }
+      break;
+
+    case 'restart':
+      if (NetlifyHealingDaemon.isRunning()) {
+        // Stop first
+        try {
+          const pid = parseInt(
+            fs.readFileSync('logs/healing-daemon.pid', 'utf8'),
+          );
+          process.kill(pid, 'SIGTERM');
+
+          // Wait a bit then start
+          
+const timeoutId = 
+const timeoutId = 
+const timeoutId = setTimeout(() => {
+            daemon.start();
+          },    2000);
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+        } catch (error) {
+          logger.info('Failed to restart daemon:', error.message);
+        }
+      } else {
+        daemon.start();
+      }
+      break;
+
+    default:
+      logger.info(`
+Netlify Healing Daemon
+
+Usage:
+  node netlify-healing-daemon.cjs <command>
+
+Commands:
+  start     Start the daemon
+  stop      Stop the daemon
+  status    Show daemon status
+  restart   Restart the daemon
+
+Examples:
+  node netlify-healing-daemon.cjs start
+  node netlify-healing-daemon.cjs status
+  node netlify-healing-daemon.cjs stop
+      `);
+  }
+}
+
+module.exports = NetlifyHealingDaemon;

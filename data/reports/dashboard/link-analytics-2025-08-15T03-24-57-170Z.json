@@ -1,0 +1,123 @@
+{
+  "generatedAt": "2025-08-15T03:24:57.166Z",
+  "summary": {
+    "totalReports": 12,
+    "averageHealthScore": 96.07843137254902,
+    "totalLinksChecked": 51,
+    "totalIssuesFound": 41,
+    "improvementTrend": "stable"
+  },
+  "trends": {
+    "linkHealth": [
+      {
+        "date": "2025-08-15T03:11:57.324Z",
+        "score": 83.33333333333334,
+        "brokenLinks": 10
+      },
+      {
+        "date": "2025-08-15T03:12:19.560Z",
+        "score": 96.07843137254902,
+        "brokenLinks": 2
+      },
+      {
+        "date": "2025-08-15T03:12:26.634Z",
+        "score": 96.07843137254902,
+        "brokenLinks": 2
+      },
+      {
+        "date": "2025-08-15T03:13:05.706Z",
+        "score": 96.07843137254902,
+        "brokenLinks": 2
+      }
+    ],
+    "issueCount": [
+      {
+        "date": "2025-08-15T03:11:16.847Z",
+        "totalIssues": 41,
+        "criticalIssues": 0
+      },
+      {
+        "date": "2025-08-15T03:12:26.846Z",
+        "totalIssues": 41,
+        "criticalIssues": 0
+      },
+      {
+        "date": "2025-08-15T03:13:05.933Z",
+        "totalIssues": 41,
+        "criticalIssues": 0
+      }
+    ],
+    "fixSuccess": []
+  },
+  "performance": {
+    "responseTime": {},
+    "successRate": {
+      "overall": 96.07843137254902,
+      "broken": 3.9215686274509802
+    },
+    "errorDistribution": {
+      "HTTP 400": 1,
+      "HTTP 404": 1
+    },
+    "linkTypes": {
+      "ziontechgroup.com": 13,
+      "techcrunch.com": 20,
+      "formspree.io": 1,
+      "www.theverge.com": 1,
+      "www.wired.com": 1,
+      "ai.googleblog.com": 1,
+      "ian.sh": 1,
+      "about.fb.com": 1,
+      "fly.io": 1,
+      "github.com": 2,
+      "explore.zoom.us": 1,
+      "www.foldnfly.com": 1,
+      "schema.org": 1,
+      "deepmind.google": 1,
+      "www.w3.org": 1,
+      "blog.hopefullyuseful.com": 1,
+      "www.instagram.com": 1,
+      "www.linkedin.com": 1,
+      "ciechanow.ski": 1
+    }
+  },
+  "recommendations": [
+    {
+      "type": "immediate",
+      "action": "Run auto-fix process",
+      "description": "Found 2 broken links that can be automatically fixed",
+      "priority": "high"
+    },
+    {
+      "type": "maintenance",
+      "action": "Review internal routing structure",
+      "description": "Found 41 internal routing issues that need attention",
+      "priority": "medium"
+    },
+    {
+      "type": "prevention",
+      "action": "Set up scheduled monitoring",
+      "description": "Implement automated link health monitoring to prevent future issues",
+      "priority": "low"
+    }
+  ],
+  "topIssues": [
+    {
+      "type": "HTTP 400",
+      "count": 1,
+      "examples": [
+        "https://formspree.io/f/xyyqzqyp"
+      ],
+      "percentage": 50
+    },
+    {
+      "type": "HTTP 404",
+      "count": 1,
+      "examples": [
+        "https://github.com/Zion-Holdings/zion"
+      ],
+      "percentage": 50
+    }
+  ],
+  "healthScore": 83
+}

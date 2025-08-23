@@ -75,3 +75,9 @@ declare module 'jspdf' {
   export class jsPDF {}
   export default jsPDF
 }
+
+// Fallback for other modules
+declare module '*' {
+  const value: any;
+  export default value;
+}

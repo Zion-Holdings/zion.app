@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-08-15T01:52:39.655Z",
+  "trends": {
+    "system": {
+      "memoryTrend": -0.5484652088489658,
+      "cpuTrend": 1.4279805616222945,
+      "diskTrend": 0.5244740429014727
+    },
+    "performance": {
+      "responseTimeTrend": 0.4314284000126097,
+      "throughputTrend": -1.477093886952924,
+      "errorRateTrend": 0.9632614575749608
+    },
+    "business": {
+      "qualityTrend": 0.16316667441656202,
+      "deploymentTrend": -0.6616509570972445,
+      "opportunitiesTrend": -0.301465055130393
+    }
+  }
+}
