@@ -10,8 +10,10 @@ export default class MyDocument extends Document {
 		return (
 			<Html lang="en">
 				<Head>
-					<link rel="icon" href="/favicon.svg" type="image/svg+xml" />
-					<link rel="alternate icon" href="/favicon.ico" />
+					<meta name="theme-color" content="#000000" />
+					<link rel="preconnect" href="https://plausible.io" crossOrigin="anonymous" />
+					<link rel="dns-prefetch" href="//plausible.io" />
+					<link rel="icon" href="/favicon.svg" />
 					<link rel="manifest" href="/site.webmanifest" />
 					<meta name="theme-color" content="#0a0a0a" />
 					<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
