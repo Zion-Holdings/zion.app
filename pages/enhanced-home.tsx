@@ -1,1 +1,1 @@
-export default function EnhancedHome(){return <div className="prose dark:prose-invert"><h1>Enhanced Home</h1><p>Coming soon.</p></div>}
+export default function EnhancedHome() { return <div className="p-8">Enhanced Home</div>; }

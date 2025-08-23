@@ -1,1 +1,1 @@
-export default function AutomationStatusPage(){return <div className="prose dark:prose-invert"><h1>Automation Status</h1><p>Coming soon.</p></div>}
+export default function AdminAutomationStatus() { return <div className="p-8">Admin Automation Status</div>; }

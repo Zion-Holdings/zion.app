@@ -1,1 +1,1 @@
-export default function AutomationIndex(){return <div className="prose dark:prose-invert"><h1>Automation</h1><p>Tools coming soon.</p></div>}
+export default function Automation() { return <div className="p-8">Automation</div>; }

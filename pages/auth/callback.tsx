@@ -1,1 +1,1 @@
-export default function CallbackPage(){return <div className="prose dark:prose-invert"><h1>Callback</h1><p>Processing authentication…</p></div>}
+export default function Callback() { return <div className="p-8">Auth Callback</div>; }
