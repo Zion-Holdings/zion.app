@@ -4,7 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Offline - Zion Tech Group</title>
+<<<<<<< HEAD
+    <meta name="description" content="You're currently offline. Check your connection and try again.">
+=======
     <meta name="description" content="You're currently offline. Zion Tech Group services are temporarily unavailable.">
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-3513
     <style>
         * {
             margin: 0;
@@ -14,7 +18,11 @@
 
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+<<<<<<< HEAD
+            background: linear-gradient(135deg, #000000 0%, #1a1a2e 50%, #16213e 100%);
+=======
             background: linear-gradient(135deg, #0f0f23 0%, #1a1a2e 50%, #16213e 100%);
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-3513
             color: #ffffff;
             min-height: 100vh;
             display: flex;
@@ -28,7 +36,11 @@
             max-width: 500px;
             background: rgba(255, 255, 255, 0.05);
             backdrop-filter: blur(20px);
+<<<<<<< HEAD
+            border-radius: 20px;
+=======
             border-radius: 24px;
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-3513
             padding: 60px 40px;
             border: 1px solid rgba(255, 255, 255, 0.1);
             box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
@@ -38,11 +50,27 @@
             width: 120px;
             height: 120px;
             margin: 0 auto 30px;
+<<<<<<< HEAD
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+=======
             background: linear-gradient(135deg, #ff6b6b, #ee5a24);
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-3513
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
+<<<<<<< HEAD
+            font-size: 60px;
+            color: white;
+            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.4);
+        }
+
+        .offline-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+=======
             font-size: 48px;
             animation: pulse 2s infinite;
         }
@@ -57,6 +85,7 @@
             font-weight: 700;
             margin-bottom: 20px;
             background: linear-gradient(135deg, #ff6b6b, #ee5a24);
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-3513
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
@@ -64,6 +93,96 @@
 
         .offline-message {
             font-size: 1.2rem;
+<<<<<<< HEAD
+            color: #b0b0b0;
+            margin-bottom: 40px;
+            line-height: 1.6;
+        }
+
+        .retry-button {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            padding: 15px 40px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.3);
+        }
+
+        .retry-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 15px 40px rgba(102, 126, 234, 0.4);
+        }
+
+        .retry-button:active {
+            transform: translateY(0);
+        }
+
+        .status-indicator {
+            margin-top: 30px;
+            padding: 15px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .status-text {
+            font-size: 0.9rem;
+            color: #888;
+        }
+
+        .connection-status {
+            display: inline-block;
+            width: 8px;
+            height: 8px;
+            background: #ff4757;
+            border-radius: 50%;
+            margin-right: 8px;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { opacity: 1; }
+            50% { opacity: 0.5; }
+            100% { opacity: 1; }
+        }
+
+        .cached-content {
+            margin-top: 30px;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .cached-content h3 {
+            font-size: 1.1rem;
+            margin-bottom: 15px;
+            color: #667eea;
+        }
+
+        .cached-links {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .cached-link {
+            color: #b0b0b0;
+            text-decoration: none;
+            padding: 8px 15px;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            border: 1px solid transparent;
+        }
+
+        .cached-link:hover {
+            background: rgba(102, 126, 234, 0.1);
+            border-color: rgba(102, 126, 234, 0.3);
+=======
             color: #b8b8b8;
             margin-bottom: 30px;
             line-height: 1.6;
@@ -194,6 +313,7 @@
         }
 
         .retry-btn:hover {
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-3513
             color: #ffffff;
         }
 
@@ -205,6 +325,11 @@
             .offline-title {
                 font-size: 2rem;
             }
+<<<<<<< HEAD
+            
+            .offline-message {
+                font-size: 1rem;
+=======
 
             .features {
                 grid-template-columns: 1fr;
@@ -214,12 +339,40 @@
                 display: block;
                 margin: 10px 0;
                 text-align: center;
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-3513
             }
         }
     </style>
 </head>
 <body>
     <div class="offline-container">
+<<<<<<< HEAD
+        <div class="offline-icon">📡</div>
+        
+        <h1 class="offline-title">You're Offline</h1>
+        
+        <p class="offline-message">
+            It looks like you've lost your internet connection. Don't worry - some of our content is available offline.
+        </p>
+        
+        <button class="retry-button" onclick="retryConnection()">
+            Try Again
+        </button>
+        
+        <div class="status-indicator">
+            <span class="connection-status"></span>
+            <span class="status-text">Checking connection...</span>
+        </div>
+        
+        <div class="cached-content">
+            <h3>Available Offline</h3>
+            <div class="cached-links">
+                <a href="/" class="cached-link">Home</a>
+                <a href="/services" class="cached-link">Services</a>
+                <a href="/about" class="cached-link">About</a>
+                <a href="/contact" class="cached-link">Contact</a>
+            </div>
+=======
         <div class="offline-icon">
             📡
         </div>
@@ -283,10 +436,24 @@
                     Click here to retry now
                 </button>
             </p>
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-3513
         </div>
     </div>
 
     <script>
+<<<<<<< HEAD
+        // Check connection status
+        function checkConnection() {
+            const statusText = document.querySelector('.status-text');
+            const statusIndicator = document.querySelector('.connection-status');
+            
+            if (navigator.onLine) {
+                statusText.textContent = 'Connection restored!';
+                statusIndicator.style.background = '#2ed573';
+                statusIndicator.style.animation = 'none';
+                
+                // Redirect to home page after a short delay
+=======
         // Check network status
         function checkNetworkStatus() {
             const statusElement = document.getElementById('networkStatus');
@@ -295,17 +462,59 @@
                 statusElement.textContent = 'Connected';
                 statusElement.style.color = '#4ecdc4';
                 // Redirect to home page when back online
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-3513
                 setTimeout(() => {
                     window.location.href = '/';
                 }, 2000);
             } else {
+<<<<<<< HEAD
+                statusText.textContent = 'Still offline';
+                statusIndicator.style.background = '#ff4757';
+=======
                 statusElement.textContent = 'Disconnected';
                 statusElement.style.color = '#ff6b6b';
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-3513
             }
         }
 
         // Retry connection
         function retryConnection() {
+<<<<<<< HEAD
+            const statusText = document.querySelector('.status-text');
+            const statusIndicator = document.querySelector('.connection-status');
+            
+            statusText.textContent = 'Checking connection...';
+            statusIndicator.style.background = '#ffa502';
+            statusIndicator.style.animation = 'pulse 1s infinite';
+            
+            // Simulate connection check
+            setTimeout(() => {
+                checkConnection();
+            }, 1000);
+        }
+
+        // Listen for online/offline events
+        window.addEventListener('online', () => {
+            checkConnection();
+        });
+
+        window.addEventListener('offline', () => {
+            const statusText = document.querySelector('.status-text');
+            const statusIndicator = document.querySelector('.connection-status');
+            
+            statusText.textContent = 'Connection lost';
+            statusIndicator.style.background = '#ff4757';
+            statusIndicator.style.animation = 'pulse 2s infinite';
+        });
+
+        // Check connection on page load
+        document.addEventListener('DOMContentLoaded', () => {
+            checkConnection();
+        });
+
+        // Periodic connection check
+        setInterval(checkConnection, 5000);
+=======
             const statusElement = document.getElementById('networkStatus');
             statusElement.textContent = 'Checking...';
             statusElement.style.color = '#ffd93d';
@@ -363,6 +572,7 @@
                 });
             });
         });
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-3513
     </script>
 </body>
 </html>
