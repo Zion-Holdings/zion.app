@@ -5,8 +5,14 @@ import {
   Search, Grid, List,
   Brain, Atom, Shield, Target, Rocket,
   ArrowRight, Check, Palette, Heart, Truck, GraduationCap,
-  Building
+  Building, Cpu
 } from 'lucide-react';
+
+// Import our new 2025 service data
+import { advancedAIAutomationServices2025 } from '../data/2025-advanced-ai-automation-services';
+import { innovativeITInfrastructureServices2025 } from '../data/2025-innovative-it-infrastructure-services';
+import { innovativeMicroSaasSolutions2025 } from '../data/2025-innovative-micro-saas-solutions';
+import { cuttingEdgeAIServices2025 } from '../data/2025-cutting-edge-ai-services';
 
 // Import our new service data
 import { enterpriseITSolutions } from '../data/2034-enterprise-it-solutions';
@@ -40,7 +46,7 @@ import { ultimate2025AIServicesExpansion } from '../data/2025-ultimate-ai-servic
 // Import our new 2025 Q4 innovative services
 import { innovative2025Q4NewServices } from '../data/innovative-2025-q4-new-services';
 import { advancedITInfrastructureServices2025 } from '../data/advanced-it-infrastructure-services-2025';
-import { comprehensiveServicesAdvertising2025 } from '../data/comprehensive-services-advertising-2025';
+
 
 // Import our new innovative 2040 services
 import { innovative2040ITServices } from '../data/innovative-2040-it-services';
@@ -52,7 +58,7 @@ import { cuttingEdgeITInfrastructureServices } from '../data/2025-cutting-edge-i
 
 // Import our new 2025 cutting-edge futuristic services
 import { cuttingEdgeFuturisticServices } from '../data/2025-cutting-edge-futuristic-services';
-import { advancedAIAutomationServices } from '../data/2025-advanced-ai-automation-services';
+import { advancedAIAutomationServices } from '../data/2026-advanced-ai-automation-services';
 import { advancedITInfrastructureServices } from '../data/2025-advanced-it-infrastructure-services';
 
 // Import existing service data
@@ -97,6 +103,12 @@ const getServiceDescription = (service: any) => {
 
 // Create unified services array
 const allServices = [
+  // Our new 2025 services
+  ...advancedAIAutomationServices2025,
+  ...innovativeITInfrastructureServices2025,
+  ...innovativeMicroSaasSolutions2025,
+  ...cuttingEdgeAIServices2025,
+  
   ...enterpriseITSolutions,
   ...innovativeMicroSaasSolutions,
   ...cuttingEdgeAIServices,
@@ -164,6 +176,34 @@ const categories = [
     description: 'Complete portfolio of all services'
   },
   {
+    id: 'ai-automation',
+    name: 'AI Automation',
+    icon: <Brain className="w-6 h-6" />,
+    color: 'from-blue-500 to-purple-500',
+    description: 'AI-powered automation solutions'
+  },
+  {
+    id: 'it-infrastructure',
+    name: 'IT Infrastructure',
+    icon: <Building className="w-6 h-6" />,
+    color: 'from-indigo-500 to-purple-500',
+    description: 'Enterprise infrastructure and cloud solutions'
+  },
+  {
+    id: 'micro-saas',
+    name: 'Micro SAAS',
+    icon: <Target className="w-6 h-6" />,
+    color: 'from-green-500 to-emerald-500',
+    description: 'Innovative business solutions'
+  },
+  {
+    id: 'ai-services',
+    name: 'AI Services',
+    icon: <Cpu className="w-6 h-6" />,
+    color: 'from-purple-500 to-pink-500',
+    description: 'Cutting-edge AI and machine learning services'
+  },
+  {
     id: 'enterprise-it',
     name: 'Enterprise IT',
     icon: <Building className="w-6 h-6" />,
@@ -190,13 +230,6 @@ const categories = [
     icon: <Rocket className="w-6 h-6" />,
     color: 'from-pink-500 to-rose-500',
     description: 'Space exploration and virtual worlds'
-  },
-  {
-    id: 'micro-saas',
-    name: 'Micro SAAS',
-    icon: <Target className="w-6 h-6" />,
-    color: 'from-orange-500 to-red-500',
-    description: 'Innovative business solutions'
   },
   {
     id: 'creative-media',
@@ -306,6 +339,14 @@ export default function Services() {
 
   const getCategoryIcon = (category: string) => {
     switch (category.toLowerCase()) {
+      case 'ai automation':
+        return <Brain className="w-6 h-6 text-blue-400" />;
+      case 'it infrastructure':
+        return <Building className="w-6 h-6 text-indigo-400" />;
+      case 'micro saas':
+        return <Target className="w-6 h-6 text-green-400" />;
+      case 'ai services':
+        return <Cpu className="w-6 h-6 text-purple-400" />;
       case 'enterprise it':
       case 'enterprise security':
       case 'devops & automation':
@@ -314,7 +355,6 @@ export default function Services() {
       case 'cybersecurity':
         return <Building className="w-6 h-6 text-blue-400" />;
       case 'ai & consciousness':
-      case 'ai services':
       case 'artificial intelligence':
         return <Brain className="w-6 h-6 text-cyan-400" />;
       case 'quantum':
@@ -323,9 +363,6 @@ export default function Services() {
       case 'space':
       case 'space & metaverse':
         return <Rocket className="w-6 h-6 text-pink-400" />;
-      case 'micro saas':
-      case 'micro saas solutions':
-        return <Target className="w-6 h-6 text-orange-400" />;
       case 'creative':
       case 'creative & media':
         return <Palette className="w-6 h-6 text-indigo-400" />;

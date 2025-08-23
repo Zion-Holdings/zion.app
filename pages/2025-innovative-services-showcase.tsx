@@ -9,9 +9,9 @@ import {
 } from 'lucide-react';
 
 // Import our new 2025 services
-import { advancedAIAutomationServices } from '../data/2025-advanced-ai-automation-services';
-import { innovativeITInfrastructureServices } from '../data/2025-innovative-it-infrastructure-services';
-import { innovativeMicroSaasSolutions } from '../data/2025-innovative-micro-saas-solutions';
+import { advancedAIAutomationServices } from '../data/2026-advanced-ai-automation-services';
+import { innovativeITInfrastructureServices2025 } from '../data/2025-innovative-it-infrastructure-services';
+import { innovativeMicroSaasSolutions2025 } from '../data/2025-innovative-micro-saas-solutions';
 import { emergingTechnologyServices } from '../data/2025-emerging-technology-services';
 
 const contact = {
@@ -62,8 +62,8 @@ const categories = [
 // Combine all services
 const allServices = [
   ...advancedAIAutomationServices,
-  ...innovativeITInfrastructureServices,
-  ...innovativeMicroSaasSolutions,
+  ...innovativeITInfrastructureServices2025,
+  ...innovativeMicroSaasSolutions2025,
   ...emergingTechnologyServices
 ];
 

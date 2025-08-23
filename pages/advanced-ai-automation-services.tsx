@@ -3,15 +3,13 @@ import Head from 'next/head';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { 
-  CheckCircle, ArrowRight, Star, TrendingUp, Phone, Zap, DollarSign, 
-  Shield, Mail, MapPin, Rocket, Brain, Sparkles, Atom, Dna, Users, 
-  Globe, Cpu, Target, Microscope, Lock, Cloud, BarChart3, Settings, 
-  Eye, Award, Clock, Heart, Lightbulb, Target as TargetIcon, 
-  Zap as ZapIcon, Shield as ShieldIcon, Globe as GlobeIcon,
-  Search, Code, TestTube, Server, Database, Network, Shield as SecurityIcon
+  CheckCircle, ArrowRight, Star, TrendingUp, Phone, 
+  Brain, Sparkles, Users, 
+  BarChart3, Settings, 
+  Award, Code, TestTube, Server, Database, Shield as SecurityIcon, Mail
 } from 'lucide-react';
 import Layout from '../components/layout/Layout';
-import { advancedAIAutomationServices } from '../data/2025-advanced-ai-automation-services';
+import { advancedAIAutomationServices } from '../data/2026-advanced-ai-automation-services';
 
 const contactInfo = {
   mobile: '+1 302 464 0950',

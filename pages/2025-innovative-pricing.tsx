@@ -1,15 +1,15 @@
 import React, { useState } from 'react';
 import SEO from '../components/SEO';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { 
   Check, TrendingUp, Zap, Shield, Globe,
   Brain, Building, Target, Rocket, ArrowRight
 } from 'lucide-react';
 
 // Import our new 2025 services
-import { advancedAIAutomationServices } from '../data/2025-advanced-ai-automation-services';
-import { innovativeITInfrastructureServices } from '../data/2025-innovative-it-infrastructure-services';
-import { innovativeMicroSaasSolutions } from '../data/2025-innovative-micro-saas-solutions';
+import { advancedAIAutomationServices } from '../data/2026-advanced-ai-automation-services';
+import { innovativeITInfrastructureServices2025 } from '../data/2025-innovative-it-infrastructure-services';
+import { innovativeMicroSaasSolutions2025 } from '../data/2025-innovative-micro-saas-solutions';
 import { emergingTechnologyServices } from '../data/2025-emerging-technology-services';
 
 const contact = {
@@ -33,14 +33,14 @@ const serviceCategories = [
     name: 'IT Infrastructure Services',
     icon: <Building className="w-8 h-8" />,
     color: 'from-blue-500 to-indigo-500',
-    services: innovativeITInfrastructureServices
+    services: innovativeITInfrastructureServices2025
   },
   {
     id: 'micro-saas',
     name: 'Micro SAAS Solutions',
     icon: <Target className="w-8 h-8" />,
     color: 'from-green-500 to-emerald-500',
-    services: innovativeMicroSaasSolutions
+    services: innovativeMicroSaasSolutions2025
   },
   {
     id: 'emerging-tech',
@@ -110,8 +110,8 @@ export default function InnovativePricing2025() {
     if (selectedCategory === 'all') {
       return [
         ...advancedAIAutomationServices,
-        ...innovativeITInfrastructureServices,
-        ...innovativeMicroSaasSolutions,
+        ...innovativeITInfrastructureServices2025,
+        ...innovativeMicroSaasSolutions2025,
         ...emergingTechnologyServices
       ];
     }
