@@ -4,11 +4,13 @@ import { motion, AnimatePresence } from 'framer-motion';
 interface QuantumCardProps {
   children: React.ReactNode;
   className?: string;
-  variant?: 'quantum' | 'holographic' | 'neural' | 'cyber' | 'quantum-neural' | 'holographic-cyber';
+  variant?: 'quantum' | 'holographic' | 'neural' | 'cyberpunk';
   intensity?: 'low' | 'medium' | 'high';
-  interactive?: boolean;
+  onClick?: () => void;
+  hover?: boolean;
   glow?: boolean;
-  particleEffect?: boolean;
+  border?: boolean;
+  shadow?: boolean;
 }
 
 const QuantumCard: React.FC<QuantumCardProps> = ({
@@ -16,12 +18,15 @@ const QuantumCard: React.FC<QuantumCardProps> = ({
   className = '',
   variant = 'quantum',
   intensity = 'medium',
-  interactive = true,
+  onClick,
+  hover = true,
   glow = true,
-  particleEffect = true
+  border = true,
+  shadow = true
 }) => {
   const [isHovered, setIsHovered] = useState(false);
-  const [isFocused, setIsFocused] = useState(false);
+  const [isPressed, setIsPressed] = useState(false);
+  const cardRef = useRef<HTMLDivElement>(null);
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const animationRef = useRef<number | undefined>(undefined);
 
@@ -70,26 +75,25 @@ const QuantumCard: React.FC<QuantumCardProps> = ({
 
   // Canvas animation for quantum effects
   useEffect(() => {
-    if (!particleEffect || !canvasRef.current) return;
-
     const canvas = canvasRef.current;
+    if (!canvas || !glow) return;
+
     const ctx = canvas.getContext('2d');
     if (!ctx) return;
 
-    let width = canvas.offsetWidth;
-    let height = canvas.offsetHeight;
-
     const resizeCanvas = () => {
-      width = canvas.offsetWidth;
-      height = canvas.offsetHeight;
-      canvas.width = width;
-      canvas.height = height;
+      if (cardRef.current) {
+        const rect = cardRef.current.getBoundingClientRect();
+        canvas.width = rect.width;
+        canvas.height = rect.height;
+      }
     };
 
     resizeCanvas();
+    window.addEventListener('resize', resizeCanvas);
 
-    // Quantum particle system
-    class QuantumParticle {
+    let time = 0;
+    const particles: Array<{
       x: number;
       y: number;
       vx: number;
@@ -97,305 +101,187 @@ const QuantumCard: React.FC<QuantumCardProps> = ({
       size: number;
       life: number;
       maxLife: number;
-      color: string;
-      quantumState: number;
+    }> = [];
 
-      constructor() {
-        this.x = Math.random() * width;
-        this.y = Math.random() * height;
-        this.vx = (Math.random() - 0.5) * 2;
-        this.vy = (Math.random() - 0.5) * 2;
-        this.size = Math.random() * 2 + 0.5;
-        this.maxLife = Math.random() * 100 + 50;
-        this.life = this.maxLife;
-        this.quantumState = Math.random() * Math.PI * 2;
-        
-        switch (variant) {
-          case 'quantum':
-            this.color = `hsl(${200 + Math.random() * 60}, 80%, 70%)`;
-            break;
-          case 'holographic':
-            this.color = `hsl(${280 + Math.random() * 80}, 90%, 80%)`;
-            break;
-          case 'neural':
-            this.color = `hsl(${120 + Math.random() * 60}, 80%, 70%)`;
-            break;
-          case 'cyber':
-            this.color = `hsl(${0 + Math.random() * 60}, 90%, 80%)`;
-            break;
-          case 'quantum-neural':
-            this.color = `hsl(${160 + Math.random() * 40}, 85%, 75%)`;
-            break;
-          case 'holographic-cyber':
-            this.color = `hsl(${320 + Math.random() * 40}, 85%, 75%)`;
-            break;
-        }
+    // Initialize particles
+    const initParticles = () => {
+      particles.length = 0;
+      const count = intensity === 'high' ? 20 : intensity === 'medium' ? 12 : 8;
+      
+      for (let i = 0; i < count; i++) {
+        particles.push({
+          x: Math.random() * canvas.width,
+          y: Math.random() * canvas.height,
+          vx: (Math.random() - 0.5) * 0.5,
+          vy: (Math.random() - 0.5) * 0.5,
+          size: Math.random() * 2 + 1,
+          life: Math.random() * 100,
+          maxLife: 100
+        });
       }
-
-      update() {
-        this.x += this.vx;
-        this.y += this.vy;
-        this.life--;
-        this.quantumState += 0.1;
-
-        // Quantum tunneling
-        if (variant === 'quantum' && Math.random() < 0.01) {
-          this.x = Math.random() * width;
-          this.y = Math.random() * height;
-        }
-
-        // Bounce off edges
-        if (this.x < 0 || this.x > width) this.vx *= -1;
-        if (this.y < 0 || this.y > height) this.vy *= -1;
-      }
-
-      draw() {
-        if (!ctx) return;
-
-        ctx.save();
-        ctx.globalAlpha = this.life / this.maxLife;
-
-        if (variant === 'quantum') {
-          // Quantum wave function
-          const waveSize = this.size * (1 + Math.sin(this.quantumState * 2) * 0.3);
-          ctx.beginPath();
-          ctx.arc(this.x, this.y, waveSize, 0, Math.PI * 2);
-          ctx.fillStyle = this.color;
-          ctx.fill();
-        } else if (variant === 'holographic') {
-          // Holographic geometric shapes
-          const sides = 6;
-          const angle = (Math.PI * 2) / sides;
-          ctx.beginPath();
-          ctx.moveTo(this.x + this.size * Math.cos(0), this.y + this.size * Math.sin(0));
-          for (let i = 1; i <= sides; i++) {
-            ctx.lineTo(
-              this.x + this.size * Math.cos(i * angle),
-              this.y + this.size * Math.sin(i * angle)
-            );
-          }
-          ctx.closePath();
-          ctx.fillStyle = this.color;
-          ctx.fill();
-        } else {
-          // Standard particles
-          ctx.beginPath();
-          ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-          ctx.fillStyle = this.color;
-          ctx.fill();
-        }
-
-        ctx.restore();
-      }
-    }
-
-    const particles: QuantumParticle[] = [];
-    const particleCount = intensity === 'high' ? 30 : intensity === 'medium' ? 20 : 10;
-
-    for (let i = 0; i < particleCount; i++) {
-      particles.push(new QuantumParticle());
-    }
+    };
 
     const animate = () => {
-      ctx.clearRect(0, 0, width, height);
-
+      time += 1;
+      
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      
       particles.forEach((particle, index) => {
-        particle.update();
-        particle.draw();
+        particle.x += particle.vx;
+        particle.y += particle.vy;
+        particle.life -= 1;
 
+        // Bounce off edges
+        if (particle.x <= 0 || particle.x >= canvas.width) particle.vx *= -1;
+        if (particle.y <= 0 || particle.y >= canvas.height) particle.vy *= -1;
+
+        // Reset particle if it dies
         if (particle.life <= 0) {
-          particles[index] = new QuantumParticle();
+          particle.x = Math.random() * canvas.width;
+          particle.y = Math.random() * canvas.height;
+          particle.life = particle.maxLife;
         }
+
+        // Draw particle
+        const alpha = particle.life / particle.maxLife;
+        ctx.globalAlpha = alpha * 0.6;
+        ctx.fillStyle = variantStyles.glowColor;
+        ctx.beginPath();
+        ctx.arc(particle.x, particle.y, particle.size, 0, Math.PI * 2);
+        ctx.fill();
       });
 
+      ctx.globalAlpha = 1;
       animationRef.current = requestAnimationFrame(animate);
     };
 
+    initParticles();
     animate();
 
     return () => {
+      window.removeEventListener('resize', resizeCanvas);
       if (animationRef.current) {
         cancelAnimationFrame(animationRef.current);
       }
     };
-  }, [variant, intensity, particleEffect]);
+  }, [variant, intensity, glow, variantStyles.glowColor]);
 
-  const getVariantStyles = () => {
-    switch (variant) {
-      case 'quantum':
-        return {
-          border: 'from-cyan-500 to-blue-600',
-          glow: 'shadow-cyan-500/50',
-          bg: 'from-slate-900/80 to-slate-800/80',
-          accent: 'text-cyan-400'
-        };
-      case 'holographic':
-        return {
-          border: 'from-purple-500 to-pink-600',
-          glow: 'shadow-purple-500/50',
-          bg: 'from-slate-900/80 to-slate-800/80',
-          accent: 'text-purple-400'
-        };
-      case 'neural':
-        return {
-          border: 'from-green-500 to-emerald-600',
-          glow: 'shadow-green-500/50',
-          bg: 'from-slate-900/80 to-slate-800/80',
-          accent: 'text-green-400'
-        };
-      case 'cyber':
-        return {
-          border: 'from-red-500 to-orange-600',
-          glow: 'shadow-red-500/50',
-          bg: 'from-slate-900/80 to-slate-800/80',
-          accent: 'text-red-400'
-        };
-      case 'quantum-neural':
-        return {
-          border: 'from-teal-500 to-green-600',
-          glow: 'shadow-teal-500/50',
-          bg: 'from-slate-900/80 to-slate-800/80',
-          accent: 'text-teal-400'
-        };
-      case 'holographic-cyber':
-        return {
-          border: 'from-fuchsia-500 to-purple-600',
-          glow: 'shadow-fuchsia-500/50',
-          bg: 'from-slate-900/80 to-slate-800/80',
-          accent: 'text-fuchsia-400'
-        };
-      default:
-        return {
-          border: 'from-cyan-500 to-blue-600',
-          glow: 'shadow-cyan-500/50',
-          bg: 'from-slate-900/80 to-slate-800/80',
-          accent: 'text-cyan-400'
-        };
+  const cardVariants = {
+    initial: { 
+      scale: 1,
+      rotateX: 0,
+      rotateY: 0,
+      z: 0
+    },
+    hover: { 
+      scale: 1.02,
+      rotateX: 2,
+      rotateY: 2,
+      z: 20,
+      transition: {
+        duration: 0.3,
+        ease: "easeOut" as const
+      }
+    },
+    pressed: { 
+      scale: 0.98,
+      rotateX: 1,
+      rotateY: 1,
+      z: 10,
+      transition: {
+        duration: 0.1
+      }
     }
   };
 
-  const styles = getVariantStyles();
+  const borderVariants = {
+    initial: { opacity: 0.3 },
+    hover: { opacity: 0.8 },
+    pressed: { opacity: 0.6 }
+  };
 
   return (
     <motion.div
+      ref={cardRef}
       className={`relative group ${className}`}
-      onHoverStart={() => setIsHovered(true)}
-      onHoverEnd={() => setIsHovered(false)}
-      onFocus={() => setIsFocused(true)}
-      onBlur={() => setIsFocused(false)}
-      tabIndex={interactive ? 0 : -1}
-      whileHover={interactive ? { scale: 1.02, y: -5 } : {}}
-      whileFocus={interactive ? { scale: 1.02, y: -5 } : {}}
-      transition={{ duration: 0.3, ease: "easeOut" }}
+      variants={cardVariants}
+      initial="initial"
+      animate={isPressed ? "pressed" : isHovered ? "hover" : "initial"}
+      onHoverStart={() => hover && setIsHovered(true)}
+      onHoverEnd={() => hover && setIsHovered(false)}
+      onTapStart={() => setIsPressed(true)}
+      onTap={() => setIsPressed(false)}
+      onClick={onClick}
+      style={{
+        perspective: '1000px',
+        transformStyle: 'preserve-3d'
+      }}
     >
-      {/* Particle effect canvas */}
-      {particleEffect && (
-        <canvas
-          ref={canvasRef}
-          className="absolute inset-0 w-full h-full pointer-events-none rounded-xl"
-          style={{ zIndex: 1 }}
-        />
+      {/* Animated border */}
+      {border && (
+        <motion.div
+          className={`absolute inset-0 rounded-xl bg-gradient-to-r ${variantStyles.borderGradient} p-[2px]`}
+          variants={borderVariants}
+          initial="initial"
+          animate={isHovered ? "hover" : "initial"}
+        >
+          <div className="w-full h-full rounded-xl bg-gradient-to-br from-slate-900/90 to-slate-800/70" />
+        </motion.div>
       )}
 
       {/* Main card content */}
       <div
-        className={`
-          relative z-10 p-6 rounded-xl backdrop-blur-xl
-          bg-gradient-to-br ${styles.bg}
-          border border-transparent
-          ${glow ? `shadow-2xl ${styles.glow}` : ''}
-          ${interactive ? 'cursor-pointer' : ''}
-          transition-all duration-300 ease-out
-          ${isHovered || isFocused ? 'border-opacity-100' : 'border-opacity-0'}
-        `}
+        className={`relative rounded-xl p-6 bg-gradient-to-br ${variantStyles.bgGradient} backdrop-blur-sm
+                   ${shadow ? 'shadow-2xl' : ''} 
+                   ${glow && isHovered ? 'shadow-cyan-500/25' : ''}
+                   transition-all duration-300 ease-out
+                   ${onClick ? 'cursor-pointer' : ''}`}
         style={{
-          backgroundImage: `linear-gradient(135deg, ${styles.bg})`,
-          borderImage: `linear-gradient(135deg, ${styles.border}) 1`,
+          transform: 'translateZ(0)',
+          border: border ? 'none' : '1px solid rgba(148, 163, 184, 0.2)'
         }}
       >
-        {/* Holographic border effect */}
-        <div className="absolute inset-0 rounded-xl overflow-hidden">
-          <div
-            className={`
-              absolute inset-0 rounded-xl
-              bg-gradient-to-r ${styles.border}
-              opacity-0 transition-opacity duration-300
-              ${isHovered || isFocused ? 'opacity-20' : ''}
-            `}
+        {/* Quantum particles canvas */}
+        {glow && (
+          <canvas
+            ref={canvasRef}
+            className="absolute inset-0 w-full h-full rounded-xl pointer-events-none opacity-60"
+            style={{ zIndex: -1 }}
           />
-        </div>
-
-        {/* Quantum interference pattern */}
-        {variant === 'quantum' && (
-          <div className="absolute inset-0 rounded-xl overflow-hidden">
-            <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(0,255,255,0.1)_0%,transparent_50%)] animate-pulse" />
-            <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_70%,rgba(138,43,226,0.1)_0%,transparent_50%)] animate-pulse" style={{ animationDelay: '1s' }} />
-          </div>
-        )}
-
-        {/* Holographic scan lines */}
-        {variant === 'holographic' && (
-          <div className="absolute inset-0 rounded-xl overflow-hidden">
-            {Array.from({ length: 10 }).map((_, i) => (
-              <div
-                key={i}
-                className="absolute w-full h-px bg-gradient-to-r from-transparent via-purple-400 to-transparent opacity-20"
-                style={{
-                  top: `${(i * 100) / 10}%`,
-                  animation: `scan ${2 + i * 0.1}s linear infinite`
-                }}
-              />
-            ))}
-          </div>
-        )}
-
-        {/* Neural network overlay */}
-        {variant === 'neural' && (
-          <div className="absolute inset-0 rounded-xl overflow-hidden">
-            <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_80%,rgba(0,255,0,0.1)_0%,transparent_50%)] animate-pulse" />
-            <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_20%,rgba(0,255,255,0.1)_0%,transparent_50%)] animate-pulse" style={{ animationDelay: '0.5s' }} />
-          </div>
         )}
 
         {/* Content */}
-        <div className="relative z-20">
+        <div className="relative z-10">
           {children}
         </div>
 
-        {/* Interactive glow effect */}
-        {interactive && glow && (
-          <div
-            className={`
-              absolute inset-0 rounded-xl
-              bg-gradient-to-r ${styles.border}
-              opacity-0 transition-opacity duration-300
-              ${isHovered || isFocused ? 'opacity-10' : ''}
-            `}
-          />
+        {/* Hover effects */}
+        {hover && (
+          <AnimatePresence>
+            {isHovered && (
+              <motion.div
+                className={`absolute inset-0 rounded-xl bg-gradient-to-r ${variantStyles.borderGradient} opacity-20`}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 0.2 }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 0.3 }}
+                style={{ zIndex: -1 }}
+              />
+            )}
+          </AnimatePresence>
         )}
       </div>
 
-      {/* Floating particles */}
-      <AnimatePresence>
-        {isHovered && particleEffect && (
-          <motion.div
-            initial={{ opacity: 0, scale: 0.8 }}
-            animate={{ opacity: 1, scale: 1 }}
-            exit={{ opacity: 0, scale: 0.8 }}
-            transition={{ duration: 0.3 }}
-            className="absolute -top-2 -right-2 w-4 h-4"
-          >
-            <div className={`w-full h-full rounded-full bg-gradient-to-r ${styles.border} animate-ping`} />
-          </motion.div>
-        )}
-      </AnimatePresence>
-
-      <style jsx>{`
-        @keyframes scan {
-          0% { transform: translateX(-100%); }
-          100% { transform: translateX(100%); }
-        }
-      `}</style>
+      {/* Glow effect */}
+      {glow && (
+        <div
+          className={`absolute inset-0 rounded-xl bg-gradient-to-r ${variantStyles.borderGradient} opacity-0 blur-xl transition-opacity duration-300`}
+          style={{
+            zIndex: -2,
+            opacity: isHovered ? 0.3 : 0
+          }}
+        />
+      )}
     </motion.div>
   );
 };
