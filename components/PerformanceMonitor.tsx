@@ -35,8 +35,6 @@ interface PerformanceMonitorProps {
   onToggle?: (visible: boolean) => void;
 }
 
-
-
 const PerformanceMonitor: React.FC<PerformanceMonitorProps> = ({ 
   isVisible = false, 
   onToggle 
@@ -291,8 +289,6 @@ const PerformanceMonitor: React.FC<PerformanceMonitorProps> = ({
 
   const toggleExpanded = () => setIsExpanded(!isExpanded);
   const toggleAutoRefresh = () => setAutoRefresh(!autoRefresh);
-
-  if (!isVisible) return null;
 
   return (
     <motion.div

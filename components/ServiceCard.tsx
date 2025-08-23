@@ -1,10 +1,6 @@
-import React, { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import Link from 'next/link';
-import { 
-  ArrowRight, Clock, Users, Zap, Shield, Brain, Atom, Rocket, 
-  ExternalLink, Heart, Share2, Bookmark
-} from 'lucide-react';
+import React from 'react';
+import { motion } from 'framer-motion';
+import { ArrowRight, Star, Clock, Users, TrendingUp } from 'lucide-react';
 
 interface ServiceCardProps {
   service: {
@@ -26,213 +22,142 @@ interface ServiceCardProps {
     marketSize: string;
     targetAudience: string;
     competitiveAdvantage: string;
-    contact: string;
-    mobile: string;
-    address: string;
-    website: string;
     slug: string;
   };
+  onClick: () => void;
+  featured?: boolean;
 }
 
-const ServiceCard: React.FC<ServiceCardProps> = ({ service }) => {
-  const [isHovered, setIsHovered] = useState(false);
-  const [isLiked, setIsLiked] = useState(false);
-  const [isBookmarked, setIsBookmarked] = useState(false);
-  const [showFullDescription, setShowFullDescription] = useState(false);
-
-  // Get category icon and color
-  const getCategoryIcon = (category: string) => {
-    if (category.toLowerCase().includes('ai') || category.toLowerCase().includes('consciousness')) {
-      return { icon: Brain, color: 'from-cyan-500 to-blue-600' };
-    } else if (category.toLowerCase().includes('quantum')) {
-      return { icon: Atom, color: 'from-blue-500 to-indigo-600' };
-    } else if (category.toLowerCase().includes('cybersecurity') || category.toLowerCase().includes('security')) {
-      return { icon: Shield, color: 'from-red-500 to-orange-600' };
-    } else if (category.toLowerCase().includes('space')) {
-      return { icon: Rocket, color: 'from-indigo-500 to-purple-600' };
-    } else if (category.toLowerCase().includes('enterprise') || category.toLowerCase().includes('business')) {
-      return { icon: Users, color: 'from-green-500 to-teal-600' };
-    } else {
-      return { icon: Zap, color: 'from-purple-500 to-pink-600' };
-    }
+const ServiceCard: React.FC<ServiceCardProps> = ({ service, onClick, featured = false }) => {
+  const getCategoryColor = (category: string) => {
+    const colors: { [key: string]: string } = {
+      'AI & Business Intelligence': 'from-purple-500 to-pink-500',
+      'Cybersecurity': 'from-red-500 to-orange-500',
+      'Quantum Technology': 'from-blue-500 to-cyan-500',
+      'Space Technology': 'from-indigo-500 to-purple-500',
+      'Micro SAAS': 'from-emerald-500 to-teal-500',
+      'default': 'from-gray-500 to-gray-600'
+    };
+    return colors[category] || colors.default;
   };
 
-  const { icon: CategoryIcon, color } = getCategoryIcon(service.category);
-
-  // Truncate description for better card layout
-  const truncatedDescription = service.description.length > 120 
-    ? service.description.substring(0, 120) + '...' 
-    : service.description;
-
-  const fullDescription = service.description;
+  const getCategoryIcon = (category: string) => {
+    if (category.includes('AI')) return '🤖';
+    if (category.includes('Quantum')) return '⚛️';
+    if (category.includes('Cybersecurity')) return '🛡️';
+    if (category.includes('Space')) return '🚀';
+    if (category.includes('Micro SAAS')) return '💼';
+    return '⚡';
+  };
 
   return (
     <motion.div
-      className="group relative bg-gray-800/30 rounded-2xl border border-gray-700/50 hover:border-gray-600/50 transition-all duration-300 hover:bg-gray-800/50 overflow-hidden"
-      onHoverStart={() => setIsHovered(true)}
-      onHoverEnd={() => setIsHovered(false)}
-      whileHover={{ y: -8, scale: 1.02 }}
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.3 }}
+      className={`group cursor-pointer h-full ${
+        featured 
+          ? 'ring-2 ring-cyan-400/50 shadow-lg shadow-cyan-500/25' 
+          : ''
+      }`}
+      whileHover={{ scale: 1.02, y: -5 }}
+      whileTap={{ scale: 0.98 }}
+      onClick={onClick}
     >
-      {/* Background gradient overlay */}
-      <div className={`absolute inset-0 bg-gradient-to-br ${color} opacity-0 group-hover:opacity-5 transition-opacity duration-300`} />
-      
-      {/* Header */}
-      <div className="p-6">
-        {/* Category badge and actions */}
-        <div className="flex items-start justify-between mb-4">
-          <div className={`inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-gradient-to-r ${color} text-white`}>
-            <CategoryIcon className="w-3 h-3 mr-1" />
-            {service.category}
+      <div className="bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-sm border border-white/20 rounded-2xl p-6 hover:border-cyan-400/50 transition-all duration-300 h-full flex flex-col">
+        {/* Header */}
+        <div className="mb-4">
+          <div className="flex items-start justify-between mb-3">
+            <div className="flex items-center gap-2">
+              <span className="text-2xl">{getCategoryIcon(service.category)}</span>
+              {featured && (
+                <span className="px-2 py-1 bg-gradient-to-r from-cyan-500 to-blue-500 text-white text-xs font-medium rounded-full">
+                  Featured
+                </span>
+              )}
+            </div>
+            <div className="text-right">
+              <div className="text-xs text-gray-500 bg-white/10 px-2 py-1 rounded">
+                {service.type}
+              </div>
+            </div>
           </div>
           
-          <div className="flex items-center space-x-2">
-            <motion.button
-              onClick={() => setIsLiked(!isLiked)}
-              className={`p-2 rounded-lg transition-colors ${
-                isLiked 
-                  ? 'text-red-500 bg-red-500/10' 
-                  : 'text-gray-400 hover:text-red-500 hover:bg-red-500/10'
-              }`}
-              whileHover={{ scale: 1.1 }}
-              whileTap={{ scale: 0.9 }}
-              aria-label={isLiked ? 'Unlike service' : 'Like service'}
-            >
-              <Heart className={`w-4 h-4 ${isLiked ? 'fill-current' : ''}`} />
-            </motion.button>
-            
-            <motion.button
-              onClick={() => setIsBookmarked(!isBookmarked)}
-              className={`p-2 rounded-lg transition-colors ${
-                isBookmarked 
-                  ? 'text-yellow-500 bg-yellow-500/10' 
-                  : 'text-gray-400 hover:text-yellow-500 hover:bg-yellow-500/10'
-              }`}
-              whileHover={{ scale: 1.1 }}
-              whileTap={{ scale: 0.9 }}
-              aria-label={isBookmarked ? 'Remove bookmark' : 'Bookmark service'}
-            >
-              <Bookmark className={`w-4 h-4 ${isBookmarked ? 'fill-current' : ''}`} />
-            </motion.button>
-          </div>
-        </div>
-
-        {/* Service title */}
-        <h3 className="text-xl font-bold text-white mb-2 group-hover:text-cyan-400 transition-colors">
-          {service.name}
-        </h3>
-
-        {/* Tagline */}
-        <p className="text-sm text-cyan-400 mb-3 font-medium">
-          {service.tagline}
-        </p>
-
-        {/* Description */}
-        <div className="mb-4">
-          <p className="text-gray-300 text-sm leading-relaxed">
-            {showFullDescription ? fullDescription : truncatedDescription}
+          <h3 className="text-lg font-semibold text-white mb-2 group-hover:text-cyan-400 transition-colors line-clamp-2">
+            {service.name}
+          </h3>
+          
+          <p className="text-gray-400 text-sm mb-3 line-clamp-2">
+            {service.tagline}
           </p>
-          {service.description.length > 120 && (
-            <button
-              onClick={() => setShowFullDescription(!showFullDescription)}
-              className="text-cyan-400 hover:text-cyan-300 text-xs mt-2 transition-colors"
-            >
-              {showFullDescription ? 'Show less' : 'Read more'}
-            </button>
-          )}
         </div>
 
-        {/* Quick stats */}
-        <div className="grid grid-cols-2 gap-3 mb-4">
-          <div className="flex items-center text-xs text-gray-400">
-            <Clock className="w-3 h-3 mr-1" />
-            <span>Market: {service.marketSize}</span>
-          </div>
-          <div className="flex items-center text-xs text-gray-400">
-            <Users className="w-3 h-3 mr-1" />
-            <span>{service.type}</span>
-          </div>
-        </div>
-
-        {/* Features preview */}
+        {/* Category Badge */}
         <div className="mb-4">
-          <h4 className="text-sm font-semibold text-white mb-2">Key Features</h4>
-          <div className="flex flex-wrap gap-1">
+          <span className={`inline-block px-3 py-1 rounded-full text-xs font-medium bg-gradient-to-r ${getCategoryColor(service.category)} bg-opacity-20 text-white border border-white/20`}>
+            {service.category}
+          </span>
+        </div>
+
+        {/* Pricing */}
+        <div className="mb-4 flex-1">
+          <div className="space-y-2">
+            <div className="flex justify-between text-sm">
+              <span className="text-gray-500">Starting at:</span>
+              <span className="text-cyan-400 font-semibold">{service.pricing.starter}</span>
+            </div>
+            <div className="flex justify-between text-sm">
+              <span className="text-gray-500">Professional:</span>
+              <span className="text-purple-400 font-semibold">{service.pricing.professional}</span>
+            </div>
+            <div className="flex justify-between text-sm">
+              <span className="text-gray-500">Enterprise:</span>
+              <span className="text-emerald-400 font-semibold">{service.pricing.enterprise}</span>
+            </div>
+          </div>
+        </div>
+
+        {/* Market Info */}
+        <div className="mb-4 text-xs text-gray-500">
+          <div className="flex items-center gap-4">
+            <div className="flex items-center gap-1">
+              <TrendingUp className="w-3 h-3" />
+              <span>{service.marketSize}</span>
+            </div>
+            <div className="flex items-center gap-1">
+              <Users className="w-3 h-3" />
+              <span>{service.targetAudience.split(',')[0]}...</span>
+            </div>
+          </div>
+        </div>
+
+        {/* Features Preview */}
+        <div className="mb-4 flex-1">
+          <div className="space-y-1">
             {service.features.slice(0, 3).map((feature, index) => (
-              <span
-                key={index}
-                className="inline-block px-2 py-1 bg-gray-700/50 text-gray-300 text-xs rounded-md"
-              >
-                {feature}
-              </span>
+              <div key={index} className="flex items-center gap-2 text-xs text-gray-400">
+                <div className="w-1.5 h-1.5 bg-cyan-400 rounded-full"></div>
+                <span className="line-clamp-1">{feature}</span>
+              </div>
             ))}
             {service.features.length > 3 && (
-              <span className="inline-block px-2 py-1 bg-gray-700/50 text-gray-400 text-xs rounded-md">
-                +{service.features.length - 3} more
-              </span>
+              <div className="text-xs text-gray-500 mt-2">
+                +{service.features.length - 3} more features
+              </div>
             )}
           </div>
         </div>
 
-        {/* Pricing preview */}
-        <div className="mb-4">
-          <h4 className="text-sm font-semibold text-white mb-2">Starting at</h4>
-          <div className="text-2xl font-bold text-cyan-400">
-            {service.pricing.starter}
+        {/* CTA */}
+        <div className="mt-auto">
+          <div className="flex items-center justify-between">
+            <div className="text-xs text-gray-500 bg-white/10 px-2 py-1 rounded">
+              {service.category.split(' ')[0]}
+            </div>
+            <div className="flex items-center text-cyan-400 group-hover:text-cyan-300 transition-colors">
+              <span className="text-sm font-medium">Learn More</span>
+              <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform duration-300" />
+            </div>
           </div>
         </div>
       </div>
-
-      {/* Footer actions */}
-      <div className="px-6 pb-6">
-        <div className="flex items-center justify-between">
-          <Link href={service.slug || `/services/${service.id}`}>
-            <motion.button 
-              className="flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-cyan-500 to-blue-600 text-white text-sm font-medium rounded-lg hover:from-cyan-600 hover:to-blue-700 transition-all duration-300"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              Learn More
-              <ArrowRight className="w-4 h-4" />
-            </motion.button>
-          </Link>
-          
-          <div className="flex items-center space-x-2">
-            <motion.button
-              className="p-2 text-gray-400 hover:text-white hover:bg-gray-700/50 rounded-lg transition-colors"
-              whileHover={{ scale: 1.1 }}
-              whileTap={{ scale: 0.9 }}
-              aria-label="Share service"
-            >
-              <Share2 className="w-4 h-4" />
-            </motion.button>
-            
-            <motion.button
-              className="p-2 text-gray-400 hover:text-white hover:bg-gray-700/50 rounded-lg transition-colors"
-              whileHover={{ scale: 1.1 }}
-              whileTap={{ scale: 0.9 }}
-              aria-label="View external link"
-            >
-              <ExternalLink className="w-4 h-4" />
-            </motion.button>
-          </div>
-        </div>
-      </div>
-
-      {/* Hover effect overlay */}
-      <AnimatePresence>
-        {isHovered && (
-          <motion.div
-            className={`absolute inset-0 bg-gradient-to-br ${color} opacity-10 rounded-2xl`}
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 0.1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.2 }}
-          />
-        )}
-      </AnimatePresence>
     </motion.div>
   );
 };

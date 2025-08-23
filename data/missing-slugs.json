@@ -1,9 +1,12 @@
 [
+<<<<<<< HEAD
   "accessibility",
 <<<<<<< HEAD
   "ai-autonomous-vehicle-ai-platform",
 =======
 >>>>>>> ef267d731aed572a16d33348da4bc2ee8cd3772a
+=======
+>>>>>>> origin/main
   "ai-consciousness-evolution",
   "ai-content-marketing-automation",
   "ai-creativity-orchestrator",
@@ -14,6 +17,7 @@
   "ai-financial-fraud-detection",
   "ai-powered-enterprise-security",
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
   "ai-marketing-automation",
   "automated-financial-analytics-platform",
@@ -23,16 +27,37 @@
   "quantum-cloud-migration",
   "real-estate-technology-solutions",
 >>>>>>> ef267d731aed572a16d33348da4bc2ee8cd3772a
+=======
+  "ai-threat-detection",
+>>>>>>> origin/main
   "autonomous-devops-platform",
   "autonomous-it-operations",
   "autonomous-vehicle-ai",
   "blockchain-enterprise-platform",
+<<<<<<< HEAD
   "compliance",
   "metaverse-digital-reality-platform",
   "quantum-compliance-automation",
   "quantum-creativity-studio",
   "quantum-data-center",
   "quantum-encryption-gateway",
+=======
+  "brain-computer-interface",
+  "customer-intelligence-platform",
+  "industrial-automation-ai",
+  "marketing-ai-platform",
+  "metaverse-development-studio-pro",
+  "metaverse-digital-reality-platform",
+  "neural-finance-ai",
+  "quantum-ai-fusion",
+  "quantum-bio-computing",
+  "quantum-compliance-automation",
+  "quantum-creativity-studio",
+  "quantum-crm-suite",
+  "quantum-data-center",
+  "quantum-encryption-gateway",
+  "quantum-energy-optimization",
+>>>>>>> origin/main
   "quantum-identity-verification",
   "quantum-internet-security",
   "quantum-internet-security-gateway",
@@ -40,6 +65,7 @@
   "quantum-materials-discovery",
   "quantum-network-security",
   "quantum-networking",
+<<<<<<< HEAD
   "quantum-threat-detection",
   "services/data-contracts-hub",
   "services/serverless-lakehouse-starter",
@@ -60,4 +86,15 @@
   "space-mining-automation-platform",
   "transportation-logistics-solutions"
 >>>>>>> ef267d731aed572a16d33348da4bc2ee8cd3772a
+=======
+  "quantum-risk-financial-manager",
+  "quantum-supply-chain-optimizer",
+  "quantum-threat-detection",
+  "services/data-contracts-hub",
+  "services/serverless-lakehouse-starter",
+  "space-colonization-services",
+  "space-data-analytics",
+  "space-mining-automation-platform",
+  "space-mining-platform"
+>>>>>>> origin/main
 ]

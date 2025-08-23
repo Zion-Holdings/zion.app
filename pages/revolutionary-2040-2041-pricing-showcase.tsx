@@ -8,7 +8,7 @@ import {
 } from 'lucide-react';
 
 // Import our new revolutionary services
-import { revolutionary2040FuturisticServices } from '../data/revolutionary-2040-futuristic-services';
+// import { revolutionary2040FuturisticServices } from '../data/revolutionary-2040-futuristic-services';
 import { revolutionary2041AdvancedServices } from '../data/revolutionary-2041-advanced-services';
 
 const Revolutionary20402041PricingShowcase: React.FC = () => {
@@ -21,7 +21,7 @@ const Revolutionary20402041PricingShowcase: React.FC = () => {
   }, []);
 
   // Combine all services
-  const allServices = [...revolutionary2040FuturisticServices, ...revolutionary2041AdvancedServices];
+  const allServices = [...revolutionary2041AdvancedServices];
 
   // Get unique categories
   const categories = [

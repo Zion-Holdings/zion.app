@@ -2,62 +2,58 @@ export interface MarketTrend {
   id: string;
   keyword: string;
   searchVolume: number;
-  trendDirection: 'rising' | 'falling' | 'stable';
   growthRate: number;
+  competition: 'low' | 'medium' | 'high';
+  seasonality: string[];
   relatedKeywords: string[];
-  marketSize: number;
-  competitors: string[];
-  opportunities: string[];
-  timestamp: Date;
+  estimatedClicks: number;
+  estimatedCost: number;
 }
 
 export interface CompetitorAnalysis {
   id: string;
   competitorName: string;
+  domain: string;
   marketShare: number;
   strengths: string[];
   weaknesses: string[];
-  pricing: {
-    min: number;
-    max: number;
-    currency: string;
-  };
-  features: string[];
-  customerReviews: {
-    rating: number;
-    count: number;
-    sentiment: 'positive' | 'negative' | 'neutral';
-  };
-  socialMediaPresence: {
-    followers: number;
-    engagement: number;
-    platforms: string[];
-  };
+  opportunities: string[];
+  threats: string[];
+  trafficSources: string[];
+  contentStrategy: string[];
+  pricingStrategy: string;
+  lastUpdated: Date;
 }
 
-export interface MarketOpportunity {
+export interface MarketInsight {
   id: string;
-  title: string;
+  industry: string;
+  trend: string;
   description: string;
-  marketSize: number;
-  growthPotential: number;
-  entryBarriers: string[];
-  competitiveAdvantage: string;
-  estimatedROI: number;
-  timeToMarket: string;
-  requiredResources: string[];
+  impact: 'low' | 'medium' | 'high';
+  timeframe: string;
+  dataSources: string[];
+  confidence: number;
+  actionableInsights: string[];
 }
 
-export interface MarketReport {
-  id: string;
-  title: string;
+export interface MarketResearchRequest {
+  industry: string;
+  keywords: string[];
+  competitors: string[];
+  timeframe: '7d' | '30d' | '90d' | '1y';
+  includeTrends: boolean;
+  includeCompetitors: boolean;
+  includePricing: boolean;
+}
+
+export interface MarketResearchResponse {
+  trends: MarketTrend[];
+  competitors: CompetitorAnalysis[];
+  insights: MarketInsight[];
   summary: string;
-  marketTrends: MarketTrend[];
-  competitorAnalysis: CompetitorAnalysis[];
-  opportunities: MarketOpportunity[];
   recommendations: string[];
-  generatedAt: Date;
-  expiresAt: Date;
+  nextSteps: string[];
 }
 
 export class AIMarketResearchService {
@@ -69,41 +65,53 @@ export class AIMarketResearchService {
     this.baseUrl = baseUrl;
   }
 
-  async analyzeMarketTrends(keywords: string[], industry: string): Promise<MarketTrend[]> {
+  async researchMarket(request: MarketResearchRequest): Promise<MarketResearchResponse> {
     try {
-      const response = await fetch(`${this.baseUrl}/api/market-research/trends`, {
+      const response = await fetch(`${this.baseUrl}/api/market-research`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
           'Authorization': `Bearer ${this.apiKey}`,
         },
-        body: JSON.stringify({ keywords, industry }),
+        body: JSON.stringify(request),
       });
 
       if (!response.ok) {
-        throw new Error(`Market trends analysis failed: ${response.statusText}`);
+        throw new Error(`Market research failed: ${response.statusText}`);
       }
 
-      const data = await response.json();
-      return data.trends.map((trend: any) => ({
-        ...trend,
-        timestamp: new Date(trend.timestamp),
-      }));
+      return await response.json();
     } catch (error) {
-      console.error('Error analyzing market trends:', error);
+      console.error('Market research error:', error);
       throw error;
     }
   }
 
-  async getCompetitorAnalysis(competitors: string[], industry: string): Promise<CompetitorAnalysis[]> {
+  async getTrendingKeywords(industry: string, limit: number = 20): Promise<MarketTrend[]> {
     try {
-      const response = await fetch(`${this.baseUrl}/api/market-research/competitors`, {
-        method: 'POST',
+      const response = await fetch(`${this.baseUrl}/api/market-research/trends?industry=${encodeURIComponent(industry)}&limit=${limit}`, {
         headers: {
-          'Content-Type': 'application/json',
           'Authorization': `Bearer ${this.apiKey}`,
         },
-        body: JSON.stringify({ competitors, industry }),
+      });
+
+      if (!response.ok) {
+        throw new Error(`Failed to fetch trending keywords: ${response.statusText}`);
+      }
+
+      return await response.json();
+    } catch (error) {
+      console.error('Error fetching trending keywords:', error);
+      throw error;
+    }
+  }
+
+  async analyzeCompetitor(domain: string): Promise<CompetitorAnalysis> {
+    try {
+      const response = await fetch(`${this.baseUrl}/api/market-research/competitor/${encodeURIComponent(domain)}`, {
+        headers: {
+          'Authorization': `Bearer ${this.apiKey}`,
+        },
       });
 
       if (!response.ok) {
@@ -112,105 +120,93 @@ export class AIMarketResearchService {
 
       return await response.json();
     } catch (error) {
-      console.error('Error getting competitor analysis:', error);
+      console.error('Competitor analysis error:', error);
       throw error;
     }
   }
 
-  async identifyMarketOpportunities(industry: string, budget: number): Promise<MarketOpportunity[]> {
+  async getMarketInsights(industry: string): Promise<MarketInsight[]> {
     try {
-      const response = await fetch(`${this.baseUrl}/api/market-research/opportunities`, {
-        method: 'POST',
+      const response = await fetch(`${this.baseUrl}/api/market-research/insights?industry=${encodeURIComponent(industry)}`, {
         headers: {
-          'Content-Type': 'application/json',
           'Authorization': `Bearer ${this.apiKey}`,
         },
-        body: JSON.stringify({ industry, budget }),
       });
 
       if (!response.ok) {
-        throw new Error(`Market opportunities identification failed: ${response.statusText}`);
+        throw new Error(`Failed to fetch market insights: ${response.statusText}`);
       }
 
       return await response.json();
     } catch (error) {
-      console.error('Error identifying market opportunities:', error);
+      console.error('Error fetching market insights:', error);
       throw error;
     }
   }
 
-  async generateMarketReport(
-    industry: string,
-    keywords: string[],
-    competitors: string[]
-  ): Promise<MarketReport> {
+  async generateReport(request: MarketResearchRequest): Promise<string> {
     try {
-      const [trends, competitorAnalysis, opportunities] = await Promise.all([
-        this.analyzeMarketTrends(keywords, industry),
-        this.getCompetitorAnalysis(competitors, industry),
-        this.identifyMarketOpportunities(industry, 100000), // Default budget
-      ]);
-
-      const recommendations = this.generateRecommendations(trends, competitorAnalysis, opportunities);
-
-      return {
-        id: `report_${Date.now()}`,
-        title: `${industry} Market Intelligence Report`,
-        summary: this.generateSummary(trends, competitorAnalysis, opportunities),
-        marketTrends: trends,
-        competitorAnalysis,
-        opportunities,
-        recommendations,
-        generatedAt: new Date(),
-        expiresAt: new Date(Date.now() + 30 * 24 * 60 * 60 * 1000), // 30 days
-      };
+      const research = await this.researchMarket(request);
+      
+      let report = `# Market Research Report\n\n`;
+      report += `**Industry:** ${request.industry}\n`;
+      report += `**Analysis Period:** ${request.timeframe}\n`;
+      report += `**Generated:** ${new Date().toLocaleDateString()}\n\n`;
+      
+      if (research.trends.length > 0) {
+        report += `## Market Trends\n\n`;
+        research.trends.forEach(trend => {
+          report += `### ${trend.keyword}\n`;
+          report += `- Search Volume: ${trend.searchVolume.toLocaleString()}\n`;
+          report += `- Growth Rate: ${trend.growthRate}%\n`;
+          report += `- Competition: ${trend.competition}\n`;
+          report += `- Estimated Clicks: ${trend.estimatedClicks.toLocaleString()}\n`;
+          report += `- Estimated Cost: $${trend.estimatedCost.toLocaleString()}\n\n`;
+        });
+      }
+      
+      if (research.competitors.length > 0) {
+        report += `## Competitor Analysis\n\n`;
+        research.competitors.forEach(competitor => {
+          report += `### ${competitor.competitorName}\n`;
+          report += `- Market Share: ${competitor.marketShare}%\n`;
+          report += `- Strengths: ${competitor.strengths.join(', ')}\n`;
+          report += `- Weaknesses: ${competitor.weaknesses.join(', ')}\n`;
+          report += `- Opportunities: ${competitor.opportunities.join(', ')}\n\n`;
+        });
+      }
+      
+      if (research.insights.length > 0) {
+        report += `## Market Insights\n\n`;
+        research.insights.forEach(insight => {
+          report += `### ${insight.trend}\n`;
+          report += `- Impact: ${insight.impact}\n`;
+          report += `- Timeframe: ${insight.timeframe}\n`;
+          report += `- Confidence: ${insight.confidence}%\n`;
+          report += `- Actionable Insights:\n`;
+          insight.actionableInsights.forEach(action => {
+            report += `  - ${action}\n`;
+          });
+          report += `\n`;
+        });
+      }
+      
+      report += `## Summary\n\n${research.summary}\n\n`;
+      report += `## Recommendations\n\n`;
+      research.recommendations.forEach((rec, index) => {
+        report += `${index + 1}. ${rec}\n`;
+      });
+      
+      report += `\n## Next Steps\n\n`;
+      research.nextSteps.forEach((step, index) => {
+        report += `${index + 1}. ${step}\n`;
+      });
+      
+      return report;
     } catch (error) {
-      console.error('Error generating market report:', error);
+      console.error('Report generation error:', error);
       throw error;
     }
-  }
-
-  private generateRecommendations(
-    trends: MarketTrend[],
-    competitors: CompetitorAnalysis[],
-    opportunities: MarketOpportunity[]
-  ): string[] {
-    const recommendations: string[] = [];
-
-    // Analyze trends for recommendations
-    const risingTrends = trends.filter(t => t.trendDirection === 'rising');
-    if (risingTrends.length > 0) {
-      recommendations.push(`Focus on rising trends: ${risingTrends.map(t => t.keyword).join(', ')}`);
-    }
-
-    // Analyze competitors for recommendations
-    const weakCompetitors = competitors.filter(c => c.strengths.length < c.weaknesses.length);
-    if (weakCompetitors.length > 0) {
-      recommendations.push(`Target weak competitors: ${weakCompetitors.map(c => c.competitorName).join(', ')}`);
-    }
-
-    // Analyze opportunities for recommendations
-    const highROIOpportunities = opportunities.filter(o => o.estimatedROI > 200);
-    if (highROIOpportunities.length > 0) {
-      recommendations.push(`Prioritize high-ROI opportunities: ${highROIOpportunities.map(o => o.title).join(', ')}`);
-    }
-
-    return recommendations;
-  }
-
-  private generateSummary(
-    trends: MarketTrend[],
-    competitors: CompetitorAnalysis[],
-    opportunities: MarketOpportunity[]
-  ): string {
-    const totalTrends = trends.length;
-    const risingTrends = trends.filter(t => t.trendDirection === 'rising').length;
-    const totalOpportunities = opportunities.length;
-    const highValueOpportunities = opportunities.filter(o => o.estimatedROI > 150).length;
-
-    return `Market analysis reveals ${totalTrends} key trends with ${risingTrends} showing growth potential. 
-    Found ${totalOpportunities} market opportunities, including ${highValueOpportunities} high-value prospects. 
-    Competitive landscape analysis covers ${competitors.length} key players.`;
   }
 }
 
