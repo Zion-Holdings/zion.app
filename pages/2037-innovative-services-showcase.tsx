@@ -1,10 +1,11 @@
-import React from 'react';
+import React, { useState } from 'react';
+import SEO from '../components/SEO';
 import { motion } from 'framer-motion';
 import { 
-  Brain, Atom, Cpu, Zap, 
-  Rocket, Star, CheckCircle
+  Brain, Atom, Rocket, Shield, Zap, Target, Star,
+  ArrowRight, Check, TrendingUp, Users, Globe, Cpu,
+  Database, Cloud, Lock, Settings, Eye, Award, Clock
 } from 'lucide-react';
-import SEO from '../components/SEO';
 
 // Import our new service data
 import { innovative2037MicroSaasServices } from '../data/innovative-2037-micro-saas-services';
@@ -25,8 +26,8 @@ const ServiceCard = ({ service, index }: { service: any; index: number }) => (
     transition={{ duration: 0.5, delay: index * 0.1 }}
     className="relative group"
   >
-    <div className={`absolute inset-0 bg-gradient-to-r ${service.color || 'from-gray-500 to-gray-600'} rounded-2xl blur-xl group-hover:blur-2xl transition-all duration-500 opacity-20`}></div>
-    <div className={`relative bg-gradient-to-r ${service.color ? service.color.replace('from-', 'from-').replace('to-', 'to-') : 'from-gray-500 to-gray-600'} bg-opacity-10 border border-opacity-30 rounded-2xl p-8 hover:border-opacity-50 transition-all duration-300 h-full`}>
+    <div className={`absolute inset-0 bg-gradient-to-r ${service.color || 'from-gray-600 to-gray-700'} rounded-2xl blur-xl group-hover:blur-2xl transition-all duration-500 opacity-20`}></div>
+    <div className={`relative bg-gradient-to-r ${service.color ? service.color.replace('from-', 'from-').replace('to-', 'to-') : 'from-gray-600 to-gray-700'} bg-opacity-10 border border-opacity-30 rounded-2xl p-8 hover:border-opacity-50 transition-all duration-300 h-full`}>
       <div className="flex items-start justify-between mb-6">
         <div className="text-4xl">{service.icon}</div>
         {service.popular && (
@@ -42,7 +43,7 @@ const ServiceCard = ({ service, index }: { service: any; index: number }) => (
       <div className="space-y-3 mb-6">
         {service.features.slice(0, 4).map((feature: string, idx: number) => (
           <div key={idx} className="flex items-center space-x-2">
-            <CheckCircle className="w-4 h-4 text-green-400 flex-shrink-0" />
+            <Check className="w-4 h-4 text-green-400 flex-shrink-0" />
             <span className="text-gray-300 text-sm">{feature}</span>
           </div>
         ))}
@@ -56,25 +57,25 @@ const ServiceCard = ({ service, index }: { service: any; index: number }) => (
         <div className="text-right">
           <div className="flex items-center space-x-1 text-yellow-400">
             {[...Array(5)].map((_, i) => (
-              <Star key={i} className="w-4 h-4" />
+              <Star key={i} className={`w-4 h-4 ${i < Math.floor(service.rating) ? 'fill-current' : ''}`} />
             ))}
           </div>
-          <span className="text-gray-400 text-xs">5/5 (100+ reviews)</span>
+          <span className="text-gray-400 text-xs">{service.rating}/5 ({service.reviews} reviews)</span>
         </div>
       </div>
       
       <div className="space-y-3 mb-6 text-xs text-gray-400">
         <div className="flex justify-between">
           <span>Setup Time:</span>
-          <span>Instant</span>
+          <span>{service.setupTime || 'N/A'}</span>
         </div>
         <div className="flex justify-between">
           <span>Trial:</span>
-          <span>14 days</span>
+          <span>{service.trialDays || 0} days</span>
         </div>
         <div className="flex justify-between">
           <span>Customers:</span>
-          <span>1000+</span>
+          <span>{service.customers ? service.customers.toLocaleString() : '0'}</span>
         </div>
       </div>
       
@@ -89,7 +90,7 @@ const ServiceCard = ({ service, index }: { service: any; index: number }) => (
 );
 
 const ServiceShowcase = () => {
-  const [activeCategory, setActiveCategory] = React.useState('all');
+  const [activeCategory, setActiveCategory] = useState('all');
   
   const categories = [
     { id: 'all', name: 'All Services', icon: <Star className="w-5 h-5" />, count: innovative2037MicroSaasServices.length + innovative2037ITServices.length + innovative2037AIServices.length },
@@ -295,18 +296,16 @@ const ServiceShowcase = () => {
             <div className="text-center">
               <div className="text-3xl mb-2">📍</div>
               <div className="font-semibold text-white mb-2">Visit Us</div>
-              <a href={`https://maps.google.com/?q=${encodeURIComponent(contactInfo.address)}`} target="_blank" rel="noopener noreferrer" className="text-cyan-400 hover:text-cyan-300 transition-colors">
-                {contactInfo.address}
-              </a>
+              <div className="text-gray-400 text-sm">{contactInfo.address}</div>
             </div>
           </div>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a href="/contact" className="px-8 py-4 bg-gradient-to-r from-cyan-500 to-purple-600 text-white font-semibold rounded-lg hover:from-cyan-600 hover:to-purple-700 transition-all duration-300 transform hover:scale-105">
-              Schedule Consultation
+              Get Started Today
             </a>
-            <a href={`tel:${contactInfo.mobile}`} className="px-8 py-4 border-2 border-cyan-400 text-cyan-400 font-semibold rounded-lg hover:bg-cyan-400 hover:text-black transition-all duration-300 transform hover:scale-105">
-              Call Now
+            <a href="/services" className="px-8 py-4 border-2 border-cyan-400 text-cyan-400 font-semibold rounded-lg hover:bg-cyan-400 hover:text-black transition-all duration-300 transform hover:scale-105">
+              View All Services
             </a>
           </div>
         </div>
