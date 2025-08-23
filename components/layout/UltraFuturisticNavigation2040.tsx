@@ -4,7 +4,10 @@ import { useRouter } from 'next/router';
 import { motion, AnimatePresence } from 'framer-motion';
 import { 
   Menu, X, Search, ChevronDown, Zap, Globe, Lock, 
-  Phone, Mail, MapPin, ArrowRight, Star, Users, Award
+  Phone, Mail, MapPin, ArrowRight, Star, Users, Award,
+  Brain, Rocket, Shield, Cpu, Database, Cloud, Target,
+  BookOpen, FileText, Video, Code, Building, GraduationCap,
+  Heart, Briefcase, Newspaper, BarChart3
 } from 'lucide-react';
 
 interface NavigationItem {
@@ -27,7 +30,7 @@ const navigationItems: NavigationItem[] = [
       {
         label: 'AI & Machine Learning',
         href: '/ai-services',
-        icon: <Star className="w-4 h-4" />,
+        icon: <Brain className="w-4 h-4" />,
         description: 'Advanced AI solutions for enterprise'
       },
       {
@@ -39,26 +42,32 @@ const navigationItems: NavigationItem[] = [
       {
         label: 'Quantum Computing',
         href: '/quantum-computing',
-        icon: <Zap className="w-4 h-4" />,
+        icon: <Cpu className="w-4 h-4" />,
         description: 'Next-generation quantum solutions'
       },
       {
         label: 'Space Technology',
         href: '/space-tech',
-        icon: <Star className="w-4 h-4" />,
+        icon: <Rocket className="w-4 h-4" />,
         description: 'Innovative space solutions'
       },
       {
         label: 'Cybersecurity',
         href: '/cybersecurity',
-        icon: <Lock className="w-4 h-4" />,
+        icon: <Shield className="w-4 h-4" />,
         description: 'Enterprise security solutions'
       },
       {
         label: 'Cloud Solutions',
         href: '/cloud-platform',
-        icon: <Globe className="w-4 h-4" />,
+        icon: <Cloud className="w-4 h-4" />,
         description: 'Scalable cloud infrastructure'
+      },
+      {
+        label: 'IT Infrastructure',
+        href: '/advanced-it-infrastructure-services',
+        icon: <Database className="w-4 h-4" />,
+        description: 'Enterprise IT infrastructure solutions'
       },
       {
         label: 'View All Services',
@@ -69,9 +78,121 @@ const navigationItems: NavigationItem[] = [
     ]
   },
   {
-    label: 'About',
-    href: '/about',
-    icon: <Users className="w-4 h-4" />
+    label: 'Industries',
+    children: [
+      {
+        label: 'Healthcare',
+        href: '/healthcare-solutions',
+        icon: <Heart className="w-4 h-4" />,
+        description: 'Medical technology solutions'
+      },
+      {
+        label: 'Finance',
+        href: '/financial-solutions',
+        icon: <BarChart3 className="w-4 h-4" />,
+        description: 'Fintech and financial solutions'
+      },
+      {
+        label: 'Manufacturing',
+        href: '/manufacturing-ai-solutions',
+        icon: <Target className="w-4 h-4" />,
+        description: 'Industry 4.0 solutions'
+      },
+      {
+        label: 'Retail',
+        href: '/retail-technology-solutions',
+        icon: <Building className="w-4 h-4" />,
+        description: 'E-commerce technology'
+      },
+      {
+        label: 'Government',
+        href: '/government-technology-solutions',
+        icon: <Shield className="w-4 h-4" />,
+        description: 'Public sector solutions'
+      },
+      {
+        label: 'Education',
+        href: '/education-technology-solutions',
+        icon: <GraduationCap className="w-4 h-4" />,
+        description: 'EdTech solutions'
+      }
+    ]
+  },
+  {
+    label: 'Company',
+    children: [
+      {
+        label: 'About Us',
+        href: '/about',
+        icon: <Users className="w-4 h-4" />,
+        description: 'Our mission and values'
+      },
+      {
+        label: 'Leadership',
+        href: '/about#leadership',
+        icon: <Award className="w-4 h-4" />,
+        description: 'Meet our team'
+      },
+      {
+        label: 'Careers',
+        href: '/careers',
+        icon: <Briefcase className="w-4 h-4" />,
+        description: 'Join our team'
+      },
+      {
+        label: 'News & Updates',
+        href: '/news',
+        icon: <Newspaper className="w-4 h-4" />,
+        description: 'Latest company news'
+      },
+      {
+        label: 'Case Studies',
+        href: '/case-studies',
+        icon: <FileText className="w-4 h-4" />,
+        description: 'Success stories'
+      }
+    ]
+  },
+  {
+    label: 'Resources',
+    children: [
+      {
+        label: 'Blog',
+        href: '/blog',
+        icon: <BookOpen className="w-4 h-4" />,
+        description: 'Industry insights and updates'
+      },
+      {
+        label: 'Whitepapers',
+        href: '/white-papers',
+        icon: <FileText className="w-4 h-4" />,
+        description: 'In-depth research papers'
+      },
+      {
+        label: 'Webinars',
+        href: '/webinars',
+        icon: <Video className="w-4 h-4" />,
+        description: 'Educational content and training'
+      },
+      {
+        label: 'Documentation',
+        href: '/docs',
+        icon: <Code className="w-4 h-4" />,
+        description: 'Technical guides and API docs'
+      },
+      {
+        label: 'API Reference',
+        href: '/api-documentation',
+        icon: <Code className="w-4 h-4" />,
+        description: 'Developer resources and APIs'
+      },
+      {
+        label: 'Support',
+        href: '/support',
+        icon: <Shield className="w-4 h-4" />,
+        description: 'Help & assistance'
+      }
+  ]
   },
   {
     label: 'Contact',
