@@ -42,16 +42,16 @@ const footerSections = [
     description: 'Cutting-edge future technology services',
     icon: <Lightbulb className="w-5 h-5 text-yellow-400" />,
     links: [
-      { name: 'AI Consciousness Evolution', href: '/ai-consciousness-evolution-2029', featured: true },
-      { name: 'Quantum Neural Networks', href: '/quantum-neural-network-platform', featured: true },
-      { name: 'Autonomous Business Operations', href: '/autonomous-business-operations-platform', featured: true },
-      { name: 'Space Resource Mining', href: '/space-resource-mining-platform', featured: true },
-      { name: 'AI Evaluation Orchestrator', href: '/services/ai-evaluation-orchestrator', featured: true },
-      { name: 'AI Support Triage Router', href: '/services/ai-support-triage-router', featured: true },
-      { name: 'AI Code Review Assistant Pro', href: '/services/ai-code-review-assistant-pro', featured: true },
-      { name: 'AI Revenue Forecasting Copilot', href: '/services/ai-revenue-forecasting-copilot', featured: true },
-      { name: 'Quantum Financial Trading', href: '/quantum-financial-trading', featured: true },
-      { name: 'AI Emotional Intelligence', href: '/ai-emotional-intelligence-training', featured: true }
+      { name: 'AI Consciousness Evolution', href: '/ai-consciousness-evolution-platform', featured: true },
+      { name: 'Quantum Secure Communication', href: '/quantum-secure-communication-hub', featured: true },
+      { name: 'Autonomous DevOps Orchestrator', href: '/autonomous-devops-orchestrator', featured: true },
+      { name: 'AI Autonomous Content Factory', href: '/ai-autonomous-content-factory', featured: true },
+      { name: 'Neural Finance Predictor', href: '/neural-finance-predictor', featured: true },
+      { name: 'Zero Trust Network Automation', href: '/zero-trust-network-automation', featured: true },
+      { name: 'Space Resource Analytics', href: '/space-resource-analytics-platform' },
+      { name: 'Metaverse Development Studio', href: '/metaverse-development-studio-pro' },
+      { name: 'AI Ethics Governance', href: '/ai-ethics-governance-framework' },
+      { name: 'Quantum Bio-Computing', href: '/quantum-bio-computing-platform' }
     ]
   },
   {
@@ -138,21 +138,94 @@ const footerSections = [
       { name: 'Support', href: '/support' },
       { name: 'Training', href: '/training' }
     ]
+  },
+  {
+    title: '2036 Innovations',
+    description: 'Latest cutting-edge innovations and services',
+    icon: <Target className="w-5 h-5 text-pink-400" />,
+    links: [
+      { name: 'AI Autonomous Content Factory', href: '/ai-autonomous-content-factory', featured: true },
+      { name: 'Quantum Secure Communication Hub', href: '/quantum-secure-communication-hub', featured: true },
+      { name: 'Autonomous DevOps Orchestrator', href: '/autonomous-devops-orchestrator', featured: true },
+      { name: 'Space Resource Analytics Platform', href: '/space-resource-analytics-platform' },
+      { name: 'Neural Finance Predictor', href: '/neural-finance-predictor' },
+      { name: 'Metaverse Development Studio Pro', href: '/metaverse-development-studio-pro' },
+      { name: 'AI Ethics Governance Framework', href: '/ai-ethics-governance-framework' },
+      { name: 'Quantum Bio-Computing Platform', href: '/quantum-bio-computing-platform' },
+      { name: 'Zero Trust Network Automation', href: '/zero-trust-network-automation' },
+      { name: 'Autonomous Cloud Cost Optimizer', href: '/autonomous-cloud-cost-optimizer' }
+    ]
   }
 ];
 
-const quickLinks = [
-  { name: 'About Us', href: '/about' },
-  { name: 'Contact', href: '/contact' },
-  { name: 'Services', href: '/services' },
-  { name: 'Pricing', href: '/pricing' },
-  { name: 'Resources', href: '/resources' },
-  { name: 'Support', href: '/support' },
-  { name: 'Blog', href: '/news' },
-  { name: 'Careers', href: '/careers' },
-  { name: 'Partners', href: '/partners' },
-  { name: 'Investors', href: '/investors' }
-];
+  const footerSections = [
+    {
+      title: 'Core Services',
+      links: [
+        { name: 'AI & Machine Learning', href: '/ai-services' },
+        { name: 'Quantum Computing', href: '/quantum-services' },
+        { name: 'Space Technology', href: '/space-technology' },
+        { name: 'Cybersecurity', href: '/cybersecurity' },
+        { name: 'IT Solutions', href: '/it-services' },
+        { name: 'Micro SAAS', href: '/micro-saas' }
+      ]
+    },
+    {
+      title: 'Company',
+      links: [
+        { name: 'About Us', href: '/about' },
+        { name: 'Our Team', href: '/team' },
+        { name: 'Careers', href: '/careers' },
+        { name: 'Partners', href: '/partners' },
+        { name: 'Investors', href: '/investors' },
+        { name: 'News', href: '/news' }
+      ]
+    },
+    {
+      title: 'Showcases',
+      links: [
+        { name: '2026 Services Showcase', href: '/ultimate-2026-services-showcase' },
+        { name: '2035 Futuristic Services', href: '/ultimate-2035-futuristic-services-showcase' },
+        { name: 'Innovative Services 2036', href: '/innovative-services-showcase-2036' },
+        { name: 'Comprehensive Services', href: '/comprehensive-services-showcase-2025' },
+        { name: 'Revolutionary Services', href: '/revolutionary-2025-services-showcase' },
+        { name: 'Pricing Plans', href: '/pricing' }
+      ]
+    },
+    {
+      title: 'Resources',
+      links: [
+        { name: 'Documentation', href: '/docs' },
+        { name: 'Blog', href: '/blog' },
+        { name: 'Case Studies', href: '/case-studies' },
+        { name: 'White Papers', href: '/white-papers' },
+        { name: 'Webinars', href: '/webinars' },
+        { name: 'Support', href: '/support' }
+      ]
+    },
+    {
+      title: 'Innovative Solutions',
+      links: [
+        { name: 'Sustainability & ESG', href: '/sustainability-services' },
+        { name: 'Healthcare & Biotech', href: '/healthcare-innovations' },
+        { name: 'Education & EdTech', href: '/education-innovations' },
+        { name: 'Creative & Marketing', href: '/creative-innovations' },
+        { name: 'Space Mining', href: '/space-mining' },
+        { name: 'Quantum Security', href: '/quantum-security' }
+      ]
+    },
+    {
+      title: 'Solutions',
+      links: [
+        { name: 'Enterprise Solutions', href: '/enterprise-solutions' },
+        { name: 'Healthcare', href: '/healthcare-solutions' },
+        { name: 'Financial Services', href: '/financial-solutions' },
+        { name: 'Manufacturing', href: '/manufacturing-solutions' },
+        { name: 'Government', href: '/government-solutions' },
+        { name: 'Education', href: '/education-solutions' }
+      ]
+    }
+  ];
 
 const socialLinks = [
   { name: 'LinkedIn', href: 'https://linkedin.com/company/zion-tech-group', icon: <Linkedin className="w-5 h-5" /> },
@@ -176,16 +249,64 @@ export default function UltraFuturisticFooter2036() {
   ];
 
   return (
-    <footer className="bg-gradient-to-b from-gray-900 to-black border-t border-white/10">
-      {/* Main Footer Content */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-12">
-          {/* Company Info & Contact */}
-          <div className="lg:col-span-1 xl:col-span-1">
-            <div className="mb-8">
-              <div className="flex items-center space-x-3 mb-4">
-                <div className="w-12 h-12 bg-gradient-to-r from-cyan-500 to-purple-500 rounded-xl flex items-center justify-center">
-                  <span className="text-white font-bold text-2xl">Z</span>
+    <footer className="bg-gradient-to-b from-gray-900 to-black text-white relative overflow-hidden">
+      {/* Background Elements */}
+      <div className="absolute inset-0 overflow-hidden">
+        <div className="absolute top-0 left-1/4 w-96 h-96 bg-gradient-to-r from-cyan-500/5 to-blue-500/5 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-gradient-to-r from-purple-500/5 to-pink-500/5 rounded-full blur-3xl"></div>
+      </div>
+
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Main Footer Content */}
+        <div className="py-16">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-7 gap-8 lg:gap-12">
+            {/* Company Info */}
+            <div className="lg:col-span-2">
+              <motion.div 
+                className="mb-6"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6 }}
+                viewport={{ once: true }}
+              >
+                <Link href="/" className="inline-flex items-center space-x-3 group">
+                  <div className="w-12 h-12 bg-gradient-to-r from-cyan-500 to-blue-600 rounded-xl flex items-center justify-center group-hover:from-cyan-600 group-hover:to-blue-700 transition-all duration-300">
+                    <Rocket className="w-7 h-7 text-white" />
+                  </div>
+                  <div>
+                    <div className="text-2xl font-bold bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
+                      Zion Tech Group
+                    </div>
+                    <div className="text-sm text-gray-400">
+                      Pioneering the Future of Technology
+                    </div>
+                  </div>
+                </Link>
+              </motion.div>
+
+              <motion.p 
+                className="text-gray-300 mb-6 leading-relaxed"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.1 }}
+                viewport={{ once: true }}
+              >
+                Empowering businesses with cutting-edge AI, quantum computing, and innovative technology solutions that drive transformation and accelerate growth in the digital age.
+              </motion.p>
+
+              {/* Contact Info */}
+              <motion.div 
+                className="space-y-3"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.2 }}
+                viewport={{ once: true }}
+              >
+                <div className="flex items-center space-x-3 text-gray-300">
+                  <Phone className="w-4 h-4 text-cyan-400" />
+                  <a href={`tel:${contactInfo.phone}`} className="hover:text-white transition-colors">
+                    {contactInfo.phone}
+                  </a>
                 </div>
                 <div>
                   <h3 className="text-white font-bold text-xl">Zion Tech Group</h3>

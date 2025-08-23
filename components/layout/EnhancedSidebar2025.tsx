@@ -107,6 +107,49 @@ const sidebarItems: SidebarItem[] = [
   }
 ];
 
+const quickLinks = [
+  { name: 'Home', href: '/', icon: <Home className="w-4 h-4" /> },
+  { name: 'All Services', href: '/comprehensive-2025-services-showcase', icon: <Star className="w-4 h-4" /> },
+  { name: 'Pricing', href: '/pricing', icon: <DollarSign className="w-4 h-4" /> },
+  { name: 'Market Pricing', href: '/market-pricing', icon: <DollarSign className="w-4 h-4" /> },
+  { name: 'Services Advertising', href: '/services-advertising', icon: <BookOpen className="w-4 h-4" /> },
+  { name: 'Get Quote', href: '/quote', icon: <DollarSign className="w-4 h-4" /> },
+  { name: 'Book Demo', href: '/demo', icon: <Video className="w-4 h-4" /> },
+  { name: 'Blog', href: '/blog', icon: <FileText className="w-4 h-4" /> },
+  { name: 'Resources', href: '/resources', icon: <BookOpen className="w-4 h-4" /> },
+  { name: 'Events', href: '/events', icon: <Calendar className="w-4 h-4" /> },
+  { name: 'Webinars', href: '/webinars', icon: <Video className="w-4 h-4" /> },
+  { name: 'About Us', href: '/about', icon: <Users className="w-4 h-4" /> },
+  { name: 'Contact', href: '/contact', icon: <Mail className="w-4 h-4" /> },
+  { name: 'Support', href: '/support', icon: <HelpCircle className="w-4 h-4" /> }
+];
+
+const companyLinks = [
+  { name: 'About Us', href: '/about', description: 'Our mission and vision' },
+  { name: 'Leadership Team', href: '/leadership', description: 'Executive team' },
+  { name: 'Careers', href: '/careers', description: 'Join our team' },
+  { name: 'News & Updates', href: '/news', description: 'Latest company news' },
+  { name: 'Case Studies', href: '/case-studies', description: 'Success stories' },
+  { name: 'Resources', href: '/resources', description: 'Whitepapers and guides' },
+  { name: 'Blog', href: '/blog', description: 'Industry insights' }
+];
+
+const supportLinks = [
+  { name: 'Contact Support', href: '/support', description: 'Get help from our team' },
+  { name: 'Documentation', href: '/docs', description: 'Technical guides' },
+  { name: 'API Reference', href: '/api-documentation', description: 'Developer documentation' },
+  { name: 'Status Page', href: '/status-pages-slo', description: 'Service status' },
+  { name: 'Training', href: '/training', description: 'Learn our platforms' },
+  { name: 'Community', href: '/community', description: 'Connect with users' }
+];
+
+const stats = [
+  { label: 'Services Delivered', value: '500+', icon: <CheckCircle className="w-5 h-5" /> },
+  { label: 'Happy Clients', value: '200+', icon: <Users className="w-5 h-5" /> },
+  { label: 'Years Experience', value: '15+', icon: <Clock className="w-5 h-5" /> },
+  { label: 'Awards Won', value: '25+', icon: <Award className="w-5 h-5" /> }
+];
+
 interface EnhancedSidebar2025Props {
   isOpen: boolean;
   onClose: () => void;
