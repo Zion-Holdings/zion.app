@@ -14,6 +14,8 @@ interface NavigationItem {
   subItems?: NavigationItem[];
 }
 
+<<<<<<< HEAD
+=======
 // Memoized navigation items for better performance
 const navigationItems: NavigationItem[] = [
   {
@@ -168,6 +170,7 @@ const socialLinks = [
   { href: 'https://youtube.com/ziontechgroup', icon: <Youtube className="w-5 h-5" />, label: 'YouTube' }
 ];
 
+>>>>>>> origin/cursor/website-audit-and-enhancement-d7ae
 const UltraFuturisticNavigation2040: React.FC = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
