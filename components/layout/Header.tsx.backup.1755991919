@@ -23,9 +23,13 @@ export default function Header() {
     { name: 'Solutions', href: '/services' },
     { name: 'Micro SaaS', href: '/micro-saas' },
     { name: 'Resources', href: '/resources' },
+<<<<<<< HEAD
+    { name: 'Contact', href: '/contact' },
+=======
     { name: 'Company', href: '/about' },
     { name: 'Pricing', href: '/pricing' },
     { name: 'Compare', href: '/pricing-comparison' },
+>>>>>>> origin/cursor/enhance-app-with-micro-saas-and-deploy-3e2f
   ];
 
   const productDropdown = [
