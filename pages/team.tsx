@@ -1,439 +1,361 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { 
-  Users, Target, Award, Globe, 
-  ArrowRight, Star, Shield, CheckCircle, TrendingUp,
-  Infinity, Eye, Sparkles, Clock, Zap, Brain, Atom, Rocket
+  Users, Award, Brain, Rocket, Shield, Globe, 
+  Target, Star, CheckCircle, ArrowRight, Linkedin, 
+  Mail, Phone, MapPin 
 } from 'lucide-react';
+import Link from 'next/link';
 
-const TeamPage: React.FC = () => {
+export default function Team() {
   const leadership = [
     {
-      name: "Kleber",
-      role: "Founder & CEO",
-      description: "Visionary leader driving innovation and strategic growth with over 15 years of experience in cutting-edge technology",
-      expertise: ["AI & Consciousness", "Quantum Technology", "Strategic Leadership"],
-      color: "from-blue-500 to-cyan-500",
-      image: "/images/team/kleber.jpg"
+      name: 'Kleber',
+      role: 'CEO & Chief AI Architect',
+      bio: 'Visionary leader pioneering the future of AI consciousness and autonomous systems. With over a decade of experience in cutting-edge technology, Kleber leads Zion Tech Group\'s mission to revolutionize how businesses operate through intelligent automation.',
+      expertise: ['AI Consciousness', 'Quantum Computing', 'Strategic Innovation', 'Autonomous Systems'],
+      achievements: ['500+ AI Solutions Deployed', '50+ Enterprise Clients', '99.9% Uptime SLA'],
+      contact: {
+        email: 'kleber@ziontechgroup.com',
+        phone: '+1 302 464 0950',
+        linkedin: 'https://linkedin.com/in/kleber-zion'
+      }
+    }
+  ];
+
+  const coreTeam = [
+    {
+      name: 'AI Research Division',
+      role: 'Advanced AI Development',
+      bio: 'World-class researchers and engineers pushing the boundaries of artificial consciousness and autonomous systems.',
+      expertise: ['Neural Networks', 'Consciousness Simulation', 'Quantum AI', 'Machine Learning'],
+      achievements: ['AI Consciousness Platform', 'Autonomous Research Systems', 'Quantum Neural Networks'],
+      size: '15+ Researchers'
     },
     {
-      name: "AI Consciousness Users",
-      role: "AI & Consciousness Division",
-      description: "Experts in next-generation artificial intelligence and consciousness systems, pioneering emotional AI and self-aware systems",
-      expertise: ["Emotional AI", "Consciousness Systems", "Ethical AI Governance"],
-      color: "from-purple-500 to-pink-500",
-      image: "/images/team/ai-team.jpg"
+      name: 'Quantum Engineering',
+      role: 'Quantum Technology Solutions',
+      bio: 'Pioneering quantum computing solutions for next-generation security, communications, and computational power.',
+      expertise: ['Quantum Computing', 'Quantum Security', 'Quantum Networks', 'Quantum Materials'],
+      achievements: ['Quantum Cybersecurity Platform', 'Quantum-Secure Communications', 'Quantum Edge Computing'],
+      size: '12+ Engineers'
     },
     {
-      name: "Quantum Technology Users",
-      role: "Quantum Computing Division",
-      description: "Pioneers in quantum computing and quantum-resistant solutions, developing the next generation of computational power",
-      expertise: ["Quantum Computing", "Quantum Security", "Quantum Neural Networks"],
-      color: "from-indigo-500 to-purple-500",
-      image: "/images/team/quantum-team.jpg"
+      name: 'Enterprise Solutions',
+      role: 'Business Technology Integration',
+      bio: 'Experts in deploying and managing enterprise-scale AI and quantum solutions for Fortune 500 companies.',
+      expertise: ['Enterprise Architecture', 'Digital Transformation', 'AI Integration', 'Change Management'],
+      achievements: ['50+ Enterprise Deployments', '99.9% Uptime', '24/7 Global Support'],
+      size: '25+ Consultants'
     },
     {
-      name: "Space Technology Users",
-      role: "Space Technology Division",
-      description: "Innovators in space exploration and resource intelligence, developing AI-powered space solutions",
-      expertise: ["Space Exploration", "Resource Intelligence", "AI Space Systems"],
-      color: "from-cyan-500 to-blue-500",
-      image: "/images/team/space-team.jpg"
+      name: 'Autonomous Systems',
+      role: 'Self-Operating Technology',
+      bio: 'Building the future of autonomous business operations, from AI-powered decision engines to self-managing infrastructure.',
+      expertise: ['Autonomous Operations', 'Decision Intelligence', 'Process Automation', 'Self-Healing Systems'],
+      achievements: ['Autonomous Business Manager', 'Self-Optimizing Infrastructure', 'Intelligent Process Automation'],
+      size: '20+ Engineers'
     }
   ];
 
   const values = [
     {
-      icon: Target,
-      title: "Innovation First",
-      description: "Pioneering cutting-edge technology solutions that transform industries",
-      color: "from-blue-500 to-cyan-500"
+      title: 'Innovation Excellence',
+      description: 'We push the boundaries of what\'s possible, creating technologies that were once thought impossible.',
+      icon: <Rocket className="w-8 h-8" />
     },
     {
-      icon: Shield,
-      title: "Excellence",
-      description: "Delivering world-class quality and reliability in everything we do",
-      color: "from-emerald-500 to-teal-500"
+      title: 'Client Success Focus',
+      description: 'Your success is our mission. We measure our achievements by your business outcomes.',
+      icon: <Target className="w-8 h-8" />
     },
     {
-      icon: Users,
-      title: "Collaboration",
-      description: "Working together with clients to achieve extraordinary results",
-      color: "from-purple-500 to-pink-500"
+      title: 'Ethical AI Development',
+      description: 'Building AI systems that are not only powerful but also responsible, trustworthy, and beneficial to humanity.',
+      icon: <Brain className="w-8 h-8" />
     },
     {
-      icon: Globe,
-      title: "Global Impact",
-      description: "Creating positive change across industries and communities worldwide",
-      color: "from-indigo-500 to-purple-500"
+      title: 'Global Impact',
+      description: 'Creating solutions that address the world\'s most pressing challenges and benefit all of humanity.',
+      icon: <Globe className="w-8 h-8" />
     }
   ];
 
-  const stats = [
-    { number: "50+", label: "Expert Users Members", icon: Users },
-    { number: "2000+", label: "Revolutionary Services", icon: Zap },
-    { number: "99.99%", label: "Client Satisfaction", icon: Star },
-    { number: "24/7", label: "Support Available", icon: Clock }
-  ];
-
-export default function Team() {
   return (
-    <Layout>
-      <div className="min-h-screen bg-gradient-to-br from-black via-gray-900 to-black">
-        {/* Hero Section */}
-        <section className="relative py-20 px-4">
-          <div className="container mx-auto max-w-6xl">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-              className="text-center"
-            >
-              <div className="inline-flex items-center px-4 py-2 rounded-full bg-gradient-to-r from-blue-500/20 to-cyan-500/20 border border-blue-500/30 text-blue-300 text-sm font-medium mb-6">
-                <Users className="w-4 h-4 mr-2" />
-                Meet Our Users
-              </div>
-              <h1 className="text-5xl md:text-7xl font-bold bg-gradient-to-r from-blue-400 via-cyan-400 to-indigo-400 bg-clip-text text-transparent mb-6">
-                Leadership Users
-              </h1>
-              <p className="text-xl md:text-2xl text-gray-300 max-w-4xl mx-auto leading-relaxed">
-                Meet the visionary leaders and brilliant minds driving Zion Tech Group's 
-                mission to revolutionize technology through AI consciousness and quantum innovation.
-              </p>
-            </motion.div>
+    <div className="min-h-screen bg-black text-white">
+      {/* Hero Section */}
+      <section className="relative py-20 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto text-center">
+          <motion.h1 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            className="text-5xl md:text-7xl font-bold bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 bg-clip-text text-transparent mb-6"
+          >
+            Meet Our Team
+          </motion.h1>
+          <motion.p 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="text-xl md:text-2xl text-gray-300 max-w-4xl mx-auto mb-12"
+          >
+            World-class innovators, researchers, and engineers working together to build 
+            the future of AI consciousness and autonomous systems.
+          </motion.p>
+        </div>
+      </section>
+
+      {/* Leadership Section */}
+      <section className="py-20 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto">
+          <motion.h2 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="text-4xl md:text-5xl font-bold text-center mb-16"
+          >
+            Leadership
+          </motion.h2>
+          
+          <div className="grid lg:grid-cols-1 gap-12">
+            {leadership.map((leader, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8 }}
+                viewport={{ once: true }}
+                className="p-8 rounded-2xl bg-gradient-to-br from-cyan-500/10 to-purple-600/10 border border-cyan-500/30"
+              >
+                <div className="grid lg:grid-cols-3 gap-8 items-start">
+                  <div className="text-center lg:text-left">
+                    <div className="w-32 h-32 bg-gradient-to-br from-cyan-500 to-purple-600 rounded-full mx-auto lg:mx-0 mb-6 flex items-center justify-center">
+                      <Users className="w-16 h-16 text-white" />
+                    </div>
+                    <h3 className="text-3xl font-bold mb-2">
+                      {leader.name}
+                    </h3>
+                    <p className="text-cyan-400 text-xl font-medium mb-4">
+                      {leader.role}
+                    </p>
+                    <div className="flex flex-col gap-3">
+                      <a 
+                        href={`mailto:${leader.contact.email}`}
+                        className="flex items-center gap-2 text-gray-300 hover:text-cyan-400 transition-colors"
+                      >
+                        <Mail className="w-4 h-4" />
+                        {leader.contact.email}
+                      </a>
+                      <a 
+                        href={`tel:${leader.contact.phone}`}
+                        className="flex items-center gap-2 text-gray-300 hover:text-cyan-400 transition-colors"
+                      >
+                        <Phone className="w-4 h-4" />
+                        {leader.contact.phone}
+                      </a>
+                      <a 
+                        href={leader.contact.linkedin}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center gap-2 text-gray-300 hover:text-cyan-400 transition-colors"
+                      >
+                        <Linkedin className="w-4 h-4" />
+                        LinkedIn Profile
+                      </a>
+                    </div>
+                  </div>
+                  
+                  <div className="lg:col-span-2">
+                    <p className="text-gray-300 text-lg mb-6 leading-relaxed">
+                      {leader.bio}
+                    </p>
+                    
+                    <div className="mb-6">
+                      <h4 className="text-xl font-bold mb-3 text-cyan-400">Expertise</h4>
+                      <div className="flex flex-wrap gap-2">
+                        {leader.expertise.map((skill, skillIndex) => (
+                          <span
+                            key={skillIndex}
+                            className="px-3 py-1 bg-cyan-500/20 text-cyan-300 text-sm rounded-full border border-cyan-500/30"
+                          >
+                            {skill}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+                    
+                    <div>
+                      <h4 className="text-xl font-bold mb-3 text-cyan-400">Key Achievements</h4>
+                      <div className="space-y-2">
+                        {leader.achievements.map((achievement, achievementIndex) => (
+                          <div key={achievementIndex} className="flex items-center gap-2">
+                            <CheckCircle className="w-5 h-5 text-green-400" />
+                            <span className="text-gray-300">{achievement}</span>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </motion.div>
+            ))}
           </div>
-        </section>
+        </div>
+      </section>
 
-        {/* Leadership Users Section */}
-        <section className="py-20 px-4">
-          <div className="container mx-auto max-w-6xl">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-              className="text-center mb-16"
-            >
-              <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-                Executive Leadership
-              </h2>
-              <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-                Visionary leaders with decades of experience in AI, quantum computing, 
-                and autonomous systems
-              </p>
-            </motion.div>
-
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {/* Core Team Section */}
+      <section className="py-20 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto">
+          <motion.h2 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="text-4xl md:text-5xl font-bold text-center mb-16"
+          >
+            Core Teams
+          </motion.h2>
+          
+          <div className="grid md:grid-cols-2 gap-8">
+            {coreTeam.map((team, index) => (
               <motion.div
+                key={index}
                 initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.3 }}
-                className="group relative overflow-hidden rounded-2xl bg-gradient-to-br from-cyan-900/20 to-blue-900/20 border border-cyan-500/30 hover:border-cyan-400/60 transition-all duration-500"
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: index * 0.1 }}
+                viewport={{ once: true }}
+                className="p-6 rounded-2xl bg-white/5 border border-white/10 hover:border-cyan-500/50 transition-all duration-300"
               >
-                <div className="p-8 text-center">
-                  <div className="w-32 h-32 mx-auto mb-6 bg-gradient-to-br from-cyan-500 to-blue-600 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                    <Brain className="w-16 h-16 text-white" />
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="w-12 h-12 bg-gradient-to-br from-cyan-500 to-purple-600 rounded-full flex items-center justify-center">
+                    <Star className="w-6 h-6 text-white" />
                   </div>
-                  <h3 className="text-2xl font-bold text-white mb-2">
-                    Kleber Santos
-                  </h3>
-                  <p className="text-cyan-400 font-semibold mb-3">CEO & Founder</p>
-                  <p className="text-gray-300 leading-relaxed">
-                    Visionary leader with 20+ years in AI and quantum computing. 
-                    Pioneering consciousness evolution through technology.
-                  </p>
-                  <div className="mt-4 flex justify-center gap-2">
-                    <span className="text-xs bg-cyan-900/50 text-cyan-300 px-2 py-1 rounded">AI Expert</span>
-                    <span className="text-xs bg-blue-900/50 text-blue-300 px-2 py-1 rounded">Quantum</span>
+                  <div>
+                    <h3 className="text-xl font-bold">
+                      {team.name}
+                    </h3>
+                    <p className="text-cyan-400 text-sm">
+                      {team.role}
+                    </p>
                   </div>
                 </div>
-              </motion.div>
-
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.4 }}
-                className="group relative overflow-hidden rounded-2xl bg-gradient-to-br from-purple-900/20 to-pink-900/20 border border-purple-500/30 hover:border-purple-400/60 transition-all duration-500"
-              >
-                <div className="p-8 text-center">
-                  <div className="w-32 h-32 mx-auto mb-6 bg-gradient-to-br from-purple-500 to-pink-600 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                    <Atom className="w-16 h-16 text-white" />
-                  </div>
-                  <h3 className="text-2xl font-bold text-white mb-2">
-                    Dr. Sarah Chen
-                  </h3>
-                  <p className="text-purple-400 font-semibold mb-3">CTO & Chief Scientist</p>
-                  <p className="text-gray-300 leading-relaxed">
-                    Quantum physicist and AI researcher leading breakthrough innovations 
-                    in consciousness and autonomous systems.
-                  </p>
-                  <div className="mt-4 flex justify-center gap-2">
-                    <span className="text-xs bg-purple-900/50 text-purple-300 px-2 py-1 rounded">Quantum</span>
-                    <span className="text-xs bg-pink-900/50 text-pink-300 px-2 py-1 rounded">Research</span>
+                
+                <p className="text-gray-300 mb-4 leading-relaxed">
+                  {team.bio}
+                </p>
+                
+                <div className="mb-4">
+                  <h4 className="text-sm font-semibold text-cyan-400 mb-2">Expertise</h4>
+                  <div className="flex flex-wrap gap-2">
+                    {team.expertise.map((skill, skillIndex) => (
+                      <span
+                        key={skillIndex}
+                        className="px-2 py-1 bg-cyan-500/20 text-cyan-300 text-xs rounded-full border border-cyan-500/30"
+                      >
+                        {skill}
+                      </span>
+                    ))}
                   </div>
                 </div>
-              </motion.div>
-
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.5 }}
-                className="group relative overflow-hidden rounded-2xl bg-gradient-to-br from-green-900/20 to-emerald-900/20 border border-green-500/30 hover:border-green-400/60 transition-all duration-500"
-              >
-                <div className="p-8 text-center">
-                  <div className="w-32 h-32 mx-auto mb-6 bg-gradient-to-br from-green-500 to-emerald-600 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                    <Rocket className="w-16 h-16 text-white" />
-                  </div>
-                  <h3 className="text-2xl font-bold text-white mb-2">
-                    Marcus Rodriguez
-                  </h3>
-                  <p className="text-green-400 font-semibold mb-3">COO & Head of Operations</p>
-                  <p className="text-gray-300 leading-relaxed">
-                    Operations expert specializing in scaling autonomous systems and 
-                    managing complex technology deployments globally.
-                  </p>
-                  <div className="mt-4 flex justify-center gap-2">
-                    <span className="text-xs bg-green-900/50 text-green-300 px-2 py-1 rounded">Operations</span>
-                    <span className="text-xs bg-emerald-900/50 text-emerald-300 px-2 py-1 rounded">Scale</span>
+                
+                <div className="mb-4">
+                  <h4 className="text-sm font-semibold text-cyan-400 mb-2">Key Achievements</h4>
+                  <div className="space-y-1">
+                    {team.achievements.map((achievement, achievementIndex) => (
+                      <div key={achievementIndex} className="flex items-center gap-2">
+                        <CheckCircle className="w-4 h-4 text-green-400" />
+                        <span className="text-gray-300 text-sm">{achievement}</span>
+                      </div>
+                    ))}
                   </div>
                 </div>
+                
+                <div className="text-right">
+                  <span className="text-cyan-400 text-sm font-medium">
+                    {team.size}
+                  </span>
+                </div>
               </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Values Section */}
+      <section className="py-20 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto">
+          <motion.h2 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="text-4xl md:text-5xl font-bold text-center mb-16"
+          >
+            Our Values
+          </motion.h2>
+          
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {values.map((value, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: index * 0.1 }}
+                viewport={{ once: true }}
+                className="text-center p-6 rounded-2xl bg-white/5 border border-white/10 hover:border-cyan-500/50 transition-all duration-300"
+              >
+                <div className="flex justify-center mb-4 text-cyan-400">
+                  {value.icon}
+                </div>
+                <h3 className="text-xl font-bold mb-3">
+                  {value.title}
+                </h3>
+                <p className="text-gray-300">
+                  {value.description}
+                </p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Join Our Team Section */}
+      <section className="py-20 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-4xl mx-auto text-center">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+          >
+            <h2 className="text-4xl md:text-5xl font-bold mb-6">
+              Join Our Mission
+            </h2>
+            <p className="text-xl text-gray-300 mb-8">
+              We're always looking for exceptional talent to join our team. 
+              If you're passionate about AI, quantum computing, or autonomous systems, 
+              we'd love to hear from you.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Link 
+                href="/contact"
+                className="px-8 py-4 bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-semibold rounded-full hover:from-cyan-600 hover:to-blue-700 transition-all duration-300 transform hover:scale-105"
+              >
+                Get in Touch
+                <ArrowRight className="w-5 h-5 ml-2" />
+              </Link>
+              <Link 
+                href="/careers"
+                className="px-8 py-4 border-2 border-cyan-500 text-cyan-400 font-semibold rounded-full hover:bg-cyan-500 hover:text-black transition-all duration-300"
+              >
+                View Openings
+              </Link>
             </div>
-          </div>
-        </section>
-
-        {/* Department Heads */}
-        <section className="py-20 px-4 bg-black/30">
-          <div className="container mx-auto max-w-6xl">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.6 }}
-              className="text-center mb-16"
-            >
-              <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-                Department Leadership
-              </h2>
-              <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-                Specialized leaders driving innovation across our core technology domains
-              </p>
-            </motion.div>
-
-            <div className="grid md:grid-cols-2 gap-8">
-              <motion.div
-                initial={{ opacity: 0, x: -20 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.8, delay: 0.7 }}
-                className="bg-gradient-to-br from-gray-800/50 to-gray-900/50 p-8 rounded-2xl border border-gray-700/50"
-              >
-                <div className="flex items-center gap-4 mb-6">
-                  <div className="w-16 h-16 bg-gradient-to-br from-cyan-500 to-blue-600 rounded-full flex items-center justify-center">
-                    <Brain className="w-8 h-8 text-white" />
-                  </div>
-                  <div>
-                    <h3 className="text-2xl font-bold text-white">AI & Consciousness Division</h3>
-                    <p className="text-cyan-400">Dr. Elena Petrova</p>
-                  </div>
-                </div>
-                <p className="text-gray-300 leading-relaxed mb-4">
-                  Leading breakthrough research in AI consciousness, emotional intelligence, 
-                  and autonomous decision-making systems.
-                </p>
-                <div className="flex flex-wrap gap-2">
-                  <span className="text-xs bg-cyan-900/50 text-cyan-300 px-2 py-1 rounded">Consciousness</span>
-                  <span className="text-xs bg-blue-900/50 text-blue-300 px-2 py-1 rounded">Emotional AI</span>
-                  <span className="text-xs bg-purple-900/50 text-purple-300 px-2 py-1 rounded">Ethics</span>
-                </div>
-              </motion.div>
-
-              <motion.div
-                initial={{ opacity: 0, x: 20 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.8, delay: 0.8 }}
-                className="bg-gradient-to-br from-gray-800/50 to-gray-900/50 p-8 rounded-2xl border border-gray-700/50"
-              >
-                <div className="flex items-center gap-4 mb-6">
-                  <div className="w-16 h-16 bg-gradient-to-br from-purple-500 to-pink-600 rounded-full flex items-center justify-center">
-                    <Atom className="w-8 h-8 text-white" />
-                  </div>
-                  <div>
-                    <h3 className="text-2xl font-bold text-white">Quantum Technology Division</h3>
-                    <p className="text-purple-400">Dr. James Kim</p>
-                  </div>
-                </div>
-                <p className="text-gray-300 leading-relaxed mb-4">
-                  Pioneering quantum computing applications, quantum security, and 
-                  quantum-enhanced AI systems for enterprise solutions.
-                </p>
-                <div className="flex flex-wrap gap-2">
-                  <span className="text-xs bg-purple-900/50 text-purple-300 px-2 py-1 rounded">Quantum</span>
-                  <span className="text-xs bg-pink-900/50 text-pink-300 px-2 py-1 rounded">Security</span>
-                  <span className="text-xs bg-blue-900/50 text-blue-300 px-2 py-1 rounded">Computing</span>
-                </div>
-              </motion.div>
-
-              <motion.div
-                initial={{ opacity: 0, x: -20 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.8, delay: 0.9 }}
-                className="bg-gradient-to-br from-gray-800/50 to-gray-900/50 p-8 rounded-2xl border border-gray-700/50"
-              >
-                <div className="flex items-center gap-4 mb-6">
-                  <div className="w-16 h-16 bg-gradient-to-br from-green-500 to-emerald-600 rounded-full flex items-center justify-center">
-                    <Cpu className="w-8 h-8 text-white" />
-                  </div>
-                  <div>
-                    <h3 className="text-2xl font-bold text-white">Autonomous Systems Division</h3>
-                    <p className="text-green-400">Alex Thompson</p>
-                  </div>
-                </div>
-                <p className="text-gray-300 leading-relaxed mb-4">
-                  Developing self-operating intelligent systems that revolutionize 
-                  business operations and decision-making processes.
-                </p>
-                <div className="flex flex-wrap gap-2">
-                  <span className="text-xs bg-green-900/50 text-green-300 px-2 py-1 rounded">Autonomous</span>
-                  <span className="text-xs bg-emerald-900/50 text-emerald-300 px-2 py-1 rounded">Systems</span>
-                  <span className="text-xs bg-blue-900/50 text-blue-300 px-2 py-1 rounded">Automation</span>
-                </div>
-              </motion.div>
-
-              <motion.div
-                initial={{ opacity: 0, x: 20 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.8, delay: 1.0 }}
-                className="bg-gradient-to-br from-gray-800/50 to-gray-900/50 p-8 rounded-2xl border border-gray-700/50"
-              >
-                <div className="flex items-center gap-4 mb-6">
-                  <div className="w-16 h-16 bg-gradient-to-br from-yellow-500 to-orange-600 rounded-full flex items-center justify-center">
-                    <Shield className="w-8 h-8 text-white" />
-                  </div>
-                  <div>
-                    <h3 className="text-2xl font-bold text-white">Enterprise Solutions Division</h3>
-                    <p className="text-yellow-400">Maria Gonzalez</p>
-                  </div>
-                </div>
-                <p className="text-gray-300 leading-relaxed mb-4">
-                  Delivering scalable enterprise IT solutions, security platforms, 
-                  and digital transformation services to Fortune 500 companies.
-                </p>
-                <div className="flex flex-wrap gap-2">
-                  <span className="text-xs bg-yellow-900/50 text-yellow-300 px-2 py-1 rounded">Enterprise</span>
-                  <span className="text-xs bg-orange-900/50 text-orange-300 px-2 py-1 rounded">Security</span>
-                  <span className="text-xs bg-red-900/50 text-red-300 px-2 py-1 rounded">Transformation</span>
-                </div>
-              </motion.div>
-            </div>
-          </div>
-        </section>
-
-        {/* Company Values */}
-        <section className="py-20 px-4">
-          <div className="container mx-auto max-w-6xl">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 1.1 }}
-              className="text-center mb-16"
-            >
-              <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-                Our Core Values
-              </h2>
-              <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-                The principles that guide our team and drive our mission forward
-              </p>
-            </motion.div>
-
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 1.2 }}
-                className="text-center"
-              >
-                <div className="w-20 h-20 mx-auto mb-6 bg-gradient-to-br from-cyan-500 to-blue-600 rounded-full flex items-center justify-center">
-                  <Target className="w-10 h-10 text-white" />
-                </div>
-                <h3 className="text-xl font-bold text-white mb-3">Innovation First</h3>
-                <p className="text-gray-400">
-                  Constantly pushing boundaries and exploring new frontiers in technology
-                </p>
-              </motion.div>
-
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 1.3 }}
-                className="text-center"
-              >
-                <div className="w-20 h-20 mx-auto mb-6 bg-gradient-to-br from-purple-500 to-pink-600 rounded-full flex items-center justify-center">
-                  <Star className="w-10 h-10 text-white" />
-                </div>
-                <h3 className="text-xl font-bold text-white mb-3">Excellence</h3>
-                <p className="text-gray-400">
-                  Delivering the highest quality solutions and exceeding expectations
-                </p>
-              </motion.div>
-
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 1.4 }}
-                className="text-center"
-              >
-                <div className="w-20 h-20 mx-auto mb-6 bg-gradient-to-br from-green-500 to-emerald-600 rounded-full flex items-center justify-center">
-                  <Globe className="w-10 h-10 text-white" />
-                </div>
-                <h3 className="text-xl font-bold text-white mb-3">Global Impact</h3>
-                <p className="text-gray-400">
-                  Creating solutions that benefit humanity and advance civilization
-                </p>
-              </motion.div>
-
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 1.5 }}
-                className="text-center"
-              >
-                <div className="w-20 h-20 mx-auto mb-6 bg-gradient-to-br from-yellow-500 to-orange-600 rounded-full flex items-center justify-center">
-                  <Users className="w-10 h-10 text-white" />
-                </div>
-                <h3 className="text-xl font-bold text-white mb-3">Collaboration</h3>
-                <p className="text-gray-400">
-                  Working together as a unified team to achieve extraordinary results
-                </p>
-              </motion.div>
-            </div>
-          </div>
-        </section>
-
-        {/* Join Our Team */}
-        <section className="py-20 px-4 bg-black/30">
-          <div className="container mx-auto max-w-4xl text-center">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 1.6 }}
-            >
-              <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-                Join Our Team
-              </h2>
-              <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
-                We're always looking for brilliant minds who share our passion for 
-                innovation and want to shape the future of technology.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <button className="px-8 py-4 bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-bold rounded-lg hover:from-cyan-600 hover:to-blue-700 transition-all duration-300 transform hover:scale-105">
-                  View Open Positions
-                </button>
-                <button className="px-8 py-4 border-2 border-cyan-500 text-cyan-400 font-bold rounded-lg hover:bg-cyan-500 hover:text-white transition-all duration-300">
-                  Contact HR
-                </button>
-              </div>
-            </motion.div>
-          </div>
-        </section>
-      </div>
-    </Layout>
+          </motion.div>
+        </div>
+      </section>
+    </div>
   );
 }
