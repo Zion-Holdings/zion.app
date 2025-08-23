@@ -42,6 +42,12 @@ import { innovative2025MicroSaasExpansion } from '../data/innovative-2025-micro-
 import { innovative2025ITSolutionsExpansion } from '../data/innovative-2025-it-solutions-expansion';
 import { innovative2025AIServicesExpansion } from '../data/innovative-2025-ai-services-expansion';
 
+// Import our new 2025 innovative services
+import { advancedEnterpriseSolutions } from '../data/2025-advanced-enterprise-solutions';
+import { innovativeAISolutions } from '../data/2025-innovative-ai-solutions';
+import { innovativeMicroSaasSolutions as innovativeMicroSaasSolutions2025 } from '../data/2025-innovative-micro-saas-solutions';
+import { innovativeITInfrastructureServices } from '../data/2025-innovative-it-infrastructure';
+
 // Import our new innovative 2040 services
 import { innovative2040ITServices } from '../data/innovative-2040-it-services';
 
@@ -68,6 +74,11 @@ const getServicePricing = (service: any) => {
   if (service.pricing?.starter) return service.pricing.starter;
   if (service.pricing?.monthly) return `$${service.pricing.monthly}/month`;
   if (service.price?.monthly) return `$${service.price.monthly}/month`;
+  if (typeof service.price === 'string') return service.price;
+  if (service.price && typeof service.price === 'object') {
+    if (service.price.monthly) return `$${service.price.monthly}/month`;
+    if (service.price.starter) return service.price.starter;
+  }
   return 'Contact for pricing';
 };
 
@@ -98,6 +109,10 @@ const allServices = [
   ...realOperationalServices,
   ...marketReadyServices,
   ...marketValidatedServices,
+  ...advancedEnterpriseSolutions,
+  ...innovativeAISolutions,
+  ...innovativeMicroSaasSolutions2025,
+  ...innovativeITInfrastructureServices,
   ...industryRealServices,
   ...real2025Q4AugmentedBatch,
   ...real2029Q3Additions,
