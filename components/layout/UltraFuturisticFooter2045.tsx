@@ -2,10 +2,10 @@ import React from 'react';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { 
-  Phone, Mail, MapPin, ArrowRight, Globe, Shield, Rocket, Brain, Atom, Cpu,
+  Phone, Mail, MapPin, Globe, Shield, Rocket, Brain, Atom,
   Facebook, Twitter, Linkedin, Instagram, Youtube, Github, Zap, Heart, Star,
   Users, Lock, Cloud, Code, Server, Database, Network, Settings, Target, Play,
-  FileText, TrendingUp
+  ArrowRight, HelpCircle
 } from 'lucide-react';
 
 const UltraFuturisticFooter2045: React.FC = () => {
@@ -14,7 +14,7 @@ const UltraFuturisticFooter2045: React.FC = () => {
   const contactInfo = {
     mobile: '+1 302 464 0950',
     email: 'kleber@ziontechgroup.com',
-    address: '364 E Main St STE 1008 Middletown DE 19709'
+    address: '364 E Main St STE 1008, Middletown DE 19709'
   };
 
   const footerSections = [
@@ -23,7 +23,7 @@ const UltraFuturisticFooter2045: React.FC = () => {
       links: [
         { name: 'AI Consciousness Evolution 2045', href: '/ai-consciousness-evolution-2045', icon: Brain },
         { name: 'Quantum Neural Networks 2045', href: '/quantum-neural-network-platform-2045', icon: Atom },
-        { name: 'AI Autonomous Business Intelligence 2045', href: '/ai-autonomous-business-intelligence-2045', icon: Brain },
+        { name: 'AI Autonomous Business Intelligence 2045', href: '/ai-autonomous-business-intelligence-2045', icon: Target },
         { name: 'Quantum Cybersecurity 2045', href: '/quantum-cybersecurity-platform-2045', icon: Shield },
         { name: 'Space Resource Intelligence 2045', href: '/space-resource-intelligence-2045', icon: Rocket },
         { name: 'Autonomous Customer Success 2045', href: '/autonomous-customer-success-2045', icon: Users }
@@ -37,7 +37,7 @@ const UltraFuturisticFooter2045: React.FC = () => {
         { name: 'Quantum Data Center Management 2045', href: '/quantum-data-center-management-2045', icon: Server },
         { name: 'Autonomous Network Management 2045', href: '/autonomous-network-management-2045', icon: Network },
         { name: 'Autonomous IT Service Management 2045', href: '/autonomous-it-service-management-2045', icon: Settings },
-        { name: 'Autonomous Security Operations Center 2045', href: '/autonomous-security-operations-center-2045', icon: Shield }
+        { name: 'Autonomous Security Operations Center 2045', href: '/autonomous-security-operations-center-2045', icon: Lock }
       ]
     },
     {
@@ -45,7 +45,7 @@ const UltraFuturisticFooter2045: React.FC = () => {
       links: [
         { name: 'AI Consciousness Evolution 2045', href: '/ai-consciousness-evolution-2045', icon: Brain },
         { name: 'Quantum AI Cognitive 2045', href: '/quantum-ai-cognitive-2045', icon: Atom },
-        { name: 'Autonomous AI Research 2045', href: '/autonomous-ai-research-2045', icon: Brain },
+        { name: 'Autonomous AI Research 2045', href: '/autonomous-ai-research-2045', icon: Zap },
         { name: 'Emotional AI Intelligence 2045', href: '/emotional-ai-intelligence-2045', icon: Heart },
         { name: 'Quantum AI Metaverse 2045', href: '/quantum-ai-metaverse-2045', icon: Globe },
         { name: 'AI Autonomous Business Intelligence 2045', href: '/ai-autonomous-business-intelligence-2045', icon: Target }
@@ -55,22 +55,29 @@ const UltraFuturisticFooter2045: React.FC = () => {
       title: 'Company',
       links: [
         { name: 'About Us', href: '/about', icon: Users },
-        { name: 'Our Mission', href: '/mission', icon: Target },
+        { name: 'Our Mission', href: '/mission', icon: Star },
         { name: 'Leadership Team', href: '/team', icon: Users },
-        { name: 'Careers', href: '/careers', icon: Users },
-        { name: 'News & Updates', href: '/news', icon: Star },
-        { name: 'Press Kit', href: '/press', icon: FileText }
+        { name: 'Careers', href: '/careers', icon: Target },
+        { name: 'News & Updates', href: '/news', icon: Play },
+        { name: 'Press Kit', href: '/press', icon: Database }
       ]
     }
   ];
 
   const socialLinks = [
-    { name: 'Facebook', icon: Facebook, href: 'https://facebook.com/ziontechgroup', color: 'from-blue-500 to-blue-600' },
-    { name: 'Twitter', icon: Twitter, href: 'https://twitter.com/ziontechgroup', color: 'from-cyan-400 to-blue-500' },
-    { name: 'LinkedIn', icon: Linkedin, href: 'https://linkedin.com/company/ziontechgroup', color: 'from-blue-600 to-blue-700' },
-    { name: 'Instagram', icon: Instagram, href: 'https://instagram.com/ziontechgroup', color: 'from-purple-500 to-pink-500' },
-    { name: 'YouTube', icon: Youtube, href: 'https://youtube.com/@ziontechgroup', color: 'from-red-500 to-red-600' },
-    { name: 'GitHub', icon: Github, href: 'https://github.com/ziontechgroup', color: 'from-gray-600 to-gray-700' }
+    { name: 'Facebook', href: 'https://www.facebook.com/ziontechgroup', icon: <Facebook className="w-5 h-5" /> },
+    { name: 'Twitter', href: 'https://twitter.com/ziontechgroup', icon: <Twitter className="w-5 h-5" /> },
+    { name: 'LinkedIn', href: 'https://www.linkedin.com/company/zion-tech-group', icon: <Linkedin className="w-5 h-5" /> },
+    { name: 'Instagram', href: 'https://www.instagram.com/ziontechgroup', icon: <Instagram className="w-5 h-5" /> },
+    { name: 'YouTube', href: 'https://www.youtube.com/@ziontechgroup', icon: <Youtube className="w-5 h-5" /> },
+    { name: 'GitHub', href: 'https://github.com/Zion-Holdings', icon: <Github className="w-5 h-5" /> }
+  ];
+
+  const quickLinks = [
+    { name: 'Get Started', href: '/get-started', icon: <ArrowRight className="w-4 h-4" /> },
+    { name: 'Contact Sales', href: '/contact', icon: <Phone className="w-4 h-4" /> },
+    { name: 'Support', href: '/support', icon: <HelpCircle className="w-4 h-4" /> },
+    { name: 'Documentation', href: '/docs', icon: <Code className="w-4 h-4" /> }
   ];
 
   const fadeInUp = {
@@ -142,7 +149,7 @@ const UltraFuturisticFooter2045: React.FC = () => {
             </motion.div>
 
             {/* Footer Sections */}
-            {footerSections.map((section, index) => (
+            {footerSections.map((section) => (
               <motion.div key={section.title} variants={fadeInUp} className="lg:col-span-1">
                 <h4 className="text-lg font-semibold text-white mb-6 flex items-center space-x-2">
                   <span className="w-1 h-6 bg-gradient-to-r from-cyan-500 to-blue-500 rounded-full"></span>
@@ -156,7 +163,7 @@ const UltraFuturisticFooter2045: React.FC = () => {
                         className="flex items-center space-x-3 text-gray-400 hover:text-cyan-400 transition-all duration-200 group hover:translate-x-1"
                       >
                         <div className="w-5 h-5 text-cyan-400 group-hover:scale-110 transition-transform duration-200">
-                          {React.createElement(link.icon, { className: "w-5 h-5" })}
+                          <link.icon className="w-5 h-5" />
                         </div>
                         <span className="text-sm group-hover:text-cyan-400 transition-colors duration-200">
                           {link.name}
@@ -217,7 +224,7 @@ const UltraFuturisticFooter2045: React.FC = () => {
                     className={`p-2 rounded-lg bg-gray-900/50 border border-cyan-500/20 text-gray-400 ${social.color} transition-all duration-200 hover:scale-110 hover:border-cyan-500/50`}
                     aria-label={social.name}
                   >
-                    {React.createElement(social.icon, { className: "w-5 h-5" })}
+                    <social.icon className="w-5 h-5" />
                   </Link>
                 ))}
               </div>
@@ -249,7 +256,7 @@ const UltraFuturisticFooter2045: React.FC = () => {
           }}
           transition={{
             duration: 4,
-            repeat: Infinity as any,
+            repeat: Infinity,
             ease: "easeInOut"
           }}
         />
@@ -261,7 +268,7 @@ const UltraFuturisticFooter2045: React.FC = () => {
           }}
           transition={{
             duration: 6,
-            repeat: Infinity as any,
+            repeat: Infinity,
             ease: "easeInOut"
           }}
         />
