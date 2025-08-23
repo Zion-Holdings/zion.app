@@ -8,6 +8,12 @@ import {
   Phone, Mail, MapPin, ExternalLink
 } from 'lucide-react';
 
+<<<<<<< HEAD
+// Import our comprehensive service data
+import { innovative2025MicroSaasExpansion } from '../data/innovative-2025-micro-saas-expansion';
+import { innovative2025ITServicesExpansion } from '../data/innovative-2025-it-services-expansion';
+import { innovative2025AIServicesExpansion } from '../data/innovative-2025-ai-services-expansion';
+=======
 // Import all service data
 import { innovativeRealMicroSaasServices2025 } from '../data/2025-innovative-real-micro-saas-services';
 import { advancedFuturisticMicroSaasServices2025 } from '../data/2025-advanced-futuristic-micro-saas';
@@ -27,6 +33,7 @@ const contactInfo = {
   address: '364 E Main St STE 1008 Middletown DE 19709',
   website: 'https://ziontechgroup.com'
 };
+>>>>>>> origin/cursor/add-and-advertise-new-services-then-build-359a
 
 const ComprehensiveServicesShowcase2025: React.FC = () => {
   const [searchTerm, setSearchTerm] = useState('');
@@ -35,6 +42,11 @@ const ComprehensiveServicesShowcase2025: React.FC = () => {
 
   // Combine all services
   const allServices = [
+<<<<<<< HEAD
+    ...innovative2025MicroSaasExpansion,
+    ...innovative2025ITServicesExpansion,
+    ...innovative2025AIServicesExpansion
+=======
     ...innovativeRealMicroSaasServices2025,
     ...advancedFuturisticMicroSaasServices2025,
     ...cuttingEdgeAIInnovations2025,
@@ -45,6 +57,7 @@ const ComprehensiveServicesShowcase2025: React.FC = () => {
     ...advancedAIAutomationServices,
     ...advancedITInfrastructureServices2025,
     ...innovativeBusinessSolutions2025
+>>>>>>> origin/cursor/add-and-advertise-new-services-then-build-359a
   ];
 
   // Filter services based on search and category
