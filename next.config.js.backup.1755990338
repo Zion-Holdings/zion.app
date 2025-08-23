@@ -1,5 +1,11 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+<<<<<<< HEAD
+  // Enable React strict mode for better development experience
+  reactStrictMode: true,
+  
+  // Optimize images with modern formats
+=======
   // Performance optimizations
   experimental: {
     optimizePackageImports: ['lucide-react', 'framer-motion'],
@@ -7,6 +13,7 @@ const nextConfig = {
   },
   
   // Image optimization
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-e6d1
   images: {
     formats: ['image/webp', 'image/avif'],
     deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048, 3840],
@@ -15,6 +22,19 @@ const nextConfig = {
     dangerouslyAllowSVG: true,
     contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
   },
+<<<<<<< HEAD
+  
+  // Enable experimental features for better performance
+  experimental: {
+    optimizeCss: true,
+    optimizePackageImports: ['lucide-react', 'framer-motion'],
+    serverActions: {
+      allowedOrigins: ['ziontechgroup.com', 'localhost:3000'],
+    },
+  },
+  
+  // Webpack optimizations
+=======
 
   // Compression and optimization
   compress: true,
@@ -22,6 +42,7 @@ const nextConfig = {
   generateEtags: false,
 
   // Bundle analyzer
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-e6d1
   webpack: (config, { dev, isServer }) => {
     // Optimize bundle splitting
     if (!dev && !isServer) {
@@ -44,17 +65,49 @@ const nextConfig = {
         },
       };
     }
+<<<<<<< HEAD
+    
+    // Optimize SVG handling
+=======
 
     // SVG optimization
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-e6d1
     config.module.rules.push({
       test: /\.svg$/,
       use: ['@svgr/webpack'],
     });
+<<<<<<< HEAD
+    
+    return config;
+  },
+  
+  // Enable compression
+  compress: true,
+  
+  // Enable powered by header removal
+  poweredByHeader: false,
+  
+  // Optimize bundle analyzer
+  ...(process.env.ANALYZE === 'true' && {
+    webpack: (config) => {
+      config.plugins.push(
+        new (require('webpack-bundle-analyzer').BundleAnalyzerPlugin)({
+          analyzerMode: 'static',
+          openAnalyzer: false,
+        })
+      );
+      return config;
+    },
+  }),
+  
+  // Enable PWA features
+=======
 
     return config;
   },
 
   // Headers for performance
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-e6d1
   async headers() {
     return [
       {
@@ -76,6 +129,20 @@ const nextConfig = {
             key: 'Referrer-Policy',
             value: 'origin-when-cross-origin',
           },
+<<<<<<< HEAD
+          {
+            key: 'Permissions-Policy',
+            value: 'camera=(), microphone=(), geolocation=()',
+          },
+        ],
+      },
+      {
+        source: '/api/(.*)',
+        headers: [
+          {
+            key: 'Cache-Control',
+            value: 'public, max-age=3600, stale-while-revalidate=86400',
+=======
         ],
       },
       {
@@ -84,13 +151,19 @@ const nextConfig = {
           {
             key: 'Cache-Control',
             value: 'public, max-age=31536000, immutable',
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-e6d1
           },
         ],
       },
     ];
   },
+<<<<<<< HEAD
+  
+  // Enable redirects for better SEO
+=======
 
   // Redirects for better UX
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-e6d1
   async redirects() {
     return [
       {
@@ -99,6 +172,33 @@ const nextConfig = {
         permanent: true,
       },
       {
+<<<<<<< HEAD
+        source: '/about-us',
+        destination: '/mission',
+        permanent: true,
+      },
+    ];
+  },
+  
+  // Enable rewrites for dynamic routes
+  async rewrites() {
+    return [
+      {
+        source: '/services/:category',
+        destination: '/services?category=:category',
+      },
+    ];
+  },
+  
+  // Enable trailing slash for better SEO
+  trailingSlash: false,
+  
+  // Enable i18n for internationalization
+  i18n: {
+    locales: ['en'],
+    defaultLocale: 'en',
+  },
+=======
         source: '/services/ai',
         destination: '/ai-services',
         permanent: true,
@@ -130,6 +230,7 @@ const nextConfig = {
   output: 'standalone',
   trailingSlash: false,
   skipTrailingSlashRedirect: true,
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-e6d1
 };
 
   // Enhanced compress
