@@ -7,8 +7,15 @@ interface Service {
   name: string;
   tagline: string;
   description: string;
-  price: string;
-  period: string;
+  price?: string | {
+    monthly?: number;
+    yearly?: number;
+    currency?: string;
+    trialDays?: number;
+    setupTime?: string;
+  };
+  period?: string;
+  pricing?: any;
   features: string[];
   popular?: boolean;
   category: string;
@@ -195,8 +202,19 @@ const UltraFuturisticServiceCard2026: React.FC<UltraFuturisticServiceCard2026Pro
             animate={{ opacity: 1 }}
             transition={{ delay: 0.3 }}
           >
-            <span className="text-2xl font-bold text-white">{service.price}</span>
-            <span className="text-gray-400 text-sm ml-1">{service.period}</span>
+            <span className="text-2xl font-bold text-white">
+              {(() => {
+                if (typeof service.price === 'string') return service.price;
+                if (typeof service.price === 'object' && service.price?.monthly) return `$${service.price.monthly}/month`;
+                if (typeof service.price === 'object' && service.price?.yearly) return `$${service.price.yearly}/year`;
+                if (service.pricing?.starter) return service.pricing.starter;
+                if (service.pricing?.monthly) return `$${service.pricing.monthly}/month`;
+                return 'Contact for pricing';
+              })()}
+            </span>
+            {service.period && (
+              <span className="text-gray-400 text-sm ml-1">{service.period}</span>
+            )}
           </motion.div>
 
           {/* Features */}

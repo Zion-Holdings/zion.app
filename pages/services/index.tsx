@@ -158,13 +158,20 @@ export default function ServicesIndexPage() {
     .concat(advanced2025AIServicesExpansion as unknown[]);
 
   // Filter out services without required properties
-  const validServices = all.filter(service => 
-    service && 
-    typeof service === 'object' && 
-    'name' in service && 
-    'description' in service &&
-    'price' in service
-  );
+  const validServices = all.filter((service: any) => {
+    if (!service || typeof service !== 'object') return false;
+    if (!('name' in service) || !('description' in service) || !('features' in service)) return false;
+    
+    // Check if service has either price or pricing
+    if (!('price' in service) && !('pricing' in service)) return false;
+    
+    // Ensure services have the properties needed by UltraFuturisticServiceCard2026
+    const hasValidPrice = 'price' in service && service.price;
+    const hasValidPricing = 'pricing' in service && service.pricing && 
+      (service.pricing.starter || service.pricing.monthly);
+    
+    return hasValidPrice || hasValidPricing;
+  });
 
   // Group services by category
   const servicesByCategory = categories.reduce((acc, category) => {

@@ -169,8 +169,14 @@ export default function ComprehensiveServicesShowcase2036() {
 
 
   const getServicePricing = (service: any) => {
-    if (service.pricing?.starter) return service.pricing.starter;
-    if (service.pricing?.monthly) return `$${service.pricing.monthly}/month`;
+          if (service.pricing?.starter) return service.pricing.starter;
+      if (service.pricing?.monthly) return `$${service.pricing.monthly}/month`;
+      if (service.pricing) {
+        if (typeof service.pricing === 'string') return service.pricing;
+        if (service.pricing.monthly) return `$${service.pricing.monthly}/month`;
+        if (service.pricing.starter) return service.pricing.starter;
+        return 'Contact for pricing';
+      }
     if (service.price?.monthly) return `$${service.price.monthly}/month`;
     if (service.price) return service.price;
     return 'Contact for pricing';

@@ -234,7 +234,7 @@ const Innovative2038CuttingEdgeShowcase: React.FC = () => {
                     {/* Pricing */}
                     <div className="mb-4">
                       <div className="text-2xl font-bold text-purple-400 mb-1">
-                        {service.pricing.starter}
+                        {service.pricing?.starter || 'Contact for pricing'}
                       </div>
                       <div className="text-xs text-gray-400">Starting price</div>
                     </div>
@@ -323,13 +323,13 @@ const Innovative2038CuttingEdgeShowcase: React.FC = () => {
                       {/* Pricing and Actions */}
                       <div className="lg:w-64 space-y-4">
                         <div className="text-center">
-                          <div className="text-3xl font-bold text-purple-400 mb-1">
-                            {service.pricing.starter}
-                          </div>
+                                                  <div className="text-3xl font-bold text-purple-400 mb-1">
+                          {service.pricing?.starter || 'Contact for pricing'}
+                        </div>
                           <div className="text-sm text-gray-400 mb-2">Starting price</div>
-                          <div className="text-xs text-gray-500">
-                            Pro: {service.pricing.pro} | Enterprise: {service.pricing.enterprise}
-                          </div>
+                                                      <div className="text-xs text-gray-500">
+                              Pro: {service.pricing?.pro || 'Contact'} | Enterprise: {service.pricing?.enterprise || 'Contact'}
+                            </div>
                         </div>
 
                         <div className="space-y-3">

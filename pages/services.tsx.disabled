@@ -65,6 +65,13 @@ const getServicePricing = (service: any) => {
   if (service.pricing?.starter) return service.pricing.starter;
   if (service.pricing?.monthly) return `$${service.pricing.monthly}/month`;
   if (service.price?.monthly) return `$${service.price.monthly}/month`;
+  if (service.price) return service.price;
+  if (service.pricing) {
+    if (typeof service.pricing === 'string') return service.pricing;
+    if (service.pricing.monthly) return `$${service.pricing.monthly}/month`;
+    if (service.pricing.starter) return service.pricing.starter;
+    return 'Contact for pricing';
+  }
   return 'Contact for pricing';
 };
 
@@ -251,11 +258,15 @@ export default function Services() {
       case 'name':
         return a.name.localeCompare(b.name);
       case 'price-low':
-        return (parseInt(getServicePricing(a).replace(/[^0-9]/g, '')) || 0) - 
-               (parseInt(getServicePricing(b).replace(/[^0-9]/g, '')) || 0);
+        const priceA = getServicePricing(a);
+        const priceB = getServicePricing(b);
+        return (parseInt(String(priceA).replace(/[^0-9]/g, '')) || 0) - 
+               (parseInt(String(priceB).replace(/[^0-9]/g, '')) || 0);
       case 'price-high':
-        return (parseInt(getServicePricing(b).replace(/[^0-9]/g, '')) || 0) - 
-               (parseInt(getServicePricing(a).replace(/[^0-9]/g, '')) || 0);
+        const priceAHigh = getServicePricing(a);
+        const priceBHigh = getServicePricing(b);
+        return (parseInt(String(priceBHigh).replace(/[^0-9]/g, '')) || 0) - 
+               (parseInt(String(priceAHigh).replace(/[^0-9]/g, '')) || 0);
       case 'newest':
         return new Date((b as any).launchDate || '2020-01-01').getTime() - 
                new Date((a as any).launchDate || '2020-01-01').getTime();

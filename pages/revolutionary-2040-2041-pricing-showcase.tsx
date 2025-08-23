@@ -45,10 +45,12 @@ const Revolutionary20402041PricingShowcase: React.FC = () => {
 
   // Get pricing for selected plan
   const getPricing = (service: any) => {
-    if (selectedPlan === 'starter') return service.pricing.starter;
-    if (selectedPlan === 'professional') return service.pricing.professional;
-    if (selectedPlan === 'enterprise') return service.pricing.enterprise;
-    return service.pricing.custom;
+    if (!service.pricing) return 'Contact for pricing';
+    
+    if (selectedPlan === 'starter') return service.pricing.starter || 'Contact for pricing';
+    if (selectedPlan === 'professional') return service.pricing.professional || 'Contact for pricing';
+    if (selectedPlan === 'enterprise') return service.pricing.enterprise || 'Contact for pricing';
+    return service.pricing.custom || 'Contact for pricing';
   };
 
   // Get plan features
