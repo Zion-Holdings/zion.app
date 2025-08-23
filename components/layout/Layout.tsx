@@ -2,7 +2,7 @@ import React, { ReactNode } from 'react';
 import UltraAdvancedFuturisticNavigation2025 from './UltraAdvancedFuturisticNavigation2025';
 import UltraAdvancedFuturisticFooter2025 from './UltraAdvancedFuturisticFooter2025';
 import AccessibilityEnhancer from '../AccessibilityEnhancer';
-import PerformanceMonitor from '../PerformanceMonitor';
+import PerformanceOptimizer from '../PerformanceOptimizer';
 
 interface LayoutProps {
   children: ReactNode;
@@ -17,7 +17,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
       </main>
       <UltraAdvancedFuturisticFooter2025 />
       <AccessibilityEnhancer />
-      <PerformanceMonitor />
+      <PerformanceOptimizer showMetrics={true} autoOptimize={true} />
     </div>
   );
 };
