@@ -24,6 +24,13 @@ interface NavigationItem {
 
 const navigationItems: NavigationItem[] = [
   {
+<<<<<<< HEAD
+    name: 'Home',
+    href: '/',
+    icon: <Home className="w-5 h-5" />,
+    description: 'Welcome to Zion Tech Group',
+    featured: true
+=======
     name: 'All Services',
     href: '/comprehensive-services-showcase-2025',
     icon: <Globe className="w-5 h-5" />,
@@ -37,6 +44,7 @@ const navigationItems: NavigationItem[] = [
       { name: 'Pricing Comparison', href: '/comprehensive-services-showcase-2025#pricing', description: 'Compare service costs' },
       { name: 'Service Search', href: '/comprehensive-services-showcase-2025#search', description: 'Find specific services' }
     ]
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-196b
   },
   {
     name: 'AI & Consciousness',

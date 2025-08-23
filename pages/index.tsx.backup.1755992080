@@ -249,6 +249,11 @@ export default function HomePage() {
         {/* Enhanced 2029 Services Showcase */}
         <EnhancedServicesShowcase2029 />
 
+<<<<<<< HEAD
+        {/* Contact Information Section */}
+        <section className="py-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
+          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-purple-900/10 to-cyan-900/10"></div>
+=======
         <div className="relative z-10 text-center px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -391,6 +396,7 @@ export default function HomePage() {
               </motion.div>
             ))}
           </div>
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-196b
           
           <div className="max-w-7xl mx-auto relative z-10">
             <motion.div
