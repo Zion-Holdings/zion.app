@@ -46,7 +46,7 @@ import { innovative2025AIServicesExpansion } from '../data/innovative-2025-ai-se
 import { innovative2040ITServices } from '../data/innovative-2040-it-services';
 // Import our new 2025 advanced enterprise services
 import { advancedEnterpriseServices } from '../data/2025-advanced-enterprise-services-expansion';
-import { innovativeMicroSaasServices } from '../data/2025-innovative-micro-saas-expansion';
+import { innovative2025MicroSaasExpansion as innovativeMicroSaasServices } from '../data/2025-innovative-micro-saas-expansion';
 import { cuttingEdgeITInfrastructureServices } from '../data/2025-cutting-edge-it-infrastructure';
 
 // Import existing service data
