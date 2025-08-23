@@ -58,6 +58,11 @@ import { innovative2040FuturisticServices } from '../data/innovative-2040-futuri
 import { advancedEnterpriseServices } from '../data/2025-advanced-enterprise-services-expansion';
 import { cuttingEdgeITInfrastructureServices } from '../data/2025-cutting-edge-it-infrastructure';
 
+// Import our new 2025 innovative services expansion v2
+import { innovativeMicroSaasExpansionV2 } from '../data/2025-innovative-micro-saas-expansion-v2';
+import { innovativeITInfrastructureExpansionV2 } from '../data/2025-innovative-it-infrastructure-expansion-v2';
+import { cuttingEdgeAIServicesExpansionV2 } from '../data/2025-cutting-edge-ai-services-expansion-v2';
+
 // Import our new 2025 cutting-edge futuristic services
 import { cuttingEdgeFuturisticServices } from '../data/2025-cutting-edge-futuristic-services';
 import { advancedAIAutomationServices } from '../data/2026-advanced-ai-automation-services';
@@ -174,6 +179,11 @@ const allServices = [
   // Our new 2025 advanced enterprise services
   ...advancedEnterpriseServices,
   ...cuttingEdgeITInfrastructureServices,
+  
+  // Our new 2025 innovative services expansion v2
+  ...innovativeMicroSaasExpansionV2,
+  ...innovativeITInfrastructureExpansionV2,
+  ...cuttingEdgeAIServicesExpansionV2,
   
   // Our new 2025 cutting-edge innovative services expansion
   ...cuttingEdgeInnovativeServices2025,
