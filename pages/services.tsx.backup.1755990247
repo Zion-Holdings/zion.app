@@ -91,7 +91,11 @@ import { advancedFintechBlockchainServices2025 } from '../data/2025-advanced-fin
 
 // Import our new 2025 cutting-edge futuristic services
 import { cuttingEdgeFuturisticServices } from '../data/2025-cutting-edge-futuristic-services';
+<<<<<<< HEAD
+import { advancedAIAutomationServices2025 } from '../data/2025-advanced-ai-automation-services';
+=======
 
+>>>>>>> origin/cursor/expand-services-and-deploy-updates-ac39
 import { advancedITInfrastructureServices } from '../data/2025-advanced-it-infrastructure-services';
 import { innovativeITInfrastructureServices2025 } from '../data/2025-innovative-it-infrastructure-services';
 import { innovativeMicroSaasSolutions2025 } from '../data/2025-innovative-micro-saas-solutions';
@@ -165,7 +169,11 @@ const allServices = [
   ...innovativeAIServices,
   ...enterpriseITServices,
   ...cuttingEdgeFuturisticServices,
+<<<<<<< HEAD
+  ...advancedAIAutomationServices2025,
+=======
 
+>>>>>>> origin/cursor/expand-services-and-deploy-updates-ac39
   ...advancedITInfrastructureServices,
   ...emergingTechServices,
   ...newRealServices,
