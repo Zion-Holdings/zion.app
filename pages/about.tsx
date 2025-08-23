@@ -1,12 +1,3 @@
-export default function AboutPage() {
-  return (
-    <div className="prose dark:prose-invert">
-      <h1>About Zion</h1>
-      <p>Zion builds intelligent marketplaces and franchise tooling.</p>
-    </div>
-  );
-}
-=======
 import EnhancedLayout from '../components/layout/EnhancedLayout';
 
 export default function About() {
@@ -15,4 +6,8 @@ export default function About() {
       <div className="py-10">About Zion</div>
     </EnhancedLayout>
   );
+}
+=======
+export default function About() {
+  return <div>About page</div>;
 }

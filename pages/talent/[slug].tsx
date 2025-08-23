@@ -1,11 +1,6 @@
-import EnhancedLayout from '../../components/layout/EnhancedLayout';
 import { useRouter } from 'next/router';
 
-export default function TalentDetail() {
+export default function TalentProfile() {
   const { query } = useRouter();
-  return (
-    <EnhancedLayout>
-      <div className="py-10">Talent: {String(query.slug || '')}</div>
-    </EnhancedLayout>
-  );
+  return <div>Talent Profile: {String(query.slug || '')}</div>;
 }

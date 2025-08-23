@@ -1,1 +1,3 @@
-export default function Page() { return <div className="py-10">Future of Work and Automation</div>; }
+export default function FutureOfWorkAndAutomation() {
+  return <div>Future of Work and Automation</div>;
+}
