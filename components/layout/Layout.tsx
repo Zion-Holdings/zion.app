@@ -1,7 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import Head from 'next/head';
+import { Sun, Moon } from 'lucide-react';
 import EnhancedNavigation2025 from './EnhancedNavigation2025';
 import EnhancedFooter2025 from './EnhancedFooter2025';
+import UltraFuturisticNavigation2036 from './UltraFuturisticNavigation2036';
+import UltraFuturisticFooter2036 from './UltraFuturisticFooter2036';
 import EnhancedSidebar2025 from './EnhancedSidebar2025';
 import UltraFuturisticBackground2045 from '../backgrounds/UltraFuturisticBackground2045';
 import TopContactBar from './TopContactBar';
@@ -103,6 +106,10 @@ export default function Layout({
   if (isLoading) {
     return <LoadingSpinner />;
   }
+
+  // Add missing variables and functions
+  const darkMode = theme === 'dark';
+  const toggleDarkMode = () => setTheme(prev => prev === 'dark' ? 'light' : 'dark');
 
   return (
     <>

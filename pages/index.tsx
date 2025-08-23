@@ -1,8 +1,11 @@
 import React from 'react';
-import EnhancedHomepage2045 from '../components/EnhancedHomepage2045';
+import EnhancedHomepage2026 from '../components/EnhancedHomepage2026';
+import SEOOptimizer from '../components/SEOOptimizer';
+import AnalyticsTracker from '../components/AnalyticsTracker';
 import PerformanceOptimizer from '../components/PerformanceOptimizer';
 import AccessibilityEnhancer from '../components/AccessibilityEnhancer';
 import ErrorBoundary from '../components/ErrorBoundary';
+import PerformanceMonitor from '../components/PerformanceMonitor';
 
 const HomePage: React.FC = () => {
   const handlePerformanceMetrics = (metrics: any) => {
@@ -24,11 +27,14 @@ const HomePage: React.FC = () => {
 
   return (
     <ErrorBoundary>
+      <SEOOptimizer />
+      <AnalyticsTracker />
       <PerformanceOptimizer onMetricsUpdate={handlePerformanceMetrics}>
         <AccessibilityEnhancer>
-          <EnhancedHomepage2045 />
+          <EnhancedHomepage2026 />
         </AccessibilityEnhancer>
       </PerformanceOptimizer>
+      <PerformanceMonitor />
     </ErrorBoundary>
   );
 };
