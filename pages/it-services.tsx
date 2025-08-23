@@ -1,54 +1,112 @@
 import React from 'react';
+import Layout from '../components/layout/Layout';
+import SEO from '../components/SEO';
 import { motion } from 'framer-motion';
 import { 
-  Cpu, Cloud, Shield, Settings, Database, Network, 
-  CheckCircle, ArrowRight, Server, Lock, Users, Globe,
-  BarChart3, Zap, Building, Smartphone, Monitor, Code
+  Cpu, Brain, Rocket, Shield, Zap, Target, Atom, 
+  Lock, Cloud, Settings, Eye, Award, Clock, Heart, 
+  Lightbulb, Search, Grid, List, TrendingUp, 
+  User, ShoppingCart, Bell, HelpCircle, FileText, 
+  Video, Headphones, Code, Database, Network, Server, 
+  Monitor, Smartphone, Camera, Gamepad2, Palette, 
+  Music, Film, BookOpenCheck, Building, MessageCircle, 
+  Sparkles, ArrowRight, CheckCircle, Star, Globe, Wrench
 } from 'lucide-react';
 
-export default function ITServices() {
+const ITServicesPage: React.FC = () => {
   const itServices = [
     {
-      title: 'Cloud Infrastructure',
-      description: 'Scalable cloud computing solutions for modern businesses',
-      icon: <Cloud className="w-12 h-12 text-cyan-400" />,
-      features: ['Cloud Migration', 'Multi-Cloud Strategy', 'Serverless Architecture', 'Container Orchestration'],
-      applications: ['Application Hosting', 'Data Storage', 'Backup & Recovery', 'Scalable Computing']
+      id: 'enterprise-it',
+      name: 'Enterprise IT Solutions',
+      description: 'Comprehensive enterprise infrastructure and management',
+      features: ['Infrastructure Management', 'Cloud Migration', 'Security Implementation', 'Performance Optimization'],
+      price: '$2,999',
+      period: 'month',
+      popular: true,
+      icon: <Building className="w-8 h-8" />
     },
     {
-      title: 'Cybersecurity Solutions',
-      description: 'Comprehensive security measures to protect your digital assets',
-      icon: <Shield className="w-12 h-12 text-green-400" />,
-      features: ['Threat Detection', 'Vulnerability Assessment', 'Security Auditing', 'Incident Response'],
-      applications: ['Network Security', 'Data Protection', 'Compliance Management', 'Security Training']
+      id: 'cybersecurity',
+      name: 'Cybersecurity Services',
+      description: 'Advanced security solutions for modern threats',
+      features: ['Threat Detection', 'Vulnerability Assessment', 'Incident Response', 'Security Training'],
+      price: '$2,499',
+      period: 'month',
+      popular: false,
+      icon: <Shield className="w-8 h-8" />
+    },
+    {
+      id: 'cloud-solutions',
+      name: 'Cloud Solutions',
+      description: 'Scalable cloud infrastructure and services',
+      features: ['Cloud Architecture', 'Migration Services', 'Optimization', 'Multi-cloud Management'],
+      price: '$1,999',
+      period: 'month',
+      popular: false,
+      icon: <Cloud className="w-8 h-8" />
+    },
+    {
+      id: 'devops-automation',
+      name: 'DevOps Automation',
+      description: 'Streamlined development and operations',
+      features: ['CI/CD Pipelines', 'Infrastructure as Code', 'Monitoring', 'Automation'],
+      price: '$1,799',
+      period: 'month',
+      popular: false,
+      icon: <Settings className="w-8 h-8" />
+    },
+    {
+      id: 'data-management',
+      name: 'Data Management',
+      description: 'Comprehensive data solutions and analytics',
+      features: ['Data Strategy', 'Analytics Platform', 'Governance', 'Business Intelligence'],
+      price: '$2,299',
+      period: 'month',
+      popular: false,
+      icon: <Database className="w-8 h-8" />
+    },
+    {
+      id: 'network-infrastructure',
+      name: 'Network Infrastructure',
+      description: 'Robust networking and connectivity solutions',
+      features: ['Network Design', 'Security Implementation', 'Performance Monitoring', 'Scalability'],
+      price: '$1,599',
+      period: 'month',
+      popular: false,
+      icon: <Network className="w-8 h-8" />
+    }
+  ];
+
+  const itCapabilities = [
+    {
+      title: 'Infrastructure Management',
+      description: 'Comprehensive IT infrastructure solutions',
+      icon: <Server className="w-6 h-6" />
+    },
+    {
+      title: 'Cloud Services',
+      description: 'Multi-cloud and hybrid solutions',
+      icon: <Cloud className="w-6 h-6" />
+    },
+    {
+      title: 'Security & Compliance',
+      description: 'Advanced cybersecurity and compliance',
+      icon: <Shield className="w-6 h-6" />
     },
     {
       title: 'DevOps & Automation',
-      description: 'Streamlined development and deployment processes',
-      icon: <Settings className="w-12 h-12 text-purple-400" />,
-      features: ['CI/CD Pipelines', 'Infrastructure as Code', 'Automated Testing', 'Monitoring & Logging'],
-      applications: ['Software Development', 'Deployment Automation', 'Quality Assurance', 'Performance Monitoring']
+      description: 'Streamlined development operations',
+      icon: <Settings className="w-6 h-6" />
     },
     {
-      title: 'Data Management',
-      description: 'Comprehensive data solutions for business intelligence',
-      icon: <Database className="w-12 h-12 text-blue-400" />,
-      features: ['Data Warehousing', 'Business Intelligence', 'Data Analytics', 'Data Governance'],
-      applications: ['Reporting & Dashboards', 'Predictive Analytics', 'Data Integration', 'Master Data Management']
+      title: 'Data & Analytics',
+      description: 'Data-driven insights and solutions',
+      icon: <Database className="w-6 h-6" />
     },
     {
-      title: 'Network Infrastructure',
-      description: 'Robust networking solutions for enterprise connectivity',
-      icon: <Network className="w-12 h-12 text-yellow-400" />,
-      features: ['Network Design', 'Wireless Solutions', 'VPN & Remote Access', 'Network Security'],
-      applications: ['Office Connectivity', 'Remote Work Support', 'Branch Office Integration', 'Internet Security']
-    },
-    {
-      title: 'IT Consulting',
-      description: 'Strategic technology guidance for business transformation',
-      icon: <Building className="w-12 h-12 text-pink-400" />,
-      features: ['Technology Assessment', 'Digital Transformation', 'IT Strategy', 'Vendor Management'],
-      applications: ['Technology Roadmaps', 'Cost Optimization', 'Risk Management', 'Compliance Planning']
+      title: 'Network Solutions',
+      description: 'Robust networking infrastructure',
+      icon: <Network className="w-6 h-6" />
     }
   ];
 
@@ -98,371 +156,194 @@ export default function ITServices() {
   ];
 
   return (
-    <div className="min-h-screen bg-black text-white">
-      {/* Hero Section */}
-      <section className="relative py-20 lg:py-32 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-green-900/20 to-blue-900/20"></div>
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <motion.h1 
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="text-5xl lg:text-7xl font-bold bg-gradient-to-r from-green-400 to-blue-600 bg-clip-text text-transparent mb-6"
-          >
-            IT Services & Solutions
-          </motion.h1>
-          <motion.p 
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-xl lg:text-2xl text-gray-300 max-w-4xl mx-auto mb-8"
-          >
-            Transform your business with enterprise-grade IT solutions that drive efficiency, security, and innovation.
-          </motion.p>
-          <motion.div 
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
-            className="flex flex-wrap justify-center gap-4"
-          >
-            <a href="/contact" className="bg-gradient-to-r from-green-500 to-blue-600 hover:from-green-600 hover:to-blue-700 text-white px-8 py-3 rounded-lg font-semibold transition-all duration-300 flex items-center space-x-2">
-              <span>Get IT Solutions</span>
-              <ArrowRight className="w-5 h-5" />
-            </a>
-            <a href="/ai-services" className="border border-green-500 text-green-400 hover:bg-green-500 hover:text-white px-8 py-3 rounded-lg font-semibold transition-all duration-300">
-              AI + IT
-            </a>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* IT Services Overview */}
-      <section className="py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div 
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="text-center mb-16"
-          >
-            <h2 className="text-4xl font-bold mb-6 bg-gradient-to-r from-green-400 to-blue-600 bg-clip-text text-transparent">
-              Comprehensive IT Solutions
-            </h2>
-            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              From cloud infrastructure to cybersecurity, we provide end-to-end IT services that modernize your business operations.
-            </p>
-          </motion.div>
-          
-          <div className="grid lg:grid-cols-2 gap-8">
-            {itServices.map((service, index) => (
-              <motion.div 
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: index * 0.1 }}
-                viewport={{ once: true }}
-                className="bg-gray-900/50 p-8 rounded-2xl border border-gray-800 hover:border-green-500/50 transition-all duration-300"
-              >
-                <div className="flex items-center space-x-4 mb-6">
-                  {service.icon}
-                  <h3 className="text-2xl font-bold text-white">{service.title}</h3>
-                </div>
-                <p className="text-gray-300 mb-6">{service.description}</p>
-                
-                <div className="mb-6">
-                  <h4 className="text-lg font-semibold text-green-400 mb-3">Key Features:</h4>
-                  <ul className="space-y-2">
-                    {service.features.map((feature, idx) => (
-                      <li key={idx} className="flex items-center space-x-2 text-gray-300">
-                        <CheckCircle className="w-4 h-4 text-green-400 flex-shrink-0" />
-                        <span>{feature}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-                
-                <div>
-                  <h4 className="text-lg font-semibold text-blue-400 mb-3">Applications:</h4>
-                  <ul className="space-y-2">
-                    {service.applications.map((app, idx) => (
-                      <li key={idx} className="flex items-center space-x-2 text-gray-300">
-                        <CheckCircle className="w-4 h-4 text-blue-400 flex-shrink-0" />
-                        <span>{app}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </motion.div>
-            ))}
+    <Layout>
+      <SEO 
+        title="IT Services & Solutions - Zion Tech Group"
+        description="Comprehensive IT services and solutions for modern enterprises. From infrastructure to cybersecurity, we deliver reliable technology solutions."
+        keywords="IT services, enterprise IT, cybersecurity, cloud solutions, DevOps, data management, network infrastructure"
+      />
+      
+      <main className="relative z-10">
+        {/* Hero Section */}
+        <section className="min-h-[60vh] flex items-center justify-center px-4 py-20">
+          <div className="text-center max-w-4xl mx-auto">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+            >
+              <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-emerald-400 via-teal-500 to-cyan-600 bg-clip-text text-transparent">
+                IT Services & Solutions
+              </h1>
+              <p className="text-xl md:text-2xl text-gray-300 mb-8 max-w-3xl mx-auto">
+                Comprehensive technology solutions that drive business transformation and operational excellence
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <a 
+                  href="/contact" 
+                  className="px-8 py-4 bg-gradient-to-r from-emerald-500 to-teal-600 text-white font-semibold rounded-lg hover:from-emerald-600 hover:to-teal-700 transition-all duration-300 transform hover:scale-105"
+                >
+                  Get Started
+                </a>
+                <a 
+                  href="/contact" 
+                  className="px-8 py-4 border-2 border-emerald-400 text-emerald-400 font-semibold rounded-lg hover:bg-emerald-400 hover:text-black transition-all duration-300 transform hover:scale-105"
+                >
+                  Schedule Demo
+                </a>
+              </div>
+            </motion.div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* IT Advantages */}
-      <section className="py-20 bg-gradient-to-r from-gray-900 to-black">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div 
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="text-center mb-16"
-          >
-            <h2 className="text-4xl font-bold mb-6 bg-gradient-to-r from-green-400 to-blue-600 bg-clip-text text-transparent">
-              Why Choose Our IT Services?
-            </h2>
-            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              Experience the benefits of enterprise-grade IT solutions designed for modern businesses.
-            </p>
-          </motion.div>
-          
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {itAdvantages.map((advantage, index) => (
-              <motion.div 
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: index * 0.1 }}
-                viewport={{ once: true }}
-                className="text-center p-6 bg-gray-800/50 rounded-xl border border-gray-700 hover:border-green-500/50 transition-all duration-300"
-              >
-                <div className="flex justify-center mb-4">{advantage.icon}</div>
-                <h3 className="text-xl font-semibold text-white mb-3">{advantage.title}</h3>
-                <p className="text-gray-300 text-sm">{advantage.description}</p>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Industries We Serve */}
-      <section className="py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div 
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="text-center mb-16"
-          >
-            <h2 className="text-4xl font-bold mb-6 bg-gradient-to-r from-green-400 to-blue-600 bg-clip-text text-transparent">
-              Industries We Serve
-            </h2>
-            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              Our IT solutions are tailored to meet the unique challenges and requirements of diverse industry sectors.
-            </p>
-          </motion.div>
-          
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {industries.map((industry, index) => (
-              <motion.div 
-                key={index}
-                initial={{ opacity: 0, scale: 0.9 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.5, delay: index * 0.05 }}
-                viewport={{ once: true }}
-                className="bg-gray-800/50 p-4 rounded-lg border border-gray-700 hover:border-green-500/50 transition-all duration-300 text-center"
-              >
-                <span className="text-gray-300">{industry}</span>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Technology Stack */}
-      <section className="py-20 bg-gradient-to-r from-gray-900 to-black">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div 
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="text-center mb-16"
-          >
-            <h2 className="text-4xl font-bold mb-6 bg-gradient-to-r from-green-400 to-blue-600 bg-clip-text text-transparent">
-              Our Technology Stack
-            </h2>
-            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              We leverage cutting-edge technologies and tools to deliver robust IT solutions.
-            </p>
-          </motion.div>
-          
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {technologies.map((tech, index) => (
-              <motion.div 
-                key={index}
-                initial={{ opacity: 0, scale: 0.9 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.5, delay: index * 0.05 }}
-                viewport={{ once: true }}
-                className="bg-gray-800/50 p-4 rounded-lg border border-gray-700 hover:border-green-500/50 transition-all duration-300 text-center"
-              >
-                <span className="text-gray-300">{tech}</span>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* IT Implementation Process */}
-      <section className="py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div 
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="text-center mb-16"
-          >
-            <h2 className="text-4xl font-bold mb-6 bg-gradient-to-r from-green-400 to-blue-600 bg-clip-text text-transparent">
-              Our IT Implementation Process
-            </h2>
-            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              A structured approach to successfully implementing IT solutions in your organization.
-            </p>
-          </motion.div>
-          
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {[
-              {
-                step: '01',
-                title: 'Assessment & Planning',
-                description: 'Understanding your current IT infrastructure and business needs',
-                icon: <Monitor className="w-8 h-8 text-green-400" />
-              },
-              {
-                step: '02',
-                title: 'Solution Design',
-                description: 'Designing customized IT solutions that meet your requirements',
-                icon: <Code className="w-8 h-8 text-blue-400" />
-              },
-              {
-                step: '03',
-                title: 'Implementation',
-                description: 'Deploying and configuring IT solutions with minimal disruption',
-                icon: <Server className="w-8 h-8 text-purple-400" />
-              },
-              {
-                step: '04',
-                title: 'Optimization',
-                description: 'Continuous monitoring and optimization of IT systems',
-                icon: <Settings className="w-8 h-8 text-yellow-400" />
-              }
-            ].map((phase, index) => (
-              <motion.div 
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: index * 0.1 }}
-                viewport={{ once: true }}
-                className="text-center"
-              >
-                <div className="w-20 h-20 bg-gradient-to-br from-green-500 to-blue-600 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <span className="text-2xl font-bold text-white">{phase.step}</span>
-                </div>
-                <div className="flex justify-center mb-3">{phase.icon}</div>
-                <h3 className="text-xl font-semibold text-white mb-3">{phase.title}</h3>
-                <p className="text-gray-300 text-sm">{phase.description}</p>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* IT + AI Integration */}
-      <section className="py-20 bg-gradient-to-r from-gray-900 to-black">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div 
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="text-center mb-16"
-          >
-            <h2 className="text-4xl font-bold mb-6 bg-gradient-to-r from-green-400 to-blue-600 bg-clip-text text-transparent">
-              IT + AI Integration
-            </h2>
-            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              Combine the power of traditional IT infrastructure with artificial intelligence to create intelligent, self-managing systems.
-            </p>
-          </motion.div>
-          
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <motion.div 
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
+        {/* IT Capabilities */}
+        <section className="py-20 px-4 bg-gradient-to-b from-black to-gray-900">
+          <div className="max-w-6xl mx-auto">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
               viewport={{ once: true }}
+              className="text-center mb-16"
             >
-              <h3 className="text-3xl font-bold mb-6 text-white">AI-Enhanced IT Operations</h3>
-              <p className="text-lg text-gray-300 mb-6">
-                Our AI-powered IT solutions enable intelligent automation, predictive maintenance, and proactive problem resolution, 
-                reducing downtime and improving system reliability.
+              <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-emerald-400 to-teal-500 bg-clip-text text-transparent">
+                IT Capabilities
+              </h2>
+              <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+                End-to-end IT solutions covering every aspect of modern business technology
               </p>
-              <ul className="space-y-3">
-                {[
-                  'Intelligent Monitoring & Alerting',
-                  'Predictive Maintenance',
-                  'Automated Incident Response',
-                  'Smart Resource Allocation',
-                  'AI-Powered Security'
-                ].map((feature, index) => (
-                  <li key={index} className="flex items-center space-x-2 text-gray-300">
-                    <CheckCircle className="w-5 h-5 text-green-400 flex-shrink-0" />
-                    <span>{feature}</span>
-                  </li>
-                ))}
-              </ul>
             </motion.div>
             
-            <motion.div 
-              initial={{ opacity: 0, x: 20 }}
-              whileInView={{ opacity: 1, x: 0 }}
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {itCapabilities.map((capability, index) => (
+                <motion.div
+                  key={capability.title}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: index * 0.1 }}
+                  viewport={{ once: true }}
+                  className="bg-gradient-to-br from-gray-800 to-gray-900 p-6 rounded-xl border border-gray-700 hover:border-emerald-500 transition-all duration-300"
+                >
+                  <div className="flex items-center mb-4">
+                    <div className="p-2 bg-emerald-500/20 rounded-lg mr-3">
+                      {capability.icon}
+                    </div>
+                    <h3 className="text-xl font-semibold text-white">{capability.title}</h3>
+                  </div>
+                  <p className="text-gray-300">{capability.description}</p>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* IT Services */}
+        <section className="py-20 px-4">
+          <div className="max-w-6xl mx-auto">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
               viewport={{ once: true }}
-              className="text-center"
+              className="text-center mb-16"
             >
-              <div className="w-64 h-64 mx-auto bg-gradient-to-br from-green-500 to-blue-600 rounded-full flex items-center justify-center mb-6">
-                <Cpu className="w-32 h-32 text-white" />
-              </div>
-              <p className="text-gray-300">
-                The future of IT is intelligent, automated, and AI-powered.
+              <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-emerald-400 to-teal-500 bg-clip-text text-transparent">
+                IT Services
+              </h2>
+              <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+                Choose from our comprehensive suite of IT solutions and services
               </p>
             </motion.div>
-          </div>
-        </div>
-      </section>
-
-      {/* Call to Action */}
-      <section className="py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <motion.div 
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-          >
-            <h2 className="text-4xl font-bold mb-6 bg-gradient-to-r from-green-400 to-blue-600 bg-clip-text text-transparent">
-              Ready to Transform Your IT Infrastructure?
-            </h2>
-            <p className="text-xl text-gray-300 mb-8 max-w-3xl mx-auto">
-              Let's discuss how our IT services can modernize your business operations and drive digital transformation.
-            </p>
-            <div className="flex flex-wrap justify-center gap-4">
-              <a href="/contact" className="bg-gradient-to-r from-green-500 to-blue-600 hover:from-green-600 hover:to-blue-700 text-white px-8 py-3 rounded-lg font-semibold transition-all duration-300 flex items-center space-x-2">
-                <span>Start Your IT Transformation</span>
-                <ArrowRight className="w-5 h-5" />
-              </a>
-              <a href="/ai-services" className="border border-green-500 text-green-400 hover:bg-green-500 hover:text-white px-8 py-3 rounded-lg font-semibold transition-all duration-300">
-                Explore AI Services
-              </a>
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {itServices.map((service, index) => (
+                <motion.div
+                  key={service.id}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: index * 0.1 }}
+                  viewport={{ once: true }}
+                  className={`relative bg-gradient-to-br from-gray-800 to-gray-900 p-6 rounded-xl border transition-all duration-300 hover:scale-105 ${
+                    service.popular 
+                      ? 'border-emerald-500 shadow-lg shadow-emerald-500/25' 
+                      : 'border-gray-700 hover:border-emerald-500'
+                  }`}
+                >
+                  {service.popular && (
+                    <div className="absolute -top-3 left-1/2 transform -translate-x-1/2">
+                      <span className="bg-gradient-to-r from-emerald-500 to-teal-600 text-white px-4 py-1 rounded-full text-sm font-semibold">
+                        Most Popular
+                      </span>
+                    </div>
+                  )}
+                  
+                  <div className="text-center mb-6">
+                    <div className="inline-flex p-3 bg-emerald-500/20 rounded-full mb-4">
+                      {service.icon}
+                    </div>
+                    <h3 className="text-2xl font-bold text-white mb-2">{service.name}</h3>
+                    <p className="text-gray-300 mb-4">{service.description}</p>
+                    <div className="text-3xl font-bold text-emerald-400 mb-2">
+                      {service.price}
+                      <span className="text-lg text-gray-400">/{service.period}</span>
+                    </div>
+                  </div>
+                  
+                  <ul className="space-y-3 mb-6">
+                    {service.features.map((feature, featureIndex) => (
+                      <li key={featureIndex} className="flex items-center text-gray-300">
+                        <CheckCircle className="w-5 h-5 text-emerald-400 mr-3 flex-shrink-0" />
+                        {feature}
+                      </li>
+                    ))}
+                  </ul>
+                  
+                  <a 
+                    href="/contact" 
+                    className="w-full block text-center px-6 py-3 bg-gradient-to-r from-emerald-500 to-teal-600 text-white font-semibold rounded-lg hover:from-emerald-600 hover:to-teal-700 transition-all duration-300"
+                  >
+                    Get Started
+                  </a>
+                </motion.div>
+              ))}
             </div>
-          </motion.div>
-        </div>
-      </section>
-    </div>
+          </div>
+        </section>
+
+        {/* CTA Section */}
+        <section className="py-20 px-4 bg-gradient-to-b from-gray-900 to-black">
+          <div className="max-w-4xl mx-auto text-center">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+            >
+              <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-emerald-400 to-teal-500 bg-clip-text text-transparent">
+                Ready to Transform Your IT?
+              </h2>
+              <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
+                Partner with us to build a robust, scalable, and secure technology foundation for your business
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <a 
+                  href="/contact" 
+                  className="px-8 py-4 bg-gradient-to-r from-emerald-500 to-teal-600 text-white font-semibold rounded-lg hover:from-emerald-600 hover:to-teal-700 transition-all duration-300 transform hover:scale-105"
+                >
+                  Start Your IT Transformation
+                </a>
+                <a 
+                  href="/contact" 
+                  className="px-8 py-4 border-2 border-emerald-400 text-emerald-400 font-semibold rounded-lg hover:bg-emerald-400 hover:text-black transition-all duration-300 transform hover:scale-105"
+                >
+                  Schedule Consultation
+                </a>
+              </div>
+            </motion.div>
+          </div>
+        </section>
+      </main>
+    </Layout>
   );
 };
 

@@ -1,4 +1,191 @@
 import React from 'react';
+<<<<<<< HEAD
+import { motion } from 'framer-motion';
+import { Award, TrendingUp, Users, DollarSign, Clock, ArrowRight, Star, CheckCircle, Target, Rocket, Brain, Atom } from 'lucide-react';
+import Layout from '../components/layout/Layout';
+import { motion } from 'framer-motion';
+import { 
+  Award, Star, TrendingUp, Users, Globe, 
+  Search, Filter, ArrowRight, ExternalLink,
+  Brain, Rocket, Shield, Zap, Target, Atom,
+  Building, Cpu, Database, CheckCircle, Clock,
+  DollarSign, BarChart3, PieChart
+} from 'lucide-react';
+
+const caseStudies = [
+  {
+    id: 1,
+    title: 'AI-Powered Financial Trading Platform',
+    client: 'Global Investment Bank',
+    industry: 'Financial Services',
+    challenge: 'Need for real-time market analysis and automated trading decisions',
+    solution: 'Implemented AI consciousness evolution platform with quantum neural networks',
+    results: [
+      '45% increase in trading accuracy',
+      '30% reduction in operational costs',
+      '24/7 autonomous trading operations',
+      '$50M additional revenue generated'
+    ],
+    metrics: {
+      roi: '340%',
+      timeframe: '8 months',
+      teamSize: '15 engineers'
+    },
+    category: 'AI & Finance',
+    featured: true,
+    icon: <Brain className="w-8 h-8 text-cyan-400" />
+  },
+  {
+    id: 2,
+    title: 'Quantum Materials Discovery Platform',
+    client: 'Advanced Materials Corp',
+    industry: 'Manufacturing',
+    challenge: 'Accelerating new material development for aerospace applications',
+    solution: 'Deployed quantum computing platform for molecular simulation and optimization',
+    results: [
+      '10x faster material discovery',
+      'New lightweight alloy developed in 3 months',
+      'Patent applications increased by 200%',
+      'Market leadership in aerospace materials'
+    ],
+    metrics: {
+      roi: '280%',
+      timeframe: '12 months',
+      teamSize: '8 researchers'
+    },
+    category: 'Quantum Computing',
+    featured: true,
+    icon: <Atom className="w-8 h-8 text-purple-400" />
+  },
+  {
+    id: 3,
+    title: 'Space Resource Mining Operations',
+    client: 'Asteroid Mining Ltd',
+    industry: 'Space Technology',
+    challenge: 'Autonomous resource extraction from near-Earth asteroids',
+    solution: 'AI-powered space technology platform with autonomous operations',
+    results: [
+      'First successful asteroid mining mission',
+      '100kg of rare metals extracted',
+      'Zero human casualties or equipment loss',
+      'New industry standard established'
+    ],
+    metrics: {
+      roi: '500%',
+      timeframe: '18 months',
+      teamSize: '25 engineers'
+    },
+    category: 'Space Technology',
+    featured: false,
+    icon: <Rocket className="w-8 h-8 text-orange-400" />
+  },
+  {
+    id: 4,
+    title: 'Zero Trust Security Implementation',
+    client: 'Healthcare Network',
+    industry: 'Healthcare',
+    challenge: 'Protecting patient data against quantum computing threats',
+    solution: 'Quantum-secure cloud infrastructure with zero trust architecture',
+    results: [
+      '100% compliance with healthcare regulations',
+      'Zero security breaches in 2 years',
+      '50% reduction in security incidents',
+      'Enhanced patient trust and confidence'
+    ],
+    metrics: {
+      roi: '220%',
+      timeframe: '6 months',
+      teamSize: '12 security specialists'
+    },
+    category: 'Cybersecurity',
+    featured: false,
+    icon: <Target className="w-8 h-8 text-blue-400" />
+  },
+  {
+    id: 5,
+    title: 'Autonomous Manufacturing Operations',
+    client: 'Automotive Manufacturer',
+    industry: 'Automotive',
+    challenge: '24/7 production line optimization and quality control',
+    solution: 'AI autonomous business operations platform with predictive maintenance',
+    results: [
+      '99.9% production uptime achieved',
+      '25% improvement in product quality',
+      '40% reduction in maintenance costs',
+      'Fully autonomous night shift operations'
+    ],
+    metrics: {
+      roi: '180%',
+      timeframe: '10 months',
+      teamSize: '20 automation engineers'
+    },
+    category: 'Business Automation',
+    featured: false,
+    icon: <TrendingUp className="w-8 h-8 text-green-400" />
+  },
+  {
+    id: 6,
+    title: 'AI Content Personalization Engine',
+    client: 'E-commerce Platform',
+    industry: 'Retail',
+    challenge: 'Personalizing user experience for 10M+ customers',
+    solution: 'AI content personalization engine with real-time learning',
+    results: [
+      '35% increase in conversion rates',
+      '60% improvement in customer engagement',
+      'Personalized recommendations for all users',
+      '$25M additional revenue generated'
+    ],
+    metrics: {
+      roi: '250%',
+      timeframe: '7 months',
+      teamSize: '10 data scientists'
+    },
+    category: 'AI & Marketing',
+    featured: false,
+    icon: <Users className="w-8 h-8 text-pink-400" />
+  }
+];
+
+const categories = [
+  'All Cases',
+  'AI & Finance',
+  'Quantum Computing',
+  'Space Technology',
+  'Cybersecurity',
+  'Business Automation',
+  'AI & Marketing'
+];
+
+const testimonials = [
+  {
+    quote: "Zion Tech Group transformed our trading operations with their AI platform. The results exceeded our expectations.",
+    author: "Sarah Chen",
+    position: "CTO",
+    company: "Global Investment Bank"
+  },
+  {
+    quote: "Their quantum computing solution accelerated our research by 10x. Game-changing technology.",
+    author: "Dr. Michael Rodriguez",
+    position: "Head of Research",
+    company: "Advanced Materials Corp"
+  },
+  {
+    quote: "The autonomous space operations platform made asteroid mining a reality. Incredible achievement.",
+    author: "Alex Thompson",
+    position: "CEO",
+    company: "Asteroid Mining Ltd"
+  }
+];
+
+  return (
+    <Layout>
+      <main className="relative z-10 pt-8">
+        {/* Hero Section */}
+        <section className="relative py-20 px-4 overflow-hidden">
+          <div className="absolute inset-0 bg-gradient-to-r from-green-500/10 via-blue-500/10 to-purple-500/10" />
+          <div className="relative z-10 max-w-7xl mx-auto text-center">
+=======
 import Layout from '../components/layout/Layout';
 import SEO from '../components/SEO';
 import { motion } from 'framer-motion';
@@ -158,16 +345,27 @@ const CaseStudiesPage: React.FC = () => {
         {/* Hero Section */}
         <section className="min-h-[60vh] flex items-center justify-center px-4 py-20">
           <div className="text-center max-w-4xl mx-auto">
+>>>>>>> origin/cursor/website-audit-content-update-and-deployment-8ae6
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
+<<<<<<< HEAD
+              className="mb-8"
+            >
+              <h1 className="text-5xl md:text-7xl font-bold bg-gradient-to-r from-green-400 via-blue-500 to-purple-600 bg-clip-text text-transparent mb-6">
+                Case Studies
+              </h1>
+              <p className="text-xl md:text-2xl text-gray-300 max-w-4xl mx-auto leading-relaxed">
+                Real-world success stories showcasing how our revolutionary technology solutions transform businesses
+=======
             >
               <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-violet-400 via-purple-500 to-fuchsia-600 bg-clip-text text-transparent">
                 Case Studies
               </h1>
               <p className="text-xl md:text-2xl text-gray-300 mb-8 max-w-3xl mx-auto">
                 Explore real-world success stories and implementations of our technology solutions across various industries
+>>>>>>> origin/cursor/website-audit-content-update-and-deployment-8ae6
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <a 
@@ -185,6 +383,27 @@ const CaseStudiesPage: React.FC = () => {
               </div>
             </motion.div>
 
+<<<<<<< HEAD
+            {/* Categories */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              className="flex flex-wrap justify-center gap-3"
+            >
+              {categories.map((category, index) => (
+                <button
+                  key={category}
+                  className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 ${
+                    index === 0
+                      ? 'bg-gradient-to-r from-green-500 to-blue-600 text-white'
+                      : 'bg-gray-800/50 text-gray-300 hover:bg-gray-700/50 hover:text-white'
+                  }`}
+                >
+                  {category}
+                </button>
+              ))}
+=======
         {/* Case Study Categories */}
         <section className="py-20 px-4 bg-gradient-to-b from-black to-gray-900">
           <div className="max-w-6xl mx-auto">
@@ -201,6 +420,7 @@ const CaseStudiesPage: React.FC = () => {
               <p className="text-xl text-gray-300 max-w-3xl mx-auto">
                 Explore success stories across different technology domains
               </p>
+>>>>>>> origin/cursor/website-audit-content-update-and-deployment-8ae6
             </motion.div>
             
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -228,8 +448,13 @@ const CaseStudiesPage: React.FC = () => {
         </section>
 
         {/* Featured Case Studies */}
+<<<<<<< HEAD
+        <section className="py-20 px-4">
+          <div className="max-w-7xl mx-auto">
+=======
         <section id="featured" className="py-20 px-4">
           <div className="max-w-6xl mx-auto">
+>>>>>>> origin/cursor/website-audit-content-update-and-deployment-8ae6
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -237,6 +462,18 @@ const CaseStudiesPage: React.FC = () => {
               viewport={{ once: true }}
               className="text-center mb-16"
             >
+<<<<<<< HEAD
+              <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-green-400 to-blue-500 bg-clip-text text-transparent mb-6">
+                Featured Success Stories
+              </h2>
+              <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+                Our most impactful implementations that demonstrate the power of our technology
+              </p>
+            </motion.div>
+
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-16">
+              {caseStudies.filter(study => study.featured).map((study, index) => (
+=======
               <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-violet-400 to-purple-500 bg-clip-text text-transparent">
                 Featured Case Studies
               </h2>
@@ -247,12 +484,23 @@ const CaseStudiesPage: React.FC = () => {
             
             <div className="space-y-12">
               {featuredCaseStudies.map((caseStudy, index) => (
+>>>>>>> origin/cursor/website-audit-content-update-and-deployment-8ae6
                 <motion.article
                   key={caseStudy.id}
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: index * 0.1 }}
                   viewport={{ once: true }}
+<<<<<<< HEAD
+                  className="group bg-gradient-to-br from-gray-800/50 to-gray-900/50 backdrop-blur-sm border border-gray-700/50 rounded-2xl p-8 hover:border-green-400/50 transition-all duration-300 hover:transform hover:scale-105"
+                >
+                  <div className="flex items-center gap-4 mb-6">
+                    {study.icon}
+                    <div>
+                      <span className="px-3 py-1 bg-green-500/20 text-green-400 text-xs font-semibold rounded-full border border-green-500/30">
+                        Featured
+                      </span>
+=======
                   className="bg-gradient-to-br from-gray-800 to-gray-900 rounded-xl border border-gray-700 hover:border-violet-500 transition-all duration-300 overflow-hidden"
                 >
                   <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
@@ -289,6 +537,7 @@ const CaseStudiesPage: React.FC = () => {
                           ))}
                         </ul>
                       </div>
+>>>>>>> origin/cursor/website-audit-content-update-and-deployment-8ae6
                     </div>
                   </div>
 
@@ -422,9 +671,15 @@ const CaseStudiesPage: React.FC = () => {
           </div>
         </section>
 
+<<<<<<< HEAD
+        {/* Testimonials */}
+        <section className="py-20 px-4">
+          <div className="max-w-7xl mx-auto">
+=======
         {/* Recent Case Studies */}
         <section className="py-20 px-4 bg-gradient-to-b from-gray-900 to-black">
           <div className="max-w-6xl mx-auto">
+>>>>>>> origin/cursor/website-audit-content-update-and-deployment-8ae6
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -432,6 +687,20 @@ const CaseStudiesPage: React.FC = () => {
               viewport={{ once: true }}
               className="text-center mb-16"
             >
+<<<<<<< HEAD
+              <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-purple-400 to-green-500 bg-clip-text text-transparent mb-6">
+                Client Testimonials
+              </h2>
+              <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+                Hear directly from our clients about their experience with Zion Tech Group
+              </p>
+            </motion.div>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              {testimonials.map((testimonial, index) => (
+                <motion.div
+                  key={study.id}
+=======
               <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-violet-400 to-purple-500 bg-clip-text text-transparent">
                 Recent Case Studies
               </h2>
@@ -444,10 +713,27 @@ const CaseStudiesPage: React.FC = () => {
               {recentCaseStudies.map((caseStudy, index) => (
                 <motion.article
                   key={caseStudy.id}
+>>>>>>> origin/cursor/website-audit-content-update-and-deployment-8ae6
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: index * 0.1 }}
                   viewport={{ once: true }}
+<<<<<<< HEAD
+                  className="bg-gradient-to-br from-gray-800/50 to-gray-900/50 backdrop-blur-sm border border-gray-700/50 rounded-2xl p-8 text-center"
+                >
+                  <div className="flex justify-center mb-4">
+                    {[...Array(5)].map((_, i) => (
+                      <Star key={i} className="w-5 h-5 text-yellow-400 fill-current" />
+                    ))}
+                  </div>
+                  <blockquote className="text-gray-300 mb-6 italic">
+                    "{testimonial.quote}"
+                  </blockquote>
+                  <div>
+                    <div className="font-semibold text-white">{testimonial.author}</div>
+                    <div className="text-sm text-gray-400">{testimonial.position}</div>
+                    <div className="text-sm text-gray-400">{testimonial.company}</div>
+=======
                   className="bg-gradient-to-br from-gray-800 to-gray-900 p-6 rounded-xl border border-gray-700 hover:border-violet-500 transition-all duration-300"
                 >
                   <div className="flex items-center gap-2 mb-3">
@@ -467,6 +753,7 @@ const CaseStudiesPage: React.FC = () => {
                       <h4 className="text-sm font-semibold text-violet-400 mb-1">Solution</h4>
                       <p className="text-gray-300 text-sm">{caseStudy.solution}</p>
                     </div>
+>>>>>>> origin/cursor/website-audit-content-update-and-deployment-8ae6
                   </div>
                   <div>
                     <h4 className="text-sm font-semibold text-violet-400 mb-2">Results</h4>
@@ -494,6 +781,24 @@ const CaseStudiesPage: React.FC = () => {
               transition={{ duration: 0.8 }}
               viewport={{ once: true }}
             >
+<<<<<<< HEAD
+              <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-green-400 to-purple-500 bg-clip-text text-transparent mb-6">
+                Ready to Write Your Success Story?
+              </h2>
+              <p className="text-xl text-gray-300 mb-8">
+                Let's discuss how our revolutionary technology solutions can transform your business
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <a
+                  href="/contact"
+                  className="px-8 py-4 bg-gradient-to-r from-green-500 to-blue-600 text-white font-semibold rounded-lg hover:from-green-600 hover:to-blue-700 transition-all duration-300 transform hover:scale-105"
+                >
+                  Start Your Project
+                </a>
+                <a
+                  href="/contact"
+                  className="px-8 py-4 border-2 border-green-400 text-green-400 font-semibold rounded-lg hover:bg-green-400 hover:text-black transition-all duration-300 transform hover:scale-105"
+=======
               <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-violet-400 to-purple-500 bg-clip-text text-transparent">
                 Ready to Create Your Success Story?
               </h2>
@@ -510,6 +815,7 @@ const CaseStudiesPage: React.FC = () => {
                 <a 
                   href="/contact" 
                   className="px-8 py-4 border-2 border-violet-400 text-violet-400 font-semibold rounded-lg hover:bg-violet-400 hover:text-black transition-all duration-300 transform hover:scale-105"
+>>>>>>> origin/cursor/website-audit-content-update-and-deployment-8ae6
                 >
                   Schedule Consultation
                 </a>
@@ -522,4 +828,8 @@ const CaseStudiesPage: React.FC = () => {
   );
 };
 
+<<<<<<< HEAD
 export default CaseStudiesPage;
+=======
+export default CaseStudiesPage;
+>>>>>>> origin/cursor/website-audit-content-update-and-deployment-8ae6
