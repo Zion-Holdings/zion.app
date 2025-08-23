@@ -30,9 +30,7 @@ interface SharedWhitepaper {
 }
 
 const WhitepaperViewPage: React.FC = () => {
-  const router = useRouter();
-  const { id: rawId } = router.query;
-  const id = typeof rawId === 'string' ? rawId : undefined;
+  const { id } = useParams() as { id?: string };
   const [sharedData, setSharedData] = useState<SharedWhitepaper | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);

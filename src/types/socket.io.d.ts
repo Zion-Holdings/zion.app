@@ -4,7 +4,7 @@ declare module 'socket.io' {
 }
 
 declare module 'socket.io-client' {
-  export function io(...args: unknown[]): unknown;
-  const defaultExport: unknown;
+  export function io(...args: any[]): any;
+  const defaultExport: any;
   export default defaultExport;
 }

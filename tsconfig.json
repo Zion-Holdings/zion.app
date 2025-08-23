@@ -19,7 +19,6 @@
       "notistack": ["./src/stubs/notistack.ts"],
       "@sentry/browser": ["./src/stubs/sentry.ts"]
     },
-    "typeRoots": ["./src/types"],
 
     /* Bundler mode */
     "moduleResolution": "bundler",
