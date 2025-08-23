@@ -639,8 +639,11 @@ const Homepage2043: React.FC = () => {
                   }>
                     <ServiceCard
                       service={service}
+<<<<<<< HEAD
+=======
                       onClick={() => handleServiceClick(service)}
                       className="h-full"
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-91b1
                     />
                   </Suspense>
                 </motion.div>
