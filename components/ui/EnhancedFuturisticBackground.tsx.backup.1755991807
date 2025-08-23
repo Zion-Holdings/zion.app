@@ -3,7 +3,11 @@ import { motion } from 'framer-motion';
 
 interface EnhancedFuturisticBackgroundProps {
   children: React.ReactNode;
+<<<<<<< HEAD
+  variant?: 'holographic-advanced' | 'quantum-holographic' | 'neural-quantum' | 'cyber-futuristic' | 'quantum-entanglement' | 'neural-cyber';
+=======
   variant?: 'neural' | 'quantum' | 'holographic' | 'cyberpunk' | 'quantum-advanced' | 'holographic-advanced' | 'quantum-holographic' | 'neural-quantum' | 'quantum-cyberpunk' | 'holographic-neural' | 'quantum-holographic-advanced' | 'quantum-financial' | 'biomedical-ai' | 'autonomous-systems' | 'quantum-materials' | 'climate-quantum' | 'energy-optimization' | 'manufacturing-intelligence';
+>>>>>>> origin/cursor/enhance-app-services-and-website-with-futuristic-design-bcf6
   intensity?: 'low' | 'medium' | 'high';
   className?: string;
 }
@@ -51,6 +55,18 @@ const EnhancedFuturisticBackground: React.FC<EnhancedFuturisticBackgroundProps> 
       type: 'quantum' | 'holographic' | 'neural' | 'cyber' | 'entanglement' | 'neural-cyber';
       connections: Particle[];
 
+<<<<<<< HEAD
+      constructor(type: 'quantum' | 'holographic' | 'neural' | 'cyber' | 'entanglement' | 'neural-cyber') {
+        this.type = type;
+        this.x = Math.random() * width;
+        this.y = Math.random() * height;
+        this.vx = (Math.random() - 0.5) * 2;
+        this.vy = (Math.random() - 0.5) * 2;
+        this.size = Math.random() * 3 + 1;
+        this.maxLife = Math.random() * 100 + 50;
+        this.life = this.maxLife;
+        this.connections = [];
+=======
     // Create particles based on variant
     const createParticles = () => {
       const particleCount = intensity === 'high' ? 600 : intensity === 'medium' ? 350 : 180;
@@ -338,6 +354,7 @@ const EnhancedFuturisticBackground: React.FC<EnhancedFuturisticBackgroundProps> 
         particle.cyberpunkGlow += 0.03;
         particle.quantumEntanglement += 0.015;
         particle.neuralSynapse += 0.025;
+>>>>>>> origin/cursor/enhance-app-services-and-website-with-futuristic-design-bcf6
         
         switch (type) {
           case 'quantum':

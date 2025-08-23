@@ -21,7 +21,11 @@ interface EnhancedFuturisticCardProps {
     website: string;
   };
   className?: string;
+<<<<<<< HEAD
+  variant?: 'holographic' | 'cyberpunk' | 'quantum' | 'neural' | 'matrix' | 'holographic-matrix' | 'quantum-cyberpunk';
+=======
   variant?: 'default' | 'holographic' | 'quantum' | 'cyberpunk' | 'neural' | 'quantum-holographic' | 'quantum-cyberpunk' | 'holographic-neural' | 'quantum-advanced' | 'holographic-advanced' | 'quantum-holographic-advanced';
+>>>>>>> origin/cursor/enhance-app-services-and-website-with-futuristic-design-bcf6
   intensity?: 'low' | 'medium' | 'high';
   interactive?: boolean;
   glowColor?: string;
@@ -115,6 +119,16 @@ export default function EnhancedFuturisticCard({
     return baseStyles[variant] || baseStyles.holographic;
   };
 
+<<<<<<< HEAD
+  const getBackgroundStyle = () => {
+    switch (background) {
+      case 'glass':
+        return 'backdrop-blur-md bg-white/5';
+      case 'solid':
+        return 'bg-gray-900/80';
+      case 'gradient':
+        return 'bg-gradient-to-br from-gray-900/80 to-black/80';
+=======
     let time = 0;
     const particles: Array<{
       x: number;
@@ -333,6 +347,7 @@ export default function EnhancedFuturisticCard({
         return `${baseStyles} bg-gradient-to-br from-blue-500/20 to-cyan-600/20 border-blue-500/30 shadow-lg shadow-blue-500/20`;
       case 'quantum-holographic':
         return `${baseStyles} bg-gradient-to-br from-indigo-500/20 to-purple-600/20 border-indigo-500/30 shadow-lg shadow-indigo-500/20`;
+>>>>>>> origin/cursor/enhance-app-services-and-website-with-futuristic-design-bcf6
       default:
         return 'backdrop-blur-md bg-white/5';
     }
