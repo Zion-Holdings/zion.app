@@ -136,6 +136,20 @@ const navigationItems: NavigationItem[] = [
     neonColor: 'shadow-yellow-400/50'
   },
   {
+    label: 'Case Studies',
+    href: '/case-studies',
+    icon: <Target className="w-4 h-4" />,
+    description: 'View our success stories and client results',
+    neonColor: 'shadow-green-400/50'
+  },
+  {
+    label: 'Careers',
+    href: '/careers',
+    icon: <Users className="w-4 h-4" />,
+    description: 'Join our team and build the future',
+    neonColor: 'shadow-purple-400/50'
+  },
+  {
     label: 'Resources',
     href: '/resources',
     icon: <BookOpen className="w-4 h-4" />,
