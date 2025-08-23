@@ -2,14 +2,13 @@ import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { motion, AnimatePresence } from 'framer-motion';
 import { 
-  Menu, ChevronDown, X, Phone, Mail, MapPin, ArrowRight,
+  Menu, ChevronDown, X, Phone, Mail, ArrowRight,
   Brain, Rocket, Target, Atom, Shield,
-  DollarSign, BarChart3, Globe, Star, Sparkles, 
-  Grid, List, TrendingUp, 
-  Calendar, Calculator, GraduationCap,
-  Cpu, Cloud, Settings, Monitor, Palette, Network, Layers, Code, Heart, ShoppingCart, Clock, MessageCircle, HelpCircle, Building,
-  Zap, Infinity, Eye, Heart as HeartIcon, Code as CodeIcon, Palette as PaletteIcon,
-  BookOpen, FileText, Handshake
+  BarChart3, 
+  Grid, 
+  Heart as HeartIcon, Code as CodeIcon, Palette as PaletteIcon,
+  BookOpen, FileText, Handshake, Workflow,
+  Network, Cloud, Cpu, Heart, TrendingUp, Monitor, ShoppingCart, Building, MessageCircle, HelpCircle, GraduationCap, Star, Zap
 } from 'lucide-react';
 
 interface NavigationItem {
@@ -138,6 +137,36 @@ const navigationItems: NavigationItem[] = [
         href: '/ai-ethics-governance-2041',
         description: 'Comprehensive AI ethics framework',
         icon: <Shield className="w-4 h-4" />
+      },
+      {
+        name: 'AI Consciousness Evolution',
+        href: '/ai-consciousness-evolution',
+        description: 'AI consciousness research and development',
+        icon: <Brain className="w-4 h-4" />
+      },
+      {
+        name: 'AI Autonomous Ecosystem',
+        href: '/ai-autonomous-ecosystem',
+        description: 'Self-organizing AI agent networks',
+        icon: <Network className="w-4 h-4" />
+      },
+      {
+        name: 'AI Autonomous Robotics Platform',
+        href: '/ai-autonomous-robotics-platform',
+        description: 'Intelligent robotics automation',
+        icon: <Rocket className="w-4 h-4" />
+      },
+      {
+        name: 'AI Content Factory Pro',
+        href: '/ai-content-factory-pro',
+        description: 'Enterprise content creation platform',
+        icon: <FileText className="w-4 h-4" />
+      },
+      {
+        name: 'AI Autonomous Business Process Automation',
+        href: '/ai-autonomous-business-process-automation',
+        description: 'Intelligent process automation',
+        icon: <Workflow className="w-4 h-4" />
       }
     ]
   },

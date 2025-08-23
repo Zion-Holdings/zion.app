@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { 
   Globe, Phone, Mail, MapPin, 
-  Brain, Atom, Shield, Rocket, Target, 
+  Brain, Atom, Target, 
   Star, 
   Twitter, Linkedin, Youtube, Github, 
   ArrowUp, ArrowRight, ExternalLink
@@ -25,7 +25,12 @@ const footerSections = [
       { name: 'AI Autonomous Research 2041', href: '/ai-autonomous-research-2041' },
       { name: 'Quantum Internet Security 2041', href: '/quantum-internet-security-2041' },
       { name: 'AI Customer Success 2041', href: '/ai-customer-success-2041' },
-      { name: 'AI Sales Intelligence 2041', href: '/ai-sales-intelligence-2041' }
+      { name: 'AI Sales Intelligence 2041', href: '/ai-sales-intelligence-2041' },
+      { name: 'AI Consciousness Evolution', href: '/ai-consciousness-evolution' },
+      { name: 'AI Autonomous Ecosystem', href: '/ai-autonomous-ecosystem' },
+      { name: 'AI Autonomous Robotics Platform', href: '/ai-autonomous-robotics-platform' },
+      { name: 'AI Content Factory Pro', href: '/ai-content-factory-pro' },
+      { name: 'AI Autonomous Business Process Automation', href: '/ai-autonomous-business-process-automation' }
     ]
   },
   {

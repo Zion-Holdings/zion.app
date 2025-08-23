@@ -166,19 +166,47 @@ export default function ServicesIndexPage() {
     'price' in service
   );
 
+  // Transform services to match the component interface
+  const transformedServices = validServices.map((service: any) => {
+    let priceString = 'Contact for pricing';
+    let period = '';
+    
+    if (service.price && typeof service.price === 'object') {
+      if (service.price.monthly) {
+        priceString = `$${service.price.monthly}`;
+        period = '/month';
+      } else if (service.price.yearly) {
+        priceString = `$${service.price.yearly}`;
+        period = '/year';
+      } else if (service.price.starter) {
+        priceString = String(service.price.starter);
+        period = '';
+      }
+    } else if (typeof service.price === 'string') {
+      priceString = service.price;
+      period = '';
+    }
+    
+    return {
+      ...service,
+      price: priceString,
+      period: period
+    };
+  });
+
   // Group services by category
   const servicesByCategory = categories.reduce((acc, category) => {
-    acc[category] = validServices.filter((service: any) => 
+    acc[category] = transformedServices.filter((service: any) => 
       service.category && service.category.toLowerCase().includes(category.toLowerCase().replace(/\s+/g, ''))
     );
     return acc;
   }, {} as Record<string, any[]>);
 
   // Get featured services (marked as popular)
-  const featuredServices = validServices.filter((service: any) => service.popular).slice(0, 6);
+  const featuredServices = transformedServices.filter((service: any) => service.popular).slice(0, 6);
 
   // Get latest services (assuming they have a launchDate)
-  const latestServices = validServices
+  const latestServices = transformedServices
     .filter((service: any) => service.launchDate)
     .sort((a: any, b: any) => new Date(b.launchDate).getTime() - new Date(a.launchDate).getTime())
     .slice(0, 6);
@@ -204,7 +232,7 @@ export default function ServicesIndexPage() {
               </p>
               <div className="mt-8 flex flex-wrap justify-center gap-4">
                 <span className="px-4 py-2 bg-gradient-to-r from-cyan-500/20 to-blue-500/20 border border-cyan-500/30 rounded-full text-cyan-300">
-                  {validServices.length}+ Services
+                  {transformedServices.length}+ Services
                 </span>
                 <span className="px-4 py-2 bg-gradient-to-r from-purple-500/20 to-pink-500/20 border border-purple-500/30 rounded-full text-purple-300">
                   {categories.length} Categories
