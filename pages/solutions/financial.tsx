@@ -1,196 +1,137 @@
 import React from 'react';
-import SEO from '../../components/SEO';
-import { motion } from 'framer-motion';
+import Head from 'next/head';
 import { 
-  TrendingUp, 
-  Brain, 
-  Shield, 
-  Database, 
-  Cloud, 
-  ArrowRight,
-  CheckCircle,
-  Star,
-  DollarSign,
-  Globe,
-  Rocket,
-  Activity,
-  Zap,
-  Lock,
-  BarChart3,
-  Cpu
+  DollarSign, Brain, Shield, Zap, BarChart3, Cpu, 
+  CheckCircle, ArrowRight, Star, TrendingUp, Award, Clock
 } from 'lucide-react';
-import UltraFuturisticBackground from '../../components/ui/UltraFuturisticBackground';
+import { UltraFuturisticBackground } from '../../components/UltraFuturisticBackground';
 
 const FinancialSolutionsPage: React.FC = () => {
   const solutions = [
     {
+      icon: <Brain className="w-6 h-6" />,
       title: 'AI Financial Intelligence',
-      description: 'Advanced AI algorithms for financial analysis and decision making',
-      icon: <Brain className="w-8 h-8" />,
-      features: ['Risk Assessment', 'Portfolio Optimization', 'Market Prediction', 'Fraud Detection'],
-      href: '/ai-financial-intelligence',
-      color: 'from-purple-500 to-pink-500'
+      description: 'Advanced AI algorithms for financial analysis and decision making'
     },
     {
+      icon: <Zap className="w-6 h-6" />,
       title: 'Quantum Financial Trading',
-      description: 'Quantum-powered trading algorithms for superior market performance',
-      icon: <Cpu className="w-8 h-8" />,
-      features: ['High-Frequency Trading', 'Quantum Risk Models', 'Market Arbitrage', 'Portfolio Rebalancing'],
-      href: '/quantum-financial-trading-platform',
-      color: 'from-blue-500 to-cyan-500'
+      description: 'Quantum computing-powered trading algorithms and risk management'
     },
     {
+      icon: <BarChart3 className="w-6 h-6" />,
       title: 'Financial Analytics Platform',
-      description: 'Comprehensive data analytics for financial insights and optimization',
-      icon: <BarChart3 className="w-8 h-8" />,
-      features: ['Real-time Analytics', 'Predictive Modeling', 'Compliance Reporting', 'Performance Tracking'],
-      href: '/financial-analytics-platform',
-      color: 'from-green-500 to-emerald-500'
+      description: 'Comprehensive data analytics for financial institutions'
     },
     {
+      icon: <Shield className="w-6 h-6" />,
       title: 'Blockchain Infrastructure',
-      description: 'Secure and scalable blockchain solutions for financial services',
-      icon: <Shield className="w-8 h-8" />,
-      features: ['Smart Contracts', 'DeFi Platforms', 'Cross-border Payments', 'Asset Tokenization'],
-      href: '/blockchain-infrastructure-platform',
-      color: 'from-red-500 to-orange-500'
+      description: 'Secure blockchain solutions for financial transactions'
     },
     {
+      icon: <Cpu className="w-6 h-6" />,
       title: 'RegTech Solutions',
-      description: 'Regulatory technology for compliance and risk management',
-      icon: <Lock className="w-8 h-8" />,
-      features: ['KYC/AML Automation', 'Regulatory Reporting', 'Risk Monitoring', 'Compliance Auditing'],
-      href: '/regtech-solutions',
-      color: 'from-indigo-500 to-blue-500'
+      description: 'Automated regulatory compliance and reporting systems'
     }
-  ];
-
-  const stats = [
-    { label: 'Financial Institutions', value: '150+', icon: <DollarSign className="w-6 h-6" /> },
-    { label: 'Assets Under Management', value: '$50B+', icon: <TrendingUp className="w-6 h-6" /> },
-    { label: 'AI Accuracy Rate', value: '99.8%', icon: <Star className="w-6 h-6" /> },
-    { label: 'Compliance Standards', value: '100%', icon: <CheckCircle className="w-6 h-6" /> }
   ];
 
   const features = [
     {
-      icon: <Lock className="w-6 h-6" />,
+      icon: <CheckCircle className="w-5 h-5" />,
+      title: 'Regulatory Compliant',
+      description: 'Full compliance with financial regulations and standards'
+    },
+    {
+      icon: <Shield className="w-5 h-5" />,
       title: 'Bank-Grade Security',
-      description: 'Enterprise-level security with multi-layer encryption'
+      description: 'Military-grade encryption and security protocols'
     },
     {
-      icon: <Zap className="w-6 h-6" />,
-      title: 'Real-time Processing',
-      description: 'Instant financial analysis and decision support'
+      icon: <TrendingUp className="w-5 h-5" />,
+      title: 'Real-Time Processing',
+      description: 'Ultra-fast transaction processing and analytics'
     },
     {
-      icon: <Globe className="w-6 h-6" />,
-      title: 'Global Compliance',
-      description: 'Meets international financial regulations'
-    },
-    {
-      icon: <Rocket className="w-6 h-6" />,
-      title: 'Scalable Architecture',
-      description: 'Grows with your financial institution needs'
+      icon: <Clock className="w-5 h-5" />,
+      title: '24/7 Monitoring',
+      description: 'Round-the-clock system monitoring and support'
     }
   ];
 
   return (
-    <UltraFuturisticBackground variant="quantum">
-      <div className="min-h-screen">
-        <SEO 
-          title="Financial Solutions - Zion Tech Group | AI-Powered Financial Technology" 
-          description="Transform financial services with Zion Tech Group's AI intelligence, quantum trading, analytics, blockchain, and RegTech solutions. Bank-grade security and global compliance." 
-          canonical="https://ziontechgroup.com/solutions/financial/" 
-        />
+    <>
+      <Head>
+        <title>Financial Services Solutions | Zion Tech Group</title>
+        <meta name="description" content="Revolutionary AI and quantum-powered financial solutions. Advanced trading algorithms, analytics, and blockchain infrastructure for the future of finance." />
+        <meta name="keywords" content="financial AI, quantum trading, fintech, blockchain, regtech, financial analytics" />
+        <meta property="og:title" content="Financial Services Solutions | Zion Tech Group" />
+        <meta property="og:description" content="Revolutionary AI and quantum-powered financial solutions for the future of finance." />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://ziontechgroup.com/solutions/financial" />
+        <link rel="canonical" href="https://ziontechgroup.com/solutions/financial" />
+      </Head>
 
+      <UltraFuturisticBackground />
+
+      <div className="min-h-screen bg-black text-white relative z-10">
         {/* Hero Section */}
-        <section className="relative pt-32 pb-20 px-4 sm:px-6 lg:px-8">
+        <section className="pt-32 pb-20 px-4 sm:px-6 lg:px-8">
           <div className="max-w-7xl mx-auto text-center">
-            <motion.h1 
-              className="text-5xl md:text-7xl font-bold bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 bg-clip-text text-transparent mb-6"
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-            >
-              Financial Solutions
-            </motion.h1>
-            <motion.p 
-              className="text-xl md:text-2xl text-gray-300 max-w-4xl mx-auto mb-12"
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-            >
-              Revolutionizing financial services with AI-powered intelligence, quantum computing, advanced analytics, and blockchain technology. Drive growth, reduce risk, and ensure compliance.
-            </motion.p>
+            <div className="mb-8">
+              <div className="inline-flex items-center space-x-2 px-4 py-2 bg-gradient-to-r from-green-500/20 to-emerald-500/20 border border-green-500/30 rounded-full text-green-400 text-sm font-medium mb-6">
+                <DollarSign className="w-4 h-4" />
+                <span>Financial Services Solutions</span>
+              </div>
+            </div>
             
-            {/* Stats Grid */}
-            <motion.div 
-              className="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl mx-auto"
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.4 }}
-            >
-              {stats.map((stat, index) => (
-                <div key={stat.label} className="text-center">
-                  <div className="flex justify-center mb-2 text-cyan-400">
-                    {stat.icon}
-                  </div>
-                  <div className="text-2xl font-bold text-white mb-1">
-                    {stat.value}
-                  </div>
-                  <div className="text-sm text-gray-400">
-                    {stat.label}
-                  </div>
-                </div>
-              ))}
-            </motion.div>
+            <h1 className="text-5xl md:text-7xl font-bold mb-8 bg-gradient-to-r from-green-400 via-emerald-400 to-teal-400 bg-clip-text text-transparent">
+              Revolutionizing Finance with AI & Quantum
+            </h1>
+            
+            <p className="text-xl md:text-2xl text-white/80 mb-12 max-w-4xl mx-auto leading-relaxed">
+              Transform financial services with cutting-edge AI algorithms, quantum computing, and blockchain technology. 
+              Join the future of fintech innovation.
+            </p>
+
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <button className="px-8 py-4 bg-gradient-to-r from-green-500 to-emerald-500 text-white font-semibold rounded-xl hover:from-green-600 hover:to-emerald-600 transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-green-500/25">
+                Get Started
+              </button>
+              <button className="px-8 py-4 border border-white/20 text-white font-semibold rounded-xl hover:bg-white/10 transition-all duration-300">
+                Learn More
+              </button>
+            </div>
           </div>
         </section>
 
         {/* Solutions Grid */}
         <section className="py-20 px-4 sm:px-6 lg:px-8">
           <div className="max-w-7xl mx-auto">
-            <motion.h2 
-              className="text-4xl font-bold text-center text-white mb-16"
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-              viewport={{ once: true }}
-            >
-              Our Financial Solutions
-            </motion.h2>
-            
+            <div className="text-center mb-16">
+              <h2 className="text-4xl md:text-5xl font-bold mb-6">
+                Our Financial Solutions
+              </h2>
+              <p className="text-xl text-white/70 max-w-3xl mx-auto">
+                Comprehensive AI and quantum-powered solutions designed to transform financial services and drive innovation.
+              </p>
+            </div>
+
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {solutions.map((solution, index) => (
-                <motion.div
-                  key={solution.title}
-                  className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-6 hover:border-cyan-400/50 transition-all duration-300 hover:scale-105"
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.8, delay: index * 0.1 }}
-                  viewport={{ once: true }}
+                <div
+                  key={index}
+                  className="group p-8 bg-white/5 border border-white/10 rounded-2xl hover:bg-white/10 transition-all duration-300 hover:border-green-500/30"
                 >
-                  <div className={`w-16 h-16 rounded-xl bg-gradient-to-r ${solution.color} flex items-center justify-center mb-4`}>
+                  <div className="w-16 h-16 bg-gradient-to-r from-green-500/20 to-emerald-500/20 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
                     {solution.icon}
                   </div>
-                  <h3 className="text-xl font-semibold text-white mb-3">{solution.title}</h3>
-                  <p className="text-gray-300 mb-4">{solution.description}</p>
-                  <ul className="space-y-2 mb-6">
-                    {solution.features.map((feature) => (
-                      <li key={feature} className="flex items-center text-sm text-gray-400">
-                        <CheckCircle className="w-4 h-4 text-cyan-400 mr-2 flex-shrink-0" />
-                        {feature}
-                      </li>
-                    ))}
-                  </ul>
-                  <a
-                    href={solution.href}
-                    className="inline-flex items-center text-cyan-400 hover:text-cyan-300 transition-colors duration-300"
-                  >
-                    Learn More <ArrowRight className="w-4 h-4 ml-2" />
-                  </a>
-                </motion.div>
+                  <h3 className="text-xl font-semibold mb-4 text-white group-hover:text-green-400 transition-colors duration-300">
+                    {solution.title}
+                  </h3>
+                  <p className="text-white/70 leading-relaxed">
+                    {solution.description}
+                  </p>
+                </div>
               ))}
             </div>
           </div>
@@ -199,32 +140,30 @@ const FinancialSolutionsPage: React.FC = () => {
         {/* Features Section */}
         <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white/5">
           <div className="max-w-7xl mx-auto">
-            <motion.h2 
-              className="text-4xl font-bold text-center text-white mb-16"
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-              viewport={{ once: true }}
-            >
-              Why Choose Our Financial Solutions?
-            </motion.h2>
-            
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div className="text-center mb-16">
+              <h2 className="text-4xl md:text-5xl font-bold mb-6">
+                Why Choose Our Solutions?
+              </h2>
+              <p className="text-xl text-white/70 max-w-3xl mx-auto">
+                Built with financial professionals in mind, our solutions prioritize security, compliance, and performance.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               {features.map((feature, index) => (
-                <motion.div
-                  key={feature.title}
-                  className="text-center"
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.8, delay: index * 0.1 }}
-                  viewport={{ once: true }}
-                >
-                  <div className="w-16 h-16 rounded-xl bg-gradient-to-r from-cyan-500 to-blue-500 flex items-center justify-center mx-auto mb-4">
+                <div key={index} className="flex items-start space-x-4">
+                  <div className="w-12 h-12 bg-gradient-to-r from-green-500/20 to-emerald-500/20 rounded-xl flex items-center justify-center flex-shrink-0">
                     {feature.icon}
                   </div>
-                  <h3 className="text-lg font-semibold text-white mb-2">{feature.title}</h3>
-                  <p className="text-gray-300 text-sm">{feature.description}</p>
-                </motion.div>
+                  <div>
+                    <h3 className="text-xl font-semibold mb-2 text-white">
+                      {feature.title}
+                    </h3>
+                    <p className="text-white/70">
+                      {feature.description}
+                    </p>
+                  </div>
+                </div>
               ))}
             </div>
           </div>
@@ -233,41 +172,20 @@ const FinancialSolutionsPage: React.FC = () => {
         {/* CTA Section */}
         <section className="py-20 px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto text-center">
-            <motion.h2 
-              className="text-4xl font-bold text-white mb-6"
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-              viewport={{ once: true }}
-            >
-              Ready to Transform Financial Services?
-            </motion.h2>
-            <motion.p 
-              className="text-xl text-gray-300 mb-8"
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-              viewport={{ once: true }}
-            >
-              Join the financial technology revolution with our AI-powered solutions. Increase efficiency, reduce costs, and stay ahead of the competition.
-            </motion.p>
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.4 }}
-              viewport={{ once: true }}
-            >
-              <a
-                href="/contact"
-                className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-cyan-500 to-purple-500 text-white font-semibold rounded-xl hover:from-cyan-600 hover:to-purple-600 transition-all duration-300 hover:scale-105"
-              >
-                Get Started Today <ArrowRight className="w-5 h-5 ml-2" />
-              </a>
-            </motion.div>
+            <h2 className="text-4xl md:text-5xl font-bold mb-6">
+              Ready to Transform Finance?
+            </h2>
+            <p className="text-xl text-white/70 mb-8">
+              Join the financial revolution with our AI and quantum-powered solutions. 
+              Let's build a more efficient financial future together.
+            </p>
+            <button className="px-8 py-4 bg-gradient-to-r from-green-500 to-emerald-500 text-white font-semibold rounded-xl hover:from-green-600 hover:to-emerald-600 transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-green-500/25">
+              Get Started Today
+            </button>
           </div>
         </section>
       </div>
-    </UltraFuturisticBackground>
+    </>
   );
 };
 

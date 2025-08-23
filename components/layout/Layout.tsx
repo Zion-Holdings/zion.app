@@ -233,7 +233,7 @@ export default function Layout({
 
       {/* Accessibility and Performance Tools */}
       <AccessibilityEnhancer />
-      <EnhancedPerformanceMonitor />
+              <EnhancedPerformanceMonitor />
       
       {/* Cookie Consent Banner */}
       <CookieConsentBanner />
