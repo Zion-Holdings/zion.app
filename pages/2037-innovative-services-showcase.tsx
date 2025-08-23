@@ -96,12 +96,30 @@ const ServiceCard: React.FC<{ service: any; index: number }> = ({ service, index
     transition={{ duration: 0.5, delay: index * 0.1 }}
     className="bg-gradient-to-br from-gray-900/50 to-gray-800/50 backdrop-blur-sm border border-gray-700/50 rounded-2xl p-6 hover:border-gray-600/50 transition-all duration-300 hover:shadow-2xl hover:shadow-cyan-500/10 group"
   >
-    {/* Service Header */}
-    <div className="flex items-start justify-between mb-4">
-      <div className="flex items-center space-x-3">
-        <div className={`text-3xl p-3 rounded-xl bg-gradient-to-br ${service.color} bg-opacity-20`}>
-          {service.icon}
-        </div>
+    <div className={`absolute inset-0 bg-gradient-to-r ${service.color || 'from-blue-500 to-purple-600'} rounded-2xl blur-xl group-hover:blur-2xl transition-all duration-500 opacity-20`}></div>
+    <div className={`relative bg-gradient-to-r ${(service.color || 'from-blue-500 to-purple-600').replace('from-', 'from-').replace('to-', 'to-')} bg-opacity-10 border border-opacity-30 rounded-2xl p-8 hover:border-opacity-50 transition-all duration-300 h-full`}>
+      <div className="flex items-start justify-between mb-6">
+        <div className="text-4xl">{service.icon}</div>
+        {service.popular && (
+          <span className="px-3 py-1 bg-gradient-to-r from-yellow-500 to-orange-500 text-white text-xs font-semibold rounded-full">
+            Popular
+          </span>
+        )}
+      </div>
+      
+      <h3 className="text-2xl font-bold text-white mb-3">{service.name}</h3>
+      <p className="text-gray-300 mb-6 text-sm leading-relaxed">{service.description}</p>
+      
+      <div className="space-y-3 mb-6">
+        {service.features.slice(0, 4).map((feature: string, idx: number) => (
+          <div key={idx} className="flex items-center space-x-2">
+            <Check className="w-4 h-4 text-green-400 flex-shrink-0" />
+            <span className="text-gray-300 text-sm">{feature}</span>
+          </div>
+        ))}
+      </div>
+      
+      <div className="flex items-center justify-between mb-6">
         <div>
           <h3 className="text-xl font-bold text-white group-hover:text-cyan-400 transition-colors">
             {service.name}
@@ -126,39 +144,9 @@ const ServiceCard: React.FC<{ service: any; index: number }> = ({ service, index
           <Check className="w-4 h-4 text-green-400 flex-shrink-0" />
           <span>{feature}</span>
         </div>
-      ))}
-      {service.features.length > 3 && (
-        <div className="text-sm text-gray-500">
-          +{service.features.length - 3} more features
-        </div>
-      )}
-    </div>
-
-    {/* Pricing & Stats */}
-    <div className="flex items-center justify-between mb-4">
-      <div className="text-2xl font-bold text-white">
-        {service.price}
-        <span className="text-lg text-gray-400 font-normal">{service.period}</span>
-      </div>
-      <div className="text-right">
-        <div className="flex items-center space-x-1 text-yellow-400">
-          <Star className="w-4 h-4 fill-current" />
-          <span className="text-sm font-medium">{service.rating}</span>
-        </div>
-        <div className="text-xs text-gray-500">{service.reviews} reviews</div>
-      </div>
-    </div>
-
-    {/* Market Info */}
-    <div className="bg-gray-800/50 rounded-lg p-3 mb-4">
-      <div className="grid grid-cols-2 gap-3 text-xs">
-        <div>
-          <div className="text-gray-500">Market Size</div>
-          <div className="text-white font-medium">{service.marketSize}</div>
-        </div>
-        <div>
-          <div className="text-gray-500">Growth Rate</div>
-          <div className="text-white font-medium">{service.growthRate}</div>
+        <div className="flex justify-between">
+          <span>Customers:</span>
+          <span>{service.customers ? service.customers.toLocaleString() : 'N/A'}</span>
         </div>
       </div>
     </div>
