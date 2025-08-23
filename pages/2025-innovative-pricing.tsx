@@ -33,14 +33,14 @@ const serviceCategories = [
     name: 'IT Infrastructure Services',
     icon: <Building className="w-8 h-8" />,
     color: 'from-blue-500 to-indigo-500',
-          services: innovativeITInfrastructureServices2025
+    services: innovativeITInfrastructureServices2025
   },
   {
     id: 'micro-saas',
     name: 'Micro SAAS Solutions',
     icon: <Target className="w-8 h-8" />,
     color: 'from-green-500 to-emerald-500',
-          services: innovativeMicroSaasSolutions2025
+    services: innovativeMicroSaasSolutions2025
   },
   {
     id: 'emerging-tech',
