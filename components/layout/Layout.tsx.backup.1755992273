@@ -17,6 +17,100 @@ export default function Layout({ children }: React.PropsWithChildren<LayoutProps
       {/* Futuristic Background */}
       <UltraAdvancedFuturisticBackground2036 />
       
+<<<<<<< HEAD
+      {/* Layout Structure */}
+      <div className="relative z-10">
+        {/* Top Contact Bar */}
+        <TopContactBar />
+        
+        {/* Navigation */}
+        <UltraFuturisticNavigation2036 />
+        
+        {/* Sidebar and Main Content */}
+        <div className="flex">
+          <UltraFuturisticSidebar2036 
+            isOpen={sidebarOpen} 
+            onClose={() => setSidebarOpen(false)}
+            aria-hidden={!sidebarOpen}
+            aria-label="Main navigation menu"
+          />
+          
+          <main 
+            id="main" 
+            role="main" 
+            className="flex-1 pt-24 lg:pt-28 min-h-screen"
+            aria-label="Main content"
+          >
+            {/* Announcement for screen readers when sidebar opens/closes */}
+            <div 
+              aria-live="polite" 
+              aria-atomic="true" 
+              className="sr-only"
+            >
+              {sidebarOpen ? 'Sidebar opened' : 'Sidebar closed'}
+            </div>
+            
+            {children}
+          </main>
+        </div>
+        
+        {/* Footer */}
+'use client';
+
+import { ReactNode } from 'react';
+import TopContactBar from './TopContactBar';
+import EnhancedNavigation2025 from './EnhancedNavigation2025';
+import EnhancedSidebar2025 from './EnhancedSidebar2025';
+import UltraAdvancedFuturisticBackground from '../backgrounds/UltraAdvancedFuturisticBackground';
+import UltraFuturisticFooter2034 from './UltraFuturisticFooter2034';
+
+interface LayoutProps {
+  children: ReactNode;
+  showSidebar?: boolean;
+  showBackground?: boolean;
+  backgroundTheme?: 'quantum' | 'neon' | 'holographic' | 'cyberpunk';
+  backgroundIntensity?: 'low' | 'medium' | 'high';
+}
+
+const Layout: React.FC<LayoutProps> = ({ children }) => {
+	return (
+		<div className="min-h-screen bg-black text-white">
+			<UltraAdvancedFuturisticBackground>
+				<QuantumHolographicNavbar />
+				<main className="pt-24 lg:pt-28">
+					{children}
+				</main>
+				<NeoFuturisticFooter />
+			</UltraAdvancedFuturisticBackground>
+		</div>
+	);
+};
+
+      {/* Top Contact Bar */}
+      <TopContactBar />
+
+      {/* Main Navigation */}
+      <EnhancedNavigation2025 />
+
+      {/* Layout Container */}
+      <div className="flex min-h-screen pt-32">
+        {/* Sidebar */}
+        {showSidebar && (
+          <div className="hidden lg:block lg:w-80 lg:flex-shrink-0">
+            <EnhancedSidebar2025 />
+          </div>
+        )}
+
+        {/* Main Content */}
+        <main className={`flex-1 ${showSidebar ? 'lg:ml-0' : ''}`}>
+          <div className="relative z-10">
+            {/* Content Container */}
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+              {children}
+            </div>
+          </div>
+        </main>
+=======
         <UltraFuturisticFooter2036 />
       </div>
 
@@ -204,6 +298,7 @@ export default function Layout({ children }: React.PropsWithChildren<LayoutProps
           </motion.div>
         </div>
       )}
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-4d57
     </div>
   );
 }
