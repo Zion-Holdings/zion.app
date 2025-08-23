@@ -5,343 +5,249 @@ import Link from 'next/link';
 export default function ResourcesPage() {
   const resourceCategories = [
     {
-      title: 'AI & Machine Learning',
-      description: 'Essential resources for understanding and implementing AI automation',
-      resources: [
-        {
-          name: 'TensorFlow Documentation',
-          description: 'Comprehensive guide to Google\'s open-source machine learning framework',
-          url: 'https://www.tensorflow.org/',
-          type: 'Documentation',
-          difficulty: 'Intermediate'
-        },
-        {
-          name: 'PyTorch Tutorials',
-          description: 'Deep learning framework tutorials and examples',
-          url: 'https://pytorch.org/tutorials/',
-          type: 'Tutorials',
-          difficulty: 'Beginner'
-        },
-        {
-          name: 'Scikit-learn User Guide',
-          description: 'Machine learning library for Python with practical examples',
-          url: 'https://scikit-learn.org/stable/user_guide.html',
-          type: 'Documentation',
-          difficulty: 'Beginner'
-        },
-        {
-          name: 'Fast.ai Course',
-          description: 'Practical deep learning for coders',
-          url: 'https://course.fast.ai/',
-          type: 'Course',
-          difficulty: 'Intermediate'
-        },
-        {
-          name: 'Andrew Ng\'s Machine Learning Course',
-          description: 'Stanford\'s foundational machine learning course on Coursera',
-          url: 'https://www.coursera.org/learn/machine-learning',
-          type: 'Course',
-          difficulty: 'Beginner'
-        }
-      ]
+      id: 'ai-automation-manufacturing',
+      title: 'AI-Powered Manufacturing Automation',
+      company: 'Global Manufacturing Corp',
+      industry: 'Manufacturing',
+      results: '40% increase in production efficiency, 60% reduction in downtime',
+      description: 'How we implemented autonomous AI systems to revolutionize manufacturing processes.',
+      readTime: '8 min read',
+      category: 'Manufacturing'
     },
     {
-      title: 'Automation & DevOps',
-      description: 'Tools and practices for building reliable automation systems',
-      resources: [
-        {
-          name: 'GitHub Actions Documentation',
-          description: 'Automate your workflow with GitHub Actions',
-          url: 'https://docs.github.com/en/actions',
-          type: 'Documentation',
-          difficulty: 'Intermediate'
-        },
-        {
-          name: 'Jenkins User Handbook',
-          description: 'Open source automation server for building, testing, and deploying',
-          url: 'https://www.jenkins.io/doc/book/',
-          type: 'Documentation',
-          difficulty: 'Intermediate'
-        },
-        {
-          name: 'Docker Documentation',
-          description: 'Containerization platform for consistent deployment',
-          url: 'https://docs.docker.com/',
-          type: 'Documentation',
-          difficulty: 'Beginner'
-        },
-        {
-          name: 'Kubernetes Documentation',
-          description: 'Container orchestration platform for automated deployment',
-          url: 'https://kubernetes.io/docs/',
-          type: 'Documentation',
-          difficulty: 'Advanced'
-        },
-        {
-          name: 'Terraform Documentation',
-          description: 'Infrastructure as code tool for cloud automation',
-          url: 'https://www.terraform.io/docs',
-          type: 'Documentation',
-          difficulty: 'Intermediate'
-        }
-      ]
+      id: 'content-generation-scale',
+      title: 'Scaling Content Generation 10x',
+      company: 'Digital Marketing Agency',
+      industry: 'Marketing',
+      results: '10x increase in content output, 85% improvement in engagement',
+      description: 'Transforming content creation through autonomous AI systems.',
+      readTime: '6 min read',
+      category: 'Marketing'
     },
     {
-      title: 'Cloud & Infrastructure',
-      description: 'Cloud platforms and infrastructure automation resources',
-      resources: [
-        {
-          name: 'AWS Well-Architected Framework',
-          description: 'Best practices for building secure, high-performing cloud applications',
-          url: 'https://aws.amazon.com/architecture/well-architected/',
-          type: 'Framework',
-          difficulty: 'Intermediate'
-        },
-        {
-          name: 'Google Cloud Architecture Framework',
-          description: 'Google Cloud best practices and architectural guidance',
-          url: 'https://cloud.google.com/architecture/framework',
-          type: 'Framework',
-          difficulty: 'Intermediate'
-        },
-        {
-          name: 'Azure Architecture Center',
-          description: 'Microsoft Azure architectural patterns and best practices',
-          url: 'https://docs.microsoft.com/en-us/azure/architecture/',
-          type: 'Documentation',
-          difficulty: 'Intermediate'
-        },
-        {
-          name: 'Hashicorp Learn',
-          description: 'Tutorials and guides for cloud infrastructure tools',
-          url: 'https://learn.hashicorp.com/',
-          type: 'Tutorials',
-          difficulty: 'Beginner'
-        },
-        {
-          name: 'Cloud Native Computing Foundation',
-          description: 'Open source projects for cloud-native applications',
-          url: 'https://www.cncf.io/',
-          type: 'Organization',
-          difficulty: 'All Levels'
-        }
-      ]
+      id: 'cloud-infrastructure-optimization',
+      title: 'Cloud Infrastructure Optimization',
+      company: 'E-commerce Platform',
+      industry: 'Technology',
+      results: '50% reduction in cloud costs, 99.9% uptime achieved',
+      description: 'Building self-healing, auto-scaling cloud infrastructure.',
+      readTime: '10 min read',
+      category: 'Technology'
     },
     {
-      title: 'Security & Compliance',
-      description: 'Cybersecurity and compliance resources for autonomous systems',
-      resources: [
-        {
-          name: 'OWASP Top 10',
-          description: 'Critical web application security risks and prevention',
-          url: 'https://owasp.org/www-project-top-ten/',
-          type: 'Security Guide',
-          difficulty: 'Intermediate'
-        },
-        {
-          name: 'NIST Cybersecurity Framework',
-          description: 'Framework for improving critical infrastructure cybersecurity',
-          url: 'https://www.nist.gov/cyberframework',
-          type: 'Framework',
-          difficulty: 'Advanced'
-        },
-        {
-          name: 'SANS Security Resources',
-          description: 'Information security training and resources',
-          url: 'https://www.sans.org/',
-          type: 'Training',
-          difficulty: 'All Levels'
-        },
-        {
-          name: 'CIS Controls',
-          description: 'Critical security controls for effective cyber defense',
-          url: 'https://www.cisecurity.org/controls/',
-          type: 'Security Guide',
-          difficulty: 'Intermediate'
-        },
-        {
-          name: 'ISO 27001 Information Security',
-          description: 'International standard for information security management',
-          url: 'https://www.iso.org/isoiec-27001-information-security.html',
-          type: 'Standard',
-          difficulty: 'Advanced'
-        }
-      ]
+      id: 'financial-automation',
+      title: 'Financial Process Automation',
+      company: 'Regional Bank',
+      industry: 'Finance',
+      results: '70% faster processing, 90% error reduction',
+      description: 'Automating complex financial workflows with AI-powered decision systems.',
+      readTime: '7 min read',
+      category: 'Finance'
     },
     {
-      title: 'Sustainability & Green Tech',
-      description: 'Resources for building environmentally conscious automation systems',
-      resources: [
-        {
-          name: 'Green Software Foundation',
-          description: 'Building a trusted ecosystem for green software',
-          url: 'https://greensoftware.foundation/',
-          type: 'Organization',
-          difficulty: 'All Levels'
-        },
-        {
-          name: 'Climate Action Tech',
-          description: 'Community of technologists working on climate solutions',
-          url: 'https://climateaction.tech/',
-          type: 'Community',
-          difficulty: 'All Levels'
-        },
-        {
-          name: 'Sustainable Digital Infrastructure Alliance',
-          description: 'Promoting sustainable digital infrastructure practices',
-          url: 'https://sdialliance.org/',
-          type: 'Organization',
-          difficulty: 'All Levels'
-        },
-        {
-          name: 'Green Web Foundation',
-          description: 'Making the web green through sustainable hosting',
-          url: 'https://www.thegreenwebfoundation.org/',
-          type: 'Organization',
-          difficulty: 'All Levels'
-        },
-        {
-          name: 'Energy Star for Data Centers',
-          description: 'Energy efficiency program for data center facilities',
-          url: 'https://www.energystar.gov/buildings/benchmark/verify_results',
-          type: 'Program',
-          difficulty: 'Intermediate'
-        }
-      ]
+      id: 'healthcare-ai',
+      title: 'Healthcare AI Implementation',
+      company: 'Hospital Network',
+      industry: 'Healthcare',
+      results: '45% improvement in diagnosis accuracy, 30% reduction in wait times',
+      description: 'Implementing AI-powered diagnostic and patient management systems.',
+      readTime: '9 min read',
+      category: 'Healthcare'
     },
     {
-      title: 'Research & Innovation',
-      description: 'Cutting-edge research and innovation in AI automation',
-      resources: [
-        {
-          name: 'arXiv',
-          description: 'Open access repository for scientific papers in computer science',
-          url: 'https://arxiv.org/',
-          type: 'Research Papers',
-          difficulty: 'Advanced'
-        },
-        {
-          name: 'Papers With Code',
-          description: 'Latest machine learning papers with code implementations',
-          url: 'https://paperswithcode.com/',
-          type: 'Research Papers',
-          difficulty: 'Advanced'
-        },
-        {
-          name: 'Google AI Research',
-          description: 'Latest research and publications from Google AI',
-          url: 'https://ai.google/research/',
-          type: 'Research',
-          difficulty: 'Advanced'
-        },
-        {
-          name: 'OpenAI Research',
-          description: 'Research papers and technical reports from OpenAI',
-          url: 'https://openai.com/research/',
-          type: 'Research',
-          difficulty: 'Advanced'
-        },
-        {
-          name: 'MIT Technology Review',
-          description: 'Insights into emerging technologies and their impact',
-          url: 'https://www.technologyreview.com/',
-          type: 'News & Analysis',
-          difficulty: 'All Levels'
-        }
-      ]
+      id: 'retail-automation',
+      title: 'Retail Automation Revolution',
+      company: 'National Retail Chain',
+      industry: 'Retail',
+      results: '3x inventory turnover, 25% increase in customer satisfaction',
+      description: 'Transforming retail operations with autonomous inventory and customer service systems.',
+      readTime: '5 min read',
+      category: 'Retail'
     }
   ];
 
   const toolsAndPlatforms = [
     {
-      name: 'Hugging Face',
-      description: 'Leading platform for natural language processing and machine learning',
-      url: 'https://huggingface.co/',
-      category: 'AI/ML Platform'
+      id: 'autonomous-systems-guide',
+      title: 'The Complete Guide to Autonomous Systems',
+      description: 'A comprehensive overview of autonomous technology, implementation strategies, and best practices.',
+      downloadUrl: '#',
+      pages: '45',
+      category: 'Technology',
+      author: 'Dr. Sarah Chen',
+      date: '2025',
+      rating: '4.9/5'
     },
     {
-      name: 'Weights & Biases',
-      description: 'Experiment tracking and model management for machine learning',
-      url: 'https://wandb.ai/',
-      category: 'MLOps'
+      id: 'ai-ethics-framework',
+      title: 'AI Ethics Framework for Business',
+      description: 'Establishing ethical guidelines for AI implementation in enterprise environments.',
+      downloadUrl: '#',
+      pages: '32',
+      category: 'Ethics',
+      author: 'Prof. Michael Rodriguez',
+      date: '2025',
+      rating: '4.8/5'
     },
     {
-      name: 'MLflow',
-      description: 'Open source platform for the complete machine learning lifecycle',
-      url: 'https://mlflow.org/',
-      category: 'MLOps'
+      id: 'automation-roi-calculator',
+      title: 'Automation ROI Calculator Guide',
+      description: 'How to calculate and maximize return on investment for automation initiatives.',
+      downloadUrl: '#',
+      pages: '28',
+      category: 'Business',
+      author: 'Lisa Thompson',
+      date: '2025',
+      rating: '4.7/5'
     },
     {
-      name: 'Kubeflow',
-      description: 'Machine learning toolkit for Kubernetes',
-      url: 'https://www.kubeflow.org/',
-      category: 'MLOps'
+      id: 'cloud-migration-strategy',
+      title: 'Cloud Migration Strategy Guide',
+      description: 'Step-by-step approach to migrating legacy systems to modern cloud infrastructure.',
+      downloadUrl: '#',
+      pages: '38',
+      category: 'Technology',
+      author: 'David Kim',
+      date: '2025',
+      rating: '4.9/5'
     },
     {
-      name: 'Apache Airflow',
-      description: 'Platform to programmatically author, schedule, and monitor workflows',
-      url: 'https://airflow.apache.org/',
-      category: 'Workflow Automation'
+      id: 'ai-implementation-playbook',
+      title: 'AI Implementation Playbook',
+      description: 'Practical guide for successfully implementing AI solutions in your organization.',
+      downloadUrl: '#',
+      pages: '52',
+      category: 'Technology',
+      author: 'Dr. Emily Watson',
+      date: '2025',
+      rating: '4.8/5'
     },
     {
-      name: 'Prefect',
-      description: 'Modern workflow orchestration tool for data and ML pipelines',
-      url: 'https://www.prefect.io/',
-      category: 'Workflow Automation'
-    },
-    {
-      name: 'Grafana',
-      description: 'Open source analytics and monitoring solution',
-      url: 'https://grafana.com/',
-      category: 'Monitoring'
-    },
-    {
-      name: 'Prometheus',
-      description: 'Open source monitoring system and time series database',
-      url: 'https://prometheus.io/',
-      category: 'Monitoring'
+      id: 'data-governance-framework',
+      title: 'Data Governance Framework',
+      description: 'Comprehensive framework for managing data quality, security, and compliance.',
+      downloadUrl: '#',
+      pages: '41',
+      category: 'Compliance',
+      author: 'James Wilson',
+      date: '2025',
+      rating: '4.7/5'
     }
   ];
 
   const learningPaths = [
     {
-      title: 'AI Automation Fundamentals',
-      description: 'Essential concepts and skills for AI automation',
-      duration: '8-12 weeks',
-      difficulty: 'Beginner',
-      topics: [
-        'Machine Learning Basics',
-        'Python Programming',
-        'Data Analysis',
-        'Basic Automation Concepts',
-        'Cloud Fundamentals'
-      ]
+      id: 'automation-assessment',
+      title: 'Automation Readiness Assessment',
+      description: 'Evaluate your organization\'s readiness for AI automation implementation.',
+      type: 'Interactive Tool',
+      estimatedTime: '15 minutes',
+      features: ['Custom scoring', 'Detailed report', 'Action plan']
     },
     {
-      title: 'Advanced AI Automation',
-      description: 'Deep dive into sophisticated automation systems',
-      duration: '12-16 weeks',
-      difficulty: 'Intermediate',
-      topics: [
-        'Deep Learning',
-        'Neural Networks',
-        'Advanced ML Algorithms',
-        'System Architecture',
-        'Performance Optimization'
-      ]
+      id: 'ai-maturity-model',
+      title: 'AI Maturity Model',
+      description: 'Assess your current AI capabilities and plan your transformation journey.',
+      type: 'Framework',
+      estimatedTime: '30 minutes',
+      features: ['Maturity levels', 'Gap analysis', 'Roadmap']
     },
     {
-      title: 'Enterprise AI Automation',
-      description: 'Building scalable automation solutions for large organizations',
-      duration: '16-20 weeks',
-      difficulty: 'Advanced',
-      topics: [
-        'Distributed Systems',
-        'Security & Compliance',
-        'Scalability Patterns',
-        'DevOps Integration',
-        'Business Strategy'
-      ]
+      id: 'performance-benchmark',
+      title: 'Performance Benchmarking Tool',
+      description: 'Compare your automation performance against industry standards.',
+      type: 'Analytics Tool',
+      estimatedTime: '20 minutes',
+      features: ['Industry data', 'Custom metrics', 'Trends']
+    },
+    {
+      id: 'cost-calculator',
+      title: 'Automation Cost Calculator',
+      description: 'Calculate the total cost of ownership for automation initiatives.',
+      type: 'Financial Tool',
+      estimatedTime: '25 minutes',
+      features: ['ROI projection', 'Cost breakdown', 'Savings analysis']
+    },
+    {
+      id: 'security-assessment',
+      title: 'AI Security Assessment',
+      description: 'Evaluate the security posture of your AI and automation systems.',
+      type: 'Security Tool',
+      estimatedTime: '35 minutes',
+      features: ['Vulnerability scan', 'Compliance check', 'Risk assessment']
+    },
+    {
+      id: 'scalability-analyzer',
+      title: 'Scalability Analyzer',
+      description: 'Analyze how well your current systems can scale with automation.',
+      type: 'Analysis Tool',
+      estimatedTime: '20 minutes',
+      features: ['Capacity planning', 'Bottleneck detection', 'Growth projection']
+    }
+  ];
+
+  const videoContent = [
+    {
+      id: 'ai-automation-overview',
+      title: 'AI Automation Overview',
+      description: 'Introduction to autonomous AI systems and their business applications.',
+      duration: '15:32',
+      thumbnail: '🎥',
+      category: 'Introduction'
+    },
+    {
+      id: 'implementation-walkthrough',
+      title: 'Implementation Walkthrough',
+      description: 'Step-by-step guide to implementing AI automation in your business.',
+      duration: '28:45',
+      thumbnail: '🎬',
+      category: 'Implementation'
+    },
+    {
+      id: 'case-study-deep-dive',
+      title: 'Case Study Deep Dive',
+      description: 'Detailed analysis of successful AI automation implementations.',
+      duration: '22:18',
+      thumbnail: '📊',
+      category: 'Case Studies'
+    },
+    {
+      id: 'future-trends',
+      title: 'Future of AI Automation',
+      description: 'Exploring emerging trends and technologies in autonomous systems.',
+      duration: '19:56',
+      thumbnail: '🚀',
+      category: 'Trends'
+    }
+  ];
+
+  const webinars = [
+    {
+      id: 'ai-automation-webinar',
+      title: 'AI Automation Masterclass',
+      description: 'Learn the fundamentals of implementing AI automation in your business.',
+      date: 'January 25, 2025',
+      time: '2:00 PM EST',
+      speaker: 'Dr. Sarah Chen',
+      duration: '90 minutes'
+    },
+    {
+      id: 'cloud-automation-webinar',
+      title: 'Cloud Automation Strategies',
+      description: 'Discover how to automate your cloud infrastructure for maximum efficiency.',
+      date: 'February 8, 2025',
+      time: '1:00 PM EST',
+      speaker: 'David Kim',
+      duration: '75 minutes'
+    },
+    {
+      id: 'data-automation-webinar',
+      title: 'Data Automation & Analytics',
+      description: 'Transform your data operations with intelligent automation systems.',
+      date: 'February 22, 2025',
+      time: '3:00 PM EST',
+      speaker: 'Dr. Emily Watson',
+      duration: '60 minutes'
     }
   ];
 
@@ -362,149 +268,181 @@ export default function ResourcesPage() {
                 ← Back to Home
               </Link>
             </nav>
-            
-            <header className="text-center mb-16">
+
+            <section className="text-center mb-16">
               <h1 className="text-5xl font-extrabold mb-6 bg-gradient-to-r from-cyan-400 to-fuchsia-400 bg-clip-text text-transparent">
                 AI & Automation Resources
               </h1>
-              <p className="text-xl text-white/80 max-w-4xl mx-auto">
-                Comprehensive collection of tools, tutorials, courses, and research materials to help you master 
-                AI automation and autonomous systems
+              <p className="text-xl text-white/80 max-w-3xl mx-auto">
+                Comprehensive resources to help you understand, implement, and optimize AI automation solutions
               </p>
-            </header>
+            </section>
 
-            {/* Learning Paths */}
-            <section className="mb-20">
-              <h2 className="text-3xl font-bold mb-8 text-center text-white">Learning Paths</h2>
-              <div className="grid md:grid-cols-3 gap-8">
-                {learningPaths.map((path, index) => (
-                  <div key={index} className="bg-gradient-to-br from-white/10 to-white/5 rounded-2xl p-8 border border-white/20 hover:border-cyan-400/30 transition-all duration-300">
-                    <div className="flex items-center gap-3 mb-4">
-                      <span className={`px-3 py-1 text-sm rounded-full border ${
-                        path.difficulty === 'Beginner' ? 'bg-green-400/20 text-green-400 border-green-400/30' :
-                        path.difficulty === 'Intermediate' ? 'bg-yellow-400/20 text-yellow-400 border-yellow-400/30' :
-                        'bg-red-400/20 text-red-400 border-red-400/30'
-                      }`}>
-                        {path.difficulty}
-                      </span>
-                      <span className="text-white/60 text-sm">{path.duration}</span>
+            {/* Quick Access Tools */}
+            <section className="mb-16">
+              <h2 className="text-3xl font-bold mb-8 text-center text-white/90">Quick Access Tools</h2>
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                {tools.map((tool) => (
+                  <div key={tool.id} className="bg-white/10 backdrop-blur-xl rounded-2xl p-6 border border-white/20 hover:border-cyan-400/30 transition-all duration-300">
+                    <div className="flex items-start justify-between mb-4">
+                      <h3 className="text-lg font-semibold text-cyan-400">{tool.title}</h3>
+                      <span className="text-xs bg-cyan-400/20 text-cyan-300 px-2 py-1 rounded-full">{tool.type}</span>
                     </div>
-                    <h3 className="text-2xl font-bold mb-4 text-white">{path.title}</h3>
-                    <p className="text-white/80 mb-6">{path.description}</p>
-                    <div className="space-y-2">
-                      {path.topics.map((topic, topicIndex) => (
-                        <div key={topicIndex} className="flex items-center gap-2 text-white/70">
-                          <span className="text-cyan-400">•</span>
-                          <span>{topic}</span>
-                        </div>
+                    <p className="text-white/70 text-sm mb-4">{tool.description}</p>
+                    <div className="flex items-center justify-between text-xs text-white/50 mb-4">
+                      <span>⏱️ {tool.estimatedTime}</span>
+                    </div>
+                    <div className="space-y-1 mb-4">
+                      {tool.features.map((feature, index) => (
+                        <div key={index} className="text-xs text-white/60">• {feature}</div>
                       ))}
                     </div>
+                    <button className="w-full px-4 py-2 bg-cyan-400/20 text-cyan-300 rounded-lg hover:bg-cyan-400/30 transition-colors text-sm font-medium">
+                      Launch Tool
+                    </button>
                   </div>
                 ))}
               </div>
             </section>
 
-            {/* Tools and Platforms */}
-            <section className="mb-20">
-              <h2 className="text-3xl font-bold mb-8 text-center text-white">Essential Tools & Platforms</h2>
-              <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-                {toolsAndPlatforms.map((tool, index) => (
-                  <div key={index} className="bg-gradient-to-br from-white/10 to-white/5 rounded-xl p-6 border border-white/20 hover:border-cyan-400/30 transition-all duration-300">
-                    <div className="mb-3">
-                      <span className="px-2 py-1 bg-cyan-400/20 text-cyan-400 text-xs rounded-full border border-cyan-400/30">
-                        {tool.category}
-                      </span>
+            {/* Case Studies */}
+            <section className="mb-16">
+              <h2 className="text-3xl font-bold mb-8 text-center text-white/90">Case Studies</h2>
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                {caseStudies.map((study) => (
+                  <div key={study.id} className="bg-white/10 backdrop-blur-xl rounded-2xl p-6 border border-white/20 hover:border-fuchsia-400/30 transition-all duration-300">
+                    <div className="flex items-start justify-between mb-3">
+                      <span className="text-xs bg-fuchsia-400/20 text-fuchsia-300 px-2 py-1 rounded-full">{study.category}</span>
+                      <span className="text-xs text-white/50">{study.readTime}</span>
                     </div>
-                    <h3 className="text-lg font-semibold mb-2 text-white">{tool.name}</h3>
-                    <p className="text-white/70 text-sm mb-4">{tool.description}</p>
-                    <a 
-                      href={tool.url} 
-                      target="_blank" 
-                      rel="noopener noreferrer"
-                      className="text-cyan-400 hover:text-cyan-300 text-sm font-medium transition-colors"
-                    >
-                      Visit Platform →
-                    </a>
+                    <h3 className="text-lg font-semibold text-white mb-2">{study.title}</h3>
+                    <p className="text-sm text-white/60 mb-2">{study.company} • {study.industry}</p>
+                    <p className="text-white/70 text-sm mb-3">{study.description}</p>
+                    <div className="bg-green-400/20 text-green-300 text-xs p-2 rounded-lg mb-3">
+                      <strong>Results:</strong> {study.results}
+                    </div>
+                    <button className="w-full px-4 py-2 bg-fuchsia-400/20 text-fuchsia-300 rounded-lg hover:bg-fuchsia-400/30 transition-colors text-sm font-medium">
+                      Read Case Study
+                    </button>
+                  </div>
+                ))}
+              </div>
+            </section>
+
+            {/* Whitepapers & Guides */}
+            <section className="mb-16">
+              <h2 className="text-3xl font-bold mb-8 text-center text-white/90">Whitepapers & Guides</h2>
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                {whitepapers.map((paper) => (
+                  <div key={paper.id} className="bg-white/10 backdrop-blur-xl rounded-2xl p-6 border border-white/20 hover:border-green-400/30 transition-all duration-300">
+                    <div className="flex items-start justify-between mb-3">
+                      <span className="text-xs bg-green-400/20 text-green-300 px-2 py-1 rounded-full">{paper.category}</span>
+                      <div className="text-right">
+                        <div className="text-xs text-white/50">{paper.pages} pages</div>
+                        <div className="text-xs text-yellow-400">⭐ {paper.rating}</div>
+                      </div>
+                    </div>
+                    <h3 className="text-lg font-semibold text-white mb-2">{paper.title}</h3>
+                    <p className="text-white/70 text-sm mb-3">{paper.description}</p>
+                    <div className="text-xs text-white/50 mb-4">
+                      By {paper.author} • {paper.date}
+                    </div>
+                    <button className="w-full px-4 py-2 bg-green-400/20 text-green-300 rounded-lg hover:bg-green-400/30 transition-colors text-sm font-medium">
+                      Download PDF
+                    </button>
+                  </div>
+                ))}
+              </div>
+            </section>
+
+            {/* Video Content */}
+            <section className="mb-16">
+              <h2 className="text-3xl font-bold mb-8 text-center text-white/90">Video Content</h2>
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                {videoContent.map((video) => (
+                  <div key={video.id} className="bg-white/10 backdrop-blur-xl rounded-2xl p-6 border border-white/20 hover:border-blue-400/30 transition-all duration-300 text-center">
+                    <div className="text-4xl mb-3">{video.thumbnail}</div>
+                    <h3 className="text-lg font-semibold text-white mb-2">{video.title}</h3>
+                    <p className="text-white/70 text-sm mb-3">{video.description}</p>
+                    <div className="flex items-center justify-between text-xs text-white/50 mb-4">
+                      <span>{video.duration}</span>
+                      <span className="bg-blue-400/20 text-blue-300 px-2 py-1 rounded-full">{video.category}</span>
+                    </div>
+                    <button className="w-full px-4 py-2 bg-blue-400/20 text-blue-300 rounded-lg hover:bg-blue-400/30 transition-colors text-sm font-medium">
+                      Watch Video
+                    </button>
+                  </div>
+                ))}
+              </div>
+            </section>
+
+            {/* Upcoming Webinars */}
+            <section className="mb-16">
+              <h2 className="text-3xl font-bold mb-8 text-center text-white/90">Upcoming Webinars</h2>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                {webinars.map((webinar) => (
+                  <div key={webinar.id} className="bg-white/10 backdrop-blur-xl rounded-2xl p-6 border border-white/20 hover:border-purple-400/30 transition-all duration-300">
+                    <h3 className="text-lg font-semibold text-white mb-2">{webinar.title}</h3>
+                    <p className="text-white/70 text-sm mb-3">{webinar.description}</p>
+                    <div className="space-y-2 text-xs text-white/50 mb-4">
+                      <div>📅 {webinar.date}</div>
+                      <div>⏰ {webinar.time}</div>
+                      <div>👤 {webinar.speaker}</div>
+                      <div>⏱️ {webinar.duration}</div>
+                    </div>
+                    <button className="w-full px-4 py-2 bg-purple-400/20 text-purple-300 rounded-lg hover:bg-purple-400/30 transition-colors text-sm font-medium">
+                      Register Now
+                    </button>
                   </div>
                 ))}
               </div>
             </section>
 
             {/* Resource Categories */}
-            <section className="mb-20">
-              <h2 className="text-3xl font-bold mb-8 text-center text-white">Resource Categories</h2>
-              <div className="space-y-12">
-                {resourceCategories.map((category, index) => (
-                  <div key={index} className="bg-gradient-to-br from-white/10 to-white/5 rounded-2xl p-8 border border-white/20">
-                    <div className="mb-8">
-                      <h3 className="text-2xl font-bold mb-3 text-white">{category.title}</h3>
-                      <p className="text-white/80">{category.description}</p>
+            <section className="mb-16">
+              <h2 className="text-3xl font-bold mb-8 text-center text-white/90">Browse by Category</h2>
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+                {['Technology', 'Business', 'Implementation', 'Case Studies', 'Tools', 'Webinars', 'Whitepapers', 'Video'].map((category) => (
+                  <Link key={category} href={`#${category.toLowerCase()}`} className="bg-white/10 backdrop-blur-xl rounded-xl p-6 border border-white/20 hover:border-cyan-400/30 transition-all duration-300 text-center group">
+                    <div className="text-2xl mb-2 group-hover:scale-110 transition-transform duration-300">
+                      {category === 'Technology' && '🔧'}
+                      {category === 'Business' && '💼'}
+                      {category === 'Implementation' && '🚀'}
+                      {category === 'Case Studies' && '📊'}
+                      {category === 'Tools' && '🛠️'}
+                      {category === 'Webinars' && '📺'}
+                      {category === 'Whitepapers' && '📚'}
+                      {category === 'Video' && '🎥'}
                     </div>
-                    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                      {category.resources.map((resource, resourceIndex) => (
-                        <div key={resourceIndex} className="bg-gradient-to-br from-white/5 to-white/0 rounded-xl p-6 border border-white/10 hover:border-white/20 transition-all duration-300">
-                          <div className="flex items-center gap-2 mb-3">
-                            <span className={`px-2 py-1 text-xs rounded-full border ${
-                              resource.type === 'Documentation' ? 'bg-blue-400/20 text-blue-400 border-blue-400/30' :
-                              resource.type === 'Course' ? 'bg-green-400/20 text-green-400 border-green-400/30' :
-                              resource.type === 'Tutorials' ? 'bg-purple-400/20 text-purple-400 border-purple-400/30' :
-                              resource.type === 'Framework' ? 'bg-orange-400/20 text-orange-400 border-orange-400/30' :
-                              'bg-gray-400/20 text-gray-400 border-gray-400/30'
-                            }`}>
-                              {resource.type}
-                            </span>
-                            <span className={`px-2 py-1 text-xs rounded-full border ${
-                              resource.difficulty === 'Beginner' ? 'bg-green-400/20 text-green-400 border-green-400/30' :
-                              resource.difficulty === 'Intermediate' ? 'bg-yellow-400/20 text-yellow-400 border-yellow-400/30' :
-                              resource.difficulty === 'Advanced' ? 'bg-red-400/20 text-red-400 border-red-400/30' :
-                              'bg-gray-400/20 text-gray-400 border-gray-400/30'
-                            }`}>
-                              {resource.difficulty}
-                            </span>
-                          </div>
-                          <h4 className="text-lg font-semibold mb-2 text-white">{resource.name}</h4>
-                          <p className="text-white/70 text-sm mb-4">{resource.description}</p>
-                          <a 
-                            href={resource.url} 
-                            target="_blank" 
-                            rel="noopener noreferrer"
-                            className="text-cyan-400 hover:text-cyan-300 text-sm font-medium transition-colors"
-                          >
-                            Access Resource →
-                          </a>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
+                    <h3 className="text-white font-semibold">{category}</h3>
+                  </Link>
                 ))}
               </div>
             </section>
 
-            {/* Call to Action */}
+            {/* Newsletter Signup */}
             <section className="text-center">
-              <div className="bg-gradient-to-r from-cyan-400/10 to-fuchsia-400/10 rounded-2xl p-12 border border-cyan-400/20">
-                <h2 className="text-3xl font-bold mb-4 text-white">Ready to Start Learning?</h2>
-                <p className="text-white/80 mb-8 max-w-2xl mx-auto">
-                  Whether you're just beginning your AI automation journey or looking to advance your skills, 
-                  our team of experts is here to help you succeed.
+              <div className="bg-gradient-to-r from-cyan-500/20 to-fuchsia-500/20 backdrop-blur-xl rounded-3xl p-12 border border-white/20">
+                <h2 className="text-3xl font-bold text-white mb-6">Stay Updated</h2>
+                <p className="text-xl text-white/80 mb-8">
+                  Get the latest insights, case studies, and automation tips delivered to your inbox.
                 </p>
-                <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                  <Link 
-                    href="/contact" 
-                    className="px-8 py-4 bg-gradient-to-r from-cyan-400 to-fuchsia-400 text-white font-semibold rounded-lg hover:from-cyan-500 hover:to-fuchsia-500 transition-all duration-300"
-                  >
-                    Get Expert Guidance
-                  </Link>
-                  <Link 
-                    href="/blog" 
-                    className="px-8 py-4 border border-cyan-400 text-cyan-400 font-semibold rounded-lg hover:bg-cyan-400 hover:text-white transition-all duration-300"
-                  >
-                    Explore Our Blog
-                  </Link>
+                <div className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
+                  <input
+                    type="email"
+                    placeholder="Enter your email"
+                    className="flex-1 px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-white/50 focus:outline-none focus:border-cyan-400/50"
+                  />
+                  <button className="px-6 py-3 bg-gradient-to-r from-cyan-400 to-fuchsia-400 text-white font-semibold rounded-lg hover:from-cyan-500 hover:to-fuchsia-500 transition-all duration-300">
+                    Subscribe
+                  </button>
                 </div>
+                <p className="text-sm text-white/60 mt-4">
+                  No spam, unsubscribe at any time. We respect your privacy.
+                </p>
               </div>
-            </div>
-          </section>
+            </section>
+          </div>
         </main>
       </div>
     </Layout>

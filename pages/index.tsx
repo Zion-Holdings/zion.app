@@ -17,29 +17,35 @@ const HomePage: React.FC = () => {
       
       <div className="min-h-screen bg-gradient-to-br from-indigo-950 via-purple-950 to-slate-950 text-white">
         <main className="container mx-auto px-6 py-12">
-          {/* Hero Section */}
+          {/* Enhanced Hero Section */}
           <section className="text-center mb-20">
-            <h1 className="text-6xl md:text-7xl font-extrabold mb-8 bg-gradient-to-r from-cyan-400 via-fuchsia-400 to-purple-400 bg-clip-text text-transparent animate-pulse">
+            <h1 className="text-6xl font-extrabold mb-6 bg-gradient-to-r from-cyan-400 to-fuchsia-400 bg-clip-text text-transparent">
               Zion Tech Group
             </h1>
-            <p className="text-2xl md:text-3xl text-white/90 max-w-4xl mx-auto mb-8 leading-relaxed">
-              Autonomous innovation hub delivering cutting-edge technology solutions and intelligent automation systems that evolve independently.
-            </p>
-            <p className="text-lg text-white/70 max-w-3xl mx-auto mb-12">
-              We're building the future where AI systems think, learn, and innovate without human intervention, 
-              creating a world of endless technological possibilities.
+            <p className="text-2xl text-white/80 max-w-4xl mx-auto mb-8">
+              Autonomous innovation hub delivering cutting-edge technology solutions and intelligent automation systems that transform businesses.
             </p>
             
-            {/* CTA Buttons */}
-            <div className="flex flex-wrap justify-center gap-6 mb-16">
-              <Link href="/services" className="px-8 py-4 bg-gradient-to-r from-cyan-400 to-fuchsia-400 hover:from-cyan-500 hover:to-fuchsia-500 text-white font-bold rounded-xl transition-all duration-300 transform hover:scale-105 hover:shadow-2xl hover:shadow-cyan-400/25">
-                Explore Our Services
-              </Link>
-              <Link href="/case-studies" className="px-8 py-4 bg-white/10 hover:bg-white/20 border-2 border-white/20 hover:border-cyan-400/50 text-white font-bold rounded-xl transition-all duration-300 transform hover:scale-105">
-                View Case Studies
-              </Link>
+            {/* Key Statistics */}
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto mb-12">
+              <div className="bg-white/10 backdrop-blur-xl rounded-xl p-4 border border-white/20">
+                <div className="text-3xl font-bold text-cyan-400">227+</div>
+                <div className="text-sm text-white/70">Active Automations</div>
+              </div>
+              <div className="bg-white/10 backdrop-blur-xl rounded-xl p-4 border border-white/20">
+                <div className="text-3xl font-bold text-fuchsia-400">2,960+</div>
+                <div className="text-sm text-white/70">Pages Generated</div>
+              </div>
+              <div className="bg-white/10 backdrop-blur-xl rounded-xl p-4 border border-white/20">
+                <div className="text-3xl font-bold text-green-400">99.9%</div>
+                <div className="text-sm text-white/70">Uptime</div>
+              </div>
+              <div className="bg-white/10 backdrop-blur-xl rounded-xl p-4 border border-white/20">
+                <div className="text-3xl font-bold text-blue-400">24/7</div>
+                <div className="text-sm text-white/70">Monitoring</div>
+              </div>
             </div>
-
+            
             {/* Navigation Links */}
             <div className="flex flex-wrap justify-center gap-4">
               <Link href="/about" className="px-6 py-3 bg-white/10 hover:bg-white/20 border border-white/20 rounded-lg text-white transition-all duration-200 hover:border-cyan-400/50">
@@ -84,125 +90,31 @@ const HomePage: React.FC = () => {
             </div>
           </section>
 
-          {/* Hero Features Section */}
-          <section className="mx-auto max-w-7xl px-6 pb-14">
-            <h2 className="text-center text-3xl font-bold tracking-wide text-white/90 mb-12">Why Choose Zion Tech Group?</h2>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              <div className="text-center group">
-                <div className="w-20 h-20 bg-gradient-to-br from-cyan-400 to-blue-500 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
-                  <span className="text-3xl">🤖</span>
-                </div>
-                <h3 className="text-xl font-bold text-cyan-400 mb-4">AI-Powered Automation</h3>
-                <p className="text-white/70 leading-relaxed">
-                  Our autonomous systems work 24/7 to optimize your business processes, 
-                  generate content, and maintain infrastructure with zero human intervention.
-                </p>
-              </div>
-              
-              <div className="text-center group">
-                <div className="w-20 h-20 bg-gradient-to-br from-fuchsia-400 to-purple-500 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
-                  <span className="text-3xl">⚡</span>
-                </div>
-                <h3 className="text-xl font-bold text-fuchsia-400 mb-4">Lightning Fast Performance</h3>
-                <p className="text-white/70 leading-relaxed">
-                  Experience sub-second response times with our optimized cloud infrastructure 
-                  and intelligent caching systems that scale automatically.
-                </p>
-              </div>
-              
-              <div className="text-center group">
-                <div className="w-20 h-20 bg-gradient-to-br from-green-400 to-emerald-500 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
-                  <span className="text-3xl">🔄</span>
-                </div>
-                <h3 className="text-xl font-bold text-green-400 mb-4">Self-Healing Systems</h3>
-                <p className="text-white/70 leading-relaxed">
-                  Our infrastructure automatically detects and resolves issues before they 
-                  impact your users, ensuring 99.9% uptime and seamless operation.
-                </p>
-              </div>
-            </div>
-          </section>
-
-          {/* Technology Showcase */}
-          <section className="mx-auto max-w-7xl px-6 pb-14">
-            <h2 className="text-center text-3xl font-bold tracking-wide text-white/90 mb-12">Cutting-Edge Technology Stack</h2>
-            <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6">
-              <div className="bg-white/10 backdrop-blur-xl rounded-xl p-6 border border-white/20 hover:border-cyan-400/30 transition-all duration-300 text-center group">
-                <div className="text-4xl mb-3 group-hover:scale-110 transition-transform duration-300">⚛️</div>
-                <h4 className="font-semibold text-cyan-400">React</h4>
-              </div>
-              <div className="bg-white/10 backdrop-blur-xl rounded-xl p-6 border border-white/20 hover:border-fuchsia-400/30 transition-all duration-300 text-center group">
-                <div className="text-4xl mb-3 group-hover:scale-110 transition-transform duration-300">🚀</div>
-                <h4 className="font-semibold text-fuchsia-400">Next.js</h4>
-              </div>
-              <div className="bg-white/10 backdrop-blur-xl rounded-xl p-6 border border-white/20 hover:border-blue-400/30 transition-all duration-300 text-center group">
-                <div className="text-4xl mb-3 group-hover:scale-110 transition-transform duration-300">☁️</div>
-                <h4 className="font-semibold text-blue-400">Cloud Native</h4>
-              </div>
-              <div className="bg-white/10 backdrop-blur-xl rounded-xl p-6 border border-white/20 hover:border-yellow-400/30 transition-all duration-300 text-center group">
-                <div className="text-4xl mb-3 group-hover:scale-110 transition-transform duration-300">🤖</div>
-                <h4 className="font-semibold text-yellow-400">AI/ML</h4>
-              </div>
-              <div className="bg-white/10 backdrop-blur-xl rounded-xl p-6 border border-white/20 hover:border-purple-400/30 transition-all duration-300 text-center group">
-                <div className="text-4xl mb-3 group-hover:scale-110 transition-transform duration-300">🔒</div>
-                <h4 className="font-semibold text-purple-400">Security</h4>
-              </div>
-              <div className="bg-white/10 backdrop-blur-xl rounded-xl p-6 border border-white/20 hover:border-green-400/30 transition-all duration-300 text-center group">
-                <div className="text-4xl mb-3 group-hover:scale-110 transition-transform duration-300">📊</div>
-                <h4 className="font-semibold text-green-400">Analytics</h4>
-              </div>
-            </div>
-          </section>
-
-          {/* Client Testimonials */}
-          <section className="mx-auto max-w-7xl px-6 pb-14">
-            <h2 className="text-center text-3xl font-bold tracking-wide text-white/90 mb-12">What Our Clients Say</h2>
+          {/* What We Do Section */}
+          <section className="mx-auto max-w-7xl px-6 pb-16">
+            <h2 className="text-center text-3xl font-bold tracking-wide text-white/90 mb-12">What We Do</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              <div className="bg-white/10 backdrop-blur-xl rounded-2xl p-6 border border-white/20">
-                <div className="flex items-center mb-4">
-                  <div className="w-12 h-12 bg-gradient-to-br from-cyan-400 to-blue-500 rounded-full flex items-center justify-center mr-4">
-                    <span className="text-white font-bold">JD</span>
-                  </div>
-                  <div>
-                    <h4 className="font-semibold text-cyan-400">John Doe</h4>
-                    <p className="text-sm text-white/70">CTO, TechCorp</p>
-                  </div>
-                </div>
-                <p className="text-white/80 italic">
-                  "Zion Tech Group's autonomous systems have revolutionized our operations. 
-                  We've seen a 300% increase in efficiency with zero additional headcount."
+              <div className="bg-white/10 backdrop-blur-xl rounded-2xl p-8 border border-white/20 hover:border-cyan-400/30 transition-all duration-300">
+                <div className="text-4xl mb-4">🤖</div>
+                <h3 className="text-xl font-bold mb-4 text-cyan-400">AI-Powered Automation</h3>
+                <p className="text-white/70">
+                  We build intelligent systems that work autonomously, learning and adapting to optimize your business processes.
                 </p>
               </div>
               
-              <div className="bg-white/10 backdrop-blur-xl rounded-2xl p-6 border border-white/20">
-                <div className="flex items-center mb-4">
-                  <div className="w-12 h-12 bg-gradient-to-br from-fuchsia-400 to-purple-500 rounded-full flex items-center justify-center mr-4">
-                    <span className="text-white font-bold">SJ</span>
-                  </div>
-                  <div>
-                    <h4 className="font-semibold text-fuchsia-400">Sarah Johnson</h4>
-                    <p className="text-sm text-white/70">VP Engineering, InnovateLab</p>
-                  </div>
-                </div>
-                <p className="text-white/80 italic">
-                  "The self-healing infrastructure is incredible. We haven't had a single 
-                  outage since implementing their solution six months ago."
+              <div className="bg-white/10 backdrop-blur-xl rounded-2xl p-8 border border-white/20 hover:border-fuchsia-400/30 transition-all duration-300">
+                <div className="text-4xl mb-4">🚀</div>
+                <h3 className="text-xl font-bold mb-4 text-fuchsia-400">Digital Transformation</h3>
+                <p className="text-white/70">
+                  Complete digital transformation solutions that modernize your infrastructure and unlock new capabilities.
                 </p>
               </div>
               
-              <div className="bg-white/10 backdrop-blur-xl rounded-2xl p-6 border border-white/20">
-                <div className="flex items-center mb-4">
-                  <div className="w-12 h-12 bg-gradient-to-br from-green-400 to-emerald-500 rounded-full flex items-center justify-center mr-4">
-                    <span className="text-white font-bold">MC</span>
-                  </div>
-                  <div>
-                    <h4 className="font-semibold text-green-400">Mike Chen</h4>
-                    <p className="text-sm text-white/70">Founder, StartupXYZ</p>
-                  </div>
-                </div>
-                <p className="text-white/80 italic">
-                  "Their AI content generation has helped us scale our marketing efforts 
-                  without hiring additional writers. The quality is outstanding."
+              <div className="bg-white/10 backdrop-blur-xl rounded-2xl p-8 border border-white/20 hover:border-green-400/30 transition-all duration-300">
+                <div className="text-4xl mb-4">📊</div>
+                <h3 className="text-xl font-bold mb-4 text-green-400">Data Intelligence</h3>
+                <p className="text-white/70">
+                  Turn your data into actionable insights with advanced analytics and machine learning solutions.
                 </p>
               </div>
             </div>
@@ -374,103 +286,60 @@ const HomePage: React.FC = () => {
             </div>
           </section>
           {/* AUTO-GENERATED: HOME_LATEST_CONTENT_END */}
-          
+
           {/* Testimonials Section */}
-          <section className="mx-auto max-w-7xl px-6 pb-14 mb-16">
+          <section className="mx-auto max-w-7xl px-6 pb-16">
             <h2 className="text-center text-3xl font-bold tracking-wide text-white/90 mb-12">What Our Clients Say</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              <div className="bg-white/5 backdrop-blur-xl rounded-2xl p-8 border border-white/10">
+              <div className="bg-white/10 backdrop-blur-xl rounded-2xl p-6 border border-white/20">
                 <div className="flex items-center mb-4">
-                  <div className="w-12 h-12 bg-gradient-to-br from-cyan-400 to-blue-500 rounded-full flex items-center justify-center text-white font-bold text-lg">
+                  <div className="w-12 h-12 bg-gradient-to-br from-cyan-400 to-blue-500 rounded-full flex items-center justify-center text-white font-bold text-lg mr-3">
                     JD
                   </div>
-                  <div className="ml-4">
+                  <div>
                     <div className="font-semibold text-white">John Doe</div>
                     <div className="text-sm text-white/60">CTO, TechCorp</div>
                   </div>
                 </div>
-                <p className="text-white/80 italic">
-                  "Zion Tech Group's autonomous systems have revolutionized our infrastructure. We've seen a 40% reduction in downtime and our team can focus on innovation instead of maintenance."
+                <p className="text-white/80 text-sm">
+                  "Zion Tech Group transformed our entire automation infrastructure. The AI systems they built are now running 24/7, improving our efficiency by 300%."
                 </p>
-                <div className="flex text-yellow-400 mt-4">
-                  {[...Array(5)].map((_, i) => (
-                    <span key={i}>⭐</span>
-                  ))}
-                </div>
               </div>
-
-              <div className="bg-white/5 backdrop-blur-xl rounded-2xl p-8 border border-white/10">
+              
+              <div className="bg-white/10 backdrop-blur-xl rounded-2xl p-6 border border-white/20">
                 <div className="flex items-center mb-4">
-                  <div className="w-12 h-12 bg-gradient-to-br from-fuchsia-400 to-purple-500 rounded-full flex items-center justify-center text-white font-bold text-lg">
+                  <div className="w-12 h-12 bg-gradient-to-br from-fuchsia-400 to-purple-500 rounded-full flex items-center justify-center text-white font-bold text-lg mr-3">
                     SJ
                   </div>
-                  <div className="ml-4">
+                  <div>
                     <div className="font-semibold text-white">Sarah Johnson</div>
-                    <div className="text-sm text-white/60">VP Engineering, StartupXYZ</div>
+                    <div className="text-sm text-white/60">VP Operations, DataFlow</div>
                   </div>
                 </div>
-                <p className="text-white/80 italic">
-                  "The AI-powered monitoring and auto-healing capabilities have been game-changing. Our deployment process is now completely automated and reliable."
+                <p className="text-white/80 text-sm">
+                  "Their autonomous content generation system has revolutionized our marketing. We're producing 10x more content with better quality than ever before."
                 </p>
-                <div className="flex text-yellow-400 mt-4">
-                  {[...Array(5)].map((_, i) => (
-                    <span key={i}>⭐</span>
-                  ))}
-                </div>
               </div>
-
-              <div className="bg-white/5 backdrop-blur-xl rounded-2xl p-8 border border-white/10">
+              
+              <div className="bg-white/10 backdrop-blur-xl rounded-2xl p-6 border border-white/20">
                 <div className="flex items-center mb-4">
-                  <div className="w-12 h-12 bg-gradient-to-br from-blue-400 to-indigo-500 rounded-full flex items-center justify-center text-white font-bold text-lg">
-                    MW
+                  <div className="w-12 h-12 bg-gradient-to-br from-green-400 to-emerald-500 rounded-full flex items-center justify-center text-white font-bold text-lg mr-3">
+                    MR
                   </div>
-                  <div className="ml-4">
-                    <div className="font-semibold text-white">Mike Wilson</div>
-                    <div className="text-sm text-white/60">DevOps Lead, EnterpriseInc</div>
+                  <div>
+                    <div className="font-semibold text-white">Mike Rodriguez</div>
+                    <div className="text-sm text-white/60">CEO, CloudScale</div>
                   </div>
                 </div>
-                <p className="text-white/80 italic">
-                  "We've been using Zion Tech Group for over a year now. The autonomous redundancy systems have eliminated our manual failover procedures completely."
+                <p className="text-white/80 text-sm">
+                  "The cloud infrastructure optimization they delivered cut our costs in half while improving performance. Their autonomous monitoring is game-changing."
                 </p>
-                <div className="flex text-yellow-400 mt-4">
-                  {[...Array(5)].map((_, i) => (
-                    <span key={i}>⭐</span>
-                  ))}
-                </div>
               </div>
             </div>
           </section>
-
-          {/* Technology Stack Section */}
-          <section className="mx-auto max-w-7xl px-6 pb-14 mb-16">
-            <h2 className="text-center text-3xl font-bold tracking-wide text-white/90 mb-12">Powered by Cutting-Edge Technology</h2>
-            <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6">
-              {[
-                { name: 'Next.js', icon: '⚛️', color: 'from-blue-400 to-indigo-500' },
-                { name: 'React', icon: '⚛️', color: 'from-cyan-400 to-blue-500' },
-                { name: 'TypeScript', icon: '📘', color: 'from-blue-500 to-indigo-600' },
-                { name: 'Node.js', icon: '🟢', color: 'from-green-400 to-emerald-500' },
-                { name: 'PM2', icon: '🚀', color: 'from-purple-400 to-pink-500' },
-                { name: 'GitHub Actions', icon: '🐙', color: 'from-gray-400 to-slate-500' },
-                { name: 'Netlify', icon: '🌐', color: 'from-cyan-400 to-blue-500' },
-                { name: 'Tailwind CSS', icon: '🎨', color: 'from-cyan-400 to-teal-500' },
-                { name: 'Docker', icon: '🐳', color: 'from-blue-400 to-indigo-500' },
-                { name: 'PostgreSQL', icon: '🐘', color: 'from-blue-500 to-indigo-600' },
-                { name: 'Redis', icon: '🔴', color: 'from-red-400 to-pink-500' },
-                { name: 'AWS', icon: '☁️', color: 'from-orange-400 to-yellow-500' }
-              ].map((tech, index) => (
-                <div key={index} className="text-center group">
-                  <div className={`w-16 h-16 bg-gradient-to-br ${tech.color} rounded-xl flex items-center justify-center mx-auto mb-3 group-hover:scale-110 transition-transform duration-300`}>
-                    <span className="text-2xl">{tech.icon}</span>
-                  </div>
-                  <div className="text-sm text-white/70 font-medium">{tech.name}</div>
-                </div>
-              ))}
-            </div>
-          </section>
-
-          {/* Additional Content Section */}
-          <section className="mx-auto max-w-7xl px-6 pb-14 mb-16">
+          
+          {/* Explore Our Platform Section */}
+          <section className="mx-auto max-w-7xl px-6 pb-14">
             <h2 className="text-center text-2xl font-bold tracking-wide text-white/90 mb-8">Explore Our Platform</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
               <Link href="/about" className="group bg-white/10 backdrop-blur-xl rounded-xl p-6 border border-white/20 hover:border-cyan-400/30 transition-all duration-300 text-center">
@@ -507,42 +376,18 @@ const HomePage: React.FC = () => {
             </div>
           </section>
 
-          {/* Statistics Section */}
-          <section className="mx-auto max-w-7xl px-6 pb-14">
-            <h2 className="text-center text-3xl font-bold tracking-wide text-white/90 mb-12">Our Impact in Numbers</h2>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-              <div className="text-center">
-                <div className="text-5xl font-bold bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent mb-2">500+</div>
-                <div className="text-white/70 text-sm">Clients Served</div>
-              </div>
-              <div className="text-center">
-                <div className="text-5xl font-bold bg-gradient-to-r from-fuchsia-400 to-purple-500 bg-clip-text text-transparent mb-2">99.9%</div>
-                <div className="text-white/70 text-sm">Uptime Guarantee</div>
-              </div>
-              <div className="text-center">
-                <div className="text-5xl font-bold bg-gradient-to-r from-green-400 to-emerald-500 bg-clip-text text-transparent mb-2">24/7</div>
-                <div className="text-white/70 text-sm">AI Monitoring</div>
-              </div>
-              <div className="text-center">
-                <div className="text-5xl font-bold bg-gradient-to-r from-yellow-400 to-orange-500 bg-clip-text text-transparent mb-2">300%</div>
-                <div className="text-white/70 text-sm">Efficiency Gain</div>
-              </div>
-            </div>
-          </section>
-
           {/* Call to Action Section */}
-          <section className="mx-auto max-w-7xl px-6 pb-14">
-            <div className="bg-gradient-to-r from-cyan-500/20 to-fuchsia-500/20 backdrop-blur-xl rounded-3xl p-12 text-center border border-white/20">
-              <h2 className="text-4xl font-bold text-white mb-6">Ready to Transform Your Business?</h2>
-              <p className="text-xl text-white/80 mb-8 max-w-3xl mx-auto">
-                Join hundreds of companies already leveraging our autonomous AI systems to 
-                streamline operations, boost productivity, and drive innovation.
+          <section className="mx-auto max-w-4xl px-6 pb-16 text-center">
+            <div className="bg-gradient-to-r from-cyan-500/20 to-fuchsia-500/20 backdrop-blur-xl rounded-3xl p-12 border border-white/20">
+              <h2 className="text-3xl font-bold text-white mb-6">Ready to Transform Your Business?</h2>
+              <p className="text-xl text-white/80 mb-8">
+                Join the future of autonomous technology. Let's discuss how our AI solutions can revolutionize your operations.
               </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Link href="/contact" className="px-8 py-4 bg-gradient-to-r from-cyan-400 to-blue-500 hover:from-cyan-500 hover:to-blue-600 text-white font-semibold rounded-xl transition-all duration-300 hover:scale-105 shadow-lg">
+              <div className="flex flex-wrap justify-center gap-4">
+                <Link href="/contact" className="px-8 py-4 bg-gradient-to-r from-cyan-400 to-fuchsia-400 text-white font-semibold rounded-lg hover:from-cyan-500 hover:to-fuchsia-500 transition-all duration-300 transform hover:scale-105">
                   Get Started Today
                 </Link>
-                <Link href="/case-studies" className="px-8 py-4 bg-white/10 hover:bg-white/20 border border-white/30 text-white font-semibold rounded-xl transition-all duration-300 hover:scale-105">
+                <Link href="/case-studies" className="px-8 py-4 bg-white/10 text-white font-semibold rounded-lg border border-white/20 hover:bg-white/20 transition-all duration-300">
                   View Case Studies
                 </Link>
               </div>
