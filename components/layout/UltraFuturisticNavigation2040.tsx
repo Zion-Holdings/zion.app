@@ -47,18 +47,25 @@ const UltraFuturisticNavigation2040: React.FC = () => {
       description: 'Explore our revolutionary solutions',
       dropdown: [
         {
+          name: 'Revolutionary 2046 Services',
+          href: '/revolutionary-2046-services-showcase',
+          icon: Sparkles,
+          description: 'Next-generation 2046 technology solutions',
+          color: 'from-purple-500 to-pink-500'
+        },
+        {
           name: 'AI & Consciousness',
           href: '/services/ai-consciousness',
           icon: Brain,
           description: 'AI consciousness evolution and development',
-          color: 'from-purple-500 to-pink-500'
+          color: 'from-cyan-500 to-blue-500'
         },
         {
           name: 'Quantum Technology',
           href: '/services/quantum-technology',
           icon: Atom,
           description: 'Quantum computing and hybrid systems',
-          color: 'from-cyan-500 to-blue-500'
+          color: 'from-blue-500 to-indigo-500'
         },
         {
           name: 'Cybersecurity',
