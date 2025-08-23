@@ -3,16 +3,28 @@ const CACHE_NAME = 'zion-tech-group-v1.0.0';
 const STATIC_CACHE = 'zion-static-v1.0.0';
 const DYNAMIC_CACHE = 'zion-dynamic-v1.0.0';
 
+<<<<<<< HEAD
+// Files to cache immediately
+const STATIC_FILES = [
+=======
 const CACHE_NAME = 'zion-tech-group-v1.0.0';
 const STATIC_CACHE_NAME = 'zion-tech-group-static-v1.0.0';
 const DYNAMIC_CACHE_NAME = 'zion-tech-group-dynamic-v1.0.0';
 
 // Static assets to cache
 const STATIC_ASSETS = [
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-1b0a
   '/',
   '/offline.html',
   '/manifest.json',
   '/favicon.ico',
+<<<<<<< HEAD
+  '/logo.png',
+  '/og-image.jpg'
+];
+
+// Install event - cache static files
+=======
   '/images/zion-tech-group-logo.png',
   '/images/zion-tech-group-og.jpg'
 ];
@@ -27,12 +39,18 @@ const DYNAMIC_ROUTES = [
 ];
 
 // Install event - cache static assets
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-1b0a
 self.addEventListener('install', (event) => {
   event.waitUntil(
     caches.open(STATIC_CACHE_NAME)
       .then((cache) => {
+<<<<<<< HEAD
+        console.log('Opened cache');
+        return cache.addAll(STATIC_FILES);
+=======
         console.log('Caching static assets');
         return cache.addAll(STATIC_ASSETS);
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-1b0a
       })
       .then(() => {
         console.log('Static assets cached successfully');
@@ -44,6 +62,20 @@ self.addEventListener('install', (event) => {
 // Activate event - clean up old caches
 self.addEventListener('activate', (event) => {
   event.waitUntil(
+<<<<<<< HEAD
+    caches.keys().then((cacheNames) => {
+      return Promise.all(
+        cacheNames.map((cacheName) => {
+          if (cacheName !== STATIC_CACHE && cacheName !== DYNAMIC_CACHE) {
+            console.log('Deleting old cache:', cacheName);
+            return caches.delete(cacheName);
+          }
+        })
+      );
+    }).then(() => {
+      return self.clients.claim();
+    })
+=======
     caches.keys()
       .then((cacheNames) => {
         return Promise.all(
@@ -59,6 +91,7 @@ self.addEventListener('activate', (event) => {
         console.log('Service worker activated');
         return self.clients.claim();
       })
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-1b0a
   );
 });
 
@@ -72,12 +105,122 @@ self.addEventListener('fetch', (event) => {
     return;
   }
 
+<<<<<<< HEAD
+  // Skip chrome-extension and other non-http requests
+=======
   // Skip non-HTTP(S) requests
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-1b0a
   if (!url.protocol.startsWith('http')) {
     return;
   }
 
   // Handle different types of requests
+<<<<<<< HEAD
+  if (request.destination === 'document') {
+    // HTML pages - network first, fallback to cache
+    event.respondWith(
+      fetch(request)
+        .then((response) => {
+          // Cache successful responses
+          if (response.status === 200) {
+            const responseClone = response.clone();
+            caches.open(DYNAMIC_CACHE).then((cache) => {
+              cache.put(request, responseClone);
+            });
+          }
+          return response;
+        })
+        .catch(() => {
+          // Return cached version or offline page
+          return caches.match(request)
+            .then((cachedResponse) => {
+              if (cachedResponse) {
+                return cachedResponse;
+              }
+              return caches.match('/offline.html');
+            });
+        })
+    );
+  } else if (request.destination === 'image' || request.destination === 'style' || request.destination === 'script') {
+    // Static assets - cache first, fallback to network
+    event.respondWith(
+      caches.match(request)
+        .then((cachedResponse) => {
+          if (cachedResponse) {
+            return cachedResponse;
+          }
+          return fetch(request)
+            .then((response) => {
+              // Cache successful responses
+              if (response.status === 200) {
+                const responseClone = response.clone();
+                caches.open(DYNAMIC_CACHE).then((cache) => {
+                  cache.put(request, responseClone);
+                });
+              }
+              return response;
+            });
+        })
+    );
+  } else {
+    // Other requests - network first, fallback to cache
+    event.respondWith(
+      fetch(request)
+        .then((response) => {
+          // Cache successful responses
+          if (response.status === 200) {
+            const responseClone = response.clone();
+            caches.open(DYNAMIC_CACHE).then((cache) => {
+              cache.put(request, responseClone);
+            });
+          }
+          return response;
+        })
+        .catch(() => {
+          return caches.match(request);
+        })
+    );
+  }
+});
+
+// Background sync for offline actions
+self.addEventListener('sync', (event) => {
+  if (event.tag === 'background-sync') {
+    event.waitUntil(
+      // Handle background sync tasks
+      console.log('Background sync triggered')
+    );
+  }
+});
+
+// Push notifications
+self.addEventListener('push', (event) => {
+  if (event.data) {
+    const data = event.data.json();
+    const options = {
+      body: data.body,
+      icon: '/logo.png',
+      badge: '/logo.png',
+      vibrate: [100, 50, 100],
+      data: {
+        dateOfArrival: Date.now(),
+        primaryKey: 1
+      },
+      actions: [
+        {
+          action: 'explore',
+          title: 'View Details',
+          icon: '/logo.png'
+        },
+        {
+          action: 'close',
+          title: 'Close',
+          icon: '/logo.png'
+        }
+      ]
+    };
+
+=======
   if (isStaticAsset(request)) {
     event.respondWith(handleStaticAsset(request));
   } else if (isDynamicRoute(request)) {
@@ -216,6 +359,7 @@ self.addEventListener('push', (event) => {
       ]
     };
 
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-1b0a
     event.waitUntil(
       self.registration.showNotification(data.title, options)
     );
@@ -228,7 +372,11 @@ self.addEventListener('notificationclick', (event) => {
 
   if (event.action === 'explore') {
     event.waitUntil(
+<<<<<<< HEAD
+      clients.openWindow('/')
+=======
       clients.openWindow('/services')
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-1b0a
     );
   }
 });

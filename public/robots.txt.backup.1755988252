@@ -17,8 +17,13 @@ Allow: /services/
 Allow: /solutions/
 Allow: /about/
 Allow: /contact/
+<<<<<<< HEAD
+Allow: /blog/
+Allow: /resources/
+=======
 Allow: /resources/
 Allow: /blog/
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-1b0a
 
 # Crawl delay for better server performance
 Crawl-delay: 1

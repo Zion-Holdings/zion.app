@@ -7,9 +7,13 @@ import TopContactBar from './TopContactBar';
 import PerformanceMonitor from '../PerformanceMonitor';
 import AccessibilityEnhancer from '../AccessibilityEnhancer';
 import CookieConsentBanner from '../CookieConsentBanner';
+<<<<<<< HEAD
+import { Moon, Sun } from 'lucide-react';
+=======
 import SEOHead from '../SEOHead';
 import ServiceWorkerRegistration from '../ServiceWorkerRegistration';
 import PerformanceOptimizer from '../PerformanceOptimizer';
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-1b0a
 
 interface LayoutProps {
 	children: React.ReactNode;
@@ -43,10 +47,14 @@ export default function Layout({ children }: LayoutProps) {
   };
 
   return (
+<<<<<<< HEAD
+    <div className={`min-h-screen ${darkMode ? 'bg-black text-white' : 'bg-white text-black'} relative overflow-x-hidden transition-colors duration-300`}>
+=======
     <div className="min-h-screen bg-black text-white relative overflow-x-hidden">
       {/* SEO Head */}
       <SEOHead />
       
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-1b0a
       {/* Skip to content link for accessibility */}
       <a href="#main" className="skip-link">Skip to main content</a>
       
