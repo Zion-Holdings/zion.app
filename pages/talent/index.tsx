@@ -1,1 +1,1 @@
-export default function TalentIndex() { return null }
+export default function TalentIndex() { return <div className="p-6">Talent</div>; }

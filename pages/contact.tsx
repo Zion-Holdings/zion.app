@@ -1,7 +1,3 @@
-export default function ContactPage() {
-  return <div className="container mx-auto p-6">Contact</div>;
-}
-=======
 import React from 'react';
 export default function Contact() {
   return (
@@ -13,3 +9,5 @@ export default function Contact() {
 }
 =======
 export default function Contact() { return null }
+=======
+export default function Contact() { return <div className="p-6">Contact</div>; }

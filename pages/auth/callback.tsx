@@ -1,1 +1,1 @@
-export default function AuthCallback() { return null }
+export default function AuthCallback() { return <div className="p-6">Auth Callback</div>; }

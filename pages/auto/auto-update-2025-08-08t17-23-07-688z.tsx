@@ -1,1 +1,1 @@
-export default function AutoUpdate20250808T172307688Z() { return null }
+export default function AutoUpdateG() { return <div className="p-6">Auto Update</div>; }

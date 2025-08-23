@@ -1,1 +1,1 @@
-export default function DataAnalyticsImplementation() { return null }
+export default function Article4() { return <div className="p-6">Article</div>; }
