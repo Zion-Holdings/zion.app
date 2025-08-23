@@ -2,7 +2,7 @@ import React, { useEffect, useState, useCallback, Suspense, lazy } from 'react';
 import Layout from './layout/Layout';
 import { motion } from 'framer-motion';
 import { 
-  ArrowRight, Play, TrendingUp, Brain, Shield, Rocket, Globe, Cpu, Database, Atom, Star, Loader2
+  ArrowRight, Play, TrendingUp, Brain, Shield, Rocket, Globe, Cpu, Database, Atom, Star, Loader2, AlertCircle
 } from 'lucide-react';
 import Head from 'next/head';
 
@@ -89,7 +89,29 @@ const Homepage2044: React.FC = () => {
     window.location.href = service.slug;
   }, []);
 
+  if (isLoading) {
+    return <LoadingSpinner />;
+  }
 
+  if (error) {
+    return (
+      <div className="min-h-screen flex items-center justify-center">
+        <div className="text-center">
+          <AlertCircle className="w-16 h-16 text-red-400 mx-auto mb-4" />
+          <h1 className="text-2xl font-bold text-white mb-2">Error Loading Page</h1>
+          <p className="text-gray-400">{error}</p>
+        </div>
+      </div>
+    );
+  }
+
+  return (
+    <Layout 
+      title="Zion Tech Group - Revolutionary 2044 Technology"
+      description="Experience the future with our revolutionary 2044 technology solutions. AI consciousness, quantum computing, and autonomous systems that transform businesses worldwide."
+      keywords="AI consciousness, quantum computing, autonomous systems, space technology, cybersecurity, business intelligence, Zion Tech Group, 2044 technology"
+    >
+      <main className="min-h-screen bg-black text-white relative overflow-hidden">
         {/* Hero Section */}
         <section 
           className="min-h-screen flex items-center justify-center px-4 relative overflow-hidden"
