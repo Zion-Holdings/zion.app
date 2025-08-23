@@ -23,5 +23,9 @@
     }
   ],
   "buildBreakingFiles": [],
+<<<<<<< HEAD
+  "generatedAt": "2025-08-19T18:31:39.368Z"
+=======
   "generatedAt": "2025-08-19T17:36:12.904Z"
+>>>>>>> origin/cursor/automate-all-existing-automations-and-clean-up-6146
 }
