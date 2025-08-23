@@ -9,7 +9,12 @@ import {
   Zap,
   TrendingUp, Award, CheckCircle, Clock,
   Search, X as CloseIcon,
+<<<<<<< HEAD
+  Target, BookOpen, Calendar, Video, FileText,
+  Building
+=======
   Target, BookOpen, Calendar, Video, FileText, Grid
+>>>>>>> origin/cursor/website-audit-content-update-and-deployment-feb9
 } from 'lucide-react';
 
 const contactInfo = {

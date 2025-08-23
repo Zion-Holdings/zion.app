@@ -145,11 +145,20 @@ const navigationItems: NavigationItem[] = [
     category: 'showcase',
     children: [
       { 
+<<<<<<< HEAD
+        name: 'Innovative 2027 Services', 
+        href: '/innovative-2027-services-showcase', 
+        description: 'Cutting-edge 2027 services showcase',
+        icon: <Star className="w-4 h-4" />,
+        featured: true,
+        badge: 'NEW'
+=======
         name: 'Services Showcase', 
         href: '/showcase', 
         description: 'Complete services overview',
         icon: <Grid className="w-4 h-4" />,
         featured: true
+>>>>>>> origin/cursor/website-audit-content-update-and-deployment-feb9
       },
       { 
         name: '2025 Services Showcase', 
@@ -211,10 +220,17 @@ const navigationItems: NavigationItem[] = [
         icon: <Star className="w-4 h-4" />
       },
       { 
+<<<<<<< HEAD
+        name: 'Partners', 
+        href: '/partners', 
+        description: 'Partnership opportunities',
+        icon: <Play className="w-4 h-4" />
+=======
         name: 'Leadership Team', 
         href: '/leadership', 
         description: 'Meet our executives',
         icon: <Users className="w-4 h-4" />
+>>>>>>> origin/cursor/website-audit-content-update-and-deployment-feb9
       },
       { 
         name: 'Careers', 
