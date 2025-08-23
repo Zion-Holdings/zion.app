@@ -1,14 +1,12 @@
-import '../styles/globals.css'
 import type { AppProps } from 'next/app'
-import dynamic from 'next/dynamic'
+import EnhancedLayout from '../components/layout/EnhancedLayout'
+import '../styles/enhanced-design-system.css'
+import '../styles/modern-design-system.css'
 
-const ChatbotWidget = dynamic(() => import('../components/ui/ChatbotWidget'), { ssr: false })
-
-export default function MyApp({ Component, pageProps }: AppProps) {
+export default function App({ Component, pageProps }: AppProps) {
   return (
-    <>
+    <EnhancedLayout>
       <Component {...pageProps} />
-      <ChatbotWidget />
-    </>
+    </EnhancedLayout>
   )
 }
