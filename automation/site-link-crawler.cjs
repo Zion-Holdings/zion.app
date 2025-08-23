@@ -6,203 +6,198 @@ const url = require('url');
 const axios = require('axios');
 const cheerio = require('cheerio');
 
-const START_URL = process.env.APP_SITE_URL || 'https://ziontechgroup.com';
-const USER_AGENT = process.env.CRAWLER_USER_AGENT || 'ZionSiteCrawler/1.0 (+https://ziontechgroup.com)';
-const MAX_PAGES = Number(process.env.CRAWLER_MAX_PAGES || 5000);
-const MAX_CONCURRENCY = Number(process.env.CRAWLER_MAX_CONCURRENCY || 4);
-const REQUEST_DELAY_MS = Number(process.env.CRAWLER_REQUEST_DELAY_MS || 250);
-const CONNECT_TIMEOUT_MS = Number(process.env.CRAWLER_CONNECT_TIMEOUT_MS || 10000);
-const READ_TIMEOUT_MS = Number(process.env.CRAWLER_READ_TIMEOUT_MS || 15000);
+const BASE_URL = process.env.APP_MARKETING_URL || process.env.BASE_URL || 'https://ziontechgroup.com';
+const MAX_PAGES = Number(process.env.LINK_CRAWL_MAX_PAGES || 2000);
+const CONCURRENCY = Number(process.env.LINK_CRAWL_CONCURRENCY || 5);
+const REQUEST_TIMEOUT_MS = Number(process.env.LINK_CRAWL_TIMEOUT_MS || 15000);
+const POLITENESS_DELAY_MS = Number(process.env.LINK_CRAWL_DELAY_MS || 200);
 
 const LOG_DIR = path.join(__dirname, 'logs');
-const REPORT_DIR = path.join(__dirname, '..', 'data', 'reports', 'site-links');
+const LOG_FILE = path.join(LOG_DIR, 'site-link-crawler.log');
+const REPORT_DIR = path.join(process.cwd(), 'data', 'reports', 'links');
 
-function ensureDir(dir) { if (!fs.existsSync(dir)) fs.mkdirSync(dir, { recursive: true }); }
+function ensureDir(p) {
+  if (!fs.existsSync(p)) fs.mkdirSync(p, { recursive: true });
+}
+
 ensureDir(LOG_DIR);
 ensureDir(REPORT_DIR);
 
-const LOG_FILE = path.join(LOG_DIR, 'site-link-crawler.log');
 function log(message) {
   const line = `[${new Date().toISOString()}] ${message}`;
   console.log(line);
-  fs.appendFileSync(LOG_FILE, line + '\n');
+  fs.appendFileSync(LOG_FILE, `${line}\n`);
 }
 
-function normalizeUrl(href, base) {
+function normalizeUrl(url) {
+  if (!url) return null;
+  if (url.startsWith('#')) return null;
+  if (url.startsWith('mailto:') || url.startsWith('tel:')) return null;
+  // Convert relative to absolute
   try {
-    if (!href) return null;
-    if (href.startsWith('mailto:') || href.startsWith('tel:') || href.startsWith('javascript:')) return null;
-    const resolved = new url.URL(href, base).toString();
-    // Normalize trailing slash and lowercase host
-    const u = new url.URL(resolved);
-    u.hash = '';
-    u.host = u.host.toLowerCase();
-    // keep pathname casing as-is to respect case-sensitive routes; but remove trailing slash except root
-    if (u.pathname.length > 1 && u.pathname.endsWith('/')) u.pathname = u.pathname.slice(0, -1);
-    return u.toString();
-  } catch (_) { return null; }
-}
-
-function isInternal(link) {
-  try {
-    const start = new url.URL(START_URL);
-    const u = new url.URL(link);
-    return u.host === start.host && (u.protocol === 'http:' || u.protocol === 'https:');
-  } catch (_) { return false; }
-}
-
-async function fetchPage(targetUrl) {
-  const controller = new AbortController();
-  const timeoutId = setTimeout(() => controller.abort(), CONNECT_TIMEOUT_MS + READ_TIMEOUT_MS);
-  try {
-    const resp = await axios.get(targetUrl, {
-      maxRedirects: 5,
-      headers: { 'User-Agent': USER_AGENT, 'Accept': 'text/html,application/xhtml+xml' },
-      timeout: CONNECT_TIMEOUT_MS + READ_TIMEOUT_MS,
-      signal: controller.signal
-    });
-    return { status: resp.status, data: resp.data, finalUrl: resp.request?.res?.responseUrl || targetUrl };
-  } catch (err) {
-    return { status: err.response?.status || 0, error: err.message };
-  } finally {
-    clearTimeout(timeoutId);
+    const abs = new URL(url, BASE_URL).toString();
+    return abs.split('#')[0];
+  } catch (e) {
+    return null;
   }
 }
 
-async function headRequest(targetUrl) {
+function isSameHost(url) {
   try {
-    const resp = await axios.head(targetUrl, {
-      maxRedirects: 5,
-      headers: { 'User-Agent': USER_AGENT },
-      timeout: 8000
-    });
-    const finalUrl = resp.request?.res?.responseUrl || targetUrl;
-    return { ok: resp.status >= 200 && resp.status < 400, status: resp.status, finalUrl };
-  } catch (err) {
-    const status = err.response?.status || 0;
-    const finalUrl = err.response?.request?.res?.responseUrl || targetUrl;
-    return { ok: status >= 200 && status < 400, status, finalUrl, error: err.message };
+    const u = new URL(url);
+    const b = new URL(BASE_URL);
+    return u.hostname === b.hostname;
+  } catch (e) {
+    return false;
   }
 }
 
-async function crawl() {
-  log(`🚀 Starting crawl from ${START_URL}`);
-  const origin = new url.URL(START_URL);
-  const toVisit = new Set([normalizeUrl(START_URL, START_URL)]);
-  const visiting = new Set();
+async function delay(ms) {
+  return new Promise(res => setTimeout(res, ms));
+}
+
+async function fetchWithRedirects(url) {
+  const client = axios.create({
+    maxRedirects: 5,
+    timeout: REQUEST_TIMEOUT_MS,
+    headers: {
+      'User-Agent': 'ZionLinkCrawler/1.0 (+https://ziontechgroup.com)'
+    },
+    validateStatus: () => true
+  });
+  const start = Date.now();
+  try {
+    const response = await client.get(url);
+    const durationMs = Date.now() - start;
+    const finalUrl = response.request?.res?.responseUrl || url;
+    return {
+      ok: response.status < 400,
+      status: response.status,
+      url,
+      finalUrl,
+      durationMs,
+      headers: response.headers,
+      html: typeof response.data === 'string' ? response.data : '',
+      error: null
+    };
+  } catch (error) {
+    const durationMs = Date.now() - start;
+    return {
+      ok: false,
+      status: 0,
+      url,
+      finalUrl: url,
+      durationMs,
+      headers: {},
+      html: '',
+      error: error.message || 'request-failed'
+    };
+  }
+}
+
+async function crawl(baseUrl) {
+  const queue = [baseUrl];
   const visited = new Set();
-  const linkGraph = new Map(); // url -> Set(childUrls)
-  const linkStatus = new Map(); // url -> { status, ok, finalUrl }
-  const canonicalMap = new Map(); // url -> canonicalUrl
+  const results = new Map(); // url -> result
+  const discoveredLinks = new Map(); // pageUrl -> [links]
 
-  let active = 0;
-  let processed = 0;
+  log(`🚀 Starting crawl: base=${baseUrl}, maxPages=${MAX_PAGES}, concurrency=${CONCURRENCY}`);
 
-  async function scheduleNext() {
-    if (processed >= MAX_PAGES) return;
-    if (active >= MAX_CONCURRENCY) return;
-    const next = Array.from(toVisit).find(u => u && !visited.has(u) && !visiting.has(u));
-    if (!next) return;
+  async function worker() {
+    while (true) {
+      const next = queue.shift();
+      if (!next) return;
+      if (visited.has(next)) continue;
+      if (visited.size >= MAX_PAGES) return;
+      visited.add(next);
 
-    visiting.add(next);
-    active++;
+      await delay(POLITENESS_DELAY_MS);
 
-    setTimeout(async () => {
-      try {
-        const res = await fetchPage(next);
-        const ok = res.status >= 200 && res.status < 400 && !!res.data;
-        linkStatus.set(next, { ok, status: res.status, finalUrl: res.finalUrl || next });
-        processed++;
-        visited.add(next);
-        visiting.delete(next);
+      const res = await fetchWithRedirects(next);
+      results.set(next, res);
+      log(`🧭 ${visited.size}/${MAX_PAGES} ${res.status} ${next}${res.finalUrl !== next ? ` -> ${res.finalUrl}` : ''}`);
 
-        if (ok) {
-          const $ = cheerio.load(res.data);
-          const pageLinks = new Set();
-
-          // canonical
-          const canonicalHref = $('link[rel="canonical"]').attr('href');
-          const canonical = normalizeUrl(canonicalHref, next);
-          if (canonical) canonicalMap.set(next, canonical);
-
-          $('a[href]').each((_, el) => {
-            const href = $(el).attr('href');
-            const resolved = normalizeUrl(href, next);
-            if (!resolved) return;
-            pageLinks.add(resolved);
-            // queue internal links only
-            if (isInternal(resolved) && !visited.has(resolved) && toVisit.size + visiting.size < MAX_PAGES) {
-              toVisit.add(resolved);
-            }
+      if (res.ok && res.html) {
+        try {
+          const $ = cheerio.load(res.html);
+          const links = new Set();
+          $('a[href]').each((_, a) => {
+            const href = $(a).attr('href');
+            const normalized = normalizeUrl(href);
+            if (normalized) links.add(normalized);
           });
+          const linkList = Array.from(links);
+          discoveredLinks.set(next, linkList);
 
-          linkGraph.set(next, pageLinks);
-
-          // Also validate all internal links on the page quickly with HEAD
-          const internalLinks = Array.from(pageLinks).filter(isInternal);
-          for (const l of internalLinks) {
-            if (!linkStatus.has(l)) {
-              const r = await headRequest(l);
-              linkStatus.set(l, { ok: r.ok, status: r.status, finalUrl: r.finalUrl || l });
+          // Only follow discovered links when the current page is within our domain
+          const currentIsInternal = isSameHost(next);
+          for (const l of linkList) {
+            if (!visited.has(l)) {
+              if (isSameHost(l)) {
+                // Internal links are fully crawled
+                queue.push(l);
+              } else if (currentIsInternal) {
+                // For external links found on internal pages, check status once but do not recurse further
+                if (!results.has(l)) queue.push(l);
+              }
             }
           }
+        } catch (e) {
+          log(`⚠️ Parse error ${next}: ${e.message}`);
         }
-      } catch (e) {
-        log(`❌ Error crawling ${next}: ${e.message}`);
-      } finally {
-        active--;
-        await scheduleNext();
       }
-    }, REQUEST_DELAY_MS);
+    }
   }
 
-  // Prime concurrent workers
-  const workers = Array.from({ length: Math.min(MAX_CONCURRENCY, MAX_PAGES) }, () => scheduleNext());
+  const workers = Array.from({ length: CONCURRENCY }, () => worker());
   await Promise.all(workers);
 
-  // Drain queue
-  while (active > 0 || Array.from(toVisit).some(u => !visited.has(u))) {
-    // keep scheduling until done
-    await new Promise(r => setTimeout(r, 500));
-    await scheduleNext();
-  }
-
-  const allUrls = Array.from(new Set([...visited, ...linkStatus.keys()])).filter(Boolean);
-  const broken = allUrls
-    .map(u => ({ url: u, ...(linkStatus.get(u) || { ok: false, status: 0, finalUrl: u }) }))
-    .filter(e => !e.ok);
-
-  const crawlAt = new Date().toISOString();
-  const baseName = `crawl-${Date.now()}`;
-  const files = {
-    crawl: path.join(REPORT_DIR, `${baseName}.json`),
-    broken: path.join(REPORT_DIR, 'broken-links.json'),
-    graph: path.join(REPORT_DIR, 'link-graph.json'),
-    canonical: path.join(REPORT_DIR, 'canonical-map.json'),
-    all: path.join(REPORT_DIR, 'all-links.json'),
-    summary: path.join(REPORT_DIR, 'summary.json')
+  const summary = {
+    baseUrl,
+    startedAt: new Date().toISOString(),
+    totalVisited: visited.size,
+    totalResults: results.size,
+    withinDomain: Array.from(results.keys()).filter(isSameHost).length,
+    external: Array.from(results.keys()).filter(u => !isSameHost(u)).length,
+    statuses: Array.from(results.values()).reduce((acc, r) => {
+      const key = String(r.status || 0);
+      acc[key] = (acc[key] || 0) + 1;
+      return acc;
+    }, {}),
   };
 
-  const graphObj = Object.fromEntries(Array.from(linkGraph.entries()).map(([k, set]) => [k, Array.from(set || [])]));
-  const statusObj = Object.fromEntries(Array.from(linkStatus.entries()));
-  const canonicalObj = Object.fromEntries(Array.from(canonicalMap.entries()));
+  const timestamp = new Date().toISOString().replace(/[-:TZ.]/g, '').slice(0, 12);
+  const outfile = path.join(REPORT_DIR, `crawl-${timestamp}.json`);
+  const latest = path.join(REPORT_DIR, 'crawl-latest.json');
 
-  fs.writeFileSync(files.crawl, JSON.stringify({ crawlAt, startUrl: START_URL, origin: origin.host, visited: Array.from(visited), linkStatus: statusObj, canonical: canonicalObj }, null, 2));
-  fs.writeFileSync(files.graph, JSON.stringify(graphObj, null, 2));
-  fs.writeFileSync(files.canonical, JSON.stringify(canonicalObj, null, 2));
-  fs.writeFileSync(files.all, JSON.stringify(allUrls, null, 2));
-  fs.writeFileSync(files.summary, JSON.stringify({ crawlAt, pagesCrawled: visited.size, linksChecked: linkStatus.size, brokenCount: broken.length }, null, 2));
-  fs.writeFileSync(files.broken, JSON.stringify(broken, null, 2));
+  const payload = {
+    summary,
+    results: Array.from(results.entries()).map(([url, r]) => ({
+      url,
+      finalUrl: r.finalUrl,
+      status: r.status,
+      ok: r.ok,
+      durationMs: r.durationMs,
+      error: r.error || null,
+      headers: r.headers || {},
+      links: discoveredLinks.get(url) || []
+    }))
+  };
 
-  // Also create a quick Markdown index of discovered links for marketing/advertising
-  const md = [`# Site Links Index`, '', `- Crawl time: ${crawlAt}`, `- Start: ${START_URL}`, `- Pages crawled: ${visited.size}`, `- Links checked: ${linkStatus.size}`, `- Broken: ${broken.length}`, '', '## All Links', ...allUrls.map(l => `- ${l}`)].join('\n');
-  fs.writeFileSync(path.join(REPORT_DIR, 'links.md'), md);
-
-  log(`✅ Crawl completed. Pages: ${visited.size}, Links: ${linkStatus.size}, Broken: ${broken.length}`);
+  fs.writeFileSync(outfile, JSON.stringify(payload, null, 2));
+  fs.writeFileSync(latest, JSON.stringify(payload, null, 2));
+  log(`📄 Saved crawl report: ${outfile}`);
+  return payload;
 }
 
 if (require.main === module) {
-  crawl().catch(e => { log(`Fatal: ${e.message}`); process.exitCode = 1; });
+  const argBase = process.argv[2] || BASE_URL;
+  crawl(argBase).then(() => {
+    log('✅ Crawl complete');
+  }).catch((e) => {
+    log(`❌ Crawl failed: ${e.message}`);
+    process.exitCode = 1;
+  });
 }
 
 module.exports = { crawl };

@@ -360,6 +360,19 @@ The system is now capable of continuously improving the application, fixing erro
 - **Purpose**: Builds the app, boots a local server, measures simple TTFB and HTML payload size for key pages, and writes JSON reports to `data/reports/performance/`.
 - **Output**: `performance-*.json` artifacts with thresholds and alert flags. Useful for tracking regressions in server responsiveness and page weight.
 
+<<<<<<< HEAD
+## New: Supervisor (Non-Invasive)
+- Location: `automation/supervisor/`
+- Entrypoints:
+  - `automation/supervisor/supervisor-orchestrator.cjs`
+  - `automation/supervisor/supervisor-cron.sh`
+  - `automation/supervisor/supervisor-config.json`
+  - `automation/supervisor-agents-factory.cjs`
+  - `automation/install-supervisor-cron.sh`
+- Purpose: Continuously discover `*-cron.sh` scripts, verify health via PID/logs, stop problematic ones, run fix routines, and restart. Writes status to `data/reports/supervisor/`.
+- Does not modify existing factories or cron scripts. Uses PID/log/log conventions already present in `automation/`.
+=======
 ### 10. Link Monitor Continuous (GitHub Actions)
 - **File**: `.github/workflows/link-monitor-continuous.yml`
 - **Purpose**: Runs crawler and fixer every 30 minutes against `https://ziontechgroup.com`, uploads `data/reports/links` and automation logs.
+>>>>>>> origin/cursor/continuous-website-link-checker-and-fixer-d4cc
