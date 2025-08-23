@@ -4,7 +4,8 @@ import { motion } from 'framer-motion';
 import { 
   Phone, Mail, MapPin, ArrowRight, Globe, Shield, Rocket, Brain, Atom, Cpu,
   Facebook, Twitter, Linkedin, Instagram, Youtube, Github, Zap, Heart, Star,
-  Users, Lock, Cloud, Code, Server, Database, Network, Settings, Target, Play
+  Users, Lock, Cloud, Code, Server, Database, Network, Settings, Target, Play,
+  Truck, Lightbulb, CheckCircle, HelpCircle, MessageCircle, Activity, GraduationCap, BookOpen
 } from 'lucide-react';
 
 const UltraFuturisticFooter2045: React.FC = () => {
@@ -52,6 +53,17 @@ const UltraFuturisticFooter2045: React.FC = () => {
       ]
     },
     {
+      title: 'Micro SAAS Solutions',
+      links: [
+        { name: 'AI Customer Experience Platform', href: '/ai-customer-experience-platform', icon: <Users className="w-5 h-5" /> },
+        { name: 'Quantum-Secure Data Encryption', href: '/quantum-secure-encryption-service', icon: <Shield className="w-5 h-5" /> },
+        { name: 'AI Supply Chain Intelligence', href: '/ai-autonomous-supply-chain-intelligence', icon: <Truck className="w-5 h-5" /> },
+        { name: 'AI Marketing Intelligence', href: '/ai-autonomous-marketing-intelligence', icon: <Target className="w-5 h-5" /> },
+        { name: 'AI Product Intelligence', href: '/ai-autonomous-product-intelligence', icon: <Lightbulb className="w-5 h-5" /> },
+        { name: 'AI Compliance Intelligence', href: '/ai-autonomous-compliance-intelligence', icon: <CheckCircle className="w-5 h-5" /> }
+      ]
+    },
+    {
       title: 'Company',
       links: [
         { name: 'About Us', href: '/about', icon: <Users className="w-5 h-5" /> },
@@ -61,16 +73,36 @@ const UltraFuturisticFooter2045: React.FC = () => {
         { name: 'News & Updates', href: '/news', icon: <Globe className="w-5 h-5" /> },
         { name: 'Press Kit', href: '/press', icon: <Play className="w-5 h-5" /> }
       ]
+    },
+    {
+      title: 'Support & Resources',
+      links: [
+        { name: 'Help Center', href: '/support/help', icon: <HelpCircle className="w-5 h-5" /> },
+        { name: 'Contact Support', href: '/support/contact', icon: <MessageCircle className="w-5 h-5" /> },
+        { name: 'Status Page', href: '/status', icon: <Activity className="w-5 h-5" /> },
+        { name: 'Training', href: '/training', icon: <GraduationCap className="w-5 h-5" /> },
+        { name: 'Documentation', href: '/resources/documentation', icon: <BookOpen className="w-5 h-5" /> },
+        { name: 'API Reference', href: '/resources/api', icon: <Code className="w-5 h-5" /> }
+      ]
     }
   ];
 
   const socialLinks = [
-    { name: 'Facebook', icon: <Facebook className="w-5 h-5" />, href: 'https://facebook.com/ziontechgroup', color: 'from-blue-500 to-blue-600' },
-    { name: 'Twitter', icon: <Twitter className="w-5 h-5" />, href: 'https://twitter.com/ziontechgroup', color: 'from-cyan-400 to-blue-500' },
-    { name: 'LinkedIn', icon: <Linkedin className="w-5 h-5" />, href: 'https://linkedin.com/company/ziontechgroup', color: 'from-blue-600 to-blue-700' },
-    { name: 'Instagram', icon: <Instagram className="w-5 h-5" />, href: 'https://instagram.com/ziontechgroup', color: 'from-purple-500 to-pink-500' },
-    { name: 'YouTube', icon: <Youtube className="w-5 h-5" />, href: 'https://youtube.com/@ziontechgroup', color: 'from-red-500 to-red-600' },
-    { name: 'GitHub', icon: <Github className="w-5 h-5" />, href: 'https://github.com/ziontechgroup', color: 'from-gray-600 to-gray-700' }
+    { name: 'Facebook', icon: Facebook, href: 'https://facebook.com/ziontechgroup', color: 'from-blue-500 to-blue-600' },
+    { name: 'Twitter', icon: Twitter, href: 'https://twitter.com/ziontechgroup', color: 'from-cyan-400 to-blue-500' },
+    { name: 'LinkedIn', icon: Linkedin, href: 'https://linkedin.com/company/ziontechgroup', color: 'from-blue-600 to-blue-700' },
+    { name: 'Instagram', icon: Instagram, href: 'https://instagram.com/ziontechgroup', color: 'from-purple-500 to-pink-500' },
+    { name: 'YouTube', icon: Youtube, href: 'https://youtube.com/@ziontechgroup', color: 'from-red-500 to-red-600' },
+    { name: 'GitHub', icon: Github, href: 'https://github.com/ziontechgroup', color: 'from-gray-600 to-gray-700' }
+  ];
+
+  const quickLinks = [
+    { name: 'Privacy Policy', href: '/privacy' },
+    { name: 'Terms of Service', href: '/terms' },
+    { name: 'Cookie Policy', href: '/cookies' },
+    { name: 'Security', href: '/security' },
+    { name: 'Accessibility', href: '/accessibility' },
+    { name: 'Sitemap', href: '/sitemap.xml' }
   ];
 
   const fadeInUp = {
@@ -210,29 +242,28 @@ const UltraFuturisticFooter2045: React.FC = () => {
 
               {/* Social Links */}
               <div className="flex items-center space-x-4">
-                {socialLinks.map((social) => (
-                  <Link
-                    key={social.name}
-                    href={social.href}
-                    className={`p-2 rounded-lg bg-gray-900/50 border border-cyan-500/20 text-gray-400 ${social.color} transition-all duration-200 hover:scale-110 hover:border-cyan-500/50`}
-                    aria-label={social.name}
-                  >
-                    <social.icon className="w-5 h-5" />
-                  </Link>
-                ))}
+                {socialLinks.map((social) => {
+                  const IconComponent = social.icon;
+                  return (
+                    <Link
+                      key={social.name}
+                      href={social.href}
+                      className={`p-2 rounded-lg bg-gray-900/50 border border-cyan-500/20 text-gray-400 ${social.color} transition-all duration-200 hover:scale-110 hover:border-cyan-500/50`}
+                      aria-label={social.name}
+                    >
+                      <IconComponent className="w-5 h-5" />
+                    </Link>
+                  );
+                })}
               </div>
 
               {/* Additional Links */}
               <div className="flex items-center space-x-6 text-sm text-gray-400">
-                <Link href="/status" className="hover:text-cyan-400 transition-colors duration-200">
-                  System Status
-                </Link>
-                <Link href="/sitemap" className="hover:text-cyan-400 transition-colors duration-200">
-                  Sitemap
-                </Link>
-                <Link href="/accessibility" className="hover:text-cyan-400 transition-colors duration-200">
-                  Accessibility
-                </Link>
+                {quickLinks.map((link) => (
+                  <Link key={link.name} href={link.href} className="hover:text-cyan-400 transition-colors duration-200">
+                    {link.name}
+                  </Link>
+                ))}
               </div>
             </div>
           </div>
