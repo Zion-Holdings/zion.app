@@ -6,8 +6,12 @@ import Button from '../components/ui/Button';
 import UltraQuantumHolographicBackground from '../components/ui/UltraQuantumHolographicBackground';
 import UltraAdvancedNavigation from '../components/layout/UltraAdvancedNavigation';
 import UltraAdvancedNavigation2026 from '../components/layout/UltraAdvancedNavigation2026';
+<<<<<<< HEAD
+import UltraFuturisticNavigation2028 from '../components/layout/UltraFuturisticNavigation2028';
+=======
 import UltraFuturisticNavigation2029 from '../components/layout/UltraFuturisticNavigation2029';
 import UltraFuturisticFooter2028 from '../components/layout/UltraFuturisticFooter2028';
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-4972
 import EnhancedServiceShowcase from '../components/sections/EnhancedServiceShowcase';
 import ServicesShowcase2029 from '../components/sections/2029ServicesShowcase';
 import Enhanced2026ServicesShowcase from '../components/sections/Enhanced2026ServicesShowcase';
@@ -15,7 +19,11 @@ import Revolutionary2026ServiceShowcase from '../components/sections/Revolutiona
 import Revolutionary2027ServicesShowcase from '../components/sections/Revolutionary2027ServicesShowcase';
 import Revolutionary2027Hero from '../components/sections/Revolutionary2027Hero';
 import EnhancedHero2026 from '../components/sections/EnhancedHero2026';
+<<<<<<< HEAD
+import UltraFuturisticHero2027 from '../components/sections/UltraFuturisticHero2027';
+=======
 import UltraFuturisticHero2029 from '../components/sections/UltraFuturisticHero2029';
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-4972
 import { motion } from 'framer-motion';
 import { enhancedRealMicroSaasServices } from '../data/enhanced-real-micro-saas-services';
 import { extraServices } from '../data/extra-services';
@@ -135,6 +143,102 @@ export default function HomePage() {
     ...revolutionary2027AIServices,
     ...revolutionary2027ITServices,
     ...revolutionary2027MicroSaasServices,
+<<<<<<< HEAD
+    ...futuristic2028Services,
+    ...emergingTech2028Services
+  ];
+
+const serviceCategories = [
+  {
+    title: 'Ultimate Real Micro SAAS',
+    description: 'Real, market-ready micro SAAS services that are transforming businesses',
+    services: ultimateRealMicroSaasServices2025.slice(0, 3),
+    icon: Rocket,
+    color: 'from-emerald-600 to-teal-600',
+    href: '/ultimate-real-micro-saas-showcase-2025',
+    features: ['AI Customer Success', 'AI Sales Intelligence', 'AI Content Marketing'],
+    badge: 'Hot',
+    badgeColor: 'bg-red-500'
+  },
+  {
+    title: 'AI & Consciousness',
+    description: 'Revolutionary AI platforms with consciousness and emotional intelligence',
+    services: innovativeAIServicesEnhanced2025.slice(0, 3),
+    icon: Brain,
+    color: 'from-violet-500 to-purple-600',
+    href: '/ai-services',
+    features: ['Emotional Intelligence', 'Self-Awareness', 'Consciousness Evolution'],
+    badge: 'New',
+    badgeColor: 'bg-green-500'
+  },
+  {
+    title: 'Quantum & Emerging Tech',
+    description: 'Breakthrough quantum computing and space technology solutions',
+    services: emergingTechServicesEnhanced2025.slice(0, 3),
+    icon: Atom,
+    color: 'from-indigo-500 to-blue-600',
+    href: '/quantum-services',
+    features: ['Quantum Computing', 'Space Mining', 'Brain-Computer Interface'],
+    badge: 'Hot',
+    badgeColor: 'bg-red-500'
+  },
+  {
+    title: 'Enterprise IT',
+    description: 'Advanced enterprise infrastructure and security solutions',
+    services: innovativeITServicesEnhanced2025.slice(0, 3),
+    icon: Shield,
+    color: 'from-blue-500 to-cyan-600',
+    href: '/enterprise-it',
+    features: ['Zero Trust Security', 'Quantum Cloud', 'Autonomous Operations'],
+    badge: 'Enterprise',
+    badgeColor: 'bg-blue-500'
+  },
+  {
+    title: 'Micro SAAS',
+    description: 'Innovative business solutions for modern enterprises',
+    services: innovativeRealMicroSaasServices2025.slice(0, 3),
+    icon: Rocket,
+    color: 'from-teal-500 to-emerald-600',
+    href: '/micro-saas',
+    features: ['Content Automation', 'CRM Intelligence', 'Decision Engine'],
+    badge: 'Hot',
+    badgeColor: 'bg-red-500'
+  },
+  {
+    title: 'Advanced AI Automation',
+    description: 'Revolutionary AI automation for development, testing, DevOps, and security',
+    services: advancedAIAutomationServices2025.slice(0, 3),
+    icon: Brain,
+    color: 'from-emerald-500 to-teal-600',
+    href: '/advanced-ai-automation-services',
+    features: ['Code Review AI', 'Testing Automation', 'DevOps Intelligence'],
+    badge: 'Advanced',
+    badgeColor: 'bg-purple-500'
+  },
+  {
+    title: 'Advanced IT Infrastructure',
+    description: 'Next-generation infrastructure with quantum computing and edge computing',
+    services: advancedITInfrastructureServices2025.slice(0, 3),
+    icon: Cloud,
+    color: 'from-indigo-500 to-purple-600',
+    href: '/advanced-it-infrastructure-services',
+    features: ['Quantum Cloud', 'Edge Computing', 'Zero Trust Security'],
+    badge: 'Advanced',
+    badgeColor: 'bg-purple-500'
+  },
+  {
+    title: 'Innovative Business Solutions',
+    description: 'AI-powered business intelligence, marketing, sales, and HR solutions',
+    services: innovativeBusinessSolutions2025.slice(0, 3),
+    icon: Target,
+    color: 'from-green-500 to-emerald-600',
+    href: '/innovative-business-solutions',
+    features: ['Business Intelligence', 'Marketing Automation', 'Sales Intelligence'],
+    badge: 'Business',
+    badgeColor: 'bg-emerald-500'
+  }
+];
+=======
     ...cuttingEdge2028MicroSaas,
     ...practicalBusinessSolutions2028,
     ...futuristicAIServices2029,
@@ -155,11 +259,48 @@ export default function HomePage() {
     biotechServices: revolutionary2027Services.filter(s => s.category.includes('Biotech')).length + emergingTech2027Services.filter(s => s.category.includes('Biotech')).length + biotechInnovationServices2029.length,
     metaverseServices: metaverseDigitalRealityServices2026.length + metaverseInnovationServices2029.length
   };
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-4972
 
 export default function Home() {
   return (
     <UltraFuturisticBackground2029>
       <Head>
+<<<<<<< HEAD
+        <title>Zion Tech Group - AI-Powered Technology Solutions & Micro SAAS Services</title>
+        <meta name="description" content="Transform your business with Zion Tech Group's AI-powered technology solutions, micro SAAS services, and cutting-edge innovations. Real services, real results." />
+        <meta name="keywords" content="AI services, micro SAAS, technology solutions, business automation, Zion Tech Group" />
+        <meta property="og:title" content="Zion Tech Group - AI-Powered Technology Solutions & Micro SAAS Services" />
+        <meta property="og:description" content="Transform your business with Zion Tech Group's AI-powered technology solutions and micro SAAS services." />
+        <meta property="og:url" content="https://ziontechgroup.com" />
+        <meta property="og:type" content="website" />
+        <link rel="canonical" href="https://ziontechgroup.com" />
+        
+        {/* Structured Data */}
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Organization",
+            "name": "Zion Tech Group",
+            "description": "Leading provider of revolutionary 2029 technology services",
+            "url": "https://ziontechgroup.com",
+            "logo": "https://ziontechgroup.com/logo.png",
+            "contactPoint": {
+              "@type": "ContactPoint",
+              "telephone": "+1-302-464-0950",
+              "contactType": "customer service",
+              "email": "kleber@ziontechgroup.com"
+            },
+            "address": {
+              "@type": "PostalAddress",
+              "streetAddress": "364 E Main St STE 1008",
+              "addressLocality": "Middletown",
+              "addressRegion": "DE",
+              "postalCode": "19709",
+              "addressCountry": "US"
+            }
+          })}
+        </script>
+=======
         <title>Zion Tech Group - Revolutionary 2029 Technology Services | AI, Quantum Computing, Space Tech, Biotech</title>
         <meta name="description" content="Experience the future of technology with Zion Tech Group's revolutionary 2029 services. Quantum AI, autonomous space mining, DNA computing, brain-computer interfaces, holographic communication, and cutting-edge emerging technologies. Transform your business with solutions that were once science fiction." />
         <meta name="keywords" content="quantum AI, space technology, DNA computing, brain-computer interface, holographic communication, autonomous systems, emerging technology, 2029 technology, AI services, quantum computing, biotechnology, space mining, metaverse" />
@@ -215,12 +356,27 @@ export default function Home() {
             })
           }}
         />
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-4972
       </Head>
 
       <UltraQuantumHolographicBackground>
         {/* Ultra Advanced Navigation */}
         <UltraFuturisticNavigation2029 />
 
+<<<<<<< HEAD
+      {/* Hero Section */}
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+        {/* Animated Background Elements */}
+        <div className="absolute inset-0">
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(139,92,246,0.1),transparent_50%)]" />
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_20%,rgba(236,72,153,0.1),transparent_50%)]" />
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_80%,rgba(0,212,255,0.1),transparent_50%)]" />
+        </div>
+
+        {/* Floating Elements */}
+        <div className="absolute inset-0 overflow-hidden">
+          {[...Array(20)].map((_, i) => (
+=======
                   {/* Ultra Futuristic Hero Section 2029 */}
           <UltraFuturisticHero2029 />
 
@@ -252,6 +408,7 @@ export default function Home() {
           <div className="absolute inset-0 bg-gradient-to-b from-transparent via-purple-900/10 to-cyan-900/10"></div>
           
           <div className="max-w-7xl mx-auto relative z-10">
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-4972
             <motion.div
               key={i}
               className="absolute w-2 h-2 bg-gradient-to-r from-cyan-400 to-purple-500 rounded-full opacity-20"
@@ -342,6 +499,88 @@ export default function Home() {
                 <ArrowRight className="w-6 h-6" />
               </motion.a>
               
+<<<<<<< HEAD
+              <motion.a
+                href="/services"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className="inline-flex items-center space-x-3 px-8 py-4 bg-black/50 border-2 border-cyan-500/50 text-cyan-300 font-bold text-lg rounded-xl hover:bg-cyan-500/10 hover:border-cyan-400 transition-all duration-200"
+              >
+                <span>All Services</span>
+                <Star className="w-6 h-6" />
+              </motion.a>
+              
+              <motion.a
+                href="/contact"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className="inline-flex items-center space-x-3 px-8 py-4 bg-black/50 border-2 border-cyan-500/50 text-cyan-300 font-bold text-lg rounded-xl hover:bg-cyan-500/10 hover:border-cyan-400 transition-all duration-200"
+              >
+                <div className="text-3xl md:text-4xl font-bold mb-2 text-cyan-400">
+                  {stat.value}
+                </div>
+                <div className="text-gray-300 text-sm md:text-base">{stat.label}</div>
+              </motion.div>
+            ))}
+          </motion.div>
+
+          {/* CTA Buttons */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.4 }}
+            className="flex flex-col sm:flex-row gap-4 justify-center items-center"
+          >
+            <Link href="/ultimate-real-micro-saas-showcase-2025">
+              <button className="px-8 py-4 bg-gradient-to-r from-emerald-500 to-teal-600 text-white font-semibold rounded-full hover:from-emerald-600 hover:to-teal-700 transition-all duration-300 transform hover:scale-105 hover:shadow-2xl hover:shadow-emerald-500/25 flex items-center gap-2">
+                <Rocket className="w-5 h-5" />
+                Explore Real Micro SAAS
+              </button>
+            </Link>
+            <Link href="/contact">
+              <button className="px-8 py-4 border-2 border-purple-500 text-purple-400 font-semibold rounded-full hover:bg-purple-500 hover:text-white transition-all duration-300 transform hover:scale-105 flex items-center gap-2">
+                <Phone className="w-5 h-5" />
+                Get Started
+              </button>
+            </Link>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Service Categories Section */}
+      <section className="py-20 px-6 relative">
+        <div className="max-w-7xl mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-4xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-cyan-400 to-purple-500 bg-clip-text text-transparent">
+              Our Service Categories
+            </h2>
+            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+              Discover our comprehensive range of technology services designed to transform your business and drive innovation.
+            </p>
+          </motion.div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+            {serviceCategories.map((category, index) => (
+              <motion.div
+                key={category.title}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+                viewport={{ once: true }}
+                className="group relative bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-6 hover:border-purple-500/50 hover:bg-white/10 transition-all duration-300 hover:scale-105"
+              >
+                {/* Badge */}
+                <div className="absolute -top-3 -right-3">
+                  <span className={`px-3 py-1 text-xs font-bold rounded-full text-white ${category.badgeColor}`}>
+                    {category.badge}
+                  </span>
+=======
               <div className="grid grid-cols-2 md:grid-cols-5 gap-8">
                 <div className="text-center">
                   <div className="text-4xl md:text-5xl font-bold text-white mb-2">{serviceStats.totalServices}+</div>
@@ -397,6 +636,7 @@ export default function Home() {
                     <span>Call Now</span>
                     <Phone className="w-5 h-5" />
                   </a>
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-4972
                 </div>
 
                 {/* Icon */}
