@@ -13,7 +13,9 @@ const HomePage: React.FC = () => {
       <AnalyticsTracker />
       <EnhancedHomepage2026 />
       <PerformanceMonitor />
-      <AccessibilityEnhancer />
+      <AccessibilityEnhancer>
+        <div></div>
+      </AccessibilityEnhancer>
     </ErrorBoundary>
   );
 };
