@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import SEO from '../components/SEO';
+import Head from 'next/head';
 import { motion } from 'framer-motion';
 import { 
   Search, Grid, List, Star, Users, TrendingUp,
@@ -76,11 +76,11 @@ const ComprehensiveServicesShowcase: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-900 via-purple-900 to-gray-900 text-white">
-      <SEO 
-        title="Comprehensive Services Showcase - Zion Tech Group"
-        description="Explore our complete portfolio of innovative micro SAAS, IT services, and AI solutions. From quantum computing to autonomous systems, discover the future of technology."
-        keywords={["micro SAAS", "IT services", "AI solutions", "quantum computing", "cybersecurity", "enterprise IT", "cloud infrastructure"]}
-      />
+      <Head>
+        <title>Comprehensive Services Showcase - Zion Tech Group</title>
+        <meta name="description" content="Explore our complete portfolio of innovative micro SAAS, IT services, and AI solutions. From quantum computing to autonomous systems, discover the future of technology." />
+        <meta name="keywords" content="micro SAAS, IT services, AI solutions, quantum computing, cybersecurity, enterprise IT, cloud infrastructure" />
+      </Head>
 
       {/* Header Section */}
       <section className="py-20 px-4 relative overflow-hidden">

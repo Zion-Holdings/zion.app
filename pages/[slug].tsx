@@ -3,7 +3,7 @@ import Link from 'next/link';
 import type { GetStaticPaths, GetStaticProps, InferGetStaticPropsType } from 'next';
 import fs from 'fs';
 import path from 'path';
-import SEO from '../components/SEO';
+import Head from 'next/head';
 
 interface PageProps {
 	title: string;
@@ -52,13 +52,13 @@ export default function DynamicPage({ title, slug, description }: PageProps) {
 	
 	return (
 		<>
-			<SEO 
-				title={`${title} | Zion Tech Group`} 
-				description={description} 
-				canonical={canonical}
-				section={title}
-				tags={[title, 'Services', 'Technology']}
-			/>
+			<Head>
+				<title>{`${title} | Zion Tech Group`}</title>
+				<meta name="description" content={description} />
+				<link rel="canonical" href={canonical} />
+				<meta name="section" content={title} />
+				<meta name="keywords" content={[title, 'Services', 'Technology'].join(', ')} />
+			</Head>
 			<div className="container mx-auto px-4 py-16">
 				<nav className="text-sm text-gray-400 mb-6">
 					<Link href="/" className="hover:text-white">Home</Link>

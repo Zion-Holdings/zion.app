@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import SEO from '../components/SEO';
+import Head from 'next/head';
 import { motion } from 'framer-motion';
 import { 
   Brain, Atom, Rocket, Target, Star, 
@@ -101,11 +101,11 @@ export default function FuturisticServicesShowcase2037() {
 
   return (
     <>
-      <SEO 
-        title="2037 Futuristic Services Showcase | Zion Tech Group"
-        description="Explore our revolutionary 2037 services including AI consciousness evolution, quantum computing, space technology, and enterprise solutions. Transform your business with cutting-edge technology."
-        keywords={["2037 services", "AI consciousness", "quantum computing", "space technology", "enterprise IT", "micro SAAS", "Zion Tech Group"]}
-      />
+      <Head>
+        <title>2037 Futuristic Services Showcase | Zion Tech Group</title>
+        <meta name="description" content="Explore our revolutionary 2037 services including AI consciousness evolution, quantum computing, space technology, and enterprise solutions. Transform your business with cutting-edge technology." />
+        <meta name="keywords" content="2037 services, AI consciousness, quantum computing, space technology, enterprise IT, micro SAAS, Zion Tech Group" />
+      </Head>
 
       <div className="min-h-screen bg-black text-white">
         {/* Hero Section */}

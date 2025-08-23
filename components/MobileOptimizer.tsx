@@ -1,437 +1,504 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect, useState, useCallback } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { 
-  Smartphone, 
-  Tablet, 
-  Monitor, 
-  RotateCcw, 
-  Wifi, 
-  WifiOff,
-  Hand
+  Smartphone, Tablet, Monitor, Wifi, Battery, 
+  Hand, RotateCw, ZoomIn, ZoomOut, CheckCircle, AlertTriangle
 } from 'lucide-react';
 
-
-
 interface MobileOptimizerProps {
-  children: React.ReactNode;
-  showDebugInfo?: boolean;
+  showPanel?: boolean;
+  autoOptimize?: boolean;
+}
+
+interface DeviceInfo {
+  type: 'mobile' | 'tablet' | 'desktop';
+  orientation: 'portrait' | 'landscape';
+  screenSize: { width: number; height: number };
+  pixelRatio: number;
+  touchSupport: boolean;
+  userAgent: string;
+}
+
+interface OptimizationResult {
+  type: string;
+  status: 'success' | 'warning' | 'error';
+  message: string;
+  applied: boolean;
 }
 
 const MobileOptimizer: React.FC<MobileOptimizerProps> = ({ 
-  children, 
-  showDebugInfo = false 
+  showPanel = false, 
+  autoOptimize = true 
 }) => {
-  const [deviceType, setDeviceType] = useState<'mobile' | 'tablet' | 'desktop'>('desktop');
-  const [orientation, setOrientation] = useState<'portrait' | 'landscape'>('portrait');
-  const [touchSupport, setTouchSupport] = useState(false);
-  const [showDebugPanel, setShowDebugPanel] = useState(false);
-  const [networkInfo, setNetworkInfo] = useState({
-    effectiveType: 'unknown',
-    downlink: 0,
-    rtt: 0
-  });
+  const [deviceInfo, setDeviceInfo] = useState<DeviceInfo | null>(null);
+  const [isVisible, setIsVisible] = useState(false);
+  const [optimizations, setOptimizations] = useState<OptimizationResult[]>([]);
+  const [isOptimizing, setIsOptimizing] = useState(false);
+  const [currentOrientation, setCurrentOrientation] = useState<'portrait' | 'landscape'>('portrait');
 
-  // Detect device type and capabilities
-  useEffect(() => {
-    const detectDevice = () => {
-      const screenWidth = window.innerWidth;
-      const screenHeight = window.innerHeight;
-      
-      // Check for touch support
-      const hasTouch = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
-      setTouchSupport(hasTouch);
-      
-      // Determine device type
-      if (screenWidth < 768) {
-        setDeviceType('mobile');
-      } else if (screenWidth < 1024) {
-        setDeviceType('tablet');
-      } else {
-        setDeviceType('desktop');
-      }
-      
-      // Determine orientation
-      setOrientation(screenWidth > screenHeight ? 'landscape' : 'portrait');
-    };
-
-    // Initial detection
-    detectDevice();
-    
-    // Listen for resize events
-    window.addEventListener('resize', detectDevice);
-    window.addEventListener('orientationchange', detectDevice);
-    
-    // Network information
-    if ('connection' in navigator) {
-      const connection = (navigator as { connection: { effectiveType?: string; downlink?: number; rtt?: number; addEventListener: (event: string, handler: () => void) => void; removeEventListener: (event: string, handler: () => void) => void } }).connection;
-      const updateNetworkInfo = () => {
-        setNetworkInfo({
-          effectiveType: connection.effectiveType || 'unknown',
-          downlink: connection.downlink || 0,
-          rtt: connection.rtt || 0
-        });
-      };
-      
-      updateNetworkInfo();
-      connection.addEventListener('change', updateNetworkInfo);
-      
-      return () => {
-        connection.removeEventListener('change', updateNetworkInfo);
+  // Enhanced device detection
+  const detectDevice = useCallback((): DeviceInfo => {
+    if (typeof window === 'undefined') {
+      return {
+        type: 'desktop',
+        orientation: 'portrait',
+        screenSize: { width: 1920, height: 1080 },
+        pixelRatio: 1,
+        touchSupport: false,
+        userAgent: ''
       };
     }
+
+    const { innerWidth, innerHeight, devicePixelRatio } = window;
+    const userAgent = navigator.userAgent.toLowerCase();
     
-    return () => {
-      window.removeEventListener('resize', detectDevice);
-      window.removeEventListener('orientationchange', detectDevice);
+    // Enhanced device type detection
+    let type: 'mobile' | 'tablet' | 'desktop' = 'desktop';
+    if (/android|webos|iphone|ipad|ipod|blackberry|iemobile|opera mini/i.test(userAgent)) {
+      if (innerWidth <= 768) {
+        type = 'mobile';
+      } else if (innerWidth <= 1024) {
+        type = 'tablet';
+      }
+    } else if (innerWidth <= 768) {
+      type = 'mobile';
+    } else if (innerWidth <= 1024) {
+      type = 'tablet';
+    }
+
+    // Enhanced orientation detection
+    const orientation: 'portrait' | 'landscape' = innerWidth > innerHeight ? 'landscape' : 'portrait';
+    
+    // Enhanced touch support detection
+    const touchSupport = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+
+    return {
+      type,
+      orientation,
+      screenSize: { width: innerWidth, height: innerHeight },
+      pixelRatio: devicePixelRatio || 1,
+      touchSupport,
+      userAgent
     };
   }, []);
 
-  // Apply mobile-specific optimizations
-  useEffect(() => {
-    const root = document.documentElement;
+  // Enhanced optimization analysis
+  const analyzeAndOptimize = useCallback((device: DeviceInfo) => {
+    const newOptimizations: OptimizationResult[] = [];
     
-    // Add device-specific classes
-    root.classList.remove('mobile-device', 'tablet-device', 'desktop-device');
-    root.classList.add(`${deviceType}-device`);
-    
-    // Add orientation classes
-    root.classList.remove('portrait', 'landscape');
-    root.classList.add(orientation);
-    
-    // Add touch support classes
-    if (touchSupport) {
-      root.classList.add('touch-device');
+    // Touch optimization
+    if (device.touchSupport) {
+      newOptimizations.push({
+        type: 'touch',
+        status: 'success',
+        message: 'Touch gestures enabled and optimized',
+        applied: true
+      });
     } else {
-      root.classList.remove('touch-device');
-    }
-    
-    // Apply mobile-specific CSS variables
-    if (deviceType === 'mobile') {
-      root.style.setProperty('--mobile-padding', '1rem');
-      root.style.setProperty('--mobile-font-size', '0.875rem');
-      root.style.setProperty('--mobile-button-height', '3rem');
-    } else if (deviceType === 'tablet') {
-      root.style.setProperty('--tablet-padding', '1.5rem');
-      root.style.setProperty('--tablet-font-size', '1rem');
-      root.style.setProperty('--tablet-button-height', '3.5rem');
-    } else {
-      root.style.setProperty('--desktop-padding', '2rem');
-      root.style.setProperty('--desktop-font-size', '1.125rem');
-      root.style.setProperty('--desktop-button-height', '4rem');
-    }
-  }, [deviceType, orientation, touchSupport]);
-
-  // Touch gesture handling
-  useEffect(() => {
-    if (!touchSupport) return;
-
-    let startY = 0;
-    let startX = 0;
-    let isScrolling = false;
-
-    const handleTouchStart = (e: TouchEvent) => {
-      startY = e.touches[0].clientY;
-      startX = e.touches[0].clientX;
-      isScrolling = false;
-    };
-
-    const handleTouchMove = (e: TouchEvent) => {
-      if (!isScrolling) {
-        const deltaY = Math.abs(e.touches[0].clientY - startY);
-        const deltaX = Math.abs(e.touches[0].clientX - startX);
-        
-        if (deltaY > deltaX && deltaY > 10) {
-          isScrolling = true;
-        }
-      }
-    };
-
-    const handleTouchEnd = (e: TouchEvent) => {
-      if (!isScrolling) {
-        const deltaY = e.changedTouches[0].clientY - startY;
-        const deltaX = e.changedTouches[0].clientX - startX;
-        
-        // Swipe up gesture
-        if (deltaY < -50 && Math.abs(deltaX) < 100) {
-          // Handle swipe up
-          document.dispatchEvent(new Event('swipeUp'));
-        }
-        
-        // Swipe down gesture
-        if (deltaY > 50 && Math.abs(deltaX) < 100) {
-          // Handle swipe down
-          document.dispatchEvent(new Event('swipeDown'));
-        }
-      }
-    };
-
-    document.addEventListener('touchstart', handleTouchStart, { passive: true });
-    document.addEventListener('touchmove', handleTouchMove, { passive: true });
-    document.addEventListener('touchend', handleTouchEnd, { passive: true });
-
-    return () => {
-      document.removeEventListener('touchstart', handleTouchStart);
-      document.removeEventListener('touchmove', handleTouchMove);
-      document.removeEventListener('touchend', handleTouchEnd);
-    };
-  }, [touchSupport]);
-
-  // Performance optimizations for mobile
-  useEffect(() => {
-    if (deviceType === 'mobile') {
-      // Reduce motion on mobile for better performance
-      const root = document.documentElement;
-      root.classList.add('mobile-optimized');
-      
-      // Optimize images for mobile
-      const images = document.querySelectorAll('img');
-      images.forEach(img => {
-        if (img.dataset.mobileSrc) {
-          img.src = img.dataset.mobileSrc;
-        }
+      newOptimizations.push({
+        type: 'touch',
+        status: 'warning',
+        message: 'Touch support not detected - consider adding touch gestures',
+        applied: false
       });
     }
-  }, [deviceType]);
 
-  if (!showDebugInfo) {
-    return <>{children}</>;
-  }
+    // Screen size optimization
+    if (device.type === 'mobile' && device.screenSize.width < 375) {
+      newOptimizations.push({
+        type: 'screen-size',
+        status: 'warning',
+        message: 'Small screen detected - optimizing layout for better mobile experience',
+        applied: true
+      });
+    }
+
+    // Pixel ratio optimization
+    if (device.pixelRatio > 2) {
+      newOptimizations.push({
+        type: 'pixel-ratio',
+        status: 'success',
+        message: 'High DPI display detected - using optimized assets',
+        applied: true
+      });
+    }
+
+    // Orientation optimization
+    if (device.orientation === 'landscape' && device.type === 'mobile') {
+      newOptimizations.push({
+        type: 'orientation',
+        status: 'warning',
+        message: 'Mobile landscape mode - adjusting layout for better usability',
+        applied: true
+      });
+    }
+
+    // Performance optimization for mobile
+    if (device.type === 'mobile') {
+      newOptimizations.push({
+        type: 'performance',
+        status: 'success',
+        message: 'Mobile performance optimizations applied',
+        applied: true
+      });
+    }
+
+    setOptimizations(newOptimizations);
+    
+    // Apply optimizations automatically
+    if (autoOptimize) {
+      applyOptimizations(newOptimizations);
+    }
+  }, [autoOptimize]);
+
+  // Enhanced optimization application
+  const applyOptimizations = useCallback((optimizationList: OptimizationResult[]) => {
+    setIsOptimizing(true);
+    
+    optimizationList.forEach(optimization => {
+      if (optimization.applied) {
+        switch (optimization.type) {
+          case 'touch':
+            optimizeTouchGestures();
+            break;
+          case 'screen-size':
+            optimizeLayout();
+            break;
+          case 'pixel-ratio':
+            optimizeAssets();
+            break;
+          case 'orientation':
+            optimizeOrientation();
+            break;
+          case 'performance':
+            optimizePerformance();
+            break;
+        }
+      }
+    });
+    
+    setTimeout(() => setIsOptimizing(false), 2000);
+  }, []);
+
+  // Touch gesture optimization
+  const optimizeTouchGestures = useCallback(() => {
+    if (typeof window === 'undefined') return;
+
+    // Add touch gesture support
+    const touchElements = document.querySelectorAll('[data-touch]');
+    touchElements.forEach(element => {
+      let startY = 0;
+      let startX = 0;
+      
+      element.addEventListener('touchstart', (e) => {
+        const touch = e.touches[0];
+        startY = touch.clientY;
+        startX = touch.clientX;
+      });
+      
+      element.addEventListener('touchend', (e) => {
+        const touch = e.changedTouches[0];
+        const deltaY = startY - touch.clientY;
+        const deltaX = startX - touch.clientX;
+        
+        // Swipe detection
+        if (Math.abs(deltaY) > 50) {
+          if (deltaY > 0) {
+            // Swipe up
+            element.dispatchEvent(new CustomEvent('swipeup'));
+          } else {
+            // Swipe down
+            element.dispatchEvent(new CustomEvent('swipedown'));
+          }
+        }
+        
+        if (Math.abs(deltaX) > 50) {
+          if (deltaX > 0) {
+            // Swipe left
+            element.dispatchEvent(new CustomEvent('swipeleft'));
+          } else {
+            // Swipe right
+            element.dispatchEvent(new CustomEvent('swiperight'));
+          }
+        }
+      });
+    });
+  }, []);
+
+  // Layout optimization
+  const optimizeLayout = useCallback(() => {
+    if (typeof window === 'undefined') return;
+
+    // Adjust font sizes for small screens
+    const root = document.documentElement;
+    const fontSize = Math.max(14, Math.min(16, window.innerWidth / 25));
+    root.style.fontSize = `${fontSize}px`;
+    
+    // Optimize spacing
+    const spacing = Math.max(8, Math.min(16, window.innerWidth / 50));
+    root.style.setProperty('--mobile-spacing', `${spacing}px`);
+    
+    // Add mobile-specific CSS classes
+    document.body.classList.add('mobile-optimized');
+  }, []);
+
+  // Asset optimization
+  const optimizeAssets = useCallback(() => {
+    if (typeof window === 'undefined') return;
+
+    // Optimize images for high DPI displays
+    const images = document.querySelectorAll('img[data-srcset]');
+    images.forEach(img => {
+      const imgElement = img as HTMLImageElement;
+      const srcset = imgElement.getAttribute('data-srcset');
+      if (srcset) {
+        imgElement.srcset = srcset;
+        imgElement.sizes = '(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw';
+      }
+    });
+    
+    // Optimize fonts for high DPI
+    const fonts = document.querySelectorAll('link[rel="preload"][as="font"]');
+    fonts.forEach(font => {
+      font.setAttribute('crossorigin', 'anonymous');
+    });
+  }, []);
+
+  // Orientation optimization
+  const optimizeOrientation = useCallback(() => {
+    if (typeof window === 'undefined') return;
+
+    // Adjust layout for landscape orientation
+    if (window.innerWidth > window.innerHeight) {
+      document.body.classList.add('landscape-mode');
+      document.body.classList.remove('portrait-mode');
+    } else {
+      document.body.classList.add('portrait-mode');
+      document.body.classList.remove('landscape-mode');
+    }
+  }, []);
+
+  // Performance optimization
+  const optimizePerformance = useCallback(() => {
+    if (typeof window === 'undefined') return;
+
+    // Reduce animations on mobile for better performance
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (prefersReducedMotion || deviceInfo?.type === 'mobile') {
+      document.documentElement.style.setProperty('--animation-duration', '0.1s');
+      document.documentElement.style.setProperty('--transition-duration', '0.1s');
+    }
+    
+    // Optimize scroll performance
+    const scrollElements = document.querySelectorAll('.scroll-container');
+    scrollElements.forEach(element => {
+      const scrollElement = element as HTMLElement;
+      (scrollElement.style as any).webkitOverflowScrolling = 'touch';
+      scrollElement.style.overscrollBehavior = 'contain';
+    });
+  }, [deviceInfo]);
+
+  // Manual optimization trigger
+  const triggerOptimization = useCallback(() => {
+    if (deviceInfo) {
+      analyzeAndOptimize(deviceInfo);
+    }
+  }, [deviceInfo, analyzeAndOptimize]);
+
+  // Handle orientation change
+  const handleOrientationChange = useCallback(() => {
+    const newDeviceInfo = detectDevice();
+    setDeviceInfo(newDeviceInfo);
+    setCurrentOrientation(newDeviceInfo.orientation);
+    
+    if (autoOptimize) {
+      analyzeAndOptimize(newDeviceInfo);
+    }
+  }, [detectDevice, autoOptimize, analyzeAndOptimize]);
+
+  // Handle resize
+  const handleResize = useCallback(() => {
+    const newDeviceInfo = detectDevice();
+    setDeviceInfo(newDeviceInfo);
+    
+    if (autoOptimize) {
+      analyzeAndOptimize(newDeviceInfo);
+    }
+  }, [detectDevice, autoOptimize, analyzeAndOptimize]);
+
+  useEffect(() => {
+    if (showPanel) {
+      setIsVisible(true);
+      const device = detectDevice();
+      setDeviceInfo(device);
+      setCurrentOrientation(device.orientation);
+      
+      if (autoOptimize) {
+        analyzeAndOptimize(device);
+      }
+    }
+  }, [showPanel, detectDevice, autoOptimize, analyzeAndOptimize]);
+
+  useEffect(() => {
+    if (typeof window === 'undefined') return;
+
+    // Set up event listeners
+    window.addEventListener('orientationchange', handleOrientationChange);
+    window.addEventListener('resize', handleResize);
+    
+    // Set up orientation change detection
+    const mediaQuery = window.matchMedia('(orientation: portrait)');
+    const handleMediaQueryChange = (e: MediaQueryListEvent) => {
+      setCurrentOrientation(e.matches ? 'portrait' : 'landscape');
+    };
+    
+    mediaQuery.addEventListener('change', handleMediaQueryChange);
+    
+    return () => {
+      window.removeEventListener('orientationchange', handleOrientationChange);
+      window.removeEventListener('resize', handleResize);
+      mediaQuery.removeEventListener('change', handleMediaQueryChange);
+    };
+  }, [handleOrientationChange, handleResize]);
+
+  if (!showPanel || !isVisible) return null;
+
+  const getDeviceIcon = (type: string) => {
+    switch (type) {
+      case 'mobile': return <Smartphone className="w-5 h-5" />;
+      case 'tablet': return <Tablet className="w-5 h-5" />;
+      default: return <Monitor className="w-5 h-5" />;
+    }
+  };
+
+  const getStatusIcon = (status: string) => {
+    switch (status) {
+      case 'success': return <CheckCircle className="w-4 h-4 text-green-400" />;
+      case 'warning': return <AlertTriangle className="w-4 h-4 text-yellow-400" />;
+      case 'error': return <AlertTriangle className="w-4 h-4 text-red-400" />;
+      default: return <CheckCircle className="w-4 h-4 text-gray-400" />;
+    }
+  };
 
   return (
-    <>
-      {children}
-      
-      {/* Mobile Debug Toggle Button */}
-      <button
-        onClick={() => setShowDebugPanel(!showDebugPanel)}
-        className="fixed top-4 right-4 z-50 p-3 bg-gradient-to-r from-blue-500 to-purple-600 text-white rounded-full shadow-2xl hover:from-blue-600 hover:to-purple-700 transition-all duration-300 transform hover:scale-110 focus:outline-none focus:ring-4 focus:ring-blue-300/50"
-        aria-label="Mobile Debug Info"
-        aria-expanded={showDebugPanel}
+    <AnimatePresence>
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        exit={{ opacity: 0, y: 20 }}
+        className="fixed bottom-4 left-4 z-50"
       >
-        <Smartphone className="w-6 h-6" />
-      </button>
+        <div className="bg-gray-900/95 backdrop-blur-sm border border-gray-700/50 rounded-2xl p-6 shadow-2xl max-w-sm">
+          <div className="flex items-center justify-between mb-4">
+            <h3 className="text-lg font-semibold text-white flex items-center gap-2">
+              <Smartphone className="w-5 h-5 text-cyan-400" />
+              Mobile Optimizer
+            </h3>
+            <button
+              onClick={() => setIsVisible(false)}
+              className="text-gray-400 hover:text-white transition-colors"
+            >
+              ×
+            </button>
+          </div>
 
-      {/* Mobile Debug Panel */}
-      <AnimatePresence>
-        {showDebugPanel && (
-          <motion.div
-            initial={{ opacity: 0, x: 300 }}
-            animate={{ opacity: 1, x: 0 }}
-            exit={{ opacity: 0, x: 300 }}
-            transition={{ duration: 0.3 }}
-            className="fixed top-4 right-20 z-50 w-80 bg-black/95 backdrop-blur-xl border border-blue-400/30 rounded-2xl shadow-2xl overflow-hidden"
-          >
-            {/* Header */}
-            <div className="bg-gradient-to-r from-blue-500/20 to-purple-500/20 p-4 border-b border-blue-400/30">
-              <div className="flex items-center justify-between">
-                <h3 className="text-lg font-semibold text-white flex items-center gap-2">
-                  <Smartphone className="w-5 h-5" />
-                  Mobile Debug
-                </h3>
+          {deviceInfo && (
+            <div className="space-y-4">
+              {/* Device Info */}
+              <div className="bg-gray-800/50 rounded-xl p-4">
+                <div className="flex items-center justify-between mb-3">
+                  <div className="flex items-center gap-2">
+                    {getDeviceIcon(deviceInfo.type)}
+                    <span className="text-white font-medium capitalize">
+                      {deviceInfo.type}
+                    </span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <RotateCw className="w-4 h-4 text-gray-400" />
+                    <span className="text-gray-400 text-sm capitalize">
+                      {currentOrientation}
+                    </span>
+                  </div>
+                </div>
+                
+                <div className="grid grid-cols-2 gap-3 text-sm">
+                  <div>
+                    <span className="text-gray-400">Screen:</span>
+                    <div className="text-white">
+                      {deviceInfo.screenSize.width} × {deviceInfo.screenSize.height}
+                    </div>
+                  </div>
+                  <div>
+                    <span className="text-gray-400">DPI:</span>
+                    <div className="text-white">
+                      {deviceInfo.pixelRatio}x
+                    </div>
+                  </div>
+                  <div>
+                    <span className="text-gray-400">Touch:</span>
+                    <div className="text-white">
+                      {deviceInfo.touchSupport ? 'Yes' : 'No'}
+                    </div>
+                  </div>
+                  <div>
+                    <span className="text-gray-400">Agent:</span>
+                    <div className="text-white text-xs truncate">
+                      {deviceInfo.userAgent.substring(0, 20)}...
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Optimizations */}
+              {optimizations.length > 0 && (
+                <div className="space-y-2">
+                  <h4 className="text-sm font-semibold text-white">Optimizations</h4>
+                  {optimizations.map((optimization, index) => (
+                    <div key={index} className="flex items-start gap-2 p-2 bg-gray-800/30 rounded-lg">
+                      {getStatusIcon(optimization.status)}
+                      <div className="flex-1">
+                        <div className="text-sm text-white">{optimization.message}</div>
+                        <div className="text-xs text-gray-400 capitalize">
+                          {optimization.type} • {optimization.applied ? 'Applied' : 'Pending'}
+                        </div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              )}
+
+              {/* Action Buttons */}
+              <div className="flex gap-2">
                 <button
-                  onClick={() => setShowDebugPanel(false)}
-                  className="p-1 hover:bg-white/10 rounded-lg transition-colors"
-                  aria-label="Close debug panel"
+                  onClick={triggerOptimization}
+                  disabled={isOptimizing}
+                  className="flex-1 bg-cyan-500 hover:bg-cyan-600 disabled:bg-gray-600 text-white text-sm font-medium py-2 px-3 rounded-lg transition-colors disabled:cursor-not-allowed"
                 >
-                  <RotateCcw className="w-5 h-5 text-white" />
+                  {isOptimizing ? 'Optimizing...' : 'Optimize Now'}
+                </button>
+                <button
+                  onClick={() => {
+                    const device = detectDevice();
+                    setDeviceInfo(device);
+                    setCurrentOrientation(device.orientation);
+                  }}
+                  className="bg-gray-700 hover:bg-gray-600 text-white text-sm font-medium py-2 px-3 rounded-lg transition-colors"
+                >
+                  Refresh
                 </button>
               </div>
             </div>
+          )}
 
-            {/* Device Info */}
-            <div className="p-4 space-y-4">
-              {/* Device Type */}
-              <div className="flex items-center justify-between p-3 bg-white/5 rounded-lg">
-                <div className="flex items-center gap-3">
-                  <div className="w-8 h-8 bg-gradient-to-r from-blue-500 to-purple-600 rounded-lg flex items-center justify-center">
-                    {deviceType === 'mobile' && <Smartphone className="w-4 h-4 text-white" />}
-                    {deviceType === 'tablet' && <Tablet className="w-4 h-4 text-white" />}
-                    {deviceType === 'desktop' && <Monitor className="w-4 h-4 text-white" />}
-                  </div>
-                  <div>
-                    <div className="text-white font-medium text-sm">Device Type</div>
-                    <div className="text-gray-400 text-xs capitalize">{deviceType}</div>
-                  </div>
-                </div>
-                <div className="text-right">
-                  <div className="text-sm text-blue-400 font-medium capitalize">{deviceType}</div>
-                </div>
-              </div>
-
-              {/* Orientation */}
-              <div className="flex items-center justify-between p-3 bg-white/5 rounded-lg">
-                <div className="flex items-center gap-3">
-                  <div className="w-8 h-8 bg-gradient-to-r from-green-500 to-teal-600 rounded-lg flex items-center justify-center">
-                    <RotateCcw className="w-4 h-4 text-white" />
-                  </div>
-                  <div>
-                    <div className="text-white font-medium text-sm">Orientation</div>
-                    <div className="text-gray-400 text-xs capitalize">{orientation}</div>
-                  </div>
-                </div>
-                <div className="text-right">
-                  <div className="text-sm text-green-400 font-medium capitalize">{orientation}</div>
-                </div>
-              </div>
-
-              {/* Touch Support */}
-              <div className="flex items-center justify-between p-3 bg-white/5 rounded-lg">
-                <div className="flex items-center gap-3">
-                  <div className="w-8 h-8 bg-gradient-to-r from-orange-500 to-red-600 rounded-lg flex items-center justify-center">
-                    {touchSupport ? <Hand className="w-4 h-4 text-white" /> : <WifiOff className="w-4 h-4 text-white" />}
-                  </div>
-                  <div>
-                    <div className="text-white font-medium text-sm">Input Method</div>
-                    <div className="text-gray-400 text-xs">
-                      {touchSupport ? 'Touch Enabled' : 'Mouse/Keyboard'}
-                    </div>
-                  </div>
-                </div>
-                <div className="text-right">
-                  <div className={`text-sm font-medium ${touchSupport ? 'text-green-400' : 'text-blue-400'}`}>
-                    {touchSupport ? 'Touch' : 'Mouse'}
-                  </div>
-                </div>
-              </div>
-
-              {/* Network Info */}
-              <div className="flex items-center justify-between p-3 bg-white/5 rounded-lg">
-                <div className="flex items-center gap-3">
-                  <div className="w-8 h-8 bg-gradient-to-r from-purple-500 to-pink-600 rounded-lg flex items-center justify-center">
-                    <Wifi className="w-4 h-4 text-white" />
-                  </div>
-                  <div>
-                    <div className="text-white font-medium text-sm">Network</div>
-                    <div className="text-gray-400 text-xs">
-                      {networkInfo.effectiveType} • {networkInfo.downlink}Mbps
-                    </div>
-                  </div>
-                </div>
-                <div className="text-right">
-                  <div className="text-sm text-purple-400 font-medium">
-                    {networkInfo.effectiveType}
-                  </div>
-                  <div className="text-xs text-gray-400">
-                    {networkInfo.rtt}ms RTT
-                  </div>
-                </div>
-              </div>
-
-              {/* Screen Info */}
-              <div className="flex items-center justify-between p-3 bg-white/5 rounded-lg">
-                <div className="flex items-center gap-3">
-                  <div className="w-8 h-8 bg-gradient-to-r from-cyan-500 to-blue-600 rounded-lg flex items-center justify-center">
-                    <Monitor className="w-4 h-4 text-white" />
-                  </div>
-                  <div>
-                    <div className="text-white font-medium text-sm">Screen</div>
-                    <div className="text-gray-400 text-xs">
-                      {window.innerWidth} × {window.innerHeight}
-                    </div>
-                  </div>
-                </div>
-                <div className="text-right">
-                  <div className="text-sm text-cyan-400 font-medium">
-                    {window.innerWidth}×{window.innerHeight}
-                  </div>
-                  <div className="text-xs text-gray-400">
-                    {window.devicePixelRatio}x DPR
-                  </div>
-                </div>
-              </div>
+          {!deviceInfo && (
+            <div className="text-center py-8">
+              <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-cyan-400 mx-auto mb-3"></div>
+              <p className="text-gray-400 text-sm">Detecting device...</p>
             </div>
-
-            {/* Footer */}
-            <div className="bg-gradient-to-r from-blue-500/10 to-purple-500/10 p-3 border-t border-blue-400/30">
-              <div className="flex items-center justify-between text-xs text-gray-400">
-                <span>Real-time monitoring</span>
-                <span className="flex items-center gap-1">
-                  <div className="w-2 h-2 bg-blue-400 rounded-full animate-pulse"></div>
-                  Live
-                </span>
-              </div>
-            </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
-
-      {/* Global Mobile Styles */}
-      <style jsx global>{`
-        .mobile-device {
-          --device-padding: var(--mobile-padding, 1rem);
-          --device-font-size: var(--mobile-font-size, 0.875rem);
-          --device-button-height: var(--mobile-button-height, 3rem);
-        }
-
-        .tablet-device {
-          --device-padding: var(--tablet-padding, 1.5rem);
-          --device-font-size: var(--tablet-font-size, 1rem);
-          --device-button-height: var(--tablet-button-height, 3.5rem);
-        }
-
-        .desktop-device {
-          --device-padding: var(--desktop-padding, 2rem);
-          --device-font-size: var(--desktop-font-size, 1.125rem);
-          --device-button-height: var(--desktop-button-height, 4rem);
-        }
-
-        .touch-device button,
-        .touch-device [role="button"] {
-          min-height: 44px;
-          min-width: 44px;
-        }
-
-        .touch-device input,
-        .touch-device select,
-        .touch-device textarea {
-          font-size: 16px; /* Prevents zoom on iOS */
-        }
-
-        .mobile-optimized * {
-          will-change: auto;
-        }
-
-        .mobile-optimized .animate-pulse {
-          animation-duration: 2s;
-        }
-
-        @media (max-width: 768px) {
-          .mobile-device .container {
-            padding-left: var(--device-padding);
-            padding-right: var(--device-padding);
-          }
-          
-          .mobile-device h1 {
-            font-size: 2rem !important;
-            line-height: 1.2 !important;
-          }
-          
-          .mobile-device h2 {
-            font-size: 1.5rem !important;
-            line-height: 1.3 !important;
-          }
-          
-          .mobile-device .grid {
-            grid-template-columns: 1fr !important;
-          }
-        }
-
-        @media (max-width: 1024px) and (min-width: 769px) {
-          .tablet-device .container {
-            padding-left: var(--device-padding);
-            padding-right: var(--device-padding);
-          }
-        }
-
-        .portrait .landscape-only {
-          display: none !important;
-        }
-
-        .landscape .portrait-only {
-          display: none !important;
-        }
-      `}</style>
-    </>
+          )}
+        </div>
+      </motion.div>
+    </AnimatePresence>
   );
 };
 

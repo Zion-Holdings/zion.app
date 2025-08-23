@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import SEO from '../components/SEO';
+import Head from 'next/head';
 import { motion, AnimatePresence } from 'framer-motion';
 import { 
   Check, Star, ArrowRight, Phone, Mail, Globe,
@@ -13,12 +13,12 @@ const Services2025Launch = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900">
-      <SEO 
-        title="2025 Advanced Services Launch - Zion Tech Group"
-        description="Transform your business with AI, IT, and Micro SAAS solutions. Discover autonomous AI, quantum-ready infrastructure, and intelligent business automation."
-        keywords={["AI services", "IT solutions", "micro SAAS", "autonomous AI", "quantum computing", "business automation", "Zion Tech Group"]}
-        canonical="https://ziontechgroup.com/2025-services-launch"
-      />
+      <Head>
+        <title>2025 Advanced Services Launch - Zion Tech Group</title>
+        <meta name="description" content="Transform your business with AI, IT, and Micro SAAS solutions. Discover autonomous AI, quantum-ready infrastructure, and intelligent business automation." />
+        <meta name="keywords" content="AI services, IT solutions, micro SAAS, autonomous AI, quantum computing, business automation, Zion Tech Group" />
+        <link rel="canonical" href="https://ziontechgroup.com/2025-services-launch" />
+      </Head>
 
       {/* Hero Section */}
       <section className="relative py-20 px-4 sm:px-6 lg:px-8">

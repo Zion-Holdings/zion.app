@@ -1,5 +1,5 @@
 import React from 'react';
-import SEO from '../components/SEO';
+import Head from 'next/head';
 import UltraAdvancedFuturisticBackground from '../components/ui/UltraAdvancedFuturisticBackground';
 import { innovative2025MicroSaasBatch } from '../data/innovative-2025-micro-saas-batch';
 import { innovative2025ITEnterpriseBatch } from '../data/innovative-2025-it-enterprise-batch';
@@ -54,12 +54,12 @@ const Comprehensive2025ServicesShowcase: React.FC = () => {
 
   return (
     <>
-      <SEO 
-        title="Comprehensive 2025 Services Showcase | Zion Tech Group"
-        description="Discover our comprehensive range of innovative 2025 micro SAAS, IT, and AI services. From quantum computing to space technology, we offer cutting-edge solutions for modern businesses."
-        keywords={["micro SAAS", "AI services", "quantum technology", "space technology", "IT solutions", "enterprise services", "2025 innovations"]}
-        image="https://ziontechgroup.com/og-image-2025-services.jpg"
-      />
+      <Head>
+        <title>Comprehensive 2025 Services Showcase | Zion Tech Group</title>
+        <meta name="description" content="Discover our comprehensive range of innovative 2025 micro SAAS, IT, and AI services. From quantum computing to space technology, we offer cutting-edge solutions for modern businesses." />
+        <meta name="keywords" content="micro SAAS, AI services, quantum technology, space technology, IT solutions, enterprise services, 2025 innovations" />
+        <meta property="og:image" content="https://ziontechgroup.com/og-image-2025-services.jpg" />
+      </Head>
       <UltraAdvancedFuturisticBackground />
       
       <div className="relative z-10 min-h-screen">

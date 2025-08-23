@@ -1,10 +1,10 @@
 import React from 'react';
+import Head from 'next/head';
 import { motion } from 'framer-motion';
 import { 
   Brain, Atom, Cpu, Zap, 
   Rocket, Star, CheckCircle
 } from 'lucide-react';
-import SEO from '../components/SEO';
 
 // Import our new service data
 import { innovative2037MicroSaasServices } from '../data/innovative-2037-micro-saas-services';
@@ -117,11 +117,11 @@ const ServiceShowcase = () => {
 
   return (
     <div className="min-h-screen bg-black text-white">
-      <SEO
-        title="2037 Innovative Services Showcase - Zion Tech Group"
-        description="Discover our revolutionary 2037 innovative services including AI consciousness evolution, quantum cybersecurity, autonomous systems, and cutting-edge micro SAAS solutions."
-        keywords={["AI consciousness", "quantum computing", "autonomous systems", "micro SAAS", "innovative services", "2037 technology"]}
-      />
+      <Head>
+        <title>2037 Innovative Services Showcase - Zion Tech Group</title>
+        <meta name="description" content="Discover our revolutionary 2037 innovative services including AI consciousness evolution, quantum cybersecurity, autonomous systems, and cutting-edge micro SAAS solutions." />
+        <meta name="keywords" content="AI consciousness, quantum computing, autonomous systems, micro SAAS, innovative services, 2037 technology" />
+      </Head>
       
       {/* Hero Section */}
       <section className="relative py-20 px-4 overflow-hidden">

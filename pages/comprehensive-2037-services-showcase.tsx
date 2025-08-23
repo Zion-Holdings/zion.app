@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import Layout from '../components/layout/Layout';
-import SEO from '../components/SEO';
+import Head from 'next/head';
 import { motion } from 'framer-motion';
 import { 
   Search, 
@@ -93,11 +93,11 @@ const Comprehensive2037ServicesShowcase: React.FC = () => {
 
   return (
     <Layout>
-      <SEO 
-        title="Revolutionary 2037 Services Showcase | Zion Tech Group"
-        description="Discover our comprehensive suite of revolutionary 2037 technology services including AI consciousness, quantum computing, space technology, and autonomous systems."
-        keywords={["2037 services", "AI consciousness", "quantum computing", "space technology", "autonomous systems", "revolutionary technology"]}
-      />
+      <Head>
+        <title>Revolutionary 2037 Services Showcase | Zion Tech Group</title>
+        <meta name="description" content="Discover our comprehensive suite of revolutionary 2037 technology services including AI consciousness, quantum computing, space technology, and autonomous systems." />
+        <meta name="keywords" content="2037 services, AI consciousness, quantum computing, space technology, autonomous systems, revolutionary technology" />
+      </Head>
       
       <main className="relative z-10 pt-8">
         {/* Hero Section */}
