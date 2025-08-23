@@ -1,10 +1,9 @@
-import React, { useState, useEffect, useCallback } from 'react';
+import React, { useState, useEffect, useRef, useCallback, useMemo } from 'react';
 import Link from 'next/link';
 import { motion, AnimatePresence } from 'framer-motion';
 import { 
   Menu, X, Search, ChevronDown, Zap, Globe, Lock, 
-  Phone, Mail, MapPin, ArrowRight, Star, Users, Award,
-  Bell, User, Settings, HelpCircle
+  Phone, Mail, MapPin, ArrowRight, Star, Users, Award, Sparkles, Target
 } from 'lucide-react';
 import ThemeToggle from '../ThemeToggle';
 
@@ -249,30 +248,40 @@ const UltraFuturisticNavigation2040: React.FC<UltraFuturisticNavigation2040Props
   const searchInputRef = useRef<HTMLInputElement>(null);
   const router = useRouter();
 
-  useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
-    };
+  // Memoized animation variants for better performance
+  const navVariants = useMemo(() => ({
+    hidden: { y: -100, opacity: 0 },
+    visible: { y: 0, opacity: 1 }
+  }), []);
 
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+  const dropdownVariants = useMemo(() => ({
+    hidden: { opacity: 0, y: -10, scale: 0.95 },
+    visible: { opacity: 1, y: 0, scale: 1 }
+  }), []);
+
+  // Optimized scroll handling
+  const handleScroll = useCallback(() => {
+    setIsScrolled(window.scrollY > 20);
   }, []);
 
   // Handle click outside mobile menu
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, [handleScroll]);
+
+  // Close mobile menu when route changes
+  useEffect(() => {
+    setIsMobileMenuOpen(false);
+    setActiveDropdown(null);
+  }, [router.asPath]);
+
+  // Close dropdowns when clicking outside
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
       if (mobileMenuRef.current && !mobileMenuRef.current.contains(event.target as Node)) {
         setIsMobileMenuOpen(false);
       }
-    };
-
-    document.addEventListener('mousedown', handleClickOutside);
-    return () => document.removeEventListener('mousedown', handleClickOutside);
-  }, []);
-
-  // Handle click outside search
-  useEffect(() => {
-    const handleClickOutside = (event: MouseEvent) => {
       if (searchRef.current && !searchRef.current.contains(event.target as Node)) {
         setIsSearchOpen(false);
       }
@@ -282,36 +291,40 @@ const UltraFuturisticNavigation2040: React.FC<UltraFuturisticNavigation2040Props
     return () => document.removeEventListener('mousedown', handleClickOutside);
   }, []);
 
-  // Handle search
-  const handleSearch = (e: React.FormEvent) => {
+  // Focus search input when search is opened
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (searchRef.current && !searchRef.current.contains(event.target as Node)) {
+        setIsSearchOpen(false);
+      }
+    };
+
+  const toggleMobileMenu = useCallback(() => {
+    setIsMobileMenuOpen(!isMobileMenuOpen);
+  }, [isMobileMenuOpen]);
+
+  const toggleDropdown = useCallback((label: string) => {
+    setActiveDropdown(activeDropdown === label ? null : label);
+  }, [activeDropdown]);
+
+  const handleSearch = useCallback((e: React.FormEvent) => {
     e.preventDefault();
     if (searchQuery.trim()) {
       router.push(`/search?q=${encodeURIComponent(searchQuery.trim())}`);
       setIsSearchOpen(false);
       setSearchQuery('');
     }
-  };
-
-  // Handle navigation item click
-  const handleNavigationClick = (item: NavigationItem) => {
-    if (item.href) {
-      router.push(item.href);
-      setIsMobileMenuOpen(false);
-      setActiveDropdown(null);
-    }
-  };
-
-  // Handle dropdown toggle
-  const toggleDropdown = (label: string) => {
-    setActiveDropdown(activeDropdown === label ? null : label);
-  };
+  }, [searchQuery, router]);
 
   return (
-    <>
-      {/* Desktop Navigation */}
-      <nav className={`hidden lg:block fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+    <motion.nav
+      variants={navVariants}
+      initial="hidden"
+      animate="visible"
+      transition={{ duration: 0.5 }}
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled 
-          ? 'bg-black/90 backdrop-blur-md border-b border-gray-800/50' 
+          ? 'bg-gray-900/95 backdrop-blur-md border-b border-gray-700/50 shadow-2xl' 
           : 'bg-transparent'
       }`}
       role="navigation"
@@ -320,27 +333,42 @@ const UltraFuturisticNavigation2040: React.FC<UltraFuturisticNavigation2040Props
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 lg:h-20">
           {/* Logo */}
-          <div className="flex-shrink-0">
-            <Link href="/" className="flex items-center space-x-2" aria-label="Zion Tech Group Home">
-              <div className="w-10 h-10 bg-gradient-to-r from-cyan-500 to-purple-600 rounded-lg flex items-center justify-center">
-                <Zap className="w-6 h-6 text-white" aria-hidden="true" />
+          <Link href="/" className="flex items-center space-x-3 group">
+            <div className="relative">
+              <div className="w-10 h-10 lg:w-12 lg:h-12 bg-gradient-to-r from-cyan-400 to-blue-500 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                <Zap className="w-6 h-6 lg:w-7 lg:h-7 text-white" />
               </div>
-              <span className="text-xl font-bold bg-gradient-to-r from-cyan-400 to-purple-600 bg-clip-text text-transparent">
-                Zion Tech Group
-              </span>
-            </Link>
-          </div>
+              <div className="absolute inset-0 bg-gradient-to-r from-cyan-400 to-blue-500 rounded-2xl blur-xl opacity-20 group-hover:opacity-40 transition-opacity duration-300"></div>
+            </div>
+            <div className="hidden sm:block">
+              <div className="flex items-center gap-2">
+                <span className="text-xl lg:text-2xl font-bold bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
+                  Zion Tech Group
+                </span>
+                <div className="flex items-center gap-1">
+                  <Sparkles className="w-4 h-4 text-cyan-400" />
+                  <span className="text-sm text-cyan-400 font-medium">2040</span>
+                </div>
+              </div>
+            </div>
+          </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden lg:flex lg:items-center lg:space-x-8">
+          <div className="hidden lg:flex items-center space-x-8">
             {navigationItems.map((item) => (
               <div key={item.label} className="relative group">
-                {item.children ? (
+                {item.href ? (
+                  <Link
+                    href={item.href}
+                    className="flex items-center space-x-2 px-4 py-2 text-gray-300 hover:text-white transition-colors duration-200 font-medium"
+                  >
+                    {item.icon}
+                    <span>{item.label}</span>
+                  </Link>
+                ) : (
                   <button
                     onClick={() => toggleDropdown(item.label)}
-                    onMouseEnter={() => setActiveDropdown(item.label)}
-                    onMouseLeave={() => setActiveDropdown(null)}
-                    className="flex items-center space-x-1 px-3 py-2 text-gray-300 hover:text-white transition-colors duration-200 rounded-lg hover:bg-white/5"
+                    className="flex items-center space-x-2 px-4 py-2 text-gray-300 hover:text-white transition-colors duration-200 font-medium"
                     aria-expanded={activeDropdown === item.label}
                     aria-haspopup="true"
                   >
@@ -350,14 +378,6 @@ const UltraFuturisticNavigation2040: React.FC<UltraFuturisticNavigation2040Props
                       activeDropdown === item.label ? 'rotate-180' : ''
                     }`} />
                   </button>
-                ) : (
-                  <Link
-                    href={item.href || '#'}
-                    className="flex items-center space-x-1 px-3 py-2 text-gray-300 hover:text-white transition-colors duration-200 rounded-lg hover:bg-white/5"
-                  >
-                    {item.icon}
-                    <span>{item.label}</span>
-                  </Link>
                 )}
 
                 {/* Dropdown Menu */}
@@ -365,48 +385,35 @@ const UltraFuturisticNavigation2040: React.FC<UltraFuturisticNavigation2040Props
                   <AnimatePresence>
                     {activeDropdown === item.label && (
                       <motion.div
-                        initial={{ opacity: 0, y: 10, scale: 0.95 }}
-                        animate={{ opacity: 1, y: 0, scale: 1 }}
-                        exit={{ opacity: 0, y: 10, scale: 0.95 }}
+                        variants={dropdownVariants}
+                        initial="hidden"
+                        animate="visible"
+                        exit="hidden"
                         transition={{ duration: 0.2 }}
-                        className="absolute top-full left-0 mt-2 w-80 bg-black/95 backdrop-blur-md border border-gray-800/50 rounded-xl shadow-2xl"
-                        onMouseEnter={() => setActiveDropdown(item.label)}
-                        onMouseLeave={() => setActiveDropdown(null)}
-                        role="menu"
+                        className="absolute top-full left-0 mt-2 w-80 bg-gray-800/95 backdrop-blur-md border border-gray-700/50 rounded-2xl shadow-2xl overflow-hidden"
                       >
-                        <div className="p-4">
-                          <div className="grid gap-2">
-                            {item.children.map((child) => (
-                              <Link
-                                key={child.label}
-                                href={child.href || '#'}
-                                className="flex items-start space-x-3 p-3 rounded-lg hover:bg-white/5 transition-colors duration-200 group"
-                                onClick={() => handleNavigationClick(child)}
-                                role="menuitem"
-                              >
-                                <div className="flex-shrink-0 w-8 h-8 bg-gradient-to-r from-cyan-500/20 to-purple-500/20 rounded-lg flex items-center justify-center">
-                                  {child.icon}
-                                </div>
-                                <div className="flex-1 min-w-0">
-                                  <div className="flex items-center justify-between">
-                                    <p className="text-sm font-medium text-white group-hover:text-cyan-400 transition-colors">
-                                      {child.label}
-                                    </p>
-                                    {child.badge && (
-                                      <span className="inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium bg-cyan-500/20 text-cyan-400">
-                                        {child.badge}
-                                      </span>
-                                    )}
-                                  </div>
-                                  {child.description && (
-                                    <p className="text-xs text-gray-400 mt-1">
-                                      {child.description}
-                                    </p>
-                                  )}
-                                </div>
-                              </Link>
-                            ))}
-                          </div>
+                        <div className="p-4 space-y-2">
+                          {item.children.map((child) => (
+                            <Link
+                              key={child.label}
+                              href={child.href || '#'}
+                              className="flex items-start space-x-3 p-3 rounded-xl hover:bg-gray-700/50 transition-colors duration-200 group"
+                            >
+                              <div className="w-8 h-8 bg-gradient-to-r from-cyan-400 to-blue-500 rounded-lg flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-200">
+                                {child.icon}
+                              </div>
+                              <div className="flex-1 min-w-0">
+                                <p className="text-white font-medium group-hover:text-cyan-400 transition-colors duration-200">
+                                  {child.label}
+                                </p>
+                                {child.description && (
+                                  <p className="text-sm text-gray-400 mt-1">
+                                    {child.description}
+                                  </p>
+                                )}
+                              </div>
+                            </Link>
+                          ))}
                         </div>
                       </motion.div>
                     )}
@@ -417,53 +424,29 @@ const UltraFuturisticNavigation2040: React.FC<UltraFuturisticNavigation2040Props
           </div>
 
           {/* Right Side Actions */}
-          <div className="hidden lg:flex items-center space-x-4">
-            <ThemeToggle />
-            <button className="p-2 text-gray-400 hover:text-white transition-colors">
+          <div className="flex items-center space-x-4">
+            {/* Search Button */}
+            <button
+              onClick={() => setIsSearchOpen(!isSearchOpen)}
+              className="p-2 text-gray-400 hover:text-white transition-colors duration-200"
+              aria-label="Search"
+            >
               <Search className="w-5 h-5" />
             </button>
 
-            {/* User Menu */}
-            <div className="relative group">
-              <button className="flex items-center space-x-2 p-2 text-gray-400 hover:text-white transition-colors duration-200 rounded-lg hover:bg-white/5">
-                <div className="w-8 h-8 bg-gradient-to-r from-cyan-500 to-purple-600 rounded-full flex items-center justify-center">
-                  <User className="w-4 h-4 text-white" />
-                </div>
-                <span className="hidden xl:block">Account</span>
-                <ChevronDown className="w-4 h-4" />
-              </button>
-              
-              <div className="absolute top-full right-0 mt-2 w-48 bg-black/95 backdrop-blur-md border border-gray-800/50 rounded-xl shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
-                <div className="p-2">
-                  <Link href="/profile" className="flex items-center space-x-2 px-3 py-2 text-gray-300 hover:text-white transition-colors duration-200 rounded-lg hover:bg-white/5">
-                    <User className="w-4 h-4" />
-                    <span>Profile</span>
-                  </Link>
-                  <Link href="/settings" className="flex items-center space-x-2 px-3 py-2 text-gray-300 hover:text-white transition-colors duration-200 rounded-lg hover:bg-white/5">
-                    <Settings className="w-4 h-4" />
-                    <span>Settings</span>
-                  </Link>
-                  <Link href="/help" className="flex items-center space-x-2 px-3 py-2 text-gray-300 hover:text-white transition-colors duration-200 rounded-lg hover:bg-white/5">
-                    <HelpCircle className="w-4 h-4" />
-                    <span>Help</span>
-                  </Link>
-                </div>
-              </div>
-            </div>
-
-            {/* CTA Button */}
-            <Link href="/get-started">
-              <button className="px-4 py-2 bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-medium rounded-lg hover:from-cyan-600 hover:to-blue-700 transition-all duration-300 transform hover:scale-105">
-                Get Started
-              </button>
+            {/* Contact Button */}
+            <Link
+              href="/contact"
+              className="hidden sm:inline-flex items-center space-x-2 px-4 py-2 bg-gradient-to-r from-cyan-400 to-blue-500 text-white font-medium rounded-xl hover:from-cyan-500 hover:to-blue-600 transition-all duration-300 focus:outline-none focus:ring-4 focus:ring-cyan-400/50 transform hover:scale-105"
+            >
+              <Phone className="w-4 h-4" />
+              <span>Contact</span>
             </Link>
-          </div>
 
-          {/* Mobile menu button */}
-          <div className="lg:hidden">
+            {/* Mobile Menu Button */}
             <button
-              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="p-2 text-gray-400 hover:text-white transition-colors duration-200 rounded-lg hover:bg-white/5"
+              onClick={toggleMobileMenu}
+              className="lg:hidden p-2 text-gray-400 hover:text-white transition-colors duration-200"
               aria-label="Toggle mobile menu"
               aria-expanded={isMobileMenuOpen}
             >
@@ -475,250 +458,111 @@ const UltraFuturisticNavigation2040: React.FC<UltraFuturisticNavigation2040Props
             </button>
           </div>
         </div>
+
+        {/* Search Bar */}
+        <AnimatePresence>
+          {isSearchOpen && (
+            <motion.div
+              ref={searchRef}
+              initial={{ opacity: 0, height: 0 }}
+              animate={{ opacity: 1, height: 'auto' }}
+              exit={{ opacity: 0, height: 0 }}
+              transition={{ duration: 0.3 }}
+              className="py-4 border-t border-gray-700/50"
+            >
+              <form onSubmit={handleSearch} className="relative">
+                <input
+                  ref={searchInputRef}
+                  type="text"
+                  value={searchQuery}
+                  onChange={(e) => setSearchQuery(e.target.value)}
+                  placeholder="Search our services, solutions, and innovations..."
+                  className="w-full px-4 py-3 bg-gray-800/50 border border-gray-700/50 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-cyan-400/50 focus:border-transparent"
+                />
+                <button
+                  type="submit"
+                  className="absolute right-3 top-1/2 transform -translate-y-1/2 p-2 text-gray-400 hover:text-white transition-colors duration-200"
+                >
+                  <Search className="w-5 h-5" />
+                </button>
+              </form>
+            </motion.div>
+          )}
+        </AnimatePresence>
       </div>
 
       {/* Mobile Menu */}
       <AnimatePresence>
         {isMobileMenuOpen && (
           <motion.div
-            id="mobile-navigation"
+            ref={mobileMenuRef}
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.3 }}
-            className="lg:hidden bg-black/95 backdrop-blur-md border-t border-gray-800/50"
-            ref={mobileMenuRef}
+            className="lg:hidden bg-gray-900/95 backdrop-blur-md border-t border-gray-700/50"
           >
             <div className="px-4 py-6 space-y-4">
-              {/* Mobile Search */}
-              <div className="relative">
-                <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-gray-400" />
-                <input
-                  type="text"
-                  placeholder="Search services..."
-                  className="w-full pl-10 pr-4 py-3 bg-gray-900/50 border border-gray-700 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-cyan-500"
-                />
-              </div>
-
-              {/* Mobile Navigation Items */}
               {navigationItems.map((item) => (
                 <div key={item.label}>
-                  {item.children ? (
+                  {item.href ? (
+                    <Link
+                      href={item.href}
+                      className="flex items-center space-x-3 px-4 py-3 text-gray-300 hover:text-white hover:bg-gray-800/50 rounded-xl transition-colors duration-200"
+                    >
+                      {item.icon}
+                      <span className="font-medium">{item.label}</span>
+                    </Link>
+                  ) : (
                     <div>
                       <button
                         onClick={() => toggleDropdown(item.label)}
-                        className="flex items-center justify-between w-full px-4 py-3 text-left text-gray-300 hover:text-white transition-colors duration-200 rounded-lg hover:bg-white/5"
+                        className="flex items-center justify-between w-full px-4 py-3 text-gray-300 hover:text-white hover:bg-gray-800/50 rounded-xl transition-colors duration-200"
                         aria-expanded={activeDropdown === item.label}
                       >
                         <div className="flex items-center space-x-3">
                           {item.icon}
-                          <span>{item.label}</span>
+                          <span className="font-medium">{item.label}</span>
                         </div>
                         <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${
                           activeDropdown === item.label ? 'rotate-180' : ''
                         }`} />
                       </button>
                       
-                      {activeDropdown === item.label && (
-                        <div className="ml-6 mt-2 space-y-2">
+                      {activeDropdown === item.label && item.children && (
+                        <div className="mt-2 ml-8 space-y-2">
                           {item.children.map((child) => (
                             <Link
                               key={child.label}
                               href={child.href || '#'}
-                              className="flex items-center space-x-3 px-4 py-2 text-gray-400 hover:text-white transition-colors duration-200 rounded-lg hover:bg-white/5"
-                              onClick={() => handleNavigationClick(child)}
+                              className="flex items-center space-x-3 px-4 py-2 text-gray-400 hover:text-white hover:bg-gray-800/50 rounded-lg transition-colors duration-200"
                             >
                               {child.icon}
-                              <span>{child.label}</span>
-                              {child.badge && (
-                                <span className="ml-auto inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium bg-cyan-500/20 text-cyan-400">
-                                  {child.badge}
-                                </span>
-                              )}
+                              <span className="text-sm">{child.label}</span>
                             </Link>
                           ))}
                         </div>
                       )}
                     </div>
-                  ) : (
-                    <Link
-                      href={item.href || '#'}
-                      className="flex items-center space-x-3 px-4 py-3 text-gray-300 hover:text-white transition-colors duration-200 rounded-lg hover:bg-white/5"
-                      onClick={() => handleNavigationClick(item)}
-                    >
-                      {item.icon}
-                      <span>{item.label}</span>
-                    </Link>
                   )}
                 </div>
               ))}
               
-              <div className="pt-4 border-t border-cyan-500/20 space-y-3">
-                <Link href="/pricing-calculator">
-                  <button className="w-full px-6 py-3 border border-cyan-400 text-cyan-400 rounded-lg hover:bg-cyan-400 hover:text-black transition-all duration-200">
-                    Pricing Calculator
-                  </button>
-                </Link>
-                <Link href="/service-comparison">
-                  <button className="w-full px-6 py-3 border border-purple-400 text-purple-400 rounded-lg hover:bg-purple-400 hover:text-black transition-all duration-200">
-                    Compare Services
-                  </button>
-                </Link>
-                <Link href="/contact">
-                  <button className="w-full px-6 py-3 bg-gradient-to-r from-cyan-500 to-purple-600 text-white rounded-lg hover:from-cyan-600 hover:to-purple-700 transition-all duration-200">
-                    Contact Us
-                  </button>
+              {/* Mobile Contact Button */}
+              <div className="pt-4 border-t border-gray-700/50">
+                <Link
+                  href="/contact"
+                  className="flex items-center justify-center w-full px-4 py-3 bg-gradient-to-r from-cyan-400 to-blue-500 text-white font-medium rounded-xl hover:from-cyan-500 hover:to-blue-600 transition-all duration-300"
+                >
+                  <Phone className="w-4 h-4 mr-2" />
+                  Contact Us
                 </Link>
               </div>
             </div>
-
-            {/* Right Side Actions */}
-            <div className="flex items-center space-x-4">
-              {/* Search */}
-              <div className="relative">
-                <input
-                  type="text"
-                  placeholder="Search services..."
-                  value={searchQuery}
-                  onChange={(e) => setSearchQuery(e.target.value)}
-                  className="w-64 px-4 py-2 pl-10 bg-white/10 border border-white/20 rounded-lg text-white placeholder-white/50 focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:border-transparent transition-all duration-300"
-                />
-                <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-white/50" />
-              </div>
-
-              {/* Contact Button */}
-              <Link
-                href="/contact"
-                className="px-6 py-2 bg-gradient-to-r from-cyan-500 to-purple-500 text-white font-medium rounded-lg hover:from-cyan-600 hover:to-purple-600 transition-all duration-300 transform hover:scale-105"
-              >
-                Get Started
-              </Link>
-            </div>
-          </div>
-        </div>
-      </nav>
-
-      {/* Mobile Navigation */}
-      <nav className="lg:hidden fixed top-0 left-0 right-0 z-50 bg-black/90 backdrop-blur-xl border-b border-white/10">
-        <div className="px-4 py-3">
-          <div className="flex items-center justify-between">
-            {/* Logo */}
-            <Link href="/" className="flex items-center space-x-2">
-              <div className="w-8 h-8 bg-gradient-to-r from-cyan-500 to-purple-500 rounded-lg flex items-center justify-center">
-                <Brain className="w-5 h-5 text-white" />
-              </div>
-              <span className="text-lg font-bold text-white">Zion Tech</span>
-            </Link>
-
-            {/* Mobile Menu Button */}
-            <button
-              onClick={() => setIsOpen(!isOpen)}
-              className="p-2 text-white hover:text-cyan-400 transition-colors duration-300"
-            >
-              {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-            </button>
-          </div>
-        </div>
-
-        {/* Mobile Menu */}
-        <AnimatePresence>
-          {isOpen && (
-            <motion.div
-              initial={{ opacity: 0, height: 0 }}
-              animate={{ opacity: 1, height: 'auto' }}
-              exit={{ opacity: 0, height: 0 }}
-              transition={{ duration: 0.3 }}
-              className="bg-black/95 border-t border-white/10 overflow-hidden"
-            >
-              <div className="px-4 py-6 space-y-4">
-                {/* Search */}
-                <div className="relative">
-                  <input
-                    type="text"
-                    placeholder="Search services..."
-                    value={searchQuery}
-                    onChange={(e) => setSearchQuery(e.target.value)}
-                    className="w-full px-4 py-3 pl-10 bg-white/10 border border-white/20 rounded-lg text-white placeholder-white/50 focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:border-transparent"
-                  />
-                  <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-white/50" />
-                </div>
-
-                {/* Navigation Items */}
-                {navigationItems.map((item) => (
-                  <div key={item.name}>
-                    {item.dropdown ? (
-                      <div>
-                        <button
-                          onClick={() => handleDropdownToggle(item.name)}
-                          className="flex items-center justify-between w-full px-4 py-3 text-left text-white hover:text-cyan-400 transition-colors duration-300"
-                        >
-                          <span className="font-medium">{item.name}</span>
-                          <ChevronRight className={`w-4 h-4 transition-transform duration-300 ${
-                            activeDropdown === item.name ? 'rotate-90' : ''
-                          }`} />
-                        </button>
-                        
-                        {activeDropdown === item.name && (
-                          <div className="ml-4 mt-2 space-y-2">
-                            {item.dropdown.map((subItem) => (
-                              <Link
-                                key={subItem.name}
-                                href={subItem.href}
-                                className="block px-4 py-2 text-white/80 hover:text-cyan-400 transition-colors duration-300"
-                                onClick={closeMobileMenu}
-                              >
-                                {subItem.name}
-                              </Link>
-                            ))}
-                          </div>
-                        )}
-                      </div>
-                    ) : (
-                      <Link
-                        href={item.href}
-                        className="block px-4 py-3 text-white hover:text-cyan-400 transition-colors duration-300"
-                        onClick={closeMobileMenu}
-                      >
-                        {item.name}
-                      </Link>
-                    )}
-                  </div>
-                ))}
-
-                {/* Contact Button */}
-                <div className="pt-4">
-                  <Link
-                    href="/contact"
-                    className="block w-full px-6 py-3 bg-gradient-to-r from-cyan-500 to-purple-500 text-white font-medium text-center rounded-lg hover:from-cyan-600 hover:to-purple-600 transition-all duration-300"
-                    onClick={closeMobileMenu}
-                  >
-                    Get Started
-                  </Link>
-                </div>
-
-                {/* Contact Info */}
-                <div className="pt-4 border-t border-white/10">
-                  <div className="space-y-2 text-sm text-white/60">
-                    <div className="flex items-center space-x-2">
-                      <Phone className="w-4 h-4" />
-                      <span>{contactInfo.phone}</span>
-                    </div>
-                    <div className="flex items-center space-x-2">
-                      <Mail className="w-4 h-4" />
-                      <span>{contactInfo.email}</span>
-                    </div>
-                    <div className="flex items-center space-x-2">
-                      <MapPin className="w-4 h-4" />
-                      <span>{contactInfo.address}</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </motion.div>
-          )}
-        </AnimatePresence>
-      </nav>
-    </>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </motion.nav>
   );
 };
 

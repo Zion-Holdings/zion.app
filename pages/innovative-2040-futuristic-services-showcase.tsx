@@ -51,6 +51,7 @@ interface Service {
   customers: number | string;
   rating: number;
   reviews: number;
+  benefits?: string[];
 }
 
 // Utility function to get service properties with defaults
@@ -123,8 +124,8 @@ const Innovative2040FuturisticServicesShowcase: React.FC = () => {
     .sort((a, b) => {
       switch (sortBy) {
         case 'price': {
-          const aPrice = typeof a.price === 'string' ? parseFloat(a.price.replace(/[^0-9.]/g, '')) : a.price.monthly;
-          const bPrice = typeof b.price === 'string' ? parseFloat(b.price.replace(/[^0-9.]/g, '')) : b.price.monthly;
+          const aPrice = typeof a.price === 'string' ? parseFloat(a.price.replace(/[^0-9.]/g, '')) : (a.price as any)?.monthly || 0;
+          const bPrice = typeof b.price === 'string' ? parseFloat(b.price.replace(/[^0-9.]/g, '')) : (b.price as any)?.monthly || 0;
           return aPrice - bPrice;
         }
         case 'popularity':
