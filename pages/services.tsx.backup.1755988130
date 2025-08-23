@@ -164,6 +164,15 @@ const getServiceDescription = (service: any) => {
 
 // Create unified services array
 const allServices = [
+<<<<<<< HEAD
+  // Our new 2025 innovative breakthrough services
+  ...innovativeMicroSaasBreakthroughs2025,
+  ...innovativeITInfrastructureBreakthroughs2025,
+  ...innovativeAIBreakthroughs2025,
+  
+  // Our new 2025 services
+  ...realInnovativeMicroSaasServices2025,
+=======
   // Our comprehensive new 2025 services
   ...aiBusinessIntelligencePlatform2025,
   ...cybersecurityCompliancePlatform2025,
@@ -178,6 +187,7 @@ const allServices = [
   
   // Our existing 2025 services
   ...advancedAIAutomationServices2025,
+>>>>>>> origin/cursor/expand-services-and-deploy-updates-8570
   ...innovativeITInfrastructureServices2025,
   ...innovativeAIServices2025,
 =======
@@ -300,6 +310,8 @@ const categories = [
     description: 'Complete portfolio of all services'
   },
   {
+<<<<<<< HEAD
+=======
     id: 'ai-business-intelligence',
     name: 'AI & Business Intelligence',
     icon: <Brain className="w-6 h-6" />,
@@ -391,6 +403,7 @@ const categories = [
     description: 'Cutting-edge AI and machine learning services'
   },
   {
+>>>>>>> origin/cursor/expand-services-and-deploy-updates-8570
     id: 'enterprise-it',
     name: 'Enterprise IT',
     icon: <Building className="w-6 h-6" />,
@@ -535,6 +548,22 @@ export default function Services() {
     
     const serviceCategory = getServiceCategory(service).toLowerCase();
     
+<<<<<<< HEAD
+    // Handle specialized service categories
+    if (selectedCategory === 'financial-tech') {
+      return matchesSearch && serviceCategory.includes('financial');
+    }
+    if (selectedCategory === 'healthcare-tech') {
+      return matchesSearch && serviceCategory.includes('healthcare');
+    }
+    if (selectedCategory === 'logistics-supply-chain') {
+      return matchesSearch && (serviceCategory.includes('logistics') || serviceCategory.includes('supply chain'));
+    }
+    if (selectedCategory === 'cybersecurity') {
+      return matchesSearch && serviceCategory.includes('cybersecurity');
+    }
+    
+=======
     // Handle new category mappings
     const categoryMappings: { [key: string]: string[] } = {
       'ai-business-intelligence': ['AI Services', 'AI & Business Intelligence'],
@@ -556,6 +585,7 @@ export default function Services() {
     }
     
     const categoryName = categories.find(cat => cat.id === selectedCategory)?.name.toLowerCase();
+>>>>>>> origin/cursor/expand-services-and-deploy-updates-8570
     return matchesSearch && serviceCategory.includes(categoryName || '');
   });
 
@@ -595,6 +625,8 @@ export default function Services() {
 
   const getCategoryIcon = (category: string) => {
     switch (category.toLowerCase()) {
+<<<<<<< HEAD
+=======
       case 'ai & business intelligence':
         return <Brain className="w-6 h-6 text-purple-400" />;
       case 'cybersecurity & compliance':
@@ -622,6 +654,7 @@ export default function Services() {
         return <Target className="w-6 h-6 text-green-400" />;
       case 'ai services':
         return <Cpu className="w-6 h-6 text-purple-400" />;
+>>>>>>> origin/cursor/expand-services-and-deploy-updates-8570
       case 'enterprise it':
       case 'enterprise security':
       case 'devops & automation':
