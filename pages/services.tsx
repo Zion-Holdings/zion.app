@@ -41,6 +41,13 @@ import { revolutionary2042MicroSaasServices } from '../data/revolutionary-2042-m
 import { advanced2025MicroSaasExpansion } from '../data/2025-advanced-micro-saas-expansion';
 import { advanced2025ITSolutionsExpansion } from '../data/2025-advanced-it-solutions-expansion';
 import { advanced2025AIServicesExpansion } from '../data/2025-advanced-ai-services-expansion';
+
+// Import our new comprehensive advanced services
+import { advancedCybersecurityServices2025 } from '../data/2025-advanced-cybersecurity-services';
+import { advancedDevOpsInfrastructure2025 } from '../data/2025-advanced-devops-infrastructure';
+import { advancedDataAnalyticsBI2025 } from '../data/2025-advanced-data-analytics-bi';
+import { advancedFintechBlockchain2025 } from '../data/2025-advanced-fintech-blockchain';
+import { advancedHealthcareBiotech2025 } from '../data/2025-advanced-healthcare-biotech';
 // Import our new 2025 innovative services expansion
 import { innovative2025MicroSaasExpansion } from '../data/innovative-2025-micro-saas-expansion';
 import { innovative2025ITSolutionsExpansion } from '../data/innovative-2025-it-solutions-expansion';
@@ -50,7 +57,7 @@ import { innovative2025AIServicesExpansion } from '../data/innovative-2025-ai-se
 import { innovative2040ITServices } from '../data/innovative-2040-it-services';
 // Import our new 2025 advanced enterprise services
 import { advancedEnterpriseServices } from '../data/2025-advanced-enterprise-services-expansion';
-import { innovativeMicroSaasServices } from '../data/2025-innovative-micro-saas-expansion';
+import { innovativeMicroSaasServices } from '../data/innovative-2025-micro-saas-expansions';
 import { cuttingEdgeITInfrastructureServices } from '../data/2025-cutting-edge-it-infrastructure';
 
 // Import existing service data
@@ -119,6 +126,13 @@ const allServices = [
   ...advanced2025MicroSaasExpansion,
   ...advanced2025ITSolutionsExpansion,
   ...advanced2025AIServicesExpansion,
+  
+  // Our new comprehensive advanced services (Priority)
+  ...advancedCybersecurityServices2025,
+  ...advancedDevOpsInfrastructure2025,
+  ...advancedDataAnalyticsBI2025,
+  ...advancedFintechBlockchain2025,
+  ...advancedHealthcareBiotech2025,
   // Our new innovative services
   ...innovative2037MicroSaasServices,
   ...innovative2037ITServices,
