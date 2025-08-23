@@ -16,6 +16,16 @@ const UltraFuturisticFooter2045: React.FC = () => {
 
   const footerSections = [
     {
+<<<<<<< HEAD
+      title: 'AI & Autonomous Services',
+      links: [
+        { name: 'AI Autonomous Business Intelligence', href: '/ai-autonomous-business-intelligence', icon: <Brain className="w-5 h-5" /> },
+        { name: 'Quantum AI Neural Training', href: '/quantum-ai-neural-training', icon: <Atom className="w-5 h-5" /> },
+        { name: 'Autonomous Cybersecurity Response', href: '/autonomous-cybersecurity-response', icon: <Shield className="w-5 h-5" /> },
+        { name: 'AI Autonomous Customer Service', href: '/ai-autonomous-customer-service', icon: <Users className="w-5 h-5" /> },
+        { name: 'Autonomous Supply Chain Optimization', href: '/autonomous-supply-chain-optimization', icon: <Target className="w-5 h-5" /> },
+        { name: 'AI Content Creation Studio', href: '/ai-content-creation-studio', icon: <Code className="w-5 h-5" /> }
+=======
       title: 'Revolutionary Services',
       links: [
         { name: 'AI Autonomous Ecosystems', href: '/ai-autonomous-content-creation-2025', icon: <Brain className="w-4 h-4" /> },
@@ -29,6 +39,7 @@ const UltraFuturisticFooter2045: React.FC = () => {
         { name: 'HR Analytics & Talent Management', href: '/intelligent-hr-analytics-talent-management-2025', icon: <Users className="w-4 h-4" /> },
         { name: 'Customer Experience Optimization', href: '/ai-customer-experience-optimization-2025', icon: <Target className="w-4 h-4" /> },
         { name: 'View All Services', href: '/services', icon: <ArrowRight className="w-4 h-4" /> }
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-1eea
       ]
     },
     {

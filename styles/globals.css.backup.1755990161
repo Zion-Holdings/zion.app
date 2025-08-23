@@ -60,6 +60,11 @@ body {
   color: #ffffff;
 }
 
+<<<<<<< HEAD
+::-moz-selection {
+  background: rgba(0, 212, 255, 0.3);
+  color: #ffffff;
+=======
 /* Performance Optimizations */
 .optimize-render {
   will-change: transform;
@@ -272,6 +277,7 @@ body {
 @keyframes holographic-shift {
   0%, 100% { background-position: 0% 50%; }
   50% { background-position: 100% 50%; }
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-1eea
 }
 
 /* Futuristic Animations */
