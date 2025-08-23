@@ -8,7 +8,8 @@ import {
   Zap,
   TrendingUp, Award, CheckCircle, Clock,
   Search, X as CloseIcon,
-  Target, BookOpen, Calendar, Video, FileText
+  Target, BookOpen, Calendar, Video, FileText,
+  Building
 } from 'lucide-react';
 
 const contactInfo = {
@@ -159,6 +160,28 @@ const sidebarSections = [
       { name: 'Diversity & Inclusion', href: '/diversity-inclusion' },
       { name: 'Terms of Service', href: '/terms' },
       { name: 'Privacy Policy', href: '/privacy' }
+    ]
+  },
+  {
+    title: 'Company',
+    icon: <Building className="w-5 h-5" />,
+    color: 'text-emerald-400',
+    items: [
+      { name: 'About Us', href: '/about' },
+      { name: 'Careers', href: '/careers' },
+      { name: 'Contact', href: '/contact' },
+      { name: 'News', href: '/news' }
+    ]
+  },
+  {
+    title: 'Resources',
+    icon: <BookOpen className="w-5 h-5" />,
+    color: 'text-yellow-400',
+    items: [
+      { name: 'Blog', href: '/blog' },
+      { name: 'Whitepapers', href: '/whitepapers' },
+      { name: 'Webinars', href: '/webinars' },
+      { name: 'Support', href: '/support' }
     ]
   }
 ];

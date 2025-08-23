@@ -1,4 +1,3 @@
-/// <reference types="dom" />
 import React, { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { 
@@ -98,7 +97,7 @@ const UltraAdvancedFuturisticNavigation2025: React.FC = () => {
   // Handle click outside search
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
-      if (searchRef.current && !searchRef.current.contains(event.target as Node)) {
+      if (searchRef.current && !searchRef.current.contains(event.target as HTMLElement)) {
         setIsSearchOpen(false);
       }
     };
@@ -110,7 +109,7 @@ const UltraAdvancedFuturisticNavigation2025: React.FC = () => {
   // Handle click outside mobile menu
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
-      if (mobileMenuRef.current && !mobileMenuRef.current.contains(event.target as Node)) {
+      if (mobileMenuRef.current && !mobileMenuRef.current.contains(event.target as HTMLElement)) {
         setIsMobileMenuOpen(false);
       }
     };

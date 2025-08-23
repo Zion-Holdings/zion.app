@@ -1,5 +1,4 @@
 
-/// <reference types="dom" />
 import React, { useEffect, useCallback } from 'react';
 
 interface AnalyticsTrackerProps {
@@ -7,7 +6,7 @@ interface AnalyticsTrackerProps {
   pagePath?: string;
   customEvents?: Array<{
     name: string;
-    parameters?: Record<string, any>;
+    parameters?: Record<string, unknown>;
   }>;
 }
 
@@ -15,7 +14,15 @@ interface AnalyticsTrackerProps {
 interface PerformanceEventTiming extends PerformanceEntry {
   processingStart: number;
   processingEnd: number;
-  target?: EventTarget | null;
+  target?: unknown;
+}
+
+// Global type declarations for browser APIs
+declare global {
+  interface Window {
+    gtag?: (...args: unknown[]) => void;
+    dataLayer?: unknown[];
+  }
 }
 
 const AnalyticsTracker: React.FC<AnalyticsTrackerProps> = ({
@@ -27,8 +34,8 @@ const AnalyticsTracker: React.FC<AnalyticsTrackerProps> = ({
   const trackPageView = useCallback((title: string, path: string) => {
     if (typeof window !== 'undefined') {
       // Google Analytics 4
-      if ((window as any).gtag) {
-        (window as any).gtag('config', 'G-XXXXXXXXXX', {
+      if (window.gtag) {
+        window.gtag('config', 'G-XXXXXXXXXX', {
           page_title: title,
           page_location: window.location.href,
           page_path: path
@@ -36,8 +43,8 @@ const AnalyticsTracker: React.FC<AnalyticsTrackerProps> = ({
       }
 
       // Google Tag Manager
-      if ((window as any).dataLayer) {
-        (window as any).dataLayer.push({
+      if (window.dataLayer) {
+        window.dataLayer.push({
           event: 'page_view',
           page_title: title,
           page_location: window.location.href,
@@ -54,11 +61,11 @@ const AnalyticsTracker: React.FC<AnalyticsTrackerProps> = ({
   }, []);
 
   // Track custom events
-  const trackCustomEvent = useCallback((eventName: string, parameters?: Record<string, any>) => {
+  const trackCustomEvent = useCallback((eventName: string, parameters?: Record<string, unknown>) => {
     if (typeof window !== 'undefined') {
       // Google Analytics 4
-      if ((window as any).gtag) {
-        (window as any).gtag('event', eventName, {
+      if (window.gtag) {
+        window.gtag('event', eventName, {
           ...parameters,
           timestamp: Date.now(),
           page_location: window.location.href
@@ -66,8 +73,8 @@ const AnalyticsTracker: React.FC<AnalyticsTrackerProps> = ({
       }
 
       // Google Tag Manager
-      if ((window as any).dataLayer) {
-        (window as any).dataLayer.push({
+      if (window.dataLayer) {
+        window.dataLayer.push({
           event: eventName,
           ...parameters,
           timestamp: Date.now(),

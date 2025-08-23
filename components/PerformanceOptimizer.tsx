@@ -1,5 +1,4 @@
 
-/// <reference types="dom" />
 import React, { useEffect, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 
@@ -12,7 +11,16 @@ interface PerformanceOptimizerProps {
 interface PerformanceEventTiming extends PerformanceEntry {
   processingStart: number;
   processingEnd: number;
-  target?: EventTarget | null;
+  target?: unknown;
+}
+
+// Global type declarations for browser APIs
+declare global {
+  interface Performance {
+    memory?: {
+      usedJSHeapSize: number;
+    };
+  }
 }
 
 const PerformanceOptimizer: React.FC<PerformanceOptimizerProps> = ({ 
@@ -38,7 +46,7 @@ const PerformanceOptimizer: React.FC<PerformanceOptimizerProps> = ({
       
       // Get performance metrics
       if ('memory' in performance) {
-        const memory = (performance as any).memory;
+        const memory = performance.memory;
         setPerformanceMetrics({
           loadTime: Math.round(loadTime),
           memoryUsage: Math.round(memory.usedJSHeapSize / 1024 / 1024), // MB

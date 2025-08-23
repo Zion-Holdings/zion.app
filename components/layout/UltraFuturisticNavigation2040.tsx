@@ -2,13 +2,13 @@ import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { motion, AnimatePresence } from 'framer-motion';
 import { 
-  Menu, ChevronDown, X, Phone, Mail, MapPin, ArrowRight,
-  Brain, Rocket, Target, Atom, Shield,
-  DollarSign, BarChart3, Globe, Star, Sparkles, 
-  Grid, List, TrendingUp, 
-  Calendar, Calculator, GraduationCap,
-  Cpu, Cloud, Settings, Monitor, Palette, Network, Layers, Code, Heart, ShoppingCart, Clock, MessageCircle, HelpCircle, Building,
-  Zap, Infinity, Eye, Heart as HeartIcon, Code as CodeIcon, Palette as PaletteIcon
+  Menu, ChevronDown, X, Phone, Mail, ArrowRight,
+  Brain, Rocket, Atom, Shield,
+  BarChart3, Globe, 
+  Grid, TrendingUp, 
+  Cpu, Cloud, Monitor, Network, Heart, HelpCircle, Building,
+  Zap, Heart as HeartIcon, Code as CodeIcon, Palette as PaletteIcon,
+  Users, BookOpen, FileText, Video
 } from 'lucide-react';
 
 interface NavigationItem {
@@ -175,7 +175,7 @@ const navigationItems: NavigationItem[] = [
       }
     ]
   },
-  {
+    {
     name: 'Enterprise Solutions',
     href: '/it-services',
     icon: <Cpu className="w-5 h-5" />,
@@ -184,34 +184,40 @@ const navigationItems: NavigationItem[] = [
     category: 'it',
     color: 'from-orange-500 to-red-500',
     children: [
-      {
-        name: 'Autonomous Business Intelligence 2040',
-        href: '/autonomous-business-intelligence-2040',
-        description: 'Consciousness-driven BI',
-        icon: <BarChart3 className="w-4 h-4" />,
+      { 
+        name: 'All IT Services', 
+        href: '/it-services', 
+        description: 'Complete enterprise solutions overview',
+        icon: <Grid className="w-4 h-4" />,
         featured: true
       },
-      {
-        name: 'AI Customer Success 2041',
-        href: '/ai-customer-success-2041',
+      { 
+        name: 'Autonomous Business Intelligence 2040', 
+        href: '/autonomous-business-intelligence-2040', 
+        description: 'Consciousness-driven BI',
+        icon: <BarChart3 className="w-4 h-4" />
+      },
+      { 
+        name: 'AI Customer Success 2041', 
+        href: '/ai-customer-success-2041', 
         description: 'Autonomous customer management',
         icon: <Heart className="w-4 h-4" />
       },
-      {
-        name: 'AI Sales Intelligence 2041',
-        href: '/ai-sales-intelligence-2041',
+      { 
+        name: 'AI Sales Intelligence 2041', 
+        href: '/ai-sales-intelligence-2041', 
         description: 'Consciousness-based sales AI',
         icon: <TrendingUp className="w-4 h-4" />
       },
-      {
-        name: 'AI Autonomous Ecosystem 2041',
-        href: '/ai-autonomous-ecosystem-2041',
+      { 
+        name: 'AI Autonomous Ecosystem 2041', 
+        href: '/ai-autonomous-ecosystem-2041', 
         description: 'Multi-AI coordination',
         icon: <Network className="w-4 h-4" />
       },
-      {
-        name: 'AI Predictive Maintenance 2041',
-        href: '/ai-predictive-maintenance-2041',
+      { 
+        name: 'AI Predictive Maintenance 2041', 
+        href: '/ai-predictive-maintenance-2041', 
         description: 'Consciousness-based maintenance',
         icon: <Monitor className="w-4 h-4" />
       }
@@ -256,6 +262,78 @@ const navigationItems: NavigationItem[] = [
         href: '/quantum-financial-intelligence-2040',
         description: 'Quantum financial solutions',
         icon: <TrendingUp className="w-4 h-4" />
+      }
+    ]
+  },
+  {
+    name: 'Company',
+    href: '/about',
+    icon: <Building className="w-5 h-5" />,
+    description: 'About Zion Tech Group',
+    badge: 'Company',
+    category: 'company',
+    color: 'from-emerald-500 to-teal-500',
+    children: [
+      { 
+        name: 'About Us', 
+        href: '/about', 
+        description: 'Learn about our mission and team',
+        icon: <Building className="w-4 h-4" />,
+        featured: true
+      },
+      { 
+        name: 'Careers', 
+        href: '/careers', 
+        description: 'Join our revolutionary team',
+        icon: <Users className="w-4 h-4" />
+      },
+      { 
+        name: 'Contact', 
+        href: '/contact', 
+        description: 'Get in touch with us',
+        icon: <Mail className="w-4 h-4" />
+      },
+      { 
+        name: 'News', 
+        href: '/news', 
+        description: 'Latest company updates',
+        icon: <Globe className="w-4 h-4" />
+      }
+    ]
+  },
+  {
+    name: 'Resources',
+    href: '/resources',
+    icon: <BookOpen className="w-5 h-5" />,
+    description: 'Educational content and tools',
+    badge: 'Resources',
+    category: 'resources',
+    color: 'from-yellow-500 to-orange-500',
+    children: [
+      { 
+        name: 'Blog', 
+        href: '/blog', 
+        description: 'Insights and articles',
+        icon: <BookOpen className="w-4 h-4" />,
+        featured: true
+      },
+      { 
+        name: 'Whitepapers', 
+        href: '/whitepapers', 
+        description: 'Research and technical docs',
+        icon: <FileText className="w-4 h-4" />
+      },
+      { 
+        name: 'Webinars', 
+        href: '/webinars', 
+        description: 'Live and recorded sessions',
+        icon: <Video className="w-4 h-4" />
+      },
+      { 
+        name: 'Support', 
+        href: '/support', 
+        description: 'Help and documentation',
+        icon: <HelpCircle className="w-4 h-4" />
       }
     ]
   }
