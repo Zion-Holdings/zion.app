@@ -41,8 +41,8 @@ import { revolutionary2045AdvancedRealMicroSaas } from '../data/revolutionary-20
 import { revolutionary2045AdvancedITServices } from '../data/revolutionary-2045-advanced-it-services';
 import { revolutionary2045AdvancedAIServices } from '../data/revolutionary-2045-advanced-ai-services';
 import { innovative2025AIAutonomousServices } from '../data/2025-innovative-ai-autonomous-services';
-import { innovative2025ITInfrastructureServices } from '../data/2025-innovative-it-infrastructure-services';
-import { innovative2025MicroSaasServices } from '../data/2025-innovative-micro-saas-services';
+import { innovativeITInfrastructureServices2025 } from '../data/2025-innovative-it-infrastructure-services';
+import { innovativeMicroSaasServices2025 } from '../data/2025-innovative-micro-saas-services';
 
 const InnovativeServicesShowcase2025: React.FC = () => {
   const [selectedCategory, setSelectedCategory] = useState('all');
@@ -57,8 +57,8 @@ const InnovativeServicesShowcase2025: React.FC = () => {
     ...revolutionary2045AdvancedITServices,
     ...revolutionary2045AdvancedAIServices,
     ...innovative2025AIAutonomousServices,
-    ...innovative2025ITInfrastructureServices,
-    ...innovative2025MicroSaasServices
+    ...innovativeITInfrastructureServices2025,
+    ...innovativeMicroSaasServices2025
   ];
 
   // Service categories
@@ -67,8 +67,8 @@ const InnovativeServicesShowcase2025: React.FC = () => {
     { id: 'ai-autonomous', name: 'AI & Autonomous', icon: Brain, color: 'from-cyan-500 to-blue-500', count: [...revolutionary2045AdvancedAIServices, ...innovative2025AIAutonomousServices].length },
     { id: 'quantum', name: 'Quantum Technology', icon: Atom, color: 'from-blue-500 to-indigo-500', count: allServices.filter(s => s.category.includes('Quantum')).length },
     { id: 'cybersecurity', name: 'Cybersecurity', icon: Shield, color: 'from-red-500 to-orange-500', count: allServices.filter(s => s.category.includes('Security')).length },
-    { id: 'micro-saas', name: 'Micro SAAS', icon: Target, color: 'from-emerald-500 to-teal-500', count: [...revolutionary2045AdvancedRealMicroSaas, ...innovative2025MicroSaasServices].length },
-    { id: 'it-infrastructure', name: 'IT Infrastructure', icon: Server, color: 'from-yellow-500 to-orange-500', count: [...revolutionary2045AdvancedITServices, ...innovative2025ITInfrastructureServices].length },
+    { id: 'micro-saas', name: 'Micro SAAS', icon: Target, color: 'from-emerald-500 to-teal-500',     count: [...revolutionary2045AdvancedRealMicroSaas, ...innovativeMicroSaasServices2025].length },
+    { id: 'it-infrastructure', name: 'IT Infrastructure', icon: Server, color: 'from-yellow-500 to-orange-500', count: [...revolutionary2045AdvancedITServices, ...innovativeITInfrastructureServices2025].length },
     { id: 'edge-computing', name: 'Edge Computing', icon: Network, color: 'from-indigo-500 to-purple-500', count: allServices.filter(s => s.category.includes('Edge')).length },
     { id: 'devops', name: 'DevOps & Automation', icon: Code, color: 'from-orange-500 to-red-500', count: allServices.filter(s => s.category.includes('DevOps')).length },
     { id: 'data-analytics', name: 'Data & Analytics', icon: BarChart3, color: 'from-teal-500 to-cyan-500', count: allServices.filter(s => s.category.includes('Data')).length }

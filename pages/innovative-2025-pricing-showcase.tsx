@@ -2,10 +2,11 @@ import React, { useState, useEffect } from 'react';
 import SEO from '../components/SEO';
 import { motion, AnimatePresence } from 'framer-motion';
 import { 
-  Search, Grid, List, Filter,
+  Search, Grid, List, Filter, DollarSign,
   Brain, Atom, Shield, Target, Rocket,
   ArrowRight, Check, Palette, Heart, Truck, GraduationCap,
-  Building, Cpu, Zap, Star, TrendingUp, Users, Globe, Phone, Mail, MapPin
+  Building, Cpu, Zap, Star, TrendingUp, Users, Globe,
+  Phone, Mail, MapPin, ExternalLink
 } from 'lucide-react';
 
 // Import our new innovative 2025 services
@@ -14,9 +15,10 @@ import { innovativeITInfrastructureServices2025 } from '../data/2025-innovative-
 import { innovativeMicroSaasServices2025 } from '../data/2025-innovative-micro-saas-services';
 import { innovativeBusinessSolutions2025 } from '../data/2025-innovative-business-solutions';
 
-const Innovative2025ServicesShowcase: React.FC = () => {
+const Innovative2025PricingShowcase: React.FC = () => {
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedCategory, setSelectedCategory] = useState('all');
+  const [priceRange, setPriceRange] = useState('all');
   const [viewMode, setViewMode] = useState<'grid' | 'list'>('grid');
   const [filteredServices, setFilteredServices] = useState<any[]>([]);
 
@@ -35,6 +37,14 @@ const Innovative2025ServicesShowcase: React.FC = () => {
     { id: 'it-infrastructure', name: 'IT Infrastructure', icon: Cpu, count: innovativeITInfrastructureServices2025.length },
     { id: 'micro-saas', name: 'Micro SAAS', icon: Building, count: innovativeMicroSaasServices2025.length },
     { id: 'business-solutions', name: 'Business Solutions', icon: Target, count: innovativeBusinessSolutions2025.length }
+  ];
+
+  // Price ranges for filtering
+  const priceRanges = [
+    { id: 'all', name: 'All Prices', range: 'all' },
+    { id: 'budget', name: 'Budget ($0-$500)', range: '0-500' },
+    { id: 'mid-range', name: 'Mid-Range ($500-$1500)', range: '500-1500' },
+    { id: 'premium', name: 'Premium ($1500+)', range: '1500+' }
   ];
 
   useEffect(() => {
@@ -60,8 +70,19 @@ const Innovative2025ServicesShowcase: React.FC = () => {
       });
     }
 
+    // Filter by price range
+    if (priceRange !== 'all') {
+      filtered = filtered.filter(service => {
+        const starterPrice = parseFloat(service.pricing.starter.replace('$', '').replace('/month', ''));
+        if (priceRange === '0-500') return starterPrice <= 500;
+        if (priceRange === '500-1500') return starterPrice > 500 && starterPrice <= 1500;
+        if (priceRange === '1500+') return starterPrice > 1500;
+        return true;
+      });
+    }
+
     setFilteredServices(filtered);
-  }, [searchTerm, selectedCategory]);
+  }, [searchTerm, selectedCategory, priceRange]);
 
   const getCategoryIcon = (category: string) => {
     if (category.includes('AI') || category.includes('Automation')) return Brain;
@@ -79,13 +100,17 @@ const Innovative2025ServicesShowcase: React.FC = () => {
     return 'from-gray-600 to-slate-600';
   };
 
+  const formatPrice = (price: string) => {
+    return price.replace('/month', '');
+  };
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900">
       <SEO 
-        title="Innovative 2025 Services Showcase | Zion Tech Group"
-        description="Discover our comprehensive collection of innovative AI, IT infrastructure, micro SAAS, and business solutions for 2025. Transform your business with cutting-edge technology."
-        keywords="AI services, IT infrastructure, micro SAAS, business solutions, 2025, innovation, technology, automation"
-        image="https://ziontechgroup.com/og-innovative-2025-services.jpg"
+        title="Innovative 2025 Pricing Showcase | Zion Tech Group"
+        description="Explore comprehensive pricing for our innovative 2025 AI, IT infrastructure, micro SAAS, and business solutions. Competitive pricing with enterprise-grade features."
+        keywords="pricing, AI services, IT infrastructure, micro SAAS, business solutions, 2025, competitive pricing"
+        image="https://ziontechgroup.com/og-innovative-2025-pricing.jpg"
       />
 
       {/* Hero Section */}
@@ -96,30 +121,35 @@ const Innovative2025ServicesShowcase: React.FC = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
+            <div className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-green-500/20 to-emerald-500/20 border border-green-400/30 rounded-full text-green-400 text-sm font-medium mb-6">
+              <DollarSign className="w-4 h-4" />
+              <span>Transparent Pricing</span>
+            </div>
+            
             <h1 className="text-5xl md:text-7xl font-bold text-white mb-6">
-              <span className="bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-green-400 via-emerald-500 to-teal-600 bg-clip-text text-transparent">
                 Innovative 2025
               </span>
               <br />
-              <span className="text-white">Services Showcase</span>
+              <span className="text-white">Pricing Showcase</span>
             </h1>
             <p className="text-xl md:text-2xl text-gray-300 mb-8 max-w-4xl mx-auto">
-              Discover our comprehensive collection of cutting-edge AI, IT infrastructure, micro SAAS, and business solutions designed to transform your business in 2025 and beyond.
+              Discover competitive pricing for our comprehensive collection of cutting-edge AI, IT infrastructure, micro SAAS, and business solutions designed to transform your business in 2025.
             </p>
             
             {/* Contact Information */}
             <div className="bg-white/10 backdrop-blur-xl rounded-2xl p-6 mb-8 inline-block">
               <div className="flex flex-col md:flex-row items-center justify-center gap-6 text-white">
                 <div className="flex items-center gap-2">
-                  <Phone className="w-5 h-5 text-cyan-400" />
+                  <Phone className="w-5 h-5 text-green-400" />
                   <span>+1 302 464 0950</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <Mail className="w-5 h-5 text-cyan-400" />
+                  <Mail className="w-5 h-5 text-green-400" />
                   <span>kleber@ziontechgroup.com</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <MapPin className="w-5 h-5 text-cyan-400" />
+                  <MapPin className="w-5 h-5 text-green-400" />
                   <span>364 E Main St STE 1008 Middletown DE 19709</span>
                 </div>
               </div>
@@ -130,16 +160,16 @@ const Innovative2025ServicesShowcase: React.FC = () => {
                 href="https://ziontechgroup.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-600 hover:to-blue-700 text-white px-8 py-4 rounded-xl font-semibold text-lg transition-all duration-300 transform hover:scale-105"
+                className="inline-flex items-center gap-2 bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700 text-white px-8 py-4 rounded-xl font-semibold text-lg transition-all duration-300 transform hover:scale-105"
               >
                 Visit Our Website
-                <ArrowRight className="w-5 h-5" />
+                <ExternalLink className="w-5 h-5" />
               </a>
               <a
-                href="mailto:kleber@ziontechgroup.com"
+                href="mailto:kleber@ziontechgroup.com?subject=Pricing Inquiry for 2025 Services"
                 className="inline-flex items-center gap-2 bg-white/10 hover:bg-white/20 text-white px-8 py-4 rounded-xl font-semibold text-lg transition-all duration-300 backdrop-blur-xl border border-white/20"
               >
-                Contact Us
+                Get Custom Quote
                 <Mail className="w-5 h-5" />
               </a>
             </div>
@@ -160,7 +190,7 @@ const Innovative2025ServicesShowcase: React.FC = () => {
                   placeholder="Search services..."
                   value={searchTerm}
                   onChange={(e) => setSearchTerm(e.target.value)}
-                  className="w-full pl-10 pr-4 py-3 bg-white/10 border border-white/20 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:border-transparent"
+                  className="w-full pl-10 pr-4 py-3 bg-white/10 border border-white/20 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent"
                 />
               </div>
 
@@ -172,7 +202,7 @@ const Innovative2025ServicesShowcase: React.FC = () => {
                     onClick={() => setSelectedCategory(category.id)}
                     className={`flex items-center gap-2 px-4 py-2 rounded-lg transition-all duration-300 ${
                       selectedCategory === category.id
-                        ? 'bg-gradient-to-r from-cyan-500 to-blue-600 text-white'
+                        ? 'bg-gradient-to-r from-green-500 to-emerald-600 text-white'
                         : 'bg-white/10 text-gray-300 hover:bg-white/20'
                     }`}
                   >
@@ -185,13 +215,31 @@ const Innovative2025ServicesShowcase: React.FC = () => {
                 ))}
               </div>
 
+              {/* Price Range Filter */}
+              <div className="flex flex-wrap gap-2">
+                {priceRanges.map((range) => (
+                  <button
+                    key={range.id}
+                    onClick={() => setPriceRange(range.id)}
+                    className={`flex items-center gap-2 px-4 py-2 rounded-lg transition-all duration-300 ${
+                      priceRange === range.id
+                        ? 'bg-gradient-to-r from-green-500 to-emerald-600 text-white'
+                        : 'bg-white/10 text-gray-300 hover:bg-white/20'
+                    }`}
+                  >
+                    <DollarSign className="w-4 h-4" />
+                    <span>{range.name}</span>
+                  </button>
+                ))}
+              </div>
+
               {/* View Mode Toggle */}
               <div className="flex items-center gap-2 bg-white/10 rounded-lg p-1">
                 <button
                   onClick={() => setViewMode('grid')}
                   className={`p-2 rounded-md transition-all duration-300 ${
                     viewMode === 'grid'
-                      ? 'bg-gradient-to-r from-cyan-500 to-blue-600 text-white'
+                      ? 'bg-gradient-to-r from-green-500 to-emerald-600 text-white'
                       : 'text-gray-400 hover:text-white'
                   }`}
                 >
@@ -201,7 +249,7 @@ const Innovative2025ServicesShowcase: React.FC = () => {
                   onClick={() => setViewMode('list')}
                   className={`p-2 rounded-md transition-all duration-300 ${
                     viewMode === 'list'
-                      ? 'bg-gradient-to-r from-cyan-500 to-blue-600 text-white'
+                      ? 'bg-gradient-to-r from-green-500 to-emerald-600 text-white'
                       : 'text-gray-400 hover:text-white'
                   }`}
                 >
@@ -219,8 +267,8 @@ const Innovative2025ServicesShowcase: React.FC = () => {
           {/* Results Count */}
           <div className="text-white mb-8">
             <p className="text-lg">
-              Showing <span className="text-cyan-400 font-semibold">{filteredServices.length}</span> of{' '}
-              <span className="text-cyan-400 font-semibold">{allServices.length}</span> services
+              Showing <span className="text-green-400 font-semibold">{filteredServices.length}</span> of{' '}
+              <span className="text-green-400 font-semibold">{allServices.length}</span> services
             </p>
           </div>
 
@@ -263,10 +311,35 @@ const Innovative2025ServicesShowcase: React.FC = () => {
                       <p className="text-gray-300 mb-4">{service.tagline}</p>
                       <p className="text-gray-400 text-sm mb-4">{service.description}</p>
 
-                      {/* Pricing */}
-                      <div className="mb-4">
-                        <div className="text-sm text-gray-400 mb-2">Starting at:</div>
-                        <div className="text-2xl font-bold text-cyan-400">{service.pricing.starter}</div>
+                      {/* Pricing Section */}
+                      <div className="bg-white/5 rounded-xl p-4 mb-6">
+                        <div className="text-sm text-gray-400 mb-3 font-medium">Pricing Plans:</div>
+                        <div className="space-y-2">
+                          {service.pricing.starter && (
+                            <div className="flex items-center justify-between">
+                              <span className="text-sm text-gray-300">Starter:</span>
+                              <span className="text-lg font-bold text-green-400">{formatPrice(service.pricing.starter)}</span>
+                            </div>
+                          )}
+                          {service.pricing.professional && (
+                            <div className="flex items-center justify-between">
+                              <span className="text-sm text-gray-300">Professional:</span>
+                              <span className="text-lg font-bold text-blue-400">{formatPrice(service.pricing.professional)}</span>
+                            </div>
+                          )}
+                          {service.pricing.enterprise && (
+                            <div className="flex items-center justify-between">
+                              <span className="text-sm text-gray-300">Enterprise:</span>
+                              <span className="text-lg font-bold text-purple-400">{formatPrice(service.pricing.enterprise)}</span>
+                            </div>
+                          )}
+                          {service.pricing.custom && (
+                            <div className="flex items-center justify-between">
+                              <span className="text-sm text-gray-300">Custom:</span>
+                              <span className="text-sm text-cyan-400">{service.pricing.custom}</span>
+                            </div>
+                          )}
+                        </div>
                       </div>
 
                       {/* Features Preview */}
@@ -295,7 +368,7 @@ const Innovative2025ServicesShowcase: React.FC = () => {
                         <ul className="space-y-1">
                           {service.benefits.slice(0, 3).map((benefit, idx) => (
                             <li key={idx} className="flex items-center gap-2 text-sm text-gray-300">
-                              <Check className="w-4 h-4 text-cyan-400 flex-shrink-0" />
+                              <Check className="w-4 h-4 text-green-400 flex-shrink-0" />
                               {benefit}
                             </li>
                           ))}
@@ -306,7 +379,7 @@ const Innovative2025ServicesShowcase: React.FC = () => {
                       <div className="mb-6 text-sm">
                         <div className="flex items-center justify-between text-gray-400 mb-2">
                           <span>Market Size:</span>
-                          <span className="text-cyan-400 font-semibold">{service.marketSize}</span>
+                          <span className="text-green-400 font-semibold">{service.marketSize}</span>
                         </div>
                         <div className="text-gray-400">
                           <span>Target:</span> {service.targetAudience}
@@ -317,15 +390,15 @@ const Innovative2025ServicesShowcase: React.FC = () => {
                       <div className="flex flex-col gap-2">
                         <a
                           href={service.slug}
-                          className="w-full bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-600 hover:to-blue-700 text-white py-3 px-4 rounded-xl font-semibold text-center transition-all duration-300 transform hover:scale-105"
+                          className="w-full bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700 text-white py-3 px-4 rounded-xl font-semibold text-center transition-all duration-300 transform hover:scale-105"
                         >
                           Learn More
                         </a>
                         <a
-                          href={`mailto:${service.contact}?subject=Inquiry about ${service.name}`}
+                          href={`mailto:${service.contact}?subject=Pricing Inquiry for ${service.name}`}
                           className="w-full bg-white/10 hover:bg-white/20 text-white py-3 px-4 rounded-xl font-semibold text-center transition-all duration-300 border border-white/20"
                         >
-                          Contact Sales
+                          Get Pricing Quote
                         </a>
                       </div>
                     </div>
@@ -337,7 +410,7 @@ const Innovative2025ServicesShowcase: React.FC = () => {
         </div>
       </section>
 
-      {/* Contact CTA Section */}
+      {/* Pricing Comparison CTA */}
       <section className="px-4 sm:px-6 lg:px-8 pb-20">
         <div className="max-w-4xl mx-auto text-center">
           <motion.div
@@ -345,35 +418,35 @@ const Innovative2025ServicesShowcase: React.FC = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-            className="bg-gradient-to-r from-cyan-500/20 to-blue-600/20 backdrop-blur-xl rounded-3xl p-12 border border-white/20"
+            className="bg-gradient-to-r from-green-500/20 to-emerald-600/20 backdrop-blur-xl rounded-3xl p-12 border border-white/20"
           >
             <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-              Ready to Transform Your Business?
+              Need Custom Pricing?
             </h2>
             <p className="text-xl text-gray-300 mb-8">
-              Our innovative 2025 services are designed to give you a competitive edge. 
-              Contact us today to learn how we can help you achieve your business goals.
+              Our services are designed to scale with your business. Contact us for custom pricing, 
+              volume discounts, and enterprise solutions tailored to your specific needs.
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
                 href="tel:+13024640950"
-                className="inline-flex items-center gap-2 bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-600 hover:to-blue-700 text-white px-8 py-4 rounded-xl font-semibold text-lg transition-all duration-300 transform hover:scale-105"
+                className="inline-flex items-center gap-2 bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700 text-white px-8 py-4 rounded-xl font-semibold text-lg transition-all duration-300 transform hover:scale-105"
               >
                 <Phone className="w-5 h-5" />
-                Call +1 302 464 0950
+                Call for Custom Quote
               </a>
               <a
-                href="mailto:kleber@ziontechgroup.com"
+                href="mailto:kleber@ziontechgroup.com?subject=Custom Pricing Inquiry"
                 className="inline-flex items-center gap-2 bg-white/10 hover:bg-white/20 text-white px-8 py-4 rounded-xl font-semibold text-lg transition-all duration-300 backdrop-blur-xl border border-white/20"
               >
                 <Mail className="w-5 h-5" />
-                Email Us
+                Request Custom Pricing
               </a>
             </div>
 
             <div className="mt-8 text-gray-300">
-              <p>Visit us at: <a href="https://ziontechgroup.com" className="text-cyan-400 hover:text-cyan-300">https://ziontechgroup.com</a></p>
+              <p>Visit us at: <a href="https://ziontechgroup.com" className="text-green-400 hover:text-green-300">https://ziontechgroup.com</a></p>
               <p>Address: 364 E Main St STE 1008 Middletown DE 19709</p>
             </div>
           </motion.div>
@@ -383,4 +456,4 @@ const Innovative2025ServicesShowcase: React.FC = () => {
   );
 };
 
-export default Innovative2025ServicesShowcase;
+export default Innovative2025PricingShowcase;

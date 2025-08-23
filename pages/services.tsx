@@ -28,7 +28,6 @@ import { realEnterpriseMicroSaas2025 } from '../data/2025-real-enterprise-micro-
 
 // Import our new innovative 2025 services
 import { realInnovativeMicroSaasServices2025 } from '../data/2025-real-innovative-micro-saas-expansion';
-import { innovativeITInfrastructureServices2025 } from '../data/2025-innovative-it-infrastructure-services-expansion';
 import { innovativeAIServices2025Expansion } from '../data/2025-innovative-ai-services-expansion';
 
 // Import our new 2025 advanced services
@@ -49,6 +48,12 @@ import { innovativeMicroSaasBreakthroughs2025 } from '../data/2025-innovative-mi
 import { innovativeAIAutonomousEcosystemServices2025V2 } from '../data/2025-innovative-ai-autonomous-ecosystem-v2';
 import { innovativeITInfrastructureBreakthroughServices2025 } from '../data/2025-innovative-it-infrastructure-breakthroughs';
 import { innovativeMicroSaasBreakthroughServices2025V2 } from '../data/2025-innovative-micro-saas-breakthroughs-v2';
+
+// Import our new innovative 2025 services
+import { innovativeAIAutomationServices2025 } from '../data/2025-innovative-ai-automation-services';
+import { innovativeITInfrastructureServices2025 } from '../data/2025-innovative-it-infrastructure-services';
+import { innovativeMicroSaasServices2025 } from '../data/2025-innovative-micro-saas-services';
+import { innovativeBusinessSolutions2025 } from '../data/2025-innovative-business-solutions';
 
 // Import our new service data
 import { enterpriseITSolutions } from '../data/2034-enterprise-it-solutions';
@@ -147,6 +152,12 @@ const getServiceDescription = (service: any) => {
 
 // Create unified services array
 const allServices = [
+  // Our new innovative 2025 services
+  ...innovativeAIAutomationServices2025,
+  ...innovativeITInfrastructureServices2025,
+  ...innovativeMicroSaasServices2025,
+  ...innovativeBusinessSolutions2025,
+  
   // Our new 2025 services
   ...realInnovativeMicroSaasServices2025,
   ...innovativeITInfrastructureServices2025,
