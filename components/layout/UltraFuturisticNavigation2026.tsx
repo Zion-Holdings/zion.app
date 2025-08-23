@@ -11,12 +11,15 @@ import {
   MapPin,
   Moon,
   Sun,
+  Globe,
+  ExternalLink,
   Brain,
   Atom,
   Cpu,
   Shield,
   Building,
   Zap,
+  Rocket,
   Star
 } from 'lucide-react';
 
@@ -51,54 +54,29 @@ const UltraFuturisticNavigation2026: React.FC<UltraFuturisticNavigation2026Props
       description: 'Revolutionary AI systems that operate independently',
       children: [
         { 
-          label: 'AI Legal Research Assistant', 
-          href: '/ai-autonomous-legal-research-assistant',
-          description: 'Autonomous legal research and case analysis'
+          label: 'AI Autonomous Content Factory Pro', 
+          href: '/ai-autonomous-content-factory-pro',
+          description: 'Autonomous content creation and distribution'
         },
         { 
-          label: 'AI Financial Risk Manager', 
-          href: '/ai-autonomous-financial-risk-manager',
-          description: 'Real-time financial risk monitoring and management'
+          label: 'AI Autonomous HR Platform', 
+          href: '/ai-autonomous-hr-platform',
+          description: 'Intelligent HR management and automation'
         },
         { 
-          label: 'AI Healthcare Diagnostics Pro', 
-          href: '/ai-autonomous-medical-diagnostics',
-          description: 'Advanced medical diagnostics and treatment planning'
+          label: 'AI Autonomous Education Platform', 
+          href: '/ai-autonomous-education-platform',
+          description: 'Personalized learning and adaptive education'
         },
         { 
-          label: 'AI Supply Chain Optimizer', 
-          href: '/ai-autonomous-supply-chain-optimizer',
-          description: 'Intelligent supply chain optimization and disruption prediction'
+          label: 'AI Autonomous Project Management', 
+          href: '/ai-autonomous-project-management',
+          description: 'Intelligent project planning and optimization'
         },
         { 
-          label: 'AI Cybersecurity Sentinel', 
+          label: 'AI Autonomous Cybersecurity Sentinel', 
           href: '/ai-autonomous-cybersecurity-sentinel',
           description: 'Autonomous threat detection and response'
-        },
-        { 
-          label: 'AI Customer Success Orchestrator', 
-          href: '/ai-autonomous-customer-success-orchestrator',
-          description: 'Autonomous customer relationship management'
-        },
-        { 
-          label: 'AI HR Intelligence Suite', 
-          href: '/ai-autonomous-hr-intelligence-suite',
-          description: 'Intelligent human resources management'
-        },
-        { 
-          label: 'AI Marketing Orchestrator', 
-          href: '/ai-autonomous-marketing-orchestrator',
-          description: 'Autonomous marketing campaign management'
-        },
-        { 
-          label: 'AI Sales Intelligence', 
-          href: '/ai-autonomous-sales-intelligence',
-          description: 'Autonomous sales optimization and intelligence'
-        },
-        { 
-          label: 'AI Product Intelligence', 
-          href: '/ai-autonomous-product-intelligence',
-          description: 'Autonomous product analytics and optimization'
         }
       ]
     },
@@ -109,17 +87,17 @@ const UltraFuturisticNavigation2026: React.FC<UltraFuturisticNavigation2026Props
       description: 'Next-generation quantum computing solutions',
       children: [
         { 
-          label: 'Quantum Edge Computing', 
+          label: 'Quantum Edge Computing Platform', 
           href: '/quantum-edge-computing-platform',
           description: 'Quantum-enhanced edge processing platform'
         },
         { 
-          label: 'Neuromorphic Computing', 
+          label: 'Neuromorphic Computing Infrastructure', 
           href: '/neuromorphic-computing-infrastructure',
           description: 'Brain-inspired computing infrastructure'
         },
         { 
-          label: 'Holographic Data Center', 
+          label: 'Holographic Data Center Platform', 
           href: '/holographic-data-center-platform',
           description: '3D holographic storage and processing'
         },
@@ -132,61 +110,6 @@ const UltraFuturisticNavigation2026: React.FC<UltraFuturisticNavigation2026Props
           label: 'Quantum Internet Backbone', 
           href: '/quantum-internet-backbone',
           description: 'Ultra-secure quantum networking'
-        },
-        { 
-          label: 'Quantum Financial Intelligence', 
-          href: '/quantum-financial-intelligence-platform',
-          description: 'Quantum-powered financial analytics'
-        },
-        { 
-          label: 'Quantum Supply Chain Optimization', 
-          href: '/quantum-supply-chain-optimization',
-          description: 'Quantum supply chain optimization'
-        },
-        { 
-          label: 'Quantum Cybersecurity Intelligence', 
-          href: '/quantum-cybersecurity-intelligence',
-          description: 'Quantum-powered security platform'
-        },
-        { 
-          label: 'Quantum Data Analytics', 
-          href: '/quantum-data-analytics-platform',
-          description: 'Quantum data processing and analytics'
-        },
-        { 
-          label: 'Quantum IoT Intelligence', 
-          href: '/quantum-iot-intelligence-platform',
-          description: 'Quantum-powered IoT platform'
-        },
-        { 
-          label: 'Quantum AI Hybrid Intelligence', 
-          href: '/quantum-ai-hybrid-intelligence',
-          description: 'Quantum-AI hybrid computing'
-        },
-        { 
-          label: 'Quantum Medical Imaging', 
-          href: '/quantum-medical-imaging-platform',
-          description: 'Quantum-enhanced medical imaging'
-        },
-        { 
-          label: 'Quantum Drug Discovery', 
-          href: '/quantum-drug-discovery-platform',
-          description: 'Quantum-accelerated drug discovery'
-        },
-        { 
-          label: 'Quantum Genomics Analysis', 
-          href: '/quantum-genomics-analysis-platform',
-          description: 'Quantum genomic analysis platform'
-        },
-        { 
-          label: 'Quantum Biotechnology', 
-          href: '/quantum-biotechnology-platform',
-          description: 'Quantum biotech platform'
-        },
-        { 
-          label: 'Quantum Medical Device Intelligence', 
-          href: '/quantum-medical-device-intelligence',
-          description: 'Quantum-enhanced medical devices'
         }
       ]
     },
@@ -217,54 +140,19 @@ const UltraFuturisticNavigation2026: React.FC<UltraFuturisticNavigation2026Props
           description: 'Performance and efficiency optimization'
         },
         { 
-          label: 'Quantum Cloud Infrastructure', 
-          href: '/quantum-cloud-infrastructure-platform',
-          description: 'Quantum-enhanced cloud platform'
+          label: '5G Private Network Solutions', 
+          href: '/5g-private-network-solutions',
+          description: 'Enterprise-grade 5G private networks'
         },
         { 
-          label: 'AI Autonomous DevOps', 
-          href: '/ai-autonomous-devops-platform',
-          description: 'Autonomous DevOps platform'
+          label: 'Autonomous DevOps Platform 2044', 
+          href: '/autonomous-devops-platform-2044',
+          description: 'AI-powered DevOps automation'
         },
         { 
-          label: 'Zero Trust Security Orchestrator', 
-          href: '/zero-trust-security-orchestrator',
-          description: 'Zero trust security platform'
-        },
-        { 
-          label: 'Quantum Edge Computing Infrastructure', 
-          href: '/quantum-edge-computing-infrastructure',
-          description: 'Quantum edge computing infrastructure'
-        },
-        { 
-          label: 'AI Autonomous Data Center Manager', 
-          href: '/ai-autonomous-data-center-manager',
-          description: 'Autonomous data center management'
-        },
-        { 
-          label: 'Quantum Network Security', 
-          href: '/quantum-network-security-platform',
-          description: 'Quantum network security platform'
-        },
-        { 
-          label: 'AI Autonomous Cloud Migration', 
-          href: '/ai-autonomous-cloud-migration',
-          description: 'Autonomous cloud migration platform'
-        },
-        { 
-          label: 'Quantum Storage Optimization', 
-          href: '/quantum-storage-optimization',
-          description: 'Quantum storage optimization platform'
-        },
-        { 
-          label: 'AI Autonomous Network Orchestrator', 
-          href: '/ai-autonomous-network-orchestrator',
-          description: 'Autonomous network management'
-        },
-        { 
-          label: 'Quantum Compliance Automation', 
-          href: '/quantum-compliance-automation',
-          description: 'Quantum compliance automation platform'
+          label: 'Quantum Data Center Management 2044', 
+          href: '/quantum-data-center-management-2044',
+          description: 'Quantum-optimized data center management'
         }
       ]
     },
@@ -298,6 +186,21 @@ const UltraFuturisticNavigation2026: React.FC<UltraFuturisticNavigation2026Props
           label: 'AI Education Platform', 
           href: '/ai-autonomous-education-platform',
           description: 'Personalized learning experiences'
+        },
+        { 
+          label: 'Quantum Supply Chain Optimizer', 
+          href: '/quantum-supply-chain-optimizer',
+          description: 'Quantum-powered supply chain optimization'
+        },
+        { 
+          label: 'Quantum Data Analytics Platform', 
+          href: '/quantum-data-analytics-platform',
+          description: 'Quantum-enhanced data analytics'
+        },
+        { 
+          label: 'Quantum Customer Intelligence Platform', 
+          href: '/quantum-customer-intelligence-platform',
+          description: 'Advanced customer behavior analysis'
         }
       ]
     },
@@ -321,82 +224,16 @@ const UltraFuturisticNavigation2026: React.FC<UltraFuturisticNavigation2026Props
           label: 'Compliance Automation', 
           href: '/compliance-automation',
           description: 'Automated regulatory compliance'
-        }
-      ]
-    },
-    {
-      label: 'Emerging Technology',
-      href: '/services/emerging-tech',
-      icon: Zap,
-      description: 'Cutting-edge emerging technology solutions',
-      children: [
-        { 
-          label: 'Blockchain Enterprise Intelligence', 
-          href: '/blockchain-enterprise-intelligence-platform',
-          description: 'Enterprise blockchain platform'
         },
         { 
-          label: 'Metaverse Digital Reality Orchestrator', 
-          href: '/metaverse-digital-reality-orchestrator',
-          description: 'Metaverse platform and AR/VR solutions'
+          label: 'Quantum Cybersecurity Platform 2044', 
+          href: '/quantum-cybersecurity-platform-2044',
+          description: 'Quantum-powered security platform'
         },
         { 
-          label: 'Space Resource Intelligence', 
-          href: '/space-resource-intelligence-platform',
-          description: 'Space resource mapping and optimization'
-        },
-        { 
-          label: 'Neuromorphic Computing Infrastructure', 
-          href: '/neuromorphic-computing-infrastructure',
-          description: 'Brain-inspired computing infrastructure'
-        },
-        { 
-          label: 'Holographic Computing Platform', 
-          href: '/holographic-computing-platform',
-          description: '3D holographic computing platform'
-        },
-        { 
-          label: 'Bio-Computing Infrastructure', 
-          href: '/bio-computing-infrastructure',
-          description: 'Biological computing platform'
-        },
-        { 
-          label: 'Autonomous Robotics Orchestrator', 
-          href: '/autonomous-robotics-orchestrator',
-          description: 'Autonomous robotics platform'
-        }
-      ]
-    },
-    {
-      label: 'Healthcare & Biotech',
-      href: '/services/healthcare',
-      icon: Shield,
-      description: 'Advanced healthcare and biotechnology solutions',
-      children: [
-        { 
-          label: 'AI Autonomous Medical Diagnostics', 
-          href: '/ai-autonomous-medical-diagnostics',
-          description: 'AI-powered medical diagnostics platform'
-        },
-        { 
-          label: 'AI Autonomous Patient Care Orchestrator', 
-          href: '/ai-autonomous-patient-care-orchestrator',
-          description: 'Autonomous patient care management'
-        },
-        { 
-          label: 'AI Autonomous Clinical Trials Manager', 
-          href: '/ai-autonomous-clinical-trials-manager',
-          description: 'Autonomous clinical trials management'
-        },
-        { 
-          label: 'AI Autonomous Healthcare Compliance', 
-          href: '/ai-autonomous-healthcare-compliance',
-          description: 'Healthcare compliance automation'
-        },
-        { 
-          label: 'AI Autonomous Telehealth Platform', 
-          href: '/ai-autonomous-telehealth-platform',
-          description: 'Autonomous telehealth platform'
+          label: 'AI Autonomous Cybersecurity Sentinel', 
+          href: '/ai-autonomous-cybersecurity-sentinel',
+          description: 'Autonomous threat detection and response'
         }
       ]
     },
@@ -425,34 +262,6 @@ const UltraFuturisticNavigation2026: React.FC<UltraFuturisticNavigation2026Props
           label: 'Retail Solutions', 
           href: '/retail-technology-solutions',
           description: 'Digital retail transformation'
-        }
-      ]
-    },
-    {
-      label: 'Showcase',
-      href: '/2026-comprehensive-services-showcase',
-      icon: Star,
-      description: 'Comprehensive services showcase and portfolio',
-      children: [
-        { 
-          label: '2026 Services Showcase', 
-          href: '/2026-comprehensive-services-showcase',
-          description: 'Complete portfolio of all services'
-        },
-        { 
-          label: 'AI & Autonomous Services', 
-          href: '/services/ai-autonomous',
-          description: 'AI autonomous systems showcase'
-        },
-        { 
-          label: 'Quantum Technology Services', 
-          href: '/services/quantum',
-          description: 'Quantum computing solutions showcase'
-        },
-        { 
-          label: 'IT Infrastructure Services', 
-          href: '/services/infrastructure',
-          description: 'IT infrastructure solutions showcase'
         }
       ]
     }
