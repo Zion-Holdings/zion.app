@@ -321,20 +321,17 @@ const EnhancedHomepage: React.FC = () => {
               {getFilteredServices().slice(0, 12).map((service, index) => (
                 <EnhancedServiceCard
                   key={service.id}
-                  id={service.id}
-                  title={service.name}
-                  description={service.description}
-                  category={service.category}
-                  type="Micro SAAS"
-                  features={service.features?.map(f => ({ name: f, description: f }))}
-                  slug={service.id}
-                  index={index}
-                  isPopular={Math.random() > 0.7}
-                  isNew={Math.random() > 0.8}
-                  rating={4.0 + Math.random() * 1.0}
-                  reviewCount={Math.floor(Math.random() * 100) + 10}
-                  estimatedDelivery="2-4 weeks"
-                  technologies={['AI', 'Cloud', 'Security', 'Automation']}
+                  service={{
+                    id: service.id,
+                    name: service.name,
+                    description: service.description,
+                    category: service.category,
+                    type: "Micro SAAS",
+                    features: service.features || [],
+                    slug: service.id
+                  }}
+                  variant="default"
+                  showFeatures={true}
                 />
               ))}
             </motion.div>
