@@ -621,6 +621,25 @@ export default function ServicesPage() {
         </div>
       </section>
 
+<<<<<<< HEAD
+      {/* Micro SaaS Services */}
+      <MicroSaasServices
+        title="Our Micro SaaS Portfolio"
+        subtitle="Explore our comprehensive collection of AI-powered micro SaaS solutions. Each service is designed to solve specific business challenges with cutting-edge technology and competitive pricing."
+        showCategoryFilter={true}
+      />
+
+      {/* Service Comparison */}
+      <ServiceComparison />
+
+      {/* Technology Stack */}
+      <section className="section-padding bg-gradient-cursor-accent">
+        <div className="container-cursor">
+          <div className="text-center mb-20">
+            <div className="inline-flex items-center px-4 py-2 rounded-full bg-cursor-blue/10 border border-cursor-blue/20 text-cursor-blue text-sm font-medium mb-6">
+              <span className="w-2 h-2 bg-cursor-blue rounded-full mr-2 animate-pulse" />
+              Technology Stack
+=======
   return (
     <>
       <Head>
@@ -755,6 +774,7 @@ export default function ServicesPage() {
           </div>
         </div>
       </section>
+>>>>>>> origin/cursor/enhance-app-with-micro-saas-and-deploy-dfdd
 
       {/* CTA Section */}
       <section className="section-padding bg-gradient-to-r from-cursor-blue to-blue-600 relative overflow-hidden">
