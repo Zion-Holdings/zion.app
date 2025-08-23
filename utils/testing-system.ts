@@ -1,17 +1,14 @@
 export class TestingSystem {
-  static async testUserInteraction(
-    element: HTMLElement,
-    action: 'click' | 'type' | 'hover'
-  ): Promise<void> {
+  static async testUserInteraction(element: HTMLElement, action: 'click' | 'type' | 'hover') {
     switch (action) {
       case 'click':
         element.click();
         break;
       case 'type':
-        // typing behavior placeholder
+        // Implement typing behavior in tests as needed
         break;
       case 'hover':
-        // hover behavior placeholder
+        // Implement hover behavior in tests as needed
         break;
     }
   }
