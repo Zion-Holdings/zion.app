@@ -131,18 +131,42 @@ const navigationItems: NavigationItem[] = [
   },
   {
     name: 'Showcase & Pricing',
+<<<<<<< HEAD
+    href: '/innovative-2038-services-showcase',
+=======
     href: '/comprehensive-2038-services-showcase',
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-50a7
     icon: <Star className="w-5 h-5" />,
     description: 'Service showcases and pricing',
     badge: 'Featured',
     category: 'showcase',
     children: [
       { 
+<<<<<<< HEAD
+        name: 'Innovative 2038 Services', 
+        href: '/innovative-2038-services-showcase', 
+        description: 'Latest innovative services showcase',
+        icon: <Calculator className="w-4 h-4" />,
+        featured: true
+      },
+      { 
+        name: 'Services Showcase', 
+        href: '/comprehensive-services-showcase-2025', 
+        description: 'Complete services overview',
+        icon: <Play className="w-4 h-4" />
+      },
+      { 
+        name: '2025 Services Showcase', 
+        href: '/comprehensive-services-showcase-2025', 
+        description: 'Previous services overview',
+        icon: <Play className="w-4 h-4" />
+=======
         name: '2038 Services Showcase', 
         href: '/comprehensive-2038-services-showcase', 
         description: 'Latest revolutionary services',
         icon: <Calculator className="w-4 h-4" />,
         featured: true
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-50a7
       },
       { 
         name: 'Services Showcase 2025', 

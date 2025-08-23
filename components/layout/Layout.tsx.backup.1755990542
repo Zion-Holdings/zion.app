@@ -1,5 +1,9 @@
 import React, { useState } from 'react';
+<<<<<<< HEAD
+import UltraFuturisticNavigation2038 from './UltraFuturisticNavigation2038';
+=======
 import UltraFuturisticNavigation2036 from './UltraFuturisticNavigation2036';
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-50a7
 import UltraFuturisticFooter2038 from './UltraFuturisticFooter2038';
 import EnhancedSidebar2025 from './EnhancedSidebar2025';
 import UltraFuturisticBackground2038 from '../backgrounds/UltraFuturisticBackground2038';

@@ -532,12 +532,24 @@ const Homepage2025: React.FC = () => {
               <p className="text-gray-300 mb-6">
                 Revolutionary AI solutions including quantum AI, computer vision, and predictive analytics.
               </p>
+<<<<<<< HEAD
+              <div className="flex items-center justify-between">
+                <span className="text-sm text-gray-400">Starting from $79/month</span>
+                <Link
+                  href="/innovative-2038-services-showcase"
+                  className="inline-flex items-center text-cyan-400 hover:text-cyan-300 transition-colors"
+                >
+                  Learn More <ArrowRight className="ml-2 w-4 h-4" />
+                </Link>
+              </div>
+=======
                           <Link
               href="/comprehensive-2038-services-showcase"
               className="inline-flex items-center text-cyan-400 hover:text-cyan-300 transition-colors"
             >
               Learn More <ArrowRight className="ml-2 w-4 h-4" />
             </Link>
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-50a7
             </motion.div>
 
             {/* Quantum Services */}
@@ -555,12 +567,24 @@ const Homepage2025: React.FC = () => {
               <p className="text-gray-300 mb-6">
                 Breakthrough quantum solutions for optimization, cryptography, and scientific computing.
               </p>
+<<<<<<< HEAD
+              <div className="flex items-center justify-between">
+                <span className="text-sm text-gray-400">Starting from $199/month</span>
+                <Link
+                  href="/innovative-2038-services-showcase"
+                  className="inline-flex items-center text-purple-400 hover:text-purple-300 transition-colors"
+                >
+                  Learn More <ArrowRight className="ml-2 w-4 h-4" />
+                </Link>
+              </div>
+=======
               <Link
                 href="/comprehensive-2038-services-showcase"
                 className="inline-flex items-center text-purple-400 hover:text-purple-300 transition-colors"
               >
                 Learn More <ArrowRight className="ml-2 w-4 h-4" />
               </Link>
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-50a7
             </motion.div>
 
             {/* Micro SAAS */}
@@ -598,8 +622,13 @@ const Homepage2025: React.FC = () => {
               className="text-center mt-16"
             >
               <Link
+<<<<<<< HEAD
+                href="/innovative-2038-services-showcase"
+                className="inline-flex items-center gap-2 bg-gradient-to-r from-cyan-500 to-purple-600 text-white px-8 py-4 rounded-full text-lg font-semibold hover:shadow-2xl hover:shadow-cyan-500/25 transition-all duration-300 transform hover:scale-105"
+=======
                 href="/comprehensive-2038-services-showcase"
                 className="inline-flex items-center text-blue-400 hover:text-blue-300 transition-colors"
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-50a7
               >
                 Explore All Services
                 <ArrowRight className="w-5 h-5" />

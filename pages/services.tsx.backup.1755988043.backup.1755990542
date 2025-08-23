@@ -44,6 +44,13 @@ import { innovative2037AIServices } from '../data/innovative-2037-ai-services';
 import { innovative2038MicroSaasServices } from '../data/innovative-2038-micro-saas-services';
 import { innovative2038ITServices } from '../data/innovative-2038-it-services';
 import { innovative2038AIServices } from '../data/innovative-2038-ai-services';
+<<<<<<< HEAD:pages/services.tsx.backup.1755988043
+
+// Import new Q4 2025 services
+import { innovative2025Q4Services } from '../data/innovative-2025-q4-new-services';
+import { emergingTech2025Q4Services } from '../data/emerging-tech-2025-q4-services';
+=======
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-50a7:pages/services.tsx
 
 // Import existing service data
 import { realMicroSaasServices } from '../data/real-micro-saas-services';
@@ -138,12 +145,18 @@ const allServices = [
   ...real2036ServiceExpansions,
   ...innovative2036MicroSaasServices,
   ...innovative2036ITServices,
+<<<<<<< HEAD:pages/services.tsx.backup.1755988043
+  // New Q4 2025 services
+  ...innovative2025Q4Services,
+  ...emergingTech2025Q4Services
+=======
   ...innovative2037MicroSaasServices,
   ...innovative2037ITServices,
   ...innovative2037AIServices,
   ...innovative2038MicroSaasServices,
   ...innovative2038ITServices,
   ...innovative2038AIServices
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-50a7:pages/services.tsx
 ];
 
 const categories = [
