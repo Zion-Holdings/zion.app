@@ -92,4 +92,7 @@ export type ServiceVariant =
   | 'healthcare-futuristic'
   | 'biotech-futuristic'
   | 'simulation-futuristic'
-  | 'space-futuristic';
+  | 'space-futuristic'
+  | 'infrastructure-futuristic'
+  | 'support-futuristic'
+  | 'transformation-futuristic';
