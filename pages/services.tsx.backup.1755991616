@@ -3,6 +3,26 @@ import Head from 'next/head';
 import Link from 'next/link';
 import { Check, Star, Zap, Shield, Users, Globe, ArrowRight, ExternalLink, TrendingUp, Clock, Target, Building, Rocket, Award, DollarSign, ChartBar, Lock, Cpu, Database, Cloud, Smartphone, Palette, Search, MessageSquare, FileText, Calendar, CreditCard, BarChart3, Settings, Zap as ZapIcon, Code, BookOpen, Activity, Database as DatabaseIcon, Play, Mail, Phone, MapPin, Filter, Grid, List, ChevronDown, ChevronUp, Sparkles, FlaskConical, Dna, Car, Leaf, Factory, Truck, Microscope, GraduationCap, ShieldCheck, Brain, Atom, Globe2, Bot, ChevronRight } from 'lucide-react';
 import Button from '../components/ui/Button';
+<<<<<<< HEAD
+import React, { useState, useMemo } from 'react';
+import Head from 'next/head';
+import { motion } from 'framer-motion';
+import { 
+  Search, Filter, SortAsc, Star, ExternalLink, ArrowRight, Check, 
+  Phone, Mail, MapPin, Globe, Brain, Factory, FlaskConical, 
+  DollarSign, Shield, Rocket, Zap, Users, TrendingUp, Clock, 
+  Target, Building, Award, ChartBar, Code, BookOpen, Activity, 
+  Smartphone, Palette, MessageSquare, FileText, Calendar, 
+  CreditCard, Settings, ChevronRight, Play, Sparkles, Atom, 
+  Eye, Trophy, Car, Leaf, Truck, Microscope, GraduationCap, 
+  ShieldCheck, Globe2, Bot, Cloud, RefreshCw, BarChart3, 
+  Lock, Cpu, Database
+} from 'lucide-react';
+import Button from '../components/ui/Button';
+import UltraFuturisticBackground from '../components/ui/UltraFuturisticBackground';
+import UltraFuturisticCard from '../components/ui/UltraFuturisticCard';
+import { enhancedRealMicroSaasServices } from '../data/enhanced-real-micro-saas-services';
+=======
 import QuantumCard from '../components/ui/QuantumCard';
 import QuantumNeuralBackground from '../components/ui/QuantumNeuralBackground';
 import { expandedMicroSaasServices, serviceCategories, getServicesByCategory, getPopularServices, getServicesByPriceRange } from '../data/expanded-micro-saas-services';
@@ -10,6 +30,7 @@ import { expandedMicroSaasServices, serviceCategories, getServicesByCategory, ge
 import Card from '../components/ui/Card';
 import UltraFuturisticBackground from '../components/ui/UltraFuturisticBackground';
 import { enhancedMicroSaasServices, serviceCategories, getServicesByCategory, getPopularServices, getServicesByPriceRange } from '../data/enhanced-micro-saas-services';
+>>>>>>> origin/cursor/enhance-app-services-and-website-with-futuristic-design-49d4
 
 export default function ServicesPage() {
   const [searchTerm, setSearchTerm] = useState('');
@@ -25,7 +46,12 @@ export default function ServicesPage() {
   }, []);
 
   // Filter and sort services
+<<<<<<< HEAD
+  const filteredServices = useMemo(() => {
+    let filtered = enhancedRealMicroSaasServices;
+=======
   let filteredServices = enhancedMicroSaasServices;
+>>>>>>> origin/cursor/enhance-app-services-and-website-with-futuristic-design-49d4
 
     // Apply search filter
     if (searchTerm) {
@@ -311,7 +337,11 @@ export default function ServicesPage() {
   };
 
   return (
+<<<<<<< HEAD
+    <QuantumNeuralBackground variant="neural" intensity="medium">
+=======
     <UltraFuturisticBackground variant="neural" intensity="high">
+>>>>>>> origin/cursor/enhance-app-services-and-website-with-futuristic-design-49d4
       <div className="min-h-screen">
         <Head>
           <title>Complete Services Portfolio | Zion Tech Group - AI, Quantum, Blockchain & More</title>
@@ -550,6 +580,25 @@ export default function ServicesPage() {
 
                   <p className="text-gray-300 text-sm mb-4 line-clamp-3">{service.description}</p>
 
+<<<<<<< HEAD
+                  {/* Features Preview */}
+                  <div className="mb-4">
+                    <div className="text-sm text-gray-400 mb-2">Key Features:</div>
+                    <div className="flex flex-wrap gap-1">
+                      {service.features.slice(0, 3).map((feature, index) => (
+                        <span
+                          key={index}
+                          className="text-xs bg-white/10 text-gray-300 px-2 py-1 rounded"
+                        >
+                          {feature}
+                        </span>
+                      ))}
+                      {service.features.length > 3 && (
+                        <span className="text-xs text-gray-500">
+                          +{service.features.length - 3} more
+                        </span>
+                      )}
+=======
             {/* Results Count */}
             <div className="text-center mb-8">
               <p className="text-gray-300">
@@ -609,6 +658,7 @@ export default function ServicesPage() {
                         Start Free Trial
                         <ArrowRight className="ml-2 w-4 h-4" />
                       </Button>
+>>>>>>> origin/cursor/enhance-app-services-and-website-with-futuristic-design-49d4
                     </div>
                   </div>
 
@@ -763,7 +813,11 @@ export default function ServicesPage() {
           </div>
         </section>
       </div>
+<<<<<<< HEAD
+    </QuantumNeuralBackground>
+=======
     </UltraFuturisticBackground>
+>>>>>>> origin/cursor/enhance-app-services-and-website-with-futuristic-design-49d4
   );
 }
 import Head from 'next/head';
