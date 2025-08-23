@@ -203,11 +203,11 @@ const SecurityEnhancer: React.FC<SecurityEnhancerProps> = ({
                 
                 // Check for potentially dangerous elements
                 if (element.tagName === 'SCRIPT' && !element.hasAttribute('nonce')) {
-                  // Potential security issue: Script without nonce detected
+                  console.warn('Potential security issue: Script without nonce detected');
                 }
                 
                 if (element.tagName === 'IFRAME' && !element.hasAttribute('sandbox')) {
-                  // Potential security issue: Iframe without sandbox detected
+                  console.warn('Potential security issue: Iframe without sandbox detected');
                 }
               }
             });
