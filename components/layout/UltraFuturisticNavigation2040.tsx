@@ -18,6 +18,26 @@ interface NavigationItem {
   icon: React.ReactNode;
   description?: string;
   badge?: string;
+  title?: string;
+  featured?: boolean;
+  category?: string;
+  color?: string;
+}
+
+interface UltraFuturisticNavigation2040Props {
+  onMenuToggle?: () => void;
+  isSidebarOpen?: boolean;
+}
+
+function normalizeHref(href: string): string {
+  if (!href) return href;
+  if (href.startsWith('http://') || href.startsWith('https://') || href.startsWith('mailto:') || href.startsWith('tel:')) {
+    return href;
+  }
+  if (!href.startsWith('/')) return href;
+  const hasQueryOrHash = href.includes('?') || href.includes('#');
+  if (hasQueryOrHash) return href;
+  return href.endsWith('/') ? href : href + '/';
 }
 
 // Memoized navigation items for better performance
@@ -363,7 +383,13 @@ const navigationItems: NavigationItem[] = [
   }
 ];
 
-const UltraFuturisticNavigation2040: React.FC = () => {
+const contactInfo = {
+  mobile: '+1 302 464 0950',
+  email: 'kleber@ziontechgroup.com',
+  address: '364 E Main St STE 1008 Middletown DE 19709'
+};
+
+const UltraFuturisticNavigation2040: React.FC<UltraFuturisticNavigation2040Props> = ({ onMenuToggle, isSidebarOpen }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
   const [isScrolled, setIsScrolled] = useState(false);
@@ -603,20 +629,30 @@ const UltraFuturisticNavigation2040: React.FC = () => {
             </Link>
           </div>
 
-          {/* Mobile menu button */}
-          <div className="lg:hidden">
+          {/* Mobile Menu Button */}
+          <div className="lg:hidden flex items-center space-x-2">
+            {/* Sidebar Toggle Button */}
+            {onMenuToggle && (
+              <button
+                onClick={onMenuToggle}
+                className="p-2 text-white hover:text-cyan-400 transition-colors focus:outline-none focus:ring-2 focus:ring-cyan-400 focus:ring-offset-2 focus:ring-offset-black"
+                aria-label="Toggle sidebar menu"
+                aria-expanded={isSidebarOpen}
+                aria-controls="sidebar-menu"
+              >
+                <Menu className="w-6 h-6" />
+              </button>
+            )}
+            
+            {/* Mobile Navigation Toggle */}
             <button
-              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="p-2 text-gray-400 hover:text-white transition-colors rounded-lg hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-cyan-300"
-              aria-expanded={isMobileMenuOpen}
-              aria-label="Toggle mobile menu"
-              aria-expanded={isMobileMenuOpen}
+              onClick={() => setIsOpen(!isOpen)}
+              className="p-2 text-white hover:text-cyan-400 transition-colors focus:outline-none focus:ring-2 focus:ring-cyan-400 focus:ring-offset-2 focus:ring-offset-black"
+              aria-label="Toggle mobile navigation menu"
+              aria-expanded={isOpen}
+              aria-controls="mobile-navigation"
             >
-              {isMobileMenuOpen ? (
-                <X className="w-6 h-6" aria-hidden="true" />
-              ) : (
-                <Menu className="w-6 h-6" aria-hidden="true" />
-              )}
+              {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
             </button>
           </div>
         </div>
@@ -626,13 +662,14 @@ const UltraFuturisticNavigation2040: React.FC = () => {
       <AnimatePresence>
         {isMobileMenuOpen && (
           <motion.div
-            ref={mobileMenuRef}
+            id="mobile-navigation"
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.3 }}
-            className="lg:hidden bg-black/95 backdrop-blur-md border-t border-white/10"
-            ref={mobileMenuRef}
+            className="lg:hidden bg-black/95 backdrop-blur-xl border-t border-white/10 overflow-hidden"
+            role="navigation"
+            aria-label="Mobile navigation menu"
           >
             <div className="px-4 py-6 space-y-4">
               {/* Mobile Search */}

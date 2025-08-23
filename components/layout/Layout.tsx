@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { motion } from 'framer-motion';
-import UltraFuturisticNavigation2036 from './UltraFuturisticNavigation2036';
-import UltraFuturisticFooter2036 from './UltraFuturisticFooter2036';
+import UltraFuturisticNavigation2040 from './UltraFuturisticNavigation2040';
+import UltraFuturisticFooter2040 from './UltraFuturisticFooter2040';
 import EnhancedSidebar2025 from './EnhancedSidebar2025';
 import UltraFuturisticBackground2036 from '../backgrounds/UltraFuturisticBackground2036';
 import TopContactBar from './TopContactBar';
@@ -19,51 +18,66 @@ interface LayoutProps {
 export default function Layout({ children }: LayoutProps) {
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
-  const [isScrolled, setIsScrolled] = useState(false);
+  const [isOnline, setIsOnline] = useState(true);
 
+  // Handle online/offline status
   useEffect(() => {
-    // Simulate initial loading
-    const timer = setTimeout(() => setIsLoading(false), 500);
-    
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 10);
-    };
+    const handleOnline = () => setIsOnline(true);
+    const handleOffline = () => setIsOnline(false);
 
-    window.addEventListener('scroll', handleScroll);
-    
+    window.addEventListener('online', handleOnline);
+    window.addEventListener('offline', handleOffline);
+
+    // Set initial loading state
+    const timer = setTimeout(() => {
+      setIsLoading(false);
+    }, 100);
+
     return () => {
+      window.removeEventListener('online', handleOnline);
+      window.removeEventListener('offline', handleOffline);
       clearTimeout(timer);
-      window.removeEventListener('scroll', handleScroll);
     };
   }, []);
 
-  // Skip to content functionality
-  const handleSkipToContent = (e: React.KeyboardEvent) => {
-    if (e.key === 'Enter' || e.key === ' ') {
-      e.preventDefault();
-      const mainContent = document.getElementById('main');
-      if (mainContent) {
-        mainContent.focus();
-        mainContent.scrollIntoView({ behavior: 'smooth' });
+  // Handle keyboard navigation for sidebar
+  useEffect(() => {
+    const handleEscape = (e: KeyboardEvent) => {
+      if (e.key === 'Escape' && sidebarOpen) {
+        setSidebarOpen(false);
       }
-    }
-  };
+    };
 
-  if (isLoading) {
-    return <LoadingSpinner />;
-  }
+    if (sidebarOpen) {
+      document.addEventListener('keydown', handleEscape);
+      // Prevent body scroll when sidebar is open
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+
+    return () => {
+      document.removeEventListener('keydown', handleEscape);
+      document.body.style.overflow = 'unset';
+    };
+  }, [sidebarOpen]);
 
   return (
     <div className="min-h-screen bg-black text-white relative overflow-x-hidden">
-      {/* Enhanced Skip to content link for accessibility */}
+      {/* Skip to content link for accessibility */}
       <a 
         href="#main" 
-        className="skip-link sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2 focus:bg-cyan-500 focus:text-black focus:rounded focus:font-semibold"
-        onKeyDown={handleSkipToContent}
-        tabIndex={0}
+        className="skip-link sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2 focus:bg-cyan-500 focus:text-white focus:rounded focus:outline-none focus:ring-2 focus:ring-cyan-300"
       >
         Skip to main content
       </a>
+      
+      {/* Offline indicator */}
+      {!isOnline && (
+        <div className="fixed top-0 left-0 right-0 bg-red-600 text-white text-center py-2 z-50">
+          <span className="text-sm">You are currently offline. Some features may not be available.</span>
+        </div>
+      )}
       
       {/* Futuristic Background with performance optimization */}
       <UltraFuturisticBackground2036 intensity="medium" theme="quantum" />
@@ -73,8 +87,11 @@ export default function Layout({ children }: LayoutProps) {
         {/* Top Contact Bar */}
         <TopContactBar />
         
-        {/* Navigation with scroll state */}
-        <UltraFuturisticNavigation2036 isScrolled={isScrolled} />
+        {/* Navigation */}
+        <UltraFuturisticNavigation2040 
+          onMenuToggle={() => setSidebarOpen(!sidebarOpen)}
+          isSidebarOpen={sidebarOpen}
+        />
         
         <div className="flex">
           <EnhancedSidebar2025 isOpen={false} onClose={() => {}} />
@@ -82,17 +99,21 @@ export default function Layout({ children }: LayoutProps) {
           <main 
             id="main" 
             role="main" 
-            className="flex-1 pt-24 lg:pt-28 focus:outline-none"
-            tabIndex={-1}
+            className="flex-1 pt-24 lg:pt-28 min-h-screen"
             aria-label="Main content"
           >
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, ease: "easeOut" }}
-            >
-              {children}
-            </motion.div>
+            {/* Loading state */}
+            {isLoading && (
+              <div className="flex items-center justify-center min-h-screen">
+                <div className="text-center">
+                  <div className="animate-spin rounded-full h-16 w-16 border-b-2 border-cyan-400 mx-auto mb-4"></div>
+                  <p className="text-gray-400 text-lg">Loading Zion Tech Group...</p>
+                </div>
+              </div>
+            )}
+            
+            {/* Main content */}
+            {!isLoading && children}
           </main>
         </div>
         
@@ -101,6 +122,22 @@ export default function Layout({ children }: LayoutProps) {
         <AccessibilityEnhancer />
         <PerformanceOptimizer />
       </div>
-    </ErrorBoundary>
+
+      {/* Accessibility and Performance Tools */}
+      <AccessibilityEnhancer />
+      <PerformanceMonitor />
+      
+      {/* Cookie Consent Banner */}
+      <CookieConsentBanner />
+      
+      {/* Focus trap for sidebar when open */}
+      {sidebarOpen && (
+        <div 
+          className="fixed inset-0 bg-black bg-opacity-50 z-40 lg:hidden"
+          onClick={() => setSidebarOpen(false)}
+          aria-hidden="true"
+        />
+      )}
+    </div>
   );
 };

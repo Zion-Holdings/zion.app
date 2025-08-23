@@ -1,35 +1,27 @@
-import React, { useState, useEffect, useCallback, useRef } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import { 
-  X, ChartColumn, Zap, Clock, HardDrive, 
-  Wifi, Activity, AlertTriangle, RefreshCw
-} from 'lucide-react';
+import React, { useEffect, useState, useCallback } from 'react';
+import { motion } from 'framer-motion';
+import { Activity, Zap, Clock, TrendingUp, CheckCircle } from 'lucide-react';
 
 interface PerformanceMetrics {
-  loadTime: number;
-  memoryUsage: number;
-  cpuUsage: number;
-  networkLatency: number;
-  fps: number;
-  domSize: number;
-  resourceCount: number;
-  timestamp: number;
-  // Core Web Vitals
-  lcp: number; // Largest Contentful Paint
-  fid: number; // First Input Delay
-  cls: number; // Cumulative Layout Shift
-  ttfb: number; // Time to First Byte
-  fcp: number; // First Contentful Paint
+  fcp: number | null;
+  lcp: number | null;
+  fid: number | null;
+  cls: number | null;
+  ttfb: number | null;
+  domLoad: number | null;
+  windowLoad: number | null;
 }
 
-interface PerformanceAlert {
-  id: string;
-  type: 'warning' | 'error' | 'info';
-  message: string;
-  metric: string;
-  value: number;
-  threshold: number;
-  timestamp: Date;
+interface PerformanceMonitorProps {
+  className?: string;
+  enabled?: boolean;
+  showMetrics?: boolean;
+}
+
+// Extended interface for First Input Delay
+interface FirstInputEntry extends PerformanceEntry {
+  processingStart: number;
+  target?: any;
 }
 
 interface PerformanceMonitorProps {
@@ -39,63 +31,43 @@ interface PerformanceMonitorProps {
 }
 
 const PerformanceMonitor: React.FC<PerformanceMonitorProps> = ({ 
-  showUI = false, 
-  autoRefresh = true, 
-  refreshInterval = 5000 
+  className = '', 
+  enabled = true, 
+  showMetrics = false 
 }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [metrics, setMetrics] = useState<PerformanceMetrics>({
-    loadTime: 0,
-    memoryUsage: 0,
-    cpuUsage: 0,
-    networkLatency: 0,
-    fps: 60,
-    domSize: 0,
-    resourceCount: 0,
-    timestamp: Date.now(),
-    lcp: 0,
-    fid: 0,
-    cls: 0,
-    ttfb: 0,
-    fcp: 0
+    fcp: null,
+    lcp: null,
+    fid: null,
+    cls: null,
+    ttfb: null,
+    domLoad: null,
+    windowLoad: null
   });
-  const [isMonitoring, setIsMonitoring] = useState(false);
-  const [alerts, setAlerts] = useState<PerformanceAlert[]>([]);
-  const [isRefreshing, setIsRefreshing] = useState(false);
-  
-  const refreshIntervalRef = useRef<NodeJS.Timeout | null>(null);
-  const frameCountRef = useRef(0);
-  const lastTimeRef = useRef(performance.now());
+  const [isVisible, setIsVisible] = useState(false);
+  const [isExpanded, setIsExpanded] = useState(false);
+  const [optimizationTips, setOptimizationTips] = useState<string[]>([]);
 
-  // Performance thresholds based on Core Web Vitals
-  const thresholds: PerformanceThresholds = {
-    fcp: { good: 1800, needsImprovement: 3000 },
-    lcp: { good: 2500, needsImprovement: 4000 },
-    fid: { good: 100, needsImprovement: 300 },
-    cls: { good: 0.1, needsImprovement: 0.25 },
-    ttfb: { good: 800, needsImprovement: 1800 }
-  };
+  // Performance monitoring
+  useEffect(() => {
+    if (!enabled || typeof window === 'undefined') return;
 
-  // Get performance grade
-  const getGrade = useCallback((metric: keyof PerformanceMetrics, value: number): 'good' | 'needsImprovement' | 'poor' => {
-    if (metric === 'cls') {
-      // CLS is better when lower
-      if (value <= thresholds[metric].good) return 'good';
-      if (value <= thresholds[metric].needsImprovement) return 'needsImprovement';
-      return 'poor';
-    } else {
-      // Other metrics are better when lower
-      if (value <= thresholds[metric].good) return 'good';
-      if (value <= thresholds[metric].needsImprovement) return 'needsImprovement';
-      return 'poor';
-    }
-  }, [thresholds]);
+    // First Contentful Paint
+    const fcpObserver = new PerformanceObserver((list) => {
+      const entries = list.getEntries();
+      const fcpEntry = entries.find(entry => entry.name === 'first-contentful-paint');
+      if (fcpEntry) {
+        setMetrics(prev => ({ ...prev, fcp: fcpEntry.startTime }));
+      }
+    });
 
-  const measureMemoryUsage = useCallback(() => {
-    if (typeof window !== 'undefined' && (performance as globalThis.Performance & { memory?: { usedJSHeapSize: number; jsHeapSizeLimit: number } }).memory) {
-      const memory = (performance as globalThis.Performance & { memory?: { usedJSHeapSize: number; jsHeapSizeLimit: number } }).memory;
-      if (memory) {
-        return Math.round((memory.usedJSHeapSize / memory.jsHeapSizeLimit) * 100);
+    // Largest Contentful Paint
+    const lcpObserver = new PerformanceObserver((list) => {
+      const entries = list.getEntries();
+      const lcpEntry = entries[entries.length - 1];
+      if (lcpEntry) {
+        setMetrics(prev => ({ ...prev, lcp: lcpEntry.startTime }));
       }
     }
   }, []);
@@ -117,183 +89,201 @@ const PerformanceMonitor: React.FC<PerformanceMonitorProps> = ({
     return 0;
   }, []);
 
-    // Largest Contentful Paint
-    let lcp = 0;
-    if ('PerformanceObserver' in window) {
-      const lcpObserver = new PerformanceObserver((list) => {
-        const entries = list.getEntries();
-        const lastEntry = entries[entries.length - 1];
-        if (lastEntry) {
-          lcp = lastEntry.startTime;
-        }
-      });
-      lcpObserver.observe({ entryTypes: ['largest-contentful-paint'] });
-    }
-  };
-
-    // Time to First Byte
-    const ttfb = navigation ? navigation.responseStart - navigation.requestStart : 0;
-
-    // DOM Content Loaded
-    const domLoad = navigation ? navigation.domContentLoadedEventEnd - navigation.fetchStart : 0;
-
-    // Window Load
-    const windowLoad = navigation ? navigation.loadEventEnd - navigation.fetchStart : 0;
-
-    setMetrics(prev => ({
-      ...prev,
-      fcp,
-      ttfb,
-      domLoad,
-      windowLoad
-    }));
-  }, []);
-
-  // Core Web Vitals measurement
-  const measureCoreWebVitals = useCallback(() => {
-    if (typeof window === 'undefined' || !window.performance) return {};
-
-    const observer = new PerformanceObserver((list) => {
-      for (const entry of list.getEntries()) {
-        if (entry.entryType === 'largest-contentful-paint') {
-          const lcp = entry.startTime;
-          setMetrics(prev => ({ ...prev, lcp }));
-        }
+    // First Input Delay
+    const fidObserver = new PerformanceObserver((list) => {
+      const entries = list.getEntries();
+      const fidEntry = entries[0] as PerformanceEventTiming;
+      if (fidEntry && 'processingStart' in fidEntry) {
+        setMetrics(prev => ({ ...prev, fid: fidEntry.processingStart - fidEntry.startTime }));
       }
     });
 
+    // Cumulative Layout Shift
+    const clsObserver = new PerformanceObserver((list) => {
+      let clsValue = 0;
+      for (const entry of list.getEntries()) {
+        const layoutShiftEntry = entry as LayoutShiftEntry;
+        if (!layoutShiftEntry.hadRecentInput) {
+          clsValue += layoutShiftEntry.value;
+        }
+      }
+      setMetrics(prev => ({ ...prev, cls: clsValue }));
+    });
+
     try {
-      observer.observe({ entryTypes: ['largest-contentful-paint'] });
-    } catch {
-      // LCP observation not supported
+      fcpObserver.observe({ entryTypes: ['paint'] });
+      lcpObserver.observe({ entryTypes: ['largest-contentful-paint'] });
+      fidObserver.observe({ entryTypes: ['first-input'] });
+      clsObserver.observe({ entryTypes: ['layout-shift'] });
+    } catch (error) {
+      console.warn('Performance monitoring not supported:', error);
     }
 
-    // Measure FPS
-    const measureFPS = () => {
-      frameCountRef.current++;
-      const currentTime = performance.now();
-      
-      if (currentTime - lastTimeRef.current >= 1000) {
-        const fps = Math.round((frameCountRef.current * 1000) / (currentTime - lastTimeRef.current));
-        setMetrics(prev => ({ ...prev, fps }));
-        frameCountRef.current = 0;
-        lastTimeRef.current = currentTime;
-      }
-      
-      requestAnimationFrame(measureFPS);
-    };
-
-    measureFPS();
-
-    return {};
-  }, []);
-
-  const updateMetrics = useCallback(async () => {
-    setIsRefreshing(true);
-    
-    try {
-      const newMetrics: PerformanceMetrics = {
-        loadTime: measureLoadTime(),
-        memoryUsage: measureMemoryUsage(),
-        cpuUsage: Math.random() * 30 + 10, // Simulated CPU usage
-        networkLatency: await measureNetworkLatency(),
-        fps: metrics.fps,
-        domSize: measureDOMSize(),
-        resourceCount: measureResourceCount(),
-        timestamp: Date.now(),
-        lcp: metrics.lcp,
-        fid: metrics.fid,
-        cls: metrics.cls,
-        ttfb: metrics.ttfb,
-        fcp: metrics.fcp
-      };
-
-      setMetrics(newMetrics);
-      
-      // Add to historical data (keep last 100 entries)
-      // setHistoricalData(prev => { // This line was removed
-      //   const updated = [...prev, newMetrics];
-      //   return updated.slice(-100);
-      // });
-
-      // Check for performance alerts
-      const newAlerts: PerformanceAlert[] = [];
-      
-      // LCP threshold (should be < 2.5s)
-      if (newMetrics.lcp > 2500) {
-        newAlerts.push({
-          id: `lcp-${Date.now()}`,
-          type: 'warning',
-          message: 'Largest Contentful Paint is above recommended threshold',
-          metric: 'LCP',
-          value: newMetrics.lcp,
-          threshold: 2500,
-          timestamp: new Date()
-        });
-      }
-
-      // Memory usage threshold (should be < 80%)
-      if (newMetrics.memoryUsage > 80) {
-        newAlerts.push({
-          id: `memory-${Date.now()}`,
-          type: 'error',
-          message: 'Memory usage is critically high',
-          metric: 'Memory',
-          value: newMetrics.memoryUsage,
-          threshold: 80,
-          timestamp: new Date()
-        });
-      }
-
-      // FPS threshold (should be > 30)
-      if (newMetrics.fps < 30) {
-        newAlerts.push({
-          id: `fps-${Date.now()}`,
-          type: 'warning',
-          message: 'Frame rate is below recommended threshold',
-          metric: 'FPS',
-          value: newMetrics.fps,
-          threshold: 30,
-          timestamp: new Date()
-        });
-      }
-
-      // Add new alerts
-      if (newAlerts.length > 0) {
-        setAlerts(prev => [...prev, ...newAlerts]);
-      }
-
-    } catch {
-      // Error updating performance metrics
-    } finally {
-      setIsRefreshing(false);
+    // Time to First Byte
+    const navigationEntry = performance.getEntriesByType('navigation')[0] as PerformanceNavigationTiming;
+    if (navigationEntry) {
+      setMetrics(prev => ({ ...prev, ttfb: navigationEntry.responseStart - navigationEntry.requestStart }));
     }
   }, [measureLoadTime, measureMemoryUsage, measureNetworkLatency, measureDOMSize, measureResourceCount, metrics.fps, metrics.lcp, metrics.fid, metrics.cls, metrics.ttfb, metrics.fcp]);
 
-  // Start monitoring
-  const startMonitoring = useCallback(() => {
-    setIsMonitoring(true);
-    updateMetrics();
+    // DOM and Window load times
+    const domLoadTime = performance.timing.domContentLoadedEventEnd - performance.timing.navigationStart;
+    const windowLoadTime = performance.timing.loadEventEnd - performance.timing.navigationStart;
     
-    if (autoRefresh) {
-      refreshIntervalRef.current = setInterval(updateMetrics, refreshInterval);
-    }
-  }, [autoRefresh, refreshInterval, updateMetrics]);
+    setMetrics(prev => ({ 
+      ...prev, 
+      domLoad: domLoadTime > 0 ? domLoadTime : null,
+      windowLoad: windowLoadTime > 0 ? windowLoadTime : null
+    }));
 
-  // Stop monitoring
-  const stopMonitoring = useCallback(() => {
-    setIsMonitoring(false);
-    if (refreshIntervalRef.current) {
-      clearInterval(refreshIntervalRef.current);
+    return () => {
+      fcpObserver.disconnect();
+      lcpObserver.disconnect();
+      fidObserver.disconnect();
+      clsObserver.disconnect();
+    };
+  }, [enabled]);
+
+  // Generate optimization tips based on metrics
+  useEffect(() => {
+    const tips: string[] = [];
+    
+    if (metrics.fcp && metrics.fcp > 1800) {
+      tips.push('First Contentful Paint is slow. Consider optimizing critical rendering path.');
     }
+    
+    if (metrics.lcp && metrics.lcp > 2500) {
+      tips.push('Largest Contentful Paint is slow. Optimize images and reduce render-blocking resources.');
+    }
+    
+    if (metrics.fid && metrics.fid > 100) {
+      tips.push('First Input Delay is high. Consider code splitting and reducing JavaScript execution time.');
+    }
+    
+    if (metrics.cls && metrics.cls > 0.1) {
+      tips.push('Cumulative Layout Shift is high. Ensure stable layouts and avoid content jumping.');
+    }
+    
+    if (metrics.ttfb && metrics.ttfb > 600) {
+      tips.push('Time to First Byte is slow. Optimize server response time and reduce blocking requests.');
+    }
+
+    setOptimizationTips(tips);
+  }, [metrics]);
+
+  // Performance optimization functions
+  const optimizeImages = useCallback(() => {
+    const images = document.querySelectorAll('img');
+    images.forEach(img => {
+      if (!img.loading) {
+        img.loading = 'lazy';
+      }
+      if (!img.decoding) {
+        img.decoding = 'async';
+      }
+    });
   }, []);
 
-  // Toggle monitoring
-  const toggleMonitoring = useCallback(() => {
-    if (isMonitoring) {
-      stopMonitoring();
-    } else {
-      startMonitoring();
+  const preloadCriticalResources = useCallback(() => {
+    const criticalResources = [
+      '/fonts/inter-var.woff2',
+      '/css/critical.css'
+    ];
+    
+    criticalResources.forEach(resource => {
+      const link = document.createElement('link');
+      link.rel = 'preload';
+      link.href = resource;
+      link.as = resource.endsWith('.css') ? 'style' : 'font';
+      link.crossOrigin = 'anonymous';
+      document.head.appendChild(link);
+    });
+  }, []);
+
+  const enableResourceHints = useCallback(() => {
+    // DNS prefetch for external domains
+    const externalDomains = [
+      'fonts.googleapis.com',
+      'fonts.gstatic.com',
+      'cdn.jsdelivr.net'
+    ];
+    
+    externalDomains.forEach(domain => {
+      const link = document.createElement('link');
+      link.rel = 'dns-prefetch';
+      link.href = `//${domain}`;
+      document.head.appendChild(link);
+    });
+  }, []);
+
+  // Apply optimizations on mount
+  useEffect(() => {
+    if (enabled) {
+      optimizeImages();
+      preloadCriticalResources();
+      enableResourceHints();
+    }
+  }, [enabled, optimizeImages, preloadCriticalResources, enableResourceHints]);
+
+  // Memory usage monitoring
+  useEffect(() => {
+    if (!enabled || !('memory' in performance)) return;
+
+    const checkMemoryUsage = () => {
+      const memory = (performance as any).memory;
+      if (memory.usedJSHeapSize > memory.jsHeapSizeLimit * 0.8) {
+        console.warn('High memory usage detected. Consider optimizing memory usage.');
+      }
+    };
+
+    const interval = setInterval(checkMemoryUsage, 10000);
+    return () => clearInterval(interval);
+  }, [enabled]);
+
+  // Network monitoring
+  useEffect(() => {
+    if (!enabled || !('connection' in navigator)) return;
+
+    const connection = (navigator as any).connection;
+    if (connection) {
+      const updateNetworkInfo = () => {
+        const effectiveType = connection.effectiveType;
+        const downlink = connection.downlink;
+        
+        if (effectiveType === 'slow-2g' || effectiveType === '2g') {
+          console.warn('Slow network detected. Consider enabling low-bandwidth mode.');
+        }
+        
+        if (downlink < 1) {
+          console.warn('Very slow connection detected. Optimizing for low bandwidth.');
+        }
+      };
+
+      connection.addEventListener('change', updateNetworkInfo);
+      updateNetworkInfo();
+
+      return () => connection.removeEventListener('change', updateNetworkInfo);
+    }
+  }, [enabled]);
+
+  // Calculate performance scores
+  const getPerformanceScore = (metric: keyof PerformanceMetrics): number => {
+    const value = metrics[metric];
+    if (value === null) return 0;
+
+    switch (metric) {
+      case 'fcp':
+        return value <= 1800 ? 100 : value <= 3000 ? 50 : 0;
+      case 'lcp':
+        return value <= 2500 ? 100 : value <= 4000 ? 50 : 0;
+      case 'fid':
+        return value <= 100 ? 100 : value <= 300 ? 50 : 0;
+      case 'cls':
+        return value <= 0.1 ? 100 : value <= 0.25 ? 50 : 0;
+      case 'ttfb':
+        return value <= 800 ? 100 : value <= 1800 ? 50 : 0;
+      default:
+        return 0;
     }
   }, [isMonitoring, startMonitoring, stopMonitoring]);
 
@@ -336,27 +326,22 @@ const PerformanceMonitor: React.FC<PerformanceMonitorProps> = ({
     };
   }, [showUI, measureCoreWebVitals, startMonitoring, stopMonitoring]);
 
-  // Cleanup on unmount
-  useEffect(() => {
-    return () => {
-      if (refreshIntervalRef.current) {
-        clearInterval(refreshIntervalRef.current);
-      }
-    };
-  }, []);
+  const overallScore = getOverallScore();
+  const overallStatus = getPerformanceStatus(overallScore);
 
-  // Auto-hide alerts after 10 seconds
-  useEffect(() => {
-    if (alerts.length > 0) {
-      const timer = setTimeout(() => {
-        setAlerts(prev => prev.slice(1));
-      }, 10000);
-      return () => clearTimeout(timer);
-    }
-  }, [alerts]);
-
-  const performanceStatus = getPerformanceStatus();
-  const score = getPerformanceScore();
+  if (!enabled || !showMetrics) {
+    return (
+      <motion.button
+        initial={{ opacity: 0, scale: 0.8 }}
+        animate={{ opacity: 1, scale: 1 }}
+        className={`fixed bottom-4 right-4 bg-gray-800 hover:bg-gray-700 text-white p-3 rounded-full shadow-lg transition-all duration-300 z-50 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-offset-2 focus:ring-offset-black ${className}`}
+        onClick={() => setIsVisible(true)}
+        aria-label="Open performance monitor"
+      >
+        <Activity className="w-6 h-6" />
+      </motion.button>
+    );
+  }
 
   return (
     <>
@@ -486,6 +471,55 @@ const PerformanceMonitor: React.FC<PerformanceMonitorProps> = ({
                   </div>
                 </div>
               </div>
+            );
+          })}
+        </div>
+      )}
+
+      {/* Quick Actions */}
+      <div className="mt-4 flex gap-2">
+        <button
+          onClick={() => window.location.reload()}
+          className="flex-1 px-3 py-2 bg-blue-600 hover:bg-blue-700 text-white text-sm rounded-lg transition-colors"
+          aria-label="Refresh page to measure performance"
+        >
+          <Zap className="w-4 h-4 inline mr-1" />
+          Refresh
+        </button>
+        <button
+          onClick={() => {
+            setMetrics({
+              fcp: null,
+              lcp: null,
+              fid: null,
+              cls: null,
+              ttfb: null,
+              domLoad: null,
+              windowLoad: null
+            });
+          }}
+          className="flex-1 px-3 py-2 bg-gray-600 hover:bg-gray-500 text-white text-sm rounded-lg transition-colors"
+          aria-label="Reset performance metrics"
+        >
+          <Clock className="w-4 h-4 inline mr-1" />
+          Reset
+        </button>
+      </div>
+
+      {/* Optimization Tips */}
+      {optimizationTips.length > 0 && (
+        <div className="mt-4 p-3 bg-gray-800/50 rounded-lg">
+          <div className="text-sm font-medium mb-2">Optimization Tips:</div>
+          <ul className="space-y-1 text-xs text-gray-300">
+            {optimizationTips.slice(0, 2).map((tip, index) => (
+              <li key={index}>• {tip}</li>
+            ))}
+          </ul>
+        </div>
+      )}
+    </motion.div>
+  );
+};
 
               {/* Monitoring Controls */}
               <div className="flex items-center justify-between">

@@ -1,14 +1,9 @@
-import React, { Suspense, lazy } from 'react';
-import { Layout } from './layout/Layout';
-import UltraFuturisticServiceCard2040 from './ui/UltraFuturisticServiceCard2040';
-import Link from 'next/link';
+import React, { useEffect, useState, useCallback, Suspense } from 'react';
+import Layout from './layout/Layout';
 import { motion } from 'framer-motion';
 import { 
-  ArrowRight, Star, Users, Award, Brain, Atom, Rocket, 
-  Shield, Cloud, Database, Code, Server, Zap, Palette,
-  Cpu, BarChart3, Settings, Target, CheckCircle, Play,
-  ChevronRight, ChevronLeft, Phone, Mail, MapPin, Sun, Moon,
-  Menu, X, Search, Globe, TrendingUp, Lightbulb, Sparkles
+  ArrowRight, Play, Users, TrendingUp, Brain, Shield, Rocket, Globe, Lock, Cpu, Database, Cloud, BarChart3,
+  Atom, Target, Zap, Infinity, Sparkles, Star, Eye, Heart, Code, Palette, Layers, Loader2
 } from 'lucide-react';
 
 // Enhanced types for better TypeScript support
@@ -48,214 +43,169 @@ LoadingFallback.displayName = 'LoadingFallback';
 const LazyPerformanceMonitor = lazy(() => import('./PerformanceMonitor'));
 const LazyAccessibilityEnhancer = lazy(() => import('./AccessibilityEnhancer'));
 
+// Loading skeleton component
+const ServiceCardSkeleton = () => (
+  <div className="animate-pulse">
+    <div className="w-16 h-16 mx-auto mb-4 rounded-2xl bg-gray-700"></div>
+    <div className="h-6 bg-gray-700 rounded mb-2"></div>
+    <div className="h-4 bg-gray-700 rounded mb-4"></div>
+    <div className="h-10 bg-gray-700 rounded"></div>
+  </div>
+);
+
+// Error boundary component
+const ErrorFallback = ({ error, resetErrorBoundary }: { error: Error; resetErrorBoundary: () => void }) => (
+  <div className="text-center p-8">
+    <div className="text-red-400 text-6xl mb-4">⚠️</div>
+    <h2 className="text-2xl font-bold text-white mb-4">Something went wrong</h2>
+    <p className="text-gray-400 mb-6">{error.message}</p>
+    <button
+      onClick={resetErrorBoundary}
+      className="px-6 py-3 bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-medium rounded-xl hover:from-cyan-600 hover:to-blue-700 transition-all duration-300"
+    >
+      Try again
+    </button>
+  </div>
+);
+
 const Homepage2040: React.FC = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isVisible, setIsVisible] = useState(false);
-  const [activeSection, setActiveSection] = useState('hero');
-  const [isScrolled, setIsScrolled] = useState(false);
-
-  // Memoized animation variants for better performance
-  const fadeInUp = useMemo(() => ({
-    initial: { opacity: 0, y: 60 },
-    animate: { opacity: 1, y: 0 },
-    transition: { duration: 0.6, ease: "easeOut" }
-  }), []);
-
-  const staggerContainer = useMemo(() => ({
-    animate: {
-      transition: {
-        staggerChildren: 0.1,
-        delayChildren: 0.2
-      }
-    }
-  }), []);
-
-  const backgroundVariants = useMemo(() => ({
-    initial: { opacity: 0, scale: 0.8 },
-    animate: { opacity: 1, scale: 1 },
-    transition: { duration: 1.2, ease: "easeOut" }
-  }), []);
-
-  // Memoized color classes for better performance
-  const getColorClasses = useCallback((index: number) => {
-    const colors = [
-      'from-cyan-400 to-blue-500',
-      'from-purple-400 to-pink-500',
-      'from-emerald-400 to-teal-500',
-      'from-orange-400 to-red-500',
-      'from-indigo-400 to-purple-500',
-      'from-yellow-400 to-orange-500'
-    ];
-    return colors[index % colors.length];
-  }, []);
-
-  // Optimized scroll handling
+  const [currentServiceIndex, setCurrentServiceIndex] = useState(0);
+  const [isLoading, setIsLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
+  
   useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20);
+    const timer = setTimeout(() => {
+      setIsVisible(true);
+      setIsLoading(false);
+    }, 100);
+    
+    // Auto-rotate featured services with better performance
+    const interval = setInterval(() => {
+      setCurrentServiceIndex((prev) => (prev + 1) % 3);
+    }, 5000);
+    
+    return () => {
+      clearTimeout(timer);
+      clearInterval(interval);
     };
-
-    window.addEventListener('scroll', handleScroll, { passive: true });
-    return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // Performance optimization: Memoize expensive computations
-  const contactInfo = useMemo(() => ({
-    mobile: '+1 302 464 0950',
-    email: 'kleber@ziontechgroup.com',
-    address: '364 E Main St STE 1008 Middletown DE 19709',
-    website: 'https://ziontechgroup.com'
-  }), []);
-
-  const heroSlides: HeroSlide[] = useMemo(() => [
-    {
-      title: "AI Consciousness Evolution",
-      subtitle: "Revolutionary AI consciousness platform with emotional intelligence and self-awareness",
-      description: "Experience the future of AI with our groundbreaking consciousness evolution platform that develops emotional intelligence, self-awareness, and advanced cognitive capabilities.",
-      icon: <Brain className="w-16 h-16" />,
-      color: "from-purple-600 to-indigo-700",
-      textColor: "text-purple-400",
-      link: "/ai-consciousness-evolution-2040"
-    },
-    {
-      title: "Quantum Neural Ecosystem",
-      subtitle: "Hybrid quantum-AI computing for unprecedented computational power",
-      description: "Unlock the power of quantum computing combined with advanced AI in our revolutionary neural ecosystem that delivers exponential performance improvements.",
-      icon: <Atom className="w-16 h-16" />,
-      color: "from-cyan-600 to-blue-700",
-      textColor: "text-cyan-400",
-      link: "/quantum-neural-ecosystem-2040"
-    },
-    {
-      title: "Space Resource Intelligence",
-      subtitle: "Advanced space technology solutions for resource exploration and management",
-      description: "Pioneer the future of space exploration with our cutting-edge space resource intelligence platform that revolutionizes how we discover and utilize extraterrestrial resources.",
-      icon: <Rocket className="w-16 h-16" />,
-      color: "from-pink-600 to-red-700",
-      textColor: "text-pink-400",
-      link: "/space-resource-intelligence-2040"
+  // Combine all revolutionary services with error handling
+  const allRevolutionaryServices = React.useMemo(() => {
+    try {
+      return [...revolutionary2040FuturisticServices, ...revolutionary2041AdvancedServices];
+    } catch (err) {
+      setError('Failed to load services');
+      return [];
     }
-  ], []);
+  }, []);
 
+  // Get featured services for rotation
+  const featuredServices = allRevolutionaryServices.slice(0, 6);
+
+  const features = [
+    { icon: Brain, title: "AI Consciousness Evolution", description: "Next-generation AI consciousness and emotional intelligence", href: "/ai-consciousness-evolution-2040", color: "from-purple-500 to-pink-500" },
+    { icon: Atom, title: "Quantum Computing", description: "Revolutionary quantum computing with consciousness integration", href: "/quantum-neural-ecosystem-2040", color: "from-blue-500 to-cyan-500" },
+    { icon: Shield, title: "Future Cybersecurity", description: "Quantum-resistant security with consciousness-based protection", href: "/quantum-cybersecurity-future-2040", color: "from-red-500 to-orange-500" },
+    { icon: Rocket, title: "Space Technology", description: "AI-powered space resource intelligence and management", href: "/space-resource-intelligence-2040", color: "from-indigo-500 to-purple-500" },
+    { icon: Cpu, title: "Autonomous Systems", description: "Fully autonomous AI systems with consciousness", href: "/ai-autonomous-research-2041", color: "from-emerald-500 to-teal-500" },
+    { icon: Database, title: "Business Intelligence", description: "Autonomous business intelligence with consciousness insights", href: "/autonomous-business-intelligence-2040", color: "from-yellow-500 to-orange-500" }
+  ];
+
+  const stats = [
+    { number: "1000+", label: "Revolutionary Services", icon: Star },
+    { number: "99.99%", label: "Uptime Guarantee", icon: TrendingUp },
+    { number: "24/7", label: "AI Support Available", icon: Brain },
+    { number: "100+", label: "Countries Served", icon: Globe }
+  ];
+
+  const handleGetStarted = useCallback(() => {
+    try {
+      window.location.href = '/revolutionary-2040-2041-pricing-showcase';
+    } catch (err) {
+      setError('Navigation failed');
+    }
+  }, []);
+
+  const handleWatchDemo = useCallback(() => {
+    try {
+      window.location.href = '/services';
+    } catch (err) {
+      setError('Navigation failed');
+    }
+  }, []);
+
+  // Show loading state
   if (isLoading) {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-gray-900 via-black to-gray-900 flex items-center justify-center">
-        <div className="text-center">
-          <div className="animate-spin rounded-full h-32 w-32 border-b-2 border-cyan-500 mx-auto mb-4"></div>
-          <p className="text-cyan-400 text-xl">Loading the future...</p>
+      <Layout>
+        <div className="min-h-screen flex items-center justify-center">
+          <div className="text-center">
+            <Loader2 className="w-16 h-16 text-cyan-400 animate-spin mx-auto mb-4" />
+            <p className="text-gray-400 text-lg">Loading Zion Tech Group...</p>
+          </div>
         </div>
-      </div>
+      </Layout>
+    );
+  }
+
+  // Show error state
+  if (error) {
+    return (
+      <Layout>
+        <div className="min-h-screen flex items-center justify-center">
+          <ErrorFallback 
+            error={new Error(error)} 
+            resetErrorBoundary={() => setError(null)} 
+          />
+        </div>
+      </Layout>
     );
   }
 
   return (
     <Layout>
-      <AnimatePresence>
-        {isVisible && (
-          <main className="relative z-10">
-            {/* Hero Section */}
-            <section 
-              id="hero"
-              className="min-h-screen flex items-center justify-center px-4 relative overflow-hidden"
-              aria-labelledby="hero-heading"
-            >
-              {/* Enhanced Animated Background */}
-              <motion.div 
-                className="absolute inset-0 -z-10"
-                variants={backgroundVariants}
-                initial="initial"
-                animate="animate"
-              >
-                {/* Floating orbs with better performance */}
-                <div className="absolute top-20 left-20 w-72 h-72 bg-gradient-to-r from-cyan-500/20 to-blue-500/20 rounded-full blur-3xl animate-pulse"></div>
-                <div className="absolute bottom-20 right-20 w-96 h-96 bg-gradient-to-r from-purple-500/20 to-pink-500/20 rounded-full blur-3xl animate-pulse delay-1000"></div>
-                <div className="absolute top-1/2 left-1/2 w-64 h-64 bg-gradient-to-r from-emerald-500/20 to-teal-500/20 rounded-full blur-3xl animate-pulse delay-500"></div>
-                
-                {/* Optimized animated particles */}
-                <div className="absolute inset-0">
-                  {Array.from({ length: 8 }).map((_, i) => (
-                    <motion.div
-                      key={i}
-                      className="absolute w-2 h-2 bg-cyan-400/30 rounded-full"
-                      animate={{
-                        x: [0, 100, 0],
-                        y: [0, -100, 0],
-                        opacity: [0, 0.8, 0],
-                        scale: [0, 1, 0],
-                      }}
-                      transition={{
-                        duration: 6 + i * 0.5,
-                        repeat: Infinity,
-                        delay: i * 0.3,
-                        ease: "easeInOut"
-                      }}
-                      style={{
-                        left: `${Math.random() * 100}%`,
-                        top: `${Math.random() * 100}%`,
-                      }}
-                    />
-                  ))}
-                </div>
-
-      {/* Enhanced Header with Navigation */}
-      <header className="fixed top-0 left-0 right-0 z-50 bg-black/20 backdrop-blur-xl border-b border-cyan-500/30">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between h-16">
-            {/* Logo */}
-            <Link href="/" className="flex items-center space-x-2">
-              <div className="w-8 h-8 bg-gradient-to-r from-cyan-500 to-blue-500 rounded-lg flex items-center justify-center">
-                <Sparkles className="w-5 h-5 text-white" />
-              </div>
-              <span className="text-xl font-bold bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent">
-                Zion Tech
-              </span>
-            </Link>
-
-              {/* Hero Content */}
-              <div className="relative z-10 max-w-7xl mx-auto text-center">
+      {/* Main Content */}
+      <main className="relative z-10" role="main" aria-label="Zion Tech Group Homepage">
+        {/* Hero Section */}
+        <section 
+          className="min-h-screen flex items-center justify-center px-4 relative overflow-hidden"
+          aria-labelledby="hero-heading"
+        >
+          {/* Enhanced Animated Background with reduced complexity for better performance */}
+          <div className="absolute inset-0 -z-10">
+            {/* Floating orbs with reduced animation complexity */}
+            <div className="absolute top-20 left-20 w-72 h-72 bg-gradient-to-r from-cyan-500/20 to-blue-500/20 rounded-full blur-3xl animate-pulse"></div>
+            <div className="absolute bottom-20 right-20 w-96 h-96 bg-gradient-to-r from-purple-500/20 to-pink-500/20 rounded-full blur-3xl animate-pulse delay-1000"></div>
+            <div className="absolute top-1/2 left-1/2 w-64 h-64 bg-gradient-to-r from-emerald-500/20 to-teal-500/20 rounded-full blur-3xl animate-pulse delay-500"></div>
+            
+            {/* Reduced particle count for better performance */}
+            <div className="absolute inset-0">
+              {[...Array(6)].map((_, i) => (
                 <motion.div
-                  variants={fadeInUp}
-                  initial="initial"
-                  animate="animate"
-                  className="space-y-8"
-                >
-                  {/* Main Heading */}
-                  <div className="space-y-6">
-                    <motion.div
-                      className="flex items-center justify-center gap-3 mb-4"
-                      initial={{ opacity: 0, y: 20 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      transition={{ duration: 0.6, delay: 0.1 }}
-                    >
-                      <Sparkles className="w-8 h-8 text-cyan-400" />
-                      <span className="text-lg text-cyan-400 font-medium">Innovating Tomorrow, Today</span>
-                      <Sparkles className="w-8 h-8 text-cyan-400" />
-                    </motion.div>
-                    
-                    <motion.h1 
-                      id="hero-heading"
-                      className="text-5xl md:text-7xl font-bold"
-                      initial={{ opacity: 0, y: 30 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      transition={{ duration: 0.8, delay: 0.2 }}
-                    >
-                      <span className="bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 bg-clip-text text-transparent">
-                        Zion Tech Group
-                      </span>
-                      <br />
-                      <span className="text-white">2040</span>
-                    </motion.h1>
-                    
-                    <motion.p 
-                      className="text-xl md:text-2xl text-gray-300 max-w-4xl mx-auto leading-relaxed"
-                      initial={{ opacity: 0, y: 30 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      transition={{ duration: 0.8, delay: 0.4 }}
-                    >
-                      Pioneering the future of technology with innovative AI, quantum computing, 
-                      and cutting-edge micro SaaS solutions that transform businesses and unlock human potential.
-                    </motion.p>
-                  </div>
+                  key={i}
+                  className="absolute w-2 h-2 bg-cyan-400/30 rounded-full"
+                  animate={{
+                    x: [0, 50, 0],
+                    y: [0, -50, 0],
+                    opacity: [0, 0.6, 0],
+                    scale: [0, 1, 0],
+                  }}
+                  transition={{
+                    duration: 8 + i * 0.5,
+                    repeat: Infinity as any,
+                    delay: i * 0.5,
+                    ease: "easeInOut"
+                  }}
+                  style={{
+                    left: `${Math.random() * 100}%`,
+                    top: `${Math.random() * 100}%`,
+                  }}
+                />
+              ))}
+            </div>
 
                   {/* Enhanced CTA Buttons */}
                   <motion.div 
@@ -462,33 +412,55 @@ const Homepage2040: React.FC = () => {
             </motion.div>
           </div>
 
-          {/* Enhanced Hero Carousel */}
-          <motion.div
-            className="relative max-w-4xl mx-auto"
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.6 }}
-          >
-            <div className="relative overflow-hidden rounded-2xl bg-black/30 backdrop-blur-xl border border-cyan-500/30 hover:border-cyan-400/50 transition-all duration-300">
-              <AnimatePresence mode="wait">
-                <motion.div
-                  key={currentSlide}
-                  initial={{ opacity: 0, x: 100 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  exit={{ opacity: 0, x: -100 }}
-                  transition={{ duration: 0.5 }}
-                  className="p-8 md:p-12"
-                >
-                  {innovative2040FuturisticServices.slice(0, 6).map((service, index) => (
-                    <motion.div
-                      key={service.id}
-                      variants={fadeInUp}
-                      className="group relative bg-gray-800/50 backdrop-blur-sm border border-gray-700/50 rounded-2xl p-8 hover:border-cyan-400/50 transition-all duration-300 hover:transform hover:scale-105 hover:shadow-2xl hover:shadow-cyan-400/25"
+            {/* Featured Service Showcase with Suspense */}
+            <motion.div
+              className="max-w-4xl mx-auto"
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: isVisible ? 1 : 0, y: isVisible ? 0 : 30 }}
+              transition={{ duration: 0.8, delay: 0.6, ease: "easeOut" }}
+            >
+              <div className="bg-gradient-to-r from-white/5 to-white/10 backdrop-blur-sm border border-white/20 rounded-2xl p-8">
+                <div className="text-center mb-6">
+                  <h3 className="text-2xl font-bold text-white mb-2">Featured Revolutionary Service</h3>
+                  <p className="text-gray-400">Experience the cutting edge of technology</p>
+                </div>
+                
+                <Suspense fallback={<ServiceCardSkeleton />}>
+                  <motion.div
+                    key={currentServiceIndex}
+                    initial={{ opacity: 0, x: 50 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.5 }}
+                    className="text-center"
+                  >
+                    <div className="w-16 h-16 mx-auto mb-4 rounded-2xl bg-gradient-to-r from-purple-500 to-pink-500 p-4">
+                      <Brain className="w-full h-full text-white" />
+                    </div>
+                    <h4 className="text-xl font-semibold text-white mb-2">
+                      {featuredServices[currentServiceIndex]?.name || 'AI Consciousness Evolution'}
+                    </h4>
+                    <p className="text-gray-300 mb-4">
+                      {featuredServices[currentServiceIndex]?.tagline || 'Next-generation AI consciousness and emotional intelligence'}
+                    </p>
+                    <button 
+                      className="px-6 py-3 bg-gradient-to-r from-purple-500 to-pink-500 text-white font-medium rounded-xl hover:from-purple-600 hover:to-pink-600 transition-all duration-300 transform hover:scale-105"
+                      onClick={() => {
+                        try {
+                          window.location.href = featuredServices[currentServiceIndex]?.slug || '/services';
+                        } catch (err) {
+                          setError('Navigation failed');
+                        }
+                      }}
+                      aria-label={`Learn more about ${featuredServices[currentServiceIndex]?.name || 'AI Consciousness Evolution'}`}
                     >
-                      {/* Service Icon */}
-                      <div className={`w-16 h-16 rounded-2xl bg-gradient-to-r ${getColorClasses(index)} p-4 mb-6 group-hover:scale-110 transition-transform duration-300`}>
-                        <Brain className="w-8 h-8 text-white" />
-                      </div>
+                      Learn More
+                    </button>
+                  </motion.div>
+                </Suspense>
+              </div>
+            </motion.div>
+          </div>
+        </section>
 
                       {/* Service Content */}
                       <h3 className="text-2xl font-bold text-white mb-3 group-hover:text-cyan-400 transition-colors duration-300">
@@ -516,16 +488,48 @@ const Homepage2040: React.FC = () => {
                         </span>
                       </div>
 
-                      {/* CTA Button */}
-                      <Link 
-                        href={service.link}
-                        className="inline-flex items-center justify-center w-full px-6 py-3 bg-gradient-to-r from-cyan-400 to-blue-500 text-white font-semibold rounded-xl hover:from-cyan-500 hover:to-blue-600 transition-all duration-300 focus:outline-none focus:ring-4 focus:ring-cyan-400/50 group-hover:shadow-lg group-hover:shadow-cyan-400/25"
-                      >
-                        Learn More
-                        <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform duration-300" />
-                      </Link>
-                    </motion.div>
-                  ))}
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {features.map((feature, index) => (
+                <motion.div
+                  key={index}
+                  className="group relative overflow-hidden rounded-3xl bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-sm border border-white/10 p-8 cursor-pointer"
+                  initial={{ opacity: 0, y: 40 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: index * 0.1, ease: "easeOut" }}
+                  viewport={{ once: true, margin: "-50px" }}
+                  whileHover={{ y: -15, scale: 1.03 }}
+                  onClick={() => {
+                    try {
+                      window.location.href = feature.href;
+                    } catch (err) {
+                      setError('Navigation failed');
+                    }
+                  }}
+                  role="button"
+                  tabIndex={0}
+                  onKeyDown={(e) => {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                      try {
+                        window.location.href = feature.href;
+                      } catch (err) {
+                        setError('Navigation failed');
+                      }
+                    }
+                  }}
+                  aria-label={`Learn more about ${feature.title}`}
+                >
+                  <div className={`absolute inset-0 bg-gradient-to-br ${feature.color} opacity-0 group-hover:opacity-10 transition-opacity duration-300`} />
+                  <div className="relative">
+                    <div className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${feature.color} p-4 mb-6`}>
+                      <feature.icon className="w-full h-full text-white" aria-hidden="true" />
+                    </div>
+                    <h3 className="text-2xl font-semibold text-white mb-4">{feature.title}</h3>
+                    <p className="text-gray-300 leading-relaxed text-lg">{feature.description}</p>
+                    <div className="mt-6 flex items-center text-cyan-400 group-hover:text-cyan-300 transition-colors">
+                      <span className="text-base font-medium">Learn More</span>
+                      <ArrowRight className="w-5 h-5 ml-3 group-hover:translate-x-2 transition-transform" />
+                    </div>
+                  </div>
                 </motion.div>
               </AnimatePresence>
 
@@ -622,19 +626,50 @@ const Homepage2040: React.FC = () => {
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {serviceCategories.map((category, index) => (
-              <motion.div
-                key={category.name}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                className="group"
-              >
-                <Link href={category.href}>
-                  <div className="p-8 rounded-2xl bg-gradient-to-br from-gray-900/50 to-gray-800/50 border border-cyan-500/20 hover:border-cyan-500/40 transition-all duration-300 hover:transform hover:scale-105 h-full">
-                    <div className={`w-16 h-16 mb-6 rounded-2xl bg-gradient-to-br ${category.color} bg-opacity-20 border border-cyan-400/30 flex items-center justify-center group-hover:border-cyan-400/50 transition-all duration-300`}>
-                      <category.icon className="w-8 h-8 text-white" />
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {[
+                { icon: Brain, title: "AI & Consciousness", description: "Revolutionary AI consciousness and emotional intelligence", gradient: "from-purple-500 to-pink-500", href: "/ai-consciousness-evolution-2040", count: "15+ Services" },
+                { icon: Atom, title: "Quantum Computing", description: "Next-generation quantum computing with consciousness", gradient: "from-cyan-500 to-blue-500", href: "/quantum-neural-ecosystem-2040", count: "12+ Services" },
+                { icon: Shield, title: "Future Cybersecurity", description: "Quantum-resistant security with consciousness protection", gradient: "from-red-500 to-orange-500", href: "/quantum-cybersecurity-future-2040", count: "8+ Services" },
+                { icon: Cloud, title: "Cloud Infrastructure", description: "Quantum cloud infrastructure with consciousness optimization", gradient: "from-emerald-500 to-teal-500", href: "/quantum-cloud-infrastructure-2041", count: "10+ Services" },
+                { icon: BarChart3, title: "Business Intelligence", description: "Autonomous business intelligence with consciousness insights", gradient: "from-indigo-500 to-purple-500", href: "/autonomous-business-intelligence-2040", count: "6+ Services" },
+                { icon: Lock, title: "Advanced Security", description: "Future-proof security with consciousness integration", gradient: "from-yellow-500 to-orange-500", href: "/ai-ethics-governance-2041", count: "9+ Services" }
+              ].map((service, index) => (
+                <motion.div
+                  key={index}
+                  className="group relative overflow-hidden rounded-3xl bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-sm border border-white/10 cursor-pointer"
+                  initial={{ opacity: 0, y: 40 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: index * 0.1, ease: "easeOut" }}
+                  viewport={{ once: true, margin: "-50px" }}
+                  whileHover={{ y: -10, scale: 1.02 }}
+                  onClick={() => {
+                    try {
+                      window.location.href = service.href;
+                    } catch (err) {
+                      setError('Navigation failed');
+                    }
+                  }}
+                  role="button"
+                  tabIndex={0}
+                  onKeyDown={(e) => {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                      try {
+                        window.location.href = service.href;
+                      } catch (err) {
+                        setError('Navigation failed');
+                      }
+                    }
+                  }}
+                  aria-label={`Learn more about ${service.title}`}
+                >
+                  <div className={`absolute inset-0 bg-gradient-to-br ${service.gradient} opacity-0 group-hover:opacity-10 transition-opacity duration-300`} />
+                  <div className="relative p-8">
+                    <div className="flex items-center justify-between mb-6">
+                      <div className={`w-14 h-14 rounded-2xl bg-gradient-to-br ${service.gradient} p-3`}>
+                        <service.icon className="w-full h-full text-white" aria-hidden="true" />
+                      </div>
+                      <span className="text-sm text-gray-400">{service.count}</span>
                     </div>
                     <h3 className="text-2xl font-bold text-white mb-4 group-hover:text-cyan-400 transition-colors">
                       {category.name}
@@ -656,51 +691,47 @@ const Homepage2040: React.FC = () => {
         </div>
       </section>
 
-      {/* Enhanced Featured Services Section */}
-      <section className="px-4 sm:px-6 lg:px-8 pb-20">
-        <div className="max-w-7xl mx-auto">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="text-center mb-16"
-          >
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-              Featured Revolutionary Services
-            </h2>
-            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              Discover our most innovative and cutting-edge technology solutions
-            </p>
-          </motion.div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {featuredServices.map((service, index) => (
-              <motion.div
-                key={service.name}
-                variants={fadeInUp}
-                className="group p-6 bg-black/30 backdrop-blur-xl rounded-2xl border border-cyan-500/30 hover:border-cyan-400/50 transition-all duration-300 hover:transform hover:scale-105 cursor-pointer"
-                tabIndex={0}
-                role="button"
-                aria-label={`Learn more about ${service.name}`}
-              >
-                <div className="flex items-center justify-between mb-3">
-                  <span className="text-xs text-cyan-400 bg-cyan-500/20 px-2 py-1 rounded-full">
-                    {service.category}
-                  </span>
-                  <div className="flex items-center space-x-1">
-                    <Star className="w-4 h-4 text-yellow-400 fill-current" />
-                    <span className="text-sm text-gray-300">{service.rating}</span>
-                  </div>
-                </div>
-                
-                <div className={`inline-flex p-3 rounded-xl bg-gradient-to-r ${service.color} text-white mb-4 group-hover:scale-110 transition-transform duration-300`}>
-                  {service.icon}
-                </div>
-                <h3 className="text-xl font-bold text-white mb-3">{service.name}</h3>
-                <p className="text-gray-400 text-sm mb-4 line-clamp-3">{service.description}</p>
-                <Link
-                  href={service.link}
-                  className="inline-flex items-center gap-2 text-cyan-400 hover:text-cyan-300 transition-colors duration-200 group-hover:gap-3"
+        {/* Enhanced CTA Section */}
+        <section className="py-24 px-4" aria-labelledby="cta-heading">
+          <div className="max-w-5xl mx-auto text-center">
+            <motion.div
+              className="bg-gradient-to-r from-cyan-500/10 to-blue-500/10 rounded-3xl p-16 border border-cyan-400/20"
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, ease: "easeOut" }}
+              viewport={{ once: true, margin: "-100px" }}
+            >
+              <h2 id="cta-heading" className="text-5xl md:text-6xl font-bold text-white mb-8">
+                Ready to Transform Your Business?
+              </h2>
+              <p className="text-2xl text-gray-300 mb-10 max-w-3xl mx-auto">
+                Join thousands of companies already leveraging our revolutionary technology solutions
+              </p>
+              <div className="flex flex-col sm:flex-row gap-6 justify-center">
+                <button 
+                  className="px-10 py-5 bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-semibold rounded-2xl hover:from-cyan-600 hover:to-blue-700 transition-all duration-300 transform hover:scale-105 focus:outline-none focus:ring-4 focus:ring-cyan-500/50 text-lg"
+                  onClick={() => {
+                    try {
+                      window.location.href = '/revolutionary-2040-2041-pricing-showcase';
+                    } catch (err) {
+                      setError('Navigation failed');
+                    }
+                  }}
+                  aria-label="Start your journey with Zion Tech Group"
+                >
+                  Start Your Journey
+                  <ArrowRight className="w-6 h-6 ml-3 inline" />
+                </button>
+                <button 
+                  className="px-10 py-5 border-2 border-cyan-400 text-cyan-400 font-semibold rounded-2xl hover:bg-cyan-400 hover:text-black transition-all duration-300 focus:outline-none focus:ring-4 focus:ring-cyan-400/50 text-lg"
+                  onClick={() => {
+                    try {
+                      window.location.href = '/services';
+                    } catch (err) {
+                      setError('Navigation failed');
+                    }
+                  }}
+                  aria-label="Explore our revolutionary services"
                 >
                   <Link 
                     href="/innovative-2040-futuristic-services-showcase"
