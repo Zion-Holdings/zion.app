@@ -266,9 +266,45 @@
   schedule = "*/5 * * * *"
 
 [[scheduled.functions]]
+<<<<<<< HEAD
+  name = "license-compliance-auditor"
+  schedule = "0 2 * * 1"
+
+[[scheduled.functions]]
+  name = "pagespeed-insights-runner"
+  schedule = "11 */6 * * *" # every 6 hours, offset
+
+# Content freshness auditor
+[[scheduled.functions]]
+  name = "content-freshness-runner"
+  schedule = "*/15 * * * *"
+
+# Docs relative link auditor
+[[scheduled.functions]]
+  name = "adaptive-orchestrator"
+  schedule = "*/5 * * * *"
+
+# Additional autonomous reports
+[[scheduled.functions]]
+  name = "code-hotspots-radar"
+  schedule = "0 */2 * * *"
+
+[[scheduled.functions]]
+  name = "type-health-monitor"
+  schedule = "0 */2 * * *"
+
+[[scheduled.functions]]
+  name = "component-api-docs-runner"
+  schedule = "0 3 * * *"
+
+[[scheduled.functions]]
+  name = "auto-roadmap-runner"
+  schedule = "0 */2 * * *"
+=======
   name = "roadmap-generator-runner"
   schedule = "*/15 * * * *" # every 15 minutes
 
 [[scheduled.functions]]
   name = "redirects-audit-runner"
   schedule = "*/30 * * * *" # every 30 minutes
+>>>>>>> origin/cursor/invent-and-deploy-autonomous-cloud-automations-df1f
