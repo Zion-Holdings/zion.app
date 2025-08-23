@@ -51,9 +51,11 @@ import { innovativeITInfrastructureBreakthroughServices2025 } from '../data/2025
 import { innovativeMicroSaasBreakthroughServices2025V2 } from '../data/2025-innovative-micro-saas-breakthroughs-v2';
 
 // Import our new service data
-import { enterpriseITSolutions } from '../data/2034-enterprise-it-solutions';
-import { innovativeMicroSaasSolutions } from '../data/2034-innovative-micro-saas-solutions';
-import { cuttingEdgeAIServices } from '../data/2034-cutting-edge-ai-services';
+import { enterpriseITSolutions } from '../data/2025-enterprise-it-solutions';
+import { innovativeMicroSaasSolutions } from '../data/2025-innovative-micro-saas-solutions';
+import { cuttingEdgeAIServices } from '../data/2025-cutting-edge-ai-services';
+import { advancedAIAutomationServices } from '../data/2025-advanced-ai-automation-services';
+import { innovativeITInfrastructureServices } from '../data/2025-innovative-it-infrastructure-services';
 import { real2025Q4AugmentedBatch } from '../data/real-2025-q4-augmented-batch';
 import { real2029Q3Additions } from '../data/real-2029-q3-additions';
 import { validatedServices2025Q4 } from '../data/real-validated-2025-q4-additions';
@@ -98,7 +100,6 @@ import { cuttingEdgeITInfrastructureServices } from '../data/2025-cutting-edge-i
 
 // Import our new 2025 cutting-edge futuristic services
 import { cuttingEdgeFuturisticServices } from '../data/2025-cutting-edge-futuristic-services';
-import { advancedAIAutomationServices } from '../data/2026-advanced-ai-automation-services';
 
 // Import our new 2025 cutting-edge innovative services expansion
 import { cuttingEdgeInnovativeServices2025 } from '../data/2025-cutting-edge-innovative-services-expansion';
@@ -179,11 +180,12 @@ const allServices = [
   ...enterpriseITSolutions,
   ...innovativeMicroSaasSolutions,
   ...cuttingEdgeAIServices,
+  ...advancedAIAutomationServices,
+  ...innovativeITInfrastructureServices,
   ...realMicroSaasServices,
   ...innovativeAIServices,
   ...enterpriseITServices,
   ...cuttingEdgeFuturisticServices,
-  ...advancedAIAutomationServices,
   ...emergingTechServices,
   ...newRealServices,
   ...realOperationalServices,
