@@ -1,9 +1,14 @@
 
 import { useState, useEffect } from "react";
+<<<<<<< HEAD
+import type { TalentProfile as TalentProfileType } from "@/types/talent";
+import type { ProfileData } from "@/types/profile";
+=======
 import { TalentProfile as TalentProfileType } from "@/types/talent";
 import { ProfileData } from "@/types/profile";
 import { TALENT_PROFILES } from "@/data/talentData";
 import { MOCK_PROFILES } from "@/data/mockProfiles";
+>>>>>>> origin/591ea5-codex/fix-talent-profile-rendering-issues
 import { convertProfileToTalentProfile } from "@/utils/profileConverter";
 import {logErrorToProduction} from '@/utils/productionLogger';
 
@@ -26,6 +31,11 @@ export function useTalentProfile(id: string | undefined) {
     const fetchProfile = async () => {
       setIsLoading(true);
       try {
+<<<<<<< HEAD
+        if (!id) {
+          setProfile(null);
+          setError('No profile ID provided');
+=======
         // In a real implementation, we would fetch from Supabase
         // For now, we'll use mock data
         setTimeout(() => {
@@ -46,6 +56,7 @@ export function useTalentProfile(id: string | undefined) {
               setError("Profile not found");
             }
           }
+>>>>>>> origin/591ea5-codex/fix-talent-profile-rendering-issues
           setIsLoading(false);
           return;
         }

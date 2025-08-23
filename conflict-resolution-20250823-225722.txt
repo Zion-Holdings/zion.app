@@ -103,3 +103,8 @@
 2025-08-23 22:57:38 - Resolving conflicts in pages/privacy-settings.tsx for branch 51ryr1-codex/implement-eprivacy-directive-consent-banner
 2025-08-23 22:57:38 - Resolving conflicts in src/App.tsx for branch 51ryr1-codex/implement-eprivacy-directive-consent-banner
 2025-08-23 22:57:39 - Resolving conflicts in src/context/index.ts for branch 51ryr1-codex/implement-eprivacy-directive-consent-banner
+2025-08-23 22:57:40 - Merge conflicts detected in 591ea5-codex/fix-talent-profile-rendering-issues
+2025-08-23 22:57:40 - Resolving conflicts in src/components/ErrorBoundary.tsx for branch 591ea5-codex/fix-talent-profile-rendering-issues
+2025-08-23 22:57:40 - Resolving conflicts in src/components/profile/TalentProfile.tsx for branch 591ea5-codex/fix-talent-profile-rendering-issues
+2025-08-23 22:57:40 - Resolving conflicts in src/hooks/useTalentProfile.ts for branch 591ea5-codex/fix-talent-profile-rendering-issues
+2025-08-23 22:57:40 - Resolving conflicts in src/routes/TalentRoutes.tsx for branch 591ea5-codex/fix-talent-profile-rendering-issues

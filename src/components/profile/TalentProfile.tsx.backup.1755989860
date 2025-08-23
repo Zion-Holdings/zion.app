@@ -14,8 +14,12 @@ import { ProfileProjects } from "./ProfileProjects";
 import { ProfileAvailability } from "./ProfileAvailability";
 import { ProfileContact } from "./ProfileContact";
 import { ProfileRatings } from "./ProfileRatings";
+<<<<<<< HEAD
+import type { TalentProfile as TalentProfileType } from "@/types/talent";
+=======
 import { TalentProfile as TalentProfileType } from "@/types/talent";
 import { Markdown } from "@/components/ui/markdown";
+>>>>>>> origin/591ea5-codex/fix-talent-profile-rendering-issues
 import { useAuth } from "@/hooks/useAuth";
 import type { Availability } from "@/types/profile";
 
