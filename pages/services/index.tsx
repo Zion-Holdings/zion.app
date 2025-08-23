@@ -69,23 +69,10 @@ import { advanced2025AIServicesExpansion } from '../../data/2025-advanced-ai-ser
 // Import our new innovative 2025 services
 import { innovative2025AdvancedServicesExpansion } from '../../data/innovative-2025-advanced-services-expansion';
 import { innovative2025EnterpriseSolutions } from '../../data/innovative-2025-enterprise-solutions';
+import { UnifiedService } from '../../types/unified-service-types';
 
-// Define a proper interface for services
-interface Service {
-  id?: string;
-  name: string;
-  description: string;
-  price?: string;
-  pricing?: {
-    starter?: { price: string; period?: string };
-    monthly?: string;
-    [key: string]: { price: string; period?: string } | string;
-  };
-  category: string;
-  popular?: boolean;
-  launchDate?: string;
-  [key: string]: unknown;
-}
+// Use the unified service type
+type Service = UnifiedService;
 
 function toSlug(value: string) {
   return value.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');

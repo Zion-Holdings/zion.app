@@ -1,9 +1,8 @@
 import React, { useState } from 'react';
-import UltraFuturisticNavigation2040 from './UltraFuturisticNavigation2040';
-import UltraFuturisticFooter2040 from './UltraFuturisticFooter2040';
+import UltraAdvancedFuturisticNavigation2040 from './UltraAdvancedFuturisticNavigation2040';
+import UltraAdvancedFuturisticFooter2040 from './UltraAdvancedFuturisticFooter2040';
 import EnhancedSidebar2025 from './EnhancedSidebar2025';
 import UltraFuturisticBackground2036 from '../backgrounds/UltraFuturisticBackground2036';
-import TopContactBar from './TopContactBar';
 import PerformanceMonitor from '../PerformanceMonitor';
 import AccessibilityEnhancer from '../AccessibilityEnhancer';
 import CookieConsentBanner from '../CookieConsentBanner';
@@ -28,9 +27,6 @@ interface LayoutProps {
 export default function Layout({ children, seo }: LayoutProps) {
   const [sidebarOpen, setSidebarOpen] = useState(false);
 
-
-
-
   return (
     <ErrorBoundary>
       <div className="min-h-screen bg-black text-white relative overflow-x-hidden">
@@ -45,11 +41,8 @@ export default function Layout({ children, seo }: LayoutProps) {
         
         {/* Layout Structure */}
         <div className="relative z-10">
-          {/* Top Contact Bar */}
-          <TopContactBar />
-          
-          {/* Navigation */}
-          <UltraFuturisticNavigation2040 />
+          {/* Enhanced Navigation with Top Contact Bar */}
+          <UltraAdvancedFuturisticNavigation2040 />
           
           {/* Sidebar and Main Content */}
           <div className="flex">
@@ -58,15 +51,15 @@ export default function Layout({ children, seo }: LayoutProps) {
               onClose={() => setSidebarOpen(false)} 
             />
             
-            <main id="main" role="main" className="flex-1 pt-24 lg:pt-28">
+            <main id="main" role="main" className="flex-1">
               <MobileOptimizer>
                 {children}
               </MobileOptimizer>
             </main>
           </div>
           
-          {/* Footer */}
-          <UltraFuturisticFooter2040 />
+          {/* Enhanced Footer */}
+          <UltraAdvancedFuturisticFooter2040 />
         </div>
 
         {/* Enhanced Components */}
@@ -79,8 +72,6 @@ export default function Layout({ children, seo }: LayoutProps) {
         
         {/* Analytics Dashboard */}
         <Analytics showUI={true} autoRefresh={true} refreshInterval={60000} />
-        
-
       </div>
     </ErrorBoundary>
   );

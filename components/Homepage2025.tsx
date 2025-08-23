@@ -82,7 +82,11 @@ const Homepage2025: React.FC = () => {
       features: ['Consciousness Development', 'Ethical Training', 'Safety Protocols'],
       popular: true,
       category: 'AI & Consciousness',
-      icon: '🧠'
+      icon: '🧠',
+      link: '/services/ai-consciousness',
+      customers: 25,
+      rating: 4.9,
+      reviews: 89
     },
     {
       id: 'quantum-cybersecurity',
@@ -94,7 +98,11 @@ const Homepage2025: React.FC = () => {
       features: ['Quantum Encryption', 'AI Threat Detection', 'Zero Trust'],
       popular: true,
       category: 'Quantum & Security',
-      icon: '🛡️'
+      icon: '🛡️',
+      link: '/services/quantum-cybersecurity',
+      customers: 42,
+      rating: 4.8,
+      reviews: 156
     },
     {
       id: 'autonomous-content',
@@ -106,7 +114,11 @@ const Homepage2025: React.FC = () => {
       features: ['Content Automation', 'AI Writing', 'Multi-platform Publishing'],
       popular: true,
       category: 'AI & Content',
-      icon: '🏭'
+      icon: '🏭',
+      link: '/services/autonomous-content',
+      customers: 78,
+      rating: 4.7,
+      reviews: 234
     },
     {
       id: 'quantum-supply-chain',
@@ -118,7 +130,11 @@ const Homepage2025: React.FC = () => {
       features: ['Quantum Optimization', 'Real-time Tracking', 'Predictive Analytics'],
       popular: false,
       category: 'Quantum & Logistics',
-      icon: '🚚'
+      icon: '🚚',
+      link: '/services/quantum-supply-chain',
+      customers: 18,
+      rating: 4.6,
+      reviews: 67
     }
   ];
 

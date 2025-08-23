@@ -6,6 +6,7 @@ import {
   Brain, Atom, Shield, Target, Rocket, ArrowRight, Check,
   Zap, Globe, Lock, Cpu, Database, Cloud, Palette, Heart, Phone, Mail, MapPin
 } from 'lucide-react';
+import { UnifiedService } from '../types/unified-service-types';
 
 // Import our new innovative services
 import { innovative2040FuturisticServices } from '../data/innovative-2040-futuristic-services';
@@ -16,41 +17,8 @@ import { realMicroSaasServices } from '../data/real-micro-saas-services';
 import { innovativeAIServices } from '../data/innovative-ai-services';
 import { enterpriseITServices } from '../data/enterprise-it-services';
 
-interface Service {
-  id: string;
-  name: string;
-  tagline: string;
-  price: string | { monthly: number; yearly: number; currency: string; trialDays: number; setupTime: string };
-  period?: string;
-  description: string;
-  features: string[];
-  popular: boolean;
-  icon: string;
-  color: string;
-  textColor?: string;
-  link: string;
-  category: string;
-  realService?: boolean;
-  technology?: string[];
-  integrations?: string[];
-  useCases?: string[];
-  roi?: string;
-  competitors?: string[];
-  marketSize?: string;
-  growthRate?: string;
-  contactInfo?: {
-    mobile: string;
-    email: string;
-    address: string;
-    website: string;
-  };
-  realImplementation?: boolean;
-  implementationDetails?: string;
-  launchDate?: string;
-  customers: number;
-  rating: number;
-  reviews: number;
-}
+// Use the unified service type
+type Service = UnifiedService;
 
 const Innovative2040FuturisticServicesShowcase: React.FC = () => {
   const [searchQuery, setSearchQuery] = useState('');

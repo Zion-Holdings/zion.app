@@ -25,8 +25,8 @@ const ServiceCard = ({ service, index }: { service: any; index: number }) => (
     transition={{ duration: 0.5, delay: index * 0.1 }}
     className="relative group"
   >
-    <div className={`absolute inset-0 bg-gradient-to-r ${service.color} rounded-2xl blur-xl group-hover:blur-2xl transition-all duration-500 opacity-20`}></div>
-    <div className={`relative bg-gradient-to-r ${service.color.replace('from-', 'from-').replace('to-', 'to-')} bg-opacity-10 border border-opacity-30 rounded-2xl p-8 hover:border-opacity-50 transition-all duration-300 h-full`}>
+    <div className={`absolute inset-0 bg-gradient-to-r ${service.color || 'from-cyan-500 to-blue-600'} rounded-2xl blur-xl group-hover:blur-2xl transition-all duration-500 opacity-20`}></div>
+    <div className={`relative bg-gradient-to-r ${service.color ? service.color.replace('from-', 'from-').replace('to-', 'to-') : 'from-cyan-500 to-blue-600'} bg-opacity-10 border border-opacity-30 rounded-2xl p-8 hover:border-opacity-50 transition-all duration-300 h-full`}>
       <div className="flex items-start justify-between mb-6">
         <div className="text-4xl">{service.icon}</div>
         {service.popular && (

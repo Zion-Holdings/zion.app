@@ -1,18 +1,10 @@
 import React, { useState, useCallback } from 'react';
 import { motion } from 'framer-motion';
 import { ArrowRight, Star, CheckCircle, Zap, Brain, Atom, Rocket } from 'lucide-react';
+import { UnifiedService, getDefaultIcon, getDefaultColor } from '../../types/unified-service-types';
 
-interface Service {
-  id: string;
-  name: string;
-  tagline: string;
-  description: string;
-  price: string;
-  period: string;
-  features: string[];
-  popular?: boolean;
-  category: string;
-  icon: string;
+interface Service extends UnifiedService {
+  // Extend UnifiedService to maintain backward compatibility
 }
 
 interface UltraFuturisticServiceCard2026Props {
@@ -195,8 +187,12 @@ const UltraFuturisticServiceCard2026: React.FC<UltraFuturisticServiceCard2026Pro
             animate={{ opacity: 1 }}
             transition={{ delay: 0.3 }}
           >
-            <span className="text-2xl font-bold text-white">{service.price}</span>
-            <span className="text-gray-400 text-sm ml-1">{service.period}</span>
+            <span className="text-2xl font-bold text-white">
+              {typeof service.price === 'string' ? service.price : `$${service.price.monthly}/month`}
+            </span>
+            <span className="text-gray-400 text-sm ml-1">
+              {typeof service.price === 'string' ? (service.period || '') : ''}
+            </span>
           </motion.div>
 
           {/* Features */}
