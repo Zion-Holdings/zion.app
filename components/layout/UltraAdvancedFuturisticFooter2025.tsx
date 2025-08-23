@@ -7,7 +7,8 @@ import {
   Facebook, Twitter, Linkedin, Instagram, Youtube,
   Github, MessageCircle, Clock,
   Award, Heart, Sparkles, Cpu, Cloud, Lock,
-  Building, ChartBar, Code, Database, Server
+  Building, ChartBar, Code, Database, Server,
+  GraduationCap
 } from 'lucide-react';
 
 const contactInfo = {
@@ -65,16 +66,40 @@ const footerSections = [
       { name: 'DevOps Automation', href: '/automation', description: 'CI/CD optimization' },
       { name: 'Data Analytics', href: '/automation', description: 'Big data insights' }
     ]
+  },
+  {
+    title: 'Company',
+    icon: <Building className="w-5 h-5" />,
+    links: [
+      { name: 'About Us', href: '/about', description: 'Our story and mission' },
+      { name: 'Leadership', href: '/leadership', description: 'Meet our team' },
+      { name: 'Careers', href: '/careers', description: 'Join us' },
+      { name: 'Contact', href: '/contact', description: 'Get in touch' },
+      { name: 'News', href: '/news', description: 'Latest updates' },
+      { name: 'Blog', href: '/blog', description: 'Insights' }
+    ]
+  },
+  {
+    title: 'Resources',
+    icon: <GraduationCap className="w-5 h-5" />,
+    links: [
+      { name: 'Documentation', href: '/docs', description: 'Technical docs' },
+      { name: 'API Reference', href: '/api', description: 'API docs' },
+      { name: 'Developer Resources', href: '/developer-resources', description: 'Dev tools' },
+      { name: 'White Papers', href: '/white-papers', description: 'Research' },
+      { name: 'Webinars', href: '/webinars', description: 'Learn' },
+      { name: 'Training', href: '/training', description: 'Skills' }
+    ]
   }
 ];
 
 const socialLinks = [
-  { name: 'LinkedIn', href: '#', icon: <Linkedin className="w-5 h-5" />, color: 'hover:text-blue-400' },
-  { name: 'Twitter', href: '#', icon: <Twitter className="w-5 h-5" />, color: 'hover:text-sky-400' },
-  { name: 'Facebook', href: '#', icon: <Facebook className="w-5 h-5" />, color: 'hover:text-blue-600' },
-  { name: 'Instagram', href: '#', icon: <Instagram className="w-5 h-5" />, color: 'hover:text-pink-500' },
-  { name: 'YouTube', href: '#', icon: <Youtube className="w-5 h-5" />, color: 'hover:text-red-500' },
-  { name: 'GitHub', href: '#', icon: <Github className="w-5 h-5" />, color: 'hover:text-gray-400' }
+  { name: 'LinkedIn', href: 'https://linkedin.com/company/ziontechgroup', icon: <Linkedin className="w-5 h-5" />, color: 'hover:text-blue-400' },
+  { name: 'Twitter', href: 'https://twitter.com/ziontechgroup', icon: <Twitter className="w-5 h-5" />, color: 'hover:text-sky-400' },
+  { name: 'Facebook', href: 'https://facebook.com/ziontechgroup', icon: <Facebook className="w-5 h-5" />, color: 'hover:text-blue-600' },
+  { name: 'Instagram', href: 'https://instagram.com/ziontechgroup', icon: <Instagram className="w-5 h-5" />, color: 'hover:text-pink-500' },
+  { name: 'YouTube', href: 'https://youtube.com/@ziontechgroup', icon: <Youtube className="w-5 h-5" />, color: 'hover:text-red-500' },
+  { name: 'GitHub', href: 'https://github.com/Zion-Holdings', icon: <Github className="w-5 h-5" />, color: 'hover:text-gray-400' }
 ];
 
 const UltraAdvancedFuturisticFooter2025: React.FC = () => {
