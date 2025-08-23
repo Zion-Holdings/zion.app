@@ -133,6 +133,17 @@ export default function Layout({ children, seo }: LayoutProps) {
         />
       </Head>
 
+<<<<<<< HEAD
+      <div className="min-h-screen bg-black text-white relative overflow-hidden">
+        {/* Background Effects */}
+        <UltraFuturisticBackground2045 />
+        
+        {/* Top Contact Bar */}
+        <TopContactBar />
+        
+        {/* Navigation */}
+        <UltraFuturisticNavigation2045 />
+=======
 export default function Layout({ children, seo }: LayoutProps) {
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const [showEnhancements, setShowEnhancements] = useState(false);
@@ -170,6 +181,7 @@ export default function Layout({ children, seo }: LayoutProps) {
         )}
       </AnimatePresence>
 
+>>>>>>> 7a85ae0cd39d68a827205bba4c6cb0a249e2153b
       {/* Layout Structure */}
       <div className="relative z-10">
         {/* Top Contact Bar */}
@@ -237,3 +249,36 @@ export default function Layout({ children, seo }: LayoutProps) {
     </div>
   );
 }
+<<<<<<< HEAD
+
+const Layout: React.FC<LayoutProps> = ({ children }) => {
+	return (
+		<div className="min-h-screen bg-black text-white">
+			<a href="#main" className="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:bg-black/80 focus:text-white focus:border focus:border-cyan-500 focus:rounded px-3 py-2 z-[100]">Skip to content</a>
+			<UltraAdvancedFuturisticBackground 
+				intensity="extreme" 
+				colorScheme="ai-consciousness"
+				particleCount={500}
+				animationSpeed={2.0}
+				enableHolographic={true}
+				enableQuantumEffects={true}
+				enableNeuralNetwork={true}
+				enableSpaceEffects={true}
+			>
+				<TopContactBar />
+				<UltraFuturisticNavigation2035 />
+				<div className="flex">
+					<EnhancedSidebar2025 isOpen={sidebarOpen} onClose={() => setSidebarOpen(false)} />
+					<main id="main" className="flex-1 pt-24 lg:pt-28">
+						{children}
+					</main>
+				</div>
+				<UltraFuturisticFooter2035 />
+			</UltraAdvancedFuturisticBackground>
+		</div>
+	);
+};
+
+export default Layout;
+=======
+>>>>>>> 7a85ae0cd39d68a827205bba4c6cb0a249e2153b
