@@ -1,20 +1,15 @@
 {
-  "generatedAt": "2025-08-11T11:19:54.752Z",
+  "generatedAt": "2025-08-11T11:19:30.739Z",
   "total": 26,
   "bad": 0,
   "results": [
-    {
-      "url": "https://techcrunch.com/2025/08/08/sam-altman-addresses-bumpy-gpt-5-rollout-bringing-4o-back-and-the-chart-crime/",
-      "statusCode": 200,
-      "ok": true
-    },
     {
       "url": "https://techcrunch.com/2025/08/08/former-googlers-ai-startup-openart-now-creates-brainrot-videos-in-just-one-click/",
       "statusCode": 200,
       "ok": true
     },
     {
-      "url": "https://techcrunch.com/2025/08/08/how-to-use-instagram-map-and-protect-your-privacy/",
+      "url": "https://techcrunch.com/2025/08/08/sam-altman-addresses-bumpy-gpt-5-rollout-bringing-4o-back-and-the-chart-crime/",
       "statusCode": 200,
       "ok": true
     },
@@ -24,7 +19,7 @@
       "ok": true
     },
     {
-      "url": "https://techcrunch.com/2025/08/08/openai-priced-gpt-5-so-low-it-may-spark-a-price-war/",
+      "url": "https://techcrunch.com/2025/08/08/how-to-use-instagram-map-and-protect-your-privacy/",
       "statusCode": 200,
       "ok": true
     },
@@ -34,17 +29,12 @@
       "ok": true
     },
     {
-      "url": "https://techcrunch.com/2025/08/08/meta-acquires-ai-audio-startup-waveforms/",
-      "statusCode": 200,
-      "ok": true
-    },
-    {
       "url": "https://techcrunch.com/2025/08/08/rip-microsoft-lens-a-simple-little-app-thats-getting-replaced-by-ai/",
       "statusCode": 200,
       "ok": true
     },
     {
-      "url": "https://techcrunch.com/2025/08/08/impersonators-are-targeting-companies-with-fake-techcrunch-outreach/",
+      "url": "https://techcrunch.com/2025/08/08/meta-acquires-ai-audio-startup-waveforms/",
       "statusCode": 200,
       "ok": true
     },
@@ -54,7 +44,12 @@
       "ok": true
     },
     {
-      "url": "https://techcrunch.com/2025/08/06/key-sections-of-the-us-constitution-deleted-from-governments-website/",
+      "url": "https://techcrunch.com/2025/08/08/openai-priced-gpt-5-so-low-it-may-spark-a-price-war/",
+      "statusCode": 200,
+      "ok": true
+    },
+    {
+      "url": "https://techcrunch.com/2025/08/08/impersonators-are-targeting-companies-with-fake-techcrunch-outreach/",
       "statusCode": 200,
       "ok": true
     },
@@ -74,6 +69,11 @@
       "ok": true
     },
     {
+      "url": "https://techcrunch.com/2025/08/05/three-weeks-after-acquiring-windsurf-cognition-offers-staff-the-exit-door/",
+      "statusCode": 200,
+      "ok": true
+    },
+    {
       "url": "https://techcrunch.com/2025/08/06/instagram-takes-on-snapchat-with-new-instagram-map/",
       "statusCode": 200,
       "ok": true
@@ -84,12 +84,7 @@
       "ok": true
     },
     {
-      "url": "https://techcrunch.com/2025/08/03/the-uproar-over-vogues-ai-generated-ad-isnt-just-about-fashion/",
-      "statusCode": 200,
-      "ok": true
-    },
-    {
-      "url": "https://techcrunch.com/2025/08/05/three-weeks-after-acquiring-windsurf-cognition-offers-staff-the-exit-door/",
+      "url": "https://techcrunch.com/2025/08/06/key-sections-of-the-us-constitution-deleted-from-governments-website/",
       "statusCode": 200,
       "ok": true
     },
@@ -99,12 +94,12 @@
       "ok": true
     },
     {
-      "url": "https://techcrunch.com/storyline/google-i-o-2025-live-coverage-google-ai-ultra-project-mariner-gemini-app-updates-and-more/",
+      "url": "https://techcrunch.com/2025/08/03/the-uproar-over-vogues-ai-generated-ad-isnt-just-about-fashion/",
       "statusCode": 200,
       "ok": true
     },
     {
-      "url": "https://www.theverge.com/hands-on/756587/microsoft-copilot-3d-feature-hands-on",
+      "url": "https://techcrunch.com/storyline/google-i-o-2025-live-coverage-google-ai-ultra-project-mariner-gemini-app-updates-and-more/",
       "statusCode": 200,
       "ok": true
     },
@@ -120,6 +115,11 @@
     },
     {
       "url": "https://supabase.com/",
+      "statusCode": 200,
+      "ok": true
+    },
+    {
+      "url": "https://www.theverge.com/hands-on/756587/microsoft-copilot-3d-feature-hands-on",
       "statusCode": 200,
       "ok": true
     },
