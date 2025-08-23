@@ -1,10 +1,10 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, Suspense, lazy } from 'react';
 import Layout from './layout/Layout';
 import { motion, AnimatePresence } from 'framer-motion';
 import { 
   ArrowRight, Play, Star, Users, Award, TrendingUp, Brain, Shield, Rocket, 
   Loader2, ChevronDown, Zap, Globe, Lock, Cpu, Database, Cloud, Palette, Heart,
-  Phone, Mail, MapPin, Search, Grid, List
+  Phone, Mail, MapPin, Search, Grid, List, CheckCircle
 } from 'lucide-react';
 import Link from 'next/link';
 
@@ -12,7 +12,11 @@ import Link from 'next/link';
 import { innovative2040FuturisticServices } from '../data/innovative-2040-futuristic-services';
 import { innovative2040ITServices } from '../data/innovative-2040-it-services';
 
-// Loading fallback component
+// Lazy load heavy components
+const ServiceCard = lazy(() => import('./ServiceCard'));
+const StatsSection = lazy(() => import('./StatsSection'));
+
+// Enhanced loading fallback component with skeleton
 const LoadingFallback = () => (
   <div className="min-h-screen flex items-center justify-center bg-gray-900">
     <motion.div
@@ -27,7 +31,26 @@ const LoadingFallback = () => (
       </div>
       <p className="text-xl text-gray-300 mb-2">Loading Zion Tech Group 2040...</p>
       <p className="text-sm text-gray-500">Preparing your futuristic digital transformation journey</p>
+      
+      {/* Skeleton loading animation */}
+      <div className="mt-8 space-y-4">
+        <div className="h-4 bg-gray-700 rounded animate-pulse w-64 mx-auto"></div>
+        <div className="h-4 bg-gray-700 rounded animate-pulse w-48 mx-auto"></div>
+        <div className="h-4 bg-gray-700 rounded animate-pulse w-56 mx-auto"></div>
+      </div>
     </motion.div>
+  </div>
+);
+
+// Skeleton component for service cards
+const ServiceCardSkeleton = () => (
+  <div className="bg-gray-800/50 backdrop-blur-sm border border-gray-700/50 rounded-2xl p-6 animate-pulse">
+    <div className="w-16 h-16 bg-gray-700 rounded-xl mb-6"></div>
+    <div className="h-6 bg-gray-700 rounded mb-3"></div>
+    <div className="h-4 bg-gray-700 rounded mb-2"></div>
+    <div className="h-4 bg-gray-700 rounded mb-2"></div>
+    <div className="h-4 bg-gray-700 rounded mb-6 w-3/4"></div>
+    <div className="h-8 bg-gray-700 rounded"></div>
   </div>
 );
 
@@ -35,8 +58,12 @@ const Homepage2040: React.FC = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [isVisible, setIsVisible] = useState(false);
   const [activeSection, setActiveSection] = useState('hero');
+  const [isIntersectionObserverSupported, setIsIntersectionObserverSupported] = useState(false);
 
   useEffect(() => {
+    // Check if Intersection Observer is supported
+    setIsIntersectionObserverSupported('IntersectionObserver' in window);
+    
     // Simulate content loading with better timing
     const timer = setTimeout(() => {
       setIsLoading(false);
@@ -46,18 +73,21 @@ const Homepage2040: React.FC = () => {
     return () => clearTimeout(timer);
   }, []);
 
-  // Intersection Observer for better performance
+  // Enhanced Intersection Observer for better performance
   useEffect(() => {
-    if (typeof window !== 'undefined' && 'IntersectionObserver' in window) {
-      const observer = new (window as any).IntersectionObserver(
-        (entries: any[]) => {
+    if (isIntersectionObserverSupported) {
+      const observer = new IntersectionObserver(
+        (entries) => {
           entries.forEach((entry) => {
             if (entry.isIntersecting) {
               setActiveSection(entry.target.id);
             }
           });
         },
-        { threshold: 0.3, rootMargin: '-100px' }
+        { 
+          threshold: 0.3, 
+          rootMargin: '-100px'
+        }
       );
 
       const sections = document.querySelectorAll('section[id]');
@@ -65,7 +95,7 @@ const Homepage2040: React.FC = () => {
 
       return () => observer.disconnect();
     }
-  }, []);
+  }, [isIntersectionObserverSupported]);
 
   const fadeInUp = {
     initial: { opacity: 0, y: 60 },
@@ -122,12 +152,12 @@ const Homepage2040: React.FC = () => {
                 initial="initial"
                 animate="animate"
               >
-                {/* Floating orbs */}
+                {/* Floating orbs with reduced motion support */}
                 <div className="absolute top-20 left-20 w-72 h-72 bg-gradient-to-r from-cyan-500/20 to-blue-500/20 rounded-full blur-3xl animate-pulse"></div>
                 <div className="absolute bottom-20 right-20 w-96 h-96 bg-gradient-to-r from-purple-500/20 to-pink-500/20 rounded-full blur-3xl animate-pulse delay-1000"></div>
                 <div className="absolute top-1/2 left-1/2 w-64 h-64 bg-gradient-to-r from-emerald-500/20 to-teal-500/20 rounded-full blur-3xl animate-pulse delay-500"></div>
                 
-                {/* Animated particles */}
+                {/* Animated particles with reduced motion support */}
                 <div className="absolute inset-0">
                   {[...Array(12)].map((_, i) => (
                     <motion.div
@@ -168,6 +198,7 @@ const Homepage2040: React.FC = () => {
                   {/* Main Heading */}
                   <div className="space-y-6">
                     <motion.h1 
+                      id="hero-heading"
                       className="text-5xl md:text-7xl font-bold"
                       initial={{ opacity: 0, y: 30 }}
                       animate={{ opacity: 1, y: 0 }}
@@ -199,15 +230,15 @@ const Homepage2040: React.FC = () => {
                     transition={{ duration: 0.8, delay: 0.6 }}
                   >
                     <div className="flex items-center space-x-3 text-cyan-400">
-                      <Phone className="w-5 h-5" />
+                      <Phone className="w-5 h-5" aria-hidden="true" />
                       <span>+1 302 464 0950</span>
                     </div>
                     <div className="flex items-center space-x-3 text-blue-400">
-                      <Mail className="w-5 h-5" />
+                      <Mail className="w-5 h-5" aria-hidden="true" />
                       <span>kleber@ziontechgroup.com</span>
                     </div>
                     <div className="flex items-center space-x-3 text-purple-400">
-                      <MapPin className="w-5 h-5" />
+                      <MapPin className="w-5 h-5" aria-hidden="true" />
                       <span>364 E Main St STE 1008 Middletown DE 19709</span>
                     </div>
                   </motion.div>
@@ -225,7 +256,7 @@ const Homepage2040: React.FC = () => {
                       aria-label="Explore our innovative 2040 services"
                     >
                       Explore 2040 Services
-                      <ArrowRight className="w-6 h-6 ml-3 inline" />
+                      <ArrowRight className="w-6 h-6 ml-3 inline" aria-hidden="true" />
                     </button>
                     
                     <button 
@@ -234,7 +265,7 @@ const Homepage2040: React.FC = () => {
                       aria-label="Explore our revolutionary services"
                     >
                       Explore Services
-                      <Play className="w-6 h-6 ml-3 inline" />
+                      <Play className="w-6 h-6 ml-3 inline" aria-hidden="true" />
                     </button>
                   </motion.div>
                 </motion.div>
@@ -251,6 +282,7 @@ const Homepage2040: React.FC = () => {
                   animate={{ y: [0, 10, 0] }}
                   transition={{ duration: 2, repeat: Infinity }}
                   className="text-cyan-400"
+                  aria-label="Scroll down to explore more content"
                 >
                   <ChevronDown className="w-8 h-8" />
                 </motion.div>
@@ -275,7 +307,7 @@ const Homepage2040: React.FC = () => {
                   </p>
                 </motion.div>
 
-                {/* Services Grid */}
+                {/* Services Grid with Lazy Loading */}
                 <motion.div
                   variants={staggerContainer}
                   initial="initial"
@@ -284,50 +316,52 @@ const Homepage2040: React.FC = () => {
                   className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
                 >
                   {innovative2040FuturisticServices.slice(0, 6).map((service, index) => (
-                    <motion.div
-                      key={service.id}
-                      variants={fadeInUp}
-                      className="group relative bg-gray-800/50 backdrop-blur-sm border border-gray-700/50 rounded-2xl p-6 hover:border-cyan-400/50 transition-all duration-300 hover:shadow-2xl hover:shadow-cyan-400/25"
-                    >
-                      {/* Service Icon */}
-                      <div className={`w-16 h-16 bg-gradient-to-r ${getColorClasses(index)} rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300`}>
-                        <Rocket className="w-8 h-8 text-white" />
-                      </div>
-
-                      {/* Service Content */}
-                      <h3 className="text-xl font-semibold text-white mb-3 group-hover:text-cyan-400 transition-colors duration-300">
-                        {service.name}
-                      </h3>
-                      <p className="text-gray-300 mb-4 leading-relaxed">
-                        {service.tagline}
-                      </p>
-
-                      {/* Service Features */}
-                      <div className="space-y-2 mb-6">
-                        {service.features.slice(0, 3).map((feature, featureIndex) => (
-                          <div key={featureIndex} className="flex items-center space-x-2 text-sm text-gray-400">
-                            <div className="w-2 h-2 bg-cyan-400 rounded-full"></div>
-                            <span>{feature}</span>
-                          </div>
-                        ))}
-                      </div>
-
-                      {/* Service Price */}
-                      <div className="mb-6">
-                        <span className="text-2xl font-bold text-cyan-400">
-                          {typeof service.price === 'string' ? service.price : `$${service.price.monthly}/mo`}
-                        </span>
-                      </div>
-
-                      {/* CTA Button */}
-                      <Link 
-                        href={service.link}
-                        className="inline-flex items-center justify-center w-full px-6 py-3 bg-gradient-to-r from-cyan-400 to-blue-500 text-white font-semibold rounded-xl hover:from-cyan-500 hover:to-blue-600 transition-all duration-300 focus:outline-none focus:ring-4 focus:ring-cyan-400/50 group-hover:shadow-lg group-hover:shadow-cyan-400/25"
+                    <Suspense key={service.id} fallback={<ServiceCardSkeleton />}>
+                      <motion.div
+                        variants={fadeInUp}
+                        className="group relative bg-gray-800/50 backdrop-blur-sm border border-gray-700/50 rounded-2xl p-6 hover:border-cyan-400/50 transition-all duration-300 hover:shadow-2xl hover:shadow-cyan-400/25"
                       >
-                        Learn More
-                        <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform duration-300" />
-                      </Link>
-                    </motion.div>
+                        {/* Service Icon */}
+                        <div className={`w-16 h-16 bg-gradient-to-r ${getColorClasses(index)} rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300`}>
+                          <Rocket className="w-8 h-8 text-white" aria-hidden="true" />
+                        </div>
+
+                        {/* Service Content */}
+                        <h3 className="text-xl font-semibold text-white mb-3 group-hover:text-cyan-400 transition-colors duration-300">
+                          {service.name}
+                        </h3>
+                        
+                        <p className="text-gray-300 mb-6 leading-relaxed">
+                          {service.description}
+                        </p>
+
+                        {/* Service Features */}
+                        <div className="space-y-2 mb-6">
+                          {service.features.slice(0, 3).map((feature, idx) => (
+                            <div key={idx} className="flex items-center space-x-2">
+                              <CheckCircle className="w-4 h-4 text-green-400 flex-shrink-0" aria-hidden="true" />
+                              <span className="text-sm text-gray-300">{feature}</span>
+                            </div>
+                          ))}
+                        </div>
+
+                        {/* Service Price */}
+                        <div className="mb-6">
+                          <span className="text-2xl font-bold text-cyan-400">
+                            {service.price}
+                          </span>
+                        </div>
+
+                        {/* CTA Button */}
+                        <Link 
+                          href={service.link}
+                          className="inline-flex items-center justify-center w-full px-6 py-3 bg-gradient-to-r from-cyan-400 to-blue-500 text-white font-semibold rounded-xl hover:from-cyan-500 hover:to-blue-600 transition-all duration-300 focus:outline-none focus:ring-4 focus:ring-cyan-400/50 group-hover:shadow-lg group-hover:shadow-cyan-400/25"
+                        >
+                          Learn More
+                          <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform duration-300" aria-hidden="true" />
+                        </Link>
+                      </motion.div>
+                    </Suspense>
                   ))}
                 </motion.div>
 
@@ -344,7 +378,7 @@ const Homepage2040: React.FC = () => {
                     className="inline-flex items-center justify-center px-8 py-4 border-2 border-cyan-400 text-cyan-400 font-semibold rounded-2xl hover:bg-cyan-400 hover:text-black transition-all duration-300 focus:outline-none focus:ring-4 focus:ring-cyan-400/50 text-lg"
                   >
                     View All 2040 Services
-                    <ArrowRight className="w-6 h-6 ml-3" />
+                    <ArrowRight className="w-6 h-6 ml-3" aria-hidden="true" />
                   </Link>
                 </motion.div>
               </div>
@@ -411,10 +445,10 @@ const Homepage2040: React.FC = () => {
                     <motion.div
                       key={index}
                       variants={fadeInUp}
-                      className="group text-center p-6 hover:bg-gray-800/50 rounded-2xl transition-all duration-300"
+                      className="text-center group"
                     >
-                      <div className={`w-20 h-20 bg-gradient-to-r ${getColorClasses(index)} rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300`}>
-                        <feature.icon className="w-10 h-10 text-white" />
+                      <div className="w-20 h-20 bg-gradient-to-r from-cyan-400 to-blue-500 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
+                        <feature.icon className="w-10 h-10 text-white" aria-hidden="true" />
                       </div>
                       <h3 className="text-xl font-semibold text-white mb-4 group-hover:text-cyan-400 transition-colors duration-300">
                         {feature.title}
@@ -428,56 +462,24 @@ const Homepage2040: React.FC = () => {
               </div>
             </section>
 
-            {/* CTA Section */}
-            <section id="cta" className="py-20 px-4 bg-gradient-to-r from-gray-900 to-blue-900/20">
-              <div className="max-w-4xl mx-auto text-center">
-                <motion.div
-                  variants={fadeInUp}
-                  initial="initial"
-                  whileInView="animate"
-                  viewport={{ once: true }}
-                  className="space-y-8"
-                >
-                  <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-                    Ready to Transform Your <span className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">Business?</span>
-                  </h2>
-                  <p className="text-xl text-gray-300 max-w-2xl mx-auto leading-relaxed">
-                    Join thousands of businesses already leveraging our innovative 2040 technology solutions. 
-                    Start your digital transformation journey today.
-                  </p>
-                  
-                  {/* Contact Information */}
-                  <div className="flex flex-col sm:flex-row items-center justify-center gap-6 mb-8">
-                    <div className="flex items-center space-x-3 text-cyan-400">
-                      <Phone className="w-5 h-5" />
-                      <span>+1 302 464 0950</span>
-                    </div>
-                    <div className="flex items-center space-x-3 text-blue-400">
-                      <Mail className="w-5 h-5" />
-                      <span>kleber@ziontechgroup.com</span>
-                    </div>
+            {/* Stats Section - Lazy Loaded */}
+            <Suspense fallback={
+              <section className="py-20 px-4 bg-gray-900/50">
+                <div className="max-w-7xl mx-auto">
+                  <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+                    {[...Array(4)].map((_, i) => (
+                      <div key={i} className="text-center animate-pulse">
+                        <div className="h-12 bg-gray-700 rounded mb-4"></div>
+                        <div className="h-6 bg-gray-700 rounded mb-2"></div>
+                        <div className="h-4 bg-gray-700 rounded w-3/4 mx-auto"></div>
+                      </div>
+                    ))}
                   </div>
-
-                  <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
-                    <button 
-                      className="px-10 py-5 bg-gradient-to-r from-cyan-400 to-blue-500 text-white font-semibold rounded-2xl hover:from-cyan-500 hover:to-blue-600 transition-all duration-300 focus:outline-none focus:ring-4 focus:ring-cyan-400/50 text-lg shadow-2xl hover:shadow-cyan-400/25"
-                      onClick={() => window.location.href = '/contact'}
-                    >
-                      Get Started Today
-                      <ArrowRight className="w-6 h-6 ml-3 inline" />
-                    </button>
-                    
-                    <button 
-                      className="px-10 py-5 border-2 border-cyan-400 text-cyan-400 font-semibold rounded-2xl hover:bg-cyan-400 hover:text-black transition-all duration-300 focus:outline-none focus:ring-4 focus:ring-cyan-400/50 text-lg"
-                      onClick={() => window.location.href = '/innovative-2040-futuristic-services-showcase'}
-                    >
-                      Explore Services
-                      <Search className="w-6 h-6 ml-3 inline" />
-                    </button>
-                  </div>
-                </motion.div>
-              </div>
-            </section>
+                </div>
+              </section>
+            }>
+              <StatsSection />
+            </Suspense>
           </main>
         )}
       </AnimatePresence>
