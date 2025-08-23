@@ -354,3 +354,18 @@ tsconfig.tsbuildinfo[0m
 2025-08-23 23:05:30 - [0;32m✅ Resolved conflicts in pages/sitemap.tsx[0m
 2025-08-23 23:05:30 - [0;34m🔧 Resolving conflicts in tsconfig.tsbuildinfo for branch cursor/bc-51f07a8d-4b14-47f7-af65-e76188b38c99-87a6...[0m
 2025-08-23 23:05:30 - [0;34mℹ️  No conflicts found in tsconfig.tsbuildinfo[0m
+2025-08-23 23:05:31 - [0;32m✅ Successfully resolved conflicts and merged cursor/bc-51f07a8d-4b14-47f7-af65-e76188b38c99-87a6[0m
+2025-08-23 23:05:31 - [0;32m✅ PR #3895 (cursor/bc-51f07a8d-4b14-47f7-af65-e76188b38c99-87a6) processed successfully[0m
+2025-08-23 23:05:31 - [0;34m🔒 Closing PR #3895 via GitHub API...[0m
+2025-08-23 23:05:31 - [0;34m📊 Progress: 4/100, ✅ 4, ❌ 0[0m
+2025-08-23 23:05:33 - [0;34m📋 Processing PR #3894: Build and fix errors (branch: cursor/build-and-fix-errors-0ebf)[0m
+2025-08-23 23:05:33 - [0;34m🔄 Attempting to merge cursor/build-and-fix-errors-0ebf...[0m
+2025-08-23 23:05:34 - [1;33m⚠️  Merge conflicts detected in cursor/build-and-fix-errors-0ebf (attempt 1/3), resolving...[0m
+2025-08-23 23:05:34 - [0;34m📋 Conflicted files: netlify/functions/functions-manifest.json
+pages/sitemap.tsx[0m
+2025-08-23 23:05:34 - [0;34m🔧 Resolving conflicts in netlify/functions/functions-manifest.json for branch cursor/build-and-fix-errors-0ebf...[0m
+2025-08-23 23:05:34 - [1;33m⚠️  Found conflicts in netlify/functions/functions-manifest.json, resolving...[0m
+2025-08-23 23:05:34 - [0;34m📝 Regular file, removing conflict markers...[0m
+2025-08-23 23:05:34 - [0;32m✅ Resolved conflicts in netlify/functions/functions-manifest.json[0m
+2025-08-23 23:05:34 - [0;34m🔧 Resolving conflicts in pages/sitemap.tsx for branch cursor/build-and-fix-errors-0ebf...[0m
+2025-08-23 23:05:34 - [0;34mℹ️  No conflicts found in pages/sitemap.tsx[0m

@@ -1,5 +1,9 @@
 {
+<<<<<<< HEAD
+  "generatedAt": "2025-08-15T20:36:04.218Z",
+=======
   "generatedAt": "2025-08-15T15:47:28.566Z",
+>>>>>>> origin/cursor/build-and-fix-errors-0ebf
   "functions": [
     "a11y-alt-text-runner",
     "adaptive-orchestrator",
