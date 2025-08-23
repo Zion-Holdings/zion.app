@@ -1,0 +1,705 @@
+import React, { useEffect, useState } from 'react';
+
+const EnhancedAccessibilityEnhancer: React.FC = () => {
+  const [isHighContrast, setIsHighContrast] = useState(false);
+<<<<<<< HEAD
+  const [isLargeText, setIsLargeText] = useState(false);
+  const [isReducedMotion, setIsReducedMotion] = useState(false);
+
+    // Apply high contrast
+    if (updatedSettings.highContrast) {
+      document.documentElement.classList.add('high-contrast');
+    } else {
+      document.documentElement.classList.remove('high-contrast');
+    }
+
+    // Apply large text
+    if (updatedSettings.largeText) {
+      document.documentElement.classList.add('large-text');
+    } else {
+      document.documentElement.classList.remove('large-text');
+    }
+
+    // Apply reduced motion
+    if (updatedSettings.reducedMotion) {
+      document.documentElement.classList.add('reduced-motion');
+    } else {
+      document.documentElement.classList.remove('reduced-motion');
+    }
+
+    // Apply color blindness simulation
+    document.documentElement.classList.remove('protanopia', 'deuteranopia', 'tritanopia');
+    if (updatedSettings.colorBlindness !== 'none') {
+      document.documentElement.classList.add(updatedSettings.colorBlindness);
+    }
+
+    // Apply font size
+    document.documentElement.classList.remove('text-small', 'text-medium', 'text-large', 'text-extra-large');
+    document.documentElement.classList.add(`text-${updatedSettings.fontSize}`);
+
+    // Apply line spacing
+    document.documentElement.classList.remove('line-tight', 'line-normal', 'line-loose');
+    document.documentElement.classList.add(`line-${updatedSettings.lineSpacing}`);
+
+    // Apply cursor size
+    document.documentElement.classList.remove('cursor-small', 'cursor-medium', 'cursor-large');
+    document.documentElement.classList.add(`cursor-${updatedSettings.cursorSize}`);
+
+    // Store in localStorage
+    localStorage.setItem('accessibility-settings', JSON.stringify(updatedSettings));
+  }, [settings]);
+
+  // Load saved settings
+  useEffect(() => {
+    // Check user preferences
+    const mediaQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
+    setIsReducedMotion(mediaQuery.matches);
+
+    // Check for high contrast preference
+    const highContrastQuery = window.matchMedia('(prefers-contrast: high)');
+    setIsHighContrast(highContrastQuery.matches);
+
+    // Check for large text preference
+    const largeTextQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
+    setIsLargeText(largeTextQuery.matches);
+
+    // Add focus visible styles
+    const handleFocusVisible = (e: KeyboardEvent) => {
+      if (e.key === 'Tab') {
+        document.body.classList.add('focus-visible');
+      }
+    };
+
+    const handleMouseDown = () => {
+      document.body.classList.remove('focus-visible');
+    };
+
+    document.addEventListener('keydown', handleFocusVisible);
+    document.addEventListener('mousedown', handleMouseDown);
+
+    // Add skip link functionality
+    const skipLink = document.createElement('a');
+    skipLink.href = '#main-content';
+    skipLink.textContent = 'Skip to main content';
+    skipLink.className = 'skip-link';
+    skipLink.style.cssText = `
+      position: absolute;
+      top: -40px;
+      left: 6px;
+      background: #06b6d4;
+      color: white;
+      padding: 8px;
+      text-decoration: none;
+      border-radius: 4px;
+      z-index: 10000;
+      transition: top 0.3s;
+    `;
+    
+    document.body.appendChild(skipLink);
+
+    // Show skip link on focus
+    skipLink.addEventListener('focus', () => {
+      skipLink.style.top = '6px';
+    });
+
+    skipLink.addEventListener('blur', () => {
+      skipLink.style.top = '-40px';
+    });
+
+    return () => {
+      document.removeEventListener('keydown', handleFocusVisible);
+      document.removeEventListener('mousedown', handleMouseDown);
+      document.body.removeChild(skipLink);
+    };
+  }, []);
+
+  useEffect(() => {
+    // Apply accessibility preferences
+    if (isHighContrast) {
+      document.documentElement.classList.add('high-contrast');
+    } else {
+      document.documentElement.classList.remove('high-contrast');
+    }
+
+    if (isLargeText) {
+      document.documentElement.classList.add('large-text');
+    } else {
+      document.documentElement.classList.remove('large-text');
+    }
+
+    if (isReducedMotion) {
+      document.documentElement.classList.add('reduced-motion');
+    } else {
+      document.documentElement.classList.remove('reduced-motion');
+    }
+  }, [isHighContrast, isLargeText, isReducedMotion]);
+
+  // Add CSS for accessibility enhancements
+  useEffect(() => {
+    const style = document.createElement('style');
+    style.textContent = `
+      /* Focus visible styles */
+      .focus-visible *:focus {
+        outline: 3px solid #06b6d4 !important;
+        outline-offset: 2px !important;
+      }
+
+      /* High contrast mode */
+      .high-contrast {
+        --text-primary: #ffffff !important;
+        --text-secondary: #e5e7eb !important;
+        --bg-primary: #000000 !important;
+        --bg-secondary: #1f2937 !important;
+        --accent: #ffff00 !important;
+      }
+
+      /* Large text mode */
+      .large-text {
+        font-size: 1.2em !important;
+      }
+
+      /* Reduced motion */
+      .reduced-motion *,
+      .reduced-motion *::before,
+      .reduced-motion *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+      }
+
+      /* Skip link */
+      .skip-link:focus {
+        top: 6px !important;
+      }
+
+      /* Better focus indicators for interactive elements */
+      button:focus,
+      a:focus,
+      input:focus,
+      select:focus,
+      textarea:focus {
+        outline: 2px solid #06b6d4 !important;
+        outline-offset: 2px !important;
+      }
+
+      /* Improved button accessibility */
+      button[aria-pressed="true"] {
+        background-color: #06b6d4 !important;
+        color: white !important;
+      }
+
+      /* Better form accessibility */
+      input:invalid {
+        border-color: #ef4444 !important;
+      }
+
+      input:valid {
+        border-color: #10b981 !important;
+      }
+
+      /* Screen reader only text */
+      .sr-only {
+        position: absolute !important;
+        width: 1px !important;
+        height: 1px !important;
+        padding: 0 !important;
+        margin: -1px !important;
+        overflow: hidden !important;
+        clip: rect(0, 0, 0, 0) !important;
+        white-space: nowrap !important;
+        border: 0 !important;
+      }
+
+      /* Better color contrast for links */
+      a {
+        text-decoration: underline;
+        text-underline-offset: 2px;
+      }
+
+      a:hover {
+        text-decoration-thickness: 3px;
+      }
+
+      /* Improved table accessibility */
+      table {
+        border-collapse: collapse;
+        width: 100%;
+      }
+
+      th, td {
+        border: 1px solid #374151;
+        padding: 8px;
+        text-align: left;
+      }
+
+      th {
+        background-color: #1f2937;
+        font-weight: bold;
+      }
+
+      /* Better list accessibility */
+      ul, ol {
+        padding-left: 2em;
+      }
+
+      li {
+        margin-bottom: 0.5em;
+      }
+
+      /* Improved heading hierarchy */
+      h1, h2, h3, h4, h5, h6 {
+        margin-top: 1.5em;
+        margin-bottom: 0.5em;
+        line-height: 1.2;
+      }
+
+      /* Better spacing for readability */
+      p {
+        margin-bottom: 1em;
+        line-height: 1.6;
+      }
+
+      /* Improved button and link hover states */
+      button:hover,
+      a:hover {
+        transform: translateY(-1px);
+        transition: transform 0.2s ease;
+      }
+
+      /* Better form field spacing */
+      .form-group {
+        margin-bottom: 1.5em;
+      }
+
+      .form-group label {
+        display: block;
+        margin-bottom: 0.5em;
+        font-weight: 600;
+      }
+
+      .form-group input,
+      .form-group select,
+      .form-group textarea {
+        width: 100%;
+        padding: 0.75em;
+        border: 2px solid #374151;
+        border-radius: 0.5em;
+        background-color: #1f2937;
+        color: white;
+        font-size: 1em;
+      }
+
+      .form-group input:focus,
+      .form-group select:focus,
+      .form-group textarea:focus {
+        border-color: #06b6d4;
+        box-shadow: 0 0 0 3px rgba(6, 182, 212, 0.1);
+      }
+
+      /* Error and success states */
+      .error {
+        color: #ef4444;
+        font-size: 0.875em;
+        margin-top: 0.25em;
+      }
+
+      .success {
+        color: #10b981;
+        font-size: 0.875em;
+        margin-top: 0.25em;
+      }
+
+      /* Loading states */
+      .loading {
+        opacity: 0.6;
+        pointer-events: none;
+      }
+
+      .loading::after {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 20px;
+        height: 20px;
+        margin: -10px 0 0 -10px;
+        border: 2px solid #06b6d4;
+        border-top-color: transparent;
+        border-radius: 50%;
+        animation: spin 1s linear infinite;
+      }
+
+      @keyframes spin {
+        to {
+          transform: rotate(360deg);
+        }
+      }
+
+      /* Responsive accessibility */
+      @media (max-width: 768px) {
+        .large-text {
+          font-size: 1.1em !important;
+        }
+        
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+          font-size: 16px; /* Prevents zoom on iOS */
+        }
+      }
+
+      /* Print styles for accessibility */
+      @media print {
+        .skip-link,
+        button,
+        .no-print {
+          display: none !important;
+        }
+        
+        a[href]:after {
+          content: " (" attr(href) ")";
+        }
+        
+        * {
+          background: white !important;
+          color: black !important;
+        }
+      }
+    `;
+    
+    document.head.appendChild(style);
+
+    return () => {
+      document.head.removeChild(style);
+    };
+  }, []);
+
+  // Add ARIA live regions for dynamic content
+  useEffect(() => {
+    const addLiveRegion = (id: string, type: 'polite' | 'assertive' = 'polite') => {
+      if (!document.getElementById(id)) {
+        const liveRegion = document.createElement('div');
+        liveRegion.id = id;
+        liveRegion.setAttribute('aria-live', type);
+        liveRegion.setAttribute('aria-atomic', 'true');
+        liveRegion.className = 'sr-only';
+        document.body.appendChild(liveRegion);
+      }
+    };
+
+    // Add common live regions
+    addLiveRegion('status-messages', 'polite');
+    addLiveRegion('error-messages', 'assertive');
+    addLiveRegion('loading-status', 'polite');
+  }, []);
+
+  // Add keyboard navigation enhancements
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      // Escape key to close modals/dropdowns
+      if (e.key === 'Escape') {
+        const activeElement = document.activeElement as HTMLElement;
+        if (activeElement && activeElement.blur) {
+          activeElement.blur();
+        }
+      }
+
+      // Enter key for buttons and links
+      if (e.key === 'Enter' && e.target instanceof HTMLElement) {
+        const target = e.target;
+        if (target.tagName === 'BUTTON' || target.tagName === 'A') {
+          e.preventDefault();
+          target.click();
+        }
+      }
+
+      // Space key for buttons
+      if (e.key === ' ' && e.target instanceof HTMLElement) {
+        const target = e.target;
+        if (target.tagName === 'BUTTON') {
+          e.preventDefault();
+          target.click();
+=======
+  const [isReducedMotion, setIsReducedMotion] = useState(false);
+  const [fontSize, setFontSize] = useState(16);
+  const [isKeyboardMode, setIsKeyboardMode] = useState(false);
+
+  useEffect(() => {
+    // Check for user preferences
+    const mediaQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
+    setIsReducedMotion(mediaQuery.matches);
+
+    // Check for high contrast preference
+    const highContrastQuery = window.matchMedia('(prefers-contrast: high)');
+    setIsHighContrast(highContrastQuery.matches);
+
+    // Listen for preference changes
+    const handleMotionChange = (e: MediaQueryListEvent) => setIsReducedMotion(e.matches);
+    const handleContrastChange = (e: MediaQueryListEvent) => setIsHighContrast(e.matches);
+
+    mediaQuery.addEventListener('change', handleMotionChange);
+    highContrastQuery.addEventListener('change', handleContrastChange);
+
+    // Keyboard navigation detection
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Tab') {
+        setIsKeyboardMode(true);
+        document.body.classList.add('keyboard-navigation');
+      }
+    };
+
+    const handleMouseDown = () => {
+      setIsKeyboardMode(false);
+      document.body.classList.remove('keyboard-navigation');
+    };
+
+    document.addEventListener('keydown', handleKeyDown);
+    document.addEventListener('mousedown', handleMouseDown);
+
+    // Apply accessibility features
+    applyAccessibilityFeatures();
+
+    return () => {
+      mediaQuery.removeEventListener('change', handleMotionChange);
+      highContrastQuery.removeEventListener('change', handleContrastChange);
+      document.removeEventListener('keydown', handleKeyDown);
+      document.removeEventListener('mousedown', handleMouseDown);
+    };
+  }, []);
+
+  useEffect(() => {
+    applyAccessibilityFeatures();
+  }, [isHighContrast, isReducedMotion, fontSize]);
+
+  const applyAccessibilityFeatures = () => {
+    const root = document.documentElement;
+    
+    // Apply high contrast mode
+    if (isHighContrast) {
+      root.style.setProperty('--text-primary', '#ffffff');
+      root.style.setProperty('--text-secondary', '#e5e7eb');
+      root.style.setProperty('--bg-primary', '#000000');
+      root.style.setProperty('--bg-secondary', '#1f2937');
+      root.style.setProperty('--accent-color', '#ffff00');
+    } else {
+      root.style.setProperty('--text-primary', '#ffffff');
+      root.style.setProperty('--text-secondary', '#9ca3af');
+      root.style.setProperty('--bg-primary', '#000000');
+      root.style.setProperty('--bg-secondary', '#111827');
+      root.style.setProperty('--accent-color', '#06b6d4');
+    }
+
+    // Apply reduced motion
+    if (isReducedMotion) {
+      root.style.setProperty('--transition-duration', '0.1s');
+      root.style.setProperty('--animation-duration', '0.1s');
+    } else {
+      root.style.setProperty('--transition-duration', '0.3s');
+      root.style.setProperty('--animation-duration', '0.6s');
+    }
+
+    // Apply font size
+    root.style.setProperty('--font-size-base', `${fontSize}px`);
+    root.style.setProperty('--font-size-lg', `${fontSize * 1.125}px`);
+    root.style.setProperty('--font-size-xl', `${fontSize * 1.25}px`);
+    root.style.setProperty('--font-size-2xl', `${fontSize * 1.5}px`);
+    root.style.setProperty('--font-size-3xl', `${fontSize * 1.875}px`);
+    root.style.setProperty('--font-size-4xl', `${fontSize * 2.25}px`);
+  };
+
+  const increaseFontSize = () => {
+    setFontSize(prev => Math.min(prev + 2, 24));
+  };
+
+  const decreaseFontSize = () => {
+    setFontSize(prev => Math.max(prev - 2, 12));
+  };
+
+  const resetFontSize = () => {
+    setFontSize(16);
+  };
+
+  const toggleHighContrast = () => {
+    setIsHighContrast(prev => !prev);
+  };
+
+  const toggleReducedMotion = () => {
+    setIsReducedMotion(prev => !prev);
+  };
+
+  // Skip to content functionality
+  useEffect(() => {
+    const skipLink = document.getElementById('skip-to-content');
+    if (skipLink) {
+      skipLink.addEventListener('click', (e) => {
+        e.preventDefault();
+        const mainContent = document.querySelector('main');
+        if (mainContent) {
+          mainContent.focus();
+          mainContent.scrollIntoView({ behavior: 'smooth' });
+        }
+      });
+    }
+  }, []);
+
+  return (
+    <>
+      {/* Skip to content link */}
+      <a
+        id="skip-to-content"
+        href="#main"
+        className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:bg-yellow-400 focus:text-black focus:px-4 focus:py-2 focus:rounded focus:font-bold"
+        tabIndex={0}
+      >
+        Skip to main content
+      </a>
+
+      {/* Accessibility Controls */}
+      <div className="fixed top-4 right-4 z-50 bg-black/90 backdrop-blur-sm border border-cyan-500/50 rounded-lg p-4 text-white shadow-lg">
+        <h3 className="text-sm font-semibold mb-3 text-cyan-400">Accessibility</h3>
+        
+        <div className="space-y-3">
+          {/* Font Size Controls */}
+          <div className="flex items-center gap-2">
+            <button
+              onClick={decreaseFontSize}
+              className="w-8 h-8 bg-gray-700 hover:bg-gray-600 rounded text-sm font-bold transition-colors"
+              aria-label="Decrease font size"
+            >
+              A-
+            </button>
+            <button
+              onClick={resetFontSize}
+              className="w-8 h-8 bg-gray-700 hover:bg-gray-600 rounded text-xs transition-colors"
+              aria-label="Reset font size"
+            >
+              A
+            </button>
+            <button
+              onClick={increaseFontSize}
+              className="w-8 h-8 bg-gray-700 hover:bg-gray-600 rounded text-base font-bold transition-colors"
+              aria-label="Increase font size"
+            >
+              A+
+            </button>
+          </div>
+
+          {/* High Contrast Toggle */}
+          <button
+            onClick={toggleHighContrast}
+            className={`w-full px-3 py-2 rounded text-sm transition-colors ${
+              isHighContrast 
+                ? 'bg-yellow-600 hover:bg-yellow-700 text-black' 
+                : 'bg-gray-700 hover:bg-gray-600 text-white'
+            }`}
+            aria-label={`${isHighContrast ? 'Disable' : 'Enable'} high contrast mode`}
+          >
+            {isHighContrast ? 'High Contrast: ON' : 'High Contrast: OFF'}
+          </button>
+
+          {/* Reduced Motion Toggle */}
+          <button
+            onClick={toggleReducedMotion}
+            className={`w-full px-3 py-2 rounded text-sm transition-colors ${
+              isReducedMotion 
+                ? 'bg-blue-600 hover:bg-blue-700 text-white' 
+                : 'bg-gray-700 hover:bg-gray-600 text-white'
+            }`}
+            aria-label={`${isReducedMotion ? 'Disable' : 'Enable'} reduced motion`}
+          >
+            {isReducedMotion ? 'Reduced Motion: ON' : 'Reduced Motion: OFF'}
+          </button>
+        </div>
+
+        {/* Keyboard Navigation Indicator */}
+        {isKeyboardMode && (
+          <div className="mt-3 p-2 bg-green-600/20 border border-green-500/50 rounded text-xs text-green-400">
+            ⌨️ Keyboard navigation active
+          </div>
+        )}
+      </div>
+
+      {/* Focus indicator styles */}
+      <style jsx global>{`
+        .keyboard-navigation *:focus {
+          outline: 3px solid #ffff00 !important;
+          outline-offset: 2px !important;
+        }
+
+        .sr-only {
+          position: absolute;
+          width: 1px;
+          height: 1px;
+          padding: 0;
+          margin: -1px;
+          overflow: hidden;
+          clip: rect(0, 0, 0, 0);
+          white-space: nowrap;
+          border: 0;
+        }
+
+        .sr-only:focus {
+          position: static;
+          width: auto;
+          height: auto;
+          padding: 0.5rem 1rem;
+          margin: 0;
+          overflow: visible;
+          clip: auto;
+          white-space: normal;
+          border: 2px solid #ffff00;
+          background: #000000;
+          color: #ffff00;
+          z-index: 9999;
+        }
+
+        /* High contrast mode styles */
+        [data-high-contrast="true"] {
+          --text-primary: #ffffff !important;
+          --text-secondary: #e5e7eb !important;
+          --bg-primary: #000000 !important;
+          --bg-secondary: #1f2937 !important;
+          --accent-color: #ffff00 !important;
+        }
+
+        /* Reduced motion styles */
+        [data-reduced-motion="true"] * {
+          animation-duration: 0.1s !important;
+          transition-duration: 0.1s !important;
+        }
+
+        /* Focus visible styles */
+        *:focus-visible {
+          outline: 3px solid var(--accent-color, #06b6d4) !important;
+          outline-offset: 2px !important;
+        }
+
+        /* Skip link styles */
+        #skip-to-content:focus {
+          position: absolute;
+          top: 1rem;
+          left: 1rem;
+          z-index: 9999;
+          background: #ffff00;
+          color: #000000;
+          padding: 0.5rem 1rem;
+          border-radius: 0.25rem;
+          font-weight: bold;
+          text-decoration: none;
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-5d49
+        }
+      }
+    };
+
+    document.addEventListener('keydown', handleKeyDown);
+
+    return () => {
+      document.removeEventListener('keydown', handleKeyDown);
+    };
+  }, []);
+
+  return null; // This component doesn't render anything visible
+};
+
+export default EnhancedAccessibilityEnhancer;
