@@ -379,8 +379,13 @@
     "postcss": "^8.4.32",
     "react": "^19.1.1",
     "react-datepicker": "^8.4.0",
+<<<<<<< HEAD
+    "react-dom": "^19.1.1",
+    "tailwind-merge": "^3.3.1",
+=======
     "react-dom": "^17.0.2",
     "resend": "^4.0.0",
+>>>>>>> origin/cursor/automate-user-retention-emails-with-zion-ai-bea1
     "uuid": "^11.1.0"
   },
   "devDependencies": {
@@ -407,7 +412,11 @@
     "sharp": "^0.34.3",
     "tailwindcss": "^4.1.12",
     "ts-node": "^10.9.2",
+<<<<<<< HEAD
+    "typescript": "^5.0.0"
+=======
     "typescript": "^5.9.2"
+>>>>>>> origin/cursor/automate-user-retention-emails-with-zion-ai-bea1
   },
   "lint-staged": {
     "**/*.{js,jsx,ts,tsx}": [
