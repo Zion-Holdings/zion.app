@@ -207,3 +207,7 @@
 2025-08-23 22:57:47 - Resolving conflicts in src/pages/SimpleSignup.tsx for branch 5smo5s-codex/check-logs-and-fix-errors
 2025-08-23 22:57:47 - Resolving conflicts in tsconfig.tsbuildinfo for branch 5smo5s-codex/check-logs-and-fix-errors
 2025-08-23 22:57:47 - Resolving conflicts in types/supabase-ssr.d.ts for branch 5smo5s-codex/check-logs-and-fix-errors
+2025-08-23 22:57:49 - Merge conflicts detected in 5usi8s-codex/debug-persistent-login-failure
+2025-08-23 22:57:49 - Resolving conflicts in pages/talent/[id].tsx for branch 5usi8s-codex/debug-persistent-login-failure
+2025-08-23 22:57:49 - Resolving conflicts in src/lib/axios.ts for branch 5usi8s-codex/debug-persistent-login-failure
+2025-08-23 22:57:49 - Resolving conflicts in src/services/authService.ts for branch 5usi8s-codex/debug-persistent-login-failure

@@ -1,6 +1,17 @@
 import axios from 'axios';
 import { safeStorage } from '@/utils/safeStorage';
 
+<<<<<<< HEAD
+// Create and configure axios instance
+const createAxiosInstance = (): any => {
+  const instance = axios.create({
+    baseURL: process.env.NEXT_PUBLIC_API_URL || '/api',
+    timeout: 15000,
+    headers: {
+      'Content-Type': 'application/json',
+    },
+  });
+=======
 type FulfilledFn = (value: any) => any | Promise<any>;
 type RejectedFn = (error: any) => any | Promise<any>;
 
@@ -47,6 +58,7 @@ export function create(config: { baseURL?: string; withCredentials?: boolean } =
       return request(baseURL + url, 'POST', opts);
     },
   };
+>>>>>>> origin/5usi8s-codex/debug-persistent-login-failure
 
   // Request interceptor
   instance.interceptors.request.use(

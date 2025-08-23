@@ -107,6 +107,10 @@ const apiClient = axios.create({
   withCredentials: true,
 });
 
+export function setAuthToken(token: string) {
+  (apiClient.defaults.headers.common as any).Authorization = `Bearer ${token}`;
+}
+
 apiClient.interceptors.response.use(
   (response: AxiosResponse) => response,
   async (error: unknown) => {
