@@ -1,52 +1,59 @@
 /* eslint-env serviceworker */
 /* global self, caches */
 
-const STATIC_CACHE = 'zion-static-v1';
-const DYNAMIC_CACHE = 'zion-dynamic-v1';
+const CACHE_NAME = 'zion-tech-group-v1.0.0';
+const STATIC_CACHE = 'zion-static-v1.0.0';
+const DYNAMIC_CACHE = 'zion-dynamic-v1.0.0';
 
-// Routes that should be cached
-const STATIC_ROUTES = [
+// Files to cache immediately
+const STATIC_FILES = [
   '/',
   '/offline.html',
-  '/manifest.json'
+  '/manifest.json',
+  '/icons/icon-192x192.png',
+  '/icons/icon-512x512.png',
+  '/css/main.css',
+  '/js/main.js'
 ];
 
-// API routes that should be cached
-const API_ROUTES = [
-  '/api/contact',
-  '/api/services'
-];
-
-// Install event - cache static assets
+// Install event - cache static files
 self.addEventListener('install', (event) => {
+  console.log('Service Worker installing...');
+  
   event.waitUntil(
     caches.open(STATIC_CACHE)
       .then((cache) => {
-        return cache.addAll(STATIC_ROUTES);
+        console.log('Caching static files');
+        return cache.addAll(STATIC_FILES);
       })
       .then(() => {
+        console.log('Static files cached successfully');
         return self.skipWaiting();
       })
-      .catch(() => {
-        // Handle caching errors silently
+      .catch((error) => {
+        console.error('Error caching static files:', error);
       })
   );
 });
 
 // Activate event - clean up old caches
 self.addEventListener('activate', (event) => {
+  console.log('Service Worker activating...');
+  
   event.waitUntil(
     caches.keys()
       .then((cacheNames) => {
         return Promise.all(
           cacheNames.map((cacheName) => {
             if (cacheName !== STATIC_CACHE && cacheName !== DYNAMIC_CACHE) {
+              console.log('Deleting old cache:', cacheName);
               return caches.delete(cacheName);
             }
           })
         );
       })
       .then(() => {
+        console.log('Service Worker activated');
         return self.clients.claim();
       })
   );
@@ -56,84 +63,134 @@ self.addEventListener('activate', (event) => {
 self.addEventListener('fetch', (event) => {
   const { request } = event;
   const url = new URL(request.url);
-
+  
   // Skip non-GET requests
   if (request.method !== 'GET') {
     return;
   }
-
+  
+  // Skip chrome-extension and other non-http requests
+  if (!url.protocol.startsWith('http')) {
+    return;
+  }
+  
   // Handle different types of requests
-  if (STATIC_ROUTES.includes(url.pathname)) {
-    // Static routes - cache first
-    event.respondWith(
-      caches.match(request)
-        .then((response) => {
-          return response || fetch(request);
-        })
-        .catch(() => {
-          // Return offline page for navigation requests
-          if (request.mode === 'navigate') {
-            return caches.match('/offline.html');
-          }
-        })
-    );
-  } else if (API_ROUTES.some(route => url.pathname.startsWith(route))) {
-    // API routes - network first, then cache
+  if (request.destination === 'document') {
+    // HTML pages - try network first, fallback to cache
     event.respondWith(
       fetch(request)
         .then((response) => {
           // Clone the response before caching
           const responseClone = response.clone();
-          caches.open(DYNAMIC_CACHE)
-            .then((cache) => {
-              cache.put(request, responseClone);
-            });
+          
+          // Cache successful responses
+          if (response.status === 200) {
+            caches.open(DYNAMIC_CACHE)
+              .then((cache) => {
+                cache.put(request, responseClone);
+              });
+          }
+          
           return response;
         })
         .catch(() => {
-          // Return cached response if available
-          return caches.match(request);
+          // Network failed, try cache
+          return caches.match(request)
+            .then((cachedResponse) => {
+              if (cachedResponse) {
+                return cachedResponse;
+              }
+              
+              // If no cached version, return offline page
+              return caches.match('/offline.html');
+            });
         })
     );
-  } else if (request.destination === 'image' || request.destination === 'style' || request.destination === 'script') {
-    // Static assets - cache first
+  } else if (request.destination === 'image') {
+    // Images - cache first, then network
     event.respondWith(
       caches.match(request)
-        .then((response) => {
-          return response || fetch(request)
-            .then((fetchResponse) => {
-              // Cache the fetched response
-              const responseClone = fetchResponse.clone();
-              caches.open(DYNAMIC_CACHE)
-                .then((cache) => {
-                  cache.put(request, responseClone);
-                });
-              return fetchResponse;
+        .then((cachedResponse) => {
+          if (cachedResponse) {
+            return cachedResponse;
+          }
+          
+          return fetch(request)
+            .then((response) => {
+              if (response.status === 200) {
+                const responseClone = response.clone();
+                caches.open(DYNAMIC_CACHE)
+                  .then((cache) => {
+                    cache.put(request, responseClone);
+                  });
+              }
+              return response;
+            });
+        })
+    );
+  } else if (request.destination === 'style' || request.destination === 'script') {
+    // CSS and JS - cache first, then network
+    event.respondWith(
+      caches.match(request)
+        .then((cachedResponse) => {
+          if (cachedResponse) {
+            return cachedResponse;
+          }
+          
+          return fetch(request)
+            .then((response) => {
+              if (response.status === 200) {
+                const responseClone = response.clone();
+                caches.open(DYNAMIC_CACHE)
+                  .then((cache) => {
+                    cache.put(request, responseClone);
+                  });
+              }
+              return response;
             });
         })
     );
   } else {
-    // Other requests - network first
-    event.respondWith(fetch(request));
+    // Other resources - network first, fallback to cache
+    event.respondWith(
+      fetch(request)
+        .then((response) => {
+          if (response.status === 200) {
+            const responseClone = response.clone();
+            caches.open(DYNAMIC_CACHE)
+              .then((cache) => {
+                cache.put(request, responseClone);
+              });
+          }
+          return response;
+        })
+        .catch(() => {
+          return caches.match(request);
+        })
+    );
   }
 });
 
-// Background sync for offline form submissions
+// Background sync for offline actions
 self.addEventListener('sync', (event) => {
+  console.log('Background sync triggered:', event.tag);
+  
   if (event.tag === 'background-sync') {
     event.waitUntil(
-      // Handle background sync logic here
-      Promise.resolve()
+      // Handle background sync tasks
+      handleBackgroundSync()
     );
   }
 });
 
 // Push notification handling
 self.addEventListener('push', (event) => {
+  console.log('Push notification received');
+  
   const options = {
-    body: event.data ? event.data.text() : 'New update available!',
-    icon: '/icon-192x192.png',
-    badge: '/icon-72x72.png',
+    body: event.data ? event.data.text() : 'New notification from Zion Tech Group',
+    icon: '/icons/icon-192x192.png',
+    badge: '/icons/icon-192x192.png',
     vibrate: [100, 50, 100],
     data: {
       dateOfArrival: Date.now(),
@@ -142,17 +199,17 @@ self.addEventListener('push', (event) => {
     actions: [
       {
         action: 'explore',
-        title: 'View',
-        icon: '/icon-192x192.png'
+        title: 'Explore',
+        icon: '/icons/icon-192x192.png'
       },
       {
         action: 'close',
         title: 'Close',
-        icon: '/icon-192x192.png'
+        icon: '/icons/icon-192x192.png'
       }
     ]
   };
-
+  
   event.waitUntil(
     self.registration.showNotification('Zion Tech Group', options)
   );
@@ -160,18 +217,81 @@ self.addEventListener('push', (event) => {
 
 // Notification click handling
 self.addEventListener('notificationclick', (event) => {
+  console.log('Notification clicked:', event.action);
+  
   event.notification.close();
-
+  
   if (event.action === 'explore') {
     event.waitUntil(
-      self.clients.openWindow('/')
+      clients.openWindow('/')
+    );
+  } else if (event.action === 'close') {
+    // Just close the notification
+  } else {
+    // Default action - open the app
+    event.waitUntil(
+      clients.openWindow('/')
     );
   }
 });
 
+// Handle background sync
+async function handleBackgroundSync() {
+  try {
+    // Get any pending sync data from IndexedDB
+    const pendingData = await getPendingSyncData();
+    
+    if (pendingData.length > 0) {
+      // Process pending sync items
+      for (const item of pendingData) {
+        await processSyncItem(item);
+      }
+      
+      // Clear processed items
+      await clearPendingSyncData();
+    }
+  } catch (error) {
+    console.error('Background sync error:', error);
+  }
+}
+
+// Helper functions for background sync
+async function getPendingSyncData() {
+  // This would typically use IndexedDB
+  // For now, return empty array
+  return [];
+}
+
+async function processSyncItem(item) {
+  // Process individual sync items
+  console.log('Processing sync item:', item);
+}
+
+async function clearPendingSyncData() {
+  // Clear processed sync data
+  console.log('Clearing pending sync data');
+}
+
 // Message handling for communication with main thread
 self.addEventListener('message', (event) => {
+  console.log('Service Worker received message:', event.data);
+  
   if (event.data && event.data.type === 'SKIP_WAITING') {
     self.skipWaiting();
   }
+  
+  if (event.data && event.data.type === 'GET_VERSION') {
+    event.ports[0].postMessage({ version: CACHE_NAME });
+  }
 });
+
+// Error handling
+self.addEventListener('error', (event) => {
+  console.error('Service Worker error:', event.error);
+});
+
+self.addEventListener('unhandledrejection', (event) => {
+  console.error('Service Worker unhandled rejection:', event.reason);
+});
+
+console.log('Service Worker loaded successfully');
