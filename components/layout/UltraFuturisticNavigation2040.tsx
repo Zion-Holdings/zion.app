@@ -66,38 +66,46 @@ const navigationItems: NavigationItem[] = [
     icon: <Home className="w-4 h-4" />,
     neonColor: 'shadow-cyan-400/50'
   },
-  {
-    label: 'Services',
-    href: '/services',
-    icon: <Briefcase className="w-4 h-4" />,
-    description: 'Explore our comprehensive technology solutions',
-    badge: 'New',
-    neonColor: 'shadow-blue-400/50',
-    children: [
-      {
-        label: 'AI & Machine Learning',
-        href: '/services?category=ai-ml',
-        icon: <Brain className="w-4 h-4" />,
-        description: 'Advanced AI solutions for enterprise',
-        featured: true,
-        neonColor: 'shadow-purple-400/50'
-      },
-      {
-        label: 'Quantum Computing',
-        href: '/services?category=quantum',
-        icon: <Atom className="w-4 h-4" />,
-        description: 'Next-generation quantum solutions',
-        featured: true,
-        neonColor: 'shadow-blue-400/50'
-      },
-      {
-        label: 'Space Technology',
-        href: '/services?category=space-tech',
-        icon: <Rocket className="w-4 h-4" />,
-        description: 'Innovative space tech applications',
-        featured: true,
-        neonColor: 'shadow-pink-400/50'
-      },
+        {
+        label: 'Services',
+        href: '/services',
+        icon: <Briefcase className="w-4 h-4" />,
+        description: 'Explore our comprehensive technology solutions',
+        badge: 'New',
+        neonColor: 'shadow-blue-400/50',
+        children: [
+          {
+            label: 'Comprehensive 2040 Showcase',
+            href: '/comprehensive-2040-services-showcase',
+            icon: <Star className="w-4 h-4" />,
+            description: 'All our revolutionary services in one place',
+            featured: true,
+            neonColor: 'shadow-yellow-400/50'
+          },
+          {
+            label: 'AI & Machine Learning',
+            href: '/services?category=ai-ml',
+            icon: <Brain className="w-4 h-4" />,
+            description: 'Advanced AI solutions for enterprise',
+            featured: true,
+            neonColor: 'shadow-purple-400/50'
+          },
+          {
+            label: 'Quantum Computing',
+            href: '/services?category=quantum',
+            icon: <Atom className="w-4 h-4" />,
+            description: 'Next-generation quantum solutions',
+            featured: true,
+            neonColor: 'shadow-blue-400/50'
+          },
+          {
+            label: 'Space Technology',
+            href: '/services?category=space-tech',
+            icon: <Rocket className="w-4 h-4" />,
+            description: 'Innovative space tech applications',
+            featured: true,
+            neonColor: 'shadow-pink-400/50'
+          },
       {
         label: 'Cybersecurity',
         href: '/services?category=cybersecurity',

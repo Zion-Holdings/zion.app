@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import SEO from '../components/SEO';
 import Layout from '../components/layout/Layout';
-import UltraFuturisticServiceCard2040 from '../components/ui/UltraFuturisticServiceCard2040';
+import SimpleServiceCard from '../components/ui/SimpleServiceCard';
 import { motion } from 'framer-motion';
 import { 
   Search, Star, TrendingUp, Award, Brain, Atom, Rocket,
@@ -217,10 +217,8 @@ const Innovative2025ServicesShowcase: React.FC = () => {
                     transition={{ duration: 0.6, delay: index * 0.1 }}
                     viewport={{ once: true }}
                   >
-                    <UltraFuturisticServiceCard2040
+                    <SimpleServiceCard
                       service={service}
-                      variant={getVariantForService(service)}
-                      showDetails={true}
                     />
                   </motion.div>
                 ))}

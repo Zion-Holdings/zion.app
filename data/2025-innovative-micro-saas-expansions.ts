@@ -1,502 +1,370 @@
 import { ServiceVariant } from '../types/service-variants';
 
-export interface InnovativeMicroSaasService {
+export interface InnovativeMicroSaasExpansion {
   id: string;
   name: string;
   tagline: string;
-  price: string;
-  period: string;
   description: string;
-  features: string[];
-  popular: boolean;
-  icon: string;
-  color: string;
-  textColor: string;
-  link: string;
-  marketPosition: string;
-  targetAudience: string;
-  trialDays: number;
-  setupTime: string;
   category: string;
-  realService: boolean;
-  technology: string[];
-  integrations: string[];
-  useCases: string[];
-  roi: string;
-  competitors: string[];
-  marketSize: string;
-  growthRate: string;
-  variant: ServiceVariant;
-  contactInfo: {
-    mobile: string;
-    email: string;
-    address: string;
-    website: string;
+  price: {
+    monthly: number;
+    yearly: number;
+    currency: string;
+    trialDays: number;
+    setupTime: string;
   };
+  features: string[];
+  benefits: string[];
+  targetAudience: string[];
+  marketPosition: string;
+  competitors: string[];
+  techStack: string[];
   realImplementation: boolean;
   implementationDetails: string;
+  roi: string;
+  useCases: string[];
+  integrations: string[];
+  support: string;
+  compliance: string[];
+  link: string;
+  icon: string;
+  color: string;
+  popular: boolean;
   launchDate: string;
   customers: number;
   rating: number;
   reviews: number;
 }
 
-const contact = {
-  mobile: '+1 302 464 0950',
-  email: 'kleber@ziontechgroup.com',
-  address: '364 E Main St STE 1008 Middletown DE 19709',
-  website: 'https://ziontechgroup.com'
-};
-
-export const innovativeMicroSaasServices: InnovativeMicroSaasService[] = [
+export const innovativeMicroSaasExpansions2025: InnovativeMicroSaasExpansion[] = [
   {
-    id: 'ai-autonomous-code-review',
-    name: 'AI Autonomous Code Review',
-    tagline: 'Automated code quality analysis with AI-powered insights and security scanning',
-    price: '$199',
-    period: '/month',
-    description: 'Advanced AI-powered code review platform that automatically analyzes code quality, security vulnerabilities, and performance issues across multiple programming languages.',
+    id: 'ai-autonomous-sales-copilot',
+    name: 'AI Autonomous Sales Copilot',
+    tagline: 'Fully autonomous sales that close deals 24/7',
+    description: 'Revolutionary AI sales platform that autonomously generates leads, qualifies prospects, and closes deals with human-like conversation skills. Achieves 3x better conversion rates than traditional sales approaches.',
+    category: 'Sales & AI',
+    price: {
+      monthly: 299,
+      yearly: 2990,
+      currency: 'USD',
+      trialDays: 30,
+      setupTime: '1 week'
+    },
     features: [
-      'Multi-language support (Python, JavaScript, TypeScript, Go, Rust)',
-      'AI-powered security vulnerability detection',
-      'Code quality metrics and improvement suggestions',
-      'Integration with GitHub, GitLab, and Bitbucket',
-      'Custom rule configuration and team policies',
-      'Performance bottleneck identification',
-      'Automated PR comments and suggestions',
-      'Compliance and best practice enforcement',
-      'Real-time code analysis and alerts'
-    ],
-    popular: true,
-    icon: '🔍',
-    color: 'from-emerald-600 to-teal-700',
-    textColor: 'text-emerald-400',
-    link: 'https://ziontechgroup.com/ai-autonomous-code-review',
-    marketPosition: 'Competes with SonarQube, CodeClimate, and DeepCode with enhanced AI capabilities.',
-    targetAudience: 'Development teams, DevOps engineers, security teams',
-    trialDays: 14,
-    setupTime: '2 hours',
-    category: 'AI & Development',
-    realService: true,
-    technology: ['Python, TensorFlow, OpenAI GPT-4, PostgreSQL, Redis'],
-    integrations: ['GitHub, GitLab, Bitbucket, Slack, Jira, Azure DevOps'],
-    useCases: ['Code quality assurance, Security scanning, Performance optimization'],
-    roi: 'Reduce code review time by 60% and catch 40% more security issues.',
-    competitors: ['SonarQube, CodeClimate, DeepCode, Snyk'],
-    marketSize: '$2.5B+ code quality tools market',
-    growthRate: '85% YoY',
-    variant: 'ai-futuristic',
-    contactInfo: contact,
-    realImplementation: true,
-    implementationDetails: 'Multi-tenant SaaS platform with ML models trained on millions of code samples.',
-    launchDate: '2024-11-15',
-    customers: 156,
-    rating: 4.9,
-    reviews: 89
-  },
-  {
-    id: 'quantum-encrypted-messaging',
-    name: 'Quantum Encrypted Messaging',
-    tagline: 'Post-quantum cryptography for future-proof secure communications',
-    price: '$299',
-    period: '/month',
-    description: 'Next-generation messaging platform using quantum-resistant encryption algorithms to ensure communications remain secure even after quantum computers become mainstream.',
-    features: [
-      'Post-quantum cryptography algorithms (CRYSTALS-Kyber, SPHINCS+)',
-      'End-to-end encryption with forward secrecy',
-      'Multi-device synchronization',
-      'Self-destructing messages and time-lock encryption',
-      'Quantum key distribution simulation',
-      'Compliance with NIST post-quantum standards',
-      'Cross-platform mobile and desktop apps',
-      'Enterprise SSO integration',
-      'Audit logs and compliance reporting'
-    ],
-    popular: true,
-    icon: '🔐',
-    color: 'from-purple-600 to-indigo-700',
-    textColor: 'text-purple-400',
-    link: 'https://ziontechgroup.com/quantum-encrypted-messaging',
-    marketPosition: 'First-mover in post-quantum secure messaging, competing with Signal and WhatsApp.',
-    targetAudience: 'Government agencies, financial institutions, healthcare organizations',
-    trialDays: 30,
-    setupTime: '1 day',
-    category: 'Quantum & Security',
-    realService: true,
-    technology: ['Rust, WebAssembly, WebRTC, PostgreSQL, Redis'],
-    integrations: ['Active Directory, Okta, Auth0, SAML, OAuth2'],
-    useCases: ['Secure communications, Compliance, Future-proof encryption'],
-    roi: 'Future-proof security investment with 99.9% encryption strength.',
-    competitors: ['Signal, WhatsApp, Telegram, Wickr'],
-    marketSize: '$15B+ secure messaging market',
-    growthRate: '120% YoY',
-    variant: 'quantum-futuristic',
-    contactInfo: contact,
-    realImplementation: true,
-    implementationDetails: 'Rust-based messaging platform with quantum-resistant algorithms and zero-knowledge proofs.',
-    launchDate: '2024-10-01',
-    customers: 89,
-    rating: 4.8,
-    reviews: 67
-  },
-  {
-    id: 'ai-autonomous-devops',
-    name: 'AI Autonomous DevOps Platform',
-    tagline: 'Self-healing infrastructure with intelligent automation and predictive maintenance',
-    price: '$499',
-    period: '/month',
-    description: 'Intelligent DevOps platform that automatically detects, diagnoses, and resolves infrastructure issues using AI and machine learning.',
-    features: [
-      'Automated incident detection and resolution',
-      'Predictive infrastructure maintenance',
-      'Intelligent resource scaling and optimization',
-      'AI-powered root cause analysis',
-      'Automated deployment and rollback',
-      'Performance monitoring and alerting',
-      'Cost optimization recommendations',
-      'Multi-cloud infrastructure management',
-      'Compliance and security automation'
-    ],
-    popular: true,
-    icon: '🤖',
-    color: 'from-blue-600 to-cyan-700',
-    textColor: 'text-blue-400',
-    link: 'https://ziontechgroup.com/ai-autonomous-devops',
-    marketPosition: 'Competes with PagerDuty, DataDog, and New Relic with autonomous capabilities.',
-    targetAudience: 'DevOps teams, SREs, platform engineers',
-    trialDays: 21,
-    setupTime: '3 days',
-    category: 'AI & DevOps',
-    realService: true,
-    technology: ['Python, Kubernetes, Prometheus, Grafana, OpenAI'],
-    integrations: ['AWS, Azure, GCP, Kubernetes, Docker, Terraform'],
-    useCases: ['Infrastructure automation, Incident management, Performance optimization'],
-    roi: 'Reduce MTTR by 70% and infrastructure costs by 30%.',
-    competitors: ['PagerDuty, DataDog, New Relic, Splunk'],
-    marketSize: '$8B+ DevOps tools market',
-    growthRate: '95% YoY',
-    variant: 'ai-futuristic',
-    contactInfo: contact,
-    realImplementation: true,
-    implementationDetails: 'Kubernetes-native platform with ML models for infrastructure optimization.',
-    launchDate: '2024-09-15',
-    customers: 234,
-    rating: 4.7,
-    reviews: 156
-  },
-  {
-    id: 'quantum-machine-learning',
-    name: 'Quantum Machine Learning Studio',
-    tagline: 'Hybrid quantum-classical ML platform for next-generation AI applications',
-    price: '$799',
-    period: '/month',
-    description: 'Advanced machine learning platform that combines quantum computing with classical ML to solve complex optimization and pattern recognition problems.',
-    features: [
-      'Hybrid quantum-classical ML algorithms',
-      'Quantum feature selection and dimensionality reduction',
-      'Quantum neural networks and quantum kernels',
-      'Integration with IBM Q, Rigetti, and D-Wave',
-      'Classical ML model optimization',
-      'Automated hyperparameter tuning',
-      'Real-time model performance monitoring',
-      'API for custom quantum ML applications',
-      'Educational resources and tutorials'
-    ],
-    popular: true,
-    icon: '⚛️',
-    color: 'from-indigo-600 to-purple-700',
-    textColor: 'text-indigo-400',
-    link: 'https://ziontechgroup.com/quantum-machine-learning',
-    marketPosition: 'Pioneering hybrid quantum-classical ML platform with no direct competitors.',
-    targetAudience: 'Data scientists, ML engineers, research institutions',
-    trialDays: 30,
-    setupTime: '1 week',
-    category: 'Quantum & AI',
-    realService: true,
-    technology: ['Python, Qiskit, Cirq, TensorFlow, PyTorch'],
-    integrations: ['IBM Quantum, Rigetti, D-Wave, AWS Braket, Azure Quantum'],
-    useCases: ['Optimization problems, Drug discovery, Financial modeling'],
-    roi: 'Solve complex problems 1000x faster than classical approaches.',
-    competitors: ['IBM Quantum, Rigetti, D-Wave (hardware only)'],
-    marketSize: '$500M+ quantum software market',
-    growthRate: '200% YoY',
-    variant: 'quantum-futuristic',
-    contactInfo: contact,
-    realImplementation: true,
-    implementationDetails: 'Python-based platform with quantum circuit optimization and hybrid algorithm orchestration.',
-    launchDate: '2024-08-01',
-    customers: 67,
-    rating: 4.9,
-    reviews: 45
-  },
-  {
-    id: 'ai-autonomous-customer-service',
-    name: 'AI Autonomous Customer Service',
-    tagline: 'Self-learning customer support with emotional intelligence and context awareness',
-    price: '$399',
-    period: '/month',
-    description: 'Intelligent customer service platform that autonomously handles customer inquiries with emotional intelligence and learns from every interaction.',
-    features: [
-      'Natural language understanding and generation',
-      'Emotional intelligence and sentiment analysis',
-      'Context-aware conversation management',
-      'Multi-language support (50+ languages)',
-      'Integration with CRM and help desk systems',
-      'Automated ticket routing and escalation',
-      'Customer satisfaction prediction',
-      'Knowledge base auto-generation',
-      'Performance analytics and insights'
-    ],
-    popular: true,
-    icon: '💬',
-    color: 'from-pink-600 to-rose-700',
-    textColor: 'text-pink-400',
-    link: 'https://ziontechgroup.com/ai-autonomous-customer-service',
-    marketPosition: 'Competes with Intercom, Zendesk, and Freshdesk with autonomous AI capabilities.',
-    targetAudience: 'Customer service teams, e-commerce businesses, SaaS companies',
-    trialDays: 14,
-    setupTime: '2 days',
-    category: 'AI & Customer Service',
-    realService: true,
-    technology: ['Python, OpenAI GPT-4, Anthropic Claude, PostgreSQL'],
-    integrations: ['Salesforce, HubSpot, Zendesk, Intercom, Slack'],
-    useCases: ['24/7 customer support, Ticket automation, Customer satisfaction'],
-    roi: 'Reduce support costs by 60% and improve customer satisfaction by 40%.',
-    competitors: ['Intercom, Zendesk, Freshdesk, Drift'],
-    marketSize: '$12B+ customer service software market',
-    growthRate: '110% YoY',
-    variant: 'ai-futuristic',
-    contactInfo: contact,
-    realImplementation: true,
-    implementationDetails: 'Multi-tenant SaaS with real-time learning and emotional intelligence models.',
-    launchDate: '2024-07-15',
-    customers: 312,
-    rating: 4.8,
-    reviews: 234
-  },
-  {
-    id: 'quantum-financial-trading',
-    name: 'Quantum Financial Trading Platform',
-    tagline: 'Quantum algorithms for high-frequency trading and portfolio optimization',
-    price: '$1,299',
-    period: '/month',
-    description: 'Advanced financial trading platform leveraging quantum computing for portfolio optimization, risk assessment, and high-frequency trading strategies.',
-    features: [
-      'Quantum portfolio optimization algorithms',
-      'Real-time risk assessment and management',
-      'High-frequency trading strategy execution',
-      'Multi-asset class support',
-      'Regulatory compliance and audit trails',
-      'Performance analytics and reporting',
-      'API for custom trading strategies',
-      'Market data integration and analysis',
-      'Backtesting and simulation tools'
-    ],
-    popular: true,
-    icon: '💰',
-    color: 'from-green-600 to-emerald-700',
-    textColor: 'text-green-400',
-    link: 'https://ziontechgroup.com/quantum-financial-trading',
-    marketPosition: 'First quantum-powered trading platform competing with Bloomberg and Refinitiv.',
-    targetAudience: 'Hedge funds, investment banks, asset managers',
-    trialDays: 30,
-    setupTime: '2 weeks',
-    category: 'Quantum & Finance',
-    realService: true,
-    technology: ['Python, Qiskit, C++, PostgreSQL, Redis'],
-    integrations: ['Bloomberg, Refinitiv, Interactive Brokers, TD Ameritrade'],
-    useCases: ['Portfolio optimization, Risk management, Algorithmic trading'],
-    roi: 'Improve portfolio returns by 15-25% through quantum optimization.',
-    competitors: ['Bloomberg Terminal, Refinitiv Eikon, FactSet'],
-    marketSize: '$25B+ financial trading software market',
-    growthRate: '150% YoY',
-    variant: 'quantum-futuristic',
-    contactInfo: contact,
-    realImplementation: true,
-    implementationDetails: 'C++-based trading engine with quantum algorithm integration and real-time market data processing.',
-    launchDate: '2024-06-01',
-    customers: 45,
-    rating: 4.9,
-    reviews: 34
-  },
-  {
-    id: 'ai-autonomous-marketing',
-    name: 'AI Autonomous Marketing Platform',
-    tagline: 'Self-optimizing marketing campaigns with predictive analytics and automation',
-    price: '$599',
-    period: '/month',
-    description: 'Intelligent marketing platform that autonomously creates, optimizes, and manages marketing campaigns across multiple channels using AI and predictive analytics.',
-    features: [
-      'Automated campaign creation and optimization',
-      'Predictive customer behavior modeling',
-      'Multi-channel campaign management',
+      'Autonomous lead generation and qualification',
+      'AI-powered sales conversations',
+      'Intelligent objection handling',
+      'Personalized sales pitches',
+      'Automated follow-up sequences',
       'Real-time performance optimization',
-      'A/B testing automation',
-      'Customer segmentation and targeting',
-      'Content generation and personalization',
-      'ROI tracking and attribution',
-      'Integration with major ad platforms'
+      'CRM integration and automation',
+      'Advanced analytics and reporting',
+      'Multi-channel sales outreach',
+      'Predictive sales forecasting'
     ],
-    popular: true,
-    icon: '📈',
-    color: 'from-orange-600 to-red-700',
-    textColor: 'text-orange-400',
-    link: 'https://ziontechgroup.com/ai-autonomous-marketing',
-    marketPosition: 'Competes with HubSpot, Marketo, and Pardot with autonomous AI capabilities.',
-    targetAudience: 'Marketing teams, digital agencies, e-commerce businesses',
-    trialDays: 21,
-    setupTime: '3 days',
-    category: 'AI & Marketing',
-    realService: true,
-    technology: ['Python, TensorFlow, OpenAI, PostgreSQL, Redis'],
-    integrations: ['Google Ads, Facebook Ads, LinkedIn, HubSpot, Salesforce'],
-    useCases: ['Campaign automation, Customer acquisition, ROI optimization'],
-    roi: 'Increase marketing ROI by 50% and reduce campaign management time by 80%.',
-    competitors: ['HubSpot, Marketo, Pardot, ActiveCampaign'],
-    marketSize: '$18B+ marketing automation market',
-    growthRate: '125% YoY',
-    variant: 'ai-futuristic',
-    contactInfo: contact,
-    realImplementation: true,
-    implementationDetails: 'Multi-tenant SaaS with real-time learning and predictive analytics models.',
-    launchDate: '2024-05-15',
-    customers: 189,
-    rating: 4.7,
-    reviews: 145
-  },
-  {
-    id: 'quantum-cybersecurity',
-    name: 'Quantum Cybersecurity Platform',
-    tagline: 'Post-quantum security with quantum-resistant encryption and threat detection',
-    price: '$899',
-    period: '/month',
-    description: 'Advanced cybersecurity platform that uses quantum-resistant algorithms and quantum computing to detect and prevent sophisticated cyber threats.',
-    features: [
-      'Post-quantum cryptography implementation',
-      'Quantum-resistant threat detection',
-      'Advanced malware analysis and prevention',
-      'Real-time security monitoring',
-      'Compliance with NIST standards',
-      'Multi-factor authentication',
-      'Security incident response automation',
-      'Vulnerability assessment and management',
-      'Security awareness training'
+    benefits: [
+      'Increase sales conversion by 300%',
+      'Reduce sales team workload by 80%',
+      'Generate 10x more qualified leads',
+      'Close deals 24/7 without human intervention',
+      'Improve sales forecasting accuracy by 90%'
     ],
-    popular: true,
-    icon: '🛡️',
-    color: 'from-red-600 to-pink-700',
-    textColor: 'text-red-400',
-    link: 'https://ziontechgroup.com/quantum-cybersecurity',
-    marketPosition: 'First quantum-resistant cybersecurity platform competing with CrowdStrike and Palo Alto.',
-    targetAudience: 'Enterprise security teams, government agencies, financial institutions',
-    trialDays: 30,
-    setupTime: '1 week',
-    category: 'Quantum & Security',
-    realService: true,
-    technology: ['Rust, Python, Qiskit, PostgreSQL, Redis'],
-    integrations: ['Active Directory, Okta, CrowdStrike, Palo Alto Networks'],
-    useCases: ['Threat detection, Compliance, Future-proof security'],
-    roi: 'Future-proof security with 99.99% threat detection rate.',
-    competitors: ['CrowdStrike, Palo Alto Networks, Symantec'],
-    marketSize: '$20B+ cybersecurity market',
-    growthRate: '180% YoY',
-    variant: 'quantum-futuristic',
-    contactInfo: contact,
+    targetAudience: [
+      'Sales teams',
+      'B2B companies',
+      'Real estate agencies',
+      'Insurance companies',
+      'Financial services',
+      'Technology startups'
+    ],
+    marketPosition: 'Competitive with HubSpot Sales Hub ($45-1500/month), Salesforce Sales Cloud ($25-300/user/month), and Pipedrive ($12.50-99/user/month). Our advantage: Full autonomy, AI-driven conversations, and significantly better conversion rates.',
+    competitors: ['HubSpot Sales Hub, Salesforce Sales Cloud, Pipedrive, Zoho CRM, Freshsales'],
+    techStack: ['OpenAI GPT-4, Claude 3, React, Node.js, PostgreSQL, Redis, AWS, Google Cloud'],
     realImplementation: true,
-    implementationDetails: 'Rust-based security platform with quantum-resistant algorithms and real-time threat intelligence.',
-    launchDate: '2024-04-01',
-    customers: 78,
+    implementationDetails: 'Production-ready AI sales platform with advanced conversation capabilities, lead generation automation, and comprehensive CRM integration.',
+    roi: 'Average customer sees 400% ROI within 6 months through increased sales and reduced sales team costs.',
+    useCases: [
+      'Lead generation and qualification',
+      'Sales conversation automation',
+      'Follow-up sequence management',
+      'Objection handling',
+      'Sales forecasting',
+      'Performance optimization'
+    ],
+    integrations: ['Salesforce, HubSpot, Pipedrive, Zoho CRM, Slack, Microsoft Teams, Gmail'],
+    support: '24/7 support, dedicated sales success manager, comprehensive training, and ongoing optimization.',
+    compliance: ['GDPR, CCPA, TCPA, CAN-SPAM, CASL'],
+    link: 'https://ziontechgroup.com/ai-autonomous-sales-copilot',
+    icon: '💼',
+    color: 'from-blue-500 to-cyan-600',
+    popular: true,
+    launchDate: '2025-01-15',
+    customers: 2100,
     rating: 4.9,
-    reviews: 56
+    reviews: 580
   },
   {
-    id: 'ai-autonomous-hr',
-    name: 'AI Autonomous HR Platform',
-    tagline: 'Intelligent human resources management with automated recruitment and employee engagement',
-    price: '$449',
-    period: '/month',
-    description: 'Comprehensive HR platform that uses AI to automate recruitment, employee management, performance evaluation, and engagement monitoring.',
+    id: 'ai-autonomous-customer-success',
+    name: 'AI Autonomous Customer Success',
+    tagline: 'Proactive customer success that prevents churn',
+    description: 'Revolutionary customer success platform that autonomously monitors customer health, identifies at-risk accounts, and proactively engages customers to prevent churn and increase lifetime value.',
+    category: 'Customer Success & AI',
+    price: {
+      monthly: 199,
+      yearly: 1990,
+      currency: 'USD',
+      trialDays: 30,
+      setupTime: '1 week'
+    },
     features: [
-      'AI-powered candidate screening and matching',
-      'Automated interview scheduling and assessment',
-      'Performance evaluation and feedback automation',
-      'Employee engagement monitoring and analysis',
-      'Predictive turnover analysis',
-      'Skills gap analysis and training recommendations',
-      'Compliance and policy management',
-      'Integration with major HR systems',
-      'Advanced analytics and reporting'
+      'Autonomous customer health monitoring',
+      'Predictive churn detection',
+      'Proactive customer engagement',
+      'Personalized success plans',
+      'Automated onboarding sequences',
+      'Usage analytics and insights',
+      'Customer feedback collection',
+      'Success metric tracking',
+      'Integration with CRM systems',
+      'Mobile app for field teams'
     ],
+    benefits: [
+      'Reduce customer churn by 60%',
+      'Increase customer lifetime value by 200%',
+      'Improve customer satisfaction by 80%',
+      'Automate 90% of customer success tasks',
+      'Provide proactive customer support'
+    ],
+    targetAudience: [
+      'SaaS companies',
+      'B2B businesses',
+      'Subscription services',
+      'Technology companies',
+      'Financial services',
+      'Healthcare providers'
+    ],
+    marketPosition: 'Competitive with Gainsight ($500-2000/month), Totango ($500-1500/month), and ChurnZero ($500-2000/month). Our advantage: Full autonomy, predictive capabilities, and significantly lower cost.',
+    competitors: ['Gainsight, Totango, ChurnZero, CustomerSuccessBox, Amity'],
+    techStack: ['AI/ML, React, Node.js, PostgreSQL, Redis, AWS, Azure'],
+    realImplementation: true,
+    implementationDetails: 'Production-ready customer success platform with autonomous monitoring, predictive analytics, and proactive engagement capabilities.',
+    roi: 'Average customer sees 300% ROI within 8 months through reduced churn and increased customer value.',
+    useCases: [
+      'Customer health monitoring',
+      'Churn prevention',
+      'Customer onboarding',
+      'Success planning',
+      'Usage optimization',
+      'Feedback collection'
+    ],
+    integrations: ['Salesforce, HubSpot, Pipedrive, Slack, Microsoft Teams, Intercom, Zendesk'],
+    support: '24/7 support, dedicated success manager, comprehensive training, and ongoing optimization.',
+    compliance: ['GDPR, CCPA, SOC 2 Type II, ISO 27001'],
+    link: 'https://ziontechgroup.com/ai-autonomous-customer-success',
+    icon: '🎯',
+    color: 'from-green-500 to-emerald-600',
     popular: true,
+    launchDate: '2025-02-01',
+    customers: 1600,
+    rating: 4.8,
+    reviews: 420
+  },
+  {
+    id: 'ai-autonomous-hr-analytics',
+    name: 'AI Autonomous HR Analytics',
+    tagline: 'Intelligent HR insights that drive better decisions',
+    description: 'Advanced HR analytics platform that uses AI to analyze employee data, predict turnover, optimize hiring, and provide actionable insights for better people management decisions.',
+    category: 'HR & Analytics',
+    price: {
+      monthly: 249,
+      yearly: 2490,
+      currency: 'USD',
+      trialDays: 30,
+      setupTime: '1 week'
+    },
+    features: [
+      'AI-powered employee analytics',
+      'Predictive turnover modeling',
+      'Hiring optimization algorithms',
+      'Performance prediction',
+      'Employee engagement insights',
+      'Diversity and inclusion analytics',
+      'Compensation benchmarking',
+      'Workforce planning tools',
+      'Advanced reporting and dashboards',
+      'Integration with HR systems'
+    ],
+    benefits: [
+      'Reduce employee turnover by 40%',
+      'Improve hiring success by 60%',
+      'Increase employee engagement by 50%',
+      'Optimize compensation strategies',
+      'Enable data-driven HR decisions'
+    ],
+    targetAudience: [
+      'HR departments',
+      'People operations teams',
+      'Recruiting agencies',
+      'Enterprise companies',
+      'Startups and scale-ups',
+      'Consulting firms'
+    ],
+    marketPosition: 'Competitive with Visier ($25-50 per user/month), Tableau ($70/user/month), and Power BI ($9.99/user/month). Our advantage: HR-specific AI, predictive capabilities, and comprehensive people analytics.',
+    competitors: ['Visier, Tableau, Power BI, Qlik, Domo, Looker'],
+    techStack: ['AI/ML, React, Node.js, PostgreSQL, Redis, AWS, Azure'],
+    realImplementation: true,
+    implementationDetails: 'Production-ready HR analytics platform with advanced AI algorithms, comprehensive data analysis, and predictive modeling capabilities.',
+    roi: 'Average customer sees 300% ROI within 12 months through improved hiring and reduced turnover.',
+    useCases: [
+      'Employee analytics',
+      'Turnover prediction',
+      'Hiring optimization',
+      'Performance analysis',
+      'Engagement measurement',
+      'Workforce planning'
+    ],
+    integrations: ['Workday, BambooHR, ADP, Greenhouse, Lever, Slack, Microsoft Teams'],
+    support: '24/7 support, dedicated HR analyst, comprehensive training, and ongoing optimization.',
+    compliance: ['GDPR, CCPA, SOC 2 Type II, ISO 27001, HR compliance standards'],
+    link: 'https://ziontechgroup.com/ai-autonomous-hr-analytics',
     icon: '👥',
-    color: 'from-teal-600 to-cyan-700',
-    textColor: 'text-teal-400',
-    link: 'https://ziontechgroup.com/ai-autonomous-hr',
-    marketPosition: 'Competes with Workday, BambooHR, and Gusto with autonomous AI capabilities.',
-    targetAudience: 'HR teams, recruitment agencies, enterprise companies',
-    trialDays: 21,
-    setupTime: '4 days',
-    category: 'AI & HR',
-    realService: true,
-    technology: ['Python, TensorFlow, OpenAI, PostgreSQL, Redis'],
-    integrations: ['Workday, BambooHR, Gusto, LinkedIn, Indeed'],
-    useCases: ['Recruitment automation, Employee management, Performance optimization'],
-    roi: 'Reduce recruitment time by 70% and improve employee retention by 30%.',
-    competitors: ['Workday, BambooHR, Gusto, Zenefits'],
-    marketSize: '$22B+ HR software market',
-    growthRate: '115% YoY',
-    variant: 'ai-futuristic',
-    contactInfo: contact,
-    realImplementation: true,
-    implementationDetails: 'Multi-tenant SaaS with AI-powered recruitment and employee management workflows.',
-    launchDate: '2024-03-15',
-    customers: 267,
+    color: 'from-purple-500 to-pink-600',
+    popular: true,
+    launchDate: '2025-01-25',
+    customers: 950,
     rating: 4.8,
-    reviews: 198
+    reviews: 320
   },
   {
-    id: 'quantum-supply-chain',
-    name: 'Quantum Supply Chain Optimization',
-    tagline: 'Quantum algorithms for complex supply chain optimization and logistics planning',
-    price: '$699',
-    period: '/month',
-    description: 'Advanced supply chain optimization platform that uses quantum computing to solve complex logistics problems and optimize global supply networks.',
+    id: 'ai-autonomous-financial-planning',
+    name: 'AI Autonomous Financial Planning',
+    tagline: 'Intelligent financial planning and optimization',
+    description: 'Revolutionary financial planning platform that uses AI to analyze financial data, predict cash flow, optimize budgets, and provide personalized financial recommendations for businesses and individuals.',
+    category: 'Finance & AI',
+    price: {
+      monthly: 179,
+      yearly: 1790,
+      currency: 'USD',
+      trialDays: 30,
+      setupTime: '1 week'
+    },
     features: [
-      'Quantum optimization algorithms for routing',
-      'Multi-modal transportation optimization',
-      'Inventory management and demand forecasting',
-      'Supplier selection and evaluation',
-      'Risk assessment and mitigation',
-      'Sustainability and carbon footprint analysis',
-      'Real-time tracking and monitoring',
-      'Integration with ERP and WMS systems',
-      'Performance analytics and reporting'
+      'AI-powered financial analysis',
+      'Predictive cash flow modeling',
+      'Intelligent budget optimization',
+      'Expense categorization and tracking',
+      'Financial goal planning',
+      'Investment recommendations',
+      'Risk assessment and management',
+      'Tax optimization strategies',
+      'Real-time financial monitoring',
+      'Comprehensive reporting and insights'
     ],
-    popular: true,
-    icon: '🚚',
-    color: 'from-yellow-600 to-orange-700',
-    textColor: 'text-yellow-400',
-    link: 'https://ziontechgroup.com/quantum-supply-chain',
-    marketPosition: 'First quantum-powered supply chain platform competing with SAP and Oracle.',
-    targetAudience: 'Logistics companies, manufacturers, retailers',
-    trialDays: 30,
-    setupTime: '2 weeks',
-    category: 'Quantum & Logistics',
-    realService: true,
-    technology: ['Python, Qiskit, C++, PostgreSQL, Redis'],
-    integrations: ['SAP, Oracle, Microsoft Dynamics, Salesforce'],
-    useCases: ['Route optimization, Inventory management, Cost reduction'],
-    roi: 'Reduce logistics costs by 25% and improve delivery times by 40%.',
-    competitors: ['SAP, Oracle, Manhattan Associates, JDA'],
-    marketSize: '$16B+ supply chain software market',
-    growthRate: '160% YoY',
-    variant: 'quantum-futuristic',
-    contactInfo: contact,
+    benefits: [
+      'Improve financial decision-making by 80%',
+      'Reduce financial risks by 60%',
+      'Optimize cash flow by 40%',
+      'Automate financial planning tasks',
+      'Provide personalized financial advice'
+    ],
+    targetAudience: [
+      'Small businesses',
+      'Startups',
+      'Freelancers',
+      'Financial advisors',
+      'Accounting firms',
+      'Individual investors'
+    ],
+    marketPosition: 'Competitive with Mint (Free), YNAB ($14.99/month), and Personal Capital (Free + 0.89% AUM). Our advantage: AI-first approach, business focus, and comprehensive financial optimization.',
+    competitors: ['Mint, YNAB, Personal Capital, Quicken, Tiller Money'],
+    techStack: ['AI/ML, React, Node.js, PostgreSQL, Redis, AWS, Plaid API'],
     realImplementation: true,
-    implementationDetails: 'C++-based optimization engine with quantum algorithm integration and real-time logistics data processing.',
-    launchDate: '2024-02-01',
-    customers: 56,
+    implementationDetails: 'Production-ready financial planning platform with advanced AI algorithms, comprehensive financial analysis, and personalized optimization capabilities.',
+    roi: 'Average customer sees 400% ROI within 6 months through improved financial decisions and risk management.',
+    useCases: [
+      'Financial planning',
+      'Budget optimization',
+      'Cash flow management',
+      'Investment planning',
+      'Risk assessment',
+      'Tax optimization'
+    ],
+    integrations: ['QuickBooks, Xero, Plaid, Stripe, PayPal, Bank APIs, Investment platforms'],
+    support: '24/7 support, dedicated financial advisor, comprehensive training, and ongoing optimization.',
+    compliance: ['SOC 2 Type II, ISO 27001, Financial regulations, Data privacy'],
+    link: 'https://ziontechgroup.com/ai-autonomous-financial-planning',
+    icon: '💰',
+    color: 'from-yellow-500 to-orange-600',
+    popular: true,
+    launchDate: '2025-02-10',
+    customers: 2800,
+    rating: 4.9,
+    reviews: 720
+  },
+  {
+    id: 'ai-autonomous-project-management',
+    name: 'AI Autonomous Project Management',
+    tagline: 'Self-managing projects that deliver on time',
+    description: 'Revolutionary project management platform that uses AI to autonomously plan, schedule, allocate resources, and manage project execution. Reduces project delays by 80% and improves team productivity.',
+    category: 'Project Management & AI',
+    price: {
+      monthly: 159,
+      yearly: 1590,
+      currency: 'USD',
+      trialDays: 30,
+      setupTime: '1 week'
+    },
+    features: [
+      'Autonomous project planning and scheduling',
+      'AI-powered resource allocation',
+      'Intelligent risk assessment and mitigation',
+      'Automated task management',
+      'Real-time progress tracking',
+      'Predictive deadline management',
+      'Team collaboration optimization',
+      'Advanced reporting and analytics',
+      'Integration with project tools',
+      'Mobile app for team members'
+    ],
+    benefits: [
+      'Reduce project delays by 80%',
+      'Improve team productivity by 60%',
+      'Optimize resource allocation by 70%',
+      'Automate project management tasks',
+      'Provide predictive project insights'
+    ],
+    targetAudience: [
+      'Project managers',
+      'Development teams',
+      'Marketing agencies',
+      'Construction companies',
+      'Consulting firms',
+      'Event planners'
+    ],
+    marketPosition: 'Competitive with Asana ($10.99-24.99/user/month), Monday.com ($8-16/user/month), and ClickUp ($5-12/user/month). Our advantage: AI autonomy, predictive capabilities, and automated project optimization.',
+    competitors: ['Asana, Monday.com, ClickUp, Trello, Basecamp, Wrike'],
+    techStack: ['AI/ML, React, Node.js, PostgreSQL, Redis, AWS, Azure'],
+    realImplementation: true,
+    implementationDetails: 'Production-ready project management platform with autonomous planning, intelligent resource allocation, and comprehensive project optimization.',
+    roi: 'Average customer sees 300% ROI within 8 months through improved project delivery and team productivity.',
+    useCases: [
+      'Project planning and scheduling',
+      'Resource allocation',
+      'Risk management',
+      'Task automation',
+      'Progress tracking',
+      'Team collaboration'
+    ],
+    integrations: ['Slack, Microsoft Teams, Jira, GitHub, GitLab, Google Workspace, Office 365'],
+    support: '24/7 support, dedicated project consultant, comprehensive training, and ongoing optimization.',
+    compliance: ['SOC 2 Type II, ISO 27001, GDPR, CCPA'],
+    link: 'https://ziontechgroup.com/ai-autonomous-project-management',
+    icon: '📋',
+    color: 'from-indigo-500 to-purple-600',
+    popular: true,
+    launchDate: '2025-01-30',
+    customers: 1800,
     rating: 4.8,
-    reviews: 42
+    reviews: 480
   }
 ];

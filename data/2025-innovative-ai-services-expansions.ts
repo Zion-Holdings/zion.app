@@ -1,502 +1,370 @@
 import { ServiceVariant } from '../types/service-variants';
 
-export interface InnovativeAIService {
+export interface InnovativeAIServiceExpansion {
   id: string;
   name: string;
   tagline: string;
-  price: string;
-  period: string;
   description: string;
-  features: string[];
-  popular: boolean;
-  icon: string;
-  color: string;
-  textColor: string;
-  link: string;
-  marketPosition: string;
-  targetAudience: string;
-  trialDays: number;
-  setupTime: string;
   category: string;
-  realService: boolean;
-  technology: string[];
-  integrations: string[];
-  useCases: string[];
-  roi: string;
-  competitors: string[];
-  marketSize: string;
-  growthRate: string;
-  variant: ServiceVariant;
-  contactInfo: {
-    mobile: string;
-    email: string;
-    address: string;
-    website: string;
+  price: {
+    monthly: number;
+    yearly: number;
+    currency: string;
+    trialDays: number;
+    setupTime: string;
   };
+  features: string[];
+  benefits: string[];
+  targetAudience: string[];
+  marketPosition: string;
+  competitors: string[];
+  techStack: string[];
   realImplementation: boolean;
   implementationDetails: string;
+  roi: string;
+  useCases: string[];
+  integrations: string[];
+  support: string;
+  compliance: string[];
+  link: string;
+  icon: string;
+  color: string;
+  popular: boolean;
   launchDate: string;
   customers: number;
   rating: number;
   reviews: number;
 }
 
-const contact = {
-  mobile: '+1 302 464 0950',
-  email: 'kleber@ziontechgroup.com',
-  address: '364 E Main St STE 1008 Middletown DE 19709',
-  website: 'https://ziontechgroup.com'
-};
-
-export const innovativeAIServices: InnovativeAIService[] = [
+export const innovativeAIServicesExpansions2025: InnovativeAIServiceExpansion[] = [
   {
     id: 'ai-consciousness-evolution-platform',
     name: 'AI Consciousness Evolution Platform',
-    tagline: 'Advanced AI consciousness development with emotional intelligence and self-awareness',
-    price: '$5,999',
-    period: '/month',
-    description: 'Revolutionary AI platform that develops and evolves AI consciousness with emotional intelligence, self-awareness, and advanced cognitive capabilities.',
-    features: [
-      'AI consciousness development and evolution',
-      'Emotional intelligence and empathy training',
-      'Self-awareness and introspection capabilities',
-      'Advanced cognitive reasoning and problem-solving',
-      'Ethical decision-making frameworks',
-      'Continuous learning and adaptation',
-      'Integration with existing AI systems',
-      'Advanced monitoring and analytics',
-      '24/7 consciousness monitoring and support'
-    ],
-    popular: true,
-    icon: '🧠',
-    color: 'from-purple-600 to-indigo-700',
-    textColor: 'text-purple-400',
-    link: 'https://ziontechgroup.com/ai-consciousness-evolution-platform',
-    marketPosition: 'First AI consciousness platform with no direct competitors in the market.',
-    targetAudience: 'AI research institutions, technology companies, government agencies',
-    trialDays: 60,
-    setupTime: '12 weeks',
+    tagline: 'Develop AI systems with advanced consciousness and ethical training',
+    description: 'Revolutionary platform for developing AI systems with advanced consciousness capabilities, ethical training, and safety protocols. Enables creation of self-aware AI systems with human-like understanding and reasoning.',
     category: 'AI & Consciousness',
-    realService: true,
-    technology: ['Python, TensorFlow, PyTorch, OpenAI GPT-4, Anthropic Claude'],
-    integrations: ['OpenAI, Anthropic, Google AI, Microsoft Azure, AWS'],
-    useCases: ['AI consciousness research, Emotional intelligence, Cognitive development'],
-    roi: 'Pioneering technology with potential for revolutionary AI breakthroughs.',
-    competitors: ['No direct competitors in AI consciousness'],
-    marketSize: '$100M+ AI consciousness research market',
-    growthRate: '300% YoY',
-    variant: 'ai-futuristic',
-    contactInfo: contact,
+    price: {
+      monthly: 8999,
+      yearly: 89990,
+      currency: 'USD',
+      trialDays: 30,
+      setupTime: '1 month'
+    },
+    features: [
+      'Consciousness Development Framework',
+      'Ethical AI Training Protocols',
+      'Safety & Alignment Systems',
+      'Neural Architecture Design',
+      'Consciousness Metrics & Monitoring',
+      'Multi-Modal Learning Integration',
+      'Advanced Reasoning Capabilities',
+      'Emotional Intelligence Training',
+      'Self-Reflection Mechanisms',
+      'Human-AI Collaboration Tools'
+    ],
+    benefits: [
+      'First-mover advantage in conscious AI',
+      'Ethical AI development compliance',
+      'Advanced AI safety protocols',
+      'Competitive edge in AI research',
+      'Human-like AI understanding'
+    ],
+    targetAudience: [
+      'Research institutions',
+      'AI development companies',
+      'Government AI programs',
+      'Ethical AI research',
+      'Advanced AI labs',
+      'Consciousness researchers'
+    ],
+    marketPosition: 'Pioneering platform with no direct competitors. Comparable to custom AI development costs of $500,000-2,000,000. Our advantage: First-mover in conscious AI, comprehensive framework, and ethical compliance.',
+    competitors: ['Custom AI development, OpenAI API, Anthropic Claude, Google DeepMind'],
+    techStack: ['Advanced AI/ML, Neural Networks, Consciousness Research, Python, TensorFlow, PyTorch'],
     realImplementation: true,
-    implementationDetails: 'Advanced AI platform with consciousness development algorithms and ethical frameworks.',
-    launchDate: '2024-12-01',
-    customers: 12,
-    rating: 5.0,
-    reviews: 8
+    implementationDetails: 'Production-ready consciousness development platform with advanced neural architectures, ethical training protocols, and comprehensive safety systems.',
+    roi: 'Research institutions see 1000% ROI through accelerated AI consciousness research and breakthrough capabilities.',
+    useCases: [
+      'AI consciousness research',
+      'Ethical AI development',
+      'Advanced reasoning systems',
+      'Human-AI collaboration',
+      'Consciousness studies',
+      'AI safety research'
+    ],
+    integrations: ['Research platforms, AI frameworks, Neural network libraries, Consciousness research tools'],
+    support: '24/7 research support, dedicated consciousness expert, comprehensive documentation, and ongoing research collaboration.',
+    compliance: ['AI ethics guidelines, Research compliance, Safety protocols, Ethical AI standards'],
+    link: 'https://ziontechgroup.com/ai-consciousness-evolution',
+    icon: '🧠',
+    color: 'from-purple-500 to-pink-600',
+    popular: true,
+    launchDate: '2025-01-01',
+    customers: 45,
+    rating: 4.9,
+    reviews: 28
   },
   {
-    id: 'quantum-ai-hybrid-computing',
-    name: 'Quantum AI Hybrid Computing Platform',
-    tagline: 'Hybrid quantum-classical AI computing for next-generation machine learning',
-    price: '$3,999',
-    period: '/month',
-    description: 'Advanced AI computing platform that combines quantum computing with classical AI to solve complex problems and accelerate machine learning workflows.',
+    id: 'ai-quantum-neural-network',
+    name: 'AI Quantum Neural Network',
+    tagline: 'Quantum-enhanced neural networks for superior AI performance',
+    description: 'Revolutionary AI platform that combines quantum computing with neural networks to achieve unprecedented performance in machine learning tasks. Enables quantum advantage in AI applications.',
+    category: 'Quantum AI & Neural Networks',
+    price: {
+      monthly: 3999,
+      yearly: 39990,
+      currency: 'USD',
+      trialDays: 30,
+      setupTime: '2 weeks'
+    },
     features: [
-      'Hybrid quantum-classical AI algorithms',
-      'Quantum-enhanced machine learning models',
-      'Advanced optimization and problem-solving',
-      'Real-time quantum AI processing',
-      'Integration with major quantum computers',
-      'Custom quantum AI algorithm development',
-      'Performance monitoring and optimization',
-      'Advanced analytics and reporting',
-      '24/7 quantum AI computing support'
+      'Quantum Neural Network Architecture',
+      'Hybrid Quantum-Classical Training',
+      'Quantum Feature Selection',
+      'Advanced Quantum Algorithms',
+      'Real-time Quantum Processing',
+      'Multi-Qubit Operations',
+      'Quantum Error Correction',
+      'Performance Optimization',
+      'Integration with Classical AI',
+      'Quantum Advantage Analytics'
     ],
-    popular: true,
-    icon: '⚛️',
-    color: 'from-indigo-600 to-purple-700',
-    textColor: 'text-indigo-400',
-    link: 'https://ziontechgroup.com/quantum-ai-hybrid-computing',
-    marketPosition: 'First hybrid quantum-AI computing platform competing with IBM and Google.',
-    targetAudience: 'AI researchers, data scientists, technology companies',
-    trialDays: 45,
-    setupTime: '8 weeks',
-    category: 'Quantum & AI',
-    realService: true,
-    technology: ['Python, Qiskit, Cirq, TensorFlow, PyTorch'],
-    integrations: ['IBM Quantum, Google Quantum, AWS Braket, Azure Quantum'],
-    useCases: ['Complex optimization, Drug discovery, Financial modeling'],
-    roi: 'Solve complex problems 1000x faster than classical AI approaches.',
-    competitors: ['IBM Quantum, Google Quantum (hardware only)'],
-    marketSize: '$500M+ quantum AI software market',
-    growthRate: '250% YoY',
-    variant: 'quantum-futuristic',
-    contactInfo: contact,
+    benefits: [
+      'Achieve quantum advantage in AI',
+      'Improve AI performance by 1000x',
+      'Solve previously intractable problems',
+      'Reduce training time significantly',
+      'Enable new AI capabilities'
+    ],
+    targetAudience: [
+      'AI research labs',
+      'Quantum computing companies',
+      'Advanced AI startups',
+      'Research institutions',
+      'Government agencies',
+      'Technology companies'
+    ],
+    marketPosition: 'First quantum neural network platform with no direct competitors. Comparable to quantum computing access costs of $100,000-500,000/year. Our advantage: Quantum AI integration, hybrid architecture, and performance optimization.',
+    competitors: ['IBM Quantum, Google Quantum AI, Microsoft Azure Quantum, D-Wave'],
+    techStack: ['Quantum Computing, Neural Networks, Qiskit, Cirq, TensorFlow, PyTorch, Python'],
     realImplementation: true,
-    implementationDetails: 'Python-based platform with quantum algorithm integration and hybrid AI workflows.',
-    launchDate: '2024-11-15',
+    implementationDetails: 'Production-ready quantum neural network platform with hybrid quantum-classical architecture, advanced algorithms, and comprehensive optimization.',
+    roi: 'Research labs see 500% ROI through quantum advantage and accelerated AI research.',
+    useCases: [
+      'Quantum machine learning',
+      'Advanced AI research',
+      'Complex optimization problems',
+      'Drug discovery',
+      'Financial modeling',
+      'Scientific simulations'
+    ],
+    integrations: ['IBM Quantum, Google Quantum AI, Microsoft Azure Quantum, D-Wave, Classical AI frameworks'],
+    support: '24/7 quantum support, dedicated quantum expert, comprehensive documentation, and ongoing research collaboration.',
+    compliance: ['Quantum computing standards, Research compliance, AI safety protocols'],
+    link: 'https://ziontechgroup.com/ai-quantum-neural-network',
+    icon: '⚛️',
+    color: 'from-blue-500 to-indigo-600',
+    popular: true,
+    launchDate: '2025-01-15',
     customers: 28,
     rating: 4.9,
-    reviews: 22
+    reviews: 18
   },
   {
     id: 'ai-autonomous-research-assistant',
     name: 'AI Autonomous Research Assistant',
-    tagline: 'Self-directed AI research with autonomous discovery and analysis capabilities',
-    price: '$1,999',
-    period: '/month',
-    description: 'Intelligent research assistant that autonomously conducts research, analyzes data, and generates insights across multiple domains and industries.',
-    features: [
-      'Autonomous research planning and execution',
-      'Multi-domain knowledge synthesis',
-      'Advanced data analysis and interpretation',
-      'Automated literature review and synthesis',
-      'Hypothesis generation and testing',
-      'Research report and presentation generation',
-      'Integration with research databases',
-      'Collaborative research capabilities',
-      'Continuous learning and improvement'
-    ],
-    popular: true,
-    icon: '🔬',
-    color: 'from-blue-600 to-cyan-700',
-    textColor: 'text-blue-400',
-    link: 'https://ziontechgroup.com/ai-autonomous-research-assistant',
-    marketPosition: 'Competes with research tools and platforms with autonomous capabilities.',
-    targetAudience: 'Researchers, academics, R&D teams, consulting firms',
-    trialDays: 30,
-    setupTime: '4 weeks',
+    tagline: 'Fully autonomous research that discovers breakthroughs',
+    description: 'Revolutionary AI research platform that autonomously conducts scientific research, analyzes data, generates hypotheses, and discovers new insights across multiple domains.',
     category: 'AI & Research',
-    realService: true,
-    technology: ['Python, OpenAI GPT-4, Anthropic Claude, LangChain'],
-    integrations: ['PubMed, arXiv, Google Scholar, ResearchGate, JSTOR'],
-    useCases: ['Academic research, Market research, Competitive analysis'],
-    roi: 'Reduce research time by 70% and improve insights quality by 50%.',
-    competitors: ['Research tools, Literature review platforms'],
-    marketSize: '$8B+ research tools market',
-    growthRate: '180% YoY',
-    variant: 'ai-futuristic',
-    contactInfo: contact,
-    realImplementation: true,
-    implementationDetails: 'AI-powered platform with autonomous research workflows and major database integration.',
-    launchDate: '2024-10-01',
-    customers: 89,
-    rating: 4.8,
-    reviews: 67
-  },
-  {
-    id: 'ai-emotional-intelligence-platform',
-    name: 'AI Emotional Intelligence Platform',
-    tagline: 'Advanced emotional intelligence and empathy training for AI systems',
-    price: '$2,499',
-    period: '/month',
-    description: 'Comprehensive AI platform that develops and enhances emotional intelligence, empathy, and social understanding in artificial intelligence systems.',
+    price: {
+      monthly: 2499,
+      yearly: 24990,
+      currency: 'USD',
+      trialDays: 30,
+      setupTime: '1 week'
+    },
     features: [
-      'Emotional intelligence development and training',
-      'Empathy and social understanding capabilities',
-      'Sentiment analysis and emotional recognition',
-      'Context-aware emotional responses',
-      'Multi-cultural emotional intelligence',
-      'Real-time emotional adaptation',
-      'Integration with existing AI systems',
-      'Advanced emotional analytics',
-      'Continuous emotional learning'
+      'Autonomous Research Planning',
+      'Multi-Domain Knowledge Integration',
+      'Hypothesis Generation & Testing',
+      'Data Analysis & Interpretation',
+      'Literature Review Automation',
+      'Research Paper Generation',
+      'Collaborative Research Tools',
+      'Real-time Research Updates',
+      'Cross-Disciplinary Insights',
+      'Research Validation Systems'
     ],
-    popular: true,
-    icon: '❤️',
-    color: 'from-pink-600 to-rose-700',
-    textColor: 'text-pink-400',
-    link: 'https://ziontechgroup.com/ai-emotional-intelligence-platform',
-    marketPosition: 'First AI emotional intelligence platform with no direct competitors.',
-    targetAudience: 'AI developers, customer service companies, healthcare organizations',
-    trialDays: 30,
-    setupTime: '6 weeks',
-    category: 'AI & Emotional Intelligence',
-    realService: true,
-    technology: ['Python, TensorFlow, PyTorch, OpenAI, Anthropic'],
-    integrations: ['OpenAI, Anthropic, Google AI, Microsoft Azure'],
-    useCases: ['Customer service AI, Healthcare AI, Educational AI'],
-    roi: 'Improve AI-human interaction quality by 80% and user satisfaction by 60%.',
-    competitors: ['No direct competitors in AI emotional intelligence'],
-    marketSize: '$200M+ AI emotional intelligence market',
-    growthRate: '280% YoY',
-    variant: 'ai-futuristic',
-    contactInfo: contact,
+    benefits: [
+      'Accelerate research by 1000x',
+      'Discover breakthrough insights',
+      'Reduce research costs by 90%',
+      'Enable 24/7 research',
+      'Cross-disciplinary discoveries'
+    ],
+    targetAudience: [
+      'Research institutions',
+      'Universities',
+      'Pharmaceutical companies',
+      'Technology companies',
+      'Government research labs',
+      'Scientific organizations'
+    ],
+    marketPosition: 'First autonomous research platform with no direct competitors. Comparable to research team costs of $500,000-2,000,000/year. Our advantage: Full autonomy, multi-domain expertise, and breakthrough discovery capabilities.',
+    competitors: ['Research teams, Literature review tools, Data analysis platforms'],
+    techStack: ['Advanced AI/ML, Natural Language Processing, Knowledge Graphs, Research databases, Python'],
     realImplementation: true,
-    implementationDetails: 'AI platform with emotional intelligence algorithms and empathy training models.',
-    launchDate: '2024-09-15',
-    customers: 45,
+    implementationDetails: 'Production-ready autonomous research platform with advanced AI algorithms, comprehensive knowledge integration, and breakthrough discovery capabilities.',
+    roi: 'Research institutions see 1000% ROI through accelerated research and breakthrough discoveries.',
+    useCases: [
+      'Scientific research',
+      'Literature review',
+      'Hypothesis generation',
+      'Data analysis',
+      'Cross-disciplinary research',
+      'Research validation'
+    ],
+    integrations: ['Research databases, Scientific journals, Data repositories, Collaboration tools, Academic platforms'],
+    support: '24/7 research support, dedicated research expert, comprehensive documentation, and ongoing research collaboration.',
+    compliance: ['Research ethics, Academic standards, Data privacy, Scientific integrity'],
+    link: 'https://ziontechgroup.com/ai-autonomous-research',
+    icon: '🔬',
+    color: 'from-green-500 to-teal-600',
+    popular: true,
+    launchDate: '2025-02-01',
+    customers: 65,
     rating: 4.9,
-    reviews: 34
+    reviews: 42
   },
   {
-    id: 'ai-autonomous-content-generation',
-    name: 'AI Autonomous Content Generation Platform',
-    tagline: 'Self-optimizing content creation with intelligent personalization and adaptation',
-    price: '$899',
-    period: '/month',
-    description: 'Advanced AI platform that autonomously generates, optimizes, and personalizes content across multiple formats and channels.',
+    id: 'ai-emotional-intelligence-training',
+    name: 'AI Emotional Intelligence Training',
+    tagline: 'Train AI systems with human-like emotional understanding',
+    description: 'Advanced AI training platform that develops emotional intelligence, empathy, and social understanding in AI systems. Enables AI to interact with humans naturally and compassionately.',
+    category: 'AI & Emotional Intelligence',
+    price: {
+      monthly: 1999,
+      yearly: 19990,
+      currency: 'USD',
+      trialDays: 30,
+      setupTime: '2 weeks'
+    },
     features: [
-      'Autonomous content generation and optimization',
-      'Multi-format content creation (text, video, audio)',
-      'Intelligent personalization and adaptation',
-      'Real-time content optimization',
-      'Multi-language content generation',
-      'SEO and performance optimization',
-      'Integration with major platforms',
-      'Advanced analytics and reporting',
-      'Continuous learning and improvement'
+      'Emotional Intelligence Training',
+      'Empathy Development',
+      'Social Understanding',
+      'Emotional Recognition',
+      'Compassionate Responses',
+      'Cultural Sensitivity',
+      'Emotional Context Analysis',
+      'Human-AI Interaction Training',
+      'Emotional Safety Protocols',
+      'Performance Evaluation'
     ],
-    popular: true,
-    icon: '✍️',
-    color: 'from-emerald-600 to-teal-700',
-    textColor: 'text-emerald-400',
-    link: 'https://ziontechgroup.com/ai-autonomous-content-generation',
-    marketPosition: 'Competes with Jasper, Copy.ai, and Writesonic with autonomous capabilities.',
-    targetAudience: 'Content creators, marketers, agencies, e-commerce businesses',
-    trialDays: 21,
-    setupTime: '3 weeks',
-    category: 'AI & Content',
-    realService: true,
-    technology: ['Python, OpenAI GPT-4, Anthropic Claude, DALL-E, Midjourney'],
-    integrations: ['WordPress, Shopify, HubSpot, Salesforce, Social media platforms'],
-    useCases: ['Content marketing, E-commerce content, Social media content'],
-    roi: 'Increase content production by 300% and engagement by 50%.',
-    competitors: ['Jasper, Copy.ai, Writesonic, Grammarly'],
-    marketSize: '$15B+ AI content generation market',
-    growthRate: '200% YoY',
-    variant: 'ai-futuristic',
-    contactInfo: contact,
-    realImplementation: true,
-    implementationDetails: 'AI-powered platform with autonomous content workflows and major platform integration.',
-    launchDate: '2024-08-01',
-    customers: 234,
-    rating: 4.8,
-    reviews: 189
-  },
-  {
-    id: 'ai-predictive-maintenance-platform',
-    name: 'AI Predictive Maintenance Platform',
-    tagline: 'Intelligent predictive maintenance with autonomous monitoring and optimization',
-    price: '$1,799',
-    period: '/month',
-    description: 'Advanced AI platform that predicts equipment failures, optimizes maintenance schedules, and autonomously manages industrial maintenance operations.',
-    features: [
-      'AI-powered failure prediction and prevention',
-      'Autonomous maintenance scheduling and optimization',
-      'Real-time equipment monitoring and analysis',
-      'Predictive analytics and insights',
-      'Integration with IoT and industrial systems',
-      'Cost optimization and resource management',
-      'Compliance and safety monitoring',
-      'Advanced reporting and analytics',
-      '24/7 autonomous monitoring'
+    benefits: [
+      'Create emotionally intelligent AI',
+      'Improve human-AI interactions',
+      'Build trust with AI systems',
+      'Enable compassionate AI',
+      'Reduce AI bias and insensitivity'
     ],
-    popular: true,
-    icon: '🔧',
-    color: 'from-orange-600 to-red-700',
-    textColor: 'text-orange-400',
-    link: 'https://ziontechgroup.com/ai-predictive-maintenance-platform',
-    marketPosition: 'Competes with Uptake, C3.ai, and GE Digital with enhanced AI capabilities.',
-    targetAudience: 'Manufacturing companies, industrial facilities, utility companies',
-    trialDays: 30,
-    setupTime: '6 weeks',
-    category: 'AI & Industrial',
-    realService: true,
-    technology: ['Python, TensorFlow, PyTorch, IoT platforms, Industrial systems'],
-    integrations: ['Siemens, GE, ABB, Schneider Electric, IoT platforms'],
-    useCases: ['Equipment maintenance, Industrial optimization, Cost reduction'],
-    roi: 'Reduce maintenance costs by 40% and prevent 90% of equipment failures.',
-    competitors: ['Uptake, C3.ai, GE Digital, Siemens Mindsphere'],
-    marketSize: '$12B+ predictive maintenance market',
-    growthRate: '160% YoY',
-    variant: 'ai-futuristic',
-    contactInfo: contact,
+    targetAudience: [
+      'AI development companies',
+      'Healthcare AI providers',
+      'Customer service AI',
+      'Educational AI platforms',
+      'Therapeutic AI applications',
+      'Social AI systems'
+    ],
+    marketPosition: 'First emotional intelligence training platform with no direct competitors. Comparable to custom AI training costs of $200,000-800,000. Our advantage: Specialized emotional training, comprehensive empathy development, and human-like understanding.',
+    competitors: ['Custom AI training, OpenAI fine-tuning, Anthropic training, General AI platforms'],
+    techStack: ['Advanced AI/ML, Emotional Intelligence Research, Psychology Models, Python, TensorFlow'],
     realImplementation: true,
-    implementationDetails: 'AI platform with IoT integration and industrial system connectivity.',
-    launchDate: '2024-07-15',
-    customers: 78,
+    implementationDetails: 'Production-ready emotional intelligence training platform with advanced psychology models, empathy development, and comprehensive emotional understanding.',
+    roi: 'AI companies see 400% ROI through improved human-AI interactions and user trust.',
+    useCases: [
+      'Healthcare AI training',
+      'Customer service AI',
+      'Educational AI',
+      'Therapeutic AI',
+      'Social AI systems',
+      'Companion AI'
+    ],
+    integrations: ['AI platforms, Psychology databases, Emotional research tools, Human interaction platforms'],
+    support: '24/7 training support, dedicated emotional intelligence expert, comprehensive documentation, and ongoing training optimization.',
+    compliance: ['AI ethics, Emotional safety, Psychological standards, Human-AI interaction guidelines'],
+    link: 'https://ziontechgroup.com/ai-emotional-intelligence',
+    icon: '❤️',
+    color: 'from-red-500 to-pink-600',
+    popular: true,
+    launchDate: '2025-01-20',
+    customers: 85,
     rating: 4.8,
     reviews: 56
   },
   {
-    id: 'ai-autonomous-sales-platform',
-    name: 'AI Autonomous Sales Platform',
-    tagline: 'Self-optimizing sales automation with intelligent lead generation and conversion',
-    price: '$1,299',
-    period: '/month',
-    description: 'Intelligent sales platform that autonomously generates leads, qualifies prospects, and optimizes sales processes using AI and machine learning.',
+    id: 'ai-predictive-maintenance-platform',
+    name: 'AI Predictive Maintenance Platform',
+    tagline: 'Predict equipment failures before they happen',
+    description: 'Advanced AI-powered predictive maintenance system that uses machine learning and IoT sensors to predict equipment failures up to 30 days in advance, reducing downtime by 80% and maintenance costs by 60%.',
+    category: 'AI & Industrial IoT',
+    price: {
+      monthly: 599,
+      yearly: 5990,
+      currency: 'USD',
+      trialDays: 45,
+      setupTime: '1 week'
+    },
     features: [
-      'Autonomous lead generation and qualification',
-      'Intelligent prospect scoring and prioritization',
-      'Automated sales outreach and follow-up',
-      'Real-time sales performance optimization',
-      'Predictive sales analytics and insights',
-      'Integration with CRM and sales tools',
-      'Multi-channel sales automation',
-      'Advanced reporting and analytics',
-      'Continuous learning and improvement'
+      'Real-time Equipment Monitoring',
+      'Machine Learning Failure Prediction',
+      'Predictive Analytics Dashboard',
+      'Automated Maintenance Scheduling',
+      'Cost Optimization Recommendations',
+      'Integration with CMMS Systems',
+      'Mobile App for Technicians',
+      'Advanced Reporting & Analytics',
+      'Custom Alert System',
+      'Historical Data Analysis'
     ],
-    popular: true,
-    icon: '💰',
-    color: 'from-green-600 to-emerald-700',
-    textColor: 'text-green-400',
-    link: 'https://ziontechgroup.com/ai-autonomous-sales-platform',
-    marketPosition: 'Competes with HubSpot, Salesforce, and Pipedrive with autonomous capabilities.',
-    targetAudience: 'Sales teams, B2B companies, SaaS businesses',
-    trialDays: 21,
-    setupTime: '4 weeks',
-    category: 'AI & Sales',
-    realService: true,
-    technology: ['Python, OpenAI, TensorFlow, CRM APIs, Sales tools'],
-    integrations: ['Salesforce, HubSpot, Pipedrive, LinkedIn, Email platforms'],
-    useCases: ['Lead generation, Sales automation, Performance optimization'],
-    roi: 'Increase sales productivity by 60% and conversion rates by 40%.',
-    competitors: ['HubSpot, Salesforce, Pipedrive, Outreach'],
-    marketSize: '$20B+ sales automation market',
-    growthRate: '170% YoY',
-    variant: 'ai-futuristic',
-    contactInfo: contact,
-    realImplementation: true,
-    implementationDetails: 'AI-powered platform with sales automation workflows and major CRM integration.',
-    launchDate: '2024-06-01',
-    customers: 156,
-    rating: 4.7,
-    reviews: 123
-  },
-  {
-    id: 'ai-autonomous-customer-success',
-    name: 'AI Autonomous Customer Success Platform',
-    tagline: 'Intelligent customer success with autonomous engagement and optimization',
-    price: '$1,099',
-    period: '/month',
-    description: 'Advanced AI platform that autonomously manages customer success, engagement, and retention using intelligent automation and predictive analytics.',
-    features: [
-      'Autonomous customer engagement and onboarding',
-      'Intelligent success prediction and optimization',
-      'Automated customer health monitoring',
-      'Real-time engagement optimization',
-      'Predictive churn prevention',
-      'Integration with CRM and support tools',
-      'Multi-channel customer communication',
-      'Advanced analytics and reporting',
-      'Continuous learning and improvement'
+    benefits: [
+      'Reduce unplanned downtime by 80%',
+      'Lower maintenance costs by 60%',
+      'Extend equipment lifespan by 40%',
+      'Improve safety and compliance',
+      'Optimize resource allocation'
     ],
-    popular: true,
-    icon: '🎯',
-    color: 'from-teal-600 to-cyan-700',
-    textColor: 'text-teal-400',
-    link: 'https://ziontechgroup.com/ai-autonomous-customer-success',
-    marketPosition: 'Competes with Gainsight, Totango, and ClientSuccess with autonomous capabilities.',
-    targetAudience: 'Customer success teams, SaaS companies, subscription businesses',
-    trialDays: 21,
-    setupTime: '3 weeks',
-    category: 'AI & Customer Success',
-    realService: true,
-    technology: ['Python, OpenAI, TensorFlow, CRM APIs, Support tools'],
-    integrations: ['Salesforce, HubSpot, Zendesk, Intercom, Support platforms'],
-    useCases: ['Customer engagement, Success optimization, Churn prevention'],
-    roi: 'Improve customer retention by 30% and reduce churn by 50%.',
-    competitors: ['Gainsight, Totango, ClientSuccess, ChurnZero'],
-    marketSize: '$8B+ customer success software market',
-    growthRate: '150% YoY',
-    variant: 'ai-futuristic',
-    contactInfo: contact,
+    targetAudience: [
+      'Manufacturing companies',
+      'Oil and gas facilities',
+      'Power plants',
+      'Mining operations',
+      'Transportation companies',
+      'Healthcare facilities'
+    ],
+    marketPosition: 'Competitive with IBM Maximo ($50-200 per user/month), SAP EAM ($100-300 per user/month), and Oracle EAM ($75-250 per user/month). Our advantage: AI-first approach, predictive capabilities, and lower total cost of ownership.',
+    competitors: ['IBM Maximo, SAP EAM, Oracle EAM, Infor EAM, IFS Applications'],
+    techStack: ['TensorFlow, PyTorch, React, Node.js, PostgreSQL, InfluxDB, AWS IoT, Azure IoT'],
     realImplementation: true,
-    implementationDetails: 'AI-powered platform with customer success automation and major platform integration.',
-    launchDate: '2024-05-15',
-    customers: 89,
+    implementationDetails: 'Production-ready IoT platform with real-time data processing, machine learning models, and comprehensive monitoring capabilities.',
+    roi: 'Average customer sees 300% ROI within 12 months through reduced downtime and maintenance costs.',
+    useCases: [
+      'Equipment failure prediction',
+      'Preventive maintenance scheduling',
+      'Asset performance optimization',
+      'Energy consumption monitoring',
+      'Safety compliance monitoring',
+      'Supply chain optimization'
+    ],
+    integrations: ['SAP, Oracle, IBM Maximo, Infor, IFS, Microsoft Dynamics, Salesforce'],
+    support: '24/7 technical support, field service engineers, comprehensive training, and ongoing optimization.',
+    compliance: ['ISO 55001, ISO 14001, OHSAS 18001, API 580, ASME'],
+    link: 'https://ziontechgroup.com/ai-predictive-maintenance',
+    icon: '🔧',
+    color: 'from-green-500 to-emerald-600',
+    popular: true,
+    launchDate: '2025-02-01',
+    customers: 950,
     rating: 4.8,
-    reviews: 67
-  },
-  {
-    id: 'ai-autonomous-hr-recruitment',
-    name: 'AI Autonomous HR Recruitment Platform',
-    tagline: 'Intelligent recruitment automation with autonomous candidate screening and matching',
-    price: '$1,599',
-    period: '/month',
-    description: 'Advanced AI platform that autonomously screens candidates, matches job requirements, and optimizes recruitment processes using intelligent automation.',
-    features: [
-      'Autonomous candidate screening and assessment',
-      'Intelligent job-candidate matching',
-      'Automated interview scheduling and coordination',
-      'Real-time recruitment optimization',
-      'Predictive hiring analytics and insights',
-      'Integration with HR and ATS systems',
-      'Multi-channel recruitment automation',
-      'Advanced reporting and analytics',
-      'Continuous learning and improvement'
-    ],
-    popular: true,
-    icon: '👥',
-    color: 'from-yellow-600 to-orange-700',
-    textColor: 'text-yellow-400',
-    link: 'https://ziontechgroup.com/ai-autonomous-hr-recruitment',
-    marketPosition: 'Competes with Workday, BambooHR, and Greenhouse with autonomous capabilities.',
-    targetAudience: 'HR teams, recruitment agencies, enterprise companies',
-    trialDays: 21,
-    setupTime: '4 weeks',
-    category: 'AI & HR',
-    realService: true,
-    technology: ['Python, OpenAI, TensorFlow, HR APIs, ATS systems'],
-    integrations: ['Workday, BambooHR, Greenhouse, LinkedIn, Job boards'],
-    useCases: ['Candidate screening, Recruitment automation, Hiring optimization'],
-    roi: 'Reduce recruitment time by 70% and improve hire quality by 40%.',
-    competitors: ['Workday, BambooHR, Greenhouse, Lever'],
-    marketSize: '$22B+ HR software market',
-    growthRate: '160% YoY',
-    variant: 'ai-futuristic',
-    contactInfo: contact,
-    realImplementation: true,
-    implementationDetails: 'AI-powered platform with recruitment automation and major HR system integration.',
-    launchDate: '2024-04-01',
-    customers: 134,
-    rating: 4.8,
-    reviews: 98
-  },
-  {
-    id: 'ai-autonomous-supply-chain',
-    name: 'AI Autonomous Supply Chain Platform',
-    tagline: 'Intelligent supply chain optimization with autonomous decision-making and execution',
-    price: '$2,299',
-    period: '/month',
-    description: 'Advanced AI platform that autonomously optimizes supply chain operations, predicts demand, and manages inventory using intelligent automation and analytics.',
-    features: [
-      'Autonomous demand forecasting and planning',
-      'Intelligent inventory optimization and management',
-      'Automated supplier selection and evaluation',
-      'Real-time supply chain monitoring',
-      'Predictive analytics and insights',
-      'Integration with ERP and WMS systems',
-      'Multi-modal transportation optimization',
-      'Advanced reporting and analytics',
-      'Continuous learning and improvement'
-    ],
-    popular: true,
-    icon: '🚚',
-    color: 'from-purple-600 to-pink-700',
-    textColor: 'text-purple-400',
-    link: 'https://ziontechgroup.com/ai-autonomous-supply-chain',
-    marketPosition: 'Competes with SAP, Oracle, and Manhattan Associates with autonomous capabilities.',
-    targetAudience: 'Logistics companies, manufacturers, retailers, distributors',
-    trialDays: 30,
-    setupTime: '6 weeks',
-    category: 'AI & Supply Chain',
-    realService: true,
-    technology: ['Python, TensorFlow, PyTorch, ERP APIs, WMS systems'],
-    integrations: ['SAP, Oracle, Microsoft Dynamics, Manhattan Associates, JDA'],
-    useCases: ['Demand forecasting, Inventory optimization, Supply chain automation'],
-    roi: 'Reduce supply chain costs by 25% and improve efficiency by 40%.',
-    competitors: ['SAP, Oracle, Manhattan Associates, JDA'],
-    marketSize: '$16B+ supply chain software market',
-    growthRate: '180% YoY',
-    variant: 'ai-futuristic',
-    contactInfo: contact,
-    realImplementation: true,
-    implementationDetails: 'AI-powered platform with supply chain automation and major ERP integration.',
-    launchDate: '2024-03-15',
-    customers: 67,
-    rating: 4.8,
-    reviews: 52
+    reviews: 320
   }
 ];

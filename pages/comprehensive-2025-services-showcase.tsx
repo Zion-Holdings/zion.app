@@ -7,9 +7,10 @@ import {
   ArrowRight, Rocket, Phone, Mail, MapPin, Grid, List,
   ChevronDown, Brain, Shield, Cloud, Database, Zap
 } from 'lucide-react';
-import { innovativeMicroSaasServices } from '../data/2025-innovative-micro-saas-expansions';
+import { innovativeMicroSaasExpansions2025 } from '../data/2025-innovative-micro-saas-expansions';
 import { innovativeITServices } from '../data/2025-innovative-it-services-expansions';
-import { innovativeAIServices } from '../data/2025-innovative-ai-services-expansions';
+import { innovativeAIServicesExpansions2025 } from '../data/2025-innovative-ai-services-expansions';
+import { emergingTechInnovations2025 } from '../data/2025-emerging-tech-innovations';
 
 export default function Comprehensive2025ServicesShowcase() {
   const [searchTerm, setSearchTerm] = useState('');
@@ -17,6 +18,24 @@ export default function Comprehensive2025ServicesShowcase() {
   const [selectedPriceRange, setSelectedPriceRange] = useState<string>('all');
   const [sortBy, setSortBy] = useState<string>('name');
   const [viewMode, setViewMode] = useState<'grid' | 'list'>('grid');
+
+  // Helper function to get monthly price safely
+  const getMonthlyPrice = (service: any): number => {
+    if (typeof service.price === 'string') {
+      // Extract number from string like "$299/month" or "$299"
+      const match = service.price.match(/\$?(\d+(?:,\d+)?)/);
+      return match ? parseInt(match[1].replace(/,/g, '')) : 0;
+    }
+    return service.price.monthly || 0;
+  };
+
+  // Helper function to format price for display
+  const formatPriceDisplay = (service: any): string => {
+    if (typeof service.price === 'string') {
+      return service.price;
+    }
+    return `$${service.price.monthly.toLocaleString()}/month`;
+  };
 
   const contactInfo = {
     mobile: '+1 302 464 0950',
@@ -27,21 +46,24 @@ export default function Comprehensive2025ServicesShowcase() {
 
   // Combine all services
   const allServices = [
-    ...innovativeMicroSaasServices,
+    ...innovativeMicroSaasExpansions2025,
     ...innovativeITServices,
-    ...innovativeAIServices
+    ...innovativeAIServicesExpansions2025,
+    ...emergingTechInnovations2025
   ];
 
   // Dynamic category counts
-  const microSaasCount = innovativeMicroSaasServices.length;
+  const microSaasCount = innovativeMicroSaasExpansions2025.length;
   const itServicesCount = innovativeITServices.length;
-  const aiServicesCount = innovativeAIServices.length;
+  const aiServicesCount = innovativeAIServicesExpansions2025.length;
+  const emergingTechCount = emergingTechInnovations2025.length;
 
   const categories = [
     { id: 'all', name: 'All Services', icon: '🚀', count: allServices.length },
     { id: 'micro-saas', name: 'Micro SAAS', icon: '💼', count: microSaasCount },
     { id: 'it-services', name: 'IT Services', icon: '🖥️', count: itServicesCount },
-    { id: 'ai-services', name: 'AI Services', icon: '🧠', count: aiServicesCount }
+    { id: 'ai-services', name: 'AI Services', icon: '🧠', count: aiServicesCount },
+    { id: 'emerging-tech', name: 'Emerging Tech', icon: '🚀', count: emergingTechCount }
   ];
 
   const priceRanges = [
@@ -60,15 +82,17 @@ export default function Comprehensive2025ServicesShowcase() {
                            service.category.toLowerCase().includes(searchTerm.toLowerCase());
 
       const matchesCategory = selectedCategory === 'all' ||
-        (selectedCategory === 'micro-saas' && innovativeMicroSaasServices.includes(service)) ||
-        (selectedCategory === 'it-services' && innovativeITServices.includes(service)) ||
-        (selectedCategory === 'ai-services' && innovativeAIServices.includes(service));
+        (selectedCategory === 'micro-saas' && service.category.toLowerCase().includes('sales') || service.category.toLowerCase().includes('saas')) ||
+        (selectedCategory === 'it-services' && service.category.toLowerCase().includes('it') || service.category.toLowerCase().includes('infrastructure') || service.category.toLowerCase().includes('devops')) ||
+        (selectedCategory === 'ai-services' && service.category.toLowerCase().includes('ai') || service.category.toLowerCase().includes('machine learning') || service.category.toLowerCase().includes('neural')) ||
+        (selectedCategory === 'emerging-tech' && service.category.toLowerCase().includes('space') || service.category.toLowerCase().includes('quantum') || service.category.toLowerCase().includes('brain-computer'));
 
+      const monthlyPrice = getMonthlyPrice(service);
       const matchesPrice = selectedPriceRange === 'all' ||
-        (selectedPriceRange === 'low' && parseInt(service.price.replace(/[^0-9]/g, '')) < 1000) ||
-        (selectedPriceRange === 'medium' && parseInt(service.price.replace(/[^0-9]/g, '')) >= 1000 && parseInt(service.price.replace(/[^0-9]/g, '')) <= 3000) ||
-        (selectedPriceRange === 'high' && parseInt(service.price.replace(/[^0-9]/g, '')) > 3000 && parseInt(service.price.replace(/[^0-9]/g, '')) <= 6000) ||
-        (selectedPriceRange === 'enterprise' && parseInt(service.price.replace(/[^0-9]/g, '')) > 6000);
+        (selectedPriceRange === 'low' && monthlyPrice < 1000) ||
+        (selectedPriceRange === 'medium' && monthlyPrice >= 1000 && monthlyPrice <= 3000) ||
+        (selectedPriceRange === 'high' && monthlyPrice > 3000 && monthlyPrice <= 6000) ||
+        (selectedPriceRange === 'enterprise' && monthlyPrice > 6000);
 
       return matchesSearch && matchesCategory && matchesPrice;
     });
@@ -80,9 +104,7 @@ export default function Comprehensive2025ServicesShowcase() {
         break;
       case 'price':
         filtered.sort((a, b) => {
-          const priceA = parseInt(a.price.replace(/[^0-9]/g, ''));
-          const priceB = parseInt(b.price.replace(/[^0-9]/g, ''));
-          return priceA - priceB;
+          return getMonthlyPrice(a) - getMonthlyPrice(b);
         });
         break;
       case 'popularity':
@@ -315,7 +337,7 @@ export default function Comprehensive2025ServicesShowcase() {
                         <p className="text-gray-400 text-sm mb-4">{service.tagline}</p>
                         
                         <div className="flex items-center justify-between mb-4">
-                          <div className="text-2xl font-bold text-cyan-400">{service.price}</div>
+                          <div className="text-2xl font-bold text-cyan-400">{formatPriceDisplay(service)}</div>
                           <div className="flex items-center gap-1 text-yellow-400">
                             <Star className="w-4 h-4 fill-current" />
                             <span className="text-sm">{service.rating}</span>
@@ -371,7 +393,7 @@ export default function Comprehensive2025ServicesShowcase() {
                             
                             <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-4">
                               <div className="text-center">
-                                <div className="text-2xl font-bold text-cyan-400">{service.price}</div>
+                                <div className="text-2xl font-bold text-cyan-400">{formatPriceDisplay(service)}</div>
                                 <div className="text-xs text-gray-500">Price</div>
                               </div>
                               <div className="text-center">
@@ -383,7 +405,9 @@ export default function Comprehensive2025ServicesShowcase() {
                                 <div className="text-xs text-gray-500">Customers</div>
                               </div>
                               <div className="text-center">
-                                <div className="text-2xl font-bold text-pink-400">{service.trialDays}</div>
+                                <div className="text-2xl font-bold text-pink-400">
+                                  {typeof service.price === 'object' ? service.price.trialDays : 'N/A'}
+                                </div>
                                 <div className="text-xs text-gray-500">Trial Days</div>
                               </div>
                             </div>

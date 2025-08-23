@@ -78,6 +78,13 @@ const footerSections: FooterSection[] = [
         neonColor: 'shadow-purple-400/50'
       },
       { 
+        label: 'Comprehensive 2040 Showcase', 
+        href: '/comprehensive-2040-services-showcase', 
+        description: 'All revolutionary services',
+        icon: <Star className="w-4 h-4" />,
+        neonColor: 'shadow-yellow-400/50'
+      },
+      { 
         label: 'View All Services', 
         href: '/services', 
         description: 'Complete service portfolio',

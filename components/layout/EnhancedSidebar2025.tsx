@@ -20,6 +20,19 @@ const contactInfo = {
 
 const sidebarSections = [
   {
+    title: 'Featured Services',
+    icon: <Star className="w-5 h-5" />,
+    color: 'text-yellow-400',
+    items: [
+      { name: 'Comprehensive 2040 Showcase', href: '/comprehensive-2040-services-showcase', badge: 'New' },
+      { name: 'AI Autonomous Customer Support', href: '/ai-autonomous-customer-support', badge: 'Hot' },
+      { name: 'AI Autonomous Sales Copilot', href: '/ai-autonomous-sales-copilot', badge: 'New' },
+      { name: 'Quantum-Secure Cloud Infrastructure', href: '/quantum-secure-cloud-infrastructure', badge: 'Popular' },
+      { name: 'Space Resource Mining Platform', href: '/space-resource-mining-platform', badge: 'New' },
+      { name: 'AI Autonomous Marketing Orchestrator', href: '/ai-autonomous-marketing-orchestrator', badge: 'New' }
+    ]
+  },
+  {
     title: 'AI & Consciousness',
     icon: <Brain className="w-5 h-5" />,
     color: 'text-violet-400',
