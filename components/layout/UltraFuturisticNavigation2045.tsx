@@ -196,56 +196,56 @@ const navigationItems: NavigationItem[] = [
       }
     ]
   },
-  {
-    label: 'Resources',
-    href: '/resources',
-    icon: <BookOpen className="w-4 h-4" />,
-    description: 'Knowledge base and learning resources',
-    neonColor: 'shadow-orange-400/50',
-    category: 'main',
-    children: [
-      {
-        label: 'Documentation',
-        href: '/resources/documentation',
-        icon: <FileText className="w-4 h-4" />,
-        description: 'Technical documentation and guides',
-        neonColor: 'shadow-blue-400/50',
-        category: 'docs'
+        {
+        label: 'Resources',
+        href: '/resources',
+        icon: <BookOpen className="w-4 h-4" />,
+        description: 'Knowledge base and learning resources',
+        neonColor: 'shadow-orange-400/50',
+        category: 'main',
+        children: [
+          {
+            label: 'Documentation',
+            href: '/resources/documentation',
+            icon: <FileText className="w-4 h-4" />,
+            description: 'Technical documentation and guides',
+            neonColor: 'shadow-blue-400/50',
+            category: 'docs'
+          },
+          {
+            label: 'Webinars',
+            href: '/webinars',
+            icon: <Video className="w-4 h-4" />,
+            description: 'Live and recorded webinars',
+            neonColor: 'shadow-purple-400/50',
+            category: 'webinars'
+          },
+          {
+            label: 'Case Studies',
+            href: '/case-studies',
+            icon: <BarChart3 className="w-4 h-4" />,
+            description: 'Success stories and implementations',
+            neonColor: 'shadow-green-400/50',
+            category: 'case-studies'
+          },
+          {
+            label: 'API Reference',
+            href: '/resources/api',
+            icon: <Code className="w-4 h-4" />,
+            description: 'Developer API documentation',
+            neonColor: 'shadow-indigo-400/50',
+            category: 'api'
+          },
+          {
+            label: 'Training',
+            href: '/training',
+            icon: <GraduationCap className="w-4 h-4" />,
+            description: 'Training programs and certifications',
+            neonColor: 'shadow-yellow-400/50',
+            category: 'training'
+          }
+        ]
       },
-      {
-        label: 'Webinars',
-        href: '/webinars',
-        icon: <Video className="w-4 h-4" />,
-        description: 'Live and recorded webinars',
-        neonColor: 'shadow-purple-400/50',
-        category: 'webinars'
-      },
-      {
-        label: 'Case Studies',
-        href: '/resources/case-studies',
-        icon: <BarChart3 className="w-4 h-4" />,
-        description: 'Success stories and implementations',
-        neonColor: 'shadow-green-400/50',
-        category: 'case-studies'
-      },
-      {
-        label: 'API Reference',
-        href: '/resources/api',
-        icon: <Code className="w-4 h-4" />,
-        description: 'Developer API documentation',
-        neonColor: 'shadow-indigo-400/50',
-        category: 'api'
-      },
-      {
-        label: 'Training',
-        href: '/training',
-        icon: <GraduationCap className="w-4 h-4" />,
-        description: 'Training programs and certifications',
-        neonColor: 'shadow-yellow-400/50',
-        category: 'training'
-      }
-    ]
-  },
   {
     label: 'Company',
     href: '/company',
