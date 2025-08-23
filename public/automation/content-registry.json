@@ -7341,6 +7341,22 @@
       "route": "/reports/updates/update-2025-08-14-1836"
     },
     {
+      "file": "pages/reports/updates/update-2025-08-14-1649.tsx",
+      "route": "/reports/updates/update-2025-08-14-1649"
+    },
+    {
+      "file": "pages/reports/updates/update-2025-08-14-1648.tsx",
+      "route": "/reports/updates/update-2025-08-14-1648"
+    },
+    {
+      "file": "pages/reports/updates/update-2025-08-14-1647.tsx",
+      "route": "/reports/updates/update-2025-08-14-1647"
+    },
+    {
+      "file": "pages/reports/updates/update-2025-08-14-1646.tsx",
+      "route": "/reports/updates/update-2025-08-14-1646"
+    },
+    {
       "file": "pages/reports/updates/update-2025-08-14-1645.tsx",
       "route": "/reports/updates/update-2025-08-14-1645"
     },
@@ -14227,6 +14243,9 @@
       "route": "/docs/reports/unused-exports.md"
     }
   ],
+<<<<<<< HEAD
+  "generatedAt": "2025-08-14T19:49:00.795Z"
+=======
   "generatedAt": "2025-08-14T19:49:55.808Z",
   "items": [
     {
@@ -14251,4 +14270,5 @@
       "source": "cloud-deep-research-factory"
     }
   ]
+>>>>>>> e8f6f707d9 (chore(sync): advanced autonomous sync)
 }
