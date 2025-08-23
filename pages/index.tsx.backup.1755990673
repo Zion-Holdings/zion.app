@@ -1,3 +1,5 @@
+<<<<<<< HEAD
+=======
 import type { NextPage } from 'next';
 import Head from 'next/head';
 import Link from 'next/link';
@@ -7,6 +9,7 @@ import dynamic from 'next/dynamic';
 const FrontPageFeatureGrid = dynamic(() => import('@/components/ui/FrontPageFeatureGrid'), { ssr: false });
 
 const Home: NextPage = () => {
+>>>>>>> origin/cursor/automate-front-page-content-and-feature-advertising-3397
   return (
     <UltraFuturisticNeonBackground>
       <SEO 
