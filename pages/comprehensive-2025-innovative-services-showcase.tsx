@@ -73,6 +73,11 @@ const getServiceDescription = (service: any) => {
   return '';
 };
 
+// Helper function to get service name/title
+const getServiceName = (service: any) => {
+  return service.name || service.title || 'Unnamed Service';
+};
+
 export default function Comprehensive2025InnovativeServicesShowcase() {
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedCategory, setSelectedCategory] = useState('All Services');
@@ -82,7 +87,7 @@ export default function Comprehensive2025InnovativeServicesShowcase() {
   // Filter and sort services
   const filteredServices = allServices
     .filter(service => {
-      const matchesSearch = (service.name || service.title || '').toLowerCase().includes(searchTerm.toLowerCase()) ||
+      const matchesSearch = getServiceName(service).toLowerCase().includes(searchTerm.toLowerCase()) ||
                            service.description.toLowerCase().includes(searchTerm.toLowerCase()) ||
                            (service.tagline || '').toLowerCase().includes(searchTerm.toLowerCase());
       const matchesCategory = selectedCategory === 'All Services' || 
@@ -92,7 +97,7 @@ export default function Comprehensive2025InnovativeServicesShowcase() {
     .sort((a, b) => {
       switch (sortBy) {
         case 'name':
-          return (a.name || a.title || '').localeCompare(b.name || b.title || '');
+          return getServiceName(a).localeCompare(getServiceName(b));
         case 'price':
           return (a.price?.monthly || 0) - (b.price?.monthly || 0);
         case 'rating':
@@ -279,7 +284,7 @@ export default function Comprehensive2025InnovativeServicesShowcase() {
                     )}
                   </div>
                   
-                  <h3 className="text-xl font-bold text-white mb-2">{service.name || service.title}</h3>
+                  <h3 className="text-xl font-bold text-white mb-2">{getServiceName(service)}</h3>
                   <p className="text-gray-300 text-sm mb-4">{service.tagline}</p>
                   
                   {/* Pricing */}
