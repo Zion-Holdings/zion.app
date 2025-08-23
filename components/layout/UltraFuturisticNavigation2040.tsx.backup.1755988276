@@ -4,8 +4,12 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { 
   Menu, X, Search, ChevronDown, Zap, Globe, Lock, 
   Phone, Mail, MapPin, ArrowRight, Star, Users, Award,
+<<<<<<< HEAD
+  Bell, User, Settings, HelpCircle
+=======
   Brain, Atom, Rocket, Shield, Target, Cpu, Database,
   Building, BookOpenCheck, FileText, Video, MessageCircle
+>>>>>>> origin/cursor/website-audit-content-update-and-deployment-7281
 } from 'lucide-react';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
@@ -40,6 +44,48 @@ const navigationItems: NavigationItem[] = [
       {
         label: 'AI & Machine Learning',
         href: '/ai-services',
+<<<<<<< HEAD
+        icon: <Star className="w-4 h-4" />,
+        description: 'Advanced AI solutions for enterprise',
+        badge: 'New'
+      },
+      {
+        label: 'Innovative 2040 Services',
+        href: '/innovative-2040-futuristic-services-showcase',
+        icon: <Star className="w-4 h-4" />,
+        description: 'Cutting-edge futuristic technology solutions',
+        badge: 'Featured'
+      },
+      {
+        label: 'Quantum Computing',
+        href: '/services?category=quantum',
+        icon: <Atom className="w-4 h-4" />,
+        description: 'Next-generation quantum solutions',
+        featured: true,
+        neonColor: 'shadow-blue-400/50'
+      },
+      {
+        label: 'Space Technology',
+        href: '/services?category=space-tech',
+        icon: <Rocket className="w-4 h-4" />,
+        description: 'Innovative space tech applications',
+        featured: true,
+        neonColor: 'shadow-pink-400/50'
+      },
+      {
+        label: 'Cybersecurity',
+        href: '/services?category=cybersecurity',
+        icon: <Shield className="w-4 h-4" />,
+        description: 'Advanced security solutions',
+        neonColor: 'shadow-red-400/50'
+      },
+      { 
+        name: 'Autonomous Customer Success 2043', 
+        href: '/autonomous-customer-success-2043', 
+        description: 'AI-powered customer success',
+        icon: <Heart className="w-4 h-4" />,
+        color: 'from-pink-500 to-purple-500'
+=======
         icon: <Brain className="w-4 h-4" />,
         description: 'Advanced AI solutions for enterprise'
       },
@@ -84,10 +130,41 @@ const navigationItems: NavigationItem[] = [
         href: '/services',
         icon: <ArrowRight className="w-4 h-4" />,
         description: 'Complete service portfolio'
+>>>>>>> origin/cursor/website-audit-content-update-and-deployment-7281
       }
     ]
   },
   {
+<<<<<<< HEAD
+    name: 'AI & Consciousness',
+    href: '/ai-services',
+    icon: <Brain className="w-5 h-5" />,
+    description: 'Revolutionary AI consciousness platforms',
+    badge: 'Featured',
+    category: 'ai',
+    color: 'from-purple-500 to-pink-500',
+    children: [
+      { 
+        name: 'AI Consciousness Evolution', 
+        href: '/ai-consciousness-evolution-2043', 
+        description: 'Next-generation AI consciousness',
+        icon: <Brain className="w-4 h-4" />,
+        featured: true
+      },
+      { 
+        name: 'AI Autonomous Systems', 
+        href: '/ai-autonomous-systems', 
+        description: 'Fully autonomous AI systems',
+        icon: <Cpu className="w-4 h-4" />,
+        color: 'from-emerald-500 to-teal-500'
+      },
+      { 
+        name: 'AI Business Intelligence', 
+        href: '/ai-business-intelligence-2043', 
+        description: 'AI-powered business insights',
+        icon: <BarChart3 className="w-4 h-4" />,
+        color: 'from-blue-500 to-cyan-500'
+=======
     label: 'Solutions',
     children: [
       {
@@ -171,6 +248,7 @@ const navigationItems: NavigationItem[] = [
         href: '/support',
         icon: <MessageCircle className="w-4 h-4" />,
         description: 'Technical support and help'
+>>>>>>> origin/cursor/website-audit-content-update-and-deployment-7281
       }
     ]
   },
