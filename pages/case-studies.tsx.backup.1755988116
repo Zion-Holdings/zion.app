@@ -132,6 +132,164 @@ const CaseStudies: React.FC = () => {
         "40% reduction in healthcare costs",
         "Improved patient outcomes by 60%"
       ],
+<<<<<<< HEAD
+      metrics: {
+        implementationTime: "6 months",
+        teamSize: "15 developers",
+        roi: "340%",
+        userAdoption: "98%"
+      },
+      featured: true,
+      image: "/images/case-studies/healthcare-diagnostics.jpg",
+      tags: ['AI', 'Healthcare', 'Diagnostics', 'Machine Learning'],
+      url: '/case-studies/healthcare-diagnostics-platform'
+    },
+    {
+      id: 2,
+      title: "Quantum Financial Trading System",
+      client: "Quantum Capital Markets",
+      industry: 'finance',
+      service: 'quantum',
+      challenge: "Traditional trading algorithms couldn't process market data fast enough to capitalize on microsecond opportunities.",
+      solution: "Deployed Zion's quantum computing platform with advanced financial modeling algorithms.",
+      results: [
+        "1000x faster market analysis",
+        "45% increase in trading profits",
+        "99.99% system uptime",
+        "Real-time risk assessment"
+      ],
+      metrics: {
+        implementationTime: "8 months",
+        teamSize: "20 developers",
+        roi: "280%",
+        userAdoption: "100%"
+      },
+      featured: true,
+      image: "/images/case-studies/quantum-trading.jpg",
+      tags: ['Quantum Computing', 'Finance', 'Trading', 'High-Frequency'],
+      url: '/case-studies/quantum-financial-trading'
+    },
+    {
+      id: 3,
+      title: "Space Resource Intelligence for Mining Operations",
+      client: "Interplanetary Resources Corp",
+      industry: 'manufacturing',
+      service: 'space',
+      challenge: "Manual resource assessment in space was inefficient and dangerous, limiting exploration capabilities.",
+      solution: "Integrated Zion's space resource intelligence platform with autonomous drones and AI analysis.",
+      results: [
+        "90% faster resource mapping",
+        "75% reduction in exploration costs",
+        "Enhanced safety for astronauts",
+        "Real-time resource data"
+      ],
+      metrics: {
+        implementationTime: "12 months",
+        teamSize: "25 developers",
+        roi: "420%",
+        userAdoption: "95%"
+      },
+      featured: false,
+      image: "/images/case-studies/space-mining.jpg",
+      tags: ['Space Technology', 'Mining', 'AI', 'Autonomous Systems'],
+      url: '/case-studies/space-resource-intelligence'
+    },
+    {
+      id: 4,
+      title: "Zero-Trust Cybersecurity Framework",
+      client: "Fortress Bank International",
+      industry: 'finance',
+      service: 'security',
+      challenge: "Increasing cyber threats and regulatory requirements demanded a more robust security architecture.",
+      solution: "Implemented Zion's quantum-resistant cybersecurity platform with advanced threat detection.",
+      results: [
+        "99.99% threat detection rate",
+        "Zero security breaches in 18 months",
+        "60% reduction in security incidents",
+        "Full regulatory compliance"
+      ],
+      metrics: {
+        implementationTime: "4 months",
+        teamSize: "12 developers",
+        roi: "180%",
+        userAdoption: "100%"
+      },
+      featured: false,
+      image: "/images/case-studies/cybersecurity.jpg",
+      tags: ['Cybersecurity', 'Zero Trust', 'Quantum Security', 'Compliance'],
+      url: '/case-studies/zero-trust-cybersecurity'
+    },
+    {
+      id: 5,
+      title: "AI Autonomous Manufacturing Optimization",
+      client: "Smart Factory Solutions",
+      industry: 'manufacturing',
+      service: 'ai',
+      challenge: "Production inefficiencies and quality control issues were costing millions annually.",
+      solution: "Deployed Zion's AI autonomous research platform for predictive maintenance and quality control.",
+      results: [
+        "85% reduction in production downtime",
+        "95% improvement in product quality",
+        "30% increase in production efficiency",
+        "Predictive maintenance alerts"
+      ],
+      metrics: {
+        implementationTime: "7 months",
+        teamSize: "18 developers",
+        roi: "250%",
+        userAdoption: "92%"
+      },
+      featured: false,
+      image: "/images/case-studies/manufacturing-ai.jpg",
+      tags: ['AI', 'Manufacturing', 'Predictive Maintenance', 'Quality Control'],
+      url: '/case-studies/ai-manufacturing-optimization'
+    },
+    {
+      id: 6,
+      title: "Edge Computing Orchestration Platform",
+      client: "CloudTech Enterprises",
+      industry: 'technology',
+      service: 'ai',
+      challenge: "Distributed computing infrastructure was difficult to manage and optimize across multiple locations.",
+      solution: "Implemented Zion's edge computing orchestration platform with autonomous management capabilities.",
+      results: [
+        "99.99% system uptime achieved",
+        "50% reduction in infrastructure costs",
+        "Real-time performance optimization",
+        "Automated scaling and management"
+      ],
+      metrics: {
+        implementationTime: "5 months",
+        teamSize: "16 developers",
+        roi: "200%",
+        userAdoption: "96%"
+      },
+      featured: false,
+      image: "/images/case-studies/edge-computing.jpg",
+      tags: ['Edge Computing', 'Infrastructure', 'Automation', 'Performance'],
+      url: '/case-studies/edge-computing-orchestration'
+    }
+  ];
+
+  const testimonials = [
+    {
+      quote: "Zion Tech Group transformed our security posture completely. Their AI consciousness platform detected threats we didn't even know existed.",
+      author: "Sarah Chen",
+      title: "CTO, SecureNet Solutions",
+      company: "SecureNet Solutions"
+    },
+    {
+      quote: "The quantum computing solution reduced our research time from weeks to hours. It's like having a supercomputer that thinks.",
+      author: "Dr. Michael Rodriguez",
+      title: "Lead Researcher",
+      company: "Quantum Dynamics Inc."
+    },
+    {
+      quote: "Working with Zion Tech Group was like having an extension of our own team. They understood our business and delivered beyond expectations.",
+      author: "Jennifer Park",
+      title: "VP of Technology",
+      company: "TechCorp Global"
+=======
       technologies: ['Big Data', 'Machine Learning', 'Real-time Analytics', 'Predictive Modeling'],
       duration: '10 months',
       teamSize: '10 data scientists + 5 engineers',
@@ -172,6 +330,7 @@ const CaseStudies: React.FC = () => {
       duration: '18 months',
       teamSize: '12 engineers + 6 city planners',
       featured: false
+>>>>>>> origin/cursor/add-more-project-content-3422
     }
   ];
 
