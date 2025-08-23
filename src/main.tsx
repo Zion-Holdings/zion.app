@@ -27,8 +27,8 @@ import { NotificationProvider } from './context';
 // Import analytics provider
 import { AnalyticsProvider } from './context/AnalyticsContext';
 import { ViewModeProvider } from './context/ViewModeContext';
-import { Provider } from 'react-redux';
-import { store } from './store/store';
+import { CartProvider } from './context/CartContext';
+import { registerServiceWorker } from './serviceWorkerRegistration';
 
 // Initialize a React Query client with global error handling
 const queryClient = new QueryClient({
@@ -55,9 +55,11 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
                   <AnalyticsProvider>
                     <LanguageProvider authState={{ isAuthenticated: false, user: null }}>
                       <ViewModeProvider>
-                        <AppLayout>
-                          <App />
-                        </AppLayout>
+                        <CartProvider>
+                          <AppLayout>
+                            <App />
+                          </AppLayout>
+                        </CartProvider>
                       </ViewModeProvider>
                       <LanguageDetectionPopup />
                     </LanguageProvider>
