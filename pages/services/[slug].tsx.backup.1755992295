@@ -1,5 +1,10 @@
 import React from 'react';
 import Head from 'next/head';
+<<<<<<< HEAD
+import Link from 'next/link';
+import { Check, Mail, MapPin, Phone, ExternalLink, ArrowLeft } from 'lucide-react';
+import Layout from '../../components/layout/Layout';
+=======
 import UltraFuturisticBackground from '../../components/ui/UltraFuturisticBackground';
 import Button from '../../components/ui/Button';
 import Card from '../../components/ui/Card';
@@ -20,6 +25,7 @@ import { realMarketAugmentations2025 } from '../../data/real-market-augmentation
 import { additionalLiveServices2025 } from '../../data/additional-live-services-2025';
 import { real2025Q2Additions } from '../../data/real-2025-q2-additions';
 import { real2025Q3Additions } from '../../data/real-2025-q3-additions';
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-53a4
 
 // Simplified service data structure
 interface SimpleService {
@@ -54,7 +60,18 @@ const mockService: SimpleService = {
 		.concat(realMarketAugmentations2025 as unknown as Service[])
 		.concat(additionalLiveServices2025 as unknown as Service[])
 		.concat(real2025Q2Additions as unknown as Service[])
+<<<<<<< HEAD
+		.concat(augmentedServicesBatch3 as unknown as Service[])
+		.concat(realServicesQ22025 as unknown as Service[])
+		.concat(realServicesQ32025 as unknown as Service[])
+		.concat(realQ4Services2025 as unknown as Service[])
+		.concat(real2025Q4Additions as unknown as Service[])
+		.concat(realMarketServicesExtended as unknown as Service[])
+		.concat(real2026Q1Additions as unknown as Service[])
+		.concat(additional2026RealServices as unknown as Service[]);
+=======
 		.concat(real2025Q3Additions as unknown as Service[]);
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-53a4
 }
 
 function toSlug(value: string): string {

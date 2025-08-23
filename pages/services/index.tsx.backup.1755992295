@@ -15,12 +15,16 @@ import { moreRealServices2025 } from '../../data/more-real-services-2025';
 import { realOperationalServices } from '../../data/real-operational-services';
 import { verified2025Additions } from '../../data/verified-2025-additions';
 import { realServicesQ12025 } from '../../data/real-services-q1-2025'
+<<<<<<< HEAD
+import { newVerifiedServicesQ22025 } from '../../data/real-verified-services-q2-2025'
+=======
 import { realEnterpriseServices2025 } from '../../data/real-enterprise-services-2025';
 import { realMarketAugmentations2025 } from '../../data/real-market-augmentations-2025';
 import { verifiedRealServices2025Batch2 } from '../../data/verified-real-services-2025-batch2';
 import { additionalLiveServices2025 } from '../../data/additional-live-services-2025';
 import { real2025Q2Additions } from '../../data/real-2025-q2-additions';
 import { real2025Q3Additions } from '../../data/real-2025-q3-additions';
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-53a4
 
 const mapLocalToServiceItem = (item: any): ServiceItem => ({
   slug: item.slug,
@@ -42,6 +46,20 @@ const ServicesPage: NextPage = () => {
 export default function ServicesIndexPage() {
   const all = (enhancedRealMicroSaasServices as unknown[])
     .concat(
+<<<<<<< HEAD
+      extraServices as any[],
+      additionalEnhancedServices as any[],
+      newlyAddedServices as any[],
+      curatedMarketServices as any[],
+      realMarketServices as any[],
+      new2025Services as any[],
+      marketValidatedServices as any[],
+      moreRealServices2025 as any[],
+      realOperationalServices as any[],
+      verified2025Additions as any[],
+      realServicesQ12025 as any[],
+      newVerifiedServicesQ22025 as any[]
+=======
       extraServices as unknown[],
       additionalEnhancedServices as unknown[],
       newlyAddedServices as unknown[],
@@ -59,6 +77,7 @@ export default function ServicesIndexPage() {
       additionalLiveServices2025 as unknown[],
       real2025Q2Additions as unknown[],
       real2025Q3Additions as unknown[]
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-53a4
     );
   const byCategory: Record<string, unknown[]> = {};
   for (const c of categories) byCategory[c] = [];

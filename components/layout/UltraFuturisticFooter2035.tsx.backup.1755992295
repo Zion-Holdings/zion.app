@@ -13,6 +13,13 @@ const footerSections = [
   {
     title: 'AI & Consciousness',
     links: [
+<<<<<<< HEAD
+      { name: 'AI Consciousness Evolution', href: '/ai-consciousness-evolution-2029' },
+      { name: 'Quantum AI Fusion', href: '/quantum-ai-fusion' },
+      { name: 'Autonomous AI Ecosystem', href: '/autonomous-ai-ecosystem' },
+      { name: 'AI Ethics & Governance', href: '/ai-ethics-governance' },
+      { name: 'AI Content Generator Pro', href: '/ai-content-generator' }
+=======
       { name: 'AI Consciousness Evolution', href: '/ai-consciousness-evolution-2025' },
       { name: 'AI Quantum Neural Network', href: '/ai-quantum-neural-network' },
       { name: 'AI Autonomous Business Operations', href: '/enterprise-ai-operations-center' },
@@ -22,6 +29,7 @@ const footerSections = [
       { name: 'AI Content Personalization', href: '/ai-content-personalization-engine' },
       { name: 'AI Autonomous Ecosystem', href: '/ai-autonomous-ecosystem-manager' },
       { name: 'AI Ethics & Governance', href: '/ai-ethics-governance-framework' }
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-53a4
     ]
   },
   {

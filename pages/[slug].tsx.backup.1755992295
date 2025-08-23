@@ -1,5 +1,12 @@
 import React from 'react';
 import Head from 'next/head';
+<<<<<<< HEAD
+import Link from 'next/link';
+import { ArrowLeft } from 'lucide-react';
+import Layout from '../components/layout/Layout';
+
+export default function ServiceFallbackPage() {
+=======
 import { GetStaticPaths, GetStaticProps } from 'next';
 import fs from 'fs';
 import path from 'path';
@@ -105,6 +112,7 @@ export default function ServiceFallbackPage() {
     );
   }
 
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-53a4
   return (
     <Layout>
       <Head>
