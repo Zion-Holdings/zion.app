@@ -1,14 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
 import { 
-  Phone, 
-  Mail, 
-  MapPin, 
-  Globe, 
-  Zap, 
-  Sparkles, 
-  Shield, 
-  Rocket,
+  Zap,
   Twitter,
   Linkedin,
   Github,
@@ -18,29 +11,23 @@ import {
 } from 'lucide-react';
 
 const Footer: React.FC = () => {
-  const contactInfo = {
-    mobile: '+1 302 464 0950',
-    email: 'kleber@ziontechgroup.com',
-    address: '364 E Main St STE 1008 Middletown DE 19709',
-    website: 'https://ziontechgroup.com'
-  };
 
   const services = [
     { name: 'AI & Machine Learning', href: '/ai-services' },
-    { name: 'Quantum Technology', href: '/quantum-services' },
+    { name: 'Quantum Computing', href: '/quantum-computing' },
     { name: 'Space Technology', href: '/space-technology' },
     { name: 'IT Solutions', href: '/it-services' },
-    { name: 'Specialized Solutions', href: '/solutions' },
+    { name: 'Cybersecurity', href: '/cybersecurity' },
     { name: 'View All Services', href: '/services' }
   ];
 
   const solutions = [
-    { name: 'Services Showcase', href: '/comprehensive-services-showcase-2025' },
-    { name: 'Pricing Plans', href: '/pricing' },
+    { name: 'Enterprise Solutions', href: '/enterprise-solutions-showcase' },
+    { name: 'Healthcare Solutions', href: '/healthcare-solutions' },
+    { name: 'Financial Solutions', href: '/financial-solutions' },
+    { name: 'Government Solutions', href: '/government-technology-solutions' },
     { name: 'Case Studies', href: '/case-studies' },
-    { name: 'Resources', href: '/resources' },
-    { name: 'Support', href: '/support' },
-    { name: 'Documentation', href: '/docs' }
+    { name: 'Pricing Plans', href: '/pricing' }
   ];
 
   const company = [
@@ -57,8 +44,8 @@ const Footer: React.FC = () => {
     { name: 'Blog', href: '/blog' },
     { name: 'Case Studies', href: '/case-studies' },
     { name: 'Support Center', href: '/support' },
-    { name: 'Resources', href: '/resources' },
-    { name: 'Training', href: '/training' }
+    { name: 'Training', href: '/training' },
+    { name: 'White Papers', href: '/white-papers' }
   ];
 
   const legal = [

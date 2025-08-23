@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { 
   Menu, X, Search, ChevronDown, ChevronRight, 
   Home, Briefcase, Users, BookOpen, Phone, 
-  Globe, Zap, Shield, Brain, Rocket
+  Globe, Zap, Shield, Brain, Rocket, Target, Cpu, TrendingUp
 } from 'lucide-react';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
@@ -51,6 +51,50 @@ const navigationItems: NavigationItem[] = [
         href: '/cybersecurity',
         icon: <Shield className="w-4 h-4" />,
         description: 'Enterprise-grade security solutions'
+      },
+      {
+        label: 'IT Solutions',
+        href: '/it-services',
+        icon: <Cpu className="w-4 h-4" />,
+        description: 'Comprehensive IT infrastructure services'
+      },
+      {
+        label: 'Cloud Platform',
+        href: '/cloud-platform',
+        icon: <Globe className="w-4 h-4" />,
+        description: 'Scalable cloud infrastructure solutions'
+      }
+    ]
+  },
+  {
+    label: 'Solutions',
+    href: '/solutions',
+    icon: <Target className="w-4 h-4" />,
+    description: 'Industry-specific technology solutions',
+    children: [
+      {
+        label: 'Enterprise Solutions',
+        href: '/enterprise-solutions-showcase',
+        icon: <Briefcase className="w-4 h-4" />,
+        description: 'Large-scale enterprise technology solutions'
+      },
+      {
+        label: 'Healthcare Solutions',
+        href: '/healthcare-solutions',
+        icon: <Shield className="w-4 h-4" />,
+        description: 'Healthcare technology and AI solutions'
+      },
+      {
+        label: 'Financial Solutions',
+        href: '/financial-solutions',
+        icon: <TrendingUp className="w-4 h-4" />,
+        description: 'Financial technology and fintech solutions'
+      },
+      {
+        label: 'Government Solutions',
+        href: '/government-technology-solutions',
+        icon: <Globe className="w-4 h-4" />,
+        description: 'Government and public sector technology'
       }
     ]
   },
@@ -64,7 +108,33 @@ const navigationItems: NavigationItem[] = [
     label: 'Resources',
     href: '/resources',
     icon: <BookOpen className="w-4 h-4" />,
-    description: 'Whitepapers, case studies, and insights'
+    description: 'Whitepapers, case studies, and insights',
+    children: [
+      {
+        label: 'Case Studies',
+        href: '/case-studies',
+        icon: <BookOpen className="w-4 h-4" />,
+        description: 'Real-world implementation success stories'
+      },
+      {
+        label: 'Blog',
+        href: '/blog',
+        icon: <BookOpen className="w-4 h-4" />,
+        description: 'Latest insights and technology trends'
+      },
+      {
+        label: 'Documentation',
+        href: '/docs',
+        icon: <BookOpen className="w-4 h-4" />,
+        description: 'Technical documentation and guides'
+      },
+      {
+        label: 'Training',
+        href: '/training',
+        icon: <BookOpen className="w-4 h-4" />,
+        description: 'Professional development and training programs'
+      }
+    ]
   },
   {
     label: 'Contact',
@@ -97,7 +167,7 @@ const UltraAdvancedFuturisticNavigation2025: React.FC = () => {
   // Handle click outside search
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
-      if (searchRef.current && !searchRef.current.contains(event.target as Node)) {
+      if (searchRef.current && !searchRef.current.contains(event.target as HTMLElement)) {
         setIsSearchOpen(false);
       }
     };
@@ -109,7 +179,7 @@ const UltraAdvancedFuturisticNavigation2025: React.FC = () => {
   // Handle click outside mobile menu
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
-      if (mobileMenuRef.current && !mobileMenuRef.current.contains(event.target as Node)) {
+      if (mobileMenuRef.current && !mobileMenuRef.current.contains(event.target as HTMLElement)) {
         setIsMobileMenuOpen(false);
       }
     };

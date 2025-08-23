@@ -1,71 +1,52 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Cloud, Zap, Shield, Globe } from 'lucide-react';
+import { Zap, Brain, Shield, Rocket, Cpu, Atom } from 'lucide-react';
 import Link from 'next/link';
 
-const CloudPlatform: React.FC = () => {
+const QuantumComputing: React.FC = () => {
   const features = [
     {
-      icon: <Cloud className="w-8 h-8" />,
-      title: 'Multi-Cloud Management',
-      description: 'Seamlessly manage resources across AWS, Azure, Google Cloud, and private clouds.'
+      icon: <Zap className="w-8 h-8" />,
+      title: 'Quantum Supremacy',
+      description: 'Achieve computational power beyond classical computers with our quantum solutions.'
     },
     {
-      icon: <Zap className="w-8 h-8" />,
-      title: 'Auto-Scaling',
-      description: 'Intelligent auto-scaling based on demand with cost optimization.'
+      icon: <Brain className="w-8 h-8" />,
+      title: 'AI Integration',
+      description: 'Seamlessly integrate quantum computing with advanced AI algorithms.'
     },
     {
       icon: <Shield className="w-8 h-8" />,
-      title: 'Enterprise Security',
-      description: 'Bank-grade security with compliance certifications and threat protection.'
+      title: 'Quantum Security',
+      description: 'Unbreakable encryption using quantum key distribution and post-quantum cryptography.'
     },
     {
-      icon: <Globe className="w-8 h-8" />,
-      title: 'Global CDN',
-      description: 'Worldwide content delivery network for optimal performance.'
+      icon: <Rocket className="w-8 h-8" />,
+      title: 'Space Applications',
+      description: 'Quantum computing solutions for space exploration and satellite operations.'
     }
   ];
 
   const services = [
     {
-      title: 'Infrastructure as a Service',
-      description: 'Scalable compute, storage, and networking resources.',
-      features: ['Virtual Machines', 'Block Storage', 'Load Balancing', 'Auto-scaling Groups']
+      title: 'Quantum Algorithm Development',
+      description: 'Custom quantum algorithms for optimization, machine learning, and cryptography.',
+      href: '/quantum-algorithm-development'
     },
     {
-      title: 'Platform as a Service',
-      description: 'Managed application platforms and development tools.',
-      features: ['Container Orchestration', 'Serverless Computing', 'Database Services', 'API Management']
+      title: 'Quantum Cloud Platform',
+      description: 'Access to quantum computing resources through our cloud infrastructure.',
+      href: '/quantum-cloud-platform'
     },
     {
-      title: 'Software as a Service',
-      description: 'Ready-to-use business applications and tools.',
-      features: ['CRM Systems', 'Collaboration Tools', 'Analytics Platforms', 'Security Suites']
+      title: 'Quantum Machine Learning',
+      description: 'Advanced ML models leveraging quantum computing capabilities.',
+      href: '/quantum-machine-learning'
     },
     {
-      title: 'DevOps & CI/CD',
-      description: 'Automated development and deployment pipelines.',
-      features: ['Git Integration', 'Automated Testing', 'Deployment Automation', 'Monitoring & Logging']
-    }
-  ];
-
-  const benefits = [
-    {
-      title: 'Cost Optimization',
-      description: 'Reduce infrastructure costs with intelligent resource management and pricing optimization.'
-    },
-    {
-      title: 'Global Reach',
-      description: 'Deploy applications worldwide with our global infrastructure network.'
-    },
-    {
-      title: 'Security & Compliance',
-      description: 'Enterprise-grade security with SOC2, ISO, and other compliance certifications.'
-    },
-    {
-      title: '24/7 Support',
-      description: 'Round-the-clock technical support and monitoring services.'
+      title: 'Quantum Cybersecurity',
+      description: 'Next-generation security solutions using quantum principles.',
+      href: '/quantum-cybersecurity'
     }
   ];
 
@@ -81,14 +62,14 @@ const CloudPlatform: React.FC = () => {
           >
             <div className="flex justify-center mb-6">
               <div className="w-20 h-20 bg-gradient-to-r from-cyan-400 to-blue-500 rounded-full flex items-center justify-center">
-                <Cloud className="w-10 h-10 text-white" />
+                <Atom className="w-10 h-10 text-white" />
               </div>
             </div>
             <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
-              Cloud Platform
+              Quantum Computing
             </h1>
             <p className="text-xl md:text-2xl text-gray-300 mb-8 max-w-4xl mx-auto">
-              Enterprise-grade cloud infrastructure designed for scalability, security, and performance.
+              Unlock the power of quantum mechanics to solve complex problems that are impossible for classical computers.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
@@ -98,10 +79,10 @@ const CloudPlatform: React.FC = () => {
                 Get Started
               </Link>
               <Link
-                href="/services"
+                href="/quantum-services"
                 className="px-8 py-4 border border-cyan-500 text-cyan-400 rounded-lg font-semibold hover:bg-cyan-500 hover:text-white transition-all duration-300"
               >
-                View All Services
+                Learn More
               </Link>
             </div>
           </motion.div>
@@ -118,9 +99,9 @@ const CloudPlatform: React.FC = () => {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-4xl font-bold mb-6">Platform Features</h2>
+            <h2 className="text-4xl font-bold mb-6">Why Choose Quantum Computing?</h2>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              Discover what makes our cloud platform the choice for enterprise applications.
+              Experience the future of computing with our cutting-edge quantum solutions.
             </p>
           </motion.div>
 
@@ -155,13 +136,13 @@ const CloudPlatform: React.FC = () => {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-4xl font-bold mb-6">Cloud Services</h2>
+            <h2 className="text-4xl font-bold mb-6">Our Quantum Services</h2>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              Comprehensive cloud services to meet all your infrastructure needs.
+              Comprehensive quantum computing solutions tailored to your business needs.
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {services.map((service, index) => (
               <motion.div
                 key={index}
@@ -173,51 +154,13 @@ const CloudPlatform: React.FC = () => {
               >
                 <h3 className="text-2xl font-semibold mb-4">{service.title}</h3>
                 <p className="text-gray-300 mb-6">{service.description}</p>
-                <div>
-                  <h4 className="font-semibold text-cyan-400 mb-3">Key Features:</h4>
-                  <ul className="space-y-2">
-                    {service.features.map((feature, featureIndex) => (
-                      <li key={featureIndex} className="flex items-center text-gray-300">
-                        <div className="w-2 h-2 bg-cyan-400 rounded-full mr-3"></div>
-                        {feature}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Benefits Section */}
-      <section className="py-20 px-4">
-        <div className="max-w-7xl mx-auto">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="text-center mb-16"
-          >
-            <h2 className="text-4xl font-bold mb-6">Why Choose Our Cloud Platform?</h2>
-            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              Experience the benefits of enterprise-grade cloud infrastructure.
-            </p>
-          </motion.div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {benefits.map((benefit, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: index * 0.1 }}
-                viewport={{ once: true }}
-                className="p-8 bg-gray-800/50 rounded-xl border border-gray-700/50 hover:border-cyan-500/50 transition-all duration-300"
-              >
-                <h3 className="text-2xl font-semibold mb-4">{benefit.title}</h3>
-                <p className="text-gray-300">{benefit.description}</p>
+                <Link
+                  href={service.href}
+                  className="inline-flex items-center text-cyan-400 hover:text-cyan-300 transition-colors"
+                >
+                  Learn More
+                  <Cpu className="w-4 h-4 ml-2" />
+                </Link>
               </motion.div>
             ))}
           </div>
@@ -225,7 +168,7 @@ const CloudPlatform: React.FC = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 px-4 bg-gray-800/20">
+      <section className="py-20 px-4">
         <div className="max-w-4xl mx-auto text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -233,22 +176,22 @@ const CloudPlatform: React.FC = () => {
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-4xl font-bold mb-6">Ready to Scale Your Infrastructure?</h2>
+            <h2 className="text-4xl font-bold mb-6">Ready to Go Quantum?</h2>
             <p className="text-xl text-gray-300 mb-8">
-              Start your cloud journey with our enterprise-grade platform today.
+              Join the quantum revolution and transform your business with our cutting-edge solutions.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
                 href="/contact"
                 className="px-8 py-4 bg-gradient-to-r from-cyan-500 to-blue-600 rounded-lg font-semibold hover:from-cyan-600 hover:to-blue-700 transition-all duration-300 transform hover:scale-105"
               >
-                Start Free Trial
+                Start Your Quantum Journey
               </Link>
               <Link
-                href="/services"
+                href="/quantum-services"
                 className="px-8 py-4 border border-cyan-500 text-cyan-400 rounded-lg font-semibold hover:bg-cyan-500 hover:text-white transition-all duration-300"
               >
-                Learn More
+                Explore Services
               </Link>
             </div>
           </motion.div>
@@ -258,4 +201,4 @@ const CloudPlatform: React.FC = () => {
   );
 };
 
-export default CloudPlatform;
+export default QuantumComputing;
