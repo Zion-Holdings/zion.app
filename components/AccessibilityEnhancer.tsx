@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback, useRef } from 'react';
+import React, { useState, useEffect, useCallback, useRef, FocusEvent } from 'react';
 import { motion } from 'framer-motion';
 import { 
   Eye, 
@@ -114,7 +114,7 @@ const AccessibilityEnhancer: React.FC<AccessibilityEnhancerProps> = ({
   }, [applySettings]);
 
   // Focus management
-  const handleFocusChange = useCallback((e: React.FocusEvent) => {
+  const handleFocusChange = useCallback((e: FocusEvent<Element>) => {
     const target = e.target as HTMLElement;
     if (target) {
       setCurrentFocus(target);
