@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import UltraFuturisticNavigation2036 from './UltraFuturisticNavigation2036';
 import UltraFuturisticFooter2036 from './UltraFuturisticFooter2036';
 import EnhancedSidebar2025 from './EnhancedSidebar2025';
-import UltraFuturisticBackground2036 from '../backgrounds/UltraFuturisticBackground2036';
+import UltraFuturisticBackground2038 from '../backgrounds/UltraFuturisticBackground2038';
 import TopContactBar from './TopContactBar';
 
 interface LayoutProps {
@@ -89,7 +89,7 @@ export default function Layout({ children }: LayoutProps) {
       </AnimatePresence>
 
       {/* Futuristic Background */}
-      <UltraFuturisticBackground2036 />
+      <UltraFuturisticBackground2038 />
       
       {/* Layout Structure */}
       <div className="relative z-10">
