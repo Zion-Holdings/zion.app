@@ -14,11 +14,13 @@
     "node": ">=20.18.1",
     "npm": ">=10.0.0"
   },
-  "scripts": {
-    "homepage:update": "node automation/homepage-orchestrator.cjs",
+    "scripts": {
+    "front:advertise": "node automation/front-index-auto-advertiser.cjs",
     "deps:maintain": "node automation/dependency-update-orchestrator.cjs",
     "deps:cron:start": "bash automation/dependency-maintenance-cron.sh",
-    "sitemap": "node scripts/generate-sitemap.mjs",
+    "sitemap": "node scripts/generate-sitemap.js",
+    "readme:generate": "node scripts/generate-readme.js",
+    "search:index": "node scripts/generate-search-index.js",
     "dev": "NODE_OPTIONS=--openssl-legacy-provider next dev",
     "build": "NODE_OPTIONS=--openssl-legacy-provider next build",
     "export": "NODE_OPTIONS=--openssl-legacy-provider next build && next export",
@@ -74,6 +76,7 @@
     "automation:status": "node automation/launch-all-automation.cjs status",
     "automation:report": "node automation/launch-all-automation.cjs report",
     "automation:git-sync": "node automation/git-sync.cjs",
+    "git:sync": "node automation/advanced-git-sync.cjs",
     "automation:improvement": "node automation/continuous-automation-improvement-system.js",
     "automation:guardian": "node automation/automation-guardian-10min.cjs",
     "automation:cloud": "node automation/cloud-autonomous-orchestrator.cjs",
@@ -96,8 +99,8 @@
     "autonomous:cron:fix": "bash automation/autonomous-error-cron-system.sh fix",
     "autonomous:all": "npm run autonomous:start & npm run autonomous:cron:start",
     "design:start": "node automation/launch-design-improvement-automation.js start",
-    "design:layout": "node automation/launch-design-improvement-automation.js layout",
     "design:navigation": "node automation/launch-design-improvement-automation.js navigation",
+    "design:layout": "node automation/launch-design-improvement-automation.js layout",
     "design:visual": "node automation/launch-design-improvement-automation.js visual-design",
     "design:cycle": "node automation/launch-design-improvement-automation.js cycle",
     "design:status": "node automation/launch-design-improvement-automation.js status",
@@ -218,7 +221,14 @@
     "git:pull": "node automation/git-pull-rebase.cjs",
     "git:cron:start": "bash automation/git-sync-cron.sh start",
     "git:cron:stop": "bash automation/git-sync-cron.sh stop",
-    "git:cron:status": "bash automation/git-sync-cron.sh status"
+    "git:cron:status": "bash automation/git-sync-cron.sh status",
+    "homepage:update": "node automation/homepage-updater.cjs",
+    "front:advertise": "node automation/front-index-advertiser.cjs",
+    "front:futurize": "node automation/front-futurizer.cjs",
+    "front:futurize:cron": "node -e \"const cp=require('child_process'); setInterval(()=>cp.exec('node automation/front-futurizer.cjs',()=>{}), 1000*60*60*6)\"",
+    "front:directory": "node automation/front-index-directory-builder.cjs",
+    "front:continuous": "node automation/continuous-front-runner.cjs",
+    "front:continuous:fast": "node -e \"const cp=require('child_process'); const run=()=>cp.exec('node automation/continuous-front-runner.cjs',()=>{}); run(); setInterval(run, 1000*60*5);\""
   },
   "dependencies": {
     "@google-analytics/data": "^5.2.0",
