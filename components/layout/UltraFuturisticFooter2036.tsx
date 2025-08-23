@@ -34,12 +34,12 @@ const footerSections = [
       { name: 'Quantum Neural Networks', href: '/quantum-neural-network-platform', featured: true },
       { name: 'Autonomous Business Operations', href: '/autonomous-business-operations-platform', featured: true },
       { name: 'Space Resource Mining', href: '/space-resource-mining-platform', featured: true },
-      { name: 'Brain-Computer Interface', href: '/brain-computer-interface-platform', featured: true },
+      { name: 'AI Evaluation Orchestrator', href: '/services/ai-evaluation-orchestrator', featured: true },
+      { name: 'AI Support Triage Router', href: '/services/ai-support-triage-router', featured: true },
+      { name: 'AI Code Review Assistant Pro', href: '/services/ai-code-review-assistant-pro', featured: true },
+      { name: 'AI Revenue Forecasting Copilot', href: '/services/ai-revenue-forecasting-copilot', featured: true },
       { name: 'Quantum Financial Trading', href: '/quantum-financial-trading', featured: true },
-      { name: 'AI Emotional Intelligence', href: '/ai-emotional-intelligence-training', featured: true },
-      { name: 'Quantum Materials Discovery', href: '/quantum-materials-discovery-platform' },
-      { name: 'Autonomous Vehicle AI', href: '/autonomous-vehicle-ai-platform' },
-      { name: 'Quantum Bio-Computing', href: '/quantum-bio-computing-platform' }
+      { name: 'AI Emotional Intelligence', href: '/ai-emotional-intelligence-training', featured: true }
     ]
   },
   {

@@ -87,6 +87,30 @@ const navigationItems: NavigationItem[] = [
         href: '/solutions', 
         description: 'Industry-specific solutions',
         icon: <Play className="w-4 h-4" />
+      },
+      { 
+        name: 'AI Evaluation', 
+        href: '/services/ai-evaluation-orchestrator', 
+        description: 'AI model evaluation & testing',
+        icon: <Play className="w-4 h-4" />
+      },
+      { 
+        name: 'AI Support Router', 
+        href: '/services/ai-support-triage-router', 
+        description: 'Intelligent support routing',
+        icon: <Play className="w-4 h-4" />
+      },
+      { 
+        name: 'AI Code Review', 
+        href: '/services/ai-code-review-assistant-pro', 
+        description: 'AI-powered code analysis',
+        icon: <Play className="w-4 h-4" />
+      },
+      { 
+        name: 'AI Revenue Forecasting', 
+        href: '/services/ai-revenue-forecasting-copilot', 
+        description: 'Revenue prediction & planning',
+        icon: <Play className="w-4 h-4" />
       }
     ]
   },
