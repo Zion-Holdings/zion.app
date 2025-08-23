@@ -126,6 +126,10 @@ const Home: NextPage<HomeProps> = ({ services, capabilities, features }) => {
             <Link href="/contact"><a className="px-4 py-2 rounded-md bg-blue-600 text-white hover:bg-blue-700">Contact us</a></Link>
             <Link href="/analyze-service-request"><a className="px-4 py-2 rounded-md border border-gray-300 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-zinc-800">Analyze service request</a></Link>
           </div>
+<<<<<<< HEAD
+        </div>
+      </section>
+=======
           <div className="hidden gap-6 md:flex">
             <Link href="/services"><a className="text-white/80 hover:text-white">Services</a></Link>
             <Link href="/products"><a className="text-white/80 hover:text-white">Products</a></Link>
@@ -396,6 +400,7 @@ const Home: NextPage<HomeProps> = ({ services, capabilities, features }) => {
 </section>
 /* AUTO-GENERATED: HOME_UPDATER_END */}
  </main>
+>>>>>>> origin/cursor/create-application-sidebar-navigation-e615
     </div>
   );
 };

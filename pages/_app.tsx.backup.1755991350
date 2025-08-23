@@ -5,10 +5,18 @@ import '../styles/modern-design-system.css';
 import '../styles/globals.css';
 import Layout from '../components/Layout';
 
+<<<<<<< HEAD
+export default function MyApp({ Component, pageProps }: AppProps) {
+  return (
+    <EnhancedLayout>
+      <Component {...pageProps} />
+    </EnhancedLayout>
+=======
 export default function ZionApp({ Component, pageProps }: AppProps) {
   return (
     <Layout>
       <Component {...pageProps} />
     </Layout>
+>>>>>>> origin/cursor/create-application-sidebar-navigation-e615
   );
 }
