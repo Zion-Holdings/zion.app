@@ -8,21 +8,29 @@ export default function BlogPage() {
 
   const blogPosts = [
     {
-      id: 'autonomous-systems-deep-dive',
-      title: 'Autonomous Systems Deep Dive: Architecture, Implementation & Best Practices',
-      excerpt: 'A comprehensive technical guide to building production-ready autonomous systems that can operate independently, make intelligent decisions, and continuously improve their performance.',
-      date: 'January 17, 2025',
-      readTime: '15 min read',
-      category: 'Technical Deep Dive',
+      id: 'quantum-ai-revolution',
+      title: 'Quantum AI Revolution: The Next Frontier of Autonomous Systems',
+      excerpt: 'Discover how quantum computing is revolutionizing AI automation and creating unprecedented opportunities for autonomous systems.',
+      date: 'January 25, 2025',
+      readTime: '12 min read',
+      category: 'Quantum AI',
       featured: true
     },
     {
-      id: 'ai-ethics-responsible-development',
-      title: 'AI Ethics & Responsible Development: A Comprehensive Guide',
-      excerpt: 'Essential guide to AI ethics, responsible development practices, bias detection, transparency, and building trustworthy AI systems.',
-      date: 'January 16, 2025',
-      readTime: '12 min read',
-      category: 'AI Ethics'
+      id: 'cybersecurity-autonomous-systems',
+      title: 'Cybersecurity in Autonomous Systems: Protecting the Future of Automation',
+      excerpt: 'Explore the critical cybersecurity challenges facing autonomous systems and learn about advanced protection strategies.',
+      date: 'January 22, 2025',
+      readTime: '15 min read',
+      category: 'Cybersecurity'
+    },
+    {
+      id: 'sustainable-automation-future',
+      title: 'Sustainable Automation: Building a Greener Future with AI',
+      excerpt: 'Discover how autonomous systems and AI automation are driving sustainability initiatives and creating a more environmentally conscious future.',
+      date: 'January 20, 2025',
+      readTime: '10 min read',
+      category: 'Sustainability'
     },
     {
       id: 'ai-automation-trends-2025',
@@ -139,7 +147,7 @@ export default function BlogPage() {
     }
   ];
 
-  const categories = ['All', 'Technical Deep Dive', 'AI & Automation', 'Content & AI', 'Infrastructure', 'AI Ethics', 'Performance', 'Future of Work'];
+  const categories = ['All', 'Quantum AI', 'Cybersecurity', 'Sustainability', 'AI & Automation', 'Content & AI', 'Infrastructure', 'AI Ethics', 'Performance', 'Future of Work'];
 
   return (
     <>
