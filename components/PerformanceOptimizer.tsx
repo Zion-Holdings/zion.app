@@ -6,6 +6,12 @@ declare global {
   interface Window {
     gtag?: (...args: unknown[]) => void;
   }
+  
+  // Add missing browser API types
+  interface PerformanceResourceTiming extends PerformanceEntry {}
+  interface EventTarget {}
+  interface Node {}
+  interface DOMRectReadOnly {}
 }
 
 interface PerformanceMetrics {

@@ -55,7 +55,11 @@ export default function Layout({ children, seo }: LayoutProps) {
         <TopContactBar />
         
         {/* Navigation */}
+<<<<<<< HEAD
+        <UltraFuturisticNavigation2037 />
+=======
         <UltraFuturisticNavigation2036 />
+>>>>>>> origin/cursor/website-audit-content-update-and-deployment-5b24
         
         {/* Sidebar and Main Content */}
         <div className="flex">

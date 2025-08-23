@@ -1,9 +1,20 @@
 import React, { useEffect, useCallback } from 'react';
 
+<<<<<<< HEAD
+interface AnalyticsTrackerProps {
+  pageTitle?: string;
+  pagePath?: string;
+  customEvents?: Array<{
+    name: string;
+    parameters?: Record<string, unknown>;
+  }>;
+}
+=======
 // Browser API types are declared globally in PerformanceOptimizer.tsx
 
 const AnalyticsTracker: React.FC = () => {
   const router = useRouter();
+>>>>>>> origin/cursor/website-audit-content-update-and-deployment-5b24
 
 // Performance entry types for Core Web Vitals
 interface PerformanceEventTiming extends PerformanceEntry {
@@ -44,6 +55,9 @@ const AnalyticsTracker: React.FC<AnalyticsTrackerProps> = ({
       if (process.env.NODE_ENV === 'development') {
         console.log('Page View:', { title, path, url: window.location.href });
       }
+<<<<<<< HEAD
+    }
+=======
     };
 
     // Helper function to track events
@@ -234,6 +248,7 @@ const AnalyticsTracker: React.FC<AnalyticsTrackerProps> = ({
       document.removeEventListener('keydown', trackInteraction);
       window.removeEventListener('resize', trackViewport);
     };
+>>>>>>> origin/cursor/website-audit-content-update-and-deployment-5b24
   }, []);
 
   // Track custom events
@@ -374,6 +389,10 @@ interface LayoutShiftSource {
   previousRect?: any;
 }
 
+<<<<<<< HEAD
+// gtag is already declared in PerformanceOptimizer.tsx
+=======
 // gtag is declared globally in PerformanceOptimizer.tsx
+>>>>>>> origin/cursor/website-audit-content-update-and-deployment-5b24
 
 export default AnalyticsTracker;
