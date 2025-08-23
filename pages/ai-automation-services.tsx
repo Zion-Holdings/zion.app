@@ -29,7 +29,7 @@ export default function AIAutomationServices() {
         <meta name="contact:website" content="https://ziontechgroup.com" />
       </Head>
 
-      <UltraFuturisticBackground2026 intensity="high" theme="quantum" />
+      <UltraFuturisticBackground2026 intensity="high" />
       
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 pt-16">
@@ -131,7 +131,6 @@ export default function AIAutomationServices() {
                   <UltraFuturisticServiceCard2026 
                     service={service} 
                     variant="enterprise"
-                    theme="quantum"
                   />
                 </motion.div>
               ))}
