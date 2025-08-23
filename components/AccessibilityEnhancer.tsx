@@ -393,8 +393,11 @@ const AccessibilityEnhancer: React.FC<{
   }, []);
 
   // Keyboard navigation enhancements
-  const handleKeyDown = useCallback(() => {
+  const handleKeyDown = useCallback((e: KeyboardEvent) => {
     // Tab navigation detected
+    if (e.key === 'Tab') {
+      announceToScreenReader('Tab navigation detected');
+    }
   }, []);
 
   // Announce to screen reader
