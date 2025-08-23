@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import Head from 'next/head';
 import TopContactBar from './TopContactBar';
-import UltraFuturisticNavigation2025 from './UltraFuturisticNavigation2025';
-import UltraFuturisticFooter2025 from './UltraFuturisticFooter2025';
+import EnhancedNavigation from './EnhancedNavigation';
+import EnhancedFooter from './EnhancedFooter';
 import EnhancedSidebar2025 from './EnhancedSidebar2025';
 import UltraFuturisticBackground2036 from '../backgrounds/UltraFuturisticBackground2036';
 import PerformanceMonitor from '../PerformanceMonitor';
@@ -198,7 +198,7 @@ export default function Layout({
           <TopContactBar />
           
           {/* Navigation */}
-          <UltraFuturisticNavigation2025 />
+          <EnhancedNavigation />
           
           {/* Sidebar and Main Content */}
           <div className="flex">
@@ -213,7 +213,7 @@ export default function Layout({
           </div>
           
           {/* Footer */}
-          <UltraFuturisticFooter2025 />
+          <EnhancedFooter />
         </div>
 
         {/* Accessibility and Performance Tools */}
