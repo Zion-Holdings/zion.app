@@ -37,40 +37,8 @@ const Header = () => {
   }, [isProductDropdownOpen]);
 
   const navigation = [
-    {
-      name: 'Services',
-      href: '/services',
-      description: '200+ Real Micro SaaS Solutions',
-      icon: <Zap className="w-5 h-5" />,
-      children: [
-        { name: 'All Services', href: '/services' },
-        { name: 'Industry Solutions', href: '/solutions' },
-        { name: 'Cloud Platform', href: '/cloud-platform' },
-        { name: 'AI Assistant', href: '/ai-assistant' },
-        { name: 'Status Pages & SLO', href: '/status-pages-slo' },
-        { name: 'AI Synthetic Data Studio', href: '/services/ai-synthetic-data-studio' },
-        { name: 'Zero-Trust SSO Mesh', href: '/services/zero-trust-sso-mesh' },
-        { name: 'ETL Reliability Copilot', href: '/services/etl-reliability-copilot' },
-        { name: 'Edge Personalization Kit', href: '/services/edge-personalization-kit' },
-        { name: 'Kubernetes Cost Anomaly Guard', href: '/services/kubernetes-cost-anomaly-guard' },
-        { name: 'AI Sales Sequence Personalizer', href: '/services/ai-sales-sequence-personalizer' },
-        { name: 'Postgres Performance Tuner', href: '/services/postgres-performance-tuner' }
-      ]
-    },
-    {
-      name: 'Solutions',
-      href: '/solutions',
-      description: 'Industry-Specific Solutions',
-      icon: <Sparkles className="w-5 h-5" />,
-      children: [
-        { name: 'Case Studies', href: '/case-studies' },
-        { name: 'Cloud Platform', href: '/cloud-platform' },
-        { name: 'AI Assistant', href: '/ai-assistant' },
-        { name: 'Analytics', href: '/analytics' },
-        { name: 'Automation', href: '/automation' }
-      ]
-    },
-    { name: 'Pricing', href: '/pricing' },
+    { name: 'Product', href: '#', hasDropdown: true },
+    { name: 'Solutions', href: '/services' },
     { name: 'Resources', href: '/resources' },
     { name: 'Company', href: '/about' },
     { name: 'Pricing', href: '/pricing' },

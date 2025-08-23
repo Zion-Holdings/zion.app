@@ -320,7 +320,7 @@ export default function Innovative2038Pricing() {
                   href={`tel:${contactInfo.mobile}`}
                   className="text-purple-400 hover:text-purple-300 text-sm font-medium transition-colors"
                 >
-                  Contact Sales Team
+                  Contact Sales Users
                 </a>
               </div>
             </motion.div>
@@ -367,7 +367,7 @@ export default function Innovative2038Pricing() {
               className="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold hover:bg-white hover:text-purple-600 transition-colors flex items-center justify-center space-x-2"
             >
               <Mail className="w-5 h-5" />
-              <span>Email Sales Team</span>
+              <span>Email Sales Users</span>
             </a>
           </div>
         </div>

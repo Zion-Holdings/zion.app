@@ -37,7 +37,6 @@ import { real2028ServiceExpansions } from '../../data/real-2028-service-expansio
 import { real2029Q1Additions } from '../../data/real-2029-q1-additions';
 import { real2029Q2Additions } from '../../data/real-2029-q2-additions';
 import { real2029Q3Additions } from '../../data/real-2029-q3-additions';
-import { real2029Q4Additions } from '../../data/real-2029-q4-additions';
 import { real2030Q1Additions } from '../../data/real-2030-q1-additions';
 import { real2031MicroSaasAdditions } from '../../data/real-2031-micro-saas-additions';
 import { real2031ITServicesAdditions } from '../../data/real-2031-it-services-additions';
@@ -174,7 +173,12 @@ export default function ServicesIndexPage() {
     // Our new 2025 advanced services V2
     // .concat(advancedMicroSaasExpansion2025V2 as unknown[])
     // .concat(advancedITInfrastructureExpansion2025V2 as unknown[])
-    // .concat(advancedAIServicesExpansion2025V2 as unknown[]);
+    // .concat(advancedAIServicesExpansion2025V2 as unknown[])
+    // Our new 2025 innovative services V3
+    .concat(innovativeMicroSaasExpansionV32025 as unknown[])
+    .concat(innovativeITServicesExpansion2025V3 as unknown[])
+    .concat(innovativeAIServicesExpansion2025V3 as unknown[])
+    ;
 
   // Filter out services without required properties
   const validServices = all.filter(service => 

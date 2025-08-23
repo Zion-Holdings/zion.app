@@ -65,7 +65,7 @@ const SolutionsPage: React.FC = () => {
     { label: 'Solutions Deployed', value: '500+', icon: <Rocket className="w-6 h-6" /> },
     { label: 'Client Satisfaction', value: '99.9%', icon: <Star className="w-6 h-6" /> },
     { label: 'Global Reach', value: '50+ Countries', icon: <Globe className="w-6 h-6" /> },
-    { label: 'Team Experts', value: '100+', icon: <Users className="w-6 h-6" /> }
+    { label: 'Users Experts', value: '100+', icon: <Users className="w-6 h-6" /> }
   ];
 
   return (

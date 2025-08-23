@@ -6,7 +6,7 @@ import {
   CheckCircle, ArrowRight, Star, TrendingUp, Phone, 
   Brain, Sparkles, Users, 
   BarChart3, Settings, 
-  Award, Code, TestTube, Server, Database, Shield as SecurityIcon, Mail
+  Award, Code, TestTube, Server, Database, Shield as Shield, Mail
 } from 'lucide-react';
 import Layout from '../components/layout/Layout';
 import { advancedAIAutomationServices } from '../data/2026-advanced-ai-automation-services';
@@ -54,7 +54,7 @@ const serviceCategories = [
     title: 'AI Cybersecurity',
     description: 'Proactive threat detection and response with AI',
     services: advancedAIAutomationServices.filter(s => s.category === 'AI Cybersecurity'),
-    icon: SecurityIcon,
+    icon: Shield,
     color: 'from-red-500 to-pink-600',
     features: ['Threat Detection', 'Incident Response', 'Security Automation']
   },

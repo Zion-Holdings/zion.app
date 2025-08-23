@@ -172,6 +172,20 @@ const navigationItems: NavigationItem[] = [
         icon: <Cpu className="w-4 h-4" />,
         description: 'Smart manufacturing solutions',
         neonColor: 'shadow-orange-400/50'
+      },
+      {
+        label: 'Smart Cities',
+        href: '/solutions/smart-cities',
+        icon: <Globe className="w-4 h-4" />,
+        description: 'Urban technology solutions',
+        neonColor: 'shadow-purple-400/50'
+      },
+      {
+        label: 'Research & Development',
+        href: '/solutions/research',
+        icon: <Lightbulb className="w-4 h-4" />,
+        description: 'Research technology platforms',
+        neonColor: 'shadow-yellow-400/50'
       }
     ]
   },
@@ -239,6 +253,13 @@ const navigationItems: NavigationItem[] = [
         icon: <Users className="w-4 h-4" />,
         description: 'Join our team',
         neonColor: 'shadow-green-400/50'
+      },
+      {
+        label: 'News & Press',
+        href: '/news',
+        icon: <FileText className="w-4 h-4" />,
+        description: 'Latest news and press releases',
+        neonColor: 'shadow-purple-400/50'
       },
       {
         label: 'Contact',

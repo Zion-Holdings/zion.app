@@ -3,8 +3,6 @@ import Head from 'next/head';
 import { Sun, Moon } from 'lucide-react';
 import EnhancedNavigation2025 from './EnhancedNavigation2025';
 import EnhancedFooter2025 from './EnhancedFooter2025';
-import UltraFuturisticNavigation2036 from './UltraFuturisticNavigation2036';
-import UltraFuturisticFooter2036 from './UltraFuturisticFooter2036';
 import EnhancedSidebar2025 from './EnhancedSidebar2025';
 import UltraFuturisticBackground2045 from '../backgrounds/UltraFuturisticBackground2045';
 import TopContactBar from './TopContactBar';
@@ -203,52 +201,43 @@ export default function Layout({
         {/* Background Effects */}
         <UltraFuturisticBackground2045 theme={theme === 'dark' ? 'quantum-neon' : 'holographic'} />
         
-        {/* Layout Structure */}
-        <div className="relative z-10">
-          {/* Top Contact Bar */}
-          <TopContactBar />
-          
-          {/* Enhanced Navigation */}
-          <EnhancedNavigation2025 />
-          
-          {/* Enhanced Sidebar */}
-          <EnhancedSidebar2025 isOpen={sidebarOpen} onClose={() => setSidebarOpen(false)} />
-          
-          {/* Main Content */}
-          <main id="main" role="main" className="pt-32 pb-16 relative z-10">
-            <EnhancedErrorBoundary>
-              {children}
-            </EnhancedErrorBoundary>
-          </main>
-          
-          {/* Enhanced Footer */}
-          <EnhancedFooter2025 />
-          
-          {/* Performance Monitor */}
-          <EnhancedPerformanceMonitor />
-          
-          {/* Accessibility Enhancer */}
-          <AccessibilityEnhancer />
-          
-          {/* Cookie Consent Banner */}
-          <CookieConsentBanner />
-          
-          {/* Offline Indicator */}
-          {!isOnline && (
-            <div className="fixed bottom-4 right-4 bg-red-600 text-white px-4 py-2 rounded-lg shadow-lg z-50">
-              <div className="flex items-center space-x-2">
-                <div className="w-2 h-2 bg-white rounded-full animate-pulse"></div>
-                <span className="text-sm">You are offline</span>
-              </div>
-            </div>
-          )}
-        </div>
-
-        {/* Theme Toggle Floating Button */}
-        <ThemeToggle theme={theme} onToggle={handleThemeToggle} />
+        {/* Top Contact Bar */}
+        <TopContactBar />
         
-        {/* Service Worker Registration */}
-        <ServiceWorkerRegistration />
+        {/* Enhanced Navigation */}
+        <EnhancedNavigation2025 />
+        
+        {/* Enhanced Sidebar */}
+        <EnhancedSidebar2025 isOpen={sidebarOpen} onClose={() => setSidebarOpen(false)} />
+        
+        {/* Main Content */}
+        <main className="pt-32 pb-16 relative z-10">
+          <EnhancedErrorBoundary>
+            {children}
+          </EnhancedErrorBoundary>
+        </main>
+        
+        {/* Enhanced Footer */}
+        <EnhancedFooter2025 />
+        
+        {/* Performance Monitor */}
+        <EnhancedPerformanceMonitor />
+        
+        {/* Accessibility Enhancer */}
+        <AccessibilityEnhancer />
+        
+        {/* Cookie Consent Banner */}
+        <CookieConsentBanner />
+        
+        {/* Offline Indicator */}
+        {!isOnline && (
+          <div className="fixed bottom-4 right-4 bg-red-600 text-white px-4 py-2 rounded-lg shadow-lg z-50">
+            <div className="flex items-center space-x-2">
+              <div className="w-2 h-2 bg-white rounded-full animate-pulse"></div>
+              <span className="text-sm">You are offline</span>
+            </div>
+          </div>
+        )}
       </div>
     </>
   );
