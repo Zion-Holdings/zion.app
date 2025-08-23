@@ -82,24 +82,27 @@ export default function Comprehensive2025InnovativeServicesShowcase() {
   // Filter and sort services
   const filteredServices = allServices
     .filter(service => {
-      const matchesSearch = service.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      const serviceName = (service as any).title || (service as any).name || '';
+      const matchesSearch = serviceName.toLowerCase().includes(searchTerm.toLowerCase()) ||
                            service.description.toLowerCase().includes(searchTerm.toLowerCase()) ||
-                           service.tagline.toLowerCase().includes(searchTerm.toLowerCase());
+                           (service as any).tagline?.toLowerCase().includes(searchTerm.toLowerCase()) || false;
       const matchesCategory = selectedCategory === 'All Services' || 
                              getServiceCategory(service).includes(selectedCategory.split(' ')[0]);
       return matchesSearch && matchesCategory;
     })
     .sort((a, b) => {
+      const aName = (a as any).title || (a as any).name || '';
+      const bName = (b as any).title || (b as any).name || '';
       switch (sortBy) {
         case 'name':
-          return a.name.localeCompare(b.name);
+          return aName.localeCompare(bName);
         case 'price':
-          return (a.price?.monthly || 0) - (b.price?.monthly || 0);
+          return ((a as any).price?.monthly || 0) - ((b as any).price?.monthly || 0);
         case 'rating':
-          return (b.rating || 0) - (a.rating || 0);
+          return ((b as any).rating || 0) - ((a as any).rating || 0);
         case 'popularity':
         default:
-          return (b.customers || 0) - (a.customers || 0);
+          return ((b as any).customers || 0) - ((a as any).customers || 0);
       }
     });
 
@@ -271,25 +274,25 @@ export default function Comprehensive2025InnovativeServicesShowcase() {
                 {/* Service Header */}
                 <div className={`p-6 ${viewMode === 'list' ? 'lg:w-1/3' : ''}`}>
                   <div className="flex items-start justify-between mb-4">
-                    <div className="text-4xl">{service.icon}</div>
-                    {service.popular && (
+                    <div className="text-4xl">{(service as any).icon || '🚀'}</div>
+                    {(service as any).popular && (
                       <div className="bg-gradient-to-r from-yellow-400 to-orange-500 text-black text-xs font-bold px-2 py-1 rounded-full">
                         POPULAR
                       </div>
                     )}
                   </div>
                   
-                  <h3 className="text-xl font-bold text-white mb-2">{service.name}</h3>
-                  <p className="text-gray-300 text-sm mb-4">{service.tagline}</p>
+                  <h3 className="text-xl font-bold text-white mb-2">{(service as any).title || (service as any).name}</h3>
+                  <p className="text-gray-300 text-sm mb-4">{(service as any).tagline || service.description}</p>
                   
                   {/* Pricing */}
                   <div className="flex items-center gap-2 mb-4">
                     <DollarSign className="w-4 h-4 text-green-400" />
                     <span className="text-white font-semibold">
-                      ${service.price?.monthly}/month
+                      ${(service as any).price?.monthly || (service as any).pricing?.starter || 'Contact'}/month
                     </span>
                     <span className="text-gray-400 text-sm">
-                      (${service.price?.yearly}/year)
+                      (${(service as any).price?.yearly || (service as any).pricing?.professional || 'Contact'}/year)
                     </span>
                   </div>
 
@@ -306,7 +309,7 @@ export default function Comprehensive2025InnovativeServicesShowcase() {
                         <Star
                           key={i}
                           className={`w-4 h-4 ${
-                            i < Math.floor(service.rating || 0)
+                            i < Math.floor((service as any).rating || 0)
                               ? 'text-yellow-400 fill-current'
                               : 'text-gray-400'
                           }`}
@@ -314,7 +317,7 @@ export default function Comprehensive2025InnovativeServicesShowcase() {
                       ))}
                     </div>
                     <span className="text-gray-300 text-sm">
-                      {service.rating} ({service.reviews} reviews)
+                      {(service as any).rating || 0} ({(service as any).reviews || 0} reviews)
                     </span>
                   </div>
                 </div>
@@ -361,13 +364,13 @@ export default function Comprehensive2025InnovativeServicesShowcase() {
                   <div className="grid grid-cols-2 gap-4 mb-6">
                     <div className="text-center">
                       <div className="text-2xl font-bold text-green-400">
-                        {service.customers?.toLocaleString()}+
+                        {(service as any).customers?.toLocaleString() || '0'}+
                       </div>
                       <div className="text-gray-400 text-xs">Customers</div>
                     </div>
                     <div className="text-center">
                       <div className="text-2xl font-bold text-blue-400">
-                        {service.launchDate}
+                        {(service as any).launchDate || 'N/A'}
                       </div>
                       <div className="text-gray-400 text-xs">Launch Date</div>
                     </div>
@@ -376,7 +379,7 @@ export default function Comprehensive2025InnovativeServicesShowcase() {
                   {/* CTA Button */}
                   <div className="flex gap-3">
                     <a
-                      href={service.link}
+                      href={(service as any).link || `/${(service as any).slug || service.id}`}
                       className="flex-1 bg-gradient-to-r from-purple-500 to-pink-500 text-white px-4 py-2 rounded-lg text-center font-semibold hover:from-purple-600 hover:to-pink-600 transition-all duration-300 flex items-center justify-center gap-2"
                     >
                       Learn More
