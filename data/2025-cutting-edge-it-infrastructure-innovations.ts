@@ -283,7 +283,7 @@ export const cuttingEdgeITInfrastructureInnovations2025: CuttingEdgeITInfrastruc
     competitors: ['VMware vRealize, Cisco Intersight, HPE OneView, Dell OpenManage'],
     marketSize: '$30B data center management market',
     growthRate: '35% annual growth',
-    variant: 'it-infrastructure',
+    variant: 'it-futuristic',
     contactInfo: {
       mobile: '+1 302 464 0950',
       email: 'kleber@ziontechgroup.com',

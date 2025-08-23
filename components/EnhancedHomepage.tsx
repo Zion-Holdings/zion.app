@@ -28,7 +28,7 @@ import { revolutionary2044AdvancedMicroSaas } from '../data/revolutionary-2044-a
 import { revolutionary2044ITServices } from '../data/revolutionary-2044-it-services';
 import { revolutionary2044AIServices } from '../data/revolutionary-2044-ai-services';
 import { realEnterpriseMicroSaas2025 } from '../data/2025-real-enterprise-micro-saas';
-import { innovative2025ITInfrastructureServices } from '../data/2025-innovative-it-infrastructure-services';
+import { innovativeITInfrastructureServices } from '../data/2025-innovative-it-infrastructure-services';
 import { innovative2025AIAutonomousServices } from '../data/2025-innovative-ai-autonomous-services';
 
 const EnhancedHomepage: React.FC = () => {
@@ -72,7 +72,7 @@ const EnhancedHomepage: React.FC = () => {
     ...revolutionary2044ITServices,
     ...revolutionary2044AIServices,
     ...realEnterpriseMicroSaas2025,
-    ...innovative2025ITInfrastructureServices,
+    ...innovativeITInfrastructureServices,
     ...innovative2025AIAutonomousServices
   ];
 
@@ -81,7 +81,7 @@ const EnhancedHomepage: React.FC = () => {
     if (selectedCategory === 'all') return allRevolutionaryServices;
     return allRevolutionaryServices.filter(service => 
       service.category.toLowerCase().includes(selectedCategory.toLowerCase()) ||
-      service.type.toLowerCase().includes(selectedCategory.toLowerCase())
+      (service as any).type?.toLowerCase().includes(selectedCategory.toLowerCase())
     );
   };
 
@@ -337,9 +337,9 @@ const EnhancedHomepage: React.FC = () => {
                   title={service.name}
                   description={service.description}
                   category={service.category}
-                  type={service.type}
+                  type={(service as any).type || service.category}
                   features={service.features?.map(f => ({ name: f, description: f }))}
-                  slug={service.slug}
+                  slug={(service as any).slug || service.id}
                   index={index}
                   isPopular={Math.random() > 0.7}
                   isNew={Math.random() > 0.8}
@@ -416,7 +416,7 @@ const EnhancedHomepage: React.FC = () => {
                       ))}
                     </div>
                     
-                    <Link href={`/services/${featuredServices[currentServiceIndex]?.slug}`}>
+                    <Link href={`/services/${(featuredServices[currentServiceIndex] as any)?.slug || featuredServices[currentServiceIndex]?.id}`}>
                       <motion.button
                         className="px-6 py-3 bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-medium rounded-lg hover:from-cyan-600 hover:to-blue-700 transition-all duration-300"
                         whileHover={{ scale: 1.05 }}

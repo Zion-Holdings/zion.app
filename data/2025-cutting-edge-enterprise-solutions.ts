@@ -79,7 +79,7 @@ export const cuttingEdgeEnterpriseSolutions2025: CuttingEdgeEnterpriseSolution20
     competitors: ['MetricStream, ServiceNow, IBM OpenPages, RSA Archer, SAP GRC'],
     marketSize: '$12.8B enterprise risk management market',
     growthRate: '25% annual growth',
-    variant: 'ai-automation',
+    variant: 'ai-autonomous',
     contactInfo: {
       mobile: '+1 302 464 0950',
       email: 'kleber@ziontechgroup.com',
@@ -181,7 +181,7 @@ export const cuttingEdgeEnterpriseSolutions2025: CuttingEdgeEnterpriseSolution20
     competitors: ['UiPath, Automation Anywhere, Blue Prism, Pega, Appian'],
     marketSize: '$19.6B business process automation market',
     growthRate: '31% annual growth',
-    variant: 'ai-automation',
+    variant: 'ai-autonomous',
     contactInfo: {
       mobile: '+1 302 464 0950',
       email: 'kleber@ziontechgroup.com',
@@ -283,7 +283,7 @@ export const cuttingEdgeEnterpriseSolutions2025: CuttingEdgeEnterpriseSolution20
     competitors: ['Microsoft SharePoint, Confluence, Notion, Slite, Slab'],
     marketSize: '$15.3B knowledge management market',
     growthRate: '24% annual growth',
-    variant: 'ai-automation',
+    variant: 'ai-autonomous',
     contactInfo: {
       mobile: '+1 302 464 0950',
       email: 'kleber@ziontechgroup.com',
@@ -385,7 +385,7 @@ export const cuttingEdgeEnterpriseSolutions2025: CuttingEdgeEnterpriseSolution20
     competitors: ['CrowdStrike, Palo Alto Networks, SentinelOne, Darktrace, Cylance'],
     marketSize: '$45.2B cybersecurity market',
     growthRate: '32% annual growth',
-    variant: 'ai-automation',
+    variant: 'ai-autonomous',
     contactInfo: {
       mobile: '+1 302 464 0950',
       email: 'kleber@ziontechgroup.com',

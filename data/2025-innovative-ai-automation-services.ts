@@ -79,7 +79,7 @@ export const innovativeAIAutomationServices2025: InnovativeAIAutomationService20
     competitors: ['Jasper, Copy.ai, Writesonic, ContentBot, Rytr'],
     marketSize: '$15B content marketing market',
     growthRate: '28% annual growth',
-    variant: 'ai-automation',
+    variant: 'ai-autonomous',
     contactInfo: {
       mobile: '+1 302 464 0950',
       email: 'kleber@ziontechgroup.com',
@@ -130,7 +130,7 @@ export const innovativeAIAutomationServices2025: InnovativeAIAutomationService20
     competitors: ['Salesforce, HubSpot, Pipedrive, Zoho CRM, Freshworks'],
     marketSize: '$48B CRM market',
     growthRate: '15% annual growth',
-    variant: 'ai-automation',
+    variant: 'ai-autonomous',
     contactInfo: {
       mobile: '+1 302 464 0950',
       email: 'kleber@ziontechgroup.com',
@@ -181,7 +181,7 @@ export const innovativeAIAutomationServices2025: InnovativeAIAutomationService20
     competitors: ['Asana, Monday.com, ClickUp, Wrike, Basecamp'],
     marketSize: '$5.7B project management market',
     growthRate: '18% annual growth',
-    variant: 'ai-automation',
+    variant: 'ai-autonomous',
     contactInfo: {
       mobile: '+1 302 464 0950',
       email: 'kleber@ziontechgroup.com',
@@ -232,7 +232,7 @@ export const innovativeAIAutomationServices2025: InnovativeAIAutomationService20
     competitors: ['BambooHR, Workday, ADP, Gusto, Zenefits'],
     marketSize: '$30B HR technology market',
     growthRate: '12% annual growth',
-    variant: 'ai-automation',
+    variant: 'ai-autonomous',
     contactInfo: {
       mobile: '+1 302 464 0950',
       email: 'kleber@ziontechgroup.com',
@@ -283,7 +283,7 @@ export const innovativeAIAutomationServices2025: InnovativeAIAutomationService20
     competitors: ['QuickBooks, Xero, FreshBooks, Wave, Sage'],
     marketSize: '$11B accounting software market',
     growthRate: '20% annual growth',
-    variant: 'ai-automation',
+    variant: 'ai-autonomous',
     contactInfo: {
       mobile: '+1 302 464 0950',
       email: 'kleber@ziontechgroup.com',
