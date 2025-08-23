@@ -3,7 +3,7 @@ import Layout from './layout/Layout';
 import { motion } from 'framer-motion';
 import { 
   ArrowRight, Play, Users, TrendingUp, Brain, Shield, Rocket, Globe, Lock, Cpu, Database, Cloud, BarChart3,
-  Atom, Target, Zap, Infinity, Sparkles, Star, Eye, Heart, Code, Palette, Layers
+  Atom, Target, Zap, Infinity, Sparkles, Star, Eye, Heart, Code, Palette, Layers, Search, Sun, Moon, Bell
 } from 'lucide-react';
 
 // Import our new revolutionary services
@@ -13,6 +13,9 @@ import { revolutionary2041AdvancedServices } from '../data/revolutionary-2041-ad
 const Homepage2040: React.FC = () => {
   const [isVisible, setIsVisible] = useState(false);
   const [currentServiceIndex, setCurrentServiceIndex] = useState(0);
+  const [searchQuery, setSearchQuery] = useState('');
+  const [isDarkMode, setIsDarkMode] = useState(true);
+  const [showNotifications, setShowNotifications] = useState(false);
   
   useEffect(() => {
     setIsVisible(true);
@@ -25,11 +28,51 @@ const Homepage2040: React.FC = () => {
     return () => clearInterval(interval);
   }, []);
 
+  // Add structured data for SEO
+  useEffect(() => {
+    const structuredData = {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Zion Tech Group",
+      "description": "Pioneering the future of technology with revolutionary AI consciousness, quantum computing, and autonomous solutions that transform businesses worldwide.",
+      "url": "https://ziontechgroup.com",
+      "logo": "https://ziontechgroup.com/logo.png",
+      "sameAs": [
+        "https://linkedin.com/company/ziontechgroup",
+        "https://twitter.com/ziontechgroup"
+      ],
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+1-800-ZION-TECH",
+        "contactType": "customer service"
+      },
+      "offers": {
+        "@type": "Offer",
+        "description": "Revolutionary AI consciousness, quantum computing, and autonomous solutions"
+      }
+    };
+
+    const script = document.createElement('script');
+    script.type = 'application/ld+json';
+    script.text = JSON.stringify(structuredData);
+    document.head.appendChild(script);
+
+    return () => {
+      document.head.removeChild(script);
+    };
+  }, []);
+
   // Combine all revolutionary services
   const allRevolutionaryServices = [...revolutionary2041AdvancedServices];
 
   // Get featured services for rotation
   const featuredServices = allRevolutionaryServices.slice(0, 6);
+
+  // Filter services based on search query
+  const filteredServices = allRevolutionaryServices.filter(service =>
+    service.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
+    service.tagline.toLowerCase().includes(searchQuery.toLowerCase())
+  );
 
   const features = [
     { icon: Brain, title: "AI Consciousness Evolution", description: "Next-generation AI consciousness and emotional intelligence", href: "/ai-consciousness-evolution-2040", color: "from-purple-500 to-pink-500" },
@@ -55,11 +98,20 @@ const Homepage2040: React.FC = () => {
     window.location.href = '/services';
   }, []);
 
+  const toggleDarkMode = () => {
+    setIsDarkMode(!isDarkMode);
+    document.documentElement.classList.toggle('dark');
+  };
+
+  const toggleNotifications = () => {
+    setShowNotifications(!showNotifications);
+  };
+
   return (
     <Layout>
       {/* Main Content */}
       <main className="relative z-10">
-        {/* Hero Section */}
+        {/* Enhanced Hero Section with Search */}
         <section 
           className="min-h-screen flex items-center justify-center px-4 relative overflow-hidden"
           aria-labelledby="hero-heading"
@@ -140,6 +192,58 @@ const Homepage2040: React.FC = () => {
               Pioneering the future of technology with revolutionary AI consciousness, quantum computing, and autonomous solutions that transform businesses worldwide.
             </motion.p>
 
+            {/* Enhanced Search Bar */}
+            <motion.div
+              className="max-w-2xl mx-auto mb-12"
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: isVisible ? 1 : 0, y: isVisible ? 0 : 30 }}
+              transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
+            >
+              <div className="relative">
+                <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
+                <input
+                  type="text"
+                  placeholder="Search our revolutionary services..."
+                  value={searchQuery}
+                  onChange={(e) => setSearchQuery(e.target.value)}
+                  className="w-full px-12 py-4 bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-cyan-500/50 focus:border-cyan-500/50 transition-all duration-300"
+                  aria-label="Search revolutionary services"
+                />
+                {searchQuery && (
+                  <button
+                    onClick={() => setSearchQuery('')}
+                    className="absolute right-4 top-1/2 transform -translate-y-1/2 text-gray-400 hover:text-white transition-colors"
+                    aria-label="Clear search"
+                  >
+                    ×
+                  </button>
+                )}
+              </div>
+              
+              {/* Search Results Dropdown */}
+              {searchQuery && filteredServices.length > 0 && (
+                <motion.div
+                  initial={{ opacity: 0, y: -10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  className="absolute z-50 w-full mt-2 bg-black/90 backdrop-blur-sm border border-white/20 rounded-xl max-h-96 overflow-y-auto"
+                >
+                  {filteredServices.slice(0, 5).map((service, index) => (
+                    <div
+                      key={index}
+                      className="p-4 hover:bg-white/10 cursor-pointer border-b border-white/10 last:border-b-0"
+                      onClick={() => {
+                        window.location.href = service.slug || '/services';
+                        setSearchQuery('');
+                      }}
+                    >
+                      <h4 className="text-white font-medium">{service.name}</h4>
+                      <p className="text-gray-400 text-sm">{service.tagline}</p>
+                    </div>
+                  ))}
+                </motion.div>
+              )}
+            </motion.div>
+
             <motion.div
               className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16"
               initial={{ opacity: 0, y: 30 }}
@@ -164,6 +268,31 @@ const Homepage2040: React.FC = () => {
               </button>
             </motion.div>
 
+            {/* Theme Toggle and Notifications */}
+            <motion.div
+              className="flex justify-center gap-4 mb-8"
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: isVisible ? 1 : 0, y: isVisible ? 0 : 30 }}
+              transition={{ duration: 0.8, delay: 0.5, ease: "easeOut" }}
+            >
+              <button
+                onClick={toggleDarkMode}
+                className="p-3 bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl hover:bg-white/20 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-cyan-500/50"
+                aria-label={`Switch to ${isDarkMode ? 'light' : 'dark'} mode`}
+              >
+                {isDarkMode ? <Sun className="w-5 h-5 text-yellow-400" /> : <Moon className="w-5 h-5 text-blue-400" />}
+              </button>
+              
+              <button
+                onClick={toggleNotifications}
+                className="p-3 bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl hover:bg-white/20 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-cyan-500/50 relative"
+                aria-label="Toggle notifications"
+              >
+                <Bell className="w-5 h-5 text-cyan-400" />
+                <span className="absolute -top-1 -right-1 w-3 h-3 bg-red-500 rounded-full animate-pulse"></span>
+              </button>
+            </motion.div>
+
             {/* Featured Service Showcase */}
             <motion.div
               className="max-w-4xl mx-auto"
@@ -177,14 +306,10 @@ const Homepage2040: React.FC = () => {
                   <p className="text-gray-400">Experience the cutting edge of technology</p>
                 </div>
                 
-                {/* AnimatePresence is not imported, so this block will cause an error.
-                    Assuming it's meant to be removed or replaced with a simpler animation.
-                    For now, I'm removing it as it's not part of the provided code. */}
                 <motion.div
                   key={currentServiceIndex}
                   initial={{ opacity: 0, x: 50 }}
                   animate={{ opacity: 1, x: 0 }}
-                  exit={{ opacity: 0, x: -50 }}
                   transition={{ duration: 0.5 }}
                   className="text-center"
                 >
@@ -408,6 +533,41 @@ const Homepage2040: React.FC = () => {
             </motion.div>
           </div>
         </section>
+
+        {/* Notifications Panel */}
+        {showNotifications && (
+          <motion.div
+            initial={{ opacity: 0, x: 300 }}
+            animate={{ opacity: 1, x: 0 }}
+            exit={{ opacity: 0, x: 300 }}
+            className="fixed top-20 right-4 z-50 w-80 bg-black/95 backdrop-blur-sm border border-white/20 rounded-2xl p-6 shadow-2xl"
+          >
+            <div className="flex items-center justify-between mb-4">
+              <h3 className="text-lg font-semibold text-white">Notifications</h3>
+              <button
+                onClick={toggleNotifications}
+                className="text-gray-400 hover:text-white transition-colors"
+                aria-label="Close notifications"
+              >
+                ×
+              </button>
+            </div>
+            <div className="space-y-3">
+              <div className="p-3 bg-cyan-500/20 border border-cyan-500/30 rounded-lg">
+                <p className="text-sm text-cyan-300">New AI consciousness features available!</p>
+                <span className="text-xs text-gray-400">2 hours ago</span>
+              </div>
+              <div className="p-3 bg-purple-500/20 border border-purple-500/30 rounded-lg">
+                <p className="text-sm text-purple-300">Quantum computing platform updated</p>
+                <span className="text-xs text-gray-400">1 day ago</span>
+              </div>
+              <div className="p-3 bg-green-500/20 border border-green-500/30 rounded-lg">
+                <p className="text-sm text-green-300">New security features deployed</p>
+                <span className="text-xs text-gray-400">3 days ago</span>
+              </div>
+            </div>
+          </motion.div>
+        )}
       </main>
     </Layout>
   );
