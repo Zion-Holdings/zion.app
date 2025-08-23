@@ -13,6 +13,11 @@ import { realInnovativeMicroSaasServices2025 } from '../data/2025-real-innovativ
 import { innovativeITInfrastructureServices2025 } from '../data/2025-innovative-it-infrastructure-services-expansion';
 import { innovativeAIServices2025 } from '../data/2025-innovative-ai-services-expansion';
 
+// Import our new 2025 innovative breakthrough services
+import { innovativeMicroSaasBreakthroughs2025 } from '../data/2025-innovative-micro-saas-breakthroughs';
+import { innovativeITInfrastructureBreakthroughs2025 } from '../data/2025-innovative-it-infrastructure-breakthroughs';
+import { innovativeAIBreakthroughs2025 } from '../data/2025-innovative-ai-breakthroughs';
+
 // Import our new 2025 advanced services
 import { advancedBusinessIntelligenceServices2025 } from '../data/2025-advanced-business-intelligence-services';
 import { advancedITInfrastructureServices2025 } from '../data/2025-advanced-it-infrastructure-services';
@@ -114,6 +119,11 @@ const getServiceDescription = (service: any) => {
 
 // Create unified services array
 const allServices = [
+  // Our new 2025 innovative breakthrough services
+  ...innovativeMicroSaasBreakthroughs2025,
+  ...innovativeITInfrastructureBreakthroughs2025,
+  ...innovativeAIBreakthroughs2025,
+  
   // Our new 2025 services
   ...realInnovativeMicroSaasServices2025,
   ...innovativeITInfrastructureServices2025,
