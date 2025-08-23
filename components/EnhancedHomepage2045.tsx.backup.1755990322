@@ -1,20 +1,37 @@
 import React, { useEffect, useState, useCallback, Suspense, lazy } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
 import Link from 'next/link';
 import { 
   ArrowRight, Brain, Shield, Rocket, Globe, Cpu, Database, Atom, Target, Star, Sparkles as SparklesIcon,
   Brain as BrainIcon, Atom as AtomIcon, Shield as ShieldIcon, Rocket as RocketIcon, Zap, MessageCircle,
   X, Menu, Linkedin, Twitter, Github, Search, TrendingUp, Users, Award
 } from 'lucide-react';
+<<<<<<< HEAD
+import Head from 'next/head';
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
+=======
 import EnhancedSEO from './EnhancedSEO';
 import PerformanceOptimizer from './PerformanceOptimizer';
 import EnhancedAccessibilityEnhancer from './EnhancedAccessibilityEnhancer';
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-a118
 
 // Import our new revolutionary services
 import { innovativeMicroSaasSolutions2025V2 } from '../data/2025-innovative-micro-saas-expansion-v2';
 import { innovativeITServices2025V2 } from '../data/2025-innovative-it-services-expansion-v2';
 import { innovativeAIServices2025V2 } from '../data/2025-innovative-ai-services-expansion-v2';
 
+<<<<<<< HEAD
+// Import new components
+import AccessibilityEnhancer from './AccessibilityEnhancer';
+import PerformanceMonitor from './PerformanceMonitor';
+import LoadingContent, { HeroSkeleton, CategorySkeleton, ServiceCardSkeleton } from './LoadingStates';
+
+const EnhancedHomepage2045: React.FC = () => {
+  const [showMobileMenu, setShowMobileMenu] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
+  const [hasError, setHasError] = useState(false);
+=======
 // Lazy load components for better performance
 const ServiceCard = lazy(() => import('./ServiceCard'));
 const PerformanceMetrics = lazy(() => import('./PerformanceMetrics'));
@@ -40,6 +57,7 @@ const EnhancedHomepage2045: React.FC = () => {
   const [userInteraction, setUserInteraction] = useState(false);
   const [isReducedMotion, setIsReducedMotion] = useState(false);
   const [showPerformanceOptimizer, setShowPerformanceOptimizer] = useState(false);
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-a118
   
   useEffect(() => {
     // Track mouse movement for parallax effects
@@ -62,6 +80,7 @@ const EnhancedHomepage2045: React.FC = () => {
 
   // Combine all revolutionary services
   const allRevolutionaryServices = [
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
     ...revolutionary2044AdvancedMicroSaas,
     ...revolutionary2044ITServices,
     ...revolutionary2044AIServices,
@@ -92,6 +111,7 @@ const EnhancedHomepage2045: React.FC = () => {
     { id: 'ai', name: 'AI & Machine Learning', icon: BrainIcon, color: 'from-cyan-500 to-blue-500', count: allRevolutionaryServices.filter(s => s.category.includes('AI') || s.category.includes('Machine Learning')).length },
     { id: 'quantum', name: 'Quantum Technology', icon: AtomIcon, color: 'from-blue-500 to-indigo-500', count: allRevolutionaryServices.filter(s => s.category.includes('Quantum')).length },
     { id: 'cybersecurity', name: 'Cybersecurity', icon: ShieldIcon, color: 'from-red-500 to-orange-500', count: allRevolutionaryServices.filter(s => s.category.includes('Security')).length },
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
     { id: 'business', name: 'Business Solutions', icon: Target, color: 'from-emerald-500 to-teal-500', count: allRevolutionaryServices.filter(s => s.type === 'Micro SAAS').length },
     { id: 'it', name: 'IT Infrastructure', icon: Cpu, color: 'from-yellow-500 to-orange-500', count: allRevolutionaryServices.filter(s => s.category.includes('IT') || s.category.includes('Infrastructure')).length }
   ];
@@ -146,6 +166,70 @@ const EnhancedHomepage2045: React.FC = () => {
   }
 
   return (
+<<<<<<< HEAD
+    <AccessibilityEnhancer>
+      <>
+        <Head>
+          <title>Zion Tech Group - Revolutionary AI & IT Services 2045</title>
+          <meta name="description" content="Discover the future of technology with Zion Tech Group's revolutionary AI, quantum computing, and IT infrastructure services. Transform your business with cutting-edge solutions." />
+          <meta name="keywords" content="AI services, quantum computing, IT infrastructure, cybersecurity, micro SAAS, business automation, Zion Tech Group" />
+          <meta name="viewport" content="width=device-width, initial-scale=1" />
+          <link rel="canonical" href="https://ziontechgroup.com" />
+          
+          {/* Enhanced SEO Meta Tags */}
+          <meta property="og:title" content="Zion Tech Group - Revolutionary AI & IT Services 2045" />
+          <meta property="og:description" content="Transform your business with cutting-edge AI, quantum computing, and next-generation IT infrastructure." />
+          <meta property="og:type" content="website" />
+          <meta property="og:url" content="https://ziontechgroup.com" />
+          <meta property="og:site_name" content="Zion Tech Group" />
+          
+          <meta name="twitter:card" content="summary_large_image" />
+          <meta name="twitter:title" content="Zion Tech Group - Revolutionary AI & IT Services 2045" />
+          <meta name="twitter:description" content="Transform your business with cutting-edge AI, quantum computing, and next-generation IT infrastructure." />
+          
+          {/* Performance and Accessibility Meta Tags */}
+          <meta name="theme-color" content="#06b6d4" />
+          <meta name="color-scheme" content="dark" />
+          <meta name="prefers-color-scheme" content="dark" />
+          
+          {/* Structured Data */}
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{
+              __html: JSON.stringify({
+                "@context": "https://schema.org",
+                "@type": "Organization",
+                "name": "Zion Tech Group",
+                "url": "https://ziontechgroup.com",
+                "logo": "https://ziontechgroup.com/logo.png",
+                "description": "Revolutionary technology solutions for the future of business.",
+                "address": {
+                  "@type": "PostalAddress",
+                  "streetAddress": "364 E Main St STE 1008",
+                  "addressLocality": "Middletown",
+                  "addressRegion": "DE",
+                  "postalCode": "19709",
+                  "addressCountry": "US"
+                },
+                "contactPoint": {
+                  "@type": "ContactPoint",
+                  "telephone": "+1-302-464-0950",
+                  "contactType": "customer service",
+                  "email": "kleber@ziontechgroup.com"
+                },
+                "sameAs": [
+                  "https://linkedin.com/company/ziontechgroup",
+                  "https://twitter.com/ziontechgroup",
+                  "https://github.com/ziontechgroup"
+                ]
+              })
+            }}
+          />
+        </Head>
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
+
+        <div className="min-h-screen bg-black text-white overflow-hidden">
+=======
     <Layout>
       <EnhancedSEO />
       <EnhancedAccessibilityEnhancer />
@@ -153,9 +237,19 @@ const EnhancedHomepage2045: React.FC = () => {
       <div className="min-h-screen relative overflow-hidden" onMouseMove={handleMouseMove}>
         {/* Hero Section */}
         <section className="relative pt-32 pb-20 overflow-hidden">
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-a118
           {/* Animated Background */}
           <div className="fixed inset-0 z-0">
             <div className="absolute inset-0 bg-gradient-to-br from-black via-gray-900 to-black"></div>
+<<<<<<< HEAD
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_50%,rgba(120,119,198,0.3),transparent_50%)]"></div>
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_20%,rgba(255,119,198,0.3),transparent_50%)]"></div>
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_40%_80%,rgba(120,219,255,0.3),transparent_50%)]"></div>
+            
+            {/* Floating Particles */}
+            <div className="absolute inset-0 overflow-hidden">
+              {[...Array(50)].map((_, i) => (
+=======
             <div className="absolute top-0 left-1/4 w-96 h-96 bg-gradient-to-r from-cyan-500/10 to-blue-500/10 rounded-full blur-3xl animate-pulse"></div>
             <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-gradient-to-r from-purple-500/10 to-pink-500/10 rounded-full blur-3xl animate-pulse delay-1000"></div>
             <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-gradient-to-r from-emerald-500/10 to-teal-500/10 rounded-full blur-3xl animate-pulse delay-2000"></div>
@@ -283,6 +377,7 @@ const EnhancedHomepage2045: React.FC = () => {
             {/* Services Grid */}
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {getFilteredServices().slice(0, 9).map((service, index) => (
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-a118
                 <motion.div
                   key={i}
                   className="absolute w-1 h-1 bg-cyan-400 rounded-full opacity-20"
@@ -301,6 +396,7 @@ const EnhancedHomepage2045: React.FC = () => {
                   }}
                 />
               ))}
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
             </div>
           </div>
 
@@ -362,6 +458,7 @@ const EnhancedHomepage2045: React.FC = () => {
                     >
                       Get Started
                     </motion.button>
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
                   </Link>
                 </motion.div>
 
@@ -704,6 +801,38 @@ const EnhancedHomepage2045: React.FC = () => {
                   </div>
                 </div>
                 
+<<<<<<< HEAD
+                <div>
+                  <h3 className="text-white font-semibold mb-4">Services</h3>
+                  <ul className="space-y-2" role="list">
+                    <li><a href="/services?category=ai" className="text-gray-400 hover:text-cyan-400 transition-colors focus-ring-cyan" role="listitem">AI & Machine Learning</a></li>
+                    <li><a href="/services?category=quantum" className="text-gray-400 hover:text-cyan-400 transition-colors focus-ring-cyan" role="listitem">Quantum Computing</a></li>
+                    <li><a href="/services?category=cybersecurity" className="text-gray-400 hover:text-cyan-400 transition-colors focus-ring-cyan" role="listitem">Cybersecurity</a></li>
+                    <li><a href="/services?category=it" className="text-gray-400 hover:text-cyan-400 transition-colors focus-ring-cyan" role="listitem">IT Infrastructure</a></li>
+                  </ul>
+                </div>
+                
+                <div>
+                  <h3 className="text-white font-semibold mb-4">Company</h3>
+                  <ul className="space-y-2" role="list">
+                    <li><a href="/about" className="text-gray-400 hover:text-cyan-400 transition-colors focus-ring-cyan" role="listitem">About Us</a></li>
+                    <li><a href="/team" className="text-gray-400 hover:text-cyan-400 transition-colors focus-ring-cyan" role="listitem">Our Team</a></li>
+                    <li><a href="/careers" className="text-gray-400 hover:text-cyan-400 transition-colors focus-ring-cyan" role="listitem">Careers</a></li>
+                    <li><a href="/contact" className="text-gray-400 hover:text-cyan-400 transition-colors focus-ring-cyan" role="listitem">Contact</a></li>
+                  </ul>
+                </div>
+                
+                <div>
+                  <h3 className="text-white font-semibold mb-4">Contact</h3>
+                  <div className="space-y-2 text-gray-400">
+                    <p><a href="tel:+13024640950" className="hover:text-cyan-400 transition-colors focus-ring-cyan">+1 302 464 0950</a></p>
+                    <p><a href="mailto:kleber@ziontechgroup.com" className="hover:text-cyan-400 transition-colors focus-ring-cyan">kleber@ziontechgroup.com</a></p>
+                    <address className="not-italic">
+                      364 E Main St STE 1008<br />
+                      Middletown DE 19709
+                    </address>
+                  </div>
+=======
                 <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
                   <motion.button
                     whileHover={{ scale: 1.05 }}
@@ -720,6 +849,7 @@ const EnhancedHomepage2045: React.FC = () => {
                     <Play className="w-5 h-5 inline mr-2" />
                     Schedule Demo
                   </motion.button>
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-a118
                 </div>
               </div>
               
@@ -734,6 +864,7 @@ const EnhancedHomepage2045: React.FC = () => {
         <PerformanceMonitor />
       </>
     </AccessibilityEnhancer>
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
   );
 };
 
