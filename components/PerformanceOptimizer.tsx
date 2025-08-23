@@ -19,11 +19,13 @@ interface PerformanceMetrics {
 interface PerformanceOptimizerProps {
   showMetrics?: boolean;
   autoOptimize?: boolean;
+  children: React.ReactNode;
 }
 
 const PerformanceOptimizer: React.FC<PerformanceOptimizerProps> = ({
   showMetrics = false,
-  autoOptimize = true
+  autoOptimize = true,
+  children
 }) => {
   const [metrics, setMetrics] = useState<PerformanceMetrics | null>(null);
   const [isOptimizing, setIsOptimizing] = useState(false);
@@ -167,12 +169,10 @@ const PerformanceOptimizer: React.FC<PerformanceOptimizerProps> = ({
     return Math.max(0, score);
   }, []);
 
-  if (!showMetrics && !showOptimizationPanel) {
-    return null;
-  }
-
   return (
     <>
+      {children}
+      
       {/* Performance Metrics Panel */}
       {showMetrics && metrics && (
         <motion.div

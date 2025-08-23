@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Head from 'next/head';
 
 interface SEOOptimizerProps {
@@ -6,25 +6,129 @@ interface SEOOptimizerProps {
   description?: string;
   keywords?: string;
   ogImage?: string;
+  ogUrl?: string;
   canonicalUrl?: string;
   structuredData?: object;
 }
 
+// Type definitions for PerformanceObserver entries
+interface FirstInputEntry extends PerformanceEntry {
+  processingStart: number;
+  processingEnd: number;
+  target?: EventTarget;
+}
+
+interface LayoutShiftEntry extends PerformanceEntry {
+  value: number;
+  hadRecentInput: boolean;
+}
+
+interface ResourceEntry extends PerformanceEntry {
+  initiatorType: string;
+  duration: number;
+  name: string;
+}
+
 const SEOOptimizer: React.FC<SEOOptimizerProps> = ({
-  title = "Zion Tech Group - Pioneering the Future of Technology with AI, Quantum Computing & Space Technology",
-  description = "Transform your business with Zion Tech Group's cutting-edge AI, quantum computing, and space technology solutions. Enterprise-grade security, 24/7 autonomous operations, and proven results.",
-  keywords = "AI, artificial intelligence, quantum computing, space technology, enterprise IT, cybersecurity, automation, machine learning, blockchain, cloud infrastructure",
-  ogImage = "https://ziontechgroup.com/og-image.jpg",
+  title = "Zion Tech Group - Revolutionary AI Consciousness, Quantum Computing & Autonomous Solutions 2043",
+  description = "Pioneering the future of technology with revolutionary AI consciousness, quantum computing, and autonomous solutions that transform businesses worldwide. 1500+ cutting-edge services.",
+  keywords = "AI consciousness, quantum computing, autonomous systems, cybersecurity, space technology, business intelligence, Zion Tech Group, revolutionary technology 2043",
+  ogImage = "/og-image.svg",
+  ogUrl = "https://ziontechgroup.com",
   canonicalUrl = "https://ziontechgroup.com",
   structuredData
 }) => {
+  useEffect(() => {
+    // Preload critical resources
+    const preloadLinks = [
+      { rel: 'preload', href: '/fonts/inter-var.woff2', as: 'font', type: 'font/woff2', crossOrigin: 'anonymous' },
+      { rel: 'preload', href: '/api/health', as: 'fetch' },
+      { rel: 'dns-prefetch', href: 'https://www.google-analytics.com' },
+      { rel: 'dns-prefetch', href: 'https://www.googletagmanager.com' }
+    ];
+
+    preloadLinks.forEach(link => {
+      const linkElement = document.createElement('link');
+      Object.assign(linkElement, link);
+      document.head.appendChild(linkElement);
+    });
+
+    // Add performance monitoring
+    if (typeof window !== 'undefined') {
+      // Core Web Vitals monitoring
+      const observer = new PerformanceObserver((list) => {
+        for (const entry of list.getEntries()) {
+          if (entry.entryType === 'largest-contentful-paint') {
+            console.log('LCP:', entry.startTime);
+            // Send to analytics
+            if (window.gtag) {
+              window.gtag('event', 'web_vitals', {
+                event_category: 'Web Vitals',
+                event_label: 'LCP',
+                value: Math.round(entry.startTime),
+                non_interaction: true
+              });
+            }
+          }
+          if (entry.entryType === 'first-input') {
+            const firstInputEntry = entry as FirstInputEntry;
+            console.log('FID:', firstInputEntry.processingStart - firstInputEntry.startTime);
+            if (window.gtag) {
+              window.gtag('event', 'web_vitals', {
+                event_category: 'Web Vitals',
+                event_label: 'FID',
+                value: Math.round(firstInputEntry.processingStart - firstInputEntry.startTime),
+                non_interaction: true
+              });
+            }
+          }
+          if (entry.entryType === 'layout-shift') {
+            const layoutShiftEntry = entry as LayoutShiftEntry;
+            console.log('CLS:', layoutShiftEntry.value);
+            if (window.gtag) {
+              window.gtag('event', 'web_vitals', {
+                event_category: 'Web Vitals',
+                event_label: 'CLS',
+                value: Math.round(layoutShiftEntry.value * 1000) / 1000,
+                non_interaction: true
+              });
+            }
+          }
+        }
+      });
+
+      observer.observe({ entryTypes: ['largest-contentful-paint', 'first-input', 'layout-shift'] });
+
+      // Resource timing
+      const resourceObserver = new PerformanceObserver((list) => {
+        for (const entry of list.getEntries()) {
+          if (entry.entryType === 'resource') {
+            const resourceEntry = entry as ResourceEntry;
+            if (resourceEntry.initiatorType === 'img') {
+              if (resourceEntry.duration > 1000) {
+                console.warn('Slow image load:', resourceEntry.name, resourceEntry.duration);
+              }
+            }
+          }
+        }
+      });
+
+      resourceObserver.observe({ entryTypes: ['resource'] });
+
+      return () => {
+        observer.disconnect();
+        resourceObserver.disconnect();
+      };
+    }
+  }, []);
+
   const defaultStructuredData = {
     "@context": "https://schema.org",
     "@type": "Organization",
     "name": "Zion Tech Group",
     "url": "https://ziontechgroup.com",
-    "logo": "https://ziontechgroup.com/logo.png",
-    "description": "Pioneering the future of technology with innovative solutions that drive business transformation",
+    "logo": "https://ziontechgroup.com/logo.svg",
+    "description": "Pioneering the future of technology with revolutionary AI consciousness, quantum computing, and autonomous solutions.",
     "address": {
       "@type": "PostalAddress",
       "streetAddress": "364 E Main St STE 1008",
@@ -40,22 +144,18 @@ const SEOOptimizer: React.FC<SEOOptimizerProps> = ({
       "email": "kleber@ziontechgroup.com"
     },
     "sameAs": [
-      "https://linkedin.com/company/ziontechgroup",
-      "https://github.com/Zion-Holdings",
       "https://twitter.com/ziontechgroup",
-      "https://facebook.com/ziontechgroup",
-      "https://instagram.com/ziontechgroup",
-      "https://youtube.com/@ziontechgroup"
+      "https://linkedin.com/company/ziontechgroup",
+      "https://github.com/Zion-Holdings"
     ],
     "foundingDate": "2020",
-    "numberOfEmployees": "50+",
+    "numberOfEmployees": "50-100",
     "serviceType": [
-      "AI & Machine Learning",
+      "AI Consciousness Evolution",
       "Quantum Computing",
-      "Space Technology",
-      "Enterprise IT Solutions",
       "Cybersecurity",
-      "Process Automation"
+      "Space Technology",
+      "Business Intelligence"
     ]
   };
 
@@ -78,7 +178,7 @@ const SEOOptimizer: React.FC<SEOOptimizerProps> = ({
       <meta property="og:title" content={title} />
       <meta property="og:description" content={description} />
       <meta property="og:image" content={ogImage} />
-      <meta property="og:url" content={canonicalUrl} />
+      <meta property="og:url" content={ogUrl} />
       <meta property="og:site_name" content="Zion Tech Group" />
       <meta property="og:locale" content="en_US" />
       
@@ -88,32 +188,32 @@ const SEOOptimizer: React.FC<SEOOptimizerProps> = ({
       <meta name="twitter:description" content={description} />
       <meta name="twitter:image" content={ogImage} />
       <meta name="twitter:site" content="@ziontechgroup" />
-      <meta name="twitter:creator" content="@ziontechgroup" />
       
       {/* Additional Meta Tags */}
       <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-      <meta name="theme-color" content="#00d4ff" />
-      <meta name="msapplication-TileColor" content="#00d4ff" />
+      <meta name="theme-color" content="#0ea5e9" />
+      <meta name="msapplication-TileColor" content="#0ea5e9" />
       <meta name="apple-mobile-web-app-capable" content="yes" />
       <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
       
-      {/* Favicon and App Icons */}
-      <link rel="icon" href="/favicon.ico" />
-      <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-      <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
-      <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
-      <link rel="manifest" href="/site.webmanifest" />
-      
-      {/* Preconnect to External Domains */}
+      {/* Performance Optimizations */}
       <link rel="preconnect" href="https://fonts.googleapis.com" />
       <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
       <link rel="preconnect" href="https://www.google-analytics.com" />
       <link rel="preconnect" href="https://www.googletagmanager.com" />
       
-      {/* DNS Prefetch */}
-      <link rel="dns-prefetch" href="//fonts.googleapis.com" />
-      <link rel="dns-prefetch" href="//www.google-analytics.com" />
-      <link rel="dns-prefetch" href="//www.googletagmanager.com" />
+      {/* Favicon and Icons */}
+      <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+      <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+      <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+      <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+      <link rel="manifest" href="/manifest.json" />
+      
+      {/* Security Headers */}
+      <meta httpEquiv="X-Content-Type-Options" content="nosniff" />
+      <meta httpEquiv="X-Frame-Options" content="DENY" />
+      <meta httpEquiv="X-XSS-Protection" content="1; mode=block" />
+      <meta httpEquiv="Referrer-Policy" content="strict-origin-when-cross-origin" />
       
       {/* Structured Data */}
       <script
@@ -123,27 +223,50 @@ const SEOOptimizer: React.FC<SEOOptimizerProps> = ({
         }}
       />
       
-      {/* Additional Performance Optimizations */}
-      <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
-      <meta name="format-detection" content="telephone=no" />
-      <meta name="mobile-web-app-capable" content="yes" />
-      
-      {/* Security Headers */}
-      <meta httpEquiv="X-Content-Type-Options" content="nosniff" />
-      <meta httpEquiv="X-Frame-Options" content="DENY" />
-      <meta httpEquiv="X-XSS-Protection" content="1; mode=block" />
-      
-      {/* PWA Meta Tags */}
-      <meta name="application-name" content="Zion Tech Group" />
-      <meta name="msapplication-TileImage" content="/mstile-144x144.png" />
-      <meta name="msapplication-config" content="/browserconfig.xml" />
-      
-      {/* Language and Region */}
-      <meta name="language" content="English" />
-      <meta name="geo.region" content="US-DE" />
-      <meta name="geo.placename" content="Middletown, Delaware" />
-      <meta name="geo.position" content="39.4496;-75.7163" />
-      <meta name="ICBM" content="39.4496, -75.7163" />
+      {/* Additional Performance Scripts */}
+      <script
+        dangerouslySetInnerHTML={{
+          __html: `
+            // Performance monitoring
+            if ('serviceWorker' in navigator) {
+              window.addEventListener('load', function() {
+                navigator.serviceWorker.register('/sw.js')
+                  .then(function(registration) {
+                    console.log('SW registered: ', registration);
+                  })
+                  .catch(function(registrationError) {
+                    console.log('SW registration failed: ', registrationError);
+                  });
+              });
+            }
+            
+            // Preload critical CSS
+            const criticalCSS = document.createElement('link');
+            criticalCSS.rel = 'preload';
+            criticalCSS.as = 'style';
+            criticalCSS.href = '/styles/critical.css';
+            document.head.appendChild(criticalCSS);
+            
+            // Lazy load non-critical resources
+            if ('IntersectionObserver' in window) {
+              const imageObserver = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                  if (entry.isIntersecting) {
+                    const img = entry.target;
+                    img.src = img.dataset.src;
+                    img.classList.remove('lazy');
+                    observer.unobserve(img);
+                  }
+                });
+              });
+              
+              document.querySelectorAll('img[data-src]').forEach(img => {
+                imageObserver.observe(img);
+              });
+            }
+          `
+        }}
+      />
     </Head>
   );
 };

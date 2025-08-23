@@ -21,11 +21,13 @@ interface AccessibilitySettings {
 interface AccessibilityEnhancerProps {
   showPanel?: boolean;
   autoOptimize?: boolean;
+  children: React.ReactNode;
 }
 
 const AccessibilityEnhancer: React.FC<AccessibilityEnhancerProps> = ({
   showPanel = false,
-  autoOptimize = true
+  autoOptimize = true,
+  children
 }) => {
   const [settings, setSettings] = useState<AccessibilitySettings>({
     highContrast: false,
@@ -234,12 +236,10 @@ const AccessibilityEnhancer: React.FC<AccessibilityEnhancerProps> = ({
     applySettings(defaultSettings);
   };
 
-  if (!showPanel && !isPanelOpen) {
-    return null;
-  }
-
   return (
     <>
+      {children}
+      
       {/* Accessibility Panel */}
       <motion.div
         initial={{ opacity: 0, y: 100 }}

@@ -47,8 +47,7 @@ export default function Layout({ children }: LayoutProps) {
         <UltraFuturisticFooter2040 />
       </div>
 
-      {/* Accessibility and Performance Tools */}
-      <AccessibilityEnhancer />
+      {/* Performance Tools */}
       <PerformanceMonitor />
       
       {/* Cookie Consent Banner */}

@@ -1,74 +1,162 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { LucideIcon } from 'lucide-react';
+import { ArrowRight, Star, Clock, Users, TrendingUp } from 'lucide-react';
 
 interface ServiceCardProps {
-  title: string;
-  description: string;
-  icon: LucideIcon;
-  color: string;
-  price: string;
-  features: string[];
-  badge?: string;
-  onClick?: () => void;
+  service: {
+    id: string;
+    name: string;
+    tagline: string;
+    description: string;
+    category: string;
+    type: string;
+    pricing: {
+      starter: string;
+      professional: string;
+      enterprise: string;
+      custom: string;
+    };
+    features: string[];
+    benefits: string[];
+    useCases: string[];
+    marketSize: string;
+    targetAudience: string;
+    competitiveAdvantage: string;
+    slug: string;
+  };
+  onClick: () => void;
+  featured?: boolean;
 }
 
-const ServiceCard: React.FC<ServiceCardProps> = ({
-  title,
-  description,
-  icon: Icon,
-  color,
-  price,
-  features,
-  badge,
-  onClick
-}) => {
+const ServiceCard: React.FC<ServiceCardProps> = ({ service, onClick, featured = false }) => {
+  const getCategoryColor = (category: string) => {
+    const colors: { [key: string]: string } = {
+      'AI & Business Intelligence': 'from-purple-500 to-pink-500',
+      'Cybersecurity': 'from-red-500 to-orange-500',
+      'Quantum Technology': 'from-blue-500 to-cyan-500',
+      'Space Technology': 'from-indigo-500 to-purple-500',
+      'Micro SAAS': 'from-emerald-500 to-teal-500',
+      'default': 'from-gray-500 to-gray-600'
+    };
+    return colors[category] || colors.default;
+  };
+
+  const getCategoryIcon = (category: string) => {
+    if (category.includes('AI')) return '🤖';
+    if (category.includes('Quantum')) return '⚛️';
+    if (category.includes('Cybersecurity')) return '🛡️';
+    if (category.includes('Space')) return '🚀';
+    if (category.includes('Micro SAAS')) return '💼';
+    return '⚡';
+  };
+
   return (
     <motion.div
-      className="relative group cursor-pointer"
-      whileHover={{ y: -5 }}
-      transition={{ duration: 0.3 }}
+      className={`group cursor-pointer h-full ${
+        featured 
+          ? 'ring-2 ring-cyan-400/50 shadow-lg shadow-cyan-500/25' 
+          : ''
+      }`}
+      whileHover={{ scale: 1.02, y: -5 }}
+      whileTap={{ scale: 0.98 }}
       onClick={onClick}
     >
-      {/* Service Badge */}
-      {badge && (
-        <div className="absolute -top-3 -right-3 z-10">
-          <span className="px-3 py-1 text-xs font-semibold text-white bg-gradient-to-r from-cyan-500 to-blue-600 rounded-full shadow-lg">
-            {badge}
+      <div className="bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-sm border border-white/20 rounded-2xl p-6 hover:border-cyan-400/50 transition-all duration-300 h-full flex flex-col">
+        {/* Header */}
+        <div className="mb-4">
+          <div className="flex items-start justify-between mb-3">
+            <div className="flex items-center gap-2">
+              <span className="text-2xl">{getCategoryIcon(service.category)}</span>
+              {featured && (
+                <span className="px-2 py-1 bg-gradient-to-r from-cyan-500 to-blue-500 text-white text-xs font-medium rounded-full">
+                  Featured
+                </span>
+              )}
+            </div>
+            <div className="text-right">
+              <div className="text-xs text-gray-500 bg-white/10 px-2 py-1 rounded">
+                {service.type}
+              </div>
+            </div>
+          </div>
+          
+          <h3 className="text-lg font-semibold text-white mb-2 group-hover:text-cyan-400 transition-colors line-clamp-2">
+            {service.name}
+          </h3>
+          
+          <p className="text-gray-400 text-sm mb-3 line-clamp-2">
+            {service.tagline}
+          </p>
+        </div>
+
+        {/* Category Badge */}
+        <div className="mb-4">
+          <span className={`inline-block px-3 py-1 rounded-full text-xs font-medium bg-gradient-to-r ${getCategoryColor(service.category)} bg-opacity-20 text-white border border-white/20`}>
+            {service.category}
           </span>
         </div>
-      )}
 
-      <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-gray-800/50 to-gray-900/50 backdrop-blur-sm border border-white/10 p-6 h-full group-hover:border-cyan-400/50 transition-all duration-300">
-        <div className="flex items-start justify-between mb-4">
-          <div className={`p-3 rounded-xl bg-gradient-to-r ${color}`}>
-            <Icon className="w-6 h-6 text-white" />
-          </div>
-          <div className="text-right">
-            <div className="text-2xl font-bold text-white">{price}</div>
+        {/* Pricing */}
+        <div className="mb-4 flex-1">
+          <div className="space-y-2">
+            <div className="flex justify-between text-sm">
+              <span className="text-gray-500">Starting at:</span>
+              <span className="text-cyan-400 font-semibold">{service.pricing.starter}</span>
+            </div>
+            <div className="flex justify-between text-sm">
+              <span className="text-gray-500">Professional:</span>
+              <span className="text-purple-400 font-semibold">{service.pricing.professional}</span>
+            </div>
+            <div className="flex justify-between text-sm">
+              <span className="text-gray-500">Enterprise:</span>
+              <span className="text-emerald-400 font-semibold">{service.pricing.enterprise}</span>
+            </div>
           </div>
         </div>
 
-        <h3 className="text-xl font-bold text-white mb-3 group-hover:text-cyan-400 transition-colors">
-          {title}
-        </h3>
-        
-        <p className="text-gray-400 mb-4 text-sm leading-relaxed">
-          {description}
-        </p>
+        {/* Market Info */}
+        <div className="mb-4 text-xs text-gray-500">
+          <div className="flex items-center gap-4">
+            <div className="flex items-center gap-1">
+              <TrendingUp className="w-3 h-3" />
+              <span>{service.marketSize}</span>
+            </div>
+            <div className="flex items-center gap-1">
+              <Users className="w-3 h-3" />
+              <span>{service.targetAudience.split(',')[0]}...</span>
+            </div>
+          </div>
+        </div>
 
-        <ul className="space-y-2 mb-6">
-          {features.map((feature, idx) => (
-            <li key={idx} className="flex items-center text-sm text-gray-300">
-              <div className="w-2 h-2 bg-cyan-400 rounded-full mr-2 flex-shrink-0" />
-              {feature}
-            </li>
-          ))}
-        </ul>
+        {/* Features Preview */}
+        <div className="mb-4 flex-1">
+          <div className="space-y-1">
+            {service.features.slice(0, 3).map((feature, index) => (
+              <div key={index} className="flex items-center gap-2 text-xs text-gray-400">
+                <div className="w-1.5 h-1.5 bg-cyan-400 rounded-full"></div>
+                <span className="line-clamp-1">{feature}</span>
+              </div>
+            ))}
+            {service.features.length > 3 && (
+              <div className="text-xs text-gray-500 mt-2">
+                +{service.features.length - 3} more features
+              </div>
+            )}
+          </div>
+        </div>
 
-        <button className="w-full py-3 px-4 bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-semibold rounded-xl hover:from-cyan-600 hover:to-blue-700 transition-all duration-300 transform hover:scale-105 group-hover:shadow-lg group-hover:shadow-cyan-500/25">
-          Learn More
-        </button>
+        {/* CTA */}
+        <div className="mt-auto">
+          <div className="flex items-center justify-between">
+            <div className="text-xs text-gray-500 bg-white/10 px-2 py-1 rounded">
+              {service.category.split(' ')[0]}
+            </div>
+            <div className="flex items-center text-cyan-400 group-hover:text-cyan-300 transition-colors">
+              <span className="text-sm font-medium">Learn More</span>
+              <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform duration-300" />
+            </div>
+          </div>
+        </div>
       </div>
     </motion.div>
   );
