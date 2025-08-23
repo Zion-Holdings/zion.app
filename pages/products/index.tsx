@@ -1,54 +1,46 @@
-import React from 'react';
-import { NextPage } from 'next';
+import type { NextPage, GetStaticProps } from 'next';
 import Head from 'next/head';
+import Link from 'next/link';
+import { readSolutionsIndex, type SolutionSummary } from '../../utils/marketplace';
 
-const ProductsPage: NextPage = () => {
+interface Props { solutions: SolutionSummary[] }
+
+const ProductsIndex: NextPage<Props> = ({ solutions }) => {
   return (
     <>
       <Head>
-        <title>Products - Zion Tech Group</title>
-        <meta name="description" content="Innovative technology products and solutions from Zion Tech Group" />
+        <title>AI Solutions Marketplace - Zion</title>
+        <meta name="description" content="Curated, continually-updated AI solution blueprints" />
       </Head>
-      <div className="container mx-auto px-4 py-8">
-        <h1 className="text-4xl font-bold mb-6">Products</h1>
-        <p className="text-lg text-gray-600 mb-8">
-          Discover our cutting-edge technology products and solutions designed to transform your business.
-        </p>
-        
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          <div className="bg-white p-6 rounded-lg shadow-md">
-            <h3 className="text-xl font-semibold mb-3">AI Automation Suite</h3>
-            <p className="text-gray-600 mb-4">
-              Comprehensive artificial intelligence solutions for business process automation.
-            </p>
-            <div className="text-blue-600 font-medium">Learn More →</div>
+      <main style={{ maxWidth: 1100, margin: '0 auto', padding: '2rem' }}>
+        <h1 style={{ fontSize: '2rem', fontWeight: 700, marginBottom: '1rem' }}>AI Solutions Marketplace</h1>
+        <p style={{ color: '#555', marginBottom: '2rem' }}>Continuously researched and updated based on the latest AI trends and tools.</p>
+        {solutions.length === 0 ? (
+          <p>No solutions published yet. Please check back soon.</p>
+        ) : (
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(260px, 1fr))', gap: '1rem' }}>
+            {solutions.map(s => (
+              <div key={s.slug} style={{ border: '1px solid #eee', borderRadius: 8, padding: '1rem', background: '#fff' }}>
+                <h2 style={{ fontSize: '1.1rem', fontWeight: 700, marginBottom: 8 }}>{s.title}</h2>
+                <p style={{ fontSize: 14, color: '#444', minHeight: 64 }}>{s.summary}</p>
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginTop: 8 }}>
+                  <span style={{ color: '#111', fontWeight: 600 }}>
+                    {typeof s.priceUSD === 'number' ? `$${s.priceUSD.toLocaleString()}` : 'Contact for pricing'}
+                  </span>
+                  <Link href={`/products/${s.slug}`}>Learn more →</Link>
+                </div>
+              </div>
+            ))}
           </div>
-          
-          <div className="bg-white p-6 rounded-lg shadow-md">
-            <h3 className="text-xl font-semibold mb-3">Cloud Infrastructure</h3>
-            <p className="text-gray-600 mb-4">
-              Scalable cloud solutions for modern enterprise needs.
-            </p>
-            <div className="text-blue-600 font-medium">Learn More →</div>
-          </div>
-          
-          <div className="bg-white p-6 rounded-lg shadow-md">
-            <h3 className="text-xl font-semibold mb-3">Data Analytics Platform</h3>
-            <p className="text-gray-600 mb-4">
-              Advanced analytics and insights for data-driven decision making.
-            </p>
-            <div className="text-blue-600 font-medium">Learn More →</div>
-          </div>
-        </div>
-        
-        <div className="mt-12 text-center">
-          <p className="text-gray-500">
-            This page is automatically generated. Content will be populated by automation systems.
-          </p>
-        </div>
-      </div>
-    </>
+        )}
+      </main>
+    </div>
   );
 };
 
-export default ProductsPage;
+export const getStaticProps: GetStaticProps<Props> = async () => {
+  const solutions = readSolutionsIndex().filter(s => (s.status || 'draft') !== 'draft');
+  return { props: { solutions } };
+};
+
+export default ProductsIndex;
