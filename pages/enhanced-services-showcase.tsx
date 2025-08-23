@@ -18,6 +18,7 @@ import { innovativeAIServices } from '../data/innovative-ai-services';
 import { quantumSpaceServices } from '../data/quantum-space-services';
 import { enterpriseITServices } from '../data/enterprise-it-services';
 import { realMarketServices } from '../data/real-market-services';
+import { newVerifiedServicesQ22025 } from '../data/real-verified-services-q2-2025';
 
 export default function EnhancedServicesShowcase() {
   const [selectedCategory, setSelectedCategory] = useState<string>('all');
@@ -41,7 +42,8 @@ export default function EnhancedServicesShowcase() {
     ...innovativeAIServices,
     ...quantumSpaceServices,
     ...enterpriseITServices,
-    ...realMarketServices
+    ...realMarketServices,
+    ...newVerifiedServicesQ22025
   ];
 
   const categories = [
