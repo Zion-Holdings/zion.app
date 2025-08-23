@@ -1,7 +1,11 @@
 #!/bin/bash
 
 # Ultimate Redundancy Automation System Startup Script
+<<<<<<< HEAD
+# This script manages the comprehensive redundancy automation system
+=======
 # This script manages the new comprehensive redundancy automation system
+>>>>>>> origin/cursor/automate-all-existing-automations-and-clean-up-911b
 
 set -e
 
@@ -11,7 +15,11 @@ WORKSPACE_DIR="$(cd "$SCRIPT_DIR/.." && pwd)"
 LOG_DIR="$WORKSPACE_DIR/automation/logs"
 PID_FILE="$LOG_DIR/ultimate-redundancy-automation.pid"
 LOG_FILE="$LOG_DIR/ultimate-redundancy-automation.log"
+<<<<<<< HEAD
+NODE_SCRIPT="$SCRIPT_DIR/ultimate-redundancy-automation-system.cjs"
+=======
 SYSTEM_SCRIPT="ultimate-redundancy-automation-system.cjs"
+>>>>>>> origin/cursor/automate-all-existing-automations-and-clean-up-911b
 
 # Ensure log directory exists
 mkdir -p "$LOG_DIR"
@@ -58,6 +66,16 @@ check_node() {
     log "INFO" "Node.js version: $node_version"
 }
 
+<<<<<<< HEAD
+# Check if the automation script exists
+check_script() {
+    if [ ! -f "$NODE_SCRIPT" ]; then
+        log "ERROR" "Automation script not found: $NODE_SCRIPT"
+        exit 1
+    fi
+    
+    log "INFO" "Automation script found: $NODE_SCRIPT"
+=======
 # Check if the system script exists
 check_system_script() {
     if [ ! -f "$SCRIPT_DIR/$SYSTEM_SCRIPT" ]; then
@@ -66,6 +84,7 @@ check_system_script() {
     fi
     
     log "INFO" "System script found: $SYSTEM_SCRIPT"
+>>>>>>> origin/cursor/automate-all-existing-automations-and-clean-up-911b
 }
 
 # Check workspace status
@@ -86,6 +105,38 @@ check_workspace() {
     log "INFO" "Repository: $(git remote get-url origin 2>/dev/null || echo 'No remote')"
 }
 
+<<<<<<< HEAD
+# Start the automation system
+start_system() {
+    log "INFO" "Starting Ultimate Redundancy Automation System..."
+    
+    if [ -f "$PID_FILE" ]; then
+        local pid=$(cat "$PID_FILE")
+        if kill -0 "$pid" 2>/dev/null; then
+            log "WARN" "System already running with PID $pid"
+            return 1
+        else
+            log "INFO" "Removing stale PID file"
+            rm -f "$PID_FILE"
+        fi
+    fi
+    
+    # Start the Node.js automation system
+    nohup node "$NODE_SCRIPT" start > "$LOG_FILE" 2>&1 &
+    local pid=$!
+    
+    echo "$pid" > "$PID_FILE"
+    log "INFO" "System started with PID $pid"
+    
+    # Wait a moment and check if it's still running
+    sleep 2
+    if kill -0 "$pid" 2>/dev/null; then
+        log "INFO" "System is running successfully"
+        return 0
+    else
+        log "ERROR" "System failed to start"
+        rm -f "$PID_FILE"
+=======
 # Check if system is already running
 is_running() {
     if [ -f "$PID_FILE" ]; then
@@ -124,10 +175,28 @@ start_system() {
         return 0
     else
         log "ERROR" "Failed to start Ultimate Redundancy Automation System"
+>>>>>>> origin/cursor/automate-all-existing-automations-and-clean-up-911b
         return 1
     fi
 }
 
+<<<<<<< HEAD
+# Stop the automation system
+stop_system() {
+    log "INFO" "Stopping Ultimate Redundancy Automation System..."
+    
+    if [ ! -f "$PID_FILE" ]; then
+        log "WARN" "No PID file found, system may not be running"
+        return 0
+    fi
+    
+    local pid=$(cat "$PID_FILE")
+    if kill -0 "$pid" 2>/dev/null; then
+        log "INFO" "Stopping process $pid"
+        kill "$pid"
+        
+        # Wait for process to stop
+=======
 # Stop the system
 stop_system() {
     if [ ! -f "$PID_FILE" ]; then
@@ -144,12 +213,29 @@ stop_system() {
         kill -TERM "$pid"
         
         # Wait for graceful shutdown
+>>>>>>> origin/cursor/automate-all-existing-automations-and-clean-up-911b
         local count=0
         while kill -0 "$pid" 2>/dev/null && [ $count -lt 10 ]; do
             sleep 1
             count=$((count + 1))
         done
         
+<<<<<<< HEAD
+        if kill -0 "$pid" 2>/dev/null; then
+            log "WARN" "Process $pid did not stop gracefully, forcing termination"
+            kill -9 "$pid"
+        fi
+        
+        log "INFO" "System stopped"
+    else
+        log "WARN" "Process $pid is not running"
+    fi
+    
+    rm -f "$PID_FILE"
+}
+
+# Restart the automation system
+=======
         # Force kill if still running
         if kill -0 "$pid" 2>/dev/null; then
             log "WARN" "Force killing process (PID: $pid)"
@@ -167,6 +253,7 @@ stop_system() {
 }
 
 # Restart the system
+>>>>>>> origin/cursor/automate-all-existing-automations-and-clean-up-911b
 restart_system() {
     log "INFO" "Restarting Ultimate Redundancy Automation System..."
     stop_system
@@ -174,6 +261,30 @@ restart_system() {
     start_system
 }
 
+<<<<<<< HEAD
+# Check system status
+check_status() {
+    if [ ! -f "$PID_FILE" ]; then
+        log "INFO" "System is not running (no PID file)"
+        return 1
+    fi
+    
+    local pid=$(cat "$PID_FILE")
+    if kill -0 "$pid" 2>/dev/null; then
+        log "INFO" "System is running with PID $pid"
+        
+        # Get detailed status from the Node.js system
+        if [ -f "$NODE_SCRIPT" ]; then
+            log "INFO" "Getting detailed system status..."
+            node "$NODE_SCRIPT" status
+        fi
+        
+        return 0
+    else
+        log "WARN" "System is not running (stale PID file)"
+        rm -f "$PID_FILE"
+        return 1
+=======
 # Show system status
 show_status() {
     if is_running; then
@@ -192,16 +303,36 @@ show_status() {
         fi
     else
         log "INFO" "Ultimate Redundancy Automation System is not running"
+>>>>>>> origin/cursor/automate-all-existing-automations-and-clean-up-911b
     fi
 }
 
 # Show system logs
 show_logs() {
     if [ -f "$LOG_FILE" ]; then
+<<<<<<< HEAD
+        log "INFO" "Showing system logs (last 50 lines):"
+        tail -n 50 "$LOG_FILE"
+    else
+        log "WARN" "No log file found"
+    fi
+}
+
+# Generate system report
+generate_report() {
+    log "INFO" "Generating system report..."
+    
+    if [ -f "$NODE_SCRIPT" ]; then
+        node "$NODE_SCRIPT" report
+    else
+        log "ERROR" "Automation script not found"
+        return 1
+=======
         log "INFO" "Showing recent logs (last 50 lines):"
         tail -50 "$LOG_FILE"
     else
         log "WARN" "Log file not found: $LOG_FILE"
+>>>>>>> origin/cursor/automate-all-existing-automations-and-clean-up-911b
     fi
 }
 
@@ -209,6 +340,21 @@ show_logs() {
 run_health_check() {
     log "INFO" "Running health check..."
     
+<<<<<<< HEAD
+    if [ -f "$NODE_SCRIPT" ]; then
+        node "$NODE_SCRIPT" health
+        local exit_code=$?
+        
+        if [ $exit_code -eq 0 ]; then
+            log "INFO" "Health check passed"
+        else
+            log "WARN" "Health check failed"
+        fi
+        
+        return $exit_code
+    else
+        log "ERROR" "Automation script not found"
+=======
     cd "$SCRIPT_DIR"
     if node "$SYSTEM_SCRIPT" health >/dev/null 2>&1; then
         log "INFO" "Health check completed successfully"
@@ -228,6 +374,7 @@ run_once() {
         log "INFO" "One-time check completed successfully"
     else
         log "ERROR" "One-time check failed"
+>>>>>>> origin/cursor/automate-all-existing-automations-and-clean-up-911b
         return 1
     fi
 }
@@ -236,6 +383,21 @@ run_once() {
 test_system() {
     log "INFO" "Testing Ultimate Redundancy Automation System..."
     
+<<<<<<< HEAD
+    # Check prerequisites
+    check_node
+    check_script
+    check_workspace
+    
+    # Test health check
+    if run_health_check; then
+        log "INFO" "System test passed"
+        return 0
+    else
+        log "ERROR" "System test failed"
+        return 1
+    fi
+=======
     # Check if script can be loaded
     cd "$SCRIPT_DIR"
     if node -e "require('./$SYSTEM_SCRIPT'); console.log('Script loaded successfully')" >/dev/null 2>&1; then
@@ -254,16 +416,25 @@ test_system() {
     fi
     
     log "INFO" "✓ All tests passed"
+>>>>>>> origin/cursor/automate-all-existing-automations-and-clean-up-911b
 }
 
 # Main function
 main() {
+<<<<<<< HEAD
+    local command="${1:-start}"
+=======
     local command="${1:-help}"
+>>>>>>> origin/cursor/automate-all-existing-automations-and-clean-up-911b
     
     case "$command" in
         "start")
             check_node
+<<<<<<< HEAD
+            check_script
+=======
             check_system_script
+>>>>>>> origin/cursor/automate-all-existing-automations-and-clean-up-911b
             check_workspace
             start_system
             ;;
@@ -272,16 +443,48 @@ main() {
             ;;
         "restart")
             check_node
+<<<<<<< HEAD
+            check_script
+=======
             check_system_script
+>>>>>>> origin/cursor/automate-all-existing-automations-and-clean-up-911b
             check_workspace
             restart_system
             ;;
         "status")
+<<<<<<< HEAD
+            check_status
+=======
             show_status
+>>>>>>> origin/cursor/automate-all-existing-automations-and-clean-up-911b
             ;;
         "logs")
             show_logs
             ;;
+<<<<<<< HEAD
+        "report")
+            generate_report
+            ;;
+        "health")
+            run_health_check
+            ;;
+        "test")
+            test_system
+            ;;
+        *)
+            echo "Usage: $0 [start|stop|restart|status|logs|report|health|test]"
+            echo ""
+            echo "Commands:"
+            echo "  start   - Start the automation system"
+            echo "  stop    - Stop the automation system"
+            echo "  restart - Restart the automation system"
+            echo "  status  - Check system status"
+            echo "  logs    - Show system logs"
+            echo "  report  - Generate system report"
+            echo "  health  - Run health check"
+            echo "  test    - Test the system"
+            exit 1
+=======
         "health")
             check_node
             check_system_script
@@ -319,6 +522,7 @@ main() {
             echo "  REDUNDANCY_MAX_RETRIES - Maximum recovery attempts (default: 3)"
             echo "  REDUNDANCY_AUTO_RECOVERY - Enable auto-recovery (default: true)"
             echo "  HEALTH_CHECK_INTERVAL - Health check interval in ms (default: 60000)"
+>>>>>>> origin/cursor/automate-all-existing-automations-and-clean-up-911b
             ;;
     esac
 }
