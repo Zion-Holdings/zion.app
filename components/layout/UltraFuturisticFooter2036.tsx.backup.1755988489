@@ -23,6 +23,18 @@ const footerSections = [
     description: 'Our flagship technology solutions',
     icon: <Star className="w-5 h-5 text-yellow-400" />,
     links: [
+<<<<<<< HEAD
+      { name: 'AI Consciousness Evolution', href: '/ai-consciousness-evolution-2029', featured: true },
+      { name: 'Quantum Neural Networks', href: '/quantum-neural-network-platform', featured: true },
+      { name: 'Autonomous Business Operations', href: '/autonomous-business-operations-platform', featured: true },
+      { name: 'Space Resource Mining', href: '/space-resource-mining-platform', featured: true },
+      { name: 'Brain-Computer Interface', href: '/brain-computer-interface-platform', featured: true },
+      { name: 'Quantum Financial Trading', href: '/quantum-financial-trading', featured: true },
+      { name: 'AI Emotional Intelligence', href: '/ai-emotional-intelligence-training', featured: true },
+      { name: 'Quantum Materials Discovery', href: '/quantum-materials-discovery-platform' },
+      { name: 'Autonomous Vehicle AI', href: '/autonomous-vehicle-ai-platform' },
+      { name: 'Quantum Bio-Computing', href: '/quantum-bio-computing-platform' }
+=======
       { name: 'AI & Machine Learning', href: '/ai-services', featured: true },
       { name: 'Quantum Technology', href: '/quantum-services', featured: true },
       { name: 'Space Technology', href: '/space-technology', featured: true },
@@ -31,6 +43,7 @@ const footerSections = [
       { name: 'Cloud Solutions', href: '/cloud-platform' },
       { name: 'Edge Computing', href: '/edge-computing-orchestration-platform' },
       { name: 'Blockchain Solutions', href: '/blockchain-infrastructure-platform' }
+>>>>>>> origin/cursor/website-audit-content-update-and-deployment-3da7
     ]
   },
   {
@@ -89,6 +102,35 @@ const footerSections = [
     description: 'Specialized solutions for key industries',
     icon: <Target className="w-5 h-5 text-emerald-400" />,
     links: [
+<<<<<<< HEAD
+      { name: 'AI Content Generator', href: '/ai-content-generator' },
+      { name: 'AI Code Review', href: '/ai-code-review' },
+      { name: 'AI HR Analytics Platform', href: '/intelligent-hr-analytics-platform' },
+      { name: 'AI Financial Planning Platform', href: '/ai-financial-planning-platform' },
+      { name: 'Supply Chain Optimization', href: '/intelligent-supply-chain-optimization' },
+      { name: 'Content Automation Platform', href: '/intelligent-content-automation-platform' },
+      { name: 'AI Meeting Transcriber Pro', href: '/ai-meeting-transcriber-pro' },
+      { name: 'AI Legal Contract Analyzer', href: '/ai-legal-contract-analyzer' },
+      { name: 'AI Healthcare Diagnostics', href: '/ai-healthcare-diagnostics' },
+      { name: 'AI Customer Journey Analytics', href: '/ai-customer-journey-analytics' }
+    ]
+  },
+  {
+    title: 'Industry Solutions',
+    description: 'Specialized solutions for key industries',
+    icon: <Target className="w-5 h-5 text-orange-400" />,
+    links: [
+      { name: 'Healthcare AI Solutions', href: '/healthcare-ai-solutions' },
+      { name: 'Financial Technology Solutions', href: '/financial-solutions' },
+      { name: 'Government Technology Solutions', href: '/government-technology-solutions' },
+      { name: 'Retail Technology Solutions', href: '/retail-technology-solutions' },
+      { name: 'Manufacturing AI Solutions', href: '/manufacturing-ai-solutions' },
+      { name: 'Education Technology Solutions', href: '/education-technology-solutions' },
+      { name: 'Energy & Utilities Solutions', href: '/energy-utilities-solutions' },
+      { name: 'Entertainment & Media Solutions', href: '/entertainment-media-solutions' },
+      { name: 'Real Estate Technology Solutions', href: '/real-estate-technology-solutions' },
+      { name: 'Biotech AI Research Platform', href: '/biotech-ai-research-platform' }
+=======
       { name: 'Healthcare AI Solutions', href: '/healthcare-ai-solutions' },
       { name: 'Financial Technology Solutions', href: '/financial-solutions' },
       { name: 'Manufacturing AI Solutions', href: '/manufacturing-ai-solutions' },
@@ -112,15 +154,50 @@ const footerSections = [
       { name: 'Webinars', href: '/webinars' },
       { name: 'White Papers', href: '/white-papers' },
       { name: 'Developer Resources', href: '/developer-resources' }
+>>>>>>> origin/cursor/website-audit-content-update-and-deployment-3da7
     ]
   }
 ];
 
+<<<<<<< HEAD
+const quickLinks = [
+  { name: 'About Us', href: '/about' },
+  { name: 'Contact', href: '/contact' },
+  { name: 'Services', href: '/services' },
+  { name: 'Pricing', href: '/pricing' },
+  { name: 'Blog', href: '/blog' },
+  { name: 'Support', href: '/support' },
+  { name: 'Careers', href: '/careers' },
+  { name: 'Partners', href: '/partners' },
+  { name: 'Resources', href: '/resources' },
+  { name: 'Case Studies', href: '/case-studies' },
+  { name: 'News', href: '/news' },
+  { name: 'Training', href: '/training' }
+];
+
+const legalLinks = [
+  { name: 'Privacy Policy', href: '/privacy' },
+  { name: 'Terms of Service', href: '/terms' },
+  { name: 'Cookie Policy', href: '/cookies' },
+  { name: 'Accessibility', href: '/accessibility-scanner' },
+  { name: 'GDPR Compliance', href: '/privacy' },
+  { name: 'Security', href: '/security' }
+];
+
+const socialLinks = [
+  { name: 'LinkedIn', href: 'https://www.linkedin.com/company/ziontechgroup', icon: <Linkedin className="w-5 h-5" /> },
+  { name: 'GitHub', href: 'https://github.com/Zion-Holdings', icon: <Github className="w-5 h-5" /> },
+  { name: 'Twitter', href: 'https://twitter.com/ziontechgroup', icon: <Twitter className="w-5 h-5" /> },
+  { name: 'Facebook', href: 'https://www.facebook.com/ziontechgroup', icon: <Facebook className="w-5 h-5" /> },
+  { name: 'Instagram', href: 'https://www.instagram.com/ziontechgroup', icon: <Instagram className="w-5 h-5" /> },
+  { name: 'YouTube', href: 'https://www.youtube.com/@ziontechgroup', icon: <Youtube className="w-5 h-5" /> }
+=======
 const socialLinks = [
   { name: 'LinkedIn', href: 'https://linkedin.com/company/ziontechgroup', icon: <Linkedin className="w-5 h-5" /> },
   { name: 'Twitter', href: 'https://twitter.com/ziontechgroup', icon: <Twitter className="w-5 h-5" /> },
   { name: 'GitHub', href: 'https://github.com/ziontechgroup', icon: <Github className="w-5 h-5" /> },
   { name: 'YouTube', href: 'https://youtube.com/@ziontechgroup', icon: <Youtube className="w-5 h-5" /> }
+>>>>>>> origin/cursor/website-audit-content-update-and-deployment-3da7
 ];
 
 const quickLinks = [

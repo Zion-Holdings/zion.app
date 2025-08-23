@@ -162,18 +162,6 @@ const navigationItems: NavigationItem[] = [
         icon: <Code className="w-4 h-4" />
       },
       { 
-        name: 'Cybersecurity', 
-        href: '/cybersecurity', 
-        description: 'Security & compliance solutions',
-        icon: <Shield className="w-4 h-4" />
-      },
-      { 
-        name: 'Cloud Solutions', 
-        href: '/cloud-platform', 
-        description: 'Cloud infrastructure & services',
-        icon: <Cloud className="w-4 h-4" />
-      },
-      { 
         name: 'Specialized Solutions', 
         href: '/solutions', 
         description: 'Industry-specific solutions',
@@ -208,6 +196,7 @@ const navigationItems: NavigationItem[] = [
     category: 'showcase',
     children: [
       { 
+<<<<<<< HEAD
         name: '2036 Innovation Showcase', 
         href: '/2036-innovative-services-showcase', 
         description: 'Cutting-edge 2036 services',
@@ -218,6 +207,11 @@ const navigationItems: NavigationItem[] = [
         name: 'Services Showcase', 
         href: '/comprehensive-services-showcase-2025', 
         description: 'Complete services overview',
+=======
+        name: 'Services Showcase 2036', 
+        href: '/comprehensive-services-showcase-2036', 
+        description: 'Complete 2036 services overview',
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-fee1
         icon: <Grid className="w-4 h-4" />,
       },
       {
@@ -245,16 +239,16 @@ const navigationItems: NavigationItem[] = [
         icon: <BarChart3 className="w-4 h-4" />
       },
       { 
-        name: 'Revolutionary Pricing 2025', 
-        href: '/revolutionary-2025-pricing', 
-        description: '2025 pricing innovations',
-        icon: <TrendingUp className="w-4 h-4" />
+        name: 'Revolutionary 2026', 
+        href: '/revolutionary-2026-services', 
+        description: '2026 services showcase',
+        icon: <Sparkles className="w-4 h-4" />
       },
       { 
-        name: 'Revolutionary Pricing 2026', 
-        href: '/revolutionary-2026-pricing', 
-        description: '2026 pricing innovations',
-        icon: <TrendingUp className="w-4 h-4" />
+        name: 'Ultimate 2035', 
+        href: '/ultimate-2035-futuristic-services-showcase', 
+        description: 'Future services preview',
+        icon: <Zap className="w-4 h-4" />
       }
     ]
   },
@@ -300,18 +294,6 @@ const navigationItems: NavigationItem[] = [
         href: '/careers', 
         description: 'Join our team',
         icon: <Users className="w-4 h-4" />
-      },
-      { 
-        name: 'Investors', 
-        href: '/investors', 
-        description: 'Investment information',
-        icon: <DollarSign className="w-4 h-4" />
-      },
-      { 
-        name: 'Careers', 
-        href: '/careers', 
-        description: 'Join our team',
-        icon: <User className="w-4 h-4" />
       },
       { 
         name: 'News', 
@@ -419,16 +401,10 @@ const navigationItems: NavigationItem[] = [
         icon: <BookOpenCheck className="w-4 h-4" />
       },
       { 
-        name: 'Webinars', 
-        href: '/webinars', 
-        description: 'Educational sessions',
-        icon: <Video className="w-4 h-4" />
-      },
-      { 
-        name: 'White Papers', 
-        href: '/white-papers', 
-        description: 'In-depth research',
-        icon: <FileText className="w-4 h-4" />
+        name: 'API Docs', 
+        href: '/api-docs', 
+        description: 'Developer resources',
+        icon: <Code className="w-4 h-4" />
       }
     ]
   },
@@ -441,21 +417,21 @@ const navigationItems: NavigationItem[] = [
     children: [
       { 
         name: 'Healthcare', 
-        href: '/healthcare-ai-solutions', 
+        href: '/healthcare-solutions', 
         description: 'Healthcare technology',
         icon: <Heart className="w-4 h-4" />
       },
       { 
-        name: 'Financial Services', 
+        name: 'Financial', 
         href: '/financial-solutions', 
-        description: 'Fintech solutions',
+        description: 'Financial technology',
         icon: <DollarSign className="w-4 h-4" />
       },
       { 
-        name: 'Manufacturing', 
-        href: '/manufacturing-ai-solutions', 
-        description: 'Industrial automation',
-        icon: <Settings className="w-4 h-4" />
+        name: 'Government', 
+        href: '/government-technology-solutions', 
+        description: 'Government solutions',
+        icon: <Shield className="w-4 h-4" />
       },
       { 
         name: 'Retail', 
@@ -464,15 +440,15 @@ const navigationItems: NavigationItem[] = [
         icon: <ShoppingCart className="w-4 h-4" />
       },
       { 
-        name: 'Government', 
-        href: '/government-technology-solutions', 
-        description: 'Public sector solutions',
-        icon: <Building className="w-4 h-4" />
+        name: 'Manufacturing', 
+        href: '/manufacturing-ai-solutions', 
+        description: 'Manufacturing AI',
+        icon: <Settings className="w-4 h-4" />
       },
       { 
         name: 'Education', 
         href: '/education-technology-solutions', 
-        description: 'EdTech solutions',
+        description: 'Education technology',
         icon: <BookOpen className="w-4 h-4" />
       }
     ]

@@ -45,6 +45,10 @@
   "quantum-threat-detection",
   "services/data-contracts-hub",
   "services/serverless-lakehouse-starter",
+<<<<<<< HEAD
+  "space-data-analytics",
+=======
+>>>>>>> origin/cursor/website-audit-content-update-and-deployment-3da7
   "space-mining-automation-platform",
   "space-mining-platform"
 ]
