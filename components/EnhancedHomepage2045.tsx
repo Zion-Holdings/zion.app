@@ -1,13 +1,12 @@
-import React, { useEffect, useState, Suspense, lazy } from 'react';
+import React, { useEffect, useState, useCallback, useMemo } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import Link from 'next/link';
 import { 
   ArrowRight, Brain, Shield, Rocket, Globe, Cpu, Database, Atom, Target, Star, Sparkles as SparklesIcon,
   Brain as BrainIcon, Atom as AtomIcon, Shield as ShieldIcon, Rocket as RocketIcon, Zap, MessageCircle,
-  X, Menu, Linkedin, Twitter, Github
+  X, Menu, Linkedin, Twitter, Github, Search, TrendingUp, Users, Award
 } from 'lucide-react';
-import Head from 'next/head';
-import dynamic from 'next/dynamic';
+import SEOOptimizer from './SEOOptimizer';
 
 // Import our new revolutionary services
 import { revolutionary2044AdvancedMicroSaas } from '../data/revolutionary-2044-advanced-micro-saas';
@@ -15,57 +14,52 @@ import { revolutionary2044ITServices } from '../data/revolutionary-2044-it-servi
 import { revolutionary2044AIServices } from '../data/revolutionary-2044-ai-services';
 import { realPracticalMicroSaasServices2025 } from '../data/2025-real-practical-micro-saas-services';
 import { advancedAIITSpecializedServices2025 } from '../data/2025-advanced-ai-it-specialized-services';
-
-// Lazy load heavy components for better performance
-const ServiceCard = dynamic(() => import('./ServiceCard'), { 
-  loading: () => <div className="animate-pulse bg-gray-800 rounded-lg h-64"></div>,
-  ssr: false 
-});
-
-const AccessibilityEnhancer = dynamic(() => import('./AccessibilityEnhancer'), {
-  loading: () => <div className="fixed bottom-6 right-6 z-50 w-12 h-12 bg-gray-800 rounded-full animate-pulse"></div>,
-  ssr: false
-});
-
-const PerformanceMonitor = dynamic(() => import('./PerformanceMonitor'), {
-  loading: () => <div className="fixed top-6 right-6 z-50 w-12 h-12 bg-gray-800 rounded-full animate-pulse"></div>,
-  ssr: false
-});
-
-const EnhancedSEO = dynamic(() => import('./EnhancedSEO'), {
-  loading: () => null,
-  ssr: true
-});
+import { innovative2025ITInfrastructureServices } from '../data/2025-innovative-it-infrastructure-services';
 
 const EnhancedHomepage2045: React.FC = () => {
   const [showMobileMenu, setShowMobileMenu] = useState(false);
-  const [isLoaded, setIsLoaded] = useState(false);
+  const [searchQuery, setSearchQuery] = useState('');
+  const [isSearchFocused, setIsSearchFocused] = useState(false);
+  const [selectedCategory, setSelectedCategory] = useState('all');
+  const [isLoading, setIsLoading] = useState(false);
   
-  useEffect(() => {
-    // Track mouse movement for parallax effects
-    const handleMouseMove = (e: MouseEvent) => {
-      // Mouse tracking for future parallax effects
-    };
-    
-    // Set loaded state for better performance
-    const timer = setTimeout(() => setIsLoaded(true), 100);
-    
-    window.addEventListener('mousemove', handleMouseMove);
-    
-    return () => {
-      window.removeEventListener('mousemove', handleMouseMove);
-      clearTimeout(timer);
-    };
-  }, []);
-
-  // Combine all revolutionary services
-  const allRevolutionaryServices = [
+  // Memoize services data for better performance
+  const allRevolutionaryServices = useMemo(() => [
     ...revolutionary2044AdvancedMicroSaas,
     ...revolutionary2044ITServices,
     ...revolutionary2044AIServices,
     ...realPracticalMicroSaasServices2025,
-    ...advancedAIITSpecializedServices2025
-  ];
+    ...advancedAIITSpecializedServices2025,
+    ...innovative2025ITInfrastructureServices
+  ], []);
+
+  // Filtered services based on search and category
+  const filteredServices = useMemo(() => {
+    let filtered = allRevolutionaryServices;
+    
+    if (selectedCategory !== 'all') {
+      filtered = filtered.filter(s => {
+        if (selectedCategory === 'ai') return s.category.includes('AI') || s.category.includes('Machine Learning');
+        if (selectedCategory === 'quantum') return s.category.includes('Quantum');
+        if (selectedCategory === 'cybersecurity') return s.category.includes('Security');
+        if (selectedCategory === 'business') return s.type === 'Micro SAAS';
+        if (selectedCategory === 'it') return s.category.includes('IT') || s.category.includes('Infrastructure');
+        return true;
+      });
+    }
+    
+    if (searchQuery) {
+      const query = searchQuery.toLowerCase();
+      filtered = filtered.filter(s => 
+        s.name.toLowerCase().includes(query) ||
+        s.description.toLowerCase().includes(query) ||
+        s.category.toLowerCase().includes(query) ||
+        s.tagline?.toLowerCase().includes(query)
+      );
+    }
+    
+    return filtered.slice(0, 6); // Show only first 6 for performance
+  }, [allRevolutionaryServices, selectedCategory, searchQuery]);
 
   const categories = [
     { id: 'all', name: 'All Services', icon: SparklesIcon, color: 'from-purple-500 to-pink-500', count: allRevolutionaryServices.length },
@@ -86,12 +80,13 @@ const EnhancedHomepage2045: React.FC = () => {
   ];
 
   const stats = [
-    { number: "5000+", label: "Revolutionary Services", icon: Star },
-    { number: "99.99%", label: "Uptime Guarantee", icon: Star },
-    { number: "24/7", label: "AI Support Available", icon: Brain },
-    { number: "250+", label: "Countries Served", icon: Globe }
+    { number: "5000+", label: "Revolutionary Services", icon: Star, description: "Cutting-edge solutions" },
+    { number: "99.99%", label: "Uptime Guarantee", icon: TrendingUp, description: "Reliable performance" },
+    { number: "24/7", label: "AI Support Available", icon: Brain, description: "Always here to help" },
+    { number: "250+", label: "Countries Served", icon: Globe, description: "Global reach" }
   ];
 
+  // Enhanced animations
   const fadeInUp = {
     initial: { opacity: 0, y: 30 },
     animate: { opacity: 1, y: 0 },
@@ -106,58 +101,86 @@ const EnhancedHomepage2045: React.FC = () => {
     }
   };
 
-  return (
-    <>
-      <EnhancedSEO
-        seoData={{
-          title: "Zion Tech Group - Revolutionary AI & IT Services 2045",
-          description: "Discover the future of technology with Zion Tech Group's revolutionary AI, quantum computing, and IT infrastructure services. Transform your business with cutting-edge solutions.",
-          keywords: ["AI services", "quantum computing", "IT infrastructure", "cybersecurity", "micro SAAS", "business automation", "Zion Tech Group", "2045 technology", "artificial intelligence", "machine learning"],
-          ogImage: "https://ziontechgroup.com/og-image.jpg",
-          ogType: "website",
-          twitterCard: "summary_large_image",
-          canonical: "https://ziontechgroup.com"
-        }}
-        pageType="homepage"
-        showAnalytics={false}
-      />
+  const scaleIn = {
+    initial: { opacity: 0, scale: 0.8 },
+    animate: { opacity: 1, scale: 1 },
+    transition: { duration: 0.5, ease: "easeOut" }
+  };
 
+  // Handle search with debouncing
+  const handleSearch = useCallback((query: string) => {
+    setSearchQuery(query);
+    setIsLoading(true);
+    // Simulate search delay for better UX
+    setTimeout(() => setIsLoading(false), 300);
+  }, []);
+
+  // Keyboard navigation support
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') {
+        setShowMobileMenu(false);
+        setIsSearchFocused(false);
+      }
+    };
+
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, []);
+
+  // SEO data for the homepage
+  const seoData = {
+    title: "Zion Tech Group - Revolutionary AI & IT Services 2045",
+    description: "Discover the future of technology with Zion Tech Group's revolutionary AI, quantum computing, and IT infrastructure services. Transform your business with cutting-edge solutions.",
+    keywords: "AI services, quantum computing, IT infrastructure, cybersecurity, micro SAAS, business automation, Zion Tech Group",
+    canonical: "https://ziontechgroup.com",
+    ogImage: "/og-image.svg",
+    ogType: "website",
+    additionalMeta: [
+      { name: "geo.region", content: "US-DE" },
+      { name: "geo.placename", content: "Middletown, Delaware" },
+      { name: "business:contact:phone", content: "+1-302-464-0950" },
+      { name: "business:contact:email", content: "kleber@ziontechgroup.com" }
+    ]
+  };
+
+  return (
+    <SEOOptimizer data={seoData}>
       <div className="min-h-screen bg-black text-white overflow-hidden">
-        {/* Animated Background */}
+        {/* Enhanced Animated Background */}
         <div className="fixed inset-0 z-0">
           <div className="absolute inset-0 bg-gradient-to-br from-black via-gray-900 to-black"></div>
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_50%,rgba(120,119,198,0.3),transparent_50%)]"></div>
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_20%,rgba(255,119,198,0.3),transparent_50%)]"></div>
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_40%_80%,rgba(120,219,255,0.3),transparent_50%)]"></div>
           
-          {/* Floating Particles - Optimized with reduced count for better performance */}
-          {isLoaded && (
-            <div className="absolute inset-0 overflow-hidden">
-              {[...Array(25)].map((_, i) => (
-                <motion.div
-                  key={i}
-                  className="absolute w-1 h-1 bg-cyan-400 rounded-full opacity-20"
-                  style={{
-                    left: `${Math.random() * 100}%`,
-                    top: `${Math.random() * 100}%`,
-                  }}
-                  animate={{
-                    y: [0, -100, 0],
-                    opacity: [0.2, 0.8, 0.2],
-                  }}
-                  transition={{
-                    duration: Math.random() * 10 + 10,
-                    repeat: 999999,
-                    ease: "linear"
-                  }}
-                />
-              ))}
-            </div>
-          )}
+          {/* Enhanced Floating Particles */}
+          <div className="absolute inset-0 overflow-hidden">
+            {[...Array(50)].map((_, i) => (
+              <motion.div
+                key={i}
+                className="absolute w-1 h-1 bg-cyan-400 rounded-full opacity-20"
+                style={{
+                  left: `${Math.random() * 100}%`,
+                  top: `${Math.random() * 100}%`,
+                }}
+                animate={{
+                  y: [0, -100, 0],
+                  opacity: [0.2, 0.8, 0.2],
+                  scale: [1, 1.5, 1],
+                }}
+                transition={{
+                  duration: Math.random() * 10 + 10,
+                  repeat: 999999,
+                  ease: "linear"
+                }}
+              />
+            ))}
+          </div>
         </div>
 
-        {/* Navigation */}
-        <nav className="relative z-50 bg-black/20 backdrop-blur-xl border-b border-cyan-500/20">
+        {/* Enhanced Navigation */}
+        <nav className="relative z-50 bg-black/20 backdrop-blur-xl border-b border-cyan-500/20 sticky top-0">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="flex justify-between items-center h-16">
               {/* Logo */}
@@ -175,6 +198,32 @@ const EnhancedHomepage2045: React.FC = () => {
                 </span>
               </motion.div>
 
+              {/* Enhanced Search Bar */}
+              <div className="hidden md:flex flex-1 max-w-md mx-8">
+                <div className="relative w-full">
+                  <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-400" />
+                  <input
+                    type="text"
+                    placeholder="Search services..."
+                    value={searchQuery}
+                    onChange={(e) => handleSearch(e.target.value)}
+                    onFocus={() => setIsSearchFocused(true)}
+                    onBlur={() => setTimeout(() => setIsSearchFocused(false), 200)}
+                    className="w-full pl-10 pr-4 py-2 bg-gray-900/50 border border-cyan-500/30 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-cyan-500 focus:ring-2 focus:ring-cyan-500/20 transition-all duration-200"
+                    aria-label="Search services"
+                  />
+                  {isLoading && (
+                    <motion.div
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: 1 }}
+                      className="absolute right-3 top-1/2 transform -translate-y-1/2"
+                    >
+                      <div className="w-4 h-4 border-2 border-cyan-500 border-t-transparent rounded-full animate-spin"></div>
+                    </motion.div>
+                  )}
+                </div>
+              </div>
+
               {/* Desktop Navigation */}
               <div className="hidden md:flex items-center space-x-8">
                 {[
@@ -189,6 +238,7 @@ const EnhancedHomepage2045: React.FC = () => {
                     href={item.href}
                     className="text-gray-300 hover:text-cyan-400 transition-colors duration-200 relative group"
                     whileHover={{ scale: 1.05 }}
+                    aria-label={`Navigate to ${item.name}`}
                   >
                     {item.name}
                     <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-cyan-400 to-blue-500 transition-all duration-300 group-hover:w-full"></span>
@@ -205,9 +255,10 @@ const EnhancedHomepage2045: React.FC = () => {
               >
                 <Link href="/contact">
                   <motion.button
-                    className="px-6 py-2 bg-gradient-to-r from-cyan-500 to-blue-500 text-white rounded-lg font-medium hover:from-cyan-600 hover:to-blue-600 transition-all duration-200 shadow-lg hover:shadow-cyan-500/25 focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:ring-offset-2 focus:ring-offset-black"
+                    className="px-6 py-2 bg-gradient-to-r from-cyan-500 to-blue-500 text-white rounded-lg font-medium hover:from-cyan-600 hover:to-blue-600 transition-all duration-200 shadow-lg hover:shadow-cyan-500/25"
                     whileHover={{ scale: 1.05, y: -2 }}
                     whileTap={{ scale: 0.95 }}
+                    aria-label="Get started with Zion Tech Group"
                   >
                     Get Started
                   </motion.button>
@@ -216,16 +267,17 @@ const EnhancedHomepage2045: React.FC = () => {
 
               {/* Mobile Menu Button */}
               <button
-                className="md:hidden text-gray-300 hover:text-cyan-400 focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:ring-offset-2 focus:ring-offset-black rounded"
+                className="md:hidden text-gray-300 hover:text-cyan-400 p-2"
                 onClick={() => setShowMobileMenu(!showMobileMenu)}
                 aria-label="Toggle mobile menu"
+                aria-expanded={showMobileMenu}
               >
                 {showMobileMenu ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
               </button>
             </div>
           </div>
 
-          {/* Mobile Menu */}
+          {/* Enhanced Mobile Menu */}
           <AnimatePresence>
             {showMobileMenu && (
               <motion.div
@@ -235,6 +287,19 @@ const EnhancedHomepage2045: React.FC = () => {
                 className="md:hidden bg-black/90 backdrop-blur-xl border-t border-cyan-500/20"
               >
                 <div className="px-4 py-4 space-y-4">
+                  {/* Mobile Search */}
+                  <div className="relative">
+                    <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-400" />
+                    <input
+                      type="text"
+                      placeholder="Search services..."
+                      value={searchQuery}
+                      onChange={(e) => handleSearch(e.target.value)}
+                      className="w-full pl-10 pr-4 py-2 bg-gray-900/50 border border-cyan-500/30 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-cyan-500"
+                      aria-label="Search services on mobile"
+                    />
+                  </div>
+                  
                   {[
                     { name: 'Home', href: '/' },
                     { name: 'Services', href: '/services' },
@@ -247,12 +312,16 @@ const EnhancedHomepage2045: React.FC = () => {
                       href={item.href}
                       className="block text-gray-300 hover:text-cyan-400 transition-colors duration-200 py-2"
                       onClick={() => setShowMobileMenu(false)}
+                      aria-label={`Navigate to ${item.name}`}
                     >
                       {item.name}
                     </a>
                   ))}
                   <Link href="/contact">
-                    <button className="w-full px-6 py-2 bg-gradient-to-r from-cyan-500 to-blue-500 text-white rounded-lg font-medium hover:from-cyan-600 hover:to-blue-600 transition-all duration-200">
+                    <button 
+                      className="w-full px-6 py-2 bg-gradient-to-r from-cyan-500 to-blue-500 text-white rounded-lg font-medium hover:from-cyan-600 hover:to-blue-600 transition-all duration-200"
+                      aria-label="Get started with Zion Tech Group"
+                    >
                       Get Started
                     </button>
                   </Link>
@@ -262,7 +331,7 @@ const EnhancedHomepage2045: React.FC = () => {
           </AnimatePresence>
         </nav>
 
-        {/* Hero Section */}
+        {/* Enhanced Hero Section */}
         <section className="relative z-10 pt-20 pb-32 px-4 sm:px-6 lg:px-8">
           <div className="max-w-7xl mx-auto text-center">
             <motion.div
@@ -299,6 +368,7 @@ const EnhancedHomepage2045: React.FC = () => {
                   className="px-8 py-4 bg-gradient-to-r from-cyan-500 to-blue-500 text-white rounded-xl font-semibold text-lg hover:from-cyan-600 hover:to-blue-600 transition-all duration-200 shadow-lg hover:shadow-cyan-500/25 flex items-center space-x-2"
                   whileHover={{ scale: 1.05, y: -2 }}
                   whileTap={{ scale: 0.95 }}
+                  aria-label="Explore our services"
                 >
                   <span>Explore Services</span>
                   <ArrowRight className="w-5 h-5" />
@@ -309,6 +379,7 @@ const EnhancedHomepage2045: React.FC = () => {
                   className="px-8 py-4 border-2 border-cyan-500 text-cyan-400 rounded-xl font-semibold text-lg hover:bg-cyan-500 hover:text-white transition-all duration-200 flex items-center space-x-2"
                   whileHover={{ scale: 1.05, y: -2 }}
                   whileTap={{ scale: 0.95 }}
+                  aria-label="Contact us for more information"
                 >
                   <span>Contact Us</span>
                   <MessageCircle className="w-5 h-5" />
@@ -316,7 +387,7 @@ const EnhancedHomepage2045: React.FC = () => {
               </Link>
             </motion.div>
 
-            {/* Stats */}
+            {/* Enhanced Stats */}
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
@@ -329,19 +400,23 @@ const EnhancedHomepage2045: React.FC = () => {
                   initial={{ opacity: 0, scale: 0.8 }}
                   animate={{ opacity: 1, scale: 1 }}
                   transition={{ duration: 0.6, delay: 0.6 + index * 0.1 }}
-                  className="text-center"
+                  className="text-center group cursor-pointer"
+                  whileHover={{ y: -5 }}
                 >
                   <div className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent mb-2">
                     {stat.number}
                   </div>
-                  <div className="text-gray-400 text-sm md:text-base">{stat.label}</div>
+                  <div className="text-gray-400 text-sm md:text-base font-medium">{stat.label}</div>
+                  <div className="text-gray-500 text-xs opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    {stat.description}
+                  </div>
                 </motion.div>
               ))}
             </motion.div>
           </div>
         </section>
 
-        {/* Services Categories */}
+        {/* Enhanced Services Categories */}
         <section className="relative z-10 py-20 px-4 sm:px-6 lg:px-8">
           <div className="max-w-7xl mx-auto">
             <motion.div
@@ -361,6 +436,26 @@ const EnhancedHomepage2045: React.FC = () => {
               </p>
             </motion.div>
 
+            {/* Category Filter Tabs */}
+            <div className="flex flex-wrap justify-center gap-4 mb-12">
+              {categories.map((category) => (
+                <motion.button
+                  key={category.id}
+                  onClick={() => setSelectedCategory(category.id)}
+                  className={`px-6 py-3 rounded-full font-medium transition-all duration-200 ${
+                    selectedCategory === category.id
+                      ? 'bg-gradient-to-r from-cyan-500 to-blue-500 text-white shadow-lg'
+                      : 'bg-gray-800/50 text-gray-300 hover:bg-gray-700/50 border border-gray-600/30'
+                  }`}
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  aria-label={`Filter by ${category.name}`}
+                >
+                  {category.name} ({category.count})
+                </motion.button>
+              ))}
+            </div>
+
             <motion.div
               variants={staggerContainer}
               initial="initial"
@@ -372,8 +467,13 @@ const EnhancedHomepage2045: React.FC = () => {
                 <motion.div
                   key={category.id}
                   variants={fadeInUp}
-                  className="group relative bg-gradient-to-br from-gray-900/50 to-gray-800/50 backdrop-blur-xl rounded-2xl p-8 border border-cyan-500/20 hover:border-cyan-500/40 transition-all duration-300 hover:shadow-2xl hover:shadow-cyan-500/10"
+                  className="group relative bg-gradient-to-br from-gray-900/50 to-gray-800/50 backdrop-blur-xl rounded-2xl p-8 border border-cyan-500/20 hover:border-cyan-500/40 transition-all duration-300 hover:shadow-2xl hover:shadow-cyan-500/10 cursor-pointer"
                   whileHover={{ y: -10, scale: 1.02 }}
+                  onClick={() => setSelectedCategory(category.id)}
+                  role="button"
+                  tabIndex={0}
+                  onKeyDown={(e) => e.key === 'Enter' && setSelectedCategory(category.id)}
+                  aria-label={`Select ${category.name} category`}
                 >
                   <div className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${category.color} p-4 mb-6 group-hover:scale-110 transition-transform duration-300`}>
                     <category.icon className="w-8 h-8 text-white" />
@@ -389,7 +489,7 @@ const EnhancedHomepage2045: React.FC = () => {
           </div>
         </section>
 
-        {/* Featured Services */}
+        {/* Enhanced Featured Services with Search Results */}
         <section className="relative z-10 py-20 px-4 sm:px-6 lg:px-8">
           <div className="max-w-7xl mx-auto">
             <motion.div
@@ -401,13 +501,32 @@ const EnhancedHomepage2045: React.FC = () => {
             >
               <h2 className="text-3xl md:text-5xl font-bold mb-6">
                 <span className="bg-gradient-to-r from-purple-400 to-pink-500 bg-clip-text text-transparent">
-                  Featured Services
+                  {searchQuery ? 'Search Results' : 'Featured Services'}
                 </span>
               </h2>
               <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-                Experience the cutting-edge technology that's shaping the future of business
+                {searchQuery 
+                  ? `Found ${filteredServices.length} services matching "${searchQuery}"`
+                  : 'Experience the cutting-edge technology that\'s shaping the future of business'
+                }
               </p>
             </motion.div>
+
+            {searchQuery && filteredServices.length === 0 && (
+              <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                className="text-center py-12"
+              >
+                <div className="text-gray-400 text-lg mb-4">No services found matching your search.</div>
+                <button
+                  onClick={() => setSearchQuery('')}
+                  className="text-cyan-400 hover:text-cyan-300 transition-colors"
+                >
+                  Clear search and show all services
+                </button>
+              </motion.div>
+            )}
 
             <motion.div
               variants={staggerContainer}
@@ -416,9 +535,9 @@ const EnhancedHomepage2045: React.FC = () => {
               viewport={{ once: true }}
               className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
             >
-              {features.map((feature) => (
+              {(searchQuery ? filteredServices : features).map((feature, index) => (
                 <motion.div
-                  key={feature.title}
+                  key={feature.title || feature.name}
                   variants={fadeInUp}
                   className="group relative bg-gradient-to-br from-gray-900/50 to-gray-800/50 backdrop-blur-xl rounded-2xl p-8 border border-purple-500/20 hover:border-purple-500/40 transition-all duration-300 hover:shadow-2xl hover:shadow-purple-500/10"
                   whileHover={{ y: -10, scale: 1.02 }}
@@ -426,13 +545,19 @@ const EnhancedHomepage2045: React.FC = () => {
                   <div className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${feature.color} p-4 mb-6 group-hover:scale-110 transition-transform duration-300`}>
                     <feature.icon className="w-8 h-8 text-white" />
                   </div>
-                  <h3 className="text-xl font-bold text-white mb-4">{feature.title}</h3>
-                  <p className="text-gray-400 mb-6">{feature.description}</p>
-                  <Link href={feature.href}>
+                  <h3 className="text-xl font-bold text-white mb-4">{feature.title || feature.name}</h3>
+                  <p className="text-gray-400 mb-6">{feature.description || feature.tagline}</p>
+                  {feature.pricing && (
+                    <div className="mb-4">
+                      <div className="text-cyan-400 font-semibold">Starting at {feature.pricing.starter}</div>
+                    </div>
+                  )}
+                  <Link href={feature.href || feature.slug || '#'}>
                     <motion.button
                       className="w-full px-6 py-3 bg-gradient-to-r from-purple-500 to-pink-500 text-white rounded-xl font-medium hover:from-purple-600 hover:to-pink-600 transition-all duration-200"
                       whileHover={{ scale: 1.02 }}
                       whileTap={{ scale: 0.98 }}
+                      aria-label={`Learn more about ${feature.title || feature.name}`}
                     >
                       Learn More
                     </motion.button>
@@ -443,7 +568,7 @@ const EnhancedHomepage2045: React.FC = () => {
           </div>
         </section>
 
-        {/* CTA Section */}
+        {/* Enhanced CTA Section */}
         <section className="relative z-10 py-20 px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto text-center">
             <motion.div
@@ -470,6 +595,7 @@ const EnhancedHomepage2045: React.FC = () => {
                     className="px-8 py-4 bg-gradient-to-r from-cyan-500 to-blue-500 text-white rounded-xl font-semibold text-lg hover:from-cyan-600 hover:to-blue-600 transition-all duration-200 shadow-lg hover:shadow-cyan-500/25"
                     whileHover={{ scale: 1.05, y: -2 }}
                     whileTap={{ scale: 0.95 }}
+                    aria-label="Get started with Zion Tech Group today"
                   >
                     Get Started Today
                   </motion.button>
@@ -479,6 +605,7 @@ const EnhancedHomepage2045: React.FC = () => {
                     className="px-8 py-4 border-2 border-cyan-500 text-cyan-400 rounded-xl font-semibold text-lg hover:bg-cyan-500 hover:text-white transition-all duration-200"
                     whileHover={{ scale: 1.05, y: -2 }}
                     whileTap={{ scale: 0.95 }}
+                    aria-label="View all our services"
                   >
                     View All Services
                   </motion.button>
@@ -488,7 +615,7 @@ const EnhancedHomepage2045: React.FC = () => {
           </div>
         </section>
 
-        {/* Footer */}
+        {/* Enhanced Footer */}
         <footer className="relative z-10 bg-black/90 backdrop-blur-xl border-t border-cyan-500/20 py-16 px-4 sm:px-6 lg:px-8">
           <div className="max-w-7xl mx-auto">
             <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
@@ -505,13 +632,13 @@ const EnhancedHomepage2045: React.FC = () => {
                   Revolutionary technology solutions for the future of business.
                 </p>
                 <div className="flex space-x-4">
-                  <a href="https://linkedin.com/company/ziontechgroup" className="text-gray-400 hover:text-cyan-400 transition-colors">
+                  <a href="https://linkedin.com/company/ziontechgroup" className="text-gray-400 hover:text-cyan-400 transition-colors" aria-label="Visit our LinkedIn page">
                     <Linkedin className="w-5 h-5" />
                   </a>
-                  <a href="https://twitter.com/ziontechgroup" className="text-gray-400 hover:text-cyan-400 transition-colors">
+                  <a href="https://twitter.com/ziontechgroup" className="text-gray-400 hover:text-cyan-400 transition-colors" aria-label="Visit our Twitter page">
                     <Twitter className="w-5 h-5" />
                   </a>
-                  <a href="https://github.com/ziontechgroup" className="text-gray-400 hover:text-cyan-400 transition-colors">
+                  <a href="https://github.com/ziontechgroup" className="text-gray-400 hover:text-cyan-400 transition-colors" aria-label="Visit our GitHub page">
                     <Github className="w-5 h-5" />
                   </a>
                 </div>
@@ -553,9 +680,7 @@ const EnhancedHomepage2045: React.FC = () => {
           </div>
         </footer>
       </div>
-      <AccessibilityEnhancer />
-      <PerformanceMonitor />
-    </>
+    </SEOOptimizer>
   );
 };
 

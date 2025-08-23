@@ -127,9 +127,11 @@ export default function Innovative2038ServicesShowcase() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900">
       <SEO 
-        title="Innovative 2038 Services Showcase - Zion Tech Group"
-        description="Discover revolutionary micro SAAS, IT infrastructure, and AI consciousness services. Leading-edge technology solutions for the future."
-        keywords={["innovative services", "micro SAAS", "AI consciousness", "quantum computing", "blockchain", "space technology", "biotechnology"]}
+        data={{
+          pageTitle: "Innovative 2038 Services Showcase - Zion Tech Group",
+          pageDescription: "Discover revolutionary micro SAAS, IT infrastructure, and AI consciousness services. Leading-edge technology solutions for the future.",
+          pageKeywords: ["innovative services", "micro SAAS", "AI consciousness", "quantum computing", "blockchain", "space technology", "biotechnology"]
+        }}
       />
 
       {/* Hero Section */}

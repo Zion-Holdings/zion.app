@@ -3,347 +3,434 @@ import Layout from '../components/layout/Layout';
 import { motion } from 'framer-motion';
 import { 
   Cpu, 
-  Network, 
-  Server, 
-  Database, 
+  Wifi, 
+  Globe, 
   Zap, 
-  Target, 
-  Brain, 
-  Users, 
-  TrendingUp,
-  BarChart3,
-  Code,
-  Globe,
-  Lock,
-  Settings,
-  Star,
-  ArrowRight,
+  Shield, 
+  ArrowRight, 
   CheckCircle,
-  Clock,
+  Target,
+  Users,
+  Server,
+  Network,
+  Database,
+  Cloud,
+  Code,
+  Settings,
+  Lock,
+  BarChart3,
+  TrendingUp,
+  HardDrive,
+  Loader,
   Activity,
-  Wifi,
+  Clock,
+  Star,
+  Award,
+  Heart,
+  Brain,
+  Atom,
+  Rocket,
+  Palette,
+  Layers,
+  Grid,
+  Sparkles,
   Smartphone,
+  Tablet,
+  Monitor,
+  Watch,
   Car,
-  Factory,
-  Shield,
-  Building,
-  Heart
+  ShoppingBag
 } from 'lucide-react';
 
 const EdgeComputingPage: React.FC = () => {
-  const services = [
+  const fadeInUp = {
+    initial: { opacity: 0, y: 30 },
+    animate: { opacity: 1, y: 0 },
+    transition: { duration: 0.6 }
+  };
+
+  const staggerContainer = {
+    animate: {
+      transition: {
+        staggerChildren: 0.1
+      }
+    }
+  };
+
+  const edgeServices = [
     {
-      title: 'Edge AI Processing',
-      description: 'AI-powered edge computing for real-time decision making',
-      icon: <Brain className="w-8 h-8 text-purple-500" />,
-      features: ['Local AI Inference', 'Real-time Processing', 'Low Latency'],
-      href: '/edge-ai-processing'
+      title: 'Edge Computing Orchestration Platform',
+      description: 'Intelligent edge computing management and orchestration',
+      icon: <Cpu className="w-8 h-8 text-green-400" />,
+      features: ['Edge deployment', 'Resource optimization', 'Load balancing', 'Auto-scaling'],
+      href: '/edge-computing-platform'
     },
     {
-      title: 'IoT Edge Management',
-      description: 'Comprehensive IoT device management and orchestration',
-      icon: <Wifi className="w-8 h-8 text-blue-500" />,
-      features: ['Device Management', 'Data Collection', 'Remote Monitoring'],
-      href: '/iot-edge-management'
+      title: 'IoT Device Management',
+      description: 'Comprehensive IoT device lifecycle management',
+      icon: <Wifi className="w-8 h-8 text-blue-400" />,
+      features: ['Device provisioning', 'Remote monitoring', 'Firmware updates', 'Security management'],
+      href: '/iot-device-management'
     },
     {
-      title: '5G Edge Networks',
-      description: 'Next-generation 5G edge computing solutions',
-      icon: <Network className="w-8 h-8 text-green-500" />,
-      features: ['5G Integration', 'Network Slicing', 'Edge Caching'],
-      href: '/5g-edge-networks'
+      title: 'Edge AI & Machine Learning',
+      description: 'AI processing at the edge for real-time insights',
+      icon: <Brain className="w-8 h-8 text-purple-400" />,
+      features: ['Local AI processing', 'Real-time analytics', 'Predictive maintenance', 'Edge training'],
+      href: '/edge-ai-ml'
     },
     {
-      title: 'Edge Security',
-      description: 'Advanced security for distributed edge environments',
-      icon: <Shield className="w-8 h-8 text-red-500" />,
-      features: ['Edge Firewalls', 'Zero Trust', 'Threat Detection'],
-      href: '/edge-security'
+      title: '5G Edge Computing',
+      description: 'Ultra-low latency edge computing for 5G networks',
+      icon: <Network className="w-8 h-8 text-cyan-400" />,
+      features: ['5G integration', 'Ultra-low latency', 'Network slicing', 'Edge caching'],
+      href: '/5g-edge-computing'
     },
     {
-      title: 'Edge Analytics',
-      description: 'Real-time analytics at the edge',
-      icon: <BarChart3 className="w-8 h-8 text-yellow-500" />,
-      features: ['Stream Processing', 'Predictive Analytics', 'Data Visualization'],
-      href: '/edge-analytics'
+      title: 'Edge Security & Compliance',
+      description: 'Comprehensive security for edge computing environments',
+      icon: <Shield className="w-8 h-8 text-red-400" />,
+      features: ['Edge firewall', 'Data encryption', 'Access control', 'Compliance monitoring'],
+      href: '/edge-security-compliance'
     },
     {
-      title: 'Edge DevOps',
-      description: 'Automated edge infrastructure management',
-      icon: <Code className="w-8 h-8 text-cyan-500" />,
-      features: ['Infrastructure as Code', 'Automated Deployment', 'Monitoring'],
-      href: '/edge-devops'
+      title: 'Edge Data Analytics',
+      description: 'Real-time data processing and analytics at the edge',
+      icon: <BarChart3 className="w-8 h-8 text-yellow-400" />,
+      features: ['Stream processing', 'Real-time insights', 'Data filtering', 'Edge storage'],
+      href: '/edge-data-analytics'
     }
   ];
 
-  const benefits = [
+  const edgeCapabilities = [
     {
-      title: 'Low Latency',
-      description: 'Sub-millisecond response times',
+      category: 'Edge Deployment',
+      capabilities: ['Container Orchestration', 'Microservices', 'Serverless Functions', 'Edge Runtime']
+    },
+    {
+      category: 'IoT Integration',
+      capabilities: ['Device Protocols', 'Data Ingestion', 'Real-time Processing', 'Edge Analytics']
+    },
+    {
+      category: 'Network Management',
+      capabilities: ['SDN Control', 'Traffic Optimization', 'Quality of Service', 'Bandwidth Management']
+    },
+    {
+      category: 'Security & Privacy',
+      capabilities: ['Edge Firewall', 'Data Encryption', 'Identity Management', 'Threat Detection']
+    }
+  ];
+
+  const edgeBenefits = [
+    {
+      benefit: 'Ultra-Low Latency',
+      description: 'Process data closer to the source for real-time applications',
       icon: <Zap className="w-6 h-6 text-yellow-400" />
     },
     {
-      title: 'Real-time Processing',
-      description: 'Instant data analysis and decision making',
-      icon: <Clock className="w-6 h-6 text-green-400" />
-    },
-    {
-      title: 'Bandwidth Optimization',
-      description: 'Reduce data transfer to central cloud',
+      benefit: 'Bandwidth Optimization',
+      description: 'Reduce data transmission by processing locally at the edge',
       icon: <Network className="w-6 h-6 text-blue-400" />
     },
     {
-      title: 'Offline Capability',
-      description: 'Continue operation without internet connection',
-      icon: <CheckCircle className="w-6 h-6 text-purple-400" />
+      benefit: 'Real-Time Processing',
+      description: 'Instant decision-making with local data processing',
+      icon: <Activity className="w-6 h-6 text-green-400" />
+    },
+    {
+      benefit: 'Scalability',
+      description: 'Easily scale edge computing resources as needed',
+      icon: <TrendingUp className="w-6 h-6 text-purple-400" />
     }
   ];
 
   const useCases = [
     {
-      name: 'Smart Cities',
-      description: 'Intelligent urban infrastructure management',
-      icon: <Building className="w-6 h-6" />
+      industry: 'Manufacturing',
+      applications: ['Predictive maintenance', 'Quality control', 'Supply chain optimization', 'Real-time monitoring'],
+      icon: <Settings className="w-6 h-6 text-blue-400" />
     },
     {
-      name: 'Autonomous Vehicles',
-      description: 'Real-time vehicle decision making',
-      icon: <Car className="w-6 h-6" />
+      industry: 'Healthcare',
+      applications: ['Patient monitoring', 'Medical imaging', 'Telemedicine', 'Emergency response'],
+      icon: <Heart className="w-6 h-6 text-red-400" />
     },
     {
-      name: 'Industrial IoT',
-      description: 'Smart manufacturing and predictive maintenance',
-      icon: <Factory className="w-6 h-6" />
+      industry: 'Transportation',
+      applications: ['Autonomous vehicles', 'Traffic management', 'Fleet optimization', 'Smart cities'],
+      icon: <Car className="w-6 h-6 text-green-400" />
     },
     {
-      name: 'Healthcare',
-      description: 'Real-time patient monitoring and diagnostics',
-      icon: <Heart className="w-6 h-6" />
+      industry: 'Retail',
+      applications: ['Inventory management', 'Customer analytics', 'Supply chain', 'Loss prevention'],
+      icon: <ShoppingBag className="w-6 h-6 text-purple-400" />
     }
   ];
 
   return (
     <Layout 
       title="Edge Computing Orchestration - Zion Tech Group"
-      description="Advanced edge computing solutions for real-time processing, IoT management, and distributed intelligence"
-      canonicalUrl="https://ziontechgroup.com/edge-computing-orchestration"
+      description="Advanced edge computing orchestration, IoT management, and edge AI solutions. Transform your business with real-time edge computing technology."
+      keywords="edge computing, IoT, edge orchestration, 5G edge, edge AI, real-time processing, Zion Tech Group"
     >
-      <div className="min-h-screen bg-gradient-to-br from-slate-900 via-green-900 to-slate-900">
+      <div className="min-h-screen bg-gradient-to-br from-black via-gray-900 to-black text-white">
         {/* Hero Section */}
         <section className="relative py-20 px-4 sm:px-6 lg:px-8">
-          <div className="max-w-7xl mx-auto text-center">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
+          <div className="max-w-7xl mx-auto">
+            <motion.div 
+              className="text-center"
+              initial="initial"
+              animate="animate"
+              variants={staggerContainer}
             >
-              <h1 className="text-5xl md:text-6xl font-bold text-white mb-6">
-                Edge Computing
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-cyan-400">
-                  {' '}Orchestration
-                </span>
-              </h1>
-              <p className="text-xl md:text-2xl text-gray-300 mb-8 max-w-4xl mx-auto">
-                Revolutionize your infrastructure with intelligent edge computing 
-                that brings processing power closer to your data sources.
+              <motion.h1 
+                className="text-5xl md:text-7xl font-bold bg-gradient-to-r from-green-400 via-emerald-500 to-teal-600 bg-clip-text text-transparent mb-6"
+                variants={fadeInUp}
+              >
+                Edge Computing Orchestration
+              </motion.h1>
+              <motion.p 
+                className="text-xl md:text-2xl text-gray-300 max-w-4xl mx-auto mb-8"
+                variants={fadeInUp}
+              >
+                Revolutionary edge computing orchestration, IoT management, and edge AI solutions that bring computing power closer to data sources for real-time processing and insights.
+              </motion.p>
+              <motion.div 
+                className="flex flex-col sm:flex-row gap-4 justify-center"
+                variants={fadeInUp}
+              >
+                <a 
+                  href="/contact" 
+                  className="px-8 py-4 bg-gradient-to-r from-green-500 to-emerald-600 text-white rounded-lg font-semibold hover:from-green-600 hover:to-emerald-700 transition-all duration-300 flex items-center justify-center"
+                >
+                  Get Started <ArrowRight className="ml-2 w-5 h-5" />
+                </a>
+                <a 
+                  href="/demo" 
+                  className="px-8 py-4 border border-green-500/40 text-green-300 rounded-lg font-semibold hover:bg-green-500/10 transition-all duration-300 flex items-center justify-center"
+                >
+                  Request Demo
+                </a>
+              </motion.div>
+            </motion.div>
+          </div>
+        </section>
+
+        {/* Edge Services Grid */}
+        <section className="py-20 px-4 sm:px-6 lg:px-8">
+          <div className="max-w-7xl mx-auto">
+            <motion.div 
+              className="text-center mb-16"
+              initial="initial"
+              whileInView="animate"
+              viewport={{ once: true }}
+              variants={fadeInUp}
+            >
+              <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+                Revolutionary Edge Services
+              </h2>
+              <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+                Explore our comprehensive suite of edge computing and IoT orchestration services designed for the future.
               </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <a
-                  href="/contact"
-                  className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-green-600 to-cyan-600 text-white font-semibold rounded-lg hover:from-green-700 hover:to-cyan-700 transition-all duration-300 transform hover:scale-105"
+            </motion.div>
+
+            <motion.div 
+              className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+              initial="initial"
+              whileInView="animate"
+              viewport={{ once: true }}
+              variants={staggerContainer}
+            >
+              {edgeServices.map((service, index) => (
+                <motion.div
+                  key={index}
+                  className="bg-gray-900/50 border border-gray-700/50 rounded-2xl p-8 hover:border-green-500/50 transition-all duration-300 hover:transform hover:scale-105"
+                  variants={fadeInUp}
                 >
-                  Get Started
-                  <ArrowRight className="ml-2 w-5 h-5" />
-                </a>
-                <a
-                  href="/edge-ai-processing"
-                  className="inline-flex items-center px-8 py-4 border-2 border-green-500 text-green-400 font-semibold rounded-lg hover:bg-green-500 hover:text-white transition-all duration-300"
+                  <div className="mb-6">{service.icon}</div>
+                  <h3 className="text-2xl font-bold text-white mb-4">{service.title}</h3>
+                  <p className="text-gray-300 mb-6">{service.description}</p>
+                  <ul className="space-y-2 mb-6">
+                    {service.features.map((feature, featureIndex) => (
+                      <li key={featureIndex} className="flex items-center text-gray-300">
+                        <CheckCircle className="w-5 h-5 text-green-400 mr-3 flex-shrink-0" />
+                        {feature}
+                      </li>
+                    ))}
+                  </ul>
+                  <a 
+                    href={service.href}
+                    className="inline-flex items-center text-green-400 hover:text-green-300 transition-colors"
+                  >
+                    Learn More <ArrowRight className="ml-2 w-4 h-4" />
+                  </a>
+                </motion.div>
+              ))}
+            </motion.div>
+          </div>
+        </section>
+
+        {/* Edge Capabilities */}
+        <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gray-900/30">
+          <div className="max-w-7xl mx-auto">
+            <motion.div 
+              className="text-center mb-16"
+              initial="initial"
+              whileInView="animate"
+              viewport={{ once: true }}
+              variants={fadeInUp}
+            >
+              <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+                Advanced Edge Capabilities
+              </h2>
+              <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+                Our edge computing platform provides cutting-edge capabilities for distributed computing and IoT management.
+              </p>
+            </motion.div>
+
+            <motion.div 
+              className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8"
+              initial="initial"
+              whileInView="animate"
+              viewport={{ once: true }}
+              variants={staggerContainer}
+            >
+              {edgeCapabilities.map((category, index) => (
+                <motion.div
+                  key={index}
+                  className="text-center"
+                  variants={fadeInUp}
                 >
-                  Explore Edge AI
-                </a>
-              </div>
+                  <h3 className="text-2xl font-bold text-green-400 mb-6">{category.category}</h3>
+                  <ul className="space-y-3">
+                    {category.capabilities.map((capability, capIndex) => (
+                      <li key={capIndex} className="text-gray-300">{capability}</li>
+                    ))}
+                  </ul>
+                </motion.div>
+              ))}
             </motion.div>
           </div>
         </section>
 
         {/* Edge Benefits */}
-        <section className="py-20 px-4 sm:px-6 lg:px-8 bg-black/20">
+        <section className="py-20 px-4 sm:px-6 lg:px-8">
           <div className="max-w-7xl mx-auto">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-              viewport={{ once: true }}
+            <motion.div 
               className="text-center mb-16"
+              initial="initial"
+              whileInView="animate"
+              viewport={{ once: true }}
+              variants={fadeInUp}
             >
-              <h2 className="text-4xl font-bold text-white mb-4">
-                Why Edge Computing?
+              <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+                Edge Computing Benefits
               </h2>
               <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-                Edge computing brings processing power closer to data sources, 
-                enabling real-time insights and faster decision making.
+                Discover how edge computing transforms business operations and enables real-time decision making.
               </p>
             </motion.div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-              {benefits.map((benefit, index) => (
+            <motion.div 
+              className="grid grid-cols-1 md:grid-cols-2 gap-8"
+              initial="initial"
+              whileInView="animate"
+              viewport={{ once: true }}
+              variants={staggerContainer}
+            >
+              {edgeBenefits.map((benefit, index) => (
                 <motion.div
-                  key={benefit.title}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: index * 0.1 }}
-                  viewport={{ once: true }}
-                  className="text-center"
+                  key={index}
+                  className="bg-gray-900/50 border border-gray-700/50 rounded-2xl p-8"
+                  variants={fadeInUp}
                 >
-                  <div className="bg-white/10 backdrop-blur-lg rounded-full w-20 h-20 mx-auto mb-4 flex items-center justify-center border border-white/20">
+                  <div className="flex items-center mb-6">
                     {benefit.icon}
+                    <h3 className="text-2xl font-bold text-white ml-4">{benefit.benefit}</h3>
                   </div>
-                  <h3 className="text-xl font-semibold text-white mb-2">
-                    {benefit.title}
-                  </h3>
-                  <p className="text-gray-300 text-sm">
-                    {benefit.description}
-                  </p>
+                  <p className="text-gray-300">{benefit.description}</p>
                 </motion.div>
               ))}
-            </div>
+            </motion.div>
           </div>
         </section>
 
-        {/* Services Grid */}
-        <section className="py-20 px-4 sm:px-6 lg:px-8">
+        {/* Use Cases */}
+        <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gray-900/30">
           <div className="max-w-7xl mx-auto">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-              viewport={{ once: true }}
+            <motion.div 
               className="text-center mb-16"
+              initial="initial"
+              whileInView="animate"
+              viewport={{ once: true }}
+              variants={fadeInUp}
             >
-              <h2 className="text-4xl font-bold text-white mb-4">
-                Edge Computing Services
+              <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+                Industry Applications
               </h2>
               <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-                From AI processing to IoT management, our edge computing services 
-                cover every aspect of distributed intelligence.
+                Edge computing transforms industries with real-time processing and intelligent automation.
               </p>
             </motion.div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {services.map((service, index) => (
+            <motion.div 
+              className="grid grid-cols-1 md:grid-cols-2 gap-8"
+              initial="initial"
+              whileInView="animate"
+              viewport={{ once: true }}
+              variants={staggerContainer}
+            >
+              {useCases.map((useCase, index) => (
                 <motion.div
-                  key={service.title}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: index * 0.1 }}
-                  viewport={{ once: true }}
-                  className="bg-white/10 backdrop-blur-lg rounded-xl p-6 border border-white/20 hover:border-green-500/50 transition-all duration-300 hover:transform hover:scale-105"
+                  key={index}
+                  className="bg-gray-900/50 border border-gray-700/50 rounded-2xl p-8"
+                  variants={fadeInUp}
                 >
-                  <div className="flex items-center mb-4">
-                    {service.icon}
-                    <h3 className="text-xl font-semibold text-white ml-3">
-                      {service.title}
-                    </h3>
+                  <div className="flex items-center mb-6">
+                    {useCase.icon}
+                    <h3 className="text-2xl font-bold text-white ml-4">{useCase.industry}</h3>
                   </div>
-                  <p className="text-gray-300 mb-4">
-                    {service.description}
-                  </p>
-                  <ul className="space-y-2 mb-6">
-                    {service.features.map((feature) => (
-                      <li key={feature} className="flex items-center text-sm text-gray-400">
-                        <Star className="w-4 h-4 text-green-400 mr-2" />
-                        {feature}
+                  <ul className="space-y-3">
+                    {useCase.applications.map((application, appIndex) => (
+                      <li key={appIndex} className="flex items-center text-gray-300">
+                        <CheckCircle className="w-5 h-5 text-green-400 mr-3 flex-shrink-0" />
+                        {application}
                       </li>
                     ))}
                   </ul>
-                  <a
-                    href={service.href}
-                    className="inline-flex items-center text-green-400 hover:text-green-300 transition-colors duration-300"
-                  >
-                    Learn More
-                    <ArrowRight className="ml-2 w-4 h-4" />
-                  </a>
                 </motion.div>
               ))}
-            </div>
-          </div>
-        </section>
-
-        {/* Use Cases Section */}
-        <section className="py-20 px-4 sm:px-6 lg:px-8 bg-black/20">
-          <div className="max-w-7xl mx-auto">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-              viewport={{ once: true }}
-              className="text-center mb-16"
-            >
-              <h2 className="text-4xl font-bold text-white mb-4">
-                Edge Computing Use Cases
-              </h2>
-              <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-                Discover how edge computing is transforming industries and 
-                enabling new possibilities in real-time processing.
-              </p>
             </motion.div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-              {useCases.map((useCase, index) => (
-                <motion.div
-                  key={useCase.name}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: index * 0.1 }}
-                  viewport={{ once: true }}
-                  className="text-center"
-                >
-                  <div className="bg-white/10 backdrop-blur-lg rounded-full w-20 h-20 mx-auto mb-4 flex items-center justify-center border border-white/20">
-                    <div className="text-green-400">
-                      {useCase.icon}
-                    </div>
-                  </div>
-                  <h3 className="text-xl font-semibold text-white mb-2">
-                    {useCase.name}
-                  </h3>
-                  <p className="text-gray-300 text-sm">
-                    {useCase.description}
-                  </p>
-                </motion.div>
-              ))}
-            </div>
           </div>
         </section>
 
         {/* CTA Section */}
-        <section className="py-20 px-4 sm:px-6 lg:px-8">
+        <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-green-900/20 to-emerald-900/20">
           <div className="max-w-4xl mx-auto text-center">
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
+              initial="initial"
+              whileInView="animate"
               viewport={{ once: true }}
+              variants={fadeInUp}
             >
-              <h2 className="text-4xl font-bold text-white mb-6">
-                Ready to Move to the Edge?
+              <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+                Ready to Transform with Edge Computing?
               </h2>
               <p className="text-xl text-gray-300 mb-8">
-                Transform your infrastructure with edge computing and unlock 
-                real-time processing capabilities.
+                Join the edge computing revolution and unlock real-time processing capabilities for your business.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <a
-                  href="/contact"
-                  className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-green-600 to-cyan-600 text-white font-semibold rounded-lg hover:from-green-700 hover:to-cyan-700 transition-all duration-300 transform hover:scale-105"
+                <a 
+                  href="/contact" 
+                  className="px-8 py-4 bg-gradient-to-r from-green-500 to-emerald-600 text-white rounded-lg font-semibold hover:from-green-600 hover:to-emerald-700 transition-all duration-300"
                 >
                   Start Your Edge Journey
-                  <ArrowRight className="ml-2 w-5 h-5" />
                 </a>
-                <a
-                  href="/case-studies"
-                  className="inline-flex items-center px-8 py-4 border-2 border-green-500 text-green-400 font-semibold rounded-lg hover:bg-green-500 hover:text-white transition-all duration-300"
+                <a 
+                  href="/case-studies" 
+                  className="px-8 py-4 border border-green-500/40 text-green-300 rounded-lg font-semibold hover:bg-green-500/10 transition-all duration-300"
                 >
-                  View Edge Cases
+                  View Edge Computing Case Studies
                 </a>
               </div>
             </motion.div>
