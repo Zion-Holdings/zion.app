@@ -66,6 +66,104 @@ const CaseStudies: React.FC = () => {
   const industryCaseStudies = [
     {
       industry: 'Healthcare',
+<<<<<<< HEAD
+      caseStudies: [
+        {
+          client: 'MedTech Innovations',
+          challenge: 'Medical image analysis taking hours',
+          solution: 'AI-powered diagnostic assistance',
+          results: '85% faster diagnosis, 95% accuracy rate'
+        },
+        {
+          client: 'HealthCare Plus',
+          challenge: 'Patient data security compliance',
+          solution: 'Zero-trust security architecture',
+          results: 'HIPAA compliance achieved, zero breaches'
+        }
+      ]
+    },
+    {
+      industry: 'Manufacturing',
+      caseStudies: [
+        {
+          client: 'AutoTech Manufacturing',
+          challenge: 'Production line inefficiencies',
+          solution: 'IoT + AI predictive maintenance',
+          results: '30% increase in production, 40% fewer breakdowns'
+        },
+        {
+          client: 'SmartFactory Corp',
+          challenge: 'Quality control inconsistencies',
+          solution: 'Computer vision quality inspection',
+          results: '99.5% defect detection, 25% cost reduction'
+        }
+      ]
+    },
+    {
+      industry: 'Retail & E-commerce',
+      caseStudies: [
+        {
+          client: 'RetailTech Solutions',
+          challenge: 'Inventory management inefficiencies',
+          solution: 'AI demand forecasting system',
+          results: '20% reduction in stockouts, 15% cost savings'
+        },
+        {
+          client: 'E-Commerce Pro',
+          challenge: 'Customer churn and low engagement',
+          solution: 'Personalized recommendation engine',
+          results: '35% increase in conversion, 25% higher retention'
+        }
+      ]
+    }
+  ];
+
+  const successMetrics = [
+    {
+      metric: 'Client Satisfaction',
+      value: '98%',
+      description: 'Average client satisfaction score',
+      icon: <Star className="w-6 h-6" />
+    },
+    {
+      metric: 'Project Success Rate',
+      value: '96%',
+      description: 'Projects delivered on time and budget',
+      icon: <Trophy className="w-6 h-6" />
+    },
+    {
+      metric: 'ROI Delivered',
+      value: '340%',
+      description: 'Average return on investment for clients',
+      icon: <TrendingUp className="w-6 h-6" />
+    },
+    {
+      metric: 'Technology Adoption',
+      value: '89%',
+      description: 'Clients who expanded their engagement',
+      icon: <Rocket className="w-6 h-6" />
+    }
+  ];
+
+  const testimonials = [
+    {
+      quote: "Zion Tech Group transformed our security posture completely. Their AI consciousness platform detected threats we didn't even know existed.",
+      author: "Sarah Chen",
+      title: "CTO, SecureNet Solutions",
+      company: "SecureNet Solutions"
+    },
+    {
+      quote: "The quantum computing solution reduced our research time from weeks to hours. It's like having a supercomputer that thinks.",
+      author: "Dr. Michael Rodriguez",
+      title: "Lead Researcher",
+      company: "Quantum Dynamics Inc."
+    },
+    {
+      quote: "Working with Zion Tech Group was like having an extension of our own team. They understood our business and delivered beyond expectations.",
+      author: "Jennifer Park",
+      title: "VP of Technology",
+      company: "TechCorp Global"
+=======
       challenge: 'Inability to leverage data for patient care improvements and operational efficiency',
       solution: 'Built comprehensive data analytics platform with real-time insights and predictive modeling',
       results: [
@@ -114,6 +212,7 @@ const CaseStudies: React.FC = () => {
       duration: '18 months',
       teamSize: '12 engineers + 6 city planners',
       featured: false
+>>>>>>> origin/cursor/add-more-project-content-3422
     }
   ];
 
