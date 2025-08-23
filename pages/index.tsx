@@ -15,8 +15,9 @@ const HomePage: React.FC = () => {
       <AnalyticsTracker />
       <Homepage2045 />
       <PerformanceMonitor showUI={true} />
-      <AccessibilityEnhancer showPanel={true} autoOptimize={true} />
-      <PerformanceOptimizer showMetrics={true} autoOptimize={true} />
+      <AccessibilityEnhancer>
+        <PerformanceOptimizer showMetrics={true} autoOptimize={true} />
+      </AccessibilityEnhancer>
     </ErrorBoundary>
   );
 };
