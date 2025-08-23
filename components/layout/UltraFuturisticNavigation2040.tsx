@@ -1,344 +1,316 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect } from 'react';
+import Link from 'next/link';
 import { motion, AnimatePresence } from 'framer-motion';
 import { 
-  Menu, 
-  X, 
-  Search, 
-  ChevronDown,
-  Globe,
-  Building,
-  Users,
-  Brain,
-  Shield,
-  Cloud,
-  Rocket,
-  Home,
-  Briefcase,
-  BookOpen,
-  Phone,
-  Star,
-  Atom,
-  Network,
-  Code,
-  BarChart3,
-  Target,
-  Lightbulb,
-  Settings,
-  ArrowRight,
-  Mail,
-  Linkedin,
-  Twitter,
-  Github,
-  Youtube,
-  ShoppingBag,
-  FileText,
-  Video,
-  Handshake,
-  Cpu,
-  Sparkles,
-  Zap,
-  Eye,
-  Layers,
-  Crown,
-  Award
+  Menu, ChevronDown, X, Phone, Mail, ArrowRight,
+  Brain, Rocket, Target, Atom, Shield,
+  DollarSign, BarChart3, Globe, Grid, Heart, Database,
+  Cpu, Palette, Cloud, Network, TrendingUp, ShoppingCart, Settings, Building, Monitor
 } from 'lucide-react';
-import Link from 'next/link';
-import { useRouter } from 'next/router';
-
-// Define Node type for DOM event handling
-type Node = HTMLElement | null;
 
 interface NavigationItem {
-  label: string;
+  name: string;
   href: string;
-  icon: React.ReactNode;
+  icon?: React.ReactNode;
   description?: string;
   children?: NavigationItem[];
   badge?: string;
+  title?: string;
   featured?: boolean;
-  neonColor?: string;
+  category?: string;
+  color?: string;
+}
+
+function normalizeHref(href: string): string {
+  if (!href) return href;
+  if (href.startsWith('http://') || href.startsWith('https://') || href.startsWith('mailto:') || href.startsWith('tel:')) {
+    return href;
+  }
+  if (!href.startsWith('/')) return href;
+  const hasQueryOrHash = href.includes('?') || href.includes('#');
+  if (hasQueryOrHash) return href;
+  return href.endsWith('/') ? href : href + '/';
 }
 
 const navigationItems: NavigationItem[] = [
   {
-    label: 'Home',
-    href: '/',
-    icon: <Home className="w-4 h-4" />,
-    neonColor: 'shadow-cyan-400/50'
-  },
-  {
-    label: 'Services',
+    name: 'Revolutionary Services 2043',
     href: '/services',
-    icon: <Briefcase className="w-4 h-4" />,
-    description: 'Explore our comprehensive technology solutions',
-    badge: 'New',
-    neonColor: 'shadow-blue-400/50',
+    icon: <Rocket className="w-5 h-5" />,
+    description: 'Future-defining technology solutions',
+    badge: 'New 2043',
+    category: 'services',
+    color: 'from-emerald-500 to-cyan-500',
     children: [
-      {
-        label: 'AI & Machine Learning',
-        href: '/services?category=ai-ml',
+      { 
+        name: 'All Services', 
+        href: '/services', 
+        description: 'Complete revolutionary services overview',
+        icon: <Grid className="w-4 h-4" />,
+        featured: true
+      },
+      { 
+        name: 'AI Consciousness Evolution 2043', 
+        href: '/ai-consciousness-evolution-2043', 
+        description: 'Next-generation AI consciousness',
         icon: <Brain className="w-4 h-4" />,
-        description: 'Advanced AI solutions for enterprise',
-        featured: true,
-        neonColor: 'shadow-purple-400/50'
+        color: 'from-purple-500 to-pink-500',
+        featured: true
       },
-      {
-        label: 'Quantum Computing',
-        href: '/services?category=quantum',
+      { 
+        name: 'Quantum Neural Network 2043', 
+        href: '/quantum-ai-neural-2043', 
+        description: 'Quantum-powered AI neural networks',
         icon: <Atom className="w-4 h-4" />,
-        description: 'Next-generation quantum solutions',
-        featured: true,
-        neonColor: 'shadow-blue-400/50'
+        color: 'from-blue-500 to-cyan-500',
+        featured: true
       },
-      {
-        label: 'Space Technology',
-        href: '/services?category=space-tech',
-        icon: <Rocket className="w-4 h-4" />,
-        description: 'Innovative space tech applications',
-        featured: true,
-        neonColor: 'shadow-pink-400/50'
+      { 
+        name: 'AI Business Intelligence 2043', 
+        href: '/ai-business-intelligence-2043', 
+        description: 'AI-powered business intelligence',
+        icon: <BarChart3 className="w-4 h-4" />,
+        color: 'from-emerald-500 to-teal-500'
       },
-      {
-        label: 'Cybersecurity',
-        href: '/services?category=cybersecurity',
+      { 
+        name: 'Quantum Cybersecurity 2043', 
+        href: '/quantum-cybersecurity-2043', 
+        description: 'Quantum-resistant security',
         icon: <Shield className="w-4 h-4" />,
-        description: 'Enterprise-grade security solutions',
-        neonColor: 'shadow-green-400/50'
+        color: 'from-red-500 to-orange-500'
       },
-      {
-        label: 'Enterprise IT',
-        href: '/services?category=enterprise-it',
-        icon: <Building className="w-4 h-4" />,
-        description: 'Enterprise infrastructure solutions',
-        neonColor: 'shadow-indigo-400/50'
+      { 
+        name: 'Autonomous Customer Success 2044', 
+        href: '/autonomous-customer-success-2044', 
+        description: 'AI-powered customer success',
+        icon: <Heart className="w-4 h-4" />,
+        color: 'from-pink-500 to-purple-500'
+      }
+    ]
+  },
+  {
+    name: 'AI & Consciousness',
+    href: '/ai-services',
+    icon: <Brain className="w-5 h-5" />,
+    description: 'Revolutionary AI consciousness platforms',
+    badge: 'Featured',
+    category: 'ai',
+    color: 'from-purple-500 to-pink-500',
+    children: [
+      { 
+        name: 'AI Consciousness Evolution 2043', 
+        href: '/ai-consciousness-evolution-2043', 
+        description: 'Next-generation AI consciousness',
+        icon: <Brain className="w-4 h-4" />,
+        featured: true
       },
-      {
-        label: 'Cloud Solutions',
-        href: '/services?category=cloud',
+      { 
+        name: 'Quantum AI Neural Network 2043', 
+        href: '/quantum-ai-neural-2043', 
+        description: 'Quantum-powered AI neural networks',
+        icon: <Atom className="w-4 h-4" />,
+        featured: true
+      },
+      { 
+        name: 'Autonomous AI Research 2043', 
+        href: '/autonomous-ai-research-2043', 
+        description: 'Fully autonomous AI research',
+        icon: <Cpu className="w-4 h-4" />
+      },
+      { 
+        name: 'AI Content Personalization 2043', 
+        href: '/ai-content-personalization-2043', 
+        description: 'Intelligent content personalization',
+        icon: <Palette className="w-4 h-4" />
+      },
+      { 
+        name: 'AI Ethics & Governance 2043', 
+        href: '/ai-ethics-governance-2043', 
+        description: 'AI ethics and governance',
+        icon: <Shield className="w-4 h-4" />
+      }
+    ]
+  },
+  {
+    name: 'Quantum Technology',
+    href: '/quantum-services',
+    icon: <Atom className="w-5 h-5" />,
+    description: 'Breakthrough quantum computing solutions',
+    badge: 'Quantum',
+    category: 'quantum',
+    color: 'from-blue-500 to-cyan-500',
+    children: [
+      { 
+        name: 'Quantum Cloud Infrastructure 2043', 
+        href: '/quantum-cloud-infrastructure-2043', 
+        description: 'Quantum-powered cloud infrastructure',
         icon: <Cloud className="w-4 h-4" />,
-        description: 'Scalable cloud infrastructure',
-        neonColor: 'shadow-cyan-400/50'
+        featured: true
       },
-      {
-        label: 'AI Consciousness',
-        href: '/services?category=ai-consciousness',
-        icon: <Eye className="w-4 h-4" />,
-        description: 'Revolutionary conscious AI development',
-        featured: true,
-        neonColor: 'shadow-purple-400/50'
+      { 
+        name: 'Quantum Database Platform 2043', 
+        href: '/quantum-database-2043', 
+        description: 'Quantum-powered database',
+        icon: <Database className="w-4 h-4" />
       },
-      {
-        label: 'Metaverse Platform',
-        href: '/services?category=metaverse',
-        icon: <Layers className="w-4 h-4" />,
-        description: 'AI-powered virtual experiences',
-        neonColor: 'shadow-pink-400/50'
+      { 
+        name: 'Quantum Edge Computing 2043', 
+        href: '/quantum-edge-computing-2043', 
+        description: 'Quantum-powered edge computing',
+        icon: <Cpu className="w-4 h-4" />
+      },
+      { 
+        name: 'Quantum API Gateway 2043', 
+        href: '/quantum-api-gateway-2043', 
+        description: 'Quantum-powered API gateway',
+        icon: <Network className="w-4 h-4" />
       }
     ]
   },
   {
-    label: 'Innovations',
-    href: '/innovations',
-    icon: <Lightbulb className="w-4 h-4" />,
-    description: 'Cutting-edge research and development',
-    neonColor: 'shadow-yellow-400/50',
+    name: 'Cybersecurity',
+    href: '/cybersecurity',
+    icon: <Shield className="w-5 h-5" />,
+    description: 'Advanced security solutions',
+    badge: 'Secure',
+    category: 'security',
+    color: 'from-red-500 to-orange-500',
     children: [
-      {
-        label: 'AI Consciousness',
-        href: '/ai-consciousness',
-        icon: <Brain className="w-4 h-4" />,
-        description: 'Conscious AI development',
-        featured: true,
-        neonColor: 'shadow-purple-400/50'
-      },
-      {
-        label: 'Quantum AI',
-        href: '/quantum-ai',
-        icon: <Atom className="w-4 h-4" />,
-        description: 'Quantum-enhanced AI systems',
-        featured: true,
-        neonColor: 'shadow-blue-400/50'
-      },
-      {
-        label: 'Space Tech',
-        href: '/space-technology',
-        icon: <Rocket className="w-4 h-4" />,
-        description: 'Space exploration technology',
-        neonColor: 'shadow-pink-400/50'
-      },
-      {
-        label: 'Brain-Computer Interface',
-        href: '/brain-computer-interface-2040',
-        icon: <Cpu className="w-4 h-4" />,
-        description: 'Neural interface technology',
-        neonColor: 'shadow-cyan-400/50'
-      }
-    ]
-  },
-  {
-    label: 'Solutions',
-    href: '/solutions',
-    icon: <Target className="w-4 h-4" />,
-    description: 'Industry-specific solutions',
-    neonColor: 'shadow-green-400/50',
-    children: [
-      {
-        label: 'Healthcare',
-        href: '/healthcare-solutions',
+      { 
+        name: 'Quantum Cybersecurity 2043', 
+        href: '/quantum-cybersecurity-2043', 
+        description: 'Quantum-resistant cybersecurity',
         icon: <Shield className="w-4 h-4" />,
-        description: 'Medical technology solutions',
-        neonColor: 'shadow-green-400/50'
+        featured: true
       },
-      {
-        label: 'Finance',
-        href: '/financial-solutions',
+      { 
+        name: 'AI Network Security 2043', 
+        href: '/ai-network-security-2043', 
+        description: 'AI-powered network security',
+        icon: <Network className="w-4 h-4" />
+      },
+      { 
+        name: 'Quantum Internet Security 2043', 
+        href: '/quantum-internet-security-2043', 
+        description: 'Quantum internet security',
+        icon: <Globe className="w-4 h-4" />
+      }
+    ]
+  },
+  {
+    name: 'Business Solutions',
+    href: '/business-solutions',
+    icon: <Target className="w-5 h-5" />,
+    description: 'Enterprise business solutions',
+    badge: 'Business',
+    category: 'business',
+    color: 'from-emerald-500 to-teal-500',
+    children: [
+      { 
+        name: 'AI Business Intelligence 2043', 
+        href: '/ai-business-intelligence-2043', 
+        description: 'AI-powered business intelligence',
         icon: <BarChart3 className="w-4 h-4" />,
-        description: 'Fintech and banking solutions',
-        neonColor: 'shadow-blue-400/50'
+        featured: true
       },
-      {
-        label: 'Manufacturing',
-        href: '/manufacturing-ai-solutions',
+      { 
+        name: 'Autonomous Customer Success 2043', 
+        href: '/autonomous-customer-success-2043', 
+        description: 'AI-powered customer success',
+        icon: <Heart className="w-4 h-4" />
+      },
+      { 
+        name: 'AI Marketing Automation 2043', 
+        href: '/ai-marketing-automation-2043', 
+        description: 'Intelligent marketing automation',
+        icon: <TrendingUp className="w-4 h-4" />
+      },
+      { 
+        name: 'Autonomous Supply Chain 2043', 
+        href: '/autonomous-supply-chain-2043', 
+        description: 'AI-powered supply chain',
+        icon: <ShoppingCart className="w-4 h-4" />
+      }
+    ]
+  },
+  {
+    name: 'IT Services',
+    href: '/it-services',
+    icon: <Cpu className="w-5 h-5" />,
+    description: 'Advanced IT infrastructure solutions',
+    badge: 'IT',
+    category: 'it',
+    color: 'from-blue-500 to-indigo-500',
+    children: [
+      { 
+        name: 'Autonomous DevOps Platform 2043', 
+        href: '/autonomous-devops-2043', 
+        description: 'AI-powered autonomous DevOps',
         icon: <Settings className="w-4 h-4" />,
-        description: 'Industry 4.0 solutions',
-        neonColor: 'shadow-orange-400/50'
+        featured: true
       },
-      {
-        label: 'Retail',
-        href: '/retail-technology-solutions',
-        icon: <ShoppingBag className="w-4 h-4" />,
-        description: 'E-commerce technology',
-        neonColor: 'shadow-purple-400/50'
+      { 
+        name: 'Autonomous Data Center 2043', 
+        href: '/autonomous-data-center-2043', 
+        description: 'AI-powered data center management',
+        icon: <Building className="w-4 h-4" />
+      },
+      { 
+        name: 'AI IT Service Management 2043', 
+        href: '/ai-itsm-2043', 
+        description: 'Intelligent IT service management',
+        icon: <Monitor className="w-4 h-4" />
       }
     ]
   },
   {
-    label: 'Company',
-    href: '/about',
-    icon: <Building className="w-4 h-4" />,
-    description: 'About Zion Tech Group',
-    neonColor: 'shadow-indigo-400/50',
+    name: 'Healthcare & Biotech',
+    href: '/healthcare',
+    icon: <Heart className="w-5 h-5" />,
+    description: 'Advanced healthcare solutions',
+    badge: 'Health',
+    category: 'healthcare',
+    color: 'from-red-500 to-pink-500',
     children: [
-      {
-        label: 'About Us',
-        href: '/about',
-        icon: <Users className="w-4 h-4" />,
-        description: 'Our mission and values',
-        neonColor: 'shadow-cyan-400/50'
-      },
-      {
-        label: 'Leadership',
-        href: '/about#leadership',
-        icon: <Crown className="w-4 h-4" />,
-        description: 'Meet our team',
-        neonColor: 'shadow-yellow-400/50'
-      },
-      {
-        label: 'Careers',
-        href: '/careers',
-        icon: <Briefcase className="w-4 h-4" />,
-        description: 'Join our team',
-        neonColor: 'shadow-green-400/50'
-      },
-      {
-        label: 'News',
-        href: '/news',
-        icon: <FileText className="w-4 h-4" />,
-        description: 'Latest company news',
-        neonColor: 'shadow-blue-400/50'
-      },
-      {
-        label: 'Case Studies',
-        href: '/case-studies',
-        icon: <BarChart3 className="w-4 h-4" />,
-        description: 'Success stories',
-        neonColor: 'shadow-purple-400/50'
-      },
-      {
-        label: 'Partners',
-        href: '/partners',
-        icon: <Handshake className="w-4 h-4" />,
-        description: 'Strategic partnerships',
-        neonColor: 'shadow-orange-400/50'
+      { 
+        name: 'AI Healthcare Platform 2043', 
+        href: '/ai-healthcare-platform-2043', 
+        description: 'AI-powered healthcare',
+        icon: <Heart className="w-4 h-4" />,
+        featured: true
       }
     ]
   },
   {
-    label: 'Resources',
-    href: '/resources',
-    icon: <BookOpen className="w-4 h-4" />,
-    description: 'Knowledge and support',
-    neonColor: 'shadow-purple-400/50',
+    name: 'Financial Technology',
+    href: '/fintech',
+    icon: <DollarSign className="w-5 h-5" />,
+    description: 'Next-generation financial solutions',
+    badge: 'FinTech',
+    category: 'fintech',
+    color: 'from-green-500 to-emerald-500',
     children: [
-      {
-        label: 'Blog',
-        href: '/blog',
-        icon: <FileText className="w-4 h-4" />,
-        description: 'Industry insights and updates',
-        neonColor: 'shadow-blue-400/50'
-      },
-      {
-        label: 'Whitepapers',
-        href: '/white-papers',
-        icon: <FileText className="w-4 h-4" />,
-        description: 'In-depth research papers',
-        neonColor: 'shadow-indigo-400/50'
-      },
-      {
-        label: 'Webinars',
-        href: '/webinars',
-        icon: <Video className="w-4 h-4" />,
-        description: 'Educational content',
-        neonColor: 'shadow-purple-400/50'
-      },
-      {
-        label: 'Documentation',
-        href: '/docs',
-        icon: <Code className="w-4 h-4" />,
-        description: 'Technical guides',
-        neonColor: 'shadow-cyan-400/50'
-      },
-      {
-        label: 'API Reference',
-        href: '/api-documentation',
-        icon: <Code className="w-4 h-4" />,
-        description: 'Developer resources',
-        neonColor: 'shadow-green-400/50'
-      },
-      {
-        label: 'Support',
-        href: '/support',
-        icon: <Phone className="w-4 h-4" />,
-        description: 'Help and assistance',
-        neonColor: 'shadow-orange-400/50'
+      { 
+        name: 'Quantum Financial Trading 2043', 
+        href: '/quantum-financial-trading-2043', 
+        description: 'Quantum-powered financial trading',
+        icon: <TrendingUp className="w-4 h-4" />,
+        featured: true
       }
     ]
-  },
-  {
-    label: 'Contact',
-    href: '/contact',
-    icon: <Phone className="w-4 h-4" />,
-    description: 'Get in touch with us',
-    neonColor: 'shadow-green-400/50'
   }
 ];
 
-const socialLinks = [
-  { name: 'LinkedIn', href: 'https://linkedin.com/company/ziontechgroup', icon: <Linkedin className="w-4 h-4" />, neonColor: 'shadow-blue-400/50' },
-  { name: 'Twitter', href: 'https://twitter.com/ziontechgroup', icon: <Twitter className="w-4 h-4" />, neonColor: 'shadow-cyan-400/50' },
-  { name: 'GitHub', href: 'https://github.com/Zion-Holdings', icon: <Github className="w-4 h-4" />, neonColor: 'shadow-purple-400/50' },
-  { name: 'YouTube', href: 'https://youtube.com/@ziontechgroup', icon: <Youtube className="w-4 h-4" />, neonColor: 'shadow-red-400/50' }
-];
+const contactInfo = {
+  mobile: '+1 302 464 0950',
+  email: 'kleber@ziontechgroup.com',
+  address: '364 E Main St STE 1008 Middletown DE 19709'
+};
 
 const UltraFuturisticNavigation2040: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
   const [isScrolled, setIsScrolled] = useState(false);
-  const [searchQuery, setSearchQuery] = useState('');
-  const [isSearchOpen, setIsSearchOpen] = useState(false);
-  const dropdownRef = useRef<HTMLDivElement>(null);
-  const searchRef = useRef<HTMLDivElement>(null);
-  const router = useRouter();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -349,334 +321,239 @@ const UltraFuturisticNavigation2040: React.FC = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  useEffect(() => {
-    const handleClickOutside = (event: MouseEvent) => {
-      if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
-        setActiveDropdown(null);
-      }
-      if (searchRef.current && !searchRef.current.contains(event.target as Node)) {
-        setIsSearchOpen(false);
-      }
-    };
+  const toggleDropdown = (name: string) => {
+    setActiveDropdown(activeDropdown === name ? null : name);
+  };
 
-    document.addEventListener('mousedown', handleClickOutside);
-    return () => document.removeEventListener('mousedown', handleClickOutside);
-  }, []);
-
-  const handleNavigationClick = (href: string) => {
-    setIsOpen(false);
+  const closeDropdown = () => {
     setActiveDropdown(null);
-    router.push(href);
-  };
-
-  const toggleDropdown = (label: string) => {
-    setActiveDropdown(activeDropdown === label ? null : label);
-  };
-
-  const handleSearch = (e: React.FormEvent) => {
-    e.preventDefault();
-    if (searchQuery.trim()) {
-      router.push(`/search?q=${encodeURIComponent(searchQuery.trim())}`);
-      setIsSearchOpen(false);
-      setSearchQuery('');
-    }
   };
 
   return (
-    <>
+    <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+      isScrolled 
+        ? 'bg-black/80 backdrop-blur-xl border-b border-white/10' 
+        : 'bg-transparent'
+    }`}>
       {/* Top Contact Bar */}
-      <div className="bg-gradient-to-r from-cyan-900/50 to-blue-900/50 border-b border-cyan-400/30 backdrop-blur-sm">
+      <div className="bg-gradient-to-r from-cyan-500/10 to-blue-500/10 border-b border-cyan-500/20">
         <div className="max-w-7xl mx-auto px-4 py-2">
-          <div className="flex flex-col sm:flex-row justify-between items-center text-sm text-cyan-300">
-            <div className="flex items-center space-x-6 mb-2 sm:mb-0">
-              <div className="flex items-center space-x-2">
-                <Phone className="w-3 h-3" />
-                <span>+1 302 464 0950</span>
-              </div>
-              <div className="flex items-center space-x-2">
-                <Mail className="w-3 h-3" />
-                <span>kleber@ziontechgroup.com</span>
-              </div>
+          <div className="flex flex-col sm:flex-row justify-between items-center text-sm">
+            <div className="flex items-center gap-6 text-cyan-300">
+              <a href={`tel:${contactInfo.mobile}`} className="flex items-center gap-2 hover:text-cyan-200 transition-colors">
+                <Phone className="w-4 h-4" />
+                <span>{contactInfo.mobile}</span>
+              </a>
+              <a href={`mailto:${contactInfo.email}`} className="flex items-center gap-2 hover:text-cyan-200 transition-colors">
+                <Mail className="w-4 h-4" />
+                <span>{contactInfo.email}</span>
+              </a>
             </div>
-            <div className="flex items-center space-x-4">
-              <span className="text-cyan-200">Address: 364 E Main St STE 1008 Middletown DE 19709</span>
+            <div className="flex items-center gap-4">
+              <a href="https://ziontechgroup.com" className="text-cyan-300 hover:text-cyan-200 transition-colors">
+                Visit Website
+              </a>
+              <span className="text-cyan-400">|</span>
+              <span className="text-cyan-300">Revolutionary 2040-2041 Technology</span>
             </div>
           </div>
         </div>
       </div>
 
       {/* Main Navigation */}
-      <nav 
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-          isScrolled 
-            ? 'bg-black/90 backdrop-blur-md border-b border-cyan-400/30 shadow-2xl shadow-cyan-400/20' 
-            : 'bg-transparent'
-        }`}
-        ref={dropdownRef}
-      >
-        <div className="max-w-7xl mx-auto px-4">
-          <div className="flex items-center justify-between h-20">
-            {/* Logo */}
-            <Link href="/" className="flex items-center space-x-3 group">
-              <div className="relative">
-                <div className="w-10 h-10 bg-gradient-to-br from-cyan-400 to-blue-500 rounded-lg flex items-center justify-center transform group-hover:scale-110 transition-transform duration-300"
-                  style={{
-                    boxShadow: '0 0 20px rgba(6, 182, 212, 0.5)',
-                  }}>
-                  <Star className="w-6 h-6 text-white" />
-                </div>
-                <div className="absolute inset-0 bg-gradient-to-br from-cyan-400 to-blue-500 rounded-lg opacity-0 group-hover:opacity-20 transition-opacity duration-300 blur-xl"></div>
+      <div className="max-w-7xl mx-auto px-4">
+        <div className="flex items-center justify-between h-20">
+          {/* Logo */}
+          <Link href="/" className="flex items-center space-x-3 group">
+            <div className="w-12 h-12 rounded-2xl bg-gradient-to-r from-cyan-500 to-blue-600 p-3 group-hover:scale-110 transition-transform duration-300">
+              <Brain className="w-full h-full text-white" />
+            </div>
+            <div>
+              <div className="text-2xl font-bold bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
+                Zion Tech Group
               </div>
-              <div className="flex flex-col">
-                <span className="text-xl font-bold bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
-                  Zion Tech Group
-                </span>
-                <span className="text-xs text-cyan-400 font-medium">Innovation 2040</span>
-              </div>
-            </Link>
+              <div className="text-xs text-gray-400">Revolutionary 2040-2041</div>
+            </div>
+          </Link>
 
-            {/* Desktop Navigation */}
-            <div className="hidden lg:flex items-center space-x-8">
-              {navigationItems.map((item) => (
-                <div key={item.label} className="relative group">
-                  <button
-                    onClick={() => item.children ? toggleDropdown(item.label) : handleNavigationClick(item.href)}
-                    className="flex items-center space-x-2 px-4 py-2 text-gray-300 hover:text-cyan-400 transition-colors duration-300 rounded-lg hover:bg-cyan-400/10 group"
-                    style={{
-                      boxShadow: item.neonColor ? `0 0 10px ${item.neonColor}` : 'none',
-                    }}
-                  >
-                    {item.icon}
-                    <span className="font-medium">{item.label}</span>
-                    {item.badge && (
-                      <span className="px-2 py-1 bg-gradient-to-r from-yellow-400 to-orange-500 text-black text-xs font-bold rounded-full">
-                        {item.badge}
-                      </span>
-                    )}
-                    {item.children && (
-                      <ChevronDown className={`w-4 h-4 transition-transform duration-300 ${
-                        activeDropdown === item.label ? 'rotate-180' : ''
-                      }`} />
-                    )}
-                  </button>
+          {/* Desktop Navigation */}
+          <div className="hidden lg:flex items-center space-x-8">
+            {navigationItems.map((item) => (
+              <div key={item.name} className="relative group">
+                <button
+                  onClick={() => toggleDropdown(item.name)}
+                  className="flex items-center space-x-2 px-4 py-2 text-white hover:text-cyan-400 transition-colors duration-200 rounded-xl hover:bg-white/5"
+                >
+                  {item.icon}
+                  <span className="font-medium">{item.name}</span>
+                  {item.badge && (
+                    <span className="px-2 py-1 text-xs bg-gradient-to-r from-purple-500 to-pink-500 text-white rounded-full">
+                      {item.badge}
+                    </span>
+                  )}
+                  <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${
+                    activeDropdown === item.name ? 'rotate-180' : ''
+                  }`} />
+                </button>
 
-                  {/* Dropdown Menu */}
-                  {item.children && activeDropdown === item.label && (
+                {/* Dropdown Menu */}
+                <AnimatePresence>
+                  {activeDropdown === item.name && (
                     <motion.div
-                      initial={{ opacity: 0, y: 10 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      exit={{ opacity: 0, y: 10 }}
-                      className="absolute top-full left-0 mt-2 w-80 bg-black/95 backdrop-blur-xl border border-cyan-400/30 rounded-2xl shadow-2xl shadow-cyan-400/20 overflow-hidden"
-                      style={{
-                        boxShadow: '0 0 40px rgba(6, 182, 212, 0.3)',
-                      }}
+                      initial={{ opacity: 0, y: 10, scale: 0.95 }}
+                      animate={{ opacity: 1, y: 0, scale: 1 }}
+                      exit={{ opacity: 0, y: 10, scale: 0.95 }}
+                      transition={{ duration: 0.2 }}
+                      className="absolute top-full left-0 mt-2 w-80 bg-black/90 backdrop-blur-xl border border-white/10 rounded-2xl shadow-2xl overflow-hidden"
+                      onMouseLeave={closeDropdown}
                     >
-                      <div className="p-6">
-                        <div className="grid grid-cols-1 gap-4">
-                          {item.children.map((child) => (
+                      <div className="p-4">
+                        <div className="mb-4">
+                          <h3 className="text-lg font-semibold text-white mb-2">{item.name}</h3>
+                          <p className="text-sm text-gray-400">{item.description}</p>
+                        </div>
+                        
+                        <div className="space-y-2">
+                          {item.children?.map((child) => (
                             <Link
-                              key={child.label}
-                              href={child.href}
-                              className="group flex items-start space-x-4 p-4 rounded-xl hover:bg-cyan-400/10 transition-all duration-300 border border-transparent hover:border-cyan-400/30"
-                              onClick={() => handleNavigationClick(child.href)}
-                            >
-                              <div className={`flex-shrink-0 w-10 h-10 rounded-lg bg-gradient-to-br from-gray-800 to-gray-900 flex items-center justify-center group-hover:scale-110 transition-transform duration-300 ${
-                                child.featured ? 'ring-2 ring-cyan-400/50' : ''
+                              key={child.name}
+                              href={normalizeHref(child.href)}
+                              className={`flex items-center space-x-3 p-3 rounded-xl transition-all duration-200 group ${
+                                child.featured 
+                                  ? 'bg-gradient-to-r from-cyan-500/10 to-blue-500/10 border border-cyan-500/20' 
+                                  : 'hover:bg-white/5'
                               }`}
-                                style={{
-                                  boxShadow: child.neonColor ? `0 0 15px ${child.neonColor}` : 'none',
-                                }}>
+                              onClick={closeDropdown}
+                            >
+                              <div className={`w-8 h-8 rounded-lg bg-gradient-to-r ${child.color || 'from-gray-500 to-gray-600'} p-2`}>
                                 {child.icon}
                               </div>
-                              <div className="flex-1 min-w-0">
-                                <div className="flex items-center space-x-2">
-                                  <p className="text-sm font-medium text-white group-hover:text-cyan-400 transition-colors">
-                                    {child.label}
-                                  </p>
+                              <div className="flex-1">
+                                <div className="flex items-center gap-2">
+                                  <span className="font-medium text-white group-hover:text-cyan-400 transition-colors">
+                                    {child.name}
+                                  </span>
                                   {child.featured && (
-                                    <span className="px-2 py-1 bg-gradient-to-r from-cyan-400 to-blue-500 text-black text-xs font-bold rounded-full">
+                                    <span className="px-2 py-1 text-xs bg-gradient-to-r from-purple-500 to-pink-500 text-white rounded-full">
                                       Featured
                                     </span>
                                   )}
                                 </div>
-                                {child.description && (
-                                  <p className="text-xs text-gray-400 mt-1">{child.description}</p>
-                                )}
+                                <p className="text-sm text-gray-400">{child.description}</p>
                               </div>
-                              <ArrowRight className="w-4 h-4 text-gray-500 group-hover:text-cyan-400 group-hover:translate-x-1 transition-all duration-300" />
+                              <ArrowRight className="w-4 h-4 text-gray-500 group-hover:text-cyan-400 transition-colors" />
                             </Link>
                           ))}
                         </div>
                       </div>
                     </motion.div>
                   )}
-                </div>
-              ))}
-            </div>
-
-            {/* Right Side Actions */}
-            <div className="hidden lg:flex items-center space-x-4">
-              {/* Search */}
-              <div className="relative" ref={searchRef}>
-                <button
-                  onClick={() => setIsSearchOpen(!isSearchOpen)}
-                  className="p-2 text-gray-400 hover:text-cyan-400 transition-colors duration-300 rounded-lg hover:bg-cyan-400/10"
-                >
-                  <Search className="w-5 h-5" />
-                </button>
-
-                <AnimatePresence>
-                  {isSearchOpen && (
-                    <motion.div
-                      initial={{ opacity: 0, scale: 0.95 }}
-                      animate={{ opacity: 1, scale: 1 }}
-                      exit={{ opacity: 0, scale: 0.95 }}
-                      className="absolute top-full right-0 mt-2 w-80 bg-black/95 backdrop-blur-xl border border-cyan-400/30 rounded-2xl shadow-2xl shadow-cyan-400/20 p-4"
-                      style={{
-                        boxShadow: '0 0 40px rgba(6, 182, 212, 0.3)',
-                      }}
-                    >
-                      <form onSubmit={handleSearch} className="space-y-4">
-                        <div className="relative">
-                          <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-gray-400" />
-                          <input
-                            type="text"
-                            value={searchQuery}
-                            onChange={(e) => setSearchQuery(e.target.value)}
-                            placeholder="Search services, solutions..."
-                            className="w-full pl-10 pr-4 py-3 bg-gray-800/50 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-cyan-400 focus:border-transparent"
-                          />
-                        </div>
-                        <button
-                          type="submit"
-                          className="w-full px-4 py-2 bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-medium rounded-lg hover:from-cyan-600 hover:to-blue-700 transition-all duration-300 transform hover:scale-105"
-                        >
-                          Search
-                        </button>
-                      </form>
-                    </motion.div>
-                  )}
                 </AnimatePresence>
               </div>
-
-              {/* CTA Button */}
-              <Link href="/contact">
-                <button className="px-6 py-3 bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-medium rounded-lg hover:from-cyan-600 hover:to-blue-700 transition-all duration-300 transform hover:scale-105 shadow-lg shadow-cyan-500/25">
-                  <span className="flex items-center space-x-2">
-                    Get Started
-                    <ArrowRight className="w-4 h-4" />
-                  </span>
-                </button>
-              </Link>
-            </div>
-
-            {/* Mobile Menu Button */}
-            <button
-              onClick={() => setIsOpen(!isOpen)}
-              className="lg:hidden p-2 text-gray-400 hover:text-cyan-400 transition-colors duration-300 rounded-lg hover:bg-cyan-400/10"
-            >
-              {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-            </button>
+            ))}
           </div>
-        </div>
 
-        {/* Mobile Navigation */}
-        <AnimatePresence>
-          {isOpen && (
-            <motion.div
-              initial={{ opacity: 0, height: 0 }}
-              animate={{ opacity: 1, height: 'auto' }}
-              exit={{ opacity: 0, height: 0 }}
-              className="lg:hidden bg-black/95 backdrop-blur-xl border-t border-cyan-400/30 overflow-hidden"
-              style={{
-                boxShadow: '0 0 40px rgba(6, 182, 212, 0.3)',
-              }}
+          {/* CTA Buttons */}
+          <div className="hidden lg:flex items-center space-x-4">
+            <Link
+              href="/revolutionary-2040-2041-pricing-showcase"
+              className="px-6 py-3 bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-semibold rounded-xl hover:from-cyan-600 hover:to-blue-700 transition-all duration-300 transform hover:scale-105 shadow-lg shadow-cyan-500/25"
             >
-              <div className="px-4 py-6 space-y-4">
-                {/* Mobile Search */}
-                <div className="relative">
-                  <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-gray-400" />
-                  <input
-                    type="text"
-                    placeholder="Search services..."
-                    className="w-full pl-10 pr-4 py-3 bg-gray-800/50 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-cyan-400"
-                  />
-                </div>
+              Get Started
+            </Link>
+            <Link
+              href="/services"
+              className="px-6 py-3 border-2 border-cyan-400 text-cyan-400 font-semibold rounded-xl hover:bg-cyan-400 hover:text-black transition-all duration-300"
+            >
+              Explore Services
+            </Link>
+          </div>
 
-                {/* Mobile Navigation Items */}
-                {navigationItems.map((item) => (
-                  <div key={item.label}>
-                    <button
-                      onClick={() => item.children ? toggleDropdown(item.label) : handleNavigationClick(item.href)}
-                      className="w-full flex items-center justify-between p-4 text-left text-gray-300 hover:text-cyan-400 transition-colors duration-300 rounded-lg hover:bg-cyan-400/10"
-                    >
-                      <div className="flex items-center space-x-3">
-                        {item.icon}
-                        <span className="font-medium">{item.label}</span>
-                        {item.badge && (
-                          <span className="px-2 py-1 bg-gradient-to-r from-yellow-400 to-orange-500 text-black text-xs font-bold rounded-full">
-                            {item.badge}
-                          </span>
-                        )}
-                      </div>
-                      {item.children && (
-                        <ChevronDown className={`w-4 h-4 transition-transform duration-300 ${
-                          activeDropdown === item.label ? 'rotate-180' : ''
-                        }`} />
+          {/* Mobile Menu Button */}
+          <button
+            onClick={() => setIsOpen(!isOpen)}
+            className="lg:hidden p-2 text-white hover:text-cyan-400 transition-colors"
+            aria-label="Toggle mobile menu"
+          >
+            {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+          </button>
+        </div>
+      </div>
+
+      {/* Mobile Navigation */}
+      <AnimatePresence>
+        {isOpen && (
+          <motion.div
+            initial={{ opacity: 0, height: 0 }}
+            animate={{ opacity: 1, height: 'auto' }}
+            exit={{ opacity: 0, height: 0 }}
+            transition={{ duration: 0.3 }}
+            className="lg:hidden bg-black/95 backdrop-blur-xl border-t border-white/10 overflow-hidden"
+          >
+            <div className="px-4 py-6 space-y-4">
+              {navigationItems.map((item) => (
+                <div key={item.name} className="space-y-2">
+                  <button
+                    onClick={() => toggleDropdown(item.name)}
+                    className="flex items-center justify-between w-full p-3 text-left text-white hover:text-cyan-400 transition-colors rounded-xl hover:bg-white/5"
+                  >
+                    <div className="flex items-center space-x-3">
+                      {item.icon}
+                      <span className="font-medium">{item.name}</span>
+                      {item.badge && (
+                        <span className="px-2 py-1 text-xs bg-gradient-to-r from-purple-500 to-pink-500 text-white rounded-full">
+                          {item.badge}
+                        </span>
                       )}
-                    </button>
+                    </div>
+                    <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${
+                      activeDropdown === item.name ? 'rotate-180' : ''
+                    }`} />
+                  </button>
 
-                    {/* Mobile Dropdown */}
-                    {item.children && activeDropdown === item.label && (
-                      <motion.div
-                        initial={{ opacity: 0, height: 0 }}
-                        animate={{ opacity: 1, height: 'auto' }}
-                        exit={{ opacity: 0, height: 0 }}
-                        className="ml-8 mt-2 space-y-2"
-                      >
-                        {item.children.map((child) => (
-                          <Link
-                            key={child.label}
-                            href={child.href}
-                            className="block p-3 text-gray-400 hover:text-cyan-400 transition-colors duration-300 rounded-lg hover:bg-cyan-400/10"
-                            onClick={() => handleNavigationClick(child.href)}
-                          >
-                            <div className="flex items-center space-x-3">
+                  {activeDropdown === item.name && (
+                    <div className="ml-6 space-y-2">
+                      {item.children?.map((child) => (
+                        <Link
+                          key={child.name}
+                          href={normalizeHref(child.href)}
+                          className="block p-3 text-gray-300 hover:text-cyan-400 transition-colors rounded-lg hover:bg-white/5"
+                          onClick={() => setIsOpen(false)}
+                        >
+                          <div className="flex items-center space-x-3">
+                            <div className={`w-6 h-6 rounded-lg bg-gradient-to-r ${child.color || 'from-gray-500 to-gray-600'} p-1.5`}>
                               {child.icon}
-                              <span className="text-sm">{child.label}</span>
-                              {child.featured && (
-                                <span className="px-2 py-1 bg-gradient-to-r from-cyan-400 to-blue-500 text-black text-xs font-bold rounded-full">
-                                  Featured
-                                </span>
-                              )}
                             </div>
-                            {child.description && (
-                              <p className="text-xs text-gray-500 mt-1 ml-7">{child.description}</p>
-                            )}
-                          </Link>
-                        ))}
-                      </motion.div>
-                    )}
-                  </div>
-                ))}
-
-                {/* Mobile CTA */}
-                <div className="pt-4">
-                  <Link href="/contact">
-                    <button className="w-full px-6 py-3 bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-medium rounded-lg hover:from-cyan-600 hover:to-blue-700 transition-all duration-300 transform hover:scale-105">
-                      Get Started
-                    </button>
-                  </Link>
+                            <span>{child.name}</span>
+                          </div>
+                        </Link>
+                      ))}
+                    </div>
+                  )}
                 </div>
-              </div>
-            </motion.div>
-          )}
-        </AnimatePresence>
-      </nav>
+              ))}
 
-      {/* Spacer for fixed navigation */}
-      <div className="h-20"></div>
-    </>
+              <div className="pt-4 border-t border-white/10 space-y-3">
+                <Link
+                  href="/revolutionary-2040-2041-pricing-showcase"
+                  className="block w-full text-center px-6 py-3 rounded-xl text-white bg-gradient-to-r from-cyan-500 to-blue-600 font-semibold"
+                  onClick={() => setIsOpen(false)}
+                >
+                  Get Started
+                </Link>
+                <Link
+                  href="/services"
+                  className="block w-full text-center px-6 py-3 rounded-xl text-cyan-400 border-2 border-cyan-400 font-semibold"
+                  onClick={() => setIsOpen(false)}
+                >
+                  Explore Services
+                </Link>
+              </div>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </nav>
   );
 };
 
