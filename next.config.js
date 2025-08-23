@@ -5,59 +5,106 @@ const nextConfig = {
   
   // Enable experimental features for better performance
   experimental: {
-    // Enable modern JavaScript features
-    esmExternals: true,
+    // Optimize package imports to reduce bundle size
+    optimizePackageImports: [
+      'lucide-react',
+      'framer-motion',
+      '@supabase/supabase-js',
+      'axios'
+    ],
     
-    // Enable optimized package imports
-    optimizePackageImports: ['framer-motion', 'lucide-react'],
+    // Enable server actions
+    serverActions: {
+      bodySizeLimit: '2mb',
+    },
   },
 
   // Image optimization
   images: {
-    domains: ['ziontechgroup.com'],
+    domains: [
+      'ziontechgroup.com',
+      'localhost',
+      'vercel.app',
+      'netlify.app'
+    ],
     formats: ['image/webp', 'image/avif'],
     deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048, 3840],
     imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
+    minimumCacheTTL: 60,
+    dangerouslyAllowSVG: true,
+    contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
   },
 
-  // Webpack configuration for performance
+  // Webpack configuration for better performance
   webpack: (config, { dev, isServer }) => {
     // Optimize bundle splitting
-    if (!dev && !isServer) {
-      config.optimization.splitChunks = {
+    config.optimization = {
+      ...config.optimization,
+      splitChunks: {
         chunks: 'all',
         cacheGroups: {
           vendor: {
             test: /[\\/]node_modules[\\/]/,
             name: 'vendors',
             chunks: 'all',
+            priority: 10,
           },
           common: {
             name: 'common',
             minChunks: 2,
             chunks: 'all',
-            enforce: true,
+            priority: 5,
+            reuseExistingChunk: true,
+          },
+          framer: {
+            test: /[\\/]node_modules[\\/]framer-motion[\\/]/,
+            name: 'framer-motion',
+            chunks: 'all',
+            priority: 20,
+          },
+          lucide: {
+            test: /[\\/]node_modules[\\/]lucide-react[\\/]/,
+            name: 'lucide-react',
+            chunks: 'all',
+            priority: 20,
           },
         },
-      };
+      },
+    };
+
+    // Bundle analyzer in development
+    if (dev && !isServer) {
+      const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
+      config.plugins.push(
+        new BundleAnalyzerPlugin({
+          analyzerMode: 'server',
+          analyzerPort: 8888,
+          openAnalyzer: false,
+        })
+      );
     }
 
-    // Optimize for production
-    if (!dev) {
-      config.optimization.minimize = true;
-      config.optimization.minimizer = config.optimization.minimizer || [];
-    }
+    // Handle SVG files
+    config.module.rules.push({
+      test: /\.svg$/,
+      use: ['@svgr/webpack'],
+    });
+
+    // Handle other assets
+    config.module.rules.push({
+      test: /\.(png|jpe?g|gif|webp)$/i,
+      type: 'asset/resource',
+    });
 
     return config;
   },
 
-  // Headers for security and performance
+  // Headers for better security and performance
   async headers() {
     return [
       {
         source: '/(.*)',
         headers: [
-          // Security headers
           {
             key: 'X-Frame-Options',
             value: 'DENY',
@@ -67,10 +114,6 @@ const nextConfig = {
             value: 'nosniff',
           },
           {
-            key: 'X-XSS-Protection',
-            value: '1; mode=block',
-          },
-          {
             key: 'Referrer-Policy',
             value: 'strict-origin-when-cross-origin',
           },
@@ -78,11 +121,9 @@ const nextConfig = {
             key: 'Permissions-Policy',
             value: 'camera=(), microphone=(), geolocation=()',
           },
-          
-          // Performance headers
           {
-            key: 'Cache-Control',
-            value: 'public, max-age=31536000, immutable',
+            key: 'X-DNS-Prefetch-Control',
+            value: 'on',
           },
         ],
       },
@@ -91,12 +132,21 @@ const nextConfig = {
         headers: [
           {
             key: 'Cache-Control',
-            value: 'no-cache, no-store, must-revalidate',
+            value: 'public, max-age=0, must-revalidate',
           },
         ],
       },
       {
-        source: '/(.*).(js|css|png|jpg|jpeg|gif|svg|ico|woff|woff2|ttf|eot)',
+        source: '/_next/static/(.*)',
+        headers: [
+          {
+            key: 'Cache-Control',
+            value: 'public, max-age=31536000, immutable',
+          },
+        ],
+      },
+      {
+        source: '/images/(.*)',
         headers: [
           {
             key: 'Cache-Control',
@@ -116,23 +166,33 @@ const nextConfig = {
         permanent: true,
       },
       {
-        source: '/index.html',
-        destination: '/',
+        source: '/services/ai',
+        destination: '/ai-services',
+        permanent: true,
+      },
+      {
+        source: '/services/quantum',
+        destination: '/quantum-services',
+        permanent: true,
+      },
+      {
+        source: '/services/space',
+        destination: '/space-tech',
         permanent: true,
       },
     ];
   },
 
-  // Rewrites for API routes
+  // Rewrites for better routing
   async rewrites() {
     return [
       {
-        source: '/api/analytics',
-        destination: '/api/analytics',
+        source: '/api/health',
+        destination: '/api/health-check',
       },
       {
-        source: '/api/error-reporting',
-        destination: '/api/error-reporting',
+        source: '/api/status',
+        destination: '/api/status-check',
       },
     ];
   },
@@ -142,23 +202,43 @@ const nextConfig = {
     CUSTOM_KEY: process.env.CUSTOM_KEY,
   },
 
-  // Compression
-  compress: true,
+  // Compiler configuration
+  compiler: {
+    // Remove console.log in production
+    removeConsole: process.env.NODE_ENV === 'production',
+  },
+
+  // Output configuration
+  output: 'standalone',
+
+  // Trailing slash configuration
+  trailingSlash: false,
 
   // Powered by header
   poweredByHeader: false,
 
-  // Trailing slash
-  trailingSlash: false,
+  // Generate ETags
+  generateEtags: true,
 
-  // Base path
-  basePath: '',
+  // Compress responses
+  compress: true,
 
-  // Asset prefix
-  assetPrefix: '',
+  // Enable source maps in development
+  productionBrowserSourceMaps: false,
 
-  // Output configuration
-  output: 'standalone',
+  // TypeScript configuration
+  typescript: {
+    // Dangerously allow production builds to successfully complete even if
+    // your project has type errors.
+    ignoreBuildErrors: false,
+  },
+
+  // ESLint configuration
+  eslint: {
+    // Warning: This allows production builds to successfully complete even if
+    // your project has ESLint errors.
+    ignoreDuringBuilds: false,
+  },
 };
 
 module.exports = nextConfig;

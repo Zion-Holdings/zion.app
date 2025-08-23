@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useCallback } from 'react';
+import React, { useEffect, useState, useCallback, Suspense } from 'react';
 import Layout from './layout/Layout';
 import { motion, AnimatePresence } from 'framer-motion';
 import { 
@@ -6,19 +6,35 @@ import {
   Brain as BrainIcon, Atom as AtomIcon, Shield as ShieldIcon, Rocket as RocketIcon, Zap, Eye, Heart, Infinity
 } from 'lucide-react';
 
-// Import our new revolutionary services
+// Import data directly for better performance
 import { revolutionary2044AdvancedMicroSaas } from '../data/revolutionary-2044-advanced-micro-saas';
 import { revolutionary2044ITServices } from '../data/revolutionary-2044-it-services';
 import { revolutionary2044AIServices } from '../data/revolutionary-2044-ai-services';
+
+// Loading component for better UX
+const ServiceCardSkeleton = () => (
+  <div className="relative p-8 bg-gradient-to-br from-gray-900/80 to-gray-800/80 border border-gray-700/50 rounded-3xl backdrop-blur-xl animate-pulse">
+    <div className="w-16 h-16 bg-gray-700 rounded-2xl mb-6"></div>
+    <div className="h-6 bg-gray-700 rounded mb-3"></div>
+    <div className="h-4 bg-gray-700 rounded mb-4"></div>
+    <div className="h-4 bg-gray-700 rounded w-3/4"></div>
+  </div>
+);
 
 const Homepage2044: React.FC = () => {
   const [isVisible, setIsVisible] = useState(false);
   const [currentServiceIndex, setCurrentServiceIndex] = useState(0);
   const [selectedCategory, setSelectedCategory] = useState('all');
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+  const [isLoading, setIsLoading] = useState(true);
   
   useEffect(() => {
     setIsVisible(true);
+    
+    // Simulate loading delay for better UX
+    const timer = setTimeout(() => {
+      setIsLoading(false);
+    }, 1000);
     
     // Auto-rotate featured services
     const interval = setInterval(() => {
@@ -33,6 +49,7 @@ const Homepage2044: React.FC = () => {
     window.addEventListener('mousemove', handleMouseMove);
     
     return () => {
+      clearTimeout(timer);
       clearInterval(interval);
       window.removeEventListener('mousemove', handleMouseMove);
     };
@@ -48,14 +65,14 @@ const Homepage2044: React.FC = () => {
   // Get featured services for rotation
   const featuredServices = allRevolutionaryServices.slice(0, 6);
 
-  // Filter services by category
-  const getFilteredServices = () => {
+  // Filter services by category with memoization
+  const getFilteredServices = useCallback(() => {
     if (selectedCategory === 'all') return allRevolutionaryServices;
     return allRevolutionaryServices.filter(service => 
       service.category.toLowerCase().includes(selectedCategory.toLowerCase()) ||
       service.type.toLowerCase().includes(selectedCategory.toLowerCase())
     );
-  };
+  }, [allRevolutionaryServices, selectedCategory]);
 
   const categories = [
     { id: 'all', name: 'All Services', icon: SparklesIcon, color: 'from-purple-500 to-pink-500' },
@@ -252,47 +269,54 @@ const Homepage2044: React.FC = () => {
               </div>
 
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                {featuredServices.map((service, index) => (
-                  <motion.div
-                    key={service.id}
-                    className={`relative group cursor-pointer ${
-                      index === currentServiceIndex ? 'scale-105' : 'scale-100'
-                    } transition-transform duration-500`}
-                    onClick={() => handleServiceClick(service)}
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
-                  >
-                    <div className="relative p-8 bg-gradient-to-br from-gray-900/80 to-gray-800/80 border border-gray-700/50 rounded-3xl backdrop-blur-xl shadow-[0_0_50px_rgba(0,0,0,0.5)] hover:shadow-[0_0_80px_rgba(6,182,212,0.3)] transition-all duration-300 group-hover:border-cyan-500/50">
-                      <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/5 to-blue-500/5 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                      
-                      <div className="relative z-10">
-                        <div className="flex items-center justify-between mb-6">
-                          <div className="w-16 h-16 bg-gradient-to-br from-cyan-500 to-blue-600 rounded-2xl flex items-center justify-center shadow-[0_0_30px_rgba(6,182,212,0.3)]">
-                            <Brain className="w-8 h-8 text-white" />
+                {isLoading ? (
+                  // Show skeleton loading states
+                  Array.from({ length: 6 }).map((_, index) => (
+                    <ServiceCardSkeleton key={index} />
+                  ))
+                ) : (
+                  featuredServices.map((service, index) => (
+                    <motion.div
+                      key={service.id}
+                      className={`relative group cursor-pointer ${
+                        index === currentServiceIndex ? 'scale-105' : 'scale-100'
+                      } transition-transform duration-500`}
+                      onClick={() => handleServiceClick(service)}
+                      whileHover={{ scale: 1.05 }}
+                      whileTap={{ scale: 0.95 }}
+                    >
+                      <div className="relative p-8 bg-gradient-to-br from-gray-900/80 to-gray-800/80 border border-gray-700/50 rounded-3xl backdrop-blur-xl shadow-[0_0_50px_rgba(0,0,0,0.5)] hover:shadow-[0_0_80px_rgba(6,182,212,0.3)] transition-all duration-300 group-hover:border-cyan-500/50">
+                        <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/5 to-blue-500/5 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                        
+                        <div className="relative z-10">
+                          <div className="flex items-center justify-between mb-6">
+                            <div className="w-16 h-16 bg-gradient-to-br from-cyan-500 to-blue-600 rounded-2xl flex items-center justify-center shadow-[0_0_30px_rgba(6,182,212,0.3)]">
+                              <Brain className="w-8 h-8 text-white" />
+                            </div>
+                            <span className="px-3 py-1 bg-gradient-to-r from-purple-500/20 to-pink-500/20 border border-purple-500/30 rounded-full text-purple-300 text-sm font-medium">
+                              {service.type}
+                            </span>
                           </div>
-                          <span className="px-3 py-1 bg-gradient-to-r from-purple-500/20 to-pink-500/20 border border-purple-500/30 rounded-full text-purple-300 text-sm font-medium">
-                            {service.type}
-                          </span>
-                        </div>
-                        
-                        <h3 className="text-xl font-bold text-white mb-3 group-hover:text-cyan-400 transition-colors duration-300">
-                          {service.name}
-                        </h3>
-                        
-                        <p className="text-gray-400 text-sm leading-relaxed mb-4">
-                          {service.description.substring(0, 120)}...
-                        </p>
-                        
-                        <div className="flex items-center justify-between">
-                          <span className="text-2xl font-bold text-cyan-400">
-                            {service.pricing.starter}
-                          </span>
-                          <ArrowRight className="w-5 h-5 text-gray-500 group-hover:text-cyan-400 transition-colors duration-300" />
+                          
+                          <h3 className="text-xl font-bold text-white mb-3 group-hover:text-cyan-400 transition-colors duration-300">
+                            {service.name}
+                          </h3>
+                          
+                          <p className="text-gray-400 text-sm leading-relaxed mb-4">
+                            {service.description.substring(0, 120)}...
+                          </p>
+                          
+                          <div className="flex items-center justify-between">
+                            <span className="text-2xl font-bold text-cyan-400">
+                              {service.pricing.starter}
+                            </span>
+                            <ArrowRight className="w-5 h-5 text-gray-500 group-hover:text-cyan-400 transition-colors duration-300" />
+                          </div>
                         </div>
                       </div>
-                    </div>
-                  </motion.div>
-                ))}
+                    </motion.div>
+                  ))
+                )}
               </div>
             </motion.div>
           </div>
