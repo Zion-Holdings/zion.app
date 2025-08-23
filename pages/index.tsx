@@ -379,10 +379,7 @@ const HomePage: React.FC = () => {
                   <li>• Health monitoring & alerts</li>
                   <li>• Geographic distribution</li>
                 </ul>
-                <div className="text-cyan-400 text-sm font-semibold mb-3">
-                  Status: Multi-layer Protection Active
-                </div>
-                <Link href="/automation" className="text-cyan-400 hover:text-cyan-300 text-sm font-semibold">
+                <Link href="/README_ULTIMATE_REDUNDANCY_V2.md" className="text-cyan-400 hover:text-cyan-300 text-sm font-semibold">
                   Explore Redundancy Systems →
                 </Link>
               </div>
@@ -397,10 +394,7 @@ const HomePage: React.FC = () => {
                   <li>• Marketing & social media sync</li>
                   <li>• Continuous improvement</li>
                 </ul>
-                <div className="text-fuchsia-400 text-sm font-semibold mb-3">
-                  Status: Continuously Learning
-                </div>
-                <Link href="/automation" className="text-fuchsia-400 hover:text-fuchsia-300 text-sm font-semibold">
+                <Link href="/AI_CONTENT_FACTORY_README.md" className="text-fuchsia-400 hover:text-fuchsia-300 text-sm font-semibold">
                   Explore AI Systems →
                 </Link>
               </motion.div>
@@ -419,10 +413,7 @@ const HomePage: React.FC = () => {
                   <li>• Security scanning</li>
                   <li>• Performance optimization</li>
                 </ul>
-                <div className="text-green-400 text-sm font-semibold mb-3">
-                  Status: Self-Optimizing
-                </div>
-                <Link href="/automation" className="text-green-400 hover:text-green-300 text-sm font-semibold">
+                <Link href="/README_BUILD_ORCHESTRATION.md" className="text-green-400 hover:text-green-300 text-sm font-semibold">
                   Explore Build Systems →
                 </Link>
               </div>
