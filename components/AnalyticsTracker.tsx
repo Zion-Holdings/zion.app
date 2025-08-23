@@ -289,15 +289,28 @@ interface LayoutShift extends PerformanceEntry {
 }
 
 interface LayoutShiftSource {
-  node?: any;
-  currentRect?: any;
-  previousRect?: any;
+  node?: Element;
+  currentRect?: DOMRectReadOnly;
+  previousRect?: DOMRectReadOnly;
+}
+
+// DOM type definitions
+declare global {
+  interface EventListener {
+    (event: Event): void;
+  }
+  
+  interface EventTarget {
+    addEventListener(type: string, listener: EventListener): void;
+    removeEventListener(type: string, listener: EventListener): void;
+    dispatchEvent(event: Event): boolean;
+  }
 }
 
 // Extend Window interface for gtag
 declare global {
   interface Window {
-    gtag: (...args: unknown[]) => void;
+    gtag?: (...args: unknown[]) => void;
   }
 }
 

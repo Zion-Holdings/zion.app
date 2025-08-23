@@ -10,12 +10,10 @@ import {
   Sparkles as SparklesIcon, Zap as ZapIcon, Target as TargetIcon, Atom as AtomIcon, Brain as BrainIcon
 } from 'lucide-react';
 
-const contactInfo = {
-  mobile: '+1 302 464 0950',
-  email: 'kleber@ziontechgroup.com',
-  address: '364 E Main St STE 1008 Middletown DE 19709',
-  website: 'https://ziontechgroup.com'
-};
+export default function UltraFuturisticFooter2036() {
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
 
 const footerSections = [
   {
@@ -358,4 +356,3 @@ export default function UltraFuturisticFooter2036() {
   );
 };
 
-export default UltraFuturisticFooter2036;

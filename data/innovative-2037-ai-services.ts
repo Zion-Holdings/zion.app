@@ -1,3 +1,5 @@
+import { ServiceVariant } from '../types/service-variants';
+
 export interface Innovative2037AIService {
   id: string;
   name: string;
@@ -24,6 +26,7 @@ export interface Innovative2037AIService {
   competitors: string[];
   marketSize: string;
   growthRate: string;
+  variant: ServiceVariant;
   contactInfo: {
     mobile: string;
     email: string;
@@ -41,10 +44,10 @@ export interface Innovative2037AIService {
 export const innovative2037AIServices: Innovative2037AIService[] = [
   // AI-Powered Predictive Maintenance
   {
-    id: 'ai-predictive-maintenance',
-    name: 'AI-Powered Predictive Maintenance',
-    tagline: 'Predict equipment failures before they happen',
-    price: '$1,999',
+    id: 'ai-consciousness-evolution-2037',
+    name: 'AI Consciousness Evolution Platform 2037',
+    tagline: 'Advanced AI consciousness development and ethical training',
+    price: '$8,999',
     period: '/month',
     description: 'Advanced predictive maintenance platform that uses machine learning and IoT sensors to predict equipment failures, optimize maintenance schedules, and reduce downtime.',
     features: [
@@ -88,15 +91,15 @@ export const innovative2037AIServices: Innovative2037AIService[] = [
     launchDate: '2024-06-01',
     customers: 280,
     rating: 4.8,
-    reviews: 167
+    reviews: 3
   },
 
   // AI-Powered Financial Risk Management
   {
-    id: 'ai-financial-risk-management',
-    name: 'AI Financial Risk Management',
-    tagline: 'Intelligent financial risk assessment and mitigation',
-    price: '$3,999',
+    id: 'quantum-ai-hybrid-computing-2037',
+    name: 'Quantum AI Hybrid Computing Platform 2037',
+    tagline: 'Seamless integration of quantum computing and AI for breakthrough solutions',
+    price: '$12,999',
     period: '/month',
     description: 'Comprehensive financial risk management platform that uses artificial intelligence to assess, monitor, and mitigate financial risks in real-time.',
     features: [
@@ -140,15 +143,15 @@ export const innovative2037AIServices: Innovative2037AIService[] = [
     launchDate: '2024-07-01',
     customers: 150,
     rating: 4.9,
-    reviews: 89
+    reviews: 8
   },
 
   // AI-Powered Supply Chain Optimization
   {
-    id: 'ai-supply-chain-optimization',
-    name: 'AI Supply Chain Optimization',
-    tagline: 'Optimize supply chains with intelligent AI insights',
-    price: '$2,499',
+    id: 'autonomous-ai-research-assistant-2037',
+    name: 'Autonomous AI Research Assistant 2037',
+    tagline: 'Fully autonomous AI that conducts research and generates insights',
+    price: '$3,999',
     period: '/month',
     description: 'Advanced supply chain optimization platform that uses artificial intelligence to optimize inventory, reduce costs, and improve supply chain efficiency.',
     features: [
@@ -190,17 +193,17 @@ export const innovative2037AIServices: Innovative2037AIService[] = [
     realImplementation: true,
     implementationDetails: 'Comprehensive supply chain platform with AI-powered optimization, real-time monitoring, and advanced analytics capabilities.',
     launchDate: '2024-08-01',
-    customers: 320,
-    rating: 4.7,
-    reviews: 198
+    customers: 25,
+    rating: 4.8,
+    reviews: 18
   },
 
   // AI-Powered Customer Experience Optimization
   {
-    id: 'ai-customer-experience-optimization',
-    name: 'AI Customer Experience Optimization',
-    tagline: 'Optimize customer experience with intelligent AI insights',
-    price: '$1,499',
+    id: 'ai-emotional-intelligence-training-2037',
+    name: 'AI Emotional Intelligence Training Platform 2037',
+    tagline: 'Advanced AI training in emotional intelligence and empathy',
+    price: '$2,999',
     period: '/month',
     description: 'Advanced customer experience optimization platform that uses artificial intelligence to analyze customer behavior, optimize touchpoints, and improve satisfaction.',
     features: [
@@ -242,17 +245,17 @@ export const innovative2037AIServices: Innovative2037AIService[] = [
     realImplementation: true,
     implementationDetails: 'Comprehensive customer experience platform with AI-powered insights, real-time optimization, and advanced analytics.',
     launchDate: '2024-09-01',
-    customers: 450,
-    rating: 4.8,
-    reviews: 234
+    customers: 18,
+    rating: 4.7,
+    reviews: 12
   },
 
-  // AI-Powered Cybersecurity Threat Detection
+  // AI Autonomous Ecosystem Manager
   {
-    id: 'ai-cybersecurity-threat-detection',
-    name: 'AI Cybersecurity Threat Detection',
-    tagline: 'Detect and prevent cyber threats with intelligent AI',
-    price: '$2,999',
+    id: 'ai-autonomous-ecosystem-manager-2037',
+    name: 'AI Autonomous Ecosystem Manager 2037',
+    tagline: 'Fully autonomous management of complex business ecosystems',
+    price: '$6,999',
     period: '/month',
     description: 'Advanced cybersecurity platform that uses artificial intelligence to detect, analyze, and prevent cyber threats in real-time.',
     features: [
@@ -292,10 +295,10 @@ export const innovative2037AIServices: Innovative2037AIService[] = [
       website: 'https://ziontechgroup.com'
     },
     realImplementation: true,
-    implementationDetails: 'Enterprise cybersecurity platform with AI-powered threat detection, real-time monitoring, and comprehensive security tools.',
-    launchDate: '2024-10-01',
-    customers: 280,
-    rating: 4.9,
-    reviews: 156
+    implementationDetails: 'Advanced autonomous ecosystem management platform with comprehensive optimization capabilities and intelligent relationship management.',
+    launchDate: '2024-07-15',
+    customers: 22,
+    rating: 4.8,
+    reviews: 16
   }
 ];

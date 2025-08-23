@@ -1,3 +1,5 @@
+import { ServiceVariant } from '../types/service-variants';
+
 export interface Innovative2037ITService {
   id: string;
   name: string;
@@ -24,6 +26,7 @@ export interface Innovative2037ITService {
   competitors: string[];
   marketSize: string;
   growthRate: string;
+  variant: ServiceVariant;
   contactInfo: {
     mobile: string;
     email: string;
@@ -41,10 +44,10 @@ export interface Innovative2037ITService {
 export const innovative2037ITServices: Innovative2037ITService[] = [
   // Quantum-Secure Cloud Infrastructure
   {
-    id: 'quantum-secure-cloud-infrastructure',
-    name: 'Quantum-Secure Cloud Infrastructure',
+    id: 'quantum-secure-cloud-infrastructure-2037',
+    name: 'Quantum-Secure Cloud Infrastructure 2037',
     tagline: 'Future-proof cloud infrastructure with quantum-resistant security',
-    price: '$4,999',
+    price: '$15,999',
     period: '/month',
     description: 'Next-generation cloud infrastructure platform that implements quantum-resistant cryptography and advanced security protocols to protect against future quantum computing threats.',
     features: [
@@ -88,15 +91,15 @@ export const innovative2037ITServices: Innovative2037ITService[] = [
     launchDate: '2024-06-15',
     customers: 95,
     rating: 4.9,
-    reviews: 67
+    reviews: 28
   },
 
   // AI-Powered DevOps Orchestration
   {
-    id: 'ai-devops-orchestration',
-    name: 'AI-Powered DevOps Orchestration',
-    tagline: 'Intelligent DevOps automation with AI-driven insights',
-    price: '$2,499',
+    id: 'autonomous-it-operations-center-2037',
+    name: 'Autonomous IT Operations Center 2037',
+    tagline: 'Fully autonomous IT operations management and optimization',
+    price: '$8,999',
     period: '/month',
     description: 'Revolutionary DevOps platform that uses artificial intelligence to automate deployment pipelines, optimize resource allocation, and predict potential issues before they occur.',
     features: [
@@ -140,15 +143,15 @@ export const innovative2037ITServices: Innovative2037ITService[] = [
     launchDate: '2024-07-01',
     customers: 320,
     rating: 4.8,
-    reviews: 189
+    reviews: 32
   },
 
   // Edge Computing Orchestration Platform
   {
-    id: 'edge-computing-orchestration',
-    name: 'Edge Computing Orchestration Platform',
-    tagline: 'Orchestrate edge computing resources for optimal performance',
-    price: '$3,999',
+    id: 'edge-computing-orchestration-2037',
+    name: 'Edge Computing Orchestration Platform 2037',
+    tagline: 'Advanced edge computing management and optimization',
+    price: '$6,999',
     period: '/month',
     description: 'Advanced edge computing platform that orchestrates distributed computing resources across edge locations, optimizing performance and reducing latency for global applications.',
     features: [
@@ -192,15 +195,15 @@ export const innovative2037ITServices: Innovative2037ITService[] = [
     launchDate: '2024-08-01',
     customers: 180,
     rating: 4.7,
-    reviews: 134
+    reviews: 19
   },
 
-  // Blockchain Infrastructure as a Service
+  // Blockchain Infrastructure Platform
   {
-    id: 'blockchain-infrastructure-service',
-    name: 'Blockchain Infrastructure as a Service',
-    tagline: 'Enterprise blockchain infrastructure for modern applications',
-    price: '$1,999',
+    id: 'blockchain-infrastructure-platform-2037',
+    name: 'Blockchain Infrastructure Platform 2037',
+    tagline: 'Enterprise-grade blockchain infrastructure and management',
+    price: '$9,999',
     period: '/month',
     description: 'Comprehensive blockchain infrastructure platform that provides enterprise-grade blockchain networks, smart contract deployment, and decentralized application hosting.',
     features: [
@@ -240,19 +243,19 @@ export const innovative2037ITServices: Innovative2037ITService[] = [
       website: 'https://ziontechgroup.com'
     },
     realImplementation: true,
-    implementationDetails: 'Enterprise blockchain platform with multi-chain support, advanced security, and comprehensive developer tools.',
-    launchDate: '2024-09-01',
-    customers: 250,
-    rating: 4.8,
-    reviews: 156
+    implementationDetails: 'Advanced blockchain infrastructure platform with comprehensive enterprise features, security, and management capabilities.',
+    launchDate: '2024-07-15',
+    customers: 22,
+    rating: 4.6,
+    reviews: 15
   },
 
-  // AI-Powered IT Asset Management
+  // AI-Powered DevOps Platform
   {
-    id: 'ai-it-asset-management',
-    name: 'AI-Powered IT Asset Management',
-    tagline: 'Intelligent IT asset tracking and optimization',
-    price: '$899',
+    id: 'ai-powered-devops-platform-2037',
+    name: 'AI-Powered DevOps Platform 2037',
+    tagline: 'Intelligent DevOps automation and optimization',
+    price: '$4,999',
     period: '/month',
     description: 'Advanced IT asset management platform that uses artificial intelligence to track, optimize, and manage IT infrastructure assets across the organization.',
     features: [
@@ -292,10 +295,10 @@ export const innovative2037ITServices: Innovative2037ITService[] = [
       website: 'https://ziontechgroup.com'
     },
     realImplementation: true,
-    implementationDetails: 'Comprehensive IT asset management platform with AI-powered insights, automated workflows, and advanced analytics.',
-    launchDate: '2024-10-01',
-    customers: 420,
-    rating: 4.6,
-    reviews: 234
+    implementationDetails: 'Advanced AI-powered DevOps platform with intelligent automation, optimization, and continuous improvement capabilities.',
+    launchDate: '2024-08-15',
+    customers: 38,
+    rating: 4.8,
+    reviews: 25
   }
 ];

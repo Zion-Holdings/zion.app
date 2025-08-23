@@ -15,6 +15,8 @@ import {
   SignalLow
 } from 'lucide-react';
 
+// TouchEvent types are already available in the DOM
+
 interface MobileOptimizerProps {
   children: React.ReactNode;
 }
@@ -41,35 +43,115 @@ const MobileOptimizer: React.FC<MobileOptimizerProps> = ({ children }) => {
       setTouchSupported('ontouchstart' in window || navigator.maxTouchPoints > 0);
     };
 
-    const checkConnection = () => {
-      if ('connection' in navigator) {
-        const connection = (navigator as any).connection;
-        setConnectionType(connection.effectiveType || connection.type || 'unknown');
-      }
+    // Initial detection
+    detectDevice();
+    
+    // Listen for resize events
+    window.addEventListener('resize', detectDevice);
+    window.addEventListener('orientationchange', detectDevice);
+    
+    // Network information
+    if ('connection' in navigator) {
+      const connection = (navigator as { connection: { effectiveType?: string; downlink?: number; rtt?: number; addEventListener: (event: string, handler: () => void) => void; removeEventListener: (event: string, handler: () => void) => void } }).connection;
+      const updateNetworkInfo = () => {
+        setNetworkInfo({
+          effectiveType: connection.effectiveType || 'unknown',
+          downlink: connection.downlink || 0,
+          rtt: connection.rtt || 0
+        });
+      };
+      
+      updateNetworkInfo();
+      connection.addEventListener('change', updateNetworkInfo);
+      
+      return () => {
+        connection.removeEventListener('change', updateNetworkInfo);
+      };
+    }
+    
+    return () => {
+      window.removeEventListener('resize', detectDevice);
+      window.removeEventListener('orientationchange', detectDevice);
+    };
+  }, []);
+
+  // Apply mobile-specific optimizations
+  useEffect(() => {
+    const root = document.documentElement;
+    
+    // Add device-specific classes
+    root.classList.remove('mobile-device', 'tablet-device', 'desktop-device');
+    root.classList.add(`${deviceType}-device`);
+    
+    // Add orientation classes
+    root.classList.remove('portrait', 'landscape');
+    root.classList.add(orientation);
+    
+    // Add touch support classes
+    if (touchSupport) {
+      root.classList.add('touch-device');
+    } else {
+      root.classList.remove('touch-device');
+    }
+    
+    // Apply mobile-specific CSS variables
+    if (deviceType === 'mobile') {
+      root.style.setProperty('--mobile-padding', '1rem');
+      root.style.setProperty('--mobile-font-size', '0.875rem');
+      root.style.setProperty('--mobile-button-height', '3rem');
+    } else if (deviceType === 'tablet') {
+      root.style.setProperty('--tablet-padding', '1.5rem');
+      root.style.setProperty('--tablet-font-size', '1rem');
+      root.style.setProperty('--tablet-button-height', '3.5rem');
+    } else {
+      root.style.setProperty('--desktop-padding', '2rem');
+      root.style.setProperty('--desktop-font-size', '1.125rem');
+      root.style.setProperty('--desktop-button-height', '4rem');
+    }
+  }, [deviceType, orientation, touchSupport]);
+
+  // Touch gesture handling
+  useEffect(() => {
+    if (!touchSupport) return;
+
+    let startY = 0;
+    let startX = 0;
+    let isScrolling = false;
+
+    const handleTouchStart = (e: TouchEvent) => {
+      startY = e.touches[0].clientY;
+      startX = e.touches[0].clientX;
+      isScrolling = false;
     };
 
-    const checkBattery = async () => {
-      if ('getBattery' in navigator) {
-        try {
-          const battery = await (navigator as any).getBattery();
-          setBatteryLevel(battery.level * 100);
-          setIsCharging(battery.charging);
-          
-          battery.addEventListener('levelchange', () => {
-            setBatteryLevel(battery.level * 100);
-          });
-          
-          battery.addEventListener('chargingchange', () => {
-            setIsCharging(battery.charging);
-          });
-        } catch (error) {
-          console.log('Battery API not supported');
+    const handleTouchMove = (e: TouchEvent) => {
+      if (!isScrolling) {
+        const deltaY = Math.abs(e.touches[0].clientY - startY);
+        const deltaX = Math.abs(e.touches[0].clientX - startX);
+        
+        if (deltaY > deltaX && deltaY > 10) {
+          isScrolling = true;
         }
       }
     };
 
-    const handleResize = () => {
-      setIsLandscape(window.innerWidth > window.innerHeight);
+    const handleTouchEnd = (e: TouchEvent) => {
+      if (!isScrolling) {
+        const deltaY = e.changedTouches[0].clientY - startY;
+        const deltaX = e.changedTouches[0].clientX - startX;
+        
+        // Swipe up gesture
+        if (deltaY < -50 && Math.abs(deltaX) < 100) {
+          // Handle swipe up
+          document.dispatchEvent(new Event('swipeUp'));
+        }
+        
+        // Swipe down gesture
+        if (deltaY > 50 && Math.abs(deltaX) < 100) {
+          // Handle swipe down
+          document.dispatchEvent(new Event('swipeDown'));
+        }
+      }
     };
 
     const handleOrientationChange = () => {

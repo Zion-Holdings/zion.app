@@ -4,7 +4,7 @@ import {
   Mail, Phone, MapPin, 
   Facebook, Twitter, Linkedin, Github, Youtube,
   Heart, Shield, Users, Award, TrendingUp,
-  CheckCircle, Star, Clock, Target
+  ExternalLink, ChevronRight, Globe, ArrowUp
 } from 'lucide-react';
 import Link from 'next/link';
 
@@ -24,12 +24,24 @@ const footerSections: FooterSection[] = [
   {
     title: 'Services',
     links: [
-      { label: 'AI & Machine Learning', href: '/ai-services', description: 'Advanced AI solutions' },
-      { label: 'Quantum Computing', href: '/quantum-computing', description: 'Next-gen quantum tech' },
-      { label: 'Space Technology', href: '/space-tech', description: 'Innovative space solutions' },
-      { label: 'Cybersecurity', href: '/cybersecurity', description: 'Enterprise security' },
-      { label: 'Cloud Solutions', href: '/cloud-platform', description: 'Scalable cloud infrastructure' },
+      { label: 'AI & Machine Learning', href: '/services?category=ai-ml', description: 'Advanced AI solutions' },
+      { label: 'Quantum Computing', href: '/services?category=quantum', description: 'Next-gen quantum tech' },
+      { label: 'Space Technology', href: '/services?category=space-tech', description: 'Innovative space solutions' },
+      { label: 'Cybersecurity', href: '/services?category=cybersecurity', description: 'Enterprise security' },
+      { label: 'Enterprise IT', href: '/services?category=enterprise-it', description: 'Enterprise infrastructure' },
+      { label: 'Micro SAAS', href: '/services?category=micro-saas', description: 'Business solutions' },
       { label: 'View All Services', href: '/services', description: 'Complete service portfolio' }
+    ]
+  },
+  {
+    title: 'Solutions',
+    links: [
+      { label: 'Healthcare & Biotech', href: '/solutions/healthcare', description: 'Medical technology' },
+      { label: 'Financial Services', href: '/solutions/financial', description: 'Fintech solutions' },
+      { label: 'Government & Defense', href: '/solutions/government', description: 'Public sector solutions' },
+      { label: 'Retail & E-commerce', href: '/solutions/retail', description: 'Digital commerce' },
+      { label: 'Manufacturing', href: '/solutions/manufacturing', description: 'Industry 4.0' },
+      { label: 'Education', href: '/solutions/education', description: 'EdTech solutions' }
     ]
   },
   {
@@ -53,51 +65,41 @@ const footerSections: FooterSection[] = [
       { label: 'API Reference', href: '/api-documentation', description: 'Developer resources' },
       { label: 'Support', href: '/support', description: 'Help & assistance' }
     ]
-  },
-  {
-    title: 'Industries',
-    links: [
-      { label: 'Healthcare', href: '/healthcare-solutions', description: 'Medical technology' },
-      { label: 'Finance', href: '/financial-solutions', description: 'Fintech solutions' },
-      { label: 'Manufacturing', href: '/manufacturing-ai-solutions', description: 'Industry 4.0' },
-      { label: 'Retail', href: '/retail-technology-solutions', description: 'E-commerce tech' },
-      { label: 'Government', href: '/government-technology-solutions', description: 'Public sector' },
-      { label: 'Education', href: '/education-technology-solutions', description: 'EdTech solutions' }
-    ]
   }
 ];
 
 const socialLinks = [
-  { icon: <Linkedin className="w-5 h-5" />, href: 'https://linkedin.com/company/ziontechgroup', label: 'LinkedIn', external: true, color: 'hover:text-blue-400' },
-  { icon: <Twitter className="w-5 h-5" />, href: 'https://twitter.com/ziontechgroup', label: 'Twitter', external: true, color: 'hover:text-sky-400' },
-  { icon: <Github className="w-5 h-5" />, href: 'https://github.com/ziontechgroup', label: 'GitHub', external: true, color: 'hover:text-gray-300' },
-  { icon: <Youtube className="w-5 h-5" />, href: 'https://youtube.com/@ziontechgroup', label: 'YouTube', external: true, color: 'hover:text-red-400' },
-  { icon: <Facebook className="w-5 h-5" />, href: 'https://facebook.com/ziontechgroup', label: 'Facebook', external: true, color: 'hover:text-blue-500' }
+  { icon: <Linkedin className="w-5 h-5" />, href: 'https://linkedin.com/company/ziontechgroup', label: 'LinkedIn', external: true },
+  { icon: <Twitter className="w-5 h-5" />, href: 'https://twitter.com/ziontechgroup', label: 'Twitter', external: true },
+  { icon: <Github className="w-5 h-5" />, href: 'https://github.com/ziontechgroup', label: 'GitHub', external: true },
+  { icon: <Youtube className="w-5 h-5" />, href: 'https://youtube.com/@ziontechgroup', label: 'YouTube', external: true },
+  { icon: <Facebook className="w-5 h-5" />, href: 'https://facebook.com/ziontechgroup', label: 'Facebook', external: true }
 ];
 
 const contactInfo = {
-  phone: '+1 (302) 464-0950',
-  email: 'contact@ziontechgroup.com',
+  phone: '+1 302 464 0950',
+  email: 'kleber@ziontechgroup.com',
   address: '364 E Main St STE 1008, Middletown, DE 19709',
   website: 'https://ziontechgroup.com'
 };
 
 const UltraAdvancedFuturisticFooter2025: React.FC = () => {
-  const currentYear = new Date().getFullYear();
+  const [email, setEmail] = useState('');
+  const [isSubscribing, setIsSubscribing] = useState(false);
+  const [subscriptionStatus, setSubscriptionStatus] = useState<'idle' | 'success' | 'error'>('idle');
+  const [expandedSections, setExpandedSections] = useState<Set<string>>(new Set());
 
-  const toggleSection = useCallback((title: string) => {
-    setExpandedSections(prev => {
-      const newExpanded = new Set(prev);
-      if (newExpanded.has(title)) {
-        newExpanded.delete(title);
-      } else {
-        newExpanded.add(title);
-      }
-      return newExpanded;
-    });
-  }, []);
+  const toggleSection = (title: string) => {
+    const newExpanded = new Set(expandedSections);
+    if (newExpanded.has(title)) {
+      newExpanded.delete(title);
+    } else {
+      newExpanded.add(title);
+    }
+    setExpandedSections(newExpanded);
+  };
 
-  const handleNewsletterSubmit = useCallback(async (e: React.FormEvent) => {
+  const handleSubscribe = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!email.trim()) return;
 
@@ -113,8 +115,6 @@ const UltraAdvancedFuturisticFooter2025: React.FC = () => {
     try {
       // Simulate API call
       await new Promise(resolve => setTimeout(resolve, 1000));
-      
-      // Here you would typically make an API call to subscribe
       setSubscriptionStatus('success');
       setEmail('');
       
@@ -127,274 +127,219 @@ const UltraAdvancedFuturisticFooter2025: React.FC = () => {
     }
   };
 
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
+  const handleKeyDown = (event: React.KeyboardEvent, action: () => void) => {
+    if (event.key === 'Enter' || event.key === ' ') {
+      event.preventDefault();
+      action();
+    }
+  };
+
   return (
-    <motion.footer 
-      className="bg-gradient-to-b from-gray-900/95 to-gray-800/95 backdrop-blur-md border-t border-gray-700/50 relative overflow-hidden" 
-      role="contentinfo" 
-      aria-label="Zion Tech Group Footer"
-      initial="hidden"
-      whileInView="visible"
-      viewport={{ once: true }}
-      variants={containerVariants}
-    >
-      {/* Background decorative elements */}
-      <div className="absolute inset-0 -z-10">
-        <div className="absolute top-20 left-20 w-72 h-72 bg-cyan-500/5 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-20 right-20 w-96 h-96 bg-blue-500/5 rounded-full blur-3xl"></div>
-        <div className="absolute top-1/2 left-1/2 w-64 h-64 bg-purple-500/5 rounded-full blur-3xl"></div>
-      </div>
+    <footer className="bg-gray-900 text-gray-300 relative overflow-hidden" role="contentinfo">
+      {/* Background Elements */}
+      <div className="absolute inset-0 bg-[linear-gradient(rgba(6,182,212,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(6,182,212,0.02)_1px,transparent_1px)] bg-[size:100px_100px]"></div>
+      
+      {/* Top Border */}
+      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-cyan-400 to-transparent"></div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-12">
-        {/* Enhanced Company Info Section */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16">
-          <motion.div 
-            className="space-y-6"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-          >
-            <div className="flex items-center space-x-3">
-              <div className="w-12 h-12 bg-gradient-to-r from-cyan-400 to-blue-500 rounded-xl flex items-center justify-center">
-                <Globe className="w-7 h-7 text-white" />
-              </div>
-              <div>
-                <h2 className="text-2xl font-bold bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
-                  Zion Tech Group
-                </h2>
-                <p className="text-sm text-gray-400">Pioneering the future of technology</p>
-              </div>
-            </div>
-            
-            <p className="text-gray-300 text-lg leading-relaxed max-w-md">
-              Empowering businesses with cutting-edge AI, quantum computing, and innovative technology solutions that drive transformation and unlock human potential.
-            </p>
-
-            {/* Enhanced Stats */}
-            <div className="grid grid-cols-3 gap-6 pt-6">
-              {[
-                { icon: Users, value: "500+", label: "Clients", color: "cyan" },
-                { icon: Award, value: "98%", label: "Satisfaction", color: "blue" },
-                { icon: TrendingUp, value: "99.9%", label: "Uptime", color: "purple" }
-              ].map((stat, index) => (
-                <motion.div 
-                  key={stat.label}
-                  className="text-center"
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.6, delay: index * 0.1 }}
-                >
-                  <div className={`w-12 h-12 bg-gray-800/50 rounded-lg flex items-center justify-center mx-auto mb-3 group-hover:bg-${stat.color}-500/20 transition-all duration-300`}>
-                    <stat.icon className={`w-6 h-6 text-${stat.color}-400`} />
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        {/* Main Footer Content */}
+        <div className="py-16">
+          <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-5 gap-8">
+            {/* Company Info & Newsletter */}
+            <div className="lg:col-span-2 xl:col-span-2">
+              <div className="mb-8">
+                <Link href="/" className="inline-flex items-center space-x-2 group" aria-label="Zion Tech Group - Home">
+                  <div className="w-12 h-12 bg-gradient-to-r from-cyan-400 to-blue-500 rounded-xl flex items-center justify-center group-hover:from-cyan-500 group-hover:to-blue-600 transition-all duration-300">
+                    <Shield className="w-6 h-6 text-white" aria-hidden="true" />
                   </div>
-                  <div className="text-2xl font-bold text-white mb-1">{stat.value}</div>
-                  <div className="text-sm text-gray-400">{stat.label}</div>
-                </motion.div>
-              ))}
-            </div>
-          </motion.div>
+                  <span className="text-2xl font-bold bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent group-hover:from-cyan-500 group-hover:to-blue-600 transition-all duration-300">
+                    Zion Tech Group
+                  </span>
+                </Link>
+                
+                <p className="mt-6 text-lg text-gray-400 leading-relaxed max-w-md">
+                  Pioneering the future of technology with quantum computing, autonomous AI, and revolutionary solutions that drive business transformation.
+                </p>
+              </div>
 
-          {/* Enhanced Newsletter Section */}
-          <motion.div 
-            className="space-y-6"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-          >
-            <div>
-              <h3 className="text-xl font-semibold text-white mb-2">Stay Updated</h3>
-              <p className="text-gray-400">Get the latest insights on AI, quantum computing, and emerging technologies delivered to your inbox.</p>
-            </div>
-
-            {/* Newsletter Benefits */}
-            <div className="space-y-3">
-              {[
-                "Weekly industry insights and trends",
-                "Exclusive access to whitepapers and research",
-                "Early access to new service announcements",
-                "Invitations to exclusive webinars and events"
-              ].map((benefit, index) => (
-                <motion.div 
-                  key={index}
-                  className="flex items-center gap-3 text-sm text-gray-300"
-                  initial={{ opacity: 0, x: -20 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.4, delay: 0.3 + index * 0.1 }}
-                >
-                  <CheckCircle className="w-4 h-4 text-emerald-400 flex-shrink-0" />
-                  <span>{benefit}</span>
-                </motion.div>
-              ))}
-            </div>
-
-            <form className="space-y-4" onSubmit={handleNewsletterSubmit}>
-              <div className="relative">
-                <input 
-                  type="email" 
-                  placeholder="Enter your email address" 
-                  className="w-full px-4 py-3 bg-gray-800/50 border border-gray-700/50 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-cyan-500/50 focus:border-cyan-500/50 transition-all duration-200" 
-                  required 
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                />
-                <button 
-                  type="submit" 
-                  className="absolute right-2 top-1/2 transform -translate-y-1/2 p-2 bg-gradient-to-r from-cyan-500 to-blue-600 text-white rounded-lg hover:from-cyan-600 hover:to-blue-700 transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
-                  disabled={isSubscribing}
-                  aria-label="Subscribe to newsletter"
-                  whileHover={{ scale: 1.02 }}
-                  whileTap={{ scale: 0.98 }}
-                >
-                  {isSubscribing ? (
-                    <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
-                  ) : (
-                    <>
-                      Subscribe
-                      <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                    </>
-                  )}
-                </motion.button>
-              </form>
-
-              {/* Subscription Status */}
-              <AnimatePresence>
-                {subscriptionStatus === 'success' && (
-                  <motion.div
-                    initial={{ opacity: 0, y: 10 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    exit={{ opacity: 0, y: -10 }}
-                    className="text-emerald-400 text-sm flex items-center gap-2"
+              {/* Newsletter Subscription */}
+              <div className="mb-8">
+                <h3 className="text-lg font-semibold text-white mb-4">Stay Updated</h3>
+                <form onSubmit={handleSubscribe} className="space-y-3">
+                  <div className="relative">
+                    <Mail className="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-400" aria-hidden="true" />
+                    <input
+                      type="email"
+                      value={email}
+                      onChange={(e) => setEmail(e.target.value)}
+                      placeholder="Enter your email"
+                      className="w-full pl-10 pr-4 py-3 bg-gray-800/50 border border-gray-600/50 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-cyan-400 focus:border-transparent transition-all duration-200"
+                      aria-label="Email address for newsletter subscription"
+                      required
+                    />
+                  </div>
+                  <button
+                    type="submit"
+                    disabled={isSubscribing}
+                    className="w-full px-6 py-3 bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-medium rounded-lg hover:from-cyan-600 hover:to-blue-700 disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-cyan-400 focus:ring-offset-2 focus:ring-offset-gray-900"
+                    aria-label={isSubscribing ? 'Subscribing to newsletter...' : 'Subscribe to newsletter'}
                   >
-                    <CheckCircle className="w-4 h-4" />
-                    Successfully subscribed! Welcome to the future.
-                  </motion.div>
-                )}
-                {subscriptionStatus === 'error' && (
-                  <motion.div
-                    initial={{ opacity: 0, y: 10 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    exit={{ opacity: 0, y: -10 }}
-                    className="text-red-400 text-sm flex items-center gap-2"
-                  >
-                    <div className="flex items-center gap-2">
-                      <AlertCircle className="w-5 h-5 text-red-400" />
-                      <p className="text-red-400 text-sm font-medium">Something went wrong. Please try again.</p>
-                    </div>
-                  </motion.div>
-                )}
-              </AnimatePresence>
-            </motion.div>
-          </motion.div>
-
-        {/* Enhanced Footer Links */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
-          {footerSections.map((section, sectionIndex) => (
-            <motion.div 
-              key={section.title}
-              className="space-y-4"
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: sectionIndex * 0.1 }}
-            >
-              <h3 className="text-lg font-semibold text-white">{section.title}</h3>
-              <ul className="space-y-3">
-                {section.links.map((link, linkIndex) => (
-                  <motion.li 
-                    key={link.label}
-                    initial={{ opacity: 0, x: -20 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.4, delay: sectionIndex * 0.1 + linkIndex * 0.05 }}
-                  >
-                    <Link 
-                      href={link.href} 
-                      className="text-gray-400 hover:text-cyan-400 transition-colors duration-200 group flex items-start gap-2"
-                    >
-                      <ArrowRight className="w-3 h-3 mt-1.5 text-gray-600 group-hover:text-cyan-400 transition-colors duration-200" />
-                      <div>
-                        <span className="block">{link.label}</span>
-                        <span className="text-xs text-gray-500 block mt-1">{link.description}</span>
-                      </div>
-                    </Link>
-                    {link.description && (
-                      <p className="text-xs text-gray-500 ml-0 mt-1 hidden lg:block leading-relaxed">
-                        {link.description}
-                      </p>
+                    {isSubscribing ? 'Subscribing...' : 'Subscribe'}
+                  </button>
+                  
+                  {/* Subscription Status */}
+                  <AnimatePresence>
+                    {subscriptionStatus === 'success' && (
+                      <motion.div
+                        initial={{ opacity: 0, y: 10 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        exit={{ opacity: 0, y: 10 }}
+                        className="text-green-400 text-sm text-center"
+                        role="status"
+                        aria-live="polite"
+                      >
+                        Successfully subscribed! Welcome to our community.
+                      </motion.div>
                     )}
-                  </motion.div>
-                ))}
-              </ul>
-            </motion.div>
-          ))}
+                    {subscriptionStatus === 'error' && (
+                      <motion.div
+                        initial={{ opacity: 0, y: 10 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        exit={{ opacity: 0, y: 10 }}
+                        className="text-red-400 text-sm text-center"
+                        role="status"
+                        aria-live="polite"
+                      >
+                        Something went wrong. Please try again.
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
+                </form>
+              </div>
+
+              {/* Contact Information */}
+              <div className="space-y-4">
+                <h3 className="text-lg font-semibold text-white mb-4">Contact Us</h3>
+                <div className="space-y-3">
+                  <div className="flex items-start space-x-3">
+                    <Phone className="w-5 h-5 text-cyan-400 mt-0.5 flex-shrink-0" aria-hidden="true" />
+                    <a 
+                      href={`tel:${contactInfo.phone}`}
+                      className="text-gray-400 hover:text-cyan-400 transition-colors duration-200"
+                      aria-label={`Call us at ${contactInfo.phone}`}
+                    >
+                      {contactInfo.phone}
+                    </a>
+                  </div>
+                  <div className="flex items-start space-x-3">
+                    <Mail className="w-5 h-5 text-cyan-400 mt-0.5 flex-shrink-0" aria-hidden="true" />
+                    <a 
+                      href={`mailto:${contactInfo.email}`}
+                      className="text-gray-400 hover:text-cyan-400 transition-colors duration-200"
+                      aria-label={`Email us at ${contactInfo.email}`}
+                    >
+                      {contactInfo.email}
+                    </a>
+                  </div>
+                  <div className="flex items-start space-x-3">
+                    <MapPin className="w-5 h-5 text-cyan-400 mt-0.5 flex-shrink-0" aria-hidden="true" />
+                    <address className="text-gray-400 not-italic">
+                      {contactInfo.address}
+                    </address>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Footer Sections */}
+            {footerSections.map((section) => (
+              <div key={section.title} className="space-y-4">
+                <button
+                  onClick={() => toggleSection(section.title)}
+                  onKeyDown={(e) => handleKeyDown(e, () => toggleSection(section.title))}
+                  className="flex items-center justify-between w-full text-left text-lg font-semibold text-white hover:text-cyan-400 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-cyan-400 focus:ring-offset-2 focus:ring-offset-gray-900 rounded-lg lg:hidden"
+                  aria-expanded={expandedSections.has(section.title)}
+                  aria-controls={`footer-section-${section.title}`}
+                >
+                  {section.title}
+                  <ChevronRight 
+                    className={`w-5 h-5 transition-transform duration-200 ${
+                      expandedSections.has(section.title) ? 'rotate-90' : ''
+                    }`} 
+                    aria-hidden="true" 
+                  />
+                </button>
+                
+                <h3 className="text-lg font-semibold text-white hidden lg:block">{section.title}</h3>
+                
+                <div 
+                  id={`footer-section-${section.title}`}
+                  className={`space-y-3 ${
+                    expandedSections.has(section.title) ? 'block' : 'hidden lg:block'
+                  }`}
+                >
+                  {section.links.map((link) => (
+                    <div key={link.label}>
+                      <Link
+                        href={link.href}
+                        className="group flex items-start space-x-2 text-gray-400 hover:text-cyan-400 transition-colors duration-200"
+                        aria-label={link.description ? `${link.label} - ${link.description}` : link.label}
+                      >
+                        <span className="group-hover:translate-x-1 transition-transform duration-200">
+                          {link.label}
+                        </span>
+                        {link.external && (
+                          <ExternalLink className="w-4 h-4 text-gray-500 group-hover:text-cyan-400 transition-colors duration-200" aria-hidden="true" />
+                        )}
+                      </Link>
+                      {link.description && (
+                        <p className="text-sm text-gray-500 mt-1 ml-4">{link.description}</p>
+                      )}
+                    </div>
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
 
-        {/* Enhanced Contact & Social Section */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12 pt-8 border-t border-gray-800/50">
-          <motion.div 
-            className="space-y-4"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.4 }}
-          >
-            <h3 className="text-lg font-semibold text-white">Contact Information</h3>
-            <div className="space-y-3">
-              {[
-                { icon: Phone, text: contactInfo.phone, href: `tel:${contactInfo.phone}`, type: 'phone' },
-                { icon: Mail, text: contactInfo.email, href: `mailto:${contactInfo.email}`, type: 'email' },
-                { icon: MapPin, text: contactInfo.address, href: '#', type: 'address' },
-                { icon: Globe, text: contactInfo.website, href: contactInfo.website, type: 'website' }
-              ].map((contact, index) => (
-                <motion.div 
-                  key={contact.type}
-                  className="flex items-center gap-3 text-gray-400 hover:text-cyan-400 transition-colors duration-200"
-                  initial={{ opacity: 0, x: -20 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.4, delay: 0.5 + index * 0.1 }}
-                >
-                  <contact.icon className="w-4 h-4 text-cyan-400" />
-                  {contact.type === 'address' ? (
-                    <span>{contact.text}</span>
-                  ) : (
-                    <a href={contact.href} className="hover:underline" target={contact.type === 'website' ? '_blank' : undefined} rel={contact.type === 'website' ? 'noopener noreferrer' : undefined}>
-                      {contact.text}
-                    </a>
-                  )}
-                </motion.div>
-              ))}
+        {/* Bottom Section */}
+        <div className="py-8 border-t border-gray-800/50">
+          <div className="flex flex-col lg:flex-row items-center justify-between space-y-4 lg:space-y-0">
+            {/* Copyright & Links */}
+            <div className="flex flex-col sm:flex-row items-center space-y-2 sm:space-y-0 sm:space-x-6 text-sm text-gray-400">
+              <p>&copy; {new Date().getFullYear()} Zion Tech Group. All rights reserved.</p>
+              <div className="flex items-center space-x-6">
+                <Link href="/privacy" className="hover:text-cyan-400 transition-colors duration-200">
+                  Privacy Policy
+                </Link>
+                <Link href="/terms" className="hover:text-cyan-400 transition-colors duration-200">
+                  Terms of Service
+                </Link>
+                <Link href="/cookies" className="hover:text-cyan-400 transition-colors duration-200">
+                  Cookie Policy
+                </Link>
+              </div>
             </div>
-          </motion.div>
 
-          <motion.div 
-            className="space-y-4"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.6 }}
-          >
-            <h3 className="text-lg font-semibold text-white">Follow Us</h3>
-            <div className="flex flex-wrap gap-3">
-              {socialLinks.map((social, index) => (
-                <motion.a 
+            {/* Social Links */}
+            <div className="flex items-center space-x-4">
+              {socialLinks.map((social) => (
+                <a
                   key={social.label}
-                  href={social.href} 
-                  target="_blank" 
-                  rel="noopener noreferrer" 
-                  className="w-12 h-12 bg-gray-800/50 hover:bg-cyan-500/20 border border-gray-700/50 hover:border-cyan-500/50 rounded-lg flex items-center justify-center text-gray-400 hover:text-cyan-400 transition-all duration-200 group"
+                  href={social.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="p-2 text-gray-400 hover:text-cyan-400 hover:bg-gray-800/50 rounded-lg transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-cyan-400 focus:ring-offset-2 focus:ring-offset-gray-900"
                   aria-label={`Follow us on ${social.label}`}
-                  initial={{ opacity: 0, scale: 0.8 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.4, delay: 0.7 + index * 0.1 }}
-                  whileHover={{ scale: 1.1, rotate: 5 }}
                 >
                   {social.icon}
-                </motion.a>
+                </a>
               ))}
             </div>
 
@@ -459,48 +404,19 @@ const UltraAdvancedFuturisticFooter2025: React.FC = () => {
               </motion.div>
             </div>
           </div>
-        </motion.div>
+        </div>
       </div>
 
-      {/* Enhanced Floating Action Buttons */}
-      <motion.button 
-        className="fixed bottom-6 right-6 w-14 h-14 bg-gradient-to-r from-cyan-500 to-blue-600 text-white rounded-full shadow-2xl shadow-cyan-500/25 hover:shadow-cyan-500/40 transition-all duration-200 z-50 flex items-center justify-center group"
-        aria-label="Contact us"
-        initial={{ opacity: 0, scale: 0.8 }}
-        whileInView={{ opacity: 1, scale: 1 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.6, delay: 1.2 }}
-        whileHover={{ scale: 1.1, rotate: 5 }}
-        onClick={() => window.location.href = '/contact'}
+      {/* Scroll to Top Button */}
+      <motion.button
+        onClick={scrollToTop}
+        onKeyDown={(e) => handleKeyDown(e, scrollToTop)}
+        className="fixed bottom-8 right-8 p-3 bg-gradient-to-r from-cyan-500 to-blue-600 text-white rounded-full shadow-lg hover:from-cyan-600 hover:to-blue-700 hover:shadow-xl transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-cyan-400 focus:ring-offset-2 focus:ring-offset-gray-900 z-40"
+        aria-label="Scroll to top of page"
+        whileHover={{ scale: 1.1 }}
+        whileTap={{ scale: 0.9 }}
       >
-        <Phone className="w-6 h-6 group-hover:animate-pulse" />
-      </motion.button>
-
-      <motion.button 
-        className="fixed bottom-6 left-6 w-14 h-14 bg-gradient-to-r from-purple-500 to-pink-600 text-white rounded-full shadow-2xl shadow-purple-500/25 hover:shadow-purple-500/40 transition-all duration-200 z-50 flex items-center justify-center group"
-        aria-label="Accessibility settings"
-        aria-expanded="false"
-        aria-controls="accessibility-panel"
-        initial={{ opacity: 0, scale: 0.8 }}
-        whileInView={{ opacity: 1, scale: 1 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.6, delay: 1.3 }}
-        whileHover={{ scale: 1.1, rotate: -5 }}
-      >
-        <Target className="w-6 h-6 group-hover:animate-pulse" />
-      </motion.button>
-
-      <motion.button 
-        className="fixed bottom-6 right-24 w-14 h-14 rounded-full shadow-2xl transition-all duration-200 z-50 flex items-center justify-center bg-gradient-to-r from-green-500 to-blue-500 shadow-green-500/25 group"
-        aria-label="Performance monitoring"
-        aria-expanded="false"
-        initial={{ opacity: 0, scale: 0.8 }}
-        whileInView={{ opacity: 1, scale: 1 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.6, delay: 1.4 }}
-        whileHover={{ scale: 1.1, rotate: 5 }}
-      >
-        <TrendingUp className="w-6 h-6 text-white group-hover:animate-pulse" />
+        <ArrowUp className="w-6 h-6" aria-hidden="true" />
       </motion.button>
     </footer>
   );
