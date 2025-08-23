@@ -235,3 +235,5 @@
 2025-08-23 22:57:55 - Resolving conflicts in pages/api/socket.ts for branch 74tfm8-codex/implement-instant-messaging-for-negotiations
 2025-08-23 22:57:55 - Resolving conflicts in src/components/ChatWidget.tsx for branch 74tfm8-codex/implement-instant-messaging-for-negotiations
 2025-08-23 22:57:55 - Resolving conflicts in src/index.css for branch 74tfm8-codex/implement-instant-messaging-for-negotiations
+2025-08-23 22:57:56 - Merge conflicts detected in 75rlpk-codex/fix-modulenamemapper-configuration-for-tests
+2025-08-23 22:57:57 - Resolving conflicts in jest.config.js for branch 75rlpk-codex/fix-modulenamemapper-configuration-for-tests
