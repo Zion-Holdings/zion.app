@@ -1,0 +1,5 @@
+<<<<<<< HEAD
+{"version":3,"routes":{},"dynamicRoutes":{},"preview":{"previewModeId":"cf213098778bb3f8f99067acb0d73eed","previewModeSigningKey":"31787b86b376edcb092b3109a678168512863c1b6066d10fc5d2f407234e76b8","previewModeEncryptionKey":"5f7c89630319a6df47927059f0a3eac05f5fd9baa6c523f94e35ee9f91895276"},"notFoundRoutes":[]}
+=======
+{"version":3,"routes":{},"dynamicRoutes":{},"preview":{"previewModeId":"972fb1498de3a261b181cc41698d7849","previewModeSigningKey":"ab2aadf3bc97910a14385796f39ebaf5df6c1406c8dd28fbcf5b2240fd8f54b6","previewModeEncryptionKey":"f56608dcac79f43d4ddb6b392c4b04bd7fc3be3f5869fc1c61fa1f124a7af993"},"notFoundRoutes":[]}
+>>>>>>> origin/cursor/autonomous-cloud-page-enhancer-and-advertiser-493e

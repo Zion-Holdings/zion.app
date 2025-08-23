@@ -1,0 +1,36 @@
+name: SEO Enhance
+
+on:
+  push:
+    branches: [ main ]
+  schedule:
+    - cron: '*/30 * * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  enhance:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Run SEO enhancer
+        env:
+          SITE_URL: https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}
+        run: node ./scripts/seo-enhance.mjs
+
+      - name: Commit changes
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: 'chore(seo): enhance meta tags and canonical URLs'
+          branch: main
+          commit_user_name: zion-bot
+          commit_user_email: bot@users.noreply.github.com
+          commit_author: zion-bot <bot@users.noreply.github.com>

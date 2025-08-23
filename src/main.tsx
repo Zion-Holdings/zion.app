@@ -1,3 +1,4 @@
+console.log("main.tsx: Start");
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './App.tsx';
@@ -11,6 +12,7 @@ import './utils/globalFetchInterceptor';
 // Import i18n configuration
 import './i18n';
 import { LanguageProvider } from '@/context/LanguageContext';
+import { CurrencyProvider } from '@/context/CurrencyContext';
 import { LanguageDetectionPopup } from './components/LanguageDetectionPopup';
 import { WhitelabelProvider } from '@/context/WhitelabelContext';
 import { AppLayout } from '@/layout/AppLayout';
@@ -21,6 +23,9 @@ import { NotificationProvider } from './context';
 
 // Import analytics provider
 import { AnalyticsProvider } from './context/AnalyticsContext';
+import { ViewModeProvider } from './context/ViewModeContext';
+import { CartProvider } from './context/CartContext';
+import { registerServiceWorker } from './serviceWorkerRegistration';
 
 // Initialize a React Query client with global error handling
 const queryClient = new QueryClient({
@@ -34,28 +39,55 @@ const queryClient = new QueryClient({
   },
 });
 
-// Render the app with proper provider structure
-ReactDOM.createRoot(document.getElementById('root')!).render(
-  <React.StrictMode>
-    <HelmetProvider>
-      <QueryClientProvider client={queryClient}>
-        <WhitelabelProvider>
-          <Router>
-            <AuthProvider>
-              <NotificationProvider>
-                <AnalyticsProvider>
-                  <LanguageProvider authState={{ isAuthenticated: false, user: null }}>
-                    <AppLayout>
-                      <App />
-                    </AppLayout>
-                    <LanguageDetectionPopup />
-                  </LanguageProvider>
-                </AnalyticsProvider>
-              </NotificationProvider>
-            </AuthProvider>
-          </Router>
-        </WhitelabelProvider>
-      </QueryClientProvider>
-    </HelmetProvider>
-  </React.StrictMode>,
-);
+try {
+  console.log("main.tsx: Before ReactDOM.createRoot");
+  // Render the app with proper provider structure
+  ReactDOM.createRoot(document.getElementById('root')!).render(
+    <React.StrictMode>
+      <HelmetProvider>
+        <QueryClientProvider client={queryClient}>
+          <WhitelabelProvider>
+            <Router>
+              <AuthProvider>
+                <NotificationProvider>
+                  <AnalyticsProvider>
+                    <CurrencyProvider>
+                      <LanguageProvider authState={{ isAuthenticated: false, user: null }}>
+                        <ViewModeProvider>
+                          <CartProvider>
+                            <AppLayout>
+                              <App />
+                            </AppLayout>
+                          </CartProvider>
+                        </ViewModeProvider>
+                        <LanguageDetectionPopup />
+                      </LanguageProvider>
+                    </CurrencyProvider>
+                  </AnalyticsProvider>
+                </NotificationProvider>
+              </AuthProvider>
+            </Router>
+          </WhitelabelProvider>
+        </QueryClientProvider>
+      </HelmetProvider>
+    </React.StrictMode>,
+  );
+  console.log("main.tsx: After ReactDOM.createRoot");
+} catch (error) {
+  console.error("Global error caught in main.tsx:", error);
+  console.log("main.tsx: Global error caught");
+  const rootElement = document.getElementById('root');
+  if (rootElement) {
+    rootElement.innerHTML = `
+      <div style="padding: 20px; text-align: center; font-family: sans-serif;">
+        <h1>Application Error</h1>
+        <p>A critical error occurred while loading the application.</p>
+        <p>Error: ${(error as Error).message}</p>
+        <pre>${(error as Error).stack}</pre>
+        <p>Please check the console for more details.</p>
+      </div>
+    `;
+  }
+}
+
+registerServiceWorker();
