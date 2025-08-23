@@ -70,6 +70,10 @@ import { marketReadyServices } from '../data/market-ready-services';
 import { marketValidatedServices } from '../data/market-validated-services';
 import { industryRealServices } from '../data/industry-real-services';
 
+// Import our new 2025 innovative real-world services
+import { innovativeRealWorldServices } from '../data/2025-innovative-real-world-services';
+import { cuttingEdgeEnterpriseSolutions } from '../data/2025-cutting-edge-enterprise-solutions';
+
 // Helper function to get service category
 const getServiceCategory = (service: any) => {
   if (service.category) return service.category;
@@ -162,7 +166,11 @@ const allServices = [
   ...ultimate2025AIServicesExpansion,
   // Our new 2025 advanced enterprise services
   ...advancedEnterpriseServices,
-  ...cuttingEdgeITInfrastructureServices
+  ...cuttingEdgeITInfrastructureServices,
+  
+  // Our new 2025 innovative real-world services
+  ...innovativeRealWorldServices,
+  ...cuttingEdgeEnterpriseSolutions
 ];
 
 const categories = [
