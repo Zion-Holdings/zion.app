@@ -47,6 +47,19 @@
   --quantum-ripple: 0 0 150px rgba(0, 255, 255, 0.08);
   --holographic-wave: 0 0 200px rgba(139, 92, 246, 0.12);
   --cyberpunk-pulse: 0 0 180px rgba(236, 73, 153, 0.1);
+<<<<<<< HEAD
+  
+  /* Revolutionary new effects */
+  --quantum-holographic: 0 0 150px rgba(0, 255, 255, 0.2);
+  --neural-quantum: 0 0 120px rgba(16, 185, 129, 0.3);
+  --cyberpunk-holographic: 0 0 180px rgba(236, 73, 153, 0.25);
+  --quantum-space: 0 0 200px rgba(0, 255, 255, 0.15);
+  --ai-futuristic: 0 0 160px rgba(139, 92, 246, 0.2);
+  --quantum-entanglement-advanced: 0 0 250px rgba(139, 92, 246, 0.1);
+  --holographic-matrix-advanced: 0 0 300px rgba(139, 92, 246, 0.08);
+  --neural-quantum-cyberpunk: 0 0 220px rgba(16, 185, 129, 0.2);
+=======
+>>>>>>> origin/cursor/enhance-app-services-and-website-with-futuristic-design-9967
 }
 
 /* Base styles */
@@ -207,6 +220,20 @@ body::after {
   width: 100%;
   height: 100%;
   background-image: 
+<<<<<<< HEAD
+    linear-gradient(rgba(0, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 255, 255, 0.03) 1px, transparent 1px);
+  background-size: 50px 50px;
+  pointer-events: none;
+  z-index: -1;
+  animation: gridMove 20s linear infinite;
+}
+
+/* Quantum Particle Effects */
+body::after {
+  content: '';
+  position: absolute;
+=======
     radial-gradient(2px 2px at 20px 30px, rgba(0, 255, 255, 0.8), transparent),
     radial-gradient(2px 2px at 40px 70px, rgba(139, 92, 246, 0.8), transparent),
     radial-gradient(1px 1px at 90px 40px, rgba(236, 73, 153, 0.8), transparent),
@@ -227,11 +254,23 @@ body::after {
 /* Enhanced Quantum Grid */
 .quantum-grid {
   position: fixed;
+>>>>>>> origin/cursor/enhance-app-services-and-website-with-futuristic-design-9967
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
   background-image: 
+<<<<<<< HEAD
+    radial-gradient(2px 2px at 20px 30px, #3b82f6, transparent),
+    radial-gradient(2px 2px at 40px 70px, #8b5cf6, transparent),
+    radial-gradient(1px 1px at 90px 40px, #06b6d4, transparent),
+    radial-gradient(1px 1px at 130px 80px, #10b981, transparent),
+    radial-gradient(2px 2px at 160px 30px, #f59e0b, transparent);
+  background-repeat: repeat;
+  background-size: 200px 100px;
+  animation: particle-float 20s linear infinite;
+  opacity: 0.3;
+=======
     linear-gradient(rgba(0, 255, 255, 0.1) 1px, transparent 1px),
     linear-gradient(90deg, rgba(0, 255, 255, 0.1) 1px, transparent 1px);
   background-size: 50px 50px;
@@ -341,10 +380,361 @@ body::after {
   pointer-events: none;
   z-index: -1;
   animation: cyberpunkPulse 16s ease-in-out infinite;
+>>>>>>> origin/cursor/enhance-app-services-and-website-with-futuristic-design-9967
 }
 
 /* Enhanced Animations */
 @keyframes backgroundFloat {
+<<<<<<< HEAD
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  25% {
+    transform: translateY(-20px) rotate(1deg);
+  }
+  50% {
+    transform: translateY(-10px) rotate(-1deg);
+  }
+  75% {
+    transform: translateY(-15px) rotate(0.5deg);
+  }
+}
+
+@keyframes particleFloat {
+  0% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(-100px);
+  }
+}
+
+@keyframes quantumPulse {
+  0%, 100% {
+    box-shadow: var(--quantum-glow);
+  }
+  50% {
+    box-shadow: var(--quantum-field);
+  }
+}
+
+@keyframes holographicMatrix {
+  0%, 100% {
+    box-shadow: var(--holographic-glow);
+  }
+  50% {
+    box-shadow: var(--holographic-matrix);
+  }
+}
+
+@keyframes neuralNetwork {
+  0%, 100% {
+    box-shadow: var(--neural-pulse);
+  }
+  50% {
+    box-shadow: var(--neural-network);
+  }
+}
+
+@keyframes aiGlow {
+  0%, 100% {
+    box-shadow: var(--ai-glow);
+  }
+  50% {
+    box-shadow: var(--quantum-ai-glow);
+  }
+}
+
+@keyframes autonomousGlow {
+  0%, 100% {
+    box-shadow: var(--autonomous-glow);
+  }
+  50% {
+    box-shadow: var(--neural-network);
+  }
+}
+
+@keyframes gridMove {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(50px, 50px);
+  }
+}
+
+@keyframes quantumPulse {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.5);
+  }
+  50% {
+    box-shadow: 0 0 40px rgba(0, 255, 255, 0.8), 0 0 60px rgba(0, 255, 255, 0.4);
+  }
+}
+
+@keyframes holographicGlow {
+  0%, 100% {
+    box-shadow: 0 0 30px rgba(139, 92, 246, 0.6);
+  }
+  50% {
+    box-shadow: 0 0 50px rgba(139, 92, 246, 0.8), 0 0 70px rgba(139, 92, 246, 0.4);
+  }
+}
+
+@keyframes cyberpunkFlicker {
+  0%, 100% {
+    opacity: 1;
+    filter: brightness(1);
+  }
+  50% {
+    opacity: 0.8;
+    filter: brightness(1.2);
+  }
+  75% {
+    opacity: 0.9;
+    filter: brightness(0.8);
+  }
+}
+
+/* Enhanced Typography */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 700;
+  letter-spacing: -0.025em;
+}
+
+h1 {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  line-height: 1.1;
+}
+
+h2 {
+  font-size: clamp(2rem, 4vw, 3rem);
+  line-height: 1.2;
+}
+
+h3 {
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  line-height: 1.3;
+}
+
+/* Enhanced Button Styles */
+.btn-futuristic {
+  position: relative;
+  overflow: hidden;
+}
+
+.futuristic-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+  transition: left 0.5s ease;
+}
+
+.futuristic-card:hover::before {
+  left: 100%;
+}
+
+.futuristic-card:hover {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+  border-color: rgba(59, 130, 246, 0.5);
+}
+
+/* Glowing Elements */
+.glow-blue {
+  box-shadow: 0 0 20px rgba(59, 130, 246, 0.5);
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+.glow-purple {
+  box-shadow: 0 0 20px rgba(139, 92, 246, 0.5);
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+.glow-green {
+  box-shadow: 0 0 20px rgba(16, 185, 129, 0.5);
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+/* Floating Animation */
+.float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.float-delay-1 {
+  animation-delay: 1s;
+}
+
+.float-delay-2 {
+  animation-delay: 2s;
+}
+
+.float-delay-3 {
+  animation-delay: 3s;
+}
+
+/* Shimmer Effect */
+.shimmer {
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+  background-size: 200% 100%;
+  animation: shimmer 2s infinite;
+}
+
+/* 3D Rotation */
+.rotate-3d {
+  animation: rotate-3d 20s linear infinite;
+}
+
+/* Neon Text Effect */
+.neon-text {
+  animation: neon-pulse 2s ease-in-out infinite;
+}
+
+/* Futuristic Button Styles */
+.futuristic-btn {
+  position: relative;
+  background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+  border: none;
+}
+
+/* Futuristic Utility Classes */
+.futuristic-glow {
+  animation: quantumPulse 3s ease-in-out infinite;
+}
+
+.holographic-glow {
+  animation: holographicGlow 4s ease-in-out infinite;
+}
+
+.cyberpunk-flicker {
+  animation: cyberpunkFlicker 2s ease-in-out infinite;
+}
+
+.quantum-border {
+  border: 2px solid transparent;
+  background: linear-gradient(45deg, var(--neon-cyan), var(--neon-purple)) border-box;
+  -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: destination-out;
+  mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+}
+
+.neural-network-bg {
+  background: 
+    radial-gradient(circle at 20% 80%, rgba(16, 185, 129, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(59, 130, 246, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 40% 40%, rgba(139, 92, 246, 0.1) 0%, transparent 50%);
+}
+
+.quantum-matrix-bg {
+  background: 
+    linear-gradient(90deg, rgba(0, 255, 255, 0.05) 1px, transparent 1px),
+    linear-gradient(rgba(0, 255, 255, 0.05) 1px, transparent 1px);
+  background-size: 30px 30px;
+  animation: gridMove 15s linear infinite;
+}
+
+/* Enhanced Button Styles */
+.btn-futuristic {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(45deg, var(--neon-cyan), var(--neon-purple));
+  border: none;
+  color: white;
+  padding: 12px 24px;
+  border-radius: 12px;
+  padding: 12px 24px;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.futuristic-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s ease;
+}
+
+.futuristic-btn:hover::before {
+  left: 100%;
+}
+
+.futuristic-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(59, 130, 246, 0.4);
+}
+
+/* Grid Background */
+.grid-bg {
+  background-image: 
+    linear-gradient(rgba(0, 255, 255, 0.1) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 255, 255, 0.1) 1px, transparent 1px);
+  background-size: 50px 50px;
+  animation: grid-move 20s linear infinite;
+}
+
+@keyframes grid-move {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(50px, 50px);
+  }
+}
+
+/* Holographic Effect */
+.holographic {
+  background: linear-gradient(45deg, #ff0080, #ff8c00, #40e0d0, #ee82ee, #ff0080);
+  background-size: 400% 400%;
+  animation: gradient-shift 3s ease infinite;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Futuristic Input Styles */
+.futuristic-input {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 12px 16px;
+  color: white;
+  transition: all 0.3s ease;
+}
+
+.futuristic-input:focus {
+  border-color: #3b82f6;
+  box-shadow: 0 0 20px rgba(59, 130, 246, 0.3);
+  outline: none;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .futuristic-card:hover {
+    transform: translateY(-5px) scale(1.01);
+  }
+  
+  .particle-bg::before {
+    background-size: 100px 50px;
+  }
+}
+
+/* Dark Mode Enhancements */
+@media (prefers-color-scheme: dark) {
+  .futuristic-card {
+    background: rgba(0, 0, 0, 0.3);
+=======
   0%, 100% { transform: translateY(0px) rotate(0deg); }
   25% { transform: translateY(-10px) rotate(1deg); }
   50% { transform: translateY(-5px) rotate(-1deg); }
@@ -720,6 +1110,7 @@ body::after {
   
   .cyberpunk-elements {
     background-size: 100px 100px;
+>>>>>>> origin/cursor/enhance-app-services-and-website-with-futuristic-design-9967
   }
 }
 
@@ -742,6 +1133,8 @@ body::after {
     transition-duration: 0.01ms !important;
   }
 }
+<<<<<<< HEAD
+=======
 
 /* Enhanced Focus States */
 .quantum-button:focus,
@@ -775,3 +1168,4 @@ body::after {
     color: black;
   }
 }
+>>>>>>> origin/cursor/enhance-app-services-and-website-with-futuristic-design-9967
