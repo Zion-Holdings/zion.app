@@ -2,6 +2,20 @@ import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { motion, AnimatePresence } from 'framer-motion';
 import { 
+<<<<<<< HEAD
+  Menu, X, ChevronDown, Search, 
+  Brain, Cpu, Rocket, Shield, 
+  Zap, Globe, Star, Users,
+  Target, Microscope, Atom, Database,
+  Lock, Cloud, BarChart3, Settings,
+  Eye, Code, Palette, Layers,
+  Network, Server, ShieldCheck, ZapIcon,
+  GlobeIcon, StarIcon, TrendingUpIcon, UsersIcon,
+  CheckCircleIcon, ArrowRightIcon, CpuIcon,
+  DollarSign, Phone, ArrowRight, Mail, MapPin, Dna,
+  Heart, GraduationCap, Hospital, Coins, Leaf, Scale,
+  BookOpen
+=======
   Menu, ChevronDown,
   Brain, Rocket, Shield, 
   Zap,
@@ -10,6 +24,7 @@ import {
   Truck, DollarSign, BarChart3, Globe, Users, X, Phone, Mail, MapPin, ArrowRight,
   Star, Sparkles, Cpu, Lock, Cloud, BarChart3 as BarChart3Icon, Settings, Eye, Award, Clock, Heart, Lightbulb,
   Palette, Code, Database, Shield as ShieldIcon, Globe as GlobeIcon, Zap as ZapIcon, Target as TargetIcon
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-2630
 } from 'lucide-react';
 import SearchComponent from '../SearchComponent';
 import ThemeToggle from '../ThemeToggle';
@@ -92,15 +107,41 @@ const navigationItems: NavigationItem[] = [
       { name: 'Edge Computing', href: '/edge-computing-orchestration-platform', description: 'Distributed computing optimization' },
       { name: 'AI Cybersecurity', href: '/ai-powered-cybersecurity-platform', description: 'Intelligent threat detection' },
       { name: 'Blockchain Infrastructure', href: '/blockchain-infrastructure-platform', description: 'Enterprise blockchain solutions' },
+<<<<<<< HEAD
+      { name: 'AI-Powered DevOps', href: '/ai-powered-devops-platform', description: 'Intelligent development automation' },
+      { name: 'Zero Trust Security', href: '/zero-trust-security-platform', description: 'Advanced cybersecurity' },
+      { name: 'Quantum Networking', href: '/quantum-networking', description: 'Quantum communication protocols' },
+      { name: 'Quantum Data Center', href: '/quantum-data-center', description: 'Next-gen data centers' },
+      { name: 'Quantum Cybersecurity', href: '/quantum-cybersecurity', description: 'Quantum security solutions' },
+      { name: 'Quantum Cloud Migration', href: '/quantum-cloud-migration', description: 'Seamless cloud migration' }
+=======
       { name: 'IoT Security Management', href: '/iot-security-management-platform', description: 'Connected device security' },
       { name: 'Data Privacy Management', href: '/data-privacy-management-platform', description: 'Compliance and privacy' },
       { name: 'Cloud Cost Optimization', href: '/cloud-cost-optimization-platform', description: 'AI-powered cost reduction' }
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-2630
     ]
   },
   {
     name: 'Micro SAAS',
     href: '/micro-saas',
     icon: <Rocket className="w-5 h-5" />,
+<<<<<<< HEAD
+    description: 'Our comprehensive technology solutions',
+    badge: 'Featured',
+    category: 'services',
+    color: 'from-emerald-500 to-cyan-500',
+    children: [
+      { name: 'AI Autonomous Content Factory', href: '/ai-autonomous-content-factory', description: 'Automated content creation' },
+      { name: 'Quantum CRM Intelligence Suite', href: '/quantum-crm-intelligence-suite', description: 'AI-powered CRM' },
+      { name: 'AI Autonomous Decision Engine', href: '/ai-autonomous-decision-engine', description: 'Intelligent decision making' },
+      { name: 'AI Creativity Studio Pro', href: '/ai-creativity-studio-pro', description: 'AI-powered design tools' },
+      { name: 'AI Education Platform Pro', href: '/ai-education-platform-pro', description: 'Personalized learning' },
+      { name: 'AI Healthcare Diagnostics Pro', href: '/ai-healthcare-diagnostics-pro', description: 'Medical AI diagnostics' },
+      { name: 'AI Financial Intelligence Pro', href: '/ai-financial-intelligence-pro', description: 'Financial AI analytics' },
+      { name: 'AI Sustainability Platform Pro', href: '/ai-sustainability-platform-pro', description: 'Environmental AI solutions' },
+      { name: 'AI Emotional Intelligence Platform', href: '/ai-emotional-intelligence-platform', description: 'Emotional AI systems' },
+      { name: 'AI Legal Contract Analyzer Pro', href: '/ai-legal-contract-analyzer-pro', description: 'Legal AI analysis' }
+=======
     description: 'Innovative business solutions for modern enterprises',
     badge: 'Popular',
     children: [
@@ -114,6 +155,7 @@ const navigationItems: NavigationItem[] = [
       { name: 'AI HR Management', href: '/ai-hr-management-platform', description: 'HR operations automation' },
       { name: 'AI Supply Chain', href: '/ai-supply-chain-optimization', description: 'Supply chain optimization' },
       { name: 'AI Legal Analysis', href: '/ai-legal-document-analysis', description: 'Legal document processing' }
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-2630
     ]
   },
   {
@@ -122,6 +164,16 @@ const navigationItems: NavigationItem[] = [
     icon: <Palette className="w-5 h-5" />,
     description: 'AI-powered creative and design solutions',
     children: [
+<<<<<<< HEAD
+      { name: 'Healthcare Solutions', href: '/healthcare-solutions', description: 'Medical technology solutions' },
+      { name: 'Financial Services', href: '/financial-solutions', description: 'Fintech and banking solutions' },
+      { name: 'Manufacturing', href: '/manufacturing-solutions', description: 'Industrial automation' },
+      { name: 'Retail & E-commerce', href: '/retail-solutions', description: 'Digital commerce solutions' },
+      { name: 'Education', href: '/education-solutions', description: 'Edtech and learning platforms' },
+      { name: 'Government', href: '/government-solutions', description: 'Public sector technology' },
+      { name: 'Energy & Utilities', href: '/energy-solutions', description: 'Sustainable energy solutions' },
+      { name: 'Transportation', href: '/transportation-solutions', description: 'Smart mobility solutions' }
+=======
       { name: 'AI Creativity Studio', href: '/ai-creativity-studio', description: 'AI-powered creative content' },
       { name: 'Metaverse Development', href: '/metaverse-development-studio', description: '3D world creation' },
       { name: 'Quantum Metaverse', href: '/quantum-metaverse-platform', description: 'Quantum-enhanced experiences' },
@@ -170,12 +222,25 @@ const navigationItems: NavigationItem[] = [
       { name: 'Startup Plans', href: '/startup-pricing', description: 'Small business pricing' },
       { name: 'Custom Solutions', href: '/custom-pricing', description: 'Tailored pricing' },
       { name: 'ROI Calculator', href: '/roi-calculator', description: 'Calculate your return on investment' }
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-2630
     ]
   },
   {
     name: 'Resources',
     href: '/resources',
     icon: <BookOpen className="w-5 h-5" />,
+<<<<<<< HEAD
+    description: 'Knowledge and tools',
+    children: [
+      { name: 'Documentation', href: '/docs', description: 'Technical documentation' },
+      { name: 'API Reference', href: '/api-docs', description: 'Developer APIs' },
+      { name: 'Case Studies', href: '/case-studies', description: 'Success stories' },
+      { name: 'Blog', href: '/blog', description: 'Industry insights' },
+      { name: 'Whitepapers', href: '/whitepapers', description: 'Research papers' },
+      { name: 'Webinars', href: '/webinars', description: 'Educational content' },
+      { name: 'Training', href: '/training', description: 'Skill development' },
+      { name: 'Support', href: '/support', description: 'Help and assistance' }
+=======
     description: 'Educational resources and documentation',
     children: [
       { name: 'Documentation', href: '/docs', description: 'Technical documentation' },
@@ -198,6 +263,7 @@ const navigationItems: NavigationItem[] = [
       { name: 'Training Programs', href: '/training', description: 'Skill development' },
       { name: 'Community Forum', href: '/community', description: 'User community' },
       { name: 'Status Page', href: '/status', description: 'Service status' }
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-2630
     ]
   }
 ];
