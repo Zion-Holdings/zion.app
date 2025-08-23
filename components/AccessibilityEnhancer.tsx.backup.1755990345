@@ -151,6 +151,8 @@ const AccessibilityEnhancer: React.FC<AccessibilityEnhancerProps> = ({ children 
         speakText(text.substring(0, 500) + '...'); // Limit text length
       }
     }
+<<<<<<< HEAD
+=======
   }, [applySettings]);
 
   // Apply settings when they change
@@ -266,6 +268,7 @@ const AccessibilityEnhancer: React.FC<AccessibilityEnhancerProps> = ({ children 
     ];
     
     return Array.from(document.querySelectorAll(focusableSelectors.join(','))) as HTMLElement[];
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-b6d6
   };
 
   // Highlighter mode

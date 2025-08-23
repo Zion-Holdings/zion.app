@@ -1,10 +1,26 @@
 import React, { useState, useCallback, useMemo } from 'react';
 import { motion } from 'framer-motion';
+<<<<<<< HEAD
+import { ArrowRight, Crown, Building, Rocket } from 'lucide-react';
+
+interface Service {
+  id?: string;
+  name: string;
+  tagline?: string;
+  description: string;
+  price: string | { monthly: number | string; yearly?: number | string; currency?: string; trialDays?: number; setupTime?: string };
+  period: string;
+  features: string[];
+  popular?: boolean;
+  category: string;
+  icon?: string;
+=======
 import { ArrowRight, Star, CheckCircle, Zap, Brain, Atom, Rocket } from 'lucide-react';
 import { UnifiedService, getDefaultIcon, getDefaultColor } from '../../types/unified-service-types';
 
 interface Service extends UnifiedService {
   // Extend UnifiedService to maintain backward compatibility
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-b6d6
 }
 
 interface UltraFuturisticServiceCard2026Props {
@@ -173,10 +189,27 @@ const UltraFuturisticServiceCard2026: React.FC<UltraFuturisticServiceCard2026Pro
             transition={{ delay: 0.3 }}
           >
             <span className="text-2xl font-bold text-white">
+<<<<<<< HEAD
+              {typeof service.price === 'string' 
+                ? service.price 
+                : service.price?.monthly 
+                  ? `$${service.price.monthly}/month`
+                  : 'Contact for pricing'
+              }
+            </span>
+            <span className="text-gray-400 text-sm ml-1">
+              {typeof service.price === 'string' 
+                ? service.period 
+                : service.price?.yearly 
+                  ? ` or $${service.price.yearly}/year`
+                  : ''
+              }
+=======
               {typeof service.price === 'string' ? service.price : `$${service.price.monthly}/month`}
             </span>
             <span className="text-gray-400 text-sm ml-1">
               {typeof service.price === 'string' ? (service.period || '') : ''}
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-b6d6
             </span>
           </motion.div>
 

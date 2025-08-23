@@ -17,8 +17,28 @@ import { innovativeAIServices } from '../data/innovative-ai-services';
 import { enterpriseITServices } from '../data/enterprise-it-services';
 import { RealMarketService } from '../data/real-market-services';
 
+<<<<<<< HEAD
+// Use any for now to get the build working - we can refine types later
+type Service = any;
+
+// Helper function to get price display
+const getPriceDisplay = (service: any) => {
+  if (typeof service.price === 'string') {
+    return {
+      price: service.price,
+      period: service.period || '/month'
+    };
+  } else {
+    return {
+      price: `$${service.price.monthly}`,
+      period: '/month'
+    };
+  }
+};
+=======
 // Use the unified service type
 type Service = UnifiedService;
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-b6d6
 
 const Innovative2040FuturisticServicesShowcase: React.FC = () => {
   const [searchQuery, setSearchQuery] = useState('');

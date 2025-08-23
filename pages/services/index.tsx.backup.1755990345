@@ -63,6 +63,46 @@ import { innovativeAIServices } from '../../data/innovative-2025-ai-services-exp
 import { advanced2025MicroSaasExpansion } from '../../data/2025-advanced-micro-saas-expansion';
 import { advanced2025ITSolutionsExpansion } from '../../data/2025-advanced-it-solutions-expansion';
 import { advanced2025AIServicesExpansion } from '../../data/2025-advanced-ai-services-expansion';
+<<<<<<< HEAD
+import { advancedITInfrastructureServices2025 } from '../../data/2025-advanced-it-infrastructure-services';
+
+// Import our new 2025 innovative services
+import { innovativeMicroSaasExpansion2025 } from '../../data/2025-innovative-micro-saas-expansion';
+import { innovative2025ITSolutionsExpansion } from '../../data/2025-innovative-it-solutions-expansion';
+import { innovative2025AISolutionsExpansion } from '../../data/2025-innovative-ai-solutions-expansion';
+
+
+
+// Import our new 2025 innovative services
+import { innovativeRetailServices } from '../../data/innovative-retail-services';
+import { innovativeEntertainmentServices } from '../../data/innovative-entertainment-services';
+import { innovativeGamingServices } from '../../data/innovative-gaming-services';
+import { innovativeRealEstateServices } from '../../data/innovative-real-estate-services';
+import { innovativeLegalServices } from '../../data/innovative-legal-services';
+import { innovativeAgricultureServices } from '../../data/innovative-agriculture-services';
+import { innovativeHospitalityServices } from '../../data/innovative-hospitality-services';
+import { innovativeSportsServices } from '../../data/innovative-sports-services';
+import { innovativeEnvironmentalServices } from '../../data/innovative-environmental-services';
+import { innovativeResearchServices } from '../../data/innovative-research-services';
+import { innovativeSpaceServices } from '../../data/innovative-space-services';
+import { innovativeBiotechServices } from '../../data/innovative-biotech-services';
+import { innovativeNanotechServices } from '../../data/innovative-nanotech-services';
+import { innovativeRoboticsServices } from '../../data/innovative-robotics-services';
+import { innovativeQuantumServices } from '../../data/innovative-quantum-services';
+import { innovativeBlockchainServices } from '../../data/innovative-blockchain-services';
+import { innovativeIoTServices } from '../../data/innovative-iot-services';
+import { innovativeARVRServices } from '../../data/innovative-ar-vr-services';
+import { innovativeEdgeComputingServices } from '../../data/innovative-edge-computing-services';
+import { innovativeCybersecurityServices } from '../../data/2025-innovative-cybersecurity-services';
+import { innovativeFintechServices } from '../../data/2025-innovative-fintech-services';
+import { innovativeHealthtechServices } from '../../data/2025-innovative-healthtech-services';
+import { innovativeSupplyChainServices } from '../../data/2025-innovative-supply-chain-services';
+import { innovativeManufacturingServices } from '../../data/2025-innovative-manufacturing-services';
+import { innovativeEnergyServices } from '../../data/2025-innovative-energy-services';
+import { innovativeEducationServices } from '../../data/2025-innovative-education-services';
+import { innovativeGovernmentServices } from '../../data/2025-innovative-government-services';
+import { innovativeTransportationServices } from '../../data/2025-innovative-transportation-services';
+=======
 // Import our new innovative 2025 services
 import { innovative2025AdvancedServicesExpansion } from '../../data/innovative-2025-advanced-services-expansion';
 import { innovative2025EnterpriseSolutions } from '../../data/innovative-2025-enterprise-solutions';
@@ -70,6 +110,7 @@ import { UnifiedService } from '../../types/unified-service-types';
 
 // Use the unified service type
 type Service = UnifiedService;
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-b6d6
 
 function toSlug(value: string) {
   return value.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');

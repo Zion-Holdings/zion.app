@@ -205,6 +205,22 @@ const Homepage2025: React.FC = () => {
     }
   ];
 
+<<<<<<< HEAD
+  // Auto-advance testimonials
+  useEffect(() => {
+    const interval = setInterval(nextTestimonial, 5000);
+    return () => clearInterval(interval);
+  }, []);
+
+  const toggleTheme = () => {
+    setIsDarkMode(!isDarkMode);
+    // Add theme persistence logic here
+  };
+
+  const toggleVideo = () => {
+    setIsVideoPlaying(!isVideoPlaying);
+  };
+=======
   const featuredServices = [
     {
       id: 'ai-consciousness',
@@ -271,6 +287,7 @@ const Homepage2025: React.FC = () => {
       reviews: 67
     }
   ];
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-b6d6
 
   return (
     <Layout>

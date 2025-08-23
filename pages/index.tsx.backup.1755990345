@@ -1,4 +1,13 @@
 import React from 'react';
+<<<<<<< HEAD
+import Homepage2045 from '../components/Homepage2045';
+import SEOOptimizer from '../components/SEOOptimizer';
+import Analytics from '../components/Analytics';
+import ErrorBoundary from '../components/ErrorBoundary';
+import AccessibilityEnhancer from '../components/AccessibilityEnhancer';
+import PerformanceMonitor from '../components/PerformanceMonitor';
+import MobileOptimizer from '../components/MobileOptimizer';
+=======
 import Layout from '../components/layout/Layout';
 import Homepage2040 from '../components/Homepage2040';
 
@@ -11,12 +20,23 @@ const HomePage: React.FC = () => {
     url: "https://ziontechgroup.com",
     type: "website"
   };
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-b6d6
 
 export default function Home() {
   return (
+<<<<<<< HEAD
+    <ErrorBoundary>
+      <SEOOptimizer />
+      <AnalyticsTracker />
+      <Homepage2045 />
+      <PerformanceMonitor />
+      <AccessibilityEnhancer />
+    </ErrorBoundary>
+=======
     <Layout seo={seoConfig}>
       <Homepage2040 />
     </Layout>
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-b6d6
   );
 };
 
