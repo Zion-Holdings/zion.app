@@ -8,7 +8,11 @@ function runNode(relPath, args = []) {
 }
 
 exports.config = {
+<<<<<<< HEAD:netlify/functions/a11y-audit-runner.js
+  schedule: '17 */3 * * *', // every 3 hours, offset
+=======
   schedule: '*/20 * * * *', // every 20 minutes
+>>>>>>> origin/cursor/automate-futuristic-front-page-enhancements-738d:netlify/functions/ui-enhancer.js
 };
 
 exports.handler = async () => {
