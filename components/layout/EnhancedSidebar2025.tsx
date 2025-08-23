@@ -25,96 +25,84 @@ interface SidebarItem {
 
 const sidebarItems: SidebarItem[] = [
   {
-    name: 'Home',
-    href: '/',
-    icon: <Home className="w-5 h-5" />,
-    description: 'Welcome to Zion Tech Group'
+    title: 'AI & Consciousness',
+    icon: <Brain className="w-5 h-5" />,
+    color: 'text-violet-400',
+    items: [
+      { name: 'AI Consciousness Evolution', href: '/ai-consciousness-evolution-2029', badge: 'New' },
+      { name: 'AI Quantum Neural Network', href: '/ai-quantum-neural-network', badge: 'Hot' },
+      { name: 'AI Autonomous Research', href: '/ai-autonomous-research-assistant', badge: 'New' },
+      { name: 'AI Emotional Intelligence', href: '/ai-emotional-intelligence-training', badge: 'Popular' },
+      { name: 'AI Predictive Maintenance', href: '/ai-predictive-maintenance-platform', badge: 'New' },
+      { name: 'AI Content Personalization', href: '/ai-content-personalization-engine', badge: 'New' },
+      { name: 'AI Autonomous Ecosystem', href: '/ai-autonomous-ecosystem-manager' },
+      { name: 'AI Ethics & Governance', href: '/ai-ethics-governance-framework' },
+      { name: 'AI Evaluation Orchestrator', href: '/services/ai-evaluation-orchestrator', badge: 'New' },
+      { name: 'AI Support Triage Router', href: '/services/ai-support-triage-router', badge: 'New' },
+      { name: 'AI Code Review Assistant Pro', href: '/services/ai-code-review-assistant-pro', badge: 'New' },
+      { name: 'AI Revenue Forecasting Copilot', href: '/services/ai-revenue-forecasting-copilot', badge: 'New' },
+      { name: 'RAG Evaluation Lab', href: '/rag-evaluation-lab/', badge: 'New' },
+      { name: 'API Performance Testing', href: '/api-performance-testing/' },
+      { name: 'AI Creativity Studio', href: '/ai-creativity-studio' },
+      { name: 'AI Education Platform', href: '/ai-education-platform' },
+      { name: 'AI Healthcare Diagnostics', href: '/healthcare-solutions' },
+      { name: 'AI Financial Intelligence', href: '/ai-financial-intelligence' },
+      { name: 'AI Sustainability Platform', href: '/ai-sustainability-platform' },
+      { name: 'AI Legal Contract Analyzer', href: '/ai-legal-contract-analyzer' }
+    ]
   },
   {
     name: 'Services',
     href: '/services',
     icon: <Rocket className="w-5 h-5" />,
-    description: 'Our comprehensive technology solutions',
-    badge: 'Featured',
-    children: [
-      { name: 'All Services', href: '/services', icon: <Rocket className="w-4 h-4" />, featured: true },
-      { name: 'AI & Machine Learning', href: '/ai-services', icon: <Brain className="w-4 h-4" /> },
-      { name: 'Quantum Technology', href: '/quantum-services', icon: <Atom className="w-4 h-4" /> },
-      { name: 'Cybersecurity', href: '/cybersecurity', icon: <Shield className="w-4 h-4" /> },
-      { name: 'Cloud & Infrastructure', href: '/it-services', icon: <Cloud className="w-4 h-4" /> },
-      { name: 'Business Intelligence', href: '/data-analytics', icon: <BarChart className="w-4 h-4" /> },
-      { name: 'DevOps & Automation', href: '/devops-automation', icon: <Code className="w-4 h-4" /> },
-      { name: 'Space Technology', href: '/space-tech', icon: <RocketIcon className="w-4 h-4" /> }
+    color: 'text-emerald-400',
+    items: [
+      { name: 'AI Customer Success', href: '/ai-customer-success-platform', badge: 'New' },
+      { name: 'Supply Chain Optimization', href: '/intelligent-supply-chain-optimization', badge: 'New' },
+      { name: 'Financial Planning AI', href: '/ai-financial-planning-platform', badge: 'New' },
+      { name: 'HR Analytics Platform', href: '/ai-hr-analytics-platform', badge: 'New' },
+      { name: 'Sales Intelligence AI', href: '/ai-sales-intelligence-platform', badge: 'New' },
+      { name: 'AI Decision Engine', href: '/ai-powered-decision-engine' },
+      { name: 'Content Automation', href: '/intelligent-content-automation-platform' },
+      { name: 'Smart CRM Suite', href: '/smart-crm-intelligence-suite' },
+      { name: 'Financial Analytics', href: '/automated-financial-analytics-platform' },
+      { name: 'Project Management', href: '/intelligent-project-management-suite' },
+      { name: 'Business Intelligence', href: '/ai-business-intelligence-suite' },
+      { name: 'Marketing Automation', href: '/ai-autonomous-marketing-platform' }
     ]
   },
   {
-    name: 'Solutions',
-    href: '/solutions',
+    title: 'Industry Solutions',
     icon: <Target className="w-5 h-5" />,
-    description: 'Industry-specific solutions',
-    children: [
-      { name: 'Enterprise Solutions', href: '/solutions/enterprise', icon: <Building className="w-4 h-4" /> },
-      { name: 'Healthcare Solutions', href: '/solutions/healthcare', icon: <Heart className="w-4 h-4" /> },
-      { name: 'Financial Solutions', href: '/solutions/financial', icon: <DollarSign className="w-4 h-4" /> },
-      { name: 'Manufacturing Solutions', href: '/solutions/manufacturing', icon: <Cog className="w-4 h-4" /> },
-      { name: 'Retail Solutions', href: '/retail-technology-solutions', icon: <Target className="w-4 h-4" /> },
-      { name: 'Government Solutions', href: '/government-technology-solutions', icon: <Shield className="w-4 h-4" /> }
+    color: 'text-orange-400',
+    items: [
+      { name: 'Healthcare Solutions', href: '/healthcare-solutions' },
+      { name: 'Financial Solutions', href: '/financial-solutions' },
+      { name: 'Manufacturing AI', href: '/manufacturing-ai-solutions' },
+      { name: 'Retail Technology', href: '/retail-technology-solutions' },
+      { name: 'Government Tech', href: '/government-technology-solutions' },
+      { name: 'Education Technology', href: '/education-technology-solutions' },
+      { name: 'Entertainment & Media', href: '/entertainment-media-solutions' },
+      { name: 'Energy & Utilities', href: '/energy-utilities-solutions' },
+      { name: 'Biotech AI', href: '/biotech-ai' },
+      { name: 'Space Technology', href: '/space-technology' }
     ]
   },
   {
-    name: 'Company',
-    href: '/about',
-    icon: <Building className="w-5 h-5" />,
-    description: 'About Zion Tech Group',
-    children: [
-      { name: 'About Us', href: '/about', icon: <Info className="w-4 h-4" /> },
-      { name: 'Our Mission', href: '/mission', icon: <Target className="w-4 h-4" /> },
-      { name: 'Leadership Team', href: '/leadership', icon: <Users className="w-4 h-4" /> },
-      { name: 'Company Culture', href: '/culture', icon: <Heart className="w-4 h-4" /> },
-      { name: 'Our Values', href: '/values', icon: <Star className="w-4 h-4" /> },
-      { name: 'Careers', href: '/careers', icon: <Briefcase className="w-4 h-4" /> },
-      { name: 'News & Press', href: '/press', icon: <FileText className="w-4 h-4" /> }
-    ]
-  },
-  {
-    name: 'Resources',
-    href: '/resources',
-    icon: <BookOpen className="w-5 h-5" />,
-    description: 'Knowledge and resources',
-    children: [
-      { name: 'Documentation', href: '/docs', icon: <FileText className="w-4 h-4" /> },
-      { name: 'Blog & Articles', href: '/blog', icon: <BookOpen className="w-4 h-4" /> },
-      { name: 'Case Studies', href: '/case-studies', icon: <BarChart className="w-4 h-4" /> },
-      { name: 'White Papers', href: '/white-papers', icon: <FileText className="w-4 h-4" /> },
-      { name: 'Webinars', href: '/webinars', icon: <Calendar className="w-4 h-4" /> },
-      { name: 'Events', href: '/events-webinars', icon: <Calendar className="w-4 h-4" /> },
-      { name: 'Training', href: '/training', icon: <Lightbulb className="w-4 h-4" /> }
-    ]
-  },
-  {
-    name: 'Support',
-    href: '/support',
-    icon: <MessageCircle className="w-5 h-5" />,
-    description: 'Get help and support',
-    children: [
-      { name: 'Contact Us', href: '/contact', icon: <MessageCircle className="w-4 h-4" /> },
-      { name: 'Get Started', href: '/get-started', icon: <Zap className="w-4 h-4" /> },
-      { name: 'Support Center', href: '/support', icon: <HelpCircle className="w-4 h-4" /> },
-      { name: 'Status Page', href: '/status', icon: <Monitor className="w-4 h-4" /> },
-      { name: 'Developer Resources', href: '/developer-resources', icon: <Code className="w-4 h-4" /> }
-    ]
-  },
-  {
-    name: 'Compliance & Accessibility',
-    href: '/compliance',
-    icon: <Shield className="w-5 h-5" />,
-    description: 'Enterprise compliance and accessibility solutions',
-    children: [
-      { name: 'SOC 2 Compliance', href: '/soc2-compliance-automation', icon: <Shield className="w-4 h-4" /> },
-      { name: 'GDPR Compliance', href: '/privacy-compliance-automation', icon: <Lock className="w-4 h-4" /> },
-      { name: 'Accessibility Tools', href: '/accessibility', icon: <Accessibility className="w-4 h-4" /> },
-      { name: 'Compliance Monitoring', href: '/compliance', icon: <Monitor className="w-4 h-4" /> },
-      { name: 'Privacy Portal', href: '/privacy-request-portal', icon: <Users className="w-4 h-4" /> }
+    title: 'Quick Links',
+    icon: <Zap className="w-5 h-5" />,
+    color: 'text-yellow-400',
+    items: [
+      { name: 'Get Started', href: '/get-started' },
+      { name: 'Pricing', href: '/pricing' },
+      { name: 'Contact', href: '/contact' },
+      { name: 'Support', href: '/support' },
+      { name: 'Blog', href: '/blog' },
+      { name: 'Case Studies', href: '/case-studies' },
+      { name: 'Documentation', href: '/docs' },
+      { name: 'Training', href: '/training' },
+      { name: 'Webinars', href: '/webinars' },
+      { name: 'White Papers', href: '/white-papers' }
     ]
   }
 ];

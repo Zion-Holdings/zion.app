@@ -56,36 +56,9 @@ import { real2036ITServicesAdditions } from '../../data/real-2036-it-services-ad
 import { real2036AIServicesAdditions } from '../../data/real-2036-ai-services-additions';
 import { innovative2025MicroSaasBatch } from '../../data/innovative-2025-micro-saas-batch';
 import { innovative2025ITEnterpriseBatch } from '../../data/innovative-2025-it-enterprise-batch';
-import { innovativeMicroSaasServices } from '../../data/innovative-2025-micro-saas-expansions';
-import { innovativeITServices } from '../../data/innovative-2025-it-services-expansions';
-import { innovativeAIServices } from '../../data/innovative-2025-ai-services-expansions';
-// Import our new 2025 advanced services
-import { advanced2025MicroSaasExpansion } from '../../data/2025-advanced-micro-saas-expansion';
-import { advanced2025ITSolutionsExpansion } from '../../data/2025-advanced-it-solutions-expansion';
-import { advancedAIServicesExpansion2025 } from '../../data/2025-advanced-ai-services-expansion';
-
-// Define a proper interface for services that matches UltraFuturisticServiceCard2026
-interface Service {
-  id: string;
-  name: string;
-  tagline?: string;
-  description: string;
-  price?: string;
-  period?: string;
-  pricing?: {
-    starter?: { price: string; period?: string };
-    monthly?: string;
-    [key: string]: { price: string; period?: string } | string;
-  };
-  category: string;
-  popular?: boolean;
-  category: string;
-  icon: string;
-  launchDate?: string;
-  features?: string[];
-  icon?: string;
-  [key: string]: unknown;
-}
+import { innovative2041MicroSaasServices } from '../../data/innovative-2041-micro-saas-services';
+import { innovative2041ITServices } from '../../data/innovative-2041-it-services';
+import { innovative2041AIServices } from '../../data/innovative-2041-ai-services';
 
 function toSlug(value: string) {
   return value.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
@@ -101,7 +74,19 @@ const categories = [
   'Neuromorphic AI',
   'Edge Computing',
   'Cybersecurity',
-  'Automation',
+  'Supply Chain',
+  'Financial Services',
+  'Healthcare',
+  'Manufacturing',
+  'Retail',
+  'Education',
+  'Government',
+  'Energy',
+  'Transportation',
+  'Blockchain & Web3',
+  'IoT & Edge Computing',
+  'Enterprise Solutions',
+  'Innovation & Research'
 ];
 
 // Transform services data to match the expected Service interface
@@ -168,6 +153,9 @@ export default function ServicesIndexPage() {
       verified2025Additions as unknown[],
       realServicesQ12025 as unknown[],
       realEnterpriseServices2025 as unknown[],
+      innovative2025AIServices as unknown[],
+      innovative2025ITInfrastructureServices as unknown[],
+      innovative2025MicroSaasBatch2 as unknown[],
       realMarketAugmentations2025 as unknown[],
       verifiedRealServices2025Batch2 as unknown[],
       additionalLiveServices2025 as unknown[],
@@ -210,21 +198,9 @@ export default function ServicesIndexPage() {
     )
     .concat(innovative2025MicroSaasBatch as unknown[])
     .concat(innovative2025ITEnterpriseBatch as unknown[])
-    .concat(innovativeMicroSaasServices as unknown[])
-    .concat(innovativeITServices as unknown[])
-    .concat(innovativeAIServices as unknown[])
-    // Our new 2025 advanced services
-    .concat(advanced2025MicroSaasExpansion as unknown[])
-    .concat(advanced2025ITSolutionsExpansion as unknown[])
-    .concat(advancedAIServicesExpansion2025 as unknown[])
-    // Our new 2025 innovative services
-    .concat(innovativeMicroSaasExpansion2025 as unknown[])
-    .concat(innovative2025ITSolutionsExpansion as unknown[])
-    .concat(innovative2025AISolutionsExpansion as unknown[])
-    // Our new 2025 advanced services V2
-    .concat(advancedMicroSaasExpansion2025V2 as unknown[])
-    .concat(advancedITInfrastructureExpansion2025V2 as unknown[])
-    .concat(advancedAIServicesExpansion2025V2 as unknown[]);
+    .concat(innovative2041MicroSaasServices as unknown[])
+    .concat(innovative2041ITServices as unknown[])
+    .concat(innovative2041AIServices as unknown[]);
 
   // Transform services to match the expected format
   const transformedServices = all.map(transformServiceData);

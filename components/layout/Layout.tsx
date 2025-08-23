@@ -1,14 +1,10 @@
-import React, { useState, useEffect } from 'react';
-import UltraFuturisticNavigation2045 from './UltraFuturisticNavigation2045';
-import UltraFuturisticFooter2025 from './UltraFuturisticFooter2025';
+import React, { useState } from 'react';
+import { motion } from 'framer-motion';
+import UltraFuturisticNavigation2036 from './UltraFuturisticNavigation2036';
+import UltraFuturisticFooter2036 from './UltraFuturisticFooter2036';
 import EnhancedSidebar2025 from './EnhancedSidebar2025';
-import UltraFuturisticBackground2045 from '../backgrounds/UltraFuturisticBackground2045';
+import UltraAdvancedFuturisticBackground2036 from '../backgrounds/UltraAdvancedFuturisticBackground2036';
 import TopContactBar from './TopContactBar';
-import UltraFuturisticBackground2036 from '../backgrounds/UltraFuturisticBackground2036';
-import EnhancedPerformanceMonitor from '../EnhancedPerformanceMonitor';
-import EnhancedAccessibilityEnhancer from '../EnhancedAccessibilityEnhancer';
-import CookieConsentBanner from '../CookieConsentBanner';
-import PerformanceOptimizer from '../PerformanceOptimizer';
 
 interface LayoutProps {
 	children: React.ReactNode;
@@ -16,65 +12,63 @@ interface LayoutProps {
 
 export default function Layout({ children }: LayoutProps) {
   const [sidebarOpen, setSidebarOpen] = useState(false);
-  const [isOnline, setIsOnline] = useState(true);
   const [isLoading, setIsLoading] = useState(true);
-  const [theme, setTheme] = useState<'dark' | 'light'>('dark');
-
+  const [focusTrap, setFocusTrap] = useState(false);
 
   useEffect(() => {
-    // Check for saved theme preference
-    const savedTheme = localStorage.getItem('theme') as 'dark' | 'light';
-    if (savedTheme) {
-      setTheme(savedTheme);
+    // Simulate initial loading
+    const timer = setTimeout(() => setIsLoading(false), 500);
+    return () => clearTimeout(timer);
+  }, []);
+
+  // Focus trap for sidebar
+  useEffect(() => {
+    if (sidebarOpen) {
+      setFocusTrap(true);
+      // Focus first focusable element in sidebar
+      const firstFocusable = document.querySelector('[data-sidebar] button, [data-sidebar] a, [data-sidebar] input');
+      if (firstFocusable instanceof HTMLElement) {
+        firstFocusable.focus();
+      }
+    } else {
+      setFocusTrap(false);
     }
+  }, [sidebarOpen]);
 
-
-    // Simulate loading time for better UX
-    const timer = setTimeout(() => setIsLoading(false), 1000);
-
-    // Check online status
-    const updateOnlineStatus = () => {
-      setIsOnline(navigator.onLine);
+  // Handle escape key
+  useEffect(() => {
+    const handleEscape = (e: KeyboardEvent) => {
+      if (e.key === 'Escape' && sidebarOpen) {
+        setSidebarOpen(false);
+      }
     };
 
     if (sidebarOpen) {
       document.addEventListener('keydown', handleEscape);
-      // Prevent body scroll when sidebar is open
       document.body.style.overflow = 'hidden';
     } else {
       document.body.style.overflow = 'unset';
     }
 
     return () => {
-      clearTimeout(timer);
-      window.removeEventListener('online', updateOnlineStatus);
-      window.removeEventListener('offline', updateOnlineStatus);
+      document.removeEventListener('keydown', handleEscape);
+      document.body.style.overflow = 'unset';
     };
   }, [sidebarOpen]);
 
-  // Handle focus management for accessibility
-  useEffect(() => {
-    if (sidebarOpen) {
-      // Focus the first focusable element in the sidebar
-      const firstFocusable = document.querySelector('.sidebar-focusable') as HTMLElement;
-      if (firstFocusable) {
-        firstFocusable.focus();
-      }
-    }
-  }, [sidebarOpen]);
-
-  useEffect(() => {
-    // Apply theme to document
-    document.documentElement.setAttribute('data-theme', theme);
-    localStorage.setItem('theme', theme);
-  }, [theme]);
-
-  const handleThemeToggle = () => {
-    setTheme(prev => prev === 'dark' ? 'light' : 'dark');
-  };
-
   if (isLoading) {
-    return <LoadingSpinner />;
+    return (
+      <div className="min-h-screen bg-black text-white flex items-center justify-center">
+        <motion.div
+          initial={{ opacity: 0, scale: 0.8 }}
+          animate={{ opacity: 1, scale: 1 }}
+          className="text-center"
+        >
+          <div className="w-16 h-16 border-4 border-cyan-500 border-t-transparent rounded-full animate-spin mx-auto mb-4"></div>
+          <p className="text-xl text-gray-300">Loading...</p>
+        </motion.div>
+      </div>
+    );
   }
 
   return (
@@ -82,44 +76,35 @@ export default function Layout({ children }: LayoutProps) {
       {/* Skip to content link for accessibility */}
       <a href="#main" className="skip-link">Skip to main content</a>
       
-      {/* Futuristic Background */}
-      <UltraFuturisticBackground2045 theme="consciousness" intensity="high" />
+      {/* Enhanced Futuristic Background */}
+      <UltraAdvancedFuturisticBackground2036 
+        intensity="medium" 
+        theme="quantum"
+      />
       
       {/* Layout Structure */}
       <div className="relative z-10">
         {/* Top Contact Bar */}
         <TopContactBar />
         
-        {/* Futuristic Background */}
-        <UltraFuturisticBackground2046 />
+        {/* Navigation */}
+        <UltraFuturisticNavigation2036 />
         
-        {/* Layout Structure */}
-        <div className="relative z-10">
-          {/* Navigation */}
-          <UltraFuturisticNavigation2025 />
+        {/* Sidebar and Main Content */}
+        <div className="flex">
+          <EnhancedSidebar2025 
+            isOpen={sidebarOpen} 
+            onClose={() => setSidebarOpen(false)} 
+          />
           
-          {/* Sidebar and Main Content */}
-          <div className="flex">
-            <EnhancedSidebar2025 
-              isOpen={sidebarOpen} 
-              onClose={() => setSidebarOpen(false)} 
-            />
-            
-            <main id="main" role="main" className="flex-1 pt-32 lg:pt-36">
-              {children}
-            </main>
-          </div>
-          
-          {/* Footer */}
-          <UltraFuturisticFooter2025 />
+          <main id="main" role="main" className="flex-1 pt-24 lg:pt-28">
+            {children}
+          </main>
         </div>
-
-      {/* Accessibility and Performance Tools */}
-      <AccessibilityEnhancer />
-      <PerformanceMonitor />
-      
-      {/* Cookie Consent Banner */}
-      <CookieConsentBanner />
+        
+        {/* Footer */}
+        <UltraFuturisticFooter2036 />
+      </div>
     </div>
   );
 }

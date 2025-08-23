@@ -11,6 +11,9 @@
   directory = "netlify/functions"
   node_bundler = "esbuild"
 
+# Next.js plugin is not needed for static export
+# [[plugins]]
+#   package = "@netlify/plugin-nextjs"
 
 [[plugins]]
   package = "netlify-plugin-cloudinary"
