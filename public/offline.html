@@ -199,101 +199,10 @@
     </style>
 </head>
 <body>
-    <div class="offline-container">
-        <div class="offline-icon">
-            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4c-.77-.833-1.964-.833-2.732 0L3.732 16.5c-.77.833.192 2.5 1.732 2.5z"></path>
-            </svg>
-        </div>
-        
-        <h1>You're Offline</h1>
-        <p class="subtitle">
-            Don't worry! You can still access previously loaded content and use some features while offline.
-        </p>
-        
-        <div class="status-indicator">
-            <div class="status-dot"></div>
-            <span>No Internet Connection</span>
-        </div>
-        
-        <div class="features-list">
-            <h3>Available Offline:</h3>
-            <ul>
-                <li>Browse previously visited pages</li>
-                <li>View cached images and content</li>
-                <li>Access saved preferences</li>
-                <li>Use installed PWA features</li>
-            </ul>
-        </div>
-        
-        <div>
-            <button class="retry-button" onclick="window.location.reload()">
-                🔄 Try Again
-            </button>
-            <button class="home-button" onclick="window.location.href='/'">
-                🏠 Go Home
-            </button>
-        </div>
-        
-        <div class="connection-info">
-            <strong>Tip:</strong> Check your internet connection and try refreshing the page. 
-            If the problem persists, try restarting your device or contacting your network provider.
-        </div>
-    </div>
-
-    <script>
-        // Check connection status periodically
-        function checkConnection() {
-            if (navigator.onLine) {
-                // User is back online, redirect to home
-                window.location.href = '/';
-            }
-        }
-
-        // Retry connection
-        function retryConnection() {
-            const retryBtn = document.querySelector('.retry-button');
-            retryBtn.textContent = 'Checking...';
-            retryBtn.disabled = true;
-            
-            setTimeout(() => {
-                if (navigator.onLine) {
-                    window.location.reload();
-                } else {
-                    retryBtn.textContent = 'Still Offline';
-                    setTimeout(() => {
-                        retryBtn.textContent = 'Retry Connection';
-                        retryBtn.disabled = false;
-                    }, 2000);
-                }
-            }, 1000);
-        }
-
-        // Listen for online/offline events
-        window.addEventListener('online', () => {
-            window.location.href = '/';
-        });
-
-        window.addEventListener('offline', () => {
-            // Already on offline page
-        });
-
-        // Check connection every 5 seconds
-        setInterval(checkConnection, 5000);
-
-        // Add some interactivity
-        document.addEventListener('DOMContentLoaded', () => {
-            // Add click effects to buttons
-            const buttons = document.querySelectorAll('button');
-            buttons.forEach(button => {
-                button.addEventListener('click', function() {
-                    this.style.transform = 'scale(0.95)';
-                    setTimeout(() => {
-                        this.style.transform = '';
-                    }, 150);
-                });
-            });
-        });
-    </script>
+  <h1>You are offline</h1>
+  <p>Please check your internet connection and try again.</p>
+  <p>If the app still shows a blank screen after reconnecting, run
+    <code>./setup.sh npm</code> to install missing dependencies.</p>
+  <p>Check <code>next_dev_server.log</code> for errors. After installing dependencies, run <code>npm run fix:loading</code> if needed.</p>
 </body>
 </html>

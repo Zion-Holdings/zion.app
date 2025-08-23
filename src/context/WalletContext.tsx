@@ -97,6 +97,18 @@ const initialWalletState: WalletState = {
 
 export const WalletContext = createContext<WalletContextType | undefined>(undefined);
 
+// Provide a safe default context to avoid runtime crashes if the provider
+// fails to mount for any reason (e.g. missing environment vars). This helps
+// prevent blank screens by allowing components using `useWallet` to render
+// gracefully with a no-op implementation.
+const defaultWalletContext: WalletContextType = {
+  ...initialWalletState,
+  connectWallet: async () => {},
+  disconnectWallet: async () => {},
+  displayAddress: null,
+  appKit: null,
+};
+
 
 // Known default/fallback project IDs that indicate the wallet system should be considered unavailable
 const KNOWN_INVALID_PROJECT_IDS = [
@@ -431,7 +443,8 @@ export const WalletProvider: React.FC<{ children: ReactNode }> = ({ children }) 
 export const useWallet = (): WalletContextType => {
   const context = useContext(WalletContext);
   if (context === undefined) {
-    throw new Error('useWallet must be used within a WalletProvider');
+    console.error('useWallet must be used within a WalletProvider');
+    return defaultWalletContext;
   }
   return context;
 };

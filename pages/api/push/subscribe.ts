@@ -14,7 +14,10 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
 
   try {
     const subs = fs.existsSync(FILE_PATH)
-      ? JSON.parse(fs.readFileSync(FILE_PATH, 'utf8'))
+      ? (() => {
+          const fileContent = fs.readFileSync(FILE_PATH, 'utf8');
+          return JSON.parse(typeof fileContent === 'string' ? fileContent : String(fileContent));
+        })()
       : [];
     subs.push(req.body);
     fs.writeFileSync(FILE_PATH, JSON.stringify(subs, null, 2));

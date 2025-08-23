@@ -236,7 +236,7 @@ export default function ServicesPage() {
 
   if (loading && services.length === 0) {
     return (
-      <div className="container py-8">
+      <main className="container py-8">
         <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="text-center mb-8">
           <h1 className="text-4xl font-bold mb-4 bg-gradient-to-r from-green-600 to-blue-600 bg-clip-text text-transparent">
             IT & AI Services
@@ -244,22 +244,22 @@ export default function ServicesPage() {
           <p className="text-muted-foreground text-lg">Professional services for modern businesses and enterprises</p>
         </motion.div>
         <ServicesLoadingGrid />
-      </div>
+      </main>
     );
   }
 
   if (error) {
     return (
-      <div className="container py-8 text-center">
+      <main className="container py-8 text-center">
         <h2 className="text-2xl font-bold mb-4">Error Loading Services</h2>
         <p className="text-muted-foreground mb-4">Failed to load services. Please try again.</p>
         <Button onClick={refresh}>Retry</Button>
-      </div>
+      </main>
     );
   }
 
   return (
-    <div className="container py-8">
+    <main className="container py-8">
       <motion.div className="text-center mb-8" initial={{ opacity: 0, y: -20 }} animate={{ opacity: 1, y: 0 }}>
         <h1 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-green-600 to-blue-600 bg-clip-text text-transparent">
           IT & AI Services
@@ -323,6 +323,6 @@ export default function ServicesPage() {
           </motion.button>
         )}
       </AnimatePresence>
-    </div>
+    </main>
   );
 }
