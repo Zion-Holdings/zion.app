@@ -13,6 +13,14 @@ import {
 const Footer: React.FC = () => {
 
   const services = [
+<<<<<<< HEAD
+    { name: 'AI & Consciousness', href: '/ai-services', icon: Brain },
+    { name: 'Quantum Technology', href: '/quantum-services', icon: Atom },
+    { name: 'Cybersecurity', href: '/cybersecurity', icon: Shield },
+    { name: 'Business Solutions', href: '/business-solutions', icon: Target },
+    { name: 'IT Infrastructure', href: '/it-infrastructure', icon: Cpu },
+    { name: 'Space Technology', href: '/space-tech', icon: Rocket }
+=======
     { name: 'AI & Consciousness', href: '/ai-services' },
     { name: 'Quantum Computing', href: '/quantum-services' },
     { name: 'Space Technology', href: '/space-technology' },
@@ -28,6 +36,7 @@ const Footer: React.FC = () => {
     { name: 'Cloud Platform', href: '/cloud-platform' },
     { name: 'Support', href: '/support' },
     { name: 'Documentation', href: '/docs' }
+>>>>>>> origin/cursor/website-audit-and-enhancement-e9b6
   ];
 
   const company = [
@@ -55,6 +64,15 @@ const Footer: React.FC = () => {
     { name: 'Security', href: '/security' }
   ];
 
+<<<<<<< HEAD
+  const social = [
+    { name: 'Twitter', href: '#', icon: Twitter },
+    { name: 'LinkedIn', href: '#', icon: Linkedin },
+    { name: 'GitHub', href: '#', icon: Github },
+    { name: 'YouTube', href: '#', icon: Youtube },
+    { name: 'Instagram', href: '#', icon: Instagram },
+    { name: 'Facebook', href: '#', icon: Facebook }
+=======
   const socialLinks = [
     { name: 'X', href: 'https://twitter.com/ziontechgroup', icon: Twitter },
     { name: 'LinkedIn', href: 'https://linkedin.com/company/ziontechgroup', icon: Linkedin },
@@ -62,6 +80,7 @@ const Footer: React.FC = () => {
     { name: 'Facebook', href: 'https://facebook.com/ziontechgroup', icon: Facebook },
     { name: 'Instagram', href: 'https://instagram.com/ziontechgroup', icon: Instagram },
     { name: 'YouTube', href: 'https://youtube.com/@ziontechgroup', icon: Youtube }
+>>>>>>> origin/cursor/website-audit-and-enhancement-e9b6
   ];
 
   return (
@@ -87,6 +106,9 @@ const Footer: React.FC = () => {
               intelligent automation systems, and the future of cloud-native AI infrastructure.
             </p>
             <div className="flex space-x-4">
+<<<<<<< HEAD
+              {social.map((social) => (
+=======
               {socialLinks.map((social) => (
                 <a
                   key={social.name}
@@ -191,6 +213,7 @@ const Footer: React.FC = () => {
             <div className="flex items-center space-x-4 mb-6 lg:mb-0">
               <span className="text-gray-400 text-sm mr-4">Follow Us:</span>
               {socialLinks.map((social) => (
+>>>>>>> origin/cursor/website-audit-and-enhancement-e9b6
                 <a
                   key={social.name}
                   href={social.href}

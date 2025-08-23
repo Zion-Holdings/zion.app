@@ -40,6 +40,13 @@ const Header = () => {
   }, [isProductDropdownOpen]);
 
   const navigation = [
+<<<<<<< HEAD
+    { name: 'Product', href: '#', hasDropdown: true },
+    { name: 'Solutions', href: '/services' },
+    { name: 'Resources', href: '/resources' },
+    { name: 'Company', href: '/about' },
+    { name: 'Pricing', href: '/pricing' },
+=======
     {
       name: 'Services',
       href: '/services',
@@ -83,6 +90,7 @@ const Header = () => {
     { name: 'About', href: '/about' },
     { name: 'Pricing', href: '/pricing' },
     { name: 'Contact', href: '/contact' }
+>>>>>>> origin/cursor/website-audit-and-enhancement-e9b6
   ];
 
   const productDropdown = [
