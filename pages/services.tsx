@@ -52,6 +52,13 @@ import { spaceTechAerospaceInnovationPlatform2025 } from '../data/2025-space-tec
 import { quantumComputingAdvancedTechPlatform2025 } from '../data/2025-quantum-computing-advanced-tech-platform';
 import { comprehensiveNewServices2025 } from '../data/2025-comprehensive-new-services-summary';
 
+// Import our new innovative 2025 enterprise services
+import { innovativeAIEnterpriseServices2025 } from '../data/2025-innovative-ai-enterprise-services';
+import { innovativeITInfrastructureEnterpriseServices2025 } from '../data/2025-innovative-it-infrastructure-enterprise';
+import { innovativeMicroSaasEnterpriseServices2025 } from '../data/2025-innovative-micro-saas-enterprise';
+import { innovativeCybersecurityServices2025 } from '../data/2025-innovative-cybersecurity-services';
+import { innovativeDataAnalyticsServices2025 } from '../data/2025-innovative-data-analytics-services';
+
 // Import our new service data
 import { enterpriseITSolutions } from '../data/2034-enterprise-it-solutions';
 import { innovativeMicroSaasSolutions } from '../data/2034-innovative-micro-saas-solutions';
@@ -215,6 +222,13 @@ const allServices = [
   ...advancedDataAnalyticsSolutions,
   ...fintechBlockchainInnovations,
   ...healthcareBiotechInnovations,
+  
+  // Our new innovative 2025 enterprise services
+  ...innovativeAIEnterpriseServices2025,
+  ...innovativeITInfrastructureEnterpriseServices2025,
+  ...innovativeMicroSaasEnterpriseServices2025,
+  ...innovativeCybersecurityServices2025,
+  ...innovativeDataAnalyticsServices2025,
   
   // Our new innovative 2025 enterprise services
   ...innovativeAIEnterpriseServices2025,
