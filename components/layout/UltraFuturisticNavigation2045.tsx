@@ -284,6 +284,22 @@ const navigationItems: NavigationItem[] = [
         description: 'Latest company news',
         neonColor: 'shadow-indigo-400/50',
         category: 'news'
+      },
+      {
+        label: 'Partners',
+        href: '/partners',
+        icon: <Users className="w-4 h-4" />,
+        description: 'Strategic partnerships',
+        neonColor: 'shadow-cyan-400/50',
+        category: 'partners'
+      },
+      {
+        label: 'Investors',
+        href: '/investors',
+        icon: <TrendingUp className="w-4 h-4" />,
+        description: 'Investment opportunities',
+        neonColor: 'shadow-green-400/50',
+        category: 'investors'
       }
     ]
   },
