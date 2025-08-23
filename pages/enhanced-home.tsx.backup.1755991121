@@ -1,3 +1,8 @@
+<<<<<<< HEAD
+export default function EnhancedHome() {
+  return <div className="p-6">Enhanced Home</div>;
+}
+=======
 export default function EnhancedHomePage() {
   return (
     <div className="space-y-4">
@@ -6,3 +11,4 @@ export default function EnhancedHomePage() {
     </div>
   );
 }
+>>>>>>> origin/cursor/build-investor-and-franchisee-growth-portal-dc8f

@@ -1,3 +1,6 @@
+<<<<<<< HEAD
+export default function AdminAutomationStatus(){return <div className="p-6">Automation Status</div>;}
+=======
 import Link from 'next/link';
 import DashboardLayout from '../../components/layout/Layout';
 import type { GetServerSideProps } from 'next';
@@ -22,3 +25,4 @@ export default function AutomationStatusPage() {
     </DashboardLayout>
   );
 }
+>>>>>>> origin/cursor/build-investor-and-franchisee-growth-portal-dc8f

@@ -183,8 +183,13 @@ const EnhancedNavigation: React.FC = () => {
           <Link href="/blog"><a>Blog</a></Link>
           <Link href="/talent"><a>Talent</a></Link>
           <Link href="/contact"><a>Contact</a></Link>
+<<<<<<< HEAD
+          <Link href="/nation-builder"><a>Nation Builder</a></Link>
+          <Link href="/nations"><a>Nations</a></Link>
+=======
           <Link href="/investors"><a>Investors</a></Link>
           <Link href="/franchise-portal"><a>Franchise</a></Link>
+>>>>>>> origin/cursor/build-investor-and-franchisee-growth-portal-dc8f
         </div>
       </nav>
 
