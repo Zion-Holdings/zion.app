@@ -98,10 +98,36 @@ const navigationItems: NavigationItem[] = [
         href: '/services?category=ai-ml',
         icon: <Brain className="w-4 h-4" />,
         description: 'Advanced AI solutions for enterprise',
+        children: [
+          {
+            label: 'AI Autonomous Systems',
+            href: '/services?category=ai-autonomous',
+            icon: <Brain className="w-4 h-4" />,
+            description: 'Fully autonomous AI business systems'
+          },
+          {
+            label: 'AI Content & Marketing',
+            href: '/services?category=ai-content',
+            icon: <FileText className="w-4 h-4" />,
+            description: 'AI-powered content creation and marketing'
+          },
+          {
+            label: 'AI Healthcare & Legal',
+            href: '/services?category=ai-specialized',
+            icon: <Shield className="w-4 h-4" />,
+            description: 'Specialized AI for healthcare and legal'
+          }
+        ],
         featured: true,
         neonColor: 'shadow-purple-400/50',
         category: 'ai',
-        priority: 1,
+        priority: 1
+      },
+      {
+        label: 'AI Autonomous Systems',
+        href: '/services?category=ai-autonomous',
+        icon: <Brain className="w-4 h-4" />,
+        description: 'Fully autonomous AI business systems',
         children: [
           {
             label: 'AI Autonomous Business Orchestrator',
