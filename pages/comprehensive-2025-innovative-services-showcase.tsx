@@ -51,8 +51,8 @@ const getServiceCategory = (service: any) => {
   return 'Other';
 };
 
-// Helper function to get service pricing
-const getServicePricing = (service: any) => {
+// Helper function to get service pricing display
+const getServicePricingDisplay = (service: any) => {
   if (service.pricing?.starter) return service.pricing.starter;
   if (service.pricing?.monthly) return `$${service.pricing.monthly}/month`;
   if (service.price?.monthly) return `$${service.price.monthly}/month`;
@@ -78,6 +78,58 @@ const getServiceName = (service: any) => {
   return service.name || service.title || 'Unnamed Service';
 };
 
+// Helper function to get service tagline
+const getServiceTagline = (service: any) => {
+  return service.tagline || '';
+};
+
+// Helper function to get service pricing
+const getServicePricing = (service: any) => {
+  if (service.price?.monthly) return service.price.monthly;
+  if (service.pricing?.starter) {
+    // Convert string pricing to number for sorting
+    const priceStr = service.pricing.starter;
+    const match = priceStr.match(/\$(\d+)/);
+    return match ? parseInt(match[1]) : 0;
+  }
+  return 0;
+};
+
+// Helper function to get service rating
+const getServiceRating = (service: any) => {
+  return service.rating || 0;
+};
+
+// Helper function to get service customers
+const getServiceCustomers = (service: any) => {
+  return service.customers || 0;
+};
+
+// Helper function to get service reviews
+const getServiceReviews = (service: any) => {
+  return service.reviews || 0;
+};
+
+// Helper function to get service launch date
+const getServiceLaunchDate = (service: any) => {
+  return service.launchDate || '2025';
+};
+
+// Helper function to get service link
+const getServiceLink = (service: any) => {
+  return service.link || `https://ziontechgroup.com/services/${service.slug}`;
+};
+
+// Helper function to get service icon
+const getServiceIcon = (service: any) => {
+  return service.icon || '🚀';
+};
+
+// Helper function to get service popular status
+const getServicePopular = (service: any) => {
+  return service.popular || false;
+};
+
 export default function Comprehensive2025InnovativeServicesShowcase() {
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedCategory, setSelectedCategory] = useState('All Services');
@@ -89,7 +141,7 @@ export default function Comprehensive2025InnovativeServicesShowcase() {
     .filter(service => {
       const matchesSearch = getServiceName(service).toLowerCase().includes(searchTerm.toLowerCase()) ||
                            service.description.toLowerCase().includes(searchTerm.toLowerCase()) ||
-                           (service.tagline || '').toLowerCase().includes(searchTerm.toLowerCase());
+                           getServiceTagline(service).toLowerCase().includes(searchTerm.toLowerCase());
       const matchesCategory = selectedCategory === 'All Services' || 
                              getServiceCategory(service).includes(selectedCategory.split(' ')[0]);
       return matchesSearch && matchesCategory;
@@ -99,12 +151,12 @@ export default function Comprehensive2025InnovativeServicesShowcase() {
         case 'name':
           return getServiceName(a).localeCompare(getServiceName(b));
         case 'price':
-          return (a.price?.monthly || 0) - (b.price?.monthly || 0);
+          return getServicePricing(a) - getServicePricing(b);
         case 'rating':
-          return (b.rating || 0) - (a.rating || 0);
+          return getServiceRating(b) - getServiceRating(a);
         case 'popularity':
         default:
-          return (b.customers || 0) - (a.customers || 0);
+          return getServiceCustomers(b) - getServiceCustomers(a);
       }
     });
 
@@ -276,8 +328,8 @@ export default function Comprehensive2025InnovativeServicesShowcase() {
                 {/* Service Header */}
                 <div className={`p-6 ${viewMode === 'list' ? 'lg:w-1/3' : ''}`}>
                   <div className="flex items-start justify-between mb-4">
-                    <div className="text-4xl">{service.icon}</div>
-                    {service.popular && (
+                    <div className="text-4xl">{getServiceIcon(service)}</div>
+                    {getServicePopular(service) && (
                       <div className="bg-gradient-to-r from-yellow-400 to-orange-500 text-black text-xs font-bold px-2 py-1 rounded-full">
                         POPULAR
                       </div>
@@ -285,18 +337,15 @@ export default function Comprehensive2025InnovativeServicesShowcase() {
                   </div>
                   
                   <h3 className="text-xl font-bold text-white mb-2">{getServiceName(service)}</h3>
-                  <p className="text-gray-300 text-sm mb-4">{service.tagline}</p>
+                                      <p className="text-gray-300 text-sm mb-4">{getServiceTagline(service)}</p>
                   
                   {/* Pricing */}
-                  <div className="flex items-center gap-2 mb-4">
-                    <DollarSign className="w-4 h-4 text-green-400" />
-                    <span className="text-white font-semibold">
-                      ${service.price?.monthly}/month
-                    </span>
-                    <span className="text-gray-400 text-sm">
-                      (${service.price?.yearly}/year)
-                    </span>
-                  </div>
+                                      <div className="flex items-center gap-2 mb-4">
+                      <DollarSign className="w-4 h-4 text-green-400" />
+                      <span className="text-white font-semibold">
+                        {getServicePricingDisplay(service)}
+                      </span>
+                    </div>
 
                   {/* Category */}
                   <div className="flex items-center gap-2 mb-4">
@@ -311,7 +360,7 @@ export default function Comprehensive2025InnovativeServicesShowcase() {
                         <Star
                           key={i}
                           className={`w-4 h-4 ${
-                            i < Math.floor(service.rating || 0)
+                            i < Math.floor(getServiceRating(service))
                               ? 'text-yellow-400 fill-current'
                               : 'text-gray-400'
                           }`}
@@ -319,7 +368,7 @@ export default function Comprehensive2025InnovativeServicesShowcase() {
                       ))}
                     </div>
                     <span className="text-gray-300 text-sm">
-                      {service.rating} ({service.reviews} reviews)
+                      {getServiceRating(service)} ({getServiceReviews(service)} reviews)
                     </span>
                   </div>
                 </div>
@@ -366,13 +415,13 @@ export default function Comprehensive2025InnovativeServicesShowcase() {
                   <div className="grid grid-cols-2 gap-4 mb-6">
                     <div className="text-center">
                       <div className="text-2xl font-bold text-green-400">
-                        {service.customers?.toLocaleString()}+
+                        {getServiceCustomers(service).toLocaleString()}+
                       </div>
                       <div className="text-gray-400 text-xs">Customers</div>
                     </div>
                     <div className="text-center">
                       <div className="text-2xl font-bold text-blue-400">
-                        {service.launchDate}
+                        {getServiceLaunchDate(service)}
                       </div>
                       <div className="text-gray-400 text-xs">Launch Date</div>
                     </div>
@@ -381,7 +430,7 @@ export default function Comprehensive2025InnovativeServicesShowcase() {
                   {/* CTA Button */}
                   <div className="flex gap-3">
                     <a
-                      href={service.link}
+                      href={getServiceLink(service)}
                       className="flex-1 bg-gradient-to-r from-purple-500 to-pink-500 text-white px-4 py-2 rounded-lg text-center font-semibold hover:from-purple-600 hover:to-pink-600 transition-all duration-300 flex items-center justify-center gap-2"
                     >
                       Learn More
