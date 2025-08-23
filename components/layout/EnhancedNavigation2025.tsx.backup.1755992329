@@ -135,6 +135,21 @@ const navigationItems = [
   {
     name: 'Enterprise IT',
     href: '/enterprise-it',
+<<<<<<< HEAD
+    icon: <Shield className="w-5 h-5" />,
+    description: 'Advanced enterprise infrastructure and security solutions',
+    badge: 'Enterprise',
+    children: [
+      { name: 'Quantum-Secure Cloud', href: '/quantum-secure-cloud-infrastructure', description: 'Future-proof cloud security' },
+      { name: 'Zero Trust Architecture', href: '/zero-trust-network-architecture', description: 'Advanced network security' },
+      { name: 'Autonomous DevOps', href: '/autonomous-devops-orchestrator', description: 'AI-powered infrastructure' },
+      { name: 'Edge Computing', href: '/edge-computing-orchestration-platform', description: 'Distributed computing optimization' },
+      { name: 'AI Cybersecurity', href: '/ai-powered-cybersecurity-platform', description: 'Intelligent threat detection' },
+      { name: 'Blockchain Infrastructure', href: '/blockchain-infrastructure-platform', description: 'Enterprise blockchain solutions' },
+      { name: 'IoT Security Management', href: '/iot-security-management-platform', description: 'Connected device security' },
+      { name: 'Data Privacy Management', href: '/data-privacy-management-platform', description: 'Compliance and privacy' },
+      { name: 'Cloud Cost Optimization', href: '/cloud-cost-optimization-platform', description: 'AI-powered cost reduction' }
+=======
     icon: <Cpu className="w-5 h-5" />,
     description: 'Enterprise solutions and infrastructure',
     children: [
@@ -167,6 +182,7 @@ const navigationItems = [
       { name: 'Web3 Analytics', href: '/web3-analytics', description: 'Blockchain insights' },
       { name: 'Token Economics', href: '/token-economics', description: 'Token design and modeling' },
       { name: 'Regulatory Compliance', href: '/web3-compliance', description: 'Compliance automation' }
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-62dc
     ]
   },
   {
@@ -189,6 +205,12 @@ const navigationItems = [
     ]
   },
   {
+<<<<<<< HEAD
+    name: 'Creative & Design',
+    href: '/creative-services',
+    icon: <Palette className="w-5 h-5" />,
+    description: 'AI-powered creative and design solutions',
+=======
     name: 'Healthcare & Biotech',
     href: '/healthcare-biotech-services',
     icon: <Heart className="w-5 h-5" />,
@@ -212,6 +234,7 @@ const navigationItems = [
     href: '/solutions',
     icon: <Target className="w-5 h-5" />,
     description: 'Industry-specific solutions',
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-62dc
     children: [
       { name: 'AI Creativity Studio', href: '/ai-creativity-studio', description: 'AI-powered creative content' },
       { name: 'Metaverse Development', href: '/metaverse-development-studio', description: '3D world creation' },
