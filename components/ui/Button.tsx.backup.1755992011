@@ -45,8 +45,13 @@ export default function Button({
 
   if (href) {
     return (
+<<<<<<< HEAD
+      <Link href={href} className={classes}>
+        {children}
+=======
       <Link href={href} className={classes} style={style} target={target} rel={target === '_blank' ? 'noopener noreferrer' : rel}>
         {content}
+>>>>>>> origin/cursor/enhance-app-with-micro-saas-and-advertising-5f5b
       </Link>
     );
   }

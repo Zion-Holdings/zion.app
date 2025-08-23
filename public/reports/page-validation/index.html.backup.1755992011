@@ -14,6 +14,33 @@ code{background:rgba(0,0,0,.4);padding:2px 4px;border-radius:6px}
 .build-failure{background:rgba(239,68,68,.2);border:2px solid #ef4444}
 </style>
 <h1>Next.js Page Structure Validation Report</h1>
+<<<<<<< HEAD
+<p>Generated 8/20/2025, 6:46:27 PM</p>
+<div class="build-status build-success">✅ BUILD READY</div>
+<div class="card success">
+<h2>Summary</h2>
+<p><strong>Total Files:</strong> 1</p>
+<p><strong>Files with Issues:</strong> 1</p>
+<p><strong>Critical Issues:</strong> 3</p>
+<p><strong>Warnings:</strong> 1</p>
+<p><strong>Build Breaking Files:</strong> 1</p>
+</div>
+<div class="card error">
+<h2>🚨 Build Breaking Files</h2>
+<p>These files will prevent successful builds:</p>
+<ul>
+<li><code>pages/enhanced-services.tsx</code></li>
+</ul>
+</div>
+<div class="card error">
+<h3><code>pages/enhanced-services.tsx</code></h3>
+<h4>Critical Issues:</h4>
+<div class="pill error">MISSING_EXPORT_DEFAULT: Missing export default statement</div>
+<div class="pill error">MISSING_COMPONENT_DECLARATION: Missing component function/class declaration</div>
+<div class="pill error">MISSING_RETURN_STATEMENT: Missing return statement or JSX</div>
+<h4>Warnings:</h4>
+<div class="pill warning">PAGE_TOO_SHORT: Page content seems too short, may be incomplete</div>
+=======
 <p>Generated 8/20/2025, 6:46:21 PM</p>
 <div class="build-status build-success">✅ BUILD READY</div>
 <div class="card success">
@@ -43,4 +70,5 @@ code{background:rgba(0,0,0,.4);padding:2px 4px;border-radius:6px}
 <h3><code>pages/api/url-shortener.ts</code></h3>
 <h4>Warnings:</h4>
 <div class="pill warning">INCOMPLETE_HTML: Incomplete HTML tags detected (line 31)</div>
+>>>>>>> origin/cursor/enhance-app-with-micro-saas-and-advertising-5f5b
 </div>
