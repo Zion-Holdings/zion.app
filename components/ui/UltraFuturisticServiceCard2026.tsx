@@ -1,4 +1,6 @@
 import React, { useState, useCallback } from 'react';
+import { motion } from 'framer-motion';
+import { ArrowRight, Star, CheckCircle, Zap, Brain, Atom, Rocket } from 'lucide-react';
 
 interface Service {
   id: string;
@@ -39,56 +41,64 @@ const UltraFuturisticServiceCard2026: React.FC<UltraFuturisticServiceCard2026Pro
           border: 'border-cyan-500/30 hover:border-cyan-400/60',
           gradient: 'from-cyan-500/20 to-blue-500/20',
           text: 'text-cyan-400',
-          accent: 'bg-cyan-500/20'
+          accent: 'bg-cyan-500/20',
+          icon: <Atom className="w-6 h-6 text-cyan-400" />
         };
       case 'ai':
         return {
           border: 'border-purple-500/30 hover:border-purple-400/60',
           gradient: 'from-purple-500/20 to-pink-500/20',
           text: 'text-purple-400',
-          accent: 'bg-purple-500/20'
+          accent: 'bg-purple-500/20',
+          icon: <Brain className="w-6 h-6 text-purple-400" />
         };
       case 'automation':
         return {
           border: 'border-green-500/30 hover:border-green-400/60',
           gradient: 'from-green-500/20 to-emerald-500/20',
           text: 'text-green-400',
-          accent: 'bg-green-500/20'
+          accent: 'bg-green-500/20',
+          icon: <Zap className="w-6 h-6 text-green-400" />
         };
       case 'it':
         return {
           border: 'border-blue-500/30 hover:border-blue-400/60',
           gradient: 'from-blue-500/20 to-indigo-500/20',
           text: 'text-blue-400',
-          accent: 'bg-blue-500/20'
+          accent: 'bg-blue-500/20',
+          icon: <Rocket className="w-6 h-6 text-blue-400" />
         };
       case 'emerging':
         return {
           border: 'border-yellow-500/30 hover:border-yellow-400/60',
           gradient: 'from-yellow-500/20 to-orange-500/20',
           text: 'text-yellow-400',
-          accent: 'bg-yellow-500/20'
+          accent: 'bg-yellow-500/20',
+          icon: <Star className="w-6 h-6 text-yellow-400" />
         };
       case 'enterprise':
         return {
           border: 'border-indigo-500/30 hover:border-indigo-400/60',
           gradient: 'from-indigo-500/20 to-purple-500/20',
           text: 'text-indigo-400',
-          accent: 'bg-indigo-500/20'
+          accent: 'bg-indigo-500/20',
+          icon: <CheckCircle className="w-6 h-6 text-indigo-400" />
         };
       case 'premium':
         return {
           border: 'border-amber-500/30 hover:border-amber-400/60',
           gradient: 'from-amber-500/20 to-yellow-500/20',
           text: 'text-amber-400',
-          accent: 'bg-amber-500/20'
+          accent: 'bg-amber-500/20',
+          icon: <Star className="w-6 h-6 text-amber-400" />
         };
       default:
         return {
           border: 'border-white/20 hover:border-white/40',
           gradient: 'from-white/10 to-white/5',
           text: 'text-white',
-          accent: 'bg-white/10'
+          accent: 'bg-white/10',
+          icon: <Star className="w-6 h-6 text-white" />
         };
     }
   }, []);
@@ -101,107 +111,146 @@ const UltraFuturisticServiceCard2026: React.FC<UltraFuturisticServiceCard2026Pro
     }
   }, [onClick]);
 
-  const toggleExpansion = useCallback(() => {
+  const toggleExpanded = useCallback((e: React.MouseEvent) => {
+    e.stopPropagation();
     setIsExpanded(!isExpanded);
   }, [isExpanded]);
 
   return (
-    <div
+    <motion.div
       className={`group relative overflow-hidden rounded-2xl transition-all duration-500 transform hover:scale-105 cursor-pointer ${className}`}
+      role="button"
+      tabIndex={0}
+      aria-label={`${service.name} service card`}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
       onClick={handleCardClick}
-      role="button"
-      tabIndex={0}
-      onKeyDown={(e) => {
-        if (e.key === 'Enter' || e.key === ' ') {
-          e.preventDefault();
-          handleCardClick();
-        }
-      }}
-      aria-label={`${service.name} service card`}
+      whileHover={{ scale: 1.02 }}
+      whileTap={{ scale: 0.98 }}
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6 }}
     >
-      {/* Background */}
-      <div className={`absolute inset-0 bg-gradient-to-br ${variantStyles.gradient} ${variantStyles.border} transition-all duration-500`} />
+      {/* Background Layers */}
+      <div className={`absolute inset-0 bg-gradient-to-br ${variantStyles.gradient} ${variantStyles.border} transition-all duration-500`}></div>
+      <div className={`absolute inset-0 bg-gradient-to-br ${variantStyles.gradient} opacity-0 group-hover:opacity-20 transition-opacity duration-500 blur-xl`}></div>
       
-      {/* Glow Effect */}
-      <div className={`absolute inset-0 bg-gradient-to-br ${variantStyles.gradient} opacity-0 group-hover:opacity-20 transition-opacity duration-500 blur-xl`} />
-      
+      {/* Animated Background Elements */}
+      <motion.div
+        className="absolute inset-0 pointer-events-none"
+        animate={{
+          rotate: isHovered ? 360 : 0,
+        }}
+        transition={{ duration: 20, ease: "linear" }}
+      >
+        <div className="absolute top-4 right-4 w-16 h-16 border border-current opacity-20 rounded-full"></div>
+        <div className="absolute bottom-4 left-4 w-12 h-12 border border-current opacity-20 transform rotate-45"></div>
+      </motion.div>
+
       {/* Content */}
       <div className="relative z-10 p-6 h-full flex flex-col">
         {/* Header */}
         <div className="flex items-start justify-between mb-4">
-          <div className="text-4xl mb-3" aria-hidden="true">
-            {service.icon}
+          <div className="flex items-center gap-3">
+            <div className="text-4xl mb-2" aria-hidden="true">{service.icon}</div>
+            <div className="flex items-center gap-2">
+              {variantStyles.icon}
+            </div>
           </div>
           {service.popular && (
-            <div className={`px-3 py-1 rounded-full text-xs font-semibold ${variantStyles.accent} ${variantStyles.text}`}>
+            <motion.div 
+              className={`px-3 py-1 rounded-full text-xs font-semibold ${variantStyles.accent} ${variantStyles.text}`}
+              initial={{ scale: 0 }}
+              animate={{ scale: 1 }}
+              transition={{ delay: 0.3, type: "spring" }}
+            >
               Popular
-            </div>
+            </motion.div>
           )}
         </div>
 
         {/* Service Info */}
         <div className="flex-1">
-          <h3 className={`text-xl font-bold mb-2 ${variantStyles.text}`}>
+          <motion.h3 
+            className={`text-xl font-bold mb-2 ${variantStyles.text}`}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.1 }}
+          >
             {service.name}
-          </h3>
-          <p className="text-gray-300 text-sm mb-3">
-            {service.tagline}
-          </p>
+          </motion.h3>
           
-          {/* Price */}
-          <div className="mb-4">
-            <span className="text-2xl font-bold text-white">
-              {service.price}
-            </span>
-            <span className="text-gray-400 text-sm ml-1">
-              {service.period}
-            </span>
-          </div>
+          <motion.p 
+            className="text-gray-300 text-sm mb-3"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.2 }}
+          >
+            {service.tagline}
+          </motion.p>
+          
+          <motion.div 
+            className="mb-4"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.3 }}
+          >
+            <span className="text-2xl font-bold text-white">{service.price}</span>
+            <span className="text-gray-400 text-sm ml-1">{service.period}</span>
+          </motion.div>
 
           {/* Features */}
-          <div className="space-y-2 mb-4">
-            {service.features.slice(0, isExpanded ? undefined : 3).map((feature, index) => (
-              <div key={index} className="flex items-center text-sm text-gray-300">
-                <div className={`w-2 h-2 rounded-full mr-3 ${variantStyles.accent}`} />
+          <motion.div 
+            className="space-y-2 mb-4"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.4 }}
+          >
+            {service.features.slice(0, isExpanded ? service.features.length : 3).map((feature, index) => (
+              <motion.div 
+                key={feature}
+                className="flex items-center text-sm text-gray-300"
+                initial={{ opacity: 0, x: -10 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ delay: 0.5 + index * 0.1 }}
+              >
+                <div className={`w-2 h-2 rounded-full mr-3 ${variantStyles.accent}`}></div>
                 {feature}
-              </div>
+              </motion.div>
             ))}
-          </div>
+          </motion.div>
 
-          {/* Show More/Less */}
+          {/* Show More/Less Button */}
           {service.features.length > 3 && (
-            <button
-              onClick={toggleExpansion}
+            <motion.button 
               className={`text-sm ${variantStyles.text} hover:underline focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-black focus:ring-cyan-400`}
+              onClick={toggleExpanded}
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
             >
               {isExpanded ? 'Show Less' : `Show ${service.features.length - 3} More`}
-            </button>
+            </motion.button>
           )}
         </div>
 
         {/* Action Button */}
-        <button
-          className={`w-full mt-4 py-3 px-4 rounded-lg font-semibold transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-black ${
-            variant === 'default'
-              ? 'bg-white/10 text-white hover:bg-white/20 focus:ring-white/40'
-              : `bg-${variantStyles.text.replace('text-', '')}/20 text-${variantStyles.text.replace('text-', '')} hover:bg-${variantStyles.text.replace('text-', '')}/30 focus:ring-${variantStyles.text.replace('text-', '')}/40`
-          }`}
-          onClick={(e) => {
-            e.stopPropagation();
-            handleCardClick();
-          }}
+        <motion.button 
+          className={`w-full mt-4 py-3 px-4 rounded-lg font-semibold transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-black focus:ring-cyan-400 ${variantStyles.accent} ${variantStyles.text} hover:bg-opacity-30 focus:ring-opacity-40 flex items-center justify-center gap-2`}
+          whileHover={{ scale: 1.02 }}
+          whileTap={{ scale: 0.98 }}
         >
           Get Started
-        </button>
-      </div>
+          <ArrowRight className="w-4 h-4" />
+        </motion.button>
 
-      {/* Hover Effects */}
-      {isHovered && (
-        <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-      )}
-    </div>
+        {/* Hover Effect Overlay */}
+        <motion.div
+          className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"
+          initial={{ opacity: 0 }}
+          whileHover={{ opacity: 1 }}
+        />
+      </div>
+    </motion.div>
   );
 };
 

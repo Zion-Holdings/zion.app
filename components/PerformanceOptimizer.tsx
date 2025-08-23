@@ -1,265 +1,206 @@
-import React, { useState, useEffect, useRef, ReactNode } from 'react';
-import { motion } from 'framer-motion';
+import React, { ReactNode, useEffect, useRef, useState } from 'react';
 
 interface PerformanceOptimizerProps {
-  children: React.ReactNode;
-  threshold?: number;
-  rootMargin?: string;
-  fallback?: React.ReactNode;
-  preload?: boolean;
-  priority?: 'low' | 'medium' | 'high';
-}
-
-export const PerformanceOptimizer: React.FC<{
   children: ReactNode;
   threshold?: number;
   rootMargin?: string;
-}> = ({ children, threshold = 0.1, rootMargin = '50px' }) => {
-  const [isVisible, setIsVisible] = useState(false);
-  const ref = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    if (typeof window !== 'undefined' && 'IntersectionObserver' in window) {
-      const observer = new IntersectionObserver(
-        ([entry]) => {
-          setIsVisible(entry.isIntersecting);
-        },
-        { threshold, rootMargin }
-      );
-
-      if (ref.current) {
-        observer.observe(ref.current);
-      }
-
-      return () => observer.disconnect();
-    }
-  }, [threshold, rootMargin]);
-
-  return (
-    <div ref={ref}>
-      {isVisible && (
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-        >
-          {children}
-        </motion.div>
-      )}
-    </div>
-  );
-};
-
-// Lazy Image Component for better performance
-interface LazyImageProps {
-  src: string;
-  alt: string;
-  className?: string;
-  placeholder?: string;
-  priority?: 'low' | 'medium' | 'high';
+  lazyLoad?: boolean;
+  preload?: boolean;
 }
 
-export const LazyImage: React.FC<{
-  src: string;
-  alt: string;
-  className?: string;
-  width?: number;
-  height?: number;
-}> = ({ src, alt, className, width, height }) => {
-  const [isLoaded, setIsLoaded] = useState(false);
-  const [isInView, setIsInView] = useState(false);
-  const imgRef = useRef<HTMLImageElement>(null);
+// Performance entry type definitions
+interface FirstInputEntry extends PerformanceEntry {
+  processingStart: number;
+  startTime: number;
+}
 
-  useEffect(() => {
-    if (typeof window !== 'undefined' && 'IntersectionObserver' in window) {
-      const observer = new IntersectionObserver(
-        ([entry]) => {
-          if (entry.isIntersecting) {
-            setIsInView(true);
-            observer.disconnect();
-          }
-        },
-        { threshold: 0.1 }
-      );
+interface LayoutShiftEntry extends PerformanceEntry {
+  value: number;
+}
 
-      if (imgRef.current) {
-        observer.observe(imgRef.current);
-      }
-
-      return () => observer.disconnect();
-    }
-  }, []);
-
-  const handleLoad = () => {
-    setIsLoaded(true);
+// IntersectionObserver polyfill check
+const getIntersectionObserver = () => {
+  if (typeof window !== 'undefined' && 'IntersectionObserver' in window) {
+    return window.IntersectionObserver;
+  }
+  // Return a mock observer for SSR
+  return class MockIntersectionObserver {
+    constructor() {}
+    observe() {}
+    unobserve() {}
+    disconnect() {}
   };
-
-  return (
-    <div className={`lazy-image-container ${className || ''}`}>
-      {isInView && (
-        <img
-          ref={imgRef}
-          src={src}
-          alt={alt}
-          width={width}
-          height={height}
-          onLoad={handleLoad}
-          className={`transition-opacity duration-300 ${isLoaded ? 'opacity-100' : 'opacity-0'}`}
-        />
-      )}
-    </div>
-  );
 };
 
-// Preload Component for critical resources
-interface PreloadProps {
-  href: string;
-  as?: string;
-  type?: string;
-  crossOrigin?: 'anonymous' | 'use-credentials';
-}
-
-export const Preload: React.FC<PreloadProps> = ({
-  href,
-  as = 'fetch',
-  type,
-  crossOrigin
+const PerformanceOptimizer: React.FC<PerformanceOptimizerProps> = ({
+  children,
+  threshold = 0.1,
+  rootMargin = '50px',
+  lazyLoad = true,
+  preload = true
 }) => {
-  return (
-    <link
-      rel="preload"
-      href={href}
-      as={as}
-      type={type}
-      crossOrigin={crossOrigin}
-    />
-  );
-};
-
-// Resource Hints Component
-interface ResourceHintsProps {
-  href: string;
-  rel: 'preconnect' | 'dns-prefetch' | 'prefetch' | 'preload';
-  crossOrigin?: 'anonymous' | 'use-credentials';
-}
-
-export const ResourceHint: React.FC<ResourceHintsProps> = ({
-  href,
-  rel,
-  crossOrigin
-}) => {
-  return (
-    <link
-      rel={rel}
-      href={href}
-      crossOrigin={crossOrigin}
-    />
-  );
-};
-
-// Performance Monitor Component
-export const PerformanceMonitor: React.FC = () => {
-  const [metrics, setMetrics] = useState<{
-    fcp: number;
-    lcp: number;
-    fid: number;
-    cls: number;
-  }>({
-    fcp: 0,
-    lcp: 0,
-    fid: 0,
-    cls: 0,
-  });
+  const [isVisible, setIsVisible] = useState(false);
+  const [isLoaded, setIsLoaded] = useState(false);
+  const containerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    if (typeof window !== 'undefined' && 'PerformanceObserver' in window) {
-      // First Contentful Paint (FCP)
-      const fcpObserver = new PerformanceObserver((list) => {
-        const entries = list.getEntries();
-        const fcpEntry = entries.find((entry) => entry.name === 'first-contentful-paint');
-        if (fcpEntry) {
-          setMetrics((prev) => ({ ...prev, fcp: fcpEntry.startTime }));
-        }
-      });
+    if (!lazyLoad) {
+      setIsVisible(true);
+      setIsLoaded(true);
+      return;
+    }
 
-      // Largest Contentful Paint (LCP)
-      const lcpObserver = new PerformanceObserver((list) => {
-        const entries = list.getEntries();
-        const lcpEntry = entries[entries.length - 1];
-        if (lcpEntry) {
-          setMetrics((prev) => ({ ...prev, lcp: lcpEntry.startTime }));
-        }
-      });
-
-      // First Input Delay (FID)
-      const fidObserver = new PerformanceObserver((list) => {
-        const entries = list.getEntries();
-        const fidEntry = entries[0];
-        if (fidEntry && 'processingStart' in fidEntry) {
-          const fid = (fidEntry as any).processingStart - fidEntry.startTime;
-          setMetrics((prev) => ({ ...prev, fid }));
-        }
-      });
-
-      // Cumulative Layout Shift (CLS)
-      const clsObserver = new PerformanceObserver((list) => {
-        let clsValue = 0;
-        for (const entry of list.getEntries()) {
-          const layoutShiftEntry = entry as any;
-          if (!layoutShiftEntry.hadRecentInput) {
-            clsValue += layoutShiftEntry.value || 0;
+    const IntersectionObserver = getIntersectionObserver();
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setIsVisible(true);
+            
+            // Add a small delay for smooth animation
+            setTimeout(() => {
+              setIsLoaded(true);
+            }, 100);
+            
+            // Once visible, disconnect the observer
+            if (containerRef.current) {
+              observer.unobserve(containerRef.current);
+            }
           }
-        }
-        setMetrics((prev) => ({ ...prev, cls: clsValue }));
+        });
+      },
+      {
+        threshold,
+        rootMargin,
+        root: null
+      }
+    );
+
+    if (containerRef.current) {
+      observer.observe(containerRef.current);
+    }
+
+    return () => {
+      if (containerRef.current) {
+        observer.unobserve(containerRef.current);
+      }
+    };
+  }, [lazyLoad, threshold, rootMargin]);
+
+  // Preload critical resources
+  useEffect(() => {
+    if (preload && isVisible) {
+      // Preload critical images
+      const criticalImages = [
+        '/images/zion-tech-group-logo.png',
+        '/images/zion-tech-group-og.jpg'
+      ];
+
+      criticalImages.forEach((src) => {
+        const link = document.createElement('link');
+        link.rel = 'preload';
+        link.as = 'image';
+        link.href = src;
+        document.head.appendChild(link);
+      });
+
+      // Preload critical fonts
+      const criticalFonts = [
+        'https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap'
+      ];
+
+      criticalFonts.forEach((href) => {
+        const link = document.createElement('link');
+        link.rel = 'preload';
+        link.as = 'style';
+        link.href = href;
+        document.head.appendChild(link);
+      });
+    }
+  }, [preload, isVisible]);
+
+  // Performance monitoring
+  useEffect(() => {
+    if (typeof window !== 'undefined' && 'performance' in window) {
+      // Monitor Core Web Vitals
+      const observer = new PerformanceObserver((list) => {
+        list.getEntries().forEach((entry) => {
+          if (entry.entryType === 'largest-contentful-paint') {
+            // Log LCP for development only
+            if (process.env.NODE_ENV === 'development') {
+              // eslint-disable-next-line no-console
+              console.log('LCP:', entry.startTime);
+            }
+          }
+          if (entry.entryType === 'first-input') {
+            const firstInputEntry = entry as FirstInputEntry;
+            if (firstInputEntry.processingStart) {
+              // Log FID for development only
+              if (process.env.NODE_ENV === 'development') {
+                // eslint-disable-next-line no-console
+                console.log('FID:', firstInputEntry.processingStart - firstInputEntry.startTime);
+              }
+            }
+          }
+          if (entry.entryType === 'layout-shift') {
+            const layoutShiftEntry = entry as LayoutShiftEntry;
+            // Log CLS for development only
+            if (process.env.NODE_ENV === 'development') {
+              // eslint-disable-next-line no-console
+              console.log('CLS:', layoutShiftEntry.value);
+            }
+          }
+        });
       });
 
       try {
-        fcpObserver.observe({ entryTypes: ['paint'] });
-        lcpObserver.observe({ entryTypes: ['largest-contentful-paint'] });
-        fidObserver.observe({ entryTypes: ['first-input'] });
-        clsObserver.observe({ entryTypes: ['layout-shift'] });
+        observer.observe({ entryTypes: ['largest-contentful-paint', 'first-input', 'layout-shift'] });
       } catch (error) {
-        // Handle browsers that don't support all entry types
+        // Log warning for development only
         if (process.env.NODE_ENV === 'development') {
-          console.warn('Some performance metrics not supported:', error);
+          // eslint-disable-next-line no-console
+          console.warn('PerformanceObserver not supported:', error);
         }
       }
 
       return () => {
-        fcpObserver.disconnect();
-        lcpObserver.disconnect();
-        fidObserver.disconnect();
-        clsObserver.disconnect();
+        observer.disconnect();
       };
     }
   }, []);
 
-  useEffect(() => {
-    if (process.env.NODE_ENV === 'development' && Object.values(metrics).some((v) => v > 0)) {
-      // Only log in development
-      console.log('Performance Metrics:', {
-        FCP: `${metrics.fcp.toFixed(2)}ms`,
-        LCP: `${metrics.lcp.toFixed(2)}ms`,
-        FID: `${metrics.fid.toFixed(2)}ms`,
-        CLS: metrics.cls.toFixed(3),
-      });
-    }
-  }, [metrics]);
+  if (!lazyLoad) {
+    return <div className="performance-optimized">{children}</div>;
+  }
 
-  return null;
-};
-
-// Code Splitting Wrapper
-export const CodeSplit: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   return (
-    <React.Suspense fallback={
-      <div className="flex items-center justify-center p-8">
-        <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-cyan-400"></div>
-        <span className="ml-2 text-gray-400">Loading...</span>
-      </div>
-    }>
-      {children}
-    </React.Suspense>
+    <div
+      ref={containerRef}
+      className={`performance-optimized transition-opacity duration-500 ${
+        isVisible ? 'opacity-100' : 'opacity-0'
+      }`}
+      style={{
+        opacity: isVisible ? 1 : 0,
+        transform: isVisible ? 'translateY(0)' : 'translateY(20px)',
+        transition: 'opacity 0.5s ease-out, transform 0.5s ease-out'
+      }}
+    >
+      {isLoaded ? (
+        <div className="animate-fade-in">
+          {children}
+        </div>
+      ) : (
+        <div className="min-h-screen flex items-center justify-center">
+          <div className="text-center">
+            <div className="w-16 h-16 mx-auto mb-4">
+              <div className="w-full h-full border-4 border-cyan-500/20 border-t-cyan-500 rounded-full animate-spin"></div>
+            </div>
+            <div className="text-cyan-400 text-lg font-medium">Loading Zion Tech Group</div>
+            <div className="text-gray-500 text-sm mt-2">Pioneering the Future</div>
+          </div>
+        </div>
+      )}
+    </div>
   );
 };
 
