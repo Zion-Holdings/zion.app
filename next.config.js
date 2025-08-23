@@ -1,26 +1,27 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  // Enable React strict mode for better development experience
-  reactStrictMode: true,
-  
-  // Enable experimental features for better performance
+  // Performance optimizations
   experimental: {
-    // Enable modern JavaScript features
-    esmExternals: true,
-    
-    // Enable optimized package imports
-    optimizePackageImports: ['framer-motion', 'lucide-react'],
+    optimizePackageImports: ['lucide-react', 'framer-motion'],
+    optimizeCss: true,
   },
-
+  
   // Image optimization
   images: {
-    domains: ['ziontechgroup.com'],
     formats: ['image/webp', 'image/avif'],
     deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048, 3840],
     imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
+    minimumCacheTTL: 60,
+    dangerouslyAllowSVG: true,
+    contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
   },
 
-  // Webpack configuration for performance
+  // Compression and optimization
+  compress: true,
+  poweredByHeader: false,
+  generateEtags: false,
+
+  // Bundle analyzer
   webpack: (config, { dev, isServer }) => {
     // Optimize bundle splitting
     if (!dev && !isServer) {
@@ -31,40 +32,41 @@ const nextConfig = {
             test: /[\\/]node_modules[\\/]/,
             name: 'vendors',
             chunks: 'all',
+            priority: 10,
           },
           common: {
             name: 'common',
             minChunks: 2,
             chunks: 'all',
-            enforce: true,
+            priority: 5,
+            reuseExistingChunk: true,
           },
         },
       };
     }
 
-    // Optimize for production
-    if (!dev) {
-      config.optimization.minimize = true;
-      config.optimization.minimizer = config.optimization.minimizer || [];
-    }
+    // SVG optimization
+    config.module.rules.push({
+      test: /\.svg$/,
+      use: ['@svgr/webpack'],
+    });
 
     return config;
   },
 
-  // Headers for security and performance
+  // Headers for performance
   async headers() {
     return [
       {
         source: '/(.*)',
         headers: [
-          // Security headers
-          {
-            key: 'X-Frame-Options',
-            value: 'DENY',
-          },
           {
             key: 'X-Content-Type-Options',
             value: 'nosniff',
+          },
+          {
+            key: 'X-Frame-Options',
+            value: 'DENY',
           },
           {
             key: 'X-XSS-Protection',
@@ -74,29 +76,10 @@ const nextConfig = {
             key: 'Referrer-Policy',
             value: 'strict-origin-when-cross-origin',
           },
-          {
-            key: 'Permissions-Policy',
-            value: 'camera=(), microphone=(), geolocation=()',
-          },
-          
-          // Performance headers
-          {
-            key: 'Cache-Control',
-            value: 'public, max-age=31536000, immutable',
-          },
         ],
       },
       {
-        source: '/api/(.*)',
-        headers: [
-          {
-            key: 'Cache-Control',
-            value: 'no-cache, no-store, must-revalidate',
-          },
-        ],
-      },
-      {
-        source: '/(.*).(js|css|png|jpg|jpeg|gif|svg|ico|woff|woff2|ttf|eot)',
+        source: '/static/(.*)',
         headers: [
           {
             key: 'Cache-Control',
@@ -107,7 +90,7 @@ const nextConfig = {
     ];
   },
 
-  // Redirects for better SEO
+  // Redirects for better UX
   async redirects() {
     return [
       {
@@ -116,23 +99,14 @@ const nextConfig = {
         permanent: true,
       },
       {
-        source: '/index.html',
-        destination: '/',
+        source: '/services/ai',
+        destination: '/ai-services',
         permanent: true,
       },
-    ];
-  },
-
-  // Rewrites for API routes
-  async rewrites() {
-    return [
       {
-        source: '/api/analytics',
-        destination: '/api/analytics',
-      },
-      {
-        source: '/api/error-reporting',
-        destination: '/api/error-reporting',
+        source: '/services/quantum',
+        destination: '/quantum-services',
+        permanent: true,
       },
     ];
   },
@@ -142,23 +116,20 @@ const nextConfig = {
     CUSTOM_KEY: process.env.CUSTOM_KEY,
   },
 
-  // Compression
-  compress: true,
+  // TypeScript
+  typescript: {
+    ignoreBuildErrors: false,
+  },
 
-  // Powered by header
-  poweredByHeader: false,
-
-  // Trailing slash
-  trailingSlash: false,
-
-  // Base path
-  basePath: '',
-
-  // Asset prefix
-  assetPrefix: '',
+  // ESLint
+  eslint: {
+    ignoreDuringBuilds: false,
+  },
 
   // Output configuration
   output: 'standalone',
+  trailingSlash: false,
+  skipTrailingSlashRedirect: true,
 };
 
 module.exports = nextConfig;
