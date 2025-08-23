@@ -304,11 +304,19 @@ const allServices = [
   ...advancedEnterpriseServices,
   ...cuttingEdgeITInfrastructureServices,
   
+<<<<<<< HEAD
+  // Our new 2025 advanced specialized services
+  ...advancedCybersecurityMicroSaasServices,
+  ...advancedAIMLMicroSaasServices,
+  ...fintechBlockchainMicroSaasServices,
+  ...healthcareBiotechMicroSaasServices
+=======
   // Our new 2025 comprehensive service categories
   ...advancedCybersecuritySolutions2025,
   ...advancedAIAutomationSuite2025,
   ...innovativeITInfrastructureSolutions2025,
   ...emergingTechnologyBreakthroughs2025
+>>>>>>> origin/cursor/expand-services-and-deploy-updates-32ef
 ];
 
 const categories = [
