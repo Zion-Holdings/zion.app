@@ -30,8 +30,11 @@ export default class MyDocument extends Document {
 					<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
 					<link rel="preconnect" href="https://plausible.io" crossOrigin="anonymous" />
 					<link rel="dns-prefetch" href="//plausible.io" />
-					<link rel="manifest" href="/site.webmanifest" />
-					<link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+					<meta name="color-scheme" content="dark light" />
+					{process.env.NEXT_PUBLIC_NOINDEX === 'true' ? (
+						<meta name="robots" content="noindex, nofollow" />
+					) : null}
+					<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
 				</Head>
 				<body>
 					<Main />
