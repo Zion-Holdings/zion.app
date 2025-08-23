@@ -133,7 +133,7 @@ const legalLinks = [
   { name: 'Compliance', href: '/compliance' }
 ];
 
-export default function UltraFuturisticFooter2036() {
+const UltraFuturisticFooter2036: React.FC = () => {
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };

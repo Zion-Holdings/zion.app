@@ -74,6 +74,54 @@ const EnhancedHomepage2026: React.FC = () => {
 
   const featuredServices = [
     {
+<<<<<<< HEAD
+      title: "AI Content Marketing Automation Pro",
+      description: "Automate your entire content marketing strategy with AI-powered intelligence",
+      icon: Brain,
+      color: "from-purple-600 to-indigo-700",
+      price: "$499/month",
+      features: ["AI content generation", "Multi-channel distribution", "SEO optimization"]
+    },
+    {
+      title: "Quantum-Secure Cloud Infrastructure",
+      description: "Future-proof cloud infrastructure with quantum-resistant encryption",
+      icon: Shield,
+      color: "from-blue-600 to-cyan-700",
+      price: "$899/month",
+      features: ["Quantum-resistant encryption", "Multi-cloud orchestration", "Advanced security"]
+    },
+    {
+      title: "Autonomous Business Process Orchestrator",
+      description: "AI-powered business process automation that learns and optimizes itself",
+      icon: Cpu,
+      color: "from-green-600 to-emerald-700",
+      price: "$799/month",
+      features: ["AI process discovery", "Workflow optimization", "Intelligent automation"]
+    },
+    {
+      title: "Metaverse Commerce & NFT Platform",
+      description: "Complete e-commerce solution for virtual worlds and digital asset management",
+      icon: Globe,
+      color: "from-purple-600 to-pink-700",
+      price: "$599/month",
+      features: ["3D storefronts", "NFT management", "VR integration"]
+    },
+    {
+      title: "AI Healthcare Diagnostics Platform",
+      description: "Advanced medical diagnostics powered by artificial intelligence",
+      icon: Heart,
+      color: "from-red-600 to-pink-700",
+      price: "$1,299/month",
+      features: ["AI image analysis", "Symptom assessment", "Treatment recommendations"]
+    },
+    {
+      title: "Quantum Financial Trading Platform",
+      description: "Quantum-powered financial trading with superior risk assessment",
+      icon: Zap,
+      color: "from-yellow-600 to-orange-700",
+      price: "$2,499/month",
+      features: ["Quantum algorithms", "Risk modeling", "Portfolio optimization"]
+=======
       title: "Quantum AI Content Factory",
       description: "Generate unlimited high-quality content with quantum AI processing",
       icon: Brain,
@@ -120,6 +168,7 @@ const EnhancedHomepage2026: React.FC = () => {
       color: "from-blue-600 to-indigo-700",
       price: "$1,099/month",
       features: ["Autonomous campaigns", "AI optimization", "Predictive targeting"]
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-6e06
     }
   ];
 
@@ -593,7 +642,11 @@ const EnhancedHomepage2026: React.FC = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.2 }}
             >
+<<<<<<< HEAD
+              Join hundreds of companies already leveraging our cutting-edge <span className="text-cyan-400 font-semibold">quantum computing</span>, <span className="text-purple-400 font-semibold">autonomous AI</span>, and <span className="text-green-400 font-semibold">revolutionary marketing</span> solutions
+=======
               Join <span className="text-cyan-400 font-semibold">thousands of companies</span> already transforming their businesses with our revolutionary <span className="text-purple-400 font-semibold">quantum AI</span>, <span className="text-pink-400 font-semibold">consciousness technology</span>, and <span className="text-emerald-400 font-semibold">autonomous solutions</span>
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-6e06
             </motion.p>
             <motion.div 
               className="text-center mb-16"

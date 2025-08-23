@@ -25,7 +25,9 @@ export default function Home() {
       <AnalyticsTracker />
       <Homepage2038 />
       <PerformanceMonitor />
-      <AccessibilityEnhancer />
+      <AccessibilityEnhancer>
+        <div></div>
+      </AccessibilityEnhancer>
     </ErrorBoundary>
   );
 };

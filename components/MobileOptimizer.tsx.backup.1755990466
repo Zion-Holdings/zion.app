@@ -6,8 +6,11 @@ import {
   Mouse, Hand
 } from 'lucide-react';
 
+<<<<<<< HEAD
+=======
 // TouchEvent types are already defined in DOM
 
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-6e06
 interface MobileOptimizerProps {
   children: React.ReactNode;
   showDebugInfo?: boolean;

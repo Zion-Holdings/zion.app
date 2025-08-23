@@ -16,6 +16,14 @@ export default function Layout({ children, seo }: LayoutProps) {
   return (
     <div className="min-h-screen bg-gray-900 text-white">
       <UltraFuturisticNavigation2038 />
+<<<<<<< HEAD
+      <main className="relative z-10 pt-32">
+        {children}
+      </main>
+      <UltraFuturisticFooter2038 />
+      <AccessibilityEnhancer />
+      <PerformanceOptimizer showMetrics={true} autoOptimize={true} />
+=======
       <main className="relative z-10">
         {children}
       </main>
@@ -23,6 +31,7 @@ export default function Layout({ children, seo }: LayoutProps) {
       <AccessibilityEnhancer>
         <PerformanceOptimizer showMetrics={true} autoOptimize={true} />
       </AccessibilityEnhancer>
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-6e06
     </div>
   );
 };
