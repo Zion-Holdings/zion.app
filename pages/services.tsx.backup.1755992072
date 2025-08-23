@@ -130,6 +130,19 @@ export default function ServicesPage() {
   const [selectedPriceRange, setSelectedPriceRange] = useState<string>('all');
   const [sortBy, setSortBy] = useState<string>('name');
 
+<<<<<<< HEAD
+  const allServices = [
+    ...innovativeAIServices,
+    ...quantumSpaceServices,
+    ...enterpriseITServices,
+    ...enhancedRealMicroSaasServices,
+    ...innovativeMicroSaasServices,
+    ...extraServices,
+    ...additionalEnhancedServices,
+    ...nextGenInnovativeServices,
+    ...advancedAIServices
+  ];
+=======
 // Import existing service data
 import { realMicroSaasServices } from '../data/real-micro-saas-services';
 import { innovativeAIServices } from '../data/innovative-ai-services';
@@ -156,6 +169,7 @@ const getServicePricing = (service: any) => {
   if (service.price?.monthly) return `$${service.price.monthly}/month`;
   return 'Contact for pricing';
 };
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-1749
 
 // Helper function to get service features
 const getServiceFeatures = (service: any) => {
@@ -185,7 +199,13 @@ const allServices = [
   ...marketReadyServices,
   ...marketValidatedServices,
   ...industryRealServices,
+<<<<<<< HEAD
+  ...real2025Q4AugmentedBatch,
+  ...real2029Q3Additions,
+  ...newServices2026
+=======
   ...real2027Q2Additions
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-1749
 ];
 
 const categories = [
