@@ -1,5 +1,9 @@
 {
+<<<<<<< HEAD
+  "generatedAt": "2025-08-11T23:55:13.837Z",
+=======
   "generatedAt": "2025-08-11T23:53:36.025Z",
+>>>>>>> origin/cursor/invent-and-deploy-autonomous-cloud-automations-ef35
   "functions": [
     "a11y-alt-text-runner",
     "adaptive-orchestrator",
@@ -26,13 +30,23 @@
     "content-freshness-score-runner",
     "continuous-front-runner",
     "continuous-orchestrator",
+<<<<<<< HEAD
+    "cron-heartbeat",
+    "cron-hub",
+    "cron-supervisor",
+=======
     "contributing-refresher",
+>>>>>>> origin/cursor/invent-and-deploy-autonomous-cloud-automations-ef35
     "dead-code-audit",
     "dead-code-report",
     "design-evolution",
     "docs-index-runner",
     "docs-search-index-runner",
+<<<<<<< HEAD
+    "duplicate-media-finder-runner",
+=======
     "docs-toc-builder",
+>>>>>>> origin/cursor/invent-and-deploy-autonomous-cloud-automations-ef35
     "external-link-check-runner",
     "fast-front-promoter",
     "fast-front-promoter",
@@ -79,8 +93,12 @@
     "pagespeed-insights-runner",
     "qa-knowledge-runner",
     "readme-advertiser",
+<<<<<<< HEAD
+    "repo-fast-sync",
+=======
     "readme-badges-runner",
     "release-cadence-runner",
+>>>>>>> origin/cursor/invent-and-deploy-autonomous-cloud-automations-ef35
     "repo-knowledge-graph-runner",
     "repo-radar-and-graph",
     "repo-radar-runner",

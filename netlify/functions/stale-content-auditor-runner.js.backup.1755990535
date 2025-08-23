@@ -8,6 +8,15 @@ function runNode(relPath, args = []) {
   return { status: res.status || 0, stdout: res.stdout || '', stderr: res.stderr || '' };
 }
 
+<<<<<<< HEAD
+exports.config = {
+  schedule: '17 */6 * * *',
+};
+
+exports.handler = async () => {
+  const logs = [];
+  function log(line) { logs.push(line); }
+=======
 function collectFiles(root, patterns) {
   const results = [];
   function walk(dir) {
@@ -51,6 +60,7 @@ function getLastModifiedIso(filePath) {
 exports.handler = async () => {
   const logs = [];
   function log(msg) { if (msg) logs.push(String(msg)); }
+>>>>>>> origin/cursor/invent-and-deploy-autonomous-cloud-automations-ef35
 
   // Simple stale detector: lists files not modified in > 90 days
   const cutoffDays = Number(process.env.STALE_CUTOFF_DAYS || 90);
@@ -68,6 +78,17 @@ exports.handler = async () => {
     return acc;
   }
 
+<<<<<<< HEAD
+  const roots = ['pages', 'components', 'docs'];
+  const files = roots.flatMap((r) => (fs.existsSync(path.resolve(__dirname, '..', '..', r)) ? listFiles(path.resolve(__dirname, '..', '..', r)) : []));
+  const stale = [];
+  for (const f of files) {
+    try {
+      const stat = fs.statSync(f);
+      const ageMs = now - stat.mtimeMs;
+      if (ageMs > cutoffMs) stale.push({ path: f.replace(path.resolve(__dirname, '..', '..') + '/', ''), daysOld: Math.floor(ageMs / (24*60*60*1000)) });
+    } catch {}
+=======
   findings.sort((a, b) => b.ageDays - a.ageDays);
 
   const dataDir = path.join(root, 'data', 'reports', 'stale-content');
@@ -121,6 +142,7 @@ exports.handler = async () => {
     if (sync.stderr) log(sync.stderr);
   } catch (e) {
     log(`git sync error: ${e.message}`);
+>>>>>>> origin/cursor/invent-and-deploy-autonomous-cloud-automations-ef35
   }
 
   const reportDir = path.resolve(__dirname, '..', '..', 'public', 'automation');

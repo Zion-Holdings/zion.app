@@ -279,6 +279,18 @@
   schedule = "7 */12 * * *"
 
 [[scheduled.functions]]
+<<<<<<< HEAD
+  name = "tech-debt-heatmap-runner"
+  schedule = "13 */6 * * *"
+
+[[scheduled.functions]]
+  name = "revenue-ideas-runner"
+  schedule = "17 */4 * * *"
+
+[[scheduled.functions]]
+  name = "code-ownership-map-runner"
+  schedule = "23 3 * * *"
+=======
   name = "docs-toc-builder"
   schedule = "17 */6 * * *"
 
@@ -293,3 +305,4 @@
 [[scheduled.functions]]
   name = "contributing-refresher"
   schedule = "0 4 1 * *"
+>>>>>>> origin/cursor/invent-and-deploy-autonomous-cloud-automations-ef35
