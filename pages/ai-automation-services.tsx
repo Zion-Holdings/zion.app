@@ -131,7 +131,6 @@ export default function AIAutomationServices() {
                   <UltraFuturisticServiceCard2026 
                     service={service} 
                     variant="enterprise"
-                    theme="quantum"
                   />
                 </motion.div>
               ))}

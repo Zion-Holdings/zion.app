@@ -131,7 +131,7 @@ export default function QuantumCybersecurityServices() {
                   <UltraFuturisticServiceCard2026 
                     service={service} 
                     variant="premium"
-                    theme="cyber"
+
                   />
                 </motion.div>
               ))}

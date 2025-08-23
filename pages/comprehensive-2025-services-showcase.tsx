@@ -215,42 +215,70 @@ const Comprehensive2025ServicesShowcase: React.FC = () => {
                           </div>
                           
                           {/* Market Info */}
-                          <div className="grid grid-cols-2 gap-4 mb-6 text-sm">
-                            <div>
-                              <div className="text-gray-400">Market Size</div>
-                              <div className="text-white font-semibold">{service.marketSize}</div>
+                          {('marketPrice' in service && service.marketPrice) ? (
+                            <div className="grid grid-cols-2 gap-4 mb-6 text-sm">
+                              <div>
+                                <div className="text-gray-400">Market Price</div>
+                                <div className="text-white font-semibold">{service.marketPrice}</div>
+                              </div>
+                              {service.competitors && (
+                                <div>
+                                  <div className="text-gray-400">Competitors</div>
+                                  <div className="text-green-400 font-semibold">{service.competitors.slice(0, 2).join(', ')}</div>
+                                </div>
+                              )}
                             </div>
-                            <div>
-                              <div className="text-gray-400">Growth Rate</div>
-                              <div className="text-green-400 font-semibold">{service.growthRate}</div>
+                          ) : ('marketSize' in service && service.marketSize) ? (
+                            <div className="grid grid-cols-2 gap-4 mb-6 text-sm">
+                              <div>
+                                <div className="text-gray-400">Market Size</div>
+                                <div className="text-white font-semibold">{service.marketSize}</div>
+                              </div>
+                              {service.growthRate && (
+                                <div>
+                                  <div className="text-gray-400">Growth Rate</div>
+                                  <div className="text-green-400 font-semibold">{service.growthRate}</div>
+                                </div>
+                              )}
                             </div>
-                          </div>
+                          ) : null}
                           
-                          {/* ROI */}
-                          <div className="bg-gradient-to-r from-green-900/20 to-emerald-900/20 p-4 rounded-xl mb-6 border border-green-500/20">
-                            <div className="text-sm text-gray-400 mb-1">Expected ROI</div>
-                            <div className="text-green-400 font-semibold">{service.roi}</div>
-                          </div>
+                          {/* Benefits or ROI */}
+                          {('benefits' in service && service.benefits) ? (
+                            <div className="bg-gradient-to-r from-green-900/20 to-emerald-900/20 p-4 rounded-xl mb-6 border border-green-500/20">
+                              <div className="text-sm text-gray-400 mb-2">Key Benefits</div>
+                              <div className="text-green-400 text-sm space-y-1">
+                                {service.benefits.slice(0, 2).map((benefit, idx) => (
+                                  <div key={idx}>• {benefit}</div>
+                                ))}
+                              </div>
+                            </div>
+                          ) : ('roi' in service && service.roi) ? (
+                            <div className="bg-gradient-to-r from-green-900/20 to-emerald-900/20 p-4 rounded-xl mb-6 border border-green-500/20">
+                              <div className="text-sm text-gray-400 mb-1">Expected ROI</div>
+                              <div className="text-green-400 font-semibold">{service.roi}</div>
+                            </div>
+                          ) : null}
                           
                           {/* Action Buttons */}
                           <div className="flex space-x-3">
-                            <Link href={service.link}>
+                            <Link href={`/services/${service.id}`}>
                               <button className="flex-1 bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-semibold py-3 px-4 rounded-lg hover:from-cyan-600 hover:to-blue-700 transition-all duration-300 transform hover:scale-105 flex items-center justify-center space-x-2">
                                 <span>Learn More</span>
                                 <ArrowRight className="w-4 h-4" />
                               </button>
                             </Link>
-                            <Link href={`/contact?service=${service.id}`}>
+                            <Link href="/contact">
                               <button className="px-4 py-3 border border-cyan-400 text-cyan-400 font-semibold rounded-lg hover:bg-cyan-400 hover:text-black transition-all duration-300">
                                 Contact
                               </button>
                             </Link>
                           </div>
                           
-                          {/* Trial Info */}
+                          {/* Service Info */}
                           <div className="mt-4 text-center">
                             <span className="text-sm text-gray-400">
-                              {service.trialDays}-day free trial • Setup in {service.setupTime}
+                              Category: {service.category}
                             </span>
                           </div>
                         </div>
