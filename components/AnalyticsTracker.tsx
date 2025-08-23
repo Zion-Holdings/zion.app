@@ -134,7 +134,7 @@ const AnalyticsTracker: React.FC = () => {
 
             // Track resource loading performance
             const resources = performance.getEntriesByType('resource');
-            const slowResources = resources.filter((resource) => (resource as any).duration > 1000);
+            const slowResources = resources.filter((resource) => (resource as PerformanceEntry).duration > 1000);
             if (slowResources.length > 0) {
               trackMetric('SlowResources', slowResources.length);
             }
@@ -168,7 +168,7 @@ const AnalyticsTracker: React.FC = () => {
 
       // Network status monitoring
       if ('navigator' in window && 'connection' in navigator) {
-        const connection = (navigator as any).connection;
+        const connection = (navigator as { connection?: { effectiveType?: string; downlink?: number; rtt?: number } }).connection;
         if (connection) {
           trackMetric('ConnectionType', connection.effectiveType || 'unknown');
           trackMetric('ConnectionDownlink', connection.downlink || 0);
@@ -178,7 +178,7 @@ const AnalyticsTracker: React.FC = () => {
 
       // Memory usage monitoring (if available)
       if ('memory' in performance) {
-        const memory = (performance as any).memory;
+        const memory = (performance as { memory?: { usedJSHeapSize: number; jsHeapSizeLimit: number } }).memory;
         if (memory) {
           setInterval(() => {
             trackMetric('MemoryUsage', memory.usedJSHeapSize / 1024 / 1024); // MB
@@ -189,14 +189,14 @@ const AnalyticsTracker: React.FC = () => {
 
       // Battery status monitoring (if available)
       if ('getBattery' in navigator) {
-        (navigator as any).getBattery().then((battery: any) => {
+        (navigator as { getBattery: () => Promise<{ level: number; charging: boolean }> }).getBattery().then((battery) => {
           trackMetric('BatteryLevel', battery.level * 100);
           trackMetric('BatteryCharging', battery.charging ? 1 : 0);
         });
       }
 
       // Device capabilities tracking
-      trackMetric('DeviceMemory', (navigator as any).deviceMemory || 0);
+      trackMetric('DeviceMemory', (navigator as { deviceMemory?: number }).deviceMemory || 0);
       trackMetric('HardwareConcurrency', navigator.hardwareConcurrency || 0);
       trackMetric('MaxTouchPoints', navigator.maxTouchPoints || 0);
       trackMetric('UserAgent', navigator.userAgent.length);
@@ -338,7 +338,7 @@ const AnalyticsTracker: React.FC = () => {
 interface PerformanceEventTiming extends PerformanceEntry {
   processingStart: number;
   processingEnd: number;
-  target?: any;
+  target?: EventTarget;
 }
 
 interface LayoutShift extends PerformanceEntry {
@@ -347,19 +347,60 @@ interface LayoutShift extends PerformanceEntry {
 }
 
 interface LayoutShiftSource {
-  node?: any;
-  currentRect?: any;
-  previousRect?: any;
+  node?: Node;
+  currentRect?: DOMRectReadOnly;
+  previousRect?: DOMRectReadOnly;
+}
+
+// DOM type definitions
+declare global {
+  interface EventListener {
+    (event: Event): void;
+  }
+  
+  interface EventTarget {
+    addEventListener(type: string, listener: EventListener): void;
+    removeEventListener(type: string, listener: EventListener): void;
+    dispatchEvent(event: Event): boolean;
+  }
+  
+  interface Node {
+    nodeType: number;
+    nodeName: string;
+    nodeValue: string | null;
+  }
+  
+  interface DOMRectReadOnly {
+    readonly x: number;
+    readonly y: number;
+    readonly width: number;
+    readonly height: number;
+    readonly top: number;
+    readonly right: number;
+    readonly bottom: number;
+    readonly left: number;
+  }
+  
+  var EventTarget: {
+    prototype: EventTarget;
+    new(): EventTarget;
+  };
+  
+  var Node: {
+    prototype: Node;
+    new(): Node;
+  };
+  
+  var DOMRectReadOnly: {
+    prototype: DOMRectReadOnly;
+    new(): DOMRectReadOnly;
+  };
 }
 
 // Extend Window interface for gtag
 declare global {
   interface Window {
-    gtag?: (
-      command: string,
-      action: string,
-      params?: Record<string, unknown>
-    ) => void;
+    gtag?: (...args: unknown[]) => void;
   }
 }
 

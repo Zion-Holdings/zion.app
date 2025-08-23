@@ -39,7 +39,9 @@ export default function Layout({ children }: LayoutProps) {
           />
           
           <main id="main" role="main" className="flex-1 pt-24 lg:pt-28">
-            {children}
+            <AccessibilityEnhancer>
+              {children}
+            </AccessibilityEnhancer>
           </main>
         </div>
         
@@ -47,8 +49,7 @@ export default function Layout({ children }: LayoutProps) {
         <UltraFuturisticFooter2036 />
       </div>
 
-      {/* Accessibility and Performance Tools */}
-      <AccessibilityEnhancer />
+      {/* Performance Tools */}
       <PerformanceMonitor />
       
       {/* Cookie Consent Banner */}
