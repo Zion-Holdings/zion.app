@@ -4,13 +4,17 @@ import { motion } from 'framer-motion';
 import { 
   Brain, Atom, Shield,
   ArrowRight,
-  Building, Cpu, Phone, Mail, MapPin
+  Building, Cpu, Phone, Mail, MapPin, Zap
 } from 'lucide-react';
 
 // Import our new innovative services
 import { innovativeAIAutonomousServicesExpansion2025 } from '../data/2025-innovative-ai-autonomous-services-expansion';
 import { innovativeITInfrastructureExpansion2025 } from '../data/2025-innovative-it-infrastructure-expansion';
 import { innovativeMicroSaasExpansionV32025 } from '../data/2025-innovative-micro-saas-expansion-v3';
+import { innovativeMicroSaasExpansionV42026 } from '../data/2026-innovative-micro-saas-expansion-v4';
+import { emergingTechBreakthroughs2026 } from '../data/2026-emerging-tech-breakthroughs';
+import { itInfrastructureInnovations2026 } from '../data/2026-it-infrastructure-innovations';
+import { healthcareBiotechInnovations2026 } from '../data/2026-healthcare-biotech-innovations';
 
 // Import existing service data
 import { realMicroSaasServices } from '../data/real-micro-saas-services';
@@ -29,7 +33,7 @@ import UltraFuturisticNavigation2026 from '../components/layout/UltraFuturisticN
 import UltraFuturisticFooter2026 from '../components/layout/UltraFuturisticFooter2026';
 
 // Helper function to get service website safely
-const getServiceWebsite = (service: any) => {
+const getServiceWebsite = (service: { website?: string; link?: string; id?: string; name: string }) => {
   if (service.website) return service.website;
   if (service.link) return service.link;
   return `/services/${service.id || service.name.toLowerCase().replace(/\s+/g, '-')}`;
@@ -43,6 +47,10 @@ const HomePage: React.FC = () => {
     ...innovativeAIAutonomousServicesExpansion2025,
     ...innovativeITInfrastructureExpansion2025,
     ...innovativeMicroSaasExpansionV32025,
+    ...innovativeMicroSaasExpansionV42026,
+    ...emergingTechBreakthroughs2026,
+    ...itInfrastructureInnovations2026,
+    ...healthcareBiotechInnovations2026,
     ...realMicroSaasServices,
     ...innovativeAIServices,
     ...enterpriseITServices,
@@ -62,7 +70,9 @@ const HomePage: React.FC = () => {
     { id: 'ai', name: 'AI & Autonomous', icon: Brain, color: 'from-cyan-500 to-blue-500' },
     { id: 'quantum', name: 'Quantum Technology', icon: Atom, color: 'from-blue-500 to-indigo-500' },
     { id: 'infrastructure', name: 'IT Infrastructure', icon: Cpu, color: 'from-green-500 to-teal-500' },
-    { id: 'micro-saas', name: 'Micro SAAS', icon: Building, color: 'from-orange-500 to-red-500' }
+    { id: 'micro-saas', name: 'Micro SAAS', icon: Building, color: 'from-orange-500 to-red-500' },
+    { id: 'healthcare', name: 'Healthcare & Biotech', icon: Shield, color: 'from-emerald-500 to-green-500' },
+    { id: 'emerging', name: 'Emerging Tech', icon: Zap, color: 'from-yellow-500 to-orange-500' }
   ];
 
   return (

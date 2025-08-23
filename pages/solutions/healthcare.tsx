@@ -1,10 +1,11 @@
 import React from 'react';
 import Head from 'next/head';
 import { 
-  Heart, Brain, Shield, Zap, BarChart3, Cpu, 
-  CheckCircle, ArrowRight, Star, TrendingUp, Award, Clock, Users, Target
+  Heart, Brain, Shield, Zap, Cpu, 
+  Star, TrendingUp, Award, Users, Target
 } from 'lucide-react';
 import UltraFuturisticBackground2045 from '../../components/backgrounds/UltraFuturisticBackground2045';
+import Layout from '../../components/layout/Layout';
 
 const HealthcareSolutionsPage: React.FC = () => {
   const solutions = [
@@ -78,7 +79,7 @@ const HealthcareSolutionsPage: React.FC = () => {
   ];
 
   return (
-    <>
+    <Layout>
       <Head>
         <title>Healthcare & Biotech Solutions | Zion Tech Group</title>
         <meta name="description" content="Revolutionary AI-powered healthcare and biotech solutions. Advanced diagnostics, analytics, and telemedicine platforms for the future of healthcare." />
@@ -202,7 +203,6 @@ const HealthcareSolutionsPage: React.FC = () => {
           </div>
         </section>
       </div>
-    </>
     </Layout>
   );
 };
