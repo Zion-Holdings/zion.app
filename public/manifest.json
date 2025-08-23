@@ -1,45 +1,63 @@
 {
-  "name": "Zion Tech Group - Future Technology Solutions",
+  "name": "Zion Tech Group",
   "short_name": "Zion Tech",
-  "description": "Pioneering the future of technology with innovative AI, quantum computing, and autonomous solutions that drive business transformation",
+  "description": "Revolutionary AI & Quantum Technology Solutions",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#000000",
-  "theme_color": "#00d4ff",
+  "theme_color": "#000000",
   "orientation": "portrait-primary",
   "scope": "/",
-  "lang": "en",
+  "lang": "en-US",
   "categories": ["business", "productivity", "technology"],
   "icons": [
     {
-      "src": "/favicon-16x16.png",
-      "sizes": "16x16",
+      "src": "/icons/icon-72x72.png",
+      "sizes": "72x72",
       "type": "image/png",
-      "purpose": "any maskable"
+      "purpose": "maskable any"
     },
     {
-      "src": "/favicon-32x32.png",
-      "sizes": "32x32",
+      "src": "/icons/icon-96x96.png",
+      "sizes": "96x96",
       "type": "image/png",
-      "purpose": "any maskable"
+      "purpose": "maskable any"
     },
     {
-      "src": "/apple-touch-icon.png",
-      "sizes": "180x180",
+      "src": "/icons/icon-128x128.png",
+      "sizes": "128x128",
       "type": "image/png",
-      "purpose": "any maskable"
+      "purpose": "maskable any"
     },
     {
-      "src": "/logo.png",
+      "src": "/icons/icon-144x144.png",
+      "sizes": "144x144",
+      "type": "image/png",
+      "purpose": "maskable any"
+    },
+    {
+      "src": "/icons/icon-152x152.png",
+      "sizes": "152x152",
+      "type": "image/png",
+      "purpose": "maskable any"
+    },
+    {
+      "src": "/icons/icon-192x192.png",
       "sizes": "192x192",
       "type": "image/png",
-      "purpose": "any maskable"
+      "purpose": "maskable any"
     },
     {
-      "src": "/logo.png",
+      "src": "/icons/icon-384x384.png",
+      "sizes": "384x384",
+      "type": "image/png",
+      "purpose": "maskable any"
+    },
+    {
+      "src": "/icons/icon-512x512.png",
       "sizes": "512x512",
       "type": "image/png",
-      "purpose": "any maskable"
+      "purpose": "maskable any"
     }
   ],
   "shortcuts": [
@@ -50,8 +68,8 @@
       "url": "/services",
       "icons": [
         {
-          "src": "/favicon-32x32.png",
-          "sizes": "32x32"
+          "src": "/icons/services-96x96.png",
+          "sizes": "96x96"
         }
       ]
     },
@@ -62,8 +80,8 @@
       "url": "/contact",
       "icons": [
         {
-          "src": "/favicon-32x32.png",
-          "sizes": "32x32"
+          "src": "/icons/contact-96x96.png",
+          "sizes": "96x96"
         }
       ]
     },
@@ -74,76 +92,46 @@
       "url": "/about",
       "icons": [
         {
-          "src": "/icon-192x192.png",
-          "sizes": "192x192"
+          "src": "/icons/about-96x96.png",
+          "sizes": "96x96"
         }
       ]
     }
   ],
   "screenshots": [
     {
-      "src": "/screenshots/desktop.png",
+      "src": "/screenshots/desktop-1.png",
       "sizes": "1280x720",
       "type": "image/png",
-      "form_factor": "wide"
+      "form_factor": "wide",
+      "label": "Homepage - Revolutionary Technology Solutions"
     },
     {
-      "src": "/screenshots/mobile.png",
+      "src": "/screenshots/mobile-1.png",
       "sizes": "390x844",
       "type": "image/png",
-      "form_factor": "narrow"
+      "form_factor": "narrow",
+      "label": "Mobile - AI & Quantum Services"
     }
   ],
-  "file_handlers": [
+  "related_applications": [
     {
-      "action": "/upload",
-      "accept": {
-        "image/*": [".jpg", ".jpeg", ".png", ".webp", ".gif"]
-      }
+      "platform": "webapp",
+      "url": "https://ziontechgroup.com"
     }
   ],
+  "prefer_related_applications": false,
+  "edge_side_panel": {
+    "preferred_width": 400
+  },
+  "launch_handler": {
+    "client_mode": "navigate-existing"
+  },
+  "handle_links": "preferred",
   "protocol_handlers": [
     {
-      "protocol": "mailto",
-      "url": "/contact?email=%s"
-    },
-    {
-      "protocol": "tel",
-      "url": "/contact?phone=%s"
+      "protocol": "web+zion",
+      "url": "/?protocol=%s"
     }
-  ],
-  "share_target": {
-    "action": "/share",
-    "method": "POST",
-    "enctype": "multipart/form-data",
-    "params": {
-      "title": "title",
-      "text": "text",
-      "url": "url",
-      "files": [
-        {
-          "name": "files",
-          "accept": ["image/*", "text/*"]
-        }
-      ]
-    }
-  },
-  "background": {
-    "service_worker": "/sw.js"
-  },
-  "permissions": [
-    "notifications",
-    "background-sync",
-    "storage"
-  ],
-  "features": [
-    "Cross Platform",
-    "fast",
-    "simple"
-  ],
-  "developer": {
-    "name": "Zion Tech Group",
-    "url": "https://ziontechgroup.com"
-  },
-  "version": "1.0.0"
+  ]
 }

@@ -7,6 +7,8 @@ import TopContactBar from './TopContactBar';
 import PerformanceMonitor from '../PerformanceMonitor';
 import AccessibilityEnhancer from '../AccessibilityEnhancer';
 import CookieConsentBanner from '../CookieConsentBanner';
+import ServiceWorkerRegistration from '../ServiceWorkerRegistration';
+import SEOHead from '../SEOHead';
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -16,9 +18,11 @@ export default function Layout({ children }: LayoutProps) {
   const [sidebarOpen, setSidebarOpen] = useState(false);
 
   return (
-    <div className="min-h-screen bg-black text-white relative overflow-x-hidden">
-      {/* Skip to content link for accessibility */}
-      <a href="#main" className="skip-link">Skip to main content</a>
+    <>
+      <SEOHead />
+      <div className="min-h-screen bg-black text-white relative overflow-x-hidden">
+        {/* Skip to content link for accessibility */}
+        <a href="#main" className="skip-link">Skip to main content</a>
       
       {/* Futuristic Background */}
       <UltraFuturisticBackground2036 />
@@ -53,6 +57,10 @@ export default function Layout({ children }: LayoutProps) {
       
       {/* Cookie Consent Banner */}
       <CookieConsentBanner />
+      
+      {/* Service Worker Registration */}
+      <ServiceWorkerRegistration />
     </div>
+    </>
   );
 }

@@ -1,12 +1,12 @@
 import React from 'react';
 import Homepage2044 from '../components/Homepage2044';
-import ErrorBoundary from '../components/ErrorBoundary';
+import EnhancedErrorBoundary from '../components/EnhancedErrorBoundary';
 
 const HomePage: React.FC = () => {
   return (
-    <ErrorBoundary>
+    <EnhancedErrorBoundary>
       <Homepage2044 />
-    </ErrorBoundary>
+    </EnhancedErrorBoundary>
   );
 };
 
