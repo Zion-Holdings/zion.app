@@ -32,6 +32,13 @@
     "front:advertise": "node automation/front-index-advertiser.cjs",
     "deps:maintain": "node automation/dependency-update-orchestrator.cjs",
     "deps:cron:start": "bash automation/dependency-maintenance-cron.sh",
+<<<<<<< HEAD
+    "sitemap": "node scripts/generate-sitemap.mjs",
+    "homepage:update": "node automation/homepage-updater.cjs",
+    "dev": "NODE_OPTIONS=--openssl-legacy-provider next dev",
+    "build": "NODE_OPTIONS=--openssl-legacy-provider next build",
+    "export": "NODE_OPTIONS=--openssl-legacy-provider next build && next export",
+=======
     "sitemap": "node scripts/generate-sitemap.js",
     "netlify:manifest": "node scripts/generate-netlify-functions-manifest.cjs",
     "netlify:trigger": "node scripts/trigger-netlify-automations.cjs",
@@ -42,6 +49,7 @@
     "build": "NODE_OPTIONS=\"--max-old-space-size=6144 --openssl-legacy-provider\" next build",
     "prebuild": "npm run netlify:manifest",
     "export": "rm -rf .next out tsconfig.tsbuildinfo && NODE_OPTIONS=\"--max-old-space-size=6144 --openssl-legacy-provider\" next build --no-lint && if [ -f _redirects ]; then cp -f _redirects out/_redirects; fi && if [ -f public/_headers ]; then cp -f public/_headers out/_headers; elif [ -f _headers ]; then cp -f _headers out/_headers; fi",
+>>>>>>> origin/cursor/bc-1772f1c0-da62-42ef-9572-bdbe32120470-042f
     "start": "next start",
     "postbuild": "node automation/footer-injector.cjs || true",
     "lint": "eslint .",
