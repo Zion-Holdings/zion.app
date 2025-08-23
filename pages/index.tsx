@@ -889,6 +889,7 @@ const HomePage: React.FC = () => {
               { title: 'Broken Image Scanner (6h)', desc: 'Finds broken images, optimizes assets, and syncs fixes.', href: '/.netlify/functions/broken-image-scanner' },
               { title: 'SEO Audit Runner', desc: 'Analyzes pages for title/description issues and writes an HTML report.', href: '/.netlify/functions/seo-audit-runner' },
               { title: 'AI Trends Radar', desc: 'Aggregates trending AI topics into a public report.', href: '/.netlify/functions/ai-trends-radar-runner' },
+              { title: 'Stale Content Auditor', desc: 'Finds stale pages/components/docs and publishes a report.', href: '/.netlify/functions/stale-content-auditor-runner' },
               { title: 'Dependency Auto‑Upgrade', desc: 'Safely bumps minor/patch deps with build verification.', href: '/.netlify/functions/deps-auto-upgrade-runner' },
               { title: 'Stale Content Auditor', desc: 'Finds stale files and publishes a report.', href: '/.netlify/functions/stale-content-auditor-runner' },
               { title: 'Repo Heatmap', desc: 'Highlights hot files by churn and recency.', href: '/.netlify/functions/repo-heatmap-runner' },

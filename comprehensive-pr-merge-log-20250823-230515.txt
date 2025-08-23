@@ -2491,3 +2491,46 @@ pages/main/front/index.tsx[0m
 2025-08-23 23:10:01 - [1;33m⚠️  Found conflicts in pages/main/front/index.tsx, resolving...[0m
 2025-08-23 23:10:01 - [0;34m💻 Code file detected, attempting intelligent merge...[0m
 2025-08-23 23:10:01 - [0;32m✅ Resolved conflicts in pages/main/front/index.tsx[0m
+2025-08-23 23:10:01 - [0;32m✅ Successfully resolved conflicts and merged cursor/invent-and-deploy-autonomous-cloud-automations-b49a[0m
+2025-08-23 23:10:01 - [0;32m✅ PR #3807 (cursor/invent-and-deploy-autonomous-cloud-automations-b49a) processed successfully[0m
+2025-08-23 23:10:01 - [0;34m🔒 Closing PR #3807 via GitHub API...[0m
+2025-08-23 23:10:01 - [0;34m📊 Progress: 82/100, ✅ 82, ❌ 0[0m
+2025-08-23 23:10:03 - [0;34m📋 Processing PR #3806: Invent and deploy autonomous cloud automations (branch: cursor/invent-and-deploy-autonomous-cloud-automations-5293)[0m
+2025-08-23 23:10:03 - [0;34m🔄 Attempting to merge cursor/invent-and-deploy-autonomous-cloud-automations-5293...[0m
+2025-08-23 23:10:05 - [1;33m⚠️  Merge conflicts detected in cursor/invent-and-deploy-autonomous-cloud-automations-5293 (attempt 1/3), resolving...[0m
+2025-08-23 23:10:05 - [0;34m📋 Conflicted files: automation/netlify-build-stamp.txt
+automation/stale-content-auditor.cjs
+latest-netlify-build-trigger.json
+netlify-build-trigger-2025-08-11T23-39-12-342Z.json
+netlify.toml
+netlify/functions/functions-manifest.json
+netlify/functions/stale-content-auditor-runner.js
+pages/main/front/index.tsx[0m
+2025-08-23 23:10:05 - [0;34m🔧 Resolving conflicts in automation/netlify-build-stamp.txt for branch cursor/invent-and-deploy-autonomous-cloud-automations-5293...[0m
+2025-08-23 23:10:05 - [1;33m⚠️  Found conflicts in automation/netlify-build-stamp.txt, resolving...[0m
+2025-08-23 23:10:05 - [0;34m📝 Regular file, removing conflict markers...[0m
+2025-08-23 23:10:05 - [0;32m✅ Resolved conflicts in automation/netlify-build-stamp.txt[0m
+2025-08-23 23:10:05 - [0;34m🔧 Resolving conflicts in automation/stale-content-auditor.cjs for branch cursor/invent-and-deploy-autonomous-cloud-automations-5293...[0m
+2025-08-23 23:10:05 - [1;33m⚠️  Found conflicts in automation/stale-content-auditor.cjs, resolving...[0m
+2025-08-23 23:10:05 - [0;34m📝 Regular file, removing conflict markers...[0m
+2025-08-23 23:10:05 - [0;32m✅ Resolved conflicts in automation/stale-content-auditor.cjs[0m
+2025-08-23 23:10:05 - [0;34m🔧 Resolving conflicts in latest-netlify-build-trigger.json for branch cursor/invent-and-deploy-autonomous-cloud-automations-5293...[0m
+2025-08-23 23:10:05 - [0;34mℹ️  No conflicts found in latest-netlify-build-trigger.json[0m
+2025-08-23 23:10:05 - [0;34m🔧 Resolving conflicts in netlify-build-trigger-2025-08-11T23-39-12-342Z.json for branch cursor/invent-and-deploy-autonomous-cloud-automations-5293...[0m
+2025-08-23 23:10:05 - [0;34mℹ️  No conflicts found in netlify-build-trigger-2025-08-11T23-39-12-342Z.json[0m
+2025-08-23 23:10:05 - [0;34m🔧 Resolving conflicts in netlify.toml for branch cursor/invent-and-deploy-autonomous-cloud-automations-5293...[0m
+2025-08-23 23:10:05 - [1;33m⚠️  Found conflicts in netlify.toml, resolving...[0m
+2025-08-23 23:10:05 - [0;34m📝 Regular file, removing conflict markers...[0m
+2025-08-23 23:10:05 - [0;32m✅ Resolved conflicts in netlify.toml[0m
+2025-08-23 23:10:05 - [0;34m🔧 Resolving conflicts in netlify/functions/functions-manifest.json for branch cursor/invent-and-deploy-autonomous-cloud-automations-5293...[0m
+2025-08-23 23:10:05 - [1;33m⚠️  Found conflicts in netlify/functions/functions-manifest.json, resolving...[0m
+2025-08-23 23:10:05 - [0;34m📝 Regular file, removing conflict markers...[0m
+2025-08-23 23:10:05 - [0;32m✅ Resolved conflicts in netlify/functions/functions-manifest.json[0m
+2025-08-23 23:10:05 - [0;34m🔧 Resolving conflicts in netlify/functions/stale-content-auditor-runner.js for branch cursor/invent-and-deploy-autonomous-cloud-automations-5293...[0m
+2025-08-23 23:10:05 - [1;33m⚠️  Found conflicts in netlify/functions/stale-content-auditor-runner.js, resolving...[0m
+2025-08-23 23:10:05 - [0;34m💻 Code file detected, attempting intelligent merge...[0m
+2025-08-23 23:10:05 - [0;32m✅ Resolved conflicts in netlify/functions/stale-content-auditor-runner.js[0m
+2025-08-23 23:10:05 - [0;34m🔧 Resolving conflicts in pages/main/front/index.tsx for branch cursor/invent-and-deploy-autonomous-cloud-automations-5293...[0m
+2025-08-23 23:10:05 - [1;33m⚠️  Found conflicts in pages/main/front/index.tsx, resolving...[0m
+2025-08-23 23:10:05 - [0;34m💻 Code file detected, attempting intelligent merge...[0m
+2025-08-23 23:10:05 - [0;32m✅ Resolved conflicts in pages/main/front/index.tsx[0m
