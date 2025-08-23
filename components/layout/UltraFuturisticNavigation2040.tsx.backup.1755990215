@@ -8,6 +8,8 @@ import {
   Zap, Star, TrendingUp, Award, Clock, CheckCircle, ExternalLink,
   GraduationCap, Building, Truck, Zap as ZapIcon, Heart, DollarSign
 } from 'lucide-react';
+<<<<<<< HEAD
+=======
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 
@@ -216,6 +218,7 @@ const socialLinks = [
   { href: 'https://github.com/Zion-Holdings', icon: <Github className="w-5 h-5" />, label: 'GitHub' },
   { href: 'https://www.youtube.com/@ziontechgroup', icon: <Youtube className="w-5 h-5" />, label: 'YouTube' }
 ];
+>>>>>>> origin/cursor/website-audit-and-enhancement-e046
 
 const UltraFuturisticNavigation2040: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);

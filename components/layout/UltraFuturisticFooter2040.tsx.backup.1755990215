@@ -42,14 +42,35 @@ const footerData = {
     { label: 'Mission', href: '/mission' },
     { label: 'Services', href: '/services' },
     { label: 'Solutions', href: '/solutions' },
+<<<<<<< HEAD
+    { label: 'Case Studies', href: '/case-studies' },
+    { label: 'Blog', href: '/blog' },
+    { label: 'Careers', href: '/careers' },
+    { label: 'Contact', href: '/contact' }
+  ],
+  revolutionary2045: [
+    { label: 'AI Consciousness Evolution 2045', href: '/ai-consciousness-evolution-2045', badge: 'Revolutionary' },
+    { label: 'Quantum Neural Ecosystem 2045', href: '/quantum-neural-ecosystem-2045', badge: 'Quantum' },
+    { label: 'Space Resource Intelligence 2045', href: '/space-resource-intelligence-2045', badge: 'Space' },
+    { label: 'Metaverse Development Studio Pro 2045', href: '/metaverse-development-studio-pro-2045', badge: 'Metaverse' },
+    { label: 'Quantum Cybersecurity Platform 2045', href: '/quantum-cybersecurity-platform-2045', badge: 'Security' },
+    { label: 'Revolutionary 2045 Services Showcase', href: '/revolutionary-2045-futuristic-services-showcase', badge: 'Showcase' }
+=======
     { label: 'Partners', href: '/partners' },
     { label: 'Careers', href: '/careers' }
+>>>>>>> origin/cursor/website-audit-and-enhancement-e046
   ],
   services: [
     { label: 'AI & Machine Learning', href: '/services?category=ai-ml' },
     { label: 'Quantum Computing', href: '/services?category=quantum' },
     { label: 'Space Technology', href: '/services?category=space-tech' },
     { label: 'Cybersecurity', href: '/services?category=cybersecurity' },
+<<<<<<< HEAD
+    { label: 'Cloud Infrastructure', href: '/services?category=cloud' },
+    { label: 'Enterprise Solutions', href: '/solutions/enterprise' },
+    { label: 'Micro SAAS Platforms', href: '/services?category=micro-saas' },
+    { label: 'IT Services', href: '/services?category=it-services' }
+=======
     { label: 'Cloud Infrastructure', href: '/services?category=cloud' }
   ],
   solutions: [
@@ -57,6 +78,7 @@ const footerData = {
     { label: 'Startup Solutions', href: '/solutions/startup' },
     { label: 'Government Solutions', href: '/solutions/government' },
     { label: 'Case Studies', href: '/case-studies' }
+>>>>>>> origin/cursor/website-audit-and-enhancement-e046
   ],
   resources: [
     { label: 'Documentation', href: '/docs' },
@@ -273,7 +295,11 @@ const UltraFuturisticFooter2040: React.FC = () => {
     <footer className="bg-gradient-to-br from-gray-900 via-black to-gray-900 border-t border-cyan-400/20" role="contentinfo">
       {/* Main Footer Content */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+<<<<<<< HEAD
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-8 lg:gap-12">
+=======
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 lg:gap-12">
+>>>>>>> origin/cursor/website-audit-and-enhancement-e046
           
           {/* Company Information */}
           <div className="lg:col-span-2">
@@ -437,6 +463,8 @@ const UltraFuturisticFooter2040: React.FC = () => {
               </ul>
             </motion.div>
           </div>
+<<<<<<< HEAD
+=======
 
           {/* Services */}
           <div>
@@ -521,6 +549,7 @@ const UltraFuturisticFooter2040: React.FC = () => {
               </ul>
             </motion.div>
           </div>
+>>>>>>> origin/cursor/website-audit-and-enhancement-e046
         </div>
 
         {/* Social Media & Newsletter */}
