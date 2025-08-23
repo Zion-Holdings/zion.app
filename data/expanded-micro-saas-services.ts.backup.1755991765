@@ -1535,6 +1535,15 @@ export const expandedMicroSaasServices: MicroSaasService[] = [
     setupTime: '3 days',
     category: 'Professional Services',
     realService: true,
+<<<<<<< HEAD
+    technology: ['NLP', 'Machine Learning', 'Legal AI', 'Document Processing'],
+    integrations: ['Legal research databases', 'Practice management systems', 'Document management', 'Billing systems'],
+    useCases: ['Legal research', 'Contract review', 'Document generation', 'Compliance monitoring'],
+    roi: '300% average ROI in 12 months',
+    competitors: ['Casetext', 'ROSS Intelligence', 'Harvey AI', 'DoNotPay'],
+    marketSize: '$800M legal tech market',
+    growthRate: '140% annual growth'
+=======
     technology: ['Natural Language Processing', 'Machine Learning', 'Legal AI', 'Document Analysis'],
     integrations: ['Legal research databases', 'Practice management systems', 'Document storage', 'Billing platforms'],
     useCases: ['Contract review', 'Legal research', 'Document analysis', 'Case management'],
@@ -4638,6 +4647,7 @@ export const expandedMicroSaasServices: MicroSaasService[] = [
     competitors: ['None - Unique absolute 5.0'],
     marketSize: '$1Q potential market',
     growthRate: '20000000000000000% annual growth'
+>>>>>>> origin/cursor/enhance-app-services-and-website-with-futuristic-design-6f72
   }
 ];
 
@@ -4663,6 +4673,18 @@ export const serviceCategories = [
   'Travel & Hospitality',
   'Automotive & Transportation',
   'Energy & Utilities',
+<<<<<<< HEAD
+  'Agriculture & Farming',
+  'Sports & Fitness',
+  'Entertainment & Media',
+  'Non-profit & Social Impact',
+  'Government & Public Sector',
+  'Blockchain & Web3',
+  'IoT & Edge Computing',
+  'AR/VR & Immersive Tech',
+  'Quantum Computing',
+  'Data & Privacy'
+=======
   'Research & Development',
   'Government & Defense',
   'Education & Training',
@@ -4712,6 +4734,7 @@ export const serviceCategories = [
   'Transcendent Technology',
   'Cosmic Technology',
   'Godlike Technology'
+>>>>>>> origin/cursor/enhance-app-services-and-website-with-futuristic-design-6f72
 ];
 
 export const getServicesByCategory = (category: string) => {
