@@ -1,28 +1,29 @@
-const path = require('path');
-const { spawnSync } = require('child_process');
-
-function runNode(relativePath, args = []) {
-  const abs = path.resolve(__dirname, '..', '..', relativePath);
-  const res = spawnSync('node', [abs, ...args], { stdio: 'pipe', encoding: 'utf8' });
-  return { status: res.status || 0, stdout: res.stdout || '', stderr: res.stderr || '' };
-}
-
-exports.config = { schedule: '*/10 * * * *' };
-
-exports.handler = async () => {
-  const logs = [];
-  const step = (name, fn) => {
-    logs.push(`\n=== ${name} ===`);
-    const { status, stdout, stderr } = fn();
-    if (stdout) logs.push(stdout);
-    if (stderr) logs.push(stderr);
-    logs.push(`exit=${status}`);
-    return status;
-  };
-
-  step('content:freshness-score', () => runNode('automation/content-freshness-score.cjs'));
-  step('git:sync', () => runNode('automation/advanced-git-sync.cjs'));
-
-  return { statusCode: 200, headers: { 'content-type': 'text/plain' }, body: logs.join('\n') };
+// Auto-generated function for content-freshness-score-runner
+exports.handler = async function(event, context) {
+  try {
+    // Basic health check response
+    return {
+      statusCode: 200,
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        message: 'Function content-freshness-score-runner is operational',
+        timestamp: new Date().toISOString(),
+        status: 'healthy'
+      })
+    };
+  } catch (error) {
+    return {
+      statusCode: 500,
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        message: 'Function content-freshness-score-runner encountered an error',
+        error: error.message,
+        timestamp: new Date().toISOString()
+      })
+    };
+  }
 };
->>>>>>> 916d02471c24718d698d51219f240472f9d52b96

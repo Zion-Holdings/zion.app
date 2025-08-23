@@ -70,7 +70,54 @@ start_system() {
     
     # Check if PM2 is installed
     if ! command -v pm2 &> /dev/null; then
-        error "PM2 is not installed. Please install it first: npm install -g pm2"
+        warn "PM2 is not installed. Installing PM2 globally..."
+        npm install -g pm2
+    fi
+    
+    # Check if required npm packages are installed
+    if [ ! -d "node_modules" ]; then
+        warn "Installing npm dependencies..."
+        npm install
+    fi
+    
+    log "Prerequisites check completed successfully"
+}
+
+# Initialize PM2 redundancy system
+init_pm2_redundancy() {
+    log "Initializing PM2 redundancy system..."
+    
+    cd "$WORKSPACE_DIR"
+    
+    # Stop existing PM2 processes if running
+    if pm2 list | grep -q "zion-auto-sync"; then
+        warn "Stopping existing PM2 processes..."
+        pm2 stop all
+        pm2 delete all
+    fi
+    
+    # Start redundancy ecosystem
+    log "Starting PM2 redundancy ecosystem..."
+    pm2 start ecosystem.redundancy.cjs
+    
+    # Save PM2 configuration
+    pm2 save
+    
+    # Setup PM2 startup script
+    pm2 startup
+    
+    log "PM2 redundancy system initialized successfully"
+}
+
+# Initialize GitHub Actions redundancy
+init_github_redundancy() {
+    log "Initializing GitHub Actions redundancy..."
+    
+    cd "$WORKSPACE_DIR"
+    
+    # Check if backup workflows exist
+    if [ ! -f ".github/workflows/marketing-sync-backup.yml" ]; then
+        error "GitHub Actions backup workflows not found. Please ensure they are created first."
         return 1
     fi
     
@@ -218,7 +265,36 @@ show_help() {
     echo "Logs are written to: $LOG_DIR/comprehensive-redundancy.log"
 }
 
-# Main script logic
+# Health check function
+health_check() {
+    log "Performing comprehensive health check..."
+    
+    # Check PM2 processes
+    log "Checking PM2 processes..."
+    pm2 status
+    
+    # Check GitHub Actions workflows
+    log "Checking GitHub Actions workflows..."
+    if [ -d ".github/workflows" ]; then
+        echo "Workflows found:"
+        ls -la .github/workflows/
+    else
+        warn "GitHub workflows directory not found"
+    fi
+    
+    # Check Netlify functions
+    log "Checking Netlify functions..."
+    if [ -f "netlify/functions/functions-manifest.json" ]; then
+        local function_count=$(jq '.functions | length' netlify/functions/functions-manifest.json 2>/dev/null || echo "0")
+        log "Found $function_count functions in manifest"
+    else
+        warn "Netlify functions manifest not found"
+    fi
+    
+    log "Health check completed"
+}
+
+# Handle script arguments
 case "${1:-start}" in
     start)
         start_system
@@ -226,17 +302,23 @@ case "${1:-start}" in
     stop)
         stop_system
         ;;
-    restart)
-        restart_system
+    "check")
+        health_check
         ;;
-    status)
-        show_status
+    "health")
+        health_check
         ;;
-    logs)
-        show_logs
+    "report")
+        generate_report
         ;;
-    help|--help|-h)
-        show_help
+    "help"|"-h"|"--help")
+        echo "Usage: $0 [start|status|check|health|report|help]"
+        echo "  start  - Start the comprehensive redundancy system (default)"
+        echo "  status - Check redundancy system status"
+        echo "  check  - Run comprehensive health check"
+        echo "  health - Run comprehensive health check"
+        echo "  report - Generate redundancy system report"
+        echo "  help   - Show this help message"
         ;;
     *)
         error "Unknown command: $1"

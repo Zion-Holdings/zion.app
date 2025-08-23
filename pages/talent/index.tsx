@@ -1,7 +1,20 @@
-import React from 'react';
+import type { NextPage } from 'next';
 import Head from 'next/head';
+
+const Index: NextPage = () => {
   return (
-    <>
-      <Head><title>talent/index - Zion App</title><meta name="description" content="talent/index page" /></Head><div className="container mx-auto px-4 py-8"><h1 className="text-3xl font-bold mb-6">talent/index</h1><p className="text-lg mb-4">This page is under construction.</p><div className="mt-4"><a href="/" className="text-blue-600 hover:underline">;
-            ← Back to Home</a></div></div></>;
+    <div>
+      <Head>
+        <title>Index - Zion Tech Solutions</title>
+        <meta name="description" content="Index page" />
+      </Head>
+      
+      <main>
+        <h1>Index</h1>
+        <p>This page is under construction.</p>
+      </main>
+    </div>
   );
+};
+
+export default Index;

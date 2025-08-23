@@ -10,8 +10,8 @@ import path from 'path';
 function collectRoutes(dir, base = '') {
   if (!fs.existsSync(dir)) return [];
 
-  const entries = fs.readdirSync(dir);
-  const routes = [];
+const BASE_URL = 'https://ziontechgroup.com';
+const PAGES_DIR = path.join(__dirname, '..', 'pages');
 
   for (const entry of entries) {
     if (entry.startsWith('_') || entry === 'api') continue;

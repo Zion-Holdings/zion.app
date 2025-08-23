@@ -5,11 +5,38 @@ export AUTONOMOUS_MODE=true
 export HUSKY_AUTOMATION=true
 export AUTO_FIX_ENABLED=true
 
-# Run comprehensive pre-commit checks
-echo "📋 Running comprehensive pre-commit checks..."
+# Run lint-staged for staged files
+if [ -x "./node_modules/.bin/lint-staged" ]; then
+  npx lint-staged || {
+    echo "❌ Lint-staged checks failed. Please fix issues before committing."
+    exit 1
+  }
+else
+  echo "ℹ️  Skipping lint-staged (not installed). Run 'npm install' to enable."
+fi
 
-# 1. Skip linting for now due to file corruption
-echo "⚠️  Skipping linting due to file corruption..."
+# Skip type-check if tsc is not available locally
+if [ -x "./node_modules/.bin/tsc" ]; then
+  npm run -s type-check || {
+    echo "❌ TypeScript type check failed. Please fix issues before committing."
+    exit 1
+  }
+else
+  echo "ℹ️  Skipping type-check (tsc not found). Run 'npm install' to enable."
+fi
+
+# Lint staged files
+if [ -x "./node_modules/.bin/lint-staged" ]; then
+  npx --no-install lint-staged || {
+    echo "❌ Linting staged files failed."
+    exit 1
+  }
+else
+  echo "ℹ️  Skipping lint-staged (not installed)."
+fi
+
+# Deletion guard to preserve files unless explicitly allowed
+sh ./scripts/prevent-deletion.sh
 
 # 2. Skip type checking for now
 echo "⚠️  Skipping type checking due to file corruption..."

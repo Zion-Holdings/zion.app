@@ -40,11 +40,49 @@ const Header = () => {
   }, [isProductDropdownOpen]);
 
   const navigation = [
-    { name: 'Product', href: '#', hasDropdown: true },
-    { name: 'Solutions', href: '/services' },
-    { name: 'Resources', href: '/resources' },
-    { name: 'Company', href: '/about' },
+    {
+      name: 'Services',
+      href: '/services',
+      description: '200+ Revolutionary Technology Solutions',
+      icon: <Zap className="w-5 h-5" />,
+      children: [
+        { name: 'All Services', href: '/services' },
+        { name: 'AI & Consciousness', href: '/ai-services' },
+        { name: 'Quantum Computing', href: '/quantum-services' },
+        { name: 'Space Technology', href: '/space-technology' },
+        { name: 'IT Solutions', href: '/it-services' },
+        { name: 'Cybersecurity', href: '/cybersecurity' }
+      ]
+    },
+    {
+      name: 'Solutions',
+      href: '/solutions',
+      description: 'Industry-Specific Solutions',
+      icon: <Sparkles className="w-5 h-5" />,
+      children: [
+        { name: 'Case Studies', href: '/case-studies' },
+        { name: 'Industry Solutions', href: '/solutions' },
+        { name: 'Digital Transformation', href: '/digital-transformation' },
+        { name: 'Cloud Platform', href: '/cloud-platform' },
+        { name: 'AI Assistant', href: '/ai-assistant' }
+      ]
+    },
+    {
+      name: 'Resources',
+      href: '/resources',
+      description: 'Knowledge & Insights',
+      icon: <Sparkles className="w-5 h-5" />,
+      children: [
+        { name: 'Blog', href: '/blog' },
+        { name: 'Documentation', href: '/docs' },
+        { name: 'White Papers', href: '/white-papers' },
+        { name: 'Webinars', href: '/webinars' },
+        { name: 'Training', href: '/training' }
+      ]
+    },
+    { name: 'About', href: '/about' },
     { name: 'Pricing', href: '/pricing' },
+    { name: 'Contact', href: '/contact' }
   ];
 
   const productDropdown = [

@@ -1,83 +1,62 @@
 import React from 'react';
-import Layout from '../components/layout/Layout';
 import { motion } from 'framer-motion';
-import { 
-  Building2, 
-  Shield, 
-  Database, 
-  Cloud, 
-  Lock, 
-  Activity, 
-  Users, 
-  Zap, 
-  ArrowRight,
-  CheckCircle,
-  Star,
-  BarChart3,
-  Globe,
-  FileText,
-  Eye,
-  Key
-} from 'lucide-react';
-import Link from 'next/link';
+import { Shield, Brain, Users, Zap, Target, Star, ArrowRight, Activity, Lock, Globe, Building, FileText } from 'lucide-react';
+import SEO from '../components/SEO';
 
-const GovernmentTechnologySolutions: React.FC = () => {
-  const solutions = [
-    {
-      title: 'Cybersecurity & Compliance',
-      description: 'FedRAMP, FISMA, and CMMC compliant security solutions for government agencies',
-      icon: <Shield className="w-8 h-8 text-green-400" />,
-      features: ['FedRAMP compliance', 'FISMA certification', 'CMMC readiness', 'Zero trust security'],
-      href: '/government-cybersecurity'
-    },
-    {
-      title: 'Cloud Infrastructure',
-      description: 'Secure, scalable cloud solutions designed for government requirements',
-      icon: <Cloud className="w-8 h-8 text-blue-400" />,
-      features: ['Government cloud', 'Hybrid solutions', 'Data sovereignty', 'Compliance ready'],
-      href: '/government-cloud-infrastructure'
-    },
-    {
-      title: 'Data Management & Analytics',
-      description: 'Secure data platforms for government intelligence and decision-making',
-      icon: <Database className="w-8 h-8 text-purple-400" />,
-      features: ['Data governance', 'Analytics platforms', 'AI insights', 'Compliance reporting'],
-      href: '/government-data-analytics'
-    },
-    {
-      title: 'Digital Identity & Access',
-      description: 'Secure identity management and access control for government systems',
-      icon: <Key className="w-8 h-8 text-cyan-400" />,
-      features: ['Identity verification', 'Access management', 'Multi-factor auth', 'Audit trails'],
-      href: '/government-identity-management'
-    },
-    {
-      title: 'Citizen Services Platform',
-      description: 'Digital transformation solutions for improved citizen engagement',
-      icon: <Users className="w-8 h-8 text-orange-400" />,
-      features: ['Digital services', 'Citizen portals', 'Mobile apps', 'Service automation'],
-      href: '/citizen-services-platform'
-    },
-    {
-      title: 'Emergency Response Systems',
-      description: 'AI-powered emergency management and response coordination platforms',
-      icon: <Activity className="w-8 h-8 text-red-400" />,
-      features: ['Emergency coordination', 'Real-time monitoring', 'Resource management', 'Communication systems'],
-      href: '/emergency-response-systems'
-    }
-  ];
+const governmentServices = [
+  {
+    title: 'Cybersecurity & Compliance',
+    description: 'Advanced security solutions meeting government cybersecurity standards and compliance requirements',
+    icon: <Shield className="w-8 h-8 text-red-400" />,
+    href: '/government-cybersecurity-solutions',
+    features: ['FedRAMP Compliance', 'Zero Trust Security', 'Threat Intelligence']
+  },
+  {
+    title: 'AI-Powered Analytics',
+    description: 'Intelligent data analytics for government decision-making and policy development',
+    icon: <Brain className="w-8 h-8 text-cyan-400" />,
+    href: '/government-ai-analytics',
+    features: ['Data Analytics', 'Predictive Modeling', 'Policy Insights']
+  },
+  {
+    title: 'Digital Transformation',
+    description: 'Modernization of government services and citizen engagement platforms',
+    icon: <Globe className="w-8 h-8 text-blue-400" />,
+    href: '/government-digital-transformation',
+    features: ['Citizen Portals', 'Service Automation', 'Mobile Solutions']
+  },
+  {
+    title: 'Cloud Infrastructure',
+    description: 'Secure cloud solutions designed for government workloads and data sovereignty',
+    icon: <Building className="w-8 h-8 text-purple-400" />,
+    href: '/government-cloud-infrastructure',
+    features: ['Multi-Cloud Strategy', 'Data Sovereignty', 'Scalable Architecture']
+  },
+  {
+    title: 'Data Management',
+    description: 'Comprehensive data governance and management solutions for government agencies',
+    icon: <FileText className="w-8 h-8 text-green-400" />,
+    href: '/government-data-management',
+    features: ['Data Governance', 'Master Data Management', 'Compliance Reporting']
+  },
+  {
+    title: 'Emergency Response Systems',
+    description: 'Advanced emergency management and response coordination platforms',
+    icon: <Zap className="w-8 h-8 text-yellow-400" />,
+    href: '/emergency-response-systems',
+    features: ['Crisis Management', 'Response Coordination', 'Real-time Monitoring']
+  }
+];
 
-  const benefits = [
-    'Enhanced security and compliance with government standards',
-    'Improved operational efficiency and cost reduction',
-    'Better citizen services and engagement',
-    'Enhanced data protection and privacy',
-    'Scalable solutions for growing government needs',
-    'Real-time monitoring and decision support'
-  ];
-
+export default function GovernmentTechnologySolutions() {
   return (
-    <Layout>
+    <>
+      <SEO 
+        title="Government Technology Solutions | Zion Tech Group"
+        description="Advanced government technology solutions including cybersecurity, AI analytics, digital transformation, and cloud infrastructure."
+        canonical="https://ziontechgroup.com/government-technology-solutions"
+      />
+      
       <div className="min-h-screen bg-gradient-to-br from-black via-gray-900 to-black text-white">
         {/* Hero Section */}
         <section className="relative pt-32 pb-20 px-4 sm:px-6 lg:px-8">
@@ -87,117 +66,144 @@ const GovernmentTechnologySolutions: React.FC = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
             >
-              <div className="flex justify-center mb-6">
-                <Building2 className="w-16 h-16 text-indigo-400" />
-              </div>
-              <h1 className="text-5xl md:text-6xl font-bold bg-gradient-to-r from-indigo-400 via-purple-500 to-cyan-600 bg-clip-text text-transparent mb-6">
+              <h1 className="text-5xl md:text-7xl font-bold bg-gradient-to-r from-blue-400 via-indigo-400 to-purple-400 bg-clip-text text-transparent mb-6">
                 Government Technology Solutions
               </h1>
-              <p className="text-xl md:text-2xl text-gray-300 mb-8 max-w-4xl mx-auto">
-                Empowering government agencies with secure, compliant, and innovative 
-                technology solutions for the digital government transformation.
+              <p className="text-xl md:text-2xl text-gray-300 max-w-4xl mx-auto mb-8">
+                Secure, compliant, and innovative technology solutions designed specifically for government agencies and public sector organizations.
               </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Link 
-                  href="/contact"
-                  className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-indigo-500 to-purple-600 text-white font-semibold rounded-xl hover:from-indigo-600 hover:to-purple-700 transition-all duration-300 transform hover:scale-105"
+              <div className="flex flex-wrap justify-center gap-4">
+                <motion.button
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  className="bg-gradient-to-r from-blue-500 to-indigo-600 text-white px-8 py-4 rounded-lg font-semibold text-lg hover:shadow-2xl transition-all duration-300"
                 >
-                  Get Government Solutions
-                  <ArrowRight className="ml-2 w-5 h-5" />
-                </Link>
-                <Link 
-                  href="/market-pricing"
-                  className="inline-flex items-center px-8 py-4 border border-indigo-500/50 text-indigo-400 font-semibold rounded-xl hover:bg-indigo-500/10 transition-all duration-300"
+                  Explore Government Solutions
+                </motion.button>
+                <motion.button
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  className="border border-blue-500 text-blue-400 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-blue-500 hover:text-white transition-all duration-300"
                 >
-                  View Pricing
-                </Link>
+                  Government Consultation
+                </motion.button>
               </div>
             </motion.div>
           </div>
         </section>
 
-        {/* Solutions Grid */}
+        {/* Services Grid */}
         <section className="py-20 px-4 sm:px-6 lg:px-8">
           <div className="max-w-7xl mx-auto">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
               className="text-center mb-16"
             >
               <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-                Comprehensive Government Solutions
+                Government Technology Portfolio
               </h2>
-              <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-                From cybersecurity compliance to citizen services, 
-                we provide end-to-end government technology solutions.
+              <p className="text-xl text-gray-400 max-w-3xl mx-auto">
+                Comprehensive solutions designed to modernize government operations while maintaining security and compliance standards
               </p>
             </motion.div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {solutions.map((solution, index) => (
+              {governmentServices.map((service, index) => (
                 <motion.div
-                  key={solution.title}
+                  key={service.title}
                   initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
+                  animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: index * 0.1 }}
-                  className="bg-gray-800/50 backdrop-blur-sm border border-gray-700/50 rounded-2xl p-8 hover:border-indigo-500/50 transition-all duration-300 hover:transform hover:scale-105"
+                  className="bg-gradient-to-br from-gray-800/50 to-gray-900/50 backdrop-blur-xl border border-gray-700/50 rounded-2xl p-8 hover:border-blue-500/50 transition-all duration-300 group"
                 >
                   <div className="mb-6">
-                    {solution.icon}
+                    {service.icon}
                   </div>
-                  <h3 className="text-2xl font-bold text-white mb-4">{solution.title}</h3>
-                  <p className="text-gray-300 mb-6">{solution.description}</p>
+                  <h3 className="text-2xl font-bold text-white mb-4 group-hover:text-blue-400 transition-colors">
+                    {service.title}
+                  </h3>
+                  <p className="text-gray-400 mb-6 leading-relaxed">
+                    {service.description}
+                  </p>
                   <ul className="space-y-2 mb-6">
-                    {solution.features.map((feature, featureIndex) => (
-                      <li key={featureIndex} className="flex items-center text-sm text-gray-400">
-                        <CheckCircle className="w-4 h-4 text-green-400 mr-2 flex-shrink-0" />
+                    {service.features.map((feature, featureIndex) => (
+                      <li key={featureIndex} className="flex items-center text-gray-300">
+                        <Star className="w-4 h-4 text-blue-400 mr-2 flex-shrink-0" />
                         {feature}
                       </li>
                     ))}
                   </ul>
-                  <Link 
-                    href={solution.href}
-                    className="inline-flex items-center text-indigo-400 hover:text-indigo-300 transition-colors"
+                  <motion.a
+                    href={service.href}
+                    whileHover={{ x: 5 }}
+                    className="inline-flex items-center text-blue-400 hover:text-blue-300 font-semibold group-hover:text-blue-300 transition-colors"
                   >
-                    Learn More
-                    <ArrowRight className="ml-2 w-4 h-4" />
-                  </Link>
+                    Learn More <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
+                  </motion.a>
                 </motion.div>
               ))}
             </div>
           </div>
         </section>
 
-        {/* Benefits Section */}
-        <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gray-900/50">
+        {/* Government Innovation Section */}
+        <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-blue-900/20 to-indigo-900/20">
           <div className="max-w-7xl mx-auto">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.4 }}
               className="text-center mb-16"
             >
               <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-                Why Choose Zion Tech Group?
+                Government Innovation Frontiers
               </h2>
-              <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-                We combine cutting-edge technology with deep government expertise 
-                to deliver solutions that meet the highest security and compliance standards.
+              <p className="text-xl text-gray-400 max-w-3xl mx-auto">
+                Cutting-edge technologies that are revolutionizing government services and citizen engagement
               </p>
             </motion.div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {benefits.map((benefit, index) => (
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+              {[
+                {
+                  title: 'Cybersecurity',
+                  description: 'Advanced security and compliance solutions',
+                  icon: <Shield className="w-12 h-12 text-red-400" />
+                },
+                {
+                  title: 'AI Analytics',
+                  description: 'Intelligent data analysis and insights',
+                  icon: <Brain className="w-12 h-12 text-cyan-400" />
+                },
+                {
+                  title: 'Digital Services',
+                  description: 'Modern citizen engagement platforms',
+                  icon: <Globe className="w-12 h-12 text-blue-400" />
+                },
+                {
+                  title: 'Cloud Infrastructure',
+                  description: 'Scalable and secure cloud solutions',
+                  icon: <Building className="w-12 h-12 text-purple-400" />
+                }
+              ].map((innovation, index) => (
                 <motion.div
-                  key={benefit}
-                  initial={{ opacity: 0, x: -20 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.6, delay: index * 0.1 }}
-                  className="flex items-start space-x-4"
+                  key={innovation.title}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: 0.6 + index * 0.1 }}
+                  className="text-center"
                 >
-                  <Star className="w-6 h-6 text-yellow-400 mt-1 flex-shrink-0" />
-                  <p className="text-gray-300">{benefit}</p>
+                  <div className="mb-4 flex justify-center">
+                    {innovation.icon}
+                  </div>
+                  <h3 className="text-xl font-bold text-white mb-3">
+                    {innovation.title}
+                  </h3>
+                  <p className="text-gray-400">
+                    {innovation.description}
+                  </p>
                 </motion.div>
               ))}
             </div>
@@ -209,37 +215,35 @@ const GovernmentTechnologySolutions: React.FC = () => {
           <div className="max-w-4xl mx-auto text-center">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.8 }}
             >
               <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-                Ready to Transform Government?
+                Ready to Modernize Government Technology?
               </h2>
-              <p className="text-xl text-gray-300 mb-8">
-                Let's discuss how our government technology solutions can 
-                revolutionize your agency's digital capabilities and services.
+              <p className="text-xl text-gray-400 mb-8">
+                Let's discuss how our government technology solutions can enhance security, improve efficiency, and transform citizen services.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Link 
-                  href="/contact"
-                  className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-indigo-500 to-purple-600 text-white font-semibold rounded-xl hover:from-indigo-600 hover:to-purple-700 transition-all duration-300 transform hover:scale-105"
+                <motion.button
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  className="bg-gradient-to-r from-blue-500 to-indigo-600 text-white px-8 py-4 rounded-lg font-semibold text-lg hover:shadow-2xl transition-all duration-300"
                 >
-                  Start Government Transformation
-                  <ArrowRight className="ml-2 w-5 h-5" />
-                </Link>
-                <Link 
-                  href="/case-studies"
-                  className="inline-flex items-center px-8 py-4 border border-indigo-500/50 text-indigo-400 font-semibold rounded-xl hover:bg-indigo-500/10 transition-all duration-300"
+                  Government Assessment
+                </motion.button>
+                <motion.button
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  className="border border-blue-500 text-blue-400 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-blue-500 hover:text-white transition-all duration-300"
                 >
                   View Case Studies
-                </Link>
+                </motion.button>
               </div>
             </motion.div>
           </div>
         </section>
       </div>
-    </Layout>
+    </>
   );
-};
-
-export default GovernmentTechnologySolutions;
+}

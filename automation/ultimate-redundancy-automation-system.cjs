@@ -1,42 +1,45 @@
 #!/usr/bin/env node
 "use strict";
 
-const { spawnSync, execSync } = require("child_process");
+const { spawnSync, execSync, spawn } = require("child_process");
 const fs = require("fs");
 const path = require("path");
 const crypto = require("crypto");
 
 class UltimateRedundancyAutomationSystem {
   constructor() {
+    this.workspace = process.cwd();
+    this.logDir = path.join(this.workspace, "automation/logs");
+    this.ensureLogDirectory();
+    
     this.config = {
       pm2: {
         ecosystemFiles: [
           "ecosystem.pm2.cjs",
           "ecosystem.redundancy.cjs", 
           "ecosystem.comprehensive-redundancy.cjs",
-          "ecosystem.ultimate-redundancy.cjs",
           "ecosystem-redundancy.pm2.cjs"
         ],
         processes: [
           "zion-auto-sync",
           "zion-auto-sync-cron",
-          "master-redundancy-orchestrator",
-          "enhanced-pm2-redundancy",
-          "enhanced-github-actions-redundancy",
-          "enhanced-netlify-functions-redundancy",
           "redundancy-automation-system",
           "redundancy-health-monitor",
           "redundancy-git-sync",
           "redundancy-build-monitor",
-          "ultimate-redundancy-master",
-          "ultimate-redundancy-system"
+          "comprehensive-redundancy-orchestrator",
+          "enhanced-pm2-redundancy",
+          "pm2-redundancy-monitor"
         ],
-        healthCheckInterval: 15000,
-        maxRestartAttempts: 10,
-        restartDelay: 3000,
+        healthCheckInterval: 30000,
+        maxRestartAttempts: 5,
+        restartDelay: 5000,
         autoRecovery: true,
-        processMonitoring: true,
-        logRotation: true
+        backupProcesses: [
+          "automation:pm2",
+          "automation:pm2:restart",
+          "automation:pm2:status"
+        ]
       },
       githubActions: {
         workflows: [
@@ -45,16 +48,26 @@ class UltimateRedundancyAutomationSystem {
           ".github/workflows/marketing-sync-backup.yml",
           ".github/workflows/sync-health-backup.yml"
         ],
-        healthCheckInterval: 30000,
-        maxFailureThreshold: 5,
+        healthCheckInterval: 60000,
+        maxFailureThreshold: 3,
         autoTrigger: true,
-        backupTriggers: true,
-        workflowValidation: true,
-        apiHealthCheck: true,
-        backupRestoration: true
+        fallbackScripts: [
+          "automation/marketing-sync.js",
+          "automation/git-sync.cjs",
+          "automation/pm2-auto-sync.js",
+          "automation/enhanced-git-sync-orchestrator.cjs"
+        ],
+        backupTriggers: [
+          "gh:trigger",
+          "gh:auto-heal"
+        ]
       },
       netlifyFunctions: {
         manifestFile: "netlify/functions/functions-manifest.json",
+        healthCheckInterval: 120000,
+        maxFailureThreshold: 2,
+        autoRegenerate: true,
+        deploymentCheck: true,
         functions: [
           "a11y-alt-text-runner",
           "adaptive-orchestrator",
@@ -154,35 +167,53 @@ class UltimateRedundancyAutomationSystem {
           "ultrafast-orchestrator",
           "unused-media-scanner"
         ],
-        healthCheckInterval: 60000,
-        maxFailureThreshold: 3,
-        autoDeploy: true,
-        autoRegenerate: true,
-        deploymentCheck: true,
-        logRotation: true,
-        functionValidation: true,
-        backupFunctions: true
+        backupScripts: [
+          "scripts/generate-netlify-functions-manifest.cjs",
+          "netlify:manifest",
+          "netlify:trigger"
+        ]
       },
-      logging: {
-        logDir: "automation/logs",
-        maxLogSize: 20 * 1024 * 1024,
-        maxLogFiles: 50,
-        compression: true
-      },
-      monitoring: {
-        enabled: true,
-        interval: 15000,
-        alertThreshold: 5,
-        autoRestart: true,
-        healthDashboard: true,
-        performanceMetrics: true
-      },
-      backup: {
-        enabled: true,
-        interval: 3600000, // 1 hour
-        retention: 168, // 7 days
-        compression: true,
-        encryption: false
+      npmScripts: {
+        redundancy: [
+          "redundancy:start",
+          "redundancy:stop", 
+          "redundancy:restart",
+          "redundancy:status",
+          "redundancy:logs",
+          "redundancy:check",
+          "redundancy:monitor",
+          "redundancy:pm2",
+          "redundancy:github",
+          "redundancy:netlify"
+        ],
+        comprehensive: [
+          "redundancy:comprehensive:start",
+          "redundancy:comprehensive:status",
+          "redundancy:comprehensive:restart",
+          "redundancy:comprehensive:stop",
+          "redundancy:comprehensive:pm2",
+          "redundancy:comprehensive:github",
+          "redundancy:comprehensive:netlify"
+        ],
+        automation: [
+          "automation:all",
+          "automation:status",
+          "automation:report",
+          "automation:git-sync",
+          "automation:improvement",
+          "automation:guardian",
+          "automation:cloud",
+          "automation:discover"
+        ],
+        build: [
+          "build",
+          "build:heal",
+          "build:smart",
+          "build:auto-fix",
+          "build:monitor",
+          "build:guardian",
+          "build:orchestrator"
+        ]
       }
     };
     
@@ -190,504 +221,517 @@ class UltimateRedundancyAutomationSystem {
       pm2: { healthy: false, processes: [], lastCheck: null },
       githubActions: { healthy: false, workflows: [], lastCheck: null },
       netlifyFunctions: { healthy: false, functions: [], lastCheck: null },
-      system: { healthy: false, uptime: 0, startTime: Date.now() }
+      npmScripts: { healthy: false, scripts: [], lastCheck: null }
     };
     
-    this.ensureLogDirectory();
-    this.initializeMonitoring();
-    this.startUltimateMonitoring();
+    this.monitoring = false;
+    this.recoveryMode = false;
   }
 
   ensureLogDirectory() {
-    if (!fs.existsSync(this.config.logging.logDir)) {
-      fs.mkdirSync(this.config.logging.logDir, { recursive: true });
+    if (!fs.existsSync(this.logDir)) {
+      fs.mkdirSync(this.logDir, { recursive: true });
     }
   }
 
   log(message, level = "INFO") {
     const timestamp = new Date().toISOString();
-    const logEntry = `[${timestamp}] [${level}] ${message}`;
-    console.log(logEntry);
+    const logMessage = `[${timestamp}] [${level}] ${message}`;
+    console.log(logMessage);
     
-    const logFile = path.join(this.config.logging.logDir, `ultimate-redundancy-${new Date().toISOString().split('T')[0]}.log`);
-    fs.appendFileSync(logFile, logEntry + "\n");
+    const logFile = path.join(this.logDir, `ultimate-redundancy-${new Date().toISOString().split('T')[0]}.log`);
+    fs.appendFileSync(logFile, logMessage + "\n");
   }
 
-  async runCommand(command, args = [], options = {}) {
-    return new Promise((resolve) => {
-      const result = spawnSync(command, args, {
-        cwd: process.cwd(),
-        env: process.env,
-        shell: false,
-        encoding: "utf8",
-        maxBuffer: 1024 * 1024 * 50,
-        ...options
-      });
-      
-      resolve({
-        status: result.status,
-        stdout: result.stdout || "",
-        stderr: result.stderr || "",
-        error: result.error
-      });
-    });
-  }
-
-  async checkPM2UltimateHealth() {
-    this.log("🔍 Checking ultimate PM2 process health...");
-    
+  async checkPM2Health() {
     try {
-      // Check PM2 status
-      const pm2Status = await this.runCommand("pm2", ["status", "--json"]);
+      this.log("Checking PM2 health...");
+      
+      // Check if PM2 is running
+      const pm2Status = spawnSync("pm2", ["status"], { encoding: "utf8" });
       if (pm2Status.status !== 0) {
-        throw new Error(`PM2 status check failed: ${pm2Status.stderr}`);
+        this.log("PM2 not running, attempting to start...", "WARN");
+        this.startPM2();
+        return false;
       }
 
-      const processes = JSON.parse(pm2Status.stdout);
-      const healthyProcesses = [];
-      const unhealthyProcesses = [];
-
-      for (const process of processes) {
-        const isHealthy = process.pm2_env && process.pm2_env.status === "online";
-        if (isHealthy) {
-          healthyProcesses.push(process.name);
-        } else {
-          unhealthyProcesses.push(process.name);
-        }
-      }
-
-      // Check if all required processes are running
-      const requiredProcesses = this.config.pm2.processes;
-      const missingProcesses = requiredProcesses.filter(p => !healthyProcesses.includes(p));
-
-      if (missingProcesses.length > 0) {
-        this.log(`⚠️ Missing PM2 processes: ${missingProcesses.join(", ")}`, "WARN");
-        
-        // Auto-recovery for missing processes
-        if (this.config.pm2.autoRecovery) {
-          await this.recoverPM2Processes(missingProcesses);
-        }
-      }
-
-      this.status.pm2 = {
-        healthy: missingProcesses.length === 0,
-        processes: healthyProcesses,
-        lastCheck: new Date().toISOString(),
-        missing: missingProcesses,
-        total: healthyProcesses.length,
-        required: requiredProcesses.length
-      };
-
-      this.log(`✅ PM2 Health Check: ${healthyProcesses.length}/${requiredProcesses.length} processes healthy`);
-      return this.status.pm2.healthy;
-
-    } catch (error) {
-      this.log(`❌ PM2 Health Check Failed: ${error.message}`, "ERROR");
-      this.status.pm2.healthy = false;
-      this.status.pm2.lastCheck = new Date().toISOString();
-      return false;
-    }
-  }
-
-  async recoverPM2Processes(missingProcesses) {
-    this.log(`🔄 Attempting to recover ${missingProcesses.length} missing PM2 processes...`);
-    
-    for (const processName of missingProcesses) {
-      try {
-        // Try to restart the process
-        const restartResult = await this.runCommand("pm2", ["restart", processName]);
-        if (restartResult.status === 0) {
-          this.log(`✅ Successfully restarted PM2 process: ${processName}`);
-        } else {
-          // If restart fails, try to start it
-          const startResult = await this.runCommand("pm2", ["start", processName]);
-          if (startResult.status === 0) {
-            this.log(`✅ Successfully started PM2 process: ${processName}`);
-          } else {
-            this.log(`❌ Failed to start PM2 process: ${processName}`, "ERROR");
-          }
-        }
-      } catch (error) {
-        this.log(`❌ Error recovering PM2 process ${processName}: ${error.message}`, "ERROR");
-      }
-    }
-  }
-
-  async checkGitHubActionsUltimateHealth() {
-    this.log("🔍 Checking ultimate GitHub Actions health...");
-    
-    try {
-      const workflows = this.config.githubActions.workflows;
-      const healthyWorkflows = [];
-      const unhealthyWorkflows = [];
-
-      for (const workflow of workflows) {
-        if (fs.existsSync(workflow)) {
-          const content = fs.readFileSync(workflow, 'utf8');
-          const isValid = this.validateWorkflow(content);
-          
-          if (isValid) {
-            healthyWorkflows.push(workflow);
-          } else {
-            unhealthyWorkflows.push(workflow);
-          }
-        } else {
-          unhealthyWorkflows.push(workflow);
-        }
-      }
-
-      // Check workflow syntax and trigger configuration
-      const validationResults = await this.validateAllWorkflows(workflows);
-      
-      this.status.githubActions = {
-        healthy: unhealthyWorkflows.length === 0 && validationResults.valid,
-        workflows: healthyWorkflows,
-        lastCheck: new Date().toISOString(),
-        invalid: unhealthyWorkflows,
-        validation: validationResults,
-        total: workflows.length,
-        healthy: healthyWorkflows.length
-      };
-
-      this.log(`✅ GitHub Actions Health Check: ${healthyWorkflows.length}/${workflows.length} workflows healthy`);
-      return this.status.githubActions.healthy;
-
-    } catch (error) {
-      this.log(`❌ GitHub Actions Health Check Failed: ${error.message}`, "ERROR");
-      this.status.githubActions.healthy = false;
-      this.status.githubActions.lastCheck = new Date().toISOString();
-      return false;
-    }
-  }
-
-  validateWorkflow(content) {
-    try {
-      // Basic YAML validation
-      const lines = content.split('\n');
-      let indentLevel = 0;
-      let isValid = true;
-
-      for (const line of lines) {
-        if (line.trim() === '') continue;
-        if (line.trim().startsWith('#')) continue;
-        
-        const currentIndent = line.search(/\S/);
-        if (currentIndent === -1) continue;
-        
-        if (currentIndent > indentLevel + 2) {
-          isValid = false;
-          break;
-        }
-        indentLevel = currentIndent;
-      }
-
-      return isValid;
-    } catch (error) {
-      return false;
-    }
-  }
-
-  async validateAllWorkflows(workflows) {
-    const results = {
-      valid: true,
-      errors: [],
-      warnings: []
-    };
-
-    for (const workflow of workflows) {
-      try {
-        if (fs.existsSync(workflow)) {
-          const content = fs.readFileSync(workflow, 'utf8');
-          
-          // Check for required workflow components
-          if (!content.includes('name:') || !content.includes('on:')) {
-            results.errors.push(`${workflow}: Missing required workflow components`);
-            results.valid = false;
-          }
-          
-          // Check for proper permissions
-          if (content.includes('permissions:') && !content.includes('contents: write')) {
-            results.warnings.push(`${workflow}: Consider adding contents: write permission`);
-          }
-          
-        } else {
-          results.errors.push(`${workflow}: File not found`);
-          results.valid = false;
-        }
-      } catch (error) {
-        results.errors.push(`${workflow}: ${error.message}`);
-        results.valid = false;
-      }
-    }
-
-    return results;
-  }
-
-  async checkNetlifyFunctionsUltimateHealth() {
-    this.log("🔍 Checking ultimate Netlify Functions health...");
-    
-    try {
-      const manifestFile = this.config.netlifyFunctions.manifestFile;
-      const functions = this.config.netlifyFunctions.functions;
-      
-      if (!fs.existsSync(manifestFile)) {
-        throw new Error("Netlify functions manifest not found");
-      }
-
-      const manifest = JSON.parse(fs.readFileSync(manifestFile, 'utf8'));
-      const manifestFunctions = manifest.functions || [];
-      
-      const healthyFunctions = [];
-      const missingFunctions = [];
-      const outdatedFunctions = [];
-
-      // Check each required function
-      for (const functionName of functions) {
-        if (manifestFunctions.includes(functionName)) {
-          healthyFunctions.push(functionName);
-        } else {
-          missingFunctions.push(functionName);
-        }
-      }
-
-      // Check for outdated manifest
-      const manifestAge = Date.now() - new Date(manifest.generatedAt).getTime();
-      const isOutdated = manifestAge > 24 * 60 * 60 * 1000; // 24 hours
-
-      if (isOutdated) {
-        this.log("⚠️ Netlify functions manifest is outdated, regenerating...", "WARN");
-        await this.regenerateNetlifyFunctionsManifest();
-      }
-
-      this.status.netlifyFunctions = {
-        healthy: missingFunctions.length === 0 && !isOutdated,
-        functions: healthyFunctions,
-        lastCheck: new Date().toISOString(),
-        missing: missingFunctions,
-        manifestAge: manifestAge,
-        isOutdated: isOutdated,
-        total: functions.length,
-        healthy: healthyFunctions.length
-      };
-
-      this.log(`✅ Netlify Functions Health Check: ${healthyFunctions.length}/${functions.length} functions healthy`);
-      return this.status.netlifyFunctions.healthy;
-
-    } catch (error) {
-      this.log(`❌ Netlify Functions Health Check Failed: ${error.message}`, "ERROR");
-      this.status.netlifyFunctions.healthy = false;
-      this.status.netlifyFunctions.lastCheck = new Date().toISOString();
-      return false;
-    }
-  }
-
-  async regenerateNetlifyFunctionsManifest() {
-    try {
-      this.log("🔄 Regenerating Netlify functions manifest...");
-      
-      const result = await this.runCommand("node", ["scripts/generate-netlify-functions-manifest.cjs"]);
-      
-      if (result.status === 0) {
-        this.log("✅ Successfully regenerated Netlify functions manifest");
-      } else {
-        this.log(`❌ Failed to regenerate manifest: ${result.stderr}`, "ERROR");
-      }
-    } catch (error) {
-      this.log(`❌ Error regenerating manifest: ${error.message}`, "ERROR");
-    }
-  }
-
-  async performBackup() {
-    if (!this.config.backup.enabled) return;
-
-    try {
-      this.log("💾 Performing system backup...");
-      
-      const backupDir = path.join(this.config.logging.logDir, "backups", new Date().toISOString().split('T')[0]);
-      if (!fs.existsSync(backupDir)) {
-        fs.mkdirSync(backupDir, { recursive: true });
-      }
-
-      // Backup PM2 ecosystem files
-      for (const ecosystemFile of this.config.pm2.ecosystemFiles) {
-        if (fs.existsSync(ecosystemFile)) {
-          const backupPath = path.join(backupDir, `pm2-${path.basename(ecosystemFile)}`);
-          fs.copyFileSync(ecosystemFile, backupPath);
-        }
-      }
-
-      // Backup GitHub Actions workflows
-      for (const workflow of this.config.githubActions.workflows) {
-        if (fs.existsSync(workflow)) {
-          const backupPath = path.join(backupDir, `github-${path.basename(workflow)}`);
-          fs.copyFileSync(workflow, backupPath);
-        }
-      }
-
-      // Backup Netlify functions manifest
-      if (fs.existsSync(this.config.netlifyFunctions.manifestFile)) {
-        const backupPath = path.join(backupDir, "netlify-functions-manifest.json");
-        fs.copyFileSync(this.config.netlifyFunctions.manifestFile, backupPath);
-      }
-
-      // Cleanup old backups
-      await this.cleanupOldBackups();
-
-      this.log("✅ System backup completed successfully");
-    } catch (error) {
-      this.log(`❌ Backup failed: ${error.message}`, "ERROR");
-    }
-  }
-
-  async cleanupOldBackups() {
-    try {
-      const backupDir = path.join(this.config.logging.logDir, "backups");
-      if (!fs.existsSync(backupDir)) return;
-
-      const dirs = fs.readdirSync(backupDir, { withFileTypes: true })
-        .filter(dirent => dirent.isDirectory())
-        .map(dirent => dirent.name)
-        .sort()
-        .reverse();
-
-      // Keep only the most recent backups within retention period
-      const retentionMs = this.config.backup.retention * 60 * 60 * 1000;
-      const cutoffTime = Date.now() - retentionMs;
-
-      for (let i = this.config.backup.retention; i < dirs.length; i++) {
-        const dirPath = path.join(backupDir, dirs[i]);
+      // Check specific processes
+      const processes = [];
+      for (const processName of this.config.pm2.processes) {
         try {
-          fs.rmSync(dirPath, { recursive: true, force: true });
-          this.log(`🗑️ Cleaned up old backup: ${dirs[i]}`);
+          const processStatus = spawnSync("pm2", ["show", processName], { encoding: "utf8" });
+          if (processStatus.status === 0) {
+            const isOnline = processStatus.stdout.includes("online");
+            processes.push({ name: processName, status: isOnline ? "online" : "stopped" });
+          } else {
+            processes.push({ name: processName, status: "not_found" });
+          }
         } catch (error) {
-          this.log(`⚠️ Failed to cleanup backup ${dirs[i]}: ${error.message}`, "WARN");
+          processes.push({ name: processName, status: "error" });
         }
       }
-    } catch (error) {
-      this.log(`❌ Backup cleanup failed: ${error.message}`, "ERROR");
-    }
-  }
 
-  async runUltimateHealthCheck() {
-    this.log("🚀 Starting ultimate health check cycle...");
-    
-    const startTime = Date.now();
-    
-    // Run all health checks in parallel
-    const [pm2Healthy, githubHealthy, netlifyHealthy] = await Promise.all([
-      this.checkPM2UltimateHealth(),
-      this.checkGitHubActionsUltimateHealth(),
-      this.checkNetlifyFunctionsUltimateHealth()
-    ]);
-
-    // Update overall system health
-    this.status.system.healthy = pm2Healthy && githubHealthy && netlifyHealthy;
-    this.status.system.uptime = Date.now() - this.status.system.startTime;
-
-    const duration = Date.now() - startTime;
-    
-    if (this.status.system.healthy) {
-      this.log(`✅ Ultimate health check completed successfully in ${duration}ms`);
-    } else {
-      this.log(`⚠️ Ultimate health check completed with issues in ${duration}ms`, "WARN");
-    }
-
-    // Generate health report
-    await this.generateHealthReport();
-    
-    return this.status.system.healthy;
-  }
-
-  async generateHealthReport() {
-    try {
-      const report = {
-        timestamp: new Date().toISOString(),
-        system: this.status.system,
-        pm2: this.status.pm2,
-        githubActions: this.status.githubActions,
-        netlifyFunctions: this.status.netlifyFunctions,
-        config: {
-          pm2: {
-            processes: this.config.pm2.processes.length,
-            healthCheckInterval: this.config.pm2.healthCheckInterval
-          },
-          githubActions: {
-            workflows: this.config.githubActions.workflows.length,
-            healthCheckInterval: this.config.githubActions.healthCheckInterval
-          },
-          netlifyFunctions: {
-            functions: this.config.netlifyFunctions.functions.length,
-            healthCheckInterval: this.config.netlifyFunctions.healthCheckInterval
-          }
-        }
-      };
-
-      const reportFile = path.join(this.config.logging.logDir, "ultimate-health-report.json");
-      fs.writeFileSync(reportFile, JSON.stringify(report, null, 2));
+      this.status.pm2.processes = processes;
+      this.status.pm2.lastCheck = new Date();
       
-      this.log("📊 Health report generated successfully");
+      const healthyProcesses = processes.filter(p => p.status === "online").length;
+      const totalProcesses = processes.length;
+      
+      this.status.pm2.healthy = healthyProcesses === totalProcesses;
+      
+      this.log(`PM2 Health: ${healthyProcesses}/${totalProcesses} processes healthy`);
+      
+      return this.status.pm2.healthy;
     } catch (error) {
-      this.log(`❌ Failed to generate health report: ${error.message}`, "ERROR");
+      this.log(`PM2 health check failed: ${error.message}`, "ERROR");
+      return false;
     }
   }
 
-  initializeMonitoring() {
-    this.log("🔧 Initializing ultimate redundancy monitoring...");
-    
-    // Set up periodic health checks
-    setInterval(async () => {
-      await this.runUltimateHealthCheck();
-    }, this.config.monitoring.interval);
+  async checkGitHubActionsHealth() {
+    try {
+      this.log("Checking GitHub Actions health...");
+      
+      // Check if workflow files exist
+      const workflows = [];
+      for (const workflowPath of this.config.githubActions.workflows) {
+        try {
+          if (fs.existsSync(workflowPath)) {
+            const content = fs.readFileSync(workflowPath, "utf8");
+            const isValid = content.includes("name:") && content.includes("on:");
+            workflows.push({ 
+              path: workflowPath, 
+              status: isValid ? "valid" : "invalid",
+              lastModified: fs.statSync(workflowPath).mtime
+            });
+          } else {
+            workflows.push({ path: workflowPath, status: "missing", lastModified: null });
+          }
+        } catch (error) {
+          workflows.push({ path: workflowPath, status: "error", lastModified: null });
+        }
+      }
 
-    // Set up periodic backups
-    setInterval(async () => {
-      await this.performBackup();
-    }, this.config.backup.interval);
-
-    this.log("✅ Ultimate redundancy monitoring initialized");
+      this.status.githubActions.workflows = workflows;
+      this.status.githubActions.lastCheck = new Date();
+      
+      const validWorkflows = workflows.filter(w => w.status === "valid").length;
+      const totalWorkflows = workflows.length;
+      
+      this.status.githubActions.healthy = validWorkflows === totalWorkflows;
+      
+      this.log(`GitHub Actions Health: ${validWorkflows}/${totalWorkflows} workflows valid`);
+      
+      return this.status.githubActions.healthy;
+    } catch (error) {
+      this.log(`GitHub Actions health check failed: ${error.message}`, "ERROR");
+      return false;
+    }
   }
 
-  startUltimateMonitoring() {
-    this.log("🚀 Starting ultimate redundancy automation system...");
+  async checkNetlifyFunctionsHealth() {
+    try {
+      this.log("Checking Netlify Functions health...");
+      
+      // Check manifest file
+      if (!fs.existsSync(this.config.netlifyFunctions.manifestFile)) {
+        this.log("Netlify functions manifest not found, regenerating...", "WARN");
+        this.regenerateNetlifyFunctionsManifest();
+        return false;
+      }
+
+      const manifest = JSON.parse(fs.readFileSync(this.config.netlifyFunctions.manifestFile, "utf8"));
+      const functions = [];
+      
+      for (const functionName of this.config.netlifyFunctions.functions) {
+        const functionPath = path.join("netlify/functions", functionName);
+        try {
+          if (fs.existsSync(functionPath) || fs.existsSync(functionPath + ".js")) {
+            functions.push({ name: functionName, status: "exists" });
+          } else {
+            functions.push({ name: functionName, status: "missing" });
+          }
+        } catch (error) {
+          functions.push({ name: functionName, status: "error" });
+        }
+      }
+
+      this.status.netlifyFunctions.functions = functions;
+      this.status.netlifyFunctions.lastCheck = new Date();
+      
+      const existingFunctions = functions.filter(f => f.status === "exists").length;
+      const totalFunctions = functions.length;
+      
+      this.status.netlifyFunctions.healthy = existingFunctions === totalFunctions;
+      
+      this.log(`Netlify Functions Health: ${existingFunctions}/${totalFunctions} functions exist`);
+      
+      return this.status.netlifyFunctions.healthy;
+    } catch (error) {
+      this.log(`Netlify Functions health check failed: ${error.message}`, "ERROR");
+      return false;
+    }
+  }
+
+  async checkNPMScriptsHealth() {
+    try {
+      this.log("Checking NPM scripts health...");
+      
+      const scripts = [];
+      
+      // Check redundancy scripts
+      for (const script of this.config.npmScripts.redundancy) {
+        try {
+          const result = spawnSync("npm", ["run", script, "--silent"], { 
+            encoding: "utf8", 
+            timeout: 10000 
+          });
+          scripts.push({ 
+            name: script, 
+            status: result.status === 0 ? "available" : "failed",
+            exitCode: result.status
+          });
+        } catch (error) {
+          scripts.push({ name: script, status: "error", exitCode: null });
+        }
+      }
+
+      this.status.npmScripts.scripts = scripts;
+      this.status.npmScripts.lastCheck = new Date();
+      
+      const availableScripts = scripts.filter(s => s.status === "available").length;
+      const totalScripts = scripts.length;
+      
+      this.status.npmScripts.healthy = availableScripts === totalScripts;
+      
+      this.log(`NPM Scripts Health: ${availableScripts}/${totalScripts} scripts available`);
+      
+      return this.status.npmScripts.healthy;
+    } catch (error) {
+      this.log(`NPM scripts health check failed: ${error.message}`, "ERROR");
+      return false;
+    }
+  }
+
+  async performHealthCheck() {
+    this.log("Performing comprehensive health check...");
     
-    // Run initial health check
-    this.runUltimateHealthCheck();
+    const pm2Health = await this.checkPM2Health();
+    const githubHealth = await this.checkGitHubActionsHealth();
+    const netlifyHealth = await this.checkNetlifyFunctionsHealth();
+    const npmHealth = await this.checkNPMScriptsHealth();
     
-    this.log("✅ Ultimate redundancy automation system is now running");
-    this.log(`📊 Health checks every ${this.config.monitoring.interval / 1000} seconds`);
-    this.log(`💾 Backups every ${this.config.backup.interval / (1000 * 60 * 60)} hours`);
+    const overallHealth = pm2Health && githubHealth && netlifyHealth && npmHealth;
+    
+    this.log(`Overall System Health: ${overallHealth ? "HEALTHY" : "UNHEALTHY"}`);
+    
+    if (!overallHealth) {
+      this.log("System unhealthy, initiating recovery procedures...", "WARN");
+      await this.initiateRecovery();
+    }
+    
+    return overallHealth;
+  }
+
+  async initiateRecovery() {
+    if (this.recoveryMode) {
+      this.log("Recovery already in progress, skipping...", "WARN");
+      return;
+    }
+    
+    this.recoveryMode = true;
+    this.log("Initiating system recovery...", "WARN");
+    
+    try {
+      // PM2 Recovery
+      if (!this.status.pm2.healthy) {
+        this.log("Recovering PM2 processes...");
+        await this.recoverPM2();
+      }
+      
+      // GitHub Actions Recovery
+      if (!this.status.githubActions.healthy) {
+        this.log("Recovering GitHub Actions...");
+        await this.recoverGitHubActions();
+      }
+      
+      // Netlify Functions Recovery
+      if (!this.status.netlifyFunctions.healthy) {
+        this.log("Recovering Netlify Functions...");
+        await this.recoverNetlifyFunctions();
+      }
+      
+      // NPM Scripts Recovery
+      if (!this.status.npmScripts.healthy) {
+        this.log("Recovering NPM Scripts...");
+        await this.recoverNPMScripts();
+      }
+      
+      this.log("Recovery procedures completed");
+    } catch (error) {
+      this.log(`Recovery failed: ${error.message}`, "ERROR");
+    } finally {
+      this.recoveryMode = false;
+    }
+  }
+
+  async recoverPM2() {
+    try {
+      this.log("Starting PM2 recovery...");
+      
+      // Stop all processes
+      spawnSync("pm2", ["stop", "all"], { stdio: "inherit" });
+      
+      // Delete all processes
+      spawnSync("pm2", ["delete", "all"], { stdio: "inherit" });
+      
+      // Start redundancy system
+      spawnSync("npm", ["run", "redundancy:comprehensive:start"], { stdio: "inherit" });
+      
+      // Wait for processes to start
+      await new Promise(resolve => setTimeout(resolve, 10000));
+      
+      this.log("PM2 recovery completed");
+    } catch (error) {
+      this.log(`PM2 recovery failed: ${error.message}`, "ERROR");
+    }
+  }
+
+  async recoverGitHubActions() {
+    try {
+      this.log("Starting GitHub Actions recovery...");
+      
+      // Run backup scripts
+      for (const script of this.config.githubActions.fallbackScripts) {
+        try {
+          if (fs.existsSync(script)) {
+            this.log(`Running fallback script: ${script}`);
+            spawnSync("node", [script], { stdio: "inherit" });
+          }
+        } catch (error) {
+          this.log(`Fallback script ${script} failed: ${error.message}`, "WARN");
+        }
+      }
+      
+      // Run backup triggers
+      for (const trigger of this.config.githubActions.backupTriggers) {
+        try {
+          this.log(`Running backup trigger: ${trigger}`);
+          spawnSync("npm", ["run", trigger], { stdio: "inherit" });
+        } catch (error) {
+          this.log(`Backup trigger ${trigger} failed: ${error.message}`, "WARN");
+        }
+      }
+      
+      this.log("GitHub Actions recovery completed");
+    } catch (error) {
+      this.log(`GitHub Actions recovery failed: ${error.message}`, "ERROR");
+    }
+  }
+
+  async recoverNetlifyFunctions() {
+    try {
+      this.log("Starting Netlify Functions recovery...");
+      
+      // Regenerate manifest
+      this.regenerateNetlifyFunctionsManifest();
+      
+      // Run backup scripts
+      for (const script of this.config.netlifyFunctions.backupScripts) {
+        try {
+          if (script.startsWith("netlify:")) {
+            this.log(`Running backup script: ${script}`);
+            spawnSync("npm", ["run", script], { stdio: "inherit" });
+          } else if (fs.existsSync(script)) {
+            this.log(`Running backup script: ${script}`);
+            spawnSync("node", [script], { stdio: "inherit" });
+          }
+        } catch (error) {
+          this.log(`Backup script ${script} failed: ${error.message}`, "WARN");
+        }
+      }
+      
+      this.log("Netlify Functions recovery completed");
+    } catch (error) {
+      this.log(`Netlify Functions recovery failed: ${error.message}`, "ERROR");
+    }
+  }
+
+  async recoverNPMScripts() {
+    try {
+      this.log("Starting NPM Scripts recovery...");
+      
+      // Run comprehensive redundancy start
+      spawnSync("npm", ["run", "redundancy:comprehensive:start"], { stdio: "inherit" });
+      
+      // Wait for processes to start
+      await new Promise(resolve => setTimeout(resolve, 5000));
+      
+      this.log("NPM Scripts recovery completed");
+    } catch (error) {
+      this.log(`NPM Scripts recovery failed: ${error.message}`, "ERROR");
+    }
+  }
+
+  regenerateNetlifyFunctionsManifest() {
+    try {
+      this.log("Regenerating Netlify Functions manifest...");
+      
+      if (fs.existsSync("scripts/generate-netlify-functions-manifest.cjs")) {
+        spawnSync("node", ["scripts/generate-netlify-functions-manifest.cjs"], { stdio: "inherit" });
+      } else {
+        this.log("Netlify functions manifest generator not found", "WARN");
+      }
+    } catch (error) {
+      this.log(`Failed to regenerate manifest: ${error.message}`, "ERROR");
+    }
+  }
+
+  startPM2() {
+    try {
+      this.log("Starting PM2...");
+      spawnSync("npm", ["run", "automation:pm2"], { stdio: "inherit" });
+    } catch (error) {
+      this.log(`Failed to start PM2: ${error.message}`, "ERROR");
+    }
+  }
+
+  async startMonitoring() {
+    if (this.monitoring) {
+      this.log("Monitoring already active", "WARN");
+      return;
+    }
+    
+    this.monitoring = true;
+    this.log("Starting ultimate redundancy monitoring...");
+    
+    // Initial health check
+    await this.performHealthCheck();
+    
+    // Set up monitoring intervals
+    this.pm2Monitor = setInterval(async () => {
+      if (!this.recoveryMode) {
+        await this.checkPM2Health();
+      }
+    }, this.config.pm2.healthCheckInterval);
+    
+    this.githubMonitor = setInterval(async () => {
+      if (!this.recoveryMode) {
+        await this.checkGitHubActionsHealth();
+      }
+    }, this.config.githubActions.healthCheckInterval);
+    
+    this.netlifyMonitor = setInterval(async () => {
+      if (!this.recoveryMode) {
+        await this.checkNetlifyFunctionsHealth();
+      }
+    }, this.config.netlifyFunctions.healthCheckInterval);
+    
+    this.npmMonitor = setInterval(async () => {
+      if (!this.recoveryMode) {
+        await this.checkNPMScriptsHealth();
+      }
+    }, 300000); // Every 5 minutes
+    
+    this.overallMonitor = setInterval(async () => {
+      if (!this.recoveryMode) {
+        await this.performHealthCheck();
+      }
+    }, 600000); // Every 10 minutes
+    
+    this.log("Ultimate redundancy monitoring started");
+  }
+
+  stopMonitoring() {
+    if (!this.monitoring) {
+      this.log("Monitoring not active", "WARN");
+      return;
+    }
+    
+    this.monitoring = false;
+    
+    if (this.pm2Monitor) clearInterval(this.pm2Monitor);
+    if (this.githubMonitor) clearInterval(this.githubMonitor);
+    if (this.netlifyMonitor) clearInterval(this.netlifyMonitor);
+    if (this.npmMonitor) clearInterval(this.npmMonitor);
+    if (this.overallMonitor) clearInterval(this.overallMonitor);
+    
+    this.log("Ultimate redundancy monitoring stopped");
   }
 
   getStatus() {
-    return this.status;
+    return {
+      timestamp: new Date().toISOString(),
+      monitoring: this.monitoring,
+      recoveryMode: this.recoveryMode,
+      overallHealth: this.status.pm2.healthy && this.status.githubActions.healthy && 
+                    this.status.netlifyFunctions.healthy && this.status.npmScripts.healthy,
+      pm2: this.status.pm2,
+      githubActions: this.status.githubActions,
+      netlifyFunctions: this.status.netlifyFunctions,
+      npmScripts: this.status.npmScripts
+    };
   }
 
-  async stop() {
-    this.log("🛑 Stopping ultimate redundancy automation system...");
-    // Cleanup and stop monitoring
-    process.exit(0);
+  async runCommand(command, args = []) {
+    return new Promise((resolve, reject) => {
+      const child = spawn(command, args, { 
+        stdio: "inherit",
+        shell: true 
+      });
+      
+      child.on("close", (code) => {
+        if (code === 0) {
+          resolve(code);
+        } else {
+          reject(new Error(`Command failed with exit code ${code}`));
+        }
+      });
+      
+      child.on("error", (error) => {
+        reject(error);
+      });
+    });
   }
 }
 
-// Handle process signals
-process.on('SIGINT', async () => {
-  console.log('\n🛑 Received SIGINT, shutting down gracefully...');
-  process.exit(0);
-});
-
-process.on('SIGTERM', async () => {
-  console.log('\n🛑 Received SIGTERM, shutting down gracefully...');
-  process.exit(0);
-});
-
-// Export for use as module
+// CLI Interface
 if (require.main === module) {
-  const system = new UltimateRedundancyAutomationSystem();
+  const orchestrator = new UltimateRedundancyAutomationSystem();
+  const command = process.argv[2] || "start";
   
-  // Keep the process running
-  setInterval(() => {
-    // Keep alive
-  }, 60000);
+  switch (command) {
+    case "start":
+      orchestrator.startMonitoring();
+      break;
+    case "stop":
+      orchestrator.stopMonitoring();
+      break;
+    case "status":
+      console.log(JSON.stringify(orchestrator.getStatus(), null, 2));
+      break;
+    case "health":
+      orchestrator.performHealthCheck();
+      break;
+    case "recover":
+      orchestrator.initiateRecovery();
+      break;
+    case "pm2":
+      orchestrator.checkPM2Health();
+      break;
+    case "github":
+      orchestrator.checkGitHubActionsHealth();
+      break;
+    case "netlify":
+      orchestrator.checkNetlifyFunctionsHealth();
+      break;
+    case "npm":
+      orchestrator.checkNPMScriptsHealth();
+      break;
+    default:
+      console.log("Usage: node ultimate-redundancy-automation-system.cjs [start|stop|status|health|recover|pm2|github|netlify|npm]");
+      process.exit(1);
+  }
 }
 
 module.exports = UltimateRedundancyAutomationSystem;

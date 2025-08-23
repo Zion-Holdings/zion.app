@@ -1,59 +1,46 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Zap, Settings, Cpu, Brain, Shield, Globe, Rocket, Users, Target, Award } from 'lucide-react';
+import { Zap, Cog, Brain, Rocket, Target, BarChart3, Globe, Shield } from 'lucide-react';
 import Layout from '../components/layout/Layout';
 
 export default function ProcessAutomation() {
   const services = [
     {
-      icon: Zap,
-      title: 'AI Autonomous Business Operations',
-      description: 'Fully automated business processes powered by artificial intelligence',
-      features: ['Process automation', 'Decision automation', 'Workflow optimization', 'Performance monitoring'],
-      href: '/ai-autonomous-business-operations'
+      icon: <Zap className="w-12 h-12 text-cyan-400" />,
+      title: "Intelligent Supply Chain",
+      description: "AI-powered supply chain optimization and automation",
+      href: "/intelligent-supply-chain-optimization"
     },
     {
-      icon: Settings,
-      title: 'Incident Automation Suite',
-      description: 'Automated incident response and management system',
-      features: ['Automated detection', 'Response automation', 'Escalation management', 'Resolution tracking'],
-      href: '/incident-automation-suite'
+      icon: <Cog className="w-12 h-12 text-blue-400" />,
+      title: "Workflow Automation",
+      description: "Intelligent workflow orchestration and process management",
+      href: "/incident-automation-suite"
     },
     {
-      icon: Cpu,
-      title: 'Incident Copilot',
-      description: 'AI-powered incident management and resolution assistant',
-      features: ['Intelligent routing', 'Automated responses', 'Knowledge base', 'Learning system'],
-      href: '/incident-copilot'
+      icon: <Brain className="w-12 h-12 text-purple-400" />,
+      title: "AI Content Automation",
+      description: "Revolutionary AI-powered content generation platform",
+      href: "/intelligent-content-automation-platform"
     },
     {
-      icon: Brain,
-      title: 'Intelligent Content Automation Platform',
-      description: 'AI-driven content creation and management automation',
-      features: ['Content generation', 'Workflow automation', 'Quality control', 'Distribution management'],
-      href: '/intelligent-content-automation-platform'
+      icon: <Rocket className="w-12 h-12 text-green-400" />,
+      title: "Business Process Automation",
+      description: "End-to-end business process automation and optimization",
+      href: "/ai-autonomous-business-operations"
     },
     {
-      icon: Shield,
-      title: 'SOC 2 Compliance Automation',
-      description: 'Automated compliance management and evidence collection',
-      features: ['Compliance monitoring', 'Evidence collection', 'Audit automation', 'Risk assessment'],
-      href: '/soc2-compliance-automation'
+      icon: <Target className="w-12 h-12 text-yellow-400" />,
+      title: "Sales Automation",
+      description: "AI-powered sales copilot and revenue optimization",
+      href: "/sales-copilot"
     },
     {
-      icon: Globe,
-      title: 'Browser Automation Cloud',
-      description: 'Cloud-based browser automation for testing and data extraction',
-      features: ['Cross-browser testing', 'Data extraction', 'Performance testing', 'Scalable execution'],
-      href: '/browser-automation-cloud'
+      icon: <BarChart3 className="w-12 h-12 text-pink-400" />,
+      title: "HR Analytics Automation",
+      description: "Intelligent HR analytics and workforce optimization",
+      href: "/intelligent-hr-analytics-platform"
     }
-  ];
-
-  const stats = [
-    { number: '90%', label: 'Process Efficiency', icon: Zap },
-    { number: '24/7', label: 'Automation', icon: Settings },
-    { number: '100+', label: 'Automated Processes', icon: Cpu },
-    { number: '500+', label: 'Automated Tasks', icon: Brain }
   ];
 
   return (
@@ -68,37 +55,14 @@ export default function ProcessAutomation() {
               transition={{ duration: 0.8 }}
               className="text-center"
             >
-              <h1 className="text-5xl md:text-7xl font-bold bg-gradient-to-r from-yellow-400 via-orange-500 to-red-400 bg-clip-text text-transparent mb-6">
-                Process Automation
+              <h1 className="text-5xl md:text-7xl font-bold bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 bg-clip-text text-transparent mb-6">
+                Process Automation Solutions
               </h1>
               <p className="text-xl md:text-2xl text-gray-300 max-w-4xl mx-auto leading-relaxed">
-                Transform your business operations with intelligent automation solutions. 
-                From workflow optimization to AI-powered decision making.
+                Streamline operations and boost productivity with our intelligent automation platforms, 
+                AI-powered workflows, and process optimization solutions.
               </p>
             </motion.div>
-          </div>
-        </section>
-
-        {/* Stats Section */}
-        <section className="py-16 px-4 bg-black/30">
-          <div className="container mx-auto max-w-6xl">
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-              {stats.map((stat, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: index * 0.1 }}
-                  className="text-center"
-                >
-                  <div className="w-16 h-16 bg-gradient-to-br from-yellow-500/20 to-orange-500/20 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                    <stat.icon className="w-8 h-8 text-yellow-400" />
-                  </div>
-                  <div className="text-3xl font-bold text-white mb-2">{stat.number}</div>
-                  <div className="text-gray-400">{stat.label}</div>
-                </motion.div>
-              ))}
-            </div>
           </div>
         </section>
 
@@ -107,47 +71,27 @@ export default function ProcessAutomation() {
           <div className="container mx-auto max-w-6xl">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-              className="text-center mb-16"
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              className="grid md:grid-cols-2 lg:grid-cols-3 gap-8"
             >
-              <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-                Process Automation Services
-              </h2>
-              <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-                Comprehensive automation solutions designed to streamline operations and boost productivity
-              </p>
-            </motion.div>
-
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
               {services.map((service, index) => (
                 <motion.div
                   key={index}
                   initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: index * 0.1 }}
-                  className="group"
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.8, delay: 0.4 + index * 0.1 }}
+                  className="p-8 bg-black/40 border border-gray-800 rounded-2xl hover:border-cyan-500/50 transition-all duration-300 group cursor-pointer"
+                  onClick={() => window.location.href = service.href}
                 >
-                  <a href={service.href} className="block">
-                    <div className="bg-gray-800/50 backdrop-blur-sm border border-gray-700/50 rounded-2xl p-6 h-full hover:bg-gray-700/50 transition-all duration-300 hover:scale-105">
-                      <div className="w-16 h-16 bg-gradient-to-br from-yellow-500/20 to-orange-500/20 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
-                        <service.icon className="w-8 h-8 text-yellow-400" />
-                      </div>
-                      <h3 className="text-xl font-bold text-white mb-4">{service.title}</h3>
-                      <p className="text-gray-300 mb-6 leading-relaxed">{service.description}</p>
-                      <ul className="space-y-2">
-                        {service.features.map((feature, featureIndex) => (
-                          <li key={featureIndex} className="flex items-center gap-2 text-sm text-gray-400">
-                            <div className="w-2 h-2 bg-yellow-400 rounded-full"></div>
-                            {feature}
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                  </a>
+                  <div className="flex justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                    {service.icon}
+                  </div>
+                  <h3 className="text-xl font-bold text-white mb-4 text-center">{service.title}</h3>
+                  <p className="text-gray-300 leading-relaxed text-center">{service.description}</p>
                 </motion.div>
               ))}
-            </div>
+            </motion.div>
           </div>
         </section>
 
@@ -156,25 +100,23 @@ export default function ProcessAutomation() {
           <div className="container mx-auto max-w-4xl text-center">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.8 }}
             >
-              <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-                Automate Your Success
-              </h2>
+              <h2 className="text-4xl font-bold text-white mb-6">Automate Your Success</h2>
               <p className="text-xl text-gray-300 mb-8">
-                Let our automation experts help you streamline operations and boost efficiency
+                Transform your business operations with intelligent automation and AI-powered workflows.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <a
                   href="/contact"
-                  className="px-8 py-4 bg-gradient-to-r from-yellow-500 to-orange-600 text-white font-semibold rounded-xl hover:from-yellow-600 hover:to-orange-700 transition-all duration-300 transform hover:scale-105"
+                  className="px-8 py-4 bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-semibold rounded-full hover:from-cyan-600 hover:to-blue-700 transition-all duration-300 transform hover:scale-105"
                 >
-                  Get Started
+                  Get Started Today
                 </a>
                 <a
                   href="/services"
-                  className="px-8 py-4 border border-yellow-500 text-yellow-400 font-semibold rounded-xl hover:bg-yellow-500/10 transition-all duration-300"
+                  className="px-8 py-4 border-2 border-cyan-500 text-cyan-400 font-semibold rounded-full hover:bg-cyan-500 hover:text-black transition-all duration-300"
                 >
                   View All Services
                 </a>

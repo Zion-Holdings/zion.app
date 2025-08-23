@@ -1,386 +1,448 @@
 #!/usr/bin/env node
-'use strict';
+"use strict";
 
-const fs = require('fs');
-const path = require('path');
-const cron = require('node-cron');
-
-// Import the redundancy managers
-const PM2RedundancyManager = require('./pm2-redundancy-manager.cjs');
-const GitHubActionsRedundancyManager = require('./github-actions-redundancy-manager.cjs');
-const NetlifyFunctionsRedundancyManager = require('./netlify-functions-redundancy-manager.cjs');
+const { spawnSync } = require("child_process");
+const fs = require("fs");
+const path = require("path");
 
 class MasterRedundancyOrchestrator {
   constructor() {
-    this.logDir = path.join(process.cwd(), 'automation', 'logs');
-    this.ensureLogDir();
+    this.logsDir = path.join(process.cwd(), "automation", "logs");
+    this.redundancyDir = path.join(process.cwd(), "automation", "redundancy");
+    this.ensureDirectories();
     
-    // Initialize managers
-    this.pm2Manager = new PM2RedundancyManager();
-    this.githubManager = new GitHubActionsRedundancyManager();
-    this.netlifyManager = new NetlifyFunctionsRedundancyManager();
+    // Import redundancy managers
+    this.pm2Manager = null;
+    this.githubActionsManager = null;
+    this.netlifyFunctionsManager = null;
     
-    this.managers = new Map([
-      ['pm2', this.pm2Manager],
-      ['github', this.githubManager],
-      ['netlify', this.netlifyManager]
-    ]);
-    
-    this.managerStatus = new Map();
-    this.healthChecks = new Map();
-    this.recoveryAttempts = new Map();
+    this.loadManagers();
   }
 
-  ensureLogDir() {
-    if (!fs.existsSync(this.logDir)) {
-      fs.mkdirSync(this.logDir, { recursive: true });
+  ensureDirectories() {
+    if (!fs.existsSync(this.logsDir)) {
+      fs.mkdirSync(this.logsDir, { recursive: true });
     }
   }
 
-  log(message, level = 'INFO') {
+  loadManagers() {
+    try {
+      const pm2ManagerPath = path.join(this.redundancyDir, "pm2-redundancy-manager.cjs");
+      const githubActionsManagerPath = path.join(this.redundancyDir, "github-actions-redundancy-manager.cjs");
+      const netlifyFunctionsManagerPath = path.join(this.redundancyDir, "netlify-functions-redundancy-manager.cjs");
+
+      if (fs.existsSync(pm2ManagerPath)) {
+        this.pm2Manager = require(pm2ManagerPath);
+      }
+      if (fs.existsSync(githubActionsManagerPath)) {
+        this.githubActionsManager = require(githubActionsManagerPath);
+      }
+      if (fs.existsSync(netlifyFunctionsManagerPath)) {
+        this.netlifyFunctionsManager = require(netlifyFunctionsManagerPath);
+      }
+    } catch (error) {
+      this.log(`Failed to load redundancy managers: ${error.message}`);
+    }
+  }
+
+  log(message) {
     const timestamp = new Date().toISOString();
-    const logMessage = `[${timestamp}] [${level}] [MASTER] ${message}`;
+    const logMessage = `[${timestamp}] MASTER-REDUNDANCY: ${message}`;
     console.log(logMessage);
     
-    const logFile = path.join(this.logDir, 'master-redundancy.log');
-    fs.appendFileSync(logFile, logMessage + '\n');
+    // Write to log file
+    const logFile = path.join(this.logsDir, "master-redundancy-orchestrator.log");
+    fs.appendFileSync(logFile, logMessage + "\n");
   }
 
-  async startAllManagers() {
-    this.log('Starting all redundancy managers...');
+  runCommand(command, args = []) {
+    const result = spawnSync(command, args, {
+      cwd: process.cwd(),
+      env: process.env,
+      shell: false,
+      encoding: "utf8",
+      maxBuffer: 1024 * 1024 * 10
+    });
+    return {
+      status: result.status,
+      stdout: result.stdout || "",
+      stderr: result.stderr || "",
+      success: result.status === 0
+    };
+  }
+
+  async setupPM2Redundancy() {
+    this.log("Setting up PM2 redundancy...");
     
-    const startPromises = [];
-    
-    for (const [name, manager] of this.managers) {
-      try {
-        this.log(`Starting ${name} manager...`);
-        
-        // Start the manager in a controlled way
-        if (name === 'pm2') {
-          await manager.startBackupProcesses();
-        } else if (name === 'github') {
-          await manager.createBackupWorkflows();
-        } else if (name === 'netlify') {
-          await manager.createBackupFunctions();
-        }
-        
-        this.managerStatus.set(name, {
-          status: 'running',
-          started: new Date(),
-          health: 'healthy'
-        });
-        
-        this.log(`${name} manager started successfully`);
-        
-      } catch (error) {
-        this.log(`Failed to start ${name} manager: ${error.message}`, 'ERROR');
-        this.managerStatus.set(name, {
-          status: 'failed',
-          started: new Date(),
-          health: 'unhealthy',
-          error: error.message
-        });
+    if (!this.pm2Manager) {
+      this.log("PM2 manager not available, running setup directly...");
+      const result = this.runCommand("node", [
+        "automation/redundancy/pm2-redundancy-manager.cjs",
+        "full-setup"
+      ]);
+      
+      if (result.success) {
+        this.log("PM2 redundancy setup completed");
+        return true;
+      } else {
+        this.log(`PM2 redundancy setup failed: ${result.stderr}`);
+        return false;
       }
     }
-    
-    this.log('All managers startup completed');
-  }
 
-  async startHealthMonitoring() {
-    this.log('Starting health monitoring for all managers...');
-    
-    // Monitor manager health every 5 minutes
-    cron.schedule('*/5 * * * *', async () => {
-      await this.checkAllManagerHealth();
-    });
-
-    // Full system health check every hour
-    cron.schedule('0 * * * *', async () => {
-      await this.fullSystemHealthCheck();
-    });
-
-    // Generate comprehensive reports every 2 hours
-    cron.schedule('0 */2 * * *', async () => {
-      await this.generateComprehensiveReport();
-    });
-  }
-
-  async checkAllManagerHealth() {
-    this.log('Checking health of all managers...');
-    
-    for (const [name, manager] of this.managers) {
-      try {
-        const status = this.managerStatus.get(name);
-        if (!status || status.status !== 'running') {
-          continue;
-        }
-
-        // Check manager-specific health
-        let health = 'healthy';
-        
-        if (name === 'pm2') {
-          const pm2Status = await manager.checkPM2Status();
-          health = pm2Status ? 'healthy' : 'unhealthy';
-        } else if (name === 'github') {
-          await manager.checkWorkflowHealth();
-          const healthyCount = Array.from(manager.backupWorkflows.values())
-            .filter(w => w.health === 'healthy').length;
-          health = healthyCount > 0 ? 'healthy' : 'unhealthy';
-        } else if (name === 'netlify') {
-          await manager.checkFunctionHealth();
-          const healthyCount = Array.from(manager.backupFunctions.values())
-            .filter(f => f.health === 'healthy').length;
-          health = healthyCount > 0 ? 'healthy' : 'unhealthy';
-        }
-
-        // Update status
-        status.health = health;
-        status.lastCheck = new Date();
-        
-        if (health === 'unhealthy') {
-          this.log(`Manager ${name} is unhealthy, attempting recovery`, 'WARN');
-          await this.recoverManager(name, manager);
-        }
-
-      } catch (error) {
-        this.log(`Health check failed for ${name}: ${error.message}`, 'ERROR');
-        const status = this.managerStatus.get(name);
-        if (status) {
-          status.health = 'unhealthy';
-          status.lastError = error.message;
-        }
-      }
-    }
-  }
-
-  async recoverManager(name, manager) {
-    this.log(`Recovering manager: ${name}`);
-    
-    const attempts = this.recoveryAttempts.get(name) || 0;
-    if (attempts >= 3) {
-      this.log(`Max recovery attempts reached for ${name}`, 'ERROR');
-      return;
-    }
-
-    this.recoveryAttempts.set(name, attempts + 1);
-    
     try {
-      // Attempt recovery based on manager type
-      if (name === 'pm2') {
-        await manager.startBackupProcesses();
-      } else if (name === 'github') {
-        await manager.createBackupWorkflows();
-      } else if (name === 'netlify') {
-        await manager.createBackupFunctions();
-      }
-      
-      this.log(`Manager ${name} recovered successfully`);
-      
-      // Update status
-      const status = this.managerStatus.get(name);
-      if (status) {
-        status.health = 'healthy';
-        status.lastRecovery = new Date();
-      }
-      
+      const manager = new this.pm2Manager();
+      manager.backupPM2Configuration();
+      manager.createRedundancyEcosystem();
+      manager.startRedundancyProcesses();
+      this.log("PM2 redundancy setup completed");
+      return true;
     } catch (error) {
-      this.log(`Recovery failed for ${name}: ${error.message}`, 'ERROR');
+      this.log(`PM2 redundancy setup failed: ${error.message}`);
+      return false;
     }
   }
 
-  async fullSystemHealthCheck() {
-    this.log('Running full system health check...');
+  async setupGitHubActionsRedundancy() {
+    this.log("Setting up GitHub Actions redundancy...");
     
-    // Check if all managers are running
-    const runningManagers = Array.from(this.managerStatus.values())
-      .filter(status => status.status === 'running');
-    
-    if (runningManagers.length < this.managers.size) {
-      this.log('Some managers are not running, attempting restart', 'WARN');
-      await this.restartFailedManagers();
-    }
-    
-    // Check overall system health
-    const healthyManagers = runningManagers.filter(status => status.health === 'healthy');
-    const healthPercentage = (healthyManagers.length / this.managers.size) * 100;
-    
-    this.log(`System health: ${healthPercentage.toFixed(1)}% (${healthyManagers.length}/${this.managers.size} managers healthy)`);
-    
-    if (healthPercentage < 50) {
-      this.log('System health is critically low, initiating emergency recovery', 'ERROR');
-      await this.emergencyRecovery();
-    }
-  }
-
-  async restartFailedManagers() {
-    this.log('Restarting failed managers...');
-    
-    for (const [name, status] of this.managerStatus) {
-      if (status.status === 'failed') {
-        this.log(`Restarting failed manager: ${name}`);
-        
-        try {
-          const manager = this.managers.get(name);
-          if (manager) {
-            if (name === 'pm2') {
-              await manager.startBackupProcesses();
-            } else if (name === 'github') {
-              await manager.createBackupWorkflows();
-            } else if (name === 'netlify') {
-              await manager.createBackupFunctions();
-            }
-            
-            status.status = 'running';
-            status.health = 'healthy';
-            status.lastRestart = new Date();
-            
-            this.log(`Manager ${name} restarted successfully`);
-          }
-        } catch (error) {
-          this.log(`Failed to restart ${name}: ${error.message}`, 'ERROR');
-        }
+    if (!this.githubActionsManager) {
+      this.log("GitHub Actions manager not available, running setup directly...");
+      const result = this.runCommand("node", [
+        "automation/redundancy/github-actions-redundancy-manager.cjs",
+        "full-setup"
+      ]);
+      
+      if (result.success) {
+        this.log("GitHub Actions redundancy setup completed");
+        return true;
+      } else {
+        this.log(`GitHub Actions redundancy setup failed: ${result.stderr}`);
+        return false;
       }
     }
+
+    try {
+      const manager = new this.githubActionsManager();
+      manager.backupWorkflows();
+      manager.createRedundancyWorkflows();
+      manager.createWorkflowOrchestrator();
+      this.log("GitHub Actions redundancy setup completed");
+      return true;
+    } catch (error) {
+      this.log(`GitHub Actions redundancy setup failed: ${error.message}`);
+      return false;
+    }
   }
 
-  async emergencyRecovery() {
-    this.log('Initiating emergency recovery...');
+  async setupNetlifyFunctionsRedundancy() {
+    this.log("Setting up Netlify Functions redundancy...");
     
-    // Stop all managers
-    for (const [name, manager] of this.managers) {
+    if (!this.netlifyFunctionsManager) {
+      this.log("Netlify Functions manager not available, running setup directly...");
+      const result = this.runCommand("node", [
+        "automation/redundancy/netlify-functions-redundancy-manager.cjs",
+        "full-setup"
+      ]);
+      
+      if (result.success) {
+        this.log("Netlify Functions redundancy setup completed");
+        return true;
+      } else {
+        this.log(`Netlify Functions redundancy setup failed: ${result.stderr}`);
+        return false;
+      }
+    }
+
+    try {
+      const manager = new this.netlifyFunctionsManager();
+      manager.backupFunctions();
+      manager.createRedundancyFunctions();
+      manager.createRedundancyManifest();
+      manager.createFunctionOrchestrator();
+      manager.createRedundancyDeploymentScript();
+      this.log("Netlify Functions redundancy setup completed");
+      return true;
+    } catch (error) {
+      this.log(`Netlify Functions redundancy setup failed: ${error.message}`);
+      return false;
+    }
+  }
+
+  async setupAllRedundancy() {
+    this.log("Setting up complete redundancy system...");
+    
+    const results = {
+      pm2: false,
+      githubActions: false,
+      netlifyFunctions: false
+    };
+
+    // Setup PM2 redundancy
+    try {
+      results.pm2 = await this.setupPM2Redundancy();
+    } catch (error) {
+      this.log(`PM2 redundancy setup error: ${error.message}`);
+    }
+
+    // Setup GitHub Actions redundancy
+    try {
+      results.githubActions = await this.setupGitHubActionsRedundancy();
+    } catch (error) {
+      this.log(`GitHub Actions redundancy setup error: ${error.message}`);
+    }
+
+    // Setup Netlify Functions redundancy
+    try {
+      results.netlifyFunctions = await this.setupNetlifyFunctionsRedundancy();
+    } catch (error) {
+      this.log(`Netlify Functions redundancy setup error: ${error.message}`);
+    }
+
+    // Generate setup report
+    const setupReport = {
+      timestamp: new Date().toISOString(),
+      results: results,
+      overall: Object.values(results).every(r => r),
+      summary: {
+        pm2: results.pm2 ? "Success" : "Failed",
+        githubActions: results.githubActions ? "Success" : "Failed",
+        netlifyFunctions: results.netlifyFunctions ? "Success" : "Failed"
+      }
+    };
+
+    // Save setup report
+    const reportPath = path.join(this.redundancyDir, "redundancy-setup-report.json");
+    try {
+      fs.writeFileSync(reportPath, JSON.stringify(setupReport, null, 2));
+      this.log(`Setup report saved to: ${reportPath}`);
+    } catch (error) {
+      this.log(`Failed to save setup report: ${error.message}`);
+    }
+
+    // Log results
+    this.log("Redundancy setup results:");
+    this.log(`  PM2: ${results.pm2 ? "SUCCESS" : "FAILED"}`);
+    this.log(`  GitHub Actions: ${results.githubActions ? "SUCCESS" : "FAILED"}`);
+    this.log(`  Netlify Functions: ${results.netlifyFunctions ? "SUCCESS" : "FAILED"}`);
+    this.log(`  Overall: ${setupReport.overall ? "SUCCESS" : "FAILED"}`);
+
+    return setupReport;
+  }
+
+  async monitorRedundancy() {
+    this.log("Starting redundancy monitoring...");
+    
+    const monitoring = true;
+    while (monitoring) {
       try {
-        this.log(`Stopping ${name} manager for emergency recovery`);
-        // Note: Individual managers don't have stop methods, so we'll just mark them as stopped
-        this.managerStatus.set(name, {
-          status: 'stopped',
-          stopped: new Date(),
-          health: 'unknown'
-        });
+        // Check PM2 health
+        if (this.pm2Manager) {
+          const pm2Result = this.runCommand("node", [
+            "automation/pm2-health-monitor.cjs",
+            "check"
+          ]);
+          
+          if (pm2Result.success) {
+            this.log("PM2 health check passed");
+          } else {
+            this.log("PM2 health check failed, attempting recovery...");
+            this.runCommand("node", [
+              "automation/pm2-health-monitor.cjs",
+              "recover"
+            ]);
+          }
+        }
+
+        // Check GitHub Actions status
+        const workflowsDir = path.join(process.cwd(), ".github", "workflows");
+        if (fs.existsSync(workflowsDir)) {
+          const workflows = fs.readdirSync(workflowsDir);
+          const redundancyWorkflows = workflows.filter(w => w.includes('redundancy'));
+          this.log(`Found ${redundancyWorkflows.length} redundancy workflows`);
+        }
+
+        // Check Netlify Functions status
+        const functionsDir = path.join(process.cwd(), "netlify", "functions");
+        if (fs.existsSync(functionsDir)) {
+          const manifestPath = path.join(functionsDir, "functions-manifest.json");
+          if (fs.existsSync(manifestPath)) {
+            try {
+              const manifest = JSON.parse(fs.readFileSync(manifestPath, "utf8"));
+              this.log(`Netlify functions available: ${manifest.functions ? manifest.functions.length : 0}`);
+            } catch (error) {
+              this.log(`Failed to read Netlify functions manifest: ${error.message}`);
+            }
+          }
+        }
+
+        // Wait before next check
+        await new Promise(resolve => setTimeout(resolve, 60000)); // 1 minute
+
       } catch (error) {
-        this.log(`Failed to stop ${name}: ${error.message}`, 'ERROR');
+        this.log(`Monitoring error: ${error.message}`);
+        await new Promise(resolve => setTimeout(resolve, 30000)); // 30 seconds on error
       }
     }
-    
-    // Wait a moment
-    await new Promise(resolve => setTimeout(resolve, 5000));
-    
-    // Restart all managers
-    await this.startAllManagers();
-    
-    this.log('Emergency recovery completed');
   }
 
-  async generateComprehensiveReport() {
-    this.log('Generating comprehensive redundancy report...');
+  generateRedundancyReport() {
+    this.log("Generating redundancy report...");
     
     const report = {
       timestamp: new Date().toISOString(),
-      systemStatus: {
-        totalManagers: this.managers.size,
-        runningManagers: Array.from(this.managerStatus.values()).filter(s => s.status === 'running').length,
-        healthyManagers: Array.from(this.managerStatus.values()).filter(s => s.health === 'healthy').length
-      },
-      managerStatus: Object.fromEntries(this.managerStatus),
-      recoveryAttempts: Object.fromEntries(this.recoveryAttempts),
-      detailedReports: {}
-    };
-    
-    // Generate individual manager reports
-    for (const [name, manager] of this.managers) {
-      try {
-        if (name === 'pm2') {
-          report.detailedReports[name] = await manager.generateReport();
-        } else if (name === 'github') {
-          report.detailedReports[name] = await manager.generateReport();
-        } else if (name === 'netlify') {
-          report.detailedReports[name] = await manager.generateReport();
+      systems: {
+        pm2: {
+          status: "unknown",
+          processes: [],
+          health: null
+        },
+        githubActions: {
+          status: "unknown",
+          workflows: [],
+          redundancyWorkflows: []
+        },
+        netlifyFunctions: {
+          status: "unknown",
+          functions: [],
+          redundancyFunctions: []
         }
-      } catch (error) {
-        this.log(`Failed to generate report for ${name}: ${error.message}`, 'ERROR');
-        report.detailedReports[name] = { error: error.message };
+      },
+      recommendations: []
+    };
+
+    // Check PM2 status
+    try {
+      const pm2Status = this.runCommand("pm2", ["jlist"]);
+      if (pm2Status.success) {
+        const processes = JSON.parse(pm2Status.stdout);
+        report.systems.pm2.status = "operational";
+        report.systems.pm2.processes = processes.map(p => ({
+          name: p.name,
+          status: p.pm2_env?.status,
+          restarts: p.pm2_env?.restart_time || 0
+        }));
+        
+        // Check for redundancy processes
+        const redundancyProcesses = processes.filter(p => 
+          p.name.includes('redundant') || p.name.includes('backup')
+        );
+        if (redundancyProcesses.length === 0) {
+          report.recommendations.push("PM2: No redundancy processes found, consider setting up redundancy");
+        }
+      } else {
+        report.systems.pm2.status = "failed";
+        report.recommendations.push("PM2: Failed to get status");
       }
+    } catch (error) {
+      report.systems.pm2.status = "error";
+      report.systems.pm2.processes = [];
     }
-    
-    // Write comprehensive report
-    const reportPath = path.join(this.logDir, 'comprehensive-redundancy-report.json');
-    fs.writeFileSync(reportPath, JSON.stringify(report, null, 2));
-    
-    this.log(`Comprehensive report generated: ${reportPath}`);
+
+    // Check GitHub Actions status
+    const workflowsDir = path.join(process.cwd(), ".github", "workflows");
+    if (fs.existsSync(workflowsDir)) {
+      const workflows = fs.readdirSync(workflowsDir);
+      report.systems.githubActions.workflows = workflows;
+      report.systems.githubActions.redundancyWorkflows = workflows.filter(w => 
+        w.includes('redundancy') || w.includes('backup')
+      );
+      report.systems.githubActions.status = "operational";
+      
+      if (report.systems.githubActions.redundancyWorkflows.length === 0) {
+        report.recommendations.push("GitHub Actions: No redundancy workflows found, consider setting up redundancy");
+      }
+    } else {
+      report.systems.githubActions.status = "not_found";
+      report.recommendations.push("GitHub Actions: Workflows directory not found");
+    }
+
+    // Check Netlify Functions status
+    const functionsDir = path.join(process.cwd(), "netlify", "functions");
+    if (fs.existsSync(functionsDir)) {
+      const manifestPath = path.join(functionsDir, "functions-manifest.json");
+      if (fs.existsSync(manifestPath)) {
+        try {
+          const manifest = JSON.parse(fs.readFileSync(manifestPath, "utf8"));
+          report.systems.netlifyFunctions.functions = manifest.functions || [];
+          report.systems.netlifyFunctions.status = "operational";
+          
+          // Check for redundancy functions
+          const redundancyDir = path.join(this.redundancyDir, "netlify-functions");
+          if (fs.existsSync(redundancyDir)) {
+            const redundancyFunctions = fs.readdirSync(redundancyDir);
+            report.systems.netlifyFunctions.redundancyFunctions = redundancyFunctions;
+            
+            if (redundancyFunctions.length === 0) {
+              report.recommendations.push("Netlify Functions: No redundancy functions found, consider setting up redundancy");
+            }
+          }
+        } catch (error) {
+          report.systems.netlifyFunctions.status = "error";
+          report.recommendations.push(`Netlify Functions: Failed to parse manifest: ${error.message}`);
+        }
+      } else {
+        report.systems.netlifyFunctions.status = "no_manifest";
+        report.recommendations.push("Netlify Functions: No functions manifest found");
+      }
+    } else {
+      report.systems.netlifyFunctions.status = "not_found";
+      report.recommendations.push("Netlify Functions: Functions directory not found");
+    }
+
+    // Save report
+    const reportPath = path.join(this.redundancyDir, "redundancy-status-report.json");
+    try {
+      fs.writeFileSync(reportPath, JSON.stringify(report, null, 2));
+      this.log(`Redundancy report saved to: ${reportPath}`);
+    } catch (error) {
+      this.log(`Failed to save redundancy report: ${error.message}`);
+    }
+
     return report;
   }
 
-  async start() {
-    this.log('Starting Master Redundancy Orchestrator...');
+  run() {
+    const command = process.argv[2];
     
-    try {
-      // Start all managers
-      await this.startAllManagers();
-      
-      // Start health monitoring
-      await this.startHealthMonitoring();
-      
-      this.log('Master Redundancy Orchestrator started successfully');
-      
-      // Generate initial report
-      await this.generateComprehensiveReport();
-      
-      // Keep the process running
-      setInterval(async () => {
-        await this.generateComprehensiveReport();
-      }, 7200000); // Every 2 hours
-      
-    } catch (error) {
-      this.log(`Failed to start Master Redundancy Orchestrator: ${error.message}`, 'ERROR');
-      process.exit(1);
+    switch (command) {
+      case "setup":
+        this.setupAllRedundancy();
+        break;
+      case "setup-pm2":
+        this.setupPM2Redundancy();
+        break;
+      case "setup-github":
+        this.setupGitHubActionsRedundancy();
+        break;
+      case "setup-netlify":
+        this.setupNetlifyFunctionsRedundancy();
+        break;
+      case "monitor":
+        this.monitorRedundancy();
+        break;
+      case "report":
+        const report = this.generateRedundancyReport();
+        console.log(JSON.stringify(report, null, 2));
+        break;
+      case "status":
+        const status = this.generateRedundancyReport();
+        console.log("Redundancy System Status:");
+        console.log(`  PM2: ${status.systems.pm2.status}`);
+        console.log(`  GitHub Actions: ${status.systems.githubActions.status}`);
+        console.log(`  Netlify Functions: ${status.systems.netlifyFunctions.status}`);
+        break;
+      default:
+        this.log("Available commands: setup, setup-pm2, setup-github, setup-netlify, monitor, report, status");
+        this.log("Usage: node automation/redundancy/master-redundancy-orchestrator.cjs <command>");
     }
-  }
-
-  async stop() {
-    this.log('Stopping Master Redundancy Orchestrator...');
-    
-    // Note: Individual managers don't have stop methods
-    // This is mainly for cleanup and status updates
-    
-    for (const [name, status] of this.managerStatus) {
-      status.status = 'stopped';
-      status.stopped = new Date();
-    }
-    
-    this.log('Master Redundancy Orchestrator stopped');
   }
 }
 
-// CLI interface
+// Run if called directly
 if (require.main === module) {
   const orchestrator = new MasterRedundancyOrchestrator();
-  
-  const command = process.argv[2];
-  
-  switch (command) {
-    case 'start':
-      orchestrator.start();
-      break;
-    case 'stop':
-      orchestrator.stop();
-      break;
-    case 'status':
-      console.log('Manager Status:', Object.fromEntries(orchestrator.managerStatus));
-      break;
-    case 'health':
-      orchestrator.checkAllManagerHealth();
-      break;
-    case 'report':
-      orchestrator.generateComprehensiveReport().then(report => {
-        console.log('Comprehensive Report:', JSON.stringify(report, null, 2));
-      });
-      break;
-    case 'recovery':
-      orchestrator.emergencyRecovery();
-      break;
-    default:
-      console.log('Usage: node master-redundancy-orchestrator.cjs [start|stop|status|health|report|recovery]');
-      process.exit(1);
-  }
+  orchestrator.run();
 }
 
 module.exports = MasterRedundancyOrchestrator;

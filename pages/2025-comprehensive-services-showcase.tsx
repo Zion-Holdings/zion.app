@@ -8,24 +8,54 @@ import {
 } from 'lucide-react';
 
 // Import our new service data
-import { innovativeITServicesExpansion2025V3 } from '../data/2025-innovative-it-services-expansion-v3';
-import { innovativeMicroSaasExpansionV32025 } from '../data/2025-innovative-micro-saas-expansion-v3';
-import { innovativeAIServicesExpansion2025V3 } from '../data/2025-innovative-ai-services-expansion-v3';
->>>>>>> 916d02471c24718d698d51219f240472f9d52b96
+import { advancedAIMLServices } from '../data/2025-advanced-ai-ml-services';
+import { advancedCybersecurityServices } from '../data/2025-advanced-cybersecurity-services';
+import { advancedCloudDevOpsServices2025 } from '../data/2025-advanced-cloud-devops-services';
+import { industrySpecificSolutions } from '../data/2025-industry-specific-solutions';
+import { emergingTechnologyServices } from '../data/2025-emerging-technology-services';
 
 // Import existing service data
 import { realMicroSaasServices } from '../data/real-micro-saas-services';
 import { innovativeAIServices } from '../data/innovative-ai-services';
 import { enterpriseITServices } from '../data/enterprise-it-services';
 
-  const allServices = [
-    ...advancedBusinessIntelligenceServices2025,
-    ...advancedAIAutomationServices2025,
-    ...innovative2025ITInfrastructureServices,
-    ...innovativeMicroSaasSolutions2025,
-    ...cuttingEdgeAIServices2025
-  ];
->>>>>>> 916d02471c24718d698d51219f240472f9d52b96
+// Helper function to get service pricing
+const getServicePricing = (service: any) => {
+  if (service.pricing?.starter) return service.pricing.starter;
+  if (service.price?.monthly) return `$${service.price.monthly}/month`;
+  if (typeof service.price === 'string') return service.price;
+  return 'Contact for pricing';
+};
+
+// Helper function to get service features
+const getServiceFeatures = (service: any) => {
+  return service.keyFeatures || service.features || [];
+};
+
+// Helper function to get service setup time
+const getServiceSetupTime = (service: any) => {
+  if (service.setupTime) return service.setupTime;
+  if (service.pricing?.setupTime) return service.pricing.setupTime;
+  if (service.price?.setupTime) return service.price.setupTime;
+  return 'N/A';
+};
+
+// Helper function to get service trial days
+const getServiceTrialDays = (service: any) => {
+  if (service.trialDays) return service.trialDays;
+  if (service.pricing?.trialDays) return service.pricing.trialDays;
+  if (service.price?.trialDays) return service.price.trialDays;
+  return 'N/A';
+};
+
+// All services combined
+const allServices = [
+  ...advancedAIMLServices,
+  ...advancedCybersecurityServices,
+      ...advancedCloudDevOpsServices2025,
+  ...industrySpecificSolutions,
+  ...emergingTechnologyServices
+];
 
 // Service categories
 const categories = [
@@ -287,6 +317,13 @@ const ComprehensiveServicesShowcase: React.FC = () => {
                       </div>
                       <h3 className="text-xl font-bold mb-2">{service.name}</h3>
                       <p className="text-blue-100 text-sm">{service.tagline}</p>
+                      
+                      {/* Price */}
+                      <div className="mt-4">
+                        <span className="text-2xl font-bold">
+                          {getServicePricing(service)}
+                        </span>
+                      </div>
                     </div>
 
                     {/* Service Content */}
@@ -307,7 +344,7 @@ const ComprehensiveServicesShowcase: React.FC = () => {
                       <div className="mb-6">
                         <h4 className="font-semibold text-gray-900 mb-2">Key Features:</h4>
                         <ul className="space-y-1">
-                          {service.features.slice(0, 3).map((feature, idx) => (
+                          {getServiceFeatures(service).slice(0, 4).map((feature, idx) => (
                             <li key={idx} className="flex items-center text-sm text-gray-600">
                               <Check className="w-4 h-4 text-green-500 mr-2 flex-shrink-0" />
                               {feature}
@@ -324,54 +361,28 @@ const ComprehensiveServicesShowcase: React.FC = () => {
                         </span>
                       </div>
 
-                      {/* Action Button */}
-                      <a
-                        href={service.link}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="w-full bg-blue-600 text-white py-3 px-4 rounded-lg hover:bg-blue-700 transition-colors text-center font-medium flex items-center justify-center"
-                      >
-                        Learn More
-                        <ArrowRight className="w-4 h-4 ml-2" />
-                      </a>
-                    </div>
-                  </motion.div>
-                ))}
-              </motion.div>
-            ) : (
-              <motion.div 
-                key="list"
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                exit={{ opacity: 0 }}
-                className="space-y-6"
-              >
-                {filteredServices.map((service, index) => (
-                  <motion.div
-                    key={service.id}
-                    initial={{ opacity: 0, x: -20 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ duration: 0.5, delay: index * 0.1 }}
-                    className="bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100"
-                  >
-                    <div className="p-6">
-                      <div className="flex flex-col lg:flex-row gap-6">
-                        {/* Service Icon and Basic Info */}
-                        <div className="flex items-start space-x-4">
-                          <div className={`p-4 rounded-xl bg-gradient-to-r ${service.color} text-white`}>
-                            <span className="text-3xl">{service.icon}</span>
-                          </div>
-                          <div className="flex-1">
-                            <div className="flex items-center space-x-3 mb-2">
-                              <h3 className="text-2xl font-bold text-gray-900">{service.name}</h3>
-                              {service.popular && (
-                                <span className="bg-yellow-400 text-yellow-900 px-2 py-1 rounded-full text-xs font-bold">
-                                  POPULAR
-                                </span>
-                              )}
-                            </div>
-                            <p className="text-gray-600 mb-2">{service.tagline}</p>
-                            <p className="text-gray-700">{service.description}</p>
+                      {/* Service Info */}
+                      <div className="grid grid-cols-2 gap-4 mb-4 text-sm text-gray-600">
+                        <div>
+                          <span className="font-medium">Setup:</span> {getServiceSetupTime(service)}
+                        </div>
+                        <div>
+                          <span className="font-medium">Trial:</span> {getServiceTrialDays(service)} days
+                        </div>
+                      </div>
+
+                      {/* ROI and Popularity */}
+                      <div className="flex items-center justify-between mb-4">
+                        <div className="text-sm">
+                          <span className="text-gray-500">Expected ROI:</span>
+                          <span className="text-green-600 font-semibold ml-1">
+                            {service.roi.split(' ')[0]} ROI
+                          </span>
+                        </div>
+                        {service.popular && (
+                          <div className="flex items-center gap-1 text-yellow-600">
+                            <Star className="w-4 h-4 fill-current" />
+                            <span className="text-sm font-medium">Popular</span>
                           </div>
                         </div>
 
@@ -467,4 +478,3 @@ const ComprehensiveServicesShowcase: React.FC = () => {
 };
 
 export default ComprehensiveServicesShowcase;
->>>>>>> 916d02471c24718d698d51219f240472f9d52b96

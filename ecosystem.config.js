@@ -1,10 +1,9 @@
 module.exports = {
   apps: [
     {
-      name: 'ai-service-factory-web',
-      script: 'node_modules/next/dist/bin/next',
+      name: 'autonomous-ai-manager',
+      script: 'automation/autonomous-system-manager.cjs',
       args: 'start',
-      cwd: '/workspace',
       instances: 1,
       autorestart: true,
       watch: false,
@@ -13,78 +12,96 @@ module.exports = {
         NODE_ENV: 'production',
         PORT: 3000
       },
-      env_development: {
-        NODE_ENV: 'development',
+      env_production: {
+        NODE_ENV: 'production',
         PORT: 3000
-      }
+      },
+      log_file: 'logs/autonomous-ai-manager.log',
+      out_file: 'logs/autonomous-ai-manager-out.log',
+      error_file: 'logs/autonomous-ai-manager-error.log',
+      log_date_format: 'YYYY-MM-DD HH:mm:ss Z',
+      merge_logs: true,
+      max_restarts: 10,
+      min_uptime: '10s',
+      restart_delay: 4000,
+      kill_timeout: 5000,
+      wait_ready: true,
+      listen_timeout: 8000
     },
     {
-      name: 'ai-service-factory-automation',
-      script: 'automation/service-factory/ultimate-service-factory.cjs',
-      cwd: '/workspace',
+      name: 'ml-intelligence',
+      script: 'automation/ml-link-intelligence.cjs',
       instances: 1,
       autorestart: true,
       watch: false,
-      max_memory_restart: '2G',
+      max_memory_restart: '512M',
       env: {
-        NODE_ENV: 'production',
-        SERVICE_FACTORY_ENABLED: 'true',
-        AUTO_DEPLOYMENT_ENABLED: 'true'
+        NODE_ENV: 'production'
       },
-      cron_restart: '0 */6 * * *' // Restart every 6 hours for fresh operation
+      log_file: 'logs/ml-intelligence.log',
+      out_file: 'logs/ml-intelligence-out.log',
+      error_file: 'logs/ml-intelligence-error.log',
+      log_date_format: 'YYYY-MM-DD HH:mm:ss Z',
+      merge_logs: true,
+      max_restarts: 5,
+      min_uptime: '30s',
+      restart_delay: 10000,
+      kill_timeout: 5000
     },
     {
-      name: 'ai-service-factory-monitor',
-      script: 'automation/service-factory/performance-optimizer.cjs',
-      cwd: '/workspace',
+      name: 'real-time-monitor',
+      script: 'automation/real-time-performance-monitor.cjs',
+      args: 'start',
       instances: 1,
       autorestart: true,
       watch: false,
-      max_memory_restart: '1G',
+      max_memory_restart: '256M',
       env: {
-        NODE_ENV: 'production',
-        MONITORING_ENABLED: 'true'
+        NODE_ENV: 'production'
       },
-      cron_restart: '0 */4 * * *' // Restart every 4 hours
+      log_file: 'logs/real-time-monitor.log',
+      out_file: 'logs/real-time-monitor-out.log',
+      error_file: 'logs/real-time-monitor-error.log',
+      log_date_format: 'YYYY-MM-DD HH:mm:ss Z',
+      merge_logs: true,
+      max_restarts: 5,
+      min_uptime: '10s',
+      restart_delay: 5000,
+      kill_timeout: 5000
     },
     {
-      name: 'ai-service-factory-catalog',
-      script: 'automation/service-factory/service-catalog-manager.cjs',
-      cwd: '/workspace',
+      name: 'link-scheduler',
+      script: 'automation/link-health-scheduler.cjs',
+      args: 'start',
       instances: 1,
       autorestart: true,
       watch: false,
-      max_memory_restart: '1G',
+      max_memory_restart: '128M',
       env: {
-        NODE_ENV: 'production',
-        CATALOG_AUTO_UPDATE: 'true'
+        NODE_ENV: 'production'
       },
-      cron_restart: '0 */2 * * *' // Restart every 2 hours
-    },
-    {
-      name: 'ai-service-factory-advanced-monitor',
-      script: 'automation/service-factory/advanced-monitor.cjs',
-      cwd: '/workspace',
-      instances: 1,
-      autorestart: true,
-      watch: false,
-      max_memory_restart: '1G',
-      env: {
-        NODE_ENV: 'production',
-        ADVANCED_MONITORING_ENABLED: 'true'
-      },
-      cron_restart: '0 */3 * * *' // Restart every 3 hours
+      log_file: 'logs/link-scheduler.log',
+      out_file: 'logs/link-scheduler-out.log',
+      error_file: 'logs/link-scheduler-error.log',
+      log_date_format: 'YYYY-MM-DD HH:mm:ss Z',
+      merge_logs: true,
+      max_restarts: 3,
+      min_uptime: '10s',
+      restart_delay: 5000,
+      kill_timeout: 5000
     }
   ],
 
   deploy: {
     production: {
-      user: 'root',
+      user: 'node',
       host: 'localhost',
       ref: 'origin/main',
-      repo: 'git@github.com:your-org/ai-service-factory.git',
-      path: '/workspace',
-      'post-deploy': 'npm install && pm2 reload ecosystem.config.js --env production'
+      repo: 'git@github.com:Zion-Holdings/zion.git',
+      path: '/var/www/zion',
+      'pre-deploy-local': '',
+      'post-deploy': 'npm install && pm2 reload ecosystem.config.js --env production',
+      'pre-setup': ''
     }
   }
 };

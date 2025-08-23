@@ -130,7 +130,8 @@ export default function QuantumCybersecurityServices() {
                 >
                   <UltraFuturisticServiceCard2026 
                     service={service} 
-                    variant="quantum"
+                    variant="premium"
+
                   />
                 </motion.div>
               ))}

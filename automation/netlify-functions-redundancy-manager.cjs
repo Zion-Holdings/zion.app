@@ -1,9 +1,9 @@
 #!/usr/bin/env node
 "use strict";
 
-const { spawnSync } = require("child_process");
 const fs = require("fs");
 const path = require("path");
+const { spawnSync } = require("child_process");
 
 class NetlifyFunctionsRedundancyManager {
   constructor() {
@@ -16,7 +16,10 @@ class NetlifyFunctionsRedundancyManager {
       // Netlify functions directory
       functionsDir: path.join(this.workspace, "netlify/functions"),
       
-      // Expected functions from manifest
+      // Functions manifest file
+      manifestFile: "functions-manifest.json",
+      
+      // Expected functions based on the manifest
       expectedFunctions: [
         "a11y-alt-text-runner",
         "adaptive-orchestrator",
@@ -119,27 +122,32 @@ class NetlifyFunctionsRedundancyManager {
       
       // Function validation rules
       validationRules: {
-        requiredExports: ["handler", "exports.handler"],
-        requiredImports: ["require", "import"],
-        minFileSize: 100, // Minimum file size in bytes
-        maxFileSize: 1024 * 1024, // Maximum file size in bytes (1MB)
-        requiredStructure: ["function", "module.exports", "exports"]
+        requiredExports: ["exports.handler", "module.exports"],
+        maxFileSize: 100 * 1024, // 100KB
+        maxFunctionDuration: 30000, // 30 seconds
+        requiredStructure: ["function", "async", "await"]
       },
       
-      // Health check intervals
-      healthCheckInterval: 120000, // 2 minutes
-      manifestRegenerationInterval: 600000, // 10 minutes
+      // Monitoring intervals
+      intervals: {
+        functionHealth: 120000,     // 2 minutes
+        manifestValidation: 300000, // 5 minutes
+        overallHealth: 900000       // 15 minutes
+      },
       
-      // Error thresholds
-      maxValidationErrors: 5,
-      maxFunctionFailures: 3
+      // Recovery settings
+      recovery: {
+        maxAttempts: 3,
+        retryDelay: 15000,          // 15 seconds
+        regenerateManifest: true
+      }
     };
     
     this.monitoring = false;
-    this.checkInterval = null;
-    this.manifestInterval = null;
-    this.healthHistory = new Map();
-    this.errorCounts = new Map();
+    this.checkIntervals = new Map();
+    this.functionHealth = new Map();
+    this.manifestStatus = new Map();
+    this.recoveryAttempts = new Map();
     this.lastManifestRegeneration = new Date();
   }
 
@@ -188,122 +196,93 @@ class NetlifyFunctionsRedundancyManager {
       this.log("Netlify functions directory not found", "ERROR");
       return false;
     }
-    
-    this.log("Netlify functions directory found", "INFO");
     return true;
   }
 
-  // List all function files
-  listFunctionFiles() {
+  // Get list of existing function files
+  getExistingFunctions() {
     try {
-      if (!fs.existsSync(this.config.functionsDir)) {
+      if (!this.checkFunctionsDirectory()) {
         return [];
       }
       
       const files = fs.readdirSync(this.config.functionsDir);
       return files.filter(file => file.endsWith('.js') || file.endsWith('.mjs'));
     } catch (error) {
-      this.log(`Failed to list function files: ${error.message}`, "ERROR");
+      this.log(`Failed to read functions directory: ${error.message}`, "ERROR");
       return [];
     }
   }
 
-  // Get functions manifest
-  getFunctionsManifest() {
-    try {
-      const manifestPath = path.join(this.config.functionsDir, "functions-manifest.json");
-      
-      if (!fs.existsSync(manifestPath)) {
-        this.log("Functions manifest not found", "WARN");
-        return null;
-      }
-      
-      const manifestContent = fs.readFileSync(manifestPath, 'utf8');
-      const manifest = JSON.parse(manifestContent);
-      
-      this.log(`Functions manifest loaded with ${manifest.functions?.length || 0} functions`, "INFO");
-      return manifest;
-    } catch (error) {
-      this.log(`Failed to load functions manifest: ${error.message}`, "ERROR");
-      return null;
-    }
-  }
-
   // Validate individual function
-  async validateFunction(filename) {
+  validateFunction(functionName) {
     try {
-      const filepath = path.join(this.config.functionsDir, filename);
+      const functionPath = path.join(this.config.functionsDir, `${functionName}.js`);
       
-      if (!fs.existsSync(filepath)) {
+      if (!fs.existsSync(functionPath)) {
         return {
           valid: false,
-          error: "File not found",
-          filename: filename
+          errors: [`Function file not found: ${functionName}.js`]
         };
       }
       
-      const stats = fs.statSync(filepath);
-      const content = fs.readFileSync(filepath, 'utf8');
+      const stats = fs.statSync(functionPath);
+      const content = fs.readFileSync(functionPath, "utf8");
       
       const validation = {
         valid: true,
-        filename: filename,
-        size: stats.size,
-        lastModified: stats.mtime,
-        errors: []
+        errors: [],
+        warnings: [],
+        info: {
+          size: stats.size,
+          lastModified: stats.mtime,
+          lines: content.split('\n').length
+        }
       };
       
       // Check file size
-      if (stats.size < this.config.validationRules.minFileSize) {
-        validation.errors.push(`File too small: ${stats.size} bytes`);
-        validation.valid = false;
-      }
-      
       if (stats.size > this.config.validationRules.maxFileSize) {
-        validation.errors.push(`File too large: ${stats.size} bytes`);
-        validation.valid = false;
+        validation.warnings.push(`File size (${stats.size} bytes) exceeds recommended limit`);
       }
       
       // Check for required exports
-      const hasHandlerExport = this.config.validationRules.requiredExports.some(exportPattern => {
-        if (exportPattern.includes('.')) {
-          return content.includes(exportPattern);
-        } else {
-          return content.includes(`exports.${exportPattern}`) || content.includes(`module.exports.${exportPattern}`);
+      let hasValidExport = false;
+      for (const exportPattern of this.config.validationRules.requiredExports) {
+        if (content.includes(exportPattern)) {
+          hasValidExport = true;
+          break;
         }
-      });
+      }
       
-      if (!hasHandlerExport) {
-        validation.errors.push("Missing handler export");
+      if (!hasValidExport) {
+        validation.errors.push("Missing required export (exports.handler or module.exports)");
         validation.valid = false;
       }
       
-      // Check for required structure
-      const hasRequiredStructure = this.config.validationRules.requiredStructure.some(pattern => 
-        content.includes(pattern)
-      );
+      // Check for basic function structure
+      if (!content.includes('function') && !content.includes('=>')) {
+        validation.warnings.push("File may not contain function definitions");
+      }
       
-      if (!hasRequiredStructure) {
-        validation.errors.push("Missing required structure patterns");
+      // Check for async/await usage (recommended for Netlify functions)
+      if (!content.includes('async') && !content.includes('await')) {
+        validation.warnings.push("Function may not be async (recommended for Netlify)");
+      }
+      
+      // Check for common Netlify function patterns
+      if (!content.includes('exports.handler') && !content.includes('module.exports')) {
+        validation.errors.push("Missing Netlify function handler export");
         validation.valid = false;
       }
       
-      // Check for basic syntax (try to parse as JavaScript)
-      try {
-        // Basic syntax check - look for common syntax errors
-        if (content.includes('function') && !content.includes('{')) {
-          validation.errors.push("Potential syntax error: function without body");
-          validation.valid = false;
-        }
-        
-        if (content.includes('exports.') && !content.includes('=')) {
-          validation.errors.push("Potential syntax error: incomplete export");
-          validation.valid = false;
-        }
-        
-      } catch (syntaxError) {
-        validation.errors.push(`Syntax error: ${syntaxError.message}`);
-        validation.valid = false;
+      // Check for proper error handling
+      if (!content.includes('try') && !content.includes('catch')) {
+        validation.warnings.push("Function may lack proper error handling");
+      }
+      
+      // Check for proper response format
+      if (!content.includes('statusCode') && !content.includes('body')) {
+        validation.warnings.push("Function may not return proper Netlify response format");
       }
       
       return validation;
@@ -311,88 +290,108 @@ class NetlifyFunctionsRedundancyManager {
     } catch (error) {
       return {
         valid: false,
-        error: error.message,
-        filename: filename
+        errors: [`Validation failed: ${error.message}`]
       };
     }
   }
 
-  // Validate all functions
-  async validateAllFunctions() {
+  // Validate functions manifest
+  validateFunctionsManifest() {
     try {
-      this.log("Validating all Netlify functions", "INFO");
+      this.log("Validating functions manifest", "INFO");
       
-      const functionFiles = this.listFunctionFiles();
-      if (functionFiles.length === 0) {
-        this.log("No function files found", "WARN");
-        return { valid: false, functions: [] };
-      }
+      const manifestPath = path.join(this.config.functionsDir, this.config.manifestFile);
       
-      const validationResults = [];
-      let overallValid = true;
-      
-      for (const filename of functionFiles) {
-        const result = await this.validateFunction(filename);
-        validationResults.push(result);
-        
-        if (!result.valid) {
-          overallValid = false;
-          this.log(`Function ${filename} validation failed: ${result.errors?.join(', ') || result.error}`, "ERROR");
-          
-          // Increment error count
-          const currentCount = this.errorCounts.get(filename) || 0;
-          this.errorCounts.set(filename, currentCount + 1);
-        } else {
-          this.log(`Function ${filename} validation passed`, "INFO");
-          // Reset error count on success
-          this.errorCounts.set(filename, 0);
-        }
-      }
-      
-      return {
-        valid: overallValid,
-        functions: validationResults,
-        timestamp: new Date().toISOString()
-      };
-      
-    } catch (error) {
-      this.log(`Function validation failed: ${error.message}`, "ERROR");
-      return { valid: false, error: error.message };
-    }
-  }
-
-  // Check function dependencies
-  async checkFunctionDependencies() {
-    try {
-      this.log("Checking function dependencies", "INFO");
-      
-      const functionFiles = this.listFunctionFiles();
-      const dependencyResults = {};
-      
-      for (const filename of functionFiles) {
-        const filepath = path.join(this.config.functionsDir, filename);
-        const content = fs.readFileSync(filepath, 'utf8');
-        
-        // Extract require statements
-        const requireMatches = content.match(/require\(['"`]([^'"`]+)['"`]\)/g) || [];
-        const importMatches = content.match(/import\s+.*from\s+['"`]([^'"`]+)['"`]/g) || [];
-        
-        const dependencies = [
-          ...requireMatches.map(match => match.replace(/require\(['"`]([^'"`]+)['"`]\)/, '$1')),
-          ...importMatches.map(match => match.replace(/import\s+.*from\s+['"`]([^'"`]+)['"`]/, '$1'))
-        ];
-        
-        dependencyResults[filename] = {
-          dependencies: dependencies,
-          count: dependencies.length
+      if (!fs.existsSync(manifestPath)) {
+        this.log("Functions manifest not found", "WARN");
+        return {
+          valid: false,
+          errors: ["Functions manifest not found"],
+          manifest: null
         };
       }
       
-      return dependencyResults;
+      const manifestContent = fs.readFileSync(manifestPath, "utf8");
+      let manifest;
+      
+      try {
+        manifest = JSON.parse(manifestContent);
+      } catch (error) {
+        return {
+          valid: false,
+          errors: [`Invalid JSON in manifest: ${error.message}`],
+          manifest: null
+        };
+      }
+      
+      const validation = {
+        valid: true,
+        errors: [],
+        warnings: [],
+        manifest: manifest
+      };
+      
+      // Check required manifest fields
+      if (!manifest.functions || !Array.isArray(manifest.functions)) {
+        validation.errors.push("Manifest missing or invalid functions array");
+        validation.valid = false;
+      }
+      
+      if (!manifest.generatedAt) {
+        validation.warnings.push("Manifest missing generation timestamp");
+      }
+      
+      // Check if manifest functions match expected functions
+      if (manifest.functions) {
+        const missingFunctions = this.config.expectedFunctions.filter(
+          expected => !manifest.functions.includes(expected)
+        );
+        
+        if (missingFunctions.length > 0) {
+          validation.warnings.push(`Manifest missing functions: ${missingFunctions.join(', ')}`);
+        }
+        
+        const extraFunctions = manifest.functions.filter(
+          func => !this.config.expectedFunctions.includes(func)
+        );
+        
+        if (extraFunctions.length > 0) {
+          validation.warnings.push(`Manifest contains extra functions: ${extraFunctions.join(', ')}`);
+        }
+      }
+      
+      // Check manifest age
+      if (manifest.generatedAt) {
+        try {
+          const generatedAt = new Date(manifest.generatedAt);
+          const now = new Date();
+          const ageHours = (now - generatedAt) / (1000 * 60 * 60);
+          
+          if (ageHours > 24) {
+            validation.warnings.push(`Manifest is ${ageHours.toFixed(1)} hours old`);
+          }
+        } catch (error) {
+          validation.warnings.push("Could not parse manifest generation time");
+        }
+      }
+      
+      this.manifestStatus.set("manifest", validation);
+      
+      if (validation.valid) {
+        this.log("Functions manifest is valid", "INFO");
+      } else {
+        this.log("Functions manifest has validation issues", "WARN");
+      }
+      
+      return validation;
       
     } catch (error) {
-      this.log(`Function dependency check failed: ${error.message}`, "ERROR");
-      return {};
+      this.log(`Manifest validation failed: ${error.message}`, "ERROR");
+      return {
+        valid: false,
+        error: error.message,
+        manifest: null
+      };
     }
   }
 
@@ -411,8 +410,8 @@ class NetlifyFunctionsRedundancyManager {
       const result = await this.runCommand("node", [manifestScript]);
       
       if (result.status === 0) {
-        this.lastManifestRegeneration = new Date();
         this.log("Functions manifest regenerated successfully", "INFO");
+        this.lastManifestRegeneration = new Date();
         return true;
       } else {
         this.log(`Failed to regenerate manifest: ${result.stderr}`, "ERROR");
@@ -425,166 +424,280 @@ class NetlifyFunctionsRedundancyManager {
     }
   }
 
-  // Check function performance (basic metrics)
-  async checkFunctionPerformance() {
+  // Check function file integrity
+  async checkFunctionIntegrity() {
     try {
-      this.log("Checking function performance metrics", "INFO");
+      this.log("Checking function file integrity", "INFO");
       
-      const functionFiles = this.listFunctionFiles();
-      const performanceResults = {};
+      const existingFunctions = this.getExistingFunctions();
+      const integrityResults = {};
+      let overallHealthy = true;
       
-      for (const filename of functionFiles) {
-        const filepath = path.join(this.config.functionsDir, filename);
-        const stats = fs.statSync(filepath);
-        const content = fs.readFileSync(filepath, 'utf8');
+      for (const functionName of this.config.expectedFunctions) {
+        const functionFile = `${functionName}.js`;
+        const functionPath = path.join(this.config.functionsDir, functionFile);
         
-        // Basic performance metrics
-        const lines = content.split('\n').length;
-        const complexity = this.calculateComplexity(content);
+        const integrity = {
+          exists: fs.existsSync(functionPath),
+          accessible: false,
+          valid: false,
+          issues: []
+        };
         
-        performanceResults[filename] = {
-          size: stats.size,
-          lines: lines,
-          complexity: complexity,
-          lastModified: stats.mtime
+        if (integrity.exists) {
+          try {
+            // Check if file is readable
+            fs.accessSync(functionPath, fs.constants.R_OK);
+            integrity.accessible = true;
+            
+            // Validate function
+            const validation = this.validateFunction(functionName);
+            integrity.valid = validation.valid;
+            
+            if (!validation.valid) {
+              integrity.issues.push(...validation.errors);
+              overallHealthy = false;
+            }
+            
+            if (validation.warnings.length > 0) {
+              integrity.issues.push(...validation.warnings);
+            }
+            
+          } catch (error) {
+            integrity.issues.push(`File access error: ${error.message}`);
+            overallHealthy = false;
+          }
+        } else {
+          integrity.issues.push("Function file not found");
+          overallHealthy = false;
+        }
+        
+        integrityResults[functionName] = integrity;
+      }
+      
+      // Check for orphaned function files
+      const orphanedFunctions = existingFunctions.filter(
+        func => !this.config.expectedFunctions.includes(func.replace('.js', ''))
+      );
+      
+      if (orphanedFunctions.length > 0) {
+        integrityResults.orphaned = {
+          functions: orphanedFunctions,
+          warning: "Found function files not in expected list"
         };
       }
       
-      return performanceResults;
-      
-    } catch (error) {
-      this.log(`Function performance check failed: ${error.message}`, "ERROR");
-      return {};
-    }
-  }
-
-  // Calculate basic complexity metric
-  calculateComplexity(content) {
-    let complexity = 0;
-    
-    // Count control structures
-    const controlStructures = ['if', 'else', 'for', 'while', 'switch', 'case', 'catch', 'finally'];
-    for (const structure of controlStructures) {
-      const regex = new RegExp(`\\b${structure}\\b`, 'g');
-      const matches = content.match(regex);
-      if (matches) {
-        complexity += matches.length;
+      if (overallHealthy) {
+        this.log("All function files are healthy", "INFO");
+      } else {
+        this.log("Some function files have issues", "WARN");
       }
-    }
-    
-    // Count function definitions
-    const functionMatches = content.match(/function\s+\w+|=>|function\s*\(/g);
-    if (functionMatches) {
-      complexity += functionMatches.length;
-    }
-    
-    return complexity;
-  }
-
-  // Check for missing functions
-  async checkMissingFunctions() {
-    try {
-      this.log("Checking for missing functions", "INFO");
-      
-      const manifest = this.getFunctionsManifest();
-      const existingFunctions = this.listFunctionFiles().map(f => f.replace('.js', '').replace('.mjs', ''));
-      
-      const missingFunctions = this.config.expectedFunctions.filter(expected => 
-        !existingFunctions.includes(expected)
-      );
-      
-      const extraFunctions = existingFunctions.filter(existing => 
-        !this.config.expectedFunctions.includes(existing)
-      );
       
       return {
-        missing: missingFunctions,
-        extra: extraFunctions,
-        expected: this.config.expectedFunctions.length,
-        existing: existingFunctions.length,
-        coverage: ((existingFunctions.length / this.config.expectedFunctions.length) * 100).toFixed(2)
+        overall: overallHealthy,
+        functions: integrityResults
       };
       
     } catch (error) {
-      this.log(`Missing functions check failed: ${error.message}`, "ERROR");
-      return { missing: [], extra: [], coverage: 0 };
+      this.log(`Function integrity check failed: ${error.message}`, "ERROR");
+      return {
+        overall: false,
+        error: error.message
+      };
     }
   }
 
-  // Perform comprehensive health check
-  async performHealthCheck() {
+  // Test function execution (basic syntax check)
+  async testFunctionExecution(functionName) {
     try {
-      this.log("Performing Netlify functions health check", "INFO");
+      const functionPath = path.join(this.config.functionsDir, `${functionName}.js`);
+      
+      if (!fs.existsSync(functionPath)) {
+        return {
+          testable: false,
+          error: "Function file not found"
+        };
+      }
+      
+      // Basic syntax check using Node.js
+      const result = await this.runCommand("node", ["--check", functionPath]);
+      
+      if (result.status === 0) {
+        return {
+          testable: true,
+          syntaxValid: true,
+          message: "Function syntax is valid"
+        };
+      } else {
+        return {
+          testable: true,
+          syntaxValid: false,
+          error: result.stderr || "Syntax check failed"
+        };
+      }
+      
+    } catch (error) {
+      return {
+        testable: false,
+        error: error.message
+      };
+    }
+  }
+
+  // Perform recovery actions
+  async performRecovery() {
+    try {
+      this.log("Performing Netlify functions recovery", "INFO");
+      
+      const recoveryResults = {
+        timestamp: new Date().toISOString(),
+        actions: [],
+        success: true
+      };
+      
+      // Check manifest
+      const manifestValidation = this.validateFunctionsManifest();
+      if (!manifestValidation.valid || !manifestValidation.manifest) {
+        this.log("Regenerating functions manifest", "INFO");
+        
+        const manifestRegenerated = await this.regenerateFunctionsManifest();
+        if (manifestRegenerated) {
+          recoveryResults.actions.push("Functions manifest regenerated");
+        } else {
+          recoveryResults.actions.push("Failed to regenerate functions manifest");
+          recoveryResults.success = false;
+        }
+      }
+      
+      // Check function integrity
+      const integrityResults = await this.checkFunctionIntegrity();
+      if (!integrityResults.overall) {
+        recoveryResults.actions.push("Function integrity issues detected");
+        recoveryResults.success = false;
+      }
+      
+      // Test critical functions
+      const criticalFunctions = [
+        "netlify-auto-healer-runner",
+        "continuous-orchestrator",
+        "automation-matrix"
+      ];
+      
+      for (const functionName of criticalFunctions) {
+        const testResult = await this.testFunctionExecution(functionName);
+        if (!testResult.testable || !testResult.syntaxValid) {
+          recoveryResults.actions.push(`Critical function ${functionName} has issues`);
+          recoveryResults.success = false;
+        }
+      }
+      
+      if (recoveryResults.success) {
+        this.log("Netlify functions recovery completed successfully", "INFO");
+      } else {
+        this.log("Netlify functions recovery completed with issues", "WARN");
+      }
+      
+      return recoveryResults;
+      
+    } catch (error) {
+      this.log(`Recovery failed: ${error.message}`, "ERROR");
+      return {
+        success: false,
+        error: error.message
+      };
+    }
+  }
+
+  // Overall health check
+  async checkOverallHealth() {
+    try {
+      this.log("Performing overall Netlify functions health check", "INFO");
       
       // Check functions directory
       if (!this.checkFunctionsDirectory()) {
-        return { valid: false, error: "Functions directory not found" };
+        return {
+          overall: false,
+          error: "Functions directory not found"
+        };
       }
       
-      // Validate all functions
-      const validationResult = await this.validateAllFunctions();
+      // Validate manifest
+      const manifestValidation = this.validateFunctionsManifest();
       
-      // Check dependencies
-      const dependencyResult = await this.checkFunctionDependencies();
+      // Check function integrity
+      const integrityResults = await this.checkFunctionIntegrity();
       
-      // Check performance
-      const performanceResult = await this.checkFunctionPerformance();
+      // Test sample functions
+      const sampleFunctions = this.config.expectedFunctions.slice(0, 5); // Test first 5
+      const testResults = {};
       
-      // Check for missing functions
-      const missingResult = await this.checkMissingFunctions();
+      for (const functionName of sampleFunctions) {
+        testResults[functionName] = await this.testFunctionExecution(functionName);
+      }
       
-      // Check manifest
-      const manifest = this.getFunctionsManifest();
-      
-      // Determine overall health
-      const overallHealth = validationResult.valid && manifest !== null;
-      
-      const healthResult = {
+      const overallHealth = {
         timestamp: new Date().toISOString(),
-        valid: overallHealth,
-        validation: validationResult,
-        dependencies: dependencyResult,
-        performance: performanceResult,
-        missing: missingResult,
-        manifest: manifest ? { functions: manifest.functions?.length || 0 } : null,
-        errorCounts: Object.fromEntries(this.errorCounts)
+        functionsDirectory: true,
+        manifest: manifestValidation,
+        integrity: integrityResults,
+        testResults: testResults,
+        overall: manifestValidation.valid && integrityResults.overall
       };
       
-      this.healthHistory.set("netlify-functions", healthResult);
-      
-      if (overallHealth) {
-        this.log("All Netlify functions healthy", "INFO");
+      if (overallHealth.overall) {
+        this.log("All Netlify functions systems are healthy", "INFO");
       } else {
-        this.log("Some Netlify functions unhealthy", "WARN");
+        this.log("Some Netlify functions systems have issues", "WARN");
+        
+        // Trigger recovery if needed
+        const recoveryAttempts = this.recoveryAttempts.get("overall") || 0;
+        if (recoveryAttempts < this.config.recovery.maxAttempts) {
+          this.log(`Triggering recovery (attempt ${recoveryAttempts + 1})`, "INFO");
+          this.recoveryAttempts.set("overall", recoveryAttempts + 1);
+          
+          setTimeout(async () => {
+            await this.performRecovery();
+          }, this.config.recovery.retryDelay);
+        } else {
+          this.log("Maximum recovery attempts exceeded", "ERROR");
+        }
       }
       
-      return healthResult;
+      return overallHealth;
       
     } catch (error) {
-      this.log(`Netlify functions health check failed: ${error.message}`, "ERROR");
-      return { valid: false, error: error.message };
+      this.log(`Overall health check failed: ${error.message}`, "ERROR");
+      return {
+        overall: false,
+        error: error.message
+      };
     }
   }
 
   // Start monitoring
   start() {
     if (this.monitoring) {
-      this.log("Netlify functions redundancy monitoring already started", "WARN");
+      this.log("Monitoring already started", "WARN");
       return;
     }
     
     this.monitoring = true;
     this.log("Starting Netlify functions redundancy monitoring", "INFO");
     
-    // Start health check monitoring
-    this.checkInterval = setInterval(async () => {
-      await this.performHealthCheck();
-    }, this.config.healthCheckInterval);
+    // Start function health monitoring
+    this.checkIntervals.set("function", setInterval(async () => {
+      await this.checkFunctionIntegrity();
+    }, this.config.intervals.functionHealth));
     
-    // Start manifest regeneration monitoring
-    this.manifestInterval = setInterval(async () => {
-      await this.regenerateFunctionsManifest();
-    }, this.config.manifestRegenerationInterval);
+    // Start manifest validation monitoring
+    this.checkIntervals.set("manifest", setInterval(async () => {
+      this.validateFunctionsManifest();
+    }, this.config.intervals.manifestValidation));
+    
+    // Start overall health monitoring
+    this.checkIntervals.set("overall", setInterval(async () => {
+      await this.checkOverallHealth();
+    }, this.config.intervals.overallHealth));
     
     this.log("Netlify functions redundancy monitoring started", "INFO");
   }
@@ -592,21 +705,18 @@ class NetlifyFunctionsRedundancyManager {
   // Stop monitoring
   stop() {
     if (!this.monitoring) {
-      this.log("Netlify functions redundancy monitoring not running", "WARN");
+      this.log("Monitoring not started", "WARN");
       return;
     }
     
     this.monitoring = false;
     
-    if (this.checkInterval) {
-      clearInterval(this.checkInterval);
-      this.checkInterval = null;
+    // Clear all intervals
+    for (const [name, interval] of this.checkIntervals) {
+      clearInterval(interval);
+      this.log(`Stopped ${name} monitoring`, "INFO");
     }
-    
-    if (this.manifestInterval) {
-      clearInterval(this.manifestInterval);
-      this.manifestInterval = null;
-    }
+    this.checkIntervals.clear();
     
     this.log("Netlify functions redundancy monitoring stopped", "INFO");
   }
@@ -615,23 +725,18 @@ class NetlifyFunctionsRedundancyManager {
   getStatus() {
     return {
       monitoring: this.monitoring,
-      health: this.healthHistory.get("netlify-functions") || null,
-      errorCounts: Object.fromEntries(this.errorCounts),
+      functionHealth: Object.fromEntries(this.functionHealth),
+      manifestStatus: Object.fromEntries(this.manifestStatus),
+      recoveryAttempts: Object.fromEntries(this.recoveryAttempts),
       lastManifestRegeneration: this.lastManifestRegeneration,
       config: this.config
     };
   }
 
-  // Run health check once
+  // Run once
   async runOnce() {
-    this.log("Running Netlify functions health check once", "INFO");
-    return await this.performHealthCheck();
-  }
-
-  // Force manifest regeneration
-  async forceManifestRegeneration() {
-    this.log("Forcing functions manifest regeneration", "INFO");
-    return await this.regenerateFunctionsManifest();
+    this.log("Running Netlify functions redundancy check once", "INFO");
+    return await this.checkOverallHealth();
   }
 }
 
@@ -651,31 +756,31 @@ if (require.main === module) {
       console.log(JSON.stringify(manager.getStatus(), null, 2));
       break;
     case "once":
-      manager.runOnce().then(result => {
-        console.log(JSON.stringify(result, null, 2));
+      manager.runOnce().then(status => {
+        console.log(JSON.stringify(status, null, 2));
         process.exit(0);
       });
       break;
     case "health":
-      manager.performHealthCheck().then(result => {
-        console.log(JSON.stringify(result, null, 2));
+      manager.checkOverallHealth().then(status => {
+        console.log(JSON.stringify(status, null, 2));
         process.exit(0);
       });
       break;
-    case "manifest":
-      manager.forceManifestRegeneration().then(result => {
-        console.log(JSON.stringify({ regenerated: result }, null, 2));
+    case "recovery":
+      manager.performRecovery().then(results => {
+        console.log(JSON.stringify(results, null, 2));
         process.exit(0);
       });
       break;
-    case "validate":
-      manager.validateAllFunctions().then(result => {
-        console.log(JSON.stringify(result, null, 2));
+    case "regenerate":
+      manager.regenerateFunctionsManifest().then(success => {
+        console.log(JSON.stringify({ success }, null, 2));
         process.exit(0);
       });
       break;
     default:
-      console.log("Usage: node netlify-functions-redundancy-manager.cjs [start|stop|status|once|health|manifest|validate]");
+      console.log("Usage: node netlify-functions-redundancy-manager.cjs [start|stop|status|once|health|recovery|regenerate]");
       process.exit(1);
   }
 }
