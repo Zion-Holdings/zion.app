@@ -87,6 +87,24 @@ const navigationItems: NavigationItem[] = [
         href: '/solutions', 
         description: 'Industry-specific solutions',
         icon: <Play className="w-4 h-4" />
+      },
+      { 
+        name: 'Healthcare Solutions', 
+        href: '/healthcare-solutions', 
+        description: 'Healthcare technology solutions',
+        icon: <Play className="w-4 h-4" />
+      },
+      { 
+        name: 'Financial Solutions', 
+        href: '/financial-solutions', 
+        description: 'Financial technology solutions',
+        icon: <Play className="w-4 h-4" />
+      },
+      { 
+        name: 'Government Solutions', 
+        href: '/government-technology-solutions', 
+        description: 'Government technology solutions',
+        icon: <Play className="w-4 h-4" />
       }
     ]
   },

@@ -134,6 +134,9 @@ const UltraFuturisticFooter2036: React.FC = () => {
   const quickLinks = [
     { name: 'About Us', href: '/about' },
     { name: 'Services', href: '/services' },
+    { name: 'Healthcare Solutions', href: '/healthcare-solutions' },
+    { name: 'Financial Solutions', href: '/financial-solutions' },
+    { name: 'Government Solutions', href: '/government-technology-solutions' },
     { name: 'Case Studies', href: '/case-studies' },
     { name: 'Blog', href: '/blog' },
     { name: 'Careers', href: '/careers' },

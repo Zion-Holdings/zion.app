@@ -108,12 +108,14 @@ const sidebarSections = [
     icon: <Target className="w-5 h-5" />,
     color: 'text-orange-400',
     items: [
+      { name: 'Healthcare Solutions', href: '/healthcare-solutions', badge: 'New' },
+      { name: 'Financial Solutions', href: '/financial-solutions', badge: 'New' },
+      { name: 'Government Solutions', href: '/government-technology-solutions', badge: 'New' },
       { name: 'Healthcare & Biotech', href: '/biotech-ai' },
       { name: 'Financial Services', href: '/billing-analytics' },
       { name: 'Manufacturing AI', href: '/autonomous-manufacturing' },
       { name: 'Retail Technology', href: '/retail-technology-solutions' },
       { name: 'Education Technology', href: '/training' },
-      { name: 'Government Solutions', href: '/enterprise-solutions-showcase' },
       { name: 'Energy & Utilities', href: '/quantum-energy' },
       { name: 'Transportation & Logistics', href: '/quantum-logistics' },
       { name: 'Real Estate Technology', href: '/real-estate-technology-solutions' },
@@ -359,6 +361,9 @@ export default function EnhancedSidebar2025({ isOpen, onClose }: EnhancedSidebar
               </h3>
               <div className="mt-6 space-y-2">
                 <a href="/services" className="block px-3 py-2 rounded-lg hover:bg-cyan-500/10">All Services</a>
+                <a href="/healthcare-solutions" className="block px-3 py-2 rounded-lg hover:bg-cyan-500/10">Healthcare Solutions</a>
+                <a href="/financial-solutions" className="block px-3 py-2 rounded-lg hover:bg-cyan-500/10">Financial Solutions</a>
+                <a href="/government-technology-solutions" className="block px-3 py-2 rounded-lg hover:bg-cyan-500/10">Government Solutions</a>
                 <a href="/pricing" className="block px-3 py-2 rounded-lg hover:bg-cyan-500/10">Pricing</a>
                 <a href="/market-pricing" className="block px-3 py-2 rounded-lg hover:bg-cyan-500/10">Market Pricing</a>
                 <a href="/services-advertising" className="block px-3 py-2 rounded-lg hover:bg-cyan-500/10">Services Advertising</a>
