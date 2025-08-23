@@ -24,6 +24,11 @@ interface NavigationItem {
   color?: string;
 }
 
+interface UltraFuturisticNavigation2040Props {
+  onMenuToggle?: () => void;
+  isSidebarOpen?: boolean;
+}
+
 function normalizeHref(href: string): string {
   if (!href) return href;
   if (href.startsWith('http://') || href.startsWith('https://') || href.startsWith('mailto:') || href.startsWith('tel:')) {
@@ -267,7 +272,7 @@ const contactInfo = {
   address: '364 E Main St STE 1008 Middletown DE 19709'
 };
 
-const UltraFuturisticNavigation2040: React.FC = () => {
+const UltraFuturisticNavigation2040: React.FC<UltraFuturisticNavigation2040Props> = ({ onMenuToggle, isSidebarOpen }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
   const [isScrolled, setIsScrolled] = useState(false);
@@ -430,13 +435,31 @@ const UltraFuturisticNavigation2040: React.FC = () => {
           </div>
 
           {/* Mobile Menu Button */}
-          <button
-            onClick={() => setIsOpen(!isOpen)}
-            className="lg:hidden p-2 text-white hover:text-cyan-400 transition-colors"
-            aria-label="Toggle mobile menu"
-          >
-            {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-          </button>
+          <div className="lg:hidden flex items-center space-x-2">
+            {/* Sidebar Toggle Button */}
+            {onMenuToggle && (
+              <button
+                onClick={onMenuToggle}
+                className="p-2 text-white hover:text-cyan-400 transition-colors focus:outline-none focus:ring-2 focus:ring-cyan-400 focus:ring-offset-2 focus:ring-offset-black"
+                aria-label="Toggle sidebar menu"
+                aria-expanded={isSidebarOpen}
+                aria-controls="sidebar-menu"
+              >
+                <Menu className="w-6 h-6" />
+              </button>
+            )}
+            
+            {/* Mobile Navigation Toggle */}
+            <button
+              onClick={() => setIsOpen(!isOpen)}
+              className="p-2 text-white hover:text-cyan-400 transition-colors focus:outline-none focus:ring-2 focus:ring-cyan-400 focus:ring-offset-2 focus:ring-offset-black"
+              aria-label="Toggle mobile navigation menu"
+              aria-expanded={isOpen}
+              aria-controls="mobile-navigation"
+            >
+              {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+            </button>
+          </div>
         </div>
       </div>
 
@@ -444,11 +467,14 @@ const UltraFuturisticNavigation2040: React.FC = () => {
       <AnimatePresence>
         {isOpen && (
           <motion.div
+            id="mobile-navigation"
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.3 }}
             className="lg:hidden bg-black/95 backdrop-blur-xl border-t border-white/10 overflow-hidden"
+            role="navigation"
+            aria-label="Mobile navigation menu"
           >
             <div className="px-4 py-6 space-y-4">
               {navigationItems.map((item) => (

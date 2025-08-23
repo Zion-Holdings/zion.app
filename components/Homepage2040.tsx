@@ -1,32 +1,72 @@
-import React, { useEffect, useState, useCallback } from 'react';
+import React, { useEffect, useState, useCallback, Suspense } from 'react';
 import Layout from './layout/Layout';
 import { motion } from 'framer-motion';
 import { 
   ArrowRight, Play, Users, TrendingUp, Brain, Shield, Rocket, Globe, Lock, Cpu, Database, Cloud, BarChart3,
-  Atom, Target, Zap, Infinity, Sparkles, Star, Eye, Heart, Code, Palette, Layers
+  Atom, Target, Zap, Infinity, Sparkles, Star, Eye, Heart, Code, Palette, Layers, Loader2
 } from 'lucide-react';
 
 // Import our new revolutionary services
 import { revolutionary2040FuturisticServices } from '../data/revolutionary-2040-futuristic-services';
 import { revolutionary2041AdvancedServices } from '../data/revolutionary-2041-advanced-services';
 
+// Loading skeleton component
+const ServiceCardSkeleton = () => (
+  <div className="animate-pulse">
+    <div className="w-16 h-16 mx-auto mb-4 rounded-2xl bg-gray-700"></div>
+    <div className="h-6 bg-gray-700 rounded mb-2"></div>
+    <div className="h-4 bg-gray-700 rounded mb-4"></div>
+    <div className="h-10 bg-gray-700 rounded"></div>
+  </div>
+);
+
+// Error boundary component
+const ErrorFallback = ({ error, resetErrorBoundary }: { error: Error; resetErrorBoundary: () => void }) => (
+  <div className="text-center p-8">
+    <div className="text-red-400 text-6xl mb-4">⚠️</div>
+    <h2 className="text-2xl font-bold text-white mb-4">Something went wrong</h2>
+    <p className="text-gray-400 mb-6">{error.message}</p>
+    <button
+      onClick={resetErrorBoundary}
+      className="px-6 py-3 bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-medium rounded-xl hover:from-cyan-600 hover:to-blue-700 transition-all duration-300"
+    >
+      Try again
+    </button>
+  </div>
+);
+
 const Homepage2040: React.FC = () => {
   const [isVisible, setIsVisible] = useState(false);
   const [currentServiceIndex, setCurrentServiceIndex] = useState(0);
+  const [isLoading, setIsLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
   
   useEffect(() => {
-    setIsVisible(true);
+    const timer = setTimeout(() => {
+      setIsVisible(true);
+      setIsLoading(false);
+    }, 100);
     
-    // Auto-rotate featured services
+    // Auto-rotate featured services with better performance
     const interval = setInterval(() => {
       setCurrentServiceIndex((prev) => (prev + 1) % 3);
     }, 5000);
     
-    return () => clearInterval(interval);
+    return () => {
+      clearTimeout(timer);
+      clearInterval(interval);
+    };
   }, []);
 
-  // Combine all revolutionary services
-  const allRevolutionaryServices = [...revolutionary2040FuturisticServices, ...revolutionary2041AdvancedServices];
+  // Combine all revolutionary services with error handling
+  const allRevolutionaryServices = React.useMemo(() => {
+    try {
+      return [...revolutionary2040FuturisticServices, ...revolutionary2041AdvancedServices];
+    } catch (err) {
+      setError('Failed to load services');
+      return [];
+    }
+  }, []);
 
   // Get featured services for rotation
   const featuredServices = allRevolutionaryServices.slice(0, 6);
@@ -48,45 +88,81 @@ const Homepage2040: React.FC = () => {
   ];
 
   const handleGetStarted = useCallback(() => {
-    window.location.href = '/revolutionary-2040-2041-pricing-showcase';
+    try {
+      window.location.href = '/revolutionary-2040-2041-pricing-showcase';
+    } catch (err) {
+      setError('Navigation failed');
+    }
   }, []);
 
   const handleWatchDemo = useCallback(() => {
-    window.location.href = '/services';
+    try {
+      window.location.href = '/services';
+    } catch (err) {
+      setError('Navigation failed');
+    }
   }, []);
+
+  // Show loading state
+  if (isLoading) {
+    return (
+      <Layout>
+        <div className="min-h-screen flex items-center justify-center">
+          <div className="text-center">
+            <Loader2 className="w-16 h-16 text-cyan-400 animate-spin mx-auto mb-4" />
+            <p className="text-gray-400 text-lg">Loading Zion Tech Group...</p>
+          </div>
+        </div>
+      </Layout>
+    );
+  }
+
+  // Show error state
+  if (error) {
+    return (
+      <Layout>
+        <div className="min-h-screen flex items-center justify-center">
+          <ErrorFallback 
+            error={new Error(error)} 
+            resetErrorBoundary={() => setError(null)} 
+          />
+        </div>
+      </Layout>
+    );
+  }
 
   return (
     <Layout>
       {/* Main Content */}
-      <main className="relative z-10">
+      <main className="relative z-10" role="main" aria-label="Zion Tech Group Homepage">
         {/* Hero Section */}
         <section 
           className="min-h-screen flex items-center justify-center px-4 relative overflow-hidden"
           aria-labelledby="hero-heading"
         >
-          {/* Enhanced Animated Background */}
+          {/* Enhanced Animated Background with reduced complexity for better performance */}
           <div className="absolute inset-0 -z-10">
-            {/* Floating orbs */}
+            {/* Floating orbs with reduced animation complexity */}
             <div className="absolute top-20 left-20 w-72 h-72 bg-gradient-to-r from-cyan-500/20 to-blue-500/20 rounded-full blur-3xl animate-pulse"></div>
             <div className="absolute bottom-20 right-20 w-96 h-96 bg-gradient-to-r from-purple-500/20 to-pink-500/20 rounded-full blur-3xl animate-pulse delay-1000"></div>
             <div className="absolute top-1/2 left-1/2 w-64 h-64 bg-gradient-to-r from-emerald-500/20 to-teal-500/20 rounded-full blur-3xl animate-pulse delay-500"></div>
             
-            {/* Animated particles */}
+            {/* Reduced particle count for better performance */}
             <div className="absolute inset-0">
-              {[...Array(12)].map((_, i) => (
+              {[...Array(6)].map((_, i) => (
                 <motion.div
                   key={i}
                   className="absolute w-2 h-2 bg-cyan-400/30 rounded-full"
                   animate={{
-                    x: [0, 100, 0],
-                    y: [0, -100, 0],
-                    opacity: [0, 0.8, 0],
+                    x: [0, 50, 0],
+                    y: [0, -50, 0],
+                    opacity: [0, 0.6, 0],
                     scale: [0, 1, 0],
                   }}
                   transition={{
-                    duration: 6 + i * 0.5,
+                    duration: 8 + i * 0.5,
                     repeat: Infinity as any,
-                    delay: i * 0.3,
+                    delay: i * 0.5,
                     ease: "easeInOut"
                   }}
                   style={{
@@ -164,7 +240,7 @@ const Homepage2040: React.FC = () => {
               </button>
             </motion.div>
 
-            {/* Featured Service Showcase */}
+            {/* Featured Service Showcase with Suspense */}
             <motion.div
               className="max-w-4xl mx-auto"
               initial={{ opacity: 0, y: 30 }}
@@ -177,33 +253,38 @@ const Homepage2040: React.FC = () => {
                   <p className="text-gray-400">Experience the cutting edge of technology</p>
                 </div>
                 
-                {/* AnimatePresence is not imported, so this block will cause an error.
-                    Assuming it's meant to be removed or replaced with a simpler animation.
-                    For now, I'm removing it as it's not part of the provided code. */}
-                <motion.div
-                  key={currentServiceIndex}
-                  initial={{ opacity: 0, x: 50 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  exit={{ opacity: 0, x: -50 }}
-                  transition={{ duration: 0.5 }}
-                  className="text-center"
-                >
-                  <div className="w-16 h-16 mx-auto mb-4 rounded-2xl bg-gradient-to-r from-purple-500 to-pink-500 p-4">
-                    <Brain className="w-full h-full text-white" />
-                  </div>
-                  <h4 className="text-xl font-semibold text-white mb-2">
-                    {featuredServices[currentServiceIndex]?.name}
-                  </h4>
-                  <p className="text-gray-300 mb-4">
-                    {featuredServices[currentServiceIndex]?.tagline}
-                  </p>
-                  <button 
-                    className="px-6 py-3 bg-gradient-to-r from-purple-500 to-pink-500 text-white font-medium rounded-xl hover:from-purple-600 hover:to-pink-600 transition-all duration-300 transform hover:scale-105"
-                    onClick={() => window.location.href = featuredServices[currentServiceIndex]?.slug || '/services'}
+                <Suspense fallback={<ServiceCardSkeleton />}>
+                  <motion.div
+                    key={currentServiceIndex}
+                    initial={{ opacity: 0, x: 50 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.5 }}
+                    className="text-center"
                   >
-                    Learn More
-                  </button>
-                </motion.div>
+                    <div className="w-16 h-16 mx-auto mb-4 rounded-2xl bg-gradient-to-r from-purple-500 to-pink-500 p-4">
+                      <Brain className="w-full h-full text-white" />
+                    </div>
+                    <h4 className="text-xl font-semibold text-white mb-2">
+                      {featuredServices[currentServiceIndex]?.name || 'AI Consciousness Evolution'}
+                    </h4>
+                    <p className="text-gray-300 mb-4">
+                      {featuredServices[currentServiceIndex]?.tagline || 'Next-generation AI consciousness and emotional intelligence'}
+                    </p>
+                    <button 
+                      className="px-6 py-3 bg-gradient-to-r from-purple-500 to-pink-500 text-white font-medium rounded-xl hover:from-purple-600 hover:to-pink-600 transition-all duration-300 transform hover:scale-105"
+                      onClick={() => {
+                        try {
+                          window.location.href = featuredServices[currentServiceIndex]?.slug || '/services';
+                        } catch (err) {
+                          setError('Navigation failed');
+                        }
+                      }}
+                      aria-label={`Learn more about ${featuredServices[currentServiceIndex]?.name || 'AI Consciousness Evolution'}`}
+                    >
+                      Learn More
+                    </button>
+                  </motion.div>
+                </Suspense>
               </div>
             </motion.div>
           </div>
@@ -277,12 +358,22 @@ const Homepage2040: React.FC = () => {
                   transition={{ duration: 0.6, delay: index * 0.1, ease: "easeOut" }}
                   viewport={{ once: true, margin: "-50px" }}
                   whileHover={{ y: -15, scale: 1.03 }}
-                  onClick={() => window.location.href = feature.href}
+                  onClick={() => {
+                    try {
+                      window.location.href = feature.href;
+                    } catch (err) {
+                      setError('Navigation failed');
+                    }
+                  }}
                   role="button"
                   tabIndex={0}
                   onKeyDown={(e) => {
                     if (e.key === 'Enter' || e.key === ' ') {
-                      window.location.href = feature.href;
+                      try {
+                        window.location.href = feature.href;
+                      } catch (err) {
+                        setError('Navigation failed');
+                      }
                     }
                   }}
                   aria-label={`Learn more about ${feature.title}`}
@@ -340,12 +431,22 @@ const Homepage2040: React.FC = () => {
                   transition={{ duration: 0.6, delay: index * 0.1, ease: "easeOut" }}
                   viewport={{ once: true, margin: "-50px" }}
                   whileHover={{ y: -10, scale: 1.02 }}
-                  onClick={() => window.location.href = service.href}
+                  onClick={() => {
+                    try {
+                      window.location.href = service.href;
+                    } catch (err) {
+                      setError('Navigation failed');
+                    }
+                  }}
                   role="button"
                   tabIndex={0}
                   onKeyDown={(e) => {
                     if (e.key === 'Enter' || e.key === ' ') {
-                      window.location.href = service.href;
+                      try {
+                        window.location.href = service.href;
+                      } catch (err) {
+                        setError('Navigation failed');
+                      }
                     }
                   }}
                   aria-label={`Learn more about ${service.title}`}
@@ -390,7 +491,13 @@ const Homepage2040: React.FC = () => {
               <div className="flex flex-col sm:flex-row gap-6 justify-center">
                 <button 
                   className="px-10 py-5 bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-semibold rounded-2xl hover:from-cyan-600 hover:to-blue-700 transition-all duration-300 transform hover:scale-105 focus:outline-none focus:ring-4 focus:ring-cyan-500/50 text-lg"
-                  onClick={() => window.location.href = '/revolutionary-2040-2041-pricing-showcase'}
+                  onClick={() => {
+                    try {
+                      window.location.href = '/revolutionary-2040-2041-pricing-showcase';
+                    } catch (err) {
+                      setError('Navigation failed');
+                    }
+                  }}
                   aria-label="Start your journey with Zion Tech Group"
                 >
                   Start Your Journey
@@ -398,7 +505,13 @@ const Homepage2040: React.FC = () => {
                 </button>
                 <button 
                   className="px-10 py-5 border-2 border-cyan-400 text-cyan-400 font-semibold rounded-2xl hover:bg-cyan-400 hover:text-black transition-all duration-300 focus:outline-none focus:ring-4 focus:ring-cyan-400/50 text-lg"
-                  onClick={() => window.location.href = '/services'}
+                  onClick={() => {
+                    try {
+                      window.location.href = '/services';
+                    } catch (err) {
+                      setError('Navigation failed');
+                    }
+                  }}
                   aria-label="Explore our revolutionary services"
                 >
                   Explore Services

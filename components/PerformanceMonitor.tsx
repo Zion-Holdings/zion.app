@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useCallback } from 'react';
 import { motion } from 'framer-motion';
 import { Activity, Zap, Clock, TrendingUp, CheckCircle } from 'lucide-react';
 
@@ -9,11 +9,14 @@ interface PerformanceMetrics {
   fid: number | null;
   cls: number | null;
   ttfb: number | null;
-  timestamp: number;
+  domLoad: number | null;
+  windowLoad: number | null;
 }
 
 interface PerformanceMonitorProps {
   className?: string;
+  enabled?: boolean;
+  showMetrics?: boolean;
 }
 
 // Extended interface for First Input Delay
@@ -29,7 +32,9 @@ interface LayoutShiftEntry extends PerformanceEntry {
 }
 
 const PerformanceMonitor: React.FC<PerformanceMonitorProps> = ({ 
-  className = '' 
+  className = '', 
+  enabled = true, 
+  showMetrics = false 
 }) => {
   const [metrics, setMetrics] = useState<PerformanceMetrics>({
     fcp: null,
@@ -37,25 +42,27 @@ const PerformanceMonitor: React.FC<PerformanceMonitorProps> = ({
     fid: null,
     cls: null,
     ttfb: null,
-    timestamp: Date.now()
+    domLoad: null,
+    windowLoad: null
   });
   const [isVisible, setIsVisible] = useState(false);
   const [isExpanded, setIsExpanded] = useState(false);
+  const [optimizationTips, setOptimizationTips] = useState<string[]>([]);
 
-  // Measure Core Web Vitals
+  // Performance monitoring
   useEffect(() => {
-    if (typeof window === 'undefined') return;
+    if (!enabled || typeof window === 'undefined') return;
 
-    // First Contentful Paint (FCP)
+    // First Contentful Paint
     const fcpObserver = new PerformanceObserver((list) => {
       const entries = list.getEntries();
-      const fcpEntry = entries.find((entry) => entry.name === 'first-contentful-paint');
+      const fcpEntry = entries.find(entry => entry.name === 'first-contentful-paint');
       if (fcpEntry) {
         setMetrics(prev => ({ ...prev, fcp: fcpEntry.startTime }));
       }
     });
 
-    // Largest Contentful Paint (LCP)
+    // Largest Contentful Paint
     const lcpObserver = new PerformanceObserver((list) => {
       const entries = list.getEntries();
       const lcpEntry = entries[entries.length - 1];
@@ -64,46 +71,51 @@ const PerformanceMonitor: React.FC<PerformanceMonitorProps> = ({
       }
     });
 
-    // First Input Delay (FID)
+    // First Input Delay
     const fidObserver = new PerformanceObserver((list) => {
       const entries = list.getEntries();
-      entries.forEach((entry) => {
-        const fidEntry = entry as FirstInputEntry;
-        if (fidEntry.processingStart && fidEntry.startTime) {
-          const fid = fidEntry.processingStart - fidEntry.startTime;
-          setMetrics(prev => ({ ...prev, fid }));
-        }
-      });
+      const fidEntry = entries[0] as PerformanceEventTiming;
+      if (fidEntry && 'processingStart' in fidEntry) {
+        setMetrics(prev => ({ ...prev, fid: fidEntry.processingStart - fidEntry.startTime }));
+      }
     });
 
-    // Cumulative Layout Shift (CLS)
-    let clsValue = 0;
+    // Cumulative Layout Shift
     const clsObserver = new PerformanceObserver((list) => {
-      const entries = list.getEntries();
-      entries.forEach((entry) => {
+      let clsValue = 0;
+      for (const entry of list.getEntries()) {
         const layoutShiftEntry = entry as LayoutShiftEntry;
         if (!layoutShiftEntry.hadRecentInput) {
           clsValue += layoutShiftEntry.value;
-          setMetrics(prev => ({ ...prev, cls: clsValue }));
         }
-      });
+      }
+      setMetrics(prev => ({ ...prev, cls: clsValue }));
     });
-
-    // Time to First Byte (TTFB)
-    const navigationEntry = performance.getEntriesByType('navigation')[0] as PerformanceNavigationTiming;
-    if (navigationEntry) {
-      const ttfb = navigationEntry.responseStart - navigationEntry.requestStart;
-      setMetrics(prev => ({ ...prev, ttfb }));
-    }
 
     try {
       fcpObserver.observe({ entryTypes: ['paint'] });
       lcpObserver.observe({ entryTypes: ['largest-contentful-paint'] });
       fidObserver.observe({ entryTypes: ['first-input'] });
       clsObserver.observe({ entryTypes: ['layout-shift'] });
-    } catch {
-      // Silently handle performance monitoring errors
+    } catch (error) {
+      console.warn('Performance monitoring not supported:', error);
     }
+
+    // Time to First Byte
+    const navigationEntry = performance.getEntriesByType('navigation')[0] as PerformanceNavigationTiming;
+    if (navigationEntry) {
+      setMetrics(prev => ({ ...prev, ttfb: navigationEntry.responseStart - navigationEntry.requestStart }));
+    }
+
+    // DOM and Window load times
+    const domLoadTime = performance.timing.domContentLoadedEventEnd - performance.timing.navigationStart;
+    const windowLoadTime = performance.timing.loadEventEnd - performance.timing.navigationStart;
+    
+    setMetrics(prev => ({ 
+      ...prev, 
+      domLoad: domLoadTime > 0 ? domLoadTime : null,
+      windowLoad: windowLoadTime > 0 ? windowLoadTime : null
+    }));
 
     return () => {
       fcpObserver.disconnect();
@@ -111,7 +123,129 @@ const PerformanceMonitor: React.FC<PerformanceMonitorProps> = ({
       fidObserver.disconnect();
       clsObserver.disconnect();
     };
+  }, [enabled]);
+
+  // Generate optimization tips based on metrics
+  useEffect(() => {
+    const tips: string[] = [];
+    
+    if (metrics.fcp && metrics.fcp > 1800) {
+      tips.push('First Contentful Paint is slow. Consider optimizing critical rendering path.');
+    }
+    
+    if (metrics.lcp && metrics.lcp > 2500) {
+      tips.push('Largest Contentful Paint is slow. Optimize images and reduce render-blocking resources.');
+    }
+    
+    if (metrics.fid && metrics.fid > 100) {
+      tips.push('First Input Delay is high. Consider code splitting and reducing JavaScript execution time.');
+    }
+    
+    if (metrics.cls && metrics.cls > 0.1) {
+      tips.push('Cumulative Layout Shift is high. Ensure stable layouts and avoid content jumping.');
+    }
+    
+    if (metrics.ttfb && metrics.ttfb > 600) {
+      tips.push('Time to First Byte is slow. Optimize server response time and reduce blocking requests.');
+    }
+
+    setOptimizationTips(tips);
+  }, [metrics]);
+
+  // Performance optimization functions
+  const optimizeImages = useCallback(() => {
+    const images = document.querySelectorAll('img');
+    images.forEach(img => {
+      if (!img.loading) {
+        img.loading = 'lazy';
+      }
+      if (!img.decoding) {
+        img.decoding = 'async';
+      }
+    });
   }, []);
+
+  const preloadCriticalResources = useCallback(() => {
+    const criticalResources = [
+      '/fonts/inter-var.woff2',
+      '/css/critical.css'
+    ];
+    
+    criticalResources.forEach(resource => {
+      const link = document.createElement('link');
+      link.rel = 'preload';
+      link.href = resource;
+      link.as = resource.endsWith('.css') ? 'style' : 'font';
+      link.crossOrigin = 'anonymous';
+      document.head.appendChild(link);
+    });
+  }, []);
+
+  const enableResourceHints = useCallback(() => {
+    // DNS prefetch for external domains
+    const externalDomains = [
+      'fonts.googleapis.com',
+      'fonts.gstatic.com',
+      'cdn.jsdelivr.net'
+    ];
+    
+    externalDomains.forEach(domain => {
+      const link = document.createElement('link');
+      link.rel = 'dns-prefetch';
+      link.href = `//${domain}`;
+      document.head.appendChild(link);
+    });
+  }, []);
+
+  // Apply optimizations on mount
+  useEffect(() => {
+    if (enabled) {
+      optimizeImages();
+      preloadCriticalResources();
+      enableResourceHints();
+    }
+  }, [enabled, optimizeImages, preloadCriticalResources, enableResourceHints]);
+
+  // Memory usage monitoring
+  useEffect(() => {
+    if (!enabled || !('memory' in performance)) return;
+
+    const checkMemoryUsage = () => {
+      const memory = (performance as any).memory;
+      if (memory.usedJSHeapSize > memory.jsHeapSizeLimit * 0.8) {
+        console.warn('High memory usage detected. Consider optimizing memory usage.');
+      }
+    };
+
+    const interval = setInterval(checkMemoryUsage, 10000);
+    return () => clearInterval(interval);
+  }, [enabled]);
+
+  // Network monitoring
+  useEffect(() => {
+    if (!enabled || !('connection' in navigator)) return;
+
+    const connection = (navigator as any).connection;
+    if (connection) {
+      const updateNetworkInfo = () => {
+        const effectiveType = connection.effectiveType;
+        const downlink = connection.downlink;
+        
+        if (effectiveType === 'slow-2g' || effectiveType === '2g') {
+          console.warn('Slow network detected. Consider enabling low-bandwidth mode.');
+        }
+        
+        if (downlink < 1) {
+          console.warn('Very slow connection detected. Optimizing for low bandwidth.');
+        }
+      };
+
+      connection.addEventListener('change', updateNetworkInfo);
+      updateNetworkInfo();
+
+      return () => connection.removeEventListener('change', updateNetworkInfo);
+    }
+  }, [enabled]);
 
   // Calculate performance scores
   const getPerformanceScore = (metric: keyof PerformanceMetrics): number => {
@@ -171,7 +305,7 @@ const PerformanceMonitor: React.FC<PerformanceMonitorProps> = ({
   const overallScore = getOverallScore();
   const overallStatus = getPerformanceStatus(overallScore);
 
-  if (!isVisible) {
+  if (!enabled || !showMetrics) {
     return (
       <motion.button
         initial={{ opacity: 0, scale: 0.8 }}
@@ -294,7 +428,8 @@ const PerformanceMonitor: React.FC<PerformanceMonitorProps> = ({
               fid: null,
               cls: null,
               ttfb: null,
-              timestamp: Date.now()
+              domLoad: null,
+              windowLoad: null
             });
           }}
           className="flex-1 px-3 py-2 bg-gray-600 hover:bg-gray-500 text-white text-sm rounded-lg transition-colors"
@@ -304,6 +439,18 @@ const PerformanceMonitor: React.FC<PerformanceMonitorProps> = ({
           Reset
         </button>
       </div>
+
+      {/* Optimization Tips */}
+      {optimizationTips.length > 0 && (
+        <div className="mt-4 p-3 bg-gray-800/50 rounded-lg">
+          <div className="text-sm font-medium mb-2">Optimization Tips:</div>
+          <ul className="space-y-1 text-xs text-gray-300">
+            {optimizationTips.slice(0, 2).map((tip, index) => (
+              <li key={index}>• {tip}</li>
+            ))}
+          </ul>
+        </div>
+      )}
     </motion.div>
   );
 };
