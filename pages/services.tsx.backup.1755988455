@@ -192,10 +192,18 @@ const allServices = [
   ...real2036ServiceExpansions,
   ...innovative2036MicroSaasServices,
   ...innovative2036ITServices,
+<<<<<<< HEAD
+  // Add our new innovative 2027 services
+  ...innovative2027AIBusinessIntelligenceServices,
+  ...innovative2027CybersecurityComplianceServices,
+  ...innovative2027CloudDevOpsServices,
+  ...innovative2027IndustrySolutions
+=======
   // Add our new 2026 advanced services
   ...real2026AdvancedServices,
   ...real2026InnovativeSolutions,
   ...real2026SpecializedServices
+>>>>>>> origin/cursor/add-and-advertise-new-services-then-build-ea8f
 ];
 
 const categories = [

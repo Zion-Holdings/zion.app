@@ -583,14 +583,24 @@ const Homepage2025: React.FC = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}
               viewport={{ once: true }}
-              className="text-center mt-12"
+              className="text-center mt-16 space-y-4"
             >
-              <Link href="/innovative-2036-services-showcase">
-                <button className="px-8 py-4 bg-gradient-to-r from-pink-500 to-purple-600 text-white font-semibold rounded-lg hover:from-pink-600 hover:to-purple-700 transition-all duration-300 transform hover:scale-105 flex items-center gap-2 mx-auto shadow-lg shadow-pink-500/25">
-                  Explore All Innovations
-                  <ArrowRight className="w-5 h-5" />
-                </button>
+              <Link
+                href="/comprehensive-2026-services-showcase"
+                className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-purple-500 to-pink-600 text-white font-semibold rounded-xl hover:from-purple-600 hover:to-pink-700 transition-all duration-300 transform hover:scale-105"
+              >
+                View 2026 Services Showcase
+                <ArrowRight className="ml-2 w-5 h-5" />
               </Link>
+              <div>
+                <Link
+                  href="/services"
+                  className="inline-flex items-center px-6 py-3 text-purple-400 hover:text-purple-300 transition-colors"
+                >
+                  View All Services
+                  <ArrowRight className="ml-2 w-4 h-4" />
+                </Link>
+              </div>
             </motion.div>
           </div>
         </section>

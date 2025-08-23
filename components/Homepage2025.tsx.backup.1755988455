@@ -1,11 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Layout from './layout/Layout';
 import UltraFuturisticServiceCard2026 from './ui/UltraFuturisticServiceCard2026';
-<<<<<<< HEAD
-import { motion } from 'framer-motion';
-=======
 import { Sparkles, Grid } from 'lucide-react';
->>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-ed16
 
 const Homepage2025: React.FC = () => {
   const [isLoading, setIsLoading] = useState(true);
@@ -388,21 +384,10 @@ const Homepage2025: React.FC = () => {
               viewport={{ once: true }}
             >
               Our Services
-<<<<<<< HEAD
-            </motion.h2>
-            <motion.div 
-              className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.4 }}
-              viewport={{ once: true }}
-            >
-=======
             </h2>
             
             {/* Featured Services Grid */}
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
->>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-ed16
               <UltraFuturisticServiceCard2026
                 service={{
                   id: 'ai-ml',
@@ -598,6 +583,7 @@ const Homepage2025: React.FC = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}
               viewport={{ once: true }}
+<<<<<<< HEAD
               className="text-center mt-12"
             >
               <Link href="/innovative-2036-services-showcase">
@@ -605,7 +591,26 @@ const Homepage2025: React.FC = () => {
                   Explore All Innovations
                   <ArrowRight className="w-5 h-5" />
                 </button>
+=======
+              className="text-center mt-16 space-y-4"
+            >
+              <Link
+                href="/comprehensive-2026-services-showcase"
+                className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-purple-500 to-pink-600 text-white font-semibold rounded-xl hover:from-purple-600 hover:to-pink-700 transition-all duration-300 transform hover:scale-105"
+              >
+                View 2026 Services Showcase
+                <ArrowRight className="ml-2 w-5 h-5" />
+>>>>>>> origin/cursor/add-and-advertise-new-services-then-build-ea8f
               </Link>
+              <div>
+                <Link
+                  href="/services"
+                  className="inline-flex items-center px-6 py-3 text-purple-400 hover:text-purple-300 transition-colors"
+                >
+                  View All Services
+                  <ArrowRight className="ml-2 w-4 h-4" />
+                </Link>
+              </div>
             </motion.div>
           </div>
         </section>
