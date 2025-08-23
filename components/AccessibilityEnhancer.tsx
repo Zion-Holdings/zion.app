@@ -117,7 +117,7 @@ const AccessibilityEnhancer: React.FC<AccessibilityEnhancerProps> = ({
         'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
       );
       
-      setFocusableElements(Array.from(focusable));
+      setFocusableElements(Array.from(focusable) as HTMLElement[]);
 
       switch (e.key) {
         case 'ArrowUp':
@@ -137,7 +137,7 @@ const AccessibilityEnhancer: React.FC<AccessibilityEnhancerProps> = ({
         case 'Enter':
         case ' ':
           e.preventDefault();
-          focusable[currentFocus]?.click();
+          (focusable[currentFocus] as HTMLElement)?.click();
           break;
       }
     };
