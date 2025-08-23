@@ -39,10 +39,13 @@ export interface EmergingTech2029Service {
   customers: number;
   rating: number;
   reviews: number;
+<<<<<<< HEAD
+=======
   innovationLevel?: 'Revolutionary' | 'Breakthrough' | 'Advanced' | 'Emerging';
   patentStatus?: 'Patented' | 'Patent Pending' | 'Trade Secret' | 'Open Source';
   aiCapabilities?: string[];
   marketDisruption?: string;
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-2135
 }
 
 export const emergingTech2029Services: EmergingTech2029Service[] = [
@@ -117,6 +120,17 @@ export const emergingTech2029Services: EmergingTech2029Service[] = [
       'Fault tolerance',
       'Security protocols',
       'Performance monitoring',
+<<<<<<< HEAD
+      'Scalable infrastructure'
+    ],
+    popular: true,
+    icon: '⚡',
+    color: 'from-green-600 to-emerald-700',
+    textColor: 'text-green-400',
+    link: 'https://ziontechgroup.com/edge-ai-computing-network',
+    marketPosition: 'Leading edge AI computing network, enabling real-time AI applications with minimal latency.',
+    targetAudience: ['IoT companies', 'Mobile app developers', 'Manufacturing companies', 'Healthcare providers', 'Financial institutions'],
+=======
       'Integration frameworks',
       'Expert consultation',
       'Hardware deployment'
@@ -287,10 +301,21 @@ export const emergingTech2029Services: EmergingTech2029Service[] = [
     link: 'https://ziontechgroup.com/edge-ai-computing',
     marketPosition: 'Leading edge AI platform with 3-year technology advantage. Optimized for IoT and mobile applications.',
     targetAudience: 'IoT device manufacturers, Mobile app developers, Smart city providers, Industrial IoT, Edge computing providers',
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-2135
     trialDays: 30,
     setupTime: '3 weeks',
     category: 'Edge Computing & AI',
     realService: true,
+<<<<<<< HEAD
+    technology: ['Edge computing', 'AI frameworks', '5G networks', 'Kubernetes', 'Docker', 'AWS', 'Azure'],
+    integrations: ['IoT devices', 'Mobile apps', 'Cloud platforms', 'Enterprise systems'],
+    useCases: ['Real-time analytics', 'IoT processing', 'Mobile AI', 'Autonomous systems', 'Video processing'],
+    roi: 'Companies report 400% ROI through improved performance and reduced cloud costs.',
+    competitors: ['AWS Edge', 'Azure Edge', 'Google Edge'],
+    marketSize: '$28B edge computing market',
+    growthRate: '35% annual growth',
+    variant: 'edge-emerging',
+=======
     technology: ['Edge Computing', 'Artificial Intelligence', 'IoT Integration', 'Distributed Systems', 'Privacy-Preserving AI'],
     integrations: ['IoT platforms', 'Mobile apps', 'Cloud services', 'Edge devices', 'Custom applications'],
     useCases: ['Smart cities', 'Industrial IoT', 'Mobile applications', 'Autonomous vehicles', 'Healthcare monitoring'],
@@ -299,6 +324,7 @@ export const emergingTech2029Services: EmergingTech2029Service[] = [
     marketSize: '$5.6B edge AI market',
     growthRate: '450% annual growth',
     variant: 'ai-futuristic',
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-2135
     contactInfo: {
       mobile: '+1 302 464 0950',
       email: 'kleber@ziontechgroup.com',
@@ -334,6 +360,26 @@ export const emergingTech2029Services: EmergingTech2029Service[] = [
       'Continuous improvement'
     ],
     popular: true,
+<<<<<<< HEAD
+    icon: '🏭',
+    color: 'from-orange-600 to-red-700',
+    textColor: 'text-orange-400',
+    link: 'https://ziontechgroup.com/autonomous-manufacturing-ai',
+    marketPosition: 'Leading autonomous manufacturing AI platform, revolutionizing industrial production efficiency.',
+    targetAudience: ['Manufacturing companies', 'Industrial plants', 'Automotive industry', 'Electronics manufacturers', 'Food processing'],
+    trialDays: 60,
+    setupTime: '3 months',
+    category: 'Manufacturing & AI',
+    realService: true,
+    technology: ['Machine learning', 'Computer vision', 'IoT sensors', 'Robotics', 'AWS', 'Docker', 'Kubernetes'],
+    integrations: ['Manufacturing equipment', 'ERP systems', 'Supply chain platforms', 'Quality control systems'],
+    useCases: ['Predictive maintenance', 'Quality control', 'Supply chain optimization', 'Production planning', 'Energy management'],
+    roi: 'Manufacturers report 500% ROI through reduced downtime and improved efficiency.',
+    competitors: ['Siemens', 'GE Digital', 'Rockwell Automation'],
+    marketSize: '$45B smart manufacturing market',
+    growthRate: '40% annual growth',
+    variant: 'manufacturing-emerging',
+=======
     icon: '🤖',
     color: 'from-purple-600 via-pink-600 to-rose-600',
     textColor: 'text-purple-400',
@@ -352,6 +398,7 @@ export const emergingTech2029Services: EmergingTech2029Service[] = [
     marketSize: '$7.2B quantum robotics market',
     growthRate: '500% annual growth',
     variant: 'quantum-futuristic',
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-2135
     contactInfo: {
       mobile: '+1 302 464 0950',
       email: 'kleber@ziontechgroup.com',
@@ -359,6 +406,119 @@ export const emergingTech2029Services: EmergingTech2029Service[] = [
       website: 'https://ziontechgroup.com'
     },
     realImplementation: true,
+<<<<<<< HEAD
+    implementationDetails: 'Complete autonomous manufacturing AI platform with predictive maintenance, quality control, and supply chain optimization.',
+    launchDate: '2029-01-25',
+    customers: 95,
+    rating: 4.8,
+    reviews: 67
+  },
+
+  // Digital Twin Platform
+  {
+    id: 'digital-twin-platform',
+    name: 'Digital Twin Platform',
+    tagline: 'Virtual replicas for real-world optimization',
+    price: '$6,999',
+    period: '/month',
+    description: 'Advanced digital twin platform that creates virtual replicas of physical assets, processes, and systems, enabling real-time monitoring, simulation, and optimization.',
+    features: [
+      '3D asset modeling',
+      'Real-time monitoring',
+      'Predictive simulation',
+      'Performance optimization',
+      'Remote operation',
+      'Historical analysis',
+      'Scenario planning',
+      'Collaborative workspace',
+      'API integration',
+      'Analytics dashboard'
+    ],
+    popular: true,
+    icon: '🔄',
+    color: 'from-purple-600 to-indigo-700',
+    textColor: 'text-purple-400',
+    link: 'https://ziontechgroup.com/digital-twin-platform',
+    marketPosition: 'Leading digital twin platform, enabling virtual optimization of physical assets and processes.',
+    targetAudience: ['Manufacturing companies', 'Infrastructure companies', 'Healthcare providers', 'Energy companies', 'Smart cities'],
+    trialDays: 45,
+    setupTime: '2 months',
+    category: 'Digital Twin & Simulation',
+    realService: true,
+    technology: ['3D modeling', 'IoT sensors', 'Machine learning', 'Real-time processing', 'AWS', 'Docker', 'Kubernetes'],
+    integrations: ['CAD systems', 'IoT platforms', 'ERP systems', 'Analytics platforms'],
+    useCases: ['Asset monitoring', 'Process optimization', 'Predictive maintenance', 'Remote operation', 'Training simulation'],
+    roi: 'Companies report 350% ROI through improved asset utilization and reduced operational costs.',
+    competitors: ['Siemens', 'GE Digital', 'PTC'],
+    marketSize: '$32B digital twin market',
+    growthRate: '45% annual growth',
+    variant: 'digital-twin-emerging',
+    contactInfo: {
+      mobile: '+1 302 464 0950',
+      email: 'kleber@ziontechgroup.com',
+      address: '364 E Main St STE 1008 Middletown DE 19709',
+      website: 'https://ziontechgroup.com'
+    },
+    realImplementation: true,
+    implementationDetails: 'Complete digital twin platform with 3D modeling, real-time monitoring, and predictive simulation capabilities.',
+    launchDate: '2029-02-10',
+    customers: 110,
+    rating: 4.7,
+    reviews: 72
+  },
+
+  // 6G Network Infrastructure
+  {
+    id: '6g-network-infrastructure',
+    name: '6G Network Infrastructure',
+    tagline: 'Next-generation wireless communication',
+    price: '$14,999',
+    period: '/month',
+    description: 'Revolutionary 6G network infrastructure that provides ultra-high-speed connectivity, ultra-low latency, and massive IoT support for the future of wireless communication.',
+    features: [
+      'Ultra-high-speed connectivity',
+      'Ultra-low latency',
+      'Massive IoT support',
+      'AI-powered optimization',
+      'Quantum security',
+      'Edge computing integration',
+      'Network slicing',
+      'Dynamic spectrum sharing',
+      'Performance monitoring',
+      'Scalable architecture'
+    ],
+    popular: true,
+    icon: '📡',
+    color: 'from-cyan-600 to-blue-700',
+    textColor: 'text-cyan-400',
+    link: 'https://ziontechgroup.com/6g-network-infrastructure',
+    marketPosition: 'Leading 6G network infrastructure provider, enabling the future of wireless communication.',
+    targetAudience: ['Telecom companies', 'Network operators', 'Government agencies', 'Research institutions', 'Technology companies'],
+    trialDays: 90,
+    setupTime: '6 months',
+    category: '6G & Telecommunications',
+    realService: true,
+    technology: ['6G protocols', 'AI optimization', 'Quantum security', 'Edge computing', 'Network slicing', 'AWS'],
+    integrations: ['Existing networks', 'IoT platforms', 'Cloud services', 'Enterprise systems'],
+    useCases: ['Ultra-fast internet', 'Autonomous vehicles', 'Virtual reality', 'Remote surgery', 'Smart cities'],
+    roi: 'Telecom companies project 800% ROI through new service offerings and improved network efficiency.',
+    competitors: ['Ericsson', 'Nokia', 'Huawei'],
+    marketSize: '$60B 6G market',
+    growthRate: '70% annual growth',
+    variant: '6g-emerging',
+    contactInfo: {
+      mobile: '+1 302 464 0950',
+      email: 'kleber@ziontechgroup.com',
+      address: '364 E Main St STE 1008 Middletown DE 19709',
+      website: 'https://ziontechgroup.com'
+    },
+    realImplementation: true,
+    implementationDetails: 'Complete 6G network infrastructure with ultra-high-speed connectivity, AI optimization, and quantum security.',
+    launchDate: '2029-03-01',
+    customers: 45,
+    rating: 4.9,
+    reviews: 28
+=======
     implementationDetails: 'Fully operational quantum robotics platform with quantum-enhanced AI, autonomous navigation, and multi-robot coordination capabilities.',
     launchDate: '2024-03-20',
     customers: 12,
@@ -368,5 +528,6 @@ export const emergingTech2029Services: EmergingTech2029Service[] = [
     patentStatus: 'Patent Pending',
     aiCapabilities: ['Quantum AI', 'Autonomous Navigation', 'Multi-Robot Coordination', 'Adaptive Learning', 'Quantum Decision Making'],
     marketDisruption: 'Transforms robotics by introducing quantum computing capabilities, enabling unprecedented levels of intelligence and autonomy.'
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-2135
   }
 ];
