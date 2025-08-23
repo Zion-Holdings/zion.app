@@ -1,21 +1,6 @@
-import type { AppProps } from 'next/app';
-import '../styles/globals.css';
-import SmartHeader from '../components/SmartHeader';
-import SmartFooter from '../components/SmartFooter';
-import FuturisticLayout from '../components/FuturisticLayout';
-import DefaultSEO from '../components/DefaultSEO';
+import type { AppProps } from 'next/app'
+import '../styles/globals.css'
 
-export default function ZionApp({ Component, pageProps }: AppProps) {
-  return (
-    <FuturisticLayout>
-      <div className="min-h-screen flex flex-col">
-        <DefaultSEO />
-        <SmartHeader />
-        <main className="flex-1">
-          <Component {...pageProps} />
-        </main>
-        <SmartFooter />
-      </div>
-    </FuturisticLayout>
-  );
+export default function App({ Component, pageProps }: AppProps) {
+  return <Component {...pageProps} />
 }
