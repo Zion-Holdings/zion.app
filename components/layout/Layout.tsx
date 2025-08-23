@@ -10,9 +10,17 @@ import CookieConsentBanner from '../CookieConsentBanner';
 
 interface LayoutProps {
   children: React.ReactNode;
+  seo?: {
+    title?: string;
+    description?: string;
+    keywords?: string;
+    image?: string;
+    url?: string;
+    type?: string;
+  };
 }
 
-export default function Layout({ children }: LayoutProps) {
+export default function Layout({ children, seo }: LayoutProps) {
   const [sidebarOpen, setSidebarOpen] = useState(false);
 
   return (
