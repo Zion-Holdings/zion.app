@@ -403,6 +403,11 @@
     "meta:factory": "node automation/autonomous-meta-factory.cjs",
     "meta:orchestrator": "node automation/autonomous-meta-orchestrator.cjs",
     "meta:cron:start": "bash automation/autonomous-meta-cron.sh",
+<<<<<<< HEAD
+    "marketplace:research": "node automation/market-research-trends.cjs",
+    "marketplace:factory": "node automation/intelligent-solutions-factory.cjs",
+    "marketplace:orchestrator": "node automation/marketplace-orchestrator.cjs"
+=======
     "venture:start": "node automation/venture-orchestrator.cjs continuous",
     "venture:once": "node automation/venture-orchestrator.cjs once",
     "venture:analyze": "node automation/venture-services-analyzer.cjs && node automation/venture-services-factory.cjs && node automation/ads-generator.cjs && node automation/service-sales-agents-factory.cjs",
@@ -447,6 +452,7 @@
     "coverage:enhanced": "node automation/redundancy/enhanced-coverage-manager.cjs",
     "coverage:report": "node automation/redundancy/comprehensive-automation-coverage.cjs report",
     "coverage:health": "node automation/redundancy/comprehensive-automation-coverage.cjs health"
+>>>>>>> origin/cursor/automate-deployment-redundancy-and-clean-up-ae58
   },
   "dependencies": {
     "@google-analytics/data": "^5.2.0",
