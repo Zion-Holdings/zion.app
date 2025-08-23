@@ -300,7 +300,7 @@ const Innovative2040FuturisticServicesShowcase: React.FC = () => {
                     )}
 
                     {/* Service Icon */}
-                    <div className={`w-16 h-16 bg-gradient-to-r ${service.color} rounded-2xl flex items-center justify-center text-3xl mb-4 group-hover:scale-110 transition-transform duration-300`}>
+                    <div className={`w-16 h-16 bg-gradient-to-r ${service.color || 'from-cyan-500 to-blue-500'} rounded-2xl flex items-center justify-center text-3xl mb-4 group-hover:scale-110 transition-transform duration-300`}>
                       {service.icon}
                     </div>
 
@@ -390,7 +390,7 @@ const Innovative2040FuturisticServicesShowcase: React.FC = () => {
                   >
                     <div className="flex items-start space-x-6">
                       {/* Service Icon */}
-                      <div className={`w-20 h-20 bg-gradient-to-r ${service.color} rounded-2xl flex items-center justify-center text-4xl group-hover:scale-110 transition-transform duration-300 flex-shrink-0`}>
+                      <div className={`w-20 h-20 bg-gradient-to-r ${service.color || 'from-cyan-500 to-blue-500'} rounded-2xl flex items-center justify-center text-4xl group-hover:scale-110 transition-transform duration-300 flex-shrink-0`}>
                         {service.icon}
                       </div>
 

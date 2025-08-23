@@ -18,6 +18,10 @@ export interface Innovative2040FuturisticService {
   customers: string;
   rating: number;
   reviews: number;
+  color?: string;
+  icon?: string;
+  period?: string;
+  popular?: boolean;
 }
 
 export const innovative2040FuturisticServices: Innovative2040FuturisticService[] = [
@@ -51,7 +55,11 @@ export const innovative2040FuturisticServices: Innovative2040FuturisticService[]
     launchDate: 'Q1 2040',
     customers: '5 enterprise clients, 15 research institutions',
     rating: 4.9,
-    reviews: 127
+    reviews: 127,
+    color: 'from-purple-500 to-pink-500',
+    icon: '🧠',
+    period: '/month',
+    popular: true
   },
   {
     id: 'holographic-quantum-workspace',
@@ -83,7 +91,11 @@ export const innovative2040FuturisticServices: Innovative2040FuturisticService[]
     launchDate: 'Q2 2040',
     customers: '12 enterprise clients, 8 design studios',
     rating: 4.8,
-    reviews: 89
+    reviews: 89,
+    color: 'from-blue-500 to-cyan-500',
+    icon: '🖥️',
+    period: '/month',
+    popular: true
   },
   {
     id: 'ai-time-series-prediction',
@@ -115,7 +127,11 @@ export const innovative2040FuturisticServices: Innovative2040FuturisticService[]
     launchDate: 'Q3 2040',
     customers: '8 financial institutions, 5 logistics companies',
     rating: 4.7,
-    reviews: 156
+    reviews: 156,
+    color: 'from-green-500 to-emerald-500',
+    icon: '📈',
+    period: '/month',
+    popular: false
   },
   {
     id: 'quantum-blockchain-security',
@@ -147,7 +163,11 @@ export const innovative2040FuturisticServices: Innovative2040FuturisticService[]
     launchDate: 'Q4 2040',
     customers: '15 blockchain companies, 7 banks',
     rating: 4.9,
-    reviews: 203
+    reviews: 203,
+    color: 'from-red-500 to-orange-500',
+    icon: '🔒',
+    period: '/month',
+    popular: true
   },
   {
     id: 'ai-synthetic-biology',
@@ -179,7 +199,11 @@ export const innovative2040FuturisticServices: Innovative2040FuturisticService[]
     launchDate: 'Q1 2041',
     customers: '6 pharmaceutical companies, 4 research labs',
     rating: 4.8,
-    reviews: 78
+    reviews: 78,
+    color: 'from-green-500 to-blue-500',
+    icon: '🧬',
+    period: '/month',
+    popular: false
   },
   {
     id: 'quantum-internet-security',
@@ -211,7 +235,11 @@ export const innovative2040FuturisticServices: Innovative2040FuturisticService[]
     launchDate: 'Q2 2041',
     customers: '3 government agencies, 5 tech companies',
     rating: 4.9,
-    reviews: 134
+    reviews: 134,
+    color: 'from-blue-500 to-indigo-500',
+    icon: '🌐',
+    period: '/month',
+    popular: true
   },
   {
     id: 'ai-climate-modeling',
@@ -243,7 +271,11 @@ export const innovative2040FuturisticServices: Innovative2040FuturisticService[]
     launchDate: 'Q3 2041',
     customers: '4 government agencies, 12 research institutions',
     rating: 4.7,
-    reviews: 92
+    reviews: 92,
+    color: 'from-teal-500 to-green-500',
+    icon: '🌍',
+    period: '/month',
+    popular: false
   },
   {
     id: 'quantum-financial-trading',
@@ -275,7 +307,11 @@ export const innovative2040FuturisticServices: Innovative2040FuturisticService[]
     launchDate: 'Q4 2041',
     customers: '8 hedge funds, 5 investment banks',
     rating: 4.9,
-    reviews: 167
+    reviews: 167,
+    color: 'from-yellow-500 to-green-500',
+    icon: '💰',
+    period: '/month',
+    popular: true
   },
   {
     id: 'ai-space-resource-management',
@@ -307,6 +343,10 @@ export const innovative2040FuturisticServices: Innovative2040FuturisticService[]
     launchDate: 'Q1 2042',
     customers: '3 space agencies, 7 satellite companies',
     rating: 4.8,
-    reviews: 89
+    reviews: 89,
+    color: 'from-purple-500 to-blue-500',
+    icon: '🚀',
+    period: '/month',
+    popular: false
   }
 ];

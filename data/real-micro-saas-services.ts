@@ -32,6 +32,7 @@ export interface MicroSaasService {
   customers: number;
   rating: number;
   reviews: number;
+  period?: string;
 }
 
 export const realMicroSaasServices: MicroSaasService[] = [
@@ -98,6 +99,7 @@ export const realMicroSaasServices: MicroSaasService[] = [
     popular: true,
     launchDate: '2024-01-15',
     customers: 2500,
+    period: '/month',
     rating: 4.8,
     reviews: 342
   },
@@ -163,6 +165,7 @@ export const realMicroSaasServices: MicroSaasService[] = [
     popular: true,
     launchDate: '2024-02-01',
     customers: 1800,
+    period: '/month',
     rating: 4.9,
     reviews: 267
   },
@@ -229,6 +232,7 @@ export const realMicroSaasServices: MicroSaasService[] = [
     popular: true,
     launchDate: '2024-01-20',
     customers: 3200,
+    period: '/month',
     rating: 4.7,
     reviews: 456
   },
@@ -295,6 +299,7 @@ export const realMicroSaasServices: MicroSaasService[] = [
     popular: false,
     launchDate: '2024-02-15',
     customers: 1500,
+    period: '/month',
     rating: 4.6,
     reviews: 189
   },
@@ -361,6 +366,7 @@ export const realMicroSaasServices: MicroSaasService[] = [
     popular: false,
     launchDate: '2024-01-30',
     customers: 2100,
+    period: '/month',
     rating: 4.8,
     reviews: 298
   },
@@ -427,6 +433,7 @@ export const realMicroSaasServices: MicroSaasService[] = [
     popular: false,
     launchDate: '2024-02-10',
     customers: 2800,
+    period: '/month',
     rating: 4.7,
     reviews: 378
   },
@@ -493,6 +500,7 @@ export const realMicroSaasServices: MicroSaasService[] = [
     popular: false,
     launchDate: '2024-02-20',
     customers: 1200,
+    period: '/month',
     rating: 4.6,
     reviews: 156
   },
@@ -559,6 +567,7 @@ export const realMicroSaasServices: MicroSaasService[] = [
     popular: false,
     launchDate: '2024-02-25',
     customers: 800,
+    period: '/month',
     rating: 4.5,
     reviews: 98
   },
@@ -625,6 +634,7 @@ export const realMicroSaasServices: MicroSaasService[] = [
     popular: false,
     launchDate: '2024-03-01',
     customers: 950,
+    period: '/month',
     rating: 4.4,
     reviews: 87
   },
@@ -691,6 +701,7 @@ export const realMicroSaasServices: MicroSaasService[] = [
     popular: false,
     launchDate: '2024-03-05',
     customers: 1100,
+    period: '/month',
     rating: 4.6,
     reviews: 134
   }
