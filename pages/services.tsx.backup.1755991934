@@ -43,11 +43,25 @@ export default function ServicesPage() {
         'Automated content suggestions',
         'Performance tracking & reporting'
       ],
+<<<<<<< HEAD
+      pricing: {
+        starter: '$39/month',
+        professional: '$99/month',
+        enterprise: '$249/month'
+      },
+      marketPosition: 'Alternative to Clearscope, MarketMuse, and Surfer SEO',
+      useCases: ['Content marketers', 'SEO agencies', 'Bloggers', 'E-commerce sites'],
+      color: 'bg-gradient-to-br from-green-500 to-emerald-600',
+      textColor: 'text-green-400',
+      gradient: 'from-green-400 to-emerald-500',
+      cta: 'Try for Free'
+=======
       color: 'bg-gradient-to-br from-emerald-500 to-green-600',
       textColor: 'text-emerald-400',
       gradient: 'from-emerald-400 to-emerald-500',
       pricing: '$89/month',
       link: 'https://seo.zion.app'
+>>>>>>> origin/cursor/enhance-app-with-micro-saas-and-deploy-d4e7
     },
     {
       icon: '📧',
@@ -109,6 +123,38 @@ export default function ServicesPage() {
         'Data visualization tools',
         'Mobile-responsive design'
       ],
+<<<<<<< HEAD
+      pricing: {
+        starter: '$79/month',
+        professional: '$199/month',
+        enterprise: '$499/month'
+      },
+      marketPosition: 'Competes with Tableau, Power BI, and Looker',
+      useCases: ['Business analysts', 'Executives', 'Data teams', 'Consultants'],
+      color: 'bg-gradient-to-br from-teal-500 to-cyan-600',
+      textColor: 'text-teal-400',
+      gradient: 'from-teal-400 to-cyan-500',
+    {
+      metric: 'Average Growth Rate',
+      value: '22.1%',
+      description: 'Compound annual growth rate across segments',
+      trend: 'up',
+      change: '+3.2% vs 2023'
+    },
+    {
+      metric: 'Customer Acquisition Cost',
+      value: '$89',
+      description: 'Average CAC for micro SaaS services',
+      trend: 'down',
+      change: '-12% YoY'
+    },
+    {
+      metric: 'Customer Lifetime Value',
+      value: '$2,847',
+      description: 'Average LTV across micro SaaS customers',
+      trend: 'up',
+      change: '+18% YoY'
+=======
       cta: 'View Demo'
     },
     {
@@ -260,6 +306,7 @@ export default function ServicesPage() {
       gradient: 'from-teal-400 to-cyan-500',
       pricing: '$55/month',
       link: 'https://inventory.zion.app'
+>>>>>>> origin/cursor/enhance-app-with-micro-saas-and-deploy-d4e7
     }
   ];
 
