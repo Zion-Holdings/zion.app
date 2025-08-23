@@ -17,6 +17,9 @@ interface SEOProps {
   nofollow?: boolean;
   canonical?: string;
   structuredData?: object;
+  twitterCard?: 'summary' | 'summary_large_image' | 'app' | 'player';
+  facebookAppId?: string;
+  twitterHandle?: string;
 }
 
 const defaultSEO = {
@@ -31,7 +34,10 @@ const defaultSEO = {
   image: '/images/zion-tech-group-og.jpg',
   url: 'https://ziontechgroup.com',
   type: 'website' as const,
-  canonical: 'https://ziontechgroup.com'
+  canonical: 'https://ziontechgroup.com',
+  twitterCard: 'summary_large_image' as const,
+  twitterHandle: '@ziontechgroup',
+  facebookAppId: '123456789'
 };
 
 export default function SEO({
@@ -49,7 +55,10 @@ export default function SEO({
   noindex = false,
   nofollow = false,
   canonical = defaultSEO.canonical,
-  structuredData
+  structuredData,
+  twitterCard = defaultSEO.twitterCard,
+  facebookAppId = defaultSEO.facebookAppId,
+  twitterHandle = defaultSEO.twitterHandle
 }: SEOProps) {
   const fullTitle = title === defaultSEO.title ? title : `${title} | Zion Tech Group`;
   const fullUrl = canonical || `${defaultSEO.url}${url}`;
@@ -108,15 +117,107 @@ export default function SEO({
           "itemOffered": {
             "@type": "Service",
             "name": "Space Technology Solutions",
-            "description": "Innovative space exploration and technology solutions"
+            "description": "Innovative space technology and exploration services"
           }
         }
       ]
-    }
+    },
+    "areaServed": [
+      {
+        "@type": "Country",
+        "name": "United States"
+      },
+      {
+        "@type": "Country",
+        "name": "Canada"
+      },
+      {
+        "@type": "Country",
+        "name": "United Kingdom"
+      },
+      {
+        "@type": "Country",
+        "name": "European Union"
+      }
+    ],
+    "knowsAbout": [
+      "Artificial Intelligence",
+      "Machine Learning",
+      "Quantum Computing",
+      "Space Technology",
+      "Cloud Computing",
+      "Cybersecurity",
+      "Digital Transformation",
+      "Enterprise Solutions"
+    ]
   };
 
-  // Merge custom structured data with default
-  const finalStructuredData = structuredData || defaultStructuredData;
+  // Enhanced structured data for services
+  const serviceStructuredData = type === 'service' ? {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": title,
+    "description": description,
+    "provider": {
+      "@type": "Organization",
+      "name": "Zion Tech Group",
+      "url": "https://ziontechgroup.com"
+    },
+    "areaServed": {
+      "@type": "Country",
+      "name": "United States"
+    },
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Technology Services"
+    }
+  } : null;
+
+  // Breadcrumb structured data
+  const breadcrumbStructuredData = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://ziontechgroup.com"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": section || "Services",
+        "item": fullUrl
+      }
+    ]
+  };
+
+  // FAQ structured data for service pages
+  const faqStructuredData = type === 'service' ? {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What services does Zion Tech Group offer?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Zion Tech Group offers comprehensive technology solutions including AI, quantum computing, space technology, and enterprise IT services."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How can I get started with Zion Tech Group?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Contact us through our website or call +1-302-464-0950 to discuss your technology needs and get a customized solution."
+        }
+      }
+    ]
+  } : null;
+
+  const finalStructuredData = structuredData || [defaultStructuredData, serviceStructuredData, breadcrumbStructuredData, faqStructuredData].filter(Boolean);
 
   return (
     <Head>
@@ -131,35 +232,38 @@ export default function SEO({
       <link rel="canonical" href={fullUrl} />
       
       {/* Open Graph Meta Tags */}
-      <meta property="og:type" content={type} />
       <meta property="og:title" content={fullTitle} />
       <meta property="og:description" content={description} />
+      <meta property="og:type" content={type} />
       <meta property="og:url" content={fullUrl} />
       <meta property="og:image" content={fullImage} />
       <meta property="og:image:width" content="1200" />
       <meta property="og:image:height" content="630" />
-      <meta property="og:image:alt" content={fullTitle} />
       <meta property="og:site_name" content="Zion Tech Group" />
       <meta property="og:locale" content="en_US" />
       
-      {/* Twitter Card Meta Tags */}
-      <meta name="twitter:card" content="summary_large_image" />
-      <meta name="twitter:site" content="@ziontechgroup" />
-      <meta name="twitter:creator" content="@ziontechgroup" />
+      {/* Facebook Meta Tags */}
+      {facebookAppId && <meta property="fb:app_id" content={facebookAppId} />}
+      
+      {/* Twitter Meta Tags */}
+      <meta name="twitter:card" content={twitterCard} />
+      <meta name="twitter:site" content={twitterHandle} />
+      <meta name="twitter:creator" content={twitterHandle} />
       <meta name="twitter:title" content={fullTitle} />
       <meta name="twitter:description" content={description} />
       <meta name="twitter:image" content={fullImage} />
-      <meta name="twitter:image:alt" content={fullTitle} />
       
-      {/* Additional Open Graph Tags for Articles */}
+      {/* Additional Meta Tags */}
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <meta name="theme-color" content="#06b6d4" />
+      <meta name="msapplication-TileColor" content="#06b6d4" />
+      
+      {/* Article Meta Tags */}
       {type === 'article' && publishedTime && (
         <meta property="article:published_time" content={publishedTime} />
       )}
       {type === 'article' && modifiedTime && (
         <meta property="article:modified_time" content={modifiedTime} />
-      )}
-      {type === 'article' && section && (
-        <meta property="article:section" content={section} />
       )}
       {type === 'article' && tags.length > 0 && (
         tags.map((tag, index) => (
@@ -167,24 +271,12 @@ export default function SEO({
         ))
       )}
       
-      {/* Viewport and Mobile Optimization */}
-      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-      <meta name="theme-color" content="#000000" />
-      <meta name="msapplication-TileColor" content="#000000" />
-      
-      {/* Favicon and App Icons */}
-      <link rel="icon" href="/favicon.ico" />
-      <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-      <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
-      <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
-      <link rel="manifest" href="/site.webmanifest" />
-      
-      {/* Preconnect to External Domains */}
+      {/* Preconnect to external domains for performance */}
       <link rel="preconnect" href="https://fonts.googleapis.com" />
       <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
       <link rel="preconnect" href="https://www.google-analytics.com" />
       
-      {/* DNS Prefetch */}
+      {/* DNS Prefetch for performance */}
       <link rel="dns-prefetch" href="//www.google-analytics.com" />
       <link rel="dns-prefetch" href="//fonts.googleapis.com" />
       
@@ -196,42 +288,22 @@ export default function SEO({
         }}
       />
       
-      {/* Additional Meta Tags for SEO */}
+      {/* Additional SEO Meta Tags */}
       <meta name="application-name" content="Zion Tech Group" />
       <meta name="apple-mobile-web-app-title" content="Zion Tech Group" />
       <meta name="apple-mobile-web-app-capable" content="yes" />
-      <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+      <meta name="apple-mobile-web-app-status-bar-style" content="default" />
       
-      {/* Security Headers */}
+      {/* Mobile Meta Tags */}
+      <meta name="format-detection" content="telephone=no" />
+      <meta name="mobile-web-app-capable" content="yes" />
+      
+      {/* Security Meta Tags */}
       <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
       <meta name="referrer" content="strict-origin-when-cross-origin" />
       
-      {/* Performance Optimization */}
-      <link rel="preload" href="/fonts/inter-var.woff2" as="font" type="font/woff2" crossOrigin="anonymous" />
-      
-      {/* Social Media Verification */}
-      <meta name="google-site-verification" content="your-google-verification-code" />
-      <meta name="msvalidate.01" content="your-bing-verification-code" />
-      
-      {/* Additional SEO Meta Tags */}
-      <meta name="geo.region" content="US-DE" />
-      <meta name="geo.placename" content="Middletown, Delaware" />
-      <meta name="geo.position" content="39.4496;-75.7163" />
-      <meta name="ICBM" content="39.4496, -75.7163" />
-      
-      {/* Business Information */}
-      <meta name="business:contact_data:street_address" content="364 E Main St STE 1008" />
-      <meta name="business:contact_data:locality" content="Middletown" />
-      <meta name="business:contact_data:region" content="DE" />
-      <meta name="business:contact_data:postal_code" content="19709" />
-      <meta name="business:contact_data:country_name" content="United States" />
-      <meta name="business:contact_data:phone_number" content="+1-302-464-0950" />
-      <meta name="business:contact_data:email" content="kleber@ziontechgroup.com" />
-      
-      {/* Service Information */}
-      <meta name="service:name" content="Technology Consulting and Solutions" />
-      <meta name="service:type" content="Professional Services" />
-      <meta name="service:area" content="AI, Quantum Computing, Space Technology, Enterprise Solutions" />
+      {/* Performance Meta Tags */}
+      <meta httpEquiv="Accept-CH" content="DPR, Viewport-Width, Width" />
     </Head>
   );
 }
