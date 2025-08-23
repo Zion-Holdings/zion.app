@@ -73,6 +73,7 @@ interface NavigationItem {
   featured?: boolean;
   neonColor?: string;
   category?: string;
+  color?: string;
 }
 
 // Enhanced navigation items with better organization
@@ -339,7 +340,7 @@ const navigationItems: NavigationItem[] = [
     ]
   },
   {
-    name: 'Company',
+    label: 'Company',
     href: '/about',
     icon: <Building className="w-5 h-5" />,
     description: 'About Zion Tech Group',
@@ -348,35 +349,35 @@ const navigationItems: NavigationItem[] = [
     color: 'from-gray-500 to-slate-500',
     children: [
       { 
-        name: 'About Us', 
+        label: 'About Us', 
         href: '/about', 
         description: 'Learn about our mission and values',
         icon: <Users className="w-4 h-4" />,
         featured: true
       },
       { 
-        name: 'Our Team', 
+        label: 'Our Team', 
         href: '/team', 
         description: 'Meet our leadership team',
         icon: <Users className="w-4 h-4" />,
         color: 'from-blue-500 to-cyan-500'
       },
       { 
-        name: 'Careers', 
+        label: 'Careers', 
         href: '/careers', 
         description: 'Join our innovative team',
         icon: <Briefcase className="w-4 h-4" />,
         color: 'from-emerald-500 to-teal-500'
       },
       { 
-        name: 'News & Blog', 
+        label: 'News & Blog', 
         href: '/blog', 
         description: 'Latest insights and updates',
         icon: <Newspaper className="w-4 h-4" />,
         color: 'from-purple-500 to-pink-500'
       },
       { 
-        name: 'Case Studies', 
+        label: 'Case Studies', 
         href: '/case-studies', 
         description: 'Success stories from our clients',
         icon: <FileText className="w-4 h-4" />,
