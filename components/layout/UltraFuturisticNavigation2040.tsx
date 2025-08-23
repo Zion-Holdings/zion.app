@@ -86,6 +86,14 @@ const navigationItems: NavigationItem[] = [
         description: 'Neural interface technology',
         icon: <Brain className="w-4 h-4" />,
         color: 'from-pink-500 to-purple-500'
+      },
+      { 
+        name: 'Revolutionary 2044 Services', 
+        href: '/revolutionary-2044-services-showcase', 
+        description: 'Future-defining 2044 technology',
+        icon: <Rocket className="w-4 h-4" />,
+        color: 'from-purple-500 to-pink-500',
+        featured: true
       }
     ]
   },

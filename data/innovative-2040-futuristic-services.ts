@@ -5,9 +5,13 @@ export interface Innovative2040FuturisticService {
   description: string;
   category: string;
   price: string;
+  period?: string;
   features: string[];
   benefits: string[];
   link: string;
+  color?: string;
+  icon?: string;
+  popular?: boolean;
   contactInfo: {
     phone: string;
     email: string;
@@ -27,7 +31,11 @@ export const innovative2040FuturisticServices: Innovative2040FuturisticService[]
     tagline: 'Revolutionary brain-computer interface powered by quantum AI',
     description: 'Advanced neural interface technology that enables direct communication between human consciousness and quantum AI systems, opening new frontiers in human-computer interaction.',
     category: 'AI & Consciousness',
-    price: '$15,000/month',
+    price: '$15,000',
+    period: '/month',
+    color: 'from-purple-500 to-pink-500',
+    icon: '🧠',
+    popular: true,
     features: [
       'Quantum-enhanced neural signal processing',
       'Real-time consciousness-AI synchronization',
@@ -59,7 +67,11 @@ export const innovative2040FuturisticServices: Innovative2040FuturisticService[]
     tagline: 'Immersive 3D workspace powered by quantum computing',
     description: 'Next-generation collaborative workspace that combines holographic displays with quantum computing power for unprecedented productivity and creativity.',
     category: 'Quantum & Emerging Tech',
-    price: '$8,500/month',
+    price: '$8,500',
+    period: '/month',
+    color: 'from-blue-500 to-cyan-500',
+    icon: '🌐',
+    popular: true,
     features: [
       'True 3D holographic displays',
       'Quantum-powered real-time rendering',
@@ -91,7 +103,9 @@ export const innovative2040FuturisticServices: Innovative2040FuturisticService[]
     tagline: 'Predict the future with unprecedented accuracy',
     description: 'Advanced AI system that analyzes temporal patterns and predicts future events with remarkable precision across multiple domains.',
     category: 'AI & Machine Learning',
-    price: '$12,000/month',
+    price: '$12,000',
+    period: '/month',
+    popular: true,
     features: [
       'Multi-dimensional time analysis',
       'Quantum-enhanced prediction algorithms',
