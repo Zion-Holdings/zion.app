@@ -70,6 +70,9 @@ start_system() {
     
     # Check if PM2 is installed
     if ! command -v pm2 &> /dev/null; then
+<<<<<<< HEAD
+        error "PM2 is not installed. Please install it first: npm install -g pm2"
+=======
         warn "PM2 is not installed. Installing PM2 globally..."
         npm install -g pm2
     fi
@@ -118,6 +121,7 @@ init_github_redundancy() {
     # Check if backup workflows exist
     if [ ! -f ".github/workflows/marketing-sync-backup.yml" ]; then
         error "GitHub Actions backup workflows not found. Please ensure they are created first."
+>>>>>>> origin/cursor/automate-automation-redundancy-and-build-improvement-4a85
         return 1
     fi
     
@@ -265,6 +269,9 @@ show_help() {
     echo "Logs are written to: $LOG_DIR/comprehensive-redundancy.log"
 }
 
+<<<<<<< HEAD
+# Main script logic
+=======
 # Health check function
 health_check() {
     log "Performing comprehensive health check..."
@@ -295,6 +302,7 @@ health_check() {
 }
 
 # Handle script arguments
+>>>>>>> origin/cursor/automate-automation-redundancy-and-build-improvement-4a85
 case "${1:-start}" in
     start)
         start_system
@@ -302,6 +310,19 @@ case "${1:-start}" in
     stop)
         stop_system
         ;;
+<<<<<<< HEAD
+    restart)
+        restart_system
+        ;;
+    status)
+        show_status
+        ;;
+    logs)
+        show_logs
+        ;;
+    help|--help|-h)
+        show_help
+=======
     "check")
         health_check
         ;;
@@ -319,6 +340,7 @@ case "${1:-start}" in
         echo "  health - Run comprehensive health check"
         echo "  report - Generate redundancy system report"
         echo "  help   - Show this help message"
+>>>>>>> origin/cursor/automate-automation-redundancy-and-build-improvement-4a85
         ;;
     *)
         error "Unknown command: $1"
