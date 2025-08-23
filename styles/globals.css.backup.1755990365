@@ -2,6 +2,61 @@
 @tailwind components;
 @tailwind utilities;
 
+<<<<<<< HEAD
+/* Import accessibility enhancements */
+@import './accessibility.css';
+
+/* Custom CSS Variables */
+:root {
+  --primary-cyan: #06b6d4;
+  --primary-blue: #3b82f6;
+  --primary-purple: #8b5cf6;
+  --accent-green: #10b981;
+  --accent-pink: #ec4899;
+  --text-primary: #ffffff;
+  --text-secondary: #d1d5db;
+  --text-muted: #9ca3af;
+  --bg-primary: #000000;
+  --bg-secondary: #111827;
+  --bg-accent: #1f2937;
+  --border-primary: #374151;
+  --border-accent: #06b6d4;
+}
+
+/* Base Styles */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  line-height: 1.6;
+  color: #ffffff;
+  background-color: #000000;
+  overflow-x: hidden;
+}
+
+/* Custom Animations */
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slide-in-left {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+=======
 /* Import modern fonts */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
 
@@ -116,6 +171,7 @@
   /* Hover effects */
   .hover-lift {
     @apply hover:transform hover:scale-105 hover:shadow-lg transition-all duration-200;
+>>>>>>> origin/cursor/bc-3b39ce21-390e-4be8-b543-94ce23e119f2-8ade
   }
 }
 
@@ -297,16 +353,28 @@
 }
 
 ::-webkit-scrollbar-track {
+<<<<<<< HEAD
+  background: rgba(255, 255, 255, 0.1);
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(135deg, var(--primary-cyan), var(--primary-blue));
+=======
   background: #f1f5f9;
 }
 
 ::-webkit-scrollbar-thumb {
   background: #cbd5e1;
+>>>>>>> origin/cursor/bc-3b39ce21-390e-4be8-b543-94ce23e119f2-8ade
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
+<<<<<<< HEAD
+  background: linear-gradient(135deg, var(--primary-blue), var(--primary-purple));
+=======
   background: #94a3b8;
+>>>>>>> origin/cursor/bc-3b39ce21-390e-4be8-b543-94ce23e119f2-8ade
 }
 
 /* Focus Styles */
@@ -527,10 +595,15 @@
   outline-offset: 2px;
 }
 
+<<<<<<< HEAD
+*:focus:not(:focus-visible) {
+  outline: none;
+=======
 /* Selection styles */
 ::selection {
   background-color: #dbeafe;
   color: #1e40af;
+>>>>>>> origin/cursor/bc-3b39ce21-390e-4be8-b543-94ce23e119f2-8ade
 }
 
 *:focus-visible {
@@ -784,6 +857,137 @@
   }
 }
 
+<<<<<<< HEAD
+/* Dark Mode Support (if user prefers) */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg-primary: #000000;
+    --bg-secondary: #111827;
+  }
+}
+
+/* Light Mode Support (if user prefers) */
+@media (prefers-color-scheme: light) {
+  :root {
+    --bg-primary: #ffffff;
+    --bg-secondary: #f3f4f6;
+    --text-primary: #000000;
+    --text-secondary: #374151;
+    --text-muted: #6b7280;
+  }
+}
+
+/* Reduced Motion Support */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* High Contrast Support */
+@media (prefers-contrast: high) {
+  :root {
+    --border-primary: #ffffff;
+    --border-accent: #ffff00;
+  }
+  
+  * {
+    border-width: 2px !important;
+  }
+}
+
+/* Safe margins for zoom animations - prevents content from going off-screen */
+main > * {
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
+
+@media (min-width: 640px) {
+  main > * {
+    margin-left: 1.5rem;
+    margin-right: 1.5rem;
+  }
+}
+
+@media (min-width: 768px) {
+  main > * {
+    margin-left: 2rem;
+    margin-right: 2rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  main > * {
+    margin-left: 3rem;
+    margin-right: 3rem;
+  }
+}
+
+@media (min-width: 1280px) {
+  main > * {
+    margin-left: 4rem;
+    margin-right: 4rem;
+  }
+}
+
+@media (min-width: 1536px) {
+  main > * {
+    margin-left: 5rem;
+    margin-right: 5rem;
+  }
+}
+
+/* Ensure zoom animations don't overflow */
+* {
+  transform-origin: center center;
+}
+
+/* Safe container for pages with existing containers */
+.page-container {
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
+
+@media (min-width: 640px) {
+  .page-container {
+    margin-left: 1.5rem;
+    margin-right: 1.5rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .page-container {
+    margin-left: 2rem;
+    margin-right: 2rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .page-container {
+    margin-left: 3rem;
+    margin-right: 3rem;
+  }
+}
+
+@media (min-width: 1280px) {
+  .page-container {
+    margin-left: 4rem;
+    margin-right: 4rem;
+  }
+}
+
+@media (min-width: 1536px) {
+  .page-container {
+    margin-left: 5rem;
+    margin-right: 5rem;
+  }
+}
+=======
 /* Dark mode support */
 @media (prefers-color-scheme: dark) {
   body {
@@ -791,3 +995,4 @@
     background-color: #111827;
   }
 }
+>>>>>>> origin/cursor/bc-3b39ce21-390e-4be8-b543-94ce23e119f2-8ade
