@@ -3,6 +3,16 @@ import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { motion, AnimatePresence } from 'framer-motion';
 import { 
+<<<<<<< HEAD
+  Menu, ChevronDown, X, Phone, Mail, MapPin, ArrowRight,
+  Brain, Rocket, Target, Atom, Shield,
+  DollarSign, BarChart3, Globe, Star, Sparkles, 
+  Grid, List, TrendingUp, 
+  Calendar, Calculator, GraduationCap,
+  Cpu, Cloud, Settings, Monitor, Palette, Network, Layers, Code, Heart, ShoppingCart, Clock, MessageCircle, HelpCircle, Building,
+  Zap, Infinity, Eye, Heart as HeartIcon, Code as CodeIcon, Palette as PaletteIcon,
+  BookOpen, FileText, Handshake, Users, Lock, Database, Server, Key, Search, Zap as ZapIcon
+=======
   Menu, ChevronDown, X, Phone, Mail, ArrowRight,
   Brain, Rocket, Atom, Shield,
   BarChart3, Globe, 
@@ -10,6 +20,7 @@ import {
   Cpu, Cloud, Monitor, Network, Heart, HelpCircle, Building,
   Zap, Heart as HeartIcon, Code as CodeIcon, Palette as PaletteIcon,
   Users, BookOpen, FileText, Video
+>>>>>>> origin/cursor/website-audit-content-update-and-deployment-e860
 } from 'lucide-react';
 
 interface NavigationItem {
@@ -492,6 +503,38 @@ const navigationItems: NavigationItem[] = [
     category: 'it',
     color: 'from-orange-500 to-red-500',
     children: [
+<<<<<<< HEAD
+      {
+        label: 'Data Analytics',
+        href: '/data-analytics',
+        icon: <BarChart3 className="w-4 h-4" />,
+        description: 'Advanced analytics and insights'
+      },
+      {
+        name: 'AI-Powered DevOps Automation',
+        href: '/ai-powered-devops-automation',
+        description: 'Intelligent DevOps automation',
+        icon: <ZapIcon className="w-4 h-4" />,
+        featured: true
+      },
+      {
+        name: 'Zero-Trust Network Architecture',
+        href: '/zero-trust-network-architecture',
+        description: 'Comprehensive zero-trust security',
+        icon: <Lock className="w-4 h-4" />
+      },
+      {
+        name: 'Edge Computing Orchestration',
+        href: '/edge-computing-orchestration',
+        description: 'Intelligent edge computing management',
+        icon: <Network className="w-4 h-4" />
+      },
+      {
+        name: 'Blockchain Infrastructure Platform',
+        href: '/blockchain-infrastructure-platform',
+        description: 'Enterprise-grade blockchain infrastructure',
+        icon: <Database className="w-4 h-4" />
+=======
       { 
         name: 'All IT Services', 
         href: '/it-services', 
@@ -528,6 +571,7 @@ const navigationItems: NavigationItem[] = [
         href: '/ai-predictive-maintenance-2041', 
         description: 'Consciousness-based maintenance',
         icon: <Monitor className="w-4 h-4" />
+>>>>>>> origin/cursor/website-audit-content-update-and-deployment-e860
       }
     ]
   },

@@ -1,3 +1,28 @@
+<<<<<<< HEAD
+import React, { useEffect } from 'react';
+
+interface AnalyticsTrackerProps {
+  trackingId?: string;
+  enableTracking?: boolean;
+}
+
+const AnalyticsTracker: React.FC<AnalyticsTrackerProps> = ({ 
+  trackingId = 'zion-tech-group',
+  enableTracking = true 
+}) => {
+  useEffect(() => {
+    if (!enableTracking) return;
+
+    // Basic page view tracking
+    const trackPageView = () => {
+      // Send page view to analytics service
+      console.log(`[Analytics] Page view: ${window.location.pathname}`);
+      
+      // You can integrate with Google Analytics, Mixpanel, or other services here
+      if (typeof window !== 'undefined' && (window as any).gtag) {
+        (window as any).gtag('config', trackingId, {
+          page_path: window.location.pathname,
+=======
 
 import React, { useEffect, useCallback } from 'react';
 
@@ -113,6 +138,7 @@ const AnalyticsTracker: React.FC<AnalyticsTrackerProps> = ({
         trackCustomEvent('scroll_depth', {
           scroll_percentage: scrollDepth,
           page_location: window.location.href
+>>>>>>> origin/cursor/website-audit-content-update-and-deployment-e860
         });
       }
     };

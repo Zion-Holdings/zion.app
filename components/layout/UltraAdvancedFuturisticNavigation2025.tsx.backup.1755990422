@@ -1,4 +1,9 @@
+<<<<<<< HEAD
+import React, { useState, useEffect } from 'react';
+import Link from 'next/link';
+=======
 import React, { useState, useEffect, useRef } from 'react';
+>>>>>>> origin/cursor/website-audit-content-update-and-deployment-e860
 import { motion, AnimatePresence } from 'framer-motion';
 import { 
   Menu, ChevronDown, X, Phone, Mail, MapPin, ArrowRight,
@@ -232,6 +237,12 @@ const UltraAdvancedFuturisticNavigation2025: React.FC = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+<<<<<<< HEAD
+  const toggleDropdown = (name: string) => {
+    setActiveDropdown(activeDropdown === name ? null : name);
+  };
+
+=======
   // Handle click outside search
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
@@ -263,6 +274,7 @@ const UltraAdvancedFuturisticNavigation2025: React.FC = () => {
   }, [router.asPath]);
 
   // Handle search submission
+>>>>>>> origin/cursor/website-audit-content-update-and-deployment-e860
   const handleSearch = (e: React.FormEvent) => {
     e.preventDefault();
     if (searchQuery.trim()) {

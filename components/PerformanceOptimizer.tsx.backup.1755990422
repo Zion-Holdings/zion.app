@@ -1,4 +1,7 @@
+<<<<<<< HEAD
+=======
 
+>>>>>>> origin/cursor/website-audit-content-update-and-deployment-e860
 import React, { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 
@@ -11,6 +14,9 @@ interface PerformanceOptimizerProps {
 
 interface FirstInputEntry extends PerformanceEntry {
   processingStart: number;
+<<<<<<< HEAD
+  startTime: number;
+=======
   processingEnd: number;
   target?: unknown;
 }
@@ -22,6 +28,7 @@ declare global {
       usedJSHeapSize: number;
     };
   }
+>>>>>>> origin/cursor/website-audit-content-update-and-deployment-e860
 }
 
 interface LayoutShiftEntry extends PerformanceEntry {
@@ -55,6 +62,16 @@ const PerformanceOptimizer: React.FC<PerformanceOptimizerProps> = ({
 
   // Measure performance metrics
   useEffect(() => {
+<<<<<<< HEAD
+    if (!enableMonitoring) return;
+
+    const measurePerformance = () => {
+      if (typeof window !== 'undefined' && 'performance' in window) {
+        const navigation = performance.getEntriesByType('navigation')[0] as PerformanceNavigationTiming;
+        if (navigation) {
+          setMetrics(prev => ({ ...prev, ttfb: navigation.responseStart - navigation.requestStart }));
+        }
+=======
     const startTime = performance.now();
     
     // Simulate performance monitoring
@@ -74,6 +91,7 @@ const PerformanceOptimizer: React.FC<PerformanceOptimizerProps> = ({
           loadTime: Math.round(loadTime),
           networkRequests: 0
         });
+>>>>>>> origin/cursor/website-audit-content-update-and-deployment-e860
       }
     };
 
