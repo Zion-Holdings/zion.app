@@ -563,12 +563,12 @@ export default function HomePage() {
             </div>
           </section>
 
-          {/* Project Documentation & Resources */}
+          {/* Key Pages & Resources */}
           <section className="mx-auto max-w-7xl px-6 pb-16">
-            <h2 className="text-center text-4xl font-bold tracking-wide text-white/90 mb-12">📚 Project Documentation & Resources</h2>
+            <h2 className="text-center text-4xl font-bold tracking-wide text-white/90 mb-12">📚 Explore Key Pages & Resources</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               <div className="bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl rounded-2xl p-6 border border-white/20">
-                <h3 className="text-xl font-bold text-blue-400 mb-4 text-center">📖 Core Documentation</h3>
+                <h3 className="text-xl font-bold text-blue-400 mb-4 text-center">📖 Company & Platform</h3>
                 <ul className="text-white/80 text-sm space-y-2 mb-4">
                   <li>• <Link href="https://github.com/Zion-Holdings/zion.app/blob/main/README.md" className="text-blue-400 hover:text-blue-300">Main README</Link> - Project overview</li>
                   <li>• <Link href="https://github.com/Zion-Holdings/zion.app/blob/main/ARCHITECTURE.md" className="text-blue-400 hover:text-blue-300">Architecture Guide</Link> - System design</li>
@@ -579,7 +579,7 @@ export default function HomePage() {
               </div>
 
               <div className="bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl rounded-2xl p-6 border border-white/20">
-                <h3 className="text-xl font-bold text-purple-400 mb-4 text-center">🔧 Automation Guides</h3>
+                <h3 className="text-xl font-bold text-purple-400 mb-4 text-center">🧠 Resources & Insights</h3>
                 <ul className="text-white/80 text-sm space-y-2 mb-4">
                   <li>• <Link href="https://github.com/Zion-Holdings/zion.app/blob/main/README_ULTIMATE_REDUNDANCY.md" className="text-purple-400 hover:text-purple-300">Ultimate Redundancy</Link> - System overview</li>
                   <li>• <Link href="https://github.com/Zion-Holdings/zion.app/blob/main/README_COMPREHENSIVE_REDUNDANCY.md" className="text-purple-400 hover:text-purple-300">Comprehensive Redundancy</Link> - Advanced features</li>
