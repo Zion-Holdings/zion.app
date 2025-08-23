@@ -6,237 +6,246 @@ import {
   Code, 
   Key, 
   Database, 
-  Globe, 
   Zap,
-  ArrowRight,
   Copy,
-  Check,
   ExternalLink,
-  Star,
-  Clock,
-  Users,
+  ChevronRight,
+  ChevronDown,
+  Play,
+  Download,
+  BookOpen,
+  Terminal,
+  Shield,
   Brain,
   Atom,
   Rocket,
-  Shield,
-  Terminal,
-  GitBranch,
-  Package,
+  Cloud,
+  Users,
+  Settings,
+  HelpCircle,
   MessageCircle,
-  BookOpen
+  Star,
+  Clock,
+  GitBranch
 } from 'lucide-react';
 
 const APIDocumentationPage: React.FC = () => {
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedAPI, setSelectedAPI] = useState('all');
-  const [copiedEndpoint, setCopiedEndpoint] = useState<string | null>(null);
+  const [expandedEndpoints, setExpandedEndpoints] = useState<string[]>(['authentication']);
 
   const apis = [
-    { id: 'all', name: 'All APIs', count: 45 },
-    { id: 'ai-consciousness', name: 'AI Consciousness', count: 15 },
-    { id: 'quantum-computing', name: 'Quantum Computing', count: 12 },
-    { id: 'space-technology', name: 'Space Technology', count: 8 },
-    { id: 'cybersecurity', name: 'Cybersecurity', count: 10 }
-  ];
-
-  const featuredAPIs = [
-    {
-      id: 1,
-      title: 'AI Consciousness API',
-      category: 'ai-consciousness',
-      description: 'Build AI systems with true consciousness and emotional intelligence. Includes neural network training, consciousness modeling, and ethical AI frameworks.',
-      version: 'v2.1.0',
-      status: 'Stable',
-      endpoints: 45,
-      documentation: 'Complete',
-      icon: Brain,
-      color: 'from-purple-500 to-pink-500',
-      features: [
-        'Consciousness modeling',
-        'Emotional intelligence',
-        'Ethical AI frameworks',
-        'Neural network training'
-      ]
-    },
-    {
-      id: 2,
-      title: 'Quantum Computing API',
-      category: 'quantum-computing',
-      description: 'Access quantum computing resources for complex calculations, cryptography, and optimization problems. Supports multiple quantum backends.',
-      version: 'v1.8.0',
-      status: 'Beta',
-      endpoints: 32,
-      documentation: 'Complete',
-      icon: Atom,
-      color: 'from-blue-500 to-cyan-500',
-      features: [
-        'Quantum algorithm execution',
-        'Multiple quantum backends',
-        'Quantum cryptography',
-        'Optimization algorithms'
-      ]
-    },
-    {
-      id: 3,
-      title: 'Space Resource Intelligence API',
-      category: 'space-technology',
-      description: 'Analyze satellite data, identify space resources, and process astronomical information for mining and exploration applications.',
-      version: 'v1.5.0',
-      status: 'Stable',
-      endpoints: 28,
-      documentation: 'Complete',
-      icon: Rocket,
-      color: 'from-indigo-500 to-purple-500',
-      features: [
-        'Satellite data processing',
-        'Resource identification',
-        'Astronomical analysis',
-        'Mining applications'
-      ]
-    }
+    { id: 'all', name: 'All APIs', count: 80 },
+    { id: 'ai-consciousness', name: 'AI Consciousness', count: 25 },
+    { id: 'quantum-computing', name: 'Quantum Computing', count: 18 },
+    { id: 'space-technology', name: 'Space Technology', count: 15 },
+    { id: 'cybersecurity', name: 'Cybersecurity', count: 22 }
   ];
 
   const apiEndpoints = [
     {
-      id: 1,
-      name: 'POST /api/v2/ai/consciousness/create',
-      description: 'Create a new AI consciousness instance with specified parameters and ethical frameworks.',
-      category: 'ai-consciousness',
-      method: 'POST',
-      path: '/api/v2/ai/consciousness/create',
-      parameters: [
-        { name: 'name', type: 'string', required: true, description: 'Name of the consciousness instance' },
-        { name: 'model_type', type: 'string', required: true, description: 'Type of consciousness model to use' },
-        { name: 'ethical_framework', type: 'object', required: false, description: 'Ethical guidelines and constraints' }
-      ],
-      responses: [
-        { code: 200, description: 'Consciousness instance created successfully' },
-        { code: 400, description: 'Invalid parameters provided' },
-        { code: 401, description: 'Authentication required' }
-      ],
-      example: {
-        request: `{
-  "name": "Eva",
-  "model_type": "advanced_consciousness_v2",
-  "ethical_framework": {
-    "privacy": "strict",
-    "transparency": "high",
-    "bias_prevention": true
-  }
-}`,
-        response: `{
-  "id": "cons_12345",
-  "name": "Eva",
-  "status": "initializing",
-  "created_at": "2025-01-15T10:30:00Z",
-  "estimated_ready_time": "2025-01-15T10:35:00Z"
-}`
-      }
+      id: 'authentication',
+      title: 'Authentication',
+      description: 'Secure your API requests with authentication tokens',
+      icon: Key,
+      color: 'from-green-500 to-emerald-500',
+      endpoints: [
+        {
+          method: 'POST',
+          path: '/auth/login',
+          description: 'Authenticate and receive access token',
+          parameters: [
+            { name: 'email', type: 'string', required: true, description: 'User email address' },
+            { name: 'password', type: 'string', required: true, description: 'User password' }
+          ],
+          responses: [
+            { code: 200, description: 'Authentication successful', example: '{ "token": "jwt_token", "expires": "2025-12-31T23:59:59Z" }' },
+            { code: 401, description: 'Invalid credentials', example: '{ "error": "Invalid email or password" }' }
+          ]
+        },
+        {
+          method: 'POST',
+          path: '/auth/refresh',
+          description: 'Refresh expired access token',
+          parameters: [
+            { name: 'refresh_token', type: 'string', required: true, description: 'Valid refresh token' }
+          ],
+          responses: [
+            { code: 200, description: 'Token refreshed successfully', example: '{ "token": "new_jwt_token", "expires": "2025-12-31T23:59:59Z" }' },
+            { code: 401, description: 'Invalid refresh token', example: '{ "error": "Invalid refresh token" }' }
+          ]
+        }
+      ]
     },
     {
-      id: 2,
-      name: 'GET /api/v1/quantum/execute',
-      description: 'Execute a quantum algorithm on available quantum hardware with specified parameters.',
-      category: 'quantum-computing',
-      method: 'GET',
-      path: '/api/v1/quantum/execute',
-      parameters: [
-        { name: 'algorithm', type: 'string', required: true, description: 'Quantum algorithm to execute' },
-        { name: 'qubits', type: 'integer', required: true, description: 'Number of qubits required' },
-        { name: 'backend', type: 'string', required: false, description: 'Preferred quantum backend' }
-      ],
-      responses: [
-        { code: 200, description: 'Algorithm executed successfully' },
-        { code: 400, description: 'Invalid algorithm or parameters' },
-        { code: 503, description: 'Quantum hardware unavailable' }
-      ],
-      example: {
-        request: `{
-  "algorithm": "grover_search",
-  "qubits": 8,
-  "backend": "ibm_quantum"
-}`,
-        response: `{
-  "job_id": "qjob_67890",
-  "status": "running",
-  "estimated_completion": "2025-01-15T10:32:00Z",
-  "backend": "ibm_quantum"
-}`
-      }
+      id: 'ai-consciousness',
+      title: 'AI Consciousness API',
+      description: 'Build conscious AI systems with advanced neural networks',
+      icon: Brain,
+      color: 'from-purple-500 to-pink-500',
+      endpoints: [
+        {
+          method: 'POST',
+          path: '/ai/consciousness/create',
+          description: 'Create a new conscious AI agent',
+          parameters: [
+            { name: 'name', type: 'string', required: true, description: 'Agent name' },
+            { name: 'personality', type: 'string', required: true, description: 'Agent personality traits' },
+            { name: 'consciousness_level', type: 'string', required: true, description: 'Consciousness level (basic, advanced, expert)' },
+            { name: 'memory_capacity', type: 'integer', required: false, description: 'Memory capacity in MB' }
+          ],
+          responses: [
+            { code: 201, description: 'Agent created successfully', example: '{ "agent_id": "agent_123", "status": "active", "consciousness_score": 0.85 }' },
+            { code: 400, description: 'Invalid parameters', example: '{ "error": "Invalid consciousness level" }' }
+          ]
+        },
+        {
+          method: 'POST',
+          path: '/ai/consciousness/chat',
+          description: 'Interact with a conscious AI agent',
+          parameters: [
+            { name: 'agent_id', type: 'string', required: true, description: 'Target agent ID' },
+            { name: 'message', type: 'string', required: true, description: 'User message' },
+            { name: 'context', type: 'object', required: false, description: 'Conversation context' }
+          ],
+          responses: [
+            { code: 200, description: 'Response received', example: '{ "response": "Hello! How can I help you today?", "consciousness_state": "engaged", "memory_usage": 0.23 }' },
+            { code: 404, description: 'Agent not found', example: '{ "error": "Agent not found" }' }
+          ]
+        }
+      ]
     },
     {
-      id: 3,
-      name: 'POST /api/v1/space/analyze',
-      description: 'Analyze satellite data for resource identification and mining potential assessment.',
-      category: 'space-technology',
-      method: 'POST',
-      path: '/api/v1/space/analyze',
-      parameters: [
-        { name: 'satellite_data', type: 'object', required: true, description: 'Satellite imagery and sensor data' },
-        { name: 'analysis_type', type: 'string', required: true, description: 'Type of analysis to perform' },
-        { name: 'coordinates', type: 'object', required: true, description: 'Geographic coordinates for analysis' }
-      ],
-      responses: [
-        { code: 200, description: 'Analysis completed successfully' },
-        { code: 400, description: 'Invalid data format' },
-        { code: 422, description: 'Coordinates out of range' }
-      ],
-      example: {
-        request: `{
-  "satellite_data": {
-    "imagery": "base64_encoded_data",
-    "sensors": ["spectral", "thermal", "radar"]
-  },
-  "analysis_type": "resource_identification",
-  "coordinates": {
-    "latitude": 45.5231,
-    "longitude": -122.6765
-  }
-}`,
-        response: `{
-  "analysis_id": "space_11111",
-  "status": "completed",
-  "resources_found": ["iron", "nickel", "platinum"],
-  "confidence_score": 0.87,
-  "mining_potential": "high"
-}`
-      }
+      id: 'quantum-computing',
+      title: 'Quantum Computing API',
+      description: 'Execute quantum algorithms and quantum machine learning',
+      icon: Atom,
+      color: 'from-blue-500 to-cyan-500',
+      endpoints: [
+        {
+          method: 'POST',
+          path: '/quantum/execute',
+          description: 'Execute a quantum algorithm',
+          parameters: [
+            { name: 'algorithm', type: 'string', required: true, description: 'Algorithm name (grover, shor, qft)' },
+            { name: 'qubits', type: 'integer', required: true, description: 'Number of qubits' },
+            { name: 'iterations', type: 'integer', required: false, description: 'Number of iterations' }
+          ],
+          responses: [
+            { code: 200, description: 'Algorithm executed successfully', example: '{ "result": "0101", "probability": 0.85, "execution_time": "2.3s" }' },
+            { code: 400, description: 'Invalid algorithm', example: '{ "error": "Algorithm not supported" }' }
+          ]
+        },
+        {
+          method: 'POST',
+          path: '/quantum/ml/train',
+          description: 'Train a quantum machine learning model',
+          parameters: [
+            { name: 'model_type', type: 'string', required: true, description: 'Model type (qnn, qsvm, qkmeans)' },
+            { name: 'training_data', type: 'array', required: true, description: 'Training dataset' },
+            { name: 'hyperparameters', type: 'object', required: false, description: 'Model hyperparameters' }
+          ],
+          responses: [
+            { code: 200, description: 'Model trained successfully', example: '{ "model_id": "qml_456", "accuracy": 0.92, "training_time": "15.2s" }' },
+            { code: 400, description: 'Invalid training data', example: '{ "error": "Invalid data format" }' }
+          ]
+        }
+      ]
+    },
+    {
+      id: 'space-technology',
+      title: 'Space Technology API',
+      description: 'Access space resource intelligence and satellite data',
+      icon: Rocket,
+      color: 'from-orange-500 to-red-500',
+      endpoints: [
+        {
+          method: 'GET',
+          path: '/space/resources/analyze',
+          description: 'Analyze space resources in a specific region',
+          parameters: [
+            { name: 'coordinates', type: 'object', required: true, description: 'Latitude and longitude' },
+            { name: 'radius', type: 'integer', required: false, description: 'Analysis radius in km' },
+            { name: 'resource_type', type: 'string', required: false, description: 'Type of resource to analyze' }
+          ],
+          responses: [
+            { code: 200, description: 'Analysis completed', example: '{ "resources": [...], "abundance_score": 0.78, "mining_potential": "high" }' },
+            { code: 400, description: 'Invalid coordinates', example: '{ "error": "Invalid coordinate format" }' }
+          ]
+        },
+        {
+          method: 'POST',
+          path: '/space/satellite/command',
+          description: 'Send commands to satellite systems',
+          parameters: [
+            { name: 'satellite_id', type: 'string', required: true, description: 'Target satellite ID' },
+            { name: 'command', type: 'string', required: true, description: 'Command to execute' },
+            { name: 'parameters', type: 'object', required: false, description: 'Command parameters' }
+          ],
+          responses: [
+            { code: 200, description: 'Command executed successfully', example: '{ "status": "executed", "response_time": "1.2s", "confirmation": "command_ack" }' },
+            { code: 404, description: 'Satellite not found', example: '{ "error": "Satellite not found" }' }
+          ]
+        }
+      ]
+    },
+    {
+      id: 'cybersecurity',
+      title: 'Cybersecurity API',
+      description: 'Implement zero trust security and threat detection',
+      icon: Shield,
+      color: 'from-red-500 to-pink-500',
+      endpoints: [
+        {
+          method: 'POST',
+          path: '/security/threat/detect',
+          description: 'Detect security threats using AI',
+          parameters: [
+            { name: 'data', type: 'object', required: true, description: 'Data to analyze for threats' },
+            { name: 'threat_level', type: 'string', required: false, description: 'Minimum threat level to report' }
+          ],
+          responses: [
+            { code: 200, description: 'Threat analysis completed', example: '{ "threats": [...], "risk_score": 0.65, "recommendations": [...] }' },
+            { code: 400, description: 'Invalid data format', example: '{ "error": "Invalid data format" }' }
+          ]
+        },
+        {
+          method: 'POST',
+          path: '/security/zero-trust/verify',
+          description: 'Verify identity and access using zero trust principles',
+          parameters: [
+            { name: 'user_id', type: 'string', required: true, description: 'User identifier' },
+            { name: 'resource', type: 'string', required: true, description: 'Resource being accessed' },
+            { name: 'context', type: 'object', required: false, description: 'Access context' }
+          ],
+          responses: [
+            { code: 200, description: 'Access verified', example: '{ "access_granted": true, "permissions": [...], "session_duration": "3600s" }' },
+            { code: 403, description: 'Access denied', example: '{ "error": "Access denied", "reason": "Insufficient permissions" }' }
+          ]
+        }
+      ]
     }
   ];
 
   const filteredEndpoints = selectedAPI === 'all' 
     ? apiEndpoints 
-    : apiEndpoints.filter(endpoint => endpoint.category === selectedAPI);
+    : apiEndpoints.filter(endpoint => 
+        endpoint.id === selectedAPI ||
+        endpoint.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+        endpoint.description.toLowerCase().includes(searchQuery.toLowerCase())
+      );
 
-  const copyToClipboard = async (text: string, endpointId: string) => {
-    try {
-      await navigator.clipboard.writeText(text);
-      setCopiedEndpoint(endpointId);
-      setTimeout(() => setCopiedEndpoint(null), 2000);
-    } catch (err) {
-      console.error('Failed to copy text: ', err);
-    }
+  const toggleEndpoint = (endpointId: string) => {
+    setExpandedEndpoints(prev => 
+      prev.includes(endpointId) 
+        ? prev.filter(id => id !== endpointId)
+        : [...prev, endpointId]
+    );
   };
 
-  const getMethodColor = (method: string) => {
-    const colors = {
-      'GET': 'from-green-500 to-emerald-500',
-      'POST': 'from-blue-500 to-cyan-500',
-      'PUT': 'from-yellow-500 to-orange-500',
-      'DELETE': 'from-red-500 to-pink-500',
-      'PATCH': 'from-purple-500 to-pink-500'
-    };
-    return colors[method as keyof typeof colors] || 'from-gray-500 to-gray-600';
-  };
-
-  const getCategoryIcon = (category: string) => {
-    const icons = {
-      'ai-consciousness': Brain,
-      'quantum-computing': Atom,
-      'space-technology': Rocket,
-      'cybersecurity': Shield
-    };
-    return icons[category as keyof typeof icons] || Code;
+  const copyToClipboard = (text: string) => {
+    navigator.clipboard.writeText(text);
+    // You could add a toast notification here
   };
 
   return (
@@ -255,31 +264,15 @@ const APIDocumentationPage: React.FC = () => {
                 API Documentation
               </h1>
               <p className="text-xl lg:text-2xl text-gray-300 max-w-4xl mx-auto leading-relaxed">
-                Comprehensive API references, authentication guides, and code examples 
-                for all our technology platforms and services.
+                Complete API reference for Zion Tech Group's AI consciousness, quantum computing, 
+                space technology, and cybersecurity platforms. Build powerful applications with our APIs.
               </p>
             </motion.div>
           </div>
         </section>
 
-        {/* Search Section */}
-        <section className="py-12 bg-gradient-to-br from-gray-900/50 to-black/50">
-          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="relative">
-              <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400 w-6 h-6" />
-              <input
-                type="text"
-                placeholder="Search API endpoints, methods, or parameters..."
-                value={searchQuery}
-                onChange={(e) => setSearchQuery(e.target.value)}
-                className="w-full pl-12 pr-4 py-4 bg-gray-800/50 border border-gray-700 rounded-2xl text-white placeholder-gray-400 focus:border-cyan-400 focus:outline-none transition-colors duration-300 text-lg"
-              />
-            </div>
-          </div>
-        </section>
-
-        {/* Featured APIs */}
-        <section className="py-20">
+        {/* Quick Start Section */}
+        <section className="py-20 bg-gradient-to-br from-gray-900/50 to-black/50">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <motion.div
               initial={{ opacity: 0, y: 30 }}
@@ -288,97 +281,94 @@ const APIDocumentationPage: React.FC = () => {
               transition={{ duration: 0.8 }}
               className="text-center mb-16"
             >
-              <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6">Featured APIs</h2>
+              <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6">Quick Start</h2>
               <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-                Our most popular and powerful APIs for building next-generation applications
+                Get up and running with our APIs in minutes. Follow these simple steps to start building.
               </p>
             </motion.div>
 
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-              {featuredAPIs.map((api, index) => (
-                <motion.article
-                  key={api.id}
+              {[
+                {
+                  step: '1',
+                  title: 'Get Your API Key',
+                  description: 'Sign up for a Zion Tech Group account and generate your API key from the dashboard.',
+                  icon: Key,
+                  color: 'from-green-500 to-emerald-500'
+                },
+                {
+                  step: '2',
+                  title: 'Install SDK',
+                  description: 'Install our official SDK for your preferred programming language.',
+                  icon: Download,
+                  color: 'from-blue-500 to-cyan-500'
+                },
+                {
+                  step: '3',
+                  title: 'Make Your First Request',
+                  description: 'Use the code examples below to make your first API call.',
+                  icon: Code,
+                  color: 'from-purple-500 to-pink-500'
+                }
+              ].map((step, index) => (
+                <motion.div
+                  key={step.step}
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.6, delay: index * 0.1 }}
-                  className="group cursor-pointer"
+                  className="text-center group"
                 >
-                  <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-gray-800/50 to-gray-900/50 border border-gray-700/50 hover:border-cyan-400/50 transition-all duration-300">
-                    {/* Header */}
-                    <div className="p-6">
-                      <div className={`w-16 h-16 bg-gradient-to-br ${api.color} rounded-xl flex items-center justify-center mx-auto mb-4`}>
-                        <api.icon className="w-8 h-8 text-white" />
-                      </div>
-
-                      {/* Category */}
-                      <div className="flex items-center justify-between mb-3">
-                        <span className="px-3 py-1 bg-cyan-500/20 text-cyan-400 rounded-full text-sm font-medium">
-                          {apis.find(a => a.id === api.category)?.name}
-                        </span>
-                        <div className="flex items-center space-x-3 text-gray-400 text-sm">
-                          <span className="flex items-center">
-                            <Code className="w-4 h-4 mr-1" />
-                            {api.endpoints}
-                          </span>
-                        </div>
-                      </div>
-
-                      {/* Title */}
-                      <h3 className="text-xl font-bold text-white mb-3 group-hover:text-cyan-400 transition-colors duration-300">
-                        {api.title}
-                      </h3>
-
-                      {/* Description */}
-                      <p className="text-gray-300 mb-4 line-clamp-3">
-                        {api.description}
-                      </p>
-
-                      {/* Meta */}
-                      <div className="flex items-center justify-between mb-4">
-                        <span className="px-3 py-1 bg-green-500/20 text-green-400 rounded-full text-xs font-medium">
-                          {api.status}
-                        </span>
-                        <span className="text-gray-400 text-sm">
-                          v{api.version}
-                        </span>
-                      </div>
-
-                      {/* Features */}
-                      <div className="mb-4">
-                        <h4 className="text-sm font-semibold text-white mb-2">Key Features:</h4>
-                        <div className="flex flex-wrap gap-2">
-                          {api.features.slice(0, 2).map((feature, featureIndex) => (
-                            <span
-                              key={featureIndex}
-                              className="px-2 py-1 bg-gray-700/50 text-gray-300 rounded-full text-xs"
-                            >
-                              {feature}
-                            </span>
-                          ))}
-                          {api.features.length > 2 && (
-                            <span className="px-2 py-1 bg-gray-700/50 text-gray-300 rounded-full text-xs">
-                              +{api.features.length - 2} more
-                            </span>
-                          )}
-                        </div>
-                      </div>
-
-                      {/* View API */}
-                      <div className="flex items-center justify-between">
-                        <span className="text-cyan-400 text-sm font-medium">View Full API</span>
-                        <ArrowRight className="w-5 h-5 text-gray-400 group-hover:text-cyan-400 group-hover:translate-x-1 transition-all duration-300" />
-                      </div>
-                    </div>
+                  <div className={`w-20 h-20 bg-gradient-to-br ${step.color} rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300`}>
+                    <step.icon className="w-10 h-10 text-white" />
                   </div>
-                </motion.article>
+                  <div className="text-3xl font-bold text-white mb-4">{step.step}</div>
+                  <h3 className="text-xl font-bold text-white mb-3">{step.title}</h3>
+                  <p className="text-gray-300 leading-relaxed">{step.description}</p>
+                </motion.div>
               ))}
             </div>
           </div>
         </section>
 
+        {/* Search and Filter Section */}
+        <section className="py-12">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="flex flex-col lg:flex-row gap-6 items-center justify-between">
+              {/* Search Bar */}
+              <div className="relative flex-1 max-w-md">
+                <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-400" />
+                <input
+                  type="text"
+                  placeholder="Search API endpoints..."
+                  value={searchQuery}
+                  onChange={(e) => setSearchQuery(e.target.value)}
+                  className="w-full pl-10 pr-4 py-3 bg-gray-800/50 border border-gray-700 rounded-xl text-white placeholder-gray-400 focus:border-cyan-400 focus:ring-2 focus:ring-cyan-400/20 transition-all duration-300"
+                />
+              </div>
+
+              {/* API Filter */}
+              <div className="flex items-center space-x-2">
+                <Code className="w-5 h-5 text-gray-400" />
+                <span className="text-gray-300 text-sm">API:</span>
+                <select
+                  value={selectedAPI}
+                  onChange={(e) => setSelectedAPI(e.target.value)}
+                  className="px-4 py-2 bg-gray-800/50 border border-gray-700 rounded-lg text-white focus:border-cyan-400 focus:ring-2 focus:ring-cyan-400/20 transition-all duration-300"
+                >
+                  {apis.map((api) => (
+                    <option key={api.id} value={api.id}>
+                      {api.name} ({api.count})
+                    </option>
+                  ))}
+                </select>
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* API Endpoints */}
-        <section className="py-20 bg-gradient-to-br from-gray-900/50 to-black/50">
+        <section className="py-20">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <motion.div
               initial={{ opacity: 0, y: 30 }}
@@ -389,288 +379,174 @@ const APIDocumentationPage: React.FC = () => {
             >
               <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6">API Endpoints</h2>
               <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-                Detailed reference for all available API endpoints with examples and responses
+                Explore our comprehensive API endpoints with detailed documentation, parameters, and examples.
               </p>
             </motion.div>
 
-            {/* API Filter */}
-            <div className="flex flex-wrap justify-center gap-3 mb-12">
-              {apis.map((api) => (
-                <button
-                  key={api.id}
-                  onClick={() => setSelectedAPI(api.id)}
-                  className={`px-4 py-2 rounded-xl font-medium transition-all duration-300 ${
-                    selectedAPI === api.id
-                      ? 'bg-gradient-to-r from-cyan-400 to-purple-600 text-white'
-                      : 'bg-gray-800/50 text-gray-300 hover:bg-gray-700/50 border border-gray-700/50'
-                  }`}
-                >
-                  {api.name} ({api.count})
-                </button>
-              ))}
-            </div>
-
-            {/* Endpoints List */}
             <div className="space-y-8">
-              {filteredEndpoints.map((endpoint, index) => (
-                <motion.article
-                  key={endpoint.id}
-                  initial={{ opacity: 0, y: 30 }}
+              {filteredEndpoints.map((section, sectionIndex) => (
+                <motion.div
+                  key={section.id}
+                  initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
-                  transition={{ duration: 0.8, delay: index * 0.1 }}
-                  className="bg-gradient-to-br from-gray-800/50 to-gray-900/50 rounded-3xl border border-gray-700/50 overflow-hidden"
+                  transition={{ duration: 0.6, delay: sectionIndex * 0.1 }}
+                  className="bg-gradient-to-br from-gray-800/50 to-gray-900/50 rounded-2xl border border-gray-700/50 overflow-hidden"
                 >
-                  <div className="p-8">
-                    {/* Endpoint Header */}
-                    <div className="flex items-start justify-between mb-6">
-                      <div className="flex-1">
-                        <div className="flex items-center gap-3 mb-3">
-                          <span className={`px-3 py-1 bg-gradient-to-r ${getMethodColor(endpoint.method)} text-white rounded-full text-sm font-bold`}>
-                            {endpoint.method}
-                          </span>
-                          <span className="px-3 py-1 bg-cyan-500/20 text-cyan-400 rounded-full text-sm font-medium">
-                            {apis.find(a => a.id === endpoint.category)?.name}
-                          </span>
+                  {/* Section Header */}
+                  <button
+                    onClick={() => toggleEndpoint(section.id)}
+                    className="w-full p-6 text-left hover:bg-gray-700/30 transition-colors duration-300"
+                  >
+                    <div className="flex items-center justify-between">
+                      <div className="flex items-center space-x-4">
+                        <div className={`w-12 h-12 bg-gradient-to-br ${section.color} rounded-xl flex items-center justify-center`}>
+                          <section.icon className="w-6 h-6 text-white" />
                         </div>
-                        <h3 className="text-2xl font-bold text-white mb-2">{endpoint.name}</h3>
-                        <p className="text-gray-300 text-lg">{endpoint.description}</p>
+                        <div>
+                          <h3 className="text-2xl font-bold text-white">{section.title}</h3>
+                          <p className="text-gray-400">{section.description}</p>
+                        </div>
                       </div>
+                      {expandedEndpoints.includes(section.id) ? (
+                        <ChevronDown className="w-6 h-6 text-gray-400" />
+                      ) : (
+                        <ChevronRight className="w-6 h-6 text-gray-400" />
+                      )}
                     </div>
+                  </button>
 
-                    {/* Endpoint Path */}
-                    <div className="mb-6">
-                      <div className="flex items-center justify-between p-4 bg-gray-800/30 rounded-xl border border-gray-700/50">
-                        <code className="text-cyan-400 font-mono text-lg">{endpoint.path}</code>
-                        <button
-                          onClick={() => copyToClipboard(endpoint.path, `path-${endpoint.id}`)}
-                          className="flex items-center gap-2 px-3 py-2 bg-gray-700/50 hover:bg-gray-600/50 rounded-lg transition-colors duration-300"
-                        >
-                          {copiedEndpoint === `path-${endpoint.id}` ? (
-                            <>
-                              <Check className="w-4 h-4 text-green-400" />
-                              <span className="text-green-400 text-sm">Copied!</span>
-                            </>
-                          ) : (
-                            <>
-                              <Copy className="w-4 h-4 text-gray-400" />
-                              <span className="text-gray-400 text-sm">Copy</span>
-                            </>
-                          )}
-                        </button>
-                      </div>
-                    </div>
-
-                    {/* Parameters */}
-                    <div className="mb-6">
-                      <h4 className="text-lg font-semibold text-white mb-4">Parameters</h4>
-                      <div className="space-y-3">
-                        {endpoint.parameters.map((param, paramIndex) => (
-                          <div key={paramIndex} className="flex items-start gap-4 p-4 bg-gray-800/30 rounded-xl">
-                            <div className="flex-1">
-                              <div className="flex items-center gap-3 mb-2">
-                                <span className="font-mono text-cyan-400">{param.name}</span>
-                                <span className="px-2 py-1 bg-gray-700/50 text-gray-300 rounded text-xs">
-                                  {param.type}
+                  {/* Section Content */}
+                  {expandedEndpoints.includes(section.id) && (
+                    <motion.div
+                      initial={{ opacity: 0, height: 0 }}
+                      animate={{ opacity: 1, height: 'auto' }}
+                      exit={{ opacity: 0, height: 0 }}
+                      transition={{ duration: 0.3 }}
+                      className="border-t border-gray-700/50"
+                    >
+                      <div className="p-6">
+                        <div className="space-y-6">
+                          {section.endpoints.map((endpoint, endpointIndex) => (
+                            <motion.div
+                              key={`${section.id}-${endpointIndex}`}
+                              initial={{ opacity: 0, x: -20 }}
+                              animate={{ opacity: 1, x: 0 }}
+                              transition={{ duration: 0.4, delay: endpointIndex * 0.1 }}
+                              className="bg-gray-800/30 rounded-xl p-6 border border-gray-700/50"
+                            >
+                              {/* Endpoint Header */}
+                              <div className="flex items-center space-x-4 mb-4">
+                                <span className={`px-3 py-1 rounded-full text-sm font-medium ${
+                                  endpoint.method === 'GET' ? 'bg-green-500/20 text-green-400 border border-green-500/30' :
+                                  endpoint.method === 'POST' ? 'bg-blue-500/20 text-blue-400 border border-blue-500/30' :
+                                  endpoint.method === 'PUT' ? 'bg-yellow-500/20 text-yellow-400 border border-yellow-500/30' :
+                                  'bg-red-500/20 text-red-400 border border-red-500/30'
+                                }`}>
+                                  {endpoint.method}
                                 </span>
-                                {param.required && (
-                                  <span className="px-2 py-1 bg-red-500/20 text-red-400 rounded text-xs">
-                                    Required
-                                  </span>
-                                )}
+                                <code className="text-lg font-mono text-white bg-gray-900/50 px-3 py-1 rounded-lg">
+                                  {endpoint.path}
+                                </code>
                               </div>
-                              <p className="text-gray-300 text-sm">{param.description}</p>
-                            </div>
-                          </div>
-                        ))}
-                      </div>
-                    </div>
 
-                    {/* Responses */}
-                    <div className="mb-6">
-                      <h4 className="text-lg font-semibold text-white mb-4">Responses</h4>
-                      <div className="space-y-3">
-                        {endpoint.responses.map((response, responseIndex) => (
-                          <div key={responseIndex} className="flex items-center gap-4 p-4 bg-gray-800/30 rounded-xl">
-                            <span className={`px-3 py-1 rounded text-sm font-mono ${
-                              response.code >= 200 && response.code < 300 
-                                ? 'bg-green-500/20 text-green-400' 
-                                : response.code >= 400 && response.code < 500
-                                ? 'bg-yellow-500/20 text-yellow-400'
-                                : 'bg-red-500/20 text-red-400'
-                            }`}>
-                              {response.code}
-                            </span>
-                            <span className="text-gray-300">{response.description}</span>
-                          </div>
-                        ))}
-                      </div>
-                    </div>
+                              {/* Description */}
+                              <p className="text-gray-300 mb-6">{endpoint.description}</p>
 
-                    {/* Code Examples */}
-                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-                      {/* Request Example */}
-                      <div>
-                        <h4 className="text-lg font-semibold text-white mb-4">Request Example</h4>
-                        <div className="relative">
-                          <div className="flex items-center justify-between p-3 bg-gray-900/50 rounded-t-lg border-b border-gray-700/50">
-                            <span className="text-sm text-gray-400">JSON</span>
-                            <button
-                              onClick={() => copyToClipboard(endpoint.example.request, `request-${endpoint.id}`)}
-                              className="flex items-center gap-2 px-2 py-1 bg-gray-700/50 hover:bg-gray-600/50 rounded text-xs transition-colors duration-300"
-                            >
-                              {copiedEndpoint === `request-${endpoint.id}` ? (
-                                <>
-                                  <Check className="w-3 h-3 text-green-400" />
-                                  <span className="text-green-400">Copied!</span>
-                                </>
-                              ) : (
-                                <>
-                                  <Copy className="w-3 h-3 text-gray-400" />
-                                  <span className="text-gray-400">Copy</span>
-                                </>
-                              )}
-                            </button>
-                          </div>
-                          <pre className="p-4 bg-gray-900/50 rounded-b-lg overflow-x-auto">
-                            <code className="text-sm text-gray-300">{endpoint.example.request}</code>
-                          </pre>
+                              {/* Parameters */}
+                              <div className="mb-6">
+                                <h4 className="text-lg font-semibold text-white mb-3">Parameters</h4>
+                                <div className="bg-gray-900/50 rounded-lg overflow-hidden">
+                                  <table className="w-full">
+                                    <thead>
+                                      <tr className="bg-gray-800/50">
+                                        <th className="px-4 py-2 text-left text-gray-300 font-medium">Name</th>
+                                        <th className="px-4 py-2 text-left text-gray-300 font-medium">Type</th>
+                                        <th className="px-4 py-2 text-left text-gray-300 font-medium">Required</th>
+                                        <th className="px-4 py-2 text-left text-gray-300 font-medium">Description</th>
+                                      </tr>
+                                    </thead>
+                                    <tbody>
+                                      {endpoint.parameters.map((param, paramIndex) => (
+                                        <tr key={paramIndex} className="border-t border-gray-700/50">
+                                          <td className="px-4 py-2 text-white font-mono">{param.name}</td>
+                                          <td className="px-4 py-2 text-cyan-400">{param.type}</td>
+                                          <td className="px-4 py-2">
+                                            <span className={`px-2 py-1 rounded-full text-xs ${
+                                              param.required 
+                                                ? 'bg-red-500/20 text-red-400 border border-red-500/30' 
+                                                : 'bg-gray-500/20 text-gray-400 border border-gray-500/30'
+                                            }`}>
+                                              {param.required ? 'Yes' : 'No'}
+                                            </span>
+                                          </td>
+                                          <td className="px-4 py-2 text-gray-300">{param.description}</td>
+                                        </tr>
+                                      ))}
+                                    </tbody>
+                                  </table>
+                                </div>
+                              </div>
+
+                              {/* Responses */}
+                              <div className="mb-6">
+                                <h4 className="text-lg font-semibold text-white mb-3">Responses</h4>
+                                <div className="space-y-3">
+                                  {endpoint.responses.map((response, responseIndex) => (
+                                    <div key={responseIndex} className="bg-gray-900/50 rounded-lg p-4">
+                                      <div className="flex items-center space-x-3 mb-2">
+                                        <span className={`px-2 py-1 rounded-full text-xs font-medium ${
+                                          response.code >= 200 && response.code < 300 
+                                            ? 'bg-green-500/20 text-green-400 border border-green-500/30'
+                                            : 'bg-red-500/20 text-red-400 border border-red-500/30'
+                                        }`}>
+                                          {response.code}
+                                        </span>
+                                        <span className="text-gray-300 text-sm">{response.description}</span>
+                                      </div>
+                                      <div className="bg-gray-800/50 rounded-lg p-3">
+                                        <div className="flex items-center justify-between mb-2">
+                                          <span className="text-sm text-gray-400">Example Response</span>
+                                          <button
+                                            onClick={() => copyToClipboard(response.example)}
+                                            className="text-cyan-400 hover:text-cyan-300 text-sm"
+                                          >
+                                            <Copy className="w-4 h-4" />
+                                          </button>
+                                        </div>
+                                        <pre className="text-sm text-gray-300 overflow-x-auto">
+                                          <code>{response.example}</code>
+                                        </pre>
+                                      </div>
+                                    </div>
+                                  ))}
+                                </div>
+                              </div>
+
+                              {/* Try It Out */}
+                              <div className="bg-gradient-to-br from-cyan-500/10 to-purple-500/10 rounded-lg p-4 border border-cyan-500/20">
+                                <h4 className="text-lg font-semibold text-white mb-3">Try It Out</h4>
+                                <p className="text-gray-300 text-sm mb-3">
+                                  Test this endpoint with our interactive API playground.
+                                </p>
+                                <button className="inline-flex items-center px-4 py-2 bg-gradient-to-r from-cyan-400 to-purple-600 text-white font-medium rounded-lg hover:from-cyan-500 hover:to-purple-700 transition-all duration-300">
+                                  <Play className="w-4 h-4 mr-2" />
+                                  Open Playground
+                                </button>
+                              </div>
+                            </motion.div>
+                          ))}
                         </div>
                       </div>
-
-                      {/* Response Example */}
-                      <div>
-                        <h4 className="text-lg font-semibold text-white mb-4">Response Example</h4>
-                        <div className="relative">
-                          <div className="flex items-center justify-between p-3 bg-gray-900/50 rounded-t-lg border-b border-gray-700/50">
-                            <span className="text-sm text-gray-400">JSON</span>
-                            <button
-                              onClick={() => copyToClipboard(endpoint.example.response, `response-${endpoint.id}`)}
-                              className="flex items-center gap-2 px-2 py-1 bg-gray-700/50 hover:bg-gray-600/50 rounded text-xs transition-colors duration-300"
-                            >
-                              {copiedEndpoint === `response-${endpoint.id}` ? (
-                                <>
-                                  <Check className="w-3 h-3 text-green-400" />
-                                  <span className="text-green-400">Copied!</span>
-                                </>
-                              ) : (
-                                <>
-                                  <Copy className="w-3 h-3 text-gray-400" />
-                                  <span className="text-gray-400">Copy</span>
-                                </>
-                              )}
-                            </button>
-                          </div>
-                          <pre className="p-4 bg-gray-900/50 rounded-b-lg overflow-x-auto">
-                            <code className="text-sm text-gray-300">{endpoint.example.response}</code>
-                          </pre>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </motion.article>
+                    </motion.div>
+                  )}
+                </motion.div>
               ))}
             </div>
           </div>
         </section>
 
-        {/* Authentication & SDKs */}
-        <section className="py-20">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8 }}
-              className="text-center mb-16"
-            >
-              <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6">Authentication & SDKs</h2>
-              <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-                Get started quickly with our authentication guides and client libraries
-              </p>
-            </motion.div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              {/* Authentication */}
-              <motion.div
-                initial={{ opacity: 0, x: -30 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.8 }}
-                className="bg-gradient-to-br from-gray-800/50 to-gray-900/50 rounded-3xl p-8 border border-gray-700/50"
-              >
-                <div className="w-16 h-16 bg-gradient-to-br from-green-500 to-emerald-500 rounded-2xl flex items-center justify-center mb-6">
-                  <Key className="w-8 h-8 text-white" />
-                </div>
-                <h3 className="text-2xl font-bold text-white mb-4">Authentication</h3>
-                <p className="text-gray-300 mb-6">
-                  Learn how to authenticate with our APIs using API keys, OAuth 2.0, or JWT tokens.
-                </p>
-                <div className="space-y-3 mb-6">
-                  <div className="flex items-center gap-3 text-gray-300">
-                    <Check className="w-5 h-5 text-green-400" />
-                    <span>API Key Authentication</span>
-                  </div>
-                  <div className="flex items-center gap-3 text-gray-300">
-                    <Check className="w-5 h-5 text-green-400" />
-                    <span>OAuth 2.0 Support</span>
-                  </div>
-                  <div className="flex items-center gap-3 text-gray-300">
-                    <Check className="w-5 h-5 text-green-400" />
-                    <span>JWT Token Management</span>
-                  </div>
-                </div>
-                <a
-                  href="/docs/authentication"
-                  className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-cyan-400 to-purple-600 text-white font-semibold rounded-xl hover:from-cyan-500 hover:to-purple-700 transition-all duration-300"
-                >
-                  View Auth Guide
-                  <ArrowRight className="w-4 h-4" />
-                </a>
-              </motion.div>
-
-              {/* SDKs */}
-              <motion.div
-                initial={{ opacity: 0, x: 30 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.8 }}
-                className="bg-gradient-to-br from-gray-800/50 to-gray-900/50 rounded-3xl p-8 border border-gray-700/50"
-              >
-                <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-2xl flex items-center justify-center mb-6">
-                  <Package className="w-8 h-8 text-white" />
-                </div>
-                <h3 className="text-2xl font-bold text-white mb-4">Client Libraries</h3>
-                <p className="text-gray-300 mb-6">
-                  Use our official SDKs and client libraries for popular programming languages.
-                </p>
-                <div className="space-y-3 mb-6">
-                  <div className="flex items-center gap-3 text-gray-300">
-                    <Check className="w-5 h-5 text-green-400" />
-                    <span>Python SDK</span>
-                  </div>
-                  <div className="flex items-center gap-3 text-gray-300">
-                    <Check className="w-5 h-5 text-green-400" />
-                    <span>JavaScript/TypeScript SDK</span>
-                  </div>
-                  <div className="flex items-center gap-3 text-gray-300">
-                    <Check className="w-5 h-5 text-green-400" />
-                    <span>Go SDK</span>
-                  </div>
-                </div>
-                <a
-                  href="/docs/sdks"
-                  className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-cyan-400 to-purple-600 text-white font-semibold rounded-xl hover:from-cyan-500 hover:to-purple-700 transition-all duration-300"
-                >
-                  View SDKs
-                  <ArrowRight className="w-4 h-4" />
-                </a>
-              </motion.div>
-            </div>
-          </div>
-        </section>
-
-        {/* Developer Resources */}
+        {/* Code Examples */}
         <section className="py-20 bg-gradient-to-br from-gray-900/50 to-black/50">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <motion.div
@@ -680,65 +556,228 @@ const APIDocumentationPage: React.FC = () => {
               transition={{ duration: 0.8 }}
               className="text-center mb-16"
             >
-              <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6">Developer Resources</h2>
+              <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6">Code Examples</h2>
               <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-                Additional tools and resources to help you build amazing applications
+                Get started quickly with these code examples in popular programming languages.
+              </p>
+            </motion.div>
+
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+              {/* Python Example */}
+              <motion.div
+                initial={{ opacity: 0, x: -30 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.8 }}
+              >
+                <h3 className="text-2xl font-bold text-white mb-6">Python SDK</h3>
+                <div className="bg-gray-900/50 rounded-xl p-6 border border-gray-700/50">
+                  <div className="flex items-center justify-between mb-4">
+                    <span className="text-sm text-gray-400">Python 3.8+</span>
+                    <button 
+                      onClick={() => copyToClipboard(`from zion import AIConsciousness, QuantumComputing, SpaceTechnology
+
+# Initialize APIs
+ai = AIConsciousness(api_key="your_api_key")
+quantum = QuantumComputing(api_key="your_api_key")
+space = SpaceTechnology(api_key="your_api_key")
+
+# Create conscious AI agent
+agent = ai.create_agent(
+    name="Assistant",
+    personality="helpful and friendly",
+    consciousness_level="advanced"
+)
+
+# Execute quantum algorithm
+result = quantum.execute(
+    algorithm="grover",
+    qubits=4,
+    iterations=100
+)
+
+# Analyze space resources
+resources = space.analyze_resources(
+    coordinates={"lat": 40.7128, "lng": -74.0060},
+    radius=100
+)
+
+print(f"AI Agent: {agent.name}")
+print(f"Quantum Result: {result}")
+print(f"Space Resources: {resources}")`)}
+                      className="text-cyan-400 hover:text-cyan-300 text-sm"
+                    >
+                      <Copy className="w-4 h-4" />
+                    </button>
+                  </div>
+                  <pre className="text-sm text-gray-300 overflow-x-auto">
+                    <code>{`from zion import AIConsciousness, QuantumComputing, SpaceTechnology
+
+# Initialize APIs
+ai = AIConsciousness(api_key="your_api_key")
+quantum = QuantumComputing(api_key="your_api_key")
+space = SpaceTechnology(api_key="your_api_key")
+
+# Create conscious AI agent
+agent = ai.create_agent(
+    name="Assistant",
+    personality="helpful and friendly",
+    consciousness_level="advanced"
+)
+
+# Execute quantum algorithm
+result = quantum.execute(
+    algorithm="grover",
+    qubits=4,
+    iterations=100
+)
+
+# Analyze space resources
+resources = space.analyze_resources(
+    coordinates={"lat": 40.7128, "lng": -74.0060},
+    radius=100
+)
+
+print(f"AI Agent: {agent.name}")
+print(f"Quantum Result: {result}")
+print(f"Space Resources: {resources}")`}</code>
+                  </pre>
+                </div>
+              </motion.div>
+
+              {/* JavaScript Example */}
+              <motion.div
+                initial={{ opacity: 0, x: 30 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.8 }}
+              >
+                <h3 className="text-2xl font-bold text-white mb-6">JavaScript SDK</h3>
+                <div className="bg-gray-900/50 rounded-xl p-6 border border-gray-700/50">
+                  <div className="flex items-center justify-between mb-4">
+                    <span className="text-sm text-gray-400">Node.js / Browser</span>
+                    <button 
+                      onClick={() => copyToClipboard(`import { AIConsciousness, QuantumComputing, SpaceTechnology } from '@zion/sdk';
+
+// Initialize APIs
+const ai = new AIConsciousness({ apiKey: 'your_api_key' });
+const quantum = new QuantumComputing({ apiKey: 'your_api_key' });
+const space = new SpaceTechnology({ apiKey: 'your_api_key' });
+
+// Create conscious AI agent
+const agent = await ai.createAgent({
+    name: 'Assistant',
+    personality: 'helpful and friendly',
+    consciousnessLevel: 'advanced'
+});
+
+// Execute quantum algorithm
+const result = await quantum.execute({
+    algorithm: 'grover',
+    qubits: 4,
+    iterations: 100
+});
+
+// Analyze space resources
+const resources = await space.analyzeResources({
+    coordinates: { lat: 40.7128, lng: -74.0060 },
+    radius: 100
+});
+
+console.log('AI Agent:', agent.name);
+console.log('Quantum Result:', result);
+console.log('Space Resources:', resources);`)}
+                      className="text-cyan-400 hover:text-cyan-300 text-sm"
+                    >
+                      <Copy className="w-4 h-4" />
+                    </button>
+                  </div>
+                  <pre className="text-sm text-gray-300 overflow-x-auto">
+                    <code>{`import { AIConsciousness, QuantumComputing, SpaceTechnology } from '@zion/sdk';
+
+// Initialize APIs
+const ai = new AIConsciousness({ apiKey: 'your_api_key' });
+const quantum = new QuantumComputing({ apiKey: 'your_api_key' });
+const space = new SpaceTechnology({ apiKey: 'your_api_key' });
+
+// Create conscious AI agent
+const agent = await ai.createAgent({
+    name: 'Assistant',
+    personality: 'helpful and friendly',
+    consciousnessLevel: 'advanced'
+});
+
+// Execute quantum algorithm
+const result = await quantum.execute({
+    algorithm: 'grover',
+    qubits: 4,
+    iterations: 100
+});
+
+// Analyze space resources
+const resources = await space.analyzeResources({
+    coordinates: { lat: 40.7128, lng: -74.0060 },
+    radius: 100
+});
+
+console.log('AI Agent:', agent.name);
+console.log('Quantum Result:', result);
+console.log('Space Resources:', resources);`}</code>
+                  </pre>
+                </div>
+              </motion.div>
+            </div>
+          </div>
+        </section>
+
+        {/* SDKs and Libraries */}
+        <section className="py-20">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+              className="text-center mb-16"
+            >
+              <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6">SDKs & Libraries</h2>
+              <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+                Official SDKs and libraries for popular programming languages and frameworks.
               </p>
             </motion.div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
               {[
-                {
-                  icon: Terminal,
-                  title: 'API Playground',
-                  description: 'Test API endpoints interactively',
-                  href: '/docs/api-playground',
-                  color: 'from-green-500 to-emerald-500'
-                },
-                {
-                  icon: GitBranch,
-                  title: 'GitHub Repositories',
-                  description: 'Open source examples and libraries',
-                  href: 'https://github.com/ziontechgroup',
-                  color: 'from-gray-500 to-gray-600'
-                },
-                {
-                  icon: MessageCircle,
-                  title: 'Community Forum',
-                  description: 'Connect with other developers',
-                  href: '/community',
-                  color: 'from-purple-500 to-pink-500'
-                },
-                {
-                  icon: BookOpen,
-                  title: 'Tutorials',
-                  description: 'Step-by-step guides and examples',
-                  href: '/docs/tutorials',
-                  color: 'from-blue-500 to-cyan-500'
-                }
-              ].map((resource, index) => (
+                { name: 'Python SDK', icon: Code, version: 'v2.1.0', downloads: '125K+', color: 'from-blue-500 to-cyan-500', docs: '/docs/python-sdk' },
+                { name: 'JavaScript SDK', icon: Code, version: 'v1.8.5', downloads: '89K+', color: 'from-yellow-500 to-orange-500', docs: '/docs/javascript-sdk' },
+                { name: 'Go SDK', icon: Code, version: 'v1.5.2', downloads: '45K+', color: 'from-purple-500 to-pink-500', docs: '/docs/go-sdk' },
+                { name: 'Rust SDK', icon: Code, version: 'v1.2.0', downloads: '32K+', color: 'from-red-500 to-pink-500', docs: '/docs/rust-sdk' }
+              ].map((sdk, index) => (
                 <motion.div
-                  key={resource.title}
+                  key={sdk.name}
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.6, delay: index * 0.1 }}
                   className="group cursor-pointer"
                 >
-                  <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-gray-800/50 to-gray-900/50 border border-gray-700/50 hover:border-cyan-400/50 transition-all duration-300">
-                    <div className="p-6 text-center">
-                      <div className={`w-16 h-16 bg-gradient-to-br ${resource.color} rounded-xl flex items-center justify-center mx-auto mb-4`}>
-                        <resource.icon className="w-8 h-8 text-white" />
-                      </div>
-                      <h3 className="text-xl font-bold text-white mb-3 group-hover:text-cyan-400 transition-colors duration-300">
-                        {resource.title}
-                      </h3>
-                      <p className="text-gray-300 mb-4">{resource.description}</p>
-                      
-                      <div className="flex items-center justify-center">
-                        <span className="text-cyan-400 text-sm font-medium">Access Resource</span>
-                        <ExternalLink className="w-4 h-4 text-gray-400 ml-2 group-hover:text-cyan-400 transition-colors duration-300" />
-                      </div>
+                  <div className="bg-gradient-to-br from-gray-800/50 to-gray-900/50 rounded-2xl p-6 border border-gray-700/50 hover:border-cyan-400/50 transition-all duration-300">
+                    <div className={`w-16 h-16 bg-gradient-to-br ${sdk.color} rounded-xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300`}>
+                      <sdk.icon className="w-8 h-8 text-white" />
+                    </div>
+                    <h3 className="text-xl font-bold text-white mb-2 text-center">{sdk.name}</h3>
+                    <div className="text-center space-y-2 mb-4">
+                      <div className="text-sm text-gray-400">Version {sdk.version}</div>
+                      <div className="text-sm text-cyan-400">{sdk.downloads} downloads</div>
+                    </div>
+                    <div className="flex space-x-2">
+                      <button className="flex-1 px-3 py-2 bg-cyan-400 text-white text-sm font-medium rounded-lg hover:bg-cyan-500 transition-colors duration-300">
+                        <Download className="w-4 h-4 mr-1 inline" />
+                        Download
+                      </button>
+                      <button className="px-3 py-2 border border-gray-600 text-gray-300 text-sm font-medium rounded-lg hover:border-cyan-400 hover:text-cyan-400 transition-colors duration-300">
+                        <BookOpen className="w-4 h-4" />
+                      </button>
                     </div>
                   </div>
                 </motion.div>
@@ -747,36 +786,65 @@ const APIDocumentationPage: React.FC = () => {
           </div>
         </section>
 
-        {/* CTA Section */}
-        <section className="py-20">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        {/* Help & Support */}
+        <section className="py-20 bg-gradient-to-br from-gray-900/50 to-black/50">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
+              className="text-center mb-16"
             >
-              <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6">
-                Ready to Start Building?
-              </h2>
-              <p className="text-xl text-gray-300 mb-8 max-w-3xl mx-auto">
-                Get your API keys and start integrating our powerful technology platforms today
+              <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6">Need Help?</h2>
+              <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+                Can't find what you're looking for? Our support team is here to help.
               </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <a
-                  href="/contact"
-                  className="px-8 py-4 bg-gradient-to-r from-cyan-400 to-purple-600 text-white font-bold rounded-xl hover:from-cyan-500 hover:to-purple-700 transition-all duration-300 transform hover:scale-105"
-                >
-                  Get API Keys
-                </a>
-                <a
-                  href="/docs"
-                  className="px-8 py-4 border-2 border-cyan-400 text-cyan-400 font-bold rounded-xl hover:bg-cyan-400 hover:text-black transition-all duration-300"
-                >
-                  View Full Documentation
-                </a>
-              </div>
             </motion.div>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              {[
+                {
+                  title: 'API Playground',
+                  description: 'Test our APIs interactively with our online playground',
+                  icon: Play,
+                  color: 'from-blue-500 to-cyan-500',
+                  action: 'Open Playground'
+                },
+                {
+                  title: 'Support Tickets',
+                  description: 'Submit a support ticket for technical assistance',
+                  icon: HelpCircle,
+                  color: 'from-purple-500 to-pink-500',
+                  action: 'Submit Ticket'
+                },
+                {
+                  title: 'Live Chat',
+                  description: 'Chat with our support team in real-time',
+                  icon: MessageCircle,
+                  color: 'from-green-500 to-emerald-500',
+                  action: 'Start Chat'
+                }
+              ].map((help, index) => (
+                <motion.div
+                  key={help.title}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.6, delay: index * 0.1 }}
+                  className="text-center group"
+                >
+                  <div className={`w-20 h-20 bg-gradient-to-br ${help.color} rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300`}>
+                    <help.icon className="w-10 h-10 text-white" />
+                  </div>
+                  <h3 className="text-xl font-bold text-white mb-3">{help.title}</h3>
+                  <p className="text-gray-300 leading-relaxed mb-6">{help.description}</p>
+                  <button className="px-6 py-3 bg-gradient-to-r from-cyan-400 to-purple-600 text-white font-semibold rounded-xl hover:from-cyan-500 hover:to-purple-700 transition-all duration-300 transform hover:scale-105">
+                    {help.action}
+                  </button>
+                </motion.div>
+              ))}
+            </div>
           </div>
         </section>
       </div>

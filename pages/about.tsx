@@ -121,8 +121,8 @@ const AboutPage: React.FC = () => {
                 <h2 className="text-3xl lg:text-4xl font-bold text-white mb-6">Our Mission</h2>
                 <p className="text-lg text-gray-300 leading-relaxed">
                   To accelerate human progress through cutting-edge technology solutions that solve the world's 
-                  most complex challenges. We believe in democratizing access to advanced AI, quantum computing, 
-                  and space technology to create a better future for all.
+                  most complex challenges. We empower organizations to achieve the impossible by leveraging 
+                  the power of AI consciousness, quantum computing, and autonomous systems.
                 </p>
               </motion.div>
 
@@ -137,9 +137,10 @@ const AboutPage: React.FC = () => {
                 </div>
                 <h2 className="text-3xl lg:text-4xl font-bold text-white mb-6">Our Vision</h2>
                 <p className="text-lg text-gray-300 leading-relaxed">
-                  To be the global leader in next-generation technology solutions, pioneering breakthroughs 
-                  in AI consciousness, quantum computing, and space technology that reshape industries 
-                  and advance human civilization.
+                  To be the global leader in next-generation technology solutions, creating a future where 
+                  AI and human intelligence work in harmony to solve humanity's greatest challenges. 
+                  We envision a world where technology serves as a force for good, driving sustainable 
+                  progress and human flourishing.
                 </p>
               </motion.div>
             </div>
@@ -158,11 +159,11 @@ const AboutPage: React.FC = () => {
             >
               <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6">Our Core Values</h2>
               <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-                The principles that guide our decisions and shape our culture
+                The principles that guide everything we do and shape our company culture.
               </p>
             </motion.div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               {coreValues.map((value, index) => (
                 <motion.div
                   key={value.title}
@@ -170,13 +171,13 @@ const AboutPage: React.FC = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.6, delay: index * 0.1 }}
-                  className="text-center p-6 rounded-2xl bg-gradient-to-br from-gray-800/50 to-gray-900/50 border border-gray-700/50"
+                  className="bg-gradient-to-br from-gray-800/50 to-gray-900/50 rounded-2xl p-8 border border-gray-700/50"
                 >
-                  <div className={`w-16 h-16 bg-gradient-to-br ${value.color} rounded-xl flex items-center justify-center mx-auto mb-4`}>
+                  <div className={`w-16 h-16 bg-gradient-to-br ${value.color} rounded-xl flex items-center justify-center mb-6`}>
                     <value.icon className="w-8 h-8 text-white" />
                   </div>
-                  <h3 className="text-xl font-bold text-white mb-3">{value.title}</h3>
-                  <p className="text-gray-300">{value.description}</p>
+                  <h3 className="text-2xl font-bold text-white mb-4">{value.title}</h3>
+                  <p className="text-gray-300 leading-relaxed">{value.description}</p>
                 </motion.div>
               ))}
             </div>
@@ -195,27 +196,25 @@ const AboutPage: React.FC = () => {
             >
               <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6">Our Technology Focus</h2>
               <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-                We specialize in the most cutting-edge technologies that will define the future
+                We specialize in cutting-edge technologies that are shaping the future of business and society.
               </p>
             </motion.div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
               {technologies.map((tech, index) => (
                 <motion.div
                   key={tech.name}
-                  initial={{ opacity: 0, x: index % 2 === 0 ? -30 : 30 }}
-                  whileInView={{ opacity: 1, x: 0 }}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.6, delay: index * 0.1 }}
-                  className="flex items-start space-x-4 p-6 rounded-2xl bg-gradient-to-br from-gray-800/50 to-gray-900/50 border border-gray-700/50"
+                  className="text-center group"
                 >
-                  <div className="w-12 h-12 bg-gradient-to-br from-cyan-400 to-purple-600 rounded-xl flex items-center justify-center flex-shrink-0">
-                    <tech.icon className="w-6 h-6 text-white" />
+                  <div className="w-20 h-20 bg-gradient-to-br from-cyan-400 to-purple-600 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
+                    <tech.icon className="w-10 h-10 text-white" />
                   </div>
-                  <div>
-                    <h3 className="text-xl font-bold text-white mb-2">{tech.name}</h3>
-                    <p className="text-gray-300">{tech.description}</p>
-                  </div>
+                  <h3 className="text-xl font-bold text-white mb-3">{tech.name}</h3>
+                  <p className="text-gray-400 leading-relaxed">{tech.description}</p>
                 </motion.div>
               ))}
             </div>
@@ -234,32 +233,53 @@ const AboutPage: React.FC = () => {
             >
               <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6">Our Journey</h2>
               <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-                From startup to industry leader - our path of innovation and growth
+                From humble beginnings to global technology leader - the story of Zion Tech Group.
               </p>
             </motion.div>
 
-            <div className="space-y-8">
+            <div className="space-y-12">
               {[
-                { year: '2015', title: 'Foundation', description: 'Zion Tech Group was founded with a vision to revolutionize technology solutions' },
-                { year: '2018', title: 'AI Breakthrough', description: 'Launched our first AI consciousness platform, marking a new era in technology' },
-                { year: '2020', title: 'Quantum Leap', description: 'Entered the quantum computing space with innovative quantum solutions' },
-                { year: '2023', title: 'Space Technology', description: 'Expanded into space technology applications and research' },
-                { year: '2025', title: 'Global Expansion', description: 'Reached 500+ global clients and expanded operations worldwide' }
+                {
+                  year: '2015',
+                  title: 'Foundation',
+                  description: 'Zion Tech Group was founded with a vision to revolutionize technology solutions.'
+                },
+                {
+                  year: '2018',
+                  title: 'AI Breakthrough',
+                  description: 'Launched our first AI consciousness platform, marking a major milestone in autonomous systems.'
+                },
+                {
+                  year: '2020',
+                  title: 'Quantum Leap',
+                  description: 'Entered the quantum computing space with innovative cybersecurity solutions.'
+                },
+                {
+                  year: '2023',
+                  title: 'Global Expansion',
+                  description: 'Expanded operations to serve clients across 50+ countries worldwide.'
+                },
+                {
+                  year: '2025',
+                  title: 'Future Forward',
+                  description: 'Leading the charge in space technology and next-generation AI solutions.'
+                }
               ].map((milestone, index) => (
                 <motion.div
                   key={milestone.year}
-                  initial={{ opacity: 0, x: -30 }}
+                  initial={{ opacity: 0, x: index % 2 === 0 ? -30 : 30 }}
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
-                  transition={{ duration: 0.6, delay: index * 0.1 }}
-                  className="flex items-center space-x-6"
+                  transition={{ duration: 0.8, delay: index * 0.2 }}
+                  className={`flex items-center ${index % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse'}`}
                 >
-                  <div className="w-20 h-20 bg-gradient-to-br from-cyan-400 to-purple-600 rounded-full flex items-center justify-center flex-shrink-0">
-                    <span className="text-xl font-bold text-white">{milestone.year}</span>
-                  </div>
-                  <div className="flex-1">
-                    <h3 className="text-2xl font-bold text-white mb-2">{milestone.title}</h3>
+                  <div className="flex-1 text-center lg:text-left">
+                    <div className="text-6xl font-bold text-cyan-400 mb-4">{milestone.year}</div>
+                    <h3 className="text-2xl font-bold text-white mb-3">{milestone.title}</h3>
                     <p className="text-gray-300 text-lg">{milestone.description}</p>
+                  </div>
+                  <div className="hidden lg:block flex-1">
+                    <div className="w-4 h-4 bg-cyan-400 rounded-full mx-auto"></div>
                   </div>
                 </motion.div>
               ))}
@@ -280,18 +300,20 @@ const AboutPage: React.FC = () => {
                 Ready to Transform Your Business?
               </h2>
               <p className="text-xl text-gray-300 mb-8 max-w-3xl mx-auto">
-                Join hundreds of companies already leveraging our cutting-edge technology solutions
+                Join hundreds of organizations worldwide that trust Zion Tech Group to deliver 
+                innovative technology solutions that drive growth and success.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <a
                   href="/contact"
-                  className="px-8 py-4 bg-gradient-to-r from-cyan-400 to-purple-600 text-white font-bold rounded-xl hover:from-cyan-500 hover:to-purple-700 transition-all duration-300 transform hover:scale-105"
+                  className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-cyan-400 to-purple-600 text-white font-semibold rounded-xl hover:from-cyan-500 hover:to-purple-700 transition-all duration-300 transform hover:scale-105"
                 >
                   Get Started Today
+                  <TrendingUp className="ml-2 w-5 h-5" />
                 </a>
                 <a
                   href="/services"
-                  className="px-8 py-4 border-2 border-cyan-400 text-cyan-400 font-bold rounded-xl hover:bg-cyan-400 hover:text-black transition-all duration-300"
+                  className="inline-flex items-center px-8 py-4 border-2 border-cyan-400 text-cyan-400 font-semibold rounded-xl hover:bg-cyan-400 hover:text-white transition-all duration-300"
                 >
                   Explore Our Services
                 </a>

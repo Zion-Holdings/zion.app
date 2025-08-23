@@ -3,17 +3,19 @@ import Layout from '../components/layout/Layout';
 import { motion } from 'framer-motion';
 import { 
   Search, 
-  Filter, 
   Calendar, 
   User, 
   Clock, 
   ArrowRight,
   Tag,
-  BookOpen,
+  Filter,
   TrendingUp,
   Star,
-  Eye,
-  MessageCircle
+  BookOpen,
+  Brain,
+  Atom,
+  Rocket,
+  Shield
 } from 'lucide-react';
 
 const BlogPage: React.FC = () => {
@@ -21,127 +23,118 @@ const BlogPage: React.FC = () => {
   const [selectedCategory, setSelectedCategory] = useState('all');
 
   const categories = [
-    { id: 'all', name: 'All Posts', count: 45 },
-    { id: 'ai-ml', name: 'AI & Machine Learning', count: 18 },
-    { id: 'quantum', name: 'Quantum Computing', count: 12 },
-    { id: 'space-tech', name: 'Space Technology', count: 8 },
-    { id: 'cybersecurity', name: 'Cybersecurity', count: 7 }
+    { id: 'all', name: 'All Posts', icon: BookOpen, count: 45 },
+    { id: 'ai-ml', name: 'AI & Machine Learning', icon: Brain, count: 18 },
+    { id: 'quantum', name: 'Quantum Computing', icon: Atom, count: 12 },
+    { id: 'space-tech', name: 'Space Technology', icon: Rocket, count: 8 },
+    { id: 'cybersecurity', name: 'Cybersecurity', icon: Shield, count: 7 }
   ];
 
   const featuredPosts = [
     {
       id: 1,
       title: 'The Future of AI Consciousness: Beyond Traditional Machine Learning',
-      excerpt: 'Explore how AI consciousness is evolving beyond traditional machine learning paradigms, creating systems that can truly understand and reason like humans.',
-      author: 'Dr. Sarah Chen',
+      excerpt: 'Explore how AI consciousness is evolving beyond traditional machine learning paradigms, creating systems that can think, feel, and reason like humans.',
+      author: 'Dr. Kleber Santos',
       date: '2025-01-15',
       readTime: '8 min read',
       category: 'ai-ml',
       featured: true,
       image: '/api/placeholder/600/400',
-      views: 12450,
-      comments: 23
+      tags: ['AI Consciousness', 'Machine Learning', 'Future Tech']
     },
     {
       id: 2,
-      title: 'Quantum Computing Breakthroughs: What\'s Next for 2025',
-      excerpt: 'Discover the latest quantum computing advancements and how they\'re reshaping industries from finance to pharmaceuticals.',
-      author: 'Prof. Michael Rodriguez',
+      title: 'Quantum Computing Breakthroughs: What\'s Next for Enterprise',
+      excerpt: 'Discover the latest quantum computing breakthroughs and how they\'re reshaping enterprise technology landscapes worldwide.',
+      author: 'Quantum Research Team',
       date: '2025-01-12',
       readTime: '12 min read',
       category: 'quantum',
       featured: true,
       image: '/api/placeholder/600/400',
-      views: 9870,
-      comments: 18
+      tags: ['Quantum Computing', 'Enterprise', 'Innovation']
     },
     {
       id: 3,
-      title: 'Space Resource Intelligence: Mining the Final Frontier',
-      excerpt: 'Learn about the revolutionary space resource intelligence platforms that are making asteroid mining a reality.',
-      author: 'Dr. Emily Watson',
+      title: 'Space Technology Revolution: Mining Resources Beyond Earth',
+      excerpt: 'Learn about the revolutionary space technology that\'s enabling resource mining and exploration beyond our planet.',
+      author: 'Space Tech Division',
       date: '2025-01-10',
       readTime: '10 min read',
       category: 'space-tech',
       featured: true,
       image: '/api/placeholder/600/400',
-      views: 7560,
-      comments: 15
+      tags: ['Space Technology', 'Resource Mining', 'Exploration']
     }
   ];
 
   const recentPosts = [
     {
       id: 4,
-      title: 'Zero Trust Security Architecture: The New Standard',
-      excerpt: 'Understanding the principles and implementation of zero trust security in modern enterprise environments.',
-      author: 'Alex Thompson',
+      title: 'Zero Trust Security: The New Standard for Enterprise Protection',
+      excerpt: 'Understanding the principles of zero trust security and how to implement them in modern enterprise environments.',
+      author: 'Security Team',
       date: '2025-01-08',
       readTime: '6 min read',
       category: 'cybersecurity',
       image: '/api/placeholder/400/250',
-      views: 5430,
-      comments: 12
+      tags: ['Cybersecurity', 'Zero Trust', 'Enterprise']
     },
     {
       id: 5,
-      title: 'AI Autonomous Research: Accelerating Scientific Discovery',
-      excerpt: 'How autonomous AI systems are revolutionizing research across multiple scientific disciplines.',
-      author: 'Dr. James Wilson',
+      title: 'AI-Powered Customer Success: Revolutionizing Client Relationships',
+      excerpt: 'How AI is transforming customer success strategies and creating more meaningful client relationships.',
+      author: 'AI Solutions Team',
       date: '2025-01-05',
-      readTime: '9 min read',
+      readTime: '7 min read',
       category: 'ai-ml',
       image: '/api/placeholder/400/250',
-      views: 4320,
-      comments: 8
+      tags: ['AI', 'Customer Success', 'Client Relations']
     },
     {
       id: 6,
-      title: 'Quantum Neural Networks: The Next Evolution',
-      excerpt: 'Exploring the intersection of quantum computing and neural networks for unprecedented computational power.',
-      author: 'Dr. Lisa Park',
+      title: 'Quantum Neural Networks: The Next Frontier of AI',
+      excerpt: 'Exploring the intersection of quantum computing and neural networks for unprecedented AI capabilities.',
+      author: 'Quantum AI Team',
       date: '2025-01-03',
-      readTime: '11 min read',
+      readTime: '9 min read',
       category: 'quantum',
       image: '/api/placeholder/400/250',
-      views: 3890,
-      comments: 14
+      tags: ['Quantum AI', 'Neural Networks', 'Innovation']
     },
     {
       id: 7,
-      title: 'Edge Computing in Space: Processing Data Beyond Earth',
-      excerpt: 'The challenges and opportunities of edge computing in space environments.',
-      author: 'Mark Johnson',
-      date: '2024-12-30',
-      readTime: '7 min read',
+      title: 'Edge Computing in Space: Processing Data Where It\'s Generated',
+      excerpt: 'The future of space computing: processing data at the edge for faster, more efficient space missions.',
+      author: 'Space Computing Team',
+      date: '2025-01-01',
+      readTime: '5 min read',
       category: 'space-tech',
       image: '/api/placeholder/400/250',
-      views: 3210,
-      comments: 6
+      tags: ['Edge Computing', 'Space Missions', 'Data Processing']
     },
     {
       id: 8,
       title: 'AI Ethics and Governance: Building Responsible AI Systems',
-      excerpt: 'Essential considerations for developing AI systems that are ethical, transparent, and accountable.',
-      author: 'Dr. Rachel Green',
+      excerpt: 'Essential considerations for developing AI systems that are ethical, transparent, and beneficial to society.',
+      author: 'AI Ethics Team',
       date: '2024-12-28',
-      readTime: '10 min read',
+      readTime: '11 min read',
       category: 'ai-ml',
       image: '/api/placeholder/400/250',
-      views: 2980,
-      comments: 19
+      tags: ['AI Ethics', 'Governance', 'Responsible AI']
     },
     {
       id: 9,
-      title: 'Quantum Cryptography: Unbreakable Security for the Future',
-      excerpt: 'How quantum cryptography is creating unbreakable security protocols for the digital age.',
-      author: 'Dr. David Kim',
+      title: 'Quantum Cryptography: Unbreakable Security for the Digital Age',
+      excerpt: 'How quantum cryptography is providing unbreakable security solutions for the modern digital landscape.',
+      author: 'Quantum Security Team',
       date: '2024-12-25',
       readTime: '8 min read',
       category: 'quantum',
       image: '/api/placeholder/400/250',
-      views: 2670,
-      comments: 11
+      tags: ['Quantum Cryptography', 'Security', 'Digital Age']
     }
   ];
 
@@ -157,16 +150,6 @@ const BlogPage: React.FC = () => {
     });
   };
 
-  const getCategoryColor = (category: string) => {
-    const colors = {
-      'ai-ml': 'from-purple-500 to-pink-500',
-      'quantum': 'from-blue-500 to-cyan-500',
-      'space-tech': 'from-indigo-500 to-purple-500',
-      'cybersecurity': 'from-red-500 to-orange-500'
-    };
-    return colors[category as keyof typeof colors] || 'from-gray-500 to-gray-600';
-  };
-
   return (
     <Layout>
       <div className="min-h-screen">
@@ -180,11 +163,11 @@ const BlogPage: React.FC = () => {
               className="text-center"
             >
               <h1 className="text-5xl lg:text-7xl font-bold bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 bg-clip-text text-transparent mb-8">
-                Our Blog
+                Zion Tech Blog
               </h1>
               <p className="text-xl lg:text-2xl text-gray-300 max-w-4xl mx-auto leading-relaxed">
-                Insights, updates, and deep dives into the cutting-edge technologies that are shaping 
-                the future of business and society.
+                Insights, innovations, and industry perspectives from the forefront of technology. 
+                Stay ahead with our expert analysis and cutting-edge research.
               </p>
             </motion.div>
           </div>
@@ -196,23 +179,24 @@ const BlogPage: React.FC = () => {
             <div className="flex flex-col lg:flex-row gap-6 items-center justify-between">
               {/* Search Bar */}
               <div className="relative flex-1 max-w-md">
-                <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
+                <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-400" />
                 <input
                   type="text"
                   placeholder="Search articles..."
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
-                  className="w-full pl-10 pr-4 py-3 bg-gray-800/50 border border-gray-700 rounded-xl text-white placeholder-gray-400 focus:border-cyan-400 focus:outline-none transition-colors duration-300"
+                  className="w-full pl-10 pr-4 py-3 bg-gray-800/50 border border-gray-700 rounded-xl text-white placeholder-gray-400 focus:border-cyan-400 focus:ring-2 focus:ring-cyan-400/20 transition-all duration-300"
                 />
               </div>
 
               {/* Category Filter */}
               <div className="flex items-center space-x-2">
-                <Filter className="text-gray-400 w-5 h-5" />
+                <Filter className="w-5 h-5 text-gray-400" />
+                <span className="text-gray-300 text-sm">Filter by:</span>
                 <select
                   value={selectedCategory}
                   onChange={(e) => setSelectedCategory(e.target.value)}
-                  className="px-4 py-3 bg-gray-800/50 border border-gray-700 rounded-xl text-white focus:border-cyan-400 focus:outline-none transition-colors duration-300"
+                  className="px-4 py-2 bg-gray-800/50 border border-gray-700 rounded-lg text-white focus:border-cyan-400 focus:ring-2 focus:ring-cyan-400/20 transition-all duration-300"
                 >
                   {categories.map((category) => (
                     <option key={category.id} value={category.id}>
@@ -237,7 +221,7 @@ const BlogPage: React.FC = () => {
             >
               <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6">Featured Articles</h2>
               <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-                Our most popular and insightful articles on cutting-edge technology trends
+                Our most popular and insightful articles on cutting-edge technology trends and innovations.
               </p>
             </motion.div>
 
@@ -251,39 +235,24 @@ const BlogPage: React.FC = () => {
                   transition={{ duration: 0.6, delay: index * 0.1 }}
                   className="group cursor-pointer"
                 >
-                  <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-gray-800/50 to-gray-900/50 border border-gray-700/50 hover:border-cyan-400/50 transition-all duration-300">
-                    {/* Featured Badge */}
-                    <div className="absolute top-4 left-4 z-10">
-                      <div className="px-3 py-1 bg-gradient-to-r from-yellow-500 to-orange-500 text-white text-xs font-bold rounded-full flex items-center">
-                        <Star className="w-3 h-3 mr-1" />
-                        Featured
-                      </div>
+                  <div className="bg-gradient-to-br from-gray-800/50 to-gray-900/50 rounded-2xl overflow-hidden border border-gray-700/50 hover:border-cyan-400/50 transition-all duration-300">
+                    {/* Image Placeholder */}
+                    <div className="w-full h-48 bg-gradient-to-br from-cyan-500/20 to-purple-500/20 flex items-center justify-center">
+                      <BookOpen className="w-16 h-16 text-cyan-400" />
                     </div>
-
-                    {/* Image */}
-                    <div className="relative h-64 overflow-hidden">
-                      <div className="w-full h-full bg-gradient-to-br from-cyan-400/20 to-purple-600/20 flex items-center justify-center">
-                        <BookOpen className="w-16 h-16 text-cyan-400" />
-                      </div>
-                    </div>
-
-                    {/* Content */}
+                    
                     <div className="p-6">
-                      {/* Category */}
-                      <div className="flex items-center justify-between mb-3">
-                        <span className={`px-3 py-1 bg-gradient-to-r ${getCategoryColor(post.category)} text-white text-xs font-medium rounded-full`}>
-                          {categories.find(c => c.id === post.category)?.name}
+                      {/* Category Badge */}
+                      <div className="flex items-center space-x-2 mb-4">
+                        <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-cyan-500/20 text-cyan-400 border border-cyan-500/30">
+                          {categories.find(cat => cat.id === post.category)?.name}
                         </span>
-                        <div className="flex items-center space-x-3 text-gray-400 text-sm">
-                          <span className="flex items-center">
-                            <Eye className="w-4 h-4 mr-1" />
-                            {post.views.toLocaleString()}
+                        {post.featured && (
+                          <span className="inline-flex items-center px-2 py-1 rounded-full text-xs font-medium bg-yellow-500/20 text-yellow-400 border border-yellow-500/30">
+                            <Star className="w-3 h-3 mr-1" />
+                            Featured
                           </span>
-                          <span className="flex items-center">
-                            <MessageCircle className="w-4 h-4 mr-1" />
-                            {post.comments}
-                          </span>
-                        </div>
+                        )}
                       </div>
 
                       {/* Title */}
@@ -292,29 +261,42 @@ const BlogPage: React.FC = () => {
                       </h3>
 
                       {/* Excerpt */}
-                      <p className="text-gray-300 mb-4 line-clamp-3">
+                      <p className="text-gray-300 text-sm leading-relaxed mb-4">
                         {post.excerpt}
                       </p>
 
-                      {/* Meta */}
-                      <div className="flex items-center justify-between text-sm text-gray-400 mb-4">
+                      {/* Tags */}
+                      <div className="flex flex-wrap gap-2 mb-4">
+                        {post.tags.slice(0, 2).map((tag) => (
+                          <span key={tag} className="inline-flex items-center px-2 py-1 rounded-md text-xs font-medium bg-gray-700/50 text-gray-300">
+                            <Tag className="w-3 h-3 mr-1" />
+                            {tag}
+                          </span>
+                        ))}
+                      </div>
+
+                      {/* Meta Information */}
+                      <div className="flex items-center justify-between text-sm text-gray-400">
+                        <div className="flex items-center space-x-4">
+                          <span className="flex items-center">
+                            <User className="w-4 h-4 mr-1" />
+                            {post.author}
+                          </span>
+                          <span className="flex items-center">
+                            <Calendar className="w-4 h-4 mr-1" />
+                            {formatDate(post.date)}
+                          </span>
+                        </div>
                         <span className="flex items-center">
-                          <User className="w-4 h-4 mr-2" />
-                          {post.author}
-                        </span>
-                        <span className="flex items-center">
-                          <Calendar className="w-4 h-4 mr-2" />
-                          {formatDate(post.date)}
+                          <Clock className="w-4 h-4 mr-1" />
+                          {post.readTime}
                         </span>
                       </div>
 
-                      {/* Read Time */}
-                      <div className="flex items-center justify-between">
-                        <span className="flex items-center text-cyan-400 text-sm">
-                          <Clock className="w-4 h-4 mr-2" />
-                          {post.readTime}
-                        </span>
-                        <ArrowRight className="w-5 h-5 text-gray-400 group-hover:text-cyan-400 group-hover:translate-x-1 transition-all duration-300" />
+                      {/* Read More */}
+                      <div className="mt-4 flex items-center text-cyan-400 group-hover:text-cyan-300 transition-colors duration-300">
+                        <span className="text-sm font-medium">Read More</span>
+                        <ArrowRight className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform duration-300" />
                       </div>
                     </div>
                   </div>
@@ -336,7 +318,7 @@ const BlogPage: React.FC = () => {
             >
               <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6">Latest Articles</h2>
               <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-                Stay updated with our latest insights and technology trends
+                Stay updated with our latest insights, research findings, and industry analysis.
               </p>
             </motion.div>
 
@@ -350,31 +332,18 @@ const BlogPage: React.FC = () => {
                   transition={{ duration: 0.6, delay: index * 0.1 }}
                   className="group cursor-pointer"
                 >
-                  <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-gray-800/50 to-gray-900/50 border border-gray-700/50 hover:border-cyan-400/50 transition-all duration-300">
-                    {/* Image */}
-                    <div className="relative h-48 overflow-hidden">
-                      <div className="w-full h-full bg-gradient-to-br from-cyan-400/20 to-purple-600/20 flex items-center justify-center">
-                        <BookOpen className="w-12 h-12 text-cyan-400" />
-                      </div>
+                  <div className="bg-gradient-to-br from-gray-800/50 to-gray-900/50 rounded-2xl overflow-hidden border border-gray-700/50 hover:border-cyan-400/50 transition-all duration-300">
+                    {/* Image Placeholder */}
+                    <div className="w-full h-40 bg-gradient-to-br from-purple-500/20 to-pink-500/20 flex items-center justify-center">
+                      <BookOpen className="w-12 h-12 text-purple-400" />
                     </div>
-
-                    {/* Content */}
+                    
                     <div className="p-6">
-                      {/* Category */}
-                      <div className="flex items-center justify-between mb-3">
-                        <span className={`px-3 py-1 bg-gradient-to-r ${getCategoryColor(post.category)} text-white text-xs font-medium rounded-full`}>
-                          {categories.find(c => c.id === post.category)?.name}
+                      {/* Category Badge */}
+                      <div className="flex items-center space-x-2 mb-3">
+                        <span className="inline-flex items-center px-2 py-1 rounded-full text-xs font-medium bg-cyan-500/20 text-cyan-400 border border-cyan-500/30">
+                          {categories.find(cat => cat.id === post.category)?.name}
                         </span>
-                        <div className="flex items-center space-x-3 text-gray-400 text-sm">
-                          <span className="flex items-center">
-                            <Eye className="w-4 h-4 mr-1" />
-                            {post.views.toLocaleString()}
-                          </span>
-                          <span className="flex items-center">
-                            <MessageCircle className="w-4 h-4 mr-1" />
-                            {post.comments}
-                          </span>
-                        </div>
                       </div>
 
                       {/* Title */}
@@ -383,29 +352,31 @@ const BlogPage: React.FC = () => {
                       </h3>
 
                       {/* Excerpt */}
-                      <p className="text-gray-300 mb-4 line-clamp-3 text-sm">
+                      <p className="text-gray-300 text-sm leading-relaxed mb-4 line-clamp-3">
                         {post.excerpt}
                       </p>
 
-                      {/* Meta */}
-                      <div className="flex items-center justify-between text-sm text-gray-400 mb-4">
+                      {/* Meta Information */}
+                      <div className="flex items-center justify-between text-sm text-gray-400 mb-3">
                         <span className="flex items-center">
-                          <User className="w-4 h-4 mr-2" />
+                          <User className="w-4 h-4 mr-1" />
                           {post.author}
                         </span>
                         <span className="flex items-center">
-                          <Calendar className="w-4 h-4 mr-2" />
-                          {formatDate(post.date)}
+                          <Clock className="w-4 h-4 mr-1" />
+                          {post.readTime}
                         </span>
                       </div>
 
-                      {/* Read Time */}
-                      <div className="flex items-center justify-between">
-                        <span className="flex items-center text-cyan-400 text-sm">
-                          <Clock className="w-4 h-4 mr-2" />
-                          {post.readTime}
-                        </span>
-                        <ArrowRight className="w-5 h-5 text-gray-400 group-hover:text-cyan-400 group-hover:translate-x-1 transition-all duration-300" />
+                      {/* Date */}
+                      <div className="text-sm text-gray-400 mb-4">
+                        {formatDate(post.date)}
+                      </div>
+
+                      {/* Read More */}
+                      <div className="flex items-center text-cyan-400 group-hover:text-cyan-300 transition-colors duration-300">
+                        <span className="text-sm font-medium">Read More</span>
+                        <ArrowRight className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform duration-300" />
                       </div>
                     </div>
                   </div>
@@ -421,8 +392,9 @@ const BlogPage: React.FC = () => {
               transition={{ duration: 0.6, delay: 0.3 }}
               className="text-center mt-12"
             >
-              <button className="px-8 py-4 border-2 border-cyan-400 text-cyan-400 font-bold rounded-xl hover:bg-cyan-400 hover:text-black transition-all duration-300">
+              <button className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-cyan-400 to-purple-600 text-white font-semibold rounded-xl hover:from-cyan-500 hover:to-purple-700 transition-all duration-300 transform hover:scale-105">
                 Load More Articles
+                <TrendingUp className="ml-2 w-5 h-5" />
               </button>
             </motion.div>
           </div>
@@ -442,16 +414,16 @@ const BlogPage: React.FC = () => {
                 Stay Updated
               </h2>
               <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
-                Get the latest insights on AI, quantum computing, and space technology delivered to your inbox.
+                Get the latest insights, research findings, and industry updates delivered directly to your inbox.
               </p>
               
               <div className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
                 <input
                   type="email"
-                  placeholder="Enter your email"
-                  className="flex-1 px-4 py-3 bg-gray-800/50 border border-gray-700 rounded-xl text-white placeholder-gray-400 focus:border-cyan-400 focus:outline-none transition-colors duration-300"
+                  placeholder="Enter your email address"
+                  className="flex-1 px-6 py-4 bg-gray-700/50 border border-gray-600 rounded-xl text-white placeholder-gray-400 focus:border-cyan-400 focus:ring-2 focus:ring-cyan-400/20 transition-all duration-300"
                 />
-                <button className="px-8 py-3 bg-gradient-to-r from-cyan-400 to-purple-600 text-white font-bold rounded-xl hover:from-cyan-500 hover:to-purple-700 transition-all duration-300 transform hover:scale-105">
+                <button className="px-8 py-4 bg-gradient-to-r from-cyan-400 to-purple-600 text-white font-semibold rounded-xl hover:from-cyan-500 hover:to-purple-700 transition-all duration-300 transform hover:scale-105">
                   Subscribe
                 </button>
               </div>

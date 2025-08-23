@@ -6,10 +6,11 @@ import {
   BookOpen, 
   Code, 
   FileText, 
-  Play, 
+  Play,
   Download,
-  ArrowRight,
   ExternalLink,
+  ChevronRight,
+  ChevronDown,
   Star,
   Clock,
   Users,
@@ -23,60 +24,24 @@ import {
   Terminal,
   GitBranch,
   Package,
-  Globe,
-  MessageCircle
+  Settings,
+  HelpCircle,
+  MessageCircle,
+  Copy
 } from 'lucide-react';
 
-const DocumentationPage: React.FC = () => {
+const DocsPage: React.FC = () => {
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedCategory, setSelectedCategory] = useState('all');
+  const [expandedSections, setExpandedSections] = useState<string[]>(['getting-started']);
 
   const categories = [
     { id: 'all', name: 'All Documentation', count: 150 },
-    { id: 'getting-started', name: 'Getting Started', count: 25 },
-    { id: 'api-reference', name: 'API Reference', count: 45 },
-    { id: 'tutorials', name: 'Tutorials & Guides', count: 35 },
-    { id: 'sdks', name: 'SDKs & Libraries', count: 20 },
-    { id: 'examples', name: 'Examples & Samples', count: 25 }
-  ];
-
-  const featuredDocs = [
-    {
-      id: 1,
-      title: 'AI Consciousness Platform Quick Start',
-      category: 'getting-started',
-      description: 'Get up and running with our AI consciousness platform in under 10 minutes. Learn the basics of consciousness modeling and neural network integration.',
-      difficulty: 'Beginner',
-      readTime: '10 min',
-      lastUpdated: '2025-01-15',
-      featured: true,
-      icon: Brain,
-      color: 'from-purple-500 to-pink-500'
-    },
-    {
-      id: 2,
-      title: 'Quantum Computing API Reference',
-      category: 'api-reference',
-      description: 'Complete API documentation for our quantum computing platform. Includes authentication, endpoints, and code examples in multiple languages.',
-      difficulty: 'Advanced',
-      readTime: '45 min',
-      lastUpdated: '2025-01-12',
-      featured: true,
-      icon: Atom,
-      color: 'from-blue-500 to-cyan-500'
-    },
-    {
-      id: 3,
-      title: 'Space Resource Intelligence Tutorial',
-      category: 'tutorials',
-      description: 'Step-by-step guide to building space resource intelligence applications. Learn satellite data processing and asteroid mining analysis.',
-      difficulty: 'Intermediate',
-      readTime: '30 min',
-      lastUpdated: '2025-01-10',
-      featured: true,
-      icon: Rocket,
-      color: 'from-indigo-500 to-purple-500'
-    }
+    { id: 'api', name: 'API Reference', count: 45 },
+    { id: 'guides', name: 'Guides & Tutorials', count: 35 },
+    { id: 'sdks', name: 'SDKs & Libraries', count: 25 },
+    { id: 'deployment', name: 'Deployment', count: 20 },
+    { id: 'troubleshooting', name: 'Troubleshooting', count: 15 }
   ];
 
   const documentationSections = [
@@ -85,93 +50,126 @@ const DocumentationPage: React.FC = () => {
       title: 'Getting Started',
       icon: Play,
       color: 'from-green-500 to-emerald-500',
-      description: 'New to Zion Tech Group? Start here to learn the basics.',
       items: [
-        { title: 'Quick Start Guide', href: '/docs/quick-start', difficulty: 'Beginner', readTime: '5 min' },
-        { title: 'Installation & Setup', href: '/docs/installation', difficulty: 'Beginner', readTime: '15 min' },
-        { title: 'First Project', href: '/docs/first-project', difficulty: 'Beginner', readTime: '20 min' },
-        { title: 'Core Concepts', href: '/docs/core-concepts', difficulty: 'Beginner', readTime: '30 min' },
-        { title: 'Development Environment', href: '/docs/dev-environment', difficulty: 'Beginner', readTime: '25 min' }
+        { title: 'Quick Start Guide', href: '/docs/quickstart', description: 'Get up and running in 5 minutes', difficulty: 'Beginner', time: '5 min' },
+        { title: 'Installation Guide', href: '/docs/installation', description: 'Step-by-step installation instructions', difficulty: 'Beginner', time: '10 min' },
+        { title: 'First Project', href: '/docs/first-project', description: 'Build your first AI application', difficulty: 'Beginner', time: '15 min' },
+        { title: 'Configuration', href: '/docs/configuration', description: 'Configure your development environment', difficulty: 'Beginner', time: '8 min' }
       ]
     },
     {
-      id: 'api-reference',
-      title: 'API Reference',
-      icon: Code,
-      color: 'from-blue-500 to-cyan-500',
-      description: 'Complete API documentation for all our platforms and services.',
-      items: [
-        { title: 'Authentication', href: '/docs/api/auth', difficulty: 'Intermediate', readTime: '20 min' },
-        { title: 'AI Consciousness API', href: '/docs/api/ai-consciousness', difficulty: 'Advanced', readTime: '45 min' },
-        { title: 'Quantum Computing API', href: '/docs/api/quantum', difficulty: 'Advanced', readTime: '60 min' },
-        { title: 'Space Technology API', href: '/docs/api/space-tech', difficulty: 'Advanced', readTime: '40 min' },
-        { title: 'Webhooks & Events', href: '/docs/api/webhooks', difficulty: 'Intermediate', readTime: '25 min' }
-      ]
-    },
-    {
-      id: 'tutorials',
-      title: 'Tutorials & Guides',
-      icon: BookOpen,
+      id: 'ai-platform',
+      title: 'AI Platform',
+      icon: Brain,
       color: 'from-purple-500 to-pink-500',
-      description: 'Step-by-step guides and practical examples for common use cases.',
       items: [
-        { title: 'Building AI Chatbots', href: '/docs/tutorials/ai-chatbots', difficulty: 'Intermediate', readTime: '35 min' },
-        { title: 'Quantum Algorithm Implementation', href: '/docs/tutorials/quantum-algorithms', difficulty: 'Advanced', readTime: '50 min' },
-        { title: 'Space Data Analysis', href: '/docs/tutorials/space-data', difficulty: 'Intermediate', readTime: '40 min' },
-        { title: 'Integration with Existing Apps', href: '/docs/tutorials/integration', difficulty: 'Intermediate', readTime: '30 min' },
-        { title: 'Performance Optimization', href: '/docs/tutorials/optimization', difficulty: 'Advanced', readTime: '45 min' }
+        { title: 'AI Consciousness API', href: '/docs/ai-consciousness', description: 'Build conscious AI systems', difficulty: 'Advanced', time: '45 min' },
+        { title: 'Neural Networks', href: '/docs/neural-networks', description: 'Custom neural network architectures', difficulty: 'Intermediate', time: '30 min' },
+        { title: 'Machine Learning Models', href: '/docs/ml-models', description: 'Pre-trained and custom ML models', difficulty: 'Intermediate', time: '25 min' },
+        { title: 'AI Ethics & Governance', href: '/docs/ai-ethics', description: 'Responsible AI development', difficulty: 'Intermediate', time: '20 min' }
       ]
     },
     {
-      id: 'sdks',
-      title: 'SDKs & Libraries',
-      icon: Package,
+      id: 'quantum-computing',
+      title: 'Quantum Computing',
+      icon: Atom,
+      color: 'from-blue-500 to-cyan-500',
+      items: [
+        { title: 'Quantum Algorithms', href: '/docs/quantum-algorithms', description: 'Implement quantum algorithms', difficulty: 'Advanced', time: '60 min' },
+        { title: 'Quantum Cryptography', href: '/docs/quantum-crypto', description: 'Quantum-resistant security', difficulty: 'Advanced', time: '40 min' },
+        { title: 'Quantum ML', href: '/docs/quantum-ml', description: 'Quantum machine learning', difficulty: 'Advanced', time: '50 min' },
+        { title: 'Quantum Simulators', href: '/docs/quantum-simulators', description: 'Local quantum simulation', difficulty: 'Intermediate', time: '25 min' }
+      ]
+    },
+    {
+      id: 'space-technology',
+      title: 'Space Technology',
+      icon: Rocket,
       color: 'from-orange-500 to-red-500',
-      description: 'Client libraries and SDKs for popular programming languages.',
       items: [
-        { title: 'Python SDK', href: '/docs/sdks/python', difficulty: 'Intermediate', readTime: '25 min' },
-        { title: 'JavaScript/TypeScript SDK', href: '/docs/sdks/javascript', difficulty: 'Intermediate', readTime: '25 min' },
-        { title: 'Go SDK', href: '/docs/sdks/go', difficulty: 'Intermediate', readTime: '25 min' },
-        { title: 'Rust SDK', href: '/docs/sdks/rust', difficulty: 'Advanced', readTime: '30 min' },
-        { title: 'Mobile SDKs', href: '/docs/sdks/mobile', difficulty: 'Intermediate', readTime: '35 min' }
+        { title: 'Space Resource Intelligence', href: '/docs/space-resources', description: 'Analyze space resources', difficulty: 'Advanced', time: '35 min' },
+        { title: 'Satellite Communication', href: '/docs/satellite-comms', description: 'Satellite data processing', difficulty: 'Intermediate', time: '30 min' },
+        { title: 'Orbital Mechanics', href: '/docs/orbital-mechanics', description: 'Space mission planning', difficulty: 'Advanced', time: '45 min' },
+        { title: 'Space Analytics', href: '/docs/space-analytics', description: 'Space data analysis tools', difficulty: 'Intermediate', time: '25 min' }
       ]
     },
     {
-      id: 'examples',
-      title: 'Examples & Samples',
-      icon: FileText,
-      color: 'from-indigo-500 to-purple-500',
-      description: 'Ready-to-use code examples and sample applications.',
+      id: 'cybersecurity',
+      title: 'Cybersecurity',
+      icon: Shield,
+      color: 'from-red-500 to-pink-500',
       items: [
-        { title: 'AI Content Generation', href: '/docs/examples/content-generation', difficulty: 'Intermediate', readTime: '20 min' },
-        { title: 'Quantum Cryptography', href: '/docs/examples/quantum-crypto', difficulty: 'Advanced', readTime: '30 min' },
-        { title: 'Satellite Data Processing', href: '/docs/examples/satellite-data', difficulty: 'Intermediate', readTime: '25 min' },
-        { title: 'Real-time Analytics Dashboard', href: '/docs/examples/analytics-dashboard', difficulty: 'Intermediate', readTime: '35 min' },
-        { title: 'Multi-language Chat Interface', href: '/docs/examples/multi-language-chat', difficulty: 'Advanced', readTime: '40 min' }
+        { title: 'Zero Trust Security', href: '/docs/zero-trust', description: 'Implement zero trust architecture', difficulty: 'Advanced', time: '40 min' },
+        { title: 'Threat Detection', href: '/docs/threat-detection', description: 'AI-powered threat detection', difficulty: 'Intermediate', time: '30 min' },
+        { title: 'Security Automation', href: '/docs/security-automation', description: 'Automate security processes', difficulty: 'Intermediate', time: '25 min' },
+        { title: 'Compliance Tools', href: '/docs/compliance', description: 'Meet security compliance', difficulty: 'Intermediate', time: '20 min' }
+      ]
+    },
+    {
+      id: 'deployment',
+      title: 'Deployment & DevOps',
+      icon: Cloud,
+      color: 'from-indigo-500 to-purple-500',
+      items: [
+        { title: 'Cloud Deployment', href: '/docs/cloud-deployment', description: 'Deploy to major cloud platforms', difficulty: 'Intermediate', time: '30 min' },
+        { title: 'Container Orchestration', href: '/docs/containers', description: 'Docker and Kubernetes setup', difficulty: 'Intermediate', time: '35 min' },
+        { title: 'CI/CD Pipelines', href: '/docs/cicd', description: 'Automated deployment workflows', difficulty: 'Intermediate', time: '25 min' },
+        { title: 'Monitoring & Logging', href: '/docs/monitoring', description: 'Production monitoring setup', difficulty: 'Intermediate', time: '20 min' }
       ]
     }
   ];
 
-  const filteredDocs = selectedCategory === 'all' 
+  const popularDocs = [
+    {
+      title: 'AI Consciousness Quick Start',
+      description: 'Build your first conscious AI system in minutes',
+      category: 'AI Platform',
+      views: '12.5K',
+      rating: 4.9,
+      href: '/docs/ai-consciousness-quickstart'
+    },
+    {
+      title: 'Quantum Security Implementation',
+      description: 'Implement quantum-resistant cryptography',
+      category: 'Quantum Computing',
+      views: '8.2K',
+      rating: 4.8,
+      href: '/docs/quantum-security'
+    },
+    {
+      title: 'Space Resource Mining Guide',
+      description: 'Complete guide to space resource intelligence',
+      category: 'Space Technology',
+      views: '6.8K',
+      rating: 4.7,
+      href: '/docs/space-mining'
+    },
+    {
+      title: 'Zero Trust Security Setup',
+      description: 'Step-by-step zero trust implementation',
+      category: 'Cybersecurity',
+      views: '5.4K',
+      rating: 4.9,
+      href: '/docs/zero-trust-setup'
+    }
+  ];
+
+  const toggleSection = (sectionId: string) => {
+    setExpandedSections(prev => 
+      prev.includes(sectionId) 
+        ? prev.filter(id => id !== sectionId)
+        : [...prev, sectionId]
+    );
+  };
+
+  const filteredSections = selectedCategory === 'all' 
     ? documentationSections 
-    : documentationSections.filter(section => section.id === selectedCategory);
-
-  const getDifficultyColor = (difficulty: string) => {
-    const colors = {
-      'Beginner': 'from-green-500 to-emerald-500',
-      'Intermediate': 'from-yellow-500 to-orange-500',
-      'Advanced': 'from-red-500 to-pink-500'
-    };
-    return colors[difficulty as keyof typeof colors] || 'from-gray-500 to-gray-600';
-  };
-
-  const formatDate = (dateString: string) => {
-    return new Date(dateString).toLocaleDateString('en-US', {
-      year: 'numeric',
-      month: 'short',
-      day: 'numeric'
-    });
-  };
+    : documentationSections.filter(section => 
+        section.items.some(item => 
+          item.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+          item.description.toLowerCase().includes(searchQuery.toLowerCase())
+        )
+      );
 
   return (
     <Layout>
@@ -189,30 +187,50 @@ const DocumentationPage: React.FC = () => {
                 Documentation
               </h1>
               <p className="text-xl lg:text-2xl text-gray-300 max-w-4xl mx-auto leading-relaxed">
-                Comprehensive guides, API references, and tutorials to help you build 
-                with our AI consciousness, quantum computing, and space technology platforms.
+                Comprehensive guides, API references, and tutorials to help you build with 
+                Zion Tech Group's cutting-edge AI, quantum computing, and space technology platforms.
               </p>
             </motion.div>
           </div>
         </section>
 
-        {/* Search Section */}
+        {/* Search and Filter Section */}
         <section className="py-12 bg-gradient-to-br from-gray-900/50 to-black/50">
-          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="relative">
-              <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400 w-6 h-6" />
-              <input
-                type="text"
-                placeholder="Search documentation..."
-                value={searchQuery}
-                onChange={(e) => setSearchQuery(e.target.value)}
-                className="w-full pl-12 pr-4 py-4 bg-gray-800/50 border border-gray-700 rounded-2xl text-white placeholder-gray-400 focus:border-cyan-400 focus:outline-none transition-colors duration-300 text-lg"
-              />
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="flex flex-col lg:flex-row gap-6 items-center justify-between">
+              {/* Search Bar */}
+              <div className="relative flex-1 max-w-md">
+                <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-400" />
+                <input
+                  type="text"
+                  placeholder="Search documentation..."
+                  value={searchQuery}
+                  onChange={(e) => setSearchQuery(e.target.value)}
+                  className="w-full pl-10 pr-4 py-3 bg-gray-800/50 border border-gray-700 rounded-xl text-white placeholder-gray-400 focus:border-cyan-400 focus:ring-2 focus:ring-cyan-400/20 transition-all duration-300"
+                />
+              </div>
+
+              {/* Category Filter */}
+              <div className="flex items-center space-x-2">
+                <BookOpen className="w-5 h-5 text-gray-400" />
+                <span className="text-gray-300 text-sm">Category:</span>
+                <select
+                  value={selectedCategory}
+                  onChange={(e) => setSelectedCategory(e.target.value)}
+                  className="px-4 py-2 bg-gray-800/50 border border-gray-700 rounded-lg text-white focus:border-cyan-400 focus:ring-2 focus:ring-cyan-400/20 transition-all duration-300"
+                >
+                  {categories.map((category) => (
+                    <option key={category.id} value={category.id}>
+                      {category.name} ({category.count})
+                    </option>
+                  ))}
+                </select>
+              </div>
             </div>
           </div>
         </section>
 
-        {/* Featured Documentation */}
+        {/* Popular Documentation */}
         <section className="py-20">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <motion.div
@@ -222,74 +240,57 @@ const DocumentationPage: React.FC = () => {
               transition={{ duration: 0.8 }}
               className="text-center mb-16"
             >
-              <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6">Featured Documentation</h2>
+              <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6">Popular Documentation</h2>
               <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-                Start with these essential guides to get up and running quickly
+                Start with our most popular guides and tutorials to get up and running quickly.
               </p>
             </motion.div>
 
-            <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-              {featuredDocs.map((doc, index) => (
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+              {popularDocs.map((doc, index) => (
                 <motion.article
-                  key={doc.id}
+                  key={doc.title}
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.6, delay: index * 0.1 }}
                   className="group cursor-pointer"
                 >
-                  <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-gray-800/50 to-gray-900/50 border border-gray-700/50 hover:border-cyan-400/50 transition-all duration-300">
-                    {/* Featured Badge */}
-                    <div className="absolute top-4 left-4 z-10">
-                      <div className="px-3 py-1 bg-gradient-to-r from-yellow-500 to-orange-500 text-white text-xs font-bold rounded-full flex items-center">
-                        <Star className="w-3 h-3 mr-1" />
-                        Featured
-                      </div>
-                    </div>
-
-                    {/* Header */}
+                  <div className="bg-gradient-to-br from-gray-800/50 to-gray-900/50 rounded-2xl overflow-hidden border border-gray-700/50 hover:border-cyan-400/50 transition-all duration-300">
                     <div className="p-6">
-                      <div className={`w-16 h-16 bg-gradient-to-br ${doc.color} rounded-xl flex items-center justify-center mx-auto mb-4`}>
-                        <doc.icon className="w-8 h-8 text-white" />
-                      </div>
-
-                      {/* Category */}
-                      <div className="flex items-center justify-between mb-3">
-                        <span className="px-3 py-1 bg-cyan-500/20 text-cyan-400 rounded-full text-sm font-medium">
-                          {categories.find(c => c.id === doc.category)?.name}
+                      {/* Category Badge */}
+                      <div className="flex items-center space-x-2 mb-4">
+                        <span className="inline-flex items-center px-2 py-1 rounded-full text-xs font-medium bg-cyan-500/20 text-cyan-400 border border-cyan-500/30">
+                          {doc.category}
                         </span>
-                        <div className="flex items-center space-x-3 text-gray-400 text-sm">
-                          <span className="flex items-center">
-                            <Clock className="w-4 h-4 mr-1" />
-                            {doc.readTime}
-                          </span>
-                        </div>
                       </div>
 
                       {/* Title */}
-                      <h3 className="text-xl font-bold text-white mb-3 group-hover:text-cyan-400 transition-colors duration-300">
+                      <h3 className="text-lg font-bold text-white mb-3 group-hover:text-cyan-400 transition-colors duration-300">
                         {doc.title}
                       </h3>
 
                       {/* Description */}
-                      <p className="text-gray-300 mb-4 line-clamp-3">
+                      <p className="text-gray-300 text-sm leading-relaxed mb-4">
                         {doc.description}
                       </p>
 
-                      {/* Meta */}
-                      <div className="flex items-center justify-between mb-4">
-                        <span className={`px-3 py-1 bg-gradient-to-r ${getDifficultyColor(doc.difficulty)} text-white rounded-full text-xs font-medium`}>
-                          {doc.difficulty}
+                      {/* Stats */}
+                      <div className="flex items-center justify-between text-sm text-gray-400 mb-4">
+                        <span className="flex items-center">
+                          <Users className="w-4 h-4 mr-1" />
+                          {doc.views}
                         </span>
-                        <span className="text-gray-400 text-sm">
-                          Updated {formatDate(doc.lastUpdated)}
+                        <span className="flex items-center">
+                          <Star className="w-4 h-4 mr-1 text-yellow-400" />
+                          {doc.rating}
                         </span>
                       </div>
 
                       {/* Read More */}
-                      <div className="flex items-center justify-between">
-                        <span className="text-cyan-400 text-sm font-medium">Read Guide</span>
-                        <ArrowRight className="w-5 h-5 text-gray-400 group-hover:text-cyan-400 group-hover:translate-x-1 transition-all duration-300" />
+                      <div className="flex items-center text-cyan-400 group-hover:text-cyan-300 transition-colors duration-300">
+                        <span className="text-sm font-medium">Read Guide</span>
+                        <ChevronRight className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform duration-300" />
                       </div>
                     </div>
                   </div>
@@ -299,7 +300,7 @@ const DocumentationPage: React.FC = () => {
           </div>
         </section>
 
-        {/* Documentation Categories */}
+        {/* Documentation Sections */}
         <section className="py-20 bg-gradient-to-br from-gray-900/50 to-black/50">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <motion.div
@@ -309,94 +310,99 @@ const DocumentationPage: React.FC = () => {
               transition={{ duration: 0.8 }}
               className="text-center mb-16"
             >
-              <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6">Documentation Categories</h2>
+              <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6">Documentation Library</h2>
               <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-                Explore our comprehensive documentation organized by topic and skill level
+                Explore our comprehensive documentation organized by technology area and difficulty level.
               </p>
             </motion.div>
 
-            {/* Category Filter */}
-            <div className="flex flex-wrap justify-center gap-3 mb-12">
-              {categories.map((category) => (
-                <button
-                  key={category.id}
-                  onClick={() => setSelectedCategory(category.id)}
-                  className={`px-4 py-2 rounded-xl font-medium transition-all duration-300 ${
-                    selectedCategory === category.id
-                      ? 'bg-gradient-to-r from-cyan-400 to-purple-600 text-white'
-                      : 'bg-gray-800/50 text-gray-300 hover:bg-gray-700/50 border border-gray-700/50'
-                  }`}
-                >
-                  {category.name} ({category.count})
-                </button>
-              ))}
-            </div>
-
-            {/* Documentation Sections */}
-            <div className="space-y-12">
-              {filteredDocs.map((section, sectionIndex) => (
+            <div className="space-y-6">
+              {filteredSections.map((section, sectionIndex) => (
                 <motion.div
                   key={section.id}
-                  initial={{ opacity: 0, y: 30 }}
+                  initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
-                  transition={{ duration: 0.8, delay: sectionIndex * 0.1 }}
-                  className="bg-gradient-to-br from-gray-800/50 to-gray-900/50 rounded-3xl border border-gray-700/50 overflow-hidden"
+                  transition={{ duration: 0.6, delay: sectionIndex * 0.1 }}
+                  className="bg-gradient-to-br from-gray-800/50 to-gray-900/50 rounded-2xl border border-gray-700/50 overflow-hidden"
                 >
-                  <div className="p-8">
-                    {/* Section Header */}
-                    <div className="flex items-center gap-4 mb-8">
-                      <div className={`w-16 h-16 bg-gradient-to-br ${section.color} rounded-2xl flex items-center justify-center`}>
-                        <section.icon className="w-8 h-8 text-white" />
+                  {/* Section Header */}
+                  <button
+                    onClick={() => toggleSection(section.id)}
+                    className="w-full p-6 text-left hover:bg-gray-700/30 transition-colors duration-300"
+                  >
+                    <div className="flex items-center justify-between">
+                      <div className="flex items-center space-x-4">
+                        <div className={`w-12 h-12 bg-gradient-to-br ${section.color} rounded-xl flex items-center justify-center`}>
+                          <section.icon className="w-6 h-6 text-white" />
+                        </div>
+                        <div>
+                          <h3 className="text-2xl font-bold text-white">{section.title}</h3>
+                          <p className="text-gray-400">{section.items.length} guides available</p>
+                        </div>
                       </div>
-                      <div>
-                        <h3 className="text-3xl font-bold text-white mb-2">{section.title}</h3>
-                        <p className="text-gray-300 text-lg">{section.description}</p>
+                      {expandedSections.includes(section.id) ? (
+                        <ChevronDown className="w-6 h-6 text-gray-400" />
+                      ) : (
+                        <ChevronRight className="w-6 h-6 text-gray-400" />
+                      )}
+                    </div>
+                  </button>
+
+                  {/* Section Content */}
+                  {expandedSections.includes(section.id) && (
+                    <motion.div
+                      initial={{ opacity: 0, height: 0 }}
+                      animate={{ opacity: 1, height: 'auto' }}
+                      exit={{ opacity: 0, height: 0 }}
+                      transition={{ duration: 0.3 }}
+                      className="border-t border-gray-700/50"
+                    >
+                      <div className="p-6">
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                          {section.items.map((item, itemIndex) => (
+                            <motion.div
+                              key={item.title}
+                              initial={{ opacity: 0, x: -20 }}
+                              animate={{ opacity: 1, x: 0 }}
+                              transition={{ duration: 0.4, delay: itemIndex * 0.1 }}
+                              className="group cursor-pointer"
+                            >
+                              <div className="bg-gray-800/30 rounded-xl p-4 hover:bg-gray-700/50 transition-all duration-300 border border-gray-700/50 hover:border-cyan-400/50">
+                                <div className="flex items-start justify-between mb-3">
+                                  <h4 className="text-lg font-semibold text-white group-hover:text-cyan-400 transition-colors duration-300">
+                                    {item.title}
+                                  </h4>
+                                  <ExternalLink className="w-4 h-4 text-gray-400 group-hover:text-cyan-400 transition-colors duration-300" />
+                                </div>
+                                
+                                <p className="text-gray-300 text-sm mb-4 leading-relaxed">
+                                  {item.description}
+                                </p>
+                                
+                                <div className="flex items-center justify-between text-xs text-gray-400">
+                                  <span className="inline-flex items-center px-2 py-1 rounded-full bg-gray-700/50 text-gray-300">
+                                    {item.difficulty}
+                                  </span>
+                                  <span className="flex items-center">
+                                    <Clock className="w-3 h-3 mr-1" />
+                                    {item.time}
+                                  </span>
+                                </div>
+                              </div>
+                            </motion.div>
+                          ))}
+                        </div>
                       </div>
-                    </div>
-
-                    {/* Section Items */}
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                      {section.items.map((item, itemIndex) => (
-                        <motion.div
-                          key={item.title}
-                          initial={{ opacity: 0, y: 20 }}
-                          whileInView={{ opacity: 1, y: 0 }}
-                          viewport={{ once: true }}
-                          transition={{ duration: 0.6, delay: itemIndex * 0.1 }}
-                          className="group cursor-pointer"
-                        >
-                          <div className="p-6 rounded-2xl bg-gray-800/30 border border-gray-700/50 hover:border-cyan-400/50 transition-all duration-300">
-                            <h4 className="text-lg font-bold text-white mb-3 group-hover:text-cyan-400 transition-colors duration-300">
-                              {item.title}
-                            </h4>
-                            
-                            <div className="flex items-center justify-between mb-4">
-                              <span className={`px-2 py-1 bg-gradient-to-r ${getDifficultyColor(item.difficulty)} text-white rounded-full text-xs font-medium`}>
-                                {item.difficulty}
-                              </span>
-                              <span className="text-gray-400 text-sm flex items-center">
-                                <Clock className="w-3 h-3 mr-1" />
-                                {item.readTime}
-                              </span>
-                            </div>
-
-                            <div className="flex items-center justify-between">
-                              <span className="text-cyan-400 text-sm font-medium">View Guide</span>
-                              <ArrowRight className="w-4 h-4 text-gray-400 group-hover:text-cyan-400 group-hover:translate-x-1 transition-all duration-300" />
-                            </div>
-                          </div>
-                        </motion.div>
-                      ))}
-                    </div>
-                  </div>
+                    </motion.div>
+                  )}
                 </motion.div>
               ))}
             </div>
           </div>
         </section>
 
-        {/* Developer Resources */}
+        {/* API Reference Preview */}
         <section className="py-20">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <motion.div
@@ -406,65 +412,129 @@ const DocumentationPage: React.FC = () => {
               transition={{ duration: 0.8 }}
               className="text-center mb-16"
             >
-              <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6">Developer Resources</h2>
+              <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6">API Reference</h2>
               <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-                Additional tools and resources to help you build amazing applications
+                Complete API documentation with code examples, authentication, and integration guides.
+              </p>
+            </motion.div>
+
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+              {/* API Overview */}
+              <motion.div
+                initial={{ opacity: 0, x: -30 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.8 }}
+              >
+                <h3 className="text-2xl font-bold text-white mb-6">Quick API Overview</h3>
+                <div className="space-y-4">
+                  {[
+                    { name: 'AI Consciousness API', endpoints: 25, version: 'v2.1' },
+                    { name: 'Quantum Computing API', endpoints: 18, version: 'v1.8' },
+                    { name: 'Space Technology API', endpoints: 15, version: 'v1.5' },
+                    { name: 'Cybersecurity API', endpoints: 22, version: 'v2.0' }
+                  ].map((api, index) => (
+                    <div key={api.name} className="flex items-center justify-between p-4 bg-gray-800/30 rounded-xl border border-gray-700/50">
+                      <div>
+                        <h4 className="text-lg font-semibold text-white">{api.name}</h4>
+                        <p className="text-gray-400 text-sm">{api.endpoints} endpoints</p>
+                      </div>
+                      <div className="text-right">
+                        <span className="inline-flex items-center px-2 py-1 rounded-full text-xs font-medium bg-cyan-500/20 text-cyan-400 border border-cyan-500/30">
+                          {api.version}
+                        </span>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </motion.div>
+
+              {/* Code Example */}
+              <motion.div
+                initial={{ opacity: 0, x: 30 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.8 }}
+              >
+                <h3 className="text-2xl font-bold text-white mb-6">Code Example</h3>
+                <div className="bg-gray-900/50 rounded-xl p-6 border border-gray-700/50">
+                  <div className="flex items-center justify-between mb-4">
+                    <span className="text-sm text-gray-400">Python SDK</span>
+                    <button className="text-cyan-400 hover:text-cyan-300 text-sm">
+                      <Copy className="w-4 h-4" />
+                    </button>
+                  </div>
+                  <pre className="text-sm text-gray-300 overflow-x-auto">
+                    <code>{`from zion import AIConsciousness
+
+# Initialize AI consciousness
+ai = AIConsciousness(api_key="your_api_key")
+
+# Create conscious AI agent
+agent = ai.create_agent(
+    name="Assistant",
+    personality="helpful and friendly",
+    consciousness_level="advanced"
+)
+
+# Interact with the agent
+response = agent.chat("Hello! How are you?")
+print(response.message)`}</code>
+                  </pre>
+                </div>
+              </motion.div>
+            </div>
+          </div>
+        </section>
+
+        {/* SDKs and Libraries */}
+        <section className="py-20 bg-gradient-to-br from-gray-900/50 to-black/50">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+              className="text-center mb-16"
+            >
+              <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6">SDKs & Libraries</h2>
+              <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+                Official SDKs and libraries for popular programming languages and frameworks.
               </p>
             </motion.div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
               {[
-                {
-                  icon: GitBranch,
-                  title: 'GitHub Repositories',
-                  description: 'Open source libraries and example projects',
-                  href: 'https://github.com/ziontechgroup',
-                  color: 'from-gray-500 to-gray-600'
-                },
-                {
-                  icon: Terminal,
-                  title: 'CLI Tools',
-                  description: 'Command-line interfaces for our platforms',
-                  href: '/docs/cli',
-                  color: 'from-green-500 to-emerald-500'
-                },
-                {
-                  icon: Globe,
-                  title: 'API Playground',
-                  description: 'Interactive API testing and exploration',
-                  href: '/docs/api-playground',
-                  color: 'from-blue-500 to-cyan-500'
-                },
-                {
-                  icon: MessageCircle,
-                  title: 'Community Forum',
-                  description: 'Connect with other developers',
-                  href: '/community',
-                  color: 'from-purple-500 to-pink-500'
-                }
-              ].map((resource, index) => (
+                { name: 'Python SDK', icon: Code, version: 'v2.1.0', downloads: '125K+', color: 'from-blue-500 to-cyan-500' },
+                { name: 'JavaScript SDK', icon: Code, version: 'v1.8.5', downloads: '89K+', color: 'from-yellow-500 to-orange-500' },
+                { name: 'Go SDK', icon: Code, version: 'v1.5.2', downloads: '45K+', color: 'from-purple-500 to-pink-500' },
+                { name: 'Rust SDK', icon: Code, version: 'v1.2.0', downloads: '32K+', color: 'from-red-500 to-pink-500' }
+              ].map((sdk, index) => (
                 <motion.div
-                  key={resource.title}
+                  key={sdk.name}
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.6, delay: index * 0.1 }}
                   className="group cursor-pointer"
                 >
-                  <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-gray-800/50 to-gray-900/50 border border-gray-700/50 hover:border-cyan-400/50 transition-all duration-300">
-                    <div className="p-6 text-center">
-                      <div className={`w-16 h-16 bg-gradient-to-br ${resource.color} rounded-xl flex items-center justify-center mx-auto mb-4`}>
-                        <resource.icon className="w-8 h-8 text-white" />
-                      </div>
-                      <h3 className="text-xl font-bold text-white mb-3 group-hover:text-cyan-400 transition-colors duration-300">
-                        {resource.title}
-                      </h3>
-                      <p className="text-gray-300 mb-4">{resource.description}</p>
-                      
-                      <div className="flex items-center justify-center">
-                        <span className="text-cyan-400 text-sm font-medium">Access Resource</span>
-                        <ExternalLink className="w-4 h-4 text-gray-400 ml-2 group-hover:text-cyan-400 transition-colors duration-300" />
-                      </div>
+                  <div className="bg-gradient-to-br from-gray-800/50 to-gray-900/50 rounded-2xl p-6 border border-gray-700/50 hover:border-cyan-400/50 transition-all duration-300">
+                    <div className={`w-16 h-16 bg-gradient-to-br ${sdk.color} rounded-xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300`}>
+                      <sdk.icon className="w-8 h-8 text-white" />
+                    </div>
+                    <h3 className="text-xl font-bold text-white mb-2 text-center">{sdk.name}</h3>
+                    <div className="text-center space-y-2">
+                      <div className="text-sm text-gray-400">Version {sdk.version}</div>
+                      <div className="text-sm text-cyan-400">{sdk.downloads} downloads</div>
+                    </div>
+                    <div className="mt-4 flex space-x-2">
+                      <button className="flex-1 px-3 py-2 bg-cyan-400 text-white text-sm font-medium rounded-lg hover:bg-cyan-500 transition-colors duration-300">
+                        <Download className="w-4 h-4 mr-1 inline" />
+                        Download
+                      </button>
+                      <button className="px-3 py-2 border border-gray-600 text-gray-300 text-sm font-medium rounded-lg hover:border-cyan-400 hover:text-cyan-400 transition-colors duration-300">
+                        <ExternalLink className="w-4 h-4" />
+                      </button>
                     </div>
                   </div>
                 </motion.div>
@@ -473,71 +543,65 @@ const DocumentationPage: React.FC = () => {
           </div>
         </section>
 
-        {/* Newsletter Section */}
-        <section className="py-20 bg-gradient-to-br from-gray-900/50 to-black/50">
-          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8 }}
-              className="bg-gradient-to-br from-gray-800/50 to-gray-900/50 rounded-3xl p-12 border border-gray-700/50"
-            >
-              <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6">
-                Stay Updated
-              </h2>
-              <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
-                Get notified about new documentation, API updates, and developer resources.
-              </p>
-              
-              <div className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
-                <input
-                  type="email"
-                  placeholder="Enter your email"
-                  className="flex-1 px-4 py-3 bg-gray-800/50 border border-gray-700 rounded-xl text-white placeholder-gray-400 focus:border-cyan-400 focus:outline-none transition-colors duration-300"
-                />
-                <button className="px-8 py-3 bg-gradient-to-r from-cyan-400 to-purple-600 text-white font-bold rounded-xl hover:from-cyan-500 hover:to-purple-700 transition-all duration-300 transform hover:scale-105">
-                  Subscribe
-                </button>
-              </div>
-              
-              <p className="text-sm text-gray-400 mt-4">
-                No spam, unsubscribe at any time. We respect your privacy.
-              </p>
-            </motion.div>
-          </div>
-        </section>
-
-        {/* CTA Section */}
+        {/* Help & Support */}
         <section className="py-20">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
+              className="text-center mb-16"
             >
-              <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6">
-                Need Help Getting Started?
-              </h2>
-              <p className="text-xl text-gray-300 mb-8 max-w-3xl mx-auto">
-                Our team is here to help you succeed with our technology platforms
+              <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6">Need Help?</h2>
+              <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+                Can't find what you're looking for? Our support team is here to help.
               </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <a
-                  href="/contact"
-                  className="px-8 py-4 bg-gradient-to-r from-cyan-400 to-purple-600 text-white font-bold rounded-xl hover:from-cyan-500 hover:to-purple-700 transition-all duration-300 transform hover:scale-105"
-                >
-                  Contact Support
-                </a>
-                <a
-                  href="/community"
-                  className="px-8 py-4 border-2 border-cyan-400 text-cyan-400 font-bold rounded-xl hover:bg-cyan-400 hover:text-black transition-all duration-300"
-                >
-                  Join Community
-                </a>
-              </div>
             </motion.div>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              {[
+                {
+                  title: 'Community Forum',
+                  description: 'Connect with other developers and get help from the community',
+                  icon: Users,
+                  color: 'from-blue-500 to-cyan-500',
+                  action: 'Join Forum'
+                },
+                {
+                  title: 'Support Tickets',
+                  description: 'Submit a support ticket for technical assistance',
+                  icon: HelpCircle,
+                  color: 'from-purple-500 to-pink-500',
+                  action: 'Submit Ticket'
+                },
+                {
+                  title: 'Live Chat',
+                  description: 'Chat with our support team in real-time',
+                  icon: MessageCircle,
+                  color: 'from-green-500 to-emerald-500',
+                  action: 'Start Chat'
+                }
+              ].map((help, index) => (
+                <motion.div
+                  key={help.title}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.6, delay: index * 0.1 }}
+                  className="text-center group"
+                >
+                  <div className={`w-20 h-20 bg-gradient-to-br ${help.color} rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300`}>
+                    <help.icon className="w-10 h-10 text-white" />
+                  </div>
+                  <h3 className="text-xl font-bold text-white mb-3">{help.title}</h3>
+                  <p className="text-gray-300 leading-relaxed mb-6">{help.description}</p>
+                  <button className="px-6 py-3 bg-gradient-to-r from-cyan-400 to-purple-600 text-white font-semibold rounded-xl hover:from-cyan-500 hover:to-purple-700 transition-all duration-300 transform hover:scale-105">
+                    {help.action}
+                  </button>
+                </motion.div>
+              ))}
+            </div>
           </div>
         </section>
       </div>
@@ -545,4 +609,4 @@ const DocumentationPage: React.FC = () => {
   );
 };
 
-export default DocumentationPage;
+export default DocsPage;
