@@ -35,6 +35,43 @@ import { real2027Q1Additions } from '../../data/real-2027-q1-additions';
 import { real2027Q2Additions } from '../../data/real-2027-q2-additions';
 import { cursorAddedServices } from '../../data/cursor-added-services';
 
+<<<<<<< HEAD
+type Service = typeof enhancedRealMicroSaasServices[number] | {
+  id: string;
+  name: string;
+  tagline: string;
+  price: string | { monthly: number; yearly: number; currency: string; trialDays: number; setupTime: string; } | null;
+  period?: string;
+  description: string;
+  features?: string[];
+  popular?: boolean;
+  icon?: string;
+  color?: string;
+  textColor?: string;
+  link: string;
+  marketPosition?: string;
+  targetAudience?: string;
+  trialDays?: number;
+  setupTime?: string;
+  category?: string;
+  realService?: boolean;
+  technology?: string[];
+  integrations?: string[];
+  useCases?: string[];
+  roi?: string;
+  competitors?: string[];
+  marketSize?: string;
+  growthRate?: string;
+  variant?: any;
+  contactInfo?: any;
+  realImplementation?: boolean;
+  implementationDetails?: string;
+  launchDate?: string;
+  customers?: number;
+  rating?: number;
+  reviews?: number;
+};
+=======
 import { real2029Q1Additions } from '../../data/real-2029-q1-additions';
 import { realMarketServices } from '../../data/real-market-services';
 import { real2029Q2Additions } from '../../data/real-2029-q2-additions';
@@ -45,6 +82,7 @@ import { innovativeMicroSaasSolutions } from '../../data/2034-innovative-micro-s
 import { cuttingEdgeAIServices } from '../../data/2034-cutting-edge-ai-services';
 
 type Service = typeof enhancedRealMicroSaasServices[number];
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-13fb
 
 const contactInfo = {
 	mobile: '+1 302 464 0950',
@@ -95,6 +133,9 @@ function getAllServices(): Service[] {
 		.concat(real2026Q4NewServices as unknown as Service[])
 		.concat(real2027Q1Additions as unknown as Service[])
 		.concat(real2027Q2Additions as unknown as Service[])
+<<<<<<< HEAD
+		.concat(cursorAddedServices as unknown as Service[]);
+=======
 		.concat(real2028ServiceExpansions as unknown as Service[])
 		.concat(real2029Q1Additions as unknown as Service[])
 		.concat(realMarketServices as unknown as Service[])
@@ -104,6 +145,7 @@ function getAllServices(): Service[] {
 		.concat(enterpriseITSolutions as unknown as Service[])
 		.concat(innovativeMicroSaasSolutions as unknown as Service[])
 		.concat(cuttingEdgeAIServices as unknown as Service[]);
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-13fb
 }
 
 function toSlug(value: string): string {

@@ -94,11 +94,22 @@ const navigationItems: NavigationItem[] = [
       { name: 'Managed Postgres HA', href: '/managed-postgres-ha', description: 'HA Postgres ops' },
       { name: 'Micro SAAS', href: '/micro-saas', description: 'Business tools and automation' },
       { name: 'New 2034 Services', href: '/services?sort=newest', description: 'Latest additions' },
+<<<<<<< HEAD
+      { name: 'RAG Evaluation Lab', href: '/rag-evaluation-lab', description: 'Measure RAG quality & cost' },
+      { name: 'SOC 2 Compliance Automation', href: '/soc2-compliance-automation', description: 'Automate evidence & controls' },
+      { name: 'Browser Automation Cloud', href: '/browser-automation-cloud', description: 'Scale headless browser flows' },
+      { name: 'Secrets Rotation Automation', href: '/secrets-rotation-automation', description: 'Policy-driven key rotation' },
+      { name: 'API Performance Testing', href: '/api-performance-testing', description: 'Load/soak tests with CI gates' },
+      { name: 'AI Sales Email Autopilot', href: '/services/ai-sales-email-autopilot', description: 'Personalized outbound at scale' },
+      { name: 'Kubernetes Cost & Rightsizing', href: '/services/kubernetes-cost-rightsizing', description: 'SLO-aware cost optimization' },
+      { name: 'CI Flaky Test Detector', href: '/services/ci-flaky-test-detector', description: 'Auto quarantine and PR insights' }
+=======
       // Newly added real services
       { name: 'RAG Evaluation Lab', href: '/services/rag-evaluation-lab', description: 'Benchmark and regression test RAG' },
       { name: 'Browser Automation Cloud', href: '/services/browser-automation-cloud', description: 'Headless browser automation' },
       { name: 'Secrets Rotation Automation', href: '/services/secrets-rotation-automation', description: 'Rotate keys and passwords' },
       { name: 'API Performance Testing', href: '/services/api-performance-testing', description: 'Latency SLO and load tests' }
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-13fb
     ]
   },
   {
