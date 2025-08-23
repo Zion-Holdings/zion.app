@@ -125,6 +125,10 @@
 
 # Scheduled maintenance automation
 [[scheduled.functions]]
+<<<<<<< HEAD
+  name = "branch-cleanup-runner"
+  schedule = "0 2 * * *" # daily at 02:00 UTC
+=======
   name = "seo-audit-runner"
   schedule = "0 */2 * * *"
 
@@ -234,3 +238,4 @@
 [[scheduled.functions]]
   name = "autonomous-cloud-bootstrap"
   schedule = "*/10 * * * *"
+>>>>>>> origin/cursor/autonomous-cloud-automation-and-sync-387c
