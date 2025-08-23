@@ -1,6 +1,10 @@
 import React, { createContext, useContext, useReducer, useEffect } from 'react';
 import { CartContextType, CartItem, CartAction } from '@/types/cart';
+<<<<<<< HEAD
+import { saveCart, getCart } from '@/lib/db';
+=======
 import { safeStorage } from '@/utils/safeStorage';
+>>>>>>> origin/8aozst-codex/implement-cart-functionality-with-react-context
 
 interface CartState { items: CartItem[]; }
 
@@ -26,6 +30,11 @@ function cartReducer(state: CartState, action: CartAction): CartState {
       return { items: state.items.filter(i => i.id !== action.payload) };
     case 'CLEAR_CART':
       return { items: [] };
+<<<<<<< HEAD
+    case 'SET_ITEMS':
+      return { items: action.payload };
+=======
+>>>>>>> origin/8aozst-codex/implement-cart-functionality-with-react-context
     default:
       return state;
   }
@@ -40,6 +49,45 @@ export function useCart(): CartContextType {
 }
 
 export function CartProvider({ children }: { children: React.ReactNode }) {
+<<<<<<< HEAD
+  const [state, dispatch] = useReducer(cartReducer, initialState);
+
+  useEffect(() => {
+    getCart().then(items => {
+      if (items.length) {
+        dispatch({ type: 'SET_ITEMS', payload: items as CartItem[] });
+      }
+    });
+  }, []);
+
+  useEffect(() => {
+    saveCart(state.items);
+  }, [state.items]);
+
+  const value: CartContextType = {
+    items,
+    dispatch,
+  };
+
+  // This useEffect for loading items from localStorage was also redundant
+  // as cartSlice.ts handles initial load.
+
+  // Persist cart items to localStorage whenever they change from Redux state
+  useEffect(() => {
+    if (process.env.NODE_ENV === 'development') {
+      logInfo('[CartProvider] Persisting items to localStorage:', { data:  { data: items } });
+    }
+    try {
+      // Only persist if localStorage is actually available.
+      // safeStorage handles this internally, but good to be mindful.
+      safeStorage.setItem('zion_cart', JSON.stringify(items));
+    } catch (error) {
+      // Catching potential errors during stringify or setItem, though safeStorage also has try/catch.
+      logErrorToProduction('[CartProvider] Failed to persist cart to localStorage', { data: error });
+    }
+  }, [items]); // Dependency array ensures this runs when `items` from Redux changes.
+
+=======
   const [state, dispatch] = useReducer(
     cartReducer,
     initialState,
@@ -62,5 +110,6 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
     dispatch,
   };
 
+>>>>>>> origin/8aozst-codex/implement-cart-functionality-with-react-context
   return <CartContext.Provider value={value}>{children}</CartContext.Provider>;
 }

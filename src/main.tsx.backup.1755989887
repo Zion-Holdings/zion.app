@@ -27,8 +27,13 @@ import { NotificationProvider } from './context';
 // Import analytics provider
 import { AnalyticsProvider } from './context/AnalyticsContext';
 import { ViewModeProvider } from './context/ViewModeContext';
+<<<<<<< HEAD
+import { Provider } from 'react-redux';
+import { store } from './store/store';
+=======
 import { CartProvider } from './context/CartContext';
 import { registerServiceWorker } from './serviceWorkerRegistration';
+>>>>>>> origin/8aozst-codex/implement-cart-functionality-with-react-context
 
 // Initialize a React Query client with global error handling
 const queryClient = new QueryClient({

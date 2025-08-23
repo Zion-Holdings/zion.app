@@ -276,3 +276,13 @@
 2025-08-23 22:58:05 - Resolving conflicts in src/types/react-router-dom.d.ts for branch 87zh7m-codex/fix-netlify-build-failures-due-to-typescript-errors
 2025-08-23 22:58:05 - Resolving conflicts in src/types/socket.io.d.ts for branch 87zh7m-codex/fix-netlify-build-failures-due-to-typescript-errors
 2025-08-23 22:58:06 - Resolving conflicts in tsconfig.json for branch 87zh7m-codex/fix-netlify-build-failures-due-to-typescript-errors
+2025-08-23 22:58:07 - Merge conflicts detected in 8aozst-codex/implement-cart-functionality-with-react-context
+2025-08-23 22:58:07 - Resolving conflicts in src/App.tsx for branch 8aozst-codex/implement-cart-functionality-with-react-context
+2025-08-23 22:58:07 - Resolving conflicts in src/components/header/MobileBottomNav.tsx for branch 8aozst-codex/implement-cart-functionality-with-react-context
+2025-08-23 22:58:07 - Resolving conflicts in src/context/CartContext.tsx for branch 8aozst-codex/implement-cart-functionality-with-react-context
+2025-08-23 22:58:07 - Resolving conflicts in src/context/index.ts for branch 8aozst-codex/implement-cart-functionality-with-react-context
+2025-08-23 22:58:07 - Resolving conflicts in src/layout/MainNavigation.tsx for branch 8aozst-codex/implement-cart-functionality-with-react-context
+2025-08-23 22:58:07 - Resolving conflicts in src/main.tsx for branch 8aozst-codex/implement-cart-functionality-with-react-context
+2025-08-23 22:58:07 - Resolving conflicts in src/pages/NewProductsPage.tsx for branch 8aozst-codex/implement-cart-functionality-with-react-context
+2025-08-23 22:58:07 - Resolving conflicts in src/pages/ProductPage.tsx for branch 8aozst-codex/implement-cart-functionality-with-react-context
+2025-08-23 22:58:07 - Resolving conflicts in src/types/cart.ts for branch 8aozst-codex/implement-cart-functionality-with-react-context

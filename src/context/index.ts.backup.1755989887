@@ -8,3 +8,7 @@ export {
 } from './RequestQuoteWizard';
 export { ViewModeProvider, useViewMode } from './ViewModeContext';
 export { CartProvider, useCart } from './CartContext';
+<<<<<<< HEAD
+export { ConsentProvider, useConsent } from './ConsentContext';
+=======
+>>>>>>> origin/8aozst-codex/implement-cart-functionality-with-react-context
