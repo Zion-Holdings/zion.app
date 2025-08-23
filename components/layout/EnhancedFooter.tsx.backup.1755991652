@@ -67,6 +67,9 @@ const contactInfo = {
   website: 'https://ziontechgroup.com'
 };
 
+<<<<<<< HEAD
+const EnhancedFooter: React.FC = () => {
+=======
 const serviceCategories = [
   {
     name: 'AI & Consciousness',
@@ -229,6 +232,7 @@ const socialLinks = [
 ];
 
 export default function EnhancedFooter() {
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-5350
   const currentYear = new Date().getFullYear();
 
   return (

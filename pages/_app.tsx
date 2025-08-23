@@ -1,17 +1,13 @@
 import type { AppProps } from 'next/app';
 import React, { useRef } from 'react';
 import '../styles/globals.css';
-import { SEOContext } from '../components/SEOContext';
-import DefaultSEO from '../components/DefaultSEO';
-import Analytics from '../components/Analytics';
 import Layout from '../components/layout/Layout';
+import { SEOContext } from '../components/SEOContext';
 
-export default function App({ Component, pageProps }: AppProps) {
+export default function MyApp({ Component, pageProps }: AppProps) {
 	const renderedRef = useRef(false);
 	return (
 		<SEOContext.Provider value={{ renderedRef }}>
-			<DefaultSEO />
-			<Analytics />
 			<Layout>
 				<Component {...pageProps} />
 			</Layout>
