@@ -107,7 +107,11 @@ const serviceCategories = [
 
 export default function Pricing() {
   return (
+<<<<<<< HEAD
+    <EnhancedFuturisticBackground variant="quantum-holographic-advanced" intensity="high">
+=======
     <EnhancedFuturisticBackground variant="quantum-advanced" intensity="medium">
+>>>>>>> origin/cursor/enhance-app-services-and-website-with-futuristic-design-dae1
       <div className="min-h-screen">
         <Head>
           <title>Transparent Pricing Plans | Zion Tech Group - Revolutionary Micro SaaS Solutions</title>

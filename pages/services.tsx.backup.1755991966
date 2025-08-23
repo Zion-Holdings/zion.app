@@ -209,8 +209,13 @@ export default function ServicesPage() {
       <div className="min-h-screen">
         <Head>
           <title>Complete Services Portfolio | Zion Tech Group - AI, Cloud, Security & More</title>
+<<<<<<< HEAD
+          <meta name="description" content="Explore our complete portfolio of 150+ micro SaaS services. AI solutions, quantum computing, space technology, biotechnology, renewable energy, and emerging technologies." />
+          <meta name="keywords" content="AI services, quantum computing, space technology, biotechnology, renewable energy, autonomous vehicles, micro SaaS, business automation" />
+=======
           <meta name="description" content="Explore our complete portfolio of 200+ micro SaaS services. AI solutions, quantum computing, cloud infrastructure, cybersecurity, data analytics, IoT, blockchain, and emerging technologies." />
           <meta name="keywords" content="AI services, cloud solutions, cybersecurity, data analytics, IoT platform, blockchain, quantum computing, AR/VR, micro SaaS, business automation" />
+>>>>>>> origin/cursor/enhance-app-services-and-website-with-futuristic-design-dae1
           <meta name="author" content="Zion Tech Group" />
           <meta property="og:title" content="Complete Services Portfolio | Zion Tech Group" />
           <meta property="og:description" content="Comprehensive technology services portfolio with AI, quantum computing, space technology, and emerging technology solutions." />
@@ -228,6 +233,29 @@ export default function ServicesPage() {
                   <Sparkles className="w-4 h-4 mr-2" />
                   <span>150+ Real Micro SaaS Services</span>
                 </div>
+<<<<<<< HEAD
+                
+                <h1 className="text-5xl md:text-6xl font-bold text-white mb-6">
+                  <span className="bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
+                    Complete Services
+                  </span>
+                  <br />
+                  <span className="text-white">Portfolio</span>
+                </h1>
+                
+                <p className="text-xl text-gray-300 mb-8 max-w-3xl mx-auto leading-relaxed">
+                  Discover our comprehensive collection of cutting-edge micro SaaS services. 
+                  From AI and quantum computing to space technology and biotechnology, we're building the future.
+                </p>
+
+                {/* Contact Information */}
+                <div className="bg-gradient-to-r from-slate-800/50 to-slate-700/50 rounded-2xl p-6 backdrop-blur-sm border border-slate-600/30 max-w-2xl mx-auto">
+                  <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-center">
+                    <div className="flex flex-col items-center">
+                      <Phone className="w-5 h-5 text-cyan-400 mb-2" />
+                      <div className="text-white font-semibold text-sm">Mobile</div>
+                      <div className="text-gray-300 text-sm">{contactInfo.mobile}</div>
+=======
               </div>
               
               <h1 className="text-5xl md:text-7xl font-bold mb-8 text-white">
@@ -275,6 +303,7 @@ export default function ServicesPage() {
                   <div className="flex flex-col items-center text-center group">
                     <div className="w-12 h-12 bg-gradient-to-br from-cyan-500 to-blue-600 rounded-xl flex items-center justify-center mb-3 group-hover:scale-110 transition-transform duration-300">
                       <Phone className="w-6 h-6 text-white" />
+>>>>>>> origin/cursor/enhance-app-services-and-website-with-futuristic-design-dae1
                     </div>
                     <div className="flex flex-col items-center">
                       <Mail className="w-5 h-5 text-purple-400 mb-2" />

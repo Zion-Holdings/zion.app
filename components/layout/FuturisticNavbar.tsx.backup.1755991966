@@ -25,10 +25,31 @@ const FuturisticNavbar: React.FC = () => {
 
   const navItems = [
     { name: 'Home', href: '/', icon: <Zap className="w-4 h-4" /> },
+<<<<<<< HEAD
+    { 
+      name: 'Services', 
+      href: '/services', 
+      icon: <Cloud className="w-4 h-4" />,
+      submenu: [
+        { name: 'AI & Machine Learning', href: '/services#ai', icon: '🤖' },
+        { name: 'Quantum Computing', href: '/services#quantum', icon: '⚛️' },
+        { name: 'Cybersecurity', href: '/services#security', icon: '🔒' },
+        { name: 'Cloud & Infrastructure', href: '/services#cloud', icon: '☁️' },
+        { name: 'Data Analytics & BI', href: '/services#analytics', icon: '📊' },
+        { name: 'Blockchain & Web3', href: '/services#blockchain', icon: '🔗' },
+        { name: 'AR/VR & Metaverse', href: '/services#metaverse', icon: '🌐' },
+        { name: 'Edge Computing & 5G', href: '/services#edge', icon: '⚡' }
+      ]
+    },
+    { name: 'Micro SaaS', href: '/micro-saas', icon: <Bot className="w-4 h-4" /> },
+    { name: 'Pricing', href: '/pricing', icon: <Globe className="w-4 h-4" /> },
+    { name: 'About', href: '/about', icon: <Shield className="w-4 h-4" /> },
+=======
     { name: 'Services', href: '/services', icon: <Cloud className="w-4 h-4" /> },
     { name: 'AI & Quantum', href: '/services?category=AI%20%26%20Machine%20Learning', icon: <Bot className="w-4 h-4" /> },
     { name: 'Blockchain', href: '/services?category=Blockchain%20%26%20Web3', icon: <Globe className="w-4 h-4" /> },
     { name: 'Pricing', href: '/pricing', icon: <Shield className="w-4 h-4" /> },
+>>>>>>> origin/cursor/enhance-app-services-and-website-with-futuristic-design-dae1
     { name: 'Contact', href: '/contact', icon: <Zap className="w-4 h-4" /> },
   ];
 
