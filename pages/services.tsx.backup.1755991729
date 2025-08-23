@@ -205,29 +205,74 @@ export default function ServicesPage() {
       name: 'Quantum Computing & AI',
       description: 'Revolutionary quantum AI solutions with unprecedented computing power',
       icon: <Brain className="w-6 h-6" />,
+<<<<<<< HEAD
+      count: enhancedRealMicroSaasServices.filter(s => s.category === 'Quantum Computing & AI' || s.category === 'AI & Machine Learning' || s.category === 'Healthcare & Biotechnology').length,
+      marketSize: '$12.5B',
+      growthRate: '300%',
+      featuredServices: ['Quantum AI Drug Discovery', 'Quantum Financial Optimizer', 'Quantum Healthcare Diagnostics']
+=======
       count: enhancedRealMicroSaasServices.filter(s => s.category === 'Quantum Computing & AI' || s.category === 'AI & Machine Learning').length,
       marketSize: '$8.5B',
       growthRate: '450% annually',
       featuredServices: ['Quantum AI Cognitive Platform', 'Quantum Finance Platform', 'Quantum Cybersecurity Suite'],
       opportunity: 'First-mover advantage in quantum computing commercialization',
       competitors: 'IBM Quantum, Google Quantum AI, Microsoft Azure Quantum'
+>>>>>>> origin/cursor/enhance-app-services-and-website-with-futuristic-design-4aaf
     },
     {
       name: 'Autonomous Systems & Robotics',
       description: 'Next-generation autonomous manufacturing and robotics platforms',
       icon: <Factory className="w-6 h-6" />,
       count: enhancedRealMicroSaasServices.filter(s => s.category === 'Manufacturing & Industry 4.0' || s.category === 'Robotics & Automation').length,
+<<<<<<< HEAD
+      marketSize: '$180B',
+      growthRate: '200%',
+      featuredServices: ['Autonomous Factory Orchestrator', 'AI Robotics Platform', 'Smart Manufacturing Suite']
+=======
       marketSize: '$12.3B',
       growthRate: '320% annually',
       featuredServices: ['Autonomous Manufacturing Platform', 'Autonomous Logistics Platform', 'Autonomous Robotics Platform'],
       opportunity: 'Industry 4.0 transformation accelerating globally',
       competitors: 'Siemens Mindsphere, PTC ThingWorx, GE Digital'
+>>>>>>> origin/cursor/enhance-app-services-and-website-with-futuristic-design-4aaf
     },
     {
       name: 'Healthcare & Biotechnology',
       description: 'AI-powered biomedical research and drug discovery platforms',
       icon: <FlaskConical className="w-6 h-6" />,
       count: enhancedRealMicroSaasServices.filter(s => s.category === 'Healthcare & Biotechnology').length,
+<<<<<<< HEAD
+      marketSize: '$75B',
+      growthRate: '280%',
+      featuredServices: ['Quantum AI Drug Discovery', 'Quantum Healthcare Diagnostics', 'AI Medical Imaging']
+    },
+    {
+      name: 'Space Technology',
+      description: 'AI-powered space mission planning and satellite optimization',
+      icon: <Rocket className="w-6 h-6" />,
+      count: enhancedRealMicroSaasServices.filter(s => s.category === 'Space Technology').length,
+      marketSize: '$8B',
+      growthRate: '400%',
+      featuredServices: ['Space Exploration AI Platform', 'Satellite Optimization Suite', 'Mission Planning AI']
+    },
+    {
+      name: 'Cybersecurity & Defense',
+      description: 'Quantum-resistant encryption and AI-powered threat detection',
+      icon: <Shield className="w-6 h-6" />,
+      count: enhancedRealMicroSaasServices.filter(s => s.category === 'Cybersecurity').length,
+      marketSize: '$180B',
+      growthRate: '200%',
+      featuredServices: ['Quantum Cybersecurity Shield', 'AI Threat Intelligence', 'Zero Trust Security']
+    },
+    {
+      name: 'Environmental Technology',
+      description: 'AI-powered climate prediction and sustainability optimization',
+      icon: <Leaf className="w-6 h-6" />,
+      count: enhancedRealMicroSaasServices.filter(s => s.category === 'Environmental Technology').length,
+      marketSize: '$12B',
+      growthRate: '250%',
+      featuredServices: ['AI Climate Prediction Platform', 'Sustainability Analytics', 'Green Energy Optimization']
+=======
       marketSize: '$3.2B',
       growthRate: '200% annually',
       featuredServices: ['Biomedical AI Platform', 'AI Healthcare Analytics', 'Personalized Medicine AI'],
@@ -255,12 +300,27 @@ export default function ServicesPage() {
       featuredServices: ['Metaverse Development Platform', 'VR/AR Solutions', '3D World Building'],
       opportunity: 'Virtual experiences becoming mainstream',
       competitors: 'Unity Technologies, Epic Games, Roblox'
+>>>>>>> origin/cursor/enhance-app-services-and-website-with-futuristic-design-4aaf
     },
     {
       name: 'Financial Technology',
       description: 'Quantum-powered financial optimization and trading platforms',
       icon: <DollarSign className="w-6 h-6" />,
       count: enhancedRealMicroSaasServices.filter(s => s.category === 'Financial Technology').length,
+<<<<<<< HEAD
+      marketSize: '$25B',
+      growthRate: '300%',
+      featuredServices: ['Quantum Financial Optimizer', 'AI Trading Platform', 'Risk Management Suite']
+    },
+    {
+      name: 'Education Technology',
+      description: 'AI-powered personalized learning and educational platforms',
+      icon: <GraduationCap className="w-6 h-6" />,
+      count: enhancedRealMicroSaasServices.filter(s => s.category === 'Education Technology').length,
+      marketSize: '$20B',
+      growthRate: '180%',
+      featuredServices: ['AI Education Personalizer', 'Learning Analytics Platform', 'Adaptive Content System']
+=======
       marketSize: '$8.5B',
       growthRate: '450% annually',
       featuredServices: ['Quantum Finance Platform', 'AI Trading Platform', 'Risk Management AI'],
@@ -350,6 +410,7 @@ export default function ServicesPage() {
       ourAdvantage: 'Quantum-resistant algorithms and AI integration',
       roi: '400% ROI within 6 months',
       link: 'https://ziontechgroup.com/quantum-cybersecurity'
+>>>>>>> origin/cursor/enhance-app-services-and-website-with-futuristic-design-4aaf
     }
   ];
 
