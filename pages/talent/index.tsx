@@ -1,20 +1,8 @@
-import type { NextPage } from 'next';
-import Head from 'next/head';
-
-const Index: NextPage = () => {
+export default function TalentIndex() {
   return (
-    <div>
-      <Head>
-        <title>Index - Zion Tech Solutions</title>
-        <meta name="description" content="Index page" />
-      </Head>
-      
-      <main>
-        <h1>Index</h1>
-        <p>This page is under construction.</p>
-      </main>
+    <div className="py-8">
+      <h1 className="text-xl font-semibold">Talent</h1>
+      <p className="text-gray-600 dark:text-gray-300">Explore top AI talent profiles.</p>
     </div>
   );
-};
-
-export default Index;
+}

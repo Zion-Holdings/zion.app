@@ -1,20 +1,8 @@
-import type { NextPage } from 'next';
-import Head from 'next/head';
-
-const EnhancedHome: NextPage = () => {
+export default function EnhancedHome() {
   return (
-    <div>
-      <Head>
-        <title>EnhancedHome - Zion Tech Solutions</title>
-        <meta name="description" content="EnhancedHome page" />
-      </Head>
-      
-      <main>
-        <h1>EnhancedHome</h1>
-        <p>This page is under construction.</p>
-      </main>
+    <div className="py-8">
+      <h1 className="text-xl font-semibold mb-2">Enhanced Home</h1>
+      <p className="text-gray-600 dark:text-gray-300">Showcasing enhanced UI elements.</p>
     </div>
   );
-};
-
-export default EnhancedHome;
+}
