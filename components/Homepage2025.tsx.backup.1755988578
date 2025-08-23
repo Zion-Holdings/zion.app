@@ -67,6 +67,26 @@ const Homepage2025: React.FC = () => {
               Pioneering the future of technology with innovative solutions that drive business transformation. 
               From AI consciousness to quantum computing, we're building tomorrow's solutions today.
             </motion.p>
+<<<<<<< HEAD
+            <motion.div 
+              className="flex flex-col sm:flex-row gap-4 justify-center mb-12"
+              initial={{ opacity: 0, y: 50 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1, delay: 0.4 }}
+            >
+              <a
+                href="/2036-innovative-services-showcase"
+                className="px-8 py-4 bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-semibold rounded-lg hover:from-cyan-600 hover:to-blue-700 transition-all duration-300 transform hover:scale-105 shadow-2xl shadow-cyan-500/25"
+              >
+                Explore 2036 Services
+              </a>
+              <a
+                href="/contact"
+                className="px-8 py-4 border-2 border-cyan-400 text-cyan-400 font-semibold rounded-lg hover:bg-cyan-400 hover:text-black transition-all duration-300 transform hover:scale-105"
+              >
+                Get Started
+              </a>
+=======
 
                           <motion.div
                 className="flex flex-col sm:flex-row gap-4 justify-center items-center"
@@ -110,6 +130,7 @@ const Homepage2025: React.FC = () => {
               <p className="text-xl text-gray-400 max-w-2xl mx-auto">
                 Join hundreds of companies already transforming their business with our solutions
               </p>
+>>>>>>> origin/cursor/add-and-advertise-new-services-then-build-f199
             </motion.div>
 
             {/* Market Stats */}

@@ -5,7 +5,11 @@ import {
   Search, Grid, List,
   Brain, Atom, Shield, Target, Rocket,
   ArrowRight, Check, Palette, Heart, Truck, GraduationCap,
+<<<<<<< HEAD
+  Building, Cpu, Database, Cloud, Lock, Sparkles
+=======
   Building, Cpu, Database, Cloud, Lock, ShoppingCart, Lightbulb
+>>>>>>> origin/cursor/add-and-advertise-new-services-then-build-f199
 } from 'lucide-react';
 import { innovative2025MicroSaasExpansionV2 } from '../data/innovative-2025-micro-saas-expansion-v2';
 import { innovative2025ITServicesExpansionV2 } from '../data/innovative-2025-it-services-expansion-v2';
@@ -128,6 +132,12 @@ const allServices = [
   ...real2036ServiceExpansions,
   ...innovative2036MicroSaasServices,
   ...innovative2036ITServices,
+<<<<<<< HEAD
+  // 2025 Advanced Services
+  ...real2025AdvancedAIServices,
+  ...real2025ITInfrastructureServices,
+  ...real2025InnovativeMicroSaas
+=======
   ...innovative2037MicroSaasServices,
   ...innovative2037ITServices,
   ...innovative2037AIServices,
@@ -137,6 +147,7 @@ const allServices = [
   ...innovative2038MicroSaasServices,
   ...innovative2038IndustryServices,
   ...innovative2038ConsultingServices
+>>>>>>> origin/cursor/add-and-advertise-new-services-then-build-f199
 ];
 
 const categories = [
@@ -211,6 +222,13 @@ const categories = [
     description: 'Learning and research platforms'
   },
   {
+<<<<<<< HEAD
+    id: 'revolutionary-2025-2026',
+    name: 'Revolutionary 2025-2026',
+    icon: <Sparkles className="w-6 h-6" />,
+    color: 'from-cyan-500 to-purple-500',
+    description: 'Cutting-edge services for the future'
+=======
     id: 'manufacturing-industry',
     name: 'Manufacturing & Industry',
     icon: <Building className="w-6 h-6" />,
@@ -230,6 +248,7 @@ const categories = [
     icon: <Lightbulb className="w-6 h-6" />,
     color: 'from-indigo-500 to-purple-500',
     description: 'Strategic consulting and advisory services'
+>>>>>>> origin/cursor/add-and-advertise-new-services-then-build-f199
   }
 ];
 
@@ -271,6 +290,13 @@ const ServicesPage: React.FC = () => {
     return sortOrder === 'asc' ? comparison : -comparison;
   });
 
+<<<<<<< HEAD
+  const getCategoryIcon = (serviceName: string) => {
+    if (serviceName.toLowerCase().includes('ai')) return <Users className="w-6 h-6" />;
+    if (serviceName.toLowerCase().includes('quantum')) return <Filter className="w-6 h-6" />;
+    if (serviceName.toLowerCase().includes('infrastructure') || serviceName.toLowerCase().includes('devops') || serviceName.toLowerCase().includes('security')) return <ArrowRight className="w-6 h-6" />;
+    return <Award className="w-6 h-6" />;
+=======
   // Pagination helpers
   const totalPages = Math.max(1, Math.ceil(sortedServices.length / pageSize));
   const currentPageClamped = Math.min(currentPage, totalPages);
@@ -330,6 +356,7 @@ const ServicesPage: React.FC = () => {
       default:
         return <Shield className="w-6 h-6 text-gray-400" />;
     }
+>>>>>>> origin/cursor/add-and-advertise-new-services-then-build-f199
   };
 
   const getCategoryColor = (serviceName: string) => {
