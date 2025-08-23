@@ -88,11 +88,11 @@ export default function UltimateServicesShowcase2025() {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-50 via-white to-blue-50">
-      <SEO 
+      <SEO
         title="2025 Ultimate Services Showcase - Zion Tech Group"
         description="Discover our comprehensive suite of innovative micro SAAS services, IT solutions, and AI services. From enterprise automation to blockchain compliance, we deliver cutting-edge solutions for modern businesses."
         keywords={["micro SAAS", "IT services", "AI services", "enterprise automation", "cybersecurity", "data analytics", "cloud DevOps", "fintech", "blockchain"]}
-        image="/og-image-2025-services.jpg"
+        ogImage="/og-image-2025-services.jpg"
       />
 
       {/* Hero Section */}

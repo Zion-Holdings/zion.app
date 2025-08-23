@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Head from 'next/head';
-import UltraFuturisticNavigation2040 from './UltraFuturisticNavigation2040';
-import UltraFuturisticFooter2040 from './UltraFuturisticFooter2040';
+import UltraFuturisticNavigation2046 from './UltraFuturisticNavigation2046';
+import UltraFuturisticFooter2046 from './UltraFuturisticFooter2046';
 import EnhancedSidebar2025 from './EnhancedSidebar2025';
 import UltraFuturisticBackground2036 from '../backgrounds/UltraFuturisticBackground2036';
 import EnhancedPerformanceMonitor from '../EnhancedPerformanceMonitor';
@@ -20,9 +20,9 @@ interface LayoutProps {
 
 export default function Layout({ 
   children, 
-  title = "Zion Tech Group - Revolutionary 2045 Technology",
+  title = "Zion Tech Group - Revolutionary 2046 Technology",
   description = "Pioneering the future of technology with revolutionary AI consciousness, quantum computing, and autonomous solutions that transform businesses worldwide.",
-  keywords = "AI consciousness, quantum computing, autonomous solutions, space technology, cybersecurity, business intelligence, Zion Tech Group, 2045 technology",
+  keywords = "AI consciousness, quantum computing, autonomous solutions, space technology, cybersecurity, business intelligence, Zion Tech Group, 2046 technology",
   ogImage = "/og-image.jpg",
   canonicalUrl
 }: LayoutProps) {
@@ -160,7 +160,7 @@ export default function Layout({
           <TopContactBar />
           
           {/* Navigation */}
-          <UltraFuturisticNavigation2040 />
+          <UltraFuturisticNavigation2046 />
           
           {/* Sidebar and Main Content */}
           <div className="flex">
@@ -175,7 +175,7 @@ export default function Layout({
           </div>
           
           {/* Footer */}
-          <UltraFuturisticFooter2040 />
+          <UltraFuturisticFooter2046 />
         </div>
       </div>
 

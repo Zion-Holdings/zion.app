@@ -8,6 +8,11 @@ import {
   Building, Cpu
 } from 'lucide-react';
 
+// Import our new revolutionary 2046 services
+import { revolutionary2046AdvancedRealMicroSaas } from '../data/revolutionary-2046-advanced-real-micro-saas';
+import { revolutionary2046AdvancedITServices } from '../data/revolutionary-2046-advanced-it-services';
+import { revolutionary2046AdvancedAIServices } from '../data/revolutionary-2046-advanced-ai-services';
+
 // Import our new innovative 2025 services
 import { realInnovativeMicroSaasServices2025 } from '../data/2025-real-innovative-micro-saas-expansion';
 import { innovativeITInfrastructureServices2025 } from '../data/2025-innovative-it-infrastructure-services-expansion';
@@ -172,7 +177,11 @@ const allServices = [
   // Our new 2025 cutting-edge innovative services expansion
   ...cuttingEdgeInnovativeServices2025,
   ...advancedITInfrastructureSolutions2025,
-  ...advancedAIAutomationSolutions2025
+  ...advancedAIAutomationSolutions2025,
+  // Our new revolutionary 2046 services
+  ...revolutionary2046AdvancedRealMicroSaas,
+  ...revolutionary2046AdvancedITServices,
+  ...revolutionary2046AdvancedAIServices
 ];
 
 const categories = [
