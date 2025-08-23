@@ -4,11 +4,12 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { 
   ChevronRight, Home, Star, Users, 
   HelpCircle, Mail, Phone, MapPin,
-  Brain, Atom, Shield, Rocket, DollarSign,
+  Brain, Atom, Rocket, DollarSign,
   Zap,
   TrendingUp, Award, CheckCircle, Clock,
   Search, X as CloseIcon,
-  Target, BookOpen, Calendar, Video, FileText
+  Target, BookOpen, Calendar, Video, FileText,
+  Layers, Server
 } from 'lucide-react';
 
 const contactInfo = {
@@ -20,20 +21,39 @@ const contactInfo = {
 
 const sidebarSections = [
   {
-    title: 'AI & Consciousness',
-    icon: <Brain className="w-5 h-5" />,
-    color: 'text-violet-400',
+    title: 'Featured Revolutionary Services',
+    icon: <Star className="w-5 h-5" />,
+    color: 'from-yellow-500 to-orange-500',
     items: [
-      { name: 'AI Consciousness Evolution', href: '/ai-consciousness-evolution-2029', badge: 'New' },
-      { name: 'AI Quantum Neural Network', href: '/ai-quantum-neural-network', badge: 'Hot' },
-      { name: 'AI Autonomous Research', href: '/ai-autonomous-research-assistant', badge: 'New' },
-      { name: 'AI Emotional Intelligence', href: '/ai-emotional-intelligence-training', badge: 'Popular' },
-      { name: 'AI Predictive Maintenance', href: '/ai-predictive-maintenance-platform', badge: 'New' },
-      { name: 'AI Content Personalization', href: '/ai-content-personalization-engine', badge: 'New' },
-      { name: 'AI Autonomous Ecosystem', href: '/ai-autonomous-ecosystem-manager' },
-      { name: 'AI Ethics & Governance', href: '/ai-ethics-governance-framework' },
-      { name: 'RAG Evaluation Lab', href: '/rag-evaluation-lab/', badge: 'New' },
-      { name: 'API Performance Testing', href: '/api-performance-testing/' },
+      { name: 'AI Consciousness Evolution 2040', href: '/ai-consciousness-evolution-2040', badge: 'Breakthrough' },
+      { name: 'Quantum Neural Ecosystem 2040', href: '/quantum-neural-ecosystem-2040', badge: 'New' },
+      { name: 'Space Resource Intelligence 2040', href: '/space-resource-intelligence-2040', badge: 'Hot' },
+      { name: 'Autonomous Business Intelligence 2040', href: '/autonomous-business-intelligence-2040', badge: 'Featured' },
+      { name: 'Quantum Cybersecurity Future 2040', href: '/quantum-cybersecurity-future-2040', badge: 'Featured' },
+      { name: 'Brain-Computer Interface 2040', href: '/brain-computer-interface-2040', badge: 'Featured' },
+      { name: 'Holographic Quantum Workspace 2045', href: '/holographic-quantum-workspace-2045', badge: 'New' }
+    ]
+  },
+  {
+    title: 'AI & Machine Learning',
+    icon: <Brain className="w-5 h-5" />,
+    color: 'from-purple-500 to-pink-500',
+    items: [
+      { name: 'AI Consciousness Evolution 2040', href: '/ai-consciousness-evolution-2040' },
+      { name: 'AI Emotional Intelligence 2040', href: '/ai-emotional-intelligence-2040' },
+      { name: 'AI Autonomous Research 2041', href: '/ai-autonomous-research-2041' },
+      { name: 'AI Content Personalization 2041', href: '/ai-content-personalization-2041' },
+      { name: 'AI Ethics & Governance 2041', href: '/ai-ethics-governance-2041' },
+      { name: 'AI Autonomous Ecosystem 2041', href: '/ai-autonomous-ecosystem-2041' },
+      { name: 'AI Predictive Maintenance 2041', href: '/ai-predictive-maintenance-2041' },
+      { name: 'AI Customer Success 2041', href: '/ai-customer-success-2041' },
+      { name: 'AI Sales Intelligence 2041', href: '/ai-sales-intelligence-2041' },
+      { name: 'Autonomous Business Intelligence 2040', href: '/autonomous-business-intelligence-2040' },
+      { name: 'AI Content Personalization Engine', href: '/ai-content-personalization-engine' },
+      { name: 'AI Autonomous Testing Suite', href: '/ai-autonomous-testing-suite' },
+      { name: 'AI Autonomous SEO Optimizer', href: '/ai-autonomous-seo-optimizer' },
+      { name: 'AI Autonomous Customer Support', href: '/ai-autonomous-customer-support' },
+      { name: 'AI Autonomous Social Media Manager', href: '/ai-autonomous-social-media-manager' },
       { name: 'AI Creativity Studio', href: '/ai-creativity-studio' },
       { name: 'AI Education Platform', href: '/ai-education-platform' },
       { name: 'AI Healthcare Diagnostics', href: '/healthcare-solutions' },
@@ -45,17 +65,25 @@ const sidebarSections = [
   {
     title: 'Quantum & Emerging Tech',
     icon: <Atom className="w-5 h-5" />,
-    color: 'text-indigo-400',
+    color: 'from-blue-500 to-cyan-500',
     items: [
-      { name: 'Space Resource Mining', href: '/space-resource-mining-platform', badge: 'Hot' },
-      { name: 'Quantum Internet Security', href: '/quantum-internet-security-platform', badge: 'New' },
-      { name: 'Brain-Computer Interface', href: '/brain-computer-interface-platform', badge: 'New' },
-      { name: 'Quantum Materials Discovery', href: '/quantum-materials-discovery-platform', badge: 'New' },
-      { name: 'Autonomous Vehicle AI', href: '/autonomous-vehicle-ai-platform', badge: 'New' },
-      { name: 'Quantum Bio-Computing', href: '/quantum-bio-computing-platform' },
+      { name: 'Quantum Neural Ecosystem 2040', href: '/quantum-neural-ecosystem-2040' },
+      { name: 'Quantum Cybersecurity Future 2040', href: '/quantum-cybersecurity-future-2040' },
+      { name: 'Quantum Internet Security 2041', href: '/quantum-internet-security-2041' },
+      { name: 'Quantum Cloud Infrastructure 2041', href: '/quantum-cloud-infrastructure-2041' },
+      { name: 'Quantum Bio-Computing 2041', href: '/quantum-bio-computing-2041' },
+      { name: 'Space Resource Intelligence 2040', href: '/space-resource-intelligence-2040' },
+      { name: 'Brain-Computer Interface 2040', href: '/brain-computer-interface-2040' },
+      { name: 'Autonomous Vehicle AI 2040', href: '/autonomous-vehicle-ai-2040' },
+      { name: 'Quantum Materials Discovery 2040', href: '/quantum-materials-discovery-2040' },
+      { name: 'Quantum Financial Intelligence 2040', href: '/quantum-financial-intelligence-2040' },
+      { name: 'Quantum Encryption API', href: '/quantum-encryption-api' },
+      { name: 'Quantum Data Compression API', href: '/quantum-data-compression-api' },
+      { name: 'Quantum Payment Processor', href: '/quantum-payment-processor' },
+      { name: 'Quantum Video Compression API', href: '/quantum-video-compression-api' },
+      { name: 'Quantum AI Chatbot Platform', href: '/quantum-ai-chatbot-platform' },
       { name: 'Quantum Energy Platform', href: '/quantum-energy-platform' },
       { name: 'Quantum Robotics', href: '/quantum-robotics' },
-      { name: 'Quantum Cybersecurity', href: '/quantum-cybersecurity-platform' },
       { name: 'Quantum Logistics', href: '/quantum-logistics-optimization' },
       { name: 'Quantum Metaverse', href: '/quantum-metaverse' },
       { name: 'Quantum IoT Platform', href: '/quantum-iot' },
@@ -63,16 +91,24 @@ const sidebarSections = [
     ]
   },
   {
-    title: 'Enterprise IT',
-    icon: <Shield className="w-5 h-5" />,
-    color: 'text-blue-400',
+    title: 'IT & Infrastructure',
+    icon: <Server className="w-5 h-5" />,
+    color: 'from-green-500 to-emerald-500',
     items: [
-      { name: 'Quantum-Secure Cloud', href: '/quantum-secure-cloud-infrastructure', badge: 'New' },
-      { name: 'Autonomous IT Operations', href: '/autonomous-it-operations-center', badge: 'New' },
-      { name: 'Edge Computing Orchestration', href: '/edge-computing-orchestration-platform', badge: 'New' },
-      { name: 'Blockchain Infrastructure', href: '/blockchain-infrastructure-platform', badge: 'New' },
-      { name: 'AI-Powered DevOps', href: '/ai-powered-devops-platform', badge: 'New' },
-      { name: 'Quantum Cloud Infrastructure', href: '/quantum-cloud-infrastructure-platform' },
+      { name: 'Quantum Cloud Infrastructure 2045', href: '/quantum-cloud-infrastructure-2045' },
+      { name: 'AI-Powered DevOps Automation 2045', href: '/ai-powered-devops-automation-2045' },
+      { name: 'Quantum Database Platform 2045', href: '/quantum-database-platform-2045' },
+      { name: 'AI-Powered Network Optimization 2045', href: '/ai-powered-network-optimization-2045' },
+      { name: 'Quantum Storage Platform 2045', href: '/quantum-storage-platform-2045' },
+      { name: 'AI-Powered Security Operations 2045', href: '/ai-powered-security-operations-2045' },
+      { name: 'Quantum Application Platform 2045', href: '/quantum-application-platform-2045' },
+      { name: 'AI-Powered IT Service Management 2045', href: '/ai-powered-it-service-management-2045' },
+      { name: 'Quantum Integration Platform 2045', href: '/quantum-integration-platform-2045' },
+      { name: 'AI-Powered Disaster Recovery 2045', href: '/ai-powered-disaster-recovery-2045' },
+      { name: 'Quantum-Secure Cloud', href: '/quantum-secure-cloud-infrastructure' },
+      { name: 'Autonomous IT Operations', href: '/autonomous-it-operations-center' },
+      { name: 'Edge Computing Orchestration', href: '/edge-computing-orchestration-platform' },
+      { name: 'Blockchain Infrastructure', href: '/blockchain-infrastructure-platform' },
       { name: 'Zero Trust Security', href: '/zero-trust-security-platform' },
       { name: 'Browser Automation Cloud', href: '/browser-automation-cloud/' },
       { name: 'Secrets Rotation Automation', href: '/secrets-rotation-automation/' },
@@ -82,15 +118,25 @@ const sidebarSections = [
     ]
   },
   {
-    title: 'Micro SAAS',
-    icon: <Rocket className="w-5 h-5" />,
-    color: 'text-emerald-400',
+    title: 'Micro SaaS Solutions',
+    icon: <Layers className="w-5 h-5" />,
+    color: 'from-purple-500 to-indigo-500',
     items: [
-      { name: 'AI Customer Success', href: '/ai-customer-success-platform', badge: 'New' },
-      { name: 'Supply Chain Optimization', href: '/intelligent-supply-chain-optimization', badge: 'New' },
-      { name: 'Financial Planning AI', href: '/ai-financial-planning-platform', badge: 'New' },
-      { name: 'HR Analytics Platform', href: '/ai-hr-analytics-platform', badge: 'New' },
-      { name: 'Sales Intelligence AI', href: '/ai-sales-intelligence-platform', badge: 'New' },
+      { name: 'AI Content Personalization Engine', href: '/ai-content-personalization-engine' },
+      { name: 'Quantum Encryption API', href: '/quantum-encryption-api' },
+      { name: 'AI Autonomous Testing Suite', href: '/ai-autonomous-testing-suite' },
+      { name: 'Quantum Data Compression API', href: '/quantum-data-compression-api' },
+      { name: 'AI Autonomous SEO Optimizer', href: '/ai-autonomous-seo-optimizer' },
+      { name: 'Quantum Payment Processor', href: '/quantum-payment-processor' },
+      { name: 'AI Autonomous Customer Support', href: '/ai-autonomous-customer-support' },
+      { name: 'Quantum Video Compression API', href: '/quantum-video-compression-api' },
+      { name: 'AI Autonomous Social Media Manager', href: '/ai-autonomous-social-media-manager' },
+      { name: 'Quantum AI Chatbot Platform', href: '/quantum-ai-chatbot-platform' },
+      { name: 'AI Customer Success', href: '/ai-customer-success-platform' },
+      { name: 'Supply Chain Optimization', href: '/intelligent-supply-chain-optimization' },
+      { name: 'Financial Planning AI', href: '/ai-financial-planning-platform' },
+      { name: 'HR Analytics Platform', href: '/ai-hr-analytics-platform' },
+      { name: 'Sales Intelligence AI', href: '/ai-sales-intelligence-platform' },
       { name: 'AI Decision Engine', href: '/ai-powered-decision-engine' },
       { name: 'Content Automation', href: '/intelligent-content-automation-platform' },
       { name: 'Smart CRM Suite', href: '/smart-crm-intelligence-suite' },
@@ -104,9 +150,9 @@ const sidebarSections = [
     ]
   },
   {
-    title: 'Solutions',
+    title: 'Industry Solutions',
     icon: <Target className="w-5 h-5" />,
-    color: 'text-orange-400',
+    color: 'from-orange-500 to-red-500',
     items: [
       { name: 'Healthcare & Biotech', href: '/biotech-ai' },
       { name: 'Financial Services', href: '/billing-analytics' },
@@ -123,9 +169,9 @@ const sidebarSections = [
     ]
   },
   {
-    title: 'Resources',
+    title: 'Resources & Support',
     icon: <BookOpen className="w-5 h-5" />,
-    color: 'text-cyan-400',
+    color: 'from-cyan-500 to-blue-500',
     items: [
       { name: 'Documentation', href: '/docs' },
       { name: 'API Reference', href: '/api-documentation' },
@@ -139,13 +185,16 @@ const sidebarSections = [
       { name: 'White Papers', href: '/white-papers' },
       { name: 'Performance Reports', href: '/reports' },
       { name: 'Market Analysis', href: '/market-pricing' },
-      { name: 'Services Advertising', href: '/services-advertising' }
+      { name: 'Services Advertising', href: '/services-advertising' },
+      { name: 'RAG Evaluation Lab', href: '/rag-evaluation-lab/' },
+      { name: 'API Performance Testing', href: '/api-performance-testing/' },
+      { name: 'SOC2 Compliance Automation', href: '/soc2-compliance-automation' }
     ]
   },
   {
-    title: 'Company',
+    title: 'Company & Contact',
     icon: <Users className="w-5 h-5" />,
-    color: 'text-pink-400',
+    color: 'from-pink-500 to-rose-500',
     items: [
       { name: 'About Us', href: '/about' },
       { name: 'Leadership Team', href: '/leadership' },
@@ -218,6 +267,7 @@ export default function EnhancedSidebar2025({ isOpen, onClose }: EnhancedSidebar
     setExpandedCategory(expandedCategory === title ? null : title);
   };
 
+  // Search functionality can be implemented here if needed
   // const filteredServices = sidebarSections.flatMap(section =>
   //   section.items.filter(item =>
   //     item.name.toLowerCase().includes(searchQuery.toLowerCase())
@@ -249,12 +299,17 @@ export default function EnhancedSidebar2025({ isOpen, onClose }: EnhancedSidebar
             <div className="p-6 border-b border-cyan-500/30">
               <div className="flex items-center justify-between mb-4">
                 <div className="flex items-center space-x-3">
-                  <div className="w-10 h-10 bg-gradient-to-r from-cyan-500 to-blue-600 rounded-xl flex items-center justify-center">
-                    <Zap className="w-6 h-6 text-white" />
+                  <div className="relative">
+                    <div className="w-10 h-10 bg-gradient-to-r from-cyan-500 to-purple-600 rounded-xl flex items-center justify-center">
+                      <Zap className="w-6 h-6 text-white" />
+                    </div>
+                    <div className="absolute inset-0 bg-gradient-to-r from-cyan-500 to-purple-600 rounded-xl blur-lg opacity-50" />
                   </div>
                   <div>
-                    <div className="text-lg font-bold text-white">Zion Tech Group</div>
-                    <div className="text-xs text-cyan-400">Revolutionary Technology</div>
+                    <div className="text-lg font-bold bg-gradient-to-r from-cyan-400 to-purple-600 bg-clip-text text-transparent">
+                      Zion Tech Group
+                    </div>
+                    <div className="text-xs text-cyan-400">2045 Future Technology</div>
                   </div>
                 </div>
                 <button
@@ -351,34 +406,6 @@ export default function EnhancedSidebar2025({ isOpen, onClose }: EnhancedSidebar
               </div>
             </div>
 
-            {/* Compact Links */}
-            <div className="p-6 border-b border-cyan-500/30">
-              <h3 className="text-lg font-semibold text-white mb-4 flex items-center space-x-2">
-                <Rocket className="w-5 h-5 text-cyan-400" />
-                <span>Quick Access</span>
-              </h3>
-              <div className="mt-6 space-y-2">
-                <a href="/services" className="block px-3 py-2 rounded-lg hover:bg-cyan-500/10">All Services</a>
-                <a href="/pricing" className="block px-3 py-2 rounded-lg hover:bg-cyan-500/10">Pricing</a>
-                <a href="/market-pricing" className="block px-3 py-2 rounded-lg hover:bg-cyan-500/10">Market Pricing</a>
-                <a href="/services-advertising" className="block px-3 py-2 rounded-lg hover:bg-cyan-500/10">Services Advertising</a>
-                <a href="/about" className="block px-3 py-2 rounded-lg hover:bg-cyan-500/10">About Us</a>
-                <a href="/careers" className="block px-3 py-2 rounded-lg hover:bg-cyan-500/10">Careers</a>
-                <a href="/get-started" className="block px-3 py-2 rounded-lg hover:bg-cyan-500/10">Get Started</a>
-                <a href="/quote" className="block px-3 py-2 rounded-lg hover:bg-cyan-500/10">Quote Request</a>
-                <a href="/demo" className="block px-3 py-2 rounded-lg hover:bg-cyan-500/10">Book Demo</a>
-                <a href="/contact" className="block px-3 py-2 rounded-lg hover:bg-cyan-500/10">Contact</a>
-                <a href="/blog" className="block px-3 py-2 rounded-lg hover:bg-cyan-500/10">Blog</a>
-                <a href="/case-studies" className="block px-3 py-2 rounded-lg hover:bg-cyan-500/10">Case Studies</a>
-                <a href="/resources" className="block px-3 py-2 rounded-lg hover:bg-cyan-500/10">Resources</a>
-                <a href="/rag-evaluation-lab" className="block px-3 py-2 rounded-lg hover:bg-cyan-500/10">RAG Evaluation Lab</a>
-                <a href="/soc2-compliance-automation" className="block px-3 py-2 rounded-lg hover:bg-cyan-500/10">SOC 2 Compliance Automation</a>
-                <a href="/browser-automation-cloud" className="block px-3 py-2 rounded-lg hover:bg-cyan-500/10">Browser Automation Cloud</a>
-                <a href="/secrets-rotation-automation" className="block px-3 py-2 rounded-lg hover:bg-cyan-500/10">Secrets Rotation Automation</a>
-                <a href="/api-performance-testing" className="block px-3 py-2 rounded-lg hover:bg-cyan-500/10">API Performance Testing</a>
-              </div>
-            </div>
-
             {/* Service Categories */}
             <div className="p-6 border-b border-cyan-500/30">
               <h3 className="text-lg font-semibold text-white mb-4 flex items-center space-x-2">
@@ -393,7 +420,7 @@ export default function EnhancedSidebar2025({ isOpen, onClose }: EnhancedSidebar
                       className="w-full flex items-center justify-between p-3 rounded-lg hover:bg-gray-800/50 transition-colors duration-200 group"
                     >
                       <div className="flex items-center space-x-3">
-                        <div className={`w-8 h-8 bg-gradient-to-r ${section.color} rounded-lg flex items-center justify-center`}>
+                        <div className={`w-8 h-8 rounded-lg bg-gradient-to-r ${section.color} flex items-center justify-center`}>
                           {section.icon}
                         </div>
                         <span className="text-gray-300 group-hover:text-white transition-colors duration-200">
@@ -427,7 +454,13 @@ export default function EnhancedSidebar2025({ isOpen, onClose }: EnhancedSidebar
                                 {item.name}
                               </span>
                               {item.badge && (
-                                <span className="px-2 py-1 text-xs bg-gradient-to-r from-cyan-500 to-blue-600 text-white rounded-full">
+                                <span className={`px-2 py-1 text-xs font-medium rounded-full text-white ${
+                                  item.badge === 'Breakthrough' ? 'bg-gradient-to-r from-red-500 to-pink-600' :
+                                  item.badge === 'New' ? 'bg-gradient-to-r from-green-500 to-emerald-600' :
+                                  item.badge === 'Hot' ? 'bg-gradient-to-r from-orange-500 to-red-600' :
+                                  item.badge === 'Featured' ? 'bg-gradient-to-r from-cyan-500 to-blue-600' :
+                                  'bg-gradient-to-r from-purple-500 to-indigo-600'
+                                }`}>
                                   {item.badge}
                                 </span>
                               )}
@@ -489,13 +522,13 @@ export default function EnhancedSidebar2025({ isOpen, onClose }: EnhancedSidebar
 
             {/* CTA Section */}
             <div className="p-6">
-              <div className="p-4 bg-gradient-to-r from-cyan-500/10 to-blue-600/10 border border-cyan-500/30 rounded-xl">
+              <div className="p-4 bg-gradient-to-r from-cyan-500/10 to-purple-600/10 border border-cyan-500/30 rounded-xl">
                 <h4 className="text-lg font-semibold text-white mb-3">Ready to Get Started?</h4>
                 <p className="text-gray-400 text-sm mb-4">
                   Transform your business with cutting-edge technology solutions.
                 </p>
                 <Link href="/contact" onClick={onClose}>
-                  <button className="w-full px-4 py-2 bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-semibold rounded-lg hover:scale-105 transition-all duration-300">
+                  <button className="w-full px-4 py-2 bg-gradient-to-r from-cyan-500 to-purple-600 text-white font-semibold rounded-lg hover:scale-105 transition-all duration-300">
                     Contact Us Today
                   </button>
                 </Link>
