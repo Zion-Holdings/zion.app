@@ -458,7 +458,7 @@ export default function Services2026ShowcaseEnhancedPage() {
                           {/* Action Buttons */}
                           <div className="flex space-x-2">
                             <Button
-                              variant="quantum"
+                              variant="primary"
                               size="sm"
                               className="flex-1"
                               onClick={() => window.open(service.link, '_blank')}
@@ -467,7 +467,7 @@ export default function Services2026ShowcaseEnhancedPage() {
                               <ArrowRight className="w-4 h-4 ml-1" />
                             </Button>
                             <Button
-                              variant="futuristic"
+                              variant="outline"
                               size="sm"
                               onClick={() => window.open(`mailto:${contactInfo.email}?subject=Inquiry about ${service.name}`)}
                             >
@@ -502,7 +502,7 @@ export default function Services2026ShowcaseEnhancedPage() {
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Button
-                  variant="quantum"
+                  variant="primary"
                   size="lg"
                   onClick={() => window.open(`mailto:${contactInfo.email}?subject=Business Transformation Consultation`, '_blank')}
                 >
@@ -510,7 +510,7 @@ export default function Services2026ShowcaseEnhancedPage() {
                   Schedule Consultation
                 </Button>
                 <Button
-                  variant="futuristic"
+                  variant="secondary"
                   size="lg"
                   onClick={() => window.open(`tel:${contactInfo.mobile}`, '_blank')}
                 >

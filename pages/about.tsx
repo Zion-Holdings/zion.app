@@ -99,11 +99,7 @@ const AboutPage: React.FC = () => {
   ];
 
   return (
-    <Layout 
-      title="About Us - Zion Tech Group"
-      description="Learn about Zion Tech Group's mission to revolutionize technology through AI consciousness, quantum computing, and space technology."
-      keywords="about us, Zion Tech Group, AI consciousness, quantum computing, space technology, company history"
-    >
+    <Layout>
       <div className="min-h-screen bg-gradient-to-br from-black via-gray-900 to-black">
         {/* Hero Section */}
         <section className="relative pt-32 pb-20 overflow-hidden">
