@@ -1,6 +1,20 @@
 #!/bin/bash
 
 # Comprehensive Redundancy Automation Startup Script
+<<<<<<< HEAD
+# This script manages the comprehensive redundancy automation system
+
+set -e
+
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+WORKSPACE_DIR="$(dirname "$SCRIPT_DIR")"
+LOG_DIR="$WORKSPACE_DIR/automation/logs"
+PID_FILE="$LOG_DIR/comprehensive-redundancy.pid"
+LOG_FILE="$LOG_DIR/comprehensive-redundancy.log"
+
+# Ensure log directory exists
+mkdir -p "$LOG_DIR"
+=======
 # This script starts all redundancy automation systems for PM2, GitHub Actions, and Netlify Functions
 
 set -e
@@ -10,6 +24,7 @@ SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 PROJECT_ROOT="$(dirname "$SCRIPT_DIR")"
 LOG_DIR="$SCRIPT_DIR/logs"
 PID_DIR="$SCRIPT_DIR/pids"
+>>>>>>> origin/cursor/automate-automation-redundancy-and-build-improvement-964e
 
 # Colors for output
 RED='\033[0;31m'
@@ -22,6 +37,20 @@ NC='\033[0m' # No Color
 print_status() {
     local color=$1
     local message=$2
+<<<<<<< HEAD
+    echo -e "${color}[$(date '+%Y-%m-%d %H:%M:%S')] $message${NC}"
+}
+
+# Function to check if the system is running
+is_running() {
+    if [ -f "$PID_FILE" ]; then
+        local pid=$(cat "$PID_FILE")
+        if kill -0 "$pid" 2>/dev/null; then
+            return 0
+        else
+            # PID file exists but process is dead
+            rm -f "$PID_FILE"
+=======
     echo -e "${color}[$(date '+%Y-%m-%d %H:%M:%S')] ${message}${NC}"
 }
 
@@ -34,12 +63,65 @@ is_process_running() {
             return 0
         else
             rm -f "$pid_file"
+>>>>>>> origin/cursor/automate-automation-redundancy-and-build-improvement-964e
             return 1
         fi
     fi
     return 1
 }
 
+<<<<<<< HEAD
+# Function to start the system
+start() {
+    print_status "$BLUE" "Starting Comprehensive Redundancy Automation System..."
+    
+    if is_running; then
+        print_status "$YELLOW" "System is already running (PID: $(cat "$PID_FILE"))"
+        return 0
+    fi
+    
+    cd "$WORKSPACE_DIR"
+    
+    # Check if Node.js is available
+    if ! command -v node &> /dev/null; then
+        print_status "$RED" "Error: Node.js is not installed or not in PATH"
+        return 1
+    fi
+    
+    # Check if required dependencies are installed
+    if [ ! -f "package.json" ]; then
+        print_status "$RED" "Error: package.json not found. Are you in the correct directory?"
+        return 1
+    fi
+    
+    # Install dependencies if node_modules doesn't exist
+    if [ ! -d "node_modules" ]; then
+        print_status "$BLUE" "Installing dependencies..."
+        npm install
+    fi
+    
+    # Start the comprehensive redundancy system
+    print_status "$BLUE" "Launching comprehensive redundancy automation..."
+    
+    # Start in background and capture PID
+    nohup node automation/comprehensive-redundancy-automation.cjs start > "$LOG_FILE" 2>&1 &
+    local pid=$!
+    
+    # Save PID to file
+    echo "$pid" > "$PID_FILE"
+    
+    # Wait a moment to see if it starts successfully
+    sleep 2
+    
+    if kill -0 "$pid" 2>/dev/null; then
+        print_status "$GREEN" "✅ Comprehensive Redundancy Automation System started successfully (PID: $pid)"
+        print_status "$BLUE" "Logs are being written to: $LOG_FILE"
+        print_status "$BLUE" "Use './automation/start-comprehensive-redundancy.sh status' to check status"
+        print_status "$BLUE" "Use './automation/start-comprehensive-redundancy.sh logs' to view logs"
+    else
+        print_status "$RED" "❌ Failed to start Comprehensive Redundancy Automation System"
+        rm -f "$PID_FILE"
+=======
 # Function to start a process and save its PID
 start_process() {
     local name=$1
@@ -69,10 +151,47 @@ start_process() {
     else
         print_status "$RED" "$name failed to start"
         rm -f "$pid_file"
+>>>>>>> origin/cursor/automate-automation-redundancy-and-build-improvement-964e
         return 1
     fi
 }
 
+<<<<<<< HEAD
+    
+    # PM2 status
+    if command_exists pm2; then
+        echo "PM2 Status:"
+        pm2 status --no-daemon 2>/dev/null || echo "PM2 not running"
+        echo
+    fi
+    
+    # Redundancy system status
+    if [ -f "$LOG_DIR/redundancy-system.pid" ]; then
+        local pid=$(cat "$LOG_DIR/redundancy-system.pid")
+        if kill -0 "$pid" 2>/dev/null; then
+            echo "Redundancy System: Running (PID: $pid)"
+        else
+            echo "Redundancy System: Not running"
+        fi
+    else
+        echo "Redundancy System: Not running"
+    fi
+    echo
+    
+    # Recent logs
+    echo "Recent Logs:"
+    tail -n 10 "$LOG_DIR/comprehensive-redundancy.log" 2>/dev/null || echo "No logs found"
+}
+
+# Function to show system health
+show_health() {
+    log "INFO" "Running system health check..."
+    if check_system_health; then
+        log "SUCCESS" "System is healthy"
+    else
+        log "ERROR" "System health check failed"
+        exit 1
+=======
 # Function to stop a process
 stop_process() {
     local name=$1
@@ -115,11 +234,108 @@ check_status() {
     else
         print_status "$RED" "$name is not running"
         return 1
+>>>>>>> origin/cursor/automate-automation-redundancy-and-build-improvement-964e
     fi
 }
 
 # Function to show logs
 show_logs() {
+<<<<<<< HEAD
+    log "INFO" "Showing recent logs..."
+    if [ -f "$LOG_DIR/comprehensive-redundancy.log" ]; then
+        tail -n 50 "$LOG_DIR/comprehensive-redundancy.log"
+    else
+        echo "No logs found"
+    fi
+}
+
+# Function to start the entire system
+start_system() {
+    log "INFO" "Starting comprehensive redundancy system..."
+    
+    # Check prerequisites
+    if ! command_exists node; then
+        log "ERROR" "Node.js is not installed"
+        exit 1
+    fi
+    
+    if ! command_exists npm; then
+        log "ERROR" "NPM is not installed"
+        exit 1
+    fi
+    
+    if ! command_exists pm2; then
+        log "WARN" "PM2 is not installed, installing..."
+        npm install -g pm2
+    fi
+    
+    # Start PM2 processes
+    start_pm2_processes
+    
+    # Check workflows and functions
+    check_github_workflows
+    check_netlify_functions
+    check_npm_scripts
+    
+    # Start redundancy system
+    start_redundancy_system
+    
+    # Wait for system to stabilize
+    sleep 5
+    
+    # Perform health check
+    if check_system_health; then
+        log "SUCCESS" "Comprehensive redundancy system started successfully"
+        log "INFO" "System is now monitoring all automations"
+        log "INFO" "Use '$0 status' to check system status"
+        log "INFO" "Use '$0 health' to run health check"
+        log "INFO" "Use '$0 logs' to view logs"
+    else
+        log "ERROR" "System health check failed after startup"
+        exit 1
+    fi
+}
+
+# Main script logic
+case "${1:-start}" in
+    start)
+        start_system
+        ;;
+    stop)
+        stop_system
+        ;;
+    restart)
+        restart_system
+        ;;
+    status)
+        show_status
+        ;;
+    health)
+        show_health
+        ;;
+    logs)
+        show_logs
+        ;;
+    *)
+        echo "Usage: $0 {start|stop|restart|status|health|logs}"
+        echo
+        echo "Commands:"
+        echo "  start   - Start the comprehensive redundancy system"
+        echo "  stop    - Stop the comprehensive redundancy system"
+        echo "  restart - Restart the comprehensive redundancy system"
+        echo "  status  - Show system status"
+        echo "  health  - Run system health check"
+        echo "  logs    - Show recent logs"
+        echo
+        echo "This script provides redundancy for:"
+        echo "  - PM2 process management"
+        echo "  - GitHub Actions workflows"
+        echo "  - Netlify functions"
+        echo "  - NPM scripts and automation"
+        exit 1
+        ;;
+esac
+=======
 # Function to stop the system
 stop() {
     print_status "$BLUE" "Stopping Comprehensive Redundancy Automation System..."
@@ -428,12 +644,83 @@ check_health() {
         
     else
         print_status "$RED" "Health check failed: Some systems are not running"
+>>>>>>> origin/cursor/automate-automation-redundancy-and-build-improvement-964e
         return 1
     fi
 }
 
 # Function to show help
 show_help() {
+<<<<<<< HEAD
+    echo "Comprehensive Redundancy Automation System Management Script"
+    echo
+    echo "Usage: $0 {start|stop|restart|status|logs|follow-logs|health|build|build-recovery|help}"
+    echo
+    echo "Commands:"
+    echo "  start           Start the comprehensive redundancy automation system"
+    echo "  stop            Stop the comprehensive redundancy automation system"
+    echo "  restart         Restart the comprehensive redundancy automation system"
+    echo "  status          Show the current status of the system"
+    echo "  logs            Show recent logs"
+    echo "  follow-logs     Follow logs in real-time"
+    echo "  health          Run a health check on the system"
+    echo "  build           Run build process with redundancy monitoring"
+    echo "  build-recovery  Run build with recovery using redundancy system"
+    echo "  help            Show this help message"
+    echo
+    echo "Examples:"
+    echo "  $0 start        # Start the system"
+    echo "  $0 status       # Check system status"
+    echo "  $0 logs         # View recent logs"
+    echo "  $0 build        # Run build with monitoring"
+    echo
+    echo "Log files:"
+    echo "  Main log: $LOG_FILE"
+    echo "  PID file: $PID_FILE"
+}
+
+# Main script logic
+case "${1:-}" in
+    start)
+        start
+        ;;
+    stop)
+        stop
+        ;;
+    restart)
+        restart
+        ;;
+    status)
+        status
+        ;;
+    logs)
+        logs
+        ;;
+    follow-logs)
+        follow_logs
+        ;;
+    health)
+        health
+        ;;
+    build)
+        build
+        ;;
+    build-recovery)
+        build_recovery
+        ;;
+    help|--help|-h)
+        show_help
+        ;;
+    *)
+        print_status "$RED" "Error: Unknown command '$1'"
+        echo
+        show_help
+        exit 1
+        ;;
+esac
+
+exit 0
+=======
     echo "Comprehensive Redundancy Automation Startup Script"
     echo "=================================================="
     echo ""
@@ -512,3 +799,4 @@ trap 'print_status "$YELLOW" "Received interrupt signal, shutting down gracefull
 
 # Run main function
 main "$@"
+>>>>>>> origin/cursor/automate-automation-redundancy-and-build-improvement-964e

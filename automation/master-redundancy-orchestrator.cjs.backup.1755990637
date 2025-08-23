@@ -1,6 +1,58 @@
 #!/usr/bin/env node
 "use strict";
 
+<<<<<<< HEAD
+const { spawnSync } = require("child_process");
+const fs = require("fs");
+const path = require("path");
+
+// Import the enhanced redundancy systems
+const ComprehensiveRedundancySystem = require('./comprehensive-redundancy-system.cjs');
+const EnhancedPM2Redundancy = require('./enhanced-pm2-redundancy.cjs');
+const EnhancedGitHubActionsRedundancy = require('./enhanced-github-actions-redundancy.cjs');
+const EnhancedNetlifyFunctionsRedundancy = require('./enhanced-netlify-functions-redundancy.cjs');
+
+class MasterRedundancyOrchestrator {
+  constructor() {
+    this.workspace = process.cwd();
+    this.logDir = path.join(this.workspace, "automation/logs");
+    this.logFile = path.join(this.logDir, "master-redundancy-orchestrator.log");
+    this.ensureLogDir();
+    
+    this.config = {
+      systems: {
+        comprehensive: true,
+        pm2: true,
+        githubActions: true,
+        netlifyFunctions: true
+      },
+      orchestration: {
+        healthCheckInterval: 300000, // 5 minutes
+        systemStartupDelay: 10000, // 10 seconds between system starts
+        enableCrossSystemRecovery: true,
+        enableMetricsAggregation: true,
+        enableAlerting: true
+      },
+      monitoring: {
+        enableRealTimeMonitoring: true,
+        enableHistoricalTracking: true,
+        enablePerformanceMetrics: true,
+        logRetentionDays: 30
+      }
+    };
+    
+    this.systems = {};
+    this.monitoring = false;
+    this.orchestrationInterval = null;
+    this.systemStatus = new Map();
+    this.performanceMetrics = new Map();
+    this.startupTime = null;
+  }
+
+  ensureLogDir() {
+    if (!fs.existsSync(this.logDir)) {
+      fs.mkdirSync(this.logDir, { recursive: true });
+=======
 const { spawnSync, execSync } = require("child_process");
 const fs = require("fs");
 const path = require("path");
@@ -118,26 +170,47 @@ class MasterRedundancyOrchestrator {
   ensureLogDirectory() {
     if (!fs.existsSync(this.config.logging.logDir)) {
       fs.mkdirSync(this.config.logging.logDir, { recursive: true });
+>>>>>>> origin/cursor/automate-automation-redundancy-and-build-improvement-964e
     }
   }
 
   log(message, level = "INFO") {
     const timestamp = new Date().toISOString();
+<<<<<<< HEAD
+    const logMessage = `[${timestamp}] [${level}] ${message}`;
+    console.log(logMessage);
+    
+    try {
+      fs.appendFileSync(this.logFile, logMessage + "\n");
+    } catch (error) {
+      console.error(`Failed to write to log file: ${error.message}`);
+    }
+=======
     const logEntry = `[${timestamp}] [${level}] ${message}`;
     console.log(logEntry);
     
     const logFile = path.join(this.config.logging.logDir, `master-redundancy-${new Date().toISOString().split('T')[0]}.log`);
     fs.appendFileSync(logFile, logEntry + "\n");
+>>>>>>> origin/cursor/automate-automation-redundancy-and-build-improvement-964e
   }
 
   async runCommand(command, args = [], options = {}) {
     return new Promise((resolve) => {
       const result = spawnSync(command, args, {
+<<<<<<< HEAD
+        cwd: this.workspace,
+        env: process.env,
+        shell: false,
+        encoding: "utf8",
+        maxBuffer: 1024 * 1024 * 10,
+        timeout: options.timeout || 30000,
+=======
         cwd: process.cwd(),
         env: process.env,
         shell: false,
         encoding: "utf8",
         maxBuffer: 1024 * 1024 * 20,
+>>>>>>> origin/cursor/automate-automation-redundancy-and-build-improvement-964e
         ...options
       });
       
@@ -150,6 +223,104 @@ class MasterRedundancyOrchestrator {
     });
   }
 
+<<<<<<< HEAD
+  async initializeSystems() {
+    this.log("🚀 Initializing master redundancy orchestrator...");
+    this.startupTime = new Date();
+    
+    try {
+      // Initialize comprehensive redundancy system
+      if (this.config.systems.comprehensive) {
+        this.log("🔧 Initializing comprehensive redundancy system...");
+        this.systems.comprehensive = new ComprehensiveRedundancySystem();
+        this.systemStatus.set('comprehensive', { status: 'initializing', timestamp: new Date() });
+      }
+
+      // Initialize enhanced PM2 redundancy system
+      if (this.config.systems.pm2) {
+        this.log("🔧 Initializing enhanced PM2 redundancy system...");
+        this.systems.pm2 = new EnhancedPM2Redundancy();
+        this.systemStatus.set('pm2', { status: 'initializing', timestamp: new Date() });
+      }
+
+      // Initialize enhanced GitHub Actions redundancy system
+      if (this.config.systems.githubActions) {
+        this.log("🔧 Initializing enhanced GitHub Actions redundancy system...");
+        this.systems.githubActions = new EnhancedGitHubActionsRedundancy();
+        this.systemStatus.set('githubActions', { status: 'initializing', timestamp: new Date() });
+      }
+
+      // Initialize enhanced Netlify functions redundancy system
+      if (this.config.systems.netlifyFunctions) {
+        this.log("🔧 Initializing enhanced Netlify functions redundancy system...");
+        this.systems.netlifyFunctions = new EnhancedNetlifyFunctionsRedundancy();
+        this.systemStatus.set('netlifyFunctions', { status: 'initializing', timestamp: new Date() });
+      }
+
+      this.log("✅ All redundancy systems initialized successfully");
+      return true;
+    } catch (error) {
+      this.log(`❌ Failed to initialize systems: ${error.message}`, "ERROR");
+      return false;
+    }
+  }
+
+  async startSystems() {
+    this.log("🚀 Starting all redundancy systems...");
+    
+    try {
+      // Start systems with staggered delays to prevent resource conflicts
+      const systemStartPromises = [];
+      
+      if (this.systems.comprehensive) {
+        systemStartPromises.push(
+          this.startSystem('comprehensive', async () => {
+            // Comprehensive system starts automatically
+            this.systemStatus.set('comprehensive', { status: 'running', timestamp: new Date() });
+          })
+        );
+      }
+
+      if (this.systems.pm2) {
+        systemStartPromises.push(
+          this.startSystem('pm2', async () => {
+            await this.systems.pm2.startMonitoring();
+            this.systemStatus.set('pm2', { status: 'running', timestamp: new Date() });
+          })
+        );
+      }
+
+      if (this.systems.githubActions) {
+        systemStartPromises.push(
+          this.startSystem('githubActions', async () => {
+            await this.systems.githubActions.startMonitoring();
+            this.systemStatus.set('githubActions', { status: 'running', timestamp: new Date() });
+          })
+        );
+      }
+
+      if (this.systems.netlifyFunctions) {
+        systemStartPromises.push(
+          this.startSystem('netlifyFunctions', async () => {
+            await this.systems.netlifyFunctions.startMonitoring();
+            this.systemStatus.set('netlifyFunctions', { status: 'running', timestamp: new Date() });
+          })
+        );
+      }
+
+      // Execute all system starts with delays
+      for (let i = 0; i < systemStartPromises.length; i++) {
+        await systemStartPromises[i];
+        if (i < systemStartPromises.length - 1) {
+          await this.delay(this.config.orchestration.systemStartupDelay);
+        }
+      }
+
+      this.log("✅ All redundancy systems started successfully");
+      return true;
+    } catch (error) {
+      this.log(`❌ Failed to start systems: ${error.message}`, "ERROR");
+=======
   async checkPM2Health() {
     this.log("Checking PM2 process health...");
     
@@ -191,10 +362,103 @@ class MasterRedundancyOrchestrator {
       return allHealthy;
     } catch (error) {
       this.log(`PM2 health check error: ${error.message}`, "ERROR");
+>>>>>>> origin/cursor/automate-automation-redundancy-and-build-improvement-964e
       return false;
     }
   }
 
+<<<<<<< HEAD
+  async startSystem(systemName, startFunction) {
+    try {
+      this.log(`🚀 Starting ${systemName} system...`);
+      await startFunction();
+      this.log(`✅ ${systemName} system started successfully`);
+    } catch (error) {
+      this.log(`❌ Failed to start ${systemName} system: ${error.message}`, "ERROR");
+      this.systemStatus.set(systemName, { status: 'failed', timestamp: new Date(), error: error.message });
+      throw error;
+    }
+  }
+
+  async delay(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
+  }
+
+  async performOrchestratedHealthCheck() {
+    this.log("🎯 Performing orchestrated health check across all systems...");
+    
+    const results = {
+      timestamp: new Date().toISOString(),
+      systems: {},
+      summary: {
+        total: 0,
+        healthy: 0,
+        unhealthy: 0,
+        failed: 0
+      },
+      crossSystemIssues: [],
+      recommendations: []
+    };
+
+    // Check each system's health
+    for (const [systemName, system] of Object.entries(this.systems)) {
+      try {
+        this.log(`🔍 Checking health of ${systemName} system...`);
+        
+        let systemHealth;
+        if (systemName === 'comprehensive') {
+          systemHealth = await system.performComprehensiveHealthCheck();
+        } else if (systemName === 'pm2') {
+          systemHealth = await system.performComprehensiveHealthCheck();
+        } else if (systemName === 'githubActions') {
+          systemHealth = await system.performComprehensiveHealthCheck();
+        } else if (systemName === 'netlifyFunctions') {
+          systemHealth = await system.performComprehensiveHealthCheck();
+        }
+
+        results.systems[systemName] = {
+          status: 'healthy',
+          health: systemHealth,
+          timestamp: new Date().toISOString()
+        };
+
+        results.summary.total++;
+        results.summary.healthy++;
+        
+        this.systemStatus.set(systemName, { status: 'healthy', timestamp: new Date() });
+        this.log(`✅ ${systemName} system is healthy`);
+      } catch (error) {
+        this.log(`❌ ${systemName} system health check failed: ${error.message}`, "ERROR");
+        
+        results.systems[systemName] = {
+          status: 'unhealthy',
+          error: error.message,
+          timestamp: new Date().toISOString()
+        };
+
+        results.summary.total++;
+        results.summary.unhealthy++;
+        
+        this.systemStatus.set(systemName, { status: 'unhealthy', timestamp: new Date(), error: error.message });
+      }
+    }
+
+    // Analyze cross-system dependencies and issues
+    results.crossSystemIssues = this.analyzeCrossSystemIssues(results);
+    
+    // Generate recommendations
+    results.recommendations = this.generateRecommendations(results);
+
+    // Generate and log orchestrated health report
+    const healthReport = this.generateOrchestratedHealthReport(results);
+    this.log(healthReport);
+
+    // Save orchestrated health report
+    this.saveOrchestratedHealthReport(results);
+
+    // Update performance metrics
+    this.updatePerformanceMetrics(results);
+=======
   async checkGitHubActionsHealth() {
     this.log("Checking GitHub Actions health...");
     
@@ -357,10 +621,99 @@ class MasterRedundancyOrchestrator {
     // Save health check results
     const healthFile = path.join(this.config.logging.logDir, `health-check-${new Date().toISOString().split('T')[0]}.json`);
     fs.writeFileSync(healthFile, JSON.stringify(results, null, 2));
+>>>>>>> origin/cursor/automate-automation-redundancy-and-build-improvement-964e
 
     return results;
   }
 
+<<<<<<< HEAD
+  analyzeCrossSystemIssues(results) {
+    const issues = [];
+    
+    // Check for PM2 and GitHub Actions conflicts
+    if (results.systems.pm2 && results.systems.githubActions) {
+      if (results.systems.pm2.status === 'unhealthy' && results.systems.githubActions.status === 'unhealthy') {
+        issues.push({
+          type: 'cross_system_failure',
+          systems: ['pm2', 'githubActions'],
+          description: 'Both PM2 and GitHub Actions systems are unhealthy, potential automation conflict',
+          severity: 'high'
+        });
+      }
+    }
+
+    // Check for Netlify functions and PM2 conflicts
+    if (results.systems.netlifyFunctions && results.systems.pm2) {
+      if (results.systems.netlifyFunctions.status === 'unhealthy' && results.systems.pm2.status === 'unhealthy') {
+        issues.push({
+          type: 'cross_system_failure',
+          systems: ['netlifyFunctions', 'pm2'],
+          description: 'Both Netlify functions and PM2 systems are unhealthy, potential deployment conflict',
+          severity: 'high'
+        });
+      }
+    }
+
+    return issues;
+  }
+
+  generateRecommendations(results) {
+    const recommendations = [];
+    
+    // System-specific recommendations
+    for (const [systemName, systemResult] of Object.entries(results.systems)) {
+      if (systemResult.status === 'unhealthy') {
+        recommendations.push({
+          system: systemName,
+          action: 'restart',
+          description: `Restart ${systemName} system to resolve health issues`,
+          priority: 'high'
+        });
+      }
+    }
+
+    // Cross-system recommendations
+    if (results.crossSystemIssues.length > 0) {
+      recommendations.push({
+        system: 'all',
+        action: 'investigate',
+        description: 'Investigate cross-system dependencies and resolve conflicts',
+        priority: 'critical'
+      });
+    }
+
+    return recommendations;
+  }
+
+  generateOrchestratedHealthReport(results) {
+    let systemStatus = "";
+    for (const [systemName, systemResult] of Object.entries(results.systems)) {
+      const status = systemResult.status === 'healthy' ? "✅" : "❌";
+      const details = systemResult.status === 'healthy' ? "HEALTHY" : `UNHEALTHY: ${systemResult.error || 'Unknown error'}`;
+      systemStatus += `${status} ${systemName}: ${details}\n`;
+    }
+
+    let crossSystemIssues = "";
+    if (results.crossSystemIssues.length > 0) {
+      for (const issue of results.crossSystemIssues) {
+        crossSystemIssues += `⚠️ ${issue.description} (Severity: ${issue.severity})\n`;
+      }
+    } else {
+      crossSystemIssues = "No cross-system issues detected\n";
+    }
+
+    let recommendations = "";
+    if (results.recommendations.length > 0) {
+      for (const rec of results.recommendations) {
+        recommendations += `💡 ${rec.description} (Priority: ${rec.priority})\n`;
+      }
+    } else {
+      recommendations = "No immediate actions required\n";
+    }
+
+    return `
+🎯 MASTER REDUNDANCY ORCHESTRATOR HEALTH REPORT
+================================================
 Timestamp: ${results.timestamp}
 Uptime: ${this.getUptime()}
 
@@ -698,6 +1051,7 @@ Commands:
       `);
       process.exit(0);
   }
+>>>>>>> origin/cursor/automate-automation-redundancy-and-build-improvement-964e
 }
 
 module.exports = MasterRedundancyOrchestrator;
