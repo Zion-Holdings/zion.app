@@ -1,590 +1,519 @@
-import React, { useState, useEffect, useCallback, useMemo, useRef } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import { 
-  Menu, 
-  X, 
-  Search, 
-  ChevronDown, 
-  Phone, 
-  Linkedin, 
-  Twitter, 
-  Github, 
-  Youtube,
-  Home,
-  Briefcase,
-  Brain,
-  Atom,
-  Rocket,
-  Shield,
-  Cloud,
-  Target,
-  Building,
-  Users,
-  BookOpen,
-  FileText,
-  Video,
-  Code
-} from 'lucide-react';
+import React, { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
-
-// Define Node type for DOM event handling
-type Node = HTMLElement | null;
+import { motion, AnimatePresence } from 'framer-motion';
+import { 
+  Menu, X, Search, ChevronDown, Zap, Globe, Lock, 
+  Phone, Mail, MapPin, ArrowRight, Star, Users, Award
+} from 'lucide-react';
 
 interface NavigationItem {
   label: string;
-  href: string;
-  icon: React.ReactNode;
-  description?: string;
+  href?: string;
   children?: NavigationItem[];
-  badge?: string;
-  featured?: boolean;
-  neonColor?: string;
+  icon?: React.ReactNode;
+  description?: string;
 }
 
-// Memoized navigation items for better performance
 const navigationItems: NavigationItem[] = [
   {
     label: 'Home',
     href: '/',
-    icon: <Home className="w-4 h-4" />,
-    neonColor: 'shadow-cyan-400/50'
+    icon: <Zap className="w-4 h-4" />
   },
   {
     label: 'Services',
-    href: '/services',
-    icon: <Briefcase className="w-4 h-4" />,
-    description: 'Explore our comprehensive technology solutions',
-    badge: 'New',
-    neonColor: 'shadow-blue-400/50',
     children: [
       {
         label: 'AI & Machine Learning',
-        href: '/services/ai-machine-learning',
-        icon: <Brain className="w-4 h-4" />,
-        description: 'Advanced AI solutions and ML platforms',
-        featured: true,
-        neonColor: 'shadow-purple-400/50'
+        href: '/ai-services',
+        icon: <Star className="w-4 h-4" />,
+        description: 'Advanced AI solutions for enterprise'
       },
       {
         label: 'Quantum Computing',
-        href: '/services/quantum-computing',
-        icon: <Atom className="w-4 h-4" />,
-        description: 'Quantum algorithms and computing services',
-        featured: true,
-        neonColor: 'shadow-blue-400/50'
+        href: '/quantum-services',
+        icon: <Zap className="w-4 h-4" />,
+        description: 'Next-generation quantum solutions'
       },
       {
         label: 'Space Technology',
-        href: '/services/space-technology',
-        icon: <Rocket className="w-4 h-4" />,
-        description: 'Space resource intelligence and satellite systems',
-        featured: true,
-        neonColor: 'shadow-pink-400/50'
+        href: '/space-tech',
+        icon: <Star className="w-4 h-4" />,
+        description: 'Innovative space solutions'
       },
       {
         label: 'Cybersecurity',
-        href: '/services/cybersecurity',
-        icon: <Shield className="w-4 h-4" />,
-        description: 'Zero trust security and threat detection',
-        neonColor: 'shadow-red-400/50'
+        href: '/cybersecurity',
+        icon: <Lock className="w-4 h-4" />,
+        description: 'Enterprise security solutions'
       },
       {
-        label: 'Cloud Infrastructure',
-        href: '/services/cloud-infrastructure',
-        icon: <Cloud className="w-4 h-4" />,
-        description: 'Scalable cloud solutions and DevOps',
-        neonColor: 'shadow-indigo-400/50'
+        label: 'Cloud Solutions',
+        href: '/cloud-platform',
+        icon: <Globe className="w-4 h-4" />,
+        description: 'Scalable cloud infrastructure'
+      },
+      {
+        label: 'Micro SaaS',
+        href: '/micro-saas',
+        icon: <Star className="w-4 h-4" />,
+        description: 'Rapid deployment SaaS solutions'
+      },
+      {
+        label: 'View All Services',
+        href: '/services',
+        icon: <ArrowRight className="w-4 h-4" />,
+        description: 'Complete service portfolio'
       }
     ]
   },
   {
     label: 'Solutions',
-    href: '/solutions',
-    icon: <Target className="w-4 h-4" />,
-    description: 'Industry-specific technology solutions',
-    neonColor: 'shadow-green-400/50',
     children: [
       {
-        label: 'Enterprise',
-        href: '/solutions/enterprise',
-        icon: <Building className="w-4 h-4" />,
-        description: 'Large-scale enterprise solutions',
-        neonColor: 'shadow-blue-400/50'
+        label: 'Enterprise IT',
+        href: '/enterprise-solutions-showcase',
+        icon: <Globe className="w-4 h-4" />,
+        description: 'Complete enterprise IT solutions'
       },
       {
-        label: 'Startup',
-        href: '/solutions/startup',
-        icon: <Rocket className="w-4 h-4" />,
-        description: 'Growth-focused startup solutions',
-        neonColor: 'shadow-purple-400/50'
+        label: 'Healthcare',
+        href: '/healthcare-solutions',
+        icon: <Star className="w-4 h-4" />,
+        description: 'Healthcare technology solutions'
       },
       {
-        label: 'Government',
-        href: '/solutions/government',
-        icon: <Shield className="w-4 h-4" />,
-        description: 'Secure government and defense solutions',
-        neonColor: 'shadow-green-400/50'
+        label: 'Financial Services',
+        href: '/financial-solutions',
+        icon: <Star className="w-4 h-4" />,
+        description: 'Fintech and banking solutions'
+      },
+      {
+        label: 'Manufacturing',
+        href: '/manufacturing-ai-solutions',
+        icon: <Star className="w-4 h-4" />,
+        description: 'Smart manufacturing solutions'
       }
     ]
   },
   {
-    label: 'About',
-    href: '/about',
-    icon: <Users className="w-4 h-4" />,
-    description: 'Learn about our company and mission',
-    neonColor: 'shadow-yellow-400/50'
-  },
-  {
     label: 'Resources',
-    href: '/resources',
-    icon: <BookOpen className="w-4 h-4" />,
-    description: 'Educational content and tools',
-    neonColor: 'shadow-orange-400/50',
     children: [
       {
-        label: 'Blog',
-        href: '/blog',
-        icon: <FileText className="w-4 h-4" />,
-        description: 'Latest insights and industry news',
-        neonColor: 'shadow-blue-400/50'
+        label: 'Resources Hub',
+        href: '/resources',
+        icon: <Globe className="w-4 h-4" />,
+        description: 'Documentation, tools & learning materials'
       },
       {
         label: 'Case Studies',
         href: '/case-studies',
-        icon: <FileText className="w-4 h-4" />,
-        description: 'Success stories and implementations',
-        neonColor: 'shadow-purple-400/50'
+        icon: <Star className="w-4 h-4" />,
+        description: 'Customer success stories'
       },
       {
-        label: 'Documentation',
-        href: '/docs',
-        icon: <Code className="w-4 h-4" />,
-        description: 'Technical documentation and guides',
-        neonColor: 'shadow-green-400/50'
-      },
-      {
-        label: 'API Reference',
-        href: '/api-documentation',
-        icon: <Code className="w-4 h-4" />,
-        description: 'Complete API documentation',
-        neonColor: 'shadow-indigo-400/50'
+        label: 'Blog',
+        href: '/blog',
+        icon: <Star className="w-4 h-4" />,
+        description: 'Technology insights and trends'
       },
       {
         label: 'Webinars',
         href: '/webinars',
-        icon: <Video className="w-4 h-4" />,
-        description: 'Educational webinars and workshops',
-        neonColor: 'shadow-purple-400/50'
-      },
-      {
-        label: 'White Papers',
-        href: '/white-papers',
-        icon: <FileText className="w-4 h-4" />,
-        description: 'In-depth research and analysis',
-        neonColor: 'shadow-orange-400/50'
+        icon: <Star className="w-4 h-4" />,
+        description: 'Technology webinars and events'
       }
     ]
   },
   {
-    label: 'Careers',
-    href: '/careers',
-    icon: <Users className="w-4 h-4" />,
-    description: 'Join our team of innovators',
-    neonColor: 'shadow-purple-400/50'
+    label: 'Company',
+    children: [
+      {
+        label: 'About Us',
+        href: '/about',
+        icon: <Users className="w-4 h-4" />,
+        description: 'Our story and mission'
+      },
+      {
+        label: 'Careers',
+        href: '/careers',
+        icon: <Users className="w-4 h-4" />,
+        description: 'Join our team'
+      },
+      {
+        label: 'Partners',
+        href: '/partners',
+        icon: <Star className="w-4 h-4" />,
+        description: 'Technology partners'
+      },
+      {
+        label: 'Contact',
+        href: '/contact',
+        icon: <Users className="w-4 h-4" />,
+        description: 'Get in touch with us'
+      }
+    ]
   },
-  {
-    label: 'Contact',
-    href: '/contact',
-    icon: <Phone className="w-4 h-4" />,
-    description: 'Get in touch with our team',
-    neonColor: 'shadow-red-400/50'
-  }
-];
 
-// Memoized social links
-const socialLinks = [
-  { href: 'https://linkedin.com/company/ziontechgroup', icon: <Linkedin className="w-5 h-5" />, label: 'LinkedIn' },
-  { href: 'https://twitter.com/ziontechgroup', icon: <Twitter className="w-5 h-5" />, label: 'Twitter' },
-  { href: 'https://github.com/ziontechgroup', icon: <Github className="w-5 h-5" />, label: 'GitHub' },
-  { href: 'https://youtube.com/ziontechgroup', icon: <Youtube className="w-5 h-5" />, label: 'YouTube' }
 ];
 
 const UltraFuturisticNavigation2040: React.FC = () => {
-  const [isOpen, setIsOpen] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
   const [isScrolled, setIsScrolled] = useState(false);
-  const [searchQuery, setSearchQuery] = useState('');
   const [isSearchOpen, setIsSearchOpen] = useState(false);
+  const [searchQuery, setSearchQuery] = useState('');
   
+  const mobileMenuRef = useRef<HTMLDivElement>(null);
+  const searchRef = useRef<HTMLDivElement>(null);
+  const searchInputRef = useRef<HTMLInputElement>(null);
   const router = useRouter();
-  const navRef = useRef<HTMLElement>(null);
-  const searchRef = useRef<HTMLInputElement>(null);
 
-  // Memoized scroll handler for better performance
-  const handleScroll = useCallback(() => {
-    setIsScrolled(window.scrollY > 20);
-  }, []);
-
-  // Memoized dropdown toggle handler
-  const toggleDropdown = useCallback((label: string) => {
-    setActiveDropdown(activeDropdown === label ? null : label);
-  }, [activeDropdown]);
-
-  // Memoized search handler
-  const handleSearch = useCallback((e: React.FormEvent) => {
-    e.preventDefault();
-    if (searchQuery.trim()) {
-      router.push(`/search?q=${encodeURIComponent(searchQuery.trim())}`);
-      setIsSearchOpen(false);
-      setSearchQuery('');
-    }
-  }, [searchQuery, router]);
-
-  // Memoized navigation close handler
-  const closeNavigation = useCallback(() => {
-    setIsOpen(false);
-    setActiveDropdown(null);
-    setIsSearchOpen(false);
-  }, []);
-
-  // Memoized click outside handler
-  const handleClickOutside = useCallback((event: MouseEvent) => {
-    if (navRef.current && !navRef.current.contains(event.target as Node)) {
-      closeNavigation();
-    }
-  }, [closeNavigation]);
-
-  // Memoized keyboard navigation handler
-  const handleKeyDown = useCallback((event: KeyboardEvent) => {
-    if (event.key === 'Escape') {
-      closeNavigation();
-    }
-  }, [closeNavigation]);
-
-  // Effects for scroll, click outside, and keyboard navigation
+  // Handle scroll effect
   useEffect(() => {
-    window.addEventListener('scroll', handleScroll);
-    document.addEventListener('mousedown', handleClickOutside);
-    document.addEventListener('keydown', handleKeyDown);
-    
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-      document.removeEventListener('mousedown', handleClickOutside);
-      document.removeEventListener('keydown', handleKeyDown);
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 20);
     };
-  }, [handleScroll, handleClickOutside, handleKeyDown]);
 
-  // Focus search input when search is opened
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   useEffect(() => {
-    if (isSearchOpen && searchRef.current) {
-      searchRef.current.focus();
+    const handleClickOutside = (event: MouseEvent) => {
+      if (searchRef.current && !searchRef.current.contains(event.target as HTMLElement)) {
+        setIsSearchOpen(false);
+      }
+    };
+
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, []);
+
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (mobileMenuRef.current && !mobileMenuRef.current.contains(event.target as HTMLElement)) {
+        setIsMobileMenuOpen(false);
+      }
+    };
+
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, []);
+
+  useEffect(() => {
+    if (isSearchOpen && searchInputRef.current) {
+      searchInputRef.current.focus();
     }
   }, [isSearchOpen]);
 
-  // Close navigation on route change
-  useEffect(() => {
-    closeNavigation();
-  }, [router.asPath, closeNavigation]);
+  const toggleMobileMenu = () => {
+    setIsMobileMenuOpen(!isMobileMenuOpen);
+    if (isMobileMenuOpen) {
+      setActiveDropdown(null);
+    }
+  };
 
-  // Memoized navigation classes
-  const navClasses = useMemo(() => {
-    const baseClasses = "fixed top-0 left-0 right-0 z-50 transition-all duration-300";
-    const scrolledClasses = isScrolled 
-      ? "bg-black/90 backdrop-blur-md border-b border-cyan-400/20" 
-      : "bg-transparent";
-    return `${baseClasses} ${scrolledClasses}`;
-  }, [isScrolled]);
+  const toggleDropdown = (label: string) => {
+    setActiveDropdown(activeDropdown === label ? null : label);
+  };
 
-  // Memoized logo classes
-  const logoClasses = useMemo(() => {
-    return isScrolled ? "text-2xl" : "text-3xl";
-  }, [isScrolled]);
+  const handleSearch = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (searchQuery.trim()) {
+      router.push(`/services?search=${encodeURIComponent(searchQuery.trim())}`);
+      setIsSearchOpen(false);
+      setSearchQuery('');
+    }
+  };
+
+  const isActive = (href: string) => {
+    return router.pathname === href;
+  };
 
   return (
-    <nav ref={navRef} className={navClasses} role="navigation" aria-label="Main navigation">
+    <nav 
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        isScrolled 
+          ? 'bg-gray-900/95 backdrop-blur-md border-b border-gray-800/50 shadow-2xl' 
+          : 'bg-transparent'
+      }`}
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-20">
+        <div className="flex items-center justify-between h-16 lg:h-20">
           {/* Logo */}
-          <Link href="/" className="flex items-center space-x-2 group" aria-label="Zion Tech Group Home">
-            <motion.div
-              className={`font-bold text-white group-hover:text-cyan-400 transition-colors duration-300 ${logoClasses}`}
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              <span className="bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
-                Zion
-              </span>
-              <span className="text-white">Tech</span>
-            </motion.div>
-          </Link>
+          <motion.div
+            initial={{ opacity: 0, x: -20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.5 }}
+            className="flex items-center space-x-3"
+          >
+            <Link href="/" className="flex items-center space-x-3 group">
+              <div className="relative">
+                <div className="w-10 h-10 lg:w-12 lg:h-12 bg-gradient-to-r from-cyan-400 to-blue-500 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                  <Zap className="w-6 h-6 lg:w-7 lg:h-7 text-white" />
+                </div>
+                <div className="absolute inset-0 bg-gradient-to-r from-cyan-400 to-blue-500 rounded-xl blur-lg opacity-50 group-hover:opacity-75 transition-opacity duration-300"></div>
+              </div>
+              <div className="hidden sm:block">
+                <span className="text-xl lg:text-2xl font-bold bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
+                  Zion Tech Group
+                </span>
+                <div className="text-xs text-gray-400">2040</div>
+              </div>
+            </Link>
+          </motion.div>
 
           {/* Desktop Navigation */}
           <div className="hidden lg:flex items-center space-x-8">
-            {navigationItems.map((item) => (
-              <div key={item.label} className="relative group">
+            {navigationItems.map((item, index) => (
+              <motion.div
+                key={item.label}
+                initial={{ opacity: 0, y: -20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                className="relative group"
+              >
                 {item.children ? (
-                  <button
-                    onClick={() => toggleDropdown(item.label)}
-                    onKeyDown={(e) => e.key === 'Enter' && toggleDropdown(item.label)}
-                    className="flex items-center space-x-1 px-3 py-2 text-gray-300 hover:text-white transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-cyan-400/50 rounded-lg"
-                    aria-expanded={activeDropdown === item.label}
-                    aria-haspopup="true"
-                  >
-                    {item.icon}
-                    <span>{item.label}</span>
-                    {item.badge && (
-                      <span className="ml-2 px-2 py-1 text-xs bg-gradient-to-r from-cyan-500 to-purple-600 text-white rounded-full">
-                        {item.badge}
-                      </span>
-                    )}
-                    <ChevronDown className={`w-4 h-4 transition-transform duration-300 ${activeDropdown === item.label ? 'rotate-180' : ''}`} />
-                  </button>
+                  <div>
+                    <button
+                      onClick={() => toggleDropdown(item.label)}
+                      className="flex items-center space-x-2 px-4 py-2 text-gray-300 hover:text-white transition-colors duration-200 group-hover:text-cyan-400"
+                    >
+                      <span>{item.label}</span>
+                      <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${
+                        activeDropdown === item.label ? 'rotate-180' : ''
+                      }`} />
+                    </button>
+                    
+                    {/* Dropdown Menu */}
+                    <AnimatePresence>
+                      {activeDropdown === item.label && (
+                        <motion.div
+                          initial={{ opacity: 0, y: 10, scale: 0.95 }}
+                          animate={{ opacity: 1, y: 0, scale: 1 }}
+                          exit={{ opacity: 0, y: 10, scale: 0.95 }}
+                          transition={{ duration: 0.2 }}
+                          className="absolute top-full left-0 mt-2 w-80 bg-gray-800/95 backdrop-blur-md border border-gray-700/50 rounded-2xl shadow-2xl overflow-hidden"
+                        >
+                          <div className="p-4 space-y-2">
+                            {item.children.map((child, childIndex) => (
+                              <Link
+                                key={child.label}
+                                href={child.href || '#'}
+                                className="flex items-start space-x-3 p-3 rounded-xl hover:bg-gray-700/50 transition-all duration-200 group/item"
+                              >
+                                <div className="flex-shrink-0 mt-1">
+                                  {child.icon}
+                                </div>
+                                <div className="flex-1 min-w-0">
+                                  <p className="text-sm font-medium text-white group-hover/item:text-cyan-400 transition-colors duration-200">
+                                    {child.label}
+                                  </p>
+                                  {child.description && (
+                                    <p className="text-xs text-gray-400 mt-1">
+                                      {child.description}
+                                    </p>
+                                  )}
+                                </div>
+                                <ArrowRight className="w-4 h-4 text-gray-500 group-hover/item:text-cyan-400 transition-colors duration-200" />
+                              </Link>
+                            ))}
+                          </div>
+                        </motion.div>
+                      )}
+                    </AnimatePresence>
+                  </div>
                 ) : (
                   <Link
-                    href={item.href}
-                    className="flex items-center space-x-1 px-3 py-2 text-gray-300 hover:text-white transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-cyan-400/50 rounded-lg"
+                    href={item.href || '#'}
+                    className={`px-4 py-2 text-gray-300 hover:text-white transition-colors duration-200 ${
+                      isActive(item.href || '') ? 'text-cyan-400' : ''
+                    }`}
                   >
-                    {item.icon}
-                    <span>{item.label}</span>
-                    {item.badge && (
-                      <span className="ml-2 px-2 py-1 text-xs bg-gradient-to-r from-cyan-500 to-purple-600 text-white rounded-full">
-                        {item.badge}
-                      </span>
-                    )}
+                    {item.label}
                   </Link>
                 )}
-
-                {/* Dropdown Menu */}
-                {item.children && activeDropdown === item.label && (
-                  <motion.div
-                    initial={{ opacity: 0, y: 10, scale: 0.95 }}
-                    animate={{ opacity: 1, y: 0, scale: 1 }}
-                    exit={{ opacity: 0, y: 10, scale: 0.95 }}
-                    transition={{ duration: 0.2 }}
-                    className="absolute top-full left-0 mt-2 w-80 bg-gray-900/95 backdrop-blur-md border border-cyan-400/20 rounded-xl shadow-2xl shadow-cyan-400/10 z-50"
-                    role="menu"
-                    aria-orientation="vertical"
-                    aria-labelledby={`${item.label}-button`}
-                  >
-                    <div className="p-4">
-                      <div className="grid grid-cols-1 gap-2">
-                        {item.children.map((child) => (
-                          <Link
-                            key={child.label}
-                            href={child.href}
-                            className={`group flex items-start space-x-3 p-3 rounded-lg hover:bg-cyan-500/10 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-cyan-400/50 ${
-                              child.featured ? 'bg-gradient-to-r from-cyan-500/10 to-purple-500/10 border border-cyan-400/20' : ''
-                            }`}
-                            role="menuitem"
-                          >
-                            <div className={`p-2 rounded-lg bg-gray-800/50 group-hover:bg-cyan-500/20 transition-colors duration-300 ${child.neonColor}`}>
-                              {child.icon}
-                            </div>
-                            <div className="flex-1">
-                              <div className="flex items-center space-x-2">
-                                <span className="font-medium text-white group-hover:text-cyan-400 transition-colors duration-300">
-                                  {child.label}
-                                </span>
-                                {child.featured && (
-                                  <span className="px-2 py-1 text-xs bg-gradient-to-r from-yellow-400 to-orange-500 text-black font-bold rounded-full">
-                                    Featured
-                                  </span>
-                                )}
-                              </div>
-                              {child.description && (
-                                <p className="text-sm text-gray-400 mt-1 group-hover:text-gray-300 transition-colors duration-300">
-                                  {child.description}
-                                </p>
-                              )}
-                            </div>
-                          </Link>
-                        ))}
-                      </div>
-                    </div>
-                  </motion.div>
-                )}
-              </div>
+              </motion.div>
             ))}
           </div>
 
           {/* Right Side Actions */}
-          <div className="hidden lg:flex items-center space-x-4">
+          <div className="flex items-center space-x-4">
             {/* Search Button */}
-            <button
-              onClick={() => setIsSearchOpen(!isSearchOpen)}
-              className="p-2 text-gray-300 hover:text-white transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-cyan-400/50 rounded-lg"
-              aria-label="Open search"
+            <motion.button
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.3, delay: 0.4 }}
+              onClick={() => setIsSearchOpen(true)}
+              className="p-2 text-gray-400 hover:text-white transition-colors duration-200"
+              aria-label="Search"
             >
               <Search className="w-5 h-5" />
-            </button>
+            </motion.button>
 
-            {/* Social Links */}
-            {socialLinks.map((social) => (
-              <a
-                key={social.label}
-                href={social.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="p-2 text-gray-300 hover:text-cyan-400 transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-cyan-400/50 rounded-lg"
-                aria-label={`Visit our ${social.label} page`}
-              >
-                {social.icon}
-              </a>
-            ))}
+            {/* Contact Button */}
+            <motion.button
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.3, delay: 0.5 }}
+              onClick={() => router.push('/contact')}
+              className="hidden sm:inline-flex items-center space-x-2 px-4 py-2 bg-gradient-to-r from-cyan-400 to-blue-500 text-white font-medium rounded-xl hover:from-cyan-500 hover:to-blue-600 transition-all duration-300 focus:outline-none focus:ring-4 focus:ring-cyan-400/50"
+            >
+              <Phone className="w-4 h-4" />
+              <span>Contact Us</span>
+            </motion.button>
 
-            {/* CTA Button */}
-            <Link href="/contact">
-              <motion.button
-                className="px-6 py-2 bg-gradient-to-r from-cyan-500 to-purple-600 text-white font-semibold rounded-lg hover:from-cyan-600 hover:to-purple-700 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-cyan-400/50"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                aria-label="Contact us"
-              >
-                Get Started
-              </motion.button>
-            </Link>
+            {/* Mobile Menu Button */}
+            <motion.button
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.3, delay: 0.6 }}
+              onClick={toggleMobileMenu}
+              className="lg:hidden p-2 text-gray-400 hover:text-white transition-colors duration-200"
+              aria-label="Toggle mobile menu"
+            >
+              {isMobileMenuOpen ? (
+                <X className="w-6 h-6" />
+              ) : (
+                <Menu className="w-6 h-6" />
+              )}
+            </motion.button>
           </div>
-
-          {/* Mobile Menu Button */}
-          <button
-            onClick={() => setIsOpen(!isOpen)}
-            className="lg:hidden p-2 text-gray-300 hover:text-white transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-cyan-400/50 rounded-lg"
-            aria-label={isOpen ? "Close menu" : "Open menu"}
-            aria-expanded={isOpen}
-          >
-            {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-          </button>
         </div>
       </div>
 
-      {/* Search Bar */}
+      {/* Search Overlay */}
       <AnimatePresence>
         {isSearchOpen && (
           <motion.div
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: 'auto' }}
-            exit={{ opacity: 0, height: 0 }}
-            transition={{ duration: 0.3 }}
-            className="bg-gray-900/95 backdrop-blur-md border-t border-cyan-400/20"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 bg-black/80 backdrop-blur-sm z-50"
           >
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
-              <form onSubmit={handleSearch} className="relative">
-                <input
-                  ref={searchRef}
-                  type="text"
-                  value={searchQuery}
-                  onChange={(e) => setSearchQuery(e.target.value)}
-                  placeholder="Search for services, solutions, or resources..."
-                  className="w-full px-4 py-3 bg-gray-800/50 border border-cyan-400/30 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-cyan-400/50 focus:border-transparent"
-                  aria-label="Search query"
-                />
+            <div className="flex items-center justify-center min-h-screen p-4">
+              <motion.div
+                ref={searchRef}
+                initial={{ opacity: 0, scale: 0.9, y: 20 }}
+                animate={{ opacity: 1, scale: 1, y: 0 }}
+                exit={{ opacity: 0, scale: 0.9, y: 20 }}
+                className="w-full max-w-2xl"
+              >
+                <form onSubmit={handleSearch} className="relative">
+                  <input
+                    ref={searchInputRef}
+                    type="text"
+                    value={searchQuery}
+                    onChange={(e) => setSearchQuery(e.target.value)}
+                    placeholder="Search for services, solutions, or technologies..."
+                    className="w-full px-6 py-4 text-lg bg-gray-800/95 backdrop-blur-md border border-gray-700/50 rounded-2xl text-white placeholder-gray-400 focus:outline-none focus:ring-4 focus:ring-cyan-400/50 focus:border-cyan-400/50"
+                  />
+                  <button
+                    type="submit"
+                    className="absolute right-2 top-1/2 transform -translate-y-1/2 p-3 bg-gradient-to-r from-cyan-400 to-blue-500 text-white rounded-xl hover:from-cyan-500 hover:to-blue-600 transition-all duration-300 focus:outline-none focus:ring-4 focus:ring-cyan-400/50"
+                  >
+                    <Search className="w-5 h-5" />
+                  </button>
+                </form>
+                
                 <button
-                  type="submit"
-                  className="absolute right-3 top-1/2 transform -translate-y-1/2 p-2 text-cyan-400 hover:text-white transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-cyan-400/50 rounded-lg"
-                  aria-label="Submit search"
+                  onClick={() => setIsSearchOpen(false)}
+                  className="absolute top-4 right-4 p-2 text-gray-400 hover:text-white transition-colors duration-200"
                 >
-                  <Search className="w-5 h-5" />
+                  <X className="w-6 h-6" />
                 </button>
-              </form>
+              </motion.div>
             </div>
           </motion.div>
         )}
       </AnimatePresence>
 
-      {/* Mobile Navigation */}
+      {/* Mobile Menu */}
       <AnimatePresence>
-        {isOpen && (
+        {isMobileMenuOpen && (
           <motion.div
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.3 }}
-            className="lg:hidden bg-gray-900/95 backdrop-blur-md border-t border-cyan-400/20"
+            className="lg:hidden bg-gray-900/95 backdrop-blur-md border-t border-gray-800/50"
           >
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
-              <div className="space-y-4">
-                {navigationItems.map((item) => (
-                  <div key={item.label}>
-                    {item.children ? (
-                      <div>
-                        <button
-                          onClick={() => toggleDropdown(item.label)}
-                          className="flex items-center justify-between w-full px-4 py-3 text-left text-gray-300 hover:text-white transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-cyan-400/50 rounded-lg"
-                          aria-expanded={activeDropdown === item.label}
-                        >
-                          <div className="flex items-center space-x-3">
-                            {item.icon}
-                            <span>{item.label}</span>
-                            {item.badge && (
-                              <span className="px-2 py-1 text-xs bg-gradient-to-r from-cyan-500 to-purple-600 text-white rounded-full">
-                                {item.badge}
-                              </span>
-                            )}
-                          </div>
-                          <ChevronDown className={`w-4 h-4 transition-transform duration-300 ${activeDropdown === item.label ? 'rotate-180' : ''}`} />
-                        </button>
-                        
-                        {activeDropdown === item.label && (
-                          <motion.div
-                            initial={{ opacity: 0, height: 0 }}
-                            animate={{ opacity: 1, height: 'auto' }}
-                            exit={{ opacity: 0, height: 0 }}
-                            transition={{ duration: 0.2 }}
-                            className="ml-8 mt-2 space-y-2"
-                          >
-                            {item.children.map((child) => (
-                              <Link
-                                key={child.label}
-                                href={child.href}
-                                className="flex items-center space-x-3 px-4 py-2 text-gray-400 hover:text-white transition-colors duration-300 rounded-lg"
-                                onClick={closeNavigation}
-                              >
-                                {child.icon}
-                                <span>{child.label}</span>
-                                {child.featured && (
-                                  <span className="ml-auto px-2 py-1 text-xs bg-gradient-to-r from-yellow-400 to-orange-500 text-black font-bold rounded-full">
-                                    Featured
-                                  </span>
-                                )}
-                              </Link>
-                            ))}
-                          </motion.div>
-                        )}
-                      </div>
-                    ) : (
-                      <Link
-                        href={item.href}
-                        className="flex items-center space-x-3 px-4 py-3 text-gray-300 hover:text-white transition-colors duration-300 rounded-lg"
-                        onClick={closeNavigation}
+            <div ref={mobileMenuRef} className="px-4 py-6 space-y-4">
+              {navigationItems.map((item, index) => (
+                <motion.div
+                  key={item.label}
+                  initial={{ opacity: 0, x: -20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.3, delay: index * 0.1 }}
+                >
+                  {item.children ? (
+                    <div>
+                      <button
+                        onClick={() => toggleDropdown(item.label)}
+                        className="flex items-center justify-between w-full px-4 py-3 text-left text-gray-300 hover:text-white transition-colors duration-200"
                       >
-                        {item.icon}
-                        <span>{item.label}</span>
-                        {item.badge && (
-                          <span className="ml-auto px-2 py-1 text-xs bg-gradient-to-r from-cyan-500 to-purple-600 text-white rounded-full">
-                            {item.badge}
-                          </span>
-                        )}
-                      </Link>
-                    )}
-                  </div>
-                ))}
-                
-                {/* Mobile CTA */}
-                <div className="pt-4 border-t border-gray-700">
-                  <Link href="/contact">
-                    <motion.button
-                      className="w-full px-6 py-3 bg-gradient-to-r from-cyan-500 to-purple-600 text-white font-semibold rounded-lg hover:from-cyan-600 hover:to-purple-700 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-cyan-400/50"
-                      whileHover={{ scale: 1.02 }}
-                      whileTap={{ scale: 0.98 }}
-                      onClick={closeNavigation}
-                      aria-label="Contact us"
+                        <span className="font-medium">{item.label}</span>
+                        <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${
+                          activeDropdown === item.label ? 'rotate-180' : ''
+                        }`} />
+                      </button>
+                      
+                      {activeDropdown === item.label && (
+                        <motion.div
+                          initial={{ opacity: 0, height: 0 }}
+                          animate={{ opacity: 1, height: 'auto' }}
+                          exit={{ opacity: 0, height: 0 }}
+                          className="ml-4 mt-2 space-y-2"
+                        >
+                          {item.children.map((child) => (
+                            <Link
+                              key={child.label}
+                              href={child.href || '#'}
+                              onClick={() => setIsMobileMenuOpen(false)}
+                              className="block px-4 py-2 text-gray-400 hover:text-white transition-colors duration-200"
+                            >
+                              {child.label}
+                            </Link>
+                          ))}
+                        </motion.div>
+                      )}
+                    </div>
+                  ) : (
+                    <Link
+                      href={item.href || '#'}
+                      onClick={() => setIsMobileMenuOpen(false)}
+                      className={`block px-4 py-3 text-gray-300 hover:text-white transition-colors duration-200 ${
+                        isActive(item.href || '') ? 'text-cyan-400' : ''
+                      }`}
                     >
-                      Get Started
-                    </motion.button>
-                  </Link>
-                </div>
-              </div>
+                      {item.label}
+                    </Link>
+                  )}
+                </motion.div>
+              ))}
+              
+              {/* Mobile Contact Button */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.3, delay: 0.4 }}
+                className="pt-4 border-t border-gray-800/50"
+              >
+                <button
+                  onClick={() => {
+                    router.push('/contact');
+                    setIsMobileMenuOpen(false);
+                  }}
+                  className="w-full px-4 py-3 bg-gradient-to-r from-cyan-400 to-blue-500 text-white font-medium rounded-xl hover:from-cyan-500 hover:to-blue-600 transition-all duration-300 focus:outline-none focus:ring-4 focus:ring-cyan-400/50"
+                >
+                  <div className="flex items-center justify-center space-x-2">
+                    <Phone className="w-4 h-4" />
+                    <span>Contact Us</span>
+                  </div>
+                </button>
+              </motion.div>
             </div>
           </motion.div>
         )}
