@@ -1,7 +1,3 @@
-export default function About() {
-  return <div>About page</div>;
-}
-=======
 import React from "react";
 import Head from "next/head";
 
@@ -20,3 +16,5 @@ const Page: React.FC = () => {
 };
 
 export default Page;
+=======
+export default function About() { return null; }

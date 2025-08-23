@@ -1,9 +1,7 @@
-import type { AppProps } from 'next/app';
-import '../styles/enhanced-design-system.css';
-import '../styles/modern-design-system.css';
+import type { AppProps } from "next/app";
+import "../styles/enhanced-design-system.css";
+import "../styles/modern-design-system.css";
 
-function MyApp({ Component, pageProps }: AppProps) {
+export default function App({ Component, pageProps }: AppProps) {
   return <Component {...pageProps} />;
 }
-
-export default MyApp;

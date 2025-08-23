@@ -1,13 +1,3 @@
-import EnhancedLayout from '../components/layout/EnhancedLayout';
-
-export default function Contact() {
-  return (
-    <EnhancedLayout>
-      <div className="py-10">Contact Zion</div>
-    </EnhancedLayout>
-  );
-}
-=======
 export default function Contact() {
   return (
     <div>
@@ -35,3 +25,5 @@ const Page: React.FC = () => {
 };
 
 export default Page;
+=======
+export default function Contact() { return null; }
