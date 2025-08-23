@@ -1,78 +1,7 @@
 import React, { useEffect } from 'react';
 import { motion } from 'framer-motion';
 
-// DOM type definitions for browser APIs
-declare global {
-  interface Node {
-    nodeType: number;
-    nodeName: string;
-    nodeValue: string | null;
-    parentNode: Node | null;
-    childNodes: NodeList;
-    firstChild: Node | null;
-    lastChild: Node | null;
-    previousSibling: Node | null;
-    nextSibling: Node | null;
-  }
-  
-  interface NodeList {
-    readonly length: number;
-    item(index: number): Node | null;
-    [index: number]: Node;
-  }
-  
-  interface HTMLElement extends Element {
-    classList: DOMTokenList;
-    dataset: DOMStringMap;
-  }
-  
-  interface IntersectionObserver {
-    observe(target: Element): void;
-    unobserve(target: Element): void;
-    disconnect(): void;
-  }
-  
-  interface IntersectionObserverEntry {
-    isIntersecting: boolean;
-    target: Element;
-    intersectionRatio: number;
-    boundingClientRect: DOMRect;
-    rootBounds: DOMRect | null;
-    time: number;
-  }
-  
-  interface HTMLImageElement extends HTMLElement {
-    src: string;
-    dataset: DOMStringMap;
-    classList: DOMTokenList;
-  }
-  
-  interface DOMRect {
-    x: number;
-    y: number;
-    width: number;
-    height: number;
-    top: number;
-    right: number;
-    bottom: number;
-    left: number;
-  }
-  
-  interface DOMStringMap {
-    [key: string]: string;
-  }
-  
-  interface DOMTokenList {
-    add(token: string): void;
-    remove(token: string): void;
-    contains(token: string): boolean;
-  }
-  
-  interface Element extends Node {
-    classList: DOMTokenList;
-    dataset: DOMStringMap;
-  }
-}
+
 
 // Add browser API types
 declare global {

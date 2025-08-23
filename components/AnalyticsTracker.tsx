@@ -364,37 +364,7 @@ declare global {
     (event: Event): void;
   }
   
-  interface Event {
-    type: string;
-    target: EventTarget | null;
-    currentTarget: EventTarget | null;
-    eventPhase: number;
-    bubbles: boolean;
-    cancelable: boolean;
-    defaultPrevented: boolean;
-    timeStamp: number;
-    preventDefault(): void;
-    stopPropagation(): void;
-    stopImmediatePropagation(): void;
-  }
-  
-  interface Node {
-    nodeType: number;
-    nodeName: string;
-    nodeValue: string | null;
-    parentNode: Node | null;
-    childNodes: NodeList;
-    firstChild: Node | null;
-    lastChild: Node | null;
-    previousSibling: Node | null;
-    nextSibling: Node | null;
-  }
-  
-  interface NodeList {
-    readonly length: number;
-    item(index: number): Node | null;
-    [index: number]: Node;
-  }
+
   
   interface DOMRectReadOnly {
     readonly x: number;

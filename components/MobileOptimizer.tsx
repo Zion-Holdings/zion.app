@@ -127,13 +127,13 @@ const MobileOptimizer: React.FC<MobileOptimizerProps> = ({
     let startX = 0;
     let isScrolling = false;
 
-    const handleTouchStart = (e: React.TouchEvent) => {
+    const handleTouchStart = (e: TouchEvent) => {
       startY = e.touches[0].clientY;
       startX = e.touches[0].clientX;
       isScrolling = false;
     };
 
-    const handleTouchMove = (e: React.TouchEvent) => {
+    const handleTouchMove = (e: TouchEvent) => {
       if (!isScrolling) {
         const deltaY = Math.abs(e.touches[0].clientY - startY);
         const deltaX = Math.abs(e.touches[0].clientX - startX);
@@ -144,7 +144,7 @@ const MobileOptimizer: React.FC<MobileOptimizerProps> = ({
       }
     };
 
-    const handleTouchEnd = (e: React.TouchEvent) => {
+    const handleTouchEnd = (e: TouchEvent) => {
       if (!isScrolling) {
         const deltaY = e.changedTouches[0].clientY - startY;
         const deltaX = e.changedTouches[0].clientX - startX;
