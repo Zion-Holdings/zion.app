@@ -3,10 +3,13 @@ import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { motion, AnimatePresence } from 'framer-motion';
 import { 
-  Menu, X, Search, ChevronDown, Zap, Globe, Lock, 
-  Phone, Mail, MapPin, ArrowRight, Star, Users, Award,
-  Brain, Atom, Rocket, Shield, Cloud, Database, Palette,
-  Cpu, Server, Code, BarChart3, Settings, Target
+  Menu, ChevronDown, X, Phone, ArrowRight,
+  Brain, Rocket, Target, Atom, Shield,
+  BarChart3, 
+  Heart as HeartIcon, Code as CodeIcon, Palette as PaletteIcon,
+  FileText, Workflow,
+  Network, Cloud, Cpu, Heart, TrendingUp, Monitor, ShoppingCart, Building, MessageCircle, HelpCircle, GraduationCap, Star, Zap,
+  Code, Server, Database, Settings, Users, Search, Palette
 } from 'lucide-react';
 
 interface NavigationItem {
@@ -100,7 +103,72 @@ const navigationItems: NavigationItem[] = [
         description: 'Revolutionary AI consciousness platform'
       },
       {
-        label: 'Quantum Neural Ecosystem',
+        name: 'AI Emotional Intelligence 2040',
+        href: '/ai-emotional-intelligence-2040',
+        description: 'Advanced emotional AI with consciousness',
+        icon: <HeartIcon className="w-4 h-4" />
+      },
+      {
+        name: 'AI Autonomous Research 2041',
+        href: '/ai-autonomous-research-2041',
+        description: 'Fully autonomous AI research',
+        icon: <CodeIcon className="w-4 h-4" />
+      },
+      {
+        name: 'AI Content Personalization 2041',
+        href: '/ai-content-personalization-2041',
+        description: 'Consciousness-based content AI',
+        icon: <PaletteIcon className="w-4 h-4" />
+      },
+      {
+        name: 'AI Ethics & Governance 2041',
+        href: '/ai-ethics-governance-2041',
+        description: 'Comprehensive AI ethics framework',
+        icon: <Shield className="w-4 h-4" />
+      },
+      {
+        name: 'AI Consciousness Evolution',
+        href: '/ai-consciousness-evolution',
+        description: 'AI consciousness research and development',
+        icon: <Brain className="w-4 h-4" />
+      },
+      {
+        name: 'AI Autonomous Ecosystem',
+        href: '/ai-autonomous-ecosystem',
+        description: 'Self-organizing AI agent networks',
+        icon: <Network className="w-4 h-4" />
+      },
+      {
+        name: 'AI Autonomous Robotics Platform',
+        href: '/ai-autonomous-robotics-platform',
+        description: 'Intelligent robotics automation',
+        icon: <Rocket className="w-4 h-4" />
+      },
+      {
+        name: 'AI Content Factory Pro',
+        href: '/ai-content-factory-pro',
+        description: 'Enterprise content creation platform',
+        icon: <FileText className="w-4 h-4" />
+      },
+      {
+        name: 'AI Autonomous Business Process Automation',
+        href: '/ai-autonomous-business-process-automation',
+        description: 'Intelligent process automation',
+        icon: <Workflow className="w-4 h-4" />
+      }
+    ]
+  },
+  {
+    name: 'Quantum Technology',
+    href: '/quantum-services',
+    icon: <Atom className="w-5 h-5" />,
+    description: 'Quantum computing solutions',
+    badge: 'Quantum',
+    category: 'quantum',
+    color: 'from-blue-500 to-cyan-500',
+    children: [
+      {
+        name: 'Quantum Neural Ecosystem 2040',
         href: '/quantum-neural-ecosystem-2040',
         icon: <Atom className="w-4 h-4" />,
         description: 'Hybrid quantum-AI computing'

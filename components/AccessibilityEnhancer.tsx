@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useCallback, useRef } from 'react';
+import type { FocusEvent } from 'react';
 import { motion } from 'framer-motion';
 import { 
   Eye, 
@@ -8,11 +9,6 @@ import {
   Accessibility,
   Info
 } from 'lucide-react';
-
-// Define FocusEvent type for DOM events
-type FocusEvent = Event & {
-  target: EventTarget | null;
-};
 
 interface AccessibilitySettings {
   highContrast: boolean;
@@ -118,6 +114,19 @@ const AccessibilityEnhancer: React.FC<AccessibilityEnhancerProps> = ({
     }
   }, [applySettings]);
 
+  // Focus management
+  const handleFocusChange = useCallback((e: FocusEvent) => {
+    const target = e.target as HTMLElement;
+    if (target) {
+      setCurrentFocus(target);
+      announceToScreenReader(`Focused on ${target.textContent || target.tagName.toLowerCase()}`);
+    }
+  }, []);
+
+  // Keyboard navigation enhancements
+  const handleKeyDown = useCallback(() => {
+    // Tab navigation detected
+  }, []);
   // Announce to screen reader
   const announceToScreenReader = useCallback((message: string) => {
     // Create live region for screen readers
@@ -140,24 +149,7 @@ const AccessibilityEnhancer: React.FC<AccessibilityEnhancerProps> = ({
     }, 5000);
   }, []);
 
-  // Focus management
-  const handleFocusChange = useCallback((e: FocusEvent) => {
-    const target = e.target as HTMLElement;
-    if (target && target.tagName) {
-      // Track focus for accessibility
-      setCurrentFocus(target);
-      
-      // Announce focus changes to screen reader
-      if (settings.screenReader && target.getAttribute('aria-label')) {
-        announceToScreenReader(target.getAttribute('aria-label') || 'Element focused');
-      }
-    }
-  }, [settings.screenReader, announceToScreenReader]);
 
-  // Keyboard navigation enhancements
-  const handleKeyDown = useCallback(() => {
-    // Tab navigation detected
-  }, []);
 
   // Auto-optimize accessibility
   useEffect(() => {

@@ -65,10 +65,21 @@ const getServiceCategory = (service: any) => {
 
 // Helper function to get service pricing
 const getServicePricing = (service: any) => {
-  if (service.pricing?.starter) return service.pricing.starter;
-  if (service.pricing?.monthly) return `$${service.pricing.monthly}/month`;
-  if (service.price?.monthly) return `$${service.price.monthly}/month`;
-  return 'Contact for pricing';
+  try {
+    if (service.pricing?.starter) return String(service.pricing.starter);
+    if (service.pricing?.monthly) return `$${service.pricing.monthly}/month`;
+    if (service.price?.monthly) return `$${service.price.monthly}/month`;
+    if (service.price && typeof service.price === 'object') {
+      // Handle complex price objects
+      if (service.price.monthly) return `$${service.price.monthly}/month`;
+      if (service.price.starter) return String(service.price.starter);
+      if (service.price.yearly) return `$${service.price.yearly}/year`;
+    }
+    return 'Contact for pricing';
+  } catch (error) {
+    console.error('Error getting service pricing:', error, service);
+    return 'Contact for pricing';
+  }
 };
 
 // Helper function to get service features
