@@ -8,8 +8,8 @@ import {
 
 // Import our new 2025 services
 import { advancedAIAutomationServices } from '../data/2026-advanced-ai-automation-services';
-import { innovative2025ITInfrastructureServices } from '../data/2025-innovative-it-infrastructure-services';
-import { innovative2025MicroSaasServices } from '../data/2025-innovative-micro-saas-services';
+import { innovativeITInfrastructureServices2025 } from '../data/2025-innovative-it-infrastructure-services';
+import { innovativeMicroSaasSolutions2025 } from '../data/2025-innovative-micro-saas-solutions';
 import { emergingTechnologyServices } from '../data/2025-emerging-technology-services';
 
 // Unified service interface for pricing display
@@ -56,14 +56,14 @@ const serviceCategories = [
     name: 'IT Infrastructure Services',
     icon: <Building className="w-8 h-8" />,
     color: 'from-blue-500 to-indigo-500',
-            services: innovative2025ITInfrastructureServices
+    services: innovativeITInfrastructureServices2025
   },
   {
     id: 'micro-saas',
     name: 'Micro SAAS Solutions',
     icon: <Target className="w-8 h-8" />,
     color: 'from-green-500 to-emerald-500',
-            services: innovative2025MicroSaasServices
+    services: innovativeMicroSaasSolutions2025
   },
   {
     id: 'emerging-tech',
@@ -190,8 +190,8 @@ export default function InnovativePricing2025() {
     if (selectedCategory === 'all') {
       allServices = [
         ...advancedAIAutomationServices.map(normalizeService),
-        ...innovative2025ITInfrastructureServices.map(normalizeService),
-                  ...innovative2025MicroSaasServices.map(normalizeService),
+        ...innovativeITInfrastructureServices2025.map(normalizeService),
+        ...innovativeMicroSaasSolutions2025.map(normalizeService),
         ...emergingTechnologyServices.map(normalizeService)
       ];
     } else {
