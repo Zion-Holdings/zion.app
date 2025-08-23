@@ -5,7 +5,7 @@ import {
   Search, Grid, List,
   Brain, Atom, Shield, Target, Rocket,
   ArrowRight, Check, Palette, Heart, Truck, GraduationCap,
-  Building
+  Building, Cpu, Database, Cloud, Lock, Sparkles
 } from 'lucide-react';
 
 // Import our new service data
@@ -123,6 +123,11 @@ import { cuttingEdgeServices } from '../data/real-2037-q4-cutting-edge-services'
 import { itInfrastructureServices } from '../data/real-2037-q4-it-infrastructure-services';
 import { businessSolutionServices } from '../data/real-2037-q4-business-solutions';
 
+// Import revolutionary 2025-2026 services
+import { revolutionary20252026MicroSaasServices } from '../data/revolutionary-2025-2026-micro-saas-services';
+import { revolutionary20252026AIServices } from '../data/revolutionary-2025-2026-ai-services';
+import { revolutionary20252026ITInfrastructureServices } from '../data/revolutionary-2025-2026-it-infrastructure-services';
+
 // Import existing service data
 import { realMicroSaasServices } from '../data/real-micro-saas-services';
 import { innovativeAIServices } from '../data/innovative-ai-services';
@@ -189,37 +194,11 @@ const allServices = [
   ...real2036ServiceExpansions,
   ...innovative2036MicroSaasServices,
   ...innovative2036ITServices,
-  // Our new 2025 advanced services
-  // ...advanced2025MicroSaasExpansion,
-  // ...advanced2025ITSolutionsExpansion,
-  // ...advanced2025AIServicesExpansion,
-  // Our new innovative services
-  // ...innovative2037MicroSaasServices,
-  // ...innovative2037ITServices,
-  // ...innovative2037AIServices,
-  // ...innovative2038CuttingEdgeServices,
-  // ...innovative2038ITInfrastructureServices,
-  // Our additional innovative services
-  // ...innovative2037Services,
-  // ...advanced2038Services,
-  // ...revolutionary2039Services,
-  // Our revolutionary 2040-2041 services
-  // ...revolutionary2040FuturisticServices,
-  // ...revolutionary2041AdvancedServices,
-  // Our latest innovative services
-  // ...innovative2040FuturisticServices,
-  // ...advanced2041EnterpriseServices,
-  // ...revolutionary2042MicroSaasServices,
-  // Our new 2025 innovative services expansion
-  // ...innovative2025MicroSaasExpansion,
-  // ...innovative2025ITSolutionsExpansion,
-  // ...innovative2025AIServicesExpansion
-].filter(service => {
-  // Filter out malformed services
-  if (!service || typeof service !== 'object') return false;
-  if (!service.id || !service.name) return false;
-  return true;
-});
+  // Add revolutionary 2025-2026 services
+  ...revolutionary20252026MicroSaasServices,
+  ...revolutionary20252026AIServices,
+  ...revolutionary20252026ITInfrastructureServices
+];
 
 const categories = [
   {
@@ -291,6 +270,13 @@ const categories = [
     icon: <GraduationCap className="w-6 h-6" />,
     color: 'from-yellow-500 to-orange-500',
     description: 'Learning and research platforms'
+  },
+  {
+    id: 'revolutionary-2025-2026',
+    name: 'Revolutionary 2025-2026',
+    icon: <Sparkles className="w-6 h-6" />,
+    color: 'from-cyan-500 to-purple-500',
+    description: 'Cutting-edge services for the future'
   }
 ];
 
