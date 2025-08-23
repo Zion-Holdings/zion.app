@@ -8,6 +8,13 @@ PID_FILE="$LOG_DIR/site-link-cron.pid"
 
 run_once(){
   echo "[$(date -u +%FT%TZ)] 🔗 Site link cycle" | tee -a "$LOG_FILE"
+<<<<<<< HEAD
+  node "$DIR/site-link-orchestrator.cjs" || true
+  # Generate advertiser agents from latest crawl outputs
+  node "$DIR/site-content-advertiser-factory.cjs" || true
+  sleep 1800
+done ) & echo $! > "$LOG_DIR/site-link-cron.pid"
+=======
   node "$DIR/site-link-orchestrator.cjs" once || true
 }
 
@@ -37,4 +44,5 @@ case "${1:-start}" in
   *)
     echo "Usage: $0 {start|stop|status|run}" ; exit 1 ;;
  esac
+>>>>>>> origin/cursor/continuous-website-link-checker-and-fixer-d4cc
 

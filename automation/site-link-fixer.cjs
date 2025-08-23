@@ -4,145 +4,160 @@ const fs = require('fs');
 const path = require('path');
 const url = require('url');
 
-const REPORT_DIR = path.join(__dirname, '..', 'data', 'reports', 'site-links');
+const BASE_URL = process.env.APP_MARKETING_URL || process.env.BASE_URL || 'https://ziontechgroup.com';
+const REPORT_DIR = path.join(process.cwd(), 'data', 'reports', 'links');
 const LOG_DIR = path.join(__dirname, 'logs');
-const PAGES_DIR = path.join(__dirname, '..', 'pages');
-const PUBLIC_DIR = path.join(__dirname, '..', 'public');
-
-function ensureDir(dir) { if (!fs.existsSync(dir)) fs.mkdirSync(dir, { recursive: true }); }
-ensureDir(LOG_DIR); ensureDir(REPORT_DIR);
 const LOG_FILE = path.join(LOG_DIR, 'site-link-fixer.log');
-function log(message) { const line = `[${new Date().toISOString()}] ${message}`; console.log(line); fs.appendFileSync(LOG_FILE, line + '\n'); }
 
-function readJson(filePath, fallback) { try { return JSON.parse(fs.readFileSync(filePath, 'utf8')); } catch { return fallback; } }
+function ensureDir(p) { if (!fs.existsSync(p)) fs.mkdirSync(p, { recursive: true }); }
+ensureDir(LOG_DIR);
+ensureDir(REPORT_DIR);
 
-function toRoutePath(u) {
-  try {
-    const parsed = new url.URL(u);
-    return decodeURIComponent(parsed.pathname);
-  } catch { return null; }
+function log(message) {
+  const line = `[${new Date().toISOString()}] ${message}`;
+  console.log(line);
+  fs.appendFileSync(LOG_FILE, `${line}\n`);
 }
 
-function findNearestExistingRoute(routePath) {
-  // naive heuristic: try without trailing slash, index, and case variants
-  if (!routePath) return null;
-  const candidates = new Set();
-  const base = routePath.endsWith('/') && routePath !== '/' ? routePath.slice(0, -1) : routePath;
-  candidates.add(base);
-  candidates.add(base + '/index');
-  candidates.add(base.toLowerCase());
-  candidates.add(base.toLowerCase() + '/index');
-
-  for (const c of candidates) {
-    const tsx = path.join(PAGES_DIR, `${c}.tsx`);
-    const ts = path.join(PAGES_DIR, `${c}.ts`);
-    const js = path.join(PAGES_DIR, `${c}.js`);
-    const md = path.join(PAGES_DIR, `${c}.md`);
-    if (fs.existsSync(tsx) || fs.existsSync(ts) || fs.existsSync(js) || fs.existsSync(md)) {
-      return c;
+function loadLatestCrawl() {
+  const latest = path.join(REPORT_DIR, 'crawl-latest.json');
+  if (fs.existsSync(latest)) {
+    try {
+      return JSON.parse(fs.readFileSync(latest, 'utf8'));
+    } catch (e) {
+      log(`❌ Failed to parse latest crawl: ${e.message}`);
     }
+  }
+  // fallback to most recent by timestamp
+  const files = fs.readdirSync(REPORT_DIR).filter(f => f.startsWith('crawl-') && f.endsWith('.json')).sort().reverse();
+  for (const f of files) {
+    try {
+      return JSON.parse(fs.readFileSync(path.join(REPORT_DIR, f), 'utf8'));
+    } catch (e) {}
   }
   return null;
 }
 
-function loadBrokenLinks() {
-  const file = path.join(REPORT_DIR, 'broken-links.json');
-  const broken = readJson(file, []);
-  return Array.isArray(broken) ? broken : [];
-}
-
-function proposeRedirects(brokenList) {
-  const proposals = [];
-  for (const item of brokenList) {
-    const route = toRoutePath(item.url);
-    if (!route || route === '/') continue;
-    const fallback = findNearestExistingRoute(route);
-    if (fallback) {
-      proposals.push({ source: route, destination: fallback.startsWith('/') ? fallback : `/${fallback}`, permanent: true, status: item.status });
+function groupBroken(results) {
+  const broken = results.filter(r => !r.ok || (r.status && r.status >= 400));
+  const byHost = broken.reduce((acc, r) => {
+    try {
+      const u = new URL(r.url);
+      const b = new URL(BASE_URL);
+      const key = u.hostname === b.hostname ? 'internal' : 'external';
+      acc[key] = acc[key] || [];
+      acc[key].push(r);
+    } catch (e) {
+      acc.misc = acc.misc || [];
+      acc.misc.push(r);
     }
+    return acc;
+  }, {});
+  return byHost;
+}
+
+function findCandidateFix(url) {
+  // Simple redirect-based fix: if the finalUrl is ok and differs from url, propose replacing url with finalUrl
+  // Otherwise attempt to strip trailing slashes or add them and check if a corresponding page exists under pages/ as a heuristic
+  try {
+    const u = new URL(url);
+    const withoutSlash = u.pathname.endsWith('/') ? u.pathname.slice(0, -1) : `${u.pathname}/`;
+    return [
+      `${u.origin}${withoutSlash}`
+    ];
+  } catch {
+    return [];
   }
-  return proposals;
 }
 
-function writeRedirects(proposals) {
-  if (!proposals.length) return null;
-  const redirectsPath = path.join(REPORT_DIR, 'proposed-redirects.json');
-  fs.writeFileSync(redirectsPath, JSON.stringify({ generatedAt: new Date().toISOString(), redirects: proposals }, null, 2));
-  return redirectsPath;
-}
-
-function scanAndFixLocalReferences(brokenList) {
-  // Attempt to fix local content files referencing broken internal links
-  // We do a best-effort search-and-replace based on nearest existing route
-  const filesToCheck = [];
-  function collect(dir) {
-    if (!fs.existsSync(dir)) return;
+function collectFiles(rootDir) {
+  const exts = ['.md', '.mdx', '.tsx', '.jsx', '.ts', '.js'];
+  const ignored = new Set(['node_modules', '.git', '.next', 'data/reports']);
+  const files = [];
+  function walk(dir) {
     for (const entry of fs.readdirSync(dir)) {
       const full = path.join(dir, entry);
+      const rel = path.relative(rootDir, full);
       const stat = fs.statSync(full);
-      if (stat.isDirectory()) collect(full);
-      else if (/\.(tsx|ts|js|jsx|md|mdx|html)$/i.test(entry)) filesToCheck.push(full);
+      if (stat.isDirectory()) {
+        if ([...ignored].some(i => rel.startsWith(i))) continue;
+        walk(full);
+      } else if (exts.includes(path.extname(entry))) {
+        files.push(full);
+      }
     }
   }
-  collect(path.join(__dirname, '..', 'pages'));
-  collect(path.join(__dirname, '..', 'components'));
-  collect(path.join(__dirname, '..', 'data'));
+  walk(rootDir);
+  return files;
+}
 
-  let changes = 0;
-  for (const broken of brokenList) {
-    const from = toRoutePath(broken.url);
-    if (!from) continue;
-    const to = findNearestExistingRoute(from);
-    if (!to) continue;
-    const fromEscaped = from.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-    const re = new RegExp(fromEscaped, 'g');
-    for (const file of filesToCheck) {
+function applyFixes(brokenInternal, allResults) {
+  const repoRoot = process.cwd();
+  const files = collectFiles(repoRoot);
+  const fixes = [];
+
+  // Map for quick lookup of successful final URLs
+  const okFinals = new Map();
+  for (const r of allResults) {
+    if (r.ok && r.finalUrl) okFinals.set(r.url, r.finalUrl);
+  }
+
+  for (const issue of brokenInternal) {
+    const target = issue.url;
+    const replacement = okFinals.get(target) || findCandidateFix(target).find(Boolean);
+    if (!replacement || replacement === target) continue;
+
+    for (const file of files) {
       try {
-        const content = fs.readFileSync(file, 'utf8');
-        if (re.test(content)) {
-          const updated = content.replace(re, to.startsWith('/') ? to : `/${to}`);
-          if (updated !== content) {
-            fs.writeFileSync(file, updated);
-            changes++;
-          }
+        const original = fs.readFileSync(file, 'utf8');
+        if (!original.includes(target)) continue;
+        const updated = original.split(target).join(replacement);
+        if (updated !== original) {
+          fs.writeFileSync(file, updated);
+          fixes.push({ file, from: target, to: replacement });
+          log(`🛠️ Replaced in ${file}: ${target} -> ${replacement}`);
         }
-      } catch (_) {}
+      } catch (e) {
+        log(`⚠️ Could not process ${file}: ${e.message}`);
+      }
     }
   }
-  return changes;
+
+  return fixes;
+}
+
+function saveFixReport(summary) {
+  const out = path.join(REPORT_DIR, `fix-${new Date().toISOString().replace(/[-:TZ.]/g, '').slice(0,12)}.json`);
+  fs.writeFileSync(out, JSON.stringify(summary, null, 2));
+  fs.writeFileSync(path.join(REPORT_DIR, 'fix-latest.json'), JSON.stringify(summary, null, 2));
+  log(`📄 Saved fix report: ${out}`);
 }
 
 async function main() {
-  log('🔧 Site link fixer started');
-  const broken = loadBrokenLinks();
-  if (!broken.length) { log('✅ No broken links found'); return; }
+  const crawl = loadLatestCrawl();
+  if (!crawl) {
+    log('ℹ️ No crawl report found; skipping fixes');
+    return;
+  }
+  const grouped = groupBroken(crawl.results || []);
+  const internalBroken = grouped.internal || [];
+  log(`🔎 Internal broken links: ${internalBroken.length}`);
 
-  const internalBroken = broken.filter(b => {
-    try {
-      const u = new url.URL(b.url);
-      const start = new url.URL(process.env.APP_SITE_URL || 'https://ziontechgroup.com');
-      return u.host === start.host;
-    } catch { return false; }
-  });
-
-  const redirects = proposeRedirects(internalBroken);
-  const redirectsPath = writeRedirects(redirects);
-  const refFixes = scanAndFixLocalReferences(internalBroken);
-
-  const summary = {
+  const fixes = applyFixes(internalBroken, crawl.results || []);
+  const report = {
     timestamp: new Date().toISOString(),
-    brokenTotal: broken.length,
-    internalBroken: internalBroken.length,
-    proposedRedirects: redirects.length,
-    redirectsPath: redirectsPath || null,
-    localReferenceFixesApplied: refFixes
+    baseUrl: BASE_URL,
+    attempted: internalBroken.length,
+    applied: fixes.length,
+    fixes
   };
-  fs.writeFileSync(path.join(REPORT_DIR, 'fix-summary.json'), JSON.stringify(summary, null, 2));
-  log(`✅ Fix summary: ${JSON.stringify(summary)}`);
+  saveFixReport(report);
 }
 
 if (require.main === module) {
-  main().catch(e => { log(`Fatal: ${e.message}`); process.exitCode = 1; });
+  main().catch(e => { log(`❌ Fix run failed: ${e.message}`); process.exitCode = 1; });
 }
+
+module.exports = {};
 
 
