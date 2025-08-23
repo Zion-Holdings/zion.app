@@ -114,7 +114,7 @@ const AccessibilityEnhancer: React.FC<AccessibilityEnhancerProps> = ({
   }, [applySettings]);
 
   // Focus management
-  const handleFocusChange = useCallback((e: Event) => {
+  const handleFocusChange = useCallback((e: globalThis.FocusEvent) => {
     const target = e.target as HTMLElement;
     if (target) {
       setCurrentFocus(target);
@@ -123,7 +123,7 @@ const AccessibilityEnhancer: React.FC<AccessibilityEnhancerProps> = ({
   }, []);
 
   // Keyboard navigation enhancements
-  const handleKeyDown = useCallback((_e: Event) => {
+  const handleKeyDown = useCallback((e: globalThis.KeyboardEvent) => {
     // Tab navigation detected
   }, []);
 

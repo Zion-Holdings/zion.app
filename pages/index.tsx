@@ -15,7 +15,7 @@ const HomePage: React.FC = () => {
       <AccessibilityEnhancer />
       <MobileOptimizer showDebugInfo={false}>
         <Homepage2043 />
-        <PerformanceMonitor showUI={true} />
+        <PerformanceMonitor showMetrics={true} />
       </MobileOptimizer>
     </ErrorBoundary>
   );

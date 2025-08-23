@@ -79,8 +79,9 @@ const Innovative2025ServicesShowcase: React.FC = () => {
     <Layout>
       <SEO 
         title="Innovative 2025 Services Showcase - Zion Tech Group"
-        description="Explore our comprehensive showcase of innovative 2025 technology services including AI, quantum computing, space technology, and enterprise solutions."
-        keywords={["innovative services", "2025 technology", "AI solutions", "quantum computing", "space technology", "enterprise solutions", "Zion Tech Group"]}
+        description="Discover our comprehensive portfolio of innovative 2025 micro SAAS services, IT solutions, and AI services. Leading-edge technology solutions for modern businesses."
+        keywords={["innovative services", "micro SAAS", "IT solutions", "AI services", "2025 technology", "Zion Tech Group"]}
+        ogImage="/og-image.jpg"
       />
 
       {/* Hero Section */}

@@ -11,8 +11,37 @@ import {
 } from 'lucide-react';
 import { innovative2025AdvancedServicesExpansion } from '../data/innovative-2025-advanced-services-expansion';
 import { innovative2025EnterpriseSolutions } from '../data/innovative-2025-enterprise-solutions';
+import { innovative2040FuturisticServices } from '../data/innovative-2040-futuristic-services';
 
 const Homepage2040: React.FC = () => {
+  // Animation variants
+  const staggerContainer = {
+    initial: {},
+    animate: {
+      transition: {
+        staggerChildren: 0.1
+      }
+    }
+  };
+
+  const fadeInUp = {
+    initial: { opacity: 0, y: 30 },
+    animate: { opacity: 1, y: 0 }
+  };
+
+  // Helper function for color classes
+  const getColorClasses = (index: number) => {
+    const colors = [
+      'from-cyan-500 to-blue-600',
+      'from-purple-500 to-pink-600',
+      'from-green-500 to-emerald-600',
+      'from-orange-500 to-red-600',
+      'from-indigo-500 to-purple-600',
+      'from-teal-500 to-cyan-600'
+    ];
+    return colors[index % colors.length];
+  };
+
   // Get featured services from the new data
   const featuredServices = [
     ...innovative2025AdvancedServicesExpansion.slice(0, 3),
@@ -191,7 +220,6 @@ const Homepage2040: React.FC = () => {
                   key={stat.label}
                   className="text-center p-8 group hover:bg-white/5 rounded-2xl transition-all duration-300"
                   initial={{ opacity: 0, y: 20 }}
-
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.8, delay: index * 0.1 }}
                   viewport={{ once: true }}
@@ -207,6 +235,82 @@ const Homepage2040: React.FC = () => {
                   <div className="text-sm text-cyan-400 opacity-0 group-hover:opacity-100 transition-opacity">
                     {stat.description}
                   </div>
+                </motion.div>
+
+              ))}
+            </motion.div>
+          </div>
+        </section>
+
+        {/* Services Grid Section */}
+        <section className="py-24 px-4">
+          <div className="max-w-7xl mx-auto">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+              className="text-center mb-20"
+            >
+              <h2 className="text-5xl md:text-6xl font-bold mb-8 bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
+                Featured Services
+              </h2>
+              <p className="text-xl text-gray-300 max-w-4xl mx-auto leading-relaxed">
+                Discover our most innovative and cutting-edge technology solutions designed to transform your business and unlock new possibilities
+              </p>
+            </motion.div>
+            
+            <motion.div
+              variants={staggerContainer}
+              initial="initial"
+              whileInView="animate"
+              viewport={{ once: true }}
+              className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+            >
+              {innovative2040FuturisticServices.slice(0, 6).map((service, index) => (
+                <motion.div
+                  key={service.id}
+                  variants={fadeInUp}
+                  className="group relative bg-gray-800/50 backdrop-blur-sm border border-gray-700/50 rounded-2xl p-6 hover:border-cyan-400/50 transition-all duration-300 hover:shadow-2xl hover:shadow-cyan-400/25"
+                >
+                  {/* Service Icon */}
+                  <div className={`w-16 h-16 bg-gradient-to-r ${getColorClasses(index)} rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300`}>
+                    <Rocket className="w-8 h-8 text-white" />
+                  </div>
+
+                  {/* Service Content */}
+                  <h3 className="text-xl font-semibold text-white mb-3 group-hover:text-cyan-400 transition-colors duration-300">
+                    {service.name}
+                  </h3>
+                  <p className="text-gray-300 mb-4 leading-relaxed">
+                    {service.tagline}
+                  </p>
+
+                  {/* Service Features */}
+                  <div className="space-y-2 mb-6">
+                    {service.features.slice(0, 3).map((feature, featureIndex) => (
+                      <div key={featureIndex} className="flex items-center space-x-2 text-sm text-gray-400">
+                        <div className="w-2 h-2 bg-cyan-400 rounded-full"></div>
+                        <span>{feature}</span>
+                      </div>
+                    ))}
+                  </div>
+
+                  {/* Service Price */}
+                  <div className="mb-6">
+                    <span className="text-2xl font-bold text-cyan-400">
+                      {service.price}
+                    </span>
+                  </div>
+
+                  {/* CTA Button */}
+                  <Link 
+                    href={service.link}
+                    className="inline-flex items-center justify-center w-full px-6 py-3 bg-gradient-to-r from-cyan-400 to-blue-500 text-white font-semibold rounded-xl hover:from-cyan-500 hover:to-blue-600 transition-all duration-300 focus:outline-none focus:ring-4 focus:ring-cyan-400/50 group-hover:shadow-lg group-hover:shadow-cyan-400/25"
+                  >
+                    Learn More
+                    <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform duration-300" />
+                  </Link>
                 </motion.div>
               ))}
             </motion.div>
