@@ -59,10 +59,16 @@ const Header = () => {
         { name: 'Case Studies', href: '/case-studies' },
         { name: 'Cloud Platform', href: '/cloud-platform' },
         { name: 'AI Assistant', href: '/ai-assistant' },
+<<<<<<< HEAD
+        { name: 'Micro SaaS', href: '/micro-saas' },
+        { name: 'Resources', href: '/resources' },
+        { name: 'Support', href: '/support' }
+=======
         { name: 'Analytics', href: '/analytics' },
         { name: 'Automation', href: '/automation' },
         { name: 'Docs', href: '/docs' },
         { name: 'Market Pricing', href: '/market-pricing' }
+>>>>>>> origin/cursor/website-audit-content-update-and-deployment-0d5e
       ]
     },
     { name: 'Market Pricing', href: '/market-pricing' },

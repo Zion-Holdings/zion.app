@@ -178,7 +178,11 @@ export default function ServicesAdvertisingPage() {
 					<p className="text-slate-300">WHOIS, nameserver, and DNS record drift detection with alerts.</p>
 					<ul className="list-disc list-inside text-slate-300 space-y-1">
 						<li>Typical SMB budget: $5–$40/mo</li>
+<<<<<<< HEAD
+						<li>References: {ext('https://www.cloudflare.com/plans/')}, {ext('https://www.digicert.com/tools')}</li>
+=======
 						<li>References: {ext('https://www.cloudflare.com/plans/')}, {ext('https://www.digicert.com/ssl-tools/ssl-checker/')}</li>
+>>>>>>> origin/cursor/website-audit-content-update-and-deployment-0d5e
 					</ul>
 				</section>
 
@@ -250,9 +254,19 @@ export default function ServicesAdvertisingPage() {
 					<p className="text-slate-300">Privacy-friendly dashboards with goals and funnels. Cookie-less.</p>
 					<ul className="list-disc list-inside text-slate-300 space-y-1">
 						<li>Typical SMB budget: $9–$50/mo</li>
+<<<<<<< HEAD
+						<li>References: {ext('https://plausible.io/pricing')}, {ext('https://usefathom.com/pricing')}</li>
+					</ul>
+					<div className="flex gap-3">
+						<a href="/website-analytics" className="px-3 py-1.5 rounded-md bg-cyan-600 text-white">View Service</a>
+						<a href="/pricing" className="px-3 py-1.5 rounded-md border border-cyan-500/40 text-cyan-300">Pricing</a>
+					</div>
+				</section>
+=======
 											<li>References: {ext('https://plausible.io/#pricing')}, {ext('https://usefathom.com/pricing')}</li>
 				</ul>
 			</section>
+>>>>>>> origin/cursor/website-audit-content-update-and-deployment-0d5e
 
 			<section className="space-y-6">
 					<h2 className="text-2xl font-semibold text-white">Automated Email Follow-ups</h2>
