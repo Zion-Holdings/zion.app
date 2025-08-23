@@ -3,6 +3,13 @@ import Head from 'next/head';
 import Link from 'next/link';
 import { CheckCircle, ArrowRight, Star, TrendingUp, Phone, Zap, DollarSign, Shield, Mail, MapPin, Rocket, Brain, Sparkles } from 'lucide-react';
 import Button from '../components/ui/Button';
+<<<<<<< HEAD
+import UltraAdvancedFuturisticBackground from '../components/ui/UltraAdvancedFuturisticBackground';
+import UltraFuturisticServiceCard from '../components/ui/UltraFuturisticServiceCard';
+import ServiceAds from '../components/sections/ServiceAds';
+import Card from '../components/ui/Card';
+import EnhancedNavigation from '../components/layout/EnhancedNavigation';
+=======
 import UltraQuantumHolographicBackground from '../components/ui/UltraQuantumHolographicBackground';
 import UltraAdvancedNavigation from '../components/layout/UltraAdvancedNavigation';
 import UltraAdvancedNavigation2026 from '../components/layout/UltraAdvancedNavigation2026';
@@ -14,6 +21,7 @@ import Revolutionary2027ServicesShowcase from '../components/sections/Revolution
 import Revolutionary2027Hero from '../components/sections/Revolutionary2027Hero';
 import EnhancedHero2026 from '../components/sections/EnhancedHero2026';
 import UltraFuturisticHero2027 from '../components/sections/UltraFuturisticHero2027';
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-4748
 import { motion } from 'framer-motion';
 import { enhancedRealMicroSaasServices } from '../data/enhanced-real-micro-saas-services';
 import { extraServices } from '../data/extra-services';
@@ -65,8 +73,14 @@ import { emergingTech2027Services } from '../data/emerging-tech-2027-services';
 import { revolutionary2027AIServices } from '../data/revolutionary-2027-ai-services';
 import { revolutionary2027ITServices } from '../data/revolutionary-2027-it-services';
 import { revolutionary2027MicroSaasServices } from '../data/revolutionary-2027-micro-saas';
+<<<<<<< HEAD
+import { innovative2028Services } from '../data/innovative-2028-services';
+import { emergingTech2028Services } from '../data/emerging-tech-2028-services';
+import { enterpriseIT2028Services } from '../data/enterprise-it-2028-services';
+=======
 import { futuristic2028Services } from '../data/2028-futuristic-innovations';
 import { emergingTech2028Services } from '../data/2028-emerging-tech-services';
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-4748
 
 export default function HomePage() {
   const contactInfo = {
@@ -128,8 +142,14 @@ export default function HomePage() {
     ...revolutionary2027AIServices,
     ...revolutionary2027ITServices,
     ...revolutionary2027MicroSaasServices,
+<<<<<<< HEAD
+    ...innovative2028Services,
+    ...emergingTech2028Services,
+    ...enterpriseIT2028Services
+=======
     ...futuristic2028Services,
     ...emergingTech2028Services
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-4748
   ];
 
 const serviceCategories = [

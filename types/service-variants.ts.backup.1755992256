@@ -466,6 +466,15 @@ export type ServiceVariant =
   | 'supply-chain-futuristic'
   | 'legal-futuristic'
   | 'healthcare-futuristic'
+<<<<<<< HEAD
+  | 'biotech-futuristic'
+  | 'simulation-futuristic'
+  | 'space-futuristic'
+  | 'neuromorphic-futuristic'
+  | 'dna-futuristic'
+  | 'photonic-futuristic'
+  | 'robotics-futuristic';
+=======
   | 'ai-automation'
   | 'blockchain-futuristic'
   | 'iot-futuristic'
@@ -481,3 +490,4 @@ export type ServiceVariant =
   | 'quantum-cybersecurity'
   | 'quantum-financial-trading'
   | 'ai-climate-prediction';
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-4748
