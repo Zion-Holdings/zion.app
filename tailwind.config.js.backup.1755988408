@@ -10,6 +10,8 @@ module.exports = {
   theme: {
     extend: {
       colors: {
+<<<<<<< HEAD
+=======
         // Modern color palette
         primary: {
           50: '#eff6ff',
@@ -215,6 +217,7 @@ module.exports = {
         'glow-xl': '0 0 60px rgba(59, 130, 246, 0.5)',
       },
       animation: {
+>>>>>>> origin/cursor/add-and-advertise-new-services-then-build-bdcb
         'fade-in': 'fadeIn 0.6s ease-out forwards',
         'fade-in-up': 'fadeInUp 0.6s ease-out forwards',
         'fade-in-down': 'fadeInDown 0.6s ease-out forwards',
