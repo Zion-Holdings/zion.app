@@ -38,6 +38,15 @@ export default function MarketPricingPage() {
 						</ul>
 					</Card>
 
+<<<<<<< HEAD
+					<Card className="p-6 bg-black/40 border border-gray-800">
+						<h2 className="text-xl font-semibold mb-2">Cloud Databases</h2>
+						<ul className="text-sm text-gray-300 space-y-2 list-disc list-inside">
+							<li>Google Cloud SQL (Postgres): {ext('https://cloud.google.com/sql/pricing')}</li>
+							<li>AWS RDS (Postgres): {ext('https://aws.amazon.com/rds/postgresql/pricing/')}</li>
+						</ul>
+					</Card>
+=======
             <div className="bg-black/30 rounded-2xl border border-purple-500/30 p-6">
               <h2 className="text-2xl font-semibold mb-2">Security & Compliance</h2>
               <ul className="list-disc list-inside text-slate-300 space-y-1">
@@ -48,6 +57,7 @@ export default function MarketPricingPage() {
               </ul>
               <div className="text-sm text-slate-400 mt-3">Typical SMB budgets: $200–$5,000/month based on scale and compliance scope.</div>
             </div>
+>>>>>>> origin/cursor/website-audit-content-update-and-deployment-e72a
 
 					<Card className="p-6 bg-black/40 border border-gray-800">
 						<h2 className="text-xl font-semibold mb-2">Identity & SSO/SCIM</h2>
@@ -84,6 +94,13 @@ export default function MarketPricingPage() {
 					</Card>
 				</div>
 
+<<<<<<< HEAD
+				<div className="mt-10 text-sm text-gray-400">Need a quote? <a href="/contact" className="text-cyan-300 underline">Contact sales</a> or call +1 302 464 0950.</div>
+			</div>
+		</UltraFuturisticBackground>
+	);
+}
+=======
             <div className="bg-black/30 rounded-2xl border border-amber-500/30 p-6">
               <h2 className="text-2xl font-semibold mb-2">Kubernetes & FinOps</h2>
               <ul className="list-disc list-inside text-slate-300 space-y-1">
@@ -378,3 +395,4 @@ export default function MarketPricingPage() {
     </UltraAdvancedFuturisticBackground>
   );
 }
+>>>>>>> origin/cursor/website-audit-content-update-and-deployment-e72a
