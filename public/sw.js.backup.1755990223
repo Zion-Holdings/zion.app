@@ -1,6 +1,19 @@
 /* eslint-env serviceworker */
 /* global self, caches, Response, clients */
 
+<<<<<<< HEAD
+const CACHE_NAME = 'zion-tech-group-v1.0.0';
+const urlsToCache = [
+  '/',
+  '/services',
+  '/about',
+  '/contact',
+  '/static/css/main.css',
+  '/static/js/main.js'
+];
+
+// Install event - cache resources
+=======
 const CACHE_NAME = 'zion-tech-v1.0.0';
 const STATIC_CACHE = 'zion-static-v1.0.0';
 const DYNAMIC_CACHE = 'zion-dynamic-v1.0.0';
@@ -17,10 +30,15 @@ const STATIC_FILES = [
 ];
 
 // Install event - cache static files
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-ffbd
 self.addEventListener('install', (event) => {
   event.waitUntil(
     caches.open(CACHE_NAME)
       .then((cache) => {
+<<<<<<< HEAD
+        console.log('Opened cache');
+        return cache.addAll(urlsToCache);
+=======
         console.log('Caching static files');
         return cache.addAll(STATIC_FILES);
       })
@@ -30,6 +48,7 @@ self.addEventListener('install', (event) => {
       })
       .catch((error) => {
         console.error('Error caching static files:', error);
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-ffbd
       })
   );
 });
@@ -52,6 +71,21 @@ self.addEventListener('fetch', (event) => {
 // Activate event - clean up old caches
 self.addEventListener('activate', (event) => {
   event.waitUntil(
+<<<<<<< HEAD
+    caches.keys().then((cacheNames) => {
+      return Promise.all(
+        cacheNames.map((cacheName) => {
+          if (cacheName !== CACHE_NAME) {
+            console.log('Deleting old cache:', cacheName);
+            return caches.delete(cacheName);
+          }
+        })
+      );
+    })
+  );
+});
+
+=======
     caches.keys()
       .then((cacheNames) => {
         return Promise.all(
@@ -189,6 +223,7 @@ async function handleOtherRequest(request) {
   }
 }
 
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-ffbd
 // Background sync for offline actions
 self.addEventListener('sync', (event) => {
   if (event.tag === 'background-sync') {
@@ -196,6 +231,13 @@ self.addEventListener('sync', (event) => {
   }
 });
 
+<<<<<<< HEAD
+// Background sync function
+async function doBackgroundSync() {
+  try {
+    // Handle offline actions when connection is restored
+    console.log('Background sync completed');
+=======
 async function doBackgroundSync() {
   try {
     // Get stored offline actions
@@ -209,11 +251,30 @@ async function doBackgroundSync() {
         console.error('Failed to process offline action:', error);
       }
     }
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-ffbd
   } catch (error) {
     console.error('Background sync failed:', error);
   }
 }
 
+<<<<<<< HEAD
+// Push notification handling
+self.addEventListener('push', (event) => {
+  const options = {
+    body: event.data ? event.data.text() : 'New update from Zion Tech Group',
+    icon: '/icon-192x192.png',
+    badge: '/badge-72x72.png',
+    vibrate: [100, 50, 100],
+    data: {
+      dateOfArrival: Date.now(),
+      primaryKey: 1
+    },
+    actions: [
+      {
+        action: 'explore',
+        title: 'Explore',
+        icon: '/icon-192x192.png'
+=======
 // Get stored offline actions from IndexedDB
 async function getOfflineActions() {
   // This would typically use IndexedDB
@@ -245,6 +306,7 @@ self.addEventListener('push', (event) => {
       vibrate: [100, 50, 100],
       data: {
         url: data.url
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-ffbd
       },
       actions: [
         {
@@ -261,7 +323,11 @@ self.addEventListener('push', (event) => {
     };
 
     event.waitUntil(
+<<<<<<< HEAD
+      self.registration.showNotification(data.title || 'Zion Tech Group', options)
+=======
       self.registration.showNotification(data.title, options)
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-ffbd
     );
   }
 });
@@ -272,6 +338,11 @@ self.addEventListener('notificationclick', (event) => {
 
   if (event.action === 'view') {
     event.waitUntil(
+<<<<<<< HEAD
+      clients.openWindow('/')
+    );
+  }
+=======
       self.clients.openWindow(event.notification.data.url)
     );
   }
@@ -295,4 +366,5 @@ self.addEventListener('error', (event) => {
 
 self.addEventListener('unhandledrejection', (event) => {
   console.error('Service worker unhandled rejection:', event.reason);
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-ffbd
 });
