@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import UltraFuturisticNavigation2036 from './UltraFuturisticNavigation2036';
-import UltraFuturisticFooter2036 from './UltraFuturisticFooter2036';
+import UltraFuturisticNavigation2038 from './UltraFuturisticNavigation2038';
+import UltraFuturisticFooter2038 from './UltraFuturisticFooter2038';
 import EnhancedSidebar2025 from './EnhancedSidebar2025';
-import UltraFuturisticBackground2036 from '../backgrounds/UltraFuturisticBackground2036';
+import UltraFuturisticBackground2038 from '../backgrounds/UltraFuturisticBackground2038';
 import TopContactBar from './TopContactBar';
 import PerformanceMonitor from '../PerformanceMonitor';
 import AccessibilityEnhancer from '../AccessibilityEnhancer';
@@ -20,15 +20,12 @@ export default function Layout({ children }: LayoutProps) {
       <a href="#main" className="skip-link">Skip to main content</a>
       
       {/* Futuristic Background */}
-      <UltraFuturisticBackground2036 />
+      <UltraFuturisticBackground2038 intensity="medium" theme="holographic-neon" />
       
       {/* Layout Structure */}
       <div className="relative z-10">
-        {/* Top Contact Bar */}
-        <TopContactBar />
-        
         {/* Navigation */}
-        <UltraFuturisticNavigation2036 />
+        <UltraFuturisticNavigation2038 />
         
         {/* Sidebar and Main Content */}
         <div className="flex">
@@ -37,13 +34,13 @@ export default function Layout({ children }: LayoutProps) {
             onClose={() => setSidebarOpen(false)} 
           />
           
-          <main id="main" role="main" className="flex-1 pt-24 lg:pt-28">
+          <main id="main" role="main" className="flex-1 pt-32 lg:pt-36">
             {children}
           </main>
         </div>
         
         {/* Footer */}
-        <UltraFuturisticFooter2036 />
+        <UltraFuturisticFooter2038 />
       </div>
 
       {/* Accessibility and Performance Tools */}
