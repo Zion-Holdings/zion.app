@@ -1,10 +1,125 @@
 import React, { useState, useCallback } from 'react';
 import { motion } from 'framer-motion';
+<<<<<<< HEAD
+import { 
+  ArrowRight, Star, Sparkles, Clock, Users, TrendingUp, 
+  Brain, Atom, Shield, Rocket, Target, Zap, Globe, Cpu
+} from 'lucide-react';
+=======
 import { ArrowRight, Brain } from 'lucide-react';
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-b1f5
 
 interface ServiceCardProps {
   service: {
     id: string;
+<<<<<<< HEAD
+    name?: string;
+    title?: string;
+    tagline?: string;
+    description: string;
+    category: string;
+    type: string;
+    features: string[];
+    pricing?: {
+      starter?: string;
+      professional?: string;
+      enterprise?: string;
+      custom?: string;
+      starting?: string;
+      currency?: string;
+    };
+    badge?: string;
+    icon?: string;
+    color?: string;
+    rating?: number;
+    users?: string;
+    responseTime?: string;
+    marketSize?: string;
+    targetAudience?: string;
+    competitiveAdvantage?: string;
+    slug?: string;
+  };
+  onClick?: () => void;
+  featured?: boolean;
+  className?: string;
+}
+
+const getCategoryIcon = (category: string) => {
+  const categoryLower = category.toLowerCase();
+  if (categoryLower.includes('ai') || categoryLower.includes('consciousness')) return Brain;
+  if (categoryLower.includes('quantum')) return Atom;
+  if (categoryLower.includes('cybersecurity') || categoryLower.includes('security')) return Shield;
+  if (categoryLower.includes('space')) return Rocket;
+  if (categoryLower.includes('business') || categoryLower.includes('intelligence')) return Target;
+  if (categoryLower.includes('automation') || categoryLower.includes('autonomous')) return Zap;
+  if (categoryLower.includes('global') || categoryLower.includes('worldwide')) return Globe;
+  return Cpu;
+};
+
+const getCategoryColor = (category: string) => {
+  const categoryLower = category.toLowerCase();
+  if (categoryLower.includes('ai') || categoryLower.includes('consciousness')) return 'from-purple-500 to-pink-500';
+  if (categoryLower.includes('quantum')) return 'from-blue-500 to-cyan-500';
+  if (categoryLower.includes('cybersecurity') || categoryLower.includes('security')) return 'from-red-500 to-orange-500';
+  if (categoryLower.includes('space')) return 'from-indigo-500 to-purple-500';
+  if (categoryLower.includes('business') || categoryLower.includes('intelligence')) return 'from-emerald-500 to-teal-500';
+  if (categoryLower.includes('automation') || categoryLower.includes('autonomous')) return 'from-yellow-500 to-orange-500';
+  if (categoryLower.includes('global') || categoryLower.includes('worldwide')) return 'from-cyan-500 to-blue-500';
+  return 'from-gray-500 to-gray-700';
+};
+
+const ServiceCard: React.FC<ServiceCardProps> = ({ 
+  service, 
+  onClick, 
+  featured = false, 
+  className = '' 
+}) => {
+  const CategoryIcon = getCategoryIcon(service.category);
+  const categoryColor = getCategoryColor(service.category);
+  
+  // Handle both name and title properties
+  const serviceTitle = service.title || service.name || 'Service';
+  
+  // Handle pricing display
+  const getPricingDisplay = () => {
+    if (service.pricing?.starting && service.pricing?.currency) {
+      return {
+        text: `Starting at ${service.pricing.currency}${service.pricing.starting}`,
+        price: `${service.pricing.currency}${service.pricing.starting}`
+      };
+    }
+    if (service.pricing?.starter) {
+      return {
+        text: `Starting at ${service.pricing.starter}`,
+        price: service.pricing.starter
+      };
+    }
+    return null;
+  };
+  
+  const handleClick = () => {
+    if (onClick) {
+      onClick();
+    } else if (service.slug) {
+      window.location.href = service.slug;
+    } else {
+      window.location.href = `/services/${service.id}`;
+    }
+  };
+
+  const pricingDisplay = getPricingDisplay();
+
+  return (
+    <motion.div
+      className={`group relative overflow-hidden rounded-2xl bg-gradient-to-br from-gray-900/50 to-gray-800/30 border border-gray-700/50 hover:border-cyan-500/50 transition-all duration-500 cursor-pointer ${className}`}
+      whileHover={{ 
+        y: -10,
+        scale: 1.02,
+        transition: { duration: 0.3 }
+      }}
+      whileTap={{ scale: 0.98 }}
+      onClick={handleClick}
+=======
     name: string;
     description: string;
     type: string;
@@ -27,10 +142,24 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ service, index, isCurrent, on
       onClick={() => onClick(service)}
       whileHover={{ scale: 1.05 }}
       whileTap={{ scale: 0.95 }}
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-b1f5
       role="button"
       tabIndex={0}
       onKeyDown={(e) => {
         if (e.key === 'Enter' || e.key === ' ') {
+<<<<<<< HEAD
+          e.preventDefault();
+          handleClick();
+        }
+      }}
+      aria-label={`Learn more about ${serviceTitle}`}
+    >
+      {/* Enhanced Background Effects */}
+      <div className="absolute inset-0 -z-10">
+        <div className={`absolute inset-0 bg-gradient-to-br ${categoryColor} opacity-0 group-hover:opacity-5 transition-opacity duration-500`} />
+        <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-cyan-500/10 to-blue-500/10 rounded-full blur-3xl group-hover:scale-150 transition-transform duration-700" />
+        <div className="absolute bottom-0 left-0 w-24 h-24 bg-gradient-to-br from-purple-500/10 to-pink-500/10 rounded-full blur-2xl group-hover:scale-125 transition-transform duration-700 delay-100" />
+=======
           onClick(service);
         }
       }}
@@ -67,6 +196,7 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ service, index, isCurrent, on
             <ArrowRight className="w-5 h-5 text-gray-500 group-hover:text-cyan-400 transition-colors duration-300" />
           </div>
         </div>
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-b1f5
       </div>
 
       {/* Card Content */}
