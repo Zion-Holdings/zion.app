@@ -1,45 +1,45 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Shield, Lock, Eye, Zap, Brain, Globe, Target, AlertTriangle } from 'lucide-react';
+import { BarChart3, TrendingUp, PieChart, Activity, Database, Brain, Zap, Target } from 'lucide-react';
 import Layout from '../components/layout/Layout';
 
-export default function Cybersecurity() {
+export default function DataAnalytics() {
   const services = [
     {
-      icon: <Shield className="w-12 h-12 text-cyan-400" />,
-      title: "Zero Trust Security",
-      description: "Comprehensive zero trust network architecture and security platform",
-      href: "/zero-trust-security-platform"
+      icon: <BarChart3 className="w-12 h-12 text-cyan-400" />,
+      title: "Business Intelligence",
+      description: "Advanced analytics and reporting platforms for data-driven decisions",
+      href: "/intelligent-hr-analytics-platform"
     },
     {
-      icon: <Lock className="w-12 h-12 text-blue-400" />,
-      title: "Vulnerability Assessment",
-      description: "Advanced penetration testing and security vulnerability analysis",
-      href: "/vulnerability-assessment-penetration-testing"
+      icon: <TrendingUp className="w-12 h-12 text-blue-400" />,
+      title: "Performance Monitoring",
+      description: "Real-time performance analytics and SLO tracking systems",
+      href: "/status-pages-slo"
     },
     {
-      icon: <Eye className="w-12 h-12 text-purple-400" />,
-      title: "SOC2 Compliance",
-      description: "Automated SOC2 compliance and evidence management",
-      href: "/soc2-compliance-automation"
+      icon: <PieChart className="w-12 h-12 text-purple-400" />,
+      title: "Data Visualization",
+      description: "Interactive dashboards and data visualization tools",
+      href: "/vector-search-starter"
     },
     {
-      icon: <Zap className="w-12 h-12 text-green-400" />,
-      title: "Incident Response",
-      description: "AI-powered incident response and automation suite",
-      href: "/incident-automation-suite"
+      icon: <Activity className="w-12 h-12 text-green-400" />,
+      title: "Real-time Analytics",
+      description: "Live data streaming and real-time business intelligence",
+      href: "/mlops-starter"
     },
     {
-      icon: <Brain className="w-12 h-12 text-yellow-400" />,
-      title: "AI Security",
-      description: "Intelligent threat detection and security analytics",
-      href: "/quantum-cybersecurity-platform"
+      icon: <Database className="w-12 h-12 text-yellow-400" />,
+      title: "Data Management",
+      description: "Data governance, quality, and lifecycle management",
+      href: "/managed-postgres-ha"
     },
     {
-      icon: <Globe className="w-12 h-12 text-pink-400" />,
-      title: "Cloud Security",
-      description: "Multi-cloud security and disaster recovery solutions",
-      href: "/multi-cloud-disaster-recovery"
+      icon: <Brain className="w-12 h-12 text-pink-400" />,
+      title: "AI-Powered Analytics",
+      description: "Machine learning enhanced analytics and predictive insights",
+      href: "/ai-powered-decision-engine"
     }
   ];
 
@@ -56,11 +56,11 @@ export default function Cybersecurity() {
               className="text-center"
             >
               <h1 className="text-5xl md:text-7xl font-bold bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 bg-clip-text text-transparent mb-6">
-                Cybersecurity Solutions
+                Data Analytics Solutions
               </h1>
               <p className="text-xl md:text-2xl text-gray-300 max-w-4xl mx-auto leading-relaxed">
-                Protecting your digital assets with cutting-edge cybersecurity solutions, 
-                zero trust architecture, and AI-powered threat detection systems.
+                Transform your data into actionable insights with our advanced analytics platforms, 
+                business intelligence tools, and AI-powered data solutions.
               </p>
             </motion.div>
           </div>
@@ -103,9 +103,9 @@ export default function Cybersecurity() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.8 }}
             >
-              <h2 className="text-4xl font-bold text-white mb-6">Secure Your Digital Future</h2>
+              <h2 className="text-4xl font-bold text-white mb-6">Unlock Your Data's Potential</h2>
               <p className="text-xl text-gray-300 mb-8">
-                Protect your business with our comprehensive cybersecurity solutions and expert security team.
+                Turn your data into a competitive advantage with our comprehensive analytics solutions.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <a

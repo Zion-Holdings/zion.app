@@ -42,13 +42,20 @@ const navigationItems: NavigationItem[] = [
       { label: 'Enterprise Solutions', href: '/enterprise-solutions' },
       { label: 'Startup Solutions', href: '/startup-solutions' },
       { label: 'Government Solutions', href: '/government-solutions' },
-      { label: 'Healthcare Solutions', href: '/healthcare-solutions' }
+      { label: 'Healthcare Solutions', href: '/healthcare-solutions' },
+      { label: 'Financial Solutions', href: '/financial-solutions' },
+      { label: 'Manufacturing AI', href: '/manufacturing-ai-solutions' }
     ]
   },
   {
     label: 'About',
     href: '/about',
-    icon: Users
+    icon: Users,
+    children: [
+      { label: 'About Us', href: '/about' },
+      { label: 'Leadership', href: '/leadership' },
+      { label: 'Careers', href: '/careers' }
+    ]
   },
   {
     label: 'Resources',

@@ -1,45 +1,45 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Shield, Lock, Eye, Zap, Brain, Globe, Target, AlertTriangle } from 'lucide-react';
+import { Atom, Cpu, Brain, Zap, Shield, Globe, Rocket, Target } from 'lucide-react';
 import Layout from '../components/layout/Layout';
 
-export default function Cybersecurity() {
+export default function QuantumComputing() {
   const services = [
     {
-      icon: <Shield className="w-12 h-12 text-cyan-400" />,
-      title: "Zero Trust Security",
-      description: "Comprehensive zero trust network architecture and security platform",
-      href: "/zero-trust-security-platform"
+      icon: <Atom className="w-12 h-12 text-cyan-400" />,
+      title: "Quantum AI Hybrid Computing",
+      description: "Revolutionary hybrid quantum-classical computing platform",
+      href: "/ai-quantum-hybrid-computing"
     },
     {
-      icon: <Lock className="w-12 h-12 text-blue-400" />,
-      title: "Vulnerability Assessment",
-      description: "Advanced penetration testing and security vulnerability analysis",
-      href: "/vulnerability-assessment-penetration-testing"
+      icon: <Brain className="w-12 h-12 text-blue-400" />,
+      title: "Quantum Brain-Computer Interface",
+      description: "Next-generation quantum-enhanced neural interfaces",
+      href: "/quantum-ai-brain-computer-interface"
     },
     {
-      icon: <Eye className="w-12 h-12 text-purple-400" />,
-      title: "SOC2 Compliance",
-      description: "Automated SOC2 compliance and evidence management",
-      href: "/soc2-compliance-automation"
+      icon: <Zap className="w-12 h-12 text-purple-400" />,
+      title: "Quantum Energy Platform",
+      description: "Quantum computing solutions for energy optimization",
+      href: "/quantum-energy-platform"
     },
     {
-      icon: <Zap className="w-12 h-12 text-green-400" />,
-      title: "Incident Response",
-      description: "AI-powered incident response and automation suite",
-      href: "/incident-automation-suite"
-    },
-    {
-      icon: <Brain className="w-12 h-12 text-yellow-400" />,
-      title: "AI Security",
-      description: "Intelligent threat detection and security analytics",
+      icon: <Shield className="w-12 h-12 text-green-400" />,
+      title: "Quantum Cybersecurity",
+      description: "Unbreakable quantum encryption and security protocols",
       href: "/quantum-cybersecurity-platform"
     },
     {
-      icon: <Globe className="w-12 h-12 text-pink-400" />,
-      title: "Cloud Security",
-      description: "Multi-cloud security and disaster recovery solutions",
-      href: "/multi-cloud-disaster-recovery"
+      icon: <Globe className="w-12 h-12 text-yellow-400" />,
+      title: "Quantum IoT Platform",
+      description: "Quantum-enhanced Internet of Things infrastructure",
+      href: "/quantum-iot-platform"
+    },
+    {
+      icon: <Rocket className="w-12 h-12 text-pink-400" />,
+      title: "Quantum Financial Trading",
+      description: "Quantum algorithms for financial market optimization",
+      href: "/quantum-financial-trading-platform"
     }
   ];
 
@@ -56,11 +56,11 @@ export default function Cybersecurity() {
               className="text-center"
             >
               <h1 className="text-5xl md:text-7xl font-bold bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 bg-clip-text text-transparent mb-6">
-                Cybersecurity Solutions
+                Quantum Computing Solutions
               </h1>
               <p className="text-xl md:text-2xl text-gray-300 max-w-4xl mx-auto leading-relaxed">
-                Protecting your digital assets with cutting-edge cybersecurity solutions, 
-                zero trust architecture, and AI-powered threat detection systems.
+                Pioneering the quantum revolution with cutting-edge quantum computing platforms, 
+                quantum AI hybrids, and quantum-enhanced solutions that solve previously impossible problems.
               </p>
             </motion.div>
           </div>
@@ -103,9 +103,9 @@ export default function Cybersecurity() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.8 }}
             >
-              <h2 className="text-4xl font-bold text-white mb-6">Secure Your Digital Future</h2>
+              <h2 className="text-4xl font-bold text-white mb-6">Ready for the Quantum Future?</h2>
               <p className="text-xl text-gray-300 mb-8">
-                Protect your business with our comprehensive cybersecurity solutions and expert security team.
+                Experience the power of quantum computing and transform your business with our cutting-edge solutions.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <a

@@ -1,45 +1,45 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Shield, Lock, Eye, Zap, Brain, Globe, Target, AlertTriangle } from 'lucide-react';
+import { Zap, Cog, Brain, Rocket, Target, BarChart3, Globe, Shield } from 'lucide-react';
 import Layout from '../components/layout/Layout';
 
-export default function Cybersecurity() {
+export default function ProcessAutomation() {
   const services = [
     {
-      icon: <Shield className="w-12 h-12 text-cyan-400" />,
-      title: "Zero Trust Security",
-      description: "Comprehensive zero trust network architecture and security platform",
-      href: "/zero-trust-security-platform"
+      icon: <Zap className="w-12 h-12 text-cyan-400" />,
+      title: "Intelligent Supply Chain",
+      description: "AI-powered supply chain optimization and automation",
+      href: "/intelligent-supply-chain-optimization"
     },
     {
-      icon: <Lock className="w-12 h-12 text-blue-400" />,
-      title: "Vulnerability Assessment",
-      description: "Advanced penetration testing and security vulnerability analysis",
-      href: "/vulnerability-assessment-penetration-testing"
-    },
-    {
-      icon: <Eye className="w-12 h-12 text-purple-400" />,
-      title: "SOC2 Compliance",
-      description: "Automated SOC2 compliance and evidence management",
-      href: "/soc2-compliance-automation"
-    },
-    {
-      icon: <Zap className="w-12 h-12 text-green-400" />,
-      title: "Incident Response",
-      description: "AI-powered incident response and automation suite",
+      icon: <Cog className="w-12 h-12 text-blue-400" />,
+      title: "Workflow Automation",
+      description: "Intelligent workflow orchestration and process management",
       href: "/incident-automation-suite"
     },
     {
-      icon: <Brain className="w-12 h-12 text-yellow-400" />,
-      title: "AI Security",
-      description: "Intelligent threat detection and security analytics",
-      href: "/quantum-cybersecurity-platform"
+      icon: <Brain className="w-12 h-12 text-purple-400" />,
+      title: "AI Content Automation",
+      description: "Revolutionary AI-powered content generation platform",
+      href: "/intelligent-content-automation-platform"
     },
     {
-      icon: <Globe className="w-12 h-12 text-pink-400" />,
-      title: "Cloud Security",
-      description: "Multi-cloud security and disaster recovery solutions",
-      href: "/multi-cloud-disaster-recovery"
+      icon: <Rocket className="w-12 h-12 text-green-400" />,
+      title: "Business Process Automation",
+      description: "End-to-end business process automation and optimization",
+      href: "/ai-autonomous-business-operations"
+    },
+    {
+      icon: <Target className="w-12 h-12 text-yellow-400" />,
+      title: "Sales Automation",
+      description: "AI-powered sales copilot and revenue optimization",
+      href: "/sales-copilot"
+    },
+    {
+      icon: <BarChart3 className="w-12 h-12 text-pink-400" />,
+      title: "HR Analytics Automation",
+      description: "Intelligent HR analytics and workforce optimization",
+      href: "/intelligent-hr-analytics-platform"
     }
   ];
 
@@ -56,11 +56,11 @@ export default function Cybersecurity() {
               className="text-center"
             >
               <h1 className="text-5xl md:text-7xl font-bold bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 bg-clip-text text-transparent mb-6">
-                Cybersecurity Solutions
+                Process Automation Solutions
               </h1>
               <p className="text-xl md:text-2xl text-gray-300 max-w-4xl mx-auto leading-relaxed">
-                Protecting your digital assets with cutting-edge cybersecurity solutions, 
-                zero trust architecture, and AI-powered threat detection systems.
+                Streamline operations and boost productivity with our intelligent automation platforms, 
+                AI-powered workflows, and process optimization solutions.
               </p>
             </motion.div>
           </div>
@@ -103,9 +103,9 @@ export default function Cybersecurity() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.8 }}
             >
-              <h2 className="text-4xl font-bold text-white mb-6">Secure Your Digital Future</h2>
+              <h2 className="text-4xl font-bold text-white mb-6">Automate Your Success</h2>
               <p className="text-xl text-gray-300 mb-8">
-                Protect your business with our comprehensive cybersecurity solutions and expert security team.
+                Transform your business operations with intelligent automation and AI-powered workflows.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <a
