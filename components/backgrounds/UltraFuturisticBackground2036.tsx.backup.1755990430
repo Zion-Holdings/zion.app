@@ -209,6 +209,9 @@ const UltraFuturisticBackground2036: React.FC = () => {
         className="fixed inset-0 pointer-events-none opacity-30"
         style={{ zIndex: -1 }}
       />
+<<<<<<< HEAD
+    </>
+=======
       
       {/* Decorative geometric elements */}
       <div className="absolute inset-0 pointer-events-none">
@@ -295,6 +298,7 @@ const UltraFuturisticBackground2036: React.FC = () => {
 
       {children}
     </div>
+>>>>>>> origin/cursor/website-audit-content-update-and-deployment-db78
   );
 };
 

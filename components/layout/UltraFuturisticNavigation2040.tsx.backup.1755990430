@@ -3,6 +3,15 @@ import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { motion, AnimatePresence } from 'framer-motion';
 import { 
+<<<<<<< HEAD
+  Menu, ChevronDown, X, Phone, Mail, ArrowRight,
+  Brain, Rocket, Atom, Shield,
+  BarChart3, Globe, 
+  Grid, TrendingUp, 
+  Cpu, Cloud, Monitor, Network, Heart, HelpCircle, Building,
+  Zap, Heart as HeartIcon, Code as CodeIcon, Palette as PaletteIcon,
+  Users, BookOpen, FileText, Video
+=======
   Menu, ChevronDown, X, Phone, Mail, MapPin, ArrowRight,
   Brain, Rocket, Target, Atom, Shield,
   DollarSign, BarChart3, Globe, Star, Sparkles, 
@@ -11,6 +20,7 @@ import {
   Cpu, Cloud, Settings, Monitor, Palette, Network, Layers, Code, Heart, ShoppingCart, Clock, MessageCircle, HelpCircle, Building,
   Zap, Infinity, Eye, Heart as HeartIcon, Code as CodeIcon, Palette as PaletteIcon,
   BookOpen, User
+>>>>>>> origin/cursor/website-audit-content-update-and-deployment-db78
 } from 'lucide-react';
 
 interface NavigationItem {
@@ -195,6 +205,41 @@ const navigationItems: NavigationItem[] = [
         color: 'from-red-500 to-orange-500'
       },
       { 
+<<<<<<< HEAD
+        name: 'Quantum Cloud Infrastructure 2041', 
+        href: '/quantum-cloud-infrastructure-2041', 
+        description: 'Quantum cloud infrastructure',
+        icon: <Cloud className="w-4 h-4" />,
+        color: 'from-cyan-500 to-blue-500'
+      },
+      { 
+        name: 'Quantum Bio-Computing 2041', 
+        href: '/quantum-bio-computing-2041', 
+        description: 'Quantum bio-computing',
+        icon: <Dna className="w-4 h-4" />,
+        color: 'from-green-500 to-emerald-500'
+      },
+      { 
+        name: 'Autonomous Vehicle AI 2040', 
+        href: '/autonomous-vehicle-ai-2040', 
+        description: 'Autonomous vehicle AI',
+        icon: <Car className="w-4 h-4" />,
+        color: 'from-blue-500 to-indigo-500'
+      },
+      { 
+        name: 'Quantum Materials Discovery 2040', 
+        href: '/quantum-materials-discovery-2040', 
+        description: 'Quantum materials discovery',
+        icon: <Atom className="w-4 h-4" />,
+        color: 'from-purple-500 to-pink-500'
+      },
+      { 
+        name: 'Quantum Financial Intelligence 2040', 
+        href: '/quantum-financial-intelligence-2040', 
+        description: 'Quantum financial intelligence',
+        icon: <DollarSign className="w-4 h-4" />,
+        color: 'from-yellow-500 to-orange-500'
+=======
         name: 'Brain-Computer Interface', 
         href: '/brain-computer-interface-2040', 
         description: 'Direct neural integration',
@@ -207,6 +252,7 @@ const navigationItems: NavigationItem[] = [
         description: 'Consciousness-based empathy',
         icon: <Heart className="w-4 h-4" />,
         color: 'from-red-500 to-pink-500'
+>>>>>>> origin/cursor/website-audit-content-update-and-deployment-db78
       }
     ]
   },
