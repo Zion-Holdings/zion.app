@@ -739,8 +739,14 @@
     "@types/mocha": "^10.0.10",
     "@types/node": "^24.2.0",
     "@types/node-cron": "^3.0.11",
+<<<<<<< HEAD
+    "@types/react": "17.0.34",
+    "@types/react-dom": "17.0.11",
+    "@types/supertest": "^6.0.3",
+=======
     "@types/react": "^17.0.34",
     "@types/react-dom": "^17.0.11",
+>>>>>>> origin/cursor/build-zion-ai-marketplace-analytics-suite-7b81
     "@typescript-eslint/eslint-plugin": "^8.39.0",
     "@typescript-eslint/parser": "^8.39.0",
     "autoprefixer": "^10.4.16",
