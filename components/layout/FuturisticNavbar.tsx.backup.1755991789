@@ -1,8 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
+<<<<<<< HEAD
+import { Menu, X, Zap, Globe, Bot, Cloud, Shield, Brain, Atom } from 'lucide-react';
+=======
 import { Menu, X, Zap, Globe, Bot, Cloud, Shield, Sparkles, Rocket, Cpu, Database, Brain, Atom, Eye, Lock, BarChart3, Users, Target, TrendingUp, Star, Award, ZapIcon, CloudIcon, BotIcon, ShieldIcon, GlobeIcon, CpuIcon, DatabaseIcon, BrainIcon, AtomIcon, EyeIcon, LockIcon, BarChart3Icon, UsersIcon, TargetIcon, TrendingUpIcon, StarIcon, AwardIcon, DollarSign } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Menu as HeadlessMenu, X as HeadlessX, Zap as HeadlessZap, Sparkles as HeadlessSparkles, ChevronDown, Globe as HeadlessGlobe, Shield as HeadlessShield, Cpu as HeadlessCpu, Brain as HeadlessBrain } from 'lucide-react';
+>>>>>>> origin/cursor/enhance-app-services-and-website-with-futuristic-design-adba
 
 const FuturisticNavbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -26,6 +30,16 @@ const FuturisticNavbar: React.FC = () => {
   }, [isClient]);
 
   const navItems = [
+<<<<<<< HEAD
+    { name: 'Home', href: '/', icon: <Zap className="w-4 h-4" /> },
+    { name: 'Services', href: '/services', icon: <Cloud className="w-4 h-4" /> },
+    { name: 'Micro SaaS', href: '/micro-saas', icon: <Bot className="w-4 h-4" /> },
+    { name: 'AI Solutions', href: '/ai-solutions', icon: <Brain className="w-4 h-4" /> },
+    { name: 'Quantum Tech', href: '/quantum-tech', icon: <Atom className="w-4 h-4" /> },
+    { name: 'Pricing', href: '/pricing', icon: <Globe className="w-4 h-4" /> },
+    { name: 'About', href: '/about', icon: <Shield className="w-4 h-4" /> },
+    { name: 'Contact', href: '/contact', icon: <Zap className="w-4 h-4" /> },
+=======
     { 
       name: 'Home', 
       href: '/', 
@@ -88,6 +102,7 @@ const FuturisticNavbar: React.FC = () => {
       icon: <Zap className="w-4 h-4" />,
       description: 'Get in Touch'
     },
+>>>>>>> origin/cursor/enhance-app-services-and-website-with-futuristic-design-adba
   ];
 
   const handleDropdownEnter = (name: string) => {
