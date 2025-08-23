@@ -8,11 +8,17 @@ interface AccessibilityEnhancerProps {
 
 const AccessibilityEnhancer: React.FC<AccessibilityEnhancerProps> = ({ children }) => {
   const [isVisible, setIsVisible] = useState(false);
-  const [isHighContrast, setIsHighContrast] = useState(false);
-  const [isReducedMotion, setIsReducedMotion] = useState(false);
-  const [isLargeText, setIsLargeText] = useState(false);
-  const [isSpacing, setIsSpacing] = useState(false);
-  const [isFocusVisible, setIsFocusVisible] = useState(false);
+  const [isExpanded, setIsExpanded] = useState(false);
+  const [settings, setSettings] = useState<AccessibilitySettings>({
+    highContrast: false,
+    largeText: false,
+    reducedMotion: false,
+    highlighter: false,
+    fontSize: 16,
+    colorScheme: 'auto',
+    focusIndicator: true,
+    screenReader: false
+  });
 
   const [currentFocus, setCurrentFocus] = useState<HTMLElement | null>(null);
   const [focusHistory, setFocusHistory] = useState<HTMLElement[]>([]);
@@ -27,27 +33,40 @@ const AccessibilityEnhancer: React.FC<AccessibilityEnhancerProps> = ({ children 
       } catch {
         // Silently handle parsing errors
       }
-    }
-  }, []);
-
-  // Save settings to localStorage
-  useEffect(() => {
-    localStorage.setItem('accessibility-settings', JSON.stringify(settings));
-  }, [settings]);
-
-  // Apply accessibility settings
-  useEffect(() => {
-    const root = document.documentElement;
+    ];
     
-    setIsReducedMotion(prefersReducedMotion);
-    setIsHighContrast(prefersHighContrast);
+    // High contrast
+    if (settings.highContrast) {
+      root.style.setProperty('--bg-primary', '#000000');
+      root.style.setProperty('--bg-secondary', '#1a1a1a');
+      root.style.setProperty('--text-primary', '#ffffff');
+      root.style.setProperty('--text-secondary', '#e5e5e5');
+      root.style.setProperty('--accent-color', '#ffff00');
+      root.style.setProperty('--border-color', '#ffff00');
+    } else {
+      root.style.removeProperty('--bg-primary');
+      root.style.removeProperty('--bg-secondary');
+      root.style.removeProperty('--text-primary');
+      root.style.removeProperty('--text-secondary');
+      root.style.removeProperty('--accent-color');
+      root.style.removeProperty('--border-color');
+    }
 
-    // Listen for preference changes
-    const motionQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
-    const contrastQuery = window.matchMedia('(prefers-contrast: high)');
+    // Large text
+    if (settings.largeText) {
+      root.style.fontSize = '18px';
+      root.style.setProperty('--text-scale', '1.2');
+    } else {
+      root.style.fontSize = '16px';
+      root.style.setProperty('--text-scale', '1');
+    }
 
-    const handleMotionChange = (e: MediaQueryListEvent) => setIsReducedMotion(e.matches);
-    const handleContrastChange = (e: MediaQueryListEvent) => setIsHighContrast(e.matches);
+    // Reduced motion
+    if (settings.reducedMotion) {
+      root.style.setProperty('--reduced-motion', 'reduce');
+    } else {
+      root.style.removeProperty('--reduced-motion');
+    }
 
     // Focus indicator
     if (settings.focusIndicator) {

@@ -1,8 +1,15 @@
 import React from 'react';
 import Layout from '../components/layout/Layout';
+import { motion } from 'framer-motion';
+import { 
+  Brain, Atom, Shield, Cloud, BarChart, Code, Rocket, Zap, Target, Users, 
+  Heart, DollarSign, Cog, FileText, Calendar, Lightbulb, HelpCircle, Monitor,
+  Star, Award, TrendingUp, Globe, Lock, Server, Database, Network, Palette, Building,
+  CheckCircle, ArrowRight, ShoppingBag
+} from 'lucide-react';
 
-export default function AIServices() {
-  const services = [
+const AIServicesPage: React.FC = () => {
+  const aiServices = [
     {
       icon: Brain,
       title: 'AI Content Automation Platform',
@@ -25,11 +32,13 @@ export default function AIServices() {
       href: '/intelligent-supply-chain-optimization'
     },
     {
-      icon: Cpu,
-      title: 'Quantum AI Brain-Computer Interface',
-      description: 'Next-generation brain-computer interface technology',
-      features: ['Neural signal processing', 'Real-time communication', 'Medical applications', 'Research tools'],
-      href: '/quantum-ai-brain-computer-interface'
+      category: 'AI Content & Creativity',
+      services: [
+        { name: 'AI Content Generator', href: '/ai-content-generator', description: 'Automated content creation' },
+        { name: 'AI Content Personalization Engine', href: '/ai-content-personalization-engine', description: 'Personalized content delivery' },
+        { name: 'AI Creativity Studio', href: '/ai-creativity-studio', description: 'Creative AI assistance' },
+        { name: 'AI Video Editing', href: '/ai-video-editing', description: 'Automated video editing' }
+      ]
     },
     {
       icon: Rocket,
@@ -90,27 +99,11 @@ export default function AIServices() {
               transition={{ duration: 0.8 }}
               className="text-center"
             >
-              <h1 className="text-5xl md:text-7xl font-bold bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 bg-clip-text text-transparent mb-6">
-                AI Services
-              </h1>
-              <p className="text-xl md:text-2xl text-gray-300 max-w-4xl mx-auto leading-relaxed">
-                Revolutionary AI solutions that transform businesses and accelerate human progress. 
-                From content automation to quantum brain-computer interfaces.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <a
-                  href="/contact"
-                  className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-purple-600 to-cyan-600 text-white font-semibold rounded-lg hover:from-purple-700 hover:to-cyan-700 transition-all duration-300 transform hover:scale-105"
-                >
-                  Get Started
-                  <Rocket className="ml-2 w-5 h-5" />
-                </a>
-                <a
-                  href="/solutions"
-                  className="inline-flex items-center px-8 py-4 border-2 border-purple-500 text-purple-400 font-semibold rounded-lg hover:bg-purple-500 hover:text-white transition-all duration-300"
-                >
-                  View Solutions
-                </a>
+              <div className="flex items-center justify-center mb-6">
+                <Brain className="w-16 h-16 text-cyan-400 mr-4" />
+                <h1 className="text-5xl md:text-7xl font-bold bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 bg-clip-text text-transparent">
+                  AI Services
+                </h1>
               </div>
             </motion.div>
           </div>
@@ -138,6 +131,73 @@ export default function AIServices() {
                 <motion.div
                   key={index}
                   initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.8, delay: categoryIndex * 0.1 }}
+                  viewport={{ once: true }}
+                >
+                  <div className="flex items-center gap-3 mb-8">
+                    <div className="w-12 h-12 bg-gradient-to-r from-cyan-500 to-purple-500 rounded-lg flex items-center justify-center">
+                      <Star className="w-6 h-6 text-white" />
+                    </div>
+                    <h3 className="text-3xl font-bold text-white">{category.category}</h3>
+                  </div>
+                  
+                  <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    {category.services.map((service, serviceIndex) => (
+                      <motion.div
+                        key={service.name}
+                        initial={{ opacity: 0, scale: 0.9 }}
+                        whileInView={{ opacity: 1, scale: 1 }}
+                        transition={{ duration: 0.5, delay: serviceIndex * 0.1 }}
+                        viewport={{ once: true }}
+                        className="group"
+                      >
+                        <Link href={service.href}>
+                          <div className="p-6 bg-white/5 border border-white/10 rounded-xl hover:bg-white/10 hover:border-cyan-400/50 transition-all duration-300 h-full">
+                            <h4 className="text-xl font-semibold text-white mb-3 group-hover:text-cyan-400 transition-colors">
+                              {service.name}
+                            </h4>
+                            <p className="text-gray-300 text-sm leading-relaxed">
+                              {service.description}
+                            </p>
+                            <div className="mt-4 flex items-center text-cyan-400 text-sm font-medium">
+                              Learn More
+                              <Rocket className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
+                            </div>
+                          </div>
+                        </Link>
+                      </motion.div>
+                    ))}
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* CTA Section */}
+        <section className="py-20 px-4 bg-gradient-to-r from-cyan-500/10 to-purple-500/10">
+          <div className="max-w-4xl mx-auto text-center">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+            >
+              <h2 className="text-4xl font-bold text-white mb-4">
+                Industries We Serve
+              </h2>
+              <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+                Our AI solutions are designed to transform operations across diverse industries, 
+                driving innovation and efficiency in every sector.
+              </p>
+            </motion.div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+              {industries.map((industry, index) => (
+                <motion.div
+                  key={industry.name}
+                  initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: index * 0.1 }}
                   className="group"

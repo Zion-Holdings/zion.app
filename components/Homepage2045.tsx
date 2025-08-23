@@ -100,10 +100,7 @@ const Homepage2045: React.FC = () => {
   const [currentServiceIndex, setCurrentServiceIndex] = useState(0);
   const [selectedCategory, setSelectedCategory] = useState('all');
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
-  const [hoveredService, setHoveredService] = useState<string | null>(null);
-  const [isDarkMode, setIsDarkMode] = useState(true);
-  const [searchQuery, setSearchQuery] = useState('');
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [showScrollToTop, setShowScrollToTop] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
   
   useEffect(() => {
@@ -213,6 +210,10 @@ const Homepage2045: React.FC = () => {
       avatar: "👩‍🔬",
       rating: 5
     }
+  ], []);
+
+  const handleGetStarted = useCallback(() => {
+    window.location.href = '/contact';
   }, []);
 
   const handleWatchDemo = useCallback(() => {

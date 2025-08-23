@@ -1,16 +1,21 @@
 import React, { useEffect, useState, useCallback } from 'react';
 import { motion } from 'framer-motion';
 
+interface PerformanceLayoutShift {
+  value: number;
+}
+
 interface PerformanceMetrics {
-  fcp: number | null;
-  lcp: number | null;
-  fid: number | null;
-  cls: number | null;
-  ttfb: number | null;
+  loadTime: number;
+  domContentLoaded: number;
+  firstContentfulPaint: number;
+  largestContentfulPaint: number;
+  cumulativeLayoutShift: number;
 }
 
 interface PerformanceOptimizerProps {
   children: React.ReactNode;
+  onMetricsUpdate?: (metrics: PerformanceMetrics) => void;
 }
 
 const PerformanceOptimizer: React.FC<PerformanceOptimizerProps> = ({ 
@@ -44,15 +49,14 @@ const PerformanceOptimizer: React.FC<PerformanceOptimizerProps> = ({
         });
         lcpObserver.observe({ entryTypes: ['largest-contentful-paint'] });
 
-        // First Input Delay
-        const fidObserver = new PerformanceObserver((list) => {
-          const entries = list.getEntries();
-          const fidEntry = entries[0] as FirstInputEntry;
-          if (fidEntry && 'processingStart' in fidEntry) {
-            setMetrics(prev => ({ ...prev, fid: fidEntry.processingStart - fidEntry.startTime }));
-          }
-        });
-        fidObserver.observe({ entryTypes: ['first-input'] });
+    const newMetrics: PerformanceMetrics = {
+      loadTime: navigation.loadEventEnd - navigation.loadEventStart,
+      domContentLoaded: navigation.domContentLoadedEventEnd - navigation.domContentLoadedEventStart,
+      firstContentfulPaint: paintEntries.find(entry => entry.name === 'first-contentful-paint')?.startTime || 0,
+      largestContentfulPaint: 0,
+      cumulativeLayoutShift: layoutShiftEntries.reduce((sum, entry) => sum + (entry as PerformanceLayoutShift).value, 0)
+    };
+  }, []);
 
         // Cumulative Layout Shift
         const clsObserver = new PerformanceObserver((list) => {

@@ -168,7 +168,6 @@ const Homepage2044: React.FC = () => {
     window.location.href = service.slug;
   }, []);
 
-  // Loading state
   if (isLoading) {
     return (
       <div className="min-h-screen flex items-center justify-center">

@@ -218,10 +218,22 @@ const UltraFuturisticNavigation2040: React.FC = () => {
     }
   }, []);
 
-  useEffect(() => {
-    document.addEventListener('keydown', handleKeyDown);
-    return () => document.removeEventListener('keydown', handleKeyDown);
-  }, [handleKeyDown]);
+    const results: NavigationItem[] = [];
+    const searchInItems = (items: NavigationItem[]) => {
+      items.forEach(item => {
+        if (item.label.toLowerCase().includes(query.toLowerCase()) ||
+            item.description?.toLowerCase().includes(query.toLowerCase())) {
+          results.push(item);
+        }
+        if (item.children) {
+          searchInItems(item.children);
+        }
+      });
+    };
+
+    searchInItems(navigationItems);
+    setSearchResults(results.slice(0, 8)); // Limit results
+  };
 
   return (
     <>

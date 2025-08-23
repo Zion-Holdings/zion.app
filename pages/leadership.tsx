@@ -178,9 +178,22 @@ export default function Leadership() {
                             rel="noopener noreferrer"
                             className="flex items-center space-x-2 text-blue-400 hover:text-blue-300 transition-colors"
                           >
-                            {skill}
-                          </span>
-                        ))}
+                            <Linkedin className="w-4 h-4" />
+                            <span className="text-sm">LinkedIn</span>
+                          </a>
+                        )}
+                        {leader.contact.twitter && (
+                          <a href={leader.contact.twitter} target="_blank" rel="noopener noreferrer" className="flex items-center space-x-2 text-gray-300 hover:text-blue-400 transition-colors">
+                            <Twitter className="w-4 h-4" />
+                            <span className="text-sm">Twitter</span>
+                          </a>
+                        )}
+                        {leader.contact.github && (
+                          <a href={leader.contact.github} target="_blank" rel="noopener noreferrer" className="flex items-center space-x-2 text-gray-300 hover:text-gray-400 transition-colors">
+                            <Github className="w-4 h-4" />
+                            <span className="text-sm">GitHub</span>
+                          </a>
+                        )}
                       </div>
                     </div>
                   </div>

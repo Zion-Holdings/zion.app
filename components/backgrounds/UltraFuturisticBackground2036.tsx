@@ -100,8 +100,27 @@ export default function UltraFuturisticBackground2036({
     }
   }, [intensity, getThemeColors]);
 
-  // Enhanced animation loop with better performance
-  const animate = useCallback((canvas: HTMLCanvasElement, ctx: CanvasRenderingContext2D) => {
+  // Enhanced animation loop with quantum effects and neon pulses
+  const animate = useCallback(() => {
+    if (!canvasRef.current) return;
+    
+    const canvas = canvasRef.current;
+    const ctx = canvas.getContext('2d');
+    if (!ctx) return;
+
+    // Set canvas size
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+
+    // Clear canvas with enhanced transparency for layering effect
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+    // Create gradient background for enhanced depth
+    const gradient = ctx.createRadialGradient(
+      canvas.width / 2, canvas.height / 2, 0,
+      canvas.width / 2, canvas.height / 2, Math.max(canvas.width, canvas.height) / 2
+    );
+    
     const colors = getThemeColors();
     const time = Date.now() * 0.001;
     
