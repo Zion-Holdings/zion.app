@@ -9,11 +9,6 @@ import {
   Info
 } from 'lucide-react';
 
-// Define FocusEvent type for DOM events
-type FocusEvent = Event & {
-  target: EventTarget | null;
-};
-
 interface AccessibilitySettings {
   highContrast: boolean;
   largeText: boolean;
@@ -118,9 +113,24 @@ const AccessibilityEnhancer: React.FC<AccessibilityEnhancerProps> = ({
     }
   }, [applySettings]);
 
+  // Focus management
+  const handleFocusChange = useCallback((e: React.FocusEvent) => {
+    const target = e.target as HTMLElement;
+    if (target) {
+      setCurrentFocus(target);
+      announceToScreenReader(`Focused on ${target.textContent || target.tagName.toLowerCase()}`);
+    }
+  }, []);
+
+  // Keyboard navigation enhancements
+  const handleKeyDown = useCallback((_e: React.KeyboardEvent) => {
+    // Tab navigation detected
+  }, []);
 
   // Announce to screen reader
   const announceToScreenReader = useCallback((message: string) => {
+    // setAnnouncements(prev => [...prev, message]); // This line was removed
+    
     // Create live region for screen readers
     if (!announcementRef.current) {
       const liveRegion = document.createElement('div');
@@ -137,27 +147,8 @@ const AccessibilityEnhancer: React.FC<AccessibilityEnhancerProps> = ({
     
     // Remove announcement after a delay
     setTimeout(() => {
-      // Cleanup handled by component unmount
+      // setAnnouncements(prev => prev.filter(a => a !== message)); // This line was removed
     }, 5000);
-  }, []);
-
-  // Focus management
-  const handleFocusChange = useCallback((e: FocusEvent) => {
-    const target = e.target as HTMLElement;
-    if (target && target.tagName) {
-      // Track focus for accessibility
-      setCurrentFocus(target);
-      
-      // Announce focus changes to screen reader
-      if (settings.screenReader && target.getAttribute('aria-label')) {
-        announceToScreenReader(target.getAttribute('aria-label') || 'Element focused');
-      }
-    }
-  }, [settings.screenReader, announceToScreenReader]);
-
-  // Keyboard navigation enhancements
-  const handleKeyDown = useCallback(() => {
-    // Tab navigation detected
   }, []);
 
   // Auto-optimize accessibility
