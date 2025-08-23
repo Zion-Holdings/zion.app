@@ -110,10 +110,7 @@ export default function Layout({ children }: LayoutProps) {
         <TopContactBar />
         
         {/* Navigation */}
-        <UltraFuturisticNavigation2040 
-          onMenuToggle={() => setSidebarOpen(!sidebarOpen)}
-          isMenuOpen={sidebarOpen}
-        />
+        <UltraFuturisticNavigation2040 />
         
         {/* Sidebar and Main Content */}
         <div className="flex">
