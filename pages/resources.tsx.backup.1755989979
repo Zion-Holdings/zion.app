@@ -170,6 +170,41 @@ export default function ResourcesPage() {
       description: 'How to calculate and maximize return on investment for automation initiatives.',
       downloadUrl: '#',
       pages: '28',
+<<<<<<< HEAD
+      category: 'Business',
+      lastUpdated: 'November 2024',
+      author: 'Lisa Thompson, Business Strategy Consultant'
+    },
+    {
+      id: 'cybersecurity-ai-implementation',
+      title: 'Cybersecurity Best Practices for AI Systems',
+      description: 'Comprehensive security guidelines for implementing and maintaining AI systems in enterprise environments.',
+      downloadUrl: '#',
+      pages: '38',
+      category: 'Security',
+      lastUpdated: 'January 2025',
+      author: 'David Kim, Cybersecurity Expert'
+    },
+    {
+      id: 'machine-learning-production',
+      title: 'Machine Learning in Production: A Practical Guide',
+      description: 'Best practices for deploying, monitoring, and maintaining machine learning models in production environments.',
+      downloadUrl: '#',
+      pages: '52',
+      category: 'Technology',
+      lastUpdated: 'December 2024',
+      author: 'Dr. Emily Watson, ML Engineering Lead'
+    },
+    {
+      id: 'ai-transformation-roadmap',
+      title: 'AI Transformation Roadmap for Enterprises',
+      description: 'A step-by-step guide to planning and executing successful AI transformation initiatives.',
+      downloadUrl: '#',
+      pages: '41',
+      category: 'Strategy',
+      lastUpdated: 'January 2025',
+      author: 'James Wilson, Digital Transformation Advisor'
+=======
       category: 'Business'
     },
     {
@@ -195,6 +230,7 @@ export default function ResourcesPage() {
       downloadUrl: '#',
       pages: '35',
       category: 'Governance'
+>>>>>>> origin/cursor/add-more-project-content-4f94
     }
   ];
 
@@ -230,6 +266,20 @@ export default function ResourcesPage() {
       estimatedTime: '20 minutes'
     },
     {
+<<<<<<< HEAD
+      id: 'sustainability-calculator',
+      title: 'AI Sustainability Calculator',
+      description: 'Measure the environmental impact of your AI systems and identify optimization opportunities.',
+      type: 'Environmental Tool',
+      estimatedTime: '25 minutes'
+    },
+    {
+      id: 'edge-computing-optimizer',
+      title: 'Edge Computing Optimizer',
+      description: 'Optimize your edge AI deployment for maximum performance and efficiency.',
+      type: 'Optimization Tool',
+      estimatedTime: '35 minutes'
+=======
       id: 'edge-computing-calculator',
       title: 'Edge Computing ROI Calculator',
       description: 'Calculate the return on investment for edge computing implementations.',
@@ -249,6 +299,7 @@ export default function ResourcesPage() {
       description: 'Design and prototype automation workflows for your business processes.',
       type: 'Design Tool',
       estimatedTime: '60 minutes'
+>>>>>>> origin/cursor/add-more-project-content-4f94
     }
   ];
 
