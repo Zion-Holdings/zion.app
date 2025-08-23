@@ -3,11 +3,32 @@ import Head from 'next/head';
 import Link from 'next/link';
 import { CheckCircle, ArrowRight, Star, TrendingUp, Phone, Zap, DollarSign, Shield, Mail, MapPin, Rocket, Brain, Sparkles } from 'lucide-react';
 import Button from '../components/ui/Button';
+<<<<<<< HEAD
+import UltraQuantumHolographicBackground from '../components/ui/UltraQuantumHolographicBackground';
+=======
 import UltraQuantumHolographicMatrixBackground from '../components/ui/UltraQuantumHolographicMatrixBackground';
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-605d
 import UltraAdvancedNavigation from '../components/layout/UltraAdvancedNavigation';
 import EnhancedNavigation2026 from '../components/layout/EnhancedNavigation2026';
 import EnhancedNavigation2026V2 from '../components/layout/EnhancedNavigation2026V2';
 import EnhancedServiceShowcase from '../components/sections/EnhancedServiceShowcase';
+<<<<<<< HEAD
+import Enhanced2026ServicesShowcase from '../components/sections/Enhanced2026ServicesShowcase';
+import Enhanced2026ServicesShowcaseV2 from '../components/sections/Enhanced2026ServicesShowcaseV2';
+import EnhancedHero2026 from '../components/sections/EnhancedHero2026';
+import EnhancedHero2026V2 from '../components/sections/EnhancedHero2026V2';
+import { motion } from 'framer-motion';
+import { innovativeRealMicroSaasServices2025 } from '../data/2025-innovative-real-micro-saas-services';
+import { innovativeAIServicesEnhanced2025 } from '../data/2025-innovative-ai-services-enhanced';
+import { innovativeITServicesEnhanced2025 } from '../data/2025-innovative-it-services-enhanced';
+import { emergingTechServicesEnhanced2025 } from '../data/2025-emerging-tech-services-enhanced';
+import { advancedAIAutomationServices2025 } from '../data/2025-advanced-ai-automation-services';
+import { advancedITInfrastructureServices2025 } from '../data/2025-advanced-it-infrastructure-services';
+import { innovativeBusinessSolutions2025 } from '../data/2025-innovative-business-solutions';
+import { cuttingEdgeAIServices2025 } from '../data/2025-cutting-edge-ai-services';
+import { innovativeITInfrastructureServices2025 } from '../data/2025-innovative-it-infrastructure-services';
+import { innovativeMicroSaasSolutions2025 } from '../data/2025-innovative-micro-saas-solutions';
+=======
 import RevolutionaryServicesShowcase from '../components/sections/RevolutionaryServicesShowcase';
 import Revolutionary2026ServicesShowcase from '../components/sections/Revolutionary2026ServicesShowcase';
 import { motion } from 'framer-motion';
@@ -42,6 +63,7 @@ import { revolutionary2026AIServices } from '../data/revolutionary-2026-ai-servi
 import { revolutionary2026ITInfrastructureServices } from '../data/revolutionary-2026-it-infrastructure';
 import { revolutionary2026MicroSaasServices } from '../data/revolutionary-2026-micro-saas';
 import { revolutionary2026SpaceTechServices } from '../data/revolutionary-2026-space-tech';
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-605d
 
 export default function HomePage() {
   const heroStats = [
@@ -75,6 +97,22 @@ export default function HomePage() {
     ...emergingTechServices2025,
     ...revolutionary2025Services,
     ...nextGenInnovations2025,
+<<<<<<< HEAD
+    ...futuristic2028Services,
+    ...emergingTech2028Services,
+    ...cuttingEdge2029Services,
+    ...spaceColonization2029Services,
+    ...aiQuantum2029Services,
+    ...businessIT2029Services,
+    ...innovative2026Services,
+    ...emergingTech2026Services,
+    ...enterpriseIT2026Services,
+    ...innovative2026MicroSaasServices,
+    ...emergingTech2026ServicesNew,
+    ...enterpriseIT2026ServicesNew,
+    ...innovative2026MicroSaasServicesV2,
+    ...emergingTech2026V2Services
+=======
     ...revolutionary2025Innovations,
     ...emergingTech2025Innovations,
     ...enterpriseIT2025Services,
@@ -84,6 +122,7 @@ export default function HomePage() {
     ...revolutionary2026ITInfrastructureServices,
     ...revolutionary2026MicroSaasServices,
     ...revolutionary2026SpaceTechServices
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-605d
   ];
 
 const featuredServices = [
@@ -140,6 +179,10 @@ const featuredServices = [
   ];
 
   return (
+<<<<<<< HEAD
+    <UltraAdvancedFuturisticBackground variant="quantum-advanced" intensity={1.5}>
+      <div className="min-h-screen bg-black/50 text-white overflow-hidden">
+=======
     <UltraQuantumHolographicMatrixBackground 
       intensity="extreme" 
       colorScheme="quantum-fusion"
@@ -151,6 +194,7 @@ const featuredServices = [
       enableNeuralPulse={true}
     >
       <div className="min-h-screen">
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-605d
         <Head>
           <title>Zion Tech Group - Revolutionary AI, Quantum & Space Technology Solutions</title>
           <meta name="description" content="Leading provider of revolutionary AI, quantum computing, and space technology solutions. 500+ micro SaaS services with 1000%+ ROI guarantee. Contact: +1 302 464 0950" />
@@ -411,6 +455,25 @@ export default function HomePage() {
                 transition={{ duration: 0.8, delay: index * 0.1 }}
                 viewport={{ once: true }}
               >
+<<<<<<< HEAD
+                <div className="relative p-8 rounded-2xl bg-gradient-to-br from-gray-800/50 to-gray-900/50 border border-gray-700/50 hover:border-cyan-500/50 transition-all duration-300 group-hover:scale-105 group-hover:shadow-2xl group-hover:shadow-cyan-500/10">
+                  {/* Category Icon */}
+                  <div className={`w-16 h-16 rounded-xl bg-gradient-to-br ${category.color} flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300`}>
+                    <category.icon className="w-8 h-8 text-white" />
+                  </div>
+                  
+                  {/* Category Content */}
+                  <h3 className="text-2xl font-bold text-white mb-3">{category.title}</h3>
+                  <p className="text-gray-300 mb-6 leading-relaxed">{category.description}</p>
+                  
+                  {/* Features List */}
+                  <ul className="space-y-2 mb-6">
+                    {category.features.map((feature, featureIndex) => (
+                      <li key={featureIndex} className="flex items-center text-gray-300">
+                        <CheckCircle className="w-5 h-5 text-cyan-400 mr-3 flex-shrink-0" />
+                        {feature}
+                      </li>
+=======
                 <div className="flex items-center justify-between mb-4">
                   <div className="text-3xl">📊</div>
                   <div className="text-blue-400 font-bold text-lg">$299/month</div>
@@ -626,6 +689,7 @@ export default function HomePage() {
                   <ul className="text-gray-400 text-sm space-y-1 mb-6 list-disc list-inside">
                     {svc.features.slice(0, 3).map((f, i) => (
                       <li key={i}>{f}</li>
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-605d
                     ))}
                   </ul>
                   
