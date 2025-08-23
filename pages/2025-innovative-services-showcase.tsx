@@ -148,7 +148,7 @@ const normalizeService = (service: any): UnifiedService => {
 // Combine all services
 const allServices: UnifiedService[] = [
   ...advancedAIAutomationServices.map(normalizeService),
-        ...innovative2025ITInfrastructureServices.map(normalizeService),
+  ...innovative2025ITInfrastructureServices.map(normalizeService),
   ...innovativeMicroSaasSolutions2025.map(normalizeService),
   ...emergingTechnologyServices.map(normalizeService)
 ];

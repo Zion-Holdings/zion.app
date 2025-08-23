@@ -10,8 +10,8 @@ import {
 } from 'lucide-react';
 
 // Import all our new service data
-import { advancedEnterpriseAutomationServices } from '../data/2025-advanced-enterprise-automation-services';
-import { advancedCybersecurityComplianceServices } from '../data/2025-advanced-cybersecurity-compliance-services';
+import { advancedEnterpriseAutomationServices2025 } from '../data/2025-advanced-enterprise-automation-services';
+import { advancedCybersecurityComplianceServices2025 } from '../data/2025-advanced-cybersecurity-compliance-services';
 import { advancedDataAnalyticsBIServices } from '../data/2025-advanced-data-analytics-bi-services';
 import { advancedCloudDevOpsServices } from '../data/2025-advanced-cloud-devops-services';
 import { advancedAIMLServices } from '../data/2025-advanced-ai-ml-services';
@@ -19,8 +19,8 @@ import { advancedFintechBlockchainServices } from '../data/2025-advanced-fintech
 
 // Combine all services
 const allServices = [
-  ...advancedEnterpriseAutomationServices,
-  ...advancedCybersecurityComplianceServices,
+  ...advancedEnterpriseAutomationServices2025,
+  ...advancedCybersecurityComplianceServices2025,
   ...advancedDataAnalyticsBIServices,
   ...advancedCloudDevOpsServices,
   ...advancedAIMLServices,
@@ -92,7 +92,7 @@ export default function UltimateServicesShowcase2025() {
         title="2025 Ultimate Services Showcase - Zion Tech Group"
         description="Discover our comprehensive suite of innovative micro SAAS services, IT solutions, and AI services. From enterprise automation to blockchain compliance, we deliver cutting-edge solutions for modern businesses."
         keywords={["micro SAAS", "IT services", "AI services", "enterprise automation", "cybersecurity", "data analytics", "cloud DevOps", "fintech", "blockchain"]}
-        image="/og-image-2025-services.jpg"
+        ogImage="/og-image-2025-services.jpg"
       />
 
       {/* Hero Section */}

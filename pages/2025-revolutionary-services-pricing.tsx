@@ -274,7 +274,7 @@ export default function RevolutionaryServicesPricing() {
         title="2025 Revolutionary Services Pricing | Zion Tech Group"
         description="Comprehensive pricing for our revolutionary micro SAAS services, AI autonomous ecosystem, quantum computing solutions, and cutting-edge IT infrastructure innovations."
         keywords={["revolutionary services pricing", "AI autonomous ecosystem pricing", "quantum computing pricing", "micro SAAS pricing", "IT infrastructure pricing", "Zion Tech Group"]}
-        ogImage="/og-revolutionary-pricing.jpg"
+        image="/og-revolutionary-pricing.jpg"
       />
 
       <div className="min-h-screen bg-gradient-to-br from-gray-900 via-black to-gray-900">

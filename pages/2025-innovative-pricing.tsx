@@ -56,7 +56,7 @@ const serviceCategories = [
     name: 'IT Infrastructure Services',
     icon: <Building className="w-8 h-8" />,
     color: 'from-blue-500 to-indigo-500',
-            services: innovative2025ITInfrastructureServices
+    services: innovative2025ITInfrastructureServices
   },
   {
     id: 'micro-saas',
@@ -211,11 +211,9 @@ export default function InnovativePricing2025() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900">
       <SEO 
-        data={{
-          pageTitle: "2025 Innovative Services Pricing | Zion Tech Group",
-          pageDescription: "Comprehensive pricing for our 2025 innovative services including AI automation, IT infrastructure, micro SAAS solutions, and emerging technology services.",
-          pageKeywords: ["2025 pricing", "innovative services pricing", "AI automation pricing", "IT infrastructure pricing", "micro SAAS pricing", "Zion Tech Group"]
-        }}
+        title="2025 Innovative Services Pricing | Zion Tech Group"
+        description="Comprehensive pricing for our 2025 innovative services including AI automation, IT infrastructure, micro SAAS solutions, and emerging technology services."
+        keywords={["2025 pricing", "innovative services pricing", "AI automation pricing", "IT infrastructure pricing", "micro SAAS pricing", "Zion Tech Group"]}
       />
 
       {/* Hero Section */}
