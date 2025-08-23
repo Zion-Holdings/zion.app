@@ -19,75 +19,99 @@ const contactInfo = {
   website: 'https://ziontechgroup.com'
 };
 
-const ServiceCard = ({ service, index }: { service: any; index: number }) => (
-  <motion.div
-    initial={{ opacity: 0, y: 50 }}
-    animate={{ opacity: 1, y: 0 }}
-    transition={{ duration: 0.5, delay: index * 0.1 }}
-    className="relative group"
-  >
-    <div className={`absolute inset-0 bg-gradient-to-r ${service.color} rounded-2xl blur-xl group-hover:blur-2xl transition-all duration-500 opacity-20`}></div>
-    <div className={`relative bg-gradient-to-r ${service.color.replace('from-', 'from-').replace('to-', 'to-')} bg-opacity-10 border border-opacity-30 rounded-2xl p-8 hover:border-opacity-50 transition-all duration-300 h-full`}>
-      <div className="flex items-start justify-between mb-6">
-        <div className="text-4xl">{service.icon}</div>
-        {service.popular && (
-          <span className="px-3 py-1 bg-gradient-to-r from-yellow-500 to-orange-500 text-white text-xs font-semibold rounded-full">
-            Popular
-          </span>
-        )}
-      </div>
-      
-      <h3 className="text-2xl font-bold text-white mb-3">{service.name}</h3>
-      <p className="text-gray-300 mb-6 text-sm leading-relaxed">{service.description}</p>
-      
-      <div className="space-y-3 mb-6">
-        {service.features.slice(0, 4).map((feature: string, idx: number) => (
-          <div key={idx} className="flex items-center space-x-2">
-            <Check className="w-4 h-4 text-green-400 flex-shrink-0" />
-            <span className="text-gray-300 text-sm">{feature}</span>
+// Helper function to get color based on category
+const getServiceColor = (category: string) => {
+  const colors = {
+    'ai': 'from-purple-500 to-pink-600',
+    'quantum': 'from-cyan-500 to-blue-600',
+    'autonomous': 'from-green-500 to-teal-600',
+    'micro-saas': 'from-orange-500 to-red-600',
+    'it': 'from-indigo-500 to-purple-600',
+    'default': 'from-gray-500 to-gray-600'
+  };
+  
+  const categoryKey = Object.keys(colors).find(key => 
+    category.toLowerCase().includes(key)
+  );
+  
+  return colors[categoryKey as keyof typeof colors] || colors.default;
+};
+
+const ServiceCard = ({ service, index }: { service: any; index: number }) => {
+  const serviceColor = getServiceColor(service.category || 'default');
+  
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 50 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5, delay: index * 0.1 }}
+      className="relative group"
+    >
+      <div className={`absolute inset-0 bg-gradient-to-r ${serviceColor} rounded-2xl blur-xl group-hover:blur-2xl transition-all duration-500 opacity-20`}></div>
+      <div className={`relative bg-gradient-to-r ${serviceColor} bg-opacity-10 border border-opacity-30 rounded-2xl p-8 hover:border-opacity-50 transition-all duration-300 h-full`}>
+        <div className="flex items-start justify-between mb-6">
+          <div className="text-4xl">{service.icon || '🚀'}</div>
+          {service.popular && (
+            <span className="px-3 py-1 bg-gradient-to-r from-yellow-500 to-orange-500 text-white text-xs font-semibold rounded-full">
+              Popular
+            </span>
+          )}
+        </div>
+        
+        <h3 className="text-2xl font-bold text-white mb-3">{service.name}</h3>
+        <p className="text-gray-300 mb-6 text-sm leading-relaxed">{service.description}</p>
+        
+        <div className="space-y-3 mb-6">
+          {(service.features || []).slice(0, 4).map((feature: string, idx: number) => (
+            <div key={idx} className="flex items-center space-x-2">
+              <Check className="w-4 h-4 text-green-400 flex-shrink-0" />
+              <span className="text-gray-300 text-sm">{feature}</span>
+            </div>
+          ))}
+        </div>
+        
+        <div className="flex items-center justify-between mb-6">
+          <div>
+            <span className="text-3xl font-bold text-white">
+              {service.pricing?.starter || service.price || '$99'}
+            </span>
+            <span className="text-gray-400 text-sm">/month</span>
           </div>
-        ))}
-      </div>
-      
-      <div className="flex items-center justify-between mb-6">
-        <div>
-          <span className="text-3xl font-bold text-white">{service.price}</span>
-          <span className="text-gray-400 text-sm">{service.period}</span>
-        </div>
-        <div className="text-right">
-          <div className="flex items-center space-x-1 text-yellow-400">
-            {[...Array(5)].map((_, i) => (
-              <Star key={i} className={`w-4 h-4 ${i < Math.floor(service.rating) ? 'fill-current' : ''}`} />
-            ))}
+          <div className="text-right">
+            <div className="flex items-center space-x-1 text-yellow-400">
+              {[...Array(5)].map((_, i) => (
+                <Star key={i} className={`w-4 h-4 ${i < Math.floor(service.rating || 4) ? 'fill-current' : ''}`} />
+              ))}
+            </div>
+            <span className="text-gray-400 text-xs">{service.rating || 4}/5 ({service.reviews || 0} reviews)</span>
           </div>
-          <span className="text-gray-400 text-xs">{service.rating}/5 ({service.reviews} reviews)</span>
         </div>
+        
+        <div className="space-y-3 mb-6 text-xs text-gray-400">
+          <div className="flex justify-between">
+            <span>Setup Time:</span>
+            <span>{service.setupTime || '24 hours'}</span>
+          </div>
+          <div className="flex justify-between">
+            <span>Trial:</span>
+            <span>{service.trialDays || 14} days</span>
+          </div>
+          <div className="flex justify-between">
+            <span>Customers:</span>
+            <span>{(service.customers || 0).toLocaleString()}</span>
+          </div>
+        </div>
+        
+        <a 
+          href={service.link || '#'} 
+          className="block w-full text-center py-3 bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-semibold rounded-lg hover:from-cyan-600 hover:to-blue-700 transition-all duration-300 transform hover:scale-105"
+        >
+          Learn More
+        </a>
       </div>
-      
-      <div className="space-y-3 mb-6 text-xs text-gray-400">
-        <div className="flex justify-between">
-          <span>Setup Time:</span>
-          <span>{service.setupTime}</span>
-        </div>
-        <div className="flex justify-between">
-          <span>Trial:</span>
-          <span>{service.trialDays} days</span>
-        </div>
-        <div className="flex justify-between">
-          <span>Customers:</span>
-          <span>{service.customers.toLocaleString()}</span>
-        </div>
-      </div>
-      
-      <a 
-        href={service.link} 
-        className="block w-full text-center py-3 bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-semibold rounded-lg hover:from-cyan-600 hover:to-blue-700 transition-all duration-300 transform hover:scale-105"
-      >
-        Learn More
-      </a>
-    </div>
-  </motion.div>
-);
+    </motion.div>
+  );
+};
 
 const ServiceShowcase = () => {
   const [activeCategory, setActiveCategory] = useState('all');
