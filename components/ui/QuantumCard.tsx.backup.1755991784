@@ -209,6 +209,10 @@ const QuantumCard: React.FC<QuantumCardProps> = ({
       animate={isPressed ? "pressed" : isHovered ? "hover" : "initial"}
       onHoverStart={() => hover && setIsHovered(true)}
       onHoverEnd={() => hover && setIsHovered(false)}
+<<<<<<< HEAD
+      onTapStart={() => setIsPressed(true)}
+=======
+>>>>>>> origin/cursor/enhance-app-services-and-website-with-futuristic-design-8009
       onTap={() => setIsPressed(false)}
       onClick={onClick}
       style={{
