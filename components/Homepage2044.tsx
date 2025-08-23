@@ -89,23 +89,18 @@ const Homepage2044: React.FC = () => {
     window.location.href = service.slug;
   }, []);
 
-  // Loading component
   if (isLoading) {
     return <LoadingSpinner />;
   }
 
-  // Error component
   if (error) {
     return (
-      <Layout>
-        <div className="min-h-screen flex items-center justify-center">
-          <div className="text-center space-y-4">
-            <div className="w-16 h-16 mx-auto border-4 border-red-500 border-t-transparent rounded-full"></div>
-            <h2 className="text-2xl font-semibold text-white">Error Loading Page</h2>
-            <p className="text-red-400">{error}</p>
-          </div>
+      <div className="min-h-screen flex items-center justify-center">
+        <div className="text-center">
+          <h1 className="text-2xl font-bold text-red-400 mb-4">Error</h1>
+          <p className="text-gray-400">{error}</p>
         </div>
-      </Layout>
+      </div>
     );
   }
 
