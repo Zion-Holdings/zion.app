@@ -2,8 +2,21 @@ import React, { useState } from 'react';
 import Layout from '../components/layout/Layout';
 import { motion } from 'framer-motion';
 import { 
+<<<<<<< HEAD
+  Mail, 
+  Phone, 
+  MapPin, 
+  Clock, 
+  MessageCircle, 
+  Send,
+  CheckCircle,
+  Globe,
+  Building,
+  User
+=======
   Phone, Mail, MapPin, Send, 
   CheckCircle, Globe, Clock, MessageCircle
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-680a
 } from 'lucide-react';
 
 const ContactPage: React.FC = () => {
@@ -210,10 +223,19 @@ const ContactPage: React.FC = () => {
                 whileInView={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.8 }}
                 viewport={{ once: true }}
+<<<<<<< HEAD
+              >
+                <h2 className="text-4xl font-bold text-white mb-6">Send Us a Message</h2>
+                <p className="text-lg text-gray-300 mb-8">
+                  Tell us about your project and we'll get back to you within 24 hours.
+                </p>
+
+=======
                 className="bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-md border border-white/10 rounded-2xl p-8"
               >
                 <h2 className="text-3xl font-bold text-white mb-6">Send us a message</h2>
                 
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-680a
                 {isSubmitted ? (
                   <motion.div
                     initial={{ opacity: 0, scale: 0.9 }}
@@ -222,7 +244,13 @@ const ContactPage: React.FC = () => {
                   >
                     <CheckCircle className="w-16 h-16 text-green-400 mx-auto mb-4" />
                     <h3 className="text-2xl font-bold text-white mb-2">Message Sent!</h3>
+<<<<<<< HEAD
+                    <p className="text-green-300">
+                      Thank you for contacting us. We'll get back to you soon!
+                    </p>
+=======
                     <p className="text-gray-300">We'll get back to you within 24 hours.</p>
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-680a
                   </motion.div>
                 ) : (
                   <form onSubmit={handleSubmit} className="space-y-6">
@@ -236,7 +264,13 @@ const ContactPage: React.FC = () => {
                           id="name"
                           name="name"
                           required
+<<<<<<< HEAD
+                          value={formData.name}
+                          onChange={handleInputChange}
+                          className="w-full px-4 py-3 bg-gray-800/50 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 transition-all duration-300"
+=======
                           className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-680a
                           placeholder="Your full name"
                         />
                       </div>
@@ -250,8 +284,15 @@ const ContactPage: React.FC = () => {
                           id="email"
                           name="email"
                           required
+<<<<<<< HEAD
+                          value={formData.email}
+                          onChange={handleInputChange}
+                          className="w-full px-4 py-3 bg-gray-800/50 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 transition-all duration-300"
+                          placeholder="your@email.com"
+=======
                           className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                           placeholder="your.email@company.com"
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-680a
                         />
                       </div>
                     </div>
@@ -266,8 +307,13 @@ const ContactPage: React.FC = () => {
                           id="company"
                           name="company"
                           value={formData.company}
+<<<<<<< HEAD
+                          onChange={handleInputChange}
+                          className="w-full px-4 py-3 bg-gray-800/50 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 transition-all duration-300"
+=======
                           onChange={handleChange}
                           className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-680a
                           placeholder="Your company name"
                         />
                       </div>
@@ -281,21 +327,39 @@ const ContactPage: React.FC = () => {
                           id="phone"
                           name="phone"
                           value={formData.phone}
+<<<<<<< HEAD
+                          onChange={handleInputChange}
+                          className="w-full px-4 py-3 bg-gray-800/50 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 transition-all duration-300"
+=======
                           onChange={handleChange}
                           className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-680a
                           placeholder="+1 (555) 123-4567"
                         />
                       </div>
                     </div>
 
                     <div>
+<<<<<<< HEAD
+                      <label htmlFor="service" className="block text-sm font-medium text-gray-300 mb-2">
+=======
                       <label htmlFor="service" className="block text-sm font-medium text-white/80 mb-2">
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-680a
                         Service of Interest
                       </label>
                       <select
                         id="service"
                         name="service"
                         value={formData.service}
+<<<<<<< HEAD
+                        onChange={handleInputChange}
+                        className="w-full px-4 py-3 bg-gray-800/50 border border-gray-600 rounded-lg text-white focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 transition-all duration-300"
+                      >
+                        <option value="">Select a service</option>
+                        {services.map((service, index) => (
+                          <option key={index} value={service}>{service}</option>
+                        ))}
+=======
                         onChange={handleChange}
                         className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                       >
@@ -307,6 +371,7 @@ const ContactPage: React.FC = () => {
                         <option value="micro-saas">Micro SAAS Solutions</option>
                         <option value="enterprise">Enterprise Solutions</option>
                         <option value="consulting">Technology Consulting</option>
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-680a
                       </select>
                     </div>
 
@@ -318,15 +383,32 @@ const ContactPage: React.FC = () => {
                         id="message"
                         name="message"
                         required
+<<<<<<< HEAD
+                        rows={5}
+                        value={formData.message}
+                        onChange={handleInputChange}
+                        className="w-full px-4 py-3 bg-gray-800/50 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 transition-all duration-300 resize-none"
+                        placeholder="Tell us about your project, goals, and how we can help..."
+=======
                         rows={6}
                         className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent resize-none"
                         placeholder="Tell us about your project, requirements, or how we can help..."
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-680a
                       />
                     </div>
 
                     <button
                       type="submit"
                       disabled={isSubmitting}
+<<<<<<< HEAD
+                      className="w-full px-8 py-4 bg-gradient-to-r from-blue-600 to-cyan-600 text-white font-semibold rounded-lg hover:from-blue-700 hover:to-cyan-700 disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-300 transform hover:scale-105 flex items-center justify-center gap-2"
+                    >
+                      {isSubmitting ? (
+                        <>
+                          <div className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin"></div>
+                          Sending Message...
+                        </>
+=======
                       className="w-full px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 disabled:from-gray-600 disabled:to-gray-700 text-white font-semibold rounded-lg transition-all duration-300 transform hover:scale-105 hover:shadow-2xl disabled:transform-none disabled:shadow-none"
                     >
                       {isSubmitting ? (
@@ -334,6 +416,7 @@ const ContactPage: React.FC = () => {
                           <div className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin"></div>
                           <span>Sending Message...</span>
                         </div>
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-680a
                       ) : (
                         <div className="flex items-center justify-center space-x-2">
                           <Send className="w-5 h-5" />
@@ -345,7 +428,11 @@ const ContactPage: React.FC = () => {
                 )}
               </motion.div>
 
+<<<<<<< HEAD
+              {/* Company Information */}
+=======
               {/* Contact Details */}
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-680a
               <motion.div
                 initial={{ opacity: 0, x: 20 }}
                 whileInView={{ opacity: 1, x: 0 }}
@@ -354,6 +441,26 @@ const ContactPage: React.FC = () => {
                 className="space-y-8"
               >
                 <div>
+<<<<<<< HEAD
+                  <h2 className="text-4xl font-bold text-white mb-6">About Zion Tech Group</h2>
+                  <p className="text-lg text-gray-300 mb-6">
+                    We are a pioneering technology company specializing in AI consciousness evolution, 
+                    quantum computing, and autonomous systems. Our mission is to accelerate human 
+                    progress through revolutionary technologies.
+                  </p>
+                  <div className="space-y-4">
+                    <div className="flex items-center gap-3">
+                      <Building className="w-5 h-5 text-blue-400" />
+                      <span className="text-gray-300">Founded in 2010</span>
+                    </div>
+                    <div className="flex items-center gap-3">
+                      <Globe className="w-5 h-5 text-green-400" />
+                      <span className="text-gray-300">Global reach with 500+ clients</span>
+                    </div>
+                    <div className="flex items-center gap-3">
+                      <User className="w-5 h-5 text-purple-400" />
+                      <span className="text-gray-300">Expert team of 50+ professionals</span>
+=======
                   <h2 className="text-3xl font-bold text-white mb-6">Contact Information</h2>
                   <p className="text-gray-300 text-lg leading-relaxed mb-8">
                     Ready to start your technology transformation? Get in touch with our team of experts. 
@@ -407,6 +514,7 @@ const ContactPage: React.FC = () => {
                       <h3 className="text-lg font-semibold text-white">Office</h3>
                       <p className="text-green-400 group-hover:text-green-300 transition-colors">{contactInfo.address}</p>
                       <p className="text-sm text-gray-400">Middletown, Delaware</p>
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-680a
                     </div>
                   </motion.a>
 
@@ -428,6 +536,38 @@ const ContactPage: React.FC = () => {
                   </motion.a>
                 </div>
 
+<<<<<<< HEAD
+                <div className="p-6 rounded-2xl bg-gradient-to-br from-gray-800/50 to-gray-900/50 border border-gray-700/50">
+                  <h3 className="text-2xl font-bold text-white mb-4">Why Choose Us?</h3>
+                  <ul className="space-y-3">
+                    <li className="flex items-start gap-3">
+                      <CheckCircle className="w-5 h-5 text-green-400 mt-0.5 flex-shrink-0" />
+                      <span className="text-gray-300">Cutting-edge AI and quantum technology</span>
+                    </li>
+                    <li className="flex items-start gap-3">
+                      <CheckCircle className="w-5 h-5 text-green-400 mt-0.5 flex-shrink-0" />
+                      <span className="text-gray-300">Proven track record of successful implementations</span>
+                    </li>
+                    <li className="flex items-start gap-3">
+                      <CheckCircle className="w-5 h-5 text-green-400 mt-0.5 flex-shrink-0" />
+                      <span className="text-gray-300">24/7 support and maintenance</span>
+                    </li>
+                    <li className="flex items-start gap-3">
+                      <CheckCircle className="w-5 h-5 text-green-400 mt-0.5 flex-shrink-0" />
+                      <span className="text-gray-300">Custom solutions tailored to your needs</span>
+                    </li>
+                  </ul>
+                </div>
+
+                <div className="p-6 rounded-2xl bg-gradient-to-br from-blue-900/20 to-cyan-900/20 border border-blue-500/30">
+                  <h3 className="text-2xl font-bold text-white mb-4">Response Time</h3>
+                  <p className="text-blue-300 mb-4">
+                    We typically respond to all inquiries within 24 hours during business days.
+                  </p>
+                  <div className="flex items-center gap-2 text-blue-200">
+                    <Clock className="w-5 h-5" />
+                    <span>Mon - Fri: 9:00 AM - 6:00 PM EST</span>
+=======
                 {/* Additional Info */}
                 <div className="bg-gradient-to-r from-white/5 to-white/10 border border-white/10 rounded-xl p-6">
                   <h3 className="text-xl font-semibold text-white mb-4">Why Choose Zion Tech Group?</h3>
@@ -448,6 +588,7 @@ const ContactPage: React.FC = () => {
                       <CheckCircle className="w-5 h-5 text-green-400 flex-shrink-0" />
                       <span>Custom solutions tailored to your needs</span>
                     </div>
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-680a
                   </div>
                 </div>
               </motion.div>
@@ -456,6 +597,33 @@ const ContactPage: React.FC = () => {
         </section>
 
         {/* CTA Section */}
+<<<<<<< HEAD
+        <section className="py-20 px-4">
+          <div className="max-w-4xl mx-auto text-center">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+            >
+              <h2 className="text-4xl font-bold text-white mb-6">Ready to Start Your Project?</h2>
+              <p className="text-xl text-gray-300 mb-8">
+                Let's discuss how our AI and quantum technology solutions can transform your business
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <a
+                  href="tel:+13024640950"
+                  className="px-8 py-4 bg-gradient-to-r from-green-600 to-blue-600 text-white font-semibold rounded-lg hover:from-green-700 hover:to-blue-700 transition-all duration-300 transform hover:scale-105 flex items-center justify-center gap-2"
+                >
+                  <Phone className="w-5 h-5" />
+                  Call Now
+                </a>
+                <a
+                  href="mailto:kleber@ziontechgroup.com"
+                  className="px-8 py-4 border border-green-500 text-green-400 font-semibold rounded-lg hover:bg-green-500/10 transition-all duration-300 flex items-center justify-center gap-2"
+                >
+                  <Mail className="w-5 h-5" />
+                  Email Us
+=======
         <section className="py-20 px-4 bg-gradient-to-r from-blue-900/20 via-purple-900/20 to-pink-900/20">
           <div className="max-w-4xl mx-auto text-center">
             <motion.div
@@ -482,6 +650,7 @@ const ContactPage: React.FC = () => {
                   className="border border-white/30 hover:border-white/50 text-white px-8 py-4 rounded-full text-lg font-semibold transition-all duration-300 backdrop-blur-md hover:bg-white/10"
                 >
                   View Pricing
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-680a
                 </a>
               </div>
             </motion.div>
