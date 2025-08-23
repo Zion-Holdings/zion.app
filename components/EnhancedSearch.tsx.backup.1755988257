@@ -46,6 +46,16 @@ const EnhancedSearch: React.FC<SearchProps> = ({
     'Space Technology',
     'Autonomous Systems'
   ]);
+<<<<<<< HEAD
+  const [isLoading, setIsLoading] = useState(false);
+  const searchRef = useRef<HTMLDivElement>(null);
+  const inputRef = useRef<HTMLInputElement>(null);
+
+  useEffect(() => {
+    if (isOpen && inputRef.current) {
+      inputRef.current.focus();
+    }
+=======
 
   // Mock search results - in real app, this would come from API
   const mockSearchResults: SearchResult[] = [
@@ -135,6 +145,7 @@ const EnhancedSearch: React.FC<SearchProps> = ({
   useEffect(() => {
     debouncedSearch(query);
   }, [query, debouncedSearch]);
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-421e
 
   // Handle search input change
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {

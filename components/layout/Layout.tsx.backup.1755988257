@@ -12,6 +12,12 @@ import ServiceWorkerRegistration from '../ServiceWorkerRegistration';
 import PerformanceOptimizer from '../PerformanceOptimizer';
 
 interface LayoutProps {
+<<<<<<< HEAD
+	children: React.ReactNode;
+}
+
+export default function Layout({ children }: LayoutProps) {
+=======
   children: React.ReactNode;
   title?: string;
   description?: string;
@@ -30,6 +36,7 @@ export default function Layout({
   canonicalUrl,
   structuredData
 }: LayoutProps) {
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-421e
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const [darkMode, setDarkMode] = useState(true);
 
@@ -99,6 +106,101 @@ export default function Layout({
     }
   }, []);
 
+<<<<<<< HEAD
+  const toggleDarkMode = () => {
+    const newMode = !darkMode;
+    setDarkMode(newMode);
+    localStorage.setItem('theme', newMode ? 'dark' : 'light');
+    
+    // Update document class for global theme
+    if (newMode) {
+      document.documentElement.classList.add('dark');
+      document.documentElement.classList.remove('light');
+    } else {
+      document.documentElement.classList.add('light');
+      document.documentElement.classList.remove('dark');
+    }
+  };
+
+  return (
+    <div className="min-h-screen bg-black text-white relative overflow-x-hidden">
+      {/* SEO Head */}
+      <SEOHead />
+      
+      {/* Skip to content link for accessibility */}
+      <a href="#main" className="skip-link">Skip to main content</a>
+      
+      {/* Futuristic Background */}
+      <UltraFuturisticBackground2036 />
+      
+      {/* Layout Structure */}
+      <div className="relative z-10">
+        {/* Top Contact Bar */}
+        <TopContactBar />
+        
+        {/* Navigation */}
+        <UltraFuturisticNavigation2040 />
+        
+        {/* Dark Mode Toggle */}
+        <button
+          onClick={toggleDarkMode}
+          className="fixed top-24 right-4 z-50 p-3 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 hover:bg-white/20 transition-all duration-300 group"
+          aria-label={`Switch to ${darkMode ? 'light' : 'dark'} mode`}
+        >
+          {darkMode ? (
+            <Sun className="w-5 h-5 text-yellow-400 group-hover:scale-110 transition-transform" />
+          ) : (
+            <Moon className="w-5 h-5 text-blue-600 group-hover:scale-110 transition-transform" />
+          )}
+        </button>
+        
+        {/* Sidebar and Main Content */}
+        <div className="flex">
+          <EnhancedSidebar2025 
+            isOpen={sidebarOpen} 
+            onClose={() => setSidebarOpen(false)} 
+          />
+          
+          <main id="main" role="main" className="flex-1 pt-24 lg:pt-28">
+            {children}
+          </main>
+        </div>
+        
+        {/* Footer */}
+        <UltraFuturisticFooter2040 />
+      </div>
+
+      {/* Accessibility and Performance Tools */}
+      <AccessibilityEnhancer />
+      <PerformanceMonitor />
+      
+      {/* Service Worker Registration */}
+      <ServiceWorkerRegistration />
+      
+      {/* Performance Optimizer */}
+      <PerformanceOptimizer showMetrics={process.env.NODE_ENV === 'development'} />
+      
+      {/* Cookie Consent Banner */}
+      <CookieConsentBanner />
+    </div>
+  );
+};
+
+      {/* Back to top button */}
+      <motion.button
+        initial={{ opacity: 0, scale: 0 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ delay: 1, duration: 0.5 }}
+        className="fixed bottom-8 right-8 z-50 w-14 h-14 bg-gradient-to-br from-cyan-500 to-blue-500 rounded-full shadow-2xl shadow-cyan-500/25 flex items-center justify-center text-white hover:scale-110 transition-all duration-300 focus:outline-none focus:ring-4 focus:ring-cyan-500/50"
+        onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+        aria-label="Back to top"
+      >
+        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 10l7-7m0 0l7 7m-7-7v18" />
+        </svg>
+      </motion.button>
+    </div>
+=======
     <PerformanceOptimizer>
       <div className="min-h-screen bg-black text-white relative overflow-x-hidden">
         {/* Skip to content link for accessibility */}
@@ -224,6 +326,7 @@ export default function Layout({
       <div className={`min-h-screen ${isOnline ? '' : 'offline-mode'}`}>
         {/* Background Effects */}
         <UltraFuturisticBackground2045 />
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-421e
         
         {/* Navigation */}
         <UltraFuturisticNavigation2045 />
@@ -233,6 +336,33 @@ export default function Layout({
         
         {/* Main Content */}
         <div className="relative z-10">
+<<<<<<< HEAD
+          {/* Navigation */}
+          <UltraFuturisticNavigation2025 />
+          
+          {/* Sidebar and Main Content */}
+          <div className="flex">
+            <EnhancedSidebar2025 
+              isOpen={sidebarOpen} 
+              onClose={() => setSidebarOpen(false)} 
+            />
+            
+            <main id="main" role="main" className="flex-1 pt-32 lg:pt-36">
+              {children}
+            </main>
+          </div>
+          
+          {/* Footer */}
+          <UltraFuturisticFooter2025 />
+        </div>
+
+        {/* Accessibility and Performance Tools */}
+        <AccessibilityEnhancer />
+        <PerformanceMonitor />
+        
+        {/* Cookie Consent Banner */}
+        <CookieConsentBanner />
+=======
           {children}
         </div>
         
@@ -287,6 +417,7 @@ export default function Layout({
             </div>
           </div>
         </div>
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-421e
       </div>
     </PerformanceOptimizer>
   );
