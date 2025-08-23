@@ -1,47 +1,31 @@
-import React, { useEffect, useState, useCallback, Suspense, lazy } from 'react';
+import React, { useEffect, useState, useCallback } from 'react';
+import Layout from './layout/Layout';
 import { motion, AnimatePresence } from 'framer-motion';
-import Link from 'next/link';
 import { 
   ArrowRight, Play, TrendingUp, Brain, Shield, Rocket, Globe, Cpu, Database, Atom, Target, Star, Sparkles as SparklesIcon,
   Brain as BrainIcon, Atom as AtomIcon, Shield as ShieldIcon, Rocket as RocketIcon, Zap, Eye, Heart, Infinity,
-  Users, Building, Cloud, Code, Palette, Lightbulb, Award, Clock, CheckCircle, ArrowUpRight, ChevronRight
+  ChevronRight, ChevronLeft, ExternalLink, Users, Award, Clock, CheckCircle, Zap as ZapIcon
 } from 'lucide-react';
-import Head from 'next/head';
 
 // Import our new revolutionary services
-import { revolutionary2044AdvancedMicroSaas } from '../data/revolutionary-2044-advanced-micro-saas';
-import { revolutionary2044ITServices } from '../data/revolutionary-2044-it-services';
-import { revolutionary2044AIServices } from '../data/revolutionary-2044-ai-services';
-import { realEnterpriseMicroSaas2025 } from '../data/2025-real-enterprise-micro-saas';
-import { innovativeITInfrastructureServices2025 } from '../data/2025-innovative-it-infrastructure-services';
-import { innovativeAIAutonomousServices2025 } from '../data/2025-innovative-ai-autonomous-services';
-import { revolutionary2045AdvancedAIServices } from '../data/revolutionary-2045-advanced-ai-services';
+import { revolutionary2045AdvancedRealMicroSaas } from '../data/revolutionary-2045-advanced-real-micro-saas';
 import { revolutionary2045AdvancedITServices } from '../data/revolutionary-2045-advanced-it-services';
-
-// Lazy load new components for better performance
-const ServiceCard = lazy(() => import('./ServiceCard'));
-const PerformanceMetrics = lazy(() => import('./PerformanceMetrics'));
-const InteractiveDemo = lazy(() => import('./InteractiveDemo'));
-const PerformanceOptimizer = lazy(() => import('./PerformanceOptimizer'));
+import { revolutionary2045AdvancedAIServices } from '../data/revolutionary-2045-advanced-ai-services';
 
 const Homepage2045: React.FC = () => {
   const [isVisible, setIsVisible] = useState(false);
-  const [isClient, setIsClient] = useState(false);
   const [currentServiceIndex, setCurrentServiceIndex] = useState(0);
   const [selectedCategory, setSelectedCategory] = useState('all');
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
-  const [isLoading, setIsLoading] = useState(false);
-  const [userInteraction, setUserInteraction] = useState(false);
   const [hoveredService, setHoveredService] = useState<string | null>(null);
   
   useEffect(() => {
     setIsVisible(true);
-    setIsClient(true);
     
     // Auto-rotate featured services
     const interval = setInterval(() => {
       setCurrentServiceIndex((prev) => (prev + 1) % 6);
-    }, 6000);
+    }, 8000);
     
     // Track mouse movement for parallax effects
     const handleMouseMove = (e: MouseEvent) => {
@@ -58,13 +42,13 @@ const Homepage2045: React.FC = () => {
 
   // Combine all revolutionary services
   const allRevolutionaryServices = [
-    ...revolutionary2044AdvancedMicroSaas,
-    ...revolutionary2044ITServices,
-    ...revolutionary2044AIServices,
-    ...realEnterpriseMicroSaas2025,
-    ...innovativeITInfrastructureServices2025,
-    ...innovativeAIAutonomousServices2025
+    ...revolutionary2045AdvancedRealMicroSaas,
+    ...revolutionary2045AdvancedITServices,
+    ...revolutionary2045AdvancedAIServices
   ];
+
+  // Get featured services for rotation
+  const featuredServices = allRevolutionaryServices.slice(0, 6);
 
   // Filter services by category
   const getFilteredServices = () => {
@@ -112,38 +96,15 @@ const Homepage2045: React.FC = () => {
     window.location.href = service.slug;
   }, []);
 
-  const handleGetStarted = useCallback(() => {
-    window.location.href = '/services';
-  }, []);
-
-  const handleWatchDemo = useCallback(() => {
-    window.location.href = '/demo';
-  }, []);
-
-  const handleServiceClick = useCallback((service: any) => {
-    window.location.href = service.slug;
-  }, []);
-
   const handleCategoryChange = useCallback((categoryId: string) => {
     setSelectedCategory(categoryId);
   }, []);
 
   return (
-    <>
-      <Head>
-        <title>Zion Tech Group - Revolutionary 2045 Technology Solutions</title>
-        <meta name="description" content="Experience the future of technology with Zion Tech Group's revolutionary AI consciousness, quantum computing, and autonomous solutions. Transform your business with cutting-edge innovation." />
-        <meta name="keywords" content="AI consciousness, quantum computing, autonomous solutions, space technology, cybersecurity, business intelligence, Zion Tech Group, 2045 technology" />
-        <meta property="og:title" content="Zion Tech Group - Revolutionary 2045 Technology" />
-        <meta property="og:description" content="Pioneering the future of technology with revolutionary AI consciousness and quantum computing solutions." />
-        <meta property="og:url" content="https://ziontechgroup.com" />
-        <meta property="og:type" content="website" />
-        <link rel="canonical" href="https://ziontechgroup.com" />
-      </Head>
-
-      <div className="min-h-screen bg-gradient-to-br from-gray-900 via-gray-800 to-black text-white overflow-hidden">
+    <Layout>
+      {/* Main Content */}
+      <main className="relative z-10">
         {/* Hero Section */}
-
         <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
           {/* Animated Background */}
           <div className="absolute inset-0">
@@ -274,8 +235,56 @@ const Homepage2045: React.FC = () => {
               </motion.div>
             </motion.div>
           </div>
+        </section>
 
+        {/* Features Section */}
+        <section className="py-24 px-4 relative">
+          <div className="max-w-7xl mx-auto">
+            <motion.div
+              className="text-center mb-20"
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+            >
+              <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+                Revolutionary <span className="bg-gradient-to-r from-cyan-400 to-purple-500 bg-clip-text text-transparent">2045 Services</span>
+              </h2>
+              <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+                Experience the future of technology with our cutting-edge services portfolio
+              </p>
+            </motion.div>
 
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {features.map((feature, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, y: 50 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: index * 0.1 }}
+                  viewport={{ once: true }}
+                  className="group"
+                >
+                  <div className="bg-gradient-to-br from-gray-800/50 to-gray-900/50 backdrop-blur-sm border border-gray-700/50 rounded-2xl p-8 hover:border-cyan-400/50 transition-all duration-300 hover:transform hover:scale-105 h-full">
+                    <div className="text-center">
+                      <div className={`w-20 h-20 bg-gradient-to-br ${feature.color} rounded-3xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300`}>
+                        <feature.icon className="w-10 h-10 text-white" />
+                      </div>
+                      <h3 className="text-2xl font-bold text-white mb-4">{feature.title}</h3>
+                      <p className="text-gray-300 mb-6 text-lg">{feature.description}</p>
+                      <button
+                        onClick={() => window.location.href = feature.href}
+                        className={`px-8 py-4 bg-gradient-to-r ${feature.color} text-white font-medium rounded-xl hover:opacity-90 transition-all duration-300 transform hover:scale-105`}
+                      >
+                        Explore Service
+                      </button>
+                    </div>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </section>
 
         {/* Services Showcase */}
         <section className="py-24 px-4 bg-gradient-to-r from-gray-900/50 to-black/50">
@@ -438,8 +447,8 @@ const Homepage2045: React.FC = () => {
             </motion.div>
           </div>
         </section>
-      </div>
-    </>
+      </main>
+    </Layout>
   );
 };
 
