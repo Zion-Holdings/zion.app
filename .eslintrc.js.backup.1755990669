@@ -18,6 +18,11 @@ module.exports = {
     node: true,
   },
   rules: {
+<<<<<<< HEAD
+    '@typescript-eslint/no-unused-vars': 'warn',
+    '@typescript-eslint/no-explicit-any': 'warn',
+    'no-console': 'warn',
+=======
     'react-hooks/rules-of-hooks': 'error',
     'react-hooks/exhaustive-deps': 'warn',
     '@typescript-eslint/no-unused-vars': [
@@ -27,6 +32,7 @@ module.exports = {
     '@typescript-eslint/no-explicit-any': 'warn',
     '@typescript-eslint/no-empty-object-type': 'warn',
     '@next/next/no-html-link-for-pages': 'warn'
+>>>>>>> origin/cursor/automate-continuous-project-improvement-and-integration-3bb7
   },
   ignorePatterns: [
     'node_modules/',
