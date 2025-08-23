@@ -16,10 +16,10 @@ export default function IntelligentHrAnalyticsPlatform() {
 				"Hiring funnel insights and quality of hire",
 				"Diversity & equity metrics",
 				"Comp plan and headcount forecasting",
-				"Privacy-preserving data pipelines"
+				"Privacy-preserving data pipelines]}
 			]}
 			industries={["Enterprise", "Mid-market", "Healthcare", "Financial Services", "Manufacturing"]}
-			canonical="https://ziontechgroup.com/intelligent-hr-analytics-platform"
+			canonical="https://ziontechgroup.com/intelligent-hr-analytics-platform]}
 		/>
 	);
 }

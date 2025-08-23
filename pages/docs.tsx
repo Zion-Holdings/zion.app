@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React from 'react';
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
 import Layout from '../components/layout/Layout';
 import { motion } from 'framer-motion';
 import { 
@@ -182,7 +183,7 @@ const Docs: React.FC = () => {
           <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <motion.div
               initial={{ opacity: 0, y: 30 }}
->>>>>>> 17df199e451813150094c5ab1fb554b04628cb60
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
               className="text-center"
@@ -204,7 +205,8 @@ const Docs: React.FC = () => {
               </p>
             </motion.div>
           </div>
-        </section>
+        </div>
+      </section>
 
         {/* Search and Filters */}
         <section className="py-12">
@@ -213,11 +215,11 @@ const Docs: React.FC = () => {
               {/* Search Bar */}
               <div className="relative flex-1 max-w-md">
                 <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-400" />
->>>>>>> 17df199e451813150094c5ab1fb554b04628cb60
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
                 <input
                   type="text"
                   placeholder="Search documentation..."
-                  className="w-full pl-12 pr-4 py-4 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-cyan-400 focus:border-transparent"
+                  className="w-full pl-10 pr-4 py-3 bg-gray-800/50 border border-gray-600/50 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent"
                 />
               </div>
 
@@ -232,7 +234,7 @@ const Docs: React.FC = () => {
                   <option value="space-technology">Space Technology</option>
                 </select>
               </div>
->>>>>>> 17df199e451813150094c5ab1fb554b04628cb60
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
             </div>
           </div>
         </section>
@@ -312,51 +314,44 @@ const Docs: React.FC = () => {
             </motion.div>
             
             <div className="space-y-8">
->>>>>>> 17df199e451813150094c5ab1fb554b04628cb60
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
               {documentationCategories.map((category, index) => (
                 <motion.div
                   key={category.title}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.8, delay: 0.5 + index * 0.1 }}
-                  className={`p-6 rounded-xl border ${category.borderColor} ${category.bgColor} backdrop-blur-sm`}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: index * 0.1 }}
+                  viewport={{ once: true }}
+                  className="bg-gradient-to-br from-gray-800/30 to-gray-900/30 p-8 rounded-3xl border border-gray-700/30 hover:border-purple-500/50 transition-all duration-300"
                 >
-                  <div className="flex items-center space-x-3 mb-4">
-                    {category.icon}
-                    <h3 className={`text-xl font-bold ${category.color}`}>{category.title}</h3>
-                  </div>
-                  
-                  <p className="text-gray-300 mb-6">{category.description}</p>
-                  
-                  <div className="space-y-3">
-                    {category.guides.map((guide) => (
-                      <a
-                        key={guide.name}
-                        href={guide.href}
-                        className="block p-3 bg-white/5 rounded-lg hover:bg-white/10 transition-colors group"
-                      >
-                        <div className="flex items-center justify-between mb-2">
-                          <span className="text-white font-medium group-hover:text-cyan-400 transition-colors">
-                            {guide.name}
-                          </span>
-                          <ArrowRight className="w-4 h-4 text-gray-400 group-hover:text-cyan-400 group-hover:translate-x-1 transition-all" />
-                        </div>
-                        <div className="flex items-center space-x-4 text-sm text-gray-400">
-                          <span className="flex items-center space-x-1">
-                            <Clock className="w-3 h-3" />
-                            <span>{guide.duration}</span>
-                          </span>
-                          <span className={`px-2 py-1 rounded-full text-xs ${
-                            guide.level === 'Beginner' ? 'bg-green-400/20 text-green-400' :
-                            guide.level === 'Intermediate' ? 'bg-yellow-400/20 text-yellow-400' :
-                            guide.level === 'Advanced' ? 'bg-orange-400/20 text-orange-400' :
-                            'bg-red-400/20 text-red-400'
-                          }`}>
-                            {guide.level}
-                          </span>
-                        </div>
-                      </a>
-                    ))}
+                  <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                    <div className="lg:col-span-1">
+                      <div className={`w-16 h-16 bg-gradient-to-br ${category.color} rounded-2xl flex items-center justify-center mb-4`}>
+                        {category.icon}
+                      </div>
+                      <h3 className="text-2xl font-bold text-white mb-4">{category.title}</h3>
+                      <p className="text-gray-300 leading-relaxed">{category.description}</p>
+                    </div>
+                    
+                    <div className="lg:col-span-2">
+                      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        {category.docs.map((doc, docIndex) => (
+                          <div key={docIndex} className="bg-gradient-to-br from-gray-700/30 to-gray-800/30 p-4 rounded-xl border border-gray-600/30 hover:border-purple-500/50 transition-all duration-300">
+                            <div className="flex items-center justify-between mb-2">
+                              <h4 className="text-lg font-bold text-white">{doc.name}</h4>
+                              <span className="px-2 py-1 bg-green-500/20 text-green-400 rounded-full text-xs font-medium">
+                                {doc.status}
+                              </span>
+                            </div>
+                            <p className="text-gray-300 text-sm mb-3">{doc.description}</p>
+                            <div className="flex items-center text-purple-400 text-sm font-medium hover:text-purple-300 transition-colors duration-300 cursor-pointer">
+                              Read Docs
+                              <ArrowRight className="w-4 h-4 ml-2" />
+                            </div>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
                   </div>
                 </motion.div>
               ))}
@@ -432,11 +427,12 @@ const Docs: React.FC = () => {
                       Try API
                     </div>
                   </div>
-                </motion.div>
-              ))}
-            </div>
+                </div>
+              </motion.div>
+            ))}
           </div>
-        </section>
+        </div>
+      </section>
 
         {/* Developer Resources */}
         <section className="py-20 bg-black/50">
@@ -454,36 +450,80 @@ const Docs: React.FC = () => {
               <p className="text-xl text-gray-400 max-w-3xl mx-auto">
                 Additional tools and resources to help you build amazing applications
               </p>
->>>>>>> 17df199e451813150094c5ab1fb554b04628cb60
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
             </motion.div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              {recentUpdates.map((update, index) => (
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+              {developerResources.map((resource, index) => (
                 <motion.div
-                  key={update.title}
-                  initial={{ opacity: 0, x: index % 2 === 0 ? -20 : 20 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.8, delay: 0.7 + index * 0.1 }}
-                  className="p-6 bg-white/5 border border-white/10 rounded-xl hover:bg-white/10 transition-colors"
+                  key={resource.title}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: index * 0.1 }}
+                  viewport={{ once: true }}
+                  className="bg-gradient-to-br from-gray-800/30 to-gray-900/30 p-6 rounded-2xl border border-gray-700/30 hover:border-green-500/50 transition-all duration-300 group cursor-pointer"
                 >
-                  <div className="flex items-start justify-between mb-3">
-                    <h3 className="text-white font-semibold">{update.title}</h3>
-                    <span className="px-3 py-1 bg-cyan-400/20 text-cyan-400 text-xs rounded-full">
-                      {update.type}
-                    </span>
+                  <div className="w-12 h-12 bg-gradient-to-br from-green-500 to-emerald-600 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
+                    {resource.icon}
                   </div>
-                  <p className="text-gray-400 text-sm">{update.date}</p>
+                  <h3 className="text-lg font-bold text-white mb-3 group-hover:text-green-400 transition-colors duration-300">
+                    {resource.title}
+                  </h3>
+                  <p className="text-gray-300 text-sm mb-4 leading-relaxed">
+                    {resource.description}
+                  </p>
+                  <div className="flex items-center text-green-400 text-sm font-medium group-hover:text-green-300 transition-colors duration-300">
+                    {resource.external ? 'Visit Resource' : 'Explore'}
+                    {resource.external ? <ExternalLink className="w-4 h-4 ml-2" /> : <ArrowRight className="w-4 h-4 ml-2" />}
+                  </div>
                 </motion.div>
               ))}
             </div>
           </div>
+        </div>
+      </section>
+
+        {/* Newsletter Signup */}
+        <section className="py-20">
+          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+              className="bg-gradient-to-br from-gray-800/30 to-gray-900/30 p-8 rounded-3xl border border-gray-700/30"
+            >
+              <h2 className="text-3xl lg:text-4xl font-bold text-white mb-6">
+                Stay Updated
+              </h2>
+              <p className="text-xl text-gray-400 mb-8 max-w-2xl mx-auto">
+                Get notified about new documentation, API updates, and developer resources.
+              </p>
+              
+              <div className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
+                <input
+                  type="email"
+                  placeholder="Enter your email"
+                  className="flex-1 px-4 py-3 bg-gray-800/50 border border-gray-600/50 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent"
+                />
+                <button className="px-6 py-3 bg-gradient-to-r from-purple-500 to-blue-600 text-white font-semibold rounded-xl hover:from-purple-600 hover:to-blue-700 transition-all duration-300 transform hover:scale-105">
+                  Subscribe
+                </button>
+              </div>
+              
+              <p className="text-sm text-gray-500 mt-4">
+                No spam, unsubscribe at any time. We respect your privacy.
+              </p>
+            </motion.div>
+          </div>
         </section>
 
         {/* CTA Section */}
-        <section className="py-20 px-4">
-          <div className="container mx-auto max-w-4xl text-center">
+        <section className="py-20">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 30 }}
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
               viewport={{ once: true }}
@@ -508,7 +548,7 @@ const Docs: React.FC = () => {
                   className="inline-flex items-center px-8 py-4 border-2 border-cyan-500 text-cyan-400 font-semibold rounded-full hover:bg-cyan-500 hover:text-white transition-all duration-300"
                 >
                   View Getting Started
->>>>>>> 17df199e451813150094c5ab1fb554b04628cb60
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
                 </a>
               </div>
             </motion.div>
@@ -520,4 +560,4 @@ const Docs: React.FC = () => {
 };
 
 export default Docs;
->>>>>>> 17df199e451813150094c5ab1fb554b04628cb60
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96

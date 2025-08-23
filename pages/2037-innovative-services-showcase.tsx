@@ -1,11 +1,13 @@
 import React, { useState } from 'react';
 import SEO from '../components/SEO';
+import Layout from '../components/layout/Layout';
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
 import { motion } from 'framer-motion';
 import { 
   Brain, Atom, Rocket, Shield, Zap, Target, Star,
   ArrowRight, Check, TrendingUp, Users, Globe, Cpu,
   Database, Cloud, Lock, Settings, Eye, Award, Clock
->>>>>>> 17df199e451813150094c5ab1fb554b04628cb60
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
 } from 'lucide-react';
 
 // Import our new 2037 service data
@@ -20,73 +22,8 @@ const contact = {
   website: 'https://ziontechgroup.com'
 };
 
-// Combine all services
-const all2037Services = [
-  ...real2037Q1InnovativeAdditions,
-  ...real2037Q1ITInnovations,
-  ...real2037Q1MicroSaasInnovations
-];
-
-const categories = [
-  {
-    id: 'all',
-    name: 'All Services',
-    icon: <Grid className="w-5 h-5" />,
-    color: 'from-gray-500 to-slate-500',
-    count: all2037Services.length
-  },
-  {
-    id: 'AI Governance & Compliance',
-    name: 'AI Governance',
-    icon: <Brain className="w-5 h-5" />,
-    color: 'from-emerald-500 to-green-600',
-    count: all2037Services.filter(s => s.category === 'AI Governance & Compliance').length
-  },
-  {
-    id: 'Cybersecurity & Cryptography',
-    name: 'Cybersecurity',
-    icon: <Shield className="w-5 h-5" />,
-    color: 'from-red-500 to-orange-600',
-    count: all2037Services.filter(s => s.category === 'Cybersecurity & Cryptography').length
-  },
-  {
-    id: 'DevOps & Automation',
-    name: 'DevOps',
-    icon: <Rocket className="w-5 h-5" />,
-    color: 'from-orange-500 to-red-600',
-    count: all2037Services.filter(s => s.category === 'DevOps & Automation').length
-  },
-  {
-    id: 'Edge Computing & IoT',
-    name: 'Edge & IoT',
-    icon: <Globe className="w-5 h-5" />,
-    color: 'from-blue-500 to-cyan-600',
-    count: all2037Services.filter(s => s.category === 'Edge Computing & IoT').length
-  },
-  {
-    id: 'Content & Localization',
-    name: 'Content',
-    icon: <BarChart3 className="w-5 h-5" />,
-    color: 'from-teal-500 to-cyan-600',
-    count: all2037Services.filter(s => s.category === 'Content & Localization').length
-  },
-  {
-    id: 'E-commerce & Retail',
-    name: 'E-commerce',
-    icon: <Target className="w-5 h-5" />,
-    color: 'from-orange-500 to-amber-600',
-    count: all2037Services.filter(s => s.category === 'E-commerce & Retail').length
-  },
-  {
-    id: 'Marketing & Automation',
-    name: 'Marketing',
-    icon: <Zap className="w-5 h-5" />,
-    color: 'from-purple-500 to-violet-600',
-    count: all2037Services.filter(s => s.category.includes('Marketing') || s.category.includes('Social Media')).length
-  }
-];
-
-const ServiceCard: React.FC<{ service: any; index: number }> = ({ service, index }) => (
+const ServiceCard = ({ service, index }: { service: any; index: number }) => (
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
   <motion.div
     initial={{ opacity: 0, y: 20 }}
     animate={{ opacity: 1, y: 0 }}
@@ -102,6 +39,13 @@ const ServiceCard: React.FC<{ service: any; index: number }> = ({ service, index
             Popular
           </span>
         )}
+        
+        <a 
+          href={service.link} 
+          className="block w-full text-center py-3 bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-semibold rounded-lg hover:from-cyan-600 hover:to-blue-700 transition-all duration-300 transform hover:scale-105"
+        >
+          Learn More
+        </a>
       </div>
       
       <h3 className="text-2xl font-bold text-white mb-3">{service.name}</h3>
@@ -113,94 +57,7 @@ const ServiceCard: React.FC<{ service: any; index: number }> = ({ service, index
             <Check className="w-4 h-4 text-green-400 flex-shrink-0" />
             <span className="text-gray-300 text-sm">{feature}</span>
           </div>
-        ))}
-      </div>
-      
-      <div className="flex items-center justify-between mb-6">
->>>>>>> 17df199e451813150094c5ab1fb554b04628cb60
-        <div>
-          <h3 className="text-xl font-bold text-white group-hover:text-cyan-400 transition-colors">
-            {service.name}
-          </h3>
-          <p className="text-gray-400 text-sm">{service.category}</p>
-        </div>
-        <div className="text-right">
-          <div className="flex items-center space-x-1 text-yellow-400">
-            {[...Array(5)].map((_, i) => (
-              <Star key={i} className={`w-4 h-4 ${i < Math.floor(service.rating) ? 'fill-current' : ''}`} />
-            ))}
-          </div>
-          <span className="text-gray-400 text-xs">{service.rating}/5 ({service.reviews} reviews)</span>
-        </div>
-      </div>
-      
-      <div className="space-y-3 mb-6 text-xs text-gray-400">
-        <div className="flex justify-between">
-          <span>Setup Time:</span>
-          <span>{service.setupTime || 'N/A'}</span>
-        </div>
-        <div className="flex justify-between">
-          <span>Trial:</span>
-          <span>{service.trialDays || 0} days</span>
-        </div>
-        <div className="flex justify-between">
-          <span>Customers:</span>
-          <span>{service.customers ? service.customers.toLocaleString() : '0'}</span>
-        </div>
-      </div>
-      
-      <a 
-        href={service.link} 
-        className="block w-full text-center py-3 bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-semibold rounded-lg hover:from-cyan-600 hover:to-blue-700 transition-all duration-300 transform hover:scale-105"
->>>>>>> 17df199e451813150094c5ab1fb554b04628cb60
-      >
-        Learn More
-      </a>
-      <a
-        href={`mailto:${contact.email}?subject=Inquiry about ${service.name}`}
-        className="bg-gray-700 text-gray-300 py-2 px-4 rounded-lg hover:bg-gray-600 transition-colors duration-300 text-sm"
-      >
-        Contact
-      </a>
-    </div>
-  </motion.div>
-);
-
-const ServiceShowcase = () => {
-  const [activeCategory, setActiveCategory] = useState('all');
-  
-  const categories = [
-    { id: 'all', name: 'All Services', icon: <Star className="w-5 h-5" />, count: innovative2037MicroSaasServices.length + innovative2037ITServices.length + innovative2037AIServices.length },
-    { id: 'ai', name: 'AI & Consciousness', icon: <Brain className="w-5 h-5" />, count: innovative2037AIServices.length },
-    { id: 'quantum', name: 'Quantum Technology', icon: <Atom className="w-5 h-5" />, count: innovative2037ITServices.filter(s => s.name.toLowerCase().includes('quantum')).length },
-    { id: 'autonomous', name: 'Autonomous Systems', icon: <Zap className="w-5 h-5" />, count: innovative2037ITServices.filter(s => s.name.toLowerCase().includes('autonomous')).length + innovative2037AIServices.filter(s => s.name.toLowerCase().includes('autonomous')).length },
-    { id: 'micro-saas', name: 'Micro SAAS', icon: <Rocket className="w-5 h-5" />, count: innovative2037MicroSaasServices.length },
-    { id: 'it', name: 'IT Solutions', icon: <Cpu className="w-5 h-5" />, count: innovative2037ITServices.length }
-  ];
->>>>>>> 17df199e451813150094c5ab1fb554b04628cb60
-
-      <div className="grid md:grid-cols-2 gap-8 mb-16">
-        <motion.div
-          initial={{ opacity: 0, x: -20 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.8 }}
-          className="bg-gradient-to-br from-cyan-500/10 to-blue-500/10 border border-cyan-500/20 rounded-2xl p-8"
-        >
-          <h3 className="text-2xl font-bold text-white mb-4">Get Started Today</h3>
-          <div className="space-y-4 text-gray-300">
-            <div className="flex items-center space-x-3">
-              <Check className="w-5 h-5 text-green-400" />
-              <span>Free consultation and assessment</span>
-            </div>
-            <div className="flex items-center space-x-3">
-              <Check className="w-5 h-5 text-green-400" />
-              <span>Custom implementation plan</span>
-            </div>
-            <div className="flex items-center space-x-3">
-              <Check className="w-5 h-5 text-green-400" />
-              <span>Ongoing support and optimization</span>
-            </div>
-          </div>
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
         </motion.div>
 
         <motion.div
@@ -250,6 +107,11 @@ const ServicesShowcase2037: React.FC = () => {
   const [searchTerm, setSearchTerm] = useState('');
   const [viewMode, setViewMode] = useState<'grid' | 'list'>('grid');
 
+const ServicesShowcase2037: React.FC = () => {
+  const [selectedCategory, setSelectedCategory] = useState('all');
+  const [searchTerm, setSearchTerm] = useState('');
+  const [viewMode, setViewMode] = useState<'grid' | 'list'>('grid');
+
   const filteredServices = all2037Services.filter(service => {
     const matchesCategory = selectedCategory === 'all' || service.category === selectedCategory;
     const matchesSearch = service.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
@@ -259,14 +121,13 @@ const ServicesShowcase2037: React.FC = () => {
   });
 
   return (
-    <Layout>
-      <SEO
-        title="2037 Innovative Services Showcase | Zion Tech Group"
-        description="Discover our cutting-edge 2037 services portfolio featuring AI governance, quantum security, edge computing, and innovative micro SAAS solutions. Transform your business with next-generation technology."
-        keywords={["2037 services", "AI governance", "quantum security", "edge computing", "micro SAAS", "innovative technology", "Zion Tech Group"]}
-        canonical="https://ziontechgroup.com/2037-innovative-services-showcase"
-      />
-
+    <div className="min-h-screen bg-black text-white">
+      <Head>
+        <title>2037 Innovative Services Showcase - Zion Tech Group</title>
+        <meta name="description" content="Discover our revolutionary 2037 innovative services including AI consciousness evolution, quantum cybersecurity, autonomous systems, and cutting-edge micro SAAS solutions." />
+        <meta name="keywords" content="AI consciousness, quantum computing, autonomous systems, micro SAAS, innovative services, 2037 technology" />
+      </Head>
+      
       {/* Hero Section */}
       <section className="min-h-screen flex items-center justify-center px-4 relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-gray-900 via-black to-gray-900"></div>
@@ -318,15 +179,49 @@ const ServicesShowcase2037: React.FC = () => {
       {/* Services Section */}
       <section id="services" className="py-20 px-4 bg-black relative">
         <div className="max-w-7xl mx-auto">
-          {/* Header */}
+          <div className="flex flex-wrap justify-center gap-4">
+            {categories.map((category) => (
+              <button
+                key={category.id}
+                onClick={() => setActiveCategory(category.id)}
+                className={`flex items-center space-x-2 px-6 py-3 rounded-lg font-medium transition-all duration-300 ${
+                  activeCategory === category.id
+                    ? 'bg-gradient-to-r from-cyan-500 to-purple-600 text-white shadow-lg'
+                    : 'bg-white/5 border border-white/10 text-gray-300 hover:bg-white/10 hover:border-cyan-400/30'
+                }`}
+              >
+                {category.icon}
+                <span>{category.name}</span>
+                <span className="text-xs bg-white/20 px-2 py-1 rounded-full">{category.count}</span>
+              </button>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Services Grid */}
+      <section className="py-20 px-4">
+        <div className="max-w-7xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {filteredServices.map((service, index) => (
+              <ServiceCard key={service.id} service={service} index={index} />
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Impact & Results */}
+      <section className="py-20 px-4 bg-black/20">
+        <div className="max-w-6xl mx-auto text-center">
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="text-center mb-16"
+            viewport={{ once: true }}
+            className="mb-16"
           >
-            <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-cyan-400 to-purple-500 bg-clip-text text-transparent">
-              Revolutionary 2037 Services
+            <h2 className="text-4xl md:text-5xl font-bold mb-8 bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 bg-clip-text text-transparent">
+              Impact & Results
             </h2>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto">
               Discover our cutting-edge portfolio featuring {all2037Services.length} innovative services across AI governance, quantum security, edge computing, and specialized micro SAAS solutions
@@ -475,31 +370,39 @@ const ServicesShowcase2037: React.FC = () => {
         </div>
       </section>
 
-      {/* Contact CTA */}
-      <section className="py-20 px-4">
-        <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-4xl md:text-5xl font-bold mb-8 bg-gradient-to-r from-cyan-400 to-purple-600 bg-clip-text text-transparent">
-            Ready to Transform Your Business?
-          </h2>
-          <p className="text-xl text-gray-300 mb-12 max-w-2xl mx-auto">
-            Join the future of technology with Zion Tech Group. Let's discuss how our innovative 2037 services can drive your success.
-          </p>
-          
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
-            <div className="text-center">
-              <div className="text-3xl mb-2">📞</div>
-              <div className="font-semibold text-white mb-2">Call Us</div>
-              <a href={`tel:${contactInfo.mobile}`} className="text-cyan-400 hover:text-cyan-300 transition-colors">
-                {contactInfo.mobile}
-              </a>
+          {/* Filters and Search */}
+          <div className="mb-8 space-y-4">
+            {/* Search Bar */}
+            <div className="relative max-w-md mx-auto">
+              <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
+              <input
+                type="text"
+                placeholder="Search services..."
+                value={searchTerm}
+                onChange={(e) => setSearchTerm(e.target.value)}
+                className="w-full pl-10 pr-4 py-3 bg-gray-800/50 border border-gray-700 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-cyan-500 focus:ring-1 focus:ring-cyan-500"
+              />
             </div>
-            
-            <div className="text-center">
-              <div className="text-3xl mb-2">✉️</div>
-              <div className="font-semibold text-white mb-2">Email Us</div>
-              <a href={`mailto:${contactInfo.email}`} className="text-cyan-400 hover:text-cyan-300 transition-colors">
-                {contactInfo.email}
-              </a>
+
+            {/* Category Filters */}
+            <div className="flex flex-wrap justify-center gap-3">
+              {categories.map((category) => (
+                <button
+                  key={category.id}
+                  onClick={() => setSelectedCategory(category.id)}
+                  className={`flex items-center space-x-2 px-4 py-2 rounded-lg border transition-all duration-300 ${
+                    selectedCategory === category.id
+                      ? `bg-gradient-to-r ${category.color} text-white border-transparent`
+                      : 'bg-gray-800/50 text-gray-300 border-gray-700 hover:border-gray-600'
+                  }`}
+                >
+                  {category.icon}
+                  <span>{category.name}</span>
+                  <span className="bg-white/20 px-2 py-1 rounded-full text-xs">
+                    {category.count}
+                  </span>
+                </button>
+              ))}
             </div>
             
             <div className="text-center">
@@ -517,10 +420,21 @@ const ServicesShowcase2037: React.FC = () => {
               View All Services
             </a>
           </div>
+
+          {filteredServices.length === 0 && (
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              className="text-center py-20"
+            >
+              <div className="text-gray-400 text-xl mb-4">No services found</div>
+              <p className="text-gray-500">Try adjusting your search or filter criteria</p>
+            </motion.div>
+          )}
         </div>
       </section>
     </div>
->>>>>>> 17df199e451813150094c5ab1fb554b04628cb60
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
   );
 };
 

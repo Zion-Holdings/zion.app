@@ -23,26 +23,28 @@ type ProductWithStats = ProductModel & {
   title: string;
 };
 
-async function handler(
+const handler = async (
   req: NextApiRequest,
   res: NextApiResponse<ProductWithStats[] | { error: string; details?: string }>
-) {
+): Promise<void> => {
   logInfo('Marketplace products API handler started.');
   // DATABASE_URL is essential for Prisma Client to connect to the database.
   // This check ensures the service is not attempting to run without proper configuration.
-  if (!process.env.DATABASE_URL) {
+  if (!process.env['DATABASE_URL']) {
     logErrorToProduction("DATABASE_URL is not set or empty.");
-    return res.status(503).json({ error: 'Service Unavailable: Database configuration is missing.' });
+    res.status(503).json({ error: 'Service Unavailable: Database configuration is missing.' });
+    return;
   }
-  if (req.method !== 'GET') {
+  if (req['method'] !== 'GET') {
     res.setHeader('Allow', 'GET');
-    return res.status(405).json({ error: `Method ${req.method} Not Allowed` });
+    res.status(405).json({ error: `Method ${req['method']} Not Allowed` });
+    return;
   }
 
   res.setHeader('Access-Control-Allow-Origin', '*');
 
-  const page = parseInt(((req.query as any).page as string), 10) || 1;
-  const limit = parseInt(((req.query as any).limit as string), 10) || 20;
+  const page = parseInt(((req['query'] as any).page as string), 10) || 1;
+  const limit = parseInt(((req['query'] as any).limit as string), 10) || 20;
   const skip = (page - 1) * limit;
 
   try {
@@ -52,7 +54,7 @@ async function handler(
       await connectWithTimeout(prisma);
       products = await prisma.product.findMany({ skip, take: limit });
       logInfo('Successfully fetched products from database.');
-      logInfo('Fetched products:', { data: products });
+      logInfo('Fetched products:', { data:  { data: products } });
     } catch (e: any) {
       // Logging detailed Prisma error including message, code, meta, and stack for findMany operation.
       logErrorToProduction(
@@ -82,7 +84,7 @@ async function handler(
         _count: { id: true },
       });
       logInfo('Successfully fetched product stats.');
-      logInfo('Fetched product stats:', { data: stats });
+      logInfo('Fetched product stats:', { data:  { data: stats } });
     } catch (e: any) {
       // Logging detailed Prisma error including message, code, meta, and stack for groupBy operation.
       logErrorToProduction(
@@ -114,7 +116,8 @@ async function handler(
       };
     });
 
-    return res.status(200).json(result);
+    res.status(200).json(result);
+    return;
   } catch (e: any) {
     logErrorToProduction(
       'Generic error in products API handler (fallback catch):',
@@ -129,13 +132,14 @@ async function handler(
       e instanceof Error && e.message.includes('timed out')
         ? 'Service Unavailable: Database connection failed.'
         : 'Internal server error while fetching products.';
-    return res.status(500).json({ error: message, details: e.message });
+    res.status(500).json({ error: message, details: e.message });
+    return;
   } finally {
     // Ensures Prisma client is disconnected after the request is handled,
     // whether it succeeded or failed, to prevent resource leaks.
     logInfo('Marketplace products API handler finished.');
     await prisma.$disconnect();
   }
-}
+};
 
 export default withErrorLogging(handler);

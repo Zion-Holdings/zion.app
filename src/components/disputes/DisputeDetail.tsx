@@ -4,9 +4,8 @@ import { useRouter } from 'next/router';
 import { useDisputes } from "@/hooks/useDisputes";
 import {logErrorToProduction} from '@/utils/productionLogger';
 import { ArrowDown, Check, MessageSquare, Download } from 'lucide-react';
-import {
-  Dispute, disputeReasonLabels, DisputeMessage, DisputeStatus, ResolutionType
-} from "@/types/disputes";
+import type { Dispute, DisputeMessage, DisputeStatus, ResolutionType } from "@/types/disputes";
+import { disputeReasonLabels } from "@/types/disputes";
 
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
@@ -358,11 +357,11 @@ export function DisputeDetail() {
               </Card>
             </TabsContent>
             
-            <TabsContent value="attachments">
+            <TabsContent value="attachments" className="space-y-6">
               <Card>
                 <CardHeader>
                   <CardTitle>Attachments</CardTitle>
-                  <CardDescription>Files related to this dispute</CardDescription>
+                  <CardDescription>Files and documents related to this dispute</CardDescription>
                 </CardHeader>
                 <CardContent>
                   <div className="text-center py-12">
@@ -377,123 +376,32 @@ export function DisputeDetail() {
               <TabsContent value="admin" className="space-y-6">
                 <Card>
                   <CardHeader>
-                    <CardTitle>Admin Actions</CardTitle>
-                    <CardDescription>Handle this dispute as an administrator</CardDescription>
+                    <CardTitle>Admin Notes</CardTitle>
+                    <CardDescription>Notes and actions taken by administrators</CardDescription>
                   </CardHeader>
-                  <CardContent className="space-y-6">
-                    <div>
-                      <h3 className="font-medium mb-2">Change Status</h3>
-                      <div className="flex gap-2">
-                        <Button 
-                          variant="outline" 
-                          onClick={() => handleStatusChange("open")}
-                          disabled={dispute.status === "open"}
-                        >
-                          Mark as Open
-                        </Button>
-                        <Button 
-                          variant="outline" 
-                          onClick={() => handleStatusChange("under_review")}
-                          disabled={dispute.status === "under_review"}
-                        >
-                          Mark as Under Review
-                        </Button>
-                        <Button 
-                          variant="outline" 
-                          onClick={() => handleStatusChange("closed")}
-                          disabled={dispute.status === "closed"}
-                        >
-                          Close Dispute
-                        </Button>
-                      </div>
-                    </div>
-                    
-                    {dispute.status !== "resolved" && (
-                      <div>
-                        <h3 className="font-medium mb-2">Resolve Dispute</h3>
-                        <div className="space-y-4">
+                  <CardContent>
+                    <div className="space-y-4">
+                      <p className="text-muted-foreground">No admin notes available</p>
+                      {isAdmin && (
+                        <div className="mt-4">
                           <Textarea
-                            placeholder="Enter resolution summary..."
-                            value={resolution.summary}
-                            onChange={(e) => setResolution({ ...resolution, summary: e.target.value })}
+                            placeholder="Add a new admin note..."
+                            value={adminNote}
+                            onChange={(e) => setAdminNote(e.target.value)}
                             className="min-h-[100px]"
                           />
-                          
-                          <div className="grid grid-cols-2 gap-4">
-                            <div>
-                              <label className="text-sm font-medium mb-1 block">Resolution Type</label>
-                              <select
-                                className="w-full p-2 border rounded"
-                                value={resolution.resolution_type || ""}
-                                onChange={(e) => setResolution({ ...resolution, resolution_type: e.target.value as ResolutionType })}
-                              >
-                                <option value="client_favor">In Client's Favor</option>
-                                <option value="talent_favor">In Talent's Favor</option>
-                                <option value="compromise">Compromise</option>
-                                <option value="dismissed">Dismissed</option>
-                              </select>
-                            </div>
-                          </div>
-                          
-                          <Button onClick={handleResolveDispute}>Resolve Dispute</Button>
-                        </div>
-                      </div>
-                    )}
-                    
-                    <div>
-                      <h3 className="font-medium mb-2">Admin Notes</h3>
-                      <div className="space-y-4 max-h-[300px] overflow-y-auto p-2">
-                        {messages
-                          .filter(msg => msg.is_admin_note)
-                          .map((msg) => (
-                          <div key={msg.id} className="bg-yellow-50 border-l-4 border-yellow-200 p-4 dark:bg-yellow-900/20 dark:border-yellow-900">
-                            <div className="flex items-center justify-between mb-2">
-                              <div className="flex items-center gap-2">
-                                <Avatar className="h-6 w-6">
-                                  <AvatarImage src={msg.user_profile?.avatar_url} alt={msg.user_profile?.display_name || "Admin avatar"} />
-                                  <AvatarFallback>
-                                    {msg.user_profile?.display_name?.[0] || 'A'}
-                                  </AvatarFallback>
-                                </Avatar>
-                                <span className="text-sm font-medium">
-                                  {msg.user_profile?.display_name || 'Admin'}
-                                </span>
-                              </div>
-                              <span className="text-xs opacity-70">
-                                {format(new Date(msg.created_at), 'MMM d, h:mm a')}
-                              </span>
-                            </div>
-                            <p className="whitespace-pre-wrap text-sm">{msg.message}</p>
-                          </div>
-                        ))}
-                        
-                        {!messages.some(msg => msg.is_admin_note) && (
-                          <p className="text-sm text-muted-foreground italic">No admin notes yet</p>
-                        )}
-                      </div>
-                      
-                      <Separator className="my-4" />
-                      
-                      <div className="space-y-4">
-                        <Textarea
-                          placeholder="Add an admin note (only visible to administrators)..."
-                          value={adminNote}
-                          onChange={(e) => setAdminNote(e.target.value)}
-                        />
-                        <Button
-                          variant="outline"
-                          onClick={() => {
-                            if (adminNote.trim()) {
-                              addDisputeMessage(disputeId!, adminNote, true).then(() => {
-                                getDisputeMessages(disputeId!).then(setMessages);
+                          <div className="flex justify-end mt-2">
+                            <Button onClick={() => {
+                              if (adminNote.trim() && disputeId) {
+                                addDisputeMessage(disputeId, adminNote, true);
                                 setAdminNote("");
-                              });
-                            }
-                          }}
-                        >
-                          Add Admin Note
-                        </Button>
-                      </div>
+                              }
+                            }} disabled={!adminNote.trim()}>
+                              Add Note
+                            </Button>
+                          </div>
+                        </div>
+                      )}
                     </div>
                   </CardContent>
                 </Card>
@@ -502,67 +410,75 @@ export function DisputeDetail() {
           </Tabs>
         </div>
         
-        <div className="space-y-6">
+        <div className="lg:col-span-1">
           <Card>
             <CardHeader>
-              <CardTitle>Parties Involved</CardTitle>
+              <CardTitle>Dispute Actions</CardTitle>
+              <CardDescription>Take actions on this dispute</CardDescription>
             </CardHeader>
-            <CardContent className="space-y-6">
-              <div className="flex items-start gap-4">
-                <Avatar className="h-10 w-10">
-                  <AvatarImage src={dispute.client_profile?.avatar_url} alt={dispute.client_profile?.display_name || "Client avatar"} />
-                  <AvatarFallback>C</AvatarFallback>
-                </Avatar>
-                <div>
-                  <p className="font-medium">Client</p>
-                  <p className="text-sm text-muted-foreground">
-                    {dispute.client_profile?.display_name || "Unknown Client"}
-                  </p>
-                </div>
-              </div>
-              
-              <div className="flex justify-center">
-                <ArrowDown className="h-6 w-6 text-muted-foreground" />
-              </div>
-              
-              <div className="flex items-start gap-4">
-                <Avatar className="h-10 w-10">
-                  <AvatarImage src={dispute.talent_profile?.avatar_url} alt={dispute.talent_profile?.display_name || "Talent avatar"} />
-                  <AvatarFallback>T</AvatarFallback>
-                </Avatar>
-                <div>
-                  <p className="font-medium">Talent</p>
-                  <p className="text-sm text-muted-foreground">
-                    {dispute.talent_profile?.display_name || "Unknown Talent"}
-                  </p>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
-          
-          <Card>
-            <CardHeader>
-              <CardTitle>Case Information</CardTitle>
-            </CardHeader>
-            <CardContent className="space-y-4 text-sm">
-              <div className="flex justify-between">
-                <span className="font-medium">Case ID:</span>
-                <span className="font-mono">{dispute.id}</span>
-              </div>
-              <div className="flex justify-between">
-                <span className="font-medium">Created:</span>
-                <span>{format(new Date(dispute.created_at), "MMM d, yyyy")}</span>
-              </div>
-              <div className="flex justify-between">
-                <span className="font-medium">Status:</span>
+            <CardContent className="space-y-4">
+              <div>
+                <h3 className="font-medium">Current Status</h3>
                 <Badge variant={getStatusBadgeVariant(dispute.status)}>
                   {dispute.status.replace('_', ' ')}
                 </Badge>
               </div>
-              <div className="flex justify-between">
-                <span className="font-medium">Raised by:</span>
-                <span>{dispute.client_profile && dispute.talent_profile && dispute.raised_by === (dispute.client_profile as any).id ? "Client" : dispute.talent_profile && dispute.raised_by === (dispute.talent_profile as any).id ? "Talent" : "Unknown"}</span>
-              </div>
+              
+              {dispute.status === "open" && (
+                <div>
+                  <h3 className="font-medium">Resolve Dispute</h3>
+                  <Textarea
+                    placeholder="Provide a resolution summary..."
+                    value={resolution.summary}
+                    onChange={(e) => setResolution({ ...resolution, summary: e.target.value })}
+                    className="min-h-[100px]"
+                  />
+                  <div className="flex justify-end mt-2">
+                    <Button onClick={handleResolveDispute} disabled={!resolution.summary}>
+                      Resolve Dispute
+                    </Button>
+                  </div>
+                </div>
+              )}
+              
+              {dispute.status === "under_review" && (
+                <div>
+                  <h3 className="font-medium">Close Dispute</h3>
+                  <p>This dispute is currently under review. You can close it by resolving it or rejecting it.</p>
+                  <div className="flex gap-2 mt-4">
+                    <Button onClick={() => handleStatusChange("resolved")} variant="outline">
+                      Resolve Dispute
+                    </Button>
+                    <Button onClick={() => handleStatusChange("closed")} variant="outline" color="destructive">
+                      Reject Dispute
+                    </Button>
+                  </div>
+                </div>
+              )}
+              
+              {dispute.status === "resolved" && (
+                <div>
+                  <h3 className="font-medium">Reopen Dispute</h3>
+                  <p>This dispute has been resolved. You can reopen it if new information becomes available.</p>
+                  <div className="flex justify-end mt-4">
+                    <Button onClick={() => handleStatusChange("open")} variant="outline">
+                      Reopen Dispute
+                    </Button>
+                  </div>
+                </div>
+              )}
+              
+              {dispute.status === "closed" && (
+                <div>
+                  <h3 className="font-medium">Reopen Dispute</h3>
+                  <p>This dispute has been closed. You can reopen it if new information becomes available.</p>
+                  <div className="flex justify-end mt-4">
+                    <Button onClick={() => handleStatusChange("open")} variant="outline">
+                      Reopen Dispute
+                    </Button>
+                  </div>
+                </div>
+              )}
             </CardContent>
           </Card>
         </div>

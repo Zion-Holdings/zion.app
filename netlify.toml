@@ -11,7 +11,7 @@
   directory = "netlify/functions"
   node_bundler = "esbuild"
 
->>>>>>> 17df199e451813150094c5ab1fb554b04628cb60
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
 
 [[plugins]]
   package = "netlify-plugin-cloudinary"
@@ -110,7 +110,7 @@
   name = "autonomous-meta-orchestrator"
   schedule = "*/1 * * * *" # every minute
 
->>>>>>> 17df199e451813150094c5ab1fb554b04628cb60
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
 # New ultra-fast tools
 [[scheduled.functions]]
   name = "features-capabilities-benefits-advertiser"
@@ -173,7 +173,7 @@
   schedule = "53 */6 * * *"
 
 [[scheduled.functions]]
->>>>>>> 17df199e451813150094c5ab1fb554b04628cb60
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
   name = "todo-summary-runner"
   schedule = "*/30 * * * *"
 
@@ -209,7 +209,7 @@
 [[scheduled.functions]]
   name = "ai-trends-radar-runner"
   schedule = "*/30 * * * *"
->>>>>>> 17df199e451813150094c5ab1fb554b04628cb60
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
 
 [[scheduled.functions]]
   name = "stale-content-auditor-runner"

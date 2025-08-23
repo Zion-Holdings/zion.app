@@ -185,40 +185,12 @@ const MarketPricing: React.FC = () => {
   ];
 
   return (
-    <Layout
-      title="Market Pricing - Zion Tech Group"
-      description="Understand our market-based pricing strategy and competitive positioning in AI, quantum computing, and cybersecurity markets."
-      keywords="market pricing, competitive pricing, AI pricing, quantum computing pricing, cybersecurity pricing, Zion Tech Group"
-    >
-      <div className="min-h-screen bg-gradient-to-br from-gray-900 via-black to-gray-900 text-white">
-        {/* Hero Section */}
-        <section className="relative overflow-hidden py-20 lg:py-32">
-          <div className="absolute inset-0 bg-gradient-to-r from-purple-900/20 via-blue-900/20 to-cyan-900/20" />
-          <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-              className="text-center"
-            >
-              <div className="flex items-center justify-center mb-6">
-                <div className="w-16 h-16 bg-gradient-to-br from-purple-500 to-blue-600 rounded-2xl flex items-center justify-center mr-4">
-                  <BarChart3 className="w-8 h-8 text-white" />
-                </div>
-                <h1 className="text-4xl lg:text-6xl font-bold bg-gradient-to-r from-purple-400 via-blue-400 to-cyan-400 bg-clip-text text-transparent">
-                  Market Pricing
-                </h1>
-              </div>
-              <p className="text-xl lg:text-2xl text-gray-300 max-w-4xl mx-auto mb-8">
-                Competitive pricing aligned with market value and innovation
-              </p>
-              <p className="text-lg text-gray-400 max-w-3xl mx-auto">
-                Our pricing strategy reflects the market value of our cutting-edge technologies 
-                while ensuring accessibility across different business segments.
-              </p>
-            </motion.div>
-          </div>
-        </section>
+    <UltraAdvancedFuturisticBackground>
+      <SEO title="Market Pricing & Competitor References | Zion Tech Group" description="Transparent market pricing references and competitor links for AI, security, analytics, and cloud services." canonicalUrl="https://ziontechgroup.com/market-pricing/" />
+      <div className="min-h-screen pt-24 pb-20 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-5xl mx-auto space-y-8">
+          <h1 className="text-4xl md:text-6xl font-bold bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">Market Pricing & References</h1>
+          <p className="text-slate-300">Below are easy-to-verify vendor references and typical pricing ranges to help you benchmark our offerings.</p>
 
         {/* Market Segments */}
         <section className="py-20">
@@ -473,61 +445,7 @@ const MarketPricing: React.FC = () => {
                   </ul>
                 </motion.div>
               ))}
-            </div>
-          </div>
-        </section>
-
-          <div className="space-y-6">
-            <div className="bg-black/30 rounded-2xl border border-sky-500/30 p-6">
-              <h2 className="text-2xl font-semibold mb-2">CDP & Reverse ETL</h2>
-              <ul className="list-disc list-inside text-slate-300 space-y-1">
-                <li>Segment: <a className="text-cyan-400 underline" href={`https://segment.com/pricing/`} target="_blank" rel="noopener noreferrer">segment.com/pricing</a></li>
-                <li>RudderStack: <a className="text-cyan-400 underline" href={`https://www.rudderstack.com/pricing/`} target="_blank" rel="noopener noreferrer">rudderstack.com/pricing</a></li>
-                <li>Hightouch (Reverse ETL): <a className="text-cyan-400 underline" href={`https://hightouch.com/pricing`} target="_blank" rel="noopener noreferrer">hightouch.com/pricing</a></li>
-                <li>Census (Reverse ETL): <a className="text-cyan-400 underline" href={`https://www.getcensus.com/pricing`} target="_blank" rel="noopener noreferrer">getcensus.com/pricing</a></li>
-              </ul>
-              <div className="text-sm text-slate-400 mt-3">Typical SMB budgets: $100–$1,500/month depending on sources, destinations, and MAUs.</div>
-            </div>
-
-            <div className="bg-black/30 rounded-2xl border border-rose-500/30 p-6">
-              <h2 className="text-2xl font-semibold mb-2">Returns & Logistics</h2>
-              <ul className="list-disc list-inside text-slate-300 space-y-1">
-                <li>Loop Returns: <a className="text-cyan-400 underline" href={`https://www.loopreturns.com/pricing/`} target="_blank" rel="noopener noreferrer">loopreturns.com/pricing</a></li>
-                <li>Happy Returns: <a className="text-cyan-400 underline" href={`https://www.happyreturns.com/`} target="_blank" rel="noopener noreferrer">happyreturns.com</a></li>
-                <li>Shippo: <a className="text-cyan-400 underline" href={`https://goshippo.com/pricing/`} target="_blank" rel="noopener noreferrer">goshippo.com/pricing</a></li>
-              </ul>
-              <div className="text-sm text-slate-400 mt-3">Typical SMB budgets: $50–$400/month plus label costs.</div>
-            </div>
-
-            <div className="bg-black/30 rounded-2xl border border-emerald-500/30 p-6">
-              <h2 className="text-2xl font-semibold mb-2">Feature Flags & Experimentation</h2>
-              <ul className="list-disc list-inside text-slate-300 space-y-1">
-                <li>LaunchDarkly pricing: <a className="text-cyan-400 underline" href={`https://launchdarkly.com/pricing/`} target="_blank" rel="noopener noreferrer">launchdarkly.com/pricing</a></li>
-                <li>Flagsmith pricing: <a className="text-cyan-400 underline" href={`https://www.flagsmith.com/pricing`} target="_blank" rel="noopener noreferrer">flagsmith.com/pricing</a></li>
-                <li>Optimizely Web: <a className="text-cyan-400 underline" href={`https://www.optimizely.com/pricing/`} target="_blank" rel="noopener noreferrer">optimizely.com/pricing</a></li>
-                <li>VWO pricing: <a className="text-cyan-400 underline" href={`https://vwo.com/pricing/`} target="_blank" rel="noopener noreferrer">vwo.com/pricing</a></li>
-              </ul>
-              <div className="text-sm text-slate-400 mt-3">Typical SMB budgets: $50–$500/month for flags; $100–$1,000/month for experimentation depending on traffic.</div>
-            </div>
-
-            <div className="bg-black/30 rounded-2xl border border-fuchsia-500/30 p-6">
-              <h2 className="text-2xl font-semibold mb-2">Synthetic Data & Privacy</h2>
-              <ul className="list-disc list-inside text-slate-300 space-y-1">
-                <li>Gretel pricing: <a className="text-cyan-400 underline" href={`https://gretel.ai/pricing`} target="_blank" rel="noopener noreferrer">gretel.ai/pricing</a></li>
-                <li>Mostly AI pricing: <a className="text-cyan-400 underline" href={`https://mostly.ai/pricing/`} target="_blank" rel="noopener noreferrer">mostly.ai/pricing</a></li>
-                <li>Hazy (synthetic data): <a className="text-cyan-400 underline" href={`https://hazy.com/`} target="_blank" rel="noopener noreferrer">hazy.com</a></li>
-              </ul>
-              <div className="text-sm text-slate-400 mt-3">Typical SMB budgets: $99–$1,500/month based on datasets, privacy features, and synthesis volume.</div>
-            </div>
-
-            <div className="bg-black/30 rounded-2xl border border-teal-500/30 p-6">
-              <h2 className="text-2xl font-semibold mb-2">Data Reliability & Observability</h2>
-              <ul className="list-disc list-inside text-slate-300 space-y-1">
-                <li>Monte Carlo: <a className="text-cyan-400 underline" href={`https://www.montecarlodata.com/`} target="_blank" rel="noopener noreferrer">montecarlodata.com</a></li>
-                <li>Bigeye: <a className="text-cyan-400 underline" href={`https://www.bigeye.com/pricing`} target="_blank" rel="noopener noreferrer">bigeye.com/pricing</a></li>
-                <li>OpenTelemetry docs: <a className="text-cyan-400 underline" href={`https://opentelemetry.io/`} target="_blank" rel="noopener noreferrer">opentelemetry.io</a></li>
-              </ul>
-              <div className="text-sm text-slate-400 mt-3">Typical SMB budgets: $200–$2,000/month depending on data volume, SLAs, and alerting needs.</div>
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
             </div>
           </div>
         </section>

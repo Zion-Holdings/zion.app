@@ -1,11 +1,5 @@
-import React, { useState, useEffect, useCallback } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import {
-  Search,
-  AlertTriangle,
-  X,
-  Settings
-} from 'lucide-react';
+import React, { useEffect, useState } from 'react';
+import Head from 'next/head';
 
 interface SEOIssue {
   id: string;
@@ -18,166 +12,58 @@ interface SEOIssue {
   impact: number; // 0-100
 }
 
-interface SEOMetrics {
-  title: {
-    length: number;
-    hasKeywords: boolean;
-    hasBrand: boolean;
-    score: number;
-  };
-  description: {
-    length: number;
-    hasKeywords: boolean;
-    hasCallToAction: boolean;
-    score: number;
-  };
-  headings: {
-    h1Count: number;
-    h2Count: number;
-    h3Count: number;
-    hasKeywords: boolean;
-    score: number;
-  };
-  images: {
-    total: number;
-    withAlt: number;
-    optimized: number;
-    score: number;
-  };
-  links: {
-    internal: number;
-    external: number;
-    broken: number;
-    score: number;
-  };
-  content: {
-    wordCount: number;
-    keywordDensity: number;
-    readability: number;
-    score: number;
-  };
-  overall: number;
-}
-
-const SEOOptimizer: React.FC = () => {
-  const [isVisible, setIsVisible] = useState(false);
-  const [isExpanded, setIsExpanded] = useState(false);
-  const [isAnalyzing, setIsAnalyzing] = useState(false);
-  const [metrics, setMetrics] = useState<SEOMetrics | null>(null);
-  const [issues, setIssues] = useState<SEOIssue[]>([]);
-
-  const [currentUrl, setCurrentUrl] = useState<string>('');
-  const [analysisHistory, setAnalysisHistory] = useState<{ url: string; score: number; date: Date }[]>([]);
-
-  // Common SEO keywords for tech companies
-  const defaultKeywords = [
-    'technology', 'innovation', 'digital transformation', 'AI', 'machine learning',
-    'cloud computing', 'cybersecurity', 'software development', 'IT services',
-    'digital solutions', 'enterprise software', 'web development', 'mobile apps'
-  ];
-
-  // Load analysis history from localStorage
-  useEffect(() => {
-    const saved = localStorage.getItem('seo-analysis-history');
-    if (saved) {
-      try {
-        const parsed = JSON.parse(saved);
-        setAnalysisHistory(parsed.map((item: { url: string; score: number; date: string }) => ({
-          ...item,
-          date: new Date(item.date)
-        })));
-      } catch {
-        // Silently handle parsing errors
-      }
+    // Check description length
+    if (seoData.description.length < 120 || seoData.description.length > 160) {
+      issues.push('Description length should be between 120-160 characters');
+      score -= 10;
     }
-  }, []);
 
-  // Save analysis history to localStorage
-  useEffect(() => {
-    if (analysisHistory.length > 0) {
-      localStorage.setItem('seo-analysis-history', JSON.stringify(analysisHistory));
+    // Check for missing alt text on images
+    const images = document.querySelectorAll('img');
+    const imagesWithoutAlt = Array.from(images).filter(img => !img.alt);
+    if (imagesWithoutAlt.length > 0) {
+      issues.push(`${imagesWithoutAlt.length} images missing alt text`);
+      score -= 5;
     }
-  }, [analysisHistory]);
 
-  // Get current page URL
-  useEffect(() => {
-    if (typeof window !== 'undefined') {
-      setCurrentUrl(window.location.href);
+    // Check heading structure
+    const headings = document.querySelectorAll('h1, h2, h3, h4, h5, h6');
+    const h1Count = document.querySelectorAll('h1').length;
+    if (h1Count === 0) {
+      issues.push('Missing H1 heading');
+      score -= 15;
+    } else if (h1Count > 1) {
+      issues.push('Multiple H1 headings found');
+      score -= 10;
     }
-  }, []);
 
-  // Analyze current page
-  const analyzePage = useCallback(async () => {
-    if (isAnalyzing) return;
-    
-    setIsAnalyzing(true);
-    
-    try {
-      // Simulate analysis delay
-      await new Promise(resolve => setTimeout(resolve, 2000));
-      
-      const newMetrics: SEOMetrics = {
-        title: {
-          length: document.title.length,
-          hasKeywords: defaultKeywords.some(keyword => 
-            document.title.toLowerCase().includes(keyword.toLowerCase())
-          ),
-          hasBrand: document.title.toLowerCase().includes('zion'),
-          score: 0
-        },
-        description: {
-          length: 0,
-          hasKeywords: false,
-          hasCallToAction: false,
-          score: 0
-        },
-        headings: {
-          h1Count: document.querySelectorAll('h1').length,
-          h2Count: document.querySelectorAll('h2').length,
-          h3Count: document.querySelectorAll('h3').length,
-          hasKeywords: false,
-          score: 0
-        },
-        images: {
-          total: document.querySelectorAll('img').length,
-          withAlt: document.querySelectorAll('img[alt]').length,
-          optimized: 0,
-          score: 0
-        },
-        links: {
-          internal: document.querySelectorAll('a[href^="/"]').length,
-          external: document.querySelectorAll('a[href^="http"]').length,
-          broken: 0,
-          score: 0
-        },
-        content: {
-          wordCount: document.body.textContent?.split(/\s+/).length || 0,
-          keywordDensity: 0,
-          readability: 0,
-          score: 0
-        },
-        overall: 0
-      };
+    // Check for internal links
+    const internalLinks = document.querySelectorAll('a[href^="/"], a[href^="https://ziontechgroup.com"]');
+    if (internalLinks.length < 3) {
+      issues.push('Low number of internal links');
+      score -= 5;
+    }
 
-      // Calculate scores
-      newMetrics.title.score = Math.min(100, 
-        (newMetrics.title.length >= 30 && newMetrics.title.length <= 60 ? 40 : 20) +
-        (newMetrics.title.hasKeywords ? 30 : 0) +
-        (newMetrics.title.hasBrand ? 30 : 0)
-      );
+    // Check for meta viewport
+    const viewport = document.querySelector('meta[name="viewport"]');
+    if (!viewport) {
+      issues.push('Missing viewport meta tag');
+      score -= 10;
+    }
 
-      newMetrics.description.score = Math.min(100,
-        (newMetrics.description.length >= 120 && newMetrics.description.length <= 160 ? 40 : 20) +
-        (newMetrics.description.hasKeywords ? 30 : 0) +
-        (newMetrics.description.hasCallToAction ? 30 : 0)
-      );
+    // Check for language declaration
+    const html = document.documentElement;
+    if (!html.lang) {
+      issues.push('Missing language declaration');
+      score -= 5;
+    }
 
-      newMetrics.headings.score = Math.min(100,
-        (newMetrics.headings.h1Count === 1 ? 30 : 0) +
-        (newMetrics.headings.h2Count >= 2 ? 30 : 0) +
-        (newMetrics.headings.h3Count >= 3 ? 20 : 0) +
-        (newMetrics.headings.hasKeywords ? 20 : 0)
-      );
+    // Check for robots meta tag
+    const robots = document.querySelector('meta[name="robots"]');
+    if (!robots) {
+      issues.push('Missing robots meta tag');
+      score -= 5;
+    }
 
       newMetrics.images.score = Math.min(100,
         (newMetrics.images.withAlt / Math.max(newMetrics.images.total, 1)) * 100
@@ -286,8 +172,13 @@ const SEOOptimizer: React.FC = () => {
           impact: 15
         });
       }
+    };
 
-      setIssues(newIssues);
+    // Inject structured data
+    const script = document.createElement('script');
+    script.type = 'application/ld+json';
+    script.text = JSON.stringify(webPageData);
+    document.head.appendChild(script);
 
     } catch {
       // Silently handle errors
@@ -580,7 +471,7 @@ const SEOOptimizer: React.FC = () => {
         </button>
       </motion.div>
     </AnimatePresence>
->>>>>>> 17df199e451813150094c5ab1fb554b04628cb60
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
   );
 };
 

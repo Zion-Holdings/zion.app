@@ -10,7 +10,7 @@ function handler(req: NextApiRequest, res: NextApiResponse) {
   }
 
   if (req.method === 'PATCH') {
-    const { name, bio, avatarUrl } = req.body || {};
+    const { name, bio, avatarUrl } = req['body'] || {};
     if (name !== undefined) user.name = name;
     if (bio !== undefined) user.bio = bio;
     if (avatarUrl !== undefined) user.avatarUrl = avatarUrl;

@@ -31,6 +31,7 @@ export function useTalentProfileEnhancer() {
     setError(null);
     
     try {
+      if (!supabase) throw new Error('Supabase client not initialized');
       // Call the Supabase Edge Function
       const { data, error } = await supabase.functions.invoke('talent-profile-enhancer', {
         body: { talentData: profileData }
@@ -46,8 +47,9 @@ export function useTalentProfileEnhancer() {
       }
       
       return data as EnhancedProfile;
-    } catch (err: any) {
-      setError(err.message || 'Failed to enhance profile');
+    } catch (err: unknown) {
+      const message = err instanceof Error ? err.message : String(err);
+      setError(message || 'Failed to enhance profile');
       return null;
     } finally {
       setIsGenerating(false);

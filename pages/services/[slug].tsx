@@ -1,7 +1,7 @@
 import React from 'react';
 import Head from 'next/head';
 import UltraFuturisticBackground from '../../components/ui/UltraFuturisticBackground';
-import Button from '../../components/ui/Button';
+import { Button } from '../../components/ui/Button';
 import Card from '../../components/ui/Card';
 import { Check, Mail, MapPin, Phone, ExternalLink } from 'lucide-react';
 import { enhancedRealMicroSaasServices } from '../../data/enhanced-real-micro-saas-services';
@@ -41,15 +41,27 @@ import { realMarketServices } from '../../data/real-market-services';
 import { real2029Q2Additions } from '../../data/real-2029-q2-additions';
 import { real2029Q3Additions } from '../../data/real-2029-q3-additions';
 import { real2029Q4Additions } from '../../data/real-2029-q4-additions';
->>>>>>> origin/cursor/add-services-pricing-q4-2029
 =======
+import { real2030Q1Additions } from '../../data/real-2030-q1-additions';
+import { enterpriseITSolutions } from '../../data/2034-enterprise-it-solutions';
+import { innovativeMicroSaasSolutions } from '../../data/2034-innovative-micro-saas-solutions';
+import { cuttingEdgeAIServices } from '../../data/2034-cutting-edge-ai-services';
+import { real2031MicroSaasAdditions } from '../../data/real-2031-micro-saas-additions';
+import { real2031ITServicesAdditions } from '../../data/real-2031-it-services-additions';
+import { real2031AIServicesAdditions } from '../../data/real-2031-ai-services-additions';
+import { real2030Q2Additions } from '../../data/real-2030-q2-additions';
+import { real2027Q3Additions } from '../../data/real-2027-q3-additions';
+import { aiAutonomousEcosystemServices2029 } from '../../data/2029-ai-autonomous-ecosystem';
+import { emergingTechBreakthroughServices2029 } from '../../data/2029-emerging-tech-breakthroughs';
+import { practicalBusinessSolutionServices2029 } from '../../data/2029-practical-business-solutions';
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
 import { professionalServices } from '../../data/professional-services';
 import { real2032ServiceExpansions } from '../../data/real-2032-service-expansions';
 import { real2035Q1Additions } from '../../data/real-2035-q1-additions';
 import { real2035Q2AdditionsExtra } from '../../data/real-2035-q2-additions-extra';
 import { real2036ServiceExpansions } from '../../data/real-2036-service-expansions';
 import { real2026Q4ExpansionsV3 } from '../../data/real-2026-q4-expansions-v3';
->>>>>>> 17df199e451813150094c5ab1fb554b04628cb60
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
 
 type Service = typeof enhancedRealMicroSaasServices[number];
 
@@ -95,16 +107,26 @@ function getAllServices(): Service[] {
 		.concat(realMarketServices as unknown as Service[])
 		.concat(real2029Q2Additions as unknown as Service[])
 		.concat(real2029Q3Additions as unknown as Service[])
-		.concat(real2029Q4Additions as unknown as Service[]);
->>>>>>> origin/cursor/add-services-pricing-q4-2029
 =======
+		.concat(real2029Q4Additions as unknown as Service[])
+		.concat(real2030Q1Additions as unknown as Service[])
+		.concat(real2030Q2Additions as unknown as Service[])
+		.concat(real2031MicroSaasAdditions as unknown as Service[])
+		.concat(real2031ITServicesAdditions as unknown as Service[])
+		.concat(real2031AIServicesAdditions as unknown as Service[])
+		.concat(real2027Q3Additions as unknown as Service[])
+		// 2029 showcase/pricing arrays to ensure matching /services/* pages are generated
+		.concat(aiAutonomousEcosystemServices2029 as unknown as Service[])
+		.concat(emergingTechBreakthroughServices2029 as unknown as Service[])
+		.concat(practicalBusinessSolutionServices2029 as unknown as Service[])
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
 		.concat(professionalServices as unknown as Service[])
 		.concat(real2032ServiceExpansions as unknown as Service[])
 		.concat(real2035Q1Additions as unknown as Service[])
 		.concat(real2035Q2AdditionsExtra as unknown as Service[])
 		.concat(real2026Q4ExpansionsV3 as unknown as Service[])
 		.concat(real2036ServiceExpansions as unknown as Service[]);
->>>>>>> 17df199e451813150094c5ab1fb554b04628cb60
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
 }
 
 function toSlug(value: string): string {
@@ -283,7 +305,7 @@ export default function ServiceDetailPage({ service }: { service: Service }) {
 							</div>
 							<div className="text-sm text-gray-400 mt-2">Trial: {service.trialDays || 14} days • Setup: {service.setupTime || 'Fast'} • Competitors: {(service.competitors || []).slice(0,3).join(', ')}</div>
 							<div className="mt-6 flex gap-3">
-								<Button href="/contact" className="flex-1 bg-gradient-to-r from-cyan-500 to-blue-600 text-white">Contact Sales</Button>
+								<Link href="/contact" className="flex-1 bg-gradient-to-r from-cyan-500 to-blue-600 text-white">Contact Sales</Button>
 								<Button href={service.link} variant="outline" className="flex-1 border border-gray-600 text-gray-200"><ExternalLink className="w-4 h-4 mr-2" /> Learn More</Button>
 							</div>
 						</Card>

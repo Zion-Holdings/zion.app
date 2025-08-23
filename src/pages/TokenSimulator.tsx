@@ -44,6 +44,13 @@ const SCENARIOS = [
   { value: 'zk', label: 'Real-world ZK employment rewards' },
 ];
 
+// Type declaration for window.Chart
+declare global {
+  interface Window {
+    Chart: any; // Use any instead of specific chart.js types since it's loaded dynamically
+  }
+}
+
 export default function TokenSimulator() {
   const [inputs, setInputs] = useState<Inputs>(DEFAULT_INPUTS);
   const [scenario, setScenario] = useState('growth');
@@ -75,18 +82,18 @@ export default function TokenSimulator() {
   useEffect(simulate, [inputs, months]);
 
   useEffect(() => {
-    let chart: any;
+    let chart: InstanceType<typeof window.Chart> | undefined;
     const id = 'chartjs-script';
     const load = () => {
-      if (!velocityChart.current || !(window as any).Chart) return;
-      const Chart = (window as any).Chart;
+      if (!velocityChart.current || typeof window.Chart !== 'function') return;
+      const Chart = window.Chart;
       const labels = Array.from({ length: months }, (_, i) => `${i + 1}`);
       const velocities = labels.map(
         (_, i) =>
           (inputs.activeWallets * (i + 1)) / (forecast[i] || inputs.circulating)
       );
       if (chart) chart.destroy();
-      chart = new Chart(velocityChart.current, {
+      chart = new Chart(velocityChart.current as HTMLCanvasElement, {
         type: 'line',
         data: {
           labels,
@@ -94,7 +101,7 @@ export default function TokenSimulator() {
         },
       });
     };
-    if (typeof (window as any).Chart !== 'undefined') {
+    if (typeof window.Chart !== 'undefined') {
       load();
     } else {
       let s = document.getElementById(id) as HTMLScriptElement | null;
@@ -105,7 +112,7 @@ export default function TokenSimulator() {
         s.onload = load;
         document.body.appendChild(s);
       } else {
-        s.addEventListener('load', load);
+        s.addEventListener('load', load as EventListener);
       }
     }
     return () => {
@@ -114,14 +121,14 @@ export default function TokenSimulator() {
   }, [forecast, inputs.activeWallets, months]);
 
   useEffect(() => {
-    let chart: any;
+    let chart: InstanceType<typeof window.Chart> | undefined;
     const id = 'chartjs-script2';
     const load = () => {
-      if (!supplyChart.current || !(window as any).Chart) return;
-      const Chart = (window as any).Chart;
+      if (!supplyChart.current || typeof window.Chart !== 'function') return;
+      const Chart = window.Chart;
       const labels = Array.from({ length: months }, (_, i) => `${i + 1}`);
       if (chart) chart.destroy();
-      chart = new Chart(supplyChart.current, {
+      chart = new Chart(supplyChart.current as HTMLCanvasElement, {
         type: 'line',
         data: {
           labels,
@@ -129,7 +136,7 @@ export default function TokenSimulator() {
         },
       });
     };
-    if (typeof (window as any).Chart !== 'undefined') {
+    if (typeof window.Chart !== 'undefined') {
       load();
     } else {
       let s = document.getElementById(id) as HTMLScriptElement | null;
@@ -140,7 +147,7 @@ export default function TokenSimulator() {
         s.onload = load;
         document.body.appendChild(s);
       } else {
-        s.addEventListener('load', load);
+        s.addEventListener('load', load as EventListener);
       }
     }
     return () => {

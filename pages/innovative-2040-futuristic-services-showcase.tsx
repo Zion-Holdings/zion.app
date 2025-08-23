@@ -2,9 +2,8 @@ import React, { useState, useEffect } from 'react';
 import SEO from '../components/SEO';
 import { motion, AnimatePresence } from 'framer-motion';
 import { 
-  Search, Grid, List, Filter, Star, Users, TrendingUp,
-  Brain, Atom, Shield, Target, Rocket, ArrowRight, Check,
-  Zap, Globe, Lock, Cpu, Database, Cloud, Palette, Heart, Phone, Mail, MapPin
+  Search, Grid, List, Star, Check,
+  Phone, Mail, MapPin
 } from 'lucide-react';
 
 // Import our new innovative services
@@ -44,6 +43,7 @@ interface Service {
     email: string;
     address?: string;
     website: string;
+    phone?: string;
   };
   realImplementation?: boolean | string;
   implementationDetails?: string;
@@ -61,86 +61,59 @@ const Innovative2040FuturisticServicesShowcase: React.FC = () => {
   const [sortBy, setSortBy] = useState<'name' | 'price' | 'popularity' | 'category'>('name');
   const [isLoading, setIsLoading] = useState(true);
 
-  // Helper function to safely render prices
-  const renderPrice = (price: any) => {
-    if (typeof price === 'string') return price;
-    if (typeof price === 'object' && price.monthly) {
-      return `$${price.monthly}/${price.currency || 'month'}`;
-    }
-    return 'Contact for pricing';
-  };
-
-  // Combine all services
+  // Combine all services and ensure they have required properties
   const allServices: Service[] = [
     ...innovative2040FuturisticServices.map(service => ({
-      id: service.id,
-      name: service.name,
-      tagline: service.tagline,
-      price: service.price,
-      description: service.description,
-      features: service.features,
-      category: service.category,
-      link: service.link,
-      customers: service.reviews,
-      rating: service.rating,
-      reviews: service.reviews,
+      ...service,
       popular: service.rating >= 4.5,
       icon: '🚀',
-      color: 'from-cyan-400 to-blue-500',
-      textColor: 'text-white',
-      period: 'monthly',
+      color: 'from-blue-600 to-purple-700',
+      period: '/month',
       realService: true,
-      technology: ['AI', 'Quantum Computing', 'Neural Networks'],
-      integrations: ['API', 'SDK', 'Web Interface'],
-      useCases: ['Research', 'Enterprise', 'Healthcare'],
-      roi: '300% within 6 months',
-      competitors: ['Leading AI companies'],
-      marketSize: '$50B+',
-      growthRate: '150% YoY',
-      implementationDetails: service.realImplementation ? 'Currently deployed and operational' : 'In development phase',
+      customers: typeof service.customers === 'string' ? parseInt(service.customers) || 0 : service.customers,
       contactInfo: {
+        ...service.contactInfo,
         mobile: service.contactInfo.phone,
-        email: service.contactInfo.email,
-        address: 'Global',
-        website: service.contactInfo.website
+        address: '364 E Main St STE 1008 Middletown DE 19709'
       }
     })),
     ...innovative2040ITServices.map(service => ({
-      id: service.id,
-      name: service.name,
-      tagline: service.tagline,
-      price: service.price,
-      description: service.description,
-      features: service.features,
-      category: service.category,
-      link: service.link,
-      customers: service.reviews,
-      rating: service.rating,
-      reviews: service.reviews,
+      ...service,
       popular: service.rating >= 4.5,
-      icon: '⚡',
-      color: 'from-purple-400 to-pink-500',
-      textColor: 'text-white',
-      period: 'monthly',
+      icon: '💻',
+      color: 'from-green-600 to-blue-700',
+      period: '/month',
       realService: true,
-      technology: ['IT Infrastructure', 'Cloud Computing', 'DevOps'],
-      integrations: ['API', 'SDK', 'CLI'],
-      useCases: ['Enterprise', 'Startups', 'Government'],
-      roi: '250% within 8 months',
-      competitors: ['Major IT service providers'],
-      marketSize: '$100B+',
-      growthRate: '120% YoY',
-      implementationDetails: service.realImplementation ? 'Currently deployed and operational' : 'In development phase',
+      customers: typeof service.customers === 'string' ? parseInt(service.customers) || 0 : service.customers,
       contactInfo: {
-        mobile: service.contactInfo.mobile,
-        email: service.contactInfo.email,
-        address: 'Global',
-        website: service.contactInfo.website
+        ...service.contactInfo,
+        phone: service.contactInfo.mobile,
+        address: '364 E Main St STE 1008 Middletown DE 19709'
       }
     })),
     ...realMicroSaasServices,
-    ...innovativeAIServices,
-    ...enterpriseITServices
+    ...innovativeAIServices.map(service => ({
+      ...service,
+      customers: typeof service.customers === 'string' ? parseInt(service.customers) || 0 : service.customers,
+      contactInfo: {
+        ...service.contactInfo,
+        phone: service.contactInfo.mobile
+      }
+    })),
+    ...enterpriseITServices.map(service => ({
+      ...service,
+      popular: service.rating >= 4.5,
+      icon: '🏢',
+      color: 'from-indigo-600 to-cyan-700',
+      period: '/month',
+      realService: true,
+      customers: typeof service.customers === 'string' ? parseInt(service.customers) || 0 : service.customers,
+      contactInfo: {
+        ...service.contactInfo,
+        phone: service.contactInfo.mobile,
+        address: '364 E Main St STE 1008 Middletown DE 19709'
+      }
+    }))
   ];
 
   // Get unique categories
@@ -163,7 +136,7 @@ const Innovative2040FuturisticServicesShowcase: React.FC = () => {
           return aPrice - bPrice;
         }
         case 'popularity':
-          return b.rating - a.rating;
+          return (b.popular ? 1 : 0) - (a.popular ? 1 : 0) || b.rating - a.rating;
         case 'category':
           return a.category.localeCompare(b.category);
         default:
@@ -217,7 +190,7 @@ const Innovative2040FuturisticServicesShowcase: React.FC = () => {
       <SEO 
         title="Innovative 2040 Futuristic Services Showcase | Zion Tech Group"
         description="Explore our comprehensive collection of innovative 2040 futuristic services including quantum computing, AI-powered solutions, and cutting-edge technology offerings. Contact us at +1 302 464 0950 or kleber@ziontechgroup.com"
-        keywords={["innovative services", "futuristic technology", "quantum computing", "AI services", "IT solutions", "micro SaaS", "Zion Tech Group"]}
+        keywords="innovative services, futuristic technology, quantum computing, AI services, IT solutions, micro SaaS, Zion Tech Group"
 
       />
 
@@ -376,7 +349,7 @@ const Innovative2040FuturisticServicesShowcase: React.FC = () => {
                     {/* Service Icon */}
                     <div className={`w-16 h-16 bg-gradient-to-r ${service.color || 'from-blue-600 to-purple-700'} rounded-2xl flex items-center justify-center text-3xl mb-4 group-hover:scale-110 transition-transform duration-300`}>
                       {service.icon}
->>>>>>> 17df199e451813150094c5ab1fb554b04628cb60
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
                     </div>
 
                     {/* Service Info */}
@@ -384,7 +357,7 @@ const Innovative2040FuturisticServicesShowcase: React.FC = () => {
                       {service.name}
                     </h3>
                     <p className="text-gray-300 mb-4 line-clamp-2">
-                      {getServiceProperty(service, 'tagline', service.description.substring(0, 100) + '...')}
+                      {getServiceTagline(service)}
                     </p>
 
                     {/* Price */}
@@ -393,7 +366,7 @@ const Innovative2040FuturisticServicesShowcase: React.FC = () => {
                         {typeof service.price === 'string' ? service.price : `$${service.price.monthly}/${service.price.currency}`}
                         <span className="text-sm text-gray-400">
                           {typeof service.price === 'string' ? (service as any).period || '/month' : '/month'}
->>>>>>> 17df199e451813150094c5ab1fb554b04628cb60
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
                         </span>
                       </div>
                       <div className="flex items-center space-x-1 text-yellow-400">
@@ -458,7 +431,7 @@ const Innovative2040FuturisticServicesShowcase: React.FC = () => {
                 animate="animate"
                 className="space-y-6"
               >
-                {filteredServices.map((service, index) => (
+                {filteredServices.map((service) => (
                   <motion.div
                     key={service.id}
                     variants={fadeInUp}
@@ -468,7 +441,7 @@ const Innovative2040FuturisticServicesShowcase: React.FC = () => {
                       {/* Service Icon */}
                       <div className={`w-20 h-20 bg-gradient-to-r ${service.color || 'from-blue-600 to-purple-700'} rounded-2xl flex items-center justify-center text-4xl group-hover:scale-110 transition-transform duration-300 flex-shrink-0`}>
                         {service.icon}
->>>>>>> 17df199e451813150094c5ab1fb554b04628cb60
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
                       </div>
 
                       {/* Service Details */}
@@ -486,9 +459,9 @@ const Innovative2040FuturisticServicesShowcase: React.FC = () => {
                                 {service.category}
                               </span>
                               {service.popular && (
->>>>>>> 17df199e451813150094c5ab1fb554b04628cb60
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
                                 <span className="inline-block px-3 py-1 bg-gradient-to-r from-yellow-500 to-orange-500 text-white text-sm font-bold rounded-full">
-                                  Top Rated
+                                  Popular
                                 </span>
                               )}
                             </div>
@@ -497,9 +470,9 @@ const Innovative2040FuturisticServicesShowcase: React.FC = () => {
                                                        <div className="text-3xl font-bold text-cyan-400 mb-1">
                              {typeof service.price === 'string' ? service.price : `$${service.price.monthly}/${service.price.currency}`}
                                                            <span className="text-lg text-gray-400">
-                                {typeof service.price === 'string' ? (service as any).period || '/month' : '/month'}
+                                /month
                               </span>
->>>>>>> 17df199e451813150094c5ab1fb554b04628cb60
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
                            </div>
                             <div className="flex items-center justify-end space-x-1 text-yellow-400 mb-2">
                               <Star className="w-4 h-4 fill-current" />

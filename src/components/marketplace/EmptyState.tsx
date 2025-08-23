@@ -15,10 +15,7 @@ export interface EmptyStateProps {
   type: 'products' | 'categories' | 'talent' | 'equipment' | 'search' | 'error' | 'network' | 'loading';
   title?: string;
   description?: string;
-  action?: {
-    label: string;
-    onClick: () => void;
-  };
+  action: { label: string; onClick: () => void; } | undefined;
   icon?: React.ReactNode;
 }
 

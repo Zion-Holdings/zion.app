@@ -4,8 +4,8 @@ import { logInfo, logWarn } from '@/utils/productionLogger';
 
 declare global {
   interface Window {
-    Intercom?: (...args: any[]) => void & { q?: any[]; c?: (args: any) => void };
-    intercomSettings?: Record<string, any>;
+    Intercom?: ((...args: unknown[]) => void) & { q?: unknown[]; c?: (args: unknown) => void };
+    intercomSettings?: Record<string, unknown>;
   }
 }
 
@@ -32,7 +32,7 @@ export default function IntercomChat() {
     // Validate App ID before attempting to initialize
     if (!isValidIntercomAppId(appId)) {
       if (process.env.NODE_ENV === 'development') {
-        logWarn('Intercom: Invalid or placeholder App ID detected. Intercom chat disabled.', { data:  { appId } });
+        logWarn('Intercom: Invalid or placeholder App ID detected. Intercom chat disabled.', { data:  { data:  { appId } } });
       }
       return;
     }

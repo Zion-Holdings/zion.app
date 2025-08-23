@@ -1,348 +1,455 @@
 import React, { useEffect, useState } from 'react';
 import Head from 'next/head';
-import { useRouter } from 'next/router';
+import { 
+  Search, Globe, Share2, TrendingUp, 
+  Eye, Users, BarChart3, Target,
+  CheckCircle, AlertTriangle, Info, X
+} from 'lucide-react';
 
 interface SEOData {
   title: string;
   description: string;
   keywords: string[];
   ogImage: string;
-  ogType: string;
-  twitterCard: string;
   canonicalUrl: string;
-  structuredData: Record<string, unknown>;
+  structuredData: any;
+  socialMedia: {
+    twitter: {
+      card: string;
+      site: string;
+      creator: string;
+    };
+    facebook: {
+      appId: string;
+      type: string;
+    };
+  };
 }
 
-interface PageSEOConfig {
-  [key: string]: SEOData;
+interface SEOAnalysis {
+  score: number;
+  issues: string[];
+  recommendations: string[];
+  metaTags: {
+    title: boolean;
+    description: boolean;
+    keywords: boolean;
+    ogImage: boolean;
+    canonical: boolean;
+    structuredData: boolean;
+  };
 }
 
-const EnhancedSEOOptimizer: React.FC = () => {
-  const router = useRouter();
-  const [currentPage, setCurrentPage] = useState<string>('');
-  const [seoScore, setSeoScore] = useState<number>(0);
-  const [seoIssues, setSeoIssues] = useState<string[]>([]);
-
-  // Default SEO configuration
-  const defaultSEO: SEOData = {
-    title: 'Zion Tech Group - Pioneering the Future of Technology',
-    description: 'Leading provider of quantum computing, AI consciousness, autonomous systems, and revolutionary technology solutions. Transform your business with cutting-edge innovation.',
-    keywords: [
-      'quantum computing',
-      'AI consciousness',
-      'autonomous systems',
-      'technology solutions',
-      'quantum AI',
-      'space technology',
-      'enterprise solutions',
-      'AI automation',
-      'quantum cybersecurity',
-      'futuristic technology'
-    ],
-    ogImage: '/images/zion-tech-group-og.jpg',
-    ogType: 'website',
-    twitterCard: 'summary_large_image',
-    canonicalUrl: 'https://ziontechgroup.com',
-    structuredData: {
-      '@context': 'https://schema.org',
-      '@type': 'Organization',
-      name: 'Zion Tech Group',
-      url: 'https://ziontechgroup.com',
-      logo: 'https://ziontechgroup.com/images/zion-tech-group-logo.png',
-      description: 'Pioneering the future of technology with quantum computing, AI consciousness, and autonomous systems.',
-      address: {
-        '@type': 'PostalAddress',
-        addressCountry: 'US'
-      },
-      contactPoint: {
-        '@type': 'ContactPoint',
-        contactType: 'customer service',
-        email: 'info@ziontechgroup.com'
-      },
-      sameAs: [
-        'https://linkedin.com/company/zion-tech-group',
-        'https://twitter.com/ziontechgroup',
-        'https://github.com/zion-tech-group'
-      ]
+const EnhancedSEOOptimizer: React.FC<{ seoData: SEOData }> = ({ seoData }) => {
+  const [analysis, setAnalysis] = useState<SEOAnalysis>({
+    score: 0,
+    issues: [],
+    recommendations: [],
+    metaTags: {
+      title: false,
+      description: false,
+      keywords: false,
+      ogImage: false,
+      canonical: false,
+      structuredData: false
     }
-  };
+  });
 
-  // Page-specific SEO configurations
-  const pageSEO: PageSEOConfig = {
-    '/': {
-      ...defaultSEO,
-      title: 'Zion Tech Group - Pioneering the Future of Technology',
-      description: 'Leading provider of quantum computing, AI consciousness, autonomous systems, and revolutionary technology solutions. Transform your business with cutting-edge innovation.',
-      structuredData: {
-        ...defaultSEO.structuredData,
-        '@type': 'WebSite',
-        potentialAction: {
-          '@type': 'SearchAction',
-          target: 'https://ziontechgroup.com/search?q={search_term_string}',
-          'query-input': 'required name=search_term_string'
-        }
-      }
-    },
-    '/services': {
-      ...defaultSEO,
-      title: 'Technology Services - Zion Tech Group',
-      description: 'Comprehensive technology services including AI automation, quantum computing, cybersecurity, and enterprise solutions. Expert consulting and implementation.',
-      keywords: [...defaultSEO.keywords, 'technology services', 'consulting', 'implementation', 'enterprise solutions'],
-      structuredData: {
-        '@context': 'https://schema.org',
-        '@type': 'Service',
-        name: 'Technology Services',
-        provider: {
-          '@type': 'Organization',
-          name: 'Zion Tech Group'
-        },
-        description: 'Comprehensive technology services including AI automation, quantum computing, and cybersecurity.',
-        areaServed: 'Worldwide',
-        serviceType: 'Technology Consulting'
-      }
-    },
-    '/about': {
-      ...defaultSEO,
-      title: 'About Zion Tech Group - Our Mission & Vision',
-      description: 'Learn about Zion Tech Group\'s mission to pioneer the future of technology through innovation, research, and cutting-edge solutions.',
-      keywords: [...defaultSEO.keywords, 'about us', 'mission', 'vision', 'company history', 'leadership'],
-      structuredData: {
-        '@context': 'https://schema.org',
-        '@type': 'AboutPage',
-        mainEntity: {
-          '@type': 'Organization',
-          name: 'Zion Tech Group',
-          description: 'Pioneering the future of technology through innovation and research.'
-        }
-      }
-    },
-    '/contact': {
-      ...defaultSEO,
-      title: 'Contact Zion Tech Group - Get in Touch',
-      description: 'Contact Zion Tech Group for technology consulting, AI solutions, quantum computing services, and enterprise technology partnerships.',
-      keywords: [...defaultSEO.keywords, 'contact', 'consulting', 'partnerships', 'support'],
-      structuredData: {
-        '@context': 'https://schema.org',
-        '@type': 'ContactPage',
-        mainEntity: {
-          '@type': 'Organization',
-          name: 'Zion Tech Group',
-          contactPoint: {
-            '@type': 'ContactPoint',
-            contactType: 'customer service',
-            email: 'info@ziontechgroup.com',
-            availableLanguage: 'English'
-          }
-        }
-      }
-    }
-  };
+  const [showAnalysis, setShowAnalysis] = useState(false);
 
-  // Get current page SEO data
-  const getCurrentPageSEO = (): SEOData => {
-    const path = router.pathname;
-    return pageSEO[path] || defaultSEO;
-  };
+  useEffect(() => {
+    analyzeSEO();
+  }, [seoData]);
 
-  // Generate dynamic meta tags
-  const generateMetaTags = (seoData: SEOData) => {
-    const tags = [
-      // Basic meta tags
-      { name: 'description', content: seoData.description },
-      { name: 'keywords', content: seoData.keywords.join(', ') },
-      { name: 'author', content: 'Zion Tech Group' },
-      { name: 'robots', content: 'index, follow' },
-      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      
-      // Open Graph tags
-      { property: 'og:title', content: seoData.title },
-      { property: 'og:description', content: seoData.description },
-      { property: 'og:type', content: seoData.ogType },
-      { property: 'og:url', content: seoData.canonicalUrl + router.asPath },
-      { property: 'og:image', content: seoData.ogImage },
-      { property: 'og:site_name', content: 'Zion Tech Group' },
-      { property: 'og:locale', content: 'en_US' },
-      
-      // Twitter Card tags
-      { name: 'twitter:card', content: seoData.twitterCard },
-      { name: 'twitter:title', content: seoData.title },
-      { name: 'twitter:description', content: seoData.description },
-      { name: 'twitter:image', content: seoData.ogImage },
-      { name: 'twitter:site', content: '@ziontechgroup' },
-      
-      // Additional SEO tags
-      { name: 'theme-color', content: '#06b6d4' },
-      { name: 'msapplication-TileColor', content: '#06b6d4' },
-      { name: 'apple-mobile-web-app-capable', content: 'yes' },
-      { name: 'apple-mobile-web-app-status-bar-style', content: 'black-translucent' },
-      
-      // Security headers
-      { 'http-equiv': 'X-UA-Compatible', content: 'IE=edge' },
-      { 'http-equiv': 'X-Content-Type-Options', content: 'nosniff' },
-      { 'http-equiv': 'X-Frame-Options', content: 'DENY' },
-      { 'http-equiv': 'X-XSS-Protection', content: '1; mode=block' },
-      { 'http-equiv': 'Referrer-Policy', content: 'strict-origin-when-cross-origin' }
-    ];
-
-    return tags;
-  };
-
-  // SEO audit function
-  const performSEOAudit = () => {
+  const analyzeSEO = () => {
     const issues: string[] = [];
+    const recommendations: string[] = [];
     let score = 100;
 
-    // Check title length
-    const currentSEO = getCurrentPageSEO();
-    if (currentSEO.title.length < 30 || currentSEO.title.length > 60) {
+    // Check title
+    if (seoData.title.length < 30 || seoData.title.length > 60) {
       issues.push('Title length should be between 30-60 characters');
-      score -= 10;
-    }
-
-    // Check description length
-    if (currentSEO.description.length < 120 || currentSEO.description.length > 160) {
-      issues.push('Description length should be between 120-160 characters');
-      score -= 10;
-    }
-
-    // Check for keywords in title and description
-    const titleLower = currentSEO.title.toLowerCase();
-    const descLower = currentSEO.description.toLowerCase();
-    const hasKeywords = currentSEO.keywords.some(keyword => 
-      titleLower.includes(keyword.toLowerCase()) || descLower.includes(keyword.toLowerCase())
-    );
-
-    if (!hasKeywords) {
-      issues.push('Keywords should be included in title or description');
       score -= 15;
+    } else {
+      recommendations.push('Title length is optimal');
     }
 
-    // Check for proper heading structure
-    const headings = document.querySelectorAll('h1, h2, h3, h4, h5, h6');
-    if (headings.length === 0) {
-      issues.push('Page should have proper heading structure');
-      score -= 20;
+    // Check description
+    if (seoData.description.length < 120 || seoData.description.length > 160) {
+      issues.push('Description length should be between 120-160 characters');
+      score -= 15;
+    } else {
+      recommendations.push('Description length is optimal');
     }
 
-    // Check for images with alt text
-    const images = document.querySelectorAll('img');
-    const imagesWithoutAlt = Array.from(images).filter(img => !img.alt);
-    if (imagesWithoutAlt.length > 0) {
-      issues.push(`${imagesWithoutAlt.length} images missing alt text`);
-      score -= Math.min(15, imagesWithoutAlt.length * 3);
-    }
-
-    // Check for internal links
-    const internalLinks = document.querySelectorAll('a[href^="/"]');
-    if (internalLinks.length < 3) {
-      issues.push('Page should have internal links for better SEO');
+    // Check keywords
+    if (seoData.keywords.length < 3) {
+      issues.push('Include at least 3-5 relevant keywords');
       score -= 10;
+    } else {
+      recommendations.push('Keywords are well defined');
     }
 
-    setSeoScore(Math.max(0, score));
-    setSeoIssues(issues);
+    // Check OG image
+    if (!seoData.ogImage) {
+      issues.push('Open Graph image is missing');
+      score -= 10;
+    } else {
+      recommendations.push('Open Graph image is present');
+    }
+
+    // Check canonical URL
+    if (!seoData.canonicalUrl) {
+      issues.push('Canonical URL is missing');
+      score -= 10;
+    } else {
+      recommendations.push('Canonical URL is present');
+    }
+
+    // Check structured data
+    if (!seoData.structuredData) {
+      issues.push('Structured data is missing');
+      score -= 20;
+    } else {
+      recommendations.push('Structured data is present');
+    }
+
+    // Additional recommendations
+    if (seoData.title.includes(seoData.keywords[0])) {
+      recommendations.push('Primary keyword is in title');
+    } else {
+      issues.push('Primary keyword should be in title');
+      score -= 5;
+    }
+
+    if (seoData.description.includes(seoData.keywords[0])) {
+      recommendations.push('Primary keyword is in description');
+    } else {
+      issues.push('Primary keyword should be in description');
+      score -= 5;
+    }
+
+    setAnalysis({
+      score: Math.max(0, score),
+      issues,
+      recommendations,
+      metaTags: {
+        title: seoData.title.length >= 30 && seoData.title.length <= 60,
+        description: seoData.description.length >= 120 && seoData.description.length <= 160,
+        keywords: seoData.keywords.length >= 3,
+        ogImage: !!seoData.ogImage,
+        canonical: !!seoData.canonicalUrl,
+        structuredData: !!seoData.structuredData
+      }
+    });
   };
 
-  // Update page tracking
-  useEffect(() => {
-    setCurrentPage(router.pathname);
-    performSEOAudit();
-  }, [router.pathname]);
+  const getScoreColor = (score: number) => {
+    if (score >= 90) return 'text-green-400';
+    if (score >= 80) return 'text-yellow-400';
+    if (score >= 70) return 'text-orange-400';
+    return 'text-red-400';
+  };
 
-  const currentSEO = getCurrentPageSEO();
-  const metaTags = generateMetaTags(currentSEO);
+  const getScoreGrade = (score: number) => {
+    if (score >= 90) return 'A';
+    if (score >= 80) return 'B';
+    if (score >= 70) return 'C';
+    if (score >= 60) return 'D';
+    return 'F';
+  };
 
   return (
     <>
-      <Head>
-        <title>{currentSEO.title}</title>
-        <link rel="canonical" href={currentSEO.canonicalUrl + router.asPath} />
-        
-        {/* Meta tags */}
-        {metaTags.map((tag, index) => (
-          <meta key={index} {...tag} />
-        ))}
+      {/* SEO Analysis Button */}
+      <button
+        onClick={() => setShowAnalysis(true)}
+        className="fixed bottom-36 right-6 z-50 w-14 h-14 bg-gradient-to-r from-purple-500 to-pink-500 text-white rounded-full shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-110 focus:outline-none focus:ring-4 focus:ring-purple-500/50"
+        aria-label="Open SEO analysis"
+      >
+        <Search className="w-7 h-7 mx-auto" />
+      </button>
 
-        {/* Structured data */}
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify(currentSEO.structuredData)
-          }}
-        />
+      {/* SEO Analysis Panel */}
+      {showAnalysis && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm">
+          <div className="bg-gray-900 border border-purple-500/30 rounded-2xl p-6 w-full max-w-4xl max-h-[90vh] overflow-y-auto">
+            {/* Header */}
+            <div className="flex items-center justify-between mb-6">
+              <h2 className="text-2xl font-bold text-white flex items-center gap-2">
+                <TrendingUp className="w-6 h-6 text-purple-400" />
+                SEO Analysis
+              </h2>
+              <button
+                onClick={() => setShowAnalysis(false)}
+                className="p-2 text-gray-400 hover:text-white transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-purple-500/50 rounded-lg"
+                aria-label="Close SEO analysis"
+              >
+                <X className="w-5 h-5" />
+              </button>
+            </div>
 
-        {/* Preconnect to external domains */}
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        
-        {/* Favicon and app icons */}
-        <link rel="icon" href="/favicon.ico" />
-        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
-        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
-        <link rel="manifest" href="/site.webmanifest" />
-        
-        {/* DNS prefetch for performance */}
-        <link rel="dns-prefetch" href="//www.google-analytics.com" />
-        <link rel="dns-prefetch" href="//fonts.googleapis.com" />
-        
-        {/* Additional SEO meta tags */}
-        <meta name="google-site-verification" content="your-verification-code" />
-        <meta name="msvalidate.01" content="your-bing-verification-code" />
-        
-        {/* Social media verification */}
-        <meta name="twitter:creator" content="@ziontechgroup" />
-        <meta name="twitter:domain" content="ziontechgroup.com" />
-        
-        {/* Mobile optimization */}
-        <meta name="format-detection" content="telephone=no" />
-        <meta name="mobile-web-app-capable" content="yes" />
-        
-        {/* Performance hints */}
-        <link rel="preload" href="/fonts/inter-var.woff2" as="font" type="font/woff2" crossOrigin="anonymous" />
-        <link rel="preload" href="/images/hero-bg.jpg" as="image" />
-      </Head>
+            {/* SEO Score */}
+            <div className="mb-6 p-4 bg-gray-800 rounded-xl border border-purple-500/20">
+              <div className="flex items-center justify-between">
+                <div>
+                  <h3 className="text-lg font-semibold text-white mb-2">SEO Score</h3>
+                  <p className="text-gray-400 text-sm">Based on best practices and optimization</p>
+                </div>
+                <div className="text-right">
+                  <div className={`text-4xl font-bold ${getScoreColor(analysis.score)}`}>
+                    {getScoreGrade(analysis.score)}
+                  </div>
+                  <div className={`text-2xl font-bold ${getScoreColor(analysis.score)}`}>
+                    {analysis.score}
+                  </div>
+                  <div className="text-sm text-gray-400">out of 100</div>
+                </div>
+              </div>
+            </div>
 
-      {/* SEO Status Indicator (Development only) */}
-      {process.env.NODE_ENV === 'development' && (
-        <div className="fixed bottom-4 left-4 z-50 bg-black/90 backdrop-blur-lg border border-cyan-500/30 rounded-2xl p-4 w-80">
-          <div className="flex items-center justify-between mb-3">
-            <h3 className="text-lg font-bold text-cyan-400">SEO Status</h3>
-            <div className={`px-3 py-1 rounded-full text-sm font-bold ${
-              seoScore >= 90 ? 'bg-green-600 text-white' :
-              seoScore >= 80 ? 'bg-yellow-600 text-white' :
-              seoScore >= 70 ? 'bg-orange-600 text-white' :
-              'bg-red-600 text-white'
-            }`}>
-              {seoScore}/100
+            {/* Meta Tags Status */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+              <div className="bg-gray-800 p-4 rounded-xl border border-gray-700">
+                <h3 className="text-lg font-semibold text-white mb-3 flex items-center gap-2">
+                  <Eye className="w-5 h-5 text-blue-400" />
+                  Meta Tags Status
+                </h3>
+                <div className="space-y-3">
+                  <div className="flex items-center justify-between">
+                    <span className="text-gray-300">Title</span>
+                    {analysis.metaTags.title ? (
+                      <CheckCircle className="w-5 h-5 text-green-400" />
+                    ) : (
+                      <AlertTriangle className="w-5 h-5 text-red-400" />
+                    )}
+                  </div>
+                  <div className="flex items-center justify-between">
+                    <span className="text-gray-300">Description</span>
+                    {analysis.metaTags.description ? (
+                      <CheckCircle className="w-5 h-5 text-green-400" />
+                    ) : (
+                      <AlertTriangle className="w-5 h-5 text-red-400" />
+                    )}
+                  </div>
+                  <div className="flex items-center justify-between">
+                    <span className="text-gray-300">Keywords</span>
+                    {analysis.metaTags.keywords ? (
+                      <CheckCircle className="w-5 h-5 text-green-400" />
+                    ) : (
+                      <AlertTriangle className="w-5 h-5 text-red-400" />
+                    )}
+                  </div>
+                  <div className="flex items-center justify-between">
+                    <span className="text-gray-300">OG Image</span>
+                    {analysis.metaTags.ogImage ? (
+                      <CheckCircle className="w-5 h-5 text-green-400" />
+                    ) : (
+                      <AlertTriangle className="w-5 h-5 text-red-400" />
+                    )}
+                  </div>
+                  <div className="flex items-center justify-between">
+                    <span className="text-gray-300">Canonical</span>
+                    {analysis.metaTags.canonical ? (
+                      <CheckCircle className="w-5 h-5 text-green-400" />
+                    ) : (
+                      <AlertTriangle className="w-5 h-5 text-red-400" />
+                    )}
+                  </div>
+                  <div className="flex items-center justify-between">
+                    <span className="text-gray-300">Structured Data</span>
+                    {analysis.metaTags.structuredData ? (
+                      <CheckCircle className="w-5 h-5 text-green-400" />
+                    ) : (
+                      <AlertTriangle className="w-5 h-5 text-red-400" />
+                    )}
+                  </div>
+                </div>
+              </div>
+
+              <div className="bg-gray-800 p-4 rounded-xl border border-gray-700">
+                <h3 className="text-lg font-semibold text-white mb-3 flex items-center gap-2">
+                  <BarChart3 className="w-5 h-5 text-green-400" />
+                  Current SEO Data
+                </h3>
+                <div className="space-y-3 text-sm">
+                  <div>
+                    <span className="text-gray-300">Title:</span>
+                    <p className="text-white font-mono text-xs break-words">
+                      {seoData.title}
+                    </p>
+                  </div>
+                  <div>
+                    <span className="text-gray-300">Description:</span>
+                    <p className="text-white font-mono text-xs break-words">
+                      {seoData.description}
+                    </p>
+                  </div>
+                  <div>
+                    <span className="text-gray-300">Keywords:</span>
+                    <p className="text-white font-mono text-xs">
+                      {seoData.keywords.join(', ')}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Issues and Recommendations */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+              <div className="bg-gray-800 p-4 rounded-xl border border-gray-700">
+                <h3 className="text-lg font-semibold text-white mb-3 flex items-center gap-2">
+                  <AlertTriangle className="w-5 h-5 text-red-400" />
+                  Issues Found
+                </h3>
+                <div className="space-y-2">
+                  {analysis.issues.length > 0 ? (
+                    analysis.issues.map((issue, index) => (
+                      <div key={index} className="flex items-start gap-2">
+                        <div className="w-2 h-2 bg-red-400 rounded-full mt-2 flex-shrink-0"></div>
+                        <span className="text-red-300 text-sm">{issue}</span>
+                      </div>
+                    ))
+                  ) : (
+                    <p className="text-green-400 text-sm">No issues found! Your SEO is optimized.</p>
+                  )}
+                </div>
+              </div>
+
+              <div className="bg-gray-800 p-4 rounded-xl border border-gray-700">
+                <h3 className="text-lg font-semibold text-white mb-3 flex items-center gap-2">
+                  <CheckCircle className="w-5 h-5 text-green-400" />
+                  Recommendations
+                </h3>
+                <div className="space-y-2">
+                  {analysis.recommendations.map((rec, index) => (
+                    <div key={index} className="flex items-start gap-2">
+                      <div className="w-2 h-2 bg-green-400 rounded-full mt-2 flex-shrink-0"></div>
+                      <span className="text-green-300 text-sm">{rec}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+
+            {/* Social Media Preview */}
+            <div className="bg-gray-800 p-4 rounded-xl border border-gray-700 mb-6">
+              <h3 className="text-lg font-semibold text-white mb-3 flex items-center gap-2">
+                <Share2 className="w-5 h-5 text-pink-400" />
+                Social Media Preview
+              </h3>
+              <div className="bg-white rounded-lg p-4 max-w-md">
+                <div className="w-full h-32 bg-gray-200 rounded mb-3 flex items-center justify-center">
+                  {seoData.ogImage ? (
+                    <img 
+                      src={seoData.ogImage} 
+                      alt="Social media preview" 
+                      className="w-full h-full object-cover rounded"
+                    />
+                  ) : (
+                    <span className="text-gray-500">No image</span>
+                  )}
+                </div>
+                <h4 className="font-bold text-gray-900 text-sm mb-1 line-clamp-2">
+                  {seoData.title}
+                </h4>
+                <p className="text-gray-600 text-xs line-clamp-2">
+                  {seoData.description}
+                </p>
+                <p className="text-gray-400 text-xs mt-2">
+                  ziontechgroup.com
+                </p>
+              </div>
+            </div>
+
+            {/* Action Items */}
+            <div className="bg-gray-800 p-4 rounded-xl border border-gray-700">
+              <h3 className="text-lg font-semibold text-white mb-3 flex items-center gap-2">
+                <Target className="w-5 h-5 text-yellow-400" />
+                Action Items
+              </h3>
+              <div className="space-y-2 text-sm text-gray-300">
+                {analysis.score < 90 && (
+                  <>
+                    <p>• Fix identified issues to improve SEO score</p>
+                    <p>• Optimize meta tags for better search visibility</p>
+                    <p>• Ensure structured data is properly implemented</p>
+                    <p>• Monitor Core Web Vitals for performance</p>
+                  </>
+                )}
+                {analysis.score >= 90 && (
+                  <p className="text-green-400">Excellent SEO optimization! Continue monitoring and stay updated with best practices.</p>
+                )}
+              </div>
             </div>
           </div>
-          
-          <div className="text-sm text-gray-300 mb-3">
-            <p><strong>Page:</strong> {currentPage}</p>
-            <p><strong>Title:</strong> {currentSEO.title}</p>
-            <p><strong>Description:</strong> {currentSEO.description.substring(0, 100)}...</p>
-          </div>
-
-          {seoIssues.length > 0 && (
-            <div className="mb-3">
-              <h4 className="text-sm font-semibold text-red-400 mb-2">Issues Found:</h4>
-              <ul className="space-y-1">
-                {seoIssues.map((issue, index) => (
-                  <li key={index} className="text-xs text-red-300">• {issue}</li>
-                ))}
-              </ul>
-            </div>
-          )}
-
-          <button
-            onClick={performSEOAudit}
-            className="w-full bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-600 hover:to-blue-700 text-white font-semibold py-2 px-4 rounded-xl transition-all duration-300"
-          >
-            Re-run SEO Audit
-          </button>
         </div>
       )}
+
+      {/* SEO Meta Tags */}
+      <Head>
+        <title>{seoData.title}</title>
+        <meta name="description" content={seoData.description} />
+        <meta name="keywords" content={seoData.keywords.join(', ')} />
+        
+        {/* Open Graph */}
+        <meta property="og:title" content={seoData.title} />
+        <meta property="og:description" content={seoData.description} />
+        <meta property="og:image" content={seoData.ogImage} />
+        <meta property="og:url" content={seoData.canonicalUrl} />
+        <meta property="og:type" content="website" />
+        <meta property="og:site_name" content="Zion Tech Group" />
+        
+        {/* Twitter */}
+        <meta name="twitter:card" content={seoData.socialMedia.twitter.card} />
+        <meta name="twitter:site" content={seoData.socialMedia.twitter.site} />
+        <meta name="twitter:creator" content={seoData.socialMedia.twitter.creator} />
+        <meta name="twitter:title" content={seoData.title} />
+        <meta name="twitter:description" content={seoData.description} />
+        <meta name="twitter:image" content={seoData.ogImage} />
+        
+        {/* Facebook */}
+        <meta property="fb:app_id" content={seoData.socialMedia.facebook.appId} />
+        <meta property="og:type" content={seoData.socialMedia.facebook.type} />
+        
+        {/* Canonical */}
+        {seoData.canonicalUrl && (
+          <link rel="canonical" href={seoData.canonicalUrl} />
+        )}
+        
+        {/* Structured Data */}
+        {seoData.structuredData && (
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{
+              __html: JSON.stringify(seoData.structuredData)
+            }}
+          />
+        )}
+        
+        {/* Additional SEO Meta Tags */}
+        <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+        <meta name="author" content="Zion Tech Group" />
+        <meta name="language" content="English" />
+        <meta name="revisit-after" content="7 days" />
+        <meta name="distribution" content="global" />
+        <meta name="rating" content="general" />
+        
+        {/* Mobile Optimization */}
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="format-detection" content="telephone=no" />
+        
+        {/* Security */}
+        <meta httpEquiv="X-Content-Type-Options" content="nosniff" />
+        <meta httpEquiv="X-Frame-Options" content="DENY" />
+        <meta httpEquiv="X-XSS-Protection" content="1; mode=block" />
+        
+        {/* Performance */}
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link rel="dns-prefetch" href="//cdn.ziontechgroup.com" />
+        <link rel="dns-prefetch" href="//api.ziontechgroup.com" />
+      </Head>
     </>
   );
 };

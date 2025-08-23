@@ -69,7 +69,7 @@ const AIConsciousnessEvolutionPage: React.FC = () => {
                   Building AI capable of understanding, processing, and responding to 
                   human emotions and social contexts.
                 </p>
->>>>>>> 17df199e451813150094c5ab1fb554b04628cb60
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
               </div>
             </div>
           </div>
@@ -169,7 +169,7 @@ const AIConsciousnessEvolutionPage: React.FC = () => {
                 <h3 className="text-lg font-semibold text-white mb-2">Global Network</h3>
                 <p className="text-gray-300 text-sm">Worldwide infrastructure for consciousness research</p>
               </div>
->>>>>>> 17df199e451813150094c5ab1fb554b04628cb60
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
             </div>
           </div>
         </section>
@@ -299,7 +299,6 @@ const AIConsciousnessEvolutionPage: React.FC = () => {
                     <li>• Community forums and discussions</li>
                   </ul>
                 </div>
->>>>>>> origin/HEAD
               </div>
             </div>
           </div>
@@ -312,5 +311,4 @@ export default AIConsciousnessEvolution;
 };
 
 export default AIConsciousnessEvolutionPage;
->>>>>>> origin/HEAD
->>>>>>> 17df199e451813150094c5ab1fb554b04628cb60
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96

@@ -321,12 +321,13 @@ const Mission: React.FC = () => {
         </section>
 
         {/* CTA Section */}
-        <section className="py-20 px-4 sm:px-6 lg:px-8">
-          <div className="max-w-4xl mx-auto text-center">
+        <section className="py-20">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 1.4 }}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
             >
               <h2 className="text-4xl font-bold mb-6">Join Us in Shaping the Future</h2>
               <p className="text-xl text-gray-400 mb-8">
@@ -349,10 +350,10 @@ const Mission: React.FC = () => {
             </motion.div>
           </div>
         </section>
->>>>>>> 17df199e451813150094c5ab1fb554b04628cb60
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
       </div>
     </Layout>
   );
 };
 
-export default MissionPage;
+export default Mission;

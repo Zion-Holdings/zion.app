@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { X, Settings, Shield, Cookie, Info } from 'lucide-react';
 
@@ -6,19 +6,30 @@ interface CookiePreferences {
   necessary: boolean;
   analytics: boolean;
   marketing: boolean;
-  functional: boolean;
+  preferences: boolean;
 }
 
-const CookieConsentBanner: React.FC = () => {
+interface CookieConsentBannerProps {
+  enabled?: boolean;
+  showUI?: boolean;
+}
+
+const CookieConsentBanner: React.FC<CookieConsentBannerProps> = ({
+  enabled = true,
+  showUI = false
+}) => {
   const [isVisible, setIsVisible] = useState(false);
   const [showSettings, setShowSettings] = useState(false);
   const [preferences, setPreferences] = useState<CookiePreferences>({
     necessary: true,
     analytics: false,
     marketing: false,
-    functional: false
+    preferences: false
   });
+  const [hasConsented, setHasConsented] = useState(false);
+  const timeoutRef = useRef<NodeJS.Timeout | null>(null);
 
+  // Performance optimization: Check consent status
   useEffect(() => {
     // Check if user has already made a choice
     const consent = localStorage.getItem('cookie-consent');
@@ -35,6 +46,10 @@ const CookieConsentBanner: React.FC = () => {
         console.warn('Failed to load cookie preferences:', error);
       }
     }
+
+    timeoutRef.current = setTimeout(() => {
+      setIsVisible(true);
+    }, 2000); // Show after 2 seconds
   }, []);
 
   const handleAcceptAll = () => {
@@ -42,7 +57,7 @@ const CookieConsentBanner: React.FC = () => {
       necessary: true,
       analytics: true,
       marketing: true,
-      functional: true
+      preferences: true
     };
     
     setPreferences(allAccepted);
@@ -58,7 +73,7 @@ const CookieConsentBanner: React.FC = () => {
       necessary: true,
       analytics: false,
       marketing: false,
-      functional: false
+      preferences: false
     };
     
     setPreferences(necessaryOnly);

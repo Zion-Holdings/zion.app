@@ -15,9 +15,9 @@ import {
 } from "@/components/ui/select";
 import { Checkbox } from "@/components/ui/checkbox";
 import Skeleton from "react-loading-skeleton";
-import "react-loading-skeleton/dist/skeleton.css";
+import Head from 'next/head';
 import { Slider } from "@/components/ui/slider";
-import { ProductListing, ListingView } from "@/types/listings";
+import type { ProductListing, ListingView } from "@/types/listings";
 
 import { toast } from "@/hooks/use-toast";
 import { captureException } from "@/utils/sentry";
@@ -357,7 +357,7 @@ export function DynamicListingPage({
                       variant="outline"
                       size="sm"
                       onClick={() => {
-                        logInfo('Rating selected:', { data: rating });
+                        logInfo('Rating selected:', { data:  { data: rating } });
                         setSelectedRating(rating);
                       }}
                       aria-pressed={selectedRating === rating}
@@ -414,7 +414,7 @@ export function DynamicListingPage({
                     placeholder="Search listings..."
                     value={searchQuery}
                     onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
-                      logInfo('Search query:', { data: e.target.value });
+                      logInfo('Search query:', { data:  { data: e.target.value } });
                       setSearchQuery(e.target.value);
                     }}
                     className="pl-10 bg-zion-blue border border-zion-blue-light text-white"
@@ -442,9 +442,7 @@ export function DynamicListingPage({
                     className="border-zion-blue-light text-zion-slate-light focus-visible:ring-zion-purple"
                   >
                     {ToggleViewIcon}
-                    <span className="sr-only">
-                      {isGrid ? "List view" : "Grid view"}
-                    </span>
+                    <span className="sr-only">{isGrid ? "List view" : "Grid view"}</span>
                   </Button>
                 </div>
               </div>

@@ -9,8 +9,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Select, SelectValue, SelectTrigger, SelectContent, SelectItem } from "@/components/ui/select";
 import { OptimizedImage } from "@/components/ui/OptimizedImage";
-import { BlogPost } from "@/types/blog";
-import { generateRandomBlogPost } from "@/utils/generateRandomBlogPost";
+import type { BlogPost } from "@/types/blog";
 import { BLOG_POSTS } from "@/data/blog-posts";
 import { Search } from 'lucide-react';
 
@@ -34,7 +33,7 @@ export interface BlogProps {
 }
 
 export default function Blog({ posts: initialPosts = BLOG_POSTS }: BlogProps) {
-  logInfo('BlogPage rendering. Initial BLOG_POSTS:', { data: initialPosts });
+  logInfo('BlogPage rendering. Initial BLOG_POSTS:', { data:  { data: initialPosts } });
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedCategory, setSelectedCategory] = useState("All Categories");
   const [posts, setPosts] = useState<BlogPost[]>([...initialPosts]);
@@ -62,9 +61,9 @@ export default function Blog({ posts: initialPosts = BLOG_POSTS }: BlogProps) {
     const fetchPosts = async () => {
       setIsLoading(true);
       try {
-        const data: BlogPost[] = await fetchWithRetry(
+        const data = await fetchWithRetry(
           `/api/blog?query=${encodeURIComponent(query)}`
-        );
+        ) as BlogPost[];
         setPosts(data);
       } catch (err) {
         logErrorToProduction('Failed to fetch blog posts', { data: err });
@@ -88,7 +87,7 @@ export default function Blog({ posts: initialPosts = BLOG_POSTS }: BlogProps) {
   // Get featured posts
   const featuredPosts = posts.filter(post => post.isFeatured);
 
-  logInfo('BlogPage filteredPosts:', { data: filteredPosts });
+  logInfo('BlogPage filteredPosts:', { data:  { data: filteredPosts } });
   
   return (
     <>
@@ -98,7 +97,7 @@ export default function Blog({ posts: initialPosts = BLOG_POSTS }: BlogProps) {
         keywords="AI blog, tech trends, IT services blog, artificial intelligence news, technology innovation, digital transformation, sustainable IT"
         canonical="https://app.ziontechgroup.com/blog"
       />
-      <div className="min-h-screen bg-zion-blue pt-12 pb-20 px-4">
+      <main className="min-h-screen bg-zion-blue pt-12 pb-20 px-4">
         <h1>Blog</h1>
         <div className="container mx-auto">
           <div className="text-center mb-12">
@@ -209,7 +208,6 @@ export default function Blog({ posts: initialPosts = BLOG_POSTS }: BlogProps) {
               {filteredPosts.map((post) => (
                 <Card
                   key={post.id}
-                  asChild
                   className="bg-zion-blue-dark border border-zion-blue-light hover:border-zion-purple transition-all duration-300 group-hover:shadow-lg"
                 >
                   <Link href={`/blog/${post.slug}`} className="block group">
@@ -279,7 +277,7 @@ export default function Blog({ posts: initialPosts = BLOG_POSTS }: BlogProps) {
             </div>
           )}
         </div>
-      </div>
+      </main>
     </>
   );
 }

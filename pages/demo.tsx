@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import Layout from '../components/layout/Layout';
+import Head from 'next/head';
+import { Layout } from '../components/layout/Layout';
 import { motion } from 'framer-motion';
 import { 
   Play, 

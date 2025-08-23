@@ -141,3 +141,11 @@ model ChatMessage {
   content   String
   createdAt DateTime @default(now())
 }
+
+model ChatMessage {
+  id        Int      @id @default(autoincrement())
+  roomId    String
+  senderId  Int
+  content   String
+  createdAt DateTime @default(now())
+}

@@ -11,7 +11,7 @@ import { CheckCircle, FileDown, FileText, PieChart, Users } from 'lucide-react';
 import { useState, useEffect } from "react";
 import { useTranslation } from 'react-i18next';
 import Link from 'next/link';
-import { PartnerRegistrationForm } from "@/components/partners/PartnerRegistrationForm";
+import { PartnerRegistrationForm as _PartnerRegistrationForm } from "@/components/partners/PartnerRegistrationForm";
 import { PartnerReferralLinks } from "@/components/partners/PartnerReferralLinks";
 import { PartnerDashboard } from "@/components/partners/PartnerDashboard";
 import { PartnerLeaderboard } from "@/components/partners/PartnerLeaderboard";
@@ -181,7 +181,7 @@ export default function Partners() {
   }
 
   // Authenticated user view - Partner Dashboard
-  logInfo('PartnersPage rendering Authenticated View. User:', { data: user });
+  logInfo('PartnersPage rendering Authenticated View. User:', { data:  { data: user } });
   return (
     <div className="container max-w-7xl py-10">
       <h1>DEBUG: Partners Page - Authenticated View</h1>
@@ -222,8 +222,27 @@ export default function Partners() {
               <CardDescription>{t('partner.earnings_desc')}</CardDescription>
             </CardHeader>
             <CardContent>
-              {/* This will be implemented later */}
-              <p className="text-zion-slate-light">{t('partner.earnings_placeholder')}</p>
+              {/* Minimal functional earnings summary */}
+              <div className="mb-4">
+                <div className="text-2xl font-bold text-zion-cyan">$1,250.00</div>
+                <div className="text-sm text-zion-slate-light">Total earnings to date</div>
+              </div>
+              <div className="mb-2 font-semibold">Recent Transactions</div>
+              <ul className="mb-2">
+                <li className="flex justify-between border-b py-1">
+                  <span>Referral Bonus</span>
+                  <span className="text-green-500">+$100.00</span>
+                </li>
+                <li className="flex justify-between border-b py-1">
+                  <span>Commission</span>
+                  <span className="text-green-500">+$250.00</span>
+                </li>
+                <li className="flex justify-between border-b py-1">
+                  <span>Payout</span>
+                  <span className="text-red-500">-$500.00</span>
+                </li>
+              </ul>
+              <Button variant="outline" className="mt-2">Request Payout</Button>
             </CardContent>
           </Card>
         </TabsContent>

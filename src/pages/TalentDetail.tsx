@@ -20,7 +20,7 @@ export default function TalentDetail() {
       try {
         const profile = await getTalentBySlug(slug);
         setTalent(profile);
-      } catch (err) {
+      } catch (_err) {
         setTalent(null);
       } finally {
         setLoading(false);
@@ -53,7 +53,7 @@ export default function TalentDetail() {
       <SEO
         title={talent.full_name}
         description={talent.bio || 'Talent profile'}
-        ogImage={talent.profile_picture_url}
+        ogImage={talent.profile_picture_url || ''}
       />
       <main className="min-h-screen bg-zion-blue py-8 text-white" data-testid="talent-details">
         <div className="container mx-auto px-4 space-y-4">

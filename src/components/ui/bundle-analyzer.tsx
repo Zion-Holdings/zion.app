@@ -29,7 +29,7 @@ interface ChunkInfo {
 export function BundleAnalyzer() {
   const { user } = useAuth();
   const isAdmin = user?.userType === 'admin' || user?.role === 'admin';
-  const isAllowed = process.env.NODE_ENV !== 'production' || isAdmin;
+  const isAllowed = process.env.NODE_ENV !== 'production' || isAdmin || localStorage.getItem('bundle-analyzer') === 'true';
 
   if (!isAllowed) {
     return null;

@@ -4,7 +4,7 @@ import { Sun, Moon } from 'lucide-react';
 import EnhancedNavigation2025 from './EnhancedNavigation2025';
 import EnhancedFooter2025 from './EnhancedFooter2025';
 import EnhancedSidebar2025 from './EnhancedSidebar2025';
-import UltraFuturisticNeonBackground2026 from '../backgrounds/UltraFuturisticNeonBackground2026';
+import UltraFuturisticBackground2045 from '../backgrounds/UltraFuturisticBackground2045';
 import TopContactBar from './TopContactBar';
 import EnhancedPerformanceMonitor from '../EnhancedPerformanceMonitor';
 import AccessibilityEnhancer from '../EnhancedAccessibilityEnhancer';
@@ -13,18 +13,23 @@ import EnhancedErrorBoundary from '../EnhancedErrorBoundary';
 import ThemeToggle from '../ThemeToggle';
 import LoadingSpinner from '../LoadingSpinner';
 import ServiceWorkerRegistration from '../ServiceWorkerRegistration';
->>>>>>> 17df199e451813150094c5ab1fb554b04628cb60
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
 
 interface LayoutProps {
-	children: React.ReactNode;
+  children: React.ReactNode;
+  title?: string;
+  description?: string;
+  keywords?: string;
+  ogImage?: string;
+  canonicalUrl?: string;
 }
 
 export default function Layout({ 
   children, 
-  title = "Zion Tech Group - Revolutionary 2045 Technology",
+  title = "Zion Tech Group - Revolutionary AI, Quantum Computing & Space Technology Solutions",
   description = "Pioneering the future of technology with revolutionary AI consciousness, quantum computing, and autonomous solutions that transform businesses worldwide.",
-  keywords = "AI consciousness, quantum computing, autonomous solutions, space technology, cybersecurity, business intelligence, Zion Tech Group, 2045 technology",
-  ogImage = "/og-image.jpg",
+  keywords = "AI, artificial intelligence, quantum computing, space technology, cybersecurity, cloud infrastructure, enterprise solutions, autonomous systems, consciousness AI",
+  ogImage = "https://ziontechgroup.com/og-image.jpg",
   canonicalUrl
 }: LayoutProps) {
   const [sidebarOpen, setSidebarOpen] = useState(false);
@@ -32,12 +37,8 @@ export default function Layout({
   const [isLoading, setIsLoading] = useState(true);
   const [theme, setTheme] = useState<'dark' | 'light'>('dark');
 
-  useEffect(() => {
-    // Check for saved theme preference
-    const savedTheme = localStorage.getItem('theme') as 'dark' | 'light';
-    if (savedTheme) {
-      setTheme(savedTheme);
-    }
+    window.addEventListener('online', handleOnline);
+    window.addEventListener('offline', handleOffline);
 
     // Simulate loading time for better UX
     const timer = setTimeout(() => setIsLoading(false), 1000);
@@ -94,8 +95,42 @@ export default function Layout({
   }, [theme]);
 >>>>>>> 17df199e451813150094c5ab1fb554b04628cb60
 
-  const handleThemeToggle = () => {
-    setTheme(prev => prev === 'dark' ? 'light' : 'dark');
+  useEffect(() => {
+    // Check for saved theme preference or default to dark mode
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme) {
+      setDarkMode(savedTheme === 'dark');
+    }
+  }, []);
+
+  // Structured data for better SEO
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Zion Tech Group",
+    "url": "https://ziontechgroup.com",
+    "logo": "https://ziontechgroup.com/logo.png",
+    "description": description,
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "364 E Main St STE 1008",
+      "addressLocality": "Middletown",
+      "addressRegion": "DE",
+      "postalCode": "19709",
+      "addressCountry": "US"
+    },
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "telephone": "+1-302-464-0950",
+      "contactType": "customer service",
+      "email": "kleber@ziontechgroup.com"
+    },
+    "sameAs": [
+      "https://linkedin.com/company/ziontechgroup",
+      "https://twitter.com/ziontechgroup",
+      "https://github.com/ziontechgroup",
+      "https://youtube.com/ziontechgroup"
+    ]
   };
 
   if (isLoading) {
@@ -113,10 +148,7 @@ export default function Layout({
         <meta name="description" content={description} />
         <meta name="keywords" content={keywords} />
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-        <meta charSet="utf-8" />
-        <meta name="robots" content="index, follow" />
-        <meta name="author" content="Zion Tech Group" />
-        <meta name="theme-color" content="#06b6d4" />
+        <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
         
         {/* Canonical URL */}
         {canonicalUrl && <link rel="canonical" href={canonicalUrl} />}
@@ -191,18 +223,18 @@ export default function Layout({
 
       <div className={`min-h-screen ${theme === 'dark' ? 'bg-black text-white' : 'bg-gray-50 text-gray-900'} relative overflow-hidden transition-colors duration-300`}>
         {/* Skip to content link for accessibility */}
-        <a href="#main" className="skip-link sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2 focus:bg-blue-600 focus:text-white focus:rounded">
+        <a href="#main" className="skip-link sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-cyan-500 text-black px-4 py-2 rounded z-50">
           Skip to main content
         </a>
         
-        {/* Background Effects */}
-        <UltraFuturisticBackground2045 theme={theme === 'dark' ? 'quantum-neon' : 'holographic'} />
+        {/* Futuristic Background */}
+        <UltraFuturisticBackground2036 />
         
         {/* Top Contact Bar */}
         <TopContactBar />
         
-        {/* Enhanced Navigation */}
-        <EnhancedNavigation2025 />
+        {/* Navigation */}
+        <UltraFuturisticNavigation2036 />
         
         {/* Enhanced Sidebar */}
         <EnhancedSidebar2025 isOpen={sidebarOpen} onClose={() => setSidebarOpen(false)} />
@@ -237,6 +269,6 @@ export default function Layout({
         )}
       </div>
     </>
->>>>>>> 17df199e451813150094c5ab1fb554b04628cb60
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
   );
-}
+};

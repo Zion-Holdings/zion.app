@@ -1,7 +1,7 @@
 import { ServiceVariant } from '../types/service-variants';
 
 export interface Innovative2037ItService {
->>>>>>> 17df199e451813150094c5ab1fb554b04628cb60
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
   id: string;
   name: string;
   tagline: string;
@@ -28,7 +28,7 @@ export interface Innovative2037ItService {
   marketSize: string;
   growthRate: string;
   variant: ServiceVariant;
->>>>>>> 17df199e451813150094c5ab1fb554b04628cb60
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
   contactInfo: {
     mobile: string;
     email: string;
@@ -229,7 +229,7 @@ export const innovative2037ItServices: Innovative2037ItService[] = [
     launchDate: '2027-02-01',
     customers: 89,
     rating: 4.8,
->>>>>>> 17df199e451813150094c5ab1fb554b04628cb60
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
     reviews: 67
   },
 
@@ -324,6 +324,6 @@ export const innovative2037ItServices: Innovative2037ItService[] = [
     customers: 78,
     rating: 4.7,
     reviews: 56
->>>>>>> 17df199e451813150094c5ab1fb554b04628cb60
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
   }
 ];

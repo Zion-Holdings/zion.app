@@ -3,7 +3,6 @@ import React, { useState } from "react";
 import { Header } from "@/components/Header";
 import { SEO } from "@/components/SEO";
 import { useAuth } from "@/hooks/useAuth";
-import { useRouter } from "next/router";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -67,6 +66,7 @@ export default function TenantOnboarding() {
       };
       
       // Submit to Supabase
+      if (!supabase) throw new Error('Supabase client not initialized');
       const { data, error } = await supabase
         .from('whitelabel_tenants')
         .insert({
@@ -104,10 +104,10 @@ export default function TenantOnboarding() {
         is_co_branded: true
       });
       
-    } catch (error: any) {
+    } catch (error: unknown) {
       logErrorToProduction(error instanceof Error ? error.message : String(error), error instanceof Error ? error : undefined, { message: 'Error creating tenant' });
       toast.error("Failed to create tenant", {
-        description: error.message
+        description: (typeof error === 'object' && error && 'message' in error ? (error as { message?: string }).message : 'Unknown error')
       });
     } finally {
       setIsSubmitting(false);

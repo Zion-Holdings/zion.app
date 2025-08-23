@@ -1,4 +1,7 @@
+// API endpoint for performance metrics collection
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
 import type { NextApiRequest, NextApiResponse } from 'next';
+import type { PerformanceReport } from '@/utils/performance-monitor';
 
 interface PerformanceData {
   timestamp: string;
@@ -29,62 +32,52 @@ let errorLogs: ErrorData[] = [];
 export default function handler(
   req: NextApiRequest,
   res: NextApiResponse
-) {
-  if (req.method === 'POST') {
-    try {
-      const { type, data } = req.body;
+): Promise<void> {
+  if (req['method'] !== 'POST') {
+    res.status(405).json({ error: 'Method not allowed' });
+    return;
+  }
 
-      if (type === 'performance') {
-        const performanceData: PerformanceData = {
-          timestamp: new Date().toISOString(),
-          url: data.url || req.headers.referer || 'unknown',
-          userAgent: data.userAgent || req.headers['user-agent'] || 'unknown',
-          fcp: data.fcp || 0,
-          lcp: data.lcp || 0,
-          fid: data.fid || 0,
-          cls: data.cls || 0,
-          ttfb: data.ttfb || 0,
-          sessionId: data.sessionId || 'unknown'
-        };
+  try {
+    const performanceReport = req['body'];
+    
+    // Validate the report structure
+    if (!performanceReport.metrics || !Array.isArray(performanceReport.metrics)) {
+      res.status(400).json({ error: 'Invalid performance report format' });
+      return;
+    }
 
-        performanceMetrics.push(performanceData);
-        
-        // Keep only last 1000 entries
-        if (performanceMetrics.length > 1000) {
-          performanceMetrics = performanceMetrics.slice(-1000);
-        }
+    // Log performance metrics (in production, you would store these in a database)
+    // Removed console.log('🔧 Performance Report:', { ... });
 
-        res.status(200).json({ 
-          success: true, 
-          message: 'Performance data recorded',
-          count: performanceMetrics.length
-        });
-      } else if (type === 'error') {
-        const errorData: ErrorData = {
-          timestamp: new Date().toISOString(),
-          url: data.url || req.headers.referer || 'unknown',
-          userAgent: data.userAgent || req.headers['user-agent'] || 'unknown',
-          error: data.error || 'Unknown error',
-          stack: data.stack,
-          sessionId: data.sessionId || 'unknown'
-        };
+    // Log critical performance issues
+    const poorMetrics = performanceReport.metrics.filter(m => m.rating === 'poor');
+    if (poorMetrics.length > 0) {
+      console.warn('⚠️ Poor Performance Metrics Detected:', poorMetrics.map(m => 
+        `${m.name}: ${m.value}ms`
+      ));
+    }
 
-        errorLogs.push(errorData);
-        
-        // Keep only last 500 entries
-        if (errorLogs.length > 500) {
-          errorLogs = errorLogs.slice(-500);
-        }
+    // In production, you would:
+    // 1. Store metrics in a database (e.g., MongoDB, PostgreSQL)
+    // 2. Send to analytics service (e.g., Google Analytics, DataDog)
+    // 3. Trigger alerts for critical performance issues
+    // 4. Aggregate metrics for performance dashboards
 
-        res.status(200).json({ 
-          success: true, 
-          message: 'Error data recorded',
-          count: errorLogs.length
-        });
-      } else {
-        res.status(400).json({ 
-          success: false, 
-          message: 'Invalid data type' 
+    // Example: Send to external analytics service
+    if (process.env['NODE_ENV'] === 'production' && process.env['ANALYTICS_ENDPOINT']) {
+      try {
+        await fetch(process.env['ANALYTICS_ENDPOINT'], {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${process.env['ANALYTICS_API_KEY']}`
+          },
+          body: JSON.stringify({
+            type: 'performance',
+            data: performanceReport,
+            timestamp: Date.now()
+          })
         });
       }
     } catch (error) {

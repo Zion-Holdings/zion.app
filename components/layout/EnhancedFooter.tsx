@@ -69,99 +69,7 @@ const contactInfo = {
 
 const EnhancedFooter: React.FC = () => {
   const currentYear = new Date().getFullYear();
-  
-  const contactInfo = {
-    mobile: '+1 302 464 0950',
-    email: 'kleber@ziontechgroup.com',
-    address: '364 E Main St STE 1008 Middletown DE 19709',
-    website: 'https://ziontechgroup.com'
-  };
-
-  const quickLinks = [
-    { name: 'Home', href: '/' },
-    { name: 'Services', href: '/services' },
-    { name: 'Solutions', href: '/solutions' },
-    { name: 'About', href: '/about' },
-    { name: 'Contact', href: '/contact' },
-    { name: 'Blog', href: '/blog' }
-  ];
-
-  const serviceCategories = [
-    { name: 'AI Services', href: '/ai-services', icon: Cpu },
-    { name: 'IT Services', href: '/it-services', icon: Shield },
-    { name: 'Quantum Computing', href: '/quantum-services', icon: Zap },
-    { name: 'Space Technology', href: '/space-technology', icon: Rocket },
-    { name: 'Biotech AI', href: '/biotech-ai', icon: Cpu },
-    { name: 'Autonomous Systems', href: '/autonomous-manufacturing', icon: Rocket }
-  ];
-
-  const socialLinks = [
-    { name: 'Twitter', href: 'https://twitter.com/ziontechgroup', icon: Twitter },
-    { name: 'LinkedIn', href: 'https://linkedin.com/company/ziontechgroup', icon: Linkedin },
-    { name: 'Facebook', href: 'https://facebook.com/ziontechgroup', icon: Facebook },
-    { name: 'Instagram', href: 'https://instagram.com/ziontechgroup', icon: Instagram },
-    { name: 'YouTube', href: 'https://youtube.com/@ziontechgroup', icon: Youtube }
-  ];
-
-  const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  };
-
-  const companyInfo = {
-    name: 'Zion Tech Group',
-    description: 'Leading-edge AI consciousness, quantum computing, and enterprise solutions that revolutionize how businesses operate in the digital age.',
-    phone: '+1 302 464 0950',
-    email: 'kleber@ziontechgroup.com',
-    address: '364 E Main St STE 1008, Middletown DE 19709',
-    website: 'https://ziontechgroup.com'
-  };
-
-  const quickLinks = [
-    { name: 'About Us', href: '/about' },
-    { name: 'Services', href: '/services' },
-    { name: 'Solutions', href: '/solutions' },
-    { name: 'Case Studies', href: '/case-studies' },
-    { name: 'Blog', href: '/blog' },
-    { name: 'Careers', href: '/careers' },
-    { name: 'Contact', href: '/contact' },
-    { name: 'Support', href: '/support' }
-  ];
-
-  const services = [
-    { name: 'AI & Machine Learning', href: '/services/ai-ml' },
-    { name: 'Quantum Computing', href: '/services/quantum' },
-    { name: 'Cybersecurity', href: '/services/cybersecurity' },
-    { name: 'Cloud Solutions', href: '/services/cloud' },
-    { name: 'Micro SaaS', href: '/services/micro-saas' },
-    { name: 'Space Technology', href: '/services/space-tech' },
-    { name: 'Enterprise IT', href: '/services/enterprise-it' },
-    { name: 'Digital Transformation', href: '/services/digital-transformation' }
-  ];
-
-  const resources = [
-    { name: 'Documentation', href: '/docs' },
-    { name: 'API Reference', href: '/api' },
-    { name: 'Developer Tools', href: '/developer' },
-    { name: 'Training Programs', href: '/training' },
-    { name: 'White Papers', href: '/resources/white-papers' },
-    { name: 'Webinars', href: '/resources/webinars' },
-    { name: 'Community Forum', href: '/community' },
-    { name: 'Status Page', href: '/status' }
-  ];
-
-  const socialLinks = [
-    { name: 'LinkedIn', href: 'https://linkedin.com/company/zion-tech-group', icon: <Linkedin className="w-5 h-5" /> },
-    { name: 'GitHub', href: 'https://github.com/Zion-Holdings', icon: <Github className="w-5 h-5" /> },
-    { name: 'Twitter', href: 'https://twitter.com/ziontechgroup', icon: <Twitter className="w-5 h-5" /> },
-    { name: 'Facebook', href: 'https://facebook.com/ziontechgroup', icon: <Facebook className="w-5 h-5" /> }
-  ];
-
-  const certifications = [
-    { name: 'ISO 27001', description: 'Information Security Management' },
-    { name: 'SOC 2 Type II', description: 'Security & Availability Controls' },
-    { name: 'GDPR Compliant', description: 'Data Protection & Privacy' },
-    { name: 'HIPAA Compliant', description: 'Healthcare Data Security' }
-  ];
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
 
   return (
     <footer className="bg-gray-900 border-t border-gray-800" role="contentinfo" aria-label="Site footer">
@@ -243,7 +151,7 @@ const EnhancedFooter: React.FC = () => {
 
         {/* Newsletter Signup */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
@@ -334,6 +242,18 @@ const EnhancedFooter: React.FC = () => {
           </motion.div>
         </div>
       </div>
+
+      {/* Scroll to Top Button */}
+      <motion.button
+        initial={{ opacity: 0, scale: 0 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 0.5, delay: 1 }}
+        onClick={scrollToTop}
+        className="fixed bottom-6 left-6 z-40 w-12 h-12 bg-gradient-to-r from-cyan-500 to-purple-500 hover:from-cyan-600 hover:to-purple-600 rounded-full flex items-center justify-center shadow-2xl shadow-cyan-500/25 hover:shadow-cyan-500/40 transition-all duration-300 hover:scale-110"
+      >
+        <ArrowUp className="w-6 h-6 text-white" />
+      </motion.button>
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
     </footer>
   );
 };

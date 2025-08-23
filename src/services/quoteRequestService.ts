@@ -1,10 +1,11 @@
 
 import { supabase } from "@/integrations/supabase/client";
-import type { QuoteRequest, QuoteStatus } from "@/types/quotes";
+import type { QuoteRequest, QuoteStatus } from '@/types/quotes';
 
 export const quoteRequestService = {
   // Get all quote requests (for admin)
   getAll: async () => {
+    if (!supabase) throw new Error('Supabase client not initialized');
     const { data, error } = await supabase
       .from('quote_requests')
       .select(`
@@ -18,7 +19,7 @@ export const quoteRequestService = {
     if (error) throw error;
     
     // Format the data to include talent_name
-    return data.map((item: any) => ({
+    return (data ?? []).map((item: QuoteRequest & { talent?: { display_name?: string } }) => ({
       ...item,
       talent_name: item.talent?.display_name || 'Unknown Talent',
     })) as QuoteRequest[];
@@ -26,6 +27,7 @@ export const quoteRequestService = {
   
   // Get quote requests for a specific talent
   getByTalentId: async (talentId: string) => {
+    if (!supabase) throw new Error('Supabase client not initialized');
     const { data, error } = await supabase
       .from('quote_requests')
       .select('*')
@@ -38,6 +40,7 @@ export const quoteRequestService = {
   
   // Get a single quote request by id
   getById: async (id: string) => {
+    if (!supabase) throw new Error('Supabase client not initialized');
     const { data, error } = await supabase
       .from('quote_requests')
       .select(`
@@ -53,13 +56,14 @@ export const quoteRequestService = {
     
     return {
       ...data,
-      talent_name: data.talent?.display_name || 'Unknown Talent',
+      talent_name: (data as { talent?: { display_name?: string } }).talent?.display_name || 'Unknown Talent',
     } as QuoteRequest;
   },
   
   // Update quote request status
   updateStatus: async (id: string, status: QuoteStatus) => {
-    const updates: any = { status };
+    if (!supabase) throw new Error('Supabase client not initialized');
+    const updates: Record<string, unknown> = { status };
     
     // If marking as responded, set replied_at
     if (status === 'responded') {
@@ -74,7 +78,7 @@ export const quoteRequestService = {
         .eq('id', id)
         .single();
       
-      if (data && !data.viewed_at) {
+      if (data && typeof data === 'object' && !('viewed_at' in data)) {
         updates.viewed_at = new Date().toISOString();
       }
     }
@@ -91,6 +95,7 @@ export const quoteRequestService = {
   
   // Archive/Unarchive a quote request
   toggleArchive: async (id: string, isArchived: boolean) => {
+    if (!supabase) throw new Error('Supabase client not initialized');
     const { data, error } = await supabase
       .from('quote_requests')
       .update({ is_archived: isArchived })
@@ -103,6 +108,7 @@ export const quoteRequestService = {
   
   // Delete a quote request
   delete: async (id: string) => {
+    if (!supabase) throw new Error('Supabase client not initialized');
     const { error } = await supabase
       .from('quote_requests')
       .delete()

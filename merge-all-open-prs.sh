@@ -1,6 +1,10 @@
 #!/bin/bash
 
 # Comprehensive script to resolve merge conflicts and merge all open PRs into main
+<<<<<<< HEAD
+=======
+# Optimized for handling thousands of unmerged branches
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
 set -e
 
 echo "🚀 Starting comprehensive merge conflict resolution for all open PRs..."
@@ -20,6 +24,10 @@ SUCCESSFUL_MERGES=0
 FAILED_MERGES=0
 CONFLICT_RESOLUTIONS=0
 SKIPPED_BRANCHES=0
+<<<<<<< HEAD
+=======
+TOTAL_PROCESSED=0
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
 
 # Get all unmerged branches, prioritizing cursor branches
 CURSOR_BRANCHES=$(git branch -r --no-merged main | grep "origin/cursor/" | sed 's/origin\///' | sort)
@@ -90,7 +98,11 @@ can_merge_branch() {
     
     # Skip if branch has too many commits (likely complex conflicts)
     local commit_count=$(git log --oneline main.."origin/$branch" 2>/dev/null | wc -l)
+<<<<<<< HEAD
     if [ "$commit_count" -gt 100 ]; then
+=======
+    if [ "$commit_count" -gt 200 ]; then
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
         echo "⚠️  Skipping $branch - too many commits ($commit_count)"
         return 1
     fi
@@ -181,12 +193,28 @@ merge_branch() {
     fi
 }
 
+<<<<<<< HEAD
 # Main processing loop
 echo "🔄 Starting branch processing..."
 echo "---"
 
 for branch in $ALL_BRANCHES; do
     echo "📋 Processing branch: $branch"
+=======
+# Main processing loop with progress tracking
+echo "🔄 Starting branch processing..."
+echo "---"
+
+# Process branches in batches to avoid overwhelming the system
+BATCH_SIZE=50
+CURRENT_BATCH=0
+
+for branch in $ALL_BRANCHES; do
+    TOTAL_PROCESSED=$((TOTAL_PROCESSED + 1))
+    CURRENT_BATCH=$((CURRENT_BATCH + 1))
+    
+    echo "📋 Processing branch: $branch (${TOTAL_PROCESSED}/$(echo "$ALL_BRANCHES" | wc -l))"
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
     
     # Check if branch can be merged
     if ! can_merge_branch "$branch"; then
@@ -204,16 +232,42 @@ for branch in $ALL_BRANCHES; do
     
     # Progress update
     echo "📊 Progress: $SUCCESSFUL_MERGES successful, $FAILED_MERGES failed, $CONFLICT_RESOLUTIONS conflicts resolved"
+<<<<<<< HEAD
     echo "---"
     
     # Push changes periodically to avoid losing work
     if [ $((SUCCESSFUL_MERGES % 5)) -eq 0 ] && [ $SUCCESSFUL_MERGES -gt 0 ]; then
+=======
+    echo "📈 Success rate: $((SUCCESSFUL_MERGES * 100 / TOTAL_PROCESSED))%"
+    echo "---"
+    
+    # Push changes periodically to avoid losing work
+    if [ $((SUCCESSFUL_MERGES % 10)) -eq 0 ] && [ $SUCCESSFUL_MERGES -gt 0 ]; then
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
         echo "💾 Pushing progress to remote..."
         git push origin main
     fi
     
+<<<<<<< HEAD
     # Small delay to avoid overwhelming the system
     sleep 1
+=======
+    # Batch processing - take a break every batch
+    if [ $CURRENT_BATCH -eq $BATCH_SIZE ]; then
+        echo "🔄 Completed batch $((TOTAL_PROCESSED / BATCH_SIZE)). Taking a short break..."
+        sleep 5
+        CURRENT_BATCH=0
+        
+        # Force push every few batches to ensure remote is updated
+        if [ $((TOTAL_PROCESSED % (BATCH_SIZE * 5))) -eq 0 ]; then
+            echo "💾 Force pushing to remote..."
+            git push origin main --force-with-lease
+        fi
+    fi
+    
+    # Small delay to avoid overwhelming the system
+    sleep 0.5
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
 done
 
 # Final push
@@ -228,6 +282,10 @@ echo "   ✅ Successful merges: $SUCCESSFUL_MERGES"
 echo "   ❌ Failed merges: $FAILED_MERGES"
 echo "   🔧 Conflicts resolved: $CONFLICT_RESOLUTIONS"
 echo "   ⏭️  Skipped branches: $SKIPPED_BRANCHES"
+<<<<<<< HEAD
+=======
+echo "   📈 Total processed: $TOTAL_PROCESSED"
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
 echo "   🔒 Backup branch: $BACKUP_BRANCH"
 echo "⏰ Completed at: $(date)"
 

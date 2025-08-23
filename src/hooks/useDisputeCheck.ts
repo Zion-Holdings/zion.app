@@ -20,6 +20,8 @@ export function useDisputeCheck(projectId?: string, milestoneId?: string) {
       try {
         setIsLoading(true);
         
+        if (!supabase) throw new Error('Supabase client not initialized');
+
         let query = supabase
           .from("disputes")
           .select("id, status")
@@ -40,8 +42,13 @@ export function useDisputeCheck(projectId?: string, milestoneId?: string) {
         if (data && data.length > 0) {
           // Get the first dispute (highest priority based on status)
           setIsUnderDispute(true);
-          setDisputeStatus(data[0]?.status as any);
-          setDisputeId(data[0]?.id);
+          const status = data[0]?.status;
+          if (status === 'open' || status === 'under_review' || status === 'resolved' || status === 'closed') {
+            setDisputeStatus(status);
+          } else {
+            setDisputeStatus(null);
+          }
+          setDisputeId(data[0]?.id ?? null);
         } else {
           setIsUnderDispute(false);
           setDisputeStatus(null);

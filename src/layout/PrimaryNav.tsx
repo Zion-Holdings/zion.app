@@ -46,7 +46,7 @@ export function PrimaryNav() {
     e.preventDefault();
     const trimmed = query.trim();
     if (trimmed) {
-      logDebug('PrimaryNav search submit:', { query: trimmed });
+      logDebug('PrimaryNav search submit:', { data:  { query: trimmed } });
       router
         .push(`/search?q=${encodeURIComponent(trimmed)}`)
         .then(() => setQuery(''))
@@ -57,7 +57,7 @@ export function PrimaryNav() {
   return (
     <>
       <header
-        className="sticky top-0 z-70 w-full border-b border-primary/20 bg-card/90 backdrop-blur-md"
+        className="sticky top-0 z-70 w-full border-b border-primary/20 bg-gradient-to-r from-zion-blue via-zion-purple to-zion-cyan text-white backdrop-blur-md"
         role="navigation"
         aria-label="Primary"
         data-testid="header"
@@ -78,7 +78,7 @@ export function PrimaryNav() {
                 value={query}
                 onChange={setQuery}
                 onSelectSuggestion={(sugg) => {
-                  logDebug('PrimaryNav search suggestion selected:', { suggestion: sugg });
+                  logDebug('PrimaryNav search suggestion selected:', { data:  { suggestion: sugg } });
                   // Handle different suggestion types with proper navigation
                   if (sugg.id) {
                     // Product listings with IDs go to product detail page

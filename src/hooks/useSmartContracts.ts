@@ -2,9 +2,10 @@ import { useState } from 'react';
 import { useAuth } from '@/hooks/useAuth';
 import { supabase } from '@/integrations/supabase/client';
 import { toast } from 'sonner';
-import { BlockchainNetwork, DeploymentOptions, SmartContractInfo } from '@/types/smart-contracts';
-import { TalentProfile } from '@/types/talent';
-import { ContractFormValues } from "@/components/contracts/components/ContractForm";
+import type { BlockchainNetwork, DeploymentOptions } from '@/types/smart-contracts';
+import type { SmartContractInfo } from '@/types/smart-contracts';
+import type { TalentProfile } from '@/types/talent';
+import type { ContractFormValues } from "@/components/contracts/components/ContractForm";
 import {logErrorToProduction} from '@/utils/productionLogger';
 
 export function useSmartContracts() {
@@ -18,6 +19,7 @@ export function useSmartContracts() {
     talent: TalentProfile, 
     clientName: string
   ): Promise<string> => {
+    if (!supabase) throw new Error('Supabase client not initialized');
     try {
       setIsLoading(true);
       
@@ -37,12 +39,12 @@ export function useSmartContracts() {
       
       if (error) throw error;
       
-      if (data && (data as any).solidityCode) {
-        return (data as any).solidityCode;
+      if (data && typeof data === 'object' && 'solidityCode' in data) {
+        return (data as { solidityCode: string }).solidityCode;
       } else {
         throw new Error("Failed to generate Solidity contract");
       }
-    } catch (err: any) {
+    } catch (err: unknown) {
       logErrorToProduction('Error generating Solidity contract:', { data: err });
       toast.error("Failed to generate smart contract");
       throw err;
@@ -88,7 +90,7 @@ export function useSmartContracts() {
       toast.success("Smart contract deployed successfully!");
       
       return mockSmartContractInfo;
-    } catch (err: any) {
+    } catch (err: unknown) {
       logErrorToProduction('Error deploying smart contract:', { data: err });
       toast.error("Failed to deploy smart contract");
       setDeploymentStatus('error');

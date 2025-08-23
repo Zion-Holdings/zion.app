@@ -126,6 +126,15 @@ const Pricing: React.FC = () => {
     }
   ];
 
+  const getDiscountedPrice = (price: number) => {
+    return billingPeriod === 'yearly' ? Math.round(price * 0.8) : price;
+  };
+
+  const getPeriodText = () => {
+    return billingPeriod === 'yearly' ? 'year' : 'month';
+  };
+
+export default function PricingPage() {
   return (
     <Layout
       title="Pricing - Zion Tech Group"
@@ -238,7 +247,6 @@ const Pricing: React.FC = () => {
               ))}
             </div>
           </div>
-        </section>
 
         {/* Service Categories */}
         <section className="py-20 bg-black/50">
@@ -418,8 +426,7 @@ const Pricing: React.FC = () => {
                 </p>
               </motion.div>
             </div>
-          </div>
-        </section>
+          </section>
 
         {/* CTA Section */}
         <section className="py-20">
@@ -451,11 +458,12 @@ const Pricing: React.FC = () => {
                   Call Now: +1 302 464 0950
                 </a>
               </div>
-            </motion.div>
-          </div>
-        </section>
+              <p className="text-sm text-white/60 mt-4">No credit card required • 14-day free trial • Cancel anytime</p>
+            </div>
+          </section>
+        </main>
       </div>
-    </Layout>
+    </>
   );
 };
 

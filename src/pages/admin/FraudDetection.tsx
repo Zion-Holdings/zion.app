@@ -5,7 +5,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Button } from "@/components/ui/button";
 import { toast } from "@/hooks/use-toast";
 import { supabase } from "@/integrations/supabase/client";
-import { FraudFlag, FraudStats } from "@/types/fraud";
+import type { FraudFlag, FraudStats } from "@/types/fraud";
 import { logErrorToProduction } from '@/utils/productionLogger';
 
 // Import refactored components
@@ -37,6 +37,7 @@ export default function FraudDetection() {
   const fetchFraudFlags = async () => {
     setIsLoading(true);
     try {
+      if (!supabase) throw new Error('Supabase client not initialized');
       const { data, error } = await supabase
         .from("fraud_flags")
         .select("*")
@@ -50,11 +51,11 @@ export default function FraudDetection() {
       // Calculate stats
       const newStats: FraudStats = {
         total_flags: data?.length || 0,
-        pending_flags: data?.filter((flag: any) => flag.status === 'pending').length || 0,
-        suspicious_count: data?.filter((flag: any) => flag.severity === 'suspicious').length || 0,
-        dangerous_count: data?.filter((flag: any) => flag.severity === 'dangerous').length || 0,
-        false_positives: data?.filter((flag: any) => flag.is_false_positive).length || 0,
-        actioned_count: data?.filter((flag: any) => flag.action_taken && flag.action_taken !== 'none').length || 0,
+        pending_flags: data?.filter((flag: FraudFlag) => flag.status === 'pending').length || 0,
+        suspicious_count: data?.filter((flag: FraudFlag) => flag.severity === 'suspicious').length || 0,
+        dangerous_count: data?.filter((flag: FraudFlag) => flag.severity === 'dangerous').length || 0,
+        false_positives: data?.filter((flag: FraudFlag) => flag.is_false_positive).length || 0,
+        actioned_count: data?.filter((flag: FraudFlag) => flag.action_taken && flag.action_taken !== 'none').length || 0,
       };
       setStats(newStats);
       
@@ -109,6 +110,7 @@ export default function FraudDetection() {
 
   const handleAction = async (flagId: string, action: 'warning' | 'suspension' | 'ban' | 'ignore') => {
     try {
+      if (!supabase) throw new Error('Supabase client not initialized');
       const status = action === 'ignore' ? 'ignored' : 'actioned';
       const actionTaken = action === 'ignore' ? 'none' : action;
       

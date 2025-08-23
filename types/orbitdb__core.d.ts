@@ -1,3 +1,3 @@
 declare module '@orbitdb/core' {
-  export function createOrbitDB(ipfs: any, options?: any): Promise<any>;
+  export function createOrbitDB(ipfs: unknown, options?: unknown): Promise<unknown>;
 }

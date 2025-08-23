@@ -5,7 +5,7 @@ import {
   DialogHeader,
   DialogTitle
 } from "@/components/ui/dialog";
-import { JobApplication } from "@/types/jobs";
+import type { JobApplication } from "@/types/jobs";
 import { ApplicationScoreCard } from "../ApplicationScoreCard";
 
 interface ScoreDialogProps {

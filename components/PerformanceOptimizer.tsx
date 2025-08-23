@@ -25,13 +25,29 @@ const PerformanceOptimizer: React.FC<PerformanceOptimizerProps> = ({
   const [metrics, setMetrics] = useState<PerformanceMetrics | null>(null);
   const [isOptimizing, setIsOptimizing] = useState(false);
 
-  // Measure performance metrics
-  const measurePerformance = useCallback(() => {
-    if (typeof window === 'undefined' || !window.performance) return;
+  // Performance monitoring
+  useEffect(() => {
+    if (typeof window !== 'undefined' && 'PerformanceObserver' in window) {
+      // First Contentful Paint
+      try {
+        const fcpObserver = new PerformanceObserver((list) => {
+          const entries = list.getEntries();
+          const fcpEntry = entries.find(entry => entry.name === 'first-contentful-paint');
+          if (fcpEntry) {
+            setMetrics(prev => ({ ...prev, fcp: fcpEntry.startTime }));
+          }
+        });
+        fcpObserver.observe({ entryTypes: ['paint'] });
 
-    const navigation = performance.getEntriesByType('navigation')[0] as PerformanceNavigationTiming;
-    const paintEntries = performance.getEntriesByType('paint');
-    const layoutShiftEntries = performance.getEntriesByType('layout-shift');
+        // Largest Contentful Paint
+        const lcpObserver = new PerformanceObserver((list) => {
+          const entries = list.getEntries();
+          const lcpEntry = entries[entries.length - 1];
+          if (lcpEntry) {
+            setMetrics(prev => ({ ...prev, lcp: lcpEntry.startTime }));
+          }
+        });
+        lcpObserver.observe({ entryTypes: ['largest-contentful-paint'] });
 
     const newMetrics: PerformanceMetrics = {
       loadTime: navigation.loadEventEnd - navigation.loadEventStart,
@@ -40,22 +56,205 @@ const PerformanceOptimizer: React.FC<PerformanceOptimizerProps> = ({
       largestContentfulPaint: 0,
       cumulativeLayoutShift: layoutShiftEntries.reduce((sum, entry) => sum + (entry as PerformanceLayoutShift).value, 0)
     };
+  }, []);
 
-    // Measure LCP if supported
-    if ('PerformanceObserver' in window) {
-      const observer = new PerformanceObserver((list) => {
-        const entries = list.getEntries();
-        const lastEntry = entries[entries.length - 1];
-        newMetrics.largestContentfulPaint = lastEntry.startTime;
-        setMetrics(newMetrics);
-        onMetricsUpdate?.(newMetrics);
-      });
-      observer.observe({ entryTypes: ['largest-contentful-paint'] });
->>>>>>> 17df199e451813150094c5ab1fb554b04628cb60
+        // Cumulative Layout Shift
+        const clsObserver = new PerformanceObserver((list) => {
+          let clsValue = 0;
+          for (const entry of list.getEntries()) {
+            if (!(entry as { hadRecentInput?: boolean }).hadRecentInput) {
+              clsValue += (entry as { value?: number }).value || 0;
+            }
+          }
+          setMetrics(prev => ({ ...prev, cls: clsValue }));
+        });
+        clsObserver.observe({ entryTypes: ['layout-shift'] });
+
+        // Time to First Byte
+        const navigationObserver = new PerformanceObserver((list) => {
+          const entries = list.getEntries();
+          const navigationEntry = entries[0] as PerformanceNavigationTiming;
+          if (navigationEntry) {
+            setMetrics(prev => ({ ...prev, ttfb: navigationEntry.responseStart - navigationEntry.requestStart }));
+          }
+        });
+        navigationObserver.observe({ entryTypes: ['navigation'] });
+
+        // Store observers for cleanup
+        performanceObserverRef.current = fcpObserver;
+
+        return () => {
+          fcpObserver.disconnect();
+          lcpObserver.disconnect();
+          fidObserver.disconnect();
+          clsObserver.disconnect();
+          navigationObserver.disconnect();
+        };
+      } catch {
+        // Silently handle errors to avoid breaking the app
+      }
     }
+  }, []);
 
-    return { score, color, label };
-  };
+  // Intersection Observer for lazy loading
+  useEffect(() => {
+    if (typeof window !== 'undefined' && 'IntersectionObserver' in window) {
+      observerRef.current = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              const target = entry.target as HTMLElement;
+              
+              // Lazy load images
+              if (target.tagName === 'IMG' && target.dataset.src) {
+                const imgTarget = target as HTMLImageElement;
+                imgTarget.src = target.dataset.src;
+                target.removeAttribute('data-src');
+                target.classList.remove('lazy');
+                observerRef.current?.unobserve(target);
+              }
+
+              // Lazy load background images
+              if (target.dataset.bgSrc) {
+                target.style.backgroundImage = `url(${target.dataset.bgSrc})`;
+                target.removeAttribute('data-bg-src');
+                observerRef.current?.unobserve(target);
+              }
+
+              // Lazy load components
+              if (target.dataset.lazyComponent) {
+                target.classList.add('loaded');
+                observerRef.current?.unobserve(target);
+              }
+            }
+          });
+        },
+        {
+          rootMargin: '50px 0px',
+          threshold: 0.1
+        }
+      );
+
+      return () => {
+        if (observerRef.current) {
+          observerRef.current.disconnect();
+        }
+      };
+    }
+  }, []);
+
+  // Performance optimization functions
+  const optimizeImages = useCallback(() => {
+    setIsOptimizing(true);
+    setOptimizationStatus('Optimizing images...');
+
+    const images = document.querySelectorAll('img[data-src]');
+    images.forEach((img) => {
+      if (observerRef.current) {
+        observerRef.current.observe(img);
+      }
+    });
+
+    setTimeout(() => {
+      setOptimizationStatus('Images optimized');
+      setIsOptimizing(false);
+    }, 1000);
+  }, []);
+
+  const optimizeFonts = useCallback(() => {
+    setIsOptimizing(true);
+    setOptimizationStatus('Optimizing fonts...');
+
+    // Preload critical fonts
+    const fontLinks = document.querySelectorAll('link[rel="preload"][as="font"]');
+    fontLinks.forEach((link) => {
+      link.setAttribute('rel', 'stylesheet');
+    });
+
+    setTimeout(() => {
+      setOptimizationStatus('Fonts optimized');
+      setIsOptimizing(false);
+    }, 500);
+  }, []);
+
+  const optimizeCSS = useCallback(() => {
+    setIsOptimizing(true);
+    setOptimizationStatus('Optimizing CSS...');
+
+    // Remove unused CSS
+    const styleSheets = Array.from(document.styleSheets);
+    styleSheets.forEach((sheet) => {
+      try {
+        const rules = sheet.cssRules || sheet.rules;
+        if (rules) {
+          // Basic CSS optimization logic
+          Array.from(rules).forEach((rule) => {
+            // Check if rule is a CSSStyleRule
+            if (rule && typeof rule === 'object' && 'selectorText' in rule) {
+              const selector = (rule as { selectorText: string }).selectorText;
+              if (selector && !document.querySelector(selector)) {
+                // Remove unused CSS rules (simplified approach)
+                try {
+                  sheet.deleteRule(Array.from(rules).indexOf(rule));
+                } catch {
+                  // Ignore errors for read-only stylesheets
+                }
+              }
+            }
+          });
+        }
+      } catch {
+        // Ignore cross-origin stylesheet errors
+      }
+    });
+
+    setTimeout(() => {
+      setOptimizationStatus('CSS optimized');
+      setIsOptimizing(false);
+    }, 800);
+  }, []);
+
+  const runFullOptimization = useCallback(async () => {
+    setIsOptimizing(true);
+    setOptimizationStatus('Starting full optimization...');
+
+    // Run optimizations in sequence
+    await new Promise(resolve => setTimeout(resolve, 500));
+    optimizeImages();
+    
+    await new Promise(resolve => setTimeout(resolve, 1000));
+    optimizeFonts();
+    
+    await new Promise(resolve => setTimeout(resolve, 1000));
+    optimizeCSS();
+    
+    await new Promise(resolve => setTimeout(resolve, 500));
+    setOptimizationStatus('Optimization complete!');
+    
+    setTimeout(() => {
+      setIsOptimizing(false);
+      setOptimizationStatus('');
+    }, 2000);
+  }, [optimizeImages, optimizeFonts, optimizeCSS]);
+
+  // Get performance grade
+  const getPerformanceGrade = useCallback(() => {
+    let score = 100;
+    
+    if (metrics.fcp && metrics.fcp > 1800) score -= 20;
+    if (metrics.lcp && metrics.lcp > 2500) score -= 20;
+    if (metrics.fid && metrics.fid > 100) score -= 20;
+    if (metrics.cls && metrics.cls > 0.1) score -= 20;
+    if (metrics.ttfb && metrics.ttfb > 600) score -= 20;
+
+    if (score >= 90) return { grade: 'A', color: 'text-green-400' };
+    if (score >= 80) return { grade: 'B', color: 'text-yellow-400' };
+    if (score >= 70) return { grade: 'C', color: 'text-orange-400' };
+    return { grade: 'D', color: 'text-red-400' };
+  }, [metrics]);
+
+  const performanceGrade = getPerformanceGrade();
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
 
   return (
     <>

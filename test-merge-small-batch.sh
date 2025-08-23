@@ -1,6 +1,9 @@
 #!/bin/bash
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
 # Test script to merge a small batch of branches first
 set -e
 
@@ -12,6 +15,7 @@ echo "---"
 # Configuration - small batch for testing
 BATCH_SIZE=3
 BACKUP_BRANCH="test-backup-$(date +%Y%m%d-%H%M%S)"
+<<<<<<< HEAD
 =======
 # Test script to merge a small batch of cursor branches into main
 set -e
@@ -26,6 +30,8 @@ BATCH_SIZE=5
 BACKUP_BRANCH="test-merge-backup-$(date +%Y%m%d-%H%M%S)"
 LOG_FILE="test-merge-log-$(date +%Y%m%d-%H%M%S).txt"
 >>>>>>> 17df199e451813150094c5ab1fb554b04628cb60
+=======
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
 
 # Create a backup branch
 echo "🔒 Creating backup branch: $BACKUP_BRANCH"
@@ -38,6 +44,9 @@ SUCCESSFUL_MERGES=0
 FAILED_MERGES=0
 CONFLICT_RESOLUTIONS=0
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
 
 # Get first few cursor branches
 BRANCHES=$(git branch -r | grep "origin/cursor/" | sed 's/origin\///' | head -$BATCH_SIZE)
@@ -45,6 +54,7 @@ BRANCHES=$(git branch -r | grep "origin/cursor/" | sed 's/origin\///' | head -$B
 echo "📋 Testing with branches:"
 echo "$BRANCHES"
 echo "---"
+<<<<<<< HEAD
 =======
 SKIPPED_BRANCHES=0
 TOTAL_PROCESSED=0
@@ -55,6 +65,8 @@ log_message() {
     echo "$(date '+%Y-%m-%d %H:%M:%S') - $message" | tee -a "$LOG_FILE"
 }
 >>>>>>> 17df199e451813150094c5ab1fb554b04628cb60
+=======
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
 
 # Function to resolve conflicts in a file
 resolve_conflicts() {
@@ -62,11 +74,15 @@ resolve_conflicts() {
     local branch="$2"
     
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
     echo "🔧 Resolving conflicts in $file for branch $branch..."
     
     # Check if file has merge conflicts
     if grep -q "<<<<<<< HEAD" "$file"; then
         echo "⚠️  Found conflicts in $file, resolving..."
+<<<<<<< HEAD
 =======
     log_message "🔧 Resolving conflicts in $file for branch $branch..."
     
@@ -74,6 +90,8 @@ resolve_conflicts() {
     if grep -q "<<<<<<< HEAD" "$file"; then
         log_message "⚠️  Found conflicts in $file, resolving..."
 >>>>>>> 17df199e451813150094c5ab1fb554b04628cb60
+=======
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
         
         # Create a backup of the conflicted file
         cp "$file" "${file}.backup.$(date +%s)"
@@ -81,6 +99,9 @@ resolve_conflicts() {
         # Strategy: Keep both versions where possible, prefer main branch for critical files
         if [[ "$file" == "package.json" || "$file" == "package-lock.json" ]]; then
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
             echo "📦 Critical file detected, keeping main version and merging dependencies..."
             sed -i '/<<<<<<< HEAD/,/=======/d' "$file"
             sed -i '/>>>>>>> /d' "$file"
@@ -90,6 +111,7 @@ resolve_conflicts() {
             sed -i '/>>>>>>> /d' "$file"
         else
             echo "📝 Regular file, attempting to merge both versions..."
+<<<<<<< HEAD
 =======
             log_message "📦 Critical file detected, keeping main version and merging dependencies..."
             sed -i '/<<<<<<< HEAD/,/=======/d' "$file"
@@ -101,15 +123,21 @@ resolve_conflicts() {
         else
             log_message "📝 Regular file, attempting to merge both versions..."
 >>>>>>> 17df199e451813150094c5ab1fb554b04628cb60
+=======
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
             sed -i '/<<<<<<< HEAD/,/=======/d' "$file"
             sed -i '/>>>>>>> /d' "$file"
         fi
         
 <<<<<<< HEAD
+<<<<<<< HEAD
         echo "✅ Resolved conflicts in $file"
 =======
         log_message "✅ Resolved conflicts in $file"
 >>>>>>> 17df199e451813150094c5ab1fb554b04628cb60
+=======
+        echo "✅ Resolved conflicts in $file"
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
         CONFLICT_RESOLUTIONS=$((CONFLICT_RESOLUTIONS + 1))
     fi
 }
@@ -136,10 +164,14 @@ merge_branch() {
     local branch="$1"
     
 <<<<<<< HEAD
+<<<<<<< HEAD
     echo "🔄 Attempting to merge $branch..."
 =======
     log_message "🔄 Attempting to merge $branch..."
 >>>>>>> 17df199e451813150094c5ab1fb554b04628cb60
+=======
+    echo "🔄 Attempting to merge $branch..."
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
     
     # Fetch the latest version of the branch
     git fetch origin "$branch"
@@ -147,12 +179,16 @@ merge_branch() {
     # Try to merge
     if git merge --no-commit --no-ff "origin/$branch" 2>/dev/null; then
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
         echo "✅ Successfully merged $branch"
         git commit -m "Test merge $branch into main - $(date)"
         SUCCESSFUL_MERGES=$((SUCCESSFUL_MERGES + 1))
         return 0
     else
         echo "⚠️  Merge conflicts detected in $branch, resolving..."
+<<<<<<< HEAD
 =======
         log_message "✅ Successfully merged $branch"
         git commit -m "Merge $branch into main - $(date)"
@@ -161,16 +197,22 @@ merge_branch() {
     else
         log_message "⚠️  Merge conflicts detected in $branch, resolving..."
 >>>>>>> 17df199e451813150094c5ab1fb554b04628cb60
+=======
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
         
         # Get list of conflicted files
         CONFLICTED_FILES=$(git diff --name-only --diff-filter=U)
         
         if [ -n "$CONFLICTED_FILES" ]; then
 <<<<<<< HEAD
+<<<<<<< HEAD
             echo "📋 Conflicted files: $CONFLICTED_FILES"
 =======
             log_message "📋 Conflicted files: $CONFLICTED_FILES"
 >>>>>>> 17df199e451813150094c5ab1fb554b04628cb60
+=======
+            echo "📋 Conflicted files: $CONFLICTED_FILES"
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
             
             # Resolve conflicts in each file
             for file in $CONFLICTED_FILES; do
@@ -184,6 +226,9 @@ merge_branch() {
             
             # Commit the merge
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
             git commit -m "Test resolve merge conflicts for $branch - $(date)"
             
             echo "✅ Successfully resolved conflicts and merged $branch"
@@ -191,6 +236,7 @@ merge_branch() {
             return 0
         else
             echo "❌ No conflicted files found, but merge failed. Aborting..."
+<<<<<<< HEAD
 =======
             git commit -m "Resolve merge conflicts for $branch - $(date)"
             
@@ -200,6 +246,8 @@ merge_branch() {
         else
             log_message "❌ No conflicted files found, but merge failed. Aborting..."
 >>>>>>> 17df199e451813150094c5ab1fb554b04628cb60
+=======
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
             git merge --abort
             FAILED_MERGES=$((FAILED_MERGES + 1))
             return 1
@@ -208,6 +256,9 @@ merge_branch() {
 }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
 # Process each branch in the test batch
 echo "🔄 Starting test batch processing..."
 echo "---"
@@ -218,6 +269,7 @@ for branch in $BRANCHES; do
     # Check if branch can be merged
     if ! can_merge_branch "$branch"; then
         echo "⏭️  Skipping $branch (already merged or doesn't exist)"
+<<<<<<< HEAD
 =======
 # Main processing loop
 log_message "🧪 Starting test processing..."
@@ -253,12 +305,17 @@ for ((j=0; j<total_branches; j++)); do
         log_message "⏭️  Skipping $branch (already merged or doesn't exist)"
         SKIPPED_BRANCHES=$((SKIPPED_BRANCHES + 1))
 >>>>>>> 17df199e451813150094c5ab1fb554b04628cb60
+=======
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
         continue
     fi
     
     # Try to merge the branch
     if merge_branch "$branch"; then
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
         echo "✅ Test branch $branch processed successfully"
     else
         echo "❌ Failed to process test branch $branch"
@@ -293,6 +350,7 @@ else
 fi
 echo "   1. Review the merged changes: git log --oneline -10"
 echo "   2. Test the application"
+<<<<<<< HEAD
 echo "   3. Delete the test backup branch when satisfied: git push origin --delete $BACKUP_BRANCH"
 =======
         log_message "✅ Branch $branch processed successfully"
@@ -346,3 +404,6 @@ log_message "   2. Test the application thoroughly"
 log_message "   3. Delete the backup branch when satisfied: git push origin --delete $BACKUP_BRANCH"
 log_message "   4. If test passed, run the full script: ./merge-all-cursor-prs.sh"
 >>>>>>> 17df199e451813150094c5ab1fb554b04628cb60
+=======
+echo "   3. Delete the test backup branch when satisfied: git push origin --delete $BACKUP_BRANCH"
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96

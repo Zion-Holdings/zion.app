@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState, useEffect, useRef, useCallback } from 'react';
 import Link from 'next/link';
 import { motion, AnimatePresence } from 'framer-motion';
 import { 
@@ -14,37 +14,25 @@ const UltraFuturisticNavigation2040: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
   const [searchQuery, setSearchQuery] = useState('');
->>>>>>> 17df199e451813150094c5ab1fb554b04628cb60
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
 
-  const dropdownVariants = useMemo(() => ({
-    hidden: { opacity: 0, y: -10, scale: 0.95 },
-    visible: { opacity: 1, y: 0, scale: 1 }
-  }), []);
+  // Handle scroll effect with throttling for better performance
+  useEffect(() => {
+    let ticking = false;
+    
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 20);
+    };
 
-  // Optimized scroll handling
-  const handleScroll = useCallback(() => {
-    setIsScrolled(window.scrollY > 20);
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // Handle click outside mobile menu
-  useEffect(() => {
-    window.addEventListener('scroll', handleScroll, { passive: true });
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, [handleScroll]);
-
-  // Close mobile menu when route changes
-  useEffect(() => {
-    setIsMobileMenuOpen(false);
-    setActiveDropdown(null);
-  }, [router.asPath]);
-
-  // Close dropdowns when clicking outside
+  // Enhanced accessibility: Close dropdowns when clicking outside
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
-      if (mobileMenuRef.current && !mobileMenuRef.current.contains(event.target as Node)) {
-        setIsMobileMenuOpen(false);
-      }
-      if (searchRef.current && !searchRef.current.contains(event.target as Node)) {
+      if (navRef.current && !navRef.current.contains(event.target as Node)) {
+        setActiveDropdown(null);
         setIsSearchOpen(false);
       }
     };
@@ -53,26 +41,7 @@ const UltraFuturisticNavigation2040: React.FC = () => {
     return () => document.removeEventListener('mousedown', handleClickOutside);
   }, []);
 
-  // Focus search input when search is opened
-  useEffect(() => {
-    if (isSearchOpen && searchInputRef.current) {
-      searchInputRef.current.focus();
-    }
-  }, [isSearchOpen]);
-
-  const toggleMobileMenu = useCallback(() => {
-    setIsMobileMenuOpen(!isMobileMenuOpen);
-  }, [isMobileMenuOpen]);
-
-  const toggleDropdown = useCallback((label: string) => {
-    setActiveDropdown(activeDropdown === label ? null : label);
-  }, [activeDropdown]);
-
-  const closeMobileMenu = useCallback(() => {
-    setIsOpen(false);
-    setActiveDropdown(null);
-  }, []);
-
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
   const navigationItems = [
     {
       name: 'Home',
@@ -249,12 +218,23 @@ const UltraFuturisticNavigation2040: React.FC = () => {
       icon: Phone,
       description: 'Get in touch with our experts'
     }
-  ];
+  }, []);
 
-  const contactInfo = {
-    phone: '+1 302 464 0950',
-    email: 'kleber@ziontechgroup.com',
-    address: '364 E Main St STE 1008 Middletown DE 19709'
+    const results: NavigationItem[] = [];
+    const searchInItems = (items: NavigationItem[]) => {
+      items.forEach(item => {
+        if (item.label.toLowerCase().includes(query.toLowerCase()) ||
+            item.description?.toLowerCase().includes(query.toLowerCase())) {
+          results.push(item);
+        }
+        if (item.children) {
+          searchInItems(item.children);
+        }
+      });
+    };
+
+    searchInItems(navigationItems);
+    setSearchResults(results.slice(0, 8)); // Limit results
   };
 
   return (
@@ -383,7 +363,7 @@ const UltraFuturisticNavigation2040: React.FC = () => {
                 <Brain className="w-5 h-5 text-white" />
               </div>
               <span className="text-lg font-bold text-white">Zion Tech</span>
->>>>>>> 17df199e451813150094c5ab1fb554b04628cb60
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
             </Link>
 
             {/* Mobile Menu Button */}
@@ -392,16 +372,15 @@ const UltraFuturisticNavigation2040: React.FC = () => {
               className="p-2 text-white hover:text-cyan-400 transition-colors duration-300"
             >
               {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
->>>>>>> 17df199e451813150094c5ab1fb554b04628cb60
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
             </button>
           </div>
         </div>
 
-        {/* Search Bar */}
+        {/* Mobile Menu */}
         <AnimatePresence>
-          {isSearchOpen && (
+          {isOpen && (
             <motion.div
-              ref={searchRef}
               initial={{ opacity: 0, height: 0 }}
               animate={{ opacity: 1, height: 'auto' }}
               exit={{ opacity: 0, height: 0 }}
@@ -511,7 +490,7 @@ const UltraFuturisticNavigation2040: React.FC = () => {
       {/* Spacer for fixed navigation */}
       <div className="h-20 lg:h-20" />
     </>
->>>>>>> 17df199e451813150094c5ab1fb554b04628cb60
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
   );
 };
 

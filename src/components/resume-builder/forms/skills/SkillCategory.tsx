@@ -1,5 +1,5 @@
 
-import { SkillCategoryProps } from './types';
+import type { SkillCategoryProps } from './types';
 import { SkillItem } from './SkillItem';
 
 export const SkillCategory = ({ category, skills, onDelete }: SkillCategoryProps) => {

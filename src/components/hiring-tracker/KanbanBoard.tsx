@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 // errors when the real package isn't installed.
 import { DragDropContext } from "@/lib/dnd-stub";
 import { useJobApplications } from "@/hooks/useJobApplications";
-import { JobApplication, ApplicationStatus } from "@/types/jobs";
+import type { JobApplication, ApplicationStatus } from "@/types/jobs";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import Skeleton from "@/components/ui/skeleton";
 import { toast } from "@/hooks/use-toast";

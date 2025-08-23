@@ -1,5 +1,5 @@
 import { supabase } from '@/integrations/supabase/client';
-import { ForumPost } from '@/types/community';
+import type { ForumPost } from '@/types/community';
 import {logErrorToProduction} from '@/utils/productionLogger';
 
 export async function fetchPostsByCategory(
@@ -7,6 +7,7 @@ export async function fetchPostsByCategory(
   cursor?: string, // Cursor is now a string (e.g., ISO timestamp)
   limit = 20 // Default limit
 ): Promise<{ posts: ForumPost[]; nextCursor: string | null }> {
+  if (!supabase) throw new Error('Supabase client not initialized');
   let query = supabase
     .from('forum_posts')
     .select('*')

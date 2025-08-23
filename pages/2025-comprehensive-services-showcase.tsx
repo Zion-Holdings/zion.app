@@ -11,7 +11,7 @@ import {
 import { innovativeITServicesExpansion2025V3 } from '../data/2025-innovative-it-services-expansion-v3';
 import { innovativeMicroSaasExpansionV32025 } from '../data/2025-innovative-micro-saas-expansion-v3';
 import { innovativeAIServicesExpansion2025V3 } from '../data/2025-innovative-ai-services-expansion-v3';
->>>>>>> 17df199e451813150094c5ab1fb554b04628cb60
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
 
 // Import existing service data
 import { realMicroSaasServices } from '../data/real-micro-saas-services';
@@ -19,11 +19,13 @@ import { innovativeAIServices } from '../data/innovative-ai-services';
 import { enterpriseITServices } from '../data/enterprise-it-services';
 
   const allServices = [
-    ...innovativeITServicesExpansion2025V3,
-    ...innovativeMicroSaasExpansionV32025,
-    ...innovativeAIServicesExpansion2025V3
+    ...advancedBusinessIntelligenceServices2025,
+    ...advancedAIAutomationServices2025,
+    ...innovative2025ITInfrastructureServices,
+    ...innovativeMicroSaasSolutions2025,
+    ...cuttingEdgeAIServices2025
   ];
->>>>>>> 17df199e451813150094c5ab1fb554b04628cb60
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
 
 // Service categories
 const categories = [
@@ -104,10 +106,9 @@ const ComprehensiveServicesShowcase: React.FC = () => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-50 via-white to-gray-100">
       <SEO 
-        title="2025 Comprehensive Services Showcase | Zion Tech Group"
-        description="Explore our comprehensive portfolio of innovative micro SAAS, IT services, and AI solutions. From enterprise solutions to cutting-edge automation, discover how we can transform your business."
-        keywords={["micro SAAS", "IT services", "AI solutions", "enterprise software", "cloud infrastructure", "automation", "digital transformation"]}
-        image="/og-services-showcase.jpg"
+        title="2025 Comprehensive Services Showcase - Zion Tech Group"
+        description="Discover our comprehensive portfolio of innovative micro SAAS, IT infrastructure, and AI services. Transform your business with cutting-edge solutions."
+        keywords="micro SAAS, IT services, AI services, business intelligence, automation, cloud infrastructure"
       />
 
       {/* Hero Section */}
@@ -466,3 +467,4 @@ const ComprehensiveServicesShowcase: React.FC = () => {
 };
 
 export default ComprehensiveServicesShowcase;
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96

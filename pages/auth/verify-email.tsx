@@ -1,4 +1,4 @@
-import { UserDetails } from "@/types/auth";
+import type { UserDetails } from "@/types/auth";
 import { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
 import {logErrorToProduction} from '@/utils/productionLogger';

@@ -54,6 +54,15 @@ interface HealthData {
   alerts: string[];
 }
 
+// For browsers that support performance.memory
+interface PerformanceWithMemory extends Performance {
+  memory: {
+    usedJSHeapSize: number;
+    totalJSHeapSize: number;
+    jsHeapSizeLimit: number;
+  };
+}
+
 class ErrorReportingDashboard {
   private healthData: HealthData;
   private startTime: number;
@@ -124,7 +133,7 @@ class ErrorReportingDashboard {
 
       // Memory usage (if available)
       if (typeof window !== 'undefined' && 'memory' in performance) {
-        const memory = (performance as any).memory;
+        const memory = (performance as PerformanceWithMemory).memory;
         const memoryUsage = (memory.usedJSHeapSize / memory.totalJSHeapSize) * 100;
         this.memoryReadings.push(memoryUsage);
         if (this.memoryReadings.length > 100) {
@@ -182,7 +191,7 @@ class ErrorReportingDashboard {
         count: 1,
         severity,
         lastOccurrence: new Date().toISOString(),
-        pattern: this.detectErrorPattern(error)
+        pattern: this.detectErrorPattern(error) || ''
       });
     }
 
@@ -244,7 +253,7 @@ class ErrorReportingDashboard {
       const alert = `⚠️ HIGH ERROR RATE: ${this.healthData.metrics.errorRate.toFixed(1)}%`;
       if (!alerts.includes(alert)) {
         alerts.push(alert);
-        logWarn('High error rate detected', { errorRate: this.healthData.metrics.errorRate });
+        logWarn('High error rate detected', { data:  { errorRate: this.healthData.metrics.errorRate } });
       }
     }
 

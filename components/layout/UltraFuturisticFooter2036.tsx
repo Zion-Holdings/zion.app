@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { motion } from 'framer-motion';
 import {
   Phone,
@@ -19,16 +19,16 @@ import {
   MessageCircle,
   Heart,
   Globe
->>>>>>> 17df199e451813150094c5ab1fb554b04628cb60
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
 } from 'lucide-react';
 
 
 
->>>>>>> 17df199e451813150094c5ab1fb554b04628cb60
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
 const footerSections = [
   {
-    title: 'Core Services',
-    description: 'Our flagship technology solutions',
+    title: 'Featured Services',
+    description: 'Our most popular and innovative solutions',
     icon: <Star className="w-5 h-5 text-yellow-400" />,
     links: [
       { name: 'AI Consciousness Evolution', href: '/ai-consciousness-evolution-platform', featured: true },
@@ -41,7 +41,7 @@ const footerSections = [
       { name: 'Autonomous Cloud Orchestrator', href: '/autonomous-cloud-orchestrator' },
       { name: 'Quantum Edge Computing Platform', href: '/quantum-edge-computing-platform' },
       { name: 'AI-Powered Enterprise Architecture', href: '/ai-powered-enterprise-architecture' }
->>>>>>> 17df199e451813150094c5ab1fb554b04628cb60
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
     ]
   },
   {
@@ -51,7 +51,7 @@ const footerSections = [
     links: [
       { name: 'AI Consciousness Evolution 2029', href: '/ai-consciousness-evolution-2029' },
       { name: 'AI Emotional Intelligence Training', href: '/ai-emotional-intelligence-training' },
-      { name: 'AI Autonomous Business Operations', href: '/ai-autonomous-business-operations-platform' },
+      { name: 'AI Autonomous Business Operations', href: '/autonomous-business-operations-platform' },
       { name: 'AI Autonomous Research Assistant', href: '/ai-autonomous-research-assistant' },
       { name: 'AI Predictive Maintenance Platform', href: '/ai-predictive-maintenance-platform' },
       { name: 'AI Content Personalization Engine', href: '/ai-content-personalization-engine' },
@@ -67,7 +67,7 @@ const footerSections = [
     icon: <Atom className="w-5 h-5 text-blue-400" />,
     links: [
       { name: 'Quantum Neural Network Platform', href: '/quantum-neural-network-platform' },
-      { name: 'Quantum Financial Trading Platform', href: '/quantum-financial-trading' },
+      { name: 'Quantum Financial Trading Platform', href: '/quantum-financial-trading-platform' },
       { name: 'Quantum Materials Discovery Platform', href: '/quantum-materials-discovery-platform' },
       { name: 'Quantum Bio-Computing Platform', href: '/quantum-bio-computing-platform' },
       { name: 'Quantum Internet Security Platform', href: '/quantum-internet-security-platform' },
@@ -79,7 +79,7 @@ const footerSections = [
     ]
   },
   {
-    title: 'Enterprise Solutions',
+    title: 'Enterprise IT Solutions',
     description: 'Advanced enterprise infrastructure solutions',
     icon: <Shield className="w-5 h-5 text-purple-400" />,
     links: [
@@ -92,38 +92,50 @@ const footerSections = [
   },
   {
     title: 'Micro SAAS Solutions',
-    description: 'Specialized business automation tools',
-    icon: <Rocket className="w-5 h-5 text-green-400" />,
->>>>>>> 17df199e451813150094c5ab1fb554b04628cb60
+    description: 'Innovative business solutions for modern enterprises',
+    icon: <Rocket className="w-5 h-5 text-emerald-400" />,
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
     links: [
-      { name: 'Documentation', href: '/docs' },
-      { name: 'Blog & Insights', href: '/blog' },
-      { name: 'Case Studies', href: '/case-studies' },
-      { name: 'Support Center', href: '/support' },
-      { name: 'Training Programs', href: '/training' },
-      { name: 'Webinars', href: '/webinars' },
-      { name: 'White Papers', href: '/white-papers' },
-      { name: 'Developer Resources', href: '/developer-resources' }
+      { name: 'AI Content Generator', href: '/ai-content-generator' },
+      { name: 'AI Code Review', href: '/ai-code-review' },
+      { name: 'AI HR Analytics Platform', href: '/intelligent-hr-analytics-platform' },
+      { name: 'AI Financial Planning Platform', href: '/ai-financial-planning-platform' },
+      { name: 'Supply Chain Optimization', href: '/intelligent-supply-chain-optimization' },
+      { name: 'Content Automation Platform', href: '/intelligent-content-automation-platform' },
+      { name: 'AI Meeting Transcriber Pro', href: '/ai-meeting-transcriber-pro' },
+      { name: 'AI Financial Intelligence', href: '/ai-financial-intelligence' },
+      { name: 'AI Healthcare Analytics', href: '/ai-healthcare-analytics' },
+      { name: 'AI Legal Contract Analyzer', href: '/ai-legal-contract-analyzer' }
     ]
   }
 ];
 
 const socialLinks = [
-  { name: 'LinkedIn', href: 'https://linkedin.com/company/ziontechgroup', icon: <Linkedin className="w-5 h-5" /> },
   { name: 'Twitter', href: 'https://twitter.com/ziontechgroup', icon: <Twitter className="w-5 h-5" /> },
-  { name: 'GitHub', href: 'https://github.com/ziontechgroup', icon: <Github className="w-5 h-5" /> },
-  { name: 'YouTube', href: 'https://youtube.com/@ziontechgroup', icon: <Youtube className="w-5 h-5" /> }
+  { name: 'LinkedIn', href: 'https://linkedin.com/company/ziontechgroup', icon: <Linkedin className="w-5 h-5" /> },
+  { name: 'Facebook', href: 'https://facebook.com/ziontechgroup', icon: <Facebook className="w-5 h-5" /> },
+  { name: 'Instagram', href: 'https://instagram.com/ziontechgroup', icon: <Instagram className="w-5 h-5" /> },
+  { name: 'YouTube', href: 'https://youtube.com/@ziontechgroup', icon: <Youtube className="w-5 h-5" /> },
+  { name: 'GitHub', href: 'https://github.com/ziontechgroup', icon: <Github className="w-5 h-5" /> }
 ];
 
 const quickLinks = [
   { name: 'About Us', href: '/about' },
-  { name: 'Contact', href: '/contact' },
   { name: 'Careers', href: '/careers' },
   { name: 'Partners', href: '/partners' },
-  { name: 'Investors', href: '/investors' },
+  { name: 'Blog', href: '/blog' },
+  { name: 'Case Studies', href: '/case-studies' },
+  { name: 'Documentation', href: '/docs' },
+  { name: 'Support', href: '/support' },
+  { name: 'Contact', href: '/contact' }
+];
+
+const legalLinks = [
   { name: 'Privacy Policy', href: '/privacy' },
   { name: 'Terms of Service', href: '/terms' },
-  { name: 'Cookie Policy', href: '/cookies' }
+  { name: 'Cookie Policy', href: '/cookies' },
+  { name: 'Security', href: '/security' },
+  { name: 'Compliance', href: '/compliance' }
 ];
 
 export default function UltraFuturisticFooter2036() {
@@ -284,9 +296,20 @@ export default function UltraFuturisticFooter2036() {
                     {link.name}
                   </Link>
                 ))}
->>>>>>> 17df199e451813150094c5ab1fb554b04628cb60
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
               </div>
             </div>
+
+            {/* Back to Top Button */}
+            <motion.button
+              onClick={scrollToTop}
+              className="group p-3 bg-gradient-to-r from-cyan-500/20 to-purple-500/20 border border-cyan-400/30 rounded-lg hover:bg-gradient-to-r hover:from-cyan-500/30 hover:to-purple-500/30 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-cyan-400 focus:ring-offset-2 focus:ring-offset-black"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              aria-label="Scroll to top of page"
+            >
+              <ArrowUp className="w-5 h-5 text-cyan-400 group-hover:text-cyan-300 transition-colors" aria-hidden="true" />
+            </motion.button>
           </div>
         </div>
       </div>
@@ -302,7 +325,7 @@ export default function UltraFuturisticFooter2036() {
           <MessageCircle className="w-6 h-6 text-white" aria-hidden="true" />
         </motion.button>
       </div>
->>>>>>> 17df199e451813150094c5ab1fb554b04628cb60
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
     </footer>
   );
 };

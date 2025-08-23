@@ -8,13 +8,13 @@ import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { useAuth } from '@/hooks/useAuth';
 import { toast } from '@/hooks/use-toast';
-import { ROADMAP_ITEMS, RoadmapItem } from '@/data/roadmap';
+import { ROADMAP_ITEMS } from '@/data/roadmap';
+import type { RoadmapItem } from '@/data/roadmap';
 import { safeStorage } from '@/utils/safeStorage';
 
 export default function RoadmapFeaturePage() {
   const router = useRouter();
   const { id } = router.query as { id?: string };
-  if (!id) return null;
   const { user } = useAuth();
   const [items, setItems] = useState<RoadmapItem[]>(() => {
     const raw = safeStorage.getItem('roadmap_items');
@@ -25,26 +25,25 @@ export default function RoadmapFeaturePage() {
       return ROADMAP_ITEMS;
     }
   });
+  const [followed, setFollowed] = useState(() =>
+    safeStorage.getItem(`feature_follow_${id}`) === 'true'
+  );
+  useEffect(() => {
+    safeStorage.setItem('roadmap_items', JSON.stringify(items));
+  }, [items]);
+  useEffect(() => {
+    if (id) {
+      safeStorage.setItem(`feature_follow_${id}`, String(followed));
+    }
+  }, [id, followed]);
+
+  if (!id) return null;
   const feature = items.find((f) => f.id === id);
   if (!feature) {
     return (
       <div className="p-8 text-center">Feature not found</div>
     );
   }
-
-  useEffect(() => {
-    safeStorage.setItem('roadmap_items', JSON.stringify(items));
-  }, [items]);
-
-  const [followed, setFollowed] = useState(() =>
-    safeStorage.getItem(`feature_follow_${id}`) === 'true'
-  );
-
-  useEffect(() => {
-    if (id) {
-      safeStorage.setItem(`feature_follow_${id}`, String(followed));
-    }
-  }, [id, followed]);
 
   const handleFollow = () => {
     if (!user) {
@@ -61,7 +60,7 @@ export default function RoadmapFeaturePage() {
 
   return (
     <>
-      <NextSeo title={feature.title} description={feature.description} />
+      <NextSeo title={feature.title} description={feature.description ?? ''} />
       <Header />
       <main className="min-h-screen bg-background py-24">
         <div className="container mx-auto space-y-6">

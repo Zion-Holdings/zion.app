@@ -106,14 +106,13 @@ const Homepage2040: React.FC = () => {
   };
 
   const staggerContainer = {
->>>>>>> 17df199e451813150094c5ab1fb554b04628cb60
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
     animate: {
       transition: {
-        staggerChildren: 0.1,
-        delayChildren: 0.2
+        staggerChildren: 0.1
       }
     }
-  }), []);
+  };
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-900 via-black to-gray-900 overflow-hidden">
@@ -126,7 +125,7 @@ const Homepage2040: React.FC = () => {
       <div className="absolute top-20 left-20 w-32 h-32 bg-cyan-500/10 rounded-full blur-xl animate-pulse"></div>
       <div className="absolute top-40 right-32 w-24 h-24 bg-purple-500/10 rounded-full blur-xl animate-pulse delay-1000"></div>
       <div className="absolute bottom-40 left-1/3 w-28 h-28 bg-pink-500/10 rounded-full blur-xl animate-pulse delay-2000"></div>
->>>>>>> 17df199e451813150094c5ab1fb554b04628cb60
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
 
       {/* Hero Section */}
       <section className="relative pt-32 pb-20 px-4 sm:px-6 lg:px-8">
@@ -162,7 +161,7 @@ const Homepage2040: React.FC = () => {
               <Link
                 href="/comprehensive-2025-services-showcase"
                 className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-cyan-500 to-blue-500 text-white rounded-xl hover:from-cyan-600 hover:to-blue-600 transition-all duration-200 font-semibold group"
->>>>>>> 17df199e451813150094c5ab1fb554b04628cb60
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
               >
                 Explore Services
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-200" />
@@ -173,13 +172,13 @@ const Homepage2040: React.FC = () => {
               >
                 Get Started
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-200" />
->>>>>>> 17df199e451813150094c5ab1fb554b04628cb60
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
               </Link>
             </motion.div>
           </div>
 
           {/* Hero Carousel */}
->>>>>>> 17df199e451813150094c5ab1fb554b04628cb60
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
           <motion.div
             className="relative max-w-4xl mx-auto"
             initial={{ opacity: 0, y: 30 }}
@@ -187,7 +186,7 @@ const Homepage2040: React.FC = () => {
             transition={{ duration: 0.8, delay: 0.6 }}
           >
             <div className="relative overflow-hidden rounded-2xl bg-black/30 backdrop-blur-xl border border-cyan-500/30">
->>>>>>> 17df199e451813150094c5ab1fb554b04628cb60
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
               <AnimatePresence mode="wait">
                 <motion.div
                   key={currentSlide}
@@ -222,7 +221,7 @@ const Homepage2040: React.FC = () => {
               </AnimatePresence>
 
               {/* Carousel Navigation */}
->>>>>>> 17df199e451813150094c5ab1fb554b04628cb60
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
               <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2">
                 {heroSlides.map((_, index) => (
                   <button
@@ -231,7 +230,7 @@ const Homepage2040: React.FC = () => {
                     className={`w-3 h-3 rounded-full transition-all duration-200 ${
                       index === currentSlide ? 'bg-cyan-400 w-8' : 'bg-gray-600 hover:bg-gray-500'
                     }`}
->>>>>>> 17df199e451813150094c5ab1fb554b04628cb60
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
                   />
                 ))}
               </div>
@@ -240,14 +239,14 @@ const Homepage2040: React.FC = () => {
               <button
                 onClick={() => setCurrentSlide((prev) => (prev - 1 + 3) % 3)}
                 className="absolute left-4 top-1/2 transform -translate-y-1/2 p-2 bg-black/50 rounded-full text-white hover:bg-black/70 transition-all duration-200"
->>>>>>> 17df199e451813150094c5ab1fb554b04628cb60
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
               >
                 <ChevronLeft className="w-6 h-6" />
               </button>
               <button
                 onClick={() => setCurrentSlide((prev) => (prev + 1) % 3)}
                 className="absolute right-4 top-1/2 transform -translate-y-1/2 p-2 bg-black/50 rounded-full text-white hover:bg-black/70 transition-all duration-200"
->>>>>>> 17df199e451813150094c5ab1fb554b04628cb60
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
               >
                 <ChevronRight className="w-6 h-6" />
               </button>
@@ -257,7 +256,7 @@ const Homepage2040: React.FC = () => {
       </section>
 
       {/* Stats Section */}
->>>>>>> 17df199e451813150094c5ab1fb554b04628cb60
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
       <section className="px-4 sm:px-6 lg:px-8 pb-20">
         <div className="max-w-7xl mx-auto">
           <motion.div
@@ -278,7 +277,7 @@ const Homepage2040: React.FC = () => {
                 </div>
                 <div className="text-3xl font-bold text-white mb-2">{stat.number}</div>
                 <div className="text-gray-400 text-sm">{stat.label}</div>
->>>>>>> 17df199e451813150094c5ab1fb554b04628cb60
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
               </motion.div>
             ))}
           </motion.div>
@@ -286,7 +285,7 @@ const Homepage2040: React.FC = () => {
       </section>
 
       {/* Featured Services Section */}
->>>>>>> 17df199e451813150094c5ab1fb554b04628cb60
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
       <section className="px-4 sm:px-6 lg:px-8 pb-20">
         <div className="max-w-7xl mx-auto">
           <motion.div
@@ -317,7 +316,7 @@ const Homepage2040: React.FC = () => {
                 variants={fadeInUp}
                 className="group p-6 bg-black/30 backdrop-blur-xl rounded-2xl border border-cyan-500/30 hover:border-cyan-400/50 transition-all duration-300 hover:transform hover:scale-105"
               >
->>>>>>> 17df199e451813150094c5ab1fb554b04628cb60
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
                 <div className={`inline-flex p-3 rounded-xl bg-gradient-to-r ${service.color} text-white mb-4 group-hover:scale-110 transition-transform duration-300`}>
                   {service.icon}
                 </div>
@@ -369,10 +368,59 @@ const Homepage2040: React.FC = () => {
               Get in touch with our team to discuss how our innovative services can drive your success
             </p>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
-              <div className="flex items-center justify-center gap-3 text-cyan-400">
-                <Phone className="w-6 h-6" />
-                <span className="font-semibold">{contactInfo.mobile}</span>
+                      {/* Service Content */}
+                      <h3 className="text-xl font-semibold text-white mb-3 group-hover:text-cyan-400 transition-colors duration-300">
+                        {service.name}
+                      </h3>
+                      <p className="text-gray-300 mb-4 leading-relaxed">
+                        {service.tagline}
+                      </p>
+
+                      {/* Service Features */}
+                      <div className="space-y-2 mb-6">
+                        {service.features.slice(0, 3).map((feature, featureIndex) => (
+                          <div key={featureIndex} className="flex items-center space-x-2 text-sm text-gray-400">
+                            <div className="w-2 h-2 bg-cyan-400 rounded-full"></div>
+                            <span>{feature}</span>
+                          </div>
+                        ))}
+                      </div>
+
+                      {/* Service Price */}
+                      <div className="mb-6">
+                        <span className="text-2xl font-bold text-cyan-400">
+                          {service.price}
+                        </span>
+                      </div>
+
+                      {/* CTA Button */}
+                      <Link 
+                        href={service.link}
+                        className="inline-flex items-center justify-center w-full px-6 py-3 bg-gradient-to-r from-cyan-400 to-blue-500 text-white font-semibold rounded-xl hover:from-cyan-500 hover:to-blue-600 transition-all duration-300 focus:outline-none focus:ring-4 focus:ring-cyan-400/50 group-hover:shadow-lg group-hover:shadow-cyan-400/25"
+                      >
+                        Learn More
+                        <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform duration-300" />
+                      </Link>
+                    </motion.div>
+                  ))}
+                </motion.div>
+
+                {/* View All Services Button */}
+                <motion.div
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.8, delay: 0.4 }}
+                  className="text-center mt-12"
+                >
+                  <Link 
+                    href="/innovative-2040-futuristic-services-showcase"
+                    className="inline-flex items-center justify-center px-8 py-4 border-2 border-cyan-400 text-cyan-400 font-semibold rounded-2xl hover:bg-cyan-400 hover:text-black transition-all duration-300 focus:outline-none focus:ring-4 focus:ring-cyan-400/50 text-lg"
+                  >
+                    View All 2040 Services
+                    <ArrowRight className="w-6 h-6 ml-3" />
+                  </Link>
+                </motion.div>
               </div>
               <div className="flex items-center justify-center gap-3 text-purple-400">
                 <Mail className="w-6 h-6" />
@@ -399,44 +447,11 @@ const Homepage2040: React.FC = () => {
                 Request Quote
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-200" />
               </Link>
->>>>>>> 17df199e451813150094c5ab1fb554b04628cb60
-            </div>
-
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link
-                href="/contact"
-                className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-cyan-500 to-blue-500 text-white rounded-xl hover:from-cyan-600 hover:to-blue-600 transition-all duration-200 font-semibold group shadow-lg hover:shadow-cyan-500/25"
-              >
-                Get Started
-                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-200" />
-              </Link>
-              <Link
-                href="/quote"
-                className="inline-flex items-center gap-2 px-8 py-4 border border-cyan-500 text-cyan-400 rounded-xl hover:bg-cyan-500 hover:text-white transition-all duration-200 font-semibold group"
-              >
-                Request Quote
-                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-200" />
-              </Link>
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
             </div>
           </motion.div>
         </div>
       </section>
-
-      {/* Floating Action Button */}
-      <motion.div
-        className="fixed bottom-8 right-8 z-40"
-        initial={{ opacity: 0, scale: 0 }}
-        animate={{ opacity: 1, scale: 1 }}
-        transition={{ delay: 2, duration: 0.5 }}
-      >
-        <button
-          onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-          className="p-4 bg-gradient-to-r from-cyan-500 to-blue-500 text-white rounded-full shadow-lg hover:shadow-cyan-500/25 hover:scale-110 transition-all duration-200"
-          aria-label="Scroll to top"
-        >
-          <ArrowRight className="w-6 h-6 transform rotate-[-90deg]" />
-        </button>
-      </motion.div>
     </div>
   );
 };

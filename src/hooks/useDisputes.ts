@@ -2,7 +2,8 @@
 import { useState, useEffect } from "react";
 import { supabase } from "@/integrations/supabase/client";
 import { useAuth } from "@/hooks/useAuth";
-import { Dispute, DisputeMessage, DisputeAttachment, DisputeStatus } from "@/types/disputes";
+import type { Dispute, DisputeMessage, DisputeAttachment, DisputeStatus } from '@/types/disputes';
+import type { ResolutionType } from "@/types/disputes";
 import { toast } from "sonner";
 import {logErrorToProduction} from '@/utils/productionLogger';
 
@@ -14,6 +15,7 @@ export function useDisputes() {
   const [error, setError] = useState<string | null>(null);
 
   const fetchDisputes = async () => {
+    if (!supabase) throw new Error('Supabase client not initialized');
     if (!user) {
       setIsLoading(false);
       return;
@@ -40,22 +42,16 @@ export function useDisputes() {
       
       if (fetchError) throw fetchError;
       
-      // Transform data if needed
-      const transformedData = data.map((dispute: any) => ({
-        ...dispute,
-        client_profile: dispute.client_profile?.client_profile,
-        talent_profile: dispute.talent_profile?.talent_profile,
-        project: {
-          ...dispute.project,
-          title: dispute.project?.job?.title || 'Untitled Project'
-        }
-      }));
+      // Transform data if needed. Use an empty array if `data` is null to avoid
+      // "map is not a function" errors when the request fails
+      const transformedData = (data ?? []).map((dispute: Dispute) => dispute);
       
       setDisputes(transformedData as Dispute[]);
       setError(null);
-    } catch (err: any) {
+    } catch (err: unknown) {
+      const message = err instanceof Error ? err.message : String(err);
       logErrorToProduction('Error fetching disputes:', { data: err });
-      setError("Failed to fetch disputes: " + err.message);
+      setError("Failed to fetch disputes: " + message);
       toast.error("Failed to fetch disputes");
     } finally {
       setIsLoading(false);
@@ -63,6 +59,7 @@ export function useDisputes() {
   };
 
   const getDisputeById = async (disputeId: string): Promise<Dispute | null> => {
+    if (!supabase) throw new Error('Supabase client not initialized');
     try {
       const { data, error } = await supabase
         .from("disputes")
@@ -92,7 +89,8 @@ export function useDisputes() {
           title: data.project?.job?.title || 'Untitled Project'
         }
       } as Dispute;
-    } catch (err: any) {
+    } catch (err: unknown) {
+      const message = err instanceof Error ? err.message : String(err);
       logErrorToProduction('Error fetching dispute:', { data: err });
       toast.error("Failed to fetch dispute details");
       return null;
@@ -105,6 +103,7 @@ export function useDisputes() {
     reason_code: string;
     description: string;
   }): Promise<Dispute | null> => {
+    if (!supabase) throw new Error('Supabase client not initialized');
     if (!user) {
       toast.error("You must be logged in to create a dispute");
       return null;
@@ -126,7 +125,8 @@ export function useDisputes() {
       fetchDisputes(); // Refresh the list
       
       return data as Dispute;
-    } catch (err: any) {
+    } catch (err: unknown) {
+      const message = err instanceof Error ? err.message : String(err);
       logErrorToProduction('Error creating dispute:', { data: err });
       toast.error("Failed to submit dispute");
       return null;
@@ -134,6 +134,7 @@ export function useDisputes() {
   };
 
   const updateDisputeStatus = async (disputeId: string, status: DisputeStatus): Promise<boolean> => {
+    if (!supabase) throw new Error('Supabase client not initialized');
     try {
       const { error } = await supabase
         .from("disputes")
@@ -151,7 +152,8 @@ export function useDisputes() {
       
       toast.success(`Dispute status updated to ${status}`);
       return true;
-    } catch (err: any) {
+    } catch (err: unknown) {
+      const message = err instanceof Error ? err.message : String(err);
       logErrorToProduction('Error updating dispute status:', { data: err });
       toast.error("Failed to update dispute status");
       return false;
@@ -162,6 +164,7 @@ export function useDisputes() {
     disputeId: string, 
     resolution: { summary: string; resolution_type: string; }
   ): Promise<boolean> => {
+    if (!supabase) throw new Error('Supabase client not initialized');
     try {
       const { error } = await supabase
         .from("disputes")
@@ -169,7 +172,7 @@ export function useDisputes() {
           status: 'resolved',
           resolved_at: new Date().toISOString(),
           resolution_summary: resolution.summary,
-          resolution_type: resolution.resolution_type
+          resolution_type: resolution.resolution_type as ResolutionType
         })
         .eq("id", disputeId);
       
@@ -184,15 +187,16 @@ export function useDisputes() {
                 status: 'resolved', 
                 resolved_at: new Date().toISOString(),
                 resolution_summary: resolution.summary,
-                resolution_type: resolution.resolution_type as any
-              } 
-            : dispute
-        )
+                resolution_type: resolution.resolution_type as ResolutionType
+              } as Dispute
+            : dispute as Dispute
+        ) as Dispute[]
       );
       
       toast.success("Dispute resolved successfully");
       return true;
-    } catch (err: any) {
+    } catch (err: unknown) {
+      const message = err instanceof Error ? err.message : String(err);
       logErrorToProduction('Error resolving dispute:', { data: err });
       toast.error("Failed to resolve dispute");
       return false;
@@ -200,6 +204,7 @@ export function useDisputes() {
   };
 
   const getDisputeMessages = async (disputeId: string): Promise<DisputeMessage[]> => {
+    if (!supabase) throw new Error('Supabase client not initialized');
     try {
       const { data, error } = await supabase
         .from("dispute_messages")
@@ -213,7 +218,8 @@ export function useDisputes() {
       if (error) throw error;
       
       return data as DisputeMessage[];
-    } catch (err: any) {
+    } catch (err: unknown) {
+      const message = err instanceof Error ? err.message : String(err);
       logErrorToProduction('Error fetching dispute messages:', { data: err });
       toast.error("Failed to fetch messages");
       return [];
@@ -221,6 +227,7 @@ export function useDisputes() {
   };
 
   const addDisputeMessage = async (disputeId: string, message: string, isAdminNote = false): Promise<boolean> => {
+    if (!supabase) throw new Error('Supabase client not initialized');
     if (!user) {
       toast.error("You must be logged in to send a message");
       return false;
@@ -240,7 +247,8 @@ export function useDisputes() {
       
       toast.success("Message sent successfully");
       return true;
-    } catch (err: any) {
+    } catch (err: unknown) {
+      const message = err instanceof Error ? err.message : String(err);
       logErrorToProduction('Error sending message:', { data: err });
       toast.error("Failed to send message");
       return false;

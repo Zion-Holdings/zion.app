@@ -19,7 +19,7 @@ const Footer: React.FC = () => {
     { name: 'Business Solutions', href: '/business-solutions', icon: Target },
     { name: 'IT Infrastructure', href: '/it-infrastructure', icon: Cpu },
     { name: 'Space Technology', href: '/space-tech', icon: Rocket }
->>>>>>> 17df199e451813150094c5ab1fb554b04628cb60
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
   ];
 
   const company = [
@@ -38,7 +38,7 @@ const Footer: React.FC = () => {
     { name: 'Webinars', href: '/webinars' },
     { name: 'Documentation', href: '/docs' },
     { name: 'Support', href: '/support' }
->>>>>>> 17df199e451813150094c5ab1fb554b04628cb60
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
   ];
 
   const legal = [
@@ -55,7 +55,7 @@ const Footer: React.FC = () => {
     { name: 'YouTube', href: '#', icon: Youtube },
     { name: 'Instagram', href: '#', icon: Instagram },
     { name: 'Facebook', href: '#', icon: Facebook }
->>>>>>> 17df199e451813150094c5ab1fb554b04628cb60
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
   ];
 
   return (

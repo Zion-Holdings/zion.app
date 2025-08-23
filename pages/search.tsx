@@ -108,18 +108,140 @@ const SearchPage: React.FC = () => {
 
     setIsSearching(true);
     
-    // Simulate search delay
-    setTimeout(() => {
-      const filtered = mockResults.filter(result => {
-        const matchesQuery = result.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
-                           result.description.toLowerCase().includes(searchQuery.toLowerCase());
-        const matchesCategory = selectedCategory === 'all' || result.category === selectedCategory;
-        return matchesQuery && matchesCategory;
+    // Add products
+    products.forEach(item => {
+      results.push({
+        id: item.id,
+        title: item.title,
+        description: item.description,
+        type: 'product',
+        category: item.category,
+        url: `/marketplace/products/${item.id}`,
+        ...(item.images?.[0] ? { image: item.images[0] } : {}),
+        ...(typeof item.price === 'number' ? { price: item.price } : {}),
+        ...(typeof item.currency === 'string' ? { currency: item.currency } : {}),
+        ...(typeof item.rating === 'number' ? { rating: item.rating } : {}),
+        tags: item.tags,
+        date: item.createdAt
       });
-      
-      setSearchResults(filtered);
-      setIsSearching(false);
-    }, 500);
+    });
+
+    // Add talent
+    talent.forEach(profile => {
+      results.push({
+        id: profile.id,
+        title: profile.full_name,
+        description: `${profile.professional_title} - ${profile.bio || ''}`,
+        type: 'talent',
+        category: 'Talent',
+        url: `/marketplace/talent/${profile.id}`,
+        ...(profile.profile_picture_url ? { image: profile.profile_picture_url } : {}),
+        ...(typeof profile.hourly_rate === 'number' ? { price: profile.hourly_rate } : {}),
+        ...(typeof profile.average_rating === 'number' ? { rating: profile.average_rating } : {}),
+        currency: 'USD',
+        tags: profile.skills ?? [],
+      });
+    });
+
+    // Add blog posts
+    posts.forEach(post => {
+      results.push({
+        id: post.slug,
+        title: post.title,
+        description: post.excerpt,
+        type: 'blog',
+        category: 'Blog',
+        url: `/blog/${post.slug}`,
+        image: post.featuredImage,
+        tags: post.tags,
+        date: post.publishedDate
+      });
+    });
+
+    // Add docs
+    docs.forEach(doc => {
+      results.push({
+        id: doc.id || `doc-${doc.text.slice(0, 10)}`,
+        title: doc.text,
+        description: doc.text,
+        type: 'doc',
+        category: 'Documentation',
+        url: '#',
+        tags: []
+      });
+    });
+
+    return results;
+  }, [products, talent, posts, docs]);
+
+  // Filter and sort results
+  const filteredResults = useMemo(() => {
+    let results = [...allResults];
+
+    // Filter by type
+    if (filters.types.length > 0) {
+      results = results.filter(r => filters.types.includes(r.type));
+    }
+
+    // Filter by category
+    if (filters.category) {
+      results = results.filter(r => r.category?.toLowerCase() === filters.category.toLowerCase());
+    }
+
+    // Filter by price
+    if (filters.minPrice > 0 || filters.maxPrice < 10000) {
+      results = results.filter(r => {
+        const price = r.price ?? 0;
+        return price >= filters.minPrice && price <= filters.maxPrice;
+      });
+    }
+
+    // Filter by rating
+    if (filters.minRating > 0) {
+      results = results.filter(r => (r.rating ?? 0) >= filters.minRating);
+    }
+
+    // Sort results
+    switch (filters.sort) {
+      case 'price_asc':
+        results.sort((a, b) => (a.price ?? 0) - (b.price ?? 0));
+        break;
+      case 'price_desc':
+        results.sort((a, b) => (b.price ?? 0) - (a.price ?? 0));
+        break;
+      case 'rating':
+        results.sort((a, b) => (b.rating ?? 0) - (a.rating ?? 0));
+        break;
+      default: // relevance
+        results.sort((a, b) => {
+          const aExact = a.title.toLowerCase() === searchTerm.toLowerCase() ? 1 : 0;
+          const bExact = b.title.toLowerCase() === searchTerm.toLowerCase() ? 1 : 0;
+          if (aExact !== bExact) return bExact - aExact;
+
+          const aStarts = a.title.toLowerCase().startsWith(searchTerm.toLowerCase()) ? 1 : 0;
+          const bStarts = b.title.toLowerCase().startsWith(searchTerm.toLowerCase()) ? 1 : 0;
+          if (aStarts !== bStarts) return bStarts - aStarts;
+
+          return a.title.localeCompare(b.title);
+        });
+    }
+
+    return results;
+  }, [allResults, filters, searchTerm]);
+
+  // Extract available categories for filter
+  const availableCategories = useMemo(() => {
+    const categories = new Set<string>();
+    allResults.forEach(result => {
+      if (result.category) categories.add(result.category);
+    });
+    return Array.from(categories).sort();
+  }, [allResults]);
+
+  // Handle search
+  const handleSearch = (term: string) => {
+    setSearchTerm(term);
+    router.push(`/search?q=${encodeURIComponent(term)}`, undefined, { shallow: true });
   };
 
   const clearSearch = () => {
@@ -150,22 +272,106 @@ const SearchPage: React.FC = () => {
               </p>
             </motion.div>
 
-            {/* Search Form */}
-            <motion.form
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-              onSubmit={handleSearch}
-              className="relative max-w-2xl mx-auto"
-            >
-              <div className="relative">
-                <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400 w-6 h-6" />
-                <input
-                  type="text"
-                  value={searchQuery}
-                  onChange={(e) => setSearchQuery(e.target.value)}
-                  placeholder="Search for services, solutions, or technologies..."
-                  className="w-full pl-12 pr-20 py-4 bg-white/10 border border-cyan-400/30 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-cyan-400 focus:border-transparent backdrop-blur-sm"
+        <div className="flex items-center justify-between">
+          <div>
+            <h1 className="text-2xl font-bold">Search Results</h1>
+            <p className="text-muted-foreground">
+              {filteredResults.length} results for "{searchTerm}"
+            </p>
+          </div>
+
+          <div className="flex items-center gap-2">
+            {/* Sort Options */}
+            <Select value={filters.sort} onValueChange={(value) => 
+              setFilters({ ...filters, sort: value })
+            }>
+              <SelectTrigger className="w-40">
+                <SelectValue />
+              </SelectTrigger>
+              <SelectContent>
+                <SelectItem value="relevance">Relevance</SelectItem>
+                <SelectItem value="price_asc">Price: Low to High</SelectItem>
+                <SelectItem value="price_desc">Price: High to Low</SelectItem>
+                <SelectItem value="rating">Highest Rated</SelectItem>
+              </SelectContent>
+            </Select>
+
+            {/* View Mode Toggle */}
+            <div className="flex border rounded-md">
+              <Button
+                variant={viewMode === 'grid' ? 'default' : 'ghost'}
+                size="sm"
+                onClick={() => setViewMode('grid')}
+              >
+                <GridIcon className="h-4 w-4" />
+              </Button>
+              <Button
+                variant={viewMode === 'list' ? 'default' : 'ghost'}
+                size="sm"
+                onClick={() => setViewMode('list')}
+              >
+                <List className="h-4 w-4" />
+              </Button>
+            </div>
+
+            {/* Mobile Filter Toggle - Temporarily disabled due to TypeScript issue */}
+            <Button variant="outline" className="lg:hidden" onClick={() => setShowFilters(true)}>
+              <Filter className="h-4 w-4 mr-2" />
+              Filters {activeFiltersCount > 0 && `(${activeFiltersCount})`}
+            </Button>
+          </div>
+        </div>
+      </div>
+
+      <div className="flex gap-6">
+        {/* Desktop Filters Sidebar */}
+        <div className="hidden lg:block w-64 flex-shrink-0">
+          <div className="bg-card border rounded-lg p-4 sticky top-4">
+            <div className="flex items-center justify-between mb-4">
+              <h2 className="font-semibold">Filters</h2>
+              {activeFiltersCount > 0 && (
+                <Button
+                  variant="ghost"
+                  size="sm"
+                  onClick={() => setFilters({
+                    types: [],
+                    category: '',
+                    minPrice: 0,
+                    maxPrice: 10000,
+                    minRating: 0,
+                    sort: 'relevance'
+                  })}
+                >
+                  Clear All
+                </Button>
+              )}
+            </div>
+            <FilterSidebar
+              filters={filters}
+              onFiltersChange={setFilters}
+              availableCategories={availableCategories}
+            />
+          </div>
+        </div>
+
+        {/* Main Content */}
+        <div className="flex-1">
+          {filteredResults.length === 0 ? (
+            <NoResultsState 
+              searchTerm={searchTerm} 
+              onNewSearch={handleSearch}
+            />
+          ) : (
+            <div className={viewMode === 'grid' 
+              ? "grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4"
+              : "space-y-4"
+            }>
+              {filteredResults.map((result) => (
+                <SearchResultCard
+                  key={`${result.type}-${result.id}`}
+                  result={result}
+                  searchTerm={searchTerm}
+                  viewMode={viewMode}
                 />
                 <button
                   type="submit"

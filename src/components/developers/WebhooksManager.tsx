@@ -315,7 +315,7 @@ export function WebhooksManager() {
       {/* Test Webhook Dialog */}
       <Dialog 
         open={showTestDialog !== null} 
-        onOpenChange={(open) => {
+        onOpenChange={(open: boolean) => {
           if (!open) {
             setShowTestDialog(null);
             setTestEventType('new_application');
@@ -420,7 +420,7 @@ export function WebhooksManager() {
       {/* Delete Webhook Confirmation Dialog */}
       <AlertDialog 
         open={showDeleteConfirm !== null} 
-        onOpenChange={(open) => !open && setShowDeleteConfirm(null)}
+        onOpenChange={(open: boolean) => !open && setShowDeleteConfirm(null)}
       >
         <AlertDialogContent className="bg-zinc-900 border-zinc-800 text-white">
           <AlertDialogHeader>

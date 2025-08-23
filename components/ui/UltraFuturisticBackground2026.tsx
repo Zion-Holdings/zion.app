@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState, useCallback } from 'react';
+import React, { useEffect, useRef, useState, useCallback, useMemo } from 'react';
 
 interface UltraFuturisticBackground2026Props {
   intensity?: 'low' | 'medium' | 'high';
@@ -14,6 +14,7 @@ const UltraFuturisticBackground2026: React.FC<UltraFuturisticBackground2026Props
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const animationRef = useRef<number | undefined>(undefined);
   const [isReducedMotion, setIsReducedMotion] = useState(false);
+  const [isVisible, setIsVisible] = useState(false);
 
   // Check for reduced motion preference
   useEffect(() => {
@@ -26,6 +27,24 @@ const UltraFuturisticBackground2026: React.FC<UltraFuturisticBackground2026Props
 
     mediaQuery.addEventListener('change', handleChange);
     return () => mediaQuery.removeEventListener('change', handleChange);
+  }, []);
+
+  // Intersection Observer for performance
+  useEffect(() => {
+    if (typeof window === 'undefined' || !('IntersectionObserver' in window)) return;
+    
+    const observer = new window.IntersectionObserver(
+      ([entry]) => {
+        setIsVisible(entry.isIntersecting);
+      },
+      { threshold: 0.1 }
+    );
+
+    if (canvasRef.current) {
+      observer.observe(canvasRef.current);
+    }
+
+    return () => observer.disconnect();
   }, []);
 
   // Get intensity value
@@ -68,18 +87,33 @@ const UltraFuturisticBackground2026: React.FC<UltraFuturisticBackground2026Props
     }
   }, []);
 
+  // Memoized particle system configuration
+  const particleConfig = useMemo(() => ({
+    maxParticles: isReducedMotion ? 50 : 150,
+    particleSize: { min: 1, max: 3 },
+    speed: { min: 0.5, max: 2.0 },
+    opacity: { min: 0.1, max: 0.8 }
+  }), [isReducedMotion]);
+
   // Initialize canvas and animation
   useEffect(() => {
     const canvas = canvasRef.current;
-    if (!canvas) return;
+    if (!canvas || !isVisible || isReducedMotion) return;
 
     const ctx = canvas.getContext('2d');
     if (!ctx) return;
 
     // Set canvas size
     const resizeCanvas = () => {
-      canvas.width = window.innerWidth;
-      canvas.height = window.innerHeight;
+      const dpr = window.devicePixelRatio || 1;
+      const rect = canvas.getBoundingClientRect();
+      
+      canvas.width = rect.width * dpr;
+      canvas.height = rect.height * dpr;
+      
+      ctx.scale(dpr, dpr);
+      canvas.style.width = `${rect.width}px`;
+      canvas.style.height = `${rect.height}px`;
     };
 
     resizeCanvas();
@@ -94,31 +128,39 @@ const UltraFuturisticBackground2026: React.FC<UltraFuturisticBackground2026Props
       size: number;
       opacity: number;
       color: string;
+      life: number;
+      maxLife: number;
     }> = [];
 
     const colors = getThemeColors(theme);
     const intensityValue = getIntensityValue(intensity);
-    const particleCount = Math.floor(50 * intensityValue);
 
-    // Generate particles
-    for (let i = 0; i < particleCount; i++) {
-      particles.push({
-        x: Math.random() * canvas.width,
-        y: Math.random() * canvas.height,
-        vx: (Math.random() - 0.5) * (isReducedMotion ? 0.5 : 2),
-        vy: (Math.random() - 0.5) * (isReducedMotion ? 0.5 : 2),
-        size: Math.random() * 3 + 1,
-        opacity: Math.random() * 0.5 + 0.3,
-        color: [colors.primary, colors.secondary, colors.accent][Math.floor(Math.random() * 3)]
-      });
-    }
+    // Initialize particles
+    const initParticles = () => {
+      particles.length = 0;
+      for (let i = 0; i < particleConfig.maxParticles; i++) {
+        particles.push({
+          x: Math.random() * canvas.width,
+          y: Math.random() * canvas.height,
+          vx: (Math.random() - 0.5) * particleConfig.speed.max * intensityValue,
+          vy: (Math.random() - 0.5) * particleConfig.speed.max * intensityValue,
+          size: Math.random() * (particleConfig.particleSize.max - particleConfig.particleSize.min) + particleConfig.particleSize.min,
+          opacity: Math.random() * (particleConfig.opacity.max - particleConfig.opacity.min) + particleConfig.opacity.min,
+          color: [colors.primary, colors.secondary, colors.accent][Math.floor(Math.random() * 3)],
+          life: Math.random() * 100,
+          maxLife: 100
+        });
+      }
+    };
 
     // Animation loop
     const animate = () => {
+      if (!isVisible || isReducedMotion) return;
+
       ctx.clearRect(0, 0, canvas.width, canvas.height);
 
       // Update and draw particles
-      particles.forEach(particle => {
+      particles.forEach((particle, index) => {
         // Update position
         particle.x += particle.vx;
         particle.y += particle.vy;
@@ -129,56 +171,81 @@ const UltraFuturisticBackground2026: React.FC<UltraFuturisticBackground2026Props
         if (particle.y < 0) particle.y = canvas.height;
         if (particle.y > canvas.height) particle.y = 0;
 
+        // Update life
+        particle.life -= 0.5;
+        if (particle.life <= 0) {
+          particle.life = particle.maxLife;
+          particle.x = Math.random() * canvas.width;
+          particle.y = Math.random() * canvas.height;
+        }
+
         // Draw particle
+        ctx.save();
+        ctx.globalAlpha = particle.opacity * (particle.life / particle.maxLife);
+        ctx.fillStyle = particle.color;
         ctx.beginPath();
         ctx.arc(particle.x, particle.y, particle.size, 0, Math.PI * 2);
-        ctx.fillStyle = `${particle.color}${Math.floor(particle.opacity * 255).toString(16).padStart(2, '0')}`;
         ctx.fill();
+        ctx.restore();
 
         // Draw connections
-        particles.forEach(otherParticle => {
-          const distance = Math.sqrt(
-            Math.pow(particle.x - otherParticle.x, 2) + 
-            Math.pow(particle.y - otherParticle.y, 2)
-          );
-          
-          if (distance < 100 && distance > 0) {
-            const opacity = (100 - distance) / 100 * 0.3;
+        particles.slice(index + 1).forEach(otherParticle => {
+          const dx = particle.x - otherParticle.x;
+          const dy = particle.y - otherParticle.y;
+          const distance = Math.sqrt(dx * dx + dy * dy);
+
+          if (distance < 100) {
+            ctx.save();
+            ctx.globalAlpha = (1 - distance / 100) * 0.3 * intensityValue;
+            ctx.strokeStyle = colors.primary;
+            ctx.lineWidth = 0.5;
             ctx.beginPath();
             ctx.moveTo(particle.x, particle.y);
             ctx.lineTo(otherParticle.x, otherParticle.y);
-            ctx.strokeStyle = `${colors.primary}${Math.floor(opacity * 255).toString(16).padStart(2, '0')}`;
-            ctx.lineWidth = 0.5;
             ctx.stroke();
+            ctx.restore();
           }
         });
       });
 
-      // Continue animation
-      if (!isReducedMotion) {
-        animationRef.current = requestAnimationFrame(animate);
-      }
+      animationRef.current = requestAnimationFrame(animate);
     };
 
-    // Start animation
-    if (!isReducedMotion) {
-      animate();
-    }
+    initParticles();
+    animate();
 
-    // Cleanup
     return () => {
       window.removeEventListener('resize', resizeCanvas);
       if (animationRef.current) {
         cancelAnimationFrame(animationRef.current);
       }
     };
-  }, [theme, intensity, getThemeColors, getIntensityValue, isReducedMotion]);
+  }, [isVisible, isReducedMotion, theme, intensity, getThemeColors, getIntensityValue, particleConfig]);
+
+  // Cleanup on unmount
+  useEffect(() => {
+    return () => {
+      if (animationRef.current) {
+        cancelAnimationFrame(animationRef.current);
+      }
+    };
+  }, []);
+
+  if (isReducedMotion) {
+    return (
+      <div 
+        className={`fixed inset-0 bg-gradient-to-br from-black via-gray-900 to-black ${className}`}
+        aria-hidden="true"
+      />
+    );
+  }
 
   return (
     <canvas
       ref={canvasRef}
-      className={`fixed inset-0 w-full h-full pointer-events-none ${className}`}
-      style={{ zIndex: -1 }}
+      className={`fixed inset-0 pointer-events-none ${className}`}
+      aria-hidden="true"
+      role="presentation"
     />
   );
 };

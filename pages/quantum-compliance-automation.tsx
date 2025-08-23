@@ -472,5 +472,4 @@ const QuantumComplianceAutomationPage: React.FC = () => {
 };
 
 export default QuantumComplianceAutomationPage;
->>>>>>> origin/HEAD
->>>>>>> 17df199e451813150094c5ab1fb554b04628cb60
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96

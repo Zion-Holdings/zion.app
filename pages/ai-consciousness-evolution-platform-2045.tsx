@@ -51,8 +51,7 @@ const AIConsciousnessEvolutionPlatform: React.FC = () => {
         {/* Hero Section */}
         <section className="relative pt-32 pb-20 overflow-hidden">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
->>>>>>> origin/cursor/website-audit-and-enhancement-edce
->>>>>>> 17df199e451813150094c5ab1fb554b04628cb60
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -76,8 +75,7 @@ const AIConsciousnessEvolutionPlatform: React.FC = () => {
               <p className="text-xl text-gray-300 max-w-4xl mx-auto mb-8">
                 Experience the future of artificial intelligence with our revolutionary consciousness evolution platform. 
                 Combining emotional intelligence, autonomous learning, and ethical governance for unprecedented AI capabilities.
->>>>>>> origin/cursor/website-audit-and-enhancement-edce
->>>>>>> 17df199e451813150094c5ab1fb554b04628cb60
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
               </p>
               
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -89,8 +87,7 @@ const AIConsciousnessEvolutionPlatform: React.FC = () => {
                 >
                   Start Free Trial
                   <ArrowRight className="ml-2 w-5 h-5" />
->>>>>>> origin/cursor/website-audit-and-enhancement-edce
->>>>>>> 17df199e451813150094c5ab1fb554b04628cb60
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
                 </motion.button>
                 <motion.button
                   whileHover={{ scale: 1.05 }}
@@ -98,8 +95,7 @@ const AIConsciousnessEvolutionPlatform: React.FC = () => {
                   className="px-8 py-4 border border-purple-500/30 text-purple-300 font-semibold rounded-lg hover:bg-purple-500/10 transition-all duration-300"
                 >
                   Watch Demo
->>>>>>> origin/cursor/website-audit-and-enhancement-edce
->>>>>>> 17df199e451813150094c5ab1fb554b04628cb60
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
                 </motion.button>
               </div>
             </motion.div>
@@ -110,8 +106,7 @@ const AIConsciousnessEvolutionPlatform: React.FC = () => {
         {/* Features Section */}
         <section className="py-20">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
->>>>>>> origin/cursor/website-audit-and-enhancement-edce
->>>>>>> 17df199e451813150094c5ab1fb554b04628cb60
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -143,8 +138,7 @@ const AIConsciousnessEvolutionPlatform: React.FC = () => {
                     <h3 className="text-xl font-semibold text-white mb-3">{feature.title}</h3>
                     <p className="text-gray-300">{feature.description}</p>
                   </div>
->>>>>>> origin/cursor/website-audit-and-enhancement-edce
->>>>>>> 17df199e451813150094c5ab1fb554b04628cb60
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
                 </motion.div>
               ))}
             </div>
@@ -154,8 +148,7 @@ const AIConsciousnessEvolutionPlatform: React.FC = () => {
         {/* Benefits Section */}
         <section className="py-20 bg-gradient-to-r from-purple-500/5 to-pink-500/5">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
->>>>>>> origin/cursor/website-audit-and-enhancement-edce
->>>>>>> 17df199e451813150094c5ab1fb554b04628cb60
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -184,8 +177,7 @@ const AIConsciousnessEvolutionPlatform: React.FC = () => {
                     <CheckCircle className="w-5 h-5 text-white" />
                   </div>
                   <p className="text-lg text-gray-300">{benefit}</p>
->>>>>>> origin/cursor/website-audit-and-enhancement-edce
->>>>>>> 17df199e451813150094c5ab1fb554b04628cb60
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
                 </motion.div>
               ))}
             </div>
@@ -196,8 +188,7 @@ const AIConsciousnessEvolutionPlatform: React.FC = () => {
         {/* CTA Section */}
         <section className="py-20">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
->>>>>>> origin/cursor/website-audit-and-enhancement-edce
->>>>>>> 17df199e451813150094c5ab1fb554b04628cb60
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -218,21 +209,18 @@ const AIConsciousnessEvolutionPlatform: React.FC = () => {
                   className="px-10 py-4 bg-gradient-to-r from-purple-500 to-pink-500 text-white font-semibold rounded-lg hover:from-purple-600 hover:to-pink-600 transition-all duration-300 text-lg"
                 >
                   Get Started Now
->>>>>>> origin/cursor/website-audit-and-enhancement-edce
->>>>>>> 17df199e451813150094c5ab1fb554b04628cb60
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
                 </motion.button>
               </div>
             </motion.div>
           </div>
         </section>
 =======
->>>>>>> origin/cursor/website-audit-and-enhancement-edce
->>>>>>> 17df199e451813150094c5ab1fb554b04628cb60
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
       </div>
     </Layout>
   );
 };
 
 export default AIConsciousnessEvolutionPlatform;
->>>>>>> origin/cursor/website-audit-and-enhancement-edce
->>>>>>> 17df199e451813150094c5ab1fb554b04628cb60
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96

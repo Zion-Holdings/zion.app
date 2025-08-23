@@ -7,7 +7,7 @@ async function handler(req: NextApiRequest, res: NextApiResponse) {
     return res.status(405).end(`Method ${req.method} Not Allowed`);
   }
 
-  const { topic = 'Zion OS' } = req.body || {};
+  const { topic = 'Zion OS' } = req['body'] || {};
 
   const quiz = [
     {

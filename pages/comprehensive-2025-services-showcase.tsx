@@ -1,6 +1,10 @@
-import React, { useState } from 'react';
-import SEO from '../components/SEO';
-import { motion, AnimatePresence } from 'framer-motion';
+import React from 'react';
+import Head from 'next/head';
+import UltraAdvancedFuturisticBackground from '../components/ui/UltraAdvancedFuturisticBackground';
+import { innovative2025MicroSaasBatch } from '../data/innovative-2025-micro-saas-batch';
+import { innovative2025ITEnterpriseBatch } from '../data/innovative-2025-it-enterprise-batch';
+import Link from 'next/link';
+import { motion } from 'framer-motion';
 import { 
   Search, Grid, List,
   ArrowRight, Check,
@@ -44,7 +48,7 @@ interface UnifiedService {
   rating?: number;
   reviews?: number;
 }
->>>>>>> 17df199e451813150094c5ab1fb554b04628cb60
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
 
 const Comprehensive2025ServicesShowcase: React.FC = () => {
   const [selectedCategory, setSelectedCategory] = useState('all');
@@ -159,7 +163,7 @@ const Comprehensive2025ServicesShowcase: React.FC = () => {
                   <Building className="w-4 h-4 text-green-400" />
                   <span>Address: 364 E Main St STE 1008 Middletown DE 19709</span>
                 </div>
->>>>>>> 17df199e451813150094c5ab1fb554b04628cb60
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
               </div>
             </div>
           </motion.div>
@@ -195,7 +199,7 @@ const Comprehensive2025ServicesShowcase: React.FC = () => {
                   }`}
                 >
                   {category}
->>>>>>> 17df199e451813150094c5ab1fb554b04628cb60
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
                 </button>
               ))}
             </div>
@@ -246,7 +250,7 @@ const Comprehensive2025ServicesShowcase: React.FC = () => {
 
           {viewMode === 'grid' ? (
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
->>>>>>> 17df199e451813150094c5ab1fb554b04628cb60
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
               {filteredServices.map((service, index) => (
                 <motion.div
                   key={service.id}
@@ -428,4 +432,4 @@ const Comprehensive2025ServicesShowcase: React.FC = () => {
 };
 
 export default Comprehensive2025ServicesShowcase;
->>>>>>> 17df199e451813150094c5ab1fb554b04628cb60
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96

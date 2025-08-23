@@ -75,7 +75,7 @@ const TeamPage: React.FC = () => {
     { number: "99.99%", label: "Client Satisfaction", icon: Star },
     { number: "24/7", label: "Support Available", icon: Clock }
   ];
->>>>>>> 17df199e451813150094c5ab1fb554b04628cb60
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
 
 export default function Team() {
   return (
@@ -96,7 +96,7 @@ export default function Team() {
               </div>
               <h1 className="text-5xl md:text-7xl font-bold bg-gradient-to-r from-blue-400 via-cyan-400 to-indigo-400 bg-clip-text text-transparent mb-6">
                 Leadership Users
->>>>>>> 17df199e451813150094c5ab1fb554b04628cb60
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
               </h1>
               <p className="text-xl md:text-2xl text-gray-300 max-w-4xl mx-auto leading-relaxed">
                 Meet the visionary leaders and brilliant minds driving Zion Tech Group's 
@@ -107,7 +107,7 @@ export default function Team() {
         </section>
 
         {/* Leadership Users Section */}
->>>>>>> 17df199e451813150094c5ab1fb554b04628cb60
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
         <section className="py-20 px-4">
           <div className="container mx-auto max-w-6xl">
             <motion.div

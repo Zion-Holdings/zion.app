@@ -1,16 +1,35 @@
-import React from 'react';
-import Link from 'next/link';
+import { useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
+import { Input } from '@/components/ui/input';
+import { Button } from '@/components/ui/button';
 
 export default function Custom404() {
-	return (
-		<div className="min-h-[60vh] flex items-center justify-center text-center px-6">
-			<div>
-				<h1 className="text-6xl font-extrabold mb-4 bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">404</h1>
-				<p className="text-xl text-gray-300 mb-8">Page not found. The page you are looking for doesn’t exist or has been moved.</p>
-				<Link href="/" className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-semibold hover:from-cyan-600 hover:to-blue-700 transition-colors">
-					<span>Go back home</span>
-				</Link>
-			</div>
-		</div>
-	);
+  const navigate = useNavigate();
+  const [query, setQuery] = useState('');
+
+  const handleSearch = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (query.trim()) {
+      navigate(`/marketplace/search?q=${encodeURIComponent(query)}`);
+    }
+  };
+
+  return (
+    <main className="min-h-screen flex flex-col items-center justify-center bg-gray-100 p-6 text-center">
+      <h1 className="text-4xl font-bold mb-4 text-gray-800">404 - Page Not Found</h1>
+      <form onSubmit={handleSearch} className="w-full max-w-xs mb-6 space-y-3">
+        <Input
+          type="text"
+          placeholder="Search the marketplace..."
+          value={query}
+          onChange={(e) => setQuery(e.target.value)}
+        />
+        <Button type="submit" className="w-full">Search</Button>
+      </form>
+      <Button asChild variant="outline">
+        <Link to="/marketplace">Back to Marketplace</Link>
+      </Button>
+    </main>
+  );
 }
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96

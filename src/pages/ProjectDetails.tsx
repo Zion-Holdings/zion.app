@@ -6,7 +6,7 @@ import { useAuth } from "@/hooks/useAuth";
 import { useProjects } from "@/hooks/useProjects";
 import { SEO } from "@/components/SEO";
 import { ProtectedRoute } from "@/components/ProtectedRoute";
-import { Project, ProjectStatus } from "@/types/projects";
+import type { Project, ProjectStatus } from "@/types/projects";
 import { Button } from "@/components/ui/button";
 import {logErrorToProduction} from '@/utils/productionLogger';
 import { AlertCircle, Calendar, CheckCircle2, Clock, FileText, Layers, MessageSquare, Video, User, XCircle } from 'lucide-react';
@@ -41,6 +41,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { toast } from "@/hooks/use-toast";
 import { supabase } from "@/integrations/supabase/client";
 import { ProjectReviewSection } from "@/components/projects/reviews/ProjectReviewSection";
+import type { ProjectNote } from "@/types/projects";
 
 
 
@@ -62,7 +63,7 @@ function ProjectDetailsContent() {
   
   const [project, setProject] = useState<Project | null>(null);
   const [isLoading, setIsLoading] = useState(true);
-  const [notes, setNotes] = useState<any[]>([]);
+  const [notes, setNotes] = useState<ProjectNote[]>([]);
   const [newNote, setNewNote] = useState("");
   const [isSubmittingNote, setIsSubmittingNote] = useState(false);
   const [activeTab, setActiveTab] = useState("details");
@@ -97,7 +98,8 @@ function ProjectDetailsContent() {
   
   const fetchProjectNotes = async (projectId: string) => {
     try {
-      const { data, error } = await supabase
+      if (!supabase) throw new Error('Supabase client not initialized');
+      const { data: _data, error } = await supabase
         .from("project_notes")
         .select(`
           *,
@@ -108,12 +110,13 @@ function ProjectDetailsContent() {
       
       if (error) throw error;
       
-      setNotes(data || []);
-    } catch (err: any) {
+      setNotes(_data || []);
+    } catch (err: unknown) {
+      const message = typeof err === 'object' && err !== null && 'message' in err ? (err as { message?: string }).message : undefined;
       logErrorToProduction('Error fetching project notes:', { data: err });
       toast({
         title: "Failed to load notes",
-        description: err.message || "An error occurred while loading project notes.",
+        description: message || "An error occurred while loading project notes.",
         variant: "destructive",
       });
     }
@@ -125,7 +128,8 @@ function ProjectDetailsContent() {
     setIsSubmittingNote(true);
     
     try {
-      const { data, error } = await supabase
+      if (!supabase) throw new Error('Supabase client not initialized');
+      const { data: _data, error } = await supabase
         .from("project_notes")
         .insert({
           project_id: project.id,
@@ -144,11 +148,12 @@ function ProjectDetailsContent() {
         title: "Note added",
         description: "Your note has been added to the project.",
       });
-    } catch (err: any) {
+    } catch (err: unknown) {
+      const message = typeof err === 'object' && err !== null && 'message' in err ? (err as { message?: string }).message : undefined;
       logErrorToProduction('Error adding note:', { data: err });
       toast({
         title: "Failed to add note",
-        description: err.message || "An error occurred while adding note.",
+        description: message || "An error occurred while adding note.",
         variant: "destructive",
       });
     } finally {

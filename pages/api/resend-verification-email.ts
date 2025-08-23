@@ -3,18 +3,28 @@ import type { NextApiRequest, NextApiResponse } from 'next';
 import { withErrorLogging } from '@/utils/withErrorLogging';
 import { logInfo, logErrorToProduction } from '@/utils/productionLogger';
 
-async function handler(req: NextApiRequest, res: NextApiResponse) {
-  if (req.method !== 'POST') {
-    return res.status(405).json({ message: 'Method not allowed' });
+async function handler(req: NextApiRequest, res: NextApiResponse): Promise<void> {
+  if (req['method'] !== 'POST') {
+    res.status(405).json({ message: 'Method not allowed' });
+    return;
   }
 
-  const { email } = req.body as { email?: string };
+  const { email } = req['body'] as { email?: string };
 
   if (!email || typeof email !== 'string') {
-    return res.status(400).json({ message: 'Email is required' });
+    res.status(400).json({ message: 'Email is required' });
+    return;
   }
 
   try {
+    if (!supabase) {
+      res.status(503).json({ 
+        message: 'Authentication service unavailable',
+        details: 'Supabase client is not properly initialized'
+      });
+      return;
+    }
+
     const { error } = await supabase.auth.resend({
       type: 'signup',
       email,
@@ -22,20 +32,23 @@ async function handler(req: NextApiRequest, res: NextApiResponse) {
 
     if (error) {
       logErrorToProduction('Error resending verification email:', { data: error });
-      return res.status(400).json({ message: error.message });
+      res.status(400).json({ message: error.message });
+      return;
     }
 
-    logInfo('Verification email resent successfully for:', { data: email });
-    return res.status(200).json({ 
+    logInfo('Verification email resent successfully for:', { data:  { data: email } });
+    res.status(200).json({ 
       message: 'Verification email sent successfully' 
     });
+    return;
 
   } catch (error: any) {
     logErrorToProduction('Unexpected error resending verification email:', { data: error });
-    return res.status(500).json({ 
+    res.status(500).json({ 
       message: 'Internal server error',
-      details: process.env.NODE_ENV === 'development' ? error.message : undefined
+      details: process.env['NODE_ENV'] === 'development' ? error.message : undefined
     });
+    return;
   }
 }
 

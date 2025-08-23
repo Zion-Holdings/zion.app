@@ -1,4 +1,6 @@
 import React from 'react';
+import { motion } from 'framer-motion';
+import { Users, Rocket, Brain, Globe, Shield, Zap, Target, Award } from 'lucide-react';
 import Layout from '../components/layout/Layout';
 import { motion } from 'framer-motion';
 import { 
@@ -77,7 +79,7 @@ const Careers: React.FC = () => {
       title: "Collaboration",
       description: "Great achievements come from great teams working together",
       icon: <Users className="w-6 h-6" />
->>>>>>> 17df199e451813150094c5ab1fb554b04628cb60
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
     }
   ];
 
@@ -153,7 +155,7 @@ const Careers: React.FC = () => {
               <p className="text-xl md:text-2xl text-gray-300 mb-8 max-w-4xl mx-auto">
                 Help us revolutionize technology and shape the future of humanity. Join a team of 
                 visionaries, innovators, and problem-solvers working on the most cutting-edge technologies.
->>>>>>> 17df199e451813150094c5ab1fb554b04628cb60
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
               </p>
               <p className="text-lg text-gray-400 max-w-3xl mx-auto">
                 At Zion Tech Group, we're building the technologies of tomorrow. Join our team of 
@@ -237,7 +239,7 @@ const Careers: React.FC = () => {
                     <h3 className="text-2xl font-semibold">{value.title}</h3>
                   </div>
                   <p className="text-gray-300 leading-relaxed">{value.description}</p>
->>>>>>> 17df199e451813150094c5ab1fb554b04628cb60
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
                 </motion.div>
               ))}
             </div>
@@ -275,7 +277,7 @@ const Careers: React.FC = () => {
                   </div>
                   <h3 className="text-xl font-semibold mb-3">{benefit.title}</h3>
                   <p className="text-gray-400">{benefit.description}</p>
->>>>>>> 17df199e451813150094c5ab1fb554b04628cb60
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
                 </motion.div>
               ))}
             </div>
@@ -308,7 +310,7 @@ const Careers: React.FC = () => {
                 >
                   <h3 className="text-2xl font-semibold mb-4 text-cyan-400">{item.title}</h3>
                   <p className="text-gray-300 leading-relaxed">{item.description}</p>
->>>>>>> 17df199e451813150094c5ab1fb554b04628cb60
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
                 </motion.div>
               ))}
             </div>
@@ -327,7 +329,7 @@ const Careers: React.FC = () => {
               <h2 className="text-4xl font-bold mb-4">Open Positions</h2>
               <p className="text-xl text-gray-400 max-w-3xl mx-auto">
                 Join our team and help build the technologies of tomorrow
->>>>>>> 17df199e451813150094c5ab1fb554b04628cb60
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
               </p>
             </motion.div>
 
@@ -390,7 +392,7 @@ const Careers: React.FC = () => {
                       </button>
                     </div>
                   </div>
->>>>>>> 17df199e451813150094c5ab1fb554b04628cb60
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
                 </motion.div>
               ))}
             </div>
@@ -423,7 +425,7 @@ const Careers: React.FC = () => {
                 >
                   Send Resume
                 </a>
->>>>>>> 17df199e451813150094c5ab1fb554b04628cb60
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
               </div>
             </motion.div>
           </div>
@@ -434,4 +436,4 @@ const Careers: React.FC = () => {
 };
 
 export default Careers;
->>>>>>> 17df199e451813150094c5ab1fb554b04628cb60
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96

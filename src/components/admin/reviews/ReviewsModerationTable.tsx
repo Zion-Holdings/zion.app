@@ -9,7 +9,8 @@ import { Check, X, User, Star, MoreHorizontal } from 'lucide-react';
 import { format } from "date-fns";
 import { toast } from "@/hooks/use-toast";
 import { supabase } from "@/integrations/supabase/client";
-import { Review, ReviewStatus } from "@/types/reviews";
+import type { Review } from "@/types/reviews";
+import type { ReviewStatus } from "@/types/reviews";
 
 import {
   Table,
@@ -59,6 +60,10 @@ export function ReviewsModerationTable({
       reviewId: string;
       status: ReviewStatus;
     }) => {
+      if (!supabase) {
+        throw new Error('Supabase client not available');
+      }
+      
       const { error } = await supabase
         .from("reviews")
         .update({ status })

@@ -55,7 +55,7 @@ async function handleGet(
   res: NextApiResponse<ErrorMonitoringResponse>,
   action: string
 ) {
-  const { timeRange = 'day' } = req.query as any;
+  const { timeRange = 'day' } = req['query'] as { timeRange?: string };
   const timestamp = new Date().toISOString();
 
   switch (action) {
@@ -215,7 +215,7 @@ async function handlePost(
           }
         });
 
-        logInfo('Test error created for monitoring validation', { errorId });
+        logInfo('Test error created for monitoring validation', { data:  { errorId } });
 
         res.status(200).json({
           success: true,
@@ -240,7 +240,7 @@ async function handlePost(
       try {
         const healthStatus = await systemHealthMonitor.performHealthCheck();
         
-        logInfo('Manual health check triggered', { score: healthStatus.score });
+        logInfo('Manual health check triggered', { data:  { score: healthStatus.score } });
 
         res.status(200).json({
           success: true,
@@ -262,7 +262,7 @@ async function handlePost(
 
     case 'clear-old-logs':
       try {
-        const { days = 30 } = req.body as any;
+        const { days = 30 } = req['body'] as any;
         const clearedCount = await logDashboard.clearOldLogs(Number(days));
         
         logInfo('Old logs cleared', { days, clearedCount });

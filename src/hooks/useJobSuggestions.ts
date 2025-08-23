@@ -2,7 +2,7 @@
 import { useState, useEffect } from "react";
 import { supabase } from "@/integrations/supabase/client";
 import { toast } from "@/hooks/use-toast";
-import { JobMatch } from "@/types/jobs";
+import type { JobMatch } from "@/types/jobs";
 import {logErrorToProduction} from '@/utils/productionLogger';
 
 export function useJobSuggestions(talentId?: string) {
@@ -17,6 +17,7 @@ export function useJobSuggestions(talentId?: string) {
       try {
         setIsLoading(true);
         
+        if (!supabase) throw new Error('Supabase client not initialized');
         // Get job matches with job details
         const { data, error } = await supabase
           .from("job_talent_matches")
@@ -52,6 +53,7 @@ export function useJobSuggestions(talentId?: string) {
         ...(status === 'viewed' ? { viewed_at: new Date().toISOString() } : {})
       };
       
+      if (!supabase) throw new Error('Supabase client not initialized');
       const { error } = await supabase
         .from("job_talent_matches")
         .update(updates)

@@ -25,7 +25,7 @@ export default function MessagingInbox() {
   } = useMessaging();
   const isMobile = useIsMobile();
   const router = useRouter(); // Changed from navigate
-  const [activeCall, setActiveCall] = useState<string | null>(null);
+  const [_activeCall, setActiveCall] = useState<string | null>(null);
   
   useEffect(() => {
     // Fetch conversations when component mounts

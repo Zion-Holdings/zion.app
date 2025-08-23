@@ -1,45 +1,46 @@
 {
-  "name": "Zion Tech Group",
+  "name": "Zion Tech Group - Revolutionary 2045 Technology",
   "short_name": "Zion Tech",
-  "description": "Leading-edge AI consciousness, quantum computing, and micro SAAS solutions for enterprise transformation",
+  "description": "Pioneering the future of technology with revolutionary AI consciousness, quantum computing, and autonomous solutions that transform businesses worldwide.",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#000000",
-  "theme_color": "#3B82F6",
+  "theme_color": "#0ea5e9",
   "orientation": "portrait-primary",
   "scope": "/",
-  "lang": "en-US",
-  "categories": ["business", "productivity", "technology", "utilities"],
+  "lang": "en",
+  "categories": ["business", "productivity", "technology"],
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
   "icons": [
     {
       "src": "/icon-72x72.png",
       "sizes": "72x72",
       "type": "image/png",
-      "purpose": "maskable any"
+      "purpose": "any"
     },
     {
       "src": "/icon-96x96.png",
       "sizes": "96x96",
       "type": "image/png",
-      "purpose": "maskable any"
+      "purpose": "any"
     },
     {
       "src": "/icon-128x128.png",
       "sizes": "128x128",
       "type": "image/png",
-      "purpose": "maskable any"
+      "purpose": "any"
     },
     {
       "src": "/icon-144x144.png",
       "sizes": "144x144",
       "type": "image/png",
-      "purpose": "maskable any"
+      "purpose": "any"
     },
     {
       "src": "/icon-152x152.png",
       "sizes": "152x152",
       "type": "image/png",
-      "purpose": "maskable any"
+      "purpose": "any"
     },
     {
       "src": "/icon-192x192.png",
@@ -51,7 +52,15 @@
       "src": "/icon-384x384.png",
       "sizes": "384x384",
       "type": "image/png",
-      "purpose": "maskable any"
+      "purpose": "any"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "/og-image.jpg",
+      "sizes": "1280x720",
+      "type": "image/jpeg",
+      "form_factor": "wide"
     },
     {
       "src": "/icon-512x512.png",
@@ -64,7 +73,7 @@
     {
       "name": "Services",
       "short_name": "Services",
-      "description": "View our technology services",
+      "description": "View all our revolutionary services",
       "url": "/services",
       "icons": [
         {
@@ -103,68 +112,23 @@
       "src": "/screenshot-wide.png",
       "sizes": "1280x720",
       "type": "image/png",
-      "form_factor": "wide",
-      "label": "Zion Tech Group Homepage"
+      "form_factor": "wide"
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
     },
     {
       "src": "/screenshot-narrow.png",
       "sizes": "750x1334",
       "type": "image/png",
-      "form_factor": "narrow",
-      "label": "Zion Tech Group Mobile View"
+      "form_factor": "narrow"
     }
-  ],
-  "related_applications": [],
-  "prefer_related_applications": false,
-  "edge_side_panel": {
-    "preferred_width": 400
-  },
-  "launch_handler": {
-    "client_mode": "navigate-existing"
-  },
-  "protocol_handlers": [
-    {
-      "protocol": "web+zion",
-      "url": "/protocol-handler?protocol=%s"
-    }
-  ],
-  "file_handlers": [
-    {
-      "action": "/file-handler",
-      "accept": {
-        "text/*": [".txt", ".md", ".json"],
-        "application/pdf": [".pdf"],
-        "image/*": [".png", ".jpg", ".jpeg", ".gif", ".webp"]
-      }
-    }
-  ],
-  "share_target": {
-    "action": "/share",
-    "method": "POST",
-    "enctype": "multipart/form-data",
-    "params": {
-      "title": "title",
-      "text": "text",
-      "url": "url",
-      "files": "files"
-    }
-  },
-  "permissions": [
-    "notifications",
-    "background-sync",
-    "storage"
   ],
   "features": [
     "Cross Platform",
     "fast",
-    "simple",
-    "AI-Powered",
-    "Quantum Computing",
-    "Micro SAAS",
-    "Enterprise Solutions"
+    "simple"
   ],
-  "developer": {
-    "name": "Zion Tech Group",
-    "url": "https://ziontechgroup.com"
+  "edge_side_panel": {
+    "preferred_width": 400
   }
 }
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96

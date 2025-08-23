@@ -1,6 +1,7 @@
 
 import { useState } from "react";
-import { useForm, ControllerRenderProps } from "react-hook-form";
+import { useForm } from "react-hook-form";
+import type { ControllerRenderProps } from "react-hook-form";
 import { 
   Card,
   CardContent,
@@ -18,7 +19,7 @@ import {
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
-import { ForumCategory } from "@/types/community";
+import type { ForumCategory } from "@/types/community";
 
 interface PostFormValues {
   title: string;

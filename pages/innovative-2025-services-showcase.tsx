@@ -33,7 +33,7 @@ const Innovative2025ServicesShowcase: React.FC = () => {
     { id: 'developer', name: 'Developer Tools', icon: Code, color: 'from-green-500 to-teal-500', count: allInnovativeServices.filter(s => s.category.includes('Developer')).length }
   ];
 
->>>>>>> 17df199e451813150094c5ab1fb554b04628cb60
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
   const filteredServices = allInnovativeServices.filter(service => {
     const matchesCategory = selectedCategory === 'all' || 
       service.category.toLowerCase().includes(selectedCategory) ||

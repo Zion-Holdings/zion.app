@@ -4,7 +4,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { 
   Search, Shield, Menu, X, ChevronDown, ChevronRight, ExternalLink, 
   Building, Users, Brain, Cpu, Database, Atom, Rocket, Target, Zap, Globe
->>>>>>> 17df199e451813150094c5ab1fb554b04628cb60
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
 } from 'lucide-react';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
@@ -45,7 +45,7 @@ const navigationItems: NavigationItem[] = [
       {
         label: 'AI & Machine Learning',
         href: '/services?category=ai-ml',
->>>>>>> 17df199e451813150094c5ab1fb554b04628cb60
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
         icon: <Brain className="w-4 h-4" />,
         description: 'Advanced AI solutions for enterprise',
         featured: true,
@@ -93,7 +93,7 @@ const navigationItems: NavigationItem[] = [
         featured: true,
         neonColor: 'shadow-orange-400/50',
         category: 'saas'
->>>>>>> 17df199e451813150094c5ab1fb554b04628cb60
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
       }
     ]
   },
@@ -226,18 +226,40 @@ const navigationItems: NavigationItem[] = [
   {
     label: 'About',
     href: '/about',
-    icon: <Users className="w-4 h-4" />,
-    description: 'Learn about our company',
-    neonColor: 'shadow-purple-400/50',
-    category: 'main'
-  },
-  {
-    label: 'Contact',
-    href: '/contact',
-    icon: <MessageCircle className="w-4 h-4" />,
-    description: 'Get in touch with us',
-    neonColor: 'shadow-pink-400/50',
-    category: 'main'
+    icon: <Building className="w-4 h-4" />,
+    description: 'About Zion Tech Group',
+    neonColor: 'shadow-indigo-400/50',
+    category: 'main',
+    children: [
+      {
+        label: 'About Us',
+        href: '/about',
+        icon: <Users className="w-4 h-4" />,
+        description: 'Our story and mission',
+        neonColor: 'shadow-blue-400/50'
+      },
+      {
+        label: 'Team',
+        href: '/team',
+        icon: <Users className="w-4 h-4" />,
+        description: 'Meet our experts',
+        neonColor: 'shadow-green-400/50'
+      },
+      {
+        label: 'Careers',
+        href: '/careers',
+        icon: <Users className="w-4 h-4" />,
+        description: 'Join our team',
+        neonColor: 'shadow-orange-400/50'
+      },
+      {
+        label: 'Contact',
+        href: '/contact',
+        icon: <ExternalLink className="w-4 h-4" />,
+        description: 'Get in touch',
+        neonColor: 'shadow-cyan-400/50'
+      }
+    ]
   }
 ];
 
@@ -246,11 +268,32 @@ const UltraFuturisticNavigation2045: React.FC = () => {
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
   const [isSearchOpen, setIsSearchOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const isMobileMenuOpen = sidebarOpen;
   const router = useRouter();
   const searchRef = React.useRef<HTMLDivElement>(null);
   const mobileMenuRef = React.useRef<HTMLDivElement>(null);
->>>>>>> 17df199e451813150094c5ab1fb554b04628cb60
+
+// Social media links
+const socialLinks = [
+  { icon: Linkedin, href: 'https://linkedin.com/company/ziontechgroup', label: 'LinkedIn' },
+  { icon: Twitter, href: 'https://twitter.com/ziontechgroup', label: 'Twitter' },
+  { icon: Github, href: 'https://github.com/ziontechgroup', label: 'GitHub' },
+  { icon: Youtube, href: 'https://youtube.com/ziontechgroup', label: 'YouTube' }
+];
+
+const UltraFuturisticNavigation2045: React.FC = () => {
+  const [isOpen, setIsOpen] = useState(false);
+  const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
+  const [isScrolled, setIsScrolled] = useState(false);
+  const [searchQuery, setSearchQuery] = useState('');
+  const [isSearchOpen, setIsSearchOpen] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
+  const [isTablet, setIsTablet] = useState(false);
+  
+  const router = useRouter();
+  const navRef = useRef<HTMLElement>(null);
+  const searchRef = useRef<HTMLDivElement>(null);
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
 
   // Responsive design detection
   useEffect(() => {
@@ -277,7 +320,7 @@ const UltraFuturisticNavigation2045: React.FC = () => {
 
   // Handle click outside search
   React.useEffect(() => {
->>>>>>> 17df199e451813150094c5ab1fb554b04628cb60
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
     const handleClickOutside = (event: MouseEvent) => {
       if (searchRef.current && !searchRef.current.contains(event.target as Node)) {
         setIsSearchOpen(false);
@@ -292,7 +335,8 @@ const UltraFuturisticNavigation2045: React.FC = () => {
   React.useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
       if (mobileMenuRef.current && !mobileMenuRef.current.contains(event.target as Node)) {
-        setIsMobileMenuOpen(false);
+        setSidebarOpen(false);
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
       }
     };
 
@@ -302,26 +346,27 @@ const UltraFuturisticNavigation2045: React.FC = () => {
 
   // Close mobile menu on route change
   React.useEffect(() => {
-    setIsMobileMenuOpen(false);
+    setSidebarOpen(false);
     setActiveDropdown(null);
   }, [router.asPath]);
 
-  const handleDropdownToggle = useCallback((itemLabel: string) => {
-    setActiveDropdown(activeDropdown === itemLabel ? null : itemLabel);
+  const toggleMenu = useCallback(() => {
+    setIsOpen(!isOpen);
+    if (isOpen) {
+      setActiveDropdown(null);
+    }
+  }, [isOpen]);
+
+  const toggleDropdown = useCallback((label: string) => {
+    setActiveDropdown(activeDropdown === label ? null : label);
   }, [activeDropdown]);
 
-  const handleSearchToggle = useCallback(() => {
-    setIsSearchOpen(!isSearchOpen);
-    if (!isSearchOpen) {
-      setTimeout(() => {
-        const searchInput = document.getElementById('search-input');
-        if (searchInput) searchInput.focus();
-      }, 100);
-    }
-  }, [isSearchOpen]);
+  const closeDropdown = useCallback(() => {
+    setActiveDropdown(null);
+  }, []);
 
-  const handleSearchSubmit = useCallback((e: React.FormEvent) => {
->>>>>>> 17df199e451813150094c5ab1fb554b04628cb60
+  const handleSearch = useCallback((e: React.FormEvent) => {
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
     e.preventDefault();
     if (searchQuery.trim()) {
       router.push(`/search?q=${encodeURIComponent(searchQuery.trim())}`);
@@ -330,13 +375,13 @@ const UltraFuturisticNavigation2045: React.FC = () => {
     }
   }, [searchQuery, router]);
 
-  const toggleSearch = useCallback(() => {
-    setIsSearchOpen(!isSearchOpen);
-    if (!isSearchOpen) {
-      setTimeout(() => {
-        const searchInput = document.getElementById('search-input') as HTMLInputElement;
-        if (searchInput) searchInput.focus();
-      }, 100);
+  const handleMobileMenuToggle = useCallback(() => {
+    setSidebarOpen(!sidebarOpen);
+  }, [sidebarOpen, setSidebarOpen]);
+
+  const isActiveRoute = useCallback((href: string) => {
+    if (href === '/') {
+      return router.asPath === '/';
     }
   }, [isSearchOpen]);
 
@@ -408,7 +453,7 @@ const UltraFuturisticNavigation2045: React.FC = () => {
       </AnimatePresence>
     );
   }, [activeDropdown, isActiveRoute]);
->>>>>>> 17df199e451813150094c5ab1fb554b04628cb60
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
 
   return (
     <>

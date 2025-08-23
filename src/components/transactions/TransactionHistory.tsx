@@ -6,16 +6,8 @@ import { useToast } from "@/hooks/use-toast";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import Skeleton from "@/components/ui/skeleton";
-import { ArrowLeft, ArrowRight, RefreshCcw, CheckCircle2, XCircle, Clock, AlertCircle, ShieldAlert } from 'lucide-react';
-
-
-
-
-
-
-
-
+import { Skeleton } from "@/components/ui/skeleton";
+import { ArrowLeft, ArrowRight, RefreshCcw, CheckCircle2, XCircle, Clock, AlertCircle, ShieldAlert } from "lucide-react";
 import { formatDistanceToNow } from "date-fns";
 import { safeStorage } from "@/utils/safeStorage";
 import { useCurrency } from '@/hooks/useCurrency';
@@ -58,6 +50,7 @@ export function TransactionHistory() {
     queryKey: ['transactions', user?.id, filter],
     queryFn: async () => {
       if (!user) return [];
+      if (!supabase) return [];
       
       // Build the query based on filters
       let query = supabase
@@ -72,7 +65,7 @@ export function TransactionHistory() {
       if (filter === 'pending') {
         query = query.eq('status', 'pending');
       } else if (filter === 'completed') {
-        query = query.eq('status', 'released');
+        query = query.in('status', ['completed', 'released']);
       } else if (filter === 'escrow') {
         query = query.eq('in_escrow', true);
       }
@@ -89,6 +82,14 @@ export function TransactionHistory() {
 
   const handleManageTransaction = async (transactionId: string, action: 'release' | 'refund' | 'cancel') => {
     try {
+      if (!supabase) {
+        toast({
+          title: "Error",
+          description: "Supabase client not initialized.",
+          variant: "destructive",
+        });
+        return;
+      }
       const { data, error } = await supabase.functions.invoke('manage-transaction', {
         body: { transactionId, action }
       });
@@ -262,7 +263,9 @@ export function TransactionHistory() {
               const isInEscrow = transaction.in_escrow;
               const canRelease = !isClient && isPending && isInEscrow;
               const canCancel = isClient && isPending;
-              const canRefund = isClient && transaction.status === 'released';
+              const canRefund =
+                isClient &&
+                (transaction.status === 'completed' || transaction.status === 'released');
               
               const counterpartyName = isClient 
                 ? transaction.provider?.display_name || 'Service Provider' 

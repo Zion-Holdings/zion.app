@@ -1,5 +1,3 @@
-import apiClient from './apiClient'; // Adjust path as necessary
-import { apiHelper } from './apiHelper';
 import {logErrorToProduction} from '@/utils/productionLogger';
 
 
@@ -47,7 +45,7 @@ export async function sendMessage({
     logErrorToProduction('Failed to send message:', { data: error });
     return {
       success: false,
-      error: error instanceof Error ? error.message : 'Unknown error',
+      error: error instanceof Error ? error.message : String(error),
     };
   }
 }

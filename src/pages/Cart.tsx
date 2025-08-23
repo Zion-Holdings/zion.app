@@ -2,7 +2,8 @@ import React, { useEffect, useState } from 'react';
 import { safeStorage } from '@/utils/safeStorage';
 import { Button } from '@/components/ui/button';
 import { useNavigate } from 'react-router-dom';
-import { useCurrency } from '@/context/CurrencyContext';
+import { useAuth } from '@/hooks/useAuth';
+import { toast } from '@/hooks/use-toast';
 
 interface CartItem {
   id: string;
@@ -13,8 +14,17 @@ interface CartItem {
 
 export default function CartPage() {
   const navigate = useNavigate();
-  const { currency } = useCurrency();
+  const { user } = useAuth();
   const [items, setItems] = useState<CartItem[]>([]);
+
+  if (!user) {
+    toast({
+      title: 'Authentication required',
+      description: 'Please sign in to view your cart.',
+    });
+    navigate('/login');
+    return null;
+  }
 
   useEffect(() => {
     const stored = safeStorage.getItem('cart');
@@ -35,12 +45,41 @@ export default function CartPage() {
     });
   };
 
-  const removeItem = (id: string) => {
-    setItems(prev => {
-      const updated = prev.filter(i => i.id !== id);
-      safeStorage.setItem('cart', JSON.stringify(updated));
-      return updated;
-    });
+  const handleCheckout = async (details?: { email?: string; address?: string }) => {
+    setLoading(true);
+    try {
+      const stripe = await getStripe();
+      if (!stripe) throw new Error('Stripe.js failed to load');
+
+      const { data } = await axios.post('/api/checkout-session', {
+        cartItems: items,
+        customer_email: details?.email || user?.email,
+        shipping_address: details?.address,
+      });
+
+      const sessionId = data.sessionId as string | undefined;
+      if (!sessionId) throw new Error('Session ID missing in response');
+
+      const { error } = await stripe.redirectToCheckout({ sessionId });
+      if (error) logErrorToProduction('Stripe redirect error:', { data: error.message });
+    } catch (err) {
+      logErrorToProduction('Checkout error:', { data: err });
+      let message = 'Checkout failed';
+      if (err && typeof err === 'object' && 'message' in err && typeof (err as { message?: unknown }).message === 'string') {
+        message = (err as { message: string }).message;
+      }
+      alert(message);
+    } finally {
+      setLoading(false);
+    }
+  }; 
+
+  const startCheckout = () => {
+    if (!isAuthenticated) {
+      setGuestOpen(true);
+    } else {
+      handleCheckout();
+    }
   };
 
   const subtotal = items.reduce((sum, i) => sum + i.price * i.quantity, 0);

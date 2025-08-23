@@ -1,5 +1,4 @@
-import * as Sentry from '@sentry/nextjs';
-import { ProductListing } from '@/types/listings';
+import type { ProductListing } from '@/types/listings';
 import { MARKETPLACE_LISTINGS } from '@/data/marketplaceData';
 import {logErrorToProduction} from '@/utils/productionLogger';
 
@@ -41,36 +40,15 @@ export async function fetchMarketplaceData(
       throw new Error('Invalid response format: expected array');
     }
 
-    // Fallback to sample listings if API returns no products
-    if (data.length === 0) {
-      const sample =
-        typeof limit === 'number'
-          ? MARKETPLACE_LISTINGS.slice(0, limit)
-          : MARKETPLACE_LISTINGS;
-      return sample;
-    }
-
     return data;
   } catch (error) {
     logErrorToProduction('Error fetching marketplace data:', { data: error });
     
     // Log to Sentry with context
-    Sentry.withScope((scope) => {
-      scope.setTag('function', 'fetchMarketplaceData');
-      scope.setContext('options', {
-        limit: options.limit?.toString(),
-        category: options.category || '',
-        sortBy: options.sortBy || ''
-      });
-      scope.setLevel('error');
-      Sentry.captureException(error);
-    });
+    if (typeof window === 'undefined') {
+      // Remove all imports of @sentry/nextjs from this file.
+    }
     
-    // Return sample listings as a fallback when the API call fails
-    const sample =
-      typeof limit === 'number'
-        ? MARKETPLACE_LISTINGS.slice(0, limit)
-        : MARKETPLACE_LISTINGS;
-    return sample;
+    return [];
   }
 }

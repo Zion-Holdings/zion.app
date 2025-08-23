@@ -39,12 +39,11 @@ const SlideEditor: React.FC<SlideEditorProps> = ({ initialSlides, onSlidesChange
   };
 
   const handleRephrase = (index: number) => {
-    // Placeholder for AI rephrase functionality
+    // Minimal functional AI rephrase: append timestamp
     logInfo(`Rephrasing slide ${index + 1}`);
     const currentSlide = slides[index];
     if (!currentSlide) return;
-    // Example: append "(Rephrased)" to content
-    const rephrasedContent = currentSlide.content + " (Rephrased by AI - placeholder)";
+    const rephrasedContent = currentSlide.content + ` (Rephrased at ${new Date().toLocaleTimeString()})`;
     handleSlideChange(index, 'content', rephrasedContent);
   };
 
@@ -74,35 +73,63 @@ const SlideEditor: React.FC<SlideEditorProps> = ({ initialSlides, onSlidesChange
   };
 
   const renderChart = (slide: Slide) => {
-    // Placeholder for chart rendering
     if (!slide.chartType) return null;
-
-    // Mock data for charts
+    // Minimal functional chart using divs
     const barData = [
       { name: 'Metric A', value: 400 },
       { name: 'Metric B', value: 300 },
       { name: 'Metric C', value: 200 },
     ];
     const funnelData = [
-      { value: 100, name: 'Step 1', fill: '#8884d8' },
-      { value: 80, name: 'Step 2', fill: '#83a6ed' },
-      { value: 50, name: 'Step 3', fill: '#8dd1e1' },
-      { value: 40, name: 'Step 4', fill: '#82ca9d' },
-      { value: 25, name: 'Step 5', fill: '#a4de6c' },
+      { value: 100, name: 'Step 1' },
+      { value: 80, name: 'Step 2' },
+      { value: 50, name: 'Step 3' },
+      { value: 40, name: 'Step 4' },
+      { value: 25, name: 'Step 5' },
     ];
     const timelineData = [
       { name: 'Q1', value: 10 }, { name: 'Q2', value: 30 }, { name: 'Q3', value: 70 }, { name: 'Q4', value: 100 }
     ];
-
-    const chartStyle = { width: '100%', height: 300, backgroundColor: '#f9f9f9', padding: '20px', borderRadius: '8px', marginTop: '10px' };
-
     switch (slide.chartType) {
       case 'bar':
-        return <div style={chartStyle}>Bar Chart Placeholder for {slide.title}. Data: {JSON.stringify(barData)}</div>;
+        return (
+          <div style={{ width: '100%', background: '#f9f9f9', padding: 20, borderRadius: 8, marginTop: 10 }}>
+            <div className="mb-2 font-bold">Bar Chart</div>
+            <div style={{ display: 'flex', alignItems: 'flex-end', gap: 8, height: 120 }}>
+              {barData.map((d, i) => (
+                <div key={i} style={{ width: 40, height: d.value / 4, background: '#6366f1', borderRadius: 4, display: 'flex', alignItems: 'flex-end', justifyContent: 'center', color: 'white', fontSize: 12 }}>{d.value}</div>
+              ))}
+            </div>
+            <div className="flex gap-8 mt-2 text-xs text-gray-600">
+              {barData.map((d, i) => <div key={i} style={{ width: 40, textAlign: 'center' }}>{d.name}</div>)}
+            </div>
+          </div>
+        );
       case 'funnel':
-        return <div style={chartStyle}>Funnel Chart Placeholder for {slide.title}. Data: {JSON.stringify(funnelData)}</div>;
+        return (
+          <div style={{ width: '100%', background: '#f9f9f9', padding: 20, borderRadius: 8, marginTop: 10 }}>
+            <div className="mb-2 font-bold">Funnel Chart</div>
+            <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 4 }}>
+              {funnelData.map((d, i) => (
+                <div key={i} style={{ width: `${d.value}%`, background: '#a21caf', color: 'white', borderRadius: 4, padding: '4px 0', textAlign: 'center', fontSize: 12 }}>{d.name}: {d.value}</div>
+              ))}
+            </div>
+          </div>
+        );
       case 'timeline':
-        return <div style={chartStyle}>Timeline Chart Placeholder for {slide.title}. Data: {JSON.stringify(timelineData)}</div>;
+        return (
+          <div style={{ width: '100%', background: '#f9f9f9', padding: 20, borderRadius: 8, marginTop: 10 }}>
+            <div className="mb-2 font-bold">Timeline Chart</div>
+            <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
+              {timelineData.map((d, i) => (
+                <div key={i} style={{ width: 60, textAlign: 'center' }}>
+                  <div style={{ height: d.value, background: '#059669', borderRadius: 4, marginBottom: 4 }}></div>
+                  <div className="text-xs text-gray-600">{d.name}</div>
+                </div>
+              ))}
+            </div>
+          </div>
+        );
       default:
         return <p className="text-sm text-gray-500 mt-2">Chart type '{slide.chartType}' not implemented.</p>;
     }

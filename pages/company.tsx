@@ -55,7 +55,7 @@ const CompanyPage: React.FC = () => {
       role: 'Chief AI Officers',
       bio: 'Collective intelligence driving AI consciousness and autonomous systems',
       expertise: ['AI Consciousness', 'Neural Networks', 'Autonomous Systems']
->>>>>>> 17df199e451813150094c5ab1fb554b04628cb60
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
     }
   ];
 
@@ -98,7 +98,7 @@ const CompanyPage: React.FC = () => {
                 Meet Our Team
               </Link>
             </div>
->>>>>>> 17df199e451813150094c5ab1fb554b04628cb60
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
           </div>
         </section>
 
@@ -124,7 +124,7 @@ const CompanyPage: React.FC = () => {
                   <div className="text-3xl font-bold text-white mb-2">{stat.value}</div>
                   <div className="text-sm text-gray-400">{stat.label}</div>
                 </div>
->>>>>>> 17df199e451813150094c5ab1fb554b04628cb60
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
               ))}
             </div>
           </div>
@@ -151,7 +151,7 @@ const CompanyPage: React.FC = () => {
                   <h3 className="text-xl font-semibold text-white mb-3">{value.title}</h3>
                   <p className="text-gray-400 leading-relaxed">{value.description}</p>
                 </div>
->>>>>>> 17df199e451813150094c5ab1fb554b04628cb60
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
               ))}
             </div>
           </div>
@@ -192,7 +192,7 @@ const CompanyPage: React.FC = () => {
                     ))}
                   </div>
                 </div>
->>>>>>> 17df199e451813150094c5ab1fb554b04628cb60
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
               ))}
             </div>
           </div>
@@ -220,7 +220,7 @@ const CompanyPage: React.FC = () => {
         </section>
       </div>
     </>
->>>>>>> 17df199e451813150094c5ab1fb554b04628cb60
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
   );
 };
 

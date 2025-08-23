@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Input } from '@/components/ui/input';
 import { useAutocomplete } from '@/hooks/useAutocomplete';
-import { ProductListing } from '@/types/listings';
+import type { ProductListing } from '@/types/listings';
 import { safeStorage } from '@/utils/safeStorage';
 import { fireEvent } from '@/lib/analytics';
 import debounce from 'lodash.debounce';

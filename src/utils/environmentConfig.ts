@@ -1,4 +1,3 @@
-import * as Sentry from '@sentry/nextjs';
 import { z } from 'zod';
 import { logInfo, logWarn } from '@/utils/productionLogger';
 
@@ -113,15 +112,15 @@ export async function initializeServices(): Promise<void> {
   // Initialize Sentry if configured
   if (config.sentry.isConfigured && config.app.isProduction) {
     try {
-      Sentry.init({
-        dsn: config.sentry.dsn,
-        environment: config.sentry.environment,
-        release: config.sentry.release,
-        tracesSampleRate: 1.0,
-      });
+      // Sentry.init({
+      //   dsn: config.sentry.dsn,
+      //   environment: config.sentry.environment,
+      //   release: config.sentry.release,
+      //   tracesSampleRate: 1.0,
+      // });
       logInfo('✅ Sentry initialized successfully');
     } catch (error) {
-      logWarn('Failed to initialize Sentry:', { data: error });
+      logWarn('Failed to initialize Sentry:', { data:  { data: error } });
     }
   }
 
@@ -130,15 +129,15 @@ export async function initializeServices(): Promise<void> {
     try {
       const { datadogLogs } = await import('@datadog/browser-logs');
       datadogLogs.init({
-        clientToken: config.datadog.clientToken!,
-        site: config.datadog.site as any,
-        service: config.datadog.service,
-        env: config.datadog.env,
+        ...(config.datadog.clientToken ? { clientToken: config.datadog.clientToken } : {}),
+        ...(config.datadog.site ? { site: config.datadog.site } : {}),
+        ...(config.datadog.service ? { service: config.datadog.service } : {}),
+        ...(config.datadog.env ? { env: config.datadog.env } : {}),
         forwardErrorsToLogs: true,
       });
       logInfo('✅ Datadog Logs initialized');
     } catch (error) {
-      logWarn('Failed to initialize Datadog Logs:', { data: error });
+      logWarn('Failed to initialize Datadog Logs:', { data:  { data: error } });
     }
   }
 
@@ -149,7 +148,7 @@ export async function initializeServices(): Promise<void> {
       LogRocket.init(config.logRocket.id!);
       logInfo('✅ LogRocket initialized');
     } catch (error) {
-      logWarn('Failed to initialize LogRocket:', { data: error });
+      logWarn('Failed to initialize LogRocket:', { data:  { data: error } });
     }
   }
 
@@ -223,7 +222,7 @@ export function getEnvironmentConfig(): EnvironmentConfig {
     supabase: {
       url: supabaseUrl,
       anonKey: supabaseAnonKey,
-      serviceRoleKey: supabaseServiceRoleKey,
+      ...(supabaseServiceRoleKey ? { serviceRoleKey: supabaseServiceRoleKey } : {}),
       isConfigured: supabaseConfigured
     },
     sentry: {
@@ -237,14 +236,14 @@ export function getEnvironmentConfig(): EnvironmentConfig {
       isConfigured: reownConfigured
     },
     datadog: {
-      clientToken: ddClientToken,
-      site: ddSite,
-      service: ddService,
-      env: ddEnv,
+      ...(ddClientToken ? { clientToken: ddClientToken } : {}),
+      ...(ddSite ? { site: ddSite } : {}),
+      ...(ddService ? { service: ddService } : {}),
+      ...(ddEnv ? { env: ddEnv } : {}),
       enabled: datadogEnabled
     },
     logRocket: {
-      id: logRocketId,
+      ...(logRocketId ? { id: logRocketId } : {}),
       enabled: logRocketEnabled
     },
     app: {

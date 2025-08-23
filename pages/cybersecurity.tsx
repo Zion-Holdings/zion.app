@@ -113,7 +113,7 @@ const CybersecurityPage: React.FC = () => {
       title: 'Cost Effective',
       description: 'Reduce security incidents and operational costs',
       icon: <TrendingUp className="w-6 h-6 text-yellow-400" />
->>>>>>> 17df199e451813150094c5ab1fb554b04628cb60
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
     }
   ];
 
@@ -131,17 +131,14 @@ const CybersecurityPage: React.FC = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
+              className="text-center"
             >
-              <h1 className="text-5xl md:text-6xl font-bold text-white mb-6">
-                Advanced
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-400 to-orange-400">
-                  {' '}Cybersecurity
-                </span>
-                {' '}Solutions
+              <h1 className="text-5xl md:text-7xl font-bold bg-gradient-to-r from-red-400 via-orange-500 to-yellow-400 bg-clip-text text-transparent mb-6">
+                Cybersecurity
               </h1>
-              <p className="text-xl md:text-2xl text-gray-300 mb-8 max-w-4xl mx-auto">
-                Protecting your digital assets with cutting-edge security technologies, 
-                quantum-resistant encryption, and AI-powered threat detection.
+              <p className="text-xl md:text-2xl text-gray-300 max-w-4xl mx-auto leading-relaxed">
+                Advanced cybersecurity solutions that protect your digital assets and ensure business continuity. 
+                From zero trust architecture to quantum-resistant security.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <a
@@ -158,7 +155,7 @@ const CybersecurityPage: React.FC = () => {
                   Explore Quantum Security
                 </a>
               </div>
->>>>>>> 17df199e451813150094c5ab1fb554b04628cb60
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
             </motion.div>
           </div>
         </section>
@@ -189,18 +186,13 @@ const CybersecurityPage: React.FC = () => {
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: index * 0.1 }}
-                  viewport={{ once: true }}
                   className="text-center"
                 >
-                  <div className="bg-white/10 backdrop-blur-lg rounded-full w-20 h-20 mx-auto mb-4 flex items-center justify-center border border-white/20">
-                    {benefit.icon}
+                  <div className="w-16 h-16 bg-gradient-to-br from-red-500/20 to-orange-500/20 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                    <stat.icon className="w-8 h-8 text-red-400" />
                   </div>
-                  <h3 className="text-xl font-semibold text-white mb-2">
-                    {benefit.title}
-                  </h3>
-                  <p className="text-gray-300 text-sm">
-                    {benefit.description}
-                  </p>
+                  <div className="text-3xl font-bold text-white mb-2">{stat.number}</div>
+                  <div className="text-gray-400">{stat.label}</div>
                 </motion.div>
               ))}
             </div>
@@ -208,33 +200,30 @@ const CybersecurityPage: React.FC = () => {
         </section>
 
         {/* Services Grid */}
-        <section className="py-20 px-4 sm:px-6 lg:px-8">
-          <div className="max-w-7xl mx-auto">
+        <section className="py-20 px-4">
+          <div className="container mx-auto max-w-6xl">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
-              viewport={{ once: true }}
               className="text-center mb-16"
             >
-              <h2 className="text-4xl font-bold text-white mb-4">
-                Comprehensive Security Services
+              <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+                Cybersecurity Services
               </h2>
               <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-                From quantum-resistant encryption to zero trust architecture, our 
-                cybersecurity services cover every aspect of digital protection.
+                Comprehensive security solutions designed to protect your organization from evolving threats
               </p>
             </motion.div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
               {services.map((service, index) => (
                 <motion.div
-                  key={service.title}
+                  key={index}
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: index * 0.1 }}
-                  viewport={{ once: true }}
-                  className="bg-white/10 backdrop-blur-lg rounded-xl p-6 border border-white/20 hover:border-red-500/50 transition-all duration-300 hover:transform hover:scale-105"
+                  className="group"
                 >
                   <div className="flex items-center mb-4">
                     {service.icon}
@@ -249,7 +238,7 @@ const CybersecurityPage: React.FC = () => {
                     {service.features.map((feature) => (
                       <li key={feature} className="flex items-center text-sm text-gray-400">
                         <Star className="w-4 h-4 text-red-400 mr-2" />
->>>>>>> 17df199e451813150094c5ab1fb554b04628cb60
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
                         {feature}
                       </li>
                     ))}
@@ -267,9 +256,9 @@ const CybersecurityPage: React.FC = () => {
           </div>
         </section>
 
-        {/* Threat Protection */}
-        <section className="py-20 px-4 sm:px-6 lg:px-8 bg-black/20">
-          <div className="max-w-7xl mx-auto">
+        {/* CTA Section */}
+        <section className="py-20 px-4">
+          <div className="container mx-auto max-w-4xl text-center">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -310,7 +299,7 @@ const CybersecurityPage: React.FC = () => {
                 </motion.div>
               ))}
             </div>
->>>>>>> 17df199e451813150094c5ab1fb554b04628cb60
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
           </div>
         </section>
 
@@ -333,17 +322,16 @@ const CybersecurityPage: React.FC = () => {
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <a
                   href="/contact"
-                  className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-red-600 to-orange-600 text-white font-semibold rounded-lg hover:from-red-700 hover:to-orange-700 transition-all duration-300 transform hover:scale-105"
+                  className="px-8 py-4 bg-gradient-to-r from-red-500 to-orange-600 text-white font-semibold rounded-xl hover:from-red-600 hover:to-orange-700 transition-all duration-300 transform hover:scale-105"
                 >
-                  Get Security Assessment
-                  <ArrowRight className="ml-2 w-5 h-5" />
+                  Get Started
                 </a>
                 <a
-                  href="/case-studies"
-                  className="inline-flex items-center px-8 py-4 border-2 border-red-500 text-red-400 font-semibold rounded-lg hover:bg-red-500 hover:text-white transition-all duration-300"
+                  href="/services"
+                  className="px-8 py-4 border border-red-500 text-red-400 font-semibold rounded-xl hover:bg-red-500/10 transition-all duration-300"
                 >
                   View Security Cases
->>>>>>> 17df199e451813150094c5ab1fb554b04628cb60
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
                 </a>
               </div>
             </motion.div>

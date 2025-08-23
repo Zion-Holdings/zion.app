@@ -80,23 +80,26 @@ export default function VerifyStatus() {
   };
 
   const handleCheckStatus = async () => {
-    if (!email) {
-      setError('Please enter your email address');
-      return;
-    }
-
+    if (!email) return;
+    
     setIsCheckingStatus(true);
     setError('');
     setMessage('');
 
     try {
+      if (!supabase) {
+        logErrorToProduction('VerifyStatus: Supabase client not available');
+        setError('Authentication service unavailable. Please try again later.');
+        return;
+      }
+      
       // Attempt to refresh the session to get the latest user status
       const { error: refreshError } = await supabase.auth.refreshSession();
 
       if (refreshError) {
         // Don't treat all refresh errors as critical for this check,
         // as user might not have a session yet or it might be invalid.
-        logWarn('Error during session refresh:', { data: refreshError.message });
+        logWarn('Error during session refresh:', { data:  { data: refreshError.message } });
       }
 
       // Get the current user details from Supabase

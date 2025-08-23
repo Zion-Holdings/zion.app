@@ -1,7 +1,7 @@
 
-import { UserDetails } from '@/types/auth';
+import type { UserDetails } from '@/types/auth';
 import { supabase } from '@/integrations/supabase/client';
-import { Conversation, ConversationContextData } from '@/types/messaging';
+import type { Conversation, ConversationContextData } from '@/types/messaging';
 import { toast } from '@/hooks/use-toast';
 import {logErrorToProduction} from '@/utils/productionLogger';
 
@@ -28,15 +28,13 @@ export function useConversations(
     
     try {
       // Fetch conversations from the database
-      const { data, error } = await supabase
-        .from('conversations')
-        .select('*')
-        .or(`user_one_id.eq.${user.id},user_two_id.eq.${user.id}`);
+      const { data, error } = await supabase!.from('conversations').select('*').eq('user_one_id', user.id).or(`user_two_id.eq.${user.id}`);
         
       if (error) throw error;
       
-      // Format conversations
-      const formattedConversations: Conversation[] = data.map((conv: any) => {
+      // Format conversations. Use an empty array if `data` is null to prevent
+      // "map is not a function" runtime errors
+      const formattedConversations: Conversation[] = (data ?? []).map((conv: any) => {
         const isUserOne = conv.user_one_id === user.id;
         const otherUserId = isUserOne ? conv.user_two_id : conv.user_one_id;
         
@@ -54,7 +52,7 @@ export function useConversations(
           last_message: conv.last_message ? {
             content: conv.last_message,
             created_at: conv.last_message_time
-          } : undefined,
+          } : { content: '', created_at: '' },
           updated_at: conv.updated_at || conv.created_at,
           unread_count: conv.unread_count || 0,
           context_type: conv.context_type,
@@ -92,10 +90,12 @@ export function useConversations(
     
     try {
       // Check if conversation already exists
-      const { data: existingConversations, error: fetchError } = await supabase
+      const { data: existingConversations, error: fetchError } = await supabase!
         .from('conversations')
-        .select('id')
-        .or(`and(user_one_id.eq.${user.id},user_two_id.eq.${recipientId}),and(user_one_id.eq.${recipientId},user_two_id.eq.${user.id})`);
+        .select('*')
+        .or(`user_one_id.eq.${user.id},user_two_id.eq.${user.id}`)
+        .eq('user_one_id', user.id)
+        .eq('user_two_id', recipientId);
         
       if (fetchError) throw fetchError;
       
@@ -107,7 +107,7 @@ export function useConversations(
         
         // Update context if provided
         if (contextType || contextId || contextData) {
-          await supabase
+          await supabase!
             .from('conversations')
             .update({
               context_type: contextType,
@@ -119,44 +119,36 @@ export function useConversations(
         }
       } else {
         // Get recipient information
-        const { data: recipientData, error: recipientError } = await supabase
-          .from('profiles')
-          .select('display_name, avatar_url, user_type')
+        const { data: recipientData, error: recipientError } = await supabase!
+          .from('users')
+          .select('*')
           .eq('id', recipientId)
           .single();
-          
         if (recipientError) throw recipientError;
-        
         // Create a new conversation
-        const { data: newConversation, error: createError } = await supabase
+        const { data: newConversation, error: createError } = await supabase!
           .from('conversations')
           .insert({
             user_one_id: user.id,
-            user_one_name: user.name || user.email,
-            user_one_avatar: user.avatarUrl,
-            user_one_type: user.userType,
             user_two_id: recipientId,
-            user_two_name: recipientData?.display_name || 'User',
-            user_two_avatar: recipientData?.avatar_url,
-            user_two_type: recipientData?.user_type,
-            created_at: new Date().toISOString(),
-            updated_at: new Date().toISOString(),
-            last_message: initialMessage,
-            last_message_time: new Date().toISOString(),
+            user_one_name: user.name,
+            user_two_name: recipientData.name,
+            user_one_avatar: user.avatarUrl,
+            user_two_avatar: recipientData.avatar_url,
             context_type: contextType,
             context_id: contextId,
-            context_data: contextData
+            context_data: contextData,
+            created_at: new Date().toISOString(),
+            updated_at: new Date().toISOString()
           })
-          .select('id')
+          .select()
           .single();
-          
         if (createError) throw createError;
-        
         conversationId = newConversation.id;
       }
       
       // Send the initial message
-      await supabase
+      await supabase!
         .from('messages')
         .insert({
           conversation_id: conversationId,
@@ -187,3 +179,6 @@ export function useConversations(
     createConversation,
   };
 }
+
+
+

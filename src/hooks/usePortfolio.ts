@@ -1,6 +1,6 @@
 
 import { useState, useCallback } from 'react';
-import { PortfolioProject } from '@/types/resume';
+import type { PortfolioProject } from '@/types/resume';
 import { supabase } from '@/integrations/supabase/client';
 import { useAuth } from '@/hooks/useAuth';
 import { toast } from '@/hooks/use-toast';
@@ -23,6 +23,7 @@ export function usePortfolio() {
     setError(null);
     
     try {
+      if (!supabase) throw new Error('Supabase client not initialized');
       const { data, error } = await supabase
         .from('portfolio_projects')
         .select('*')
@@ -33,9 +34,10 @@ export function usePortfolio() {
       
       setProjects(data || []);
       return data || [];
-    } catch (e: any) {
+    } catch (e: unknown) {
+      const message = e instanceof Error ? e.message : String(e);
       logErrorToProduction('Error fetching portfolio projects:', { data:  e });
-      setError(e.message);
+      setError(message);
       return [];
     } finally {
       setIsLoading(false);
@@ -52,6 +54,7 @@ export function usePortfolio() {
     setError(null);
     
     try {
+      if (!supabase) throw new Error('Supabase client not initialized');
       const { data, error } = await supabase
         .from('portfolio_projects')
         .insert({
@@ -76,12 +79,13 @@ export function usePortfolio() {
       
       await fetchProjects();
       return data.id;
-    } catch (e: any) {
+    } catch (e: unknown) {
+      const message = e instanceof Error ? e.message : String(e);
       logErrorToProduction('Error adding portfolio project:', { data:  e });
-      setError(e.message);
+      setError(message);
       toast({
         title: "Error",
-        description: `Could not add project: ${e.message}`,
+        description: `Could not add project: ${message}`,
         variant: "destructive"
       });
       return null;
@@ -100,6 +104,7 @@ export function usePortfolio() {
     setError(null);
     
     try {
+      if (!supabase) throw new Error('Supabase client not initialized');
       const { error } = await supabase
         .from('portfolio_projects')
         .update({
@@ -123,12 +128,13 @@ export function usePortfolio() {
       
       await fetchProjects();
       return true;
-    } catch (e: any) {
+    } catch (e: unknown) {
+      const message = e instanceof Error ? e.message : String(e);
       logErrorToProduction('Error updating portfolio project:', { data:  e });
-      setError(e.message);
+      setError(message);
       toast({
         title: "Error",
-        description: `Could not update project: ${e.message}`,
+        description: `Could not update project: ${message}`,
         variant: "destructive"
       });
       return false;
@@ -147,6 +153,7 @@ export function usePortfolio() {
     setError(null);
     
     try {
+      if (!supabase) throw new Error('Supabase client not initialized');
       const { error } = await supabase
         .from('portfolio_projects')
         .delete()
@@ -162,12 +169,13 @@ export function usePortfolio() {
       
       setProjects(projects.filter(p => p.id !== projectId));
       return true;
-    } catch (e: any) {
+    } catch (e: unknown) {
+      const message = e instanceof Error ? e.message : String(e);
       logErrorToProduction('Error deleting portfolio project:', { data:  e });
-      setError(e.message);
+      setError(message);
       toast({
         title: "Error",
-        description: `Could not delete project: ${e.message}`,
+        description: `Could not delete project: ${message}`,
         variant: "destructive"
       });
       return false;

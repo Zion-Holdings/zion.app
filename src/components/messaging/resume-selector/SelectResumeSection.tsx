@@ -2,9 +2,9 @@
 import React from 'react';
 import { FileText } from 'lucide-react';
 
-import { ResumeOption } from '../resume-selector/types';
+import type { ResumeOption } from '../resume-selector/types';
 import { ResumePreviewCard } from './ResumePreviewCard';
-import { Resume } from '@/types/resume';
+import type { Resume } from '@/types/resume';
 
 interface SelectResumeSectionProps {
   resumeOptions: ResumeOption[];

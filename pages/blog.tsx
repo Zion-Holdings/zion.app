@@ -1,11 +1,6 @@
 import React, { useState } from 'react';
-import Layout from '../components/layout/Layout';
-import { motion } from 'framer-motion';
-import { 
-  BookOpen, Calendar, Clock, User, ArrowRight, 
-  Tag, Search, Filter, TrendingUp, Brain, Atom,
-  Shield, Rocket, Star, Globe, Zap
-} from 'lucide-react';
+import Head from 'next/head';
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
 import Link from 'next/link';
 
 const Blog: React.FC = () => {
@@ -20,72 +15,29 @@ const Blog: React.FC = () => {
       image: '/blog/ai-consciousness-2045.jpg',
       tags: ['AI', 'Consciousness', 'Future Tech', '2045'],
       icon: <Brain className="w-6 h-6" />
->>>>>>> 17df199e451813150094c5ab1fb554b04628cb60
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
     },
     {
-      id: 2,
-      title: "Quantum Computing Breakthroughs: What's Next?",
-      excerpt: "Latest developments in quantum computing and how they're reshaping the landscape of computational power.",
-      category: "quantum",
-      author: "Marcus Rodriguez",
-      date: "2025-01-12",
-      readTime: "6 min read",
-      views: "1.8k",
-      featured: false,
-      image: "/api/placeholder/600/400",
-      tags: ["Quantum Computing", "Innovation", "Technology"]
+      title: 'Quantum Computing Breakthroughs: Solving Previously Impossible Problems',
+      excerpt: 'Discover how quantum computing is revolutionizing industries and solving complex computational challenges.',
+      author: 'Quantum Team',
+      date: '2025-01-10',
+      category: 'Quantum Computing',
+      readTime: '12 min read',
+      image: '/blog/quantum-breakthroughs.jpg',
+      tags: ['Quantum Computing', 'Innovation', 'Technology'],
+      icon: <Atom className="w-6 h-6" />
     },
     {
-      id: 3,
-      title: "Space Resource Mining: The Next Frontier",
-      excerpt: "How space technology is revolutionizing resource extraction and opening new economic opportunities.",
-      category: "space",
-      author: "Dr. Elena Petrova",
-      date: "2025-01-10",
-      readTime: "10 min read",
-      views: "1.2k",
-      featured: false,
-      image: "/api/placeholder/600/400",
-      tags: ["Space Technology", "Mining", "Innovation"]
-    },
-    {
-      id: 4,
-      title: "Enterprise AI: Transforming Business Operations",
-      excerpt: "Real-world applications of AI in enterprise environments and the ROI companies are seeing.",
-      category: "enterprise",
-      author: "Alex Thompson",
-      date: "2025-01-08",
-      readTime: "7 min read",
-      views: "1.6k",
-      featured: false,
-      image: "/api/placeholder/600/400",
-      tags: ["Enterprise AI", "Business", "Automation"]
-    },
-    {
-      id: 5,
-      title: "AI Ethics and Governance: Building Trust in AI Systems",
-      excerpt: "The importance of ethical AI development and how to implement governance frameworks.",
-      category: "ai",
-      author: "Dr. Sarah Chen",
-      date: "2025-01-05",
-      readTime: "9 min read",
-      views: "1.9k",
-      featured: false,
-      image: "/api/placeholder/600/400",
-      tags: ["AI Ethics", "Governance", "Trust"]
-    },
-    {
-      id: 6,
-      title: "Quantum Security: Protecting Data in the Quantum Age",
-      excerpt: "How quantum computing is changing cybersecurity and what organizations need to prepare for.",
-      category: "quantum",
-      author: "Marcus Rodriguez",
-      date: "2025-01-03",
-      readTime: "8 min read",
-      views: "1.4k",
-      featured: false,
-      image: "/api/placeholder/600/400",
-      tags: ["Quantum Security", "Cybersecurity", "Data Protection"]
+      title: 'Cybersecurity in the Age of AI: New Threats, New Defenses',
+      excerpt: 'Learn about the evolving cybersecurity landscape and how AI is both a threat and a solution.',
+      author: 'Security Team',
+      date: '2025-01-08',
+      category: 'Cybersecurity',
+      readTime: '10 min read',
+      image: '/blog/cybersecurity-ai.jpg',
+      tags: ['Cybersecurity', 'AI Security', 'Threat Detection'],
+      icon: <Shield className="w-6 h-6" />
     }
   ];
 
@@ -215,8 +167,9 @@ const Blog: React.FC = () => {
                 </select>
               </div>
             </div>
-          </div>
-        </section>
+          </motion.div>
+        </div>
+      </section>
 
         {/* Featured Posts */}
         <section className="py-20 px-4 sm:px-6 lg:px-8">
@@ -251,6 +204,7 @@ const Blog: React.FC = () => {
                       {post.icon}
                     </div>
                   </div>
+                  
                   <div className="p-6">
                     <div className="flex items-center gap-2 mb-3">
                       <span className="px-3 py-1 bg-purple-500/20 text-purple-400 rounded-full text-sm font-medium">
@@ -339,7 +293,8 @@ const Blog: React.FC = () => {
               ))}
             </div>
           </div>
-        </section>
+        </div>
+      </section>
 
         {/* Recent Posts */}
         <section className="py-20 px-4 sm:px-6 lg:px-8">
@@ -372,32 +327,24 @@ const Blog: React.FC = () => {
                   <div className="flex items-center gap-2 mb-3">
                     <span className="px-3 py-1 bg-purple-500/20 text-purple-300 rounded-full text-xs font-medium">
                       {post.category}
->>>>>>> 17df199e451813150094c5ab1fb554b04628cb60
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
                     </span>
-                    <span className="text-gray-400 text-sm">{featuredPost.category.toUpperCase()}</span>
+                    <span className="text-gray-400 text-sm">{post.readTime}</span>
                   </div>
-                  <h3 className="text-3xl font-bold text-white mb-4 leading-tight">
-                    {featuredPost.title}
+                  <h3 className="text-xl font-bold text-white mb-3 group-hover:text-purple-400 transition-colors duration-300">
+                    {post.title}
                   </h3>
-                  <p className="text-gray-300 mb-6 leading-relaxed">
-                    {featuredPost.excerpt}
+                  <p className="text-gray-300 text-sm mb-4 leading-relaxed">
+                    {post.excerpt}
                   </p>
-                  <div className="flex items-center gap-6 text-sm text-gray-400 mb-6">
+                  <div className="flex items-center justify-between">
                     <div className="flex items-center gap-2">
-                      <User className="w-4 h-4" />
-                      {featuredPost.author}
+                      <User className="w-4 h-4 text-gray-400" />
+                      <span className="text-gray-400 text-sm">{post.author}</span>
                     </div>
                     <div className="flex items-center gap-2">
-                      <Calendar className="w-4 h-4" />
-                      {new Date(featuredPost.date).toLocaleDateString()}
-                    </div>
-                    <div className="flex items-center gap-2">
-                      <Clock className="w-4 h-4" />
-                      {featuredPost.readTime}
-                    </div>
-                    <div className="flex items-center gap-2">
-                      <Eye className="w-4 h-4" />
-                      {featuredPost.views}
+                      <Calendar className="w-4 h-4 text-gray-400" />
+                      <span className="text-gray-400 text-sm">{post.date}</span>
                     </div>
                   </div>
                 </motion.article>
@@ -409,7 +356,7 @@ const Blog: React.FC = () => {
         {/* Trending Topics */}
         <section className="py-20 bg-black/50">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
->>>>>>> 17df199e451813150094c5ab1fb554b04628cb60
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -422,17 +369,8 @@ const Blog: React.FC = () => {
               </h2>
               <p className="text-xl text-gray-400 max-w-3xl mx-auto">
                 What's hot in the world of AI consciousness and quantum computing
->>>>>>> 17df199e451813150094c5ab1fb554b04628cb60
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
               </p>
-              <button
-                onClick={() => {
-                  setSearchQuery('');
-                  setSelectedCategory('all');
-                }}
-                className="px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-full transition-colors"
-              >
-                Clear Filters
-              </button>
             </motion.div>
             
             <div className="flex flex-wrap justify-center gap-4">
@@ -566,7 +504,7 @@ const Blog: React.FC = () => {
           </div>
         </section>
       </div>
->>>>>>> 17df199e451813150094c5ab1fb554b04628cb60
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
     </Layout>
   );
 };

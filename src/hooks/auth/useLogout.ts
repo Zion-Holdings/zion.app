@@ -12,13 +12,13 @@ export const useLogout = (setUser: (user: UserDetails | null) => void) => {
       cleanupAuthState();
 
       // Sign out
-      await supabase.auth.signOut({ scope: 'global' });
+      await supabase!.auth.signOut({ scope: 'global' });
 
       // Inform backend to clear authToken cookie
       try {
         await fetch('/api/auth/logout', { method: 'POST' });
       } catch (cookieErr) {
-        logWarn('useLogout: Failed to clear auth cookie', { data: cookieErr });
+        logWarn('useLogout: Failed to clear auth cookie', { data:  { data: cookieErr } });
       }
 
       // Update state

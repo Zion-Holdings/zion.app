@@ -10,7 +10,7 @@ import { Loader2, MessageSquare, ExternalLink } from 'lucide-react';
 
 import { formatDistanceToNow } from "date-fns";
 import Link from "next/link";
-import { ApplicationStatus } from "@/types/jobs";
+import type { ApplicationStatus } from "@/types/jobs";
 
 export function MyApplications() {
   const { applications, isLoading, error } = useJobApplications();

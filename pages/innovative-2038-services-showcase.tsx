@@ -8,7 +8,7 @@ import {
   ArrowRight, Check, Palette, Heart, Truck, GraduationCap,
   Building, Cpu, Database, Cloud, Lock, Globe,
   Star, Users, TrendingUp, Zap, Award, Eye
->>>>>>> 17df199e451813150094c5ab1fb554b04628cb60
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
 } from 'lucide-react';
 
 // Import 2038 innovative services
@@ -483,4 +483,4 @@ const MapPin = ({ className }: { className?: string }) => (
     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
   </svg>
 );
->>>>>>> 17df199e451813150094c5ab1fb554b04628cb60
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96

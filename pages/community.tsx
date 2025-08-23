@@ -1,6 +1,6 @@
 import React from 'react';
-import Head from 'next/head';
-import Link from 'next/link';
+import { Layout } from '../components/layout/Layout';
+import { motion } from 'framer-motion';
 import { 
   Users, MessageCircle, Globe, Rocket, Brain, Atom, Shield, 
   ArrowRight, Star, Zap, Heart, Eye, TrendingUp, Lightbulb,

@@ -14,8 +14,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600&display=swap" rel="stylesheet" />
 
-    <meta name="theme-color" content="#000000" />
-    <link rel="manifest" href="/manifest.json" />
+    <meta name="theme-color" content="#0d0d0d" />
     
     <!-- Open Graph / Facebook -->
     <meta property="og:title" content="Zion - The Future of Tech & AI Marketplace" />
@@ -42,6 +41,10 @@
     <link rel="apple-touch-icon" href="https://drive.google.com/uc?export=view&id=0B0iuzhpa3pD7X0RzZ2lmclN3Ymc" />
     
     <!-- Structured data (JSON-LD) for SEO -->
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="script-src 'self' 'unsafe-inline' 'unsafe-eval' https://cdn.gpteng.co"
+    />
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -60,7 +63,20 @@
   </head>
 
   <body>
-    <div id="root"></div>
+    <div id="root"><!--app-html-->
+      <noscript>
+        <style>
+          body {
+            background: #ffffff;
+            color: #000000;
+            font-family: Arial, sans-serif;
+            padding: 1rem;
+          }
+        </style>
+        This application requires JavaScript. Please enable JavaScript and run
+        the development server.
+      </noscript>
+    </div>
     <!-- IMPORTANT: DO NOT REMOVE THIS SCRIPT TAG OR THIS VERY COMMENT! -->
     <script src="https://cdn.gpteng.co/gptengineer.js" type="module"></script>
     <script type="module" src="/src/main.tsx"></script>

@@ -6,7 +6,7 @@ import {
   TrendingUp, BarChart3, Lock, Cloud, Server, Network, Settings, Brain,
   DollarSign, CreditCard, PieChart, LineChart, Shield as ShieldIcon
 } from 'lucide-react';
->>>>>>> 17df199e451813150094c5ab1fb554b04628cb60
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
 
 const FinancialSolutionsPage: React.FC = () => {
   const solutions = [
@@ -62,7 +62,7 @@ const FinancialSolutionsPage: React.FC = () => {
       description: "Advanced financial insights",
       icon: <PieChart className="w-6 h-6" />
     }
->>>>>>> 17df199e451813150094c5ab1fb554b04628cb60
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
   ];
 
   return (
@@ -82,7 +82,7 @@ const FinancialSolutionsPage: React.FC = () => {
             >
               <h1 className="text-5xl md:text-6xl font-bold bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 bg-clip-text text-transparent mb-6">
                 Financial Solutions
->>>>>>> 17df199e451813150094c5ab1fb554b04628cb60
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
               </h1>
               <p className="text-xl md:text-2xl text-gray-300 mb-8 max-w-4xl mx-auto">
                 Transform your financial institution with cutting-edge technology solutions designed for 
@@ -191,7 +191,7 @@ const FinancialSolutionsPage: React.FC = () => {
                   </div>
                   <h3 className="text-xl font-semibold mb-2">{benefit.title}</h3>
                   <p className="text-gray-400">{benefit.description}</p>
->>>>>>> 17df199e451813150094c5ab1fb554b04628cb60
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
                 </motion.div>
               ))}
             </div>
@@ -208,7 +208,7 @@ const FinancialSolutionsPage: React.FC = () => {
               transition={{ duration: 0.6, delay: 0.6 }}
             >
               <h2 className="text-4xl font-bold mb-6">Ready to Transform Your Financial Institution?</h2>
->>>>>>> 17df199e451813150094c5ab1fb554b04628cb60
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
               <p className="text-xl text-gray-400 mb-8">
                 Let's discuss how our financial technology solutions can drive innovation and growth
               </p>
@@ -225,7 +225,7 @@ const FinancialSolutionsPage: React.FC = () => {
                 >
                   View Pricing
                 </a>
->>>>>>> 17df199e451813150094c5ab1fb554b04628cb60
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
               </div>
             </motion.div>
           </div>

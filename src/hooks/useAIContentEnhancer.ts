@@ -13,7 +13,7 @@ type EnhancementType =
 
 export interface AIEnhancementOptions {
   enhancementType: EnhancementType;
-  content?: string;
+  content: string;
   context?: string;
   instructions?: string;
 }
@@ -32,6 +32,9 @@ export function useAIContentEnhancer() {
     setError(null);
     
     try {
+      if (!supabase) {
+        throw new Error('Supabase client not available');
+      }
       const { data, error } = await supabase.functions.invoke('ai-content-enhancer', {
         body: { 
           content,
@@ -46,9 +49,10 @@ export function useAIContentEnhancer() {
       }
       
       // Handle mock response with fallback
-      return data ? (data as any).enhancedContent : content;
-    } catch (err: any) {
-      const errorMessage = err.message || 'Failed to enhance content';
+      return data && typeof data === 'object' && 'enhancedContent' in data ? (data as { enhancedContent: string }).enhancedContent : content;
+    } catch (err: unknown) {
+      const message = err instanceof Error ? err.message : String(err);
+      const errorMessage = message || 'Failed to enhance content';
       setError(errorMessage);
       toast({
         title: "AI Enhancement Failed",

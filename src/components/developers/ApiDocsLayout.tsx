@@ -1,9 +1,11 @@
 'use client'
 
-import { SearchSuggestion } from "@/types/search";
+import type { SearchSuggestion } from "@/types/search";
 import React, { useState } from "react";
+// Next.js Link is required for navigation; using the wrong import caused
+// build errors logged in `build-test-2.log`
 import Link from 'next/link';
-import { useRouter } from 'next/router';
+import { useRouter, usePathname } from 'next/navigation';
 import { Search } from 'lucide-react';
 
 import { EnhancedSearchInput } from "@/components/search/EnhancedSearchInput";
@@ -19,7 +21,7 @@ interface ApiDocsLayoutProps {
 
 export function ApiDocsLayout({ children }: ApiDocsLayoutProps) {
   const router = useRouter();
-  const currentPath = router.pathname;
+  const currentPath = usePathname();
   const [searchValue, setSearchValue] = useState("");
 
   const navigationItems = [

@@ -6,7 +6,7 @@ import {
   Heart, DollarSign, GraduationCap, Building, Truck, Zap,
   Phone, Mail, MapPin, Globe, Linkedin, Twitter, Github, Youtube,
   ArrowRight, Star, CheckCircle, TrendingUp, Award, Clock
->>>>>>> 17df199e451813150094c5ab1fb554b04628cb60
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
 } from 'lucide-react';
 
 const UltraFuturisticFooter2040: React.FC = () => {
@@ -57,7 +57,7 @@ const UltraFuturisticFooter2040: React.FC = () => {
         { name: 'Support Center', href: '/support' }
       ]
     }
-  ];
+  ], []);
 
   const socialLinks = [
     {
@@ -213,15 +213,50 @@ const UltraFuturisticFooter2040: React.FC = () => {
                   <h3 className="text-xl font-bold text-white">Zion Tech Group</h3>
                   <p className="text-sm text-cyan-400">Future Technology Solutions</p>
                 </div>
->>>>>>> 17df199e451813150094c5ab1fb554b04628cb60
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
               </div>
-              <div className="flex items-center space-x-2">
-                <Globe className="w-4 h-4 text-blue-400" />
-                <span>Global Infrastructure</span>
+              
+              <p className="text-white/70 mb-6 leading-relaxed">
+                Pioneering the future with cutting-edge AI, quantum technology, and innovative solutions that transform businesses and industries.
+              </p>
+
+              {/* Contact Info */}
+              <div className="space-y-3 mb-6">
+                <div className="flex items-center space-x-3 text-white/70 hover:text-white transition-colors duration-300">
+                  <Phone className="w-4 h-4 text-cyan-400" />
+                  <a href={`tel:${contactInfo.phone}`} className="text-sm">
+                    {contactInfo.phone}
+                  </a>
+                </div>
+                <div className="flex items-center space-x-3 text-white/70 hover:text-white transition-colors duration-300">
+                  <Mail className="w-4 h-4 text-cyan-400" />
+                  <a href={`mailto:${contactInfo.email}`} className="text-sm">
+                    {contactInfo.email}
+                  </a>
+                </div>
+                <div className="flex items-center space-x-3 text-white/70">
+                  <MapPin className="w-4 h-4 text-cyan-400" />
+                  <span className="text-sm">{contactInfo.address}</span>
+                </div>
+                <div className="flex items-center space-x-3 text-white/70">
+                  <Clock className="w-4 h-4 text-cyan-400" />
+                  <span className="text-sm">{contactInfo.hours}</span>
+                </div>
               </div>
-              <div className="flex items-center space-x-2">
-                <Star className="w-4 h-4 text-purple-400" />
-                <span>4.8/5 Customer Rating</span>
+
+              {/* Social Links */}
+              <div className="flex space-x-4">
+                {socialLinks.map((social) => (
+                  <a
+                    key={social.name}
+                    href={social.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={`w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center text-white/70 ${social.color} transition-all duration-300 hover:bg-white/20 hover:scale-110`}
+                  >
+                    <social.icon className="w-5 h-5" />
+                  </a>
+                ))}
               </div>
             </div>
 
@@ -316,23 +351,20 @@ const UltraFuturisticFooter2040: React.FC = () => {
               </div>
             </div>
           </div>
+        </div>
 
-          {/* Stats Section */}
-          <div className="mt-16 pt-12 border-t border-white/10">
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-              {stats.map((stat) => (
-                <div key={stat.label} className="text-center">
-                  <div className="text-3xl font-bold text-cyan-400 mb-2">{stat.number}</div>
-                  <div className="text-sm text-white/70">{stat.label}</div>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          {/* CTA Section */}
-          <div className="mt-16 pt-12 border-t border-white/10 text-center">
+        {/* Newsletter Signup */}
+        <motion.div
+          className="mt-16 pt-12 border-t border-gray-700/50"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.3 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.4 }}
+        >
+          <div className="max-w-2xl mx-auto text-center">
             <h3 className="text-2xl font-bold text-white mb-4">
-              Ready to Transform Your Business?
+              Stay Updated with Revolutionary Tech
             </h3>
             <p className="text-white/70 mb-8 max-w-2xl mx-auto">
               Join the future of technology with our cutting-edge solutions. Let's build something extraordinary together.
@@ -376,26 +408,10 @@ const UltraFuturisticFooter2040: React.FC = () => {
                 </Link>
               </div>
             </div>
->>>>>>> 17df199e451813150094c5ab1fb554b04628cb60
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
           </div>
         </div>
       </div>
-
-      {/* Enhanced Scroll to Top Button */}
-      <AnimatePresence>
-        {isVisible && (
-          <motion.button
-            initial={{ opacity: 0, scale: 0.8 }}
-            animate={{ opacity: 1, scale: 1 }}
-            exit={{ opacity: 0, scale: 0.8 }}
-            onClick={scrollToTop}
-            className="fixed bottom-8 right-8 z-50 w-12 h-12 bg-gradient-to-r from-cyan-400 to-blue-500 text-white rounded-full shadow-2xl hover:shadow-cyan-400/50 transition-all duration-300 focus:outline-none focus:ring-4 focus:ring-cyan-400/50 group"
-            aria-label="Scroll to top"
-          >
-            <ArrowUp className="w-6 h-6 mx-auto group-hover:-translate-y-1 transition-transform duration-300" />
-          </motion.button>
-        )}
-      </AnimatePresence>
     </footer>
   );
 };

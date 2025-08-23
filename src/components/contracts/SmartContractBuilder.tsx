@@ -4,11 +4,12 @@ import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
 import { Button } from "@/components/ui/button";
 import { Save } from 'lucide-react';
 
-import { TalentProfile } from "@/types/talent";
-import { ContractForm, ContractFormValues } from "./components/ContractForm";
+import type { TalentProfile } from "@/types/talent";
+import { ContractForm } from "./components/ContractForm";
+import type { ContractFormValues } from "./components/ContractForm";
 import { ContractPreview } from "./components/ContractPreview";
 import { TemplateManager } from "./templates/TemplateManager";
-import { DeploymentOptions, SmartContractInfo } from "@/types/smart-contracts";
+import type { DeploymentOptions, SmartContractInfo } from "@/types/smart-contracts";
 import { useSmartContracts } from "@/hooks/useSmartContracts";
 import { toast } from "sonner";
 import {logErrorToProduction} from '@/utils/productionLogger';
@@ -114,7 +115,15 @@ export function SmartContractBuilder({
             <ContractForm 
               talent={talent}
               clientName={clientName}
-              initialValues={formValues}
+              initialValues={formValues || {
+                projectName: '',
+                startDate: new Date(),
+                scopeSummary: '',
+                paymentTerms: 'fixed',
+                paymentAmount: '',
+                endDate: undefined,
+                additionalClauses: []
+              }}
               onFormValuesChange={setFormValues}
               onContractGenerated={handleFormSubmit}
             />
@@ -150,7 +159,15 @@ export function SmartContractBuilder({
           isOpen={templateManagerOpen}
           onClose={() => setTemplateManagerOpen(false)}
           onSelectTemplate={handleLoadTemplate}
-          currentValues={formValues}
+          currentValues={formValues || {
+            projectName: '',
+            startDate: new Date(),
+            scopeSummary: '',
+            paymentTerms: 'fixed',
+            paymentAmount: '',
+            endDate: undefined,
+            additionalClauses: []
+          }}
         />
       </DialogContent>
     </Dialog>

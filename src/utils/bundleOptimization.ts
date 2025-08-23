@@ -77,18 +77,13 @@ export const monitorBundlePerformance = () => {
   window.addEventListener('load', () => {
     const perfData = performance.getEntriesByType('navigation')[0] as PerformanceNavigationTiming;
     const loadTime = perfData.loadEventEnd - perfData.fetchStart;
-    
-    // Log performance metrics
-    console.log('Bundle Performance Metrics:', {
-      loadTime: `${loadTime}ms`,
-      domContentLoaded: `${perfData.domContentLoadedEventEnd - perfData.fetchStart}ms`,
-      firstPaint: performance.getEntriesByName('first-paint')[0]?.startTime || 'N/A',
-      firstContentfulPaint: performance.getEntriesByName('first-contentful-paint')[0]?.startTime || 'N/A'
-    });
 
     // Report to analytics if available
-    if ((window as any).gtag) {
-      (window as any).gtag('event', 'page_load_time', {
+    function hasGtag(obj: unknown): obj is { gtag: (...args: unknown[]) => void } {
+      return typeof obj === 'object' && obj !== null && 'gtag' in obj && typeof (obj as Record<string, unknown>)["gtag"] === 'function';
+    }
+    if (hasGtag(window)) {
+      window.gtag('event', 'page_load_time', {
         event_category: 'Performance',
         value: Math.round(loadTime)
       });
@@ -176,16 +171,26 @@ export const optimizeMemoryUsage = () => {
   window.addEventListener('beforeunload', cleanupEventListeners);
 
   // Periodic memory cleanup
+  interface PerformanceWithMemory extends Performance {
+    memory?: {
+      usedJSHeapSize: number;
+      jsHeapSizeLimit: number;
+    };
+  }
   setInterval(() => {
-    if ((performance as any).memory) {
-      const memInfo = (performance as any).memory;
+    const perf = performance as PerformanceWithMemory;
+    if (perf.memory) {
+      const memInfo = perf.memory;
       const usageRatio = memInfo.usedJSHeapSize / memInfo.jsHeapSizeLimit;
-      
+
       if (usageRatio > 0.8) {
         console.warn('High memory usage detected, triggering cleanup');
         // Force garbage collection if available
-        if ((window as any).gc) {
-          (window as any).gc();
+        function hasGc(obj: unknown): obj is { gc: () => void } {
+          return typeof obj === 'object' && obj !== null && 'gc' in obj && typeof (obj as Record<string, unknown>)["gc"] === 'function';
+        }
+        if (hasGc(window)) {
+          window.gc();
         }
       }
     }

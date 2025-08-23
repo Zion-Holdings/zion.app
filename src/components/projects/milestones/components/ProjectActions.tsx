@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
@@ -19,7 +18,7 @@ export function ProjectActions({
   isUnderDispute,
   disputeId,
   isTalent,
-  onAddMilestone
+  onAddMilestone,
 }: ProjectActionsProps) {
   return (
     <div className="flex gap-2">
@@ -31,15 +30,10 @@ export function ProjectActions({
           </Link>
         </Button>
       ) : (
-        <RaiseDisputeButton 
-          projectId={projectId}
-          variant="outline"
-        />
+        <RaiseDisputeButton projectId={projectId} variant="outline" />
       )}
       {isTalent && !isUnderDispute && (
-        <Button onClick={onAddMilestone}>
-          Add Milestone
-        </Button>
+        <Button onClick={onAddMilestone}>Add Milestone</Button>
       )}
     </div>
   );

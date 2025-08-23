@@ -1,7 +1,9 @@
 import React from 'react';
-import { motion } from 'framer-motion';
-import { Shield, Lock, Key, Eye, Brain } from 'lucide-react';
-import Link from 'next/link';
+import Head from 'next/head';
+import { Phone, Mail, MapPin, Check, ArrowRight, Shield, Star } from 'lucide-react';
+import UltraAdvancedFuturisticBackground from '../components/ui/UltraAdvancedFuturisticBackground';
+import { Button } from '../components/ui/Button';
+import { enhancedRealMicroSaasServices } from '../data/enhanced-real-micro-saas-services';
 
 const QuantumCybersecurity: React.FC = () => {
   const solutions = [
@@ -202,19 +204,11 @@ const QuantumCybersecurity: React.FC = () => {
               <div className="w-16 h-16 bg-gradient-to-r from-cyan-500 to-blue-600 rounded-full flex items-center justify-center mx-auto mb-4 text-2xl font-bold">
                 01
               </div>
-              <h3 className="text-xl font-semibold mb-3">Assessment</h3>
-              <p className="text-gray-300">Evaluate current security posture and identify quantum vulnerabilities.</p>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.1 }}
-              viewport={{ once: true }}
-              className="text-center p-6 bg-gray-800/50 rounded-xl border border-gray-700/50 hover:border-cyan-500/50 transition-all duration-300"
-            >
-              <div className="w-16 h-16 bg-gradient-to-r from-cyan-500 to-blue-600 rounded-full flex items-center justify-center mx-auto mb-4 text-2xl font-bold">
-                02
+              <Link href="/contact" variant="quantum" size="lg" className="w-full">Request Security Assessment<ArrowRight className="w-5 h-5 ml-2" /></Button>
+              <div className="mt-6 space-y-3 text-sm text-slate-300">
+                <div className="flex items-center space-x-2"><Phone className="w-4 h-4 text-cyan-400" /><span>{service.contactInfo.mobile}</span></div>
+                <div className="flex items-center space-x-2"><Mail className="w-4 h-4 text-purple-400" /><span>{service.contactInfo.email}</span></div>
+                <div className="flex items-center space-x-2"><MapPin className="w-4 h-4 text-green-400" /><span className="text-xs">{service.contactInfo.address}</span></div>
               </div>
               <h3 className="text-xl font-semibold mb-3">Strategy</h3>
               <p className="text-gray-300">Develop comprehensive quantum security strategy and roadmap.</p>

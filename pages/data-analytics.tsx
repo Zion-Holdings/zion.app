@@ -1,5 +1,4 @@
 import React from 'react';
-import Layout from '../components/layout/Layout';
 import { motion } from 'framer-motion';
 import { 
   BarChart3, Database, TrendingUp, Brain, Zap, Shield, 
@@ -17,21 +16,17 @@ const DataAnalytics: React.FC = () => {
     },
     {
       icon: Brain,
-      title: "AI-Powered Intelligence",
-      description: "Machine learning algorithms for predictive analytics and pattern recognition",
-      color: "from-purple-500 to-pink-500"
+      title: 'Intelligent HR Analytics Platform',
+      description: 'AI-driven human resources insights and optimization',
+      features: ['Employee analytics', 'Performance metrics', 'Talent insights', 'Workforce planning'],
+      href: '/intelligent-hr-analytics-platform'
     },
     {
-      icon: Database,
-      title: "Big Data Processing",
-      description: "Scalable data processing for enterprise-level analytics and reporting",
-      color: "from-green-500 to-emerald-500"
-    },
-    {
-      icon: TrendingUp,
-      title: "Real-time Monitoring",
-      description: "Live data streams and instant insights for proactive decision making",
-      color: "from-yellow-500 to-orange-500"
+      icon: Zap,
+      title: 'Intelligent Supply Chain Optimization',
+      description: 'AI-powered supply chain analytics and optimization',
+      features: ['Demand forecasting', 'Inventory analytics', 'Route optimization', 'Risk assessment'],
+      href: '/intelligent-supply-chain-optimization'
     },
     {
       icon: Shield,

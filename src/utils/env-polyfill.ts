@@ -20,12 +20,12 @@ if (typeof globalThis !== 'undefined' && typeof globalThis.process === 'undefine
     arch: 'x64',
     version: '18.0.0',
     browser: true,
-  } as any;
+  } as unknown as NodeJS.Process;
 }
 
 // Also handle the window object for older browsers
-if (typeof window !== 'undefined' && typeof (window as any).process === 'undefined') {
-  (window as any).process = {
+if (typeof window !== 'undefined' && typeof (window as unknown as { process: NodeJS.Process }).process === 'undefined') {
+  (window as unknown as { process: NodeJS.Process }).process = {
     env: {
       NODE_ENV: 'production',
       NEXT_PUBLIC_APP_URL: '',
@@ -74,6 +74,6 @@ export const processEnv = typeof process !== 'undefined' ? process.env : {
   NEXT_PUBLIC_SUPABASE_ANON_KEY: '',
 };
 
-console.log('✅ Environment polyfill loaded successfully');
+// Environment polyfill loaded
 
 export default safeEnv;

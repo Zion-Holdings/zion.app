@@ -53,6 +53,15 @@ interface LogAnalysisResult {
   recommendations: string[];
 }
 
+// For browsers that support performance.memory
+interface PerformanceWithMemory extends Performance {
+  memory: {
+    usedJSHeapSize: number;
+    totalJSHeapSize: number;
+    jsHeapSizeLimit: number;
+  };
+}
+
 class AdvancedLogCollector {
   private config: LogCollectionConfig;
   private logBuffer: CollectedLog[] = [];
@@ -99,19 +108,25 @@ class AdvancedLogCollector {
     // Monitor memory usage
     if ('memory' in performance) {
       setInterval(() => {
-        const memory = (performance as any).memory;
-        this.collectLog({
-          id: this.generateLogId(),
-          timestamp: new Date().toISOString(),
-          level: 'info',
-          message: 'Memory usage snapshot',
-          source: 'client',
-          sessionId: this.getSessionId(),
-          performanceData: {
-            memory: memory.usedJSHeapSize / memory.totalJSHeapSize * 100
-          },
-          tags: ['performance', 'memory']
-        });
+        const perf = performance as PerformanceWithMemory;
+        const memory = perf.memory;
+        if (memory && typeof memory.usedJSHeapSize === 'number' && typeof memory.totalJSHeapSize === 'number') {
+          this.collectLog({
+            id: this.generateLogId(),
+            timestamp: new Date().toISOString(),
+            level: 'info',
+            message: 'Memory usage snapshot',
+            source: 'client',
+            sessionId: this.getSessionId(),
+            performanceData: {
+              memory: memory.usedJSHeapSize / memory.totalJSHeapSize * 100
+            },
+            tags: ['performance', 'memory'],
+            stackTrace: '',
+            url: '',
+            userAgent: ''
+          });
+        }
       }, 30000);
     }
 
@@ -130,7 +145,10 @@ class AdvancedLogCollector {
             performanceData: {
               responseTime: navigation.loadEventEnd - navigation.fetchStart
             },
-            tags: ['performance', 'pageload']
+            tags: ['performance', 'pageload'],
+            stackTrace: '',
+            url: '',
+            userAgent: ''
           });
         }
       }, 1000);
@@ -160,7 +178,7 @@ class AdvancedLogCollector {
   private handleCriticalLog(log: CollectedLog): void {
     // Report to error dashboard
     const error = new Error(log.message);
-    error.stack = log.stackTrace;
+    error.stack = log.stackTrace || '';
     
     errorReportingDashboard.reportError(error, log.level === 'critical' ? 'critical' : 'high');
 
@@ -468,28 +486,32 @@ if (typeof window !== 'undefined') {
   import('./logError').then((logErrorModule) => {
     const originalLogError = logErrorModule.logError;
     if (originalLogError) {
-      (window as any).logError = (...args: any[]) => {
+      (window as unknown as { logError?: (...args: unknown[]) => unknown }).logError = (...args: unknown[]) => {
         const result = originalLogError(args[0], args[1]);
-        
-        // Collect the log
+        // Type guards for args
+        const message = typeof args[0] === 'string' ? args[0] : 'Unknown error';
+        const stackTrace = args[1] instanceof Error && typeof args[1].stack === 'string' ? args[1].stack : '';
+        const context = (args[2] && typeof args[2] === 'object') ? args[2] as Record<string, unknown> : undefined;
         advancedLogCollector.collectLog({
           id: advancedLogCollector['generateLogId'](),
           timestamp: new Date().toISOString(),
           level: 'error',
-          message: args[0] || 'Unknown error',
+          message,
           source: 'client',
           sessionId: advancedLogCollector['getSessionId'](),
-          context: args[2],
-          stackTrace: args[1] instanceof Error ? args[1].stack : undefined,
-          url: window.location.href,
-          userAgent: navigator.userAgent,
+          stackTrace,
+          url: typeof window.location.href === 'string' ? window.location.href : '',
+          userAgent: typeof navigator.userAgent === 'string' ? navigator.userAgent : '',
+          ...(context ? { context } : {})
         });
-        
         return result;
       };
     }
   }).catch(() => {
     // Fallback if import fails
-    console.warn('Could not hook into logError for advanced log collection');
+    import('@/utils/productionLogger').then((mod) => {
+      const logWarn: (msg: string, ctx?: Record<string, unknown>) => void = mod.logWarn;
+      logWarn('Could not hook into logError for advanced log collection', {});
+    });
   });
 } 

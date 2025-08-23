@@ -9,7 +9,8 @@ import { PlusCircle, Save, Trash } from 'lucide-react';
 
 
 
-import { useWebhooks, WebhookEventType } from "@/hooks/useWebhooks";
+import { useWebhooks } from "@/hooks/useWebhooks";
+import type { WebhookEventType } from "@/hooks/useWebhooks";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { toast } from "sonner";
 

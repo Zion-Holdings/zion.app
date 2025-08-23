@@ -30,10 +30,8 @@ interface LoggerConfig {
 
 // Internal console methods to avoid circular dependencies
 const internalConsole = {
-  log: console.log.bind(console),
   warn: console.warn.bind(console),
   error: console.error.bind(console),
-  info: console.info.bind(console),
 };
 
 class ProductionLogger {
@@ -75,12 +73,12 @@ class ProductionLogger {
     return {
       level,
       message,
-      context,
+      context: context ?? {},
       timestamp: new Date().toISOString(),
       sessionId: this.config.sessionId,
-      url: typeof window !== 'undefined' ? window.location.href : undefined,
-      userAgent: typeof navigator !== 'undefined' ? navigator.userAgent : undefined,
-      userId: this.config.userId,
+      url: typeof window !== 'undefined' ? window.location.href : '',
+      userAgent: typeof navigator !== 'undefined' ? navigator.userAgent : '',
+      userId: this.config.userId ?? '',
     };
   }
 
@@ -91,12 +89,6 @@ class ProductionLogger {
     const message = `${prefix} ${entry.message}`;
 
     switch (entry.level) {
-      case 'debug':
-        internalConsole.info(message, entry.context || '');
-        break;
-      case 'info':
-        internalConsole.info(message, entry.context || '');
-        break;
       case 'warn':
         internalConsole.warn(message, entry.context || '');
         break;
@@ -125,21 +117,23 @@ class ProductionLogger {
 
     try {
       // Send to Sentry or other monitoring service
-      if (typeof window !== 'undefined' && (window as any).Sentry) {
-        const sentry = (window as any).Sentry;
-        entries.forEach(entry => {
-          if (entry.level === 'error') {
-            sentry.captureException(new Error(entry.message), {
-              extra: entry.context,
-              tags: {
-                sessionId: entry.sessionId,
-                userId: entry.userId,
-              },
-            });
-          } else if (sentry.captureMessage) {
-            sentry.captureMessage(entry.message, entry.level);
-          }
-        });
+      if (typeof window !== 'undefined' && (window as unknown as { Sentry?: { captureException?: (error: unknown, context?: unknown) => void; captureMessage?: (message: string, level?: string) => void } }).Sentry) {
+        const sentry = (window as unknown as { Sentry?: { captureException?: (error: unknown, context?: unknown) => void; captureMessage?: (message: string, level?: string) => void } }).Sentry;
+        if (sentry) {
+          entries.forEach(entry => {
+            if (entry.level === 'error' && typeof sentry.captureException === 'function') {
+              sentry.captureException(new Error(entry.message), {
+                extra: entry.context,
+                tags: {
+                  sessionId: entry.sessionId,
+                  userId: entry.userId,
+                },
+              });
+            } else if (typeof sentry.captureMessage === 'function') {
+              sentry.captureMessage(entry.message, entry.level);
+            }
+          });
+        }
       }
 
       // Send to custom logging endpoint
@@ -228,9 +222,9 @@ class ProductionLogger {
             if (entry.entryType === 'largest-contentful-paint') {
               this.performanceMetrics.largestContentfulPaint = entry.startTime;
             }
-            if (entry.entryType === 'layout-shift' && !(entry as any).hadRecentInput) {
+            if (entry.entryType === 'layout-shift' && !(entry as { hadRecentInput?: boolean }).hadRecentInput) {
               this.performanceMetrics.cumulativeLayoutShift = 
-                (this.performanceMetrics.cumulativeLayoutShift || 0) + (entry as any).value;
+                (this.performanceMetrics.cumulativeLayoutShift || 0) + ((entry as { value?: number }).value || 0);
             }
           }
         });
@@ -291,7 +285,7 @@ class ProductionLogger {
         // If the original errorPayload was not an error, but some other data,
         // attach it to the new error's context if possible, or ensure it's in the main context.
         if (typeof context === 'object' && context !== null) {
-            (actualErrorToReport as any).originalPayload = errorPayload;
+            ((actualErrorToReport as unknown) as Record<string, unknown>).originalPayload = errorPayload;
         }
     }
 

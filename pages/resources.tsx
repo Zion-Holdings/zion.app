@@ -1,5 +1,4 @@
 import React from 'react';
-import Layout from '../components/layout/Layout';
 import { motion } from 'framer-motion';
 import { 
   BookOpen, 
@@ -23,10 +22,10 @@ import {
   Database,
   Code
 } from 'lucide-react';
->>>>>>> 17df199e451813150094c5ab1fb554b04628cb60
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
 import Link from 'next/link';
 
-const Resources: React.FC = () => {
+const ResourcesPage: React.FC = () => {
   const resourceCategories = [
     {
       title: 'Documentation',
@@ -34,30 +33,21 @@ const Resources: React.FC = () => {
       icon: FileText,
       color: 'from-blue-500 to-cyan-500',
       featured: true
->>>>>>> 17df199e451813150094c5ab1fb554b04628cb60
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
     },
     {
-      name: 'Blog & Insights',
-      icon: <FileText className="w-8 h-8 text-blue-400" />,
-      description: 'Latest insights, trends, and thought leadership',
-      resources: [
-        { name: 'AI Automation Trends 2025', href: '/blog/ai-automation-trends-2025', description: 'Latest trends in AI automation' },
-        { name: 'Future of Work', href: '/blog/future-of-work', description: 'How AI is reshaping the workplace' },
-        { name: 'AI Ethics & Automation', href: '/blog/ai-ethics-automation', description: 'Ethical considerations in AI' },
-        { name: 'Cloud Native Automation', href: '/blog/cloud-native-automation', description: 'Modern cloud automation strategies' },
-        { name: 'Performance Optimization', href: '/blog/performance-optimization', description: 'Tips for optimal performance' }
-      ]
+      icon: <BookOpen className="w-8 h-8" />,
+      title: 'Documentation',
+      description: 'Technical documentation, API references, and implementation guides',
+      href: '/docs',
+      color: 'from-purple-500 to-pink-500'
     },
     {
-      name: 'Case Studies',
-      icon: <Users className="w-8 h-8 text-purple-400" />,
-      description: 'Real-world success stories and implementations',
-      resources: [
-        { name: 'Enterprise AI Transformation', href: '/case-studies', description: 'Large-scale AI implementations' },
-        { name: 'Quantum Computing Success', href: '/case-studies', description: 'Quantum computing breakthroughs' },
-        { name: 'Space Technology Applications', href: '/case-studies', description: 'Space tech innovations' },
-        { name: 'Cybersecurity Solutions', href: '/case-studies', description: 'Security transformation stories' }
-      ]
+      icon: <Video className="w-8 h-8" />,
+      title: 'Webinars',
+      description: 'Educational webinars and training sessions on cutting-edge technologies',
+      href: '/webinars',
+      color: 'from-green-500 to-emerald-500'
     },
     {
       icon: <Globe className="w-8 h-8" />,
@@ -90,7 +80,7 @@ const Resources: React.FC = () => {
           time: '18 min',
           link: '/case-studies/manufacturing-iot'
         }
->>>>>>> 17df199e451813150094c5ab1fb554b04628cb60
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
       ]
     }
   ];
@@ -102,7 +92,7 @@ const Resources: React.FC = () => {
     { label: 'Community Forum', href: '/community', icon: User },
     { label: 'Support Center', href: '/support', icon: Shield },
     { label: 'Developer Blog', href: '/blog', icon: BookOpen }
->>>>>>> 17df199e451813150094c5ab1fb554b04628cb60
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
   ];
 
   return (
@@ -112,12 +102,12 @@ const Resources: React.FC = () => {
         <section className="relative py-20 lg:py-32 overflow-hidden">
           <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/10 via-purple-500/10 to-pink-500/10" />
           <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
->>>>>>> 17df199e451813150094c5ab1fb554b04628cb60
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
-              className="mb-8"
+              className="text-center"
             >
               <h1 className="text-5xl lg:text-7xl font-bold bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 bg-clip-text text-transparent mb-6">
                 Resources Hub
@@ -125,28 +115,106 @@ const Resources: React.FC = () => {
               <p className="text-xl lg:text-2xl text-gray-300 max-w-4xl mx-auto leading-relaxed mb-8">
                 Access comprehensive documentation, tutorials, case studies, and insights 
                 to help you succeed with Zion Tech Group technologies.
->>>>>>> 17df199e451813150094c5ab1fb554b04628cb60
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
               </p>
+            </header>
+            
+            {/* Tab Navigation */}
+            <div className="flex flex-wrap justify-center gap-4 mb-12">
+              {Object.keys(resources).map((tab) => (
+                <button
+                  key={tab}
+                  onClick={() => setActiveTab(tab)}
+                  className={`px-6 py-3 rounded-lg font-medium transition-all duration-300 ${
+                    activeTab === tab
+                      ? 'bg-gradient-to-r from-cyan-400 to-blue-400 text-white shadow-lg'
+                      : 'bg-white/10 text-white/80 hover:bg-white/20 hover:text-white'
+                  }`}
+                >
+                  {tab.charAt(0).toUpperCase() + tab.slice(1)}
+                </button>
+              ))}
+            </div>
+            
+            {/* Resource Grid */}
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {resources[activeTab].map((resource, index) => renderResourceCard(resource, index))}
+            </div>
+            
+            {/* Additional Resources Section */}
+            <section className="mt-20">
+              <div className="text-center mb-12">
+                <h2 className="text-3xl font-bold mb-4 text-white">
+                  Ready to Get Started?
+                </h2>
+                <p className="text-white/80 max-w-2xl mx-auto">
+                  Join thousands of developers and organizations already building the future with autonomous systems.
+                </p>
+              </div>
               
-              {/* Search Bar */}
-              <div className="max-w-2xl mx-auto">
-                <div className="relative">
-                  <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-400" />
-                  <input
-                    type="text"
-                    placeholder="Search resources, guides, or topics..."
-                    className="w-full pl-12 pr-4 py-4 bg-gray-800/50 border border-gray-700/50 rounded-xl text-white placeholder-gray-400 focus:border-cyan-500 focus:ring-2 focus:ring-cyan-500/20 transition-all duration-300"
-                  />
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div className="text-center p-8 bg-gradient-to-br from-cyan-400/10 to-blue-400/10 rounded-2xl border border-cyan-400/20">
+                  <div className="w-16 h-16 bg-gradient-to-r from-cyan-400 to-blue-400 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                    </svg>
+                  </div>
+                  <h3 className="text-xl font-semibold mb-2 text-white">Free Learning Path</h3>
+                  <p className="text-white/80 mb-4">
+                    Start with our comprehensive learning path designed for beginners
+                  </p>
+                  <Link 
+                    href="/contact"
+                    className="inline-block px-6 py-3 bg-gradient-to-r from-cyan-400 to-blue-400 text-white font-semibold rounded-lg hover:from-cyan-500 hover:to-blue-500 transition-all duration-300"
+                  >
+                    Start Learning
+                  </Link>
+                </div>
+                
+                <div className="text-center p-8 bg-gradient-to-br from-purple-400/10 to-pink-400/10 rounded-2xl border border-purple-400/20">
+                  <div className="w-16 h-16 bg-gradient-to-r from-purple-400 to-pink-400 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+                    </svg>
+                  </div>
+                  <h3 className="text-xl font-semibold mb-2 text-white">Join Community</h3>
+                  <p className="text-white/80 mb-4">
+                    Connect with like-minded professionals and share knowledge
+                  </p>
+                  <Link 
+                    href="/contact"
+                    className="inline-block px-6 py-3 bg-gradient-to-r from-purple-400 to-pink-400 text-white font-semibold rounded-lg hover:from-purple-500 hover:to-pink-500 transition-all duration-300"
+                  >
+                    Join Now
+                  </Link>
+                </div>
+                
+                <div className="text-center p-8 bg-gradient-to-br from-green-400/10 to-emerald-400/10 rounded-2xl border border-green-400/20">
+                  <div className="w-16 h-16 bg-gradient-to-r from-green-400 to-emerald-400 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                  </div>
+                  <h3 className="text-xl font-semibold mb-2 text-white">Get Support</h3>
+                  <p className="text-white/80 mb-4">
+                    Need help? Our experts are here to support your automation journey
+                  </p>
+                  <Link 
+                    href="/contact"
+                    className="inline-block px-6 py-3 bg-gradient-to-r from-green-400 to-emerald-400 text-white font-semibold rounded-lg hover:from-green-500 hover:to-emerald-500 transition-all duration-300"
+                  >
+                    Contact Us
+                  </Link>
                 </div>
               </div>
-            </motion.div>
+            </section>
           </div>
         </section>
 
         {/* Quick Links */}
         <section className="py-16 bg-gradient-to-b from-black via-gray-900 to-black">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
->>>>>>> 17df199e451813150094c5ab1fb554b04628cb60
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -201,7 +269,7 @@ const Resources: React.FC = () => {
             </motion.div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
->>>>>>> 17df199e451813150094c5ab1fb554b04628cb60
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
               {featuredResources.map((resource, index) => (
                 <motion.div
                   key={resource.title}
@@ -242,7 +310,7 @@ const Resources: React.FC = () => {
           </div>
         </section>
                   </a>
->>>>>>> 17df199e451813150094c5ab1fb554b04628cb60
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
                 </motion.div>
               ))}
             </div>
@@ -252,7 +320,7 @@ const Resources: React.FC = () => {
         {/* Resource Categories */}
         <section className="py-20 bg-gradient-to-b from-black via-gray-900 to-black">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
->>>>>>> 17df199e451813150094c5ab1fb554b04628cb60
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -271,7 +339,7 @@ const Resources: React.FC = () => {
               {resourceCategories.map((category, categoryIndex) => (
                 <motion.div
                   key={category.title}
->>>>>>> 17df199e451813150094c5ab1fb554b04628cb60
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.8, delay: categoryIndex * 0.1 }}
@@ -341,7 +409,7 @@ const Resources: React.FC = () => {
                           <span className="font-medium">Read More</span>
                           <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform duration-300" />
                         </div>
->>>>>>> 17df199e451813150094c5ab1fb554b04628cb60
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
                       </motion.div>
                     ))}
                   </div>
@@ -355,7 +423,7 @@ const Resources: React.FC = () => {
         {/* CTA Section */}
         <section className="py-20 bg-black">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
->>>>>>> 17df199e451813150094c5ab1fb554b04628cb60
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -383,7 +451,7 @@ const Resources: React.FC = () => {
                 >
                   Browse Documentation
                 </a>
->>>>>>> 17df199e451813150094c5ab1fb554b04628cb60
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
               </div>
             </motion.div>
           </div>

@@ -1,20 +1,19 @@
-// @ts-nocheck
 // Server-side polyfill to handle client-side globals during SSR and build
 // This prevents "self is not defined" and similar errors during Next.js builds
 
 if (typeof global !== 'undefined' && typeof self === 'undefined') {
   // Define self as global for server-side execution
-  (global as any).self = global;
+  (global as unknown as { self: typeof global }).self = global;
 }
 
 if (typeof globalThis !== 'undefined' && typeof self === 'undefined') {
-  (globalThis as any).self = globalThis;
+  (globalThis as unknown as { self: typeof globalThis }).self = globalThis;
 }
 
 // Additional client-side globals that might be accessed server-side
 if (typeof window === 'undefined') {
   // Mock window object for server-side execution
-  (global as any).window = {
+  (global as unknown as { window: Record<string, unknown> }).window = {
     location: {
       href: '',
       origin: '',
@@ -41,7 +40,7 @@ if (typeof window === 'undefined') {
     removeEventListener: () => {},
     dispatchEvent: () => {},
     requestAnimationFrame: (callback: () => void) => setTimeout(callback, 16),
-    cancelAnimationFrame: (id: any) => clearTimeout(id),
+    cancelAnimationFrame: (id: number) => clearTimeout(id),
     localStorage: {
       getItem: () => null,
       setItem: () => {},
@@ -59,15 +58,16 @@ if (typeof window === 'undefined') {
       key: () => null
     },
     console: console,
-    fetch: global.fetch || (() => Promise.reject(new Error('Fetch not available on server'))),
-    URL: global.URL || class URL {
-      constructor(public href: string) {}
+    fetch: (global as Record<string, unknown>).fetch || (() => Promise.reject(new Error('Fetch not available on server'))),
+    URL: (global as any).URL || class URL {
+      href: string;
+      constructor(href: string) { this.href = href; }
       toString() { return this.href; }
     },
-    crypto: global.crypto || {
+    crypto: (global as any).crypto || {
       randomUUID: () => Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15),
       subtle: {},
-      getRandomValues: (arr: any) => {
+      getRandomValues: (arr: Uint8Array) => {
         for (let i = 0; i < arr.length; i++) {
           arr[i] = Math.floor(Math.random() * 256);
         }
@@ -147,7 +147,7 @@ if (typeof performance === 'undefined') {
 // Export for explicit imports
 export const initServerPolyfills = () => {
   // The polyfills are already applied when this module is imported
-  console.log('🔧 Server polyfills initialized');
+  // Server polyfills initialized
 };
 
 export default initServerPolyfills;

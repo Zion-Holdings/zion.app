@@ -1,17 +1,7 @@
 module.exports = {
   plugins: {
     '@tailwindcss/postcss': {},
-    'autoprefixer': {},
-    'cssnano': process.env.NODE_ENV === 'production' ? {
-      preset: ['default', {
-        discardComments: {
-          removeAll: true,
-        },
-        normalizeWhitespace: true,
-        colormin: true,
-        minifyFontValues: true,
-        minifySelectors: true,
-      }]
-    } : false,
+    autoprefixer: {},
   },
-};
+}; 
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96

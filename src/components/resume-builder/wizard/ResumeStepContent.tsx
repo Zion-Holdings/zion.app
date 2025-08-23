@@ -1,6 +1,6 @@
 
 import { TabsContent } from "@/components/ui/tabs";
-import { Resume } from "@/types/resume";
+import type { Resume } from "@/types/resume";
 import { BasicInfoForm } from '../forms/basic-info';
 import { WorkExperienceForm } from '../forms/WorkExperienceForm';
 import { EducationForm } from '../forms/EducationForm';
@@ -31,7 +31,7 @@ export const ResumeStepContent = ({
           initialData={resume?.basic_info}
           onSave={(data) => {
             // Here you would typically save the data to your backend
-            logInfo('Saving basic info:', { data: data });
+            logInfo('Saving basic info:', { data:  { data: data } });
           }}
           onComplete={onNextStep} 
         />

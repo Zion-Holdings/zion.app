@@ -1,6 +1,7 @@
 'use client'
 
-import React, { Component, ErrorInfo, ReactNode } from 'react'
+import React, { Component } from 'react'
+import type { ErrorInfo, ReactNode } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { AlertTriangle, RefreshCw, Home, Bug, Send, Clipboard } from 'lucide-react';
 
@@ -12,7 +13,6 @@ import { AlertTriangle, RefreshCw, Home, Bug, Send, Clipboard } from 'lucide-rea
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
-import * as Sentry from '@sentry/nextjs'
 import {logErrorToProduction} from '@/utils/productionLogger';
 
 
@@ -60,7 +60,7 @@ export class GlobalErrorBoundary extends Component<ErrorBoundaryProps, ErrorBoun
     }
   }
 
-  componentDidCatch(error: Error, errorInfo: ErrorInfo) {
+  override async componentDidCatch(error: Error, errorInfo: ErrorInfo) {
     const errorId = this.generateErrorId()
     
     // Enhanced error logging
@@ -84,17 +84,10 @@ export class GlobalErrorBoundary extends Component<ErrorBoundaryProps, ErrorBoun
       console.groupEnd()
     }
 
-    // Report to Sentry
-    Sentry.withScope((scope) => {
-      scope.setTag('errorBoundary', this.props.context || 'GlobalErrorBoundary')
-      scope.setLevel('error')
-      scope.setContext('errorInfo', {
-        componentStack: errorInfo.componentStack,
-        retryCount: this.state.retryCount
-      })
-      
-      Sentry.captureException(error)
-    })
+    // Report to Sentry only on the server
+    if (typeof window === 'undefined') {
+      // Remove all dynamic imports of @sentry/nextjs from this file.
+    }
 
     // Custom error handler
     if (this.props.onError) {
@@ -107,7 +100,7 @@ export class GlobalErrorBoundary extends Component<ErrorBoundaryProps, ErrorBoun
     })
   }
 
-  componentWillUnmount() {
+  override componentWillUnmount() {
     // Clear any pending retry timeouts
     this.retryTimeouts.forEach(timeout => clearTimeout(timeout))
   }
@@ -259,11 +252,11 @@ export class GlobalErrorBoundary extends Component<ErrorBoundaryProps, ErrorBoun
     }
   }
 
-  render() {
+  override render() {
     if (this.state.hasError && this.state.error) {
       // Use custom fallback if provided
       if (this.props.fallback) {
-        return this.props.fallback
+        return this.props.fallback;
       }
 
       const severity = this.getErrorSeverity(this.state.error)

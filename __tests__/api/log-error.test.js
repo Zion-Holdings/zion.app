@@ -8,13 +8,15 @@
 
 // Mock PrismaClient and its methods
 // We need to mock specific methods on the `errorAnalysisSuggestion` model.
+import { describe, test, beforeAll, beforeEach, expect, vi } from 'vitest';
+
 const mockPrismaErrorAnalysisSuggestion = {
-  findUnique: jest.fn(),
-  create: jest.fn(),
-  update: jest.fn(),
+  findUnique: vi.fn(),
+  create: vi.fn(),
+  update: vi.fn(),
 };
-jest.mock('@prisma/client', () => ({
-  PrismaClient: jest.fn(() => ({
+vi.mock('@prisma/client', () => ({
+  PrismaClient: vi.fn(() => ({
     errorAnalysisSuggestion: mockPrismaErrorAnalysisSuggestion,
   })),
   // Mocking the enum, assuming it's used like ErrorAnalysisStatus.NEW
@@ -30,16 +32,19 @@ jest.mock('@prisma/client', () => ({
 
 // Mock child_process.exec
 // This allows us to control the behavior of the Codex script execution.
-const mockExec = jest.fn();
-jest.mock('child_process', () => ({
-  ...jest.requireActual('child_process'), // Import and retain default behavior for other child_process functions
-  exec: mockExec,
-}));
+const mockExec = vi.fn();
+vi.mock('child_process', async () => {
+  const actual = await vi.importActual('child_process');
+  return {
+    ...actual,
+    exec: mockExec,
+  };
+});
 
 // Mock Sentry's captureException
 // To ensure errors are reported to Sentry as expected.
-const mockCaptureException = jest.fn();
-jest.mock('@sentry/nextjs', () => ({
+const mockCaptureException = vi.fn();
+vi.mock('@sentry/nextjs', () => ({
   captureException: mockCaptureException,
 }));
 
@@ -66,17 +71,17 @@ const createMockReqRes = (method = 'POST', body = {}) => {
     statusCode: null,
     jsonData: null,
     ended: false,
-    setHeader: jest.fn(),
-    status: jest.fn(function (code) { // Chainable status
+    setHeader: vi.fn(),
+    status: vi.fn(function (code) { // Chainable status
       this.statusCode = code;
       return this;
     }),
-    json: jest.fn(function (data) { // Store JSON data and end
+    json: vi.fn(function (data) { // Store JSON data and end
       this.jsonData = data;
       this.ended = true;
       return this;
     }),
-    end: jest.fn(function (message) { // End response
+    end: vi.fn(function (message) { // End response
       if (message) this.jsonData = message; // Or handle plain text responses
       this.ended = true;
       return this;
@@ -106,7 +111,7 @@ describe('/api/log-error Endpoint', () => {
 
   beforeEach(() => {
     // Reset mocks before each test
-    jest.clearAllMocks();
+    vi.clearAllMocks();
 
     // Default mock implementations
     mockPrismaErrorAnalysisSuggestion.findUnique.mockResolvedValue(null);
@@ -309,7 +314,7 @@ describe('/api/log-error Endpoint', () => {
   // Test Case: Database Error during Codex callback update
   test('Database Error (Callback): should log error if Prisma throws during exec callback update (API already returned 202)', async () => {
     if (!logErrorApiHandler) return;
-    const consoleErrorSpy = jest.spyOn(console, 'error').mockImplementation(() => {}); // Suppress console.error for this test
+    const consoleErrorSpy = vi.spyOn(console, 'error').mockImplementation(() => {}); // Suppress console.error for this test
     const { req, res } = createMockReqRes('POST', validErrorPayload);
     const createdRecord = { id: 'db-error-callback-id', ...validErrorPayload };
     mockPrismaErrorAnalysisSuggestion.create.mockResolvedValue(createdRecord);

@@ -14,7 +14,7 @@ import { Handshake, MessageSquare } from 'lucide-react';
 
 import { Button } from "@/components/ui/button";
 import { useAuth } from "@/hooks/useAuth";
-import { UserProfile } from "@/types/auth";
+import type { UserProfile } from "@/types/auth";
 import { toast } from "@/hooks/use-toast";
 import { SEO } from "@/components/SEO";
 
@@ -101,9 +101,9 @@ export default function TalentProfilePage() {
   return (
     <>
       <SEO
-        title={profile.full_name}
-        description={profile.bio || 'Talent profile'}
-        ogImage={profile.profile_picture_url}
+        title={profile?.full_name || 'Talent Profile'}
+        description={profile?.bio || 'Talent profile on Zion'}
+        ogImage={profile?.profile_picture_url ?? ''}
       />
       <div className="min-h-screen bg-zion-blue pb-12">
       <TalentProfile

@@ -118,7 +118,7 @@ const SupportPage: React.FC = () => {
     { metric: "< 4hrs", label: "Average Response Time" },
     { metric: "24/7", label: "Support Availability" },
     { metric: "98%", label: "Customer Satisfaction" }
->>>>>>> 17df199e451813150094c5ab1fb554b04628cb60
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
   ];
 
   const contactInfo = {
@@ -131,7 +131,7 @@ const SupportPage: React.FC = () => {
 
   return (
 
->>>>>>> 17df199e451813150094c5ab1fb554b04628cb60
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
               viewport={{ once: true }}
               className="text-center mb-16"
             >
@@ -223,7 +223,125 @@ const SupportPage: React.FC = () => {
                     {stat.metric}
                   </div>
                   <div className="text-gray-400">{stat.label}</div>
->>>>>>> 17df199e451813150094c5ab1fb554b04628cb60
+                Multiple Support Channels
+              </h2>
+              <p className="text-xl text-gray-400 max-w-3xl mx-auto">
+                Choose the support method that works best for you
+              </p>
+            </motion.div>
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+              {supportChannels.map((channel, index) => (
+                <motion.div
+                  key={channel.title}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: index * 0.1 }}
+                  viewport={{ once: true }}
+                  className="bg-gradient-to-br from-gray-800/50 to-gray-900/50 p-6 rounded-2xl border border-gray-700/50 hover:border-purple-500/50 transition-all duration-300"
+                >
+                  <div className={`w-12 h-12 bg-gradient-to-br ${channel.color} rounded-xl flex items-center justify-center mb-4`}>
+                    {channel.icon}
+                  </div>
+                  <h3 className="text-lg font-bold text-white mb-2">{channel.title}</h3>
+                  <p className="text-gray-300 text-sm mb-4">{channel.description}</p>
+                  <div className="space-y-2 text-sm">
+                    <div className="flex items-center justify-between">
+                      <span className="text-gray-400">Availability:</span>
+                      <span className="text-green-400 font-semibold">{channel.availability}</span>
+                    </div>
+                    <div className="flex items-center justify-between">
+                      <span className="text-gray-400">Response:</span>
+                      <span className="text-blue-400 font-semibold">{channel.responseTime}</span>
+                    </div>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Support Categories */}
+        <section className="py-20 bg-black/50">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+              className="text-center mb-16"
+            >
+              <h2 className="text-3xl lg:text-4xl font-bold text-white mb-6">
+                Support Categories
+              </h2>
+              <p className="text-xl text-gray-400 max-w-3xl mx-auto">
+                Comprehensive support for all aspects of our services
+              </p>
+            </motion.div>
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              {supportCategories.map((category, index) => (
+                <motion.div
+                  key={category.title}
+                  initial={{ opacity: 0, x: index % 2 === 0 ? -30 : 30 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.6 }}
+                  viewport={{ once: true }}
+                  className="bg-gradient-to-br from-gray-800/30 to-gray-900/30 p-6 rounded-2xl border border-gray-700/30 hover:border-purple-500/50 transition-all duration-300"
+                >
+                  <div className="flex items-center mb-4">
+                    <div className="w-10 h-10 bg-gradient-to-br from-purple-500 to-blue-600 rounded-xl flex items-center justify-center mr-3">
+                      {category.icon}
+                    </div>
+                    <h3 className="text-xl font-bold text-white">{category.title}</h3>
+                  </div>
+                  <p className="text-gray-300 mb-4">{category.description}</p>
+                  <div className="grid grid-cols-2 gap-2">
+                    {category.topics.map((topic) => (
+                      <div key={topic} className="flex items-center space-x-2 text-sm">
+                        <CheckCircle className="w-4 h-4 text-green-400 flex-shrink-0" />
+                        <span className="text-gray-300">{topic}</span>
+                      </div>
+                    ))}
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* FAQ Section */}
+        <section className="py-20">
+          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+              className="text-center mb-16"
+            >
+              <h2 className="text-3xl lg:text-4xl font-bold text-white mb-6">
+                Frequently Asked Questions
+              </h2>
+              <p className="text-xl text-gray-400">
+                Quick answers to common support questions
+              </p>
+            </motion.div>
+            
+            <div className="space-y-6">
+              {faqs.map((faq, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: index * 0.1 }}
+                  viewport={{ once: true }}
+                  className="bg-gradient-to-br from-gray-800/30 to-gray-900/30 p-6 rounded-2xl border border-gray-700/30"
+                >
+                  <h3 className="text-lg font-semibold text-white mb-3">{faq.question}</h3>
+                  <p className="text-gray-300">{faq.answer}</p>
+=======
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
                 </motion.div>
               ))}
             </div>
@@ -367,6 +485,46 @@ const SupportPage: React.FC = () => {
                   </button>
                 </motion.div>
               ))}
+
+              <motion.div
+                initial={{ opacity: 0, x: 30 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.8 }}
+                viewport={{ once: true }}
+                className="bg-gradient-to-br from-blue-900/30 to-cyan-900/30 p-8 rounded-3xl border border-blue-500/20"
+              >
+                <h3 className="text-2xl font-bold text-white mb-6">Emergency Support</h3>
+                <div className="space-y-4">
+                  <div className="flex items-center space-x-3">
+                    <Clock className="w-5 h-5 text-blue-400" />
+                    <div>
+                      <div className="text-white font-semibold">24/7 Emergency Line</div>
+                      <a href={`tel:${contactInfo.phone}`} className="text-blue-400 hover:text-blue-300">
+                        {contactInfo.phone}
+                      </a>
+                    </div>
+                  </div>
+                  <div className="flex items-center space-x-3">
+                    <Mail className="w-5 h-5 text-blue-400" />
+                    <div>
+                      <div className="text-white font-semibold">Emergency Email</div>
+                      <a href={`mailto:${contactInfo.emergencyEmail}`} className="text-blue-400 hover:text-blue-300">
+                        {contactInfo.emergencyEmail}
+                      </a>
+                    </div>
+                  </div>
+                  <div className="flex items-center space-x-3">
+                    <Globe className="w-5 h-5 text-blue-400" />
+                    <div>
+                      <div className="text-white font-semibold">Website</div>
+                      <a href={contactInfo.website} className="text-blue-400 hover:text-blue-300">
+                        {contactInfo.website}
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </motion.div>
+=======
             </div>
           </div>
         </section>
@@ -514,4 +672,4 @@ const SupportPage: React.FC = () => {
 };
 
 export default SupportPage;
->>>>>>> 17df199e451813150094c5ab1fb554b04628cb60
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96

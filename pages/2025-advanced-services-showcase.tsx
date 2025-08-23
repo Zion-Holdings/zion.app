@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import SEO from '../components/SEO';
 import { motion, AnimatePresence } from 'framer-motion';
->>>>>>> 17df199e451813150094c5ab1fb554b04628cb60
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
 import { 
   Search, Grid, List, Star, CheckCircle, Shield, 
   Brain, Cloud, Zap, Users, TrendingUp, Lock,
@@ -16,7 +16,7 @@ import { real2025AdvancedAIServices } from '../data/real-2025-advanced-ai-servic
 import { real2025EmergingTechServices } from '../data/real-2025-emerging-tech-services';
 
 const contact = {
->>>>>>> 17df199e451813150094c5ab1fb554b04628cb60
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
   mobile: '+1 302 464 0950',
   email: 'kleber@ziontechgroup.com',
   address: '364 E Main St STE 1008 Middletown DE 19709',
@@ -55,7 +55,7 @@ export default function AdvancedServicesShowcase2025() {
         case 'customers':
           return b.customers - a.customers;
         default:
->>>>>>> 17df199e451813150094c5ab1fb554b04628cb60
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
           return a.name.localeCompare(b.name);
         case 'price':
           return (a.price?.monthly || 0) - (b.price?.monthly || 0);
@@ -170,8 +170,8 @@ const AdvancedServicesShowcase: React.FC = () => {
     <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900">
       <SEO 
         title="2025 Advanced Services Showcase - Zion Tech Group"
-        description="Discover our cutting-edge AI services, IT infrastructure solutions, and innovative micro SAAS platforms. Transform your business with Zion Tech Group's advanced technology solutions."
-        keywords="AI services, IT infrastructure, micro SAAS, cloud solutions, automation, cybersecurity, data analytics"
+        description="Discover our comprehensive portfolio of advanced AI services, micro SAAS solutions, and cutting-edge IT infrastructure. Real, innovative, and market-ready solutions for modern businesses."
+        keywords="AI services, micro SAAS, IT infrastructure, quantum computing, enterprise solutions, Zion Tech Group"
       />
       
       {/* Hero Section */}
@@ -213,7 +213,7 @@ const AdvancedServicesShowcase: React.FC = () => {
               Call Now
             </a>
 =======
->>>>>>> 17df199e451813150094c5ab1fb554b04628cb60
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
           </motion.div>
         </div>
       </section>
@@ -248,7 +248,7 @@ const AdvancedServicesShowcase: React.FC = () => {
                   <p className="text-gray-300">{contact.address}</p>
                 </div>
               </div>
->>>>>>> 17df199e451813150094c5ab1fb554b04628cb60
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
             </div>
           </div>
         </div>
@@ -342,7 +342,7 @@ const AdvancedServicesShowcase: React.FC = () => {
 
           <AnimatePresence mode="wait">
             {viewMode === 'grid' ? (
->>>>>>> 17df199e451813150094c5ab1fb554b04628cb60
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
               <motion.div
                 key={service.id}
                 initial={{ opacity: 0, y: 20 }}
@@ -477,7 +477,7 @@ const AdvancedServicesShowcase: React.FC = () => {
           </motion.div>
         </div>
       </section>
->>>>>>> 17df199e451813150094c5ab1fb554b04628cb60
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
     </div>
   );
 };

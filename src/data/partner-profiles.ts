@@ -1,4 +1,4 @@
-import { PartnerProfileContent } from '@/types/partners';
+import type { PartnerProfileContent } from '@/types/partners';
 export const PARTNER_PROFILES: PartnerProfileContent[] = [
   {
     "name": "AI Insights Media",

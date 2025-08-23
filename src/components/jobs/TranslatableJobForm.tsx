@@ -10,7 +10,8 @@ import { Loader2, Globe } from 'lucide-react';
 
 import { useTranslation } from "react-i18next";
 import { useTranslationService } from "@/hooks/useTranslationService";
-import { useLanguage, SupportedLanguage } from "@/context/LanguageContext";
+import { useLanguage } from "@/context/LanguageContext";
+import type { SupportedLanguage } from "@/context/LanguageContext";
 import { toast } from "@/components/ui/use-toast";
 import {logErrorToProduction} from '@/utils/productionLogger';
 
@@ -94,7 +95,7 @@ export function TranslatableJobForm({ onSubmit, isSubmitting = false }: Translat
   
   // Auto translate function
   const autoTranslate = async (field: 'title' | 'description' | 'requirements') => {
-    let sourceLanguage: SupportedLanguage = 'en';
+    let sourceLanguage: SupportedLanguage = 'en-US';
     let content = '';
     
     // Find first non-empty content to translate

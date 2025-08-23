@@ -22,7 +22,10 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
   const payload = JSON.stringify({ title, body, url });
 
   const subs = fs.existsSync(FILE_PATH)
-    ? JSON.parse(fs.readFileSync(FILE_PATH, 'utf8'))
+    ? (() => {
+        const fileContent = fs.readFileSync(FILE_PATH, 'utf8');
+        return JSON.parse(typeof fileContent === 'string' ? fileContent : String(fileContent));
+      })()
     : [];
 
   await Promise.all(

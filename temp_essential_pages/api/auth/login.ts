@@ -69,7 +69,7 @@ async function handler(
   if (isDevelopment) {
     console.log('🔧 LOGIN TRACE: Starting login attempt');
     console.log('🔧 LOGIN TRACE: Request method:', req.method);
-    console.log('🔧 LOGIN TRACE: Request body keys:', Object.keys(req.body || {}));
+    console.log('🔧 LOGIN TRACE: Request body keys:', Object.keys(req['body'] || {}));
     console.log('🔧 LOGIN TRACE: Environment config status:', {
       supabaseConfigured: ENV_CONFIG.supabase.isConfigured,
       sentryConfigured: ENV_CONFIG.sentry.isConfigured,
@@ -81,7 +81,7 @@ async function handler(
     return res.status(405).json({ error: 'Method not allowed' });
   }
 
-  const { email, password } = req.body as { email?: unknown, password?: unknown };
+  const { email, password } = req['body'] as { email?: unknown, password?: unknown };
 
   if (!email || !password) {
     return res.status(400).json({ error: 'Email and password are required' });
@@ -168,21 +168,23 @@ async function handler(
       message: 'Authentication successful'
     });
 
-  } catch (error: any) {
+  } catch (error) {
     if (isDevelopment) {
       console.error('🔧 LOGIN TRACE: Unexpected error during authentication:', error);
     }
-    
     if (ENV_CONFIG.sentry.isConfigured) {
       Sentry.captureException(error, {
         tags: { context: 'login_api_unexpected' },
         extra: { email }
       });
     }
-    
+    let details: string | undefined = undefined;
+    if (ENV_CONFIG.app.isDevelopment && error && typeof error === 'object' && 'message' in error && typeof (error as { message?: unknown }).message === 'string') {
+      details = (error as { message: string }).message;
+    }
     return res.status(500).json({ 
       error: 'Internal server error',
-      details: ENV_CONFIG.app.isDevelopment ? error.message : undefined
+      details
     });
   }
 }

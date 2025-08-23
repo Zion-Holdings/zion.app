@@ -8,7 +8,10 @@ const fs = require('fs');
 const path = require('path');
 
 const args = process.argv.slice(2);
-const LOG_DIR = args[0] && !args[0].startsWith('--') ? args[0] : 'logs';
+// Allow passing one or more files or directories. Default to "logs" directory
+const inputPaths = args.filter(a => !a.startsWith('--'));
+const DEFAULT_DIR = 'logs';
+const TARGET_PATHS = inputPaths.length ? inputPaths : [DEFAULT_DIR];
 // Load translation keys to filter false positives for "missingKey" log entries
 const localesDir = path.join(__dirname, '..', 'src', 'i18n', 'locales');
 let allLocaleKeys = null;
@@ -63,15 +66,25 @@ const PATTERNS = [
   /Module not found/i,
   /Can't resolve/i,
   /Cannot find module/i,
+  /Cannot find name/i,
   /EAI_AGAIN/i,
   /Invalid or placeholder project ID/i,
   /Environment variable.*missing/i,
   /Missing translation key/i,
   /map is not a function/i,
   /useNavigate\(\).*Router/i,
-  /cacheUnaffected|usedExports/i,
+  /usedExports.*cacheUnaffected/i,
+  /cacheUnaffected.*usedExports/i,
+  /usedExports can't/i,
   /unhandledRejection/i,
-  /Uncaught Exception/i
+  /Uncaught Exception/i,
+  /CreatePlatformSocket\(\).*Address family not supported by protocol/i
+];
+// Patterns that should be ignored as they stem from known environment
+// limitations (e.g. IPv6 socket errors in headless browsers). These are not
+// actionable for developers and simply add noise to the log output.
+const SKIP_PATTERNS = [
+  /CreatePlatformSocket\(\).*Address family not supported by protocol/i
 ];
 const LEVELS = ['debug', 'info', 'warn', 'error'];
 const DEDUPE = args.includes('--dedupe');
@@ -116,6 +129,10 @@ function checkFile(filePath) {
       counts[parsed.level] += 1;
     }
 
+    if (SKIP_PATTERNS.some(p => p.test(parsed.message))) {
+      continue; // Skip known environment noise
+    }
+
     if (PATTERNS.some(p => p.test(parsed.message))) {
       issues.push(line.trim());
     }
@@ -131,24 +148,19 @@ function checkFile(filePath) {
 }
 
 function main() {
-  if (!fs.existsSync(LOG_DIR)) {
-    console.error(`Log directory not found: ${LOG_DIR}`);
-    process.exit(1);
-  }
-
-  const dirs = [LOG_DIR];
-  if (LOG_DIR !== '.') {
-    dirs.push('.'); // also check root logs like build.log
-  }
-
   const files = [];
   const LOG_EXT_REGEX = /\.(log|txt)$/i;
-  dirs.forEach(dir => {
-    if (fs.existsSync(dir)) {
-      const dirFiles = fs.readdirSync(dir)
+
+  TARGET_PATHS.forEach(p => {
+    if (!fs.existsSync(p)) return;
+    const stat = fs.statSync(p);
+    if (stat.isDirectory()) {
+      const dirFiles = fs.readdirSync(p)
         .filter(f => LOG_EXT_REGEX.test(f))
-        .map(f => path.join(dir, f));
+        .map(f => path.join(p, f));
       files.push(...dirFiles);
+    } else if (stat.isFile()) {
+      files.push(p);
     }
   });
 
@@ -207,10 +219,13 @@ function main() {
   if (/map is not a function/i.test(allText)) {
     hints.push('Detected \"map is not a function\" errors. Verify array values before using .map().');
   }
+  if (/CreatePlatformSocket\(\).*Address family not supported by protocol/i.test(allText)) {
+    hints.push("Detected IPv6 socket errors. Configure tests to prefer IPv4 or disable IPv6 features.");
+  }
   if (/useNavigate\(\).*Router/i.test(allText)) {
     hints.push('React Router "useNavigate" hook used outside of a Router. Wrap components with <MemoryRouter> or use Next.js routing.');
   }
-  if (/cacheUnaffected|usedExports/i.test(allText)) {
+  if (/usedExports.*cacheUnaffected|cacheUnaffected.*usedExports|usedExports can't/i.test(allText)) {
     hints.push('Webpack cache/usedExports conflict detected. Remove cacheUnaffected or disable usedExports in your config.');
   }
   if (hints.length) {
@@ -234,7 +249,7 @@ function main() {
   }
 
   if (SUMMARY) {
-    const summaryDir = path.join(LOG_DIR, 'summary');
+    const summaryDir = path.join(DEFAULT_DIR, 'summary');
     fs.mkdirSync(summaryDir, { recursive: true });
     const summaryFile = path.join(summaryDir, `summary-${Date.now()}.log`);
     fs.writeFileSync(summaryFile, summaryLines.join('\n') + '\n');

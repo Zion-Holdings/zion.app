@@ -69,7 +69,7 @@ const AIContentMarketingAutomationPage: React.FC = () => {
                   Continuous learning and optimization based on 
                   real-time performance data and audience feedback.
                 </p>
->>>>>>> 17df199e451813150094c5ab1fb554b04628cb60
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
               </div>
             </div>
           </div>
@@ -341,7 +341,6 @@ const AIContentMarketingAutomationPage: React.FC = () => {
                     <li>• API access</li>
                   </ul>
                 </div>
->>>>>>> origin/HEAD
               </div>
             </div>
           </div>
@@ -353,5 +352,4 @@ const AIContentMarketingAutomationPage: React.FC = () => {
 };
 
 export default AIContentMarketingAutomationPage;
->>>>>>> origin/HEAD
->>>>>>> 17df199e451813150094c5ab1fb554b04628cb60
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96

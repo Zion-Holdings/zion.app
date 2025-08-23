@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { DynamicListingPage } from "@/components/DynamicListingPage";
-import { ProductListing } from "@/types/listings";
+import type { ProductListing } from "@/types/listings";
 
 const ADDITIONAL_TALENT_LISTINGS: ProductListing[] = [
   {
@@ -19,6 +19,8 @@ const ADDITIONAL_TALENT_LISTINGS: ProductListing[] = [
     aiScore: 88,
     rating: 4.7,
     reviewCount: 19,
+    stock: 10,
+    location: "Remote",
   },
   {
     id: "talent-18",
@@ -36,6 +38,8 @@ const ADDITIONAL_TALENT_LISTINGS: ProductListing[] = [
     aiScore: 96,
     rating: 4.9,
     reviewCount: 24,
+    stock: 10,
+    location: "Remote",
   },
   {
     id: "talent-19",
@@ -53,6 +57,8 @@ const ADDITIONAL_TALENT_LISTINGS: ProductListing[] = [
     aiScore: 90,
     rating: 4.8,
     reviewCount: 16,
+    stock: 10,
+    location: "Remote",
   },
   {
     id: "talent-20",
@@ -70,6 +76,8 @@ const ADDITIONAL_TALENT_LISTINGS: ProductListing[] = [
     aiScore: 87,
     rating: 4.6,
     reviewCount: 14,
+    stock: 10,
+    location: "Remote",
   },
   {
     id: "talent-21",
@@ -87,6 +95,8 @@ const ADDITIONAL_TALENT_LISTINGS: ProductListing[] = [
     aiScore: 92,
     rating: 4.7,
     reviewCount: 20,
+    stock: 10,
+    location: "Remote",
   },
   {
     id: "talent-22",
@@ -104,6 +114,8 @@ const ADDITIONAL_TALENT_LISTINGS: ProductListing[] = [
     aiScore: 89,
     rating: 4.7,
     reviewCount: 13,
+    stock: 10,
+    location: "Remote",
   },
   {
     id: "talent-23",
@@ -121,6 +133,8 @@ const ADDITIONAL_TALENT_LISTINGS: ProductListing[] = [
     aiScore: 91,
     rating: 4.8,
     reviewCount: 18,
+    stock: 10,
+    location: "Remote",
   },
   {
     id: "talent-24",
@@ -138,6 +152,8 @@ const ADDITIONAL_TALENT_LISTINGS: ProductListing[] = [
     aiScore: 94,
     rating: 4.9,
     reviewCount: 26,
+    stock: 10,
+    location: "Remote",
   },
   {
     id: "talent-25",
@@ -155,6 +171,8 @@ const ADDITIONAL_TALENT_LISTINGS: ProductListing[] = [
     aiScore: 86,
     rating: 4.5,
     reviewCount: 11,
+    stock: 10,
+    location: "Remote",
   },
   {
     id: "talent-26",
@@ -172,6 +190,8 @@ const ADDITIONAL_TALENT_LISTINGS: ProductListing[] = [
     aiScore: 95,
     rating: 4.9,
     reviewCount: 22,
+    stock: 10,
+    location: "Remote",
   },
 ];
 

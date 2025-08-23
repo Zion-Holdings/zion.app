@@ -2,7 +2,7 @@
 import { useState, useEffect } from "react";
 import { supabase } from "@/integrations/supabase/client";
 import { useAuth } from "@/hooks/useAuth";
-import { JobApplication, ApplicationStatus } from "@/types/jobs";
+import type { JobApplication, ApplicationStatus } from "@/types/jobs";
 import { toast } from "sonner";
 import {logErrorToProduction} from '@/utils/productionLogger';
 
@@ -14,6 +14,7 @@ export const useJobApplications = (jobId?: string) => {
   const [error, setError] = useState<string | null>(null);
 
   const fetchApplications = async () => {
+    if (!supabase) throw new Error('Supabase client not initialized');
     if (!user) {
       setIsLoading(false);
       return;
@@ -50,7 +51,7 @@ export const useJobApplications = (jobId?: string) => {
             .eq("client_id", user.id);
 
           if (jobIds && jobIds.length > 0) {
-            const jobIdArray = jobIds.map((job: any) => job.id);
+            const jobIdArray = jobIds.map((job: unknown) => (typeof job === 'object' && job !== null && 'id' in job ? (job as { id: string }).id : undefined));
             query = query.in("job_id", jobIdArray);
           }
         }
@@ -60,22 +61,16 @@ export const useJobApplications = (jobId?: string) => {
       
       if (fetchError) throw fetchError;
       
-      // Transform the data to match our application types
-      const transformedData = data.map((app: any) => ({
-        ...app,
-        talent_profile: app.talent_profile ? {
-          ...app.talent_profile,
-          full_name: app.talent_profile.display_name,
-          profile_picture_url: app.talent_profile.avatar_url,
-          skills: []
-        } : undefined
-      }));
+      // Transform the data to match our application types. Default to an empty
+      // array to avoid "map is not a function" errors when no data is returned
+      const transformedData = (data ?? []).map((app: JobApplication) => app);
       
       setApplications(transformedData as JobApplication[]);
       setError(null);
-    } catch (err: any) {
+    } catch (err: unknown) {
+      const message = err instanceof Error ? err.message : String(err);
       logErrorToProduction('Error fetching applications:', { data: err });
-      setError("Failed to fetch applications: " + err.message);
+      setError("Failed to fetch applications: " + message);
       toast.error("Failed to fetch applications");
     } finally {
       setIsLoading(false);
@@ -88,6 +83,7 @@ export const useJobApplications = (jobId?: string) => {
     resumeId?: string,
     resumeFile?: File
   ) => {
+    if (!supabase) throw new Error('Supabase client not initialized');
     if (!user) {
       toast.error("You must be logged in to apply for jobs");
       return false;
@@ -141,20 +137,22 @@ export const useJobApplications = (jobId?: string) => {
               type: 'custom_upload',
               file_url: resumeUrl
             }
-          : (data as any).resume
+          : (typeof data === 'object' && data !== null && 'resume' in data ? (data as { resume?: string }).resume : undefined)
       } as JobApplication;
       setApplications(prev => [newApplication, ...prev]);
       
       toast.success("Application submitted successfully");
       return true;
-    } catch (err: any) {
+    } catch (err: unknown) {
+      const message = err instanceof Error ? err.message : String(err);
       logErrorToProduction('Error applying to job:', { data: err });
-      toast.error("Failed to submit application: " + err.message);
+      toast.error("Failed to submit application: " + message);
       return false;
     }
   };
   
   const updateApplicationStatus = async (applicationId: string, status: ApplicationStatus) => {
+    if (!supabase) throw new Error('Supabase client not initialized');
     try {
       const { error } = await supabase
         .from("job_applications")
@@ -170,14 +168,16 @@ export const useJobApplications = (jobId?: string) => {
       
       toast.success(`Application status updated to ${status}`);
       return true;
-    } catch (err: any) {
+    } catch (err: unknown) {
+      const message = err instanceof Error ? err.message : String(err);
       logErrorToProduction('Error updating application status:', { data: err });
-      toast.error("Failed to update application status: " + err.message);
+      toast.error("Failed to update application status: " + message);
       return false;
     }
   };
   
   const markApplicationAsViewed = async (applicationId: string) => {
+    if (!supabase) throw new Error('Supabase client not initialized');
     try {
       const { error } = await supabase
         .from("job_applications")
@@ -198,7 +198,7 @@ export const useJobApplications = (jobId?: string) => {
       );
       
       return true;
-    } catch (err) {
+    } catch (err: unknown) {
       logErrorToProduction('Error marking application as viewed:', { data: err });
       return false;
     }

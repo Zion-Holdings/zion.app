@@ -177,7 +177,7 @@ const Services2024: React.FC = () => {
       keywords="AI consciousness 2024, quantum computing 2024, cybersecurity 2024, space technology 2024, Zion Tech Group services"
     >
       <div className="min-h-screen bg-gradient-to-br from-gray-900 via-black to-gray-900 text-white">
->>>>>>> 17df199e451813150094c5ab1fb554b04628cb60
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
         {/* Hero Section */}
         <section className="relative overflow-hidden py-20 lg:py-32">
           <div className="absolute inset-0 bg-gradient-to-r from-purple-900/20 via-blue-900/20 to-cyan-900/20" />

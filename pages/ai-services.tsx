@@ -9,34 +9,28 @@ import {
 } from 'lucide-react';
 
 const AIServicesPage: React.FC = () => {
->>>>>>> 17df199e451813150094c5ab1fb554b04628cb60
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
   const aiServices = [
     {
-      category: 'AI Consciousness & Evolution',
-      services: [
-        { name: 'AI Consciousness Evolution 2029', href: '/ai-consciousness-evolution-2029', description: 'Advanced AI consciousness development platform' },
-        { name: 'AI Emotional Intelligence Training', href: '/ai-emotional-intelligence-training', description: 'Emotional intelligence enhancement for AI systems' },
-        { name: 'AI Ethics & Governance Framework', href: '/ai-ethics-governance-framework', description: 'Ethical AI development and governance' }
-      ]
+      icon: Brain,
+      title: 'AI Content Automation Platform',
+      description: 'Revolutionary AI-powered content creation and management system',
+      features: ['Automated content generation', 'Multi-language support', 'SEO optimization', 'Content analytics'],
+      href: '/intelligent-content-automation-platform'
     },
     {
-      category: 'Autonomous AI Systems',
-      services: [
-        { name: 'AI Autonomous Business Operations', href: '/ai-autonomous-business-operations-platform', description: 'Fully autonomous business process automation' },
-        { name: 'AI Autonomous Customer Service', href: '/ai-autonomous-customer-service', description: 'Intelligent customer service automation' },
-        { name: 'AI Autonomous HR Platform', href: '/ai-autonomous-hr-platform', description: 'Human resources automation platform' },
-        { name: 'AI Autonomous Marketing Platform', href: '/ai-autonomous-marketing-platform', description: 'Marketing campaign automation' },
-        { name: 'AI Autonomous Sales Platform', href: '/ai-autonomous-sales-platform', description: 'Sales process automation' }
-      ]
+      icon: Users,
+      title: 'Intelligent HR Analytics Platform',
+      description: 'AI-driven human resources insights and optimization',
+      features: ['Employee performance analytics', 'Recruitment optimization', 'Workforce planning', 'Talent retention'],
+      href: '/intelligent-hr-analytics-platform'
     },
     {
-      category: 'AI Business Intelligence',
-      services: [
-        { name: 'AI Business Intelligence Suite', href: '/ai-business-intelligence-suite', description: 'Comprehensive business intelligence platform' },
-        { name: 'AI Customer Journey Analytics', href: '/ai-customer-journey-analytics', description: 'Customer journey optimization' },
-        { name: 'AI Financial Intelligence', href: '/ai-financial-intelligence', description: 'Financial analysis and insights' },
-        { name: 'AI Market Research', href: '/ai-market-research', description: 'Market intelligence and analysis' }
-      ]
+      icon: BarChart3,
+      title: 'Intelligent Supply Chain Optimization',
+      description: 'AI-powered supply chain management and optimization',
+      features: ['Demand forecasting', 'Inventory optimization', 'Route optimization', 'Risk management'],
+      href: '/intelligent-supply-chain-optimization'
     },
     {
       category: 'AI Content & Creativity',
@@ -48,33 +42,18 @@ const AIServicesPage: React.FC = () => {
       ]
     },
     {
-      category: 'AI Infrastructure & Operations',
-      services: [
-        {
-          name: 'AI Autonomous DevOps Platform',
-          description: 'Fully autonomous DevOps operations with AI-powered decision making',
-          href: '/ai-autonomous-devops-platform',
-          icon: <Cog className="w-6 h-6" />,
-          features: ['Autonomous Operations', 'Intelligent Monitoring', 'Predictive Maintenance', 'Self-healing Systems'],
-          badge: 'Advanced'
-        },
-        {
-          name: 'AI IT Operations Center',
-          description: 'AI-powered IT operations with autonomous incident response',
-          href: '/autonomous-it-operations-center',
-          icon: <Monitor className="w-6 h-6" />,
-          features: ['Autonomous Monitoring', 'Incident Response', 'Performance Optimization', 'Capacity Planning'],
-          badge: 'Enterprise'
-        },
-        {
-          name: 'AI Network Management',
-          description: 'Intelligent network management and optimization platform',
-          href: '/autonomous-network-management-2044',
-          icon: <Network className="w-6 h-6" />,
-          features: ['Autonomous Management', 'Performance Optimization', 'Security Monitoring', 'Traffic Analysis'],
-          badge: 'Critical'
-        }
-      ]
+      icon: Rocket,
+      title: 'Space Resource Mining Platform',
+      description: 'AI-powered space exploration and resource extraction',
+      features: ['Autonomous exploration', 'Resource mapping', 'Mining operations', 'Safety protocols'],
+      href: '/space-resource-mining-platform'
+    },
+    {
+      icon: Globe,
+      title: 'Metaverse AI Development Platform',
+      description: 'AI tools for building immersive virtual worlds',
+      features: ['3D environment generation', 'NPC AI systems', 'User interaction', 'Content creation'],
+      href: '/metaverse-ai-development-platform'
     }
   ];
 
@@ -102,7 +81,7 @@ const AIServicesPage: React.FC = () => {
       description: 'Customer personalization, inventory management, and demand forecasting',
       icon: <ShoppingBag className="w-8 h-8" />,
       color: 'from-purple-500 to-indigo-600'
->>>>>>> 17df199e451813150094c5ab1fb554b04628cb60
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
     }
   ];
 
@@ -116,12 +95,12 @@ const AIServicesPage: React.FC = () => {
         {/* Hero Section */}
         <section className="relative py-20 px-4 sm:px-6 lg:px-8">
           <div className="max-w-7xl mx-auto text-center">
->>>>>>> 17df199e451813150094c5ab1fb554b04628cb60
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
-              className="mb-8"
+              className="text-center"
             >
               <div className="flex items-center justify-center mb-6">
                 <Brain className="w-16 h-16 text-cyan-400 mr-4" />
@@ -129,32 +108,32 @@ const AIServicesPage: React.FC = () => {
                   AI Services
                 </h1>
               </div>
->>>>>>> 17df199e451813150094c5ab1fb554b04628cb60
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
             </motion.div>
           </div>
         </section>
 
-        {/* Services Overview */}
-        <section className="py-20 px-4">
+        {/* AI Services Grid */}
+        <section className="py-20 px-4 sm:px-6 lg:px-8">
           <div className="max-w-7xl mx-auto">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
-              viewport={{ once: true }}
               className="text-center mb-16"
             >
-              <h2 className="text-4xl font-bold text-white mb-6">Comprehensive AI Solutions</h2>
+              <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+                Our AI Services
+              </h2>
               <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-                From autonomous business operations to consciousness evolution, our AI services 
-                cover every aspect of modern enterprise needs.
+                Cutting-edge AI solutions designed to solve complex business challenges and drive innovation
               </p>
             </motion.div>
 
-            <div className="space-y-16">
-              {aiServices.map((category, categoryIndex) => (
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {services.map((service, index) => (
                 <motion.div
-                  key={category.category}
+                  key={index}
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.8, delay: categoryIndex * 0.1 }}
@@ -225,18 +204,25 @@ const AIServicesPage: React.FC = () => {
                   initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: index * 0.1 }}
-                  viewport={{ once: true }}
-                  className="text-center group"
+                  className="group"
                 >
-                  <div className={`w-20 h-20 bg-gradient-to-br ${industry.color} rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300`}>
-                    {industry.icon}
-                  </div>
-                  <h3 className="text-xl font-semibold text-white mb-2">
-                    {industry.name}
-                  </h3>
-                  <p className="text-gray-300 text-sm">
-                    {industry.description}
-                  </p>
+                  <a href={service.href} className="block">
+                    <div className="bg-gray-800/50 backdrop-blur-sm border border-gray-700/50 rounded-2xl p-6 h-full hover:bg-gray-700/50 transition-all duration-300 hover:scale-105">
+                      <div className="w-16 h-16 bg-gradient-to-br from-cyan-500/20 to-blue-500/20 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                        <service.icon className="w-8 h-8 text-cyan-400" />
+                      </div>
+                      <h3 className="text-xl font-bold text-white mb-4">{service.title}</h3>
+                      <p className="text-gray-300 mb-6 leading-relaxed">{service.description}</p>
+                      <ul className="space-y-2">
+                        {service.features.map((feature, featureIndex) => (
+                          <li key={featureIndex} className="flex items-center gap-2 text-sm text-gray-400">
+                            <div className="w-2 h-2 bg-cyan-400 rounded-full"></div>
+                            {feature}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  </a>
                 </motion.div>
               ))}
             </div>
@@ -250,30 +236,27 @@ const AIServicesPage: React.FC = () => {
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
-              viewport={{ once: true }}
             >
-              <h2 className="text-4xl font-bold text-white mb-6">
+              <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
                 Ready to Transform Your Business?
               </h2>
               <p className="text-xl text-gray-300 mb-8">
-                Join the AI revolution and discover how our cutting-edge solutions 
-                can drive innovation and growth in your organization.
+                Let our AI experts help you implement cutting-edge solutions that drive growth and innovation
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <a
                   href="/contact"
-                  className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-purple-600 to-cyan-600 text-white font-semibold rounded-lg hover:from-purple-700 hover:to-cyan-700 transition-all duration-300 transform hover:scale-105"
+                  className="px-8 py-4 bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-semibold rounded-xl hover:from-cyan-600 hover:to-blue-700 transition-all duration-300 transform hover:scale-105"
                 >
-                  Start Your AI Journey
-                  <Rocket className="ml-2 w-5 h-5" />
+                  Get Started
                 </a>
                 <a
-                  href="/solutions"
-                  className="inline-flex items-center px-8 py-4 border-2 border-purple-500 text-purple-400 font-semibold rounded-lg hover:bg-purple-500 hover:text-white transition-all duration-300"
+                  href="/services"
+                  className="px-8 py-4 border border-cyan-500 text-cyan-400 font-semibold rounded-xl hover:bg-cyan-500/10 transition-all duration-300"
                 >
                   Explore Solutions
                 </a>
->>>>>>> 17df199e451813150094c5ab1fb554b04628cb60
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
               </div>
             </motion.div>
           </div>
@@ -284,4 +267,4 @@ const AIServicesPage: React.FC = () => {
 };
 
 export default AIServicesPage;
->>>>>>> 17df199e451813150094c5ab1fb554b04628cb60
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96

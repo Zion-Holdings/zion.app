@@ -89,7 +89,7 @@ const ProposalDetailPage: React.FC = () => {
         setResults(resultsData);
       } else {
         const errData = await resultsRes.json().catch(() => ({}));
-        logWarn('Could not fetch vote results:', { data: errData.detail || resultsRes.status });
+        logWarn('Could not fetch vote results:', { data:  { data: errData.detail || resultsRes.status } });
         // Set results to null or an empty state if needed
         setResults(null);
       }

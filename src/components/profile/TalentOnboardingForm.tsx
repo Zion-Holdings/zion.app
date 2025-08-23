@@ -69,9 +69,9 @@ const talentSchema = z.object({
     hourlyRate: z.string().optional(),
     portfolioLinks: z.array(
       z.object({
-        url: z.string().url("Must be a valid URL").min(5, "URL is required"),
+        url: z.string().url("Must be a valid URL").min(5, "URL isrequired"),
       })
-    ).optional().default([]),
+    ).optional(), // Field can be undefined; defaultValues in useForm will provide initial array
     cv: z.any().optional(),
   }),
 });
@@ -149,6 +149,10 @@ export function TalentOnboardingForm() {
 
   // Handle CV upload
   const handleCvUpload = async (file: File) => {
+    if (!supabase) {
+      throw new Error("Supabase client not initialized");
+    }
+    
     const fileName = `cv-${user?.id}-${Date.now()}`;
     const { error: cvError } = await supabase.storage
       .from('resumes')
@@ -169,6 +173,5 @@ export function TalentOnboardingForm() {
 
   // Rest of the file remains unchanged...
   // [Previous implementation continues...]
-
-  return null;
+  return <div>Talent onboarding form coming soon.</div>
 }

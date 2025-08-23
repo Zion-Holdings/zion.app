@@ -1,81 +1,63 @@
-import { createContext, useContext, useEffect, ReactNode } from 'react'
-import { useLocalStorage } from '@/hooks'
-import { ThemePreset, getThemeColors, applyThemeColors } from '@/utils/themeUtils'
+import React, {
+  createContext,
+  useContext,
+  useEffect,
+  useState,
+} from "react";
 
-export type Theme = 'light' | 'dark' // This can be deprecated if presets cover these
+export type ThemeMode = "light" | "dark";
 
-export interface ThemeContextState {
-  theme: Theme // Potentially deprecate in favor of themePreset
-  themePreset: ThemePreset
-  primaryColor: string
-  toggleTheme: () => void // This might change to setThemePreset
-  setThemePreset: (preset: ThemePreset) => void
-  setPrimaryColor: (color: string) => void
+interface ThemeContextState {
+  mode: ThemeMode;
+  toggleTheme: () => void;
 }
 
-const initialState: ThemeContextState = {
-  theme: 'light', // Default, can be overridden by preset
-  themePreset: 'light',
-  primaryColor: '#3b82f6', // Default primary color
-  toggleTheme: () => {},
-  setThemePreset: () => {},
-  setPrimaryColor: () => {},
-}
+const ThemeContext = createContext<ThemeContextState | undefined>(undefined);
 
-const ThemeContext = createContext<ThemeContextState>(initialState)
+export function ThemeProvider({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
+  const [mode, setMode] = useState<ThemeMode>("light");
 
-export function ThemeProvider({ children }: { children: ReactNode }) {
-  const [theme, setTheme] = useLocalStorage<Theme>('theme', 'light') // Keep for now for compatibility
-  const [themePreset, setThemePresetState] = useLocalStorage<ThemePreset>('themePreset', 'light')
-  const [primaryColor, setPrimaryColorState] = useLocalStorage<string>('primaryColor', '#3b82f6')
+  const applyMode = (next: ThemeMode) => {
+    const root = document.documentElement;
+    if (next === "dark") {
+      root.classList.add("dark");
+    } else {
+      root.classList.remove("dark");
+    }
+  };
 
-  // Apply theme based on preset and primary color
   useEffect(() => {
-    const colors = getThemeColors(themePreset, primaryColor)
-    applyThemeColors(colors)
-    // Update body class for compatibility with existing CSS if needed
-    document.documentElement.classList.remove('light', 'dark');
-    if (themePreset === 'dark' || themePreset === 'neon' || themePreset === 'startup') {
-      document.documentElement.classList.add('dark');
-    } else {
-      document.documentElement.classList.add('light');
-    }
-    // Synchronize 'theme' state with 'themePreset'
-    // This ensures 'theme' is 'dark' for specific presets, 'light' otherwise.
-    if (themePreset === 'dark' || themePreset === 'neon' || themePreset === 'startup') {
-      setTheme('dark');
-    } else {
-      setTheme('light');
-    }
-  }, [themePreset, primaryColor, setTheme])
+    const stored = localStorage.getItem("theme") as ThemeMode | null;
+    const prefersDark = window.matchMedia(
+      "(prefers-color-scheme: dark)"
+    ).matches;
+    const initial: ThemeMode = stored || (prefersDark ? "dark" : "light");
+    setMode(initial);
+    applyMode(initial);
+  }, []);
 
   const toggleTheme = () => {
-    // This function can now cycle through presets or be removed if a preset selector is implemented
-    setThemePresetState((prev) => (prev === 'light' ? 'dark' : 'light'))
-  }
-
-  const handleSetThemePreset = (preset: ThemePreset) => {
-    setThemePresetState(preset)
-  }
-
-  const handleSetPrimaryColor = (color: string) => {
-    setPrimaryColorState(color)
-  }
+    const next: ThemeMode = mode === "light" ? "dark" : "light";
+    setMode(next);
+    localStorage.setItem("theme", next);
+    applyMode(next);
+  };
 
   return (
-    <ThemeContext.Provider
-      value={{
-        theme,
-        themePreset,
-        primaryColor,
-        toggleTheme,
-        setThemePreset: handleSetThemePreset,
-        setPrimaryColor: handleSetPrimaryColor,
-      }}
-    >
+    <ThemeContext.Provider value={{ mode, toggleTheme }}>
       {children}
     </ThemeContext.Provider>
-  )
+  );
 }
 
-export const useThemePreset = () => useContext(ThemeContext)
+export const useTheme = (): ThemeContextState => {
+  const context = useContext(ThemeContext);
+  if (!context) {
+    throw new Error("useTheme must be used within a ThemeProvider");
+  }
+  return context;
+};

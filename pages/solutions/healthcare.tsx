@@ -4,7 +4,7 @@ import Layout from '../../components/layout/Layout';
 import { motion } from 'framer-motion';
 import { Brain, Sparkles, Zap, Target, Users, Award, Clock, CheckCircle, Heart, Activity } from 'lucide-react';
 import Link from 'next/link';
->>>>>>> 17df199e451813150094c5ab1fb554b04628cb60
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
 
 const HealthcareSolutionsPage: React.FC = () => {
   const solutions = [
@@ -186,7 +186,7 @@ const HealthcareSolutionsPage: React.FC = () => {
                     </div>
                   </Link>
                 </motion.div>
->>>>>>> 17df199e451813150094c5ab1fb554b04628cb60
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
               ))}
             </div>
 
@@ -247,7 +247,7 @@ const HealthcareSolutionsPage: React.FC = () => {
                 </Link>
               </div>
             </motion.div>
->>>>>>> 17df199e451813150094c5ab1fb554b04628cb60
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
           </div>
         </section>
       </div>

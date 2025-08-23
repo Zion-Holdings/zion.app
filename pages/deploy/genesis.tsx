@@ -33,7 +33,7 @@ const GenesisPage: React.FC = () => {
     <div className="min-h-screen bg-gray-900 text-white p-8">
       <header className="mb-12">
         <h1 className="text-4xl font-bold text-purple-400">Zion OS Instance Deployment</h1>
-        <p className="text-gray-200">Configure and deploy your Zion OS instances with ease.</p>
+        <p className="text-gray-300">Configure and deploy your Zion OS instances with ease.</p>
       </header>
 
       <main className="space-y-10">
@@ -123,7 +123,7 @@ const GenesisPage: React.FC = () => {
                 type="file"
                 name="logoUpload"
                 id="logoUpload"
-                className="mt-1 block w-full text-sm text-gray-200 file:mr-4 file:py-2 file:px-4 file:rounded-md file:border-0 file:text-sm file:font-semibold file:bg-purple-600 file:text-white hover:file:bg-purple-700 bg-gray-700 border-gray-600 rounded-md cursor-pointer"
+                className="mt-1 block w-full text-sm text-gray-300 file:mr-4 file:py-2 file:px-4 file:rounded-md file:border-0 file:text-sm file:font-semibold file:bg-purple-600 file:text-white hover:file:bg-purple-700 bg-gray-700 border-gray-600 rounded-md cursor-pointer"
               />
             </div>
 
@@ -136,7 +136,7 @@ const GenesisPage: React.FC = () => {
                 name="colorPaletteUpload"
                 id="colorPaletteUpload"
                 accept=".json"
-                className="mt-1 block w-full text-sm text-gray-200 file:mr-4 file:py-2 file:px-4 file:rounded-md file:border-0 file:text-sm file:font-semibold file:bg-purple-600 file:text-white hover:file:bg-purple-700 bg-gray-700 border-gray-600 rounded-md cursor-pointer"
+                className="mt-1 block w-full text-sm text-gray-300 file:mr-4 file:py-2 file:px-4 file:rounded-md file:border-0 file:text-sm file:font-semibold file:bg-purple-600 file:text-white hover:file:bg-purple-700 bg-gray-700 border-gray-600 rounded-md cursor-pointer"
               />
             </div>
             <div>
@@ -214,7 +214,7 @@ const GenesisPage: React.FC = () => {
         </div>
       </main>
 
-      <footer className="text-center text-gray-200 mt-12">
+      <footer className="text-center text-gray-300 mt-12">
         <p>&copy; {new Date().getFullYear()} Zion Project. All rights reserved.</p>
       </footer>
     </div>
