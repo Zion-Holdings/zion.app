@@ -1,5 +1,9 @@
 {
+<<<<<<< HEAD
+  "generatedAt": "2025-08-11T23:53:36.025Z",
+=======
   "generatedAt": "2025-08-11T23:53:37.791Z",
+>>>>>>> origin/cursor/invent-and-deploy-autonomous-cloud-automations-b8b3
   "functions": [
     "a11y-alt-text-runner",
     "adaptive-orchestrator",
@@ -74,7 +78,11 @@
     "newsroom-auto-publisher",
     "newsroom-runner",
     "og-image-update-runner",
+<<<<<<< HEAD
+    "orchestrator-swarm",
+=======
     "opengraph-coverage-runner",
+>>>>>>> origin/cursor/invent-and-deploy-autonomous-cloud-automations-b8b3
     "orphan-pages-detector",
     "pagespeed-insights-runner",
     "qa-knowledge-runner",
@@ -84,7 +92,11 @@
     "repo-knowledge-graph-runner",
     "repo-radar-and-graph",
     "repo-radar-runner",
+<<<<<<< HEAD
+    "revenue-ideas-runner",
+=======
     "route-map-runner",
+>>>>>>> origin/cursor/invent-and-deploy-autonomous-cloud-automations-b8b3
     "schedule-content-index",
     "schedule-homepage",
     "schedule-knowledge-graph",
@@ -110,8 +122,12 @@
     "ui-evolution-beautify",
     "ultrafast-front-orchestrator",
     "ultrafast-orchestrator",
+<<<<<<< HEAD
+    "unused-media-scanner"
+=======
     "unused-exports-runner",
     "unused-media-scanner",
     "ux-friction-runner"
+>>>>>>> origin/cursor/invent-and-deploy-autonomous-cloud-automations-b8b3
   ]
 }

@@ -309,8 +309,13 @@
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
     "type-check": "tsc --noEmit",
     "prepare": "git config core.hooksPath .husky || true",
+<<<<<<< HEAD
+    "fix:all": "npm run lint -- --fix || true",
+    "build:heal": "npm run build || (npm run fix:all && npm run search:index || true && npm run build)",
+=======
     "fix:all": "npm run lint -- --fix || true && node fix_typescript_syntax_errors.cjs || true && node fix_all_typescript_errors.cjs || true && node final_fix.cjs || true",
     "build:heal": "npm run build || (npm run fix:all && npm run build)",
+>>>>>>> origin/cursor/invent-and-deploy-autonomous-cloud-automations-b8b3
     "ci:heal": "npm run fix:all && (npm run type-check || true) && npm run build:heal",
     "health:check": "node automation/build-health-monitor.cjs",
     "health:react": "node automation/react-component-validator.cjs",
