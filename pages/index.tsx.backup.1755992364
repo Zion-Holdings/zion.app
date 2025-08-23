@@ -67,11 +67,17 @@ import { revolutionary2027ITServices } from '../data/revolutionary-2027-it-servi
 import { revolutionary2027MicroSaasServices } from '../data/revolutionary-2027-micro-saas';
 import { futuristic2028Services } from '../data/2028-futuristic-innovations';
 import { emergingTech2028Services } from '../data/2028-emerging-tech-services';
+<<<<<<< HEAD
+import { cuttingEdge2029Services } from '../data/2029-cutting-edge-innovations';
+import { emergingTech2029Services } from '../data/2029-emerging-tech-services';
+import { microSaas2029Services } from '../data/2029-micro-saas-innovations';
+=======
 import { futuristic2029AIServices } from '../data/2029-futuristic-ai-services';
 import { quantumInnovation2029Services } from '../data/2029-quantum-innovation-services';
 import { emergingTech2029Services } from '../data/2029-emerging-tech-services';
 import { enterpriseIT2029Services } from '../data/2029-enterprise-it-services';
 import { practicalBusiness2029Solutions } from '../data/2029-practical-business-solutions';
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-7153
 
 export default function HomePage() {
   const heroStats = [
@@ -144,6 +150,11 @@ export default function HomePage() {
     ...revolutionary2027AIServices,
     ...revolutionary2027ITServices,
     ...revolutionary2027MicroSaasServices,
+<<<<<<< HEAD
+    ...cuttingEdge2029Services,
+    ...emergingTech2029Services,
+    ...microSaas2029Services
+=======
     ...cuttingEdge2028MicroSaas,
     ...practicalBusinessSolutions2028,
     ...futuristic2029AIServices,
@@ -151,6 +162,7 @@ export default function HomePage() {
     ...emergingTech2029Services,
     ...enterpriseIT2029Services,
     ...practicalBusiness2029Solutions
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-7153
   ];
 
   // Combine all services for comprehensive display
@@ -163,6 +175,10 @@ export default function HomePage() {
     ...blockchainEmergingTechServices
   ];
 
+<<<<<<< HEAD
+  // Get featured services (popular ones)
+  const featuredServices = allServices.filter(service => service.popular).slice(0, 12);
+=======
   // Service statistics
   const serviceStats = {
     totalServices: allServices.length,
@@ -171,6 +187,7 @@ export default function HomePage() {
     spaceServices: quantumSpaceServices.length + revolutionary2027Services.filter(s => s.category.includes('Space')).length + emergingTech2029Services.filter(s => s.category.includes('Space')).length,
     biotechServices: revolutionary2027Services.filter(s => s.category.includes('Biotech')).length + emergingTech2027Services.filter(s => s.category.includes('Biotech')).length + emergingTech2029Services.filter(s => s.category.includes('Biotech')).length
   };
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-7153
 
 const heroFeatures = [
   {
@@ -268,8 +285,13 @@ export default function Home() {
         {/* Ultra Advanced Navigation */}
         <UltraFuturisticNavigation2029 />
 
+<<<<<<< HEAD
+        {/* Ultra Futuristic Hero Section 2029 */}
+        <UltraFuturisticHero2029 />
+=======
                                       {/* Ultra Futuristic Hero Section 2029 */}
                     <UltraFuturisticHero2029 />
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-7153
 
         {/* Revolutionary 2027 Hero Section */}
         <Revolutionary2027Hero />
@@ -544,10 +566,17 @@ export default function Home() {
             </motion.div>
           </div>
         </section>
+<<<<<<< HEAD
+
+        {/* Footer */}
+        <UltraFuturisticFooter2029 />
+      </UltraFuturisticBackground2029>
+=======
               </UltraFuturisticBackground2028>
       
       {/* Footer */}
       <UltraFuturisticFooter2029 />
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-7153
     </>
   );
 =======
