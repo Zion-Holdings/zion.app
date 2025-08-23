@@ -98,7 +98,11 @@ export default function BlogPage() {
     }
   ];
 
+<<<<<<< HEAD
+  const categories = ['All', 'Quantum Computing', 'AI & Automation', 'Sustainability', 'Content & AI', 'Infrastructure', 'AI Ethics', 'Performance', 'Future of Work'];
+=======
   const categories = ['All', 'AI & Automation', 'Quantum AI', 'Cybersecurity', 'Sustainability', 'Content & AI', 'Infrastructure', 'AI Ethics', 'Performance', 'Future of Work'];
+>>>>>>> origin/cursor/add-more-project-content-2d2a
 
 const BlogPage: React.FC = () => {
   return (
