@@ -257,12 +257,24 @@ const allServices = [
   ...advancedEnterpriseServices,
   ...cuttingEdgeITInfrastructureServices,
   
+<<<<<<< HEAD
+  // Our new 2025 cutting-edge innovative services expansion
+  ...cuttingEdgeInnovativeServices2025,
+  ...advancedITInfrastructureSolutions2025,
+  ...advancedAIAutomationSolutions2025,
+  
+  // Our new 2025 innovative services expansion v2
+  ...innovativeMicroSaasServices2025V2,
+  ...advancedITServices2025V2,
+  ...advancedAIServices2025V2
+=======
   // NEW: Innovative 2025 Service Suites
   ...innovativeAIAutomationSuite,
   ...innovativeITInfrastructureSuite,
   ...innovativeCybersecuritySuite,
   ...innovativeDataAnalyticsSuite,
   ...innovativeBusinessAutomationSuite
+>>>>>>> origin/cursor/expand-services-and-deploy-updates-ec84
 ];
 
 const categories = [
