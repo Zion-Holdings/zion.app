@@ -11,10 +11,17 @@ const HomePage: React.FC = () => {
     <ErrorBoundary>
       <SEOOptimizer />
       <AnalyticsTracker />
+<<<<<<< HEAD
+      <PerformanceOptimizer showMetrics={true} autoOptimize={true} />
+      <AccessibilityEnhancer showPanel={true} autoOptimize={true} />
+      <MobileOptimizer showDebugInfo={false}>
+        <Homepage2045 />
+=======
       <PerformanceOptimizer />
       <AccessibilityEnhancer />
       <MobileOptimizer showDebugInfo={false}>
         <Homepage2025 />
+>>>>>>> origin/cursor/add-and-advertise-new-services-then-build-e1f5
         <PerformanceMonitor showUI={true} />
       </MobileOptimizer>
     </ErrorBoundary>
