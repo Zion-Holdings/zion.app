@@ -247,8 +247,13 @@ const UltraFuturisticFooter2045: React.FC = () => {
                     className={`w-10 h-10 bg-gradient-to-br ${social.color} rounded-lg flex items-center justify-center text-white hover:scale-110 transition-transform duration-200`}
                     aria-label={social.name}
                   >
+<<<<<<< HEAD
+                    <social.icon className="w-5 h-5" />
+                  </a>
+=======
                     {social.icon}
                   </Link>
+>>>>>>> origin/cursor/expand-services-and-deploy-updates-4f24
                 ))}
               </motion.div>
             </div>
