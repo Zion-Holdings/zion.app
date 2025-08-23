@@ -50,6 +50,16 @@ const sidebarSections = [
     title: 'AI & Consciousness',
     icon: <Brain className="w-5 h-5" />,
     items: [
+<<<<<<< HEAD
+      { name: 'AI Consciousness Evolution', href: '/ai-consciousness-evolution-2029', icon: <Brain className="w-4 h-4" /> },
+      { name: 'AI Emotional Intelligence', href: '/ai-emotional-intelligence-training', icon: <Heart className="w-4 h-4" /> },
+      { name: 'AI Autonomous Operations', href: '/ai-autonomous-business-operations-platform', icon: <Settings className="w-4 h-4" /> },
+      { name: 'AI Research Assistant', href: '/ai-autonomous-research-assistant', icon: <BookOpen className="w-4 h-4" /> },
+      { name: 'AI Predictive Maintenance', href: '/ai-predictive-maintenance-platform', icon: <Eye className="w-4 h-4" /> },
+      { name: 'AI Content Personalization', href: '/ai-content-personalization-engine', icon: <FileText className="w-4 h-4" /> },
+      { name: 'AI Ecosystem Manager', href: '/ai-autonomous-ecosystem-manager', icon: <Globe className="w-4 h-4" /> },
+      { name: 'AI Ethics & Governance', href: '/ai-ethics-governance-framework', icon: <Shield className="w-4 h-4" /> }
+=======
       { name: 'AI Consciousness Evolution', href: '/ai-consciousness-evolution-2029', badge: 'New' },
       { name: 'AI Quantum Neural Network', href: '/ai-quantum-neural-network', badge: 'Hot' },
       { name: 'AI Autonomous Research', href: '/ai-autonomous-research-assistant', badge: 'New' },
@@ -66,12 +76,23 @@ const sidebarSections = [
       { name: 'AI Financial Intelligence', href: '/ai-financial-intelligence', badge: 'New' },
       { name: 'AI Sustainability Platform', href: '/ai-sustainability-platform', badge: 'New' },
       { name: 'AI Legal Contract Analyzer', href: '/ai-legal-contract-analyzer' }
+>>>>>>> origin/cursor/website-audit-content-update-and-deployment-7272
     ]
   },
   {
     title: 'Quantum & Emerging Tech',
     icon: <Atom className="w-5 h-5" />,
     items: [
+<<<<<<< HEAD
+      { name: 'Quantum Neural Networks', href: '/quantum-neural-network-platform', icon: <Brain className="w-4 h-4" /> },
+      { name: 'Quantum Financial Trading', href: '/quantum-financial-trading-platform', icon: <BarChart3 className="w-4 h-4" /> },
+      { name: 'Quantum Materials Discovery', href: '/quantum-materials-discovery-platform', icon: <Atom className="w-4 h-4" /> },
+      { name: 'Quantum Bio-Computing', href: '/quantum-bio-computing-platform', icon: <Heart className="w-4 h-4" /> },
+      { name: 'Quantum Internet Security', href: '/quantum-internet-security-platform', icon: <Lock className="w-4 h-4" /> },
+      { name: 'Quantum Cloud Infrastructure', href: '/quantum-cloud-infrastructure-platform', icon: <Cloud className="w-4 h-4" /> },
+      { name: 'Space Resource Mining', href: '/space-resource-mining-platform', icon: <Rocket className="w-4 h-4" /> },
+      { name: 'Brain-Computer Interface', href: '/brain-computer-interface-platform', icon: <Brain className="w-4 h-4" /> }
+=======
       { name: 'Space Resource Mining', href: '/space-resource-mining-platform', badge: 'Hot' },
       { name: 'Quantum Internet Security', href: '/quantum-internet-security-platform', badge: 'New' },
       { name: 'Brain-Computer Interface', href: '/brain-computer-interface-platform', badge: 'New' },
@@ -85,6 +106,7 @@ const sidebarSections = [
       { name: 'Quantum Metaverse', href: '/quantum-metaverse', badge: 'New' },
       { name: 'Quantum IoT Platform', href: '/quantum-iot', badge: 'New' },
       { name: 'Quantum Financial Trading', href: '/quantum-financial-trading' }
+>>>>>>> origin/cursor/website-audit-content-update-and-deployment-7272
     ]
   },
   {
@@ -133,6 +155,14 @@ const sidebarSections = [
     title: 'Showcase & Pricing',
     icon: <Star className="w-5 h-5" />,
     items: [
+<<<<<<< HEAD
+      { name: 'Services Showcase 2025', href: '/comprehensive-services-showcase-2025', icon: <Grid className="w-4 h-4" /> },
+      { name: 'Pricing Plans', href: '/pricing', icon: <DollarSign className="w-4 h-4" /> },
+      { name: 'Market Pricing', href: '/market-pricing', icon: <BarChart3 className="w-4 h-4" /> },
+      { name: '2026 Services', href: '/revolutionary-2026-services', icon: <TrendingUp className="w-4 h-4" /> },
+      { name: '2027 Services', href: '/revolutionary-2027-services-showcase', icon: <Sparkles className="w-4 h-4" /> },
+      { name: 'Ultimate Showcase', href: '/ultimate-2026-services-showcase', icon: <Star className="w-4 h-4" /> }
+=======
       { name: 'Documentation', href: '/docs' },
       { name: 'API Reference', href: '/api-documentation' },
       { name: 'Case Studies', href: '/case-studies' },
@@ -146,6 +176,7 @@ const sidebarSections = [
       { name: 'Performance Reports', href: '/reports' },
       { name: 'Market Analysis', href: '/market-pricing' },
       { name: 'Services Advertising', href: '/services-advertising' }
+>>>>>>> origin/cursor/website-audit-content-update-and-deployment-7272
     ]
   },
   {

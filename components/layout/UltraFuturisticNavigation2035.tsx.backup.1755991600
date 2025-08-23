@@ -210,6 +210,8 @@ const navigationItems: NavigationItem[] = [
     ]
   },
   {
+<<<<<<< HEAD
+=======
     name: 'AI & Consciousness',
     href: '/ai-services',
     icon: <Brain className="w-5 h-5" />,
@@ -316,6 +318,7 @@ const navigationItems: NavigationItem[] = [
     ]
   },
   {
+>>>>>>> origin/cursor/website-audit-content-update-and-deployment-7272
     name: 'Resources',
     href: '/resources',
     icon: <BookOpen className="w-5 h-5" />,
