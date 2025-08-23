@@ -7,6 +7,7 @@ import TopContactBar from './TopContactBar';
 import PerformanceMonitor from '../PerformanceMonitor';
 import AccessibilityEnhancer from '../AccessibilityEnhancer';
 import CookieConsentBanner from '../CookieConsentBanner';
+import ServiceWorkerRegistration from '../ServiceWorkerRegistration';
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -53,6 +54,9 @@ export default function Layout({ children }: LayoutProps) {
       
       {/* Cookie Consent Banner */}
       <CookieConsentBanner />
+      
+      {/* Service Worker Registration */}
+      <ServiceWorkerRegistration />
     </div>
   );
 }

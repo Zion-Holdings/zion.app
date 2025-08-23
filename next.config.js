@@ -1,26 +1,29 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  // Enable React strict mode for better development experience
-  reactStrictMode: true,
-  
-  // Enable experimental features for better performance
+  // Enhanced performance optimizations
   experimental: {
-    // Enable modern JavaScript features
-    esmExternals: true,
-    
-    // Enable optimized package imports
-    optimizePackageImports: ['framer-motion', 'lucide-react'],
+    optimizePackageImports: ['lucide-react', 'framer-motion'],
+    turbo: {
+      rules: {
+        '*.svg': {
+          loaders: ['@svgr/webpack'],
+          as: '*.js',
+        },
+      },
+    },
   },
-
-  // Image optimization
+  
+  // Enhanced image optimization
   images: {
-    domains: ['ziontechgroup.com'],
     formats: ['image/webp', 'image/avif'],
     deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048, 3840],
     imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
+    minimumCacheTTL: 60 * 60 * 24 * 30, // 30 days
+    dangerouslyAllowSVG: true,
+    contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
   },
 
-  // Webpack configuration for performance
+  // Enhanced webpack configuration
   webpack: (config, { dev, isServer }) => {
     // Optimize bundle splitting
     if (!dev && !isServer) {
@@ -31,33 +34,34 @@ const nextConfig = {
             test: /[\\/]node_modules[\\/]/,
             name: 'vendors',
             chunks: 'all',
+            priority: 10,
           },
           common: {
             name: 'common',
             minChunks: 2,
             chunks: 'all',
-            enforce: true,
+            priority: 5,
+            reuseExistingChunk: true,
           },
         },
       };
     }
 
-    // Optimize for production
-    if (!dev) {
-      config.optimization.minimize = true;
-      config.optimization.minimizer = config.optimization.minimizer || [];
-    }
+    // SVG optimization
+    config.module.rules.push({
+      test: /\.svg$/,
+      use: ['@svgr/webpack'],
+    });
 
     return config;
   },
 
-  // Headers for security and performance
+  // Enhanced headers for security and performance
   async headers() {
     return [
       {
         source: '/(.*)',
         headers: [
-          // Security headers
           {
             key: 'X-Frame-Options',
             value: 'DENY',
@@ -67,22 +71,12 @@ const nextConfig = {
             value: 'nosniff',
           },
           {
-            key: 'X-XSS-Protection',
-            value: '1; mode=block',
-          },
-          {
             key: 'Referrer-Policy',
-            value: 'strict-origin-when-cross-origin',
+            value: 'origin-when-cross-origin',
           },
           {
             key: 'Permissions-Policy',
             value: 'camera=(), microphone=(), geolocation=()',
-          },
-          
-          // Performance headers
-          {
-            key: 'Cache-Control',
-            value: 'public, max-age=31536000, immutable',
           },
         ],
       },
@@ -91,12 +85,12 @@ const nextConfig = {
         headers: [
           {
             key: 'Cache-Control',
-            value: 'no-cache, no-store, must-revalidate',
+            value: 'public, max-age=3600, s-maxage=86400',
           },
         ],
       },
       {
-        source: '/(.*).(js|css|png|jpg|jpeg|gif|svg|ico|woff|woff2|ttf|eot)',
+        source: '/_next/static/(.*)',
         headers: [
           {
             key: 'Cache-Control',
@@ -107,7 +101,7 @@ const nextConfig = {
     ];
   },
 
-  // Redirects for better SEO
+  // Enhanced redirects
   async redirects() {
     return [
       {
@@ -116,49 +110,89 @@ const nextConfig = {
         permanent: true,
       },
       {
-        source: '/index.html',
-        destination: '/',
-        permanent: true,
+        source: '/services/ai',
+        destination: '/services?category=ai-ml',
+        permanent: false,
+      },
+      {
+        source: '/services/quantum',
+        destination: '/services?category=quantum',
+        permanent: false,
       },
     ];
   },
 
-  // Rewrites for API routes
+  // Enhanced rewrites for better routing
   async rewrites() {
     return [
       {
-        source: '/api/analytics',
-        destination: '/api/analytics',
-      },
-      {
-        source: '/api/error-reporting',
-        destination: '/api/error-reporting',
+        source: '/api/health',
+        destination: '/api/health-check',
       },
     ];
   },
 
-  // Environment variables
-  env: {
-    CUSTOM_KEY: process.env.CUSTOM_KEY,
+  // Enhanced compiler options
+  compiler: {
+    removeConsole: process.env.NODE_ENV === 'production',
+    styledComponents: true,
   },
 
-  // Compression
-  compress: true,
-
-  // Powered by header
+  // Enhanced output configuration
+  output: 'standalone',
+  
+  // Enhanced powered by header
   poweredByHeader: false,
 
-  // Trailing slash
+  // Enhanced trailing slash handling
   trailingSlash: false,
 
-  // Base path
+  // Enhanced base path
   basePath: '',
 
-  // Asset prefix
+  // Enhanced asset prefix
   assetPrefix: '',
 
-  // Output configuration
-  output: 'standalone',
+  // Enhanced generateEtags
+  generateEtags: true,
+
+  // Enhanced compress
+  compress: true,
+
+  // Enhanced devIndicators
+  devIndicators: {
+    buildActivity: true,
+    buildActivityPosition: 'bottom-right',
+  },
+
+  // Enhanced onDemandEntries
+  onDemandEntries: {
+    maxInactiveAge: 25 * 1000,
+    pagesBufferLength: 2,
+  },
+
+  // Enhanced pageExtensions
+  pageExtensions: ['tsx', 'ts', 'jsx', 'js'],
+
+  // Enhanced typescript
+  typescript: {
+    ignoreBuildErrors: false,
+  },
+
+  // Enhanced eslint
+  eslint: {
+    ignoreDuringBuilds: false,
+  },
+
+  // Enhanced swcMinify
+  swcMinify: true,
+
+  // Enhanced modularizeImports
+  modularizeImports: {
+    'lucide-react': {
+      transform: 'lucide-react/dist/esm/icons/{{kebabCase}}',
+    },
+  },
 };
 
 module.exports = nextConfig;
