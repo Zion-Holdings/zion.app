@@ -113,14 +113,14 @@ const AccessibilityEnhancer: React.FC<AccessibilityEnhancerProps> = ({
     }
   }, [applySettings]);
 
-  // Focus management
-  const handleFocusChange = useCallback((e: React.FocusEvent) => {
-    const target = e.target as HTMLElement;
-    if (target) {
-      setCurrentFocus(target);
-      announceToScreenReader(`Focused on ${target.textContent || target.tagName.toLowerCase()}`);
-    }
-  }, []);
+          // Focus management
+        const handleFocusChange = useCallback((_e: any) => {
+          const target = _e.target as HTMLElement;
+          if (target) {
+            setCurrentFocus(target);
+            announceToScreenReader(`Focused on ${target.textContent || target.tagName.toLowerCase()}`);
+          }
+        }, []);
 
   // Keyboard navigation enhancements
   const handleKeyDown = useCallback(() => {
