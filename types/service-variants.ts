@@ -131,4 +131,7 @@ export type ServiceVariant =
   | 'ai-automation'
   | 'it-infrastructure'
   | 'micro-saas'
-  | 'ai-services';
+  | 'ai-services'
+  | 'infrastructure-futuristic'
+  | 'support-futuristic'
+  | 'transformation-futuristic';
