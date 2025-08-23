@@ -17,16 +17,31 @@ const HomePage: React.FC = () => {
       
       <div className="min-h-screen bg-gradient-to-br from-indigo-950 via-purple-950 to-slate-950 text-white">
         <main className="container mx-auto px-6 py-12">
-          <section className="text-center mb-16">
-            <h1 className="text-5xl font-extrabold mb-6 bg-gradient-to-r from-cyan-400 to-fuchsia-400 bg-clip-text text-transparent">
+          {/* Hero Section */}
+          <section className="text-center mb-20">
+            <h1 className="text-6xl md:text-7xl font-extrabold mb-8 bg-gradient-to-r from-cyan-400 via-fuchsia-400 to-purple-400 bg-clip-text text-transparent animate-pulse">
               Zion Tech Group
             </h1>
-            <p className="text-xl text-white/80 max-w-3xl mx-auto">
-              Autonomous innovation hub delivering cutting-edge technology solutions and intelligent automation systems.
+            <p className="text-2xl md:text-3xl text-white/90 max-w-4xl mx-auto mb-8 leading-relaxed">
+              Autonomous innovation hub delivering cutting-edge technology solutions and intelligent automation systems that evolve independently.
+            </p>
+            <p className="text-lg text-white/70 max-w-3xl mx-auto mb-12">
+              We're building the future where AI systems think, learn, and innovate without human intervention, 
+              creating a world of endless technological possibilities.
             </p>
             
+            {/* CTA Buttons */}
+            <div className="flex flex-wrap justify-center gap-6 mb-16">
+              <Link href="/services" className="px-8 py-4 bg-gradient-to-r from-cyan-400 to-fuchsia-400 hover:from-cyan-500 hover:to-fuchsia-500 text-white font-bold rounded-xl transition-all duration-300 transform hover:scale-105 hover:shadow-2xl hover:shadow-cyan-400/25">
+                Explore Our Services
+              </Link>
+              <Link href="/case-studies" className="px-8 py-4 bg-white/10 hover:bg-white/20 border-2 border-white/20 hover:border-cyan-400/50 text-white font-bold rounded-xl transition-all duration-300 transform hover:scale-105">
+                View Case Studies
+              </Link>
+            </div>
+
             {/* Navigation Links */}
-            <div className="flex flex-wrap justify-center gap-4 mt-8">
+            <div className="flex flex-wrap justify-center gap-4">
               <Link href="/about" className="px-6 py-3 bg-white/10 hover:bg-white/20 border border-white/20 rounded-lg text-white transition-all duration-200 hover:border-cyan-400/50">
                 About Us
               </Link>
@@ -69,7 +84,87 @@ const HomePage: React.FC = () => {
             </div>
           </section>
 
-          {/* Hero Features Section */}
+          {/* Statistics Showcase */}
+          <section className="mx-auto max-w-7xl px-6 pb-16 mb-20">
+            <div className="bg-gradient-to-r from-cyan-500/10 via-fuchsia-500/10 to-purple-500/10 rounded-3xl p-12 border border-white/20">
+              <h2 className="text-center text-3xl font-bold tracking-wide text-white/90 mb-12">Our Autonomous Achievements</h2>
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+                <div className="text-center group">
+                  <div className="text-5xl font-bold text-cyan-400 mb-2 group-hover:scale-110 transition-transform duration-300">227</div>
+                  <div className="text-white/80 font-medium">Active Automations</div>
+                  <div className="text-white/60 text-sm mt-1">Running 24/7</div>
+                </div>
+                <div className="text-center group">
+                  <div className="text-5xl font-bold text-fuchsia-400 mb-2 group-hover:scale-110 transition-transform duration-300">2,960+</div>
+                  <div className="text-white/80 font-medium">Pages Generated</div>
+                  <div className="text-white/60 text-sm mt-1">AI-Created Content</div>
+                </div>
+                <div className="text-center group">
+                  <div className="text-5xl font-bold text-purple-400 mb-2 group-hover:scale-110 transition-transform duration-300">99.9%</div>
+                  <div className="text-white/80 font-medium">Uptime</div>
+                  <div className="text-white/60 text-sm mt-1">Reliable Performance</div>
+                </div>
+                <div className="text-center group">
+                  <div className="text-5xl font-bold text-green-400 mb-2 group-hover:scale-110 transition-transform duration-300">12</div>
+                  <div className="text-white/80 font-medium">AI Components</div>
+                  <div className="text-white/60 text-sm mt-1">Intelligent Systems</div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          {/* Featured Technologies */}
+          <section className="mx-auto max-w-7xl px-6 pb-16 mb-20">
+            <h2 className="text-center text-3xl font-bold tracking-wide text-white/90 mb-12">Cutting-Edge Technologies</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              <div className="bg-gradient-to-br from-cyan-500/10 to-blue-500/10 rounded-2xl p-8 border border-cyan-500/20 hover:border-cyan-400/40 transition-all duration-300 group">
+                <div className="text-4xl mb-4">🤖</div>
+                <h3 className="text-2xl font-bold text-cyan-400 mb-4">Autonomous AI Systems</h3>
+                <p className="text-white/80 mb-6">
+                  Self-learning AI that continuously improves and evolves without human intervention, 
+                  making intelligent decisions in real-time.
+                </p>
+                <ul className="space-y-2 text-white/70">
+                  <li>• Machine Learning Models</li>
+                  <li>• Natural Language Processing</li>
+                  <li>• Computer Vision</li>
+                  <li>• Predictive Analytics</li>
+                </ul>
+              </div>
+              
+              <div className="bg-gradient-to-br from-fuchsia-500/10 to-purple-500/10 rounded-2xl p-8 border border-fuchsia-500/20 hover:border-fuchsia-400/40 transition-all duration-300 group">
+                <div className="text-4xl mb-4">⚡</div>
+                <h3 className="text-2xl font-bold text-fuchsia-400 mb-4">Intelligent Automation</h3>
+                <p className="text-white/80 mb-6">
+                  End-to-end automation systems that streamline operations, optimize workflows, 
+                  and deliver measurable business value.
+                </p>
+                <ul className="space-y-2 text-white/70">
+                  <li>• Process Automation</li>
+                  <li>• Workflow Optimization</li>
+                  <li>• Self-Healing Systems</li>
+                  <li>• Performance Monitoring</li>
+                </ul>
+              </div>
+              
+              <div className="bg-gradient-to-br from-green-500/10 to-emerald-500/10 rounded-2xl p-8 border border-green-500/20 hover:border-green-400/40 transition-all duration-300 group">
+                <div className="text-4xl mb-4">☁️</div>
+                <h3 className="text-2xl font-bold text-green-400 mb-4">Cloud-Native Infrastructure</h3>
+                <p className="text-white/80 mb-6">
+                  Scalable, resilient cloud infrastructure with automated deployment, 
+                  monitoring, and optimization capabilities.
+                </p>
+                <ul className="space-y-2 text-white/70">
+                  <li>• Auto-scaling</li>
+                  <li>• Load Balancing</li>
+                  <li>• Cost Optimization</li>
+                  <li>• Security Hardening</li>
+                </ul>
+              </div>
+            </div>
+          </section>
+
+          {/* AUTO-GENERATED: HOME_LATEST_CONTENT_START */}
           <section className="mx-auto max-w-7xl px-6 pb-14">
             <h2 className="text-center text-3xl font-bold tracking-wide text-white/90 mb-12">Why Choose Zion Tech Group?</h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -370,64 +465,19 @@ const HomePage: React.FC = () => {
 
           {/* Call to Action Section */}
           <section className="mx-auto max-w-7xl px-6 pb-14">
-            <div className="bg-gradient-to-r from-cyan-500/20 to-fuchsia-500/20 backdrop-blur-xl rounded-3xl p-12 text-center border border-white/20">
-              <h2 className="text-4xl font-bold mb-6 bg-gradient-to-r from-cyan-400 to-fuchsia-400 bg-clip-text text-transparent">
-                Ready to Transform Your Business?
-              </h2>
-              <p className="text-xl text-white/80 mb-8 max-w-2xl mx-auto">
-                Join the future of autonomous technology. Our AI systems are ready to optimize, 
-                scale, and innovate your operations 24/7.
+            <div className="bg-gradient-to-r from-cyan-500/20 via-fuchsia-500/20 to-purple-500/20 rounded-3xl p-12 border border-white/20 text-center">
+              <h2 className="text-3xl font-bold text-white mb-6">Ready to Transform Your Business?</h2>
+              <p className="text-xl text-white/80 mb-8 max-w-3xl mx-auto">
+                Join the autonomous revolution and discover how our AI-powered solutions can drive innovation, 
+                efficiency, and growth for your organization.
               </p>
-              <div className="flex flex-wrap justify-center gap-4">
-                <Link href="/contact" className="px-8 py-4 bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 rounded-xl font-semibold text-white transition-all duration-300 hover:scale-105 shadow-lg">
+              <div className="flex flex-wrap justify-center gap-6">
+                <Link href="/contact" className="px-8 py-4 bg-gradient-to-r from-cyan-400 to-fuchsia-400 hover:from-cyan-500 hover:to-fuchsia-500 text-white font-bold rounded-xl transition-all duration-300 transform hover:scale-105">
                   Get Started Today
                 </Link>
-                <Link href="/services" className="px-8 py-4 bg-white/10 hover:bg-white/20 border border-white/30 rounded-xl font-semibold text-white transition-all duration-300 hover:scale-105">
-                  Explore Services
+                <Link href="/case-studies" className="px-8 py-4 bg-white/10 hover:bg-white/20 border-2 border-white/20 hover:border-cyan-400/50 text-white font-bold rounded-xl transition-all duration-300">
+                  View Success Stories
                 </Link>
-              </div>
-            </div>
-          </section>
-
-          {/* Stats Section */}
-          <section className="mx-auto max-w-7xl px-6 pb-14">
-            <h2 className="text-center text-3xl font-bold tracking-wide text-white/90 mb-12">By The Numbers</h2>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-              <div className="text-center">
-                <div className="text-5xl font-bold bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent mb-2">500+</div>
-                <p className="text-white/70">Happy Clients</p>
-              </div>
-              <div className="text-center">
-                <div className="text-5xl font-bold bg-gradient-to-r from-fuchsia-400 to-purple-500 bg-clip-text text-transparent mb-2">99.9%</div>
-                <p className="text-white/70">Uptime</p>
-              </div>
-              <div className="text-center">
-                <div className="text-5xl font-bold bg-gradient-to-r from-green-400 to-emerald-500 bg-clip-text text-transparent mb-2">24/7</div>
-                <p className="text-white/70">Monitoring</p>
-              </div>
-              <div className="text-center">
-                <div className="text-5xl font-bold bg-gradient-to-r from-yellow-400 to-orange-500 bg-clip-text text-transparent mb-2">1M+</div>
-                <p className="text-white/70">Automated Tasks</p>
-              </div>
-            </div>
-          </section>
-
-          {/* Newsletter Signup */}
-          <section className="mx-auto max-w-4xl px-6 pb-14">
-            <div className="bg-white/10 backdrop-blur-xl rounded-2xl p-8 border border-white/20 text-center">
-              <h3 className="text-2xl font-bold text-white mb-4">Stay Updated</h3>
-              <p className="text-white/70 mb-6">
-                Get the latest insights on AI automation, autonomous systems, and technology trends.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
-                <input 
-                  type="email" 
-                  placeholder="Enter your email" 
-                  className="flex-1 px-4 py-3 bg-white/20 border border-white/30 rounded-lg text-white placeholder-white/50 focus:outline-none focus:border-cyan-400/50"
-                />
-                <button className="px-6 py-3 bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 rounded-lg font-semibold text-white transition-all duration-300 hover:scale-105">
-                  Subscribe
-                </button>
               </div>
             </div>
           </section>

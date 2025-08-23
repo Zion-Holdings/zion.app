@@ -146,6 +146,239 @@ export default function About() {
             </motion.div>
 
             <div className="bg-white/10 backdrop-blur-xl rounded-2xl p-8 mb-16">
+              <h2 className="text-3xl font-bold mb-6 text-green-400">Core Values</h2>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div className="text-center">
+                  <div className="text-4xl mb-4">🚀</div>
+                  <h3 className="text-xl font-semibold mb-2">Innovation</h3>
+                  <p className="text-white/70">Constantly pushing boundaries and exploring new frontiers in technology</p>
+                </div>
+                <div className="text-center">
+                  <div className="text-4xl mb-4">🤖</div>
+                  <h3 className="text-xl font-semibold mb-2">Autonomy</h3>
+                  <p className="text-white/70">Building systems that can operate independently and make intelligent decisions</p>
+                </div>
+                <div className="text-center">
+                  <div className="text-4xl mb-4">🌍</div>
+                  <h3 className="text-xl font-semibold mb-2">Impact</h3>
+                  <p className="text-white/70">Creating technology that makes a positive difference in the world</p>
+                </div>
+              </div>
+            </div>
+
+            {/* Company History */}
+            <div className="bg-white/10 backdrop-blur-xl rounded-2xl p-8 mb-16">
+              <h2 className="text-3xl font-bold mb-6 text-blue-400">Our Journey</h2>
+              <div className="space-y-8">
+                <div className="flex items-start gap-6">
+                  <div className="w-16 h-16 bg-gradient-to-br from-cyan-400 to-blue-500 rounded-full flex items-center justify-center text-white font-bold text-lg flex-shrink-0">
+                    2020
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-semibold text-cyan-400 mb-2">Foundation</h3>
+                    <p className="text-white/70">
+                      Zion Tech Group was founded with a vision to revolutionize technology through autonomous systems. 
+                      Started as a small team of AI researchers and engineers passionate about creating self-learning technology.
+                    </p>
+                  </div>
+                </div>
+                
+                <div className="flex items-start gap-6">
+                  <div className="w-16 h-16 bg-gradient-to-br from-fuchsia-400 to-purple-500 rounded-full flex items-center justify-center text-white font-bold text-lg flex-shrink-0">
+                    2022
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-semibold text-fuchsia-400 mb-2">First Autonomous Systems</h3>
+                    <p className="text-white/70">
+                      Successfully deployed our first autonomous AI systems in production environments. 
+                      Achieved 99.5% uptime and began scaling our automation capabilities across multiple industries.
+                    </p>
+                  </div>
+                </div>
+                
+                <div className="flex items-start gap-6">
+                  <div className="w-16 h-16 bg-gradient-to-br from-green-400 to-emerald-500 rounded-full flex items-center justify-center text-white font-bold text-lg flex-shrink-0">
+                    2024
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-semibold text-green-400 mb-2">Global Expansion</h3>
+                    <p className="text-white/70">
+                      Expanded operations globally with clients across 15+ countries. 
+                      Launched our autonomous content generation platform and achieved 2,960+ AI-generated pages.
+                    </p>
+                  </div>
+                </div>
+                
+                <div className="flex items-start gap-6">
+                  <div className="w-16 h-16 bg-gradient-to-br from-yellow-400 to-orange-500 rounded-full flex items-center justify-center text-white font-bold text-lg flex-shrink-0">
+                    2025
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-semibold text-yellow-400 mb-2">Autonomous Revolution</h3>
+                    <p className="text-white/70">
+                      Currently leading the autonomous technology revolution with 227 active automations, 
+                      12 AI components, and continuous innovation in self-healing systems.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className="bg-white/10 backdrop-blur-xl rounded-2xl p-8 mb-16">
+              <h2 className="text-3xl font-bold mb-6 text-blue-400">What We Do</h2>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div>
+                  <h3 className="text-xl font-semibold mb-3 text-cyan-400">AI Development</h3>
+                  <ul className="space-y-2 text-white/70">
+                    <li>• Advanced machine learning models</li>
+                    <li>• Natural language processing</li>
+                    <li>• Computer vision systems</li>
+                    <li>• Autonomous decision making</li>
+                    <li>• Predictive analytics engines</li>
+                    <li>• Neural network optimization</li>
+                  </ul>
+                </div>
+                <div>
+                  <h3 className="text-xl font-semibold mb-3 text-fuchsia-400">Automation Systems</h3>
+                  <ul className="space-y-2 text-white/70">
+                    <li>• Cloud infrastructure automation</li>
+                    <li>• CI/CD pipeline optimization</li>
+                    <li>• Self-healing applications</li>
+                    <li>• Performance monitoring</li>
+                    <li>• Workflow orchestration</li>
+                    <li>• Intelligent resource management</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            {/* Technology Stack */}
+            <div className="bg-white/10 backdrop-blur-xl rounded-2xl p-8 mb-16">
+              <h2 className="text-3xl font-bold mb-6 text-purple-400">Our Technology Stack</h2>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div>
+                  <h3 className="text-xl font-semibold mb-4 text-cyan-400">Frontend & UI</h3>
+                  <div className="space-y-2">
+                    <div className="flex items-center gap-2">
+                      <span className="w-2 h-2 bg-cyan-400 rounded-full"></span>
+                      <span className="text-white/70">React & Next.js</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <span className="w-2 h-2 bg-cyan-400 rounded-full"></span>
+                      <span className="text-white/70">TypeScript</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <span className="w-2 h-2 bg-cyan-400 rounded-full"></span>
+                      <span className="text-white/70">Tailwind CSS</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <span className="w-2 h-2 bg-cyan-400 rounded-full"></span>
+                      <span className="text-white/70">Framer Motion</span>
+                    </div>
+                  </div>
+                </div>
+                
+                <div>
+                  <h3 className="text-xl font-semibold mb-4 text-fuchsia-400">AI & Machine Learning</h3>
+                  <div className="space-y-2">
+                    <div className="flex items-center gap-2">
+                      <span className="w-2 h-2 bg-fuchsia-400 rounded-full"></span>
+                      <span className="text-white/70">TensorFlow & PyTorch</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <span className="w-2 h-2 bg-fuchsia-400 rounded-full"></span>
+                      <span className="text-white/70">OpenAI GPT Models</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <span className="w-2 h-2 bg-fuchsia-400 rounded-full"></span>
+                      <span className="text-white/70">Computer Vision APIs</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <span className="w-2 h-2 bg-fuchsia-400 rounded-full"></span>
+                      <span className="text-white/70">Natural Language Processing</span>
+                    </div>
+                  </div>
+                </div>
+                
+                <div>
+                  <h3 className="text-xl font-semibold mb-4 text-green-400">Infrastructure & DevOps</h3>
+                  <div className="space-y-2">
+                    <div className="flex items-center gap-2">
+                      <span className="w-2 h-2 bg-green-400 rounded-full"></span>
+                      <span className="text-white/70">AWS & Google Cloud</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <span className="w-2 h-2 bg-green-400 rounded-full"></span>
+                      <span className="text-white/70">Docker & Kubernetes</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <span className="w-2 h-2 bg-green-400 rounded-full"></span>
+                      <span className="text-white/70">GitHub Actions</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <span className="w-2 h-2 bg-green-400 rounded-full"></span>
+                      <span className="text-white/70">PM2 Process Manager</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Team Information */}
+            <div className="bg-white/10 backdrop-blur-xl rounded-2xl p-8 mb-16">
+              <h2 className="text-3xl font-bold mb-6 text-yellow-400">Our Team</h2>
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div className="text-center">
+                  <div className="w-20 h-20 bg-gradient-to-br from-cyan-400 to-blue-500 rounded-full flex items-center justify-center mx-auto mb-4 text-2xl">
+                    👨‍💻
+                  </div>
+                  <h3 className="text-lg font-semibold text-cyan-400 mb-2">AI Engineers</h3>
+                  <p className="text-white/70 text-sm">Specialists in machine learning, neural networks, and autonomous systems</p>
+                </div>
+                
+                <div className="text-center">
+                  <div className="w-20 h-20 bg-gradient-to-br from-fuchsia-400 to-purple-500 rounded-full flex items-center justify-center mx-auto mb-4 text-2xl">
+                    🚀
+                  </div>
+                  <h3 className="text-lg font-semibold text-fuchsia-400 mb-2">DevOps Engineers</h3>
+                  <p className="text-white/70 text-sm">Experts in cloud infrastructure, automation, and system reliability</p>
+                </div>
+                
+                <div className="text-center">
+                  <div className="w-20 h-20 bg-gradient-to-br from-green-400 to-emerald-500 rounded-full flex items-center justify-center mx-auto mb-4 text-2xl">
+                    🎨
+                  </div>
+                  <h3 className="text-lg font-semibold text-green-400 mb-2">UX Designers</h3>
+                  <p className="text-white/70 text-sm">Creating intuitive interfaces for complex autonomous systems</p>
+                </div>
+                
+                <div className="text-center">
+                  <div className="w-20 h-20 bg-gradient-to-br from-yellow-400 to-orange-500 rounded-full flex items-center justify-center mx-auto mb-4 text-2xl">
+                    📊
+                  </div>
+                  <h3 className="text-lg font-semibold text-yellow-400 mb-2">Data Scientists</h3>
+                  <p className="text-white/70 text-sm">Analyzing patterns and optimizing AI performance</p>
+                </div>
+                
+                <div className="text-center">
+                  <div className="w-20 h-20 bg-gradient-to-br from-blue-400 to-indigo-500 rounded-full flex items-center justify-center mx-auto mb-4 text-2xl">
+                    🔒
+                  </div>
+                  <h3 className="text-lg font-semibold text-blue-400 mb-2">Security Experts</h3>
+                  <p className="text-white/70 text-sm">Ensuring autonomous systems are secure and trustworthy</p>
+                </div>
+                
+                <div className="text-center">
+                  <div className="w-20 h-20 bg-gradient-to-br from-purple-400 to-pink-500 rounded-full flex items-center justify-center mx-auto mb-4 text-2xl">
+                    🌐
+                  </div>
+                  <h3 className="text-lg font-semibold text-purple-400 mb-2">Product Managers</h3>
+                  <p className="text-white/70 text-sm">Guiding the development of autonomous technology solutions</p>
+                </div>
+              </div>
+            </div>
+
+            <div className="bg-white/10 backdrop-blur-xl rounded-2xl p-8">
               <h2 className="text-3xl font-bold mb-6 text-purple-400">Our Impact</h2>
               <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
                 <div className="text-center">
