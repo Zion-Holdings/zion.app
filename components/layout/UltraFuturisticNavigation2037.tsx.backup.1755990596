@@ -1,7 +1,14 @@
 import React, { useState, useEffect, useRef, useCallback } from 'react';
 import Link from 'next/link';
 import { motion, AnimatePresence } from 'framer-motion';
+<<<<<<< HEAD
+import { 
+  Menu, ChevronDown, X, Zap, Grid, Star, Search, Brain, Cloud, Shield,
+  Rocket, Globe, Cpu, Code, Target
+} from 'lucide-react';
+=======
 import { Brain, Rocket, Shield, Atom, Globe, BookOpen, Building, ChevronDown, Menu, X, Star } from 'lucide-react';
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-dadf
 
 interface NavigationItem {
   name: string;
@@ -10,8 +17,28 @@ interface NavigationItem {
   description: string;
   badge?: string;
   featured?: boolean;
+<<<<<<< HEAD
+  category?: string;
+}
+
+interface UltraFuturisticNavigation2037Props {
+  onMenuToggle?: () => void;
+  'aria-expanded'?: boolean;
+}
+
+function normalizeHref(href: string): string {
+  if (!href) return href;
+  if (href.startsWith('http://') || href.startsWith('https://') || href.startsWith('mailto:') || href.startsWith('tel:')) {
+    return href;
+  }
+  if (!href.startsWith('/')) return href;
+  const hasQueryOrHash = href.includes('?') || href.includes('#');
+  if (hasQueryOrHash) return href;
+  return href.endsWith('/') ? href : href + '/';
+=======
   category: string;
   children?: NavigationItem[];
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-dadf
 }
 
 // Custom icon components
@@ -86,6 +113,103 @@ const FileText = ({ className }: { className?: string }) => (
 
 const navigationItems: NavigationItem[] = [
   {
+<<<<<<< HEAD
+    name: 'Services',
+    href: '/services',
+    icon: <Zap className="w-5 h-5" />,
+    description: 'Complete technology solutions',
+    badge: 'Main',
+    category: 'services',
+    children: [
+      { 
+        name: 'All Services', 
+        href: '/services', 
+        description: 'Complete services overview',
+        icon: <Grid className="w-4 h-4" />,
+        featured: true
+      },
+      { 
+        name: 'AI & Machine Learning', 
+        href: '/services#ai-services', 
+        description: 'Advanced AI solutions',
+        icon: <Brain className="w-4 h-4" />
+      },
+      { 
+        name: 'Quantum Computing', 
+        href: '/services#quantum-services', 
+        description: 'Quantum technology solutions',
+        icon: <Cpu className="w-4 h-4" />
+      },
+      { 
+        name: 'Cloud & Infrastructure', 
+        href: '/services#cloud-services', 
+        description: 'Cloud and IT infrastructure',
+        icon: <Cloud className="w-4 h-4" />
+      },
+      { 
+        name: 'Cybersecurity', 
+        href: '/services#security-services', 
+        description: 'Advanced security solutions',
+        icon: <Shield className="w-4 h-4" />
+      },
+      { 
+        name: 'Space Technology', 
+        href: '/space-technology', 
+        description: 'Space exploration solutions',
+        icon: <Rocket className="w-4 h-4" />
+      },
+      { 
+        name: 'Holographic & Metaverse', 
+        href: '/services#metaverse-services', 
+        description: 'Immersive technology solutions',
+        icon: <Globe className="w-4 h-4" />
+      },
+      { 
+        name: 'Biotechnology', 
+        href: '/services#biotech-services', 
+        description: 'Biotech and healthcare solutions',
+        icon: <Target className="w-4 h-4" />
+      }
+    ]
+  },
+  {
+    name: 'Showcase & Pricing',
+    href: '/enhanced-market-pricing-2037',
+    icon: <Star className="w-5 h-5" />,
+    description: 'Services portfolio & pricing',
+    badge: 'Showcase',
+    category: 'showcase',
+    featured: true,
+    children: [
+      { 
+        name: 'AI Consciousness Evolution', 
+        href: '/ai-consciousness-evolution-2037', 
+        description: 'Next evolution of AI consciousness',
+        icon: <Brain className="w-4 h-4" />,
+        featured: true,
+        color: 'from-purple-500 to-pink-500'
+      },
+      { 
+        name: 'Quantum AI Hybrid Platform', 
+        href: '/quantum-ai-hybrid-platform', 
+        description: 'Quantum computing meets AI',
+        icon: <Atom className="w-4 h-4" />,
+        color: 'from-blue-500 to-cyan-500'
+      },
+      { 
+        name: 'AI Autonomous Business Manager', 
+        href: '/ai-autonomous-business-manager', 
+        description: 'Autonomous business operations',
+        icon: <Rocket className="w-4 h-4" />,
+        color: 'from-green-500 to-emerald-500'
+      },
+      { 
+        name: 'AI Emotional Intelligence Coach', 
+        href: '/ai-emotional-intelligence-coach', 
+        description: 'AI-powered EI training',
+        icon: <Heart className="w-4 h-4" />,
+        color: 'from-pink-500 to-rose-500'
+=======
     name: 'AI & Consciousness',
     href: '/ai-services',
     icon: <Brain className="w-5 h-5" />,
@@ -121,6 +245,7 @@ const navigationItems: NavigationItem[] = [
         icon: <Brain className="w-4 h-4" />,
         description: 'Predict equipment failures with AI',
         category: 'AI'
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-dadf
       }
     ]
   },
@@ -163,6 +288,44 @@ const navigationItems: NavigationItem[] = [
     ]
   },
   {
+<<<<<<< HEAD
+    name: 'Solutions',
+    href: '/solutions',
+    icon: <Target className="w-5 h-5" />,
+    description: 'Industry-specific solutions',
+    badge: 'Solutions',
+    category: 'solutions',
+    children: [
+      { 
+        name: 'Enterprise Solutions', 
+        href: '/solutions#enterprise', 
+        description: 'Large enterprise solutions',
+        icon: <Building className="w-4 h-4" />
+      },
+      { 
+        name: 'Healthcare Technology', 
+        href: '/solutions#healthcare', 
+        description: 'Healthcare and medical solutions',
+        icon: <Heart className="w-4 h-4" />
+      },
+      { 
+        name: 'Financial Services', 
+        href: '/solutions#financial', 
+        description: 'Fintech and banking solutions',
+        icon: <DollarSign className="w-4 h-4" />
+      },
+      { 
+        name: 'Manufacturing & IoT', 
+        href: '/solutions#manufacturing', 
+        description: 'Smart manufacturing solutions',
+        icon: <Settings className="w-4 h-4" />
+      },
+      { 
+        name: 'Education & Training', 
+        href: '/solutions#education', 
+        description: 'Educational technology solutions',
+        icon: <GraduationCap className="w-4 h-4" />
+=======
     name: 'Micro SAAS Solutions',
     href: '/micro-saas',
     icon: <Rocket className="w-5 h-5" />,
@@ -288,6 +451,7 @@ const navigationItems: NavigationItem[] = [
         icon: <Building className="w-4 h-4" />,
         description: 'Get in touch with us',
         category: 'Company'
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-dadf
       }
     ]
   },
@@ -373,6 +537,9 @@ const navigationItems: NavigationItem[] = [
   }
 ];
 
+<<<<<<< HEAD
+export default function UltraFuturisticNavigation2037({ onMenuToggle, 'aria-expanded': ariaExpanded }: UltraFuturisticNavigation2037Props) {
+=======
 // Normalize href to ensure proper routing
 const normalizeHref = (href: string) => {
   if (href.startsWith('http')) return href;
@@ -388,6 +555,7 @@ export default function UltraFuturisticNavigation2037({
   onMenuToggle, 
   'aria-expanded': ariaExpanded 
 }: UltraFuturisticNavigation2037Props) {
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-dadf
   const [isOpen, setIsOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
   const [isScrolled, setIsScrolled] = useState(false);
@@ -402,6 +570,40 @@ export default function UltraFuturisticNavigation2037({
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+<<<<<<< HEAD
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (navRef.current && !navRef.current.contains(event.target as HTMLElement)) {
+        setIsOpen(false);
+        setActiveDropdown(null);
+      }
+    };
+
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, []);
+
+  const toggleMenu = useCallback(() => {
+    setIsOpen(!isOpen);
+    onMenuToggle?.();
+  }, [isOpen, onMenuToggle]);
+
+  const handleDropdownToggle = useCallback((name: string) => {
+    setActiveDropdown(activeDropdown === name ? null : name);
+  }, [activeDropdown]);
+
+  const closeAllDropdowns = useCallback(() => {
+    setActiveDropdown(null);
+    setIsOpen(false);
+  }, []);
+
+  return (
+    <nav 
+      ref={navRef}
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
+        isScrolled 
+          ? 'bg-black/90 backdrop-blur-xl border-b border-cyan-500/30 shadow-2xl shadow-cyan-500/20' 
+=======
   const toggleMenu = () => {
     setIsOpen(!isOpen);
     onMenuToggle?.();
@@ -421,6 +623,7 @@ export default function UltraFuturisticNavigation2037({
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled 
           ? 'bg-black/90 backdrop-blur-md border-b border-cyan-500/20' 
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-dadf
           : 'bg-transparent'
       }`}
       role="navigation"
@@ -429,6 +632,46 @@ export default function UltraFuturisticNavigation2037({
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-20">
           {/* Logo */}
+<<<<<<< HEAD
+          <motion.div 
+            className="flex-shrink-0"
+            initial={{ opacity: 0, x: -20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.5 }}
+          >
+            <Link href="/" className="flex items-center space-x-3 group">
+              <div className="w-10 h-10 bg-gradient-to-r from-cyan-500 to-purple-600 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                <Zap className="w-6 h-6 text-white" />
+              </div>
+              <span className="text-2xl font-bold bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent">
+                Zion Tech Group
+              </span>
+            </Link>
+          </motion.div>
+
+          {/* Desktop Navigation */}
+          <div className="hidden lg:flex items-center space-x-8">
+            {navigationItems.map((item) => (
+              <div key={item.name} className="relative group">
+                <button
+                  onClick={() => handleDropdownToggle(item.name)}
+                  className="flex items-center space-x-2 px-4 py-2 text-gray-300 hover:text-cyan-400 transition-colors duration-300 group-hover:text-cyan-400"
+                  aria-expanded={activeDropdown === item.name}
+                  aria-haspopup="true"
+                >
+                  {item.icon}
+                  <span className="font-medium">{item.name}</span>
+                  {item.badge && (
+                    <span className="px-2 py-1 text-xs bg-cyan-500/20 text-cyan-400 rounded-full border border-cyan-500/30">
+                      {item.badge}
+                    </span>
+                  )}
+                  <ChevronDown className={`w-4 h-4 transition-transform duration-300 ${
+                    activeDropdown === item.name ? 'rotate-180' : ''
+                  }`} />
+                </button>
+
+=======
           <div className="flex-shrink-0">
             <Link 
               href="/" 
@@ -469,10 +712,54 @@ export default function UltraFuturisticNavigation2037({
                   }`} />
                 </button>
 
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-dadf
                 {/* Dropdown Menu */}
                 <AnimatePresence>
                   {activeDropdown === item.name && (
                     <motion.div
+<<<<<<< HEAD
+                      initial={{ opacity: 0, y: 10, scale: 0.95 }}
+                      animate={{ opacity: 1, y: 0, scale: 1 }}
+                      exit={{ opacity: 0, y: 10, scale: 0.95 }}
+                      transition={{ duration: 0.2 }}
+                      className="absolute top-full left-0 mt-2 w-80 bg-black/95 backdrop-blur-xl border border-cyan-500/30 rounded-2xl shadow-2xl shadow-cyan-500/20 overflow-hidden"
+                    >
+                      <div className="p-4">
+                        <div className="grid gap-3">
+                          {item.children?.map((child) => (
+                            <Link
+                              key={child.name}
+                              href={normalizeHref(child.href)}
+                              onClick={closeAllDropdowns}
+                              className={`group flex items-center space-x-3 p-3 rounded-xl transition-all duration-300 ${
+                                child.featured 
+                                  ? 'bg-gradient-to-r from-cyan-500/20 to-purple-500/20 border border-cyan-500/30' 
+                                  : 'hover:bg-white/5'
+                              }`}
+                            >
+                              <div className={`w-8 h-8 rounded-lg flex items-center justify-center ${
+                                child.featured 
+                                  ? 'bg-gradient-to-r from-cyan-500 to-purple-600' 
+                                  : 'bg-gray-700/50'
+                              }`}>
+                                {child.icon}
+                              </div>
+                              <div className="flex-1 min-w-0">
+                                <p className={`font-medium ${
+                                  child.featured ? 'text-cyan-400' : 'text-gray-300'
+                                }`}>
+                                  {child.name}
+                                </p>
+                                {child.description && (
+                                  <p className="text-sm text-gray-500 truncate">
+                                    {child.description}
+                                  </p>
+                                )}
+                              </div>
+                            </Link>
+                          ))}
+                        </div>
+=======
                       initial={{ opacity: 0, y: -10 }}
                       animate={{ opacity: 1, y: 0 }}
                       exit={{ opacity: 0, y: -10 }}
@@ -526,6 +813,7 @@ export default function UltraFuturisticNavigation2037({
                             </Link>
                           </div>
                         )}
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-dadf
                       </div>
                     </motion.div>
                   )}
@@ -534,6 +822,20 @@ export default function UltraFuturisticNavigation2037({
             ))}
           </div>
 
+<<<<<<< HEAD
+          {/* Right Side Actions */}
+          <div className="hidden lg:flex items-center space-x-4">
+            {/* Search */}
+            <button className="p-2 text-gray-400 hover:text-cyan-400 transition-colors duration-300">
+              <Search className="w-5 h-5" />
+            </button>
+
+            {/* Contact Button */}
+            <Link
+              href="/contact"
+              className="px-6 py-2 bg-gradient-to-r from-cyan-500 to-purple-600 text-white font-medium rounded-xl hover:from-cyan-600 hover:to-purple-700 transition-all duration-300 transform hover:scale-105 shadow-lg shadow-cyan-500/25"
+            >
+=======
           {/* CTA Buttons */}
           <div className="hidden lg:flex items-center space-x-4">
             <Link
@@ -546,6 +848,7 @@ export default function UltraFuturisticNavigation2037({
               href="/get-started"
               className="px-6 py-2 bg-gradient-to-r from-cyan-500 to-blue-600 text-white rounded-lg hover:from-cyan-600 hover:to-blue-700 transition-all duration-200 transform hover:scale-105"
             >
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-dadf
               Get Started
             </Link>
           </div>
@@ -554,6 +857,13 @@ export default function UltraFuturisticNavigation2037({
           <div className="lg:hidden">
             <button
               onClick={toggleMenu}
+<<<<<<< HEAD
+              className="p-2 text-gray-400 hover:text-cyan-400 transition-colors duration-300"
+              aria-expanded={ariaExpanded}
+              aria-label="Toggle navigation menu"
+            >
+              {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+=======
               className="p-2 text-gray-300 hover:text-white transition-colors duration-200"
               aria-expanded={ariaExpanded}
               aria-label="Toggle navigation menu"
@@ -563,6 +873,7 @@ export default function UltraFuturisticNavigation2037({
               ) : (
                 <Menu className="w-6 h-6" />
               )}
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-dadf
             </button>
           </div>
         </div>
@@ -576,6 +887,23 @@ export default function UltraFuturisticNavigation2037({
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.3 }}
+<<<<<<< HEAD
+            className="lg:hidden bg-black/95 backdrop-blur-xl border-t border-cyan-500/30"
+          >
+            <div className="px-4 py-6 space-y-4">
+              {navigationItems.map((item) => (
+                <div key={item.name}>
+                  <button
+                    onClick={() => handleDropdownToggle(item.name)}
+                    className="flex items-center justify-between w-full px-4 py-3 text-left text-gray-300 hover:text-cyan-400 transition-colors duration-300"
+                    aria-expanded={activeDropdown === item.name}
+                  >
+                    <div className="flex items-center space-x-3">
+                      {item.icon}
+                      <span className="font-medium">{item.name}</span>
+                      {item.badge && (
+                        <span className="px-2 py-1 text-xs bg-cyan-500/20 text-cyan-400 rounded-full">
+=======
             className="lg:hidden bg-black/95 backdrop-blur-md border-t border-cyan-500/20"
           >
             <div className="px-4 py-6 space-y-4">
@@ -592,23 +920,43 @@ export default function UltraFuturisticNavigation2037({
                       <span>{item.name}</span>
                       {item.badge && (
                         <span className="px-2 py-1 text-xs bg-gradient-to-r from-cyan-500 to-blue-600 text-white rounded-full">
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-dadf
                           {item.badge}
                         </span>
                       )}
                     </div>
+<<<<<<< HEAD
+                    <ChevronDown className={`w-4 h-4 transition-transform duration-300 ${
+=======
                     <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-dadf
                       activeDropdown === item.name ? 'rotate-180' : ''
                     }`} />
                   </button>
 
+<<<<<<< HEAD
+                  <AnimatePresence>
+                    {activeDropdown === item.name && (
+=======
                   {/* Mobile Dropdown */}
                   <AnimatePresence>
                     {activeDropdown === item.name && item.children && (
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-dadf
                       <motion.div
                         initial={{ opacity: 0, height: 0 }}
                         animate={{ opacity: 1, height: 'auto' }}
                         exit={{ opacity: 0, height: 0 }}
                         transition={{ duration: 0.2 }}
+<<<<<<< HEAD
+                        className="ml-8 mt-2 space-y-2"
+                      >
+                        {item.children?.map((child) => (
+                          <Link
+                            key={child.name}
+                            href={normalizeHref(child.href)}
+                            onClick={closeAllDropdowns}
+                            className="block px-4 py-2 text-gray-400 hover:text-cyan-400 transition-colors duration-300"
+=======
                         className="ml-8 space-y-2"
                       >
                         {item.children.map((child) => (
@@ -617,6 +965,7 @@ export default function UltraFuturisticNavigation2037({
                             href={normalizeHref(child.href)}
                             className="flex items-center space-x-3 px-4 py-2 text-gray-400 hover:text-cyan-400 transition-colors duration-200"
                             onClick={closeAllDropdowns}
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-dadf
                           >
                             {child.icon}
                             <span className="text-sm">{child.name}</span>
@@ -628,6 +977,14 @@ export default function UltraFuturisticNavigation2037({
                 </div>
               ))}
 
+<<<<<<< HEAD
+              {/* Mobile Contact Button */}
+              <div className="pt-4 border-t border-cyan-500/30">
+                <Link
+                  href="/contact"
+                  onClick={closeAllDropdowns}
+                  className="block w-full px-6 py-3 bg-gradient-to-r from-cyan-500 to-purple-600 text-white font-medium rounded-xl text-center hover:from-cyan-600 hover:to-purple-700 transition-all duration-300"
+=======
               {/* Mobile CTA */}
               <div className="pt-4 border-t border-cyan-500/20 space-y-3">
                 <Link
@@ -641,6 +998,7 @@ export default function UltraFuturisticNavigation2037({
                   href="/get-started"
                   className="block w-full px-4 py-3 text-center bg-gradient-to-r from-cyan-500 to-blue-600 text-white rounded-lg hover:from-cyan-600 hover:to-blue-700 transition-all duration-200"
                   onClick={closeAllDropdowns}
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-dadf
                 >
                   Get Started
                 </Link>
@@ -649,6 +1007,8 @@ export default function UltraFuturisticNavigation2037({
           </motion.div>
         )}
       </AnimatePresence>
+<<<<<<< HEAD
+=======
 
       {/* Backdrop for mobile menu */}
       {isOpen && (
@@ -658,6 +1018,7 @@ export default function UltraFuturisticNavigation2037({
           aria-hidden="true"
         />
       )}
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-dadf
     </nav>
   );
 }

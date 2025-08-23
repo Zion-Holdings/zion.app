@@ -49,18 +49,28 @@ export default function Layout({ children, seo }: LayoutProps) {
         )}
       </AnimatePresence>
 
+<<<<<<< HEAD
+      {/* Futuristic Background */}
+      <UltraFuturisticBackground2038 intensity="high" theme="consciousness" />
+=======
 
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-dadf
       
       {/* Layout Structure */}
       <div className="relative z-10">
         {/* Top Contact Bar */}
         <TopContactBar />
         
+<<<<<<< HEAD
+        {/* Navigation */}
+        <UltraFuturisticNavigation2036 />
+=======
         {/* Enhanced Navigation */}
         <UltraFuturisticNavigation2037 
           onMenuToggle={() => setSidebarOpen(!sidebarOpen)}
           aria-expanded={sidebarOpen}
         />
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-dadf
         
         {/* Sidebar and Main Content */}
         <div className="flex">
