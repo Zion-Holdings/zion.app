@@ -241,6 +241,16 @@ const Homepage2025: React.FC = () => {
                     <span className="text-lg">2025 Showcase</span>
                   </motion.button>
                 </Link>
+                <Link href="/2037-innovative-services-showcase">
+                  <button className="px-8 py-4 border-2 border-cyan-400 text-cyan-400 font-semibold rounded-lg hover:bg-cyan-400 hover:text-black transition-all duration-300 transform hover:scale-105">
+                    2037 Innovation Showcase
+                  </button>
+                </Link>
+                <Link href="/2037-innovative-pricing-showcase">
+                  <button className="px-8 py-4 border-2 border-green-400 text-green-400 font-semibold rounded-lg hover:bg-green-400 hover:text-black transition-all duration-300 transform hover:scale-105">
+                    2037 Pricing Showcase
+                  </button>
+                </Link>
               </div>
               
               {/* Trust Indicators */}
