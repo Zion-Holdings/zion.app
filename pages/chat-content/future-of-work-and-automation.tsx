@@ -1,1 +1,2 @@
-export default function ChatFutureOfWork() { return <div className="p-6">Future of Work and Automation</div>; }
+import React from 'react';
+export default function Page() { return <div className="min-h-screen p-8">Future of Work and Automation (WIP)</div>; }

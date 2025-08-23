@@ -1,1 +1,2 @@
-export default function ChatAiPoweredBusiness() { return <div className="p-6">AI Powered Business Solutions</div>; }
+import React from 'react';
+export default function Page() { return <div className="min-h-screen p-8">AI Powered Business Solutions Discussion (WIP)</div>; }
