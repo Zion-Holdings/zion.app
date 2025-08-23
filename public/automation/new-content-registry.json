@@ -1,12 +1,33 @@
 {
-  "generatedAt": "2025-08-14T09:36:06.211Z",
+  "generatedAt": "2025-08-14T09:37:09.260Z",
   "items": [
     {
-      "title": "Checklist: LLM Apps",
-      "subtitle": "Patterns to increase accuracy.",
-      "path": "/reports/innovations/insight-2025-08-14-0936",
-      "createdAt": "2025-08-14T09:36:17.434Z",
-      "kind": "insight"
+      "title": "Innovation Insight — 2025-08-14 09-37",
+      "href": "/reports/innovations/insight-2025-08-14T09-37",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-14T09:37:08.595Z",
+      "source": "cloud-content-factory"
+    },
+    {
+      "title": "Autonomous Update — 2025-08-14 09-37",
+      "href": "/reports/updates/update-2025-08-14T09-37",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-14T09:37:08.595Z",
+      "source": "cloud-content-factory"
+    },
+    {
+      "title": "Innovation Insight — 2025-08-14 09-37",
+      "href": "/reports/innovations/insight-2025-08-14T09-37",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-14T09:37:08.595Z",
+      "source": "cloud-content-factory"
+    },
+    {
+      "title": "Autonomous Update — 2025-08-14 09-37",
+      "href": "/reports/updates/update-2025-08-14T09-37",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-14T09:37:08.595Z",
+      "source": "cloud-content-factory"
     }
   ]
 }
