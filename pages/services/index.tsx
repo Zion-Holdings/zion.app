@@ -54,11 +54,9 @@ import { real2026Q4ExpansionsV3 } from '../../data/real-2026-q4-expansions-v3';
 import { real2036MicroSaasAdditions } from '../../data/real-2036-micro-saas-additions';
 import { real2036ITServicesAdditions } from '../../data/real-2036-it-services-additions';
 import { real2036AIServicesAdditions } from '../../data/real-2036-ai-services-additions';
-import { innovative2025MicroSaasBatch } from '../../data/innovative-2025-micro-saas-batch';
-import { innovative2025ITEnterpriseBatch } from '../../data/innovative-2025-it-enterprise-batch';
-import { innovative2025MicroSaasExpansions } from '../../data/innovative-2025-micro-saas-expansions';
-import { innovative2025ITServicesExpansions } from '../../data/innovative-2025-it-services-expansions';
-import { innovative2025AIServicesExpansions } from '../../data/innovative-2025-ai-services-expansions';
+import { innovativeMicroSaasServices } from '../../data/innovative-2025-micro-saas-expansions';
+import { innovativeITServices } from '../../data/innovative-2025-it-services-expansions';
+import { innovativeAIServices } from '../../data/innovative-2025-ai-services-expansions';
 // Import our new 2025 advanced services
 import { advanced2025MicroSaasExpansion } from '../../data/2025-advanced-micro-saas-expansion';
 import { advanced2025ITSolutionsExpansion } from '../../data/2025-advanced-it-solutions-expansion';
@@ -123,9 +121,9 @@ export default function ServicesIndexPage() {
       real2027Q2Additions as unknown[],
       real2027Q3Additions as unknown[],
       real2028ServiceExpansions as unknown[],
-      innovative2025MicroSaasExpansions as unknown[],
-      innovative2025ITServicesExpansions as unknown[],
-      innovative2025AIServicesExpansions as unknown[],
+      innovativeMicroSaasServices as unknown[],
+      innovativeITServices as unknown[],
+      innovativeAIServices as unknown[],
       real2029Q1Additions as unknown[],
       real2029Q2Additions as unknown[],
       real2029Q3Additions as unknown[],
@@ -147,11 +145,9 @@ export default function ServicesIndexPage() {
       real2036ITServicesAdditions as unknown[],
       real2036AIServicesAdditions as unknown[]
     )
-    .concat(innovative2025MicroSaasBatch as unknown[])
-    .concat(innovative2025ITEnterpriseBatch as unknown[])
-    .concat(innovative2025MicroSaasExpansions as unknown[])
-    .concat(innovative2025ITServicesExpansions as unknown[])
-    .concat(innovative2025AIServicesExpansions as unknown[])
+    .concat(innovativeMicroSaasServices as unknown[])
+    .concat(innovativeITServices as unknown[])
+    .concat(innovativeAIServices as unknown[])
     // Our new 2025 advanced services
     .concat(advanced2025MicroSaasExpansion as unknown[])
     .concat(advanced2025ITSolutionsExpansion as unknown[])

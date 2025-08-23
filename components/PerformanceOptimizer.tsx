@@ -1,5 +1,5 @@
-import React, { useState, useEffect, useCallback } from 'react';
-import { motion } from 'framer-motion';
+import React, { useEffect, useRef, useState, useCallback } from 'react';
+import { motion, useInView } from 'framer-motion';
 import { 
   Activity, 
   Zap, 
@@ -38,7 +38,7 @@ const PerformanceOptimizer: React.FC<PerformanceOptimizerProps> = ({
       
       const newMetrics: PerformanceMetrics = {
         loadTime: navigation.loadEventEnd - navigation.loadEventStart,
-        firstContentfulPaint: paint.find(entry => entry.name === 'first-contentful-paint')?.startTime || 0,
+        firstContentfulPaint: paint.find((entry) => entry.name === 'first-contentful-paint')?.startTime || 0,
         largestContentfulPaint: 0, // Will be measured separately
         cumulativeLayoutShift: 0, // Will be measured separately
         firstInputDelay: 0, // Will be measured separately
@@ -96,21 +96,23 @@ const PerformanceOptimizer: React.FC<PerformanceOptimizerProps> = ({
       document.head.appendChild(link);
     });
 
-    // Lazy load non-critical images
-    if (typeof window !== 'undefined' && window.IntersectionObserver) {
-      const images = document.querySelectorAll('img[data-src]');
-      images.forEach(img => {
-        const observer = new window.IntersectionObserver((entries) => {
-          entries.forEach(entry => {
-            if (entry.isIntersecting) {
-              const imgElement = entry.target as any;
-              imgElement.src = imgElement.dataset.src || '';
-              imgElement.classList.remove('loading-skeleton');
-              observer.unobserve(imgElement);
+    // Lazy load images
+    if ('IntersectionObserver' in window) {
+      const imageObserver = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const img = entry.target as HTMLImageElement;
+            if (img.dataset.src) {
+              img.src = img.dataset.src;
+              img.classList.remove('lazy');
+              imageObserver.unobserve(img);
             }
-          });
+          }
         });
-        observer.observe(img);
+      });
+
+      document.querySelectorAll('img[data-src]').forEach((img) => {
+        imageObserver.observe(img);
       });
     }
 
@@ -119,12 +121,28 @@ const PerformanceOptimizer: React.FC<PerformanceOptimizerProps> = ({
 
   // Monitor performance metrics
   useEffect(() => {
-    if (typeof window !== 'undefined') {
-      // Initial measurement
-      measurePerformance();
-      
-      // Monitor for performance changes
-      const observer = new PerformanceObserver((list) => {
+    if (typeof window !== 'undefined' && 'PerformanceObserver' in window) {
+      // First Contentful Paint (FCP)
+      const fcpObserver = new PerformanceObserver((list) => {
+        for (const entry of list.getEntries()) {
+          if (entry.entryType === 'first-contentful-paint') {
+            setMetrics(prev => prev ? {
+              ...prev,
+              firstContentfulPaint: entry.startTime
+            } : null);
+          }
+        }
+      });
+
+      try {
+        fcpObserver.observe({ entryTypes: ['first-contentful-paint'] });
+      } catch (e) {
+        // Fallback for older browsers
+        // PerformanceObserver not supported
+      }
+
+      // Largest Contentful Paint (LCP)
+      const lcpObserver = new PerformanceObserver((list) => {
         for (const entry of list.getEntries()) {
           if (entry.entryType === 'largest-contentful-paint') {
             setMetrics(prev => prev ? {
@@ -134,26 +152,24 @@ const PerformanceOptimizer: React.FC<PerformanceOptimizerProps> = ({
           }
         }
       });
-      
+
       try {
-        observer.observe({ entryTypes: ['largest-contentful-paint'] });
+        lcpObserver.observe({ entryTypes: ['largest-contentful-paint'] });
       } catch (e) {
         // Fallback for older browsers
-        console.log('PerformanceObserver not supported');
+        // LCP PerformanceObserver not supported
       }
-      
-      // Measure performance on route changes
-      const handleRouteChange = () => {
-        setTimeout(measurePerformance, 100);
-      };
-      
-      window.addEventListener('popstate', handleRouteChange);
-      
+
       return () => {
-        observer.disconnect();
-        window.removeEventListener('popstate', handleRouteChange);
+        fcpObserver.disconnect();
+        lcpObserver.disconnect();
       };
     }
+  }, []);
+
+  // Initial performance measurement
+  useEffect(() => {
+    measurePerformance();
   }, [measurePerformance]);
 
   // Performance score calculation
