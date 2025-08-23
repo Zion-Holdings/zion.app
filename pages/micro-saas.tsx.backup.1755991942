@@ -313,6 +313,13 @@ export default function MicroSaasPage() {
       icon: '👥',
       color: 'from-purple-500 to-pink-600',
       textColor: 'text-purple-400',
+<<<<<<< HEAD
+      link: 'https://hr.zion.app',
+      marketPosition: 'Competitive with BambooHR ($6.19-8.75), Gusto ($40-80), and Zenefits ($8-27)',
+      targetAudience: 'HR professionals, small businesses, and growing companies',
+      marketSize: '$15.8B HR software market',
+      growthRate: '14.8% CAGR expected through 2030'
+=======
       link: 'https://ziontechgroup.com/ai-content-calendar',
       marketPosition: 'Competitive with CoSchedule ($29-99), Buffer ($15-99), and Hootsuite ($29-599)',
       targetAudience: 'Content marketers, social media managers, and marketing teams'
@@ -1085,6 +1092,7 @@ export default function MicroSaasPage() {
       link: 'https://ziontechgroup.com/ai-clv-optimization',
       marketPosition: 'Competitive with Optimove ($0-1000+), Retention Science ($0-1000+), and Custora ($0-1000+)',
       targetAudience: 'Customer success managers, marketing teams, and business analysts'
+>>>>>>> origin/cursor/enhance-app-with-micro-saas-and-marketing-c79b
     }
   ];
 
@@ -1219,6 +1227,10 @@ export default function MicroSaasPage() {
                 Our Micro SaaS Portfolio
               </h2>
               <p className="text-xl text-gray-400 max-w-4xl mx-auto">
+<<<<<<< HEAD
+                Each solution is designed to solve a specific business problem with deep functionality and competitive pricing.
+              </p>
+=======
                 Our portfolio of 45+ specialized solutions covers the most critical business needs, from content creation 
                 and video generation to API management and data protection. Each solution is designed to solve a specific 
                 business problem with deep functionality and competitive pricing.
@@ -1336,6 +1348,7 @@ export default function MicroSaasPage() {
                   </div>
                 </div>
               </div>
+>>>>>>> origin/cursor/enhance-app-with-micro-saas-and-marketing-c79b
             </div>
 
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
@@ -1416,6 +1429,10 @@ export default function MicroSaasPage() {
           </div>
         </section>
 
+<<<<<<< HEAD
+        {/* Industry Trends */}
+        <section className="py-24 bg-gray-900">
+=======
         {/* Market Analysis & Competitive Intelligence */}
         <section className="py-24 bg-gradient-to-br from-gray-900 via-black to-gray-900">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -1541,6 +1558,7 @@ export default function MicroSaasPage() {
 
         {/* Services on ZionTechGroup.com Section */}
         <section className="py-20 bg-gradient-to-br from-gray-800 via-gray-900 to-gray-800">
+>>>>>>> origin/cursor/enhance-app-with-micro-saas-and-marketing-c79b
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-20">
               <h2 className="text-3xl sm:text-4xl font-bold text-white mb-8">
