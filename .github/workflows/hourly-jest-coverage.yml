@@ -1,0 +1,76 @@
+name: Hourly Jest Coverage Check
+
+on:
+  schedule:
+    - cron: '0 * * * *' # Runs at the start of every hour
+
+jobs:
+  test_and_report_coverage:
+    runs-on: ubuntu-latest
+    # Steps will be added in subsequent plan items
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18.x'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run Jest tests with coverage
+        id: run_tests # Give an id to this step
+        run: |
+          # Ensure the target directory exists
+          mkdir -p logs/coverage/hourly
+          # Assuming jest is configured to output coverage-summary.json to logs/coverage/hourly/
+          # If not, you might need to adjust Jest config or add a `cp` command here.
+          # Example Jest command that specifies output directory for coverage reporter:
+          npm test -- --coverage --coverageReporters="json-summary" --coverageReporters="lcov" --coverageDirectory="logs/coverage/hourly"
+
+      - name: Check coverage threshold
+        id: check_coverage
+        run: node scripts/check-coverage-threshold.js
+        # This step is configured to fail (exit code 2) if coverage < 85%
+        # We use `continue-on-error: true` so the workflow proceeds to the next step
+        # to create the issue, instead of stopping the whole job.
+
+      - name: Create GitHub Issue if coverage is low
+        if: steps.check_coverage.outcome == 'failure' # Only run if the check_coverage step failed
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }} # Use the default GITHUB_TOKEN
+        run: |
+          # Extract current coverage percentage from the log of the check_coverage step
+          # This is a bit fragile; a more robust way would be to use outputs from the script.
+          # For now, we'll attempt to grep it from the script's output.
+          # The script `check-coverage-threshold.js` logs "Current lines coverage: XX.XX%"
+          COVERAGE_PERCENTAGE_LINE=$(grep 'Current lines coverage:' ${{ runner.temp }}/_github_workflow_step_log_${{ github.run_id }}_${{ github.run_attempt }}_check_coverage.log || echo "Current lines coverage: N/A")
+          COVERAGE_PERCENTAGE=$(echo "$COVERAGE_PERCENTAGE_LINE" | sed -n 's/Current lines coverage: \([0-9.]*\)%//p')
+
+          ISSUE_TITLE="Low Test Coverage Detected: ${COVERAGE_PERCENTAGE:-N/A}%"
+          ISSUE_BODY="Hourly Jest test run detected code coverage of ${COVERAGE_PERCENTAGE:-N/A}%, which is below the 85% threshold.           Please investigate and add more tests to improve coverage.           You can find the latest hourly coverage report in the 'logs/coverage/hourly/' directory (if artifacts are uploaded) or by inspecting the workflow run artifacts.           Workflow run: https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}"
+
+          gh issue create --title "$ISSUE_TITLE" --body "$ISSUE_BODY" --label "bug,test-coverage"
+          echo "GitHub Issue created due to low coverage."
+
+      - name: Verify coverage output directory and summary file
+        run: |
+          echo "Verifying existence of coverage summary file for potential artifact upload..."
+          ls -R logs/coverage/hourly
+          if [ -f "logs/coverage/hourly/coverage-summary.json" ]; then
+            echo "coverage-summary.json found."
+          else
+            echo "coverage-summary.json NOT FOUND at logs/coverage/hourly/coverage-summary.json"
+            echo "Please check Jest configuration to ensure it's outputting the summary there."
+            echo "If it's in the default 'coverage/' directory, the 'Run Jest tests with coverage' or 'Check coverage threshold' step needs to copy it."
+          fi
+
+      - name: Upload hourly coverage report as artifact
+        if: always() # Always run this, even if previous steps failed, to help debugging
+        uses: actions/upload-artifact@v3
+        with:
+          name: hourly-coverage-report
+          path: logs/coverage/hourly/
+          retention-days: 7 # Keep artifacts for 7 days

@@ -1,0 +1,800 @@
+<<<<<<< HEAD
+import React, { useState } from 'react';
+import { motion } from 'framer-motion';
+import { 
+  Play, Calendar, Clock, Users, Video, 
+  BookOpen, ArrowRight, ExternalLink, Download,
+  Star, TrendingUp, Brain, Shield, Rocket
+} from 'lucide-react';
+import Layout from '../components/layout/Layout';
+import Button from '../components/ui/Button';
+
+const Webinars: React.FC = () => {
+  const [activeTab, setActiveTab] = useState<'upcoming' | 'on-demand'>('upcoming');
+
+  const upcomingWebinars = [
+    {
+      title: 'AI in Healthcare: Revolutionizing Patient Care',
+      description: 'Discover how AI is transforming healthcare delivery, from diagnosis to treatment planning.',
+      date: 'February 15, 2025',
+      time: '2:00 PM EST',
+      duration: '60 minutes',
+      speakers: ['Dr. Sarah Chen', 'Dr. Michael Rodriguez'],
+      category: 'Healthcare AI',
+      icon: <Brain className="w-6 h-6 text-cyan-400" />,
+      topics: ['Medical AI', 'Patient Care', 'Diagnostic Tools', 'Treatment Planning']
+    },
+    {
+      title: 'Quantum Computing: Business Applications 2025',
+      description: 'Learn about practical quantum computing applications for enterprise businesses.',
+      date: 'February 22, 2025',
+      time: '1:00 PM EST',
+      duration: '90 minutes',
+      speakers: ['Prof. Emily Watson', 'Alex Thompson'],
+      category: 'Quantum Computing',
+      icon: <Rocket className="w-6 h-6 text-purple-400" />,
+      topics: ['Business Applications', 'ROI Analysis', 'Implementation Strategy', 'Case Studies']
+    },
+    {
+      title: 'Cybersecurity Trends: AI-Powered Threat Detection',
+      description: 'Explore the latest cybersecurity threats and AI-powered defense strategies.',
+      date: 'March 1, 2025',
+      time: '3:00 PM EST',
+      duration: '75 minutes',
+      speakers: ['David Kim', 'Lisa Martinez'],
+      category: 'Cybersecurity',
+      icon: <Shield className="w-6 h-6 text-green-400" />,
+      topics: ['Threat Detection', 'AI Security', 'Incident Response', 'Best Practices']
+    }
+  ];
+
+  const onDemandWebinars = [
+    {
+      title: 'Getting Started with AI: A Business Guide',
+      description: 'Essential guide for business leaders looking to implement AI solutions.',
+      duration: '45 minutes',
+      views: '2,847',
+      rating: 4.8,
+      category: 'AI Fundamentals',
+      icon: <Brain className="w-6 h-6 text-cyan-400" />,
+      topics: ['AI Strategy', 'Business Case', 'Implementation', 'ROI']
+    },
+    {
+      title: 'Cloud Migration: Best Practices for 2025',
+      description: 'Comprehensive guide to migrating your infrastructure to the cloud.',
+      duration: '60 minutes',
+      views: '1,923',
+      rating: 4.9,
+      category: 'Cloud Computing',
+      icon: <Rocket className="w-6 h-6 text-blue-400" />,
+      topics: ['Migration Strategy', 'Cost Optimization', 'Security', 'Performance']
+    },
+    {
+      title: 'Data Privacy Compliance: GDPR & Beyond',
+      description: 'Navigate the complex world of data privacy regulations and compliance.',
+      duration: '50 minutes',
+      views: '3,156',
+      rating: 4.7,
+      category: 'Compliance',
+      icon: <Shield className="w-6 h-6 text-red-400" />,
+      topics: ['GDPR', 'CCPA', 'Data Governance', 'Privacy by Design']
+    },
+    {
+      title: 'Space Technology: Commercial Applications',
+      description: 'Exploring the business opportunities in commercial space technology.',
+      duration: '55 minutes',
+      views: '1,234',
+      rating: 4.6,
+      category: 'Space Technology',
+      icon: <Rocket className="w-6 h-6 text-purple-400" />,
+      topics: ['Satellite Technology', 'Investment Opportunities', 'Regulatory Landscape', 'Market Analysis']
+    }
+  ];
+
+  return (
+    <Layout>
+      {/* Hero Section */}
+      <section className="relative py-20 bg-gradient-to-br from-gray-900 via-purple-900 to-cyan-900">
+        <div className="max-w-6xl mx-auto px-6 text-center">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+          >
+            <div className="flex items-center justify-center mb-6">
+              <Video className="w-12 h-12 text-cyan-400 mr-3" />
+              <h1 className="text-5xl md:text-6xl font-bold text-white">
+                Webinars
+              </h1>
+            </div>
+            <p className="text-xl md:text-2xl text-gray-300 mb-8 max-w-4xl mx-auto">
+              Join our expert-led webinars to gain insights into the latest 
+              technology trends and business solutions.
+            </p>
+            <p className="text-lg text-gray-400">
+              Live sessions and on-demand content covering AI, quantum computing, 
+              cybersecurity, and emerging technologies.
+            </p>
+=======
+import React from 'react';
+import { motion } from 'framer-motion';
+import { 
+  Video, Calendar, Clock, Users, ArrowRight, 
+  Play, Star, CheckCircle, Download, Share2,
+  Brain, Atom, Rocket, Shield, Globe, Zap, FileText
+} from 'lucide-react';
+import Link from 'next/link';
+
+export default function Webinars() {
+  const upcomingWebinars = [
+    {
+      title: 'The Future of AI Consciousness: Beyond Traditional Machine Learning',
+      description: 'Join us for an in-depth exploration of how AI consciousness is evolving and what it means for the future of technology.',
+      date: '2025-02-15',
+      time: '2:00 PM EST',
+      duration: '90 minutes',
+      speakers: ['Dr. Kleber Vasconcelos', 'AI Research Team'],
+      category: 'AI & Consciousness',
+      image: '🧠',
+      featured: true,
+      registrationUrl: '/webinars/ai-consciousness-future'
+    },
+    {
+      title: 'Quantum Computing in Enterprise: Real-World Applications and ROI',
+      description: 'Discover how quantum computing is transforming business operations and delivering measurable value across industries.',
+      date: '2025-02-22',
+      time: '1:00 PM EST',
+      duration: '75 minutes',
+      speakers: ['Quantum Engineering Team', 'Enterprise Solutions Team'],
+      category: 'Quantum Technology',
+      image: '⚛️',
+      featured: false,
+      registrationUrl: '/webinars/quantum-enterprise-applications'
+    },
+    {
+      title: 'Building Autonomous Business Systems: From Concept to Implementation',
+      description: 'Learn how to design and deploy autonomous systems that can manage your business operations 24/7.',
+      date: '2025-03-01',
+      time: '3:00 PM EST',
+      duration: '60 minutes',
+      speakers: ['Autonomous Systems Team', 'DevOps Team'],
+      category: 'Autonomous Systems',
+      image: '🤖',
+      featured: false,
+      registrationUrl: '/webinars/autonomous-business-systems'
+    }
+  ];
+
+  const pastWebinars = [
+    {
+      title: 'AI Ethics and Governance: Building Responsible AI Systems',
+      description: 'Essential guidelines for developing AI systems that are not only powerful but also ethical and beneficial to humanity.',
+      date: '2025-01-20',
+      duration: '80 minutes',
+      speakers: ['AI Ethics Team', 'Legal Team'],
+      category: 'AI Ethics',
+      image: '⚖️',
+      recordingUrl: '/webinars/ai-ethics-governance',
+      slidesUrl: '/webinars/ai-ethics-governance/slides',
+      transcriptUrl: '/webinars/ai-ethics-governance/transcript'
+    },
+    {
+      title: 'Space Technology and AI: The Next Frontier of Innovation',
+      description: 'Exploring how AI is revolutionizing space exploration, resource mining, and autonomous space systems.',
+      date: '2025-01-15',
+      duration: '90 minutes',
+      speakers: ['Space Technology Team', 'AI Research Team'],
+      category: 'Space Technology',
+      image: '🚀',
+      recordingUrl: '/webinars/space-technology-ai',
+      slidesUrl: '/webinars/space-technology-ai/slides',
+      transcriptUrl: '/webinars/space-technology-ai/transcript'
+    },
+    {
+      title: 'Quantum Cybersecurity: Protecting Against Future Threats',
+      description: 'Understanding quantum-resistant encryption and preparing for the quantum computing era.',
+      date: '2025-01-10',
+      duration: '70 minutes',
+      speakers: ['Quantum Security Team', 'Cybersecurity Team'],
+      category: 'Quantum Security',
+      image: '🔐',
+      recordingUrl: '/webinars/quantum-cybersecurity',
+      slidesUrl: '/webinars/quantum-cybersecurity/slides',
+      transcriptUrl: '/webinars/quantum-cybersecurity/transcript'
+    },
+    {
+      title: 'AI-Powered Financial Risk Management',
+      description: 'How artificial intelligence is revolutionizing financial risk assessment and creating more accurate prediction models.',
+      date: '2025-01-05',
+      duration: '65 minutes',
+      speakers: ['Financial AI Team', 'Risk Management Team'],
+      category: 'Financial AI',
+      image: '💰',
+      recordingUrl: '/webinars/ai-financial-risk',
+      slidesUrl: '/webinars/ai-financial-risk/slides',
+      transcriptUrl: '/webinars/ai-financial-risk/transcript'
+    }
+  ];
+
+  const categories = [
+    { name: 'AI & Consciousness', count: 8, icon: '🧠' },
+    { name: 'Quantum Technology', count: 6, icon: '⚛️' },
+    { name: 'Autonomous Systems', count: 5, icon: '🤖' },
+    { name: 'Space Technology', count: 4, icon: '🚀' },
+    { name: 'AI Ethics', count: 3, icon: '⚖️' },
+    { name: 'Financial AI', count: 4, icon: '💰' },
+    { name: 'Cybersecurity', count: 5, icon: '🔐' },
+    { name: 'Enterprise Solutions', count: 7, icon: '🏢' }
+  ];
+
+  return (
+    <div className="min-h-screen bg-black text-white">
+      {/* Hero Section */}
+      <section className="relative py-20 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto text-center">
+          <motion.h1 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            className="text-5xl md:text-7xl font-bold bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 bg-clip-text text-transparent mb-6"
+          >
+            Educational Webinars
+          </motion.h1>
+          <motion.p 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="text-xl md:text-2xl text-gray-300 max-w-4xl mx-auto mb-12"
+          >
+            Join our expert-led webinars to learn about the latest developments in AI consciousness, 
+            quantum computing, and autonomous systems.
+          </motion.p>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.4 }}
+            className="flex flex-col sm:flex-row gap-4 justify-center"
+          >
+            <Link 
+              href="#upcoming"
+              className="px-8 py-4 bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-semibold rounded-full hover:from-cyan-600 hover:to-blue-700 transition-all duration-300 transform hover:scale-105"
+            >
+              View Upcoming Sessions
+              <ArrowRight className="w-5 h-5 ml-2" />
+            </Link>
+            <Link 
+              href="/contact"
+              className="px-8 py-4 border-2 border-cyan-500 text-cyan-400 font-semibold rounded-full hover:bg-cyan-500 hover:text-black transition-all duration-300"
+            >
+              Request Custom Webinar
+            </Link>
+>>>>>>> origin/cursor/website-audit-content-update-and-deployment-5984
+          </motion.div>
+        </div>
+      </section>
+
+<<<<<<< HEAD
+      {/* Tab Navigation */}
+      <section className="py-8 bg-gray-900 border-b border-gray-700">
+        <div className="max-w-6xl mx-auto px-6">
+          <div className="flex justify-center">
+            <div className="bg-gray-800 rounded-lg p-1">
+              <button
+                onClick={() => setActiveTab('upcoming')}
+                className={`px-6 py-3 rounded-md font-medium transition-all ${
+                  activeTab === 'upcoming'
+                    ? 'bg-cyan-500 text-black'
+                    : 'text-gray-300 hover:text-white'
+                }`}
+              >
+                <Calendar className="w-4 h-4 inline mr-2" />
+                Upcoming Webinars
+              </button>
+              <button
+                onClick={() => setActiveTab('on-demand')}
+                className={`px-6 py-3 rounded-md font-medium transition-all ${
+                  activeTab === 'on-demand'
+                    ? 'bg-cyan-500 text-black'
+                    : 'text-gray-300 hover:text-white'
+                }`}
+              >
+                <Play className="w-4 h-4 inline mr-2" />
+                On-Demand Content
+              </button>
+            </div>
+=======
+      {/* Upcoming Webinars Section */}
+      <section id="upcoming" className="py-20 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto">
+          <motion.h2 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="text-4xl md:text-5xl font-bold text-center mb-16"
+          >
+            Upcoming Webinars
+          </motion.h2>
+          
+          <div className="space-y-8">
+            {upcomingWebinars.map((webinar, index) => (
+              <motion.article
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: index * 0.1 }}
+                viewport={{ once: true }}
+                className={`p-8 rounded-2xl border transition-all duration-300 ${
+                  webinar.featured 
+                    ? 'bg-gradient-to-br from-cyan-500/10 to-purple-600/10 border-cyan-500/30' 
+                    : 'bg-white/5 border-white/10 hover:border-cyan-500/50'
+                }`}
+              >
+                <div className="grid lg:grid-cols-3 gap-8">
+                  <div className="lg:col-span-1">
+                    <div className="text-6xl mb-4 text-center">
+                      {webinar.image}
+                    </div>
+                    <div className="text-center lg:text-left">
+                      {webinar.featured && (
+                        <span className="inline-block px-3 py-1 bg-cyan-500/20 text-cyan-300 text-xs rounded-full border border-cyan-500/30 mb-3">
+                          Featured Event
+                        </span>
+                      )}
+                      <h3 className="text-2xl font-bold mb-2">
+                        {webinar.title}
+                      </h3>
+                      <p className="text-cyan-400 font-medium mb-2">
+                        {webinar.category}
+                      </p>
+                      <div className="flex flex-col gap-2 text-sm text-gray-300">
+                        <div className="flex items-center gap-2">
+                          <Calendar className="w-4 h-4" />
+                          {new Date(webinar.date).toLocaleDateString('en-US', { 
+                            weekday: 'long', 
+                            year: 'numeric', 
+                            month: 'long', 
+                            day: 'numeric' 
+                          })}
+                        </div>
+                        <div className="flex items-center gap-2">
+                          <Clock className="w-4 h-4" />
+                          {webinar.time} • {webinar.duration}
+                        </div>
+                        <div className="flex items-center gap-2">
+                          <Users className="w-4 h-4" />
+                          {webinar.speakers.join(', ')}
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <div className="lg:col-span-2">
+                    <p className="text-gray-300 text-lg mb-6 leading-relaxed">
+                      {webinar.description}
+                    </p>
+                    
+                    <div className="flex flex-col sm:flex-row gap-4">
+                      <Link 
+                        href={webinar.registrationUrl}
+                        className="px-6 py-3 bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-semibold rounded-full hover:from-cyan-600 hover:to-blue-700 transition-all duration-300 text-center flex items-center justify-center gap-2"
+                      >
+                        <Play className="w-5 h-5" />
+                        Register Now
+                      </Link>
+                      <button className="px-6 py-3 border-2 border-cyan-500 text-cyan-400 font-semibold rounded-full hover:bg-cyan-500 hover:text-black transition-all duration-300 flex items-center justify-center gap-2">
+                        <Calendar className="w-5 h-5" />
+                        Add to Calendar
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </motion.article>
+            ))}
+>>>>>>> origin/cursor/website-audit-content-update-and-deployment-5984
+          </div>
+        </div>
+      </section>
+
+<<<<<<< HEAD
+      {/* Upcoming Webinars */}
+      {activeTab === 'upcoming' && (
+        <section className="py-20 bg-gray-900">
+          <div className="max-w-7xl mx-auto px-6">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              className="text-center mb-16"
+            >
+              <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+                Upcoming Live Webinars
+              </h2>
+              <p className="text-xl text-gray-400 max-w-3xl mx-auto">
+                Register for our upcoming live sessions and interact with industry experts 
+                in real-time.
+              </p>
+            </motion.div>
+
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {upcomingWebinars.map((webinar, index) => (
+                <motion.div
+                  key={webinar.title}
+                  initial={{ opacity: 0, y: 30 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.8, delay: index * 0.1 }}
+                  className="bg-gray-800/50 border border-gray-700/50 rounded-2xl p-6 hover:border-cyan-500/50 transition-all duration-300"
+                >
+                  <div className="flex items-center justify-between mb-4">
+                    <div className="flex items-center">
+                      {webinar.icon}
+                      <span className="ml-2 text-sm text-cyan-400 font-medium">{webinar.category}</span>
+                    </div>
+                    <div className="text-right">
+                      <div className="text-xs text-gray-400">{webinar.date}</div>
+                      <div className="text-xs text-gray-400">{webinar.time}</div>
+                    </div>
+                  </div>
+
+                  <h3 className="text-xl font-semibold text-white mb-3">{webinar.title}</h3>
+                  <p className="text-gray-400 mb-4 text-sm leading-relaxed">{webinar.description}</p>
+
+                  <div className="mb-4">
+                    <div className="text-xs text-gray-500 mb-2">Key Topics:</div>
+                    <div className="flex flex-wrap gap-2">
+                      {webinar.topics.map((topic, idx) => (
+                        <span key={idx} className="px-2 py-1 bg-gray-700/50 text-xs text-gray-300 rounded">
+                          {topic}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+
+                  <div className="flex items-center justify-between text-xs text-gray-400 mb-4">
+                    <span className="flex items-center">
+                      <Clock className="w-3 h-3 mr-1" />
+                      {webinar.duration}
+                    </span>
+                    <span className="flex items-center">
+                      <Users className="w-3 h-3 mr-1" />
+                      {webinar.speakers.join(', ')}
+                    </span>
+                  </div>
+
+                  <Button 
+                    href={`/contact?subject=Webinar Registration: ${encodeURIComponent(webinar.title)}`}
+                    variant="quantum" 
+                    size="sm" 
+                    className="w-full"
+                  >
+                    <Calendar className="w-4 h-4 mr-2" />
+                    Register Now
+                  </Button>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* On-Demand Webinars */}
+      {activeTab === 'on-demand' && (
+        <section className="py-20 bg-gray-900">
+          <div className="max-w-7xl mx-auto px-6">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              className="text-center mb-16"
+            >
+              <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+                On-Demand Webinars
+              </h2>
+              <p className="text-xl text-gray-400 max-w-3xl mx-auto">
+                Access our library of recorded webinars anytime, anywhere. 
+                Learn at your own pace with expert insights and practical guidance.
+              </p>
+            </motion.div>
+
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {onDemandWebinars.map((webinar, index) => (
+                <motion.div
+                  key={webinar.title}
+                  initial={{ opacity: 0, y: 30 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.8, delay: index * 0.1 }}
+                  className="bg-gray-800/50 border border-gray-700/50 rounded-2xl p-6 hover:border-cyan-500/50 transition-all duration-300"
+                >
+                  <div className="flex items-center justify-between mb-4">
+                    <div className="flex items-center">
+                      {webinar.icon}
+                      <span className="ml-2 text-sm text-cyan-400 font-medium">{webinar.category}</span>
+                    </div>
+                    <div className="flex items-center text-yellow-400">
+                      <Star className="w-4 h-4 mr-1" />
+                      <span className="text-sm">{webinar.rating}</span>
+                    </div>
+                  </div>
+
+                  <h3 className="text-xl font-semibold text-white mb-3">{webinar.title}</h3>
+                  <p className="text-gray-400 mb-4 text-sm leading-relaxed">{webinar.description}</p>
+
+                  <div className="mb-4">
+                    <div className="text-xs text-gray-500 mb-2">Key Topics:</div>
+                    <div className="flex flex-wrap gap-2">
+                      {webinar.topics.map((topic, idx) => (
+                        <span key={idx} className="px-2 py-1 bg-gray-700/50 text-xs text-gray-300 rounded">
+                          {topic}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+
+                  <div className="flex items-center justify-between text-xs text-gray-400 mb-4">
+                    <span className="flex items-center">
+                      <Clock className="w-3 h-3 mr-1" />
+                      {webinar.duration}
+                    </span>
+                    <span className="flex items-center">
+                      <Users className="w-3 h-3 mr-1" />
+                      {webinar.views} views
+                    </span>
+                  </div>
+
+                  <Button 
+                    href={`/contact?subject=Webinar Access: ${encodeURIComponent(webinar.title)}`}
+                    variant="outline" 
+                    size="sm" 
+                    className="w-full"
+                  >
+                    <Play className="w-4 h-4 mr-2" />
+                    Watch Now
+                  </Button>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* CTA Section */}
+      <section className="py-20 bg-black/50">
+        <div className="max-w-6xl mx-auto px-6 text-center">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+=======
+      {/* Categories Section */}
+      <section className="py-20 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto">
+          <motion.h2 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="text-4xl md:text-5xl font-bold text-center mb-16"
+          >
+            Explore by Category
+          </motion.h2>
+          
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+            {categories.map((category, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: index * 0.1 }}
+                viewport={{ once: true }}
+                className="group cursor-pointer"
+              >
+                <Link href={`/webinars/category/${category.name.toLowerCase().replace(/[^a-z0-9]+/g, '-')}`}>
+                  <div className="p-6 rounded-2xl bg-white/5 border border-white/10 hover:border-cyan-500/50 transition-all duration-300 group-hover:bg-white/10 text-center">
+                    <div className="text-4xl mb-3">
+                      {category.icon}
+                    </div>
+                    <h3 className="font-semibold mb-2 group-hover:text-cyan-400 transition-colors">
+                      {category.name}
+                    </h3>
+                    <p className="text-sm text-gray-400">
+                      {category.count} webinars
+                    </p>
+                  </div>
+                </Link>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Past Webinars Section */}
+      <section className="py-20 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto">
+          <motion.h2 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="text-4xl md:text-5xl font-bold text-center mb-16"
+          >
+            Past Webinars
+          </motion.h2>
+          
+          <div className="grid md:grid-cols-2 gap-8">
+            {pastWebinars.map((webinar, index) => (
+              <motion.article
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: index * 0.1 }}
+                viewport={{ once: true }}
+                className="group cursor-pointer"
+              >
+                <Link href={webinar.recordingUrl}>
+                  <div className="p-6 rounded-2xl bg-white/5 border border-white/10 hover:border-cyan-500/50 transition-all duration-300 group-hover:bg-white/10">
+                    <div className="text-4xl mb-4 text-center">
+                      {webinar.image}
+                    </div>
+                    
+                    <div className="mb-4">
+                      <span className="inline-block px-3 py-1 bg-cyan-500/20 text-cyan-300 text-xs rounded-full border border-cyan-500/30">
+                        {webinar.category}
+                      </span>
+                    </div>
+                    
+                    <h3 className="text-lg font-bold mb-3 group-hover:text-cyan-400 transition-colors">
+                      {webinar.title}
+                    </h3>
+                    
+                    <p className="text-gray-300 text-sm mb-4 leading-relaxed">
+                      {webinar.description}
+                    </p>
+                    
+                    <div className="flex items-center justify-between text-sm text-gray-400 mb-4">
+                      <div className="flex items-center gap-2">
+                        <Calendar className="w-4 h-4" />
+                        {new Date(webinar.date).toLocaleDateString('en-US', { 
+                          month: 'short', 
+                          day: 'numeric', 
+                          year: 'numeric' 
+                        })}
+                      </div>
+                      <div className="flex items-center gap-2">
+                        <Clock className="w-4 h-4" />
+                        {webinar.duration}
+                      </div>
+                    </div>
+                    
+                    <div className="mb-4">
+                      <h4 className="text-sm font-semibold text-cyan-400 mb-2">Speakers</h4>
+                      <p className="text-gray-300 text-sm">
+                        {webinar.speakers.join(', ')}
+                      </p>
+                    </div>
+                    
+                    <div className="flex items-center justify-between">
+                      <div className="flex items-center gap-4 text-gray-400">
+                        <a 
+                          href={webinar.slidesUrl}
+                          className="hover:text-cyan-400 transition-colors"
+                          onClick={(e) => e.stopPropagation()}
+                        >
+                          <Download className="w-4 h-4" />
+                        </a>
+                        <a 
+                          href={webinar.transcriptUrl}
+                          className="hover:text-cyan-400 transition-colors"
+                          onClick={(e) => e.stopPropagation()}
+                        >
+                          <FileText className="w-4 h-4" />
+                        </a>
+                      </div>
+                      <div className="flex items-center gap-2 text-cyan-400">
+                        <span className="text-sm">Watch Recording</span>
+                        <Play className="w-4 h-4" />
+                      </div>
+                    </div>
+                  </div>
+                </Link>
+              </motion.article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className="py-20 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-4xl mx-auto text-center">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+>>>>>>> origin/cursor/website-audit-content-update-and-deployment-5984
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+          >
+<<<<<<< HEAD
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+              Request a Custom Webinar
+            </h2>
+            <p className="text-xl text-gray-400 mb-8 max-w-3xl mx-auto">
+              Need a webinar on a specific topic? Our experts can create 
+              custom content tailored to your organization's needs.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Button href="/contact" variant="quantum" size="lg" className="text-lg px-8 py-4">
+                Request Custom Webinar
+                <ArrowRight className="w-5 h-5 ml-2" />
+              </Button>
+              <Button href="/resources" variant="outline" size="lg" className="text-lg px-8 py-4">
+                View All Resources
+              </Button>
+=======
+            <h2 className="text-4xl md:text-5xl font-bold mb-6">
+              Stay Ahead of the Curve
+            </h2>
+            <p className="text-xl text-gray-300 mb-8">
+              Join our webinars to learn from industry experts and stay updated on the latest 
+              developments in AI consciousness, quantum computing, and autonomous systems.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Link 
+                href="/contact"
+                className="px-8 py-4 bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-semibold rounded-full hover:from-cyan-600 hover:to-blue-700 transition-all duration-300 transform hover:scale-105"
+              >
+                Request Custom Webinar
+                <ArrowRight className="w-5 h-5 ml-2" />
+              </Link>
+              <Link 
+                href="/resources"
+                className="px-8 py-4 border-2 border-cyan-500 text-cyan-400 font-semibold rounded-full hover:bg-cyan-500 hover:text-black transition-all duration-300"
+              >
+                Browse Resources
+              </Link>
+>>>>>>> origin/cursor/website-audit-content-update-and-deployment-5984
+            </div>
+          </motion.div>
+        </div>
+      </section>
+<<<<<<< HEAD
+
+      {/* Contact Information */}
+      <section className="py-16 bg-gray-900">
+        <div className="max-w-4xl mx-auto px-6 text-center">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+          >
+            <h3 className="text-2xl font-bold text-white mb-4">
+              Questions About Our Webinars?
+            </h3>
+            <p className="text-gray-400 mb-6">
+              Contact our team for webinar schedules, custom content, or technical support.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+              <a 
+                href="mailto:kleber@ziontechgroup.com" 
+                className="text-cyan-400 hover:text-cyan-300 transition-colors"
+              >
+                kleber@ziontechgroup.com
+              </a>
+              <span className="text-gray-600">•</span>
+              <a 
+                href="tel:+13024640950" 
+                className="text-cyan-400 hover:text-cyan-300 transition-colors"
+              >
+                +1 (302) 464-0950
+              </a>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+    </Layout>
+  );
+};
+
+export default Webinars;
+=======
+    </div>
+  );
+}
+>>>>>>> origin/cursor/website-audit-content-update-and-deployment-5984

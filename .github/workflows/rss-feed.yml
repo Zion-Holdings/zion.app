@@ -1,0 +1,40 @@
+name: RSS Feed Generator
+
+on:
+  schedule:
+    - cron: '5 * * * *'
+  push:
+    paths:
+      - 'pages/blog/**'
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+jobs:
+  rss:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - name: Install deps
+        run: npm ci --no-audit --no-fund
+      - name: Build RSS
+        env:
+          SITE_URL: ${{ secrets.SITE_URL }}
+        run: node automation/rss-feed-generator.cjs
+      - name: Commit feed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          if [[ -n "$(git status --porcelain)" ]]; then
+            git add -A
+            git commit -m "chore(automation): update RSS feed [skip ci]"
+            git push
+          else
+            echo "No changes to commit"
+          fi
