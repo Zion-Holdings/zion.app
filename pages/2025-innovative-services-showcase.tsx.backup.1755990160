@@ -6,6 +6,14 @@ import {
   Target, Cloud, Cpu, ArrowRight, CheckCircle
 } from 'lucide-react';
 
+<<<<<<< HEAD
+// Import all our innovative services
+import { innovativeAIAutonomousServices2025 } from '../data/2025-innovative-ai-autonomous-services';
+import { innovativeITInfrastructureServices2025 } from '../data/2025-innovative-it-infrastructure-services';
+import { realEnterpriseMicroSaas2025 } from '../data/2025-real-enterprise-micro-saas';
+
+const InnovativeServicesShowcase2025: React.FC = () => {
+=======
 // Import our new 2025 services
 import { advancedAIAutomationServices2025 } from '../data/2025-advanced-ai-automation-services';
 import { innovativeITInfrastructureServices2025 } from '../data/2025-innovative-it-infrastructure-services';
@@ -66,6 +74,7 @@ const allServices = [
 ];
 
 export default function InnovativeServicesShowcase2025() {
+>>>>>>> origin/cursor/expand-services-and-deploy-updates-5c15
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedCategory, setSelectedCategory] = useState('all');
   const [searchTerm, setSearchTerm] = useState('');

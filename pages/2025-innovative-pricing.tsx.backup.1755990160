@@ -7,8 +7,13 @@ import {
 } from 'lucide-react';
 
 // Import our new 2025 services
+<<<<<<< HEAD
+import { advancedAIAutomationServices } from '../data/2026-advanced-ai-automation-services';
+import { innovative2025ITInfrastructureServices } from '../data/2025-innovative-it-infrastructure-services';
+=======
 import { advancedAIAutomationServices2025 } from '../data/2025-advanced-ai-automation-services';
 import { innovativeITInfrastructureServices2025 } from '../data/2025-innovative-it-infrastructure-services';
+>>>>>>> origin/cursor/expand-services-and-deploy-updates-5c15
 import { innovativeMicroSaasSolutions2025 } from '../data/2025-innovative-micro-saas-solutions';
 import { emergingTechnologyServices } from '../data/2025-emerging-technology-services';
 
@@ -56,7 +61,11 @@ const serviceCategories = [
     name: 'IT Infrastructure Services',
     icon: <Building className="w-8 h-8" />,
     color: 'from-blue-500 to-indigo-500',
+<<<<<<< HEAD
+    services: innovative2025ITInfrastructureServices
+=======
     services: innovativeITInfrastructureServices2025
+>>>>>>> origin/cursor/expand-services-and-deploy-updates-5c15
   },
   {
     id: 'micro-saas',
@@ -188,12 +197,26 @@ export default function InnovativePricing2025() {
     let allServices: UnifiedService[] = [];
     
     if (selectedCategory === 'all') {
+<<<<<<< HEAD
+      allServices = [
+        ...advancedAIAutomationServices.map(normalizeService),
+        ...innovative2025ITInfrastructureServices.map(normalizeService),
+        ...innovativeMicroSaasSolutions2025.map(normalizeService),
+        ...emergingTechnologyServices.map(normalizeService)
+      ];
+    } else {
+      const category = serviceCategories.find(cat => cat.id === selectedCategory);
+      if (category) {
+        allServices = category.services.map(normalizeService);
+      }
+=======
               return [
           ...advancedAIAutomationServices2025,
           ...innovativeITInfrastructureServices2025,
           ...innovativeMicroSaasSolutions2025,
           ...emergingTechnologyServices
         ];
+>>>>>>> origin/cursor/expand-services-and-deploy-updates-5c15
     }
     
     return allServices;
