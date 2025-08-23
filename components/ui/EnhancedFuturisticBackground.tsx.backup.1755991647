@@ -2,6 +2,20 @@ import React, { useEffect, useRef } from 'react';
 import { cn } from '../../utils/cn';
 
 interface EnhancedFuturisticBackgroundProps {
+<<<<<<< HEAD
+  variant?: 'quantum-holographic' | 'neural-quantum' | 'cyberpunk' | 'holographic' | 'quantum-holographic-advanced' | 'neural-advanced' | 'cyberpunk-advanced' | 'holographic-advanced';
+  intensity?: 'low' | 'medium' | 'high';
+  children: React.ReactNode;
+  className?: string;
+}
+
+const EnhancedFuturisticBackground: React.FC<EnhancedFuturisticBackgroundProps> = ({
+  variant = 'quantum-holographic',
+  intensity = 'medium',
+  children,
+  className
+}) => {
+=======
   children: React.ReactNode;
   variant?: 'quantum-advanced' | 'holographic-advanced' | 'neural-advanced' | 'cyber-advanced';
   intensity?: 'low' | 'medium' | 'high';
@@ -12,6 +26,7 @@ export default function EnhancedFuturisticBackground({
   variant = 'quantum-advanced',
   intensity = 'medium' 
 }: EnhancedFuturisticBackgroundProps) {
+>>>>>>> origin/cursor/enhance-app-services-and-website-with-futuristic-design-695e
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
 
@@ -24,13 +39,51 @@ export default function EnhancedFuturisticBackground({
     const ctx = canvas.getContext('2d');
     if (!ctx) return;
 
+<<<<<<< HEAD
+    const resizeCanvas = () => {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+    };
+
+    resizeCanvas();
+    window.addEventListener('resize', resizeCanvas);
+
+    // Enhanced particle system
+    const particles: Array<{
+=======
     let animationFrameId: number;
     let particles: Array<{
+>>>>>>> origin/cursor/enhance-app-services-and-website-with-futuristic-design-695e
       x: number;
       y: number;
       vx: number;
       vy: number;
       size: number;
+<<<<<<< HEAD
+      opacity: number;
+      color: string;
+      type: 'quantum' | 'neural' | 'holographic' | 'cyberpunk';
+    }> = [];
+
+    const createParticle = () => {
+      const types = ['quantum', 'neural', 'holographic', 'cyberpunk'] as const;
+      const type = types[Math.floor(Math.random() * types.length)];
+      
+      let color: string;
+      switch (type) {
+        case 'quantum':
+          color = `hsl(${180 + Math.random() * 60}, 70%, 60%)`;
+          break;
+        case 'neural':
+          color = `hsl(${240 + Math.random() * 60}, 70%, 60%)`;
+          break;
+        case 'holographic':
+          color = `hsl(${300 + Math.random() * 60}, 70%, 60%)`;
+          break;
+        case 'cyberpunk':
+          color = `hsl(${0 + Math.random() * 60}, 70%, 60%)`;
+          break;
+=======
       color: string;
       type: 'quantum' | 'holographic' | 'neural' | 'cyber';
     }> = [];
@@ -76,6 +129,7 @@ export default function EnhancedFuturisticBackground({
           return `hsl(${Math.random() * 60 + 0}, 80%, 60%)`; // Red to Orange
         default:
           return `hsl(${Math.random() * 360}, 70%, 60%)`;
+>>>>>>> origin/cursor/enhance-app-services-and-website-with-futuristic-design-695e
       }
 
       return {
@@ -90,6 +144,23 @@ export default function EnhancedFuturisticBackground({
       };
     };
 
+<<<<<<< HEAD
+    // Initialize particles
+    const particleCount = intensity === 'high' ? 200 : intensity === 'medium' ? 120 : 80;
+    for (let i = 0; i < particleCount; i++) {
+      particles.push(createParticle());
+    }
+
+    // Enhanced animation loop
+    const animate = () => {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+      // Update and draw particles
+      particles.forEach((particle, index) => {
+        particle.x += particle.vx;
+        particle.y += particle.vy;
+
+=======
     const animate = () => {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
       
@@ -130,11 +201,83 @@ export default function EnhancedFuturisticBackground({
         if (particle.x <= 0 || particle.x >= canvas.width) particle.vx *= -1;
         if (particle.y <= 0 || particle.y >= canvas.height) particle.vy *= -1;
         
+>>>>>>> origin/cursor/enhance-app-services-and-website-with-futuristic-design-695e
         // Wrap around edges
         if (particle.x < 0) particle.x = canvas.width;
         if (particle.x > canvas.width) particle.x = 0;
         if (particle.y < 0) particle.y = canvas.height;
         if (particle.y > canvas.height) particle.y = 0;
+<<<<<<< HEAD
+
+        // Draw particle
+        ctx.beginPath();
+        ctx.arc(particle.x, particle.y, particle.size, 0, Math.PI * 2);
+        ctx.fillStyle = particle.color;
+        ctx.globalAlpha = particle.opacity;
+        ctx.fill();
+
+        // Draw connections between nearby particles
+        particles.forEach((otherParticle, otherIndex) => {
+          if (index === otherIndex) return;
+          
+          const dx = particle.x - otherParticle.x;
+          const dy = particle.y - otherParticle.y;
+          const distance = Math.sqrt(dx * dx + dy * dy);
+          
+          if (distance < 150) {
+            const opacity = (150 - distance) / 150 * 0.3;
+            ctx.beginPath();
+            ctx.moveTo(particle.x, particle.y);
+            ctx.lineTo(otherParticle.x, otherParticle.y);
+            ctx.strokeStyle = `rgba(139, 92, 246, ${opacity})`;
+            ctx.lineWidth = 1;
+            ctx.stroke();
+          }
+        });
+
+        // Add quantum effects
+        if (particle.type === 'quantum' && Math.random() < 0.01) {
+          ctx.beginPath();
+          ctx.arc(particle.x, particle.y, particle.size * 3, 0, Math.PI * 2);
+          ctx.strokeStyle = particle.color;
+          ctx.globalAlpha = 0.3;
+          ctx.lineWidth = 2;
+          ctx.stroke();
+        }
+
+        // Add neural network effects
+        if (particle.type === 'neural' && Math.random() < 0.005) {
+          ctx.beginPath();
+          ctx.moveTo(particle.x, particle.y);
+          ctx.lineTo(particle.x + (Math.random() - 0.5) * 100, particle.y + (Math.random() - 0.5) * 100);
+          ctx.strokeStyle = particle.color;
+          ctx.globalAlpha = 0.2;
+          ctx.lineWidth = 1;
+          ctx.stroke();
+        }
+      });
+
+      // Draw enhanced background effects
+      if (variant.includes('quantum')) {
+        drawQuantumEffects(ctx, canvas);
+      }
+      
+      if (variant.includes('holographic')) {
+        drawHolographicEffects(ctx, canvas);
+      }
+      
+      if (variant.includes('cyberpunk')) {
+        drawCyberpunkEffects(ctx, canvas);
+      }
+      
+      if (variant.includes('neural')) {
+        drawNeuralEffects(ctx, canvas);
+      }
+
+      animationRef.current = requestAnimationFrame(animate);
+    };
+
+=======
 
         // Draw particle
         ctx.beginPath();
@@ -257,13 +400,20 @@ export default function EnhancedFuturisticBackground({
 
     resizeCanvas();
     createParticles();
+>>>>>>> origin/cursor/enhance-app-services-and-website-with-futuristic-design-695e
     animate();
 
     window.addEventListener('resize', resizeCanvas);
 
     return () => {
       window.removeEventListener('resize', resizeCanvas);
+<<<<<<< HEAD
+      if (animationRef.current) {
+        cancelAnimationFrame(animationRef.current);
+      }
+=======
       cancelAnimationFrame(animationFrameId);
+>>>>>>> origin/cursor/enhance-app-services-and-website-with-futuristic-design-695e
     };
   }, [variant, intensity]);
 
@@ -415,6 +565,39 @@ export default function EnhancedFuturisticBackground({
   };
 
   return (
+<<<<<<< HEAD
+    <div className={cn(getBackgroundClasses(), className)}>
+      {/* Enhanced Canvas Background */}
+      <canvas
+        ref={canvasRef}
+        className="absolute inset-0 w-full h-full pointer-events-none"
+        style={{ zIndex: 0 }}
+      />
+      
+      {/* Enhanced Overlay Effects */}
+      <div className="absolute inset-0 pointer-events-none" style={{ zIndex: 1 }}>
+        {/* Quantum Holographic Overlay */}
+        {variant.includes('quantum') && (
+          <div className="absolute inset-0 bg-gradient-to-br from-transparent via-cyan-500/5 to-blue-500/5 animate-pulse" />
+        )}
+        
+        {/* Neural Network Overlay */}
+        {variant.includes('neural') && (
+          <div className="absolute inset-0 bg-gradient-to-br from-transparent via-indigo-500/5 to-purple-500/5 animate-pulse" />
+        )}
+        
+        {/* Cyberpunk Overlay */}
+        {variant.includes('cyberpunk') && (
+          <div className="absolute inset-0 bg-gradient-to-br from-transparent via-pink-500/5 to-red-500/5 animate-pulse" />
+        )}
+        
+        {/* Holographic Overlay */}
+        {variant.includes('holographic') && (
+          <div className="absolute inset-0 bg-gradient-to-br from-transparent via-purple-500/5 to-pink-500/5 animate-pulse" />
+        )}
+      </div>
+
+=======
     <div ref={containerRef} className="relative min-h-screen overflow-hidden">
       <canvas
         ref={canvasRef}
@@ -428,6 +611,7 @@ export default function EnhancedFuturisticBackground({
         <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-tl from-transparent via-transparent to-black/20" />
       </div>
       
+>>>>>>> origin/cursor/enhance-app-services-and-website-with-futuristic-design-695e
       {/* Content */}
       <div className="relative z-10">
         {children}

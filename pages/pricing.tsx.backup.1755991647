@@ -382,6 +382,29 @@ export default function PricingPage() {
   const yearlyDiscount = 0.2; // 20% discount for yearly billing
 
   return (
+<<<<<<< HEAD
+    <UltraFuturisticBackground variant="quantum" intensity={1.5}>
+      <Head>
+        <title>Pricing - Zion Tech Group | Transparent Pricing for Revolutionary AI & Quantum Services</title>
+        <meta name="description" content="Transparent pricing for 500+ revolutionary micro SaaS services. Choose from Starter ($49/month), Professional ($149/month), or Enterprise ($499/month) plans with generous free trials." />
+        <meta name="keywords" content="pricing, micro SaaS pricing, AI services pricing, quantum computing pricing, enterprise pricing" />
+        <meta name="author" content="Zion Tech Group" />
+        <meta name="robots" content="index, follow" />
+        
+        {/* Open Graph */}
+        <meta property="og:title" content="Pricing - Zion Tech Group | Transparent Pricing for Revolutionary AI & Quantum Services" />
+        <meta property="og:description" content="Transparent pricing for 500+ revolutionary micro SaaS services. Choose from Starter ($49/month), Professional ($149/month), or Enterprise ($499/month) plans." />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://ziontechgroup.com/pricing" />
+        <meta property="og:image" content="https://ziontechgroup.com/og-image.jpg" />
+        
+        {/* Twitter */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Pricing - Zion Tech Group | Transparent Pricing for Revolutionary AI & Quantum Services" />
+        <meta name="twitter:description" content="Transparent pricing for 500+ revolutionary micro SaaS services. Choose from Starter ($49/month), Professional ($149/month), or Enterprise ($499/month) plans." />
+        <meta name="twitter:image" content="https://ziontechgroup.com/og-image.jpg" />
+      </Head>
+=======
     <EnhancedFuturisticBackground variant="quantum-advanced" intensity="medium">
       <div className="min-h-screen">
         <Head>
@@ -395,6 +418,7 @@ export default function PricingPage() {
           <meta property="og:type" content="website" />
           <link rel="canonical" href="https://ziontechgroup.com/pricing" />
         </Head>
+>>>>>>> origin/cursor/enhance-app-services-and-website-with-futuristic-design-695e
 
       {/* Services Pricing */}
       <section className="py-20 bg-gray-50">
