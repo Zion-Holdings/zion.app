@@ -10,60 +10,66 @@ import {
 const UltraFuturisticFooter2045: React.FC = () => {
   const currentYear = new Date().getFullYear();
 
+  const contactInfo = {
+    mobile: '+1 (555) 123-4567',
+    email: 'info@ziontechgroup.com',
+    address: '123 Innovation Drive, Tech Valley, CA 94000'
+  };
+
   const footerSections = [
     {
       title: 'Revolutionary Services 2045',
       links: [
-        { name: 'AI Consciousness Evolution 2045', href: '/ai-consciousness-evolution-2045' },
-        { name: 'Quantum Neural Networks 2045', href: '/quantum-neural-network-platform-2045' },
-        { name: 'AI Autonomous Business Intelligence 2045', href: '/ai-autonomous-business-intelligence-2045' },
-        { name: 'Quantum Cybersecurity 2045', href: '/quantum-cybersecurity-platform-2045' },
-        { name: 'Space Resource Intelligence 2045', href: '/space-resource-intelligence-2045' },
-        { name: 'Autonomous Customer Success 2045', href: '/autonomous-customer-success-2045' }
+        { name: 'AI Consciousness Evolution 2045', href: '/ai-consciousness-evolution-2045', icon: <Brain className="w-5 h-5" /> },
+        { name: 'Quantum Neural Networks 2045', href: '/quantum-neural-network-platform-2045', icon: <Atom className="w-5 h-5" /> },
+        { name: 'AI Autonomous Business Intelligence 2045', href: '/ai-autonomous-business-intelligence-2045', icon: <Target className="w-5 h-5" /> },
+        { name: 'Quantum Cybersecurity 2045', href: '/quantum-cybersecurity-platform-2045', icon: <Shield className="w-5 h-5" /> },
+        { name: 'Space Resource Intelligence 2045', href: '/space-resource-intelligence-2045', icon: <Rocket className="w-5 h-5" /> },
+        { name: 'Autonomous Customer Success 2045', href: '/autonomous-customer-success-2045', icon: <Users className="w-5 h-5" /> }
       ]
     },
     {
       title: 'Technology Solutions',
       links: [
-        { name: 'Quantum Cloud Infrastructure 2045', href: '/quantum-cloud-infrastructure-2045' },
-        { name: 'Autonomous DevOps Platform 2045', href: '/autonomous-devops-platform-2045' },
-        { name: 'Quantum Data Center Management 2045', href: '/quantum-data-center-management-2045' },
-        { name: 'Autonomous Network Management 2045', href: '/autonomous-network-management-2045' },
-        { name: 'Autonomous IT Service Management 2045', href: '/autonomous-it-service-management-2045' },
-        { name: 'Autonomous Security Operations Center 2045', href: '/autonomous-security-operations-center-2045' }
+        { name: 'Quantum Cloud Infrastructure 2045', href: '/quantum-cloud-infrastructure-2045', icon: <Cloud className="w-5 h-5" /> },
+        { name: 'Autonomous DevOps Platform 2045', href: '/autonomous-devops-platform-2045', icon: <Code className="w-5 h-5" /> },
+        { name: 'Quantum Data Center Management 2045', href: '/quantum-data-center-management-2045', icon: <Server className="w-5 h-5" /> },
+        { name: 'Autonomous Network Management 2045', href: '/autonomous-network-management-2045', icon: <Network className="w-5 h-5" /> },
+        { name: 'Autonomous IT Service Management 2045', href: '/autonomous-it-service-management-2045', icon: <Settings className="w-5 h-5" /> },
+        { name: 'Autonomous Security Operations Center 2045', href: '/autonomous-security-operations-center-2045', icon: <Lock className="w-5 h-5" /> }
       ]
     },
     {
       title: 'AI & Consciousness',
       links: [
-        { name: 'AI Consciousness Evolution 2045', href: '/ai-consciousness-evolution-2045' },
-        { name: 'Quantum AI Cognitive 2045', href: '/quantum-ai-cognitive-2045' },
-        { name: 'Autonomous AI Research 2045', href: '/autonomous-ai-research-2045' },
-        { name: 'Emotional AI Intelligence 2045', href: '/emotional-ai-intelligence-2045' },
-        { name: 'Quantum AI Metaverse 2045', href: '/quantum-ai-metaverse-2045' },
-        { name: 'AI Autonomous Business Intelligence 2045', href: '/ai-autonomous-business-intelligence-2045' }
+        { name: 'AI Consciousness Evolution 2045', href: '/ai-consciousness-evolution-2045', icon: <Brain className="w-5 h-5" /> },
+        { name: 'Quantum AI Cognitive 2045', href: '/quantum-ai-cognitive-2045', icon: <Atom className="w-5 h-5" /> },
+        { name: 'Autonomous AI Research 2045', href: '/autonomous-ai-research-2045', icon: <Zap className="w-5 h-5" /> },
+        { name: 'Emotional AI Intelligence 2045', href: '/emotional-ai-intelligence-2045', icon: <Heart className="w-5 h-5" /> },
+        { name: 'Quantum AI Metaverse 2045', href: '/quantum-ai-metaverse-2045', icon: <Globe className="w-5 h-5" /> },
+        { name: 'AI Autonomous Business Intelligence 2045', href: '/ai-autonomous-business-intelligence-2045', icon: <Target className="w-5 h-5" /> }
       ]
     },
     {
       title: 'Company',
       links: [
-        { name: 'About Us', href: '/about' },
-        { name: 'Our Mission', href: '/mission' },
-        { name: 'Leadership Team', href: '/team' },
-        { name: 'Careers', href: '/careers' },
-        { name: 'News & Updates', href: '/news' },
-        { name: 'Press Kit', href: '/press' }
+        { name: 'About Us', href: '/about', icon: <Users className="w-5 h-5" /> },
+        { name: 'Our Mission', href: '/mission', icon: <Target className="w-5 h-5" /> },
+        { name: 'Leadership Team', href: '/team', icon: <Star className="w-5 h-5" /> },
+        { name: 'Careers', href: '/careers', icon: <Zap className="w-5 h-5" /> },
+        { name: 'News & Updates', href: '/news', icon: <Globe className="w-5 h-5" /> },
+        { name: 'Press Kit', href: '/press', icon: <Play className="w-5 h-5" /> }
       ]
     }
   ];
 
   const socialLinks = [
-    { name: 'Facebook', icon: Facebook, href: 'https://facebook.com/ziontechgroup', color: 'from-blue-500 to-blue-600' },
-    { name: 'Twitter', icon: Twitter, href: 'https://twitter.com/ziontechgroup', color: 'from-cyan-400 to-blue-500' },
-    { name: 'LinkedIn', icon: Linkedin, href: 'https://linkedin.com/company/ziontechgroup', color: 'from-blue-600 to-blue-700' },
-    { name: 'Instagram', icon: Instagram, href: 'https://instagram.com/ziontechgroup', color: 'from-purple-500 to-pink-500' },
-    { name: 'YouTube', icon: Youtube, href: 'https://youtube.com/@ziontechgroup', color: 'from-red-500 to-red-600' },
-    { name: 'GitHub', icon: Github, href: 'https://github.com/ziontechgroup', color: 'from-gray-600 to-gray-700' }
+    { name: 'Facebook', icon: <Facebook className="w-5 h-5" />, href: 'https://facebook.com/ziontechgroup', color: 'from-blue-500 to-blue-600' },
+    { name: 'Twitter', icon: <Twitter className="w-5 h-5" />, href: 'https://twitter.com/ziontechgroup', color: 'from-cyan-400 to-blue-500' },
+    { name: 'LinkedIn', icon: <Linkedin className="w-5 h-5" />, href: 'https://linkedin.com/company/ziontechgroup', color: 'from-blue-600 to-blue-700' },
+    { name: 'Instagram', icon: <Instagram className="w-5 h-5" />, href: 'https://instagram.com/ziontechgroup', color: 'from-purple-500 to-pink-500' },
+    { name: 'YouTube', icon: <Youtube className="w-5 h-5" />, href: 'https://youtube.com/@ziontechgroup', color: 'from-red-500 to-red-600' },
+    { name: 'GitHub', icon: <Github className="w-5 h-5" />, href: 'https://github.com/ziontechgroup', color: 'from-gray-600 to-gray-700' }
   ];
 
   const fadeInUp = {
