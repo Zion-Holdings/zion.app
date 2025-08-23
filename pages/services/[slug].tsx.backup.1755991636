@@ -133,11 +133,15 @@ function getAllServices(): Service[] {
 		.concat(realMarketServices as unknown as Service[])
 		.concat(real2029Q2Additions as unknown as Service[])
 		.concat(real2029Q3Additions as unknown as Service[])
+<<<<<<< HEAD
+		.concat(newInnovativeServices2029 as unknown as Service[]);
+=======
 		// Additional sources to cover more service slugs
 		.concat((innovativeMicroSaasServicesV3 as unknown) as Service[])
 		.concat((innovative2026MicroSaasServicesV2 as unknown) as Service[])
 		.concat((ultimateRealMicroSaasServices2025 as unknown) as Service[])
 		.concat((innovativeRealMicroSaasServices2025 as unknown) as Service[]);
+>>>>>>> origin/cursor/website-audit-content-update-and-deployment-d72e
 }
 
 function toSlug(value: string): string {

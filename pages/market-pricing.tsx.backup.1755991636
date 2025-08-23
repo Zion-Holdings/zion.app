@@ -45,6 +45,18 @@ export default function MarketPricingPage() {
 						</div>
 					</div>
 
+<<<<<<< HEAD
+					<div className="mt-10 flex gap-3">
+						<a href="/pricing" className="px-4 py-2 rounded-lg bg-white text-black font-medium">See Pricing</a>
+						<a href="/services" className="px-4 py-2 rounded-lg border border-white/10 text-gray-200">Browse Services</a>
+						<a href="/contact" className="px-4 py-2 rounded-lg border border-white/10 text-gray-200">Contact Sales</a>
+					</div>
+				</div>
+			</section>
+		</>
+	);
+}
+=======
             <div className="bg-black/30 rounded-2xl border border-cyan-500/30 p-6">
               <h2 className="text-2xl font-semibold mb-2">AI Guardrails & Safety</h2>
               <ul className="list-disc list-inside text-slate-300 space-y-1">
@@ -403,3 +415,4 @@ export default function MarketPricingPage() {
     </UltraAdvancedFuturisticBackground>
   );
 }
+>>>>>>> origin/cursor/website-audit-content-update-and-deployment-d72e

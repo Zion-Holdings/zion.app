@@ -141,7 +141,7 @@ const socialLinks = [
   { name: 'Facebook', href: 'https://facebook.com/ziontechgroup', icon: Facebook },
   { name: 'Instagram', href: 'https://instagram.com/ziontechgroup', icon: Instagram },
   { name: 'YouTube', href: 'https://youtube.com/@ziontechgroup', icon: Youtube },
-  { name: 'GitHub', href: 'https://github.com/ziontechgroup', icon: Github },
+  { name: 'GitHub', href: 'https://github.com/Zion-Holdings', icon: Github },
   { name: 'Discord', href: 'https://discord.gg/ziontechgroup', icon: MessageCircle },
   { name: 'Slack', href: 'https://ziontechgroup.slack.com', icon: MessageSquare }
 ];

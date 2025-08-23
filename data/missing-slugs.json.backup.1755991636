@@ -1,5 +1,13 @@
 [
   "ai-autonomous-marketing-platform",
+<<<<<<< HEAD
+  "industry-solutions",
+  "services/ai-knowledge-graph-studio",
+  "services/data-contracts-hub",
+  "services/llm-guarded-api-gateway",
+  "services/serverless-lakehouse-starter"
+]
+=======
   "automated-financial-analytics-platform",
   "entertainment-media-solutions",
   "industry-solutions",
@@ -8,3 +16,4 @@
   "real-estate-technology-solutions",
   "transportation-logistics-solutions"
 ]
+>>>>>>> origin/cursor/website-audit-content-update-and-deployment-d72e
