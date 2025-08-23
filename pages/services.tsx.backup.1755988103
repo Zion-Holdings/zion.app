@@ -101,6 +101,11 @@ import { innovative2025CuttingEdgeServices } from '../data/innovative-2025-cutti
 import { innovative2025EnterpriseSolutions } from '../data/innovative-2025-enterprise-solutions';
 import { innovative2025IndustrySolutions } from '../data/innovative-2025-industry-solutions';
 
+// Import new expanded services
+import { innovativeMicroSaasServicesExpanded } from '../data/innovative-2025-micro-saas-expanded';
+import { innovativeITServicesExpanded } from '../data/innovative-2025-it-services-expanded';
+import { innovativeAIServicesExpanded } from '../data/innovative-2025-ai-services-expanded';
+
 // Import existing service data
 import { realMicroSaasServices } from '../data/real-micro-saas-services';
 import { innovativeAIServices } from '../data/innovative-ai-services';
@@ -124,12 +129,6 @@ const getServicePricing = (service: any) => {
   if (service.pricing?.starter) return service.pricing.starter;
   if (service.pricing?.monthly) return `$${service.pricing.monthly}/month`;
   if (service.price?.monthly) return `$${service.price.monthly}/month`;
-<<<<<<< HEAD
-  if (typeof service.price === 'string') return service.price;
-  if (service.price && typeof service.price === 'object') {
-    if (service.price.monthly) return `$${service.price.monthly}/month`;
-    if (service.price.starter) return service.price.starter;
-=======
   if (service.price && service.period) return `${service.price}${service.period}`;
   if (service.price) return service.price;
   // Handle case where pricing is just a number
@@ -139,7 +138,6 @@ const getServicePricing = (service: any) => {
     // Check if it has yearly field and use that as fallback
     if (service.pricing.yearly) return service.pricing.yearly;
     return 'Contact for pricing';
->>>>>>> origin/cursor/add-and-advertise-new-services-then-build-bdcb
   }
   return 'Contact for pricing';
 };
@@ -190,6 +188,7 @@ const allServices = [
   ...real2036ServiceExpansions,
   ...innovative2036MicroSaasServices,
   ...innovative2036ITServices,
+<<<<<<< HEAD
   ...innovative2037MicroSaasServices,
   ...innovative2037ITServices,
   ...innovative2037AIServices,
@@ -197,6 +196,12 @@ const allServices = [
   ...real2037Q1InnovativeAdditions,
   ...real2037Q1ITInnovations,
   ...real2037Q1MicroSaasInnovations
+=======
+  // New expanded services
+  ...innovativeMicroSaasServicesExpanded,
+  ...innovativeITServicesExpanded,
+  ...innovativeAIServicesExpanded
+>>>>>>> origin/cursor/add-and-advertise-new-services-then-build-c44e
 ];
 
 const categories = [
