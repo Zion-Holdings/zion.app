@@ -2,110 +2,148 @@ import React, { useState } from 'react';
 import Layout from '../components/layout/Layout';
 import { motion } from 'framer-motion';
 import { 
-  Check, Star, Zap, Brain, Rocket, Shield,
-  ArrowRight, Sparkles, Crown, TrendingUp,
-  Globe, Infinity, Clock, Users, Lock
+  Check, Star, Zap, Brain, Atom, Rocket, Cpu, Shield,
+  ArrowRight, Sparkles, TrendingUp, Globe, Users, Database
 } from 'lucide-react';
 
 const PricingPage: React.FC = () => {
-  const [billingCycle, setBillingCycle] = useState<'monthly' | 'yearly'>('monthly');
+  const [billingCycle, setBillingCycle] = useState<'monthly' | 'annual'>('annual');
+  const [selectedPlan, setSelectedPlan] = useState<string | null>(null);
 
-  const plans = [
+  const pricingPlans = [
     {
-      name: "Starter",
-      description: "Perfect for small businesses and startups",
-      price: billingCycle === 'monthly' ? 99 : 990,
-      originalPrice: billingCycle === 'monthly' ? 149 : 1490,
+      id: 'starter',
+      name: 'Starter',
+      description: 'Perfect for small businesses and startups',
+      price: { monthly: 99, annual: 990 },
       features: [
-        "AI Consciousness Platform - Basic",
-        "Quantum Security - Standard",
-        "5 AI Agents",
-        "10GB Quantum Storage",
-        "Basic Support",
-        "API Access",
-        "Mobile App",
-        "Basic Analytics"
+        'AI Consciousness Basic',
+        'Quantum Computing Access (100 qubits)',
+        '24/7 AI Support',
+        'Basic Space Intelligence',
+        'Standard Security',
+        '5 Team Members',
+        '100GB Storage',
+        'Email Support'
       ],
       icon: Zap,
-      color: "from-blue-500 to-cyan-500",
+      color: 'from-emerald-500 to-teal-500',
       popular: false
     },
     {
-      name: "Professional",
-      description: "Ideal for growing enterprises",
-      price: billingCycle === 'monthly' ? 299 : 2990,
-      originalPrice: billingCycle === 'monthly' ? 399 : 3990,
+      id: 'professional',
+      name: 'Professional',
+      description: 'Ideal for growing enterprises',
+      price: { monthly: 299, annual: 2990 },
       features: [
-        "Everything in Starter",
-        "Advanced AI Consciousness",
-        "Quantum Neural Networks",
-        "25 AI Agents",
-        "100GB Quantum Storage",
-        "Priority Support",
-        "Advanced Analytics",
-        "Custom Integrations",
-        "Team Management",
-        "Advanced Security"
+        'AI Consciousness Advanced',
+        'Quantum Computing Access (500 qubits)',
+        '24/7 AI Support + Human Experts',
+        'Advanced Space Intelligence',
+        'Enhanced Security + SOC2',
+        '25 Team Members',
+        '1TB Storage',
+        'Priority Support',
+        'Custom AI Training',
+        'Advanced Analytics'
       ],
       icon: Brain,
-      color: "from-purple-500 to-pink-500",
+      color: 'from-blue-500 to-cyan-500',
       popular: true
     },
     {
-      name: "Enterprise",
-      description: "For large organizations and corporations",
-      price: billingCycle === 'monthly' ? 799 : 7990,
-      originalPrice: billingCycle === 'monthly' ? 999 : 9990,
+      id: 'enterprise',
+      name: 'Enterprise',
+      description: 'For large organizations and corporations',
+      price: { monthly: 999, annual: 9990 },
       features: [
-        "Everything in Professional",
-        "Full AI Consciousness Suite",
-        "Quantum Computing Platform",
-        "Unlimited AI Agents",
-        "1TB Quantum Storage",
-        "24/7 Dedicated Support",
-        "Custom AI Training",
-        "White-label Solutions",
-        "Advanced Compliance",
-        "Dedicated Success Manager"
+        'AI Consciousness Enterprise',
+        'Quantum Computing Access (1000+ qubits)',
+        '24/7 AI Support + Dedicated Team',
+        'Full Space Intelligence Platform',
+        'Enterprise Security + Zero Trust',
+        'Unlimited Team Members',
+        'Unlimited Storage',
+        'Dedicated Account Manager',
+        'Custom AI Development',
+        'Advanced Analytics + ML',
+        'White-label Solutions',
+        'API Access'
       ],
-      icon: Crown,
-      color: "from-yellow-500 to-orange-500",
+      icon: Rocket,
+      color: 'from-purple-500 to-pink-500',
       popular: false
     }
   ];
 
-  const addons = [
+  const addOns = [
     {
-      name: "Space Resource Intelligence",
-      description: "AI-powered space exploration and resource mapping",
-      price: billingCycle === 'monthly' ? 199 : 1990,
+      name: 'AI Consciousness Training',
+      description: 'Custom AI consciousness training for your specific use case',
+      price: { monthly: 199, annual: 1990 },
+      icon: Brain
+    },
+    {
+      name: 'Quantum Computing Power',
+      description: 'Additional quantum computing resources and processing power',
+      price: { monthly: 299, annual: 2990 },
+      icon: Atom
+    },
+    {
+      name: 'Space Intelligence Module',
+      description: 'Advanced space resource intelligence and exploration tools',
+      price: { monthly: 399, annual: 3990 },
       icon: Rocket
     },
     {
-      name: "Quantum Cybersecurity Suite",
-      description: "Advanced quantum-resistant security solutions",
-      price: billingCycle === 'monthly' ? 299 : 2990,
+      name: 'Enterprise Security Suite',
+      description: 'Comprehensive security including SOC2, penetration testing',
+      price: { monthly: 499, annual: 4990 },
       icon: Shield
-    },
-    {
-      name: "Autonomous DevOps Platform",
-      description: "Fully automated deployment and infrastructure management",
-      price: billingCycle === 'monthly' ? 399 : 3990,
-      icon: TrendingUp
-    },
-    {
-      name: "Custom AI Development",
-      description: "Tailored AI solutions for your specific needs",
-      price: "Custom",
-      icon: Brain
     }
   ];
 
-  const savings = billingCycle === 'yearly' ? 20 : 0;
+  const features = [
+    {
+      icon: Brain,
+      title: "AI Consciousness Evolution",
+      description: "Next-generation AI with emotional intelligence and consciousness",
+      color: "from-purple-500 to-pink-500"
+    },
+    {
+      icon: Atom,
+      title: "Quantum Computing Power",
+      description: "Access to cutting-edge quantum computing resources",
+      color: "from-blue-500 to-cyan-500"
+    },
+    {
+      icon: Rocket,
+      title: "Space Technology",
+      description: "Advanced space exploration and resource intelligence",
+      color: "from-indigo-500 to-purple-500"
+    },
+    {
+      icon: Shield,
+      title: "Enterprise Security",
+      description: "Military-grade security with SOC2 compliance",
+      color: "from-red-500 to-orange-500"
+    }
+  ];
+
+  const handlePlanSelect = (planId: string) => {
+    setSelectedPlan(planId);
+  };
+
+  const getAnnualDiscount = (monthlyPrice: number, annualPrice: number) => {
+    const monthlyTotal = monthlyPrice * 12;
+    const savings = monthlyTotal - annualPrice;
+    const discountPercent = Math.round((savings / monthlyTotal) * 100);
+    return { savings, discountPercent };
+  };
 
   return (
     <Layout>
-      <div className="min-h-screen bg-gradient-to-br from-black via-gray-900 to-purple-900">
+      <div className="min-h-screen bg-gradient-to-br from-black via-gray-900 to-blue-900">
         {/* Hero Section */}
         <section className="relative pt-32 pb-20 px-4">
           <div className="max-w-7xl mx-auto text-center">
@@ -115,120 +153,189 @@ const PricingPage: React.FC = () => {
               transition={{ duration: 0.8 }}
               className="mb-8"
             >
-              <div className="inline-flex items-center px-4 py-2 rounded-full bg-gradient-to-r from-purple-500/20 to-pink-500/20 border border-purple-500/30 text-purple-300 text-sm font-medium mb-6">
+              <div className="inline-flex items-center px-4 py-2 rounded-full bg-gradient-to-r from-blue-500/20 to-cyan-500/20 border border-blue-500/30 text-blue-300 text-sm font-medium mb-6">
                 <Sparkles className="w-4 h-4 mr-2" />
-                Pricing & Plans
+                Transparent Pricing
               </div>
-              <h1 className="text-5xl md:text-7xl font-bold bg-gradient-to-r from-purple-400 via-pink-400 to-cyan-400 bg-clip-text text-transparent mb-6">
-                Choose Your Plan
+              <h1 className="text-5xl md:text-7xl font-bold bg-gradient-to-r from-blue-400 via-cyan-400 to-indigo-400 bg-clip-text text-transparent mb-6">
+                Pricing Plans
               </h1>
               <p className="text-xl md:text-2xl text-gray-300 max-w-4xl mx-auto leading-relaxed">
-                Transform your business with cutting-edge AI, quantum computing, and autonomous systems. 
-                Choose the plan that fits your needs and scale as you grow.
+                Choose the perfect plan for your organization. All plans include our revolutionary AI consciousness, 
+                quantum computing, and space technology solutions with transparent, predictable pricing.
               </p>
-            </motion.div>
-
-            {/* Billing Toggle */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-              className="flex items-center justify-center gap-4 mb-8"
-            >
-              <span className={`text-lg ${billingCycle === 'monthly' ? 'text-white' : 'text-gray-400'}`}>
-                Monthly
-              </span>
-              <button
-                onClick={() => setBillingCycle(billingCycle === 'monthly' ? 'yearly' : 'monthly')}
-                className={`relative w-16 h-8 rounded-full transition-colors duration-300 ${
-                  billingCycle === 'yearly' ? 'bg-purple-500' : 'bg-gray-600'
-                }`}
-              >
-                <div
-                  className={`absolute top-1 w-6 h-6 bg-white rounded-full transition-transform duration-300 ${
-                    billingCycle === 'yearly' ? 'translate-x-8' : 'translate-x-1'
-                  }`}
-                />
-              </button>
-              <span className={`text-lg ${billingCycle === 'yearly' ? 'text-white' : 'text-gray-400'}`}>
-                Yearly
-              </span>
-              {billingCycle === 'yearly' && (
-                <span className="px-3 py-1 bg-green-500/20 text-green-400 text-sm rounded-full border border-green-500/30">
-                  Save {savings}%
-                </span>
-              )}
             </motion.div>
           </div>
         </section>
 
-        {/* Pricing Plans Section */}
+        {/* Billing Toggle */}
+        <section className="py-8 px-4">
+          <div className="max-w-7xl mx-auto">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              className="flex justify-center"
+            >
+              <div className="bg-gray-800/50 backdrop-blur-xl rounded-2xl p-2 border border-gray-700/50">
+                <div className="flex">
+                  <button
+                    onClick={() => setBillingCycle('monthly')}
+                    className={`px-6 py-3 rounded-xl font-semibold transition-all duration-300 ${
+                      billingCycle === 'monthly'
+                        ? 'bg-gradient-to-r from-cyan-500 to-blue-600 text-white shadow-lg'
+                        : 'text-gray-400 hover:text-white'
+                    }`}
+                  >
+                    Monthly
+                  </button>
+                  <button
+                    onClick={() => setBillingCycle('annual')}
+                    className={`px-6 py-3 rounded-xl font-semibold transition-all duration-300 ${
+                      billingCycle === 'annual'
+                        ? 'bg-gradient-to-r from-cyan-500 to-blue-600 text-white shadow-lg'
+                        : 'text-gray-400 hover:text-white'
+                    }`}
+                  >
+                    Annual
+                    <span className="ml-2 text-xs bg-green-500 text-white px-2 py-1 rounded-full">
+                      Save 20%
+                    </span>
+                  </button>
+                </div>
+              </div>
+            </motion.div>
+          </div>
+        </section>
+
+        {/* Pricing Plans */}
         <section className="py-20 px-4">
           <div className="max-w-7xl mx-auto">
-            <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-              {plans.map((plan, index) => (
-                <motion.div
-                  key={plan.name}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.8, delay: index * 0.1 }}
-                  className={`relative bg-gray-800/30 backdrop-blur-xl rounded-3xl p-8 border transition-all duration-300 hover:scale-105 ${
-                    plan.popular 
-                      ? 'border-purple-500/50 shadow-2xl shadow-purple-500/20' 
-                      : 'border-gray-700/50 hover:border-purple-500/50'
-                  }`}
-                >
-                  {plan.popular && (
-                    <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
-                      <div className="px-4 py-2 bg-gradient-to-r from-purple-500 to-pink-500 text-white text-sm font-semibold rounded-full">
-                        Most Popular
-                      </div>
-                    </div>
-                  )}
-
-                  <div className="text-center mb-8">
-                    <div className={`w-16 h-16 bg-gradient-to-r ${plan.color} rounded-2xl flex items-center justify-center mx-auto mb-4`}>
-                      <plan.icon className="w-8 h-8 text-white" />
-                    </div>
-                    <h3 className="text-2xl font-bold text-white mb-2">{plan.name}</h3>
-                    <p className="text-gray-400">{plan.description}</p>
-                  </div>
-
-                  <div className="text-center mb-8">
-                    <div className="flex items-center justify-center gap-2 mb-2">
-                      <span className="text-4xl font-bold text-white">${plan.price}</span>
-                      {billingCycle === 'monthly' ? (
-                        <span className="text-gray-400">/month</span>
-                      ) : (
-                        <span className="text-gray-400">/year</span>
-                      )}
-                    </div>
-                    {plan.originalPrice !== plan.price && (
-                      <div className="flex items-center justify-center gap-2">
-                        <span className="text-lg text-gray-400 line-through">${plan.originalPrice}</span>
-                        <span className="text-green-400 text-sm">
-                          Save ${plan.originalPrice - plan.price}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              {pricingPlans.map((plan, index) => {
+                const { savings, discountPercent } = getAnnualDiscount(plan.price.monthly, plan.price.annual);
+                const currentPrice = billingCycle === 'annual' ? plan.price.annual : plan.price.monthly;
+                
+                return (
+                  <motion.div
+                    key={plan.id}
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.8, delay: index * 0.1 }}
+                    className={`relative bg-gray-800/50 backdrop-blur-xl rounded-3xl p-8 border transition-all duration-300 ${
+                      plan.popular
+                        ? 'border-cyan-500/50 shadow-[0_0_50px_rgba(6,182,212,0.3)] scale-105'
+                        : 'border-gray-700/50 hover:border-cyan-500/30'
+                    }`}
+                  >
+                    {plan.popular && (
+                      <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
+                        <span className="inline-flex items-center px-4 py-2 bg-gradient-to-r from-cyan-500 to-blue-600 text-white text-sm font-semibold rounded-full">
+                          <Star className="w-4 h-4 mr-2" />
+                          Most Popular
                         </span>
                       </div>
                     )}
+
+                    <div className="text-center mb-8">
+                      <div className={`w-20 h-20 mx-auto mb-6 bg-gradient-to-br ${plan.color} rounded-2xl flex items-center justify-center`}>
+                        <plan.icon className="w-10 h-10 text-white" />
+                      </div>
+                      
+                      <h3 className="text-2xl font-bold text-white mb-2">{plan.name}</h3>
+                      <p className="text-gray-400 mb-6">{plan.description}</p>
+                      
+                      <div className="mb-4">
+                        <span className="text-4xl font-bold text-white">${currentPrice}</span>
+                        <span className="text-gray-400 ml-2">
+                          /{billingCycle === 'annual' ? 'year' : 'month'}
+                        </span>
+                      </div>
+                      
+                      {billingCycle === 'annual' && (
+                        <div className="text-green-400 text-sm mb-4">
+                          Save ${savings} ({discountPercent}% off monthly)
+                        </div>
+                      )}
+                    </div>
+
+                    <ul className="space-y-4 mb-8">
+                      {plan.features.map((feature, featureIndex) => (
+                        <li key={featureIndex} className="flex items-start">
+                          <Check className="w-5 h-5 text-cyan-400 mr-3 mt-0.5 flex-shrink-0" />
+                          <span className="text-gray-300">{feature}</span>
+                        </li>
+                      ))}
+                    </ul>
+
+                    <button
+                      onClick={() => handlePlanSelect(plan.id)}
+                      className={`w-full py-4 px-6 rounded-2xl font-semibold transition-all duration-300 ${
+                        plan.popular
+                          ? 'bg-gradient-to-r from-cyan-500 to-blue-600 text-white hover:from-cyan-600 hover:to-blue-700 shadow-lg hover:shadow-cyan-500/25'
+                          : 'border-2 border-cyan-500 text-cyan-400 hover:bg-cyan-500 hover:text-white'
+                      }`}
+                    >
+                      {selectedPlan === plan.id ? 'Selected' : 'Choose Plan'}
+                    </button>
+                  </motion.div>
+                );
+              })}
+            </div>
+          </div>
+        </section>
+
+        {/* Add-ons Section */}
+        <section className="py-20 px-4">
+          <div className="max-w-7xl mx-auto">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+              className="text-center mb-16"
+            >
+              <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+                Add-on Services
+              </h2>
+              <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+                Enhance your plan with additional specialized services and capabilities.
+              </p>
+            </motion.div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+              {addOns.map((addon, index) => (
+                <motion.div
+                  key={addon.name}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: index * 0.1 }}
+                  viewport={{ once: true }}
+                  className="bg-gray-800/50 backdrop-blur-xl rounded-2xl p-6 border border-gray-700/50 hover:border-cyan-500/30 transition-all duration-300"
+                >
+                  <div className="w-16 h-16 mx-auto mb-4 bg-gradient-to-br from-cyan-500/20 to-blue-500/20 rounded-2xl flex items-center justify-center border border-cyan-500/30">
+                    <addon.icon className="w-8 h-8 text-cyan-400" />
                   </div>
-
-                  <ul className="space-y-4 mb-8">
-                    {plan.features.map((feature, featureIndex) => (
-                      <li key={featureIndex} className="flex items-start">
-                        <Check className="w-5 h-5 text-green-400 mr-3 mt-0.5 flex-shrink-0" />
-                        <span className="text-gray-300">{feature}</span>
-                      </li>
-                    ))}
-                  </ul>
-
-                  <button className={`w-full py-4 rounded-xl font-semibold transition-all duration-300 transform hover:scale-105 ${
-                    plan.popular
-                      ? 'bg-gradient-to-r from-purple-500 to-pink-500 text-white hover:from-purple-600 hover:to-pink-600'
-                      : 'bg-gray-700/50 text-white hover:bg-gray-600/50 border border-gray-600/50 hover:border-purple-500/50'
-                  }`}>
-                    Get Started
-                    <ArrowRight className="w-5 h-5 inline ml-2" />
+                  
+                  <h3 className="text-lg font-bold text-white mb-2 text-center">
+                    {addon.name}
+                  </h3>
+                  
+                  <p className="text-gray-300 text-sm mb-4 text-center">
+                    {addon.description}
+                  </p>
+                  
+                  <div className="text-center mb-4">
+                    <span className="text-2xl font-bold text-white">
+                      ${billingCycle === 'annual' ? addon.price.annual : addon.price.monthly}
+                    </span>
+                    <span className="text-gray-400 text-sm ml-2">
+                      /{billingCycle === 'annual' ? 'year' : 'month'}
+                    </span>
+                  </div>
+                  
+                  <button className="w-full py-3 px-4 bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-semibold rounded-xl hover:from-cyan-600 hover:to-blue-700 transition-all duration-300">
+                    Add Service
                   </button>
                 </motion.div>
               ))}
@@ -236,58 +343,39 @@ const PricingPage: React.FC = () => {
           </div>
         </section>
 
-        {/* Add-ons Section */}
-        <section className="py-20 px-4 bg-gray-900/50">
+        {/* Features Section */}
+        <section className="py-20 px-4">
           <div className="max-w-7xl mx-auto">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
               className="text-center mb-16"
             >
               <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-                Additional Services
+                What's Included
               </h2>
               <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-                Enhance your experience with specialized add-ons and custom solutions 
-                tailored to your specific business needs.
+                Every plan includes our core revolutionary technology solutions and features.
               </p>
             </motion.div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              {addons.map((addon, index) => (
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+              {features.map((feature, index) => (
                 <motion.div
-                  key={addon.name}
+                  key={feature.title}
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.8, delay: index * 0.1 }}
-                  className="bg-gray-800/30 backdrop-blur-xl rounded-2xl p-8 border border-gray-700/50 hover:border-purple-500/50 transition-all duration-300"
+                  transition={{ duration: 0.6, delay: index * 0.1 }}
+                  viewport={{ once: true }}
+                  className="text-center"
                 >
-                  <div className="flex items-start justify-between mb-6">
-                    <div className="flex items-center gap-4">
-                      <div className="w-12 h-12 bg-gradient-to-r from-purple-500/20 to-pink-500/20 rounded-xl flex items-center justify-center">
-                        <addon.icon className="w-6 h-6 text-purple-400" />
-                      </div>
-                      <div>
-                        <h3 className="text-xl font-semibold text-white">{addon.name}</h3>
-                        <p className="text-gray-400 text-sm">{addon.description}</p>
-                      </div>
-                    </div>
-                    <div className="text-right">
-                      <div className="text-2xl font-bold text-white">
-                        {typeof addon.price === 'number' ? `$${addon.price}` : addon.price}
-                      </div>
-                      {typeof addon.price === 'number' && (
-                        <div className="text-sm text-gray-400">
-                          {billingCycle === 'monthly' ? '/month' : '/year'}
-                        </div>
-                      )}
-                    </div>
+                  <div className={`w-20 h-20 mx-auto mb-6 bg-gradient-to-br ${feature.color} rounded-2xl flex items-center justify-center`}>
+                    <feature.icon className="w-10 h-10 text-white" />
                   </div>
-                  <button className="w-full py-3 bg-gray-700/50 text-white rounded-xl hover:bg-gray-600/50 border border-gray-600/50 hover:border-purple-500/50 transition-all duration-300">
-                    Add to Plan
-                    <ArrowRight className="w-4 h-4 inline ml-2" />
-                  </button>
+                  <h3 className="text-xl font-bold text-white mb-4">{feature.title}</h3>
+                  <p className="text-gray-300 leading-relaxed">{feature.description}</p>
                 </motion.div>
               ))}
             </div>
@@ -301,6 +389,7 @@ const PricingPage: React.FC = () => {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
               className="text-center mb-16"
             >
               <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
@@ -315,30 +404,31 @@ const PricingPage: React.FC = () => {
               {[
                 {
                   question: "Can I change my plan at any time?",
-                  answer: "Yes, you can upgrade or downgrade your plan at any time. Changes take effect immediately, and we'll prorate any billing adjustments."
+                  answer: "Yes, you can upgrade or downgrade your plan at any time. Changes take effect immediately and are prorated."
                 },
                 {
                   question: "Do you offer custom enterprise solutions?",
-                  answer: "Absolutely! We work with enterprise clients to create custom AI solutions, custom integrations, and specialized deployments tailored to your specific needs."
+                  answer: "Absolutely! We work with enterprise clients to create custom solutions tailored to their specific needs and requirements."
                 },
                 {
-                  question: "What kind of support do you provide?",
-                  answer: "We offer tiered support levels from basic email support to 24/7 dedicated support with dedicated success managers for enterprise clients."
+                  question: "What payment methods do you accept?",
+                  answer: "We accept all major credit cards, bank transfers, and can arrange custom payment terms for enterprise clients."
                 },
                 {
                   question: "Is there a free trial available?",
-                  answer: "Yes, we offer a 14-day free trial for all plans. No credit card required to start your trial."
+                  answer: "Yes, we offer a 14-day free trial for all plans so you can experience our revolutionary technology firsthand."
                 }
               ].map((faq, index) => (
                 <motion.div
                   key={index}
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.8, delay: index * 0.1 }}
-                  className="bg-gray-800/30 backdrop-blur-xl rounded-2xl p-6 border border-gray-700/50"
+                  transition={{ duration: 0.6, delay: index * 0.1 }}
+                  viewport={{ once: true }}
+                  className="bg-gray-800/50 backdrop-blur-xl rounded-2xl p-6 border border-gray-700/50"
                 >
-                  <h3 className="text-lg font-semibold text-white mb-3">{faq.question}</h3>
-                  <p className="text-gray-400">{faq.answer}</p>
+                  <h3 className="text-lg font-bold text-white mb-3">{faq.question}</h3>
+                  <p className="text-gray-300">{faq.answer}</p>
                 </motion.div>
               ))}
             </div>
@@ -352,23 +442,28 @@ const PricingPage: React.FC = () => {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
-              className="bg-gradient-to-r from-purple-900/30 to-pink-900/30 rounded-3xl p-12 border border-purple-500/30"
+              viewport={{ once: true }}
             >
               <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
                 Ready to Get Started?
               </h2>
-              <p className="text-xl text-gray-300 mb-8">
-                Join thousands of businesses already transforming their operations 
-                with our cutting-edge technology solutions.
+              <p className="text-xl text-gray-300 mb-8 leading-relaxed">
+                Join thousands of organizations already using our revolutionary technology solutions.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <button className="px-10 py-5 bg-gradient-to-r from-purple-500 to-pink-500 text-white font-semibold rounded-xl hover:from-purple-600 hover:to-pink-600 transition-all duration-300 transform hover:scale-105">
+                <a
+                  href="/contact"
+                  className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-semibold rounded-2xl hover:from-cyan-600 hover:to-blue-700 transition-all duration-300 shadow-lg hover:shadow-cyan-500/25"
+                >
                   Start Free Trial
-                  <ArrowRight className="w-6 h-6 inline ml-3" />
-                </button>
-                <button className="px-10 py-5 border-2 border-purple-500/50 text-purple-300 font-semibold rounded-xl hover:bg-purple-500/20 transition-all duration-300">
+                  <ArrowRight className="w-5 h-5 ml-2" />
+                </a>
+                <a
+                  href="/contact"
+                  className="inline-flex items-center px-8 py-4 border-2 border-cyan-500 text-cyan-400 font-semibold rounded-2xl hover:bg-cyan-500 hover:text-white transition-all duration-300"
+                >
                   Contact Sales
-                </button>
+                </a>
               </div>
             </motion.div>
           </div>
