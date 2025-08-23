@@ -16,7 +16,8 @@ import {
   ChevronRight,
   Atom,
   Building,
-  Award
+  Award,
+  Play
 } from 'lucide-react';
 
 // Lazy load components for better performance
@@ -324,6 +325,32 @@ const EnhancedHomepage2026: React.FC = () => {
                   </p>
                 </motion.div>
 
+                {/* Call to Action Buttons */}
+                <motion.div 
+                  className="flex flex-col sm:flex-row gap-8 justify-center items-center mb-16"
+                  variants={fadeInUp}
+                >
+                  <button 
+                    className="group px-12 py-6 bg-gradient-to-r from-cyan-500 via-blue-600 to-purple-600 text-white font-bold text-xl rounded-2xl hover:from-cyan-600 hover:via-blue-700 hover:to-purple-700 transition-all duration-300 transform hover:scale-105 hover:shadow-2xl hover:shadow-cyan-500/25 flex items-center gap-3 focus:outline-none focus:ring-4 focus:ring-cyan-500 relative overflow-hidden"
+                    aria-label="Get started with Zion Tech Group services"
+                    onClick={() => window.location.href = '/get-started'}
+                  >
+                    <span className="relative z-10">Get Started</span>
+                    <ArrowRight className="w-6 h-6 group-hover:translate-x-2 transition-transform relative z-10" />
+                    <div className="absolute inset-0 bg-gradient-to-r from-cyan-400 to-blue-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  </button>
+                  
+                  <button 
+                    className="px-12 py-6 border-2 border-cyan-400 text-cyan-400 font-bold text-xl rounded-2xl hover:bg-cyan-400 hover:text-black transition-all duration-300 transform hover:scale-105 flex items-center gap-3 focus:outline-none focus:ring-4 focus:ring-cyan-400/50 group"
+                    aria-label="Learn more about Zion Tech Group"
+                    onClick={() => window.location.href = '/about'}
+                  >
+                    <Play className="w-6 h-6 group-hover:scale-110 transition-transform" />
+                    <span>Learn More</span>
+                  </button>
+                </motion.div>
+
+                {/* Featured Services Grid */}
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                   {featuredServices.map((service, index) => (
                     <motion.div
@@ -423,61 +450,6 @@ const EnhancedHomepage2026: React.FC = () => {
                 </motion.div>
               ))}
             </div>
-          </div>
-        </section>
-
-        {/* New 2025 Services Showcase CTA */}
-        <section className="py-20 px-4 bg-gradient-to-r from-blue-600/20 to-purple-600/20">
-          <div className="max-w-6xl mx-auto text-center">
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8 }}
-            >
-              <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
-                Explore Our 2025 Comprehensive Services
-              </h2>
-              <p className="text-xl text-blue-200 mb-8 max-w-3xl mx-auto">
-                Discover cutting-edge AI solutions, enterprise automation platforms, innovative micro SAAS services, 
-                and next-generation IT infrastructure designed to transform your business
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
-                <a
-                  href="/2025-comprehensive-services-showcase"
-                  className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-8 py-4 rounded-xl font-semibold text-lg hover:from-blue-700 hover:to-purple-700 transition-all duration-300 transform hover:scale-105"
-                >
-                  View All Services
-                </a>
-                <a
-                  href="mailto:kleber@ziontechgroup.com"
-                  className="border-2 border-white text-white px-8 py-4 rounded-xl font-semibold text-lg hover:bg-white hover:text-blue-600 transition-all duration-300"
-                >
-                  Contact Sales
-                </a>
-              </div>
-              <div className="grid grid-cols-1 md:grid-cols-4 gap-6 max-w-4xl mx-auto">
-                {[
-                  { icon: "🏢", title: "Enterprise Solutions", count: "5+ Services" },
-                  { icon: "🧠", title: "AI & Machine Learning", count: "5+ Services" },
-                  { icon: "💼", title: "Micro SAAS", count: "5+ Services" },
-                  { icon: "⚙️", title: "IT Infrastructure", count: "5+ Services" }
-                ].map((category, index) => (
-                  <motion.div
-                    key={category.title}
-                    className="bg-white/10 backdrop-blur-lg rounded-xl p-6 border border-white/20"
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.5, delay: index * 0.1 }}
-                  >
-                    <div className="text-4xl mb-3">{category.icon}</div>
-                    <h3 className="text-lg font-semibold text-white mb-2">{category.title}</h3>
-                    <p className="text-blue-200 text-sm">{category.count}</p>
-                  </motion.div>
-                ))}
-              </div>
-            </motion.div>
           </div>
         </section>
 

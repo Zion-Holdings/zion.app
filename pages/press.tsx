@@ -40,7 +40,7 @@ const Press: React.FC = () => {
     }
   ];
 
-  const mediaContacts = [
+  const mediaResources = [
     {
       name: 'Company Logo',
       description: 'High-resolution Zion Tech Group logo in various formats',
@@ -326,7 +326,6 @@ const Press: React.FC = () => {
                     </a>
                   </div>
                 </motion.div>
->>>>>>> origin/clean-website-enhancement
               ))}
             </div>
           </div>

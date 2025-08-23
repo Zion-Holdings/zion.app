@@ -9,10 +9,43 @@ import {
   Filter, ChevronDown, ExternalLink, Sparkles, Eye, Clock, CheckCircle, TrendingUp, DollarSign, Phone
 } from 'lucide-react';
 
-// Import all service data
-import { innovativeMicroSaasServicesExpanded } from '../data/innovative-2025-micro-saas-expanded';
-import { innovativeITServicesExpanded } from '../data/innovative-2025-it-services-expanded';
-import { innovativeAIServicesExpanded } from '../data/innovative-2025-ai-services-expanded';
+// Import our new service data
+import { advancedAIAutomationServices2025 } from '../data/2025-advanced-ai-automation-services';
+import { innovative2025ITInfrastructureServices } from '../data/2025-innovative-it-infrastructure-services';
+import { innovativeMicroSaasSolutions2025 } from '../data/2025-innovative-micro-saas-solutions';
+import { cuttingEdgeAIServices2025 } from '../data/2025-cutting-edge-ai-services';
+
+// Import existing service data
+import { realMicroSaasServices } from '../data/real-micro-saas-services';
+import { innovativeAIServices } from '../data/innovative-ai-services';
+import { enterpriseITServices } from '../data/enterprise-it-services';
+
+// Unified service interface for showcase display
+interface UnifiedService {
+  id: string;
+  name: string;
+  tagline: string;
+  description: string;
+  category: string;
+  icon?: string;
+  popular?: boolean;
+  link?: string;
+  price?: string | number;
+  pricing?: {
+    starter: string;
+    professional: string;
+    enterprise: string;
+    custom: string;
+  };
+  price_monthly?: number;
+  price_yearly?: number;
+  trialDays?: number;
+  setupTime?: string;
+  features?: string[];
+  benefits?: string[];
+  rating?: number;
+  reviews?: number;
+}
 
 const Comprehensive2025ServicesShowcase: React.FC = () => {
   const [selectedCategory, setSelectedCategory] = useState('all');
@@ -21,10 +54,14 @@ const Comprehensive2025ServicesShowcase: React.FC = () => {
   const [viewMode, setViewMode] = useState('grid');
 
   // Combine all services
-  const allServices = [
-    ...innovativeMicroSaasServicesExpanded,
-    ...innovativeITServicesExpanded,
-    ...innovativeAIServicesExpanded
+  const allServices: UnifiedService[] = [
+    ...advancedAIAutomationServices2025.map(normalizeService),
+    ...innovative2025ITInfrastructureServices.map(normalizeService),
+    ...innovativeMicroSaasSolutions2025.map(normalizeService),
+    ...cuttingEdgeAIServices2025.map(normalizeService),
+    ...realMicroSaasServices.map(normalizeService),
+    ...innovativeAIServices.map(normalizeService),
+    ...enterpriseITServices.map(normalizeService)
   ];
 
   // Categories

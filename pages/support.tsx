@@ -44,7 +44,7 @@ const SupportPage: React.FC = () => {
     }
   ];
 
-  const helpCategories = [
+  const faqs = [
     {
 
       title: "Getting Started",
@@ -118,7 +118,6 @@ const SupportPage: React.FC = () => {
     { metric: "< 4hrs", label: "Average Response Time" },
     { metric: "24/7", label: "Support Availability" },
     { metric: "98%", label: "Customer Satisfaction" }
->>>>>>> origin/clean-website-enhancement
   ];
 
   const contactInfo = {
@@ -222,96 +221,12 @@ const SupportPage: React.FC = () => {
                     {stat.metric}
                   </div>
                   <div className="text-gray-400">{stat.label}</div>
->>>>>>> origin/clean-website-enhancement
                 </motion.div>
               ))}
             </div>
           </div>
         </section>
 
-<<<<<<< HEAD
-        {/* FAQ Section */}
-        <section className="py-20">
-          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-              viewport={{ once: true }}
-              className="text-center mb-16"
-            >
-              <h2 className="text-3xl lg:text-4xl font-bold text-white mb-6">
-                Frequently Asked Questions
-              </h2>
-              <p className="text-xl text-gray-400">
-                Quick answers to common support questions
-              </p>
-            </motion.div>
-            
-            <div className="space-y-6">
-              {faqs.map((faq, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: index * 0.1 }}
-                  viewport={{ once: true }}
-                  className="bg-gradient-to-br from-gray-800/30 to-gray-900/30 p-6 rounded-2xl border border-gray-700/30"
-                >
-                  <h3 className="text-lg font-semibold text-white mb-3">{faq.question}</h3>
-                  <p className="text-gray-300">{faq.answer}</p>
-                </motion.div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* Contact Information */}
-        <section className="py-20 bg-black/50">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-              viewport={{ once: true }}
-              className="text-center mb-16"
-            >
-              <h2 className="text-3xl lg:text-4xl font-bold text-white mb-6">
-                Contact Information
-              </h2>
-              <p className="text-xl text-gray-400 max-w-3xl mx-auto">
-                Multiple ways to reach our support team
-              </p>
-            </motion.div>
-            
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-              <motion.div
-                initial={{ opacity: 0, x: -30 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.8 }}
-                viewport={{ once: true }}
-                className="bg-gradient-to-br from-purple-900/30 to-blue-900/30 p-8 rounded-3xl border border-purple-500/20"
-              >
-                <h3 className="text-2xl font-bold text-white mb-6">General Support</h3>
-                <div className="space-y-4">
-                  <div className="flex items-center space-x-3">
-                    <Phone className="w-5 h-5 text-purple-400" />
-                    <div>
-                      <div className="text-white font-semibold">Phone Support</div>
-                      <a href={`tel:${contactInfo.phone}`} className="text-purple-400 hover:text-purple-300">
-                        {contactInfo.phone}
-                      </a>
-                    </div>
-                  </div>
-                  <div className="flex items-center space-x-3">
-                    <Mail className="w-5 h-5 text-purple-400" />
-                    <div>
-                      <div className="text-white font-semibold">Email Support</div>
-                      <a href={`mailto:${contactInfo.email}`} className="text-purple-400 hover:text-purple-300">
-                        {contactInfo.email}
-                      </a>
-                    </div>
-                  </div>
                   <div className="flex items-center space-x-3">
                     <MapPin className="w-5 h-5 text-purple-400" />
                     <div>
@@ -586,7 +501,6 @@ const SupportPage: React.FC = () => {
                 >
                   Call Now
                 </a>
->>>>>>> origin/clean-website-enhancement
               </div>
             </motion.div>
           </div>
@@ -596,8 +510,4 @@ const SupportPage: React.FC = () => {
   );
 };
 
-<<<<<<< HEAD
-export default Support;
-=======
 export default SupportPage;
->>>>>>> origin/clean-website-enhancement

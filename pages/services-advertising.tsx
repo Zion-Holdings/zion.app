@@ -1101,175 +1101,76 @@ export default function ServicesAdvertisingPage() {
 					</ul>
 				</section>
 
-				<section className="space-y-6">
-					<h2 className="text-2xl font-semibold text-white">API Schema Diff & Registry</h2>
-					<p className="text-slate-300">Versioned OpenAPI registry with CI diffs, docs, and SDK hooks.</p>
+				<section id="api-security-fuzzing-copilot" className="space-y-6">
+					<h3 className="text-2xl font-semibold text-white">API Security Fuzzing Copilot</h3>
+					<p className="text-slate-300">Adaptive fuzzing for REST/GraphQL with CI gates and reproducible repro steps for developers.</p>
 					<ul className="list-disc list-inside text-slate-300 space-y-1">
-						<li>Typical SMB budget: $20–$100/mo</li>
-						<li>Learn more: <a className="text-cyan-400 underline" href="/services/api-schema-diff-registry">/services/api-schema-diff-registry</a></li>
-						<li>References: https://swagger.io/tools/swaggerhub/pricing/, https://stoplight.io/pricing</li>
+						<li>Typical SMB budget: $99–$2,000/mo</li>
+						<li>References: {ext('https://www.stackhawk.com/pricing/')}, {ext('https://brightsec.com/pricing/')}, {ext('https://www.zaproxy.org/')}</li>
 					</ul>
 				</section>
 
-				<section className="space-y-6">
-					<h2 className="text-2xl font-semibold text-white">GitOps Drift Auto‑Remediator</h2>
-					<p className="text-slate-300">Detect infra drift and open PRs with policy‑guided fixes and evidence.</p>
+				<section id="warehouse-governance-catalog" className="space-y-6">
+					<h3 className="text-2xl font-semibold text-white">Warehouse Governance Catalog</h3>
+					<p className="text-slate-300">Ownership, PII tags, lineage, and access workflows that fit modern data teams.</p>
 					<ul className="list-disc list-inside text-slate-300 space-y-1">
-						<li>Typical SMB budget: $49–$199/mo</li>
-						<li>Learn more: <a className="text-cyan-400 underline" href="/services/gitops-drift-auto-remediator">/services/gitops-drift-auto-remediator</a></li>
-						<li>References: https://www.openpolicyagent.org/, https://www.spacelift.io/pricing</li>
+						<li>Typical SMB budget: $99–$1,000+/mo</li>
+						<li>References: {ext('https://www.secoda.co/pricing')}, {ext('https://launch.atlan.com/pricing')}, {ext('https://openmetadata.org/')}</li>
 					</ul>
 				</section>
 
-				<section className="space-y-6">
-					<h2 className="text-2xl font-semibold text-white">Synthetic Journey Monitor</h2>
-					<p className="text-slate-300">Record, replay, and alert on critical flows with screenshots and HARs.</p>
+				<section id="browser-performance-guardrails" className="space-y-6">
+					<h3 className="text-2xl font-semibold text-white">Browser Performance Guardrails</h3>
+					<p className="text-slate-300">Keep Core Web Vitals on budget with PR checks, budgets, and route-level insights.</p>
 					<ul className="list-disc list-inside text-slate-300 space-y-1">
-						<li>Typical SMB budget: $20–$100/mo</li>
-						<li>Learn more: <a className="text-cyan-400 underline" href="/services/synthetic-journey-monitor">/services/synthetic-journey-monitor</a></li>
-						<li>References: https://playwright.dev, https://www.checklyhq.com/pricing/</li>
+						<li>Typical SMB budget: $20–$300/mo</li>
+						<li>References: {ext('https://calibreapp.com/pricing')}, {ext('https://www.speedcurve.com/pricing/')}</li>
 					</ul>
 				</section>
 
-				<section className="space-y-6">
-					<h2 className="text-2xl font-semibold text-white">Postgres Index Advisor Pro</h2>
-					<p className="text-slate-300">Query‑aware index suggestions with safe rollout PRs and rollback.</p>
+				<section id="ml-feature-quality-monitor" className="space-y-6">
+					<h3 className="text-2xl font-semibold text-white">ML Feature Quality Monitor</h3>
+					<p className="text-slate-300">Detect drift, leakage, and anomalies across online/offline features with alerts and dashboards.</p>
 					<ul className="list-disc list-inside text-slate-300 space-y-1">
-						<li>Typical SMB budget: $29–$149/mo</li>
-						<li>Learn more: <a className="text-cyan-400 underline" href="/services/postgres-index-advisor-pro">/services/postgres-index-advisor-pro</a></li>
-						<li>References: https://pganalyze.com/pricing, https://www.postgresql.org/docs/current/auto-explain.html</li>
+						<li>Typical SMB budget: $99–$1,000+/mo</li>
+						<li>References: {ext('https://whylabs.ai/pricing')}, {ext('https://www.evidentlyai.com/')}</li>
 					</ul>
 				</section>
 
-				<section className="space-y-6">
-					<h2 className="text-2xl font-semibold text-white">S3 Lifecycle Optimizer</h2>
-					<p className="text-slate-300">Access‑aware transitions to IA/Glacier and retention guardrails.</p>
+				<section id="edge-personalization-orchestrator" className="space-y-6">
+					<h3 className="text-2xl font-semibold text-white">Edge Personalization Orchestrator</h3>
+					<p className="text-slate-300">Real-time content and pricing at the edge using geo, audiences, and telemetry—no backend changes required.</p>
 					<ul className="list-disc list-inside text-slate-300 space-y-1">
-						<li>Typical SMB budget: $15–$99/mo</li>
-						<li>Learn more: <a className="text-cyan-400 underline" href="/services/s3-lifecycle-optimizer">/services/s3-lifecycle-optimizer</a></li>
-						<li>References: https://aws.amazon.com/s3/pricing/, https://aws.amazon.com/s3/storage-classes/</li>
+						<li>Typical SMB budget: $20–$500/mo + usage</li>
+						<li>References: {ext('https://developers.cloudflare.com/workers/platform/pricing/')}, {ext('https://vercel.com/pricing')}, {ext('https://launchdarkly.com/pricing')}</li>
 					</ul>
 				</section>
 
-				<section className="space-y-6">
-					<h2 className="text-2xl font-semibold text-white">PII Redaction Proxy</h2>
-					<p className="text-slate-300">Lossless masking for logs, prompts, and event streams with audit.</p>
+				<section id="sso-user-lifecycle-orchestrator" className="space-y-6">
+					<h3 className="text-2xl font-semibold text-white">SSO User Lifecycle Orchestrator</h3>
+					<p className="text-slate-300">Automate joiner-mover-leaver flows with SCIM, access review campaigns, and audit-ready logs.</p>
 					<ul className="list-disc list-inside text-slate-300 space-y-1">
-						<li>Typical SMB budget: $29–$149/mo</li>
-						<li>Learn more: <a className="text-cyan-400 underline" href="/services/pii-redaction-proxy">/services/pii-redaction-proxy</a></li>
-						<li>References: https://www.skyflow.com/pricing, https://www.verygoodsecurity.com/pricing</li>
+						<li>Typical SMB budget: $99–$2,000/mo</li>
+						<li>References: {ext('https://www.okta.com/pricing/')}, {ext('https://workos.com/pricing')}</li>
 					</ul>
 				</section>
 
-				<section className="space-y-6">
-					<h2 className="text-2xl font-semibold text-white">API Breaking Change Watcher</h2>
-					<p className="text-slate-300">Continuous OpenAPI/GraphQL diffs with CI gates and changelogs.</p>
+				<section id="warehouse-change-data-capture-kit" className="space-y-6">
+					<h3 className="text-2xl font-semibold text-white">Warehouse Change Data Capture (CDC) Kit</h3>
+					<p className="text-slate-300">Turnkey CDC from operational DBs to your warehouse with schema evolution, ordering, and replay tools.</p>
 					<ul className="list-disc list-inside text-slate-300 space-y-1">
-						<li>Typical SMB budget: $20–$100/mo</li>
-						<li>Learn more: <a className="text-cyan-400 underline" href="/services/api-breaking-change-watcher">/services/api-breaking-change-watcher</a></li>
-						<li>References: https://www.openapis.org/, https://graphql.org/learn/best-practices/</li>
+						<li>Typical SMB budget: $99–$1,500/mo</li>
+						<li>References: {ext('https://www.fivetran.com/pricing')}, {ext('https://airbyte.com/pricing')}, {ext('https://debezium.io/')}</li>
 					</ul>
 				</section>
 
-				<section className="space-y-6">
-					<h2 className="text-2xl font-semibold text-white">API Security Scanner Pro</h2>
-					<p className="text-slate-300">OWASP API Top 10 detection with CI checks and remediation tips.</p>
-					<ul className="list-disc list-inside text-slate-300 space-y-1">
-						<li>Typical SMB budget: $59–$299/mo</li>
-						<li>Learn more: <a className="text-cyan-400 underline" href="/services/api-security-scanner-pro">/services/api-security-scanner-pro</a></li>
-						<li>References: https://owasp.org/www-project-api-security/, https://www.fastly.com/pricing</li>
-					</ul>
+				{/* Contact footer */}
+				<section className="space-y-3">
+					<h3 className="text-xl font-semibold text-white">Talk to an expert</h3>
+					<p className="text-slate-300 text-sm">Call <a className="text-cyan-400 underline" href="tel:+13024640950">+1 302 464 0950</a> · Email <a className="text-cyan-400 underline" href="mailto:kleber@ziontechgroup.com">kleber@ziontechgroup.com</a> · Visit <a className="text-cyan-400 underline" href="https://ziontechgroup.com" target="_blank" rel="noopener noreferrer">ziontechgroup.com</a></p>
+					<p className="text-slate-400 text-xs">Address: 364 E Main St STE 1008 Middletown DE 19709</p>
 				</section>
 
-				<section className="space-y-6">
-					<h2 className="text-2xl font-semibold text-white">DORA Metrics Dashboard</h2>
-					<p className="text-slate-300">Engineering performance analytics: deployment frequency, lead time, MTTR, change failure rate.</p>
-					<ul className="list-disc list-inside text-slate-300 space-y-1">
-						<li>Typical SMB budget: $50–$200/mo</li>
-						<li>References: {ext('https://docs.github.com/en/repositories/viewing-activity-and-data-for-your-repository/understanding-repository-metrics')}, {ext('https://about.gitlab.com/solutions/dora/')}</li>
-					</ul>
-				</section>
-
-				<section className="space-y-6">
-					<h2 className="text-2xl font-semibold text-white">Kubernetes Cost Guardrails</h2>
-					<p className="text-slate-300">Budgets and policies for K8s spend with alerts, right-sizing, and chargebacks.</p>
-					<ul className="list-disc list-inside text-slate-300 space-y-1">
-						<li>Typical SMB budget: $100–$400/mo</li>
-						<li>References: {ext('https://www.kubecost.com/pricing/')}, {ext('https://cloudzero.com/pricing')}</li>
-					</ul>
-				</section>
-
-				<section className="space-y-6">
-					<h2 className="text-2xl font-semibold text-white">Website Performance Budget Enforcer</h2>
-					<p className="text-slate-300">Keep Lighthouse and Core Web Vitals budgets enforced in CI with PR annotations.</p>
-					<ul className="list-disc list-inside text-slate-300 space-y-1">
-						<li>Typical SMB budget: $20–$100/mo</li>
-						<li>References: {ext('https://github.com/GoogleChrome/lighthouse-ci')}, {ext('https://web.dev/vitals/')}</li>
-					</ul>
-				</section>
-
-				<section className="space-y-6">
-					<h2 className="text-2xl font-semibold text-white">Consent & Cookie Manager</h2>
-					<p className="text-slate-300">GDPR/CCPA consent banners, preference centers, and consent logs export.</p>
-					<ul className="list-disc list-inside text-slate-300 space-y-1">
-						<li>Typical SMB budget: $10–$50/mo</li>
-						<li>References: {ext('https://www.cookieyes.com/pricing/')}, {ext('https://www.cookiebot.com/en/pricing/')}</li>
-					</ul>
-				</section>
-
-				<section className="space-y-6">
-					<h2 className="text-2xl font-semibold text-white">OpenTelemetry Quickstart</h2>
-					<p className="text-slate-300">Traces, metrics, and logs with vendor-agnostic collectors and dashboards.</p>
-					<ul className="list-disc list-inside text-slate-300 space-y-1">
-						<li>Typical SMB budget: $50–$300/mo</li>
-						<li>References: {ext('https://opentelemetry.io/')}, {ext('https://grafana.com/pricing/')}, {ext('https://www.honeycomb.io/pricing')}</li>
-					</ul>
-				</section>
-
-				<section className="space-y-6">
-					<h2 className="text-2xl font-semibold text-white">API Usage Billing Meter</h2>
-					<p className="text-slate-300">Per-unit metering with idempotent events and Stripe Billing integration.</p>
-					<ul className="list-disc list-inside text-slate-300 space-y-1">
-						<li>Typical SMB budget: $30–$150/mo</li>
-						<li>References: {ext('https://stripe.com/billing/pricing')}, {ext('https://www.paddle.com/pricing')}</li>
-					</ul>
-				</section>
-
-				<section className="space-y-6">
-					<h2 className="text-2xl font-semibold text-white">Data Quality Monitor</h2>
-					<p className="text-slate-300">Freshness SLAs, anomaly detection, expectations, and lineage-aware root cause.</p>
-					<ul className="list-disc list-inside text-slate-300 space-y-1">
-						<li>Typical SMB budget: $100–$500/mo</li>
-						<li>References: {ext('https://www.getdbt.com/pricing/')}, {ext('https://www.snowflake.com/pricing/')}, {ext('https://www.montecarlodata.com/pricing/')}</li>
-					</ul>
-				</section>
-
-				<section className="space-y-6">
-					<h2 className="text-2xl font-semibold text-white">SaaS Contract Renewal Tracker</h2>
-					<p className="text-slate-300">Centralize contracts, reminders, approvals, and spend summaries.</p>
-					<ul className="list-disc list-inside text-slate-300 space-y-1">
-						<li>Typical SMB budget: $10–$60/mo</li>
-						<li>References: {ext('https://contractbook.com/pricing')}, {ext('https://ironcladapp.com/pricing/')}</li>
-					</ul>
-				</section>
-
-				<section className="space-y-6">
-					<h2 className="text-2xl font-semibold text-white">Incident Communications Hub</h2>
-					<p className="text-slate-300">Stakeholder routing, message templates, timelines, and postmortems.</p>
-					<ul className="list-disc list-inside text-slate-300 space-y-1">
-						<li>Typical SMB budget: $30–$150/mo</li>
-						<li>References: {ext('https://www.incident.io/pricing')}, {ext('https://www.rootly.com/pricing')}</li>
-					</ul>
-				</section>
-
-				<section className="space-y-6">
-					<h2 className="text-2xl font-semibold text-white">Edge Redirect Manager</h2>
-					<p className="text-slate-300">Manage redirects and rewrites safely with bulk import and audit trail.</p>
-					<ul className="list-disc list-inside text-slate-300 space-y-1">
-						<li>Typical SMB budget: $10–$40/mo</li>
-						<li>References: {ext('https://vercel.com/pricing')}, {ext('https://www.cloudflare.com/plans/')}, {ext('https://www.netlify.com/pricing/')}</li>
-					</ul>
-				</section>
 			</div>
 		</div>
 	);

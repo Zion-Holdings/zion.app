@@ -13,6 +13,7 @@ import {
 import { ultimate2025MicroSaasExpansion } from '../data/2025-ultimate-micro-saas-expansion';
 import { ultimate2025ITServicesExpansion } from '../data/2025-ultimate-it-services-expansion';
 import { ultimate2025AIServicesExpansion } from '../data/2025-ultimate-ai-services-expansion';
+import { revolutionary2041AdvancedServices } from '../data/revolutionary-2041-advanced-services';
 
 // Lazy load heavy components for better performance
 const LazyServiceCard = lazy(() => import('./ui/UltraFuturisticServiceCard2026'));
@@ -41,6 +42,9 @@ const Homepage2040: React.FC = () => {
       }
     }
   };
+
+  // Combine all revolutionary services
+  const allRevolutionaryServices = [...revolutionary2041AdvancedServices];
 
   const statsData = [
     {

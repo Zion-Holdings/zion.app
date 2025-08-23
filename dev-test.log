@@ -1,0 +1,157 @@
+
+> project@0.0.0 dev
+> next dev
+
+  ▲ Next.js 14.2.30
+  - Local:        http://localhost:3000
+  - Experiments (use with caution):
+    · instrumentationHook
+
+ ✓ Starting...
+   Disabled SWC as replacement for Babel because of custom Babel configuration "babel.config.js" https://nextjs.org/docs/messages/swc-disabled
+[@sentry/nextjs] DEPRECATION WARNING: It is recommended renaming your `sentry.client.config.js` file, or moving its content to `instrumentation-client.ts`. When using Turbopack `sentry.client.config.js` will no longer work. Read more about the `instrumentation-client.ts` file: https://nextjs.org/docs/app/api-reference/file-conventions/instrumentation-client
+   Using external babel configuration from /Users/miami2/Documents/GitHub/bolt.new.zion.app/babel.config.js
+ ○ Compiling /instrumentation ...
+ ✓ Compiled /instrumentation in 40.1s (3147 modules)
+Sentry DSN is missing or placeholder; skipping Sentry initialization.
+ ✓ Ready in 45.6s
+ ○ Compiling / ...
+ ✓ Compiled / in 96.6s (11785 modules)
+ ✓ Compiled in 5.5s (11785 modules)
+[ENV CONFIG] Supabase configuration check: {
+  url: 'undefined',
+  urlIsPlaceholder: true,
+  keyPresent: false,
+  keyIsPlaceholder: true
+}
+⚠️ Supabase not configured - using mock client for development
+safeStorage.getItem: Attempting to get item "zion_cart". isLocalStorageAvailable: false
+safeStorage.getItem: Using in-memory store for key "zion_cart".
+safeStorage.getItem: Attempting to get item "wishlist". isLocalStorageAvailable: false
+safeStorage.getItem: Using in-memory store for key "wishlist".
+i18next: languageChanged en-US
+i18next: initialized {
+  debug: true,
+  initAsync: true,
+  ns: [ 'translation' ],
+  defaultNS: [ 'translation' ],
+  fallbackLng: [ 'en' ],
+  fallbackNS: false,
+  supportedLngs: false,
+  nonExplicitSupportedLngs: false,
+  load: 'all',
+  preload: false,
+  simplifyPluralSuffix: true,
+  keySeparator: '.',
+  nsSeparator: ':',
+  pluralSeparator: '_',
+  contextSeparator: '_',
+  partialBundledLanguages: false,
+  saveMissing: false,
+  updateMissing: false,
+  saveMissingTo: 'fallback',
+  saveMissingPlurals: true,
+  missingKeyHandler: false,
+  missingInterpolationHandler: false,
+  postProcess: false,
+  postProcessPassResolved: false,
+  returnNull: false,
+  returnEmptyString: true,
+  returnObjects: false,
+  joinArrays: false,
+  returnedObjectHandler: false,
+  parseMissingKeyHandler: false,
+  appendNamespaceToMissingKey: false,
+  appendNamespaceToCIMode: false,
+  overloadTranslationOptionHandler: [Function: overloadTranslationOptionHandler],
+  interpolation: {
+    escapeValue: false,
+    format: [Function: bound format],
+    prefix: '{{',
+    suffix: '}}',
+    formatSeparator: ',',
+    unescapePrefix: '-',
+    nestingPrefix: '$t(',
+    nestingSuffix: ')',
+    nestingOptionsSeparator: ',',
+    maxReplaces: 1000,
+    skipOnVariables: true
+  },
+  cacheInBuiltFormats: true,
+  resources: {
+    en: { translation: [Object] },
+    es: { translation: [Object] },
+    pt: { translation: [Object] },
+    ar: { translation: [Object] }
+  },
+  detection: {
+    order: [ 'navigator' ],
+    caches: [],
+    lookupQuerystring: 'lng',
+    lookupCookie: 'i18next',
+    lookupLocalStorage: 'i18nextLng',
+    lookupSessionStorage: 'i18nextLng',
+    excludeCacheFor: [ 'cimode' ],
+    convertDetectedLanguage: [Function: convertDetectedLanguage]
+  },
+  ignoreJSONStructure: true
+}
+[App] Finished attempting to render component: MyApp
+[App] MyApp component rendering started.
+[App Provider] Initializing RootErrorBoundary...
+[App Provider] Initializing GlobalErrorBoundary...
+[App Provider] Initializing QueryClientProvider...
+[App Provider] Initializing ReduxProvider...
+[App Provider] Initializing HelmetProvider...
+[App Provider] Initializing ErrorProvider...
+[App Provider] Initializing AuthProvider...
+[App Provider] Initializing WhitelabelProvider...
+[App Provider] Initializing I18nextProvider...
+[App Provider] Initializing WalletProvider...
+[App Provider] Initializing CartProvider...
+[App Provider] Initializing AnalyticsProvider...
+[App Provider] Initializing ThemeProvider...
+[App Provider] Initializing BrowserRouter...
+[App Provider] Initializing ErrorBoundary (wrapping Component)...
+[App] Attempting to render component: IndexPage
+[AuthProvider] Initializing...
+[WhitelabelProvider] Initializing...
+[WalletProvider] Initializing...
+WalletContext: Resolved rawProjectId from getAppKitProjectId(): undefined
+WalletContext: Invalid or placeholder project ID detected: "undefined". Wallet system will be unavailable.
+[CartProvider] Initializing...
+[AnalyticsProvider] Initializing...
+safeStorage.getItem: Attempting to get item "theme". isLocalStorageAvailable: false
+safeStorage.getItem: Using in-memory store for key "theme".
+i18next::translator: missingKey en-US translation nav.cart Cart
+i18next::translator: missingKey en-US translation login Login
+i18next::translator: missingKey en-US translation signup Sign up
+i18next::translator: missingKey en-US translation nav.marketplace_overview Overview
+i18next::translator: missingKey en-US translation nav.community_overview Overview
+i18next::translator: missingKey en-US translation nav.blog Blog
+i18next::translator: missingKey en-US translation nav.partners Partners
+i18next::translator: missingKey en-US translation nav.resources Resources
+i18next::translator: missingKey en-US translation nav.docs Docs
+i18next::translator: missingKey en-US translation nav.tutorials Tutorials
+i18next::translator: missingKey en-US translation nav.case_studies Case Studies
+i18next::translator: missingKey en-US translation nav.about About
+Error: useNavigate() may be used only in the context of a <Router> component.
+    at Object.invariant [as UNSAFE_invariant] (/Users/miami2/Documents/GitHub/bolt.new.zion.app/node_modules/@remix-run/router/dist/router.cjs.js:315:11)
+    at useNavigateUnstable (/Users/miami2/Documents/GitHub/bolt.new.zion.app/node_modules/react-router/dist/umd/react-router.development.js:223:36)
+    at useNavigate (/Users/miami2/Documents/GitHub/bolt.new.zion.app/node_modules/react-router/dist/umd/react-router.development.js:220:48)
+    at ProductListingCardComponent (webpack-internal:///./src/components/ProductListingCard.tsx:41:81)
+    at renderWithHooks (/Users/miami2/Documents/GitHub/bolt.new.zion.app/node_modules/react-dom/cjs/react-dom-server.browser.development.js:5658:16)
+    at renderIndeterminateComponent (/Users/miami2/Documents/GitHub/bolt.new.zion.app/node_modules/react-dom/cjs/react-dom-server.browser.development.js:5732:15)
+    at renderElement (/Users/miami2/Documents/GitHub/bolt.new.zion.app/node_modules/react-dom/cjs/react-dom-server.browser.development.js:5957:7)
+    at renderMemo (/Users/miami2/Documents/GitHub/bolt.new.zion.app/node_modules/react-dom/cjs/react-dom-server.browser.development.js:5879:3)
+    at renderElement (/Users/miami2/Documents/GitHub/bolt.new.zion.app/node_modules/react-dom/cjs/react-dom-server.browser.development.js:6022:11)
+    at renderNodeDestructiveImpl (/Users/miami2/Documents/GitHub/bolt.new.zion.app/node_modules/react-dom/cjs/react-dom-server.browser.development.js:6115:11)
+    at renderNodeDestructive (/Users/miami2/Documents/GitHub/bolt.new.zion.app/node_modules/react-dom/cjs/react-dom-server.browser.development.js:6087:14)
+    at renderNode (/Users/miami2/Documents/GitHub/bolt.new.zion.app/node_modules/react-dom/cjs/react-dom-server.browser.development.js:6270:12)
+    at renderChildrenArray (/Users/miami2/Documents/GitHub/bolt.new.zion.app/node_modules/react-dom/cjs/react-dom-server.browser.development.js:6222:7)
+    at renderNodeDestructiveImpl (/Users/miami2/Documents/GitHub/bolt.new.zion.app/node_modules/react-dom/cjs/react-dom-server.browser.development.js:6152:7)
+    at renderNodeDestructive (/Users/miami2/Documents/GitHub/bolt.new.zion.app/node_modules/react-dom/cjs/react-dom-server.browser.development.js:6087:14)
+ GET / 200 in 106559ms
+ ✓ Compiled in 16.6s (11785 modules)
+ ✓ Compiled in 4.9s (11610 modules)
+[?25h

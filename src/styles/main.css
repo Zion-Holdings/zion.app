@@ -1,0 +1,23 @@
+@import '../index.css';
+
+.guest-checkout-modal-input {
+  background-color: #172d67; /* zion-blue-dark */
+  color: #FFFFFF; /* text-white */
+  border: 1px solid #8ab1f3; /* zion-blue-light */
+  padding: 0.5rem 0.75rem; /* Equivalent to Tailwind's px-3 py-2 for h-10 inputs */
+  border-radius: 0.375rem; /* Equivalent to Tailwind's rounded-md */
+  width: 100%; /* Mimics w-full */
+  height: 2.5rem; /* Mimics h-10 */
+  /* The following are base styles from the original Input component that might be needed */
+  /* display: flex; */ /* This is part of the Input's default className */
+  /* ring-offset-background: ; */ /* Handled by Tailwind focus-visible typically */
+  /* file:border-0 file:bg-transparent file:text-sm file:font-medium; */ /* For type="file" */
+  /* placeholder:text-muted-foreground; */ /* This will be lost, but can be added if needed */
+  /* focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2; */ /* Important for accessibility */
+  /* disabled:cursor-not-allowed disabled:opacity-50; */ /* For disabled state */
+}
+
+/* It might be better to also define placeholder color if it was important */
+.guest-checkout-modal-input::placeholder {
+  color: hsl(var(--muted-foreground)); /* Default placeholder color from original input. Adjust if zion theme has a specific one */
+}

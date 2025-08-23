@@ -7,13 +7,153 @@ import {
   Heart, Truck, GraduationCap, Building, Globe, Zap, Lock, Eye, Cloud, ShoppingCart
 } from 'lucide-react';
 
-// Import our latest innovative services
-import { advancedAIAutomationServices } from '../data/advanced-ai-automation-services';
-import { nextGenITInfrastructureServices } from '../data/next-gen-it-infrastructure-services';
-import { innovativeMicroSaasSolutions2025 } from '../data/innovative-micro-saas-solutions-2025';
-import { specializedIndustrySolutions } from '../data/specialized-industry-solutions';
+// Import our new 2025 services
+import { advancedAIAutomationServices } from '../data/2026-advanced-ai-automation-services';
+import { innovative2025ITInfrastructureServices } from '../data/2025-innovative-it-infrastructure-services';
+import { innovativeMicroSaasSolutions2025 } from '../data/2025-innovative-micro-saas-solutions';
+import { emergingTechnologyServices } from '../data/2025-emerging-technology-services';
 
-const InnovativeServicesShowcase2025: React.FC = () => {
+// Unified service interface for showcase display
+interface UnifiedService {
+  id: string;
+  name: string;
+  tagline: string;
+  description: string;
+  category: string;
+  icon?: string;
+  popular?: boolean;
+  link?: string;
+  price?: string | number;
+  pricing?: {
+    starter: string;
+    professional: string;
+    enterprise: string;
+    custom: string;
+  };
+  price_monthly?: number;
+  price_yearly?: number;
+  trialDays?: number;
+  setupTime?: string;
+  features?: string[];
+  benefits?: string[];
+}
+
+const contact = {
+  mobile: '+1 302 464 0950',
+  email: 'kleber@ziontechgroup.com',
+  address: '364 E Main St STE 1008 Middletown DE 19709',
+  website: 'https://ziontechgroup.com'
+};
+
+const categories = [
+  {
+    id: 'all',
+    name: 'All Services',
+    icon: <Grid className="w-6 h-6" />,
+    color: 'from-gray-500 to-slate-500',
+    description: 'Complete portfolio of 2025 innovative services'
+  },
+  {
+    id: 'ai-automation',
+    name: 'AI Automation',
+    icon: <Brain className="w-6 h-6" />,
+    color: 'from-purple-500 to-pink-500',
+    description: 'Advanced AI automation and intelligence services'
+  },
+  {
+    id: 'it-infrastructure',
+    name: 'IT Infrastructure',
+    icon: <Building className="w-6 h-6" />,
+    color: 'from-blue-500 to-indigo-500',
+    description: 'Cutting-edge IT infrastructure solutions'
+  },
+  {
+    id: 'micro-saas',
+    name: 'Micro SAAS',
+    icon: <Target className="w-6 h-6" />,
+    color: 'from-green-500 to-emerald-500',
+    description: 'Innovative business solutions and automation'
+  },
+  {
+    id: 'emerging-tech',
+    name: 'Emerging Tech',
+    icon: <Rocket className="w-6 h-6" />,
+    color: 'from-orange-500 to-red-500',
+    description: 'Future technology and innovation services'
+  }
+];
+
+// Normalize services to unified format
+const normalizeService = (service: any): UnifiedService => {
+  if (service.pricing) {
+    // IT Infrastructure service format
+    return {
+      id: service.id,
+      name: service.name,
+      tagline: service.description || '',
+      description: service.description || '',
+      category: service.category || service.type || '',
+      icon: '⚡',
+      popular: false,
+      link: service.website || `https://ziontechgroup.com${service.slug}`,
+      pricing: service.pricing,
+      price_monthly: 0,
+      price_yearly: 0,
+      trialDays: 14,
+      setupTime: '1-2 weeks',
+      features: service.features || [],
+      benefits: service.benefits || []
+    };
+  } else if (service.price && typeof service.price === 'object') {
+    // Emerging technology service format
+    return {
+      id: service.id,
+      name: service.name,
+      tagline: service.tagline || '',
+      description: service.description || '',
+      category: service.category || '',
+      icon: service.icon || '🚀',
+      popular: service.popular || false,
+      link: service.link || `https://ziontechgroup.com/${service.id}`,
+      price_monthly: service.price.monthly,
+      price_yearly: service.price.yearly,
+      trialDays: service.price.trialDays || 14,
+      setupTime: service.price.setupTime || '1-2 weeks',
+      features: service.features || [],
+      benefits: service.benefits || []
+    };
+  } else {
+    // AI Automation and Micro SAAS format
+    return {
+      id: service.id,
+      name: service.name,
+      tagline: service.tagline || '',
+      description: service.description || '',
+      category: service.category || '',
+      icon: service.icon || '🤖',
+      popular: service.popular || false,
+      link: service.link || `https://ziontechgroup.com/${service.id}`,
+      price: service.price,
+      price_monthly: typeof service.price === 'string' ? 0 : 0,
+      price_yearly: typeof service.price === 'string' ? 0 : 0,
+      trialDays: service.trialDays || 14,
+      setupTime: service.setupTime || '1-2 weeks',
+      features: service.features || [],
+      benefits: service.benefits || []
+    };
+  }
+};
+
+// Combine all services
+const allServices: UnifiedService[] = [
+  ...advancedAIAutomationServices.map(normalizeService),
+  ...innovative2025ITInfrastructureServices.map(normalizeService),
+  ...innovativeMicroSaasSolutions2025.map(normalizeService),
+  ...emergingTechnologyServices.map(normalizeService)
+];
+
+export default function InnovativeServicesShowcase2025() {
+  const [searchTerm, setSearchTerm] = useState('');
   const [selectedCategory, setSelectedCategory] = useState('all');
   const [searchTerm, setSearchTerm] = useState('');
   const [viewMode, setViewMode] = useState<'grid' | 'list'>('grid');

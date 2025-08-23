@@ -99,7 +99,7 @@ const Mission: React.FC = () => {
   ];
 
   return (
-    <Layout 
+    <Layout
       title="Our Mission - Zion Tech Group"
       description="Discover Zion Tech Group's mission to revolutionize technology through AI consciousness, quantum computing, and ethical innovation for a better future."
       keywords="Zion Tech Group mission, AI consciousness, quantum computing, technology innovation, ethical AI, future technology"
@@ -110,7 +110,7 @@ const Mission: React.FC = () => {
           <div className="absolute inset-0 bg-gradient-to-r from-purple-900/20 via-blue-900/20 to-cyan-900/20" />
           <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
               className="text-center"
@@ -163,9 +163,10 @@ const Mission: React.FC = () => {
         <section className="py-20">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.8 }}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
               className="text-center mb-16"
             >
               <h2 className="text-4xl font-bold mb-4">Our Vision for the Future</h2>

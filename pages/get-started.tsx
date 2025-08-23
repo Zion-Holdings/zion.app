@@ -122,7 +122,7 @@ const GetStarted: React.FC = () => {
     }
   ];
 
-  const resources = [
+  const successStories = [
     {
       title: 'Getting Started Guide',
       description: 'Comprehensive guide to implementing Zion Tech Group solutions',

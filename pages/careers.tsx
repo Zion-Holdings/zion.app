@@ -142,7 +142,7 @@ const Careers: React.FC = () => {
         <section className="relative py-20 px-4 sm:px-6 lg:px-8">
           <div className="max-w-7xl mx-auto text-center">
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
             >
@@ -157,20 +157,6 @@ const Careers: React.FC = () => {
                 At Zion Tech Group, we're building the technologies of tomorrow. Join our team of 
                 innovators, dreamers, and problem-solvers who are passionate about making a difference.
               </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <a
-                  href="#positions"
-                  className="px-8 py-4 bg-gradient-to-r from-cyan-500 to-blue-600 text-white rounded-lg font-semibold hover:from-cyan-600 hover:to-blue-700 transition-all duration-300 transform hover:scale-105"
-                >
-                  View Open Positions
-                </a>
-                <a
-                  href="#culture"
-                  className="px-8 py-4 border border-cyan-500/30 text-cyan-400 rounded-lg font-semibold hover:bg-cyan-500/10 transition-all duration-300"
-                >
-                  Learn About Culture
-                </a>
-              </div>
             </motion.div>
           </div>
         </section>
@@ -221,9 +207,10 @@ const Careers: React.FC = () => {
         <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gray-800/30">
           <div className="max-w-7xl mx-auto">
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.6 }}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
               className="text-center mb-16"
             >
               <h2 className="text-4xl font-bold mb-4">Our Values</h2>
@@ -416,7 +403,6 @@ const Careers: React.FC = () => {
                 Don't see the perfect role? We're always looking for exceptional talent. 
                 Send us your resume and let's explore how you can contribute to our mission.
               </p>
-              
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Link
                   href="/contact"

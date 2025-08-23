@@ -97,7 +97,7 @@ const TransportationSolutionsPage: React.FC = () => {
   ];
 
   return (
-    <UltraFuturisticBackground variant="quantum">
+    <UltraFuturisticBackground variant="holographic">
       <div className="min-h-screen">
         <SEO 
           title="Transportation Solutions - Zion Tech Group | AI-Powered Transportation Technology" 
