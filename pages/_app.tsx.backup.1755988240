@@ -3,6 +3,9 @@ import '../styles/accessibility.css'
 import type { AppProps } from 'next/app'
 
 export default function App({ Component, pageProps }: AppProps) {
+<<<<<<< HEAD
+  return <Component {...pageProps} />
+=======
 	const renderedRef = useRef(false);
 	return (
 		<SEOContext.Provider value={{ renderedRef }}>
@@ -15,4 +18,5 @@ export default function App({ Component, pageProps }: AppProps) {
 			</div>
 		</SEOContext.Provider>
 	);
+>>>>>>> origin/cursor/analyze-improve-and-deploy-application-db73
 }
