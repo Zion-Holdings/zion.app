@@ -327,7 +327,7 @@ export const innovative2025AISolutionsExpanded: Innovative2025AISolutionsExpande
     competitors: ['Grammarly, Hemingway Editor, Surfer SEO, Clearscope, MarketMuse'],
     marketSize: '$13.8B content marketing market',
     growthRate: '16.2% annual growth',
-    variant: 'ai-futuristic',
+    variant: 'ai-creative',
     contactInfo: contact,
     realImplementation: true,
     implementationDetails: 'Complete AI-powered content generation platform with creation, optimization, and distribution. Includes training and ongoing support.',
