@@ -89,6 +89,12 @@ const navigationItems: NavigationItem[] = [
         href: '/solutions', 
         description: 'Industry-specific solutions',
         icon: <TargetIcon className="w-4 h-4" />
+      },
+      { 
+        name: 'Micro SAAS', 
+        href: '/micro-saas', 
+        description: 'Business automation tools',
+        icon: <Zap className="w-4 h-4" />
       }
     ]
   },
@@ -119,6 +125,18 @@ const navigationItems: NavigationItem[] = [
         href: '/market-pricing', 
         description: 'Market price references',
         icon: <BarChart3 className="w-4 h-4" />
+      },
+      { 
+        name: '2026 Services', 
+        href: '/revolutionary-2026-services', 
+        description: 'Next-gen service offerings',
+        icon: <TrendingUp className="w-4 h-4" />
+      },
+      { 
+        name: '2027 Services', 
+        href: '/revolutionary-2027-services-showcase', 
+        description: 'Future service roadmap',
+        icon: <Sparkles className="w-4 h-4" />
       }
     ]
   },
@@ -152,6 +170,18 @@ const navigationItems: NavigationItem[] = [
         href: '/investors', 
         description: 'Investment information',
         icon: <DollarSign className="w-4 h-4" />
+      },
+      { 
+        name: 'Careers', 
+        href: '/careers', 
+        description: 'Join our team',
+        icon: <User className="w-4 h-4" />
+      },
+      { 
+        name: 'News', 
+        href: '/news', 
+        description: 'Company updates',
+        icon: <FileText className="w-4 h-4" />
       }
     ]
   },
@@ -185,6 +215,63 @@ const navigationItems: NavigationItem[] = [
         href: '/support', 
         description: 'Technical support',
         icon: <HelpCircle className="w-4 h-4" />
+      },
+      { 
+        name: 'Training', 
+        href: '/training', 
+        description: 'Educational resources',
+        icon: <BookOpenCheck className="w-4 h-4" />
+      },
+      { 
+        name: 'White Papers', 
+        href: '/white-papers', 
+        description: 'In-depth research',
+        icon: <FileText className="w-4 h-4" />
+      }
+    ]
+  },
+  {
+    name: 'Solutions',
+    href: '/solutions',
+    icon: <Target className="w-5 h-5" />,
+    description: 'Industry solutions',
+    category: 'solutions',
+    children: [
+      { 
+        name: 'Healthcare', 
+        href: '/healthcare-ai-solutions', 
+        description: 'AI healthcare solutions',
+        icon: <Heart className="w-4 h-4" />
+      },
+      { 
+        name: 'Financial', 
+        href: '/financial-solutions', 
+        description: 'Financial technology',
+        icon: <DollarSign className="w-4 h-4" />
+      },
+      { 
+        name: 'Government', 
+        href: '/government-technology-solutions', 
+        description: 'Public sector solutions',
+        icon: <Building className="w-4 h-4" />
+      },
+      { 
+        name: 'Manufacturing', 
+        href: '/manufacturing-ai-solutions', 
+        description: 'Industrial AI solutions',
+        icon: <Settings className="w-4 h-4" />
+      },
+      { 
+        name: 'Retail', 
+        href: '/retail-technology-solutions', 
+        description: 'Retail technology',
+        icon: <ShoppingCart className="w-4 h-4" />
+      },
+      { 
+        name: 'Education', 
+        href: '/education-technology-solutions', 
+        description: 'EdTech solutions',
+        icon: <BookOpen className="w-4 h-4" />
       }
     ]
   }
