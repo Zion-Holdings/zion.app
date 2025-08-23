@@ -11,6 +11,29 @@ import AdvancedFuturisticCard from '../components/ui/AdvancedFuturisticCard';
 import { expandedMicroSaasServices, serviceCategories, getServicesByCategory, getPopularServices, getServicesByPriceRange } from '../data/expanded-micro-saas-services';
 
 export default function ServicesPage() {
+<<<<<<< HEAD
+  const [selectedCategory, setSelectedCategory] = useState('All');
+  const [viewMode, setViewMode] = useState<'grid' | 'list'>('grid');
+  const [sortBy, setSortBy] = useState<'name' | 'price' | 'rating' | 'roi' | 'category'>('name');
+  const [priceRange, setPriceRange] = useState<[number, number]>([0, 10000]);
+  const [showInnovative, setShowInnovative] = useState(true);
+  const router = useRouter();
+
+  const priceRanges = [
+    { value: 'All', label: 'All Prices' },
+    { value: '0-50', label: '$0 - $50' },
+    { value: '51-100', label: '$51 - $100' },
+    { value: '101-200', label: '$101 - $200' },
+    { value: '201+', label: '$201+' }
+  ];
+
+  const sortOptions = [
+    { value: 'name', label: 'Name A-Z' },
+    { value: 'price', label: 'Price Low-High' },
+    { value: 'popularity', label: 'Most Popular' },
+    { value: 'category', label: 'Category' },
+    { value: 'rating', label: 'Highest Rated' }
+=======
   const services = [
     {
       icon: '🤖',
@@ -206,6 +229,7 @@ export default function ServicesPage() {
     { name: 'Redis', category: 'Cache', icon: '🔴' },
     { name: 'TensorFlow', category: 'AI/ML', icon: '🧠' },
     { name: 'PyTorch', category: 'AI/ML', icon: '🔥' },
+>>>>>>> origin/cursor/enhance-app-with-micro-saas-and-advertising-5f6f
   ];
 
   // Filter and sort services
