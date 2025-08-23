@@ -713,223 +713,264 @@ export default function Services() {
                   </button>
                 </div>
               </div>
-            </motion.div>
+            </div>
 
-            {/* Services Count */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              className="text-center mb-8"
-            >
-              <p className="text-gray-300">
-                Showing <span className="text-blue-400 font-semibold">{sortedServices.length}</span> services
-                {selectedCategory !== 'all' && ` in ${categories.find(cat => cat.id === selectedCategory)?.name}`}
-              </p>
-            </motion.div>
-          </div>
-            </motion.section>
-          )}
-        </AnimatePresence>
+            {/* Advanced AI Services Section */}
+            <div className="bg-white/10 backdrop-blur-xl rounded-2xl p-8 mb-16">
+              <h2 className="text-3xl font-bold mb-8 text-cyan-400">Advanced AI Services</h2>
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div className="bg-white/5 rounded-xl p-6 border border-white/10">
+                  <div className="text-3xl mb-3">🧠</div>
+                  <h3 className="text-xl font-bold mb-3 text-cyan-400">Deep Learning Solutions</h3>
+                  <p className="text-white/70 text-sm mb-4">
+                    Custom neural network architectures for complex pattern recognition and prediction tasks.
+                  </p>
+                  <ul className="space-y-1 text-xs text-white/60">
+                    <li>• Convolutional Neural Networks (CNN)</li>
+                    <li>• Recurrent Neural Networks (RNN)</li>
+                    <li>• Transformer Models</li>
+                    <li>• Custom Architectures</li>
+                  </ul>
+                </div>
 
-        {/* Services Grid/List */}
-        <section className="py-20 relative">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            {paginatedServices.length > 0 ? (<>
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.3 }}
-                className={viewMode === 'grid' 
-                  ? "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
-                  : "space-y-6"
-                }
-              >
-                {paginatedServices.map((service, index) => (
-                  <motion.div
-                    key={(service as any).id || (service as any).slug || (service as any).name}
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.5, delay: index * 0.1 }}
-                    whileHover={{ y: -8 }}
-                    className={`group relative ${
-                      viewMode === 'list' ? 'flex items-start space-x-6' : ''
-                    }`}
-                  >
-                    <div className="relative bg-gradient-to-br from-gray-500/20 to-slate-500/20 border border-cyan-500/30 rounded-2xl p-6 h-full backdrop-blur-sm hover:border-cyan-500/50 transition-all duration-300">
-                      {/* Category Badge */}
-                      <div className="absolute top-4 right-4 flex items-center space-x-2">
-                        {getCategoryIcon(getServiceCategory(service))}
-                        <span className="text-xs font-medium text-cyan-300 bg-black/50 px-2 py-1 rounded-full">
-                          {getServiceCategory(service)}
-                        </span>
-                      </div>
+                <div className="bg-white/5 rounded-xl p-6 border border-white/10">
+                  <div className="text-3xl mb-3">🔍</div>
+                  <h3 className="text-xl font-bold mb-3 text-fuchsia-400">Computer Vision</h3>
+                  <p className="text-white/70 text-sm mb-4">
+                    Advanced image and video analysis for automation, quality control, and insights extraction.
+                  </p>
+                  <ul className="space-y-1 text-xs text-white/60">
+                    <li>• Object Detection & Recognition</li>
+                    <li>• Image Segmentation</li>
+                    <li>• Video Analytics</li>
+                    <li>• Quality Assurance</li>
+                  </ul>
+                </div>
 
-                      {/* Service Header */}
-                      <div className="mb-6">
-                        <h3 className="text-xl font-bold text-white mb-3 group-hover:text-cyan-400 transition-colors">
-                          {service.name}
-                        </h3>
-                        <p className="text-gray-300 text-sm leading-relaxed">
-                          {getServiceDescription(service)}
-                        </p>
-                      </div>
+                <div className="bg-white/5 rounded-xl p-6 border border-white/10">
+                  <div className="text-3xl mb-3">💬</div>
+                  <h3 className="text-xl font-bold mb-3 text-green-400">Natural Language Processing</h3>
+                  <p className="text-white/70 text-sm mb-4">
+                    Language understanding and generation systems for enhanced communication and automation.
+                  </p>
+                  <ul className="space-y-1 text-xs text-white/60">
+                    <li>• Sentiment Analysis</li>
+                    <li>• Text Classification</li>
+                    <li>• Language Generation</li>
+                    <li>• Translation Services</li>
+                  </ul>
+                </div>
 
-                      {/* Features Preview */}
-                      <div className="mb-6">
-                        <h4 className="text-sm font-semibold text-cyan-300 mb-3">Key Features</h4>
-                        <div className="space-y-2">
-                          {getServiceFeatures(service).slice(0, 3).map((feature, idx) => (
-                            <div key={idx} className="flex items-start space-x-2">
-                              <Check className="w-4 h-4 text-green-400 mt-0.5 flex-shrink-0" />
-                              <span className="text-xs text-gray-300">{feature}</span>
-                            </div>
-                          ))}
-                          {getServiceFeatures(service).length > 3 && (
-                            <div className="text-xs text-cyan-400">
-                              +{getServiceFeatures(service).length - 3} more features
-                            </div>
-                          )}
-                        </div>
-                      </div>
+                <div className="bg-white/5 rounded-xl p-6 border border-white/10">
+                  <div className="text-3xl mb-3">📈</div>
+                  <h3 className="text-xl font-bold mb-3 text-blue-400">Predictive Analytics</h3>
+                  <p className="text-white/70 text-sm mb-4">
+                    Data-driven forecasting and trend analysis for strategic decision-making and optimization.
+                  </p>
+                  <ul className="space-y-1 text-xs text-white/60">
+                    <li>• Time Series Forecasting</li>
+                    <li>• Risk Assessment</li>
+                    <li>• Demand Prediction</li>
+                    <li>• Anomaly Detection</li>
+                  </ul>
+                </div>
 
-                      {/* Pricing */}
-                      <div className="mb-6">
-                        <h4 className="text-sm font-semibold text-cyan-300 mb-2">Starting at</h4>
-                        <div className="text-2xl font-bold text-white">
-                          {getServicePricing(service)}
-                        </div>
-                      </div>
+                <div className="bg-white/5 rounded-xl p-6 border border-white/10">
+                  <div className="text-3xl mb-3">🤖</div>
+                  <h3 className="text-xl font-bold mb-3 text-purple-400">Robotic Process Automation</h3>
+                  <p className="text-white/70 text-sm mb-4">
+                    Intelligent automation of repetitive tasks and business processes for increased efficiency.
+                  </p>
+                  <ul className="space-y-1 text-xs text-white/60">
+                    <li>• Process Mining</li>
+                    <li>• Workflow Automation</li>
+                    <li>• Document Processing</li>
+                    <li>• Integration Services</li>
+                  </ul>
+                </div>
 
-                      {/* Action Button */}
-                      <div className="flex flex-col space-y-3">
-                        <motion.a
-                          href={(service as any).link || `/services/${((service as any).slug || (service as any).name || 'service').toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '')}`}
-                          whileHover={{ scale: 1.02 }}
-                          whileTap={{ scale: 0.98 }}
-                          className="flex items-center justify-center space-x-2 px-4 py-3 bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-medium rounded-lg hover:from-cyan-600 hover:to-blue-700 transition-all duration-200 shadow-lg shadow-cyan-500/25"
-                        >
-                          <span>Learn More</span>
-                          <ArrowRight className="w-4 h-4" />
-                        </motion.a>
-                        <motion.a
-                          href="/contact"
-                          whileHover={{ scale: 1.02 }}
-                          whileTap={{ scale: 0.98 }}
-                          className="flex items-center justify-center space-x-2 px-4 py-3 border border-gray-600 text-gray-200 font-medium rounded-lg hover:bg-white/5 transition-all duration-200"
-                        >
-                          <span>Contact Sales</span>
-                        </motion.a>
-                      </div>
+                <div className="bg-white/5 rounded-xl p-6 border border-white/10">
+                  <div className="text-3xl mb-3">🔐</div>
+                  <h3 className="text-xl font-bold mb-3 text-yellow-400">AI Security & Compliance</h3>
+                  <p className="text-white/70 text-sm mb-4">
+                    Comprehensive security solutions for AI systems and regulatory compliance frameworks.
+                  </p>
+                  <ul className="space-y-1 text-xs text-white/60">
+                    <li>• Model Security</li>
+                    <li>• Data Privacy</li>
+                    <li>• Compliance Auditing</li>
+                    <li>• Threat Detection</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
 
-                      {/* Hover Effect Overlay */}
-                      <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/5 to-blue-600/5 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
-                    </div>
-                  </motion.div>
-                ))}
-              </motion.div>
-              {/* Pagination Controls */}
-              {totalPages > 1 && (
-                <div className="mt-12 flex items-center justify-center gap-2 flex-wrap">
-                  <button
-                    onClick={() => setCurrentPage(Math.max(1, currentPageClamped - 1))}
-                    className="px-4 py-2 rounded-lg border border-blue-500/40 text-blue-300 hover:border-blue-400 disabled:opacity-40"
-                    disabled={currentPageClamped === 1}
-                  >
-                    Previous
-                  </button>
-                  {Array.from({ length: totalPages }).slice(0, 7).map((_, idx) => {
-                    const page = idx + 1;
-                    return (
-                      <button
-                        key={page}
-                        onClick={() => setCurrentPage(page)}
-                        className={`px-3 py-2 rounded-lg border ${
-                          page === currentPageClamped
-                            ? 'bg-blue-600/30 border-blue-400 text-white'
-                            : 'border-blue-500/30 text-blue-200 hover:border-blue-400'
-                        }`}
-                      >
-                        {page}
-                      </button>
-                    );
-                  })}
-                  <button
-                    onClick={() => setCurrentPage(Math.min(totalPages, currentPageClamped + 1))}
-                    className="px-4 py-2 rounded-lg border border-blue-500/40 text-blue-300 hover:border-blue-400 disabled:opacity-40"
-                    disabled={currentPageClamped === totalPages}
-                  >
-                    Next
+            {/* Industry Solutions Section */}
+            <div className="bg-white/10 backdrop-blur-xl rounded-2xl p-8 mb-16">
+              <h2 className="text-3xl font-bold mb-8 text-fuchsia-400">Industry-Specific Solutions</h2>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div className="space-y-6">
+                  <div className="bg-white/5 rounded-xl p-6 border border-white/10">
+                    <h3 className="text-xl font-bold mb-3 text-fuchsia-400">🏥 Healthcare</h3>
+                    <p className="text-white/70 text-sm mb-3">
+                      AI-powered diagnostic tools, patient care optimization, and medical research acceleration.
+                    </p>
+                    <ul className="text-xs text-white/60">
+                      <li>• Medical Imaging Analysis</li>
+                      <li>• Drug Discovery Support</li>
+                      <li>• Patient Risk Assessment</li>
+                    </ul>
+                  </div>
+
+                  <div className="bg-white/5 rounded-xl p-6 border border-white/10">
+                    <h3 className="text-xl font-bold mb-3 text-green-400">🏦 Financial Services</h3>
+                    <p className="text-white/70 text-sm mb-3">
+                      Fraud detection, risk assessment, algorithmic trading, and customer service automation.
+                    </p>
+                    <ul className="text-xs text-white/60">
+                      <li>• Credit Scoring Models</li>
+                      <li>• Market Analysis</li>
+                      <li>• Regulatory Compliance</li>
+                    </ul>
+                  </div>
+
+                  <div className="bg-white/5 rounded-xl p-6 border border-white/10">
+                    <h3 className="text-xl font-bold mb-3 text-blue-400">🏭 Manufacturing</h3>
+                    <p className="text-white/70 text-sm mb-3">
+                      Predictive maintenance, quality control, supply chain optimization, and production planning.
+                    </p>
+                    <ul className="text-xs text-white/60">
+                      <li>• IoT Integration</li>
+                      <li>• Quality Assurance</li>
+                      <li>• Energy Optimization</li>
+                    </ul>
+                  </div>
+                </div>
+
+                <div className="space-y-6">
+                  <div className="bg-white/5 rounded-xl p-6 border border-white/10">
+                    <h3 className="text-xl font-bold mb-3 text-yellow-400">🛒 Retail & E-commerce</h3>
+                    <p className="text-white/70 text-sm mb-3">
+                      Customer behavior analysis, inventory optimization, personalized marketing, and demand forecasting.
+                    </p>
+                    <ul className="text-xs text-white/60">
+                      <li>• Recommendation Systems</li>
+                      <li>• Price Optimization</li>
+                      <li>• Customer Segmentation</li>
+                    </ul>
+                  </div>
+
+                  <div className="bg-white/5 rounded-xl p-6 border border-white/10">
+                    <h3 className="text-xl font-bold mb-3 text-purple-400">🚚 Logistics & Transportation</h3>
+                    <p className="text-white/70 text-sm mb-3">
+                      Route optimization, fleet management, predictive maintenance, and supply chain visibility.
+                    </p>
+                    <ul className="text-xs text-white/60">
+                      <li>• Route Planning</li>
+                      <li>• Demand Forecasting</li>
+                      <li>• Real-time Tracking</li>
+                    </ul>
+                  </div>
+
+                  <div className="bg-white/5 rounded-xl p-6 border border-white/10">
+                    <h3 className="text-xl font-bold mb-3 text-cyan-400">🏢 Real Estate</h3>
+                    <p className="text-white/70 text-sm mb-3">
+                      Property valuation, market analysis, investment optimization, and customer relationship management.
+                    </p>
+                    <ul className="text-xs text-white/60">
+                      <li>• Market Analysis</li>
+                      <li>• Investment Modeling</li>
+                      <li>• Customer Insights</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Support & Maintenance Section */}
+            <div className="bg-white/10 backdrop-blur-xl rounded-2xl p-8 mb-16">
+              <h2 className="text-3xl font-bold mb-8 text-green-400">Support & Maintenance</h2>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div className="text-center">
+                  <div className="text-4xl mb-4">🔄</div>
+                  <h3 className="text-xl font-bold mb-3 text-green-400">24/7 Monitoring</h3>
+                  <p className="text-white/70 text-sm">
+                    Continuous monitoring and alerting for all AI systems with proactive issue resolution.
+                  </p>
+                </div>
+
+                <div className="text-center">
+                  <div className="text-4xl mb-4">📊</div>
+                  <h3 className="text-xl font-bold mb-3 text-blue-400">Performance Optimization</h3>
+                  <p className="text-white/70 text-sm">
+                    Regular performance reviews and optimization to ensure systems operate at peak efficiency.
+                  </p>
+                </div>
+
+                <div className="text-center">
+                  <div className="text-4xl mb-4">🆘</div>
+                  <h3 className="text-xl font-bold mb-3 text-purple-400">Emergency Support</h3>
+                  <p className="text-white/70 text-sm">
+                    Rapid response team for critical issues with guaranteed response times and resolution.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* Pricing Tiers Section */}
+            <div className="bg-white/10 backdrop-blur-xl rounded-2xl p-8">
+              <h2 className="text-3xl font-bold mb-8 text-yellow-400">Service Tiers</h2>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div className="bg-white/5 rounded-xl p-6 border border-white/10 text-center">
+                  <h3 className="text-xl font-bold mb-3 text-yellow-400">Starter</h3>
+                  <p className="text-white/70 text-sm mb-4">Perfect for small businesses and startups</p>
+                  <ul className="text-xs text-white/60 space-y-2 mb-6">
+                    <li>• Basic AI Implementation</li>
+                    <li>• Standard Support</li>
+                    <li>• Monthly Reports</li>
+                    <li>• Email Support</li>
+                  </ul>
+                  <button className="bg-gradient-to-r from-yellow-400 to-orange-400 text-white px-6 py-2 rounded-lg font-semibold hover:from-yellow-500 hover:to-orange-500 transition-all duration-300">
+                    Get Started
                   </button>
                 </div>
-              )}
-            </>) : (
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6 }}
-                className="text-center py-20"
-              >
-                <div className="text-6xl mb-6">🔍</div>
-                <h3 className="text-2xl font-bold text-white mb-4">No services found</h3>
-                <p className="text-gray-300 mb-8">
-                  Try adjusting your search terms or filters to find the services you're looking for.
-                </p>
-                <button
-                  onClick={() => {
-                    setSearchQuery('');
-                    setSelectedCategory('all');
-                  }}
-                  className="px-6 py-3 bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-medium rounded-lg hover:from-cyan-600 hover:to-blue-700 transition-all duration-200"
-                >
-                  Clear Filters
-                </button>
-              </motion.div>
-            )}
-          </div>
-        </section>
 
-        {/* CTA Section */}
-        <section className="py-20 relative">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-              className="bg-gradient-to-r from-cyan-500/10 via-blue-500/10 to-purple-500/10 border border-cyan-500/30 rounded-3xl p-12 text-center"
-            >
-              <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-                Ready to Transform Your <span className="bg-gradient-to-r from-cyan-400 to-blue-600 bg-clip-text text-transparent">Business</span>?
-              </h2>
-              <p className="text-xl text-gray-300 mb-8 max-w-3xl mx-auto">
-                Join leading businesses that trust Zion Tech Group for their digital transformation. 
-                Our expert team is ready to guide you through your technology journey.
-              </p>
-              
-              <div className="flex flex-col sm:flex-row gap-6 justify-center">
-                <motion.a
-                  href="/contact"
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  className="inline-flex items-center space-x-3 px-8 py-4 bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-bold text-lg rounded-xl hover:from-cyan-600 hover:to-blue-700 transition-all duration-200 shadow-2xl shadow-cyan-500/25"
-                >
-                  <span>Get Started Today</span>
-                  <ArrowRight className="w-6 h-6" />
-                </motion.a>
-                
-                <motion.a
-                  href="/enterprise-solutions-showcase"
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  className="inline-flex items-center space-x-3 px-8 py-4 bg-black/50 border-2 border-cyan-500/50 text-cyan-300 font-bold text-lg rounded-xl hover:bg-cyan-500/10 hover:border-cyan-400 transition-all duration-200"
-                >
-                  <Building className="w-6 h-6" />
-                  <span>Enterprise Solutions</span>
-                </motion.a>
+                <div className="bg-white/5 rounded-xl p-6 border border-cyan-400/30 text-center relative">
+                  <div className="absolute -top-3 left-1/2 transform -translate-x-1/2">
+                    <span className="bg-cyan-400 text-black px-3 py-1 rounded-full text-xs font-bold">Most Popular</span>
+                  </div>
+                  <h3 className="text-xl font-bold mb-3 text-cyan-400">Professional</h3>
+                  <p className="text-white/70 text-sm mb-4">Ideal for growing enterprises</p>
+                  <ul className="text-xs text-white/60 space-y-2 mb-6">
+                    <li>• Advanced AI Solutions</li>
+                    <li>• Priority Support</li>
+                    <li>• Real-time Monitoring</li>
+                    <li>• Phone & Email Support</li>
+                    <li>• Custom Integrations</li>
+                  </ul>
+                  <button className="bg-gradient-to-r from-cyan-400 to-blue-400 text-white px-6 py-2 rounded-lg font-semibold hover:from-cyan-500 hover:to-blue-500 transition-all duration-300">
+                    Choose Professional
+                  </button>
+                </div>
+
+                <div className="bg-white/5 rounded-xl p-6 border border-white/10 text-center">
+                  <h3 className="text-xl font-bold mb-3 text-purple-400">Enterprise</h3>
+                  <p className="text-white/70 text-sm mb-4">For large organizations with complex needs</p>
+                  <ul className="text-xs text-white/60 space-y-2 mb-6">
+                    <li>• Full AI Transformation</li>
+                    <li>• Dedicated Support Team</li>
+                    <li>• Custom Development</li>
+                    <li>• 24/7 Support</li>
+                    <li>• SLA Guarantees</li>
+                  </ul>
+                  <button className="bg-gradient-to-r from-purple-400 to-pink-400 text-white px-6 py-2 rounded-lg font-semibold hover:from-purple-500 hover:to-pink-500 transition-all duration-300">
+                    Contact Sales
+                  </button>
+                </div>
               </div>
-            </motion.div>
-          </div>
-        </section>
+            </div>
+          </section>
+        </main>
       </div>
     </>
   );
