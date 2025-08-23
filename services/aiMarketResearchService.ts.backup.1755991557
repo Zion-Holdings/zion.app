@@ -5,13 +5,49 @@ export interface MarketTrend {
   trendDirection: 'rising' | 'falling' | 'stable';
   growthRate: number;
   relatedKeywords: string[];
+<<<<<<< HEAD
+  marketOpportunity: number;
+  competitionLevel: 'low' | 'medium' | 'high';
+  estimatedValue: number;
+  lastUpdated: Date;
+=======
   marketOpportunity: 'high' | 'medium' | 'low';
   timestamp: Date;
+>>>>>>> origin/cursor/enhance-app-services-and-website-with-futuristic-design-1dae
 }
 
 export interface CompetitorAnalysis {
   id: string;
   competitorName: string;
+<<<<<<< HEAD
+  marketShare: number;
+  strengths: string[];
+  weaknesses: string[];
+  pricingStrategy: string;
+  targetAudience: string[];
+  marketingChannels: string[];
+  productFeatures: string[];
+  customerReviews: {
+    rating: number;
+    count: number;
+    sentiment: 'positive' | 'neutral' | 'negative';
+  };
+  lastAnalyzed: Date;
+}
+
+export interface MarketInsight {
+  id: string;
+  title: string;
+  description: string;
+  category: string;
+  impact: 'high' | 'medium' | 'low';
+  confidence: number;
+  dataSources: string[];
+  recommendations: string[];
+  estimatedTimeline: string;
+  investmentRequired: number;
+  potentialROI: number;
+=======
   website: string;
   marketShare: number;
   strengths: string[];
@@ -48,10 +84,30 @@ export interface MarketReport {
   dataSources: string[];
   generatedAt: Date;
   expiresAt: Date;
+>>>>>>> origin/cursor/enhance-app-services-and-website-with-futuristic-design-1dae
 }
 
 export interface MarketResearchRequest {
   industry: string;
+<<<<<<< HEAD
+  targetMarket: string[];
+  researchType: 'trends' | 'competitors' | 'opportunities' | 'comprehensive';
+  budget: number;
+  timeline: string;
+  specificQuestions?: string[];
+}
+
+export interface MarketResearchResponse {
+  requestId: string;
+  status: 'processing' | 'completed' | 'failed';
+  trends: MarketTrend[];
+  competitors: CompetitorAnalysis[];
+  insights: MarketInsight[];
+  summary: string;
+  recommendations: string[];
+  nextSteps: string[];
+  generatedAt: Date;
+=======
   targetMarket: string;
   researchType: 'trends' | 'competitors' | 'segments' | 'comprehensive';
   timeframe: '7d' | '30d' | '90d' | '1y';
@@ -71,6 +127,7 @@ export interface MarketResearchResponse {
   recommendations: string[];
   nextSteps: string[];
   estimatedROI: number;
+>>>>>>> origin/cursor/enhance-app-services-and-website-with-futuristic-design-1dae
 }
 
 export class AIMarketResearchService {
@@ -82,11 +139,32 @@ export class AIMarketResearchService {
     this.baseUrl = baseUrl;
   }
 
+<<<<<<< HEAD
+  async analyzeMarketTrends(industry: string, timeframe: string = '30d'): Promise<MarketTrend[]> {
+=======
   async analyzeMarketTrends(request: MarketResearchRequest): Promise<MarketTrend[]> {
+>>>>>>> origin/cursor/enhance-app-services-and-website-with-futuristic-design-1dae
     try {
       const response = await fetch(`${this.baseUrl}/api/market-research/trends`, {
         method: 'POST',
         headers: {
+<<<<<<< HEAD
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${this.apiKey}`,
+        },
+        body: JSON.stringify({ industry, timeframe }),
+      });
+
+      if (!response.ok) {
+        throw new Error(`Market research API error: ${response.statusText}`);
+      }
+
+      const data = await response.json();
+      return data.trends.map((trend: any) => ({
+        ...trend,
+        lastUpdated: new Date(trend.lastUpdated),
+      }));
+=======
           'Authorization': `Bearer ${this.apiKey}`,
           'Content-Type': 'application/json',
         },
@@ -99,17 +177,39 @@ export class AIMarketResearchService {
 
       const data = await response.json();
       return data.trends || [];
+>>>>>>> origin/cursor/enhance-app-services-and-website-with-futuristic-design-1dae
     } catch (error) {
       console.error('Error analyzing market trends:', error);
       throw error;
     }
   }
 
+<<<<<<< HEAD
+  async analyzeCompetitors(competitorNames: string[], industry: string): Promise<CompetitorAnalysis[]> {
+=======
   async analyzeCompetitors(request: MarketResearchRequest): Promise<CompetitorAnalysis[]> {
+>>>>>>> origin/cursor/enhance-app-services-and-website-with-futuristic-design-1dae
     try {
       const response = await fetch(`${this.baseUrl}/api/market-research/competitors`, {
         method: 'POST',
         headers: {
+<<<<<<< HEAD
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${this.apiKey}`,
+        },
+        body: JSON.stringify({ competitorNames, industry }),
+      });
+
+      if (!response.ok) {
+        throw new Error(`Competitor analysis API error: ${response.statusText}`);
+      }
+
+      const data = await response.json();
+      return data.competitors.map((competitor: any) => ({
+        ...competitor,
+        lastAnalyzed: new Date(competitor.lastAnalyzed),
+      }));
+=======
           'Authorization': `Bearer ${this.apiKey}`,
           'Content-Type': 'application/json',
         },
@@ -122,12 +222,22 @@ export class AIMarketResearchService {
 
       const data = await response.json();
       return data.competitors || [];
+>>>>>>> origin/cursor/enhance-app-services-and-website-with-futuristic-design-1dae
     } catch (error) {
       console.error('Error analyzing competitors:', error);
       throw error;
     }
   }
 
+<<<<<<< HEAD
+  async generateMarketInsights(request: MarketResearchRequest): Promise<MarketInsight[]> {
+    try {
+      const response = await fetch(`${this.baseUrl}/api/market-research/insights`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${this.apiKey}`,
+=======
   async segmentMarket(request: MarketResearchRequest): Promise<MarketSegment[]> {
     try {
       const response = await fetch(`${this.baseUrl}/api/market-research/segments`, {
@@ -135,11 +245,21 @@ export class AIMarketResearchService {
         headers: {
           'Authorization': `Bearer ${this.apiKey}`,
           'Content-Type': 'application/json',
+>>>>>>> origin/cursor/enhance-app-services-and-website-with-futuristic-design-1dae
         },
         body: JSON.stringify(request),
       });
 
       if (!response.ok) {
+<<<<<<< HEAD
+        throw new Error(`Market insights API error: ${response.statusText}`);
+      }
+
+      const data = await response.json();
+      return data.insights;
+    } catch (error) {
+      console.error('Error generating market insights:', error);
+=======
         throw new Error(`HTTP error! status: ${response.status}`);
       }
 
@@ -147,22 +267,44 @@ export class AIMarketResearchService {
       return data.segments || [];
     } catch (error) {
       console.error('Error segmenting market:', error);
+>>>>>>> origin/cursor/enhance-app-services-and-website-with-futuristic-design-1dae
       throw error;
     }
   }
 
+<<<<<<< HEAD
+  async getComprehensiveAnalysis(request: MarketResearchRequest): Promise<MarketResearchResponse> {
+=======
   async generateComprehensiveReport(request: MarketResearchRequest): Promise<MarketReport> {
+>>>>>>> origin/cursor/enhance-app-services-and-website-with-futuristic-design-1dae
     try {
       const response = await fetch(`${this.baseUrl}/api/market-research/comprehensive`, {
         method: 'POST',
         headers: {
+<<<<<<< HEAD
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${this.apiKey}`,
+=======
           'Authorization': `Bearer ${this.apiKey}`,
           'Content-Type': 'application/json',
+>>>>>>> origin/cursor/enhance-app-services-and-website-with-futuristic-design-1dae
         },
         body: JSON.stringify(request),
       });
 
       if (!response.ok) {
+<<<<<<< HEAD
+        throw new Error(`Comprehensive analysis API error: ${response.statusText}`);
+      }
+
+      const data = await response.json();
+      return {
+        ...data,
+        generatedAt: new Date(data.generatedAt),
+      };
+    } catch (error) {
+      console.error('Error getting comprehensive analysis:', error);
+=======
         throw new Error(`HTTP error! status: ${response.status}`);
       }
 
@@ -170,10 +312,32 @@ export class AIMarketResearchService {
       return data.report;
     } catch (error) {
       console.error('Error generating comprehensive report:', error);
+>>>>>>> origin/cursor/enhance-app-services-and-website-with-futuristic-design-1dae
       throw error;
     }
   }
 
+<<<<<<< HEAD
+  async getMarketOpportunities(industry: string, investmentRange: [number, number]): Promise<MarketInsight[]> {
+    try {
+      const response = await fetch(`${this.baseUrl}/api/market-research/opportunities`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${this.apiKey}`,
+        },
+        body: JSON.stringify({ industry, investmentRange }),
+      });
+
+      if (!response.ok) {
+        throw new Error(`Market opportunities API error: ${response.statusText}`);
+      }
+
+      const data = await response.json();
+      return data.opportunities;
+    } catch (error) {
+      console.error('Error getting market opportunities:', error);
+=======
   async getRealTimeInsights(keyword: string): Promise<MarketTrend[]> {
     try {
       const response = await fetch(`${this.baseUrl}/api/market-research/realtime?keyword=${encodeURIComponent(keyword)}`, {
@@ -190,10 +354,29 @@ export class AIMarketResearchService {
       return data.trends || [];
     } catch (error) {
       console.error('Error getting real-time insights:', error);
+>>>>>>> origin/cursor/enhance-app-services-and-website-with-futuristic-design-1dae
       throw error;
     }
   }
 
+<<<<<<< HEAD
+  async exportReport(response: MarketResearchResponse, format: 'pdf' | 'csv' | 'excel'): Promise<string> {
+    try {
+      const exportResponse = await fetch(`${this.baseUrl}/api/market-research/export`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${this.apiKey}`,
+        },
+        body: JSON.stringify({ response, format }),
+      });
+
+      if (!exportResponse.ok) {
+        throw new Error(`Export API error: ${exportResponse.statusText}`);
+      }
+
+      const data = await exportResponse.json();
+=======
   async exportReport(reportId: string, format: 'pdf' | 'csv' | 'excel'): Promise<string> {
     try {
       const response = await fetch(`${this.baseUrl}/api/market-research/export/${reportId}`, {
@@ -210,12 +393,18 @@ export class AIMarketResearchService {
       }
 
       const data = await response.json();
+>>>>>>> origin/cursor/enhance-app-services-and-website-with-futuristic-design-1dae
       return data.downloadUrl;
     } catch (error) {
       console.error('Error exporting report:', error);
       throw error;
     }
   }
+<<<<<<< HEAD
+}
+
+export const aiMarketResearchService = new AIMarketResearchService(process.env.MARKET_RESEARCH_API_KEY || '');
+=======
 
   async scheduleReport(request: MarketResearchRequest, schedule: 'daily' | 'weekly' | 'monthly'): Promise<string> {
     try {
@@ -242,3 +431,4 @@ export class AIMarketResearchService {
 }
 
 export const aiMarketResearchService = new AIMarketResearchService(process.env.MARKET_RESEARCH_API_KEY || 'demo-key');
+>>>>>>> origin/cursor/enhance-app-services-and-website-with-futuristic-design-1dae

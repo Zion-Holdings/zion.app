@@ -1,3 +1,6 @@
+<<<<<<< HEAD
+export default function Pricing() {
+=======
 import React, { useState } from 'react';
 import Head from 'next/head';
 import Button from '../components/ui/Button';
@@ -381,6 +384,7 @@ export default function PricingPage() {
 
   const yearlyDiscount = 0.2; // 20% discount for yearly billing
 
+>>>>>>> origin/cursor/enhance-app-services-and-website-with-futuristic-design-1dae
   return (
     <div className="max-w-5xl mx-auto p-8">
       <h1 className="text-2xl font-semibold mb-6">Zion Hire AI Pricing</h1>
@@ -412,6 +416,9 @@ export default function PricingPage() {
             <li>ZION$ incentives (optional)</li>
           </ul>
         </div>
+<<<<<<< HEAD
+      </div>
+=======
       </section>
 
       {/* Services Pricing */}
@@ -728,6 +735,7 @@ export default function PricingPage() {
             </div>
           </div>
         </section>
+>>>>>>> origin/cursor/enhance-app-services-and-website-with-futuristic-design-1dae
     </div>
   );
 }
