@@ -1,2 +1,1 @@
-import React from 'react';
-export default function Page() { return <div className="min-h-screen p-8">Emerging Technology Trends (WIP)</div>; }
+export default function EmergingTechnologyTrends() { return null }
