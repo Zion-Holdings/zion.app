@@ -832,6 +832,69 @@ export const expandedMicroSaasServices: MicroSaasService[] = [
     features: [
       'AI device management',
       'Predictive maintenance',
+<<<<<<< HEAD
+      'Real-time data analytics',
+      'Device health monitoring',
+      'Automated alerts',
+      'Custom dashboards',
+      'Multi-protocol support',
+      'Edge computing capabilities'
+    ],
+    popular: true,
+    icon: '🌐',
+    color: 'from-cyan-500 to-blue-600',
+    textColor: 'text-cyan-400',
+    link: 'https://ziontechgroup.com/ai-iot-platform',
+    marketPosition: 'Competitive with AWS IoT ($0.16/hour), Azure IoT ($0.40/hour), and Google Cloud IoT Edge',
+    targetAudience: 'IoT companies, smart city providers, industrial IoT users, and connected device manufacturers',
+    trialDays: 21,
+    setupTime: '1 week',
+    category: 'IoT & Smart Cities',
+    realService: true,
+    technology: ['Machine Learning', 'IoT Management', 'Edge Computing', 'Real-time Analytics'],
+    integrations: ['AWS IoT', 'Azure IoT', 'Google Cloud IoT', 'MQTT', 'CoAP'],
+    useCases: ['Device management', 'Predictive maintenance', 'Data analytics', 'Smart operations'],
+    roi: '450% average ROI in 15 months',
+    competitors: ['AWS IoT', 'Azure IoT', 'Google Cloud IoT', 'ThingWorx'],
+    marketSize: '$1.8B global market',
+    growthRate: '140% annual growth'
+  },
+  {
+    id: 'ai-powered-quantum-simulator',
+    name: 'AI Quantum Computing Simulator',
+    tagline: 'Advanced quantum computing simulation and optimization',
+    price: '$499',
+    period: '/month',
+    description: 'State-of-the-art quantum computing simulator with AI optimization for research, development, and educational purposes.',
+    features: [
+      'Quantum circuit simulation',
+      'AI optimization algorithms',
+      'Multi-qubit support',
+      'Educational tools',
+      'Research collaboration',
+      'Performance benchmarking',
+      'Custom quantum algorithms',
+      'Cloud-based processing'
+    ],
+    popular: true,
+    icon: '⚛️',
+    color: 'from-violet-500 to-purple-600',
+    textColor: 'text-violet-400',
+    link: 'https://ziontechgroup.com/ai-quantum-simulator',
+    marketPosition: 'Premium quantum simulation platform, 60% more efficient than traditional simulators',
+    targetAudience: 'Quantum researchers, universities, tech companies, and quantum computing enthusiasts',
+    trialDays: 7,
+    setupTime: '2 weeks',
+    category: 'Emerging Technologies',
+    realService: true,
+    technology: ['Quantum Computing', 'Machine Learning', 'Simulation', 'Optimization Algorithms'],
+    integrations: ['Qiskit', 'Cirq', 'PennyLane', 'TensorFlow Quantum'],
+    useCases: ['Quantum research', 'Algorithm development', 'Education', 'Performance testing'],
+    roi: '1000% average ROI in 24 months',
+    competitors: ['IBM Quantum', 'Google Quantum AI', 'Microsoft Azure Quantum', 'Rigetti'],
+    marketSize: '$400M emerging market',
+    growthRate: '300% annual growth'
+=======
       'Quality assurance',
       'Supply chain optimization',
       'Energy management',
@@ -1649,6 +1712,7 @@ export const expandedMicroSaasServices: MicroSaasService[] = [
     competitors: ['Zillow', 'Redfin', 'Realtor.com', 'CoStar'],
     marketSize: '$1.4B global market',
     growthRate: '180% annual growth'
+>>>>>>> origin/cursor/enhance-app-services-and-website-with-futuristic-design-93c6
   }
 ];
 
