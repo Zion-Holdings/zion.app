@@ -70,21 +70,19 @@ import { advanced2025AIServicesExpansion } from '../../data/2025-advanced-ai-ser
 import { innovative2025AdvancedServicesExpansion } from '../../data/innovative-2025-advanced-services-expansion';
 import { innovative2025EnterpriseSolutions } from '../../data/innovative-2025-enterprise-solutions';
 
-// Define a proper interface for services
+// Define a proper interface for services that matches UltraFuturisticServiceCard2026
 interface Service {
-  id?: string;
+  id: string;
   name: string;
+  tagline: string;
   description: string;
-  price?: string;
-  pricing?: {
-    starter?: { price: string; period?: string };
-    monthly?: string;
-    [key: string]: { price: string; period?: string } | string;
-  };
-  category: string;
+  price: string;
+  period: string;
+  features: string[];
   popular?: boolean;
+  category: string;
+  icon: string;
   launchDate?: string;
-  [key: string]: unknown;
 }
 
 function toSlug(value: string) {
@@ -111,6 +109,55 @@ const categories = [
   'Energy',
   'Transportation'
 ];
+
+// Transform services data to match the expected Service interface
+const transformServiceData = (service: any): Service => {
+  // Extract features from description or create default features
+  const features = service.features || [
+    service.description?.split('.')[0] || 'Advanced Technology',
+    'Enterprise Ready',
+    '24/7 Support'
+  ].slice(0, 3);
+
+  // Generate icon based on category
+  const getIcon = (category: string): string => {
+    const categoryLower = category.toLowerCase();
+    if (categoryLower.includes('ai') || categoryLower.includes('machine learning')) return '🧠';
+    if (categoryLower.includes('quantum')) return '⚛️';
+    if (categoryLower.includes('space')) return '🚀';
+    if (categoryLower.includes('cyber') || categoryLower.includes('security')) return '🛡️';
+    if (categoryLower.includes('cloud')) return '☁️';
+    if (categoryLower.includes('blockchain')) return '🔗';
+    if (categoryLower.includes('metaverse')) return '🌐';
+    if (categoryLower.includes('supply chain')) return '📦';
+    if (categoryLower.includes('financial') || categoryLower.includes('trading')) return '💰';
+    if (categoryLower.includes('healthcare')) return '🏥';
+    if (categoryLower.includes('manufacturing')) return '🏭';
+    if (categoryLower.includes('retail')) return '🛍️';
+    if (categoryLower.includes('education')) return '📚';
+    if (categoryLower.includes('government')) return '🏛️';
+    if (categoryLower.includes('energy')) return '⚡';
+    if (categoryLower.includes('transportation')) return '🚗';
+    return '⚙️';
+  };
+
+  // Create tagline from description
+  const tagline = service.tagline || service.description?.split('.')[0] || 'Advanced Technology Solution';
+
+  return {
+    id: service.id || service.name?.toLowerCase().replace(/\s+/g, '-') || 'service',
+    name: service.name || 'Unnamed Service',
+    tagline,
+    description: service.description || 'Advanced technology solution',
+    price: service.price || '$999',
+    period: service.period || 'month',
+    features,
+    popular: service.popular || false,
+    category: service.category || 'Technology',
+    icon: service.icon || getIcon(service.category || 'Technology'),
+    launchDate: service.launchDate
+  };
+};
 
 export default function ServicesIndexPage() {
   const all = (enhancedRealMicroSaasServices as unknown[])
@@ -188,43 +235,11 @@ export default function ServicesIndexPage() {
     .concat(advanced2025ITSolutionsExpansion as unknown[])
     .concat(advanced2025AIServicesExpansion as unknown[]);
 
-  // Filter out services without required properties and normalize pricing
-  const validServices = all.filter(service => 
-    service && 
-    typeof service === 'object' && 
-    'name' in service && 
-    'description' in service &&
-    ('price' in service || 'pricing' in service)
-  ).map((service: Service) => {
-    // Normalize pricing structure
-    if (service.pricing && typeof service.pricing === 'object') {
-      // If pricing is an object, use the starter price or first available price
-      if (service.pricing.starter && service.pricing.starter.price) {
-        return {
-          ...service,
-          price: `$${service.pricing.starter.price}`,
-          period: service.pricing.starter.period || 'month'
-        };
-      } else if (service.pricing.monthly) {
-        return {
-          ...service,
-          price: `$${service.pricing.monthly}`,
-          period: 'month'
-        };
-      } else {
-        // Fallback to first available pricing tier
-        const firstTier = Object.values(service.pricing)[0] as { price: string; period?: string };
-        if (firstTier && firstTier.price) {
-          return {
-            ...service,
-            price: `$${firstTier.price}`,
-            period: firstTier.period || 'month'
-          };
-        }
-      }
-    }
-    return service;
-  }).filter((service: Service) => service.price && typeof service.price === 'string');
+  // Transform services to match the expected format
+  const transformedServices = all.map(transformServiceData);
+  
+  // Get valid services with pricing
+  const validServices = transformedServices.filter((service: Service) => service.price && typeof service.price === 'string');
 
   // Group services by category
   const servicesByCategory = categories.reduce((acc, category) => {
