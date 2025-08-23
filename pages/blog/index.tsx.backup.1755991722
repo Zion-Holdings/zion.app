@@ -25,7 +25,11 @@ const BlogHome: NextPage<Props> = ({ posts, authors, topics, tags }) => {
   const rest = filtered.slice(1);
 
   return (
+<<<<<<< HEAD
+    <div>
+=======
     <UltraFuturisticBackground variant="quantum" intensity={1}>
+>>>>>>> origin/cursor/enhance-app-services-and-website-with-futuristic-design-465f
       <Head>
         <title>Blog - Zion AI Marketplace</title>
         <meta name="description" content="Insights on AI, DevOps, and digital transformation." />
