@@ -466,6 +466,10 @@ export type ServiceVariant =
   | 'supply-chain-futuristic'
   | 'legal-futuristic'
   | 'healthcare-futuristic'
+<<<<<<< HEAD
+  | 'climate-futuristic'
+  | 'creative-futuristic';
+=======
   | 'ai-cutting-edge'
   | 'quantum-cutting-edge'
   | 'space-cutting-edge'
@@ -481,3 +485,4 @@ export type ServiceVariant =
   | 'support-automation-micro'
   | 'project-management-micro'
   | 'email-marketing-micro';
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-11f0

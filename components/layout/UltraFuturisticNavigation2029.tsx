@@ -11,7 +11,7 @@ import {
   Palette, Camera, Video, Music, Gamepad2, Heart,
   Leaf, Sun, Moon, Wind, Droplets, Mountain,
   Code, Wrench, Smartphone, BarChart3, Eye,
-  Satellite, Network, Server, CpuIcon
+  Infinity, Crown, Gem, Sparkle, Flame
 } from 'lucide-react';
 
 const contactInfo = {
@@ -23,205 +23,91 @@ const contactInfo = {
 
 const serviceCategories = [
   {
-    title: '🚀 2029 Revolutionary AI Services',
+    title: '🚀 2029 Cutting-Edge Innovations',
+    icon: Crown,
+    color: 'from-violet-600 via-purple-600 to-indigo-700',
+    description: 'Beyond the future of technology',
+    services: [
+      { name: 'AI Neuromorphic Computing', href: '/ai-neuromorphic-computing-platform', description: 'Brain-inspired computing for next-generation AI', price: '$12,999/month' },
+      { name: 'Quantum Internet Protocol v2.0', href: '/quantum-internet-protocol-v2', description: 'Next-generation quantum internet infrastructure', price: '$8,999/month' },
+      { name: 'Autonomous Space Mining', href: '/autonomous-space-mining-platform', description: 'AI-powered asteroid mining and resource extraction', price: '$25,999/month' },
+      { name: 'Biotech AI Drug Discovery', href: '/biotech-ai-drug-discovery', description: 'AI-powered pharmaceutical research and development', price: '$15,999/month' }
+    ]
+  },
+  {
+    title: '⚡ Emerging Technology Solutions',
+    icon: Zap,
+    color: 'from-blue-600 via-cyan-600 to-teal-700',
+    description: 'Next-generation tech infrastructure',
+    services: [
+      { name: 'Smart City IoT Management', href: '/smart-city-iot-management', description: 'Intelligent urban infrastructure management', price: '$7,999/month' },
+      { name: 'Edge AI Computing Network', href: '/edge-ai-computing-network', description: 'Distributed AI processing at the network edge', price: '$5,999/month' },
+      { name: 'Autonomous Manufacturing AI', href: '/autonomous-manufacturing-ai', description: 'Self-optimizing intelligent manufacturing', price: '$9,999/month' },
+      { name: '6G Network Infrastructure', href: '/6g-network-infrastructure', description: 'Next-generation wireless communication', price: '$14,999/month' }
+    ]
+  },
+  {
+    title: '💎 Micro SAAS Innovations',
+    icon: Gem,
+    color: 'from-emerald-600 via-green-600 to-teal-700',
+    description: 'Practical business solutions',
+    services: [
+      { name: 'AI Content Marketing Suite', href: '/ai-content-marketing-suite', description: 'Intelligent content creation and distribution', price: '$299/month' },
+      { name: 'Smart Invoice & Expense Manager', href: '/smart-invoice-expense-manager', description: 'Automated financial management for businesses', price: '$199/month' },
+      { name: 'AI Customer Support Automation', href: '/ai-customer-support-automation', description: 'Intelligent customer service automation', price: '$399/month' },
+      { name: 'Smart Project Management Platform', href: '/smart-project-management-platform', description: 'AI-powered project planning and execution', price: '$249/month' }
+    ]
+  },
+  {
+    title: '🤖 AI & Machine Learning',
     icon: Brain,
-    color: 'from-violet-600 to-purple-600',
-    description: 'Next-generation artificial intelligence',
-    services: [
-      { name: 'AI Consciousness Simulation Platform', href: '/ai-consciousness-simulation-platform', description: 'Simulate human consciousness in AI systems', price: '$12,999/month' },
-      { name: 'Autonomous AI Corporation Platform', href: '/autonomous-ai-corporation-platform', description: 'AI systems that run entire corporations', price: '$45,999/month' },
-      { name: 'AI Emotional Intelligence Platform', href: '/ai-emotional-intelligence-platform', description: 'AI that understands human emotions', price: '$8,999/month' },
-      { name: 'AI Creative Content Studio', href: '/ai-creative-content-studio', description: 'Generate unlimited creative content', price: '$3,999/month' }
-    ]
-  },
-  {
-    title: '⚛️ 2029 Quantum Innovation Services',
-    icon: Atom,
-    color: 'from-indigo-600 to-blue-600',
-    description: 'Quantum computing breakthroughs',
-    services: [
-      { name: 'Quantum Financial Optimization Platform', href: '/quantum-financial-optimization-platform-2029', description: 'Quantum-powered financial optimization', price: '$12,999/month' },
-      { name: 'Quantum Cybersecurity Fortress', href: '/quantum-cybersecurity-fortress-2029', description: 'Unbreakable quantum encryption', price: '$8,999/month' },
-      { name: 'Quantum Drug Discovery Platform', href: '/quantum-drug-discovery-platform-2029', description: '1000x faster drug discovery', price: '$15,999/month' },
-      { name: 'Quantum Logistics Optimization Platform', href: '/quantum-logistics-optimization-platform-2029', description: 'Quantum supply chain optimization', price: '$6,999/month' }
-    ]
-  },
-  {
-    title: '🌌 2029 Space Innovation Services',
-    icon: Rocket,
-    color: 'from-red-600 to-orange-600',
-    description: 'Interplanetary expansion and resource extraction',
-    services: [
-      { name: 'Mars Colonization Automation Platform', href: '/mars-colonization-automation-platform', description: 'Automate Mars colonization process', price: '$99,999/month' },
-      { name: 'Interplanetary Communication Network', href: '/interplanetary-communication-network', description: 'Real-time solar system communication', price: '$75,999/month' },
-      { name: 'Space Mining Automation Platform', href: '/space-mining-automation-platform', description: 'Automate asteroid and lunar mining', price: '$65,999/month' }
-    ]
-  },
-  {
-    title: '🔐 2029 Cybersecurity & Blockchain',
-    icon: Shield,
-    color: 'from-indigo-600 to-purple-600',
-    description: 'Advanced security and decentralized solutions',
-    services: [
-      { name: 'Quantum Encryption Platform', href: '/quantum-encryption-platform', description: 'Unbreakable quantum encryption', price: '$22,999/month' },
-      { name: 'Decentralized Identity Management', href: '/decentralized-identity-management', description: 'Self-sovereign blockchain identity', price: '$7,999/month' },
-      { name: 'AI Threat Intelligence Platform', href: '/ai-threat-intelligence-platform', description: 'Predictive cybersecurity with AI', price: '$14,999/month' },
-      { name: 'DeFi Yield Optimization Platform', href: '/defi-yield-optimization-platform', description: 'Maximize DeFi returns with AI', price: '$5,999/month' }
-    ]
-  },
-  {
-    title: '🏙️ 2029 IoT & Edge Computing',
-    icon: Globe,
-    color: 'from-green-600 to-teal-600',
-    description: 'Smart infrastructure and edge intelligence',
-    services: [
-      { name: 'Smart City Infrastructure Platform', href: '/smart-city-infrastructure-platform', description: 'Complete smart city management', price: '$45,999/month' },
-      { name: 'Industrial IoT Automation Platform', href: '/industrial-iot-automation-platform', description: 'Industrial automation with IoT', price: '$28,999/month' },
-      { name: 'Edge AI Computing Platform', href: '/edge-ai-computing-platform', description: 'AI computing at the edge', price: '$19,999/month' }
-    ]
-  },
-  {
-    title: '🏠 2029 Space Architecture & Energy',
-    icon: Building,
-    color: 'from-green-600 to-teal-600',
-    description: 'Habitat design and space energy harvesting',
-    services: [
-      { name: 'Space Habitat Design Platform', href: '/space-habitat-design-platform', description: 'Design space habitats for any planet', price: '$45,999/month' },
-      { name: 'Space Energy Harvesting Platform', href: '/space-energy-harvesting-platform', description: 'Harvest energy from space sources', price: '$55,999/month' }
-    ]
-  },
-  {
-    title: '🤖 Advanced AI & Machine Learning',
-    icon: Brain,
-    color: 'from-emerald-600 to-teal-600',
+    color: 'from-purple-600 via-pink-600 to-rose-700',
     description: 'Next-generation AI solutions',
     services: [
-      { name: 'AI Customer Service Automation', href: '/ai-customer-service-automation', description: 'Intelligent customer support', price: '$899/month' },
-      { name: 'AI Education Platform', href: '/ai-education-platform', description: 'Personalized learning with AI', price: '$1,499/month' },
-      { name: 'AI Content Creation Suite', href: '/ai-content-creation-suite', description: 'Unlimited AI content creation', price: '$1,299/month' }
-    ]
-  },
-  {
-    title: '⛓️ Blockchain & Web3 Solutions',
-    icon: Layers,
-    color: 'from-orange-600 to-red-600',
-    description: 'Decentralized and blockchain solutions',
-    services: [
-      { name: 'Blockchain Supply Chain Transparency', href: '/blockchain-supply-chain-transparency', description: 'End-to-end supply chain visibility', price: '$2,499/month' },
-      { name: 'Smart Contract Automation Platform', href: '/smart-contract-automation', description: 'Automated blockchain contracts', price: '$1,999/month' },
-      { name: 'DeFi Yield Optimization', href: '/defi-yield-optimization', description: 'Maximize DeFi returns', price: '$3,999/month' }
-    ]
-  },
-  {
-    title: '🏥 Healthcare & Biotech Innovation',
-    icon: Heart,
-    color: 'from-pink-600 to-rose-600',
-    description: 'Advanced healthcare solutions',
-    services: [
+      { name: 'AI Climate Prediction Platform', href: '/ai-climate-prediction-platform', description: 'Predict climate changes with 99.9% accuracy', price: '$2,999/month' },
       { name: 'AI Healthcare Diagnosis Platform', href: '/ai-healthcare-diagnosis-platform', description: 'Revolutionary medical diagnosis', price: '$3,999/month' },
-      { name: 'Biotech Research Automation', href: '/biotech-research-automation', description: 'Automated biotechnology research', price: '$4,999/month' },
-      { name: 'Personalized Medicine AI', href: '/personalized-medicine-ai', description: 'AI-powered personalized treatment', price: '$2,999/month' }
+      { name: 'AI Education Platform', href: '/ai-education-platform', description: 'Personalized learning with AI', price: '$1,499/month' },
+      { name: 'AI Legal Research Platform', href: '/ai-legal-research-platform', description: 'Intelligent legal research', price: '$2,999/month' }
+    ]
+  },
+  {
+    title: '⚛️ Quantum & Advanced Tech',
+    icon: Atom,
+    color: 'from-indigo-600 via-blue-600 to-cyan-700',
+    description: 'Quantum computing and beyond',
+    services: [
+      { name: 'Quantum Cybersecurity Firewall', href: '/quantum-cybersecurity-firewall', description: 'Unbreakable quantum encryption', price: '$4,999/month' },
+      { name: 'Quantum Financial Trading AI', href: '/quantum-financial-trading-ai', description: 'Quantum-powered algorithmic trading', price: '$18,999/month' },
+      { name: 'Quantum Machine Learning Platform', href: '/quantum-machine-learning-platform', description: 'Quantum computing for ML', price: '$7,999/month' },
+      { name: 'Quantum Internet Security Gateway', href: '/quantum-internet-security-gateway', description: 'Unbreakable internet security', price: '$3,999/month' }
     ]
   },
   {
     title: '🏙️ Smart City & Infrastructure',
     icon: Building,
-    color: 'from-blue-600 to-cyan-600',
-    description: 'Space technology breakthroughs',
+    color: 'from-orange-600 via-red-600 to-pink-700',
+    description: 'Intelligent urban solutions',
     services: [
-      { name: 'Autonomous Space Mining Platform', href: '/autonomous-space-mining-platform-2029', description: 'Asteroid and lunar mining', price: '$25,999/month' },
-      { name: 'Space Weather Prediction Platform', href: '/space-weather-prediction-platform-2029', description: 'Solar storm and cosmic radiation prediction', price: '$4,999/month' },
-      { name: 'Satellite Constellation Management', href: '/satellite-constellation-management-2029', description: 'Intelligent satellite network management', price: '$8,999/month' },
-      { name: 'Space Debris Tracking Platform', href: '/space-debris-tracking-platform-2029', description: 'Real-time debris monitoring', price: '$3,999/month' }
-    ]
-  },
-  {
-    title: '🧬 2029 Emerging Technology Services',
-    icon: Microscope,
-    color: 'from-emerald-600 to-teal-600',
-    description: 'Cutting-edge emerging technologies',
-    services: [
-      { name: 'DNA Computing Platform', href: '/dna-computing-platform-2029', description: 'Molecular computing with DNA', price: '$19,999/month' },
-      { name: 'Brain-Computer Interface Platform', href: '/brain-computer-interface-platform-2029', description: 'Direct brain-computer communication', price: '$12,999/month' },
-      { name: 'Quantum-Biological Computing Platform', href: '/quantum-biological-computing-2029', description: 'Hybrid quantum-biological systems', price: '$22,999/month' },
-      { name: 'Synthetic Biology Automation Platform', href: '/synthetic-biology-automation-2029', description: 'Automated biological system design', price: '$9,999/month' }
-    ]
-  },
-  {
-    title: '🏢 2029 Enterprise IT Services',
-    icon: Building,
-    color: 'from-orange-600 to-red-600',
-    description: 'Enterprise-grade IT solutions',
-    services: [
-      { name: 'Zero-Trust Enterprise Platform', href: '/zero-trust-enterprise-platform-2029', description: 'Continuous verification security', price: '$7,999/month' },
-      { name: 'AI-Powered IT Automation Platform', href: '/ai-powered-it-automation-platform-2029', description: 'Intelligent IT operations automation', price: '$5,999/month' },
-      { name: 'Quantum-Ready Enterprise Platform', href: '/quantum-ready-enterprise-platform-2029', description: 'Future-proof quantum enterprise', price: '$15,999/month' },
-      { name: 'Autonomous Enterprise Operations Platform', href: '/autonomous-enterprise-operations-2029', description: 'Self-managing enterprise systems', price: '$12,999/month' }
-    ]
-  },
-  {
-    title: '🔒 Advanced Cybersecurity Solutions',
-    icon: Shield,
-    color: 'from-red-600 to-pink-600',
-    description: 'Next-generation security',
-    services: [
-      { name: 'Zero-Trust Network Architecture', href: '/zero-trust-network-architecture', description: 'Continuous verification security', price: '$4,999/month' },
-      { name: 'Vulnerability Assessment & Penetration Testing', href: '/vulnerability-assessment-penetration-testing', description: 'Comprehensive security testing', price: '$3,999/month' },
-      { name: 'SOC2 Evidence Automation', href: '/soc2-evidence-automation', description: 'Automated compliance evidence', price: '$2,999/month' },
-      { name: 'TLS Certificate Monitor', href: '/tls-certificate-monitor', description: 'SSL/TLS certificate management', price: '$1,999/month' }
-    ]
-  },
-  {
-    title: '📊 Data & Analytics Solutions',
-    icon: BarChart3,
-    color: 'from-green-600 to-emerald-600',
-    description: 'Intelligent data solutions',
-    services: [
-      { name: 'Data Catalog & Lineage', href: '/data-catalog-lineage', description: 'Comprehensive data governance', price: '$2,999/month' },
-      { name: 'Data Pipeline Health Monitor', href: '/data-pipeline-health', description: 'Real-time pipeline monitoring', price: '$1,999/month' },
-      { name: 'Data Quality Monitor', href: '/data-quality-monitor', description: 'Automated data quality assurance', price: '$2,499/month' },
-      { name: 'Vector Search Starter', href: '/vector-search-starter', description: 'AI-powered vector search', price: '$1,499/month' }
-    ]
-  },
-  {
-    title: '☁️ Cloud & Infrastructure',
-    icon: Cloud,
-    color: 'from-blue-600 to-indigo-600',
-    description: 'Scalable cloud solutions',
-    services: [
-      { name: 'Managed PostgreSQL HA', href: '/managed-postgresql-ha', description: 'High-availability database management', price: '$3,999/month' },
-      { name: 'Infrastructure Drift Detector', href: '/infrastructure-drift-detector', description: 'Automated drift detection', price: '$2,999/month' },
-      { name: 'Serverless Cron Manager', href: '/serverless-cron-manager', description: 'Cloud-native job scheduling', price: '$1,999/month' },
-      { name: 'Cron Job Scheduler', href: '/cron-job-scheduler', description: 'Advanced job scheduling', price: '$1,499/month' }
-    ]
-  },
-  {
-    title: '🤖 AI & Machine Learning',
-    icon: CpuIcon,
-    color: 'from-purple-600 to-violet-600',
-    description: 'Intelligent AI solutions',
-    services: [
-      { name: 'LLM Gateway', href: '/llm-gateway', description: 'Large language model management', price: '$4,999/month' },
-      { name: 'AI Meeting Transcriber Pro', href: '/ai-meeting-transcriber-pro', description: 'Advanced meeting transcription', price: '$2,999/month' },
-      { name: 'AI Mental Health Companion', href: '/ai-mental-health-companion', description: 'AI-powered mental health support', price: '$1,999/month' },
-      { name: 'AI Multimodal Fusion Platform', href: '/ai-multimodal-fusion-platform', description: 'Multi-modal AI processing', price: '$3,999/month' }
-    ]
-  },
-  {
-    title: '🚀 Space & Emerging Tech',
-    icon: Satellite,
-    color: 'from-cyan-600 to-blue-600',
-    description: 'Space technology solutions',
-    services: [
-      { name: 'Space Technology AI Platform', href: '/space-technology-ai-platform', description: 'AI-powered space solutions', price: '$5,999/month' },
-      { name: 'Virtual Event Hologram Platform', href: '/virtual-event-hologram-platform', description: 'Holographic event technology', price: '$4,999/month' },
-      { name: 'Edge Computing Orchestration', href: '/edge-computing-orchestration', description: 'Intelligent edge computing', price: '$3,999/month' },
-      { name: 'Metaverse AI Development Platform', href: '/metaverse-ai-development-platform', description: 'AI-powered metaverse development', price: '$6,999/month' }
+      { name: 'Digital Twin Manufacturing Platform', href: '/digital-twin-manufacturing-platform', description: 'Virtual manufacturing replicas', price: '$4,999/month' },
+      { name: 'IoT Energy Management System', href: '/iot-energy-management-system', description: 'Smart energy optimization', price: '$1,999/month' },
+      { name: 'Smart Traffic Management System', href: '/smart-traffic-management', description: 'AI traffic optimization', price: '$4,999/month' },
+      { name: 'Electric Vehicle Charging Network', href: '/ev-charging-network', description: 'Smart EV infrastructure', price: '$2,999/month' }
     ]
   }
 ];
 
-const UltraFuturisticNavigation2029 = () => {
+const mainNavigation = [
+  { name: 'Home', href: '/', icon: Home },
+  { name: 'Services', href: '/services', icon: Briefcase },
+  { name: 'Solutions', href: '/solutions', icon: Target },
+  { name: 'Pricing', href: '/pricing', icon: DollarSign },
+  { name: 'Resources', href: '/resources', icon: BookOpen },
+  { name: 'Blog', href: '/blog', icon: MessageCircle },
+  { name: 'Support', href: '/support', icon: Users },
+  { name: 'Contact', href: '/contact', icon: Phone }
+];
+
+export default function UltraFuturisticNavigation2029() {
   const [isOpen, setIsOpen] = useState(false);
   const [activeCategory, setActiveCategory] = useState<string | null>(null);
   const [isScrolled, setIsScrolled] = useState(false);
@@ -240,118 +126,133 @@ const UltraFuturisticNavigation2029 = () => {
   return (
     <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
       isScrolled 
-        ? 'bg-black/90 backdrop-blur-xl border-b border-purple-500/30' 
-        : 'bg-gradient-to-r from-black/80 via-purple-900/80 to-black/80 backdrop-blur-lg'
+        ? 'bg-black/90 backdrop-blur-xl border-b border-purple-500/30 shadow-2xl shadow-purple-500/20' 
+        : 'bg-transparent'
     }`}>
       {/* Top Contact Bar */}
-      <div className="bg-gradient-to-r from-purple-600 to-blue-600 text-white py-2 px-4 text-center text-sm">
+      <div className="bg-gradient-to-r from-purple-900 via-blue-900 to-cyan-900 text-white py-2 px-4 text-center text-sm">
         <div className="flex items-center justify-center space-x-6">
           <div className="flex items-center space-x-2">
-            <Phone className="w-4 h-4" />
+            <Phone className="w-4 h-4 text-cyan-400" />
             <span>{contactInfo.mobile}</span>
           </div>
           <div className="flex items-center space-x-2">
-            <Mail className="w-4 h-4" />
+            <Mail className="w-4 h-4 text-cyan-400" />
             <span>{contactInfo.email}</span>
           </div>
           <div className="flex items-center space-x-2">
-            <MapPin className="w-4 h-4" />
+            <MapPin className="w-4 h-4 text-cyan-400" />
             <span>{contactInfo.address}</span>
           </div>
         </div>
       </div>
 
       {/* Main Navigation */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="px-4 lg:px-8">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <Link href="/" className="flex items-center space-x-3 group">
             <div className="relative">
-              <div className="w-12 h-12 bg-gradient-to-r from-purple-500 to-blue-500 rounded-xl flex items-center justify-center transform group-hover:scale-110 transition-transform duration-300">
+              <div className="w-12 h-12 bg-gradient-to-r from-purple-500 to-cyan-500 rounded-xl flex items-center justify-center transform group-hover:scale-110 transition-transform duration-300">
                 <Rocket className="w-7 h-7 text-white" />
               </div>
-              <div className="absolute inset-0 bg-gradient-to-r from-purple-400 to-blue-400 rounded-xl blur-xl opacity-50 group-hover:opacity-75 transition-opacity duration-300"></div>
+              <div className="absolute inset-0 bg-gradient-to-r from-purple-500 to-cyan-500 rounded-xl blur-xl opacity-50 group-hover:opacity-75 transition-opacity duration-300"></div>
             </div>
-            <div className="flex flex-col">
-              <span className="text-2xl font-bold bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent">
+            <div className="hidden md:block">
+              <h1 className="text-2xl font-bold bg-gradient-to-r from-white to-cyan-300 bg-clip-text text-transparent">
                 Zion Tech Group
-              </span>
-              <span className="text-xs text-gray-400">2029 Revolutionary Technology</span>
+              </h1>
+              <p className="text-xs text-cyan-400 font-medium">Future Technology Solutions</p>
             </div>
           </Link>
 
           {/* Desktop Navigation */}
           <div className="hidden lg:flex items-center space-x-8">
-            {serviceCategories.map((category) => (
-              <div key={category.title} className="relative group">
-                <button
-                  onClick={() => setActiveCategory(activeCategory === category.title ? null : category.title)}
-                  className="flex items-center space-x-2 text-gray-300 hover:text-white transition-colors duration-300 group-hover:text-purple-400"
-                >
-                  <category.icon className="w-5 h-5" />
-                  <span className="font-medium">{category.title.split(' ')[0]}</span>
-                  <ChevronDown className={`w-4 h-4 transition-transform duration-300 ${
-                    activeCategory === category.title ? 'rotate-180' : ''
-                  }`} />
-                </button>
+            {mainNavigation.map((item) => (
+              <Link
+                key={item.name}
+                href={item.href}
+                className="flex items-center space-x-2 text-gray-300 hover:text-white transition-colors duration-300 group"
+              >
+                <item.icon className="w-4 h-4 group-hover:text-cyan-400 transition-colors duration-300" />
+                <span className="font-medium">{item.name}</span>
+              </Link>
+            ))}
+          </div>
 
-                {/* Dropdown Menu */}
-                <AnimatePresence>
-                  {activeCategory === category.title && (
-                    <motion.div
-                      initial={{ opacity: 0, y: 10, scale: 0.95 }}
-                      animate={{ opacity: 1, y: 0, scale: 1 }}
-                      exit={{ opacity: 0, y: 10, scale: 0.95 }}
-                      transition={{ duration: 0.2 }}
-                      className="absolute top-full left-0 mt-2 w-96 bg-black/95 backdrop-blur-xl border border-purple-500/30 rounded-2xl shadow-2xl overflow-hidden"
-                    >
-                      <div className="p-6">
-                        <div className="mb-4">
-                          <h3 className="text-lg font-bold text-white mb-2">{category.title}</h3>
-                          <p className="text-sm text-gray-400">{category.description}</p>
+          {/* Service Categories Dropdown */}
+          <div className="hidden lg:block relative">
+            <button
+              onMouseEnter={() => setActiveCategory('services')}
+              onMouseLeave={() => setActiveCategory(null)}
+              className="flex items-center space-x-2 text-gray-300 hover:text-white transition-colors duration-300 group px-4 py-2 rounded-lg hover:bg-white/10"
+            >
+              <Sparkles className="w-4 h-4 group-hover:text-cyan-400 transition-colors duration-300" />
+              <span className="font-medium">All Services</span>
+              <ChevronDown className="w-4 h-4 group-hover:text-cyan-400 transition-colors duration-300" />
+            </button>
+
+            <AnimatePresence>
+              {activeCategory === 'services' && (
+                <motion.div
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: 10 }}
+                  transition={{ duration: 0.2 }}
+                  onMouseEnter={() => setActiveCategory('services')}
+                  onMouseLeave={() => setActiveCategory(null)}
+                  className="absolute top-full left-0 mt-2 w-[800px] bg-black/95 backdrop-blur-xl border border-purple-500/30 rounded-2xl shadow-2xl shadow-purple-500/20 p-6"
+                >
+                  <div className="grid grid-cols-2 gap-6">
+                    {serviceCategories.map((category) => (
+                      <div key={category.title} className="group">
+                        <div className={`flex items-center space-x-3 mb-3 p-3 rounded-lg bg-gradient-to-r ${category.color} bg-opacity-20`}>
+                          <category.icon className="w-5 h-5 text-white" />
+                          <h3 className="font-semibold text-white text-sm">{category.title}</h3>
                         </div>
-                        <div className="space-y-3">
+                        <p className="text-gray-400 text-xs mb-3">{category.description}</p>
+                        <div className="space-y-2">
                           {category.services.map((service) => (
                             <Link
                               key={service.name}
                               href={service.href}
-                              onClick={closeMenu}
-                              className="block p-3 rounded-xl hover:bg-purple-500/10 transition-all duration-300 group"
+                              className="block p-2 rounded-lg hover:bg-white/10 transition-colors duration-300 group"
                             >
-                              <div className="flex items-start justify-between">
-                                <div className="flex-1">
-                                  <h4 className="font-medium text-white group-hover:text-purple-400 transition-colors duration-300">
+                              <div className="flex items-center justify-between">
+                                <div>
+                                  <h4 className="text-white text-sm font-medium group-hover:text-cyan-400 transition-colors duration-300">
                                     {service.name}
                                   </h4>
-                                  <p className="text-sm text-gray-400 mt-1">{service.description}</p>
+                                  <p className="text-gray-400 text-xs">{service.description}</p>
                                 </div>
-                                <div className="text-right">
-                                  <div className="text-sm font-medium text-purple-400">{service.price}</div>
-                                </div>
+                                <span className="text-cyan-400 text-xs font-medium">{service.price}</span>
                               </div>
                             </Link>
                           ))}
                         </div>
                       </div>
-                    </motion.div>
-                  )}
-                </AnimatePresence>
-              </div>
-            ))}
+                    ))}
+                  </div>
+                </motion.div>
+              )}
+            </AnimatePresence>
+          </div>
 
-            {/* Contact Button */}
+          {/* CTA Button */}
+          <div className="hidden lg:block">
             <Link
               href="/contact"
-              className="bg-gradient-to-r from-purple-500 to-blue-500 hover:from-purple-600 hover:to-blue-600 text-white px-6 py-3 rounded-xl font-medium transition-all duration-300 transform hover:scale-105 hover:shadow-lg hover:shadow-purple-500/25"
+              className="inline-flex items-center space-x-2 bg-gradient-to-r from-purple-600 to-cyan-600 hover:from-purple-500 hover:to-cyan-500 text-white px-6 py-3 rounded-xl font-medium transition-all duration-300 transform hover:scale-105 hover:shadow-lg hover:shadow-purple-500/25"
             >
-              Get Started
+              <Zap className="w-4 h-4" />
+              <span>Get Started</span>
             </Link>
           </div>
 
           {/* Mobile Menu Button */}
           <button
             onClick={toggleMenu}
-            className="lg:hidden p-2 rounded-lg text-gray-400 hover:text-white hover:bg-gray-800 transition-colors duration-300"
+            className="lg:hidden p-2 rounded-lg text-gray-300 hover:text-white hover:bg-white/10 transition-colors duration-300"
           >
             {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
           </button>
@@ -369,40 +270,55 @@ const UltraFuturisticNavigation2029 = () => {
             className="lg:hidden bg-black/95 backdrop-blur-xl border-t border-purple-500/30"
           >
             <div className="px-4 py-6 space-y-4">
-              {serviceCategories.map((category) => (
-                <div key={category.title} className="space-y-2">
-                  <h3 className="text-lg font-bold text-white">{category.title}</h3>
-                  <div className="pl-4 space-y-2">
-                    {category.services.slice(0, 3).map((service) => (
-                      <Link
-                        key={service.name}
-                        href={service.href}
-                        onClick={closeMenu}
-                        className="block p-3 rounded-lg hover:bg-purple-500/10 transition-colors duration-300"
-                      >
-                        <div className="text-white font-medium">{service.name}</div>
-                        <div className="text-sm text-gray-400">{service.description}</div>
-                        <div className="text-sm text-purple-400 font-medium mt-1">{service.price}</div>
-                      </Link>
-                    ))}
-                  </div>
-                </div>
+              {mainNavigation.map((item) => (
+                <Link
+                  key={item.name}
+                  href={item.href}
+                  onClick={closeMenu}
+                  className="flex items-center space-x-3 text-gray-300 hover:text-white transition-colors duration-300 p-3 rounded-lg hover:bg-white/10"
+                >
+                  <item.icon className="w-5 h-5" />
+                  <span className="font-medium">{item.name}</span>
+                </Link>
               ))}
               
-              {/* Mobile Contact Button */}
-              <Link
-                href="/contact"
-                onClick={closeMenu}
-                className="block w-full bg-gradient-to-r from-purple-500 to-blue-500 text-white text-center py-3 rounded-xl font-medium"
-              >
-                Contact Us
-              </Link>
+              <div className="pt-4 border-t border-purple-500/30">
+                <h3 className="text-white font-semibold mb-3 px-3">Service Categories</h3>
+                {serviceCategories.map((category) => (
+                  <div key={category.title} className="mb-4">
+                    <div className={`flex items-center space-x-3 mb-2 p-3 rounded-lg bg-gradient-to-r ${category.color} bg-opacity-20`}>
+                      <category.icon className="w-5 h-5 text-white" />
+                      <h4 className="font-semibold text-white text-sm">{category.title}</h4>
+                    </div>
+                    <div className="pl-6 space-y-2">
+                      {category.services.slice(0, 2).map((service) => (
+                        <Link
+                          key={service.name}
+                          href={service.href}
+                          onClick={closeMenu}
+                          className="block text-gray-400 hover:text-cyan-400 transition-colors duration-300 text-sm"
+                        >
+                          {service.name}
+                        </Link>
+                      ))}
+                    </div>
+                  </div>
+                ))}
+              </div>
+
+              <div className="pt-4">
+                <Link
+                  href="/contact"
+                  onClick={closeMenu}
+                  className="block w-full text-center bg-gradient-to-r from-purple-600 to-cyan-600 hover:from-purple-500 hover:to-cyan-500 text-white px-6 py-3 rounded-xl font-medium transition-all duration-300"
+                >
+                  Get Started
+                </Link>
+              </div>
             </div>
           </motion.div>
         )}
       </AnimatePresence>
     </nav>
   );
-};
-
-export default UltraFuturisticNavigation2029;
+}
