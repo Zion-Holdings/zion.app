@@ -1,8 +1,14 @@
 import React from 'react';
 import Head from 'next/head';
+<<<<<<< HEAD
+import Card from '../components/ui/Card';
+import Button from '../components/ui/Button';
+import { Check, Star, ArrowRight, Zap, Shield, Users, Globe, TrendingUp, CheckCircle } from 'lucide-react';
+=======
 import { Check, Star, Zap, Shield, Users, Globe, ArrowRight } from 'lucide-react';
 import Button from '../components/ui/Button';
 import { microSaasServices, serviceCategories, getServicesByCategory } from '../data/micro-saas-services';
+>>>>>>> origin/cursor/enhance-app-with-micro-saas-and-deploy-a78d
 
 export default function PricingPage() {
   const microSaasServices = [
@@ -358,6 +364,92 @@ export default function Pricing() {
               Advanced features and capabilities for large organizations and enterprises
             </p>
           </div>
+<<<<<<< HEAD
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {enterpriseFeatures.map((feature, index) => (
+              <Card
+                key={index}
+                className="group border border-gray-700 hover:border-cursor-blue/30 hover:bg-gray-900/80 transition-all duration-300"
+              >
+                <div className="flex items-start space-x-4">
+                  <div className="flex-shrink-0">{feature.icon}</div>
+                  <div className="flex-1">
+                    <h3 className="text-xl font-bold mb-3 text-white group-hover:text-cursor-blue transition-colors duration-300">
+                      {feature.title}
+                    </h3>
+                    <p className="text-gray-400 leading-relaxed">
+                      {feature.description}
+                    </p>
+                  </div>
+                </div>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ Section */}
+      <section className="section-padding bg-gradient-cursor-accent">
+        <div className="container-cursor">
+          <div className="text-center mb-20">
+            <h2 className="text-responsive-lg font-bold mb-8 gradient-text text-shadow">
+              Frequently Asked Questions
+            </h2>
+            <p className="text-responsive-md text-gray-400 max-w-4xl mx-auto leading-relaxed">
+              Everything you need to know about our pricing and services
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {faqs.map((faq, index) => (
+              <Card
+                key={index}
+                className="group border border-gray-700 hover:border-cursor-blue/30 hover:bg-gray-900/80 transition-all duration-300"
+              >
+                <h3 className="text-lg font-bold mb-3 text-white group-hover:text-cursor-blue transition-colors duration-300">
+                  {faq.question}
+                </h3>
+                <p className="text-gray-400 leading-relaxed">
+                  {faq.answer}
+                </p>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className="section-padding bg-gradient-to-r from-cursor-blue to-blue-600 relative overflow-hidden">
+        <div className="absolute inset-0 bg-dots opacity-10" />
+        <div className="container-cursor text-center relative z-10">
+          <h2 className="text-responsive-lg font-bold text-white mb-8 text-shadow-lg">
+            Ready to Get Started?
+          </h2>
+          <p className="text-responsive-md text-blue-100 mb-12 max-w-4xl mx-auto leading-relaxed">
+            Start your free trial today and experience the power of our AI-powered micro SaaS services.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-6 justify-center">
+            <Button
+              href="/contact"
+              size="lg"
+              className="bg-white text-cursor-blue hover:bg-gray-100 shadow-2xl hover-glow"
+            >
+              Start Free Trial
+              <ArrowRight className="w-5 h-5 ml-2" />
+            </Button>
+            <Button
+              href="/contact"
+              variant="outline"
+              size="lg"
+              className="border-white text-white hover:bg-white hover:text-cursor-blue shadow-2xl"
+            >
+              Contact Sales
+            </Button>
+          </div>
+        </div>
+      </section>
+=======
         </section>
 
         {/* Micro SaaS Services Pricing */}
@@ -484,6 +576,7 @@ export default function Pricing() {
           </div>
         </section>
       </div>
+>>>>>>> origin/cursor/enhance-app-with-micro-saas-and-deploy-a78d
     </>
   );
 };
