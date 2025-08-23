@@ -25,6 +25,7 @@
   "blockchain-enterprise-platform",
   "brain-computer-interface",
   "customer-intelligence-platform",
+  "energy-technology-solutions",
   "entertainment-media-solutions",
   "industrial-automation-ai",
   "intelligent-project-management-suite",
@@ -52,9 +53,13 @@
   "quantum-supply-chain-optimizer",
   "quantum-threat-detection",
   "real-estate-technology-solutions",
+  "satellite-technology-solutions",
   "services/data-contracts-hub",
   "services/serverless-lakehouse-starter",
   "space-colonization-services",
+  "space-communications-network",
+  "space-infrastructure-platform",
   "space-mining-automation-platform",
-  "space-mining-platform"
+  "space-mining-platform",
+  "space-robotics-platform"
 ]

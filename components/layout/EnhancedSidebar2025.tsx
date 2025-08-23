@@ -20,25 +20,18 @@ const contactInfo = {
 
 const sidebarSections = [
   {
-    title: 'AI & Consciousness',
+    title: 'AI & Machine Learning',
     icon: <Brain className="w-5 h-5" />,
     color: 'text-violet-400',
     items: [
+      { name: 'AI Services Overview', href: '/ai-services', badge: 'Main' },
       { name: 'AI Consciousness Evolution', href: '/ai-consciousness-evolution-2029', badge: 'New' },
-      { name: 'AI Quantum Neural Network', href: '/ai-quantum-neural-network', badge: 'Hot' },
       { name: 'AI Autonomous Research', href: '/ai-autonomous-research-assistant', badge: 'New' },
       { name: 'AI Emotional Intelligence', href: '/ai-emotional-intelligence-training', badge: 'Popular' },
       { name: 'AI Predictive Maintenance', href: '/ai-predictive-maintenance-platform', badge: 'New' },
       { name: 'AI Content Personalization', href: '/ai-content-personalization-engine', badge: 'New' },
-      { name: 'AI Autonomous Ecosystem', href: '/ai-autonomous-ecosystem-manager' },
-      { name: 'AI Ethics & Governance', href: '/ai-ethics-governance-framework' },
-      { name: 'RAG Evaluation Lab', href: '/rag-evaluation-lab/', badge: 'New' },
-      { name: 'API Performance Testing', href: '/api-performance-testing/' },
-      { name: 'AI Creativity Studio', href: '/ai-creativity-studio' },
-      { name: 'AI Education Platform', href: '/ai-education-platform' },
       { name: 'AI Healthcare Diagnostics', href: '/healthcare-solutions' },
       { name: 'AI Financial Intelligence', href: '/ai-financial-intelligence' },
-      { name: 'AI Sustainability Platform', href: '/ai-sustainability-platform' },
       { name: 'AI Legal Contract Analyzer', href: '/ai-legal-contract-analyzer' }
     ]
   },
@@ -47,19 +40,28 @@ const sidebarSections = [
     icon: <Atom className="w-5 h-5" />,
     color: 'text-indigo-400',
     items: [
-      { name: 'Space Resource Mining', href: '/space-resource-mining-platform', badge: 'Hot' },
+      { name: 'Quantum Services Overview', href: '/quantum-services', badge: 'Main' },
+      { name: 'Quantum Neural Networks', href: '/quantum-neural-network-platform', badge: 'Hot' },
       { name: 'Quantum Internet Security', href: '/quantum-internet-security-platform', badge: 'New' },
-      { name: 'Brain-Computer Interface', href: '/brain-computer-interface-platform', badge: 'New' },
       { name: 'Quantum Materials Discovery', href: '/quantum-materials-discovery-platform', badge: 'New' },
-      { name: 'Autonomous Vehicle AI', href: '/autonomous-vehicle-ai-platform', badge: 'New' },
       { name: 'Quantum Bio-Computing', href: '/quantum-bio-computing-platform' },
       { name: 'Quantum Energy Platform', href: '/quantum-energy-platform' },
-      { name: 'Quantum Robotics', href: '/quantum-robotics' },
       { name: 'Quantum Cybersecurity', href: '/quantum-cybersecurity-platform' },
-      { name: 'Quantum Logistics', href: '/quantum-logistics-optimization' },
-      { name: 'Quantum Metaverse', href: '/quantum-metaverse' },
-      { name: 'Quantum IoT Platform', href: '/quantum-iot' },
       { name: 'Quantum Financial Trading', href: '/quantum-financial-trading' }
+    ]
+  },
+  {
+    title: 'Space Technology',
+    icon: <Rocket className="w-5 h-5" />,
+    color: 'text-orange-400',
+    items: [
+      { name: 'Space Technology Overview', href: '/space-technology', badge: 'Main' },
+      { name: 'Space Resource Mining', href: '/space-resource-mining-platform', badge: 'Hot' },
+      { name: 'AI-Powered Space Tech', href: '/ai-powered-space-technology', badge: 'New' },
+      { name: 'Satellite Technology', href: '/satellite-technology-solutions', badge: 'New' },
+      { name: 'Space Infrastructure', href: '/space-infrastructure-platform' },
+      { name: 'Space Communications', href: '/space-communications-network' },
+      { name: 'Space Robotics', href: '/space-robotics-platform' }
     ]
   },
   {
@@ -67,18 +69,29 @@ const sidebarSections = [
     icon: <Shield className="w-5 h-5" />,
     color: 'text-blue-400',
     items: [
+      { name: 'IT Services Overview', href: '/it-services', badge: 'Main' },
       { name: 'Quantum-Secure Cloud', href: '/quantum-secure-cloud-infrastructure', badge: 'New' },
       { name: 'Autonomous IT Operations', href: '/autonomous-it-operations-center', badge: 'New' },
       { name: 'Edge Computing Orchestration', href: '/edge-computing-orchestration-platform', badge: 'New' },
       { name: 'Blockchain Infrastructure', href: '/blockchain-infrastructure-platform', badge: 'New' },
       { name: 'AI-Powered DevOps', href: '/ai-powered-devops-platform', badge: 'New' },
-      { name: 'Quantum Cloud Infrastructure', href: '/quantum-cloud-infrastructure-platform' },
       { name: 'Zero Trust Security', href: '/zero-trust-security-platform' },
       { name: 'Browser Automation Cloud', href: '/browser-automation-cloud/' },
-      { name: 'Secrets Rotation Automation', href: '/secrets-rotation-automation/' },
-      { name: 'Quantum Networking', href: '/quantum-services' },
-      { name: 'Quantum Data Center', href: '/quantum-services' },
-      { name: 'Quantum Cloud Migration', href: '/quantum-cloud-infrastructure' }
+      { name: 'Secrets Rotation Automation', href: '/secrets-rotation-automation/' }
+    ]
+  },
+  {
+    title: 'Industry Solutions',
+    icon: <Target className="w-5 h-5" />,
+    color: 'text-pink-400',
+    items: [
+      { name: 'Healthcare Solutions', href: '/healthcare-solutions', badge: 'Main' },
+      { name: 'Financial Solutions', href: '/financial-solutions', badge: 'Main' },
+      { name: 'Government Solutions', href: '/government-technology-solutions', badge: 'Main' },
+      { name: 'Manufacturing AI', href: '/manufacturing-ai-solutions', badge: 'Main' },
+      { name: 'Retail Technology', href: '/retail-technology-solutions' },
+      { name: 'Education Technology', href: '/education-technology-solutions' },
+      { name: 'Energy Technology', href: '/energy-technology-solutions' }
     ]
   },
   {

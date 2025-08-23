@@ -85,7 +85,7 @@ const navigationItems: NavigationItem[] = [
         icon: <Cpu className="w-4 h-4" />
       },
       { 
-        name: 'Specialized Solutions', 
+        name: 'Industry Solutions', 
         href: '/solutions', 
         description: 'Industry-specific solutions',
         icon: <TargetIcon className="w-4 h-4" />
@@ -236,6 +236,18 @@ const navigationItems: NavigationItem[] = [
         href: '/manufacturing-ai-solutions', 
         description: 'Manufacturing AI',
         icon: <Settings className="w-4 h-4" />
+      },
+      { 
+        name: 'Education', 
+        href: '/education-technology-solutions', 
+        description: 'Education technology',
+        icon: <BookOpen className="w-4 h-4" />
+      },
+      { 
+        name: 'Energy', 
+        href: '/energy-technology-solutions', 
+        description: 'Energy technology',
+        icon: <Zap className="w-4 h-4" />
       }
     ]
   }
