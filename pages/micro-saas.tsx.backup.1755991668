@@ -53,6 +53,10 @@ export default function MicroSaasPage() {
     }
   ];
   
+<<<<<<< HEAD
+  // Get all services and filter by category
+  const allServices = realMicroSaasServices;
+=======
   const microSaasServices = [
     {
       name: 'AI Content Generator Pro',
@@ -406,6 +410,7 @@ export default function MicroSaasPage() {
     'Security & Compliance'
   ];
 
+>>>>>>> origin/cursor/enhance-app-services-and-website-with-futuristic-design-1dae
   const filteredServices = selectedCategory === 'All' 
     ? allServices 
     : getServicesByCategory(selectedCategory);

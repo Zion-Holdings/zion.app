@@ -17,7 +17,11 @@ export { aiCodeReviewService } from './aiCodeReviewService';
 export { apiDocGeneratorService } from './apiDocGeneratorService';
 export { databasePerformanceMonitorService } from './databasePerformanceMonitorService';
 export { aiMarketResearchService } from './aiMarketResearchService';
+<<<<<<< HEAD
+export { aiCustomerServiceService } from './aiCustomerServiceService';
+=======
 export { aiCustomerSupportService } from './aiCustomerSupportService';
+>>>>>>> origin/cursor/enhance-app-services-and-website-with-futuristic-design-1dae
 export { aiFinancialAdvisorService } from './aiFinancialAdvisorService';
 
 // Export types
@@ -178,14 +182,43 @@ export type {
 
 export type {
   MarketTrend,
+<<<<<<< HEAD
+  CompetitorAnalysis,
+  MarketInsight,
+=======
   CompetitorAnalysis as MarketCompetitorAnalysis,
   MarketSegment,
   MarketReport,
+>>>>>>> origin/cursor/enhance-app-services-and-website-with-futuristic-design-1dae
   MarketResearchRequest,
   MarketResearchResponse
 } from './aiMarketResearchService';
 
 export type {
+<<<<<<< HEAD
+  CustomerTicket,
+  CustomerMessage,
+  CustomerProfile,
+  AIResponse,
+  CustomerServiceMetrics,
+  CustomerServiceRequest,
+  CustomerServiceResponse
+} from './aiCustomerServiceService';
+
+export type {
+  FinancialProfile,
+  InvestmentRecommendation,
+  FinancialPlan,
+  FinancialGoal,
+  FinancialStrategy,
+  RiskAssessment,
+  RiskFactor,
+  InsuranceRecommendation,
+  MonthlyAction,
+  FinancialAnalysis,
+  FinancialAdvisorRequest,
+  FinancialAdvisorResponse
+=======
   SupportTicket,
   CustomerInteraction,
   AutomatedResponse,
@@ -205,4 +238,5 @@ export type {
   FinancialPlan,
   FinancialRequest,
   FinancialResponse
+>>>>>>> origin/cursor/enhance-app-services-and-website-with-futuristic-design-1dae
 } from './aiFinancialAdvisorService';
