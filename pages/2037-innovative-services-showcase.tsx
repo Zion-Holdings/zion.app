@@ -26,8 +26,8 @@ const ServiceCard = ({ service, index }: { service: any; index: number }) => (
     transition={{ duration: 0.5, delay: index * 0.1 }}
     className="relative group"
   >
-    <div className={`absolute inset-0 bg-gradient-to-r ${service.color} rounded-2xl blur-xl group-hover:blur-2xl transition-all duration-500 opacity-20`}></div>
-    <div className={`relative bg-gradient-to-r ${service.color.replace('from-', 'from-').replace('to-', 'to-')} bg-opacity-10 border border-opacity-30 rounded-2xl p-8 hover:border-opacity-50 transition-all duration-300 h-full`}>
+    <div className={`absolute inset-0 bg-gradient-to-r ${service.color || 'from-blue-500 to-purple-600'} rounded-2xl blur-xl group-hover:blur-2xl transition-all duration-500 opacity-20`}></div>
+    <div className={`relative bg-gradient-to-r ${service.color ? service.color.replace('from-', 'from-').replace('to-', 'to-') : 'from-blue-500 to-purple-600'} bg-opacity-10 border border-opacity-30 rounded-2xl p-8 hover:border-opacity-50 transition-all duration-300 h-full`}>
       <div className="flex items-start justify-between mb-6">
         <div className="text-4xl">{service.icon}</div>
         {service.popular && (
@@ -66,16 +66,16 @@ const ServiceCard = ({ service, index }: { service: any; index: number }) => (
       
       <div className="space-y-3 mb-6 text-xs text-gray-400">
         <div className="flex justify-between">
-          <span>Setup Time:</span>
-          <span>{service.setupTime}</span>
+          <span>Launch Date:</span>
+          <span>{service.launchDate}</span>
         </div>
         <div className="flex justify-between">
-          <span>Trial:</span>
-          <span>{service.trialDays} days</span>
+          <span>Market Price:</span>
+          <span>{service.marketPrice}</span>
         </div>
         <div className="flex justify-between">
-          <span>Customers:</span>
-          <span>{service.customers.toLocaleString()}</span>
+          <span>Rating:</span>
+          <span>{service.rating}/5</span>
         </div>
       </div>
       
