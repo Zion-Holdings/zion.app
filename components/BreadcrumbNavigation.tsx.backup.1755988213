@@ -13,13 +13,43 @@ interface BreadcrumbNavigationProps {
   className?: string;
 }
 
+<<<<<<< HEAD
+const BreadcrumbNavigation: React.FC<BreadcrumbNavigationProps> = ({ 
+  items, 
+  className = "" 
+}) => {
+  return (
+    <nav 
+=======
 const BreadcrumbNavigation: React.FC<BreadcrumbNavigationProps> = ({ items, className = '' }) => {
   return (
     <nav
+>>>>>>> origin/cursor/analyze-improve-and-deploy-application-7eea
       className={`flex items-center space-x-2 text-sm ${className}`}
       aria-label="Breadcrumb"
     >
       <ol className="flex items-center space-x-2">
+<<<<<<< HEAD
+        {/* Home Link */}
+        <li>
+          <Link
+            href="/"
+            className="flex items-center text-gray-400 hover:text-white transition-colors duration-200"
+            aria-label="Go to homepage"
+          >
+            <Home className="w-4 h-4" />
+          </Link>
+        </li>
+        
+        {/* Breadcrumb Items */}
+        {items.map((item, index) => (
+          <li key={index} className="flex items-center">
+            <ChevronRight className="w-4 h-4 text-gray-500 mx-2" />
+            
+            {item.current ? (
+              <span 
+                className="text-white font-medium"
+=======
         <li>
           <Link
             href="/"
@@ -38,6 +68,7 @@ const BreadcrumbNavigation: React.FC<BreadcrumbNavigationProps> = ({ items, clas
             {item.current ? (
               <span
                 className="text-cyan-400 font-medium"
+>>>>>>> origin/cursor/analyze-improve-and-deploy-application-7eea
                 aria-current="page"
               >
                 {item.label}
@@ -45,7 +76,11 @@ const BreadcrumbNavigation: React.FC<BreadcrumbNavigationProps> = ({ items, clas
             ) : item.href ? (
               <Link
                 href={item.href}
+<<<<<<< HEAD
+                className="text-gray-400 hover:text-white transition-colors duration-200"
+=======
                 className="text-gray-400 hover:text-cyan-400 transition-colors"
+>>>>>>> origin/cursor/analyze-improve-and-deploy-application-7eea
               >
                 {item.label}
               </Link>

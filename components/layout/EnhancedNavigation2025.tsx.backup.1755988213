@@ -2,9 +2,19 @@ import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { motion, AnimatePresence } from 'framer-motion';
 import { 
+<<<<<<< HEAD
+  Menu, ChevronDown, X, Phone, Mail, ArrowRight,
+  Brain, Rocket, Target, Atom, Shield,
+  DollarSign, BarChart3, Globe, Grid, Heart, Database,
+  Cpu, Palette, Cloud, Network, TrendingUp, ShoppingCart, Settings, Building, Monitor,
+  Zap, Eye, Infinity, Sparkles, Users, Lock, Code, Server, Layers, Globe2, Truck,
+  Home, Info, FileText, Briefcase, BookOpen, Calendar, MessageCircle, ShieldCheck,
+  Zap as ZapIcon, Star, Award, Lightbulb, Wrench, Cog, BarChart, PieChart
+=======
   Menu, X, ChevronDown, Phone, Mail, 
   Globe, Shield, Cpu, Brain, Rocket, Zap, BarChart3,
   Home, Briefcase, Users, FileText, MessageCircle
+>>>>>>> origin/cursor/analyze-improve-and-deploy-application-7eea
 } from 'lucide-react';
 import SearchComponent from '../SearchComponent';
 import ThemeToggle from '../ThemeToggle';
@@ -160,7 +170,10 @@ const EnhancedNavigation2025: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
   const [isScrolled, setIsScrolled] = useState(false);
+<<<<<<< HEAD
+=======
 
+>>>>>>> origin/cursor/analyze-improve-and-deploy-application-7eea
 
   useEffect(() => {
     const handleScroll = () => {
@@ -175,7 +188,19 @@ const EnhancedNavigation2025: React.FC = () => {
     setActiveDropdown(activeDropdown === name ? null : name);
   };
 
+<<<<<<< HEAD
+  const closeDropdown = () => {
+    setActiveDropdown(null);
+  };
 
+  const contactInfo = {
+    phone: '+1 302 464 0950',
+    email: 'kleber@ziontechgroup.com',
+    address: '364 E Main St STE 1008 Middletown DE 19709'
+  };
+=======
+
+>>>>>>> origin/cursor/analyze-improve-and-deploy-application-7eea
 
   return (
     <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
@@ -290,6 +315,13 @@ const EnhancedNavigation2025: React.FC = () => {
                               </Link>
                             ))}
                           </div>
+<<<<<<< HEAD
+                        </div>
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
+                )}
+=======
                         </motion.div>
                       )}
                     </AnimatePresence>
@@ -320,6 +352,7 @@ const EnhancedNavigation2025: React.FC = () => {
                 >
                   Get Started
                 </Link>
+>>>>>>> origin/cursor/analyze-improve-and-deploy-application-7eea
               </div>
             ))}
           </div>
@@ -366,6 +399,16 @@ const EnhancedNavigation2025: React.FC = () => {
             transition={{ duration: 0.3 }}
             className="lg:hidden bg-black/95 backdrop-blur-md border-t border-cyan-500/20"
           >
+<<<<<<< HEAD
+            <div className="px-4 py-6 space-y-4">
+              {navigationItems.map((item) => (
+                <div key={item.name}>
+                  {item.children ? (
+                    <div>
+                      <button
+                        onClick={() => toggleDropdown(item.name)}
+                        className="flex items-center justify-between w-full px-3 py-2 text-base font-medium text-gray-300 hover:text-white transition-colors duration-200"
+=======
             <div className="max-w-7xl mx-auto px-4 py-6">
               {/* Mobile Search */}
               <div className="mb-6">
@@ -429,6 +472,7 @@ const EnhancedNavigation2025: React.FC = () => {
                         href={item.href}
                         onClick={closeMobileMenu}
                         className="flex items-center gap-3 px-4 py-3 text-gray-300 hover:text-white transition-colors duration-200 font-medium"
+>>>>>>> origin/cursor/analyze-improve-and-deploy-application-7eea
                       >
                         <div className="flex items-center space-x-2">
                           {item.icon}

@@ -1,12 +1,31 @@
+<<<<<<< HEAD
+import React, { useState, useEffect } from 'react';
+import UltraFuturisticNavigation2040 from './UltraFuturisticNavigation2040';
+import UltraFuturisticFooter2040 from './UltraFuturisticFooter2040';
+import EnhancedSidebar2025 from './EnhancedSidebar2025';
+import TopContactBar from './TopContactBar';
+import UltraFuturisticBackground2036 from '../backgrounds/UltraFuturisticBackground2036';
+import EnhancedPerformanceMonitor from '../EnhancedPerformanceMonitor';
+import EnhancedAccessibilityEnhancer from '../EnhancedAccessibilityEnhancer';
+import CookieConsentBanner from '../CookieConsentBanner';
+import PerformanceOptimizer from '../PerformanceOptimizer';
+=======
 import React, { ReactNode } from 'react';
 import EnhancedNavigation2025 from './EnhancedNavigation2025';
 import EnhancedFooter2025 from './EnhancedFooter2025';
 import LiveChatWidget from '../LiveChatWidget';
+>>>>>>> origin/cursor/analyze-improve-and-deploy-application-7eea
 
 interface LayoutProps {
 	children: React.ReactNode;
 }
 
+<<<<<<< HEAD
+export default function Layout({ children }: LayoutProps) {
+  const [sidebarOpen, setSidebarOpen] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
+  const [isOnline, setIsOnline] = useState(true);
+=======
 const Layout: React.FC<LayoutProps> = ({ children }) => {
   return (
     <div className="min-h-screen bg-black text-white">
@@ -19,6 +38,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
     </div>
   );
 };
+>>>>>>> origin/cursor/analyze-improve-and-deploy-application-7eea
 
   // Handle online/offline status
   useEffect(() => {
