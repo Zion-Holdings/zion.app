@@ -54,6 +54,12 @@ import { innovativeMicroSaasSolutions2034Additions } from '../data/augment-2034-
 import { cuttingEdgeAIServices2034Additions } from '../data/augment-2034-ai-services-additions';
 import { aiAutonomousEcosystemServices2029Additions, emergingTechBreakthroughServices2029Additions, practicalBusinessSolutionServices2029Additions } from '../data/augment-2029-ecosystem-additions';
 
+// Import our latest innovative services
+import { advancedAIServices } from '../data/advanced-ai-services-2025';
+import { innovativeITInfrastructureServices } from '../data/innovative-it-infrastructure-2025';
+import { innovativeMicroSaasServices } from '../data/innovative-micro-saas-2025';
+import { quantumSpaceTechServices } from '../data/quantum-space-tech-services-2025';
+
 // Import existing service data
 import { realMicroSaasServices } from '../data/real-micro-saas-services';
 import { innovativeAIServices } from '../data/innovative-ai-services';
@@ -168,12 +174,19 @@ const allServices = [
   ...industryRealServices,
   ...real2025Q4AugmentedBatch,
   ...real2029Q3Additions,
-  ...enterpriseITSolutions2034Additions,
-  ...innovativeMicroSaasSolutions2034Additions,
-  ...cuttingEdgeAIServices2034Additions,
-  ...aiAutonomousEcosystemServices2029Additions,
-  ...emergingTechBreakthroughServices2029Additions,
-  ...practicalBusinessSolutionServices2029Additions
+  ...validatedServices2025Q4,
+  ...real2035Q2Additions,
+  ...real2036ServiceExpansions,
+  ...innovative2036MicroSaasServices,
+  ...innovative2036ITServices,
+  ...innovative2037MicroSaasServices,
+  ...innovative2037ITServices,
+  ...innovative2037AIServices,
+  // Latest innovative services
+  ...advancedAIServices,
+  ...innovativeITInfrastructureServices,
+  ...innovativeMicroSaasServices,
+  ...quantumSpaceTechServices
 ];
 
 const categories = [
