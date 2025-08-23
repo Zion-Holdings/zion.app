@@ -1,23 +1,19 @@
-name: Media Optimizer
+name: Docs & Knowledge Synthesizer
 
 on:
   schedule:
-    - cron: "*/15 * * * *" # every 15 minutes
+    - cron: "*/30 * * * *" # every 30 minutes
   workflow_dispatch:
-  push:
-    paths:
-      - "public/**"
-      - "styles/**"
 
 permissions:
   contents: write
 
 concurrency:
-  group: media-optimizer
+  group: docs-knowledge-synth
   cancel-in-progress: true
 
 jobs:
-  optimize:
+  docs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -34,19 +30,24 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Optimize images
-        run: node automation/optimize-images.cjs || node automation/image-optimizer.cjs || true
+      - name: Generate component props docs
+        run: node automation/component-props-docs.cjs || true
+
+      - name: Index docs pages
+        run: node automation/docs-pages-indexer.cjs || true
 
       - name: Build to validate
         run: npm run build --if-present || true
 
-      - name: Auto-commit optimized assets
+      - name: Auto-commit docs and indexes
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
-          commit_message: "chore(automation): optimize media assets"
+          commit_message: "docs(automation): update component props and docs indexes"
           commit_user_name: github-actions[bot]
           commit_user_email: 41898282+github-actions[bot]@users.noreply.github.com
           file_pattern: |
-            public/**
+            README.md
+            docs/**
             data/**
+            public/**
             automation/logs/**

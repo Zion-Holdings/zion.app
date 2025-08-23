@@ -1,23 +1,19 @@
-name: Media Optimizer
+name: Code Intelligence Sweeper
 
 on:
   schedule:
-    - cron: "*/15 * * * *" # every 15 minutes
+    - cron: "*/5 * * * *" # every 5 minutes
   workflow_dispatch:
-  push:
-    paths:
-      - "public/**"
-      - "styles/**"
 
 permissions:
   contents: write
 
 concurrency:
-  group: media-optimizer
+  group: code-intel-sweeper
   cancel-in-progress: true
 
 jobs:
-  optimize:
+  scan:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -34,19 +30,26 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Optimize images
-        run: node automation/optimize-images.cjs || node automation/image-optimizer.cjs || true
+      - name: Dead code scan
+        run: node automation/dead-code-scanner.cjs || true
+
+      - name: Code smell audit
+        run: node automation/code-smell-audit.cjs || true
+
+      - name: Broken image scan
+        run: node automation/broken-image-scanner.cjs || true
 
       - name: Build to validate
         run: npm run build --if-present || true
 
-      - name: Auto-commit optimized assets
+      - name: Auto-commit reports
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
-          commit_message: "chore(automation): optimize media assets"
+          commit_message: "chore(automation): refresh code intelligence reports"
           commit_user_name: github-actions[bot]
           commit_user_email: 41898282+github-actions[bot]@users.noreply.github.com
           file_pattern: |
-            public/**
             data/**
+            public/**
+            reports/**
             automation/logs/**

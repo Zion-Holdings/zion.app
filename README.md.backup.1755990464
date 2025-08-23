@@ -18,6 +18,14 @@ Home: https://github.com/Zion-Holdings/zion#readme
 - **Market Leadership**: Competing with industry leaders (Tableau, HubSpot, Salesforce)
 - **AI-First Approach**: Cutting-edge technology across all services
 
+<<<<<<< HEAD
+## Environment Configuration
+
+## Autonomous GitHub Actions
+
+- Actions Advertiser: updates the homepage with live links to all workflows. [View runs](https://github.com/Zion-Holdings/zion.app/actions/workflows/actions-advertiser.yml)
+- Actions Health Report: publishes `docs/actions-health.md` and `public/actions-health.json`. [View runs](https://github.com/Zion-Holdings/zion.app/actions/workflows/actions-health-report.yml)
+=======
 ### Automations
 - [Automation Advertiser](https://github.com/Zion-Holdings/zion.app/actions/workflows/automation-advertiser.yml) ![status](https://github.com/Zion-Holdings/zion.app/actions/workflows/automation-advertiser.yml/badge.svg)
 - [Knowledge Graph Radar](https://github.com/Zion-Holdings/zion.app/actions/workflows/knowledge-graph-radar.yml) ![status](https://github.com/Zion-Holdings/zion.app/actions/workflows/knowledge-graph-radar.yml/badge.svg)
@@ -30,6 +38,7 @@ Home: https://github.com/Zion-Holdings/zion#readme
 - [Code Intelligence Sweeper](https://github.com/Zion-Holdings/zion.app/actions/workflows/code-intel-sweeper.yml) ![status](https://github.com/Zion-Holdings/zion.app/actions/workflows/code-intel-sweeper.yml/badge.svg)
 - [Media Optimizer](https://github.com/Zion-Holdings/zion.app/actions/workflows/media-optimizer.yml) ![status](https://github.com/Zion-Holdings/zion.app/actions/workflows/media-optimizer.yml/badge.svg)
 - [Docs & Knowledge Synthesizer](https://github.com/Zion-Holdings/zion.app/actions/workflows/docs-knowledge-synth.yml) ![status](https://github.com/Zion-Holdings/zion.app/actions/workflows/docs-knowledge-synth.yml/badge.svg)
+>>>>>>> origin/cursor/invent-and-deploy-autonomous-github-actions-21fe
 
 ### Local Development
 1. Install Node 20+ and npm 10+.

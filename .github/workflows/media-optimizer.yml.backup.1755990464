@@ -1,6 +1,26 @@
 name: Media Optimizer
 
 on:
+<<<<<<< HEAD
+  workflow_dispatch: {}
+  schedule:
+    - cron: '*/10 * * * *'
+
+permissions:
+  contents: read
+
+concurrency:
+  group: media-optimizer-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  main:
+    name: Main Job
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - name: Checkout repository
+=======
   schedule:
     - cron: "*/15 * * * *" # every 15 minutes
   workflow_dispatch:
@@ -21,10 +41,26 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
+>>>>>>> origin/cursor/invent-and-deploy-autonomous-github-actions-21fe
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
 
+<<<<<<< HEAD
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci --no-audit --no-fund
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+=======
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
@@ -50,3 +86,4 @@ jobs:
             public/**
             data/**
             automation/logs/**
+>>>>>>> origin/cursor/invent-and-deploy-autonomous-github-actions-21fe
