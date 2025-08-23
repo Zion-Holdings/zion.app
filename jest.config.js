@@ -4,8 +4,10 @@ module.exports = {
   setupFilesAfterEnv: ['<rootDir>/tests/jest.setup.ts'],
   moduleNameMapper: {
     '^@/(.*)$': '<rootDir>/src/$1',
+    '^@/pages/(.*)$': '<rootDir>/src/pages/$1',
+    '^vitest$': '<rootDir>/tests/vitest-mock.ts',
   },
-  roots: ['<rootDir>/tests'],
+  roots: ['<rootDir>/tests', '<rootDir>/__tests__'],
   coverageThreshold: {
     global: {
       lines: 80,
