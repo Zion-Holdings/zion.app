@@ -1,3 +1,39 @@
+<<<<<<< HEAD
+name: Seo Audit
+
+on:
+  workflow_dispatch: {}
+  schedule:
+    - cron: '*/10 * * * *'
+
+permissions:
+  contents: write
+  actions: read
+
+jobs:
+  main:
+    name: Main Job
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci --no-audit --no-fund
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+=======
 name: SEO Audit
 
 on:
@@ -38,4 +74,5 @@ jobs:
           else
             echo "No changes to commit"
           fi
+>>>>>>> origin/automation/git-sync/2025-08-13T22-53-19-983Z
 
