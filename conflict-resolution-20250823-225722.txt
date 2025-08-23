@@ -108,3 +108,10 @@
 2025-08-23 22:57:40 - Resolving conflicts in src/components/profile/TalentProfile.tsx for branch 591ea5-codex/fix-talent-profile-rendering-issues
 2025-08-23 22:57:40 - Resolving conflicts in src/hooks/useTalentProfile.ts for branch 591ea5-codex/fix-talent-profile-rendering-issues
 2025-08-23 22:57:40 - Resolving conflicts in src/routes/TalentRoutes.tsx for branch 591ea5-codex/fix-talent-profile-rendering-issues
+2025-08-23 22:57:41 - Merge conflicts detected in 5dtq58-codex/implement-analytics-and-error-tracking
+2025-08-23 22:57:41 - Resolving conflicts in .env for branch 5dtq58-codex/implement-analytics-and-error-tracking
+2025-08-23 22:57:41 - Resolving conflicts in src/components/ErrorBoundary.tsx for branch 5dtq58-codex/implement-analytics-and-error-tracking
+2025-08-23 22:57:41 - Resolving conflicts in src/components/transactions/PaymentButton.tsx for branch 5dtq58-codex/implement-analytics-and-error-tracking
+2025-08-23 22:57:41 - Resolving conflicts in src/context/AnalyticsContext.tsx for branch 5dtq58-codex/implement-analytics-and-error-tracking
+2025-08-23 22:57:41 - Resolving conflicts in src/integrations/supabase/client.ts for branch 5dtq58-codex/implement-analytics-and-error-tracking
+2025-08-23 22:57:41 - Resolving conflicts in src/main.tsx for branch 5dtq58-codex/implement-analytics-and-error-tracking

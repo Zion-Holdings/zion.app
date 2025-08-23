@@ -1,30 +1,31 @@
-import React, { type ReactNode } from "react";
+import React from 'react';
+import { captureException } from '@/lib/sentry';
 
-interface ErrorBoundaryProps {
-  fallback: ReactNode;
+interface Props {
+  children: React.ReactNode;
+  fallback?: React.ReactNode;
 }
 
-interface ErrorBoundaryState {
+interface State {
   hasError: boolean;
 }
 
-export class ErrorBoundary extends React.Component<ErrorBoundaryProps, ErrorBoundaryState> {
-  state: ErrorBoundaryState = { hasError: false };
+export class ErrorBoundary extends React.Component<Props, State> {
+  state: State = { hasError: false };
 
   static getDerivedStateFromError() {
     return { hasError: true };
   }
 
-  componentDidCatch(error: unknown) {
-    console.error("ErrorBoundary caught an error", error);
+  componentDidCatch(error: any, errorInfo: any) {
+    captureException(error);
+    console.error(error, errorInfo);
   }
 
   render() {
     if (this.state.hasError) {
-      return this.props.fallback;
+      return this.props.fallback || <div>Something went wrong.</div>;
     }
     return this.props.children;
   }
 }
-
-export default ErrorBoundary;

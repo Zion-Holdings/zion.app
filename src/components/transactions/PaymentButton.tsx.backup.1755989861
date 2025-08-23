@@ -40,12 +40,21 @@ export function PaymentButton({
     const navigate = useNavigate();
     const { trackEvent } = useAnalytics();
   
+<<<<<<< HEAD
+  if (!supabase) throw new Error('Supabase client not initialized');
+
+  const handlePaymentClick = async () => {
+    if (!isAuthenticated) {
+      toast({
+        title: "Authentication required",
+=======
     const handlePaymentClick = async () => {
       trackEvent('button_click', { elementId: 'buy_now', serviceId });
       gtagEvent('buy_now_click', { serviceId });
       if (!isAuthenticated) {
         toast({
           title: "Authentication required",
+>>>>>>> origin/5dtq58-codex/implement-analytics-and-error-tracking
         description: "Please sign in to make a purchase.",
       });
 
