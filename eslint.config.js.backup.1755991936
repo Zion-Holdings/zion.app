@@ -1,7 +1,11 @@
 import js from '@eslint/js';
+<<<<<<< HEAD
+import globals from 'globals';
+=======
 import react from 'eslint-plugin-react';
 import reactHooks from 'eslint-plugin-react-hooks';
 import reactRefresh from 'eslint-plugin-react-refresh';
+>>>>>>> origin/cursor/enhance-app-with-micro-saas-and-deploy-d599
 
 export default [
   js.configs.recommended,
@@ -25,6 +29,11 @@ export default [
         clearInterval: 'readonly'
       },
       parserOptions: {
+<<<<<<< HEAD
+        ecmaVersion: 2020,
+        sourceType: 'module',
+=======
+>>>>>>> origin/cursor/enhance-app-with-micro-saas-and-deploy-d599
         ecmaFeatures: {
           jsx: true
         }
