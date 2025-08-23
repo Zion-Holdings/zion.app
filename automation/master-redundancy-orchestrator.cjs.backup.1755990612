@@ -4,6 +4,15 @@
 const { spawnSync } = require("child_process");
 const fs = require("fs");
 const path = require("path");
+<<<<<<< HEAD
+const crypto = require("crypto");
+
+// Import the enhanced redundancy systems
+const EnhancedPM2Redundancy = require("./enhanced-pm2-redundancy.cjs");
+const EnhancedGitHubActionsRedundancy = require("./enhanced-github-actions-redundancy.cjs");
+const EnhancedNetlifyFunctionsRedundancy = require("./enhanced-netlify-functions-redundancy.cjs");
+=======
+>>>>>>> origin/cursor/automate-deployment-redundancy-and-clean-up-5c78
 
 class MasterRedundancyOrchestrator {
   constructor() {
@@ -13,6 +22,47 @@ class MasterRedundancyOrchestrator {
     this.ensureLogDir();
     
     this.config = {
+<<<<<<< HEAD
+      checkInterval: 60000, // 1 minute
+      healthCheckTimeout: 30000,
+      backupInterval: 900000, // 15 minutes
+      maxLogSize: 10 * 1024 * 1024, // 10MB
+      systems: {
+        pm2: {
+          enabled: true,
+          priority: 1,
+          autoRecovery: true,
+          healthThreshold: 0.8
+        },
+        githubActions: {
+          enabled: true,
+          priority: 2,
+          autoRecovery: true,
+          healthThreshold: 0.8
+        },
+        netlifyFunctions: {
+          enabled: true,
+          priority: 3,
+          autoRecovery: true,
+          healthThreshold: 0.8
+        }
+      },
+      monitoring: false,
+      checkInterval: null,
+      emergencyMode: false
+    };
+    
+    // Initialize redundancy systems
+    this.pm2Redundancy = new EnhancedPM2Redundancy();
+    this.githubActionsRedundancy = new EnhancedGitHubActionsRedundancy();
+    this.netlifyFunctionsRedundancy = new EnhancedNetlifyFunctionsRedundancy();
+    
+    this.systemStates = new Map();
+    this.overallHealth = 1.0;
+    this.lastBackup = Date.now();
+    this.recoveryAttempts = 0;
+    this.maxRecoveryAttempts = 5;
+=======
       systems: {
         pm2: {
           enabled: true,
@@ -51,6 +101,7 @@ class MasterRedundancyOrchestrator {
     this.checkInterval = null;
     this.recoveryInProgress = false;
     this.systemStatus = new Map();
+>>>>>>> origin/cursor/automate-deployment-redundancy-and-clean-up-5c78
   }
 
   ensureLogDir() {
@@ -66,11 +117,31 @@ class MasterRedundancyOrchestrator {
     
     try {
       fs.appendFileSync(this.logFile, logMessage + "\n");
+<<<<<<< HEAD
+      this.rotateLogs();
+=======
+>>>>>>> origin/cursor/automate-deployment-redundancy-and-clean-up-5c78
     } catch (error) {
       console.error(`Failed to write to log file: ${error.message}`);
     }
   }
 
+<<<<<<< HEAD
+  rotateLogs() {
+    try {
+      const stats = fs.statSync(this.logFile);
+      if (stats.size > this.config.maxLogSize) {
+        const backupFile = `${this.logFile}.${Date.now()}`;
+        fs.renameSync(this.logFile, backupFile);
+        this.log("Log file rotated", "INFO");
+      }
+    } catch (error) {
+      // Ignore rotation errors
+    }
+  }
+
+=======
+>>>>>>> origin/cursor/automate-deployment-redundancy-and-clean-up-5c78
   async runCommand(command, args = [], options = {}) {
     return new Promise((resolve) => {
       const result = spawnSync(command, args, {
@@ -79,7 +150,11 @@ class MasterRedundancyOrchestrator {
         shell: false,
         encoding: "utf8",
         maxBuffer: 1024 * 1024 * 10,
+<<<<<<< HEAD
+        timeout: options.timeout || this.config.healthCheckTimeout,
+=======
         timeout: options.timeout || 30000,
+>>>>>>> origin/cursor/automate-deployment-redundancy-and-clean-up-5c78
         ...options
       });
       
@@ -92,6 +167,101 @@ class MasterRedundancyOrchestrator {
     });
   }
 
+<<<<<<< HEAD
+  async startHealthChecks() {
+    this.log("Starting health check monitoring...");
+    
+    // Run initial health check
+    await this.runFullHealthCheck();
+    
+    // Set up periodic health checks
+    setInterval(async () => {
+      await this.runFullHealthCheck();
+    }, this.config.pm2.healthCheckInterval);
+  }
+
+  async initializeMonitoring() {
+    this.log("Initializing master redundancy monitoring...");
+    
+    // Ensure all required directories exist
+    const requiredDirs = [
+      this.config.logging.logDir,
+      "automation/backups",
+      "automation/redundancy"
+    ];
+    
+    for (const dir of requiredDirs) {
+      if (!fs.existsSync(dir)) {
+        fs.mkdirSync(dir, { recursive: true });
+        this.log(`Created directory: ${dir}`);
+      }
+    }
+  }
+
+  async generateRedundancyReport() {
+    this.log("Generating redundancy report...");
+    
+    const report = {
+      timestamp: new Date().toISOString(),
+      systems: {
+        pm2: {
+          status: "monitored",
+          processes: this.config.pm2.processes.length,
+          ecosystemFiles: this.config.pm2.ecosystemFiles.length
+        },
+        githubActions: {
+          status: "monitored",
+          workflows: this.config.githubActions.workflows.length,
+          scheduledTasks: this.config.githubActions.scheduledTasks.length
+        },
+        netlifyFunctions: {
+          status: "monitored",
+          criticalFunctions: this.config.netlifyFunctions.criticalFunctions.length
+        },
+        buildSystem: {
+          status: "monitored",
+          commands: this.config.build.commands.length
+        },
+        packageScripts: {
+          status: "monitored",
+          critical: this.config.packageScripts.critical.length
+        }
+      },
+      redundancy: {
+        pm2Backup: this.config.pm2.backupProcesses,
+        githubBackup: this.config.githubActions.backupTriggers,
+        netlifyBackup: this.config.netlifyFunctions.backupTriggers,
+        buildBackup: this.config.build.backupCommands,
+        scriptsBackup: this.config.packageScripts.backup
+      }
+    };
+
+    const reportFile = path.join(this.config.logging.logDir, `redundancy-report-${new Date().toISOString().split('T')[0]}.json`);
+    fs.writeFileSync(reportFile, JSON.stringify(report, null, 2));
+    
+    this.log(`Redundancy report generated: ${reportFile}`);
+    return report;
+  }
+
+  async start() {
+    this.log("Starting Master Redundancy Orchestrator...");
+    
+    try {
+      await this.initializeMonitoring();
+      await this.runFullHealthCheck();
+      await this.generateRedundancyReport();
+      
+      this.log("Master Redundancy Orchestrator started successfully");
+      
+      // Keep the process running
+      setInterval(() => {
+        // Heartbeat
+        this.log("Master Redundancy Orchestrator heartbeat");
+      }, 300000); // 5 minutes
+      
+    } catch (error) {
+      this.log(`Error starting Master Redundancy Orchestrator: ${error.message}`, "ERROR");
+=======
   async checkSystemHealth(systemName) {
     try {
       let health = 0;
@@ -767,10 +937,47 @@ class MasterRedundancyOrchestrator {
     
     this.log("✅ All redundancy systems stopped");
     return stopResults;
+>>>>>>> origin/cursor/automate-deployment-redundancy-and-clean-up-5c78
   }
 
   async startMonitoring() {
     if (this.monitoring) {
+<<<<<<< HEAD
+      this.log("Monitoring already started", "WARN");
+      return;
+    }
+
+    this.monitoring = true;
+    this.log("Starting master redundancy orchestrator", "INFO");
+
+    // Initial backup
+    await this.backupAllSystems();
+
+    // Start all system monitoring
+    await this.startAllMonitoring();
+
+    // Start master monitoring loop
+    this.checkInterval = setInterval(async () => {
+      try {
+        await this.monitorAllSystems();
+        
+        // Backup all systems periodically
+        if (Date.now() - this.lastBackup > this.config.backupInterval) {
+          await this.backupAllSystems();
+        }
+        
+        // Generate master report every 5 minutes
+        if (Date.now() % 300000 < this.config.checkInterval) {
+          await this.generateMasterReport();
+        }
+        
+      } catch (error) {
+        this.log(`Error in master monitoring loop: ${error.message}`, "ERROR");
+      }
+    }, this.config.checkInterval);
+
+    this.log("Master redundancy orchestrator started", "INFO");
+=======
       this.log("⚠️ Monitoring is already running");
       return;
     }
@@ -794,6 +1001,7 @@ class MasterRedundancyOrchestrator {
     }, this.config.orchestration.masterCheckInterval);
 
     this.log(`✅ Master redundancy orchestrator monitoring started with ${this.config.orchestration.masterCheckInterval}ms intervals`);
+>>>>>>> origin/cursor/automate-deployment-redundancy-and-clean-up-5c78
   }
 
   async stopMonitoring() {
@@ -802,6 +1010,70 @@ class MasterRedundancyOrchestrator {
       this.checkInterval = null;
     }
     
+<<<<<<< HEAD
+    await this.stopAllMonitoring();
+    this.monitoring = false;
+    this.log("Master redundancy orchestrator stopped", "INFO");
+  }
+
+  async emergencyShutdown() {
+    this.log("🚨 EMERGENCY SHUTDOWN INITIATED", "ERROR");
+    
+    try {
+      // Stop all monitoring
+      await this.stopAllMonitoring();
+      
+      // Perform final backup
+      await this.backupAllSystems();
+      
+      this.log("Emergency shutdown completed", "INFO");
+      process.exit(1);
+    } catch (error) {
+      this.log(`Emergency shutdown error: ${error.message}`, "ERROR");
+      process.exit(1);
+    }
+  }
+}
+
+// CLI interface
+if (require.main === module) {
+  const orchestrator = new MasterRedundancyOrchestrator();
+  
+  const command = process.argv[2];
+  
+  switch (command) {
+    case "start":
+      orchestrator.startMonitoring();
+      break;
+    case "stop":
+      orchestrator.stopMonitoring();
+      break;
+    case "status":
+      orchestrator.monitorAllSystems();
+      break;
+    case "report":
+      orchestrator.generateMasterReport();
+      break;
+    case "backup":
+      orchestrator.backupAllSystems();
+      break;
+    case "restore":
+      orchestrator.restoreAllSystems();
+      break;
+    case "recovery":
+      orchestrator.attemptFullSystemRecovery();
+      break;
+    case "emergency":
+      orchestrator.enterEmergencyMode();
+      break;
+    case "shutdown":
+      orchestrator.emergencyShutdown();
+      break;
+    default:
+      console.log("Usage: node master-redundancy-orchestrator.cjs [start|stop|status|report|backup|restore|recovery|emergency|shutdown]");
+      process.exit(1);
+  }
+=======
     this.monitoring = false;
     this.log("🛑 Master redundancy orchestrator monitoring stopped");
   }
@@ -851,6 +1123,7 @@ if (require.main === module) {
   
   // Start monitoring
   orchestrator.startMonitoring();
+>>>>>>> origin/cursor/automate-deployment-redundancy-and-clean-up-5c78
 }
 
 module.exports = MasterRedundancyOrchestrator;
