@@ -1,22 +1,28 @@
 import React from 'react';
-import Link from 'next/link';
 import { motion } from 'framer-motion';
-import { 
-  Zap, Globe, Phone, Mail, MapPin, ArrowRight, 
-  Brain, Atom, Shield, Rocket, Target, BookOpen, Users,
-  Star, Sparkles, Cpu, Lock, Cloud, BarChart3, Settings, Eye, Award, Clock, Heart, Lightbulb,
-  Twitter, Linkedin, Facebook, Instagram, Youtube, Github, MessageCircle, MessageSquare,
-  ArrowUp, ExternalLink, Building, Code, Database, Network, Server, Monitor, Smartphone, Camera, Gamepad2,
-  Palette, Music, Film, BookOpenCheck, HelpCircle, FileText, Video, Headphones,
-  Sparkles as SparklesIcon, Zap as ZapIcon, Target as TargetIcon, Atom as AtomIcon, Brain as BrainIcon
+import {
+  Phone,
+  Mail,
+  MapPin,
+  Globe,
+  Facebook,
+  Twitter,
+  Instagram,
+  Linkedin,
+  Youtube,
+  ArrowUp,
+  Star,
+  Brain,
+  Atom,
+  Shield,
+  Target,
+  Rocket,
+  Github,
+  MessageCircle
 } from 'lucide-react';
+import Link from 'next/link';
 
-const contactInfo = {
-  mobile: '+1 302 464 0950',
-  email: 'kleber@ziontechgroup.com',
-  address: '364 E Main St STE 1008 Middletown DE 19709',
-  website: 'https://ziontechgroup.com'
-};
+
 
 const footerSections = [
   {
@@ -106,6 +112,15 @@ const footerSections = [
   }
 ];
 
+const socialLinks = [
+  { name: 'LinkedIn', href: 'https://linkedin.com/company/ziontechgroup', icon: <Linkedin className="w-5 h-5" />, color: 'hover:text-blue-400' },
+  { name: 'GitHub', href: 'https://github.com/Zion-Holdings', icon: <Github className="w-5 h-5" />, color: 'hover:text-gray-400' },
+  { name: 'Twitter', href: 'https://twitter.com/ziontechgroup', icon: <Twitter className="w-5 h-5" />, color: 'hover:text-blue-400' },
+  { name: 'Facebook', href: 'https://facebook.com/ziontechgroup', icon: <Facebook className="w-5 h-5" />, color: 'hover:text-blue-600' },
+  { name: 'Instagram', href: 'https://instagram.com/ziontechgroup', icon: <Instagram className="w-5 h-5" />, color: 'hover:text-pink-400' },
+  { name: 'YouTube', href: 'https://youtube.com/@ziontechgroup', icon: <Youtube className="w-5 h-5" />, color: 'hover:text-red-400' }
+];
+
 const quickLinks = [
   { name: 'About Us', href: '/about' },
   { name: 'Contact', href: '/contact' },
@@ -114,20 +129,11 @@ const quickLinks = [
   { name: 'Blog', href: '/blog' },
   { name: 'Support', href: '/support' },
   { name: 'Careers', href: '/careers' },
-  { name: 'Partners', href: '/partners' }
-];
-
-const legalLinks = [
+  { name: 'Partners', href: '/partners' },
   { name: 'Privacy Policy', href: '/privacy' },
   { name: 'Terms of Service', href: '/terms' },
   { name: 'Cookie Policy', href: '/cookies' },
   { name: 'Accessibility', href: '/accessibility-scanner' }
-];
-
-const socialLinks = [
-  { name: 'LinkedIn', href: 'https://linkedin.com/company/ziontechgroup', icon: <Linkedin className="w-5 h-5" /> },
-  { name: 'GitHub', href: 'https://github.com/Zion-Holdings', icon: <Github className="w-5 h-5" /> },
-  { name: 'Twitter', href: 'https://twitter.com/ziontechgroup', icon: <Twitter className="w-5 h-5" /> }
 ];
 
 export default function UltraFuturisticFooter2036() {
@@ -137,19 +143,55 @@ export default function UltraFuturisticFooter2036() {
 
   return (
     <footer className="relative bg-black/95 backdrop-blur-xl border-t border-white/10 overflow-hidden">
-      {/* Background Effects */}
+      {/* Background Elements */}
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-purple-900/5 to-cyan-900/5"></div>
       
-      {/* Main Footer Content */}
+      {/* Newsletter Section */}
+      <div className="relative border-b border-white/10">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+          <div className="text-center">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+              className="max-w-2xl mx-auto"
+            >
+              <h3 className="text-2xl font-bold text-white mb-4">
+                Stay Ahead with Zion Tech Group
+              </h3>
+              <p className="text-gray-300 mb-6">
+                Get the latest insights on AI, quantum computing, and emerging technologies delivered to your inbox.
+              </p>
+              <form className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
+                <input
+                  type="email"
+                  placeholder="Enter your email"
+                  className="flex-1 px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-cyan-400 focus:border-transparent"
+                  required
+                />
+                <button
+                  type="submit"
+                  className="px-6 py-3 bg-gradient-to-r from-cyan-500 to-purple-500 text-white font-medium rounded-lg hover:from-cyan-600 hover:to-purple-600 transition-all duration-300 transform hover:scale-105"
+                >
+                  Subscribe
+                </button>
+              </form>
+            </motion.div>
+          </div>
+        </div>
+      </div>
+
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        {/* Top Section */}
+        {/* Main Footer Content */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6 gap-8 mb-12">
           {footerSections.map((section, index) => (
             <motion.div
               key={section.title}
               initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: index * 0.1 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: index * 0.1 }}
+              viewport={{ once: true }}
               className="space-y-4"
             >
               <div className="flex items-center space-x-2">
@@ -162,13 +204,13 @@ export default function UltraFuturisticFooter2036() {
                   <li key={link.name}>
                     <Link
                       href={link.href}
-                      className={`text-sm transition-colors hover:text-cyan-400 ${
-                        link.featured ? 'text-cyan-300 font-medium' : 'text-white/70'
-                      }`}
+                      className="text-sm transition-colors hover:text-cyan-400 text-white/70 group flex items-center space-x-2"
                     >
-                      {link.name}
+                      <span className="group-hover:translate-x-1 transition-transform duration-200">
+                        {link.name}
+                      </span>
                       {link.featured && (
-                        <span className="ml-2 text-xs bg-gradient-to-r from-cyan-500 to-purple-500 text-white px-2 py-1 rounded-full">
+                        <span className="text-xs bg-gradient-to-r from-cyan-500 to-purple-500 text-white px-2 py-1 rounded-full">
                           Featured
                         </span>
                       )}
@@ -180,79 +222,78 @@ export default function UltraFuturisticFooter2036() {
           ))}
         </div>
 
-        {/* Middle Section */}
+        {/* Contact and Quick Links */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
           {/* Contact Information */}
           <motion.div
             initial={{ opacity: 0, x: -20 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ delay: 0.6 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
             className="space-y-6"
           >
             <div>
-              <h3 className="text-white font-semibold text-xl mb-4">Get in Touch</h3>
+              <h3 className="text-white font-semibold text-xl mb-4 flex items-center space-x-2">
+                <MessageCircle className="w-5 h-5 text-cyan-400" />
+                <span>Get in Touch</span>
+              </h3>
               <p className="text-white/60 text-sm mb-6">
-                Ready to transform your business with cutting-edge technology? 
-                Let's discuss how our innovative solutions can drive your success.
+                Ready to transform your business with cutting-edge technology? Let's discuss how our innovative solutions can drive your success.
               </p>
             </div>
-            
             <div className="space-y-4">
-              <a
-                href={`tel:${contactInfo.mobile}`}
-                className="flex items-center space-x-3 text-white/80 hover:text-cyan-400 transition-colors"
-              >
-                <Phone className="w-5 h-5" />
-                <span>{contactInfo.mobile}</span>
+              <a href="tel:+1 302 464 0950" className="flex items-center space-x-3 text-white/80 hover:text-cyan-400 transition-colors group">
+                <Phone className="w-5 h-5 text-cyan-400 group-hover:scale-110 transition-transform duration-200" />
+                <span>+1 302 464 0950</span>
               </a>
-              
-              <a
-                href={`mailto:${contactInfo.email}`}
-                className="flex items-center space-x-3 text-white/80 hover:text-cyan-400 transition-colors"
-              >
-                <Mail className="w-5 h-5" />
-                <span>{contactInfo.email}</span>
+              <a href="mailto:kleber@ziontechgroup.com" className="flex items-center space-x-3 text-white/80 hover:text-cyan-400 transition-colors group">
+                <Mail className="w-5 h-5 text-cyan-400 group-hover:scale-110 transition-transform duration-200" />
+                <span>kleber@ziontechgroup.com</span>
               </a>
-              
               <div className="flex items-start space-x-3 text-white/80">
-                <MapPin className="w-5 h-5 mt-0.5" />
-                <span className="text-sm">{contactInfo.address}</span>
+                <MapPin className="w-5 h-5 mt-0.5 text-cyan-400" />
+                <span className="text-sm">364 E Main St STE 1008 Middletown DE 19709</span>
               </div>
-              
-              <a
-                href={contactInfo.website}
-                className="flex items-center space-x-3 text-white/80 hover:text-cyan-400 transition-colors"
-              >
-                <Globe className="w-5 h-5" />
-                <span>{contactInfo.website.replace('https://', '')}</span>
+              <a href="https://ziontechgroup.com" className="flex items-center space-x-3 text-white/80 hover:text-cyan-400 transition-colors group">
+                <Globe className="w-5 h-5 text-cyan-400 group-hover:scale-110 transition-transform duration-200" />
+                <span>ziontechgroup.com</span>
               </a>
             </div>
           </motion.div>
 
-          {/* Quick Links & Social */}
+          {/* Quick Links and Social */}
           <motion.div
             initial={{ opacity: 0, x: 20 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ delay: 0.7 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
             className="space-y-6"
           >
+            {/* Quick Links */}
             <div>
-              <h3 className="text-white font-semibold text-xl mb-4">Quick Links</h3>
+              <h3 className="text-white font-semibold text-xl mb-4 flex items-center space-x-2">
+                <Target className="w-5 h-5 text-purple-400" />
+                <span>Quick Links</span>
+              </h3>
               <div className="grid grid-cols-2 gap-2">
                 {quickLinks.map((link) => (
                   <Link
                     key={link.name}
                     href={link.href}
-                    className="text-sm text-white/70 hover:text-cyan-400 transition-colors"
+                    className="text-sm text-white/70 hover:text-cyan-400 transition-colors hover:underline"
                   >
                     {link.name}
                   </Link>
                 ))}
               </div>
             </div>
-            
+
+            {/* Social Media */}
             <div>
-              <h3 className="text-white font-semibold text-lg mb-4">Follow Us</h3>
+              <h3 className="text-white font-semibold text-lg mb-4 flex items-center space-x-2">
+                <Globe className="w-5 h-5 text-emerald-400" />
+                <span>Follow Us</span>
+              </h3>
               <div className="flex space-x-4">
                 {socialLinks.map((social) => (
                   <a
@@ -260,7 +301,8 @@ export default function UltraFuturisticFooter2036() {
                     href={social.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="p-2 bg-white/5 hover:bg-white/10 rounded-lg text-white/70 hover:text-cyan-400 transition-all duration-300 hover:scale-110"
+                    className={`p-2 bg-white/5 hover:bg-white/10 rounded-lg text-white/70 transition-all duration-300 hover:scale-110 ${social.color}`}
+                    aria-label={`Follow us on ${social.name}`}
                   >
                     {social.icon}
                   </a>
@@ -273,11 +315,13 @@ export default function UltraFuturisticFooter2036() {
         {/* Bottom Section */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.8 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
           className="border-t border-white/10 pt-8"
         >
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
+            {/* Company Info */}
             <div className="flex items-center space-x-3">
               <div className="w-8 h-8 bg-gradient-to-r from-cyan-400 to-purple-500 rounded-lg"></div>
               <div>
@@ -285,61 +329,39 @@ export default function UltraFuturisticFooter2036() {
                 <p className="text-white/60 text-sm">Future Technology Solutions</p>
               </div>
             </div>
-            
+
+            {/* Legal Links */}
             <div className="flex items-center space-x-6 text-sm text-white/60">
-              {legalLinks.map((link) => (
-                <Link key={link.name} href={link.href} className="hover:text-cyan-400 transition-colors">
-                  {link.name}
-                </Link>
-              ))}
+              <Link href="/privacy" className="hover:text-cyan-400 transition-colors">Privacy Policy</Link>
+              <Link href="/terms" className="hover:text-cyan-400 transition-colors">Terms of Service</Link>
+              <Link href="/cookies" className="hover:text-cyan-400 transition-colors">Cookie Policy</Link>
+              <Link href="/accessibility-scanner" className="hover:text-cyan-400 transition-colors">Accessibility</Link>
             </div>
-            
+
+            {/* Back to Top Button */}
             <button
               onClick={scrollToTop}
-              className="p-3 bg-gradient-to-r from-cyan-500/20 to-purple-500/20 border border-cyan-400/30 rounded-lg text-cyan-400 hover:from-cyan-500/30 hover:to-purple-500/30 transition-all duration-300 hover:scale-110"
+              className="p-3 bg-gradient-to-r from-cyan-500/20 to-purple-500/20 border border-cyan-400/30 rounded-lg text-cyan-400 hover:from-cyan-500/30 hover:to-purple-500/30 transition-all duration-300 hover:scale-110 group"
+              aria-label="Back to top"
             >
-              <ArrowUp className="w-5 h-5" />
+              <ArrowUp className="w-5 h-5 group-hover:-translate-y-1 transition-transform" />
             </button>
           </div>
-          
+
+          {/* Copyright */}
           <div className="mt-6 text-center">
             <p className="text-white/50 text-sm">
-              © {new Date().getFullYear()} ZionTech Group. All rights reserved. 
-              Pioneering the future of technology with AI, quantum computing, and space technology.
+              © 2025 ZionTech Group. All rights reserved. Pioneering the future of technology with AI, quantum computing, and space technology.
             </p>
           </div>
         </motion.div>
       </div>
 
-      {/* Floating Elements */}
+      {/* Background Decorative Elements */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
-        <motion.div
-          className="absolute top-20 right-20 w-32 h-32 border border-cyan-400/10 rounded-full"
-          animate={{
-            rotate: [0, 360],
-            scale: [1, 1.2, 1],
-            opacity: [0.1, 0.3, 0.1]
-          }}
-          transition={{
-            duration: 20,
-            repeat: Infinity,
-            ease: "linear"
-          }}
-        />
-        
-        <motion.div
-          className="absolute bottom-20 left-20 w-24 h-24 border border-purple-400/10 transform rotate-45"
-          animate={{
-            rotate: [45, 405],
-            scale: [1, 1.1, 1],
-            opacity: [0.1, 0.2, 0.1]
-          }}
-          transition={{
-            duration: 25,
-            repeat: Infinity,
-            ease: "linear"
-          }}
-        />
+        <div className="absolute top-20 right-20 w-32 h-32 border border-cyan-400/10 rounded-full"></div>
+        <div className="absolute bottom-20 left-20 w-24 h-24 border border-purple-400/10 transform rotate-45"></div>
+        <div className="absolute top-1/2 left-10 w-16 h-16 border border-pink-400/10 rounded-full"></div>
       </div>
     </footer>
   );
