@@ -1,9 +1,12 @@
 import Head from 'next/head';
 import Link from 'next/link';
+<<<<<<< HEAD
+=======
 import AnimatedBackground from '@/components/ui/AnimatedBackground';
 import dynamic from 'next/dynamic';
 
 const FrontPageFeatureGrid = dynamic(() => import('@/components/ui/FrontPageFeatureGrid'), { ssr: false });
+>>>>>>> origin/cursor/automate-front-page-content-and-feature-advertising-3397
 
 export default function Home() {
   return (
