@@ -10,6 +10,53 @@ interface SEOData {
   ogType: string;
   twitterCard: string;
   canonicalUrl: string;
+<<<<<<< HEAD
+  structuredData?: object;
+}
+
+const SEOOptimizer: React.FC<SEOOptimizerProps> = ({
+  title = 'Zion Tech Group - Future of Technology | AI, Quantum Security, Micro SAAS',
+  description = 'Revolutionary micro SAAS services, cutting-edge AI solutions, quantum cybersecurity, and emerging technologies that transform businesses. 98+ innovative services for the modern enterprise.',
+  keywords = ['AI services', 'quantum cybersecurity', 'micro SAAS', 'automation', 'IT solutions', 'emerging technologies', 'Zion Tech Group', 'Delaware technology company'],
+  type = 'website',
+
+  currentUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://ziontechgroup.com',
+  ogImage = '/og-image.jpg',
+  ogUrl = 'https://ziontechgroup.com',
+  canonicalUrl = 'https://ziontechgroup.com',
+  structuredData = {}
+}) => {
+  useEffect(() => {
+    // Add structured data to page
+    if (structuredData && Object.keys(structuredData).length > 0) {
+      const script = document.createElement('script');
+      script.type = 'application/ld+json';
+      script.text = JSON.stringify(structuredData);
+      document.head.appendChild(script);
+
+      return () => {
+        document.head.removeChild(script);
+      };
+    }
+  }, [structuredData]);
+
+  // Default structured data for Zion Tech Group
+  const defaultStructuredData = {
+    '@context': 'https://schema.org',
+    '@type': type === 'article' ? 'Article' : 'Organization',
+    name: 'Zion Tech Group',
+    description: description,
+    url: currentUrl,
+    logo: 'https://ziontechgroup.com/logo.png',
+    sameAs: [
+      'https://ziontechgroup.com',
+      'https://linkedin.com/company/ziontechgroup'
+    ],
+    ogImage: '/og-image.svg',
+    ogType: 'website',
+    twitterCard: 'summary_large_image',
+    canonicalUrl: `https://ziontechgroup.com${router.asPath}`,
+=======
   structuredData: any;
 }
 
@@ -258,6 +305,7 @@ const SEOOptimizer: React.FC<SEOOptimizerProps> = ({
       changeFrequency: 'weekly',
       priority: 0.8
     };
+>>>>>>> origin/cursor/analyze-improve-and-deploy-application-d1de
   };
 
   // Merge with provided data
@@ -410,6 +458,81 @@ const SEOOptimizer: React.FC<SEOOptimizerProps> = ({
   const metaKeywords = finalSEO.keywords.join(', ');
 
   return (
+<<<<<<< HEAD
+    <Head>
+      {/* Basic Meta Tags */}
+      <title>{finalSEO.title}</title>
+      <meta name="description" content={finalSEO.description} />
+      <meta name="keywords" content={metaKeywords} />
+      <meta name="author" content="Zion Tech Group" />
+      <meta name="language" content="English" />
+      <meta name="revisit-after" content="7 days" />
+      
+      {/* Canonical URL */}
+      <link rel="canonical" href={url} />
+      
+      {/* Open Graph Meta Tags */}
+      <meta property="og:title" content={finalSEO.title} />
+      <meta property="og:description" content={finalSEO.description} />
+      <meta property="og:type" content={finalSEO.ogType} />
+      <meta property="og:url" content={finalSEO.canonicalUrl} />
+      <meta property="og:image" content={finalSEO.ogImage} />
+      <meta property="og:image:width" content="1200" />
+      <meta property="og:image:height" content="630" />
+      <meta property="og:site_name" content="Zion Tech Group" />
+      <meta property="og:locale" content="en_US" />
+      
+      {/* Twitter Card Meta Tags */}
+      <meta name="twitter:card" content={finalSEO.twitterCard} />
+      <meta name="twitter:title" content={finalSEO.title} />
+      <meta name="twitter:description" content={finalSEO.description} />
+      <meta name="twitter:image" content={finalSEO.ogImage} />
+      <meta name="twitter:site" content="@ziontechgroup" />
+      <meta name="twitter:creator" content="@ziontechgroup" />
+      
+      {/* Additional Meta Tags for Better SEO */}
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <meta name="theme-color" content="#06b6d4" />
+      <meta name="msapplication-TileColor" content="#06b6d4" />
+      <meta name="apple-mobile-web-app-capable" content="yes" />
+      <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+      
+      {/* Canonical URL */}
+      <link rel="canonical" href={url} />
+      
+      {/* Favicon */}
+      <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+      <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+      <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+      <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+      
+      {/* Preconnect to external domains for performance */}
+      <link rel="preconnect" href="https://fonts.googleapis.com" />
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+      <link rel="preconnect" href="https://www.google-analytics.com" />
+      
+      {/* Service Worker for PWA capabilities */}
+      {typeof window !== 'undefined' && 'serviceWorker' in navigator && (
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              if ('serviceWorker' in navigator) {
+                window.addEventListener('load', function() {
+                  navigator.serviceWorker.register('/sw.js')
+                    .then(function(registration) {
+                      console.log('SW registered: ', registration);
+                    })
+                    .catch(function(registrationError) {
+                      console.log('SW registration failed: ', registrationError);
+                    });
+                });
+              }
+            `
+          }}
+        />
+      )}
+    </Head>
+=======
     <>
       <Head>
         {/* Basic Meta Tags */}
@@ -502,6 +625,7 @@ const SEOOptimizer: React.FC<SEOOptimizerProps> = ({
         </div>
       )}
     </>
+>>>>>>> origin/cursor/analyze-improve-and-deploy-application-d1de
   );
 };
 
