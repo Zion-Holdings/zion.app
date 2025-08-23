@@ -3,6 +3,8 @@ import Homepage2025 from '../components/Homepage2025';
 import SEOOptimizer from '../components/SEOOptimizer';
 import AnalyticsTracker from '../components/AnalyticsTracker';
 import ErrorBoundary from '../components/ErrorBoundary';
+import PerformanceMonitor from '../components/PerformanceMonitor';
+import AccessibilityEnhancer from '../components/AccessibilityEnhancer';
 
 const HomePage: React.FC = () => {
   return (
@@ -10,6 +12,8 @@ const HomePage: React.FC = () => {
       <SEOOptimizer />
       <AnalyticsTracker />
       <Homepage2025 />
+      <PerformanceMonitor />
+      <AccessibilityEnhancer />
     </ErrorBoundary>
   );
 };
