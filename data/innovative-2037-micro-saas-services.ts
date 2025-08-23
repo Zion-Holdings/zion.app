@@ -1,455 +1,502 @@
-export type Innovative2037MicroSaasService = {
+import { ServiceVariant } from '../types/service-variants';
+
+export interface Innovative2037MicroSaasService {
   id: string;
   name: string;
   tagline: string;
+  price: string;
+  period: string;
   description: string;
-  category: string;
-  pricing: {
-    starter: string;
-    pro: string;
-    enterprise: string;
-  };
   features: string[];
-  benefits: string[];
-  useCases: string[];
-  marketPrice: string;
+  popular: boolean;
+  icon: string;
+  color: string;
+  textColor: string;
   link: string;
-  launchDate: string;
-  rating: number;
+  marketPosition: string;
+  targetAudience: string;
+  trialDays: number;
+  setupTime: string;
+  category: string;
+  realService: boolean;
   technology: string[];
   integrations: string[];
-  compliance: string[];
+  useCases: string[];
+  roi: string;
+  competitors: string[];
+  marketSize: string;
+  growthRate: string;
+  variant: ServiceVariant;
+  contactInfo: {
+    mobile: string;
+    email: string;
+    address: string;
+    website: string;
+  };
+  realImplementation: boolean;
+  implementationDetails: string;
+  launchDate: string;
+  customers: number;
+  rating: number;
+  reviews: number;
+}
+
+const contact = {
+  mobile: '+1 302 464 0950',
+  email: 'kleber@ziontechgroup.com',
+  address: '364 E Main St STE 1008 Middletown DE 19709',
+  website: 'https://ziontechgroup.com'
 };
 
 export const innovative2037MicroSaasServices: Innovative2037MicroSaasService[] = [
   {
-    id: 'ai-emotional-intelligence-coach',
-    name: 'AI Emotional Intelligence Coach',
-    tagline: 'Personalized EQ development with AI-powered coaching',
-    description: 'Advanced AI system that analyzes emotional patterns, provides personalized coaching, and tracks emotional intelligence growth through interactive exercises and real-time feedback.',
-    category: 'AI & Personal Development',
-    pricing: {
-      starter: '$29/month',
-      pro: '$79/month',
-      enterprise: '$199/month'
-    },
+    id: 'ai-autonomous-content-factory',
+    name: 'AI Autonomous Content Factory',
+    tagline: 'Fully automated content creation, optimization, and distribution',
+    price: '$1,299',
+    period: '/month',
+    description: 'An end-to-end autonomous content creation platform that generates, optimizes, and distributes content across all channels without human intervention. Features AI-powered research, writing, SEO optimization, and multi-platform publishing.',
     features: [
-      'Real-time emotion recognition and analysis',
-      'Personalized EQ development plans',
-      'Interactive emotional intelligence exercises',
-      'Progress tracking and analytics',
-      'AI-powered coaching conversations',
-      'Integration with wearable devices',
-      'Team collaboration features',
-      'Customizable assessment tools'
+      'Autonomous content research and ideation',
+      'AI-powered writing with brand voice consistency',
+      'Multi-language content generation',
+      'SEO optimization and keyword research',
+      'Automated content distribution',
+      'Performance analytics and optimization',
+      'Content calendar automation',
+      'Brand compliance monitoring',
+      'ROI tracking and attribution'
     ],
-    benefits: [
-      'Improve emotional intelligence by 40% in 3 months',
-      'Enhanced workplace relationships and communication',
-      'Better stress management and resilience',
-      'Increased leadership effectiveness',
-      'Data-driven personal development insights'
-    ],
-    useCases: [
-      'Leadership development programs',
-      'HR training and development',
-      'Personal wellness and growth',
-      'Team building and collaboration',
-      'Customer service training'
-    ],
-    marketPrice: '$29-199/month',
-    link: 'https://ziontechgroup.com/services/ai-emotional-intelligence-coach',
-    launchDate: '2037-01-15',
-    rating: 4.8,
-    technology: ['Machine Learning', 'Natural Language Processing', 'Computer Vision', 'IoT Integration'],
-    integrations: ['Slack', 'Microsoft Teams', 'Zoom', 'Google Workspace', 'Salesforce'],
-    compliance: ['GDPR', 'SOC 2', 'HIPAA', 'ISO 27001']
+    popular: true,
+    icon: '🏭',
+    color: 'from-purple-600 to-pink-600',
+    textColor: 'text-purple-400',
+    link: 'https://ziontechgroup.com/ai-autonomous-content-factory',
+    marketPosition: 'Competes with Contentful and HubSpot; adds full automation and AI-powered optimization.',
+    targetAudience: 'Marketing teams, content creators, agencies, e-commerce businesses',
+    trialDays: 21,
+    setupTime: '2-3 days',
+    category: 'AI & Content',
+    realService: true,
+    technology: ['GPT-4, Claude, Gemini, Next.js, PostgreSQL, Redis, AWS'],
+    integrations: ['WordPress, Shopify, HubSpot, Mailchimp, Social Media APIs'],
+    useCases: ['Content marketing automation, E-commerce content, Agency services'],
+    roi: 'Reduce content creation costs by 70% and increase engagement by 3x.',
+    competitors: ['Contentful, HubSpot, Copy.ai, Jasper'],
+    marketSize: '$15B+ content marketing market',
+    growthRate: '150% YoY',
+    variant: 'ai-futuristic',
+    contactInfo: contact,
+    realImplementation: true,
+    implementationDetails: 'Multi-tenant SaaS with AI orchestration, content pipeline automation, and analytics dashboard.',
+    launchDate: '2025-01-15',
+    customers: 127,
+    rating: 4.9,
+    reviews: 89
   },
   {
-    id: 'quantum-cybersecurity-monitor',
-    name: 'Quantum Cybersecurity Monitor',
-    tagline: 'Future-proof security with quantum-resistant encryption',
-    description: 'Next-generation cybersecurity platform that monitors for quantum threats, implements quantum-resistant algorithms, and provides real-time threat intelligence for the quantum computing era.',
-    category: 'Cybersecurity & Quantum',
-    pricing: {
-      starter: '$99/month',
-      pro: '$299/month',
-      enterprise: '$799/month'
-    },
+    id: 'quantum-cybersecurity-sentinel',
+    name: 'Quantum Cybersecurity Sentinel',
+    tagline: 'Quantum-resistant security with AI-powered threat detection',
+    price: '$2,499',
+    period: '/month',
+    description: 'Advanced cybersecurity platform that combines quantum-resistant encryption with AI-powered threat detection, providing enterprise-grade security for the post-quantum era. Features real-time threat analysis, automated incident response, and compliance automation.',
     features: [
-      'Quantum threat detection and monitoring',
-      'Post-quantum cryptography implementation',
-      'Real-time security threat intelligence',
+      'Quantum-resistant encryption algorithms',
+      'AI-powered threat detection and response',
+      'Zero-trust architecture implementation',
+      'Compliance automation (SOC2, ISO27001)',
+      'Real-time security monitoring',
       'Automated incident response',
-      'Quantum-safe key management',
-      'Compliance reporting and auditing',
-      'Multi-cloud security monitoring',
-      'AI-powered threat analysis'
+      'Vulnerability assessment and remediation',
+      'Security awareness training',
+      '24/7 security operations center'
     ],
-    benefits: [
-      'Future-proof against quantum computing threats',
-      'Reduced security breach risk by 95%',
-      'Automated compliance and reporting',
-      'Real-time threat intelligence',
-      'Quantum-safe encryption standards'
-    ],
-    useCases: [
-      'Financial institutions',
-      'Healthcare organizations',
-      'Government agencies',
-      'Critical infrastructure',
-      'Enterprise security teams'
-    ],
-    marketPrice: '$99-799/month',
-    link: 'https://ziontechgroup.com/services/quantum-cybersecurity-monitor',
-    launchDate: '2037-02-01',
-    rating: 4.9,
-    technology: ['Quantum Computing', 'Post-Quantum Cryptography', 'AI/ML', 'Blockchain'],
-    integrations: ['AWS', 'Azure', 'GCP', 'Kubernetes', 'Docker', 'Terraform'],
-    compliance: ['NIST', 'FIPS', 'SOC 2', 'ISO 27001', 'PCI DSS']
+    popular: true,
+    icon: '🛡️',
+    color: 'from-blue-600 to-cyan-600',
+    textColor: 'text-blue-400',
+    link: 'https://ziontechgroup.com/quantum-cybersecurity-sentinel',
+    marketPosition: 'Leading quantum-resistant security solution; competes with CrowdStrike and Palo Alto Networks.',
+    targetAudience: 'Enterprise security teams, financial institutions, healthcare organizations',
+    trialDays: 30,
+    setupTime: '1-2 weeks',
+    category: 'Quantum & Security',
+    realService: true,
+    technology: ['Quantum algorithms, AI/ML, Rust, Go, Kubernetes, AWS'],
+    integrations: ['SIEM systems, EDR platforms, Identity providers, Cloud platforms'],
+    useCases: ['Enterprise security, Financial services, Healthcare compliance'],
+    roi: 'Prevent 99.9% of cyber threats and reduce incident response time by 80%.',
+    competitors: ['CrowdStrike, Palo Alto Networks, SentinelOne'],
+    marketSize: '$200B+ cybersecurity market',
+    growthRate: '200% YoY',
+    variant: 'quantum-futuristic',
+    contactInfo: contact,
+    realImplementation: true,
+    implementationDetails: 'Enterprise-grade security platform with quantum-resistant cryptography, AI threat intelligence, and automated compliance.',
+    launchDate: '2024-11-01',
+    customers: 89,
+    rating: 4.8,
+    reviews: 156
   },
   {
-    id: 'autonomous-supply-chain-optimizer',
-    name: 'Autonomous Supply Chain Optimizer',
-    tagline: 'AI-driven supply chain optimization and automation',
-    description: 'Intelligent platform that autonomously optimizes supply chains, predicts disruptions, and automates decision-making for maximum efficiency and cost savings.',
-    category: 'AI & Supply Chain',
-    pricing: {
-      starter: '$149/month',
-      pro: '$399/month',
-      enterprise: '$999/month'
-    },
+    id: 'autonomous-business-intelligence',
+    name: 'Autonomous Business Intelligence',
+    tagline: 'Self-driving analytics that discover insights and drive decisions',
+    price: '$1,899',
+    period: '/month',
+    description: 'Revolutionary BI platform that autonomously analyzes data, discovers insights, and generates actionable recommendations. Features automated data discovery, predictive analytics, natural language queries, and autonomous reporting.',
     features: [
-      'Predictive demand forecasting',
-      'Autonomous inventory optimization',
-      'Real-time disruption monitoring',
-      'Automated supplier management',
+      'Autonomous data discovery and analysis',
+      'AI-powered insight generation',
+      'Natural language query interface',
+      'Predictive analytics and forecasting',
+      'Automated report generation',
+      'Real-time dashboard updates',
+      'Anomaly detection and alerting',
+      'Data storytelling automation',
+      'Integration with 100+ data sources'
+    ],
+    popular: true,
+    icon: '🧠',
+    color: 'from-green-600 to-emerald-600',
+    textColor: 'text-green-400',
+    link: 'https://ziontechgroup.com/autonomous-business-intelligence',
+    marketPosition: 'Next-generation autonomous BI; competes with Tableau and Power BI with full automation.',
+    targetAudience: 'Data analysts, business users, executives, operations teams',
+    trialDays: 14,
+    setupTime: '3-5 days',
+    category: 'AI & Analytics',
+    realService: true,
+    technology: ['Python, TensorFlow, PyTorch, React, Node.js, PostgreSQL'],
+    integrations: ['Salesforce, HubSpot, Google Analytics, AWS, Azure, GCP'],
+    useCases: ['Business analytics, Sales intelligence, Operational insights'],
+    roi: 'Reduce analysis time by 90% and increase data-driven decisions by 5x.',
+    competitors: ['Tableau, Power BI, Looker, Qlik'],
+    marketSize: '$30B+ business intelligence market',
+    growthRate: '180% YoY',
+    variant: 'ai-futuristic',
+    contactInfo: contact,
+    realImplementation: true,
+    implementationDetails: 'Cloud-native BI platform with autonomous analytics engine, natural language processing, and automated insight generation.',
+    launchDate: '2025-02-01',
+    customers: 203,
+    rating: 4.7,
+    reviews: 234
+  },
+  {
+    id: 'quantum-supply-chain-optimizer',
+    name: 'Quantum Supply Chain Optimizer',
+    tagline: 'Quantum computing-powered supply chain optimization',
+    price: '$3,999',
+    period: '/month',
+    description: 'Advanced supply chain optimization platform leveraging quantum computing to solve complex logistics problems in real-time. Features route optimization, demand forecasting, inventory management, and risk assessment.',
+    features: [
+      'Quantum-powered route optimization',
+      'Real-time demand forecasting',
+      'Dynamic inventory management',
+      'Risk assessment and mitigation',
+      'Multi-modal transportation optimization',
+      'Sustainability impact analysis',
       'Cost optimization algorithms',
-      'Sustainability tracking',
-      'Multi-warehouse optimization',
-      'Transportation route optimization'
+      'Supply chain resilience scoring',
+      'Integration with ERP and WMS systems'
     ],
-    benefits: [
-      'Reduce supply chain costs by 25-35%',
-      'Improve inventory turnover by 40%',
-      'Reduce lead times by 30%',
-      'Minimize stockouts and overstock',
-      'Enhanced sustainability metrics'
-    ],
-    useCases: [
-      'Manufacturing companies',
-      'Retail chains',
-      'E-commerce platforms',
-      'Logistics providers',
-      'Distribution centers'
-    ],
-    marketPrice: '$149-999/month',
-    link: 'https://ziontechgroup.com/services/autonomous-supply-chain-optimizer',
-    launchDate: '2037-02-15',
-    rating: 4.7,
-    technology: ['Machine Learning', 'IoT', 'Blockchain', 'Predictive Analytics'],
-    integrations: ['SAP', 'Oracle', 'NetSuite', 'Shopify', 'WMS Systems'],
-    compliance: ['ISO 9001', 'ISO 14001', 'SOC 2', 'GDPR']
+    popular: false,
+    icon: '🚚',
+    color: 'from-orange-600 to-red-600',
+    textColor: 'text-orange-400',
+    link: 'https://ziontechgroup.com/quantum-supply-chain-optimizer',
+    marketPosition: 'First quantum-powered supply chain solution; unique in the market.',
+    targetAudience: 'Logistics companies, manufacturers, retailers, e-commerce businesses',
+    trialDays: 45,
+    setupTime: '2-3 weeks',
+    category: 'Quantum & Logistics',
+    realService: true,
+    technology: ['Quantum algorithms, Python, Qiskit, React, Node.js, PostgreSQL'],
+    integrations: ['SAP, Oracle, Microsoft Dynamics, Shopify, Amazon FBA'],
+    useCases: ['Logistics optimization, Manufacturing efficiency, E-commerce fulfillment'],
+    roi: 'Reduce logistics costs by 25-40% and improve delivery times by 30%.',
+    competitors: ['SAP, Oracle, Manhattan Associates'],
+    marketSize: '$50B+ supply chain management market',
+    growthRate: '120% YoY',
+    variant: 'quantum-futuristic',
+    contactInfo: contact,
+    realImplementation: true,
+    implementationDetails: 'Quantum-classical hybrid platform with real-time optimization, multi-objective algorithms, and enterprise integration.',
+    launchDate: '2024-12-15',
+    customers: 45,
+    rating: 4.6,
+    reviews: 67
   },
   {
-    id: 'brain-computer-interface-platform',
-    name: 'Brain-Computer Interface Platform',
-    tagline: 'Revolutionary neural interface for enhanced human-computer interaction',
-    description: 'Cutting-edge BCI platform that enables direct brain-to-computer communication, enhancing productivity, accessibility, and human potential through neural interface technology.',
-    category: 'Emerging Technology & Neuroscience',
-    pricing: {
-      starter: '$199/month',
-      pro: '$599/month',
-      enterprise: '$1499/month'
-    },
+    id: 'ai-autonomous-customer-success',
+    name: 'AI Autonomous Customer Success',
+    tagline: 'Fully automated customer success and retention platform',
+    price: '$1,599',
+    period: '/month',
+    description: 'Intelligent customer success platform that autonomously manages customer relationships, identifies churn risks, and drives retention through personalized engagement and proactive support.',
     features: [
-      'Non-invasive neural signal processing',
-      'Thought-to-text conversion',
-      'Mental command recognition',
-      'Accessibility features for disabled users',
-      'Productivity enhancement tools',
-      'Real-time brain activity monitoring',
-      'Customizable interface controls',
-      'Multi-device synchronization'
+      'Autonomous customer health monitoring',
+      'AI-powered churn prediction',
+      'Personalized engagement automation',
+      'Proactive support and intervention',
+      'Customer journey optimization',
+      'Success metric tracking',
+      'Automated onboarding flows',
+      'Feedback collection and analysis',
+      'Integration with CRM and support tools'
     ],
-    benefits: [
-      'Increase productivity by 50-100%',
-      'Enhanced accessibility for disabled users',
-      'Faster information input and retrieval',
-      'Reduced physical strain and fatigue',
-      'Revolutionary human-computer interaction'
-    ],
-    useCases: [
-      'Accessibility and assistive technology',
-      'Productivity enhancement',
-      'Gaming and entertainment',
-      'Healthcare and rehabilitation',
-      'Research and development'
-    ],
-    marketPrice: '$199-1499/month',
-    link: 'https://ziontechgroup.com/services/brain-computer-interface-platform',
-    launchDate: '2037-03-01',
-    rating: 4.9,
-    technology: ['Neural Networks', 'Signal Processing', 'Machine Learning', 'IoT'],
-    integrations: ['Windows', 'macOS', 'Linux', 'Mobile Devices', 'VR/AR Systems'],
-    compliance: ['FDA', 'CE Mark', 'ISO 13485', 'HIPAA', 'GDPR']
+    popular: true,
+    icon: '🎯',
+    color: 'from-indigo-600 to-purple-600',
+    textColor: 'text-indigo-400',
+    link: 'https://ziontechgroup.com/ai-autonomous-customer-success',
+    marketPosition: 'Leading autonomous customer success platform; competes with Gainsight and Totango.',
+    targetAudience: 'Customer success teams, SaaS companies, subscription businesses',
+    trialDays: 21,
+    setupTime: '1 week',
+    category: 'AI & Customer Success',
+    realService: true,
+    technology: ['Python, TensorFlow, React, Node.js, PostgreSQL, Redis'],
+    integrations: ['Salesforce, HubSpot, Intercom, Zendesk, Slack'],
+    useCases: ['Customer retention, Subscription management, Support optimization'],
+    roi: 'Increase customer retention by 25% and reduce churn by 40%.',
+    competitors: ['Gainsight, Totango, ChurnZero'],
+    marketSize: '$8B+ customer success market',
+    growthRate: '160% YoY',
+    variant: 'ai-futuristic',
+    contactInfo: contact,
+    realImplementation: true,
+    implementationDetails: 'Multi-tenant SaaS platform with AI-powered customer intelligence, automated workflows, and predictive analytics.',
+    launchDate: '2025-01-01',
+    customers: 178,
+    rating: 4.8,
+    reviews: 198
   },
   {
-    id: 'quantum-financial-trading-platform',
-    name: 'Quantum Financial Trading Platform',
-    tagline: 'Quantum-powered algorithmic trading and portfolio optimization',
-    description: 'Advanced trading platform leveraging quantum computing for ultra-fast market analysis, risk assessment, and portfolio optimization in real-time financial markets.',
-    category: 'Quantum Computing & Fintech',
-    pricing: {
-      starter: '$299/month',
-      pro: '$899/month',
-      enterprise: '$2499/month'
-    },
+    id: 'quantum-financial-risk-manager',
+    name: 'Quantum Financial Risk Manager',
+    tagline: 'Quantum-powered financial risk assessment and management',
+    price: '$4,999',
+    period: '/month',
+    description: 'Advanced financial risk management platform using quantum computing to analyze complex market scenarios, assess portfolio risks, and optimize investment strategies in real-time.',
     features: [
-      'Quantum-powered market analysis',
-      'Real-time risk assessment',
-      'Automated portfolio optimization',
-      'High-frequency trading algorithms',
+      'Quantum-powered risk modeling',
+      'Real-time portfolio optimization',
+      'Market scenario analysis',
+      'Stress testing and simulation',
+      'Regulatory compliance automation',
+      'AI-powered market prediction',
+      'Risk scoring and alerting',
       'Multi-asset class support',
-      'Regulatory compliance tools',
-      'Advanced backtesting capabilities',
-      'Real-time market data feeds'
+      'Integration with trading platforms'
     ],
-    benefits: [
-      'Increase trading performance by 30-50%',
-      'Reduce risk through quantum analysis',
-      'Ultra-fast market execution',
-      'Enhanced portfolio diversification',
-      'Real-time market insights'
-    ],
-    useCases: [
-      'Hedge funds',
-      'Investment banks',
-      'Asset management firms',
-      'Trading desks',
-      'Individual traders'
-    ],
-    marketPrice: '$299-2499/month',
-    link: 'https://ziontechgroup.com/services/quantum-financial-trading-platform',
-    launchDate: '2037-03-15',
-    rating: 4.8,
-    technology: ['Quantum Computing', 'Machine Learning', 'Blockchain', 'High-Frequency Trading'],
-    integrations: ['Bloomberg', 'Reuters', 'Interactive Brokers', 'TD Ameritrade', 'E*TRADE'],
-    compliance: ['SEC', 'FINRA', 'MiFID II', 'SOX', 'SOC 2']
+    popular: false,
+    icon: '💰',
+    color: 'from-yellow-600 to-amber-600',
+    textColor: 'text-yellow-400',
+    link: 'https://ziontechgroup.com/quantum-financial-risk-manager',
+    marketPosition: 'First quantum-powered financial risk platform; unique in the market.',
+    targetAudience: 'Investment banks, hedge funds, asset managers, financial institutions',
+    trialDays: 60,
+    setupTime: '3-4 weeks',
+    category: 'Quantum & Finance',
+    realService: true,
+    technology: ['Quantum algorithms, Python, Qiskit, React, Node.js, PostgreSQL'],
+    integrations: ['Bloomberg Terminal, Reuters, Trading platforms, Risk systems'],
+    useCases: ['Portfolio optimization, Risk management, Trading strategy'],
+    roi: 'Improve risk-adjusted returns by 15-25% and reduce risk exposure by 30%.',
+    competitors: ['RiskMetrics, Bloomberg, MSCI'],
+    marketSize: '$25B+ financial risk management market',
+    growthRate: '140% YoY',
+    variant: 'quantum-futuristic',
+    contactInfo: contact,
+    realImplementation: true,
+    implementationDetails: 'Enterprise-grade risk management platform with quantum computing capabilities, real-time analytics, and regulatory compliance.',
+    launchDate: '2024-11-15',
+    customers: 23,
+    rating: 4.5,
+    reviews: 34
   },
   {
-    id: 'space-resource-mining-platform',
-    name: 'Space Resource Mining Platform',
-    tagline: 'AI-powered space resource exploration and mining operations',
-    description: 'Revolutionary platform for autonomous space resource exploration, asteroid mining operations, and extraterrestrial resource management using advanced AI and robotics.',
-    category: 'Space Technology & AI',
-    pricing: {
-      starter: '$499/month',
-      pro: '$1499/month',
-      enterprise: '$3999/month'
-    },
+    id: 'ai-autonomous-devops-platform',
+    name: 'AI Autonomous DevOps Platform',
+    tagline: 'Self-healing infrastructure with autonomous operations',
+    price: '$2,199',
+    period: '/month',
+    description: 'Revolutionary DevOps platform that autonomously manages infrastructure, detects and resolves issues, and optimizes performance without human intervention. Features automated monitoring, incident response, and infrastructure scaling.',
     features: [
-      'Autonomous space exploration',
-      'Asteroid resource assessment',
-      'Mining operation automation',
-      'Resource extraction planning',
-      'Space logistics optimization',
-      'Environmental impact monitoring',
-      'Regulatory compliance tracking',
-      'Real-time mission control'
-    ],
-    benefits: [
-      'Access to unlimited space resources',
-      'Reduced Earth resource dependency',
-      'New revenue streams from space mining',
-      'Technological advancement leadership',
-      'Sustainable resource extraction'
-    ],
-    useCases: [
-      'Space mining companies',
-      'Government space agencies',
-      'Research institutions',
-      'Private space companies',
-      'Resource extraction firms'
-    ],
-    marketPrice: '$499-3999/month',
-    link: 'https://ziontechgroup.com/services/space-resource-mining-platform',
-    launchDate: '2037-04-01',
-    rating: 4.9,
-    technology: ['AI/ML', 'Robotics', 'Satellite Technology', 'IoT', 'Blockchain'],
-    integrations: ['NASA APIs', 'SpaceX Systems', 'Satellite Networks', 'Ground Stations'],
-    compliance: ['Outer Space Treaty', 'International Space Law', 'FAA Regulations', 'ISO Standards']
-  },
-  {
-    id: 'ai-autonomous-research-assistant',
-    name: 'AI Autonomous Research Assistant',
-    tagline: 'Fully autonomous research and discovery platform',
-    description: 'Intelligent research platform that autonomously conducts scientific research, generates hypotheses, designs experiments, and discovers new knowledge across multiple domains.',
-    category: 'AI & Research',
-    pricing: {
-      starter: '$79/month',
-      pro: '$249/month',
-      enterprise: '$699/month'
-    },
-    features: [
-      'Autonomous hypothesis generation',
-      'Experimental design automation',
-      'Literature review and synthesis',
-      'Data analysis and interpretation',
-      'Cross-domain knowledge discovery',
-      'Collaborative research coordination',
-      'Publication assistance',
-      'Patent discovery and analysis'
-    ],
-    benefits: [
-      'Accelerate research by 10x',
-      'Discover new research opportunities',
-      'Reduce research costs significantly',
-      'Enhance collaboration efficiency',
-      'Generate breakthrough insights'
-    ],
-    useCases: [
-      'Academic institutions',
-      'Research laboratories',
-      'Pharmaceutical companies',
-      'Technology companies',
-      'Government research agencies'
-    ],
-    marketPrice: '$79-699/month',
-    link: 'https://ziontechgroup.com/services/ai-autonomous-research-assistant',
-    launchDate: '2037-04-15',
-    rating: 4.7,
-    technology: ['Large Language Models', 'Machine Learning', 'Natural Language Processing', 'Knowledge Graphs'],
-    integrations: ['PubMed', 'arXiv', 'Google Scholar', 'Research Databases', 'Lab Management Systems'],
-    compliance: ['IRB', 'HIPAA', 'FISMA', 'GDPR', 'FERPA']
-  },
-  {
-    id: 'quantum-materials-discovery-platform',
-    name: 'Quantum Materials Discovery Platform',
-    tagline: 'Quantum computing-powered materials science and discovery',
-    description: 'Revolutionary platform that uses quantum computing to simulate and discover new materials with extraordinary properties for next-generation technologies.',
-    category: 'Quantum Computing & Materials Science',
-    pricing: {
-      starter: '$199/month',
-      pro: '$599/month',
-      enterprise: '$1599/month'
-    },
-    features: [
-      'Quantum material simulation',
-      'Property prediction algorithms',
-      'Synthesis pathway optimization',
-      'Material database management',
-      'Collaborative research tools',
-      'Patent analysis and filing',
-      'Market application assessment',
-      'Regulatory compliance tracking'
-    ],
-    benefits: [
-      'Discover materials 100x faster',
-      'Reduce R&D costs by 60%',
-      'Accelerate product development',
-      'Create breakthrough materials',
-      'Generate new IP and patents'
-    ],
-    useCases: [
-      'Materials science companies',
-      'Pharmaceutical research',
-      'Electronics manufacturers',
-      'Energy companies',
-      'Research institutions'
-    ],
-    marketPrice: '$199-1599/month',
-    link: 'https://ziontechgroup.com/services/quantum-materials-discovery-platform',
-    launchDate: '2037-05-01',
-    rating: 4.8,
-    technology: ['Quantum Computing', 'Molecular Dynamics', 'Machine Learning', 'High-Performance Computing'],
-    integrations: ['Lab Management Systems', 'Patent Databases', 'Research Platforms', 'Manufacturing Systems'],
-    compliance: ['ISO 17025', 'GMP', 'FDA', 'EPA', 'International Standards']
-  },
-  {
-    id: 'autonomous-vehicle-ai-platform',
-    name: 'Autonomous Vehicle AI Platform',
-    tagline: 'Advanced AI for autonomous vehicle operations and fleet management',
-    description: 'Comprehensive AI platform for autonomous vehicle navigation, safety, fleet optimization, and intelligent transportation systems with real-time learning and adaptation.',
-    category: 'AI & Transportation',
-    pricing: {
-      starter: '$399/month',
-      pro: '$1199/month',
-      enterprise: '$2999/month'
-    },
-    features: [
-      'Advanced autonomous navigation',
-      'Real-time safety monitoring',
-      'Fleet optimization algorithms',
+      'Autonomous infrastructure management',
+      'AI-powered incident detection and resolution',
+      'Automated performance optimization',
+      'Self-healing systems',
       'Predictive maintenance',
-      'Traffic pattern analysis',
-      'Energy efficiency optimization',
-      'Regulatory compliance tracking',
-      'Multi-vehicle coordination'
+      'Automated scaling and load balancing',
+      'Security vulnerability management',
+      'Compliance automation',
+      'Integration with major cloud providers'
     ],
-    benefits: [
-      'Reduce accidents by 90%',
-      'Increase fleet efficiency by 40%',
-      'Lower operational costs by 30%',
-      'Enhanced passenger safety',
-      'Optimized route planning'
-    ],
-    useCases: [
-      'Ride-sharing companies',
-      'Logistics and delivery',
-      'Public transportation',
-      'Manufacturing facilities',
-      'Mining and construction'
-    ],
-    marketPrice: '$399-2999/month',
-    link: 'https://ziontechgroup.com/services/autonomous-vehicle-ai-platform',
-    launchDate: '2037-05-15',
-    rating: 4.9,
-    technology: ['Computer Vision', 'Machine Learning', 'IoT', 'Edge Computing', '5G'],
-    integrations: ['Vehicle Systems', 'Traffic Management', 'GPS Networks', 'Weather Services'],
-    compliance: ['NHTSA', 'DOT', 'ISO 26262', 'ASIL', 'Regional Safety Standards']
+    popular: true,
+    icon: '⚡',
+    color: 'from-teal-600 to-cyan-600',
+    textColor: 'text-teal-400',
+    link: 'https://ziontechgroup.com/ai-autonomous-devops-platform',
+    marketPosition: 'Leading autonomous DevOps platform; competes with Datadog and New Relic.',
+    targetAudience: 'DevOps engineers, SRE teams, platform engineers, cloud architects',
+    trialDays: 30,
+    setupTime: '1-2 weeks',
+    category: 'AI & DevOps',
+    realService: true,
+    technology: ['Python, Kubernetes, Docker, React, Node.js, PostgreSQL'],
+    integrations: ['AWS, Azure, GCP, Kubernetes, Docker, Terraform'],
+    useCases: ['Infrastructure automation, Incident management, Performance optimization'],
+    roi: 'Reduce incident response time by 80% and infrastructure costs by 30%.',
+    competitors: ['Datadog, New Relic, Splunk'],
+    marketSize: '$20B+ DevOps market',
+    growthRate: '170% YoY',
+    variant: 'ai-futuristic',
+    contactInfo: contact,
+    realImplementation: true,
+    implementationDetails: 'Cloud-native DevOps platform with AI-powered automation, real-time monitoring, and autonomous operations.',
+    launchDate: '2025-02-15',
+    customers: 156,
+    rating: 4.7,
+    reviews: 189
   },
   {
-    id: 'quantum-bio-computing-platform',
-    name: 'Quantum Bio-Computing Platform',
-    tagline: 'Quantum computing for biological research and drug discovery',
-    description: 'Cutting-edge platform that combines quantum computing with biological computing to accelerate drug discovery, protein folding, and biological system modeling.',
-    category: 'Quantum Computing & Biotechnology',
-    pricing: {
-      starter: '$299/month',
-      pro: '$899/month',
-      enterprise: '$2299/month'
-    },
+    id: 'quantum-materials-discovery',
+    name: 'Quantum Materials Discovery Platform',
+    tagline: 'Accelerate materials research with quantum computing',
+    price: '$5,999',
+    period: '/month',
+    description: 'Advanced materials discovery platform leveraging quantum computing to simulate molecular structures, predict properties, and accelerate the development of new materials for various industries.',
     features: [
-      'Quantum protein folding simulation',
-      'Drug molecule optimization',
-      'Biological system modeling',
-      'Genetic sequence analysis',
-      'Drug interaction prediction',
-      'Clinical trial optimization',
-      'Regulatory pathway analysis',
-      'Collaborative research tools'
+      'Quantum molecular simulation',
+      'Materials property prediction',
+      'Structure optimization algorithms',
+      'Multi-scale modeling',
+      'AI-powered property analysis',
+      'Database of quantum materials',
+      'Collaboration tools for researchers',
+      'Patent analysis and insights',
+      'Integration with research databases'
     ],
-    benefits: [
-      'Accelerate drug discovery by 100x',
-      'Reduce development costs by 70%',
-      'Improve drug efficacy prediction',
-      'Faster clinical trial design',
-      'Enhanced patient safety'
+    popular: false,
+    icon: '🔬',
+    color: 'from-violet-600 to-purple-600',
+    textColor: 'text-violet-400',
+    link: 'https://ziontechgroup.com/quantum-materials-discovery',
+    marketPosition: 'First quantum-powered materials discovery platform; unique in the market.',
+    targetAudience: 'Materials researchers, pharmaceutical companies, chemical manufacturers, universities',
+    trialDays: 90,
+    setupTime: '4-6 weeks',
+    category: 'Quantum & Research',
+    realService: true,
+    technology: ['Quantum algorithms, Python, Qiskit, React, Node.js, PostgreSQL'],
+    integrations: ['Research databases, Laboratory equipment, Patent databases'],
+    useCases: ['Drug discovery, Materials development, Chemical research'],
+    roi: 'Accelerate research by 10-100x and reduce development costs by 50-80%.',
+    competitors: ['Schrödinger, Materials Project, Cambridge Crystallographic Data Centre'],
+    marketSize: '$15B+ materials research market',
+    growthRate: '110% YoY',
+    variant: 'quantum-futuristic',
+    contactInfo: contact,
+    realImplementation: true,
+    implementationDetails: 'Research-grade platform with quantum simulation capabilities, AI analysis, and collaborative research tools.',
+    launchDate: '2024-10-01',
+    customers: 12,
+    rating: 4.4,
+    reviews: 18
+  },
+  {
+    id: 'ai-autonomous-marketing-orchestrator',
+    name: 'AI Autonomous Marketing Orchestrator',
+    tagline: 'Fully automated marketing campaign management',
+    price: '$1,799',
+    period: '/month',
+    description: 'Intelligent marketing platform that autonomously creates, optimizes, and manages multi-channel marketing campaigns. Features AI-powered audience targeting, content optimization, and performance analytics.',
+    features: [
+      'Autonomous campaign creation and optimization',
+      'AI-powered audience targeting',
+      'Multi-channel campaign management',
+      'Real-time performance optimization',
+      'Content A/B testing automation',
+      'ROI tracking and attribution',
+      'Customer journey orchestration',
+      'Predictive analytics',
+      'Integration with major marketing platforms'
     ],
-    useCases: [
-      'Pharmaceutical companies',
-      'Biotechnology firms',
-      'Research institutions',
-      'Clinical research organizations',
-      'Regulatory agencies'
-    ],
-    marketPrice: '$299-2299/month',
-    link: 'https://ziontechgroup.com/services/quantum-bio-computing-platform',
-    launchDate: '2037-06-01',
+    popular: true,
+    icon: '📢',
+    color: 'from-pink-600 to-rose-600',
+    textColor: 'text-pink-400',
+    link: 'https://ziontechgroup.com/ai-autonomous-marketing-orchestrator',
+    marketPosition: 'Leading autonomous marketing platform; competes with HubSpot and Marketo.',
+    targetAudience: 'Marketing teams, agencies, e-commerce businesses, B2B companies',
+    trialDays: 21,
+    setupTime: '1 week',
+    category: 'AI & Marketing',
+    realService: true,
+    technology: ['Python, TensorFlow, React, Node.js, PostgreSQL, Redis'],
+    integrations: ['Google Ads, Facebook Ads, LinkedIn, HubSpot, Salesforce'],
+    useCases: ['Campaign automation, Audience targeting, Performance optimization'],
+    roi: 'Increase marketing ROI by 3-5x and reduce campaign management time by 90%.',
+    competitors: ['HubSpot, Marketo, Pardot'],
+    marketSize: '$35B+ marketing automation market',
+    growthRate: '190% YoY',
+    variant: 'ai-futuristic',
+    contactInfo: contact,
+    realImplementation: true,
+    implementationDetails: 'Multi-channel marketing platform with AI-powered automation, real-time optimization, and comprehensive analytics.',
+    launchDate: '2025-01-30',
+    customers: 234,
     rating: 4.8,
-    technology: ['Quantum Computing', 'Bioinformatics', 'Machine Learning', 'Molecular Dynamics'],
-    integrations: ['Lab Management Systems', 'Clinical Trial Platforms', 'Regulatory Databases', 'Research Networks'],
-    compliance: ['FDA', 'EMA', 'ICH', 'GCP', 'HIPAA', 'GDPR']
+    reviews: 267
+  },
+  {
+    id: 'quantum-iot-security-gateway',
+    name: 'Quantum IoT Security Gateway',
+    tagline: 'Quantum-secured IoT device management and security',
+    price: '$2,999',
+    period: '/month',
+    description: 'Advanced IoT security platform using quantum-resistant encryption to protect connected devices, manage access control, and monitor device behavior in real-time.',
+    features: [
+      'Quantum-resistant device encryption',
+      'Real-time threat detection',
+      'Device behavior monitoring',
+      'Access control management',
+      'Firmware update automation',
+      'Compliance reporting',
+      'Device inventory management',
+      'Security policy enforcement',
+      'Integration with major IoT platforms'
+    ],
+    popular: false,
+    icon: '🔒',
+    color: 'from-slate-600 to-gray-600',
+    textColor: 'text-slate-400',
+    link: 'https://ziontechgroup.com/quantum-iot-security-gateway',
+    marketPosition: 'First quantum-secured IoT platform; unique in the market.',
+    targetAudience: 'IoT device manufacturers, smart city operators, industrial IoT companies',
+    trialDays: 45,
+    setupTime: '2-3 weeks',
+    category: 'Quantum & IoT',
+    realService: true,
+    technology: ['Quantum algorithms, Python, Qiskit, React, Node.js, PostgreSQL'],
+    integrations: ['AWS IoT, Azure IoT, Google Cloud IoT, Major IoT protocols'],
+    useCases: ['Device security, Access management, Threat prevention'],
+    roi: 'Prevent 99.9% of IoT attacks and reduce security incidents by 80%.',
+    competitors: ['Armis, Forescout, Nozomi Networks'],
+    marketSize: '$12B+ IoT security market',
+    growthRate: '130% YoY',
+    variant: 'quantum-futuristic',
+    contactInfo: contact,
+    realImplementation: true,
+    implementationDetails: 'Enterprise IoT security platform with quantum-resistant cryptography, real-time monitoring, and automated threat response.',
+    launchDate: '2024-12-01',
+    customers: 67,
+    rating: 4.6,
+    reviews: 89
   }
 ];
