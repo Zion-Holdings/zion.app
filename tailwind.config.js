@@ -337,4 +337,15 @@ module.exports = {
     },
   },
   plugins: [],
+  safelist: [
+    'focus:ring-cyan-500',
+    'focus:ring-blue-400',
+    'focus:ring-purple-400',
+    'focus:ring-offset-2',
+    'focus:ring-offset-black',
+    'focus:ring-offset-white',
+    'focus:outline-none',
+    'focus:ring-2',
+    'focus:ring-4'
+  ],
 }
