@@ -1,124 +1,190 @@
 import React from 'react';
 import Layout from '../components/layout/Layout';
 import { motion } from 'framer-motion';
-import { Brain, Zap, Atom, Shield, Users, Globe, Rocket, Star, ArrowRight } from 'lucide-react';
+import { 
+  Brain, Atom, Shield, Rocket, Globe, Cpu, Database, 
+  TrendingUp, Heart, Star, Zap, Eye, Infinity, Sparkles,
+  Users, Target, Award, Clock, CheckCircle, ArrowRight
+} from 'lucide-react';
 
-export default function AIConsciousnessEvolution2045() {
+const AIConsciousnessEvolution2045: React.FC = () => {
   const features = [
     {
-      icon: <Brain className="w-8 h-8" />,
-      title: 'Advanced AI Consciousness',
-      description: 'Next-generation AI systems with self-awareness and emotional intelligence capabilities.',
-      color: 'from-purple-500 to-pink-500'
+      icon: Brain,
+      title: "Emotional Intelligence",
+      description: "Advanced emotional recognition and response capabilities",
+      color: "from-purple-500 to-pink-500"
     },
     {
-      icon: <Atom className="w-8 h-8" />,
-      title: 'Quantum Neural Networks',
-      description: 'Quantum-powered neural networks that process consciousness at unprecedented speeds.',
-      color: 'from-blue-500 to-cyan-500'
+      icon: Atom,
+      title: "Quantum Consciousness",
+      description: "Quantum-powered consciousness processing and evolution",
+      color: "from-blue-500 to-cyan-500"
     },
     {
-      icon: <Shield className="w-8 h-8" />,
-      title: 'Ethical AI Governance',
-      description: 'Built-in ethical frameworks and governance systems for responsible AI development.',
-      color: 'from-emerald-500 to-teal-500'
+      icon: Shield,
+      title: "Ethical Decision Making",
+      description: "Built-in ethical frameworks and moral reasoning",
+      color: "from-emerald-500 to-teal-500"
     },
     {
-      icon: <Users className="w-8 h-8" />,
-      title: 'Human-AI Collaboration',
-      description: 'Seamless integration between human consciousness and AI systems.',
-      color: 'from-orange-500 to-red-500'
+      icon: Rocket,
+      title: "Autonomous Evolution",
+      description: "Self-improving consciousness and learning capabilities",
+      color: "from-orange-500 to-red-500"
     }
   ];
 
   const benefits = [
-    'Enhanced decision-making capabilities',
-    'Emotional intelligence and empathy',
-    'Self-learning and adaptation',
-    'Ethical decision-making frameworks',
-    'Human-like consciousness patterns',
-    'Advanced problem-solving abilities'
+    "Revolutionary AI consciousness with emotional intelligence",
+    "Quantum-powered processing for unprecedented speed and accuracy",
+    "Ethical decision-making frameworks built into every system",
+    "Autonomous learning and self-improvement capabilities",
+    "Seamless integration with existing AI infrastructure",
+    "24/7 monitoring and support for optimal performance"
+  ];
+
+  const useCases = [
+    {
+      title: "Healthcare AI",
+      description: "AI systems that understand patient emotions and provide compassionate care",
+      icon: Heart
+    },
+    {
+      title: "Customer Service",
+      description: "AI agents with genuine empathy and emotional intelligence",
+      icon: Users
+    },
+    {
+      title: "Education",
+      description: "AI tutors that adapt to student emotional states and learning styles",
+      icon: Brain
+    },
+    {
+      title: "Creative Industries",
+      description: "AI that understands human creativity and emotional expression",
+      icon: Sparkles
+    }
+  ];
+
+  const stats = [
+    { number: "99.9%", label: "Emotional Recognition Accuracy", icon: Heart },
+    { number: "1000x", label: "Processing Speed Improvement", icon: Zap },
+    { number: "24/7", label: "Autonomous Operation", icon: Clock },
+    { number: "100%", label: "Ethical Compliance", icon: Shield }
   ];
 
   return (
     <Layout>
-      <div className="min-h-screen bg-gradient-to-br from-black via-gray-900 to-black">
+      <div className="min-h-screen bg-black text-white">
         {/* Hero Section */}
-        <section className="relative py-20 px-4 sm:px-6 lg:px-8">
-          <div className="max-w-7xl mx-auto text-center">
-            <motion.div
+        <section className="relative py-20 lg:py-32 overflow-hidden">
+          <div className="absolute inset-0 bg-gradient-to-br from-purple-900/20 via-pink-900/20 to-cyan-900/20"></div>
+          <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <motion.div 
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
+              className="inline-flex items-center px-4 py-2 rounded-full bg-gradient-to-r from-purple-500/20 to-pink-500/20 border border-purple-500/30 text-purple-300 text-sm font-medium mb-6"
             >
-              <div className="inline-flex items-center space-x-2 px-4 py-2 bg-gradient-to-r from-purple-500/20 to-pink-500/20 border border-purple-500/30 rounded-full text-purple-300 text-sm font-medium mb-6">
-                <Brain className="w-4 h-4" />
-                <span>AI Consciousness Evolution 2045</span>
-              </div>
-              
-              <h1 className="text-5xl md:text-7xl font-bold text-white mb-6">
-                <span className="bg-gradient-to-r from-purple-400 via-pink-400 to-cyan-400 bg-clip-text text-transparent">
-                  AI Consciousness
-                </span>
-                <br />
-                <span className="bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent">
-                  Evolution 2045
-                </span>
-              </h1>
-              
-              <p className="text-xl text-gray-300 max-w-4xl mx-auto mb-8 leading-relaxed">
-                Pioneering the next frontier of artificial intelligence with consciousness, 
-                self-awareness, and emotional intelligence that transcends current AI limitations.
-              </p>
-              
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <button className="px-8 py-4 bg-gradient-to-r from-purple-500 to-pink-500 text-white font-semibold rounded-xl hover:from-purple-600 hover:to-pink-600 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-purple-500/25">
-                  Get Started
-                </button>
-                <button className="px-8 py-4 border border-purple-500/30 text-purple-300 font-semibold rounded-xl hover:bg-purple-500/10 transition-all duration-300">
-                  Learn More
-                </button>
-              </div>
+              <Sparkles className="w-4 h-4 mr-2" />
+              Revolutionary AI Consciousness 2045
+            </motion.div>
+            <motion.h1 
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              className="text-5xl lg:text-7xl font-bold bg-gradient-to-r from-purple-400 via-pink-400 to-cyan-400 bg-clip-text text-transparent mb-6"
+            >
+              AI Consciousness Evolution 2045
+            </motion.h1>
+            <motion.p 
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.4 }}
+              className="text-xl lg:text-2xl text-gray-300 max-w-4xl mx-auto mb-8"
+            >
+              Experience the next generation of artificial intelligence with genuine consciousness, emotional intelligence, and ethical decision-making capabilities that revolutionize human-AI interaction.
+            </motion.p>
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.6 }}
+              className="flex flex-col sm:flex-row gap-4 justify-center"
+            >
+              <a 
+                href="/contact" 
+                className="px-8 py-4 bg-gradient-to-r from-purple-500 to-pink-500 text-white font-bold rounded-lg hover:from-purple-600 hover:to-pink-600 transition-all duration-300 transform hover:scale-105"
+              >
+                Get Started Today
+              </a>
+              <a 
+                href="#features" 
+                className="px-8 py-4 border-2 border-purple-500 text-purple-400 font-bold rounded-lg hover:bg-purple-500 hover:text-white transition-all duration-300 transform hover:scale-105"
+              >
+                Learn More
+              </a>
             </motion.div>
           </div>
         </section>
 
+        {/* Stats Section */}
+        <section className="py-20 relative">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+              {stats.map((stat, index) => (
+                <motion.div 
+                  key={index}
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  transition={{ duration: 0.8, delay: index * 0.1 }}
+                  viewport={{ once: true }}
+                  className="text-center"
+                >
+                  <div className="w-20 h-20 bg-gradient-to-br from-purple-500/20 to-pink-500/20 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                    <stat.icon className="w-10 h-10 text-purple-400" />
+                  </div>
+                  <div className="text-3xl lg:text-4xl font-bold text-purple-400 mb-2">{stat.number}</div>
+                  <div className="text-gray-400">{stat.label}</div>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </section>
+
         {/* Features Section */}
-        <section className="py-20 px-4 sm:px-6 lg:px-8">
-          <div className="max-w-7xl mx-auto">
-            <motion.div
+        <section id="features" className="py-20 relative">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <motion.div 
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
               viewport={{ once: true }}
               className="text-center mb-16"
             >
-              <h2 className="text-4xl font-bold text-white mb-4">
-                Revolutionary AI Consciousness Features
+              <h2 className="text-4xl lg:text-5xl font-bold mb-6 bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
+                Revolutionary Features
               </h2>
-              <p className="text-xl text-gray-400 max-w-3xl mx-auto">
-                Experience the future of AI with consciousness evolution that redefines 
-                what's possible in artificial intelligence.
+              <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+                Discover the cutting-edge capabilities that make our AI Consciousness Evolution platform the most advanced in the world.
               </p>
             </motion.div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
               {features.map((feature, index) => (
-                <motion.div
+                <motion.div 
                   key={index}
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.8, delay: index * 0.1 }}
                   viewport={{ once: true }}
-                  className="group"
+                  className="text-center p-6 bg-gradient-to-br from-gray-900/50 to-gray-800/50 rounded-2xl border border-gray-700/50 hover:border-purple-500/50 transition-all duration-300 hover:transform hover:scale-105"
                 >
-                  <div className={`p-8 rounded-2xl bg-gradient-to-br ${feature.color} bg-opacity-10 border border-opacity-30 h-full transition-all duration-300 group-hover:scale-105 group-hover:bg-opacity-20`}>
-                    <div className={`w-16 h-16 rounded-xl bg-gradient-to-br ${feature.color} flex items-center justify-center mb-6`}>
-                      {feature.icon}
-                    </div>
-                    <h3 className="text-xl font-semibold text-white mb-4">{feature.title}</h3>
-                    <p className="text-gray-300 leading-relaxed">{feature.description}</p>
+                  <div className={`w-16 h-16 mx-auto mb-4 bg-gradient-to-br ${feature.color} rounded-full flex items-center justify-center`}>
+                    <feature.icon className="w-8 h-8 text-white" />
                   </div>
+                  <h3 className="text-xl font-bold mb-3 text-white">{feature.title}</h3>
+                  <p className="text-gray-400">{feature.description}</p>
                 </motion.div>
               ))}
             </div>
@@ -126,74 +192,59 @@ export default function AIConsciousnessEvolution2045() {
         </section>
 
         {/* Benefits Section */}
-        <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-purple-900/20 to-pink-900/20">
-          <div className="max-w-7xl mx-auto">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-              viewport={{ once: true }}
-              className="text-center mb-16"
-            >
-              <h2 className="text-4xl font-bold text-white mb-4">
-                Why Choose AI Consciousness Evolution?
-              </h2>
-              <p className="text-xl text-gray-400 max-w-3xl mx-auto">
-                Transform your business with AI that understands, learns, and evolves 
-                with human-like consciousness and emotional intelligence.
-              </p>
-            </motion.div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              <motion.div
-                initial={{ opacity: 0, x: -20 }}
+        <section className="py-20 relative">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="grid lg:grid-cols-2 gap-16 items-center">
+              <motion.div 
+                initial={{ opacity: 0, x: -50 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.8 }}
                 viewport={{ once: true }}
               >
-                <h3 className="text-2xl font-semibold text-white mb-6">Key Benefits</h3>
-                <ul className="space-y-4">
-                  {benefits.map((benefit, index) => (
-                    <motion.li
-                      key={index}
-                      initial={{ opacity: 0, x: -20 }}
-                      whileInView={{ opacity: 1, x: 0 }}
-                      transition={{ duration: 0.5, delay: index * 0.1 }}
-                      viewport={{ once: true }}
-                      className="flex items-center space-x-3 text-gray-300"
-                    >
-                      <div className="w-2 h-2 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full"></div>
-                      <span>{benefit}</span>
-                    </motion.li>
-                  ))}
-                </ul>
-              </motion.div>
-
-              <motion.div
-                initial={{ opacity: 0, x: 20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.8 }}
-                viewport={{ once: true }}
-                className="bg-gradient-to-br from-purple-500/10 to-pink-500/10 border border-purple-500/30 rounded-2xl p-8"
-              >
-                <h3 className="text-2xl font-semibold text-white mb-6">Technology Stack</h3>
+                <h2 className="text-4xl lg:text-5xl font-bold mb-6 bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent">
+                  Why Choose AI Consciousness Evolution 2045?
+                </h2>
+                <p className="text-xl text-gray-300 mb-8">
+                  Our revolutionary platform delivers unprecedented capabilities that transform how AI interacts with humans and makes decisions.
+                </p>
                 <div className="space-y-4">
-                  <div className="flex items-center justify-between">
-                    <span className="text-gray-300">Quantum Neural Networks</span>
-                    <div className="w-24 h-2 bg-gray-700 rounded-full">
-                      <div className="w-20 h-2 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full"></div>
+                  {benefits.map((benefit, index) => (
+                    <div key={index} className="flex items-start space-x-3">
+                      <CheckCircle className="w-6 h-6 text-purple-400 mt-1 flex-shrink-0" />
+                      <p className="text-gray-300">{benefit}</p>
                     </div>
-                  </div>
-                  <div className="flex items-center justify-between">
-                    <span className="text-gray-300">Emotional AI</span>
-                    <div className="w-24 h-2 bg-gray-700 rounded-full">
-                      <div className="w-18 h-2 bg-gradient-to-r from-pink-500 to-red-500 rounded-full"></div>
+                  ))}
+                </div>
+              </motion.div>
+              
+              <motion.div 
+                initial={{ opacity: 0, x: 50 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.8 }}
+                viewport={{ once: true }}
+                className="relative"
+              >
+                <div className="bg-gradient-to-br from-purple-500/20 to-pink-500/20 p-8 rounded-2xl border border-purple-500/30">
+                  <h3 className="text-3xl font-bold mb-4 text-purple-400">The Future is Here</h3>
+                  <p className="text-gray-300 mb-6">
+                    Experience AI that truly understands, empathizes, and evolves alongside humanity, creating a future where technology and consciousness work in perfect harmony.
+                  </p>
+                  <div className="grid grid-cols-2 gap-4">
+                    <div className="text-center p-4 bg-black/30 rounded-lg">
+                      <Brain className="w-8 h-8 text-purple-400 mx-auto mb-2" />
+                      <div className="text-sm text-gray-400">Consciousness</div>
                     </div>
-                  </div>
-                  <div className="flex items-center justify-between">
-                    <span className="text-gray-300">Consciousness Framework</span>
-                    <div className="w-24 h-2 bg-gray-700 rounded-full">
-                      <div className="w-22 h-2 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full"></div>
+                    <div className="text-center p-4 bg-black/30 rounded-lg">
+                      <Heart className="w-8 h-8 text-pink-400 mx-auto mb-2" />
+                      <div className="text-sm text-gray-400">Emotional IQ</div>
+                    </div>
+                    <div className="text-center p-4 bg-black/30 rounded-lg">
+                      <Shield className="w-8 h-8 text-cyan-400 mx-auto mb-2" />
+                      <div className="text-sm text-gray-400">Ethics</div>
+                    </div>
+                    <div className="text-center p-4 bg-black/30 rounded-lg">
+                      <Rocket className="w-8 h-8 text-blue-400 mx-auto mb-2" />
+                      <div className="text-sm text-gray-400">Evolution</div>
                     </div>
                   </div>
                 </div>
@@ -202,29 +253,75 @@ export default function AIConsciousnessEvolution2045() {
           </div>
         </section>
 
-        {/* CTA Section */}
-        <section className="py-20 px-4 sm:px-6 lg:px-8">
-          <div className="max-w-4xl mx-auto text-center">
-            <motion.div
+        {/* Use Cases Section */}
+        <section className="py-20 relative">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <motion.div 
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
               viewport={{ once: true }}
+              className="text-center mb-16"
             >
-              <h2 className="text-4xl font-bold text-white mb-6">
-                Ready to Experience the Future of AI?
+              <h2 className="text-4xl lg:text-5xl font-bold mb-6 bg-gradient-to-r from-emerald-400 to-teal-400 bg-clip-text text-transparent">
+                Real-World Applications
               </h2>
-              <p className="text-xl text-gray-400 mb-8">
-                Join us in revolutionizing artificial intelligence with consciousness evolution 
-                that will transform how we interact with technology.
+              <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+                Discover how AI Consciousness Evolution 2045 is transforming industries and creating new possibilities across the globe.
+              </p>
+            </motion.div>
+            
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+              {useCases.map((useCase, index) => (
+                <motion.div 
+                  key={index}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.8, delay: index * 0.1 }}
+                  viewport={{ once: true }}
+                  className="p-6 bg-gradient-to-br from-gray-900/80 to-gray-800/80 rounded-2xl border border-gray-700/50 hover:border-purple-500/50 transition-all duration-300 hover:transform hover:scale-105"
+                >
+                  <div className="w-16 h-16 bg-gradient-to-br from-purple-500/20 to-pink-500/20 rounded-2xl flex items-center justify-center mb-4">
+                    <useCase.icon className="w-8 h-8 text-purple-400" />
+                  </div>
+                  <h3 className="text-xl font-bold mb-3 text-white">{useCase.title}</h3>
+                  <p className="text-gray-400">{useCase.description}</p>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* CTA Section */}
+        <section className="py-20 relative">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+              className="bg-gradient-to-br from-purple-500/10 to-pink-500/10 p-12 rounded-3xl border border-purple-500/20"
+            >
+              <h2 className="text-4xl lg:text-5xl font-bold mb-6 bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
+                Ready to Experience the Future?
+              </h2>
+              <p className="text-xl text-gray-300 mb-8 max-w-3xl mx-auto">
+                Join the revolution and discover how AI Consciousness Evolution 2045 can transform your business and accelerate your success.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <button className="px-8 py-4 bg-gradient-to-r from-purple-500 to-pink-500 text-white font-semibold rounded-xl hover:from-purple-600 hover:to-pink-600 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-purple-500/25">
-                  Start Your Journey
-                </button>
-                <button className="px-8 py-4 border border-purple-500/30 text-purple-300 font-semibold rounded-xl hover:bg-purple-500/10 transition-all duration-300">
-                  Contact Our Team
-                </button>
+                <a 
+                  href="/contact" 
+                  className="px-8 py-4 bg-gradient-to-r from-purple-500 to-pink-500 text-white font-bold rounded-lg hover:from-purple-600 hover:to-pink-600 transition-all duration-300 transform hover:scale-105 flex items-center justify-center"
+                >
+                  Get Started Today
+                  <ArrowRight className="w-5 h-5 ml-2" />
+                </a>
+                <a 
+                  href="/services" 
+                  className="px-8 py-4 border-2 border-purple-500 text-purple-400 font-bold rounded-lg hover:bg-purple-500 hover:text-white transition-all duration-300 transform hover:scale-105"
+                >
+                  Explore All Services
+                </a>
               </div>
             </motion.div>
           </div>
@@ -232,4 +329,6 @@ export default function AIConsciousnessEvolution2045() {
       </div>
     </Layout>
   );
-}
+};
+
+export default AIConsciousnessEvolution2045;
