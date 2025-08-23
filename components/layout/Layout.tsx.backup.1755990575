@@ -47,7 +47,11 @@ export default function Layout({ children, seo }: LayoutProps) {
       </AnimatePresence>
 
       {/* Futuristic Background */}
+<<<<<<< HEAD
+      <UltraFuturisticBackground2037 />
+=======
       <UltraFuturisticBackground2038 intensity="high" theme="consciousness" />
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-ced2
       
       {/* Layout Structure */}
       <div className="relative z-10">

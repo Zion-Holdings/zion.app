@@ -174,6 +174,30 @@ const navigationItems: NavigationItem[] = [
     featured: true,
     children: [
       { 
+<<<<<<< HEAD
+        name: 'Enhanced Market Pricing 2037', 
+        href: '/enhanced-market-pricing-2037', 
+        description: 'Comprehensive pricing analysis',
+        icon: <Star className="w-4 h-4" />,
+        featured: true
+      },
+      { 
+        name: 'Services Showcase', 
+        href: '/comprehensive-services-showcase-2025', 
+        description: 'Complete services overview',
+        icon: <Grid className="w-4 h-4" />
+      },
+      { 
+        name: 'Market Analysis', 
+        href: '/market-pricing', 
+        description: 'Competitor analysis and pricing',
+        icon: <Target className="w-4 h-4" />
+      },
+      { 
+        name: 'ROI Calculator', 
+        href: '/pricing', 
+        description: 'Calculate your return on investment',
+=======
         name: 'AI Consciousness Evolution', 
         href: '/ai-consciousness-evolution-2037', 
         description: 'Next evolution of AI consciousness',
@@ -242,6 +266,7 @@ const navigationItems: NavigationItem[] = [
         name: 'AI-Powered DevOps',
         href: '/ai-powered-devops-platform',
         description: 'Intelligent development operations',
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-ced2
         icon: <Code className="w-4 h-4" />
       }
     ]

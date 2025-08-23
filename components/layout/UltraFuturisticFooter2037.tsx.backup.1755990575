@@ -2,6 +2,14 @@ import React from 'react';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { 
+<<<<<<< HEAD
+  Zap, Mail, Phone, MapPin, Twitter, Linkedin, 
+  Github, Youtube, Facebook, Instagram, ArrowUp, 
+  Shield, Award, Users, Rocket
+} from 'lucide-react';
+
+const UltraFuturisticFooter2037: React.FC = () => {
+=======
   Globe, Phone, Mail, MapPin, 
   Brain, Atom, Shield, Rocket, Target, 
   Star, 
@@ -141,6 +149,7 @@ const footerSections = [
 ];
 
 export default function UltraFuturisticFooter2037() {
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-ced2
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };

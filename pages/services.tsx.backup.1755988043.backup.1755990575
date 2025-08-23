@@ -44,6 +44,14 @@ import { innovative2037AIServices } from '../data/innovative-2037-ai-services';
 import { innovative2038MicroSaasServices } from '../data/innovative-2038-micro-saas-services';
 import { innovative2038ITServices } from '../data/innovative-2038-it-services';
 import { innovative2038AIServices } from '../data/innovative-2038-ai-services';
+<<<<<<< HEAD:pages/services.tsx.backup.1755988043
+
+// Import our new innovative 2038 services
+import { innovative2038MicroSaasServices } from '../data/innovative-2038-micro-saas-services';
+import { innovative2038ITServices } from '../data/innovative-2038-it-services';
+import { innovative2038AIServices } from '../data/innovative-2038-ai-services';
+=======
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-ced2:pages/services.tsx
 
 // Import existing service data
 import { realMicroSaasServices } from '../data/real-micro-saas-services';
@@ -141,6 +149,15 @@ const allServices = [
   ...innovative2037MicroSaasServices,
   ...innovative2037ITServices,
   ...innovative2037AIServices,
+<<<<<<< HEAD:pages/services.tsx.backup.1755988043
+  // Add our new innovative 2027 services
+  ...innovative2027AIBusinessIntelligenceServices,
+  ...innovative2027CybersecurityComplianceServices,
+  ...innovative2027CloudDevOpsServices,
+  ...innovative2027IndustrySolutions,
+  // Add our new innovative 2038 services
+=======
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-ced2:pages/services.tsx
   ...innovative2038MicroSaasServices,
   ...innovative2038ITServices,
   ...innovative2038AIServices
