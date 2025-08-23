@@ -7,6 +7,9 @@ module.exports = {
     './automation/**/*.{js,ts,jsx,tsx,mdx}',
     './scripts/**/*.{js,ts,jsx,tsx,mdx}',
   ],
+<<<<<<< HEAD
+  darkMode: 'class',
+=======
   safelist: [
     'focus:ring-2',
     'focus:ring-4',
@@ -47,6 +50,7 @@ module.exports = {
     'focus:ring-gray-500',
     'focus:ring-gray-500/50'
   ],
+>>>>>>> origin/cursor/analyze-improve-and-deploy-application-a9ae
   theme: {
     extend: {
       colors: {
