@@ -125,6 +125,13 @@ const navigationItems: NavigationItem[] = [
         featured: true
       },
       { 
+        name: 'Innovative 2037 Services', 
+        href: '/innovative-2037-services-showcase', 
+        description: 'Cutting-edge 2037 services',
+        icon: <Sparkles className="w-4 h-4" />,
+        featured: true
+      },
+      { 
         name: 'Pricing Plans', 
         href: '/pricing', 
         description: 'Service pricing information',

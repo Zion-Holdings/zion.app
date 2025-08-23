@@ -99,6 +99,11 @@ import { innovative2038MicroSaasServices } from '../data/innovative-2038-micro-s
 import { innovative2038IndustryServices } from '../data/innovative-2038-industry-services';
 import { innovative2038ConsultingServices } from '../data/innovative-2038-consulting-services';
 
+// Import new innovative 2037 services
+import { innovative2037MicroSaasServices } from '../data/innovative-2037-micro-saas-services';
+import { innovative2037ITServices } from '../data/innovative-2037-it-services';
+import { innovative2037AIServices } from '../data/innovative-2037-ai-services';
+
 // Import existing service data
 import { realMicroSaasServices } from '../data/real-micro-saas-services';
 import { innovativeAIServices } from '../data/innovative-ai-services';
@@ -167,15 +172,10 @@ const allServices = [
   ...real2036ServiceExpansions,
   ...innovative2036MicroSaasServices,
   ...innovative2036ITServices,
+  // New innovative 2037 services
   ...innovative2037MicroSaasServices,
   ...innovative2037ITServices,
-  ...innovative2037AIServices,
-  // 2038 innovative services
-  ...innovative2038AIServices,
-  ...innovative2038ITServices,
-  ...innovative2038MicroSaasServices,
-  ...innovative2038IndustryServices,
-  ...innovative2038ConsultingServices
+  ...innovative2037AIServices
 ];
 
 const categories = [
