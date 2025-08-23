@@ -1,3 +1,3 @@
-export default function EmergingTechnologyTrendsPage() {
-  return <div className="py-8 text-slate-300">Emerging Technology Trends</div>;
+export default function Page() {
+  return <div className="py-10">Emerging Technology Trends</div>;
 }

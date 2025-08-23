@@ -1,3 +1,3 @@
-export default function IoTPlatformsPage() {
-  return <div className="py-8 text-slate-300">IoT Platforms</div>;
+export default function IoTPlatforms() {
+  return <div className="py-10">IoT Platforms</div>;
 }

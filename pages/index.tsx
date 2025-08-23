@@ -1,12 +1,14 @@
 import Link from 'next/link';
 
-export default function HomePage() {
+export default function Home() {
   return (
-    <div className="py-8">
-      <h1 className="text-2xl font-semibold text-white">Zion AI Marketplace</h1>
-      <p className="text-slate-300 mt-2">Explore top-tier AI talent.</p>
-      <div className="mt-4">
-        <Link href="/talent"><a className="inline-flex items-center rounded-lg bg-gradient-to-r from-cyan-500 to-violet-600 px-4 py-2 text-white">Browse Talent</a></Link>
+    <div className="py-16">
+      <div className="text-center max-w-2xl mx-auto">
+        <h1 className="text-3xl sm:text-5xl font-bold tracking-tight">Zion AI Marketplace</h1>
+        <p className="mt-4 text-gray-600 dark:text-gray-300">Hire vetted AI and IT professionals. Browse profiles, filter by skills, and connect instantly.</p>
+        <div className="mt-8">
+          <Link href="/talent"><a className="inline-flex items-center px-5 py-3 rounded-lg bg-gradient-to-r from-blue-500 via-violet-500 to-cyan-500 text-white shadow-lg shadow-blue-500/20 hover:opacity-90 transition">Browse Talent</a></Link>
+        </div>
       </div>
     </div>
   );

@@ -1,3 +1,3 @@
-export default function CloudComputingStrategiesPage() {
-  return <div className="py-8 text-slate-300">Cloud Computing Strategies</div>;
+export default function Page() {
+  return <div className="py-10">Cloud Computing Strategies</div>;
 }

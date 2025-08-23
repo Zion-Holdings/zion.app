@@ -1,3 +1,3 @@
-export default function EnhancedHomePage() {
-  return <div className="py-8 text-slate-300">Enhanced Home</div>;
+export default function EnhancedHome() {
+  return <div className="py-10">Enhanced Home</div>;
 }

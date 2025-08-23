@@ -1,1 +1,3 @@
-export default function Page(){return <div className="py-8 text-slate-300">innovation in enterprise technology</div>}
+export default function Page() {
+  return <div className="py-10">Innovation in Enterprise Technology</div>;
+}

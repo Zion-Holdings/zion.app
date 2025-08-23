@@ -1,1 +1,3 @@
-export default function Page(){return <div className="py-8 text-slate-300">forgot password</div>}
+export default function ForgotPassword() {
+  return <div className="py-10">Forgot Password</div>;
+}
