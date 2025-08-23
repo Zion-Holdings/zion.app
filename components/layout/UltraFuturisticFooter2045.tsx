@@ -154,6 +154,7 @@ const UltraFuturisticFooter2045: React.FC = () => {
                         href={link.href}
                         className="text-gray-400 hover:text-cyan-400 transition-all duration-200 group hover:translate-x-1"
                       >
+
                         <span className="text-sm group-hover:text-cyan-400 transition-colors duration-200">
                           {link.name}
                         </span>
@@ -215,7 +216,7 @@ const UltraFuturisticFooter2045: React.FC = () => {
                       className={`p-2 rounded-lg bg-gray-900/50 border border-cyan-500/20 text-gray-400 ${social.color} transition-all duration-200 hover:scale-110 hover:border-cyan-500/50`}
                       aria-label={social.name}
                     >
-                      <IconComponent />
+                      <IconComponent className="w-5 h-5" />
                     </Link>
                   );
                 })}

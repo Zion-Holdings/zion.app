@@ -101,7 +101,11 @@ const Homepage2045: React.FC = () => {
   }, []);
 
   const handleServiceClick = useCallback((service: any) => {
-    window.location.href = service.slug;
+    if (service.slug) {
+      window.location.href = `/${service.slug}`;
+    } else {
+      window.location.href = '/services';
+    }
   }, []);
 
   const handleCategoryChange = useCallback((categoryId: string) => {
@@ -112,7 +116,7 @@ const Homepage2045: React.FC = () => {
     <Layout>
       {/* Hero Section */}
       <section className="relative py-20 lg:py-32 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-purple-500/20 via-cyan-500/20 to-blue-500/20" />
+        <div className="absolute inset-0 bg-gradient-to-br from-emerald-500/20 via-cyan-500/20 to-blue-500/20" />
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -120,14 +124,14 @@ const Homepage2045: React.FC = () => {
             transition={{ duration: 0.8 }}
             className="text-center"
           >
-            <div className="inline-flex items-center px-4 py-2 rounded-full bg-purple-500/10 border border-purple-500/20 text-purple-400 text-sm font-medium mb-6">
+            <div className="inline-flex items-center px-4 py-2 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-sm font-medium mb-6">
               <Star className="w-4 h-4 mr-2" />
               Revolutionary 2045
             </div>
             
             <h1 className="text-4xl lg:text-6xl font-bold text-white mb-6">
               Future-Defining
-              <span className="block bg-gradient-to-r from-purple-400 to-cyan-400 bg-clip-text text-transparent">
+              <span className="block bg-gradient-to-r from-emerald-400 to-cyan-400 bg-clip-text text-transparent">
                 Technology Solutions
               </span>
             </h1>
@@ -142,7 +146,7 @@ const Homepage2045: React.FC = () => {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 onClick={handleGetStarted}
-                className="px-8 py-4 bg-gradient-to-r from-purple-500 to-cyan-500 text-white font-semibold rounded-lg hover:from-purple-600 hover:to-cyan-600 transition-all duration-300 flex items-center justify-center"
+                className="px-8 py-4 bg-gradient-to-r from-emerald-500 to-cyan-500 text-white font-semibold rounded-lg hover:from-emerald-600 hover:to-cyan-600 transition-all duration-300 flex items-center justify-center"
               >
                 Get Started
                 <ArrowRight className="w-5 h-5 ml-2" />
@@ -152,7 +156,7 @@ const Homepage2045: React.FC = () => {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 onClick={handleWatchDemo}
-                className="px-8 py-4 border border-purple-500/30 text-purple-400 font-semibold rounded-lg hover:bg-purple-500/10 transition-all duration-300 flex items-center justify-center"
+                className="px-8 py-4 border border-emerald-500/30 text-emerald-400 font-semibold rounded-lg hover:bg-emerald-500/10 transition-all duration-300 flex items-center justify-center"
               >
                 <Play className="w-5 h-5 mr-2" />
                 Watch Demo
@@ -169,8 +173,8 @@ const Homepage2045: React.FC = () => {
                   transition={{ duration: 0.5, delay: index * 0.1 }}
                   className="text-center"
                 >
-                  <div className="w-16 h-16 bg-gradient-to-r from-purple-500/20 to-cyan-500/20 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <stat.icon className="w-8 h-8 text-purple-400" />
+                  <div className="w-16 h-16 bg-gradient-to-r from-emerald-500/20 to-cyan-500/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <stat.icon className="w-8 h-8 text-emerald-400" />
                   </div>
                   <div className="text-2xl font-bold text-white mb-1">{stat.number}</div>
                   <div className="text-gray-400">{stat.label}</div>
@@ -193,7 +197,7 @@ const Homepage2045: React.FC = () => {
           >
             <h2 className="text-3xl lg:text-5xl font-bold text-white mb-6">
               Explore Our
-              <span className="block bg-gradient-to-r from-purple-400 to-cyan-400 bg-clip-text text-transparent">
+              <span className="block bg-gradient-to-r from-emerald-400 to-cyan-400 bg-clip-text text-transparent">
                 Revolutionary Services
               </span>
             </h2>
@@ -202,50 +206,124 @@ const Homepage2045: React.FC = () => {
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
-            {categories.map((category, index) => (
+          {/* Category Buttons */}
+          <div className="flex flex-wrap justify-center gap-4 mb-12">
+            {categories.map((category) => (
               <motion.button
                 key={category.id}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                viewport={{ once: true }}
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
                 onClick={() => handleCategoryChange(category.id)}
-                className={`p-4 rounded-xl border transition-all duration-300 ${
+                className={`flex items-center gap-2 px-6 py-3 rounded-full font-medium transition-all duration-300 ${
                   selectedCategory === category.id
-                    ? 'border-purple-500/50 bg-purple-500/10'
-                    : 'border-gray-700/50 hover:border-purple-500/30 hover:bg-purple-500/5'
+                    ? `bg-gradient-to-r ${category.color} text-white`
+                    : 'bg-white/10 text-gray-300 hover:bg-white/20'
                 }`}
               >
-                <div className={`w-12 h-12 bg-gradient-to-r ${category.color} rounded-lg flex items-center justify-center mx-auto mb-3`}>
-                  <category.icon className="w-6 h-6 text-white" />
-                </div>
-                <div className="text-sm font-medium text-white mb-1">{category.name}</div>
-                <div className="text-xs text-gray-400">{category.count} services</div>
+                <category.icon className="w-5 h-5" />
+                {category.name}
+                <span className="ml-2 px-2 py-1 bg-white/20 rounded-full text-xs">
+                  {category.count}
+                </span>
               </motion.button>
             ))}
+          </div>
+
+          {/* Services Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {getFilteredServices().slice(0, 9).map((service, index) => (
+              <motion.div
+                key={service.id}
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+                viewport={{ once: true }}
+                className="group cursor-pointer"
+                onClick={() => handleServiceClick(service)}
+                onMouseEnter={() => setHoveredService(service.id)}
+                onMouseLeave={() => setHoveredService(null)}
+              >
+                <div className="bg-gradient-to-br from-gray-800/50 to-gray-900/50 backdrop-blur-sm border border-gray-700/50 rounded-2xl p-6 hover:border-cyan-400/50 transition-all duration-300 hover:transform hover:scale-105 h-full">
+                  <div className="flex items-center justify-between mb-4">
+                    <div className="flex items-center space-x-2">
+                      <span className="text-2xl">🚀</span>
+                      <span className="text-sm text-cyan-400 font-medium">{service.category}</span>
+                    </div>
+                    {service.pricing?.enterprise && (
+                      <span className="px-2 py-1 bg-gradient-to-r from-yellow-400 to-orange-500 text-black text-xs font-bold rounded-full">
+                        ENTERPRISE
+                      </span>
+                    )}
+                  </div>
+                  
+                  <h3 className="text-xl font-bold text-white mb-3 group-hover:text-cyan-400 transition-colors duration-300">
+                    {service.name}
+                  </h3>
+                  
+                  <p className="text-gray-300 mb-4 leading-relaxed">
+                    {service.description}
+                  </p>
+                  
+                  <div className="flex items-center space-x-2 mb-4">
+                    <div className="text-2xl font-bold text-cyan-400">{service.pricing?.starter || 'Contact for pricing'}</div>
+                  </div>
+                  
+                  <div className="flex flex-wrap gap-2 mb-6">
+                    {service.features?.slice(0, 3).map((feature, featureIndex) => (
+                      <span
+                        key={featureIndex}
+                        className="px-2 py-1 bg-cyan-500/20 border border-cyan-400/30 rounded-full text-cyan-400 text-xs"
+                      >
+                        {feature}
+                      </span>
+                    ))}
+                  </div>
+                  
+                  <div className="mt-auto">
+                    <button className="w-full px-4 py-3 bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-medium rounded-lg hover:from-cyan-600 hover:to-blue-700 transition-all duration-300 transform hover:scale-105 group-hover:shadow-lg group-hover:shadow-cyan-500/25">
+                      <span className="flex items-center space-x-2">
+                        View Details
+                        <ArrowRight className="w-5 h-5" />
+                      </span>
+                    </button>
+                  </div>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+
+          {/* View All Services Button */}
+          <div className="text-center mt-12">
+            <motion.button
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              onClick={() => window.location.href = '/services'}
+              className="px-8 py-4 bg-gradient-to-r from-emerald-500 to-cyan-500 text-white font-semibold rounded-lg hover:from-emerald-600 hover:to-cyan-600 transition-all duration-300"
+            >
+              <span className="flex items-center space-x-2">
+                View All Services
+                <ArrowRight className="w-5 h-5" />
+              </span>
+            </motion.button>
           </div>
         </div>
       </section>
 
-      {/* Featured Services */}
-      <section className="py-20">
+      {/* Features Section */}
+      <section className="py-24 bg-black/30">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-            className="text-center mb-16"
+            className="text-center mb-20"
           >
-            <h2 className="text-3xl lg:text-5xl font-bold text-white mb-6">
-              Featured
-              <span className="block bg-gradient-to-r from-purple-400 to-cyan-400 bg-clip-text text-transparent">
-                Revolutionary Services
-              </span>
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+              Revolutionary <span className="bg-gradient-to-r from-emerald-400 to-cyan-500 bg-clip-text text-transparent">Features</span>
             </h2>
             <p className="text-xl text-gray-400 max-w-3xl mx-auto">
-              Experience our most advanced and innovative technology solutions.
+              Experience cutting-edge technology that redefines what's possible
             </p>
           </motion.div>
 
@@ -253,109 +331,38 @@ const Homepage2045: React.FC = () => {
             {features.map((feature, index) => (
               <motion.div
                 key={index}
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 0, y: 50 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
                 viewport={{ once: true }}
                 className="group cursor-pointer"
                 onClick={() => window.location.href = feature.href}
               >
-                <div className="bg-gradient-to-br from-gray-900/50 to-gray-800/50 p-8 rounded-2xl border border-gray-700/50 group-hover:border-purple-500/50 transition-all duration-300 h-full">
-                  <div className={`w-16 h-16 bg-gradient-to-r ${feature.color} rounded-xl flex items-center justify-center mb-6`}>
+                <div className="bg-gradient-to-br from-gray-800/50 to-gray-900/50 backdrop-blur-sm border border-gray-700/50 rounded-2xl p-8 hover:border-cyan-400/50 transition-all duration-300 hover:transform hover:scale-105 h-full">
+                  <div className={`w-16 h-16 bg-gradient-to-r ${feature.color} rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300`}>
                     <feature.icon className="w-8 h-8 text-white" />
                   </div>
-                  <h3 className="text-xl font-bold text-white mb-4">{feature.title}</h3>
-                  <p className="text-gray-400 mb-6">{feature.description}</p>
-                  <div className="flex items-center text-purple-400 group-hover:text-purple-300 transition-colors">
-                    <span className="text-sm font-medium">Learn More</span>
-                    <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
-                  </div>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Services Grid */}
-      <section className="py-20 bg-black/50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="text-center mb-16"
-          >
-            <h2 className="text-3xl lg:text-5xl font-bold text-white mb-6">
-              All
-              <span className="block bg-gradient-to-r from-purple-400 to-cyan-400 bg-clip-text text-transparent">
-                Revolutionary Services
-              </span>
-            </h2>
-            <p className="text-xl text-gray-400 max-w-3xl mx-auto">
-              Browse our complete collection of cutting-edge technology solutions.
-            </p>
-          </motion.div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {getFilteredServices().slice(0, 18).map((service, index) => (
-              <motion.div
-                key={service.id}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: index * 0.05 }}
-                viewport={{ once: true }}
-                className="group cursor-pointer"
-                onClick={() => handleServiceClick(service)}
-                onMouseEnter={() => setHoveredService(service.id)}
-                onMouseLeave={() => setHoveredService(null)}
-              >
-                <div className="bg-gradient-to-br from-gray-900/50 to-gray-800/50 p-6 rounded-xl border border-gray-700/50 group-hover:border-purple-500/50 transition-all duration-300 h-full">
-                  <div className="flex items-start justify-between mb-4">
-                    <div className="w-12 h-12 bg-gradient-to-r from-purple-500 to-cyan-500 rounded-lg flex items-center justify-center">
-                      <Star className="w-6 h-6 text-white" />
-                    </div>
-                    <div className="text-xs text-gray-400 bg-gray-800/50 px-2 py-1 rounded">
-                      {service.type}
-                    </div>
-                  </div>
                   
-                  <h3 className="text-lg font-semibold text-white mb-2 group-hover:text-purple-300 transition-colors">
-                    {service.name}
+                  <h3 className="text-xl font-bold text-white mb-4 group-hover:text-cyan-400 transition-colors duration-300">
+                    {feature.title}
                   </h3>
                   
-                  <p className="text-gray-400 text-sm mb-4 line-clamp-2">
-                    {service.description}
+                  <p className="text-gray-300 leading-relaxed">
+                    {feature.description}
                   </p>
                   
-                  <div className="flex items-center justify-between">
-                    <div className="text-purple-400 text-sm font-medium">
-                      {service.pricing?.starter || 'Contact for pricing'}
-                    </div>
-                    <ArrowRight className="w-4 h-4 text-gray-400 group-hover:text-purple-400 group-hover:translate-x-1 transition-all" />
+                  <div className="mt-6">
+                    <button className="px-6 py-3 bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-medium rounded-lg hover:from-cyan-600 hover:to-blue-700 transition-all duration-300 transform hover:scale-105">
+                      <span className="flex items-center space-x-2">
+                        Learn More
+                        <ArrowRight className="w-5 h-5" />
+                      </span>
+                    </button>
                   </div>
                 </div>
               </motion.div>
             ))}
           </div>
-
-          {getFilteredServices().length > 18 && (
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-              viewport={{ once: true }}
-              className="text-center mt-12"
-            >
-              <button
-                onClick={() => window.location.href = '/services'}
-                className="px-8 py-4 border border-purple-500/30 text-purple-400 font-semibold rounded-lg hover:bg-purple-500/10 transition-all duration-300"
-              >
-                View All Services
-              </button>
-            </motion.div>
-          )}
         </div>
       </section>
 
@@ -371,7 +378,7 @@ const Homepage2045: React.FC = () => {
           >
             <h2 className="text-3xl lg:text-5xl font-bold text-white mb-6">
               Ready to Experience
-              <span className="block bg-gradient-to-r from-purple-400 to-cyan-400 bg-clip-text text-transparent">
+              <span className="block bg-gradient-to-r from-emerald-400 to-cyan-400 bg-clip-text text-transparent">
                 Revolutionary Technology?
               </span>
             </h2>
@@ -384,7 +391,7 @@ const Homepage2045: React.FC = () => {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 onClick={handleGetStarted}
-                className="px-8 py-4 bg-gradient-to-r from-purple-500 to-cyan-500 text-white font-semibold rounded-lg hover:from-purple-600 hover:to-cyan-600 transition-all duration-300"
+                className="px-8 py-4 bg-gradient-to-r from-emerald-500 to-cyan-500 text-white font-semibold rounded-lg hover:from-emerald-600 hover:to-cyan-600 transition-all duration-300"
               >
                 Get Started Today
               </motion.button>
@@ -393,7 +400,7 @@ const Homepage2045: React.FC = () => {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 onClick={handleWatchDemo}
-                className="px-8 py-4 border border-purple-500/30 text-purple-400 font-semibold rounded-lg hover:bg-purple-500/10 transition-all duration-300"
+                className="px-8 py-4 border border-emerald-500/30 text-emerald-400 font-semibold rounded-lg hover:bg-emerald-500/10 transition-all duration-300"
               >
                 Schedule Demo
               </motion.button>
