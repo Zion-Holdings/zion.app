@@ -191,6 +191,8 @@ module.exports = {
           900: '#064e3b',
           950: '#022c22',
         },
+<<<<<<< HEAD
+=======
         teal: {
           50: '#f0fdfa',
           100: '#ccfbf1',
@@ -204,6 +206,7 @@ module.exports = {
           900: '#134e4a',
           950: '#042f2e',
         },
+>>>>>>> origin/cursor/analyze-improve-and-deploy-application-5b25
         pink: {
           50: '#fdf2f8',
           100: '#fce7f3',
@@ -216,6 +219,74 @@ module.exports = {
           800: '#9d174d',
           900: '#831843',
           950: '#500724',
+<<<<<<< HEAD
+        },
+        rose: {
+          50: '#fff1f2',
+          100: '#ffe4e6',
+          200: '#fecdd3',
+          300: '#fda4af',
+          400: '#fb7185',
+          500: '#f43f5e',
+          600: '#e11d48',
+          700: '#be123c',
+          800: '#9f1239',
+          900: '#881337',
+          950: '#4c0519',
+        },
+        slate: {
+          50: '#f8fafc',
+          100: '#f1f5f9',
+          200: '#e2e8f0',
+          300: '#cbd5e1',
+          400: '#94a3b8',
+          500: '#64748b',
+          600: '#475569',
+          700: '#334155',
+          800: '#1e293b',
+          900: '#0f172a',
+          950: '#020617',
+        },
+        zinc: {
+          50: '#fafafa',
+          100: '#f4f4f5',
+          200: '#e4e4e7',
+          300: '#d4d4d8',
+          400: '#a1a1aa',
+          500: '#71717a',
+          600: '#52525b',
+          700: '#3f3f46',
+          800: '#27272a',
+          900: '#18181b',
+          950: '#09090b',
+        },
+        neutral: {
+          50: '#fafafa',
+          100: '#f5f5f5',
+          200: '#e5e5e5',
+          300: '#d4d4d4',
+          400: '#a3a3a3',
+          500: '#737373',
+          600: '#525252',
+          700: '#404040',
+          800: '#262626',
+          900: '#171717',
+          950: '#0a0a0a',
+        },
+        stone: {
+          50: '#fafaf9',
+          100: '#f5f5f4',
+          200: '#e7e5e4',
+          300: '#d6d3d1',
+          400: '#a8a29e',
+          500: '#78716c',
+          600: '#57534e',
+          700: '#44403c',
+          800: '#292524',
+          900: '#1c1917',
+          950: '#0c0a09',
+=======
+>>>>>>> origin/cursor/analyze-improve-and-deploy-application-5b25
         },
         red: {
           50: '#fef2f2',
@@ -242,6 +313,61 @@ module.exports = {
           800: '#9a3412',
           900: '#7c2d12',
           950: '#431407',
+<<<<<<< HEAD
+        },
+        amber: {
+          50: '#fffbeb',
+          100: '#fef3c7',
+          200: '#fde68a',
+          300: '#fcd34d',
+          400: '#fbbf24',
+          500: '#f59e0b',
+          600: '#d97706',
+          700: '#b45309',
+          800: '#92400e',
+          900: '#78350f',
+          950: '#451a03',
+        },
+        yellow: {
+          50: '#fefce8',
+          100: '#fef9c3',
+          200: '#fef08a',
+          300: '#fde047',
+          400: '#facc15',
+          500: '#eab308',
+          600: '#ca8a04',
+          700: '#a16207',
+          800: '#854d0e',
+          900: '#713f12',
+          950: '#422006',
+        },
+        lime: {
+          50: '#f7fee7',
+          100: '#ecfccb',
+          200: '#d9f99d',
+          300: '#bef264',
+          400: '#a3e635',
+          500: '#84cc16',
+          600: '#65a30d',
+          700: '#4d7c0f',
+          800: '#3f6212',
+          900: '#365314',
+          950: '#1a2e05',
+        },
+        green: {
+          50: '#f0fdf4',
+          100: '#dcfce7',
+          200: '#bbf7d0',
+          300: '#86efac',
+          400: '#4ade80',
+          500: '#22c55e',
+          600: '#16a34a',
+          700: '#15803d',
+          800: '#166534',
+          900: '#14532d',
+          950: '#052e16',
+=======
+>>>>>>> origin/cursor/analyze-improve-and-deploy-application-5b25
         },
         yellow: {
           50: '#fefce8',
@@ -294,7 +420,13 @@ module.exports = {
       fontFamily: {
         sans: ['Inter', 'system-ui', 'sans-serif'],
         mono: ['JetBrains Mono', 'Fira Code', 'monospace'],
+<<<<<<< HEAD
+        'cyber': ['Orbitron', 'monospace'],
+        'futura': ['Futura', 'Arial', 'sans-serif'],
+        'tech': ['Rajdhani', 'sans-serif'],
+=======
         display: ['Poppins', 'system-ui', 'sans-serif'],
+>>>>>>> origin/cursor/analyze-improve-and-deploy-application-5b25
       },
       fontSize: {
         'xs': ['0.75rem', { lineHeight: '1rem' }],
@@ -310,6 +442,10 @@ module.exports = {
         '7xl': ['4.5rem', { lineHeight: '1' }],
         '8xl': ['6rem', { lineHeight: '1' }],
         '9xl': ['8rem', { lineHeight: '1' }],
+<<<<<<< HEAD
+        '2xs': ['0.625rem', { lineHeight: '0.75rem' }],
+=======
+>>>>>>> origin/cursor/analyze-improve-and-deploy-application-5b25
       },
       spacing: {
         '18': '4.5rem',
@@ -323,6 +459,19 @@ module.exports = {
         '6xl': '3rem',
       },
       boxShadow: {
+<<<<<<< HEAD
+        'glow': '0 0 20px rgba(6, 182, 212, 0.5)',
+        'glow-lg': '0 0 40px rgba(6, 182, 212, 0.6)',
+        'glow-xl': '0 0 60px rgba(6, 182, 212, 0.7)',
+        'glow-2xl': '0 0 80px rgba(6, 182, 212, 0.8)',
+        'neon': '0 0 5px rgba(6, 182, 212, 0.8), 0 0 10px rgba(6, 182, 212, 0.6), 0 0 15px rgba(6, 182, 212, 0.4)',
+        'neon-lg': '0 0 10px rgba(6, 182, 212, 0.8), 0 0 20px rgba(6, 182, 212, 0.6), 0 0 30px rgba(6, 182, 212, 0.4)',
+        'glow-2xl': '0 0 80px rgba(6, 182, 212, 0.8)',
+      },
+      textShadow: {
+        'glow': '0 0 10px rgba(6, 182, 212, 0.8)',
+        'neon': '0 0 5px rgba(6, 182, 212, 0.8), 0 0 10px rgba(6, 182, 212, 0.6)',
+=======
         'soft': '0 2px 15px -3px rgba(0, 0, 0, 0.07), 0 10px 20px -2px rgba(0, 0, 0, 0.04)',
         'medium': '0 4px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)',
         'large': '0 10px 40px -10px rgba(0, 0, 0, 0.15), 0 20px 25px -5px rgba(0, 0, 0, 0.1)',
@@ -335,11 +484,97 @@ module.exports = {
         'hologram': '0 0 30px rgba(138, 43, 226, 0.4), 0 0 60px rgba(138, 43, 226, 0.2)',
         'quantum': '0 0 40px rgba(0, 191, 255, 0.5), 0 0 80px rgba(0, 191, 255, 0.3)',
         'plasma': '0 0 50px rgba(255, 20, 147, 0.6), 0 0 100px rgba(255, 20, 147, 0.4)',
+>>>>>>> origin/cursor/analyze-improve-and-deploy-application-5b25
       },
       animation: {
         'fade-in': 'fadeIn 0.5s ease-in-out',
         'fade-in-up': 'fadeInUp 0.5s ease-out',
         'fade-in-down': 'fadeInDown 0.5s ease-out',
+<<<<<<< HEAD
+        'slide-in-left': 'slideInLeft 0.5s ease-out',
+        'slide-in-right': 'slideInRight 0.5s ease-out',
+        'scale-in': 'scaleIn 0.3s ease-out',
+        'float': 'float 3s ease-in-out infinite',
+        'glow': 'glow 2s ease-in-out infinite alternate',
+        'shimmer': 'shimmer 2s linear infinite',
+        'matrix': 'matrix 20s linear infinite',
+        'neon-pulse': 'neonPulse 2s ease-in-out infinite',
+        'cyber-float': 'cyberFloat 4s ease-in-out infinite',
+        'hologram': 'hologram 3s ease-in-out infinite',
+        primary: {
+          50: '#eff6ff',
+          100: '#dbeafe',
+          200: '#bfdbfe',
+          300: '#93c5fd',
+          400: '#60a5fa',
+          500: '#3b82f6',
+          600: '#2563eb',
+          700: '#1d4ed8',
+          800: '#1e40af',
+          900: '#1e3a8a',
+        },
+        secondary: {
+          50: '#fdf4ff',
+          100: '#fae8ff',
+          200: '#f5d0fe',
+          300: '#f0abfc',
+          400: '#e879f9',
+          500: '#d946ef',
+          600: '#c026d3',
+          700: '#a21caf',
+          800: '#86198f',
+          900: '#701a75',
+        },
+        accent: {
+          50: '#ecfdf5',
+          100: '#d1fae5',
+          200: '#a7f3d0',
+          300: '#6ee7b7',
+          400: '#34d399',
+          500: '#10b981',
+          600: '#059669',
+          700: '#047857',
+          800: '#065f46',
+          900: '#064e3b',
+        },
+      },
+      fontFamily: {
+        sans: [
+          '-apple-system',
+          'BlinkMacSystemFont',
+          'Segoe UI',
+          'Roboto',
+          'Oxygen',
+          'Ubuntu',
+          'Cantarell',
+          'Fira Sans',
+          'Droid Sans',
+          'Helvetica Neue',
+          'sans-serif',
+        ],
+        mono: [
+          'SF Mono',
+          'Monaco',
+          'Inconsolata',
+          'Roboto Mono',
+          'Source Code Pro',
+          'Menlo',
+          'Consolas',
+          'DejaVu Sans Mono',
+          'monospace',
+        ],
+      },
+      animation: {
+        'fade-in': 'fadeIn 0.3s ease-in',
+        'slide-up': 'slideUp 0.3s ease-out',
+        'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+        'bounce-slow': 'bounce 2s infinite',
+        'energy-wave': 'energyWave 2s ease-in-out infinite',
+        'quantum-spin': 'quantumSpin 3s linear infinite',
+        'neural-network': 'neuralNetwork 4s ease-in-out infinite',
+        'plasma-flow': 'plasmaFlow 3s ease-in-out infinite',
+        'cyber-grid': 'cyberGrid 2s ease-in-out infinite',
+=======
 =======
         'fade-in-left': 'fadeInLeft 0.5s ease-out',
         'fade-in-right': 'fadeInRight 0.5s ease-out',
@@ -349,17 +584,27 @@ module.exports = {
         'slide-in-right': 'slideInRight 0.5s ease-out',
         'scale-in': 'scaleIn 0.5s ease-out',
         'float': 'float 3s ease-in-out infinite',
+>>>>>>> origin/cursor/analyze-improve-and-deploy-application-5b25
         'glow': 'glow 2s ease-in-out infinite alternate',
         'shimmer': 'shimmer 2s linear infinite',
         'matrix': 'matrix 20s linear infinite',
         'neon-pulse': 'neonPulse 2s ease-in-out infinite',
         'cyber-float': 'cyberFloat 4s ease-in-out infinite',
         'hologram': 'hologram 3s ease-in-out infinite',
+<<<<<<< HEAD
+        'energy-wave': 'energyWave 4s ease-in-out infinite',
+        'quantum-spin': 'quantumSpin 6s linear infinite',
+        'neural-network': 'neuralNetwork 10s linear infinite',
+        'plasma-flow': 'plasmaFlow 5s ease-in-out infinite',
+        'cyber-grid': 'cyberGrid 15s linear infinite',
+        'spin-slow': 'spin 3s linear infinite',
+=======
         'energy-wave': 'energyWave 2s ease-in-out infinite',
         'quantum-spin': 'quantumSpin 3s linear infinite',
         'neural-network': 'neuralNetwork 4s ease-in-out infinite',
         'plasma-flow': 'plasmaFlow 3s ease-in-out infinite',
         'cyber-grid': 'cyberGrid 2s ease-in-out infinite',
+>>>>>>> origin/cursor/analyze-improve-and-deploy-application-5b25
       },
       keyframes: {
         fadeIn: {
@@ -372,6 +617,12 @@ module.exports = {
         },
         fadeInDown: {
           '0%': { opacity: '0', transform: 'translateY(-30px)' },
+<<<<<<< HEAD
+          '100%': { opacity: '1', transform: 'translateY(0)' },
+        },
+        slideInLeft: {
+          '0%': { opacity: '0', transform: 'translateX(-100px)' },
+=======
           '100%': { opacity: '1', transform: 'translateY(0)' },
         },
         fadeInLeft: {
@@ -392,6 +643,7 @@ module.exports = {
         },
         slideInLeft: {
           '0%': { opacity: '0', transform: 'translateX(-100%)' },
+>>>>>>> origin/cursor/analyze-improve-and-deploy-application-5b25
           '100%': { opacity: '1', transform: 'translateX(0)' },
         },
         slideInRight: {
