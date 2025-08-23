@@ -227,6 +227,15 @@
   name = "duplicate-media-finder-runner"
   schedule = "0 2 * * *"
 
+<<<<<<< HEAD
+[[scheduled.functions]]
+  name = "autonomous-meta-orchestrator"
+  schedule = "*/1 * * * *"
+
+[[scheduled.functions]]
+  name = "autonomous-cloud-bootstrap"
+  schedule = "*/10 * * * *"
+=======
 # Autonomous brain and health monitor
 [[scheduled.functions]]
   name = "autonomous-cloud-brain"
@@ -235,3 +244,4 @@
 [[scheduled.functions]]
   name = "function-health-monitor"
   schedule = "*/5 * * * *"
+>>>>>>> origin/cursor/autonomous-cloud-automation-and-sync-7157

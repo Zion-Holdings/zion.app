@@ -1,5 +1,9 @@
 {
+<<<<<<< HEAD
+  "generatedAt": "2025-08-12T01:31:50.034Z",
+=======
   "generatedAt": "2025-08-12T01:31:09.086Z",
+>>>>>>> origin/cursor/autonomous-cloud-automation-and-sync-7157
   "functions": [
     "a11y-alt-text-runner",
     "accelerated-sync-orchestrator",
@@ -7,7 +11,11 @@
     "ai-changelog-runner",
     "auto-scheduler",
     "automation-matrix",
+<<<<<<< HEAD
+    "autonomous-cloud-bootstrap",
+=======
     "autonomous-cloud-brain",
+>>>>>>> origin/cursor/autonomous-cloud-automation-and-sync-7157
     "autonomous-invention-orchestrator",
     "autonomous-meta-orchestrator",
     "broken-image-scanner",
