@@ -2598,3 +2598,40 @@ pages/main/front/index.tsx[0m
 2025-08-23 23:10:12 - [1;33m⚠️  Found conflicts in pages/main/front/index.tsx, resolving...[0m
 2025-08-23 23:10:12 - [0;34m💻 Code file detected, attempting intelligent merge...[0m
 2025-08-23 23:10:12 - [0;32m✅ Resolved conflicts in pages/main/front/index.tsx[0m
+2025-08-23 23:10:12 - [0;32m✅ Successfully resolved conflicts and merged cursor/invent-and-deploy-autonomous-cloud-automations-6869[0m
+2025-08-23 23:10:12 - [0;32m✅ PR #3804 (cursor/invent-and-deploy-autonomous-cloud-automations-6869) processed successfully[0m
+2025-08-23 23:10:12 - [0;34m🔒 Closing PR #3804 via GitHub API...[0m
+2025-08-23 23:10:12 - [0;34m📊 Progress: 85/100, ✅ 85, ❌ 0[0m
+2025-08-23 23:10:14 - [0;34m📋 Processing PR #3803: Invent and deploy autonomous cloud automations (branch: cursor/invent-and-deploy-autonomous-cloud-automations-1f85)[0m
+2025-08-23 23:10:14 - [0;34m🔄 Attempting to merge cursor/invent-and-deploy-autonomous-cloud-automations-1f85...[0m
+2025-08-23 23:10:15 - [1;33m⚠️  Merge conflicts detected in cursor/invent-and-deploy-autonomous-cloud-automations-1f85 (attempt 1/3), resolving...[0m
+2025-08-23 23:10:15 - [0;34m📋 Conflicted files: automation/front-index-auto-advertiser.cjs
+automation/netlify-build-stamp.txt
+netlify.toml
+netlify/functions/functions-manifest.json
+pages/main/front/index.tsx
+public/_headers[0m
+2025-08-23 23:10:15 - [0;34m🔧 Resolving conflicts in automation/front-index-auto-advertiser.cjs for branch cursor/invent-and-deploy-autonomous-cloud-automations-1f85...[0m
+2025-08-23 23:10:15 - [1;33m⚠️  Found conflicts in automation/front-index-auto-advertiser.cjs, resolving...[0m
+2025-08-23 23:10:15 - [0;34m📝 Regular file, removing conflict markers...[0m
+2025-08-23 23:10:15 - [0;32m✅ Resolved conflicts in automation/front-index-auto-advertiser.cjs[0m
+2025-08-23 23:10:15 - [0;34m🔧 Resolving conflicts in automation/netlify-build-stamp.txt for branch cursor/invent-and-deploy-autonomous-cloud-automations-1f85...[0m
+2025-08-23 23:10:15 - [1;33m⚠️  Found conflicts in automation/netlify-build-stamp.txt, resolving...[0m
+2025-08-23 23:10:15 - [0;34m📝 Regular file, removing conflict markers...[0m
+2025-08-23 23:10:15 - [0;32m✅ Resolved conflicts in automation/netlify-build-stamp.txt[0m
+2025-08-23 23:10:15 - [0;34m🔧 Resolving conflicts in netlify.toml for branch cursor/invent-and-deploy-autonomous-cloud-automations-1f85...[0m
+2025-08-23 23:10:15 - [1;33m⚠️  Found conflicts in netlify.toml, resolving...[0m
+2025-08-23 23:10:15 - [0;34m📝 Regular file, removing conflict markers...[0m
+2025-08-23 23:10:15 - [0;32m✅ Resolved conflicts in netlify.toml[0m
+2025-08-23 23:10:15 - [0;34m🔧 Resolving conflicts in netlify/functions/functions-manifest.json for branch cursor/invent-and-deploy-autonomous-cloud-automations-1f85...[0m
+2025-08-23 23:10:15 - [1;33m⚠️  Found conflicts in netlify/functions/functions-manifest.json, resolving...[0m
+2025-08-23 23:10:15 - [0;34m📝 Regular file, removing conflict markers...[0m
+2025-08-23 23:10:15 - [0;32m✅ Resolved conflicts in netlify/functions/functions-manifest.json[0m
+2025-08-23 23:10:15 - [0;34m🔧 Resolving conflicts in pages/main/front/index.tsx for branch cursor/invent-and-deploy-autonomous-cloud-automations-1f85...[0m
+2025-08-23 23:10:15 - [1;33m⚠️  Found conflicts in pages/main/front/index.tsx, resolving...[0m
+2025-08-23 23:10:15 - [0;34m💻 Code file detected, attempting intelligent merge...[0m
+2025-08-23 23:10:15 - [0;32m✅ Resolved conflicts in pages/main/front/index.tsx[0m
+2025-08-23 23:10:15 - [0;34m🔧 Resolving conflicts in public/_headers for branch cursor/invent-and-deploy-autonomous-cloud-automations-1f85...[0m
+2025-08-23 23:10:15 - [1;33m⚠️  Found conflicts in public/_headers, resolving...[0m
+2025-08-23 23:10:15 - [0;34m📝 Regular file, removing conflict markers...[0m
+2025-08-23 23:10:15 - [0;32m✅ Resolved conflicts in public/_headers[0m

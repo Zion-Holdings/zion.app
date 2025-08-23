@@ -82,9 +82,14 @@
     "repo-knowledge-graph-runner",
     "repo-radar-and-graph",
     "repo-radar-runner",
+<<<<<<< HEAD
+    "revenue-ideas-runner",
+    "roadmap-synthesizer",
+=======
     "robots-and-headers-optimizer",
     "readme-badges-updater",
     "navigation-directory-builder",
+>>>>>>> origin/cursor/invent-and-deploy-autonomous-cloud-automations-1f85
     "schedule-content-index",
     "schedule-homepage",
     "schedule-knowledge-graph",

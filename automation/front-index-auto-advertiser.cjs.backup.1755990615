@@ -88,9 +88,16 @@ function discoverExternalLinks() {
     { type: 'internal', href: '/.netlify/functions/supreme-orchestrator', label: 'Supreme Orchestrator', tagline: 'Meta trigger (1m)' },
     { type: 'internal', href: '/.netlify/functions/docs-index-runner', label: 'Docs — technical notes & guides', tagline: 'Documentation' },
     { type: 'internal', href: '/newsroom', label: 'AI Changelog — highlights', tagline: 'Summarized updates' },
+<<<<<<< HEAD
+    { type: 'internal', href: '/reports/ai-trends', label: 'AI Trends Radar', tagline: 'Ecosystem intelligence' },
+    { type: 'internal', href: '/reports/github-trending', label: 'GitHub Trending', tagline: 'Daily hottest repos' },
+    { type: 'internal', href: '/reports/ai-papers', label: 'AI Papers Watch', tagline: 'Recent arXiv cs.AI' },
+    { type: 'internal', href: '/reports/hn-top', label: 'HN Top Stories', tagline: 'Top HN with points' },
+=======
     { type: 'internal', href: '/.netlify/functions/robots-and-headers-optimizer', label: 'Robots & Headers Optimizer', tagline: 'SEO + caching guardrails' },
     { type: 'internal', href: '/.netlify/functions/navigation-directory-builder', label: 'Directory Builder', tagline: 'Auto-generated index of pages' },
     { type: 'internal', href: '/.netlify/functions/readme-badges-updater', label: 'README Badges Updater', tagline: 'Live automation status' },
+>>>>>>> origin/cursor/invent-and-deploy-autonomous-cloud-automations-1f85
   ];
 }
 
