@@ -1,1 +1,1 @@
-export default function Page() { return null }
+export default function ChatContentInnovation() { return <main className="p-10"><h1 className="text-2xl font-bold">Innovation in Enterprise Technology</h1></main>; }

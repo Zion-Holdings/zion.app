@@ -1,1 +1,1 @@
-export default function AdminAutomationStatusPage() { return null }
+export default function AutomationStatus() { return <main className="p-10"><h1 className="text-2xl font-bold">Automation Status</h1></main>; }
