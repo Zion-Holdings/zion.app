@@ -4555,9 +4555,21 @@
     <priority>0.6</priority>
   </url>
   <url>
+<<<<<<< HEAD
+    <loc>https://ziontechgroup.com/reports/innovations/insight-2025-08-14-0028</loc>
+    <lastmod>2025-08-14T09:38:12.068Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://ziontechgroup.com/reports/innovations/insight-2025-08-14-0029</loc>
+    <lastmod>2025-08-14T09:38:12.068Z</lastmod>
+    <changefreq>weekly</changefreq>
+=======
     <loc>https://ziontechgroup.com/quantum-energy/</loc>
     <lastmod>2025-08-22T18:04:47.241Z</lastmod>
     <changefreq>monthly</changefreq>
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-e6d1
     <priority>0.6</priority>
   </url>
   <url>
@@ -16699,7 +16711,18 @@
     <priority>0.6</priority>
   </url>
   <url>
+<<<<<<< HEAD
+    <loc>https://ziontechgroup.com/reports/updates/update-2025-08-14-0543</loc>
+    <lastmod>2025-08-14T09:38:12.068Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://ziontechgroup.com/reports/updates/update-2025-08-14-0544</loc>
+    <lastmod>2025-08-14T09:38:12.068Z</lastmod>
+=======
     <loc>https://ziontechgroup.com/services/llm-eval-lab-pro/</loc>
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-e6d1
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
