@@ -1,1 +1,5 @@
-export default function ArticlePage() { return <div className="py-8">Digital transformation insights</div>; }
+import React from 'react';
+
+export default function DigitalTransformationInsightsPage() {
+  return <div>Digital Transformation Insights</div>;
+}

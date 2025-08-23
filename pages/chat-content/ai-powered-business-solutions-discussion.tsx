@@ -1,1 +1,5 @@
-export default function ArticlePage() { return <div className="py-8">AI-powered business solutions discussion</div>; }
+import React from 'react';
+
+export default function AiPoweredBusinessSolutionsDiscussionPage() {
+  return <div>AI-Powered Business Solutions Discussion</div>;
+}

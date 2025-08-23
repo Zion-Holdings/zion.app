@@ -1,1 +1,5 @@
-export default function ArticlePage() { return <div className="py-8">Technology implementation strategies</div>; }
+import React from 'react';
+
+export default function TechnologyImplementationStrategiesPage() {
+  return <div>Technology Implementation Strategies</div>;
+}

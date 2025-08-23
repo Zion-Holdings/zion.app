@@ -1,12 +1,8 @@
+import React from 'react';
 import { useRouter } from 'next/router';
 
-export default function TalentProfilePage() {
+export default function TalentSlugPage() {
   const router = useRouter();
-  const { slug } = router.query;
-  return (
-    <div className="py-8">
-      <h1 className="text-xl font-semibold">Talent Profile</h1>
-      <p className="text-gray-600 dark:text-gray-300">Profile for: {slug as string}</p>
-    </div>
-  );
+  const { slug } = router.query as { slug?: string };
+  return <div>Talent: {slug}</div>;
 }

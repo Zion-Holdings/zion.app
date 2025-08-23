@@ -1,1 +1,5 @@
-export default function ArticlePage() { return <div className="py-8">Cybersecurity best practices</div>; }
+import React from 'react';
+
+export default function CybersecurityBestPracticesPage() {
+  return <div>Cybersecurity Best Practices</div>;
+}
