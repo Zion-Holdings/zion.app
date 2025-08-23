@@ -27,7 +27,7 @@ export default function EnhancedNavigation() {
           <Link href="/salary-insights"><a>Salary Insights</a></Link>
           <Link href="/admin"><a>Admin</a></Link>
           <Link href="/contact"><a>Contact</a></Link>
-          <Link href="/admin/zion-brain"><a>Admin</a></Link>
+          <Link href="/token/integrations"><a>Integrations</a></Link>
         </div>
       </nav>
 
