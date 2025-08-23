@@ -3,6 +3,7 @@ export const cuttingEdgeInnovativeServices2025 = [
   {
     id: 'ai-consciousness-evolution-platform',
     name: 'AI Consciousness Evolution Platform',
+    tagline: 'Revolutionary platform for developing AI systems with advanced consciousness capabilities',
     description: 'Revolutionary platform for developing AI systems with advanced consciousness capabilities, ethical training, and safety protocols. Enables creation of self-aware AI systems.',
     price: '$8,999',
     period: '/month',
@@ -35,6 +36,7 @@ export const cuttingEdgeInnovativeServices2025 = [
   {
     id: 'quantum-ai-brain-computer-interface',
     name: 'Quantum AI Brain-Computer Interface',
+    tagline: 'Next-generation brain-computer interface powered by quantum AI',
     description: 'Next-generation brain-computer interface powered by quantum AI, enabling direct neural communication and control systems.',
     price: '$12,499',
     period: '/month',
@@ -67,6 +69,7 @@ export const cuttingEdgeInnovativeServices2025 = [
   {
     id: 'autonomous-ai-content-factory',
     name: 'Autonomous AI Content Factory',
+    tagline: 'End-to-end autonomous content creation and distribution platform',
     description: 'End-to-end autonomous content creation, optimization, and distribution platform with zero human intervention.',
     price: '$1,299',
     period: '/month',
@@ -99,6 +102,7 @@ export const cuttingEdgeInnovativeServices2025 = [
   {
     id: 'quantum-supply-chain-optimizer',
     name: 'Quantum Supply Chain Optimizer',
+    tagline: 'Revolutionary supply chain optimization using quantum algorithms and AI',
     description: 'Revolutionary supply chain optimization using quantum algorithms and AI for maximum efficiency and cost reduction.',
     price: '$3,999',
     period: '/month',
@@ -131,6 +135,7 @@ export const cuttingEdgeInnovativeServices2025 = [
   {
     id: 'metaverse-ai-development-platform',
     name: 'Metaverse AI Development Platform',
+    tagline: 'Comprehensive platform for building AI-powered metaverse experiences',
     description: 'Comprehensive platform for building AI-powered metaverse experiences with advanced virtual reality and augmented reality capabilities.',
     price: '$5,999',
     period: '/month',
@@ -163,6 +168,7 @@ export const cuttingEdgeInnovativeServices2025 = [
   {
     id: 'quantum-cybersecurity-platform',
     name: 'Quantum Cybersecurity Platform',
+    tagline: 'Advanced cybersecurity with quantum-resistant encryption and AI threat detection',
     description: 'Advanced cybersecurity with quantum-resistant encryption and AI threat detection for enterprise-grade security.',
     price: '$2,499',
     period: '/month',
@@ -195,10 +201,12 @@ export const cuttingEdgeInnovativeServices2025 = [
   {
     id: 'space-resource-intelligence-platform',
     name: 'Space Resource Intelligence Platform',
+    tagline: 'AI-powered platform for space resource discovery and mining optimization',
     description: 'AI-powered platform for space resource discovery, mining optimization, and space exploration intelligence.',
     price: '$7,999',
     period: '/month',
     category: 'Space Technology',
+    icon: '🚀',
     features: [
       'Space Resource Mapping',
       'Mining Optimization AI',
@@ -226,10 +234,12 @@ export const cuttingEdgeInnovativeServices2025 = [
   {
     id: 'autonomous-enterprise-ai-suite',
     name: 'Autonomous Enterprise AI Suite',
+    tagline: 'Comprehensive AI suite for enterprise automation and decision-making',
     description: 'Comprehensive AI suite for enterprise automation, decision-making, and operational optimization.',
     price: '$4,999',
     period: '/month',
     category: 'Enterprise AI',
+    icon: '🏢',
     features: [
       'Autonomous Decision Making',
       'Process Automation',
