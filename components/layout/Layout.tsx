@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import UltraFuturisticNavigation2036 from './UltraFuturisticNavigation2036';
+import UltraFuturisticNavigation2037 from './UltraFuturisticNavigation2037';
 import UltraFuturisticFooter2036 from './UltraFuturisticFooter2036';
 import EnhancedSidebar2025 from './EnhancedSidebar2025';
-import UltraFuturisticBackground2036 from '../backgrounds/UltraFuturisticBackground2036';
+import UltraFuturisticBackground2037 from '../backgrounds/UltraFuturisticBackground2037';
 import TopContactBar from './TopContactBar';
 
 interface LayoutProps {
@@ -17,16 +17,17 @@ export default function Layout({ children }: LayoutProps) {
     <div className="min-h-screen bg-black text-white relative overflow-x-hidden">
       {/* Skip to content link for accessibility */}
       <a href="#main" className="skip-link">Skip to main content</a>
-      {/* Futuristic Background */}
-      <UltraFuturisticBackground2036 />
+      
+      {/* Enhanced Futuristic Background */}
+      <UltraFuturisticBackground2037 intensity="medium" theme="quantum-neon" />
       
       {/* Layout Structure */}
       <div className="relative z-10">
         {/* Top Contact Bar */}
         <TopContactBar />
         
-        {/* Navigation */}
-        <UltraFuturisticNavigation2036 />
+        {/* Enhanced Navigation */}
+        <UltraFuturisticNavigation2037 />
         
         {/* Sidebar and Main Content */}
         <div className="flex">
