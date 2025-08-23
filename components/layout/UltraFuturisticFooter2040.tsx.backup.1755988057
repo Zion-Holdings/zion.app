@@ -83,10 +83,17 @@ const footerData = {
       icon: Brain,
       color: 'from-purple-500 to-pink-500',
       services: [
+<<<<<<< HEAD
+        { name: 'AI Consciousness Evolution', href: '/ai-consciousness-evolution-2044' },
+        { name: 'Emotional Intelligence AI', href: '/ai-emotional-intelligence-platform' },
+        { name: 'Autonomous Decision Making', href: '/ai-autonomous-decision-engine' },
+        { name: 'AI Ethics & Governance', href: '/ai-ethics-governance-framework' }
+=======
         { name: 'AI Consciousness Evolution', href: '/services/ai-consciousness-evolution-platform-2045' },
         { name: 'Emotional Intelligence AI', href: '/services/emotional-intelligence-ai-platform-2045' },
         { name: 'Autonomous Decision Making', href: '/services/autonomous-decision-making-ai-2045' },
         { name: 'AI Ethics & Governance', href: '/services/ai-ethics-governance-platform-2045' }
+>>>>>>> origin/cursor/website-audit-and-enhancement-6ac1
       ]
     },
     {
@@ -94,10 +101,17 @@ const footerData = {
       icon: Atom,
       color: 'from-cyan-500 to-blue-500',
       services: [
+<<<<<<< HEAD
+        { name: 'Quantum AI Hybrid Computing', href: '/quantum-ai-fusion-platform' },
+        { name: 'Quantum Cloud Infrastructure', href: '/quantum-cloud-infrastructure-2044' },
+        { name: 'Quantum Neural Networks', href: '/quantum-neural-network-platform-2044' },
+        { name: 'Quantum Bio-Computing', href: '/quantum-bio-computing-platform' }
+=======
         { name: 'Quantum AI Hybrid Computing', href: '/services/quantum-ai-hybrid-computing-platform-2045' },
         { name: 'Quantum Cloud Infrastructure', href: '/services/quantum-cloud-infrastructure-platform-2045' },
         { name: 'Quantum Neural Networks', href: '/services/quantum-neural-networks-platform-2045' },
         { name: 'Quantum Bio-Computing', href: '/services/quantum-bio-computing-platform-2045' }
+>>>>>>> origin/cursor/website-audit-and-enhancement-6ac1
       ]
     },
     {
@@ -105,10 +119,17 @@ const footerData = {
       icon: Shield,
       color: 'from-red-500 to-orange-500',
       services: [
+<<<<<<< HEAD
+        { name: 'Quantum Cybersecurity Intelligence', href: '/quantum-cybersecurity-platform-2044' },
+        { name: 'AI Threat Detection', href: '/ai-powered-cybersecurity' },
+        { name: 'Zero-Trust Security', href: '/zero-trust-security-platform' },
+        { name: 'Quantum Encryption', href: '/quantum-encryption-gateway' }
+=======
         { name: 'Quantum Cybersecurity Intelligence', href: '/services/quantum-cybersecurity-intelligence-2045' },
         { name: 'AI Threat Detection', href: '/services/ai-threat-detection-platform-2045' },
         { name: 'Zero-Trust Security', href: '/services/zero-trust-security-platform-2045' },
         { name: 'Quantum Encryption', href: '/services/quantum-encryption-platform-2045' }
+>>>>>>> origin/cursor/website-audit-and-enhancement-6ac1
       ]
     },
     {
@@ -116,6 +137,12 @@ const footerData = {
       icon: Target,
       color: 'from-emerald-500 to-teal-500',
       services: [
+<<<<<<< HEAD
+        { name: 'Autonomous AI Business Intelligence', href: '/ai-autonomous-business-intelligence-2044' },
+        { name: 'AI Content Intelligence', href: '/ai-content-personalization-engine' },
+        { name: 'Predictive Analytics Platform', href: '/ai-predictive-maintenance-platform' },
+        { name: 'Business Process Automation', href: '/ai-autonomous-business-process-automation' }
+=======
         { name: 'Autonomous AI Business Intelligence', href: '/services/autonomous-ai-business-intelligence-2045' },
         { name: 'AI Content Intelligence', href: '/services/ai-content-intelligence-platform-2045' },
         { name: 'Predictive Analytics Platform', href: '/services/predictive-analytics-platform-2045' },
@@ -142,6 +169,7 @@ const footerData = {
         { name: 'Satellite Network Management', href: '/services/satellite-network-management-2045' },
         { name: 'Planetary Exploration AI', href: '/services/planetary-exploration-ai-2045' },
         { name: 'Space Mining Operations', href: '/services/space-mining-operations-2045' }
+>>>>>>> origin/cursor/website-audit-and-enhancement-6ac1
       ]
     }
   ];
