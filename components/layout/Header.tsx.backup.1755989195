@@ -37,6 +37,10 @@ const Header = () => {
   }, [isProductDropdownOpen]);
 
   const navigation = [
+<<<<<<< HEAD
+    { name: 'Product', href: '#', hasDropdown: true },
+    { name: 'Solutions', href: '/services' },
+=======
     {
       name: 'Services',
       href: '/services',
@@ -71,6 +75,7 @@ const Header = () => {
       ]
     },
     { name: 'Pricing', href: '/pricing' },
+>>>>>>> origin/cursor/add-and-advertise-new-services-then-build-06aa
     { name: 'Resources', href: '/resources' },
     { name: 'Company', href: '/about' },
     { name: 'Pricing', href: '/pricing' },

@@ -26,6 +26,18 @@ const HomePage: React.FC = () => {
   };
 
   return (
+<<<<<<< HEAD
+    <ErrorBoundary>
+      <SEOOptimizer />
+      <AnalyticsTracker />
+      <PerformanceOptimizer onMetricsUpdate={handlePerformanceMetrics}>
+        <AccessibilityEnhancer>
+          <EnhancedHomepage2026 />
+        </AccessibilityEnhancer>
+      </PerformanceOptimizer>
+      <PerformanceMonitor />
+    </ErrorBoundary>
+=======
     <>
       <SEO title={pageTitle} description={pageDescription} />
       <section className="relative pt-28 pb-16 md:pt-36 md:pb-24">
@@ -75,6 +87,7 @@ const HomePage: React.FC = () => {
         </div>
       </section>
     </>
+>>>>>>> origin/cursor/add-and-advertise-new-services-then-build-06aa
   );
 };
 
