@@ -1,34 +1,35 @@
 /* eslint-env serviceworker */
 /* global self, caches */
 
-const STATIC_CACHE = 'zion-static-v1';
-const DYNAMIC_CACHE = 'zion-dynamic-v1';
+const CACHE_NAME = 'zion-tech-v1.0.0';
+const STATIC_CACHE = 'zion-static-v1.0.0';
+const DYNAMIC_CACHE = 'zion-dynamic-v1.0.0';
 
-// Routes that should be cached
-const STATIC_ROUTES = [
+// Files to cache immediately
+const STATIC_FILES = [
   '/',
   '/offline.html',
-  '/manifest.json'
+  '/manifest.json',
+  '/icons/icon-192x192.png',
+  '/icons/icon-512x512.png',
+  '/css/main.css',
+  '/js/main.js'
 ];
 
-// API routes that should be cached
-const API_ROUTES = [
-  '/api/contact',
-  '/api/services'
-];
-
-// Install event - cache static assets
+// Install event - cache static files
 self.addEventListener('install', (event) => {
   event.waitUntil(
     caches.open(STATIC_CACHE)
       .then((cache) => {
-        return cache.addAll(STATIC_ROUTES);
+        console.log('Caching static files');
+        return cache.addAll(STATIC_FILES);
       })
       .then(() => {
+        console.log('Static files cached successfully');
         return self.skipWaiting();
       })
-      .catch(() => {
-        // Handle caching errors silently
+      .catch((error) => {
+        console.error('Error caching static files:', error);
       })
   );
 });
@@ -41,12 +42,14 @@ self.addEventListener('activate', (event) => {
         return Promise.all(
           cacheNames.map((cacheName) => {
             if (cacheName !== STATIC_CACHE && cacheName !== DYNAMIC_CACHE) {
+              console.log('Deleting old cache:', cacheName);
               return caches.delete(cacheName);
             }
           })
         );
       })
       .then(() => {
+        console.log('Service worker activated');
         return self.clients.claim();
       })
   );
@@ -62,109 +65,199 @@ self.addEventListener('fetch', (event) => {
     return;
   }
 
+  // Skip chrome-extension and other non-http requests
+  if (!url.protocol.startsWith('http')) {
+    return;
+  }
+
   // Handle different types of requests
-  if (STATIC_ROUTES.includes(url.pathname)) {
-    // Static routes - cache first
-    event.respondWith(
-      caches.match(request)
-        .then((response) => {
-          return response || fetch(request);
-        })
-        .catch(() => {
-          // Return offline page for navigation requests
-          if (request.mode === 'navigate') {
-            return caches.match('/offline.html');
-          }
-        })
-    );
-  } else if (API_ROUTES.some(route => url.pathname.startsWith(route))) {
-    // API routes - network first, then cache
-    event.respondWith(
-      fetch(request)
-        .then((response) => {
-          // Clone the response before caching
-          const responseClone = response.clone();
-          caches.open(DYNAMIC_CACHE)
-            .then((cache) => {
-              cache.put(request, responseClone);
-            });
-          return response;
-        })
-        .catch(() => {
-          // Return cached response if available
-          return caches.match(request);
-        })
-    );
-  } else if (request.destination === 'image' || request.destination === 'style' || request.destination === 'script') {
-    // Static assets - cache first
-    event.respondWith(
-      caches.match(request)
-        .then((response) => {
-          return response || fetch(request)
-            .then((fetchResponse) => {
-              // Cache the fetched response
-              const responseClone = fetchResponse.clone();
-              caches.open(DYNAMIC_CACHE)
-                .then((cache) => {
-                  cache.put(request, responseClone);
-                });
-              return fetchResponse;
-            });
-        })
-    );
+  if (request.destination === 'document') {
+    // Handle page requests
+    event.respondWith(handlePageRequest(request));
+  } else if (request.destination === 'image') {
+    // Handle image requests
+    event.respondWith(handleImageRequest(request));
+  } else if (request.destination === 'style' || request.destination === 'script') {
+    // Handle CSS and JS requests
+    event.respondWith(handleAssetRequest(request));
   } else {
-    // Other requests - network first
-    event.respondWith(fetch(request));
+    // Handle other requests
+    event.respondWith(handleOtherRequest(request));
   }
 });
 
-// Background sync for offline form submissions
+// Handle page requests with offline fallback
+async function handlePageRequest(request) {
+  try {
+    // Try network first
+    const networkResponse = await fetch(request);
+    
+    if (networkResponse.ok) {
+      // Cache the response for future offline use
+      const cache = await caches.open(DYNAMIC_CACHE);
+      cache.put(request, networkResponse.clone());
+      return networkResponse;
+    }
+  } catch (error) {
+    console.log('Network failed for page request:', request.url);
+  }
+
+  // Try cache
+  const cachedResponse = await caches.match(request);
+  if (cachedResponse) {
+    return cachedResponse;
+  }
+
+  // Return offline page
+  return caches.match('/offline.html');
+}
+
+// Handle image requests with cache-first strategy
+async function handleImageRequest(request) {
+  const cachedResponse = await caches.match(request);
+  if (cachedResponse) {
+    return cachedResponse;
+  }
+
+  try {
+    const networkResponse = await fetch(request);
+    if (networkResponse.ok) {
+      const cache = await caches.open(DYNAMIC_CACHE);
+      cache.put(request, networkResponse.clone());
+    }
+    return networkResponse;
+  } catch (error) {
+    console.log('Failed to fetch image:', request.url);
+    // Return a placeholder image if available
+    return caches.match('/icons/placeholder-image.png');
+  }
+}
+
+// Handle asset requests with cache-first strategy
+async function handleAssetRequest(request) {
+  const cachedResponse = await caches.match(request);
+  if (cachedResponse) {
+    return cachedResponse;
+  }
+
+  try {
+    const networkResponse = await fetch(request);
+    if (networkResponse.ok) {
+      const cache = await caches.open(DYNAMIC_CACHE);
+      cache.put(request, networkResponse.clone());
+    }
+    return networkResponse;
+  } catch (error) {
+    console.log('Failed to fetch asset:', request.url);
+    throw error;
+  }
+}
+
+// Handle other requests with network-first strategy
+async function handleOtherRequest(request) {
+  try {
+    const networkResponse = await fetch(request);
+    if (networkResponse.ok) {
+      const cache = await caches.open(DYNAMIC_CACHE);
+      cache.put(request, networkResponse.clone());
+    }
+    return networkResponse;
+  } catch (error) {
+    console.log('Network failed for request:', request.url);
+    
+    const cachedResponse = await caches.match(request);
+    if (cachedResponse) {
+      return cachedResponse;
+    }
+    
+    throw error;
+  }
+}
+
+// Background sync for offline actions
 self.addEventListener('sync', (event) => {
   if (event.tag === 'background-sync') {
-    event.waitUntil(
-      // Handle background sync logic here
-      Promise.resolve()
-    );
+    event.waitUntil(doBackgroundSync());
   }
 });
+
+async function doBackgroundSync() {
+  try {
+    // Get stored offline actions
+    const offlineActions = await getOfflineActions();
+    
+    for (const action of offlineActions) {
+      try {
+        await processOfflineAction(action);
+        await removeOfflineAction(action.id);
+      } catch (error) {
+        console.error('Failed to process offline action:', error);
+      }
+    }
+  } catch (error) {
+    console.error('Background sync failed:', error);
+  }
+}
+
+// Get stored offline actions from IndexedDB
+async function getOfflineActions() {
+  // This would typically use IndexedDB
+  // For now, return empty array
+  return [];
+}
+
+// Process an offline action
+async function processOfflineAction(action) {
+  // This would typically make API calls
+  // For now, just log the action
+  console.log('Processing offline action:', action);
+}
+
+// Remove processed offline action
+async function removeOfflineAction(actionId) {
+  // This would typically remove from IndexedDB
+  console.log('Removing offline action:', actionId);
+}
 
 // Push notification handling
 self.addEventListener('push', (event) => {
-  const options = {
-    body: event.data ? event.data.text() : 'New update available!',
-    icon: '/icon-192x192.png',
-    badge: '/icon-72x72.png',
-    vibrate: [100, 50, 100],
-    data: {
-      dateOfArrival: Date.now(),
-      primaryKey: 1
-    },
-    actions: [
-      {
-        action: 'explore',
-        title: 'View',
-        icon: '/icon-192x192.png'
+  if (event.data) {
+    const data = event.data.json();
+    const options = {
+      body: data.body,
+      icon: '/icons/icon-192x192.png',
+      badge: '/icons/icon-72x72.png',
+      vibrate: [100, 50, 100],
+      data: {
+        url: data.url
       },
-      {
-        action: 'close',
-        title: 'Close',
-        icon: '/icon-192x192.png'
-      }
-    ]
-  };
+      actions: [
+        {
+          action: 'view',
+          title: 'View',
+          icon: '/icons/icon-72x72.png'
+        },
+        {
+          action: 'close',
+          title: 'Close',
+          icon: '/icons/icon-72x72.png'
+        }
+      ]
+    };
 
-  event.waitUntil(
-    self.registration.showNotification('Zion Tech Group', options)
-  );
+    event.waitUntil(
+      self.registration.showNotification(data.title, options)
+    );
+  }
 });
 
 // Notification click handling
 self.addEventListener('notificationclick', (event) => {
   event.notification.close();
 
-  if (event.action === 'explore') {
+  if (event.action === 'view') {
     event.waitUntil(
-      self.clients.openWindow('/')
+      self.clients.openWindow(event.notification.data.url)
     );
   }
 });
@@ -174,4 +267,17 @@ self.addEventListener('message', (event) => {
   if (event.data && event.data.type === 'SKIP_WAITING') {
     self.skipWaiting();
   }
+  
+  if (event.data && event.data.type === 'GET_VERSION') {
+    event.ports[0].postMessage({ version: CACHE_NAME });
+  }
+});
+
+// Error handling
+self.addEventListener('error', (event) => {
+  console.error('Service worker error:', event.error);
+});
+
+self.addEventListener('unhandledrejection', (event) => {
+  console.error('Service worker unhandled rejection:', event.reason);
 });

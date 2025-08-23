@@ -46,7 +46,7 @@ class EnhancedErrorBoundary extends Component<Props, State> {
     }
   }
 
-  private logErrorToService(error: Error, errorInfo: ErrorInfo, errorId: string) {
+  private logErrorToService = (error: Error, errorInfo: ErrorInfo, errorId: string) => {
     try {
       // This would typically send to a service like Sentry, LogRocket, etc.
       const errorData = {
@@ -72,7 +72,7 @@ class EnhancedErrorBoundary extends Component<Props, State> {
     } catch (loggingError) {
       console.error('Failed to log error to service:', loggingError);
     }
-  }
+  };
 
   private handleRetry = () => {
     this.setState({ hasError: false, error: undefined, errorInfo: undefined, errorId: undefined });
