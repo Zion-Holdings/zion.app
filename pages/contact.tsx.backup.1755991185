@@ -1,3 +1,6 @@
+<<<<<<< HEAD
+export default function Contact() { return <div className="p-6">Contact</div>; }
+=======
 import type { NextPage } from 'next';
 import Head from 'next/head';
 import Link from 'next/link';
@@ -231,3 +234,4 @@ export default function ContactPage() {
     </div>
   );
 }
+>>>>>>> origin/cursor/build-investor-and-franchisee-growth-portal-dc8f

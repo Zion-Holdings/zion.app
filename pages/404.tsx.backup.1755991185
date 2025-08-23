@@ -1,3 +1,8 @@
+<<<<<<< HEAD
+export default function NotFound() {
+  return <div className="p-6">404 - Page Not Found</div>;
+}
+=======
 export default function NotFoundPage() {
   return (
     <div className="py-24 text-center">
@@ -6,3 +11,4 @@ export default function NotFoundPage() {
     </div>
   );
 }
+>>>>>>> origin/cursor/build-investor-and-franchisee-growth-portal-dc8f
