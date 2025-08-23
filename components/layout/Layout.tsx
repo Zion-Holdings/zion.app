@@ -122,6 +122,13 @@ export default function Layout({
           </div>
         )}
       </div>
-    </>
+
+      {/* Accessibility and Performance Tools */}
+      <AccessibilityEnhancer />
+      <PerformanceMonitor />
+      
+      {/* Cookie Consent Banner */}
+      <CookieConsentBanner />
+    </div>
   );
 }

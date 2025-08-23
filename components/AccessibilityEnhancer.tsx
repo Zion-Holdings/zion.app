@@ -120,15 +120,6 @@ const AccessibilityEnhancer: React.FC = () => {
     }
   }, [applySettings]);
 
-  // Focus management
-  const handleFocusChange = useCallback((e: Event) => {
-    const target = e.target as HTMLElement;
-    if (target) {
-      setCurrentFocus(target);
-      announceToScreenReader(`Focused on ${target.textContent || target.tagName.toLowerCase()}`);
-    }
-  }, []);
-
   // Keyboard navigation enhancements
   const handleKeyDown = useCallback((e: Event) => {
     // Tab navigation detected
@@ -188,9 +179,16 @@ const AccessibilityEnhancer: React.FC = () => {
 
   // Highlighter effect
   useEffect(() => {
-    if (!settings.highlighter) return;
+    const handleFocusChangeWrapper = (e: Event) => {
+      const target = e.target as HTMLElement;
+      if (target) {
+        setCurrentFocus(target);
+        announceToScreenReader(`Focused on ${target.textContent || target.tagName.toLowerCase()}`);
+      }
+    };
 
-    const elements = document.querySelectorAll('p, h1, h2, h3, h4, h5, h6, li, span, div');
+    document.addEventListener('focusin', handleFocusChangeWrapper);
+    document.addEventListener('keydown', handleKeyDown);
     
     elements.forEach(element => {
       if (element instanceof HTMLElement) {
@@ -202,16 +200,10 @@ const AccessibilityEnhancer: React.FC = () => {
     });
 
     return () => {
-      elements.forEach(element => {
-        if (element instanceof HTMLElement) {
-          element.style.backgroundColor = '';
-          element.style.color = '';
-          element.style.padding = '';
-          element.style.borderRadius = '';
-        }
-      });
+      document.removeEventListener('focusin', handleFocusChangeWrapper);
+      document.removeEventListener('keydown', handleKeyDown);
     };
-  }, [settings.highlighter]);
+  }, [handleKeyDown]);
 
   // Screen reader announcements
   const announceToScreenReader = useCallback((message: string) => {
