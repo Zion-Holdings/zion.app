@@ -1,3 +1,81 @@
+<<<<<<< HEAD
+import React, { useEffect, useState, useCallback, useRef } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+  Eye, 
+  EyeOff, 
+  Volume2, 
+  VolumeX, 
+  Type, 
+  Contrast, 
+  ZoomIn, 
+  ZoomOut,
+  Accessibility,
+  Keyboard,
+  MousePointer
+} from 'lucide-react';
+
+interface AccessibilityEnhancerProps {
+  onAccessibilityChange?: (settings: AccessibilitySettings) => void;
+}
+
+interface AccessibilitySettings {
+  highContrast: boolean;
+  largeText: boolean;
+  reducedMotion: boolean;
+  screenReader: boolean;
+  zoomLevel: number;
+}
+
+const AccessibilityEnhancer: React.FC<AccessibilityEnhancerProps> = ({
+  onAccessibilityChange
+}) => {
+  const [isOpen, setIsOpen] = useState(false);
+  const [settings, setSettings] = useState<AccessibilitySettings>({
+    highContrast: false,
+    largeText: false,
+    reducedMotion: false,
+    screenReader: false,
+    zoomLevel: 100
+  });
+
+  useEffect(() => {
+    // Load saved accessibility settings from localStorage
+    const savedSettings = localStorage.getItem('accessibility-settings');
+    if (savedSettings) {
+      try {
+        const parsed = JSON.parse(savedSettings);
+        setSettings(parsed);
+        applyAccessibilitySettings(parsed);
+      } catch (error) {
+        console.error('Failed to parse saved accessibility settings:', error);
+      }
+    }
+
+    // Check for system preferences
+    checkSystemPreferences();
+  }, []);
+
+  const checkSystemPreferences = () => {
+    // Check for reduced motion preference
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    
+    // Check for high contrast preference
+    const prefersHighContrast = window.matchMedia('(prefers-contrast: high)').matches;
+    
+    setSettings(prev => ({
+      ...prev,
+      reducedMotion: prefersReducedMotion,
+      highContrast: prefersHighContrast
+    }));
+  };
+
+  const applyAccessibilitySettings = (newSettings: AccessibilitySettings) => {
+    const root = document.documentElement;
+    
+    // Apply high contrast
+    if (newSettings.highContrast) {
+      root.classList.add('high-contrast');
+=======
 import React, { useEffect, useState, useCallback } from 'react';
 
 interface AccessibilityEnhancerProps {
@@ -78,24 +156,79 @@ const AccessibilityEnhancer: React.FC<AccessibilityEnhancerProps> = ({
       root.style.setProperty('--bg-color', '#000000');
       root.style.setProperty('--accent-color', '#ffff00');
       root.style.setProperty('--border-color', '#ffffff');
+>>>>>>> origin/cursor/analyze-improve-and-deploy-application-f9be
     } else {
       root.style.setProperty('--text-color', '');
       root.style.setProperty('--bg-color', '');
       root.style.setProperty('--accent-color', '');
       root.style.setProperty('--border-color', '');
     }
+<<<<<<< HEAD
+    
+    // Apply large text
+    if (newSettings.largeText) {
+      root.style.fontSize = '120%';
+    } else {
+      root.style.fontSize = '100%';
+    }
+    
+    // Apply reduced motion
+    if (newSettings.reducedMotion) {
+      root.classList.add('reduced-motion');
+=======
 
     if (isLargeText) {
       root.style.setProperty('--font-size-base', '18px');
       root.style.setProperty('--font-size-lg', '20px');
       root.style.setProperty('--font-size-xl', '24px');
       root.style.setProperty('--line-height', '1.6');
+>>>>>>> origin/cursor/analyze-improve-and-deploy-application-f9be
     } else {
       root.style.setProperty('--font-size-base', '');
       root.style.setProperty('--font-size-lg', '');
       root.style.setProperty('--font-size-xl', '');
       root.style.setProperty('--line-height', '');
     }
+<<<<<<< HEAD
+    
+    // Apply zoom level
+    root.style.zoom = `${newSettings.zoomLevel}%`;
+    
+    // Notify parent component
+    onAccessibilityChange?.(newSettings);
+  };
+
+  const updateSetting = (key: keyof AccessibilitySettings, value: any) => {
+    const newSettings = { ...settings, [key]: value };
+    setSettings(newSettings);
+    applyAccessibilitySettings(newSettings);
+    
+    // Save to localStorage
+    localStorage.setItem('accessibility-settings', JSON.stringify(newSettings));
+  };
+
+  const togglePanel = () => {
+    setIsOpen(!isOpen);
+  };
+
+  const handleKeyDown = (event: React.KeyboardEvent) => {
+    if (event.key === 'Escape') {
+      setIsOpen(false);
+    }
+  };
+
+  const resetSettings = () => {
+    const defaultSettings: AccessibilitySettings = {
+      highContrast: false,
+      largeText: false,
+      reducedMotion: false,
+      screenReader: false,
+      zoomLevel: 100
+    };
+    setSettings(defaultSettings);
+    applyAccessibilitySettings(defaultSettings);
+    localStorage.removeItem('accessibility-settings');
+=======
 import { Volume2, VolumeX, Eye, Keyboard, MousePointer } from 'lucide-react';
 
 interface AccessibilityEnhancerProps {
@@ -661,6 +794,7 @@ const AccessibilityEnhancer: React.FC<AccessibilityEnhancerProps> = ({ children 
       >
         {children}
       </div>
+>>>>>>> origin/cursor/analyze-improve-and-deploy-application-f9be
     </>
   );
 };

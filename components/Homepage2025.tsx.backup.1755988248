@@ -1,5 +1,10 @@
+<<<<<<< HEAD
+import React, { useEffect, useState, useCallback, memo } from 'react';
+import Layout from './layout/Layout';
+=======
 import React, { Suspense, lazy, memo } from 'react';
 import UltraFuturisticBackground2026 from './ui/UltraFuturisticBackground2026';
+>>>>>>> origin/cursor/analyze-improve-and-deploy-application-f9be
 import UltraFuturisticServiceCard2026 from './ui/UltraFuturisticServiceCard2026';
 import EnhancedSearch from './EnhancedSearch';
 import AIChatbot from './AIChatbot';
@@ -13,6 +18,119 @@ import {
 import { AnimatePresence } from 'framer-motion';
 import ThemeToggle from './ThemeToggle';
 
+<<<<<<< HEAD
+const Homepage2025: React.FC = () => {
+  const [isLoading, setIsLoading] = useState(true);
+  const [activeFeature, setActiveFeature] = useState(0);
+  const [showNewsletter, setShowNewsletter] = useState(false);
+  const [searchQuery, setSearchQuery] = useState('');
+  const [showFloatingActions, setShowFloatingActions] = useState(false);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries: IntersectionObserverEntry[]) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            // Animation logic can be added here
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
+
+    const sections = document.querySelectorAll('section[id]');
+    sections.forEach((section) => observer.observe(section));
+
+    return () => observer.disconnect();
+  }, []);
+
+  // Simulate loading state
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsLoading(false);
+    }, 1000);
+    return () => clearTimeout(timer);
+  }, []);
+
+  // Auto-rotate features for better engagement
+  useEffect(() => {
+    if (!isLoading) {
+      const interval = setInterval(() => {
+        setActiveFeature((prev) => (prev + 1) % features.length);
+      }, 4000);
+      return () => clearInterval(interval);
+    }
+  }, [isLoading]);
+
+  // Show floating actions after scroll
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const sectionIndex = parseInt(entry.target.getAttribute('data-section') || '0');
+            setActiveSection(sectionIndex);
+          }
+        });
+      },
+      { threshold: 0.3 }
+    );
+
+    document.querySelectorAll('[data-section]').forEach((el) => observer.observe(el));
+    return () => observer.disconnect();
+  }, []);
+
+  const features = [
+    { icon: Brain, title: "AI-Powered Solutions", description: "Cutting-edge artificial intelligence driving business transformation", color: "from-purple-500 to-pink-500" },
+    { icon: Shield, title: "Enterprise Security", description: "Military-grade cybersecurity protecting your digital assets", color: "from-red-500 to-orange-500" },
+    { icon: Rocket, title: "Innovation First", description: "Pioneering the future with breakthrough technologies", color: "from-cyan-500 to-blue-500" },
+    { icon: Globe, title: "Global Reach", description: "Serving clients worldwide with localized expertise", color: "from-emerald-500 to-teal-500" },
+    { icon: Cpu, title: "Quantum Computing", description: "Next-generation computational power for complex problems", color: "from-indigo-500 to-purple-500" },
+    { icon: Database, title: "Data Intelligence", description: "Transform raw data into actionable business insights", color: "from-yellow-500 to-orange-500" }
+  ];
+
+
+
+  const testimonials = [
+    {
+      name: "Sarah Chen",
+      role: "CTO, TechCorp",
+      content: "Zion Tech Group transformed our infrastructure with their AI solutions. 40% efficiency improvement in just 3 months.",
+      rating: 5,
+      avatar: "/api/placeholder/60/60"
+    },
+    {
+      name: "Michael Rodriguez",
+      role: "VP Engineering, DataFlow",
+      content: "Their quantum computing expertise helped us solve complex optimization problems that were previously impossible.",
+      rating: 5,
+      avatar: "/api/placeholder/60/60"
+    },
+    {
+      name: "Dr. Emily Watson",
+      role: "Research Director, BioTech Labs",
+      content: "The cybersecurity implementation exceeded our expectations. We feel completely protected against modern threats.",
+      rating: 5,
+      avatar: "/api/placeholder/60/60"
+    }
+  ];
+
+  if (isLoading) {
+    return (
+      <Layout>
+        <div className="min-h-screen flex items-center justify-center">
+          <motion.div
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            className="text-center"
+          >
+            <div className="w-20 h-20 mx-auto mb-6">
+              <motion.div
+                className="w-full h-full bg-gradient-to-r from-cyan-500 to-blue-600 rounded-full"
+                animate={{ rotate: 360 }}
+                transition={{ duration: 2, repeat: Infinity, ease: "linear" }}
+              />
+=======
 // Lazy load non-critical components
 const LazyServiceSection = lazy(() => import('./sections/EnhancedServiceShowcase'));
 
@@ -191,6 +309,7 @@ const Homepage2025: React.FC = memo(() => {
               >
                 Learn More
               </button>
+>>>>>>> origin/cursor/analyze-improve-and-deploy-application-f9be
             </div>
             <h2 className="text-2xl font-bold text-white mb-2">Loading Zion Tech Group</h2>
             <p className="text-gray-400">Preparing the future...</p>
@@ -648,6 +767,69 @@ const Homepage2025: React.FC = memo(() => {
           aria-labelledby="services-heading"
         >
           <div className="max-w-6xl mx-auto">
+<<<<<<< HEAD
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+              className="text-center mb-16"
+            >
+              <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
+                Our Services
+              </h2>
+              <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+                Discover our comprehensive range of cutting-edge technology solutions designed to transform your business
+              </p>
+            </motion.div>
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              <UltraFuturisticServiceCard2026
+                service={{
+                  id: 'ai-ml',
+                  name: 'AI & Machine Learning',
+                  tagline: 'Advanced artificial intelligence solutions',
+                  description: 'Advanced artificial intelligence solutions for modern businesses',
+                  price: '$999',
+                  period: 'month',
+                  features: ['Machine Learning', 'Deep Learning', 'NLP', 'Computer Vision'],
+                  popular: true,
+                  category: 'AI',
+                  icon: '🧠'
+                }}
+                variant="ai"
+              />
+              <UltraFuturisticServiceCard2026
+                service={{
+                  id: 'quantum-computing',
+                  name: 'Quantum Computing',
+                  tagline: 'Next-generation computing solutions',
+                  description: 'Next-generation computing solutions for complex problems',
+                  price: '$1999',
+                  period: 'month',
+                  features: ['Quantum Algorithms', 'Quantum Security', 'Quantum Simulation'],
+                  popular: false,
+                  category: 'Quantum',
+                  icon: '⚛️'
+                }}
+                variant="quantum"
+              />
+              <UltraFuturisticServiceCard2026
+                service={{
+                  id: 'process-automation',
+                  name: 'Process Automation',
+                  tagline: 'Intelligent automation solutions',
+                  description: 'Intelligent automation to streamline your operations',
+                  price: '$799',
+                  period: 'month',
+                  features: ['Workflow Automation', 'RPA', 'AI Integration', 'Analytics'],
+                  popular: false,
+                  category: 'Automation',
+                  icon: '⚡'
+                }}
+                variant="automation"
+              />
+=======
             <h2 
               id="services-heading"
               className="text-4xl md:text-5xl font-bold mb-16 text-center bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent"
@@ -662,6 +844,7 @@ const Homepage2025: React.FC = memo(() => {
                   variant={service.category.toLowerCase() as 'default' | 'quantum' | 'ai' | 'automation' | 'it' | 'emerging' | 'enterprise' | 'premium'}
                 />
               ))}
+>>>>>>> origin/cursor/analyze-improve-and-deploy-application-f9be
             </div>
             
             <div className="text-center mt-12">

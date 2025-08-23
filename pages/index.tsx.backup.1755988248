@@ -1,3 +1,12 @@
+<<<<<<< HEAD
+import React from 'react';
+import EnhancedHomepage2026 from '../components/EnhancedHomepage2026';
+import EnhancedSEOOptimizer from '../components/EnhancedSEOOptimizer';
+import EnhancedAnalyticsTracker from '../components/EnhancedAnalyticsTracker';
+import ErrorBoundary from '../components/ErrorBoundary';
+import PerformanceOptimizer from '../components/PerformanceOptimizer';
+import AccessibilityEnhancer from '../components/AccessibilityEnhancer';
+=======
 import React, { Suspense } from 'react';
 import Homepage2025 from '../components/Homepage2025';
 import SEOOptimizer from '../components/SEOOptimizer';
@@ -5,6 +14,7 @@ import AnalyticsTracker from '../components/AnalyticsTracker';
 import ErrorBoundary from '../components/ErrorBoundary';
 import AccessibilityEnhancer from '../components/AccessibilityEnhancer';
 import PerformanceMonitor from '../components/PerformanceMonitor';
+>>>>>>> origin/cursor/analyze-improve-and-deploy-application-f9be
 
 const HomePage: React.FC = () => {
   // Structured data for better SEO
@@ -41,6 +51,12 @@ const HomePage: React.FC = () => {
     <ErrorBoundary>
       <SEOOptimizer />
       <AnalyticsTracker />
+<<<<<<< HEAD
+      <PerformanceOptimizer>
+        <Homepage2025 />
+      </PerformanceOptimizer>
+      <AccessibilityEnhancer />
+=======
       <AccessibilityEnhancer>
         <Suspense fallback={
           <div className="min-h-screen bg-black text-white flex items-center justify-center">
@@ -64,6 +80,7 @@ const HomePage: React.FC = () => {
           />
         )}
       </AccessibilityEnhancer>
+>>>>>>> origin/cursor/analyze-improve-and-deploy-application-f9be
     </ErrorBoundary>
   );
 };
