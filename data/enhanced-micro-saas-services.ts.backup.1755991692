@@ -24,7 +24,10 @@ export interface EnhancedMicroSaasService {
   competitors: string[];
   marketSize: string;
   growthRate: string;
+<<<<<<< HEAD
+=======
   variant?: 'default' | 'holographic' | 'quantum' | 'cyberpunk' | 'neural' | 'quantum-holographic' | 'quantum-advanced' | 'holographic-advanced' | 'neural-quantum' | 'quantum-cyberpunk' | 'holographic-neural' | 'quantum-holographic-advanced' | 'quantum-matrix' | 'neural-cyberpunk' | 'holographic-quantum' | 'quantum-neural-advanced' | 'cyberpunk-holographic' | 'quantum-space' | 'ai-futuristic' | 'quantum-entanglement' | 'holographic-matrix' | 'neural-quantum-cyberpunk' | 'neural-advanced';
+>>>>>>> origin/cursor/enhance-app-services-and-website-with-futuristic-design-2d5f
   contactInfo: {
     mobile: string;
     email: string;
@@ -1048,6 +1051,9 @@ export const serviceCategories = [
   'Data Analytics & BI',
   'IoT & Edge Computing',
   'Blockchain & Web3',
+<<<<<<< HEAD
+  'Emerging Technologies'
+=======
   'AI Content Creation',
   'Manufacturing & Industry 4.0',
   'Healthcare & Biotechnology',
@@ -1070,6 +1076,7 @@ export const serviceCategories = [
   'Autonomous Vehicles & Transportation',
   'Smart Energy & Sustainability',
   'AI Education & Learning'
+>>>>>>> origin/cursor/enhance-app-services-and-website-with-futuristic-design-2d5f
 ];
 
 export const getServicesByCategory = (category: string) => {
