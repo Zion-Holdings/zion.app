@@ -1,5 +1,9 @@
 // Ultimate Build Guardian Function
+<<<<<<< HEAD
+exports.handler = async function() {
+=======
 exports.handler = async function(_event, _context) {
+>>>>>>> origin/cursor/check-and-fix-project-errors-05af
   try {
     // Enhanced build health check with ultimate redundancy
     const buildHealth = await checkUltimateBuildHealth();

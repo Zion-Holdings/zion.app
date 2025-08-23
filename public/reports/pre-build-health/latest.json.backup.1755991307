@@ -5,7 +5,11 @@
     "failedChecks": 1,
     "criticalFailures": 0,
     "canBuild": true,
+<<<<<<< HEAD
+    "timestamp": "2025-08-20T02:36:54.179Z"
+=======
     "timestamp": "2025-08-20T00:11:32.623Z"
+>>>>>>> origin/cursor/check-and-fix-project-errors-05af
   },
   "results": [
     {
