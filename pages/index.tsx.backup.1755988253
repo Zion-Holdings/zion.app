@@ -4,8 +4,12 @@ import SEOOptimizer from '../components/SEOOptimizer';
 import AnalyticsTracker from '../components/AnalyticsTracker';
 import ErrorBoundary from '../components/ErrorBoundary';
 import AccessibilityEnhancer from '../components/AccessibilityEnhancer';
+<<<<<<< HEAD
+import PerformanceOptimizer from '../components/PerformanceOptimizer';
+=======
 import PerformanceMonitor from '../components/PerformanceMonitor';
 
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-1b28
 
 const HomePage: React.FC = () => {
   // Structured data for better SEO
@@ -42,12 +46,20 @@ const HomePage: React.FC = () => {
     <ErrorBoundary>
       <SEOOptimizer />
       <AnalyticsTracker />
+<<<<<<< HEAD
+      <PerformanceOptimizer>
+        <Homepage2025 />
+      </PerformanceOptimizer>
+      <PerformanceMonitor />
+      <AccessibilityEnhancer />
+=======
       <Homepage2045 />
       <PerformanceMonitor showUI={true} />
       <AccessibilityEnhancer>
         <div></div>
       </AccessibilityEnhancer>
       <PerformanceOptimizer showMetrics={true} autoOptimize={true} />
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-1b28
     </ErrorBoundary>
   );
 };
