@@ -9,12 +9,35 @@ const manifestPath = path.join(functionsDir, 'functions-manifest.json');
 function listFunctions() {
   const files = fs.readdirSync(functionsDir).filter(f => f.endsWith('.js') || f.endsWith('.ts'));
   const names = files
+<<<<<<< HEAD
+    .map(f => path.basename(f, path.extname(f)))
+    .filter(name => !name.endsWith('.d'))
+=======
     .map(f => f.replace(/\.(js|ts)$/,'').trim())
     .filter(name => !name.startsWith('_'))
+>>>>>>> origin/cursor/develop-autonomous-cloud-agents-for-automation-orchestration-7a18
     .sort();
   return names;
 }
 
+<<<<<<< HEAD
+function writeManifest(names) {
+  const data = {
+    generatedAt: new Date().toISOString(),
+    functions: names
+  };
+  fs.writeFileSync(manifestPath, JSON.stringify(data, null, 2) + '\n');
+}
+
+try {
+  const names = listFunctions();
+  writeManifest(names);
+  console.log(`Updated functions manifest with ${names.length} functions`);
+} catch (e) {
+  console.error('Failed to generate functions manifest:', e);
+  process.exit(1);
+}
+=======
 function main() {
   const names = listFunctions();
   const manifest = { generatedAt: new Date().toISOString(), functions: names };
@@ -23,3 +46,4 @@ function main() {
 }
 
 main();
+>>>>>>> origin/cursor/develop-autonomous-cloud-agents-for-automation-orchestration-7a18
