@@ -29,7 +29,7 @@ import UltraFuturisticNavigation2026 from '../components/layout/UltraFuturisticN
 import UltraFuturisticFooter2026 from '../components/layout/UltraFuturisticFooter2026';
 
 // Helper function to get service website safely
-const getServiceWebsite = (service: any) => {
+const getServiceWebsite = (service: { website?: string; link?: string; id?: string; name: string }) => {
   if (service.website) return service.website;
   if (service.link) return service.link;
   return `/services/${service.id || service.name.toLowerCase().replace(/\s+/g, '-')}`;
@@ -66,7 +66,6 @@ const HomePage: React.FC = () => {
   ];
 
   return (
-<<<<<<< HEAD
     <UltraFuturisticNeonBackground>
       <SEO 
         title="Zion Tech Group - Innovative AI, IT & Micro SAAS Solutions"
