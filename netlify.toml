@@ -189,11 +189,11 @@
 
 [[scheduled.functions]]
   name = "a11y-alt-text-runner"
-  schedule = "*/10 * * * *" # every 10 minutes
+  schedule = "*/10 * * * *"
 
 [[scheduled.functions]]
   name = "metadata-optimizer-runner"
-  schedule = "*/15 * * * *" # every 15 minutes
+  schedule = "*/15 * * * *"
 
 [[scheduled.functions]]
   name = "seo-audit-runner"
@@ -209,7 +209,7 @@
 
 [[scheduled.functions]]
   name = "deps-auto-upgrade-runner"
-  schedule = "0 3 * * *"
+  schedule = "7 */12 * * *"
 
 # New autonomous cloud scanners
 [[scheduled.functions]]
@@ -224,14 +224,13 @@
   name = "component-size-report"
   schedule = "*/5 * * * *"
 
-# Newly added intelligent automations
 [[scheduled.functions]]
   name = "license-compliance-auditor"
   schedule = "0 2 * * 1"
 
 [[scheduled.functions]]
   name = "pagespeed-insights-runner"
-  schedule = "11 */6 * * *" # every 6 hours, offset
+  schedule = "11 */6 * * *"
 
 [[scheduled.functions]]
   name = "knowledge-pack-runner"
@@ -240,6 +239,8 @@
 [[scheduled.functions]]
   name = "adaptive-orchestrator"
   schedule = "*/5 * * * *"
+<<<<<<< HEAD
+<<<<<<< HEAD
 
 [[scheduled.functions]]
   name = "site-404-map-runner"
@@ -252,32 +253,7 @@
 [[scheduled.functions]]
   name = "content-freshness-score-runner"
   schedule = "7 */12 * * *"
-
-[[scheduled.functions]]
-  name = "anchor-links-auto-fixer"
-  schedule = "*/5 * * * *"
-
-[[scheduled.functions]]
-  name = "internal-link-graph-runner"
-  schedule = "*/5 * * * *"
-
-[[scheduled.functions]]
-  name = "topic-cluster-builder-runner"
-  schedule = "13 */6 * * *"
-
-[[scheduled.functions]]
-  name = "code-smell-audit-runner"
-  schedule = "23 */6 * * *"
-
-[[scheduled.functions]]
-  name = "duplicate-media-finder-runner"
-  schedule = "0 2 * * *"
-
-# New: added autonomous validators
-[[scheduled.functions]]
-  name = "readability-audit-runner"
-  schedule = "*/20 * * * *"
-
-[[scheduled.functions]]
-  name = "internal-anchors-validator-runner"
-  schedule = "*/15 * * * *"
+=======
+>>>>>>> 8cc7475fdf (feat(automation): autonomous front/home advertisers + schedules cleanup [skip ci])
+=======
+>>>>>>> 8cc7475fdf (feat(automation): autonomous front/home advertisers + schedules cleanup [skip ci])
