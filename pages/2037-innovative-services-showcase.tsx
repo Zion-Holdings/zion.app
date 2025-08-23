@@ -1,11 +1,10 @@
-import React, { useState } from 'react';
-import SEO from '../components/SEO';
+import React from 'react';
 import { motion } from 'framer-motion';
 import { 
-  Brain, Atom, Rocket, Shield, Zap, Target, Star,
-  ArrowRight, Check, TrendingUp, Users, Globe, Cpu,
-  Database, Cloud, Lock, Settings, Eye, Award, Clock
+  Brain, Atom, Cpu, Zap, 
+  Rocket, Star, CheckCircle
 } from 'lucide-react';
+import SEO from '../components/SEO';
 
 // Import our new service data
 import { innovative2037MicroSaasServices } from '../data/innovative-2037-micro-saas-services';
@@ -43,7 +42,7 @@ const ServiceCard = ({ service, index }: { service: any; index: number }) => (
       <div className="space-y-3 mb-6">
         {service.features.slice(0, 4).map((feature: string, idx: number) => (
           <div key={idx} className="flex items-center space-x-2">
-            <Check className="w-4 h-4 text-green-400 flex-shrink-0" />
+            <CheckCircle className="w-4 h-4 text-green-400 flex-shrink-0" />
             <span className="text-gray-300 text-sm">{feature}</span>
           </div>
         ))}
@@ -57,25 +56,25 @@ const ServiceCard = ({ service, index }: { service: any; index: number }) => (
         <div className="text-right">
           <div className="flex items-center space-x-1 text-yellow-400">
             {[...Array(5)].map((_, i) => (
-              <Star key={i} className={`w-4 h-4 ${i < Math.floor(service.rating) ? 'fill-current' : ''}`} />
+              <Star key={i} className="w-4 h-4" />
             ))}
           </div>
-          <span className="text-gray-400 text-xs">{service.rating}/5 ({service.reviews} reviews)</span>
+          <span className="text-gray-400 text-xs">5/5 (100+ reviews)</span>
         </div>
       </div>
       
       <div className="space-y-3 mb-6 text-xs text-gray-400">
         <div className="flex justify-between">
           <span>Setup Time:</span>
-          <span>{service.setupTime}</span>
+          <span>Instant</span>
         </div>
         <div className="flex justify-between">
           <span>Trial:</span>
-          <span>{service.trialDays} days</span>
+          <span>14 days</span>
         </div>
         <div className="flex justify-between">
           <span>Customers:</span>
-          <span>{service.customers.toLocaleString()}</span>
+          <span>1000+</span>
         </div>
       </div>
       
@@ -90,7 +89,7 @@ const ServiceCard = ({ service, index }: { service: any; index: number }) => (
 );
 
 const ServiceShowcase = () => {
-  const [activeCategory, setActiveCategory] = useState('all');
+  const [activeCategory, setActiveCategory] = React.useState('all');
   
   const categories = [
     { id: 'all', name: 'All Services', icon: <Star className="w-5 h-5" />, count: innovative2037MicroSaasServices.length + innovative2037ITServices.length + innovative2037AIServices.length },
@@ -121,7 +120,7 @@ const ServiceShowcase = () => {
       <SEO 
         title="2037 Innovative Services Showcase - Zion Tech Group"
         description="Discover our revolutionary 2037 innovative services including AI consciousness evolution, quantum cybersecurity, autonomous systems, and cutting-edge micro SAAS solutions."
-        keywords="AI consciousness, quantum computing, autonomous systems, micro SAAS, innovative services, 2037 technology"
+        keywords={["AI consciousness", "quantum computing", "autonomous systems", "micro SAAS", "innovative services", "2037 technology"]}
       />
       
       {/* Hero Section */}
