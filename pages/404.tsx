@@ -1,16 +1,8 @@
 import React from 'react';
 import Head from 'next/head';
-
-export default function Custom404() {
-	return (
-		<div className="min-h-[60vh] flex flex-col items-center justify-center text-center p-8">
-			<Head>
-				<title>Page Not Found – Zion Tech Group</title>
-				<meta name="robots" content="noindex" />
-			</Head>
-			<h1 className="text-5xl font-bold mb-4">404</h1>
-			<p className="text-gray-300 mb-8 max-w-xl">The page you're looking for doesn't exist or has moved.</p>
-			<a href="/" className="px-6 py-3 rounded-lg bg-cyan-500 text-black font-semibold hover:bg-cyan-400 transition">Go Home</a>
-		</div>
-	);
+  return (
+    <>
+      <Head><title>404 - Zion App</title><meta name="description" content="404 page" /></Head><div className="container mx-auto px-4 py-8"><h1 className="text-3xl font-bold mb-6">404</h1><p className="text-lg mb-4">This page is under construction.</p><div className="mt-4"><a href="/" className="text-blue-600 hover:underline">;
+            ← Back to Home</a></div></div></>;
+  );
 }

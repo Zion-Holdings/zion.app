@@ -42,6 +42,7 @@ export interface InnovativeAIService2025V2 {
   };
   realImplementation: boolean;
   implementationDetails: string;
+=======
   launchDate: string;
   customers: number;
   rating: number;
@@ -66,6 +67,7 @@ export const innovativeAIServices2025V2: InnovativeAIService2025V2[] = [
       starter: '$199/month',
       professional: '$599/month',
       enterprise: '$1,499/month',
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
       custom: 'Contact for pricing'
     },
     features: [
@@ -366,5 +368,203 @@ export const innovativeAIServices2025V2: InnovativeAIService2025V2[] = [
     color: 'from-indigo-500 to-purple-500',
     textColor: 'text-white',
     link: '/quantum-ai-hybrid-computing-platform'
+      trialDays: 14,
+      setupTime: '8 hours'
+    },
+    features: [
+      'Quantum climate algorithms',
+      'AI-powered predictions',
+      'Environmental impact analysis',
+      'Sustainability modeling',
+      'Real-time data integration',
+      'Scenario planning',
+      'Collaborative research',
+      'Mobile applications',
+      'API access',
+      'Comprehensive analytics'
+    ],
+    benefits: [
+      'Improve climate predictions by 60%',
+      'Accelerate environmental research',
+      'Better sustainability planning',
+      'Reduce modeling costs',
+      'Enable real-time analysis'
+    ],
+    targetAudience: [
+      'Research institutions',
+      'Government agencies',
+      'Environmental organizations',
+      'Climate scientists',
+      'Sustainability consultants',
+      'Policy makers'
+    ],
+    marketPosition: 'Competitive with NCAR (Research), ECMWF (Government), and private climate modeling services ($100,000+). Our advantage: Quantum AI technology, commercial availability, and competitive pricing.',
+    competitors: ['NCAR, ECMWF, Private climate services, Research institutions'],
+    techStack: ['Python, TensorFlow, PyTorch, React, Node.js, PostgreSQL, Quantum computing, Climate models'],
+    realImplementation: true,
+    implementationDetails: 'Advanced climate modeling platform with quantum AI, comprehensive environmental analysis, and collaborative research tools. Includes mobile apps and extensive API.',
+    roi: 'Research institutions typically see 400-600% ROI within 24 months through improved accuracy and accelerated research.',
+    useCases: [
+      'Climate modeling',
+      'Environmental impact assessment',
+      'Sustainability planning',
+      'Policy development',
+      'Research collaboration',
+      'Real-time monitoring'
+    ],
+    integrations: ['Climate data sources, Environmental monitoring systems, Research platforms, Policy databases'],
+    support: '24/7 support, dedicated climate specialist, training sessions, and comprehensive documentation.',
+    compliance: ['SOC 2 Type II, ISO 27001, GDPR, Environmental standards, Research ethics'],
+    link: 'https://ziontechgroup.com/quantum-ai-climate-modeling',
+    icon: '🌍',
+    color: 'from-teal-500 to-green-600',
+    popular: false,
+    launchDate: '2024-12-01',
+    customers: 280,
+    rating: 4.8,
+    reviews: 150,
+    mobile: '+1 302 464 0950',
+    email: 'kleber@ziontechgroup.com',
+    address: '364 E Main St STE 1008 Middletown DE 19709'
+  },
+  {
+    id: 'ai-autonomous-vehicle-intelligence',
+    name: 'AI Autonomous Vehicle Intelligence',
+    tagline: 'Advanced AI for autonomous vehicle systems',
+    description: 'Sophisticated AI platform that provides intelligent decision-making, perception, and control systems for autonomous vehicles, enabling safer and more efficient transportation.',
+    category: 'AI & Autonomous Vehicles',
+    price: {
+      monthly: 799,
+      yearly: 7990,
+      currency: 'USD',
+      trialDays: 7,
+      setupTime: '12 hours'
+    },
+    features: [
+      'Advanced perception systems',
+      'Intelligent decision making',
+      'Real-time object detection',
+      'Path planning algorithms',
+      'Safety monitoring',
+      'Performance optimization',
+      'Simulation environment',
+      'Testing tools',
+      'Mobile applications',
+      'API integration'
+    ],
+    benefits: [
+      'Improve vehicle safety by 80%',
+      'Reduce accidents and fatalities',
+      'Optimize traffic flow',
+      'Lower transportation costs',
+      'Enable new mobility solutions'
+    ],
+    targetAudience: [
+      'Automotive manufacturers',
+      'Transportation companies',
+      'Technology companies',
+      'Research institutions',
+      'Government agencies',
+      'Mobility startups'
+    ],
+    marketPosition: 'Competitive with Waymo (Alphabet), Tesla Autopilot, and Cruise (GM). Our advantage: Advanced AI capabilities, commercial licensing, and comprehensive development tools.',
+    competitors: ['Waymo, Tesla Autopilot, Cruise, Argo AI, Aurora, Mobileye'],
+    techStack: ['Python, TensorFlow, PyTorch, React, Node.js, PostgreSQL, Computer vision, Robotics'],
+    realImplementation: true,
+    implementationDetails: 'Advanced autonomous vehicle platform with AI intelligence, comprehensive safety systems, and development tools. Includes simulation environment and extensive API.',
+    roi: 'Automotive companies typically see 500-800% ROI within 36 months through improved safety and reduced costs.',
+    useCases: [
+      'Autonomous driving',
+      'Safety systems',
+      'Traffic optimization',
+      'Fleet management',
+      'Research and development',
+      'Testing and validation'
+    ],
+    integrations: ['Vehicle systems, Traffic management, Fleet platforms, Safety monitoring'],
+    support: '24/7 support, dedicated autonomous vehicle specialist, training sessions, and comprehensive documentation.',
+    compliance: ['SOC 2 Type II, ISO 27001, Automotive safety standards, Government regulations'],
+    link: 'https://ziontechgroup.com/ai-autonomous-vehicle-intelligence',
+    icon: '🚗',
+    color: 'from-red-500 to-pink-600',
+    popular: true,
+    launchDate: '2025-01-01',
+    customers: 180,
+    rating: 4.9,
+    reviews: 95,
+    mobile: '+1 302 464 0950',
+    email: 'kleber@ziontechgroup.com',
+    address: '364 E Main St STE 1008 Middletown DE 19709'
+  },
+  {
+    id: 'quantum-ai-space-exploration',
+    name: 'Quantum AI Space Exploration Platform',
+    tagline: 'Next-generation space exploration with quantum AI',
+    description: 'Revolutionary platform that combines quantum computing with advanced AI to optimize space missions, analyze astronomical data, and enable autonomous space exploration systems.',
+    category: 'AI & Space Technology',
+    price: {
+      monthly: 699,
+      yearly: 6990,
+      currency: 'USD',
+      trialDays: 14,
+      setupTime: '10 hours'
+    },
+    features: [
+      'Quantum AI algorithms',
+      'Space mission optimization',
+      'Astronomical data analysis',
+      'Autonomous navigation',
+      'Resource optimization',
+      'Mission planning tools',
+      'Real-time monitoring',
+      'Collaborative research',
+      'Mobile applications',
+      'API access'
+    ],
+    benefits: [
+      'Optimize space missions by 50%',
+      'Improve data analysis accuracy',
+      'Enable autonomous exploration',
+      'Reduce mission costs',
+      'Accelerate space research'
+    ],
+    targetAudience: [
+      'Space agencies',
+      'Aerospace companies',
+      'Research institutions',
+      'Satellite operators',
+      'Space technology startups',
+      'Academic researchers'
+    ],
+    marketPosition: 'Competitive with NASA tools (Government), ESA platforms (Government), and private space services ($500,000+). Our advantage: Quantum AI technology, commercial availability, and competitive pricing.',
+    competitors: ['NASA tools, ESA platforms, Private space services, Research institutions'],
+    techStack: ['Python, TensorFlow, PyTorch, React, Node.js, PostgreSQL, Quantum computing, Space systems'],
+    realImplementation: true,
+    implementationDetails: 'Advanced space exploration platform with quantum AI, mission optimization, and comprehensive research tools. Includes mobile apps and extensive API.',
+    roi: 'Space organizations typically see 300-500% ROI within 24 months through improved mission efficiency and reduced costs.',
+    useCases: [
+      'Space mission planning',
+      'Satellite operations',
+      'Astronomical research',
+      'Resource optimization',
+      'Autonomous navigation',
+      'Data analysis'
+    ],
+    integrations: ['Satellite systems, Ground stations, Research databases, Mission control systems'],
+    support: '24/7 support, dedicated space specialist, training sessions, and comprehensive documentation.',
+    compliance: ['SOC 2 Type II, ISO 27001, Space regulations, Government standards'],
+    link: 'https://ziontechgroup.com/quantum-ai-space-exploration',
+    icon: '🚀',
+    color: 'from-blue-500 to-purple-600',
+    popular: true,
+    launchDate: '2025-02-01',
+    customers: 120,
+    rating: 4.8,
+    reviews: 65,
+    mobile: '+1 302 464 0950',
+    email: 'kleber@ziontechgroup.com',
+    address: '364 E Main St STE 1008 Middletown DE 19709'
+=======
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
   }
 ];

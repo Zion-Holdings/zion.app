@@ -32,6 +32,7 @@ function normalizeHref(href: string): string {
   const hasQueryOrHash = href.includes('?') || href.includes('#');
   if (hasQueryOrHash) return href;
   return href.endsWith('/') ? href : href + '/';
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
 }
 
 const navigationItems: NavigationItem[] = [
@@ -41,12 +42,14 @@ const navigationItems: NavigationItem[] = [
     icon: <Rocket className="w-5 h-5" />,
     description: 'Future-defining technology solutions',
     badge: 'New 2046',
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
     category: 'services',
     color: 'from-emerald-500 to-cyan-500',
     children: [
       { 
         name: 'All Services', 
         href: '/services', 
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
         description: 'Complete revolutionary services overview',
         icon: <Grid className="w-4 h-4" />,
         featured: true
@@ -54,6 +57,7 @@ const navigationItems: NavigationItem[] = [
       { 
         name: 'AI Consciousness Evolution 2046', 
         href: '/ai-consciousness-evolution-platform-2046', 
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
         description: 'Next-generation AI consciousness',
         icon: <Brain className="w-4 h-4" />,
         color: 'from-purple-500 to-pink-500',
@@ -62,6 +66,7 @@ const navigationItems: NavigationItem[] = [
       { 
         name: 'Quantum AI Neural Networks 2046', 
         href: '/quantum-ai-neural-network-platform-2046', 
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
         description: 'Quantum-powered AI neural networks',
         icon: <Atom className="w-4 h-4" />,
         color: 'from-blue-500 to-cyan-500',
@@ -70,6 +75,7 @@ const navigationItems: NavigationItem[] = [
       { 
         name: 'AI Autonomous Business Intelligence 2046', 
         href: '/autonomous-ai-business-intelligence-platform-2046', 
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
         description: 'AI-powered business intelligence',
         icon: <BarChart3 className="w-4 h-4" />,
         color: 'from-emerald-500 to-teal-500'
@@ -77,6 +83,7 @@ const navigationItems: NavigationItem[] = [
       { 
         name: 'Quantum Cybersecurity Intelligence 2046', 
         href: '/quantum-cybersecurity-intelligence-platform-2046', 
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
         description: 'Quantum-resistant security',
         icon: <Shield className="w-4 h-4" />,
         color: 'from-red-500 to-orange-500'
@@ -84,6 +91,7 @@ const navigationItems: NavigationItem[] = [
       { 
         name: 'Autonomous Healthcare AI 2046', 
         href: '/autonomous-healthcare-ai-platform-2046', 
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
         description: 'AI-powered healthcare',
         icon: <Heart className="w-4 h-4" />,
         color: 'from-pink-500 to-purple-500'
@@ -192,6 +200,7 @@ const navigationItems: NavigationItem[] = [
         href: '/quantum-it-service-management-platform-2046', 
         description: 'Quantum-powered IT services',
         icon: <Settings className="w-4 h-4" />
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
       }
     ]
   },
@@ -228,6 +237,7 @@ const navigationItems: NavigationItem[] = [
         href: '/autonomous-ai-business-intelligence-platform-2046', 
         description: 'Autonomous business insights',
         icon: <BarChart3 className="w-4 h-4" />
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
       }
     ]
   },
@@ -270,6 +280,7 @@ const navigationItems: NavigationItem[] = [
         icon: <Mail className="w-4 h-4" />
       }
     ]
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
   }
 ];
 
@@ -336,6 +347,7 @@ const UltraFuturisticNavigation2046: React.FC = () => {
       </div>
 
       {/* Main Navigation */}
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-20">
           {/* Logo */}
@@ -352,6 +364,7 @@ const UltraFuturisticNavigation2046: React.FC = () => {
               </div>
             </Link>
           </div>
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
 
           {/* Desktop Navigation */}
           <div className="hidden lg:flex items-center space-x-8">
@@ -419,11 +432,13 @@ const UltraFuturisticNavigation2046: React.FC = () => {
                     </motion.div>
                   )}
                 </AnimatePresence>
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
               </div>
             ))}
           </div>
 
           {/* CTA Buttons */}
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
           <div className="hidden lg:flex items-center space-x-4">
             <Link
               href="/contact"
@@ -442,6 +457,7 @@ const UltraFuturisticNavigation2046: React.FC = () => {
               {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
             </button>
           </div>
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
         </div>
       </div>
 
@@ -493,6 +509,7 @@ const UltraFuturisticNavigation2046: React.FC = () => {
                               <div className="text-sm text-gray-400">{child.description}</div>
                             </div>
                           </div>
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
                         </Link>
                       ))}
                     </div>
@@ -501,6 +518,7 @@ const UltraFuturisticNavigation2046: React.FC = () => {
               ))}
               
               <div className="pt-4 border-t border-gray-700 space-y-3">
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
                 <Link
                   href="/contact"
                   onClick={closeDropdowns}

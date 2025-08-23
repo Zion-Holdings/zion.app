@@ -118,6 +118,7 @@ const SupportPage: React.FC = () => {
     { metric: "< 4hrs", label: "Average Response Time" },
     { metric: "24/7", label: "Support Availability" },
     { metric: "98%", label: "Customer Satisfaction" }
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
   ];
 
   const contactInfo = {
@@ -130,6 +131,7 @@ const SupportPage: React.FC = () => {
 
   return (
 
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
               viewport={{ once: true }}
               className="text-center mb-16"
             >
@@ -339,6 +341,7 @@ const SupportPage: React.FC = () => {
                   <h3 className="text-lg font-semibold text-white mb-3">{faq.question}</h3>
                   <p className="text-gray-300">{faq.answer}</p>
 =======
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
                 </motion.div>
               ))}
             </div>
@@ -669,3 +672,4 @@ const SupportPage: React.FC = () => {
 };
 
 export default SupportPage;
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96

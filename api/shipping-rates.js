@@ -9,13 +9,26 @@ export default async function handler(req, res) {
   try {
     const { fromAddress, toAddress, parcel } = req.body || {};
     const apiKey = process.env.EASYPOST_API_KEY;
+    if (!apiKey) {
+      res.statusCode = 500;
+      res.json({ error: 'Missing EasyPost API key' });
+      return;
+    }
+    const authHeader =
+      'Basic ' + Buffer.from(`${apiKey}:`).toString('base64');
     const response = await fetch('https://api.easypost.com/v2/shipments', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
-        Authorization: `Bearer ${apiKey}`,
+        Authorization: authHeader,
       },
-      body: JSON.stringify({ shipment: { to_address: toAddress, from_address: fromAddress, parcel } }),
+      body: JSON.stringify({
+        shipment: {
+          to_address: toAddress,
+          from_address: fromAddress,
+          parcel,
+        },
+      }),
     });
     const data = await response.json();
     if (!response.ok) {

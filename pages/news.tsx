@@ -13,10 +13,18 @@ import {
   Newspaper, Calendar, User, Tag, ArrowRight, 
   Star, Zap, Brain, Atom, Rocket, Globe,
   Clock, TrendingUp
+>>>>>>> 17df199e451813150094c5ab1fb554b04628cb60
+=======
+  Newspaper, Calendar, User, Tag, ArrowRight, 
+  Star, Zap, Brain, Atom, Rocket, Globe,
+  Clock, TrendingUp
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
 } from 'lucide-react';
 import Link from 'next/link';
 
 const NewsPage: React.FC = () => {
+=======
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
   const featuredNews = [
     {
       title: 'Zion Tech Group Launches Revolutionary AI Consciousness Platform',
@@ -167,10 +175,13 @@ const NewsPage: React.FC = () => {
         <section className="relative overflow-hidden py-20 lg:py-32">
           <div className="absolute inset-0 bg-gradient-to-r from-purple-900/20 via-blue-900/20 to-cyan-900/20" />
           <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
+=======
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
               className="text-center"
             >
               <div className="flex items-center justify-center mb-6">
@@ -205,10 +216,12 @@ const NewsPage: React.FC = () => {
                 </motion.div>
               </div>
 =======
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
             </motion.div>
           </div>
         </section>
 
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
 =======
         {/* Featured Article */}
         {featuredArticle && (
@@ -281,10 +294,13 @@ const NewsPage: React.FC = () => {
                   </div>
                 </div>
               </motion.div>
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
             </div>
           </section>
         )}
 
+=======
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
         {/* Category Filter */}
         <section className="py-12 bg-black/50">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -464,6 +480,7 @@ const NewsPage: React.FC = () => {
                 >
                   {category.name} ({category.count})
                 </motion.button>
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
               ))}
             </div>
           </div>
@@ -471,11 +488,17 @@ const NewsPage: React.FC = () => {
 
         {/* News Grid */}
         <section className="py-20 px-4 sm:px-6 lg:px-8">
+        {/* CTA Section */}
+        <section className="py-20 relative">
+          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+=======
           <div className="max-w-7xl mx-auto">
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.6 }}
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
               className="text-center mb-16"
             >
               <h2 className="text-4xl font-bold mb-4">Latest News</h2>
@@ -696,10 +719,14 @@ const NewsPage: React.FC = () => {
               <p className="text-xl text-gray-300 mb-8">
                 For press inquiries, media interviews, or additional information, 
                 please contact our communications team.
+>>>>>>> 17df199e451813150094c5ab1fb554b04628cb60
+=======
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <a
                   href="/contact"
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
                   className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-purple-600 to-cyan-600 text-white font-semibold rounded-lg hover:from-purple-700 hover:to-cyan-700 transition-all duration-300 transform hover:scale-105"
                 >
                   Contact Media Team
@@ -710,6 +737,9 @@ const NewsPage: React.FC = () => {
                   className="inline-flex items-center px-8 py-4 border-2 border-purple-500 text-purple-400 font-semibold rounded-lg hover:bg-purple-500 hover:text-white transition-all duration-300"
                 >
                   Press Kit
+>>>>>>> 17df199e451813150094c5ab1fb554b04628cb60
+=======
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
                 </a>
               </div>
             </motion.div>
@@ -723,3 +753,4 @@ const NewsPage: React.FC = () => {
 export default NewsPage;
 export default News;
 =======
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96

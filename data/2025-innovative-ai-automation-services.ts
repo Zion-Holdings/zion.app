@@ -73,6 +73,16 @@ export const innovativeAIAutomationServices2025: InnovativeAIAutomationService[]
     setupTime: '1-2 weeks',
     category: 'Customer Service AI',
     realService: true,
+<<<<<<< HEAD
+    technology: ['GPT-4, Claude, Natural Language Processing, Machine Learning, SEO Tools, Content Management'],
+    integrations: ['WordPress, Shopify, HubSpot, Salesforce, Mailchimp, Social Media APIs, CMS platforms'],
+    useCases: ['Blog content creation, Social media marketing, Email campaigns, Product descriptions, Technical documentation'],
+    roi: 'Reduce content creation time by 80%. Increase organic traffic by 45%. Improve engagement rates by 60%.',
+    competitors: ['Jasper, Copy.ai, Writesonic, ContentBot, Rytr'],
+    marketSize: '$15B content marketing market',
+    growthRate: '28% annual growth',
+    variant: 'ai-autonomous',
+=======
     technology: ['OpenAI GPT-4, React, Node.js, Python, PostgreSQL, Redis, AWS'],
     integrations: ['Zendesk, Intercom, Salesforce, HubSpot, Slack, Microsoft Teams, WhatsApp'],
     useCases: ['Customer support automation, FAQ management, Ticket routing, Chatbot deployment, Support analytics'],
@@ -81,6 +91,7 @@ export const innovativeAIAutomationServices2025: InnovativeAIAutomationService[]
     marketSize: '$15B customer service software market',
     growthRate: '22% annual growth',
     variant: 'ai-automation',
+>>>>>>> origin/main
     contactInfo: {
       mobile: '+1 302 464 0950',
       email: 'kleber@ziontechgroup.com',
@@ -179,6 +190,16 @@ export const innovativeAIAutomationServices2025: InnovativeAIAutomationService[]
     setupTime: '1-2 weeks',
     category: 'Marketing AI',
     realService: true,
+<<<<<<< HEAD
+    technology: ['Machine Learning, Predictive Analytics, Natural Language Processing, Automation, CRM'],
+    integrations: ['Gmail, Outlook, Slack, Zoom, Calendly, Payment gateways, Social media'],
+    useCases: ['Lead management, Sales automation, Customer service, Follow-up automation, Performance tracking'],
+    roi: 'Increase sales conversion by 35%. Reduce follow-up time by 70%. Improve customer retention by 25%.',
+    competitors: ['Salesforce, HubSpot, Pipedrive, Zoho CRM, Freshworks'],
+    marketSize: '$48B CRM market',
+    growthRate: '15% annual growth',
+    variant: 'ai-autonomous',
+=======
     technology: ['React, Node.js, Python, TensorFlow, PostgreSQL, Redis, AWS, Google Analytics'],
     integrations: ['HubSpot, Salesforce, Mailchimp, Facebook Ads, Google Ads, LinkedIn, Twitter'],
     useCases: ['Email marketing automation, Social media management, Lead nurturing, Campaign optimization, Customer segmentation'],
@@ -187,6 +208,7 @@ export const innovativeAIAutomationServices2025: InnovativeAIAutomationService[]
     marketSize: '$35B marketing automation market',
     growthRate: '24% annual growth',
     variant: 'ai-marketing',
+>>>>>>> origin/main
     contactInfo: {
       mobile: '+1 302 464 0950',
       email: 'kleber@ziontechgroup.com',
@@ -232,6 +254,16 @@ export const innovativeAIAutomationServices2025: InnovativeAIAutomationService[]
     setupTime: '2-4 weeks',
     category: 'Data Analytics AI',
     realService: true,
+<<<<<<< HEAD
+    technology: ['Machine Learning, Predictive Analytics, Resource Optimization, Project Management, Automation'],
+    integrations: ['Slack, Microsoft Teams, Jira, Asana, Trello, Google Workspace, Office 365'],
+    useCases: ['Project planning, Resource management, Team collaboration, Timeline optimization, Risk management'],
+    roi: 'Reduce project delays by 40%. Improve resource utilization by 30%. Increase project success rate by 25%.',
+    competitors: ['Asana, Monday.com, ClickUp, Wrike, Basecamp'],
+    marketSize: '$5.7B project management market',
+    growthRate: '18% annual growth',
+    variant: 'ai-autonomous',
+=======
     technology: ['Python, TensorFlow, React, Node.js, PostgreSQL, Redis, AWS, Apache Spark'],
     integrations: ['Salesforce, HubSpot, Google Analytics, Facebook Ads, Shopify, QuickBooks'],
     useCases: ['Business intelligence, Performance tracking, Customer analytics, Financial reporting, Operational insights'],
@@ -240,6 +272,7 @@ export const innovativeAIAutomationServices2025: InnovativeAIAutomationService[]
     marketSize: '$30B business intelligence market',
     growthRate: '26% annual growth',
     variant: 'ai-analytics',
+>>>>>>> origin/main
     contactInfo: {
       mobile: '+1 302 464 0950',
       email: 'kleber@ziontechgroup.com',
@@ -276,11 +309,70 @@ export const innovativeAIAutomationServices2025: InnovativeAIAutomationService[]
     ],
     popular: false,
     icon: '👥',
+<<<<<<< HEAD
+    color: 'from-orange-600 via-red-600 to-pink-600',
+    textColor: 'text-orange-400',
+    link: 'https://ziontechgroup.com/smart-hr-automation-suite',
+    marketPosition: 'Comprehensive HR automation with AI-powered recruitment and employee management',
+    targetAudience: 'HR departments, Small businesses, Startups, Recruitment agencies, Enterprise organizations',
+    trialDays: 21,
+    setupTime: '3-5 days',
+    category: 'AI Automation',
+    realService: true,
+    technology: ['Machine Learning, Natural Language Processing, HR Management, Automation, Analytics'],
+    integrations: ['LinkedIn, Indeed, Workday, BambooHR, ADP, QuickBooks, Slack'],
+    useCases: ['Recruitment automation, Employee onboarding, Performance management, HR operations, Compliance tracking'],
+    roi: 'Reduce hiring time by 50%. Improve candidate quality by 40%. Reduce HR operational costs by 35%.',
+    competitors: ['BambooHR, Workday, ADP, Gusto, Zenefits'],
+    marketSize: '$30B HR technology market',
+    growthRate: '12% annual growth',
+    variant: 'ai-autonomous',
+    contactInfo: {
+      mobile: '+1 302 464 0950',
+      email: 'kleber@ziontechgroup.com',
+      address: '364 E Main St STE 1008 Middletown DE 19709',
+      website: 'https://ziontechgroup.com'
+    },
+    realImplementation: true,
+    implementationDetails: 'Production-ready HR automation suite with AI-powered recruitment, comprehensive employee management, and advanced analytics.',
+    launchDate: '2025-01-30',
+    customers: 145,
+    rating: 4.8,
+    reviews: 92
+  },
+  {
+    id: 'intelligent-financial-automation',
+    name: 'Intelligent Financial Automation',
+    tagline: 'AI-powered financial management and automation platform',
+    price: '$399',
+    period: '/month',
+    description: 'Advanced financial automation platform that uses AI to automate accounting processes, provide financial insights, and optimize cash flow management for businesses of all sizes.',
+    features: [
+      'AI-powered bookkeeping',
+      'Automated expense tracking',
+      'Financial forecasting',
+      'Cash flow optimization',
+      'Tax preparation',
+      'Invoice automation',
+      'Bank reconciliation',
+      'Financial reporting',
+      'Compliance monitoring',
+      'Multi-currency support'
+    ],
+    popular: true,
+    icon: '💰',
+    color: 'from-emerald-600 via-teal-600 to-cyan-600',
+    textColor: 'text-emerald-400',
+    link: 'https://ziontechgroup.com/intelligent-financial-automation',
+    marketPosition: 'Leading financial automation platform with AI-powered insights and compliance',
+    targetAudience: 'Small businesses, Startups, Freelancers, Accounting firms, Enterprise organizations',
+=======
     color: 'from-amber-600 to-orange-700',
     textColor: 'text-amber-400',
     link: 'https://ziontechgroup.com/ai-hr-management-system',
     marketPosition: 'Competes with Workday ($99/month), BambooHR ($6.19/month), ADP ($59/month). Our advantage: AI-first approach, better automation, and predictive analytics.',
     targetAudience: 'HR departments, Recruiting agencies, Small businesses, Enterprise companies, Non-profits',
+>>>>>>> origin/main
     trialDays: 14,
     setupTime: '1-3 weeks',
     category: 'HR AI',
@@ -292,7 +384,11 @@ export const innovativeAIAutomationServices2025: InnovativeAIAutomationService[]
     competitors: ['Workday, BambooHR, ADP, Paychex, Gusto'],
     marketSize: '$20B HR software market',
     growthRate: '20% annual growth',
+<<<<<<< HEAD
+    variant: 'ai-autonomous',
+=======
     variant: 'ai-hr',
+>>>>>>> origin/main
     contactInfo: {
       mobile: '+1 302 464 0950',
       email: 'kleber@ziontechgroup.com',

@@ -1,10 +1,13 @@
 import React, { useState } from 'react';
 import SEO from '../components/SEO';
+import Layout from '../components/layout/Layout';
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
 import { motion } from 'framer-motion';
 import { 
   Brain, Atom, Rocket, Shield, Zap, Target, Star,
   ArrowRight, Check, TrendingUp, Users, Globe, Cpu,
   Database, Cloud, Lock, Settings, Eye, Award, Clock
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
 } from 'lucide-react';
 
 // Import our new 2037 service data
@@ -20,11 +23,12 @@ const contact = {
 };
 
 const ServiceCard = ({ service, index }: { service: any; index: number }) => (
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
   <motion.div
-    initial={{ opacity: 0, y: 50 }}
+    initial={{ opacity: 0, y: 20 }}
     animate={{ opacity: 1, y: 0 }}
     transition={{ duration: 0.5, delay: index * 0.1 }}
-    className="relative group"
+    className="bg-gradient-to-br from-gray-900/50 to-gray-800/50 backdrop-blur-sm border border-gray-700/50 rounded-2xl p-6 hover:border-gray-600/50 transition-all duration-300 hover:shadow-2xl hover:shadow-cyan-500/10 group"
   >
     <div className={`absolute inset-0 bg-gradient-to-r ${service.color || 'from-gray-600 to-gray-700'} rounded-2xl blur-xl group-hover:blur-2xl transition-all duration-500 opacity-20`}></div>
     <div className={`relative bg-gradient-to-r ${service.color ? service.color.replace('from-', 'from-').replace('to-', 'to-') : 'from-gray-600 to-gray-700'} bg-opacity-10 border border-opacity-30 rounded-2xl p-8 hover:border-opacity-50 transition-all duration-300 h-full`}>
@@ -35,6 +39,13 @@ const ServiceCard = ({ service, index }: { service: any; index: number }) => (
             Popular
           </span>
         )}
+        
+        <a 
+          href={service.link} 
+          className="block w-full text-center py-3 bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-semibold rounded-lg hover:from-cyan-600 hover:to-blue-700 transition-all duration-300 transform hover:scale-105"
+        >
+          Learn More
+        </a>
       </div>
       
       <h3 className="text-2xl font-bold text-white mb-3">{service.name}</h3>
@@ -46,124 +57,55 @@ const ServiceCard = ({ service, index }: { service: any; index: number }) => (
             <Check className="w-4 h-4 text-green-400 flex-shrink-0" />
             <span className="text-gray-300 text-sm">{feature}</span>
           </div>
-        ))}
-      </div>
-      
-      <div className="flex items-center justify-between mb-6">
-        <div>
-          <span className="text-3xl font-bold text-white">{service.price}</span>
-          <span className="text-gray-400 text-sm">{service.period}</span>
-        </div>
-        <div className="text-right">
-          <div className="flex items-center space-x-1 text-yellow-400">
-            {[...Array(5)].map((_, i) => (
-              <Star key={i} className={`w-4 h-4 ${i < Math.floor(service.rating) ? 'fill-current' : ''}`} />
-            ))}
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0, x: 20 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8 }}
+          className="bg-gradient-to-br from-purple-500/10 to-pink-500/10 border border-purple-500/20 rounded-2xl p-8"
+        >
+          <h3 className="text-2xl font-bold text-white mb-4">Contact Information</h3>
+          <div className="space-y-4 text-gray-300">
+            <div className="flex items-center space-x-3">
+              <div className="w-5 h-5 bg-gradient-to-r from-cyan-400 to-blue-500 rounded-full"></div>
+              <span>{contact.mobile}</span>
+            </div>
+            <div className="flex items-center space-x-3">
+              <div className="w-5 h-5 bg-gradient-to-r from-purple-400 to-pink-500 rounded-full"></div>
+              <span>{contact.email}</span>
+            </div>
+            <div className="flex items-center space-x-3">
+              <div className="w-5 h-5 bg-gradient-to-r from-green-400 to-emerald-500 rounded-full"></div>
+              <span>{contact.address}</span>
+            </div>
           </div>
-          <span className="text-gray-400 text-xs">{service.rating}/5 ({service.reviews} reviews)</span>
-        </div>
+        </motion.div>
       </div>
-      
-      <div className="space-y-3 mb-6 text-xs text-gray-400">
-        <div className="flex justify-between">
-          <span>Setup Time:</span>
-          <span>{service.setupTime || 'N/A'}</span>
-        </div>
-        <div className="flex justify-between">
-          <span>Trial:</span>
-          <span>{service.trialDays || 0} days</span>
-        </div>
-        <div className="flex justify-between">
-          <span>Customers:</span>
-          <span>{service.customers ? service.customers.toLocaleString() : '0'}</span>
-        </div>
-      </div>
-      
-      <a 
-        href={service.link} 
-        className="block w-full text-center py-3 bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-semibold rounded-lg hover:from-cyan-600 hover:to-blue-700 transition-all duration-300 transform hover:scale-105"
+
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8 }}
+        className="text-center"
       >
-        Learn More
-      </a>
+        <a
+          href={`mailto:${contact.email}?subject=2037 Services Consultation`}
+          className="inline-flex items-center space-x-2 bg-gradient-to-r from-cyan-500 to-purple-600 text-white px-8 py-4 rounded-lg hover:from-cyan-600 hover:to-purple-700 transition-all duration-300 font-semibold text-lg transform hover:scale-105"
+        >
+          <span>Start Your Transformation</span>
+          <ArrowRight className="w-5 h-5" />
+        </a>
+      </motion.div>
     </div>
-  </motion.div>
+  </section>
 );
 
-const ServiceShowcase = () => {
-  const [activeCategory, setActiveCategory] = useState('all');
-  
-  return (
-    <motion.div
-      initial={{ opacity: 0, y: 50 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.5, delay: index * 0.1 }}
-      className="relative group"
-    >
-      <div className={`absolute inset-0 bg-gradient-to-r ${colorClass} rounded-2xl blur-xl group-hover:blur-2xl transition-all duration-500 opacity-20`}></div>
-      <div className={`relative bg-gradient-to-r ${colorClass} bg-opacity-10 border border-opacity-30 rounded-2xl p-8 hover:border-opacity-50 transition-all duration-300 h-full`}>
-        <div className="flex items-start justify-between mb-6">
-          <div className="text-4xl">
-            <IconComponent className="w-12 h-12 text-white" />
-          </div>
-          {service.rating >= 4.8 && (
-            <span className="px-3 py-1 bg-gradient-to-r from-yellow-500 to-orange-500 text-white text-xs font-semibold rounded-full">
-              Top Rated
-            </span>
-          )}
-        </div>
-        
-        <h3 className="text-2xl font-bold text-white mb-3">{service.name}</h3>
-        <p className="text-gray-300 mb-6 text-sm leading-relaxed">{service.description}</p>
-        
-        <div className="space-y-3 mb-6">
-          {service.features.slice(0, 4).map((feature: string, idx: number) => (
-            <div key={idx} className="flex items-center space-x-2">
-              <Check className="w-4 h-4 text-green-400 flex-shrink-0" />
-              <span className="text-gray-300 text-sm">{feature}</span>
-            </div>
-          ))}
-        </div>
-        
-        <div className="flex items-center justify-between mb-6">
-          <div>
-            <span className="text-3xl font-bold text-white">{service.pricing.starter}</span>
-            <span className="text-gray-400 text-sm">/month</span>
-          </div>
-          <div className="text-right">
-            <div className="flex items-center space-x-1 text-yellow-400">
-              {[...Array(5)].map((_, i) => (
-                <Star key={i} className={`w-4 h-4 ${i < Math.floor(service.rating) ? 'fill-current' : ''}`} />
-              ))}
-            </div>
-            <span className="text-gray-400 text-xs">{service.rating}/5</span>
-          </div>
-        </div>
-        
-        <div className="space-y-3 mb-6 text-xs text-gray-400">
-          <div className="flex justify-between">
-            <span>Category:</span>
-            <span>{service.category}</span>
-          </div>
-          <div className="flex justify-between">
-            <span>Launch:</span>
-            <span>{service.launchDate}</span>
-          </div>
-          <div className="flex justify-between">
-            <span>Market Price:</span>
-            <span>{service.marketPrice}</span>
-          </div>
-        </div>
-        
-        <a 
-          href={service.link} 
-          className="block w-full text-center py-3 bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-semibold rounded-lg hover:from-cyan-600 hover:to-blue-700 transition-all duration-300 transform hover:scale-105"
-        >
-          Learn More
-        </a>
-      </div>
-    </motion.div>
-  );
-};
+const ServicesShowcase2037: React.FC = () => {
+  const [selectedCategory, setSelectedCategory] = useState('all');
+  const [searchTerm, setSearchTerm] = useState('');
+  const [viewMode, setViewMode] = useState<'grid' | 'list'>('grid');
 
 const ServicesShowcase2037: React.FC = () => {
   const [selectedCategory, setSelectedCategory] = useState('all');
@@ -237,15 +179,49 @@ const ServicesShowcase2037: React.FC = () => {
       {/* Services Section */}
       <section id="services" className="py-20 px-4 bg-black relative">
         <div className="max-w-7xl mx-auto">
-          {/* Header */}
+          <div className="flex flex-wrap justify-center gap-4">
+            {categories.map((category) => (
+              <button
+                key={category.id}
+                onClick={() => setActiveCategory(category.id)}
+                className={`flex items-center space-x-2 px-6 py-3 rounded-lg font-medium transition-all duration-300 ${
+                  activeCategory === category.id
+                    ? 'bg-gradient-to-r from-cyan-500 to-purple-600 text-white shadow-lg'
+                    : 'bg-white/5 border border-white/10 text-gray-300 hover:bg-white/10 hover:border-cyan-400/30'
+                }`}
+              >
+                {category.icon}
+                <span>{category.name}</span>
+                <span className="text-xs bg-white/20 px-2 py-1 rounded-full">{category.count}</span>
+              </button>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Services Grid */}
+      <section className="py-20 px-4">
+        <div className="max-w-7xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {filteredServices.map((service, index) => (
+              <ServiceCard key={service.id} service={service} index={index} />
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Impact & Results */}
+      <section className="py-20 px-4 bg-black/20">
+        <div className="max-w-6xl mx-auto text-center">
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="text-center mb-16"
+            viewport={{ once: true }}
+            className="mb-16"
           >
-            <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-cyan-400 to-purple-500 bg-clip-text text-transparent">
-              Revolutionary 2037 Services
+            <h2 className="text-4xl md:text-5xl font-bold mb-8 bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 bg-clip-text text-transparent">
+              Impact & Results
             </h2>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto">
               Discover our cutting-edge portfolio featuring {all2037Services.length} innovative services across AI governance, quantum security, edge computing, and specialized micro SAAS solutions
@@ -394,31 +370,39 @@ const ServicesShowcase2037: React.FC = () => {
         </div>
       </section>
 
-      {/* Contact CTA */}
-      <section className="py-20 px-4">
-        <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-4xl md:text-5xl font-bold mb-8 bg-gradient-to-r from-cyan-400 to-purple-600 bg-clip-text text-transparent">
-            Ready to Transform Your Business?
-          </h2>
-          <p className="text-xl text-gray-300 mb-12 max-w-2xl mx-auto">
-            Join the future of technology with Zion Tech Group. Let's discuss how our innovative 2037 services can drive your success.
-          </p>
-          
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
-            <div className="text-center">
-              <div className="text-3xl mb-2">📞</div>
-              <div className="font-semibold text-white mb-2">Call Us</div>
-              <a href={`tel:${contactInfo.mobile}`} className="text-cyan-400 hover:text-cyan-300 transition-colors">
-                {contactInfo.mobile}
-              </a>
+          {/* Filters and Search */}
+          <div className="mb-8 space-y-4">
+            {/* Search Bar */}
+            <div className="relative max-w-md mx-auto">
+              <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
+              <input
+                type="text"
+                placeholder="Search services..."
+                value={searchTerm}
+                onChange={(e) => setSearchTerm(e.target.value)}
+                className="w-full pl-10 pr-4 py-3 bg-gray-800/50 border border-gray-700 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-cyan-500 focus:ring-1 focus:ring-cyan-500"
+              />
             </div>
-            
-            <div className="text-center">
-              <div className="text-3xl mb-2">✉️</div>
-              <div className="font-semibold text-white mb-2">Email Us</div>
-              <a href={`mailto:${contactInfo.email}`} className="text-cyan-400 hover:text-cyan-300 transition-colors">
-                {contactInfo.email}
-              </a>
+
+            {/* Category Filters */}
+            <div className="flex flex-wrap justify-center gap-3">
+              {categories.map((category) => (
+                <button
+                  key={category.id}
+                  onClick={() => setSelectedCategory(category.id)}
+                  className={`flex items-center space-x-2 px-4 py-2 rounded-lg border transition-all duration-300 ${
+                    selectedCategory === category.id
+                      ? `bg-gradient-to-r ${category.color} text-white border-transparent`
+                      : 'bg-gray-800/50 text-gray-300 border-gray-700 hover:border-gray-600'
+                  }`}
+                >
+                  {category.icon}
+                  <span>{category.name}</span>
+                  <span className="bg-white/20 px-2 py-1 rounded-full text-xs">
+                    {category.count}
+                  </span>
+                </button>
+              ))}
             </div>
             
             <div className="text-center">
@@ -436,9 +420,21 @@ const ServicesShowcase2037: React.FC = () => {
               View All Services
             </a>
           </div>
+
+          {filteredServices.length === 0 && (
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              className="text-center py-20"
+            >
+              <div className="text-gray-400 text-xl mb-4">No services found</div>
+              <p className="text-gray-500">Try adjusting your search or filter criteria</p>
+            </motion.div>
+          )}
         </div>
       </section>
     </div>
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
   );
 };
 

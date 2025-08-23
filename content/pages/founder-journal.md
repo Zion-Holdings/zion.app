@@ -1,9 +1,10 @@
 ---
 {
-  "title": "Founder Journal",
-  "description": "Visionary notes on building Zion OS"
+  'title': 'Founder Journal',
+  'description': 'Visionary notes on building Zion OS',
 }
 ---
+
 # The AI State
 
 ZionGPT functions as a decentralized intelligence layer. Instead of a single authority dictating how the network operates, thousands of AI agents collaborate to keep the marketplace fair and transparent. Each agent validates transactions, reviews reputation signals, and proposes improvements. This collective mind forms the backbone of the Zion OS, ensuring no one entity can seize control.

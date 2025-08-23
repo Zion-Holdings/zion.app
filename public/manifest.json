@@ -1,155 +1,128 @@
 {
-  "name": "Zion Tech Group - Future Technology Solutions",
+  "name": "Zion Tech Group - Revolutionary 2044 Technology Solutions",
   "short_name": "Zion Tech",
-  "description": "Pioneering the future of technology with innovative AI, quantum computing, and autonomous solutions that drive business transformation",
+  "description": "Pioneering the future of technology with revolutionary AI consciousness, quantum computing, and autonomous solutions",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#000000",
-  "theme_color": "#00d4ff",
+  "theme_color": "#06b6d4",
   "orientation": "portrait-primary",
   "scope": "/",
-  "lang": "en",
+  "lang": "en-US",
   "categories": ["business", "productivity", "technology"],
   "icons": [
     {
-      "src": "/favicon-16x16.png",
-      "sizes": "16x16",
-      "type": "image/png",
-      "purpose": "maskable any"
-    },
-    {
-      "src": "/favicon-32x32.png",
-      "sizes": "32x32",
-      "type": "image/png",
-      "purpose": "maskable any"
-    },
-    {
-      "src": "/apple-touch-icon.png",
-      "sizes": "180x180",
-      "type": "image/png",
-      "purpose": "any maskable"
-    },
-    {
-      "src": "/logo.png",
+      "src": "/logos/zion-logo.png",
       "sizes": "192x192",
       "type": "image/png",
-      "purpose": "any maskable"
+      "purpose": "maskable"
     },
     {
-      "src": "/logo.png",
+      "src": "/logos/zion-logo.png",
       "sizes": "512x512",
       "type": "image/png",
-      "purpose": "any maskable"
+      "purpose": "maskable any"
+    },
+    {
+      "src": "/icons/icon-96x96.png",
+      "sizes": "96x96",
+      "type": "image/png",
+      "purpose": "maskable any"
+    },
+    {
+      "src": "/icons/icon-128x128.png",
+      "sizes": "128x128",
+      "type": "image/png",
+      "purpose": "maskable any"
+    },
+    {
+      "src": "/icons/icon-144x144.png",
+      "sizes": "144x144",
+      "type": "image/png",
+      "purpose": "maskable any"
+    },
+    {
+      "src": "/icons/icon-152x152.png",
+      "sizes": "152x152",
+      "type": "image/png",
+      "purpose": "maskable any"
+    },
+    {
+      "src": "/icons/icon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable any"
+    },
+    {
+      "src": "/icons/icon-384x384.png",
+      "sizes": "384x384",
+      "type": "image/png",
+      "purpose": "maskable any"
+    },
+    {
+      "src": "/icons/icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable any"
     }
   ],
   "shortcuts": [
     {
       "name": "Services",
       "short_name": "Services",
-      "description": "View our technology services",
+      "description": "Explore our revolutionary technology services",
       "url": "/services",
-      "icons": [
-        {
-          "src": "/favicon-32x32.png",
-          "sizes": "32x32"
-        }
-      ]
-    },
-    {
-      "name": "Pricing",
-      "short_name": "Pricing",
-      "description": "View service pricing",
-      "url": "/pricing",
-      "icons": [
-        {
-          "src": "/favicon-32x32.png",
-          "sizes": "32x32"
-        }
-      ]
-    },
-    {
-      "name": "Contact",
-      "short_name": "Contact",
-      "description": "Contact our team",
-      "url": "/contact",
       "icons": [
         {
           "src": "/icon-96x96.png",
           "sizes": "96x96"
         }
       ]
+    },
+    {
+      "name": "Find Talent",
+      "short_name": "Talent",
+      "description": "Browse technical talent",
+      "url": "/talent",
+      "icons": [
+        {
+          "src": "/icon-96x96.png",
+          "sizes": "96x96"
+        }
+      ]
+    },
+    {
+      "name": "Contact",
+      "short_name": "Contact",
+      "description": "Get in touch with our team",
+      "url": "/contact",
+      "icons": [
+        {
+          "src": "/icons/dashboard-shortcut.png",
+          "sizes": "96x96",
+          "type": "image/png"
+        }
+      ]
     }
   ],
   "screenshots": [
     {
-      "src": "/screenshots/desktop.png",
+      "src": "/screenshots/desktop-home.png",
       "sizes": "1280x720",
       "type": "image/png",
-      "form_factor": "wide",
-      "label": "Zion Tech Group Homepage"
+      "form_factor": "wide"
     },
     {
-      "src": "/screenshots/mobile.png",
+      "src": "/screenshots/mobile-home.png",
       "sizes": "390x844",
       "type": "image/png",
       "form_factor": "narrow",
-      "label": "Zion Tech Group Mobile View"
+      "label": "Mobile - AI & Quantum Services"
     }
   ],
-  "file_handlers": [
-    {
-      "action": "/upload",
-      "accept": {
-        "image/*": [".jpg", ".jpeg", ".png", ".webp", ".gif"]
-      }
-    }
-  ],
-  "protocol_handlers": [
-    {
-      "protocol": "mailto",
-      "url": "/contact?email=%s"
-    },
-    {
-      "protocol": "tel",
-      "url": "/contact?phone=%s"
-    }
-  ],
-  "share_target": {
-    "action": "/share",
-    "method": "POST",
-    "enctype": "multipart/form-data",
-    "params": {
-      "title": "title",
-      "text": "text",
-      "url": "url",
-      "files": [
-        {
-          "name": "files",
-          "accept": ["image/*", "text/*"]
-        }
-      ]
-    }
-  },
-  "background": {
-    "service_worker": "/sw.js"
-  },
-  "permissions": [
-    "notifications",
-    "background-sync",
-    "storage"
-  ],
-  "features": [
-    "Cross Platform",
-    "fast",
-    "simple",
-    "AI-Powered",
-    "Quantum Computing",
-    "Micro SAAS",
-    "Enterprise Solutions"
-  ],
-  "developer": {
-    "name": "Zion Tech Group",
-    "url": "https://ziontechgroup.com"
-  },
-  "version": "1.0.0"
+  "related_applications": [],
+  "prefer_related_applications": false,
+  "edge_side_panel": {
+    "preferred_width": 400
+  }
 }

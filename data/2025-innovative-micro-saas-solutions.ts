@@ -49,6 +49,7 @@ const contact = {
 };
 
 export const innovativeMicroSaasSolutions: InnovativeMicroSaasSolution[] = [
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
   {
     id: 'ai-social-media-scheduler',
     name: 'AI-Powered Social Media Scheduler',
@@ -343,5 +344,6 @@ export const innovativeMicroSaasSolutions: InnovativeMicroSaasSolution[] = [
     customers: 567,
     rating: 4.7,
     reviews: 345
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
   }
 ];

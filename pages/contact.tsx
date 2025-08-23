@@ -1,3 +1,4 @@
+=======
 import React from 'react';
 import Layout from '../components/layout/Layout';
 import { Phone, Mail, MapPin, Clock, MessageSquare, Send, Star, Award, Zap, Users } from 'lucide-react';
@@ -72,6 +73,7 @@ const ContactPage: React.FC = () => {
                 Ready to transform your business with revolutionary technology? 
                 Get in touch with our expert team today.
               </p>
+=======
             </div>
           </div>
         </section>
@@ -217,61 +219,67 @@ const ContactPage: React.FC = () => {
               </p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              <div className="text-center">
-                <div className="p-4 bg-green-500/20 rounded-full w-20 h-20 mx-auto mb-6 flex items-center justify-center">
-                  <Star className="h-10 w-10 text-green-400" />
+            {/* FAQ Section */}
+            <section className="mb-20">
+              <h2 className="text-3xl font-bold mb-8 text-center text-white">Frequently Asked Questions</h2>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div className="bg-white/10 backdrop-blur-xl rounded-xl p-6 border border-white/20">
+                  <h3 className="text-lg font-semibold text-cyan-400 mb-3">How quickly can you start a project?</h3>
+                  <p className="text-white/80 text-sm">
+                    We can typically begin small projects within 2-4 weeks. For larger enterprise implementations, 
+                    we usually start within 6-8 weeks after initial consultation and planning.
+                  </p>
                 </div>
-                <h3 className="text-xl font-bold text-white mb-3">Expert Team</h3>
-                <p className="text-gray-300">
-                  Specialists in AI consciousness, quantum computing, and space technology
-                </p>
-              </div>
-              <div className="text-center">
-                <div className="p-4 bg-green-500/20 rounded-full w-20 h-20 mx-auto mb-6 flex items-center justify-center">
-                  <Zap className="h-10 w-10 text-green-400" />
+                
+                <div className="bg-white/10 backdrop-blur-xl rounded-xl p-6 border border-white/20">
+                  <h3 className="text-lg font-semibold text-fuchsia-400 mb-3">What industries do you specialize in?</h3>
+                  <p className="text-white/80 text-sm">
+                    We work across multiple industries including manufacturing, healthcare, finance, retail, 
+                    and technology. Our AI solutions are adaptable to any business domain.
+                  </p>
                 </div>
-                <h3 className="text-xl font-bold text-white mb-3">Innovation First</h3>
-                <p className="text-gray-300">
-                  Cutting-edge solutions that push the boundaries of what's possible
-                </p>
-              </div>
-              <div className="text-center">
-                <div className="p-4 bg-green-500/20 rounded-full w-20 h-20 mx-auto mb-6 flex items-center justify-center">
-                  <Award className="h-10 w-10 text-green-400" />
+                
+                <div className="bg-white/10 backdrop-blur-xl rounded-xl p-6 border border-white/20">
+                  <h3 className="text-lg font-semibold text-green-400 mb-3">Do you provide ongoing support?</h3>
+                  <p className="text-white/80 text-sm">
+                    Yes, we offer comprehensive support packages including 24/7 monitoring, 
+                    regular updates, performance optimization, and technical support.
+                  </p>
+                </div>
+                
+                <div className="bg-white/10 backdrop-blur-xl rounded-xl p-6 border border-white/20">
+                  <h3 className="text-lg font-semibold text-blue-400 mb-3">Can you work with existing systems?</h3>
+                  <p className="text-white/80 text-sm">
+                    Absolutely! We specialize in integrating AI solutions with existing infrastructure. 
+                    We'll assess your current systems and design solutions that work seamlessly.
+                  </p>
                 </div>
                 <h3 className="text-xl font-bold text-white mb-3">Proven Results</h3>
                 <p className="text-gray-300">
                   Successful implementations across industries worldwide
                 </p>
               </div>
-            </div>
-          </div>
-        </section>
+            </section>
 
-        {/* CTA Section */}
-        <section className="py-20 px-4 sm:px-6 lg:px-8">
-          <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
-              Ready to Get Started?
-            </h2>
-            <p className="text-xl text-gray-300 mb-8">
-              Join the technology revolution and transform your business with 
-              cutting-edge AI, quantum computing, and space technology solutions.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="bg-green-600 hover:bg-green-700 text-white px-8 py-4 rounded-lg font-semibold text-lg transition-colors">
-                Start Your Project
-              </button>
-              <button className="border border-green-400 text-green-400 hover:bg-green-400 hover:text-white px-8 py-4 rounded-lg font-semibold text-lg transition-colors">
-                Schedule Consultation
-              </button>
-            </div>
+            {/* Call to Action */}
+            <section className="text-center">
+              <div className="bg-gradient-to-r from-cyan-500/20 via-fuchsia-500/20 to-purple-500/20 rounded-3xl p-12 border border-white/20">
+                <h2 className="text-3xl font-bold text-white mb-6">Ready to Get Started?</h2>
+                <p className="text-xl text-white/80 mb-8 max-w-3xl mx-auto">
+                  Let's discuss how our AI automation solutions can transform your business and drive innovation.
+                </p>
+                <div className="flex flex-wrap justify-center gap-6">
+                  <a href="#contact-form" className="px-8 py-4 bg-gradient-to-r from-cyan-400 to-fuchsia-400 hover:from-cyan-500 hover:to-fuchsia-500 text-white font-bold rounded-xl transition-all duration-300 transform hover:scale-105">
+                    Start Your Project
+                  </a>
+                  <a href="/case-studies" className="px-8 py-4 bg-white/10 hover:bg-white/20 border-2 border-white/20 hover:border-cyan-400/50 text-white font-bold rounded-xl transition-all duration-300">
+                    View Case Studies
+                  </a>
+                </div>
+              </div>
+            </section>
           </div>
-        </section>
+        </main>
       </div>
     </Layout>
   );
-};
-
-export default ContactPage;

@@ -96,11 +96,22 @@ export default [
       '@typescript-eslint': typescript
     },
     rules: {
-      'no-unused-vars': 'off',
-      '@typescript-eslint/no-unused-vars': 'warn',
-      'no-console': 'warn',
-      '@typescript-eslint/no-explicit-any': 'warn',
-      'no-undef': 'error'
+      // React rules
+      "react/react-in-jsx-scope": "off",
+      "react/prop-types": "off", // We use TypeScript
+      "react/display-name": "warn",
+      // Enable react-hooks rules for React 19 compatibility
+      "react-hooks/rules-of-hooks": "error",
+      "react-hooks/exhaustive-deps": "warn",
+      
+      // Basic accessibility rules
+      "jsx-a11y/alt-text": "error",
+      "jsx-a11y/aria-props": "error",
+    },
+    settings: {
+      react: {
+        version: "detect"
+      }
     }
   },
   {

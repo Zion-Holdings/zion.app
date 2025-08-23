@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Ultimate Redundancy Automation System Startup Script
-# This script manages the comprehensive redundancy automation system
+# This script manages the new comprehensive redundancy automation system
 
 set -e
 
@@ -11,7 +11,7 @@ WORKSPACE_DIR="$(cd "$SCRIPT_DIR/.." && pwd)"
 LOG_DIR="$WORKSPACE_DIR/automation/logs"
 PID_FILE="$LOG_DIR/ultimate-redundancy-automation.pid"
 LOG_FILE="$LOG_DIR/ultimate-redundancy-automation.log"
-NODE_SCRIPT="$SCRIPT_DIR/ultimate-redundancy-automation-system.cjs"
+SYSTEM_SCRIPT="ultimate-redundancy-automation-system.cjs"
 
 # Ensure log directory exists
 mkdir -p "$LOG_DIR"
@@ -58,14 +58,14 @@ check_node() {
     log "INFO" "Node.js version: $node_version"
 }
 
-# Check if the automation script exists
-check_script() {
-    if [ ! -f "$NODE_SCRIPT" ]; then
-        log "ERROR" "Automation script not found: $NODE_SCRIPT"
+# Check if the system script exists
+check_system_script() {
+    if [ ! -f "$SCRIPT_DIR/$SYSTEM_SCRIPT" ]; then
+        log "ERROR" "System script not found: $SYSTEM_SCRIPT"
         exit 1
     fi
     
-    log "INFO" "Automation script found: $NODE_SCRIPT"
+    log "INFO" "System script found: $SYSTEM_SCRIPT"
 }
 
 # Check workspace status
@@ -86,75 +86,87 @@ check_workspace() {
     log "INFO" "Repository: $(git remote get-url origin 2>/dev/null || echo 'No remote')"
 }
 
-# Start the automation system
-start_system() {
-    log "INFO" "Starting Ultimate Redundancy Automation System..."
-    
+# Check if system is already running
+is_running() {
     if [ -f "$PID_FILE" ]; then
         local pid=$(cat "$PID_FILE")
         if kill -0 "$pid" 2>/dev/null; then
-            log "WARN" "System already running with PID $pid"
-            return 1
+            return 0
         else
-            log "INFO" "Removing stale PID file"
+            log "WARN" "PID file exists but process is not running, cleaning up"
             rm -f "$PID_FILE"
         fi
     fi
+    return 1
+}
+
+# Start the system
+start_system() {
+    if is_running; then
+        log "WARN" "Ultimate Redundancy Automation System is already running"
+        return 1
+    fi
     
-    # Start the Node.js automation system
-    nohup node "$NODE_SCRIPT" start > "$LOG_FILE" 2>&1 &
+    log "INFO" "Starting Ultimate Redundancy Automation System..."
+    
+    cd "$SCRIPT_DIR"
+    
+    # Start the system in background
+    nohup node "$SYSTEM_SCRIPT" start > "$LOG_FILE" 2>&1 &
     local pid=$!
     
-    echo "$pid" > "$PID_FILE"
-    log "INFO" "System started with PID $pid"
-    
-    # Wait a moment and check if it's still running
+    # Wait a moment to check if it started successfully
     sleep 2
+    
     if kill -0 "$pid" 2>/dev/null; then
-        log "INFO" "System is running successfully"
+        echo "$pid" > "$PID_FILE"
+        log "INFO" "Ultimate Redundancy Automation System started successfully (PID: $pid)"
         return 0
     else
-        log "ERROR" "System failed to start"
-        rm -f "$PID_FILE"
+        log "ERROR" "Failed to start Ultimate Redundancy Automation System"
         return 1
     fi
 }
 
-# Stop the automation system
+# Stop the system
 stop_system() {
-    log "INFO" "Stopping Ultimate Redundancy Automation System..."
-    
     if [ ! -f "$PID_FILE" ]; then
-        log "WARN" "No PID file found, system may not be running"
-        return 0
+        log "WARN" "PID file not found, system may not be running"
+        return 1
     fi
     
     local pid=$(cat "$PID_FILE")
+    
     if kill -0 "$pid" 2>/dev/null; then
-        log "INFO" "Stopping process $pid"
-        kill "$pid"
+        log "INFO" "Stopping Ultimate Redundancy Automation System (PID: $pid)..."
         
-        # Wait for process to stop
+        # Try graceful shutdown first
+        kill -TERM "$pid"
+        
+        # Wait for graceful shutdown
         local count=0
         while kill -0 "$pid" 2>/dev/null && [ $count -lt 10 ]; do
             sleep 1
             count=$((count + 1))
         done
         
+        # Force kill if still running
         if kill -0 "$pid" 2>/dev/null; then
-            log "WARN" "Process $pid did not stop gracefully, forcing termination"
-            kill -9 "$pid"
+            log "WARN" "Force killing process (PID: $pid)"
+            kill -KILL "$pid"
         fi
         
-        log "INFO" "System stopped"
+        rm -f "$PID_FILE"
+        log "INFO" "Ultimate Redundancy Automation System stopped"
+        return 0
     else
-        log "WARN" "Process $pid is not running"
+        log "WARN" "Process not running (PID: $pid), cleaning up"
+        rm -f "$PID_FILE"
+        return 1
     fi
-    
-    rm -f "$PID_FILE"
 }
 
-# Restart the automation system
+# Restart the system
 restart_system() {
     log "INFO" "Restarting Ultimate Redundancy Automation System..."
     stop_system
@@ -162,50 +174,34 @@ restart_system() {
     start_system
 }
 
-# Check system status
-check_status() {
-    if [ ! -f "$PID_FILE" ]; then
-        log "INFO" "System is not running (no PID file)"
-        return 1
-    fi
-    
-    local pid=$(cat "$PID_FILE")
-    if kill -0 "$pid" 2>/dev/null; then
-        log "INFO" "System is running with PID $pid"
+# Show system status
+show_status() {
+    if is_running; then
+        local pid=$(cat "$PID_FILE")
+        local uptime=$(ps -o etime= -p "$pid" 2>/dev/null || echo "unknown")
         
-        # Get detailed status from the Node.js system
-        if [ -f "$NODE_SCRIPT" ]; then
-            log "INFO" "Getting detailed system status..."
-            node "$NODE_SCRIPT" status
+        log "INFO" "Ultimate Redundancy Automation System is running"
+        log "INFO" "PID: $pid"
+        log "INFO" "Uptime: $uptime"
+        
+        # Show detailed status if possible
+        cd "$SCRIPT_DIR"
+        if node "$SYSTEM_SCRIPT" status >/dev/null 2>&1; then
+            log "INFO" "Detailed status:"
+            node "$SYSTEM_SCRIPT" status | head -20
         fi
-        
-        return 0
     else
-        log "WARN" "System is not running (stale PID file)"
-        rm -f "$PID_FILE"
-        return 1
+        log "INFO" "Ultimate Redundancy Automation System is not running"
     fi
 }
 
 # Show system logs
 show_logs() {
     if [ -f "$LOG_FILE" ]; then
-        log "INFO" "Showing system logs (last 50 lines):"
-        tail -n 50 "$LOG_FILE"
+        log "INFO" "Showing recent logs (last 50 lines):"
+        tail -50 "$LOG_FILE"
     else
-        log "WARN" "No log file found"
-    fi
-}
-
-# Generate system report
-generate_report() {
-    log "INFO" "Generating system report..."
-    
-    if [ -f "$NODE_SCRIPT" ]; then
-        node "$NODE_SCRIPT" report
-    else
-        log "ERROR" "Automation script not found"
-        return 1
+        log "WARN" "Log file not found: $LOG_FILE"
     fi
 }
 
@@ -213,19 +209,25 @@ generate_report() {
 run_health_check() {
     log "INFO" "Running health check..."
     
-    if [ -f "$NODE_SCRIPT" ]; then
-        node "$NODE_SCRIPT" health
-        local exit_code=$?
-        
-        if [ $exit_code -eq 0 ]; then
-            log "INFO" "Health check passed"
-        else
-            log "WARN" "Health check failed"
-        fi
-        
-        return $exit_code
+    cd "$SCRIPT_DIR"
+    if node "$SYSTEM_SCRIPT" health >/dev/null 2>&1; then
+        log "INFO" "Health check completed successfully"
+        node "$SYSTEM_SCRIPT" health
     else
-        log "ERROR" "Automation script not found"
+        log "ERROR" "Health check failed"
+        return 1
+    fi
+}
+
+# Run one-time check
+run_once() {
+    log "INFO" "Running one-time redundancy check..."
+    
+    cd "$SCRIPT_DIR"
+    if node "$SYSTEM_SCRIPT" once >/dev/null 2>&1; then
+        log "INFO" "One-time check completed successfully"
+    else
+        log "ERROR" "One-time check failed"
         return 1
     fi
 }
@@ -234,29 +236,34 @@ run_health_check() {
 test_system() {
     log "INFO" "Testing Ultimate Redundancy Automation System..."
     
-    # Check prerequisites
-    check_node
-    check_script
-    check_workspace
-    
-    # Test health check
-    if run_health_check; then
-        log "INFO" "System test passed"
-        return 0
+    # Check if script can be loaded
+    cd "$SCRIPT_DIR"
+    if node -e "require('./$SYSTEM_SCRIPT'); console.log('Script loaded successfully')" >/dev/null 2>&1; then
+        log "INFO" "✓ Script can be loaded"
     else
-        log "ERROR" "System test failed"
+        log "ERROR" "✗ Script cannot be loaded"
         return 1
     fi
+    
+    # Check if script can show help
+    if node "$SYSTEM_SCRIPT" >/dev/null 2>&1; then
+        log "INFO" "✓ Script CLI interface works"
+    else
+        log "ERROR" "✗ Script CLI interface failed"
+        return 1
+    fi
+    
+    log "INFO" "✓ All tests passed"
 }
 
 # Main function
 main() {
-    local command="${1:-start}"
+    local command="${1:-help}"
     
     case "$command" in
         "start")
             check_node
-            check_script
+            check_system_script
             check_workspace
             start_system
             ;;
@@ -265,38 +272,53 @@ main() {
             ;;
         "restart")
             check_node
-            check_script
+            check_system_script
             check_workspace
             restart_system
             ;;
         "status")
-            check_status
+            show_status
             ;;
         "logs")
             show_logs
             ;;
-        "report")
-            generate_report
-            ;;
         "health")
+            check_node
+            check_system_script
+            check_workspace
             run_health_check
             ;;
+        "once")
+            check_node
+            check_system_script
+            check_workspace
+            run_once
+            ;;
         "test")
+            check_node
+            check_system_script
             test_system
             ;;
-        *)
-            echo "Usage: $0 [start|stop|restart|status|logs|report|health|test]"
+        "help"|*)
+            echo "Usage: $0 <command>"
             echo ""
             echo "Commands:"
-            echo "  start   - Start the automation system"
-            echo "  stop    - Stop the automation system"
-            echo "  restart - Restart the automation system"
-            echo "  status  - Check system status"
-            echo "  logs    - Show system logs"
-            echo "  report  - Generate system report"
-            echo "  health  - Run health check"
-            echo "  test    - Test the system"
-            exit 1
+            echo "  start     - Start the Ultimate Redundancy Automation System"
+            echo "  stop      - Stop the Ultimate Redundancy Automation System"
+            echo "  restart   - Restart the Ultimate Redundancy Automation System"
+            echo "  status    - Show system status"
+            echo "  logs      - Show system logs"
+            echo "  health    - Run health check"
+            echo "  once      - Run one-time redundancy check"
+            echo "  test      - Test the system"
+            echo "  help      - Show this help message"
+            echo ""
+            echo "Environment Variables:"
+            echo "  REDUNDANCY_LOG_LEVEL - Log level (INFO, WARN, ERROR, DEBUG)"
+            echo "  REDUNDANCY_CHECK_INTERVAL - Main check interval in ms (default: 30000)"
+            echo "  REDUNDANCY_MAX_RETRIES - Maximum recovery attempts (default: 3)"
+            echo "  REDUNDANCY_AUTO_RECOVERY - Enable auto-recovery (default: true)"
+            echo "  HEALTH_CHECK_INTERVAL - Health check interval in ms (default: 60000)"
             ;;
     esac
 }

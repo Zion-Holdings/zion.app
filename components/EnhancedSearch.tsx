@@ -1,426 +1,455 @@
 import React, { useState, useEffect, useCallback, useMemo } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Search, X, TrendingUp, Clock, Star, ArrowRight, Brain, Atom, Rocket, Shield, Zap } from 'lucide-react';
-import Link from 'next/link';
-
-interface EnhancedSearchProps {
-  onClose: () => void;
-}
+import { Search, X, Filter, TrendingUp, Clock, Star, Zap, Brain, Atom, Shield, Rocket } from 'lucide-react';
 
 interface SearchResult {
   id: string;
-  title: string;
+  name: string;
   description: string;
   category: string;
-  icon: React.ReactNode;
-  featured?: boolean;
-  tags: string[];
+  type: string;
+  slug: string;
+  relevance: number;
+  features?: string[];
+  pricing?: {
+    starter?: string;
+    enterprise?: string;
+  };
 }
 
-const EnhancedSearch: React.FC<EnhancedSearchProps> = ({ onClose }) => {
+interface SearchProps {
+  onSearch: (query: string) => void;
+  onResultSelect: (result: SearchResult) => void;
+  placeholder?: string;
+  className?: string;
+  showFilters?: boolean;
+}
+
+const EnhancedSearch: React.FC<SearchProps> = ({
+  onSearch,
+  onResultSelect,
+  placeholder = "Search revolutionary services...",
+  className = "",
+  showFilters = true
+}) => {
   const [query, setQuery] = useState('');
   const [isSearching, setIsSearching] = useState(false);
+  const [showResults, setShowResults] = useState(false);
   const [results, setResults] = useState<SearchResult[]>([]);
-  const [recentSearches, setRecentSearches] = useState<string[]>([]);
-  const [popularSearches, setPopularSearches] = useState<string[]>([]);
-  const [selectedIndex, setSelectedIndex] = useState(-1);
+  const [selectedFilters, setSelectedFilters] = useState<string[]>([]);
+  const [searchHistory, setSearchHistory] = useState<string[]>([]);
+  const [popularSearches] = useState([
+    'AI Consciousness',
+    'Quantum Computing',
+    'Cybersecurity',
+    'Business Intelligence',
+    'Space Technology',
+    'Autonomous Systems'
+  ]);
 
-  // Memoized search suggestions
-  const searchSuggestions = useMemo(() => [
-    'AI Consciousness Evolution',
-    'Quantum Neural Networks',
-    'Space Resource Mining',
-    'Autonomous Business Operations',
-    'Brain-Computer Interface',
-    'Quantum Financial Trading',
-    'AI Emotional Intelligence',
-    'Zero Trust Security',
-    'Edge Computing',
-    'Blockchain Infrastructure'
-  ], []);
-
-  // Mock search results - in a real app, this would come from an API
-  const mockSearchResults = useMemo(() => [
+  // Mock search results - in real app, this would come from API
+  const mockSearchResults: SearchResult[] = [
     {
       id: '1',
-      title: 'AI Consciousness Evolution 2029',
-      description: 'Revolutionary AI platform that evolves consciousness and emotional intelligence',
-      url: '/ai-consciousness-evolution-2029',
-      category: 'AI & Consciousness',
-      icon: <Brain className="w-5 h-5" />,
-      featured: true,
-      tags: ['AI', 'Consciousness', 'Evolution', '2029']
+      name: 'AI Consciousness Evolution Platform 2045',
+      description: 'Next-generation AI consciousness with emotional intelligence and self-awareness capabilities.',
+      category: 'AI & Machine Learning',
+      type: 'Platform',
+      slug: '/ai-consciousness-evolution-platform-2045',
+      relevance: 95,
+      features: ['Emotional Intelligence', 'Self-Awareness', 'Consciousness Evolution'],
+      pricing: { starter: '$999/month', enterprise: 'Contact Sales' }
     },
     {
       id: '2',
-      title: 'Quantum Neural Network Platform',
-      description: 'Breakthrough quantum computing solution for neural network processing',
-      url: '/quantum-neural-network-platform',
-      category: 'Quantum Technology',
-      icon: <Atom className="w-5 h-5" />,
-      featured: true,
-      tags: ['Quantum', 'Neural Networks', 'Computing']
+      name: 'Quantum AI Hybrid Computing',
+      description: 'Quantum-powered AI with consciousness integration and quantum supremacy.',
+      category: 'Quantum Computing',
+      type: 'Platform',
+      slug: '/quantum-ai-hybrid-computing',
+      relevance: 92,
+      features: ['Quantum Supremacy', 'AI Integration', 'Hybrid Computing'],
+      pricing: { starter: '$1,499/month', enterprise: 'Contact Sales' }
     },
     {
       id: '3',
-      title: 'Space Resource Mining Platform',
-      description: 'Next-generation space exploration and resource extraction technology',
-      url: '/space-resource-mining-platform',
-      category: 'Space Technology',
-      icon: <Rocket className="w-5 h-5" />,
-      featured: true,
-      tags: ['Space', 'Mining', 'Resources']
-    },
-    {
-      id: '4',
-      title: 'Zero Trust Security Platform',
-      description: 'Advanced cybersecurity solution with zero-trust architecture',
-      url: '/zero-trust-security-platform',
-      category: 'Enterprise IT',
-      icon: <Shield className="w-5 h-5" />,
-      tags: ['Security', 'Zero Trust', 'Cybersecurity']
-    },
-    {
-      id: '5',
-      title: 'Edge Computing Orchestration',
-      description: 'Intelligent edge computing management and optimization platform',
-      url: '/edge-computing-orchestration',
-      category: 'Enterprise IT',
-      icon: <Zap className="w-5 h-5" />,
-      tags: ['Edge Computing', 'Orchestration', 'IoT']
+      name: 'Quantum Cybersecurity Intelligence',
+      description: 'Quantum-resistant security with AI consciousness and threat prediction.',
+      category: 'Cybersecurity',
+      type: 'Platform',
+      slug: '/quantum-cybersecurity-intelligence',
+      relevance: 88,
+      features: ['Quantum Resistance', 'Threat Prediction', 'AI Security'],
+      pricing: { starter: '$799/month', enterprise: 'Contact Sales' }
     }
-  ], []);
+  ];
 
-  // Load recent searches from localStorage
+  const categories = [
+    { id: 'ai', name: 'AI & ML', icon: Brain, color: 'from-purple-500 to-pink-500' },
+    { id: 'quantum', name: 'Quantum', icon: Atom, color: 'from-blue-500 to-cyan-500' },
+    { id: 'security', name: 'Security', icon: Shield, color: 'from-red-500 to-orange-500' },
+    { id: 'business', name: 'Business', icon: Rocket, color: 'from-emerald-500 to-teal-500' }
+  ];
+
+  // Debounced search function
+  const debouncedSearch = useCallback(
+    useMemo(
+      () => debounce((searchQuery: string) => {
+        if (searchQuery.trim().length < 2) {
+          setResults([]);
+          setShowResults(false);
+          return;
+        }
+
+        setIsSearching(true);
+        
+        // Simulate API call delay
+        setTimeout(() => {
+          const filteredResults = mockSearchResults.filter(result => {
+            const matchesQuery = result.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
+                               result.description.toLowerCase().includes(searchQuery.toLowerCase()) ||
+                               result.category.toLowerCase().includes(searchQuery.toLowerCase());
+            
+            const matchesFilters = selectedFilters.length === 0 || 
+                                 selectedFilters.some(filter => 
+                                   result.category.toLowerCase().includes(filter.toLowerCase()) ||
+                                   result.type.toLowerCase().includes(filter.toLowerCase())
+                                 );
+            
+            return matchesQuery && matchesFilters;
+          });
+
+          // Sort by relevance
+          const sortedResults = filteredResults.sort((a, b) => b.relevance - a.relevance);
+          
+          setResults(sortedResults);
+          setShowResults(true);
+          setIsSearching(false);
+        }, 300);
+      }, 300),
+      [selectedFilters]
+    ),
+    [selectedFilters]
+  );
+
   useEffect(() => {
-    const saved = localStorage.getItem('recentSearches');
-    if (saved) {
+    debouncedSearch(query);
+  }, [query, debouncedSearch]);
+
+  // Handle search input change
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const value = e.target.value;
+    setQuery(value);
+    
+    if (value.trim().length === 0) {
+      setShowResults(false);
+      setResults([]);
+    }
+  }, [suggestions, selectedIndex, query, handleSearch]);
+
+  // Close search on outside click
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (searchRef.current && !searchRef.current.contains(event.target as Node)) {
+        setIsOpen(false);
+      }
+    };
+
+  // Handle search submission
+  const handleSearch = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (query.trim()) {
+      onSearch(query);
+      addToSearchHistory(query);
+      setShowResults(false);
+    }
+  }, [router, handleSearch]);
+
+  // Handle quick action click
+  const handleQuickAction = useCallback((action: string) => {
+    router.push(action);
+    setIsOpen(false);
+  }, [router]);
+
+  // Add search to history
+  const addToSearchHistory = (searchTerm: string) => {
+    const newHistory = [searchTerm, ...searchHistory.filter(item => item !== searchTerm)].slice(0, 5);
+    setSearchHistory(newHistory);
+    localStorage.setItem('zion-search-history', JSON.stringify(newHistory));
+  };
+
+  // Load search history from localStorage
+  useEffect(() => {
+    const savedHistory = localStorage.getItem('zion-search-history');
+    if (savedHistory) {
       try {
-        setRecentSearches(JSON.parse(saved));
-      } catch {
-        // Silently handle parsing errors
+        setSearchHistory(JSON.parse(savedHistory));
+      } catch (error) {
+        console.error('Failed to parse search history:', error);
       }
     }
   }, []);
 
-  // Set popular searches
-  useEffect(() => {
-    setPopularSearches([
-      'AI Services',
-      'Quantum Computing',
-      'Space Technology',
-      'Cybersecurity',
-      'Cloud Solutions'
-    ]);
-  }, []);
-
-  // Handle search with debouncing
-  const handleSearch = useCallback(async (searchQuery: string) => {
-    if (!searchQuery.trim()) {
-      setResults([]);
-      return;
-    }
-
-    setIsSearching(true);
-    
-    // Simulate API delay
-    await new Promise(resolve => setTimeout(resolve, 300));
-
-    // Filter results based on query
-    const filteredResults = mockSearchResults.filter(result =>
-      result.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
-      result.description.toLowerCase().includes(searchQuery.toLowerCase()) ||
-      result.tags.some(tag => tag.toLowerCase().includes(searchQuery.toLowerCase()))
+  // Handle filter toggle
+  const toggleFilter = (filterId: string) => {
+    setSelectedFilters(prev => 
+      prev.includes(filterId) 
+        ? prev.filter(id => id !== filterId)
+        : [...prev, filterId]
     );
+  };
 
-    setResults(filteredResults);
-    setIsSearching(false);
-  }, []);
+  // Handle result selection
+  const handleResultSelect = (result: SearchResult) => {
+    onResultSelect(result);
+    setShowResults(false);
+    setQuery('');
+  };
 
-  // Debounced search effect
-  useEffect(() => {
-    const timeoutId = setTimeout(() => {
-      handleSearch(query);
-    }, 300);
-
-    return () => clearTimeout(timeoutId);
-  }, [query, handleSearch]);
-
-  // Handle keyboard navigation
-  const handleKeyDown = useCallback((e: React.KeyboardEvent) => {
-    switch (e.key) {
-      case 'ArrowDown':
-        e.preventDefault();
-        setSelectedIndex(prev => 
-          prev < results.length - 1 ? prev + 1 : prev
-        );
-        break;
-      case 'ArrowUp':
-        e.preventDefault();
-        setSelectedIndex(prev => prev > 0 ? prev - 1 : -1);
-        break;
-      case 'Enter':
-        e.preventDefault();
-        if (selectedIndex >= 0 && results[selectedIndex]) {
-          window.location.href = results[selectedIndex].url;
-        } else if (query.trim()) {
-          // Perform search
-          handleSearch(query);
-        }
-        break;
-      case 'Escape':
-        onClose();
-        break;
-    }
-  }, [results, selectedIndex, query, handleSearch, onClose]);
-
-  // Save search to recent searches
-  const saveSearch = useCallback((searchTerm: string) => {
-    const newRecentSearches = [
-      searchTerm,
-      ...recentSearches.filter(s => s !== searchTerm)
-    ].slice(0, 5);
-    
-    setRecentSearches(newRecentSearches);
-    localStorage.setItem('recentSearches', JSON.stringify(newRecentSearches));
-  }, [recentSearches]);
-
-  // Handle search submission
-  const handleSubmit = useCallback((e: React.FormEvent) => {
-    e.preventDefault();
-    if (query.trim()) {
-      saveSearch(query);
-      handleSearch(query);
-    }
-  }, [query, saveSearch, handleSearch]);
-
-  // Handle result click
-  const handleResultClick = useCallback((result: SearchResult) => {
-    saveSearch(query);
-    onClose();
-  }, [query, saveSearch, onClose]);
-
-  const categories = [
-    { id: 'all', name: 'All Categories', count: results.length },
-    { id: 'AI', name: 'AI & ML', count: results.filter(r => r.category === 'AI').length },
-    { id: 'Quantum', name: 'Quantum', count: results.filter(r => r.category === 'Quantum').length },
-    { id: 'Business', name: 'Business', count: results.filter(r => r.category === 'Business').length },
-    { id: 'Space', name: 'Space Tech', count: results.filter(r => r.category === 'Space').length }
-  ];
+  // Clear search
+  const clearSearch = () => {
+    setQuery('');
+    setShowResults(false);
+    setResults([]);
+  };
 
   return (
-    <motion.div
-      initial={{ opacity: 0, scale: 0.95 }}
-      animate={{ opacity: 1, scale: 1 }}
-      exit={{ opacity: 0, scale: 0.95 }}
-      className="w-full max-w-4xl mx-auto bg-gray-900/95 backdrop-blur-xl border border-white/20 rounded-2xl shadow-2xl overflow-hidden"
-    >
-      {/* Search Header */}
-      <div className="flex items-center justify-between p-6 border-b border-white/10">
-        <div className="flex items-center space-x-3">
-          <Search className="w-6 h-6 text-cyan-400" />
-          <h2 className="text-xl font-semibold text-white">Search Zion Tech Group</h2>
+    <div className={`relative ${className}`}>
+      {/* Search Form */}
+      <form onSubmit={handleSearch} className="relative">
+        <div className="relative">
+          <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
+          <input
+            type="text"
+            value={query}
+            onChange={handleInputChange}
+            placeholder={placeholder}
+            className="w-full pl-12 pr-20 py-3 bg-gray-800/50 border border-gray-700 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-cyan-400 focus:border-transparent transition-all duration-300"
+            onFocus={() => setShowResults(true)}
+          />
+          
+          {/* Clear Button */}
+          {query && (
+            <button
+              type="button"
+              onClick={clearSearch}
+              className="absolute right-16 top-1/2 transform -translate-y-1/2 text-gray-400 hover:text-white transition-colors"
+            >
+              <X className="w-4 h-4" />
+            </button>
+          )}
+          
+          {/* Search Button */}
+          <button
+            type="submit"
+            className="absolute right-2 top-1/2 transform -translate-y-1/2 px-4 py-1.5 bg-gradient-to-r from-cyan-500 to-blue-600 text-white text-sm font-medium rounded-lg hover:from-cyan-600 hover:to-blue-700 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-cyan-500/50"
+          >
+            Search
+          </button>
         </div>
-        <button
-          onClick={onClose}
-          className="p-2 text-gray-400 hover:text-white transition-colors rounded-lg hover:bg-white/10"
-          aria-label="Close search"
-        >
-          <X className="w-5 h-5" />
-        </button>
-      </div>
+      </form>
 
-      {/* Search Input */}
-      <div className="p-6">
-        <form onSubmit={handleSubmit} className="relative">
-          <div className="relative">
-            <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-400" />
-            <input
-              type="text"
-              value={query}
-              onChange={(e) => setQuery(e.target.value)}
-              onKeyDown={handleKeyDown}
-              placeholder="Search for services, solutions, or expertise..."
-              className="w-full pl-12 pr-4 py-4 bg-white/10 border border-white/20 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:border-transparent text-lg"
-              autoFocus
-            />
-            {isSearching && (
-              <div className="absolute right-4 top-1/2 transform -translate-y-1/2">
-                <div className="w-5 h-5 border-2 border-cyan-500 border-t-transparent rounded-full animate-spin"></div>
+      {/* Search Results Dropdown */}
+      <AnimatePresence>
+        {showResults && (
+          <motion.div
+            initial={{ opacity: 0, y: -10, scale: 0.95 }}
+            animate={{ opacity: 1, y: 0, scale: 1 }}
+            exit={{ opacity: 0, y: -10, scale: 0.95 }}
+            transition={{ duration: 0.2 }}
+            className="absolute top-full left-0 right-0 mt-2 bg-gray-900/95 backdrop-blur-md border border-gray-700 rounded-xl shadow-2xl z-50 max-h-96 overflow-y-auto"
+          >
+            {/* Filters */}
+            {showFilters && (
+              <div className="p-4 border-b border-gray-700">
+                <div className="flex items-center gap-2 mb-3">
+                  <Filter className="w-4 h-4 text-gray-400" />
+                  <span className="text-sm font-medium text-gray-300">Filter by Category</span>
+                </div>
+                <div className="flex flex-wrap gap-2">
+                  {categories.map((category) => (
+                    <button
+                      key={category.id}
+                      onClick={() => toggleFilter(category.id)}
+                      className={`flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-medium transition-all duration-300 ${
+                        selectedFilters.includes(category.id)
+                          ? `bg-gradient-to-r ${category.color} text-white`
+                          : 'bg-gray-700/50 text-gray-300 hover:bg-gray-600/50'
+                      }`}
+                    >
+                      <category.icon className="w-3 h-3" />
+                      {category.name}
+                    </button>
+                  )}
+                  <div className="flex-shrink-0 pr-4">
+                    <button
+                      onClick={() => handleSearch()}
+                      disabled={isSearching || !query.trim()}
+                      className="px-6 py-2 bg-gradient-to-r from-cyan-500 to-blue-500 text-white rounded-lg font-medium hover:from-cyan-600 hover:to-blue-600 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
+                    >
+                      {isSearching ? 'Searching...' : 'Search'}
+                    </button>
+                  </div>
+                </div>
+
+                {/* Search Suggestions */}
+                <AnimatePresence>
+                  {showSuggestions && suggestions.length > 0 && (
+                    <motion.div
+                      initial={{ opacity: 0, y: -10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      exit={{ opacity: 0, y: -10 }}
+                      className="absolute top-full left-0 right-0 mt-2 bg-gray-900 border border-gray-700 rounded-xl shadow-2xl overflow-hidden z-10"
+                    >
+                      {/* Quick Actions */}
+                      <div className="p-4 border-b border-gray-700">
+                        <h3 className="text-sm font-medium text-gray-400 mb-3">Quick Actions</h3>
+                        <div className="grid grid-cols-2 gap-2">
+                          {quickActions.map((action) => (
+                            <button
+                              key={action.name}
+                              onClick={() => handleQuickAction(action.action)}
+                              className="flex items-center space-x-2 p-2 text-sm text-gray-300 hover:text-white hover:bg-gray-800 rounded-lg transition-colors"
+                            >
+                              {action.icon}
+                              <span>{action.name}</span>
+                            </button>
+                          ))}
+                        </div>
+                      </div>
+
+                      {/* Suggestions */}
+                      <div className="max-h-64 overflow-y-auto">
+                        {suggestions.map((suggestion) => (
+                          <button
+                            key={suggestion.id}
+                            onClick={() => handleSuggestionClick(suggestion)}
+                            className="w-full flex items-center space-x-3 p-3 text-left hover:bg-gray-800 transition-colors"
+                          >
+                            <div className="text-gray-400">
+                              {suggestion.icon}
+                            </div>
+                            <div className="flex-1">
+                              <div className="text-white">{suggestion.text}</div>
+                              <div className="text-sm text-gray-400 capitalize">
+                                {suggestion.type} • {suggestion.category}
+                              </div>
+                            </div>
+                            <ArrowRight className="w-4 h-4 text-gray-400" />
+                          </button>
+                        ))}
+                      </div>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
               </div>
             )}
-          </div>
-        </form>
-      </div>
 
-      {/* Search Results or Suggestions */}
-      <div className="max-h-96 overflow-y-auto">
-        <AnimatePresence mode="wait">
-          {query.trim() ? (
-            // Search Results
-            <motion.div
-              key="results"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              className="px-6 pb-6"
-            >
-              {results.length > 0 ? (
+            {/* Search Results */}
+            <div className="p-4">
+              {isSearching ? (
+                <div className="flex items-center justify-center py-8">
+                  <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-cyan-400"></div>
+                  <span className="ml-3 text-gray-400">Searching...</span>
+                </div>
+              ) : results.length > 0 ? (
                 <div className="space-y-3">
-                  <h3 className="text-sm font-medium text-gray-400 uppercase tracking-wider mb-4">
-                    Search Results ({results.length})
-                  </h3>
-                  {results.map((result, index) => (
+                  {results.map((result) => (
                     <motion.div
                       key={result.id}
-                      initial={{ opacity: 0, y: 20 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      transition={{ delay: index * 0.1 }}
-                      className={`p-4 rounded-xl border transition-all duration-200 cursor-pointer ${
-                        selectedIndex === index
-                          ? 'border-cyan-500/50 bg-cyan-500/10'
-                          : 'border-white/10 hover:border-cyan-500/30 hover:bg-white/5'
-                      }`}
-                      onClick={() => handleResultClick(result)}
+                      whileHover={{ scale: 1.02 }}
+                      className="p-3 bg-gray-800/50 rounded-lg cursor-pointer hover:bg-gray-700/50 transition-all duration-300 border border-transparent hover:border-cyan-400/30"
+                      onClick={() => handleResultSelect(result)}
                     >
-                      <div className="flex items-start space-x-4">
-                        <div className="w-10 h-10 bg-gradient-to-r from-cyan-500/20 to-purple-500/20 rounded-lg flex items-center justify-center flex-shrink-0">
-                          {result.icon}
-                        </div>
-                        <div className="flex-1 min-w-0">
-                          <div className="flex items-center space-x-2 mb-2">
-                            <h4 className="text-white font-semibold truncate">{result.title}</h4>
-                            {result.featured && (
-                              <span className="px-2 py-1 text-xs bg-gradient-to-r from-cyan-500 to-purple-500 text-white rounded-full">
-                                Featured
+                      <div className="flex items-start justify-between">
+                        <div className="flex-1">
+                          <h4 className="font-medium text-white mb-1">{result.name}</h4>
+                          <p className="text-sm text-gray-300 mb-2 line-clamp-2">{result.description}</p>
+                          <div className="flex items-center gap-2">
+                            <span className="px-2 py-1 bg-cyan-500/20 text-cyan-400 text-xs rounded-full">
+                              {result.category}
+                            </span>
+                            {result.pricing?.starter && (
+                              <span className="px-2 py-1 bg-green-500/20 text-green-400 text-xs rounded-full">
+                                From {result.pricing.starter}
                               </span>
                             )}
                           </div>
-                          <p className="text-gray-300 text-sm mb-2 line-clamp-2">{result.description}</p>
-                          <div className="flex items-center justify-between">
-                            <span className="text-xs text-gray-400">{result.category}</span>
-                            <div className="flex items-center space-x-1 text-cyan-400">
-                              <span className="text-xs">View</span>
-                              <ArrowRight className="w-3 h-3" />
-                            </div>
-                          </div>
+                        </div>
+                        <div className="flex items-center gap-1 text-cyan-400">
+                          <Star className="w-4 h-4 fill-current" />
+                          <span className="text-xs">{result.relevance}</span>
                         </div>
                       </div>
                     </motion.div>
                   ))}
                 </div>
+              ) : query.trim().length > 0 ? (
+                <div className="text-center py-8">
+                  <div className="text-gray-400 mb-2">No results found for "{query}"</div>
+                  <div className="text-sm text-gray-500">Try adjusting your search terms or filters</div>
+                </div>
               ) : (
-                <motion.div
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  className="text-center py-12"
-                >
-                  <Search className="w-16 h-16 text-gray-600 mx-auto mb-4" />
-                  <h3 className="text-lg font-medium text-gray-300 mb-2">No results found</h3>
-                  <p className="text-gray-500">Try adjusting your search terms or browse our categories below.</p>
-                </motion.div>
-              )}
-            </motion.div>
-          ) : (
-            // Search Suggestions
-            <motion.div
-              key="suggestions"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              className="px-6 pb-6"
-            >
-              {/* Recent Searches */}
-              {recentSearches.length > 0 && (
-                <div className="mb-6">
-                  <h3 className="text-sm font-medium text-gray-400 uppercase tracking-wider mb-3 flex items-center space-x-2">
-                    <Clock className="w-4 h-4" />
-                    <span>Recent Searches</span>
-                  </h3>
-                  <div className="flex flex-wrap gap-2">
-                    {recentSearches.map((search, index) => (
-                      <button
-                        key={index}
-                        onClick={() => setQuery(search)}
-                        className="px-3 py-2 bg-white/5 hover:bg-white/10 border border-white/10 hover:border-cyan-500/30 rounded-lg text-sm text-gray-300 hover:text-white transition-all duration-200"
-                      >
-                        {search}
-                      </button>
-                    ))}
+                <div className="space-y-4">
+                  {/* Search History */}
+                  {searchHistory.length > 0 && (
+                    <div>
+                      <div className="flex items-center gap-2 mb-3">
+                        <Clock className="w-4 h-4 text-gray-400" />
+                        <span className="text-sm font-medium text-gray-300">Recent Searches</span>
+                      </div>
+                      <div className="flex flex-wrap gap-2">
+                        {searchHistory.map((term, index) => (
+                          <button
+                            key={index}
+                            onClick={() => setQuery(term)}
+                            className="px-3 py-1.5 bg-gray-700/50 text-gray-300 text-sm rounded-lg hover:bg-gray-600/50 transition-colors"
+                          >
+                            {term}
+                          </button>
+                        ))}
+                      </div>
+                    </div>
+                  )}
+
+                  {/* Popular Searches */}
+                  <div>
+                    <div className="flex items-center gap-2 mb-3">
+                      <TrendingUp className="w-4 h-4 text-gray-400" />
+                      <span className="text-sm font-medium text-gray-300">Popular Searches</span>
+                    </div>
+                    <div className="flex flex-wrap gap-2">
+                      {popularSearches.map((term, index) => (
+                        <button
+                          key={index}
+                          onClick={() => setQuery(term)}
+                          className="px-3 py-1.5 bg-gradient-to-r from-cyan-500/20 to-blue-500/20 text-cyan-400 text-sm rounded-lg hover:from-cyan-500/30 hover:to-blue-500/30 transition-all duration-300 border border-cyan-400/30"
+                        >
+                          {term}
+                        </button>
+                      ))}
+                    </div>
                   </div>
                 </div>
               )}
-
-              {/* Popular Searches */}
-              <div className="mb-6">
-                <h3 className="text-sm font-medium text-gray-400 uppercase tracking-wider mb-3 flex items-center space-x-2">
-                  <TrendingUp className="w-4 h-4" />
-                  <span>Popular Searches</span>
-                </h3>
-                <div className="grid grid-cols-2 gap-3">
-                  {popularSearches.map((search, index) => (
-                    <button
-                      key={index}
-                      onClick={() => setQuery(search)}
-                      className="p-3 bg-white/5 hover:bg-white/10 border border-white/10 hover:border-cyan-500/30 rounded-lg text-left transition-all duration-200 group"
-                    >
-                      <div className="flex items-center space-x-2">
-                        <Star className="w-4 h-4 text-yellow-400" />
-                        <span className="text-gray-300 group-hover:text-white">{search}</span>
-                      </div>
-                    </button>
-                  ))}
-                </div>
-              </div>
-
-              {/* Quick Categories */}
-              <div>
-                <h3 className="text-sm font-medium text-gray-400 uppercase tracking-wider mb-3">
-                  Quick Categories
-                </h3>
-                <div className="grid grid-cols-2 gap-3">
-                  {[
-                    { name: 'AI & ML', icon: <Brain className="w-5 h-5" />, color: 'cyan' },
-                    { name: 'Quantum Tech', icon: <Atom className="w-5 h-5" />, color: 'purple' },
-                    { name: 'Space Tech', icon: <Rocket className="w-5 h-5" />, color: 'blue' },
-                    { name: 'Security', icon: <Shield className="w-5 h-5" />, color: 'green' }
-                  ].map((category, index) => (
-                    <button
-                      key={index}
-                      onClick={() => setQuery(category.name)}
-                      className={`p-4 bg-gradient-to-br from-${category.color}-500/10 to-${category.color}-600/10 border border-${category.color}-500/20 hover:border-${category.color}-500/40 rounded-lg transition-all duration-200 group`}
-                    >
-                      <div className="flex items-center space-x-3">
-                        <div className={`w-8 h-8 bg-gradient-to-r from-${category.color}-500 to-${category.color}-600 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform duration-200`}>
-                          {category.icon}
-                        </div>
-                        <span className="text-white font-medium">{category.name}</span>
-                      </div>
-                    </button>
-                  ))}
-                </div>
-              </div>
-            </motion.div>
-          )}
-        </AnimatePresence>
-      </div>
-
-      {/* Search Footer */}
-      <div className="px-6 py-4 border-t border-white/10 bg-white/5">
-        <div className="flex items-center justify-between text-sm text-gray-400">
-          <div className="flex items-center space-x-4">
-            <span>Press <kbd className="px-2 py-1 bg-white/10 rounded text-xs">Enter</kbd> to search</span>
-            <span>Press <kbd className="px-2 py-1 bg-white/10 rounded text-xs">Esc</kbd> to close</span>
-          </div>
-          <div className="flex items-center space-x-2">
-            <span>Powered by</span>
-            <div className="w-6 h-6 bg-gradient-to-r from-cyan-400 to-purple-500 rounded"></div>
-            <span className="text-cyan-400 font-medium">Zion Tech Group</span>
-          </div>
-        </div>
-      </div>
-    </motion.div>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </div>
   );
 };
+
+// Debounce utility function
+function debounce<T extends (...args: any[]) => any>(
+  func: T,
+  wait: number
+): (...args: Parameters<T>) => void {
+  let timeout: NodeJS.Timeout;
+  return (...args: Parameters<T>) => {
+    clearTimeout(timeout);
+    timeout = setTimeout(() => func(...args), wait);
+  };
+}
 
 export default EnhancedSearch;

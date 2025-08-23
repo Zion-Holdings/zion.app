@@ -11,6 +11,7 @@ import {
 import { innovativeITServicesExpansion2025V3 } from '../data/2025-innovative-it-services-expansion-v3';
 import { innovativeMicroSaasExpansionV32025 } from '../data/2025-innovative-micro-saas-expansion-v3';
 import { innovativeAIServicesExpansion2025V3 } from '../data/2025-innovative-ai-services-expansion-v3';
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
 
 // Import existing service data
 import { realMicroSaasServices } from '../data/real-micro-saas-services';
@@ -24,6 +25,7 @@ import { enterpriseITServices } from '../data/enterprise-it-services';
     ...innovativeMicroSaasSolutions2025,
     ...cuttingEdgeAIServices2025
   ];
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
 
 // Service categories
 const categories = [
@@ -465,3 +467,4 @@ const ComprehensiveServicesShowcase: React.FC = () => {
 };
 
 export default ComprehensiveServicesShowcase;
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96

@@ -8,7 +8,9 @@ function collectRoutes(dir, parent = '') {
     if (entry.name.startsWith('_')) continue; // ignore _app, _document etc
     if (entry.isDirectory()) {
       if (entry.name === 'api') continue; // skip API routes
-      routes = routes.concat(collectRoutes(path.join(dir, entry.name), parent + '/' + entry.name));
+      routes = routes.concat(
+        collectRoutes(path.join(dir, entry.name), parent + '/' + entry.name),
+      );
     } else if (entry.isFile()) {
       const match = entry.name.match(/^(.*)\.(tsx|jsx|js|ts)$/);
       if (!match) continue;
@@ -33,16 +35,20 @@ function collectRoutes(dir, parent = '') {
 }
 
 function routeToRegex(route) {
-  return new RegExp('^' + route
-    .replace(/\/\*/g, '(?:.*)')
-    .replace(/:[^\/]+/g, '[^/]+')
-    .replace(/\//g, '\\/') + '$');
+  return new RegExp(
+    '^' +
+      route
+        .replace(/\/\*/g, '(?:.*)')
+        .replace(/:[^/]+/g, '[^/]+')
+        .replace(/\//g, '/') +
+      '$',
+  );
 }
 
 function collectLinks(searchDirs) {
   const links = new Set();
   const fileRegex = /\.(ts|tsx|js|jsx)$/;
-  const linkRegex = /(href|to)=\"(\/[^\"#?]+)\"/g;
+  const linkRegex = /(href|to)="(\/[^"#?]+)"/g;
   for (const dir of searchDirs) {
     if (!fs.existsSync(dir)) continue;
     const stack = [dir];
@@ -82,13 +88,13 @@ fs.writeFileSync(path.join('public', 'dynamic-sitemap.xml'), xml);
 const links = collectLinks(['pages', 'src']);
 const unmatched = [];
 for (const link of links) {
-  if (!routes.some(r => routeToRegex(r).test(link))) {
+  if (!routes.some((r) => routeToRegex(r).test(link))) {
     unmatched.push(link);
   }
 }
 if (unmatched.length) {
-  console.log('Links without matching route:');
-  for (const l of unmatched) console.log('  ' + l);
+  console.warn('Links without matching route:');
+  for (const l of unmatched) console.warn('  ' + l);
 } else {
-  console.log('All links have matching routes');
+  console.warn('All links have matching routes');
 }

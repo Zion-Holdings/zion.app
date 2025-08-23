@@ -18,7 +18,7 @@ const serviceCategories = [
       'AI Decision Engine',
       'AI Content Automation',
       'AI HR Analytics'
-    ]
+    "
   },
   {
     id: 'quantum-tech',
@@ -34,7 +34,7 @@ const serviceCategories = [
       'Brain-Computer Interface',
       'Quantum Energy Platform',
       'AI-Powered Space Technology'
-    ]
+    "
   },
   {
     id: 'enterprise-it',
@@ -50,7 +50,7 @@ const serviceCategories = [
       'AI-Powered DevOps',
       'Quantum Cloud Infrastructure',
       'Blockchain Infrastructure'
-    ]
+    "
   },
   {
     id: 'micro-saas',
@@ -66,7 +66,7 @@ const serviceCategories = [
       'SEO Automation Suite',
       'IT Asset Discovery Agent',
       'Managed Postgres HA'
-    ]
+    "
   }
 ];
 
@@ -151,7 +151,7 @@ export default function Quote() {
       ...prev,
       selectedServices: prev.selectedServices.includes(service)
         ? prev.selectedServices.filter(s => s !== service)
-        : [...prev.selectedServices, service]
+        : [...prev.selectedServices, service"
     }));
   };
 
@@ -621,4 +621,5 @@ export default function Quote() {
       </div>
     </Layout>
   );
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
 }

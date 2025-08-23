@@ -186,7 +186,7 @@ const MarketPricing: React.FC = () => {
 
   return (
     <UltraAdvancedFuturisticBackground>
-      <SEO title="Market Pricing & Competitor References | Zion Tech Group" description="Transparent market pricing references and competitor links for AI, security, analytics, and cloud services." canonicalUrl="https://ziontechgroup.com/market-pricing/" />
+      <SEO title="Market Pricing & Competitor References | Zion Tech Group" description="Transparent market pricing references and competitor links for AI, security, analytics, and cloud services." url="https://ziontechgroup.com/market-pricing/" />
       <div className="min-h-screen pt-24 pb-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-5xl mx-auto space-y-8">
           <h1 className="text-4xl md:text-6xl font-bold bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">Market Pricing & References</h1>
@@ -446,40 +446,6 @@ const MarketPricing: React.FC = () => {
                 </motion.div>
               ))}
             </div>
-          </div>
-        </section>
-
-        {/* CTA Section */}
-        <section className="py-20 bg-black/50">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-              viewport={{ once: true }}
-            >
-              <h2 className="text-3xl lg:text-4xl font-bold text-white mb-6">
-                Get Market-Competitive Pricing
-              </h2>
-              <p className="text-xl text-gray-400 max-w-3xl mx-auto mb-8">
-                Contact us for a customized quote that reflects your business needs and market positioning.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Link
-                  href="/contact"
-                  className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-purple-500 to-blue-600 text-white font-semibold rounded-2xl hover:from-purple-600 hover:to-blue-700 transition-all duration-300 transform hover:scale-105"
-                >
-                  Request Custom Quote
-                  <ArrowRight className="w-5 h-5 ml-2" />
-                </Link>
-                <a
-                  href="tel:+13024640950"
-                  className="inline-flex items-center px-8 py-4 border-2 border-purple-500/30 text-purple-400 font-semibold rounded-2xl hover:border-purple-500/50 hover:text-purple-300 transition-all duration-300"
-                >
-                  Call for Pricing
-                </a>
-              </div>
-            </motion.div>
           </div>
         </section>
       </div>

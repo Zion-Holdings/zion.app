@@ -1,37 +1,9 @@
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { DynamicAnalyticsChart as AnalyticsChart } from "@/utils/dynamicComponents";
-
-interface FeatureUsageChartProps {
-  data: Array<Record<string, any>>;
-  timeRange: string;
-  onTimeRangeChange: (range: string) => void;
-}
-
-export function FeatureUsageChart({ data, timeRange, onTimeRangeChange }: FeatureUsageChartProps) {
-  const dataKeys = data && data.length > 0 && data[0]
-    ? Object.keys(data[0]).filter(key => key !== 'date')
-    : [];
-
+import React from 'react';
+export function FeatureUsageChart() {
   return (
-    <Card className="bg-zion-blue-dark border-zion-blue-light">
-      <CardHeader>
-        <CardTitle className="text-white text-lg">Feature Usage</CardTitle>
-        <CardDescription className="text-zion-slate-light">How often key features are used</CardDescription>
-      </CardHeader>
-      <CardContent>
-        <AnalyticsChart
-          title=""
-          data={(data || []).map(item => ({
-            name: item.name || item.label || 'Unknown',
-            value: item.value || item.count || 0,
-            ...item
-          }))}
-          dataKeys={dataKeys}
-          type="bar"
-          timeRange={timeRange}
-          onTimeRangeChange={onTimeRangeChange}
-        />
-      </CardContent>
-    </Card>
+    <div>
+      <h1>Component</h1>
+      <p>Component placeholder</p>
+    </div>
   );
 }

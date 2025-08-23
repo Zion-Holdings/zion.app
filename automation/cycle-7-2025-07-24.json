@@ -1,0 +1,76 @@
+{
+  "timestamp": "2025-07-24T18:54:33.486Z",
+  "cycle": 7,
+  "automations": [
+    {
+      "name": "Zion App Maintainer",
+      "success": true,
+      "duration": 255918,
+      "output": "\n> project@0.0.0 maintain\n> node scripts/zion-app-maintainer.cjs\n\n[2025-07-24T18:54:45.478Z] [INFO] 🚀 Starting Zion App Maintenance...\n[2025-07-24T18:54:45.518Z] [INFO] 🔍 Checking current app status...\n[2025-07-24T18:54:45.814Z] [WARN] ⚠️ Simple server is not running\n[2025-07-24T18:54:45.814Z] [INFO] ✅ Simple server file exists\n[2025-07-24T18:54:45.815Z] [INFO] ✅ Package.json is valid\n[2025-07-24T18:54:45.816Z] [INFO] 🏥 Performing health check...\n[2025-07-24T18:54:46.014Z] [ERROR] ❌ Health check failed: Command failed: curl -s http://localhost:3006/api/health\n[2025-07-24T18:54:46.015Z] [INFO] 🧹 Cleaning up artifacts...\n[2025-07-24T18:54:46.220Z] [INFO] ✅ Cleaned 1 artifacts\n[2025-07-24T18:54:46.223Z] [INFO] 📦 Checking dependencies...\n[2025-07-24T18:57:11.348Z] [ERROR] ❌ Error checking dependencies: Unexpected non-whitespace character after JSON at position 1886 (line 58 column 1)\n[2025-07-24T18:57:11.354Z] [INFO] ⚡ Optimizing performance...\n[2025-07-24T18:58:17.564Z] [INFO] 📁 Total project size: 1307 MB\n[2025-07-24T18:58:17.564Z] [WARN] ⚠️ Large project size detected\n[2025-07-24T18:58:17.564Z] [WARN] ⚠️ Found 9 large files\n[2025-07-24T18:58:48.224Z] [WARN] ⚠️ Large node_modules detected\n[2025-07-24T18:58:48.225Z] [INFO] 📋 Generating maintenance report...\n[2025-07-24T18:58:48.228Z] [INFO] ✅ Maintenance report saved: maintenance-reports/maintenance-2025-07-24.json\n[2025-07-24T18:58:49.106Z] [INFO] ✅ Summary saved: maintenance-reports/latest-summary.md\n[2025-07-24T18:58:49.106Z] [INFO] 📊 Maintenance Summary:\n[2025-07-24T18:58:49.106Z] [INFO] ✅ Improvements: 4\n[2025-07-24T18:58:49.106Z] [INFO]   - Simple server file: Present\n[2025-07-24T18:58:49.106Z] [INFO]   - Package.json: Valid\n[2025-07-24T18:58:49.106Z] [INFO]   - Cleaned 1 artifacts\n[2025-07-24T18:58:49.106Z] [INFO]   - Maintenance report generated\n[2025-07-24T18:58:49.106Z] [INFO] ⚠️ Issues: 6\n[2025-07-24T18:58:49.107Z] [INFO]   - Server not running\n[2025-07-24T18:58:49.107Z] [INFO]   - Health check failed: Command failed: curl -s http://localhost:3006/api/health\n[2025-07-24T18:58:49.107Z] [INFO]   - Dependency check failed: Unexpected non-whitespace character after JSON at position 1886 (line 58 column 1)\n[2025-07-24T18:58:49.107Z] [INFO]   - Large project size\n[2025-07-24T18:58:49.107Z] [INFO]   - 9 large files\n[2025-07-24T18:58:49.107Z] [INFO]   - Large node_modules\n[2025-07-24T18:58:49.107Z] [INFO] 🎉 Zion App Maintenance completed!\n",
+      "error": "",
+      "command": "npm run maintain"
+    },
+    {
+      "name": "Complete Zion Automation",
+      "success": false,
+      "duration": 300615,
+      "output": "",
+      "error": "Command failed: npm run automate\n",
+      "command": "npm run automate"
+    },
+    {
+      "name": "TypeScript Check",
+      "success": false,
+      "duration": 14411,
+      "output": "",
+      "error": "Command failed: npm run typecheck\nnpm error Missing script: \"typecheck\"\nnpm error\nnpm error To see a list of scripts, run:\nnpm error   npm run\nnpm error A complete log of this run can be found in: /Users/klebergarciaalcatrao/.npm/_logs/2025-07-24T19_03_56_869Z-debug-0.log\n",
+      "command": "npm run typecheck"
+    },
+    {
+      "name": "Linting Fix",
+      "success": false,
+      "duration": 19255,
+      "output": "",
+      "error": "Command failed: npm run lint:fix\nnpm error Missing script: \"lint:fix\"\nnpm error\nnpm error To see a list of scripts, run:\nnpm error   npm run\nnpm error A complete log of this run can be found in: /Users/klebergarciaalcatrao/.npm/_logs/2025-07-24T19_04_13_111Z-debug-0.log\n",
+      "command": "npm run lint:fix"
+    },
+    {
+      "name": "Code Formatting",
+      "success": false,
+      "duration": 18562,
+      "output": "",
+      "error": "Command failed: npm run format\nnpm error Missing script: \"format\"\nnpm error\nnpm error To see a list of scripts, run:\nnpm error   npm run\nnpm error A complete log of this run can be found in: /Users/klebergarciaalcatrao/.npm/_logs/2025-07-24T19_04_33_358Z-debug-0.log\n",
+      "command": "npm run format"
+    },
+    {
+      "name": "Security Audit",
+      "success": true,
+      "duration": 169160,
+      "output": "# npm audit report\n\npm2  *\npm2 Regular Expression Denial of Service vulnerability - https://github.com/advisories/GHSA-x5gf-qvw8-r2rm\nNo fix available\nnode_modules/pm2\n\n1 low severity vulnerability\n\nSome issues need review, and may require choosing\na different dependency.\n",
+      "error": "",
+      "command": "npm audit --audit-level moderate"
+    },
+    {
+      "name": "Dependency Check",
+      "success": false,
+      "duration": 300481,
+      "output": "",
+      "error": "Command failed: npm ls --depth=0\n",
+      "command": "npm ls --depth=0"
+    },
+    {
+      "name": "Build Test",
+      "success": false,
+      "duration": 301173,
+      "output": "",
+      "error": "Command failed: npm run build\n",
+      "command": "npm run build"
+    }
+  ],
+  "summary": {
+    "total": 8,
+    "successful": 2,
+    "failed": 6,
+    "duration": 1379585
+  }
+}

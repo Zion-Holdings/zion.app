@@ -40,7 +40,13 @@ export function CheckoutShippingOptions({ toAddress, onSelect }: Props) {
   const [selected, setSelected] = useState<string>('');
 
   useEffect(() => {
-    if (!toAddress) return;
+    if (
+      !toAddress ||
+      !toAddress.address ||
+      !toAddress.city ||
+      !toAddress.country
+    )
+      return;
     const fetchRates = async () => {
       setLoading(true);
       try {
@@ -81,8 +87,13 @@ export function CheckoutShippingOptions({ toAddress, onSelect }: Props) {
           {rates.map(rate => (
             <label key={rate.id} className="flex items-center gap-2">
               <RadioGroupItem value={rate.id} />
-              <span>{`${rate.carrier} ${rate.service} - ${rate.rate} ${rate.currency}`}</span>
-              {rate.tax && <span className="ml-1 text-sm">(+{rate.tax} taxes)</span>}
+              <span>
+                {`${rate.carrier} ${rate.service} - ${rate.rate} ${rate.currency}`}
+                {rate.delivery_days && ` (${rate.delivery_days}d)`}
+              </span>
+              {rate.tax && (
+                <span className="ml-1 text-sm">(+{rate.tax} taxes)</span>
+              )}
             </label>
           ))}
         </RadioGroup>

@@ -5,6 +5,7 @@ import {
   Cpu, Brain, Shield, Zap, BarChart3, Settings, 
   CheckCircle, ArrowRight, Star, TrendingUp, Award, Clock
 } from 'lucide-react';
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
 
 const ManufacturingSolutionsPage: React.FC = () => {
   const solutions = [
@@ -39,8 +40,13 @@ const ManufacturingSolutionsPage: React.FC = () => {
     }
   ];
 
+      description="Advanced technology solutions for manufacturing. AI, cybersecurity, cloud infrastructure, and analytics designed for the manufacturing sector."
+    >
+      <div className="min-h-screen bg-gradient-to-br from-gray-900 via-black to-gray-900 text-white">
+=======
       <UltraFuturisticBackground>
         <div className="min-h-screen bg-black text-white relative z-10">
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
         {/* Hero Section */}
         <section className="relative py-20 px-4 sm:px-6 lg:px-8">
           <div className="max-w-7xl mx-auto text-center">
@@ -51,6 +57,7 @@ const ManufacturingSolutionsPage: React.FC = () => {
             >
               <h1 className="text-5xl md:text-6xl font-bold bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 bg-clip-text text-transparent mb-6">
                 Manufacturing Solutions
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
               </h1>
               <p className="text-xl md:text-2xl text-gray-300 mb-8 max-w-4xl mx-auto">
                 Transform your manufacturing operations with cutting-edge technology solutions designed for 
@@ -121,6 +128,7 @@ const ManufacturingSolutionsPage: React.FC = () => {
                     Learn More
                     <Zap className="w-4 h-4 ml-2" />
                   </a>
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
                 </motion.div>
               ))}
             </div>
@@ -145,6 +153,7 @@ const ManufacturingSolutionsPage: React.FC = () => {
 
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
               {benefits.map((benefit, index) => (
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
                 <motion.div
                   key={stat.label}
                   initial={{ opacity: 0, scale: 0.8 }}
@@ -192,6 +201,7 @@ const ManufacturingSolutionsPage: React.FC = () => {
                 >
                   View Pricing
                 </a>
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
               </div>
             </motion.div>
           </div>
