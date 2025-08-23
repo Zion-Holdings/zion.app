@@ -1,5 +1,9 @@
 {
+<<<<<<< HEAD
+  "generatedAt": "2025-08-11T23:39:39.828Z",
+=======
   "generatedAt": "2025-08-11T23:38:11.931Z",
+>>>>>>> origin/cursor/invent-and-deploy-autonomous-cloud-automations-6869
   "functions": [
     "a11y-alt-text-runner",
     "adaptive-orchestrator",
@@ -25,8 +29,12 @@
     "contributing-refresher",
     "dead-code-audit",
     "dead-code-report",
+<<<<<<< HEAD
+    "design-evolution",
+=======
     "deps-auto-upgrade-runner",
     "design-tokens-curator",
+>>>>>>> origin/cursor/invent-and-deploy-autonomous-cloud-automations-6869
     "docs-index-runner",
     "docs-link-audit-runner",
     "docs-search-index-runner",
@@ -58,7 +66,11 @@
     "image-dimension-audit-runner",
     "image-optimizer-runner",
     "innovation-lab",
+<<<<<<< HEAD
+    "internal-links-runner",
+=======
     "innovation-lab-curator",
+>>>>>>> origin/cursor/invent-and-deploy-autonomous-cloud-automations-6869
     "link-and-health-scheduler",
     "link-crawler",
     "link-sentinel-aggregator-runner",
@@ -93,7 +105,12 @@
     "security-audit-runner",
     "semantic-crosslinker",
     "seo-audit-runner",
+<<<<<<< HEAD
+    "seo-schema-runner",
+    "site-404-map-runner",
+=======
     "seo-title-meta-curator",
+>>>>>>> origin/cursor/invent-and-deploy-autonomous-cloud-automations-6869
     "site-crawler",
     "site-promo-orchestrator",
     "sitemap_runner",
