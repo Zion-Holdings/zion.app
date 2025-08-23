@@ -29,14 +29,15 @@ const Header: React.FC = () => {
     {
       name: 'Services',
       href: '/services',
-      description: '200+ Real Micro SaaS Solutions',
+      description: '200+ Revolutionary Technology Solutions',
       icon: <Zap className="w-5 h-5" />,
       children: [
         { name: 'All Services', href: '/services' },
-        { name: 'Industry Solutions', href: '/solutions' },
-        { name: 'Cloud Platform', href: '/cloud-platform' },
-        { name: 'AI Assistant', href: '/ai-assistant' },
-        { name: 'Status Pages & SLO', href: '/status-pages-slo' }
+        { name: 'AI & Consciousness', href: '/ai-services' },
+        { name: 'Quantum Computing', href: '/quantum-services' },
+        { name: 'Space Technology', href: '/space-technology' },
+        { name: 'IT Solutions', href: '/it-services' },
+        { name: 'Cybersecurity', href: '/cybersecurity' }
       ]
     },
     {
@@ -46,14 +47,27 @@ const Header: React.FC = () => {
       icon: <Sparkles className="w-5 h-5" />,
       children: [
         { name: 'Case Studies', href: '/case-studies' },
+        { name: 'Industry Solutions', href: '/solutions' },
+        { name: 'Digital Transformation', href: '/digital-transformation' },
         { name: 'Cloud Platform', href: '/cloud-platform' },
-        { name: 'AI Assistant', href: '/ai-assistant' },
-        { name: 'Analytics', href: '/analytics' },
-        { name: 'Automation', href: '/automation' }
+        { name: 'AI Assistant', href: '/ai-assistant' }
       ]
     },
+    {
+      name: 'Resources',
+      href: '/resources',
+      description: 'Knowledge & Insights',
+      icon: <Sparkles className="w-5 h-5" />,
+      children: [
+        { name: 'Blog', href: '/blog' },
+        { name: 'Documentation', href: '/docs' },
+        { name: 'White Papers', href: '/white-papers' },
+        { name: 'Webinars', href: '/webinars' },
+        { name: 'Training', href: '/training' }
+      ]
+    },
+    { name: 'About', href: '/about' },
     { name: 'Pricing', href: '/pricing' },
-    { name: 'Resources', href: '/resources' },
     { name: 'Contact', href: '/contact' }
   ];
 

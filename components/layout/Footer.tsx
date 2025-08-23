@@ -26,19 +26,19 @@ const Footer: React.FC = () => {
   };
 
   const services = [
-    { name: 'AI & Machine Learning', href: '/ai-services' },
-    { name: 'Quantum Technology', href: '/quantum-services' },
+    { name: 'AI & Consciousness', href: '/ai-services' },
+    { name: 'Quantum Computing', href: '/quantum-services' },
     { name: 'Space Technology', href: '/space-technology' },
     { name: 'IT Solutions', href: '/it-services' },
-    { name: 'Specialized Solutions', href: '/solutions' },
+    { name: 'Cybersecurity', href: '/cybersecurity' },
     { name: 'View All Services', href: '/services' }
   ];
 
   const solutions = [
-    { name: 'Services Showcase', href: '/comprehensive-services-showcase-2025' },
-    { name: 'Pricing Plans', href: '/pricing' },
     { name: 'Case Studies', href: '/case-studies' },
-    { name: 'Resources', href: '/resources' },
+    { name: 'Industry Solutions', href: '/solutions' },
+    { name: 'Digital Transformation', href: '/digital-transformation' },
+    { name: 'Cloud Platform', href: '/cloud-platform' },
     { name: 'Support', href: '/support' },
     { name: 'Documentation', href: '/docs' }
   ];
@@ -69,12 +69,12 @@ const Footer: React.FC = () => {
   ];
 
   const socialLinks = [
-    { name: 'X', href: '/social/twitter', icon: Twitter },
-    { name: 'LinkedIn', href: '/social/linkedin', icon: Linkedin },
+    { name: 'X', href: 'https://twitter.com/ziontechgroup', icon: Twitter },
+    { name: 'LinkedIn', href: 'https://linkedin.com/company/ziontechgroup', icon: Linkedin },
     { name: 'GitHub', href: 'https://github.com/Zion-Holdings', icon: Github },
-    { name: 'Facebook', href: '/social/facebook', icon: Facebook },
-    { name: 'Instagram', href: '/social/instagram', icon: Instagram },
-    { name: 'YouTube', href: '/social/youtube', icon: Youtube }
+    { name: 'Facebook', href: 'https://facebook.com/ziontechgroup', icon: Facebook },
+    { name: 'Instagram', href: 'https://instagram.com/ziontechgroup', icon: Instagram },
+    { name: 'YouTube', href: 'https://youtube.com/@ziontechgroup', icon: Youtube }
   ];
 
   return (
@@ -101,6 +101,8 @@ const Footer: React.FC = () => {
                 <a
                   key={social.name}
                   href={social.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-cyan-500 transition-colors"
                   aria-label={social.name}
                 >
