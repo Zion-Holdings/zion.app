@@ -94,12 +94,33 @@ const ReportsPage: React.FC = () => {
   ];
 
   return (
+<<<<<<< HEAD
+    <div className="min-h-screen bg-slate-950 text-white">
+      <Head>
+        <title>Reports & Content | Zion Tech Group</title>
+        <meta name="description" content="Explore our comprehensive collection of reports, insights, and technical content." />
+      
+        <meta property="og:title" content="Reports & Content" />
+        <meta property="og:description" content="Reports & Content — automatically suggested description." />
+        <meta name="twitter:card" content="summary_large_image" /></Head>
+      
+      <main className="container mx-auto px-6 py-12">
+        <Breadcrumbs />
+        
+        <div className="text-center mb-12">
+          <h1 className="text-5xl font-bold mb-4">Reports & Content</h1>
+          <p className="text-xl text-white/70 max-w-3xl mx-auto">
+            Discover our extensive library of AI, cloud, and technology content
+          </p>
+        </div>
+=======
     <UltraFuturisticBackground>
       <div className="min-h-screen">
         <Head>
           <title>Research Reports - Zion Tech Group | Industry Analysis & Technology Insights</title>
           <meta name="description" content="Access Zion Tech Group's comprehensive research reports, whitepapers, and industry analysis covering AI, quantum computing, cybersecurity, and emerging technologies." />
         </Head>
+>>>>>>> origin/cursor/enhance-app-services-and-website-with-futuristic-design-1849
 
         <QuickNavigation />
 

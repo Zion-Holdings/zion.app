@@ -6714,6 +6714,23 @@ export const serviceCategories = [
     setupTime: '10 business days',
     category: 'Cloud & Infrastructure',
     realService: true,
+<<<<<<< HEAD
+    technology: ['Terraform', 'GitHub Actions', 'Kubernetes', 'OpenTelemetry'],
+    integrations: ['AWS', 'Azure', 'GCP'],
+    useCases: ['Foundations upgrade', 'New product launch', 'Compliance readiness'],
+    roi: 'Launch faster with fewer surprises and better guardrails.',
+    competitors: ['Boutique cloud shops', 'Internal DIY'],
+    marketSize: '$150B+ cloud services',
+    growthRate: '18% CAGR',
+    variant: 'ai-futuristic',
+    contactInfo: { mobile: '+1 302 464 0950', email: 'kleber@ziontechgroup.com', address: '364 E Main St STE 1008 Middletown DE 19709', website: 'https://ziontechgroup.com' },
+    realImplementation: true,
+    implementationDetails: 'Prebuilt modules and checklists applied to your account with knowledge transfer.',
+    launchDate: '2025-06-15',
+    customers: 22,
+    rating: 4.7,
+    reviews: 12
+=======
     technology: ['Quantum Computing', 'Cloud Management', 'AI/ML', 'DevOps', 'Automation'],
     integrations: ['AWS', 'Azure', 'Google Cloud', 'Kubernetes', 'Terraform'],
     useCases: ['Cost optimization', 'Resource management', 'Performance tuning', 'Multi-cloud management', 'DevOps automation'],
@@ -7256,6 +7273,7 @@ export const serviceCategories = [
       address: '364 E Main St STE 1008 Middletown DE 19709',
       website: 'https://ziontechgroup.com'
     }
+>>>>>>> origin/cursor/enhance-app-services-and-website-with-futuristic-design-1849
   }
 ];
 
@@ -7333,6 +7351,30 @@ export const getServicesByPriceRange = (minPrice: number, maxPrice: number): Enh
   });
 };
 
+<<<<<<< HEAD
+export const getServicesByROI = (minROI: number): EnhancedRealMicroSaasService[] => {
+  return enhancedRealMicroSaasServices.filter(service => {
+    const roiMatch = service.roi.match(/(\d+)%/);
+    if (roiMatch) {
+      const roi = parseInt(roiMatch[1]);
+      return roi >= minROI;
+    }
+    return false;
+  });
+};
+
+export const searchServices = (query: string): EnhancedRealMicroSaasService[] => {
+  const lowerQuery = query.toLowerCase();
+  return enhancedRealMicroSaasServices.filter(service =>
+    service.name.toLowerCase().includes(lowerQuery) ||
+    service.description.toLowerCase().includes(lowerQuery) ||
+    service.tagline.toLowerCase().includes(lowerQuery) ||
+    service.category.toLowerCase().includes(lowerQuery) ||
+    service.technology.some(tech => tech.toLowerCase().includes(lowerQuery)) ||
+    service.useCases.some(useCase => useCase.toLowerCase().includes(lowerQuery))
+  );
+};
+=======
 export const serviceCategories = [
   'All',
   'Quantum Computing',
@@ -7357,3 +7399,4 @@ export const serviceCategories = [
   'Legal Technology',
   'HR & Talent Management'
 ];
+>>>>>>> origin/cursor/enhance-app-services-and-website-with-futuristic-design-1849
