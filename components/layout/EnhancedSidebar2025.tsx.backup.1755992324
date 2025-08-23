@@ -2,6 +2,19 @@ import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { motion, AnimatePresence } from 'framer-motion';
 import { 
+<<<<<<< HEAD
+  ChevronRight, ChevronDown, 
+  Brain, Atom, Shield, Rocket, 
+  Palette, Microscope, Cpu, Database, Lock, BarChart3,
+  Zap, Star, Sparkles, Target, BookOpen, Users,
+  Phone, Mail, MapPin, Globe, ArrowRight,
+  Home, Settings, HelpCircle, FileText, Award, Clock
+} from 'lucide-react';
+
+interface EnhancedSidebar2025Props {
+  isOpen: boolean;
+  onClose: () => void;
+=======
   X, ChevronRight, Home, Star, Users, 
   Settings, HelpCircle, Mail, Phone, MapPin,
   Brain, Atom, Shield, Rocket, DollarSign,
@@ -21,6 +34,7 @@ interface SidebarItem {
   badge?: string;
   isNew?: boolean;
   isHot?: boolean;
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-6135
 }
 
 const contactInfo = {
@@ -30,7 +44,82 @@ const contactInfo = {
   website: 'https://ziontechgroup.com'
 };
 
+<<<<<<< HEAD
+const mainNavigation = [
+  {
+    name: 'Home',
+    href: '/',
+    icon: Home,
+    description: 'Main landing page'
+  },
+  {
+    name: 'All Services',
+    href: '/comprehensive-services-showcase-2025',
+    icon: Globe,
+    description: 'Complete portfolio showcase',
+    badge: 'Showcase'
+  },
+  {
+    name: 'AI & Consciousness',
+    href: '/ai-services',
+    icon: Brain,
+    description: 'Revolutionary AI solutions',
+    badge: 'New'
+  },
+  {
+    name: 'Micro SAAS',
+    href: '/micro-saas',
+    icon: Rocket,
+    description: 'Business solutions'
+  },
+  {
+    name: 'IT Services',
+    href: '/it-services',
+    icon: Shield,
+    description: 'Enterprise technology'
+  },
+  {
+    name: 'Emerging Tech',
+    href: '/emerging-tech-services',
+    icon: Atom,
+    description: 'Cutting-edge innovations'
+  },
+  {
+    name: 'Pricing',
+    href: '/pricing',
+    icon: DollarSign,
+    description: 'Service plans & pricing'
+  },
+  {
+    name: 'About Us',
+    href: '/about',
+    icon: Users,
+    description: 'Company information'
+  },
+  {
+    name: 'Contact',
+    href: '/contact',
+    icon: Phone,
+    description: 'Get in touch'
+  }
+];
+
+const serviceCategories = [
+  {
+    title: 'Main Navigation',
+    icon: <Home className="w-5 h-5" />,
+    items: [
+      { name: 'Home', href: '/', icon: <Home className="w-4 h-4" /> },
+      { name: 'All Services', href: '/comprehensive-services-showcase-2025', icon: <Target className="w-4 h-4" /> },
+      { name: 'Pricing', href: '/pricing', icon: <Star className="w-4 h-4" /> },
+      { name: 'About Us', href: '/about', icon: <Users className="w-4 h-4" /> },
+      { name: 'Contact', href: '/contact', icon: <Phone className="w-4 h-4" /> },
+      { name: 'Support', href: '/support', icon: <HelpCircle className="w-4 h-4" /> }
+    ]
+  },
+=======
 const sidebarItems: SidebarItem[] = [
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-6135
   {
     name: 'All Services',
     href: '/comprehensive-services-showcase-2025',
@@ -52,6 +141,25 @@ const sidebarItems: SidebarItem[] = [
     name: 'AI & Consciousness',
     href: '/ai-services',
     icon: <Brain className="w-5 h-5" />,
+<<<<<<< HEAD
+    badge: 'New',
+    items: [
+      { name: 'AI Consciousness Evolution', href: '/ai-consciousness-evolution-2025', badge: 'New' },
+      { name: 'AI Quantum Neural Network', href: '/ai-quantum-neural-network', badge: 'Hot' },
+      { name: 'AI Autonomous Research', href: '/ai-autonomous-research-assistant', badge: 'New' },
+      { name: 'AI Emotional Intelligence', href: '/ai-emotional-intelligence-training', badge: 'Popular' },
+      { name: 'AI Predictive Maintenance', href: '/ai-predictive-maintenance-platform', badge: 'New' },
+      { name: 'AI Content Personalization', href: '/ai-content-personalization-engine', badge: 'New' },
+      { name: 'AI Autonomous Ecosystem', href: '/ai-autonomous-ecosystem-manager' },
+      { name: 'AI Ethics & Governance', href: '/ai-ethics-governance-framework' },
+      { name: 'AI Creativity Studio', href: '/ai-creativity-studio' },
+      { name: 'AI Education Platform', href: '/ai-education-platform' },
+      { name: 'AI Healthcare Diagnostics', href: '/ai-healthcare-diagnostics' },
+      { name: 'AI Financial Intelligence', href: '/ai-financial-intelligence' },
+      { name: 'AI Sustainability Platform', href: '/ai-sustainability-platform' },
+      { name: 'AI Legal Contract Analyzer', href: '/ai-legal-contract-analyzer' },
+      { name: 'SB Website Analytics', href: '/services/sb-website-analytics-dashboard' }
+=======
     description: 'Revolutionary AI consciousness and emotional intelligence',
     badge: 'New',
     isNew: true,
@@ -70,16 +178,23 @@ const sidebarItems: SidebarItem[] = [
       { name: 'AI Financial Intelligence', href: '/ai-financial-intelligence', description: 'Financial AI analytics' },
       { name: 'AI Sustainability Platform', href: '/ai-sustainability-platform', description: 'Environmental AI solutions' },
       { name: 'AI Legal Contract Analyzer', href: '/ai-legal-contract-analyzer', description: 'Legal document analysis' }
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-6135
     ]
   },
   {
     name: 'Quantum & Emerging Tech',
     href: '/quantum-services',
     icon: <Atom className="w-5 h-5" />,
+<<<<<<< HEAD
+    badge: 'Hot',
+    items: [
+      { name: 'Quantum Computing as a Service', href: '/quantum-computing-as-a-service', description: 'Cloud quantum computing access' },
+=======
     description: 'Quantum computing and breakthrough technologies',
     badge: 'Hot',
     isHot: true,
     children: [
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-6135
       { name: 'Space Resource Mining', href: '/space-resource-mining-platform', description: 'Asteroid mining and space resources' },
       { name: 'Quantum Internet Security', href: '/quantum-internet-security-platform', description: 'Unbreakable encryption' },
       { name: 'Brain-Computer Interface', href: '/brain-computer-interface-platform', description: 'Neural interface technology' },
@@ -92,13 +207,32 @@ const sidebarItems: SidebarItem[] = [
       { name: 'Quantum Logistics', href: '/quantum-logistics-optimization', description: 'Route optimization' },
       { name: 'Quantum Metaverse', href: '/quantum-metaverse', description: 'Quantum-enhanced virtual worlds' },
       { name: 'Quantum IoT Platform', href: '/quantum-iot', description: 'Quantum-secured IoT' },
+<<<<<<< HEAD
+      { name: 'Quantum Financial Trading', href: '/quantum-ai-trading-platform', description: 'Quantum trading algorithms' }
+=======
       { name: 'Quantum Financial Trading', href: '/quantum-financial-trading', description: 'Quantum trading algorithms' }
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-6135
     ]
   },
   {
     name: 'Enterprise IT',
     href: '/enterprise-it',
     icon: <Shield className="w-5 h-5" />,
+<<<<<<< HEAD
+    items: [
+      { name: 'Quantum-Secure Cloud', href: '/quantum-secure-cloud-infrastructure', badge: 'New' },
+      { name: 'Autonomous IT Operations', href: '/autonomous-it-operations-center', badge: 'New' },
+      { name: 'Edge Computing Orchestration', href: '/edge-computing-orchestration-platform', badge: 'New' },
+      { name: 'Blockchain Infrastructure', href: '/blockchain-infrastructure-platform', badge: 'New' },
+      { name: 'AI-Powered DevOps', href: '/ai-powered-devops-platform', badge: 'New' },
+      { name: 'Quantum Cloud Infrastructure', href: '/quantum-cloud-infrastructure-platform' },
+      { name: 'Zero Trust Security', href: '/zero-trust-security-platform' },
+      { name: 'Quantum Networking', href: '/quantum-networking' },
+      { name: 'Quantum Data Center', href: '/quantum-data-center' },
+      { name: 'Quantum Cybersecurity', href: '/quantum-cybersecurity' },
+      { name: 'Quantum Cloud Migration', href: '/quantum-cloud-migration' },
+      { name: 'MSP Helpdesk', href: '/services/msp-helpdesk-starter' }
+=======
     description: 'Enterprise solutions and infrastructure',
     children: [
       { name: 'Quantum-Secure Cloud', href: '/quantum-secure-cloud-infrastructure', description: 'Future-proof cloud security' },
@@ -110,12 +244,113 @@ const sidebarItems: SidebarItem[] = [
       { name: 'IoT Security Management', href: '/iot-security-management-platform', description: 'Connected device security' },
       { name: 'Data Privacy Management', href: '/data-privacy-management-platform', description: 'Compliance and privacy' },
       { name: 'Cloud Cost Optimization', href: '/cloud-cost-optimization-platform', description: 'AI-powered cost reduction' }
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-6135
     ]
   },
   {
     name: 'Micro SAAS',
     href: '/micro-saas',
     icon: <Rocket className="w-5 h-5" />,
+<<<<<<< HEAD
+    items: [
+      { name: 'AI Customer Success', href: '/services/ai-customer-success-platform', badge: 'New' },
+      { name: 'Supply Chain Optimization', href: '/intelligent-supply-chain-optimization', badge: 'New' },
+      { name: 'Financial Planning AI', href: '/services/ai-financial-planning-platform', badge: 'New' },
+      { name: 'HR Analytics Platform', href: '/services/intelligent-hr-analytics-platform', badge: 'New' },
+      { name: 'Sales Intelligence AI', href: '/services/ai-sales-intelligence-platform', badge: 'New' },
+      { name: 'AI Decision Engine', href: '/services/ai-powered-decision-engine' },
+      { name: 'Content Automation', href: '/services/intelligent-content-automation-platform' },
+      { name: 'Smart CRM Suite', href: '/services/smart-crm-intelligence-suite' },
+      { name: 'Affiliate Analytics', href: '/services/affiliate-partner-analytics-suite' },
+      { name: 'AI Content Studio', href: '/services/ai-content-studio-pro' },
+      { name: 'Returns Automation', href: '/services/returns-automation-suite' }
+    ]
+  },
+  {
+    title: 'Creative & Design',
+    icon: <Palette className="w-5 h-5" />,
+    badge: 'New',
+    items: [
+      { name: 'AI Creativity Studio', href: '/ai-creativity-studio-platform', description: 'AI-powered artistic tools' },
+      { name: 'AI Content Generation', href: '/ai-content-generation-platform', description: 'Generate engaging content' },
+      { name: 'AI Design Automation', href: '/ai-design-automation-platform', description: 'Automate design processes' },
+      { name: 'AI Video Creation', href: '/ai-video-creation-platform', description: 'Create videos with AI' },
+      { name: 'AI Music Generation', href: '/ai-music-generation-platform', description: 'Compose music with AI' },
+      { name: 'AI 3D Modeling', href: '/ai-3d-modeling-platform', description: 'Generate 3D models' },
+      { name: 'AI Brand Management', href: '/ai-brand-management-platform', description: 'Manage brand identity' },
+      { name: 'AI Marketing Design', href: '/ai-marketing-design-platform', description: 'Design marketing materials' }
+    ]
+  },
+  {
+    title: 'Research & Development',
+    icon: <Microscope className="w-5 h-5" />,
+    badge: 'Hot',
+    items: [
+      { name: 'AI Autonomous Research', href: '/ai-autonomous-research-assistant', description: 'Self-directed AI research' },
+      { name: 'Quantum Computing', href: '/quantum-computing-as-a-service', description: 'Access quantum power' },
+      { name: 'Brain-Computer Interface', href: '/brain-computer-interface-platform', description: 'Neural interface technology' },
+      { name: 'Space Technology', href: '/space-technology-ai-platform', description: 'AI-powered space solutions' },
+      { name: 'Biotech AI Research', href: '/biotech-ai-research-platform', description: 'Biological AI research' },
+      { name: 'AI Materials Science', href: '/ai-materials-science-platform', description: 'Accelerate materials discovery' },
+      { name: 'AI Drug Discovery', href: '/ai-drug-discovery-platform', description: 'Pharmaceutical AI research' },
+      { name: 'AI Climate Research', href: '/ai-climate-research-platform', description: 'Environmental AI research' }
+    ]
+  },
+  {
+    title: 'Industry Solutions',
+    icon: <Cpu className="w-5 h-5" />,
+    items: [
+      { name: 'Manufacturing AI', href: '/ai-manufacturing-platform', description: 'Smart manufacturing solutions' },
+      { name: 'Healthcare AI', href: '/ai-healthcare-solutions', description: 'Medical AI applications' },
+      { name: 'Financial AI', href: '/ai-financial-solutions', description: 'Financial technology AI' },
+      { name: 'Retail AI', href: '/ai-retail-solutions', description: 'Retail automation AI' },
+      { name: 'Transportation AI', href: '/ai-transportation-solutions', description: 'Smart transportation AI' },
+      { name: 'Energy AI', href: '/ai-energy-solutions', description: 'Energy optimization AI' },
+      { name: 'Education AI', href: '/ai-education-solutions', description: 'Educational AI platforms' },
+      { name: 'Government AI', href: '/ai-government-solutions', description: 'Public sector AI solutions' }
+    ]
+  },
+  {
+    title: 'Infrastructure',
+    icon: <Database className="w-5 h-5" />,
+    items: [
+      { name: 'Quantum-Secure Cloud', href: '/quantum-secure-cloud-infrastructure', description: 'Future-proof cloud security' },
+      { name: 'Edge Computing', href: '/edge-computing-orchestration-platform', description: 'Intelligent edge orchestration' },
+      { name: 'Autonomous DevOps', href: '/autonomous-devops-orchestrator', description: 'Self-healing infrastructure' },
+      { name: 'AI Data Pipeline', href: '/ai-powered-data-pipeline-platform', description: 'Intelligent data processing' },
+      { name: 'Quantum Database', href: '/quantum-database-management-system', description: 'Next-gen database system' },
+      { name: 'Autonomous Network', href: '/autonomous-network-management-platform', description: 'Self-optimizing networks' },
+      { name: 'AI Service Management', href: '/ai-powered-it-service-management', description: 'Intelligent service delivery' },
+      { name: 'Autonomous API Management', href: '/autonomous-api-management-platform', description: 'Intelligent API lifecycle' }
+    ]
+  },
+  {
+    title: 'Security & Privacy',
+    icon: <Lock className="w-5 h-5" />,
+    items: [
+      { name: 'Zero Trust Security', href: '/zero-trust-security-architecture', description: 'Never trust, always verify' },
+      { name: 'Quantum Internet Security', href: '/quantum-internet-security-platform', description: 'Unbreakable encryption' },
+      { name: 'Quantum Communication', href: '/quantum-secure-communication-platform', description: 'Military-grade security' },
+      { name: 'AI Fraud Detection', href: '/ai-fraud-detection-system', description: 'Intelligent fraud prevention' },
+      { name: 'AI Threat Intelligence', href: '/ai-threat-intelligence-platform', description: 'Advanced threat detection' },
+      { name: 'AI Security Analytics', href: '/ai-security-analytics-platform', description: 'Security insights with AI' },
+      { name: 'Privacy-Preserving AI', href: '/privacy-preserving-ai-platform', description: 'AI without compromising privacy' },
+      { name: 'AI Compliance Management', href: '/ai-compliance-management-platform', description: 'Automated compliance' }
+    ]
+  },
+  {
+    title: 'Analytics & Intelligence',
+    icon: <BarChart3 className="w-5 h-5" />,
+    items: [
+      { name: 'AI Business Intelligence', href: '/ai-business-intelligence-suite', description: 'Transform data into insights' },
+      { name: 'AI Predictive Analytics', href: '/ai-predictive-analytics-engine', description: 'Future insights with AI' },
+      { name: 'AI Data Pipeline', href: '/ai-powered-data-pipeline-platform', description: 'Intelligent data processing' },
+      { name: 'AI Content Personalization', href: '/ai-content-personalization-engine', description: 'Personalized experiences' },
+      { name: 'AI Customer Analytics', href: '/ai-customer-analytics-platform', description: 'Customer behavior insights' },
+      { name: 'AI Market Intelligence', href: '/ai-market-intelligence-platform', description: 'Market trend analysis' },
+      { name: 'AI Performance Analytics', href: '/ai-performance-analytics-platform', description: 'Performance optimization' },
+      { name: 'AI Risk Analytics', href: '/ai-risk-analytics-platform', description: 'Risk assessment and management' }
+=======
     description: 'Innovative business solutions for modern enterprises',
     badge: 'Popular',
     children: [
@@ -213,6 +448,7 @@ const sidebarItems: SidebarItem[] = [
       { name: 'Training Programs', href: '/training', description: 'Skill development' },
       { name: 'Community Forum', href: '/community', description: 'User community' },
       { name: 'Status Page', href: '/status', description: 'Service status' }
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-6135
     ]
   }
 ];
@@ -226,7 +462,18 @@ const resources = [
   { name: 'Community Forum', href: '/community', icon: <Users className="w-4 h-4" /> }
 ];
 
+<<<<<<< HEAD
+export default function EnhancedSidebar2025() {
+  const [expandedSections, setExpandedSections] = useState<Set<string>>(new Set(['Main Navigation']));
+  const [isVisible, setIsVisible] = useState(false);
 
+  useEffect(() => {
+    const timer = setTimeout(() => setIsVisible(true), 500);
+    return () => clearTimeout(timer);
+  }, []);
+=======
+
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-6135
 
   const toggleSection = (title: string) => {
     const newExpanded = new Set(expandedSections);
@@ -238,12 +485,16 @@ const resources = [
     setExpandedSections(newExpanded);
   };
 
+<<<<<<< HEAD
+  if (!isVisible) return null;
+=======
   const filteredServices = sidebarItems.flatMap(item =>
     item.children?.filter(child =>
       child.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
       child.description?.toLowerCase().includes(searchQuery.toLowerCase())
     ) || []
   );
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-6135
 
   return (
     <motion.aside
@@ -321,6 +572,63 @@ const resources = [
                   transition={{ duration: 0.2 }}
                   className="ml-8 space-y-1"
                 >
+<<<<<<< HEAD
+                  {section.items.map((item) => (
+                    <Link
+                      key={item.name}
+                      href={item.href}
+                      className="block p-2 text-sm text-gray-400 hover:text-cyan-400 hover:bg-cyan-500/5 rounded transition-all duration-200 group"
+                    >
+                      <div className="flex items-start space-x-2">
+                        {item.icon && (
+                          <div className="text-gray-500 group-hover:text-cyan-400 transition-colors duration-200 mt-0.5">
+                            {item.icon}
+                          </div>
+                        )}
+                        <div className="flex-1">
+                          <div className="font-medium">{item.name}</div>
+                          {item.description && (
+                            <div className="text-xs text-gray-500 mt-1 leading-relaxed">
+                              {item.description}
+                            </div>
+                          )}
+                        </div>
+                      </div>
+                    </Link>
+                  ))}
+                </motion.div>
+              )}
+            </AnimatePresence>
+          </div>
+        ))}
+
+        {/* Resources Section */}
+        <div className="pt-4 border-t border-gray-800">
+          <h3 className="text-sm font-semibold text-gray-300 mb-3 px-3">Resources</h3>
+          <div className="space-y-1">
+            {resources.map((resource) => (
+              <Link
+                key={resource.name}
+                href={resource.href}
+                className="flex items-center space-x-3 p-2 text-sm text-gray-400 hover:text-cyan-400 hover:bg-cyan-500/5 rounded transition-all duration-200 group"
+              >
+                <div className="text-gray-500 group-hover:text-cyan-400 transition-colors duration-200">
+                  {resource.icon}
+                </div>
+                <span>{resource.name}</span>
+              </Link>
+            ))}
+          </div>
+        </div>
+
+        {/* Quick Stats */}
+        <div className="pt-4 border-t border-gray-800">
+          <h3 className="text-sm font-semibold text-gray-300 mb-3 px-3">Quick Stats</h3>
+          <div className="grid grid-cols-2 gap-3 px-3">
+            <div className="text-center p-3 bg-gray-800/50 rounded-lg">
+              <div className="text-lg font-bold text-cyan-400">500+</div>
+              <div className="text-xs text-gray-400">Services</div>
+=======
                   <CloseIcon className="w-5 h-5" />
                 </button>
               </div>
@@ -546,6 +854,7 @@ const resources = [
                   <div className="text-xs text-gray-500">Learn about Zion Tech Group</div>
                 </Link>
               </div>
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-6135
             </div>
             <div className="text-center p-3 bg-gray-800/50 rounded-lg">
               <div className="text-lg font-bold text-blue-400">1000+</div>

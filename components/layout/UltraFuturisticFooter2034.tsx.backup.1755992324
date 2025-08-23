@@ -2,6 +2,13 @@ import React from 'react';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { 
+<<<<<<< HEAD
+  Phone, Mail, MapPin, Globe, 
+  ArrowRight, Zap, Brain, Atom, Shield, Rocket,
+  Palette, Microscope, Cpu, Database, Lock, BarChart3,
+  Facebook, Twitter, Linkedin, Instagram, Youtube,
+  Star, Award, Users, Clock, Heart, Lightbulb
+=======
   Zap, Brain, Atom, Shield, Rocket, 
   Globe, Mail, Phone, MapPin, ArrowRight,
   Star, Sparkles, Cpu, Lock, Cloud, 
@@ -10,6 +17,7 @@ import {
   DollarSign, Palette, Code, Database, Users,
   Twitter, Linkedin, Facebook, Instagram, Youtube,
   Github, MessageCircle, MessageSquare
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-6135
 } from 'lucide-react';
 
 const contactInfo = {
@@ -23,7 +31,10 @@ const serviceCategories = [
   {
     title: 'AI & Consciousness',
     description: 'Revolutionary AI consciousness and emotional intelligence solutions',
+<<<<<<< HEAD
+=======
     icon: <Brain className="w-6 h-6" />,
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-6135
     links: [
       { name: 'AI Consciousness Evolution', href: '/ai-consciousness-evolution-2025' },
       { name: 'AI Emotional Intelligence', href: '/ai-emotional-intelligence-training' },
@@ -32,18 +43,27 @@ const serviceCategories = [
       { name: 'AI Content Personalization', href: '/ai-content-personalization-engine' },
       { name: 'AI Autonomous Ecosystem', href: '/ai-autonomous-ecosystem-manager' },
       { name: 'AI Ethics & Governance', href: '/ai-ethics-governance-framework' },
+<<<<<<< HEAD
+      { name: 'AI Creativity Studio', href: '/ai-creativity-studio-platform' },
+      { name: 'AI Education Platform', href: '/ai-education-platform' }
+=======
       { name: 'AI Creativity Studio', href: '/ai-creativity-studio' },
       { name: 'AI Education Platform', href: '/ai-education-platform' },
       { name: 'AI Healthcare Diagnostics', href: '/ai-healthcare-diagnostics' },
       { name: 'AI Financial Intelligence', href: '/ai-financial-intelligence' },
       { name: 'AI Sustainability Platform', href: '/ai-sustainability-platform' },
       { name: 'AI Legal Contract Analyzer', href: '/ai-legal-contract-analyzer' }
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-6135
     ]
   },
   {
     title: 'Quantum & Emerging Tech',
+<<<<<<< HEAD
+    description: 'Cutting-edge quantum computing and breakthrough technologies',
+=======
     description: 'Quantum computing and breakthrough technologies',
     icon: <Atom className="w-6 h-6" />,
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-6135
     links: [
       { name: 'Quantum-Secure Cloud Infrastructure', href: '/quantum-secure-cloud-infrastructure' },
       { name: 'Quantum-Ready Database', href: '/quantum-ready-database-platform' },
@@ -52,6 +72,9 @@ const serviceCategories = [
       { name: 'Brain-Computer Interface', href: '/brain-computer-interface-platform' },
       { name: 'Quantum Materials Discovery', href: '/quantum-materials-discovery-platform' },
       { name: 'Autonomous Vehicle AI', href: '/autonomous-vehicle-ai-platform' },
+<<<<<<< HEAD
+      { name: 'Quantum Bio-Computing', href: '/quantum-bio-computing-platform' }
+=======
       { name: 'Quantum Bio-Computing', href: '/quantum-bio-computing-platform' },
       { name: 'Quantum Energy Platform', href: '/quantum-energy-platform' },
       { name: 'Quantum Robotics', href: '/quantum-robotics' },
@@ -60,10 +83,23 @@ const serviceCategories = [
       { name: 'Quantum Metaverse', href: '/quantum-metaverse' },
       { name: 'Quantum IoT Platform', href: '/quantum-iot' },
       { name: 'Quantum Financial Trading', href: '/quantum-financial-trading' }
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-6135
     ]
   },
   {
     title: 'Enterprise IT',
+<<<<<<< HEAD
+    description: 'Advanced enterprise solutions and infrastructure',
+    links: [
+      { name: 'Zero Trust Security', href: '/zero-trust-network-security' },
+      { name: 'AI DevOps Automation', href: '/ai-devops-automation-platform' },
+      { name: 'Edge Computing Orchestration', href: '/edge-computing-orchestration' },
+      { name: 'AI Data Governance', href: '/ai-data-governance-platform' },
+      { name: 'AI API Management', href: '/ai-api-management-platform' },
+      { name: 'Autonomous IT Operations', href: '/autonomous-it-operations-center' },
+      { name: 'Quantum Cloud Infrastructure', href: '/quantum-cloud-infrastructure' },
+      { name: 'Advanced Cybersecurity', href: '/quantum-cybersecurity-services' }
+=======
     description: 'Enterprise solutions and infrastructure',
     icon: <Shield className="w-6 h-6" />,
     links: [
@@ -76,11 +112,40 @@ const serviceCategories = [
       { name: 'IoT Security Management', href: '/iot-security-management-platform' },
       { name: 'Data Privacy Management', href: '/data-privacy-management-platform' },
       { name: 'Cloud Cost Optimization', href: '/cloud-cost-optimization-platform' }
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-6135
     ]
   },
   {
     title: 'Micro SAAS',
     description: 'Innovative business solutions for modern enterprises',
+<<<<<<< HEAD
+    links: [
+      { name: 'AI Business Intelligence', href: '/ai-business-intelligence-suite' },
+      { name: 'AI Content Personalization', href: '/ai-content-personalization-engine' },
+      { name: 'AI Customer Success', href: '/ai-customer-success-platform' },
+      { name: 'AI Financial Planning', href: '/ai-financial-planning-platform' },
+      { name: 'AI Healthcare Analytics', href: '/ai-healthcare-analytics-platform' },
+      { name: 'AI Supply Chain Optimization', href: '/ai-supply-chain-optimization' },
+      { name: 'AI Legal Document Analysis', href: '/ai-legal-document-analysis' },
+      { name: 'AI Real Estate Analytics', href: '/ai-real-estate-analytics' }
+    ]
+  },
+  {
+    title: 'Advanced Solutions',
+    links: [
+      { name: 'AI Education Personalization', href: '/ai-education-personalization' },
+      { name: 'AI Manufacturing Quality Control', href: '/ai-manufacturing-quality-control' },
+      { name: 'Advanced AI Automation', href: '/advanced-ai-automation-services' },
+      { name: 'Advanced IT Infrastructure', href: '/advanced-it-infrastructure-services' },
+      { name: 'Innovative Business Solutions', href: '/innovative-business-solutions' },
+      { name: 'Industry Solutions', href: '/industry-solutions' },
+      { name: 'Research & Development', href: '/research-development' },
+      { name: 'Space Technology', href: '/space-technology' }
+    ]
+  },
+  {
+    title: 'Resources & Support',
+=======
     icon: <Rocket className="w-6 h-6" />,
     links: [
       { name: 'AI Business Intelligence', href: '/ai-business-intelligence-suite' },
@@ -138,6 +203,7 @@ const serviceCategories = [
     title: 'Resources',
     description: 'Educational resources and documentation',
     icon: <BookOpen className="w-6 h-6" />,
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-6135
     links: [
       { name: 'Documentation', href: '/docs' },
       { name: 'API Reference', href: '/api-docs' },
@@ -150,6 +216,52 @@ const serviceCategories = [
 ];
 
 const companyLinks = [
+<<<<<<< HEAD
+  { name: 'About Us', href: '/about' },
+  { name: 'Leadership Team', href: '/leadership' },
+  { name: 'Careers', href: '/careers' },
+  { name: 'News & Press', href: '/news' },
+  { name: 'Partners', href: '/partners' },
+  { name: 'Investors', href: '/investors' },
+  { name: 'Contact Us', href: '/contact' },
+  { name: 'Locations', href: '/locations' },
+  { name: 'Sustainability', href: '/sustainability' },
+  { name: 'Diversity & Inclusion', href: '/diversity-inclusion' },
+  { name: 'Terms of Service', href: '/terms' },
+  { name: 'Privacy Policy', href: '/privacy' }
+];
+
+const resourceLinks = [
+  { name: 'Documentation', href: '/docs' },
+  { name: 'API Reference', href: '/api-documentation' },
+  { name: 'Case Studies', href: '/case-studies' },
+  { name: 'Blog & News', href: '/blog' },
+  { name: 'Support Center', href: '/support' },
+  { name: 'Training & Certification', href: '/training' },
+  { name: 'Community Forum', href: '/community' },
+  { name: 'Developer Resources', href: '/developer-resources' },
+  { name: 'Research & Development', href: '/research-development' },
+  { name: 'White Papers', href: '/white-papers' }
+];
+
+const solutionLinks = [
+  { name: 'Healthcare Solutions', href: '/healthcare-solutions' },
+  { name: 'Financial Services', href: '/financial-solutions' },
+  { name: 'Manufacturing AI', href: '/manufacturing-ai-solutions' },
+  { name: 'Retail Technology', href: '/retail-technology-solutions' },
+  { name: 'Education Technology', href: '/education-technology-solutions' },
+  { name: 'Government Solutions', href: '/government-technology-solutions' },
+  { name: 'Energy & Utilities', href: '/energy-utilities-solutions' },
+  { name: 'Transportation & Logistics', href: '/transportation-logistics-solutions' }
+];
+
+const socialLinks = [
+  { name: 'Facebook', href: '#', icon: Facebook },
+  { name: 'Twitter', href: '#', icon: Twitter },
+  { name: 'LinkedIn', href: '#', icon: Linkedin },
+  { name: 'Instagram', href: '#', icon: Instagram },
+  { name: 'YouTube', href: '#', icon: Youtube }
+=======
   { name: 'About Us', href: '/about', description: 'Our mission and vision' },
   { name: 'Leadership Team', href: '/leadership', description: 'Meet our executive team' },
   { name: 'Careers', href: '/careers', description: 'Join our team' },
@@ -173,6 +285,7 @@ const socialLinks = [
   { name: 'GitHub', href: '#', icon: <Github className="w-5 h-5" /> },
   { name: 'Discord', href: '#', icon: <MessageCircle className="w-5 h-5" /> },
   { name: 'Slack', href: '#', icon: <MessageSquare className="w-5 h-5" /> }
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-6135
 ];
 
 const stats = [
@@ -489,7 +602,12 @@ export default function UltraFuturisticFooter2034() {
                     href={link.href}
                     className="text-sm text-gray-300 hover:text-cyan-400 transition-colors duration-200 flex items-center space-x-2 group"
                   >
+<<<<<<< HEAD
+                    <ArrowRight className="w-3 h-3 group-hover:translate-x-1 transition-transform duration-200" />
+                    <span>{link.name}</span>
+=======
                     {social.icon}
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-6135
                   </Link>
                 ))}
               </div>
