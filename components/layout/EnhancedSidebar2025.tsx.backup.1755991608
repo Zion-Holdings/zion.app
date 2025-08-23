@@ -91,6 +91,16 @@ const sidebarSections = [
     title: 'Enterprise Solutions',
     icon: <Shield className="w-5 h-5" />,
     items: [
+<<<<<<< HEAD
+      { name: 'Quantum-Secure Cloud', href: '/quantum-secure-cloud-infrastructure', icon: <Cloud className="w-4 h-4" /> },
+      { name: 'Autonomous IT Operations', href: '/autonomous-it-operations-center', icon: <Settings className="w-4 h-4" /> },
+      { name: 'Edge Computing Platform', href: '/edge-computing-orchestration-platform', icon: <Network className="w-4 h-4" /> },
+      { name: 'Blockchain Infrastructure', href: '/blockchain-infrastructure-platform', icon: <Database className="w-4 h-4" /> },
+      { name: 'AI-Powered DevOps', href: '/ai-powered-devops-platform', icon: <Code className="w-4 h-4" /> },
+      { name: 'Zero Trust Security', href: '/zero-trust-security-platform', icon: <Lock className="w-4 h-4" /> },
+      { name: 'AI Cybersecurity', href: '/ai-powered-cybersecurity', icon: <Shield className="w-4 h-4" /> },
+      { name: 'SOC 2 Compliance', href: '/soc2-compliance-automation', icon: <Award className="w-4 h-4" /> }
+=======
       { name: 'Quantum-Secure Cloud', href: '/quantum-secure-cloud-infrastructure', badge: 'New' },
       { name: 'Autonomous IT Operations', href: '/autonomous-it-operations-center', badge: 'New' },
       { name: 'Edge Computing Orchestration', href: '/edge-computing-orchestration-platform', badge: 'New' },
@@ -103,6 +113,7 @@ const sidebarSections = [
       { name: 'Quantum Networking', href: '/quantum-services' },
       { name: 'Quantum Data Center', href: '/quantum-services' },
       { name: 'Quantum Cloud Migration', href: '/quantum-cloud-infrastructure' }
+>>>>>>> origin/cursor/website-audit-content-update-and-deployment-0e1c
     ]
   },
   {

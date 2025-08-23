@@ -61,6 +61,43 @@ const Footer: React.FC = () => {
   ];
 
   const resources = [
+<<<<<<< HEAD
+    { name: 'Documentation', href: '/docs', icon: FileText },
+    { name: 'Blog', href: '/blog', icon: FileText },
+    { name: 'Case Studies', href: '/case-studies', icon: BookOpen },
+    { name: 'White Papers', href: '/white-papers', icon: FileText },
+    { name: 'Webinars', href: '/webinars', icon: Users },
+    { name: 'Training', href: '/training', icon: Users },
+    { name: 'API Documentation', href: '/api-docs', icon: FileText }
+  ];
+
+  const company = [
+    { name: 'About Us', href: '/about', icon: Info },
+    { name: 'Careers', href: '/careers', icon: Users },
+    { name: 'Partners', href: '/partners', icon: Users },
+    { name: 'Investors', href: '/investors', icon: DollarSign },
+    { name: 'News', href: '/news', icon: FileText },
+    { name: 'Events', href: '/events', icon: Users },
+    { name: 'Contact', href: '/contact', icon: Users }
+  ];
+
+  const support = [
+    { name: 'Support Center', href: '/support', icon: HelpCircle },
+    { name: 'Contact Us', href: '/contact', icon: Users },
+    { name: 'Status Page', href: '/status', icon: Shield },
+    { name: 'Community', href: '/community', icon: Users },
+    { name: 'API Documentation', href: '/api-docs', icon: FileText },
+    { name: 'Help & FAQ', href: '/support', icon: HelpCircle }
+  ];
+
+  const showcase = [
+    { name: '2026 Services', href: '/revolutionary-2026-services', icon: Rocket },
+    { name: 'Micro SAAS', href: '/ultimate-2025-micro-saas-showcase', icon: Zap },
+    { name: 'Ultimate 2035', href: '/ultimate-2035-futuristic-services-showcase', icon: Sparkles },
+    { name: 'Market Pricing', href: '/market-pricing', icon: BarChart3 },
+    { name: 'Revolutionary 2026', href: '/revolutionary-2026-pricing', icon: Star },
+    { name: 'All Showcases', href: '/comprehensive-services-showcase-2025', icon: Star }
+=======
     { name: 'Documentation', href: '/docs' },
     { name: 'Resources', href: '/resources' },
     { name: 'Support Center', href: '/support' },
@@ -74,15 +111,29 @@ const Footer: React.FC = () => {
     { name: 'Market Pricing', href: '/market-pricing' },
     { name: 'RAG Evaluation Lab', href: '/rag-evaluation-lab/' },
     { name: 'API Performance Testing', href: '/api-performance-testing/' }
+>>>>>>> origin/cursor/website-audit-content-update-and-deployment-0e1c
   ];
 
   const socialLinks = [
     { name: 'X (Twitter)', href: '/social/twitter', icon: Twitter },
     { name: 'LinkedIn', href: '/social/linkedin', icon: Linkedin },
     { name: 'GitHub', href: 'https://github.com/Zion-Holdings', icon: Github },
+<<<<<<< HEAD
+    { name: 'Facebook', href: 'https://facebook.com/ziontechgroup', icon: Facebook },
+    { name: 'Instagram', href: 'https://instagram.com/ziontechgroup', icon: Instagram },
+    { name: 'YouTube', href: 'https://youtube.com/@ziontechgroup', icon: Youtube }
+  ];
+
+  const legal = [
+    { name: 'Privacy Policy', href: '/privacy', icon: Shield },
+    { name: 'Terms of Service', href: '/terms', icon: FileText },
+    { name: 'Cookie Policy', href: '/cookies', icon: Shield },
+    { name: 'Accessibility', href: '/accessibility-scanner', icon: Users }
+=======
     { name: 'Facebook', href: 'https://www.facebook.com/ziontechgroup', icon: Facebook },
     { name: 'Instagram', href: 'https://www.instagram.com/ziontechgroup', icon: Instagram },
     { name: 'YouTube', href: 'https://www.youtube.com/@ziontechgroup', icon: Youtube }
+>>>>>>> origin/cursor/website-audit-content-update-and-deployment-0e1c
   ];
 
   return (
