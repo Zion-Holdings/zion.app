@@ -18,6 +18,8 @@ export interface Innovative2040FuturisticService {
   customers: string;
   rating: number;
   reviews: number;
+  icon?: string;
+  color?: string;
 }
 
 export const innovative2040FuturisticServices: Innovative2040FuturisticService[] = [
@@ -51,7 +53,9 @@ export const innovative2040FuturisticServices: Innovative2040FuturisticService[]
     launchDate: 'Q1 2040',
     customers: '5 enterprise clients, 15 research institutions',
     rating: 4.9,
-    reviews: 127
+    reviews: 127,
+    icon: '🧠⚛️',
+    color: 'from-purple-500 to-pink-600'
   },
   {
     id: 'holographic-quantum-workspace',

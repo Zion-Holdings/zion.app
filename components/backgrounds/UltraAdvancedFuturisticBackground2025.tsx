@@ -3,8 +3,6 @@ import { motion } from 'framer-motion';
 
 const UltraAdvancedFuturisticBackground2025: React.FC = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
-  const particlesRef = useRef<any[]>([]);
-  const animationRef = useRef<number | undefined>(undefined);
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -13,17 +11,11 @@ const UltraAdvancedFuturisticBackground2025: React.FC = () => {
     const ctx = canvas.getContext('2d');
     if (!ctx) return;
 
-    // Set canvas size
-    const resizeCanvas = () => {
-      canvas.width = window.innerWidth;
-      canvas.height = window.innerHeight;
-    };
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
 
-    resizeCanvas();
-    window.addEventListener('resize', resizeCanvas);
-
-    // Particle class
-    class Particle {
+    // Particle system
+    const particles: Array<{
       x: number;
       y: number;
       vx: number;
@@ -31,207 +23,283 @@ const UltraAdvancedFuturisticBackground2025: React.FC = () => {
       size: number;
       color: string;
       alpha: number;
+    }> = [];
 
-      constructor() {
-        this.x = Math.random() * canvas.width;
-        this.y = Math.random() * canvas.height;
-        this.vx = (Math.random() - 0.5) * 2;
-        this.vy = (Math.random() - 0.5) * 2;
-        this.size = Math.random() * 3 + 1;
-        this.color = `hsl(${Math.random() * 60 + 180}, 70%, 60%)`;
-        this.alpha = Math.random() * 0.5 + 0.3;
-      }
-
-      update() {
-        this.x += this.vx;
-        this.y += this.vy;
-
-        if (this.x < 0 || this.x > canvas.width) this.vx *= -1;
-        if (this.y < 0 || this.y > canvas.height) this.vy *= -1;
-
-        this.alpha = Math.sin(Date.now() * 0.001 + this.x * 0.01) * 0.3 + 0.3;
-      }
-
-      draw() {
-        ctx.save();
-        ctx.globalAlpha = this.alpha;
-        ctx.fillStyle = this.color;
-        ctx.beginPath();
-        ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-        ctx.fill();
-        ctx.restore();
-      }
-    }
-
-    // Create particles
-    const particles: Particle[] = [];
+    // Initialize particles
     for (let i = 0; i < 100; i++) {
-      particles.push(new Particle());
+      particles.push({
+        x: Math.random() * canvas.width,
+        y: Math.random() * canvas.height,
+        vx: (Math.random() - 0.5) * 2,
+        vy: (Math.random() - 0.5) * 2,
+        size: Math.random() * 3 + 1,
+        color: `hsl(${Math.random() * 360}, 70%, 60%)`,
+        alpha: Math.random() * 0.5 + 0.3
+      });
     }
-    particlesRef.current = particles;
 
     // Animation loop
     const animate = () => {
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      ctx.fillStyle = 'rgba(0, 0, 0, 0.05)';
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
 
-      // Draw particles
-      particles.forEach(particle => {
-        particle.update();
-        particle.draw();
-      });
+      particles.forEach((particle, index) => {
+        // Update position
+        particle.x += particle.vx;
+        particle.y += particle.vy;
 
-      // Draw connections
-      particles.forEach((particle, i) => {
-        particles.slice(i + 1).forEach(otherParticle => {
-          const distance = Math.sqrt(
-            Math.pow(particle.x - otherParticle.x, 2) +
-            Math.pow(particle.y - otherParticle.y, 2)
-          );
+        // Bounce off edges
+        if (particle.x < 0 || particle.x > canvas.width) particle.vx *= -1;
+        if (particle.y < 0 || particle.y > canvas.height) particle.vy *= -1;
+
+        // Draw particle
+        ctx.save();
+        ctx.globalAlpha = particle.alpha;
+        ctx.fillStyle = particle.color;
+        ctx.beginPath();
+        ctx.arc(particle.x, particle.y, particle.size, 0, Math.PI * 2);
+        ctx.fill();
+
+        // Add glow effect
+        ctx.shadowColor = particle.color;
+        ctx.shadowBlur = 20;
+        ctx.fill();
+        ctx.restore();
+
+        // Connect nearby particles
+        particles.forEach((otherParticle, otherIndex) => {
+          if (index === otherIndex) return;
+          const dx = particle.x - otherParticle.x;
+          const dy = particle.y - otherParticle.y;
+          const distance = Math.sqrt(dx * dx + dy * dy);
 
           if (distance < 150) {
-            ctx.save();
-            ctx.globalAlpha = (150 - distance) / 150 * 0.1;
-            ctx.strokeStyle = '#00d4ff';
+            ctx.strokeStyle = `rgba(100, 150, 255, ${0.1 * (1 - distance / 150)})`;
             ctx.lineWidth = 1;
             ctx.beginPath();
             ctx.moveTo(particle.x, particle.y);
             ctx.lineTo(otherParticle.x, otherParticle.y);
             ctx.stroke();
-            ctx.restore();
           }
         });
       });
 
-      animationRef.current = requestAnimationFrame(animate);
+      requestAnimationFrame(animate);
     };
 
     animate();
 
-    // Cleanup
+    // Handle resize
+    const handleResize = () => {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+    };
+
+    window.addEventListener('resize', handleResize);
+
     return () => {
-      if (animationRef.current) {
-        cancelAnimationFrame(animationRef.current);
-      }
-      window.removeEventListener('resize', resizeCanvas);
+      window.removeEventListener('resize', handleResize);
     };
   }, []);
 
   return (
-    <div className="fixed inset-0 pointer-events-none z-0">
-      {/* Animated gradient background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-black via-gray-900 to-black" />
-      
-      {/* Animated grid overlay */}
-      <motion.div
-        className="absolute inset-0 opacity-20"
-        style={{
-          backgroundImage: `
-            linear-gradient(rgba(0, 212, 255, 0.1) 1px, transparent 1px),
-            linear-gradient(90deg, rgba(0, 212, 255, 0.1) 1px, transparent 1px)
-          `,
-          backgroundSize: '100px 100px'
-        }}
-        animate={{
-          backgroundPosition: ['0px 0px', '100px 100px']
-        }}
-        transition={{
-          duration: 30,
-          repeat: Infinity,
-          ease: "linear"
-        }}
-      />
-
-      {/* Floating geometric shapes */}
-      <motion.div
-        className="absolute top-20 left-20 w-32 h-32 border border-cyan-400/20 rounded-full"
-        animate={{
-          rotate: 360,
-          scale: [1, 1.2, 1],
-          opacity: [0.1, 0.3, 0.1]
-        }}
-        transition={{
-          duration: 20,
-          repeat: Infinity,
-          ease: "linear"
-        }}
-      />
-
-      <motion.div
-        className="absolute top-40 right-32 w-24 h-24 border border-purple-400/20 transform rotate-45"
-        animate={{
-          rotate: [45, 405],
-          scale: [1, 1.3, 1],
-          opacity: [0.1, 0.4, 0.1]
-        }}
-        transition={{
-          duration: 15,
-          repeat: Infinity,
-          ease: "linear"
-        }}
-      />
-
-      <motion.div
-        className="absolute bottom-40 left-1/3 w-20 h-20 border border-pink-400/20 rounded-lg"
-        animate={{
-          rotate: [0, 360],
-          scale: [1, 1.1, 1],
-          opacity: [0.1, 0.2, 0.1]
-        }}
-        transition={{
-          duration: 25,
-          repeat: Infinity,
-          ease: "linear"
-        }}
-      />
-
-      {/* Canvas for particle effects */}
+    <div className="fixed inset-0 pointer-events-none overflow-hidden">
+      {/* Animated Background Canvas */}
       <canvas
         ref={canvasRef}
         className="absolute inset-0 w-full h-full"
-        style={{ opacity: 0.6 }}
+        style={{ zIndex: -10 }}
       />
 
-      {/* Additional light effects */}
+      {/* Geometric Shapes */}
       <div className="absolute inset-0">
+        {/* Floating Hexagons */}
         <motion.div
-          className="absolute top-1/4 left-1/4 w-96 h-96 bg-gradient-to-br from-cyan-500/5 to-transparent rounded-full blur-3xl"
+          className="absolute top-20 left-20 w-32 h-32 opacity-20"
           animate={{
-            scale: [1, 1.5, 1],
-            opacity: [0.3, 0.6, 0.3]
+            rotate: [0, 360],
+            scale: [1, 1.2, 1],
+          }}
+          transition={{
+            duration: 20,
+            repeat: Infinity,
+            ease: "linear"
+          }}
+        >
+          <div className="w-full h-full bg-gradient-to-r from-cyan-400 to-blue-500 clip-hexagon"></div>
+        </motion.div>
+
+        <motion.div
+          className="absolute top-40 right-32 w-24 h-24 opacity-30"
+          animate={{
+            rotate: [360, 0],
+            scale: [1.2, 1, 1.2],
+          }}
+          transition={{
+            duration: 15,
+            repeat: Infinity,
+            ease: "linear"
+          }}
+        >
+          <div className="w-full h-full bg-gradient-to-r from-purple-400 to-pink-500 clip-hexagon"></div>
+        </motion.div>
+
+        {/* Floating Circles */}
+        <motion.div
+          className="absolute bottom-32 left-32 w-40 h-40 opacity-20"
+          animate={{
+            y: [0, -20, 0],
+            scale: [1, 1.1, 1],
           }}
           transition={{
             duration: 8,
             repeat: Infinity,
             ease: "easeInOut"
           }}
-        />
+        >
+          <div className="w-full h-full bg-gradient-to-r from-green-400 to-teal-500 rounded-full"></div>
+        </motion.div>
 
+        {/* Animated Grid */}
+        <div className="absolute inset-0 opacity-10">
+          <div className="w-full h-full bg-[linear-gradient(90deg,transparent_98%,rgba(100,150,255,0.3)_100%),linear-gradient(180deg,transparent_98%,rgba(100,150,255,0.3)_100%)] bg-[length:50px_50px]"></div>
+        </div>
+
+        {/* Neon Lines */}
         <motion.div
-          className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-gradient-to-br from-purple-500/5 to-transparent rounded-full blur-3xl"
+          className="absolute top-1/4 left-0 w-full h-px bg-gradient-to-r from-transparent via-cyan-400 to-transparent"
           animate={{
-            scale: [1.5, 1, 1.5],
-            opacity: [0.6, 0.3, 0.6]
+            opacity: [0.3, 1, 0.3],
           }}
           transition={{
-            duration: 10,
+            duration: 4,
             repeat: Infinity,
             ease: "easeInOut"
           }}
         />
 
         <motion.div
-          className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-gradient-to-br from-pink-500/5 to-transparent rounded-full blur-3xl"
+          className="absolute top-3/4 left-0 w-full h-px bg-gradient-to-r from-transparent via-purple-400 to-transparent"
           animate={{
-            scale: [1, 1.3, 1],
-            opacity: [0.4, 0.7, 0.4]
+            opacity: [0.3, 1, 0.3],
           }}
           transition={{
-            duration: 12,
+            duration: 4,
+            repeat: Infinity,
+            ease: "easeInOut",
+            delay: 2
+          }}
+        />
+
+        {/* Vertical Neon Lines */}
+        <motion.div
+          className="absolute top-0 left-1/4 h-full w-px bg-gradient-to-b from-transparent via-blue-400 to-transparent"
+          animate={{
+            opacity: [0.3, 1, 0.3],
+          }}
+          transition={{
+            duration: 6,
             repeat: Infinity,
             ease: "easeInOut"
           }}
         />
+
+        <motion.div
+          className="absolute top-0 left-3/4 h-full w-px bg-gradient-to-b from-transparent via-pink-400 to-transparent"
+          animate={{
+            opacity: [0.3, 1, 0.3],
+          }}
+          transition={{
+            duration: 6,
+            repeat: Infinity,
+            ease: "easeInOut",
+            delay: 3
+          }}
+        />
+
+        {/* Floating Data Points */}
+        <motion.div
+          className="absolute top-1/3 right-1/4 text-xs text-cyan-400 font-mono opacity-60"
+          animate={{
+            y: [0, -10, 0],
+            opacity: [0.6, 1, 0.6],
+          }}
+          transition={{
+            duration: 5,
+            repeat: Infinity,
+            ease: "easeInOut"
+          }}
+        >
+          01.101.010
+        </motion.div>
+
+        <motion.div
+          className="absolute bottom-1/3 left-1/4 text-xs text-purple-400 font-mono opacity-60"
+          animate={{
+            y: [0, 10, 0],
+            opacity: [0.6, 1, 0.6],
+          }}
+          transition={{
+            duration: 7,
+            repeat: Infinity,
+            ease: "easeInOut"
+          }}
+        >
+          QUANTUM_001
+        </motion.div>
+
+        {/* Holographic Elements */}
+        <motion.div
+          className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 opacity-10"
+          animate={{
+            rotate: [0, 360],
+            scale: [0.8, 1.2, 0.8],
+          }}
+          transition={{
+            duration: 25,
+            repeat: Infinity,
+            ease: "linear"
+          }}
+        >
+          <div className="w-full h-full border border-cyan-400/30 rounded-full"></div>
+          <div className="absolute inset-4 border border-purple-400/30 rounded-full"></div>
+          <div className="absolute inset-8 border border-pink-400/30 rounded-full"></div>
+        </motion.div>
+
+        {/* Energy Waves */}
+        <motion.div
+          className="absolute bottom-0 left-0 w-full h-32 opacity-20"
+          animate={{
+            y: [0, -10, 0],
+          }}
+          transition={{
+            duration: 3,
+            repeat: Infinity,
+            ease: "easeInOut"
+          }}
+        >
+          <svg className="w-full h-full" viewBox="0 0 1200 120" preserveAspectRatio="none">
+            <path
+              d="M0,60 Q300,30 600,60 T1200,60 L1200,120 L0,120 Z"
+              fill="url(#energyGradient)"
+            />
+            <defs>
+              <linearGradient id="energyGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" stopColor="rgba(100,150,255,0.3)" />
+                <stop offset="50%" stopColor="rgba(150,100,255,0.3)" />
+                <stop offset="100%" stopColor="rgba(255,100,150,0.3)" />
+              </linearGradient>
+            </defs>
+          </svg>
+        </motion.div>
       </div>
+
+      {/* CSS for hexagon clip */}
+      <style jsx>{`
+        .clip-hexagon {
+          clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+        }
+      `}</style>
     </div>
   );
 };
