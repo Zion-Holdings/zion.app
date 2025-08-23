@@ -1,8 +1,15 @@
 import React, { useState } from 'react';
+<<<<<<< HEAD
+import UltraFuturisticNavigation2046 from './UltraFuturisticNavigation2046';
+import UltraFuturisticFooter2046 from './UltraFuturisticFooter2046';
+import EnhancedSidebar2025 from './EnhancedSidebar2025';
+import UltraAdvancedFuturisticBackground2040 from '../backgrounds/UltraAdvancedFuturisticBackground2040';
+=======
 import UltraFuturisticNavigation2045 from './UltraFuturisticNavigation2045';
 import UltraFuturisticFooter2040 from './UltraFuturisticFooter2040';
 import EnhancedSidebar2025 from './EnhancedSidebar2025';
 import UltraFuturisticBackground2045 from '../backgrounds/UltraFuturisticBackground2045';
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-153c
 import TopContactBar from './TopContactBar';
 import EnhancedPerformanceMonitor from '../EnhancedPerformanceMonitor';
 import AccessibilityEnhancer from '../EnhancedAccessibilityEnhancer';
@@ -93,13 +100,28 @@ export default function Layout({ children, seo }: LayoutProps) {
       {/* Skip to content link for accessibility */}
       <a href="#main" className="skip-link">Skip to main content</a>
       
+<<<<<<< HEAD
+      {/* Ultra Advanced Futuristic Background */}
+      <UltraAdvancedFuturisticBackground2040 
+        intensity="medium" 
+        theme="consciousness-ai"
+      />
+=======
       {/* Futuristic Background */}
       <UltraFuturisticBackground2045 theme="consciousness" intensity="high" />
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-153c
       
       {/* Layout Structure */}
       <div className="relative z-10">
         {/* Navigation */}
+<<<<<<< HEAD
+        <UltraAdvancedFuturisticNavigation2041 
+          onMenuToggle={() => setSidebarOpen(!sidebarOpen)}
+          isMenuOpen={sidebarOpen}
+        />
+=======
         <UltraFuturisticNavigation2045 />
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-153c
         
         {/* Futuristic Background */}
         <UltraFuturisticBackground2040 theme="futuristic-2040" intensity="high" />
