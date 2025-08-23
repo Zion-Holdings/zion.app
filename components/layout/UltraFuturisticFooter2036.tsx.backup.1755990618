@@ -148,6 +148,8 @@ const legalLinks = [
 ];
 
 const UltraFuturisticFooter2036: React.FC = () => {
+<<<<<<< HEAD
+=======
   const currentYear = new Date().getFullYear();
 
   const footerSections = [
@@ -220,6 +222,7 @@ const UltraFuturisticFooter2036: React.FC = () => {
     { name: 'Instagram', href: 'https://www.instagram.com/ziontechgroup', icon: Instagram }
   ];
 
+>>>>>>> origin/cursor/website-audit-content-update-and-deployment-4109
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
@@ -522,6 +525,11 @@ const UltraFuturisticFooter2036: React.FC = () => {
               whileTap={{ scale: 0.95 }}
               aria-label="Scroll to top of page"
             >
+<<<<<<< HEAD
+              <ArrowUp className="w-4 h-4" />
+              <span className="text-sm font-medium">Back to Top</span>
+            </motion.button>
+=======
               {socialLinks.map((social) => (
                 <a
                   key={social.name}
@@ -535,6 +543,7 @@ const UltraFuturisticFooter2036: React.FC = () => {
                 </a>
               ))}
             </motion.div>
+>>>>>>> origin/cursor/website-audit-content-update-and-deployment-4109
           </div>
         </div>
       </div>
