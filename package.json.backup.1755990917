@@ -133,8 +133,12 @@
     "dev": "NODE_OPTIONS=\"--max-old-space-size=4096 --openssl-legacy-provider\" next dev",
     "build": "NODE_OPTIONS=\"--max-old-space-size=6144 --openssl-legacy-provider\" next build",
     "prebuild": "npm run netlify:manifest",
+<<<<<<< HEAD
+    "export": "rm -rf .next out tsconfig.tsbuildinfo && DYN=pages/reports/blueprints && if [ -d $DYN ]; then mv $DYN ${DYN}.bak; fi && NODE_OPTIONS=\"--max-old-space-size=6144 --openssl-legacy-provider\" next build && if [ -f _redirects ]; then cp -f _redirects out/_redirects; fi && if [ -f public/_headers ]; then cp -f public/_headers out/_headers; elif [ -f _headers ]; then cp -f _headers out/_headers; fi && if [ -d ${DYN}.bak ]; then mv ${DYN}.bak $DYN; fi",
+=======
     "preexport": "npm run sitemap",
     "export": "rm -rf .next out tsconfig.tsbuildinfo && mkdir -p .temp && mv pages/reports .temp/ 2>/dev/null || true && NODE_OPTIONS=\"--max-old-space-size=6144 --openssl-legacy-provider\" next build --no-lint && mv .temp/reports pages/ 2>/dev/null || true && rm -rf .temp",
+>>>>>>> origin/cursor/bc-51f07a8d-4b14-47f7-af65-e76188b38c99-87a6
     "start": "next start",
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
     "lint:fix": "eslint . --ext .js,.jsx,.ts,.tsx --fix",
@@ -176,6 +180,8 @@
     "cursor:memory:dev": "nodemon run-cursor-memory-automation.js",
     "cursor:memory:config": "node -e \"console.log(JSON.stringify(require('./cursor-memory-config.json'), null, 2))\"",
     "cursor:memory:status": "node -e \"const fs = require('fs'); const path = './cursor-memory/memory-summary.json'; try { const data = JSON.parse(fs.readFileSync(path, 'utf8')); console.log('Memory Status:'); console.log('- Total entries:', data.totalEntries); console.log('- Categories:', Object.keys(data.categories).length); console.log('- High confidence:', data.confidenceDistribution.high); } catch(e) { console.log('No memory data found'); }\"",
+<<<<<<< HEAD
+=======
     "autonomous:start": "node automation/launch-autonomous-systems-clean.js start",
     "autonomous:analyze": "node automation/autonomous-system-orchestrator.cjs analyze",
     "autonomous:generate": "node automation/autonomous-system-orchestrator.cjs generate",
@@ -203,6 +209,7 @@
     "frontend:core": "node automation/frontend-automation-orchestrator.cjs core",
     "frontend:showcase": "node automation/frontend-automation-orchestrator.cjs showcase",
     "frontend:dashboard": "node automation/frontend-automation-orchestrator.cjs dashboard",
+>>>>>>> origin/cursor/bc-51f07a8d-4b14-47f7-af65-e76188b38c99-87a6
     "automation:factory": "node automation/automation-factory.cjs generate",
     "automation:factory:dev": "nodemon automation/ultimate-automation-factory-system.js",
     "automation:orchestrator": "node automation/intelligent-orchestrator.cjs continuous",
@@ -271,7 +278,12 @@
     "automation:restart": "node automation/restart-all-automation.js",
     "automation:enhance": "node automation/enhance-all-automation.js",
     "automation:beautify": "node automation/beautify-ui.cjs",
+<<<<<<< HEAD
+    "autonomous:start": "node automation/autonomous-system-manager.cjs start",
+    "autonomous:stop": "node automation/autonomous-system-manager.cjs stop",
+=======
     "autonomous:stop": "node automation/launch-autonomous-systems-clean.js stop",
+>>>>>>> origin/cursor/bc-51f07a8d-4b14-47f7-af65-e76188b38c99-87a6
     "autonomous:restart": "node automation/launch-autonomous-systems-clean.js restart",
     "autonomous:factory": "node automation/autonomous-error-monitoring-factory.js",
     "autonomous:orchestrator": "node automation/autonomous-automation-orchestrator.js",
@@ -445,10 +457,16 @@
     "eslint-plugin-react-hooks": "^5.2.0",
     "eslint-plugin-react-refresh": "^0.4.20",
     "husky": "^9.1.7",
+<<<<<<< HEAD
+    "lint-staged": "^16.1.4",
+    "postcss": "^8.4.32",
+    "tailwindcss": "^3.4.0",
+=======
     "lint-staged": "^16.1.5",
     "postcss": "^8.5.6",
     "sharp": "^0.34.3",
     "tailwindcss": "^4.1.12",
+>>>>>>> origin/cursor/bc-51f07a8d-4b14-47f7-af65-e76188b38c99-87a6
     "ts-node": "^10.9.2",
     "typescript": "^5.9.2"
   },
