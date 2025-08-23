@@ -1,7 +1,16 @@
 import React from 'react';
 import Head from 'next/head';
+<<<<<<< HEAD
+import Link from 'next/link';
+import { CheckCircle, ArrowRight, Star, TrendingUp, Phone, Zap, DollarSign, Shield, Mail, MapPin, Rocket, Brain, Sparkles, Atom, Dna } from 'lucide-react';
+import Button from '../components/ui/Button';
+import UltraFuturisticBackground2028 from '../components/ui/UltraFuturisticBackground2028';
+import UltraFuturisticBackground2029 from '../components/backgrounds/UltraFuturisticBackground2029';
+import UltraFuturisticBackground2030 from '../components/backgrounds/UltraFuturisticBackground2030';
+=======
 import { motion } from 'framer-motion';
 import UltraAdvancedFuturisticBackground from '../components/ui/UltraAdvancedFuturisticBackground';
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-0444
 import UltraAdvancedNavigation from '../components/layout/UltraAdvancedNavigation';
 import UltraAdvancedNavigation2026 from '../components/layout/UltraAdvancedNavigation2026';
 import UltraFuturisticNavigation2029 from '../components/layout/UltraFuturisticNavigation2029';
@@ -9,9 +18,25 @@ import UltraFuturisticNavigation2030 from '../components/layout/UltraFuturisticN
 import UltraFuturisticFooter2029 from '../components/layout/UltraFuturisticFooter2029';
 import UltraFuturisticFooter2030 from '../components/layout/UltraFuturisticFooter2030';
 import EnhancedServiceShowcase from '../components/sections/EnhancedServiceShowcase';
+<<<<<<< HEAD
+import Enhanced2026ServicesShowcase from '../components/sections/Enhanced2026ServicesShowcase';
+import Revolutionary2026ServiceShowcase from '../components/sections/Revolutionary2026ServiceShowcase';
+import Revolutionary2027ServicesShowcase from '../components/sections/Revolutionary2027ServicesShowcase';
+import Revolutionary2027Hero from '../components/sections/Revolutionary2027Hero';
+import EnhancedHero2026 from '../components/sections/EnhancedHero2026';
+import UltraFuturisticHero2029 from '../components/sections/UltraFuturisticHero2029';
+import UltraFuturisticServiceShowcase2029 from '../components/sections/UltraFuturisticServiceShowcase2029';
+import UltraFuturisticServiceShowcase2030 from '../components/sections/UltraFuturisticServiceShowcase2030';
+import { motion } from 'framer-motion';
+=======
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-0444
 import { enhancedRealMicroSaasServices } from '../data/enhanced-real-micro-saas-services';
 import { innovativeMicroSaasServices } from '../data/innovative-micro-saas-services';
+<<<<<<< HEAD
+import { innovativeMicroSaasServicesV3 } from '../data/innovative-micro-saas-v3';
+=======
 
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-0444
 import { innovativeAIServices } from '../data/innovative-ai-services';
 import { quantumSpaceServices } from '../data/quantum-space-services';
 import { quantumAIServices2025 } from '../data/quantum-ai-services-2025';
@@ -34,7 +59,50 @@ import { innovative2025Batch3Services } from '../data/innovative-2025-batch3';
 // New 2026 Services
 import { revolutionary2026Services } from '../data/revolutionary-2026-services';
 import { emergingTech2026Services } from '../data/emerging-tech-2026-services';
+<<<<<<< HEAD
+import { enterpriseIT2026Services } from '../data/enterprise-it-2026-services';
+import { innovative2026MicroSaasServices } from '../data/innovative-2026-micro-saas';
+import { emergingTech2026Services as emergingTech2026ServicesNew } from '../data/emerging-tech-2026-services';
+import { enterpriseIT2026Services as enterpriseIT2026ServicesNew } from '../data/enterprise-it-2026-services';
+import { innovative2026MicroSaasServicesV2 } from '../data/innovative-2026-micro-saas-v2';
+import { emergingTech2026ServicesV2 } from '../data/emerging-tech-2026-services-v2';
+import { enterpriseIT2026ServicesV2 } from '../data/enterprise-it-2026-services-v2';
+import { revolutionary2026Innovations } from '../data/revolutionary-2026-innovations';
+import { nextGenAI2026Services } from '../data/next-gen-ai-2026-services';
+import { aiAutonomousServices2026 } from '../data/2026-ai-autonomous-services';
+import { quantumSpaceTechServices2026 } from '../data/2026-quantum-space-tech-services';
+import { metaverseDigitalRealityServices2026 } from '../data/2026-metaverse-digital-reality-services';
+import { innovative2026AIServicesV3 } from '../data/innovative-2026-ai-services-v3';
+import { emergingTech2026ServicesV3 } from '../data/emerging-tech-2026-services-v3';
+import { enterpriseIT2026ServicesV3 } from '../data/enterprise-it-2026-services-v3';
+import { ultimate2026Services } from '../data/ultimate-2026-services';
+import { cuttingEdge2027Innovations } from '../data/2027-cutting-edge-innovations';
+import { practicalMicroSaas2027 } from '../data/2027-practical-micro-saas';
+import { revolutionary2026MicroSaasServices } from '../data/revolutionary-2026-micro-saas-services';
+import { revolutionary2026ITServices } from '../data/revolutionary-2026-it-services';
+import { revolutionary2026AIServices } from '../data/revolutionary-2026-ai-services';
+import { revolutionary2027Services } from '../data/revolutionary-2027-services';
+import { emergingTech2027Services } from '../data/emerging-tech-2027-services';
+import { revolutionary2027AIServices } from '../data/revolutionary-2027-ai-services';
+import { revolutionary2027ITServices } from '../data/revolutionary-2027-it-services';
+import { revolutionary2027MicroSaasServices } from '../data/revolutionary-2027-micro-saas';
+import { cuttingEdge2028MicroSaas } from '../data/2028-cutting-edge-micro-saas';
+import { cuttingEdgeInnovations2029 } from '../data/2029-cutting-edge-innovations';
+import { practicalBusinessSolutions2028 } from '../data/2028-practical-business-solutions';
+import { futuristic2028Services } from '../data/2028-futuristic-innovations';
+import { emergingTech2028Services } from '../data/2028-emerging-tech-services';
+import { futuristicAIServices2029 } from '../data/2029-futuristic-ai-services';
+import { emergingTech2029Services } from '../data/2029-emerging-tech-services';
+import { enterpriseIT2029Services } from '../data/2029-enterprise-it-services';
+import { innovativeMicroSaasServices2029 } from '../data/2029-innovative-micro-saas';
+import { innovative2029MicroSaasServices } from '../data/2029-innovative-micro-saas-services';
+import { futuristicInnovations2030 } from '../data/2030-futuristic-innovations';
+import { aiAutonomousEcosystem2030 } from '../data/2030-ai-autonomous-ecosystem';
+import { enterpriseITBreakthroughs2030 } from '../data/2030-enterprise-it-breakthroughs';
+import { innovativeMicroSaas2030 } from '../data/2030-innovative-micro-saas';
+=======
 import { comprehensiveIT2026Services } from '../data/comprehensive-it-2026-services';
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-0444
 
 export default function HomePage() {
   const heroStats = [
@@ -234,6 +302,12 @@ export default function HomePage() {
   const allServices = [
     ...enhancedRealMicroSaasServices,
     ...innovativeMicroSaasServices,
+<<<<<<< HEAD
+    ...innovativeMicroSaasServicesV3,
+    ...extraServices,
+    ...additionalEnhancedServices,
+=======
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-0444
     ...innovativeAIServices,
     ...quantumSpaceServices,
     ...quantumAIServices2025,
@@ -250,11 +324,61 @@ export default function HomePage() {
     ...innovative2025Services,
     ...revolutionary2025Services,
     ...nextGenInnovations2025,
+<<<<<<< HEAD
+    ...futuristic2028Services,
+    ...emergingTech2028Services,
+    ...cuttingEdgeInnovations2029,
+    ...innovative2026Services,
+    ...emergingTech2026Services,
+    ...enterpriseIT2026Services,
+    ...innovative2026MicroSaasServices,
+    ...emergingTech2026ServicesNew,
+    ...enterpriseIT2026ServicesNew,
+    ...innovative2026MicroSaasServicesV2,
+    ...emergingTech2026ServicesV2,
+    ...enterpriseIT2026ServicesV2,
+    ...revolutionary2026Innovations,
+    ...nextGenAI2026Services,
+    ...aiAutonomousServices2026,
+    ...quantumSpaceTechServices2026,
+    ...metaverseDigitalRealityServices2026,
+    ...innovative2026AIServicesV3,
+    ...emergingTech2026ServicesV3,
+    ...enterpriseIT2026ServicesV3,
+    ...ultimate2026Services,
+    ...cuttingEdge2027Innovations,
+    ...practicalMicroSaas2027,
+    ...revolutionary2026MicroSaasServices,
+    ...revolutionary2026ITServices,
+    ...revolutionary2026AIServices,
+    ...revolutionary2027Services,
+    ...emergingTech2027Services,
+    ...revolutionary2027AIServices,
+    ...revolutionary2027ITServices,
+    ...revolutionary2027MicroSaasServices,
+    ...cuttingEdge2028MicroSaas,
+    ...practicalBusinessSolutions2028,
+    ...futuristic2028Services,
+    ...emergingTech2028Services,
+    ...cuttingEdgeInnovations2029,
+    ...futuristicAIServices2029,
+    ...emergingTech2029Services,
+    ...enterpriseIT2029Services,
+    ...innovativeMicroSaasServices2029,
+    ...innovative2029MicroSaasServices,
+    ...futuristicInnovations2030,
+    ...aiAutonomousEcosystem2030,
+    ...enterpriseITBreakthroughs2030,
+    ...innovativeMicroSaas2030,
+    ...emergingTech2029Services,
+    ...enterpriseIT2029Services
+=======
     ...innovative2025Batch3Services,
     // New 2026 Services
     ...revolutionary2026Services,
     ...emergingTech2026Services,
     ...comprehensiveIT2026Services
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-0444
   ];
 
   // Get unique services by ID to avoid duplicates
@@ -262,6 +386,76 @@ export default function HomePage() {
     index === self.findIndex(s => s.id === service.id)
   );
 
+<<<<<<< HEAD
+  // Group services by category for better organization
+  const servicesByCategory = uniqueServices.reduce((acc, service) => {
+    const category = Array.isArray(service.category) ? service.category[0] || 'Other' : service.category || 'Other';
+    if (!acc[category]) {
+      acc[category] = [];
+    }
+    acc[category].push(service);
+    return acc;
+  }, {} as Record<string, any[]>);
+
+  return (
+          <UltraFuturisticBackground2030>
+      <Head>
+        <title>Zion Tech Group - 2029 Revolutionary Technology Services | AI, Quantum Computing, Space Tech</title>
+        <meta name="description" content="Leading provider of revolutionary 2029 technology services including AI consciousness, quantum computing, space mining, and advanced biotechnology. Transform your business with cutting-edge solutions." />
+        <meta name="keywords" content="AI consciousness, quantum computing, space mining, biotechnology, 2029 technology, revolutionary services, Zion Tech Group" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="icon" href="/favicon.ico" />
+        
+        {/* Open Graph */}
+        <meta property="og:title" content="Zion Tech Group - 2029 Revolutionary Technology Services" />
+        <meta property="og:description" content="Leading provider of revolutionary 2029 technology services including AI consciousness, quantum computing, space mining, and advanced biotechnology." />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://ziontechgroup.com" />
+        <meta property="og:image" content="https://ziontechgroup.com/og-image.jpg" />
+        
+        {/* Twitter */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Zion Tech Group - 2029 Revolutionary Technology Services" />
+        <meta name="twitter:description" content="Leading provider of revolutionary 2029 technology services including AI consciousness, quantum computing, space mining, and advanced biotechnology." />
+        <meta name="twitter:image" content="https://ziontechgroup.com/twitter-image.jpg" />
+        
+        {/* Additional Meta Tags */}
+        <meta name="theme-color" content="#8b5cf6" />
+        <link rel="canonical" href="https://ziontechgroup.com" />
+        
+        {/* Structured Data */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Organization",
+              "name": "Zion Tech Group",
+              "description": "Leading provider of revolutionary 2029 technology services including AI consciousness, quantum computing, space mining, and advanced biotechnology",
+              "url": "https://ziontechgroup.com",
+              "logo": "https://ziontechgroup.com/logo.png",
+              "contactPoint": {
+                "@type": "ContactPoint",
+                "telephone": "+1-302-464-0950",
+                "contactType": "customer service",
+                "email": "kleber@ziontechgroup.com"
+              },
+              "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "364 E Main St STE 1008",
+                "addressLocality": "Middletown",
+                "addressRegion": "DE",
+                "postalCode": "19709",
+                "addressCountry": "US"
+              },
+              "sameAs": [
+                "https://github.com/Zion-Holdings"
+              ]
+            })
+          }}
+        />
+      </Head>
+=======
   // Service statistics
   const serviceStats = {
     totalServices: allServices.length,
@@ -294,10 +488,544 @@ export default function HomePage() {
           <meta property="og:type" content="website" />
           <link rel="canonical" href="https://ziontechgroup.com" />
         </Head>
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-0444
 
         {/* Ultra Advanced Navigation */}
         <UltraFuturisticNavigation2030 />
 
+<<<<<<< HEAD
+        {/* Ultra Futuristic Hero Section 2029 */}
+        <UltraFuturisticHero2029 />
+
+        {/* Revolutionary 2027 Hero Section */}
+        <Revolutionary2027Hero />
+
+        {/* Ultra Futuristic 2029 Service Showcase */}
+        <UltraFuturisticServiceShowcase2029 services={[
+          ...futuristicAIServices2029
+        ]} />
+
+        {/* Ultra Futuristic 2030 Service Showcase */}
+        <UltraFuturisticServiceShowcase2030 />
+
+        {/* Revolutionary 2027 Services Showcase */}
+        <Revolutionary2027ServicesShowcase />
+
+        {/* Enhanced 2026 Services Showcase */}
+        <Enhanced2026ServicesShowcase />
+
+        {/* Revolutionary 2026 Services Showcase */}
+        <Revolutionary2026ServiceShowcase />
+
+        {/* Enhanced Services Showcase */}
+        <EnhancedServiceShowcase 
+          services={allServices.filter(service => 'variant' in service).slice(0, 12)}
+          title="Enhanced Services Showcase"
+          subtitle="Discover our comprehensive range of innovative solutions"
+          maxServices={12}
+        />
+
+        {/* Contact Information Section */}
+        <section className="py-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
+          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-purple-900/10 to-cyan-900/10"></div>
+          
+          <div className="max-w-7xl mx-auto relative z-10">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              viewport={{ once: true }}
+              className="text-center mb-16"
+            >
+              <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+                <span className="bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
+                  Featured Services
+                </span>
+              </h2>
+              <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+                Discover our comprehensive range of revolutionary 2029 technology services
+              </p>
+            </motion.div>
+
+            {/* Services by Category */}
+            {Object.entries(servicesByCategory).slice(0, 6).map(([category, services]) => (
+              <div key={category} className="mb-12">
+                <h3 className="text-2xl font-bold text-white mb-6 text-center">
+                  <span className="bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent">
+                    {category}
+                  </span>
+                </h3>
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                  {services.slice(0, 3).map((service, index) => (
+                    <motion.div
+                      key={service.id || index}
+                      initial={{ opacity: 0, y: 20 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.6, delay: index * 0.1 }}
+                      viewport={{ once: true }}
+                      className="group cursor-pointer"
+                    >
+                      <div className="p-6 rounded-2xl bg-gradient-to-br from-gray-900/50 to-gray-800/50 border border-cyan-500/20 hover:border-cyan-400/40 transition-all duration-300 backdrop-blur-sm">
+                        <div className="w-16 h-16 bg-gradient-to-r from-cyan-500 to-purple-500 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                          <Rocket className="w-8 h-8 text-white" />
+                        </div>
+                        <h3 className="text-xl font-semibold text-white mb-4">{service.name}</h3>
+                        <p className="text-gray-300 leading-relaxed mb-4">{service.description}</p>
+                        <div className="flex items-center justify-between">
+                          <span className="text-cyan-400 font-semibold">{service.price}</span>
+                          <ArrowRight className="w-5 h-5 text-cyan-400 group-hover:translate-x-1 transition-transform" />
+                        </div>
+                      </div>
+                    </motion.div>
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        {/* Why Choose Zion Tech Group Section */}
+        <section className="py-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
+          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-cyan-900/10 to-purple-900/10"></div>
+          
+          <div className="max-w-7xl mx-auto relative z-10">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              viewport={{ once: true }}
+              className="text-center mb-16"
+            >
+              <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+                <span className="bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
+                  Why Choose Zion Tech Group?
+                </span>
+              </h2>
+              <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+                We're not just another technology company. We're the architects of tomorrow, 
+                building solutions that will define the next decade of innovation.
+              </p>
+            </motion.div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {[
+                {
+                  icon: Rocket,
+                  title: 'Cutting-Edge Innovation',
+                  description: 'We stay ahead of the curve, constantly researching and implementing the latest technological breakthroughs.',
+                  color: 'from-purple-500 to-pink-500'
+                },
+                {
+                  icon: Brain,
+                  title: 'AI-First Approach',
+                  description: 'Every solution we create is built with artificial intelligence at its core, ensuring maximum efficiency and intelligence.',
+                  color: 'from-blue-500 to-cyan-500'
+                },
+                {
+                  icon: Atom,
+                  title: 'Quantum-Ready Solutions',
+                  description: 'Our services are designed to leverage quantum computing capabilities as they become commercially available.',
+                  color: 'from-green-500 to-emerald-500'
+                },
+                {
+                  icon: Shield,
+                  title: 'Unbreakable Security',
+                  description: 'Quantum internet protocol suite with unbreakable encryption and quantum network security.',
+                  color: 'from-indigo-500 to-blue-500'
+                },
+                {
+                  icon: Zap,
+                  title: 'Future-Ready Solutions',
+                  description: 'Cutting-edge technology services designed for the challenges and opportunities of 2029 and beyond.',
+                  color: 'from-yellow-500 to-orange-500'
+                }
+              ].map((feature, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.8, delay: index * 0.1 }}
+                  viewport={{ once: true }}
+                  whileHover={{ y: -5 }}
+                  className="group cursor-pointer"
+                >
+                  <div className="p-6 rounded-2xl bg-gradient-to-br from-gray-900/50 to-gray-800/50 border border-cyan-500/20 hover:border-cyan-400/40 transition-all duration-300 backdrop-blur-sm">
+                    <div className={`w-16 h-16 bg-gradient-to-r ${feature.color} rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300`}>
+                      <feature.icon className="w-8 h-8 text-white" />
+                    </div>
+                    <h3 className="text-xl font-semibold text-white mb-4">{feature.title}</h3>
+                    <p className="text-gray-300 leading-relaxed">{feature.description}</p>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+            <h2 className="text-4xl sm:text-5xl font-bold mb-8 text-white leading-tight">
+              Specialized Tools for Every Business Need
+            </h2>
+            <p className="text-xl text-gray-400 max-w-4xl mx-auto leading-relaxed">
+              Discover 65+ specialized micro SaaS solutions covering AI-powered content creation, design systems, performance monitoring, 
+              SEO automation, chatbots, business intelligence, email marketing, social media, project management, 
+              billing, HR operations, video editing, cloud optimization, legal automation, sales intelligence, customer analytics, 
+              fraud detection, inventory forecasting, contract analysis, and more. Focused value with transparent pricing and 14-day free trials.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+            {/* AI Content Generator */}
+            <div className="group relative">
+              <div className="bg-gray-800/50 backdrop-blur-sm rounded-2xl p-6 border border-gray-700 hover:border-pink-500/50 transition-all duration-300 hover:shadow-2xl hover:shadow-pink-500/20">
+                <div className="flex items-center mb-4">
+                  <div className="w-12 h-12 bg-gradient-to-br from-pink-500 to-rose-600 rounded-xl flex items-center justify-center text-2xl mr-4">
+                    📝
+                  </div>
+                  <div>
+                    <h3 className="text-lg font-semibold text-white">AI Content Generator</h3>
+                    <p className="text-pink-400 text-sm font-medium">$49/month</p>
+                  </div>
+                </div>
+                <p className="text-gray-300 text-sm mb-4">
+                  Professional AI-powered content creation with SEO optimization and brand voice customization.
+                </p>
+                <div className="flex items-center justify-between">
+                  <span className="text-xs text-gray-500">14-day free trial</span>
+                  <Button
+                    href="https://contentgen.ziontechgroup.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    size="sm"
+                    className="bg-gradient-to-r from-pink-500 to-rose-600 hover:from-pink-600 hover:to-rose-700"
+                  >
+                    Try Free
+                  </Button>
+                </div>
+              </div>
+            </div>
+
+            {/* Design System Builder */}
+            <div className="group relative">
+              <div className="bg-gray-800/50 backdrop-blur-sm rounded-2xl p-6 border border-gray-700 hover:border-violet-500/50 transition-all duration-300 hover:shadow-2xl hover:shadow-violet-500/20">
+                <div className="flex items-center mb-4">
+                  <div className="w-12 h-12 bg-gradient-to-br from-violet-500 to-purple-600 rounded-xl flex items-center justify-center text-2xl mr-4">
+                    🎨
+                  </div>
+                  <div>
+                    <h3 className="text-lg font-semibold text-white">Design System Builder</h3>
+                    <p className="text-violet-400 text-sm font-medium">$79/month</p>
+                  </div>
+                </div>
+                <p className="text-gray-300 text-sm mb-4">
+                  Create and maintain consistent design systems with automated component generation.
+                </p>
+                <div className="flex items-center justify-between">
+                  <span className="text-xs text-gray-500">14-day free trial</span>
+                  <Button
+                    href="https://design.ziontechgroup.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    size="sm"
+                    className="bg-gradient-to-r from-violet-500 to-purple-600 hover:from-violet-600 hover:to-purple-700"
+                  >
+                    Try Free
+                  </Button>
+                </div>
+              </div>
+            </div>
+
+            {/* App Performance Monitor */}
+            <div className="group relative">
+              <div className="bg-gray-800/50 backdrop-blur-sm rounded-2xl p-6 border border-gray-700 hover:border-amber-500/50 transition-all duration-300 hover:shadow-2xl hover:shadow-amber-500/20">
+                <div className="flex items-center mb-4">
+                  <div className="w-12 h-12 bg-gradient-to-br from-amber-500 to-orange-600 rounded-xl flex items-center justify-center text-2xl mr-4">
+                    📱
+                  </div>
+                  <div>
+                    <h3 className="text-lg font-semibold text-white">Performance Monitor</h3>
+                    <p className="text-amber-400 text-sm font-medium">$39/month</p>
+                  </div>
+                </div>
+                <p className="text-gray-300 text-sm mb-4">
+                  Real-time monitoring and optimization for web and mobile applications.
+                </p>
+                <div className="flex items-center justify-between">
+                  <span className="text-xs text-gray-500">14-day free trial</span>
+                  <Button
+                    href="https://monitor.ziontechgroup.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    size="sm"
+                    className="bg-gradient-to-r from-amber-500 to-orange-600 hover:from-amber-600 hover:to-orange-700"
+                  >
+                    Try Free
+                  </Button>
+                </div>
+              </div>
+            </div>
+
+            {/* SEO Automation Suite */}
+            <div className="group relative">
+              <div className="bg-gray-800/50 backdrop-blur-sm rounded-2xl p-6 border border-gray-700 hover:border-emerald-500/50 transition-all duration-300 hover:shadow-2xl hover:shadow-emerald-500/20">
+                <div className="flex items-center mb-4">
+                  <div className="w-12 h-12 bg-gradient-to-br from-emerald-500 to-green-600 rounded-xl flex items-center justify-center text-2xl mr-4">
+                    🔍
+                  </div>
+                  <div>
+                    <h3 className="text-lg font-semibold text-white">SEO Automation Suite</h3>
+                    <p className="text-emerald-400 text-sm font-medium">$89/month</p>
+                  </div>
+                </div>
+                <p className="text-gray-300 text-sm mb-4">
+                  Comprehensive SEO tools with automated optimization and reporting.
+                </p>
+                <div className="flex items-center justify-between">
+                  <span className="text-xs text-gray-500">14-day free trial</span>
+                  <Button
+                    href="https://seo.ziontechgroup.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    size="sm"
+                    className="bg-gradient-to-r from-emerald-500 to-green-600 hover:from-emerald-600 hover:to-green-700"
+                  >
+                    Try Free
+                  </Button>
+                </div>
+              </div>
+            </div>
+
+            {/* AI Sales Intelligence */}
+            <div className="group relative">
+              <div className="bg-gray-800/50 backdrop-blur-sm rounded-2xl p-6 border border-gray-700 hover:border-blue-500/50 transition-all duration-300 hover:shadow-2xl hover:shadow-blue-500/20">
+                <div className="flex items-center mb-4">
+                  <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-xl flex items-center justify-center text-2xl mr-4">
+                    💼
+                  </div>
+                  <div>
+                    <h3 className="text-lg font-semibold text-white">AI Sales Intelligence</h3>
+                    <p className="text-blue-400 text-sm font-medium">$99/month</p>
+                  </div>
+                </div>
+                <p className="text-gray-300 text-sm mb-4">
+                  AI-driven sales intelligence for lead generation, prospect research, and sales automation.
+                </p>
+                <div className="flex items-center justify-between">
+                  <span className="text-xs text-gray-500">14-day free trial</span>
+                  <Button
+                    href="https://ziontechgroup.com/ai-sales-intelligence"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    size="sm"
+                    className="bg-gradient-to-r from-blue-500 to-indigo-600 hover:from-blue-600 hover:to-indigo-700"
+                  >
+                    Try Free
+                  </Button>
+                </div>
+              </div>
+            </div>
+
+            {/* AI Chatbot Platform */}
+            <div className="group relative">
+              <div className="bg-gray-800/50 backdrop-blur-sm rounded-2xl p-6 border border-gray-700 hover:border-sky-500/50 transition-all duration-300 hover:shadow-2xl hover:shadow-sky-500/20">
+                <div className="flex items-center mb-4">
+                  <div className="w-12 h-12 bg-gradient-to-br from-sky-500 to-blue-600 rounded-xl flex items-center justify-center text-2xl mr-4">
+                    💬
+                  </div>
+                  <div>
+                    <h3 className="text-lg font-semibold text-white">AI Chatbot Platform</h3>
+                    <p className="text-sky-400 text-sm font-medium">$69/month</p>
+                  </div>
+                </div>
+                <p className="text-gray-300 text-sm mb-4">
+                  Intelligent chatbot solutions for customer support and lead generation.
+                </p>
+                <div className="flex items-center justify-between">
+                  <span className="text-xs text-gray-500">14-day free trial</span>
+                  <Button
+                    href="https://chatbot.ziontechgroup.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    size="sm"
+                    className="bg-gradient-to-r from-sky-500 to-blue-600 hover:from-sky-600 hover:to-blue-700"
+                  >
+                    Try Free
+                  </Button>
+                </div>
+              </div>
+            </div>
+
+            {/* Business Intelligence Hub */}
+            <div className="group relative">
+              <div className="bg-gray-800/50 backdrop-blur-sm rounded-2xl p-6 border border-gray-700 hover:border-rose-500/50 transition-all duration-300 hover:shadow-2xl hover:shadow-rose-500/20">
+                <div className="flex items-center mb-4">
+                  <div className="w-12 h-12 bg-gradient-to-br from-rose-500 to-pink-600 rounded-xl flex items-center justify-center text-2xl mr-4">
+                    📊
+                  </div>
+                  <div>
+                    <h3 className="text-lg font-semibold text-white">BI Hub</h3>
+                    <p className="text-rose-400 text-sm font-medium">$99/month</p>
+                  </div>
+                </div>
+                <p className="text-gray-300 text-sm mb-4">
+                  Turn your data into actionable insights with automated reporting and analytics.
+                </p>
+                <div className="flex items-center justify-between">
+                  <span className="text-xs text-gray-500">14-day free trial</span>
+                  <Button
+                    href="https://bi.ziontechgroup.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    size="sm"
+                    className="bg-gradient-to-r from-rose-500 to-pink-600 hover:from-rose-600 hover:to-pink-700"
+                  >
+                    Try Free
+                  </Button>
+                </div>
+              </div>
+            </div>
+
+            {/* AI Video Editor Pro */}
+            <div className="group relative">
+              <div className="bg-gray-800/50 backdrop-blur-sm rounded-2xl p-6 border border-gray-700 hover:border-red-500/50 transition-all duration-300 hover:shadow-2xl hover:shadow-red-500/20">
+                <div className="flex items-center mb-4">
+                  <div className="w-12 h-12 bg-gradient-to-br from-red-500 to-pink-600 rounded-xl flex items-center justify-center text-2xl mr-4">
+                    🎬
+                  </div>
+                  <div>
+                    <h3 className="text-lg font-semibold text-white">AI Video Editor Pro</h3>
+                    <p className="text-red-400 text-sm font-medium">$79/month</p>
+                  </div>
+                </div>
+                <p className="text-gray-300 text-sm mb-4">
+                  Professional video editing with AI-powered automation and enhancement tools.
+                </p>
+                <div className="flex items-center justify-between">
+                  <span className="text-xs text-gray-500">14-day free trial</span>
+                  <Button
+                    href="https://video.ziontechgroup.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    size="sm"
+                    className="bg-gradient-to-r from-red-500 to-pink-600 hover:from-red-600 hover:to-pink-700"
+                  >
+                    Try Free
+                  </Button>
+                </div>
+              </div>
+            </div>
+
+            {/* Cloud Cost Optimizer */}
+            <div className="group relative">
+              <div className="bg-gray-800/50 backdrop-blur-sm rounded-2xl p-6 border border-gray-700 hover:border-blue-500/50 transition-all duration-300 hover:shadow-2xl hover:shadow-blue-500/20">
+                <div className="flex items-center mb-4">
+                  <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-xl flex items-center justify-center text-2xl mr-4">
+                    ☁️
+                  </div>
+                  <div>
+                    <h3 className="text-lg font-semibold text-white">Cloud Cost Optimizer</h3>
+                    <p className="text-blue-400 text-sm font-medium">$99/month</p>
+                  </div>
+                </div>
+                <p className="text-gray-300 text-sm mb-4">
+                  Reduce cloud spending by 30% with intelligent cost management and optimization.
+                </p>
+                <div className="flex items-center justify-between">
+                  <span className="text-xs text-gray-500">14-day free trial</span>
+                  <Button
+                    href="https://cloudcost.ziontechgroup.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    size="sm"
+                    className="bg-gradient-to-r from-blue-500 to-indigo-600 hover:from-blue-600 hover:to-indigo-700"
+                  >
+                    Try Free
+                  </Button>
+                </div>
+              </div>
+            </div>
+
+            {/* AI Landing Page Builder */}
+            <div className="group relative">
+              <div className="bg-gray-800/50 backdrop-blur-sm rounded-2xl p-6 border border-gray-700 hover:border-purple-500/50 transition-all duration-300 hover:shadow-2xl hover:shadow-purple-500/20">
+                <div className="flex items-center mb-4">
+                  <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-violet-600 rounded-xl flex items-center justify-center text-2xl mr-4">
+                    🚀
+                  </div>
+                  <div>
+                    <h3 className="text-lg font-semibold text-white">AI Landing Page Builder</h3>
+                    <p className="text-purple-400 text-sm font-medium">$59/month</p>
+                  </div>
+                </div>
+                <p className="text-gray-300 text-sm mb-4">
+                  AI-powered landing page creation with conversion optimization and A/B testing.
+                </p>
+                <div className="flex items-center justify-between">
+                  <span className="text-xs text-gray-500">14-day free trial</span>
+                  <Button
+                    href="https://ziontechgroup.com/ai-landing-page-builder"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    size="sm"
+                    className="bg-gradient-to-r from-purple-500 to-violet-600 hover:from-purple-600 hover:to-violet-700"
+                  >
+                    Try Free
+                  </Button>
+                </div>
+              </div>
+            </div>
+
+            {/* AI Fraud Detection */}
+            <div className="group relative">
+              <div className="bg-gray-800/50 backdrop-blur-sm rounded-2xl p-6 border border-gray-700 hover:border-red-500/50 transition-all duration-300 hover:shadow-2xl hover:shadow-red-500/20">
+                <div className="flex items-center mb-4">
+                  <div className="w-12 h-12 bg-gradient-to-br from-red-500 to-pink-600 rounded-xl flex items-center justify-center text-2xl mr-4">
+                    🛡️
+                  </div>
+                  <div>
+                    <h3 className="text-lg font-semibold text-white">AI Fraud Detection</h3>
+                    <p className="text-red-400 text-sm font-medium">$119/month</p>
+                  </div>
+                </div>
+                <p className="text-gray-300 text-sm mb-4">
+                  Protect your business with AI-powered fraud detection and prevention.
+                </p>
+                <div className="flex items-center justify-between">
+                  <span className="text-xs text-gray-500">14-day free trial</span>
+                  <Button
+                    href="https://ziontechgroup.com/ai-fraud-detection"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    size="sm"
+                    className="bg-gradient-to-r from-red-500 to-pink-600 hover:from-red-600 hover:to-pink-700"
+                  >
+                    Try Free
+                  </Button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className="text-center">
+            <p className="text-gray-400 mb-8 max-w-3xl mx-auto">
+              All 65+ services include comprehensive documentation, dedicated support, enterprise-grade reliability, and 14-day free trials. 
+              Start with one solution and scale as you grow. View our complete portfolio for more specialized tools.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Button
+                href="/micro-saas"
+                variant="secondary"
+                size="lg"
+                className="bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700"
+              >
+                View All Micro SaaS
+              </Button>
+              <Button
+                href="/pricing"
+                variant="outline"
+                size="lg"
+                className="border-green-500 text-green-400 hover:bg-green-500 hover:text-white"
+              >
+                See Pricing
+              </Button>
+            </div>
+=======
         {/* Hero Section */}
         <section className="relative z-10 pt-32 pb-16 px-4 sm:px-6 lg:px-8">
           <div className="max-w-7xl mx-auto text-center">
@@ -452,6 +1180,7 @@ export default function HomePage() {
                 </a>
               </div>
             </motion.div>
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-0444
           </div>
         </div>
       </section>

@@ -77,11 +77,42 @@ const categoryColors: { [key: string]: string } = {
   'Data Center': 'from-gray-500 to-slate-600'
 };
 
+<<<<<<< HEAD
+const categoryIcons: { [key: string]: any } = {
+  'AI': Brain,
+  'Quantum': Zap,
+  'Cybersecurity': Shield,
+  'Cloud': Cloud,
+  'Blockchain': Lock,
+  'IoT': Cpu,
+  'Space': Rocket,
+  'Biotech': Database,
+  'Metaverse': Globe,
+  'Autonomous': Brain,
+  'DevOps': Zap,
+  'Analytics': TrendingUp,
+  'Infrastructure': Cloud,
+  'Identity': Shield,
+  'Backup': Database,
+  'Network': Cloud,
+  'API': Zap,
+  'Migration': Cloud,
+  'Zero Trust': Shield,
+  'Data Center': Database
+};
+
+export default function EnhancedServiceShowcase({
+  services,
+  title = "Revolutionary AI, Quantum & IT Services",
+  subtitle = "Discover 1000+ cutting-edge solutions that will transform your business",
+  maxServices = 20
+=======
 export default function EnhancedServiceShowcase({ 
   services, 
   title = "Revolutionary AI, Quantum & IT Services", 
   subtitle = "Discover 1000+ cutting-edge solutions that deliver 1000% ROI through breakthrough technology",
   maxServices = 12 
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-0444
 }: EnhancedServiceShowcaseProps) {
   const [selectedCategory, setSelectedCategory] = useState<string>('All');
   const [sortBy, setSortBy] = useState<string>('featured');
