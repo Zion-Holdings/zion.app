@@ -1,404 +1,193 @@
-import React, { useState } from 'react';
+import React from 'react';
 import Layout from '../components/layout/Layout';
 import { motion } from 'framer-motion';
 import { 
-  TrendingUp, Users, DollarSign, Clock, ArrowRight, 
-  Star, CheckCircle, Globe, Brain, Atom, Shield, Rocket,
-  Filter, Search, Building, Zap
+  FileText, 
+  BarChart3, 
+  TrendingUp, 
+  Users, 
+  Building, 
+  Heart, 
+  DollarSign, 
+  Cpu,
+  CheckCircle,
+  ArrowRight,
+  Star,
+  Sparkles,
+  Globe,
+  Shield,
+  Cloud,
+  Brain
 } from 'lucide-react';
 
-const CaseStudiesPage: React.FC = () => {
-  const [searchQuery, setSearchQuery] = useState('');
-  const [selectedIndustry, setSelectedIndustry] = useState('all');
-  const [selectedService, setSelectedService] = useState('all');
-
-  const industries = [
-    { id: 'all', name: 'All Industries', count: 24 },
-    { id: 'healthcare', name: 'Healthcare', count: 6 },
-    { id: 'finance', name: 'Financial Services', count: 5 },
-    { id: 'manufacturing', name: 'Manufacturing', count: 4 },
-    { id: 'retail', name: 'Retail & E-commerce', count: 3 },
-    { id: 'technology', name: 'Technology', count: 3 },
-    { id: 'government', name: 'Government', count: 2 },
-    { id: 'education', name: 'Education', count: 1 }
-  ];
-
-  const services = [
-    { id: 'all', name: 'All Services', count: 24 },
-    { id: 'ai-consciousness', name: 'AI Consciousness', count: 8 },
-    { id: 'quantum-computing', name: 'Quantum Computing', count: 6 },
-    { id: 'cybersecurity', name: 'Cybersecurity', count: 5 },
-    { id: 'space-technology', name: 'Space Technology', count: 3 },
-    { id: 'business-intelligence', name: 'Business Intelligence', count: 2 }
-  ];
-
+const CaseStudies: React.FC = () => {
   const caseStudies = [
     {
-      id: 1,
-      title: "AI-Powered Healthcare Diagnosis: 95% Accuracy Improvement",
-      company: "MedTech Solutions Inc.",
-      industry: "healthcare",
-      service: "ai-consciousness",
-      challenge: "MedTech was struggling with diagnostic accuracy and patient wait times, leading to delayed treatments and increased healthcare costs.",
-      solution: "Implemented our AI consciousness evolution platform with emotional intelligence capabilities to enhance diagnostic accuracy and patient interaction.",
+      title: "AI-Powered Healthcare Transformation",
+      company: "Global Healthcare Network",
+      industry: "Healthcare",
+      challenge: "Complex patient data management and diagnostic accuracy",
+      solution: "AI consciousness platform with quantum-secured data processing",
       results: [
-        "95% improvement in diagnostic accuracy",
-        "60% reduction in patient wait times",
-        "$2.3M annual cost savings",
-        "Enhanced patient satisfaction scores"
+        "40% improvement in diagnostic accuracy",
+        "60% reduction in data processing time",
+        "99.9% data security compliance",
+        "Enhanced patient outcomes and satisfaction"
       ],
-      metrics: {
-        accuracy: "95%",
-        timeReduction: "60%",
-        costSavings: "$2.3M",
-        satisfaction: "4.8/5"
-      },
-      duration: "6 months",
-      teamSize: "8 people",
-      featured: true
+      icon: Heart,
+      color: "from-red-500 to-pink-500"
     },
     {
-      id: 2,
-      title: "Quantum Computing for Financial Risk Analysis",
-      company: "Global Finance Corp",
-      industry: "finance",
-      service: "quantum-computing",
-      challenge: "Global Finance needed to process complex risk calculations in real-time but traditional computing methods were too slow for market demands.",
-      solution: "Deployed our quantum AI hybrid computing platform to accelerate risk analysis and portfolio optimization calculations.",
+      title: "Quantum Financial Trading Platform",
+      company: "International Investment Bank",
+      industry: "Financial Services",
+      challenge: "Real-time market analysis and risk assessment",
+      solution: "Quantum AI trading platform with autonomous decision making",
       results: [
-        "1000x faster risk calculations",
-        "Real-time portfolio optimization",
-        "Enhanced risk prediction accuracy",
-        "Competitive advantage in trading"
+        "25% increase in trading performance",
+        "90% faster risk assessment",
+        "Zero security breaches",
+        "Scalable to global markets"
       ],
-      metrics: {
-        speed: "1000x",
-        accuracy: "99.9%",
-        timeReduction: "99.9%",
-        roi: "450%"
-      },
-      duration: "8 months",
-      teamSize: "12 people",
-      featured: true
+      icon: DollarSign,
+      color: "from-green-500 to-emerald-500"
     },
     {
-      id: 3,
-      title: "Zero-Trust Cybersecurity Implementation",
-      company: "SecureNet Systems",
-      industry: "technology",
-      service: "cybersecurity",
-      challenge: "SecureNet faced increasing cyber threats and needed a comprehensive security solution that could adapt to evolving attack vectors.",
-      solution: "Implemented our quantum cybersecurity intelligence platform with AI-powered threat detection and autonomous response capabilities.",
+      title: "Autonomous Manufacturing Optimization",
+      company: "Advanced Manufacturing Corp",
+      industry: "Manufacturing",
+      challenge: "Production inefficiency and quality control",
+      solution: "AI autonomous business orchestrator with edge computing",
       results: [
-        "99.99% threat detection rate",
-        "Zero successful breaches",
-        "Automated incident response",
-        "Reduced security team workload"
+        "35% increase in production efficiency",
+        "50% reduction in defects",
+        "24/7 autonomous operation",
+        "Predictive maintenance optimization"
       ],
-      metrics: {
-        detection: "99.99%",
-        breaches: "0",
-        response: "<30s",
-        efficiency: "85%"
-      },
-      duration: "4 months",
-      teamSize: "6 people",
-      featured: true
+      icon: Cpu,
+      color: "from-blue-500 to-cyan-500"
     },
     {
-      id: 4,
-      title: "Space Resource Intelligence Platform",
-      company: "Asteroid Mining Ltd",
-      industry: "technology",
-      service: "space-technology",
-      challenge: "Asteroid Mining needed to identify and analyze potential mining sites in space with limited human oversight and real-time decision making.",
-      solution: "Developed a space resource intelligence platform using AI consciousness and autonomous decision-making capabilities for space exploration.",
+      title: "Enterprise Security Transformation",
+      company: "Fortune 500 Technology Company",
+      industry: "Technology",
+      challenge: "Advanced cyber threats and compliance requirements",
+      solution: "Zero Trust Quantum Network with AI consciousness",
       results: [
-        "Autonomous space exploration",
-        "Real-time resource analysis",
-        "Reduced mission costs",
-        "Enhanced safety protocols"
+        "100% threat detection rate",
+        "Zero false positives",
+        "Complete compliance achievement",
+        "Real-time security monitoring"
       ],
-      metrics: {
-        autonomy: "95%",
-        accuracy: "92%",
-        costReduction: "40%",
-        safety: "99.9%"
-      },
-      duration: "12 months",
-      teamSize: "15 people",
-      featured: false
+      icon: Shield,
+      color: "from-purple-500 to-indigo-500"
     },
     {
-      id: 5,
-      title: "Autonomous Business Intelligence Suite",
-      company: "Enterprise Solutions Co",
-      industry: "manufacturing",
-      service: "business-intelligence",
-      challenge: "Enterprise Solutions struggled with data silos and manual reporting processes, leading to delayed decision-making and missed opportunities.",
-      solution: "Implemented our autonomous AI business intelligence platform to automate data analysis and provide real-time insights.",
+      title: "Cloud Infrastructure Revolution",
+      company: "Global E-commerce Platform",
+      industry: "E-commerce",
+      challenge: "Scalability and performance during peak traffic",
+      solution: "Quantum Cloud Hybrid Platform with autonomous scaling",
       results: [
-        "Real-time business insights",
-        "Automated reporting",
-        "Improved decision speed",
-        "Enhanced operational efficiency"
+        "10x performance improvement",
+        "99.99% uptime guarantee",
+        "Automatic scaling during peaks",
+        "50% cost reduction"
       ],
-      metrics: {
-        insightSpeed: "Real-time",
-        automation: "90%",
-        decisionSpeed: "5x",
-        efficiency: "75%"
-      },
-      duration: "5 months",
-      teamSize: "10 people",
-      featured: false
+      icon: Cloud,
+      color: "from-orange-500 to-yellow-500"
     },
     {
-      id: 6,
-      title: "AI Content Intelligence Platform",
-      company: "ContentFlow Media",
-      industry: "retail",
-      service: "ai-consciousness",
-      challenge: "ContentFlow needed to create personalized content at scale while maintaining quality and engagement across multiple channels.",
-      solution: "Deployed our AI content intelligence platform with emotional intelligence to create personalized, engaging content automatically.",
+      title: "Content Creation Automation",
+      company: "Digital Marketing Agency",
+      industry: "Marketing",
+      challenge: "High-volume content creation with quality standards",
+      solution: "Autonomous Content Creation Suite with AI consciousness",
       results: [
-        "10x content production speed",
-        "40% increase in engagement",
-        "Personalized content at scale",
-        "Reduced content creation costs"
+        "10x faster content production",
+        "Consistent brand voice",
+        "SEO optimization automation",
+        "Multi-language support"
       ],
-      metrics: {
-        speed: "10x",
-        engagement: "+40%",
-        personalization: "95%",
-        costReduction: "60%"
-      },
-      duration: "7 months",
-      teamSize: "9 people",
-      featured: false
+      icon: Brain,
+      color: "from-indigo-500 to-purple-500"
     }
   ];
 
-  const filteredCaseStudies = caseStudies.filter(study => {
-    const matchesSearch = study.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
-                         study.company.toLowerCase().includes(searchQuery.toLowerCase()) ||
-                         study.challenge.toLowerCase().includes(searchQuery.toLowerCase());
-    const matchesIndustry = selectedIndustry === 'all' || study.industry === selectedIndustry;
-    const matchesService = selectedService === 'all' || study.service === selectedService;
-    return matchesSearch && matchesIndustry && matchesService;
-  });
+  const industries = [
+    "Healthcare", "Financial Services", "Manufacturing", "Technology", 
+    "E-commerce", "Marketing", "Education", "Government"
+  ];
 
-  const getServiceIcon = (serviceId: string) => {
-    switch (serviceId) {
-      case 'ai-consciousness': return Brain;
-      case 'quantum-computing': return Atom;
-      case 'cybersecurity': return Shield;
-      case 'space-technology': return Rocket;
-      case 'business-intelligence': return TrendingUp;
-      default: return Zap;
-    }
-  };
-
-  const getIndustryIcon = (industryId: string) => {
-    switch (industryId) {
-      case 'healthcare': return Users;
-      case 'finance': return DollarSign;
-      case 'manufacturing': return Building;
-      case 'retail': return Globe;
-      case 'technology': return Zap;
-      case 'government': return Shield;
-      case 'education': return Users;
-      default: return Building;
-    }
-  };
+  const metrics = [
+    { number: "500+", label: "Successful Implementations", icon: CheckCircle },
+    { number: "99.9%", label: "Client Satisfaction Rate", icon: Star },
+    { number: "40%", label: "Average Performance Improvement", icon: TrendingUp },
+    { number: "24/7", label: "Support Availability", icon: Users }
+  ];
 
   return (
-    <Layout 
+    <Layout
       title="Case Studies - Zion Tech Group"
-      description="Explore real-world success stories and business transformations achieved through Zion Tech Group's revolutionary technology solutions."
-      keywords="Zion Tech Group case studies, AI success stories, quantum computing results, cybersecurity implementations, business transformation"
+      description="Explore real-world success stories and implementations of our revolutionary AI consciousness, quantum computing, and autonomous technology solutions."
+      keywords="case studies, success stories, implementations, AI consciousness, quantum computing, autonomous technology, Zion Tech Group"
     >
-      <div className="min-h-screen bg-gradient-to-br from-black via-gray-900 to-black text-white">
+      <div className="min-h-screen bg-gradient-to-br from-slate-900 via-blue-900 to-slate-900">
         {/* Hero Section */}
-        <section className="relative pt-32 pb-20 overflow-hidden">
-          <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/20 to-purple-500/20"></div>
-          <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <section className="relative overflow-hidden py-20 px-4 sm:px-6 lg:px-8">
+          <div className="max-w-7xl mx-auto text-center">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
             >
-              <h1 className="text-5xl md:text-7xl font-bold bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent mb-6">
+              <div className="inline-flex items-center px-4 py-2 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 text-sm font-medium mb-6">
+                <FileText className="w-4 h-4 mr-2" />
                 Success Stories
+              </div>
+              
+              <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
+                Real-World
+                <span className="block bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">
+                  Success Stories
+                </span>
               </h1>
-              <p className="text-xl md:text-2xl text-gray-300 max-w-4xl mx-auto leading-relaxed">
-                Real-world transformations and measurable results achieved through our revolutionary 
-                technology solutions. See how we've helped businesses across industries succeed.
+              
+              <p className="text-xl text-gray-300 max-w-3xl mx-auto mb-8">
+                Discover how our revolutionary technology solutions are transforming businesses 
+                across industries with AI consciousness, quantum computing, and autonomous operations.
               </p>
             </motion.div>
           </div>
         </section>
 
-        {/* Search and Filters */}
-        <section className="py-12">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="flex flex-col lg:flex-row gap-6 items-center justify-between">
-              {/* Search Bar */}
-              <div className="relative flex-1 max-w-md">
-                <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-400" />
-                <input
-                  type="text"
-                  placeholder="Search case studies..."
-                  value={searchQuery}
-                  onChange={(e) => setSearchQuery(e.target.value)}
-                  className="w-full pl-10 pr-4 py-3 bg-gray-800/50 border border-gray-600/50 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:border-transparent"
-                />
-              </div>
-
-              {/* Filters */}
-              <div className="flex items-center gap-4">
-                <div className="flex items-center gap-2">
-                  <Filter className="w-5 h-5 text-gray-400" />
-                  <select
-                    value={selectedIndustry}
-                    onChange={(e) => setSelectedIndustry(e.target.value)}
-                    className="px-4 py-3 bg-gray-800/50 border border-gray-600/50 rounded-xl text-white focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:border-transparent"
-                  >
-                    {industries.map((industry) => (
-                      <option key={industry.id} value={industry.id}>
-                        {industry.name} ({industry.count})
-                      </option>
-                    ))}
-                  </select>
-                </div>
-                
-                <div className="flex items-center gap-2">
-                  <Filter className="w-5 h-5 text-gray-400" />
-                  <select
-                    value={selectedService}
-                    onChange={(e) => setSelectedService(e.target.value)}
-                    className="px-4 py-3 bg-gray-800/50 border border-gray-600/50 rounded-xl text-white focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:border-transparent"
-                  >
-                    {services.map((service) => (
-                      <option key={service.id} value={service.id}>
-                        {service.name} ({service.count})
-                      </option>
-                    ))}
-                  </select>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Featured Case Studies */}
-        <section className="py-20">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-              viewport={{ once: true }}
-              className="text-center mb-16"
-            >
-              <h2 className="text-4xl font-bold text-white mb-4">Featured Success Stories</h2>
-              <p className="text-xl text-gray-400">Our most impactful client transformations</p>
-            </motion.div>
-
-            <div className="grid lg:grid-cols-2 gap-8">
-              {caseStudies.filter(study => study.featured).map((study, index) => (
-                <motion.article
-                  key={study.id}
+        {/* Metrics Section */}
+        <section className="py-16 px-4 sm:px-6 lg:px-8">
+          <div className="max-w-7xl mx-auto">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+              {metrics.map((metric, index) => (
+                <motion.div
+                  key={index}
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.8, delay: index * 0.1 }}
+                  transition={{ duration: 0.5, delay: index * 0.1 }}
                   viewport={{ once: true }}
-                  className="bg-gradient-to-r from-gray-800/50 to-gray-900/50 rounded-2xl border border-gray-700/50 hover:border-cyan-500/50 transition-all duration-300 overflow-hidden group"
+                  className="text-center"
                 >
-                  <div className="p-8">
-                    {/* Header */}
-                    <div className="flex items-start justify-between mb-6">
-                      <div className="flex items-center gap-3">
-                        <div className="w-12 h-12 bg-gradient-to-r from-cyan-500 to-purple-500 rounded-xl flex items-center justify-center">
-                          {React.createElement(getServiceIcon(study.service), { className: "w-6 h-6 text-white" })}
-                        </div>
-                        <div>
-                          <h3 className="text-xl font-bold text-white group-hover:text-cyan-400 transition-colors duration-300">
-                            {study.title}
-                          </h3>
-                          <p className="text-cyan-400 font-medium">{study.company}</p>
-                        </div>
-                      </div>
-                      <div className="flex items-center gap-2">
-                        <span className="px-3 py-1 bg-cyan-500/20 text-cyan-400 rounded-full text-sm border border-cyan-500/30">
-                          {industries.find(i => i.id === study.industry)?.name}
-                        </span>
-                        <span className="px-3 py-1 bg-purple-500/20 text-purple-400 rounded-full text-sm border border-purple-500/30">
-                          {services.find(s => s.id === study.service)?.name}
-                        </span>
-                      </div>
-                    </div>
-
-                    {/* Challenge & Solution */}
-                    <div className="mb-6">
-                      <h4 className="text-lg font-semibold text-white mb-2">Challenge</h4>
-                      <p className="text-gray-400 mb-4">{study.challenge}</p>
-                      
-                      <h4 className="text-lg font-semibold text-white mb-2">Solution</h4>
-                      <p className="text-gray-400">{study.solution}</p>
-                    </div>
-
-                    {/* Results */}
-                    <div className="mb-6">
-                      <h4 className="text-lg font-semibold text-white mb-3">Key Results</h4>
-                      <div className="grid grid-cols-2 gap-4">
-                        {study.results.map((result, idx) => (
-                          <div key={idx} className="flex items-center gap-2">
-                            <CheckCircle className="w-4 h-4 text-green-400 flex-shrink-0" />
-                            <span className="text-gray-300 text-sm">{result}</span>
-                          </div>
-                        ))}
-                      </div>
-                    </div>
-
-                    {/* Metrics */}
-                    <div className="grid grid-cols-2 gap-4 mb-6 p-4 bg-gray-800/30 rounded-xl">
-                      {Object.entries(study.metrics).map(([key, value]) => (
-                        <div key={key} className="text-center">
-                          <div className="text-2xl font-bold text-cyan-400">{value}</div>
-                          <div className="text-xs text-gray-400 capitalize">{key.replace(/([A-Z])/g, ' $1')}</div>
-                        </div>
-                      ))}
-                    </div>
-
-                    {/* Footer */}
-                    <div className="flex items-center justify-between text-sm text-gray-400">
-                      <div className="flex items-center gap-4">
-                        <span className="flex items-center gap-1">
-                          <Clock className="w-4 h-4" />
-                          {study.duration}
-                        </span>
-                        <span className="flex items-center gap-1">
-                          <Users className="w-4 h-4" />
-                          {study.teamSize}
-                        </span>
-                      </div>
-                      
-                      <button className="text-cyan-400 hover:text-cyan-300 transition-colors duration-300 flex items-center gap-1 group-hover:gap-2">
-                        Read Full Case Study
-                        <ArrowRight className="w-4 h-4 transition-all duration-300" />
-                      </button>
-                    </div>
+                  <div className="w-16 h-16 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-lg flex items-center justify-center mx-auto mb-4">
+                    <metric.icon className="w-8 h-8 text-white" />
                   </div>
-                </motion.article>
+                  <div className="text-3xl font-bold text-white mb-2">{metric.number}</div>
+                  <div className="text-gray-300 text-sm">{metric.label}</div>
+                </motion.div>
               ))}
             </div>
           </div>
         </section>
 
-        {/* All Case Studies */}
-        <section className="py-20 bg-gradient-to-r from-gray-900/50 to-black/50">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Case Studies Grid */}
+        <section className="py-20 px-4 sm:px-6 lg:px-8">
+          <div className="max-w-7xl mx-auto">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -406,136 +195,129 @@ const CaseStudiesPage: React.FC = () => {
               viewport={{ once: true }}
               className="text-center mb-16"
             >
-              <h2 className="text-4xl font-bold text-white mb-4">All Case Studies</h2>
-              <p className="text-xl text-gray-400">Explore our complete portfolio of successful implementations</p>
+              <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+                Featured Case Studies
+              </h2>
+              <p className="text-xl text-gray-300 max-w-2xl mx-auto">
+                Real implementations with measurable results across diverse industries
+              </p>
             </motion.div>
 
-            {filteredCaseStudies.length > 0 ? (
-              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                {filteredCaseStudies.map((study, index) => (
-                  <motion.article
-                    key={study.id}
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.8, delay: index * 0.1 }}
-                    viewport={{ once: true }}
-                    className="bg-gradient-to-r from-gray-800/50 to-gray-900/50 rounded-2xl border border-gray-700/50 hover:border-purple-500/50 transition-all duration-300 overflow-hidden group"
-                  >
-                    <div className="p-6">
-                      {/* Header */}
-                      <div className="flex items-center gap-3 mb-4">
-                        <div className="w-10 h-10 bg-gradient-to-r from-purple-500 to-pink-500 rounded-xl flex items-center justify-center">
-                          {React.createElement(getServiceIcon(study.service), { className: "w-5 h-5 text-white" })}
-                        </div>
-                        <div className="flex-1">
-                          <h3 className="text-lg font-bold text-white group-hover:text-purple-400 transition-colors duration-300 line-clamp-2">
-                            {study.title}
-                          </h3>
-                          <p className="text-purple-400 text-sm">{study.company}</p>
-                        </div>
-                      </div>
-
-                      {/* Tags */}
-                      <div className="flex items-center gap-2 mb-4">
-                        <span className="px-2 py-1 bg-gray-700/50 text-gray-300 rounded-full text-xs">
-                          {industries.find(i => i.id === study.industry)?.name}
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+              {caseStudies.map((study, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: index * 0.1 }}
+                  viewport={{ once: true }}
+                  className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-6 hover:bg-white/10 transition-all duration-300"
+                >
+                  <div className="flex items-start space-x-4 mb-6">
+                    <div className={`w-12 h-12 bg-gradient-to-r ${study.color} rounded-lg flex items-center justify-center flex-shrink-0`}>
+                      <study.icon className="w-6 h-6 text-white" />
+                    </div>
+                    <div className="flex-1">
+                      <h3 className="text-xl font-semibold text-white mb-2">{study.title}</h3>
+                      <div className="flex items-center space-x-4 text-sm text-gray-400">
+                        <span className="flex items-center">
+                          <Building className="w-4 h-4 mr-1" />
+                          {study.company}
                         </span>
-                        <span className="px-2 py-1 bg-gray-700/50 text-gray-300 rounded-full text-xs">
-                          {services.find(s => s.id === study.service)?.name}
+                        <span className="flex items-center">
+                          <Globe className="w-4 h-4 mr-1" />
+                          {study.industry}
                         </span>
-                      </div>
-
-                      {/* Challenge Preview */}
-                      <p className="text-gray-400 text-sm mb-4 line-clamp-3">
-                        {study.challenge}
-                      </p>
-
-                      {/* Key Results */}
-                      <div className="mb-4">
-                        <h4 className="text-sm font-semibold text-white mb-2">Key Results</h4>
-                        <div className="space-y-1">
-                          {study.results.slice(0, 2).map((result, idx) => (
-                            <div key={idx} className="flex items-center gap-2">
-                              <CheckCircle className="w-3 h-3 text-green-400 flex-shrink-0" />
-                              <span className="text-gray-300 text-xs">{result}</span>
-                            </div>
-                          ))}
-                        </div>
-                      </div>
-
-                      {/* Footer */}
-                      <div className="flex items-center justify-between text-xs text-gray-400">
-                        <div className="flex items-center gap-3">
-                          <span className="flex items-center gap-1">
-                            <Clock className="w-3 h-3" />
-                            {study.duration}
-                          </span>
-                          <span className="flex items-center gap-1">
-                            <Users className="w-3 h-3" />
-                            {study.teamSize}
-                          </span>
-                        </div>
-                        
-                        <button className="text-purple-400 hover:text-purple-300 transition-colors duration-300 flex items-center gap-1 group-hover:gap-2">
-                          Read More
-                          <ArrowRight className="w-3 h-3 transition-all duration-300" />
-                        </button>
                       </div>
                     </div>
-                  </motion.article>
-                ))}
-              </div>
-            ) : (
-              <motion.div
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                className="text-center py-12"
-              >
-                <p className="text-xl text-gray-400 mb-4">No case studies match your current filters.</p>
-                <button
-                  onClick={() => {
-                    setSearchQuery('');
-                    setSelectedIndustry('all');
-                    setSelectedService('all');
-                  }}
-                  className="bg-gradient-to-r from-cyan-500 to-purple-500 text-white px-6 py-3 rounded-xl font-semibold hover:from-cyan-600 hover:to-purple-600 transition-all duration-300"
+                  </div>
+
+                  <div className="space-y-4">
+                    <div>
+                      <h4 className="text-sm font-semibold text-blue-400 mb-2">Challenge</h4>
+                      <p className="text-gray-300 text-sm">{study.challenge}</p>
+                    </div>
+                    
+                    <div>
+                      <h4 className="text-sm font-semibold text-green-400 mb-2">Solution</h4>
+                      <p className="text-gray-300 text-sm">{study.solution}</p>
+                    </div>
+                    
+                    <div>
+                      <h4 className="text-sm font-semibold text-purple-400 mb-2">Results</h4>
+                      <ul className="space-y-1">
+                        {study.results.map((result, resultIndex) => (
+                          <li key={resultIndex} className="flex items-start space-x-2 text-sm">
+                            <CheckCircle className="w-3 h-3 text-green-400 flex-shrink-0 mt-0.5" />
+                            <span className="text-gray-300">{result}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Industries Section */}
+        <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white/5">
+          <div className="max-w-7xl mx-auto">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+              className="text-center mb-16"
+            >
+              <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+                Industries We Serve
+              </h2>
+              <p className="text-xl text-gray-300 max-w-2xl mx-auto">
+                Our solutions are transforming businesses across diverse sectors
+              </p>
+            </motion.div>
+
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+              {industries.map((industry, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: index * 0.1 }}
+                  viewport={{ once: true }}
+                  className="bg-white/5 border border-white/10 rounded-lg p-4 text-center hover:bg-white/10 transition-all duration-300"
                 >
-                  Clear Filters
-                </button>
-              </motion.div>
-            )}
+                  <span className="text-blue-400 text-sm font-medium">{industry}</span>
+                </motion.div>
+              ))}
+            </div>
           </div>
         </section>
 
         {/* CTA Section */}
-        <section className="py-20">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <section className="py-20 px-4 sm:px-6 lg:px-8">
+          <div className="max-w-4xl mx-auto text-center">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
               viewport={{ once: true }}
             >
-              <h2 className="text-4xl font-bold text-white mb-6">
+              <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
                 Ready to Write Your Success Story?
               </h2>
-              <p className="text-xl text-gray-400 mb-8 max-w-3xl mx-auto">
-                Join the ranks of successful businesses that have transformed their operations 
-                with our revolutionary technology solutions.
+              <p className="text-xl text-gray-300 mb-8">
+                Join the hundreds of organizations already transforming their operations with our technology
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <a
-                  href="/contact"
-                  className="bg-gradient-to-r from-cyan-500 to-purple-500 text-white px-8 py-4 rounded-xl font-semibold hover:from-cyan-600 hover:to-purple-600 transition-all duration-300 transform hover:scale-105"
-                >
-                  Start Your Transformation
-                </a>
-                <a
-                  href="/services"
-                  className="border border-cyan-500 text-cyan-400 px-8 py-4 rounded-xl font-semibold hover:bg-cyan-500 hover:text-white transition-all duration-300"
-                >
-                  Explore Our Services
-                </a>
+                <button className="px-8 py-4 bg-gradient-to-r from-blue-600 to-cyan-600 text-white font-semibold rounded-lg hover:from-blue-700 hover:to-cyan-700 transition-all duration-300 transform hover:scale-105">
+                  Start Your Journey
+                </button>
+                <button className="px-8 py-4 border border-blue-500/30 text-blue-400 font-semibold rounded-lg hover:bg-blue-500/10 transition-all duration-300">
+                  Schedule Consultation
+                </button>
               </div>
             </motion.div>
           </div>
@@ -545,4 +327,4 @@ const CaseStudiesPage: React.FC = () => {
   );
 };
 
-export default CaseStudiesPage;
+export default CaseStudies;
