@@ -20,6 +20,12 @@ const serviceCategories = [
     title: 'Revolutionary 2026 AI',
     icon: Brain,
     services: [
+<<<<<<< HEAD
+      { name: 'AI Predictive Business Intelligence', href: '/ai-predictive-business-intelligence', description: 'Predict market trends with 95% accuracy', price: '$1,299/month' },
+      { name: 'Autonomous AI Healthcare Diagnostics', href: '/autonomous-ai-healthcare-diagnostics', description: 'AI-powered medical diagnostics with 99.2% accuracy', price: '$3,999/month' },
+      { name: 'AI Autonomous Manufacturing', href: '/ai-autonomous-manufacturing-platform', description: 'Fully autonomous manufacturing with AI optimization', price: '$4,999/month' },
+      { name: 'AI Metaverse Development', href: '/ai-metaverse-development-platform', description: 'Create immersive metaverse experiences with AI', price: '$2,499/month' }
+=======
       { name: 'AI Consciousness Simulator Pro', href: '/ai-consciousness-simulator-pro', description: 'Simulate human-like consciousness in AI systems', price: '$4,999/month' },
       { name: 'Quantum AI Hybrid Computing', href: '/quantum-ai-hybrid-computing', description: 'Hybrid AI-Quantum computing for complex problem solving', price: '$7,999/month' },
       { name: 'AI Multimodal Fusion Platform', href: '/ai-multimodal-fusion-platform', description: 'Unified AI platform for text, image, audio, and video processing', price: '$2,999/month' },
@@ -47,6 +53,7 @@ const serviceCategories = [
       { name: 'AI Marketing Automation Suite', href: '/ai-marketing-automation-suite', description: 'Intelligent marketing automation powered by AI', price: '$399/month' },
       { name: 'AI Sales Intelligence Platform', href: '/ai-sales-intelligence-platform', description: 'Boost sales performance with AI-powered insights', price: '$249/month' },
       { name: 'AI HR Recruitment Automation', href: '/ai-hr-recruitment-automation', description: 'Streamline hiring with intelligent AI automation', price: '$179/month' }
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-4eae
     ]
   },
   {
