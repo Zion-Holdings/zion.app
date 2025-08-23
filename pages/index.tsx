@@ -1,5 +1,5 @@
 import React from 'react';
-import Homepage2043 from '../components/Homepage2043';
+import Homepage2044 from '../components/Homepage2044';
 import SEOOptimizer from '../components/SEOOptimizer';
 import AnalyticsTracker from '../components/AnalyticsTracker';
 import ErrorBoundary from '../components/ErrorBoundary';
@@ -13,14 +13,12 @@ const HomePage: React.FC = () => {
     <ErrorBoundary>
       <SEOOptimizer />
       <AnalyticsTracker />
-      <PerformanceOptimizer>
-        <MobileOptimizer showDebugInfo={false}>
-          <AccessibilityEnhancer>
-            <Homepage2043 />
-            <PerformanceMonitor showUI={true} />
-          </AccessibilityEnhancer>
-        </MobileOptimizer>
-      </PerformanceOptimizer>
+      <PerformanceOptimizer showMetrics={true} autoOptimize={true} />
+      <AccessibilityEnhancer showPanel={true} autoOptimize={true} />
+      <MobileOptimizer showDebugInfo={false}>
+        <Homepage2044 />
+        <PerformanceMonitor showUI={true} />
+      </MobileOptimizer>
     </ErrorBoundary>
   );
 };

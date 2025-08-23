@@ -80,17 +80,10 @@ const navigationItems: NavigationItem[] = [
         color: 'from-red-500 to-orange-500'
       },
       { 
-<<<<<<< HEAD
-        name: 'Brain-Computer Interface', 
-        href: '/brain-computer-interface-2040', 
-        description: 'Neural interface technology',
-        icon: <Brain className="w-4 h-4" />,
-=======
-        name: 'Autonomous Customer Success 2043', 
-        href: '/autonomous-customer-success-2043', 
+        name: 'Autonomous Customer Success 2044', 
+        href: '/autonomous-customer-success-2044', 
         description: 'AI-powered customer success',
         icon: <Heart className="w-4 h-4" />,
->>>>>>> cursor/enhance-app-with-new-services-and-futuristic-design-285e
         color: 'from-pink-500 to-purple-500'
       }
     ]
@@ -271,133 +264,6 @@ const navigationItems: NavigationItem[] = [
     ]
   },
   {
-<<<<<<< HEAD
-    name: 'Solutions',
-    href: '/solutions',
-    icon: <Target className="w-5 h-5" />,
-    description: 'Industry-specific solutions',
-    badge: 'Solutions',
-    category: 'solutions',
-    color: 'from-orange-500 to-red-500',
-    children: [
-      {
-        name: 'Healthcare Solutions',
-        href: '/healthcare-solutions',
-        description: 'AI-powered healthcare technology',
-        icon: <Heart className="w-4 h-4" />,
-        featured: true
-      },
-      {
-        name: 'Financial Services',
-        href: '/financial-solutions',
-        description: 'Quantum financial intelligence',
-        icon: <TrendingUp className="w-4 h-4" />
-      },
-      {
-        name: 'Manufacturing AI',
-        href: '/manufacturing-ai-solutions',
-        description: 'Autonomous manufacturing',
-        icon: <Cpu className="w-4 h-4" />
-      },
-      {
-        name: 'Retail Technology',
-        href: '/retail-technology-solutions',
-        description: 'Smart retail solutions',
-        icon: <ShoppingCart className="w-4 h-4" />
-      },
-      {
-        name: 'Government Solutions',
-        href: '/government-technology-solutions',
-        description: 'Public sector technology',
-        icon: <Building className="w-4 h-4" />
-      }
-    ]
-  },
-  {
-    name: 'Resources',
-    href: '/resources',
-    icon: <BookOpen className="w-5 h-5" />,
-    description: 'Knowledge and support resources',
-    badge: 'Resources',
-    category: 'resources',
-    color: 'from-cyan-500 to-blue-500',
-    children: [
-      {
-        name: 'Documentation',
-        href: '/docs',
-        description: 'Technical documentation',
-        icon: <FileText className="w-4 h-4" />
-      },
-      {
-        name: 'Blog & News',
-        href: '/blog',
-        description: 'Latest insights and updates',
-        icon: <MessageCircle className="w-4 h-4" />
-      },
-      {
-        name: 'Support Center',
-        href: '/support',
-        description: 'Get help and support',
-        icon: <HelpCircle className="w-4 h-4" />
-      },
-      {
-        name: 'Training',
-        href: '/training',
-        description: 'Learn and get certified',
-        icon: <GraduationCap className="w-4 h-4" />
-      },
-      {
-        name: 'Case Studies',
-        href: '/case-studies',
-        description: 'Success stories and examples',
-        icon: <Star className="w-4 h-4" />
-      }
-    ]
-  },
-  {
-    name: 'Company',
-    href: '/about',
-    icon: <Building className="w-5 h-5" />,
-    description: 'About Zion Tech Group',
-    badge: 'Company',
-    category: 'company',
-    color: 'from-purple-500 to-pink-500',
-    children: [
-      {
-        name: 'About Us',
-        href: '/about',
-        description: 'Learn about our mission',
-        icon: <Building className="w-4 h-4" />
-      },
-      {
-        name: 'Careers',
-        href: '/careers',
-        description: 'Join our team',
-        icon: <Star className="w-4 h-4" />
-      },
-      {
-        name: 'Contact',
-        href: '/contact',
-        description: 'Get in touch',
-        icon: <Mail className="w-4 h-4" />
-      },
-      {
-        name: 'Partners',
-        href: '/partners',
-        description: 'Partnership opportunities',
-        icon: <Handshake className="w-4 h-4" />
-      }
-    ]
-  },
-  {
-    name: 'Emerging Technology',
-    href: '/emerging-tech',
-    icon: <Zap className="w-5 h-5" />,
-    description: 'Cutting-edge emerging technologies',
-    badge: 'Emerging',
-    category: 'emerging',
-    color: 'from-yellow-500 to-orange-500',
-=======
     name: 'Healthcare & Biotech',
     href: '/healthcare',
     icon: <Heart className="w-5 h-5" />,
@@ -405,7 +271,6 @@ const navigationItems: NavigationItem[] = [
     badge: 'Health',
     category: 'healthcare',
     color: 'from-red-500 to-pink-500',
->>>>>>> cursor/enhance-app-with-new-services-and-futuristic-design-285e
     children: [
       { 
         name: 'AI Healthcare Platform 2043', 
