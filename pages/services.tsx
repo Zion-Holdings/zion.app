@@ -28,6 +28,11 @@ import { innovative2037Services } from '../data/innovative-2037-services';
 import { advanced2038Services } from '../data/advanced-2038-services';
 import { revolutionary2039Services } from '../data/revolutionary-2039-services';
 
+// Import our new comprehensive services
+import { innovative2038AdvancedServices } from '../data/innovative-2038-advanced-services';
+import { revolutionary2040FuturisticServices } from '../data/revolutionary-2040-futuristic-services';
+import { comprehensiveAdvertisingMarketingServices } from '../data/comprehensive-advertising-marketing-services';
+
 // Import existing service data
 import { realMicroSaasServices } from '../data/real-micro-saas-services';
 import { innovativeAIServices } from '../data/innovative-ai-services';
@@ -92,7 +97,11 @@ const allServices = [
   // Our new innovative services
   ...innovative2037Services,
   ...advanced2038Services,
-  ...revolutionary2039Services
+  ...revolutionary2039Services,
+  // Our new comprehensive services
+  ...innovative2038AdvancedServices,
+  ...revolutionary2040FuturisticServices,
+  ...comprehensiveAdvertisingMarketingServices
 ];
 
 const categories = [
@@ -200,6 +209,34 @@ const categories = [
     icon: <Atom className="w-6 h-6" />,
     color: 'from-purple-600 to-pink-700',
     description: 'Neural networks and quantum computing fusion'
+  },
+  {
+    id: 'advertising-marketing',
+    name: 'Advertising & Marketing',
+    icon: <Target className="w-6 h-6" />,
+    color: 'from-orange-500 to-red-500',
+    description: 'AI-powered advertising and marketing solutions'
+  },
+  {
+    id: 'consciousness-ai',
+    name: 'Consciousness & AI',
+    icon: <Brain className="w-6 h-6" />,
+    color: 'from-violet-500 to-purple-600',
+    description: 'AI consciousness and human augmentation'
+  },
+  {
+    id: 'quantum-reality',
+    name: 'Quantum Reality',
+    icon: <Atom className="w-6 h-6" />,
+    color: 'from-cyan-500 to-blue-600',
+    description: 'Quantum reality manipulation and simulation'
+  },
+  {
+    id: 'space-technology',
+    name: 'Space Technology',
+    icon: <Rocket className="w-6 h-6" />,
+    color: 'from-slate-500 to-gray-600',
+    description: 'Advanced space exploration and resource mining'
   }
 ];
 
