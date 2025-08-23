@@ -1,0 +1,36 @@
+name: Optimize Images
+
+on:
+  schedule:
+    - cron: '15 5 * * 0'
+  workflow_dispatch:
+
+  contents: write
+
+concurrency:
+  group: optimize-images
+  cancel-in-progress: true
+
+jobs:
+
+  optimize:
+          fetch-depth: 0
+      - name: Use Node.js 20.x
+        uses: actions/setup-node@v4
+          node-version: 20.x
+          cache: 'npm'
+      - name: Install dependencies
+        run: npm ci
+      - name: Optimize images
+        run: node automation/optimize-images.cjs
+      - name: Commit changes if any
+        run: |
+          if [ -n "$(git status --porcelain)" ]; then
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add -A
+            git commit -m "chore(images): optimize public assets"
+            git push origin HEAD:$(git rev-parse --abbrev-ref HEAD)
+          else
+            echo "No image changes to commit."
+          fi

@@ -1,0 +1,26 @@
+name: Changelog Generator
+on:
+  schedule:
+    - cron: '*/20 * * * *'
+  workflow_dispatch: {}
+jobs:
+  changelog:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - run: npm ci --ignore-scripts
+      - name: Generate changelog
+        run: node automation/changelog-generator.cjs
+      - name: Commit changes
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "chore(docs): update CHANGELOG"
+          branch: main
