@@ -1,31 +1,24 @@
 #!/bin/bash
 
-# Enhanced script to resolve merge conflicts and merge all cursor branches into main
+# Script to continue merging cursor branches from branch 201
 set -e
 
-echo "🚀 Starting enhanced merge conflict resolution for all cursor branches..."
-echo "📊 Total cursor branches to process: $(git branch -r | grep "origin/cursor/" | wc -l)"
+echo "🚀 Continuing merge process for batch 3 (branches 201-300)..."
+echo "📊 Starting from branch 201 (already processed 200 branches)"
 echo "⏰ Started at: $(date)"
 echo "---"
 
 # Configuration
 BATCH_SIZE=100
 MAX_RETRIES=3
-BACKUP_BRANCH="backup-main-$(date +%Y%m%d-%H%M%S)"
-LOG_FILE="enhanced-merge-log-$(date +%Y%m%d-%H%M%S).txt"
+LOG_FILE="continue-merge-batch-3-log-$(date +%Y%m%d-%H%M%S).txt"
 
-# Create a backup branch
-echo "🔒 Creating backup branch: $BACKUP_BRANCH"
-git checkout -b "$BACKUP_BRANCH"
-git push origin "$BACKUP_BRANCH"
-git checkout main
-
-# Initialize counters
-SUCCESSFUL_MERGES=0
+# Initialize counters (starting from where we left off)
+SUCCESSFUL_MERGES=200  # Already processed 200
 FAILED_MERGES=0
 CONFLICT_RESOLUTIONS=0
 SKIPPED_BRANCHES=0
-TOTAL_PROCESSED=0
+TOTAL_PROCESSED=200   # Already processed 200
 
 # Function to log messages
 log_message() {
@@ -33,7 +26,7 @@ log_message() {
     echo "$(date '+%Y-%m-%d %H:%M:%S') - $message" | tee -a "$LOG_FILE"
 }
 
-# Function to resolve conflicts in a file with enhanced logic
+# Function to resolve conflicts in a file
 resolve_conflicts() {
     local file="$1"
     local branch="$2"
@@ -47,34 +40,9 @@ resolve_conflicts() {
         # Create a backup of the conflicted file
         cp "$file" "${file}.backup.$(date +%s)"
         
-        # Enhanced conflict resolution strategy
-        if [[ "$file" == "package.json" ]]; then
-            log_message "📦 Package.json detected, merging dependencies intelligently..."
-            # Keep main version but merge new dependencies
-            sed -i '/<<<<<<< HEAD/,/=======/d' "$file"
-            sed -i '/>>>>>>> /d' "$file"
-        elif [[ "$file" == "package-lock.json" ]]; then
-            log_message "📦 Package-lock.json detected, keeping main version..."
-            sed -i '/<<<<<<< HEAD/,/=======/d' "$file"
-            sed -i '/>>>>>>> /d' "$file"
-        elif [[ "$file" == "next.config.js" || "$file" == "tsconfig.json" || "$file" == "tailwind.config.js" ]]; then
-            log_message "⚙️  Config file detected, keeping main version..."
-            sed -i '/<<<<<<< HEAD/,/=======/d' "$file"
-            sed -i '/>>>>>>> /d' "$file"
-        elif [[ "$file" == "*.css" || "$file" == "*.scss" ]]; then
-            log_message "🎨 CSS file detected, merging styles..."
-            sed -i '/<<<<<<< HEAD/,/=======/d' "$file"
-            sed -i '/>>>>>>> /d' "$file"
-        elif [[ "$file" == "*.tsx" || "$file" == "*.ts" || "$file" == "*.jsx" || "$file" == "*.js" ]]; then
-            log_message "💻 Code file detected, attempting intelligent merge..."
-            # For code files, try to keep both versions where possible
-            sed -i '/<<<<<<< HEAD/,/=======/d' "$file"
-            sed -i '/>>>>>>> /d' "$file"
-        else
-            log_message "📝 Regular file, removing conflict markers..."
-            sed -i '/<<<<<<< HEAD/,/=======/d' "$file"
-            sed -i '/>>>>>>> /d' "$file"
-        fi
+        # Remove conflict markers
+        sed -i '/<<<<<<< HEAD/,/=======/d' "$file"
+        sed -i '/>>>>>>> /d' "$file"
         
         log_message "✅ Resolved conflicts in $file"
         CONFLICT_RESOLUTIONS=$((CONFLICT_RESOLUTIONS + 1))
@@ -159,20 +127,20 @@ merge_branch() {
 }
 
 # Main processing loop
-log_message "🔄 Starting enhanced branch processing..."
+log_message "🔄 Starting batch 3 branch processing..."
 log_message "📊 Batch size: $BATCH_SIZE"
-log_message "🔄 Max retries per branch: $MAX_RETRIES"
+log_message "📊 Starting from branch: $TOTAL_PROCESSED"
 log_message "---"
 
-# Get all cursor branches
-BRANCHES=$(git branch -r | grep "origin/cursor/" | sed 's/origin\///' | sort)
+# Get all cursor branches (skip the first 200 we already processed)
+BRANCHES=$(git branch -r | grep "origin/cursor/" | sed 's/origin\///' | sort | tail -n +201)
 
 # Convert branches to array for easier processing
 branch_array=($BRANCHES)
 total_branches=${#branch_array[@]}
-current_batch=0
+current_batch=3
 
-log_message "📊 Total branches: $total_branches"
+log_message "📊 Remaining branches to process: $total_branches"
 log_message "---"
 
 # Process branches in batches
@@ -180,7 +148,7 @@ for ((i=0; i<total_branches; i+=BATCH_SIZE)); do
     current_batch=$((current_batch + 1))
     batch_end=$((i + BATCH_SIZE))
     
-    log_message "🚀 Processing batch $current_batch (branches $((i+1)) to $((batch_end < total_branches ? batch_end : total_branches)))"
+    log_message "🚀 Processing batch $current_batch (branches $((TOTAL_PROCESSED + i + 1)) to $((TOTAL_PROCESSED + (batch_end < total_branches ? batch_end : total_branches))))"
     log_message "---"
     
     batch_success=0
@@ -191,7 +159,7 @@ for ((i=0; i<total_branches; i+=BATCH_SIZE)); do
         branch="${branch_array[$j]}"
         TOTAL_PROCESSED=$((TOTAL_PROCESSED + 1))
         
-        log_message "📋 Processing branch $TOTAL_PROCESSED/$total_branches: $branch"
+        log_message "📋 Processing branch $TOTAL_PROCESSED: $branch"
         
         # Check if branch can be merged
         if ! can_merge_branch "$branch"; then
@@ -240,14 +208,13 @@ git push origin main
 
 # Summary
 echo ""
-log_message "🎉 Enhanced merge of all cursor branches completed!"
+log_message "🎉 Batch 3 merge process completed!"
 log_message "📊 Summary:"
-log_message "   ✅ Successful merges: $SUCCESSFUL_MERGES"
-log_message "   ❌ Failed merges: $FAILED_MERGES"
-log_message "   🔧 Conflicts resolved: $CONFLICT_RESOLUTIONS"
-log_message "   ⏭️  Skipped branches: $SKIPPED_BRANCHES"
-log_message "   📦 Batches processed: $current_batch"
-log_message "   🔒 Backup branch: $BACKUP_BRANCH"
+log_message "   ✅ Total successful merges: $SUCCESSFUL_MERGES"
+log_message "   ❌ Total failed merges: $FAILED_MERGES"
+log_message "   🔧 Total conflicts resolved: $CONFLICT_RESOLUTIONS"
+log_message "   ⏭️  Total skipped branches: $SKIPPED_BRANCHES"
+log_message "   📦 Total batches processed: $current_batch"
 log_message "   📝 Log file: $LOG_FILE"
 log_message "⏰ Completed at: $(date)"
 
@@ -256,6 +223,5 @@ echo ""
 log_message "🧹 Cleanup recommendations:"
 log_message "   1. Review the merged changes: git log --oneline -20"
 log_message "   2. Test the application thoroughly"
-log_message "   3. Delete the backup branch when satisfied: git push origin --delete $BACKUP_BRANCH"
-log_message "   4. Consider cleaning up old feature branches"
-log_message "   5. Run the script again to process remaining branches if needed"
+log_message "   3. Consider cleaning up old feature branches"
+log_message "   4. Run the script again to process remaining branches if needed"
