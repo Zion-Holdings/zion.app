@@ -63,6 +63,9 @@ export default function Layout({ children, seo }: LayoutProps) {
 
   return (
     <>
+<<<<<<< HEAD
+      <SEOHead />
+=======
       <Head>
         <title>{title}</title>
         <meta name="description" content={description} />
@@ -176,6 +179,7 @@ export default function Layout({ children, seo }: LayoutProps) {
         <link rel="preload" href="/_next/static/css/app.css" as="style" />
       </Head>
 
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-eb99
       <div className="min-h-screen bg-black text-white relative overflow-x-hidden">
         {/* Skip to content link for accessibility */}
         <a href="#main" className="skip-link">Skip to main content</a>

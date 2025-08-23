@@ -1,5 +1,14 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+<<<<<<< HEAD
+  // Performance optimizations
+  experimental: {
+    optimizePackageImports: ['lucide-react', 'framer-motion'],
+    optimizeCss: true,
+  },
+  
+  // Image optimization
+=======
   // Enable React strict mode for better development experience
   reactStrictMode: true,
   
@@ -32,11 +41,17 @@ const nextConfig = {
   compress: true,
   
   // Optimize images
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-eb99
   images: {
     formats: ['image/webp', 'image/avif'],
     deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048, 3840],
     imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
     minimumCacheTTL: 60,
+<<<<<<< HEAD
+    dangerouslyAllowSVG: true,
+    contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
+=======
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-eb99
   },
 
   // Compression and optimization
@@ -139,6 +154,17 @@ const nextConfig = {
     CUSTOM_KEY: process.env.CUSTOM_KEY,
   },
 
+<<<<<<< HEAD
+  // TypeScript
+  typescript: {
+    ignoreBuildErrors: false,
+  },
+
+  // ESLint
+  eslint: {
+    ignoreDuringBuilds: false,
+  },
+=======
   // Powered by header
   poweredByHeader: false,
 
@@ -150,6 +176,7 @@ const nextConfig = {
 
   // Asset prefix
   assetPrefix: '',
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-eb99
 
   // Output configuration
   output: 'standalone',
