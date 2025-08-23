@@ -624,8 +624,12 @@ export default function Pricing() {
                 Specialized Tools for Every Business Need
               </h2>
               <p className="text-xl text-gray-400 max-w-4xl mx-auto">
+<<<<<<< HEAD
+                Focused solutions with competitive pricing, market validation, and proven demand. All services include 14-day free trials.
+=======
                 Discover our 20 specialized micro SaaS solutions covering every essential business operation. 
                 Focused solutions for specific business needs with transparent, competitive pricing and 14-day free trials.
+>>>>>>> origin/cursor/enhance-app-with-micro-saas-and-marketing-dece
               </p>
             </div>
 
