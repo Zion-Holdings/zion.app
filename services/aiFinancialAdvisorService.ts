@@ -5,327 +5,398 @@ export interface FinancialProfile {
   income: number;
   expenses: number;
   savings: number;
+  investments: number;
+  debt: number;
   riskTolerance: 'conservative' | 'moderate' | 'aggressive';
   investmentGoals: string[];
-  timeHorizon: number;
+  timeHorizon: number; // years
   taxBracket: string;
+  employmentStatus: 'employed' | 'self_employed' | 'retired' | 'student';
+  lastUpdated: Date;
 }
 
 export interface InvestmentRecommendation {
   id: string;
-  symbol: string;
-  name: string;
-  type: 'stock' | 'bond' | 'etf' | 'mutual-fund' | 'crypto';
-  allocation: number;
-  riskLevel: number;
-  expectedReturn: number;
-  reasoning: string;
-  lastUpdated: Date;
-}
-
-export interface PortfolioAnalysis {
-  id: string;
   userId: string;
-  totalValue: number;
-  allocation: Record<string, number>;
-  riskScore: number;
-  diversificationScore: number;
-  performanceMetrics: {
-    totalReturn: number;
-    sharpeRatio: number;
-    maxDrawdown: number;
-    volatility: number;
-  };
-  recommendations: InvestmentRecommendation[];
+  assetClass: string;
+  investmentType: string;
+  allocation: number; // percentage
+  riskLevel: 'low' | 'medium' | 'high';
+  expectedReturn: number;
+  expectedRisk: number;
+  liquidity: 'high' | 'medium' | 'low';
+  minimumInvestment: number;
+  fees: number;
+  taxImplications: string[];
+  rationale: string;
+  alternatives: string[];
+  generatedAt: Date;
 }
 
 export interface FinancialPlan {
   id: string;
   userId: string;
-  monthlySavings: number;
-  emergencyFund: number;
-  debtPayoff: {
-    priority: string[];
-    monthlyPayment: number;
-    payoffDate: Date;
-  };
-  investmentStrategy: {
-    shortTerm: InvestmentRecommendation[];
-    longTerm: InvestmentRecommendation[];
-    retirement: InvestmentRecommendation[];
-  };
-  taxOptimization: {
-    strategies: string[];
-    estimatedSavings: number;
-  };
+  title: string;
+  description: string;
+  goals: FinancialGoal[];
+  strategies: FinancialStrategy[];
+  timeline: number; // years
+  estimatedValue: number;
+  riskAssessment: RiskAssessment;
+  monthlyActions: MonthlyAction[];
+  reviewSchedule: string;
+  generatedAt: Date;
+  nextReview: Date;
 }
 
-class AIFinancialAdvisorService {
-  private financialProfiles: FinancialProfile[] = [];
-  private portfolios: PortfolioAnalysis[] = [];
-  private financialPlans: FinancialPlan[] = [];
+export interface FinancialGoal {
+  id: string;
+  name: string;
+  targetAmount: number;
+  targetDate: Date;
+  priority: 'high' | 'medium' | 'low';
+  category: 'retirement' | 'education' | 'home' | 'emergency' | 'vacation' | 'other';
+  currentProgress: number;
+  monthlyContribution: number;
+  estimatedAchievement: Date;
+}
 
-  async createFinancialProfile(profile: Omit<FinancialProfile, 'id'>): Promise<FinancialProfile> {
-    const newProfile: FinancialProfile = {
-      ...profile,
-      id: `profile_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`
-    };
-    
-    this.financialProfiles.push(newProfile);
-    return newProfile;
+export interface FinancialStrategy {
+  id: string;
+  name: string;
+  description: string;
+  category: 'savings' | 'investment' | 'debt' | 'insurance' | 'tax';
+  priority: 'high' | 'medium' | 'low';
+  implementationSteps: string[];
+  estimatedCost: number;
+  expectedBenefit: number;
+  timeline: number; // months
+  riskLevel: 'low' | 'medium' | 'high';
+}
+
+export interface RiskAssessment {
+  overallRisk: 'low' | 'medium' | 'high';
+  riskFactors: RiskFactor[];
+  mitigationStrategies: string[];
+  insuranceRecommendations: InsuranceRecommendation[];
+  emergencyFundRecommendation: number;
+}
+
+export interface RiskFactor {
+  category: string;
+  description: string;
+  impact: 'low' | 'medium' | 'high';
+  probability: 'low' | 'medium' | 'high';
+  mitigation: string;
+}
+
+export interface InsuranceRecommendation {
+  type: string;
+  coverage: number;
+  monthlyPremium: number;
+  provider: string;
+  rationale: string;
+  priority: 'high' | 'medium' | 'low';
+}
+
+export interface MonthlyAction {
+  month: number;
+  actions: string[];
+  estimatedCost: number;
+  expectedOutcome: string;
+}
+
+export interface FinancialAnalysis {
+  id: string;
+  userId: string;
+  netWorth: number;
+  cashFlow: number;
+  debtToIncomeRatio: number;
+  savingsRate: number;
+  investmentDiversification: number;
+  emergencyFundAdequacy: number;
+  retirementReadiness: number;
+  recommendations: string[];
+  generatedAt: Date;
+}
+
+export interface FinancialAdvisorRequest {
+  userId: string;
+  analysisType: 'profile' | 'plan' | 'investment' | 'risk' | 'comprehensive';
+  goals?: string[];
+  riskTolerance?: 'conservative' | 'moderate' | 'aggressive';
+  timeHorizon?: number;
+  budget?: number;
+}
+
+export interface FinancialAdvisorResponse {
+  requestId: string;
+  status: 'processing' | 'completed' | 'failed';
+  profile?: FinancialProfile;
+  plan?: FinancialPlan;
+  recommendations?: InvestmentRecommendation[];
+  analysis?: FinancialAnalysis;
+  summary: string;
+  nextSteps: string[];
+  generatedAt: Date;
+}
+
+export class AIFinancialAdvisorService {
+  private apiKey: string;
+  private baseUrl: string;
+
+  constructor(apiKey: string, baseUrl: string = 'https://api.ziontechgroup.com') {
+    this.apiKey = apiKey;
+    this.baseUrl = baseUrl;
   }
 
-  async generateInvestmentRecommendations(profileId: string): Promise<InvestmentRecommendation[]> {
-    const profile = this.financialProfiles.find(p => p.id === profileId);
-    if (!profile) {
-      throw new Error('Financial profile not found');
-    }
+  async createFinancialProfile(userId: string, profileData: Partial<FinancialProfile>): Promise<FinancialProfile> {
+    try {
+      const response = await fetch(`${this.baseUrl}/api/financial-advisor/profiles`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${this.apiKey}`,
+        },
+        body: JSON.stringify({ userId, ...profileData }),
+      });
 
-    // AI-powered investment recommendations based on profile
-    const recommendations: InvestmentRecommendation[] = [];
-    
-    // Conservative portfolio
-    if (profile.riskTolerance === 'conservative') {
-      recommendations.push(
-        this.createRecommendation('BND', 'Vanguard Total Bond Market ETF', 'etf', 40, 2, 4.5, 'Low-risk bond ETF for stable income'),
-        this.createRecommendation('VTI', 'Vanguard Total Stock Market ETF', 'etf', 30, 4, 8.0, 'Broad market exposure with moderate risk'),
-        this.createRecommendation('VXUS', 'Vanguard Total International Stock ETF', 'etf', 20, 5, 7.5, 'International diversification'),
-        this.createRecommendation('BNDX', 'Vanguard Total International Bond ETF', 'etf', 10, 3, 3.5, 'International bond exposure')
-      );
-    }
-    // Moderate portfolio
-    else if (profile.riskTolerance === 'moderate') {
-      recommendations.push(
-        this.createRecommendation('VTI', 'Vanguard Total Stock Market ETF', 'etf', 50, 4, 8.0, 'Core equity holding'),
-        this.createRecommendation('VXUS', 'Vanguard Total International Stock ETF', 'etf', 25, 5, 7.5, 'International growth'),
-        this.createRecommendation('BND', 'Vanguard Total Bond Market ETF', 'etf', 20, 2, 4.5, 'Income and stability'),
-        this.createRecommendation('QQQ', 'Invesco QQQ Trust', 'etf', 5, 7, 12.0, 'Technology growth exposure')
-      );
-    }
-    // Aggressive portfolio
-    else {
-      recommendations.push(
-        this.createRecommendation('VTI', 'Vanguard Total Stock Market ETF', 'etf', 40, 4, 8.0, 'Core equity foundation'),
-        this.createRecommendation('VXUS', 'Vanguard Total International Stock ETF', 'etf', 25, 5, 7.5, 'International growth'),
-        this.createRecommendation('QQQ', 'Invesco QQQ Trust', 'etf', 20, 7, 12.0, 'Technology growth'),
-        this.createRecommendation('ARKK', 'ARK Innovation ETF', 'etf', 10, 9, 15.0, 'High-growth innovation'),
-        this.createRecommendation('BND', 'Vanguard Total Bond Market ETF', 'etf', 5, 2, 4.5, 'Minimal stability')
-      );
-    }
-
-    return recommendations;
-  }
-
-  async analyzePortfolio(userId: string, holdings: Record<string, number>): Promise<PortfolioAnalysis> {
-    // Calculate portfolio metrics
-    const totalValue = Object.values(holdings).reduce((sum, value) => sum + value, 0);
-    const allocation: Record<string, number> = {};
-    
-    Object.entries(holdings).forEach(([symbol, value]) => {
-      allocation[symbol] = (value / totalValue) * 100;
-    });
-
-    const riskScore = this.calculateRiskScore(allocation);
-    const diversificationScore = this.calculateDiversificationScore(allocation);
-    
-    const analysis: PortfolioAnalysis = {
-      id: `portfolio_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`,
-      userId,
-      totalValue,
-      allocation,
-      riskScore,
-      diversificationScore,
-      performanceMetrics: {
-        totalReturn: this.calculateTotalReturn(holdings),
-        sharpeRatio: this.calculateSharpeRatio(holdings),
-        maxDrawdown: this.calculateMaxDrawdown(holdings),
-        volatility: this.calculateVolatility(holdings)
-      },
-      recommendations: []
-    };
-
-    this.portfolios.push(analysis);
-    return analysis;
-  }
-
-  async generateFinancialPlan(profileId: string): Promise<FinancialPlan> {
-    const profile = this.financialProfiles.find(p => p.id === profileId);
-    if (!profile) {
-      throw new Error('Financial profile not found');
-    }
-
-    const monthlySavings = profile.income * 0.2; // 20% savings rate
-    const emergencyFund = profile.expenses * 6; // 6 months of expenses
-    
-    const plan: FinancialPlan = {
-      id: `plan_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`,
-      userId: profile.userId,
-      monthlySavings,
-      emergencyFund,
-      debtPayoff: {
-        priority: ['High-interest credit cards', 'Personal loans', 'Student loans', 'Mortgage'],
-        monthlyPayment: monthlySavings * 0.3,
-        payoffDate: new Date(Date.now() + 5 * 365 * 24 * 60 * 60 * 1000) // 5 years
-      },
-      investmentStrategy: {
-        shortTerm: await this.generateInvestmentRecommendations(profileId),
-        longTerm: await this.generateInvestmentRecommendations(profileId),
-        retirement: await this.generateInvestmentRecommendations(profileId)
-      },
-      taxOptimization: {
-        strategies: ['Maximize 401(k) contributions', 'Use Roth IRA for tax-free growth', 'Tax-loss harvesting', 'Municipal bonds for high tax brackets'],
-        estimatedSavings: profile.income * 0.15
+      if (!response.ok) {
+        throw new Error(`Create profile API error: ${response.statusText}`);
       }
-    };
 
-    this.financialPlans.push(plan);
-    return plan;
-  }
-
-  async getRetirementProjection(profileId: string, targetAge: number): Promise<{
-    projectedSavings: number;
-    monthlyContribution: number;
-    yearsToRetirement: number;
-    estimatedMonthlyIncome: number;
-  }> {
-    const profile = this.financialProfiles.find(p => p.id === profileId);
-    if (!profile) {
-      throw new Error('Financial profile not found');
+      const data = await response.json();
+      return {
+        ...data,
+        lastUpdated: new Date(data.lastUpdated),
+      };
+    } catch (error) {
+      console.error('Error creating financial profile:', error);
+      throw error;
     }
-
-    const yearsToRetirement = targetAge - profile.age;
-    const monthlyContribution = profile.income * 0.15; // 15% retirement contribution
-    const expectedReturn = 0.07; // 7% annual return
-    
-    const projectedSavings = this.calculateCompoundGrowth(
-      profile.savings,
-      monthlyContribution,
-      expectedReturn,
-      yearsToRetirement
-    );
-
-    const estimatedMonthlyIncome = projectedSavings * 0.04 / 12; // 4% withdrawal rule
-
-    return {
-      projectedSavings,
-      monthlyContribution,
-      yearsToRetirement,
-      estimatedMonthlyIncome
-    };
   }
 
-  private createRecommendation(
-    symbol: string,
-    name: string,
-    type: InvestmentRecommendation['type'],
-    allocation: number,
-    riskLevel: number,
-    expectedReturn: number,
-    reasoning: string
-  ): InvestmentRecommendation {
-    return {
-      id: `rec_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`,
-      symbol,
-      name,
-      type,
-      allocation,
-      riskLevel,
-      expectedReturn,
-      reasoning,
-      lastUpdated: new Date()
-    };
-  }
+  async getFinancialProfile(userId: string): Promise<FinancialProfile> {
+    try {
+      const response = await fetch(`${this.baseUrl}/api/financial-advisor/profiles/${userId}`, {
+        headers: {
+          'Authorization': `Bearer ${this.apiKey}`,
+        },
+      });
 
-  private calculateRiskScore(allocation: Record<string, number>): number {
-    // Simplified risk calculation based on asset allocation
-    let riskScore = 0;
-    Object.entries(allocation).forEach(([symbol, percentage]) => {
-      if (symbol.includes('BND')) riskScore += percentage * 0.2; // Bonds = low risk
-      else if (symbol.includes('VTI') || symbol.includes('VXUS')) riskScore += percentage * 0.5; // Broad market = medium risk
-      else if (symbol.includes('QQQ') || symbol.includes('ARKK')) riskScore += percentage * 0.8; // Growth = high risk
-    });
-    return Math.min(riskScore, 100);
-  }
+      if (!response.ok) {
+        throw new Error(`Get profile API error: ${response.statusText}`);
+      }
 
-  private calculateDiversificationScore(allocation: Record<string, number>): number {
-    const numAssets = Object.keys(allocation).length;
-    const maxConcentration = Math.max(...Object.values(allocation));
-    return Math.min(100, (numAssets * 20) - (maxConcentration * 0.5));
-  }
-
-  private calculateTotalReturn(holdings: Record<string, number>): number {
-    // Simplified return calculation
-    return Object.values(holdings).reduce((sum, value) => sum + value * 0.08, 0);
-  }
-
-  private calculateSharpeRatio(holdings: Record<string, number>): number {
-    // Simplified Sharpe ratio
-    return 0.8;
-  }
-
-  private calculateMaxDrawdown(holdings: Record<string, number>): number {
-    // Simplified max drawdown
-    return -0.15;
-  }
-
-  private calculateVolatility(holdings: Record<string, number>): number {
-    // Simplified volatility
-    return 0.12;
-  }
-
-  private calculateCompoundGrowth(
-    initial: number,
-    monthlyContribution: number,
-    annualReturn: number,
-    years: number
-  ): number {
-    const monthlyReturn = Math.pow(1 + annualReturn, 1/12) - 1;
-    const months = years * 12;
-    
-    let balance = initial;
-    for (let i = 0; i < months; i++) {
-      balance = balance * (1 + monthlyReturn) + monthlyContribution;
+      const data = await response.json();
+      return {
+        ...data,
+        lastUpdated: new Date(data.lastUpdated),
+      };
+    } catch (error) {
+      console.error('Error getting financial profile:', error);
+      throw error;
     }
-    
-    return balance;
   }
 
-  // Analytics methods
-  async getFinancialAnalytics(userId: string): Promise<{
-    totalPortfolioValue: number;
-    averageRiskScore: number;
-    averageDiversificationScore: number;
-    topPerformingAssets: Array<{ symbol: string; return: number }>;
-    monthlySavingsTrend: Array<{ month: string; amount: number }>;
-  }> {
-    const userPortfolios = this.portfolios.filter(p => p.userId === userId);
-    const userPlans = this.financialPlans.filter(p => p.userId === userId);
+  async generateFinancialPlan(request: FinancialAdvisorRequest): Promise<FinancialPlan> {
+    try {
+      const response = await fetch(`${this.baseUrl}/api/financial-advisor/plans`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${this.apiKey}`,
+        },
+        body: JSON.stringify(request),
+      });
 
-    const totalPortfolioValue = userPortfolios.reduce((sum, p) => sum + p.totalValue, 0);
-    const averageRiskScore = userPortfolios.length > 0 
-      ? userPortfolios.reduce((sum, p) => sum + p.riskScore, 0) / userPortfolios.length 
-      : 0;
-    const averageDiversificationScore = userPortfolios.length > 0
-      ? userPortfolios.reduce((sum, p) => sum + p.diversificationScore, 0) / userPortfolios.length
-      : 0;
+      if (!response.ok) {
+        throw new Error(`Generate plan API error: ${response.statusText}`);
+      }
 
-    return {
-      totalPortfolioValue,
-      averageRiskScore,
-      averageDiversificationScore,
-      topPerformingAssets: [
-        { symbol: 'VTI', return: 8.5 },
-        { symbol: 'QQQ', return: 12.3 },
-        { symbol: 'VXUS', return: 7.8 }
-      ],
-      monthlySavingsTrend: [
-        { month: 'Jan', amount: 1200 },
-        { month: 'Feb', amount: 1350 },
-        { month: 'Mar', amount: 1100 },
-        { month: 'Apr', amount: 1400 }
-      ]
-    };
+      const data = await response.json();
+      return {
+        ...data,
+        generatedAt: new Date(data.generatedAt),
+        nextReview: new Date(data.nextReview),
+        goals: data.goals.map((goal: any) => ({
+          ...goal,
+          targetDate: new Date(goal.targetDate),
+          estimatedAchievement: new Date(goal.estimatedAchievement),
+        })),
+      };
+    } catch (error) {
+      console.error('Error generating financial plan:', error);
+      throw error;
+    }
+  }
+
+  async getInvestmentRecommendations(userId: string, riskTolerance?: string): Promise<InvestmentRecommendation[]> {
+    try {
+      const params = new URLSearchParams({ userId });
+      if (riskTolerance) params.append('riskTolerance', riskTolerance);
+
+      const response = await fetch(`${this.baseUrl}/api/financial-advisor/investments?${params}`, {
+        headers: {
+          'Authorization': `Bearer ${this.apiKey}`,
+        },
+      });
+
+      if (!response.ok) {
+        throw new Error(`Get investment recommendations API error: ${response.statusText}`);
+      }
+
+      const data = await response.json();
+      return data.recommendations.map((rec: any) => ({
+        ...rec,
+        generatedAt: new Date(rec.generatedAt),
+      }));
+    } catch (error) {
+      console.error('Error getting investment recommendations:', error);
+      throw error;
+    }
+  }
+
+  async performRiskAssessment(userId: string): Promise<RiskAssessment> {
+    try {
+      const response = await fetch(`${this.baseUrl}/api/financial-advisor/risk-assessment/${userId}`, {
+        method: 'POST',
+        headers: {
+          'Authorization': `Bearer ${this.apiKey}`,
+        },
+      });
+
+      if (!response.ok) {
+        throw new Error(`Risk assessment API error: ${response.statusText}`);
+      }
+
+      return await response.json();
+    } catch (error) {
+      console.error('Error performing risk assessment:', error);
+      throw error;
+    }
+  }
+
+  async generateFinancialAnalysis(userId: string): Promise<FinancialAnalysis> {
+    try {
+      const response = await fetch(`${this.baseUrl}/api/financial-advisor/analysis/${userId}`, {
+        method: 'POST',
+        headers: {
+          'Authorization': `Bearer ${this.apiKey}`,
+        },
+      });
+
+      if (!response.ok) {
+        throw new Error(`Financial analysis API error: ${response.statusText}`);
+      }
+
+      const data = await response.json();
+      return {
+        ...data,
+        generatedAt: new Date(data.generatedAt),
+      };
+    } catch (error) {
+      console.error('Error generating financial analysis:', error);
+      throw error;
+    }
+  }
+
+  async getComprehensiveAdvice(request: FinancialAdvisorRequest): Promise<FinancialAdvisorResponse> {
+    try {
+      const response = await fetch(`${this.baseUrl}/api/financial-advisor/comprehensive`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${this.apiKey}`,
+        },
+        body: JSON.stringify(request),
+      });
+
+      if (!response.ok) {
+        throw new Error(`Comprehensive advice API error: ${response.statusText}`);
+      }
+
+      const data = await response.json();
+      return {
+        ...data,
+        generatedAt: new Date(data.generatedAt),
+        profile: data.profile ? {
+          ...data.profile,
+          lastUpdated: new Date(data.profile.lastUpdated),
+        } : undefined,
+        plan: data.plan ? {
+          ...data.plan,
+          generatedAt: new Date(data.plan.generatedAt),
+          nextReview: new Date(data.plan.nextReview),
+          goals: data.plan.goals.map((goal: any) => ({
+            ...goal,
+            targetDate: new Date(goal.targetDate),
+            estimatedAchievement: new Date(goal.estimatedAchievement),
+          })),
+        } : undefined,
+        recommendations: data.recommendations?.map((rec: any) => ({
+          ...rec,
+          generatedAt: new Date(rec.generatedAt),
+        })),
+        analysis: data.analysis ? {
+          ...data.analysis,
+          generatedAt: new Date(data.analysis.generatedAt),
+        } : undefined,
+      };
+    } catch (error) {
+      console.error('Error getting comprehensive advice:', error);
+      throw error;
+    }
+  }
+
+  async updateFinancialProfile(userId: string, updates: Partial<FinancialProfile>): Promise<FinancialProfile> {
+    try {
+      const response = await fetch(`${this.baseUrl}/api/financial-advisor/profiles/${userId}`, {
+        method: 'PATCH',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${this.apiKey}`,
+        },
+        body: JSON.stringify(updates),
+      });
+
+      if (!response.ok) {
+        throw new Error(`Update profile API error: ${response.statusText}`);
+      }
+
+      const data = await response.json();
+      return {
+        ...data,
+        lastUpdated: new Date(data.lastUpdated),
+      };
+    } catch (error) {
+      console.error('Error updating financial profile:', error);
+      throw error;
+    }
+  }
+
+  async generateFinancialReport(userId: string, format: 'pdf' | 'csv' | 'excel'): Promise<string> {
+    try {
+      const response = await fetch(`${this.baseUrl}/api/financial-advisor/reports`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${this.apiKey}`,
+        },
+        body: JSON.stringify({ userId, format }),
+      });
+
+      if (!response.ok) {
+        throw new Error(`Generate report API error: ${response.statusText}`);
+      }
+
+      const data = await response.json();
+      return data.downloadUrl;
+    } catch (error) {
+      console.error('Error generating financial report:', error);
+      throw error;
+    }
   }
 }
 
-export const aiFinancialAdvisorService = new AIFinancialAdvisorService();
+export const aiFinancialAdvisorService = new AIFinancialAdvisorService(process.env.FINANCIAL_ADVISOR_API_KEY || '');
