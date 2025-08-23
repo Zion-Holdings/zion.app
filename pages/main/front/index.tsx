@@ -443,15 +443,15 @@ export default function MainFrontIndex() {
               { label: 'Homepage Advertiser', desc: 'Curates and updates the home explore section.', href: '/.netlify/functions/homepage_advertiser' },
               { label: 'Cloud Orchestrator', desc: 'Runs fast improvement cycle and git sync.', href: '/.netlify/functions/cloud_orchestrator' },
               { label: 'Sitemap Runner', desc: 'Keeps sitemap fresh for SEO visibility.', href: '/.netlify/functions/sitemap_runner' },
-              { label: 'Internal Link Fixer', desc: 'Crawls and fixes broken internal links, then syncs.', href: '/.netlify/functions/internal-link-fixer-runner' },
-              { label: 'Revenue Ideas Lab', desc: 'Runs revenue idea agents and commits proposals.', href: '/.netlify/functions/revenue-ideas-agents-runner' },
-              { label: 'Media Release Runner', desc: 'Publishes autonomous media updates.', href: '/.netlify/functions/media-release-runner' },
+              { label: 'Repo Complexity Report', desc: 'Analyzes codebase complexity and commits a report.', href: '/.netlify/functions/repo-complexity-runner' },
+              { label: 'Docs Coverage Report', desc: 'Measures documentation coverage against the codebase.', href: '/.netlify/functions/docs-coverage-runner' },
+              { label: 'Adaptive Cloud Factory (7m)', desc: 'Adapts which automations to run based on repo state.', href: '/.netlify/functions/adaptive-cloud-factory' },
             ].map((f) => (
               <a key={f.label} href={f.href} target="_blank" rel="noopener" className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-cyan-400/30 tilt-on-hover">
                 <div className="pointer-events-none absolute -inset-px -z-10 bg-gradient-to-r from-fuchsia-500/0 via-cyan-400/10 to-fuchsia-500/0 opacity-0 blur-2xl transition-opacity group-hover:opacity-100" />
-                <div className="text-lg font-semibold">{f.label}</div>
+                <div className="text-base font-semibold">{f.label}</div>
                 <div className="mt-1 text-sm text-white/75">{f.desc}</div>
-                <div className="mt-3 inline-flex items-center gap-1 text-xs text-cyan-300/90">Trigger <span aria-hidden>↗</span></div>
+                <div className="mt-3 inline-flex items-center gap-1 text-xs text-cyan-300/90">Open <span aria-hidden>→</span></div>
               </a>
             ))}
           </div>
@@ -1673,110 +1673,58 @@ export default function MainFrontIndex() {
         </motion.section>
 
         {/* AUTO-GENERATED: FRONT_ADS_START */
-
 <section id="auto-promoted" className="mx-auto max-w-7xl px-6 pb-14">
   <h2 className="text-center text-2xl font-bold tracking-wide text-white/90">Auto‑Promoted Features</h2>
   <p className="mx-auto mt-2 max-w-3xl text-center text-sm text-white/70">Continuously curated promos linking to live hubs, reports, and docs.</p>
   <div className="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
-
-            <Link href="/automation">
-              <a className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-5 text-left text-white/80 backdrop-blur-xl hover:border-cyan-400/30 tilt-on-hover holo">
-                <div className="pointer-events-none absolute -inset-px -z-10 bg-gradient-to-r from-fuchsia-500/0 via-cyan-400/10 to-fuchsia-500/0 opacity-0 blur-2xl transition-opacity group-hover:opacity-100" />
-                <div className="text-base font-semibold text-white/90">Automation Hub</div>
-                <div className="mt-0.5 text-xs text-white/70">Factories, agents, live workflows</div>
-                <div className="mt-3 inline-flex items-center gap-1 text-[11px] text-cyan-300/90">Open <span aria-hidden>→</span></div>
-              </a>
-            </Link>
-
-            <Link href="/site-health">
-              <a className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-5 text-left text-white/80 backdrop-blur-xl hover:border-cyan-400/30 tilt-on-hover holo">
-                <div className="pointer-events-none absolute -inset-px -z-10 bg-gradient-to-r from-fuchsia-500/0 via-cyan-400/10 to-fuchsia-500/0 opacity-0 blur-2xl transition-opacity group-hover:opacity-100" />
-                <div className="text-base font-semibold text-white/90">Site Health</div>
-                <div className="mt-0.5 text-xs text-white/70">A11y, performance, link integrity</div>
-                <div className="mt-3 inline-flex items-center gap-1 text-[11px] text-cyan-300/90">Open <span aria-hidden>→</span></div>
-              </a>
-            </Link>
-
-            <Link href="/reports/seo">
-              <a className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-5 text-left text-white/80 backdrop-blur-xl hover:border-cyan-400/30 tilt-on-hover holo">
-                <div className="pointer-events-none absolute -inset-px -z-10 bg-gradient-to-r from-fuchsia-500/0 via-cyan-400/10 to-fuchsia-500/0 opacity-0 blur-2xl transition-opacity group-hover:opacity-100" />
-                <div className="text-base font-semibold text-white/90">AI SEO Auditor</div>
-                <div className="mt-0.5 text-xs text-white/70">Continuous on‑site improvements</div>
-                <div className="mt-3 inline-flex items-center gap-1 text-[11px] text-cyan-300/90">Open <span aria-hidden>→</span></div>
-              </a>
-            </Link>
-
-            <Link href="/reports/ai-trends">
-              <a className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-5 text-left text-white/80 backdrop-blur-xl hover:border-cyan-400/30 tilt-on-hover holo">
-                <div className="pointer-events-none absolute -inset-px -z-10 bg-gradient-to-r from-fuchsia-500/0 via-cyan-400/10 to-fuchsia-500/0 opacity-0 blur-2xl transition-opacity group-hover:opacity-100" />
-                <div className="text-base font-semibold text-white/90">AI Trends</div>
-                <div className="mt-0.5 text-xs text-white/70">Signals for new automations</div>
-                <div className="mt-3 inline-flex items-center gap-1 text-[11px] text-cyan-300/90">Open <span aria-hidden>→</span></div>
-              </a>
-            </Link>
-
-            <Link href="/newsroom">
-              <a className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-5 text-left text-white/80 backdrop-blur-xl hover:border-cyan-400/30 tilt-on-hover holo">
-                <div className="pointer-events-none absolute -inset-px -z-10 bg-gradient-to-r from-fuchsia-500/0 via-cyan-400/10 to-fuchsia-500/0 opacity-0 blur-2xl transition-opacity group-hover:opacity-100" />
-                <div className="text-base font-semibold text-white/90">Newsroom</div>
-                <div className="mt-0.5 text-xs text-white/70">Autonomous updates & highlights</div>
-                <div className="mt-3 inline-flex items-center gap-1 text-[11px] text-cyan-300/90">Open <span aria-hidden>→</span></div>
-              </a>
-            </Link>
-
-            <Link href="/.netlify/functions/docs-index-runner">
-              <a className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-5 text-left text-white/80 backdrop-blur-xl hover:border-cyan-400/30 tilt-on-hover holo">
-                <div className="pointer-events-none absolute -inset-px -z-10 bg-gradient-to-r from-fuchsia-500/0 via-cyan-400/10 to-fuchsia-500/0 opacity-0 blur-2xl transition-opacity group-hover:opacity-100" />
-                <div className="text-base font-semibold text-white/90">Docs</div>
-                <div className="mt-0.5 text-xs text-white/70">Technical notes & guides</div>
-                <div className="mt-3 inline-flex items-center gap-1 text-[11px] text-cyan-300/90">Open <span aria-hidden>→</span></div>
-              </a>
-            </Link>
-
-            <Link href="/newsroom">
-              <a className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-5 text-left text-white/80 backdrop-blur-xl hover:border-cyan-400/30 tilt-on-hover holo">
-                <div className="pointer-events-none absolute -inset-px -z-10 bg-gradient-to-r from-fuchsia-500/0 via-cyan-400/10 to-fuchsia-500/0 opacity-0 blur-2xl transition-opacity group-hover:opacity-100" />
-                <div className="text-base font-semibold text-white/90">AI Changelog</div>
-                <div className="mt-0.5 text-xs text-white/70">Summarized autonomous changes</div>
-                <div className="mt-3 inline-flex items-center gap-1 text-[11px] text-cyan-300/90">Open <span aria-hidden>→</span></div>
-              </a>
-            </Link>
-
-            <Link href="/.netlify/functions/autonomous-front-home-accelerator">
-              <a className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-5 text-left text-white/80 backdrop-blur-xl hover:border-cyan-400/30 tilt-on-hover holo">
-                <div className="pointer-events-none absolute -inset-px -z-10 bg-gradient-to-r from-fuchsia-500/0 via-cyan-400/10 to-fuchsia-500/0 opacity-0 blur-2xl transition-opacity group-hover:opacity-100" />
-                <div className="text-base font-semibold text-white/90">Front+Home Accelerator</div>
-                <div className="mt-0.5 text-xs text-white/70">Futurize, advertise, and sync</div>
-                <div className="mt-3 inline-flex items-center gap-1 text-[11px] text-cyan-300/90">Open <span aria-hidden>→</span></div>
-              </a>
-            </Link>
-
-            <Link href="/.netlify/functions/link-healer-committer">
-              <a className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-5 text-left text-white/80 backdrop-blur-xl hover:border-cyan-400/30 tilt-on-hover holo">
-                <div className="pointer-events-none absolute -inset-px -z-10 bg-gradient-to-r from-fuchsia-500/0 via-cyan-400/10 to-fuchsia-500/0 opacity-0 blur-2xl transition-opacity group-hover:opacity-100" />
-                <div className="text-base font-semibold text-white/90">Dead Link Healer</div>
-                <div className="mt-0.5 text-xs text-white/70">Crawl, fix, and commit</div>
-                <div className="mt-3 inline-flex items-center gap-1 text-[11px] text-cyan-300/90">Open <span aria-hidden>→</span></div>
-              </a>
-            </Link>
-
-            <Link href="/.netlify/functions/newsroom-auto-curator">
-              <a className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-5 text-left text-white/80 backdrop-blur-xl hover:border-cyan-400/30 tilt-on-hover holo">
-                <div className="pointer-events-none absolute -inset-px -z-10 bg-gradient-to-r from-fuchsia-500/0 via-cyan-400/10 to-fuchsia-500/0 opacity-0 blur-2xl transition-opacity group-hover:opacity-100" />
-                <div className="text-base font-semibold text-white/90">Newsroom Curator</div>
-                <div className="mt-0.5 text-xs text-white/70">Generate updates & changelog</div>
-                <div className="mt-3 inline-flex items-center gap-1 text-[11px] text-cyan-300/90">Open <span aria-hidden>→</span></div>
-              </a>
-            </Link>
-
-            <Link href="/.netlify/functions/trends-to-promos-writer">
-              <a className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-5 text-left text-white/80 backdrop-blur-xl hover:border-cyan-400/30 tilt-on-hover holo">
-                <div className="pointer-events-none absolute -inset-px -z-10 bg-gradient-to-r from-fuchsia-500/0 via-cyan-400/10 to-fuchsia-500/0 opacity-0 blur-2xl transition-opacity group-hover:opacity-100" />
-                <div className="text-base font-semibold text-white/90">Trends → Promos</div>
-                <div className="mt-0.5 text-xs text-white/70">Turn research into highlights</div>
-                <div className="mt-3 inline-flex items-center gap-1 text-[11px] text-cyan-300/90">Open <span aria-hidden>→</span></div>
-              </a>
-            </Link>
+              <Link href="/automation"><a className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-cyan-400/30 tilt-on-hover holo">
+  <div className="text-base font-semibold">Automation Hub</div>
+  <div className="mt-1 text-sm text-white/75">Live agents & workflows</div>
+  <div className="mt-3 inline-flex items-center gap-1 text-xs text-cyan-300/90">Open <span aria-hidden>→</span></div></a></Link>
+              <Link href="/site-health"><a className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-cyan-400/30 tilt-on-hover holo">
+  <div className="text-base font-semibold">Site Health</div>
+  <div className="mt-1 text-sm text-white/75">A11y, performance, links</div>
+  <div className="mt-3 inline-flex items-center gap-1 text-xs text-cyan-300/90">Open <span aria-hidden>→</span></div></a></Link>
+              <Link href="/reports/seo"><a className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-cyan-400/30 tilt-on-hover holo">
+  <div className="text-base font-semibold">SEO Audit</div>
+  <div className="mt-1 text-sm text-white/75">Continuous improvements</div>
+  <div className="mt-3 inline-flex items-center gap-1 text-xs text-cyan-300/90">Open <span aria-hidden>→</span></div></a></Link>
+              <Link href="/reports/ai-trends"><a className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-cyan-400/30 tilt-on-hover holo">
+  <div className="text-base font-semibold">AI Trends</div>
+  <div className="mt-1 text-sm text-white/75">Intelligence signals</div>
+  <div className="mt-3 inline-flex items-center gap-1 text-xs text-cyan-300/90">Open <span aria-hidden>→</span></div></a></Link>
+              <Link href="/newsroom"><a className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-cyan-400/30 tilt-on-hover holo">
+  <div className="text-base font-semibold">Newsroom</div>
+  <div className="mt-1 text-sm text-white/75">Latest autonomous updates</div>
+  <div className="mt-3 inline-flex items-center gap-1 text-xs text-cyan-300/90">Open <span aria-hidden>→</span></div></a></Link>
+              <Link href="/front"><a className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-cyan-400/30 tilt-on-hover holo">
+  <div className="text-base font-semibold">Front</div>
+  <div className="mt-1 text-sm text-white/75">Explore more</div>
+  <div className="mt-3 inline-flex items-center gap-1 text-xs text-cyan-300/90">Open <span aria-hidden>→</span></div></a></Link>
+              <Link href="/main/front#features"><a className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-cyan-400/30 tilt-on-hover holo">
+  <div className="text-base font-semibold">Features</div>
+  <div className="mt-1 text-sm text-white/75">Explore capabilities</div>
+  <div className="mt-3 inline-flex items-center gap-1 text-xs text-cyan-300/90">Open <span aria-hidden>→</span></div></a></Link>
+              <Link href="/main/front#capabilities"><a className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-cyan-400/30 tilt-on-hover holo">
+  <div className="text-base font-semibold">Capabilities</div>
+  <div className="mt-1 text-sm text-white/75">What agents can do</div>
+  <div className="mt-3 inline-flex items-center gap-1 text-xs text-cyan-300/90">Open <span aria-hidden>→</span></div></a></Link>
+              <Link href="/main/front#benefits"><a className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-cyan-400/30 tilt-on-hover holo">
+  <div className="text-base font-semibold">Benefits</div>
+  <div className="mt-1 text-sm text-white/75">Outcomes & ROI</div>
+  <div className="mt-3 inline-flex items-center gap-1 text-xs text-cyan-300/90">Open <span aria-hidden>→</span></div></a></Link>
+              <Link href="/.netlify/functions/docs-index-runner"><a className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-cyan-400/30 tilt-on-hover holo">
+  <div className="text-base font-semibold">Docs — technical notes & guides</div>
+  <div className="mt-1 text-sm text-white/75">Documentation</div>
+  <div className="mt-3 inline-flex items-center gap-1 text-xs text-cyan-300/90">Open <span aria-hidden>→</span></div></a></Link>
+              <Link href="/newsroom"><a className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-cyan-400/30 tilt-on-hover holo">
+  <div className="text-base font-semibold">AI Changelog — highlights</div>
+  <div className="mt-1 text-sm text-white/75">Summarized updates</div>
+  <div className="mt-3 inline-flex items-center gap-1 text-xs text-cyan-300/90">Open <span aria-hidden>→</span></div></a></Link>
+              <Link href="/.netlify/functions/autonomous-innovation-generator"><a className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-cyan-400/30 tilt-on-hover holo">
+  <div className="text-base font-semibold">Autonomous Innovation Generator</div>
+  <div className="mt-1 text-sm text-white/75">Front promos + homepage refresh</div>
+  <div className="mt-3 inline-flex items-center gap-1 text-xs text-cyan-300/90">Open <span aria-hidden>→</span></div></a></Link>
   </div>
 </section>
 /* AUTO-GENERATED: FRONT_ADS_END */}
