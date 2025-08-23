@@ -164,8 +164,9 @@ export default function Layout({ children, seo }: LayoutProps) {
       </div>
 
       {/* Accessibility and Performance Tools */}
-      <AccessibilityEnhancer />
-      <PerformanceMonitor />
+      <AccessibilityEnhancer>
+        <PerformanceMonitor />
+      </AccessibilityEnhancer>
       
       {/* Cookie Consent Banner */}
       <CookieConsentBanner />
