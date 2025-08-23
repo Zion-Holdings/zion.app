@@ -31,6 +31,7 @@ const footerData = {
     { label: 'About Us', href: '/about' },
     { label: 'Services', href: '/services' },
     { label: 'Solutions', href: '/solutions' },
+    { label: 'Pricing', href: '/pricing' },
     { label: 'Case Studies', href: '/case-studies' },
     { label: 'Blog', href: '/blog' },
     { label: 'Careers', href: '/careers' }
@@ -41,7 +42,9 @@ const footerData = {
     { label: 'Space Technology', href: '/services?category=space-tech' },
     { label: 'Cybersecurity', href: '/services?category=cybersecurity' },
     { label: 'Cloud Infrastructure', href: '/services?category=cloud' },
-    { label: 'Enterprise Solutions', href: '/solutions/enterprise' }
+    { label: 'Enterprise Solutions', href: '/solutions/enterprise' },
+    { label: 'Startup Solutions', href: '/solutions/startup' },
+    { label: 'Government Solutions', href: '/solutions/government' }
   ],
   resources: [
     { label: 'Documentation', href: '/docs' },

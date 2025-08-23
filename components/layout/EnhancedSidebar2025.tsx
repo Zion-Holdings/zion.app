@@ -7,7 +7,8 @@ import {
   BarChart3, Code, Smartphone, Server, Users, Award, 
   TrendingUp, BookOpen, FileText, GraduationCap, Headphones,
   Zap, Globe, Lock, Phone, Mail, MapPin, Star, MessageCircle,
-  ExternalLink, Home, Briefcase, Info, HelpCircle, Shield as ShieldIcon, Play
+  ExternalLink, Home, Briefcase, Info, HelpCircle, Shield as ShieldIcon, Play,
+  Building
 } from 'lucide-react';
 
 const EnhancedSidebar2025: React.FC<{ isOpen: boolean; onClose: () => void }> = ({ 
@@ -88,6 +89,20 @@ const EnhancedSidebar2025: React.FC<{ isOpen: boolean; onClose: () => void }> = 
         { label: 'Network Automation', href: '/network-automation' },
         { label: 'IT Asset Management', href: '/it-asset-management' },
         { label: 'Compliance Automation', href: '/compliance-automation' }
+      ]
+    },
+    {
+      id: 'industry-solutions',
+      title: 'Industry Solutions',
+      icon: Building,
+      color: 'from-indigo-500 to-purple-500',
+      items: [
+        { label: 'Enterprise Solutions', href: '/solutions/enterprise', badge: 'Enterprise', featured: true },
+        { label: 'Startup Solutions', href: '/solutions/startup', badge: 'Startup', featured: true },
+        { label: 'Government Solutions', href: '/solutions/government', badge: 'Government', featured: true },
+        { label: 'Healthcare Solutions', href: '/healthcare-solutions' },
+        { label: 'Financial Services', href: '/financial-solutions' },
+        { label: 'Manufacturing Solutions', href: '/manufacturing-solutions' }
       ]
     },
     {
