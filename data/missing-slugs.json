@@ -1,5 +1,6 @@
 [
   "accessibility",
+  "ai-autonomous-vehicle-ai-platform",
   "ai-consciousness-evolution",
   "ai-content-marketing-automation",
   "ai-creativity-orchestrator",
@@ -29,5 +30,6 @@
   "quantum-threat-detection",
   "services/data-contracts-hub",
   "services/serverless-lakehouse-starter",
+  "space-data-analytics",
   "space-mining-automation-platform"
 ]
