@@ -140,10 +140,22 @@ const allServices = [
   ...real2036ServiceExpansions,
   ...innovative2036MicroSaasServices,
   ...innovative2036ITServices,
+<<<<<<< HEAD
+  ...innovative2037MicroSaasServices,
+  ...innovative2037ITServices,
+  ...innovative2037AIServices,
+  // 2038 innovative services
+  ...innovative2038AIServices,
+  ...innovative2038ITServices,
+  ...innovative2038MicroSaasServices,
+  ...innovative2038IndustryServices,
+  ...innovative2038ConsultingServices
+=======
   // New innovative 2037 services
   ...innovative2037MicroSaasServices,
   ...innovative2037ITServices,
   ...innovative2037AIServices
+>>>>>>> origin/cursor/add-and-advertise-new-services-then-build-f35d
 ];
 
 const categories = [
