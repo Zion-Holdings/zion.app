@@ -1,6 +1,5 @@
-// Re-export from the SSR client to maintain backward compatibility
-export { supabase, createClient } from '@/utils/supabase/client';
-import { logWarn, logDebug } from '@/utils/productionLogger';
+import { createClient } from '@supabase/supabase-js';
+import api from '@/lib/api';
 
 // Get actual environment variables
 const envSupabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
@@ -48,17 +47,27 @@ async function checkOnline(): Promise<boolean> {
   return true;
 }
 
-// Optimized safeFetch for development mode with better error handling
-export async function safeFetch(url: string, options: RequestInit = {}) {
-  try {
-    // In development, provide faster mock responses
-    if (process.env.NODE_ENV === 'development' && url.includes('/favorites')) {
-      return {
-        ok: true,
-        status: 200,
-        json: async () => ([]),
-        text: async () => '[]',
-      } as Response;
+  const maxRetries = 3;
+  let lastError: any;
+
+  for (let i = 0; i < maxRetries; i++) {
+    try {
+      const response = await api({
+        url,
+        method: options.method as any,
+        data: (options as any).body,
+        headers: Object.fromEntries(headers.entries()),
+      });
+
+      if (response.status < 200 || response.status >= 300) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+
+      return response;
+    } catch (error) {
+      lastError = error;
+      // Wait before retrying (exponential backoff)
+      await new Promise(resolve => setTimeout(resolve, Math.pow(2, i) * 1000));
     }
     
     // Use real fetch for other cases

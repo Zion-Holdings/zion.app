@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useAuth } from "@/hooks/useAuth";
 import { supabase } from "@/integrations/supabase/client";
 import { toast } from "@/hooks/use-toast";
+import api from '@/lib/api';
 
 export type WebhookEventType = 'new_application' | 'quote_received' | 'milestone_approved' | 'talent_hired';
 
@@ -56,21 +57,18 @@ export function useWebhooks() {
         return;
       }
 
-      const response = await fetch(`${getWebhookUrl()}/webhooks`, {
-        method: 'GET',
+      const response = await api.get(`${getWebhookUrl()}/webhooks`, {
         headers: {
-          'Authorization': `Bearer ${(session as any)?.access_token}`,
+          Authorization: `Bearer ${session.access_token}`,
           'Content-Type': 'application/json'
         }
       });
 
-      const result = await response.json();
-      
-      if (!response.ok) {
-        throw new Error(result.error || 'Failed to fetch webhooks');
+      if (response.status < 200 || response.status >= 300) {
+        throw new Error(response.data.error || 'Failed to fetch webhooks');
       }
 
-      setWebhooks(result.webhooks || []);
+      setWebhooks(response.data.webhooks || []);
     } catch (err) {
       logErrorToProduction('Error fetching webhooks:', { data: err });
       setError(err instanceof Error ? err.message : 'An unknown error occurred');
@@ -98,25 +96,22 @@ export function useWebhooks() {
         return;
       }
 
-      const response = await fetch(`${getWebhookUrl()}/create`, {
-        method: 'POST',
-        headers: {
-          'Authorization': `Bearer ${(session as any)?.access_token}`,
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({
-          name,
-          url,
-          eventTypes,
-          secret
-        })
-      });
+      const response = await api.post(
+        `${getWebhookUrl()}/create`,
+        { name, url, eventTypes, secret },
+        {
+          headers: {
+            Authorization: `Bearer ${session.access_token}`,
+            'Content-Type': 'application/json'
+          }
+        }
+      );
 
-      const result = await response.json();
-      
-      if (!response.ok) {
-        throw new Error(result.error || 'Failed to create webhook');
+      if (response.status < 200 || response.status >= 300) {
+        throw new Error(response.data.error || 'Failed to create webhook');
       }
+
+      const result = response.data;
 
       // Add the new webhook to the list
       setWebhooks(prev => [result.webhook, ...prev]);
@@ -154,20 +149,22 @@ export function useWebhooks() {
         return;
       }
 
-      const response = await fetch(`${getWebhookUrl()}/toggle`, {
-        method: 'POST',
-        headers: {
-          'Authorization': `Bearer ${(session as any)?.access_token}`,
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({ webhookId, isActive })
-      });
+      const response = await api.post(
+        `${getWebhookUrl()}/toggle`,
+        { webhookId, isActive },
+        {
+          headers: {
+            Authorization: `Bearer ${session.access_token}`,
+            'Content-Type': 'application/json'
+          }
+        }
+      );
 
-      const result = await response.json();
-      
-      if (!response.ok) {
-        throw new Error(result.error || 'Failed to update webhook');
+      if (response.status < 200 || response.status >= 300) {
+        throw new Error(response.data.error || 'Failed to update webhook');
       }
+
+      const result = response.data;
 
       // Update the webhook in the list
       setWebhooks(prev => prev.map(webhook => 
@@ -207,20 +204,22 @@ export function useWebhooks() {
         return;
       }
 
-      const response = await fetch(`${getWebhookUrl()}/delete`, {
-        method: 'POST',
-        headers: {
-          'Authorization': `Bearer ${(session as any)?.access_token}`,
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({ webhookId })
-      });
+      const response = await api.post(
+        `${getWebhookUrl()}/delete`,
+        { webhookId },
+        {
+          headers: {
+            Authorization: `Bearer ${session.access_token}`,
+            'Content-Type': 'application/json'
+          }
+        }
+      );
 
-      const result = await response.json();
-      
-      if (!response.ok) {
-        throw new Error(result.error || 'Failed to delete webhook');
+      if (response.status < 200 || response.status >= 300) {
+        throw new Error(response.data.error || 'Failed to delete webhook');
       }
+
+      const result = response.data;
 
       // Remove the webhook from the list
       setWebhooks(prev => prev.filter(webhook => webhook.id !== webhookId));
@@ -259,20 +258,22 @@ export function useWebhooks() {
         return;
       }
 
-      const response = await fetch(`${getWebhookUrl()}/test`, {
-        method: 'POST',
-        headers: {
-          'Authorization': `Bearer ${(session as any)?.access_token}`,
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({ webhookId, eventType })
-      });
+      const response = await api.post(
+        `${getWebhookUrl()}/test`,
+        { webhookId, eventType },
+        {
+          headers: {
+            Authorization: `Bearer ${session.access_token}`,
+            'Content-Type': 'application/json'
+          }
+        }
+      );
 
-      const result = await response.json();
-      
-      if (!response.ok) {
-        throw new Error(result.error || 'Failed to test webhook');
+      if (response.status < 200 || response.status >= 300) {
+        throw new Error(response.data.error || 'Failed to test webhook');
       }
+
+      const result = response.data;
 
       // Store test result
       setTestResult({
