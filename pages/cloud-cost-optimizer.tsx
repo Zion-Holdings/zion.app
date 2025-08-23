@@ -146,66 +146,14 @@ export default function CloudCostOptimizerPage() {
                     </div>
                   ))}
                 </div>
-
-                <h3 className="text-2xl font-bold text-white mb-4">Key Benefits</h3>
-                <ul className="grid grid-cols-1 md:grid-cols-2 gap-3">
-                  {benefits.map((benefit, i) => (
-                    <li key={i} className="flex items-start space-x-3 text-gray-200">
-                      <Check className="w-5 h-5 text-cyan-400 mt-0.5 flex-shrink-0" />
-                      <span>{benefit}</span>
-                    </li>
-                  ))}
-                </ul>
-              </motion.div>
-            </div>
-
-            {/* Right Column - Pricing & Contact */}
-            <div className="lg:col-span-1">
-              <motion.div
-                initial={{ opacity: 0, x: 20 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.6, delay: 0.4 }}
-                className="bg-white/5 rounded-2xl border border-cyan-500/30 p-6 h-fit"
-              >
-                <div className="flex items-end justify-between mb-4">
-                  <div>
-                    <div className="text-3xl font-bold text-white mb-1">
-                      {service.price}
-                      <span className="text-gray-400 text-base">{service.period}</span>
-                    </div>
-                    <div className="text-gray-400 text-sm">
-                      {service.trialDays}-day free trial • Setup: {service.setupTime}
-                    </div>
-                  </div>
-                  <div className="flex items-center text-yellow-400">
-                    <Star className="w-4 h-4 mr-1" />
-                    {service.rating.toFixed(1)}
-                  </div>
-                </div>
-                
-                <a
-                  href="/contact"
-                  className="w-full flex items-center justify-center gap-2 px-6 py-3 bg-gradient-to-r from-cyan-500 to-blue-500 text-white rounded-lg hover:from-cyan-600 hover:to-blue-600 transition-all duration-300 font-semibold mb-6"
-                >
-                  Start Saving
-                  <ArrowRight className="w-5 h-5" />
-                </a>
-                
-                <div className="space-y-3 text-sm text-gray-300">
-                  <div className="flex items-center space-x-2">
-                    <Phone className="w-4 h-4 text-cyan-400" />
-                    <span>{service.contactInfo.mobile}</span>
-                  </div>
-                  <div className="flex items-center space-x-2">
-                    <Mail className="w-4 h-4 text-purple-400" />
-                    <span>{service.contactInfo.email}</span>
-                  </div>
-                  <div className="flex items-center space-x-2">
-                    <MapPin className="w-4 h-4 text-green-400" />
-                    <span className="text-xs">{service.contactInfo.address}</span>
-                  </div>
-                </div>
-              </motion.div>
+                <div className="flex items-center text-yellow-400"><Star className="w-4 h-4 mr-1" />{service.rating.toFixed(1)}</div>
+              </div>
+              <Button href="/contact" variant="primary" size="lg" className="w-full">Start Saving<ArrowRight className="w-5 h-5 ml-2" /></Button>
+              <div className="mt-6 space-y-3 text-sm text-slate-300">
+                <div className="flex items-center space-x-2"><Phone className="w-4 h-4 text-cyan-400" /><span>{service.contactInfo.mobile}</span></div>
+                <div className="flex items-center space-x-2"><Mail className="w-4 h-4 text-purple-400" /><span>{service.contactInfo.email}</span></div>
+                <div className="flex items-center space-x-2"><MapPin className="w-4 h-4 text-green-400" /><span className="text-xs">{service.contactInfo.address}</span></div>
+              </div>
             </div>
           </div>
         </div>

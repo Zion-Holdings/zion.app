@@ -1,5 +1,7 @@
 [
 =======
+  "accessibility",
+  "ai-autonomous-vehicle-ai-platform",
   "ai-consciousness-evolution",
   "ai-content-marketing-automation",
   "ai-creativity-orchestrator",
@@ -73,6 +75,5 @@
   "services/zero-trust-sso-mesh",
   "space-colonization-services",
   "space-data-analytics",
-  "space-mining-automation-platform",
-  "space-mining-platform"
+  "space-mining-automation-platform"
 ]

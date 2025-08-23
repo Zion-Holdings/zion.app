@@ -1,9 +1,11 @@
-import React, { useState, useEffect } from 'react';
-import Homepage2025 from '../components/Homepage2025';
-=======
 import Homepage2037 from '../components/Homepage2037';
 import SEOOptimizer from '../components/SEOOptimizer';
 import AnalyticsTracker from '../components/AnalyticsTracker';
+=======
+import React from 'react';
+import EnhancedHomepage2045 from '../components/EnhancedHomepage2045';
+import PerformanceOptimizer from '../components/PerformanceOptimizer';
+import AccessibilityEnhancer from '../components/AccessibilityEnhancer';
 import ErrorBoundary from '../components/ErrorBoundary';
 import PerformanceMonitor from '../components/PerformanceMonitor';
 import PageLoader from '../components/ui/PageLoader';
@@ -22,14 +24,11 @@ const HomePage: React.FC = () => {
 
   return (
     <ErrorBoundary>
-      <SEOOptimizer />
-      <AnalyticsTracker />
-      <PerformanceOptimizer />
-      <MobileOptimizer showDebugInfo={false}>
-        <AccessibilityEnhancer />
-        <Homepage2025 />
-        <PerformanceMonitor showUI={true} />
-      </MobileOptimizer>
+      <PerformanceOptimizer onMetricsUpdate={handlePerformanceMetrics}>
+        <AccessibilityEnhancer>
+          <EnhancedHomepage2045 />
+        </AccessibilityEnhancer>
+      </PerformanceOptimizer>
     </ErrorBoundary>
   );
 };

@@ -1,11 +1,17 @@
-import React, { useState } from 'react';
-
-import UltraFuturisticNavigation2036 from './UltraFuturisticNavigation2036';
-import UltraFuturisticFooter2036 from './UltraFuturisticFooter2036';
+import React, { useState, useEffect } from 'react';
+import Head from 'next/head';
+import EnhancedNavigation2025 from './EnhancedNavigation2025';
+import EnhancedFooter2025 from './EnhancedFooter2025';
 import EnhancedSidebar2025 from './EnhancedSidebar2025';
 import UltraFuturisticBackground2037 from '../backgrounds/UltraFuturisticBackground2037';
 import TopContactBar from './TopContactBar';
-import { AnimatePresence } from 'framer-motion';
+import EnhancedPerformanceMonitor from '../EnhancedPerformanceMonitor';
+import AccessibilityEnhancer from '../EnhancedAccessibilityEnhancer';
+import CookieConsentBanner from '../CookieConsentBanner';
+import EnhancedErrorBoundary from '../EnhancedErrorBoundary';
+import ThemeToggle from '../ThemeToggle';
+import LoadingSpinner from '../LoadingSpinner';
+import ServiceWorkerRegistration from '../ServiceWorkerRegistration';
 
 interface LayoutProps {
 	children: React.ReactNode;
@@ -13,23 +19,23 @@ interface LayoutProps {
 
 export default function Layout({ children }: LayoutProps) {
   const [sidebarOpen, setSidebarOpen] = useState(false);
+  const [isOnline, setIsOnline] = useState(true);
   const [isLoading, setIsLoading] = useState(true);
+  const [theme, setTheme] = useState<'dark' | 'light'>('dark');
 
   useEffect(() => {
-    // Simulate initial loading state
-    const timer = setTimeout(() => {
-      setIsLoading(false);
-    }, 100);
+    // Check for saved theme preference
+    const savedTheme = localStorage.getItem('theme') as 'dark' | 'light';
+    if (savedTheme) {
+      setTheme(savedTheme);
+    }
 
-    return () => clearTimeout(timer);
-  }, []);
+    // Simulate loading time for better UX
+    const timer = setTimeout(() => setIsLoading(false), 1000);
 
-  // Handle escape key to close sidebar
-  useEffect(() => {
-    const handleEscape = (event: KeyboardEvent) => {
-      if (event.key === 'Escape' && sidebarOpen) {
-        setSidebarOpen(false);
-      }
+    // Check online status
+    const updateOnlineStatus = () => {
+      setIsOnline(navigator.onLine);
     };
 
     if (sidebarOpen) {
@@ -41,8 +47,9 @@ export default function Layout({ children }: LayoutProps) {
     }
 
     return () => {
-      document.removeEventListener('keydown', handleEscape);
-      document.body.style.overflow = 'unset';
+      clearTimeout(timer);
+      window.removeEventListener('online', updateOnlineStatus);
+      window.removeEventListener('offline', updateOnlineStatus);
     };
   }, [sidebarOpen]);
 
@@ -57,137 +64,159 @@ export default function Layout({ children }: LayoutProps) {
     }
   }, [sidebarOpen]);
 
-  return (
-    <div className="min-h-screen bg-black text-white relative overflow-x-hidden">
-      {/* Skip to content link for accessibility */}
-      <a 
-        href="#main" 
-        className="skip-link sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2 focus:bg-cyan-500 focus:text-white focus:rounded-lg focus:outline-none focus:ring-2 focus:ring-cyan-400"
-        aria-label="Skip to main content"
-      >
-        Skip to main content
-      </a>
-
-      {/* Loading Screen */}
-      <AnimatePresence>
-        {isLoading && (
-          <motion.div
-            initial={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.3 }}
-            className="fixed inset-0 z-50 flex items-center justify-center bg-black"
-            role="status"
-            aria-label="Loading"
-          >
-            <div className="text-center">
-              <div className="w-16 h-16 border-4 border-cyan-500 border-t-transparent rounded-full animate-spin mx-auto mb-4"></div>
-              <p className="text-cyan-400 text-lg font-medium">Loading Zion Tech Group...</p>
-            </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
-
-      {/* Futuristic Background */}
-      <UltraFuturisticBackground2037 theme="quantum-neon" intensity="medium" />
-      
-      {/* Layout Structure */}
-      <div className="relative z-10">
-        {/* Top Contact Bar */}
-        <TopContactBar />
-        
-        {/* Navigation */}
-        <UltraFuturisticNavigation2036 />
-        
-        {/* Sidebar and Main Content */}
-        <div className="flex">
-          <EnhancedSidebar2025 
-            isOpen={sidebarOpen} 
-            onClose={() => setSidebarOpen(false)} 
-          />
-          
-          <main 
-            id="main" 
-            role="main" 
-            className="flex-1 pt-24 lg:pt-28 min-h-screen"
-            aria-label="Main content"
-          >
-            {/* Page Content */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.1 }}
-            >
-              {children}
-            </motion.div>
-          </main>
-        </div>
-        
-        {/* Footer */}
-        <UltraFuturisticFooter2036 />
-      </div>
-
-      {/* Accessibility and Performance Tools */}
-      <AccessibilityEnhancer />
-      <PerformanceMonitor />
-      
-      {/* Cookie Consent Banner */}
-      <CookieConsentBanner />
-    </div>
-  );
-}
-
-// Back to Top Button Component
-function BackToTopButton() {
-  const [isVisible, setIsVisible] = useState(false);
-
   useEffect(() => {
-    const toggleVisibility = () => {
-      if (window.pageYOffset > 300) {
-        setIsVisible(true);
-      } else {
-        setIsVisible(false);
-      }
-    };
+    // Apply theme to document
+    document.documentElement.setAttribute('data-theme', theme);
+    localStorage.setItem('theme', theme);
+  }, [theme]);
 
-    window.addEventListener('scroll', toggleVisibility);
-    return () => window.removeEventListener('scroll', toggleVisibility);
-  }, []);
-
-  const scrollToTop = () => {
-    window.scrollTo({
-      top: 0,
-      behavior: 'smooth'
-    });
+  const handleThemeToggle = () => {
+    setTheme(prev => prev === 'dark' ? 'light' : 'dark');
   };
 
+  if (isLoading) {
+    return <LoadingSpinner />;
+  }
+
   return (
-    <AnimatePresence>
-      {isVisible && (
-        <motion.button
-          initial={{ opacity: 0, scale: 0.8 }}
-          animate={{ opacity: 1, scale: 1 }}
-          exit={{ opacity: 0, scale: 0.8 }}
-          transition={{ duration: 0.2 }}
-          onClick={scrollToTop}
-          className="fixed bottom-8 right-8 z-40 p-3 bg-gradient-to-r from-cyan-500 to-blue-600 text-white rounded-full shadow-lg hover:from-cyan-600 hover:to-blue-700 focus:outline-none focus:ring-4 focus:ring-cyan-500/50 transition-all duration-200 transform hover:scale-110"
-          aria-label="Back to top"
-        >
-          <svg 
-            className="w-6 h-6" 
-            fill="none" 
-            stroke="currentColor" 
-            viewBox="0 0 24 24"
-            aria-hidden="true"
-          >
-            <path 
-              strokeLinecap="round" 
-              strokeLinejoin="round" 
-              strokeWidth={2} 
-              d="M5 10l7-7m0 0l7 7m-7-7v18" 
-            />
-          </svg>
-        </motion.button>
-      )}
-    </AnimatePresence>
+    <>
+      <Head>
+        <title>{title}</title>
+        <meta name="description" content={description} />
+        <meta name="keywords" content={keywords} />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta charSet="utf-8" />
+        <meta name="robots" content="index, follow" />
+        <meta name="author" content="Zion Tech Group" />
+        <meta name="theme-color" content="#06b6d4" />
+        
+        {/* Canonical URL */}
+        {canonicalUrl && <link rel="canonical" href={canonicalUrl} />}
+        
+        {/* PWA Manifest */}
+        <link rel="manifest" href="/manifest.json" />
+        <meta name="msapplication-TileColor" content="#06b6d4" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+        <meta name="apple-mobile-web-app-title" content="Zion Tech Group" />
+        
+        {/* Favicons */}
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+        
+        {/* Open Graph */}
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content={title} />
+        <meta property="og:description" content={description} />
+        <meta property="og:image" content={ogImage} />
+        <meta property="og:url" content={canonicalUrl || 'https://ziontechgroup.com'} />
+        <meta property="og:site_name" content="Zion Tech Group" />
+        
+        {/* Twitter Card */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={title} />
+        <meta name="twitter:description" content={description} />
+        <meta name="twitter:image" content={ogImage} />
+        <meta name="twitter:site" content="@ziontechgroup" />
+        
+        {/* Additional Meta Tags */}
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="mobile-web-app-capable" content="yes" />
+        <meta name="application-name" content="Zion Tech Group" />
+        
+        {/* Structured Data */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Organization",
+              "name": "Zion Tech Group",
+              "url": "https://ziontechgroup.com",
+              "logo": "https://ziontechgroup.com/logo.png",
+              "description": description,
+              "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "364 E Main St STE 1008",
+                "addressLocality": "Middletown",
+                "addressRegion": "DE",
+                "postalCode": "19709",
+                "addressCountry": "US"
+              },
+              "contactPoint": {
+                "@type": "ContactPoint",
+                "telephone": "+1-302-464-0950",
+                "contactType": "customer service",
+                "email": "kleber@ziontechgroup.com"
+              },
+              "sameAs": [
+                "https://linkedin.com/company/zion-tech-group",
+                "https://github.com/Zion-Holdings",
+                "https://twitter.com/ziontechgroup"
+              ]
+            })
+          }}
+        />
+      </Head>
+
+      <div className={`min-h-screen ${theme === 'dark' ? 'bg-black text-white' : 'bg-gray-50 text-gray-900'} relative overflow-hidden transition-colors duration-300`}>
+        {/* Skip to content link for accessibility */}
+        <a href="#main" className="skip-link sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2 focus:bg-blue-600 focus:text-white focus:rounded">
+          Skip to main content
+        </a>
+        
+        {/* Background Effects */}
+        <UltraFuturisticBackground2045 theme={theme === 'dark' ? 'quantum-neon' : 'holographic'} />
+        
+        {/* Layout Structure */}
+        <div className="relative z-10">
+          {/* Top Contact Bar */}
+          <TopContactBar />
+          
+          {/* Enhanced Navigation */}
+          <EnhancedNavigation2025 />
+          
+          {/* Enhanced Sidebar */}
+          <EnhancedSidebar2025 isOpen={sidebarOpen} onClose={() => setSidebarOpen(false)} />
+          
+          {/* Main Content */}
+          <main id="main" role="main" className="pt-32 pb-16 relative z-10">
+            <EnhancedErrorBoundary>
+              {children}
+            </EnhancedErrorBoundary>
+          </main>
+          
+          {/* Enhanced Footer */}
+          <EnhancedFooter2025 />
+          
+          {/* Performance Monitor */}
+          <EnhancedPerformanceMonitor />
+          
+          {/* Accessibility Enhancer */}
+          <AccessibilityEnhancer />
+          
+          {/* Cookie Consent Banner */}
+          <CookieConsentBanner />
+          
+          {/* Offline Indicator */}
+          {!isOnline && (
+            <div className="fixed bottom-4 right-4 bg-red-600 text-white px-4 py-2 rounded-lg shadow-lg z-50">
+              <div className="flex items-center space-x-2">
+                <div className="w-2 h-2 bg-white rounded-full animate-pulse"></div>
+                <span className="text-sm">You are offline</span>
+              </div>
+            </div>
+          )}
+        </div>
+
+        {/* Theme Toggle Floating Button */}
+        <ThemeToggle theme={theme} onToggle={handleThemeToggle} />
+        
+        {/* Service Worker Registration */}
+        <ServiceWorkerRegistration />
+      </div>
+    </>
   );
 }

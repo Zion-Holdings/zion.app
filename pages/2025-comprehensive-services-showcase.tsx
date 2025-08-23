@@ -2,16 +2,17 @@ import React, { useState, useEffect } from 'react';
 import SEO from '../components/SEO';
 import { motion, AnimatePresence } from 'framer-motion';
 import { 
-  Search, Grid, List, Star, Check, ArrowRight,
-  Brain, Atom, Shield, Target, Rocket, Palette, 
-  Heart, Truck, GraduationCap, Building, Globe,
-  Phone, Mail, MapPin, ExternalLink, Users, TrendingUp
+  Brain, Building, Target, Cpu, Shield, 
+  ArrowRight, Check, Star, Phone, Mail, MapPin,
+  TrendingUp, Users, Zap, Globe, Lock
 } from 'lucide-react';
 
 // Import our new service data
-import { innovativeMicroSaasServices2025V2 } from '../data/2025-innovative-micro-saas-expansion-v2';
-import { innovativeITServices2025V2 } from '../data/2025-innovative-it-services-expansion-v2';
-import { innovativeAIServices2025V2 } from '../data/2025-innovative-ai-services-expansion-v2';
+import { advancedBusinessIntelligenceServices2025 } from '../data/2025-advanced-business-intelligence-services';
+import { advancedAIAutomationServices2025 } from '../data/2025-advanced-ai-automation-services';
+import { innovative2025ITInfrastructureServices } from '../data/2025-innovative-it-infrastructure-services';
+import { innovativeMicroSaasSolutions2025 } from '../data/2025-innovative-micro-saas-solutions';
+import { cuttingEdgeAIServices2025 } from '../data/2025-cutting-edge-ai-services';
 
 const ComprehensiveServicesShowcase2025: React.FC = () => {
   const [searchTerm, setSearchTerm] = useState('');
@@ -20,9 +21,11 @@ const ComprehensiveServicesShowcase2025: React.FC = () => {
 
   // Combine all services
   const allServices = [
-    ...innovativeMicroSaasServices2025V2,
-    ...innovativeITServices2025V2,
-    ...innovativeAIServices2025V2
+    ...advancedBusinessIntelligenceServices2025,
+    ...advancedAIAutomationServices2025,
+    ...innovative2025ITInfrastructureServices,
+    ...innovativeMicroSaasSolutions2025,
+    ...cuttingEdgeAIServices2025
   ];
 
   // Filter services based on search and category
@@ -66,6 +69,17 @@ const ComprehensiveServicesShowcase2025: React.FC = () => {
     { id: 'AI & Autonomous Vehicles', name: 'AI & Autonomous Vehicles', icon: <Rocket className="w-5 h-5" />, color: 'from-red-500 to-pink-600' },
     { id: 'AI & Space Technology', name: 'AI & Space Technology', icon: <Rocket className="w-5 h-5" />, color: 'from-blue-500 to-purple-600' }
   ];
+
+  const filteredServices = activeTab === 'all' 
+    ? allServices 
+    : allServices.filter(service => {
+        if (activeTab === 'business-intelligence') return service.category?.includes('Business Intelligence') || service.category?.includes('Analytics');
+        if (activeTab === 'ai-automation') return service.category?.includes('AI Automation');
+        if (activeTab === 'it-infrastructure') return service.category?.includes('IT Infrastructure');
+        if (activeTab === 'micro-saas') return service.category?.includes('Micro SAAS') || service.type === 'Micro SAAS';
+        if (activeTab === 'ai-services') return service.category?.includes('AI Services') || service.type === 'AI Service';
+        return true;
+      });
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900">
@@ -195,12 +209,161 @@ const ComprehensiveServicesShowcase2025: React.FC = () => {
         </div>
       </section>
 
-      {/* Services Section */}
-      <section id="services-section" className="px-4 sm:px-6 lg:px-8 mb-20">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-              Our Comprehensive Service Portfolio
+      {/* Category Tabs */}
+      <section className="py-12 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex flex-wrap justify-center gap-2">
+            {categories.map((category) => (
+              <button
+                key={category.id}
+                onClick={() => setActiveTab(category.id)}
+                className={`flex items-center gap-2 px-4 py-2 rounded-full border transition-all ${
+                  activeTab === category.id
+                    ? 'bg-blue-600 text-white border-blue-600'
+                    : 'bg-white text-gray-700 border-gray-300 hover:border-blue-300 hover:text-blue-600'
+                }`}
+              >
+                {category.icon}
+                {category.name}
+              </button>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Services Grid */}
+      <section className="py-16 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {filteredServices.map((service, index) => (
+              <motion.div
+                key={service.id}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                className="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden border border-gray-100"
+              >
+                {/* Service Header */}
+                <div className="p-6 border-b border-gray-100">
+                  <div className="flex items-start justify-between mb-4">
+                    <div className="flex-1">
+                      <h3 className="text-xl font-bold text-gray-900 mb-2">
+                        {service.name}
+                      </h3>
+                      <p className="text-gray-600 text-sm mb-3">
+                        {service.tagline}
+                      </p>
+                      <div className="flex items-center gap-2 text-sm text-gray-500">
+                        <span className="px-2 py-1 bg-blue-100 text-blue-700 rounded-full text-xs font-medium">
+                          {service.category}
+                        </span>
+                        <span className="px-2 py-1 bg-green-100 text-green-700 rounded-full text-xs font-medium">
+                          {service.type}
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Service Content */}
+                <div className="p-6">
+                  <p className="text-gray-700 mb-4 line-clamp-3">
+                    {service.description}
+                  </p>
+
+                  {/* Pricing */}
+                  <div className="mb-4">
+                    <h4 className="text-sm font-semibold text-gray-900 mb-2">Pricing</h4>
+                    <div className="space-y-1">
+                      {service.pricing?.starter && (
+                        <div className="flex justify-between text-sm">
+                          <span className="text-gray-600">Starter:</span>
+                          <span className="font-semibold text-green-600">{service.pricing.starter}</span>
+                        </div>
+                      )}
+                      {service.pricing?.professional && (
+                        <div className="flex justify-between text-sm">
+                          <span className="text-gray-600">Professional:</span>
+                          <span className="font-semibold text-blue-600">{service.pricing.professional}</span>
+                        </div>
+                      )}
+                      {service.pricing?.enterprise && (
+                        <div className="flex justify-between text-sm">
+                          <span className="text-gray-600">Enterprise:</span>
+                          <span className="font-semibold text-purple-600">{service.pricing.enterprise}</span>
+                        </div>
+                      )}
+                    </div>
+                  </div>
+
+                  {/* Key Features */}
+                  <div className="mb-4">
+                    <h4 className="text-sm font-semibold text-gray-900 mb-2">Key Features</h4>
+                    <div className="grid grid-cols-2 gap-1">
+                      {service.features?.slice(0, 6).map((feature, idx) => (
+                        <div key={idx} className="flex items-center gap-2 text-sm text-gray-600">
+                          <Check className="w-3 h-3 text-green-500 flex-shrink-0" />
+                          <span className="truncate">{feature}</span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* Market Info */}
+                  <div className="mb-4 text-sm">
+                    <div className="flex justify-between mb-1">
+                      <span className="text-gray-600">Market Size:</span>
+                      <span className="font-semibold text-gray-900">{service.marketSize}</span>
+                    </div>
+                    <div className="flex justify-between">
+                      <span className="text-gray-600">Target Audience:</span>
+                      <span className="font-semibold text-gray-900">{service.targetAudience}</span>
+                    </div>
+                  </div>
+
+                  {/* Benefits */}
+                  <div className="mb-6">
+                    <h4 className="text-sm font-semibold text-gray-900 mb-2">Key Benefits</h4>
+                    <div className="space-y-1">
+                      {service.benefits?.slice(0, 4).map((benefit, idx) => (
+                        <div key={idx} className="flex items-center gap-2 text-sm text-gray-600">
+                          <Star className="w-3 h-3 text-yellow-500 flex-shrink-0" />
+                          <span>{benefit}</span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* CTA Button */}
+                  <div className="flex flex-col gap-2">
+                    <a
+                      href={`mailto:${service.contact}?subject=Inquiry about ${service.name}`}
+                      className="w-full bg-blue-600 hover:bg-blue-700 text-white text-center py-2 px-4 rounded-lg font-medium transition-colors flex items-center justify-center gap-2"
+                    >
+                      <Mail className="w-4 h-4" />
+                      Get Started
+                    </a>
+                    <a
+                      href={`tel:${service.mobile}`}
+                      className="w-full bg-gray-100 hover:bg-gray-200 text-gray-700 text-center py-2 px-4 rounded-lg font-medium transition-colors flex items-center justify-center gap-2"
+                    >
+                      <Phone className="w-4 h-4" />
+                      Call Now
+                    </a>
+                  </div>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Why Choose Us */}
+      <section className="py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+              Why Choose Zion Tech Group?
             </h2>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto">
               Discover {filteredServices.length} innovative services across multiple categories, 

@@ -57,16 +57,13 @@ const AIGuardrails: React.FC = () => {
     'Operational efficiency'
   ];
 
-  const useCases = [
-    'Content moderation',
-    'Customer service AI',
-    'Financial AI systems',
-    'Healthcare AI',
-    'Educational AI',
-    'Legal AI applications',
-    'Marketing AI',
-    'Research AI systems'
-  ];
+	return (
+		<UltraFuturisticBackground variant="holographic" intensity="high">
+			<Head>
+				<title>AI Guardrails Platform | Zion Tech Group</title>
+				<meta name="description" content="Safety and compliance for AI. PII redaction, toxicity and jailbreak detection, policy enforcement with audit logs." />
+				<link rel="canonical" href="https://ziontechgroup.com/ai-guardrails" />
+			</Head>
 
   const pricingPlans = [
     {

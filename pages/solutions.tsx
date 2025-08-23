@@ -69,7 +69,7 @@ const SolutionsPage: React.FC = () => {
   ];
 
   return (
-    <UltraFuturisticBackground variant="quantum">
+    <UltraFuturisticBackground variant="holographic">
       <div className="min-h-screen">
         <SEO data={{
           pageTitle: "Solutions - Zion Tech Group | Revolutionary AI, Quantum Computing & Emerging Technology Solutions",

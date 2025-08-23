@@ -43,71 +43,127 @@ const DocsPage: React.FC = () => {
       ]
     },
     {
-      title: "Space Technology",
-      description: "Space resource intelligence and autonomous systems",
-      icon: Rocket,
-      color: "from-orange-500 to-red-500",
-      articles: [
-        { title: "Space Resource API", description: "Access space resource intelligence", href: "/docs/space-resource-api" },
-        { title: "Satellite Systems", description: "Build autonomous satellite systems", href: "/docs/satellite-systems" },
-        { title: "Mission Control", description: "Manage space missions", href: "/docs/mission-control" }
-      ]
-    },
-    {
-      title: "Cybersecurity",
-      description: "Advanced security and threat detection",
-      icon: Shield,
-      color: "from-green-500 to-emerald-500",
-      articles: [
-        { title: "Zero Trust Security", description: "Implement zero trust architecture", href: "/docs/zero-trust" },
-        { title: "Threat Detection", description: "AI-powered threat detection", href: "/docs/threat-detection" },
-        { title: "Security API", description: "Security and compliance APIs", href: "/docs/security-api" }
-      ]
-    },
-    {
-      title: "API Reference",
-      description: "Complete API documentation and examples",
-      icon: Code,
-      color: "from-yellow-500 to-orange-500",
-      articles: [
-        { title: "REST API", description: "Complete REST API reference", href: "/docs/rest-api" },
-        { title: "GraphQL API", description: "GraphQL API documentation", href: "/docs/graphql-api" },
-        { title: "SDKs & Libraries", description: "Client libraries and SDKs", href: "/docs/sdks" }
+      title: "Space Technology APIs",
+      description: "Documentation for autonomous space exploration and resource intelligence.",
+      icon: <Rocket className="w-8 h-8" />,
+      color: "from-orange-500 to-red-600",
+      docs: [
+        { name: "API Overview", description: "Space technology API introduction", status: "Complete" },
+        { name: "Authentication", description: "API authentication and authorization", status: "Complete" },
+        { name: "Endpoints", description: "Complete API endpoint reference", status: "Complete" },
+        { name: "Webhooks", description: "Real-time data streaming setup", status: "Complete" }
       ]
     }
   ];
 
-  const popularArticles = [
+  const quickStartGuides = [
     {
-      title: "Getting Started with AI Consciousness",
-      description: "Learn how to integrate AI consciousness into your applications",
-      category: "AI & Machine Learning",
-      readTime: "10 min read",
-      href: "/docs/ai-consciousness-getting-started"
+      title: "AI Consciousness Platform",
+      description: "Get started with our AI consciousness evolution platform in under 10 minutes.",
+      difficulty: "Beginner",
+      time: "10 min",
+      icon: <Brain className="w-6 h-6" />,
+      color: "from-purple-500 to-pink-600"
     },
     {
-      title: "Quantum Security Implementation",
-      description: "Implement quantum-resistant security in your systems",
-      category: "Cybersecurity",
-      readTime: "15 min read",
-      href: "/docs/quantum-security-implementation"
+      title: "Quantum Computing SDK",
+      description: "Set up and run your first quantum algorithm with our SDK.",
+      difficulty: "Intermediate",
+      time: "15 min",
+      icon: <Atom className="w-6 h-6" />,
+      color: "from-blue-500 to-cyan-600"
     },
     {
-      title: "Space Resource Intelligence API",
-      description: "Access and analyze space resource data",
-      category: "Space Technology",
-      readTime: "12 min read",
-      href: "/docs/space-resource-api-guide"
+      title: "Cybersecurity Implementation",
+      description: "Implement our zero-trust security framework in your application.",
+      difficulty: "Intermediate",
+      time: "20 min",
+      icon: <Shield className="w-6 h-6" />,
+      color: "from-green-500 to-emerald-600"
+    },
+    {
+      title: "Space Technology APIs",
+      description: "Integrate space resource intelligence into your applications.",
+      difficulty: "Advanced",
+      time: "25 min",
+      icon: <Rocket className="w-6 h-6" />,
+      color: "from-orange-500 to-red-600"
     }
   ];
 
-  const searchSuggestions = [
-    "AI consciousness", "Quantum algorithms", "Space technology", "Cybersecurity", "API integration"
+  const apiReferences = [
+    {
+      name: "AI Consciousness API",
+      version: "v2.1.0",
+      status: "Stable",
+      endpoints: 47,
+      documentation: "Complete",
+      icon: <Brain className="w-6 h-6" />
+    },
+    {
+      name: "Quantum Computing API",
+      version: "v1.8.0",
+      status: "Beta",
+      endpoints: 23,
+      documentation: "Complete",
+      icon: <Atom className="w-6 h-6" />
+    },
+    {
+      name: "Security Framework API",
+      version: "v3.0.0",
+      status: "Stable",
+      endpoints: 34,
+      documentation: "Complete",
+      icon: <Shield className="w-6 h-6" />
+    },
+    {
+      name: "Space Technology API",
+      version: "v1.2.0",
+      status: "Alpha",
+      endpoints: 18,
+      documentation: "In Progress",
+      icon: <Rocket className="w-6 h-6" />
+    }
+  ];
+
+  const developerResources = [
+    {
+      title: "GitHub Repositories",
+      description: "Open source projects and code examples",
+      icon: <Github className="w-6 h-6" />,
+      link: "https://github.com/ziontechgroup",
+      external: true
+    },
+    {
+      title: "Code Examples",
+      description: "Practical implementation examples and snippets",
+      icon: <Code className="w-6 h-6" />,
+      link: "/docs/examples",
+      external: false
+    },
+    {
+      title: "SDK Downloads",
+      description: "Download our official SDKs and tools",
+      icon: <Download className="w-6 h-6" />,
+      link: "/downloads",
+      external: false
+    },
+    {
+      title: "Developer Forum",
+      description: "Community support and discussions",
+      icon: <Globe className="w-6 h-6" />,
+      link: "/community",
+      external: false
+    }
   ];
 
   return (
-    <Layout>
-      <div className="min-h-screen bg-gradient-to-br from-black via-gray-900 to-blue-900">
+    <Layout
+      title="Documentation - Zion Tech Group"
+      description="Comprehensive technical documentation, API references, and developer resources for Zion Tech Group's revolutionary technologies."
+      keywords="documentation, API reference, developer resources, AI consciousness, quantum computing, cybersecurity, Zion Tech Group"
+    >
+      <div className="min-h-screen bg-gradient-to-br from-gray-900 via-black to-gray-900 text-white">
         {/* Hero Section */}
         <section className="relative pt-32 pb-20 px-4">
           <div className="max-w-7xl mx-auto text-center">

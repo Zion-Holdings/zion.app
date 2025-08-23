@@ -1,45 +1,22 @@
 import React from 'react';
-import Head from 'next/head';
+import Layout from '../../components/layout/Layout';
 import { 
   Heart, Brain, Shield, Zap, BarChart3, Cpu, 
   CheckCircle, ArrowRight, Star, TrendingUp, Award, Clock
 } from 'lucide-react';
-import UltraFuturisticBackground from '../../components/ui/UltraFuturisticBackground';
 
 const HealthcareSolutionsPage: React.FC = () => {
   const solutions = [
     {
-      icon: <Brain className="w-6 h-6" />,
       title: 'AI-Powered Diagnostics',
-      description: 'Advanced diagnostic tools using machine learning and computer vision'
-    },
-    {
-      icon: <BarChart3 className="w-6 h-6" />,
-      title: 'Healthcare Analytics Platform',
-      description: 'Comprehensive data analytics for patient care optimization'
-    },
-    {
-      icon: <Cpu className="w-6 h-6" />,
-      title: 'Biotech AI Research',
-      description: 'AI-driven research tools for drug discovery and development'
-    },
-    {
-      icon: <Shield className="w-6 h-6" />,
-      title: 'Healthcare Cybersecurity',
-      description: 'Advanced security solutions for medical data protection'
-    },
-    {
-      icon: <Zap className="w-6 h-6" />,
-      title: 'Telemedicine Platform',
-      description: 'Secure and scalable telemedicine infrastructure'
-    }
-  ];
-
-  const features = [
-    {
-      icon: <CheckCircle className="w-5 h-5" />,
-      title: 'HIPAA Compliant',
-      description: 'Full compliance with healthcare data regulations'
+      description: 'Advanced diagnostic systems using artificial intelligence',
+      icon: Brain,
+      features: [
+        'Medical image analysis',
+        'Symptom assessment',
+        'Disease prediction',
+        'Treatment recommendations'
+      ]
     },
     {
       icon: <Shield className="w-5 h-5" />,
@@ -74,13 +51,17 @@ const HealthcareSolutionsPage: React.FC = () => {
       <UltraFuturisticBackground>
         <div className="min-h-screen bg-black text-white relative z-10">
         {/* Hero Section */}
-        <section className="pt-32 pb-20 px-4 sm:px-6 lg:px-8">
+        <section className="relative py-20 px-4 sm:px-6 lg:px-8">
           <div className="max-w-7xl mx-auto text-center">
             <div className="mb-8">
-              <div className="inline-flex items-center space-x-2 px-4 py-2 bg-gradient-to-r from-red-500/20 to-pink-500/20 border border-red-500/30 rounded-full text-red-400 text-sm font-medium mb-6">
-                <Heart className="w-4 h-4" />
-                <span>Healthcare & Biotech Solutions</span>
-              </div>
+              <Heart className="mx-auto h-20 w-20 text-red-400 mb-6" />
+              <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
+                Healthcare & Biotech
+              </h1>
+              <p className="text-xl md:text-2xl text-gray-300 max-w-4xl mx-auto">
+                Revolutionizing healthcare with AI-powered solutions that improve 
+                diagnosis, treatment, and patient outcomes.
+              </p>
             </div>
             
             <h1 className="text-5xl md:text-7xl font-bold mb-8 bg-gradient-to-r from-red-400 via-pink-400 to-purple-400 bg-clip-text text-transparent">
@@ -107,8 +88,8 @@ const HealthcareSolutionsPage: React.FC = () => {
         <section className="py-20 px-4 sm:px-6 lg:px-8">
           <div className="max-w-7xl mx-auto">
             <div className="text-center mb-16">
-              <h2 className="text-4xl md:text-5xl font-bold mb-6">
-                Our Healthcare Solutions
+              <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+                Healthcare Solutions
               </h2>
               <p className="text-xl text-white/70 max-w-3xl mx-auto">
                 Comprehensive AI-powered solutions designed to transform healthcare delivery and improve patient outcomes.
@@ -148,20 +129,14 @@ const HealthcareSolutionsPage: React.FC = () => {
               </p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              {features.map((feature, index) => (
-                <div key={index} className="flex items-start space-x-4">
-                  <div className="w-12 h-12 bg-gradient-to-r from-red-500/20 to-pink-500/20 rounded-xl flex items-center justify-center flex-shrink-0">
-                    {feature.icon}
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+              {benefits.map((benefit, index) => (
+                <div key={index} className="text-center">
+                  <div className="p-4 bg-red-500/20 rounded-full w-20 h-20 mx-auto mb-6 flex items-center justify-center">
+                    <benefit.icon className="h-10 w-10 text-red-400" />
                   </div>
-                  <div>
-                    <h3 className="text-xl font-semibold mb-2 text-white">
-                      {feature.title}
-                    </h3>
-                    <p className="text-white/70">
-                      {feature.description}
-                    </p>
-                  </div>
+                  <h3 className="text-xl font-bold text-white mb-3">{benefit.title}</h3>
+                  <p className="text-gray-300">{benefit.description}</p>
                 </div>
               ))}
             </div>
@@ -183,9 +158,8 @@ const HealthcareSolutionsPage: React.FC = () => {
             </button>
           </div>
         </section>
-        </div>
-      </UltraFuturisticBackground>
-    </>
+      </div>
+    </Layout>
   );
 };
 
