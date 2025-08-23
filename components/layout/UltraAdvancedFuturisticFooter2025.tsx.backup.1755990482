@@ -25,11 +25,20 @@ const footerSections: FooterSection[] = [
   {
     title: 'Services',
     links: [
+<<<<<<< HEAD
+      { label: 'AI & Machine Learning', href: '/services?category=ai-ml', description: 'Advanced AI solutions' },
+      { label: 'Quantum Computing', href: '/services?category=quantum', description: 'Next-gen quantum tech' },
+      { label: 'Space Technology', href: '/services?category=space-tech', description: 'Innovative space solutions' },
+      { label: 'Cybersecurity', href: '/services?category=cybersecurity', description: 'Enterprise security' },
+      { label: 'Enterprise IT', href: '/services?category=enterprise-it', description: 'Enterprise infrastructure' },
+      { label: 'Micro SAAS', href: '/services?category=micro-saas', description: 'Business solutions' },
+=======
       { label: 'AI & Machine Learning', href: '/ai-services', description: 'Advanced AI solutions' },
       { label: 'Quantum Computing', href: '/quantum-computing', description: 'Next-gen quantum tech' },
       { label: 'Space Technology', href: '/space-technology', description: 'Innovative space solutions' },
       { label: 'Cybersecurity', href: '/cybersecurity', description: 'Enterprise security' },
       { label: 'Cloud Solutions', href: '/cloud-platform', description: 'Scalable cloud infrastructure' },
+>>>>>>> origin/cursor/website-audit-content-update-and-deployment-c095
       { label: 'View All Services', href: '/services', description: 'Complete service portfolio' }
     ]
   },
@@ -56,9 +65,12 @@ const footerSections: FooterSection[] = [
   {
     title: 'Resources',
     links: [
+<<<<<<< HEAD
+=======
       { label: 'Blog', href: '/blog', description: 'Industry insights' },
       { label: 'White Papers', href: '/white-papers', description: 'In-depth research' },
       { label: 'Webinars', href: '/webinars', description: 'Educational content' },
+>>>>>>> origin/cursor/website-audit-content-update-and-deployment-c095
       { label: 'Documentation', href: '/docs', description: 'Technical guides' },
       { label: 'Blog', href: '/blog', description: 'Industry insights' },
       { label: 'Case Studies', href: '/case-studies', description: 'Success stories' },
@@ -68,11 +80,18 @@ const footerSections: FooterSection[] = [
 ];
 
 const socialLinks = [
+<<<<<<< HEAD
+  { name: 'Twitter', href: '#', icon: <Twitter className="w-5 h-5" /> },
+  { name: 'LinkedIn', href: '#', icon: <Linkedin className="w-5 h-5" /> },
+  { name: 'YouTube', href: '#', icon: <Youtube className="w-5 h-5" /> },
+  { name: 'GitHub', href: '#', icon: <Github className="w-5 h-5" /> }
+=======
   { icon: <Linkedin className="w-5 h-5" />, href: 'https://linkedin.com/company/ziontechgroup', label: 'LinkedIn', external: true },
   { icon: <Twitter className="w-5 h-5" />, href: 'https://x.com/ziontechgroup', label: 'Twitter', external: true },
   { icon: <Github className="w-5 h-5" />, href: 'https://github.com/Zion-Holdings', label: 'GitHub', external: true },
   { icon: <Youtube className="w-5 h-5" />, href: 'https://youtube.com/@ziontechgroup', label: 'YouTube', external: true },
   { icon: <Facebook className="w-5 h-5" />, href: 'https://facebook.com/ziontechgroup', label: 'Facebook', external: true }
+>>>>>>> origin/cursor/website-audit-content-update-and-deployment-c095
 ];
 
 const quickLinks = [
