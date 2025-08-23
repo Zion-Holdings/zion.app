@@ -3,8 +3,8 @@ import { motion } from 'framer-motion';
 import { 
   Mail, Phone, MapPin, 
   Facebook, Twitter, Linkedin, Github, Youtube,
-  Heart, Zap,
-  ExternalLink, ChevronRight
+  Heart, Shield, Users, Award, TrendingUp,
+  ExternalLink, ChevronRight, Globe
 } from 'lucide-react';
 import Link from 'next/link';
 import { AnimatePresence } from 'framer-motion';
@@ -25,12 +25,24 @@ const footerSections: FooterSection[] = [
   {
     title: 'Services',
     links: [
-      { label: 'AI & Machine Learning', href: '/ai-services', description: 'Advanced AI solutions' },
-      { label: 'Quantum Computing', href: '/quantum-computing', description: 'Next-gen quantum tech' },
-      { label: 'Space Technology', href: '/space-tech', description: 'Innovative space solutions' },
-      { label: 'Cybersecurity', href: '/cybersecurity', description: 'Enterprise security' },
-      { label: 'Cloud Solutions', href: '/cloud-platform', description: 'Scalable cloud infrastructure' },
+      { label: 'AI & Machine Learning', href: '/services?category=ai-ml', description: 'Advanced AI solutions' },
+      { label: 'Quantum Computing', href: '/services?category=quantum', description: 'Next-gen quantum tech' },
+      { label: 'Space Technology', href: '/services?category=space-tech', description: 'Innovative space solutions' },
+      { label: 'Cybersecurity', href: '/services?category=cybersecurity', description: 'Enterprise security' },
+      { label: 'Enterprise IT', href: '/services?category=enterprise-it', description: 'Enterprise infrastructure' },
+      { label: 'Micro SAAS', href: '/services?category=micro-saas', description: 'Business solutions' },
       { label: 'View All Services', href: '/services', description: 'Complete service portfolio' }
+    ]
+  },
+  {
+    title: 'Solutions',
+    links: [
+      { label: 'Healthcare & Biotech', href: '/solutions/healthcare', description: 'Medical technology' },
+      { label: 'Financial Services', href: '/solutions/financial', description: 'Fintech solutions' },
+      { label: 'Manufacturing', href: '/solutions/manufacturing', description: 'Industry 4.0' },
+      { label: 'Retail & E-commerce', href: '/solutions/retail', description: 'Digital commerce' },
+      { label: 'Government', href: '/solutions/government', description: 'Public sector' },
+      { label: 'Education', href: '/solutions/education', description: 'EdTech solutions' }
     ]
   },
   {
@@ -54,17 +66,6 @@ const footerSections: FooterSection[] = [
       { label: 'API Reference', href: '/api-documentation', description: 'Developer resources' },
       { label: 'Support', href: '/support', description: 'Help & assistance' }
     ]
-  },
-  {
-    title: 'Industries',
-    links: [
-      { label: 'Healthcare', href: '/healthcare-solutions', description: 'Medical technology' },
-      { label: 'Finance', href: '/financial-solutions', description: 'Fintech solutions' },
-      { label: 'Manufacturing', href: '/manufacturing-ai-solutions', description: 'Industry 4.0' },
-      { label: 'Retail', href: '/retail-technology-solutions', description: 'E-commerce tech' },
-      { label: 'Government', href: '/government-technology-solutions', description: 'Public sector' },
-      { label: 'Education', href: '/education-technology-solutions', description: 'EdTech solutions' }
-    ]
   }
 ];
 
@@ -77,8 +78,8 @@ const socialLinks = [
 ];
 
 const contactInfo = {
-  phone: '+1 (302) 464-0950',
-  email: 'contact@ziontechgroup.com',
+  phone: '+1 302 464 0950',
+  email: 'kleber@ziontechgroup.com',
   address: '364 E Main St STE 1008, Middletown, DE 19709',
   website: 'https://ziontechgroup.com'
 };
@@ -114,8 +115,8 @@ const UltraAdvancedFuturisticFooter2025: React.FC = () => {
       setSubscriptionStatus('success');
       setEmail('');
       
-      // Reset success message after 5 seconds
-      setTimeout(() => setSubscriptionStatus('idle'), 5000);
+      // Reset success message after 3 seconds
+      setTimeout(() => setSubscriptionStatus('idle'), 3000);
     } catch {
       setSubscriptionStatus('error');
       
@@ -142,7 +143,7 @@ const UltraAdvancedFuturisticFooter2025: React.FC = () => {
             <div className="mb-8">
               <div className="flex items-center space-x-3 mb-4">
                 <div className="w-10 h-10 bg-gradient-to-r from-cyan-400 to-blue-500 rounded-lg flex items-center justify-center">
-                  <Zap className="w-6 h-6 text-white" />
+                  <Globe className="w-6 h-6 text-white" />
                 </div>
                 <span className="text-2xl font-bold bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
                   Zion Tech Group
