@@ -1,9 +1,11 @@
 import React from 'react';
-import Layout from '../../components/layout/Layout';
+import Head from 'next/head';
 import { 
-  Heart, Brain, Shield, Zap, BarChart3, Cpu, Users, Target,
-  CheckCircle, ArrowRight, Star, TrendingUp, Award, Clock
+  Heart, Brain, Shield, Zap, Cpu, 
+  Star, TrendingUp, Award, Users, Target
 } from 'lucide-react';
+import UltraFuturisticBackground2045 from '../../components/backgrounds/UltraFuturisticBackground2045';
+import Layout from '../../components/layout/Layout';
 
 const HealthcareSolutionsPage: React.FC = () => {
   const solutions = [
@@ -78,6 +80,19 @@ const HealthcareSolutionsPage: React.FC = () => {
 
   return (
     <Layout>
+      <Head>
+        <title>Healthcare & Biotech Solutions | Zion Tech Group</title>
+        <meta name="description" content="Revolutionary AI-powered healthcare and biotech solutions. Advanced diagnostics, analytics, and telemedicine platforms for the future of healthcare." />
+        <meta name="keywords" content="healthcare AI, biotech, medical diagnostics, telemedicine, healthcare analytics, medical cybersecurity" />
+        <meta property="og:title" content="Healthcare & Biotech Solutions | Zion Tech Group" />
+        <meta property="og:description" content="Revolutionary AI-powered healthcare and biotech solutions for the future of medicine." />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://ziontechgroup.com/solutions/healthcare" />
+        <link rel="canonical" href="https://ziontechgroup.com/solutions/healthcare" />
+      </Head>
+
+      <UltraFuturisticBackground2045 />
+
       <div className="min-h-screen bg-black text-white relative z-10">
 
         {/* Hero Section */}

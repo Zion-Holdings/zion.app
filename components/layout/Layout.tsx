@@ -1,15 +1,15 @@
 import React, { useState, useEffect } from 'react';
 import Head from 'next/head';
-import UltraFuturisticNavigation2045 from './UltraFuturisticNavigation2045';
-import UltraFuturisticFooter2045 from './UltraFuturisticFooter2045';
+import UltraFuturisticNavigation2040 from './UltraFuturisticNavigation2040';
+import UltraFuturisticFooter2040 from './UltraFuturisticFooter2040';
 import EnhancedSidebar2025 from './EnhancedSidebar2025';
 import TopContactBar from './TopContactBar';
-import UltraFuturisticBackground2036 from '../backgrounds/UltraFuturisticBackground2036';
+import UltraFuturisticBackground2045 from '../backgrounds/UltraFuturisticBackground2045';
 import EnhancedPerformanceMonitor from '../EnhancedPerformanceMonitor';
 import EnhancedAccessibilityEnhancer from '../EnhancedAccessibilityEnhancer';
+import MobileOptimizer from '../MobileOptimizer';
 import CookieConsentBanner from '../CookieConsentBanner';
 import EnhancedErrorBoundary from '../EnhancedErrorBoundary';
-import ThemeToggle from '../ThemeToggle';
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -22,16 +22,16 @@ interface LayoutProps {
 
 export default function Layout({ 
   children, 
-  title = "Zion Tech Group - Revolutionary 2044 Technology",
+  title = "Zion Tech Group - Revolutionary 2046 Technology",
   description = "Pioneering the future of technology with revolutionary AI consciousness, quantum computing, and autonomous solutions that transform businesses worldwide.",
-  keywords = "AI consciousness, quantum computing, autonomous solutions, space technology, cybersecurity, business intelligence, Zion Tech Group, 2044 technology",
+  keywords = "AI consciousness, quantum computing, autonomous solutions, space technology, cybersecurity, business intelligence, Zion Tech Group, 2046 technology",
   ogImage = "/og-image.jpg",
   canonicalUrl
 }: LayoutProps) {
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const [isOnline, setIsOnline] = useState(true);
-  const [isLoading, setIsLoading] = useState(true);
-  const [theme, setTheme] = useState<'dark' | 'light'>('dark');
+  const [accessibilitySettings, setAccessibilitySettings] = useState({});
+  const [mobileOptimizationSettings, setMobileOptimizationSettings] = useState({});
 
   useEffect(() => {
     // Check online status
@@ -43,68 +43,58 @@ export default function Layout({
     window.addEventListener('offline', updateOnlineStatus);
     updateOnlineStatus();
 
-    // Check for saved theme preference or default to dark
-    const savedTheme = localStorage.getItem('theme') as 'dark' | 'light' | null;
-    if (savedTheme) {
-      setTheme(savedTheme);
-    } else if (window.matchMedia('(prefers-color-scheme: light)').matches) {
-      setTheme('light');
+    // Register service worker
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('/sw.js')
+        .then((registration) => {
+          // Check for updates
+          registration.addEventListener('updatefound', () => {
+            const newWorker = registration.installing;
+            if (newWorker) {
+              newWorker.addEventListener('statechange', () => {
+                if (newWorker.state === 'installed' && navigator.serviceWorker.controller) {
+                  // New version available
+                  if (typeof window !== 'undefined' && window.confirm) {
+                    if (window.confirm('A new version is available! Would you like to update?')) {
+                      newWorker.postMessage({ type: 'SKIP_WAITING' });
+                      window.location.reload();
+                    }
+                  }
+                }
+              });
+            }
+          });
+        })
+        .catch((error) => {
+          // Silently handle service worker registration errors
+          // eslint-disable-next-line no-console
+          console.error('Service Worker registration failed:', error);
+        });
     }
-
-    // Simulate initial loading
-    const timer = setTimeout(() => {
-      setIsLoading(false);
-    }, 100);
 
     return () => {
       window.removeEventListener('online', updateOnlineStatus);
       window.removeEventListener('offline', updateOnlineStatus);
-      clearTimeout(timer);
     };
   }, []);
-
-  // Apply theme to document
-  useEffect(() => {
-    document.documentElement.classList.remove('light', 'dark');
-    document.documentElement.classList.add(theme);
-  }, [theme]);
-
-  const toggleTheme = () => {
-    const newTheme = theme === 'dark' ? 'light' : 'dark';
-    setTheme(newTheme);
-    localStorage.setItem('theme', newTheme);
-  };
-
-  // Loading state
-  if (isLoading) {
-    return (
-      <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-black via-purple-900 to-cyan-900">
-        <div className="text-center space-y-4">
-          <div className="w-16 h-16 mx-auto border-4 border-cyan-500 border-t-transparent rounded-full animate-spin"></div>
-          <h2 className="text-2xl font-semibold text-white">Loading Zion Tech Group</h2>
-          <p className="text-white/70">Preparing the future of technology...</p>
-        </div>
-      </div>
-    );
-  }
 
   return (
     <>
       <Head>
-        {/* Basic Meta Tags */}
         <title>{title}</title>
         <meta name="description" content={description} />
         <meta name="keywords" content={keywords} />
-        <meta name="author" content="Zion Tech Group" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta charSet="utf-8" />
         <meta name="robots" content="index, follow" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="author" content="Zion Tech Group" />
+        <meta name="theme-color" content="#06b6d4" />
         
         {/* Canonical URL */}
         {canonicalUrl && <link rel="canonical" href={canonicalUrl} />}
         
         {/* PWA Manifest */}
         <link rel="manifest" href="/manifest.json" />
-        <meta name="theme-color" content="#06b6d4" />
         <meta name="msapplication-TileColor" content="#06b6d4" />
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
@@ -116,26 +106,45 @@ export default function Layout({
         <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
         <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
         
-        {/* Open Graph Meta Tags */}
+        {/* Preconnect to external domains for performance */}
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link rel="preconnect" href="https://www.google-analytics.com" />
+        
+        {/* Open Graph / Facebook */}
         <meta property="og:type" content="website" />
+        <meta property="og:url" content={canonicalUrl || "https://ziontechgroup.com"} />
         <meta property="og:title" content={title} />
         <meta property="og:description" content={description} />
         <meta property="og:image" content={ogImage} />
-        <meta property="og:url" content={canonicalUrl || "https://ziontechgroup.com"} />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta property="og:image:alt" content="Zion Tech Group - Revolutionary 2046 Technology" />
         <meta property="og:site_name" content="Zion Tech Group" />
         <meta property="og:locale" content="en_US" />
         
-        {/* Twitter Card Meta Tags */}
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content={title} />
-        <meta name="twitter:description" content={description} />
-        <meta name="twitter:image" content={ogImage} />
-        <meta name="twitter:site" content="@ziontechgroup" />
+        {/* Twitter */}
+        <meta property="twitter:card" content="summary_large_image" />
+        <meta property="twitter:url" content={canonicalUrl || "https://ziontechgroup.com"} />
+        <meta property="twitter:title" content={title} />
+        <meta property="twitter:description" content={description} />
+        <meta property="twitter:image" content={ogImage} />
+        <meta property="twitter:site" content="@ziontechgroup" />
+        <meta property="twitter:creator" content="@ziontechgroup" />
         
-        {/* Additional SEO Meta Tags */}
+        {/* Additional Meta Tags */}
         <meta name="application-name" content="Zion Tech Group" />
         <meta name="mobile-web-app-capable" content="yes" />
         <meta name="format-detection" content="telephone=no" />
+        <meta name="msapplication-config" content="/browserconfig.xml" />
+        
+        {/* Security Headers */}
+        <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="referrer" content="strict-origin-when-cross-origin" />
+        
+        {/* Performance Hints */}
+        <link rel="dns-prefetch" href="//www.google-analytics.com" />
+        <link rel="dns-prefetch" href="//fonts.googleapis.com" />
         
         {/* Structured Data */}
         <script
@@ -147,8 +156,8 @@ export default function Layout({
               "name": "Zion Tech Group",
               "url": "https://ziontechgroup.com",
               "logo": "https://ziontechgroup.com/logo.png",
-              "description": description,
-              "foundingDate": "2024",
+              "description": "Revolutionary technology solutions for the future",
+              "foundingDate": "2020",
               "address": {
                 "@type": "PostalAddress",
                 "streetAddress": "364 E Main St STE 1008",
@@ -166,89 +175,178 @@ export default function Layout({
               "sameAs": [
                 "https://github.com/Zion-Holdings",
                 "https://linkedin.com/company/zion-tech-group"
-              ],
-              "hasOfferCatalog": {
-                "@type": "OfferCatalog",
-                "name": "Technology Services",
-                "itemListElement": [
-                  {
-                    "@type": "Offer",
-                    "itemOffered": {
-                      "@type": "Service",
-                      "name": "AI Consciousness Evolution 2044",
-                      "description": "Next-generation AI consciousness with emotional intelligence"
-                    }
-                  },
-                  {
-                    "@type": "Offer",
-                    "itemOffered": {
-                      "@type": "Service",
-                      "name": "Quantum Neural Network Platform 2044",
-                      "description": "Quantum-powered neural networks with consciousness integration"
-                    }
-                  }
-                ]
-              }
+              ]
             })
           }}
         />
       </Head>
 
-      <div className={`min-h-screen transition-colors duration-300 ${
-        theme === 'dark' 
-          ? 'bg-black text-white' 
-          : 'bg-gray-50 text-gray-900'
-      }`}>
-        {/* Skip Link for Accessibility */}
-        <a 
-          href="#main-content" 
-          className="skip-link sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2 focus:bg-cyan-500 focus:text-white focus:rounded focus:outline-none focus:ring-2 focus:ring-cyan-300"
-        >
-          Skip to main content
-        </a>
+      {/* Online/Offline Status Indicator */}
+      {!isOnline && (
+        <div className="fixed top-0 left-0 right-0 bg-red-500 text-white text-center py-2 z-50">
+          You are currently offline. Some features may not be available.
+        </div>
+      )}
 
+      {/* Main Layout */}
+      <div className="min-h-screen bg-black text-white">
+        {/* Background Effects */}
+        <UltraFuturisticBackground2045 />
+        
         {/* Top Contact Bar */}
         <TopContactBar />
-
+        
         {/* Navigation */}
-        <UltraFuturisticNavigation2045 />
-
-        {/* Theme Toggle */}
-        <div className="fixed top-24 right-4 z-50">
-          <ThemeToggle theme={theme} onToggle={toggleTheme} />
-        </div>
-
+        <UltraFuturisticNavigation2040 />
+        
+        {/* Sidebar */}
+        <EnhancedSidebar2025 isOpen={sidebarOpen} onClose={() => setSidebarOpen(false)} />
+        
         {/* Main Content */}
-        <main id="main-content" className="relative z-10">
+        <main 
+          id="main-content"
+          role="main"
+          className="relative z-10"
+          tabIndex={-1}
+        >
           {children}
         </main>
-
+        
         {/* Footer */}
-        <UltraFuturisticFooter2045 />
-
-        {/* Sidebar */}
-        <EnhancedSidebar2025 
-          isOpen={sidebarOpen} 
-          onClose={() => setSidebarOpen(false)} 
+        <UltraFuturisticFooter2040 />
+        
+        {/* Enhancement Components */}
+        <EnhancedAccessibilityEnhancer 
+          onAccessibilityChange={setAccessibilitySettings}
         />
-
-        {/* Background */}
-        <UltraFuturisticBackground2036 />
-
-        {/* Performance Monitor */}
+        <MobileOptimizer 
+          onMobileOptimizationChange={setMobileOptimizationSettings}
+        />
         <EnhancedPerformanceMonitor />
-
-        {/* Accessibility Enhancer */}
-        <EnhancedAccessibilityEnhancer />
-
-        {/* Cookie Consent */}
         <CookieConsentBanner />
-
+        
         {/* Error Boundary */}
         <EnhancedErrorBoundary>
-          {children}
+          <div className="hidden">
+            {/* Additional error boundary content if needed */}
+          </div>
         </EnhancedErrorBoundary>
       </div>
+
+      {/* Global Styles for Accessibility */}
+      <style jsx global>{`
+        :root {
+          --contrast-multiplier: 1;
+          --border-width: 1px;
+          --animation-duration: 0.3s;
+          --transition-duration: 0.3s;
+          --font-size-base: 16px;
+          --font-size-lg: 18px;
+          --font-size-xl: 20px;
+          --saturation-multiplier: 1;
+          --focus-ring-width: 3px;
+          --focus-ring-color: #06b6d4;
+          --touch-target-size: auto;
+          --touch-spacing: auto;
+          --animation-reduce: 1;
+          --transition-reduce: 1;
+          --line-height: 1.5;
+        }
+        
+        /* Accessibility Enhancements */
+        .sr-only {
+          position: absolute;
+          width: 1px;
+          height: 1px;
+          padding: 0;
+          margin: -1px;
+          overflow: hidden;
+          clip: rect(0, 0, 0, 0);
+          white-space: nowrap;
+          border: 0;
+        }
+        
+        /* Focus Indicators */
+        *:focus {
+          outline: var(--focus-ring-width) solid var(--focus-ring-color);
+          outline-offset: 2px;
+        }
+        
+        /* Reduced Motion */
+        @media (prefers-reduced-motion: reduce) {
+          *, *::before, *::after {
+            animation-duration: 0.01ms !important;
+            animation-iteration-count: 1 !important;
+            transition-duration: 0.01ms !important;
+          }
+        }
+        
+        /* High Contrast */
+        .high-contrast {
+          filter: contrast(150%);
+        }
+        
+        /* Large Text */
+        .large-text {
+          font-size: 1.2em;
+          line-height: 1.6;
+        }
+        
+        /* Touch Optimization */
+        .touch-optimized button,
+        .touch-optimized a,
+        .touch-optimized input {
+          min-height: var(--touch-target-size);
+          min-width: var(--touch-target-size);
+          padding: var(--touch-spacing);
+        }
+        
+        /* Mobile Layout */
+        .mobile-layout {
+          --container-padding: 1rem;
+          --section-spacing: 2rem;
+        }
+        
+        /* Data Optimization */
+        .data-optimized img {
+          loading: lazy;
+        }
+        
+        /* Haptic Feedback */
+        .haptic-enabled button:active {
+          transform: scale(0.98);
+        }
+        
+        /* Swipe Navigation */
+        .swipe-enabled {
+          touch-action: pan-y;
+        }
+        
+        /* Mobile First */
+        .mobile-first {
+          --grid-columns: 1;
+        }
+        
+        @media (min-width: 768px) {
+          .mobile-first {
+            --grid-columns: 2;
+          }
+        }
+        
+        @media (min-width: 1024px) {
+          .mobile-first {
+            --grid-columns: 3;
+          }
+        }
+        
+        /* Line Clamp Utility */
+        .line-clamp-2 {
+          display: -webkit-box;
+          -webkit-line-clamp: 2;
+          -webkit-box-orient: vertical;
+          overflow: hidden;
+        }
+      `}</style>
     </>
   );
 }

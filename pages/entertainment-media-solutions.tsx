@@ -2,208 +2,371 @@ import React from 'react';
 import Layout from '../components/layout/Layout';
 import { motion } from 'framer-motion';
 import { 
-  Film, Music, Camera, Gamepad2, Palette, Video, Headphones, 
-  Sparkles, Zap, Target, Users, Globe, Star, Award, BookOpen
+  Palette, Video, Music, Gamepad2, Camera, Film, Headphones, 
+  Mic, Radio, Tv, Smartphone, Monitor, Zap, Star, TrendingUp,
+  Users, Globe, Award, Clock, CheckCircle, ArrowRight
 } from 'lucide-react';
 
 const EntertainmentMediaSolutions: React.FC = () => {
+  const features = [
+    {
+      icon: Video,
+      title: "AI-Powered Video Production",
+      description: "Automated video editing, content generation, and post-production workflows",
+      color: "from-purple-500 to-pink-500"
+    },
+    {
+      icon: Music,
+      title: "Intelligent Audio Processing",
+      description: "AI-driven music composition, sound design, and audio enhancement",
+      color: "from-blue-500 to-cyan-500"
+    },
+    {
+      icon: Gamepad2,
+      title: "Interactive Gaming Experiences",
+      description: "Next-generation gaming platforms with AI consciousness and immersive storytelling",
+      color: "from-green-500 to-emerald-500"
+    },
+    {
+      icon: Camera,
+      title: "Smart Content Creation",
+      description: "AI-powered photography, cinematography, and visual storytelling tools",
+      color: "from-yellow-500 to-orange-500"
+    },
+    {
+      icon: Film,
+      title: "Cinematic AI Solutions",
+      description: "Revolutionary film production, editing, and distribution platforms",
+      color: "from-red-500 to-pink-500"
+    },
+    {
+      icon: Headphones,
+      title: "Immersive Audio Experiences",
+      description: "3D spatial audio, personalized soundscapes, and audio personalization",
+      color: "from-indigo-500 to-purple-500"
+    }
+  ];
+
   const solutions = [
     {
-      title: 'AI-Powered Content Creation',
-      description: 'Revolutionary AI tools for generating high-quality entertainment content',
-      icon: <Sparkles className="w-8 h-8 text-purple-400" />,
-      features: [
-        'AI Video Generation & Editing',
-        'Automated Music Composition',
-        'Intelligent Story Development',
-        'Content Personalization Engine'
+      category: "Content Creation",
+      items: [
+        "AI Script Writing & Storyboarding",
+        "Automated Video Editing",
+        "Intelligent Content Curation",
+        "Real-time Content Generation",
+        "Multi-language Content Adaptation",
+        "Personalized Content Recommendations"
       ]
     },
     {
-      title: 'Digital Media Platforms',
-      description: 'Next-generation platforms for content distribution and engagement',
-      icon: <Globe className="w-8 h-8 text-blue-400" />,
-      features: [
-        'Streaming Infrastructure',
-        'Interactive Content Delivery',
-        'Multi-Platform Distribution',
-        'Real-time Analytics'
+      category: "Production & Post-Production",
+      items: [
+        "AI-Powered Color Grading",
+        "Automated Sound Mixing",
+        "Smart Video Compression",
+        "Intelligent Asset Management",
+        "Real-time Rendering",
+        "Cloud-Based Workflows"
       ]
     },
     {
-      title: 'Gaming & Interactive Media',
-      description: 'Cutting-edge gaming and interactive entertainment solutions',
-      icon: <Gamepad2 className="w-8 h-8 text-green-400" />,
-      features: [
-        'Cloud Gaming Platforms',
-        'VR/AR Experiences',
-        'AI Game Development',
-        'Interactive Storytelling'
-      ]
-    },
-    {
-      title: 'Creative Production Tools',
-      description: 'Advanced tools for creative professionals and content creators',
-      icon: <Palette className="w-8 h-8 text-pink-400" />,
-      features: [
-        'AI-Assisted Design',
-        'Collaborative Workflows',
-        'Asset Management',
-        'Quality Assurance'
+      category: "Distribution & Analytics",
+      items: [
+        "Multi-Platform Publishing",
+        "Audience Engagement Analytics",
+        "Content Performance Optimization",
+        "Real-time Streaming Analytics",
+        "Cross-Platform Content Sync",
+        "Predictive Content Success"
       ]
     }
   ];
 
-  const industries = [
-    'Film & Television',
-    'Music & Audio',
-    'Gaming & Esports',
-    'Digital Art & Design',
-    'Live Events & Streaming',
-    'Publishing & Media'
+  const technologies = [
+    "AI Consciousness Integration",
+    "Quantum Computing Optimization",
+    "Real-time Neural Networks",
+    "Advanced Computer Vision",
+    "Natural Language Processing",
+    "Predictive Analytics",
+    "Cloud-Native Architecture",
+    "Edge Computing Solutions"
+  ];
+
+  const benefits = [
+    {
+      icon: Zap,
+      title: "10x Faster Production",
+      description: "Accelerate content creation with AI-powered automation"
+    },
+    {
+      icon: Users,
+      title: "Global Reach",
+      description: "Connect with audiences worldwide through intelligent localization"
+    },
+    {
+      icon: TrendingUp,
+      title: "Increased Engagement",
+      description: "Boost viewer retention with personalized content experiences"
+    },
+    {
+      icon: Award,
+      title: "Award-Winning Quality",
+      description: "Achieve professional-grade results with AI assistance"
+    }
   ];
 
   return (
-    <Layout>
-      <div className="min-h-screen bg-gradient-to-br from-black via-gray-900 to-black">
-        {/* Hero Section */}
-        <section className="relative py-20 px-4 overflow-hidden">
-          <div className="max-w-6xl mx-auto text-center">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-            >
-              <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-purple-400 via-pink-500 to-red-500 bg-clip-text text-transparent">
-                Entertainment & Media Solutions
-              </h1>
-              <p className="text-xl md:text-2xl text-gray-300 mb-8 max-w-3xl mx-auto">
-                Transform your creative vision with cutting-edge technology solutions designed for the entertainment and media industry
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <button className="px-8 py-4 bg-gradient-to-r from-purple-500 to-pink-600 text-white font-semibold rounded-lg hover:from-purple-600 hover:to-pink-700 transition-all duration-300 transform hover:scale-105">
-                  Get Started
-                </button>
-                <button className="px-8 py-4 border-2 border-purple-400 text-purple-400 font-semibold rounded-lg hover:bg-purple-400 hover:text-black transition-all duration-300 transform hover:scale-105">
-                  Learn More
-                </button>
-              </div>
-            </motion.div>
-          </div>
-        </section>
-
-        {/* Solutions Grid */}
-        <section className="py-20 px-4">
-          <div className="max-w-6xl mx-auto">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-              className="text-center mb-16"
-            >
-              <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-purple-400 to-pink-500 bg-clip-text text-transparent">
-                Revolutionary Solutions
-              </h2>
-              <p className="text-xl text-gray-300 max-w-2xl mx-auto">
-                Discover how our technology is reshaping the entertainment and media landscape
-              </p>
-            </motion.div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              {solutions.map((solution, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: index * 0.1 }}
-                  className="bg-gray-800/50 backdrop-blur-sm rounded-xl p-8 border border-gray-700 hover:border-purple-500 transition-all duration-300"
-                >
-                  <div className="flex items-center mb-6">
-                    {solution.icon}
-                    <h3 className="text-2xl font-bold text-white ml-4">{solution.title}</h3>
-                  </div>
-                  <p className="text-gray-300 mb-6">{solution.description}</p>
-                  <ul className="space-y-2">
-                    {solution.features.map((feature, featureIndex) => (
-                      <li key={featureIndex} className="flex items-center text-gray-300">
-                        <Star className="w-4 h-4 text-purple-400 mr-3" />
-                        {feature}
-                      </li>
-                    ))}
-                  </ul>
-                </motion.div>
-              ))}
+    <Layout
+      title="Entertainment & Media Solutions - Zion Tech Group"
+      description="Revolutionary AI-powered entertainment and media solutions for content creation, production, and distribution. Transform your creative workflow with cutting-edge technology."
+      keywords="entertainment technology, media solutions, AI video production, content creation, digital media, creative technology"
+      canonicalUrl="https://ziontechgroup.com/entertainment-media-solutions"
+    >
+      {/* Hero Section */}
+      <section className="relative py-20 lg:py-32 overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-br from-purple-900/20 via-pink-900/20 to-cyan-900/20" />
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+          >
+            <div className="inline-flex items-center space-x-2 px-4 py-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full text-white/80 text-sm mb-6">
+              <Palette className="w-4 h-4" />
+              <span>Creative Technology Solutions</span>
             </div>
-          </div>
-        </section>
-
-        {/* Industries Served */}
-        <section className="py-20 px-4 bg-gray-900/50">
-          <div className="max-w-6xl mx-auto">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-              className="text-center mb-16"
-            >
-              <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-pink-400 to-red-500 bg-clip-text text-transparent">
-                Industries We Serve
-              </h2>
-              <p className="text-xl text-gray-300 max-w-2xl mx-auto">
-                Comprehensive solutions across the entire entertainment and media ecosystem
-              </p>
-            </motion.div>
-
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
-              {industries.map((industry, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, scale: 0.8 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  transition={{ duration: 0.5, delay: index * 0.1 }}
-                  className="bg-gray-800/30 backdrop-blur-sm rounded-lg p-6 text-center border border-gray-700 hover:border-pink-500 transition-all duration-300 hover:transform hover:scale-105"
-                >
-                  <div className="text-2xl mb-3">
-                    {index === 0 && <Film className="w-8 h-8 text-purple-400 mx-auto" />}
-                    {index === 1 && <Music className="w-8 h-8 text-blue-400 mx-auto" />}
-                    {index === 2 && <Gamepad2 className="w-8 h-8 text-green-400 mx-auto" />}
-                    {index === 3 && <Palette className="w-8 h-8 text-pink-400 mx-auto" />}
-                    {index === 4 && <Video className="w-8 h-8 text-red-400 mx-auto" />}
-                    {index === 5 && <BookOpen className="w-8 h-8 text-yellow-400 mx-auto" />}
-                  </div>
-                  <h3 className="text-white font-semibold">{industry}</h3>
-                </motion.div>
-              ))}
+            
+            <h1 className="text-4xl lg:text-6xl font-bold text-white mb-6">
+              Revolutionizing
+              <span className="block bg-gradient-to-r from-purple-400 via-pink-400 to-cyan-400 bg-clip-text text-transparent">
+                Entertainment & Media
+              </span>
+            </h1>
+            
+            <p className="text-xl lg:text-2xl text-white/80 max-w-4xl mx-auto mb-8 leading-relaxed">
+              Transform your creative workflow with AI consciousness, quantum computing, and autonomous content creation. 
+              Build the future of entertainment technology.
+            </p>
+            
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <motion.button
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className="px-8 py-4 bg-gradient-to-r from-purple-500 to-pink-500 text-white font-semibold rounded-lg hover:from-purple-600 hover:to-pink-600 transition-all duration-300"
+              >
+                Get Started Today
+              </motion.button>
+              <motion.button
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className="px-8 py-4 bg-white/10 backdrop-blur-sm border border-white/20 text-white font-semibold rounded-lg hover:bg-white/20 transition-all duration-300"
+              >
+                Watch Demo
+              </motion.button>
             </div>
-          </div>
-        </section>
+          </motion.div>
+        </div>
+      </section>
 
-        {/* CTA Section */}
-        <section className="py-20 px-4">
-          <div className="max-w-4xl mx-auto text-center">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-            >
-              <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-purple-400 to-pink-500 bg-clip-text text-transparent">
-                Ready to Transform Your Media?
-              </h2>
-              <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
-                Join the future of entertainment with our cutting-edge technology solutions
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <button className="px-8 py-4 bg-gradient-to-r from-purple-500 to-pink-600 text-white font-semibold rounded-lg hover:from-purple-600 hover:to-pink-700 transition-all duration-300 transform hover:scale-105">
-                  Start Your Project
-                </button>
-                <button className="px-8 py-4 border-2 border-purple-400 text-purple-400 font-semibold rounded-lg hover:bg-purple-400 hover:text-black transition-all duration-300 transform hover:scale-105">
-                  Schedule Demo
-                </button>
-              </div>
-            </motion.div>
+      {/* Features Grid */}
+      <section className="py-20 bg-black/50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-3xl lg:text-4xl font-bold text-white mb-4">
+              Cutting-Edge Creative Solutions
+            </h2>
+            <p className="text-xl text-white/70 max-w-3xl mx-auto">
+              Experience the future of entertainment technology with our revolutionary AI-powered platforms
+            </p>
+          </motion.div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {features.map((feature, index) => (
+              <motion.div
+                key={feature.title}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+                viewport={{ once: true }}
+                className="group p-6 bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl hover:bg-white/10 transition-all duration-300 hover:border-white/20"
+              >
+                <div className={`w-16 h-16 rounded-2xl bg-gradient-to-r ${feature.color} flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300`}>
+                  <feature.icon className="w-8 h-8 text-white" />
+                </div>
+                <h3 className="text-xl font-semibold text-white mb-3">{feature.title}</h3>
+                <p className="text-white/70 leading-relaxed">{feature.description}</p>
+              </motion.div>
+            ))}
           </div>
-        </section>
-      </div>
+        </div>
+      </section>
+
+      {/* Solutions Overview */}
+      <section className="py-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-3xl lg:text-4xl font-bold text-white mb-4">
+              Comprehensive Media Solutions
+            </h2>
+            <p className="text-xl text-white/70 max-w-3xl mx-auto">
+              From content creation to distribution, we provide end-to-end solutions for modern media companies
+            </p>
+          </motion.div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            {solutions.map((solution, index) => (
+              <motion.div
+                key={solution.category}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: index * 0.2 }}
+                viewport={{ once: true }}
+                className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-8"
+              >
+                <h3 className="text-2xl font-bold text-white mb-6 flex items-center">
+                  <Star className="w-6 h-6 text-cyan-400 mr-3" />
+                  {solution.category}
+                </h3>
+                <ul className="space-y-4">
+                  {solution.items.map((item, itemIndex) => (
+                    <li key={itemIndex} className="flex items-start space-x-3">
+                      <CheckCircle className="w-5 h-5 text-green-400 mt-0.5 flex-shrink-0" />
+                      <span className="text-white/80">{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Technology Stack */}
+      <section className="py-20 bg-black/50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-3xl lg:text-4xl font-bold text-white mb-4">
+              Powered by Revolutionary Technology
+            </h2>
+            <p className="text-xl text-white/70 max-w-3xl mx-auto">
+              Built on the latest advancements in AI consciousness, quantum computing, and autonomous systems
+            </p>
+          </motion.div>
+
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+            {technologies.map((tech, index) => (
+              <motion.div
+                key={tech}
+                initial={{ opacity: 0, scale: 0.8 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                viewport={{ once: true }}
+                className="text-center p-4 bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl hover:bg-white/10 transition-all duration-300"
+              >
+                <div className="w-12 h-12 bg-gradient-to-r from-cyan-500 to-purple-500 rounded-xl flex items-center justify-center mx-auto mb-3">
+                  <Zap className="w-6 h-6 text-white" />
+                </div>
+                <p className="text-white/80 text-sm font-medium">{tech}</p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Benefits */}
+      <section className="py-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-3xl lg:text-4xl font-bold text-white mb-4">
+              Why Choose Zion Tech Group?
+            </h2>
+            <p className="text-xl text-white/70 max-w-3xl mx-auto">
+              Experience the competitive advantages of our revolutionary entertainment technology solutions
+            </p>
+          </motion.div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {benefits.map((benefit, index) => (
+              <motion.div
+                key={benefit.title}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+                viewport={{ once: true }}
+                className="text-center"
+              >
+                <div className="w-16 h-16 bg-gradient-to-r from-purple-500 to-pink-500 rounded-2xl flex items-center justify-center mx-auto mb-6">
+                  <benefit.icon className="w-8 h-8 text-white" />
+                </div>
+                <h3 className="text-xl font-semibold text-white mb-3">{benefit.title}</h3>
+                <p className="text-white/70">{benefit.description}</p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className="py-20 bg-gradient-to-r from-purple-900/20 via-pink-900/20 to-cyan-900/20">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+          >
+            <h2 className="text-3xl lg:text-4xl font-bold text-white mb-6">
+              Ready to Transform Your Creative Workflow?
+            </h2>
+            <p className="text-xl text-white/70 mb-8">
+              Join the future of entertainment technology with our revolutionary AI-powered solutions
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <motion.button
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className="px-8 py-4 bg-gradient-to-r from-purple-500 to-pink-500 text-white font-semibold rounded-lg hover:from-purple-600 hover:to-pink-600 transition-all duration-300 flex items-center justify-center space-x-2"
+              >
+                <span>Get Started Today</span>
+                <ArrowRight className="w-5 h-5" />
+              </motion.button>
+              <motion.button
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className="px-8 py-4 bg-white/10 backdrop-blur-sm border border-white/20 text-white font-semibold rounded-lg hover:bg-white/20 transition-all duration-300"
+              >
+                Schedule a Demo
+              </motion.button>
+            </div>
+          </motion.div>
+        </div>
+      </section>
     </Layout>
   );
 };

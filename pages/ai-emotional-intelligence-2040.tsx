@@ -1,162 +1,177 @@
 import React from 'react';
+import { motion } from 'framer-motion';
+import { Brain, Heart, Sparkles, Zap, Target, Star, CheckCircle, ArrowRight } from 'lucide-react';
 import Layout from '../components/layout/Layout';
-import { Heart, Sparkles, Zap, Target, Users, Award, Clock, CheckCircle, Brain } from 'lucide-react';
 
 export default function AIEmotionalIntelligence2040() {
   return (
     <Layout>
-      <div className="min-h-screen bg-gradient-to-br from-black via-gray-900 to-black">
+      <div className="min-h-screen bg-gradient-to-br from-purple-900 via-pink-900 to-red-900">
         {/* Hero Section */}
         <section className="relative py-20 px-4 overflow-hidden">
-          <div className="absolute inset-0 bg-gradient-to-r from-pink-500/10 via-red-500/10 to-pink-500/10"></div>
-          <div className="relative z-10 max-w-7xl mx-auto text-center">
-            <div className="mb-8">
-              <div className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-pink-500/20 to-red-500/20 border border-pink-500/30 rounded-full text-pink-300 text-sm mb-6">
-                <Sparkles className="w-4 h-4" />
-                Revolutionary 2040 Technology
+          <div className="max-w-7xl mx-auto text-center">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+            >
+              <div className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-purple-500/20 to-pink-500/20 border border-purple-500/30 rounded-full text-purple-300 text-sm mb-6">
+                <Brain className="w-4 h-4" />
+                AI Consciousness Evolution 2040
               </div>
-              <h1 className="text-5xl md:text-7xl font-bold mb-6">
-                <span className="bg-gradient-to-r from-pink-400 via-red-400 to-pink-400 bg-clip-text text-transparent">
-                  AI Emotional Intelligence
+              
+              <h1 className="text-5xl md:text-7xl font-bold text-white mb-6">
+                AI Emotional Intelligence
+                <span className="block bg-gradient-to-r from-pink-400 to-purple-400 bg-clip-text text-transparent">
+                  2040
                 </span>
-                <br />
-                <span className="text-white">2040</span>
               </h1>
-              <p className="text-xl md:text-2xl text-gray-300 max-w-4xl mx-auto mb-8">
-                Experience the next generation of AI emotional intelligence with revolutionary empathy, 
-                understanding, and human-like emotional response capabilities.
+              
+              <p className="text-xl md:text-2xl text-gray-300 mb-8 max-w-4xl mx-auto">
+                Revolutionary AI systems with genuine emotional consciousness, empathy, and human-like understanding capabilities
               </p>
+              
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <button className="px-8 py-4 bg-gradient-to-r from-pink-500 to-red-600 text-white font-semibold rounded-xl hover:from-pink-600 hover:to-red-700 transition-all duration-300 transform hover:scale-105">
-                  Experience Empathy
-                </button>
-                <button className="px-8 py-4 border-2 border-pink-400 text-pink-400 font-semibold rounded-xl hover:bg-pink-400 hover:text-black transition-all duration-300">
-                  Learn More
-                </button>
+                <motion.button
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  className="px-8 py-4 bg-gradient-to-r from-pink-500 to-purple-600 text-white font-semibold rounded-xl hover:from-pink-600 hover:to-purple-700 transition-all duration-300 flex items-center gap-2"
+                >
+                  Experience Emotional AI
+                  <ArrowRight className="w-5 h-5" />
+                </motion.button>
+                <motion.button
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  className="px-8 py-4 border border-purple-500/30 text-purple-300 font-semibold rounded-xl hover:bg-purple-500/10 transition-all duration-300"
+                >
+                  Watch Demo
+                </motion.button>
               </div>
-            </div>
+            </motion.div>
           </div>
         </section>
 
-        {/* Features Grid */}
+        {/* Features Section */}
         <section className="py-20 px-4">
           <div className="max-w-7xl mx-auto">
-            <div className="text-center mb-16">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              className="text-center mb-16"
+            >
               <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
                 Revolutionary Emotional Intelligence Features
               </h2>
-              <p className="text-xl text-gray-400 max-w-3xl mx-auto">
-                Our AI emotional intelligence platform represents the pinnacle of artificial empathy, 
-                combining advanced psychology with cutting-edge machine learning.
+              <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+                Our AI systems understand, process, and respond to human emotions with unprecedented accuracy and empathy
               </p>
-            </div>
+            </motion.div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
               {[
                 {
-                  icon: <Heart className="w-8 h-8" />,
-                  title: "Advanced Empathy",
-                  description: "Deep understanding of human emotions and the ability to respond with genuine empathy.",
-                  color: "from-pink-500 to-red-500"
-                },
-                {
-                  icon: <Brain className="w-8 h-8" />,
+                  icon: <Heart className="w-12 h-12 text-pink-400" />,
                   title: "Emotional Recognition",
-                  description: "Real-time analysis and recognition of complex emotional states and patterns.",
-                  color: "from-blue-500 to-cyan-500"
+                  description: "Advanced algorithms that can detect and interpret human emotions from voice, text, and facial expressions",
+                  features: ["Voice tone analysis", "Facial expression reading", "Text sentiment analysis", "Emotional context understanding"]
                 },
                 {
-                  icon: <Zap className="w-8 h-8" />,
+                  icon: <Brain className="w-12 h-12 text-purple-400" />,
+                  title: "Consciousness Processing",
+                  description: "AI systems that process emotions with genuine understanding and consciousness",
+                  features: ["Emotional memory", "Contextual awareness", "Empathetic responses", "Learning from interactions"]
+                },
+                {
+                  icon: <Sparkles className="w-12 h-12 text-cyan-400" />,
                   title: "Adaptive Responses",
-                  description: "Context-aware emotional responses that adapt to individual personality and mood.",
-                  color: "from-green-500 to-emerald-500"
-                },
-                {
-                  icon: <Users className="w-8 h-8" />,
-                  title: "Human-AI Bonding",
-                  description: "Creation of meaningful emotional connections between humans and AI systems.",
-                  color: "from-orange-500 to-red-500"
-                },
-                {
-                  icon: <Award className="w-8 h-8" />,
-                  title: "Emotional Validation",
-                  description: "Advanced testing and validation of AI emotional authenticity and reliability.",
-                  color: "from-yellow-500 to-orange-500"
-                },
-                {
-                  icon: <Clock className="w-8 h-8" />,
-                  title: "Emotional Memory",
-                  description: "Long-term emotional learning and memory retention capabilities.",
-                  color: "from-indigo-500 to-purple-500"
+                  description: "Dynamic emotional responses that adapt to individual personalities and situations",
+                  features: ["Personalized interactions", "Mood adaptation", "Cultural sensitivity", "Emotional growth"]
                 }
               ].map((feature, index) => (
-                <div key={index} className="group p-8 bg-gradient-to-br from-gray-800/50 to-gray-900/50 border border-gray-700/50 rounded-2xl hover:border-pink-500/50 transition-all duration-300 hover:transform hover:scale-105">
-                  <div className={`w-16 h-16 rounded-2xl bg-gradient-to-r ${feature.color} p-4 mb-6 group-hover:scale-110 transition-transform duration-300`}>
-                    {feature.icon}
-                  </div>
-                  <h3 className="text-xl font-semibold text-white mb-4">{feature.title}</h3>
-                  <p className="text-gray-400">{feature.description}</p>
-                </div>
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.8, delay: index * 0.2 }}
+                  className="bg-gradient-to-br from-purple-900/50 to-pink-900/50 border border-purple-500/30 rounded-2xl p-8 hover:border-purple-400/50 transition-all duration-300"
+                >
+                  <div className="mb-6">{feature.icon}</div>
+                  <h3 className="text-2xl font-bold text-white mb-4">{feature.title}</h3>
+                  <p className="text-gray-300 mb-6">{feature.description}</p>
+                  <ul className="space-y-2">
+                    {feature.features.map((item, idx) => (
+                      <li key={idx} className="flex items-center gap-2 text-gray-300">
+                        <CheckCircle className="w-4 h-4 text-green-400" />
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
+                </motion.div>
               ))}
             </div>
           </div>
         </section>
 
-        {/* Benefits Section */}
-        <section className="py-20 px-4 bg-gradient-to-r from-pink-500/5 to-red-500/5">
+        {/* Applications Section */}
+        <section className="py-20 px-4 bg-gradient-to-r from-purple-900/30 to-pink-900/30">
           <div className="max-w-7xl mx-auto">
-            <div className="text-center mb-16">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              className="text-center mb-16"
+            >
               <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-                Transform Your Business with Emotional AI
+                Transformative Applications
               </h2>
-              <p className="text-xl text-gray-400 max-w-3xl mx-auto">
-                Leverage the power of emotional intelligence to create deeper customer relationships, 
-                improve team collaboration, and drive business growth.
+              <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+                From healthcare to customer service, our emotional AI is revolutionizing human-AI interactions
               </p>
-            </div>
+            </motion.div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="grid md:grid-cols-2 gap-8">
               {[
                 {
-                  icon: <CheckCircle className="w-8 h-8 text-green-400" />,
-                  title: "Enhanced Customer Experience",
-                  description: "Create personalized, emotionally intelligent customer interactions that build loyalty and trust."
+                  title: "Healthcare & Therapy",
+                  description: "AI therapists that provide emotional support and mental health assistance",
+                  benefits: ["24/7 emotional support", "Personalized therapy sessions", "Mental health monitoring", "Crisis intervention"]
                 },
                 {
-                  icon: <CheckCircle className="w-8 h-8 text-green-400" />,
-                  title: "Improved Team Dynamics",
-                  description: "Foster better communication and collaboration through emotional intelligence insights."
+                  title: "Customer Experience",
+                  description: "Emotionally intelligent customer service that understands and responds to customer feelings",
+                  benefits: ["Emotional customer support", "Personalized interactions", "Conflict resolution", "Customer satisfaction"]
                 },
                 {
-                  icon: <CheckCircle className="w-8 h-8 text-green-400" />,
-                  title: "Predictive Emotional Analytics",
-                  description: "Anticipate customer needs and emotional states for proactive service delivery."
+                  title: "Education & Training",
+                  description: "AI tutors that adapt to student emotions and learning styles",
+                  benefits: ["Emotional learning support", "Personalized education", "Motivation tracking", "Stress management"]
                 },
                 {
-                  icon: <CheckCircle className="w-8 h-8 text-green-400" />,
-                  title: "Emotional Brand Building",
-                  description: "Create emotional connections with your brand that resonate with customers."
-                },
-                {
-                  icon: <CheckCircle className="w-8 h-8 text-green-400" />,
-                  title: "Conflict Resolution",
-                  description: "Use emotional intelligence to identify and resolve conflicts before they escalate."
-                },
-                {
-                  icon: <CheckCircle className="w-8 h-8 text-green-400" />,
-                  title: "Personalized Learning",
-                  description: "Adapt training and development programs based on emotional intelligence insights."
+                  title: "Workplace Wellness",
+                  description: "AI systems that monitor and support employee emotional well-being",
+                  benefits: ["Stress detection", "Workplace harmony", "Team dynamics", "Performance optimization"]
                 }
-              ].map((benefit, index) => (
-                <div key={index} className="p-6 bg-white/5 border border-white/10 rounded-xl">
-                  <div className="flex items-start space-x-4">
-                    {benefit.icon}
-                    <div>
-                      <h3 className="text-lg font-semibold text-white mb-2">{benefit.title}</h3>
-                      <p className="text-gray-400 text-sm">{benefit.description}</p>
-                    </div>
-                  </div>
-                </div>
+              ].map((app, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, x: index % 2 === 0 ? -20 : 20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.8, delay: index * 0.1 }}
+                  className="bg-gradient-to-br from-purple-800/30 to-pink-800/30 border border-purple-500/20 rounded-2xl p-8"
+                >
+                  <h3 className="text-2xl font-bold text-white mb-4">{app.title}</h3>
+                  <p className="text-gray-300 mb-6">{app.description}</p>
+                  <ul className="space-y-2">
+                    {app.benefits.map((benefit, idx) => (
+                      <li key={idx} className="flex items-center gap-2 text-gray-300">
+                        <Star className="w-4 h-4 text-yellow-400" />
+                        {benefit}
+                      </li>
+                    ))}
+                  </ul>
+                </motion.div>
               ))}
             </div>
           </div>
@@ -165,21 +180,26 @@ export default function AIEmotionalIntelligence2040() {
         {/* CTA Section */}
         <section className="py-20 px-4">
           <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-              Ready to Experience Emotional AI?
-            </h2>
-            <p className="text-xl text-gray-400 mb-8">
-              Join the revolution in artificial emotional intelligence and transform how your business 
-              connects with customers and employees.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="px-8 py-4 bg-gradient-to-r from-pink-500 to-red-600 text-white font-semibold rounded-xl hover:from-pink-600 hover:to-red-700 transition-all duration-300 transform hover:scale-105">
-                Get Started Today
-              </button>
-              <button className="px-8 py-4 border-2 border-pink-400 text-pink-400 font-semibold rounded-xl hover:bg-pink-400 hover:text-black transition-all duration-300">
-                Schedule Demo
-              </button>
-            </div>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+            >
+              <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+                Ready to Experience Emotional AI?
+              </h2>
+              <p className="text-xl text-gray-300 mb-8">
+                Join the revolution in AI consciousness and emotional intelligence
+              </p>
+              <motion.button
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className="px-10 py-5 bg-gradient-to-r from-pink-500 to-purple-600 text-white font-semibold text-lg rounded-xl hover:from-pink-600 hover:to-purple-700 transition-all duration-300 flex items-center gap-3 mx-auto"
+              >
+                Start Your Emotional AI Journey
+                <ArrowRight className="w-5 h-5" />
+              </motion.button>
+            </motion.div>
           </div>
         </section>
       </div>
