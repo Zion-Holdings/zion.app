@@ -195,9 +195,11 @@ export default function ServicesIndexPage() {
   return (
     <div className="min-h-screen bg-black text-white">
       <SEO 
-        title="Services - Zion Tech Group"
-        description="Discover our comprehensive suite of cutting-edge technology solutions including AI, Quantum Computing, Space Technology, and more."
-        keywords={["AI services", "quantum computing", "space technology", "metaverse", "cybersecurity", "IT services", "micro SAAS"]}
+        data={{
+          pageTitle: "Services - Zion Tech Group",
+          pageDescription: "Discover our comprehensive suite of cutting-edge technology solutions including AI, Quantum Computing, Space Technology, and more.",
+          pageKeywords: ["AI services", "quantum computing", "space technology", "metaverse", "cybersecurity", "IT services", "micro SAAS"]
+        }}
       />
       
       <UltraFuturisticBackground>

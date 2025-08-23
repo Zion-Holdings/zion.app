@@ -1,11 +1,12 @@
-import React, { useEffect, useState, useCallback, Suspense, lazy } from 'react';
+import React, { useEffect, useState, useCallback, Suspense, lazy, useMemo } from 'react';
 import Layout from './layout/Layout';
 import { motion, AnimatePresence } from 'framer-motion';
 import { 
   ArrowRight, Play, TrendingUp, Brain, Shield, Rocket, Globe, Cpu, Database, Atom, Target, Star, Sparkles as SparklesIcon,
   Brain as BrainIcon, Atom as AtomIcon, Shield as ShieldIcon, Rocket as RocketIcon, Zap, Eye, Heart, Infinity
 } from 'lucide-react';
-import Head from 'next/head';
+import SEO from './SEO';
+import Image from 'next/image';
 
 // Import our new revolutionary services
 import { revolutionary2044AdvancedMicroSaas } from '../data/revolutionary-2044-advanced-micro-saas';
@@ -18,6 +19,13 @@ const PerformanceMetrics = lazy(() => import('./PerformanceMetrics'));
 const InteractiveDemo = lazy(() => import('./InteractiveDemo'));
 const PerformanceOptimizer = lazy(() => import('./PerformanceOptimizer'));
 
+// Loading fallback component
+const LoadingFallback = () => (
+  <div className="flex items-center justify-center p-8">
+    <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-600"></div>
+  </div>
+);
+
 const Homepage2044: React.FC = () => {
   const [isVisible, setIsVisible] = useState(false);
   const [currentServiceIndex, setCurrentServiceIndex] = useState(0);
@@ -25,71 +33,128 @@ const Homepage2044: React.FC = () => {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const [isLoading, setIsLoading] = useState(false);
   const [userInteraction, setUserInteraction] = useState(false);
+  const [isReducedMotion, setIsReducedMotion] = useState(false);
   
-  useEffect(() => {
-    setIsVisible(true);
-    
-    // Auto-rotate featured services
-    const interval = setInterval(() => {
-      setCurrentServiceIndex((prev) => (prev + 1) % 6);
-    }, 6000);
-    
-    // Track mouse movement for parallax effects
-    const handleMouseMove = (e: MouseEvent) => {
-      setMousePosition({ x: e.clientX, y: e.clientY });
-    };
-    
-    window.addEventListener('mousemove', handleMouseMove);
-    
-    return () => {
-      clearInterval(interval);
-      window.removeEventListener('mousemove', handleMouseMove);
-    };
-  }, []);
-
-  // Combine all revolutionary services
-  const allRevolutionaryServices = [
+  // Memoize expensive computations
+  const allRevolutionaryServices = useMemo(() => [
     ...revolutionary2044AdvancedMicroSaas,
     ...revolutionary2044ITServices,
     ...revolutionary2044AIServices
-  ];
+  ], []);
 
-  // Get featured services for rotation
-  const featuredServices = allRevolutionaryServices.slice(0, 6);
+  const featuredServices = useMemo(() => 
+    allRevolutionaryServices.slice(0, 6), 
+    [allRevolutionaryServices]
+  );
 
-  // Filter services by category
-  const getFilteredServices = () => {
+  const filteredServices = useMemo(() => {
     if (selectedCategory === 'all') return allRevolutionaryServices;
     return allRevolutionaryServices.filter(service => 
       service.category.toLowerCase().includes(selectedCategory.toLowerCase()) ||
       service.type.toLowerCase().includes(selectedCategory.toLowerCase())
     );
-  };
+  }, [selectedCategory, allRevolutionaryServices]);
 
-  const categories = [
+  const categories = useMemo(() => [
     { id: 'all', name: 'All Services', icon: SparklesIcon, color: 'from-purple-500 to-pink-500' },
     { id: 'ai', name: 'AI & Consciousness', icon: BrainIcon, color: 'from-cyan-500 to-blue-500' },
     { id: 'quantum', name: 'Quantum Technology', icon: AtomIcon, color: 'from-blue-500 to-indigo-500' },
     { id: 'cybersecurity', name: 'Cybersecurity', icon: ShieldIcon, color: 'from-red-500 to-orange-500' },
     { id: 'space', name: 'Space Technology', icon: RocketIcon, color: 'from-indigo-500 to-purple-500' },
     { id: 'business', name: 'Business Solutions', icon: Target, color: 'from-emerald-500 to-teal-500' }
-  ];
+  ], []);
 
-  const features = [
+  const features = useMemo(() => [
     { icon: Brain, title: "AI Consciousness Evolution 2044", description: "Next-generation AI consciousness with emotional intelligence", href: "/ai-consciousness-evolution-2044", color: "from-purple-500 to-pink-500" },
     { icon: Atom, title: "Quantum Neural Networks 2044", description: "Quantum-powered AI with consciousness integration", href: "/quantum-neural-network-platform-2044", color: "from-blue-500 to-cyan-500" },
     { icon: Shield, title: "Quantum Cybersecurity 2044", description: "Quantum-resistant security with AI consciousness", href: "/quantum-cybersecurity-platform-2044", color: "from-red-500 to-orange-500" },
     { icon: Rocket, title: "Space Resource Intelligence 2044", description: "AI-powered space exploration with consciousness", href: "/space-resource-intelligence-2044", color: "from-indigo-500 to-purple-500" },
     { icon: Cpu, title: "Autonomous Business Intelligence 2044", description: "Fully autonomous AI business intelligence", href: "/ai-autonomous-business-intelligence-2044", color: "from-emerald-500 to-teal-500" },
     { icon: Database, title: "Quantum Cloud Infrastructure 2044", description: "Quantum-powered cloud with consciousness", href: "/quantum-cloud-infrastructure-2044", color: "from-yellow-500 to-orange-500" }
-  ];
+  ], []);
 
-  const stats = [
+  const stats = useMemo(() => [
     { number: "2000+", label: "Revolutionary Services", icon: Star },
     { number: "99.99%", label: "Uptime Guarantee", icon: TrendingUp },
     { number: "24/7", label: "AI Support Available", icon: Brain },
     { number: "200+", label: "Countries Served", icon: Globe }
-  ];
+  ], []);
+
+  // SEO data
+  const seoData = useMemo(() => ({
+    pageTitle: "Zion Tech Group - Revolutionary 2044 Technology Solutions | AI, Quantum Computing, Space Tech",
+    pageDescription: "Pioneering the future of technology with revolutionary AI consciousness, quantum computing, and autonomous solutions. Transform your business with cutting-edge 2044 technology.",
+    pageKeywords: ["AI consciousness", "quantum computing", "space technology", "cybersecurity", "autonomous solutions", "business intelligence", "Zion Tech Group"],
+    structuredData: {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Zion Tech Group",
+      "description": "Pioneering the future of technology with revolutionary AI consciousness, quantum computing, and autonomous solutions",
+      "url": "https://ziontechgroup.com",
+      "logo": "https://ziontechgroup.com/logo.png",
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+1-302-464-0950",
+        "contactType": "customer service",
+        "email": "kleber@ziontechgroup.com"
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "364 E Main St STE 1008",
+        "addressLocality": "Middletown",
+        "addressRegion": "DE",
+        "postalCode": "19709",
+        "addressCountry": "US"
+      },
+      "sameAs": [
+        "https://linkedin.com/company/ziontechgroup",
+        "https://twitter.com/ziontechgroup",
+        "https://github.com/ziontechgroup"
+      ]
+    },
+    analytics: {
+      googleAnalytics: process.env.NEXT_PUBLIC_GA_ID,
+      googleTagManager: process.env.NEXT_PUBLIC_GTM_ID,
+      facebookPixel: process.env.NEXT_PUBLIC_FB_PIXEL_ID
+    }
+  }), []);
+  
+  useEffect(() => {
+    // Check for reduced motion preference
+    const mediaQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
+    setIsReducedMotion(mediaQuery.matches);
+    
+    const handleReducedMotionChange = (e: MediaQueryListEvent) => {
+      setIsReducedMotion(e.matches);
+    };
+    
+    mediaQuery.addEventListener('change', handleReducedMotionChange);
+    
+    setIsVisible(true);
+    
+    // Auto-rotate featured services only if motion is not reduced
+    let interval: NodeJS.Timeout;
+    if (!isReducedMotion) {
+      interval = setInterval(() => {
+        setCurrentServiceIndex((prev) => (prev + 1) % 6);
+      }, 6000);
+    }
+    
+    // Track mouse movement for parallax effects (only if motion is not reduced)
+    const handleMouseMove = (e: MouseEvent) => {
+      if (!isReducedMotion) {
+        setMousePosition({ x: e.clientX, y: e.clientY });
+      }
+    };
+    
+    window.addEventListener('mousemove', handleMouseMove);
+    
+    return () => {
+      if (interval) clearInterval(interval);
+      window.removeEventListener('mousemove', handleMouseMove);
+      mediaQuery.removeEventListener('change', handleReducedMotionChange);
+    };
+  }, [isReducedMotion]);
 
   const handleGetStarted = useCallback(() => {
     window.location.href = '/revolutionary-2044-pricing-showcase';
@@ -108,59 +173,35 @@ const Homepage2044: React.FC = () => {
     setUserInteraction(true);
   }, []);
 
+  // Animation variants with reduced motion support
+  const fadeInUp = {
+    hidden: { opacity: 0, y: isReducedMotion ? 0 : 30 },
+    visible: { opacity: 1, y: 0 }
+  };
+
+  const staggerContainer = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: isReducedMotion ? 0 : 0.1
+      }
+    }
+  };
+
   return (
     <>
-      <Head>
-        <title>Zion Tech Group - Revolutionary 2044 Technology Solutions | AI, Quantum Computing, Space Tech</title>
-        <meta name="description" content="Pioneering the future of technology with revolutionary AI consciousness, quantum computing, and autonomous solutions. Transform your business with cutting-edge 2044 technology." />
-        <meta name="keywords" content="AI consciousness, quantum computing, space technology, cybersecurity, autonomous solutions, business intelligence, Zion Tech Group" />
-        <meta name="author" content="Zion Tech Group" />
-        <meta name="robots" content="index, follow" />
-        <meta property="og:title" content="Zion Tech Group - Revolutionary 2044 Technology Solutions" />
-        <meta property="og:description" content="Pioneering the future of technology with revolutionary AI consciousness, quantum computing, and autonomous solutions." />
-        <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://ziontechgroup.com" />
-        <meta property="og:image" content="https://ziontechgroup.com/og-image.jpg" />
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Zion Tech Group - Revolutionary 2044 Technology" />
-        <meta name="twitter:description" content="Pioneering the future of technology with revolutionary AI consciousness, quantum computing, and autonomous solutions." />
-        <link rel="canonical" href="https://ziontechgroup.com" />
-        <script type="application/ld+json">
-          {JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "Organization",
-            "name": "Zion Tech Group",
-            "description": "Pioneering the future of technology with revolutionary AI consciousness, quantum computing, and autonomous solutions",
-            "url": "https://ziontechgroup.com",
-            "logo": "https://ziontechgroup.com/logo.png",
-            "contactPoint": {
-              "@type": "ContactPoint",
-              "telephone": "+1-302-464-0950",
-              "contactType": "customer service",
-              "email": "kleber@ziontechgroup.com"
-            },
-            "address": {
-              "@type": "PostalAddress",
-              "streetAddress": "364 E Main St STE 1008",
-              "addressLocality": "Middletown",
-              "addressRegion": "DE",
-              "postalCode": "19709",
-              "addressCountry": "US"
-            },
-            "sameAs": [
-              "https://linkedin.com/company/ziontechgroup",
-              "https://twitter.com/ziontechgroup",
-              "https://github.com/ziontechgroup"
-            ]
-          })}
-        </script>
-      </Head>
+      <SEO data={seoData} />
       
       {/* Loading Overlay */}
       {isLoading && (
-        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+        <div 
+          className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50"
+          role="status"
+          aria-live="polite"
+        >
           <div className="bg-white rounded-lg p-6 flex items-center space-x-3">
-            <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-600"></div>
+            <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-600" aria-hidden="true"></div>
             <span className="text-gray-700">Loading revolutionary technology...</span>
           </div>
         </div>
@@ -176,36 +217,40 @@ const Homepage2044: React.FC = () => {
         >
           {/* Enhanced Animated Background */}
           <div className="absolute inset-0 -z-10">
-            {/* Floating orbs with neon effects */}
-            <div className="absolute top-20 left-20 w-96 h-96 bg-gradient-to-r from-cyan-500/20 to-blue-500/20 rounded-full blur-3xl animate-pulse shadow-[0_0_100px_rgba(6,182,212,0.5)]"></div>
-            <div className="absolute bottom-20 right-20 w-[500px] h-[500px] bg-gradient-to-r from-purple-500/20 to-pink-500/20 rounded-full blur-3xl animate-pulse delay-1000 shadow-[0_0_100px_rgba(168,85,247,0.5)]"></div>
-            <div className="absolute top-1/2 left-1/2 w-80 h-80 bg-gradient-to-r from-emerald-500/20 to-teal-500/20 rounded-full blur-3xl animate-pulse delay-500 shadow-[0_0_100px_rgba(16,185,129,0.5)]"></div>
-            
-            {/* Animated particles with neon trails */}
-            <div className="absolute inset-0">
-              {[...Array(20)].map((_, i) => (
-                <motion.div
-                  key={i}
-                  className="absolute w-2 h-2 bg-cyan-400/40 rounded-full shadow-[0_0_20px_rgba(6,182,212,0.8)]"
-                  animate={{
-                    x: [0, 150, 0],
-                    y: [0, -150, 0],
-                    opacity: [0, 1, 0],
-                    scale: [0, 1.5, 0],
-                  }}
-                  transition={{
-                    duration: 8 + i * 0.3,
-                    repeat: Infinity as any,
-                    delay: i * 0.2,
-                    ease: "easeInOut"
-                  }}
-                  style={{
-                    left: `${Math.random() * 100}%`,
-                    top: `${Math.random() * 100}%`,
-                  }}
-                />
-              ))}
-            </div>
+            {/* Floating orbs with neon effects - only show if motion is not reduced */}
+            {!isReducedMotion && (
+              <>
+                <div className="absolute top-20 left-20 w-96 h-96 bg-gradient-to-r from-cyan-500/20 to-blue-500/20 rounded-full blur-3xl animate-pulse shadow-[0_0_100px_rgba(6,182,212,0.5)]"></div>
+                <div className="absolute bottom-20 right-20 w-[500px] h-[500px] bg-gradient-to-r from-purple-500/20 to-pink-500/20 rounded-full blur-3xl animate-pulse delay-1000 shadow-[0_0_100px_rgba(168,85,247,0.5)]"></div>
+                <div className="absolute top-1/2 left-1/2 w-80 h-80 bg-gradient-to-r from-emerald-500/20 to-teal-500/20 rounded-full blur-3xl animate-pulse delay-500 shadow-[0_0_100px_rgba(16,185,129,0.5)]"></div>
+                
+                {/* Animated particles with neon trails */}
+                <div className="absolute inset-0">
+                  {[...Array(20)].map((_, i) => (
+                    <motion.div
+                      key={i}
+                      className="absolute w-2 h-2 bg-cyan-400/40 rounded-full shadow-[0_0_20px_rgba(6,182,212,0.8)]"
+                      animate={{
+                        x: [0, 150, 0],
+                        y: [0, -150, 0],
+                        opacity: [0, 1, 0],
+                        scale: [0, 1.5, 0],
+                      }}
+                      transition={{
+                        duration: 8 + i * 0.3,
+                        repeat: Infinity as any,
+                        delay: i * 0.2,
+                        ease: "easeInOut"
+                      }}
+                      style={{
+                        left: `${Math.random() * 100}%`,
+                        top: `${Math.random() * 100}%`
+                      }}
+                    />
+                  ))}
+                </div>
+              </>
+            )}
 
             {/* Grid pattern with neon glow */}
             <div className="absolute inset-0 opacity-20">
@@ -536,7 +581,7 @@ const Homepage2044: React.FC = () => {
 
             {/* Filtered Services Grid */}
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {getFilteredServices().slice(0, 9).map((service, index) => (
+              {filteredServices.slice(0, 9).map((service, index) => (
                 <motion.div
                   key={service.slug}
                   initial={{ opacity: 0, y: 20 }}
@@ -596,11 +641,7 @@ const Homepage2044: React.FC = () => {
               </p>
             </motion.div>
             
-            <Suspense fallback={
-              <div className="flex justify-center">
-                <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-cyan-500"></div>
-              </div>
-            }>
+            <Suspense fallback={<LoadingFallback />}>
               <PerformanceMetrics />
             </Suspense>
           </div>
@@ -624,11 +665,7 @@ const Homepage2044: React.FC = () => {
               </p>
             </motion.div>
             
-            <Suspense fallback={
-              <div className="flex justify-center">
-                <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-cyan-500"></div>
-              </div>
-            }>
+            <Suspense fallback={<LoadingFallback />}>
               <InteractiveDemo />
             </Suspense>
           </div>
@@ -652,11 +689,7 @@ const Homepage2044: React.FC = () => {
               </p>
             </motion.div>
             
-            <Suspense fallback={
-              <div className="flex justify-center">
-                <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-cyan-500"></div>
-              </div>
-            }>
+            <Suspense fallback={<LoadingFallback />}>
               <PerformanceOptimizer />
             </Suspense>
           </div>

@@ -97,10 +97,11 @@ const ComprehensiveServicesShowcase: React.FC = () => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-50 via-white to-gray-100">
       <SEO 
-        title="2025 Comprehensive Services Showcase | Zion Tech Group"
-        description="Explore our complete portfolio of micro SAAS, IT services, and AI solutions. Discover innovative services designed to transform your business with cutting-edge technology."
-        keywords={["micro SAAS", "AI services", "cybersecurity", "cloud infrastructure", "DevOps", "healthcare AI", "fintech", "manufacturing IoT", "quantum computing", "blockchain", "AR/VR", "robotics"]}
-        image="https://ziontechgroup.com/og-image.jpg"
+        data={{
+          pageTitle: "2025 Comprehensive Services Showcase | Zion Tech Group",
+          pageDescription: "Explore our complete portfolio of micro SAAS, IT services, and AI solutions. Discover innovative services designed to transform your business with cutting-edge technology.",
+          pageKeywords: ["micro SAAS", "AI services", "cybersecurity", "cloud infrastructure", "DevOps", "healthcare AI", "fintech", "manufacturing IoT", "quantum computing", "blockchain", "AR/VR", "robotics"]
+        }}
       />
 
       {/* Hero Section */}

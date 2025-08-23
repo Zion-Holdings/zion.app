@@ -82,12 +82,14 @@ export default function ComprehensiveServicesShowcase2037() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900">
       <SEO 
-        title="Comprehensive Services Showcase 2037 - Zion Tech Group"
-        description="Discover our revolutionary 2037 services portfolio featuring AI consciousness, quantum computing, autonomous systems, and cutting-edge innovations. Transform your business with Zion Tech Group."
-        keywords={[
-          "AI services", "quantum computing", "autonomous systems", "metaverse", 
-          "consciousness", "2037", "innovation", "Zion Tech Group"
-        ]}
+        data={{
+          pageTitle: "Comprehensive Services Showcase 2037 - Zion Tech Group",
+          pageDescription: "Discover our revolutionary 2037 services portfolio featuring AI consciousness, quantum computing, autonomous systems, and cutting-edge innovations. Transform your business with Zion Tech Group.",
+          pageKeywords: [
+            "AI services", "quantum computing", "autonomous systems", "metaverse", 
+            "consciousness", "2037", "innovation", "Zion Tech Group"
+          ]
+        }}
       />
       
       {/* Hero Section */}

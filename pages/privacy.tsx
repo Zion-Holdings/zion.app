@@ -4,7 +4,11 @@ import UltraAdvancedFuturisticBackground from '../components/ui/UltraAdvancedFut
 export default function PrivacyPolicyPage() {
   return (
     <UltraAdvancedFuturisticBackground>
-      <SEO title="Privacy Policy | Zion Tech Group" description="Zion Tech Group Privacy Policy: data collection, usage, security, and contact details." canonical="https://ziontechgroup.com/privacy/" />
+              <SEO data={{
+          pageTitle: "Privacy Policy | Zion Tech Group",
+          pageDescription: "Zion Tech Group Privacy Policy: data collection, usage, security, and contact details.",
+          pageKeywords: ["privacy policy", "data collection", "data usage", "security", "Zion Tech Group"]
+        }} />
       <div className="min-h-screen pt-24 pb-20 px-4 sm:px-6 lg:px-8 text-white">
         <div className="max-w-3xl mx-auto space-y-6">
           <h1 className="text-4xl md:text-6xl font-bold bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">Privacy Policy</h1>

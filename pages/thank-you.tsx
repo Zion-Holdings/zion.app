@@ -8,7 +8,11 @@ export default function ThankYouPage() {
 
 	return (
 		<>
-			<SEO title={pageTitle} description={pageDescription} canonical="/thank-you" />
+			<SEO data={{
+			pageTitle: pageTitle,
+			pageDescription: pageDescription,
+			pageKeywords: ["thank you", "contact", "Zion Tech Group", "confirmation"]
+		}} />
 			<section className="relative pt-28 pb-16 md:pt-36 md:pb-24">
 				<div className="container mx-auto px-4 max-w-2xl text-center">
 					<h1 className="text-3xl md:text-5xl font-extrabold tracking-tight gradient-text-cyan-purple">Thank you</h1>
