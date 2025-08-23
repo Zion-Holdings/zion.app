@@ -52,6 +52,15 @@ const footerSections = [
   }
 ];
 
+<<<<<<< HEAD
+const companyLinks = [
+  { name: 'About Us', href: '/about' },
+  { name: 'Our Team', href: '/team' },
+  { name: 'Careers', href: '/careers' },
+  { name: 'Press & Media', href: '/press' },
+  { name: 'Partners', href: '/partners' },
+  { name: 'Investors', href: '/investors' }
+=======
 const socialLinks = [
   { name: 'Twitter', href: 'https://twitter.com/ziontechgroup', icon: <Twitter className="w-5 h-5" /> },
   { name: 'LinkedIn', href: 'https://linkedin.com/company/ziontechgroup', icon: <Linkedin className="w-5 h-5" /> },
@@ -59,6 +68,7 @@ const socialLinks = [
   { name: 'Instagram', href: 'https://instagram.com/ziontechgroup', icon: <Instagram className="w-5 h-5" /> },
   { name: 'YouTube', href: 'https://youtube.com/@ziontechgroup', icon: <Youtube className="w-5 h-5" /> },
   { name: 'GitHub', href: 'https://github.com/Zion-Holdings', icon: <Github className="w-5 h-5" /> }
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-3e55
 ];
 
 const resourceLinks = [
