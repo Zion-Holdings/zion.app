@@ -5,7 +5,7 @@ import {
   Search, Grid, List,
   Brain, Atom, Shield, Target, Rocket,
   ArrowRight, Check, Palette, Heart, Truck, GraduationCap,
-  Building, Cpu
+  Building, Cpu, DollarSign
 } from 'lucide-react';
 
 // Import our new 2025 service data
@@ -61,6 +61,12 @@ import { cuttingEdgeFuturisticServices } from '../data/2025-cutting-edge-futuris
 import { advancedAIAutomationServices } from '../data/2026-advanced-ai-automation-services';
 import { advancedITInfrastructureServices } from '../data/2025-advanced-it-infrastructure-services';
 
+// Import our new 2025 advanced specialized services
+import { advancedFinancialTechServices2025 } from '../data/2025-advanced-financial-tech-services';
+import { advancedHealthcareTechServices2025 } from '../data/2025-advanced-healthcare-tech-services';
+import { advancedLogisticsSupplyChainServices2025 } from '../data/2025-advanced-logistics-supply-chain-services';
+import { advancedCybersecurityServices2025 } from '../data/2025-advanced-cybersecurity-services';
+
 // Import existing service data
 import { realMicroSaasServices } from '../data/real-micro-saas-services';
 import { innovativeAIServices } from '../data/innovative-ai-services';
@@ -108,6 +114,12 @@ const allServices = [
   ...innovativeITInfrastructureServices2025,
   ...innovativeMicroSaasSolutions2025,
   ...cuttingEdgeAIServices2025,
+  
+  // Our new 2025 advanced specialized services
+  ...advancedFinancialTechServices2025,
+  ...advancedHealthcareTechServices2025,
+  ...advancedLogisticsSupplyChainServices2025,
+  ...advancedCybersecurityServices2025,
   
   ...enterpriseITSolutions,
   ...innovativeMicroSaasSolutions,
@@ -246,6 +258,34 @@ const categories = [
     description: 'Advanced healthcare solutions'
   },
   {
+    id: 'financial-tech',
+    name: 'Financial Technology',
+    icon: <DollarSign className="w-6 h-6" />,
+    color: 'from-green-500 to-emerald-500',
+    description: 'Advanced financial technology solutions'
+  },
+  {
+    id: 'healthcare-tech',
+    name: 'Healthcare Technology',
+    icon: <Heart className="w-6 h-6" />,
+    color: 'from-blue-500 to-cyan-500',
+    description: 'Cutting-edge healthcare technology platforms'
+  },
+  {
+    id: 'logistics-supply-chain',
+    name: 'Logistics & Supply Chain',
+    icon: <Truck className="w-6 h-6" />,
+    color: 'from-orange-500 to-red-500',
+    description: 'Intelligent logistics and supply chain solutions'
+  },
+  {
+    id: 'cybersecurity',
+    name: 'Cybersecurity',
+    icon: <Shield className="w-6 h-6" />,
+    color: 'from-purple-500 to-indigo-500',
+    description: 'Advanced cybersecurity and data protection'
+  },
+  {
     id: 'transportation-logistics',
     name: 'Transportation & Logistics',
     icon: <Truck className="w-6 h-6" />,
@@ -299,6 +339,20 @@ export default function Services() {
     
     const serviceCategory = getServiceCategory(service).toLowerCase();
     const categoryName = categories.find(cat => cat.id === selectedCategory)?.name.toLowerCase();
+    
+    // Handle specialized service categories
+    if (selectedCategory === 'financial-tech') {
+      return matchesSearch && serviceCategory.includes('financial');
+    }
+    if (selectedCategory === 'healthcare-tech') {
+      return matchesSearch && serviceCategory.includes('healthcare');
+    }
+    if (selectedCategory === 'logistics-supply-chain') {
+      return matchesSearch && (serviceCategory.includes('logistics') || serviceCategory.includes('supply chain'));
+    }
+    if (selectedCategory === 'cybersecurity') {
+      return matchesSearch && serviceCategory.includes('cybersecurity');
+    }
     
     return matchesSearch && serviceCategory.includes(categoryName || '');
   });
