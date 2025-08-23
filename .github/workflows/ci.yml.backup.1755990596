@@ -33,6 +33,10 @@ jobs:
         run: npm run lint
       - name: Type check
         run: npm run type-check
+<<<<<<< HEAD
+      - name: Build
+        run: npm run build
+=======
       - name: ESLint (auto-fix)
         if: github.event_name == 'pull_request'
         run: |
@@ -57,3 +61,4 @@ jobs:
             git commit -m "chore(eslint): auto-fix lint issues"
             git push
           fi
+>>>>>>> origin/cursor/automate-cursor-warning-fixes-and-merge-9f31
