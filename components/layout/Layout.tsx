@@ -48,9 +48,8 @@ export default function Layout({ children }: LayoutProps) {
       </div>
 
       {/* Accessibility and Performance Tools */}
-      <AccessibilityEnhancer>
-        <PerformanceMonitor />
-      </AccessibilityEnhancer>
+      <AccessibilityEnhancer showPanel={false} autoOptimize={true} />
+      <PerformanceMonitor />
       
       {/* Cookie Consent Banner */}
       <CookieConsentBanner />
