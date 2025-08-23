@@ -1,10 +1,7 @@
-const PhilosophyPage = () => {
+import React from 'react';
+import Head from 'next/head';
   return (
-    <div>
-      <h1>Philosophy</h1>
-      <p>Content for the philosophy page.</p>
-    </div>
+    <>
+      <Head><title>philosophy - Zion App</title><meta name="description" content="philosophy page" /></Head><div className="container mx-auto px-4 py-8"><h1 className="text-3xl font-bold mb-6">philosophy</h1><p className="text-lg mb-4">This page is under construction.</p><div className="mt-4"><a href="/" className="text-blue-600 hover:underline">;
+            ← Back to Home</a></div></div></>;
   );
-};
-
-export default PhilosophyPage;

@@ -1,60 +1,30 @@
-const { execSync } = require('child_process');
-const fs = require('fs');
 const path = require('path');
+const { spawnSync } = require('child_process');
 
-exports.handler = async function(event, context) {
-  console.log('🤖 Starting robots-auditor...');
-  
-  try {
-    const timestamp = new Date().toISOString();
-    const reportPath = path.join(process.cwd(), 'robots-auditor-report.md');
-    
-    const reportContent = `# robots-auditor Report
+function runNode(relPath, args = []) {
+  const abs = path.resolve(__dirname, '..', '..', relPath);
+  const res = spawnSync('node', [abs, ...args], { stdio: 'pipe', encoding: 'utf8' });
+  return { status: res.status || 0, stdout: res.stdout || '', stderr: res.stderr || '' };
+}
 
-Generated: ${timestamp}
-
-## Status
-- Task: robots-auditor
-- Status: Completed
-- Timestamp: ${timestamp}
-
-## Next Steps
-- Implement actual robots-auditor functionality
-- Add proper error handling
-- Add logging and monitoring
-`;
-
-    fs.writeFileSync(reportPath, reportContent);
-    console.log('📝 Report generated');
-    
-    try {
-      execSync('git add ' + reportPath, { stdio: 'inherit' });
-      execSync('git commit -m "🤖 Add robots-auditor report [skip ci]"', { stdio: 'inherit' });
-      execSync('git push', { stdio: 'inherit' });
-      console.log('✅ Report committed and pushed');
-    } catch (gitError) {
-      console.log('Git error:', gitError.message);
-    }
-    
-    console.log('✅ robots-auditor completed successfully');
-    
-    return {
-      statusCode: 200,
-      body: JSON.stringify({
-        message: 'robots-auditor completed successfully',
-        timestamp: timestamp
-      })
-    };
-    
-  } catch (error) {
-    console.error('❌ robots-auditor failed:', error.message);
-    
-    return {
-      statusCode: 500,
-      body: JSON.stringify({
-        error: error.message,
-        timestamp: new Date().toISOString()
-      })
-    };
-  }
+exports.config = {
+  schedule: '0 */6 * * *',
 };
+
+exports.handler = async () => {
+  const logs = [];
+  function step(name, rel, args = []) {
+    logs.push(`\n=== ${name} ===`);
+    const { status, stdout, stderr } = runNode(rel, args);
+    if (stdout) logs.push(stdout);
+    if (stderr) logs.push(stderr);
+    logs.push(`exit=${status}`);
+    return status;
+  }
+
+  step('robots:audit', 'automation/robots-auditor.cjs');
+  step('git:sync', 'automation/advanced-git-sync.cjs');
+
+  return { statusCode: 200, body: logs.join('\n') };
+};
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96

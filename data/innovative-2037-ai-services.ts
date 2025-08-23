@@ -1,6 +1,7 @@
 import { ServiceVariant } from '../types/service-variants';
 
 export interface Innovative2037AiService {
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
   id: string;
   name: string;
   tagline: string;
@@ -27,6 +28,7 @@ export interface Innovative2037AiService {
   marketSize: string;
   growthRate: string;
   variant: ServiceVariant;
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
   contactInfo: {
     mobile: string;
     email: string;
@@ -201,6 +203,7 @@ export const innovative2037AiServices: Innovative2037AiService[] = [
       'Custom AI model training',
       'Integration with creative tools',
       'Mobile and desktop applications'
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
     ],
     popular: false,
     icon: '🎭🤝',
@@ -318,5 +321,6 @@ export const innovative2037AiServices: Innovative2037AiService[] = [
     customers: 167,
     rating: 4.8,
     reviews: 123
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
   }
 ];

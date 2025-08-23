@@ -95,6 +95,28 @@ def log_bug(
     except Exception as e:
         print(f"An unexpected error occurred during logging: {e}")
 
+def list_bugs(log_file: str = LOG_FILE) -> None:
+    """Print all logged bugs in a simple human-readable format."""
+    if not os.path.exists(log_file):
+        print(f"No bug log found at {log_file}")
+        return
+    try:
+        with open(log_file, "r") as f:
+            logs = json.load(f)
+    except json.JSONDecodeError as e:
+        print(f"Failed to parse log file {log_file}: {e}")
+        return
+
+    if not isinstance(logs, list):
+        print(f"Unexpected log format in {log_file}")
+        return
+
+    for entry in logs:
+        timestamp = entry.get("timestamp", "unknown")
+        severity = entry.get("severity", "Unknown")
+        message = entry.get("error_message", "")
+        print(f"[{timestamp}] ({severity}) {message}")
+
 def _run_examples() -> None:
     """Log a few example entries for demonstration purposes."""
     print("Running example logging...")
@@ -135,10 +157,13 @@ if __name__ == "__main__":
     parser.add_argument("--severity", default="Medium", help="Severity level")
     parser.add_argument("--module", help="Module or file where the error occurred")
     parser.add_argument("--examples", action="store_true", help="Run example logs")
+    parser.add_argument("--list", action="store_true", help="List current bug log entries")
     args = parser.parse_args()
 
     if args.examples:
         _run_examples()
+    elif args.list:
+        list_bugs()
     elif args.message:
         log_bug(args.message, severity=args.severity, module=args.module)
         print(f"Check {LOG_FILE} for logged bugs.")

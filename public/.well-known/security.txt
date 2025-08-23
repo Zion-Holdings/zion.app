@@ -1,6 +1,7 @@
 Contact: mailto:security@ziontechgroup.com
-Expires: 2026-12-31T23:59:59.000Z
+Contact: https://ziontechgroup.com/support/
+Expires: 2026-12-31T23:59:59Z
 Preferred-Languages: en
+Policy: https://ziontechgroup.com/security/
 Canonical: https://ziontechgroup.com/.well-known/security.txt
-Policy: https://ziontechgroup.com/security-policy
-Hiring: https://ziontechgroup.com/careers
+Acknowledgments: https://ziontechgroup.com/security/#acknowledgments

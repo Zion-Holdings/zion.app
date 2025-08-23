@@ -1,11 +1,10 @@
-import type { ComponentType } from 'react';
-
-export interface DynamicOptions {
+import type { ComponentType } from react';;
+interface DynamicOptions {
   ssr?: boolean;
-  loading?: ComponentType<any>;
+  loading?: ComponentType<unknown>;
 }
-
-export default function dynamic<T extends ComponentType<any>>(
+;
+default function dynamic<T extends ComponentType<unknown>>(
   importer: () => Promise<{ default: T }>,
   options?: DynamicOptions
-): ComponentType<any>;
+): ComponentType<unknown>;

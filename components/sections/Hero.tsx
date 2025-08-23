@@ -1,6 +1,7 @@
 import React from 'react';
-import Button from '../ui/Button';
-import { ArrowRight, Play, Star, Zap, Shield, Users } from 'lucide-react';
+import Link from 'next/link';
+import { Button } from '../ui/Button';
+import { ArrowRight, Play, Star, Zap, Shield, Users, Globe, Rocket, Sparkles } from 'lucide-react';
 
 interface HeroProps {
   title: string;
@@ -61,34 +62,29 @@ const Hero: React.FC<HeroProps> = ({
             {subtitle}
           </p>
 
-          {/* Action Buttons */}
-          {(primaryAction || secondaryAction) && (
-            <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center items-center mb-16 sm:mb-20">
-              {primaryAction && (
-                <Button
-                  href={primaryAction.href}
-                  size="lg"
-                  className="animate-scale-in shadow-2xl shadow-blue-500/25 hover:shadow-blue-500/40 w-full sm:w-auto"
-                  style={{ animationDelay: '0.2s' }}
-                >
-                  {primaryAction.text}
-                  <ArrowRight className="w-5 h-5 ml-2" />
-                </Button>
-              )}
-              {secondaryAction && (
-                <Button
-                  href={secondaryAction.href}
-                  variant="outline"
-                  size="lg"
-                  className="animate-scale-in border-white/20 hover:border-white/40 hover:bg-white/5 w-full sm:w-auto"
-                  style={{ animationDelay: '0.4s' }}
-                >
-                  <Play className="w-5 h-5 mr-2" />
-                  {secondaryAction.text}
-                </Button>
-              )}
-            </div>
-          )}
+        {/* Enhanced action buttons */}
+        <div className="flex flex-col sm:flex-row gap-6 justify-center items-center mb-16 animate-fade-in-up stagger-4">
+          <Link href={primaryAction.href}>
+            <Button
+              variant="primary"
+              size="lg"
+              className="min-w-[200px] btn-futuristic hover-glow"
+            >
+              {primaryAction.text}
+              {primaryAction.icon && <span className="ml-2">{primaryAction.icon}</span>}
+            </Button>
+          </Link>
+          
+          <Link href={secondaryAction.href}>
+            <Button
+              variant="outline"
+              size="lg"
+              className="min-w-[200px] border-purple-500 text-purple-400 hover:bg-purple-500 hover:text-white"
+            >
+              {secondaryAction.icon && <span className="mr-2">{secondaryAction.icon}</span>}
+              {secondaryAction.text}
+            </Button>
+          </Link>
         </div>
 
         {/* Stats Section */}

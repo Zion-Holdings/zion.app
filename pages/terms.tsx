@@ -1,6 +1,4 @@
 import React from 'react';
-import Layout from '../components/layout/Layout';
-import { motion } from 'framer-motion';
 =======
 import { FileText, Shield, Users, Globe, Clock, CheckCircle, AlertTriangle, Scale } from 'lucide-react';
 
@@ -37,6 +35,56 @@ const TermsPage: React.FC = () => {
         'Users must not attempt to reverse engineer our AI systems',
         'Data processing follows our privacy policy and data protection standards',
         'Service availability is subject to maintenance and updates'
+      service: 'AI Consciousness Platform',
+      description: 'Advanced AI systems with consciousness capabilities',
+      restrictions: [
+        'No unauthorized access or reverse engineering',
+        'Compliance with AI safety guidelines',
+        'Proper data handling and privacy protection'
+      ],
+      usage: 'Commercial and research applications'
+    },
+    {
+      service: 'Quantum Computing Solutions',
+      description: 'Quantum computing infrastructure and algorithms',
+      restrictions: [
+        'No quantum algorithm theft or copying',
+        'Respect for quantum security protocols',
+        'Proper quantum error handling'
+      ],
+      usage: 'Scientific research and enterprise applications'
+    },
+    {
+      service: 'Cybersecurity Services',
+      description: 'Advanced security and threat protection',
+      restrictions: [
+        'No testing against unauthorized systems',
+        'Compliance with security regulations',
+        'Proper incident reporting procedures'
+      ],
+      usage: 'Enterprise security and compliance'
+    },
+    {
+      service: 'Cloud Infrastructure',
+      description: 'Scalable cloud computing resources',
+      restrictions: [
+        'No resource abuse or unauthorized access',
+        'Compliance with cloud security policies',
+        'Proper cost management and optimization'
+      ],
+      usage: 'Business applications and development'
+    }
+  ];
+
+  const userObligations = [
+    {
+      obligation: 'Legal Compliance',
+      description: 'Use services in accordance with all applicable laws and regulations',
+      examples: [
+        'Data protection and privacy laws',
+        'Export control regulations',
+        'Industry-specific compliance requirements'
+=======
       ]
     },
     {
@@ -80,27 +128,31 @@ const TermsPage: React.FC = () => {
   ];
 
   return (
-    <Layout 
-      title="Terms of Service - Zion Tech Group"
-      description="Read the terms and conditions governing the use of Zion Tech Group's AI consciousness, quantum computing, and cybersecurity services."
-      keywords="terms of service, terms and conditions, service agreement, Zion Tech Group"
-    >
-      <div className="min-h-screen bg-gradient-to-br from-black via-gray-900 to-black">
-        {/* Hero Section */}
-        <section className="relative pt-32 pb-20 overflow-hidden">
-          <div className="absolute inset-0 bg-gradient-to-r from-blue-900/20 to-purple-900/20"></div>
-          <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-            >
-              <h1 className="text-5xl md:text-7xl font-bold text-white mb-6">
-                Terms of Service
-              </h1>
-              <p className="text-xl md:text-2xl text-gray-300 mb-8 max-w-4xl mx-auto">
-                Please read these terms carefully before using our revolutionary AI consciousness, 
-                quantum computing, and cybersecurity services.
+    <>
+      <SEO title="Terms of Service | Zion Tech Group" description="Terms of Service for Zion Tech Group - Learn about our service terms and conditions." url="https://ziontechgroup.com/terms/" />
+
+      {/* Hero Section */}
+      <section className="relative py-24 bg-gradient-to-br from-cursor-darker via-cursor-dark to-cursor-darker overflow-hidden">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(0,122,204,0.08),transparent_50%)]" />
+        
+        <div className="relative z-10 container-cursor text-center">
+          <h1 className="text-5xl md:text-7xl lg:text-8xl font-black mb-8 gradient-text">
+            Terms of Service
+          </h1>
+          <p className="text-xl md:text-2xl lg:text-3xl text-gray-300 max-w-5xl mx-auto leading-relaxed">
+            Our terms and conditions for using Zion Tech Group services
+          </p>
+        </div>
+      </section>
+
+      {/* Terms Content */}
+      <section className="py-24 bg-gradient-to-b from-cursor-dark to-cursor-darker">
+        <div className="container-cursor">
+          <div className="max-w-4xl mx-auto space-y-12">
+            <Card className="hover:border-cursor-blue/30">
+              <h2 className="text-3xl font-bold mb-6 text-cursor-blue">1. Acceptance of Terms</h2>
+              <p className="text-gray-300 leading-relaxed mb-4">
+                By accessing and using Zion Tech Group services, you accept and agree to be bound by the terms and provision of this agreement.
               </p>
               <div className="flex items-center justify-center gap-4 text-gray-400">
                 <Clock className="w-5 h-5" />
@@ -121,6 +173,9 @@ const TermsPage: React.FC = () => {
               viewport={{ once: true }}
               className="text-center mb-16"
             >
+              <h2 className="text-3xl lg:text-4xl font-bold text-white mb-6">
+                Key Terms Overview
+=======
 =======
               <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
                 Key Terms & Conditions
@@ -134,6 +189,8 @@ const TermsPage: React.FC = () => {
               {keyTerms.map((term, index) => (
                 <motion.div
                   key={term.title}
+                  initial={{ opacity: 0, y: 30 }}
+=======
 =======
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
@@ -152,6 +209,9 @@ const TermsPage: React.FC = () => {
           </div>
         </section>
 
+        {/* Service Terms */}
+        <section className="py-20 bg-black/50">
+=======
 =======
         {/* Service-Specific Terms Section */}
         <section className="py-20">
@@ -163,6 +223,8 @@ const TermsPage: React.FC = () => {
               viewport={{ once: true }}
               className="text-center mb-16"
             >
+              <h2 className="text-3xl lg:text-4xl font-bold text-white mb-6">
+=======
 =======
               <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
                 Service-Specific Terms
@@ -197,6 +259,8 @@ const TermsPage: React.FC = () => {
           </div>
         </section>
 
+        {/* User Obligations */}
+=======
 =======
         {/* Prohibited Activities Section */}
         <section className="py-20">
@@ -292,6 +356,8 @@ const TermsPage: React.FC = () => {
               className="text-center mb-16"
             >
               <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+              <h2 className="text-3xl lg:text-4xl font-bold text-white mb-6">
+=======
                 User Obligations
               </h2>
               <p className="text-xl text-gray-400 max-w-3xl mx-auto">
@@ -340,6 +406,8 @@ const TermsPage: React.FC = () => {
           </div>
         </section>
 
+        {/* Liability Limitations */}
+=======
 =======
         {/* Intellectual Property Section */}
         <section className="py-20">
@@ -351,6 +419,9 @@ const TermsPage: React.FC = () => {
               viewport={{ once: true }}
               className="text-center mb-16"
             >
+              <h2 className="text-3xl lg:text-4xl font-bold text-white mb-6">
+                Liability & Limitations
+=======
 =======
               <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
                 Intellectual Property
@@ -412,6 +483,9 @@ const TermsPage: React.FC = () => {
           </div>
         </section>
 
+        {/* Contact Information */}
+        <section className="py-20 bg-black/50">
+=======
 =======
         {/* Limitation of Liability Section */}
         <section className="py-20">
@@ -423,6 +497,9 @@ const TermsPage: React.FC = () => {
               viewport={{ once: true }}
               className="text-center mb-16"
             >
+              <h2 className="text-3xl lg:text-4xl font-bold text-white mb-6">
+                Questions About Terms?
+=======
 =======
               <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
                 Limitation of Liability
@@ -468,6 +545,8 @@ const TermsPage: React.FC = () => {
           </div>
         </section>
 
+        {/* CTA Section */}
+=======
 =======
         {/* Contact Section */}
         <section className="py-20">
@@ -478,6 +557,9 @@ const TermsPage: React.FC = () => {
               transition={{ duration: 0.8 }}
               viewport={{ once: true }}
             >
+              <h2 className="text-3xl lg:text-4xl font-bold text-white mb-6">
+                Ready to Get Started?
+=======
 =======
               <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
                 Questions About These Terms?
@@ -509,3 +591,10 @@ const TermsPage: React.FC = () => {
 };
 
 export default TermsPage;
+=======
+import Head from 'next/head';
+  return (
+    <>
+      <Head><title>terms - Zion App</title><meta name="description" content="terms page" /></Head><div className="container mx-auto px-4 py-8"><h1 className="text-3xl font-bold mb-6">terms</h1><p className="text-lg mb-4">This page is under construction.</p><div className="mt-4"><a href="/" className="text-blue-600 hover:underline">;
+            ← Back to Home</a></div></div></>;
+  );

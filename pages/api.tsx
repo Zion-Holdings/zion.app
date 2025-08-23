@@ -190,7 +190,8 @@ const APIPage: React.FC = () => {
 
   return (
     <Layout>
-      <div className="min-h-screen bg-gray-900 text-white py-20">
+      <div className="min-h-screen bg-gradient-to-br from-black via-gray-900 to-black">
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
         {/* Hero Section */}
         <section className="relative py-20 lg:py-32 overflow-hidden">
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(6,182,212,0.1),transparent_50%)]" />

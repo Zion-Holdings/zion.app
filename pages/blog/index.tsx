@@ -1,23 +1,7 @@
-import BlogPage, { BlogProps } from '../../src/pages/Blog';
-import { BLOG_POSTS } from '@/data/blog-posts';
-import type { GetServerSideProps } from 'next';
-import * as Sentry from '@sentry/nextjs';
-
-export const getServerSideProps: GetServerSideProps<BlogProps> = async () => {
-  try {
-    // Example: Add a breadcrumb if you want to trace this specific SSR execution
-    // Sentry.addBreadcrumb({
-    //   category: 'ssr',
-    //   message: 'getServerSideProps for BlogPage called',
-    //   level: 'info',
-    // });
-
-
-    return { props: { posts: BLOG_POSTS } };
-  } catch (error) {
-    Sentry.captureException(error);
-    throw error; // Re-throw the error so Next.js can handle it
-  }
-};
-
-export default BlogPage;
+import React from 'react';
+import Head from 'next/head';
+  return (
+    <>
+      <Head><title>blog/index - Zion App</title><meta name="description" content="blog/index page" /></Head><div className="container mx-auto px-4 py-8"><h1 className="text-3xl font-bold mb-6">blog/index</h1><p className="text-lg mb-4">This page is under construction.</p><div className="mt-4"><a href="/" className="text-blue-600 hover:underline">;
+            ← Back to Home</a></div></div></>;
+  );

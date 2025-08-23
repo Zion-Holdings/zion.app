@@ -368,7 +368,12 @@ const navigationItems: NavigationItem[] = [
   }
 ];
 
-export default function UltraFuturisticNavigation2037() {
+interface UltraFuturisticNavigation2037Props {
+  onMenuToggle?: () => void;
+  'aria-expanded'?: boolean;
+}
+
+export default function UltraFuturisticNavigation2037({ onMenuToggle, 'aria-expanded': ariaExpanded }: UltraFuturisticNavigation2037Props = {}) {
   const [isOpen, setIsOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
   const [isScrolled, setIsScrolled] = useState(false);
@@ -491,8 +496,12 @@ export default function UltraFuturisticNavigation2037() {
           {/* Mobile menu button */}
           <div className="lg:hidden">
             <button
-              onClick={() => setIsOpen(!isOpen)}
-              className="p-2 rounded-lg text-gray-300 hover:text-cyan-400 hover:bg-gray-800 transition-colors duration-200"
+              onClick={() => {
+                setIsOpen(!isOpen);
+                onMenuToggle?.();
+              }}
+              className="lg:hidden p-2 text-white hover:text-cyan-400 transition-colors"
+              aria-expanded={ariaExpanded}
             >
               {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
             </button>

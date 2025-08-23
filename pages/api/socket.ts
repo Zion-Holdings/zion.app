@@ -1,17 +1,13 @@
 import { Server as IOServer } from 'socket.io';
-import type { NextApiRequest, NextApiResponse } from 'next';
-import type { Server as NetServer } from 'http';
-import type { Socket } from 'net';
+import type { Server as NetServer, IncomingMessage, ServerResponse } from 'http';
 
 export const config = { api: { bodyParser: false } };
 
-type NextApiResponseServerIO = NextApiResponse & {
-  socket: Socket & {
-    server: NetServer & { io?: IOServer };
-  };
-};
+interface ResponseWithSocket extends ServerResponse {
+  socket: NetServer & { io?: IOServer };
+}
 
-export default function handler(req: NextApiRequest, res: NextApiResponseServerIO) {
+export default function handler(_req: IncomingMessage, res: ResponseWithSocket) {
   if (!res.socket.server.io) {
     const io = new IOServer(res.socket.server, { path: '/api/socket' });
     res.socket.server.io = io;

@@ -3,88 +3,14 @@
   publish = "out"
 
 [build.environment]
-  NODE_OPTIONS = "--no-deprecation --max-old-space-size=6144 --no-warnings"
-  NPM_FLAGS = "--prefer-offline --legacy-peer-deps"
-  NEXT_PUBLIC_APP_ENV = "production"
-  NODE_VERSION = "22"
-  NEXT_TELEMETRY_DISABLED = "1"
-  CI = "true"
-  SKIP_TYPE_CHECK = "true"
-  
-  # Performance optimizations for large builds (with Netlify plugin)
-  NEXT_DISABLE_CSS_INLINE = "true"
-  NEXT_DISABLE_SOURCE_MAPS = "true"
-  GENERATE_SOURCEMAP = "false"
-  NEXT_BUILD_WORKERS = "1"
-  NEXT_PRIVATE_BUILD_CACHE = "false"
-  NEXT_PRIVATE_STATIC_OPTIMIZATION = "false"
-  
-  # CRITICAL FIX: Completely disable build trace collection to prevent hanging
-  NEXT_DISABLE_TRACE_COLLECTION = "true"
-  NEXT_PRIVATE_OUTPUT_TRACE = "false"
-  # NEXT_PRIVATE_OUTPUT_FILE_TRACING = "false" # Allowing Next.js default / plugin to manage this
-  UV_THREADPOOL_SIZE = "4"
-  NODE_NO_WARNINGS = "1"
-  NEXT_PRIVATE_MINIMIZE_BUILD_TIME = "true"
-  
-  # Configure secrets scanning to omit legitimate public environment variables
-  # NEXT_PUBLIC_* variables are meant to be public and embedded in client bundles
-  SECRETS_SCAN_OMIT_KEYS = "NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME,SENTRY_DSN"
-  
+  NODE_VERSION = "20"
+  NETLIFY_NEXT_PLUGIN_SKIP = "true"
+  # When triggering chained builds via build hook, set NETLIFY_RERUN_CHAIN=1 in the hook payload/env
 
-# Skip Husky for CI builds
-[build.processing]
-  skip_processing = false
+[functions]
+  directory = "netlify/functions"
+  node_bundler = "esbuild"
 
-[build.processing.css]
-  bundle = true
-  minify = true
-
-[build.processing.js]
-  bundle = true
-  minify = true
-
-[build.processing.html]
-  pretty_urls = true
-
-# Deploy contexts for different environments
-
-# Headers for security and performance
-[[headers]]
-  for = "/*"
-  [headers.values]
-    X-Frame-Options = "DENY"
-    X-XSS-Protection = "1; mode=block"
-    X-Content-Type-Options = "nosniff"
-    Referrer-Policy = "strict-origin-when-cross-origin"
-    Permissions-Policy = "camera=(), microphone=(), geolocation=()"
-    # Comprehensive CSP with unsafe-eval for third-party libraries
-    Content-Security-Policy = "default-src 'self'; script-src 'self' https://js.stripe.com 'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https://res.cloudinary.com; connect-src *; frame-src https://js.stripe.com"
-
-[[headers]]
-  for = "/_next/static/*"
-  [headers.values]
-    Cache-Control = "public, max-age=31536000, immutable"
-
-[[headers]]
-  for = "/logos/*"
-  [headers.values]
-    Cache-Control = "public, max-age=31536000, immutable"
-
-# Redirects
-[[redirects]]
-  from = "/home"
-  to = "/"
-  status = 301
-
-[functions.environment]
-  SENTRY_LOG_LEVEL = "debug"
-
-[functions.sentryDsnCheckCron]
-  schedule = "@daily"
-
-[functions.healthCheckCron]
-    schedule = "*/5 * * * *"
 
 [[plugins]]
   package = "netlify-plugin-cloudinary"
@@ -241,22 +167,6 @@
   schedule = "53 */6 * * *"
 
 [[scheduled.functions]]
-  name = "redirect-healer"
-  schedule = "*/15 * * * *"
-
-[[scheduled.functions]]
-  name = "sitemap-prioritizer"
-  schedule = "17 */6 * * *"
-
-[[scheduled.functions]]
-  name = "redirect-manager"
-  schedule = "*/30 * * * *"
-
-[[scheduled.functions]]
-  name = "a11y-audit-runner"
-  schedule = "*/20 * * * *"}  
-
-[[scheduled.functions]]
   name = "todo-summary-runner"
   schedule = "*/30 * * * *"
 
@@ -277,56 +187,10 @@
   name = "auto-scheduler"
   schedule = "*/15 * * * *" # every 15 minutes
 
-# From main (keep)
 [[scheduled.functions]]
   name = "autonomous-innovation-generator"
   schedule = "*/2 * * * *" # every 2 minutes
 
 [[scheduled.functions]]
-  name = "seo-audit-runner"
-  schedule = "17 */6 * * *"
-
-[[scheduled.functions]]
-  name = "ai-trends-radar-runner"
-  schedule = "0 * * * *"
-
-[[scheduled.functions]]
-  name = "website-search-index-runner"
-  schedule = "29 */4 * * *"
-
-# From feature branch (keep)
-[[scheduled.functions]]
-  name = "automation-guardian-runner"
-  schedule = "*/10 * * * *" # every 10 minutes
-
-[[scheduled.functions]]
-  name = "auto-discovery-runner"
-  schedule = "*/30 * * * *" # every 30 minutes
-
-[[scheduled.functions]]
-  name = "cloud-autonomous-orchestrator-runner"
-  schedule = "*/15 * * * *" # every 15 minutes
-
-[[scheduled.functions]]
-  name = "branch-cleanup-runner"
-  schedule = "0 3 * * *" # daily at 03:00 UTC
-
-[[scheduled.functions]]
-  name = "stale-content-auditor-runner"
-  schedule = "17 */6 * * *"
-
-[[scheduled.functions]]
-  name = "deps-auto-upgrade-runner"
-  schedule = "7 */12 * * *"
-
-[[scheduled.functions]]
-  name = "content-gap-analyzer"
-  schedule = "*/7 * * * *"
-
-[[scheduled.functions]]
-  name = "cta-optimizer"
-  schedule = "*/9 * * * *"
-
-[[scheduled.functions]]
-  name = "ultra-innovation-accelerator"
-  schedule = "*/3 * * * *"
+  name = "autonomous-cloud-inventions"
+  schedule = "*/2 * * * *" # every 2 minutes

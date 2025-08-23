@@ -2,33 +2,10 @@ import React from 'react';
 import SEO from '../components/SEO';
 import Link from 'next/link';
 
-  return (
-    <Layout>
-      <div className="min-h-screen bg-gradient-to-br from-black via-gray-900 to-black text-white">
-        {/* Hero Section */}
-        <section className="pt-32 pb-20 px-4">
-          <div className="max-w-6xl mx-auto text-center">
-            <div className="flex justify-center mb-6">
-              <div className="w-24 h-24 bg-gradient-to-br from-blue-500 via-cyan-500 to-green-600 rounded-3xl flex items-center justify-center">
-                <Brain className="w-12 h-12 text-white" />
-              </div>
-            </div>
-            <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-blue-400 via-cyan-500 to-green-600 bg-clip-text text-transparent">
-              RAG Evaluation Lab
-            </h1>
-            <p className="text-xl md:text-2xl text-gray-300 mb-8 max-w-3xl mx-auto">
-              Comprehensive evaluation and optimization platform for Retrieval-Augmented Generation systems
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="px-8 py-4 bg-gradient-to-r from-blue-500 to-cyan-600 text-white font-semibold rounded-lg hover:from-blue-600 hover:to-cyan-700 transition-all duration-300 transform hover:scale-105">
-                Start Evaluation
-              </button>
-              <button className="px-8 py-4 border-2 border-cyan-400 text-cyan-400 font-semibold rounded-lg hover:bg-cyan-400 hover:text-black transition-all duration-300 transform hover:scale-105">
-                Learn More
-              </button>
-            </div>
-          </div>
-        </section>
+export default function RAGEvaluationLabPage() {
+	const title = 'RAG Evaluation Lab — Zion Tech Group';
+	const description = 'Measure answer quality, hallucination rate, latency, and cost of your RAG pipelines with production-grade evals and CI gates.';
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
 
 	return (
 		<>
@@ -48,3 +25,4 @@ import Link from 'next/link';
 		</>
 	);
 }
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96

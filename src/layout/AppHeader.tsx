@@ -3,7 +3,8 @@ import { useState } from 'react';
 import { useMessaging } from '@/context/MessagingContext';
 import { MainNavigation } from './MainNavigation';
 import { Logo } from '@/components/header/Logo';
-import { Container } from '@/components/Container';
+import { LanguageSelector } from '@/components/header/LanguageSelector';
+import { CurrencySelector } from '@/components/header/CurrencySelector';
 import { useTranslation } from 'react-i18next';
 import { Menu, X } from 'lucide-react';
 import { MobileMenu } from '@/components/header/MobileMenu';
@@ -13,6 +14,7 @@ import { MobileBottomNav } from '@/components/header/MobileBottomNav';
 export function AppHeader() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const isMobile = useIsMobile();
+  const { t } = useTranslation();
   
   // Try to access the messaging context, but provide a fallback value if it's not available
   let unreadCount = 0;
@@ -25,14 +27,8 @@ export function AppHeader() {
   
   return (
     <>
-      <header
-        style={{ "--nav-height": "64px" } as React.CSSProperties}
-        className={cn(
-          "sticky top-0 z-50 w-full border-b border-border bg-background/90 backdrop-blur-md text-foreground",
-          { "bg-red-500": mobileMenuOpen }
-        )}
-      >
-        <Container className="flex h-16 items-center">
+      <header className="sticky top-0 z-50 w-full border-b border-zion-purple/20 bg-zion-blue-dark/90 backdrop-blur-md">
+        <div className="container flex h-16 items-center px-4 sm:px-6">
           <Logo />
           <div className="ml-6 flex-1 hidden md:block">
             <MainNavigation unreadCount={unreadCount} />
@@ -44,9 +40,9 @@ export function AppHeader() {
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               className="inline-flex items-center justify-center rounded-md p-2 text-white/70 hover:text-white hover:bg-zion-purple/10 focus:outline-none"
               aria-expanded={mobileMenuOpen}
-              aria-label="Toggle mobile menu"
+              aria-label={t('general.toggle_mobile_menu')}
             >
-              <span className="sr-only">Open main menu</span>
+              <span className="sr-only">{t('general.open_main_menu')}</span>
               {mobileMenuOpen ? (
                 <X className="block h-6 w-6" aria-hidden="true" />
               ) : (
@@ -55,42 +51,9 @@ export function AppHeader() {
             </button>
           </div>
 
-          <PointsBadge />
-          {!isLoggedIn && (
-            <div className="ml-4 relative z-10 flex items-center">
-              <Link
-                href="/auth/login"
-                className="text-sm font-medium text-foreground/70 hover:text-foreground"
-                aria-label={t('auth.login')}
-                data-testid="login-link"
-                onClick={(e) => {
-                  e.preventDefault();
-                  // For the main login link, we might not have a specific returnTo beyond current page,
-                  // or we could default to dashboard.
-                  // For consistency with how sub-menus now set it:
-                  router.push({ pathname: '/auth/login', query: { returnTo: router.asPath } }, undefined, { shallow: true });
-                  openLoginModal(router.asPath);
-                }}
-              >
-                {t('auth.login')}
-              </Link>
-              <Link
-                href="/signup"
-                className="ml-2 text-sm font-medium text-foreground/70 hover:text-foreground"
-                aria-label={t('auth.signup')}
-                data-testid="signup-nav-link"
-              >
-                {t('auth.signup')}
-              </Link>
-            </div>
-          )}
-          {/* User avatar menu */}
-          {isLoggedIn && (
-            <div className="ml-4">
-              <UserMenu />
-            </div>
-          )}
-        </Container>
+          <CurrencySelector />
+          <LanguageSelector />
+        </div>
       </header>
       
       {/* Mobile menu - positioned outside of header to prevent overlap issues */}
@@ -101,7 +64,7 @@ export function AppHeader() {
             onClick={() => setMobileMenuOpen(false)}
             aria-hidden="true"
           />
-          <div className="relative bg-gray-900 border-t border-green-700/20 h-auto max-h-[calc(100vh-4rem)] overflow-y-auto">
+          <div className="relative bg-zion-blue-dark border-t border-zion-purple/20 h-auto max-h-[calc(100vh-4rem)] overflow-y-auto">
             <MobileMenu 
               unreadCount={unreadCount} 
               onClose={() => setMobileMenuOpen(false)} 

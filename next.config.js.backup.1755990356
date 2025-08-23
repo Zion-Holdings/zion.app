@@ -1,0 +1,210 @@
+/** @type {import('next').NextConfig} */
+const nextConfig = {
+<<<<<<< HEAD
+  // Enable React strict mode for better development experience
+  reactStrictMode: true,
+  
+  // Enhanced performance optimizations
+  experimental: {
+    optimizePackageImports: ['lucide-react', 'framer-motion'],
+    turbo: {
+      rules: {
+        '*.svg': {
+          loaders: ['@svgr/webpack'],
+          as: '*.js',
+        },
+      },
+    },
+  },
+  
+  // Bundle analyzer for development
+  ...(process.env.ANALYZE === 'true' && {
+    webpack: (config) => {
+      config.plugins.push(
+        new (require('@next/bundle-analyzer'))({
+          enabled: true,
+        })
+      );
+      return config;
+    },
+  }),
+  
+  // Enhanced compression
+  compress: true,
+  
+  // Optimize images
+  images: {
+    formats: ['image/webp', 'image/avif'],
+    deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048, 3840],
+    imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
+    minimumCacheTTL: 60,
+  },
+
+  // Compression and optimization
+  compress: true,
+  poweredByHeader: false,
+  generateEtags: false,
+
+  // Bundle analyzer
+  webpack: (config, { dev, isServer }) => {
+    // Optimize bundle splitting
+    if (!dev && !isServer) {
+      config.optimization.splitChunks = {
+        chunks: 'all',
+        cacheGroups: {
+          vendor: {
+            test: /[\\/]node_modules[\\/]/,
+            name: 'vendors',
+            chunks: 'all',
+            priority: 10,
+          },
+          common: {
+            name: 'common',
+            minChunks: 2,
+            chunks: 'all',
+            priority: 5,
+            reuseExistingChunk: true,
+          },
+        },
+      };
+    }
+
+    // SVG optimization
+    config.module.rules.push({
+      test: /\.svg$/,
+      use: ['@svgr/webpack'],
+    });
+
+    return config;
+  },
+
+  // Headers for performance
+  async headers() {
+    return [
+      {
+        source: '/(.*)',
+        headers: [
+          {
+            key: 'X-Content-Type-Options',
+            value: 'nosniff',
+          },
+          {
+            key: 'X-Frame-Options',
+            value: 'DENY',
+          },
+          {
+            key: 'X-XSS-Protection',
+            value: '1; mode=block',
+          },
+          {
+            key: 'Referrer-Policy',
+            value: 'origin-when-cross-origin',
+          },
+        ],
+      },
+      {
+        source: '/static/(.*)',
+        headers: [
+          {
+            key: 'Cache-Control',
+            value: 'public, max-age=31536000, immutable',
+          },
+        ],
+      },
+    ];
+  },
+
+  // Redirects for better UX
+  async redirects() {
+    return [
+      {
+        source: '/home',
+        destination: '/',
+        permanent: true,
+      },
+      {
+        source: '/services/ai',
+        destination: '/ai-services',
+        permanent: true,
+      },
+      {
+        source: '/services/quantum',
+        destination: '/quantum-services',
+        permanent: true,
+      },
+    ];
+  },
+
+  // Environment variables
+  env: {
+    CUSTOM_KEY: process.env.CUSTOM_KEY,
+  },
+
+  // Powered by header
+  poweredByHeader: false,
+
+  // Trailing slash
+  trailingSlash: false,
+
+  // Base path
+  basePath: '',
+
+  // Asset prefix
+  assetPrefix: '',
+
+  // Output configuration
+  output: 'standalone',
+  trailingSlash: false,
+  skipTrailingSlashRedirect: true,
+=======
+	reactStrictMode: true,
+	swcMinify: true,
+	// Optimize images
+	images: {
+		unoptimized: true,
+	},
+	// Optimize bundle
+	compiler: {
+		removeConsole: process.env.NODE_ENV === 'production',
+	},
+>>>>>>> origin/cursor/automate-all-existing-automations-and-clean-up-494d
+};
+
+  // Enhanced compress
+  compress: true,
+
+  // Enhanced devIndicators
+  devIndicators: {
+    buildActivity: true,
+    buildActivityPosition: 'bottom-right',
+  },
+
+  // Enhanced onDemandEntries
+  onDemandEntries: {
+    maxInactiveAge: 25 * 1000,
+    pagesBufferLength: 2,
+  },
+
+  // Enhanced pageExtensions
+  pageExtensions: ['tsx', 'ts', 'jsx', 'js'],
+
+  // Enhanced typescript
+  typescript: {
+    ignoreBuildErrors: false,
+  },
+
+  // Enhanced eslint
+  eslint: {
+    ignoreDuringBuilds: false,
+  },
+
+  // Enhanced swcMinify
+  swcMinify: true,
+
+  // Enhanced modularizeImports
+  modularizeImports: {
+    'lucide-react': {
+      transform: 'lucide-react/dist/esm/icons/{{kebabCase}}',
+    },
+  },
+};

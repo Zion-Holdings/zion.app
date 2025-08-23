@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { ArrowRight, Star, TrendingUp, Zap, Shield, Brain, Globe, Rocket, DollarSign, Users, Clock, Award } from 'lucide-react';
 import { revolutionary2036FuturisticServices } from '../data/revolutionary-2036-futuristic-services';
-import Layout from '../components/layout/Layout';
+import { Layout } from '../components/layout/Layout';
 
 const Revolutionary2036FuturisticServicesShowcase: React.FC = () => {
   const [selectedCategory, setSelectedCategory] = useState<string>('all');
@@ -277,7 +277,7 @@ const Revolutionary2036FuturisticServicesShowcase: React.FC = () => {
               className="grid grid-cols-2 md:grid-cols-4 gap-8"
             >
               {[
-                { name: 'Quantum Computing', icon: '⚛️', description: 'Next-generation computational power' },
+                { name: 'Quantum Computing', icon: '⚛️', description: 'ArrowRight-generation computational power' },
                 { name: 'AI Consciousness', icon: '🧠', description: 'Advanced neural consciousness' },
                 { name: 'Holographic Tech', icon: '✨', description: '3D immersive experiences' },
                 { name: 'Space Technology', icon: '🚀', description: 'Interplanetary solutions' }

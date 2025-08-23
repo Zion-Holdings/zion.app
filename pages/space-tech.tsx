@@ -1,143 +1,35 @@
 import React from 'react';
-import { motion } from 'framer-motion';
-import { 
-  Rocket, Zap, Cpu, Database, Shield, Cloud, 
-  Users, Target, TrendingUp, ArrowRight, Star,
-  CheckCircle, Brain, Atom, Globe, Code, Satellite
-} from 'lucide-react';
-import Link from 'next/link';
+import Head from 'next/head';
+import UltraAdvancedFuturisticBackground from '../components/ui/UltraAdvancedFuturisticBackground';
+import { Button } from '../components/ui/Button';
+import { Satellite, CheckCircle, Globe2 } from 'lucide-react';
 
-const SpaceTech: React.FC = () => {
-  const services = [
-    {
-      title: 'Space Resource Intelligence',
-      description: 'Advanced space technology solutions for resource discovery and management',
-      icon: <Satellite className="w-8 h-8" />,
-      features: ['Resource mapping', 'Satellite intelligence', 'Space analytics'],
-      href: '/space-resource-intelligence-2045',
-      badge: 'SPACE'
-    },
-    {
-      title: 'Space Mining Platform',
-      description: 'Revolutionary platform for space resource extraction and processing',
-      icon: <Rocket className="w-8 h-8" />,
-      features: ['Asteroid mining', 'Resource processing', 'Space logistics'],
-      href: '/space-resource-mining-platform',
-      badge: 'MINING'
-    },
-    {
-      title: 'Space AI Platform',
-      description: 'AI-powered space technology platform for autonomous operations',
-      icon: <Brain className="w-8 h-8" />,
-      features: ['Autonomous navigation', 'AI decision making', 'Space robotics'],
-      href: '/space-technology-ai-platform',
-      badge: 'AI-POWERED'
-    },
-    {
-      title: 'Satellite Technology',
-      description: 'Advanced satellite systems and communication networks',
-      icon: <Satellite className="w-8 h-8" />,
-      features: ['Satellite design', 'Communication systems', 'Earth observation'],
-      href: '/satellite-technology-solutions',
-      badge: 'SATELLITE'
-    },
-    {
-      title: 'Space Infrastructure',
-      description: 'Orbital infrastructure and space station technology',
-      icon: <Globe className="w-8 h-8" />,
-      features: ['Space stations', 'Orbital platforms', 'Space habitats'],
-      href: '/space-infrastructure-platform',
-      badge: 'INFRASTRUCTURE'
-    },
-    {
-      title: 'Space Consulting',
-      description: 'Strategic space technology consulting and implementation',
-      icon: <Users className="w-8 h-8" />,
-      features: ['Strategy development', 'Implementation planning', 'Training & support'],
-      href: '/space-consulting-services',
-      badge: 'EXPERT'
-    }
-  ];
-
-  const applications = [
-    {
-      title: 'Resource Exploration',
-      description: 'Advanced exploration of space resources and materials',
-      icon: <Target className="w-6 h-6" />
-    },
-    {
-      title: 'Satellite Communications',
-      description: 'Global communication networks and data transmission',
-      icon: <Satellite className="w-6 h-6" />
-    },
-    {
-      title: 'Earth Observation',
-      description: 'Environmental monitoring and climate research',
-      icon: <Globe className="w-6 h-6" />
-    },
-    {
-      title: 'Space Tourism',
-      description: 'Commercial space travel and experience platforms',
-      icon: <Rocket className="w-6 h-6" />
-    },
-    {
-      title: 'Space Manufacturing',
-      description: 'Zero-gravity manufacturing and material processing',
-      icon: <Cpu className="w-6 h-6" />
-    },
-    {
-      title: 'Deep Space Exploration',
-      description: 'Interplanetary missions and scientific research',
-      icon: <Atom className="w-6 h-6" />
-    }
-  ];
-
-  const technologies = [
-    {
-      title: 'Propulsion Systems',
-      description: 'Advanced propulsion technologies for space travel',
-      icon: <Rocket className="w-8 h-8" />
-    },
-    {
-      title: 'Life Support Systems',
-      description: 'Sustainable life support for long-duration space missions',
-      icon: <Shield className="w-8 h-8" />
-    },
-    {
-      title: 'Space Robotics',
-      description: 'Autonomous robotic systems for space operations',
-      icon: <Cpu className="w-8 h-8" />
-    },
-    {
-      title: 'Space Materials',
-      description: 'Advanced materials designed for space environments',
-      icon: <Atom className="w-8 h-8" />
-    }
+export default function SpaceTechPage() {
+  const features = [
+    'Mission control dashboards and telemetry pipelines',
+    'Satellite operations playbooks and anomaly response',
+    'Ground station integrations and data delivery SLAs',
+    'Secure communications and zero-trust segmentation',
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-black via-gray-900 to-black text-white">
-      {/* Hero Section */}
-      <section className="relative overflow-hidden py-20 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-          >
-            <h1 className="text-5xl md:text-7xl font-bold bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 bg-clip-text text-transparent mb-6">
-              Space Technology
-            </h1>
-            <p className="text-xl md:text-2xl text-gray-300 max-w-4xl mx-auto mb-8">
-              Revolutionary space technology solutions that push the boundaries of human exploration and commercial space operations
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link href="/contact" className="bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-600 hover:to-blue-700 text-white px-8 py-4 rounded-xl font-semibold text-lg transition-all duration-300 transform hover:scale-105">
-                Get Started
-              </Link>
-              <Link href="/case-studies" className="border border-cyan-500/50 text-cyan-400 hover:bg-cyan-500/10 px-8 py-4 rounded-xl font-semibold text-lg transition-all duration-300">
-                View Case Studies
-              </Link>
+    <UltraAdvancedFuturisticBackground>
+      <Head>
+        <title>Space Technology | Zion Tech Group</title>
+        <meta name="description" content="Space mission control, satellite operations, and secure communications consulting." />
+        <link rel="canonical" href="https://ziontechgroup.com/space-tech" />
+      </Head>
+      <div className="min-h-screen pt-24 pb-20 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto space-y-12">
+          <header className="text-center">
+            <div className="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-gradient-to-r from-cyan-500 to-purple-600 mb-4">
+              <Satellite className="w-8 h-8 text-white" />
+            </div>
+            <h1 className="text-5xl md:text-7xl font-bold bg-gradient-to-r from-cyan-400 via-purple-500 to-pink-500 bg-clip-text text-transparent mb-4">Space Technology</h1>
+            <p className="text-gray-300 text-lg max-w-3xl mx-auto">Secure, reliable operations for space and earth observation missions.</p>
+            <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
+              <Link href="/contact" className="px-8 py-4">Discuss a Mission</Button>
+              <Link href="/market-pricing" variant="outline" className="px-8 py-4">See Market Pricing</Button>
             </div>
           </motion.div>
         </div>

@@ -1,8 +1,8 @@
 import React from 'react';
-import Layout from '../components/layout/Layout';
-import { motion } from 'framer-motion';
-import { Atom, Zap, Shield, Rocket, Brain, Cpu } from 'lucide-react';
-import Link from 'next/link';
+import Head from 'next/head';
+import UltraAdvancedFuturisticBackground from '../components/ui/UltraAdvancedFuturisticBackground';
+import { Button } from '../components/ui/Button';
+import { Atom, CheckCircle, Shield, Sparkles } from 'lucide-react';
 
 const QuantumServices: React.FC = () => {
   const quantumServices = [
@@ -63,31 +63,25 @@ const QuantumServices: React.FC = () => {
 
 export default function QuantumServices() {
   return (
-    <Layout>
-      <div className="min-h-screen bg-gradient-to-br from-black via-gray-900 to-black">
-        {/* Hero Section */}
-        <section className="relative py-20 px-4 overflow-hidden">
-          <div className="absolute inset-0 bg-gradient-to-r from-blue-500/10 via-purple-500/10 to-pink-500/10" />
-          <div className="relative z-10 max-w-7xl mx-auto text-center">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-              className="mb-8"
-            >
-              <div className="flex items-center justify-center mb-6">
-                <Atom className="w-16 h-16 text-blue-400 mr-4" />
-                <h1 className="text-5xl md:text-7xl font-bold bg-gradient-to-r from-blue-400 via-purple-500 to-pink-600 bg-clip-text text-transparent">
-                  Quantum Services
-                </h1>
-              </div>
-              <p className="text-xl md:text-2xl text-gray-300 max-w-4xl mx-auto leading-relaxed">
-                Revolutionary quantum computing solutions that solve previously impossible problems 
-                and unlock new possibilities across industries.
-              </p>
-            </motion.div>
-          </div>
-        </section>
+    <UltraAdvancedFuturisticBackground>
+      <Head>
+        <title>Quantum Services | Zion Tech Group</title>
+        <meta name="description" content="Quantum computing strategy, hybrid pipelines, and quantum-safe security initiatives." />
+        <link rel="canonical" href="https://ziontechgroup.com/quantum-services" />
+      </Head>
+      <div className="min-h-screen pt-24 pb-20 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto space-y-12">
+          <header className="text-center">
+            <div className="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-gradient-to-r from-cyan-500 to-purple-600 mb-4">
+              <Atom className="w-8 h-8 text-white" />
+            </div>
+            <h1 className="text-5xl md:text-7xl font-bold bg-gradient-to-r from-cyan-400 via-purple-500 to-pink-500 bg-clip-text text-transparent mb-4">Quantum Services</h1>
+            <p className="text-gray-300 text-lg max-w-3xl mx-auto">Pragmatic, vendor-neutral guidance on quantum opportunities and post-quantum security.</p>
+            <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
+              <Link href="/contact" className="px-8 py-4">Talk to Experts</Button>
+              <Link href="/market-pricing" variant="outline" className="px-8 py-4">See Market Pricing</Button>
+            </div>
+          </header>
 
         {/* Services Overview */}
         <section className="py-20 px-4">

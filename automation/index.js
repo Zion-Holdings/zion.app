@@ -1,255 +1,261 @@
 #!/usr/bin/env node
-/* eslint-disable @typescript-eslint/no-require-imports */
 
-require('dotenv').config();
+/**
+ * Intelligent Automation System - Main Entry Point
+ *
+ * This is the main entry point for the autonomous automation system.
+ * It initializes and starts the IntelligentAutomationOrchestrator which
+ * coordinates all automation components.
+ */
 
-const OptimizationSlackBot = require('./slack/slack-bot');
-const PerformanceMonitor = require('./performance/monitor');
-const express = require('express');
 const path = require('path');
+const fs = require('fs');
 
-class OptimizationAutomation {
-  constructor() {
-    this.slackBot = new OptimizationSlackBot();
-    this.performanceMonitor = new PerformanceMonitor();
-    this.app = express();
-    this.port = process.env.PORT || 3001;
-    
-    this.setupExpress();
-    this.setupAPIRoutes();
-    this.setupHealthChecks();
-  }
+// Load configuration
+function loadConfiguration() {
+  const configPath = path.join(__dirname, 'automation-config.json');
 
-  setupExpress() {
-    this.app.use(express.json());
-    this.app.use(express.urlencoded({ extended: true }));
-    
-    // CORS and basic middleware
-    this.app.use((req, res, next) => {
-      res.header('Access-Control-Allow-Origin', '*');
-      res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
-      next();
-    });
-
-    // Request logging
-    this.app.use((req, res, next) => {
-      const timestamp = new Date().toISOString();
-      // Use structured logging instead of console.log
-      process.stdout.write(`[${timestamp}] ${req.method} ${req.path}\n`);
-      next();
-    });
-  }
-
-  setupAPIRoutes() {
-    // Slack webhook endpoints
-    this.app.post('/api/slack/events', async (req, res) => {
-      try {
-        // Handle Slack events
-        const { type, challenge, event } = req.body;
-        
-        if (type === 'url_verification') {
-          return res.send(challenge);
-        }
-        
-        if (type === 'event_callback' && event) {
-          await this.handleSlackEvent(event);
-        }
-        
-        res.status(200).send('OK');
-      } catch (error) {
-        // Use structured error logging
-        process.stderr.write(`[${new Date().toISOString()}] ERROR: Slack event error: ${error.message}\n`);
-        res.status(500).send('Error processing event');
-      }
-    });
-
-    // Manual optimization trigger
-    this.app.post('/api/optimization/trigger', async (req, res) => {
-      try {
-        const { target, reason, alert: _alert } = req.body;
-        
-        // Use structured logging for optimization triggers
-        process.stdout.write(`[${new Date().toISOString()}] 🚀 Manual optimization triggered: ${target} (reason: ${reason})\n`);
-        
-        const result = await this.slackBot.triggerOptimization(target);
-        
-        res.json({
-          success: true,
-          target,
-          reason,
-          result,
-          timestamp: new Date().toISOString()
-        });
-      } catch (error) {
-        // Use structured error logging
-        process.stderr.write(`[${new Date().toISOString()}] ERROR: Optimization trigger error: ${error.message}\n`);
-        res.status(500).json({
-          success: false,
-          error: error.message
-        });
-      }
-    });
-
-    // Performance status endpoint
-    this.app.get('/api/performance/status', async (req, res) => {
-      try {
-        const status = await this.slackBot.getPerformanceStatus();
-        res.json(status);
-      } catch (error) {
-        process.stderr.write(`[${new Date().toISOString()}] ERROR: Performance status error: ${error.message}\n`);
-        res.status(500).json({ error: error.message });
-      }
-    });
-
-    // Performance metrics endpoint
-    this.app.get('/api/performance/metrics', async (req, res) => {
-      try {
-        const metrics = await this.performanceMonitor.getMetrics();
-        res.json(metrics);
-      } catch (error) {
-        process.stderr.write(`[${new Date().toISOString()}] ERROR: Performance metrics error: ${error.message}\n`);
-        res.status(500).json({ error: error.message });
-      }
-    });
-
-    // Performance history endpoint
-    this.app.get('/api/performance/history', async (req, res) => {
-      try {
-        const hours = parseInt(req.query.hours) || 24;
-        const history = await this.performanceMonitor.getHistory(hours);
-        res.json(history);
-      } catch (error) {
-        process.stderr.write(`[${new Date().toISOString()}] ERROR: Performance history error: ${error.message}\n`);
-        res.status(500).json({ error: error.message });
-      }
-    });
-
-    // Dashboard routes
-    this.app.get('/dashboard', (req, res) => {
-      res.sendFile(path.join(__dirname, 'dashboard', 'index.html'));
-    });
-
-    this.app.get('/slack-status', (req, res) => {
-      res.json({
-        slackBot: 'running',
-        performanceMonitor: this.performanceMonitor.isMonitoring ? 'running' : 'stopped',
-        uptime: process.uptime(),
-        timestamp: new Date().toISOString()
-      });
-    });
-  }
-
-  setupHealthChecks() {
-    this.app.get('/health', (req, res) => {
-      res.json({
-        status: 'healthy',
-        uptime: process.uptime(),
-        timestamp: new Date().toISOString(),
-        components: {
-          slackBot: 'running',
-          performanceMonitor: this.performanceMonitor.isMonitoring ? 'running' : 'stopped',
-          express: 'running'
-        }
-      });
-    });
-
-    this.app.get('/version', (req, res) => {
-      const packageJson = require('../package.json');
-      res.json({
-        name: packageJson.name,
-        version: packageJson.version,
-        automation: 'v1.0.0'
-      });
-    });
-  }
-
-  async handleSlackEvent(event) {
-    switch (event.type) {
-      case 'performance_alert':
-        await this.slackBot.app.client.emit('performance_alert', { event });
-        break;
-      case 'optimization_complete':
-        await this.slackBot.app.client.emit('optimization_complete', { event });
-        break;
-      default:
-        process.stdout.write(`[${new Date().toISOString()}] ⚠️ Unhandled event type: ${event.type}\n`);
-    }
-  }
-
-  async start() {
+  if (fs.existsSync(configPath)) {
     try {
-      process.stdout.write(`[${new Date().toISOString()}] 🚀 Starting Optimization Automation System...\n`);
-      
-      // Start performance monitoring
-      if (process.env.ENABLE_PERFORMANCE_MONITORING === 'true') {
-        await this.performanceMonitor.start();
-      }
-      
-      // Start Slack bot
-      if (process.env.ENABLE_SLACK_COMMANDS === 'true') {
-        await this.slackBot.start();
-      }
-      
-      // Start Express server for API endpoints
-      this.server = this.app.listen(this.port, () => {
-        process.stdout.write(`[${new Date().toISOString()}] ⚡ Optimization API server running on port ${this.port}\n`);
-      });
-      
-      const timestamp = new Date().toISOString();
-      process.stdout.write(`[${timestamp}] ✅ Optimization Automation System started successfully!\n`);
-      process.stdout.write(`[${timestamp}] 📊 Dashboard: http://localhost:${this.port}/dashboard\n`);
-      process.stdout.write(`[${timestamp}] 🔧 API: http://localhost:${this.port}/api\n`);
-      process.stdout.write(`[${timestamp}] 💚 Health: http://localhost:${this.port}/health\n`);
-      
+      const configData = fs.readFileSync(configPath, 'utf8');
+      return JSON.parse(configData);
     } catch (error) {
-      process.stderr.write(`[${new Date().toISOString()}] ❌ Failed to start automation system: ${error.message}\n`);
-      process.exit(1);
+      console.warn(
+        '⚠️ Failed to load automation-config.json, using defaults:',
+        error.message,
+      );
     }
   }
 
-  async stop() {
+  // Load infinite improvement configuration
+  const infiniteConfigPath = path.join(__dirname, 'infinite-improvement-config.json');
+  let infiniteConfig = {};
+  
+  if (fs.existsSync(infiniteConfigPath)) {
     try {
-      process.stdout.write(`[${new Date().toISOString()}] ⏹️ Stopping Optimization Automation System...\n`);
-      
-      if (this.performanceMonitor) {
-        await this.performanceMonitor.stop();
-      }
-      
-      if (this.server) {
-        await new Promise((resolve) => {
-          this.server.close(resolve);
-        });
-      }
-      
-              process.stdout.write(`[${new Date().toISOString()}] ✅ Automation system stopped\n`);
+      const infiniteConfigData = fs.readFileSync(infiniteConfigPath, 'utf8');
+      infiniteConfig = JSON.parse(infiniteConfigData);
     } catch (error) {
-              process.stderr.write(`[${new Date().toISOString()}] ❌ Error stopping automation system: ${error.message}\n`);
+      console.warn('⚠️ Failed to load infinite-improvement-config.json:', error.message);
     }
+  }
+
+  // Default configuration
+  return {
+    autonomous: {
+      enabled: true,
+      selfHealing: true,
+      learning: true,
+      adaptiveScheduling: true,
+    },
+    monitoring: {
+      enabled: true,
+      interval: 60000,
+      healthCheckInterval: 300000,
+    },
+    reporting: {
+      enabled: true,
+      daily: true,
+      weekly: true,
+      monthly: false,
+    },
+    dashboard: {
+      enabled: true,
+      port: process.env.DASHBOARD_PORT || 3001,
+    },
+    tasks: {
+      dependencyUpdater: {
+        enabled: true,
+        interval: 24 * 60 * 60 * 1000,
+      },
+      securityScanner: {
+        enabled: true,
+        interval: 6 * 60 * 60 * 1000,
+      },
+      codeQualityEnforcer: {
+        enabled: true,
+        interval: 2 * 60 * 60 * 1000,
+      },
+      staleCleaner: {
+        enabled: true,
+        interval: 12 * 60 * 60 * 1000,
+      },
+    },
+    notifications: {
+      slack: {
+        enabled: !!process.env.SLACK_WEBHOOK_URL,
+        webhookUrl: process.env.SLACK_WEBHOOK_URL,
+        channel: process.env.SLACK_CHANNEL || '#automation',
+      },
+      email: {
+        enabled: false,
+      },
+    },
+    // Merge infinite improvement configuration
+    ...infiniteConfig
+  };
+}
+
+// Initialize the automation system
+async function main() {
+  try {
+    const config = loadConfiguration();
+
+    console.log('🚀 Starting Intelligent Automation System...');
+    console.log('📋 Configuration loaded successfully');
+
+    // Import and initialize the orchestrator
+    const {
+      IntelligentAutomationOrchestrator,
+    } = require('./intelligent-automation-orchestrator');
+
+    // Import infinite improvement loop
+    const { InfiniteImprovementLoop } = require('./infinite-improvement-loop');
+    const { InfiniteImprovementLauncher } = require('./infinite-improvement-launcher');
+
+    const orchestrator = new IntelligentAutomationOrchestrator(config);
+    
+    // Initialize infinite improvement loop if enabled
+    let improvementLoop = null;
+    let improvementLauncher = null;
+    
+    if (config.infiniteImprovement?.enabled) {
+      console.log('🔄 Initializing Infinite Improvement Loop...');
+      
+      try {
+        improvementLauncher = new InfiniteImprovementLauncher({
+          enableInfiniteLoop: true,
+          enableOrchestrator: false, // We already have the orchestrator
+          enableIntegration: true,
+          dashboardPort: config.infiniteImprovement.dashboardPort || 3002,
+          logLevel: config.infiniteImprovement.logLevel || 'info'
+        });
+        
+        await improvementLauncher.initialize();
+        console.log('✅ Infinite Improvement Loop initialized');
+      } catch (error) {
+        console.warn('⚠️ Failed to initialize Infinite Improvement Loop:', error.message);
+      }
+    }
+
+    // Parse command line arguments
+    const args = parseArguments();
+
+    if (args.help) {
+      showHelp();
+      return;
+    }
+
+    // Start the automation system
+    await orchestrator.start();
+
+    // Start infinite improvement loop if available
+    if (improvementLauncher) {
+      try {
+        await improvementLauncher.start();
+        console.log('✅ Infinite Improvement Loop started successfully');
+      } catch (error) {
+        console.warn('⚠️ Failed to start Infinite Improvement Loop:', error.message);
+      }
+    }
+
+    console.log('✅ Intelligent Automation System started successfully');
+
+    // Keep the process running
+    process.on('SIGINT', async () => {
+      console.log('\n🛑 Shutting down automation system...');
+      
+      // Stop infinite improvement loop first
+      if (improvementLauncher) {
+        try {
+          await improvementLauncher.stop();
+          console.log('✅ Infinite Improvement Loop stopped');
+        } catch (error) {
+          console.warn('⚠️ Error stopping Infinite Improvement Loop:', error.message);
+        }
+      }
+      
+      // Stop orchestrator
+      await orchestrator.stop();
+      process.exit(0);
+    });
+  } catch (error) {
+    console.error('❌ Failed to start automation system:', error);
+    process.exit(1);
   }
 }
 
-// CLI handling
+function parseArguments() {
+  const args = process.argv.slice(2);
+  const parsed = {
+    help: false,
+    watch: false,
+    daemon: false,
+    config: null,
+  };
+
+  for (let i = 0; i < args.length; i++) {
+    const arg = args[i];
+
+    switch (arg) {
+      case '--help':
+      case '-h':
+        parsed.help = true;
+        break;
+      case '--watch':
+      case '-w':
+        parsed.watch = true;
+        break;
+      case '--daemon':
+      case '-d':
+        parsed.daemon = true;
+        break;
+      case '--config':
+      case '-c':
+        parsed.config = args[++i];
+        break;
+      default:
+        console.warn(`⚠️ Unknown argument: ${arg}`);
+    }
+  }
+
+  return parsed;
+}
+
+function showHelp() {
+  console.log(`
+🤖 Intelligent Automation System
+
+Usage: node automation/index.js [options]
+
+Options:
+  -h, --help     Show this help message
+  -w, --watch    Enable file watching mode
+  -d, --daemon   Run as daemon process
+  -c, --config   Specify custom config file
+
+Examples:
+  node automation/index.js
+  node automation/index.js --watch
+  node automation/index.js --daemon
+
+Features:
+  • Autonomous Git operations (commit, push, conflict resolution)
+  • Performance monitoring and optimization
+  • Security scanning and vulnerability detection
+  • Code quality enforcement
+  • Intelligent decision making
+  • Self-healing and error recovery
+  • Real-time reporting and notifications
+  `);
+}
+
+// Run the main function
 if (require.main === module) {
-  const automation = new OptimizationAutomation();
-  
-  // Handle process signals
-  process.on('SIGINT', async () => {
-    process.stdout.write(`\n[${new Date().toISOString()}] 🛑 Received SIGINT, shutting down gracefully...\n`);
-    await automation.stop();
-    process.exit(0);
-  });
-
-  process.on('SIGTERM', async () => {
-    process.stdout.write(`\n[${new Date().toISOString()}] 🛑 Received SIGTERM, shutting down gracefully...\n`);
-    await automation.stop();
-    process.exit(0);
-  });
-
-  // Start the system
-  automation.start().catch(error => {
-    process.stderr.write(`[${new Date().toISOString()}] ❌ Failed to start automation: ${error.message}\n`);
+  main().catch((error) => {
+    console.error('❌ Fatal error:', error);
     process.exit(1);
   });
 }
 
-module.exports = OptimizationAutomation;
+module.exports = { main, loadConfiguration };

@@ -1,62 +1,47 @@
-const { execSync } = require('child_process');
-const fs = require('fs');
+// homepage_advertiser.js
+const { spawn } = require('child_process');
 const path = require('path');
 
-exports.handler = async function(event, context) {
-  console.log('🤖 Starting homepage_advertiser...');
-  
-  try {
-    // Placeholder implementation - replace with actual logic
-    const timestamp = new Date().toISOString();
-    const reportPath = path.join(process.cwd(), 'homepage-advertiser-report.md');
-    
-    const reportContent = `# homepage_advertiser Report
+exports.config = {
+  schedule: '*/10 * * * *', // every 10 minutes
+};
 
-Generated: ${timestamp}
+function runNodeScript(scriptPath, args = []) {
+  return new Promise((resolve) => {
+    const child = spawn('node', [scriptPath, ...args], {
+      cwd: path.join(__dirname, '..', '..'),
+      stdio: ['ignore', 'pipe', 'pipe'],
+      env: process.env,
+    });
 
-## Status
-- Task: homepage_advertiser
-- Status: Completed
-- Timestamp: ${timestamp}
+    let stdout = '';
+    let stderr = '';
 
-## Next Steps
-- Implement actual homepage_advertiser functionality
-- Add proper error handling
-- Add logging and monitoring
-`;
+    child.stdout.on('data', (d) => { stdout += d.toString(); });
+    child.stderr.on('data', (d) => { stderr += d.toString(); });
 
-    fs.writeFileSync(reportPath, reportContent);
-    console.log('📝 Report generated');
-    
-    // Commit the report
-    try {
-      execSync('git add ' + reportPath, { stdio: 'inherit' });
-      execSync('git commit -m "🤖 Add homepage_advertiser report [skip ci]"', { stdio: 'inherit' });
-      execSync('git push', { stdio: 'inherit' });
-      console.log('✅ Report committed and pushed');
-    } catch (gitError) {
-      console.log('Git error:', gitError.message);
-    }
-    
-    console.log('✅ homepage_advertiser completed successfully');
-    
-    return {
-      statusCode: 200,
-      body: JSON.stringify({
-        message: 'homepage_advertiser completed successfully',
-        timestamp: timestamp
-      })
-    };
-    
-  } catch (error) {
-    console.error('❌ homepage_advertiser failed:', error.message);
-    
-    return {
-      statusCode: 500,
-      body: JSON.stringify({
-        error: error.message,
-        timestamp: new Date().toISOString()
-      })
-    };
-  }
+    child.on('close', (code) => {
+      resolve({ code, stdout, stderr });
+    });
+  });
+}
+
+exports.handler = async () => {
+  const script = path.join(process.cwd(), 'automation', 'homepage-auto-advertiser.cjs');
+  const result = await runNodeScript(script);
+
+  const ok = result.code === 0 || /Homepage updated between markers|No changes needed/.test(result.stdout);
+
+  return {
+    statusCode: ok ? 200 : 500,
+    headers: { 'content-type': 'application/json' },
+    body: JSON.stringify({
+      ok,
+      code: result.code,
+      stdout: result.stdout.slice(-4000),
+      stderr: result.stderr.slice(-4000),
+      ran: 'automation/homepage-auto-advertiser.cjs',
+    }),
+  };
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
 };

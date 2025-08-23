@@ -82,15 +82,8 @@ const InnovativeServicesShowcase2025: React.FC = () => {
     <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900">
       <SEO 
         title="2025 Innovative Services Showcase | Zion Tech Group"
-        description="Discover our cutting-edge 2025 innovative services including AI automation, next-gen infrastructure, specialized industry solutions, and revolutionary micro SAAS platforms."
-        keywords={[
-          'innovative services 2025',
-          'AI automation',
-          'next-gen infrastructure',
-          'specialized solutions',
-          'micro SAAS',
-          'Zion Tech Group'
-        ]}
+        description="Discover our cutting-edge 2025 innovative services including AI automation, IT infrastructure, micro SAAS solutions, and emerging technology services."
+        keywords="2025 innovative services, AI automation, IT infrastructure, micro SAAS, emerging technology, Zion Tech Group"
       />
 
       {/* Hero Section */}

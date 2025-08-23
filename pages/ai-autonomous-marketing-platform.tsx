@@ -1,6 +1,6 @@
 import React from 'react';
 import Head from 'next/head';
-import Layout from '../components/layout/Layout';
+import { Layout } from '../components/layout/Layout';
 import { motion } from 'framer-motion';
 import { 
   Target, Brain, Zap, CheckCircle, ArrowRight, 
@@ -313,7 +313,7 @@ const AIAutonomousMarketingPlatform: React.FC = () => {
                     "White-label solutions",
                     "24/7 dedicated support",
                     "On-premise deployment"
-                  ]
+                  "
                 }
               ].map((plan, index) => (
                 <motion.div

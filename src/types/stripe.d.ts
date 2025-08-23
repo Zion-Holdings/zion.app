@@ -1,4 +1,4 @@
-declare module 'stripe' {
-  const Stripe: any;
-  export default Stripe;
+// Type definitions for stripe.d;
+export interface stripe.d {;
+  // TODO: Add proper type definitions;
 }

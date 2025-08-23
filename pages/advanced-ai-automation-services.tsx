@@ -3,15 +3,14 @@ import Head from 'next/head';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { 
-  CheckCircle, ArrowRight, Star, TrendingUp, Phone, Zap, DollarSign, 
-  Shield, Mail, MapPin, Rocket, Brain, Sparkles, Atom, Dna, Users, 
-  Globe, Cpu, Target, Microscope, Lock, Cloud, BarChart3, Settings, 
-  Eye, Award, Clock, Heart, Lightbulb, Target as TargetIcon, 
-  Zap as ZapIcon, Shield as ShieldIcon, Globe as GlobeIcon,
-  Search, Code, TestTube, Server, Database, Network, Shield as SecurityIcon
+  CheckCircle, ArrowRight, Star, TrendingUp, Phone, 
+  Brain, Sparkles, Users, 
+  BarChart3, Settings, 
+  Award, Code, TestTube, Server, Database, Shield as Shield, Mail
 } from 'lucide-react';
 import Layout from '../components/layout/Layout';
-import { advancedAIAutomationServices } from '../data/2025-advanced-ai-automation-services';
+import { advancedAIAutomationServices } from '../data/2026-advanced-ai-automation-services';
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
 
 const contactInfo = {
   mobile: '+1 302 464 0950',
@@ -56,7 +55,7 @@ const serviceCategories = [
     title: 'AI Cybersecurity',
     description: 'Proactive threat detection and response with AI',
     services: advancedAIAutomationServices.filter(s => s.category === 'AI Cybersecurity'),
-    icon: SecurityIcon,
+    icon: Shield,
     color: 'from-red-500 to-pink-600',
     features: ['Threat Detection', 'Incident Response', 'Security Automation']
   },

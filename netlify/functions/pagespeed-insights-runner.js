@@ -1,60 +1,33 @@
-const { execSync } = require('child_process');
 const fs = require('fs');
 const path = require('path');
 
-exports.handler = async function(event, context) {
-  console.log('🤖 Starting pagespeed-insights-runner...');
-  
-  try {
-    const timestamp = new Date().toISOString();
-    const reportPath = path.join(process.cwd(), 'pagespeed-insights-runner-report.md');
-    
-    const reportContent = `# pagespeed-insights-runner Report
+exports.config = { schedule: '11 */6 * * *' };
 
-Generated: ${timestamp}
+exports.handler = async () => {
+  const baseUrl = (process.env.SITE_URL || process.env.URL || process.env.DEPLOY_PRIME_URL || '').replace(/\/$/, '');
+  const outDir = path.resolve(__dirname, '..', '..', 'public', 'reports', 'metadata');
+  try { fs.mkdirSync(outDir, { recursive: true }); } catch {}
 
-## Status
-- Task: pagespeed-insights-runner
-- Status: Completed
-- Timestamp: ${timestamp}
-
-## Next Steps
-- Implement actual pagespeed-insights-runner functionality
-- Add proper error handling
-- Add logging and monitoring
-`;
-
-    fs.writeFileSync(reportPath, reportContent);
-    console.log('📝 Report generated');
-    
+  const pages = ['/', '/automation', '/main/front'];
+  const results = [];
+  for (const p of pages) {
+    const url = baseUrl ? `${baseUrl}${p}` : p;
+    let status = 0;
+    let t0 = Date.now();
     try {
-      execSync('git add ' + reportPath, { stdio: 'inherit' });
-      execSync('git commit -m "🤖 Add pagespeed-insights-runner report [skip ci]"', { stdio: 'inherit' });
-      execSync('git push', { stdio: 'inherit' });
-      console.log('✅ Report committed and pushed');
-    } catch (gitError) {
-      console.log('Git error:', gitError.message);
+      const res = await fetch(url, { method: 'GET' });
+      status = res.status;
+    } catch (e) {
+      status = 0;
     }
-    
-    console.log('✅ pagespeed-insights-runner completed successfully');
-    
-    return {
-      statusCode: 200,
-      body: JSON.stringify({
-        message: 'pagespeed-insights-runner completed successfully',
-        timestamp: timestamp
-      })
-    };
-    
-  } catch (error) {
-    console.error('❌ pagespeed-insights-runner failed:', error.message);
-    
-    return {
-      statusCode: 500,
-      body: JSON.stringify({
-        error: error.message,
-        timestamp: new Date().toISOString()
-      })
-    };
+    const t = Date.now() - t0;
+    results.push({ path: p, status, ttfbMs: t });
   }
+
+  const payload = { generatedAt: new Date().toISOString(), baseUrl, results };
+  const latest = path.join(outDir, 'latest.json');
+  fs.writeFileSync(latest, JSON.stringify(payload, null, 2));
+
+  return { statusCode: 200, headers: { 'content-type': 'application/json' }, body: JSON.stringify(payload) };
 };
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96

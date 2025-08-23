@@ -1,9 +1,43 @@
-#!/bin/bash
+
+const winston = require('winston');
+
+const logger = winston.createLogger({
+  level: 'info',
+  format: winston.format.combine(
+    winston.format.timestamp(),
+    winston.format.errors({ stack: true }),
+    winston.format.json()
+  ),
+  defaultMeta: { service: 'automation-script' },
+  transports: [
+    new winston.transports.File({ filename: 'logs/error.log', level: 'error' }),
+    new winston.transports.File({ filename: 'logs/combined.log' })
+  ]
+});
+
+if (process.env.NODE_ENV !== 'production') {
+  logger.add(new winston.transports.Console({
+    format: winston.format.simple()
+  }));
+}
+
+
+class Script {
+  constructor() {
+    this.isRunning = false;
+  }
+
+  async start() {
+    this.isRunning = true;
+    logger.info('Starting Script...');
+    
+    try {
+      #!/bin/bash
 # Hourly audit script with npm audit and optional fix for critical vulnerabilities.
 
 LOG_DIR="logs/security"
 LOG_FILE_PATH="$LOG_DIR/hourly-fix.log"
-WEBHOOK_URL="${YOUR_WEBHOOK_URL_ENV_VAR:-}" # Populate from env var or leave empty
+_WEBHOOK_URL="${YOUR_WEBHOOK_URL_ENV_VAR:-}" # Populate from env var or leave empty
 
 # Create log directory if it doesn't exist
 mkdir -p "$LOG_DIR"
@@ -20,7 +54,7 @@ log_message() {
 }
 
 # Check for WEBHOOK_URL
-if [ -z "$WEBHOOK_URL" ]; then
+if [ -z "$_WEBHOOK_URL" ]; then
     log_message "Warning: WEBHOOK_URL is not set. Skipping notification."
 fi
 
@@ -29,14 +63,14 @@ if ! command -v jq >/dev/null 2>&1; then
   log_message "jq is not installed. Please install jq to parse audit results and send notifications. Exiting."
   # If WEBHOOK_URL was set, we might want to send a basic notification about jq missing.
   # For now, exiting is consistent with previous step.
-  if [ -n "$WEBHOOK_URL" ]; then
-      curl -X POST -H "Content-Type: application/json" -d '{"summary":"Error: jq is not installed in audit script. Cannot proceed or send detailed notification."}' "$WEBHOOK_URL" --silent > /dev/null 2>&1
+  if [ -n "$_WEBHOOK_URL" ]; then
+      curl -X POST -H "Content-Type: application/json" -d '{"summary":"Error: jq is not installed in audit script. Cannot proceed or send detailed notification."}' "$_WEBHOOK_URL" --silent > /dev/null 2>&1
   fi
   exit 1
 fi
 
 # Prerequisite check for curl (if webhook is to be used)
-if [ -n "$WEBHOOK_URL" ] && ! command -v curl >/dev/null 2>&1; then
+if [ -n "$_WEBHOOK_URL" ] && ! command -v curl >/dev/null 2>&1; then
   log_message "curl is not installed, but WEBHOOK_URL is set. Cannot send notification. Exiting."
   # No easy way to notify without curl itself.
   exit 1
@@ -204,7 +238,7 @@ fi
 log_message "Hourly audit script main processing completed."
 
 # Prepare final webhook payload
-if [ -n "$WEBHOOK_URL" ]; then
+if [ -n "$_WEBHOOK_URL" ]; then
     # Ensure counts are numbers for JSON
     json_payload=$(jq -n \
         --arg msg "$status_message" \
@@ -224,7 +258,7 @@ if [ -n "$WEBHOOK_URL" ]; then
     # Send the webhook notification and capture HTTP status code
     # Using a temp file for curl output to separate stdout from http_code
     curl_output_file=$(mktemp)
-    http_status_code=$(curl -X POST -H "Content-Type: application/json" -d "$json_payload" "$WEBHOOK_URL" -w "%{http_code}" -s -o "$curl_output_file")
+    http_status_code=$(curl -X POST -H "Content-Type: application/json" -d "$json_payload" "$_WEBHOOK_URL" -w "%{http_code}" -s -o "$curl_output_file")
     curl_response_body=$(cat "$curl_output_file")
     rm "$curl_output_file"
 
@@ -240,3 +274,40 @@ fi
 
 log_message "Hourly audit finished."
 exit 0 # Script itself finished, regardless of audit outcome or webhook success. Errors are logged.
+    } catch (error) {
+      logger.error('Error in Script:', error);
+      throw error;
+    }
+  }
+
+  stop() {
+    this.isRunning = false;
+    logger.info('Stopping Script...');
+  }
+}
+
+// Start the script
+if (require.main === module) {
+  const script = new Script();
+  script.start().catch(error => {
+    logger.error('Failed to start Script:', error);
+    process.exit(1);
+  });
+}
+
+module.exports = Script;
+
+
+// Graceful shutdown handling
+process.on('SIGINT', () => {
+  console.log('\n🛑 Received SIGINT, shutting down gracefully...');
+  // Add cleanup logic here
+  process.exit(0);
+});
+
+process.on('SIGTERM', () => {
+  console.log('\n🛑 Received SIGTERM, shutting down gracefully...');
+  // Add cleanup logic here
+  process.exit(0);
+});
+

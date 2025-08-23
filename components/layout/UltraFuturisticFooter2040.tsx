@@ -2,285 +2,265 @@ import React, { useState } from 'react';
 import Link from 'next/link';
 import { motion, AnimatePresence } from 'framer-motion';
 import { 
-  Phone, Mail, MapPin, Globe, ArrowRight, Star, Shield, Zap, Brain, Cpu, Code, Cloud,
-  Facebook, Twitter, Linkedin, Instagram, Youtube, Github, MessageCircle, Clock, Building
+  Globe, Phone, Mail, MapPin, 
+  Brain, Atom, Shield, Rocket, Target, 
+  Star, 
+  Twitter, Linkedin, Youtube, Github, 
+  ArrowUp, ArrowRight, ExternalLink, Heart, Zap
 } from 'lucide-react';
 
 const UltraFuturisticFooter2040: React.FC = () => {
+  const [expandedSections, setExpandedSections] = useState<Set<string>>(new Set());
+  const [showBackToTop, setShowBackToTop] = useState(false);
+
+  // Handle scroll to show/hide back to top button
+  React.useEffect(() => {
+    const handleScroll = () => {
+      setShowBackToTop(window.scrollY > 400);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  const toggleSection = (title: string) => {
+    const newExpanded = new Set(expandedSections);
+    if (newExpanded.has(title)) {
+      newExpanded.delete(title);
+    } else {
+      newExpanded.add(title);
+    }
+    setExpandedSections(newExpanded);
+  };
+
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
   const currentYear = new Date().getFullYear();
 
-  const footerSections = [
-    {
-      title: 'Services',
-      links: [
-        { name: 'AI & Machine Learning', href: '/services?category=ai-data' },
-        { name: 'IT Infrastructure', href: '/services?category=cloud-finops' },
-        { name: 'Micro SAAS Solutions', href: '/services?category=developer-tools' },
-        { name: 'Cybersecurity', href: '/services?category=cybersecurity' },
-        { name: 'Observability', href: '/services?category=observability' },
-        { name: 'View All Services', href: '/services' }
-      ]
-    },
-    {
-      title: 'Solutions',
-      links: [
-        { name: 'Enterprise Solutions', href: '/solutions' },
-        { name: 'AI Content Intelligence', href: '/services/ai-content-intelligence-platform' },
-        { name: 'Cloud Cost Optimization', href: '/services/cloud-cost-optimization-platform' },
-        { name: 'No-Code Automation', href: '/services/no-code-automation-platform' },
-        { name: 'DevOps Automation', href: '/services/devops-automation-platform' },
-        { name: 'Custom Development', href: '/contact' }
-      ]
-    },
-    {
-      title: 'Company',
-      links: [
-        { name: 'About Us', href: '/about' },
-        { name: 'Our Mission', href: '/mission' },
-        { name: 'Leadership Team', href: '/team' },
-        { name: 'Careers', href: '/careers' },
-        { name: 'Press & Media', href: '/press' },
-        { name: 'Contact Us', href: '/contact' }
-      ]
-    },
-    {
-      title: 'Resources',
-      links: [
-        { name: 'Documentation', href: '/docs' },
-        { name: 'API Reference', href: '/api' },
-        { name: 'Blog & Insights', href: '/blog' },
-        { name: 'Case Studies', href: '/case-studies' },
-        { name: 'Webinars', href: '/webinars' },
-        { name: 'Support Center', href: '/support' }
-      ]
-    }
-  ];
-
-  const socialLinks = [
-    { name: 'LinkedIn', href: 'https://linkedin.com/company/ziontechgroup', icon: Linkedin },
-    { name: 'Twitter', href: 'https://twitter.com/ziontechgroup', icon: Twitter },
-    { name: 'Facebook', href: 'https://facebook.com/ziontechgroup', icon: Facebook },
-    { name: 'Instagram', href: 'https://instagram.com/ziontechgroup', icon: Instagram },
-    { name: 'YouTube', href: 'https://youtube.com/ziontechgroup', icon: Youtube },
-    { name: 'GitHub', href: 'https://github.com/ziontechgroup', icon: Github }
-  ];
-
   return (
-    <footer className="relative bg-black/90 text-white overflow-hidden">
-      {/* Background Effects */}
-      <div className="absolute inset-0">
-        <div className="absolute inset-0 bg-gradient-to-t from-black via-gray-900/50 to-transparent" />
-        <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-cyan-400 to-transparent opacity-30" />
+    <footer className="bg-black/90 backdrop-blur-md border-t border-gray-800/50 relative overflow-hidden">
+      {/* Background Elements */}
+      <div className="absolute inset-0 pointer-events-none">
+        <div className="absolute top-0 left-1/4 w-32 h-32 border border-cyan-400/10 rounded-full animate-pulse"></div>
+        <div className="absolute bottom-0 right-1/4 w-24 h-24 border border-purple-400/10 rounded-full animate-pulse delay-1000"></div>
       </div>
 
-      <div className="relative z-10 max-w-7xl mx-auto px-4 py-16">
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Main Footer Content */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 mb-12">
-          {/* Company Info */}
-          <div className="lg:col-span-2">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-              viewport={{ once: true }}
-            >
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+          <div className="grid grid-cols-1 lg:grid-cols-4 gap-12">
+            {/* Company Info */}
+            <div className="lg:col-span-1">
               <div className="flex items-center space-x-3 mb-6">
-                <div className="w-10 h-10 bg-gradient-to-r from-cyan-400 to-blue-500 rounded-lg flex items-center justify-center">
-                  <Star className="w-6 h-6 text-white" />
+                <div className="w-12 h-12 bg-gradient-to-r from-cyan-500 to-purple-500 rounded-xl flex items-center justify-center">
+                  <Brain className="w-7 h-7 text-white" />
                 </div>
-                <h3 className="text-2xl font-bold bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
-                  Zion Tech Group
-                </h3>
+                <div>
+                  <h3 className="text-xl font-bold text-white">Zion Tech Group</h3>
+                  <p className="text-sm text-cyan-400">Future Technology Solutions</p>
+                </div>
               </div>
               
-              <p className="text-gray-300 mb-6 leading-relaxed">
-                Pioneering the future of technology with innovative AI, IT infrastructure, and micro SAAS solutions that drive business transformation and accelerate human progress.
+              <p className="text-white/70 mb-6 leading-relaxed">
+                Pioneering the future with cutting-edge AI, quantum technology, and innovative solutions that transform businesses and industries.
               </p>
+              <form className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
+                <input
+                  type="email"
+                  placeholder="Enter your email"
+                  className="flex-1 px-4 py-3 bg-gray-800/50 border border-gray-700/50 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:border-transparent"
+                  aria-label="Email address for newsletter"
+                />
+                <button
+                  type="submit"
+                  className="px-6 py-3 bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-semibold rounded-lg hover:from-cyan-600 hover:to-blue-700 transition-all duration-300 transform hover:scale-105"
+                >
+                  Subscribe
+                </button>
+              </form>
+            </div>
+          </motion.div>
 
-              {/* Contact Information */}
-              <div className="space-y-3">
-                <div className="flex items-center space-x-3 text-gray-300 hover:text-cyan-400 transition-colors">
-                  <Phone className="w-4 h-4 text-cyan-400" />
-                  <a href="tel:+13024640950" className="hover:text-cyan-400 transition-colors">
-                    +1 302 464 0950
-                  </a>
+          {/* Footer Sections Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+            {footerSections.map((section, index) => (
+              <motion.div
+                key={section.title}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+                viewport={{ once: true }}
+                className="space-y-4"
+              >
+                {/* Section Header */}
+                <div className="flex items-center space-x-2 mb-4">
+                  <div className={`p-2 rounded-lg bg-gradient-to-r ${section.color} bg-opacity-20`}>
+                    {section.icon}
+                  </div>
+                  <h3 className="text-lg font-semibold text-white">{section.title}</h3>
                 </div>
-                <div className="flex items-center space-x-3 text-gray-300 hover:text-purple-400 transition-colors">
-                  <Mail className="w-4 h-4 text-purple-400" />
-                  <a href="mailto:kleber@ziontechgroup.com" className="hover:text-purple-400 transition-colors">
-                    kleber@ziontechgroup.com
-                  </a>
-                </div>
-                <div className="flex items-center space-x-3 text-gray-300">
-                  <MapPin className="w-4 h-4 text-blue-400" />
-                  <span>364 E Main St STE 1008, Middletown DE 19709</span>
-                </div>
-              </div>
-            </motion.div>
-          </div>
+                
+                <p className="text-sm text-gray-400 mb-4">{section.description}</p>
 
-          {/* Footer Sections */}
-          {footerSections.map((section, index) => (
-            <motion.div
-              key={section.title}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: index * 0.1 }}
-              viewport={{ once: true }}
-            >
-              <h4 className="text-lg font-semibold mb-4 text-cyan-400">{section.title}</h4>
-              <ul className="space-y-3">
-                {section.links.map((link) => (
-                  <li key={link.name}>
-                    <Link 
+                {/* Mobile Expandable Links */}
+                <div className="lg:hidden">
+                  <button
+                    onClick={() => toggleSection(section.title)}
+                    className="flex items-center justify-between w-full text-left text-gray-300 hover:text-white transition-colors duration-200"
+                    aria-expanded={expandedSections.has(section.title)}
+                    aria-controls={`footer-${section.title}`}
+                  >
+                    <span>View Links</span>
+                    <ArrowRight className={`w-4 h-4 transition-transform duration-200 ${expandedSections.has(section.title) ? 'rotate-90' : ''}`} />
+                  </button>
+                  
+                  <AnimatePresence>
+                    {expandedSections.has(section.title) && (
+                      <motion.div
+                        id={`footer-${section.title}`}
+                        initial={{ opacity: 0, height: 0 }}
+                        animate={{ opacity: 1, height: 'auto' }}
+                        exit={{ opacity: 0, height: 0 }}
+                        transition={{ duration: 0.3 }}
+                        className="mt-2 space-y-2"
+                      >
+                        {section.links.map((link) => (
+                          <Link
+                            key={link.name}
+                            href={link.href}
+                            className="block text-sm text-gray-400 hover:text-cyan-400 transition-colors duration-200"
+                          >
+                            {link.name}
+                          </Link>
+                        ))}
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
+                </div>
+
+                {/* Desktop Links */}
+                <div className="hidden lg:block space-y-2">
+                  {section.links.slice(0, 6).map((link) => (
+                    <Link
+                      key={link.name}
                       href={link.href}
-                      className="text-gray-300 hover:text-cyan-400 transition-colors duration-200 text-sm"
+                      className="block text-sm text-gray-400 hover:text-cyan-400 transition-colors duration-200 group"
                     >
-                      {link.name}
+                      <span className="flex items-center space-x-2">
+                        <span>{link.name}</span>
+                        {link.featured && (
+                          <span className="inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium bg-yellow-500/20 text-yellow-400">
+                            Featured
+                          </span>
+                        )}
+                      </span>
                     </Link>
-                  </li>
-                ))}
-              </ul>
-            </motion.div>
-
-        {/* Service Highlights */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.3 }}
-          viewport={{ once: true }}
-          className="mb-12 p-8 bg-gradient-to-r from-cyan-500/10 to-purple-500/10 border border-cyan-400/20 rounded-xl backdrop-blur-sm"
-        >
-          <div className="text-center mb-6">
-            <h3 className="text-2xl font-bold text-cyan-400 mb-2">Featured Services</h3>
-            <p className="text-gray-300">Transform your business with our cutting-edge solutions</p>
+                  ))}
+                </div>
+              </motion.div>
+            ))}
           </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div className="text-center p-4 bg-black/20 rounded-lg border border-cyan-400/20">
-              <Brain className="w-8 h-8 text-cyan-400 mx-auto mb-3" />
-              <h4 className="font-semibold text-cyan-400 mb-2">AI Content Intelligence</h4>
-              <p className="text-sm text-gray-300 mb-3">AI-powered content optimization and analytics</p>
-              <div className="text-cyan-400 font-semibold">$499/month</div>
-            </div>
-            
-            <div className="text-center p-4 bg-black/20 rounded-lg border border-purple-400/20">
-              <Cloud className="w-8 h-8 text-purple-400 mx-auto mb-3" />
-              <h4 className="font-semibold text-purple-400 mb-2">Cloud Cost Optimization</h4>
-              <p className="text-sm text-gray-300 mb-3">AI-driven cloud cost management</p>
-              <div className="text-purple-400 font-semibold">$399/month</div>
-            </div>
-            
-            <div className="text-center p-4 bg-black/20 rounded-lg border border-green-400/20">
-              <Code className="w-8 h-8 text-green-400 mx-auto mb-3" />
-              <h4 className="font-semibold text-green-400 mb-2">No-Code Automation</h4>
-              <p className="text-sm text-gray-300 mb-3">Visual workflow automation platform</p>
-              <div className="text-green-400 font-semibold">$299/month</div>
-            </div>
-          </div>
-        </motion.div>
 
-        {/* Bottom Section */}
-        <div className="border-t border-gray-800 pt-8">
-          <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
-            {/* Copyright */}
-            <div className="text-gray-400 text-sm">
-              <p>&copy; {currentYear} Zion Tech Group. All rights reserved.</p>
-              <div className="flex items-center space-x-4 mt-2 text-xs">
-                <Link href="/privacy" className="hover:text-cyan-400 transition-colors">Privacy Policy</Link>
-                <Link href="/terms" className="hover:text-cyan-400 transition-colors">Terms of Service</Link>
-                <Link href="/cookies" className="hover:text-cyan-400 transition-colors">Cookie Policy</Link>
+          {/* Contact & Social Section */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.4 }}
+            viewport={{ once: true }}
+            className="grid grid-cols-1 lg:grid-cols-2 gap-8 py-8 border-t border-gray-800/50"
+          >
+            {/* Contact Information */}
+            <div className="space-y-4">
+              <h3 className="text-xl font-semibold text-white mb-4">Get in Touch</h3>
+              <div className="space-y-3">
+                <div className="flex items-center space-x-3">
+                  <Phone className="w-5 h-5 text-cyan-400" />
+                  <a href={`tel:${contactInfo.mobile}`} className="text-gray-300 hover:text-white transition-colors duration-200">
+                    {contactInfo.mobile}
+                  </a>
+                </div>
+                <div className="flex items-center space-x-3">
+                  <Mail className="w-5 h-5 text-cyan-400" />
+                  <a href={`mailto:${contactInfo.email}`} className="text-gray-300 hover:text-white transition-colors duration-200">
+                    {contactInfo.email}
+                  </a>
+                </div>
+                <div className="flex items-start space-x-3">
+                  <MapPin className="w-5 h-5 text-cyan-400 mt-0.5" />
+                  <address className="text-gray-300 not-italic">
+                    {contactInfo.address}
+                  </address>
+                </div>
               </div>
             </div>
 
             {/* Social Links */}
-            <div className="flex items-center space-x-4">
-              {socialLinks.map((social) => (
-                <a
-                  key={social.name}
-                  href={social.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-10 h-10 bg-gray-800 hover:bg-cyan-500/20 rounded-lg flex items-center justify-center text-gray-400 hover:text-cyan-400 transition-all duration-200 border border-gray-700 hover:border-cyan-400/40"
-                  aria-label={social.name}
-                >
-                  <social.icon className="w-5 h-5" />
-                </a>
-              ))}
-            </div>
-          </div>
-
-          {/* Trust Indicators */}
-          <div className="mt-8 pt-8 border-t border-gray-800">
-            <div className="flex flex-col md:flex-row justify-center items-center space-y-4 md:space-y-0 md:space-x-8 text-sm text-gray-400">
-              <div className="flex items-center space-x-2">
-                <Shield className="w-4 h-4 text-green-400" />
-                <span>Enterprise Security</span>
-              </div>
-              <div className="flex items-center space-x-2">
-                <Zap className="w-4 h-4 text-yellow-400" />
-                <span>99.9% Uptime</span>
-              </div>
-              <div className="flex items-center space-x-2">
-                <Globe className="w-4 h-4 text-blue-400" />
-                <span>Global Infrastructure</span>
-              </div>
-              <div className="flex items-center space-x-2">
-                <Star className="w-4 h-4 text-purple-400" />
-                <span>4.8/5 Customer Rating</span>
+            <div className="space-y-4">
+              <h3 className="text-xl font-semibold text-white mb-4">Follow Us</h3>
+              <div className="flex space-x-4">
+                {socialLinks.map((social) => (
+                  <a
+                    key={social.name}
+                    href={social.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="p-3 bg-gray-800/50 hover:bg-cyan-500/20 border border-gray-700/50 hover:border-cyan-400/50 rounded-lg transition-all duration-300 transform hover:scale-110"
+                    aria-label={`Follow us on ${social.name}`}
+                  >
+                    {social.icon}
+                  </a>
+                ))}
               </div>
             </div>
-          </div>
+          </motion.div>
         </div>
-      </div>
 
-      {/* Footer Bottom */}
-      <div className="py-8 px-4 border-t border-gray-800/50">
-        <div className="max-w-7xl mx-auto">
+        {/* Bottom Footer */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 0.6, delay: 0.6 }}
+          viewport={{ once: true }}
+          className="py-6 border-t border-gray-800/50"
+        >
           <div className="flex flex-col md:flex-row items-center justify-between space-y-4 md:space-y-0">
-            <motion.div
-              className="flex items-center space-x-6 text-sm text-gray-400"
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.6 }}
-              viewport={{ once: true }}
-            >
-              <span>&copy; 2024 Zion Tech Group. All rights reserved.</span>
-              <Link href="/privacy" className="hover:text-cyan-400 transition-colors duration-300">Privacy Policy</Link>
-              <Link href="/terms" className="hover:text-cyan-400 transition-colors duration-300">Terms of Service</Link>
-              <Link href="/cookies" className="hover:text-cyan-400 transition-colors duration-300">Cookie Policy</Link>
-            </motion.div>
-
-            <motion.button
-              onClick={scrollToTop}
-              className="group flex items-center space-x-2 px-4 py-2 bg-gradient-to-r from-gray-800/50 to-gray-700/50 border border-gray-600/50 text-gray-400 hover:text-cyan-400 hover:border-cyan-500/50 rounded-xl transition-all duration-300 transform hover:scale-105 hover:-translate-y-1"
-              whileHover={{ scale: 1.05, y: -2 }}
-              whileTap={{ scale: 0.95 }}
-              initial={{ opacity: 0, x: 20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.6 }}
-              viewport={{ once: true }}
-              aria-label="Scroll to top"
-            >
-              <ArrowUp className="w-4 h-4 group-hover:-translate-y-0.5 transition-transform duration-300" />
-              <span>Back to Top</span>
-            </motion.button>
+            <div className="flex items-center space-x-2 text-gray-400">
+              <span>© {currentYear} Zion Tech Group. Made with</span>
+              <Heart className="w-4 h-4 text-red-400 fill-current" />
+              <span>and</span>
+              <Zap className="w-4 h-4 text-yellow-400" />
+              <span>for the future.</span>
+            </div>
+            
+            <div className="flex items-center space-x-6 text-sm text-gray-400">
+              <Link href="/privacy" className="hover:text-white transition-colors duration-200">
+                Privacy Policy
+              </Link>
+              <Link href="/terms" className="hover:text-white transition-colors duration-200">
+                Terms of Service
+              </Link>
+              <Link href="/cookies" className="hover:text-white transition-colors duration-200">
+                Cookie Policy
+              </Link>
+            </div>
           </div>
-        </div>
+        </motion.div>
       </div>
 
-      {/* Enhanced Scroll to Top Button */}
+      {/* Back to Top Button */}
       <AnimatePresence>
-        {isVisible && (
+        {showBackToTop && (
           <motion.button
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             exit={{ opacity: 0, scale: 0.8 }}
             onClick={scrollToTop}
-            className="fixed bottom-8 right-8 z-50 w-12 h-12 bg-gradient-to-r from-cyan-400 to-blue-500 text-white rounded-full shadow-2xl hover:shadow-cyan-400/50 transition-all duration-300 focus:outline-none focus:ring-4 focus:ring-cyan-400/50 group"
-            aria-label="Scroll to top"
+            className="fixed bottom-6 right-6 p-3 bg-gradient-to-r from-cyan-500 to-blue-600 text-white rounded-full shadow-lg shadow-cyan-500/25 hover:from-cyan-600 hover:to-blue-700 transition-all duration-300 transform hover:scale-110 focus:outline-none focus:ring-2 focus:ring-cyan-300 focus:ring-offset-2 focus:ring-offset-black z-50"
+            aria-label="Back to top"
           >
-            <ArrowUp className="w-6 h-6 mx-auto group-hover:-translate-y-1 transition-transform duration-300" />
+            <ArrowUp className="w-5 h-5" />
           </motion.button>
         )}
       </AnimatePresence>

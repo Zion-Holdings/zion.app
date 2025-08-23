@@ -2,91 +2,48 @@ import React from 'react';
 import Layout from '../../components/layout/Layout';
 import { motion } from 'framer-motion';
 import { 
-  Building, Users, Shield, Database, Cloud, Target, 
-  ArrowRight, CheckCircle, Star, Zap, Brain, Atom,
-  Rocket, Cpu, Lock, TrendingUp, Globe, Award
+  Building, Users, Shield, Cpu, Database, Globe, Zap, Target, 
+  TrendingUp, BarChart3, Lock, Cloud, Server, Network, Settings, Brain
 } from 'lucide-react';
 
 const EnterpriseSolutionsPage: React.FC = () => {
-  const enterpriseSolutions = [
+  const solutions = [
     {
-      title: "AI Consciousness Enterprise Platform",
-      description: "Scalable AI consciousness solutions for enterprise-wide deployment",
-      features: [
-        "Multi-tenant architecture",
-        "Enterprise-grade security",
-        "Custom consciousness models",
-        "Integration APIs"
-      ],
+      title: "Enterprise AI & Machine Learning",
+      description: "Scalable AI solutions for large enterprises with advanced machine learning capabilities",
       icon: <Brain className="w-8 h-8" />,
-      category: "AI & Consciousness"
+      features: ["Custom AI model development", "Enterprise ML pipelines", "AI governance & compliance", "Scalable AI infrastructure"],
+      href: "/services?category=ai-ml"
     },
     {
-      title: "Quantum Computing Infrastructure",
-      description: "Enterprise quantum computing solutions with hybrid classical-quantum architecture",
-      features: [
-        "Hybrid quantum-classical systems",
-        "Enterprise security protocols",
-        "Scalable quantum algorithms",
-        "Performance monitoring"
-      ],
-      icon: <Atom className="w-8 h-8" />,
-      category: "Quantum Computing"
-    },
-    {
-      title: "Autonomous IT Operations Center",
-      description: "Fully autonomous IT management with AI-powered decision making",
-      features: [
-        "Self-healing infrastructure",
-        "Predictive maintenance",
-        "Automated incident response",
-        "Real-time analytics"
-      ],
-      icon: <Cpu className="w-8 h-8" />,
-      category: "IT Infrastructure"
-    },
-    {
-      title: "Enterprise Cybersecurity Suite",
-      description: "Comprehensive security solutions with quantum-resistant encryption",
-      features: [
-        "Quantum-resistant cryptography",
-        "AI threat detection",
-        "Zero-trust architecture",
-        "Compliance frameworks"
-      ],
+      title: "Enterprise Cybersecurity",
+      description: "Comprehensive security solutions for enterprise environments",
       icon: <Shield className="w-8 h-8" />,
-      category: "Cybersecurity"
+      features: ["Zero-trust architecture", "Advanced threat detection", "Compliance automation", "Security operations center"],
+      href: "/services?category=security"
     },
     {
-      title: "Space Resource Intelligence Platform",
-      description: "Enterprise space technology solutions for resource management",
-      features: [
-        "Satellite data processing",
-        "Resource optimization",
-        "Risk assessment",
-        "Strategic planning tools"
-      ],
-      icon: <Rocket className="w-8 h-8" />,
-      category: "Space Technology"
+      title: "Enterprise Cloud Infrastructure",
+      description: "Robust cloud solutions designed for enterprise scale",
+      icon: <Cloud className="w-8 h-8" />,
+      features: ["Multi-cloud management", "Enterprise DevOps", "Cost optimization", "High availability"],
+      href: "/services?category=cloud"
     },
     {
-      title: "Autonomous Business Intelligence",
-      description: "AI-powered business intelligence with autonomous insights",
-      features: [
-        "Predictive analytics",
-        "Automated reporting",
-        "Real-time dashboards",
-        "Decision support"
-      ],
-      icon: <Target className="w-8 h-8" />,
-      category: "Business Intelligence"
+      title: "Enterprise Business Intelligence",
+      description: "Advanced analytics and business intelligence for enterprise decision-making",
+      icon: <BarChart3 className="w-8 h-8" />,
+      features: ["Real-time analytics", "Predictive modeling", "Data governance", "Executive dashboards"],
+      href: "/services?category=bi"
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
     }
   ];
 
   const benefits = [
     {
       title: "Scalability",
-      description: "Solutions that grow with your enterprise needs",
+      description: "Solutions that grow with your enterprise",
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
       icon: <TrendingUp className="w-6 h-6" />
     },
     {
@@ -97,150 +54,103 @@ const EnterpriseSolutionsPage: React.FC = () => {
     {
       title: "Integration",
       description: "Seamless integration with existing systems",
-      icon: <Database className="w-6 h-6" />
+      icon: <Network className="w-6 h-6" />
     },
     {
       title: "Support",
-      description: "24/7 dedicated enterprise support",
+      description: "24/7 enterprise support and maintenance",
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
       icon: <Users className="w-6 h-6" />
     }
-  ];
-
-  const industries = [
-    "Financial Services",
-    "Healthcare",
-    "Manufacturing",
-    "Retail",
-    "Technology",
-    "Energy",
-    "Government",
-    "Education"
   ];
 
   return (
     <Layout 
       title="Enterprise Solutions - Zion Tech Group"
-      description="Transform your enterprise with Zion Tech Group's revolutionary AI consciousness, quantum computing, and autonomous technology solutions."
-      keywords="enterprise solutions, AI consciousness, quantum computing, autonomous systems, enterprise technology, Zion Tech Group"
+      description="Comprehensive enterprise technology solutions designed for large-scale organizations. AI, cybersecurity, cloud infrastructure, and business intelligence."
     >
-      <div className="min-h-screen bg-black text-white">
+      <div className="min-h-screen bg-gradient-to-br from-gray-900 via-black to-gray-900 text-white">
         {/* Hero Section */}
-        <section className="relative py-20 overflow-hidden">
-          <div className="absolute inset-0 bg-gradient-to-br from-cyan-900/20 via-blue-900/20 to-purple-900/20"></div>
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(6,182,212,0.1),transparent_50%)]"></div>
-          
-          <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <section className="relative py-20 px-4 sm:px-6 lg:px-8">
+          <div className="max-w-7xl mx-auto text-center">
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
             >
-              <div className="text-cyan-400 mb-6">
-                <Building className="w-20 h-20 mx-auto" />
-              </div>
-              <h1 className="text-5xl md:text-7xl font-bold bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 bg-clip-text text-transparent mb-6">
+              <h1 className="text-5xl md:text-6xl font-bold bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 bg-clip-text text-transparent mb-6">
                 Enterprise Solutions
               </h1>
-              <p className="text-xl md:text-2xl text-gray-300 max-w-4xl mx-auto mb-8">
-                Transform your enterprise with revolutionary AI consciousness, quantum computing, 
-                and autonomous technology solutions designed for scale and performance.
+              <p className="text-xl md:text-2xl text-gray-300 mb-8 max-w-4xl mx-auto">
+                Transform your enterprise with cutting-edge technology solutions designed for scale, 
+                security, and innovation. Built for the future, deployed today.
               </p>
-              <div className="flex flex-wrap justify-center gap-4">
-                <a href="#solutions" className="bg-gradient-to-r from-cyan-500 to-blue-600 text-white px-8 py-3 rounded-xl font-semibold hover:from-cyan-600 hover:to-blue-700 transition-all duration-300 flex items-center space-x-2">
-                  <span>Explore Solutions</span>
-                  <ArrowRight className="w-5 h-5" />
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <a
+                  href="/contact"
+                  className="px-8 py-4 bg-gradient-to-r from-cyan-500 to-blue-600 text-white rounded-lg font-semibold hover:from-cyan-600 hover:to-blue-700 transition-all duration-300 transform hover:scale-105"
+                >
+                  Get Started
                 </a>
-                <a href="/contact" className="border border-cyan-500/50 text-cyan-400 px-8 py-3 rounded-xl font-semibold hover:bg-cyan-500/10 transition-all duration-300">
-                  Contact Sales
+                <a
+                  href="/case-studies"
+                  className="px-8 py-4 border border-cyan-500/30 text-cyan-400 rounded-lg font-semibold hover:bg-cyan-500/10 transition-all duration-300"
+                >
+                  View Case Studies
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
                 </a>
               </div>
             </motion.div>
-          </div>
-        </section>
-
-        {/* Benefits Section */}
-        <section className="py-16 bg-gray-900/50">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-              {benefits.map((benefit, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: index * 0.1 }}
-                  viewport={{ once: true }}
-                  className="text-center"
-                >
-                  <div className="text-cyan-400 mb-4 flex justify-center">
-                    {benefit.icon}
-                  </div>
-                  <h3 className="text-lg font-semibold text-white mb-2">
-                    {benefit.title}
-                  </h3>
-                  <p className="text-gray-300 text-sm">
-                    {benefit.description}
-                  </p>
-                </motion.div>
-              ))}
-            </div>
           </div>
         </section>
 
         {/* Solutions Grid */}
-        <section id="solutions" className="py-20">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <section className="py-20 px-4 sm:px-6 lg:px-8">
+          <div className="max-w-7xl mx-auto">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-              viewport={{ once: true }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
               className="text-center mb-16"
             >
-              <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-                Enterprise Solutions
-              </h2>
-              <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-                Comprehensive technology solutions designed for enterprise-scale deployment 
-                and mission-critical operations.
+              <h2 className="text-4xl font-bold mb-4">Enterprise Solutions</h2>
+              <p className="text-xl text-gray-400 max-w-3xl mx-auto">
+                Comprehensive technology solutions designed specifically for enterprise-scale organizations
               </p>
             </motion.div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {enterpriseSolutions.map((solution, index) => (
+            <div className="grid md:grid-cols-2 gap-8">
+              {solutions.map((solution, index) => (
                 <motion.div
-                  key={index}
+                  key={solution.title}
                   initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: index * 0.1 }}
-                  viewport={{ once: true }}
-                  className="bg-gray-800/50 backdrop-blur-sm border border-gray-700/50 rounded-2xl p-8 hover:border-cyan-500/50 transition-all duration-300"
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: 0.1 * index }}
+                  className="bg-gray-800/50 backdrop-blur-sm rounded-xl p-8 border border-gray-700/50 hover:border-cyan-500/50 transition-all duration-300"
                 >
-                  <div className="text-cyan-400 mb-4">
-                    {solution.icon}
+                  <div className="flex items-center mb-4">
+                    <div className="p-3 bg-gradient-to-r from-cyan-500 to-blue-600 rounded-lg mr-4">
+                      {solution.icon}
+                    </div>
+                    <h3 className="text-2xl font-semibold">{solution.title}</h3>
                   </div>
-                  <span className="inline-block bg-cyan-500/20 text-cyan-300 text-xs px-3 py-1 rounded-full border border-cyan-500/30 mb-4">
-                    {solution.category}
-                  </span>
-                  <h3 className="text-xl font-semibold text-white mb-3">
-                    {solution.title}
-                  </h3>
-                  <p className="text-gray-300 mb-6">
-                    {solution.description}
-                  </p>
-                  <div className="space-y-2 mb-6">
+                  <p className="text-gray-300 mb-6">{solution.description}</p>
+                  <ul className="space-y-2 mb-6">
                     {solution.features.map((feature, featureIndex) => (
-                      <div key={featureIndex} className="flex items-center space-x-2 text-sm text-gray-300">
-                        <CheckCircle className="w-4 h-4 text-cyan-400 flex-shrink-0" />
-                        <span>{feature}</span>
-                      </div>
+                      <li key={featureIndex} className="flex items-center text-gray-400">
+                        <div className="w-2 h-2 bg-cyan-500 rounded-full mr-3"></div>
+                        {feature}
+                      </li>
                     ))}
-                  </div>
+                  </ul>
                   <a
-                    href="/contact"
-                    className="inline-flex items-center space-x-2 text-cyan-400 hover:text-cyan-300 transition-colors"
+                    href={solution.href}
+                    className="inline-flex items-center text-cyan-400 hover:text-cyan-300 transition-colors"
                   >
-                    <span>Learn More</span>
-                    <ArrowRight className="w-4 h-4" />
+                    Learn More
+                    <Zap className="w-4 h-4 ml-2" />
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
                   </a>
                 </motion.div>
               ))}
@@ -248,41 +158,38 @@ const EnterpriseSolutionsPage: React.FC = () => {
           </div>
         </section>
 
-        {/* Industries Section */}
-        <section className="py-20 bg-gray-900/50">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Benefits Section */}
+        <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gray-800/30">
+          <div className="max-w-7xl mx-auto">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-              viewport={{ once: true }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.4 }}
               className="text-center mb-16"
             >
-              <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-                Industries We Serve
-              </h2>
-              <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-                Our enterprise solutions are designed to meet the unique challenges 
-                and requirements of various industries.
+              <h2 className="text-4xl font-bold mb-4">Why Choose Zion Tech Group?</h2>
+              <p className="text-xl text-gray-400 max-w-3xl mx-auto">
+                Enterprise-grade solutions with the innovation and agility of a startup
               </p>
             </motion.div>
 
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-              {industries.map((industry, index) => (
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+              {benefits.map((benefit, index) => (
                 <motion.div
-                  key={index}
+                  key={benefit.title}
                   initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: index * 0.1 }}
-                  viewport={{ once: true }}
-                  className="bg-gray-800/50 backdrop-blur-sm border border-gray-700/50 rounded-xl p-6 text-center hover:border-cyan-500/50 transition-all duration-300"
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: 0.1 * index }}
+                  className="text-center"
                 >
-                  <div className="text-cyan-400 mb-3">
-                    <Star className="w-8 h-8 mx-auto" />
+                  <div className="p-4 bg-gradient-to-r from-cyan-500/20 to-blue-500/20 rounded-full w-16 h-16 mx-auto mb-4 flex items-center justify-center">
+                    <div className="text-cyan-400">
+                      {benefit.icon}
+                    </div>
                   </div>
-                  <h3 className="text-lg font-semibold text-white">
-                    {industry}
-                  </h3>
+                  <h3 className="text-xl font-semibold mb-2">{benefit.title}</h3>
+                  <p className="text-gray-400">{benefit.description}</p>
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
                 </motion.div>
               ))}
             </div>
@@ -290,34 +197,31 @@ const EnterpriseSolutionsPage: React.FC = () => {
         </section>
 
         {/* CTA Section */}
-        <section className="py-20">
-          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <section className="py-20 px-4 sm:px-6 lg:px-8">
+          <div className="max-w-4xl mx-auto text-center">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-              viewport={{ once: true }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.6 }}
             >
-              <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-                Ready to Transform Your Enterprise?
-              </h2>
-              <p className="text-xl text-gray-300 mb-8">
-                Join leading enterprises that are already leveraging our revolutionary 
-                technology solutions to gain competitive advantages.
+              <h2 className="text-4xl font-bold mb-6">Ready to Transform Your Enterprise?</h2>
+              <p className="text-xl text-gray-400 mb-8">
+                Let's discuss how our enterprise solutions can drive innovation and growth in your organization
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <a
                   href="/contact"
-                  className="bg-gradient-to-r from-cyan-500 to-blue-600 text-white px-8 py-4 rounded-xl font-semibold hover:from-cyan-600 hover:to-blue-700 transition-all duration-300 flex items-center justify-center space-x-2"
+                  className="px-8 py-4 bg-gradient-to-r from-cyan-500 to-blue-600 text-white rounded-lg font-semibold hover:from-cyan-600 hover:to-blue-700 transition-all duration-300 transform hover:scale-105"
                 >
-                  <span>Contact Sales Team</span>
-                  <ArrowRight className="w-5 h-5" />
+                  Schedule a Consultation
                 </a>
                 <a
-                  href="/solutions"
-                  className="border border-cyan-500/50 text-cyan-400 px-8 py-4 rounded-xl font-semibold hover:bg-cyan-500/10 transition-all duration-300"
+                  href="/pricing"
+                  className="px-8 py-4 border border-cyan-500/30 text-cyan-400 rounded-lg font-semibold hover:bg-cyan-500/10 transition-all duration-300"
                 >
-                  View All Solutions
+                  View Pricing
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
                 </a>
               </div>
             </motion.div>

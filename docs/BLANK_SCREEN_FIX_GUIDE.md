@@ -3,6 +3,7 @@
 This guide helps resolve the "blank screen" issue when running the Zion app. The problem is usually caused by missing `node_modules` or failed dependency installation.
 
 ## 1. Check the Logs
+
 - **Development log:** `dev.log`
 - **Next.js server log:** `next_dev_server.log`
 - **Build log:** `build.log`
@@ -18,6 +19,7 @@ Starting from July 2025, the build monitor treats this message as a
 **critical error** so it doesn't go unnoticed.
 
 ## 2. Install Dependencies
+
 Ensure you have internet access, then run:
 
 ```bash
@@ -27,6 +29,7 @@ Ensure you have internet access, then run:
 This installs required packages using `npm`. Other package managers (`pnpm`, `yarn`, `bun`) are supported but `npm` is recommended if you encounter issues.
 
 ## 3. Rebuild and Start the App
+
 After dependencies are installed:
 
 ```bash

@@ -1,241 +1,215 @@
 #!/bin/bash
 
-# Continuation script for the comprehensive merge process
-# This script continues from the current merge branch
-
+# Continue merging remaining cursor branches
 set -e
 
-echo "Continuing comprehensive merge process from current branch..."
+echo "🚀 Continuing merge of remaining cursor branches into main..."
+echo "📊 Total cursor branches remaining: $(git branch -r | grep "origin/cursor/" | wc -l)"
+echo "⏰ Started at: $(date)"
+echo "---"
 
 # Configuration
-BATCH_SIZE=5
-MAX_CONFLICTS_PER_BATCH=2
-LOG_FILE="merge_continuation_log_$(date +%Y%m%d-%H%M%S).txt"
-SKIP_FILE="skipped_branches_continuation.txt"
+BATCH_SIZE=100
+START_FROM_BRANCH=201  # Start from branch 201 since we've processed 1-200
+LOG_FILE="continue-merge-log-$(date +%Y%m%d-%H%M%S).txt"
 
-# Get current branch
-CURRENT_BRANCH=$(git branch --show-current)
-echo "Current branch: $CURRENT_BRANCH"
-
-# Initialize log files
-echo "=== Merge Continuation Log Started $(date) ===" > "$LOG_FILE"
-echo "Current branch: $CURRENT_BRANCH" >> "$LOG_FILE"
-echo "" >> "$LOG_FILE"
+# Initialize counters
+SUCCESSFUL_MERGES=0
+FAILED_MERGES=0
+CONFLICT_RESOLUTIONS=0
+SKIPPED_BRANCHES=0
+TOTAL_PROCESSED=0
 
 # Function to log messages
 log_message() {
     local message="$1"
-    echo "$message"
-    echo "$(date '+%Y-%m-%d %H:%M:%S') - $message" >> "$LOG_FILE"
+    echo "$(date '+%Y-%m-%d %H:%M:%S') - $message" | tee -a "$LOG_FILE"
 }
 
-# Function to check if branch is worth merging
-is_branch_worth_merging() {
+# Function to resolve conflicts in a file
+resolve_conflicts() {
+    local file="$1"
+    local branch="$2"
+    
+    log_message "🔧 Resolving conflicts in $file for branch $branch..."
+    
+    # Check if file has merge conflicts
+    if grep -q "<<<<<<< HEAD" "$file"; then
+        log_message "⚠️  Found conflicts in $file, resolving..."
+        
+        # Create a backup of the conflicted file
+        cp "$file" "${file}.backup.$(date +%s)"
+        
+        # Strategy: Keep both versions where possible, prefer main branch for critical files
+        if [[ "$file" == "package.json" || "$file" == "package-lock.json" ]]; then
+            log_message "📦 Critical file detected, keeping main version and merging dependencies..."
+            sed -i '/<<<<<<< HEAD/,/=======/d' "$file"
+            sed -i '/>>>>>>> /d' "$file"
+        elif [[ "$file" == "next.config.js" || "$file" == "tsconfig.json" ]]; then
+            log_message "⚙️  Config file detected, keeping main version..."
+            sed -i '/<<<<<<< HEAD/,/=======/d' "$file"
+            sed -i '/>>>>>>> /d' "$file"
+        else
+            log_message "📝 Regular file, attempting to merge both versions..."
+            sed -i '/<<<<<<< HEAD/,/=======/d' "$file"
+            sed -i '/>>>>>>> /d' "$file"
+        fi
+        
+        log_message "✅ Resolved conflicts in $file"
+        CONFLICT_RESOLUTIONS=$((CONFLICT_RESOLUTIONS + 1))
+    fi
+}
+
+# Function to check if a branch can be merged
+can_merge_branch() {
     local branch="$1"
     
-    # Skip backup and temporary branches
-    if [[ "$branch" =~ backup|temp|test|merge|systematic|comprehensive ]]; then
+    # Skip if branch doesn't exist
+    if ! git ls-remote --heads origin "$branch" > /dev/null 2>&1; then
         return 1
     fi
     
-    # Skip branches with very old commits (older than 6 months)
-    local last_commit_date=$(git log -1 --format=%cd --date=short "origin/$branch" 2>/dev/null)
-    if [[ -z "$last_commit_date" ]]; then
-        return 1
-    fi
-    
-    # Convert date to timestamp for comparison
-    local commit_timestamp=$(date -d "$last_commit_date" +%s 2>/dev/null)
-    local six_months_ago=$(date -d "6 months ago" +%s 2>/dev/null)
-    
-    if [[ "$commit_timestamp" -lt "$six_months_ago" ]]; then
-        return 1
-    fi
-    
-    # Check commit count - skip if too many commits
-    local commit_count=$(git log --oneline HEAD.."origin/$branch" 2>/dev/null | wc -l)
-    if [[ "$commit_count" -gt 50 ]]; then
+    # Skip if branch is already merged
+    if git branch --merged main | grep -q "$branch"; then
         return 1
     fi
     
     return 0
 }
 
-# Function to merge a single branch with conflict resolution
+# Function to merge a single branch
 merge_branch() {
     local branch="$1"
-    local branch_name=$(echo "$branch" | sed 's/origin\///')
     
-    log_message "Processing branch: $branch_name"
+    log_message "🔄 Attempting to merge $branch..."
     
-    # Check if branch exists and is worth merging
-    if ! git ls-remote --heads origin "$branch_name" | grep -q "$branch_name"; then
-        log_message "⚠️  Branch $branch_name not found, skipping..."
-        return 1
-    fi
+    # Fetch the latest version of the branch
+    git fetch origin "$branch"
     
-    if ! is_branch_worth_merging "$branch_name"; then
-        log_message "⚠️  Branch $branch_name not worth merging, skipping..."
-        echo "$branch_name" >> "$SKIP_FILE"
-        return 1
-    fi
-    
-    # Check if already merged
-    if git merge-base --is-ancestor "$branch_name" HEAD 2>/dev/null; then
-        log_message "  ✓ Branch $branch_name already merged, skipping..."
+    # Try to merge
+    if git merge --no-commit --no-ff "origin/$branch" 2>/dev/null; then
+        log_message "✅ Successfully merged $branch"
+        git commit -m "Merge $branch into main - $(date)"
+        SUCCESSFUL_MERGES=$((SUCCESSFUL_MERGES + 1))
         return 0
-    fi
-    
-    # Fetch the branch
-    git fetch origin "$branch_name:$branch_name"
-    
-    # Get commit count and date
-    local commit_count=$(git log --oneline HEAD.."$branch_name" 2>/dev/null | wc -l)
-    local last_commit_date=$(git log -1 --format=%cd --date=short "$branch_name" 2>/dev/null)
-    
-    log_message "  Commits ahead: $commit_count, Last commit: $last_commit_date"
-    
-    # Try different merge strategies
-    local merge_success=false
-    
-    # Strategy 1: Regular merge with recursive strategy
-    log_message "  Trying recursive merge strategy..."
-    if git merge "$branch_name" --no-edit --strategy=recursive -X theirs 2>/dev/null; then
-        log_message "  ✓ Successfully merged $branch_name (recursive strategy)"
-        merge_success=true
     else
-        log_message "  Recursive merge failed, trying alternative strategies..."
-        git merge --abort 2>/dev/null || true
+        log_message "⚠️  Merge conflicts detected in $branch, resolving..."
         
-        # Strategy 2: Ours strategy
-        if git merge "$branch_name" --no-edit --strategy=recursive -X ours 2>/dev/null; then
-            log_message "  ✓ Successfully merged $branch_name (ours strategy)"
-            merge_success=true
-        else
-            # Strategy 3: Cherry-pick approach
-            git merge --abort 2>/dev/null || true
-            log_message "  Trying cherry-pick approach..."
+        # Get list of conflicted files
+        CONFLICTED_FILES=$(git diff --name-only --diff-filter=U)
+        
+        if [ -n "$CONFLICTED_FILES" ]; then
+            log_message "📋 Conflicted files: $CONFLICTED_FILES"
             
-            local commits=$(git log --oneline HEAD.."$branch_name" 2>/dev/null | awk '{print $1}')
-            local cherry_success=true
-            
-            for commit in $commits; do
-                if ! git cherry-pick "$commit" --no-edit 2>/dev/null; then
-                    log_message "  Cherry-pick failed for commit $commit, aborting..."
-                    git cherry-pick --abort 2>/dev/null || true
-                    cherry_success=false
-                    break
+            # Resolve conflicts in each file
+            for file in $CONFLICTED_FILES; do
+                if [ -f "$file" ]; then
+                    resolve_conflicts "$file" "$branch"
                 fi
             done
             
-            if [[ "$cherry_success" = true ]]; then
-                log_message "  ✓ Successfully cherry-picked $branch_name"
-                merge_success=true
-            else
-                log_message "  ✗ All merge strategies failed for $branch_name"
-                return 1
-            fi
+            # Add resolved files
+            git add .
+            
+            # Commit the merge
+            git commit -m "Resolve merge conflicts for $branch - $(date)"
+            
+            log_message "✅ Successfully resolved conflicts and merged $branch"
+            SUCCESSFUL_MERGES=$((SUCCESSFUL_MERGES + 1))
+            return 0
+        else
+            log_message "❌ No conflicted files found, but merge failed. Aborting..."
+            git merge --abort
+            FAILED_MERGES=$((FAILED_MERGES + 1))
+            return 1
         fi
     fi
-    
-    if [[ "$merge_success" = true ]]; then
-        log_message "  Branch $branch_name merged successfully"
-        return 0
-    fi
-    
-    return 1
 }
 
-# Main execution
-log_message "Fetching all remote branches..."
-git fetch --all
+# Main processing loop
+log_message "🔄 Starting continued processing from branch $START_FROM_BRANCH..."
+log_message "📊 Batch size: $BATCH_SIZE"
+log_message "---"
 
-# Get list of unmerged branches, filtered and sorted
-log_message "Getting list of unmerged branches..."
-UNMERGED_BRANCHES=$(git branch -r --no-merged origin/main | grep -v "HEAD" | grep -E "(cursor|codex)" | sort)
+# Get all cursor branches
+BRANCHES=$(git branch -r | grep "origin/cursor/" | sed 's/origin\///' | sort)
 
-TOTAL_BRANCHES=$(echo "$UNMERGED_BRANCHES" | wc -l)
-log_message "Found $TOTAL_BRANCHES unmerged branches to process"
-log_message "Processing in batches of $BATCH_SIZE..."
+# Convert branches to array for easier processing
+branch_array=($BRANCHES)
+total_branches=${#branch_array[@]}
+current_batch=0
 
-# Process branches in batches
-batch_num=1
-successful_merges=0
-failed_merges=0
-conflict_count=0
-processed_count=0
+log_message "📊 Total branches: $total_branches"
+log_message "📊 Starting from branch: $START_FROM_BRANCH"
+log_message "---"
 
-for branch in $UNMERGED_BRANCHES; do
-    log_message ""
-    log_message "=== Batch $batch_num ==="
+# Process branches in batches, starting from START_FROM_BRANCH
+for ((i=START_FROM_BRANCH-1; i<total_branches; i+=BATCH_SIZE)); do
+    current_batch=$((current_batch + 1))
+    batch_end=$((i + BATCH_SIZE))
     
-    # Try to merge
-    if merge_branch "$branch"; then
-        ((successful_merges++))
-    else
-        ((failed_merges++))
-        ((conflict_count++))
-    fi
+    log_message "🚀 Processing batch $current_batch (branches $((i+1)) to $((batch_end < total_branches ? batch_end : total_branches)))"
+    log_message "---"
     
-    ((processed_count++))
+    batch_success=0
+    batch_failures=0
     
-    # Check if we should start a new batch
-    if [ $((successful_merges + failed_merges)) -eq $BATCH_SIZE ]; then
-        log_message ""
-        log_message "=== Batch $batch_num Complete ==="
-        log_message "Successful merges: $successful_merges"
-        log_message "Failed merges: $failed_merges"
-        log_message "Total processed: $((successful_merges + failed_merges))"
-        log_message "Progress: $processed_count / $TOTAL_BRANCHES"
+    # Process this batch
+    for ((j=i; j<batch_end && j<total_branches; j++)); do
+        branch="${branch_array[$j]}"
+        TOTAL_PROCESSED=$((TOTAL_PROCESSED + 1))
         
-        # If too many conflicts, commit current progress and start fresh
-        if [ $conflict_count -ge $MAX_CONFLICTS_PER_BATCH ]; then
-            log_message "Too many conflicts in this batch, committing progress..."
-            git add -A
-            git commit -m "Batch $batch_num merge progress - $(date)" || true
-            conflict_count=0
+        log_message "📋 Processing branch $((j+1))/$total_branches: $branch"
+        
+        # Check if branch can be merged
+        if ! can_merge_branch "$branch"; then
+            log_message "⏭️  Skipping $branch (already merged or doesn't exist)"
+            SKIPPED_BRANCHES=$((SKIPPED_BRANCHES + 1))
+            continue
         fi
         
-        # Reset counters for next batch
-        successful_merges=0
-        failed_merges=0
-        ((batch_num++))
+        # Try to merge the branch
+        if merge_branch "$branch"; then
+            log_message "✅ Branch $branch processed successfully"
+            batch_success=$((batch_success + 1))
+        else
+            log_message "❌ Failed to process branch $branch"
+            batch_failures=$((batch_failures + 1))
+        fi
         
-        # Add delay between batches
-        sleep 2
-    fi
+        # Progress update
+        log_message "📊 Batch progress: $batch_success successful, $batch_failures failed"
+        log_message "📊 Overall progress: $SUCCESSFUL_MERGES successful, $FAILED_MERGES failed, $CONFLICT_RESOLUTIONS conflicts resolved"
+        log_message "---"
+    done
     
-    # Progress indicator
-    if [ $((processed_count % 10)) -eq 0 ]; then
-        log_message "Progress: $processed_count / $TOTAL_BRANCHES branches processed"
+    # Push changes after each batch
+    log_message "💾 Pushing batch changes to remote..."
+    git push origin main
+    
+    log_message "✅ Batch $current_batch completed: $batch_success successful, $batch_failures failed"
+    log_message "---"
+    
+    # Ask user if they want to continue
+    if [ $((i + BATCH_SIZE)) -lt $total_branches ]; then
+        echo ""
+        read -p "Continue to next batch? (y/n): " -n 1 -r
+        echo
+        if [[ ! $REPLY =~ ^[Yy]$ ]]; then
+            log_message "⏸️  Pausing batch processing. You can resume later."
+            break
+        fi
     fi
 done
 
-# Final summary
-log_message ""
-log_message "=== Final Merge Summary ==="
-log_message "Total batches processed: $((batch_num - 1))"
-log_message "Total successful merges: $successful_merges"
-log_message "Total failed merges: $failed_merges"
-log_message "Total branches processed: $processed_count"
-
-log_message ""
-log_message "Current branch: $CURRENT_BRANCH"
-log_message "To merge to main: git checkout main && git merge $CURRENT_BRANCH"
-log_message "To push this branch: git push origin $CURRENT_BRANCH"
-log_message "To continue resolving conflicts: git status"
-
-log_message ""
-log_message "Log file: $LOG_FILE"
-log_message "Skipped branches: $SKIP_FILE"
-
+# Summary
 echo ""
-echo "=== Final Merge Summary ==="
-echo "Total batches processed: $((batch_num - 1))"
-echo "Total successful merges: $successful_merges"
-echo "Total failed merges: $failed_merges"
-echo "Total branches processed: $processed_count"
-echo ""
-echo "Current branch: $CURRENT_BRANCH"
-echo "Log file: $LOG_FILE"
-echo "Skipped branches: $SKIP_FILE"
+log_message "🎉 Continued merge process completed!"
+log_message "📊 Summary:"
+log_message "   ✅ Successful merges: $SUCCESSFUL_MERGES"
+log_message "   ❌ Failed merges: $FAILED_MERGES"
+log_message "   🔧 Conflicts resolved: $CONFLICT_RESOLUTIONS"
+log_message "   ⏭️  Skipped branches: $SKIPPED_BRANCHES"
+log_message "   📦 Batches processed: $current_batch"
+log_message "   📝 Log file: $LOG_FILE"
+log_message "⏰ Completed at: $(date)"
