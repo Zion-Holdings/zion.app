@@ -230,8 +230,9 @@ export { industrySpecificSolutions } from '../data/2025-industry-specific-soluti
 export { emergingTechnologyServices } from '../data/2025-emerging-technology-services';
 
 // Export new service types
-export type { AdvancedAIMLService } from '../data/2025-advanced-ai-ml-services';
-export type { AdvancedCybersecurityService } from '../data/2025-advanced-cybersecurity-services';
-export type { AdvancedCloudDevOpsService } from '../data/2025-advanced-cloud-devops-services';
-export type { IndustrySpecificSolution } from '../data/2025-industry-specific-solutions';
-export type { EmergingTechnologyService } from '../data/2025-emerging-technology-services';
+export type { AIMLService } from '../data/2025-advanced-ai-ml-services';
+export type { CybersecurityComplianceService } from '../data/2025-advanced-cybersecurity-compliance-services';
+export type { CloudDevOpsService } from '../data/2025-advanced-cloud-devops-services';
+export type { DataAnalyticsBIService } from '../data/2025-advanced-data-analytics-bi-services';
+export type { EnterpriseAutomationService } from '../data/2025-advanced-enterprise-automation-services';
+export type { FintechBlockchainService } from '../data/2025-advanced-fintech-blockchain-services';
