@@ -10,7 +10,6 @@ import {
 
 // Import our new service data
 import { enterpriseITSolutions } from '../data/2034-enterprise-it-solutions';
-import { innovativeMicroSaasSolutions } from '../data/2034-innovative-micro-saas-solutions';
 import { cuttingEdgeAIServices } from '../data/2034-cutting-edge-ai-services';
 import { real2025Q4AugmentedBatch } from '../data/real-2025-q4-augmented-batch';
 import { real2029Q3Additions } from '../data/real-2029-q3-additions';
@@ -41,6 +40,12 @@ import { advanced2025AIServicesExpansion } from '../data/2025-advanced-ai-servic
 import { innovative2025MicroSaasExpansion } from '../data/innovative-2025-micro-saas-expansion';
 import { innovative2025ITSolutionsExpansion } from '../data/innovative-2025-it-solutions-expansion';
 import { innovative2025AIServicesExpansion } from '../data/innovative-2025-ai-services-expansion';
+
+// Import our new 2025 advanced services
+import { advancedAIAutomationServices } from '../data/2025-advanced-ai-automation-services';
+import { innovativeITInfrastructureServices } from '../data/2025-innovative-it-infrastructure-services';
+import { innovativeMicroSaasSolutions } from '../data/2025-innovative-micro-saas-solutions';
+import { emergingTechnologyServices } from '../data/2025-emerging-technology-services';
 
 // Import existing service data
 import { realMicroSaasServices } from '../data/real-micro-saas-services';
@@ -98,6 +103,11 @@ const allServices = [
   ...industryRealServices,
   ...real2025Q4AugmentedBatch,
   ...real2029Q3Additions,
+  // Our new 2025 advanced services
+  ...advancedAIAutomationServices,
+  ...innovativeITInfrastructureServices,
+  ...innovativeMicroSaasSolutions,
+  ...emergingTechnologyServices,
   ...validatedServices2025Q4,
   ...real2035Q2Additions,
   ...real2036ServiceExpansions,
