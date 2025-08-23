@@ -376,7 +376,7 @@ export default function MainFrontIndex() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.2 }}
           transition={{ duration: 0.5 }}
-          className="mx-auto max-w-7xl px-6 pb-14"
+          className="mx-auto max-w-7xl px-6 pb-14 scroll-mt-28 md:scroll-mt-32"
         >
           <h2 className="text-center text-2xl font-bold tracking-wide text-white/90">Autonomous Engines (Beyond GitHub Actions)</h2>
 
@@ -415,7 +415,7 @@ export default function MainFrontIndex() {
         </motion.section>
 
         {/* Command Center */}
-        <section id="command-center" className="mx-auto max-w-7xl px-6 pb-14">
+        <section id="command-center" className="mx-auto max-w-7xl px-6 pb-14 scroll-mt-28 md:scroll-mt-32">
           <h2 className="text-center text-2xl font-bold tracking-wide text-white/90">Command Center</h2>
           <div className="mt-6 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
             {[
@@ -449,7 +449,7 @@ export default function MainFrontIndex() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.2 }}
           transition={{ duration: 0.5 }}
-          className="mx-auto max-w-7xl px-6 pb-14"
+          className="mx-auto max-w-7xl px-6 pb-14 scroll-mt-28 md:scroll-mt-32"
         >
           <h2 className="text-center text-2xl font-bold tracking-wide text-white/90">Netlify Automations</h2>
           <p className="mx-auto mt-2 max-w-3xl text-center text-sm text-white/70">Zero‑ops scheduled functions power background tasks that improve the site and ship small, safe diffs to main.</p>
@@ -479,7 +479,7 @@ export default function MainFrontIndex() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.2 }}
           transition={{ duration: 0.5 }}
-          className="mx-auto max-w-7xl px-6 pb-14"
+          className="mx-auto max-w-7xl px-6 pb-14 scroll-mt-28 md:scroll-mt-32"
         >
           <h2 className="text-center text-2xl font-bold tracking-wide text-white/90">GitHub Actions Automations</h2>
           <p className="mx-auto mt-2 max-w-3xl text-center text-sm text-white/70">Autonomous, cloud‑hosted workflows that run on a fast cadence and sync changes to main automatically.</p>
@@ -834,20 +834,20 @@ export default function MainFrontIndex() {
           <Link href="/reports/ai-trends"><a className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-cyan-400/30 tilt-on-hover neon-ring"><div className="text-base font-semibold">AI Trends Radar</div><div className="mt-1 text-sm text-white/75">Signals that inspire new automations</div><div className="mt-3 inline-flex items-center gap-1 text-xs text-cyan-300/90">Open <span aria-hidden>→</span></div></a></Link>
           <Link href="/newsroom"><a className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-cyan-400/30 tilt-on-hover neon-ring"><div className="text-base font-semibold">Newsroom</div><div className="mt-1 text-sm text-white/75">Curated updates and product evolution highlights</div><div className="mt-3 inline-flex items-center gap-1 text-xs text-cyan-300/90">Open <span aria-hidden>→</span></div></a></Link>
           <Link href="/search"><a className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-cyan-400/30 tilt-on-hover neon-ring"><div className="text-base font-semibold">Search</div><div className="mt-1 text-sm text-white/75">Explore more</div><div className="mt-3 inline-flex items-center gap-1 text-xs text-cyan-300/90">Open <span aria-hidden>→</span></div></a></Link>
+          <Link href="/contact"><a className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-cyan-400/30 tilt-on-hover neon-ring"><div className="text-base font-semibold">Contact</div><div className="mt-1 text-sm text-white/75">Explore more</div><div className="mt-3 inline-flex items-center gap-1 text-xs text-cyan-300/90">Open <span aria-hidden>→</span></div></a></Link>
+          <Link href="/404"><a className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-cyan-400/30 tilt-on-hover neon-ring"><div className="text-base font-semibold">404</div><div className="mt-1 text-sm text-white/75">Explore more</div><div className="mt-3 inline-flex items-center gap-1 text-xs text-cyan-300/90">Open <span aria-hidden>→</span></div></a></Link>
+          <Link href="/services"><a className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-cyan-400/30 tilt-on-hover neon-ring"><div className="text-base font-semibold">Services</div><div className="mt-1 text-sm text-white/75">Explore more</div><div className="mt-3 inline-flex items-center gap-1 text-xs text-cyan-300/90">Open <span aria-hidden>→</span></div></a></Link>
+          <Link href="/services/[slug]"><a className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-cyan-400/30 tilt-on-hover neon-ring"><div className="text-base font-semibold">Services [slug]</div><div className="mt-1 text-sm text-white/75">Explore more</div><div className="mt-3 inline-flex items-center gap-1 text-xs text-cyan-300/90">Open <span aria-hidden>→</span></div></a></Link>
           <Link href="/reports/roadmap"><a className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-cyan-400/30 tilt-on-hover neon-ring"><div className="text-base font-semibold">Reports Roadmap</div><div className="mt-1 text-sm text-white/75">Explore more</div><div className="mt-3 inline-flex items-center gap-1 text-xs text-cyan-300/90">Open <span aria-hidden>→</span></div></a></Link>
           <Link href="/reports"><a className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-cyan-400/30 tilt-on-hover neon-ring"><div className="text-base font-semibold">Reports</div><div className="mt-1 text-sm text-white/75">Explore more</div><div className="mt-3 inline-flex items-center gap-1 text-xs text-cyan-300/90">Open <span aria-hidden>→</span></div></a></Link>
           <Link href="/reports/ai-lab"><a className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-cyan-400/30 tilt-on-hover neon-ring"><div className="text-base font-semibold">Reports Ai-lab</div><div className="mt-1 text-sm text-white/75">Explore more</div><div className="mt-3 inline-flex items-center gap-1 text-xs text-cyan-300/90">Open <span aria-hidden>→</span></div></a></Link>
           <Link href="/front"><a className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-cyan-400/30 tilt-on-hover neon-ring"><div className="text-base font-semibold">Front</div><div className="mt-1 text-sm text-white/75">Explore more</div><div className="mt-3 inline-flex items-center gap-1 text-xs text-cyan-300/90">Open <span aria-hidden>→</span></div></a></Link>
           <Link href="/explore"><a className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-cyan-400/30 tilt-on-hover neon-ring"><div className="text-base font-semibold">Explore</div><div className="mt-1 text-sm text-white/75">Explore more</div><div className="mt-3 inline-flex items-center gap-1 text-xs text-cyan-300/90">Open <span aria-hidden>→</span></div></a></Link>
-          <Link href="/reports/patterns/pattern-2025-08-13-222224"><a className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-cyan-400/30 tilt-on-hover neon-ring"><div className="text-base font-semibold">Reports Patterns Pattern-2025-08-13-222224</div><div className="mt-1 text-sm text-white/75">Explore more</div><div className="mt-3 inline-flex items-center gap-1 text-xs text-cyan-300/90">Open <span aria-hidden>→</span></div></a></Link>
-          <Link href="/reports/patterns/pattern-2025-08-13-222129"><a className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-cyan-400/30 tilt-on-hover neon-ring"><div className="text-base font-semibold">Reports Patterns Pattern-2025-08-13-222129</div><div className="mt-1 text-sm text-white/75">Explore more</div><div className="mt-3 inline-flex items-center gap-1 text-xs text-cyan-300/90">Open <span aria-hidden>→</span></div></a></Link>
-          <Link href="/reports/patterns/pattern-2025-08-13-222028"><a className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-cyan-400/30 tilt-on-hover neon-ring"><div className="text-base font-semibold">Reports Patterns Pattern-2025-08-13-222028</div><div className="mt-1 text-sm text-white/75">Explore more</div><div className="mt-3 inline-flex items-center gap-1 text-xs text-cyan-300/90">Open <span aria-hidden>→</span></div></a></Link>
-          <Link href="/reports/patterns/pattern-2025-08-13-222010"><a className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-cyan-400/30 tilt-on-hover neon-ring"><div className="text-base font-semibold">Reports Patterns Pattern-2025-08-13-222010</div><div className="mt-1 text-sm text-white/75">Explore more</div><div className="mt-3 inline-flex items-center gap-1 text-xs text-cyan-300/90">Open <span aria-hidden>→</span></div></a></Link>
-          <Link href="/reports/patterns/pattern-2025-08-13-215625"><a className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-cyan-400/30 tilt-on-hover neon-ring"><div className="text-base font-semibold">Reports Patterns Pattern-2025-08-13-215625</div><div className="mt-1 text-sm text-white/75">Explore more</div><div className="mt-3 inline-flex items-center gap-1 text-xs text-cyan-300/90">Open <span aria-hidden>→</span></div></a></Link>
-          <Link href="/reports/innovations/insight-2025-08-13T22-21"><a className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-cyan-400/30 tilt-on-hover neon-ring"><div className="text-base font-semibold">Reports Innovations Insight-2025-08-13T22-21</div><div className="mt-1 text-sm text-white/75">Explore more</div><div className="mt-3 inline-flex items-center gap-1 text-xs text-cyan-300/90">Open <span aria-hidden>→</span></div></a></Link>
-          <Link href="/reports/innovations/insight-2025-08-13T22-20"><a className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-cyan-400/30 tilt-on-hover neon-ring"><div className="text-base font-semibold">Reports Innovations Insight-2025-08-13T22-20</div><div className="mt-1 text-sm text-white/75">Explore more</div><div className="mt-3 inline-flex items-center gap-1 text-xs text-cyan-300/90">Open <span aria-hidden>→</span></div></a></Link>
-          <Link href="/reports/innovations/insight-2025-08-13T22-11"><a className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-cyan-400/30 tilt-on-hover neon-ring"><div className="text-base font-semibold">Reports Innovations Insight-2025-08-13T22-11</div><div className="mt-1 text-sm text-white/75">Explore more</div><div className="mt-3 inline-flex items-center gap-1 text-xs text-cyan-300/90">Open <span aria-hidden>→</span></div></a></Link>
-          <Link href="/reports/innovations/insight-2025-08-13T22-10"><a className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-cyan-400/30 tilt-on-hover neon-ring"><div className="text-base font-semibold">Reports Innovations Insight-2025-08-13T22-10</div><div className="mt-1 text-sm text-white/75">Explore more</div><div className="mt-3 inline-flex items-center gap-1 text-xs text-cyan-300/90">Open <span aria-hidden>→</span></div></a></Link>
+          <Link href="/reports/playbooks/playbook-2025-08-14-002925"><a className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-cyan-400/30 tilt-on-hover neon-ring"><div className="text-base font-semibold">Reports Playbooks Playbook-2025-08-14-002925</div><div className="mt-1 text-sm text-white/75">Explore more</div><div className="mt-3 inline-flex items-center gap-1 text-xs text-cyan-300/90">Open <span aria-hidden>→</span></div></a></Link>
+          <Link href="/reports/playbooks/playbook-2025-08-14-002924"><a className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-cyan-400/30 tilt-on-hover neon-ring"><div className="text-base font-semibold">Reports Playbooks Playbook-2025-08-14-002924</div><div className="mt-1 text-sm text-white/75">Explore more</div><div className="mt-3 inline-flex items-center gap-1 text-xs text-cyan-300/90">Open <span aria-hidden>→</span></div></a></Link>
+          <Link href="/reports/playbooks/playbook-2025-08-14-002857"><a className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-cyan-400/30 tilt-on-hover neon-ring"><div className="text-base font-semibold">Reports Playbooks Playbook-2025-08-14-002857</div><div className="mt-1 text-sm text-white/75">Explore more</div><div className="mt-3 inline-flex items-center gap-1 text-xs text-cyan-300/90">Open <span aria-hidden>→</span></div></a></Link>
+          <Link href="/reports/playbooks/playbook-2025-08-14-002854"><a className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-cyan-400/30 tilt-on-hover neon-ring"><div className="text-base font-semibold">Reports Playbooks Playbook-2025-08-14-002854</div><div className="mt-1 text-sm text-white/75">Explore more</div><div className="mt-3 inline-flex items-center gap-1 text-xs text-cyan-300/90">Open <span aria-hidden>→</span></div></a></Link>
+          <Link href="/reports/playbooks/playbook-2025-08-14-002835"><a className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-cyan-400/30 tilt-on-hover neon-ring"><div className="text-base font-semibold">Reports Playbooks Playbook-2025-08-14-002835</div><div className="mt-1 text-sm text-white/75">Explore more</div><div className="mt-3 inline-flex items-center gap-1 text-xs text-cyan-300/90">Open <span aria-hidden>→</span></div></a></Link>
   </div>
 </section>
 
@@ -860,7 +860,7 @@ export default function MainFrontIndex() {
            whileInView={{ opacity: 1, y: 0 }}
            viewport={{ once: true, amount: 0.2 }}
            transition={{ duration: 0.5 }}
-           className="mx-auto max-w-7xl px-6 pb-16"
+           className="mx-auto max-w-7xl px-6 pb-16 scroll-mt-28 md:scroll-mt-32"
          >
            <h2 className="text-center text-2xl font-bold tracking-wide text-white/90">Platform Modules</h2>
           <div className="mt-6 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
@@ -1096,10 +1096,10 @@ export default function MainFrontIndex() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.2 }}
           transition={{ duration: 0.5 }}
-          className="mx-auto max-w-7xl px-6 pb-14"
+          className="mx-auto max-w-7xl px-6 pb-14 scroll-mt-28 md:scroll-mt-32"
         >
           <h2 className="text-center text-2xl font-bold tracking-wide text-white/90">Capabilities</h2>
-          <div className="mt-6 grid grid-cols-1 gap-5 md:grid-cols-3">
+          <div className="mt-6 grid grid-cols-1 gap-5 md:grid-cols-3 lg:grid-cols-4">
             {[
               { Icon: Palette, title: 'Design Evolution', desc: 'Autonomously beautifies UI with consistent, futuristic patterns.', href: '/newsroom' },
               { Icon: BarChart3, title: 'Performance & A11y', desc: 'Optimizes bundles, assets, and accessibility with continuous checks.', href: '/site-health' },
@@ -1117,7 +1117,7 @@ export default function MainFrontIndex() {
               { Icon: Gauge, title: 'Image Pipeline', desc: 'Optimize and transform media assets automatically.', href: '/site-health' },
             ].map(({ Icon, title, desc, href }) => (
               <Link key={title} href={href}>
-                <a className="relative block overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-cyan-400/30">
+                <a className="relative block overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-cyan-400/30 tilt-on-hover holo">
                   <div className="absolute right-0 top-0 h-24 w-24 rounded-bl-[4rem] bg-cyan-400/10 blur-2xl" />
                   <div className="flex items-center gap-2">
                     <Icon className="h-5 w-5 text-cyan-300" />
@@ -1755,6 +1755,14 @@ export default function MainFrontIndex() {
   <div className="text-base font-semibold">Newsroom</div>
   <div className="mt-1 text-sm text-white/75">Latest autonomous updates</div>
   <div className="mt-3 inline-flex items-center gap-1 text-xs text-cyan-300/90">Open <span aria-hidden>→</span></div></a></Link>
+              <Link href="/404"><a className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-cyan-400/30 tilt-on-hover holo">
+  <div className="text-base font-semibold">404</div>
+  <div className="mt-1 text-sm text-white/75">Explore more</div>
+  <div className="mt-3 inline-flex items-center gap-1 text-xs text-cyan-300/90">Open <span aria-hidden>→</span></div></a></Link>
+              <Link href="/contact"><a className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-cyan-400/30 tilt-on-hover holo">
+  <div className="text-base font-semibold">Contact</div>
+  <div className="mt-1 text-sm text-white/75">Explore more</div>
+  <div className="mt-3 inline-flex items-center gap-1 text-xs text-cyan-300/90">Open <span aria-hidden>→</span></div></a></Link>
               <Link href="/explore"><a className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-cyan-400/30 tilt-on-hover holo">
   <div className="text-base font-semibold">Explore</div>
   <div className="mt-1 text-sm text-white/75">Explore more</div>
@@ -1769,6 +1777,10 @@ export default function MainFrontIndex() {
   <div className="mt-3 inline-flex items-center gap-1 text-xs text-cyan-300/90">Open <span aria-hidden>→</span></div></a></Link>
               <Link href="/search"><a className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-cyan-400/30 tilt-on-hover holo">
   <div className="text-base font-semibold">Search</div>
+  <div className="mt-1 text-sm text-white/75">Explore more</div>
+  <div className="mt-3 inline-flex items-center gap-1 text-xs text-cyan-300/90">Open <span aria-hidden>→</span></div></a></Link>
+              <Link href="/services"><a className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-cyan-400/30 tilt-on-hover holo">
+  <div className="text-base font-semibold">Services</div>
   <div className="mt-1 text-sm text-white/75">Explore more</div>
   <div className="mt-3 inline-flex items-center gap-1 text-xs text-cyan-300/90">Open <span aria-hidden>→</span></div></a></Link>
               <Link href="/main/front#features"><a className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-cyan-400/30 tilt-on-hover holo">
@@ -1786,18 +1798,6 @@ export default function MainFrontIndex() {
               <Link href="/.netlify/functions/docs-index-runner"><a className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-cyan-400/30 tilt-on-hover holo">
   <div className="text-base font-semibold">Docs — technical notes & guides</div>
   <div className="mt-1 text-sm text-white/75">Documentation</div>
-  <div className="mt-3 inline-flex items-center gap-1 text-xs text-cyan-300/90">Open <span aria-hidden>→</span></div></a></Link>
-              <Link href="/newsroom"><a className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-cyan-400/30 tilt-on-hover holo">
-  <div className="text-base font-semibold">AI Changelog — highlights</div>
-  <div className="mt-1 text-sm text-white/75">Summarized updates</div>
-  <div className="mt-3 inline-flex items-center gap-1 text-xs text-cyan-300/90">Open <span aria-hidden>→</span></div></a></Link>
-              <Link href="/.netlify/functions/topic-cluster-builder-runner"><a className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-cyan-400/30 tilt-on-hover holo">
-  <div className="text-base font-semibold">Topic Cluster Builder</div>
-  <div className="mt-1 text-sm text-white/75">Clusters content and code topics</div>
-  <div className="mt-3 inline-flex items-center gap-1 text-xs text-cyan-300/90">Open <span aria-hidden>→</span></div></a></Link>
-              <Link href="/.netlify/functions/unused-media-scanner"><a className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-cyan-400/30 tilt-on-hover holo">
-  <div className="text-base font-semibold">Unused Media Scanner</div>
-  <div className="mt-1 text-sm text-white/75">Find and report unreferenced assets</div>
   <div className="mt-3 inline-flex items-center gap-1 text-xs text-cyan-300/90">Open <span aria-hidden>→</span></div></a></Link>
   </div>
 </section>
