@@ -1,10 +1,18 @@
 {
+<<<<<<< HEAD
+  "generatedAt": "2025-08-11T23:27:25.385Z",
+=======
   "generatedAt": "2025-08-11T23:27:58.136Z",
+>>>>>>> origin/cursor/invent-and-deploy-autonomous-cloud-automations-0980
   "functions": [
     "a11y-alt-text-runner",
     "adaptive-orchestrator",
     "ai-changelog-runner",
+<<<<<<< HEAD
+    "anchor-integrity-runner",
+=======
     "ai-trends-radar-runner",
+>>>>>>> origin/cursor/invent-and-deploy-autonomous-cloud-automations-0980
     "auto-scheduler",
     "automation-atlas-runner",
     "automation-matrix",
@@ -37,7 +45,11 @@
     "features-capabilities-benefits-advertiser",
     "front-ads-promoter",
     "front-enhancer",
+<<<<<<< HEAD
+    "front-index-auto-advertiser-runner",
+=======
     "front-index-directory-builder",
+>>>>>>> origin/cursor/invent-and-deploy-autonomous-cloud-automations-0980
     "front-index-futurizer",
     "front-index-orchestrator",
     "front-index-scheduler",
@@ -77,7 +89,11 @@
     "repo-knowledge-graph-runner",
     "repo-radar-and-graph",
     "repo-radar-runner",
+<<<<<<< HEAD
+    "revenue-ideas-orchestrator",
+=======
     "revenue-ideas-promoter",
+>>>>>>> origin/cursor/invent-and-deploy-autonomous-cloud-automations-0980
     "schedule-content-index",
     "schedule-homepage",
     "schedule-knowledge-graph",
@@ -85,7 +101,11 @@
     "schema-org-enhancer",
     "security-audit",
     "security-audit-runner",
+<<<<<<< HEAD
+    "seo-content-gap",
+=======
     "seo-audit-runner",
+>>>>>>> origin/cursor/invent-and-deploy-autonomous-cloud-automations-0980
     "site-crawler",
     "sitemap-prioritizer",
     "sitemap_runner",

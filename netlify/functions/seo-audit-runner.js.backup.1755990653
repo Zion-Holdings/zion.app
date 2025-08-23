@@ -8,7 +8,11 @@ function runNode(relPath, args = []) {
 }
 
 exports.config = {
-  schedule: '*/7 * * * *', // every 7 minutes
+<<<<<<< HEAD
+  schedule: '0 */6 * * *',
+=======
+  schedule: '17 */12 * * *', // every 12 hours, offset
+>>>>>>> origin/cursor/invent-and-deploy-autonomous-cloud-automations-0980
 };
 
 exports.handler = async () => {
@@ -22,13 +26,19 @@ exports.handler = async () => {
     return status;
   }
 
-  // Build and refresh front index directory data
-  logStep('front:index:directory', () => runNode('automation/front-index-directory-builder.cjs'));
-  // Optionally refresh front ads/promos
-  logStep('front:index:ads', () => runNode('automation/front-index-ads.cjs'));
+<<<<<<< HEAD
+  logStep('seo:audit', () => runNode('scripts/seo-audit.js'));
+  logStep('git:sync', () => runNode('automation/advanced-git-sync.cjs'));
+
+  return { statusCode: 200, body: logs.join('\n') };
+};
+=======
+  // Generate SEO audit reports
+  logStep('seo:audit', () => runNode('scripts/seo-audit.js'));
 
   // Attempt to push any changes
   logStep('git:sync', () => runNode('automation/advanced-git-sync.cjs'));
 
   return { statusCode: 200, body: logs.join('\n') };
 };
+>>>>>>> origin/cursor/invent-and-deploy-autonomous-cloud-automations-0980

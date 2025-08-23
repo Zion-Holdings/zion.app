@@ -8,7 +8,7 @@ function runNode(relPath, args = []) {
 }
 
 exports.config = {
-  schedule: '0 * * * *',
+  schedule: '29 */6 * * *', // every 6 hours
 };
 
 exports.handler = async () => {
@@ -22,7 +22,10 @@ exports.handler = async () => {
     return status;
   }
 
-  logStep('ai-trends:radar', () => runNode('scripts/ai-trends-radar.js'));
+  // Generate AI trends radar data and report
+  logStep('ai:trends:radar', () => runNode('scripts/ai-trends-radar.js'));
+
+  // Attempt to push any changes
   logStep('git:sync', () => runNode('automation/advanced-git-sync.cjs'));
 
   return { statusCode: 200, body: logs.join('\n') };

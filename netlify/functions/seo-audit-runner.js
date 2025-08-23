@@ -8,7 +8,7 @@ function runNode(relPath, args = []) {
 }
 
 exports.config = {
-  schedule: '0 */6 * * *',
+  schedule: '17 */12 * * *', // every 12 hours, offset
 };
 
 exports.handler = async () => {
@@ -22,7 +22,10 @@ exports.handler = async () => {
     return status;
   }
 
+  // Generate SEO audit reports
   logStep('seo:audit', () => runNode('scripts/seo-audit.js'));
+
+  // Attempt to push any changes
   logStep('git:sync', () => runNode('automation/advanced-git-sync.cjs'));
 
   return { statusCode: 200, body: logs.join('\n') };

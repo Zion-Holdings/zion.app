@@ -167,6 +167,50 @@ export default function AutomationHub() {
             <a className="text-cyan-300 underline" href="/.netlify/functions/broken-image-scanner" target="_blank" rel="noopener">Trigger / View</a>
           </li>
           <li className="rounded-lg bg-white/5 border border-white/10 p-5">
+<<<<<<< HEAD
+            <h2 className="text-xl font-bold">Cache Warmer</h2>
+            <p className="text-white/70">Warms critical pages to keep the edge cache hot.</p>
+            <a className="text-cyan-300 underline" href="/.netlify/functions/cache-warmer" target="_blank" rel="noopener">Trigger / View</a>
+          </li>
+          <li className="rounded-lg bg-white/5 border border-white/10 p-5">
+            <h2 className="text-xl font-bold">Anchor Auditor</h2>
+            <p className="text-white/70">Finds broken #anchor links and publishes a report.</p>
+            <a className="text-cyan-300 underline" href="/.netlify/functions/anchor-auditor" target="_blank" rel="noopener">Trigger / View</a>
+          </li>
+
+          <li className="rounded-lg bg-white/5 border border-white/10 p-5">
+            <h2 className="text-xl font-bold">Structured Data Auditor</h2>
+            <p className="text-white/70">Checks JSON‑LD coverage and publishes a report to /reports/structured-data.</p>
+            <a className="text-cyan-300 underline" href="/.netlify/functions/structured-data-auditor" target="_blank" rel="noopener">Trigger / View</a>
+          </li>
+
+                     <li className="rounded-lg bg-white/5 border border-white/10 p-5">
+            <h2 className="text-xl font-bold">Dependency Auto‑Upgrade</h2>
+            <p className="text-white/70">Safely bumps minor/patch deps with build verification.</p>
+            <a className="text-cyan-300 underline" href="/.netlify/functions/deps-auto-upgrade-runner" target="_blank" rel="noopener">Trigger / View</a>
+          </li>
+
+          <li className="rounded-lg bg-white/5 border border-white/10 p-5">
+            <h2 className="text-xl font-bold">Auto Redirect Mapper</h2>
+            <p className="text-white/70">Scans link reports for internal 404s and writes safe redirects.</p>
+            <a className="text-cyan-300 underline" href="/.netlify/functions/auto-redirect-mapper" target="_blank" rel="noopener">Trigger / View</a>
+          </li>
+
+          <li className="rounded-lg bg-white/5 border border-white/10 p-5">
+            <h2 className="text-xl font-bold">Asset Size Guardian</h2>
+            <p className="text-white/70">Scans public assets, writes reports, and syncs changes.</p>
+            <a className="text-cyan-300 underline" href="/.netlify/functions/asset-size-guardian" target="_blank" rel="noopener">Trigger / View</a>
+          </li>
+          <li className="rounded-lg bg-white/5 border border-white/10 p-5">
+            <h2 className="text-xl font-bold">Content Freshness Auditor</h2>
+            <p className="text-white/70">Finds stale pages and docs; publishes a freshness report.</p>
+            <a className="text-cyan-300 underline" href="/.netlify/functions/content-freshness-auditor" target="_blank" rel="noopener">Trigger / View</a>
+          </li>
+          <li className="rounded-lg bg-white/5 border border-white/10 p-5">
+            <h2 className="text-xl font-bold">Repo Insights Digest</h2>
+            <p className="text-white/70">Compiles a daily repo health digest across automations.</p>
+            <a className="text-cyan-300 underline" href="/.netlify/functions/repo-insights-digest" target="_blank" rel="noopener">Trigger / View</a>
+=======
             <h2 className="text-xl font-bold">SEO Audit Runner</h2>
             <p className="text-white/70">Generates actionable SEO reports and syncs fixes.</p>
             <a className="text-cyan-300 underline" href="/.netlify/functions/seo-audit-runner" target="_blank" rel="noopener">Trigger / View</a>
@@ -185,6 +229,7 @@ export default function AutomationHub() {
             <h2 className="text-xl font-bold">Revenue Ideas Promoter</h2>
             <p className="text-white/70">Applies monetization CTAs and proposals across pages.</p>
             <a className="text-cyan-300 underline" href="/.netlify/functions/revenue-ideas-promoter" target="_blank" rel="noopener">Trigger / View</a>
+>>>>>>> origin/cursor/invent-and-deploy-autonomous-cloud-automations-0980
           </li>
         </ul>
         
