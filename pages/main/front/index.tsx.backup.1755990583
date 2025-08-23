@@ -1946,6 +1946,11 @@ export default function MainFrontIndex() {
           </div>
         </motion.section>
 
+<<<<<<< HEAD
+        
+        </div>
+        {/* Back to top */}
+=======
         {/* Innovation Lab — Intelligent Cloud Automations */}
         <motion.section
           id="innovation"
@@ -1978,6 +1983,7 @@ export default function MainFrontIndex() {
 
       </div>
       {/* Back to top */}
+>>>>>>> origin/cursor/invent-and-deploy-autonomous-cloud-automations-34dd
       {showToTop && (
         <button
           onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
