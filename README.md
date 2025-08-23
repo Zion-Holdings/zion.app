@@ -1,65 +1,48 @@
-# Zion AI Marketplace – Chat Assistant
+# Zion AI Marketplace – Assistant Widget
 
-An accessible, mobile-ready chat assistant powered by OpenAI. Includes a floating widget you can embed on every page and a secure server proxy so your API key stays private.
+An AI-powered chat assistant for the Zion AI Marketplace. It greets users, answers FAQs, and guides them through browsing listings, pricing/credits, integrations, and vendor onboarding. The widget is responsive and can be included on all pages.
 
-## Quick start
+## Features
+- Floating chat bubble, always-on across pages
+- Mobile-friendly panel with accessible controls
+- Greeting + quick action buttons
+- Conversations persisted in `localStorage`
+- Server-side proxy to OpenAI (no API key in browser)
+- Lightweight FAQ context to improve response quality
 
-1. Create environment file
+## Tech
+- Node.js + Express (ESM)
+- OpenAI API
+- Vanilla JS/CSS widget, no framework
 
-```bash
-cp server/.env.sample server/.env
-# edit server/.env and set OPENAI_API_KEY
-```
+## Setup
+1. Copy env and set your key:
+   ```bash
+   cp .env.example .env
+   # Edit .env to set OPENAI_API_KEY and optional OPENAI_MODEL
+   ```
+2. Install and run:
+   ```bash
+   npm install
+   npm run dev
+   # Open http://localhost:3000
+   ```
 
-2. Install dependencies and run
-
-```bash
-cd server
-npm install
-npm run start
-```
-
-This serves the widget at `http://localhost:8787/widget.js` and the chat API at `http://localhost:8787/api/chat`.
-
-## Embed on any page
-
-Add this script tag to your site-wide layout (e.g., in `<body>`):
-
+## Embed on your site
+Include the script and stylesheet in your global layout (so it appears on all pages):
 ```html
-<script
-  src="http://localhost:8787/widget.js"
-  data-api-base="http://localhost:8787/api"
-  data-accent="#6c5ce7"
-  data-greeting="Hi! I’m your Zion AI Assistant. How can I help?"
-  async
-  defer
-></script>
+<link rel="stylesheet" href="/widget.css" />
+<script src="/widget.js" defer></script>
 ```
+The widget mounts automatically and talks to `/api/chat` on the same origin.
 
-- `data-api-base`: Points the widget to your server’s API prefix
-- `data-accent`: Customizes the widget color
-- `data-greeting`: Optional custom greeting shown on first open
+If your site is hosted separately, deploy this server and set `ALLOWED_ORIGIN` accordingly.
 
-The widget creates a floating button and a panel (bottom-right on desktop, full-screen on mobile). It’s accessible via keyboard and screen readers, supports Escape to close, and is responsive.
-
-## How it works
-
-- Frontend: vanilla JS/CSS in `server/public/widget.js` and `server/public/widget.css`
-- Backend: Express server in `server/index.js` exposes `POST /api/chat` and proxies to OpenAI Chat Completions with a Zion-specific system prompt
-- Security: API key remains on the server; the browser never sees it
-
-## Configuration
-
-- `PORT`: Server port (default 8787)
-- `OPENAI_API_KEY`: Your OpenAI API key
-- `OPENAI_MODEL`: Optional model override (`gpt-4o`, `gpt-4o-mini`, `gpt-4.1`, etc.)
-
-## Deploying
-
-- Host the `server` anywhere that supports Node.js (Render, Railway, Fly, Vercel functions, etc.)
-- Update the script `src` and `data-api-base` to your deployed domain
+## Customization
+- Edit the system prompt and FAQ in `server.mjs`.
+- Adjust styles in `public/widget.css`.
+- Change greeting, quick actions, or persistence in `public/widget.js`.
 
 ## Notes
-
-- The assistant greets users, answers FAQs, and guides through marketplace features. Customize the system prompt in `server/index.js`.
-- For streaming responses, you can extend the server to use OpenAI streaming and emit text via server-sent events.
+- Default model is `gpt-4o-mini`. You can set `OPENAI_MODEL` to any GPT-4 family model available to your key.
+- For enterprise usage, add authentication and stronger rate limiting.
