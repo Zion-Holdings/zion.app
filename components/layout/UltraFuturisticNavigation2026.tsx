@@ -224,6 +224,67 @@ const UltraFuturisticNavigation2026: React.FC<UltraFuturisticNavigation2026Props
           description: 'Digital retail transformation'
         }
       ]
+    },
+    {
+      label: 'Company',
+      href: '/about',
+      icon: Building,
+      description: 'Learn about Zion Tech Group',
+      children: [
+        { 
+          label: 'About Us', 
+          href: '/about',
+          description: 'Our story and mission'
+        },
+        { 
+          label: 'Team', 
+          href: '/team',
+          description: 'Meet our experts'
+        },
+        { 
+          label: 'Careers', 
+          href: '/careers',
+          description: 'Join our team'
+        },
+        { 
+          label: 'News', 
+          href: '/news',
+          description: 'Latest updates and insights'
+        },
+        { 
+          label: 'Press', 
+          href: '/press',
+          description: 'Media resources and press releases'
+        }
+      ]
+    },
+    {
+      label: 'Get Started',
+      href: '/quote',
+      icon: Rocket,
+      description: 'Start your transformation journey',
+      children: [
+        { 
+          label: 'Get a Quote', 
+          href: '/quote',
+          description: 'Request custom pricing'
+        },
+        { 
+          label: 'Contact Us', 
+          href: '/contact',
+          description: 'Get in touch with our team'
+        },
+        { 
+          label: 'Schedule Demo', 
+          href: '/contact',
+          description: 'See our solutions in action'
+        },
+        { 
+          label: 'Support', 
+          href: '/support',
+          description: 'Get help and support'
+        }
+      ]
     }
   ];
 
