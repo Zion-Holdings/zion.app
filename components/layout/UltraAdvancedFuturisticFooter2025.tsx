@@ -22,17 +22,18 @@ interface FooterSection {
 }
 
 const footerSections: FooterSection[] = [
-  {
-    title: 'Services',
-    links: [
-      { label: 'AI & Machine Learning', href: '/ai-services', description: 'Advanced AI solutions' },
-      { label: 'Quantum Computing', href: '/quantum-computing', description: 'Next-gen quantum tech' },
-      { label: 'Space Technology', href: '/space-tech', description: 'Innovative space solutions' },
-      { label: 'Cybersecurity', href: '/cybersecurity', description: 'Enterprise security' },
-      { label: 'Cloud Solutions', href: '/cloud-platform', description: 'Scalable cloud infrastructure' },
-      { label: 'View All Services', href: '/services', description: 'Complete service portfolio' }
-    ]
-  },
+        {
+        title: 'Services',
+        links: [
+          { label: 'AI & Machine Learning', href: '/ai-services', description: 'Advanced AI solutions' },
+          { label: 'Innovative 2040 Services', href: '/innovative-2040-futuristic-services-showcase', description: 'Cutting-edge futuristic solutions' },
+          { label: 'Quantum Computing', href: '/quantum-computing', description: 'Next-gen quantum tech' },
+          { label: 'Space Technology', href: '/space-tech', description: 'Innovative space solutions' },
+          { label: 'Cybersecurity', href: '/cybersecurity', description: 'Enterprise security' },
+          { label: 'Cloud Solutions', href: '/cloud-platform', description: 'Scalable cloud infrastructure' },
+          { label: 'View All Services', href: '/services', description: 'Complete service portfolio' }
+        ]
+      },
   {
     title: 'Company',
     links: [
@@ -77,9 +78,9 @@ const socialLinks = [
 ];
 
 const contactInfo = {
-  phone: '+1 (302) 464-0950',
-  email: 'contact@ziontechgroup.com',
-  address: '364 E Main St STE 1008, Middletown, DE 19709',
+  phone: '+1 302 464 0950',
+  email: 'kleber@ziontechgroup.com',
+  address: '364 E Main St STE 1008 Middletown DE 19709',
   website: 'https://ziontechgroup.com'
 };
 
