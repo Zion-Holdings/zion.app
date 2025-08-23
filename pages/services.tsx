@@ -7,6 +7,7 @@ import {
   ArrowRight, Check, Palette, Heart, Truck, GraduationCap,
   Building
 } from 'lucide-react';
+import { renderServicePrice, getNumericPrice, getServiceDescription, getServiceFeatures, getServiceCategory } from '../utils/serviceUtils';
 
 // Import our new service data
 import { enterpriseITSolutions } from '../data/2034-enterprise-it-solutions';
@@ -54,6 +55,7 @@ import { comprehensiveServicesAdvertising2025 } from '../data/comprehensive-serv
 
 // Import our new innovative 2040 services
 import { innovative2040ITServices } from '../data/innovative-2040-it-services';
+
 // Import our new 2025 advanced enterprise services
 import { advancedEnterpriseServices } from '../data/2025-advanced-enterprise-services-expansion';
 import { innovativeMicroSaasServices } from '../data/2025-innovative-micro-saas-expansion';
@@ -70,34 +72,7 @@ import { marketReadyServices } from '../data/market-ready-services';
 import { marketValidatedServices } from '../data/market-validated-services';
 import { industryRealServices } from '../data/industry-real-services';
 
-// Helper function to get service category
-const getServiceCategory = (service: any) => {
-  if (service.category) return service.category;
-  if (service.type) return service.type;
-  return 'Other';
-};
-
-// Helper function to get service pricing
-const getServicePricing = (service: any) => {
-  if (service.pricing?.starter) return service.pricing.starter;
-  if (service.pricing?.monthly) return `$${service.pricing.monthly}/month`;
-  if (service.price?.monthly) return `$${service.price.monthly}/month`;
-  return 'Contact for pricing';
-};
-
-// Helper function to get service features
-const getServiceFeatures = (service: any) => {
-  if (service.features) return service.features;
-  if (service.keyFeatures) return service.keyFeatures;
-  return [];
-};
-
-// Helper function to get service description
-const getServiceDescription = (service: any) => {
-  if (service.description) return service.description;
-  if (service.tagline) return service.tagline;
-  return 'No description available';
-};
+// Helper functions are now imported from utils/serviceUtils
 
 // Create unified services array
 const allServices = [
@@ -284,11 +259,9 @@ export default function Services() {
       case 'name':
         return a.name.localeCompare(b.name);
       case 'price-low':
-        return (parseInt(getServicePricing(a).replace(/[^0-9]/g, '')) || 0) - 
-               (parseInt(getServicePricing(b).replace(/[^0-9]/g, '')) || 0);
+        return getNumericPrice(a) - getNumericPrice(b);
       case 'price-high':
-        return (parseInt(getServicePricing(b).replace(/[^0-9]/g, '')) || 0) - 
-               (parseInt(getServicePricing(a).replace(/[^0-9]/g, '')) || 0);
+        return getNumericPrice(b) - getNumericPrice(a);
       case 'newest':
         return new Date((b as any).launchDate || '2020-01-01').getTime() - 
                new Date((a as any).launchDate || '2020-01-01').getTime();
@@ -571,7 +544,7 @@ export default function Services() {
                       <div className="mb-6">
                         <h4 className="text-sm font-semibold text-cyan-300 mb-2">Starting at</h4>
                         <div className="text-2xl font-bold text-white">
-                          {getServicePricing(service)}
+                          {renderServicePrice(service)}
                         </div>
                       </div>
 

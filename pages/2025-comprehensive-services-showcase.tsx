@@ -97,101 +97,80 @@ const ComprehensiveServicesShowcase2025: React.FC = () => {
             </p>
             
             {/* Contact Information */}
-            <div className="bg-white/10 backdrop-blur-lg rounded-2xl p-6 mb-8 max-w-2xl mx-auto">
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-center">
-                <div className="flex flex-col items-center">
-                  <Phone className="w-6 h-6 text-cyan-400 mb-2" />
-                  <span className="text-white font-semibold">+1 302 464 0950</span>
-                </div>
-                <div className="flex flex-col items-center">
-                  <Mail className="w-6 h-6 text-blue-400 mb-2" />
-                  <span className="text-white font-semibold">kleber@ziontechgroup.com</span>
-                </div>
-                <div className="flex flex-col items-center">
-                  <MapPin className="w-6 h-6 text-purple-400 mb-2" />
-                  <span className="text-white font-semibold text-sm">364 E Main St STE 1008<br />Middletown DE 19709</span>
-                </div>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-gray-300 mb-8 max-w-4xl mx-auto">
+              <div className="flex items-center justify-center space-x-2">
+                <Phone className="w-5 h-5 text-cyan-400" />
+                <span>+1 302 464 0950</span>
+              </div>
+              <div className="flex items-center justify-center space-x-2">
+                <Mail className="w-5 h-5 text-cyan-400" />
+                <span>kleber@ziontechgroup.com</span>
+              </div>
+              <div className="flex items-center justify-center space-x-2">
+                <MapPin className="w-5 h-5 text-cyan-400" />
+                <span>364 E Main St STE 1008 Middletown DE 19709</span>
               </div>
             </div>
 
-            <div className="flex flex-wrap justify-center gap-4">
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="bg-gradient-to-r from-cyan-500 to-blue-600 text-white px-8 py-3 rounded-xl font-semibold hover:from-cyan-600 hover:to-blue-700 transition-all"
-                onClick={() => document.getElementById('services-section')?.scrollIntoView({ behavior: 'smooth' })}
-              >
-                Explore Services
-              </motion.button>
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="bg-white/10 text-white px-8 py-3 rounded-xl font-semibold hover:bg-white/20 transition-all border border-white/20"
-                onClick={() => document.getElementById('contact-section')?.scrollIntoView({ behavior: 'smooth' })}
-              >
-                Contact Us
-              </motion.button>
-            </div>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* Search and Filter Section */}
-      <section className="px-4 sm:px-6 lg:px-8 mb-12">
-        <div className="max-w-7xl mx-auto">
-          <div className="bg-white/10 backdrop-blur-lg rounded-2xl p-6">
-            <div className="flex flex-col lg:flex-row gap-4 items-center justify-between">
-              {/* Search */}
-              <div className="relative flex-1 max-w-md">
+            {/* Search and Filter Controls */}
+            <div className="max-w-2xl mx-auto mb-8">
+              <div className="relative">
                 <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
                 <input
                   type="text"
                   placeholder="Search services..."
                   value={searchTerm}
                   onChange={(e) => setSearchTerm(e.target.value)}
-                  className="w-full pl-10 pr-4 py-2 bg-white/20 border border-white/20 rounded-lg text-white placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-cyan-500"
+                  className="w-full pl-10 pr-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:border-transparent"
                 />
               </div>
+            </div>
 
-              {/* Category Filter */}
-              <div className="flex flex-wrap gap-2">
-                {categories.slice(0, 8).map((category) => (
-                  <button
-                    key={category.id}
-                    onClick={() => setSelectedCategory(category.id)}
-                    className={`px-4 py-2 rounded-lg text-sm font-medium transition-all ${
-                      selectedCategory === category.id
-                        ? 'bg-gradient-to-r ' + category.color + ' text-white'
-                        : 'bg-white/10 text-gray-300 hover:bg-white/20'
-                    }`}
-                  >
-                    {category.icon}
-                    <span className="ml-2">{category.name}</span>
-                  </button>
-                ))}
-              </div>
-
-              {/* View Mode Toggle */}
-              <div className="flex bg-white/10 rounded-lg p-1">
+            {/* Category Filter */}
+            <div className="flex flex-wrap justify-center gap-2 mb-8">
+              {categories.map((category) => (
                 <button
-                  onClick={() => setViewMode('grid')}
-                  className={`p-2 rounded-md transition-all ${
-                    viewMode === 'grid' ? 'bg-cyan-500 text-white' : 'text-gray-300 hover:text-white'
+                  key={category.id}
+                  onClick={() => setSelectedCategory(category.id)}
+                  className={`px-4 py-2 rounded-full text-sm font-medium transition-all ${
+                    selectedCategory === category.id
+                      ? 'bg-gradient-to-r from-cyan-500 to-blue-600 text-white'
+                      : 'bg-white/10 text-gray-300 hover:bg-white/20'
                   }`}
                 >
-                  <Grid className="w-5 h-5" />
+                  {category.name}
+                </button>
+              ))}
+            </div>
+
+            {/* View Mode Toggle */}
+            <div className="flex justify-center mb-8">
+              <div className="bg-white/10 rounded-lg p-1">
+                <button
+                  onClick={() => setViewMode('grid')}
+                  className={`px-4 py-2 rounded-md text-sm font-medium transition-all ${
+                    viewMode === 'grid'
+                      ? 'bg-gradient-to-r from-cyan-500 to-blue-600 text-white'
+                      : 'text-gray-300 hover:text-white'
+                  }`}
+                >
+                  <Grid className="w-4 h-4 inline mr-2" />
+                  Grid
                 </button>
                 <button
                   onClick={() => setViewMode('list')}
-                  className={`p-2 rounded-md transition-all ${
-                    viewMode === 'list' ? 'bg-cyan-500 text-white' : 'text-gray-300 hover:text-white'
+                  className={`px-4 py-2 rounded-md text-sm font-medium transition-all ${
+                    viewMode === 'list'
+                      ? 'bg-gradient-to-r from-cyan-500 to-blue-600 text-white'
+                      : 'text-gray-300 hover:text-white'
                   }`}
                 >
-                  <List className="w-5 h-5" />
+                  <List className="w-4 h-4 inline mr-2" />
+                  List
                 </button>
               </div>
             </div>
-          </div>
+          </motion.div>
         </div>
       </section>
 
@@ -297,33 +276,33 @@ const ComprehensiveServicesShowcase2025: React.FC = () => {
                     initial={{ opacity: 0, x: -20 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ duration: 0.5, delay: index * 0.1 }}
-                    className="bg-white/10 backdrop-blur-lg rounded-2xl p-6 hover:bg-white/20 transition-all border border-white/20"
+                    className="bg-white/10 backdrop-blur-lg rounded-xl p-6 hover:bg-white/20 transition-all border border-white/20"
                   >
                     <div className="flex items-center justify-between">
                       <div className="flex items-center space-x-4">
-                        <span className="text-3xl">{service.icon}</span>
+                        <span className="text-2xl">{service.icon}</span>
                         <div>
-                          <h3 className="text-xl font-bold text-white">{service.name}</h3>
-                          <p className="text-gray-300">{service.tagline}</p>
-                          <div className="flex items-center space-x-4 mt-2 text-sm text-gray-400">
+                          <h3 className="text-lg font-bold text-white">{service.name}</h3>
+                          <p className="text-gray-300 text-sm">{service.tagline}</p>
+                          <div className="flex items-center space-x-4 mt-2 text-xs text-gray-400">
+                            <span>${service.price.monthly}/month</span>
+                            <span>•</span>
                             <span>{service.category}</span>
                             <span>•</span>
-                            <span>{service.customers.toLocaleString()} customers</span>
-                            <span>•</span>
-                            <span>⭐ {service.rating} ({service.reviews} reviews)</span>
+                            <span>{service.customers} customers</span>
                           </div>
                         </div>
                       </div>
                       <div className="text-right">
                         <div className="text-2xl font-bold text-cyan-400">${service.price.monthly}</div>
-                        <div className="text-gray-300">/month</div>
+                        <div className="text-xs text-gray-400">per month</div>
                         <a
                           href={service.link}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="inline-block bg-gradient-to-r from-cyan-500 to-blue-600 text-white px-4 py-2 rounded-lg font-semibold hover:from-cyan-600 hover:to-blue-700 transition-all mt-2"
+                          className="inline-flex items-center text-cyan-400 hover:text-cyan-300 text-sm mt-2"
                         >
-                          Learn More
+                          Learn More <ArrowRight className="w-4 h-4 ml-1" />
                         </a>
                       </div>
                     </div>
@@ -332,97 +311,101 @@ const ComprehensiveServicesShowcase2025: React.FC = () => {
               </div>
             )}
           </AnimatePresence>
-
-          {/* No Results */}
-          {filteredServices.length === 0 && (
-            <div className="text-center py-12">
-              <div className="text-6xl mb-4">🔍</div>
-              <h3 className="text-xl font-semibold text-white mb-2">No services found</h3>
-              <p className="text-gray-300">Try adjusting your search terms or category filter.</p>
-            </div>
-          )}
         </div>
       </section>
 
-      {/* Contact Section */}
-      <section id="contact-section" className="px-4 sm:px-6 lg:px-8 py-20">
-        <div className="max-w-4xl mx-auto text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-          >
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
-              Ready to Transform Your Business?
-            </h2>
-            <p className="text-xl text-gray-300 mb-8">
-              Our team of experts is ready to help you implement the perfect solution for your needs. 
-              Get in touch today to start your transformation journey.
-            </p>
-
-            {/* Contact Cards */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
-              <div className="bg-white/10 backdrop-blur-lg rounded-2xl p-6 border border-white/20">
-                <Phone className="w-12 h-12 text-cyan-400 mx-auto mb-4" />
-                <h3 className="text-lg font-semibold text-white mb-2">Call Us</h3>
-                <p className="text-cyan-400 font-semibold">+1 302 464 0950</p>
-                <p className="text-gray-300 text-sm mt-2">Available 24/7 for urgent matters</p>
-              </div>
-
-              <div className="bg-white/10 backdrop-blur-lg rounded-2xl p-6 border border-white/20">
-                <Mail className="w-12 h-12 text-blue-400 mx-auto mb-4" />
-                <h3 className="text-lg font-semibold text-white mb-2">Email Us</h3>
-                <p className="text-blue-400 font-semibold">kleber@ziontechgroup.com</p>
-                <p className="text-gray-300 text-sm mt-2">We'll respond within 2 hours</p>
-              </div>
-
-              <div className="bg-white/10 backdrop-blur-lg rounded-2xl p-6 border border-white/20">
-                <MapPin className="w-12 h-12 text-purple-400 mx-auto mb-4" />
-                <h3 className="text-lg font-semibold text-white mb-2">Visit Us</h3>
-                <p className="text-purple-400 font-semibold text-sm">364 E Main St STE 1008<br />Middletown DE 19709</p>
-                <p className="text-gray-300 text-sm mt-2">Schedule an in-person meeting</p>
-              </div>
+      {/* Why Choose Zion Tech Group */}
+      <section className="relative z-10 py-16 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto">
+          <h2 className="text-4xl font-bold text-center mb-12 bg-gradient-to-r from-yellow-400 to-orange-500 bg-clip-text text-transparent">
+            Why Choose Zion Tech Group?
+          </h2>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div className="text-center">
+              <div className="text-4xl mb-4">🚀</div>
+              <h3 className="text-xl font-bold text-white mb-2">Innovation First</h3>
+              <p className="text-gray-400">
+                We stay ahead of the curve with cutting-edge technologies and innovative solutions.
+              </p>
             </div>
-
-            {/* CTA Buttons */}
-            <div className="flex flex-wrap justify-center gap-4">
-              <motion.a
-                href="tel:+13024640950"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="bg-gradient-to-r from-cyan-500 to-blue-600 text-white px-8 py-3 rounded-xl font-semibold hover:from-cyan-600 hover:to-blue-700 transition-all flex items-center"
-              >
-                <Phone className="w-5 h-5 mr-2" />
-                Call Now
-              </motion.a>
-              <motion.a
-                href="mailto:kleber@ziontechgroup.com"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="bg-white/10 text-white px-8 py-3 rounded-xl font-semibold hover:bg-white/20 transition-all border border-white/20 flex items-center"
-              >
-                <Mail className="w-5 h-5 mr-2" />
-                Send Email
-              </motion.a>
+            
+            <div className="text-center">
+              <div className="text-4xl mb-4">💎</div>
+              <h3 className="text-xl font-bold text-white mb-2">Quality Assured</h3>
+              <p className="text-gray-400">
+                Every service is built with enterprise-grade quality and reliability in mind.
+              </p>
             </div>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* Footer */}
-      <footer className="bg-black/20 border-t border-white/10 py-8">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center">
-            <p className="text-gray-400">
-              © 2025 Zion Tech Group. All rights reserved. | 
-              <a href="https://ziontechgroup.com" className="text-cyan-400 hover:text-cyan-300 ml-1">
-                ziontechgroup.com
-              </a>
-            </p>
+            
+            <div className="text-center">
+              <div className="text-4xl mb-4">🔒</div>
+              <h3 className="text-xl font-bold text-white mb-2">Security Focused</h3>
+              <p className="text-gray-400">
+                Advanced security measures and compliance with industry standards.
+              </p>
+            </div>
+            
+            <div className="text-center">
+              <div className="text-4xl mb-4">📈</div>
+              <h3 className="text-xl font-bold text-white mb-2">Proven ROI</h3>
+              <p className="text-gray-400">
+                Our solutions deliver measurable business value and competitive advantage.
+              </p>
+            </div>
           </div>
         </div>
-      </footer>
+      </section>
+
+      {/* Call to Action */}
+      <section className="relative z-10 py-16 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-4xl mx-auto text-center">
+          <h2 className="text-4xl font-bold mb-6 bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
+            Ready to Transform Your Business?
+          </h2>
+          <p className="text-xl text-gray-300 mb-8">
+            Join hundreds of organizations already leveraging our innovative technology solutions to gain competitive advantage.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <a
+              href="/contact"
+              className="bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-600 hover:to-blue-700 text-white px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300 transform hover:scale-105"
+            >
+              Start Your Journey
+            </a>
+            <a
+              href="https://ziontechgroup.com"
+              className="border border-cyan-500 text-cyan-400 hover:bg-cyan-500 hover:text-white px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300"
+            >
+              Visit Our Website
+            </a>
+          </div>
+        </div>
+      </section>
+
+      {/* Footer Contact */}
+      <section className="relative z-10 py-12 bg-gradient-to-r from-slate-900 to-gray-900 border-t border-cyan-500/30">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h3 className="text-2xl font-bold text-white mb-6">Get in Touch</h3>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-gray-300 mb-6">
+            <div>
+              <p className="font-semibold text-white">📱 Mobile</p>
+              <p className="text-cyan-400">+1 302 464 0950</p>
+            </div>
+            <div>
+              <p className="font-semibold text-white">✉️ Email</p>
+              <p className="text-cyan-400">kleber@ziontechgroup.com</p>
+            </div>
+            <div>
+              <p className="font-semibold text-white">🌐 Website</p>
+              <p className="text-cyan-400">https://ziontechgroup.com</p>
+            </div>
+          </div>
+          <p className="text-sm text-gray-400">
+            364 E Main St STE 1008 Middletown DE 19709
+          </p>
+        </div>
+      </section>
     </div>
   );
 };

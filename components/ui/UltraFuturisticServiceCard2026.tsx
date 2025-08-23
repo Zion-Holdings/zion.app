@@ -1,6 +1,7 @@
 import React, { useState, useCallback } from 'react';
 import { motion } from 'framer-motion';
 import { ArrowRight, Star, CheckCircle, Zap, Brain, Atom, Rocket } from 'lucide-react';
+import { renderServicePrice } from '../../utils/serviceUtils';
 
 interface Service {
   id: string;
@@ -195,7 +196,7 @@ const UltraFuturisticServiceCard2026: React.FC<UltraFuturisticServiceCard2026Pro
             animate={{ opacity: 1 }}
             transition={{ delay: 0.3 }}
           >
-            <span className="text-2xl font-bold text-white">{service.price}</span>
+            <span className="text-2xl font-bold text-white">{renderServicePrice(service)}</span>
             <span className="text-gray-400 text-sm ml-1">{service.period}</span>
           </motion.div>
 
