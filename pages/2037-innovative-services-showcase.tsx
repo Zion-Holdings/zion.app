@@ -19,75 +19,108 @@ const contactInfo = {
   website: 'https://ziontechgroup.com'
 };
 
-const ServiceCard = ({ service, index }: { service: any; index: number }) => (
-  <motion.div
-    initial={{ opacity: 0, y: 50 }}
-    animate={{ opacity: 1, y: 0 }}
-    transition={{ duration: 0.5, delay: index * 0.1 }}
-    className="relative group"
-  >
-    <div className={`absolute inset-0 bg-gradient-to-r ${service.color} rounded-2xl blur-xl group-hover:blur-2xl transition-all duration-500 opacity-20`}></div>
-    <div className={`relative bg-gradient-to-r ${service.color.replace('from-', 'from-').replace('to-', 'to-')} bg-opacity-10 border border-opacity-30 rounded-2xl p-8 hover:border-opacity-50 transition-all duration-300 h-full`}>
-      <div className="flex items-start justify-between mb-6">
-        <div className="text-4xl">{service.icon}</div>
-        {service.popular && (
-          <span className="px-3 py-1 bg-gradient-to-r from-yellow-500 to-orange-500 text-white text-xs font-semibold rounded-full">
-            Popular
-          </span>
-        )}
-      </div>
-      
-      <h3 className="text-2xl font-bold text-white mb-3">{service.name}</h3>
-      <p className="text-gray-300 mb-6 text-sm leading-relaxed">{service.description}</p>
-      
-      <div className="space-y-3 mb-6">
-        {service.features.slice(0, 4).map((feature: string, idx: number) => (
-          <div key={idx} className="flex items-center space-x-2">
-            <Check className="w-4 h-4 text-green-400 flex-shrink-0" />
-            <span className="text-gray-300 text-sm">{feature}</span>
+// Helper function to get icon based on category
+const getIconForCategory = (category: string) => {
+  const categoryLower = category.toLowerCase();
+  if (categoryLower.includes('ai') || categoryLower.includes('consciousness')) return Brain;
+  if (categoryLower.includes('quantum')) return Atom;
+  if (categoryLower.includes('autonomous')) return Zap;
+  if (categoryLower.includes('cloud') || categoryLower.includes('infrastructure')) return Cloud;
+  if (categoryLower.includes('security') || categoryLower.includes('cyber')) return Shield;
+  if (categoryLower.includes('operations')) return Settings;
+  if (categoryLower.includes('neural') || categoryLower.includes('network')) return Cpu;
+  return Rocket;
+};
+
+// Helper function to get color based on category
+const getColorForCategory = (category: string) => {
+  const categoryLower = category.toLowerCase();
+  if (categoryLower.includes('ai') || categoryLower.includes('consciousness')) return 'from-purple-500 to-pink-500';
+  if (categoryLower.includes('quantum')) return 'from-blue-500 to-cyan-500';
+  if (categoryLower.includes('autonomous')) return 'from-green-500 to-emerald-500';
+  if (categoryLower.includes('cloud') || categoryLower.includes('infrastructure')) return 'from-indigo-500 to-blue-500';
+  if (categoryLower.includes('security') || categoryLower.includes('cyber')) return 'from-red-500 to-orange-500';
+  if (categoryLower.includes('operations')) return 'from-yellow-500 to-orange-500';
+  if (categoryLower.includes('neural') || categoryLower.includes('network')) return 'from-violet-500 to-purple-500';
+  return 'from-cyan-500 to-blue-500';
+};
+
+const ServiceCard = ({ service, index }: { service: any; index: number }) => {
+  const IconComponent = getIconForCategory(service.category);
+  const colorClass = getColorForCategory(service.category);
+  
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 50 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5, delay: index * 0.1 }}
+      className="relative group"
+    >
+      <div className={`absolute inset-0 bg-gradient-to-r ${colorClass} rounded-2xl blur-xl group-hover:blur-2xl transition-all duration-500 opacity-20`}></div>
+      <div className={`relative bg-gradient-to-r ${colorClass} bg-opacity-10 border border-opacity-30 rounded-2xl p-8 hover:border-opacity-50 transition-all duration-300 h-full`}>
+        <div className="flex items-start justify-between mb-6">
+          <div className="text-4xl">
+            <IconComponent className="w-12 h-12 text-white" />
           </div>
-        ))}
-      </div>
-      
-      <div className="flex items-center justify-between mb-6">
-        <div>
-          <span className="text-3xl font-bold text-white">{service.price}</span>
-          <span className="text-gray-400 text-sm">{service.period}</span>
+          {service.rating >= 4.8 && (
+            <span className="px-3 py-1 bg-gradient-to-r from-yellow-500 to-orange-500 text-white text-xs font-semibold rounded-full">
+              Top Rated
+            </span>
+          )}
         </div>
-        <div className="text-right">
-          <div className="flex items-center space-x-1 text-yellow-400">
-            {[...Array(5)].map((_, i) => (
-              <Star key={i} className={`w-4 h-4 ${i < Math.floor(service.rating) ? 'fill-current' : ''}`} />
-            ))}
+        
+        <h3 className="text-2xl font-bold text-white mb-3">{service.name}</h3>
+        <p className="text-gray-300 mb-6 text-sm leading-relaxed">{service.description}</p>
+        
+        <div className="space-y-3 mb-6">
+          {service.features.slice(0, 4).map((feature: string, idx: number) => (
+            <div key={idx} className="flex items-center space-x-2">
+              <Check className="w-4 h-4 text-green-400 flex-shrink-0" />
+              <span className="text-gray-300 text-sm">{feature}</span>
+            </div>
+          ))}
+        </div>
+        
+        <div className="flex items-center justify-between mb-6">
+          <div>
+            <span className="text-3xl font-bold text-white">{service.pricing.starter}</span>
+            <span className="text-gray-400 text-sm">/month</span>
           </div>
-          <span className="text-gray-400 text-xs">{service.rating}/5 ({service.reviews} reviews)</span>
+          <div className="text-right">
+            <div className="flex items-center space-x-1 text-yellow-400">
+              {[...Array(5)].map((_, i) => (
+                <Star key={i} className={`w-4 h-4 ${i < Math.floor(service.rating) ? 'fill-current' : ''}`} />
+              ))}
+            </div>
+            <span className="text-gray-400 text-xs">{service.rating}/5</span>
+          </div>
         </div>
+        
+        <div className="space-y-3 mb-6 text-xs text-gray-400">
+          <div className="flex justify-between">
+            <span>Category:</span>
+            <span>{service.category}</span>
+          </div>
+          <div className="flex justify-between">
+            <span>Launch:</span>
+            <span>{service.launchDate}</span>
+          </div>
+          <div className="flex justify-between">
+            <span>Market Price:</span>
+            <span>{service.marketPrice}</span>
+          </div>
+        </div>
+        
+        <a 
+          href={service.link} 
+          className="block w-full text-center py-3 bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-semibold rounded-lg hover:from-cyan-600 hover:to-blue-700 transition-all duration-300 transform hover:scale-105"
+        >
+          Learn More
+        </a>
       </div>
-      
-      <div className="space-y-3 mb-6 text-xs text-gray-400">
-        <div className="flex justify-between">
-          <span>Setup Time:</span>
-          <span>{service.setupTime}</span>
-        </div>
-        <div className="flex justify-between">
-          <span>Trial:</span>
-          <span>{service.trialDays} days</span>
-        </div>
-        <div className="flex justify-between">
-          <span>Customers:</span>
-          <span>{service.customers.toLocaleString()}</span>
-        </div>
-      </div>
-      
-      <a 
-        href={service.link} 
-        className="block w-full text-center py-3 bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-semibold rounded-lg hover:from-cyan-600 hover:to-blue-700 transition-all duration-300 transform hover:scale-105"
-      >
-        Learn More
-      </a>
-    </div>
-  </motion.div>
-);
+    </motion.div>
+  );
+};
 
 const ServiceShowcase = () => {
   const [activeCategory, setActiveCategory] = useState('all');
