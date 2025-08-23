@@ -229,6 +229,14 @@ export { advancedCloudDevOpsServices } from '../data/2025-advanced-cloud-devops-
 export { industrySpecificSolutions } from '../data/2025-industry-specific-solutions';
 export { emergingTechnologyServices } from '../data/2025-emerging-technology-services';
 
+// Export new 2025 advanced services
+export { advancedEdgeComputingServices } from '../data/2025-advanced-edge-computing-services';
+export { advancedCybersecurityAutomationServices } from '../data/2025-advanced-cybersecurity-automation';
+export { advancedAIAutonomousSystemServices } from '../data/2025-advanced-ai-autonomous-systems';
+export { advancedFintechBlockchainAutomationServices } from '../data/2025-advanced-fintech-blockchain-automation';
+export { advancedHealthcareBiotechServices } from '../data/2025-advanced-healthcare-biotech-services';
+export { advancedSustainabilityGreenTechServices } from '../data/2025-advanced-sustainability-green-tech';
+
 // Export new service types
 export type { AIMLService } from '../data/2025-advanced-ai-ml-services';
 export type { CybersecurityComplianceService } from '../data/2025-advanced-cybersecurity-compliance-services';
@@ -236,3 +244,11 @@ export type { CloudDevOpsService } from '../data/2025-advanced-cloud-devops-serv
 export type { DataAnalyticsBIService } from '../data/2025-advanced-data-analytics-bi-services';
 export type { EnterpriseAutomationService } from '../data/2025-advanced-enterprise-automation-services';
 export type { FintechBlockchainService } from '../data/2025-advanced-fintech-blockchain-services';
+
+// Export new 2025 advanced service types
+export type { EdgeComputingService } from '../data/2025-advanced-edge-computing-services';
+export type { CybersecurityAutomationService } from '../data/2025-advanced-cybersecurity-automation';
+export type { AIAutonomousSystemService } from '../data/2025-advanced-ai-autonomous-systems';
+export type { FintechBlockchainAutomationService } from '../data/2025-advanced-fintech-blockchain-automation';
+export type { HealthcareBiotechService } from '../data/2025-advanced-healthcare-biotech-services';
+export type { SustainabilityGreenTechService } from '../data/2025-advanced-sustainability-green-tech';
