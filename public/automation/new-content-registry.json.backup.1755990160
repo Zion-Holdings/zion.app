@@ -1,4 +1,15 @@
 {
+<<<<<<< HEAD
+      "createdAt": "2025-08-14T13:40:17.480Z",
+      "source": "cloud-content-factory"
+    },
+    {
+      "title": "Autonomous Update — 2025-08-14 13-40",
+      "href": "/reports/updates/update-2025-08-14T13-40",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-14T13:40:17.480Z",
+      "source": "cloud-content-factory"
+=======
   "generatedAt": "2025-08-14T13:43:33.451Z",
   "items": [
     {
@@ -56,6 +67,7 @@
       "href": "/reports/patterns/pattern-2025-08-14-135347",
       "desc": "New autonomous content",
       "createdAt": "2025-08-14T13:53:47.299Z",
+>>>>>>> origin/automation/git-sync/2025-08-14T13-53-51-383Z
       "source": "cloud-deep-research-factory"
     }
   ]
