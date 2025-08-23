@@ -1,0 +1,458 @@
+import React from 'react';
+import Layout from '../components/layout/Layout';
+import { motion } from 'framer-motion';
+import { 
+  Rocket, 
+  Globe, 
+  Satellite, 
+  Map, 
+  Target, 
+  Star,
+  ArrowRight,
+  Check,
+  Play,
+  Phone,
+  Mail,
+  MapPin,
+  Lock,
+  TrendingUp,
+  Award,
+  Lightbulb,
+  Database,
+  Server,
+  Cloud,
+  BarChart3,
+  Code,
+  Settings,
+  Search,
+  Navigation,
+  Compass,
+  Telescope
+} from 'lucide-react';
+
+const SpaceResourceIntelligence2045: React.FC = () => {
+  const features = [
+    'Space resource mapping',
+    'Asteroid mining intelligence',
+    'Satellite data analysis',
+    'Resource optimization',
+    'Space navigation systems',
+    'Resource forecasting',
+    'Space exploration AI',
+    'Resource extraction planning',
+    'Space logistics optimization',
+    'Resource value assessment',
+    'Space mining automation',
+    'Resource sustainability analysis'
+  ];
+
+  const benefits = [
+    'Unprecedented resource discovery',
+    'Optimized space operations',
+    'Cost-effective resource extraction',
+    'Advanced space navigation',
+    'Resource sustainability',
+    'Space mining efficiency',
+    'Risk mitigation',
+    'Resource optimization',
+    'Space exploration advancement',
+    'Economic space development'
+  ];
+
+  const useCases = [
+    'Asteroid mining operations',
+    'Space resource exploration',
+    'Satellite navigation systems',
+    'Space logistics planning',
+    'Resource extraction optimization',
+    'Space mining automation',
+    'Resource sustainability planning',
+    'Space exploration missions',
+    'Resource value assessment',
+    'Space infrastructure development'
+  ];
+
+  const pricingPlans = [
+    {
+      name: 'Explorer',
+      price: '$5,999',
+      period: '/month',
+      description: 'Perfect for space research organizations',
+      features: [
+        'Basic space resource mapping',
+        'Standard asteroid intelligence',
+        '5 space resource projects',
+        'Research support',
+        'API access'
+      ],
+      popular: false
+    },
+    {
+      name: 'Pioneer',
+      price: '$11,999',
+      period: '/month',
+      description: 'Ideal for space mining companies',
+      features: [
+        'Advanced space resource mapping',
+        'Enhanced asteroid intelligence',
+        '25 space resource projects',
+        'Priority support',
+        'Custom integrations',
+        'Advanced analytics'
+      ],
+      popular: true
+    },
+    {
+      name: 'Enterprise',
+      price: '$29,999',
+      period: '/month',
+      description: 'For large space organizations',
+      features: [
+        'Full space resource suite',
+        'Unlimited space projects',
+        '24/7 dedicated support',
+        'Custom space training',
+        'White-label solutions',
+        'Advanced compliance'
+      ],
+      popular: false
+    }
+  ];
+
+  return (
+    <Layout 
+      title="Space Resource Intelligence Platform 2045 | Zion Tech Group"
+      description="Revolutionary space resource intelligence platform that enables advanced asteroid mining, space exploration, and resource optimization."
+      keywords="space resource intelligence, asteroid mining, space exploration, space technology, space mining 2045, Zion Tech Group"
+      canonicalUrl="https://ziontechgroup.com/space-resource-intelligence-2045"
+    >
+      {/* Hero Section */}
+      <section className="relative py-24 lg:py-32 overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-br from-indigo-900/20 via-purple-900/20 to-pink-900/20" />
+        <div className="relative z-10 container mx-auto px-4 text-center">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+          >
+            <div className="inline-flex items-center gap-2 bg-indigo-500/10 border border-indigo-500/20 rounded-full px-4 py-2 mb-6">
+              <Rocket className="w-5 h-5 text-indigo-400" />
+              <span className="text-indigo-300 text-sm font-medium">Space Resource Intelligence 2045</span>
+            </div>
+            
+            <h1 className="text-5xl lg:text-7xl font-bold mb-6">
+              <span className="bg-gradient-to-r from-indigo-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
+                Space Resource
+              </span>
+              <br />
+              <span className="text-white">Intelligence Platform</span>
+            </h1>
+            
+            <p className="text-xl lg:text-2xl text-gray-300 max-w-4xl mx-auto mb-8">
+              Revolutionary space resource intelligence platform that enables advanced asteroid mining, 
+              space exploration, and resource optimization for the future of space development.
+            </p>
+            
+            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+              <button className="bg-gradient-to-r from-indigo-500 to-purple-500 hover:from-indigo-600 hover:to-purple-600 text-white px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300 transform hover:scale-105 flex items-center gap-2">
+                <Play className="w-5 h-5" />
+                Watch Demo
+              </button>
+              <button className="border border-indigo-500/30 text-indigo-300 hover:bg-indigo-500/10 px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300 flex items-center gap-2">
+                <Phone className="w-5 h-5" />
+                Contact Sales
+              </button>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Features Section */}
+      <section className="py-24 bg-black/50">
+        <div className="container mx-auto px-4">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-4xl lg:text-5xl font-bold mb-6">
+              <span className="bg-gradient-to-r from-indigo-400 to-purple-400 bg-clip-text text-transparent">
+                Revolutionary Features
+              </span>
+            </h2>
+            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+              Experience the next generation of space resource intelligence with cutting-edge features that redefine space exploration.
+            </p>
+          </motion.div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {features.map((feature, index) => (
+              <motion.div
+                key={feature}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                viewport={{ once: true }}
+                className="bg-gradient-to-br from-indigo-900/20 to-purple-900/20 border border-indigo-500/20 rounded-xl p-6 hover:border-indigo-500/40 transition-all duration-300"
+              >
+                <div className="w-12 h-12 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-lg flex items-center justify-center mb-4">
+                  <Rocket className="w-6 h-6 text-white" />
+                </div>
+                <h3 className="text-xl font-semibold text-white mb-3">{feature}</h3>
+                <p className="text-gray-300">
+                  Advanced space resource intelligence capabilities that enable unprecedented space exploration and resource optimization.
+                </p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Benefits Section */}
+      <section className="py-24">
+        <div className="container mx-auto px-4">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-4xl lg:text-5xl font-bold mb-6">
+              <span className="bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
+                Transformative Benefits
+              </span>
+            </h2>
+            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+              Unlock unprecedented capabilities with our space resource intelligence platform.
+            </p>
+          </motion.div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {benefits.map((benefit, index) => (
+              <motion.div
+                key={benefit}
+                initial={{ opacity: 0, x: index % 2 === 0 ? -20 : 20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                viewport={{ once: true }}
+                className="flex items-start gap-4"
+              >
+                <div className="w-8 h-8 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                  <Check className="w-5 h-5 text-white" />
+                </div>
+                <div>
+                  <h3 className="text-xl font-semibold text-white mb-2">{benefit}</h3>
+                  <p className="text-gray-300">
+                    Experience the future of space exploration with resource intelligence that truly revolutionizes space operations.
+                  </p>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Use Cases Section */}
+      <section className="py-24 bg-black/50">
+        <div className="container mx-auto px-4">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-4xl lg:text-5xl font-bold mb-6">
+              <span className="bg-gradient-to-r from-pink-400 to-rose-400 bg-clip-text text-transparent">
+                Space Applications
+              </span>
+            </h2>
+            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+              Discover how space resource intelligence transforms space operations and creates new possibilities.
+            </p>
+          </motion.div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {useCases.map((useCase, index) => (
+              <motion.div
+                key={useCase}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                viewport={{ once: true }}
+                className="bg-gradient-to-br from-pink-900/20 to-rose-900/20 border border-pink-500/20 rounded-xl p-6 hover:border-pink-500/40 transition-all duration-300"
+              >
+                <div className="w-10 h-10 bg-gradient-to-r from-pink-500 to-rose-500 rounded-lg flex items-center justify-center mb-4">
+                  <Target className="w-5 h-5 text-white" />
+                </div>
+                <h3 className="text-lg font-semibold text-white mb-2">{useCase}</h3>
+                <p className="text-gray-300 text-sm">
+                  Revolutionary space resource intelligence applications that redefine space exploration capabilities.
+                </p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Pricing Section */}
+      <section className="py-24">
+        <div className="container mx-auto px-4">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-4xl lg:text-5xl font-bold mb-6">
+              <span className="bg-gradient-to-r from-yellow-400 to-orange-400 bg-clip-text text-transparent">
+                Pricing Plans
+              </span>
+            </h2>
+            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+              Choose the perfect plan for your space resource intelligence journey.
+            </p>
+          </motion.div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+            {pricingPlans.map((plan, index) => (
+              <motion.div
+                key={plan.name}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                viewport={{ once: true }}
+                className={`relative rounded-2xl p-8 ${
+                  plan.popular 
+                    ? 'bg-gradient-to-br from-indigo-900/30 to-purple-900/30 border-2 border-indigo-500/50' 
+                    : 'bg-gradient-to-br from-gray-900/30 to-slate-900/30 border border-gray-700/50'
+                }`}
+              >
+                {plan.popular && (
+                  <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
+                    <span className="bg-gradient-to-r from-indigo-500 to-purple-500 text-white px-4 py-2 rounded-full text-sm font-semibold">
+                      Most Popular
+                    </span>
+                  </div>
+                )}
+                
+                <div className="text-center mb-6">
+                  <h3 className="text-2xl font-bold text-white mb-2">{plan.name}</h3>
+                  <p className="text-gray-300 mb-4">{plan.description}</p>
+                  <div className="flex items-baseline justify-center gap-1">
+                    <span className="text-4xl font-bold text-white">{plan.price}</span>
+                    <span className="text-gray-400">{plan.period}</span>
+                  </div>
+                </div>
+
+                <ul className="space-y-3 mb-8">
+                  {plan.features.map((feature) => (
+                    <li key={feature} className="flex items-center gap-3">
+                      <Check className="w-5 h-5 text-green-400 flex-shrink-0" />
+                      <span className="text-gray-300">{feature}</span>
+                    </li>
+                  ))}
+                </ul>
+
+                <button className={`w-full py-3 px-6 rounded-lg font-semibold transition-all duration-300 ${
+                  plan.popular
+                    ? 'bg-gradient-to-r from-indigo-500 to-purple-500 hover:from-indigo-600 hover:to-purple-600 text-white'
+                    : 'bg-gray-700 hover:bg-gray-600 text-white'
+                }`}>
+                  Get Started
+                </button>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className="py-24 bg-gradient-to-r from-indigo-900/20 via-purple-900/20 to-pink-900/20">
+        <div className="container mx-auto px-4 text-center">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+          >
+            <h2 className="text-4xl lg:text-5xl font-bold mb-6">
+              <span className="bg-gradient-to-r from-indigo-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
+                Ready to Explore?
+              </span>
+            </h2>
+            <p className="text-xl text-gray-300 max-w-3xl mx-auto mb-8">
+              Join the future of space resource intelligence and transform your space exploration capabilities.
+            </p>
+            
+            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+              <button className="bg-gradient-to-r from-indigo-500 to-purple-500 hover:from-indigo-600 hover:to-purple-600 text-white px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300 transform hover:scale-105 flex items-center gap-2">
+                Start Free Trial
+                <ArrowRight className="w-5 h-5" />
+              </button>
+              <button className="border border-indigo-500/30 text-indigo-300 hover:bg-indigo-500/10 px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300 flex items-center gap-2">
+                <Phone className="w-5 h-5" />
+                +1 302 464 0950
+              </button>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Contact Section */}
+      <section className="py-24">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto text-center">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+            >
+              <h2 className="text-4xl lg:text-5xl font-bold mb-6">
+                <span className="bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent">
+                  Get in Touch
+                </span>
+              </h2>
+              <p className="text-xl text-gray-300 mb-12">
+                Ready to revolutionize your space resource intelligence capabilities? Contact our team today.
+              </p>
+              
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div className="flex flex-col items-center gap-4">
+                  <div className="w-16 h-16 bg-gradient-to-r from-cyan-500 to-blue-500 rounded-full flex items-center justify-center">
+                    <Phone className="w-8 h-8 text-white" />
+                  </div>
+                  <h3 className="text-xl font-semibold text-white">Phone</h3>
+                  <p className="text-gray-300">+1 302 464 0950</p>
+                </div>
+                
+                <div className="flex flex-col items-center gap-4">
+                  <div className="w-16 h-16 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-full flex items-center justify-center">
+                    <Mail className="w-8 h-8 text-white" />
+                  </div>
+                  <h3 className="text-xl font-semibold text-white">Email</h3>
+                  <p className="text-gray-300">kleber@ziontechgroup.com</p>
+                </div>
+                
+                <div className="flex flex-col items-center gap-4">
+                  <div className="w-16 h-16 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full flex items-center justify-center">
+                    <MapPin className="w-8 h-8 text-white" />
+                  </div>
+                  <h3 className="text-xl font-semibold text-white">Address</h3>
+                  <p className="text-gray-300">364 E Main St STE 1008<br />Middletown DE 19709</p>
+                </div>
+              </div>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+    </Layout>
+  );
+};
+
+export default SpaceResourceIntelligence2045;

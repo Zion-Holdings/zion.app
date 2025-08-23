@@ -1,0 +1,448 @@
+/* Accessibility Styles */
+:root {
+  /* Default accessibility variables */
+  --accessibility-high-contrast: false;
+  --accessibility-reduced-motion: false;
+  --accessibility-large-text: false;
+  --accessibility-increased-spacing: false;
+  --accessibility-focus-visible: false;
+}
+
+/* High Contrast Mode */
+.high-contrast {
+  --accessibility-high-contrast: true;
+}
+
+.high-contrast * {
+  background-color: var(--accessibility-high-contrast-bg, #000000) !important;
+  color: var(--accessibility-high-contrast-text, #ffffff) !important;
+  border-color: var(--accessibility-high-contrast-border, #ffffff) !important;
+}
+
+.high-contrast .bg-gray-900,
+.high-contrast .bg-gray-800,
+.high-contrast .bg-gray-700 {
+  background-color: #000000 !important;
+}
+
+.high-contrast .text-gray-300,
+.high-contrast .text-gray-400,
+.high-contrast .text-gray-500 {
+  color: #ffffff !important;
+}
+
+.high-contrast .border-gray-600,
+.high-contrast .border-gray-700 {
+  border-color: #ffffff !important;
+}
+
+.high-contrast .bg-cyan-500 {
+  background-color: #00ffff !important;
+  color: #000000 !important;
+}
+
+.high-contrast .text-cyan-400 {
+  color: #00ffff !important;
+}
+
+/* Reduced Motion Mode */
+.reduced-motion {
+  --accessibility-reduced-motion: true;
+}
+
+.reduced-motion *,
+.reduced-motion *::before,
+.reduced-motion *::after {
+  animation-duration: 0.01ms !important;
+  animation-iteration-count: 1 !important;
+  transition-duration: 0.01ms !important;
+  scroll-behavior: auto !important;
+}
+
+.reduced-motion .animate-pulse {
+  animation: none !important;
+}
+
+.reduced-motion .animate-spin {
+  animation: none !important;
+}
+
+.reduced-motion .animate-bounce {
+  animation: none !important;
+}
+
+.reduced-motion .animate-ping {
+  animation: none !important;
+}
+
+/* Large Text Mode */
+.large-text {
+  --accessibility-large-text: true;
+}
+
+.large-text {
+  font-size: 1.2em !important;
+  line-height: 1.6 !important;
+}
+
+.large-text h1 {
+  font-size: 3.5rem !important;
+  line-height: 1.2 !important;
+}
+
+.large-text h2 {
+  font-size: 2.5rem !important;
+  line-height: 1.3 !important;
+}
+
+.large-text h3 {
+  font-size: 2rem !important;
+  line-height: 1.4 !important;
+}
+
+.large-text h4 {
+  font-size: 1.75rem !important;
+  line-height: 1.4 !important;
+}
+
+.large-text h5 {
+  font-size: 1.5rem !important;
+  line-height: 1.5 !important;
+}
+
+.large-text h6 {
+  font-size: 1.25rem !important;
+  line-height: 1.5 !important;
+}
+
+.large-text p {
+  font-size: 1.3rem !important;
+  line-height: 1.6 !important;
+}
+
+.large-text li {
+  font-size: 1.3rem !important;
+  line-height: 1.6 !important;
+}
+
+.large-text button {
+  font-size: 1.3rem !important;
+  padding: 0.75rem 1.5rem !important;
+}
+
+.large-text input,
+.large-text textarea,
+.large-text select {
+  font-size: 1.3rem !important;
+  padding: 0.75rem !important;
+}
+
+/* Increased Spacing Mode */
+.increased-spacing {
+  --accessibility-increased-spacing: true;
+}
+
+.increased-spacing * {
+  margin: calc(var(--accessibility-spacing-multiplier, 1.5) * 1em) !important;
+  padding: calc(var(--accessibility-spacing-multiplier, 1.5) * 1em) !important;
+}
+
+.increased-spacing .space-y-1 > * + * {
+  margin-top: 0.75rem !important;
+}
+
+.increased-spacing .space-y-2 > * + * {
+  margin-top: 1rem !important;
+}
+
+.increased-spacing .space-y-3 > * + * {
+  margin-top: 1.5rem !important;
+}
+
+.increased-spacing .space-y-4 > * + * {
+  margin-top: 2rem !important;
+}
+
+.increased-spacing .space-y-6 > * + * {
+  margin-top: 3rem !important;
+}
+
+.increased-spacing .space-y-8 > * + * {
+  margin-top: 4rem !important;
+}
+
+.increased-spacing .space-y-12 > * + * {
+  margin-top: 6rem !important;
+}
+
+.increased-spacing .gap-1 {
+  gap: 0.75rem !important;
+}
+
+.increased-spacing .gap-2 {
+  gap: 1rem !important;
+}
+
+.increased-spacing .gap-3 {
+  gap: 1.5rem !important;
+}
+
+.increased-spacing .gap-4 {
+  gap: 2rem !important;
+}
+
+.increased-spacing .gap-6 {
+  gap: 3rem !important;
+}
+
+.increased-spacing .gap-8 {
+  gap: 4rem !important;
+}
+
+/* Focus Visible Mode */
+.focus-visible {
+  --accessibility-focus-visible: true;
+}
+
+.focus-visible *:focus {
+  outline: 3px solid #06b6d4 !important;
+  outline-offset: 2px !important;
+  border-radius: 4px !important;
+}
+
+.focus-visible *:focus-visible {
+  outline: 3px solid #06b6d4 !important;
+  outline-offset: 2px !important;
+  border-radius: 4px !important;
+}
+
+.focus-visible button:focus,
+.focus-visible a:focus,
+.focus-visible input:focus,
+.focus-visible textarea:focus,
+.focus-visible select:focus {
+  outline: 3px solid #06b6d4 !important;
+  outline-offset: 2px !important;
+  border-radius: 4px !important;
+}
+
+/* Screen Reader Only Content */
+.sr-only {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+}
+
+.sr-only:focus {
+  position: static !important;
+  width: auto !important;
+  height: auto !important;
+  padding: inherit !important;
+  margin: inherit !important;
+  overflow: visible !important;
+  clip: auto !important;
+  white-space: normal !important;
+}
+
+/* Skip Links */
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 6px;
+  background: #06b6d4;
+  color: white;
+  padding: 8px;
+  text-decoration: none;
+  border-radius: 4px;
+  z-index: 10000;
+  transition: top 0.3s;
+}
+
+.skip-link:focus {
+  top: 6px;
+}
+
+/* High Contrast Focus Indicators */
+.high-contrast *:focus {
+  outline: 3px solid #00ffff !important;
+  outline-offset: 2px !important;
+}
+
+.high-contrast button:focus,
+.high-contrast a:focus,
+.high-contrast input:focus,
+.high-contrast textarea:focus,
+.high-contrast select:focus {
+  outline: 3px solid #00ffff !important;
+  outline-offset: 2px !important;
+}
+
+/* Large Text Focus Indicators */
+.large-text *:focus {
+  outline: 4px solid #06b6d4 !important;
+  outline-offset: 3px !important;
+}
+
+/* Increased Spacing Focus Indicators */
+.increased-spacing *:focus {
+  outline: 4px solid #06b6d4 !important;
+  outline-offset: 3px !important;
+}
+
+/* Combined Accessibility Modes */
+.high-contrast.large-text *:focus {
+  outline: 4px solid #00ffff !important;
+  outline-offset: 3px !important;
+}
+
+.high-contrast.increased-spacing *:focus {
+  outline: 4px solid #00ffff !important;
+  outline-offset: 3px !important;
+}
+
+.large-text.increased-spacing *:focus {
+  outline: 5px solid #06b6d4 !important;
+  outline-offset: 4px !important;
+}
+
+.high-contrast.large-text.increased-spacing *:focus {
+  outline: 5px solid #00ffff !important;
+  outline-offset: 4px !important;
+}
+
+/* Focus Ring Utilities */
+.focus-ring-cyan:focus {
+  outline: 2px solid #06b6d4 !important;
+  outline-offset: 2px !important;
+}
+
+.focus-ring-blue:focus {
+  outline: 2px solid #3b82f6 !important;
+  outline-offset: 2px !important;
+}
+
+.focus-ring-green:focus {
+  outline: 2px solid #10b981 !important;
+  outline-offset: 2px !important;
+}
+
+.focus-ring-red:focus {
+  outline: 2px solid #ef4444 !important;
+  outline-offset: 2px !important;
+}
+
+.focus-ring-yellow:focus {
+  outline: 2px solid #f59e0b !important;
+  outline-offset: 2px !important;
+}
+
+.focus-ring-purple:focus {
+  outline: 2px solid #8b5cf6 !important;
+  outline-offset: 2px !important;
+}
+
+.focus-ring-pink:focus {
+  outline: 2px solid #ec4899 !important;
+  outline-offset: 2px !important;
+}
+
+.focus-ring-indigo:focus {
+  outline: 2px solid #6366f1 !important;
+  outline-offset: 2px !important;
+}
+
+/* High Contrast Focus Ring Overrides */
+.high-contrast .focus-ring-cyan:focus,
+.high-contrast .focus-ring-blue:focus,
+.high-contrast .focus-ring-green:focus,
+.high-contrast .focus-ring-red:focus,
+.high-contrast .focus-ring-yellow:focus,
+.high-contrast .focus-ring-purple:focus,
+.high-contrast .focus-ring-pink:focus,
+.high-contrast .focus-ring-indigo:focus {
+  outline: 3px solid #00ffff !important;
+  outline-offset: 2px !important;
+}
+
+/* Large Text Focus Ring Overrides */
+.large-text .focus-ring-cyan:focus,
+.large-text .focus-ring-blue:focus,
+.large-text .focus-ring-green:focus,
+.large-text .focus-ring-red:focus,
+.large-text .focus-ring-yellow:focus,
+.large-text .focus-ring-purple:focus,
+.large-text .focus-ring-pink:focus,
+.large-text .focus-ring-indigo:focus {
+  outline: 3px solid currentColor !important;
+  outline-offset: 3px !important;
+}
+
+/* Increased Spacing Focus Ring Overrides */
+.increased-spacing .focus-ring-cyan:focus,
+.increased-spacing .focus-ring-blue:focus,
+.increased-spacing .focus-ring-green:focus,
+.increased-spacing .focus-ring-red:focus,
+.increased-spacing .focus-ring-yellow:focus,
+.increased-spacing .focus-ring-purple:focus,
+.increased-spacing .focus-ring-pink:focus,
+.increased-spacing .focus-ring-indigo:focus {
+  outline: 3px solid currentColor !important;
+  outline-offset: 3px !important;
+}
+
+/* Print Styles for Accessibility */
+@media print {
+  .sr-only {
+    position: static !important;
+    width: auto !important;
+    height: auto !important;
+    padding: inherit !important;
+    margin: inherit !important;
+    overflow: visible !important;
+    clip: auto !important;
+    white-space: normal !important;
+  }
+  
+  .skip-link {
+    display: none !important;
+  }
+  
+  * {
+    background: transparent !important;
+    color: black !important;
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+}
+
+/* Reduced Motion Media Query Support */
+@media (prefers-reduced-motion: reduce) {
+  .reduced-motion *,
+  .reduced-motion *::before,
+  .reduced-motion *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* High Contrast Media Query Support */
+@media (prefers-contrast: high) {
+  .high-contrast {
+    --accessibility-high-contrast: true;
+  }
+}
+
+/* Large Text Media Query Support */
+@media (prefers-contrast: more) {
+  .large-text {
+    --accessibility-large-text: true;
+  }
+}

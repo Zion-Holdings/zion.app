@@ -1,0 +1,105 @@
+#!/usr/bin/env node
+
+const fs = require('fs');
+const path = require('path');
+
+const projectRoot = process.cwd();
+const componentsToScan = [
+	'components/layout/UltraFuturisticNavigation2035.tsx',
+	'components/layout/UltraFuturisticFooter2035.tsx',
+	'components/layout/EnhancedSidebar2025.tsx',
+	// Also scan the active header and footer used by the site
+	'components/layout/Header.tsx',
+	'components/layout/EnhancedFooter.tsx'
+];
+
+const pagesDir = path.join(projectRoot, 'pages');
+const dataDir = path.join(projectRoot, 'data');
+const outputJson = path.join(dataDir, 'missing-slugs.json');
+
+function collectHrefsFromFile(filePath) {
+	const fullPath = path.join(projectRoot, filePath);
+	if (!fs.existsSync(fullPath)) return [];
+	const content = fs.readFileSync(fullPath, 'utf8');
+	const hrefRegex = /href\s*[:=]\s*["'](\/[A-Za-z0-9-_\/\#\?]+)["']/g;
+	const results = new Set();
+	let match;
+	while ((match = hrefRegex.exec(content)) !== null) {
+		const raw = match[1];
+		if (!raw.startsWith('/')) continue;
+		// strip anchors and query strings
+		const cleaned = raw.split('#')[0].split('?')[0];
+		if (!cleaned || cleaned === '/' || cleaned === '') continue;
+		results.add(cleaned);
+	}
+	return Array.from(results);
+}
+
+function fileExistsForRoute(routePath) {
+	// routePath like "/market-pricing"
+	const slug = routePath.replace(/^\//, '');
+	const candidates = [
+		path.join(pagesDir, `${slug}.tsx`),
+		path.join(pagesDir, `${slug}.jsx`),
+		path.join(pagesDir, `${slug}.ts`),
+		path.join(pagesDir, `${slug}.js`),
+		path.join(pagesDir, slug, 'index.tsx'),
+		path.join(pagesDir, slug, 'index.jsx'),
+		path.join(pagesDir, slug, 'index.ts'),
+		path.join(pagesDir, slug, 'index.js')
+	];
+	return candidates.some((p) => fs.existsSync(p));
+}
+
+function main() {
+	const hrefs = new Set();
+	componentsToScan.forEach((rel) => {
+		collectHrefsFromFile(rel).forEach((h) => hrefs.add(h));
+	});
+
+	// Normalize and filter out anchors only and known external schemes (shouldn't appear due to regex)
+	const paths = Array.from(hrefs)
+		.map((p) => p.replace(/\/$/, ''))
+		.filter((p) => p && p.startsWith('/') && !p.includes('://'))
+		// Filter out section anchors references in services like /services#...
+		.filter((p) => !p.includes('#'));
+
+	// Deduplicate and sort
+	const unique = Array.from(new Set(paths)).sort();
+
+	// Determine which are missing
+	const missing = unique.filter((p) => !fileExistsForRoute(p));
+
+	// Merge optional extra slugs list if present
+	let extra = [];
+	try {
+		const extraPath = path.join(dataDir, 'extra-missing-slugs.json');
+		if (fs.existsSync(extraPath)) {
+			extra = JSON.parse(fs.readFileSync(extraPath, 'utf8'));
+			if (!Array.isArray(extra)) extra = [];
+		}
+	} catch (_) {
+		extra = [];
+	}
+	const normalizedExtra = extra
+		.filter(Boolean)
+		.map((s) => String(s).trim())
+		.filter((s) => s && !s.startsWith('/'))
+		// exclude any extras that already exist as concrete pages
+		.filter((s) => !fileExistsForRoute('/' + s));
+
+	const finalSlugs = Array.from(new Set([
+		...missing.map((p) => p.replace(/^\//, '')),
+		...normalizedExtra
+	])).sort();
+
+	// Ensure data directory exists
+	fs.mkdirSync(dataDir, { recursive: true });
+	fs.writeFileSync(outputJson, JSON.stringify(finalSlugs, null, 2));
+
+	console.log(`Discovered ${unique.length} unique internal routes from navigation.`);
+	console.log(`Missing routes (to be generated): ${finalSlugs.length}`);
+	finalSlugs.forEach((m) => console.log(`- ${m}`));
+}
+
+main();
