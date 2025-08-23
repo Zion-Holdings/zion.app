@@ -1,441 +1,321 @@
-export const real2036SpecializedServices = [
-  // AI-Powered Agriculture Platform
-  {
-    id: 'ai-agriculture-platform',
-    name: 'AI Agriculture Platform',
-    tagline: 'Precision farming powered by artificial intelligence',
-    description: 'Advanced agricultural platform that uses AI, IoT sensors, and satellite data to optimize crop yields, reduce resource usage, and enable precision farming.',
-    price: '$2,999',
-    period: 'month',
-    features: [
-      'Precision crop monitoring',
-      'Soil health analysis',
-      'Weather prediction and alerts',
-      'Automated irrigation control',
-      'Pest and disease detection',
-      'Harvest optimization',
-      'Supply chain integration',
-      'Sustainability tracking'
-    ],
-    popular: true,
-    category: 'Agriculture Technology',
-    icon: '🌾',
-    marketPrice: '$4,000-$8,000/month',
-    competitors: ['John Deere', 'Climate FieldView', 'Granular'],
-    benefits: [
-      'Increase crop yields by 25%',
-      'Reduce water usage by 30%',
-      'Lower fertilizer costs by 20%',
-      'Improve sustainability metrics'
-    ],
-    useCases: [
-      'Large-scale farming',
-      'Greenhouse operations',
-      'Vineyard management',
-      'Organic farming'
-    ],
-    technicalSpecs: {
-      'IoT Sensors': '1000+ support',
-      'Satellite Coverage': 'Global',
-      'AI Models': '15+ crop types',
-      'Real-time Monitoring': 'Yes',
-      'Uptime': '99.8%'
-    }
-  },
+export type Real2036SpecializedService = {
+  id: string;
+  name: string;
+  tagline: string;
+  description: string;
+  category: string;
+  price: string;
+  period?: string;
+  features: string[];
+  link: string;
+  launchDate?: string;
+  rating?: number;
+  marketSize?: string;
+  targetAudience?: string;
+  competitiveAdvantage?: string;
+  integration?: string[];
+  useCases?: string[];
+  technology?: string[];
+};
 
-  // Quantum Cryptocurrency Mining Platform
+export const real2036SpecializedServices: Real2036SpecializedService[] = [
+  // Neuromorphic Computing Platform
   {
-    id: 'quantum-cryptocurrency-mining',
-    name: 'Quantum Cryptocurrency Mining Platform',
-    tagline: 'Quantum advantage in cryptocurrency mining',
-    description: 'Revolutionary platform that uses quantum computing to mine cryptocurrencies with unprecedented efficiency and speed.',
-    price: '$8,999',
-    period: 'month',
-    features: [
-      'Quantum mining algorithms',
-      'Multi-currency support',
-      'Real-time mining optimization',
-      'Energy efficiency management',
-      'Profitability analytics',
-      'Automated trading integration',
-      'Security protocols',
-      'Regulatory compliance'
-    ],
-    popular: false,
-    category: 'Quantum Finance',
-    icon: '⛏️',
-    marketPrice: '$15,000-$30,000/month',
-    competitors: ['Genesis Mining', 'Hive Blockchain', 'Riot Blockchain'],
-    benefits: [
-      'Mine cryptocurrencies 1000x faster',
-      'Reduce energy consumption by 80%',
-      'Increase profitability by 200%',
-      'Future-proof mining operations'
-    ],
-    useCases: [
-      'Cryptocurrency mining farms',
-      'Institutional investors',
-      'Blockchain companies',
-      'Financial institutions'
-    ],
-    technicalSpecs: {
-      'Quantum Qubits': '500+ logical',
-      'Supported Coins': '100+ cryptocurrencies',
-      'Processing Power': 'Quantum advantage',
-      'Energy Efficiency': '90%+ improvement',
-      'Uptime': '99.9%'
-    }
-  },
-
-  // AI-Powered Real Estate Platform
-  {
-    id: 'ai-real-estate-platform',
-    name: 'AI Real Estate Platform',
-    tagline: 'Intelligent real estate investment and management',
-    description: 'Advanced platform that uses AI to analyze real estate markets, predict property values, and optimize investment decisions.',
-    price: '$3,499',
-    period: 'month',
-    features: [
-      'Market trend analysis',
-      'Property value prediction',
-      'Investment opportunity identification',
-      'Risk assessment',
-      'Portfolio optimization',
-      'Market forecasting',
-      'Comparative analysis',
-      'ROI calculation'
-    ],
-    popular: true,
-    category: 'Real Estate Technology',
-    icon: '🏠',
-    marketPrice: '$5,000-$12,000/month',
-    competitors: ['Zillow', 'Redfin', 'Compass'],
-    benefits: [
-      'Improve investment returns by 35%',
-      'Reduce market research time by 70%',
-      'Identify opportunities 3x faster',
-      'Minimize investment risks'
-    ],
-    useCases: [
-      'Real estate investors',
-      'Property management companies',
-      'Real estate agencies',
-      'Financial institutions'
-    ],
-    technicalSpecs: {
-      'Market Coverage': 'Global',
-      'AI Models': '25+ real estate specialties',
-      'Data Sources': '500+ sources',
-      'Update Frequency': 'Real-time',
-      'Uptime': '99.9%'
-    }
-  },
-
-  // Autonomous Fleet Management Platform
-  {
-    id: 'autonomous-fleet-management',
-    name: 'Autonomous Fleet Management Platform',
-    tagline: 'Self-managing fleets for maximum efficiency',
-    description: 'Intelligent platform that autonomously manages vehicle fleets, optimizes routes, and ensures safety and compliance.',
-    price: '$4,499',
-    period: 'month',
-    features: [
-      'Autonomous route optimization',
-      'Real-time fleet monitoring',
-      'Predictive maintenance',
-      'Driver behavior analysis',
-      'Fuel optimization',
-      'Compliance tracking',
-      'Safety monitoring',
-      'Performance analytics'
-    ],
-    popular: true,
-    category: 'Fleet Management',
-    icon: '🚛',
-    marketPrice: '$6,000-$15,000/month',
-    competitors: ['Samsara', 'Verizon Connect', 'Geotab'],
-    benefits: [
-      'Reduce fuel costs by 25%',
-      'Improve fleet efficiency by 40%',
-      'Reduce accidents by 60%',
-      'Lower maintenance costs by 30%'
-    ],
-    useCases: [
-      'Logistics companies',
-      'Delivery services',
-      'Transportation companies',
-      'Construction firms'
-    ],
-    technicalSpecs: {
-      'Vehicle Support': 'Unlimited',
-      'Real-time Tracking': 'Yes',
-      'AI Models': '20+ fleet specialties',
-      'Integrations': '100+ systems',
-      'Uptime': '99.9%'
-    }
-  },
-
-  // Quantum Gaming Platform
-  {
-    id: 'quantum-gaming-platform',
-    name: 'Quantum Gaming Platform',
-    tagline: 'Next-generation gaming powered by quantum computing',
-    description: 'Revolutionary gaming platform that uses quantum computing to create immersive experiences, advanced AI opponents, and realistic physics simulations.',
+    id: 'neuromorphic-computing-platform',
+    name: 'Neuromorphic Computing Platform',
+    tagline: 'Brain-inspired computing for next-generation AI applications',
+    description: 'Revolutionary platform that leverages neuromorphic computing architecture to process information like the human brain, enabling ultra-efficient AI applications and edge computing.',
+    category: 'Emerging Technology',
     price: '$3,999',
-    period: 'month',
+    period: '/month',
     features: [
-      'Quantum physics simulation',
-      'AI-powered opponents',
-      'Realistic graphics rendering',
-      'Multiplayer quantum gaming',
-      'Cross-platform compatibility',
-      'Cloud gaming support',
-      'VR/AR integration',
-      'Performance optimization'
+      'Brain-inspired neural architecture',
+      'Ultra-low power consumption',
+      'Real-time learning capabilities',
+      'Adaptive processing algorithms',
+      'Edge computing optimization',
+      'Custom neural models',
+      'Performance benchmarking',
+      'Expert consultation'
     ],
-    popular: false,
-    category: 'Quantum Gaming',
-    icon: '🎮',
-    marketPrice: '$6,000-$15,000/month',
-    competitors: ['Steam', 'Epic Games', 'Xbox Game Pass'],
-    benefits: [
-      'Create previously impossible games',
-      'Realistic physics simulation',
-      'Advanced AI opponents',
-      'Future-proof gaming technology'
-    ],
-    useCases: [
-      'Gaming companies',
-      'VR/AR developers',
-      'Educational institutions',
-      'Research organizations'
-    ],
-    technicalSpecs: {
-      'Quantum Qubits': '200+ logical',
-      'Graphics Processing': 'Quantum enhanced',
-      'AI Opponents': '100+ difficulty levels',
-      'Platform Support': 'All major platforms',
-      'Uptime': '99.8%'
-    }
+    link: 'https://ziontechgroup.com/services/neuromorphic-computing-platform',
+    launchDate: '2036-04-01',
+    rating: 4.9,
+    marketSize: '$1.8B',
+    targetAudience: 'Research institutions, AI companies, Semiconductor firms',
+    competitiveAdvantage: 'Brain-inspired architecture, Ultra-efficiency, Real-time learning',
+    integration: ['AI frameworks', 'Edge devices', 'IoT platforms', 'Cloud services'],
+    useCases: ['Edge AI processing', 'Autonomous systems', 'Cognitive computing', 'Energy-efficient AI'],
+    technology: ['Neuromorphic chips', 'Spiking neural networks', 'Analog computing', 'Bio-inspired algorithms']
   },
 
-  // AI-Powered Fashion Platform
+  // Synthetic Biology Platform
   {
-    id: 'ai-fashion-platform',
-    name: 'AI Fashion Platform',
-    tagline: 'Intelligent fashion design and trend prediction',
-    description: 'Advanced platform that uses AI to predict fashion trends, optimize design processes, and personalize shopping experiences.',
-    price: '$2,999',
-    period: 'month',
-    features: [
-      'Trend prediction algorithms',
-      'Design optimization',
-      'Personalized recommendations',
-      'Inventory optimization',
-      'Supply chain management',
-      'Customer behavior analysis',
-      'Sustainability tracking',
-      'Virtual try-on technology'
-    ],
-    popular: true,
-    category: 'Fashion Technology',
-    icon: '👗',
-    marketPrice: '$4,000-$10,000/month',
-    competitors: ['Stitch Fix', 'Rent the Runway', 'Zara'],
-    benefits: [
-      'Increase sales by 30%',
-      'Reduce inventory waste by 40%',
-      'Improve customer satisfaction by 50%',
-      'Optimize design processes'
-    ],
-    useCases: [
-      'Fashion retailers',
-      'Design houses',
-      'E-commerce platforms',
-      'Fashion brands'
-    ],
-    technicalSpecs: {
-      'Trend Models': '50+ fashion categories',
-      'AI Algorithms': '25+ specialized',
-      'Data Sources': '200+ sources',
-      'Real-time Updates': 'Yes',
-      'Uptime': '99.9%'
-    }
-  },
-
-  // Space Debris Monitoring Platform
-  {
-    id: 'space-debris-monitoring',
-    name: 'Space Debris Monitoring Platform',
-    tagline: 'Protecting space assets through intelligent monitoring',
-    description: 'Advanced platform that monitors space debris, predicts collisions, and provides early warning systems for satellite operators.',
+    id: 'synthetic-biology-platform',
+    name: 'Synthetic Biology Platform',
+    tagline: 'Design and engineer biological systems with AI',
+    description: 'Advanced platform that combines synthetic biology with artificial intelligence to design, engineer, and optimize biological systems for various applications.',
+    category: 'Biotechnology',
     price: '$5,999',
-    period: 'month',
+    period: '/month',
     features: [
-      'Real-time debris tracking',
-      'Collision prediction',
-      'Satellite protection',
-      'Orbital analysis',
-      'Risk assessment',
-      'Early warning systems',
-      'Mitigation strategies',
-      'Regulatory compliance'
+      'AI-powered DNA design',
+      'Biological system simulation',
+      'Automated lab protocols',
+      'Genetic circuit optimization',
+      'Safety and compliance tools',
+      'Real-time monitoring',
+      'Custom organism design',
+      'Expert consultation'
     ],
-    popular: false,
-    category: 'Space Technology',
-    icon: '🛰️',
-    marketPrice: '$8,000-$20,000/month',
-    competitors: ['LeoLabs', 'Astroscale', 'ClearSpace'],
-    benefits: [
-      'Protect valuable space assets',
-      'Reduce collision risks by 90%',
-      'Ensure regulatory compliance',
-      'Support space sustainability'
-    ],
-    useCases: [
-      'Satellite operators',
-      'Space agencies',
-      'Telecommunications companies',
-      'Government organizations'
-    ],
-    technicalSpecs: {
-      'Tracking Objects': '100,000+ debris pieces',
-      'Satellite Coverage': 'Global',
-      'Prediction Accuracy': '99.9%',
-      'Update Frequency': 'Real-time',
-      'Uptime': '99.99%'
-    }
+    link: 'https://ziontechgroup.com/services/synthetic-biology-platform',
+    launchDate: '2036-04-05',
+    rating: 4.8,
+    marketSize: '$3.2B',
+    targetAudience: 'Pharmaceutical companies, Biotech firms, Research institutions',
+    competitiveAdvantage: 'AI integration, Automated protocols, Safety focus',
+    integration: ['Lab automation systems', 'DNA synthesis platforms', 'Sequencing services', 'Cloud platforms'],
+    useCases: ['Drug discovery', 'Biofuel production', 'Environmental remediation', 'Agricultural optimization'],
+    technology: ['CRISPR', 'Gene editing', 'DNA synthesis', 'Bioinformatics']
   },
 
-  // AI-Powered Music Platform
+  // Quantum Internet Protocol Suite
   {
-    id: 'ai-music-platform',
-    name: 'AI Music Platform',
-    tagline: 'Creating music with artificial intelligence',
-    description: 'Revolutionary platform that uses AI to compose, produce, and personalize music for various applications and industries.',
-    price: '$2,499',
-    period: 'month',
+    id: 'quantum-internet-protocol-suite',
+    name: 'Quantum Internet Protocol Suite',
+    tagline: 'Next-generation internet protocols for quantum networks',
+    description: 'Comprehensive suite of protocols and standards for building and operating quantum internet networks, enabling secure quantum communication worldwide.',
+    category: 'Quantum Technology',
+    price: '$2,999',
+    period: '/month',
     features: [
-      'AI music composition',
-      'Style transfer and remixing',
-      'Personalized playlists',
-      'Mood-based music generation',
-      'Copyright-free music library',
-      'Collaborative composition',
-      'Performance analytics',
-      'Multi-genre support'
+      'Quantum network protocols',
+      'Interoperability standards',
+      'Security frameworks',
+      'Network management tools',
+      'Performance optimization',
+      'Compliance certification',
+      'Custom protocol development',
+      'Expert consultation'
     ],
-    popular: true,
-    category: 'Music Technology',
-    icon: '🎵',
-    marketPrice: '$3,500-$8,000/month',
-    competitors: ['Spotify', 'Apple Music', 'SoundCloud'],
-    benefits: [
-      'Create unique music instantly',
-      'Reduce licensing costs by 60%',
-      'Personalize music experiences',
-      'Enable new creative possibilities'
-    ],
-    useCases: [
-      'Content creators',
-      'Marketing agencies',
-      'Gaming companies',
-      'Film and television'
-    ],
-    technicalSpecs: {
-      'AI Models': '30+ music genres',
-      'Music Library': '1M+ tracks',
-      'Generation Speed': 'Real-time',
-      'Quality': 'Studio-grade',
-      'Uptime': '99.9%'
-    }
+    link: 'https://ziontechgroup.com/services/quantum-internet-protocol-suite',
+    launchDate: '2036-04-10',
+    rating: 4.9,
+    marketSize: '$2.1B',
+    targetAudience: 'Internet service providers, Government agencies, Research institutions',
+    competitiveAdvantage: 'Quantum protocols, Interoperability, Security focus',
+    integration: ['Quantum networks', 'Internet infrastructure', 'Security systems', 'Cloud platforms'],
+    useCases: ['Quantum networks', 'Secure communications', 'Internet infrastructure', 'Government networks'],
+    technology: ['Quantum protocols', 'Network standards', 'Security frameworks', 'Interoperability']
   },
 
-  // Quantum Weather Prediction Platform
+  // Brain-Computer Interface Platform
   {
-    id: 'quantum-weather-prediction',
-    name: 'Quantum Weather Prediction Platform',
-    tagline: 'Ultra-accurate weather forecasting with quantum computing',
-    description: 'Advanced platform that uses quantum computing to provide ultra-accurate weather predictions and climate modeling.',
+    id: 'brain-computer-interface-platform',
+    name: 'Brain-Computer Interface Platform',
+    tagline: 'Direct neural interface for human-computer interaction',
+    description: 'Advanced platform that enables direct communication between the human brain and computers, opening new possibilities for accessibility and human augmentation.',
+    category: 'Human-Computer Interaction',
     price: '$4,999',
-    period: 'month',
+    period: '/month',
     features: [
-      'Quantum weather modeling',
-      'Long-range forecasting',
-      'Climate change analysis',
-      'Extreme weather prediction',
-      'Agricultural weather insights',
-      'Energy demand forecasting',
-      'Disaster preparedness',
-      'Real-time updates'
+      'Neural signal processing',
+      'Real-time brain monitoring',
+      'Custom interface design',
+      'Safety and compliance',
+      'Performance optimization',
+      'User training tools',
+      'Custom applications',
+      'Expert consultation'
     ],
-    popular: false,
-    category: 'Quantum Weather',
-    icon: '🌤️',
-    marketPrice: '$7,000-$15,000/month',
-    competitors: ['AccuWeather', 'The Weather Company', 'WeatherBug'],
-    benefits: [
-      'Improve forecast accuracy by 50%',
-      'Extend prediction range by 3x',
-      'Reduce weather-related losses',
-      'Support climate research'
-    ],
-    useCases: [
-      'Agriculture',
-      'Energy companies',
-      'Transportation',
-      'Emergency services'
-    ],
-    technicalSpecs: {
-      'Quantum Qubits': '300+ logical',
-      'Forecast Range': '30+ days',
-      'Update Frequency': 'Every 15 minutes',
-      'Coverage': 'Global',
-      'Uptime': '99.9%'
-    }
+    link: 'https://ziontechgroup.com/services/brain-computer-interface-platform',
+    launchDate: '2036-04-15',
+    rating: 4.7,
+    marketSize: '$2.8B',
+    targetAudience: 'Healthcare providers, Research institutions, Accessibility companies',
+    competitiveAdvantage: 'Direct neural interface, Real-time processing, Safety focus',
+    integration: ['Medical devices', 'Accessibility tools', 'Gaming platforms', 'Research systems'],
+    useCases: ['Assistive technology', 'Medical research', 'Gaming and entertainment', 'Human augmentation'],
+    technology: ['EEG', 'Neural implants', 'Signal processing', 'Machine learning']
   },
 
-  // AI-Powered Pet Care Platform
+  // Metaverse Development Studio Pro
   {
-    id: 'ai-pet-care-platform',
-    name: 'AI Pet Care Platform',
-    tagline: 'Intelligent pet health and wellness monitoring',
-    description: 'Advanced platform that uses AI to monitor pet health, provide veterinary insights, and optimize pet care routines.',
+    id: 'metaverse-development-studio-pro',
+    name: 'Metaverse Development Studio Pro',
+    tagline: 'Professional metaverse creation and management platform',
+    description: 'Comprehensive platform for designing, building, and managing immersive metaverse experiences with advanced 3D graphics, AI, and blockchain integration.',
+    category: 'Metaverse',
     price: '$1,999',
-    period: 'month',
+    period: '/month',
     features: [
-      'Health monitoring',
-      'Behavioral analysis',
-      'Nutrition optimization',
-      'Exercise tracking',
-      'Veterinary consultation',
-      'Emergency alerts',
-      'Pet social network',
-      'Care recommendations'
+      '3D world building tools',
+      'AI-powered NPCs',
+      'Blockchain integration',
+      'Multi-user environments',
+      'VR/AR support',
+      'Performance optimization',
+      'Custom development',
+      'Expert consultation'
     ],
-    popular: true,
-    category: 'Pet Technology',
-    icon: '🐾',
-    marketPrice: '$3,000-$6,000/month',
-    competitors: ['Whistle', 'FitBark', 'PetPace'],
-    benefits: [
-      'Improve pet health outcomes',
-      'Reduce veterinary costs by 25%',
-      'Early disease detection',
-      'Enhance pet-owner relationship'
+    link: 'https://ziontechgroup.com/services/metaverse-development-studio-pro',
+    launchDate: '2036-04-20',
+    rating: 4.6,
+    marketSize: '$8.9B',
+    targetAudience: 'Gaming companies, Real estate firms, Educational institutions',
+    competitiveAdvantage: '3D tools, AI integration, Blockchain support',
+    integration: ['VR headsets', 'AR devices', 'Blockchain platforms', '3D engines'],
+    useCases: ['Virtual worlds', 'Digital real estate', 'Educational experiences', 'Social platforms'],
+    technology: ['3D graphics', 'Virtual reality', 'Augmented reality', 'Blockchain']
+  },
+
+  // Autonomous Vehicle AI Platform
+  {
+    id: 'autonomous-vehicle-ai-platform',
+    name: 'Autonomous Vehicle AI Platform',
+    tagline: 'Advanced AI for self-driving vehicles and transportation',
+    description: 'Comprehensive AI platform for autonomous vehicles, providing perception, decision-making, and control systems for safe and efficient self-driving operations.',
+    category: 'Autonomous Systems',
+    price: '$3,999',
+    period: '/month',
+    features: [
+      'Computer vision systems',
+      'Sensor fusion algorithms',
+      'Path planning and navigation',
+      'Safety and redundancy',
+      'Real-time processing',
+      'Performance optimization',
+      'Custom vehicle integration',
+      'Expert consultation'
     ],
-    useCases: [
-      'Pet owners',
-      'Veterinary clinics',
-      'Pet insurance companies',
-      'Pet care services'
+    link: 'https://ziontechgroup.com/services/autonomous-vehicle-ai-platform',
+    launchDate: '2036-04-25',
+    rating: 4.8,
+    marketSize: '$12.4B',
+    targetAudience: 'Automotive companies, Transportation firms, Logistics providers',
+    competitiveAdvantage: 'Advanced AI, Safety focus, Real-time processing',
+    integration: ['Vehicle systems', 'Sensor arrays', 'Navigation systems', 'Cloud platforms'],
+    useCases: ['Self-driving cars', 'Autonomous trucks', 'Delivery robots', 'Public transportation'],
+    technology: ['Computer vision', 'Machine learning', 'Sensor fusion', 'Control systems']
+  },
+
+  // Quantum Materials Discovery Platform
+  {
+    id: 'quantum-materials-discovery-platform',
+    name: 'Quantum Materials Discovery Platform',
+    tagline: 'AI-powered discovery of next-generation materials',
+    description: 'Revolutionary platform that uses quantum computing and AI to discover and design new materials with extraordinary properties for various applications.',
+    category: 'Quantum Technology',
+    price: '$4,999',
+    period: '/month',
+    features: [
+      'Quantum material simulation',
+      'AI-powered discovery',
+      'Property prediction',
+      'Synthesis optimization',
+      'Performance testing',
+      'Custom material design',
+      'Expert consultation',
+      'Research collaboration'
     ],
-    technicalSpecs: {
-      'Pet Types': 'All species',
-      'Health Metrics': '50+ parameters',
-      'AI Models': '20+ pet specialties',
-      'Real-time Monitoring': 'Yes',
-      'Uptime': '99.9%'
-    }
+    link: 'https://ziontechgroup.com/services/quantum-materials-discovery-platform',
+    launchDate: '2036-04-30',
+    rating: 4.9,
+    marketSize: '$1.6B',
+    targetAudience: 'Materials companies, Research institutions, Manufacturing firms',
+    competitiveAdvantage: 'Quantum simulation, AI discovery, Custom design',
+    integration: ['Quantum computers', 'AI platforms', 'Lab systems', 'Research databases'],
+    useCases: ['New materials', 'Energy storage', 'Electronics', 'Manufacturing'],
+    technology: ['Quantum computing', 'Machine learning', 'Materials science', 'Simulation']
+  },
+
+  // AI-Powered Climate Modeling Platform
+  {
+    id: 'ai-climate-modeling-platform',
+    name: 'AI Climate Modeling Platform',
+    tagline: 'Advanced climate prediction and analysis with AI',
+    description: 'Comprehensive platform that uses artificial intelligence to model and predict climate patterns, enabling better understanding and response to climate change.',
+    category: 'Climate Technology',
+    price: '$2,499',
+    period: '/month',
+    features: [
+      'AI climate models',
+      'Real-time data analysis',
+      'Predictive modeling',
+      'Scenario simulation',
+      'Data visualization',
+      'Custom analysis',
+      'Expert consultation',
+      'Research collaboration'
+    ],
+    link: 'https://ziontechgroup.com/services/ai-climate-modeling-platform',
+    launchDate: '2036-05-05',
+    rating: 4.7,
+    marketSize: '$3.8B',
+    targetAudience: 'Government agencies, Research institutions, Environmental organizations',
+    competitiveAdvantage: 'AI modeling, Real-time analysis, Predictive capabilities',
+    integration: ['Climate sensors', 'Satellite data', 'Weather services', 'Research databases'],
+    useCases: ['Climate prediction', 'Policy planning', 'Environmental research', 'Risk assessment'],
+    technology: ['Machine learning', 'Climate models', 'Data analysis', 'Simulation']
+  },
+
+  // Quantum Neural Network Platform
+  {
+    id: 'quantum-neural-network-platform',
+    name: 'Quantum Neural Network Platform',
+    tagline: 'Quantum-enhanced neural networks for advanced AI',
+    description: 'Revolutionary platform that combines quantum computing with neural networks to create more powerful and efficient artificial intelligence systems.',
+    category: 'Quantum Technology',
+    price: '$3,499',
+    period: '/month',
+    features: [
+      'Quantum neural networks',
+      'Hybrid quantum-classical AI',
+      'Advanced optimization',
+      'Performance benchmarking',
+      'Custom model development',
+      'Expert consultation',
+      'Research collaboration',
+      'Training and support'
+    ],
+    link: 'https://ziontechgroup.com/services/quantum-neural-network-platform',
+    launchDate: '2036-05-10',
+    rating: 4.8,
+    marketSize: '$2.2B',
+    targetAudience: 'AI companies, Research institutions, Technology firms',
+    competitiveAdvantage: 'Quantum enhancement, Advanced AI, Performance optimization',
+    integration: ['Quantum computers', 'AI frameworks', 'Cloud platforms', 'Research tools'],
+    useCases: ['Advanced AI', 'Research applications', 'Commercial AI', 'Scientific computing'],
+    technology: ['Quantum computing', 'Neural networks', 'Machine learning', 'Optimization']
+  },
+
+  // Space Tourism Platform
+  {
+    id: 'space-tourism-platform',
+    name: 'Space Tourism Platform',
+    tagline: 'Comprehensive platform for space tourism operations',
+    description: 'Advanced platform that manages all aspects of space tourism, from booking and training to flight operations and safety management.',
+    category: 'Space Technology',
+    price: '$6,999',
+    period: '/month',
+    features: [
+      'Tourism management system',
+      'Safety protocols',
+      'Training programs',
+      'Flight operations',
+      'Customer management',
+      'Compliance tools',
+      'Custom development',
+      'Expert consultation'
+    ],
+    link: 'https://ziontechgroup.com/services/space-tourism-platform',
+    launchDate: '2036-05-15',
+    rating: 4.6,
+    marketSize: '$1.2B',
+    targetAudience: 'Space tourism companies, Aerospace firms, Travel agencies',
+    competitiveAdvantage: 'Space expertise, Safety focus, Comprehensive management',
+    integration: ['Spacecraft systems', 'Training facilities', 'Booking systems', 'Safety systems'],
+    useCases: ['Space tourism', 'Training programs', 'Safety management', 'Customer experience'],
+    technology: ['Space systems', 'Safety protocols', 'Training technology', 'Customer management']
   }
 ];

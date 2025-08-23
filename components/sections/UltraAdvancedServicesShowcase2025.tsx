@@ -23,6 +23,7 @@ const UltraAdvancedServicesShowcase2025: React.FC = () => {
   const [searchTerm, setSearchTerm] = useState('');
   const [sortBy, setSortBy] = useState('popularity');
   const [viewMode, setViewMode] = useState('grid');
+  const [displayCount, setDisplayCount] = useState(24);
 
   // Combine all services
   const allServices = [
@@ -172,19 +173,26 @@ const UltraAdvancedServicesShowcase2025: React.FC = () => {
 
         {/* Services Grid */}
         <motion.div
-          variants={containerVariants}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8 max-w-7xl mx-auto"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.6 }}
+          className={`${
+            viewMode === 'grid' 
+              ? 'grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6' 
+              : 'space-y-4'
+          }`}
         >
-          <AnimatePresence mode="wait">
-            {filteredServices.map((service, index) => (
+          <AnimatePresence>
+            {filteredServices.slice(0, displayCount).map((service, index) => (
               <motion.div
                 key={service.id}
-                variants={itemVariants}
-                initial="hidden"
-                animate="visible"
-                exit="hidden"
-                transition={{ delay: index * 0.1 }}
-                className="group"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -20 }}
+                transition={{ duration: 0.5, delay: index * 0.03 }}
+                className={`bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-6 hover:bg-white/10 hover:border-white/20 transition-all duration-300 group ${
+                  viewMode === 'list' ? 'flex items-center space-x-6' : ''
+                }`}
               >
                 {/* Service Icon */}
                 <div className={`${
@@ -306,7 +314,45 @@ const UltraAdvancedServicesShowcase2025: React.FC = () => {
           </AnimatePresence>
         </motion.div>
 
-        {/* View All Services CTA */}
+        {/* Load More */}
+        {filteredServices.length > displayCount && (
+          <div className="mt-10 flex justify-center">
+            <button
+              onClick={() => setDisplayCount((c) => c + 24)}
+              className="px-6 py-3 rounded-xl bg-gradient-to-r from-cyan-500 to-purple-600 hover:from-cyan-600 hover:to-purple-700 text-white font-semibold shadow-lg shadow-cyan-500/20 transition-transform hover:scale-105"
+            >
+              Load more ({filteredServices.length - displayCount} more)
+            </button>
+          </div>
+        )}
+
+        {/* No Results */}
+        {filteredServices.length === 0 && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            className="text-center py-16"
+          >
+            <div className="w-24 h-24 mx-auto mb-6 bg-gradient-to-br from-cyan-500/20 to-purple-500/20 rounded-full flex items-center justify-center">
+              <Search className="w-12 h-12 text-gray-400" />
+            </div>
+            <h3 className="text-2xl font-semibold text-white mb-2">No services found</h3>
+            <p className="text-gray-400 mb-6">
+              Try adjusting your search terms or category filters
+            </p>
+            <button
+              onClick={() => {
+                setSearchTerm('');
+                setSelectedCategory('all');
+              }}
+              className="px-6 py-3 bg-gradient-to-r from-cyan-500 to-purple-600 text-white font-medium rounded-lg hover:from-cyan-600 hover:to-purple-700 transition-all duration-200"
+            >
+              Clear Filters
+            </button>
+          </motion.div>
+        )}
+
+        {/* CTA Section */}
         <motion.div
           variants={itemVariants}
           className="text-center mt-16"

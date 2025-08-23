@@ -1,365 +1,505 @@
-import React from 'react';
-import Layout from '../components/layout/Layout';
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Calculator, Brain, Atom, Rocket, Shield, Users, CheckCircle, ArrowRight, Star, Zap, Globe, Mail, Phone, MapPin } from 'lucide-react';
+import { 
+  Calculator, FileText, Send, CheckCircle, 
+  ArrowRight, Brain, Atom, Rocket, Shield, 
+  Zap, Globe, Users, DollarSign, Clock,
+  Mail, Phone, MapPin, Building, Target
+} from 'lucide-react';
 
-const Quote: React.FC = () => {
+export default function Quote() {
+  const [selectedServices, setSelectedServices] = useState<string[]>([]);
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    company: '',
+    phone: '',
+    projectDescription: '',
+    timeline: '',
+    budget: '',
+    teamSize: ''
+  });
+
+  const serviceCategories = [
+    {
+      name: 'AI & Machine Learning',
+      icon: <Brain className="w-6 h-6" />,
+      services: [
+        'AI Consciousness Development',
+        'Machine Learning Models',
+        'Natural Language Processing',
+        'Computer Vision Systems',
+        'Predictive Analytics',
+        'AI Automation'
+      ],
+      color: 'text-cyan-400',
+      bgColor: 'bg-cyan-500/10',
+      borderColor: 'border-cyan-500/30'
+    },
+    {
+      name: 'Quantum Computing',
+      icon: <Atom className="w-6 h-6" />,
+      services: [
+        'Quantum Algorithms',
+        'Quantum Cryptography',
+        'Quantum Machine Learning',
+        'Quantum Simulation',
+        'Post-Quantum Security',
+        'Quantum Cloud Infrastructure'
+      ],
+      color: 'text-purple-400',
+      bgColor: 'bg-purple-500/10',
+      borderColor: 'border-purple-500/30'
+    },
+    {
+      name: 'Autonomous Systems',
+      icon: <Rocket className="w-6 h-6" />,
+      services: [
+        'Business Process Automation',
+        'DevOps Automation',
+        'Infrastructure Automation',
+        'Security Automation',
+        'Data Pipeline Automation',
+        'Customer Success Automation'
+      ],
+      color: 'text-green-400',
+      bgColor: 'bg-green-500/10',
+      borderColor: 'border-green-500/30'
+    },
+    {
+      name: 'Enterprise Solutions',
+      icon: <Building className="w-6 h-6" />,
+      services: [
+        'Cloud Infrastructure',
+        'Cybersecurity Platforms',
+        'Data Management',
+        'API Development',
+        'Microservices Architecture',
+        'Legacy System Modernization'
+      ],
+      color: 'text-blue-400',
+      bgColor: 'bg-blue-500/10',
+      borderColor: 'border-blue-500/30'
+    }
+  ];
+
+  const timelineOptions = [
+    { value: 'immediate', label: 'Immediate (1-2 weeks)', description: 'Urgent project requiring immediate attention' },
+    { value: '1-3-months', label: '1-3 months', description: 'Standard project timeline' },
+    { value: '3-6-months', label: '3-6 months', description: 'Complex project with multiple phases' },
+    { value: '6+months', label: '6+ months', description: 'Long-term strategic initiative' }
+  ];
+
+  const budgetRanges = [
+    { value: 'under-50k', label: 'Under $50K', description: 'Small to medium projects' },
+    { value: '50k-100k', label: '$50K - $100K', description: 'Medium complexity projects' },
+    { value: '100k-500k', label: '$100K - $500K', description: 'Large enterprise projects' },
+    { value: '500k+', label: '$500K+', description: 'Strategic initiatives and transformations' }
+  ];
+
+  const teamSizeOptions = [
+    { value: '1-5', label: '1-5 people', description: 'Small team or startup' },
+    { value: '6-25', label: '6-25 people', description: 'Growing company' },
+    { value: '26-100', label: '26-100 people', description: 'Medium enterprise' },
+    { value: '100+', label: '100+ people', description: 'Large enterprise' }
+  ];
+
+  const handleServiceToggle = (service: string) => {
+    setSelectedServices(prev => 
+      prev.includes(service) 
+        ? prev.filter(s => s !== service)
+        : [...prev, service]
+    );
+  };
+
+  const handleInputChange = (field: string, value: string) => {
+    setFormData(prev => ({ ...prev, [field]: value }));
+  };
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    // Handle form submission
+    console.log('Form submitted:', { ...formData, selectedServices });
+  };
+
   return (
-    <Layout>
-      <div className="min-h-screen bg-gradient-to-br from-black via-indigo-900/20 to-purple-900/20">
-        {/* Hero Section */}
-        <section className="relative py-20 px-4">
-          <div className="max-w-7xl mx-auto text-center">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-            >
-              <div className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-indigo-500/20 to-purple-500/20 border border-indigo-500/30 rounded-full text-indigo-300 text-sm mb-6">
-                <Calculator className="w-4 h-4" />
-                Get Your Quote
+    <div className="min-h-screen bg-black text-white">
+      {/* Hero Section */}
+      <section className="relative pt-32 pb-20 overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-br from-cyan-900/20 via-purple-900/20 to-pink-900/20" />
+        <div className="relative z-10 container mx-auto px-4">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            className="text-center max-w-4xl mx-auto"
+          >
+            <h1 className="text-5xl md:text-7xl font-bold bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 bg-clip-text text-transparent mb-6">
+              Get Your Quote
+            </h1>
+            <p className="text-xl md:text-2xl text-gray-300 mb-8 leading-relaxed">
+              Ready to transform your business with AI consciousness, quantum computing, 
+              and autonomous systems? Let's discuss your project and get you a detailed quote.
+            </p>
+            <div className="flex flex-wrap justify-center gap-6">
+              <div className="flex items-center gap-2 text-cyan-400">
+                <Calculator className="w-6 h-6" />
+                <span>Custom Pricing</span>
               </div>
-              <h1 className="text-5xl md:text-7xl font-bold bg-gradient-to-r from-indigo-400 via-purple-400 to-pink-400 bg-clip-text text-transparent mb-6">
-                Get Your Quote
-              </h1>
-              <p className="text-xl md:text-2xl text-gray-300 max-w-4xl mx-auto mb-8">
-                Receive a personalized quote for our revolutionary AI consciousness, quantum computing, and space technology solutions
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <button className="px-8 py-4 bg-gradient-to-r from-indigo-500 to-purple-500 text-white rounded-2xl font-semibold hover:shadow-2xl hover:shadow-indigo-500/25 transition-all duration-300">
-                  Request Quote Now
-                </button>
-                <button className="px-8 py-4 border border-indigo-500/30 text-indigo-300 rounded-2xl hover:bg-indigo-500/10 transition-all duration-300">
-                  Schedule Consultation
-                </button>
+              <div className="flex items-center gap-2 text-purple-400">
+                <FileText className="w-6 h-6" />
+                <span>Detailed Proposal</span>
               </div>
-            </motion.div>
-          </div>
-        </section>
-
-        {/* Quote Calculator */}
-        <section className="py-20 px-4">
-          <div className="max-w-7xl mx-auto">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-              className="text-center mb-16"
-            >
-              <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-                Quote Calculator
-              </h2>
-              <p className="text-xl text-gray-400 max-w-3xl mx-auto">
-                Get an instant estimate based on your specific requirements
-              </p>
-            </motion.div>
-
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-              {/* Calculator Form */}
-              <motion.div
-                initial={{ opacity: 0, x: -20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.8 }}
-                className="p-8 bg-black/40 border border-indigo-500/20 rounded-2xl"
-              >
-                <h3 className="text-2xl font-bold text-white mb-6">Calculate Your Quote</h3>
-                
-                <div className="space-y-6">
-                  <div>
-                    <label className="block text-white font-semibold mb-3">Service Category</label>
-                    <select className="w-full px-4 py-3 bg-gray-800/50 border border-gray-600/50 rounded-xl text-white focus:border-indigo-500 focus:ring-2 focus:ring-indigo-500/20">
-                      <option>Select Service Category</option>
-                      <option>AI Consciousness Evolution</option>
-                      <option>Quantum Computing Solutions</option>
-                      <option>Space Technology Platform</option>
-                      <option>Autonomous Systems</option>
-                      <option>Enterprise Solutions</option>
-                    </select>
-                  </div>
-
-                  <div>
-                    <label className="block text-white font-semibold mb-3">Company Size</label>
-                    <select className="w-full px-4 py-3 bg-gray-800/50 border border-gray-600/50 rounded-xl text-white focus:border-indigo-500 focus:ring-2 focus:ring-indigo-500/20">
-                      <option>Select Company Size</option>
-                      <option>Startup (1-50 employees)</option>
-                      <option>SMB (51-500 employees)</option>
-                      <option>Enterprise (500+ employees)</option>
-                      <option>Government/Non-profit</option>
-                    </select>
-                  </div>
-
-                  <div>
-                    <label className="block text-white font-semibold mb-3">Implementation Timeline</label>
-                    <select className="w-full px-4 py-3 bg-gray-800/50 border border-gray-600/50 rounded-xl text-white focus:border-indigo-500 focus:ring-2 focus:ring-indigo-500/20">
-                      <option>Select Timeline</option>
-                      <option>Immediate (1-3 months)</option>
-                      <option>Short-term (3-6 months)</option>
-                      <option>Medium-term (6-12 months)</option>
-                      <option>Long-term (12+ months)</option>
-                    </select>
-                  </div>
-
-                  <div>
-                    <label className="block text-white font-semibold mb-3">Additional Services</label>
-                    <div className="space-y-3">
-                      {[
-                        "Custom Development",
-                        "Training & Support",
-                        "Integration Services",
-                        "24/7 Monitoring",
-                        "Compliance & Security"
-                      ].map((service, index) => (
-                        <label key={index} className="flex items-center gap-3">
-                          <input type="checkbox" className="w-5 h-5 text-indigo-500 bg-gray-800 border-gray-600 rounded focus:ring-indigo-500" />
-                          <span className="text-gray-300">{service}</span>
-                        </label>
-                      ))}
-                    </div>
-                  </div>
-
-                  <button className="w-full px-6 py-4 bg-gradient-to-r from-indigo-500 to-purple-500 text-white rounded-xl font-semibold hover:shadow-xl hover:shadow-indigo-500/25 transition-all duration-300">
-                    Calculate Quote
-                  </button>
-                </div>
-              </motion.div>
-
-              {/* Quote Display */}
-              <motion.div
-                initial={{ opacity: 0, x: 20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.8 }}
-                className="p-8 bg-black/40 border border-indigo-500/20 rounded-2xl"
-              >
-                <h3 className="text-2xl font-bold text-white mb-6">Your Estimated Quote</h3>
-                
-                <div className="space-y-6">
-                  <div className="text-center p-6 bg-gradient-to-r from-indigo-500/20 to-purple-500/20 rounded-xl border border-indigo-500/30">
-                    <div className="text-4xl font-bold text-indigo-400 mb-2">$25,000 - $75,000</div>
-                    <div className="text-gray-400">Estimated Range</div>
-                  </div>
-
-                  <div>
-                    <h4 className="text-lg font-semibold text-white mb-4">What's Included:</h4>
-                    <ul className="space-y-3">
-                      {[
-                        "Core platform implementation",
-                        "Basic configuration & setup",
-                        "Standard training materials",
-                        "Email support",
-                        "30-day warranty"
-                      ].map((item, index) => (
-                        <li key={index} className="flex items-center gap-3 text-gray-300">
-                          <CheckCircle className="w-5 h-5 text-indigo-400" />
-                          {item}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-
-                  <div className="p-4 bg-gray-800/30 rounded-xl">
-                    <div className="text-sm text-gray-400 mb-2">Note:</div>
-                    <div className="text-sm text-gray-300">
-                      This is an estimate based on standard configurations. Final pricing may vary based on specific requirements and customizations.
-                    </div>
-                  </div>
-                </div>
-              </motion.div>
+              <div className="flex items-center gap-2 text-green-400">
+                <Clock className="w-6 h-6" />
+                <span>24h Response</span>
+              </div>
             </div>
-          </div>
-        </section>
+          </motion.div>
+        </div>
+      </section>
 
-        {/* Pricing Tiers */}
-        <section className="py-20 px-4">
-          <div className="max-w-7xl mx-auto">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-              className="text-center mb-16"
-            >
-              <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-                Pricing Tiers
-              </h2>
-              <p className="text-xl text-gray-400 max-w-3xl mx-auto">
-                Choose the plan that best fits your needs and budget
-              </p>
-            </motion.div>
-
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              {[
-                {
-                  name: "Starter",
-                  price: "$25,000",
-                  description: "Perfect for small teams and startups",
-                  features: [
-                    "Basic platform access",
-                    "Standard features",
-                    "Email support",
-                    "30-day warranty",
-                    "Basic training"
-                  ],
-                  color: "from-blue-500 to-cyan-500",
-                  popular: false
-                },
-                {
-                  name: "Professional",
-                  price: "$75,000",
-                  description: "Ideal for growing businesses",
-                  features: [
-                    "Advanced platform features",
-                    "Custom configurations",
-                    "Priority support",
-                    "90-day warranty",
-                    "Comprehensive training",
-                    "Integration assistance"
-                  ],
-                  color: "from-indigo-500 to-purple-500",
-                  popular: true
-                },
-                {
-                  name: "Enterprise",
-                  price: "$150,000+",
-                  description: "For large organizations",
-                  features: [
-                    "Full platform capabilities",
-                    "Custom development",
-                    "24/7 dedicated support",
-                    "1-year warranty",
-                    "Custom training",
-                    "Full integration services",
-                    "Compliance & security"
-                  ],
-                  color: "from-purple-500 to-pink-500",
-                  popular: false
-                }
-              ].map((tier, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: index * 0.1 }}
-                  className={`p-8 bg-black/40 border rounded-2xl relative ${
-                    tier.popular 
-                      ? 'border-indigo-500/50 ring-2 ring-indigo-500/20' 
-                      : 'border-indigo-500/20'
-                  }`}
-                >
-                  {tier.popular && (
-                    <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
-                      <span className="px-4 py-2 bg-gradient-to-r from-indigo-500 to-purple-500 text-white text-sm font-semibold rounded-full">
-                        Most Popular
+      {/* Service Selection */}
+      <section className="py-20">
+        <div className="container mx-auto px-4">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-4xl font-bold mb-4 bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
+              Select Your Services
+            </h2>
+            <p className="text-xl text-gray-400">Choose the services you need for your project</p>
+          </motion.div>
+          
+          <div className="grid md:grid-cols-2 gap-8">
+            {serviceCategories.map((category, index) => (
+              <motion.div
+                key={category.name}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: index * 0.1 }}
+                className="p-6 bg-gradient-to-br from-gray-900/50 to-black/50 rounded-2xl border border-gray-800/50"
+              >
+                <div className="flex items-center gap-3 mb-4">
+                  <div className={category.color}>{category.icon}</div>
+                  <h3 className="text-xl font-bold text-white">{category.name}</h3>
+                </div>
+                
+                <div className="space-y-3">
+                  {category.services.map((service) => (
+                    <label key={service} className="flex items-center gap-3 cursor-pointer group">
+                      <input
+                        type="checkbox"
+                        checked={selectedServices.includes(service)}
+                        onChange={() => handleServiceToggle(service)}
+                        className="w-5 h-5 text-cyan-500 bg-gray-800 border-gray-600 rounded focus:ring-cyan-500 focus:ring-2"
+                      />
+                      <span className="text-gray-300 group-hover:text-white transition-colors duration-200">
+                        {service}
                       </span>
-                    </div>
-                  )}
-
-                  <div className="text-center mb-6">
-                    <h3 className="text-2xl font-bold text-white mb-2">{tier.name}</h3>
-                    <div className="text-4xl font-bold text-indigo-400 mb-2">{tier.price}</div>
-                    <p className="text-gray-400">{tier.description}</p>
-                  </div>
-
-                  <ul className="space-y-3 mb-8">
-                    {tier.features.map((feature, idx) => (
-                      <li key={idx} className="flex items-center gap-3 text-gray-300">
-                        <CheckCircle className="w-5 h-5 text-indigo-400" />
-                        {feature}
-                      </li>
-                    ))}
-                  </ul>
-
-                  <button className={`w-full px-6 py-3 bg-gradient-to-r ${tier.color} text-white rounded-xl font-semibold hover:shadow-xl transition-all duration-300`}>
-                    Get Quote
-                  </button>
-                </motion.div>
-              ))}
-            </div>
+                    </label>
+                  ))}
+                </div>
+              </motion.div>
+            ))}
           </div>
-        </section>
+        </div>
+      </section>
 
-        {/* Contact Information */}
-        <section className="py-20 px-4">
-          <div className="max-w-7xl mx-auto">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-              className="text-center mb-16"
-            >
-              <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-                Need a Custom Quote?
-              </h2>
-              <p className="text-xl text-gray-400 max-w-3xl mx-auto">
-                Contact our team for personalized pricing and solutions
-              </p>
-            </motion.div>
+      {/* Quote Form */}
+      <section className="py-20 bg-gradient-to-r from-gray-900/50 to-black">
+        <div className="container mx-auto px-4">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-4xl font-bold mb-4 bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
+              Project Details
+            </h2>
+            <p className="text-xl text-gray-400">Tell us about your project and requirements</p>
+          </motion.div>
+          
+          <div className="max-w-4xl mx-auto">
+            <form onSubmit={handleSubmit} className="space-y-8">
+              {/* Contact Information */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8 }}
+                className="bg-gradient-to-br from-gray-900/30 to-black/30 rounded-2xl p-8 border border-gray-800/50"
+              >
+                <h3 className="text-2xl font-bold text-white mb-6 flex items-center gap-2">
+                  <Users className="w-6 h-6 text-cyan-400" />
+                  Contact Information
+                </h3>
+                
+                <div className="grid md:grid-cols-2 gap-6">
+                  <div>
+                    <label className="block text-sm font-medium text-gray-300 mb-2">Full Name *</label>
+                    <input
+                      type="text"
+                      required
+                      value={formData.name}
+                      onChange={(e) => handleInputChange('name', e.target.value)}
+                      className="w-full px-4 py-3 bg-gray-800/50 border border-gray-700 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:border-cyan-500/50 focus:ring-2 focus:ring-cyan-500/20 transition-all duration-300"
+                      placeholder="Enter your full name"
+                    />
+                  </div>
+                  
+                  <div>
+                    <label className="block text-sm font-medium text-gray-300 mb-2">Email Address *</label>
+                    <input
+                      type="email"
+                      required
+                      value={formData.email}
+                      onChange={(e) => handleInputChange('email', e.target.value)}
+                      className="w-full px-4 py-3 bg-gray-800/50 border border-gray-700 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:border-cyan-500/50 focus:ring-2 focus:ring-cyan-500/20 transition-all duration-300"
+                      placeholder="Enter your email address"
+                    />
+                  </div>
+                  
+                  <div>
+                    <label className="block text-sm font-medium text-gray-300 mb-2">Company Name</label>
+                    <input
+                      type="text"
+                      value={formData.company}
+                      onChange={(e) => handleInputChange('company', e.target.value)}
+                      className="w-full px-4 py-3 bg-gray-800/50 border border-gray-700 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:border-cyan-500/50 focus:ring-2 focus:ring-cyan-500/20 transition-all duration-300"
+                      placeholder="Enter your company name"
+                    />
+                  </div>
+                  
+                  <div>
+                    <label className="block text-sm font-medium text-gray-300 mb-2">Phone Number</label>
+                    <input
+                      type="tel"
+                      value={formData.phone}
+                      onChange={(e) => handleInputChange('phone', e.target.value)}
+                      className="w-full px-4 py-3 bg-gray-800/50 border border-gray-700 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:border-cyan-500/50 focus:ring-2 focus:ring-cyan-500/20 transition-all duration-300"
+                      placeholder="Enter your phone number"
+                    />
+                  </div>
+                </div>
+              </motion.div>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              {[
-                {
-                  icon: <Phone className="w-8 h-8 text-indigo-400" />,
-                  title: "Call Us",
-                  contact: "+1 302 464 0950",
-                  description: "Speak directly with our experts"
-                },
-                {
-                  icon: <Mail className="w-8 h-8 text-purple-400" />,
-                  title: "Email Us",
-                  contact: "kleber@ziontechgroup.com",
-                  description: "Send us your requirements"
-                },
-                {
-                  icon: <MapPin className="w-8 h-8 text-pink-400" />,
-                  title: "Visit Us",
-                  contact: "364 E Main St STE 1008, Middletown DE 19709",
-                  description: "Schedule an in-person meeting"
-                }
-              ].map((method, index) => (
+              {/* Project Details */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.1 }}
+                className="bg-gradient-to-br from-gray-900/30 to-black/30 rounded-2xl p-8 border border-gray-800/50"
+              >
+                <h3 className="text-2xl font-bold text-white mb-6 flex items-center gap-2">
+                  <Target className="w-6 h-6 text-purple-400" />
+                  Project Details
+                </h3>
+                
+                <div className="space-y-6">
+                  <div>
+                    <label className="block text-sm font-medium text-gray-300 mb-2">Project Description *</label>
+                    <textarea
+                      required
+                      rows={6}
+                      value={formData.projectDescription}
+                      onChange={(e) => handleInputChange('projectDescription', e.target.value)}
+                      className="w-full px-4 py-3 bg-gray-800/50 border border-gray-700 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:border-cyan-500/50 focus:ring-2 focus:ring-cyan-500/20 transition-all duration-300"
+                      placeholder="Describe your project, goals, and requirements in detail..."
+                    />
+                  </div>
+                  
+                  <div className="grid md:grid-cols-3 gap-6">
+                    <div>
+                      <label className="block text-sm font-medium text-gray-300 mb-2">Timeline *</label>
+                      <select
+                        required
+                        value={formData.timeline}
+                        onChange={(e) => handleInputChange('timeline', e.target.value)}
+                        className="w-full px-4 py-3 bg-gray-800/50 border border-gray-700 rounded-xl text-white focus:outline-none focus:border-cyan-500/50 focus:ring-2 focus:ring-cyan-500/20 transition-all duration-300"
+                      >
+                        <option value="">Select timeline</option>
+                        {timelineOptions.map((option) => (
+                          <option key={option.value} value={option.value}>
+                            {option.label}
+                          </option>
+                        ))}
+                      </select>
+                    </div>
+                    
+                    <div>
+                      <label className="block text-sm font-medium text-gray-300 mb-2">Budget Range *</label>
+                      <select
+                        required
+                        value={formData.budget}
+                        onChange={(e) => handleInputChange('budget', e.target.value)}
+                        className="w-full px-4 py-3 bg-gray-800/50 border border-gray-700 rounded-xl text-white focus:outline-none focus:border-cyan-500/50 focus:ring-2 focus:ring-cyan-500/20 transition-all duration-300"
+                      >
+                        <option value="">Select budget</option>
+                        {budgetRanges.map((option) => (
+                          <option key={option.value} value={option.value}>
+                            {option.label}
+                          </option>
+                        ))}
+                      </select>
+                    </div>
+                    
+                    <div>
+                      <label className="block text-sm font-medium text-gray-300 mb-2">Team Size</label>
+                      <select
+                        value={formData.teamSize}
+                        onChange={(e) => handleInputChange('teamSize', e.target.value)}
+                        className="w-full px-4 py-3 bg-gray-800/50 border border-gray-700 rounded-xl text-white focus:outline-none focus:border-cyan-500/50 focus:ring-2 focus:ring-cyan-500/20 transition-all duration-300"
+                      >
+                        <option value="">Select team size</option>
+                        {teamSizeOptions.map((option) => (
+                          <option key={option.value} value={option.value}>
+                            {option.label}
+                          </option>
+                        ))}
+                      </select>
+                    </div>
+                  </div>
+                </div>
+              </motion.div>
+
+              {/* Selected Services Summary */}
+              {selectedServices.length > 0 && (
                 <motion.div
-                  key={index}
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: index * 0.1 }}
-                  className="text-center p-6 bg-black/40 border border-indigo-500/20 rounded-2xl"
+                  transition={{ duration: 0.8, delay: 0.2 }}
+                  className="bg-gradient-to-br from-cyan-500/10 to-purple-500/10 rounded-2xl p-8 border border-cyan-500/20"
                 >
-                  <div className="mb-4">{method.icon}</div>
-                  <h3 className="text-xl font-semibold text-white mb-2">{method.title}</h3>
-                  <div className="text-indigo-400 font-semibold mb-2">{method.contact}</div>
-                  <p className="text-gray-400 text-sm">{method.description}</p>
+                  <h3 className="text-2xl font-bold text-white mb-6 flex items-center gap-2">
+                    <CheckCircle className="w-6 h-6 text-cyan-400" />
+                    Selected Services
+                  </h3>
+                  
+                  <div className="grid md:grid-cols-2 gap-4">
+                    {selectedServices.map((service) => (
+                      <div key={service} className="flex items-center gap-2 text-gray-300">
+                        <CheckCircle className="w-4 h-4 text-cyan-400" />
+                        <span>{service}</span>
+                      </div>
+                    ))}
+                  </div>
                 </motion.div>
-              ))}
+              )}
+
+              {/* Submit Button */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.3 }}
+                className="text-center"
+              >
+                <button
+                  type="submit"
+                  className="inline-flex items-center gap-2 bg-gradient-to-r from-cyan-500 to-blue-600 text-white px-12 py-4 rounded-2xl font-semibold hover:shadow-2xl hover:shadow-cyan-500/20 transition-all duration-300 text-lg"
+                >
+                  <Send className="w-5 h-5" />
+                  Get Your Quote
+                </button>
+                <p className="text-gray-400 mt-4 text-sm">
+                  We'll respond within 24 hours with a detailed proposal
+                </p>
+              </motion.div>
+            </form>
+          </div>
+        </div>
+      </section>
+
+      {/* Why Choose Us */}
+      <section className="py-20">
+        <div className="container mx-auto px-4">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-4xl font-bold mb-4 bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
+              Why Choose Zion Tech Group?
+            </h2>
+            <p className="text-xl text-gray-400">Leading the revolution in AI consciousness and quantum computing</p>
+          </motion.div>
+          
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {[
+              {
+                icon: <Brain className="w-8 h-8 text-cyan-400" />,
+                title: 'AI Pioneers',
+                description: 'Leading research in AI consciousness and emotional intelligence'
+              },
+              {
+                icon: <Atom className="w-8 h-8 text-purple-400" />,
+                title: 'Quantum Experts',
+                description: 'Cutting-edge quantum computing and cryptography solutions'
+              },
+              {
+                icon: <Rocket className="w-8 h-8 text-green-400" />,
+                title: 'Autonomous Systems',
+                description: 'Building self-managing and self-optimizing business systems'
+              },
+              {
+                icon: <Shield className="w-8 h-8 text-blue-400" />,
+                title: 'Enterprise Grade',
+                description: 'Production-ready solutions with enterprise security and compliance'
+              }
+            ].map((feature, index) => (
+              <motion.div
+                key={feature.title}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: index * 0.1 }}
+                className="text-center p-6 bg-gradient-to-br from-gray-900/30 to-black/30 rounded-2xl border border-gray-800/50 hover:border-cyan-500/30 transition-all duration-300"
+              >
+                <div className="flex justify-center mb-4">{feature.icon}</div>
+                <h3 className="text-xl font-semibold text-white mb-3">{feature.title}</h3>
+                <p className="text-gray-300 leading-relaxed">{feature.description}</p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Contact CTA */}
+      <section className="py-20 bg-gradient-to-r from-cyan-900/20 via-purple-900/20 to-pink-900/20">
+        <div className="container mx-auto px-4 text-center">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+          >
+            <h2 className="text-4xl font-bold mb-6 bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
+              Ready to Get Started?
+            </h2>
+            <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
+              Have questions or need to discuss your project in detail? 
+              Our team is here to help you succeed.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <a
+                href="/contact"
+                className="inline-flex items-center gap-2 bg-gradient-to-r from-cyan-500 to-blue-600 text-white px-8 py-4 rounded-2xl font-semibold hover:shadow-2xl hover:shadow-cyan-500/20 transition-all duration-300"
+              >
+                Contact Us
+                <ArrowRight className="w-5 h-5" />
+              </a>
+              <a
+                href="/services"
+                className="inline-flex items-center gap-2 border border-cyan-500/30 text-cyan-400 px-8 py-4 rounded-2xl font-semibold hover:bg-cyan-500/10 transition-all duration-300"
+              >
+                Explore Services
+              </a>
             </div>
-          </div>
-        </section>
-
-        {/* CTA Section */}
-        <section className="py-20 px-4">
-          <div className="max-w-4xl mx-auto text-center">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-            >
-              <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-                Ready to Get Started?
-              </h2>
-              <p className="text-xl text-gray-400 mb-8">
-                Request your personalized quote and begin your transformation journey
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <button className="px-8 py-4 bg-gradient-to-r from-indigo-500 to-purple-500 text-white rounded-2xl font-semibold hover:shadow-2xl hover:shadow-indigo-500/25 transition-all duration-300 flex items-center gap-2">
-                  Request Quote Now
-                  <ArrowRight className="w-5 h-5" />
-                </button>
-                <button className="px-8 py-4 border border-indigo-500/30 text-indigo-300 rounded-2xl hover:bg-indigo-500/10 transition-all duration-300">
-                  Schedule Demo
-                </button>
-              </div>
-            </motion.div>
-          </div>
-        </section>
-      </div>
-    </Layout>
+          </motion.div>
+        </div>
+      </section>
+    </div>
   );
-};
-
-export default Quote;
+}

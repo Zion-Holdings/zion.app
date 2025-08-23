@@ -1,6 +1,3 @@
-  return <div>Contact Us</div>;
-}
-=======
 export default function Page(){return null}
 =======
 =======
@@ -12,6 +9,9 @@ import Button from '../components/ui/Button';
 import Card from '../components/ui/Card';
 import { Mail, Phone, MapPin, MessageSquare, Clock, Globe, Send, CheckCircle, Star, Zap, Shield, Users, ArrowRight, DollarSign } from 'lucide-react';
 import { motion } from 'framer-motion';
+=======
+import React from 'react';
+import SEO from '../components/SEO';
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({
@@ -175,27 +175,6 @@ export default function ContactPage() {
   ];
 
   return (
-    <QuantumHolographicBackground variant="quantum">
-      <div className="min-h-screen">
-        <Head>
-          <title>Contact Us - Zion Tech Group | Get Started with Revolutionary Technology Solutions</title>
-          <meta name="description" content="Contact Zion Tech Group today for a free consultation on our revolutionary AI, quantum computing, and emerging technology solutions. Transform your business with guaranteed ROI." />
-          <meta name="keywords" content="contact Zion Tech Group, AI consultation, quantum computing services, technology solutions, business transformation" />
-          <meta property="og:title" content="Contact Us - Zion Tech Group" />
-          <meta property="og:description" content="Get started with revolutionary technology solutions. Free consultation available." />
-          <meta property="og:url" content="https://ziontechgroup.com/contact" />
-        </Head>
-
-const Contact: NextPage = () => (
-  <div className="py-10">
-    <Head><title>Contact - Zion</title></Head>
-    <h1 className="text-2xl font-semibold text-white">Contact</h1>
-    <p className="text-white/80 mt-2">Get in touch at contact@zion.ai</p>
-  </div>
-);
-
-      <p className="mt-2 text-gray-600 dark:text-gray-300">Get in touch with us.</p>
-=======
       {/* Contact Information Section */}
       <section className="py-20 bg-gradient-to-br from-gray-900 to-black relative overflow-hidden">
         <div className="absolute inset-0 cyber-grid opacity-10" />
@@ -473,6 +452,17 @@ const Contact: NextPage = () => (
           </Card>
         </div>
       </section>
+=======
+    <div className="min-h-[60vh] px-6 py-24">
+      <SEO title="Contact | Zion Tech Group" description="Contact Zion Tech Group" />
+      <div className="max-w-3xl mx-auto">
+        <h1 className="text-4xl font-bold text-white mb-4">Contact</h1>
+        <p className="text-gray-300 mb-6">We would love to hear from you. Reach out to discuss how we can help.</p>
+        <div className="space-y-3 text-gray-200">
+          <a href="tel:+13024640950" className="block hover:text-cyan-400">+1 302 464 0950</a>
+          <a href="mailto:kleber@ziontechgroup.com" className="block hover:text-purple-400">kleber@ziontechgroup.com</a>
+        </div>
+      </div>
     </div>
   );
 }

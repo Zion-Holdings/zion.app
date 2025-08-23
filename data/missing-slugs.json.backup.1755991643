@@ -1,0 +1,21 @@
+[
+  "ai-autonomous-marketing-platform",
+<<<<<<< HEAD
+=======
+  "ai-creativity-studio",
+  "ai-education-platform",
+  "ai-financial-intelligence",
+  "ai-healthcare-diagnostics",
+  "ai-sustainability-platform",
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-bbf4
+  "automated-financial-analytics-platform",
+  "entertainment-media-solutions",
+  "industry-solutions",
+  "intelligent-project-management-suite",
+  "leadership",
+  "real-estate-technology-solutions",
+  "services/ai-evaluation-orchestrator",
+  "services/it-asset-discovery-agent",
+  "services/managed-postgres-ha",
+  "transportation-logistics-solutions"
+]

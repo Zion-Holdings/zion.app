@@ -1,27 +1,19 @@
 export default function Page(){return null}
 =======
-export default function Page(){return null}
 =======
 import React from 'react';
+import SEO from '../components/SEO';
 
 export default function AboutPage() {
   return (
-    <div className="container mx-auto px-4 py-10">
-      <h1 className="text-2xl font-semibold">About Zion</h1>
-import type { NextPage } from 'next';
-import Head from 'next/head';
-
-const About: NextPage = () => (
-  <div className="py-10">
-    <Head><title>About - Zion</title></Head>
-    <h1 className="text-2xl font-semibold text-white">About</h1>
-    <p className="text-white/80 mt-2">About page content coming soon.</p>
-  </div>
-);
-
-export default About;
-=======
-      <p className="mt-2 text-gray-600 dark:text-gray-300">Information coming soon.</p>
+    <div className="min-h-[60vh] px-6 py-24">
+      <SEO title="About | Zion Tech Group" description="About Zion Tech Group" />
+      <div className="max-w-3xl mx-auto">
+        <h1 className="text-4xl font-bold text-white mb-4">About Us</h1>
+        <p className="text-gray-300 mb-6">Zion Tech Group delivers revolutionary technology solutions across AI, quantum computing, and micro SaaS. We help organizations accelerate innovation and achieve measurable outcomes.</p>
+      </div>
     </div>
   );
-}
+};
+
+export default AboutPage;
