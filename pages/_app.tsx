@@ -1,14 +1,14 @@
 import type { AppProps } from 'next/app';
-import EnhancedLayout from '../components/layout/EnhancedLayout';
 import '../styles/globals.css';
-import '../styles/enhanced-design-system.css';
-import '../styles/modern-design-system.css';
-import '../styles/globals.css';
+import Navigation from '../components/layout/Navigation';
+import Footer from '../components/layout/Footer';
 
 export default function MyApp({ Component, pageProps }: AppProps) {
   return (
-    <EnhancedLayout>
+    <>
+      <Navigation />
       <Component {...pageProps} />
-    </EnhancedLayout>
+      <Footer />
+    </>
   );
 }
