@@ -1,0 +1,46 @@
+{
+  "compilerOptions": {
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
+    "allowJs": true,
+    "skipLibCheck": true,
+<<<<<<< HEAD
+    "strict": false,
+    "noEmit": true,
+    "incremental": true,
+    "module": "esnext",
+=======
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["./src/*"],
+      "@/pages/*": ["./src/pages/*"],
+      "axios": ["./src/lib/axios.ts"],
+      "notistack": ["./src/stubs/notistack.tsx"],
+      "@sentry/browser": ["./src/stubs/sentry.ts"]
+    },
+    "types": ["vite/client", "react", "react-router-dom", "socket.io", "socket.io-client"],
+
+    /* Bundler mode */
+    "moduleResolution": "bundler",
+    "allowImportingTsExtensions": true,
+>>>>>>> origin/3ycx6d-codex/implement-global-error-boundary-with-toasts
+    "esModuleInterop": true,
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "jsx": "preserve",
+    "target": "ES2017"
+  },
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx"
+  ],
+  "exclude": [
+    "node_modules",
+    "zion.app/recovered-content/**"
+  ]
+}

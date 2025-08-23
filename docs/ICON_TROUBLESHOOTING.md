@@ -1,4 +1,3 @@
-
 # Icon Troubleshooting Guide
 
 ## Fixing Lucide React Icon Issues
@@ -36,9 +35,10 @@ node scripts/update-icon-imports.js
 ### Common Icons and Their Aliases
 
 Some icons have been renamed for consistency:
-- `Star` → `StarIcon` 
+
+- `Star` → `StarIcon`
 - `Check` → `CheckIcon`
-- `Calendar` → `CalendarIcon` 
+- `Calendar` → `CalendarIcon`
 - `RefreshCw` → `RefreshCcw` (fixed spelling)
 - `Lock` is using the standard lucide icon
 - `Trash` and `Trash2` both map to the `Trash2` icon
@@ -56,6 +56,7 @@ If you need to use a new icon:
 ## Common Issues
 
 If you see errors like:
+
 ```
 error TS2305: Module '"lucide-react"' has no exported member 'IconName'.
 ```

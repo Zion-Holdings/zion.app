@@ -1,0 +1,148 @@
+{
+  "serviceGeneration": {
+    "generationTimes": [
+      4500,
+      5200,
+      3800,
+      6100,
+      4900
+    ],
+    "successRates": [
+      1,
+      1,
+      1,
+      0,
+      1
+    ],
+    "resourceUsage": [
+      {
+        "memory": 128,
+        "cpu": 15
+      },
+      {
+        "memory": 156,
+        "cpu": 18
+      },
+      {
+        "memory": 98,
+        "cpu": 12
+      },
+      {
+        "memory": 0,
+        "cpu": 0
+      },
+      {
+        "memory": 134,
+        "cpu": 16
+      }
+    ],
+    "bottlenecks": [
+      "ml-pipeline",
+      "api-gateway"
+    ]
+  },
+  "qualityAssurance": {
+    "checkTimes": [
+      1200,
+      980,
+      1450,
+      1100
+    ],
+    "issueDetectionRates": [
+      3,
+      2,
+      4,
+      1
+    ],
+    "falsePositiveRates": [
+      1,
+      0,
+      2,
+      0
+    ],
+    "qualityScores": [
+      85,
+      92,
+      78,
+      95
+    ]
+  },
+  "deployment": {
+    "deploymentTimes": [
+      18000,
+      22000,
+      15000,
+      25000
+    ],
+    "successRates": [
+      1,
+      1,
+      1,
+      0
+    ],
+    "rollbackRates": [
+      0,
+      0,
+      0,
+      1
+    ],
+    "resourceEfficiency": [
+      0.8,
+      0.9,
+      0.7,
+      0.6
+    ]
+  },
+  "systemResources": {
+    "cpuUsage": [
+      45,
+      52,
+      48,
+      51
+    ],
+    "memoryUsage": [
+      62,
+      68,
+      65,
+      67
+    ],
+    "diskUsage": [
+      78,
+      79,
+      78,
+      79
+    ],
+    "networkLatency": [
+      12,
+      15,
+      13,
+      14
+    ]
+  },
+  "userInteractions": {
+    "responseTimes": [
+      1200,
+      800,
+      2500,
+      600
+    ],
+    "userSatisfaction": [
+      4.2,
+      4.5,
+      3.8,
+      4.6
+    ],
+    "featureUsage": [
+      85,
+      92,
+      78,
+      95
+    ],
+    "errorRates": [
+      2,
+      1,
+      5,
+      0
+    ]
+  }
+}

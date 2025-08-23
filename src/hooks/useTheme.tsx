@@ -1,10 +1,9 @@
-
 import React from 'react';
-
-// This is a simplified version of the theme hook for offline development
-export const useTheme = () => {
-  return {
-    theme: "dark",
-    setTheme: (theme: string) => console.log(`Theme would change to: ${theme}`)
-  };
-};
+export function useTheme() {
+  return (
+    <div>
+      <h1>Component</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

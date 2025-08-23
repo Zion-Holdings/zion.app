@@ -1,0 +1,27 @@
+repos:
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v4.4.0
+    hooks:
+      - id: check-yaml
+        name: Check YAML syntax
+        types: [yaml, yml]
+      
+      - id: check-json
+        name: Check JSON syntax
+        types: [json]
+      
+      - id: trailing-whitespace
+        name: Trailing whitespace
+        types: [text]
+      
+      - id: end-of-file-fixer
+        name: End of file fixer
+        types: [text]
+
+  - repo: https://github.com/pre-commit/mirrors-yamllint
+    rev: v1.32.0
+    hooks:
+      - id: yamllint
+        name: YAML Lint
+        args: [--strict]
+        types: [yaml, yml]
