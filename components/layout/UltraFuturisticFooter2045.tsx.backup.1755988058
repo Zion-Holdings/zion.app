@@ -227,7 +227,13 @@ const UltraFuturisticFooter2045: React.FC = () => {
                   <a
                     key={social.name}
                     href={social.href}
+<<<<<<< HEAD
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="p-2 rounded-lg bg-gray-900/50 border border-cyan-500/20 text-gray-400 transition-all duration-200 hover:scale-110 hover:border-cyan-500/50 hover:text-cyan-400"
+=======
                     className="p-2 rounded-lg bg-gray-900/50 border border-cyan-500/20 text-gray-400 transition-all duration-200 hover:scale-110 hover:border-cyan-500/50"
+>>>>>>> origin/cursor/expand-services-and-deploy-updates-7d6c
                     aria-label={social.name}
                   >
                     <social.icon className="w-5 h-5" />

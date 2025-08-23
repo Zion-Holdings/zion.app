@@ -4,7 +4,12 @@ import UltraFuturisticFooter2025 from './UltraFuturisticFooter2025';
 import EnhancedSidebar2025 from './EnhancedSidebar2025';
 import UltraFuturisticBackground2037 from '../backgrounds/UltraFuturisticBackground2037';
 import TopContactBar from './TopContactBar';
+<<<<<<< HEAD
+import UltraFuturisticBackground2047 from '../backgrounds/UltraFuturisticBackground2047';
+import EnhancedPerformanceMonitor from '../EnhancedPerformanceMonitor';
+=======
 import PerformanceMonitor from '../EnhancedPerformanceMonitor';
+>>>>>>> origin/cursor/expand-services-and-deploy-updates-7d6c
 import AccessibilityEnhancer from '../EnhancedAccessibilityEnhancer';
 import CookieConsentBanner from '../CookieConsentBanner';
 import PerformanceOptimizer from '../PerformanceOptimizer';
