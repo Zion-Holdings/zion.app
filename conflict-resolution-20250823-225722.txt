@@ -348,3 +348,7 @@
 2025-08-23 22:58:18 - Resolving conflicts in src/components/ProductListingCard.tsx for branch 9lfw2u-codex/render-filled-stars-for-ratings
 2025-08-23 22:58:18 - Resolving conflicts in src/pages/EquipmentDetail.tsx for branch 9lfw2u-codex/render-filled-stars-for-ratings
 2025-08-23 22:58:18 - Resolving conflicts in src/pages/ListingDetail.tsx for branch 9lfw2u-codex/render-filled-stars-for-ratings
+2025-08-23 22:58:19 - Merge conflicts detected in 9llxiv-codex/implement-analytics-and-error-tracking
+2025-08-23 22:58:19 - Resolving conflicts in src/components/ErrorBoundary.tsx for branch 9llxiv-codex/implement-analytics-and-error-tracking
+2025-08-23 22:58:19 - Resolving conflicts in src/components/transactions/PaymentButton.tsx for branch 9llxiv-codex/implement-analytics-and-error-tracking
+2025-08-23 22:58:19 - Resolving conflicts in src/main.tsx for branch 9llxiv-codex/implement-analytics-and-error-tracking

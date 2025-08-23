@@ -26,8 +26,14 @@ import { NotificationProvider } from './context';
 
 // Import analytics provider
 import { AnalyticsProvider } from './context/AnalyticsContext';
+<<<<<<< HEAD
+import { ViewModeProvider } from './context/ViewModeContext';
+import { CartProvider } from './context/CartContext';
+import { registerServiceWorker } from './serviceWorkerRegistration';
+=======
 import { initGA } from './lib/gtag';
 import { ErrorBoundary } from './components/ErrorBoundary';
+>>>>>>> origin/9llxiv-codex/implement-analytics-and-error-tracking
 
 // Initialize a React Query client with global error handling
 const queryClient = new QueryClient({
@@ -41,6 +47,76 @@ const queryClient = new QueryClient({
   },
 });
 
+<<<<<<< HEAD
+const rootElement = document.getElementById('root');
+
+function renderApp() {
+  const app = (
+    <React.StrictMode>
+      <HelmetProvider>
+        <QueryClientProvider client={queryClient}>
+          <WhitelabelProvider>
+            <Router>
+              <AuthProvider>
+                <NotificationProvider>
+                  <AnalyticsProvider>
+                    <LanguageProvider authState={{ isAuthenticated: false, user: null }}>
+                      <ViewModeProvider>
+                        <CartProvider>
+                          <AppLayout>
+                            <App />
+                          </AppLayout>
+                        </CartProvider>
+                      </ViewModeProvider>
+                      <LanguageDetectionPopup />
+                    </LanguageProvider>
+                  </AnalyticsProvider>
+                </NotificationProvider>
+              </AuthProvider>
+            </Router>
+          </WhitelabelProvider>
+        </QueryClientProvider>
+      </HelmetProvider>
+    </React.StrictMode>
+  );
+
+  if (rootElement?.hasChildNodes()) {
+    hydrateRoot(rootElement, app);
+  } else if (rootElement) {
+    createRoot(rootElement).render(app);
+  }
+}
+
+function displayFatalError(message: string) {
+  if (rootElement) {
+    rootElement.innerHTML = `
+      <div style="padding:20px;text-align:center;font-family:sans-serif;">
+        <h1>Application Error</h1>
+        <p>${message}</p>
+      </div>`;
+  }
+}
+
+try {
+  renderApp();
+} catch (error) {
+  console.error('Global error caught in main.tsx:', error);
+  displayFatalError((error as Error).message);
+}
+
+window.addEventListener('error', (e) => {
+  console.error('Unhandled error:', e.error || e.message);
+  displayFatalError(e.message);
+});
+
+window.addEventListener('unhandledrejection', (e) => {
+  const message = (e.reason && e.reason.message) || 'Unhandled promise rejection';
+  console.error('Unhandled rejection:', e.reason);
+  displayFatalError(message);
+});
+
+registerServiceWorker();
+=======
 initGA();
 // Render the app with proper provider structure
 ReactDOM.createRoot(document.getElementById('root')!).render(
@@ -67,3 +143,4 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
     </HelmetProvider>
   </React.StrictMode>,
 );
+>>>>>>> origin/9llxiv-codex/implement-analytics-and-error-tracking

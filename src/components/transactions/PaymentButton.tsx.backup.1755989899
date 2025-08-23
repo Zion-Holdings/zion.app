@@ -11,6 +11,13 @@ import { useNavigate } from "react-router-dom";
 import { useAnalytics } from "@/context/AnalyticsContext";
 import { event as gtagEvent } from "@/lib/gtag";
 import { captureException } from "@/lib/sentry";
+<<<<<<< HEAD
+
+const stripePromise = loadStripe(
+  import.meta.env.VITE_STRIPE_PUBLISHABLE_KEY || ""
+);
+=======
+>>>>>>> origin/9llxiv-codex/implement-analytics-and-error-tracking
 
 interface PaymentButtonProps {
   amount: number;
