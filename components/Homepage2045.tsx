@@ -4,7 +4,8 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { 
   ArrowRight, Play, TrendingUp, Brain, Shield, Rocket, Globe, Cpu, Database, Atom, Target, Star, Sparkles as SparklesIcon,
   Brain as BrainIcon, Atom as AtomIcon, Shield as ShieldIcon, Rocket as RocketIcon, Zap, Eye, Heart, Infinity,
-  ChevronRight, ChevronLeft, ExternalLink, Users, Award, Clock, CheckCircle, Zap as ZapIcon
+  ChevronRight, ChevronLeft, ExternalLink, Users, Award, Clock, CheckCircle, Zap as ZapIcon,
+  ArrowUpRight, Sparkles, Target as TargetIcon, Globe as GlobeIcon, Mail, Phone, MapPin
 } from 'lucide-react';
 
 // Import our new revolutionary services
@@ -18,9 +19,13 @@ const Homepage2045: React.FC = () => {
   const [selectedCategory, setSelectedCategory] = useState('all');
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const [hoveredService, setHoveredService] = useState<string | null>(null);
+  const [isTyping, setIsTyping] = useState(false);
   
   useEffect(() => {
     setIsVisible(true);
+    
+    // Start typing animation
+    setTimeout(() => setIsTyping(true), 1000);
     
     // Auto-rotate featured services
     const interval = setInterval(() => {
@@ -78,10 +83,10 @@ const Homepage2045: React.FC = () => {
   ];
 
   const stats = [
-    { number: "3000+", label: "Revolutionary Services", icon: Star },
-    { number: "99.99%", label: "Uptime Guarantee", icon: TrendingUp },
-    { number: "24/7", label: "AI Support Available", icon: Brain },
-    { number: "250+", label: "Countries Served", icon: Globe }
+    { number: "3000+", label: "Revolutionary Services", icon: Star, description: "Cutting-edge solutions" },
+    { number: "99.99%", label: "Uptime Guarantee", icon: TrendingUp, description: "Reliable performance" },
+    { number: "24/7", label: "AI Support Available", icon: Brain, description: "Always here to help" },
+    { number: "250+", label: "Countries Served", icon: Globe, description: "Global reach" }
   ];
 
   const handleGetStarted = useCallback(() => {
@@ -104,56 +109,75 @@ const Homepage2045: React.FC = () => {
     <Layout>
       {/* Main Content */}
       <main className="relative z-10">
-        {/* Hero Section */}
+        {/* Enhanced Hero Section */}
         <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-          {/* Animated Background */}
+          {/* Enhanced Animated Background */}
           <div className="absolute inset-0">
             <div className="absolute inset-0 bg-gradient-to-br from-black via-purple-900/20 to-cyan-900/20" />
             <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(120,119,198,0.3),transparent_50%)]" />
             
-            {/* Floating Elements */}
+            {/* Enhanced Floating Elements with Better Animation */}
             <motion.div
               animate={{ 
                 x: [0, 100, 0],
                 y: [0, -100, 0],
-                rotate: [0, 360, 0]
+                rotate: [0, 360, 0],
+                scale: [1, 1.1, 1]
               }}
               transition={{ 
                 duration: 20,
                 repeat: -1,
                 ease: "linear"
               }}
-              className="absolute top-20 left-20 w-32 h-32 border border-cyan-400/20 rounded-lg"
+              className="absolute top-20 left-20 w-32 h-32 border border-cyan-400/20 rounded-lg backdrop-blur-sm"
             />
             <motion.div
               animate={{ 
                 x: [0, -100, 0],
                 y: [0, 100, 0],
-                rotate: [0, -360, 0]
+                rotate: [0, -360, 0],
+                scale: [1, 0.9, 1]
               }}
               transition={{ 
                 duration: 25,
                 repeat: -1,
                 ease: "linear"
               }}
-              className="absolute top-40 right-32 w-24 h-24 border border-purple-400/20 rounded-full"
+              className="absolute top-40 right-32 w-24 h-24 border border-purple-400/20 rounded-full backdrop-blur-sm"
             />
             <motion.div
               animate={{ 
                 x: [0, 150, 0],
                 y: [0, -150, 0],
-                rotate: [0, 720, 0]
+                rotate: [0, 720, 0],
+                scale: [1, 1.2, 1]
               }}
               transition={{ 
                 duration: 30,
                 repeat: -1,
                 ease: "linear"
               }}
-              className="absolute bottom-32 left-32 w-40 h-40 border border-pink-400/20 transform rotate-45"
+              className="absolute bottom-32 left-32 w-40 h-40 border border-pink-400/20 transform rotate-45 backdrop-blur-sm"
+            />
+            
+            {/* New Floating Elements */}
+            <motion.div
+              animate={{ 
+                x: [0, -80, 0],
+                y: [0, -80, 0],
+                rotate: [0, 180, 0],
+                opacity: [0.3, 0.7, 0.3]
+              }}
+              transition={{ 
+                duration: 15,
+                repeat: -1,
+                ease: "easeInOut"
+              }}
+              className="absolute top-1/2 right-1/4 w-16 h-16 border border-emerald-400/20 rounded-lg backdrop-blur-sm"
             />
           </div>
 
-          {/* Hero Content */}
+          {/* Enhanced Hero Content */}
           <div className="relative z-10 text-center px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
             <motion.div
               initial={{ opacity: 0, y: 50 }}
@@ -161,136 +185,173 @@ const Homepage2045: React.FC = () => {
               transition={{ duration: 1 }}
               className="space-y-8"
             >
-              {/* Main Heading */}
+              {/* Enhanced Main Heading with Typing Effect */}
               <div className="space-y-6">
-                <motion.h1 
-                  className="text-5xl md:text-7xl lg:text-8xl font-bold leading-tight"
+                <motion.div
                   initial={{ opacity: 0, y: 30 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 1, delay: 0.2 }}
+                  className="relative"
                 >
-                  <span className="bg-gradient-to-r from-cyan-400 via-purple-500 to-pink-500 bg-clip-text text-transparent">
-                    Zion Tech Group
-                  </span>
-                </motion.h1>
-                <motion.h2 
-                  className="text-2xl md:text-3xl lg:text-4xl font-semibold text-white/90"
+                  <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold leading-tight">
+                    <span className="bg-gradient-to-r from-cyan-400 via-purple-500 to-pink-500 bg-clip-text text-transparent">
+                      Zion Tech Group
+                    </span>
+                  </h1>
+                  
+                  {/* Enhanced Subtitle with Better Typography */}
+                  <motion.h2 
+                    className="text-2xl md:text-3xl lg:text-4xl font-semibold text-white/90 mt-6"
+                    initial={{ opacity: 0, y: 30 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 1, delay: 0.4 }}
+                  >
+                    Revolutionary Technology Solutions for{' '}
+                    <span className="bg-gradient-to-r from-cyan-400 to-purple-500 bg-clip-text text-transparent">
+                      2045 and Beyond
+                    </span>
+                  </motion.h2>
+                  
+                  {/* Enhanced Description with Better Readability */}
+                  <motion.p 
+                    className="text-lg md:text-xl text-white/70 max-w-4xl mx-auto mt-6 leading-relaxed"
+                    initial={{ opacity: 0, y: 30 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 1, delay: 0.6 }}
+                  >
+                    Experience the future of technology with our cutting-edge{' '}
+                    <span className="text-cyan-400 font-medium">AI consciousness</span>,{' '}
+                    <span className="text-purple-400 font-medium">quantum computing</span>, and{' '}
+                    <span className="text-pink-400 font-medium">autonomous systems</span>. 
+                    Transform your business with revolutionary micro SAAS solutions that operate with true intelligence.
+                  </motion.p>
+                </motion.div>
+
+                {/* Enhanced CTA Buttons with Better Visual Hierarchy */}
+                <motion.div 
+                  className="flex flex-col sm:flex-row gap-6 justify-center items-center"
                   initial={{ opacity: 0, y: 30 }}
                   animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 1, delay: 0.4 }}
+                  transition={{ duration: 1, delay: 0.8 }}
                 >
-                  Revolutionary Technology Solutions for 2045 and Beyond
-                </motion.h2>
-                <motion.p 
-                  className="text-lg md:text-xl text-white/70 max-w-4xl mx-auto"
+                  <button
+                    onClick={handleGetStarted}
+                    className="group relative px-10 py-5 bg-gradient-to-r from-cyan-500 to-purple-500 text-white font-bold rounded-2xl text-xl transition-all duration-300 hover:from-cyan-600 hover:to-purple-600 hover:scale-105 hover:shadow-2xl hover:shadow-cyan-500/25 transform hover:-translate-y-1"
+                  >
+                    <span className="relative z-10 flex items-center gap-3">
+                      Get Started Today
+                      <ArrowUpRight className="w-6 h-6 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform duration-300" />
+                    </span>
+                    <div className="absolute inset-0 bg-gradient-to-r from-cyan-600 to-purple-600 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                  </button>
+                  
+                  <button
+                    onClick={handleWatchDemo}
+                    className="group px-10 py-5 border-2 border-white/20 text-white font-bold rounded-2xl text-xl transition-all duration-300 hover:border-cyan-400 hover:text-cyan-400 hover:bg-white/5 hover:scale-105 transform hover:-translate-y-1 backdrop-blur-sm"
+                  >
+                    <span className="flex items-center gap-3">
+                      <Play className="w-6 h-6" />
+                      Explore Services
+                    </span>
+                  </button>
+                </motion.div>
+
+                {/* Enhanced Stats with Better Visual Design */}
+                <motion.div 
+                  className="grid grid-cols-2 md:grid-cols-4 gap-8 pt-16"
                   initial={{ opacity: 0, y: 30 }}
                   animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 1, delay: 0.6 }}
+                  transition={{ duration: 1, delay: 1 }}
                 >
-                  Experience the future of technology with our cutting-edge AI consciousness, quantum computing, and autonomous systems. 
-                  Transform your business with revolutionary micro SAAS solutions that operate with true intelligence.
-                </motion.p>
+                  {stats.map((stat, index) => (
+                    <motion.div 
+                      key={index} 
+                      className="text-center group"
+                      whileHover={{ scale: 1.05 }}
+                      transition={{ duration: 0.2 }}
+                    >
+                      <div className="flex justify-center mb-4">
+                        <div className="p-3 bg-gradient-to-r from-cyan-500/20 to-purple-500/20 rounded-xl border border-cyan-400/30">
+                          <stat.icon className="w-8 h-8 text-cyan-400 group-hover:text-purple-400 transition-colors duration-300" />
+                        </div>
+                      </div>
+                      <div className="text-3xl md:text-4xl font-bold text-white group-hover:text-cyan-400 transition-colors duration-300 mb-2">
+                        {stat.number}
+                      </div>
+                      <div className="text-sm font-semibold text-white/90 group-hover:text-white transition-colors duration-300 mb-1">
+                        {stat.label}
+                      </div>
+                      <div className="text-xs text-white/60 group-hover:text-white/80 transition-colors duration-300">
+                        {stat.description}
+                      </div>
+                    </motion.div>
+                  ))}
+                </motion.div>
               </div>
-
-              {/* CTA Buttons */}
-              <motion.div 
-                className="flex flex-col sm:flex-row gap-4 justify-center items-center"
-                initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 1, delay: 0.8 }}
-              >
-                <button
-                  onClick={handleGetStarted}
-                  className="group relative px-8 py-4 bg-gradient-to-r from-cyan-500 to-purple-500 text-white font-semibold rounded-xl text-lg transition-all duration-300 hover:from-cyan-600 hover:to-purple-600 hover:scale-105 hover:shadow-2xl hover:shadow-cyan-500/25"
-                >
-                  <span className="relative z-10 flex items-center gap-2">
-                    Get Started
-                    <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
-                  </span>
-                  <div className="absolute inset-0 bg-gradient-to-r from-cyan-600 to-purple-600 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                </button>
-                
-                <button
-                  onClick={handleWatchDemo}
-                  className="group px-8 py-4 border-2 border-white/20 text-white font-semibold rounded-xl text-lg transition-all duration-300 hover:border-cyan-400 hover:text-cyan-400 hover:bg-white/5 hover:scale-105"
-                >
-                  <span className="flex items-center gap-2">
-                    <Play className="w-5 h-5" />
-                    Explore Services
-                  </span>
-                </button>
-              </motion.div>
-
-              {/* Stats */}
-              <motion.div 
-                className="grid grid-cols-2 md:grid-cols-4 gap-6 pt-12"
-                initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 1, delay: 1 }}
-              >
-                {stats.map((stat, index) => (
-                  <div key={index} className="text-center group">
-                    <div className="flex justify-center mb-2">
-                      <stat.icon className="w-8 h-8 text-cyan-400 group-hover:text-purple-400 transition-colors duration-300" />
-                    </div>
-                    <div className="text-2xl md:text-3xl font-bold text-white group-hover:text-cyan-400 transition-colors duration-300">
-                      {stat.number}
-                    </div>
-                    <div className="text-sm text-white/70 group-hover:text-white/90 transition-colors duration-300">
-                      {stat.label}
-                    </div>
-                  </div>
-                ))}
-              </motion.div>
             </motion.div>
           </div>
         </section>
 
-        {/* Category Filter */}
-        <section className="py-16 px-4 sm:px-6 lg:px-8">
+        {/* Enhanced Category Filter */}
+        <section className="py-20 px-4 sm:px-6 lg:px-8">
           <div className="max-w-7xl mx-auto">
             <motion.div 
-              className="text-center mb-12"
+              className="text-center mb-16"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
               viewport={{ once: true }}
             >
-              <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-                Explore Our Revolutionary Services
+              <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+                Explore Our{' '}
+                <span className="bg-gradient-to-r from-cyan-400 to-purple-500 bg-clip-text text-transparent">
+                  Revolutionary Services
+                </span>
               </h2>
-              <p className="text-lg text-white/70 max-w-2xl mx-auto">
+              <p className="text-xl text-white/70 max-w-3xl mx-auto leading-relaxed">
                 Discover cutting-edge technology solutions across multiple domains, from AI consciousness to quantum computing
               </p>
             </motion.div>
 
-            {/* Category Tabs */}
-            <div className="flex flex-wrap justify-center gap-4 mb-12">
+            {/* Enhanced Category Tabs */}
+            <div className="flex flex-wrap justify-center gap-4 mb-16">
               {categories.map((category) => (
-                <button
+                <motion.button
                   key={category.id}
                   onClick={() => handleCategoryChange(category.id)}
-                  className={`group relative px-6 py-3 rounded-xl font-medium transition-all duration-300 ${
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  className={`group relative px-8 py-4 rounded-2xl font-semibold transition-all duration-300 ${
                     selectedCategory === category.id
-                      ? 'bg-gradient-to-r from-cyan-500 to-purple-500 text-white shadow-lg shadow-cyan-500/25'
-                      : 'bg-white/5 text-white/70 hover:bg-white/10 hover:text-white border border-white/10'
+                      ? 'bg-gradient-to-r from-cyan-500 to-purple-500 text-white shadow-2xl shadow-cyan-500/25 transform scale-105'
+                      : 'bg-white/5 text-white/70 hover:bg-white/10 hover:text-white border border-white/10 hover:border-cyan-400/30'
                   }`}
                 >
-                  <span className="flex items-center gap-2">
-                    <category.icon className="w-5 h-5" />
+                  <span className="flex items-center gap-3">
+                    <div className={`p-2 rounded-lg ${
+                      selectedCategory === category.id 
+                        ? 'bg-white/20' 
+                        : 'bg-white/5 group-hover:bg-cyan-400/20'
+                    }`}>
+                      <category.icon className="w-5 h-5" />
+                    </div>
                     {category.name}
-                    <span className="text-xs bg-white/20 px-2 py-1 rounded-full">
+                    <span className={`text-xs px-3 py-1 rounded-full font-medium ${
+                      selectedCategory === category.id
+                        ? 'bg-white/20 text-white'
+                        : 'bg-white/10 text-white/70 group-hover:bg-cyan-400/20 group-hover:text-cyan-400'
+                    }`}>
                       {category.count}
                     </span>
                   </span>
-                </button>
+                </motion.button>
               ))}
             </div>
           </div>
         </section>
 
-        {/* Services Grid */}
-        <section className="py-16 px-4 sm:px-6 lg:px-8">
+        {/* Enhanced Services Grid */}
+        <section className="py-20 px-4 sm:px-6 lg:px-8">
           <div className="max-w-7xl mx-auto">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {getFilteredServices().map((service, index) => (
@@ -302,175 +363,207 @@ const Homepage2045: React.FC = () => {
                   viewport={{ once: true }}
                   onHoverStart={() => setHoveredService(service.id)}
                   onHoverEnd={() => setHoveredService(null)}
+                  whileHover={{ y: -8 }}
                   className="group relative"
                 >
-                  <div className="relative bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-xl border border-white/10 rounded-2xl p-6 h-full transition-all duration-300 hover:border-cyan-400/50 hover:shadow-2xl hover:shadow-cyan-500/25 hover:scale-105">
-                    {/* Service Header */}
-                    <div className="mb-6">
-                      <div className="flex items-start justify-between mb-4">
-                        <div className="w-12 h-12 bg-gradient-to-r from-cyan-500 to-purple-500 rounded-xl flex items-center justify-center">
-                          <Brain className="w-6 h-6 text-white" />
+                  <div className="relative bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-xl border border-white/10 rounded-3xl p-8 h-full transition-all duration-300 hover:border-cyan-400/50 hover:shadow-2xl hover:shadow-cyan-500/25 hover:scale-105 overflow-hidden">
+                    {/* Enhanced Service Header */}
+                    <div className="mb-8">
+                      <div className="flex items-start justify-between mb-6">
+                        <div className="w-16 h-16 bg-gradient-to-r from-cyan-500 to-purple-500 rounded-2xl flex items-center justify-center shadow-lg shadow-cyan-500/25">
+                          <Brain className="w-8 h-8 text-white" />
                         </div>
-                        <div className="text-xs bg-gradient-to-r from-cyan-500 to-purple-500 text-white px-3 py-1 rounded-full font-medium">
+                        <div className="text-sm bg-gradient-to-r from-cyan-500 to-purple-500 text-white px-4 py-2 rounded-full font-semibold shadow-lg">
                           {service.type}
                         </div>
                       </div>
                       
-                      <h3 className="text-xl font-bold text-white mb-2 group-hover:text-cyan-400 transition-colors duration-300">
+                      <h3 className="text-2xl font-bold text-white mb-4 group-hover:text-cyan-400 transition-colors duration-300 leading-tight">
                         {service.name}
                       </h3>
                       
-                      <p className="text-white/70 text-sm leading-relaxed">
+                      <p className="text-white/70 text-base leading-relaxed">
                         {service.description}
                       </p>
                     </div>
 
-                    {/* Service Features */}
-                    <div className="mb-6">
-                      <h4 className="text-sm font-semibold text-white/90 mb-3">Key Features</h4>
-                      <div className="space-y-2">
+                    {/* Enhanced Service Features */}
+                    <div className="mb-8">
+                      <h4 className="text-base font-semibold text-white/90 mb-4 flex items-center gap-2">
+                        <Sparkles className="w-4 h-4 text-cyan-400" />
+                        Key Features
+                      </h4>
+                      <div className="space-y-3">
                         {service.features.slice(0, 3).map((feature, featureIndex) => (
-                          <div key={featureIndex} className="flex items-center gap-2 text-sm text-white/70">
-                            <CheckCircle className="w-4 h-4 text-cyan-400 flex-shrink-0" />
+                          <div key={featureIndex} className="flex items-center gap-3 text-sm text-white/70">
+                            <div className="w-2 h-2 bg-cyan-400 rounded-full flex-shrink-0" />
                             <span>{feature}</span>
                           </div>
                         ))}
                         {service.features.length > 3 && (
-                          <div className="text-xs text-cyan-400">
+                          <div className="text-sm text-cyan-400 font-medium mt-3">
                             +{service.features.length - 3} more features
                           </div>
                         )}
                       </div>
                     </div>
 
-                    {/* Service Benefits */}
-                    <div className="mb-6">
-                      <h4 className="text-sm font-semibold text-white/90 mb-3">Benefits</h4>
-                      <div className="space-y-2">
+                    {/* Enhanced Service Benefits */}
+                    <div className="mb-8">
+                      <h4 className="text-base font-semibold text-white/90 mb-4 flex items-center gap-2">
+                        <ZapIcon className="w-4 h-4 text-yellow-400" />
+                        Benefits
+                      </h4>
+                      <div className="space-y-3">
                         {service.benefits.slice(0, 2).map((benefit, benefitIndex) => (
-                          <div key={benefitIndex} className="flex items-center gap-2 text-sm text-white/70">
-                            <ZapIcon className="w-4 h-4 text-yellow-400 flex-shrink-0" />
+                          <div key={benefitIndex} className="flex items-center gap-3 text-sm text-white/70">
+                            <div className="w-2 h-2 bg-yellow-400 rounded-full flex-shrink-0" />
                             <span>{benefit}</span>
                           </div>
                         ))}
                       </div>
                     </div>
 
-                    {/* Service Footer */}
+                    {/* Enhanced Service Footer */}
                     <div className="mt-auto">
-                      <div className="flex items-center justify-between mb-4">
-                        <div className="text-2xl font-bold text-cyan-400">
+                      <div className="flex items-center justify-between mb-6">
+                        <div className="text-3xl font-bold text-cyan-400">
                           {service.pricing.starter}
                         </div>
-                        <div className="text-xs text-white/50">
+                        <div className="text-sm text-white/50">
                           Starting from
                         </div>
                       </div>
                       
                       <button
                         onClick={() => handleServiceClick(service)}
-                        className="w-full group/btn relative px-4 py-3 bg-gradient-to-r from-cyan-500/20 to-purple-500/20 border border-cyan-400/30 text-cyan-400 font-medium rounded-xl transition-all duration-300 hover:from-cyan-500/30 hover:to-purple-500/30 hover:border-cyan-400/50 hover:scale-105"
+                        className="w-full group/btn relative px-6 py-4 bg-gradient-to-r from-cyan-500/20 to-purple-500/20 border border-cyan-400/30 text-cyan-400 font-semibold rounded-2xl transition-all duration-300 hover:from-cyan-500/30 hover:to-purple-500/30 hover:border-cyan-400/50 hover:scale-105 hover:shadow-lg hover:shadow-cyan-500/25"
                       >
-                        <span className="flex items-center justify-center gap-2">
+                        <span className="flex items-center justify-center gap-3">
                           Learn More
-                          <ExternalLink className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform duration-300" />
+                          <ArrowUpRight className="w-5 h-5 group-hover/btn:translate-x-1 group-hover/btn:-translate-y-1 transition-transform duration-300" />
                         </span>
                       </button>
                     </div>
 
-                    {/* Hover Effect Overlay */}
-                    <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/5 to-purple-500/5 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
+                    {/* Enhanced Hover Effect Overlay */}
+                    <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/5 to-purple-500/5 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
+                    
+                    {/* Enhanced Background Pattern */}
+                    <div className="absolute inset-0 opacity-5 group-hover:opacity-10 transition-opacity duration-300">
+                      <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-cyan-400 to-purple-500 rounded-full blur-3xl" />
+                      <div className="absolute bottom-0 left-0 w-24 h-24 bg-gradient-to-tr from-pink-400 to-purple-500 rounded-full blur-2xl" />
+                    </div>
                   </div>
                 </motion.div>
               ))}
             </div>
 
-            {/* Load More Button */}
+            {/* Enhanced Load More Button */}
             {getFilteredServices().length > 12 && (
               <motion.div 
-                className="text-center mt-12"
+                className="text-center mt-16"
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8 }}
                 viewport={{ once: true }}
               >
-                <button className="px-8 py-4 bg-gradient-to-r from-cyan-500 to-purple-500 text-white font-semibold rounded-xl text-lg transition-all duration-300 hover:from-cyan-600 hover:to-purple-600 hover:scale-105 hover:shadow-2xl hover:shadow-cyan-500/25">
-                  Load More Services
+                <button className="group px-10 py-5 bg-gradient-to-r from-cyan-500 to-purple-500 text-white font-bold rounded-2xl text-xl transition-all duration-300 hover:from-cyan-600 hover:to-purple-600 hover:scale-105 hover:shadow-2xl hover:shadow-cyan-500/25 transform hover:-translate-y-1">
+                  <span className="flex items-center gap-3">
+                    Load More Services
+                    <ArrowUpRight className="w-6 h-6 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform duration-300" />
+                  </span>
                 </button>
               </motion.div>
             )}
           </div>
         </section>
 
-        {/* Featured Services Showcase */}
-        <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-transparent to-white/5">
+        {/* Enhanced Featured Services Showcase */}
+        <section className="py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-transparent to-white/5">
           <div className="max-w-7xl mx-auto">
             <motion.div 
-              className="text-center mb-16"
+              className="text-center mb-20"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
               viewport={{ once: true }}
             >
-              <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-                Featured Revolutionary Services
+              <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+                Featured{' '}
+                <span className="bg-gradient-to-r from-cyan-400 to-purple-500 bg-clip-text text-transparent">
+                  Revolutionary Services
+                </span>
               </h2>
-              <p className="text-lg text-white/70 max-w-2xl mx-auto">
+              <p className="text-xl text-white/70 max-w-3xl mx-auto leading-relaxed">
                 Experience our most advanced and innovative technology solutions
               </p>
             </motion.div>
 
-            {/* Featured Services Carousel */}
+            {/* Enhanced Featured Services Carousel */}
             <div className="relative">
-              <div className="flex gap-8 overflow-hidden">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 {featuredServices.map((service, index) => (
                   <motion.div
                     key={service.id}
-                    className="flex-shrink-0 w-full md:w-1/2 lg:w-1/3"
-                    initial={{ opacity: 0, x: 50 }}
-                    whileInView={{ opacity: 1, x: 0 }}
+                    className="w-full"
+                    initial={{ opacity: 0, y: 50 }}
+                    whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8, delay: index * 0.2 }}
                     viewport={{ once: true }}
+                    whileHover={{ y: -8 }}
                   >
-                    <div className="group relative bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl border border-white/20 rounded-2xl p-8 h-full transition-all duration-300 hover:border-cyan-400/50 hover:shadow-2xl hover:shadow-cyan-500/25 hover:scale-105">
-                      <div className="absolute top-4 right-4">
-                        <div className="text-xs bg-gradient-to-r from-cyan-500 to-purple-500 text-white px-3 py-1 rounded-full font-medium">
+                    <div className="group relative bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl border border-white/20 rounded-3xl p-8 h-full transition-all duration-300 hover:border-cyan-400/50 hover:shadow-2xl hover:shadow-cyan-500/25 hover:scale-105 overflow-hidden">
+                      {/* Featured Badge */}
+                      <div className="absolute top-6 right-6">
+                        <div className="text-sm bg-gradient-to-r from-cyan-500 to-purple-500 text-white px-4 py-2 rounded-full font-semibold shadow-lg">
                           Featured
                         </div>
                       </div>
                       
-                      <div className="w-16 h-16 bg-gradient-to-r from-cyan-500 to-purple-500 rounded-2xl flex items-center justify-center mb-6">
-                        <Brain className="w-8 h-8 text-white" />
+                      {/* Enhanced Service Icon */}
+                      <div className="w-20 h-20 bg-gradient-to-r from-cyan-500 to-purple-500 rounded-2xl flex items-center justify-center mb-8 shadow-lg shadow-cyan-500/25">
+                        <Brain className="w-10 h-10 text-white" />
                       </div>
                       
-                      <h3 className="text-2xl font-bold text-white mb-4 group-hover:text-cyan-400 transition-colors duration-300">
+                      {/* Enhanced Service Title */}
+                      <h3 className="text-2xl font-bold text-white mb-6 group-hover:text-cyan-400 transition-colors duration-300 leading-tight">
                         {service.name}
                       </h3>
                       
-                      <p className="text-white/70 text-base leading-relaxed mb-6">
+                      {/* Enhanced Service Description */}
+                      <p className="text-white/70 text-base leading-relaxed mb-8">
                         {service.description}
                       </p>
                       
-                      <div className="space-y-3 mb-6">
-                        <div className="flex items-center gap-2 text-sm text-white/70">
-                          <Users className="w-4 h-4 text-cyan-400" />
-                          <span>Market Size: {service.marketSize}</span>
+                      {/* Enhanced Service Details */}
+                      <div className="space-y-4 mb-8">
+                        <div className="flex items-center gap-3 text-sm text-white/70">
+                          <div className="w-3 h-3 bg-cyan-400 rounded-full" />
+                          <span>Market Size: <span className="text-cyan-400 font-medium">{service.marketSize}</span></span>
                         </div>
-                        <div className="flex items-center gap-2 text-sm text-white/70">
-                          <Award className="w-4 h-4 text-yellow-400" />
-                          <span>{service.competitiveAdvantage}</span>
+                        <div className="flex items-center gap-3 text-sm text-white/70">
+                          <div className="w-3 h-3 bg-yellow-400 rounded-full" />
+                          <span className="text-yellow-400 font-medium">{service.competitiveAdvantage}</span>
                         </div>
                       </div>
                       
+                      {/* Enhanced CTA Button */}
                       <button
                         onClick={() => handleServiceClick(service)}
-                        className="w-full group/btn relative px-6 py-3 bg-gradient-to-r from-cyan-500 to-purple-500 text-white font-semibold rounded-xl transition-all duration-300 hover:from-cyan-600 hover:to-purple-600 hover:scale-105"
+                        className="w-full group/btn relative px-6 py-4 bg-gradient-to-r from-cyan-500 to-purple-500 text-white font-semibold rounded-2xl transition-all duration-300 hover:from-cyan-600 hover:to-purple-600 hover:scale-105 hover:shadow-lg hover:shadow-cyan-500/25"
                       >
-                        <span className="flex items-center justify-center gap-2">
+                        <span className="flex items-center justify-center gap-3">
                           Explore Service
-                          <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform duration-300" />
+                          <ArrowUpRight className="w-5 h-5 group-hover/btn:translate-x-1 group-hover/btn:-translate-y-1 transition-transform duration-300" />
                         </span>
                       </button>
+                      
+                      {/* Enhanced Background Pattern */}
+                      <div className="absolute inset-0 opacity-5 group-hover:opacity-10 transition-opacity duration-300">
+                        <div className="absolute top-0 right-0 w-40 h-40 bg-gradient-to-br from-cyan-400 to-purple-500 rounded-full blur-3xl" />
+                        <div className="absolute bottom-0 left-0 w-32 h-32 bg-gradient-to-tr from-pink-400 to-purple-500 rounded-full blur-2xl" />
+                      </div>
                     </div>
                   </motion.div>
                 ))}
@@ -479,49 +572,69 @@ const Homepage2045: React.FC = () => {
           </div>
         </section>
 
-        {/* CTA Section */}
-        <section className="py-20 px-4 sm:px-6 lg:px-8">
-          <div className="max-w-4xl mx-auto text-center">
+        {/* Enhanced CTA Section */}
+        <section className="py-24 px-4 sm:px-6 lg:px-8">
+          <div className="max-w-5xl mx-auto text-center">
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
               viewport={{ once: true }}
-              className="space-y-8"
+              className="space-y-10"
             >
-              <h2 className="text-3xl md:text-4xl font-bold text-white">
-                Ready to Transform Your Business?
-              </h2>
-              <p className="text-lg text-white/70">
-                Join the future of technology with our revolutionary AI consciousness, quantum computing, and autonomous systems. 
-                Contact us today to discover how we can help you achieve unprecedented success.
-              </p>
+              <div className="space-y-6">
+                <h2 className="text-4xl md:text-5xl font-bold text-white">
+                  Ready to Transform Your Business?
+                </h2>
+                <p className="text-xl text-white/70 leading-relaxed max-w-4xl mx-auto">
+                  Join the future of technology with our revolutionary{' '}
+                  <span className="text-cyan-400 font-medium">AI consciousness</span>,{' '}
+                  <span className="text-purple-400 font-medium">quantum computing</span>, and{' '}
+                  <span className="text-pink-400 font-medium">autonomous systems</span>. 
+                  Contact us today to discover how we can help you achieve unprecedented success.
+                </p>
+              </div>
               
-              <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+              {/* Enhanced CTA Buttons */}
+              <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
                 <button
                   onClick={handleGetStarted}
-                  className="group relative px-8 py-4 bg-gradient-to-r from-cyan-500 to-purple-500 text-white font-semibold rounded-xl text-lg transition-all duration-300 hover:from-cyan-600 hover:to-purple-600 hover:scale-105 hover:shadow-2xl hover:shadow-cyan-500/25"
+                  className="group relative px-12 py-6 bg-gradient-to-r from-cyan-500 to-purple-500 text-white font-bold rounded-2xl text-xl transition-all duration-300 hover:from-cyan-600 hover:to-purple-600 hover:scale-105 hover:shadow-2xl hover:shadow-cyan-500/25 transform hover:-translate-y-1"
                 >
-                  <span className="relative z-10 flex items-center gap-2">
+                  <span className="relative z-10 flex items-center gap-3">
                     Get Started Today
-                    <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
+                    <ArrowUpRight className="w-6 h-6 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform duration-300" />
                   </span>
+                  <div className="absolute inset-0 bg-gradient-to-r from-cyan-600 to-purple-600 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 </button>
                 
                 <a
                   href="tel:+1 302 464 0950"
-                  className="group px-8 py-4 border-2 border-white/20 text-white font-semibold rounded-xl text-lg transition-all duration-300 hover:border-cyan-400 hover:text-cyan-400 hover:bg-white/5 hover:scale-105"
+                  className="group px-12 py-6 border-2 border-white/20 text-white font-bold rounded-2xl text-xl transition-all duration-300 hover:border-cyan-400 hover:text-cyan-400 hover:bg-white/5 hover:scale-105 transform hover:-translate-y-1 backdrop-blur-sm"
                 >
-                  <span className="flex items-center gap-2">
-                    <Clock className="w-5 h-5" />
+                  <span className="flex items-center gap-3">
+                    <Clock className="w-6 h-6" />
                     Call Now
                   </span>
                 </a>
               </div>
               
-              <div className="text-sm text-white/50">
-                <p>Contact: kleber@ziontechgroup.com | +1 302 464 0950</p>
-                <p>Address: 364 E Main St STE 1008 Middletown DE 19709</p>
+              {/* Enhanced Contact Information */}
+              <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-8 max-w-2xl mx-auto">
+                <div className="space-y-4 text-sm text-white/70">
+                  <div className="flex items-center justify-center gap-2">
+                    <Mail className="w-4 h-4 text-cyan-400" />
+                    <span>kleber@ziontechgroup.com</span>
+                  </div>
+                  <div className="flex items-center justify-center gap-2">
+                    <Phone className="w-4 h-4 text-purple-400" />
+                    <span>+1 302 464 0950</span>
+                  </div>
+                  <div className="flex items-center justify-center gap-2">
+                    <MapPin className="w-4 h-4 text-pink-400" />
+                    <span>364 E Main St STE 1008 Middletown DE 19709</span>
+                  </div>
+                </div>
               </div>
             </motion.div>
           </div>

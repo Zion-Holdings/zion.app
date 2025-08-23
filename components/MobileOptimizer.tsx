@@ -1,279 +1,221 @@
-import React, { useState, useEffect, useCallback } from 'react';
-import { motion } from 'framer-motion';
+import React, { useEffect, useState, useCallback } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 import { 
-  Smartphone, Tablet, Monitor, 
-  MousePointer, RotateCcw, Settings
+  Smartphone, 
+  Tablet, 
+  Monitor, 
+  Zap, 
+  MousePointer, 
+  Wifi, 
+  Battery, 
+  WifiOff,
+  BatteryCharging,
+  Signal,
+  SignalHigh,
+  SignalLow
 } from 'lucide-react';
 
 interface MobileOptimizerProps {
   children: React.ReactNode;
-  showDebugInfo?: boolean;
 }
 
-interface DeviceInfo {
-  type: 'mobile' | 'tablet' | 'desktop';
-  orientation: 'portrait' | 'landscape';
-  touchSupport: boolean;
-  screenSize: { width: number; height: number };
-  pixelRatio: number;
-  connection?: string;
-  batteryLevel?: number;
-}
+const MobileOptimizer: React.FC<MobileOptimizerProps> = ({ children }) => {
+  const [isMobile, setIsMobile] = useState(false);
+  const [isTablet, setIsTablet] = useState(false);
+  const [isLandscape, setIsLandscape] = useState(false);
+  const [touchSupported, setTouchSupported] = useState(false);
+  const [connectionType, setConnectionType] = useState<string>('unknown');
+  const [batteryLevel, setBatteryLevel] = useState<number | null>(null);
+  const [isCharging, setIsCharging] = useState<boolean | null>(null);
+  const [showMobileIndicator, setShowMobileIndicator] = useState(false);
 
-const MobileOptimizer: React.FC<MobileOptimizerProps> = ({ 
-  children, 
-  showDebugInfo = false 
-}) => {
-  const [deviceInfo, setDeviceInfo] = useState<DeviceInfo>({
-    type: 'desktop',
-    orientation: 'portrait',
-    touchSupport: false,
-    screenSize: { width: 0, height: 0 },
-    pixelRatio: 1
-  });
-  const [showDebug, setShowDebug] = useState(showDebugInfo);
-  const [touchGestures, setTouchGestures] = useState({
-    enabled: true,
-    doubleTapZoom: true,
-    pinchZoom: true,
-    swipeNavigation: true
-  });
-
-  // Detect device type and capabilities
-  const detectDevice = useCallback(() => {
-    if (typeof window === 'undefined') return;
-
-    const userAgent = navigator.userAgent;
-    const screen = window.screen;
-    const orientation = window.orientation || 0;
-    
-    let type: 'mobile' | 'tablet' | 'desktop' = 'desktop';
-    if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(userAgent)) {
-      type = screen.width <= 768 ? 'mobile' : 'tablet';
-    }
-
-    const touchSupport = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
-    
-    setDeviceInfo({
-      type,
-      orientation: Math.abs(orientation) === 90 ? 'landscape' : 'portrait',
-      touchSupport,
-      screenSize: { width: screen.width, height: screen.height },
-      pixelRatio: window.devicePixelRatio || 1
-    });
-  }, []);
-
-  // Handle orientation changes
-  const handleOrientationChange = useCallback(() => {
-    if (typeof window === 'undefined') return;
-    
-    const orientation = window.orientation || 0;
-    setDeviceInfo(prev => ({
-      ...prev,
-      orientation: Math.abs(orientation) === 90 ? 'landscape' : 'portrait'
-    }));
-  }, []);
-
-  // Handle resize events
-  const handleResize = useCallback(() => {
-    if (typeof window === 'undefined') return;
-    
-    setDeviceInfo(prev => ({
-      ...prev,
-      screenSize: { width: window.innerWidth, height: window.innerHeight }
-    }));
-  }, []);
-
-  // Touch gesture handlers
-      const handleTouchStart = useCallback(() => {
-      if (!touchGestures.enabled) return;
+  useEffect(() => {
+    const checkDevice = () => {
+      const userAgent = navigator.userAgent;
+      const mobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(userAgent);
+      const tablet = /iPad|Android(?=.*\bMobile\b)(?=.*\bSafari\b)/i.test(userAgent);
       
-      // Implement touch gesture logic here
-      // This is a placeholder for actual touch gesture handling
-    }, [touchGestures.enabled]);
-
-  const handleDoubleTap = useCallback((e: TouchEvent) => {
-    if (!touchGestures.doubleTapZoom) return;
-    
-    // Implement double tap zoom logic
-    e.preventDefault();
-  }, [touchGestures.doubleTapZoom]);
-
-  // Initialize device detection and event listeners
-  useEffect(() => {
-    detectDevice();
-    
-    window.addEventListener('orientationchange', handleOrientationChange);
-    window.addEventListener('resize', handleResize);
-    
-    if (deviceInfo.touchSupport) {
-      document.addEventListener('touchstart', handleTouchStart);
-      document.addEventListener('touchend', handleDoubleTap);
-    }
-    
-    return () => {
-      window.removeEventListener('orientationchange', handleOrientationChange);
-      window.removeEventListener('resize', handleResize);
-      document.removeEventListener('touchstart', handleTouchStart);
-      document.removeEventListener('touchend', handleDoubleTap);
+      setIsMobile(mobile);
+      setIsTablet(tablet);
+      setIsLandscape(window.innerWidth > window.innerHeight);
+      setTouchSupported('ontouchstart' in window || navigator.maxTouchPoints > 0);
     };
-  }, [detectDevice, handleOrientationChange, handleResize, handleTouchStart, handleDoubleTap, deviceInfo.touchSupport]);
 
-  // Apply mobile-specific optimizations
+    const checkConnection = () => {
+      if ('connection' in navigator) {
+        const connection = (navigator as any).connection;
+        setConnectionType(connection.effectiveType || connection.type || 'unknown');
+      }
+    };
+
+    const checkBattery = async () => {
+      if ('getBattery' in navigator) {
+        try {
+          const battery = await (navigator as any).getBattery();
+          setBatteryLevel(battery.level * 100);
+          setIsCharging(battery.charging);
+          
+          battery.addEventListener('levelchange', () => {
+            setBatteryLevel(battery.level * 100);
+          });
+          
+          battery.addEventListener('chargingchange', () => {
+            setIsCharging(battery.charging);
+          });
+        } catch (error) {
+          console.log('Battery API not supported');
+        }
+      }
+    };
+
+    const handleResize = () => {
+      setIsLandscape(window.innerWidth > window.innerHeight);
+    };
+
+    const handleOrientationChange = () => {
+      setTimeout(() => {
+        setIsLandscape(window.innerWidth > window.innerHeight);
+      }, 100);
+    };
+
+    checkDevice();
+    checkConnection();
+    checkBattery();
+    
+    window.addEventListener('resize', handleResize);
+    window.addEventListener('orientationchange', handleOrientationChange);
+    
+    // Show mobile indicator briefly on mobile devices
+    if (isMobile || isTablet) {
+      setShowMobileIndicator(true);
+      setTimeout(() => setShowMobileIndicator(false), 3000);
+    }
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+      window.removeEventListener('orientationchange', handleOrientationChange);
+    };
+  }, [isMobile, isTablet]);
+
+  // Enhanced touch interactions for mobile
+  const handleTouchStart = useCallback((e: React.TouchEvent) => {
+    if (touchSupported) {
+      // Add touch feedback
+      const target = e.currentTarget as HTMLElement;
+      target.style.transform = 'scale(0.98)';
+      target.style.transition = 'transform 0.1s ease';
+    }
+  }, [touchSupported]);
+
+  const handleTouchEnd = useCallback((e: React.TouchEvent) => {
+    if (touchSupported) {
+      const target = e.currentTarget as HTMLElement;
+      target.style.transform = 'scale(1)';
+    }
+  }, [touchSupported]);
+
+  // Performance optimizations for mobile
   useEffect(() => {
-    if (typeof document === 'undefined') return;
-
-    const viewport = document.querySelector('meta[name="viewport"]');
-    if (viewport && deviceInfo.type === 'mobile') {
-      viewport.setAttribute('content', 'width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes');
+    if (isMobile || isTablet) {
+      // Reduce motion for mobile devices
+      document.documentElement.style.setProperty('--reduced-motion', 'reduce');
+      
+      // Optimize images for mobile
+      const images = document.querySelectorAll('img');
+      images.forEach(img => {
+        if (img.dataset.mobileSrc) {
+          img.src = img.dataset.mobileSrc;
+        }
+      });
     }
+  }, [isMobile, isTablet]);
 
-    // Add mobile-specific CSS classes
-    document.body.classList.toggle('mobile-device', deviceInfo.type === 'mobile');
-    document.body.classList.toggle('tablet-device', deviceInfo.type === 'tablet');
-    document.body.classList.toggle('touch-device', deviceInfo.touchSupport);
-    document.body.classList.toggle('landscape', deviceInfo.orientation === 'landscape');
-    document.body.classList.toggle('portrait', deviceInfo.orientation === 'portrait');
-  }, [deviceInfo]);
-
-  // Get device icon
-  const getDeviceIcon = () => {
-    switch (deviceInfo.type) {
-      case 'mobile': return <Smartphone className="w-5 h-5" />;
-      case 'tablet': return <Tablet className="w-5 h-5" />;
-      default: return <Monitor className="w-5 h-5" />;
-    }
-  };
-
-  // Get orientation icon
-  const getOrientationIcon = () => {
-    return deviceInfo.orientation === 'landscape' ? 
-      <RotateCcw className="w-5 h-5" /> : 
-      <RotateCcw className="w-5 h-5 transform rotate-90" />;
-  };
+  // Connection-aware loading
+  const shouldShowLowQuality = connectionType === 'slow-2g' || connectionType === '2g';
+  
+  if (shouldShowLowQuality) {
+    // Apply low-quality optimizations
+    document.documentElement.style.setProperty('--image-quality', 'low');
+  }
 
   return (
     <>
-      {children}
-      
-      {/* Mobile Debug Panel */}
-      {showDebug && (
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          className="fixed top-4 left-4 z-50 bg-gray-900/95 backdrop-blur-sm border border-gray-700 rounded-2xl p-4 shadow-2xl max-w-sm"
-        >
-          <div className="flex items-center justify-between mb-3">
-            <h3 className="text-sm font-semibold text-white flex items-center gap-2">
-              <Settings className="w-4 h-4" />
-              Mobile Optimizer
-            </h3>
-            <button
-              onClick={() => setShowDebug(false)}
-              className="text-gray-400 hover:text-white transition-colors"
-            >
-              ×
-            </button>
-          </div>
-          
-          <div className="space-y-3 text-xs">
-            {/* Device Info */}
-            <div className="flex items-center justify-between">
-              <span className="text-gray-400">Device:</span>
-              <div className="flex items-center gap-2 text-white">
-                {getDeviceIcon()}
-                <span className="capitalize">{deviceInfo.type}</span>
-              </div>
+      {/* Mobile Status Indicator */}
+      <AnimatePresence>
+        {showMobileIndicator && (isMobile || isTablet) && (
+          <motion.div
+            initial={{ opacity: 0, y: -50 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -50 }}
+            className="fixed top-4 left-1/2 transform -translate-x-1/2 z-50 bg-black/80 backdrop-blur-sm border border-white/20 rounded-2xl px-4 py-2 text-white text-sm"
+          >
+            <div className="flex items-center gap-2">
+              {isMobile ? <Smartphone className="w-4 h-4" /> : <Tablet className="w-4 h-4" />}
+              <span>Mobile Optimized</span>
+              {touchSupported && <MousePointer className="w-4 h-4 text-cyan-400" />}
             </div>
-            
-            {/* Orientation */}
-            <div className="flex items-center justify-between">
-              <span className="text-gray-400">Orientation:</span>
-              <div className="flex items-center gap-2 text-white">
-                {getOrientationIcon()}
-                <span className="capitalize">{deviceInfo.orientation}</span>
-              </div>
-            </div>
-            
-            {/* Touch Support */}
-            <div className="flex items-center justify-between">
-              <span className="text-gray-400">Touch:</span>
-              <div className="flex items-center gap-2">
-                <MousePointer className={`w-4 h-4 ${deviceInfo.touchSupport ? 'text-green-400' : 'text-red-400'}`} />
-                <span className={deviceInfo.touchSupport ? 'text-green-400' : 'text-red-400'}>
-                  {deviceInfo.touchSupport ? 'Yes' : 'No'}
-                </span>
-              </div>
-            </div>
-            
-            {/* Screen Size */}
-            <div className="flex items-center justify-between">
-              <span className="text-gray-400">Screen:</span>
-              <span className="text-white">
-                {deviceInfo.screenSize.width} × {deviceInfo.screenSize.height}
-              </span>
-            </div>
-            
-            {/* Pixel Ratio */}
-            <div className="flex items-center justify-between">
-              <span className="text-gray-400">Pixel Ratio:</span>
-              <span className="text-white">{deviceInfo.pixelRatio}x</span>
-            </div>
-            
-            {/* Touch Gestures */}
-            <div className="pt-2 border-t border-gray-700">
-              <div className="flex items-center justify-between mb-2">
-                <span className="text-gray-400">Touch Gestures:</span>
-                <button
-                  onClick={() => setTouchGestures(prev => ({ ...prev, enabled: !prev.enabled }))}
-                  className={`px-2 py-1 rounded text-xs ${touchGestures.enabled ? 'bg-green-500/20 text-green-400' : 'bg-red-500/20 text-red-400'}`}
-                >
-                  {touchGestures.enabled ? 'Enabled' : 'Disabled'}
-                </button>
-              </div>
-              
-              <div className="space-y-1">
-                <div className="flex items-center justify-between">
-                  <span className="text-gray-400">Double Tap Zoom:</span>
-                  <input
-                    type="checkbox"
-                    checked={touchGestures.doubleTapZoom}
-                    onChange={(e) => setTouchGestures(prev => ({ ...prev, doubleTapZoom: e.target.checked }))}
-                    className="w-3 h-3"
-                  />
-                </div>
-                <div className="flex items-center justify-between">
-                  <span className="text-gray-400">Pinch Zoom:</span>
-                  <input
-                    type="checkbox"
-                    checked={touchGestures.pinchZoom}
-                    onChange={(e) => setTouchGestures(prev => ({ ...prev, pinchZoom: e.target.checked }))}
-                    className="w-3 h-3"
-                  />
-                </div>
-                <div className="flex items-center justify-between">
-                  <span className="text-gray-400">Swipe Nav:</span>
-                  <input
-                    type="checkbox"
-                    checked={touchGestures.swipeNavigation}
-                    onChange={(e) => setTouchGestures(prev => ({ ...prev, swipeNavigation: e.target.checked }))}
-                    className="w-3 h-3"
-                  />
-                </div>
-              </div>
-            </div>
-          </div>
-        </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+
+      {/* Connection Status */}
+      {isMobile && connectionType !== 'unknown' && (
+        <div className="fixed top-4 right-4 z-50 flex items-center gap-2 bg-black/80 backdrop-blur-sm border border-white/20 rounded-2xl px-3 py-2">
+          {connectionType === '4g' || connectionType === '5g' ? (
+            <SignalHigh className="w-4 h-4 text-green-400" />
+          ) : connectionType === '3g' ? (
+            <Signal className="w-4 h-4 text-yellow-400" />
+          ) : (
+            <SignalLow className="w-4 h-4 text-red-400" />
+          )}
+          <span className="text-white text-xs">{connectionType.toUpperCase()}</span>
+        </div>
       )}
-      
-      {/* Mobile Optimization Toggle */}
-      <button
-        onClick={() => setShowDebug(!showDebug)}
-        className="fixed top-4 left-4 z-40 p-2 bg-gray-900/80 backdrop-blur-sm border border-gray-700 rounded-xl text-gray-400 hover:text-white transition-all duration-300 hover:bg-gray-800/90"
-        aria-label="Toggle Mobile Optimizer Debug"
+
+      {/* Battery Status */}
+      {isMobile && batteryLevel !== null && (
+        <div className="fixed top-16 right-4 z-50 flex items-center gap-2 bg-black/80 backdrop-blur-sm border border-white/20 rounded-2xl px-3 py-2">
+          {isCharging ? (
+            <BatteryCharging className="w-4 h-4 text-green-400" />
+          ) : (
+            <Battery className="w-4 h-4 text-white" />
+          )}
+          <span className="text-white text-xs">{Math.round(batteryLevel)}%</span>
+        </div>
+      )}
+
+      {/* Enhanced Mobile Content */}
+      <div 
+        className={`mobile-optimized ${isMobile ? 'mobile' : ''} ${isTablet ? 'tablet' : ''} ${isLandscape ? 'landscape' : 'portrait'}`}
+        style={{
+          '--touch-supported': touchSupported ? '1' : '0',
+          '--connection-type': connectionType,
+          '--battery-level': batteryLevel || 0,
+          '--is-charging': isCharging ? '1' : '0'
+        } as React.CSSProperties}
       >
-        <Smartphone className="w-5 h-5" />
-      </button>
+        {/* Apply touch handlers to interactive elements */}
+        <div
+          onTouchStart={handleTouchStart}
+          onTouchEnd={handleTouchEnd}
+          className="touch-optimized"
+        >
+          {children}
+        </div>
+      </div>
+
+      {/* Mobile Performance Monitor */}
+      {isMobile && (
+        <div className="fixed bottom-4 left-4 z-50 bg-black/80 backdrop-blur-sm border border-white/20 rounded-2xl px-3 py-2 text-white text-xs">
+          <div className="flex items-center gap-2">
+            <Zap className="w-3 h-3 text-cyan-400" />
+            <span>Mobile Mode</span>
+          </div>
+          <div className="text-white/60 mt-1">
+            {touchSupported ? 'Touch' : 'No Touch'} • {connectionType}
+          </div>
+        </div>
+      )}
     </>
   );
 };

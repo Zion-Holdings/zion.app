@@ -657,7 +657,12 @@ const Homepage2044: React.FC = () => {
                 <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-cyan-500"></div>
               </div>
             }>
-              <PerformanceOptimizer />
+              <PerformanceOptimizer>
+                <div className="text-center text-white/70">
+                  <p>Performance optimization tools are now available</p>
+                  <p className="text-sm mt-2">Click the performance monitor button to view metrics</p>
+                </div>
+              </PerformanceOptimizer>
             </Suspense>
           </div>
         </section>
