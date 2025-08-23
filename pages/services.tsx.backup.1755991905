@@ -11,6 +11,177 @@ import AdvancedFuturisticCard from '../components/ui/AdvancedFuturisticCard';
 import { expandedMicroSaasServices, serviceCategories, getServicesByCategory, getPopularServices, getServicesByPriceRange } from '../data/expanded-micro-saas-services';
 
 export default function ServicesPage() {
+<<<<<<< HEAD
+  const [searchTerm, setSearchTerm] = useState('');
+  const [selectedCategory, setSelectedCategory] = useState('');
+  const [viewMode, setViewMode] = useState<'grid' | 'list'>('grid');
+  const [sortBy, setSortBy] = useState<'name' | 'price' | 'rating' | 'roi' | 'category'>('name');
+  const [priceRange, setPriceRange] = useState<[number, number]>([0, 10000]);
+  const [showInnovative, setShowInnovative] = useState(true);
+  const router = useRouter();
+
+  const priceRanges = [
+    { value: 'All', label: 'All Prices' },
+    { value: '0-50', label: '$0 - $50' },
+    { value: '51-100', label: '$51 - $100' },
+    { value: '101-200', label: '$101 - $200' },
+    { value: '201+', label: '$201+' }
+  ];
+
+  const allServices = useMemo(() => {
+    const baseServices = enhancedRealMicroSaasServices.concat(extraServices, additionalEnhancedServices);
+    if (showInnovative) {
+      // Convert innovative services to match the base service type structure
+      const convertedInnovativeServices = innovativeNewServices.map(service => ({
+        ...service,
+        variant: service.variant as any // Type assertion to handle variant differences
+      }));
+      return baseServices.concat(convertedInnovativeServices);
+    }
+    return baseServices;
+  }, [showInnovative]);
+
+  const allCategories = useMemo(() => {
+    const baseCategories = serviceCategories || [];
+    if (showInnovative) {
+      return [...baseCategories, ...innovativeServiceCategories];
+    }
+    return baseCategories;
+  }, [showInnovative]);
+
+  // Ensure allCategories is an array of strings
+  const categoryOptions = useMemo(() => {
+    return allCategories.map(cat => typeof cat === 'string' ? cat : cat.name || 'Unknown');
+  }, [allCategories]);
+
+  // Combine all services
+  const allServices = [...expandedMicroSaasServices, ...innovativeServices];
+
+  // Filter and sort services
+  let filteredServices = enhancedMicroSaasServices;
+
+  // Category filter
+  if (selectedCategory !== 'All') {
+    filteredServices = allServices.filter(service => service.category === selectedCategory);
+  }
+
+  // Price range filter
+  if (priceRange !== 'All') {
+    const [min, max] = priceRange.split('-').map(p => p === '+' ? Infinity : parseInt(p));
+    filteredServices = filteredServices.filter(service => {
+      const price = parseFloat(service.price.replace('$', ''));
+      return price >= min && price <= max;
+    });
+  }
+
+    if (searchTerm) {
+      const q = searchTerm.toLowerCase();
+      filtered = filtered.filter(s =>
+        s.name.toLowerCase().includes(q) ||
+        s.description.toLowerCase().includes(q) ||
+        s.tagline.toLowerCase().includes(q) ||
+        s.category.toLowerCase().includes(q) ||
+        s.technology?.some(t => t.toLowerCase().includes(q)) ||
+        s.useCases?.some(u => u.toLowerCase().includes(q))
+      );
+    }
+
+    // Filter by price range
+    filtered = filtered.filter(s => {
+      const price = parseFloat(s.price.replace(/[$,]/g, ''));
+      return price >= priceRange[0] && price <= priceRange[1];
+    });
+
+    filtered.sort((a, b) => {
+      switch (sortBy) {
+        case 'price':
+          return parseFloat(a.price.replace(/[$,]/g, '')) - parseFloat(b.price.replace(/[$,]/g, ''));
+        case 'rating':
+          return b.rating - a.rating;
+        case 'roi': {
+          const ra = parseFloat((a.roi.match(/(\d+)/)?.[1] || '0'));
+          const rb = parseFloat((b.roi.match(/(\d+)/)?.[1] || '0'));
+          return rb - ra;
+        }
+        case 'category':
+          return a.category.localeCompare(b.category);
+        case 'name':
+        default:
+          return a.name.localeCompare(b.name);
+      }
+    });
+
+    return filtered;
+  }, [searchTerm, selectedCategory, sortBy, allServices, priceRange]);
+
+  const contactInfo = {
+    mobile: '+1 302 464 0950',
+    email: 'kleber@ziontechgroup.com',
+    address: '364 E Main St STE 1008 Middletown DE 19709',
+    website: 'https://ziontechgroup.com'
+  };
+
+  const popularServices = getPopularServices();
+
+  // Enhanced service categories with better descriptions and icons
+  const enhancedCategories = [
+    {
+      name: 'Quantum Computing & AI',
+      description: 'Revolutionary quantum AI solutions with unprecedented computing power',
+      icon: <Brain className="w-6 h-6" />,
+      count: enhancedRealMicroSaasServices.filter(s => s.category === 'Quantum Computing & AI' || s.category === 'AI & Machine Learning').length,
+      color: 'from-indigo-500 to-purple-600'
+    },
+    {
+      name: 'AI & Machine Learning',
+      description: 'Advanced AI solutions that transform business operations',
+      icon: <Cpu className="w-6 h-6" />,
+      count: enhancedRealMicroSaasServices.filter(s => s.category === 'AI & Machine Learning' || s.category === 'AI & Content Creation').length,
+      color: 'from-emerald-500 to-teal-600'
+    },
+    {
+      name: 'Space Technology',
+      description: 'Satellite intelligence and space resource management',
+      icon: <Rocket className="w-6 h-6" />,
+      count: enhancedRealMicroSaasServices.filter(s => s.category === 'Space Technology').length,
+      color: 'from-blue-500 to-indigo-600'
+    },
+    {
+      name: 'Metaverse & VR/AR',
+      description: 'Immersive 3D worlds and virtual experiences',
+      icon: <Globe className="w-6 h-6" />,
+      count: enhancedRealMicroSaasServices.filter(s => s.category === 'Metaverse & VR/AR' || s.category === 'Metaverse & Virtual Reality').length,
+      color: 'from-purple-500 to-violet-600'
+    },
+    {
+      name: 'Biomedical AI',
+      description: 'AI-powered medical diagnostics and research',
+      icon: <FlaskConical className="w-6 h-6" />,
+      count: enhancedRealMicroSaasServices.filter(s => s.category === 'Biomedical AI').length,
+      color: 'from-green-500 to-emerald-600'
+    },
+    {
+      name: 'Neural Technology',
+      description: 'Brain-computer interfaces and neural systems',
+      icon: <Dna className="w-6 h-6" />,
+      count: enhancedRealMicroSaasServices.filter(s => s.category === 'Neural Technology').length,
+      color: 'from-pink-500 to-rose-600'
+    },
+    {
+      name: 'Cybersecurity',
+      description: 'Quantum-resistant security and threat protection',
+      icon: <Shield className="w-6 h-6" />,
+      count: enhancedRealMicroSaasServices.filter(s => s.category === 'Cybersecurity' || s.category === 'Quantum Cybersecurity').length,
+      color: 'from-red-500 to-pink-600'
+    },
+    {
+      name: 'Financial Technology',
+      description: 'Quantum financial modeling and trading algorithms',
+      icon: <DollarSign className="w-6 h-6" />,
+      count: enhancedRealMicroSaasServices.filter(s => s.category === 'Financial Technology' || s.category === 'Quantum Finance & Trading').length,
+      color: 'from-yellow-500 to-orange-600'
+    }
+=======
   const services = [
     {
       icon: '🤖',
@@ -206,6 +377,7 @@ export default function ServicesPage() {
     { name: 'Redis', category: 'Cache', icon: '🔴' },
     { name: 'TensorFlow', category: 'AI/ML', icon: '🧠' },
     { name: 'PyTorch', category: 'AI/ML', icon: '🔥' },
+>>>>>>> origin/cursor/enhance-app-with-micro-saas-and-advertising-5f6f
   ];
 
   const serviceHighlights = [
@@ -488,6 +660,66 @@ export default function ServicesPage() {
                           {category.name} ({category.count})
                         </option>
                       ))}
+<<<<<<< HEAD
+                    </select>
+                    <ChevronDown className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5 pointer-events-none" />
+                  </div>
+
+                  {/* Price Filter */}
+                  <div className="relative">
+                    <select
+                      value={priceRange}
+                      onChange={(e) => setPriceRange(e.target.value)}
+                      className="appearance-none bg-black/40 border border-white/20 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-cyan-400 focus:ring-2 focus:ring-cyan-400/20 transition-all duration-300 pr-10"
+                    >
+                      {priceRanges.map((range) => (
+                        <option key={range.value} value={range.value}>
+                          {range.label}
+                        </option>
+                      ))}
+                    </select>
+                    <ChevronDown className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5 pointer-events-none" />
+                  </div>
+
+                  {/* Sort */}
+                  <div className="relative">
+                    <select
+                      value={sortBy}
+                      onChange={(e) => setSortBy(e.target.value)}
+                      className="appearance-none bg-black/40 border border-white/20 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-cyan-400 focus:ring-2 focus:ring-cyan-400/20 transition-all duration-300 pr-10"
+                    >
+                      {sortOptions.map((option) => (
+                        <option key={option.value} value={option.value}>
+                          {option.label}
+                        </option>
+                      ))}
+                    </select>
+                    <ChevronDown className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5 pointer-events-none" />
+                  </div>
+
+                  {/* View Mode */}
+                  <div className="flex bg-black/40 border border-white/20 rounded-xl p-1">
+                    <button
+                      onClick={() => setViewMode('grid')}
+                      className={`p-2 rounded-lg transition-all duration-300 ${
+                        viewMode === 'grid' 
+                          ? 'bg-cyan-500 text-black' 
+                          : 'text-gray-400 hover:text-white'
+                      }`}
+                    >
+                      <Grid className="w-5 h-5" />
+                    </button>
+                    <button
+                      onClick={() => setViewMode('list')}
+                      className={`p-2 rounded-lg transition-all duration-300 ${
+                        viewMode === 'list' 
+                          ? 'bg-cyan-500 text-black' 
+                          : 'text-gray-400 hover:text-white'
+                      }`}
+                    >
+                      <List className="w-5 h-5" />
+                    </button>
+=======
                     </ul>
                     {service.link && (
                       <div className="mt-6">
@@ -568,6 +800,7 @@ export default function ServicesPage() {
                     >
                       Try Now
                     </Button>
+>>>>>>> origin/cursor/enhance-app-with-micro-saas-and-advertising-5f6f
                   </div>
                 </div>
               </div>
