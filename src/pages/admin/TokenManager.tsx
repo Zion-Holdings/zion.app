@@ -9,7 +9,7 @@ import { TokenTransaction } from '@/types/tokens';
 import { ProtectedRoute } from '@/components/ProtectedRoute';
 import { Tabs, TabsList, TabsTrigger, TabsContent } from '@/components/ui/tabs';
 import { useToast } from '@/hooks/use-toast';
-import {logErrorToProduction} from '@/utils/productionLogger';
+import api from '@/lib/api';
 
 export default function TokenManager() {
 
@@ -36,25 +36,19 @@ export default function TokenManager() {
   };
 
   const handleIssue = async (type: 'earn' | 'burn') => {
-    if (!userId || amount <= 0 || processing) return;
-    setProcessing(true);
-    try {
-      const res = await fetch(`/functions/v1/token-manager/${type === 'earn' ? 'earn' : 'burn'}`, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ userId, amount }),
-      });
-      const data = await res.json().catch(() => ({}));
-      if (!res.ok) {
-        throw new Error(data.error || `Error ${res.status}`);
-      }
+    if (!userId || amount <= 0) return;
+    const res = await api.post(
+      `/functions/v1/token-manager/${type === 'earn' ? 'earn' : 'burn'}`,
+      { userId, amount }
+    );
+    if (res.status >= 200 && res.status < 300) {
       toast({
         title: 'Success',
         description: 'Transaction processed'
       });
       fetchTransactions();
-    } catch (err: any) {
-      logErrorToProduction('Failed to process transaction:', { data: err });
+    } else {
+      const err = res.data;
       toast({
         title: 'Error',
         description: err.message || 'Failed',
