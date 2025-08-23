@@ -1,6 +1,5 @@
-import React, { useState } from 'react';
-import SEO from '../components/SEO';
-import Layout from '../components/layout/Layout';
+import React from 'react';
+import Head from 'next/head';
 import { motion } from 'framer-motion';
 import { 
   Search, Grid, List, Filter,
@@ -9,7 +8,6 @@ import {
   Building, Cpu, Database, Cloud, Lock,
   Globe, Zap, Users, BarChart3
 } from 'lucide-react';
-import SEO from '../components/SEO';
 
 // Import our new 2037 service data
 import { real2037Q1InnovativeAdditions } from '../data/real-2037-q1-innovative-additions';
@@ -23,54 +21,95 @@ const contact = {
   website: 'https://ziontechgroup.com'
 };
 
-const ServiceCard = ({ service, index }: { service: any; index: number }) => (
-  <motion.div
-    initial={{ opacity: 0, y: 50 }}
-    animate={{ opacity: 1, y: 0 }}
-    transition={{ duration: 0.5, delay: index * 0.1 }}
-    className="relative group"
-  >
-          <div className={`absolute inset-0 bg-gradient-to-r ${service.color || 'from-cyan-500 to-blue-600'} rounded-2xl blur-xl group-hover:blur-2xl transition-all duration-500 opacity-20`}></div>
-    <div className={`relative bg-gradient-to-r ${service.color ? service.color.replace('from-', 'from-').replace('to-', 'to-') : 'from-cyan-500 to-blue-600'} bg-opacity-10 border border-opacity-30 rounded-2xl p-8 hover:border-opacity-50 transition-all duration-300 h-full`}>
-      <div className="flex items-start justify-between mb-6">
-        <div className="text-4xl">{service.icon || '🚀'}</div>
-        {service.popular && (
-          <span className="px-3 py-1 bg-gradient-to-r from-yellow-500 to-orange-500 text-white text-xs font-semibold rounded-full">
-            Popular
-          </span>
-        )}
-      </div>
-      
-      <h3 className="text-2xl font-bold text-white mb-3">{service.name}</h3>
-      <p className="text-gray-300 mb-6 text-sm leading-relaxed">{service.description}</p>
-      
-      <div className="space-y-3 mb-6">
-        {service.features.slice(0, 4).map((feature: string, idx: number) => (
-          <div key={idx} className="flex items-center space-x-2">
-            <CheckCircle className="w-4 h-4 text-green-400 flex-shrink-0" />
-            <span className="text-gray-300 text-sm">{feature}</span>
+// Helper function to get icon based on category
+const getIconForCategory = (category: string) => {
+  const categoryLower = category.toLowerCase();
+  if (categoryLower.includes('ai') || categoryLower.includes('consciousness')) return Brain;
+  if (categoryLower.includes('quantum')) return Atom;
+  if (categoryLower.includes('autonomous')) return Zap;
+  if (categoryLower.includes('cloud') || categoryLower.includes('infrastructure')) return Cloud;
+  if (categoryLower.includes('security') || categoryLower.includes('cyber')) return Shield;
+  if (categoryLower.includes('operations')) return Settings;
+  if (categoryLower.includes('neural') || categoryLower.includes('network')) return Cpu;
+  return Rocket;
+};
+
+// Helper function to get color based on category
+const getColorForCategory = (category: string) => {
+  const categoryLower = category.toLowerCase();
+  if (categoryLower.includes('ai') || categoryLower.includes('consciousness')) return 'from-purple-500 to-pink-500';
+  if (categoryLower.includes('quantum')) return 'from-blue-500 to-cyan-500';
+  if (categoryLower.includes('autonomous')) return 'from-green-500 to-emerald-500';
+  if (categoryLower.includes('cloud') || categoryLower.includes('infrastructure')) return 'from-indigo-500 to-blue-500';
+  if (categoryLower.includes('security') || categoryLower.includes('cyber')) return 'from-red-500 to-orange-500';
+  if (categoryLower.includes('operations')) return 'from-yellow-500 to-orange-500';
+  if (categoryLower.includes('neural') || categoryLower.includes('network')) return 'from-violet-500 to-purple-500';
+  return 'from-cyan-500 to-blue-500';
+};
+
+const ServiceCard = ({ service, index }: { service: any; index: number }) => {
+  const IconComponent = getIconForCategory(service.category);
+  const colorClass = getColorForCategory(service.category);
+  
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 50 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5, delay: index * 0.1 }}
+      className="relative group"
+    >
+      <div className={`absolute inset-0 bg-gradient-to-r ${colorClass} rounded-2xl blur-xl group-hover:blur-2xl transition-all duration-500 opacity-20`}></div>
+      <div className={`relative bg-gradient-to-r ${colorClass} bg-opacity-10 border border-opacity-30 rounded-2xl p-8 hover:border-opacity-50 transition-all duration-300 h-full`}>
+        <div className="flex items-start justify-between mb-6">
+          <div className="text-4xl">
+            <IconComponent className="w-12 h-12 text-white" />
           </div>
-        ))}
-      </div>
-      
-      <div className="flex items-center justify-between mb-6">
-        <div>
-          <span className="text-3xl font-bold text-white">{service.pricing?.starter || service.price || '$99'}</span>
-          <span className="text-gray-400 text-sm">{service.period || '/month'}</span>
+          {service.rating >= 4.8 && (
+            <span className="px-3 py-1 bg-gradient-to-r from-yellow-500 to-orange-500 text-white text-xs font-semibold rounded-full">
+              Top Rated
+            </span>
+          )}
+        </div>
+        
+        <h3 className="text-2xl font-bold text-white mb-3">{service.name}</h3>
+        <p className="text-gray-300 mb-6 text-sm leading-relaxed">{service.description}</p>
+        
+        <div className="space-y-3 mb-6">
+          {service.features.slice(0, 4).map((feature: string, idx: number) => (
+            <div key={idx} className="flex items-center space-x-2">
+              <Check className="w-4 h-4 text-green-400 flex-shrink-0" />
+              <span className="text-gray-300 text-sm">{feature}</span>
+            </div>
+          ))}
+        </div>
+        
+        <div className="flex items-center justify-between mb-6">
+          <div>
+            <span className="text-3xl font-bold text-white">{service.pricing.starter}</span>
+            <span className="text-gray-400 text-sm">/month</span>
+          </div>
+          <div className="text-right">
+            <div className="flex items-center space-x-1 text-yellow-400">
+              {[...Array(5)].map((_, i) => (
+                <Star key={i} className={`w-4 h-4 ${i < Math.floor(service.rating) ? 'fill-current' : ''}`} />
+              ))}
+            </div>
+            <span className="text-gray-400 text-xs">{service.rating}/5</span>
+          </div>
         </div>
         
         <div className="space-y-3 mb-6 text-xs text-gray-400">
           <div className="flex justify-between">
-            <span>Setup Time:</span>
-            <span>Instant</span>
+            <span>Category:</span>
+            <span>{service.category}</span>
           </div>
           <div className="flex justify-between">
-            <span>Trial:</span>
-            <span>14 days</span>
+            <span>Launch:</span>
+            <span>{service.launchDate}</span>
           </div>
           <div className="flex justify-between">
-            <span>Customers:</span>
-            <span>1000+</span>
+            <span>Market Price:</span>
+            <span>{service.marketPrice}</span>
           </div>
         </div>
         
@@ -84,90 +123,6 @@ const ServiceCard = ({ service, index }: { service: any; index: number }) => (
     </motion.div>
   );
 };
-
-const ContactSection: React.FC = () => (
-  <section className="py-20 px-4 bg-gradient-to-br from-gray-900 to-black relative overflow-hidden">
-    <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/5 to-purple-500/5"></div>
-    <div className="max-w-6xl mx-auto relative z-10">
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8 }}
-        className="text-center mb-16"
-      >
-        <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-cyan-400 to-purple-500 bg-clip-text text-transparent">
-          Ready to Transform Your Business?
-        </h2>
-        <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-          Our innovative 2037 services are designed to give you a competitive edge in the rapidly evolving technology landscape.
-        </p>
-      </motion.div>
-
-      <div className="grid md:grid-cols-2 gap-8 mb-16">
-        <motion.div
-          initial={{ opacity: 0, x: -20 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.8 }}
-          className="bg-gradient-to-br from-cyan-500/10 to-blue-500/10 border border-cyan-500/20 rounded-2xl p-8"
-        >
-          <h3 className="text-2xl font-bold text-white mb-4">Get Started Today</h3>
-          <div className="space-y-4 text-gray-300">
-            <div className="flex items-center space-x-3">
-              <Check className="w-5 h-5 text-green-400" />
-              <span>Free consultation and assessment</span>
-            </div>
-            <div className="flex items-center space-x-3">
-              <Check className="w-5 h-5 text-green-400" />
-              <span>Custom implementation plan</span>
-            </div>
-            <div className="flex items-center space-x-3">
-              <Check className="w-5 h-5 text-green-400" />
-              <span>Ongoing support and optimization</span>
-            </div>
-          </div>
-        </motion.div>
-
-        <motion.div
-          initial={{ opacity: 0, x: 20 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.8 }}
-          className="bg-gradient-to-br from-purple-500/10 to-pink-500/10 border border-purple-500/20 rounded-2xl p-8"
-        >
-          <h3 className="text-2xl font-bold text-white mb-4">Contact Information</h3>
-          <div className="space-y-4 text-gray-300">
-            <div className="flex items-center space-x-3">
-              <div className="w-5 h-5 bg-gradient-to-r from-cyan-400 to-blue-500 rounded-full"></div>
-              <span>{contact.mobile}</span>
-            </div>
-            <div className="flex items-center space-x-3">
-              <div className="w-5 h-5 bg-gradient-to-r from-purple-400 to-pink-500 rounded-full"></div>
-              <span>{contact.email}</span>
-            </div>
-            <div className="flex items-center space-x-3">
-              <div className="w-5 h-5 bg-gradient-to-r from-green-400 to-emerald-500 rounded-full"></div>
-              <span>{contact.address}</span>
-            </div>
-          </div>
-        </motion.div>
-      </div>
-
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8 }}
-        className="text-center"
-      >
-        <a
-          href={`mailto:${contact.email}?subject=2037 Services Consultation`}
-          className="inline-flex items-center space-x-2 bg-gradient-to-r from-cyan-500 to-purple-600 text-white px-8 py-4 rounded-lg hover:from-cyan-600 hover:to-purple-700 transition-all duration-300 font-semibold text-lg transform hover:scale-105"
-        >
-          <span>Start Your Transformation</span>
-          <ArrowRight className="w-5 h-5" />
-        </a>
-      </motion.div>
-    </div>
-  </section>
-);
 
 const ServicesShowcase2037: React.FC = () => {
   const [selectedCategory, setSelectedCategory] = useState('all');
@@ -183,13 +138,13 @@ const ServicesShowcase2037: React.FC = () => {
   });
 
   return (
-    <Layout>
-      <SEO
-        title="2037 Innovative Services Showcase - Zion Tech Group"
-        description="Discover our revolutionary 2037 innovative services including AI consciousness evolution, quantum cybersecurity, autonomous systems, and cutting-edge micro SAAS solutions."
-        keywords="AI consciousness, quantum computing, autonomous systems, micro SAAS, innovative services, 2037 technology"
-      />
-
+    <div className="min-h-screen bg-black text-white">
+      <Head>
+        <title>2037 Innovative Services Showcase - Zion Tech Group</title>
+        <meta name="description" content="Discover our revolutionary 2037 innovative services including AI consciousness evolution, quantum cybersecurity, autonomous systems, and cutting-edge micro SAAS solutions." />
+        <meta name="keywords" content="AI consciousness, quantum computing, autonomous systems, micro SAAS, innovative services, 2037 technology" />
+      </Head>
+      
       {/* Hero Section */}
       <section className="min-h-screen flex items-center justify-center px-4 relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-gray-900 via-black to-gray-900"></div>

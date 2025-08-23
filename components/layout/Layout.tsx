@@ -1,12 +1,7 @@
-import React from 'react';
-import UltraFuturisticNavigation2040 from './UltraFuturisticNavigation2040';
-import EnhancedSidebar2025 from './EnhancedSidebar2025';
-import UltraFuturisticBackground2045 from '../backgrounds/UltraFuturisticBackground2045';
-import TopContactBar from './TopContactBar';
-import EnhancedPerformanceMonitor from '../EnhancedPerformanceMonitor';
-import AccessibilityEnhancer from '../EnhancedAccessibilityEnhancer';
-import CookieConsentBanner from '../CookieConsentBanner';
-
+import React, { ReactNode } from 'react';
+import EnhancedNavigation2025 from './EnhancedNavigation2025';
+import EnhancedFooter2025 from './EnhancedFooter2025';
+import LiveChatWidget from '../LiveChatWidget';
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -17,114 +12,151 @@ interface LayoutProps {
   type?: string;
 }
 
-export const Layout: React.FC<LayoutProps> = ({
-  children,
-  title,
-  description,
-  keywords,
-  ogImage,
-  type
-}) => {
+export default function Layout({ children }: LayoutProps) {
+  const [sidebarOpen, setSidebarOpen] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
+  const [isOnline, setIsOnline] = useState(true);
+
+  // Handle online/offline status
+  useEffect(() => {
+    const handleOnline = () => setIsOnline(true);
+    const handleOffline = () => setIsOnline(false);
+
+    window.addEventListener('online', handleOnline);
+    window.addEventListener('offline', handleOffline);
+
+    // Set initial loading state
+    const timer = setTimeout(() => {
+      setIsLoading(false);
+    }, 100);
+
+    return () => {
+      window.removeEventListener('online', handleOnline);
+      window.removeEventListener('offline', handleOffline);
+      clearTimeout(timer);
+    };
+  }, []);
+
+  // Handle keyboard navigation for sidebar
+  useEffect(() => {
+    const handleEscape = (e: KeyboardEvent) => {
+      if (e.key === 'Escape' && sidebarOpen) {
+        setSidebarOpen(false);
+      }
+    };
+
+    if (sidebarOpen) {
+      document.addEventListener('keydown', handleEscape);
+      // Prevent body scroll when sidebar is open
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+
+    return () => {
+      document.removeEventListener('keydown', handleEscape);
+      document.body.style.overflow = 'unset';
+    };
+  }, [sidebarOpen]);
+
   return (
-    <ErrorBoundary>
-      <div className="min-h-screen bg-black text-white">
-        {/* SVG Filters for Color Blindness Support */}
-        <svg width="0" height="0" className="sr-only">
-          <defs>
-            <filter id="protanopia-filter">
-              <feColorMatrix
-                type="matrix"
-                values="0.567 0.433 0 0 0 0.558 0.442 0 0 0 0 0.242 0.758 0 0 0 0 0 1 0"
-              />
-            </filter>
-            <filter id="deuteranopia-filter">
-              <feColorMatrix
-                type="matrix"
-                values="0.625 0.375 0 0 0 0.7 0.3 0 0 0 0 0.3 0.7 0 0 0 0 0 1 0"
-              />
-            </filter>
-            <filter id="tritanopia-filter">
-              <feColorMatrix
-                type="matrix"
-                values="0.95 0.05 0 0 0 0 0.433 0.567 0 0 0 0.475 0.525 0 0 0 0 0 1 0"
-              />
-            </filter>
-          </defs>
-        </svg>
+    <div 
+      className="min-h-screen bg-black text-white relative overflow-x-hidden"
+      onKeyDown={handleKeyDown}
+      role="application"
+      aria-label="Zion Tech Group Application"
+    >
+      {/* Skip to content link for accessibility */}
+      <a 
+        href="#main" 
+        className="skip-link sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2 focus:bg-cyan-500 focus:text-white focus:rounded-lg focus:outline-none focus:ring-2 focus:ring-cyan-300"
+      >
+        Skip to main content
+      </a>
 
-        {/* Skip Link for Accessibility */}
-        <a href="#main-content" className="skip-link">
-          Skip to main content
-        </a>
-
-      {/* Accessibility and Performance Tools */}
-      <AccessibilityEnhancer />
-      <EnhancedPerformanceMonitor />
-      <EnhancedPerformanceOptimizer />
-      
-      {/* Cookie Consent Banner */}
-      <CookieConsentBanner />
-      
-      {/* Service Worker Update Notification */}
-      <div id="sw-update-notification" className="hidden fixed bottom-4 right-4 bg-cyan-600 text-white p-4 rounded-lg shadow-lg z-50 max-w-sm">
-        <div className="flex items-start gap-3">
-          <div className="flex-shrink-0">
-            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-            </svg>
-          </div>
-          <div className="flex-1">
-            <h4 className="font-semibold mb-1">Update Available</h4>
-            <p className="text-sm text-cyan-100 mb-3">A new version of Zion Tech Group is available.</p>
-            <div className="flex gap-2">
-              <button 
-                onClick={() => window.location.reload()} 
-                className="bg-white text-cyan-600 px-3 py-1 rounded text-sm font-medium hover:bg-cyan-500 transition-colors"
-              >
-                Update Now
-              </button>
-              <button 
-                onClick={() => document.getElementById('sw-update-notification')?.classList.add('hidden')} 
-                className="text-cyan-100 hover:text-white text-sm transition-colors"
-              >
-                Later
-              </button>
+      {/* Loading State */}
+      <AnimatePresence>
+        {isLoading && (
+          <motion.div
+            initial={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 z-50 flex items-center justify-center bg-black"
+          >
+            <div className="text-center">
+              <div className="w-16 h-16 border-4 border-cyan-500 border-t-transparent rounded-full animate-spin mx-auto mb-4"></div>
+              <p className="text-cyan-400 text-lg font-semibold">Loading Zion Tech Group</p>
             </div>
-          </div>
-        </div>
-        
-        <UltraFuturisticFooter2040 />
+          </motion.div>
+        )}
+      </AnimatePresence>
+
+      {/* Futuristic Background */}
+      <UltraFuturisticBackground2036 />
+      
+      {/* Layout Structure */}
+      <div className="relative z-10">
+        {/* Top Contact Bar */}
+        <TopContactBar />
         
         {/* Navigation */}
-        <UltraFuturisticNavigation2045 
-          sidebarOpen={sidebarOpen} 
-          setSidebarOpen={setSidebarOpen} 
-        />
+        <UltraFuturisticNavigation2036 />
         
-        {/* Sidebar */}
-        <EnhancedSidebar2025 
-          isOpen={sidebarOpen} 
-          onClose={() => setSidebarOpen(false)} 
-        />
-        
-        {/* Main Content */}
-        <div className="relative z-10">
-          {children}
+        {/* Sidebar and Main Content */}
+        <div className="flex">
+          <EnhancedSidebar2025 
+            isOpen={sidebarOpen} 
+            onClose={() => setSidebarOpen(false)}
+            aria-hidden={!sidebarOpen}
+            aria-label="Main navigation menu"
+          />
+          
+          <main 
+            id="main" 
+            role="main" 
+            className="flex-1 pt-24 lg:pt-28 min-h-screen"
+            aria-label="Main content"
+          >
+            {/* Announcement for screen readers when sidebar opens/closes */}
+            <div 
+              aria-live="polite" 
+              aria-atomic="true" 
+              className="sr-only"
+            >
+              {sidebarOpen ? 'Sidebar opened' : 'Sidebar closed'}
+            </div>
+            
+            {children}
+          </main>
         </div>
         
         {/* Footer */}
-        <UltraFuturisticFooter2045 />
-        
-        {/* Cookie Consent */}
-        <CookieConsentBanner />
-        
-        {/* Performance Monitor */}
-        <EnhancedPerformanceMonitor />
-        
-        {/* Accessibility Enhancer */}
-        <AccessibilityEnhancer />
-        <PerformanceOptimizer />
+        <UltraFuturisticFooter2036 />
       </div>
-    </ErrorBoundary>
+
+      {/* Back to top button */}
+      <motion.button
+        initial={{ opacity: 0, y: 100 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 1 }}
+        onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+        className="fixed bottom-8 right-8 z-40 p-4 bg-gradient-to-r from-cyan-500 to-blue-600 text-white rounded-full shadow-2xl hover:from-cyan-600 hover:to-blue-700 transition-all duration-300 transform hover:scale-110 focus:outline-none focus:ring-4 focus:ring-cyan-300/50"
+        aria-label="Back to top"
+      >
+        <svg 
+          className="w-6 h-6" 
+          fill="none" 
+          stroke="currentColor" 
+          viewBox="0 0 24 24"
+          aria-hidden="true"
+        >
+          <path 
+            strokeLinecap="round" 
+            strokeLinejoin="round" 
+            strokeWidth={2} 
+            d="M5 10l7-7m0 0l7 7m-7-7v18" 
+          />
+        </svg>
+      </motion.button>
+    </div>
   );
 };

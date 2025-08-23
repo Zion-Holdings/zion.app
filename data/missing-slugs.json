@@ -27,7 +27,9 @@
   "quantum-networking",
   "quantum-threat-detection",
   "real-estate-technology-solutions",
+  "services/ai-knowledge-graph-studio",
   "services/data-contracts-hub",
+  "services/llm-guarded-api-gateway",
   "services/serverless-lakehouse-starter",
   "services/space-technology",
   "space-mining-automation-platform"

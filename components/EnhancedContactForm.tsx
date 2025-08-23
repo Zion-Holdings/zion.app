@@ -1,201 +1,147 @@
-import React, { useState, useCallback, useEffect } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { 
-  Mail, Phone, MapPin, Send, CheckCircle, AlertCircle, 
-  User, Building, MessageSquare, Globe, Clock, Shield
+  Send, 
+  CheckCircle, 
+  AlertCircle, 
+  User, 
+  Mail, 
+  Phone, 
+  MessageSquare, 
+  Building,
+  Globe,
+  Star,
+  Clock,
+  Shield
 } from 'lucide-react';
 
 interface ContactFormData {
   firstName: string;
   lastName: string;
   email: string;
+  phone: string;
   company: string;
   website: string;
   service: string;
-  message: string;
   budget: string;
   timeline: string;
-  preferredContact: string;
-  newsletter: boolean;
-  gdprConsent: boolean;
-}
-
-interface ContactFormErrors {
-  firstName?: string;
-  lastName?: string;
-  email?: string;
-  phone?: string;
-  company?: string;
-  website?: string;
-  service?: string;
-  message?: string;
-  budget?: string;
-  timeline?: string;
-  preferredContact?: string;
-  newsletter?: string;
-  gdprConsent?: string;
-  submit?: string;
+  message: string;
+  priority: 'low' | 'medium' | 'high' | 'urgent';
 }
 
 interface ContactFormProps {
-  title?: string;
-  subtitle?: string;
-  showServiceSelection?: boolean;
-  showBudgetTimeline?: boolean;
   onSubmit?: (data: ContactFormData) => void;
   className?: string;
 }
 
 const EnhancedContactForm: React.FC<ContactFormProps> = ({
-  title = "Get in Touch",
-  subtitle = "Ready to transform your business with cutting-edge technology? Let's discuss your project.",
-  showServiceSelection = true,
-  showBudgetTimeline = true,
   onSubmit,
-  className = ""
+  className = ''
 }) => {
   const [formData, setFormData] = useState<ContactFormData>({
     firstName: '',
     lastName: '',
     email: '',
+    phone: '',
     company: '',
     website: '',
     service: '',
-    message: '',
     budget: '',
     timeline: '',
-    preferredContact: 'email',
-    newsletter: false,
-    gdprConsent: false
+    message: '',
+    priority: 'medium'
   });
 
-  const [errors, setErrors] = useState<ContactFormErrors>({});
+  const [errors, setErrors] = useState<Partial<ContactFormData>>({});
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
   const [currentStep, setCurrentStep] = useState(1);
-  const [isTyping, setIsTyping] = useState(false);
+  const [isValidating, setIsValidating] = useState(false);
 
-  // Services available
-  const services = [
-    'AI Consciousness Evolution Platform',
-    'Quantum Cybersecurity Intelligence',
-    'Autonomous Business Intelligence',
-    'Quantum Cloud Infrastructure',
-    'Space Technology Solutions',
-    'Micro SAAS Development',
-    'Enterprise IT Solutions',
-    'Custom AI Development',
-    'Other'
-  ];
+  const formRef = useRef<HTMLFormElement>(null);
+  const firstInputRef = useRef<HTMLInputElement>(null);
 
-  const budgets = [
-    'Under $10K',
-    '$10K - $50K',
-    '$50K - $100K',
-    '$100K - $500K',
-    '$500K+',
-    'To be discussed'
-  ];
+  const totalSteps = 3;
 
-  const timelines = [
-    'Immediate (1-3 months)',
-    'Short term (3-6 months)',
-    'Medium term (6-12 months)',
-    'Long term (1+ years)',
-    'Flexible'
-  ];
-
-  const contactMethods = [
-    { value: 'email', label: 'Email', icon: Mail },
-    { value: 'phone', label: 'Phone', icon: Phone },
-    { value: 'video', label: 'Video Call', icon: Globe }
-  ];
-
-  // Real-time validation
+  // Focus first input on mount
   useEffect(() => {
-    const timer = setTimeout(() => {
-      if (isTyping) {
-        validateField();
-        setIsTyping(false);
-      }
-    }, 500);
-
-    return () => clearTimeout(timer);
-  }, [formData, isTyping]);
-
-  const handleInputChange = useCallback((field: keyof ContactFormData, value: string | boolean) => {
-    setFormData(prev => ({ ...prev, [field]: value }));
-    setIsTyping(true);
-    
-    // Clear error when user starts typing
-    if (errors[field]) {
-      setErrors(prev => ({ ...prev, [field]: '' }));
+    if (firstInputRef.current) {
+      firstInputRef.current.focus();
     }
-  }, [errors]);
+  }, []);
 
-  const validateField = useCallback(() => {
-    const newErrors: FormErrors = {};
+  // Validate form data
+  const validateForm = (): boolean => {
+    const newErrors: Partial<ContactFormData> = {};
 
-    if (!formData.firstName.trim()) {
-      newErrors.firstName = 'First name is required';
-    }
+    // Required field validation
+    if (!formData.firstName.trim()) newErrors.firstName = 'First name is required';
+    if (!formData.lastName.trim()) newErrors.lastName = 'Last name is required';
+    if (!formData.email.trim()) newErrors.email = 'Email is required';
+    if (!formData.message.trim()) newErrors.message = 'Message is required';
 
-    if (!formData.lastName.trim()) {
-      newErrors.lastName = 'Last name is required';
-    }
-
-    if (!formData.email.trim()) {
-      newErrors.email = 'Email is required';
-    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
+    // Email validation
+    if (formData.email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
       newErrors.email = 'Please enter a valid email address';
     }
 
-    if (!formData.company.trim()) {
-      newErrors.company = 'Company name is required';
+    // Phone validation (optional but if provided, must be valid)
+    if (formData.phone && !/^[\+]?[1-9][\d]{0,15}$/.test(formData.phone.replace(/[\s\-\(\)]/g, ''))) {
+      newErrors.phone = 'Please enter a valid phone number';
     }
 
-    if (!formData.service) {
-      newErrors.service = 'Please select a service';
+    // Website validation (optional but if provided, must be valid)
+    if (formData.website && !/^https?:\/\/.+/.test(formData.website)) {
+      newErrors.website = 'Please enter a valid website URL (include http:// or https://)';
     }
-
-    if (!formData.message.trim()) {
-      newErrors.message = 'Message is required';
-    } else if (formData.message.length < 20) {
-      newErrors.message = 'Message must be at least 20 characters';
-    }
-
-    if (!formData.gdprConsent) {
-      newErrors.gdprConsent = 'GDPR consent is required';
-    }
+    if (!formData.company.trim()) newErrors.company = 'Company name is required';
+    if (!formData.service) newErrors.service = 'Please select a service';
+    if (!formData.message.trim()) newErrors.message = 'Message is required';
 
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
-  }, [formData]);
+  };
+
+  // Handle input changes
+  const handleInputChange = (field: keyof ContactFormData, value: string) => {
+    setFormData(prev => ({ ...prev, [field]: value }));
+    
+    // Clear error when user starts typing
+    if (errors[field]) {
+      setErrors(prev => ({ ...prev, [field]: undefined }));
+    }
+  };
 
   // Handle form submission
-  const handleSubmit = useCallback(async (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     
-    if (!validateField()) {
-      return;
-    }
+    setIsValidating(true);
+    const isValid = validateForm();
+    setIsValidating(false);
 
-    if (!formData.gdprConsent) {
-      setErrors(prev => ({ ...prev, gdprConsent: 'GDPR consent is required' }));
+    if (!isValid) {
+      // Scroll to first error
+      const firstErrorField = Object.keys(errors)[0];
+      if (firstErrorField) {
+        const errorElement = document.querySelector(`[name="${firstErrorField}"]`);
+        errorElement?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      }
       return;
     }
 
     setIsSubmitting(true);
-    setSubmitStatus('idle');
 
     try {
       // Simulate API call
       await new Promise(resolve => setTimeout(resolve, 2000));
       
-      // Here you would typically send the data to your API
-      console.log('Form submitted:', formData);
+      if (onSubmit) {
+        onSubmit(formData);
+      }
       
-      setSubmitStatus('success');
+      setIsSubmitted(true);
+      setCurrentStep(1);
       
       // Reset form after successful submission
       setTimeout(() => {
@@ -206,64 +152,100 @@ const EnhancedContactForm: React.FC<ContactFormProps> = ({
           company: '',
           phone: '',
           service: '',
-          message: '',
           budget: '',
           timeline: '',
-          preferredContact: 'email',
-          newsletter: false,
-          gdprConsent: false
+          message: '',
+          priority: 'medium'
         });
-        setCurrentStep(1);
-        setSubmitStatus('idle');
-      }, 3000);
+        setIsSubmitted(false);
+      }, 5000);
       
     } catch (error) {
       console.error('Form submission error:', error);
-      setSubmitStatus('error');
     } finally {
       setIsSubmitting(false);
     }
-  }, [formData, validateField]);
+  };
 
-  const nextStep = useCallback(() => {
-    if (currentStep < 3) {
-      setCurrentStep(prev => prev + 1);
+  // Next step validation
+  const handleNextStep = () => {
+    if (currentStep === 1) {
+      if (!formData.firstName || !formData.lastName || !formData.email) {
+        setErrors({
+          firstName: !formData.firstName ? 'First name is required' : undefined,
+          lastName: !formData.lastName ? 'Last name is required' : undefined,
+          email: !formData.email ? 'Email is required' : undefined
+        });
+        return;
+      }
     }
-  }, [currentStep]);
+    
+    if (currentStep < totalSteps) {
+      setCurrentStep(currentStep + 1);
+    }
+  };
 
-  const prevStep = useCallback(() => {
+  // Previous step
+  const handlePrevStep = () => {
     if (currentStep > 1) {
-      setCurrentStep(prev => prev - 1);
+      setCurrentStep(currentStep - 1);
     }
-  }, [currentStep]);
+  };
 
-  const renderStep1 = () => (
-    <motion.div
-      initial={{ opacity: 0, x: 20 }}
-      animate={{ opacity: 1, x: 0 }}
-      exit={{ opacity: 0, x: -20 }}
-      className="space-y-6"
-    >
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-        <div>
-          <label className="block text-sm font-medium text-gray-300 mb-2">
-            First Name *
-          </label>
-          <input
-            type="text"
-            value={formData.firstName}
-            onChange={(e) => handleInputChange('firstName', e.target.value)}
-            className={`w-full px-4 py-3 bg-gray-800/50 border rounded-lg focus:ring-2 focus:ring-cyan-500 focus:border-transparent transition-all ${
-              errors.firstName ? 'border-red-500' : 'border-gray-600'
-            }`}
-            placeholder="Enter your first name"
-          />
-          {errors.firstName && (
-            <p className="mt-1 text-sm text-red-400 flex items-center">
-              <AlertCircle className="w-4 h-4 mr-1" />
-              {errors.firstName}
-            </p>
-          )}
+  // Get step progress percentage
+  const getStepProgress = () => (currentStep / totalSteps) * 100;
+
+  // Service options
+  const serviceOptions = [
+    'AI Consciousness Evolution',
+    'Quantum Cybersecurity',
+    'Autonomous Systems',
+    'Space Technology',
+    'Cloud Infrastructure',
+    'Custom Solution',
+    'Other'
+  ];
+
+  // Budget options
+  const budgetOptions = [
+    'Under $10,000',
+    '$10,000 - $50,000',
+    '$50,000 - $100,000',
+    '$100,000 - $500,000',
+    '$500,000+',
+    'To be discussed'
+  ];
+
+  // Timeline options
+  const timelineOptions = [
+    'Immediate (1-2 weeks)',
+    'Quick (1-2 months)',
+    'Standard (3-6 months)',
+    'Extended (6+ months)',
+    'Flexible'
+  ];
+
+  if (isSubmitted) {
+    return (
+      <motion.div
+        initial={{ opacity: 0, scale: 0.9 }}
+        animate={{ opacity: 1, scale: 1 }}
+        className={`text-center p-8 bg-gradient-to-r from-green-500/10 to-emerald-500/10 rounded-2xl border border-green-400/20 ${className}`}
+      >
+        <CheckCircle className="w-16 h-16 text-green-400 mx-auto mb-4" />
+        <h3 className="text-2xl font-bold text-white mb-2">Thank You!</h3>
+        <p className="text-gray-300 mb-4">
+          Your message has been sent successfully. We'll get back to you within 24 hours.
+        </p>
+        <div className="flex items-center justify-center gap-4 text-sm text-gray-400">
+          <div className="flex items-center gap-1">
+            <Clock className="w-4 h-4" />
+            <span>24h response</span>
+          </div>
+          <div className="flex items-center gap-1">
+            <Shield className="w-4 h-4" />
+            <span>Secure</span>
+          </div>
         </div>
 
         <div>
@@ -522,162 +504,382 @@ const EnhancedContactForm: React.FC<ContactFormProps> = ({
   );
 
   return (
-    <div className="max-w-4xl mx-auto">
+    <div className={`bg-black/40 backdrop-blur-sm rounded-2xl border border-white/20 p-8 ${className}`}>
       {/* Header */}
       <div className="text-center mb-8">
-        <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-          Let's Build the Future Together
-        </h2>
-        <p className="text-xl text-gray-300 max-w-2xl mx-auto">
-          Ready to transform your business with revolutionary AI consciousness, quantum computing, and autonomous solutions? 
-          Get in touch and let's discuss your vision.
+        <h2 className="text-3xl font-bold text-white mb-4">Get Started Today</h2>
+        <p className="text-gray-300 max-w-2xl mx-auto">
+          Ready to transform your business with cutting-edge AI, quantum computing, and autonomous solutions? 
+          Let's discuss your project and create something extraordinary together.
         </p>
       </div>
 
       {/* Progress Bar */}
       <div className="mb-8">
         <div className="flex items-center justify-between mb-2">
-          <span className="text-sm text-gray-400">Step {currentStep} of 3</span>
-          <span className="text-sm text-cyan-400">{Math.round((currentStep / 3) * 100)}% Complete</span>
+          <span className="text-sm text-gray-400">Step {currentStep} of {totalSteps}</span>
+          <span className="text-sm text-white">{Math.round(getStepProgress())}%</span>
         </div>
-        <div className="w-full bg-gray-700 rounded-full h-2">
-          <div
-            className="bg-gradient-to-r from-cyan-500 to-blue-500 h-2 rounded-full transition-all duration-500"
-            style={{ width: `${(currentStep / 3) * 100}%` }}
+        <div className="w-full bg-white/20 rounded-full h-2">
+          <motion.div
+            className="h-2 bg-gradient-to-r from-cyan-500 to-blue-600 rounded-full"
+            initial={{ width: 0 }}
+            animate={{ width: `${getStepProgress()}%` }}
+            transition={{ duration: 0.5, ease: "easeOut" }}
           />
         </div>
       </div>
 
       {/* Form */}
-      <form onSubmit={handleSubmit} className="bg-gray-900/50 backdrop-blur-sm border border-gray-700 rounded-2xl p-8">
+      <form ref={formRef} onSubmit={handleSubmit} className="space-y-6">
         <AnimatePresence mode="wait">
-          {currentStep === 1 && renderStep1()}
-          {currentStep === 2 && renderStep2()}
-          {currentStep === 3 && renderStep3()}
+          {currentStep === 1 && (
+            <motion.div
+              key="step1"
+              initial={{ opacity: 0, x: 20 }}
+              animate={{ opacity: 1, x: 0 }}
+              exit={{ opacity: 0, x: -20 }}
+              transition={{ duration: 0.3 }}
+              className="space-y-6"
+            >
+              <h3 className="text-xl font-semibold text-white mb-4 flex items-center gap-2">
+                <User className="w-5 h-5 text-cyan-400" />
+                Basic Information
+              </h3>
+              
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div>
+                  <label htmlFor="firstName" className="block text-sm font-medium text-white mb-2">
+                    First Name *
+                  </label>
+                  <input
+                    ref={firstInputRef}
+                    type="text"
+                    id="firstName"
+                    name="firstName"
+                    value={formData.firstName}
+                    onChange={(e) => handleInputChange('firstName', e.target.value)}
+                    className={`w-full px-4 py-3 bg-white/10 border rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-cyan-400 focus:border-transparent transition-all duration-300 ${
+                      errors.firstName ? 'border-red-400' : 'border-white/20'
+                    }`}
+                    placeholder="Enter your first name"
+                    aria-describedby={errors.firstName ? 'firstName-error' : undefined}
+                  />
+                  {errors.firstName && (
+                    <p id="firstName-error" className="mt-1 text-sm text-red-400 flex items-center gap-1">
+                      <AlertCircle className="w-4 h-4" />
+                      {errors.firstName}
+                    </p>
+                  )}
+                </div>
+
+                <div>
+                  <label htmlFor="lastName" className="block text-sm font-medium text-white mb-2">
+                    Last Name *
+                  </label>
+                  <input
+                    type="text"
+                    id="lastName"
+                    name="lastName"
+                    value={formData.lastName}
+                    onChange={(e) => handleInputChange('lastName', e.target.value)}
+                    className={`w-full px-4 py-3 bg-white/10 border rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-cyan-400 focus:border-transparent transition-all duration-300 ${
+                      errors.lastName ? 'border-red-400' : 'border-white/20'
+                    }`}
+                    placeholder="Enter your last name"
+                    aria-describedby={errors.lastName ? 'lastName-error' : undefined}
+                  />
+                  {errors.lastName && (
+                    <p id="lastName-error" className="mt-1 text-sm text-red-400 flex items-center gap-1">
+                      <AlertCircle className="w-4 h-4" />
+                      {errors.lastName}
+                    </p>
+                  )}
+                </div>
+              </div>
+
+              <div>
+                <label htmlFor="email" className="block text-sm font-medium text-white mb-2">
+                  Email Address *
+                </label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  value={formData.email}
+                  onChange={(e) => handleInputChange('email', e.target.value)}
+                  className={`w-full px-4 py-3 bg-white/10 border rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-cyan-400 focus:border-transparent transition-all duration-300 ${
+                    errors.email ? 'border-red-400' : 'border-white/20'
+                  }`}
+                  placeholder="Enter your email address"
+                  aria-describedby={errors.email ? 'email-error' : undefined}
+                />
+                {errors.email && (
+                  <p id="email-error" className="mt-1 text-sm text-red-400 flex items-center gap-1">
+                    <AlertCircle className="w-4 h-4" />
+                    {errors.email}
+                  </p>
+                )}
+              </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div>
+                  <label htmlFor="phone" className="block text-sm font-medium text-white mb-2">
+                    Phone Number
+                  </label>
+                  <input
+                    type="tel"
+                    id="phone"
+                    name="phone"
+                    value={formData.phone}
+                    onChange={(e) => handleInputChange('phone', e.target.value)}
+                    className={`w-full px-4 py-3 bg-white/10 border rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-cyan-400 focus:border-transparent transition-all duration-300 ${
+                      errors.phone ? 'border-red-400' : 'border-white/20'
+                    }`}
+                    placeholder="Enter your phone number"
+                    aria-describedby={errors.phone ? 'phone-error' : undefined}
+                  />
+                  {errors.phone && (
+                    <p id="phone-error" className="mt-1 text-sm text-red-400 flex items-center gap-1">
+                      <AlertCircle className="w-4 h-4" />
+                      {errors.phone}
+                    </p>
+                  )}
+                </div>
+
+                <div>
+                  <label htmlFor="priority" className="block text-sm font-medium text-white mb-2">
+                    Priority Level
+                  </label>
+                  <select
+                    id="priority"
+                    name="priority"
+                    value={formData.priority}
+                    onChange={(e) => handleInputChange('priority', e.target.value as ContactFormData['priority'])}
+                    className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-cyan-400 focus:border-transparent transition-all duration-300"
+                  >
+                    <option value="low">Low Priority</option>
+                    <option value="medium">Medium Priority</option>
+                    <option value="high">High Priority</option>
+                    <option value="urgent">Urgent</option>
+                  </select>
+                </div>
+              </div>
+            </motion.div>
+          )}
+
+          {currentStep === 2 && (
+            <motion.div
+              key="step2"
+              initial={{ opacity: 0, x: 20 }}
+              animate={{ opacity: 1, x: 0 }}
+              exit={{ opacity: 0, x: -20 }}
+              transition={{ duration: 0.3 }}
+              className="space-y-6"
+            >
+              <h3 className="text-xl font-semibold text-white mb-4 flex items-center gap-2">
+                <Building className="w-5 h-5 text-blue-400" />
+                Company & Project Details
+              </h3>
+              
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div>
+                  <label htmlFor="company" className="block text-sm font-medium text-white mb-2">
+                    Company Name
+                  </label>
+                  <input
+                    type="text"
+                    id="company"
+                    name="company"
+                    value={formData.company}
+                    onChange={(e) => handleInputChange('company', e.target.value)}
+                    className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-cyan-400 focus:border-transparent transition-all duration-300"
+                    placeholder="Enter your company name"
+                  />
+                </div>
+
+                <div>
+                  <label htmlFor="website" className="block text-sm font-medium text-white mb-2">
+                    Website
+                  </label>
+                  <input
+                    type="url"
+                    id="website"
+                    name="website"
+                    value={formData.website}
+                    onChange={(e) => handleInputChange('website', e.target.value)}
+                    className={`w-full px-4 py-3 bg-white/10 border rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-cyan-400 focus:border-transparent transition-all duration-300 ${
+                      errors.website ? 'border-red-400' : 'border-white/20'
+                    }`}
+                    placeholder="https://yourcompany.com"
+                    aria-describedby={errors.website ? 'website-error' : undefined}
+                  />
+                  {errors.website && (
+                    <p id="website-error" className="mt-1 text-sm text-red-400 flex items-center gap-1">
+                      <AlertCircle className="w-4 h-4" />
+                      {errors.website}
+                    </p>
+                  )}
+                </div>
+              </div>
+
+              <div>
+                <label htmlFor="service" className="block text-sm font-medium text-white mb-2">
+                  Service of Interest
+                </label>
+                <select
+                  id="service"
+                  name="service"
+                  value={formData.service}
+                  onChange={(e) => handleInputChange('service', e.target.value)}
+                  className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-cyan-400 focus:border-transparent transition-all duration-300"
+                >
+                  <option value="">Select a service</option>
+                  {serviceOptions.map((service) => (
+                    <option key={service} value={service}>{service}</option>
+                  ))}
+                </select>
+              </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div>
+                  <label htmlFor="budget" className="block text-sm font-medium text-white mb-2">
+                    Budget Range
+                  </label>
+                  <select
+                    id="budget"
+                    name="budget"
+                    value={formData.budget}
+                    onChange={(e) => handleInputChange('budget', e.target.value)}
+                    className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-cyan-400 focus:border-transparent transition-all duration-300"
+                  >
+                    <option value="">Select budget range</option>
+                    {budgetOptions.map((budget) => (
+                      <option key={budget} value={budget}>{budget}</option>
+                    ))}
+                  </select>
+                </div>
+
+                <div>
+                  <label htmlFor="timeline" className="block text-sm font-medium text-white mb-2">
+                    Project Timeline
+                  </label>
+                  <select
+                    id="timeline"
+                    name="timeline"
+                    value={formData.timeline}
+                    onChange={(e) => handleInputChange('timeline', e.target.value)}
+                    className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-cyan-400 focus:border-transparent transition-all duration-300"
+                  >
+                    <option value="">Select timeline</option>
+                    {timelineOptions.map((timeline) => (
+                      <option key={timeline} value={timeline}>{timeline}</option>
+                    ))}
+                  </select>
+                </div>
+              </div>
+            </motion.div>
+          )}
+
+          {currentStep === 3 && (
+            <motion.div
+              key="step3"
+              initial={{ opacity: 0, x: 20 }}
+              animate={{ opacity: 1, x: 0 }}
+              exit={{ opacity: 0, x: -20 }}
+              transition={{ duration: 0.3 }}
+              className="space-y-6"
+            >
+              <h3 className="text-xl font-semibold text-white mb-4 flex items-center gap-2">
+                <MessageSquare className="w-5 h-5 text-purple-400" />
+                Project Details
+              </h3>
+              
+              <div>
+                <label htmlFor="message" className="block text-sm font-medium text-white mb-2">
+                  Project Description *
+                </label>
+                <textarea
+                  id="message"
+                  name="message"
+                  rows={6}
+                  value={formData.message}
+                  onChange={(e) => handleInputChange('message', e.target.value)}
+                  className={`w-full px-4 py-3 bg-white/10 border rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-cyan-400 focus:border-transparent transition-all duration-300 resize-none ${
+                    errors.message ? 'border-red-400' : 'border-white/20'
+                  }`}
+                  placeholder="Tell us about your project, goals, and requirements..."
+                  aria-describedby={errors.message ? 'message-error' : undefined}
+                />
+                {errors.message && (
+                  <p id="message-error" className="mt-1 text-sm text-red-400 flex items-center gap-1">
+                    <AlertCircle className="w-4 h-4" />
+                    {errors.message}
+                  </p>
+                )}
+              </div>
+
+              {/* Trust Indicators */}
+              <div className="bg-white/5 rounded-lg p-4">
+                <div className="flex items-center justify-center gap-6 text-sm text-gray-400">
+                  <div className="flex items-center gap-2">
+                    <Shield className="w-4 h-4 text-green-400" />
+                    <span>Secure & Private</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <Clock className="w-4 h-4 text-blue-400" />
+                    <span>24h Response</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <Star className="w-4 h-4 text-yellow-400" />
+                    <span>Expert Team</span>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+          )}
         </AnimatePresence>
 
         {/* Navigation Buttons */}
-        <div className="flex justify-between mt-8 pt-6 border-t border-gray-700">
-          {currentStep > 1 && (
+        <div className="flex justify-between pt-6">
+          <button
+            type="button"
+            onClick={handlePrevStep}
+            disabled={currentStep === 1}
+            className="px-6 py-3 border border-white/20 text-white rounded-lg hover:bg-white/10 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed focus:outline-none focus:ring-2 focus:ring-cyan-400 focus:ring-offset-2 focus:ring-offset-black"
+          >
+            Previous
+          </button>
+
+          {currentStep < totalSteps ? (
             <button
               type="button"
-              onClick={prevStep}
-              className="px-6 py-3 bg-gray-700 hover:bg-gray-600 text-white rounded-lg transition-colors flex items-center"
+              onClick={handleNextStep}
+              className="px-6 py-3 bg-gradient-to-r from-cyan-500 to-blue-600 text-white rounded-lg hover:from-cyan-600 hover:to-blue-700 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-cyan-400 focus:ring-offset-2 focus:ring-offset-black"
             >
-              ← Previous
+              Next Step
+            </button>
+          ) : (
+            <button
+              type="submit"
+              disabled={isSubmitting || isValidating}
+              className="px-8 py-3 bg-gradient-to-r from-green-500 to-emerald-600 text-white rounded-lg hover:from-green-600 hover:to-emerald-700 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-green-400 focus:ring-offset-2 focus:ring-offset-black disabled:opacity-50 disabled:cursor-not-allowed flex items-center gap-2"
+            >
+              {isSubmitting ? (
+                <>
+                  <div className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin" />
+                  Sending...
+                </>
+              ) : (
+                <>
+                  <Send className="w-4 h-4" />
+                  Send Message
+                </>
+              )}
             </button>
           )}
-
-          <div className="flex gap-4 ml-auto">
-            {currentStep < 3 ? (
-              <button
-                type="button"
-                onClick={nextStep}
-                className="px-6 py-3 bg-cyan-600 hover:bg-cyan-700 text-white rounded-lg transition-colors flex items-center"
-              >
-                Next →
-              </button>
-            ) : (
-              <button
-                type="submit"
-                disabled={isSubmitting}
-                className="px-8 py-3 bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 text-white rounded-lg transition-all flex items-center disabled:opacity-50 disabled:cursor-not-allowed"
-              >
-                {isSubmitting ? (
-                  <>
-                    <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-white mr-2" />
-                    Sending...
-                  </>
-                ) : (
-                  <>
-                    <Send className="w-4 h-4 mr-2" />
-                    Send Message
-                  </>
-                )}
-              </button>
-            )}
-          </div>
         </div>
-
-        {/* Submit Status */}
-        <AnimatePresence>
-          {submitStatus === 'success' && (
-            <motion.div
-              initial={{ opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -10 }}
-              className="mt-6 p-4 bg-green-900/20 border border-green-500/30 rounded-lg flex items-center"
-            >
-              <CheckCircle className="w-5 h-5 text-green-400 mr-3" />
-              <span className="text-green-400">
-                Thank you! Your message has been sent successfully. We'll get back to you within 24 hours.
-              </span>
-            </motion.div>
-          )}
-
-          {submitStatus === 'error' && (
-            <motion.div
-              initial={{ opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -10 }}
-              className="mt-6 p-4 bg-red-900/20 border border-red-500/30 rounded-lg flex items-center"
-            >
-              <AlertCircle className="w-5 h-5 text-red-400 mr-3" />
-              <span className="text-red-400">
-                Something went wrong. Please try again or contact us directly.
-              </span>
-            </motion.div>
-          )}
-        </AnimatePresence>
       </form>
-
-      {/* Contact Information */}
-      <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-8">
-        <div className="text-center">
-          <div className="w-16 h-16 bg-cyan-500/10 rounded-full flex items-center justify-center mx-auto mb-4">
-            <Mail className="w-8 h-8 text-cyan-400" />
-          </div>
-          <h3 className="text-lg font-semibold text-white mb-2">Email Us</h3>
-          <p className="text-gray-300">kleber@ziontechgroup.com</p>
-          <p className="text-sm text-gray-400 mt-1">We'll respond within 24 hours</p>
-        </div>
-
-        <div className="text-center">
-          <div className="w-16 h-16 bg-blue-500/10 rounded-full flex items-center justify-center mx-auto mb-4">
-            <Phone className="w-8 h-8 text-blue-400" />
-          </div>
-          <h3 className="text-lg font-semibold text-white mb-2">Call Us</h3>
-          <p className="text-gray-300">+1 (302) 464-0950</p>
-          <p className="text-sm text-gray-400 mt-1">Mon-Fri 9AM-6PM EST</p>
-        </div>
-
-        <div className="text-center">
-          <div className="w-16 h-16 bg-purple-500/10 rounded-full flex items-center justify-center mx-auto mb-4">
-            <MapPin className="w-8 h-8 text-purple-400" />
-          </div>
-          <h3 className="text-lg font-semibold text-white mb-2">Visit Us</h3>
-          <p className="text-gray-300">364 E Main St STE 1008</p>
-          <p className="text-gray-300">Middletown, DE 19709</p>
-        </div>
-      </div>
-
-      {/* Trust Indicators */}
-      <div className="mt-12 text-center">
-        <div className="flex items-center justify-center space-x-8 text-gray-400">
-          <div className="flex items-center">
-            <Shield className="w-5 h-5 mr-2" />
-            <span className="text-sm">GDPR Compliant</span>
-          </div>
-          <div className="flex items-center">
-            <Clock className="w-5 h-5 mr-2" />
-            <span className="text-sm">24/7 Support</span>
-          </div>
-          <div className="flex items-center">
-            <CheckCircle className="w-5 h-5 mr-2" />
-            <span className="text-sm">ISO 27001 Certified</span>
-          </div>
-        </div>
-      </div>
     </div>
   );
 };

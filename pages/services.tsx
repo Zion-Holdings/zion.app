@@ -61,39 +61,24 @@ import { advanced2038Services } from '../data/advanced-2038-services';
 import { revolutionary2039Services } from '../data/revolutionary-2039-services';
 import { revolutionary2040FuturisticServices } from '../data/revolutionary-2040-futuristic-services';
 import { revolutionary2041AdvancedServices } from '../data/revolutionary-2041-advanced-services';
+import { innovative2040FuturisticServices } from '../data/innovative-2040-futuristic-services';
 import { advanced2041EnterpriseServices } from '../data/advanced-2041-enterprise-services';
 import { revolutionary2042MicroSaasServices } from '../data/revolutionary-2042-micro-saas-services';
 
-// Import our new 2025 ultimate services expansion
-import { ultimate2025MicroSaasExpansion } from '../data/2025-ultimate-micro-saas-expansion';
-import { ultimate2025ITServicesExpansion } from '../data/2025-ultimate-it-services-expansion';
-import { ultimate2025AIServicesExpansion } from '../data/2025-ultimate-ai-services-expansion';
-
-// Import our new 2025 Q4 innovative services
-import { innovative2025Q4NewServices } from '../data/innovative-2025-q4-new-services';
-
-// Import our new 2025 ultimate innovative services
-import { ultimateInnovativeServices2025 } from '../data/2025-ultimate-innovative-services-expansion';
-import { cuttingEdgeEnterpriseSolutions2025 } from '../data/2025-cutting-edge-enterprise-solutions';
-import { innovativeMicroSaasSolutionsV2 } from '../data/2025-innovative-micro-saas-solutions-v2';
-
+// Import our new 2025 advanced services
+import { advanced2025MicroSaasExpansion } from '../data/2025-advanced-micro-saas-expansion';
+import { advanced2025ITSolutionsExpansion } from '../data/2025-advanced-it-solutions-expansion';
+import { advanced2025AIServicesExpansion } from '../data/2025-advanced-ai-services-expansion';
+// Import our new 2025 innovative services expansion
+import { innovative2025MicroSaasExpansion } from '../data/innovative-2025-micro-saas-expansion';
+import { innovative2025ITSolutionsExpansion } from '../data/innovative-2025-it-solutions-expansion';
+import { innovative2025AIServicesExpansion } from '../data/innovative-2025-ai-services-expansion';
 
 // Import our new innovative 2040 services
 import { innovative2040ITServices } from '../data/innovative-2040-it-services';
-import { innovative2040FuturisticServices } from '../data/innovative-2040-futuristic-services';
-
 // Import our new 2025 advanced enterprise services
 import { advancedEnterpriseServices } from '../data/2025-advanced-enterprise-services-expansion';
 import { cuttingEdgeITInfrastructureServices } from '../data/2025-cutting-edge-it-infrastructure';
-
-// Import our new 2025 cutting-edge futuristic services
-import { cuttingEdgeFuturisticServices } from '../data/2025-cutting-edge-futuristic-services';
-import { advancedAIAutomationServices } from '../data/2026-advanced-ai-automation-services';
-
-// Import our new 2025 cutting-edge innovative services expansion
-import { cuttingEdgeInnovativeServices2025 } from '../data/2025-cutting-edge-innovative-services-expansion';
-import { advancedITInfrastructureSolutions2025 } from '../data/2025-advanced-it-infrastructure-solutions';
-import { advancedAIAutomationSolutions2025 } from '../data/2025-advanced-ai-automation-solutions';
 
 // Import existing service data
 import { realMicroSaasServices } from '../data/real-micro-saas-services';
@@ -186,9 +171,9 @@ const allServices = [
   ...innovative2036MicroSaasServices,
   ...innovative2036ITServices,
   // Our new 2025 advanced services
-  ...ultimate2025MicroSaasExpansion,
-  ...ultimate2025ITServicesExpansion,
-  ...ultimate2025AIServicesExpansion,
+  ...advanced2025MicroSaasExpansion,
+  ...advanced2025ITSolutionsExpansion,
+  ...advanced2025AIServicesExpansion,
   // Our new innovative services
   ...innovative2037MicroSaasServices,
   ...innovative2037ITServices,
@@ -209,33 +194,14 @@ const allServices = [
   // Our latest innovative services
   ...advanced2041EnterpriseServices,
   ...revolutionary2042MicroSaasServices,
-  // Our new 2025 ultimate services expansion
-  ...ultimate2025MicroSaasExpansion,
-  ...ultimate2025ITServicesExpansion,
-  ...ultimate2025AIServicesExpansion,
+  // Our new 2025 innovative services expansion
+  ...innovative2025MicroSaasExpansion,
+  ...innovative2025ITSolutionsExpansion,
+  ...innovative2025AIServicesExpansion,
   // Our new 2025 advanced enterprise services
   ...advancedEnterpriseServices,
-  ...cuttingEdgeITInfrastructureServices,
-  
-  // Our new 2025 cutting-edge innovative services expansion
-  ...cuttingEdgeInnovativeServices2025,
-  ...advancedITInfrastructureSolutions2025,
-  
-  // Our new 2025 ultimate innovative services
-  ...ultimateInnovativeServices2025,
-  ...cuttingEdgeEnterpriseSolutions2025,
-  ...innovativeMicroSaasSolutionsV2,
-  
-  // Our new 2025 service data
-  ...advancedAIAutomationServices2025,
-  ...innovativeMicroSaasSolutions2025,
-  ...cuttingEdgeAIServices2025,
-  ...innovative2025AIAutonomousServices,
-  ...realPracticalMicroSaasServices2025,
-  ...advancedAIITSpecializedServices2025,
-  ...realEnterpriseMicroSaas2025,
-  
-  ...advancedAIAutomationSolutions2025
+  ...innovative2025MicroSaasExpansion,
+  ...cuttingEdgeITInfrastructureServices
 ];
 
 const categories = [

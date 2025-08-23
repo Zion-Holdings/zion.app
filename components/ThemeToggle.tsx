@@ -1,14 +1,10 @@
 import React, { useState, useEffect } from 'react';
+import { motion } from 'framer-motion';
 import { Sun, Moon, Monitor } from 'lucide-react';
-import { motion, AnimatePresence } from 'framer-motion';
 
 type Theme = 'dark' | 'light' | 'system';
 
-interface ThemeToggleProps {
-  className?: string;
-}
-
-const ThemeToggle: React.FC<ThemeToggleProps> = ({ className = '' }) => {
+const ThemeToggle: React.FC = () => {
   const [theme, setTheme] = useState<Theme>('dark');
   const [mounted, setMounted] = useState(false);
 
@@ -17,8 +13,6 @@ const ThemeToggle: React.FC<ThemeToggleProps> = ({ className = '' }) => {
     const savedTheme = localStorage.getItem('theme') as Theme;
     if (savedTheme) {
       setTheme(savedTheme);
-    } else if (window.matchMedia('(prefers-color-scheme: light)').matches) {
-      setTheme('system');
     }
   }, []);
 
@@ -26,11 +20,16 @@ const ThemeToggle: React.FC<ThemeToggleProps> = ({ className = '' }) => {
     if (!mounted) return;
 
     const root = document.documentElement;
-    const systemTheme = window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
-    const activeTheme = theme === 'system' ? systemTheme : theme;
+    
+    if (theme === 'system') {
+      const systemTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      root.classList.toggle('dark', systemTheme === 'dark');
+      root.classList.toggle('light', systemTheme === 'light');
+    } else {
+      root.classList.toggle('dark', theme === 'dark');
+      root.classList.toggle('light', theme === 'light');
+    }
 
-    root.classList.remove('light', 'dark');
-    root.classList.add(activeTheme);
     localStorage.setItem('theme', theme);
   }, [theme, mounted]);
 
@@ -38,51 +37,78 @@ const ThemeToggle: React.FC<ThemeToggleProps> = ({ className = '' }) => {
     setTheme(newTheme);
   };
 
-  const themes = [
-    { value: 'light', icon: Sun, label: 'Light theme', color: 'from-yellow-400 to-orange-500' },
-    { value: 'dark', icon: Moon, label: 'Dark theme', color: 'from-blue-600 to-purple-600' },
-    { value: 'system', icon: Monitor, label: 'System theme', color: 'from-gray-500 to-gray-700' }
-  ] as const;
-
   if (!mounted) {
     return (
-      <div className={`w-12 h-12 rounded-lg bg-gray-200 animate-pulse ${className}`} />
+      <div className="w-10 h-10 bg-gray-800 rounded-lg animate-pulse" />
     );
   }
 
   return (
-    <div className={`relative ${className}`}>
+    <div className="relative">
       <motion.div
-        className="flex items-center space-x-1 p-1 bg-gray-800/50 backdrop-blur-sm rounded-lg border border-gray-700/50"
-        initial={{ opacity: 0, scale: 0.9 }}
-        animate={{ opacity: 1, scale: 1 }}
-        transition={{ duration: 0.2 }}
+        initial={false}
+        animate={{ scale: 1 }}
+        whileHover={{ scale: 1.05 }}
+        whileTap={{ scale: 0.95 }}
+        className="relative bg-gray-800/50 backdrop-blur-md border border-cyan-400/20 rounded-lg p-1"
       >
-        {themes.map(({ value, icon: Icon, label, color }) => (
-          <motion.button
-            key={value}
-            onClick={() => handleThemeChange(value)}
-            className={`relative p-2 rounded-md transition-all duration-200 ${
-              theme === value
-                ? 'bg-gradient-to-r ' + color + ' text-white shadow-lg'
-                : 'text-gray-400 hover:text-white hover:bg-gray-700/50'
+        <div className="flex items-center space-x-1">
+          {/* Light Theme Button */}
+          <button
+            onClick={() => handleThemeChange('light')}
+            className={`p-2 rounded-md transition-all duration-300 ${
+              theme === 'light'
+                ? 'bg-cyan-500 text-white shadow-lg shadow-cyan-500/25'
+                : 'text-gray-400 hover:text-yellow-400 hover:bg-white/10'
             }`}
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            aria-label={label}
-            title={label}
+            aria-label="Light theme"
           >
-            <Icon className="w-4 h-4" />
-            {theme === value && (
-              <motion.div
-                className="absolute inset-0 rounded-md bg-gradient-to-r opacity-20"
-                style={{ background: `linear-gradient(to right, var(--${color.split('-')[1]}-500), var(--${color.split('-')[3]}-500))` }}
-                layoutId="activeTheme"
-                transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
-              />
-            )}
-          </motion.button>
-        ))}
+            <Sun className="w-4 h-4" />
+          </button>
+
+          {/* System Theme Button */}
+          <button
+            onClick={() => handleThemeChange('system')}
+            className={`p-2 rounded-md transition-all duration-300 ${
+              theme === 'system'
+                ? 'bg-cyan-500 text-white shadow-lg shadow-cyan-500/25'
+                : 'text-gray-400 hover:text-blue-400 hover:bg-white/10'
+            }`}
+            aria-label="System theme"
+          >
+            <Monitor className="w-4 h-4" />
+          </button>
+
+          {/* Dark Theme Button */}
+          <button
+            onClick={() => handleThemeChange('dark')}
+            className={`p-2 rounded-md transition-all duration-300 ${
+              theme === 'dark'
+                ? 'bg-cyan-500 text-white shadow-lg shadow-cyan-500/25'
+                : 'text-gray-400 hover:text-purple-400 hover:bg-white/10'
+            }`}
+            aria-label="Dark theme"
+          >
+            <Moon className="w-4 h-4" />
+          </button>
+        </div>
+
+        {/* Active Theme Indicator */}
+        <motion.div
+          layoutId="activeTheme"
+          className="absolute inset-0 bg-gradient-to-r from-cyan-500/20 to-purple-500/20 rounded-lg -z-10"
+          initial={false}
+          transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
+        />
+      </motion.div>
+
+      {/* Theme Label */}
+      <motion.div
+        initial={{ opacity: 0, y: 10 }}
+        animate={{ opacity: 1, y: 0 }}
+        className="absolute top-full left-1/2 transform -translate-x-1/2 mt-2 px-2 py-1 bg-gray-900/90 backdrop-blur-md border border-cyan-400/30 rounded text-xs text-cyan-400 whitespace-nowrap"
+      >
+        {theme === 'system' ? 'System' : theme === 'light' ? 'Light' : 'Dark'} Theme
       </motion.div>
     </div>
   );

@@ -152,6 +152,8 @@ export default function AIAutomationServices() {
         <meta property="og:title" content="AI Automation Services | Zion Tech Group - Intelligent Automation Solutions" />
         <meta property="og:description" content="Transform your business with Zion Tech Group's comprehensive AI automation services. From process automation to predictive analytics, we deliver intelligent solutions that drive growth and efficiency." />
       </Head>
+
+      <UltraFuturisticBackground2026 intensity="high" />
       
       <div className="min-h-screen bg-gradient-to-br from-indigo-950 via-purple-950 to-slate-950 text-white">
         <main className="container mx-auto px-6 py-12">
@@ -169,7 +171,26 @@ export default function AIAutomationServices() {
               <p className="text-xl text-white/80 max-w-3xl mx-auto">
                 Transform your business operations with intelligent automation solutions that learn, adapt, and optimize continuously
               </p>
-            </header>
+            </motion.div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {advancedAIAutomationServices.map((service, index) => (
+                <motion.div
+                  key={service.id}
+                  initial={{ opacity: 0, y: 50 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.8, delay: index * 0.1 }}
+                  viewport={{ once: true }}
+                >
+                  <UltraFuturisticServiceCard2026 
+                    service={service} 
+                    variant="enterprise"
+                  />
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </section>
 
             {/* Services Overview */}
             <section className="mb-20">

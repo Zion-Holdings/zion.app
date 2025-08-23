@@ -1,16 +1,15 @@
 import React from 'react';
-import { Layout } from '../components/layout/Layout';
-import { Globe, Zap, Shield, Cpu, Database, Network, Server, Monitor, Cloud, Settings, Eye, Award, Clock, Heart, Lightbulb, TrendingUp, ArrowRight, BarChart3, FileText, CheckCircle, AlertCircle, Play, Square, RotateCcw } from 'lucide-react';
+import SEO from '../components/SEO';
+import { Check, ExternalLink } from 'lucide-react';
 
-const BrowserAutomationCloud: React.FC = () => {
-  const features = [
-    'Scalable Cloud Infrastructure',
-    'Multi-browser Support',
-    'Real-time Monitoring',
-    'Automated Testing',
-    'Performance Analytics',
-    'CI/CD Integration'
-  ];
+export default function BrowserAutomationCloudPage() {
+	const features = [
+		'Parallel Playwright/Puppeteer execution',
+		'Queued jobs with retries and rate limits',
+		'Artifacts: HAR, traces, screenshots, videos',
+		'Rotating proxies and geo targeting',
+		'Webhook callbacks and REST API'
+	];
 
 	return (
 		<>
@@ -28,13 +27,13 @@ const BrowserAutomationCloud: React.FC = () => {
 						))}
 					</div>
 					<div className="mt-8 flex flex-wrap items-center gap-4">
-						<a href="/#contact" className="px-5 py-3 rounded-lg bg-white text-black font-semibold hover:bg-gray-200">Start from $99/mo</a>
+						<a href="/contact" className="px-5 py-3 rounded-lg bg-white text-black font-semibold hover:bg-gray-200">Start from $99/mo</a>
 						<a href="https://playwright.dev/" target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 text-cyan-400 hover:text-cyan-300">
 							<ExternalLink className="w-4 h-4" /> Playwright
-							</a>
+						</a>
 						<a href="https://pptr.dev/" target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 text-cyan-400 hover:text-cyan-300">
 							<ExternalLink className="w-4 h-4" /> Puppeteer
-							</a>
+						</a>
 					</div>
 				</section>
 			</main>

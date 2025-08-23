@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import SEO from '../components/SEO';
+import Head from 'next/head';
 import { motion, AnimatePresence } from 'framer-motion';
 import { 
   Search, Grid, List, Star, TrendingUp, Zap, Brain, Atom, Rocket,
@@ -190,13 +190,10 @@ export default function ComprehensiveServicesShowcase2036() {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-black via-gray-900 to-black">
-      <SEO 
-        data={{
-          pageTitle: "Comprehensive Services Showcase 2036 - ZionTech Group",
-          pageDescription: "Explore our complete portfolio of innovative micro SAAS services, AI solutions, IT infrastructure, and emerging technologies. Discover cutting-edge solutions for your business needs.",
-          pageKeywords: ["micro SAAS", "AI solutions", "IT infrastructure", "emerging technologies", "ZionTech Group"]
-        }}
-      />
+      <Head>
+        <title>Comprehensive Services Showcase 2036 - ZionTech Group</title>
+        <meta name="description" content="Explore our complete portfolio of innovative micro SAAS services, AI solutions, IT infrastructure, and emerging technologies. Discover cutting-edge solutions for your business needs." />
+      </Head>
 
       {/* Hero Section */}
       <section className="relative pt-32 pb-20 overflow-hidden">

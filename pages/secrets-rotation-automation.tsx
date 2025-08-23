@@ -3,8 +3,6 @@ import SEO from '../components/SEO';
 import { Check, ExternalLink } from 'lucide-react';
 
 export default function SecretsRotationAutomationPage() {
-	const title = 'Secrets Rotation Automation — Zion Tech Group';
-	const description = 'Automated key rotation, scheduled rollovers, drift detection, and blast-radius controls for safe secrets hygiene.';
 	const features = [
 		'Automated key and secret rotation',
 		'JIT credentials with expirations',
@@ -29,13 +27,13 @@ export default function SecretsRotationAutomationPage() {
 						))}
 					</div>
 					<div className="mt-8 flex flex-wrap items-center gap-4">
-						<a href="/#contact" className="px-5 py-3 rounded-lg bg-white text-black font-semibold hover:bg-gray-200">Start from $199/mo</a>
+						<a href="/contact" className="px-5 py-3 rounded-lg bg-white text-black font-semibold hover:bg-gray-200">Start from $199/mo</a>
 						<a href="https://developer.hashicorp.com/vault" target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 text-cyan-400 hover:text-cyan-300">
 							<ExternalLink className="w-4 h-4" /> HashiCorp Vault Docs
-							</a>
+						</a>
 						<a href="https://cloud.google.com/kms" target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 text-cyan-400 hover:text-cyan-300">
 							<ExternalLink className="w-4 h-4" /> Google Cloud KMS
-							</a>
+						</a>
 					</div>
 				</section>
 			</main>
