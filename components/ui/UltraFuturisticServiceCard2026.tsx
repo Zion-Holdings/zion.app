@@ -108,18 +108,14 @@ const UltraFuturisticServiceCard2026: React.FC<UltraFuturisticServiceCard2026Pro
   return (
     <div
       className={`group relative overflow-hidden rounded-2xl transition-all duration-500 transform hover:scale-105 cursor-pointer ${className}`}
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
       onClick={handleCardClick}
       role="button"
       tabIndex={0}
-      onKeyDown={(e) => {
-        if (e.key === 'Enter' || e.key === ' ') {
-          e.preventDefault();
-          handleCardClick();
-        }
-      }}
-      aria-label={`${service.name} service card`}
+      onKeyDown={handleKeyDown}
+      aria-label={`${service.name} service card - ${service.tagline}`}
+      aria-describedby={`service-description-${service.id}`}
     >
       {/* Background */}
       <div className={`absolute inset-0 bg-gradient-to-br ${variantStyles.gradient} ${variantStyles.border} transition-all duration-500`} />
@@ -146,7 +142,7 @@ const UltraFuturisticServiceCard2026: React.FC<UltraFuturisticServiceCard2026Pro
           <h3 className={`text-xl font-bold mb-2 ${variantStyles.text}`}>
             {service.name}
           </h3>
-          <p className="text-gray-300 text-sm mb-3">
+          <p id={`service-description-${service.id}`} className="text-gray-300 text-sm mb-3">
             {service.tagline}
           </p>
           
@@ -161,10 +157,10 @@ const UltraFuturisticServiceCard2026: React.FC<UltraFuturisticServiceCard2026Pro
           </div>
 
           {/* Features */}
-          <div className="space-y-2 mb-4">
+          <div id={`features-${service.id}`} className="space-y-2 mb-4" role="list" aria-label="Service features">
             {service.features.slice(0, isExpanded ? undefined : 3).map((feature, index) => (
-              <div key={index} className="flex items-center text-sm text-gray-300">
-                <div className={`w-2 h-2 rounded-full mr-3 ${variantStyles.accent}`} />
+              <div key={index} className="flex items-center text-sm text-gray-300" role="listitem">
+                <div className={`w-2 h-2 rounded-full mr-3 ${variantStyles.accent}`} aria-hidden="true" />
                 {feature}
               </div>
             ))}
@@ -175,6 +171,9 @@ const UltraFuturisticServiceCard2026: React.FC<UltraFuturisticServiceCard2026Pro
             <button
               onClick={toggleExpansion}
               className={`text-sm ${variantStyles.text} hover:underline focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-black focus:ring-cyan-400`}
+              aria-expanded={isExpanded}
+              aria-controls={`features-${service.id}`}
+              aria-label={isExpanded ? 'Show fewer features' : `Show ${service.features.length - 3} more features`}
             >
               {isExpanded ? 'Show Less' : `Show ${service.features.length - 3} More`}
             </button>

@@ -4,106 +4,47 @@ interface Props {
   children: ReactNode;
   fallback?: ReactNode;
   onError?: (error: Error, errorInfo: ErrorInfo) => void;
-  className?: string;
 }
 
 interface State {
   hasError: boolean;
-  error: Error | null;
-  errorInfo: ErrorInfo | null;
+  error?: Error;
+  errorInfo?: ErrorInfo;
 }
 
 class ErrorBoundary extends Component<Props, State> {
   constructor(props: Props) {
     super(props);
-    this.state = {
-      hasError: false,
-      error: null,
-      errorInfo: null
-    };
+    this.state = { hasError: false };
   }
 
   static getDerivedStateFromError(error: Error): State {
-    return {
-      hasError: true,
-      error,
-      errorInfo: null
-    };
+    // Update state so the next render will show the fallback UI
+    return { hasError: true, error };
   }
 
   componentDidCatch(error: Error, errorInfo: ErrorInfo) {
-    this.setState({
-      error,
-      errorInfo
-    });
-
-    // Call the onError callback if provided
+    // Log error to console
+    console.error('ErrorBoundary caught an error:', error, errorInfo);
+    
+    // Call custom error handler if provided
     if (this.props.onError) {
       this.props.onError(error, errorInfo);
     }
 
-    // Send error report to API
-    this.reportError(error, errorInfo);
-  }
-
-  private reportError = async (error: Error, errorInfo: ErrorInfo) => {
-    try {
-      const errorReport = {
-        message: error.message,
-        stack: error.stack,
-        componentStack: errorInfo.componentStack,
-        timestamp: new Date().toISOString(),
-        url: typeof window !== 'undefined' ? window.location.href : 'unknown',
-        userAgent: typeof navigator !== 'undefined' ? navigator.userAgent : 'unknown',
-        viewport: typeof window !== 'undefined' ? {
-          width: window.innerWidth,
-          height: window.innerHeight
-        } : null
-      };
-
-      await fetch('/api/error-reporting', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(errorReport)
+    // Log to analytics if available
+    if (typeof window !== 'undefined' && (window as any).gtag) {
+      (window as any).gtag('event', 'exception', {
+        description: error.message,
+        fatal: false,
+        custom_parameters: {
+          component_stack: errorInfo.componentStack,
+          error_name: error.name,
+          error_stack: error.stack
+        }
       });
-    } catch {
-      // Silently handle error reporting failures
     }
-  };
-
-  private handleRetry = () => {
-    this.setState({
-      hasError: false,
-      error: null,
-      errorInfo: null
-    });
-  };
-
-  private handleReportIssue = () => {
-    if (this.state.error) {
-      const errorDetails = `
-Error: ${this.state.error.message}
-Stack: ${this.state.error.stack}
-Component Stack: ${this.state.errorInfo?.componentStack}
-URL: ${typeof window !== 'undefined' ? window.location.href : 'unknown'}
-      `.trim();
-
-      // Copy to clipboard if available
-      if (navigator.clipboard) {
-        navigator.clipboard.writeText(errorDetails).catch(() => {
-          // Fallback: open email client
-          const mailtoLink = `mailto:support@ziontechgroup.com?subject=Website Error Report&body=${encodeURIComponent(errorDetails)}`;
-          window.open(mailtoLink);
-        });
-      } else {
-        // Fallback: open email client
-        const mailtoLink = `mailto:support@ziontechgroup.com?subject=Website Error Report&body=${encodeURIComponent(errorDetails)}`;
-        window.open(mailtoLink);
-      }
-    }
-  };
+  }
 
   render() {
     if (this.state.hasError) {
@@ -114,80 +55,111 @@ URL: ${typeof window !== 'undefined' ? window.location.href : 'unknown'}
 
       // Default error UI
       return (
-        <div className={`min-h-screen bg-gradient-to-br from-gray-900 via-black to-gray-900 flex items-center justify-center p-4 ${this.props.className || ''}`}>
-          <div className="max-w-md w-full bg-white/10 backdrop-blur-xl border border-white/20 rounded-2xl p-8 text-center">
+        <div className="min-h-screen bg-black text-white flex items-center justify-center px-4">
+          <div className="max-w-2xl mx-auto text-center">
             {/* Error Icon */}
-            <div className="mx-auto w-16 h-16 bg-red-500/20 rounded-full flex items-center justify-center mb-6">
-              <svg className="w-8 h-8 text-red-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4c-.77-.833-1.964-.833-2.732 0L3.732 16.5c-.77.833.192 2.5 1.732 2.5z" />
-              </svg>
+            <div className="mb-8">
+              <div className="w-24 h-24 mx-auto bg-gradient-to-r from-red-500 to-pink-500 rounded-full flex items-center justify-center">
+                <svg 
+                  className="w-12 h-12 text-white" 
+                  fill="none" 
+                  stroke="currentColor" 
+                  viewBox="0 0 24 24"
+                  aria-hidden="true"
+                >
+                  <path 
+                    strokeLinecap="round" 
+                    strokeLinejoin="round" 
+                    strokeWidth={2} 
+                    d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4c-.77-.833-1.964-.833-2.732 0L3.732 16.5c-.77.833.192 2.5 1.732 2.5z" 
+                  />
+                </svg>
+              </div>
             </div>
 
             {/* Error Message */}
-            <h1 className="text-2xl font-bold text-white mb-4">
+            <h1 className="text-3xl md:text-4xl font-bold mb-4 bg-gradient-to-r from-red-400 to-pink-400 bg-clip-text text-transparent">
               Oops! Something went wrong
             </h1>
             
-            <p className="text-gray-300 mb-6">
+            <p className="text-xl text-gray-300 mb-8">
               We're sorry, but something unexpected happened. Our team has been notified and is working to fix this issue.
             </p>
 
-            {/* Error Details (Collapsible) */}
-            <details className="text-left mb-6">
-              <summary className="text-sm text-gray-400 cursor-pointer hover:text-white transition-colors mb-2">
-                Technical Details
-              </summary>
-              <div className="bg-black/30 rounded-lg p-4 text-xs text-gray-300 font-mono overflow-auto max-h-32">
-                <div className="mb-2">
-                  <strong>Error:</strong> {this.state.error?.message}
-                </div>
-                {this.state.errorInfo?.componentStack && (
+            {/* Error Details (Development Only) */}
+            {process.env.NODE_ENV === 'development' && this.state.error && (
+              <details className="mb-8 text-left bg-gray-900 rounded-lg p-4">
+                <summary className="cursor-pointer text-cyan-400 font-semibold mb-2">
+                  Error Details (Development)
+                </summary>
+                <div className="text-sm text-gray-400 space-y-2">
                   <div>
-                    <strong>Component Stack:</strong>
-                    <pre className="whitespace-pre-wrap mt-1">
-                      {this.state.errorInfo.componentStack}
-                    </pre>
+                    <strong>Error:</strong> {this.state.error.message}
                   </div>
-                )}
-              </div>
-            </details>
+                  <div>
+                    <strong>Name:</strong> {this.state.error.name}
+                  </div>
+                  {this.state.errorInfo && (
+                    <div>
+                      <strong>Component Stack:</strong>
+                      <pre className="mt-2 text-xs overflow-auto">
+                        {this.state.errorInfo.componentStack}
+                      </pre>
+                    </div>
+                  )}
+                </div>
+              </details>
+            )}
 
             {/* Action Buttons */}
-            <div className="flex flex-col sm:flex-row gap-3">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <button
-                onClick={this.handleRetry}
-                className="flex-1 bg-gradient-to-r from-blue-500 to-purple-600 text-white px-6 py-3 rounded-lg font-semibold hover:from-blue-600 hover:to-purple-700 transition-all duration-300 focus:outline-none focus:ring-4 focus:ring-blue-400 focus:ring-offset-2 focus:ring-offset-black"
+                onClick={() => window.location.reload()}
+                className="px-6 py-3 bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-semibold rounded-lg hover:from-cyan-600 hover:to-blue-700 transition-all duration-300 focus:outline-none focus:ring-4 focus:ring-cyan-400/50 focus:ring-offset-2 focus:ring-offset-black"
               >
-                Try Again
+                Refresh Page
               </button>
               
               <button
-                onClick={this.handleReportIssue}
-                className="flex-1 bg-white/10 text-white px-6 py-3 rounded-lg font-semibold hover:bg-white/20 transition-all duration-300 focus:outline-none focus:ring-4 focus:ring-white/20 focus:ring-offset-2 focus:ring-offset-black"
+                onClick={() => window.history.back()}
+                className="px-6 py-3 border-2 border-cyan-400 text-cyan-400 font-semibold rounded-lg hover:bg-cyan-400 hover:text-black transition-all duration-300 focus:outline-none focus:ring-4 focus:ring-cyan-400/50 focus:ring-offset-2 focus:ring-offset-black"
               >
-                Report Issue
+                Go Back
               </button>
+              
+              <a
+                href="/"
+                className="px-6 py-3 border-2 border-purple-400 text-purple-400 font-semibold rounded-lg hover:bg-purple-400 hover:text-black transition-all duration-300 focus:outline-none focus:ring-4 focus:ring-purple-400/50 focus:ring-offset-2 focus:ring-offset-black text-center"
+              >
+                Go Home
+              </a>
             </div>
 
             {/* Contact Information */}
-            <div className="mt-6 pt-6 border-t border-white/10">
-              <p className="text-sm text-gray-400 mb-2">
-                Need immediate help?
+            <div className="mt-12 pt-8 border-t border-gray-700">
+              <p className="text-gray-400 mb-4">
+                If this problem persists, please contact our support team:
               </p>
-              <div className="flex justify-center space-x-4 text-sm">
-                <a
-                  href="mailto:support@ziontechgroup.com"
-                  className="text-blue-400 hover:text-blue-300 transition-colors"
+              <div className="flex flex-col sm:flex-row items-center justify-center gap-4 text-sm">
+                <a 
+                  href="mailto:kleber@ziontechgroup.com"
+                  className="text-cyan-400 hover:text-cyan-300 transition-colors"
                 >
-                  Email Support
+                  kleber@ziontechgroup.com
                 </a>
-                <a
-                  href="tel:+1-800-ZION-TECH"
-                  className="text-blue-400 hover:text-blue-300 transition-colors"
+                <span className="text-gray-600">|</span>
+                <a 
+                  href="tel:+13024640950"
+                  className="text-cyan-400 hover:text-cyan-300 transition-colors"
                 >
-                  Call Us
+                  +1 (302) 464-0950
                 </a>
               </div>
+            </div>
+
+            {/* Error ID for Support */}
+            <div className="mt-6 text-xs text-gray-500">
+              Error ID: {Date.now().toString(36)}-{Math.random().toString(36).substr(2, 5)}
             </div>
           </div>
         </div>

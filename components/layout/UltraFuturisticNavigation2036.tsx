@@ -190,14 +190,18 @@ const navigationItems: NavigationItem[] = [
   }
 ];
 
-export default function UltraFuturisticNavigation2036() {
+interface UltraFuturisticNavigation2036Props {
+  isScrolled?: boolean;
+}
+
+export default function UltraFuturisticNavigation2036({ isScrolled = false }: UltraFuturisticNavigation2036Props) {
   const [isOpen, setIsOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
-  const [isScrolled, setIsScrolled] = useState(false);
+  const [internalScrollState, setInternalScrollState] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 10);
+      setInternalScrollState(window.scrollY > 10);
     };
 
     window.addEventListener('scroll', handleScroll);
@@ -214,11 +218,15 @@ export default function UltraFuturisticNavigation2036() {
   };
 
   return (
-    <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-      isScrolled 
-        ? 'bg-black/80 backdrop-blur-xl border-b border-white/10 shadow-2xl' 
-        : 'bg-black/40 backdrop-blur-lg border-b border-white/5'
-    }`}>
+    <nav 
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        (isScrolled || internalScrollState)
+          ? 'bg-black/80 backdrop-blur-xl border-b border-white/10 shadow-2xl' 
+          : 'bg-black/40 backdrop-blur-lg border-b border-white/5'
+      }`}
+      role="navigation"
+      aria-label="Main navigation"
+    >
       {/* Top Contact Bar */}
       <div className="bg-gradient-to-r from-cyan-500/20 to-purple-500/20 border-b border-white/10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -255,16 +263,22 @@ export default function UltraFuturisticNavigation2036() {
             animate={{ opacity: 1, x: 0 }}
             className="flex items-center space-x-3"
           >
-            <div className="relative">
-              <div className="w-10 h-10 bg-gradient-to-r from-cyan-400 via-purple-500 to-pink-500 rounded-xl shadow-lg shadow-cyan-500/25"></div>
-              <div className="absolute inset-0 bg-gradient-to-r from-cyan-400/50 to-purple-500/50 rounded-xl animate-pulse"></div>
-            </div>
-            <div className="flex flex-col">
-              <span className="text-white font-bold text-xl bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent">
-                ZionTech Group
-              </span>
-              <span className="text-xs text-white/60">Future Technology Solutions</span>
-            </div>
+            <Link 
+              href="/" 
+              className="flex items-center space-x-3 group focus:outline-none focus:ring-2 focus:ring-cyan-400 focus:ring-offset-2 focus:ring-offset-black rounded-lg p-1"
+              aria-label="Zion Tech Group - Home"
+            >
+              <div className="relative">
+                <div className="w-10 h-10 bg-gradient-to-r from-cyan-400 via-purple-500 to-pink-500 rounded-xl shadow-lg shadow-cyan-500/25"></div>
+                <div className="absolute inset-0 bg-gradient-to-r from-cyan-400/50 to-purple-500/50 rounded-xl animate-pulse"></div>
+              </div>
+              <div className="flex flex-col">
+                <span className="text-white font-bold text-xl bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent">
+                  ZionTech Group
+                </span>
+                <span className="text-xs text-white/60">Future Technology Solutions</span>
+              </div>
+            </Link>
           </motion.div>
 
           {/* Desktop Navigation */}
@@ -273,7 +287,16 @@ export default function UltraFuturisticNavigation2036() {
               <div key={item.name} className="relative group">
                 <button
                   onClick={() => toggleDropdown(item.name)}
-                  className={`flex items-center space-x-2 px-4 py-2 text-sm font-medium transition-all duration-300 rounded-lg ${
+                  onKeyDown={(e) => {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                      e.preventDefault();
+                      toggleDropdown(item.name);
+                    }
+                  }}
+                  aria-expanded={activeDropdown === item.name}
+                  aria-haspopup="true"
+                  aria-controls={`dropdown-${item.name}`}
+                  className={`flex items-center space-x-2 px-4 py-2 text-sm font-medium transition-all duration-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-cyan-400 focus:ring-offset-2 focus:ring-offset-black ${
                     activeDropdown === item.name
                       ? 'text-cyan-400 bg-white/10 border border-cyan-400/30'
                       : 'text-gray-300 hover:text-cyan-400 hover:bg-white/5'
@@ -286,20 +309,26 @@ export default function UltraFuturisticNavigation2036() {
                       {item.badge}
                     </span>
                   )}
-                  <ChevronDown className={`w-4 h-4 transition-transform duration-300 ${
-                    activeDropdown === item.name ? 'rotate-180' : ''
-                  }`} />
+                  <ChevronDown 
+                    className={`w-4 h-4 transition-transform duration-300 ${
+                      activeDropdown === item.name ? 'rotate-180' : ''
+                    }`} 
+                    aria-hidden="true"
+                  />
                 </button>
 
                 {/* Dropdown Menu */}
                 <AnimatePresence>
                   {activeDropdown === item.name && (
                     <motion.div
+                      id={`dropdown-${item.name}`}
                       initial={{ opacity: 0, y: -10, scale: 0.95 }}
                       animate={{ opacity: 1, y: 0, scale: 1 }}
                       exit={{ opacity: 0, y: -10, scale: 0.95 }}
                       transition={{ duration: 0.2 }}
                       className="absolute top-full left-0 mt-2 w-80 bg-black/95 backdrop-blur-xl border border-white/10 rounded-xl shadow-2xl shadow-black/50 overflow-hidden"
+                      role="menu"
+                      aria-label={`${item.name} submenu`}
                     >
                       <div className="p-4">
                         <div className="mb-3">
@@ -355,9 +384,12 @@ export default function UltraFuturisticNavigation2036() {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="lg:hidden p-2 text-white hover:text-cyan-400 transition-colors"
+            aria-expanded={isOpen}
+            aria-controls="mobile-menu"
+            aria-label={isOpen ? "Close menu" : "Open menu"}
+            className="lg:hidden p-2 text-white hover:text-cyan-400 transition-colors focus:outline-none focus:ring-2 focus:ring-cyan-400 focus:ring-offset-2 focus:ring-offset-black rounded-lg"
           >
-            {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+            {isOpen ? <X className="w-6 h-6" aria-hidden="true" /> : <Menu className="w-6 h-6" aria-hidden="true" />}
           </button>
         </div>
       </div>
@@ -366,11 +398,14 @@ export default function UltraFuturisticNavigation2036() {
       <AnimatePresence>
         {isOpen && (
           <motion.div
+            id="mobile-menu"
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.3 }}
             className="lg:hidden bg-black/95 backdrop-blur-xl border-t border-white/10"
+            role="menu"
+            aria-label="Mobile navigation menu"
           >
             <div className="px-4 py-6 space-y-4">
               {navigationItems.map((item) => (
