@@ -57,6 +57,12 @@ interface Service {
   reviews: number;
 }
 
+<<<<<<< HEAD
+const allServices: Service[] = [
+  ...innovative2025MicroSaasExpansionV2,
+  ...innovative2025ITServicesExpansionV2,
+  ...innovative2025AIServicesExpansionV2
+=======
 // Import our new 2025 advanced services
 import { advanced2025MicroSaasExpansion } from '../data/2025-advanced-micro-saas-expansion';
 import { advanced2025ITSolutionsExpansion } from '../data/2025-advanced-it-solutions-expansion';
@@ -171,6 +177,7 @@ const allServices = [
   ...innovative2025MicroSaasExpansion,
   ...innovative2025ITSolutionsExpansion,
   ...innovative2025AIServicesExpansion
+>>>>>>> origin/cursor/add-and-advertise-new-services-then-build-bdcb
 ];
 
 const categories = [
