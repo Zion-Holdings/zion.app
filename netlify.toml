@@ -1,11 +1,22 @@
 [build]
   command = "npm ci && npm run sitemap && npm run build"
   publish = ".next"
+  functions = "netlify/functions"
 
 [build.environment]
-  NODE_VERSION = "20"
-  NETLIFY_NEXT_PLUGIN_SKIP = "true"
-  # When triggering chained builds via build hook, set NETLIFY_RERUN_CHAIN=1 in the hook payload/env
+  NODE_VERSION = "22.12.0"
+  NPM_FLAGS = "--legacy-peer-deps"
+  NPM_CONFIG_LEGACY_PEER_DEPS = "true"
+  SKIP_TYPE_CHECK = "false"
+  ENABLE_SELF_HEALING = "true"
+  AUTO_FIX_BUILD_ISSUES = "true"
+  BUILD_MONITORING = "true"
+
+[[plugins]]
+  package = "@netlify/plugin-nextjs"
+
+[[plugins]]
+  package = "netlify-plugin-cloudinary"
 
 [functions]
   directory = "netlify/functions"
