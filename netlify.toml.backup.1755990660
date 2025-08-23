@@ -259,6 +259,22 @@
   schedule = "*/15 * * * *" # every 15 minutes
 
 [[scheduled.functions]]
+<<<<<<< HEAD
+  name = "seo-audit-runner"
+  schedule = "17 */12 * * *"
+
+[[scheduled.functions]]
+  name = "ai-trends-radar-runner"
+  schedule = "29 */6 * * *"
+
+[[scheduled.functions]]
+  name = "front-index-directory-builder"
+  schedule = "*/7 * * * *"
+
+[[scheduled.functions]]
+  name = "revenue-ideas-promoter"
+  schedule = "41 */4 * * *"
+=======
   name = "ui-audit-runner"
   schedule = "7 */12 * * *" # twice per day staggered
 
@@ -269,3 +285,4 @@
 [[scheduled.functions]]
   name = "content-curation-lab"
   schedule = "*/20 * * * *" # every 20 minutes
+>>>>>>> origin/cursor/invent-and-deploy-autonomous-cloud-automations-bf45

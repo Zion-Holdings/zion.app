@@ -1,5 +1,9 @@
 {
+<<<<<<< HEAD
+  "generatedAt": "2025-08-11T23:25:10.466Z",
+=======
   "generatedAt": "2025-08-11T23:27:10.408Z",
+>>>>>>> origin/cursor/invent-and-deploy-autonomous-cloud-automations-bf45
   "functions": [
     "a11y-alt-text-runner",
     "adaptive-orchestrator",
@@ -16,7 +20,11 @@
     "canonical-auditor",
     "cloud-swarm-committer",
     "cloud_orchestrator",
+<<<<<<< HEAD
+    "continuous-cloud-refiner",
+=======
     "content-curation-lab",
+>>>>>>> origin/cursor/invent-and-deploy-autonomous-cloud-automations-bf45
     "continuous-front-runner",
     "continuous-orchestrator",
     "contributing-refresher",
@@ -76,7 +84,11 @@
     "repo-knowledge-graph-runner",
     "repo-radar-and-graph",
     "repo-radar-runner",
+<<<<<<< HEAD
+    "revenue-ideas-promoter",
+=======
     "roadmap-curator",
+>>>>>>> origin/cursor/invent-and-deploy-autonomous-cloud-automations-bf45
     "schedule-content-index",
     "schedule-homepage",
     "schedule-knowledge-graph",
@@ -96,7 +108,11 @@
     "topic-cluster-builder-runner",
     "topics-map-runner",
     "trigger-all-and-commit",
+<<<<<<< HEAD
+    "type-health-monitor",
+=======
     "ui-audit-runner",
+>>>>>>> origin/cursor/invent-and-deploy-autonomous-cloud-automations-bf45
     "ui-enhancer",
     "ui-evolution-beautify",
     "ultrafast-front-orchestrator",
