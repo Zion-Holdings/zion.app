@@ -3,9 +3,11 @@ import { Routes, Route } from 'react-router-dom';
 import './App.css';
 import { ThemeProvider } from "./components/ThemeProvider";
 import { WhitelabelProvider } from "./context/WhitelabelContext";
+import { ConsentProvider } from "./context/ConsentContext";
 import { Toaster } from "./components/ui/toaster";
 import { Toaster as SonnerToaster } from "./components/ui/sonner";
-import InstallPrompt from "./components/InstallPrompt";
+import PwaInstallButton from "./components/PwaInstallButton";
+import { CookieBanner } from "./components/CookieBanner";
 import {
   AuthRoutes,
   DashboardRoutes,
@@ -45,6 +47,10 @@ import OpenAppRedirect from './pages/OpenAppRedirect';
 import ContactPage from './pages/Contact';
 import ZionHireAI from './pages/ZionHireAI';
 import RequestQuotePage from './pages/RequestQuote';
+import WishlistPage from './pages/Wishlist';
+import CartPage from './pages/Cart';
+import Checkout from './pages/Checkout';
+import PrivacySettings from './pages/PrivacySettings';
 
 const baseRoutes = [
   { path: '/', element: <Home /> },
@@ -65,13 +71,26 @@ const baseRoutes = [
   { path: '/open-app', element: <OpenAppRedirect /> },
   { path: '/community', element: <CommunityPage /> },
   { path: '/contact', element: <ContactPage /> },
+  { path: '/partners', element: <PartnersPage /> },
+  { path: '/sitemap', element: <Sitemap /> },
+  { path: '/zion-hire-ai', element: <ZionHireAI /> },
+  { path: '/hire-ai', element: <ZionHireAI /> },
+  { path: '/request-quote', element: <RequestQuotePage /> },
+  { path: '/blog', element: <Blog /> },
+  { path: '/blog/:slug', element: <BlogPost /> },
+  { path: '/wishlist', element: <WishlistPage /> },
+  { path: '/cart', element: <CartPage /> },
+  { path: '/checkout', element: <Checkout /> },
+  { path: '/privacy-settings', element: <PrivacySettings /> },
 ];
 
 const App = () => {
   return (
     <WhitelabelProvider>
-      <ThemeProvider>
-        <Suspense fallback={<div className="p-4 text-center">Loading...</div>}>
+      <ConsentProvider>
+        <ThemeProvider defaultTheme="dark">
+          <Suspense fallback={<div className="p-4 text-center">Loading...</div>}>
+          <ErrorBoundary>
           <Routes>
             {baseRoutes.map(({ path, element }) => (
               <Route key={path} path={path} element={element} />
@@ -92,8 +111,10 @@ const App = () => {
         </Suspense>
         <Toaster />
         <SonnerToaster position="top-right" />
-        <InstallPrompt />
-      </ThemeProvider>
+          <CookieBanner />
+          <PwaInstallButton />
+        </ThemeProvider>
+      </ConsentProvider>
     </WhitelabelProvider>
   );
 };
