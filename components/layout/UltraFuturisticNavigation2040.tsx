@@ -2,10 +2,16 @@ import React, { useState, useEffect, useRef, useCallback } from 'react';
 import Link from 'next/link';
 import { motion, AnimatePresence } from 'framer-motion';
 import { 
-  Menu, X, Search, ChevronDown, Zap, Globe, Lock, 
-  Phone, ArrowRight, Star, Users, Bell, User
+  Menu, ChevronDown, X, Phone, Mail, ArrowRight,
+  Brain, Rocket, Target, Atom, Shield,
+  BarChart3, Star, 
+  Grid, TrendingUp, 
+  GraduationCap,
+  Cpu, Cloud, Monitor, Network, Heart, ShoppingCart, MessageCircle, HelpCircle, Building,
+  Zap, Heart as HeartIcon, Code as CodeIcon, Palette as PaletteIcon,
+  BookOpen, FileText, Handshake, Sun, Moon
 } from 'lucide-react';
-import ThemeToggle from '../ThemeToggle';
+import EnhancedSearch from '../EnhancedSearch';
 
 interface NavigationItem {
   label: string;
@@ -362,13 +368,7 @@ const UltraFuturisticNavigation2040: React.FC<UltraFuturisticNavigation2040Props
   const [isOpen, setIsOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
   const [isScrolled, setIsScrolled] = useState(false);
-  const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
-  const [searchQuery, setSearchQuery] = useState('');
-  const [searchResults, setSearchResults] = useState<NavigationItem[]>([]);
-  
-  const mobileMenuRef = useRef<HTMLDivElement>(null);
-  const searchRef = useRef<HTMLDivElement>(null);
-  const dropdownRefs = useRef<{ [key: string]: HTMLDivElement | null }>({});
+  const [isDarkMode, setIsDarkMode] = useState(true);
 
   // Handle scroll effect with throttling for better performance
   useEffect(() => {
@@ -388,61 +388,25 @@ const UltraFuturisticNavigation2040: React.FC<UltraFuturisticNavigation2040Props
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // Handle search functionality
+  // Dark mode effect
   useEffect(() => {
-    const handleClickOutside = (event: MouseEvent) => {
-      if (searchRef.current && !searchRef.current.contains(event.target as Node)) {
-        setIsSearchOpen(false);
-      }
-    };
-
-    document.addEventListener('mousedown', handleClickOutside);
-    return () => document.removeEventListener('mousedown', handleClickOutside);
+    const savedMode = localStorage.getItem('dark-mode');
+    if (savedMode !== null) {
+      setIsDarkMode(savedMode === 'true');
+    }
   }, []);
 
-  // Handle keyboard shortcuts
   useEffect(() => {
-    const handleKeyDown = (event: KeyboardEvent) => {
-      // Ctrl/Cmd + K for search
-      if ((event.ctrlKey || event.metaKey) && event.key === 'k') {
-        event.preventDefault();
-        setIsSearchOpen(true);
-        setTimeout(() => searchInputRef.current?.focus(), 100);
-      }
-      
-      // Escape to close search
-      if (event.key === 'Escape' && isSearchOpen) {
-        setIsSearchOpen(false);
-      }
-    };
-
-    document.addEventListener('keydown', handleKeyDown);
-    return () => document.removeEventListener('keydown', handleKeyDown);
-  }, [isSearchOpen]);
-
-  // Search functionality
-  const handleSearch = (query: string) => {
-    setSearchQuery(query);
-    if (query.length < 2) {
-      setSearchResults([]);
-      return;
+    localStorage.setItem('dark-mode', isDarkMode.toString());
+    if (isDarkMode) {
+      document.documentElement.classList.add('dark');
+    } else {
+      document.documentElement.classList.remove('dark');
     }
+  }, [isDarkMode]);
 
-    const results: NavigationItem[] = [];
-    const searchInItems = (items: NavigationItem[]) => {
-      items.forEach(item => {
-        if (item.label.toLowerCase().includes(query.toLowerCase()) ||
-            item.description?.toLowerCase().includes(query.toLowerCase())) {
-          results.push(item);
-        }
-        if (item.children) {
-          searchInItems(item.children);
-        }
-      });
-    };
-
-    searchInItems(navigationItems);
-    setSearchResults(results.slice(0, 8)); // Limit results
+  const toggleDropdown = (name: string) => {
+    setActiveDropdown(activeDropdown === name ? null : name);
   };
 
   const handleSearchResultClick = (item: NavigationItem) => {
@@ -568,7 +532,21 @@ const UltraFuturisticNavigation2040: React.FC<UltraFuturisticNavigation2040Props
             ))}
           </div>
 
-          {/* Right Side Actions */}
+          {/* Search and Dark Mode */}
+          <div className="hidden lg:flex items-center space-x-4">
+            <EnhancedSearch />
+            
+            {/* Dark Mode Toggle */}
+            <button
+              onClick={() => setIsDarkMode(!isDarkMode)}
+              className="p-3 text-gray-300 hover:text-cyan-400 transition-colors duration-200 rounded-xl hover:bg-white/5"
+              aria-label="Toggle dark mode"
+            >
+              {isDarkMode ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
+            </button>
+          </div>
+
+          {/* CTA Buttons */}
           <div className="hidden lg:flex items-center space-x-4">
             <ThemeToggle />
             <button className="p-2 text-gray-400 hover:text-white transition-colors">

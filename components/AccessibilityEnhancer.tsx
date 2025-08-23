@@ -32,11 +32,14 @@ const AccessibilityEnhancer: React.FC<AccessibilityEnhancerProps> = ({
         });
       }
     }
+  }, [applySettings]);
 
-    // Toggle high contrast
-    if (event.key === 'c' && event.altKey) {
-      event.preventDefault();
-      setIsHighContrast(!isHighContrast);
+  // Focus management
+  const handleFocusChange = useCallback((e: globalThis.FocusEvent) => {
+    const target = e.target as HTMLElement;
+    if (target) {
+      setCurrentFocus(target);
+      announceToScreenReader(`Focused on ${target.textContent || target.tagName.toLowerCase()}`);
     }
 
     // Toggle large text
