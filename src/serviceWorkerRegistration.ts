@@ -1,8 +1,5 @@
 export function registerServiceWorker() {
-  if (
-    'serviceWorker' in navigator &&
-    !(navigator as Navigator & { connection?: { saveData?: boolean } }).connection?.saveData
-  ) {
+  if ('serviceWorker' in navigator) {
     window.addEventListener('load', () => {
       navigator.serviceWorker.register('/service-worker.js');
     });

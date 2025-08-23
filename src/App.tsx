@@ -6,8 +6,7 @@ import { WhitelabelProvider } from "./context/WhitelabelContext";
 import { ConsentProvider } from "./context/ConsentContext";
 import { Toaster } from "./components/ui/toaster";
 import { Toaster as SonnerToaster } from "./components/ui/sonner";
-import PwaInstallButton from "./components/PwaInstallButton";
-import { CookieBanner } from "./components/CookieBanner";
+import InstallPrompt from "./components/InstallPrompt";
 import {
   AuthRoutes,
   DashboardRoutes,
@@ -105,10 +104,8 @@ const App = () => {
         </Suspense>
         <Toaster />
         <SonnerToaster position="top-right" />
-          <CookieBanner />
-          <PwaInstallButton />
-        </ThemeProvider>
-      </ConsentProvider>
+        <InstallPrompt />
+      </ThemeProvider>
     </WhitelabelProvider>
   );
 };
