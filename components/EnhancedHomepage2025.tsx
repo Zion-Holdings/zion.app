@@ -17,7 +17,6 @@ import { cuttingEdgeInnovativeServices2025 } from '../data/2025-cutting-edge-inn
 
 // Lazy load heavy components for better performance
 const LazyServiceCard = lazy(() => import('./ui/UltraFuturisticServiceCard2026'));
-const LazyServiceCardErrorBoundary = lazy(() => import('./ui/ServiceCardErrorBoundary'));
 
 
 
@@ -442,9 +441,7 @@ const EnhancedHomepage2025: React.FC = () => {
                       <div className="h-4 bg-gray-700 rounded w-3/4"></div>
                     </div>
                   }>
-                    <LazyServiceCardErrorBoundary>
-                      <LazyServiceCard service={service} />
-                    </LazyServiceCardErrorBoundary>
+                    <LazyServiceCard service={service} />
                   </Suspense>
                 </motion.div>
               ))}

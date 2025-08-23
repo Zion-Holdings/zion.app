@@ -26,7 +26,6 @@ interface UltraFuturisticServiceCard2026Props {
 const UltraFuturisticServiceCard2026: React.FC<UltraFuturisticServiceCard2026Props> = ({
   service,
   variant = 'default',
-  theme = 'quantum',
   className = '',
   onClick
 }) => {
@@ -40,7 +39,9 @@ const UltraFuturisticServiceCard2026: React.FC<UltraFuturisticServiceCard2026Pro
         container: 'border-cyan-400/50 bg-gradient-to-br from-cyan-900/20 to-blue-900/20',
         icon: <Crown className="w-5 h-5 text-yellow-400" />,
         badge: 'bg-gradient-to-r from-yellow-400 to-orange-500 text-black',
-        button: 'bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-600 hover:to-blue-700'
+        button: 'bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-600 hover:to-blue-700',
+        text: 'text-cyan-50',
+        accent: 'bg-cyan-400'
       };
     }
     
@@ -49,7 +50,9 @@ const UltraFuturisticServiceCard2026: React.FC<UltraFuturisticServiceCard2026Pro
         container: 'border-purple-400/50 bg-gradient-to-br from-purple-900/20 to-pink-900/20',
         icon: <Building className="w-5 h-5 text-purple-400" />,
         badge: 'bg-gradient-to-r from-purple-500 to-pink-600',
-        button: 'bg-gradient-to-r from-purple-500 to-pink-600 hover:from-purple-600 hover:to-pink-700'
+        button: 'bg-gradient-to-r from-purple-500 to-pink-600 hover:from-purple-600 hover:to-pink-700',
+        text: 'text-purple-50',
+        accent: 'bg-purple-400'
       };
     }
     
@@ -58,7 +61,9 @@ const UltraFuturisticServiceCard2026: React.FC<UltraFuturisticServiceCard2026Pro
       container: 'border-gray-600/50 bg-gradient-to-br from-gray-800/20 to-gray-700/20',
       icon: <Rocket className="w-5 h-5 text-cyan-400" />,
       badge: 'bg-gradient-to-r from-cyan-500 to-blue-600',
-      button: 'bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-600 hover:to-blue-700'
+      button: 'bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-600 hover:to-blue-700',
+      text: 'text-gray-50',
+      accent: 'bg-cyan-400'
     };
   }, [variant]);
 

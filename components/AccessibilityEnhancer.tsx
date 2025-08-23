@@ -18,10 +18,16 @@ interface AccessibilitySettings {
   lineHeight: number;
   letterSpacing: number;
   wordSpacing: number;
+  colorBlindFriendly: boolean;
+  focusIndicators: boolean;
+  keyboardNavigation: boolean;
+  screenReaderSupport: boolean;
+  deviceOptimization: string;
+  theme: string;
 }
 
 interface AccessibilityEnhancerProps {
-  children: React.ReactNode;
+  children?: React.ReactNode;
 }
 
 const AccessibilityEnhancer: React.FC<AccessibilityEnhancerProps> = ({ children }) => {
@@ -34,7 +40,13 @@ const AccessibilityEnhancer: React.FC<AccessibilityEnhancerProps> = ({ children 
     fontSize: 16,
     lineHeight: 1.5,
     letterSpacing: 0,
-    wordSpacing: 0
+    wordSpacing: 0,
+    colorBlindFriendly: false,
+    focusIndicators: true,
+    keyboardNavigation: true,
+    screenReaderSupport: true,
+    deviceOptimization: 'auto',
+    theme: 'auto'
   });
   
   const [isVisible, setIsVisible] = useState(false);
@@ -52,8 +64,8 @@ const AccessibilityEnhancer: React.FC<AccessibilityEnhancerProps> = ({ children 
         const parsed = JSON.parse(savedSettings);
         setSettings(prev => ({ ...prev, ...parsed }));
         applySettings({ ...settings, ...parsed });
-      } catch (error) {
-        console.warn('Failed to parse saved accessibility settings');
+      } catch {
+        // Silently handle parsing errors
       }
     }
   }, []);
@@ -171,15 +183,10 @@ const AccessibilityEnhancer: React.FC<AccessibilityEnhancerProps> = ({ children 
 
   // Track focus for better accessibility
   useEffect(() => {
-    const handleFocusChange = (event: React.FocusEvent) => {
+    const handleFocusChange = (event: globalThis.FocusEvent) => {
       const target = event.target as HTMLElement;
       if (target && target !== currentFocus) {
         setCurrentFocus(target);
-        
-        // Announce focus changes for screen readers
-        if (target.getAttribute('aria-label')) {
-          announceToScreenReader(target.getAttribute('aria-label') || '');
-        }
       }
     };
 
