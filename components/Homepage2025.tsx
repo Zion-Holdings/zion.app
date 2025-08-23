@@ -304,15 +304,24 @@ const Homepage2025: React.FC = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}
               viewport={{ once: true }}
-              className="text-center mt-16"
+              className="text-center mt-16 space-y-4"
             >
               <Link
-                href="/services"
+                href="/comprehensive-2026-services-showcase"
                 className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-purple-500 to-pink-600 text-white font-semibold rounded-xl hover:from-purple-600 hover:to-pink-700 transition-all duration-300 transform hover:scale-105"
               >
-                View All Services
+                View 2026 Services Showcase
                 <ArrowRight className="ml-2 w-5 h-5" />
               </Link>
+              <div>
+                <Link
+                  href="/services"
+                  className="inline-flex items-center px-6 py-3 text-purple-400 hover:text-purple-300 transition-colors"
+                >
+                  View All Services
+                  <ArrowRight className="ml-2 w-4 h-4" />
+                </Link>
+              </div>
             </motion.div>
           </div>
         </section>
