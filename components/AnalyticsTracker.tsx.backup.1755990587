@@ -189,6 +189,37 @@ interface LayoutShiftSource {
   previousRect?: DOMRectReadOnly;
 }
 
+<<<<<<< HEAD
+// DOM type definitions
+declare global {
+  interface EventListener {
+    (event: Event): void;
+  }
+  
+  interface EventTarget {
+    addEventListener(type: string, listener: EventListener): void;
+    removeEventListener(type: string, listener: EventListener): void;
+    dispatchEvent(event: Event): boolean;
+  }
+  
+  var EventTarget: {
+    prototype: EventTarget;
+    new(): EventTarget;
+  };
+}
+
+// Extend Window interface for gtag
+declare global {
+  interface Window {
+    gtag?: (
+      command: string,
+      action: string,
+      params?: Record<string, unknown>
+    ) => void;
+  }
+}
+=======
 // gtag is already declared in PerformanceOptimizer.tsx
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-4035
 
 export default AnalyticsTracker;

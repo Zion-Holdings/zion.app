@@ -8,7 +8,7 @@ import {
 } from 'lucide-react';
 
 // Import all service data
-import { innovative2036MicroSaasServices } from '../data/innovative-2036-micro-saas-services';
+import { innovativeMicroSaasServices2036 } from '../data/innovative-2036-micro-saas-services';
 import { innovative2036ITServices } from '../data/innovative-2036-it-services';
 import { newlyAddedServices } from '../data/newly-added-services';
 import { realMicroSaasServices } from '../data/real-micro-saas-services';
@@ -25,7 +25,7 @@ const contactInfo = {
 
 // Create unified services array
 const allServices = [
-  ...innovative2036MicroSaasServices,
+  ...innovativeMicroSaasServices2036,
   ...innovative2036ITServices,
   ...newlyAddedServices,
   ...realMicroSaasServices,

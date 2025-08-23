@@ -14,9 +14,13 @@ import {
   MessageCircle,
   Calculator,
   Play,
+<<<<<<< HEAD
+  Sparkles
+=======
   DollarSign,
   Shield,
   Zap
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-4035
 } from 'lucide-react';
 import Link from 'next/link';
 
@@ -133,6 +137,23 @@ const navigationItems: NavigationItem[] = [
         icon: <Play className="w-4 h-4" />
       },
       { 
+<<<<<<< HEAD
+        name: 'AI Consciousness', 
+        href: '/ai-consciousness-evolution', 
+        description: 'Revolutionary AI consciousness',
+        icon: <Play className="w-4 h-4" />
+      },
+      { 
+        name: 'Quantum Security', 
+        href: '/quantum-internet-security', 
+        description: 'Quantum-secured communications',
+        icon: <Play className="w-4 h-4" />
+      },
+      { 
+        name: 'Brain-Computer Interface', 
+        href: '/brain-computer-interface', 
+        description: 'Neural interface technology',
+=======
         name: 'Cybersecurity', 
         href: '/cybersecurity', 
         description: 'Advanced security solutions',
@@ -148,6 +169,7 @@ const navigationItems: NavigationItem[] = [
         name: 'Specialized Solutions', 
         href: '/solutions', 
         description: 'Industry-specific solutions',
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-4035
         icon: <Play className="w-4 h-4" />
       }
     ]
@@ -198,6 +220,13 @@ const navigationItems: NavigationItem[] = [
         description: 'Service pricing information',
         icon: <Play className="w-4 h-4" />
       },
+<<<<<<< HEAD
+      {
+        name: 'Enterprise Solutions',
+        href: '/enterprise-solutions-showcase',
+        description: 'Large-scale deployments',
+        icon: <Globe className="w-4 h-4" />
+=======
       { 
         name: '2026 Pricing', 
         href: '/pricing-2036', 
@@ -210,6 +239,7 @@ const navigationItems: NavigationItem[] = [
         href: '/market-pricing', 
         description: 'Market price references',
         icon: <Play className="w-4 h-4" />
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-4035
       }
     ]
   },
@@ -321,12 +351,16 @@ const navigationItems: NavigationItem[] = [
   }
 ];
 
+<<<<<<< HEAD
+const UltraFuturisticNavigation2036: React.FC = () => {
+=======
 interface UltraFuturisticNavigation2036Props {
   onMenuToggle: () => void;
   'aria-expanded': boolean;
 }
 
 export default function UltraFuturisticNavigation2036({ onMenuToggle, 'aria-expanded': ariaExpanded }: UltraFuturisticNavigation2036Props) {
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-4035
   const [isOpen, setIsOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
   const [isScrolled, setIsScrolled] = useState(false);
@@ -369,6 +403,26 @@ export default function UltraFuturisticNavigation2036({ onMenuToggle, 'aria-expa
   };
 
   return (
+<<<<<<< HEAD
+    <nav 
+      ref={navRef}
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        isScrolled 
+          ? 'bg-black/90 backdrop-blur-md border-b border-white/10' 
+          : 'bg-transparent'
+      }`}
+      role="navigation"
+      aria-label="Main navigation"
+    >
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex justify-between items-center h-16 lg:h-20">
+          {/* Logo */}
+          <div className="flex-shrink-0">
+            <Link 
+              href="/" 
+              className="flex items-center space-x-2 group"
+              aria-label="Zion Tech Group - Home"
+=======
     <>
       {/* Mobile Menu Overlay */}
       <AnimatePresence>
@@ -580,6 +634,7 @@ export default function UltraFuturisticNavigation2036({ onMenuToggle, 'aria-expa
               animate={{ opacity: 1, height: 'auto' }}
               exit={{ opacity: 0, height: 0 }}
               className="bg-black/95 border-b border-white/10 overflow-hidden"
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-4035
             >
               <div className="w-10 h-10 bg-gradient-to-r from-cyan-500 to-purple-600 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform">
                 <span className="text-white font-bold text-lg">Z</span>

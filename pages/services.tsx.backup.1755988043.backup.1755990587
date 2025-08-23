@@ -136,8 +136,19 @@ const allServices = [
   ...validatedServices2025Q4,
   ...real2035Q2Additions,
   ...real2036ServiceExpansions,
+<<<<<<< HEAD:pages/services.tsx.backup.1755988043
+  ...innovative2036MicroSaasServices,
+  ...innovative2036ITServices,
+  ...innovative2037MicroSaasServices,
+  ...innovative2037ITServices,
+  ...innovative2037AIServices,
+  ...innovative2038MicroSaasServices,
+  ...innovative2038ITServices,
+  ...innovative2038AIServices
+=======
   ...innovativeMicroSaasServices2036,
   ...innovative2036ITServices
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-4035:pages/services.tsx
 ];
 
 const categories = [
