@@ -4,11 +4,18 @@ export default function Home() {
   return (
     <ErrorBoundary>
       <SEOOptimizer />
+<<<<<<< HEAD
+      <Analytics />
+      <AccessibilityEnhancer />
+      <MobileOptimizer showDebugInfo={false}>
+        <Homepage2043 />
+=======
       <AnalyticsTracker />
       <PerformanceOptimizer />
       <AccessibilityEnhancer />
       <MobileOptimizer showDebugInfo={false}>
         <Homepage2025 />
+>>>>>>> origin/cursor/add-and-advertise-new-services-then-build-e1f5
         <PerformanceMonitor showUI={true} />
       </MobileOptimizer>
     </ErrorBoundary>
