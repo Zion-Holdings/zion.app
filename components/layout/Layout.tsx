@@ -1,86 +1,218 @@
 import React, { useState, useEffect } from 'react';
-import UltraFuturisticNavigation2025 from './UltraFuturisticNavigation2025';
-import UltraFuturisticFooter2025 from './UltraFuturisticFooter2025';
+import Head from 'next/head';
+import UltraFuturisticNavigation2045 from './UltraFuturisticNavigation2045';
+import UltraFuturisticFooter2045 from './UltraFuturisticFooter2045';
 import EnhancedSidebar2025 from './EnhancedSidebar2025';
-import UltraFuturisticBackground2036 from '../backgrounds/UltraFuturisticBackground2036';
+import UltraFuturisticBackground2045 from '../backgrounds/UltraFuturisticBackground2045';
+import TopContactBar from './TopContactBar';
 import PerformanceMonitor from '../PerformanceMonitor';
-import AccessibilityEnhancer from '../AccessibilityEnhancer';
+import AccessibilityEnhancer from '../EnhancedAccessibilityEnhancer';
 import CookieConsentBanner from '../CookieConsentBanner';
 import EnhancedErrorBoundary from '../EnhancedErrorBoundary';
 
 interface LayoutProps {
   children: React.ReactNode;
+  title?: string;
+  description?: string;
+  keywords?: string;
+  ogImage?: string;
+  canonicalUrl?: string;
 }
 
-export default function Layout({ children }: LayoutProps) {
+export default function Layout({ 
+  children, 
+  title = "Zion Tech Group - Revolutionary 2045 Technology",
+  description = "Pioneering the future of technology with revolutionary AI consciousness, quantum computing, and autonomous solutions that transform businesses worldwide.",
+  keywords = "AI consciousness, quantum computing, autonomous solutions, space technology, cybersecurity, business intelligence, Zion Tech Group, 2045 technology",
+  ogImage = "/og-image.jpg",
+  canonicalUrl
+}: LayoutProps) {
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const [isOnline, setIsOnline] = useState(true);
-  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    // Handle online/offline status
-    const handleOnline = () => setIsOnline(true);
-    const handleOffline = () => setIsOnline(false);
+    // Check online status
+    const updateOnlineStatus = () => {
+      setIsOnline(navigator.onLine);
+    };
 
-    window.addEventListener('online', handleOnline);
-    window.addEventListener('offline', handleOffline);
+    window.addEventListener('online', updateOnlineStatus);
+    window.addEventListener('offline', updateOnlineStatus);
+    updateOnlineStatus();
 
-    // Simulate initial loading
-    const timer = setTimeout(() => {
-      setIsLoading(false);
-    }, 100);
+    // Register service worker
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('/sw.js')
+        .then((registration) => {
+          // Check for updates
+          registration.addEventListener('updatefound', () => {
+            const newWorker = registration.installing;
+            if (newWorker) {
+              newWorker.addEventListener('statechange', () => {
+                if (newWorker.state === 'installed' && navigator.serviceWorker.controller) {
+                  // New version available
+                  if (typeof window !== 'undefined' && window.confirm) {
+                    if (window.confirm('A new version is available! Would you like to update?')) {
+                      newWorker.postMessage({ type: 'SKIP_WAITING' });
+                      window.location.reload();
+                    }
+                  }
+                }
+              });
+            }
+          });
+        })
+        .catch((error) => {
+          // Silently handle service worker registration errors
+          // eslint-disable-next-line no-console
+          console.error('Service Worker registration failed:', error);
+        });
+    }
 
     return () => {
-      window.removeEventListener('online', handleOnline);
-      window.removeEventListener('offline', handleOffline);
-      clearTimeout(timer);
+      window.removeEventListener('online', updateOnlineStatus);
+      window.removeEventListener('offline', updateOnlineStatus);
     };
   }, []);
 
-  // Show offline indicator
-  if (!isOnline) {
-    return (
-      <div className="min-h-screen bg-black text-white flex items-center justify-center">
-        <div className="text-center space-y-4">
-          <div className="w-16 h-16 mx-auto bg-red-500 rounded-full flex items-center justify-center">
-            <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4c-.77-.833-1.964-.833-2.732 0L3.732 16.5c-.77.833.192 2.5 1.732 2.5z" />
-            </svg>
-          </div>
-          <h1 className="text-2xl font-bold">You're Offline</h1>
-          <p className="text-white/70">Please check your internet connection and try again.</p>
-        </div>
-      </div>
-    );
-  }
-
   return (
-    <EnhancedErrorBoundary>
+    <>
+      <Head>
+        <title>{title}</title>
+        <meta name="description" content={description} />
+        <meta name="keywords" content={keywords} />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta charSet="utf-8" />
+        <meta name="robots" content="index, follow" />
+        <meta name="author" content="Zion Tech Group" />
+        <meta name="theme-color" content="#06b6d4" />
+        
+        {/* Canonical URL */}
+        {canonicalUrl && <link rel="canonical" href={canonicalUrl} />}
+        
+        {/* PWA Manifest */}
+        <link rel="manifest" href="/manifest.json" />
+        <meta name="msapplication-TileColor" content="#06b6d4" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+        <meta name="apple-mobile-web-app-title" content="Zion Tech Group" />
+        
+        {/* Favicons */}
+        <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+        
+        {/* Open Graph Meta Tags */}
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content={title} />
+        <meta property="og:description" content={description} />
+        <meta property="og:image" content={ogImage} />
+        <meta property="og:url" content={canonicalUrl || "https://ziontechgroup.com"} />
+        <meta property="og:site_name" content="Zion Tech Group" />
+        <meta property="og:locale" content="en_US" />
+        
+        {/* Twitter Card Meta Tags */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={title} />
+        <meta name="twitter:description" content={description} />
+        <meta name="twitter:image" content={ogImage} />
+        <meta name="twitter:site" content="@ziontechgroup" />
+        
+        {/* Additional SEO Meta Tags */}
+        <meta name="application-name" content="Zion Tech Group" />
+        <meta name="mobile-web-app-capable" content="yes" />
+        <meta name="format-detection" content="telephone=no" />
+        
+        {/* Preload Critical Resources */}
+        <link rel="preload" href="/fonts/inter-var.woff2" as="font" type="font/woff2" crossOrigin="anonymous" />
+        <link rel="preload" href="/_next/static/css/app.css" as="style" />
+        
+        {/* DNS Prefetch */}
+        <link rel="dns-prefetch" href="//fonts.googleapis.com" />
+        <link rel="dns-prefetch" href="//cdn.jsdelivr.net" />
+        
+        {/* Security Headers */}
+        <meta httpEquiv="X-Content-Type-Options" content="nosniff" />
+        <meta httpEquiv="X-Frame-Options" content="DENY" />
+        <meta httpEquiv="X-XSS-Protection" content="1; mode=block" />
+        <meta httpEquiv="Referrer-Policy" content="strict-origin-when-cross-origin" />
+        
+        {/* Structured Data */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Organization",
+              "name": "Zion Tech Group",
+              "url": "https://ziontechgroup.com",
+              "logo": "https://ziontechgroup.com/logo.png",
+              "description": description,
+              "foundingDate": "2024",
+              "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "364 E Main St STE 1008",
+                "addressLocality": "Middletown",
+                "addressRegion": "DE",
+                "postalCode": "19709",
+                "addressCountry": "US"
+              },
+              "contactPoint": {
+                "@type": "ContactPoint",
+                "telephone": "+1-302-464-0950",
+                "contactType": "customer service",
+                "email": "kleber@ziontechgroup.com"
+              },
+              "sameAs": [
+                "https://github.com/Zion-Holdings",
+                "https://linkedin.com/company/zion-tech-group"
+              ],
+              "hasOfferCatalog": {
+                "@type": "OfferCatalog",
+                "name": "Technology Services",
+                "itemListElement": [
+                  {
+                    "@type": "Offer",
+                    "itemOffered": {
+                      "@type": "Service",
+                      "name": "AI Consciousness Evolution 2045",
+                      "description": "Next-generation AI consciousness with emotional intelligence"
+                    }
+                  }
+                ]
+              }
+            })
+          }}
+        />
+      </Head>
+
       <div className="min-h-screen bg-black text-white relative overflow-x-hidden">
         {/* Skip to content link for accessibility */}
-        <a 
-          href="#main" 
-          className="skip-link sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2 focus:bg-cyan-500 focus:text-white focus:rounded focus:outline-none"
-        >
+        <a href="#main" className="skip-link sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:bg-black focus:text-white focus:px-4 focus:py-2 focus:rounded">
           Skip to main content
         </a>
         
         {/* Online/Offline Status Indicator */}
-        <div className={`fixed top-4 right-4 z-50 px-3 py-1 rounded-full text-xs font-medium transition-all duration-300 ${
-          isOnline 
-            ? 'bg-green-500 text-white' 
-            : 'bg-red-500 text-white'
-        }`}>
-          {isOnline ? 'Online' : 'Offline'}
-        </div>
+        {!isOnline && (
+          <div className="fixed top-0 left-0 right-0 bg-red-600 text-white text-center py-2 z-50">
+            <span className="flex items-center justify-center gap-2">
+              <div className="w-2 h-2 bg-white rounded-full animate-pulse"></div>
+              You're currently offline. Some features may be limited.
+            </span>
+          </div>
+        )}
         
         {/* Futuristic Background */}
-        <UltraFuturisticBackground2036 />
+        <UltraFuturisticBackground2045 />
         
         {/* Layout Structure */}
         <div className="relative z-10">
+          {/* Top Contact Bar */}
+          <TopContactBar />
+          
           {/* Navigation */}
-          <UltraFuturisticNavigation2025 />
+          <UltraFuturisticNavigation2045 />
           
           {/* Sidebar and Main Content */}
           <div className="flex">
@@ -89,68 +221,51 @@ export default function Layout({ children }: LayoutProps) {
               onClose={() => setSidebarOpen(false)} 
             />
             
-            <main 
-              id="main" 
-              role="main" 
-              className="flex-1 pt-32 lg:pt-36"
-              aria-label="Main content"
-            >
-              {isLoading ? (
-                <div className="min-h-screen flex items-center justify-center">
-                  <div className="text-center space-y-4">
-                    <div className="w-16 h-16 mx-auto border-4 border-cyan-500 border-t-transparent rounded-full animate-spin"></div>
-                    <p className="text-white/70">Loading Zion Tech Group...</p>
-                  </div>
-                </div>
-              ) : (
-                children
-              )}
+            <main id="main" role="main" className="flex-1 pt-24 lg:pt-28">
+              {children}
             </main>
           </div>
           
           {/* Footer */}
-          <UltraFuturisticFooter2025 />
+          <UltraFuturisticFooter2045 />
         </div>
+      </div>
 
-        {/* Accessibility and Performance Tools */}
-        <AccessibilityEnhancer />
-        <PerformanceMonitor />
-        
-        {/* Cookie Consent Banner */}
-        <CookieConsentBanner />
-
-        {/* PWA Install Prompt */}
-        <div id="pwa-install-prompt" className="hidden fixed bottom-4 left-4 right-4 bg-gradient-to-r from-cyan-500 to-purple-600 text-white p-4 rounded-xl shadow-lg z-50">
-          <div className="flex items-center justify-between">
-            <div>
-              <h3 className="font-semibold">Install Zion Tech Group</h3>
-              <p className="text-sm opacity-90">Get the app for a better experience</p>
-            </div>
+      {/* Accessibility and Performance Tools */}
+      <AccessibilityEnhancer />
+      <PerformanceMonitor />
+      
+      {/* Cookie Consent Banner */}
+      <CookieConsentBanner />
+      
+      {/* Service Worker Update Notification */}
+      <div id="sw-update-notification" className="hidden fixed bottom-4 right-4 bg-cyan-600 text-white p-4 rounded-lg shadow-lg z-50 max-w-sm">
+        <div className="flex items-start gap-3">
+          <div className="flex-shrink-0">
+            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+          </div>
+          <div className="flex-1">
+            <h4 className="font-semibold mb-1">Update Available</h4>
+            <p className="text-sm text-cyan-100 mb-3">A new version of Zion Tech Group is available.</p>
             <div className="flex gap-2">
               <button 
-                id="pwa-install-accept"
-                className="px-4 py-2 bg-white text-cyan-600 rounded-lg font-medium hover:bg-gray-100 transition-colors"
+                onClick={() => window.location.reload()} 
+                className="bg-white text-cyan-600 px-3 py-1 rounded text-sm font-medium hover:bg-cyan-500 transition-colors"
               >
-                Install
+                Update Now
               </button>
               <button 
-                id="pwa-install-dismiss"
-                className="px-4 py-2 border border-white/30 text-white rounded-lg font-medium hover:bg-white/10 transition-colors"
+                onClick={() => document.getElementById('sw-update-notification')?.classList.add('hidden')} 
+                className="text-cyan-100 hover:text-white text-sm transition-colors"
               >
-                Dismiss
+                Later
               </button>
             </div>
           </div>
         </div>
-
-        {/* Performance Metrics Display (Development Only) */}
-        {process.env.NODE_ENV === 'development' && (
-          <div className="fixed bottom-4 right-4 bg-black/80 text-white p-3 rounded-lg text-xs font-mono z-50">
-            <div>FPS: <span id="fps-counter">--</span></div>
-            <div>Memory: <span id="memory-usage">--</span></div>
-          </div>
-        )}
       </div>
-    </EnhancedErrorBoundary>
+    </>
   );
 }

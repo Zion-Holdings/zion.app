@@ -13,6 +13,8 @@ import { advancedAIAutomationServices2025 } from '../data/2025-advanced-ai-autom
 import { innovativeITInfrastructureServices2025 } from '../data/2025-innovative-it-infrastructure-services';
 import { innovativeMicroSaasSolutions2025 } from '../data/2025-innovative-micro-saas-solutions';
 import { cuttingEdgeAIServices2025 } from '../data/2025-cutting-edge-ai-services';
+import { realEnterpriseMicroSaas2025 } from '../data/2025-real-enterprise-micro-saas';
+import { innovativeAIAutonomousServices2025 } from '../data/2025-innovative-ai-autonomous-services';
 
 // Import our new service data
 import { enterpriseITSolutions } from '../data/2034-enterprise-it-solutions';
@@ -108,6 +110,8 @@ const allServices = [
   ...innovativeITInfrastructureServices2025,
   ...innovativeMicroSaasSolutions2025,
   ...cuttingEdgeAIServices2025,
+  ...realEnterpriseMicroSaas2025,
+  ...innovativeAIAutonomousServices2025,
   
   ...enterpriseITSolutions,
   ...innovativeMicroSaasSolutions,
