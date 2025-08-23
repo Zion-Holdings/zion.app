@@ -7,7 +7,11 @@ import {
   Search, Grid, List,
   Brain, Atom, Shield, Target, Rocket,
   ArrowRight, Check, Palette, Heart, Truck, GraduationCap,
+<<<<<<< HEAD
+  Building
+=======
   Building, Cpu, Cloud, Zap
+>>>>>>> origin/cursor/expand-services-and-deploy-updates-95bb
 } from 'lucide-react';
 import Link from 'next/link';
 
@@ -186,12 +190,27 @@ const allServices = [
   ...innovative2040FuturisticServices,
   ...advancedEnterpriseServices,
   ...cuttingEdgeITInfrastructureServices,
+<<<<<<< HEAD
+  ...cuttingEdgeFuturisticServices,
+  ...advancedAIAutomationServices,
+  ...advancedITInfrastructureServices,
+  ...realMicroSaasServices,
+  ...innovativeAIServices,
+  ...enterpriseITServices,
+  ...emergingTechServices,
+  ...newRealServices,
+  ...realOperationalServices,
+  ...marketReadyServices,
+  ...marketValidatedServices,
+  ...industryRealServices
+=======
   
   // Our new 2025 enterprise automation services
   ...advancedEnterpriseAutomationServices2025,
   ...advancedAIMLEnterpriseServices2025,
   ...advancedCloudDevOpsServices2025,
   ...advancedFintechBlockchainServices2025
+>>>>>>> origin/cursor/expand-services-and-deploy-updates-95bb
 ];
 
 const categories = [

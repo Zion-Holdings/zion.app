@@ -106,6 +106,26 @@ const Homepage2025: React.FC = () => {
               </Link>
             </div>
               
+<<<<<<< HEAD
+            {/* Trust Indicators */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.4 }}
+              className="flex items-center justify-center space-x-6 text-sm text-gray-400"
+            >
+              <div className="flex items-center space-x-2">
+                <Shield className="w-4 h-4 text-green-400" />
+                <span>Enterprise Security</span>
+              </div>
+              <div className="flex items-center space-x-2">
+                <Globe className="w-4 h-4 text-blue-400" />
+                <span>Global Reach</span>
+              </div>
+              <div className="flex items-center space-x-2">
+                <TrendingUp className="w-4 h-4 text-purple-400" />
+                <span>Proven Results</span>
+=======
               {/* Enhanced CTA Section */}
               <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
                 <Link href="/get-started">
@@ -131,6 +151,7 @@ const Homepage2025: React.FC = () => {
                     Enterprise Services
                   </button>
                 </Link>
+>>>>>>> origin/cursor/expand-services-and-deploy-updates-95bb
               </div>
             </motion.div>
           </div>
