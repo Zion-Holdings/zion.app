@@ -219,6 +219,8 @@
 
 [[scheduled.functions]]
   name = "a11y-audit-runner"
+<<<<<<< HEAD
+=======
   schedule = "*/20 * * * *"
 
 [[scheduled.functions]]
@@ -273,6 +275,7 @@
 # Newly added autonomous scanners
 [[scheduled.functions]]
   name = "a11y-audit-runner"
+>>>>>>> origin/cursor/invent-and-deploy-autonomous-cloud-automations-dc1d
   schedule = "17 */6 * * *" # every 6 hours, offset to avoid thundering herd
 
 [[scheduled.functions]]
@@ -282,6 +285,12 @@
 [[scheduled.functions]]
   name = "secrets-leak-scanner-runner"
   schedule = "7 * * * *" # every hour
+<<<<<<< HEAD
+
+[[scheduled.functions]]
+  name = "todo-summary-runner"
+  schedule = "*/30 * * * *"
+=======
 
 [[scheduled.functions]]
   name = "ux-heuristics-runner"
@@ -295,6 +304,7 @@
 [[scheduled.functions]]
   name = "anchor-integrity-runner"
   schedule = "17 */6 * * *"
+>>>>>>> origin/cursor/invent-and-deploy-autonomous-cloud-automations-dc1d
 
 [[scheduled.functions]]
   name = "netlify-auto-healer-runner"
@@ -302,12 +312,17 @@
 
 # Intelligent cloud automations
 [[scheduled.functions]]
+<<<<<<< HEAD
+  name = "innovation-lab"
+  schedule = "*/10 * * * *"
+=======
   name = "innovation-lab-pro"
   schedule = "*/10 * * * *"
 
 [[scheduled.functions]]
   name = "auto-discovery-runner"
   schedule = "*/30 * * * *" # every 30 minutes
+>>>>>>> origin/cursor/invent-and-deploy-autonomous-cloud-automations-dc1d
 
 [[scheduled.functions]]
   name = "autonomous-invention-orchestrator"
@@ -331,6 +346,10 @@
   schedule = "0 * * * *"
 
 [[scheduled.functions]]
+<<<<<<< HEAD
+  name = "unused-exports-runner"
+  schedule = "7 3 * * *"
+=======
   name = "deps-auto-upgrade-runner"
   schedule = "7 */12 * * *"
 
@@ -345,3 +364,4 @@
 [[scheduled.functions]]
   name = "orphan-page-finder"
   schedule = "41 */6 * * *"
+>>>>>>> origin/cursor/invent-and-deploy-autonomous-cloud-automations-dc1d
