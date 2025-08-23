@@ -138,8 +138,17 @@ const Webinars: React.FC = () => {
   ];
 
   return (
+<<<<<<< HEAD
+    <Layout
+      title="Webinars - Zion Tech Group"
+      description="Join our expert-led webinars on AI consciousness, quantum computing, cybersecurity, and the future of technology."
+      keywords="webinars, AI consciousness, quantum computing, cybersecurity, space technology, Zion Tech Group"
+    >
+      <div className="min-h-screen bg-gradient-to-br from-gray-900 via-black to-gray-900 text-white">
+=======
     <Layout>
       <div className="min-h-screen bg-gray-900 text-white py-20">
+>>>>>>> origin/cursor/expand-services-and-deploy-updates-887a
         {/* Hero Section */}
         <section className="relative overflow-hidden py-20 lg:py-32">
           <div className="absolute inset-0 bg-gradient-to-r from-purple-900/20 via-blue-900/20 to-cyan-900/20" />
