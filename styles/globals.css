@@ -77,6 +77,20 @@
   --quantum-space-2029: 0 0 4000px rgba(0, 255, 255, 0.01);
 }
 
+/* Enhanced Animations */
+@keyframes spin-slow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-spin-slow {
+  animation: spin-slow 20s linear infinite;
+}
+
 /* Enhanced Scrollbar */
 ::-webkit-scrollbar {
   width: 12px;
