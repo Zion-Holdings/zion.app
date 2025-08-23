@@ -56,9 +56,15 @@ import { real2036ITServicesAdditions } from '../../data/real-2036-it-services-ad
 import { real2036AIServicesAdditions } from '../../data/real-2036-ai-services-additions';
 import { innovative2025MicroSaasBatch } from '../../data/innovative-2025-micro-saas-batch';
 import { innovative2025ITEnterpriseBatch } from '../../data/innovative-2025-it-enterprise-batch';
+<<<<<<< HEAD
+import { innovative2025AIServices } from '../../data/innovative-2025-ai-services-batch';
+import { innovative2025ITInfrastructureServices } from '../../data/innovative-2025-it-infrastructure-batch';
+import { innovative2025MicroSaasBatch2 } from '../../data/innovative-2025-micro-saas-batch-2';
+=======
 import { innovative2025Q4Services } from '../../data/innovative-2025-q4-services';
 import { emergingTech2025Services } from '../../data/emerging-tech-2025-services';
 import { specializedBusiness2025Services } from '../../data/specialized-business-2025-services';
+>>>>>>> origin/cursor/add-and-advertise-new-services-then-build-ec85
 
 function toSlug(value: string) {
   return value.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
@@ -74,6 +80,9 @@ const categories = [
   'Neuromorphic AI',
   'Edge Computing',
   'Cybersecurity',
+<<<<<<< HEAD
+  'Automation',
+=======
   'Supply Chain',
   'Financial Services',
   'Healthcare',
@@ -87,6 +96,7 @@ const categories = [
   'IoT & Edge Computing',
   'Enterprise Solutions',
   'Innovation & Research'
+>>>>>>> origin/cursor/add-and-advertise-new-services-then-build-ec85
 ];
 
 // Transform services data to match the expected Service interface
@@ -198,9 +208,27 @@ export default function ServicesIndexPage() {
     )
     .concat(innovative2025MicroSaasBatch as unknown[])
     .concat(innovative2025ITEnterpriseBatch as unknown[])
+<<<<<<< HEAD
+    .concat(innovativeMicroSaasServices as unknown[])
+    .concat(innovativeITServices as unknown[])
+    .concat(innovativeAIServices as unknown[])
+    // Our new 2025 advanced services
+    .concat(advanced2025MicroSaasExpansion as unknown[])
+    .concat(advanced2025ITSolutionsExpansion as unknown[])
+    .concat(advancedAIServicesExpansion2025 as unknown[])
+    // Our new 2025 innovative services
+    .concat(innovativeMicroSaasExpansion2025 as unknown[])
+    .concat(innovative2025ITSolutionsExpansion as unknown[])
+    .concat(innovative2025AISolutionsExpansion as unknown[])
+    // Our new 2025 advanced services V2
+    .concat(advancedMicroSaasExpansion2025V2 as unknown[])
+    .concat(advancedITInfrastructureExpansion2025V2 as unknown[])
+    .concat(advancedAIServicesExpansion2025V2 as unknown[]);
+=======
     .concat(innovative2025Q4Services as unknown[])
     .concat(emergingTech2025Services as unknown[])
     .concat(specializedBusiness2025Services as unknown[]);
+>>>>>>> origin/cursor/add-and-advertise-new-services-then-build-ec85
 
   // Transform services to match the expected format
   const transformedServices = all.map(transformServiceData);
