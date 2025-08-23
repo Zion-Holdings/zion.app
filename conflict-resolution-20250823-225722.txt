@@ -223,3 +223,5 @@
 2025-08-23 22:57:51 - Resolving conflicts in src/main.tsx for branch 5yaxyc-codex/implement-wishlist-functionality
 2025-08-23 22:57:51 - Resolving conflicts in src/pages/Wishlist.tsx for branch 5yaxyc-codex/implement-wishlist-functionality
 2025-08-23 22:57:51 - Resolving conflicts in src/store/wishlistSlice.ts for branch 5yaxyc-codex/implement-wishlist-functionality
+2025-08-23 22:57:52 - Merge conflicts detected in 63i3ty-codex/fix-talent-profile-rendering-issues
+2025-08-23 22:57:52 - Resolving conflicts in src/components/ErrorBoundary.tsx for branch 63i3ty-codex/fix-talent-profile-rendering-issues
