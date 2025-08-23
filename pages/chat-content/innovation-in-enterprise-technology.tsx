@@ -1,5 +1,3 @@
-import React from 'react';
-
-export default function InnovationInEnterpriseTechnologyPage() {
-  return <div>Innovation in Enterprise Technology</div>;
+export default function Page(){
+  return <div style={{padding:20}}>Content</div>
 }

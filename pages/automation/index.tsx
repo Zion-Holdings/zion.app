@@ -1,5 +1,3 @@
-import React from 'react';
-
-export default function AutomationIndexPage() {
-  return <div>Automation Overview</div>;
+export default function Automation(){
+  return <div style={{padding:20}}>Automation</div>
 }

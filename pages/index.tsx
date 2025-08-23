@@ -1,5 +1,3 @@
-import React from 'react';
-
-export default function HomePage() {
-  return <div>Welcome to Zion App</div>;
+export default function Home(){
+  return <div style={{padding:20}}>Zion OS</div>
 }

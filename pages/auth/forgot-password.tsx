@@ -1,5 +1,3 @@
-import React from 'react';
-
-export default function ForgotPasswordPage() {
-  return <div>Forgot Password</div>;
+export default function ForgotPassword(){
+  return <div style={{padding:20}}>Forgot Password</div>
 }

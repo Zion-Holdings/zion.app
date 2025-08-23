@@ -1,5 +1,3 @@
-import React from 'react';
-
-export default function EnhancedHomePage() {
-  return <div>Enhanced Home</div>;
+export default function Enhanced(){
+  return <div style={{padding:20}}>Enhanced Home</div>
 }

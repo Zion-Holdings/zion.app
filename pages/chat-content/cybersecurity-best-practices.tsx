@@ -1,5 +1,3 @@
-import React from 'react';
-
-export default function CybersecurityBestPracticesPage() {
-  return <div>Cybersecurity Best Practices</div>;
+export default function Page(){
+  return <div style={{padding:20}}>Content</div>
 }

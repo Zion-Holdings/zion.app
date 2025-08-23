@@ -1,5 +1,3 @@
-import React from 'react';
-
-export default function AutomationStatusPage() {
-  return <div>Automation Status</div>;
+export default function AutomationStatus(){
+  return <div style={{padding:20}}>Automation Status</div>
 }

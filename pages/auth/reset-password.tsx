@@ -1,5 +1,3 @@
-import React from 'react';
-
-export default function ResetPasswordPage() {
-  return <div>Reset Password</div>;
+export default function ResetPassword(){
+  return <div style={{padding:20}}>Reset Password</div>
 }
