@@ -146,6 +146,24 @@ const UltraFuturisticNavigation2040: React.FC = () => {
       description: 'Learn about our mission and team'
     },
     {
+      name: 'Careers',
+      href: '/careers',
+      icon: Users,
+      description: 'Join our revolutionary team'
+    },
+    {
+      name: 'Blog',
+      href: '/blog',
+      icon: FileText,
+      description: 'Insights and thought leadership'
+    },
+    {
+      name: 'Case Studies',
+      href: '/case-studies',
+      icon: TrendingUp,
+      description: 'Client success stories'
+    },
+    {
       name: 'Contact',
       href: '/contact',
       icon: Phone,

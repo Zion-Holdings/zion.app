@@ -91,17 +91,7 @@ const Homepage2044: React.FC = () => {
 
   // Loading component
   if (isLoading) {
-    return (
-      <Layout>
-        <div className="min-h-screen flex items-center justify-center">
-          <div className="text-center space-y-4">
-            <div className="w-16 h-16 mx-auto border-4 border-cyan-500 border-t-transparent rounded-full animate-spin"></div>
-            <h2 className="text-2xl font-semibold text-white">Loading Zion Tech Group</h2>
-            <p className="text-white/70">Preparing the future of technology...</p>
-          </div>
-        </div>
-      </Layout>
-    );
+    return <LoadingSpinner />;
   }
 
   // Error component
