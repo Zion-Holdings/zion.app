@@ -1,72 +1,72 @@
 import React from 'react';
 import Layout from '../components/layout/Layout';
 import { motion } from 'framer-motion';
-import { Cloud, Globe, Shield, Zap, Database, Server, Lock, Rocket } from 'lucide-react';
+import { BarChart3, Database, Brain, TrendingUp, PieChart, LineChart, Rocket, Zap } from 'lucide-react';
 
-export default function CloudPlatform() {
+export default function DataAnalytics() {
   const features = [
     {
-      icon: Cloud,
-      title: "Multi-Cloud Management",
-      description: "Seamlessly manage resources across AWS, Azure, Google Cloud, and more"
+      icon: BarChart3,
+      title: "Real-time Analytics",
+      description: "Monitor your data in real-time with interactive dashboards and alerts"
     },
     {
-      icon: Shield,
-      title: "Enterprise Security",
-      description: "Advanced security features with zero-trust architecture and compliance"
-    },
-    {
-      icon: Zap,
-      title: "Auto-Scaling",
-      description: "Intelligent scaling based on demand with cost optimization"
+      icon: Brain,
+      title: "AI-Powered Insights",
+      description: "Machine learning algorithms that discover hidden patterns and trends"
     },
     {
       icon: Database,
-      title: "Managed Databases",
-      description: "High-availability databases with automated backups and monitoring"
+      title: "Data Integration",
+      description: "Connect and unify data from multiple sources and platforms"
     },
     {
-      icon: Server,
-      title: "Container Orchestration",
-      description: "Kubernetes and Docker management with CI/CD pipelines"
+      icon: TrendingUp,
+      title: "Predictive Analytics",
+      description: "Forecast future trends and outcomes with advanced modeling"
     },
     {
-      icon: Lock,
-      title: "Identity Management",
-      description: "SSO, MFA, and role-based access control for your cloud resources"
+      icon: PieChart,
+      title: "Visualization",
+      description: "Beautiful, interactive charts and graphs for better understanding"
+    },
+    {
+      icon: LineChart,
+      title: "Performance Metrics",
+      description: "Track KPIs and performance indicators across your organization"
     }
   ];
 
   const services = [
     {
-      title: "Cloud Migration",
-      href: "/cloud-migration",
-      description: "Seamless migration to cloud with zero downtime"
+      title: "Business Intelligence",
+      href: "/business-intelligence",
+      description: "Transform data into actionable business insights"
     },
     {
-      title: "DevOps Automation",
-      href: "/devops-automation",
-      description: "Automate your development and deployment processes"
+      title: "Predictive Modeling",
+      href: "/predictive-modeling",
+      description: "Forecast trends and outcomes with AI models"
     },
     {
-      title: "Disaster Recovery",
-      href: "/multi-cloud-disaster-recovery",
-      description: "Multi-cloud disaster recovery solutions"
+      title: "Data Warehousing",
+      href: "/data-warehousing",
+      description: "Centralized data storage and management solutions"
     },
     {
-      title: "Cost Optimization",
-      href: "/cloud-cost-optimization",
-      description: "Reduce cloud costs with intelligent resource management"
+      title: "ETL Automation",
+      href: "/etl-automation",
+      description: "Automate data extraction, transformation, and loading"
     },
     {
-      title: "Security Compliance",
-      href: "/security-compliance",
-      description: "Meet industry standards and compliance requirements"
+      title: "Dashboard Development",
+      href: "/dashboard-development",
+      description: "Custom dashboards for your specific business needs"
     },
     {
-      title: "Performance Monitoring",
-      href: "/performance-monitoring",
-      description: "Real-time monitoring and alerting for your cloud infrastructure"
+      title: "Data Governance",
+      href: "/data-governance",
+      description: "Ensure data quality, security, and compliance"
     }
   ];
 
@@ -83,11 +83,11 @@ export default function CloudPlatform() {
               className="text-center"
             >
               <h1 className="text-5xl md:text-7xl font-bold bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 bg-clip-text text-transparent mb-6">
-                Cloud Platform
+                Data Analytics
               </h1>
               <p className="text-xl md:text-2xl text-gray-300 max-w-4xl mx-auto leading-relaxed">
-                Transform your business with our enterprise-grade cloud platform. 
-                Scalable, secure, and cost-effective solutions for the modern enterprise.
+                Transform your data into actionable insights with our advanced analytics platform. 
+                Make data-driven decisions that drive business growth and innovation.
               </p>
             </motion.div>
           </div>
@@ -130,9 +130,9 @@ export default function CloudPlatform() {
               transition={{ duration: 0.8, delay: 0.4 }}
               className="text-center mb-12"
             >
-              <h2 className="text-4xl font-bold text-white mb-4">Cloud Services</h2>
+              <h2 className="text-4xl font-bold text-white mb-4">Analytics Services</h2>
               <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-                Comprehensive cloud solutions to accelerate your digital transformation
+                Comprehensive data analytics solutions to unlock your business potential
               </p>
             </motion.div>
 
@@ -169,10 +169,10 @@ export default function CloudPlatform() {
               transition={{ duration: 0.8, delay: 0.6 }}
             >
               <h2 className="text-4xl font-bold text-white mb-6">
-                Ready to Scale Your Business?
+                Ready to Unlock Your Data?
               </h2>
               <p className="text-xl text-gray-300 mb-8">
-                Let our cloud experts help you build a robust and scalable infrastructure
+                Let our data experts help you turn information into actionable insights
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <a

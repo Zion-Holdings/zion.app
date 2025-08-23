@@ -1,72 +1,72 @@
 import React from 'react';
 import Layout from '../components/layout/Layout';
 import { motion } from 'framer-motion';
-import { Cloud, Globe, Shield, Zap, Database, Server, Lock, Rocket } from 'lucide-react';
+import { Cpu, Brain, Atom, Zap, Shield, Globe, Rocket, Database } from 'lucide-react';
 
-export default function CloudPlatform() {
+export default function QuantumComputing() {
   const features = [
     {
-      icon: Cloud,
-      title: "Multi-Cloud Management",
-      description: "Seamlessly manage resources across AWS, Azure, Google Cloud, and more"
+      icon: Cpu,
+      title: "Quantum Processing Power",
+      description: "Harness the power of quantum bits (qubits) for exponentially faster computations"
+    },
+    {
+      icon: Brain,
+      title: "AI Integration",
+      description: "Seamlessly integrate quantum computing with advanced AI algorithms"
+    },
+    {
+      icon: Atom,
+      title: "Quantum Algorithms",
+      description: "Custom quantum algorithms optimized for your specific use cases"
     },
     {
       icon: Shield,
-      title: "Enterprise Security",
-      description: "Advanced security features with zero-trust architecture and compliance"
+      title: "Quantum Security",
+      description: "Unbreakable encryption using quantum key distribution"
     },
     {
-      icon: Zap,
-      title: "Auto-Scaling",
-      description: "Intelligent scaling based on demand with cost optimization"
+      icon: Globe,
+      title: "Global Network",
+      description: "Access quantum computing resources worldwide through our cloud platform"
     },
     {
       icon: Database,
-      title: "Managed Databases",
-      description: "High-availability databases with automated backups and monitoring"
-    },
-    {
-      icon: Server,
-      title: "Container Orchestration",
-      description: "Kubernetes and Docker management with CI/CD pipelines"
-    },
-    {
-      icon: Lock,
-      title: "Identity Management",
-      description: "SSO, MFA, and role-based access control for your cloud resources"
+      title: "Quantum Databases",
+      description: "Revolutionary database systems leveraging quantum superposition"
     }
   ];
 
   const services = [
     {
-      title: "Cloud Migration",
-      href: "/cloud-migration",
-      description: "Seamless migration to cloud with zero downtime"
+      title: "Quantum AI Platform",
+      href: "/quantum-ai-cognitive",
+      description: "Advanced AI systems powered by quantum computing"
     },
     {
-      title: "DevOps Automation",
-      href: "/devops-automation",
-      description: "Automate your development and deployment processes"
+      title: "Quantum Cybersecurity",
+      href: "/quantum-cybersecurity",
+      description: "Next-generation security using quantum principles"
     },
     {
-      title: "Disaster Recovery",
-      href: "/multi-cloud-disaster-recovery",
-      description: "Multi-cloud disaster recovery solutions"
+      title: "Quantum Financial Trading",
+      href: "/quantum-financial-trading",
+      description: "High-frequency trading with quantum speed and accuracy"
     },
     {
-      title: "Cost Optimization",
-      href: "/cloud-cost-optimization",
-      description: "Reduce cloud costs with intelligent resource management"
+      title: "Quantum Energy Optimization",
+      href: "/quantum-energy",
+      description: "Optimize energy systems using quantum algorithms"
     },
     {
-      title: "Security Compliance",
-      href: "/security-compliance",
-      description: "Meet industry standards and compliance requirements"
+      title: "Quantum IoT Platform",
+      href: "/quantum-iot",
+      description: "Internet of Things enhanced with quantum capabilities"
     },
     {
-      title: "Performance Monitoring",
-      href: "/performance-monitoring",
-      description: "Real-time monitoring and alerting for your cloud infrastructure"
+      title: "Quantum Neural Networks",
+      href: "/quantum-neural-network-platform",
+      description: "Neural networks that leverage quantum entanglement"
     }
   ];
 
@@ -83,11 +83,11 @@ export default function CloudPlatform() {
               className="text-center"
             >
               <h1 className="text-5xl md:text-7xl font-bold bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 bg-clip-text text-transparent mb-6">
-                Cloud Platform
+                Quantum Computing
               </h1>
               <p className="text-xl md:text-2xl text-gray-300 max-w-4xl mx-auto leading-relaxed">
-                Transform your business with our enterprise-grade cloud platform. 
-                Scalable, secure, and cost-effective solutions for the modern enterprise.
+                Experience the future of computing with our quantum solutions. 
+                Solve previously impossible problems with exponential speed and accuracy.
               </p>
             </motion.div>
           </div>
@@ -130,9 +130,9 @@ export default function CloudPlatform() {
               transition={{ duration: 0.8, delay: 0.4 }}
               className="text-center mb-12"
             >
-              <h2 className="text-4xl font-bold text-white mb-4">Cloud Services</h2>
+              <h2 className="text-4xl font-bold text-white mb-4">Quantum Services</h2>
               <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-                Comprehensive cloud solutions to accelerate your digital transformation
+                Explore our comprehensive suite of quantum computing solutions
               </p>
             </motion.div>
 
@@ -169,10 +169,10 @@ export default function CloudPlatform() {
               transition={{ duration: 0.8, delay: 0.6 }}
             >
               <h2 className="text-4xl font-bold text-white mb-6">
-                Ready to Scale Your Business?
+                Ready to Experience Quantum Computing?
               </h2>
               <p className="text-xl text-gray-300 mb-8">
-                Let our cloud experts help you build a robust and scalable infrastructure
+                Contact our quantum computing experts to discuss how we can transform your business
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <a

@@ -1,72 +1,72 @@
 import React from 'react';
 import Layout from '../components/layout/Layout';
 import { motion } from 'framer-motion';
-import { Cloud, Globe, Shield, Zap, Database, Server, Lock, Rocket } from 'lucide-react';
+import { Shield, Building, Globe, Lock, Users, Database, Rocket, Cpu } from 'lucide-react';
 
-export default function CloudPlatform() {
+export default function GovernmentSolutions() {
   const features = [
     {
-      icon: Cloud,
-      title: "Multi-Cloud Management",
-      description: "Seamlessly manage resources across AWS, Azure, Google Cloud, and more"
-    },
-    {
       icon: Shield,
-      title: "Enterprise Security",
-      description: "Advanced security features with zero-trust architecture and compliance"
+      title: "Security First",
+      description: "FedRAMP, SOC 2, and FISMA compliant security solutions"
     },
     {
-      icon: Zap,
-      title: "Auto-Scaling",
-      description: "Intelligent scaling based on demand with cost optimization"
+      icon: Building,
+      title: "Government Ready",
+      description: "Built specifically for government requirements and compliance"
     },
     {
-      icon: Database,
-      title: "Managed Databases",
-      description: "High-availability databases with automated backups and monitoring"
-    },
-    {
-      icon: Server,
-      title: "Container Orchestration",
-      description: "Kubernetes and Docker management with CI/CD pipelines"
+      icon: Globe,
+      title: "Multi-Agency",
+      description: "Solutions that work across different government agencies"
     },
     {
       icon: Lock,
-      title: "Identity Management",
-      description: "SSO, MFA, and role-based access control for your cloud resources"
+      title: "Data Protection",
+      description: "Advanced encryption and data protection for sensitive information"
+    },
+    {
+      icon: Users,
+      title: "Citizen Services",
+      description: "Improve citizen experience with modern technology"
+    },
+    {
+      icon: Database,
+      title: "Compliance Ready",
+      description: "Meet all government compliance and regulatory requirements"
     }
   ];
 
-  const services = [
+  const solutions = [
     {
-      title: "Cloud Migration",
-      href: "/cloud-migration",
-      description: "Seamless migration to cloud with zero downtime"
+      title: "Government AI Platform",
+      href: "/government-ai-platform",
+      description: "AI solutions designed for government operations and citizen services"
     },
     {
-      title: "DevOps Automation",
-      href: "/devops-automation",
-      description: "Automate your development and deployment processes"
+      title: "Cybersecurity Suite",
+      href: "/government-cybersecurity",
+      description: "Comprehensive security solutions for government networks"
     },
     {
-      title: "Disaster Recovery",
-      href: "/multi-cloud-disaster-recovery",
-      description: "Multi-cloud disaster recovery solutions"
+      title: "Data Analytics",
+      href: "/government-data-analytics",
+      description: "Transform government data into actionable insights"
     },
     {
-      title: "Cost Optimization",
-      href: "/cloud-cost-optimization",
-      description: "Reduce cloud costs with intelligent resource management"
+      title: "Cloud Infrastructure",
+      href: "/government-cloud",
+      description: "Secure cloud solutions for government workloads"
     },
     {
-      title: "Security Compliance",
-      href: "/security-compliance",
-      description: "Meet industry standards and compliance requirements"
+      title: "Digital Transformation",
+      href: "/government-digital-transformation",
+      description: "Modernize government operations and services"
     },
     {
-      title: "Performance Monitoring",
-      href: "/performance-monitoring",
-      description: "Real-time monitoring and alerting for your cloud infrastructure"
+      title: "Compliance Automation",
+      href: "/government-compliance",
+      description: "Automate compliance monitoring and reporting"
     }
   ];
 
@@ -83,11 +83,11 @@ export default function CloudPlatform() {
               className="text-center"
             >
               <h1 className="text-5xl md:text-7xl font-bold bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 bg-clip-text text-transparent mb-6">
-                Cloud Platform
+                Government Solutions
               </h1>
               <p className="text-xl md:text-2xl text-gray-300 max-w-4xl mx-auto leading-relaxed">
-                Transform your business with our enterprise-grade cloud platform. 
-                Scalable, secure, and cost-effective solutions for the modern enterprise.
+                Secure, compliant technology solutions designed specifically for government agencies. 
+                Transform operations while maintaining the highest security standards.
               </p>
             </motion.div>
           </div>
@@ -121,7 +121,7 @@ export default function CloudPlatform() {
           </div>
         </section>
 
-        {/* Services Section */}
+        {/* Solutions Section */}
         <section className="py-20 px-4 bg-black/30">
           <div className="container mx-auto max-w-6xl">
             <motion.div
@@ -130,26 +130,26 @@ export default function CloudPlatform() {
               transition={{ duration: 0.8, delay: 0.4 }}
               className="text-center mb-12"
             >
-              <h2 className="text-4xl font-bold text-white mb-4">Cloud Services</h2>
+              <h2 className="text-4xl font-bold text-white mb-4">Government Solutions</h2>
               <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-                Comprehensive cloud solutions to accelerate your digital transformation
+                Comprehensive solutions designed for government success
               </p>
             </motion.div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {services.map((service, index) => (
+              {solutions.map((solution, index) => (
                 <motion.a
                   key={index}
-                  href={service.href}
+                  href={solution.href}
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: 0.1 * index }}
                   className="p-6 bg-gray-800/50 rounded-2xl border border-gray-700/50 hover:border-cyan-500/50 hover:bg-gray-700/50 transition-all duration-300 group"
                 >
                   <h3 className="text-xl font-bold text-white mb-3 group-hover:text-cyan-400 transition-colors">
-                    {service.title}
+                    {solution.title}
                   </h3>
-                  <p className="text-gray-300">{service.description}</p>
+                  <p className="text-gray-300">{solution.description}</p>
                   <div className="mt-4 flex items-center text-cyan-400 group-hover:text-cyan-300 transition-colors">
                     <span className="text-sm">Learn More</span>
                     <Rocket className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
@@ -169,10 +169,10 @@ export default function CloudPlatform() {
               transition={{ duration: 0.8, delay: 0.6 }}
             >
               <h2 className="text-4xl font-bold text-white mb-6">
-                Ready to Scale Your Business?
+                Ready to Transform Government?
               </h2>
               <p className="text-xl text-gray-300 mb-8">
-                Let our cloud experts help you build a robust and scalable infrastructure
+                Let our government experts help you modernize your operations
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <a
@@ -182,10 +182,10 @@ export default function CloudPlatform() {
                   Get Started
                 </a>
                 <a
-                  href="/services"
+                  href="/solutions"
                   className="px-8 py-4 border border-cyan-500 text-cyan-400 font-bold rounded-2xl hover:bg-cyan-500/10 transition-all duration-300"
                 >
-                  View All Services
+                  View All Solutions
                 </a>
               </div>
             </motion.div>

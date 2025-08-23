@@ -1,72 +1,72 @@
 import React from 'react';
 import Layout from '../components/layout/Layout';
 import { motion } from 'framer-motion';
-import { Cloud, Globe, Shield, Zap, Database, Server, Lock, Rocket } from 'lucide-react';
+import { Zap, Bot, Workflow, Clock, TrendingUp, Shield, Rocket, Cpu } from 'lucide-react';
 
-export default function CloudPlatform() {
+export default function ProcessAutomation() {
   const features = [
     {
-      icon: Cloud,
-      title: "Multi-Cloud Management",
-      description: "Seamlessly manage resources across AWS, Azure, Google Cloud, and more"
+      icon: Zap,
+      title: "Intelligent Automation",
+      description: "AI-powered automation that learns and improves over time"
+    },
+    {
+      icon: Bot,
+      title: "RPA Solutions",
+      description: "Robotic Process Automation for repetitive tasks and workflows"
+    },
+    {
+      icon: Workflow,
+      title: "Workflow Management",
+      description: "Design, deploy, and monitor complex business processes"
+    },
+    {
+      icon: Clock,
+      title: "24/7 Operations",
+      description: "Automated systems that work around the clock without breaks"
+    },
+    {
+      icon: TrendingUp,
+      title: "Performance Analytics",
+      description: "Monitor and optimize automation performance in real-time"
     },
     {
       icon: Shield,
-      title: "Enterprise Security",
-      description: "Advanced security features with zero-trust architecture and compliance"
-    },
-    {
-      icon: Zap,
-      title: "Auto-Scaling",
-      description: "Intelligent scaling based on demand with cost optimization"
-    },
-    {
-      icon: Database,
-      title: "Managed Databases",
-      description: "High-availability databases with automated backups and monitoring"
-    },
-    {
-      icon: Server,
-      title: "Container Orchestration",
-      description: "Kubernetes and Docker management with CI/CD pipelines"
-    },
-    {
-      icon: Lock,
-      title: "Identity Management",
-      description: "SSO, MFA, and role-based access control for your cloud resources"
+      title: "Secure Automation",
+      description: "Enterprise-grade security for all automated processes"
     }
   ];
 
   const services = [
     {
-      title: "Cloud Migration",
-      href: "/cloud-migration",
-      description: "Seamless migration to cloud with zero downtime"
+      title: "Business Process Automation",
+      href: "/business-process-automation",
+      description: "Automate complex business workflows and processes"
     },
     {
-      title: "DevOps Automation",
-      href: "/devops-automation",
-      description: "Automate your development and deployment processes"
+      title: "AI Workflow Orchestrator",
+      href: "/ai-workflow-orchestrator",
+      description: "Intelligent workflow management with AI decision making"
     },
     {
-      title: "Disaster Recovery",
-      href: "/multi-cloud-disaster-recovery",
-      description: "Multi-cloud disaster recovery solutions"
+      title: "Document Processing",
+      href: "/document-processing-automation",
+      description: "Automate document classification, extraction, and processing"
     },
     {
-      title: "Cost Optimization",
-      href: "/cloud-cost-optimization",
-      description: "Reduce cloud costs with intelligent resource management"
+      title: "Customer Service Automation",
+      href: "/customer-service-automation",
+      description: "Automate customer interactions and support processes"
     },
     {
-      title: "Security Compliance",
-      href: "/security-compliance",
-      description: "Meet industry standards and compliance requirements"
+      title: "Financial Process Automation",
+      href: "/financial-process-automation",
+      description: "Automate accounting, invoicing, and financial workflows"
     },
     {
-      title: "Performance Monitoring",
-      href: "/performance-monitoring",
-      description: "Real-time monitoring and alerting for your cloud infrastructure"
+      title: "HR Process Automation",
+      href: "/hr-process-automation",
+      description: "Streamline HR processes from recruitment to offboarding"
     }
   ];
 
@@ -83,11 +83,11 @@ export default function CloudPlatform() {
               className="text-center"
             >
               <h1 className="text-5xl md:text-7xl font-bold bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 bg-clip-text text-transparent mb-6">
-                Cloud Platform
+                Process Automation
               </h1>
               <p className="text-xl md:text-2xl text-gray-300 max-w-4xl mx-auto leading-relaxed">
-                Transform your business with our enterprise-grade cloud platform. 
-                Scalable, secure, and cost-effective solutions for the modern enterprise.
+                Transform your business operations with intelligent automation. 
+                Reduce costs, increase efficiency, and eliminate manual errors.
               </p>
             </motion.div>
           </div>
@@ -130,9 +130,9 @@ export default function CloudPlatform() {
               transition={{ duration: 0.8, delay: 0.4 }}
               className="text-center mb-12"
             >
-              <h2 className="text-4xl font-bold text-white mb-4">Cloud Services</h2>
+              <h2 className="text-4xl font-bold text-white mb-4">Automation Services</h2>
               <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-                Comprehensive cloud solutions to accelerate your digital transformation
+                Comprehensive automation solutions for every business process
               </p>
             </motion.div>
 
@@ -169,10 +169,10 @@ export default function CloudPlatform() {
               transition={{ duration: 0.8, delay: 0.6 }}
             >
               <h2 className="text-4xl font-bold text-white mb-6">
-                Ready to Scale Your Business?
+                Ready to Automate Your Processes?
               </h2>
               <p className="text-xl text-gray-300 mb-8">
-                Let our cloud experts help you build a robust and scalable infrastructure
+                Let our automation experts help you streamline your operations
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <a

@@ -1,72 +1,72 @@
 import React from 'react';
 import Layout from '../components/layout/Layout';
 import { motion } from 'framer-motion';
-import { Cloud, Globe, Shield, Zap, Database, Server, Lock, Rocket } from 'lucide-react';
+import { Building, Users, Shield, Globe, Zap, Database, Rocket, Cpu } from 'lucide-react';
 
-export default function CloudPlatform() {
+export default function EnterpriseSolutions() {
   const features = [
     {
-      icon: Cloud,
-      title: "Multi-Cloud Management",
-      description: "Seamlessly manage resources across AWS, Azure, Google Cloud, and more"
+      icon: Building,
+      title: "Enterprise Architecture",
+      description: "Scalable, secure architecture designed for large organizations"
     },
     {
       icon: Shield,
       title: "Enterprise Security",
-      description: "Advanced security features with zero-trust architecture and compliance"
+      description: "Comprehensive security solutions with compliance frameworks"
+    },
+    {
+      icon: Globe,
+      title: "Global Deployment",
+      description: "Multi-region, multi-cloud solutions for global enterprises"
     },
     {
       icon: Zap,
-      title: "Auto-Scaling",
-      description: "Intelligent scaling based on demand with cost optimization"
+      title: "High Performance",
+      description: "Optimized performance for mission-critical applications"
     },
     {
       icon: Database,
-      title: "Managed Databases",
-      description: "High-availability databases with automated backups and monitoring"
+      title: "Data Management",
+      description: "Enterprise-grade data storage, processing, and analytics"
     },
     {
-      icon: Server,
-      title: "Container Orchestration",
-      description: "Kubernetes and Docker management with CI/CD pipelines"
-    },
-    {
-      icon: Lock,
-      title: "Identity Management",
-      description: "SSO, MFA, and role-based access control for your cloud resources"
+      icon: Users,
+      title: "User Management",
+      description: "Advanced identity and access management for large teams"
     }
   ];
 
-  const services = [
+  const solutions = [
     {
-      title: "Cloud Migration",
-      href: "/cloud-migration",
-      description: "Seamless migration to cloud with zero downtime"
+      title: "Enterprise AI Platform",
+      href: "/enterprise-ai-platform",
+      description: "Scalable AI solutions for enterprise workloads"
     },
     {
-      title: "DevOps Automation",
-      href: "/devops-automation",
-      description: "Automate your development and deployment processes"
+      title: "Enterprise Security Suite",
+      href: "/enterprise-security-suite",
+      description: "Comprehensive security for enterprise environments"
     },
     {
-      title: "Disaster Recovery",
-      href: "/multi-cloud-disaster-recovery",
-      description: "Multi-cloud disaster recovery solutions"
+      title: "Enterprise Cloud Migration",
+      href: "/enterprise-cloud-migration",
+      description: "Large-scale cloud migration and transformation"
     },
     {
-      title: "Cost Optimization",
-      href: "/cloud-cost-optimization",
-      description: "Reduce cloud costs with intelligent resource management"
+      title: "Enterprise Data Platform",
+      href: "/enterprise-data-platform",
+      description: "Centralized data management and analytics"
     },
     {
-      title: "Security Compliance",
-      href: "/security-compliance",
-      description: "Meet industry standards and compliance requirements"
+      title: "Enterprise Automation",
+      href: "/enterprise-automation",
+      description: "Process automation for enterprise operations"
     },
     {
-      title: "Performance Monitoring",
-      href: "/performance-monitoring",
-      description: "Real-time monitoring and alerting for your cloud infrastructure"
+      title: "Enterprise Integration",
+      href: "/enterprise-integration",
+      description: "Connect legacy and modern systems seamlessly"
     }
   ];
 
@@ -83,11 +83,11 @@ export default function CloudPlatform() {
               className="text-center"
             >
               <h1 className="text-5xl md:text-7xl font-bold bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 bg-clip-text text-transparent mb-6">
-                Cloud Platform
+                Enterprise Solutions
               </h1>
               <p className="text-xl md:text-2xl text-gray-300 max-w-4xl mx-auto leading-relaxed">
-                Transform your business with our enterprise-grade cloud platform. 
-                Scalable, secure, and cost-effective solutions for the modern enterprise.
+                Enterprise-grade solutions designed for scale, security, and performance. 
+                Transform your organization with cutting-edge technology.
               </p>
             </motion.div>
           </div>
@@ -121,7 +121,7 @@ export default function CloudPlatform() {
           </div>
         </section>
 
-        {/* Services Section */}
+        {/* Solutions Section */}
         <section className="py-20 px-4 bg-black/30">
           <div className="container mx-auto max-w-6xl">
             <motion.div
@@ -130,26 +130,26 @@ export default function CloudPlatform() {
               transition={{ duration: 0.8, delay: 0.4 }}
               className="text-center mb-12"
             >
-              <h2 className="text-4xl font-bold text-white mb-4">Cloud Services</h2>
+              <h2 className="text-4xl font-bold text-white mb-4">Enterprise Solutions</h2>
               <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-                Comprehensive cloud solutions to accelerate your digital transformation
+                Comprehensive solutions designed for enterprise-scale challenges
               </p>
             </motion.div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {services.map((service, index) => (
+              {solutions.map((solution, index) => (
                 <motion.a
                   key={index}
-                  href={service.href}
+                  href={solution.href}
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: 0.1 * index }}
                   className="p-6 bg-gray-800/50 rounded-2xl border border-gray-700/50 hover:border-cyan-500/50 hover:bg-gray-700/50 transition-all duration-300 group"
                 >
                   <h3 className="text-xl font-bold text-white mb-3 group-hover:text-cyan-400 transition-colors">
-                    {service.title}
+                    {solution.title}
                   </h3>
-                  <p className="text-gray-300">{service.description}</p>
+                  <p className="text-gray-300">{solution.description}</p>
                   <div className="mt-4 flex items-center text-cyan-400 group-hover:text-cyan-300 transition-colors">
                     <span className="text-sm">Learn More</span>
                     <Rocket className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
@@ -169,10 +169,10 @@ export default function CloudPlatform() {
               transition={{ duration: 0.8, delay: 0.6 }}
             >
               <h2 className="text-4xl font-bold text-white mb-6">
-                Ready to Scale Your Business?
+                Ready to Transform Your Enterprise?
               </h2>
               <p className="text-xl text-gray-300 mb-8">
-                Let our cloud experts help you build a robust and scalable infrastructure
+                Let our enterprise experts help you scale and modernize your organization
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <a
@@ -182,10 +182,10 @@ export default function CloudPlatform() {
                   Get Started
                 </a>
                 <a
-                  href="/services"
+                  href="/solutions"
                   className="px-8 py-4 border border-cyan-500 text-cyan-400 font-bold rounded-2xl hover:bg-cyan-500/10 transition-all duration-300"
                 >
-                  View All Services
+                  View All Solutions
                 </a>
               </div>
             </motion.div>
