@@ -1,19 +1,26 @@
 import React from 'react';
-import Head from 'next/head';
-import UltraFuturisticBackground from '../components/ui/UltraFuturisticBackground';
+import ServiceLanding from '../components/sections/ServiceLanding';
 
-export default function QuantumLogisticsOptimizationPage() {
+export default function QuantumLogisticsOptimization() {
 	return (
-		<UltraFuturisticBackground variant="holographic" intensity="medium">
-			<Head>
-				<title>Quantum Logistics Optimization | Zion Tech Group</title>
-				<link rel="canonical" href="https://ziontechgroup.com/quantum-logistics-optimization" />
-				<meta name="description" content="Future-ready route optimization and supply chain simulations with quantum-enhanced heuristics." />
-			</Head>
-			<div className="container mx-auto px-4 py-24 text-white">
-				<h1 className="text-4xl md:text-6xl font-bold mb-4">Quantum Logistics Optimization</h1>
-				<p className="text-gray-300 max-w-3xl">Future-ready route optimization and supply chain simulations with quantum-enhanced heuristics. Contact sales at +1 302 464 0950 or kleber@ziontechgroup.com.</p>
-			</div>
-		</UltraFuturisticBackground>
+		<ServiceLanding
+			title="Quantum Logistics Optimization"
+			description="Optimize complex routing, fleet allocation, and scheduling using quantum-inspired algorithms at scale."
+			subtitle="Cut logistics costs and delivery times"
+			pricePerMonthUSD={4999}
+			implementationWeeks="Implementation: 4-8 weeks"
+			roiNote="Typical ROI: 200-400% via route and capacity optimization"
+			features={[
+				"VRP, TSP, and multi-depot optimization",
+				"Real-time replanning under constraints",
+				"Carbon-aware routing options",
+				"Carrier and lane optimization",
+				"Digital twin scenario testing",
+				"Integrations: Snowflake, Kafka, SAP, Oracle"
+			]}
+			industries={["Logistics", "Retail", "Manufacturing", "E-commerce"]}
+			ctaHref="/contact"
+			canonical="https://ziontechgroup.com/quantum-logistics-optimization"
+		/>
 	);
 }
