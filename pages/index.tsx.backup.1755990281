@@ -1,13 +1,23 @@
 import React from 'react';
+<<<<<<< HEAD
+import Homepage2044 from '../components/Homepage2044';
+import EnhancedErrorBoundary from '../components/EnhancedErrorBoundary';
+=======
 import Homepage2046 from '../components/Homepage2046';
 import SEOOptimizer from '../components/SEOOptimizer';
 import ErrorBoundary from '../components/ErrorBoundary';
 import AccessibilityEnhancer from '../components/AccessibilityEnhancer';
 import PerformanceMonitor from '../components/PerformanceMonitor';
 import MobileOptimizer from '../components/MobileOptimizer';
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-f6bf
 
 export default function Home() {
   return (
+<<<<<<< HEAD
+    <EnhancedErrorBoundary>
+      <Homepage2044 />
+    </EnhancedErrorBoundary>
+=======
     <ErrorBoundary>
       <SEOOptimizer />
       <Homepage2046 />
@@ -16,6 +26,7 @@ export default function Home() {
         <div></div>
       </AccessibilityEnhancer>
     </ErrorBoundary>
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-f6bf
   );
 };
 

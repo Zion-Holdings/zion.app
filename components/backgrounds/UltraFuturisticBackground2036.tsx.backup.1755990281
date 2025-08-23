@@ -84,9 +84,15 @@ const UltraFuturisticBackground2036: React.FC = () => {
     const isSmallScreen = window.innerWidth < 768;
     const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     
+<<<<<<< HEAD
+    // Enhanced particle count for better performance and visual impact
+    const baseCount = prefersReducedMotion ? 30 : (isSmallScreen ? 80 : 150);
+    const particleCount = Math.floor(baseCount * (intensity === 'low' ? 0.7 : intensity === 'medium' ? 1 : 2));
+=======
     // Enhanced particle count for better performance
     const baseCount = prefersReducedMotion ? 30 : (isSmallScreen ? 80 : 150);
     const particleCount = Math.floor(baseCount * (intensity === 'low' ? 0.8 : intensity === 'medium' ? 1.2 : 2.0));
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-f6bf
 
     particles.current = [];
     
