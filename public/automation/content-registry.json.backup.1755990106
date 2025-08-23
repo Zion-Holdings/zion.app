@@ -29,6 +29,14 @@
       "source": "cloud-deep-research-factory"
     },
     {
+<<<<<<< HEAD
+      "title": "Pattern — Trigger Homepage Sitemap",
+      "href": "/reports/patterns/pattern-2025-08-14-120147",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-14T12:01:47.400Z",
+      "source": "cloud-deep-research-factory"
+    }
+=======
       "file": "pages/contact.tsx",
       "route": "/contact"
     },
@@ -10738,5 +10746,6 @@
       "createdAt": "2025-08-14T12:06:09.411Z",
       "source": "cloud-deep-research-factory"
     }
+>>>>>>> origin/automation/git-sync/2025-08-14T12-06-13-375Z
   ]
 }
