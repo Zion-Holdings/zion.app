@@ -1,3 +1,19 @@
+<<<<<<< HEAD
+import { GetServerSideProps } from 'next';
+
+export const getServerSideProps: GetServerSideProps = async () => {
+  return {
+    redirect: {
+      destination: '/resources/docs',
+      permanent: false,
+    },
+  };
+};
+
+export default function DocsRedirect() {
+  return null;
+}
+=======
 import React from 'react';
 import { motion } from 'framer-motion';
 import { 
@@ -259,3 +275,4 @@ export default function Documentation() {
     </Layout>
   );
 }
+>>>>>>> origin/cursor/website-audit-content-update-and-deployment-897c
