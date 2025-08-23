@@ -286,7 +286,7 @@ export default function UltraFuturisticBackground2036({
           }}
           transition={{ 
             duration: 4, 
-            repeat: Infinity, 
+            repeat: -1, 
             ease: "easeInOut" 
           }}
         />
@@ -298,7 +298,7 @@ export default function UltraFuturisticBackground2036({
           }}
           transition={{ 
             duration: 6, 
-            repeat: Infinity, 
+            repeat: -1, 
             ease: "linear" 
           }}
         />
@@ -310,7 +310,7 @@ export default function UltraFuturisticBackground2036({
           }}
           transition={{ 
             duration: 5, 
-            repeat: Infinity, 
+            repeat: -1, 
             ease: "easeInOut",
             delay: 1
           }}
@@ -341,7 +341,7 @@ export default function UltraFuturisticBackground2036({
           }}
           transition={{
             duration: 8,
-            repeat: Infinity,
+            repeat: -1,
             ease: 'linear'
           }}
         />
@@ -353,7 +353,7 @@ export default function UltraFuturisticBackground2036({
           }}
           transition={{
             duration: 10,
-            repeat: Infinity,
+            repeat: -1,
             ease: 'linear'
           }}
         />

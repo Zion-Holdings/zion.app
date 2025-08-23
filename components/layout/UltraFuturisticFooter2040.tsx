@@ -92,10 +92,8 @@ const contactInfo = {
 };
 
 const socialLinks = [
-  { name: 'Twitter', href: '#', icon: <Twitter className="w-5 h-5" /> },
-  { name: 'LinkedIn', href: '#', icon: <Linkedin className="w-5 h-5" /> },
-  { name: 'YouTube', href: '#', icon: <Youtube className="w-5 h-5" /> },
-  { name: 'GitHub', href: '#', icon: <Github className="w-5 h-5" /> }
+  { name: 'LinkedIn', href: 'https://linkedin.com/company/ziontechgroup', icon: <Linkedin className="w-5 h-5" /> },
+  { name: 'GitHub', href: 'https://github.com/Zion-Holdings', icon: <Github className="w-5 h-5" /> }
 ];
 
 const UltraFuturisticFooter2040: React.FC = () => {

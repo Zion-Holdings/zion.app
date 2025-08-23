@@ -8,7 +8,8 @@ import {
   Grid, List, TrendingUp, 
   Calendar, Calculator, GraduationCap,
   Cpu, Cloud, Settings, Monitor, Palette, Network, Layers, Code, Heart, ShoppingCart, Clock, MessageCircle, HelpCircle, Building,
-  Zap, Infinity, Eye, Heart as HeartIcon, Code as CodeIcon, Palette as PaletteIcon
+  Zap, Infinity, Eye, Heart as HeartIcon, Code as CodeIcon, Palette as PaletteIcon,
+  BookOpen, User
 } from 'lucide-react';
 
 interface NavigationItem {
@@ -88,6 +89,20 @@ const navigationItems: NavigationItem[] = [
         description: 'Future-proof security',
         icon: <Shield className="w-4 h-4" />,
         color: 'from-red-500 to-orange-500'
+      },
+      { 
+        name: 'Brain-Computer Interface', 
+        href: '/brain-computer-interface-2040', 
+        description: 'Direct neural integration',
+        icon: <Brain className="w-4 h-4" />,
+        color: 'from-purple-500 to-pink-500'
+      },
+      { 
+        name: 'AI Emotional Intelligence', 
+        href: '/ai-emotional-intelligence-2040', 
+        description: 'Consciousness-based empathy',
+        icon: <Heart className="w-4 h-4" />,
+        color: 'from-red-500 to-pink-500'
       }
     ]
   },
@@ -112,6 +127,12 @@ const navigationItems: NavigationItem[] = [
         href: '/ai-emotional-intelligence-2040',
         description: 'Advanced emotional AI with consciousness',
         icon: <HeartIcon className="w-4 h-4" />
+      },
+      {
+        name: 'Brain-Computer Interface 2040',
+        href: '/brain-computer-interface-2040',
+        description: 'Direct neural integration',
+        icon: <Brain className="w-4 h-4" />
       },
       {
         name: 'AI Autonomous Research 2041',
@@ -256,6 +277,74 @@ const navigationItems: NavigationItem[] = [
         href: '/quantum-financial-intelligence-2040',
         description: 'Quantum financial solutions',
         icon: <TrendingUp className="w-4 h-4" />
+      }
+    ]
+  },
+  {
+    name: 'Company',
+    href: '/about',
+    icon: <Building className="w-5 h-5" />,
+    description: 'About Zion Tech Group',
+    category: 'company',
+    color: 'from-gray-500 to-slate-500',
+    children: [
+      {
+        name: 'About Us',
+        href: '/about',
+        description: 'Learn about our mission and vision',
+        icon: <Building className="w-4 h-4" />
+      },
+      {
+        name: 'Contact',
+        href: '/contact',
+        description: 'Get in touch with our team',
+        icon: <MessageCircle className="w-4 h-4" />
+      },
+      {
+        name: 'Careers',
+        href: '/careers',
+        description: 'Join our revolutionary team',
+        icon: <User className="w-4 h-4" />
+      },
+      {
+        name: 'News',
+        href: '/news',
+        description: 'Latest updates and insights',
+        icon: <Globe className="w-4 h-4" />
+      }
+    ]
+  },
+  {
+    name: 'Resources',
+    href: '/resources',
+    icon: <BookOpen className="w-5 h-5" />,
+    description: 'Educational and support resources',
+    category: 'resources',
+    color: 'from-indigo-500 to-purple-500',
+    children: [
+      {
+        name: 'Documentation',
+        href: '/docs',
+        description: 'Technical documentation and guides',
+        icon: <Code className="w-4 h-4" />
+      },
+      {
+        name: 'Support',
+        href: '/support',
+        description: 'Get help and support',
+        icon: <HelpCircle className="w-4 h-4" />
+      },
+      {
+        name: 'Blog',
+        href: '/blog',
+        description: 'Insights and thought leadership',
+        icon: <BookOpen className="w-4 h-4" />
+      },
+      {
+        name: 'Training',
+        href: '/training',
+        description: 'Learn our technologies',
+        icon: <GraduationCap className="w-4 h-4" />
       }
     ]
   }
