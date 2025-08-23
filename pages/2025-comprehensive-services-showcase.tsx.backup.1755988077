@@ -8,6 +8,15 @@ import {
 } from 'lucide-react';
 
 // Import our new service data
+<<<<<<< HEAD
+import { advancedBusinessIntelligenceServices2025 } from '../data/2025-advanced-business-intelligence-services';
+import { advancedAIAutomationServices2025 } from '../data/2025-advanced-ai-automation-services';
+import { innovative2025ITInfrastructureServices } from '../data/2025-innovative-it-infrastructure-services';
+import { innovativeMicroSaasSolutions2025 } from '../data/2025-innovative-micro-saas-solutions';
+import { cuttingEdgeAIServices2025 } from '../data/2025-cutting-edge-ai-services';
+
+const ComprehensiveServicesShowcase2025: React.FC = () => {
+=======
 import { advancedAIMLServices } from '../data/2025-advanced-ai-ml-services';
 import { advancedCybersecurityServices2025 } from '../data/2025-advanced-cybersecurity-services';
 import { advancedCloudDevOpsServices } from '../data/2025-advanced-cloud-devops-services';
@@ -42,6 +51,7 @@ const serviceCategories = [
 ];
 
 const ComprehensiveServicesShowcase: React.FC = () => {
+>>>>>>> origin/cursor/expand-services-and-deploy-updates-b960
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedCategory, setSelectedCategory] = useState('all');
   const [viewMode, setViewMode] = useState<'grid' | 'list'>('grid');
