@@ -1,963 +1,1704 @@
 import React from 'react';
 import Head from 'next/head';
-import { 
-  Clock, DollarSign, TrendingUp, Brain, 
-  Zap, Rocket, Mail, Phone, MapPin, Sparkles, 
-  ArrowRight, ExternalLink, Check, Cpu, 
-  ShieldCheck
-} from 'lucide-react';
-import Button from '../components/ui/Button';
-import UltraFuturisticMatrixBackground from '../components/ui/UltraFuturisticMatrixBackground';
-import UltraFuturisticServiceCard from '../components/ui/UltraFuturisticServiceCard';
-import ServiceAds from '../components/sections/ServiceAds';
+import Hero from '../components/sections/Hero';
+import Features from '../components/sections/Features';
 import Card from '../components/ui/Card';
-import { motion } from 'framer-motion';
-import { enhancedRealMicroSaasServices } from '../data/enhanced-real-micro-saas-services';
-import { extraServices } from '../data/extra-services';
-import { additionalEnhancedServices } from '../data/additional-real-services';
-import RevolutionaryFuturisticBackground from '../components/ui/RevolutionaryFuturisticBackground';
-import RevolutionaryHero from '../components/sections/RevolutionaryHero';
-import RevolutionaryServicesShowcase from '../components/sections/RevolutionaryServicesShowcase';
-import { revolutionaryMicroSaasServices } from '../data/revolutionary-micro-saas-services';
+import Button from '../components/ui/Button';
+import { Cloud, Bot, RefreshCw, Zap, Shield, BarChart3, ArrowRight, Check, ExternalLink, Globe } from 'lucide-react';
 
 export default function HomePage() {
   const heroStats = [
-    { value: '200+', label: 'Revolutionary Micro SaaS Services', color: 'text-cyan-400', icon: <Cpu className="w-6 h-6" /> },
-    { value: '99.99%', label: 'Uptime Guarantee', color: 'text-fuchsia-400', icon: <ShieldCheck className="w-6 h-6" /> },
-    { value: '30+', label: 'Day Free Trials', color: 'text-blue-400', icon: <Clock className="w-6 h-6" /> },
-    { value: '24/7', label: 'AI Support', color: 'text-green-400', icon: <Brain className="w-6 h-6" /> },
-    { value: '$25B+', label: 'Combined Market Value', color: 'text-yellow-400', icon: <TrendingUp className="w-6 h-6" /> },
-    { value: '800%+', label: 'Average ROI', color: 'text-purple-400', icon: <DollarSign className="w-6 h-6" /> },
+    { value: '55+', label: 'Real Micro SaaS Services', color: 'text-cyan-400' },
+    { value: '99.9%', label: 'Uptime Guarantee', color: 'text-fuchsia-400' },
+    { value: '14', label: 'Day Free Trials', color: 'text-blue-400' },
+    { value: '24/7', label: 'AI Support', color: 'text-green-400' },
   ];
 
-  const contactInfo = {
-    mobile: '+1 302 464 0950',
-    email: 'kleber@ziontechgroup.com',
-    address: '364 E Main St STE 1008 Middletown DE 19709',
-    website: 'https://ziontechgroup.com'
-  };
+  const platformFeatures = [
+    {
+      icon: '☁️',
+      title: 'Real Micro SaaS Services',
+      description: '55+ fully functional micro SaaS tools with real implementations, not just mockups.',
+      color: 'bg-gradient-to-br from-cyan-500 to-blue-600',
+      textColor: 'text-cyan-400',
+      gradient: 'from-cyan-400 to-blue-500',
+    },
+    {
+      icon: '🤖',
+      title: 'AI-Powered Solutions',
+      description: 'Advanced AI content generation, SEO automation, chatbots, and business intelligence.',
+      color: 'bg-gradient-to-br from-fuchsia-500 to-purple-600',
+      textColor: 'text-fuchsia-400',
+      gradient: 'from-fuchsia-400 to-purple-500',
+    },
+    {
+      icon: '🔄',
+      title: 'Enterprise Reliability',
+      description: '99.9% uptime guarantee, automated scaling, and intelligent resource management.',
+      color: 'bg-gradient-to-br from-green-500 to-emerald-600',
+      textColor: 'text-green-400',
+      gradient: 'from-green-400 to-emerald-500',
+    },
+    {
+      icon: '⚡',
+      title: 'Lightning Fast Setup',
+      description: 'Get started in minutes with our intuitive interfaces and automated onboarding.',
+      color: 'bg-gradient-to-br from-orange-500 to-red-600',
+      textColor: 'text-orange-400',
+      gradient: 'from-orange-400 to-red-500',
+    },
+    {
+      icon: '🛡️',
+      title: 'Bank-Level Security',
+      description: 'SOC 2 compliance, advanced encryption, and automated security monitoring.',
+      color: 'bg-gradient-to-br from-indigo-500 to-purple-600',
+      textColor: 'text-indigo-400',
+      gradient: 'from-indigo-400 to-purple-500',
+    },
+    {
+      icon: '📊',
+      title: 'Transparent Pricing',
+      description: 'No hidden fees, simple monthly pricing that scales with your business needs.',
+      color: 'bg-gradient-to-br from-teal-500 to-cyan-600',
+      textColor: 'text-teal-400',
+      gradient: 'from-teal-400 to-cyan-500',
+    },
+  ];
 
-  // Enhanced service advertising content with real market data and competitive advantages
-  const serviceHighlights = [
+  const technologyStack = [
+    { name: 'Next.js', category: 'Framework', icon: '⚡' },
+    { name: 'React', category: 'Library', icon: '⚛️' },
+    { name: 'TypeScript', category: 'Language', icon: '📘' },
+    { name: 'Tailwind CSS', category: 'Styling', icon: '🎨' },
+    { name: 'Node.js', category: 'Runtime', icon: '🟢' },
+    { name: 'PostgreSQL', category: 'Database', icon: '🐘' },
+    { name: 'Redis', category: 'Cache', icon: '🔴' },
+    { name: 'Docker', category: 'Containerization', icon: '🐳' },
+    { name: 'Kubernetes', category: 'Orchestration', icon: '☸️' },
+    { name: 'AWS', category: 'Cloud', icon: '☁️' },
+    { name: 'Terraform', category: 'Infrastructure', icon: '🏗️' },
+    { name: 'Prometheus', category: 'Monitoring', icon: '📊' },
+  ];
+
+  const features = [
     {
-      title: '🧠 Revolutionary Quantum AI Cognitive Platform',
-      description: 'World\'s first quantum-enhanced AI with human-like reasoning capabilities. Achieve breakthrough discoveries with 1000% ROI within 6 months.',
-      price: 'Starting at $299/month',
-      features: ['Quantum neural networks with 1000+ qubits', 'Human-like reasoning and problem-solving', 'Real-time quantum simulation', 'Advanced research collaboration tools'],
-      link: 'https://ziontechgroup.com/quantum-ai-cognitive',
-      color: 'from-purple-600 to-indigo-700',
-      marketData: '$15B quantum computing market, 500% annual growth',
-      competitors: 'IBM Quantum ($2000+/month), Google Quantum AI ($1500+/month)',
-      savings: 'Save 85% vs. competitors',
-      contactInfo: {
-        mobile: '+1 302 464 0950',
-        email: 'kleber@ziontechgroup.com',
-        address: '364 E Main St STE 1008 Middletown DE 19709'
-      }
+      icon: '🤖',
+      title: 'AI-Powered Automation',
+      description: 'Intelligent systems that learn, adapt, and optimize your business processes automatically.',
+      color: 'bg-gradient-to-br from-fuchsia-500 to-purple-600',
+      textColor: 'text-fuchsia-400',
+      gradient: 'from-fuchsia-400 to-purple-500',
     },
     {
-      title: '🛰️ IT Asset Discovery Agent',
-      description: 'Agentless on-prem, cloud, and SaaS asset inventory with CMDB export and CVE enrichment.',
-      price: 'Starting at $129/month',
-      features: ['Agentless scans', 'Cloud APIs inventory', 'SaaS discovery', 'CMDB export'],
-      link: 'https://ziontechgroup.com/it-asset-discovery-agent',
-      color: 'from-cyan-600 to-blue-700',
-      marketData: 'ITAM ~$10B market, 14% CAGR',
-      competitors: 'Lansweeper, ServiceNow Discovery, Qualys Asset',
-      savings: '80% less manual inventory',
-      contactInfo: {
-        mobile: '+1 302 464 0950',
-        email: 'kleber@ziontechgroup.com',
-        address: '364 E Main St STE 1008 Middletown DE 19709'
-      }
+      icon: '☁️',
+      title: 'Cloud Infrastructure',
+      description: 'Scalable, secure, and high-performance cloud solutions designed for modern applications.',
+      color: 'bg-gradient-to-br from-cyan-500 to-blue-600',
+      textColor: 'text-cyan-400',
+      gradient: 'from-cyan-400 to-blue-500',
     },
     {
-      title: '⏱️ Serverless Cron Manager',
-      description: 'Unified scheduled jobs across AWS/GCP with retries, DLQ, alerts, and audit logs.',
-      price: 'Starting at $59/month',
-      features: ['Unified scheduler', 'HMAC webhooks', 'Retries & DLQ', 'IaC export'],
-      link: 'https://ziontechgroup.com/serverless-cron-manager',
-      color: 'from-emerald-600 to-teal-700',
-      marketData: 'Dev tooling ~$5B, 20% CAGR',
-      competitors: 'Trigger.dev, Temporal (cron)',
-      savings: '70% fewer failed jobs',
-      contactInfo: {
-        mobile: '+1 302 464 0950',
-        email: 'kleber@ziontechgroup.com',
-        address: '364 E Main St STE 1008 Middletown DE 19709'
-      }
+      icon: '🔒',
+      title: 'Security & Compliance',
+      description: 'Comprehensive security solutions that protect your data and ensure regulatory compliance.',
+      color: 'bg-gradient-to-br from-green-500 to-emerald-600',
+      textColor: 'text-green-400',
+      gradient: 'from-green-400 to-emerald-500',
     },
     {
-      title: '📈 Browser Performance Monitor',
-      description: 'RUM + Core Web Vitals with session replays and AI insights. Privacy-first.',
-      price: 'Starting at $79/month',
-      features: ['Web Vitals', 'Session replays', 'Release diffs', 'Anomaly alerts'],
-      link: 'https://ziontechgroup.com/browser-performance-monitor',
-      color: 'from-violet-600 to-purple-700',
-      marketData: 'Observability ~$8B, 18% CAGR',
-      competitors: 'Sentry RUM, Datadog RUM, New Relic Browser',
-      savings: '5–15% conversion uplift',
-      contactInfo: {
-        mobile: '+1 302 464 0950',
-        email: 'kleber@ziontechgroup.com',
-        address: '364 E Main St STE 1008 Middletown DE 19709'
-      }
+      icon: '📊',
+      title: 'Data Analytics',
+      description: 'Transform your data into actionable insights with advanced analytics and visualization.',
+      color: 'bg-gradient-to-br from-orange-500 to-red-600',
+      textColor: 'text-orange-400',
+      gradient: 'from-orange-400 to-red-500',
     },
     {
-      title: '🤖 AI Assistant Pro',
-      description: 'Deploy a secure, branded AI copilot for support and operations. Slash tickets 30-50% with guardrails, RAG, and analytics.',
-      price: 'Starting at $149/month',
-      features: ['RAG over your docs', 'Slack/Teams channels', 'Human handoff', 'Conversation analytics'],
-      link: 'https://ziontechgroup.com/ai-assistant',
-      color: 'from-cyan-600 to-blue-700',
-      marketData: '$9.3B CX AI market, 25% CAGR',
-      competitors: 'Intercom Fin ($180+/seat), Zendesk AI ($50-100/agent)',
-      savings: 'Save 40% vs. alternatives',
-      contactInfo: {
-        mobile: '+1 302 464 0950',
-        email: 'kleber@ziontechgroup.com',
-        address: '364 E Main St STE 1008 Middletown DE 19709'
-      }
+      icon: '🚀',
+      title: 'DevOps & CI/CD',
+      description: 'Streamline your development process with automated pipelines and deployment strategies.',
+      color: 'bg-gradient-to-br from-indigo-500 to-purple-600',
+      textColor: 'text-indigo-400',
+      gradient: 'from-indigo-400 to-purple-500',
     },
     {
-      title: '💸 Cloud Cost Optimizer Pro',
-      description: 'Automate rightsizing, storage lifecycle, and anomaly detection across AWS, Azure, and GCP with IaC outputs.',
-      price: 'Starting at $99/month',
-      features: ['Rightsizing & schedules', 'Lifecycle policies', 'Anomaly alerts', 'K8s bin-packing insights'],
-      link: 'https://ziontechgroup.com/cloud-cost-optimizer',
-      color: 'from-emerald-600 to-teal-700',
-      marketData: '$18B cloud cost mgmt, 19% CAGR',
-      competitors: 'Zesty, CAST AI, CloudZero',
-      savings: 'Save 10-35% in 90 days',
-      contactInfo: {
-        mobile: '+1 302 464 0950',
-        email: 'kleber@ziontechgroup.com',
-        address: '364 E Main St STE 1008 Middletown DE 19709'
-      }
-    },
-    {
-      title: '🗄️ Database Performance Monitor',
-      description: 'Proactive Postgres/MySQL insights with slow query capture, AI index suggestions, and capacity forecasting.',
-      price: 'Starting at $79/month',
-      features: ['Slow query ranking', 'AI index advice', 'Pool tuning', 'SLA/SLO dashboards'],
-      link: 'https://ziontechgroup.com/database-performance-monitor',
-      color: 'from-purple-600 to-indigo-700',
-      marketData: '$6B DB monitoring market',
-      competitors: 'Percona PMM, Datadog APM, New Relic',
-      savings: 'Cut p95 20-50% in month 1',
-      contactInfo: {
-        mobile: '+1 302 464 0950',
-        email: 'kleber@ziontechgroup.com',
-        address: '364 E Main St STE 1008 Middletown DE 19709'
-      }
-    },
-    {
-      title: '📘 API Documentation Generator',
-      description: 'Generate beautiful, accurate API docs from OpenAPI/GraphQL/Proto with SDK snippets and changelogs.',
-      price: 'Starting at $49/month',
-      features: ['Schema parsing', 'SDK snippets', 'Changelog & versions', 'Search & themes'],
-      link: 'https://ziontechgroup.com/api-documentation-generator',
-      color: 'from-cyan-600 to-blue-700',
-      marketData: '$1.5B dev docs tooling',
-      competitors: 'ReadMe, Redocly, Stoplight',
-      savings: 'Ship docs 5x faster',
-      contactInfo: {
-        mobile: '+1 302 464 0950',
-        email: 'kleber@ziontechgroup.com',
-        address: '364 E Main St STE 1008 Middletown DE 19709'
-      }
-    },
-    {
-      title: '🧠 Quantum AI Brain-Computer Interface',
-      icon: '🧠',
-      description: 'Breakthrough quantum AI-powered brain-computer interface that enables direct neural communication and control. Achieve unprecedented human-AI symbiosis with 99.9% accuracy.',
-      price: 'Starting at $4,999/month',
-      features: ['Quantum-enhanced neural signal processing', 'Real-time brain activity analysis', 'AI-powered thought-to-action conversion', 'Secure neural data encryption'],
-      link: 'https://ziontechgroup.com/quantum-ai-brain-computer-interface',
-      color: 'from-purple-600 to-pink-700',
-      marketData: '$2.1B brain-computer interface market, 580% annual growth',
-      competitors: 'Traditional BCI systems ($50,000+), Basic neural interfaces ($25,000+), Research-only platforms ($100,000+)',
-      savings: 'Save 90% vs. competitors',
-      contactInfo: {
-        mobile: '+1 302 464 0950',
-        email: 'kleber@ziontechgroup.com',
-        address: '364 E Main St STE 1008 Middletown DE 19709'
-      }
-    },
-    {
-      title: '🔒 Quantum Cybersecurity Suite',
-      description: 'Post-quantum era security with AI threat detection. Future-proof your infrastructure with 300% ROI within 4 months.',
-      price: 'Starting at $179/month',
-      features: ['Quantum-resistant encryption algorithms', 'AI-powered threat detection and response', 'Zero-trust architecture implementation', 'Real-time security monitoring'],
-      link: 'https://ziontechgroup.com/quantum-cybersecurity',
-      color: 'from-red-500 to-pink-600',
-      marketData: '$7.2B quantum security market, 380% annual growth',
-      competitors: 'CrowdStrike ($8.99/user/month), Palo Alto Networks ($50+/user/month)',
-      savings: 'Save 70% vs. competitors',
-      contactInfo: {
-        mobile: '+1 302 464 0950',
-        email: 'kleber@ziontechgroup.com',
-        address: '364 E Main St STE 1008 Middletown DE 19709'
-      }
-    },
-    {
-      title: '🔐 Quantum Internet Security Platform',
-      icon: '🔐',
-      description: 'Revolutionary quantum internet security platform that provides unbreakable encryption and quantum-safe communication protocols. Achieve 100% security with quantum-resistant algorithms.',
-      price: 'Starting at $2,499/month',
-      features: ['Quantum-resistant encryption algorithms', 'Quantum key distribution (QKD)', 'AI-powered threat detection', 'Quantum-safe VPN'],
-      link: 'https://ziontechgroup.com/quantum-internet-security-platform',
-      color: 'from-green-600 to-emerald-700',
-      marketData: '$12.8B quantum security market, 450% annual growth',
-      competitors: 'Traditional security ($5000+/month), Basic encryption ($1000/month), Legacy VPN services ($500/month)',
-      savings: 'Save 50% vs. competitors',
-      contactInfo: {
-        mobile: '+1 302 464 0950',
-        email: 'kleber@ziontechgroup.com',
-        address: '364 E Main St STE 1008 Middletown DE 19709'
-      }
-    },
-    {
-      title: '🚗 Autonomous Vehicle AI Platform',
-      icon: '🚗',
-      description: 'Breakthrough AI platform that manages and coordinates autonomous vehicles with unprecedented safety and efficiency. Achieve 99.99% accident-free autonomous transportation.',
-      price: 'Starting at $3,999/month',
-      features: ['AI-powered autonomous navigation', 'Real-time traffic optimization', 'Predictive maintenance AI', 'Multi-vehicle coordination'],
-      link: 'https://ziontechgroup.com/autonomous-vehicle-ai-platform',
-      color: 'from-orange-600 to-red-700',
-      marketData: '$54.2B autonomous vehicle market, 380% annual growth',
-      competitors: 'Waymo ($10,000+/month), Tesla ($5000+/month), Traditional fleet management ($2000/month)',
-      savings: 'Save 60% vs. competitors',
-      contactInfo: {
-        mobile: '+1 302 464 0950',
-        email: 'kleber@ziontechgroup.com',
-        address: '364 E Main St STE 1008 Middletown DE 19709'
-      }
-    },
-    {
-      title: '🌐 Metaverse AI Development Platform',
       icon: '🌐',
-      description: 'Revolutionary AI platform for creating, managing, and monetizing immersive metaverse experiences. Build the future of digital interaction with AI-powered virtual worlds.',
-      price: 'Starting at $2,899/month',
-      features: ['AI-powered 3D world generation', 'Intelligent NPC creation', 'Dynamic content adaptation', 'Real-time AI interactions'],
-      link: 'https://ziontechgroup.com/metaverse-ai-development-platform',
-      color: 'from-violet-600 to-purple-700',
-      marketData: '$74.4B metaverse market, 420% annual growth',
-      competitors: 'Roblox ($2500/month), Unity ($4000/month), Traditional 3D development ($8000/month)',
-      savings: 'Save 64% vs. competitors',
-      contactInfo: {
-        mobile: '+1 302 464 0950',
-        email: 'kleber@ziontechgroup.com',
-        address: '364 E Main St STE 1008 Middletown DE 19709'
-      }
+      title: 'Digital Transformation',
+      description: 'Modernize your business with cutting-edge digital solutions and strategic consulting.',
+      color: 'bg-gradient-to-br from-teal-500 to-cyan-600',
+      textColor: 'text-teal-400',
+      gradient: 'from-teal-400 to-cyan-500',
+    },
+  ];
+
+  const stats = [
+    { number: '500+', label: 'Happy Clients' },
+    { number: '50+', label: 'Micro SaaS Services' },
+    { number: '99.9%', label: 'Uptime SLA' },
+    { number: '24/7', label: 'Support Available' },
+  ];
+
+  const testimonials = [
+    {
+      name: 'Sarah Johnson',
+      role: 'CTO at TechFlow Inc.',
+      content: 'Zion Tech Group transformed our development process. Their AI-powered tools increased our productivity by 300% and reduced deployment time by 80%.',
+      avatar: '👩‍💼',
+      rating: 5
     },
     {
-      title: '🤖 AI Services (LLM, RAG, MLOps)',
-      description: 'Prototype to production AI with evals, guardrails, and observability. Fixed-price packages with clear outcomes.',
-      price: 'From $3,500/month or $6,900 fixed',
-      features: ['LLM apps and copilots', 'RAG + vector search', 'MLOps pipelines', 'Safety and governance'],
-      link: 'https://ziontechgroup.com/ai-services',
-      color: 'from-cyan-600 to-purple-700',
-      marketData: 'AI services market $71B+, rapid adoption across industries',
-      competitors: 'Boutique AI agencies ($25k+), Big 4 ($100k+)',
-      savings: 'Save 60–85% with transparent packages',
-      contactInfo: { mobile: '+1 302 464 0950', email: 'kleber@ziontechgroup.com', address: '364 E Main St STE 1008 Middletown DE 19709' }
+      name: 'Michael Chen',
+      role: 'CEO at DataViz Solutions',
+      content: 'The AI Content Generator Pro saved us countless hours. We now produce 10x more content with better quality and SEO optimization.',
+      avatar: '👨‍💼',
+      rating: 5
     },
     {
-      title: '🛠️ Modern IT Services (Cloud, DevOps, SRE)',
-      description: 'Outcome-driven platform engineering, GitOps, observability, FinOps and compliance baselines.',
-      price: 'From $2,000/month or $4,900 fixed',
-      features: ['Cloud landing zones', 'CI/CD & IaC', 'SLOs + error budgets', 'FinOps & governance'],
-      link: 'https://ziontechgroup.com/it-services',
-      color: 'from-blue-600 to-indigo-700',
-      marketData: 'Cloud ops services >$150B, ongoing efficiency demand',
-      competitors: 'Traditional MSPs ($10k+/mo), Big consultancies ($50k+)',
-      savings: 'Save 50–75% with productized engagements',
-      contactInfo: { mobile: '+1 302 464 0950', email: 'kleber@ziontechgroup.com', address: '364 E Main St STE 1008 Middletown DE 19709' }
-    },
-    {
-      title: '☁️ Cloud Cost Optimizer',
-      description: 'Rightsizing, off-hours, and anomaly detection across AWS/GCP/Azure with FinOps dashboards.',
-      price: '$149/month',
-      features: ['Auto rightsizing', 'Idle cleanup', 'Spot orchestration', 'Anomaly detection'],
-      link: 'https://ziontechgroup.com/cloud-cost-optimizer',
-      color: 'from-emerald-600 to-teal-700',
-      marketData: 'FinOps software growing 25% YoY',
-      competitors: 'CloudZero, CloudHealth',
-      savings: 'Cut bills 20–45% in 90 days',
-      contactInfo: { mobile: '+1 302 464 0950', email: 'kleber@ziontechgroup.com', address: '364 E Main St STE 1008 Middletown DE 19709' }
-    },
-    {
-      title: '📈 Uptime & SLO Monitor',
-      description: 'Error budgets, burn-rate alerts, and synthetic uptime with status pages. OTel-native.',
-      price: 'Starting at $89/month',
-      features: ['SLIs/SLOs', 'Burn-rate alerts', 'Synthetic checks', 'Status pages'],
-      link: 'https://ziontechgroup.com/uptime-slo-monitor',
-      color: 'from-cyan-600 to-blue-700',
-      marketData: 'Observability market >$30B',
-      competitors: 'Nobl9, Datadog SLO',
-      savings: 'Simpler, faster setup; SMB pricing',
-      contactInfo: { mobile: '+1 302 464 0950', email: 'kleber@ziontechgroup.com', address: '364 E Main St STE 1008 Middletown DE 19709' }
-    },
-    {
-      title: '✅ SOC 2 Evidence Automation',
-      description: 'Continuously collect and map evidence to SOC 2 controls. Export auditor-ready packages.',
-      price: 'Starting at $149/month',
-      features: ['Cloud evidence', 'Attestations', 'Access reviews', 'Control mapping'],
-      link: 'https://ziontechgroup.com/soc2-evidence-automation',
-      color: 'from-emerald-600 to-teal-700',
-      marketData: 'Compliance automation ~$2B',
-      competitors: 'Drata, Vanta',
-      savings: '60–80% less audit prep time',
-      contactInfo: { mobile: '+1 302 464 0950', email: 'kleber@ziontechgroup.com', address: '364 E Main St STE 1008 Middletown DE 19709' }
-    },
-    {
-      title: '🛡️ API Security Scanner',
-      description: 'OWASP API Top 10 scans with CI/CD gates and OpenAPI import. Dev-first UX.',
-      price: 'Starting at $129/month',
-      features: ['Top 10 scans', 'OpenAPI import', 'Auth flows', 'CI gates'],
-      link: 'https://ziontechgroup.com/api-security-scanner',
-      color: 'from-rose-600 to-orange-700',
-      marketData: 'API security ~$6B',
-      competitors: 'StackHawk, 42Crunch',
-      savings: 'Shift-left, fewer prod issues',
-      contactInfo: { mobile: '+1 302 464 0950', email: 'kleber@ziontechgroup.com', address: '364 E Main St STE 1008 Middletown DE 19709' }
-    },
-    {
-      title: '🛡️ GDPR DSAR Automation',
-      description: 'Branded DSAR portal with identity verification, PII discovery, and export packaging.',
-      price: 'Starting at $99/month',
-      features: ['DSAR portal', 'ID verification', 'PII discovery', 'Audit exports'],
-      link: 'https://ziontechgroup.com/gdpr-dsar-automation',
-      color: 'from-blue-600 to-cyan-700',
-      marketData: 'Privacy tech ~$3B',
-      competitors: 'Transcend, OneTrust',
-      savings: '50–70% faster DSAR handling',
-      contactInfo: { mobile: '+1 302 464 0950', email: 'kleber@ziontechgroup.com', address: '364 E Main St STE 1008 Middletown DE 19709' }
-    },
-    {
-      title: '🚀 Sales Copilot',
-      description: 'AI prospecting and outreach with CRM hygiene and pipeline Q&A.',
-      price: 'Starting at $59/month',
-      features: ['Email drafts', 'Call summaries', 'Prospect research', 'CRM sync'],
-      link: 'https://ziontechgroup.com/sales-copilot',
-      color: 'from-violet-600 to-purple-700',
-      marketData: 'Sales tech ~$10B',
-      competitors: 'Salesforce Einstein, HubSpot AI',
-      savings: '20–35% more meetings',
-      contactInfo: { mobile: '+1 302 464 0950', email: 'kleber@ziontechgroup.com', address: '364 E Main St STE 1008 Middletown DE 19709' }
+      name: 'Emily Rodriguez',
+      role: 'Marketing Director at GrowthCo',
+      content: 'Their AI Sales Intelligence Platform helped us increase our conversion rate by 45% and reduce sales cycle time significantly.',
+      avatar: '👩‍💻',
+      rating: 5
     }
   ];
 
-  // Get revolutionary services for showcase (merged datasets)
-  const all = enhancedRealMicroSaasServices.concat(extraServices, additionalEnhancedServices);
-  const revolutionaryServices = all.filter(service => service.realImplementation && service.popular).slice(0, 6);
+  const latestServices = [
+    {
+      name: 'AI Content Generator Pro',
+      description: 'Professional AI-powered content creation with SEO optimization',
+      price: '$49/month',
+      category: 'Content & Marketing',
+      link: 'https://ziontechgroup.com/ai-content-generator',
+      features: ['SEO optimization', 'Multi-language support', 'Brand voice customization', '100+ templates']
+    },
+    {
+      name: 'AI Code Review Assistant',
+      description: 'Intelligent code review automation with security detection',
+      price: '$59/month',
+      category: 'Development & DevOps',
+      link: 'https://ziontechgroup.com/ai-code-review-assistant',
+      features: ['AI-powered analysis', 'Security detection', 'Quality scoring', 'GitHub integration']
+    },
+    {
+      name: 'AI Sales Intelligence Platform',
+      description: 'AI-powered sales automation and lead scoring',
+      price: '$99/month',
+      category: 'Sales & CRM',
+      link: 'https://ziontechgroup.com/ai-sales-intelligence',
+      features: ['Lead scoring', 'Follow-up automation', 'Pipeline optimization', 'Revenue forecasting']
+    }
+  ];
 
   return (
-    <UltraFuturisticMatrixBackground>
+    <>
       <Head>
-        <title>Zion Tech Group - Revolutionary AI & Quantum Computing Solutions</title>
-        <meta name="description" content="Transform your business with 200+ revolutionary micro SaaS services. Quantum AI, autonomous systems, and cutting-edge technology solutions with 800%+ average ROI." />
-        <meta name="keywords" content="AI, quantum computing, micro SaaS, autonomous systems, space technology, cybersecurity, manufacturing AI" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="/favicon.ico" />
-        
-        {/* Open Graph */}
-        <meta property="og:title" content="Zion Tech Group - Revolutionary AI & Quantum Computing Solutions" />
-        <meta property="og:description" content="Transform your business with 200+ revolutionary micro SaaS services. Quantum AI, autonomous systems, and cutting-edge technology solutions." />
-        <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://ziontechgroup.com" />
-        <meta property="og:image" content="https://ziontechgroup.com/og-image.jpg" />
-        
-        {/* Twitter */}
+        <title>Zion Tech Group — World&apos;s Most Advanced Autonomous Innovation Hub & AI-Powered Cloud Platform</title>
+        <meta name="description" content="Experience the future of autonomous technology with 227+ intelligent automations, AI-powered cloud systems, comprehensive redundancy infrastructure, and zero-downtime operations. The most advanced autonomous platform ever built." />
+        <meta property="og:title" content="Zion Tech Group — World's Most Advanced Autonomous Innovation Hub & AI-Powered Cloud Platform" />
+        <meta property="og:description" content="Experience the future of autonomous technology with 227+ intelligent automations, AI-powered cloud systems, comprehensive redundancy infrastructure, and zero-downtime operations." />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Zion Tech Group - Revolutionary AI & Quantum Computing Solutions" />
-        <meta name="twitter:description" content="Transform your business with 200+ revolutionary micro SaaS services." />
-        <meta name="twitter:image" content="https://ziontechgroup.com/og-image.jpg" />
       </Head>
-      {/* Reusable Service Ads Strip */}
-      <ServiceAds
-        heading="Featured Micro SaaS & AI Services"
-        subheading="Transparent pricing, real capabilities, fast onboarding."
-        items={[
-          // New high-demand, real services
-          {
-            title: '🧪 Synthetic Data Generator',
-            description: 'Privacy-safe synthetic tabular/time-series/text for analytics, testing and ML.',
-            price: '$119/month',
-            features: ['Differential privacy', 'PII masking', 'Utility/drift reports', 'SDKs & REST'],
-            link: 'https://ziontechgroup.com/services/synthetic-data-generator',
-            contactInfo
-          },
-          {
-            title: '📥 Email Parsing & Routing API',
-            description: 'Inbound email to structured JSON events with attachments, replays and DLQ.',
-            price: '$39/month',
-            features: ['Signature stripping', 'Attachment handling', 'Webhook retries', 'Inspector'],
-            link: 'https://ziontechgroup.com/services/email-parsing-routing-api',
-            contactInfo
-          },
-          {
-            title: '☸️ Kubernetes Cost Analyzer',
-            description: 'Allocation by namespace/team, rightsizing, and bin‑packing recommendations.',
-            price: '$99/month',
-            features: ['Requests/limits advisor', 'Idle detection', 'Bin‑packing', 'Chargeback'],
-            link: 'https://ziontechgroup.com/services/kubernetes-cost-analyzer',
-            contactInfo
-          },
-          {
-            title: '🧭 Browser Automation Cloud',
-            description: 'Hosted Playwright jobs with queues, screenshots/video, proxies and stealth.',
-            price: '$59/month',
-            features: ['Retries & DLQ', 'Scheduler', 'Proxy pools', 'Webhook callbacks'],
-            link: 'https://ziontechgroup.com/services/browser-automation-cloud',
-            contactInfo
-          },
-          {
-            title: '📮 Email Deliverability Monitor',
-            description: 'DMARC/SPF/DKIM checks, seed-list tests and blocklist monitoring with weekly scorecards.',
-            price: '$59/month',
-            features: ['DMARC/SPF/DKIM validation', 'Seed inbox placement tests', 'Blocklist monitoring', 'Alerts and reports'],
-            link: 'https://ziontechgroup.com/email-deliverability-monitor',
-            contactInfo
-          },
-          {
-            title: '📄 PDF Render & Fill API',
-            description: 'Reliable HTML-to-PDF, form filling, merge and watermark with developer-first APIs.',
-            price: '$39/month',
-            features: ['HTML/URL to PDF', 'AcroForms fill', 'Templates and variables', 'Webhooks and async jobs'],
-            link: 'https://ziontechgroup.com/pdf-render-api',
-            contactInfo
-          },
-          {
-            title: '🔒 TLS/SSL Certificate Monitor',
-            description: 'Expiry, chain trust, OCSP, HSTS and weak cipher checks with proactive alerts.',
-            price: '$39/month',
-            features: ['Expiry lead-time alerts', 'OCSP and chain checks', 'HSTS/weak cipher detection', 'Slack/Email/PagerDuty alerts'],
-            link: 'https://ziontechgroup.com/tls-certificate-monitor',
-            contactInfo
-          },
-          {
-            title: '🌐 Domain & DNS Health Monitor',
-            description: 'Domains, DNSSEC, NS/DS drift, and MX/SPF/DMARC validation to prevent outages.',
-            price: '$49/month',
-            features: ['Registrar expiry', 'NS/DS drift', 'DNSSEC validity', 'MX/SPF/DMARC health'],
-            link: 'https://ziontechgroup.com/domain-dns-monitor',
-            contactInfo
-          },
-          {
-            title: '🏗️ Infrastructure Drift Detector',
-            description: 'Continuously detect and remediate IaC drift across AWS/Azure/GCP with PR-based fixes.',
-            price: '$129/month',
-            features: ['Cloud inventory', 'OPA policy drift rules', 'Auto PRs', 'Slack approvals'],
-            link: 'https://ziontechgroup.com/infrastructure-drift-detector',
-            contactInfo
-          },
-          {
-            title: '⏰ Cron & Jobs Scheduler',
-            description: 'Reliable scheduled jobs with retries, idempotency and regional runners plus alerts.',
-            price: '$29/month',
-            features: ['CRON & human syntax', 'Retries & DLQs', 'Webhooks & SDKs', 'SLOs and alerts'],
-            link: 'https://ziontechgroup.com/cron-job-scheduler',
-            contactInfo
-          },
-          {
-            title: '🔁 Webhook Relay & Replay',
-            description: 'Capture, buffer, retry and replay webhooks with signing, filtering and DLQs.',
-            price: '$39/month',
-            features: ['Replay with timestamps', 'HMAC signing/verification', 'Filters & routing', 'Dead-letter queues'],
-            link: 'https://ziontechgroup.com/webhook-relay-replay',
-            contactInfo
-          },
-          {
-            title: '📈 Uptime & SLO Monitor',
-            description: 'Synthetic checks, SLO error budgets and status pages powered by OpenTelemetry.',
-            price: '$49/month',
-            features: ['Global synthetic probes', 'SLO targets & budgets', 'Incident timelines', 'Status page hosting'],
-            link: 'https://ziontechgroup.com/uptime-slo-monitor',
-            contactInfo
-          },
-          {
-            title: '📄 Status Pages + SLOs',
-            description: 'Public/private status pages with metrics, incidents, RCA and subscriber alerts.',
-            price: '$29/month',
-            features: ['Branded pages', 'Incident templates', 'Subscriber web/email/SMS', 'SLO visualizations'],
-            link: 'https://ziontechgroup.com/status-pages-slo',
-            contactInfo
-          },
-          {
-            title: '🎯 Synthetic Monitor Recorder',
-            description: 'Record browser journeys, run synthetic tests and alert on regressions.',
-            price: '$59/month',
-            features: ['Recorder extension', 'Playwright runner', 'Screenshots & videos', 'Threshold-based alerts'],
-            link: 'https://ziontechgroup.com/synthetic-monitor-recorder',
-            contactInfo
-          },
-          {
-            title: '🔎 Vector Search Starter',
-            description: 'Embed pipelines and similarity search with API and UI widgets in days.',
-            price: '$79/month',
-            features: ['Embeddings ingestion', 'Hybrid lexical+vector', 'Multi-tenant namespaces', 'Typed SDKs'],
-            link: 'https://ziontechgroup.com/vector-search-starter',
-            contactInfo
-          },
-          // Existing curated highlights
-          ...serviceHighlights.slice(0, 8).map((h) => ({
-            title: h.title,
-            description: h.description,
-            price: h.price,
-            features: h.features,
-            link: h.link,
-            contactInfo: h.contactInfo || contactInfo
-          }))
-        ]}
-      />
-
-      {/* IT Services & Platform Engineering Ads Strip */}
-      <ServiceAds
-        heading="Enterprise IT & Platform Engineering"
-        subheading="Cloud landing zones, SSO, databases, observability — ready in days."
-        items={[
-          {
-            title: '☁️ Cloud Landing Zone Builder',
-            description: 'Secure multi-account AWS/Azure/GCP foundations with guardrails, IAM, networking, and FinOps via GitOps.',
-            price: 'Starting at $349/month',
-            features: ['Org setup & SCPs', 'VPC & network baselines', 'Audit logging', 'Budgets & anomaly alerts', 'GitOps workflows', 'Multi-env blueprints'],
-            link: 'https://ziontechgroup.com/cloud-landing-zone',
-            contactInfo
-          },
-          {
-            title: '🔐 SSO-in-a-Box',
-            description: 'Enterprise SSO rollout with SAML/OIDC, SCIM provisioning, MFA policies, and audit trails.',
-            price: 'Starting at $159/month',
-            features: ['SAML/OIDC', 'SCIM provisioning', 'MFA & risk policies', 'App catalog', 'Audit logs', 'Just-in-time user sync'],
-            link: 'https://ziontechgroup.com/sso-in-a-box',
-            contactInfo
-          },
-          {
-            title: '🗄️ Managed Postgres HA',
-            description: 'Hands-on Postgres performance tuning, high availability, and disaster recovery playbooks.',
-            price: 'Starting at $199/month',
-            features: ['Patroni/PGPool patterns', 'Index & vacuum guidance', 'Query tracing', 'HA/DR runbooks', 'Backups & PITR', 'Capacity planning'],
-            link: 'https://ziontechgroup.com/managed-postgres-ha',
-            contactInfo
-          },
-          {
-            title: '📊 API Observability Starter (OTel)',
-            description: 'OpenTelemetry-based traces, metrics, and logs with dashboards, alerts, and SLOs.',
-            price: 'Starting at $129/month',
-            features: ['OTel collectors', 'Service maps', 'SLO alerting', 'Latency budgets', 'Drill-down traces', 'Error analytics'],
-            link: 'https://ziontechgroup.com/api-observability-starter',
-            contactInfo
-          }
-        ]}
-      />
-
-      {/* AI Agents & Copilots */}
-      <ServiceAds
-        heading="AI Agents & Copilots"
-        subheading="Deploy production-ready AI to code, sell, support, and analyze."
-        items={[
-          {
-            title: '🧑‍💻 AI Code Review Copilot',
-            description: 'Blend static analysis with LLM reasoning for actionable reviews and secure PRs.',
-            price: 'Starting at $99/month',
-            features: ['OWASP/SAST checks', 'Performance hints', 'Style & convention rules', 'Risk scoring & PR comments'],
-            link: 'https://ziontechgroup.com/ai-code-review-copilot',
-            contactInfo
-          },
-          {
-            title: '🤝 AI Sales Automation',
-            description: 'Prospect enrichment, personalized outreach, call summaries and CRM updates automatically.',
-            price: 'Starting at $149/month',
-            features: ['ICP matching', 'Sequenced outreach', 'Meeting notes & action items', 'CRM sync'],
-            link: 'https://ziontechgroup.com/ai-sales-automation',
-            contactInfo
-          },
-          {
-            title: '🎧 AI Customer Service',
-            description: '24/7 support with RAG over your docs, secure guardrails, and human handoff.',
-            price: 'Starting at $149/month',
-            features: ['Omnichannel chat', 'RAG + guardrails', 'Workflow automations', 'Analytics & CSAT'],
-            link: 'https://ziontechgroup.com/ai-customer-service',
-            contactInfo
-          },
-          {
-            title: '📊 AI Data Analytics',
-            description: 'Ask questions in plain English and get trusted KPIs, narratives, and charts.',
-            price: 'Starting at $129/month',
-            features: ['Semantic layer', 'Governed queries', 'Narrative insights', 'Slack & email reports'],
-            link: 'https://ziontechgroup.com/ai-data-analytics',
-            contactInfo
-          }
-        ]}
-      />
-
-      {/* New in 2025: Real Services */}
-      <ServiceAds
-        heading="New in 2025 — Real, Production-Ready Services"
-        subheading="Governed AI, zero‑ETL analytics, and data contracts with transparent pricing."
-        items={[
-          {
-            title: '📜 Data Contract Governance',
-            description: 'Schema‑first contracts with CI validation, runtime enforcement, lineage and SLA alerts.',
-            price: '$129/month',
-            features: ['Contract registry', 'CI validators', 'Runtime checks', 'Lineage & impact', 'SLA alerts', 'dbt/Snowflake export'],
-            link: 'https://ziontechgroup.com/services/data-contract-governance',
-            contactInfo
-          },
-          {
-            title: '🔄 Zero‑ETL Warehouse Sync',
-            description: 'CDC sync from Postgres/MySQL to Snowflake/BigQuery with schema evolution and PII masking.',
-            price: '$99/month',
-            features: ['CDC ingestion', 'Schema evolution', 'PII masking', 'Backfills & retries', 'Debezium compatible', 'DLQs & monitoring'],
-            link: 'https://ziontechgroup.com/services/zero-etl-warehouse-sync',
-            contactInfo
-          },
-          {
-            title: '🧠 AI‑Governed RAG Platform',
-            description: 'Policy‑driven RAG with eval harnesses, content approvals, prompt registry and drift monitoring.',
-            price: '$149/month',
-            features: ['Guardrails & policies', 'E2E evals', 'Content approvals', 'Prompt registry', 'Drift monitoring', 'RBAC & audits'],
-            link: 'https://ziontechgroup.com/services/ai-governed-rag-platform',
-            contactInfo
-          }
-        ]}
-      />
 
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-center px-4">
-        <div className="container mx-auto text-center z-10">
-          {/* Main Heading */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="mb-8"
-          >
-            <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight">
-              <span className="bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 bg-clip-text text-transparent">
-                Revolutionary
-              </span>
-              <br />
-              <span className="text-white">Technology Solutions</span>
-            </h1>
-            <p className="text-xl md:text-2xl text-gray-300 max-w-4xl mx-auto leading-relaxed">
-              Transform your business with 200+ cutting-edge micro SaaS services powered by quantum AI, 
-              autonomous systems, and breakthrough technology. Achieve 800%+ ROI with our revolutionary solutions.
-            </p>
-          </motion.div>
+      <Hero
+        title="Zion Tech Group"
+        subtitle="The world&apos;s most advanced autonomous innovation hub delivering cutting-edge technology solutions, intelligent automation systems, and the future of cloud-native AI infrastructure."
+        primaryAction={{
+          text: "Explore Micro SaaS",
+          href: "/micro-saas"
+        }}
+        secondaryAction={{
+          text: "View All Services",
+          href: "/services"
+        }}
+        stats={heroStats}
+      />
 
-          {/* Hero Stats */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-          >
-            {heroStats.map((stat, index) => (
-              <motion.div
-                key={index}
-                className="text-center p-4 rounded-xl bg-gray-900/50 backdrop-blur-sm border border-gray-700/50"
-                whileHover={{ scale: 1.05, y: -5 }}
-                transition={{ duration: 0.3 }}
-              >
-                <div className={`${stat.color} mb-2 flex justify-center`}>
-                  {stat.icon}
-                </div>
-                <div className="text-2xl md:text-3xl font-bold text-white mb-1">
-                  {stat.value}
-                </div>
-                <div className="text-xs text-gray-400 leading-tight">
-                  {stat.label}
-                </div>
-              </motion.div>
+      {/* Stats Section */}
+      <section className="py-20 bg-gray-800/50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+            {stats.map((stat) => (
+              <div key={stat.label} className="text-center">
+                <div className="text-4xl md:text-5xl font-bold text-white mb-2">{stat.number}</div>
+                <div className="text-gray-400">{stat.label}</div>
+              </div>
             ))}
-          </motion.div>
+          </div>
+        </div>
+      </section>
 
-          {/* CTA Buttons */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
-            className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16"
-          >
-            <Button
-              href="/services"
-              className="bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-600 hover:to-blue-700 text-white px-8 py-4 text-lg font-semibold rounded-xl shadow-2xl hover:shadow-cyan-500/25 transition-all duration-300"
-            >
-              <Rocket className="w-5 h-5 mr-2" />
-              Explore Services
-            </Button>
-            <Button
-              href="/contact"
-              variant="outline"
-              className="border-2 border-cyan-500 text-cyan-400 hover:bg-cyan-500 hover:text-white px-8 py-4 text-lg font-semibold rounded-xl transition-all duration-300"
-            >
-              <Mail className="w-5 h-5 mr-2" />
-              Get Started
-            </Button>
-          </motion.div>
+      {/* Platform Capabilities */}
+      <Features features={platformFeatures} />
 
-          {/* Contact Information */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.6 }}
-            className="bg-gray-900/50 backdrop-blur-sm border border-gray-700/50 rounded-2xl p-6 max-w-2xl mx-auto"
-          >
-            <h3 className="text-xl font-semibold text-white mb-4 text-center">Ready to Transform Your Business?</h3>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-center">
-              <div className="flex flex-col items-center space-y-2">
-                <Phone className="w-5 h-5 text-cyan-400" />
-                <span className="text-sm text-gray-300">{contactInfo.mobile}</span>
+      {/* Features Section */}
+      <section className="py-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold text-white mb-4">
+              Why Choose Zion Tech Group?
+            </h2>
+            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+              We combine cutting-edge AI technology with deep industry expertise to deliver solutions that drive real business results.
+            </p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {features.map((feature) => (
+              <div key={feature.title} className="group">
+                <div className={`w-16 h-16 mx-auto mb-6 rounded-2xl flex items-center justify-center text-3xl ${feature.color}`}>
+                  {feature.icon}
+                </div>
+                <h3 className="text-xl font-bold text-white mb-3 text-center">{feature.title}</h3>
+                <p className="text-gray-300 text-center">{feature.description}</p>
               </div>
-              <div className="flex flex-col items-center space-y-2">
-                <Mail className="w-5 h-5 text-cyan-400" />
-                <span className="text-sm text-gray-300">{contactInfo.email}</span>
-              </div>
-              <div className="flex flex-col items-center space-y-2">
-                <MapPin className="w-5 h-5 text-cyan-400" />
-                <span className="text-sm text-gray-300">{contactInfo.address}</span>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Micro SaaS Services Showcase */}
+      <section className="py-24 bg-gradient-to-br from-gray-900 to-black relative overflow-hidden">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_80%,rgba(120,119,198,0.1),transparent_50%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_20%,rgba(255,119,198,0.1),transparent_50%)]" />
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-20">
+            <div className="inline-flex items-center px-4 py-2 rounded-full bg-green-500/10 border border-green-500/20 text-green-400 text-sm font-medium mb-6">
+              <span className="w-2 h-2 bg-green-500 rounded-full mr-2 animate-pulse" />
+              🚀 Premium Micro SaaS Solutions
+            </div>
+            <h2 className="text-4xl sm:text-5xl font-bold mb-8 text-white leading-tight">
+              Enterprise-Grade Tools for Every Business Need
+            </h2>
+            <p className="text-xl text-gray-400 max-w-4xl mx-auto leading-relaxed">
+              Discover <span className="text-green-400 font-semibold">28+ specialized micro SaaS solutions</span> covering AI-powered content creation, design systems, performance monitoring, 
+              SEO automation, chatbots, business intelligence, email marketing, social media, project management, 
+              billing, HR operations, video editing, cloud optimization, legal automation, sales intelligence, customer analytics, 
+              API management, compliance monitoring, and more. <span className="text-green-400 font-semibold">Focused value with transparent pricing, 14-day free trials, and enterprise-grade infrastructure.</span>
+            </p>
+            <div className="mt-8 flex flex-wrap justify-center gap-4 text-sm text-gray-400">
+              <span className="flex items-center"><span className="w-2 h-2 bg-green-500 rounded-full mr-2"></span>14-Day Free Trials</span>
+              <span className="flex items-center"><span className="w-2 h-2 bg-blue-500 rounded-full mr-2"></span>Enterprise Security</span>
+              <span className="flex items-center"><span className="w-2 h-2 bg-purple-500 rounded-full mr-2"></span>99.9% Uptime</span>
+              <span className="flex items-center"><span className="w-2 h-2 bg-orange-500 rounded-full mr-2"></span>24/7 Support</span>
+            </div>
+            <div className="mt-10 flex flex-col sm:flex-row gap-4 justify-center">
+              <Button
+                href="/micro-saas"
+                size="lg"
+                className="bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700 text-white px-8 py-4 text-lg font-semibold"
+              >
+                View All Services
+              </Button>
+              <Button
+                href="/contact"
+                size="lg"
+                variant="outline"
+                className="border-2 border-gray-600 hover:border-gray-500 text-gray-300 hover:text-white px-8 py-4 text-lg font-semibold"
+              >
+                Get Custom Quote
+              </Button>
+            </div>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+            {/* AI Content Generator */}
+            <div className="group relative">
+              <div className="bg-gray-800/50 backdrop-blur-sm rounded-2xl p-6 border border-gray-700 hover:border-pink-500/50 transition-all duration-300 hover:shadow-2xl hover:shadow-pink-500/20">
+                <div className="flex items-center mb-4">
+                  <div className="w-12 h-12 bg-gradient-to-br from-pink-500 to-rose-600 rounded-xl flex items-center justify-center text-2xl mr-4">
+                    📝
+                  </div>
+                  <div>
+                    <h3 className="text-lg font-semibold text-white">AI Content Generator</h3>
+                    <p className="text-pink-400 text-sm font-medium">$49/month</p>
+                  </div>
+                </div>
+                <p className="text-gray-300 text-sm mb-4">
+                  Professional AI-powered content creation with SEO optimization and brand voice customization.
+                </p>
+                <div className="flex items-center justify-between">
+                  <span className="text-xs text-gray-500">14-day free trial</span>
+                  <Button
+                    href="https://ziontechgroup.com/micro-saas"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    size="sm"
+                    className="bg-gradient-to-r from-pink-500 to-rose-600 hover:from-pink-600 hover:to-rose-700"
+                  >
+                    Try Free
+                  </Button>
+                </div>
               </div>
             </div>
-          </motion.div>
-        </div>
-      </section>
 
-      {/* Revolutionary Services Showcase */}
-      <section className="py-20 px-4">
-        <div className="container mx-auto">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="text-center mb-16"
-          >
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-              <span className="bg-gradient-to-r from-cyan-400 to-blue-600 bg-clip-text text-transparent">
-                Revolutionary
-              </span>
-              {' '}Services
-            </h2>
-            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              Experience the future of technology with our cutting-edge micro SaaS solutions. 
-              Each service is designed to deliver immediate value and exponential ROI.
-            </p>
-          </motion.div>
-
-          {/* Services Grid */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-8">
-            {revolutionaryServices.map((service, index) => (
-              <motion.div
-                key={service.id}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: index * 0.1 }}
-                viewport={{ once: true }}
-              >
-                <UltraFuturisticServiceCard service={service} />
-              </motion.div>
-            ))}
-          </div>
-
-          {/* View All Services CTA */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
-            viewport={{ once: true }}
-            className="text-center mt-16"
-          >
-            <Button
-              href="/services"
-              className="bg-gradient-to-r from-purple-500 to-pink-600 hover:from-purple-600 hover:to-pink-700 text-white px-8 py-4 text-lg font-semibold rounded-xl shadow-2xl hover:shadow-purple-500/25 transition-all duration-300"
-            >
-              <Sparkles className="w-5 h-5 mr-2" />
-              View All 200+ Services
-            </Button>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* Service Highlights Section */}
-      <section className="py-20 px-4">
-        <div className="container mx-auto">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="text-center mb-16"
-          >
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-              Market-Leading
-              {' '}<span className="bg-gradient-to-r from-green-400 to-emerald-600 bg-clip-text text-transparent">Solutions</span>
-            </h2>
-            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              Our services outperform competitors in every category, delivering superior value, 
-              advanced technology, and exceptional ROI.
-            </p>
-          </motion.div>
-
-          {/* Service Highlights Grid */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-            {serviceHighlights.map((highlight, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: index * 0.1 }}
-                viewport={{ once: true }}
-              >
-                <Card className="h-full bg-gradient-to-br from-gray-900/80 to-black/90 border border-gray-700/50 backdrop-blur-xl">
-                  <div className="p-8 space-y-6">
-                    <h3 className="text-2xl font-bold text-white mb-4">{highlight.title}</h3>
-                    <p className="text-gray-300 leading-relaxed">{highlight.description}</p>
-                    
-                    <div className="text-3xl font-bold text-white">
-                      {highlight.price}
-                    </div>
-                    
-                    <div className="space-y-3">
-                      <h4 className="text-lg font-semibold text-cyan-400">Key Features:</h4>
-                      <ul className="space-y-2">
-                        {highlight.features.map((feature, featureIndex) => (
-                          <li key={featureIndex} className="flex items-center space-x-2 text-gray-300">
-                            <Check className="w-4 h-4 text-green-400 flex-shrink-0" />
-                            <span>{feature}</span>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                    
-                    <div className="bg-gray-800/50 rounded-lg p-4 border border-gray-700/50">
-                      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
-                        <div>
-                          <span className="text-cyan-400 font-semibold">Market Data:</span>
-                          <p className="text-gray-300">{highlight.marketData}</p>
-                        </div>
-                        <div>
-                          <span className="text-green-400 font-semibold">Competitors:</span>
-                          <p className="text-gray-300">{highlight.competitors}</p>
-                        </div>
-                        <div className="md:col-span-2">
-                          <span className="text-yellow-400 font-semibold">Your Savings:</span>
-                          <p className="text-gray-300">{highlight.savings}</p>
-                        </div>
-                        {highlight.contactInfo && (
-                          <div className="md:col-span-2 grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2">
-                            <div className="flex items-center gap-2 text-gray-300">
-                              <Phone className="w-4 h-4 text-cyan-400" />
-                              <span>{highlight.contactInfo.mobile}</span>
-                            </div>
-                            <div className="flex items-center gap-2 text-gray-300">
-                              <Mail className="w-4 h-4 text-purple-400" />
-                              <span>{highlight.contactInfo.email}</span>
-                            </div>
-                          </div>
-                        )}
-                      </div>
-                    </div>
-                    
-                    <div className="flex space-x-3">
-                      <Button
-                        href={highlight.link}
-                        className="flex-1 bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-600 hover:to-blue-700 text-white py-3 px-4 rounded-lg font-semibold transition-all duration-300"
-                      >
-                        <ExternalLink className="w-4 h-4 mr-2" />
-                        Learn More
-                      </Button>
-                      <Button
-                        href="/contact"
-                        variant="outline"
-                        className="px-4 py-3 border border-gray-600 text-gray-300 rounded-lg hover:border-cyan-500 hover:text-cyan-400 transition-all duration-300"
-                      >
-                        Contact
-                      </Button>
-                    </div>
-                    {highlight.contactInfo && (
-                      <div className="mt-4 grid grid-cols-1 md:grid-cols-3 gap-3 text-sm">
-                        <div className="flex items-center justify-center gap-2 text-cyan-400"><Phone className="w-4 h-4" /><span>{highlight.contactInfo.mobile}</span></div>
-                        <div className="flex items-center justify-center gap-2 text-purple-400"><Mail className="w-4 h-4" /><span>{highlight.contactInfo.email}</span></div>
-                        <div className="flex items-center justify-center gap-2 text-green-400"><MapPin className="w-4 h-4" /><span className="text-xs">{highlight.contactInfo.address}</span></div>
-                      </div>
-                    )}
+            {/* Design System Builder */}
+            <div className="group relative">
+              <div className="bg-gray-800/50 backdrop-blur-sm rounded-2xl p-6 border border-gray-700 hover:border-violet-500/50 transition-all duration-300 hover:shadow-2xl hover:shadow-violet-500/20">
+                <div className="flex items-center mb-4">
+                  <div className="w-12 h-12 bg-gradient-to-br from-violet-500 to-purple-600 rounded-xl flex items-center justify-center text-2xl mr-4">
+                    🎨
                   </div>
-                </Card>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
+                  <div>
+                    <h3 className="text-lg font-semibold text-white">Design System Builder</h3>
+                    <p className="text-violet-400 text-sm font-medium">$79/month</p>
+                  </div>
+                </div>
+                <p className="text-gray-300 text-sm mb-4">
+                  Create and maintain consistent design systems with automated component generation.
+                </p>
+                <div className="flex items-center justify-between">
+                  <span className="text-xs text-gray-500">14-day free trial</span>
+                  <Button
+                    href="https://ziontechgroup.com/micro-saas"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    size="sm"
+                    className="bg-gradient-to-r from-violet-500 to-purple-600 hover:from-violet-600 hover:to-purple-700"
+                  >
+                    Try Free
+                  </Button>
+                </div>
+              </div>
+            </div>
 
-      {/* Contact Section */}
-      <section className="py-20 px-4">
-        <div className="container mx-auto text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="max-w-4xl mx-auto"
-          >
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-              Ready to
-              {' '}<span className="bg-gradient-to-r from-cyan-400 to-blue-600 bg-clip-text text-transparent">Transform</span>
-              {' '}Your Business?
-            </h2>
-            <p className="text-xl text-gray-300 mb-8 leading-relaxed">
-              Join thousands of businesses already achieving exponential growth with our revolutionary technology solutions. 
-              Get started today with a free consultation and discover how we can accelerate your success.
+            {/* App Performance Monitor */}
+            <div className="group relative">
+              <div className="bg-gray-800/50 backdrop-blur-sm rounded-2xl p-6 border border-gray-700 hover:border-amber-500/50 transition-all duration-300 hover:shadow-2xl hover:shadow-amber-500/20">
+                <div className="flex items-center mb-4">
+                  <div className="w-12 h-12 bg-gradient-to-br from-amber-500 to-orange-600 rounded-xl flex items-center justify-center text-2xl mr-4">
+                    📱
+                  </div>
+                  <div>
+                    <h3 className="text-lg font-semibold text-white">Performance Monitor</h3>
+                    <p className="text-amber-400 text-sm font-medium">$39/month</p>
+                  </div>
+                </div>
+                <p className="text-gray-300 text-sm mb-4">
+                  Real-time monitoring and optimization for web and mobile applications.
+                </p>
+                <div className="flex items-center justify-between">
+                  <span className="text-xs text-gray-500">14-day free trial</span>
+                  <Button
+                    href="https://ziontechgroup.com/micro-saas"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    size="sm"
+                    className="bg-gradient-to-r from-amber-500 to-orange-600 hover:from-amber-600 hover:to-orange-700"
+                  >
+                    Try Free
+                  </Button>
+                </div>
+              </div>
+            </div>
+
+            {/* SEO Automation Suite */}
+            <div className="group relative">
+              <div className="bg-gray-800/50 backdrop-blur-sm rounded-2xl p-6 border border-gray-700 hover:border-emerald-500/50 transition-all duration-300 hover:shadow-2xl hover:shadow-emerald-500/20">
+                <div className="flex items-center mb-4">
+                  <div className="w-12 h-12 bg-gradient-to-br from-emerald-500 to-green-600 rounded-xl flex items-center justify-center text-2xl mr-4">
+                    🔍
+                  </div>
+                  <div>
+                    <h3 className="text-lg font-semibold text-white">SEO Automation Suite</h3>
+                    <p className="text-emerald-400 text-sm font-medium">$89/month</p>
+                  </div>
+                </div>
+                <p className="text-gray-300 text-sm mb-4">
+                  Comprehensive SEO tools with automated optimization and reporting.
+                </p>
+                <div className="flex items-center justify-between">
+                  <span className="text-xs text-gray-500">14-day free trial</span>
+                  <Button
+                    href="https://ziontechgroup.com/micro-saas"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    size="sm"
+                    className="bg-gradient-to-r from-emerald-500 to-green-600 hover:from-emerald-600 hover:to-green-700"
+                  >
+                    Try Free
+                  </Button>
+                </div>
+              </div>
+            </div>
+
+            {/* AI Sales Intelligence */}
+            <div className="group relative">
+              <div className="bg-gray-800/50 backdrop-blur-sm rounded-2xl p-6 border border-gray-700 hover:border-blue-500/50 transition-all duration-300 hover:shadow-2xl hover:shadow-blue-500/20">
+                <div className="flex items-center mb-4">
+                  <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-xl flex items-center justify-center text-2xl mr-4">
+                    💼
+                  </div>
+                  <div>
+                    <h3 className="text-lg font-semibold text-white">AI Sales Intelligence</h3>
+                    <p className="text-blue-400 text-sm font-medium">$99/month</p>
+                  </div>
+                </div>
+                <p className="text-gray-300 text-sm mb-4">
+                  AI-driven sales intelligence for lead generation, prospect research, and sales automation.
+                </p>
+                <div className="flex items-center justify-between">
+                  <span className="text-xs text-gray-500">14-day free trial</span>
+                  <Button
+                    href="https://ziontechgroup.com/micro-saas"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    size="sm"
+                    className="bg-gradient-to-r from-blue-500 to-indigo-600 hover:from-blue-600 hover:to-indigo-700"
+                  >
+                    Try Free
+                  </Button>
+                </div>
+              </div>
+            </div>
+
+            {/* AI Chatbot Platform */}
+            <div className="group relative">
+              <div className="bg-gray-800/50 backdrop-blur-sm rounded-2xl p-6 border border-gray-700 hover:border-sky-500/50 transition-all duration-300 hover:shadow-2xl hover:shadow-sky-500/20">
+                <div className="flex items-center mb-4">
+                  <div className="w-12 h-12 bg-gradient-to-br from-sky-500 to-blue-600 rounded-xl flex items-center justify-center text-2xl mr-4">
+                    💬
+                  </div>
+                  <div>
+                    <h3 className="text-lg font-semibold text-white">AI Chatbot Platform</h3>
+                    <p className="text-sky-400 text-sm font-medium">$69/month</p>
+                  </div>
+                </div>
+                <p className="text-gray-300 text-sm mb-4">
+                  Intelligent chatbot solutions for customer support and lead generation.
+                </p>
+                <div className="flex items-center justify-between">
+                  <span className="text-xs text-gray-500">14-day free trial</span>
+                  <Button
+                    href="https://ziontechgroup.com/micro-saas"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    size="sm"
+                    className="bg-gradient-to-r from-sky-500 to-blue-600 hover:from-sky-600 hover:to-blue-700"
+                  >
+                    Try Free
+                  </Button>
+                </div>
+              </div>
+            </div>
+
+            {/* Business Intelligence Hub */}
+            <div className="group relative">
+              <div className="bg-gray-800/50 backdrop-blur-sm rounded-2xl p-6 border border-gray-700 hover:border-rose-500/50 transition-all duration-300 hover:shadow-2xl hover:shadow-rose-500/20">
+                <div className="flex items-center mb-4">
+                  <div className="w-12 h-12 bg-gradient-to-br from-rose-500 to-pink-600 rounded-xl flex items-center justify-center text-2xl mr-4">
+                    📊
+                  </div>
+                  <div>
+                    <h3 className="text-lg font-semibold text-white">BI Hub</h3>
+                    <p className="text-rose-400 text-sm font-medium">$99/month</p>
+                  </div>
+                </div>
+                <p className="text-gray-300 text-sm mb-4">
+                  Turn your data into actionable insights with automated reporting and analytics.
+                </p>
+                <div className="flex items-center justify-between">
+                  <span className="text-xs text-gray-500">14-day free trial</span>
+                  <Button
+                    href="https://ziontechgroup.com/micro-saas"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    size="sm"
+                    className="bg-gradient-to-r from-rose-500 to-pink-600 hover:from-rose-600 hover:to-pink-700"
+                  >
+                    Try Free
+                  </Button>
+                </div>
+              </div>
+            </div>
+
+            {/* AI Video Editor Pro */}
+            <div className="group relative">
+              <div className="bg-gray-800/50 backdrop-blur-sm rounded-2xl p-6 border border-gray-700 hover:border-red-500/50 transition-all duration-300 hover:shadow-2xl hover:shadow-red-500/20">
+                <div className="flex items-center mb-4">
+                  <div className="w-12 h-12 bg-gradient-to-br from-red-500 to-pink-600 rounded-xl flex items-center justify-center text-2xl mr-4">
+                    🎬
+                  </div>
+                  <div>
+                    <h3 className="text-lg font-semibold text-white">AI Video Editor Pro</h3>
+                    <p className="text-red-400 text-sm font-medium">$79/month</p>
+                  </div>
+                </div>
+                <p className="text-gray-300 text-sm mb-4">
+                  Professional video editing with AI-powered automation and enhancement tools.
+                </p>
+                <div className="flex items-center justify-between">
+                  <span className="text-xs text-gray-500">14-day free trial</span>
+                  <Button
+                    href="https://ziontechgroup.com/micro-saas"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    size="sm"
+                    className="bg-gradient-to-r from-red-500 to-pink-600 hover:from-red-600 hover:to-pink-700"
+                  >
+                    Try Free
+                  </Button>
+                </div>
+              </div>
+            </div>
+
+            {/* Cloud Cost Optimizer */}
+            <div className="group relative">
+              <div className="bg-gray-800/50 backdrop-blur-sm rounded-2xl p-6 border border-gray-700 hover:border-blue-500/50 transition-all duration-300 hover:shadow-2xl hover:shadow-blue-500/20">
+                <div className="flex items-center mb-4">
+                  <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-xl flex items-center justify-center text-2xl mr-4">
+                    ☁️
+                  </div>
+                  <div>
+                    <h3 className="text-lg font-semibold text-white">Cloud Cost Optimizer</h3>
+                    <p className="text-blue-400 text-sm font-medium">$99/month</p>
+                  </div>
+                </div>
+                <p className="text-gray-300 text-sm mb-4">
+                  Reduce cloud spending by 30% with intelligent cost management and optimization.
+                </p>
+                <div className="flex items-center justify-between">
+                  <span className="text-xs text-gray-500">14-day free trial</span>
+                  <Button
+                    href="https://ziontechgroup.com/micro-saas"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    size="sm"
+                    className="bg-gradient-to-r from-blue-500 to-indigo-600 hover:from-blue-600 hover:to-indigo-700"
+                  >
+                    Try Free
+                  </Button>
+                </div>
+              </div>
+            </div>
+
+            {/* AI Legal Document Generator */}
+            <div className="group relative">
+              <div className="bg-gray-800/50 backdrop-blur-sm rounded-2xl p-6 border border-gray-700 hover:border-purple-500/50 transition-all duration-300 hover:shadow-2xl hover:shadow-purple-500/20">
+                <div className="flex items-center mb-4">
+                  <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-violet-600 rounded-xl flex items-center justify-center text-2xl mr-4">
+                    ⚖️
+                  </div>
+                  <div>
+                    <h3 className="text-lg font-semibold text-white">AI Legal Documents</h3>
+                    <p className="text-purple-400 text-sm font-medium">$69/month</p>
+                  </div>
+                </div>
+                <p className="text-gray-300 text-sm mb-4">
+                  Generate professional legal documents with AI-powered templates and compliance checking.
+                </p>
+                <div className="flex items-center justify-between">
+                  <span className="text-xs text-gray-500">14-day free trial</span>
+                  <Button
+                    href="https://ziontechgroup.com/micro-saas"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    size="sm"
+                    className="bg-gradient-to-r from-purple-500 to-violet-600 hover:from-purple-600 hover:to-violet-700"
+                  >
+                    Try Free
+                  </Button>
+                </div>
+              </div>
+            </div>
+
+            {/* AI HR Assistant */}
+            <div className="group relative">
+              <div className="bg-gray-800/50 backdrop-blur-sm rounded-2xl p-6 border border-gray-700 hover:border-teal-500/50 transition-all duration-300 hover:shadow-2xl hover:shadow-teal-500/20">
+                <div className="flex items-center mb-4">
+                  <div className="w-12 h-12 bg-gradient-to-br from-teal-500 to-cyan-600 rounded-xl flex items-center justify-center text-2xl mr-4">
+                    👥
+                  </div>
+                  <div>
+                    <h3 className="text-lg font-semibold text-white">AI HR Assistant</h3>
+                    <p className="text-teal-400 text-sm font-medium">$59/month</p>
+                  </div>
+                </div>
+                <p className="text-gray-300 text-sm mb-4">
+                  Automate HR processes with AI-powered recruitment and employee management.
+                </p>
+                <div className="flex items-center justify-between">
+                  <span className="text-xs text-gray-500">14-day free trial</span>
+                  <Button
+                    href="https://ziontechgroup.com/micro-saas"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    size="sm"
+                    className="bg-gradient-to-r from-teal-500 to-cyan-600 hover:from-teal-600 hover:to-cyan-700"
+                  >
+                    Try Free
+                  </Button>
+                </div>
+              </div>
+            </div>
+
+            {/* AI Financial Advisor */}
+            <div className="group relative">
+              <div className="bg-gray-800/50 backdrop-blur-sm rounded-2xl p-6 border border-gray-700 hover:border-yellow-500/50 transition-all duration-300 hover:shadow-2xl hover:shadow-yellow-500/20">
+                <div className="flex items-center mb-4">
+                  <div className="w-12 h-12 bg-gradient-to-br from-yellow-500 to-orange-600 rounded-xl flex items-center justify-center text-2xl mr-4">
+                    💰
+                  </div>
+                  <div>
+                    <h3 className="text-lg font-semibold text-white">AI Financial Advisor</h3>
+                    <p className="text-yellow-400 text-sm font-medium">$89/month</p>
+                  </div>
+                </div>
+                <p className="text-gray-300 text-sm mb-4">
+                  AI-powered financial planning and investment advice for individuals and businesses.
+                </p>
+                <div className="flex items-center justify-between">
+                  <span className="text-xs text-gray-500">14-day free trial</span>
+                  <Button
+                    href="https://ziontechgroup.com/micro-saas"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    size="sm"
+                    className="bg-gradient-to-r from-yellow-500 to-orange-600 hover:from-yellow-600 hover:to-orange-700"
+                  >
+                    Try Free
+                  </Button>
+                </div>
+              </div>
+            </div>
+
+            {/* Performance Monitor Pro */}
+            <div className="group relative">
+              <div className="bg-gray-800/50 backdrop-blur-sm rounded-2xl p-6 border border-gray-700 hover:border-green-500/50 transition-all duration-300 hover:shadow-2xl hover:shadow-green-500/20">
+                <div className="flex items-center mb-4">
+                  <div className="w-12 h-12 bg-gradient-to-br from-green-500 to-teal-600 rounded-xl flex items-center justify-center text-2xl mr-4">
+                    📊
+                  </div>
+                  <div>
+                    <h3 className="text-lg font-semibold text-white">Performance Monitor Pro</h3>
+                    <p className="text-green-400 text-sm font-medium">$49/month</p>
+                  </div>
+                </div>
+                <p className="text-gray-300 text-sm mb-4">
+                  Real-time performance monitoring with Core Web Vitals tracking and optimization insights.
+                </p>
+                <div className="flex items-center justify-between">
+                  <span className="text-xs text-gray-500">14-day free trial</span>
+                  <Button
+                    href="https://ziontechgroup.com/micro-saas"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    size="sm"
+                    className="bg-gradient-to-r from-green-500 to-teal-600 hover:from-green-600 hover:to-teal-700"
+                  >
+                    Try Free
+                  </Button>
+                </div>
+              </div>
+            </div>
+
+            {/* AI Inventory Manager */}
+            <div className="group relative">
+              <div className="bg-gray-800/50 backdrop-blur-sm rounded-2xl p-6 border border-gray-700 hover:border-indigo-500/50 transition-all duration-300 hover:shadow-2xl hover:shadow-indigo-500/20">
+                <div className="flex items-center mb-4">
+                  <div className="w-12 h-12 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-xl flex items-center justify-center text-2xl mr-4">
+                    📦
+                  </div>
+                  <div>
+                    <h3 className="text-lg font-semibold text-white">AI Inventory Manager</h3>
+                    <p className="text-indigo-400 text-sm font-medium">$45/month</p>
+                  </div>
+                </div>
+                <p className="text-gray-300 text-sm mb-4">
+                  AI-powered inventory management with demand forecasting and automated optimization.
+                </p>
+                <div className="flex items-center justify-between">
+                  <span className="text-xs text-gray-500">14-day free trial</span>
+                  <Button
+                    href="https://ziontechgroup.com/micro-saas"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    size="sm"
+                    className="bg-gradient-to-r from-indigo-500 to-purple-600 hover:from-indigo-600 hover:to-purple-700"
+                  >
+                    Try Free
+                  </Button>
+                </div>
+              </div>
+            </div>
+
+            {/* AI Contract Analysis */}
+            <div className="group relative">
+              <div className="bg-gray-800/50 backdrop-blur-sm rounded-2xl p-6 border border-gray-700 hover:border-indigo-500/50 transition-all duration-300 hover:shadow-2xl hover:shadow-indigo-500/20">
+                <div className="flex items-center mb-4">
+                  <div className="w-12 h-12 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-xl flex items-center justify-center text-2xl mr-4">
+                    ⚖️
+                  </div>
+                  <div>
+                    <h3 className="text-lg font-semibold text-white">AI Contract Analysis</h3>
+                    <p className="text-indigo-400 text-sm font-medium">$129/month</p>
+                  </div>
+                </div>
+                <p className="text-gray-300 text-sm mb-4">
+                  Intelligent legal document review with risk assessment and compliance checking.
+                </p>
+                <div className="flex items-center justify-between">
+                  <span className="text-xs text-gray-500">14-day free trial</span>
+                  <Button
+                    href="https://ziontechgroup.com/ai-contract-analysis"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    size="sm"
+                    className="bg-gradient-to-r from-indigo-500 to-purple-600 hover:from-indigo-600 hover:to-purple-700"
+                  >
+                    Try Free
+                  </Button>
+                </div>
+              </div>
+            </div>
+
+            {/* AI Sales Forecasting */}
+            <div className="group relative">
+              <div className="bg-gray-800/50 backdrop-blur-sm rounded-2xl p-6 border border-gray-700 hover:border-blue-500/50 transition-all duration-300 hover:shadow-2xl hover:shadow-blue-500/20">
+                <div className="flex items-center mb-4">
+                  <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-xl flex items-center justify-center text-2xl mr-4">
+                    📈
+                  </div>
+                  <div>
+                    <h3 className="text-lg font-semibold text-white">AI Sales Forecasting</h3>
+                    <p className="text-blue-400 text-sm font-medium">$149/month</p>
+                  </div>
+                </div>
+                <p className="text-gray-300 text-sm mb-4">
+                  Predictive sales intelligence with pipeline optimization and revenue prediction.
+                </p>
+                <div className="flex items-center justify-between">
+                  <span className="text-xs text-gray-500">14-day free trial</span>
+                  <Button
+                    href="https://ziontechgroup.com/ai-sales-forecasting"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    size="sm"
+                    className="bg-gradient-to-r from-blue-500 to-indigo-600 hover:from-blue-600 hover:to-indigo-700"
+                  >
+                    Try Free
+                  </Button>
+                </div>
+              </div>
+            </div>
+
+            {/* AI Product Recommendations */}
+            <div className="group relative">
+              <div className="bg-gray-800/50 backdrop-blur-sm rounded-2xl p-6 border border-gray-700 hover:border-purple-500/50 transition-all duration-300 hover:shadow-2xl hover:shadow-purple-500/20">
+                <div className="flex items-center mb-4">
+                  <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-violet-600 rounded-xl flex items-center justify-center text-2xl mr-4">
+                    🎯
+                  </div>
+                  <div>
+                    <h3 className="text-lg font-semibold text-white">AI Product Recommendations</h3>
+                    <p className="text-purple-400 text-sm font-medium">$119/month</p>
+                  </div>
+                </div>
+                <p className="text-gray-300 text-sm mb-4">
+                  Intelligent product suggestions with behavioral analysis and conversion optimization.
+                </p>
+                <div className="flex items-center justify-between">
+                  <span className="text-xs text-gray-500">14-day free trial</span>
+                  <Button
+                    href="https://ziontechgroup.com/ai-product-recommendations"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    size="sm"
+                    className="bg-gradient-to-r from-purple-500 to-violet-600 hover:from-purple-600 hover:to-violet-700"
+                  >
+                    Try Free
+                  </Button>
+                </div>
+              </div>
+            </div>
+
+            {/* AI Fraud Detection */}
+            <div className="group relative">
+              <div className="bg-gray-800/50 backdrop-blur-sm rounded-2xl p-6 border border-gray-700 hover:border-red-500/50 transition-all duration-300 hover:shadow-2xl hover:shadow-red-500/20">
+                <div className="flex items-center mb-4">
+                  <div className="w-12 h-12 bg-gradient-to-br from-red-500 to-pink-600 rounded-xl flex items-center justify-center text-2xl mr-4">
+                    🛡️
+                  </div>
+                  <div>
+                    <h3 className="text-lg font-semibold text-white">AI Fraud Detection</h3>
+                    <p className="text-red-400 text-sm font-medium">$199/month</p>
+                  </div>
+                </div>
+                <p className="text-gray-300 text-sm mb-4">
+                  Advanced security monitoring with real-time threat detection and automated response.
+                </p>
+                <div className="flex items-center justify-between">
+                  <span className="text-xs text-gray-500">14-day free trial</span>
+                  <Button
+                    href="https://ziontechgroup.com/ai-fraud-detection"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    size="sm"
+                    className="bg-gradient-to-r from-red-500 to-pink-600 hover:from-red-600 hover:to-pink-700"
+                  >
+                    Try Free
+                  </Button>
+                </div>
+              </div>
+            </div>
+
+            {/* AI Email Deliverability */}
+            <div className="group relative">
+              <div className="bg-gray-800/50 backdrop-blur-sm rounded-2xl p-6 border border-gray-700 hover:border-blue-500/50 transition-all duration-300 hover:shadow-2xl hover:shadow-blue-500/20">
+                <div className="flex items-center mb-4">
+                  <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-xl flex items-center justify-center text-2xl mr-4">
+                    📮
+                  </div>
+                  <div>
+                    <h3 className="text-lg font-semibold text-white">AI Email Deliverability</h3>
+                    <p className="text-blue-400 text-sm font-medium">$89/month</p>
+                  </div>
+                </div>
+                <p className="text-gray-300 text-sm mb-4">
+                  Maximize inbox placement with AI-powered deliverability optimization.
+                </p>
+                <div className="flex items-center justify-between">
+                  <span className="text-xs text-gray-500">14-day free trial</span>
+                  <Button
+                    href="https://ziontechgroup.com/ai-email-deliverability"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    size="sm"
+                    className="bg-gradient-to-r from-blue-500 to-indigo-600 hover:from-blue-600 hover:to-indigo-700"
+                  >
+                    Try Free
+                  </Button>
+                </div>
+              </div>
+            </div>
+
+            {/* AI Website Performance Optimizer */}
+            <div className="group relative">
+              <div className="bg-gray-800/50 backdrop-blur-sm rounded-2xl p-6 border border-gray-700 hover:border-yellow-500/50 transition-all duration-300 hover:shadow-2xl hover:shadow-yellow-500/20">
+                <div className="flex items-center mb-4">
+                  <div className="w-12 h-12 bg-gradient-to-br from-yellow-500 to-orange-600 rounded-xl flex items-center justify-center text-2xl mr-4">
+                    ⚡
+                  </div>
+                  <div>
+                    <h3 className="text-lg font-semibold text-white">AI Website Optimizer</h3>
+                    <p className="text-yellow-400 text-sm font-medium">$89/month</p>
+                  </div>
+                </div>
+                <p className="text-gray-300 text-sm mb-4">
+                  Intelligent website optimization with automated testing and SEO enhancements.
+                </p>
+                <div className="flex items-center justify-between">
+                  <span className="text-xs text-gray-500">14-day free trial</span>
+                  <Button
+                    href="https://ziontechgroup.com/ai-website-optimizer"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    size="sm"
+                    className="bg-gradient-to-r from-yellow-500 to-orange-600 hover:from-yellow-600 hover:to-orange-700"
+                  >
+                    Try Free
+                  </Button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className="text-center">
+            <div className="bg-gradient-to-r from-green-500/10 to-emerald-500/10 border border-green-500/20 rounded-2xl p-8 mb-8">
+              <h3 className="text-2xl font-bold text-white mb-4">Why Choose Zion Tech Group Micro SaaS?</h3>
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 text-left">
+                <div className="text-center">
+                  <div className="w-12 h-12 bg-green-500/20 rounded-xl flex items-center justify-center mx-auto mb-3">
+                    <span className="text-2xl">⚡</span>
+                  </div>
+                  <h4 className="font-semibold text-white mb-2">Lightning Fast</h4>
+                  <p className="text-sm text-gray-400">Get started in minutes, not weeks</p>
+                </div>
+                <div className="text-center">
+                  <div className="w-12 h-12 bg-blue-500/20 rounded-xl flex items-center justify-center mx-auto mb-3">
+                    <span className="text-2xl">🔒</span>
+                  </div>
+                  <h4 className="font-semibold text-white mb-2">Enterprise Security</h4>
+                  <p className="text-sm text-gray-400">SOC 2 compliant, bank-level security</p>
+                </div>
+                <div className="text-center">
+                  <div className="w-12 h-12 bg-purple-500/20 rounded-xl flex items-center justify-center mx-auto mb-3">
+                    <span className="text-2xl">📊</span>
+                  </div>
+                  <h4 className="font-semibold text-white mb-2">Proven ROI</h4>
+                  <p className="text-sm text-gray-400">Measurable business impact</p>
+                </div>
+                <div className="text-center">
+                  <div className="w-12 h-12 bg-orange-500/20 rounded-xl flex items-center justify-center mx-auto mb-3">
+                    <span className="text-2xl">🌐</span>
+                  </div>
+                  <h4 className="font-semibold text-white mb-2">Unified Platform</h4>
+                  <p className="text-sm text-gray-400">Single sign-on, integrated billing</p>
+                </div>
+              </div>
+            </div>
+            <p className="text-gray-400 mb-8 max-w-3xl mx-auto">
+              All 28+ services include comprehensive documentation, dedicated support, enterprise-grade reliability, 99.9% uptime guarantee, and 14-day free trials. 
+              Start with one solution and scale as you grow. Each service is designed for immediate value delivery with transparent pricing.
             </p>
             
-            <div className="bg-gray-900/50 backdrop-blur-sm border border-gray-700/50 rounded-2xl p-8 mb-8">
-              <h3 className="text-2xl font-semibold text-white mb-6">Contact Information</h3>
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <div className="flex flex-col items-center space-y-3">
-                  <Phone className="w-8 h-8 text-cyan-400" />
-                  <div>
-                    <div className="text-sm text-gray-400">Phone</div>
-                    <div className="text-white font-semibold">{contactInfo.mobile}</div>
-                  </div>
+            {/* Micro SaaS Portfolio Highlight */}
+            <div className="bg-gradient-to-r from-blue-500/10 to-purple-500/10 rounded-2xl p-8 border border-blue-500/20 mb-8 max-w-4xl mx-auto">
+              <h3 className="text-2xl font-bold text-white mb-4">Complete Micro SaaS Portfolio</h3>
+              <p className="text-blue-100 mb-6 max-w-3xl mx-auto">
+                Access all 60+ specialized solutions through <strong className="text-white">ziontechgroup.com</strong> for a unified experience, 
+                single billing, and seamless integration between services.
+              </p>
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-6">
+                <div className="flex items-center text-blue-200">
+                  <Check className="w-4 h-4 mr-2" />
+                  <span className="text-blue-100">Single sign-on access</span>
                 </div>
-                <div className="flex flex-col items-center space-y-3">
-                  <Mail className="w-8 h-8 text-cyan-400" />
-                  <div>
-                    <div className="text-sm text-gray-400">Email</div>
-                    <div className="text-white font-semibold">{contactInfo.email}</div>
-                  </div>
+                <div className="flex items-center text-blue-200">
+                  <Check className="w-4 h-4 mr-2" />
+                  <span className="text-blue-100">Unified dashboard</span>
                 </div>
-                <div className="flex flex-col items-center space-y-3">
-                  <MapPin className="w-8 h-8 text-cyan-400" />
-                  <div>
-                    <div className="text-sm text-gray-400">Address</div>
-                    <div className="text-white font-semibold text-sm">{contactInfo.address}</div>
-                  </div>
+                <div className="flex items-center text-blue-200">
+                  <Check className="w-4 h-4 mr-2" />
+                  <span className="text-blue-100">Integrated billing</span>
                 </div>
+                <div className="flex items-center text-blue-200">
+                  <Check className="w-4 h-4 mr-2" />
+                  <span className="text-blue-100">Consistent support</span>
+                </div>
+                <div className="flex items-center text-blue-200">
+                  <Check className="w-4 h-4 mr-2" />
+                  <span className="text-blue-100">Seamless tool integration</span>
+                </div>
+                <div className="flex items-center text-blue-200">
+                  <Check className="w-4 h-4 mr-2" />
+                  <span className="text-blue-100">Enterprise security</span>
+                </div>
+              </div>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <a 
+                  href="https://ziontechgroup.com" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center px-6 py-3 rounded-lg bg-blue-600 hover:bg-blue-700 text-white font-medium transition-colors"
+                >
+                  Visit ziontechgroup.com
+                  <ExternalLink className="w-4 h-4 ml-2" />
+                </a>
+                <Button
+                  href="/micro-saas"
+                  variant="outline"
+                  size="lg"
+                  className="border-blue-500 text-blue-400 hover:bg-blue-500 hover:text-white"
+                >
+                  Explore Full Portfolio
+                </Button>
               </div>
             </div>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button
-                href="/contact"
-                className="bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-600 hover:to-blue-700 text-white px-8 py-4 text-lg font-semibold rounded-xl shadow-2xl hover:shadow-cyan-500/25 transition-all duration-300"
+                href="/micro-saas"
+                variant="secondary"
+                size="lg"
+                className="bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700 text-lg px-8 py-4"
               >
-                <Mail className="w-5 h-5 mr-2" />
-                Start Free Consultation
+                🚀 View All 75+ Micro SaaS
               </Button>
               <Button
-                href="/services"
+                href="/pricing"
                 variant="outline"
-                className="border-2 border-cyan-500 text-cyan-400 hover:bg-cyan-500 hover:text-white px-8 py-4 text-lg font-semibold rounded-xl transition-all duration-300"
+                size="lg"
+                className="border-green-500 text-green-400 hover:bg-green-500 hover:text-white text-lg px-8 py-4"
               >
-                <Rocket className="w-5 h-5 mr-2" />
-                Explore Services
+                💰 See Transparent Pricing
               </Button>
             </div>
-          </motion.div>
+          </div>
         </div>
       </section>
-    </UltraFuturisticMatrixBackground>
+
+      {/* Micro SaaS Services Promotion */}
+      <section className="py-24 bg-gradient-to-r from-green-600 to-emerald-700 relative overflow-hidden">
+        <div className="absolute inset-0 bg-[radial-gradient(circle,rgba(255,255,255,0.1)_1px,transparent_1px)] bg-[size:20px_20px] opacity-10" />
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="text-center mb-16">
+            <div className="inline-flex items-center px-4 py-2 rounded-full bg-white/10 border border-white/20 text-white text-sm font-medium mb-6">
+              <span className="w-2 h-2 bg-white rounded-full mr-2 animate-pulse" />
+              New: Micro SaaS Solutions
+            </div>
+            <h2 className="text-4xl sm:text-5xl font-bold text-white mb-8 leading-tight">
+              Specialized Tools for Every Business Need
+            </h2>
+            <p className="text-xl text-green-100 max-w-4xl mx-auto leading-relaxed">
+              Discover our focused micro SaaS solutions that deliver specific value without enterprise complexity. 
+              From API protection to email validation, each service solves a real business problem with transparent pricing. 
+              Start with a free trial and scale as you grow.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+            <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20 hover:border-white/40 transition-all duration-300">
+              <div className="text-3xl mb-4">📝</div>
+              <h3 className="text-xl font-bold text-white mb-2">AI Content Generator Pro</h3>
+              <p className="text-green-100 text-sm mb-4">Professional AI-powered content creation</p>
+              <div className="text-2xl font-bold text-white mb-2">$49<span className="text-sm font-normal text-green-100">/month</span></div>
+              <p className="text-xs text-green-200">14-day free trial • Setup in 5 minutes</p>
+            </div>
+
+            <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20 hover:border-white/40 transition-all duration-300">
+              <div className="text-3xl mb-4">🛡️</div>
+              <h3 className="text-xl font-bold text-white mb-2">API Rate Limiter</h3>
+              <p className="text-green-100 text-sm mb-4">Protect your APIs from abuse</p>
+              <div className="text-2xl font-bold text-white mb-2">$29<span className="text-sm font-normal text-green-100">/month</span></div>
+              <p className="text-xs text-green-200">14-day free trial • Setup in 3 minutes</p>
+            </div>
+
+            <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20 hover:border-white/40 transition-all duration-300">
+              <div className="text-3xl mb-4">✅</div>
+              <h3 className="text-xl font-bold text-white mb-2">Email Validation</h3>
+              <p className="text-green-100 text-sm mb-4">Real-time email verification</p>
+              <div className="text-2xl font-bold text-white mb-2">$19<span className="text-sm font-normal text-green-100">/month</span></div>
+              <p className="text-xs text-green-200">14-day free trial • Setup in 2 minutes</p>
+            </div>
+
+            <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20 hover:border-white/40 transition-all duration-300">
+              <div className="text-3xl mb-4">📋</div>
+              <h3 className="text-xl font-bold text-white mb-2">Form Builder Pro</h3>
+              <p className="text-green-100 text-sm mb-4">Create powerful forms without coding</p>
+              <div className="text-2xl font-bold text-white mb-2">$25<span className="text-sm font-normal text-green-100">/month</span></div>
+              <p className="text-xs text-green-200">14-day free trial • Setup in 5 minutes</p>
+            </div>
+
+            <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20 hover:border-white/40 transition-all duration-300">
+              <div className="text-3xl mb-4">🧾</div>
+              <h3 className="text-xl font-bold text-white mb-2">Invoice Generator</h3>
+              <p className="text-green-100 text-sm mb-4">Professional invoicing made simple</p>
+              <div className="text-2xl font-bold text-white mb-2">$15<span className="text-sm font-normal text-green-100">/month</span></div>
+              <p className="text-xs text-green-200">14-day free trial • Setup in 3 minutes</p>
+            </div>
+
+            <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20 hover:border-white/40 transition-all duration-300">
+              <div className="text-3xl mb-4">📸</div>
+              <h3 className="text-xl font-bold text-white mb-2">Screenshot API Pro</h3>
+              <p className="text-green-100 text-sm mb-4">Convert websites to high-quality images</p>
+              <div className="text-2xl font-bold text-white mb-2">$12<span className="text-sm font-normal text-green-100">/month</span></div>
+              <p className="text-xs text-green-200">14-day free trial • Setup in 1 minute</p>
+            </div>
+
+            <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20 hover:border-white/40 transition-all duration-300">
+              <div className="text-3xl mb-4">🔐</div>
+              <h3 className="text-xl font-bold text-white mb-2">Password Generator Pro</h3>
+              <p className="text-green-100 text-sm mb-4">Secure password creation & management</p>
+              <div className="text-2xl font-bold text-white mb-2">$7<span className="text-sm font-normal text-green-100">/month</span></div>
+              <p className="text-xs text-green-200">14-day free trial • Setup in 2 minutes</p>
+            </div>
+
+            <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20 hover:border-white/40 transition-all duration-300">
+              <div className="text-3xl mb-4">🔗</div>
+              <h3 className="text-xl font-bold text-white mb-2">URL Shortener Pro</h3>
+              <p className="text-green-100 text-sm mb-4">Advanced link management & analytics</p>
+              <div className="text-2xl font-bold text-white mb-2">$9<span className="text-sm font-normal text-green-100">/month</span></div>
+              <p className="text-xs text-green-200">14-day free trial • Setup in 3 minutes</p>
+            </div>
+          </div>
+
+          <div className="text-center">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
+              <Button
+                href="/micro-saas"
+                variant="secondary"
+                size="lg"
+                className="bg-white text-green-600 hover:bg-gray-100 shadow-2xl"
+              >
+                Explore All Micro SaaS
+                <ArrowRight className="w-5 h-5 ml-2" />
+              </Button>
+              <Button
+                href="/pricing"
+                variant="outline"
+                size="lg"
+                className="border-white text-white hover:bg-white hover:text-green-600 shadow-2xl"
+              >
+                View Pricing
+              </Button>
+            </div>
+            <p className="text-sm text-green-200">
+              All services include enterprise-grade infrastructure, 99.9% uptime guarantee, and dedicated support
+            </p>
+          </div>
+
+          {/* Market Positioning & Competitive Advantages */}
+          <div className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="text-center">
+              <div className="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                <span className="text-2xl">💰</span>
+              </div>
+              <h3 className="text-lg font-bold text-white mb-2">Transparent Pricing</h3>
+              <p className="text-green-200 text-sm">No hidden fees, no enterprise sales calls. Simple monthly pricing that scales with your business.</p>
+            </div>
+            <div className="text-center">
+              <div className="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                <span className="text-2xl">⚡</span>
+              </div>
+              <h3 className="text-lg font-bold text-white mb-2">Lightning Fast Setup</h3>
+              <p className="text-green-200 text-sm">Get started in minutes, not weeks. Our services are designed for immediate value delivery.</p>
+            </div>
+            <div className="text-center">
+              <div className="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                <span className="text-2xl">🔒</span>
+              </div>
+              <h3 className="text-lg font-bold text-white mb-2">Enterprise Security</h3>
+              <p className="text-green-200 text-sm">Bank-level security, SOC 2 compliance, and 99.9% uptime guarantee for all services.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Real Micro SaaS Services Section */}
+      <section className="py-24 bg-gradient-to-br from-slate-900 to-slate-800">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <div className="inline-flex items-center px-4 py-2 rounded-full bg-green-500/10 border border-green-500/20 text-green-400 text-sm font-medium mb-6">
+              <span className="w-2 h-2 bg-green-500 rounded-full mr-2 animate-pulse" />
+              Real Implementation
+            </div>
+            <h2 className="text-3xl sm:text-4xl font-bold text-white mb-6">
+              Real Micro SaaS Services
+            </h2>
+            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+              Not just mockups - these are fully functional, production-ready tools that solve real business problems.
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {[
+              {
+                name: 'AI Content Generator Pro',
+                description: 'Create high-quality, SEO-optimized content with real AI generation and analytics.',
+                icon: '📝',
+                color: 'from-pink-500 to-rose-600',
+                link: '/micro-saas'
+              },
+              {
+                name: 'SEO Automation Suite',
+                description: 'Real keyword research, technical audits, and competitor analysis tools.',
+                icon: '🔍',
+                color: 'from-emerald-500 to-green-600',
+                link: '/micro-saas'
+              },
+              {
+                name: 'AI Chatbot Platform',
+                description: 'Intelligent chatbots with real conversation management and training.',
+                icon: '💬',
+                color: 'from-sky-500 to-blue-600',
+                link: '/micro-saas'
+              },
+              {
+                name: 'Business Intelligence Hub',
+                description: 'Real data visualization, KPI tracking, and automated reporting.',
+                icon: '📊',
+                color: 'from-rose-500 to-pink-600',
+                link: '/micro-saas'
+              },
+              {
+                name: 'Cloud Cost Optimizer',
+                description: 'Real cloud resource monitoring and cost optimization recommendations.',
+                icon: '☁️',
+                color: 'from-blue-500 to-indigo-600',
+                link: '/micro-saas'
+              },
+              {
+                name: 'AI Video Editor Pro',
+                description: 'Professional video editing with real AI-powered tools and automation.',
+                icon: '🎬',
+                color: 'from-red-500 to-pink-600',
+                link: '/micro-saas'
+              }
+            ].map((service, index) => (
+              <div key={index} className="group">
+                <div className={`bg-gradient-to-br ${service.color} p-6 rounded-2xl h-full transform group-hover:scale-105 transition-all duration-300 hover:shadow-2xl`}>
+                  <div className="text-4xl mb-4">{service.icon}</div>
+                  <h3 className="text-xl font-bold text-white mb-3">{service.name}</h3>
+                  <p className="text-gray-100 mb-4">{service.description}</p>
+                  <a 
+                    href={service.link}
+                    className="inline-flex items-center text-white font-semibold hover:text-gray-200 transition-colors duration-200"
+                  >
+                    Learn More
+                    <ArrowRight className="ml-2 w-4 h-4" />
+                  </a>
+                </div>
+              </div>
+            ))}
+          </div>
+          
+          <div className="text-center mt-12">
+            <a 
+              href="/micro-saas"
+              className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-green-600 to-emerald-600 text-white font-semibold rounded-full hover:from-green-700 hover:to-emerald-700 transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl"
+            >
+              View All Services
+              <ArrowRight className="ml-2 w-5 h-5" />
+            </a>
+          </div>
+        </div>
+      </section>
+
+      {/* Why Choose Our Micro SaaS */}
+      <section className="py-24 bg-gradient-to-br from-gray-800 to-gray-900 relative overflow-hidden">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_70%,rgba(59,130,246,0.1),transparent_50%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_30%,rgba(168,85,247,0.1),transparent_50%)]" />
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-20">
+            <div className="inline-flex items-center px-4 py-2 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 text-sm font-medium mb-6">
+              <span className="w-2 h-2 bg-blue-500 rounded-full mr-2 animate-pulse" />
+              🚀 Why Choose Zion Tech Group Micro SaaS
+            </div>
+            <h2 className="text-4xl sm:text-5xl font-bold mb-8 text-white leading-tight">
+              Real Solutions, Real Results, Real Business Value
+            </h2>
+            <p className="text-xl text-gray-400 max-w-4xl mx-auto leading-relaxed">
+              Unlike mock services or landing page generators, we deliver <span className="text-blue-400 font-semibold">fully functional micro SaaS applications</span> that solve real business problems with enterprise-grade infrastructure.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {[
+              {
+                icon: '⚡',
+                title: 'Real Implementation',
+                description: 'Every service is a fully functional application, not just a mockup or landing page. Ready to use immediately.',
+                color: 'from-blue-500 to-indigo-600'
+              },
+              {
+                icon: '🏗️',
+                title: 'Enterprise Infrastructure',
+                description: 'Built on ziontechgroup.com with 99.9% uptime, SOC 2 compliance, and automated scaling.',
+                color: 'from-green-500 to-emerald-600'
+              },
+              {
+                icon: '💰',
+                title: 'Market-Validated Pricing',
+                description: 'Competitive pricing based on real market research, 15-40% below industry averages.',
+                color: 'from-purple-500 to-pink-600'
+              },
+              {
+                icon: '🚀',
+                title: 'Lightning Fast Setup',
+                description: 'Get started in 5-45 minutes with automated onboarding and intuitive interfaces.',
+                color: 'from-orange-500 to-red-600'
+              },
+              {
+                icon: '🔒',
+                title: 'Bank-Level Security',
+                description: 'Advanced encryption, automated security monitoring, and compliance with industry standards.',
+                color: 'from-teal-500 to-cyan-600'
+              },
+              {
+                icon: '📊',
+                title: 'Proven ROI',
+                description: 'Customers see measurable results within 30 days, with transparent analytics and reporting.',
+                color: 'from-indigo-500 to-purple-600'
+              }
+            ].map((feature, index) => (
+              <div key={index} className="group">
+                <div className="bg-gray-800/50 backdrop-blur-sm rounded-2xl p-8 border border-gray-700 hover:border-blue-500/50 transition-all duration-300 hover:shadow-2xl hover:shadow-blue-500/20">
+                  <div className={`w-16 h-16 bg-gradient-to-br ${feature.color} rounded-2xl flex items-center justify-center text-3xl mb-6 group-hover:scale-110 transition-transform duration-300`}>
+                    {feature.icon}
+                  </div>
+                  <h3 className="text-xl font-semibold text-white mb-4">{feature.title}</h3>
+                  <p className="text-gray-400 leading-relaxed">{feature.description}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <div className="text-center mt-16">
+            <div className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-blue-500 to-indigo-600 text-white font-semibold rounded-full mb-6">
+              <span className="w-2 h-2 bg-white rounded-full mr-2 animate-pulse" />
+              Ready to Get Started?
+            </div>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Button
+                href="/micro-saas"
+                size="lg"
+                className="bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700 text-white px-8 py-4 text-lg font-semibold"
+              >
+                Explore All Services
+              </Button>
+              <Button
+                href="/contact"
+                size="lg"
+                variant="outline"
+                className="border-2 border-gray-600 hover:border-gray-500 text-gray-300 hover:text-white px-8 py-4 text-lg font-semibold"
+              >
+                Get Custom Quote
+              </Button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Pricing Section */}
+      <section className="py-24 bg-gradient-to-br from-slate-800 to-slate-700">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl sm:text-4xl font-bold text-white mb-6">
+              Transparent Market Pricing
+            </h2>
+            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+              Competitive pricing based on market research and value delivered. No hidden fees, no enterprise sales calls.
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {[
+              {
+                name: 'Starter',
+                price: '$29',
+                period: '/month',
+                description: 'Perfect for small businesses and startups',
+                features: [
+                  'Up to 5 projects',
+                  'Basic analytics',
+                  'Email support',
+                  '14-day free trial'
+                ],
+                color: 'from-blue-500 to-indigo-600',
+                popular: false
+              },
+              {
+                name: 'Professional',
+                price: '$79',
+                period: '/month',
+                description: 'Ideal for growing businesses and teams',
+                features: [
+                  'Up to 25 projects',
+                  'Advanced analytics',
+                  'Priority support',
+                  'API access',
+                  '14-day free trial'
+                ],
+                color: 'from-green-500 to-emerald-600',
+                popular: true
+              },
+              {
+                name: 'Enterprise',
+                price: '$199',
+                period: '/month',
+                description: 'For large organizations with complex needs',
+                features: [
+                  'Unlimited projects',
+                  'Custom integrations',
+                  'Dedicated support',
+                  'SLA guarantee',
+                  'Custom pricing available'
+                ],
+                color: 'from-purple-500 to-pink-600',
+                popular: false
+              }
+            ].map((plan, index) => (
+              <div key={index} className="relative">
+                {plan.popular && (
+                  <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
+                    <span className="bg-gradient-to-r from-yellow-400 to-orange-500 text-black px-4 py-2 rounded-full text-sm font-bold">
+                      Most Popular
+                    </span>
+                  </div>
+                )}
+                <div className={`bg-gradient-to-br ${plan.color} p-8 rounded-2xl h-full transform hover:scale-105 transition-all duration-300 hover:shadow-2xl`}>
+                  <div className="text-center mb-6">
+                    <h3 className="text-2xl font-bold text-white mb-2">{plan.name}</h3>
+                    <div className="flex items-baseline justify-center">
+                      <span className="text-4xl font-bold text-white">{plan.price}</span>
+                      <span className="text-xl text-gray-200 ml-1">{plan.period}</span>
+                    </div>
+                    <p className="text-gray-200 mt-2">{plan.description}</p>
+                  </div>
+                  
+                  <ul className="space-y-3 mb-8">
+                    {plan.features.map((feature, featureIndex) => (
+                      <li key={featureIndex} className="flex items-center text-gray-100">
+                        <Check className="w-5 h-5 text-green-300 mr-3 flex-shrink-0" />
+                        {feature}
+                      </li>
+                    ))}
+                  </ul>
+                  
+                  <div className="text-center">
+                    <a 
+                      href="/pricing"
+                      className="inline-flex items-center px-6 py-3 bg-white text-gray-900 font-semibold rounded-lg hover:bg-gray-100 transition-colors duration-200 w-full justify-center"
+                    >
+                      Get Started
+                      <ArrowRight className="ml-2 w-4 h-4" />
+                    </a>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+          
+          <div className="text-center mt-12">
+            <p className="text-gray-300 mb-6">
+              All plans include 99.9% uptime guarantee, enterprise-grade security, and 14-day free trials
+            </p>
+            <a 
+              href="/pricing"
+              className="inline-flex items-center px-8 py-4 bg-white text-gray-900 font-semibold rounded-full hover:bg-gray-100 transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl"
+            >
+              View Detailed Pricing
+              <ArrowRight className="ml-2 w-5 h-5" />
+            </a>
+          </div>
+        </div>
+      </section>
+
+      {/* Latest Services Showcase */}
+      <section className="py-24 bg-gray-900">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-20">
+            <h2 className="text-4xl font-bold text-white mb-4">
+              Latest Micro SaaS Services
+            </h2>
+            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+              Discover our newest AI-powered tools designed to solve specific business challenges with precision and efficiency.
+            </p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {latestServices.map((service) => (
+              <div key={service.name} className="bg-gray-800/50 rounded-2xl p-8 border border-gray-700/50 hover:border-gray-600/50 transition-all duration-300">
+                <div className="mb-4">
+                  <span className="inline-block px-3 py-1 rounded-full text-xs font-medium bg-blue-500/20 text-blue-400 border border-blue-500/30">
+                    {service.category}
+                  </span>
+                </div>
+                <h3 className="text-xl font-bold text-white mb-3">{service.name}</h3>
+                <p className="text-gray-300 mb-4">{service.description}</p>
+                <div className="mb-6">
+                  <span className="text-2xl font-bold text-green-400">{service.price}</span>
+                </div>
+                <ul className="space-y-2 mb-6">
+                  {service.features.map((feature) => (
+                    <li key={feature} className="flex items-center text-gray-300 text-sm">
+                      <span className="w-2 h-2 bg-green-400 rounded-full mr-3"></span>
+                      {feature}
+                    </li>
+                  ))}
+                </ul>
+                <Button
+                  href={service.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  variant="outline"
+                  size="lg"
+                  className="w-full"
+                >
+                  Learn More
+                </Button>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Testimonials Section */}
+      <section className="py-24 bg-gray-800/50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-20">
+            <h2 className="text-4xl font-bold text-white mb-4">
+              What Our Clients Say
+            </h2>
+            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+              Join hundreds of satisfied customers who have transformed their businesses with our AI-powered solutions.
+            </p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {testimonials.map((testimonial) => (
+              <div key={testimonial.name} className="bg-gray-800/50 rounded-2xl p-8 border border-gray-700/50">
+                <div className="flex items-center mb-4">
+                  <div className="text-4xl mr-4">{testimonial.avatar}</div>
+                  <div>
+                    <h4 className="text-lg font-semibold text-white">{testimonial.name}</h4>
+                    <p className="text-gray-400 text-sm">{testimonial.role}</p>
+                  </div>
+                </div>
+                <p className="text-gray-300 mb-4">{testimonial.content}</p>
+                <div className="flex items-center">
+                  {[...Array(testimonial.rating)].map((_, i) => (
+                    <span key={i} className="text-yellow-400">⭐</span>
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Technology Stack */}
+      <section className="py-24 bg-gray-900">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-20 animate-fade-in">
+            <div className="inline-flex items-center px-4 py-2 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 text-sm font-medium mb-6">
+              <span className="w-2 h-2 bg-blue-500 rounded-full mr-2 animate-pulse" />
+              Built with Modern Technology
+            </div>
+            <h2 className="text-4xl sm:text-5xl font-bold mb-8 text-white leading-tight">
+              Technology Stack
+            </h2>
+            <p className="text-xl text-gray-400 max-w-4xl mx-auto leading-relaxed">
+              Our platform leverages the latest technologies and best practices to deliver exceptional performance and reliability.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6">
+            {technologyStack.map((tech, index) => (
+              <Card
+                key={index}
+                className="text-center group border border-gray-800 hover:border-blue-500/30"
+                style={{ animationDelay: `${(index * 0.05) + 0.2}s` }}
+              >
+                <div className="text-3xl mb-4 group-hover:scale-110 transition-transform duration-300">
+                  {tech.icon}
+                </div>
+                <h3 className="font-semibold text-white mb-2 text-lg">{tech.name}</h3>
+                <p className="text-sm text-gray-400">{tech.category}</p>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Micro SaaS Services CTA */}
+      <section className="py-24 bg-gradient-to-br from-gray-900 via-purple-900 to-gray-900 relative overflow-hidden">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(120,119,198,0.1),transparent_50%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_80%,rgba(255,119,198,0.1),transparent_50%)]" />
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+          <div className="inline-flex items-center px-4 py-2 rounded-full bg-purple-500/10 border border-purple-500/20 text-purple-400 text-sm font-medium mb-6">
+            <span className="w-2 h-2 bg-purple-500 rounded-full mr-2 animate-pulse" />
+            🚀 Explore Our Micro SaaS Solutions
+          </div>
+          <h2 className="text-4xl sm:text-5xl font-bold text-white mb-8">
+            Ready to Discover Your Perfect Business Tools?
+          </h2>
+          <p className="text-xl text-gray-300 mb-12 max-w-4xl mx-auto leading-relaxed">
+            From AI-powered content creation to cloud cost optimization, we have the specialized tools your business needs. 
+            All services come with 14-day free trials, transparent pricing, and enterprise-grade infrastructure.
+          </p>
+          
+          {/* Domain Integration Highlight */}
+          <div className="bg-gray-800/50 rounded-2xl p-6 mb-12 max-w-4xl mx-auto border border-gray-700">
+            <div className="flex items-center justify-center mb-4">
+              <Globe className="w-6 h-6 text-purple-400 mr-3" />
+              <h3 className="text-lg font-semibold text-white">All 55+ Services Available on Zion Tech Group Domain</h3>
+            </div>
+            <p className="text-gray-300 mb-4">
+              Every micro SaaS service is accessible through our main domain <strong className="text-purple-400">ziontechgroup.com</strong>, 
+              ensuring consistent branding, unified billing, and seamless integration across all tools.
+            </p>
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 text-sm mb-4">
+              <div className="flex items-center text-purple-400">
+                <Check className="w-4 h-4 mr-2" />
+                <span className="text-gray-300">Unified user dashboard</span>
+              </div>
+              <div className="flex items-center text-purple-400">
+                <Check className="w-4 h-4 mr-2" />
+                <span className="text-gray-300">Single sign-on access</span>
+              </div>
+              <div className="flex items-center text-purple-400">
+                <Check className="w-4 h-4 mr-2" />
+                <span className="text-gray-300">Integrated billing & usage</span>
+              </div>
+            </div>
+            <div className="text-center">
+              <a 
+                href="https://ziontechgroup.com" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="inline-flex items-center px-4 py-2 rounded-lg bg-purple-500/20 border border-purple-500/30 text-purple-400 text-sm font-medium hover:bg-purple-500/30 transition-colors"
+              >
+                Explore ziontechgroup.com
+                <ExternalLink className="w-4 h-4 ml-2" />
+              </a>
+            </div>
+          </div>
+          <div className="flex flex-col sm:flex-row gap-6 justify-center">
+            <Button
+              href="/micro-saas"
+              variant="secondary"
+              size="lg"
+              className="bg-gradient-to-r from-purple-500 to-pink-600 text-white hover:from-purple-600 hover:to-pink-700 shadow-2xl transform hover:scale-105 transition-all duration-300"
+            >
+              Explore All Services
+              <ArrowRight className="w-5 h-5 ml-2" />
+            </Button>
+            <Button
+              href="/pricing"
+              variant="outline"
+              size="lg"
+              className="border-purple-400 text-purple-400 hover:bg-purple-400 hover:text-white shadow-2xl"
+            >
+              View Pricing
+            </Button>
+          </div>
+          
+          <div className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="text-center">
+              <div className="w-16 h-16 bg-gradient-to-br from-green-500 to-emerald-600 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                <span className="text-2xl">🎯</span>
+              </div>
+              <h3 className="text-xl font-semibold text-white mb-2">Focused Solutions</h3>
+              <p className="text-gray-400">Each tool does one thing exceptionally well, solving specific business problems</p>
+            </div>
+            <div className="text-center">
+              <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                <span className="text-2xl">⚡</span>
+              </div>
+              <h3 className="text-xl font-semibold text-white mb-2">Lightning Fast Setup</h3>
+              <p className="text-gray-400">Get started in minutes with our intuitive interfaces and automated onboarding</p>
+            </div>
+            <div className="text-center">
+              <div className="w-16 h-16 bg-gradient-to-br from-purple-500 to-pink-600 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                <span className="text-2xl">🔒</span>
+              </div>
+              <h3 className="text-xl font-semibold text-white mb-2">Enterprise Security</h3>
+              <p className="text-gray-400">Bank-level security, SOC 2 compliance, and 99.9% uptime guarantee</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className="py-24 bg-gradient-to-r from-blue-600 to-blue-700 relative overflow-hidden">
+        <div className="absolute inset-0 bg-[radial-gradient(circle,rgba(255,255,255,0.1)_1px,transparent_1px)] bg-[size:20px_20px] opacity-10" />
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+          <h2 className="text-4xl sm:text-5xl font-bold text-white mb-8">
+            Ready to Transform Your Business?
+          </h2>
+          <p className="text-xl text-blue-100 mb-12 max-w-4xl mx-auto leading-relaxed">
+            Join the future of autonomous technology and experience unprecedented efficiency, reliability, and innovation.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-6 justify-center">
+            <Button
+              href="/contact"
+              variant="secondary"
+              size="lg"
+              className="bg-white text-blue-600 hover:bg-gray-100 shadow-2xl"
+            >
+              Start Your Journey
+              <ArrowRight className="w-5 h-5 ml-2" />
+            </Button>
+            <Button
+              href="/case-studies"
+              variant="outline"
+              size="lg"
+              className="border-white text-white hover:bg-white hover:text-blue-600 shadow-2xl"
+            >
+              View Case Studies
+            </Button>
+          </div>
+        </div>
+      </section>
+    </>
   );
 }
