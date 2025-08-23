@@ -27,6 +27,9 @@ import { innovative2037AIServices } from '../data/innovative-2037-ai-services';
 import { innovative2037Services } from '../data/innovative-2037-services';
 import { advanced2038Services } from '../data/advanced-2038-services';
 import { revolutionary2039Services } from '../data/revolutionary-2039-services';
+import { revolutionary2040Services } from '../data/revolutionary-2040-services';
+import { revolutionary2041Services } from '../data/revolutionary-2041-services';
+import { revolutionaryServicesAdvertising } from '../data/revolutionary-services-advertising';
 
 // Import existing service data
 import { realMicroSaasServices } from '../data/real-micro-saas-services';
@@ -92,7 +95,12 @@ const allServices = [
   // Our new innovative services
   ...innovative2037Services,
   ...advanced2038Services,
-  ...revolutionary2039Services
+  ...revolutionary2039Services,
+  // Our revolutionary 2040 and 2041 services
+  ...revolutionary2040Services,
+  ...revolutionary2041Services,
+  // Our revolutionary services advertising
+  ...revolutionaryServicesAdvertising
 ];
 
 const categories = [
@@ -200,6 +208,27 @@ const categories = [
     icon: <Atom className="w-6 h-6" />,
     color: 'from-purple-600 to-pink-700',
     description: 'Neural networks and quantum computing fusion'
+  },
+  {
+    id: 'revolutionary-2040',
+    name: 'Revolutionary 2040',
+    icon: <Rocket className="w-6 h-6" />,
+    color: 'from-purple-600 to-pink-700',
+    description: 'Revolutionary 2040 services with quantum consciousness and interdimensional capabilities'
+  },
+  {
+    id: 'revolutionary-2041',
+    name: 'Revolutionary 2041',
+    icon: <Globe className="w-6 h-6" />,
+    color: 'from-indigo-700 to-purple-800',
+    description: 'Revolutionary 2041 services with multiverse AI and temporal computing'
+  },
+  {
+    id: 'revolutionary-advertising',
+    name: 'Revolutionary Advertising',
+    icon: <Target className="w-6 h-6" />,
+    color: 'from-orange-600 to-red-700',
+    description: 'Revolutionary services with comprehensive advertising and marketing content'
   }
 ];
 
@@ -241,6 +270,37 @@ export default function Services() {
     
     const serviceCategory = getServiceCategory(service).toLowerCase();
     const categoryName = categories.find(cat => cat.id === selectedCategory)?.name.toLowerCase();
+    
+    // Special filtering for revolutionary categories
+    if (selectedCategory === 'revolutionary-2040') {
+      return matchesSearch && (service.id.includes('quantum-consciousness') || 
+                              service.id.includes('interdimensional') || 
+                              service.id.includes('neural-quantum') || 
+                              service.id.includes('autonomous-quantum') || 
+                              service.id.includes('metaverse-business') || 
+                              service.id.includes('quantum-financial') || 
+                              service.id.includes('space-resource') || 
+                              service.id.includes('quantum-healthcare') || 
+                              service.id.includes('quantum-education') || 
+                              service.id.includes('quantum-logistics'));
+    }
+    
+    if (selectedCategory === 'revolutionary-2041') {
+      return matchesSearch && (service.id.includes('multiverse') || 
+                              service.id.includes('temporal') || 
+                              service.id.includes('consciousness-upload') || 
+                              service.id.includes('quantum-reality') || 
+                              service.id.includes('interdimensional-commerce') || 
+                              service.id.includes('quantum-creative') || 
+                              service.id.includes('quantum-emotional') || 
+                              service.id.includes('quantum-neural') || 
+                              service.id.includes('quantum-synthetic') || 
+                              service.id.includes('quantum-psychic'));
+    }
+    
+    if (selectedCategory === 'revolutionary-advertising') {
+      return matchesSearch && service.id.includes('advertising');
+    }
     
     return matchesSearch && serviceCategory.includes(categoryName || '');
   });
