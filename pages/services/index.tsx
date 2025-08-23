@@ -173,12 +173,16 @@ export default function ServicesIndexPage() {
     // Our new 2025 advanced services V2
     // .concat(advancedMicroSaasExpansion2025V2 as unknown[])
     // .concat(advancedITInfrastructureExpansion2025V2 as unknown[])
+<<<<<<< HEAD
     // .concat(advancedAIServicesExpansion2025V2 as unknown[])
     // Our new 2025 innovative services V3
     .concat(innovativeMicroSaasExpansionV32025 as unknown[])
     .concat(innovativeITServicesExpansion2025V3 as unknown[])
     .concat(innovativeAIServicesExpansion2025V3 as unknown[])
     ;
+=======
+    // .concat(advancedAIServicesExpansion2025V2 as unknown[]);
+>>>>>>> origin/clean-website-enhancement
 
   // Filter out services without required properties
   const validServices = all.filter(service => 

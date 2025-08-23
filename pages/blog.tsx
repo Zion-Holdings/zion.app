@@ -122,6 +122,84 @@ const Blog: React.FC = () => {
     "Blockchain Security"
   ];
 
+  const blogCategories = [
+    { name: "All", count: 45, active: true },
+    { name: "AI & Consciousness", count: 18, active: false },
+    { name: "Quantum Computing", count: 12, active: false },
+    { name: "Cybersecurity", count: 8, active: false },
+    { name: "Space Technology", count: 7, active: false }
+  ];
+
+  const recentArticles = [
+    {
+      title: "Quantum Supremacy in 2025: What It Means for the Future",
+      excerpt: "Breaking down the latest quantum computing breakthroughs and their implications for cryptography, drug discovery, and climate modeling.",
+      author: "Dr. Michael Rodriguez",
+      date: "March 12, 2025",
+      readTime: "6 min read",
+      category: "Quantum Computing",
+      image: "/images/blog/quantum-supremacy.jpg"
+    },
+    {
+      title: "Cybersecurity in the Age of AI: New Threats and Defenses",
+      excerpt: "How artificial intelligence is both creating new security challenges and providing innovative solutions to protect digital assets.",
+      author: "Alex Thompson",
+      date: "March 10, 2025",
+      readTime: "7 min read",
+      category: "Cybersecurity",
+      image: "/images/blog/ai-cybersecurity.jpg"
+    },
+    {
+      title: "Space Resource Intelligence: Mining the Final Frontier",
+      excerpt: "The emerging field of space resource intelligence and how it's revolutionizing our approach to space exploration and resource utilization.",
+      author: "Dr. Elena Petrova",
+      date: "March 8, 2025",
+      readTime: "9 min read",
+      category: "Space Technology",
+      image: "/images/blog/space-resources.jpg"
+    },
+    {
+      title: "The Evolution of Neural Networks: From Perceptrons to Consciousness",
+      excerpt: "A comprehensive journey through the development of neural networks and their progression toward artificial consciousness.",
+      author: "Dr. James Wilson",
+      date: "March 5, 2025",
+      readTime: "10 min read",
+      category: "AI & Consciousness",
+      image: "/images/blog/neural-evolution.jpg"
+    },
+    {
+      title: "Quantum-Classical Hybrid Computing: The Best of Both Worlds",
+      excerpt: "Exploring how hybrid quantum-classical systems are solving real-world problems that neither approach could handle alone.",
+      author: "Dr. Maria Santos",
+      date: "March 3, 2025",
+      readTime: "8 min read",
+      category: "Quantum Computing",
+      image: "/images/blog/hybrid-computing.jpg"
+    },
+    {
+      title: "Ethical AI Development: Balancing Innovation with Responsibility",
+      excerpt: "The critical importance of ethical considerations in AI development and how Zion Tech Group is leading the way.",
+      author: "Dr. Sarah Chen",
+      date: "March 1, 2025",
+      readTime: "7 min read",
+      category: "AI & Consciousness",
+      image: "/images/blog/ethical-ai.jpg"
+    }
+  ];
+
+  const popularTags = [
+    "Artificial Intelligence", "Quantum Computing", "Cybersecurity", "Space Technology",
+    "Machine Learning", "Neural Networks", "Consciousness", "Innovation",
+    "Future Tech", "Research", "Technology Trends", "Digital Transformation"
+  ];
+
+  const newsletterStats = [
+    { metric: "10K+", label: "Subscribers" },
+    { metric: "45", label: "Articles" },
+    { metric: "5", label: "Categories" },
+    { metric: "Weekly", label: "Updates" }
+  ];
+
   return (
     <Layout
       title="Blog - Zion Tech Group"
@@ -188,9 +266,9 @@ const Blog: React.FC = () => {
           </div>
         </section>
 
-        {/* Featured Posts */}
-        <section className="py-20">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Featured Article Section */}
+        <section className="py-20 px-4 sm:px-6 lg:px-8">
+          <div className="max-w-7xl mx-auto">
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -439,70 +517,112 @@ const Blog: React.FC = () => {
           </div>
         </section>
 
-        {/* Newsletter Signup */}
-        <section className="py-20">
-          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        {/* Popular Tags Section */}
+        <section className="py-20 px-4 sm:px-6 lg:px-8">
+          <div className="max-w-7xl mx-auto">
             <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-              viewport={{ once: true }}
-              className="bg-gradient-to-br from-gray-800/30 to-gray-900/30 p-8 rounded-3xl border border-gray-700/30"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.8 }}
+              className="text-center mb-16"
             >
-              <h2 className="text-3xl lg:text-4xl font-bold text-white mb-6">
-                Stay Updated
-              </h2>
-              <p className="text-xl text-gray-400 mb-8 max-w-2xl mx-auto">
-                Get the latest insights, research updates, and industry analysis delivered directly to your inbox.
+              <h2 className="text-4xl font-bold mb-4">Explore by Topic</h2>
+              <p className="text-xl text-gray-400 max-w-3xl mx-auto">
+                Discover articles by your areas of interest
+              </p>
+            </motion.div>
+
+            <div className="flex flex-wrap justify-center gap-3">
+              {popularTags.map((tag, index) => (
+                <motion.button
+                  key={tag}
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{ duration: 0.3, delay: 0.1 * index }}
+                  className="px-4 py-2 bg-gray-800/50 text-gray-300 rounded-lg border border-gray-700/50 hover:bg-cyan-500/20 hover:text-cyan-400 hover:border-cyan-500/50 transition-all duration-300"
+                >
+                  {tag}
+                </motion.button>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Newsletter Section */}
+        <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gray-800/30">
+          <div className="max-w-4xl mx-auto text-center">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 1.0 }}
+            >
+              <h2 className="text-4xl font-bold mb-6">Stay Updated</h2>
+              <p className="text-xl text-gray-400 mb-8">
+                Get the latest insights, research updates, and technological breakthroughs 
+                delivered directly to your inbox.
               </p>
               
-              <div className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
-                <input
-                  type="email"
-                  placeholder="Enter your email"
-                  className="flex-1 px-4 py-3 bg-gray-800/50 border border-gray-600/50 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent"
-                />
-                <button className="px-6 py-3 bg-gradient-to-r from-purple-500 to-blue-600 text-white font-semibold rounded-xl hover:from-purple-600 hover:to-blue-700 transition-all duration-300 transform hover:scale-105">
-                  Subscribe
-                </button>
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-8">
+                {newsletterStats.map((stat, index) => (
+                  <motion.div
+                    key={stat.label}
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.6, delay: 0.1 * index }}
+                    className="text-center"
+                  >
+                    <div className="text-3xl font-bold text-cyan-400 mb-2">{stat.metric}</div>
+                    <div className="text-gray-400 text-sm">{stat.label}</div>
+                  </motion.div>
+                ))}
               </div>
-              
-              <p className="text-sm text-gray-500 mt-4">
-                No spam, unsubscribe at any time. We respect your privacy.
-              </p>
+
+              <div className="max-w-md mx-auto">
+                <div className="flex gap-3">
+                  <input
+                    type="email"
+                    placeholder="Enter your email address"
+                    className="flex-1 px-4 py-3 bg-gray-800/50 border border-gray-700/50 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:border-transparent"
+                  />
+                  <button className="px-6 py-3 bg-gradient-to-r from-cyan-500 to-blue-600 text-white rounded-lg font-semibold hover:from-cyan-600 hover:to-blue-700 transition-all duration-300 transform hover:scale-105">
+                    Subscribe
+                  </button>
+                </div>
+                <p className="text-xs text-gray-500 mt-2">
+                  No spam, unsubscribe at any time. We respect your privacy.
+                </p>
+              </div>
             </motion.div>
           </div>
         </section>
 
         {/* CTA Section */}
-        <section className="py-20">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <section className="py-20 px-4 sm:px-6 lg:px-8">
+          <div className="max-w-4xl mx-auto text-center">
             <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-              viewport={{ once: true }}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 1.2 }}
             >
-              <h2 className="text-3xl lg:text-4xl font-bold text-white mb-6">
-                Ready to Dive Deeper?
-              </h2>
-              <p className="text-xl text-gray-400 max-w-3xl mx-auto mb-8">
-                Explore our comprehensive resources and discover how Zion Tech Group is shaping the future of technology.
+              <h2 className="text-4xl font-bold mb-6">Contribute to Our Blog</h2>
+              <p className="text-xl text-gray-400 mb-8">
+                Are you a researcher, technologist, or thought leader? We welcome contributions 
+                from experts in AI, quantum computing, cybersecurity, and space technology.
               </p>
+              
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Link
-                  href="/services"
-                  className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-purple-500 to-blue-600 text-white font-semibold rounded-2xl hover:from-purple-600 hover:to-blue-700 transition-all duration-300 transform hover:scale-105"
-                >
-                  Explore Our Services
-                  <ArrowRight className="w-5 h-5 ml-2" />
-                </Link>
-                <Link
+                <a
                   href="/contact"
-                  className="inline-flex items-center px-8 py-4 border-2 border-purple-500/30 text-purple-400 font-semibold rounded-2xl hover:border-purple-500/50 hover:text-purple-300 transition-all duration-300"
+                  className="px-8 py-4 bg-gradient-to-r from-cyan-500 to-blue-600 text-white rounded-lg font-semibold hover:from-cyan-600 hover:to-blue-700 transition-all duration-300 transform hover:scale-105"
                 >
-                  Get in Touch
-                </Link>
+                  Submit an Article
+                </a>
+                <a
+                  href="mailto:blog@ziontechgroup.com"
+                  className="px-8 py-4 border border-cyan-500/30 text-cyan-400 rounded-lg font-semibold hover:bg-cyan-500/10 transition-all duration-300"
+                >
+                  Contact Editorial Team
+                </a>
               </div>
             </motion.div>
           </div>

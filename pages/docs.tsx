@@ -1,14 +1,38 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Layout from '../components/layout/Layout';
 import { motion } from 'framer-motion';
-import {
-  BookOpen, Code, FileText, ArrowRight, Search, Filter,
-  Star, Download, ExternalLink, Github, Terminal, Database,
-  Cpu, Brain, Atom, Shield, Rocket, Globe, Zap, Clock
+import { 
+  BookOpen, 
+  Code, 
+  Database, 
+  Shield, 
+  Cloud, 
+  Brain, 
+  Atom,
+  Rocket,
+  Search,
+  Download,
+  ExternalLink,
+  ChevronRight,
+  FileText,
+  Video,
+  Users,
+  Globe,
+  Zap,
+  Lightbulb,
+  Star,
+  ArrowRight,
+  Terminal,
+  Cpu,
+  Clock,
+  Filter,
+  Github
 } from 'lucide-react';
 import Link from 'next/link';
 
 const Docs: React.FC = () => {
+  const [searchQuery, setSearchQuery] = useState('');
+
   const documentationCategories = [
     {
       title: "AI Consciousness Platform",
@@ -76,22 +100,6 @@ const Docs: React.FC = () => {
       time: "15 min",
       icon: <Atom className="w-6 h-6" />,
       color: "from-blue-500 to-cyan-600"
-    },
-    {
-      title: "Cybersecurity Implementation",
-      description: "Implement our zero-trust security framework in your application.",
-      difficulty: "Intermediate",
-      time: "20 min",
-      icon: <Shield className="w-6 h-6" />,
-      color: "from-green-500 to-emerald-600"
-    },
-    {
-      title: "Space Technology APIs",
-      description: "Integrate space resource intelligence into your applications.",
-      difficulty: "Advanced",
-      time: "25 min",
-      icon: <Rocket className="w-6 h-6" />,
-      color: "from-orange-500 to-red-600"
     }
   ];
 
@@ -173,7 +181,7 @@ const Docs: React.FC = () => {
           <div className="absolute inset-0 bg-gradient-to-r from-purple-900/20 via-blue-900/20 to-cyan-900/20" />
           <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <motion.div
-              initial={{ opacity: 0, y: 30 }}
+              initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
               className="text-center"
@@ -193,6 +201,20 @@ const Docs: React.FC = () => {
                 Everything you need to integrate and build with our revolutionary AI consciousness, 
                 quantum computing, and cybersecurity technologies.
               </p>
+              
+              {/* Search Bar */}
+              <div className="max-w-2xl mx-auto">
+                <div className="relative">
+                  <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-400" />
+                  <input
+                    type="text"
+                    placeholder="Search documentation..."
+                    value={searchQuery}
+                    onChange={(e) => setSearchQuery(e.target.value)}
+                    className="w-full pl-12 pr-4 py-4 bg-gray-800/50 border border-gray-700/50 rounded-xl text-white placeholder-gray-400 focus:border-cyan-500 focus:ring-2 focus:ring-cyan-500/20 transition-all duration-300"
+                  />
+                </div>
+              </div>
             </motion.div>
           </div>
         </section>
@@ -505,31 +527,32 @@ const Docs: React.FC = () => {
         <section className="py-20">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <motion.div
-              initial={{ opacity: 0, y: 30 }}
+              initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
               viewport={{ once: true }}
             >
-              <h2 className="text-3xl lg:text-4xl font-bold text-white mb-6">
-                Need Help with Integration?
+              <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6">
+                Need Help Getting Started?
               </h2>
-              <p className="text-xl text-gray-400 max-w-3xl mx-auto mb-8">
-                Our developer support team is here to help you succeed with our technologies.
+              <p className="text-xl text-gray-300 mb-8 max-w-3xl mx-auto">
+                Our developer support team is here to help you succeed with our platform. 
+                Get in touch for personalized assistance.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Link
                   href="/contact"
-                  className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-purple-500 to-blue-600 text-white font-semibold rounded-2xl hover:from-purple-600 hover:to-blue-700 transition-all duration-300 transform hover:scale-105"
+                  className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-cyan-500 to-purple-500 text-white font-semibold rounded-full hover:from-cyan-600 hover:to-purple-600 transition-all duration-300 transform hover:scale-105"
                 >
-                  Get Developer Support
+                  Contact Support
                   <ArrowRight className="w-5 h-5 ml-2" />
                 </Link>
-                <Link
-                  href="/community"
-                  className="inline-flex items-center px-8 py-4 border-2 border-purple-500/30 text-purple-400 font-semibold rounded-2xl hover:border-purple-500/50 hover:text-purple-300 transition-all duration-300"
+                <a
+                  href="/docs/getting-started"
+                  className="inline-flex items-center px-8 py-4 border-2 border-cyan-500 text-cyan-400 font-semibold rounded-full hover:bg-cyan-500 hover:text-white transition-all duration-300"
                 >
-                  Join Community
-                </Link>
+                  View Getting Started
+                </a>
               </div>
             </motion.div>
           </div>

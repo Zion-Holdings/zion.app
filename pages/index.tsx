@@ -66,6 +66,7 @@ const HomePage: React.FC = () => {
   ];
 
   return (
+<<<<<<< HEAD
     <UltraFuturisticNeonBackground>
       <SEO 
         title="Zion Tech Group - Innovative AI, IT & Micro SAAS Solutions"

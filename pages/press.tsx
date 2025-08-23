@@ -40,7 +40,7 @@ const Press: React.FC = () => {
     }
   ];
 
-  const mediaResources = [
+  const mediaContacts = [
     {
       name: 'Company Logo',
       description: 'High-resolution Zion Tech Group logo in various formats',
@@ -113,6 +113,7 @@ const Press: React.FC = () => {
         <section className="relative overflow-hidden py-20 lg:py-32">
           <div className="absolute inset-0 bg-gradient-to-r from-purple-900/20 via-blue-900/20 to-cyan-900/20" />
           <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
@@ -277,6 +278,60 @@ const Press: React.FC = () => {
           </div>
         </section>
 
+        {/* Press Resources Section */}
+        <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gray-800/30">
+          <div className="max-w-7xl mx-auto">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.6 }}
+              className="text-center mb-16"
+            >
+              <h2 className="text-4xl font-bold mb-4">Press Resources</h2>
+              <p className="text-xl text-gray-400 max-w-3xl mx-auto">
+                Download our press materials and company assets for your media coverage
+              </p>
+            </motion.div>
+
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {pressResources.map((resource, index) => (
+                <motion.div
+                  key={resource.title}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: 0.1 * index }}
+                  className="bg-gray-800/50 backdrop-blur-sm rounded-xl p-6 border border-gray-700/50 hover:border-cyan-500/50 transition-all duration-300"
+                >
+                  <div className="flex items-center mb-4">
+                    <div className="p-3 bg-gradient-to-r from-cyan-500 to-blue-600 rounded-lg mr-4">
+                      {resource.icon}
+                    </div>
+                    <h3 className="text-xl font-semibold">{resource.title}</h3>
+                  </div>
+                  <p className="text-gray-300 mb-4">{resource.description}</p>
+                  <div className="flex items-center justify-between">
+                    <div className="flex gap-2">
+                      {resource.formats.map((format, formatIndex) => (
+                        <span key={formatIndex} className="px-2 py-1 bg-gray-700/50 text-gray-300 text-xs rounded">
+                          {format}
+                        </span>
+                      ))}
+                    </div>
+                    <a
+                      href={resource.downloadUrl}
+                      className="px-4 py-2 bg-gradient-to-r from-cyan-500 to-blue-600 text-white rounded-lg font-medium hover:from-cyan-600 hover:to-blue-700 transition-all duration-300 flex items-center gap-2"
+                    >
+                      <Download className="w-4 h-4" />
+                      Download
+                    </a>
+                  </div>
+                </motion.div>
+>>>>>>> origin/clean-website-enhancement
+              ))}
+            </div>
+          </div>
+        </section>
+
         {/* Media Resources */}
         <section className="py-20 bg-black/50">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -334,10 +389,6 @@ const Press: React.FC = () => {
             </div>
           </div>
         </section>
-
-        {/* Contact Information */}
-        <section className="py-20">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
