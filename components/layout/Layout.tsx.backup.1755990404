@@ -1,3 +1,8 @@
+<<<<<<< HEAD
+import React, { ReactNode } from 'react';
+import UltraFuturisticNavigation2025 from './UltraFuturisticNavigation2025';
+import UltraFuturisticFooter2025 from './UltraFuturisticFooter2025';
+=======
 import React, { useState } from 'react';
 import UltraFuturisticNavigation2040 from './UltraFuturisticNavigation2040';
 import UltraFuturisticFooter2040 from './UltraFuturisticFooter2040';
@@ -5,6 +10,7 @@ import EnhancedSidebar2025 from './EnhancedSidebar2025';
 import UltraFuturisticBackground2040 from '../backgrounds/UltraFuturisticBackground2040';
 import TopContactBar from './TopContactBar';
 import PerformanceMonitor from '../PerformanceMonitor';
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-6683
 import AccessibilityEnhancer from '../AccessibilityEnhancer';
 import PerformanceOptimizer from '../PerformanceOptimizer';
 
@@ -19,6 +25,16 @@ export default function Layout({ children, seo }: LayoutProps) {
   const [theme, setTheme] = useState<'dark' | 'light'>('dark');
 
   return (
+<<<<<<< HEAD
+    <div className="min-h-screen bg-gray-900 text-white">
+      <UltraFuturisticNavigation2025 />
+      <main className="relative z-10">
+        {children}
+      </main>
+      <UltraFuturisticFooter2025 />
+      <AccessibilityEnhancer showPanel={true} autoOptimize={true} />
+      <PerformanceOptimizer showMetrics={true} autoOptimize={true} />
+=======
     <div className="min-h-screen bg-black text-white relative overflow-x-hidden">
       {/* Skip to content link for accessibility */}
       <a href="#main" className="skip-link">Skip to main content</a>
@@ -57,6 +73,7 @@ export default function Layout({ children, seo }: LayoutProps) {
       
       {/* Cookie Consent Banner */}
       <CookieConsentBanner />
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-6683
     </div>
   );
 };

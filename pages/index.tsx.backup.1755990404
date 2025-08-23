@@ -1,5 +1,9 @@
 import React from 'react';
+<<<<<<< HEAD
+import EnhancedHomepage2025 from '../components/EnhancedHomepage2025';
+=======
 import EnhancedHomepage2040 from '../components/EnhancedHomepage2040';
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-6683
 import SEOOptimizer from '../components/SEOOptimizer';
 import AnalyticsTracker from '../components/AnalyticsTracker';
 import ErrorBoundary from '../components/ErrorBoundary';
@@ -23,6 +27,12 @@ export default function Home() {
     <ErrorBoundary>
       <SEOOptimizer />
       <AnalyticsTracker />
+<<<<<<< HEAD
+      <EnhancedHomepage2025 />
+      <PerformanceMonitor showUI={true} />
+      <AccessibilityEnhancer showPanel={true} autoOptimize={true} />
+      <PerformanceOptimizer showMetrics={true} autoOptimize={true} />
+=======
       <PerformanceOptimizer>
         <MobileOptimizer showDebugInfo={false}>
           <AccessibilityEnhancer>
@@ -31,6 +41,7 @@ export default function Home() {
           </AccessibilityEnhancer>
         </MobileOptimizer>
       </PerformanceOptimizer>
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-6683
     </ErrorBoundary>
   );
 };

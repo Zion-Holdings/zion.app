@@ -75,6 +75,12 @@ const sampleServices: Service[] = [
 
 const categories = ['All', 'AI', 'Quantum', 'Security', 'Cloud', 'Space'];
 
+<<<<<<< HEAD
+export default function ServicesPage() {
+  const [searchTerm, setSearchTerm] = useState('');
+  const [selectedCategory, setSelectedCategory] = useState('All');
+  const [services] = useState<Service[]>(sampleServices);
+=======
   // Filter out services without required properties
   const validServices = all.filter((service: any) => {
     if (!service || typeof service !== 'object') return false;
@@ -90,6 +96,7 @@ const categories = ['All', 'AI', 'Quantum', 'Security', 'Cloud', 'Space'];
     
     return hasValidPrice || hasValidPricing;
   });
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-6683
 
   const filteredServices = services.filter(service => {
     const matchesSearch = service.name.toLowerCase().includes(searchTerm.toLowerCase()) ||

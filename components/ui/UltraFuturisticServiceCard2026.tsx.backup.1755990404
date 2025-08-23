@@ -3,6 +3,10 @@ import { motion } from 'framer-motion';
 import { ArrowRight, Star, CheckCircle, Zap, Brain, Atom, Rocket } from 'lucide-react';
 import { formatServicePrice } from '../../utils/priceFormatter';
 
+<<<<<<< HEAD
+interface Service extends UnifiedService {
+  // Extend UnifiedService to maintain backward compatibility
+=======
 interface Service {
   id: string;
   name: string;
@@ -21,6 +25,7 @@ interface Service {
   popular?: boolean;
   category: string;
   icon: string;
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-6683
 }
 
 interface UltraFuturisticServiceCard2026Props {
@@ -188,6 +193,10 @@ const UltraFuturisticServiceCard2026: React.FC<UltraFuturisticServiceCard2026Pro
             animate={{ opacity: 1 }}
             transition={{ delay: 0.3 }}
           >
+<<<<<<< HEAD
+            <span className="text-2xl font-bold text-white">{formatServicePrice(service.price)}</span>
+            <span className="text-gray-400 text-sm ml-1">{service.period}</span>
+=======
             <span className="text-2xl font-bold text-white">
               {(() => {
                 if (typeof service.price === 'string') return service.price;
@@ -201,6 +210,7 @@ const UltraFuturisticServiceCard2026: React.FC<UltraFuturisticServiceCard2026Pro
             {service.period && (
               <span className="text-gray-400 text-sm ml-1">{service.period}</span>
             )}
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-6683
           </motion.div>
 
           {/* Features */}
