@@ -4,8 +4,8 @@ module.exports = {
     './pages/**/*.{js,ts,jsx,tsx,mdx}',
     './components/**/*.{js,ts,jsx,tsx,mdx}',
     './app/**/*.{js,ts,jsx,tsx,mdx}',
-    './automation/**/*.{js,ts,jsx,tsx,mdx}',
-    './scripts/**/*.{js,ts,jsx,tsx,mdx}',
+    './utils/**/*.{js,ts,jsx,tsx}',
+    './styles/**/*.{css,scss}',
   ],
   theme: {
     extend: {
