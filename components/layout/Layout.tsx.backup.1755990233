@@ -1,15 +1,25 @@
+<<<<<<< HEAD
+import React, { useState } from 'react';
+import UltraFuturisticNavigation2045 from './UltraFuturisticNavigation2045';
+import UltraFuturisticFooter2045 from './UltraFuturisticFooter2045';
+=======
 import React, { useState, useEffect } from 'react';
 import UltraFuturisticNavigation2040 from './UltraFuturisticNavigation2040';
 import UltraFuturisticFooter2040 from './UltraFuturisticFooter2040';
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-8f44
 import EnhancedSidebar2025 from './EnhancedSidebar2025';
 import UltraFuturisticBackground2045 from '../backgrounds/UltraFuturisticBackground2045';
 import TopContactBar from './TopContactBar';
 import EnhancedPerformanceMonitor from '../EnhancedPerformanceMonitor';
 import AccessibilityEnhancer from '../EnhancedAccessibilityEnhancer';
 import CookieConsentBanner from '../CookieConsentBanner';
+<<<<<<< HEAD
+import ServiceWorkerRegistration from '../ServiceWorkerRegistration';
+=======
 import ThemeToggle from '../ThemeToggle';
 import LoadingSkeleton from '../LoadingSkeleton';
 import ErrorBoundary from '../ErrorBoundary';
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-8f44
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -29,6 +39,35 @@ export default function Layout({
   canonicalUrl
 }: LayoutProps) {
   const [sidebarOpen, setSidebarOpen] = useState(false);
+<<<<<<< HEAD
+  const [isOnline, setIsOnline] = useState(true);
+
+  useEffect(() => {
+    // Check online status
+    const handleOnline = () => setIsOnline(true);
+    const handleOffline = () => setIsOnline(false);
+
+    window.addEventListener('online', handleOnline);
+    window.addEventListener('offline', handleOffline);
+    setIsOnline(navigator.onLine);
+
+    // Register service worker for PWA
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('/sw.js')
+        .then(() => {
+          // Service Worker registered successfully
+        })
+        .catch(() => {
+          // Service Worker registration failed
+        });
+    }
+
+    return () => {
+      window.removeEventListener('online', handleOnline);
+      window.removeEventListener('offline', handleOffline);
+    };
+  }, []);
+=======
   const [isLoading, setIsLoading] = useState(true);
   const [theme, setTheme] = useState<'dark' | 'light'>('dark');
 
@@ -59,6 +98,7 @@ export default function Layout({
   if (isLoading) {
     return <LoadingSkeleton />;
   }
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-8f44
 
   return (
     <div className={`min-h-screen ${theme === 'dark' ? 'bg-black text-white' : 'bg-gray-50 text-gray-900'} relative overflow-x-hidden transition-colors duration-300`}>
@@ -85,10 +125,15 @@ export default function Layout({
             onClose={() => setSidebarOpen(false)} 
           />
           
+<<<<<<< HEAD
+          <main id="main" role="main" className="flex-1 pt-32 lg:pt-36">
+            {children}
+=======
           <main id="main" role="main" className="flex-1 pt-24 lg:pt-28">
             <ErrorBoundary>
               {children}
             </ErrorBoundary>
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-8f44
           </main>
         </div>
         
