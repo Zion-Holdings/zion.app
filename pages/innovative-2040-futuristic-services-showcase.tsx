@@ -345,7 +345,7 @@ const Innovative2040FuturisticServicesShowcase: React.FC = () => {
                     )}
 
                     {/* Service Icon */}
-                    <div className={`w-16 h-16 bg-gradient-to-r ${service.color || 'from-blue-600 to-purple-700'} rounded-2xl flex items-center justify-center text-3xl mb-4 group-hover:scale-110 transition-transform duration-300`}>
+                    <div className={`w-16 h-16 bg-gradient-to-r ${service.color || 'from-blue-600 to-indigo-600'} rounded-2xl flex items-center justify-center text-3xl mb-4 group-hover:scale-110 transition-transform duration-300`}>
                       {service.icon}
                     </div>
 
@@ -435,7 +435,7 @@ const Innovative2040FuturisticServicesShowcase: React.FC = () => {
                   >
                     <div className="flex items-start space-x-6">
                       {/* Service Icon */}
-                      <div className={`w-20 h-20 bg-gradient-to-r ${service.color || 'from-blue-600 to-purple-700'} rounded-2xl flex items-center justify-center text-4xl group-hover:scale-110 transition-transform duration-300 flex-shrink-0`}>
+                      <div className={`w-20 h-20 bg-gradient-to-r ${service.color || 'from-blue-600 to-indigo-600'} rounded-2xl flex items-center justify-center text-4xl group-hover:scale-110 transition-transform duration-300 flex-shrink-0`}>
                         {service.icon}
                       </div>
 
@@ -462,8 +462,8 @@ const Innovative2040FuturisticServicesShowcase: React.FC = () => {
                           </div>
                           <div className="text-right">
                                                        <div className="text-3xl font-bold text-cyan-400 mb-1">
-                             {typeof service.price === 'string' ? service.price : `$${service.price.monthly}/${service.price.currency}`}
-                                                           <span className="text-lg text-gray-400">
+                                                           {typeof service.price === 'string' ? service.price : `$${service.price.monthly}/${service.price.currency}`}
+                              <span className="text-lg text-gray-400">
                                 {typeof service.price === 'string' ? (service as any).period || '/month' : '/month'}
                               </span>
                            </div>
