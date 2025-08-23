@@ -69,12 +69,12 @@ const footerSections = [
 ];
 
 const socialLinks = [
-  { name: 'LinkedIn', href: '#', icon: <Linkedin className="w-5 h-5" />, color: 'hover:text-blue-400' },
-  { name: 'Twitter', href: '#', icon: <Twitter className="w-5 h-5" />, color: 'hover:text-sky-400' },
-  { name: 'Facebook', href: '#', icon: <Facebook className="w-5 h-5" />, color: 'hover:text-blue-600' },
-  { name: 'Instagram', href: '#', icon: <Instagram className="w-5 h-5" />, color: 'hover:text-pink-500' },
-  { name: 'YouTube', href: '#', icon: <Youtube className="w-5 h-5" />, color: 'hover:text-red-500' },
-  { name: 'GitHub', href: '#', icon: <Github className="w-5 h-5" />, color: 'hover:text-gray-400' }
+  { name: 'LinkedIn', href: 'https://linkedin.com/company/ziontechgroup', icon: <Linkedin className="w-5 h-5" />, color: 'hover:text-blue-400' },
+  { name: 'Twitter', href: 'https://twitter.com/ziontechgroup', icon: <Twitter className="w-5 h-5" />, color: 'hover:text-sky-400' },
+  { name: 'Facebook', href: 'https://facebook.com/ziontechgroup', icon: <Facebook className="w-5 h-5" />, color: 'hover:text-blue-600' },
+  { name: 'Instagram', href: 'https://instagram.com/ziontechgroup', icon: <Instagram className="w-5 h-5" />, color: 'hover:text-pink-500' },
+  { name: 'YouTube', href: 'https://youtube.com/@ziontechgroup', icon: <Youtube className="w-5 h-5" />, color: 'hover:text-red-500' },
+  { name: 'GitHub', href: 'https://github.com/Zion-Holdings', icon: <Github className="w-5 h-5" />, color: 'hover:text-gray-400' }
 ];
 
 const UltraAdvancedFuturisticFooter2025: React.FC = () => {
@@ -276,6 +276,15 @@ const UltraAdvancedFuturisticFooter2025: React.FC = () => {
                 transition={{ duration: 0.6, delay: 0.2 }}
                 className="flex flex-wrap items-center gap-6 text-sm"
               >
+                <Link href="/about" className="text-gray-400 hover:text-cyan-400 transition-colors duration-200">
+                  About
+                </Link>
+                <Link href="/services" className="text-gray-400 hover:text-cyan-400 transition-colors duration-200">
+                  Services
+                </Link>
+                <Link href="/contact" className="text-gray-400 hover:text-cyan-400 transition-colors duration-200">
+                  Contact
+                </Link>
                 <Link href="/privacy" className="text-gray-400 hover:text-cyan-400 transition-colors duration-200">
                   Privacy Policy
                 </Link>
@@ -287,9 +296,6 @@ const UltraAdvancedFuturisticFooter2025: React.FC = () => {
                 </Link>
                 <Link href="/sitemap" className="text-gray-400 hover:text-cyan-400 transition-colors duration-200">
                   Sitemap
-                </Link>
-                <Link href="/contact" className="text-gray-400 hover:text-cyan-400 transition-colors duration-200">
-                  Contact
                 </Link>
               </motion.div>
             </div>

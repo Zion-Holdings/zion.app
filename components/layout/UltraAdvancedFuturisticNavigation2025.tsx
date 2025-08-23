@@ -31,17 +31,17 @@ const contactInfo = {
 const navigationItems: NavigationItem[] = [
   {
     name: 'All Services',
-    href: '/comprehensive-services-showcase-2025',
+    href: '/services',
     icon: <Globe className="w-5 h-5" />,
     description: 'Complete portfolio of all technology services',
     badge: 'Showcase',
     category: 'main',
     color: 'from-cyan-500 to-blue-500',
     children: [
-      { name: 'View All Services', href: '/comprehensive-services-showcase-2025', description: 'Complete services portfolio' },
-      { name: 'Service Categories', href: '/comprehensive-services-showcase-2025#categories', description: 'Browse by category' },
-      { name: 'Pricing Comparison', href: '/comprehensive-services-showcase-2025#pricing', description: 'Compare service costs' },
-      { name: 'Service Search', href: '/comprehensive-services-showcase-2025#search', description: 'Find specific services' },
+      { name: 'View All Services', href: '/services', description: 'Complete services portfolio' },
+      { name: 'Service Categories', href: '/services#categories', description: 'Browse by category' },
+      { name: 'Pricing Comparison', href: '/services#pricing', description: 'Compare service costs' },
+      { name: 'Service Search', href: '/services#search', description: 'Find specific services' },
       { name: 'Latest Innovations', href: '/revolutionary-2025-services-showcase', description: 'Cutting-edge solutions' },
       { name: '2026 Services', href: '/revolutionary-2026-services', description: 'Next generation solutions' },
       { name: '2027 Services', href: '/revolutionary-2027-services-showcase', description: 'Future-ready services' },
@@ -358,9 +358,7 @@ const UltraAdvancedFuturisticNavigation2025: React.FC = () => {
             </div>
             <div className="flex items-center gap-4">
               <a 
-                href={contactInfo.website} 
-                target="_blank" 
-                rel="noopener noreferrer"
+                href="/" 
                 className="text-gray-400 hover:text-cyan-400 transition-colors duration-200"
               >
                 {contactInfo.website}
