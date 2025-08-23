@@ -258,8 +258,9 @@ export function SignUpForm() {
           ? "Already have an account? "
           : "Don't have an account? "
         }
+        {/* Link directly to the login page instead of toggling form state */}
         <Link
-          href="/login"
+          to="/login"
           className="p-0 h-auto text-zion-cyan hover:text-zion-cyan-light cursor-pointer"
         >
           Sign In
