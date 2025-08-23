@@ -72,6 +72,11 @@ import { cuttingEdgeInnovativeServices2025 } from '../data/2025-cutting-edge-inn
 import { advancedITInfrastructureSolutions2025 } from '../data/2025-advanced-it-infrastructure-solutions';
 import { advancedAIAutomationSolutions2025 } from '../data/2025-advanced-ai-automation-solutions';
 
+// Import our new 2025 V3 innovative services
+import { innovativeMicroSaasServices2025V3 } from '../data/2025-innovative-micro-saas-expansion-v3';
+import { innovativeITInfrastructureServices2025V3 } from '../data/2025-innovative-it-infrastructure-expansion-v3';
+import { innovativeAIServices2025V3 } from '../data/2025-innovative-ai-services-expansion-v3';
+
 // Import existing service data
 import { realMicroSaasServices } from '../data/real-micro-saas-services';
 import { innovativeAIServices } from '../data/innovative-ai-services';
@@ -187,7 +192,12 @@ const allServices = [
   // Our new 2025 cutting-edge innovative services expansion
   ...cuttingEdgeInnovativeServices2025,
   ...advancedITInfrastructureSolutions2025,
-  ...advancedAIAutomationSolutions2025
+  ...advancedAIAutomationSolutions2025,
+  
+  // Our new 2025 V3 innovative services
+  ...innovativeMicroSaasServices2025V3,
+  ...innovativeITInfrastructureServices2025V3,
+  ...innovativeAIServices2025V3
 ];
 
 const categories = [
@@ -722,6 +732,55 @@ export default function Services() {
           </div>
         </section>
 
+        {/* Showcase Links Section */}
+        <section className="py-16 relative">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <motion.div
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.6 }}
+                className="bg-gradient-to-r from-blue-500/20 to-purple-500/20 border border-blue-500/30 rounded-3xl p-8 text-center"
+              >
+                <h3 className="text-2xl font-bold text-white mb-4">Comprehensive Services Showcase</h3>
+                <p className="text-gray-300 mb-6">
+                  Explore our complete portfolio of innovative services with detailed features, benefits, and use cases.
+                </p>
+                <motion.a
+                  href="/2025-comprehensive-innovative-services-showcase"
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  className="inline-flex items-center space-x-3 px-6 py-3 bg-gradient-to-r from-blue-500 to-purple-600 text-white font-semibold rounded-xl hover:from-blue-600 hover:to-purple-700 transition-all duration-200"
+                >
+                  <span>View Services Showcase</span>
+                  <ArrowRight className="w-5 h-5" />
+                </motion.a>
+              </motion.div>
+
+              <motion.div
+                initial={{ opacity: 0, x: 20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.6 }}
+                className="bg-gradient-to-r from-green-500/20 to-teal-500/20 border border-green-500/30 rounded-3xl p-8 text-center"
+              >
+                <h3 className="text-2xl font-bold text-white mb-4">Comprehensive Pricing Showcase</h3>
+                <p className="text-gray-300 mb-6">
+                  Discover transparent pricing for all our services with flexible plans and annual discounts.
+                </p>
+                <motion.a
+                  href="/2025-comprehensive-pricing-showcase"
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  className="inline-flex items-center space-x-3 px-6 py-3 bg-gradient-to-r from-green-500 to-teal-600 text-white font-semibold rounded-xl hover:from-green-600 hover:to-teal-700 transition-all duration-200"
+                >
+                  <span>View Pricing Showcase</span>
+                  <ArrowRight className="w-5 h-5" />
+                </motion.a>
+              </motion.div>
+            </div>
+          </div>
+        </section>
+
         {/* CTA Section */}
         <section className="py-20 relative">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -754,7 +813,7 @@ export default function Services() {
                   href="/enterprise-solutions-showcase"
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
-                  className="inline-flex items-center space-x-3 px-8 py-4 bg-black/50 border-2 border-cyan-500/50 text-cyan-300 font-bold text-lg rounded-xl hover:bg-cyan-500/10 hover:border-cyan-400 transition-all duration-200"
+                  className="inline-flex items-center space-x-8 py-4 bg-black/50 border-2 border-cyan-500/50 text-cyan-300 font-bold text-lg rounded-xl hover:bg-cyan-500/10 hover:border-cyan-400 transition-all duration-200"
                 >
                   <Building className="w-6 h-6" />
                   <span>Enterprise Solutions</span>
