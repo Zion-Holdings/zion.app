@@ -54,6 +54,14 @@ const navigationItems: NavigationItem[] = [
         featured: true
       },
       { 
+        name: '2041 Futuristic Services', 
+        href: '/2041-futuristic-services-showcase', 
+        description: 'Revolutionary 2041 technology',
+        icon: <Rocket className="w-4 h-4" />,
+        color: 'from-cyan-500 to-purple-500',
+        featured: true
+      },
+      { 
         name: 'AI & Consciousness', 
         href: '/ai-services', 
         description: 'Advanced AI solutions',
