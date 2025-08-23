@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { 
   Settings, X, Eye, EyeOff, Volume2, VolumeX, Type, Contrast, 
@@ -450,7 +450,97 @@ const AccessibilityEnhancer: React.FC = () => {
           {isVisible ? '−' : '+'}
         </button>
       </div>
-    </>
+      
+      {isVisible && (
+        <div className="space-y-4">
+          {/* Font Size Control */}
+          <div>
+            <label htmlFor="font-size" className="block text-xs mb-2">
+              Font Size: {fontSize}px
+            </label>
+            <input
+              id="font-size"
+              type="range"
+              min="12"
+              max="24"
+              value={fontSize}
+              onChange={(e) => setFontSize(Number(e.target.value))}
+              className="w-full h-2 bg-gray-700 rounded-lg appearance-none cursor-pointer"
+            />
+          </div>
+          
+          {/* High Contrast Toggle */}
+          <div className="flex items-center justify-between">
+            <label htmlFor="high-contrast" className="text-xs">
+              High Contrast
+            </label>
+            <input
+              id="high-contrast"
+              type="checkbox"
+              checked={highContrast}
+              onChange={(e) => setHighContrast(e.target.checked)}
+              className="w-4 h-4 text-blue-600 bg-gray-700 border-gray-600 rounded focus:ring-blue-500 focus:ring-2"
+            />
+          </div>
+          
+          {/* Reduced Motion Toggle */}
+          <div className="flex items-center justify-between">
+            <label htmlFor="reduced-motion" className="text-xs">
+              Reduced Motion
+            </label>
+            <input
+              id="reduced-motion"
+              type="checkbox"
+              checked={reducedMotion}
+              onChange={(e) => setReducedMotion(e.target.checked)}
+              className="w-4 h-4 text-blue-600 bg-gray-700 border-gray-600 rounded focus:ring-blue-500 focus:ring-2"
+            />
+          </div>
+          
+          {/* Focus Indicators Toggle */}
+          <div className="flex items-center justify-between">
+            <label htmlFor="focus-visible" className="text-xs">
+              Focus Indicators
+            </label>
+            <input
+              id="focus-visible"
+              type="checkbox"
+              checked={focusVisible}
+              onChange={(e) => setFocusVisible(e.target.checked)}
+              className="w-4 h-4 text-blue-600 bg-gray-700 border-gray-600 rounded focus:ring-blue-500 focus:ring-2"
+            />
+          </div>
+          
+          {/* Keyboard Navigation Help */}
+          <div className="pt-2 border-t border-gray-600">
+            <h4 className="text-xs font-medium mb-2">Keyboard Shortcuts:</h4>
+            <div className="text-xs space-y-1 text-gray-300">
+              <div>Alt + H: Skip to main content</div>
+              <div>Alt + N: Skip to navigation</div>
+              <div>Alt + F: Skip to footer</div>
+              <div>Alt + S: Focus search</div>
+              <div>Tab: Navigate elements</div>
+            </div>
+          </div>
+          
+          {/* Status Indicators */}
+          <div className="pt-2 border-t border-gray-600">
+            <div className="text-xs space-y-1">
+              <div className="flex items-center justify-between">
+                <span>Keyboard User:</span>
+                <span className={isKeyboardUser ? 'text-green-400' : 'text-gray-400'}>
+                  {isKeyboardUser ? 'Yes' : 'No'}
+                </span>
+              </div>
+              <div className="flex items-center justify-between">
+                <span>Screen Reader:</span>
+                <span className="text-blue-400">Supported</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
+    </div>
   );
 };
 

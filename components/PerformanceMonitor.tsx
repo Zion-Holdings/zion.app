@@ -44,13 +44,12 @@ const PerformanceMonitor: React.FC<PerformanceMonitorProps> = ({
   showUI = false 
 }) => {
   const [metrics, setMetrics] = useState<PerformanceMetrics>({
-    lcp: 0,
-    fid: 0,
-    cls: 0,
-    ttfb: 0,
-    fcp: 0,
-    fmp: 0,
-    tti: 0
+    fcp: null,
+    lcp: null,
+    fid: null,
+    cls: null,
+    ttfb: null,
+    fmp: null
   });
 
   const [isVisible, setIsVisible] = useState(false);
@@ -66,89 +65,14 @@ const PerformanceMonitor: React.FC<PerformanceMonitorProps> = ({
       }
     };
 
-  const getOverallScore = () => {
-    const validScores = Object.values(scores).filter(score => score.score > 0);
-    if (validScores.length === 0) return { score: 0, grade: 'F', color: 'text-gray-500' };
-    
-    const averageScore = validScores.reduce((sum, score) => sum + score.score, 0) / validScores.length;
-    
-    let grade: 'A' | 'B' | 'C' | 'D' | 'F';
-    let color: string;
-
-    if (averageScore >= 90) {
-      grade = 'A';
-      color = 'text-green-500';
-    } else if (averageScore >= 80) {
-      grade = 'B';
-      color = 'text-blue-500';
-    } else if (averageScore >= 70) {
-      grade = 'C';
-      color = 'text-yellow-500';
-    } else if (averageScore >= 60) {
-      grade = 'D';
-      color = 'text-orange-500';
-    } else {
-      grade = 'F';
-      color = 'text-red-500';
-    }
-
-    return { score: Math.round(averageScore), grade, color };
-  };
-
-  const overallScore = getOverallScore();
-
-  useEffect(() => {
-    if (typeof window === 'undefined') return;
-
-    // Core Web Vitals monitoring
-    const observer = new PerformanceObserver((list) => {
-      for (const entry of list.getEntries()) {
-        if (entry.entryType === 'largest-contentful-paint') {
-          setMetrics(prev => ({ ...prev, lcp: entry.startTime }));
-        }
-        if (entry.entryType === 'first-input') {
-          const firstInputEntry = entry as FirstInputEntry;
-          setMetrics(prev => ({ ...prev, fid: firstInputEntry.processingStart - firstInputEntry.startTime }));
-        }
-        if (entry.entryType === 'layout-shift') {
-          const layoutShiftEntry = entry as LayoutShiftEntry;
-          setMetrics(prev => ({ ...prev, cls: layoutShiftEntry.value }));
-        }
-      }
-    });
-
-    observer.observe({ entryTypes: ['largest-contentful-paint', 'first-input', 'layout-shift'] });
-
-    // Navigation timing
-    const navigationEntry = performance.getEntriesByType('navigation')[0] as PerformanceNavigationTiming;
-    if (navigationEntry) {
-      setMetrics(prev => ({
-        ...prev,
-        ttfb: navigationEntry.responseStart - navigationEntry.requestStart,
-        fcp: navigationEntry.domContentLoadedEventEnd - navigationEntry.domContentLoadedEventStart,
-        fmp: navigationEntry.loadEventEnd - navigationEntry.loadEventStart,
-        tti: navigationEntry.domInteractive - navigationEntry.domContentLoadedEventStart
-      }));
-    }
-
-    // Paint timing
-    const paintObserver = new PerformanceObserver((list) => {
-      for (const entry of list.getEntries()) {
-        if (entry.name === 'first-contentful-paint') {
-          setMetrics(prev => ({ ...prev, fcp: entry.startTime }));
-        }
-      }
-    });
-
-    paintObserver.observe({ entryTypes: ['paint'] });
-
-    // Resource timing
-    const resourceObserver = new PerformanceObserver((list) => {
-      for (const entry of list.getEntries()) {
-        if (entry.entryType === 'resource') {
-          const resourceEntry = entry as PerformanceResourceTiming;
-          if (resourceEntry.initiatorType === 'img' && resourceEntry.duration > 1000) {
-            setAlerts(prev => [...prev, `Slow image load: ${resourceEntry.name}`]);
+    // Measure First Contentful Paint
+    const measureFCP = () => {
+      if ('PerformanceObserver' in window) {
+        const observer = new PerformanceObserver((list) => {
+          const entries = list.getEntries();
+          const fcpEntry = entries.find(entry => entry.name === 'first-contentful-paint');
+          if (fcpEntry) {
+            setMetrics(prev => ({ ...prev, fcp: fcpEntry.startTime }));
           }
         });
         observer.observe({ entryTypes: ['paint'] });
@@ -378,9 +302,9 @@ const PerformanceMonitor: React.FC<PerformanceMonitorProps> = ({
               )}
             </ul>
           </div>
-        </motion.div>
-      )}
-    </AnimatePresence>
+        )}
+      </div>
+    </div>
   );
 };
 

@@ -6,7 +6,9 @@ import {
   Brain as BrainIcon, Atom as AtomIcon, Shield as ShieldIcon, Rocket as RocketIcon, Zap, MessageCircle,
   X, Menu, Linkedin, Twitter, Github, Search, TrendingUp, Users, Award
 } from 'lucide-react';
-import Head from 'next/head';
+import EnhancedSEO from './EnhancedSEO';
+import PerformanceOptimizer from './PerformanceOptimizer';
+import EnhancedAccessibilityEnhancer from './EnhancedAccessibilityEnhancer';
 
 // Import our new revolutionary services
 import { innovativeMicroSaasSolutions2025V2 } from '../data/2025-innovative-micro-saas-expansion-v2';
@@ -144,67 +146,13 @@ const EnhancedHomepage2045: React.FC = () => {
   }
 
   return (
-    <AccessibilityEnhancer>
-      <>
-        <Head>
-          <title>Zion Tech Group - Revolutionary AI & IT Services 2045</title>
-          <meta name="description" content="Discover the future of technology with Zion Tech Group's revolutionary AI, quantum computing, and IT infrastructure services. Transform your business with cutting-edge solutions." />
-          <meta name="keywords" content="AI services, quantum computing, IT infrastructure, cybersecurity, micro SAAS, business automation, Zion Tech Group" />
-          <meta name="viewport" content="width=device-width, initial-scale=1" />
-          <link rel="canonical" href="https://ziontechgroup.com" />
-          
-          {/* Enhanced SEO Meta Tags */}
-          <meta property="og:title" content="Zion Tech Group - Revolutionary AI & IT Services 2045" />
-          <meta property="og:description" content="Transform your business with cutting-edge AI, quantum computing, and next-generation IT infrastructure." />
-          <meta property="og:type" content="website" />
-          <meta property="og:url" content="https://ziontechgroup.com" />
-          <meta property="og:site_name" content="Zion Tech Group" />
-          
-          <meta name="twitter:card" content="summary_large_image" />
-          <meta name="twitter:title" content="Zion Tech Group - Revolutionary AI & IT Services 2045" />
-          <meta name="twitter:description" content="Transform your business with cutting-edge AI, quantum computing, and next-generation IT infrastructure." />
-          
-          {/* Performance and Accessibility Meta Tags */}
-          <meta name="theme-color" content="#06b6d4" />
-          <meta name="color-scheme" content="dark" />
-          <meta name="prefers-color-scheme" content="dark" />
-          
-          {/* Structured Data */}
-          <script
-            type="application/ld+json"
-            dangerouslySetInnerHTML={{
-              __html: JSON.stringify({
-                "@context": "https://schema.org",
-                "@type": "Organization",
-                "name": "Zion Tech Group",
-                "url": "https://ziontechgroup.com",
-                "logo": "https://ziontechgroup.com/logo.png",
-                "description": "Revolutionary technology solutions for the future of business.",
-                "address": {
-                  "@type": "PostalAddress",
-                  "streetAddress": "364 E Main St STE 1008",
-                  "addressLocality": "Middletown",
-                  "addressRegion": "DE",
-                  "postalCode": "19709",
-                  "addressCountry": "US"
-                },
-                "contactPoint": {
-                  "@type": "ContactPoint",
-                  "telephone": "+1-302-464-0950",
-                  "contactType": "customer service",
-                  "email": "kleber@ziontechgroup.com"
-                },
-                "sameAs": [
-                  "https://linkedin.com/company/ziontechgroup",
-                  "https://twitter.com/ziontechgroup",
-                  "https://github.com/ziontechgroup"
-                ]
-              })
-            }}
-          />
-        </Head>
-
-        <div className="min-h-screen bg-black text-white overflow-hidden">
+    <Layout>
+      <EnhancedSEO />
+      <EnhancedAccessibilityEnhancer />
+      
+      <div className="min-h-screen relative overflow-hidden" onMouseMove={handleMouseMove}>
+        {/* Hero Section */}
+        <section className="relative pt-32 pb-20 overflow-hidden">
           {/* Animated Background */}
           <div className="fixed inset-0 z-0">
             <div className="absolute inset-0 bg-gradient-to-br from-black via-gray-900 to-black"></div>
@@ -329,6 +277,29 @@ const EnhancedHomepage2045: React.FC = () => {
                   <category.icon className="w-5 h-5" />
                   <span>{category.name}</span>
                 </motion.button>
+              ))}
+            </div>
+
+            {/* Services Grid */}
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {getFilteredServices().slice(0, 9).map((service, index) => (
+                <motion.div
+                  key={i}
+                  className="absolute w-1 h-1 bg-cyan-400 rounded-full opacity-20"
+                  style={{
+                    left: `${Math.random() * 100}%`,
+                    top: `${Math.random() * 100}%`,
+                  }}
+                  animate={{
+                    y: [0, -100, 0],
+                    opacity: [0.2, 0.8, 0.2],
+                  }}
+                  transition={{
+                    duration: Math.random() * 10 + 10,
+                    repeat: 999999,
+                    ease: "linear"
+                  }}
+                />
               ))}
             </div>
           </div>

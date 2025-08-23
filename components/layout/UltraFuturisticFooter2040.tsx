@@ -2,10 +2,11 @@ import React, { useState } from 'react';
 import Link from 'next/link';
 import { motion, AnimatePresence } from 'framer-motion';
 import { 
-  Brain, Atom, Shield, Rocket, Cpu, Target, Sparkles, 
-  Heart, DollarSign, GraduationCap, Building, Truck, Zap,
-  Phone, Mail, MapPin, Globe, Linkedin, Twitter, Github, Youtube,
-  ArrowRight, Star, CheckCircle, TrendingUp, Award, Clock
+  Globe, Phone, Mail, MapPin, 
+  Brain, Atom, Shield, Rocket, Target, 
+  Star, 
+  Twitter, Linkedin, Youtube, Github, 
+  ArrowUp, ArrowRight, ExternalLink, Heart, Zap
 } from 'lucide-react';
 
 const UltraFuturisticFooter2040: React.FC = () => {
@@ -245,32 +246,7 @@ const UltraFuturisticFooter2040: React.FC = () => {
               </Link>
             </div>
           </div>
-        </div>
-
-        {/* Bottom Bar */}
-        <div className="border-t border-white/10">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
-            <div className="flex flex-col md:flex-row items-center justify-between space-y-4 md:space-y-0">
-              <div className="text-sm text-white/60">
-                © {currentYear} Zion Tech Group. All rights reserved.
-              </div>
-              <div className="flex space-x-6 text-sm">
-                <Link href="/privacy" className="text-white/60 hover:text-white transition-colors duration-300">
-                  Privacy Policy
-                </Link>
-                <Link href="/terms" className="text-white/60 hover:text-white transition-colors duration-300">
-                  Terms of Service
-                </Link>
-                <Link href="/cookies" className="text-white/60 hover:text-white transition-colors duration-300">
-                  Cookie Policy
-                </Link>
-                <Link href="/sitemap" className="text-white/60 hover:text-white transition-colors duration-300">
-                  Sitemap
-                </Link>
-              </div>
-            </div>
-          </div>
-        </div>
+        </motion.div>
       </div>
 
       {/* Back to Top Button */}

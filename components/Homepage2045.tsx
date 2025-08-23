@@ -3,8 +3,9 @@ import dynamic from 'next/dynamic';
 import Layout from './layout/Layout';
 import { motion, AnimatePresence } from 'framer-motion';
 import { 
-  ArrowRight, Play, TrendingUp, Brain, Shield, Rocket, Globe, Cpu, Database, Atom, Target, Star, Sparkles as SparklesIcon,
-  Brain as BrainIcon, Atom as AtomIcon, Shield as ShieldIcon, MessageCircle, ArrowUp
+  ArrowRight, Play, Star, Users, Award, TrendingUp, Brain, Rocket, 
+  ChevronDown, Search, Grid, Sparkles, 
+  Accessibility, Eye
 } from 'lucide-react';
 
 // Import our new innovative services
@@ -195,73 +196,8 @@ const Homepage2045: React.FC = () => {
       const sections = document.querySelectorAll('section[id]');
       sections.forEach((section) => observer.observe(section));
 
-  // Combine all revolutionary services
-  const allRevolutionaryServices = useMemo(() => [
-    ...revolutionary2045AdvancedRealMicroSaas,
-    ...revolutionary2045AdvancedITServices,
-    ...revolutionary2045AdvancedAIServices
-  ], []);
-
-  // Filter services by category
-  const getFilteredServices = useCallback(() => {
-    if (selectedCategory === 'all') return allRevolutionaryServices;
-    return allRevolutionaryServices.filter(service => 
-      service.category.toLowerCase().includes(selectedCategory.toLowerCase()) ||
-      service.type.toLowerCase().includes(selectedCategory.toLowerCase())
-    );
-  }, [selectedCategory, allRevolutionaryServices]);
-
-  const categories = useMemo(() => [
-    { id: 'all', name: 'All Services', icon: SparklesIcon, color: 'from-purple-500 to-pink-500', count: allRevolutionaryServices.length },
-    { id: 'ai', name: 'AI & Consciousness', icon: BrainIcon, color: 'from-cyan-500 to-blue-500', count: revolutionary2045AdvancedAIServices.length },
-    { id: 'quantum', name: 'Quantum Technology', icon: AtomIcon, color: 'from-blue-500 to-indigo-500', count: allRevolutionaryServices.filter(s => s.category.includes('Quantum')).length },
-    { id: 'cybersecurity', name: 'Cybersecurity', icon: ShieldIcon, color: 'from-red-500 to-orange-500', count: allRevolutionaryServices.filter(s => s.category.includes('Security')).length },
-    { id: 'business', name: 'Business Solutions', icon: Target, color: 'from-emerald-500 to-teal-500', count: allRevolutionaryServices.filter(s => s.type === 'Micro SAAS').length },
-    { id: 'it', name: 'IT Infrastructure', icon: Cpu, color: 'from-yellow-500 to-orange-500', count: revolutionary2045AdvancedITServices.length }
-  ], [allRevolutionaryServices, revolutionary2045AdvancedAIServices, revolutionary2045AdvancedITServices]);
-
-  const features = useMemo(() => [
-    { icon: Brain, title: "AI Consciousness Evolution 2045", description: "Next-generation AI consciousness with emotional intelligence", href: "/ai-consciousness-evolution-platform-2045", color: "from-purple-500 to-pink-500" },
-    { icon: Atom, title: "Quantum AI Hybrid Computing", description: "Quantum-powered AI with consciousness integration", href: "/quantum-ai-hybrid-computing-platform-2045", color: "from-blue-500 to-cyan-500" },
-    { icon: Shield, title: "Quantum Cybersecurity Intelligence", description: "Quantum-resistant security with AI consciousness", href: "/quantum-cybersecurity-intelligence-2045", color: "from-red-500 to-orange-500" },
-    { icon: Rocket, title: "Autonomous Business Intelligence", description: "Fully autonomous AI business intelligence", href: "/autonomous-ai-business-intelligence-2045", color: "from-indigo-500 to-purple-500" },
-    { icon: Cpu, title: "Quantum Cloud Infrastructure", description: "Quantum-powered cloud with consciousness", href: "/quantum-cloud-infrastructure-platform-2045", color: "from-emerald-500 to-teal-500" },
-    { icon: Database, title: "Autonomous DevOps Intelligence", description: "AI-powered DevOps optimization", href: "/autonomous-devops-intelligence-platform-2045", color: "from-yellow-500 to-orange-500" }
-  ], []);
-
-  const stats = useMemo(() => [
-    { number: "3000+", label: "Revolutionary Services", icon: Star },
-    { number: "99.99%", label: "Uptime Guarantee", icon: TrendingUp },
-    { number: "24/7", label: "AI Support Available", icon: Brain },
-    { number: "250+", label: "Countries Served", icon: Globe }
-  ], []);
-
-  const testimonials = useMemo(() => [
-    {
-      name: "Dr. Sarah Chen",
-      role: "CTO, QuantumTech Solutions",
-      content: "Zion Tech Group's AI consciousness platform transformed our entire operation. The level of intelligence and autonomy is unprecedented.",
-      avatar: "👩‍💼",
-      rating: 5
-    },
-    {
-      name: "Marcus Rodriguez",
-      role: "CEO, FutureSpace Industries",
-      content: "Their quantum cybersecurity solutions are years ahead of anything else in the market. We've never felt more secure.",
-      avatar: "👨‍💼",
-      rating: 5
-    },
-    {
-      name: "Dr. Emily Watson",
-      role: "Research Director, NeuralCorp",
-      content: "The autonomous business intelligence system has increased our efficiency by 300%. It's like having a genius partner.",
-      avatar: "👩‍🔬",
-      rating: 5
+      return () => observer.disconnect();
     }
-  ], []);
-
-  const handleGetStarted = useCallback(() => {
-    window.location.href = '/contact';
   }, []);
 
   // Enhanced animation variants with accessibility support
