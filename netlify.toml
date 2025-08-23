@@ -303,10 +303,11 @@
   name = "duplicate-media-finder-runner"
   schedule = "0 2 * * *"
 
+# Autonomous brain and health monitor
 [[scheduled.functions]]
-  name = "autonomous-meta-orchestrator"
+  name = "autonomous-cloud-brain"
   schedule = "*/1 * * * *"
 
 [[scheduled.functions]]
-  name = "autonomous-cloud-bootstrap"
-  schedule = "*/10 * * * *"
+  name = "function-health-monitor"
+  schedule = "*/5 * * * *"

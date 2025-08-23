@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2025-08-12T01:31:50.034Z",
+  "generatedAt": "2025-08-12T01:31:09.086Z",
   "functions": [
     "a11y-audit-runner",
     "ai-changelog-runner",
@@ -8,7 +8,7 @@
     "auto-scheduler",
     "automation-guardian-runner",
     "automation-matrix",
-    "autonomous-cloud-bootstrap",
+    "autonomous-cloud-brain",
     "autonomous-invention-orchestrator",
     "autonomous-meta-orchestrator",
     "broken-image-scanner",
@@ -39,6 +39,7 @@
     "front-visionary-expander",
     "frontpage-enhancer",
     "frontpage-scheduler",
+    "function-health-monitor",
     "home-visionary-expander",
     "homepage-advertiser-scheduler",
     "homepage-enhancer",

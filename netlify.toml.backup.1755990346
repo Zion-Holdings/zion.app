@@ -201,10 +201,6 @@
 
 # Scheduled maintenance automation
 [[scheduled.functions]]
-<<<<<<< HEAD
-  name = "branch-cleanup-runner"
-  schedule = "0 2 * * *" # daily at 02:00 UTC
-=======
   name = "seo-audit-runner"
   schedule = "0 */2 * * *"
 
@@ -307,6 +303,7 @@
   name = "duplicate-media-finder-runner"
   schedule = "0 2 * * *"
 
+<<<<<<< HEAD
 [[scheduled.functions]]
   name = "autonomous-meta-orchestrator"
   schedule = "*/1 * * * *"
@@ -314,4 +311,13 @@
 [[scheduled.functions]]
   name = "autonomous-cloud-bootstrap"
   schedule = "*/10 * * * *"
->>>>>>> origin/cursor/autonomous-cloud-automation-and-sync-387c
+=======
+# Autonomous brain and health monitor
+[[scheduled.functions]]
+  name = "autonomous-cloud-brain"
+  schedule = "*/1 * * * *"
+
+[[scheduled.functions]]
+  name = "function-health-monitor"
+  schedule = "*/5 * * * *"
+>>>>>>> origin/cursor/autonomous-cloud-automation-and-sync-7157
