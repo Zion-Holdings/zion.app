@@ -32,7 +32,7 @@ const EnhancedSidebar2025: React.FC<{ isOpen: boolean; onClose: () => void }> = 
       icon: Brain,
       color: 'from-purple-500 to-pink-500',
       items: [
-        { label: 'AI Consciousness Evolution', href: '/ai-consciousness-evolution', badge: 'Hot', featured: true },
+        { label: 'AI Consciousness Evolution', href: '/ai-consciousness-evolution-platform', badge: 'Hot', featured: true },
         { label: 'AI Emotional Intelligence', href: '/ai-emotional-intelligence', badge: 'New' },
         { label: 'AI Autonomous Research', href: '/ai-autonomous-research', badge: 'Trending' },
         { label: 'AI Content Personalization', href: '/ai-content-personalization' },
