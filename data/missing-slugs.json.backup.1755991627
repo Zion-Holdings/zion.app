@@ -1,6 +1,10 @@
 [
   "ai-autonomous-marketing-platform",
   "automated-financial-analytics-platform",
+<<<<<<< HEAD
+  "industry-solutions",
+  "intelligent-project-management-suite"
+=======
   "brain-computer-interface",
   "customer-intelligence-platform",
   "industrial-automation-ai",
@@ -21,4 +25,5 @@
   "services/serverless-lakehouse-starter",
   "space-colonization-services",
   "space-mining-platform"
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-28aa
 ]

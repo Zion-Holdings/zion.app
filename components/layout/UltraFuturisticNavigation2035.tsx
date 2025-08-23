@@ -206,7 +206,7 @@ const navigationItems: NavigationItem[] = [
   },
   {
     name: 'AI & Consciousness',
-    href: '/ai-services',
+    href: '/services#ai',
     icon: <Brain className="w-5 h-5" />,
     description: 'Revolutionary AI consciousness and emotional intelligence',
     badge: 'New',
@@ -286,7 +286,7 @@ const navigationItems: NavigationItem[] = [
   },
   {
     name: 'Industry Solutions',
-    href: '/industry-solutions',
+    href: '/solutions',
     icon: <Building className="w-5 h-5" />,
     description: 'Industry-specific technology solutions',
     badge: 'Industry',
