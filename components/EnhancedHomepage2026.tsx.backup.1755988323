@@ -61,9 +61,16 @@ const EnhancedHomepage2026: React.FC = () => {
       title: "AI Consciousness Orchestrator",
       description: "Revolutionary AI consciousness management with ethical frameworks and human-AI collaboration",
       icon: Brain,
+<<<<<<< HEAD
+      color: "from-purple-600 to-indigo-700",
+      price: "$4,999/month",
+      features: ["Quantum AI coordination", "Zero-latency switching", "Multi-model management"],
+      badge: "Most Popular"
+=======
       color: "from-cyan-600 to-blue-700",
       price: "$2,999/month",
       features: ["Consciousness monitoring", "Ethical AI frameworks", "Human-AI collaboration"]
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-5244
     },
     {
       title: "Quantum Neural Interface Platform",
@@ -94,16 +101,56 @@ const EnhancedHomepage2026: React.FC = () => {
       description: "Quantum-resistant cybersecurity with AI-powered threat detection and autonomous response",
       icon: Shield,
       color: "from-red-600 to-pink-700",
+<<<<<<< HEAD
+      price: "$1,299/month",
+      features: ["Autonomous threat detection", "Real-time response", "Zero-trust architecture"],
+      badge: "Trending"
+    },
+    {
+      title: "Quantum Financial Modeling Suite",
+      description: "Quantum-powered financial modeling for superior risk assessment and optimization",
+      icon: Zap,
+      color: "from-yellow-600 to-orange-700",
+      price: "$2,999/month",
+      features: ["Quantum Monte Carlo", "Portfolio optimization", "Risk assessment"],
+      badge: "New"
+    },
+    {
+      title: "Metaverse Commerce Platform",
+      description: "Complete e-commerce solution for virtual worlds and digital asset management",
+      icon: Globe,
+      color: "from-purple-600 to-indigo-700",
+      price: "$799/month",
+      features: ["3D storefronts", "NFT management", "Virtual currency"],
+      badge: "Innovative"
+=======
       price: "$3,999/month",
       features: ["Quantum encryption", "AI threat detection", "Autonomous response"]
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-5244
     },
     {
       title: "Autonomous DevOps Orchestrator",
       description: "AI-powered autonomous DevOps with self-healing infrastructure and predictive optimization",
       icon: Cpu,
+<<<<<<< HEAD
+      color: "from-green-600 to-emerald-700",
+      price: "$1,199/month",
+      features: ["Autonomous CI/CD", "Self-healing infrastructure", "Predictive optimization"],
+      badge: "Enterprise"
+    },
+    {
+      title: "Quantum Computer Vision Suite",
+      description: "Quantum-powered computer vision for unprecedented image analysis accuracy",
+      icon: Eye,
+      color: "from-cyan-600 to-blue-700",
+      price: "$3,499/month",
+      features: ["Quantum image processing", "Real-time analysis", "3D vision"],
+      badge: "Advanced"
+=======
       color: "from-emerald-600 to-teal-700",
       price: "$2,499/month",
       features: ["Self-healing systems", "Predictive optimization", "Autonomous management"]
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-5244
     }
   ];
 
@@ -212,21 +259,39 @@ const EnhancedHomepage2026: React.FC = () => {
                   variants={fadeInUp}
                 >
                   <button 
+<<<<<<< HEAD
+                    className="group px-10 py-5 bg-gradient-to-r from-cyan-500 via-blue-600 to-purple-600 text-white font-bold text-lg rounded-xl hover:from-cyan-600 hover:via-blue-700 hover:to-purple-700 transition-all duration-300 transform hover:scale-105 hover:shadow-2xl hover:shadow-cyan-500/25 flex items-center gap-3 focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:ring-offset-2 focus:ring-offset-black relative overflow-hidden"
+                    aria-label="Get started with Zion Tech Group services"
+                    onClick={() => window.location.href = '/get-started'}
+                  >
+                    <span className="relative z-10">Get Started</span>
+                    <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform relative z-10" />
+=======
                     className="group px-12 py-6 bg-gradient-to-r from-cyan-500 via-blue-600 to-purple-600 text-white font-bold text-xl rounded-2xl hover:from-cyan-600 hover:via-blue-700 hover:to-purple-700 transition-all duration-300 transform hover:scale-105 hover:shadow-2xl hover:shadow-cyan-500/25 flex items-center gap-3 focus:outline-none focus:ring-4 focus:ring-cyan-500/50 relative overflow-hidden"
                     aria-label="Explore our revolutionary 2040 services"
                     onClick={() => window.location.href = '/comprehensive-2040-services-showcase'}
                   >
                     <span className="relative z-10">Explore 2040 Services</span>
                     <ArrowRight className="w-6 h-6 group-hover:translate-x-2 transition-transform relative z-10" />
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-5244
                     <div className="absolute inset-0 bg-gradient-to-r from-cyan-400 to-blue-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                   </button>
                   
                   <button 
+<<<<<<< HEAD
+                    className="px-10 py-5 border-2 border-cyan-400 text-cyan-400 font-bold text-lg rounded-xl hover:bg-cyan-400 hover:text-black transition-all duration-300 transform hover:scale-105 flex items-center gap-3 focus:outline-none focus:ring-2 focus:ring-cyan-400 focus:ring-offset-2 focus:ring-offset-black group"
+                    aria-label="Learn more about Zion Tech Group"
+                    onClick={() => window.location.href = '/about'}
+                  >
+                    <span>Learn More</span>
+                    <Play className="w-5 h-5 group-hover:scale-110 transition-transform" />
+=======
                     className="px-12 py-6 border-2 border-cyan-400 text-cyan-400 font-bold text-xl rounded-2xl hover:bg-cyan-400 hover:text-black transition-all duration-300 transform hover:scale-105 flex items-center gap-3 focus:outline-none focus:ring-4 focus:ring-cyan-400/50 group"
                     aria-label="View 2040 technology pricing"
                     onClick={() => window.location.href = '/pricing-2040'}
                   >
                     <span>View Pricing</span>
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-5244
                   </button>
                 </motion.div>
 
