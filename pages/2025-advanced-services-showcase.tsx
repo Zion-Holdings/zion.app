@@ -175,7 +175,7 @@ export default function AdvancedServicesShowcase() {
           <div className="flex items-center gap-2">
             <Users className="w-4 h-4 text-blue-500" />
             <span className="text-sm text-gray-600 dark:text-gray-400">
-              {service.customers.toLocaleString()}+ customers
+              {(service.customers || 0).toLocaleString()}+ customers
             </span>
           </div>
           <div className="flex items-center gap-2">
@@ -288,7 +288,7 @@ export default function AdvancedServicesShowcase() {
               <div className="flex items-center gap-2">
                 <Users className="w-4 h-4 text-blue-500" />
                 <span className="text-sm text-gray-600 dark:text-gray-400">
-                  {service.customers.toLocaleString()}+ customers
+                  {(service.customers || 0).toLocaleString()}+ customers
                 </span>
               </div>
               <div className="flex items-center gap-2">
