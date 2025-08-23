@@ -5,7 +5,7 @@ import {
   Search, Grid, List,
   Brain, Atom, Shield, Target, Rocket,
   ArrowRight, Check, Palette, Heart, Truck, GraduationCap,
-  Building, Cpu
+  Building, Cpu, Cloud, Zap
 } from 'lucide-react';
 
 // Import our new 2025 service data
@@ -55,6 +55,12 @@ import { innovative2040FuturisticServices } from '../data/innovative-2040-futuri
 // Import our new 2025 advanced enterprise services
 import { advancedEnterpriseServices } from '../data/2025-advanced-enterprise-services-expansion';
 import { cuttingEdgeITInfrastructureServices } from '../data/2025-cutting-edge-it-infrastructure';
+
+// Import our new 2025 enterprise automation services
+import { advancedEnterpriseAutomationServices2025 } from '../data/2025-advanced-enterprise-automation-services';
+import { advancedAIMLEnterpriseServices2025 } from '../data/2025-advanced-ai-ml-enterprise-services';
+import { advancedCloudDevOpsServices2025 } from '../data/2025-advanced-cloud-devops-services';
+import { advancedFintechBlockchainServices2025 } from '../data/2025-advanced-fintech-blockchain-services';
 
 // Import our new 2025 cutting-edge futuristic services
 import { cuttingEdgeFuturisticServices } from '../data/2025-cutting-edge-futuristic-services';
@@ -164,7 +170,13 @@ const allServices = [
   ...ultimate2025AIServicesExpansion,
   // Our new 2025 advanced enterprise services
   ...advancedEnterpriseServices,
-  ...cuttingEdgeITInfrastructureServices
+  ...cuttingEdgeITInfrastructureServices,
+  
+  // Our new 2025 enterprise automation services
+  ...advancedEnterpriseAutomationServices2025,
+  ...advancedAIMLEnterpriseServices2025,
+  ...advancedCloudDevOpsServices2025,
+  ...advancedFintechBlockchainServices2025
 ];
 
 const categories = [
@@ -251,6 +263,38 @@ const categories = [
     icon: <Truck className="w-6 h-6" />,
     color: 'from-blue-500 to-cyan-500',
     description: 'Smart transportation solutions'
+  },
+  {
+    id: 'education-research',
+    name: 'Education & Research',
+  },
+  {
+    id: 'enterprise-automation',
+    name: 'Enterprise Automation',
+    icon: <Zap className="w-6 h-6" />,
+    color: 'from-blue-500 to-cyan-500',
+    description: 'AI-powered enterprise process automation'
+  },
+  {
+    id: 'ai-ml-enterprise',
+    name: 'AI/ML Enterprise',
+    icon: <Brain className="w-6 h-6" />,
+    color: 'from-indigo-500 to-purple-600',
+    description: 'Enterprise AI and machine learning solutions'
+  },
+  {
+    id: 'cloud-devops',
+    name: 'Cloud & DevOps',
+    icon: <Cloud className="w-6 h-6" />,
+    color: 'from-green-500 to-emerald-600',
+    description: 'Advanced cloud and DevOps solutions'
+  },
+  {
+    id: 'fintech-blockchain',
+    name: 'Fintech & Blockchain',
+    icon: <Shield className="w-6 h-6" />,
+    color: 'from-purple-500 to-pink-600',
+    description: 'Financial technology and blockchain solutions'
   },
   {
     id: 'education-research',

@@ -225,7 +225,7 @@ export type {
 // Export new 2025 services
 export { advancedAIMLServices } from '../data/2025-advanced-ai-ml-services';
 export { advancedCybersecurityServices } from '../data/2025-advanced-cybersecurity-services';
-export { advancedCloudDevOpsServices } from '../data/2025-advanced-cloud-devops-services';
+export { advancedCloudDevOpsServices2025 } from '../data/2025-advanced-cloud-devops-services';
 export { industrySpecificSolutions } from '../data/2025-industry-specific-solutions';
 export { emergingTechnologyServices } from '../data/2025-emerging-technology-services';
 

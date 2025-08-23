@@ -10,7 +10,7 @@ import {
 // Import our new service data
 import { advancedAIMLServices } from '../data/2025-advanced-ai-ml-services';
 import { advancedCybersecurityServices } from '../data/2025-advanced-cybersecurity-services';
-import { advancedCloudDevOpsServices } from '../data/2025-advanced-cloud-devops-services';
+import { advancedCloudDevOpsServices2025 } from '../data/2025-advanced-cloud-devops-services';
 import { industrySpecificSolutions } from '../data/2025-industry-specific-solutions';
 import { emergingTechnologyServices } from '../data/2025-emerging-technology-services';
 
@@ -45,7 +45,7 @@ const serviceCategories = [
     name: 'Cloud & DevOps',
     icon: Cloud,
     description: 'Cloud infrastructure, DevOps automation, and edge computing solutions',
-    services: advancedCloudDevOpsServices,
+    services: advancedCloudDevOpsServices2025,
     color: 'from-blue-600 to-cyan-700'
   },
   {

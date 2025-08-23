@@ -11,7 +11,7 @@ import {
 // Import our new service data
 import { advancedAIMLServices } from '../data/2025-advanced-ai-ml-services';
 import { advancedCybersecurityServices } from '../data/2025-advanced-cybersecurity-services';
-import { advancedCloudDevOpsServices } from '../data/2025-advanced-cloud-devops-services';
+import { advancedCloudDevOpsServices2025 } from '../data/2025-advanced-cloud-devops-services';
 import { industrySpecificSolutions } from '../data/2025-industry-specific-solutions';
 import { emergingTechnologyServices } from '../data/2025-emerging-technology-services';
 
@@ -23,11 +23,40 @@ const contactInfo = {
   website: 'https://ziontechgroup.com'
 };
 
+// Helper function to get service pricing
+const getServicePricing = (service: any) => {
+  if (service.pricing?.starter) return service.pricing.starter;
+  if (service.price?.monthly) return `$${service.price.monthly}/month`;
+  if (typeof service.price === 'string') return service.price;
+  return 'Contact for pricing';
+};
+
+// Helper function to get service features
+const getServiceFeatures = (service: any) => {
+  return service.keyFeatures || service.features || [];
+};
+
+// Helper function to get service setup time
+const getServiceSetupTime = (service: any) => {
+  if (service.setupTime) return service.setupTime;
+  if (service.pricing?.setupTime) return service.pricing.setupTime;
+  if (service.price?.setupTime) return service.price.setupTime;
+  return 'N/A';
+};
+
+// Helper function to get service trial days
+const getServiceTrialDays = (service: any) => {
+  if (service.trialDays) return service.trialDays;
+  if (service.pricing?.trialDays) return service.pricing.trialDays;
+  if (service.price?.trialDays) return service.price.trialDays;
+  return 'N/A';
+};
+
 // All services combined
 const allServices = [
   ...advancedAIMLServices,
   ...advancedCybersecurityServices,
-  ...advancedCloudDevOpsServices,
+      ...advancedCloudDevOpsServices2025,
   ...industrySpecificSolutions,
   ...emergingTechnologyServices
 ];
@@ -265,13 +294,7 @@ const ComprehensiveServicesShowcase: React.FC = () => {
                       {/* Price */}
                       <div className="mt-4">
                         <span className="text-2xl font-bold">
-                          {typeof service.price === 'string' 
-                            ? service.price 
-                            : `$${service.price.monthly.toLocaleString()}`
-                          }
-                        </span>
-                        <span className="text-blue-100">
-                          {typeof service.price === 'string' ? '' : '/month'}
+                          {getServicePricing(service)}
                         </span>
                       </div>
                     </div>
@@ -284,7 +307,7 @@ const ComprehensiveServicesShowcase: React.FC = () => {
                       <div className="mb-6">
                         <h4 className="font-semibold text-gray-900 mb-2">Key Features:</h4>
                         <ul className="space-y-1">
-                          {service.features.slice(0, 4).map((feature, idx) => (
+                          {getServiceFeatures(service).slice(0, 4).map((feature, idx) => (
                             <li key={idx} className="flex items-center text-sm text-gray-600">
                               <Check className="w-4 h-4 text-green-500 mr-2 flex-shrink-0" />
                               {feature}
@@ -304,18 +327,10 @@ const ComprehensiveServicesShowcase: React.FC = () => {
                       {/* Service Info */}
                       <div className="grid grid-cols-2 gap-4 mb-4 text-sm text-gray-600">
                         <div>
-                          <span className="font-medium">Setup:</span> {
-                            'setupTime' in service 
-                              ? (typeof service.setupTime === 'string' ? service.setupTime : service.setupTime)
-                              : (service.price && typeof service.price === 'object' ? service.price.setupTime : 'N/A')
-                          }
+                          <span className="font-medium">Setup:</span> {getServiceSetupTime(service)}
                         </div>
                         <div>
-                          <span className="font-medium">Trial:</span> {
-                            'trialDays' in service 
-                              ? service.trialDays 
-                              : (service.price && typeof service.price === 'object' ? service.price.trialDays : 'N/A')
-                          } days
+                          <span className="font-medium">Trial:</span> {getServiceTrialDays(service)} days
                         </div>
                       </div>
 

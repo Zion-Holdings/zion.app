@@ -67,6 +67,11 @@ const Homepage2025: React.FC = () => {
                     2025 Services Showcase
                   </button>
                 </Link>
+                <Link href="/comprehensive-2025-enterprise-services-showcase">
+                  <button className="px-8 py-4 border-2 border-blue-400 text-blue-400 font-semibold rounded-lg hover:bg-blue-400 hover:text-black transition-all duration-300 transform hover:scale-105">
+                    Enterprise Services
+                  </button>
+                </Link>
               </div>
               
               {/* Trust Indicators */}
