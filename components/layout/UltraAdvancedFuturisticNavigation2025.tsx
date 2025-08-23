@@ -3,10 +3,14 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { 
   Menu, X, Search, ChevronDown, ChevronRight, 
   Home, Briefcase, Users, BookOpen, Phone, 
-  Globe, Zap, Shield, Brain, Rocket
+  Globe, Zap, Shield, Brain, Rocket, Building,
+  Target, Heart, Cpu, Cloud
 } from 'lucide-react';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
+
+// Define Node type for DOM event handling
+type Node = HTMLElement | null;
 
 interface NavigationItem {
   label: string;
@@ -30,27 +34,83 @@ const navigationItems: NavigationItem[] = [
     children: [
       {
         label: 'AI & Machine Learning',
-        href: '/ai-services',
+        href: '/services?category=ai-ml',
         icon: <Brain className="w-4 h-4" />,
         description: 'Advanced AI solutions for enterprise'
       },
       {
         label: 'Quantum Computing',
-        href: '/quantum-computing',
+        href: '/services?category=quantum',
         icon: <Zap className="w-4 h-4" />,
         description: 'Next-generation quantum solutions'
       },
       {
         label: 'Space Technology',
-        href: '/space-tech',
+        href: '/services?category=space-tech',
         icon: <Rocket className="w-4 h-4" />,
         description: 'Innovative space tech applications'
       },
       {
         label: 'Cybersecurity',
-        href: '/cybersecurity',
+        href: '/services?category=cybersecurity',
         icon: <Shield className="w-4 h-4" />,
         description: 'Enterprise-grade security solutions'
+      },
+      {
+        label: 'Enterprise IT',
+        href: '/services?category=enterprise-it',
+        icon: <Building className="w-4 h-4" />,
+        description: 'Enterprise infrastructure solutions'
+      },
+      {
+        label: 'Micro SAAS',
+        href: '/services?category=micro-saas',
+        icon: <Target className="w-4 h-4" />,
+        description: 'Innovative business solutions'
+      },
+      {
+        label: 'DevOps & Automation',
+        href: '/services?category=devops',
+        icon: <Cpu className="w-4 h-4" />,
+        description: 'Development and operations automation'
+      },
+      {
+        label: 'Cloud & Infrastructure',
+        href: '/services?category=cloud',
+        icon: <Cloud className="w-4 h-4" />,
+        description: 'Cloud computing and infrastructure'
+      }
+    ]
+  },
+  {
+    label: 'Solutions',
+    href: '/solutions',
+    icon: <Target className="w-4 h-4" />,
+    description: 'Industry-specific technology solutions',
+    children: [
+      {
+        label: 'Healthcare & Biotech',
+        href: '/solutions/healthcare',
+        icon: <Heart className="w-4 h-4" />,
+        description: 'Advanced healthcare solutions'
+      },
+      {
+        label: 'Financial Services',
+        href: '/solutions/financial',
+        icon: <Zap className="w-4 h-4" />,
+        description: 'Financial technology solutions'
+      },
+      {
+        label: 'Manufacturing',
+        href: '/solutions/manufacturing',
+        icon: <Cpu className="w-4 h-4" />,
+        description: 'Smart manufacturing solutions'
+      },
+      {
+        label: 'Retail & E-commerce',
+        href: '/solutions/retail',
+        icon: <Globe className="w-4 h-4" />,
+        description: 'Digital commerce solutions'
       }
     ]
   },

@@ -1,5 +1,5 @@
 import React from 'react';
-import Homepage2025 from '../components/Homepage2025';
+import EnhancedHomepage2026 from '../components/EnhancedHomepage2026';
 import SEOOptimizer from '../components/SEOOptimizer';
 import AnalyticsTracker from '../components/AnalyticsTracker';
 import ErrorBoundary from '../components/ErrorBoundary';
@@ -9,7 +9,7 @@ const HomePage: React.FC = () => {
     <ErrorBoundary>
       <SEOOptimizer />
       <AnalyticsTracker />
-      <Homepage2025 />
+      <EnhancedHomepage2026 />
     </ErrorBoundary>
   );
 };

@@ -5,7 +5,7 @@ import {
   Search, Grid, List,
   Brain, Atom, Shield, Target, Rocket,
   ArrowRight, Check, Palette, Heart, Truck, GraduationCap,
-  Building, Cpu, Database, Cloud, Lock
+  Building
 } from 'lucide-react';
 
 // Import our new service data
@@ -19,6 +19,9 @@ import { real2035Q2Additions } from '../data/real-2035-q2-additions';
 import { real2036ServiceExpansions } from '../data/real-2036-service-expansions';
 import { innovative2036MicroSaasServices } from '../data/innovative-2036-micro-saas-services';
 import { innovative2036ITServices } from '../data/innovative-2036-it-services';
+import { innovative2026MicroSaasExpansions } from '../data/innovative-2026-micro-saas-expansions';
+import { innovative2026ITServicesExpansions } from '../data/innovative-2026-it-services-expansions';
+import { innovative2026AIServicesExpansions } from '../data/innovative-2026-ai-services-expansions';
 
 // Import existing service data
 import { realMicroSaasServices } from '../data/real-micro-saas-services';
@@ -80,7 +83,10 @@ const allServices = [
   ...real2035Q2Additions,
   ...real2036ServiceExpansions,
   ...innovative2036MicroSaasServices,
-  ...innovative2036ITServices
+  ...innovative2036ITServices,
+  ...innovative2026MicroSaasExpansions,
+  ...innovative2026ITServicesExpansions,
+  ...innovative2026AIServicesExpansions
 ];
 
 const categories = [
