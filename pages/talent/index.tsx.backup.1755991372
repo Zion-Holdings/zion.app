@@ -1,3 +1,8 @@
+<<<<<<< HEAD
+export default function TalentIndex() {
+  return <div className="py-10">Talent Directory</div>;
+}
+=======
 import Link from 'next/link';
 import Image from 'next/image';
 import { TALENT_PROFILES } from '../../data/talent';
@@ -39,3 +44,4 @@ export default function TalentIndexPage() {
     </div>
   );
 }
+>>>>>>> origin/cursor/build-talent-marketplace-platform-793e

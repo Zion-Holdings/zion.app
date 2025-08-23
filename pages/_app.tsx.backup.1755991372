@@ -3,7 +3,11 @@ import EnhancedLayout from '../components/layout/EnhancedLayout';
 import '../styles/enhanced-design-system.css';
 import '../styles/modern-design-system.css';
 
+<<<<<<< HEAD
+export default function MyApp({ Component, pageProps }: AppProps) {
+=======
 export default function App({ Component, pageProps }: AppProps) {
+>>>>>>> origin/cursor/build-talent-marketplace-platform-793e
   return (
     <EnhancedLayout>
       <Component {...pageProps} />
