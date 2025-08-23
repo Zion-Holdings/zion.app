@@ -3,26 +3,39 @@ const nextConfig = {
   // Enable React strict mode for better development experience
   reactStrictMode: true,
   
-  // Enable experimental features for better performance
+  // Enhanced performance optimizations
   experimental: {
-    // Enable modern JavaScript features
-    esmExternals: true,
-    
-    // Enable optimized package imports
-    optimizePackageImports: ['framer-motion', 'lucide-react'],
+    optimizeCss: true,
+    optimizePackageImports: ['lucide-react', 'framer-motion'],
   },
-
+  
+  // Turbopack configuration
+  turbopack: {
+    rules: {
+      '*.svg': {
+        loaders: ['@svgr/webpack'],
+        as: '*.js',
+      },
+    },
+  },
+  
   // Image optimization
   images: {
-    domains: ['ziontechgroup.com'],
     formats: ['image/webp', 'image/avif'],
     deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048, 3840],
     imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
+    minimumCacheTTL: 60,
+    dangerouslyAllowSVG: true,
+    contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
   },
-
-  // Webpack configuration for performance
+  
+  // Compression and optimization
+  compress: true,
+  poweredByHeader: false,
+  generateEtags: false,
+  
+  // Bundle analyzer
   webpack: (config, { dev, isServer }) => {
-    // Optimize bundle splitting
     if (!dev && !isServer) {
       config.optimization.splitChunks = {
         chunks: 'all',
@@ -41,16 +54,16 @@ const nextConfig = {
         },
       };
     }
-
-    // Optimize for production
-    if (!dev) {
-      config.optimization.minimize = true;
-      config.optimization.minimizer = config.optimization.minimizer || [];
-    }
-
+    
+    // SVG optimization
+    config.module.rules.push({
+      test: /\.svg$/,
+      use: ['@svgr/webpack'],
+    });
+    
     return config;
   },
-
+  
   // Headers for security and performance
   async headers() {
     return [
@@ -141,15 +154,6 @@ const nextConfig = {
   env: {
     CUSTOM_KEY: process.env.CUSTOM_KEY,
   },
-
-  // Compression
-  compress: true,
-
-  // Powered by header
-  poweredByHeader: false,
-
-  // Trailing slash
-  trailingSlash: false,
 
   // Base path
   basePath: '',
