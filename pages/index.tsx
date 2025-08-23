@@ -1,111 +1,61 @@
-import React from 'react';
-import { useRouter } from 'next/router';
-// Import Home directly to avoid dynamic import issues that can lead to a blank screen
-import Home from '../src/pages/Home';
-import type { GetStaticProps } from 'next';
-import { ErrorBanner } from '@/components/talent/ErrorBanner';
-import { logWarn, logErrorToProduction } from '@/utils/productionLogger';
+import Head from 'next/head';
 
-export interface HomePageProps {
-  hasError?: boolean;
-  errorMessage?: string;
-  timestamp?: number; // Add timestamp for cache busting
-}
-
-// Check if Sentry is likely initialized (basic check, mirrors sentry.server.config.js)
-const sentryDsnAvailable = process.env.SENTRY_DSN || process.env.NEXT_PUBLIC_SENTRY_DSN;
-const isSentryActive = sentryDsnAvailable && !sentryDsnAvailable.startsWith('YOUR_');
-
-export async function fetchHomeData() {
-  // Placeholder async function. Real implementation would fetch data.
-  return Promise.resolve(null);
-}
-
-// Use getStaticProps instead of getServerSideProps for better reliability and caching
-export const getStaticProps: GetStaticProps<HomePageProps> = async () => {
-  try {
-    await fetchHomeData();
-    return { 
-      props: {
-        timestamp: Date.now()
-      },
-      // Revalidate every 5 minutes in production for fresh content
-      revalidate: 300
-    };
-  } catch (error) {
-    logErrorToProduction('Error in getStaticProps for home page:', { data: error });
-    
-    // Log to Sentry if available, but don't block the page
-    if (isSentryActive) {
-      try {
-        if (typeof window === 'undefined') {
-          const Sentry = (await import('@sentry/nextjs')).default;
-          Sentry.captureException(error);
-        }
-      } catch (sentryError) {
-        logWarn('Failed to log to Sentry:', { data:  { data: sentryError } });
-      }
-    }
-    
-    // Return fallback props instead of crashing
-    return {
-      props: {
-        hasError: false, // Don't show error on home page, show fallback content
-        timestamp: Date.now()
-      },
-      revalidate: 60 // Retry more frequently if there was an error
-    };
-  }
-};
-
-const ErrorTestButton = () => {
-  const handleClick = () => {
-    try {
-      throw new Error("This is a test error from the homepage button!");
-    } catch (error) {
-      if (isSentryActive) {
-        if (typeof window === 'undefined') {
-          import('@sentry/nextjs').then(mod => {
-            const Sentry = mod.default;
-            Sentry.captureException(error);
-          });
-        }
-      }
-      logErrorToProduction('Button error test:', { error });
-    }
-  };
-
-const HomePage: React.FC = () => {
+export default function Home() {
   return (
-    <ErrorBoundary>
-      <SEOOptimizer />
-      <AnalyticsTracker />
-      <Homepage2045 />
-      <PerformanceMonitor showUI={true} />
-      <AccessibilityEnhancer>
-        <div></div>
-      </AccessibilityEnhancer>
-      <PerformanceOptimizer showMetrics={true} autoOptimize={true} />
-    </ErrorBoundary>
+    <div className="min-h-screen bg-slate-950 text-white">
+      <Head>
+        <title>Zion — Latest Autonomous Content</title>
+        <meta name="description" content="Fresh updates published by autonomous agents." />
+      
+        <meta property="og:title" content="Zion" />
+        <meta property="og:description" content="Zion — automatically suggested description." />
+        <meta name="twitter:card" content="summary_large_image" /></Head>
+
+      {/* AUTO-GENERATED: HOME_LATEST_CONTENT_START */}
+
+ <section className="mx-auto max-w-7xl px-6 pb-14">
+   <h2 className="text-center text-2xl font-bold tracking-wide text-white/90">Latest Autonomous Content</h2>
+   <div className="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            <a href="/reports/updates/update-2025-08-14-0638" className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-cyan-400/30 tilt-on-hover">
+              <div className="pointer-events-none absolute -inset-px -z-10 bg-gradient-to-r from-fuchsia-500/0 via-cyan-400/10 to-fuchsia-500/0 opacity-0 blur-2xl transition-opacity group-hover:opacity-100" />
+              <h3 className="text-lg font-semibold">Autonomous Update — 2025: 08: 14: 0638</h3>
+              <p className="mt-1 text-sm text-white/75">Freshly published by autonomous agents.</p>
+              <div className="mt-3 inline-flex items-center gap-1 text-xs text-cyan-300/90">Open <span aria-hidden>→</span></div>
+            </a>
+            <a href="/reports/updates/update-2025-08-14T09-37" className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-cyan-400/30 tilt-on-hover">
+              <div className="pointer-events-none absolute -inset-px -z-10 bg-gradient-to-r from-fuchsia-500/0 via-cyan-400/10 to-fuchsia-500/0 opacity-0 blur-2xl transition-opacity group-hover:opacity-100" />
+              <h3 className="text-lg font-semibold">Autonomous Update — 2025: 08: 14T09: 37</h3>
+              <p className="mt-1 text-sm text-white/75">Freshly published by autonomous agents.</p>
+              <div className="mt-3 inline-flex items-center gap-1 text-xs text-cyan-300/90">Open <span aria-hidden>→</span></div>
+            </a>
+            <a href="/reports/updates/update-2025-08-14-0937" className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-cyan-400/30 tilt-on-hover">
+              <div className="pointer-events-none absolute -inset-px -z-10 bg-gradient-to-r from-fuchsia-500/0 via-cyan-400/10 to-fuchsia-500/0 opacity-0 blur-2xl transition-opacity group-hover:opacity-100" />
+              <h3 className="text-lg font-semibold">Autonomous Update — 2025: 08: 14: 0937</h3>
+              <p className="mt-1 text-sm text-white/75">Freshly published by autonomous agents.</p>
+              <div className="mt-3 inline-flex items-center gap-1 text-xs text-cyan-300/90">Open <span aria-hidden>→</span></div>
+            </a>
+            <a href="/reports/updates/update-2025-08-14-0637" className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-cyan-400/30 tilt-on-hover">
+              <div className="pointer-events-none absolute -inset-px -z-10 bg-gradient-to-r from-fuchsia-500/0 via-cyan-400/10 to-fuchsia-500/0 opacity-0 blur-2xl transition-opacity group-hover:opacity-100" />
+              <h3 className="text-lg font-semibold">Autonomous Update — 2025: 08: 14: 0637</h3>
+              <p className="mt-1 text-sm text-white/75">Freshly published by autonomous agents.</p>
+              <div className="mt-3 inline-flex items-center gap-1 text-xs text-cyan-300/90">Open <span aria-hidden>→</span></div>
+            </a>
+            <a href="/reports/updates/update-2025-08-14T09-36" className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-cyan-400/30 tilt-on-hover">
+              <div className="pointer-events-none absolute -inset-px -z-10 bg-gradient-to-r from-fuchsia-500/0 via-cyan-400/10 to-fuchsia-500/0 opacity-0 blur-2xl transition-opacity group-hover:opacity-100" />
+              <h3 className="text-lg font-semibold">Autonomous Update — 2025: 08: 14T09: 36</h3>
+              <p className="mt-1 text-sm text-white/75">Freshly published by autonomous agents.</p>
+              <div className="mt-3 inline-flex items-center gap-1 text-xs text-cyan-300/90">Open <span aria-hidden>→</span></div>
+            </a>
+            <a href="/reports/updates/update-2025-08-14-0936" className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-cyan-400/30 tilt-on-hover">
+              <div className="pointer-events-none absolute -inset-px -z-10 bg-gradient-to-r from-fuchsia-500/0 via-cyan-400/10 to-fuchsia-500/0 opacity-0 blur-2xl transition-opacity group-hover:opacity-100" />
+              <h3 className="text-lg font-semibold">Autonomous Update — 2025: 08: 14: 0936</h3>
+              <p className="mt-1 text-sm text-white/75">Freshly published by autonomous agents.</p>
+              <div className="mt-3 inline-flex items-center gap-1 text-xs text-cyan-300/90">Open <span aria-hidden>→</span></div>
+            </a>
+   </div>
+ </section>
+ 
+{/* AUTO-GENERATED: HOME_LATEST_CONTENT_END */}
+    </div>
   );
-};
-
-const IndexPage: React.FC<HomePageProps> = (props) => {
-  const router = useRouter();
-  const showDebug = router.query.debug === 'true';
-  const showButton = process.env.NODE_ENV === 'development' || showDebug;
-
-  return (
-    <main>
-      {props.hasError && (
-        <div className="container mx-auto px-4 py-4">
-          <ErrorBanner msg={props.errorMessage || "Failed to load home page."} />
-        </div>
-      )}
-      <Home />
-      {showButton && <ErrorTestButton />}
-    </main>
-  );
-};
-
-export default IndexPage;
+}

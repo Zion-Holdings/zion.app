@@ -1,8 +1,10 @@
-import React from 'react';
-import Head from 'next/head';
+import React, { useState } from 'react';
+import SEO from '../components/SEO';
 import { motion } from 'framer-motion';
 import { 
-  Check, Star, Brain, Atom, Zap, Rocket, Cpu
+  Brain, Atom, Rocket, Shield, Zap, Target, Star,
+  ArrowRight, Check, TrendingUp, Users, Globe, Cpu,
+  Database, Cloud, Lock, Settings, Eye, Award, Clock
 } from 'lucide-react';
 
 // Import our new 2037 service data
@@ -17,92 +19,21 @@ const contact = {
   website: 'https://ziontechgroup.com'
 };
 
-interface ServiceData {
-  id: string;
-  name: string;
-  description: string;
-  icon: string;
-  color?: string;
-  popular?: boolean;
-  features?: string[];
-  pricing?: {
-    starter: string;
-  };
-  price?: string;
-  period?: string;
-  rating?: number;
-  reviews?: number;
-  setupTime?: string;
-  trialDays?: number;
-  customers?: number;
-  link: string;
-}
-
-const ServiceCard = ({ service, index }: { service: ServiceData; index: number }) => {
-  // Default color scheme if service.color is not defined
-  const defaultColor = 'from-cyan-500 to-blue-600';
-  const serviceColor = service.color || defaultColor;
-  
-  return (
-    <motion.div
-      initial={{ opacity: 0, y: 50 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.5, delay: index * 0.1 }}
-      className="relative group"
-    >
-      <div className={`absolute inset-0 bg-gradient-to-r ${serviceColor} rounded-2xl blur-xl group-hover:blur-2xl transition-all duration-500 opacity-20`}></div>
-      <div className={`relative bg-gradient-to-r ${serviceColor} bg-opacity-10 border border-opacity-30 rounded-2xl p-8 hover:border-opacity-50 transition-all duration-300 h-full`}>
-        <div className="flex items-start justify-between mb-6">
-          <div className="text-4xl">{service.icon}</div>
-          {service.popular && (
-            <span className="px-3 py-1 bg-gradient-to-r from-yellow-500 to-orange-500 text-white text-xs font-semibold rounded-full">
-              Popular
-            </span>
-          )}
-        </div>
-        
-        <h3 className="text-2xl font-bold text-white mb-3">{service.name}</h3>
-        <p className="text-gray-300 mb-6 text-sm leading-relaxed">{service.description}</p>
-        
-        <div className="space-y-3 mb-6">
-          {service.features?.slice(0, 4).map((feature: string, idx: number) => (
-            <div key={idx} className="flex items-center space-x-2">
-              <Check className="w-4 h-4 text-green-400 flex-shrink-0" />
-              <span className="text-gray-300 text-sm">{feature}</span>
-            </div>
-          ))}
-        </div>
-        
-        <div className="flex items-center justify-between mb-6">
-          <div>
-            <span className="text-3xl font-bold text-white">{service.pricing?.starter || service.price || 'Contact Us'}</span>
-            <span className="text-gray-400 text-sm">{service.pricing ? '/month' : (service.period || '')}</span>
-          </div>
-          <div className="text-right">
-            <div className="flex items-center space-x-1 text-yellow-400">
-              {[...Array(5)].map((_, i) => (
-                <Star key={i} className={`w-4 h-4 ${i < Math.floor(service.rating || 0) ? 'fill-current' : ''}`} />
-              ))}
-            </div>
-            <span className="text-gray-400 text-xs">{service.rating || 0}/5 ({service.reviews || 0} reviews)</span>
-          </div>
-        </div>
-        
-        {service.setupTime && service.trialDays && service.customers && (
-          <div className="space-y-3 mb-6 text-xs text-gray-400">
-            <div className="flex justify-between">
-              <span>Setup Time:</span>
-              <span>{service.setupTime}</span>
-            </div>
-            <div className="flex justify-between">
-              <span>Trial:</span>
-              <span>{service.trialDays} days</span>
-            </div>
-            <div className="flex justify-between">
-              <span>Customers:</span>
-              <span>{service.customers.toLocaleString()}</span>
-            </div>
-          </div>
+const ServiceCard = ({ service, index }: { service: any; index: number }) => (
+  <motion.div
+    initial={{ opacity: 0, y: 50 }}
+    animate={{ opacity: 1, y: 0 }}
+    transition={{ duration: 0.5, delay: index * 0.1 }}
+    className="relative group"
+  >
+    <div className={`absolute inset-0 bg-gradient-to-r ${service.color || 'from-gray-600 to-gray-700'} rounded-2xl blur-xl group-hover:blur-2xl transition-all duration-500 opacity-20`}></div>
+    <div className={`relative bg-gradient-to-r ${service.color ? service.color.replace('from-', 'from-').replace('to-', 'to-') : 'from-gray-600 to-gray-700'} bg-opacity-10 border border-opacity-30 rounded-2xl p-8 hover:border-opacity-50 transition-all duration-300 h-full`}>
+      <div className="flex items-start justify-between mb-6">
+        <div className="text-4xl">{service.icon}</div>
+        {service.popular && (
+          <span className="px-3 py-1 bg-gradient-to-r from-yellow-500 to-orange-500 text-white text-xs font-semibold rounded-full">
+            Popular
+          </span>
         )}
         
         <a 
@@ -112,12 +43,61 @@ const ServiceCard = ({ service, index }: { service: ServiceData; index: number }
           Learn More
         </a>
       </div>
-    </motion.div>
-  );
-};
+      
+      <h3 className="text-2xl font-bold text-white mb-3">{service.name}</h3>
+      <p className="text-gray-300 mb-6 text-sm leading-relaxed">{service.description}</p>
+      
+      <div className="space-y-3 mb-6">
+        {service.features.slice(0, 4).map((feature: string, idx: number) => (
+          <div key={idx} className="flex items-center space-x-2">
+            <Check className="w-4 h-4 text-green-400 flex-shrink-0" />
+            <span className="text-gray-300 text-sm">{feature}</span>
+          </div>
+        ))}
+      </div>
+      
+      <div className="flex items-center justify-between mb-6">
+        <div>
+          <span className="text-3xl font-bold text-white">{service.price}</span>
+          <span className="text-gray-400 text-sm">{service.period}</span>
+        </div>
+        <div className="text-right">
+          <div className="flex items-center space-x-1 text-yellow-400">
+            {[...Array(5)].map((_, i) => (
+              <Star key={i} className={`w-4 h-4 ${i < Math.floor(service.rating) ? 'fill-current' : ''}`} />
+            ))}
+          </div>
+          <span className="text-gray-400 text-xs">{service.rating}/5 ({service.reviews} reviews)</span>
+        </div>
+      </div>
+      
+      <div className="space-y-3 mb-6 text-xs text-gray-400">
+        <div className="flex justify-between">
+          <span>Setup Time:</span>
+          <span>{service.setupTime || 'N/A'}</span>
+        </div>
+        <div className="flex justify-between">
+          <span>Trial:</span>
+          <span>{service.trialDays || 0} days</span>
+        </div>
+        <div className="flex justify-between">
+          <span>Customers:</span>
+          <span>{service.customers ? service.customers.toLocaleString() : '0'}</span>
+        </div>
+      </div>
+      
+      <a 
+        href={service.link} 
+        className="block w-full text-center py-3 bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-semibold rounded-lg hover:from-cyan-600 hover:to-blue-700 transition-all duration-300 transform hover:scale-105"
+      >
+        Learn More
+      </a>
+    </div>
+  </motion.div>
+);
 
 const ServiceShowcase = () => {
-  const [activeCategory, setActiveCategory] = React.useState('all');
+  const [activeCategory, setActiveCategory] = useState('all');
   
   const categories = [
     { id: 'all', name: 'All Services', icon: <Star className="w-5 h-5" />, count: innovative2037MicroSaasServices.length + innovative2037ITServices.length + innovative2037AIServices.length },
@@ -327,43 +307,21 @@ const ServicesShowcase2037: React.FC = () => {
                 </button>
               ))}
             </div>
-
-            {/* View Mode Toggle */}
-            <div className="flex justify-center">
-              <div className="bg-gray-800/50 rounded-lg p-1 border border-gray-700">
-                <button
-                  onClick={() => setViewMode('grid')}
-                  className={`px-3 py-2 rounded-md transition-all duration-300 ${
-                    viewMode === 'grid'
-                      ? 'bg-cyan-500 text-white'
-                      : 'text-gray-400 hover:text-white'
-                  }`}
-                >
-                  <Grid className="w-4 h-4" />
-                </button>
-                <button
-                  onClick={() => setViewMode('list')}
-                  className={`px-3 py-2 rounded-md transition-all duration-300 ${
-                    viewMode === 'list'
-                      ? 'bg-cyan-500 text-white'
-                      : 'text-gray-400 hover:text-white'
-                  }`}
-                >
-                  <List className="w-4 h-4" />
-                </button>
-              </div>
+            
+            <div className="text-center">
+              <div className="text-3xl mb-2">📍</div>
+              <div className="font-semibold text-white mb-2">Visit Us</div>
+              <div className="text-gray-400 text-sm">{contactInfo.address}</div>
             </div>
           </div>
-
-          {/* Services Grid */}
-          <div className={`grid gap-6 ${
-            viewMode === 'grid' 
-              ? 'md:grid-cols-2 lg:grid-cols-3' 
-              : 'md:grid-cols-1'
-          }`}>
-            {filteredServices.map((service, index) => (
-              <ServiceCard key={service.id} service={service} index={index} />
-            ))}
+          
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <a href="/contact" className="px-8 py-4 bg-gradient-to-r from-cyan-500 to-purple-600 text-white font-semibold rounded-lg hover:from-cyan-600 hover:to-purple-700 transition-all duration-300 transform hover:scale-105">
+              Get Started Today
+            </a>
+            <a href="/services" className="px-8 py-4 border-2 border-cyan-400 text-cyan-400 font-semibold rounded-lg hover:bg-cyan-400 hover:text-black transition-all duration-300 transform hover:scale-105">
+              View All Services
+            </a>
           </div>
 
           {filteredServices.length === 0 && (

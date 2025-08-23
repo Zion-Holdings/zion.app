@@ -12,51 +12,66 @@ interface AnalyticsData {
   trafficSources: Array<{ source: string; percentage: number }>;
 }
 
-const AnalyticsTracker: React.FC = () => {
-  const [analyticsData, setAnalyticsData] = useState<AnalyticsData>({
-    pageViews: 0,
-    uniqueVisitors: 0,
-    sessionDuration: 0,
-    bounceRate: 0,
-    conversionRate: 0,
-    topPages: [],
-    trafficSources: []
-  });
+// Extend Window interface for Google Analytics
+declare global {
+  interface Window {
+    dataLayer: any[];
+    gtag: (...args: any[]) => void;
+  }
+}
 
-  const [isVisible, setIsVisible] = useState(false);
+interface AnalyticsTrackerProps {
+  trackingId?: string;
+  enableDebug?: boolean;
+}
+
+const AnalyticsTracker: React.FC<AnalyticsTrackerProps> = ({ 
+  trackingId = process.env.NEXT_PUBLIC_GA_ID || 'G-XXXXXXXXXX',
+  enableDebug = false 
+}) => {
+  const router = useRouter();
 
   useEffect(() => {
-    // Simulate analytics data loading
-    const timer = setTimeout(() => {
-      setAnalyticsData({
-        pageViews: 15420,
-        uniqueVisitors: 8920,
-        sessionDuration: 245,
-        bounceRate: 23.4,
-        conversionRate: 4.8,
-        topPages: [
-          { page: '/', views: 5420 },
-          { page: '/services', views: 3210 },
-          { page: '/solutions', views: 2890 },
-          { page: '/contact', views: 1560 },
-          { page: '/about', views: 1340 }
-        ],
-        trafficSources: [
-          { source: 'Direct', percentage: 45.2 },
-          { source: 'Organic Search', percentage: 32.8 },
-          { source: 'Social Media', percentage: 12.5 },
-          { source: 'Referral', percentage: 6.8 },
-          { source: 'Paid Ads', percentage: 2.7 }
-        ]
+    // Initialize Google Analytics
+    if (typeof window !== 'undefined' && trackingId !== 'G-XXXXXXXXXX') {
+      // Google Analytics 4
+      const script = document.createElement('script');
+      script.async = true;
+      script.src = `https://www.googletagmanager.com/gtag/js?id=${trackingId}`;
+      document.head.appendChild(script);
+
+      window.dataLayer = window.dataLayer || [];
+      function gtag(...args: any[]) {
+        window.dataLayer.push(args);
+      }
+      gtag('js', new Date());
+      gtag('config', trackingId, {
+        page_title: document.title,
+        page_location: window.location.href,
       });
-      setIsVisible(true);
-    }, 1000);
 
-    return () => clearTimeout(timer);
-  }, []);
+      // Track page views on route changes
+      const handleRouteChange = (url: string) => {
+        gtag('config', trackingId, {
+          page_title: document.title,
+          page_location: url,
+        });
+        
+        if (enableDebug) {
+          console.log('Analytics: Page view tracked:', url);
+        }
+      };
 
-  // Track page view
+      router.events.on('routeChangeComplete', handleRouteChange);
+      
+      return () => {
+        router.events.off('routeChangeComplete', handleRouteChange);
+      };
+    }
+  }, [trackingId, router, enableDebug]);
+
   useEffect(() => {
+    // Track user engagement metrics
     if (typeof window !== 'undefined') {
       // Google Analytics tracking
       if ((window as any).gtag) {

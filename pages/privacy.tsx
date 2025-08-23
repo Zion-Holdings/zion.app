@@ -4,7 +4,8 @@ import { motion } from 'framer-motion';
 import { 
   Shield, Lock, Eye, CheckCircle, 
   ArrowRight, Users, Globe, Database, 
-  Calendar, Phone, Mail, MapPin
+  Calendar, Phone, Mail, MapPin,
+  Clock
 } from 'lucide-react';
 import Link from 'next/link';
 
@@ -69,26 +70,6 @@ const Privacy: React.FC = () => {
       right: 'Rectification',
       description: 'Correct inaccurate or incomplete data',
       icon: <CheckCircle className="w-5 h-5" />
-    },
-    {
-      right: 'Erasure',
-      description: 'Request deletion of your personal data',
-      icon: <Lock className="w-5 h-5" />
-    },
-    {
-      right: 'Portability',
-      description: 'Receive your data in a structured format',
-      icon: <Database className="w-5 h-5" />
-    },
-    {
-      right: 'Objection',
-      description: 'Object to certain types of processing',
-      icon: <Shield className="w-5 h-5" />
-    },
-    {
-      right: 'Restriction',
-      description: 'Limit how we process your data',
-      icon: <Globe className="w-5 h-5" />
     }
   ];
 
@@ -183,7 +164,7 @@ const Privacy: React.FC = () => {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
               viewport={{ once: true }}
               className="text-center"
@@ -241,7 +222,7 @@ const Privacy: React.FC = () => {
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
+              transition={{ duration: 0.8 }}
               viewport={{ once: true }}
               className="text-center mb-16"
             >
@@ -295,7 +276,7 @@ const Privacy: React.FC = () => {
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
+              transition={{ duration: 0.8 }}
               viewport={{ once: true }}
               className="text-center mb-16"
             >
@@ -496,7 +477,7 @@ const Privacy: React.FC = () => {
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
+              transition={{ duration: 0.8 }}
               viewport={{ once: true }}
             >
               <h2 className="text-3xl lg:text-4xl font-bold text-white mb-6">
@@ -505,38 +486,6 @@ const Privacy: React.FC = () => {
               <p className="text-xl text-gray-400 max-w-3xl mx-auto mb-8">
                 Contact us to access, modify, or delete your personal data.
               </p>
-              
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
-                <div className="flex items-center justify-center space-x-3 text-gray-300">
-                  <Mail className="w-5 h-5 text-cyan-400" />
-                  <span>privacy@ziontechgroup.com</span>
-                </div>
-                <div className="flex items-center justify-center space-x-3 text-gray-300">
-                  <Phone className="w-5 h-5 text-cyan-400" />
-                  <span>+1 302 464 0950</span>
-                </div>
-                <div className="flex items-center justify-center space-x-3 text-gray-300">
-                  <MapPin className="w-5 h-5 text-cyan-400" />
-                  <span>Middletown, DE</span>
-                </div>
-              </div>
-
-              <div className="bg-gray-800/50 backdrop-blur-sm border border-gray-700/50 rounded-2xl p-8 mb-8">
-                <h3 className="text-2xl font-bold text-white mb-4">Policy Updates</h3>
-                <p className="text-gray-300 mb-4">
-                  We may update this Privacy Policy from time to time to reflect changes in our practices 
-                  or for other operational, legal, or regulatory reasons.
-                </p>
-                <div className="flex items-center justify-center space-x-2 text-cyan-400">
-                  <Clock className="w-5 h-5" />
-                  <span>Last updated: {new Date(lastUpdated).toLocaleDateString('en-US', { 
-                    year: 'numeric', 
-                    month: 'long', 
-                    day: 'numeric' 
-                  })}</span>
-                </div>
-              </div>
-
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Link
                   href="/contact"

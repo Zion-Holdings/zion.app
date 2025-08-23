@@ -54,31 +54,25 @@ import { real2026Q4ExpansionsV3 } from '../../data/real-2026-q4-expansions-v3';
 import { real2036MicroSaasAdditions } from '../../data/real-2036-micro-saas-additions';
 import { real2036ITServicesAdditions } from '../../data/real-2036-it-services-additions';
 import { real2036AIServicesAdditions } from '../../data/real-2036-ai-services-additions';
+import { innovative2025MicroSaasBatch } from '../../data/innovative-2025-micro-saas-batch';
+import { innovative2025ITEnterpriseBatch } from '../../data/innovative-2025-it-enterprise-batch';
 import { innovativeMicroSaasServices } from '../../data/innovative-2025-micro-saas-expansions';
 import { innovativeITServices } from '../../data/innovative-2025-it-services-expansions';
 import { innovativeAIServices } from '../../data/innovative-2025-ai-services-expansions';
-import { innovative2025MicroSaasBatch } from '../../data/innovative-2025-micro-saas-batch';
-import { innovative2025ITEnterpriseBatch } from '../../data/innovative-2025-it-enterprise-batch';
-import { innovativeMicroSaasServices as innovative2025MicroSaasExpansions } from '../../data/innovative-2025-micro-saas-expansions';
-import { innovativeITServices as innovative2025ITServicesExpansions } from '../../data/innovative-2025-it-services-expansions';
-import { innovativeAIServices as innovative2025AIServicesExpansions } from '../../data/innovative-2025-ai-services-expansions';
 // Import our new 2025 advanced services
 import { advanced2025MicroSaasExpansion } from '../../data/2025-advanced-micro-saas-expansion';
 import { advanced2025ITSolutionsExpansion } from '../../data/2025-advanced-it-solutions-expansion';
-import { advanced2025AIServicesExpansion } from '../../data/2025-advanced-ai-services-expansion';
-// Import our new innovative 2025 services
-import { innovative2025AdvancedServicesExpansion } from '../../data/innovative-2025-advanced-services-expansion';
-import { innovative2025EnterpriseSolutions } from '../../data/innovative-2025-enterprise-solutions';
+import { advancedAIServicesExpansion2025 } from '../../data/2025-advanced-ai-services-expansion';
 
 // Import our new 2025 innovative services
 import { innovativeMicroSaasExpansion2025 } from '../../data/2025-innovative-micro-saas-expansion';
 import { innovative2025ITSolutionsExpansion } from '../../data/2025-innovative-it-solutions-expansion';
 import { innovative2025AISolutionsExpansion } from '../../data/2025-innovative-ai-solutions-expansion';
 
-// Import our new 2025 advanced services V2
-// import { advancedMicroSaasExpansion2025V2 } from '../../data/2025-advanced-micro-saas-expansion-v2';
-// import { advancedITInfrastructureExpansion2025V2 } from '../../data/2025-advanced-it-infrastructure-expansion-v2';
-// import { advancedAIServicesExpansion2025V2 } from '../../data/2025-advanced-ai-services-expansion-v2';
+// Import our new 2025 innovative services V3
+import { innovativeMicroSaasExpansionV32025 } from '../../data/2025-innovative-micro-saas-expansion-v3';
+import { innovativeITServicesExpansion2025V3 } from '../../data/2025-innovative-it-services-expansion-v3';
+import { innovativeAIServicesExpansion2025V3 } from '../../data/2025-innovative-ai-services-expansion-v3';
 
 function toSlug(value: string) {
   return value.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
@@ -91,8 +85,8 @@ const categories = [
   'Observability',
   'Quality & Monitoring',
   'Quantum Computing',
-  'Neuromorphic AI',
-  'Edge Computing',
+  'Space Technology',
+  'Metaverse',
   'Cybersecurity',
   'Supply Chain',
   'Financial Services',
@@ -102,11 +96,7 @@ const categories = [
   'Education',
   'Government',
   'Energy',
-  'Transportation',
-  'Blockchain & Web3',
-  'IoT & Edge Computing',
-  'Enterprise Solutions',
-  'Innovation & Research'
+  'Transportation'
 ];
 
 // Transform services data to match the expected Service interface
@@ -234,7 +224,12 @@ export default function ServicesIndexPage() {
     // Our new 2025 advanced services V2
     // .concat(advancedMicroSaasExpansion2025V2 as unknown[])
     // .concat(advancedITInfrastructureExpansion2025V2 as unknown[])
-    // .concat(advancedAIServicesExpansion2025V2 as unknown[]);
+    // .concat(advancedAIServicesExpansion2025V2 as unknown[])
+    // Our new 2025 innovative services V3
+    .concat(innovativeMicroSaasExpansionV32025 as unknown[])
+    .concat(innovativeITServicesExpansion2025V3 as unknown[])
+    .concat(innovativeAIServicesExpansion2025V3 as unknown[])
+    ;
 
   const anchorMap: Record<string, string> = {
     'AI & Data': 'ai',
@@ -329,7 +324,7 @@ export default function ServicesIndexPage() {
                   {categories.length} Categories
                 </span>
                 <span className="px-4 py-2 bg-gradient-to-r from-green-500/20 to-emerald-500/20 border border-green-500/30 rounded-full text-green-300">
-                  Latest 2024-2025 Tech
+                  Latest 2036 Tech
                 </span>
               </div>
             </div>

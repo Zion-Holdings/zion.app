@@ -1,67 +1,130 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Shield, Lock, Eye, Zap, Brain, Cpu, Globe, Users, Target, Award } from 'lucide-react';
-import Layout from '../components/layout/Layout';
+import { 
+  Shield, 
+  Lock, 
+  Eye, 
+  Network, 
+  Server, 
+  Database, 
+  Users, 
+  Zap, 
+  Target, 
+  Brain,
+  BarChart3,
+  Code,
+  Globe,
+  Settings,
+  Star,
+  ArrowRight,
+  AlertTriangle,
+  CheckCircle,
+  Clock,
+  TrendingUp
+} from 'lucide-react';
 
-export default function Cybersecurity() {
+const CybersecurityPage: React.FC = () => {
   const services = [
     {
-      icon: Shield,
-      title: 'Zero Trust Security Platform',
-      description: 'Comprehensive zero trust architecture for modern enterprises',
-      features: ['Identity verification', 'Continuous monitoring', 'Micro-segmentation', 'Threat prevention'],
-      href: '/zero-trust-security-platform'
+      title: 'Quantum Cybersecurity',
+      description: 'Next-generation quantum-resistant security solutions',
+      icon: <Shield className="w-8 h-8 text-purple-500" />,
+      features: ['Post-Quantum Cryptography', 'Quantum Key Distribution', 'Quantum-resistant Algorithms'],
+      href: '/quantum-cybersecurity-platform-2045'
     },
     {
-      icon: Lock,
-      title: 'Zero Trust Network Architecture',
-      description: 'Advanced network security with zero trust principles',
-      features: ['Network segmentation', 'Access control', 'Traffic monitoring', 'Security policies'],
+      title: 'Zero Trust Security',
+      description: 'Comprehensive zero trust network architecture',
+      icon: <Lock className="w-8 h-8 text-red-500" />,
+      features: ['Identity Verification', 'Continuous Monitoring', 'Least Privilege Access'],
       href: '/zero-trust-network-architecture'
     },
     {
-      icon: Eye,
-      title: 'Vulnerability Assessment & Penetration Testing',
-      description: 'Comprehensive security testing and assessment services',
-      features: ['Security audits', 'Penetration testing', 'Vulnerability scanning', 'Risk assessment'],
+      title: 'Threat Intelligence',
+      description: 'Advanced threat detection and response systems',
+      icon: <Eye className="w-8 h-8 text-blue-500" />,
+      features: ['Real-time Monitoring', 'AI-powered Detection', 'Threat Hunting'],
+      href: '/threat-intelligence-platform'
+    },
+    {
+      title: 'Vulnerability Assessment',
+      description: 'Comprehensive security testing and penetration testing',
+      icon: <Target className="w-8 h-8 text-green-500" />,
+      features: ['Penetration Testing', 'Security Audits', 'Compliance Assessments'],
       href: '/vulnerability-assessment-penetration-testing'
     },
     {
-      icon: Brain,
-      title: 'AI-Powered Threat Detection',
-      description: 'Intelligent security monitoring and threat response',
-      features: ['Machine learning', 'Behavioral analysis', 'Real-time alerts', 'Automated response'],
-      href: '/ai-powered-threat-detection'
+      title: 'SOC Operations',
+      description: '24/7 Security Operations Center services',
+      icon: <Server className="w-8 h-8 text-yellow-500" />,
+      features: ['24/7 Monitoring', 'Incident Response', 'Security Analytics'],
+      href: '/autonomous-security-operations-center-2045'
     },
     {
-      icon: Cpu,
-      title: 'Quantum Cybersecurity Platform',
-      description: 'Future-proof security solutions for the quantum era',
-      features: ['Post-quantum cryptography', 'Quantum key distribution', 'Threat detection', 'Secure communications'],
-      href: '/quantum-cybersecurity-platform'
-    },
-    {
-      icon: Zap,
-      title: 'Incident Response & Automation',
-      description: 'Rapid incident response with automated security operations',
-      features: ['24/7 monitoring', 'Automated response', 'Incident management', 'Recovery planning'],
-      href: '/incident-automation-suite'
+      title: 'Compliance Automation',
+      description: 'Automated compliance and governance solutions',
+      icon: <CheckCircle className="w-8 h-8 text-cyan-500" />,
+      features: ['SOC2 Compliance', 'GDPR Compliance', 'Automated Reporting'],
+      href: '/soc2-compliance-automation'
     }
   ];
 
-  const stats = [
-    { number: '99.9%', label: 'Threat Detection', icon: Shield },
-    { number: '24/7', label: 'Security Monitoring', icon: Eye },
-    { number: '100+', label: 'Security Solutions', icon: Lock },
-    { number: '500+', label: 'Protected Clients', icon: Users }
+  const threats = [
+    {
+      name: 'Ransomware',
+      description: 'Advanced ransomware protection and recovery',
+      icon: <AlertTriangle className="w-6 h-6" />
+    },
+    {
+      name: 'Phishing',
+      description: 'AI-powered phishing detection and prevention',
+      icon: <Eye className="w-6 h-6" />
+    },
+    {
+      name: 'DDoS Attacks',
+      description: 'Distributed denial of service protection',
+      icon: <Network className="w-6 h-6" />
+    },
+    {
+      name: 'Data Breaches',
+      description: 'Comprehensive data protection and encryption',
+      icon: <Database className="w-6 h-6" />
+    }
+  ];
+
+  const benefits = [
+    {
+      title: '24/7 Protection',
+      description: 'Round-the-clock security monitoring and response',
+      icon: <Clock className="w-6 h-6 text-green-400" />
+    },
+    {
+      title: 'AI-Powered Detection',
+      description: 'Machine learning algorithms for threat detection',
+      icon: <Brain className="w-6 h-6 text-purple-400" />
+    },
+    {
+      title: 'Compliance Ready',
+      description: 'Meet industry standards and regulatory requirements',
+      icon: <CheckCircle className="w-6 h-6 text-blue-400" />
+    },
+    {
+      title: 'Cost Effective',
+      description: 'Reduce security incidents and operational costs',
+      icon: <TrendingUp className="w-6 h-6 text-yellow-400" />
+    }
   ];
 
   return (
-    <Layout>
-      <div className="min-h-screen bg-gradient-to-br from-black via-gray-900 to-black">
+    <Layout 
+      title="Cybersecurity Services - Zion Tech Group"
+      description="Advanced cybersecurity solutions including quantum security, zero trust architecture, and threat intelligence"
+      canonicalUrl="https://ziontechgroup.com/cybersecurity"
+    >
+      <div className="min-h-screen bg-gradient-to-br from-slate-900 via-red-900 to-slate-900">
         {/* Hero Section */}
-        <section className="relative py-20 px-4">
-          <div className="container mx-auto max-w-6xl">
+        <section className="relative py-20 px-4 sm:px-6 lg:px-8">
+          <div className="max-w-7xl mx-auto text-center">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -75,17 +138,48 @@ export default function Cybersecurity() {
                 Advanced cybersecurity solutions that protect your digital assets and ensure business continuity. 
                 From zero trust architecture to quantum-resistant security.
               </p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <a
+                  href="/contact"
+                  className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-red-600 to-orange-600 text-white font-semibold rounded-lg hover:from-red-700 hover:to-orange-700 transition-all duration-300 transform hover:scale-105"
+                >
+                  Get Protected
+                  <ArrowRight className="ml-2 w-5 h-5" />
+                </a>
+                <a
+                  href="/quantum-cybersecurity-platform-2045"
+                  className="inline-flex items-center px-8 py-4 border-2 border-red-500 text-red-400 font-semibold rounded-lg hover:bg-red-500 hover:text-white transition-all duration-300"
+                >
+                  Explore Quantum Security
+                </a>
+              </div>
             </motion.div>
           </div>
         </section>
 
-        {/* Stats Section */}
-        <section className="py-16 px-4 bg-black/30">
-          <div className="container mx-auto max-w-6xl">
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-              {stats.map((stat, index) => (
+        {/* Security Benefits */}
+        <section className="py-20 px-4 sm:px-6 lg:px-8 bg-black/20">
+          <div className="max-w-7xl mx-auto">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+              className="text-center mb-16"
+            >
+              <h2 className="text-4xl font-bold text-white mb-4">
+                Why Choose Our Security?
+              </h2>
+              <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+                Our cybersecurity solutions provide comprehensive protection with 
+                advanced technologies and expert support.
+              </p>
+            </motion.div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+              {benefits.map((benefit, index) => (
                 <motion.div
-                  key={index}
+                  key={benefit.title}
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: index * 0.1 }}
@@ -158,12 +252,60 @@ export default function Cybersecurity() {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+              className="text-center mb-16"
             >
-              <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-                Secure Your Digital Future
+              <h2 className="text-4xl font-bold text-white mb-4">
+                Advanced Threat Protection
+              </h2>
+              <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+                Stay ahead of evolving cyber threats with our comprehensive 
+                protection and detection capabilities.
+              </p>
+            </motion.div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+              {threats.map((threat, index) => (
+                <motion.div
+                  key={threat.name}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: index * 0.1 }}
+                  viewport={{ once: true }}
+                  className="text-center"
+                >
+                  <div className="bg-white/10 backdrop-blur-lg rounded-full w-20 h-20 mx-auto mb-4 flex items-center justify-center border border-white/20">
+                    <div className="text-red-400">
+                      {threat.icon}
+                    </div>
+                  </div>
+                  <h3 className="text-xl font-semibold text-white mb-2">
+                    {threat.name}
+                  </h3>
+                  <p className="text-gray-300 text-sm">
+                    {threat.description}
+                  </p>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* CTA Section */}
+        <section className="py-20 px-4 sm:px-6 lg:px-8">
+          <div className="max-w-4xl mx-auto text-center">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+            >
+              <h2 className="text-4xl font-bold text-white mb-6">
+                Ready to Secure Your Digital Assets?
               </h2>
               <p className="text-xl text-gray-300 mb-8">
-                Let our cybersecurity experts help you build a robust security foundation
+                Don't wait for a security breach. Get comprehensive protection 
+                with our advanced cybersecurity solutions.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <a
@@ -176,7 +318,7 @@ export default function Cybersecurity() {
                   href="/services"
                   className="px-8 py-4 border border-red-500 text-red-400 font-semibold rounded-xl hover:bg-red-500/10 transition-all duration-300"
                 >
-                  View All Services
+                  View Security Cases
                 </a>
               </div>
             </motion.div>

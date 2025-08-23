@@ -1,16 +1,18 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Head from 'next/head';
-import UltraFuturisticNavigation2040 from './UltraFuturisticNavigation2040';
-import UltraFuturisticFooter2040 from './UltraFuturisticFooter2040';
+import { Sun, Moon } from 'lucide-react';
+import EnhancedNavigation2025 from './EnhancedNavigation2025';
+import EnhancedFooter2025 from './EnhancedFooter2025';
 import EnhancedSidebar2025 from './EnhancedSidebar2025';
-import UltraFuturisticBackground2036 from '../backgrounds/UltraFuturisticBackground2036';
+import UltraFuturisticBackground2045 from '../backgrounds/UltraFuturisticBackground2045';
 import TopContactBar from './TopContactBar';
-import PerformanceOptimizer from '../PerformanceOptimizer';
-import AccessibilityEnhancer from '../AccessibilityEnhancer';
+import EnhancedPerformanceMonitor from '../EnhancedPerformanceMonitor';
+import AccessibilityEnhancer from '../EnhancedAccessibilityEnhancer';
 import CookieConsentBanner from '../CookieConsentBanner';
-import SEOHead from '../SEOHead';
+import EnhancedErrorBoundary from '../EnhancedErrorBoundary';
+import ThemeToggle from '../ThemeToggle';
+import LoadingSpinner from '../LoadingSpinner';
 import ServiceWorkerRegistration from '../ServiceWorkerRegistration';
-import PerformanceOptimizer from '../PerformanceOptimizer';
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -30,65 +32,70 @@ export default function Layout({
   canonicalUrl
 }: LayoutProps) {
   const [sidebarOpen, setSidebarOpen] = useState(false);
-  const [darkMode, setDarkMode] = useState(true);
+  const [isOnline, setIsOnline] = useState(true);
+  const [isLoading, setIsLoading] = useState(true);
+  const [theme, setTheme] = useState<'dark' | 'light'>('dark');
 
-  // Default structured data for Zion Tech Group
-  const defaultStructuredData = {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "Zion Tech Group",
-    "url": "https://ziontechgroup.com",
-    "logo": "https://ziontechgroup.com/logo.png",
-    "description": "Pioneering the future of technology with revolutionary AI consciousness, quantum computing, and autonomous solutions that transform businesses worldwide.",
-    "foundingDate": "2020",
-    "address": {
-      "@type": "PostalAddress",
-      "addressCountry": "US"
-    },
-    "contactPoint": {
-      "@type": "ContactPoint",
-      "contactType": "customer service",
-      "email": "contact@ziontechgroup.com"
-    },
-    "sameAs": [
-      "https://linkedin.com/company/zion-tech-group",
-      "https://twitter.com/ziontechgroup",
-      "https://github.com/zion-tech-group"
-    ],
-    "serviceType": [
-      "AI & Machine Learning",
-      "Quantum Computing",
-      "Cybersecurity",
-      "Business Intelligence",
-      "Space Technology",
-      "Autonomous Systems"
-    ],
-    "areaServed": "Worldwide",
-    "hasOfferCatalog": {
-      "@type": "OfferCatalog",
-      "name": "Revolutionary Technology Services",
-      "itemListElement": [
-        {
-          "@type": "Offer",
-          "itemOffered": {
-            "@type": "Service",
-            "name": "AI Consciousness Evolution Platform",
-            "description": "Next-generation AI consciousness with emotional intelligence"
-          }
-        },
-        {
-          "@type": "Offer",
-          "itemOffered": {
-            "@type": "Service",
-            "name": "Quantum AI Hybrid Computing",
-            "description": "Quantum-powered AI with consciousness integration"
-          }
-        }
-      ]
+  useEffect(() => {
+    // Check for saved theme preference
+    const savedTheme = localStorage.getItem('theme') as 'dark' | 'light';
+    if (savedTheme) {
+      setTheme(savedTheme);
     }
-  };
 
-  const finalStructuredData = structuredData || defaultStructuredData;
+    // Simulate loading time for better UX
+    const timer = setTimeout(() => setIsLoading(false), 1000);
+
+    // Check online status
+    const updateOnlineStatus = () => {
+      setIsOnline(navigator.onLine);
+    };
+
+    window.addEventListener('online', updateOnlineStatus);
+    window.addEventListener('offline', updateOnlineStatus);
+    updateOnlineStatus();
+
+    // Register service worker
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('/sw.js')
+        .then((registration) => {
+          // Check for updates
+          registration.addEventListener('updatefound', () => {
+            const newWorker = registration.installing;
+            if (newWorker) {
+              newWorker.addEventListener('statechange', () => {
+                if (newWorker.state === 'installed' && navigator.serviceWorker.controller) {
+                  // New version available
+                  if (typeof window !== 'undefined' && window.confirm) {
+                    if (window.confirm('A new version is available! Would you like to update?')) {
+                      newWorker.postMessage({ type: 'SKIP_WAITING' });
+                      window.location.reload();
+                    }
+                  }
+                }
+              });
+            }
+          });
+        })
+        .catch((error) => {
+          // Silently handle service worker registration errors
+          // eslint-disable-next-line no-console
+          console.error('Service Worker registration failed:', error);
+        });
+    }
+
+    return () => {
+      clearTimeout(timer);
+      window.removeEventListener('online', updateOnlineStatus);
+      window.removeEventListener('offline', updateOnlineStatus);
+    };
+  }, []);
+
+  useEffect(() => {
+    // Apply theme to document
+    document.documentElement.setAttribute('data-theme', theme);
+    localStorage.setItem('theme', theme);
+  }, [theme]);
 
   useEffect(() => {
     // Check for saved theme preference or default to dark mode
@@ -128,6 +135,14 @@ export default function Layout({
     ]
   };
 
+  if (isLoading) {
+    return <LoadingSpinner />;
+  }
+
+  // Add missing variables and functions
+  const darkMode = theme === 'dark';
+  const toggleDarkMode = () => setTheme(prev => prev === 'dark' ? 'light' : 'dark');
+
   return (
     <>
       <Head>
@@ -137,12 +152,28 @@ export default function Layout({
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
         
+        {/* Canonical URL */}
+        {canonicalUrl && <link rel="canonical" href={canonicalUrl} />}
+        
+        {/* PWA Manifest */}
+        <link rel="manifest" href="/manifest.json" />
+        <meta name="msapplication-TileColor" content="#06b6d4" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+        <meta name="apple-mobile-web-app-title" content="Zion Tech Group" />
+        
+        {/* Favicons */}
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+        
         {/* Open Graph */}
+        <meta property="og:type" content="website" />
         <meta property="og:title" content={title} />
         <meta property="og:description" content={description} />
         <meta property="og:image" content={ogImage} />
-        <meta property="og:url" content={canonicalUrl || "https://ziontechgroup.com"} />
-        <meta property="og:type" content="website" />
+        <meta property="og:url" content={canonicalUrl || 'https://ziontechgroup.com'} />
         <meta property="og:site_name" content="Zion Tech Group" />
         
         {/* Twitter Card */}
@@ -150,28 +181,49 @@ export default function Layout({
         <meta name="twitter:title" content={title} />
         <meta name="twitter:description" content={description} />
         <meta name="twitter:image" content={ogImage} />
+        <meta name="twitter:site" content="@ziontechgroup" />
         
-        {/* Canonical URL */}
-        {canonicalUrl && <link rel="canonical" href={canonicalUrl} />}
-        
-        {/* Favicon */}
-        <link rel="icon" href="/favicon.ico" />
-        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
-        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
-        
-        {/* Preconnect to external domains for performance */}
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        {/* Additional Meta Tags */}
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="mobile-web-app-capable" content="yes" />
+        <meta name="application-name" content="Zion Tech Group" />
         
         {/* Structured Data */}
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Organization",
+              "name": "Zion Tech Group",
+              "url": "https://ziontechgroup.com",
+              "logo": "https://ziontechgroup.com/logo.png",
+              "description": description,
+              "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "364 E Main St STE 1008",
+                "addressLocality": "Middletown",
+                "addressRegion": "DE",
+                "postalCode": "19709",
+                "addressCountry": "US"
+              },
+              "contactPoint": {
+                "@type": "ContactPoint",
+                "telephone": "+1-302-464-0950",
+                "contactType": "customer service",
+                "email": "kleber@ziontechgroup.com"
+              },
+              "sameAs": [
+                "https://linkedin.com/company/zion-tech-group",
+                "https://github.com/Zion-Holdings",
+                "https://twitter.com/ziontechgroup"
+              ]
+            })
+          }}
         />
       </Head>
-      
-      <div className="min-h-screen bg-black text-white relative overflow-x-hidden">
+
+      <div className={`min-h-screen ${theme === 'dark' ? 'bg-black text-white' : 'bg-gray-50 text-gray-900'} relative overflow-hidden transition-colors duration-300`}>
         {/* Skip to content link for accessibility */}
         <a href="#main" className="skip-link sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-cyan-500 text-black px-4 py-2 rounded z-50">
           Skip to main content
@@ -180,44 +232,44 @@ export default function Layout({
         {/* Futuristic Background */}
         <UltraFuturisticBackground2036 />
         
-        {/* Layout Structure */}
-        <div className="relative z-10">
-          {/* Top Contact Bar */}
-          <TopContactBar />
-          
-          {/* Navigation */}
-          <UltraFuturisticNavigation2040 />
-          
-          {/* Sidebar and Main Content */}
-          <div className="flex">
-            <EnhancedSidebar2025 
-              isOpen={sidebarOpen} 
-              onClose={() => setSidebarOpen(false)} 
-            />
-            
-            <main id="main" role="main" className="flex-1 pt-24 lg:pt-28">
-              {children}
-            </main>
-          </div>
-          
-          {/* Footer */}
-          <UltraFuturisticFooter2040 />
-        </div>
-
-        {/* Accessibility and Performance Tools */}
+        {/* Top Contact Bar */}
+        <TopContactBar />
+        
+        {/* Enhanced Navigation */}
+        <EnhancedNavigation2025 />
+        
+        {/* Enhanced Sidebar */}
+        <EnhancedSidebar2025 isOpen={sidebarOpen} onClose={() => setSidebarOpen(false)} />
+        
+        {/* Main Content */}
+        <main className="pt-32 pb-16 relative z-10">
+          <EnhancedErrorBoundary>
+            {children}
+          </EnhancedErrorBoundary>
+        </main>
+        
+        {/* Enhanced Footer */}
+        <EnhancedFooter2025 />
+        
+        {/* Performance Monitor */}
+        <EnhancedPerformanceMonitor />
+        
+        {/* Accessibility Enhancer */}
         <AccessibilityEnhancer />
-        <PerformanceMonitor />
         
         {/* Cookie Consent Banner */}
         <CookieConsentBanner />
+        
+        {/* Offline Indicator */}
+        {!isOnline && (
+          <div className="fixed bottom-4 right-4 bg-red-600 text-white px-4 py-2 rounded-lg shadow-lg z-50">
+            <div className="flex items-center space-x-2">
+              <div className="w-2 h-2 bg-white rounded-full animate-pulse"></div>
+              <span className="text-sm">You are offline</span>
+            </div>
+          </div>
+        )}
       </div>
-
-      {/* Accessibility and Performance Tools */}
-      <AccessibilityEnhancer enabled={true} showControls={process.env.NODE_ENV === 'development'} />
-      <PerformanceMonitor enabled={true} showMetrics={process.env.NODE_ENV === 'development'} />
-      
-      {/* Cookie Consent Banner */}
-      <CookieConsentBanner />
-    </div>
+    </>
   );
 };

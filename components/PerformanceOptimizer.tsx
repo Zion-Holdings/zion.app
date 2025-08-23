@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useCallback, useRef } from 'react';
+import React, { useEffect, useState, useCallback } from 'react';
 import { motion } from 'framer-motion';
 
 interface PerformanceMetrics {
@@ -13,24 +13,12 @@ interface PerformanceOptimizerProps {
   children: React.ReactNode;
 }
 
-// Extend PerformanceEntry for first-input
-interface FirstInputEntry extends PerformanceEntry {
-  processingStart: number;
-  startTime: number;
-}
-
-const PerformanceOptimizer: React.FC<PerformanceOptimizerProps> = ({ children }) => {
-  const [metrics, setMetrics] = useState<PerformanceMetrics>({
-    fcp: null,
-    lcp: null,
-    fid: null,
-    cls: null,
-    ttfb: null
-  });
+const PerformanceOptimizer: React.FC<PerformanceOptimizerProps> = ({ 
+  children, 
+  onMetricsUpdate 
+}) => {
+  const [metrics, setMetrics] = useState<PerformanceMetrics | null>(null);
   const [isOptimizing, setIsOptimizing] = useState(false);
-  const [optimizationStatus, setOptimizationStatus] = useState<string>('');
-  const observerRef = useRef<IntersectionObserver | null>(null);
-  const performanceObserverRef = useRef<PerformanceObserver | null>(null);
 
   // Performance monitoring
   useEffect(() => {
@@ -265,130 +253,29 @@ const PerformanceOptimizer: React.FC<PerformanceOptimizerProps> = ({ children })
 
   return (
     <>
-      {/* Performance Monitor Panel */}
-      <div className="fixed bottom-4 left-4 z-50">
+      {children}
+      <PerformanceWarning />
+      
+      {/* Performance Debug Panel (only in development) */}
+      {process.env.NODE_ENV === 'development' && metrics && (
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          className="bg-gray-900/90 backdrop-blur-sm border border-gray-700 rounded-lg p-4 shadow-lg min-w-[300px]"
+          initial={{ opacity: 0, x: 300 }}
+          animate={{ opacity: 1, x: 0 }}
+          className="fixed bottom-4 right-4 bg-gray-900 text-white p-4 rounded-lg shadow-lg z-50 max-w-xs"
         >
-          <div className="flex items-center justify-between mb-4">
-            <h3 className="text-white font-semibold text-lg">Performance Monitor</h3>
-            <div className={`text-2xl font-bold ${performanceGrade.color}`}>
-              {performanceGrade.grade}
-            </div>
+          <div className="text-sm font-bold mb-2">Performance Metrics</div>
+          <div className="text-xs space-y-1">
+            <div>Load Time: {Math.round(metrics.loadTime)}ms</div>
+            <div>DOM Ready: {Math.round(metrics.domContentLoaded)}ms</div>
+            <div>FCP: {Math.round(metrics.firstContentfulPaint)}ms</div>
+            <div>LCP: {Math.round(metrics.largestContentfulPaint)}ms</div>
+            <div>CLS: {metrics.cumulativeLayoutShift.toFixed(3)}</div>
           </div>
-
-          {/* Performance Metrics */}
-          <div className="space-y-2 mb-4">
-            <div className="flex justify-between text-sm">
-              <span className="text-gray-300">FCP:</span>
-              <span className={`${metrics.fcp && metrics.fcp > 1800 ? 'text-red-400' : 'text-green-400'}`}>
-                {metrics.fcp ? `${Math.round(metrics.fcp)}ms` : 'N/A'}
-              </span>
-            </div>
-            <div className="flex justify-between text-sm">
-              <span className="text-gray-300">LCP:</span>
-              <span className={`${metrics.lcp && metrics.lcp > 2500 ? 'text-red-400' : 'text-green-400'}`}>
-                {metrics.lcp ? `${Math.round(metrics.lcp)}ms` : 'N/A'}
-              </span>
-            </div>
-            <div className="flex justify-between text-sm">
-              <span className="text-gray-300">FID:</span>
-              <span className={`${metrics.fid && metrics.fid > 100 ? 'text-red-400' : 'text-green-400'}`}>
-                {metrics.fid ? `${Math.round(metrics.fid)}ms` : 'N/A'}
-              </span>
-            </div>
-            <div className="flex justify-between text-sm">
-              <span className="text-gray-300">CLS:</span>
-              <span className={`${metrics.cls && metrics.cls > 0.1 ? 'text-red-400' : 'text-green-400'}`}>
-                {metrics.cls ? metrics.cls.toFixed(3) : 'N/A'}
-              </span>
-            </div>
-            <div className="flex justify-between text-sm">
-              <span className="text-gray-300">TTFB:</span>
-              <span className={`${metrics.ttfb && metrics.ttfb > 600 ? 'text-red-400' : 'text-green-400'}`}>
-                {metrics.ttfb ? `${Math.round(metrics.ttfb)}ms` : 'N/A'}
-              </span>
-            </div>
-          </div>
-
-          {/* Optimization Controls */}
-          <div className="space-y-2">
-            <button
-              onClick={runFullOptimization}
-              disabled={isOptimizing}
-              className="w-full px-3 py-2 bg-cyan-600 text-white text-sm rounded hover:bg-cyan-700 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
-            >
-              {isOptimizing ? 'Optimizing...' : 'Run Full Optimization'}
-            </button>
-            
-            {optimizationStatus && (
-              <div className="text-center text-xs text-cyan-400">
-                {optimizationStatus}
-              </div>
-            )}
-          </div>
+          {isOptimizing && (
+            <div className="text-cyan-400 text-xs mt-2">Optimizing resources...</div>
+          )}
         </motion.div>
-      </div>
-
-      {/* Lazy Loading Styles */}
-      <style jsx global>{`
-        .lazy {
-          opacity: 0;
-          transition: opacity 0.3s ease-in-out;
-        }
-
-        .lazy.loaded {
-          opacity: 1;
-        }
-
-        img[data-src] {
-          opacity: 0;
-          transition: opacity 0.3s ease-in-out;
-        }
-
-        img[src]:not([data-src]) {
-          opacity: 1;
-        }
-
-        [data-lazy-component] {
-          opacity: 0;
-          transform: translateY(20px);
-          transition: all 0.5s ease-out;
-        }
-
-        [data-lazy-component].loaded {
-          opacity: 1;
-          transform: translateY(0);
-        }
-
-        /* Performance optimization classes */
-        .will-change-transform {
-          will-change: transform;
-        }
-
-        .will-change-opacity {
-          will-change: opacity;
-        }
-
-        .contain-layout {
-          contain: layout;
-        }
-
-        .contain-paint {
-          contain: paint;
-        }
-
-        .contain-size {
-          contain: size;
-        }
-      `}</style>
-
-      {/* Render children with performance optimizations */}
-      <div className="performance-optimized">
-        {children}
-      </div>
+      )}
     </>
   );
 };

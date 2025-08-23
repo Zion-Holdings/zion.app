@@ -1,6 +1,4 @@
 import React from 'react';
-import { motion } from 'framer-motion';
-import { Brain, Cpu, Zap, Shield, Globe, BarChart3, Rocket, Users, Target, Award } from 'lucide-react';
 import Layout from '../components/layout/Layout';
 
 export default function AIServices() {
@@ -49,19 +47,43 @@ export default function AIServices() {
     }
   ];
 
-  const stats = [
-    { number: '50+', label: 'AI Services', icon: Brain },
-    { number: '100+', label: 'AI Models', icon: Cpu },
-    { number: '24/7', label: 'AI Operations', icon: Zap },
-    { number: '99.9%', label: 'Uptime', icon: Shield }
+  const industries = [
+    {
+      name: 'Healthcare',
+      description: 'AI-powered diagnostics, treatment planning, and patient care',
+      icon: <Heart className="w-8 h-8" />,
+      color: 'from-red-500 to-pink-600'
+    },
+    {
+      name: 'Finance',
+      description: 'Intelligent trading, risk assessment, and fraud detection',
+      icon: <DollarSign className="w-8 h-8" />,
+      color: 'from-green-500 to-emerald-600'
+    },
+    {
+      name: 'Manufacturing',
+      description: 'Predictive maintenance, quality control, and process optimization',
+      icon: <Cog className="w-8 h-8" />,
+      color: 'from-blue-500 to-cyan-600'
+    },
+    {
+      name: 'Retail',
+      description: 'Customer personalization, inventory management, and demand forecasting',
+      icon: <ShoppingBag className="w-8 h-8" />,
+      color: 'from-purple-500 to-indigo-600'
+    }
   ];
 
   return (
-    <Layout>
-      <div className="min-h-screen bg-gradient-to-br from-black via-gray-900 to-black">
+    <Layout 
+      title="AI Services - Zion Tech Group"
+      description="Revolutionary AI services including consciousness evolution, autonomous business intelligence, and next-generation AI solutions"
+      canonicalUrl="https://ziontechgroup.com/ai-services"
+    >
+      <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900">
         {/* Hero Section */}
-        <section className="relative py-20 px-4">
-          <div className="container mx-auto max-w-6xl">
+        <section className="relative py-20 px-4 sm:px-6 lg:px-8">
+          <div className="max-w-7xl mx-auto text-center">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -75,36 +97,28 @@ export default function AIServices() {
                 Revolutionary AI solutions that transform businesses and accelerate human progress. 
                 From content automation to quantum brain-computer interfaces.
               </p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <a
+                  href="/contact"
+                  className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-purple-600 to-cyan-600 text-white font-semibold rounded-lg hover:from-purple-700 hover:to-cyan-700 transition-all duration-300 transform hover:scale-105"
+                >
+                  Get Started
+                  <Rocket className="ml-2 w-5 h-5" />
+                </a>
+                <a
+                  href="/solutions"
+                  className="inline-flex items-center px-8 py-4 border-2 border-purple-500 text-purple-400 font-semibold rounded-lg hover:bg-purple-500 hover:text-white transition-all duration-300"
+                >
+                  View Solutions
+                </a>
+              </div>
             </motion.div>
           </div>
         </section>
 
-        {/* Stats Section */}
-        <section className="py-16 px-4 bg-black/30">
-          <div className="container mx-auto max-w-6xl">
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-              {stats.map((stat, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: index * 0.1 }}
-                  className="text-center"
-                >
-                  <div className="w-16 h-16 bg-gradient-to-br from-cyan-500/20 to-blue-500/20 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                    <stat.icon className="w-8 h-8 text-cyan-400" />
-                  </div>
-                  <div className="text-3xl font-bold text-white mb-2">{stat.number}</div>
-                  <div className="text-gray-400">{stat.label}</div>
-                </motion.div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* Services Grid */}
-        <section className="py-20 px-4">
-          <div className="container mx-auto max-w-6xl">
+        {/* AI Services Grid */}
+        <section className="py-20 px-4 sm:px-6 lg:px-8">
+          <div className="max-w-7xl mx-auto">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -152,10 +166,10 @@ export default function AIServices() {
         </section>
 
         {/* CTA Section */}
-        <section className="py-20 px-4">
-          <div className="container mx-auto max-w-4xl text-center">
+        <section className="py-20 px-4 sm:px-6 lg:px-8">
+          <div className="max-w-4xl mx-auto text-center">
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
             >
@@ -176,7 +190,7 @@ export default function AIServices() {
                   href="/services"
                   className="px-8 py-4 border border-cyan-500 text-cyan-400 font-semibold rounded-xl hover:bg-cyan-500/10 transition-all duration-300"
                 >
-                  View All Services
+                  Explore Solutions
                 </a>
               </div>
             </motion.div>
@@ -185,4 +199,6 @@ export default function AIServices() {
       </div>
     </Layout>
   );
-}
+};
+
+export default AIServicesPage;

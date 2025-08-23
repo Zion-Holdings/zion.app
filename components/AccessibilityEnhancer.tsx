@@ -14,10 +14,30 @@ const AccessibilityEnhancer: React.FC<AccessibilityEnhancerProps> = ({ children 
   const [isSpacing, setIsSpacing] = useState(false);
   const [isFocusVisible, setIsFocusVisible] = useState(false);
 
+  const [currentFocus, setCurrentFocus] = useState<HTMLElement | null>(null);
+  const [focusHistory, setFocusHistory] = useState<HTMLElement[]>([]);
+
+  // Load settings from localStorage
   useEffect(() => {
-    // Check user preferences
-    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    const prefersHighContrast = window.matchMedia('(prefers-contrast: high)').matches;
+    const savedSettings = localStorage.getItem('accessibility-settings');
+    if (savedSettings) {
+      try {
+        const parsed = JSON.parse(savedSettings);
+        setSettings(prev => ({ ...prev, ...parsed }));
+      } catch {
+        // Silently handle parsing errors
+      }
+    }
+  }, []);
+
+  // Save settings to localStorage
+  useEffect(() => {
+    localStorage.setItem('accessibility-settings', JSON.stringify(settings));
+  }, [settings]);
+
+  // Apply accessibility settings
+  useEffect(() => {
+    const root = document.documentElement;
     
     setIsReducedMotion(prefersReducedMotion);
     setIsHighContrast(prefersHighContrast);
@@ -29,8 +49,51 @@ const AccessibilityEnhancer: React.FC<AccessibilityEnhancerProps> = ({ children 
     const handleMotionChange = (e: MediaQueryListEvent) => setIsReducedMotion(e.matches);
     const handleContrastChange = (e: MediaQueryListEvent) => setIsHighContrast(e.matches);
 
-    motionQuery.addEventListener('change', handleMotionChange);
-    contrastQuery.addEventListener('change', handleContrastChange);
+    // Focus indicator
+    if (settings.focusIndicator) {
+      root.style.setProperty('--focus-outline', '3px solid #0066cc');
+    } else {
+      root.style.setProperty('--focus-outline', 'none');
+    }
+
+    // Color scheme
+    if (settings.colorScheme === 'light') {
+      root.classList.remove('dark');
+      root.classList.add('light');
+    } else if (settings.colorScheme === 'dark') {
+      root.classList.remove('light');
+      root.classList.add('dark');
+    } else {
+      root.classList.remove('light', 'dark');
+    }
+  }, [settings]);
+
+  // Track focus changes
+  useEffect(() => {
+    const handleFocusChange = (event: Event) => {
+      const target = event.target as HTMLElement;
+      if (target && target !== currentFocus) {
+        setCurrentFocus(target);
+        setFocusHistory(prev => [target, ...prev.slice(0, 9)]);
+        
+        // Add focus indicator
+        if (settings.focusIndicator) {
+          target.style.outline = '3px solid #0066cc';
+          target.style.outlineOffset = '2px';
+        }
+      }
+    };
+
+    const handleBlur = (event: Event) => {
+      const target = event.target as HTMLElement;
+      if (target) {
+        target.style.outline = '';
+        target.style.outlineOffset = '';
+      }
+    };
+
+    document.addEventListener('focusin', handleFocusChange);
+    document.addEventListener('focusout', handleBlur);
 
     return () => {
       motionQuery.removeEventListener('change', handleMotionChange);

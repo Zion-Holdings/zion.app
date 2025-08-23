@@ -467,7 +467,7 @@ export default function Quote() {
       <div className="bg-cyan-500/10 border border-cyan-500/20 rounded-xl p-6">
         <div className="flex items-center gap-3 mb-3">
           <Calculator className="w-6 h-6 text-cyan-400" />
-          <h4 className="text-lg font-semibold text-white">What Happens Next?</h4>
+          <h4 className="text-lg font-semibold text-white">What Happens ArrowRight?</h4>
         </div>
         <div className="space-y-2 text-sm text-gray-300">
           <div className="flex items-center gap-2">
@@ -568,7 +568,7 @@ export default function Quote() {
                       onClick={nextStep}
                       className="ml-auto px-8 py-3 bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-semibold rounded-lg hover:from-cyan-600 hover:to-blue-700 transition-all duration-300 transform hover:scale-105"
                     >
-                      Next
+                      ArrowRight
                     </button>
                   ) : (
                     <button

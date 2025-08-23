@@ -3,7 +3,7 @@ import React from 'react';
 interface SafeContentContainerProps {
   children: React.ReactNode;
   className?: string;
-  as?: keyof JSX.IntrinsicElements;
+  as?: keyof React.JSX.IntrinsicElements;
 }
 
 /**

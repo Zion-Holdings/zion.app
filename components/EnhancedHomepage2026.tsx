@@ -223,57 +223,15 @@ const EnhancedHomepage2026: React.FC = () => {
                   </p>
                 </motion.div>
 
-                <motion.div 
-                  className="flex flex-col sm:flex-row gap-8 justify-center items-center mb-16"
-                  variants={fadeInUp}
-                >
-                  <button 
-                    className="group px-12 py-6 bg-gradient-to-r from-cyan-500 via-blue-600 to-purple-600 text-white font-bold text-xl rounded-2xl hover:from-cyan-600 hover:via-blue-700 hover:to-purple-700 transition-all duration-300 transform hover:scale-105 hover:shadow-2xl hover:shadow-cyan-500/25 flex items-center gap-3 focus:outline-none focus:ring-4 focus:ring-cyan-500 relative overflow-hidden"
-                    aria-label="Get started with Zion Tech Group services"
-                    onClick={() => window.location.href = '/get-started'}
-                    onKeyDown={(e) => {
-                      if (e.key === 'Enter') {
-                        window.location.href = '/get-started';
-                      }
-                    }}
-                  >
-                    <span className="relative z-10">Get Started</span>
-                    <ArrowRight className="w-6 h-6 group-hover:translate-x-2 transition-transform relative z-10" aria-hidden="true" />
-                    <div className="absolute inset-0 bg-gradient-to-r from-cyan-400 to-blue-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                  </button>
-                  
-                  <button 
-                    className="px-12 py-6 border-2 border-cyan-400 text-cyan-400 font-bold text-xl rounded-2xl hover:bg-cyan-400 hover:text-black transition-all duration-300 transform hover:scale-105 flex items-center gap-3 focus:outline-none focus:ring-4 focus:ring-cyan-400/50 group"
-                    aria-label="Learn more about Zion Tech Group"
-                    onClick={() => window.location.href = '/about'}
-                    onKeyDown={(e) => {
-                      if (e.key === 'Enter') {
-                        window.location.href = '/about';
-                      }
-                    }}
-                  >
-                    <span>Learn More</span>
-                    <Play className="w-6 h-6 group-hover:scale-110 transition-transform" />
-                  </button>
-                </motion.div>
-
-                {/* Enhanced Stats Section */}
-                <motion.div 
-                  className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto mb-12"
-                  variants={fadeInUp}
-                  role="region"
-                  aria-label="Company achievements and statistics"
-                >
-                  {[
-                    { icon: Brain, label: "50+ AI Services", value: "50+", color: "text-purple-400" },
-                    { icon: Atom, label: "25+ Quantum Solutions", value: "25+", color: "text-green-400" },
-                    { icon: Rocket, label: "100+ Micro SAAS", value: "100+", color: "text-orange-400" },
-                    { icon: Award, label: "99.9% Success Rate", value: "99.9%", color: "text-cyan-400" }
-                  ].map((stat, index) => (
-                    <div 
-                      key={stat.label}
-                      className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-6 text-center hover:bg-white/10 transition-all duration-300 group"
-                      style={{ opacity: 0, transform: 'scale(0.8)' }}
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                  {featuredServices.map((service, index) => (
+                    <motion.div
+                      key={service.title}
+                      className="relative group"
+                      initial={{ opacity: 0, y: 30 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ duration: 0.6, delay: index * 0.1 }}
                     >
                       <div className="w-12 h-12 mx-auto mb-3 bg-gradient-to-br from-cyan-500/20 to-purple-500/20 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
                         <div className={stat.color}>

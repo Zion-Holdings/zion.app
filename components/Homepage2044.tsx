@@ -171,14 +171,10 @@ const Homepage2044: React.FC = () => {
   // Loading state
   if (isLoading) {
     return (
-      <Layout>
-        <SEOEnhancer />
-        <div className="min-h-screen flex items-center justify-center">
-          <div className="text-center">
-            <div className="animate-spin rounded-full h-32 w-32 border-b-2 border-cyan-500 mx-auto mb-8"></div>
-            <h2 className="text-2xl font-bold text-white mb-4">Loading Zion Tech Group</h2>
-            <p className="text-gray-400">Preparing the future of technology...</p>
-          </div>
+      <div className="min-h-screen flex items-center justify-center">
+        <div className="text-center">
+          <h1 className="text-2xl font-bold text-red-400 mb-4">Error</h1>
+          <p className="text-gray-400">{error}</p>
         </div>
       </Layout>
     );
@@ -186,28 +182,7 @@ const Homepage2044: React.FC = () => {
 
   return (
     <Layout>
-      {/* SEO Enhancement */}
-      <SEOEnhancer 
-        title="Zion Tech Group - Revolutionary 2044 Technology Solutions"
-        description="Pioneering the future of technology with revolutionary AI consciousness, quantum computing, and autonomous solutions that transform businesses worldwide."
-        keywords={[
-          'AI consciousness',
-          'quantum computing',
-          'autonomous solutions',
-          'technology consulting',
-          'AI services',
-          'quantum technology',
-          'space technology',
-          'cybersecurity',
-          'business intelligence',
-          'cloud infrastructure'
-        ]}
-        type="website"
-        url="https://ziontechgroup.com"
-      />
-      
-      {/* Main Content */}
-      <main className="relative z-10" role="main" aria-label="Zion Tech Group Homepage">
+      <main className="relative">
         {/* Hero Section */}
         <section 
           className="min-h-screen flex items-center justify-center px-4 relative overflow-hidden"

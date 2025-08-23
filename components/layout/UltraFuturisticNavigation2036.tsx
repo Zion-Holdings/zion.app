@@ -2,16 +2,10 @@ import React, { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
 import { motion, AnimatePresence } from 'framer-motion';
 import { 
-  Menu, ChevronDown, X, Phone, Mail, MapPin,
-  Rocket, BookOpen,
-  DollarSign, BarChart3, Star, 
-  Cpu, 
-  Search, Grid, 
-  Zap,
-  FileText,
-  Award,
-  HelpCircle,
-  BookOpenCheck
+  Menu, ChevronDown, X, ArrowRight,
+  BookOpen, DollarSign, BarChart3, Users, Star, 
+  Building, Play, Calculator,
+  Grid, FileText, Code, Video
 } from 'lucide-react';
 import Link from 'next/link';
 
@@ -73,13 +67,13 @@ const navigationItems: NavigationItem[] = [
         name: 'AI & Machine Learning', 
         href: '/ai-services', 
         description: 'Advanced AI solutions',
-        icon: <Cpu className="w-4 h-4" />
+        icon: <Play className="w-4 h-4" />
       },
       { 
         name: 'Quantum Technology', 
         href: '/quantum-services', 
         description: 'Quantum computing solutions',
-        icon: <Cpu className="w-4 h-4" />
+        icon: <Play className="w-4 h-4" />
       },
       { 
         name: 'Space Technology', 
@@ -97,7 +91,15 @@ const navigationItems: NavigationItem[] = [
         name: 'Specialized Solutions', 
         href: '/solutions', 
         description: 'Industry-specific solutions',
-        icon: <Star className="w-4 h-4" />
+        icon: <Play className="w-4 h-4" />
+      },
+      { 
+        name: 'Innovative 2025 Services', 
+        href: '/innovative-2025-services-showcase', 
+        description: 'Cutting-edge 2025 innovations',
+        icon: <Star className="w-4 h-4" />,
+        featured: true,
+        badge: 'New'
       }
     ]
   },
@@ -140,20 +142,9 @@ const navigationItems: NavigationItem[] = [
       { 
         name: 'About Us', 
         href: '/about', 
-        description: 'Company information',
-        icon: <Star className="w-4 h-4" />
-      },
-      { 
-        name: 'Contact', 
-        href: '/contact', 
-        description: 'Get in touch',
-        icon: <Mail className="w-4 h-4" />
-      },
-      { 
-        name: 'Partners', 
-        href: '/partners', 
-        description: 'Partnership opportunities',
-        icon: <Star className="w-4 h-4" />
+        description: 'Our story and mission',
+        icon: <Users className="w-4 h-4" />,
+        featured: true
       },
       {
         name: 'Leadership',
@@ -165,39 +156,6 @@ const navigationItems: NavigationItem[] = [
         name: 'Careers',
         href: '/careers',
         description: 'Join our team',
-        icon: <Star className="w-4 h-4" />
-      }
-    ]
-  },
-  {
-    name: 'Resources',
-    href: '/resources',
-    icon: <MessageCircle className="w-5 h-5" />,
-    description: 'Knowledge & insights',
-    category: 'resources',
-    children: [
-      {
-        name: 'Blog',
-        href: '/blog',
-        description: 'Latest insights',
-        icon: <MessageCircle className="w-4 h-4" />
-      },
-      {
-        name: 'Case Studies',
-        href: '/case-studies',
-        description: 'Success stories',
-        icon: <Star className="w-4 h-4" />
-      },
-      {
-        name: 'White Papers',
-        href: '/white-papers',
-        description: 'In-depth research',
-        icon: <Calculator className="w-4 h-4" />
-      },
-      {
-        name: 'Webinars',
-        href: '/webinars',
-        description: 'Live events',
         icon: <Play className="w-4 h-4" />
       }
     ]
@@ -207,10 +165,9 @@ const navigationItems: NavigationItem[] = [
 const UltraFuturisticNavigation2036: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
-  const [searchQuery, setSearchQuery] = useState('');
-  const [isSearchOpen, setIsSearchOpen] = useState(false);
-  const searchRef = useRef<HTMLDivElement>(null);
-  const mobileMenuRef = useRef<HTMLDivElement>(null);
+  const [isScrolled, setIsScrolled] = useState(false);
+  const navRef = useRef<HTMLElement>(null);
+  const dropdownRefs = useRef<{ [key: string]: HTMLDivElement | null }>({});
 
   // Close mobile menu when clicking outside
   useEffect(() => {
@@ -237,160 +194,43 @@ const UltraFuturisticNavigation2036: React.FC = () => {
   }, []);
 
 
+  // Enhanced dropdown animation variants
+  const dropdownVariants = {
+    hidden: { 
+      opacity: 0, 
+      y: -10,
+      scale: 0.95
+    },
+    visible: { 
+      opacity: 1, 
+      y: 0,
+      scale: 1,
+      transition: {
+        duration: 0.2,
+        ease: "easeOut" as const
+      }
+    }
+  };
+
   return (
-    <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-      isScrolled 
-        ? 'bg-black/90 backdrop-blur-xl border-b border-gray-800/50' 
-        : 'bg-transparent'
-    }`}>
+    <nav 
+      ref={navRef}
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        isScrolled 
+          ? 'bg-black/90 backdrop-blur-md border-b border-white/10' 
+          : 'bg-transparent'
+      }`}
+      role="navigation"
+      aria-label="Main navigation"
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-20">
+        <div className="flex justify-between items-center h-16 lg:h-20">
           {/* Logo */}
-          <motion.div
-            initial={{ opacity: 0, x: -20 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6 }}
-            className="flex-shrink-0"
-          >
-            <Link href="/" className="flex items-center space-x-2 group">
-              <div className="w-10 h-10 bg-gradient-to-r from-cyan-500 to-blue-600 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                <Sparkles className="w-6 h-6 text-white" />
-              </div>
-              <span className="text-2xl font-bold bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
-                Zion Tech
-              </span>
-            </Link>
-          </motion.div>
-
-          {/* Desktop Navigation */}
-          <div className="hidden lg:flex items-center space-x-8">
-            {navigationItems.map((item, index) => (
-              <motion.div
-                key={item.name}
-                initial={{ opacity: 0, y: -20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                className="relative group"
-              >
-                <button
-                  onClick={() => toggleDropdown(item.name)}
-                  className="flex items-center space-x-2 px-4 py-2 text-gray-300 hover:text-white transition-colors duration-200 group-hover:text-cyan-400"
-                >
-                  {item.icon}
-                  <span className="font-medium">{item.name}</span>
-                  <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${
-                    activeDropdown === item.name ? 'rotate-180' : ''
-                  }`} />
-                </button>
-              </div>
-
-              {/* Mobile Search */}
-              <div className="p-4 border-b border-white/10">
-                <div className="relative">
-                  <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-400" />
-                  <input
-                    type="text"
-                    placeholder="Search services..."
-                    className="w-full pl-10 pr-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:border-transparent"
-                  />
-                </div>
-              </div>
-
-                {/* Enhanced Dropdown */}
-                <AnimatePresence>
-                  {activeDropdown === item.name && (
-                    <motion.div
-                      initial={{ opacity: 0, y: 10, scale: 0.95 }}
-                      animate={{ opacity: 1, y: 0, scale: 1 }}
-                      exit={{ opacity: 0, y: 10, scale: 0.95 }}
-                      transition={{ duration: 0.2 }}
-                      className="absolute top-full left-0 mt-2 w-80 bg-gray-900/95 backdrop-blur-xl border border-gray-700/50 rounded-2xl shadow-2xl shadow-black/50 overflow-hidden"
-                    >
-                      <div className="p-4">
-                        <div className="mb-4">
-                          <h3 className="text-lg font-semibold text-white mb-2">{item.name}</h3>
-                          <p className="text-sm text-gray-400">{item.description}</p>
-                        </div>
-                        
-                        <div className="space-y-2">
-                          {item.children?.map((child) => (
-                            <Link
-                              key={child.name}
-                              href={normalizeHref(child.href)}
-                              onClick={closeAllDropdowns}
-                              className="flex items-center space-x-3 p-3 rounded-xl hover:bg-gray-800/50 transition-all duration-200 group"
-                            >
-                              <div className="w-8 h-8 bg-gradient-to-r from-cyan-500/20 to-blue-500/20 border border-cyan-500/30 rounded-lg flex items-center justify-center">
-                                {child.icon}
-                              </div>
-                              <div className="flex-1">
-                                <div className="flex items-center space-x-2">
-                                  <span className="font-medium text-white group-hover:text-cyan-400 transition-colors">
-                                    {child.name}
-                                  </span>
-                                  {child.featured && (
-                                    <span className="px-2 py-1 bg-gradient-to-r from-purple-500 to-pink-500 text-xs text-white rounded-full">
-                                      Featured
-                                    </span>
-                                  )}
-                                </div>
-                                <p className="text-sm text-gray-400">{child.description}</p>
-                              </div>
-                              <ArrowRight className="w-4 h-4 text-gray-500 group-hover:text-cyan-400 transition-colors" />
-                            </Link>
-                          ))}
-                        </div>
-                      </div>
-                    </motion.div>
-                  )}
-                </AnimatePresence>
-              </motion.div>
-            ))}
-          </div>
-
-          {/* CTA Buttons */}
-          <div className="hidden lg:flex items-center space-x-4">
-            <motion.button
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.6, delay: 0.4 }}
-              className="px-6 py-2 text-gray-300 hover:text-white transition-colors duration-200"
-            >
-              <Search className="w-5 h-5" />
-            </motion.button>
-            
-            <motion.button
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.6, delay: 0.5 }}
-              className="px-6 py-2 bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-medium rounded-xl hover:from-cyan-600 hover:to-blue-700 transition-all duration-300 transform hover:scale-105 hover:shadow-lg hover:shadow-cyan-500/25"
-            >
-              Get Started
-            </motion.button>
-          </div>
-
-          {/* Mobile menu button */}
-          <motion.button
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.6, delay: 0.6 }}
-            onClick={() => setIsOpen(!isOpen)}
-            className="lg:hidden p-2 rounded-lg text-gray-300 hover:text-white hover:bg-gray-800 transition-colors duration-200"
-          >
-            {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-          </motion.button>
-        </div>
-
-        {/* Search Bar */}
-        <AnimatePresence>
-          {isSearchOpen && (
-            <motion.div
-              ref={searchRef}
-              initial={{ opacity: 0, height: 0 }}
-              animate={{ opacity: 1, height: 'auto' }}
-              exit={{ opacity: 0, height: 0 }}
-              transition={{ duration: 0.2 }}
-              className="py-4 border-t border-cyan-400/20"
+          <div className="flex-shrink-0">
+            <Link 
+              href="/" 
+              className="flex items-center space-x-2 group"
+              aria-label="Zion Tech Group - Home"
             >
               <div className="relative">
                 <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-400" />
@@ -543,52 +383,18 @@ const UltraFuturisticNavigation2036: React.FC = () => {
                 </div>
               </div>
 
-              {/* Navigation Items */}
-              {navigationItems.map((item) => (
-                <div key={item.name} className="space-y-2">
-                  <button
-                    onClick={() => toggleDropdown(item.name)}
-                    className="flex items-center justify-between w-full p-3 text-left text-gray-300 hover:text-white hover:bg-gray-800/50 rounded-xl transition-all duration-200"
-                  >
-                    <div className="flex items-center space-x-3">
-                      {item.icon}
-                      <span className="font-medium">{item.name}</span>
-                    </div>
-                    <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${
-                      activeDropdown === item.name ? 'rotate-180' : ''
-                    }`} />
+              {/* Mobile CTA */}
+              <div className="mt-8 pt-6 border-t border-white/10">
+                <Link href="/contact" onClick={() => setMobileMenuOpen(false)}>
+                  <button className="w-full px-4 py-3 bg-gradient-to-r from-cyan-500 to-purple-500 text-white rounded-lg font-medium hover:from-cyan-600 hover:to-purple-600 transition-all duration-300">
+                    Contact Us
                   </button>
-                  
-                  <AnimatePresence>
-                    {activeDropdown === item.name && (
-                      <motion.div
-                        initial={{ opacity: 0, height: 0 }}
-                        animate={{ opacity: 1, height: 'auto' }}
-                        exit={{ opacity: 0, height: 0 }}
-                        transition={{ duration: 0.2 }}
-                        className="ml-8 space-y-2"
-                      >
-                        {item.children?.map((child) => (
-                          <Link
-                            key={child.name}
-                            href={normalizeHref(child.href)}
-                            onClick={closeAllDropdowns}
-                            className="flex items-center space-x-3 p-3 text-gray-400 hover:text-white hover:bg-gray-800/50 rounded-lg transition-all duration-200"
-                          >
-                            {child.icon}
-                            <span>{child.name}</span>
-                          </Link>
-                        ))}
-                      </motion.div>
-                    )}
-                  </AnimatePresence>
-                </div>
-              ))}
-              
-              <div className="pt-4 border-t border-gray-700/50">
-                <button className="w-full px-6 py-3 bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-medium rounded-xl hover:from-cyan-600 hover:to-blue-700 transition-all duration-300">
-                  Get Started
-                </button>
+                </Link>
+                <Link href="/get-started" onClick={() => setMobileMenuOpen(false)}>
+                  <button className="w-full px-4 py-3 text-sm font-medium bg-gradient-to-r from-cyan-500 to-purple-600 text-white rounded-lg hover:from-cyan-600 hover:to-purple-700 transition-all duration-200 transform hover:scale-105">
+                    Get Started
+                  </button>
+                </Link>
               </div>
             </div>
           </motion.div>

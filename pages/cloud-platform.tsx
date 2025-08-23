@@ -1,67 +1,134 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Globe, Cloud, Server, Database, Shield, Zap, Brain, Cpu, Users, Target } from 'lucide-react';
-import Layout from '../components/layout/Layout';
+import { 
+  Cloud, 
+  Server, 
+  Database, 
+  Network, 
+  Shield, 
+  Zap, 
+  Target, 
+  Brain, 
+  Users, 
+  TrendingUp,
+  BarChart3,
+  Code,
+  Globe,
+  Lock,
+  Settings,
+  Star,
+  ArrowRight,
+  CheckCircle,
+  Clock,
+  Cpu,
+  Activity,
+  DollarSign,
+  Building,
+  ShoppingCart
+} from 'lucide-react';
 
-export default function CloudPlatform() {
+const CloudPlatformPage: React.FC = () => {
   const services = [
     {
-      icon: Cloud,
-      title: 'Multi-Cloud Disaster Recovery',
-      description: 'Comprehensive disaster recovery across multiple cloud platforms',
-      features: ['Cross-platform backup', 'Automated failover', 'RTO optimization', 'Data protection'],
-      href: '/multi-cloud-disaster-recovery'
+      title: 'Quantum Cloud Infrastructure',
+      description: 'Next-generation quantum-enhanced cloud computing',
+      icon: <Cloud className="w-8 h-8 text-blue-500" />,
+      features: ['Quantum Processing', 'Hybrid Classical-Quantum', 'Quantum Resource Management'],
+      href: '/quantum-cloud-infrastructure-2045'
     },
     {
-      icon: Database,
-      title: 'Managed PostgreSQL High Availability',
-      description: 'Enterprise-grade PostgreSQL with high availability and performance',
-      features: ['Automatic failover', 'Performance tuning', 'Backup management', '24/7 monitoring'],
-      href: '/managed-postgresql-ha'
+      title: 'Edge Computing Orchestration',
+      description: 'Distributed edge computing and IoT management',
+      icon: <Cpu className="w-8 h-8 text-green-500" />,
+      features: ['Edge Processing', 'IoT Integration', 'Real-time Analytics'],
+      href: '/edge-computing-orchestration'
     },
     {
-      icon: Server,
-      title: 'Kubernetes RBAC Auditor',
-      description: 'Advanced Kubernetes security and access control management',
-      features: ['Role-based access control', 'Security auditing', 'Compliance reporting', 'Policy enforcement'],
-      href: '/kubernetes-rbac-auditor'
+      title: 'Multi-Cloud Management',
+      description: 'Unified management across multiple cloud providers',
+      icon: <Globe className="w-8 h-8 text-purple-500" />,
+      features: ['Provider Agnostic', 'Cost Optimization', 'Unified Monitoring'],
+      href: '/multi-cloud-management'
     },
     {
-      icon: Shield,
-      title: 'Zero Trust Network Architecture',
-      description: 'Secure cloud networking with zero trust principles',
-      features: ['Network segmentation', 'Identity verification', 'Continuous monitoring', 'Threat prevention'],
-      href: '/zero-trust-network-architecture'
+      title: 'Cloud Security & Compliance',
+      description: 'Advanced cloud security and governance',
+      icon: <Shield className="w-8 h-8 text-red-500" />,
+      features: ['Identity Management', 'Data Encryption', 'Compliance Automation'],
+      href: '/cloud-security-compliance'
     },
     {
-      icon: Zap,
-      title: 'Serverless Cron Manager',
-      description: 'Automated task scheduling and execution in the cloud',
-      features: ['Task scheduling', 'Resource optimization', 'Cost management', 'Monitoring & alerts'],
-      href: '/serverless-cron-manager'
+      title: 'DevOps Automation',
+      description: 'Automated CI/CD and infrastructure management',
+      icon: <Code className="w-8 h-8 text-orange-500" />,
+      features: ['CI/CD Pipelines', 'Infrastructure as Code', 'Automated Testing'],
+      href: '/devops-automation'
     },
     {
-      icon: Brain,
-      title: 'LLM Gateway & Cost Control',
-      description: 'Intelligent language model management and cost optimization',
-      features: ['Model routing', 'Cost tracking', 'Performance monitoring', 'Usage analytics'],
-      href: '/llm-gateway'
+      title: 'Data Analytics Platform',
+      description: 'Cloud-native data analytics and business intelligence',
+      icon: <BarChart3 className="w-8 h-8 text-cyan-500" />,
+      features: ['Real-time Analytics', 'Machine Learning', 'Data Visualization'],
+      href: '/data-analytics'
     }
   ];
 
-  const stats = [
-    { number: '99.99%', label: 'Uptime', icon: Cloud },
-    { number: '24/7', label: 'Monitoring', icon: Shield },
-    { number: '50+', label: 'Cloud Services', icon: Server },
-    { number: '1000+', label: 'Deployments', icon: Zap }
+  const benefits = [
+    {
+      title: 'Scalability',
+      description: 'Elastic scaling based on demand',
+      icon: <TrendingUp className="w-6 h-6 text-green-400" />
+    },
+    {
+      title: 'Cost Efficiency',
+      description: 'Pay-as-you-use pricing model',
+      icon: <DollarSign className="w-6 h-6 text-blue-400" />
+    },
+    {
+      title: 'Global Reach',
+      description: 'Worldwide data center presence',
+      icon: <Globe className="w-6 h-6 text-purple-400" />
+    },
+    {
+      title: 'High Availability',
+      description: '99.99% uptime guarantee',
+      icon: <CheckCircle className="w-6 h-6 text-yellow-400" />
+    }
+  ];
+
+  const useCases = [
+    {
+      name: 'Enterprise Applications',
+      description: 'Scalable enterprise software deployment',
+      icon: <Building className="w-6 h-6" />
+    },
+    {
+      name: 'E-commerce Platforms',
+      description: 'High-traffic online retail solutions',
+      icon: <ShoppingCart className="w-6 h-6" />
+    },
+    {
+      name: 'Data Processing',
+      description: 'Big data analytics and processing',
+      icon: <Database className="w-6 h-6" />
+    },
+    {
+      name: 'AI/ML Workloads',
+      description: 'Machine learning model training and deployment',
+      icon: <Brain className="w-6 h-6" />
+    }
   ];
 
   return (
-    <Layout>
-      <div className="min-h-screen bg-gradient-to-br from-black via-gray-900 to-black">
+    <Layout 
+      title="Cloud Platform Services - Zion Tech Group"
+      description="Advanced cloud infrastructure, edge computing, and multi-cloud management solutions for modern businesses"
+      canonicalUrl="https://ziontechgroup.com/cloud-platform"
+    >
+      <div className="min-h-screen bg-gradient-to-br from-slate-900 via-blue-900 to-slate-900">
         {/* Hero Section */}
-        <section className="relative py-20 px-4">
-          <div className="container mx-auto max-w-6xl">
+        <section className="relative py-20 px-4 sm:px-6 lg:px-8">
+          <div className="max-w-7xl mx-auto text-center">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -129,21 +196,68 @@ export default function CloudPlatform() {
                   transition={{ duration: 0.6, delay: index * 0.1 }}
                   className="group"
                 >
-                  <a href={service.href} className="block">
-                    <div className="bg-gray-800/50 backdrop-blur-sm border border-gray-700/50 rounded-2xl p-6 h-full hover:bg-gray-700/50 transition-all duration-300 hover:scale-105">
-                      <div className="w-16 h-16 bg-gradient-to-br from-blue-500/20 to-indigo-500/20 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
-                        <service.icon className="w-8 h-8 text-blue-400" />
-                      </div>
-                      <h3 className="text-xl font-bold text-white mb-4">{service.title}</h3>
-                      <p className="text-gray-300 mb-6 leading-relaxed">{service.description}</p>
-                      <ul className="space-y-2">
-                        {service.features.map((feature, featureIndex) => (
-                          <li key={featureIndex} className="flex items-center gap-2 text-sm text-gray-400">
-                            <div className="w-2 h-2 bg-blue-400 rounded-full"></div>
-                            {feature}
-                          </li>
-                        ))}
-                      </ul>
+                  <div className="flex items-center mb-4">
+                    {service.icon}
+                    <h3 className="text-xl font-semibold text-white ml-3">
+                      {service.title}
+                    </h3>
+                  </div>
+                  <p className="text-gray-300 mb-4">
+                    {service.description}
+                  </p>
+                  <ul className="space-y-2 mb-6">
+                    {service.features.map((feature) => (
+                      <li key={feature} className="flex items-center text-sm text-gray-400">
+                        <Star className="w-4 h-4 text-blue-400 mr-2" />
+                        {feature}
+                      </li>
+                    ))}
+                  </ul>
+                  <a
+                    href={service.href}
+                    className="inline-flex items-center text-blue-400 hover:text-blue-300 transition-colors duration-300"
+                  >
+                    Learn More
+                    <ArrowRight className="ml-2 w-4 h-4" />
+                  </a>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Use Cases Section */}
+        <section className="py-20 px-4 sm:px-6 lg:px-8 bg-black/20">
+          <div className="max-w-7xl mx-auto">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+              className="text-center mb-16"
+            >
+              <h2 className="text-4xl font-bold text-white mb-4">
+                Cloud Computing Use Cases
+              </h2>
+              <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+                Discover how cloud computing is transforming industries and 
+                enabling new business models.
+              </p>
+            </motion.div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+              {useCases.map((useCase, index) => (
+                <motion.div
+                  key={useCase.name}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: index * 0.1 }}
+                  viewport={{ once: true }}
+                  className="text-center"
+                >
+                  <div className="bg-white/10 backdrop-blur-lg rounded-full w-20 h-20 mx-auto mb-4 flex items-center justify-center border border-white/20">
+                    <div className="text-blue-400">
+                      {useCase.icon}
                     </div>
                   </a>
                 </motion.div>
@@ -154,8 +268,8 @@ export default function CloudPlatform() {
       </section>
 
         {/* CTA Section */}
-        <section className="py-20 px-4">
-          <div className="container mx-auto max-w-4xl text-center">
+        <section className="py-20 px-4 sm:px-6 lg:px-8">
+          <div className="max-w-4xl mx-auto text-center">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -178,7 +292,7 @@ export default function CloudPlatform() {
                   href="/services"
                   className="px-8 py-4 border border-blue-500 text-blue-400 font-semibold rounded-xl hover:bg-blue-500/10 transition-all duration-300"
                 >
-                  View All Services
+                  View Cloud Cases
                 </a>
               </div>
             </motion.div>
