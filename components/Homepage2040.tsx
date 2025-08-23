@@ -420,23 +420,61 @@ const Homepage2040: React.FC = () => {
             ))}
           </div>
 
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.4 }}
-            className="text-center mt-12"
-          >
-            <Link href="/services">
-              <button className="px-8 py-4 border-2 border-cyan-400 text-cyan-400 font-semibold rounded-xl hover:bg-cyan-400 hover:text-black transition-all duration-300 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-cyan-300 focus:ring-offset-2 focus:ring-offset-black">
-                <span className="flex items-center gap-2">
-                  View All Services
-                  <ArrowRight className="w-5 h-5" />
-                </span>
-              </button>
-            </Link>
-          </motion.div>
-        </div>
-      </section>
+                      {/* Service Price */}
+                      <div className="mb-6">
+                        <span className="text-2xl font-bold text-cyan-400">
+                          {service.price}
+                        </span>
+                      </div>
+
+                      {/* CTA Button */}
+                      <Link 
+                        href={service.link}
+                        className="inline-flex items-center justify-center w-full px-6 py-3 bg-gradient-to-r from-cyan-400 to-blue-500 text-white font-semibold rounded-xl hover:from-cyan-500 hover:to-blue-600 transition-all duration-300 focus:outline-none focus:ring-4 focus:ring-cyan-400/50 group-hover:shadow-lg group-hover:shadow-cyan-400/25"
+                      >
+                        Learn More
+                        <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform duration-300" />
+                      </Link>
+                    </motion.div>
+                  ))}
+                </motion.div>
+
+                {/* View All Services Button */}
+                <motion.div
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.8, delay: 0.4 }}
+                  className="text-center mt-12"
+                >
+                  <Link 
+                    href="/innovative-2040-futuristic-services-showcase"
+                    className="inline-flex items-center justify-center px-8 py-4 border-2 border-cyan-400 text-cyan-400 font-semibold rounded-2xl hover:bg-cyan-400 hover:text-black transition-all duration-300 focus:outline-none focus:ring-4 focus:ring-cyan-400/50 text-lg"
+                  >
+                    View All 2040 Services
+                    <ArrowRight className="w-6 h-6 ml-3" />
+                  </Link>
+                </motion.div>
+              </div>
+            </section>
+
+            {/* Why Choose Us Section */}
+            <section id="why-choose-us" className="py-20 px-4 bg-gray-900">
+              <div className="max-w-7xl mx-auto">
+                <motion.div
+                  variants={fadeInUp}
+                  initial="initial"
+                  whileInView="animate"
+                  viewport={{ once: true }}
+                  className="text-center mb-16"
+                >
+                  <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+                    Why Choose <span className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">Zion Tech Group</span>
+                  </h2>
+                  <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+                    We combine cutting-edge technology with proven expertise to deliver solutions that drive real business transformation
+                  </p>
+                </motion.div>
 
       {/* Contact Section */}
       <section className="py-20 px-4">
