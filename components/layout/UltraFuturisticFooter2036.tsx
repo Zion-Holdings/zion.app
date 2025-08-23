@@ -19,10 +19,12 @@ import {
   MessageCircle,
   Heart,
   Globe
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
 } from 'lucide-react';
 
 
 
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
 const footerSections = [
   {
     title: 'Featured Services',
@@ -39,6 +41,7 @@ const footerSections = [
       { name: 'Autonomous Cloud Orchestrator', href: '/autonomous-cloud-orchestrator' },
       { name: 'Quantum Edge Computing Platform', href: '/quantum-edge-computing-platform' },
       { name: 'AI-Powered Enterprise Architecture', href: '/ai-powered-enterprise-architecture' }
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
     ]
   },
   {
@@ -91,6 +94,7 @@ const footerSections = [
     title: 'Micro SAAS Solutions',
     description: 'Innovative business solutions for modern enterprises',
     icon: <Rocket className="w-5 h-5 text-emerald-400" />,
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
     links: [
       { name: 'AI Content Generator', href: '/ai-content-generator' },
       { name: 'AI Code Review', href: '/ai-code-review' },
@@ -292,6 +296,7 @@ export default function UltraFuturisticFooter2036() {
                     {link.name}
                   </Link>
                 ))}
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
               </div>
             </div>
 
@@ -320,6 +325,7 @@ export default function UltraFuturisticFooter2036() {
           <MessageCircle className="w-6 h-6 text-white" aria-hidden="true" />
         </motion.button>
       </div>
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
     </footer>
   );
 };

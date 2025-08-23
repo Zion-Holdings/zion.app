@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import Head from 'next/head';
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
 import Link from 'next/link';
 
 const Blog: React.FC = () => {
@@ -14,6 +15,7 @@ const Blog: React.FC = () => {
       image: '/blog/ai-consciousness-2045.jpg',
       tags: ['AI', 'Consciousness', 'Future Tech', '2045'],
       icon: <Brain className="w-6 h-6" />
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
     },
     {
       title: 'Quantum Computing Breakthroughs: Solving Previously Impossible Problems',
@@ -325,6 +327,7 @@ const Blog: React.FC = () => {
                   <div className="flex items-center gap-2 mb-3">
                     <span className="px-3 py-1 bg-purple-500/20 text-purple-300 rounded-full text-xs font-medium">
                       {post.category}
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
                     </span>
                     <span className="text-gray-400 text-sm">{post.readTime}</span>
                   </div>
@@ -353,6 +356,7 @@ const Blog: React.FC = () => {
         {/* Trending Topics */}
         <section className="py-20 bg-black/50">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -365,6 +369,7 @@ const Blog: React.FC = () => {
               </h2>
               <p className="text-xl text-gray-400 max-w-3xl mx-auto">
                 What's hot in the world of AI consciousness and quantum computing
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
               </p>
             </motion.div>
             
@@ -499,6 +504,7 @@ const Blog: React.FC = () => {
           </div>
         </section>
       </div>
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
     </Layout>
   );
 };

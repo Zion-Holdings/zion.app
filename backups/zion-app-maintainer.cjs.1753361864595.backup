@@ -1,0 +1,511 @@
+
+const winston = require('winston');
+
+const logger = winston.createLogger({
+  level: 'info',
+  format: winston.format.combine(
+    winston.format.timestamp(),
+    winston.format.errors({ stack: true }),
+    winston.format.json()
+  ),
+  defaultMeta: { service: 'automation-script' },
+  transports: [
+    new winston.transports.File({ filename: 'logs/error.log', level: 'error' }),
+    new winston.transports.File({ filename: 'logs/combined.log' })
+  ]
+});
+
+if (process.env.NODE_ENV !== 'production') {
+  logger.add(new winston.transports.Console({
+    format: winston.format.simple()
+  }));
+}
+
+
+const fs = require('fs')
+const path = require('path')
+const { execSync, spawn } = require('child_process')
+class ZionAppMaintainer {
+  constructor() {
+    this.maintenanceLog = [];
+    this.issues = [];
+    this.improvements = [];
+  }
+
+  log(message, level = 'INFO') {
+    const timestamp = new Date().toISOString();
+    logger.info(`[${timestamp}] [${level}] ${message}`);
+    this.maintenanceLog.push(`[${timestamp}] [${level}] ${message}`);
+  }
+
+  async runMaintenance() {
+    this.log('🚀 Starting Zion App Maintenance...');
+
+    try {
+      await this.checkCurrentStatus();
+      await this.performHealthCheck();
+      await this.cleanupArtifacts();
+      await this.updateDependencies();
+      await this.optimizePerformance();
+      await this.generateMaintenanceReport();
+
+      this.log('📊 Maintenance Summary:');
+      this.log(`✅ Improvements: ${this.improvements.length}`);
+      this.improvements.forEach((imp) => this.log(`  - ${imp}`));
+
+      this.log(`⚠️ Issues: ${this.issues.length}`);
+      this.issues.forEach((issue) => this.log(`  - ${issue}`));
+
+      this.log('🎉 Zion App Maintenance completed!');
+      return true;
+    } catch (error) {
+      this.log(`❌ Error in maintenance: ${error.message}`, 'ERROR');
+      return false;
+    }
+  }
+
+  async checkCurrentStatus() {
+    this.log('🔍 Checking current app status...');
+
+    try {
+      // Check if simple server is running
+      const isRunning = await this.isServerRunning();
+      if (isRunning) {
+        this.log('✅ Simple server is running');
+        this.improvements.push('Server status: Running');
+      } else {
+        this.log('⚠️ Simple server is not running', 'WARN');
+        this.issues.push('Server not running');
+      }
+
+      // Check if simple-server.js exists
+      if (fs.existsSync('simple-server.js')) {
+        this.log('✅ Simple server file exists');
+        this.improvements.push('Simple server file: Present');
+      } else {
+        this.log('❌ Simple server file missing', 'ERROR');
+        this.issues.push('Simple server file missing');
+      }
+
+      // Check package.json
+      if (fs.existsSync('package.json')) {
+        const packageJson = JSON.parse(fs.readFileSync('package.json', 'utf8'));
+        this.log('✅ Package.json is valid');
+        this.improvements.push('Package.json: Valid');
+      } else {
+        this.log('❌ Package.json missing', 'ERROR');
+        this.issues.push('Package.json missing');
+      }
+    } catch (error) {
+      this.log(`❌ Error checking status: ${error.message}`, 'ERROR');
+      this.issues.push(`Status check failed: ${error.message}`);
+    }
+  }
+
+  async isServerRunning() {
+    try {
+      const response = execSync(
+        'curl -s http://localhost:3006/api/health || echo "not running"',
+        { encoding: 'utf8' },
+      );
+      return !response.includes('not running');
+    } catch (error) {
+      return false;
+    }
+  }
+
+  async performHealthCheck() {
+    this.log('🏥 Performing health check...');
+
+    try {
+      const response = execSync('curl -s http://localhost:3006/api/health', {
+        encoding: 'utf8',
+      })
+const healthData = JSON.parse(response);
+
+      this.log(`✅ Health check passed: ${healthData.message}`);
+      this.improvements.push(`Health check: ${healthData.status}`);
+
+      // Check response time
+      const startTime = Date.now();
+      execSync('curl -s http://localhost:3006/api/health > /dev/null', {
+        stdio: 'ignore',
+      })
+const responseTime = Date.now() - startTime;
+
+      if (responseTime < 100) {
+        this.log(`✅ Response time: ${responseTime}ms (Excellent)`);
+        this.improvements.push(`Response time: ${responseTime}ms`);
+      } else if (responseTime < 500) {
+        this.log(`⚠️ Response time: ${responseTime}ms (Good)`, 'WARN');
+        this.improvements.push(`Response time: ${responseTime}ms`);
+      } else {
+        this.log(`❌ Response time: ${responseTime}ms (Slow)`, 'ERROR');
+        this.issues.push(`Slow response time: ${responseTime}ms`);
+      }
+    } catch (error) {
+      this.log(`❌ Health check failed: ${error.message}`, 'ERROR');
+      this.issues.push(`Health check failed: ${error.message}`);
+    }
+  }
+
+  async cleanupArtifacts() {
+    this.log('🧹 Cleaning up artifacts...');
+
+    try {
+      // Clean build artifacts
+      const artifacts = ['.next', 'node_modules/.cache', '.swc', 'dist', 'out'];
+      let cleanedCount = 0;
+
+      for (const artifact of artifacts) {
+        if (fs.existsSync(artifact)) {
+          execSync(`rm -rf ${artifact}`, { stdio: 'ignore' });
+          cleanedCount++;
+        }
+      }
+
+      if (cleanedCount > 0) {
+        this.log(`✅ Cleaned ${cleanedCount} artifacts`);
+        this.improvements.push(`Cleaned ${cleanedCount} artifacts`);
+      } else {
+        this.log('✅ No artifacts to clean');
+        this.improvements.push('No artifacts to clean');
+      }
+    } catch (error) {
+      this.log(`❌ Error cleaning artifacts: ${error.message}`, 'ERROR');
+      this.issues.push(`Cleanup failed: ${error.message}`);
+    }
+  }
+
+  async updateDependencies() {
+    this.log('📦 Checking dependencies...');
+
+    try {
+      // Check for outdated packages
+      const outdated = execSync('npm outdated --json || echo "{}"', {
+        encoding: 'utf8',
+      })
+const outdatedData = JSON.parse(outdated)
+const outdatedCount = Object.keys(outdatedData).length;
+      if (outdatedCount > 0) {
+        this.log(`⚠️ Found ${outdatedCount} outdated packages`, 'WARN');
+        this.issues.push(`${outdatedCount} outdated packages`);
+
+        // Update packages
+        this.log('🔄 Updating packages...');
+        execSync('npm update', { stdio: 'inherit' });
+        this.improvements.push('Updated outdated packages');
+      } else {
+        this.log('✅ All packages are up to date');
+        this.improvements.push('All packages up to date');
+      }
+
+      // Check for vulnerabilities
+      const audit = execSync('npm audit --json || echo "{}"', {
+        encoding: 'utf8',
+      })
+const auditData = JSON.parse(audit);
+
+      if (auditData.vulnerabilities) {
+        const vulnCount = Object.keys(auditData.vulnerabilities).length;
+        this.log(`⚠️ Found ${vulnCount} vulnerabilities`, 'WARN');
+        this.issues.push(`${vulnCount} vulnerabilities found`);
+      } else {
+        this.log('✅ No vulnerabilities found');
+        this.improvements.push('No vulnerabilities');
+      }
+    } catch (error) {
+      this.log(`❌ Error checking dependencies: ${error.message}`, 'ERROR');
+      this.issues.push(`Dependency check failed: ${error.message}`);
+    }
+  }
+
+  async optimizePerformance() {
+    this.log('⚡ Optimizing performance...');
+
+    try {
+      // Check file sizes
+      const fileSizes = this.getFileSizes();
+      this.log(`📁 Total project size: ${fileSizes.total} MB`);
+
+      if (fileSizes.total > 100) {
+        this.log('⚠️ Large project size detected', 'WARN');
+        this.issues.push('Large project size');
+      } else {
+        this.log('✅ Project size is reasonable');
+        this.improvements.push('Reasonable project size');
+      }
+
+      // Check for large files
+      const largeFiles = fileSizes.largeFiles;
+      if (largeFiles.length > 0) {
+        this.log(`⚠️ Found ${largeFiles.length} large files`, 'WARN');
+        this.issues.push(`${largeFiles.length} large files`);
+      } else {
+        this.log('✅ No large files detected');
+        this.improvements.push('No large files');
+      }
+
+      // Optimize node_modules
+      if (fs.existsSync('node_modules')) {
+        const nodeModulesSize = this.getDirectorySize('node_modules');
+        if (nodeModulesSize > 200) {
+          this.log('⚠️ Large node_modules detected', 'WARN');
+          this.issues.push('Large node_modules');
+        } else {
+          this.log('✅ node_modules size is reasonable');
+          this.improvements.push('Reasonable node_modules size');
+        }
+      }
+    } catch (error) {
+      this.log(`❌ Error optimizing performance: ${error.message}`, 'ERROR');
+      this.issues.push(`Performance optimization failed: ${error.message}`);
+    }
+  }
+
+  getFileSizes() {
+    const largeFiles = [];
+    let totalSize = 0
+const walkDir = (dir) => {
+      const files = fs.readdirSync(dir);
+      for (const file of files) {
+        const filePath = path.join(dir, file)
+const stat = fs.statSync(filePath);
+
+        if (stat.isDirectory()) {
+          walkDir(filePath);
+        } else {
+          const sizeMB = stat.size / (1024 * 1024);
+          totalSize += sizeMB;
+
+          if (sizeMB > 10) {
+            largeFiles.push({ path: filePath, size: sizeMB });
+          }
+        }
+      }
+    };
+
+    try {
+      walkDir('.');
+    } catch (error) {
+      // Ignore permission errors
+    }
+
+    return { total: Math.round(totalSize), largeFiles };
+  }
+
+  getDirectorySize(dir) {
+    try {
+      const size = execSync(`du -sm ${dir} | cut -f1`, { encoding: 'utf8' });
+      return parseInt(size.trim());
+    } catch (error) {
+      return 0;
+    }
+  }
+
+  async generateMaintenanceReport() {
+    this.log('📋 Generating maintenance report...')
+const report = {
+      timestamp: new Date().toISOString(),
+      status: this.issues.length === 0 ? 'HEALTHY' : 'NEEDS_ATTENTION',
+      summary: {
+        improvements: this.improvements.length,
+        issues: this.issues.length,
+        totalChecks: this.improvements.length + this.issues.length,
+      },
+      improvements: this.improvements,
+      issues: this.issues,
+      logs: this.maintenanceLog,
+    };
+
+    // Save report
+    const reportPath = `maintenance-reports/maintenance-${new Date().toISOString().split('T')[0]}.json`;
+
+    // Ensure directory exists
+    const dir = path.dirname(reportPath);
+    if (!fs.existsSync(dir)) {
+      fs.mkdirSync(dir, { recursive: true });
+    }
+
+    fs.writeFileSync(reportPath, JSON.stringify(report, null, 2));
+    this.log(`✅ Maintenance report saved: ${reportPath}`);
+
+    // Create summary file
+    const summaryPath = 'maintenance-reports/latest-summary.md'
+const summary = `# Zion App Maintenance Summary
+
+**Date**: ${new Date().toLocaleDateString()}
+**Status**: ${report.status}
+**Improvements**: ${report.summary.improvements}
+**Issues**: ${report.summary.issues}
+
+## ✅ Improvements
+${this.improvements.map((imp) => `- ${imp}`).join('\n')}
+
+## ⚠️ Issues
+${this.issues.map((issue) => `- ${issue}`).join('\n')}
+
+## 📊 Health Score
+**Score**: ${Math.round((this.improvements.length / (this.improvements.length + this.issues.length)) * 100)}%
+**Recommendation**: ${this.issues.length === 0 ? 'App is healthy!' : 'Address issues for optimal performance'}
+`;
+
+    fs.writeFileSync(summaryPath, summary);
+    this.log(`✅ Summary saved: ${summaryPath}`);
+
+    this.improvements.push('Maintenance report generated');
+  }
+
+  async startServer() {
+    this.log('🚀 Starting Zion app server...');
+
+    try {
+      if (await this.isServerRunning()) {
+        this.log('✅ Server is already running');
+        return true;
+      }
+
+      const serverProcess = spawn('node', ['simple-server.js'], {
+        stdio: 'pipe',
+        detached: false,
+      });
+
+      serverProcess.stdout.on('data', (data) => {
+        this.log(`SERVER: ${data.toString().trim()}`);
+      });
+
+      serverProcess.stderr.on('data', (data) => {
+        this.log(`SERVER ERROR: ${data.toString().trim()}`, 'ERROR');
+      });
+
+      // Wait for server to start
+      await new Promise((resolve) => 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = setTimeout(resolve,                          5000);
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+);
+
+      if (await this.isServerRunning()) {
+        this.log('✅ Server started successfully');
+        this.improvements.push('Server started successfully');
+        return true;
+      } else {
+        this.log('❌ Server failed to start', 'ERROR');
+        this.issues.push('Server failed to start');
+        return false;
+      }
+    } catch (error) {
+      this.log(`❌ Error starting server: ${error.message}`, 'ERROR');
+      this.issues.push(`Server start failed: ${error.message}`);
+      return false;
+    }
+  }
+}
+
+// Run if called directly
+if (require.main === module) {
+  const maintainer = new ZionAppMaintainer();
+
+  // Check command line arguments
+  const args = process.argv.slice(2);
+
+  if (args.includes('--start')) {
+    maintainer.startServer().catch((error) => {
+      logger.error('Failed to start server:', error);
+      process.exit(1);
+    });
+  } else {
+    maintainer.runMaintenance().catch((error) => {
+      logger.error('Maintenance failed:', error);
+      process.exit(1);
+    });
+  }
+}
+
+module.exports = ZionAppMaintainer;
+
+
+// Graceful shutdown handling
+process.on('SIGINT', () => {
+  console.log('\n🛑 Received SIGINT, shutting down gracefully...');
+  // Add cleanup logic here
+  process.exit(0);
+});
+
+process.on('SIGTERM', () => {
+  console.log('\n🛑 Received SIGTERM, shutting down gracefully...');
+  // Add cleanup logic here
+  process.exit(0);
+});
+

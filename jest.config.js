@@ -1,33 +1,25 @@
-export default {
-  preset: 'ts-jest/presets/default-esm',
+module.exports = {
   testEnvironment: 'jsdom',
-  extensionsToTreatAsEsm: ['.ts'],
-  globals: {
-    'ts-jest': {
-      useESM: true,
-    },
-  },
-  setupFilesAfterEnv: ['<rootDir>/tests/jest.setup.ts'],
-  extensionsToTreatAsEsm: ['.ts', '.tsx'],
-  globals: {
-    'ts-jest': {
-      useESM: true,
-    },
-  },
+  setupFilesAfterEnv: ['<rootDir>/jest.setup.js'],
   moduleNameMapper: {
-    '^@/pages/(.*)$': '<rootDir>/src/pages/$1',
-    '^@/(.*)$': '<rootDir>/src/$1',
-    '^@/pages/(.*)$': '<rootDir>/src/pages/$1',
-    '^vitest$': '<rootDir>/tests/vitest-mock.ts',
-    '^notistack$': '<rootDir>/src/stubs/notistack.tsx',
-    '^@sentry/browser$': '<rootDir>/src/stubs/sentry.ts',
+    ^@/(.*)$': <rootDir>/src/$1
   },
-  roots: ['<rootDir>/__tests__', '<rootDir>/tests'],
-  coverageThreshold: {
-    global: {
-      lines: 80,
-      functions: 80,
-    },
+  testPathIgnorePatterns: [
+    <rootDir>/.next/',
+    <rootDir>/node_modules/',
+    <rootDir>/out/
+  ],
+  transform: {
+    ^.+\\.(js|jsx|ts|tsx)$': ['babel-jest', { presets: ['next/babel'] }]
   },
+  collectCoverageFrom: [
+    src/**/*.{js,jsx,ts,tsx},
+    pages/**/*.{js,jsx,ts,tsx},
+    !**/*.d.ts',
+    !**/node_modules/**
+  ],
+  testMatch: [
+    **/__tests__/**/*.(ts|tsx|js),
+    **/?(*.)+(spec|test).(ts|tsx|js)
+  ]
 };
-

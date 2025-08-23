@@ -22,6 +22,7 @@ import {
   Database,
   Code
 } from 'lucide-react';
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
 import Link from 'next/link';
 
 const ResourcesPage: React.FC = () => {
@@ -32,6 +33,7 @@ const ResourcesPage: React.FC = () => {
       icon: FileText,
       color: 'from-blue-500 to-cyan-500',
       featured: true
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
     },
     {
       icon: <BookOpen className="w-8 h-8" />,
@@ -78,6 +80,7 @@ const ResourcesPage: React.FC = () => {
           time: '18 min',
           link: '/case-studies/manufacturing-iot'
         }
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
       ]
     }
   ];
@@ -89,6 +92,7 @@ const ResourcesPage: React.FC = () => {
     { label: 'Community Forum', href: '/community', icon: User },
     { label: 'Support Center', href: '/support', icon: Shield },
     { label: 'Developer Blog', href: '/blog', icon: BookOpen }
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
   ];
 
   return (
@@ -98,6 +102,7 @@ const ResourcesPage: React.FC = () => {
         <section className="relative py-20 lg:py-32 overflow-hidden">
           <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/10 via-purple-500/10 to-pink-500/10" />
           <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -110,6 +115,7 @@ const ResourcesPage: React.FC = () => {
               <p className="text-xl lg:text-2xl text-gray-300 max-w-4xl mx-auto leading-relaxed mb-8">
                 Access comprehensive documentation, tutorials, case studies, and insights 
                 to help you succeed with Zion Tech Group technologies.
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
               </p>
             </header>
             
@@ -208,6 +214,7 @@ const ResourcesPage: React.FC = () => {
         {/* Quick Links */}
         <section className="py-16 bg-gradient-to-b from-black via-gray-900 to-black">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -262,6 +269,7 @@ const ResourcesPage: React.FC = () => {
             </motion.div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
               {featuredResources.map((resource, index) => (
                 <motion.div
                   key={resource.title}
@@ -302,6 +310,7 @@ const ResourcesPage: React.FC = () => {
           </div>
         </section>
                   </a>
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
                 </motion.div>
               ))}
             </div>
@@ -311,6 +320,7 @@ const ResourcesPage: React.FC = () => {
         {/* Resource Categories */}
         <section className="py-20 bg-gradient-to-b from-black via-gray-900 to-black">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -329,6 +339,7 @@ const ResourcesPage: React.FC = () => {
               {resourceCategories.map((category, categoryIndex) => (
                 <motion.div
                   key={category.title}
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.8, delay: categoryIndex * 0.1 }}
@@ -398,6 +409,7 @@ const ResourcesPage: React.FC = () => {
                           <span className="font-medium">Read More</span>
                           <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform duration-300" />
                         </div>
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
                       </motion.div>
                     ))}
                   </div>
@@ -411,6 +423,7 @@ const ResourcesPage: React.FC = () => {
         {/* CTA Section */}
         <section className="py-20 bg-black">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -438,6 +451,7 @@ const ResourcesPage: React.FC = () => {
                 >
                   Browse Documentation
                 </a>
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
               </div>
             </motion.div>
           </div>

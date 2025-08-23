@@ -2,7 +2,7 @@
 
 .guest-checkout-modal-input {
   background-color: #172d67; /* zion-blue-dark */
-  color: #FFFFFF; /* text-white */
+  color: #ffffff; /* text-white */
   border: 1px solid #8ab1f3; /* zion-blue-light */
   padding: 0.5rem 0.75rem; /* Equivalent to Tailwind's px-3 py-2 for h-10 inputs */
   border-radius: 0.375rem; /* Equivalent to Tailwind's rounded-md */
@@ -19,5 +19,7 @@
 
 /* It might be better to also define placeholder color if it was important */
 .guest-checkout-modal-input::placeholder {
-  color: hsl(var(--muted-foreground)); /* Default placeholder color from original input. Adjust if zion theme has a specific one */
+  color: hsl(
+    var(--muted-foreground)
+  ); /* Default placeholder color from original input. Adjust if zion theme has a specific one */
 }

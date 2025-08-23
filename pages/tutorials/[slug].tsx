@@ -1,30 +1,7 @@
-import TutorialPage from '@/pages/Tutorial';
-import { TUTORIALS } from '@/data/tutorials';
-import type { GetStaticPaths, GetStaticProps } from 'next';
-import type { Tutorial } from '@/types/tutorial';
-
-interface PageProps {
-  tutorial: Tutorial;
-}
-
-export default function Page({ tutorial }: PageProps) {
-  return <TutorialPage tutorial={tutorial} />;
-}
-
-export const getStaticPaths: GetStaticPaths = async () => {
-  const paths = TUTORIALS.map(t => ({ params: { slug: t.slug } }));
-  return { paths, fallback: false };
-};
-
-export const getStaticProps: GetStaticProps = async ({
-  params,
-}: {
-  params?: { slug?: string };
-}) => {
-  const slug = params?.slug as string;
-  const tutorial = TUTORIALS.find(t => t.slug === slug) || null;
-  if (!tutorial) {
-    return { notFound: true };
-  }
-  return { props: { tutorial } };
-};
+import React from 'react';
+import Head from 'next/head';
+  return (
+    <>
+      <Head><title>tutorials/[slug] - Zion App</title><meta name="description" content="tutorials/[slug] page" /></Head><div className="container mx-auto px-4 py-8"><h1 className="text-3xl font-bold mb-6">tutorials/[slug]</h1><p className="text-lg mb-4">This page is under construction.</p><div className="mt-4"><a href="/" className="text-blue-600 hover:underline">;
+            ← Back to Home</a></div></div></>;
+  );

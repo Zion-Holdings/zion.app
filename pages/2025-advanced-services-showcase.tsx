@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import SEO from '../components/SEO';
 import { motion, AnimatePresence } from 'framer-motion';
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
 import { 
   Search, Grid, List, Star, CheckCircle, Shield, 
   Brain, Cloud, Zap, Users, TrendingUp, Lock,
@@ -15,6 +16,7 @@ import { real2025AdvancedAIServices } from '../data/real-2025-advanced-ai-servic
 import { real2025EmergingTechServices } from '../data/real-2025-emerging-tech-services';
 
 const contact = {
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
   mobile: '+1 302 464 0950',
   email: 'kleber@ziontechgroup.com',
   address: '364 E Main St STE 1008 Middletown DE 19709',
@@ -53,6 +55,7 @@ export default function AdvancedServicesShowcase2025() {
         case 'customers':
           return b.customers - a.customers;
         default:
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
           return a.name.localeCompare(b.name);
         case 'price':
           return (a.price?.monthly || 0) - (b.price?.monthly || 0);
@@ -210,6 +213,7 @@ const AdvancedServicesShowcase: React.FC = () => {
               Call Now
             </a>
 =======
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
           </motion.div>
         </div>
       </section>
@@ -244,6 +248,7 @@ const AdvancedServicesShowcase: React.FC = () => {
                   <p className="text-gray-300">{contact.address}</p>
                 </div>
               </div>
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
             </div>
           </div>
         </div>
@@ -337,6 +342,7 @@ const AdvancedServicesShowcase: React.FC = () => {
 
           <AnimatePresence mode="wait">
             {viewMode === 'grid' ? (
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
               <motion.div
                 key={service.id}
                 initial={{ opacity: 0, y: 20 }}
@@ -471,6 +477,7 @@ const AdvancedServicesShowcase: React.FC = () => {
           </motion.div>
         </div>
       </section>
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
     </div>
   );
 };

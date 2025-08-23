@@ -137,13 +137,4 @@ module.exports = {
     require('@tailwindcss/typography'),
     require('@tailwindcss/aspect-ratio'),
   ],
-  darkMode: 'class',
-  variants: {
-    extend: {
-      opacity: ['disabled'],
-      cursor: ['disabled'],
-      backgroundColor: ['disabled'],
-      textColor: ['disabled'],
-    },
-  },
-};
+}

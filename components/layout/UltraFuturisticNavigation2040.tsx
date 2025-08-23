@@ -132,13 +132,6 @@ const UltraFuturisticNavigation2040: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
   const [searchQuery, setSearchQuery] = useState('');
-  const [isSearchOpen, setIsSearchOpen] = useState(false);
-  const [isLoading, setIsLoading] = useState(false);
-  
-  const router = useRouter();
-  const navRef = useRef<HTMLElement>(null);
-  const searchRef = useRef<HTMLInputElement>(null);
-  const dropdownRefs = useRef<{ [key: string]: HTMLDivElement | null }>({});
 
   // Memoized scroll handler for better performance
   const handleScroll = useCallback(() => {
@@ -184,11 +177,181 @@ const UltraFuturisticNavigation2040: React.FC = () => {
     return () => document.removeEventListener('mousedown', handleClickOutside);
   }, [activeDropdown]);
 
-  // Handle keyboard navigation
-  const handleKeyDown = useCallback((e: React.KeyboardEvent, action: () => void) => {
-    if (e.key === 'Enter' || e.key === ' ') {
-      e.preventDefault();
-      action();
+  const navigationItems = [
+    {
+      name: 'Home',
+      href: '/',
+      icon: Home,
+      description: 'Welcome to the future of technology'
+    },
+    {
+      name: 'Services',
+      href: '/services',
+      icon: Briefcase,
+      description: 'Explore our revolutionary solutions',
+      dropdown: [
+        {
+          name: 'Revolutionary 2046 Services',
+          href: '/revolutionary-2046-services-showcase',
+          icon: Sparkles,
+          description: 'Next-generation 2046 technology solutions',
+          color: 'from-purple-500 to-pink-500'
+        },
+        {
+          name: 'AI & Consciousness',
+          href: '/services/ai-consciousness',
+          icon: Brain,
+          description: 'AI consciousness evolution and development',
+          color: 'from-cyan-500 to-blue-500'
+        },
+        {
+          name: 'Quantum Technology',
+          href: '/services/quantum-technology',
+          icon: Atom,
+          description: 'Quantum computing and hybrid systems',
+          color: 'from-blue-500 to-indigo-500'
+        },
+        {
+          name: 'Cybersecurity',
+          href: '/services/cybersecurity',
+          icon: Shield,
+          description: 'Advanced security and protection',
+          color: 'from-red-500 to-orange-500'
+        },
+        {
+          name: 'Business Solutions',
+          href: '/services/business-solutions',
+          icon: Target,
+          description: 'Micro SAAS and business automation',
+          color: 'from-emerald-500 to-teal-500'
+        },
+        {
+          name: 'IT Infrastructure',
+          href: '/services/it-infrastructure',
+          icon: Cpu,
+          description: 'Cloud and infrastructure solutions',
+          color: 'from-yellow-500 to-orange-500'
+        },
+        {
+          name: 'Space Technology',
+          href: '/services/space-technology',
+          icon: Rocket,
+          description: 'Space exploration and resource management',
+          color: 'from-pink-500 to-red-500'
+        }
+      ]
+    },
+    {
+      name: 'Solutions',
+      href: '/solutions',
+      icon: Sparkles,
+      description: 'Industry-specific technology solutions',
+      dropdown: [
+        {
+          name: 'Healthcare & Biotech',
+          href: '/solutions/healthcare',
+          icon: Heart,
+          description: 'AI-powered healthcare solutions',
+          color: 'from-red-500 to-pink-500'
+        },
+        {
+          name: 'Financial Services',
+          href: '/solutions/financial',
+          icon: DollarSign,
+          description: 'Fintech and banking solutions',
+          color: 'from-green-500 to-emerald-500'
+        },
+        {
+          name: 'Manufacturing',
+          href: '/solutions/manufacturing',
+          icon: Cpu,
+          description: 'Smart manufacturing and automation',
+          color: 'from-blue-500 to-indigo-500'
+        },
+        {
+          name: 'Retail & E-commerce',
+          href: '/solutions/retail',
+          icon: ShoppingCart,
+          description: 'Digital commerce solutions',
+          color: 'from-purple-500 to-pink-500'
+        },
+        {
+          name: 'Education',
+          href: '/solutions/education',
+          icon: GraduationCap,
+          description: 'Edtech and learning platforms',
+          color: 'from-indigo-500 to-purple-500'
+        },
+        {
+          name: 'Government',
+          href: '/solutions/government',
+          icon: Building,
+          description: 'Public sector technology',
+          color: 'from-gray-500 to-blue-500'
+        },
+        {
+          name: 'Energy & Utilities',
+          href: '/solutions/energy',
+          icon: ZapIcon,
+          description: 'Smart energy and grid solutions',
+          color: 'from-yellow-500 to-orange-500'
+        },
+        {
+          name: 'Transportation',
+          href: '/solutions/transportation',
+          icon: Truck,
+          description: 'Smart transportation and logistics',
+          color: 'from-blue-500 to-cyan-500'
+        }
+      ]
+    },
+    {
+      name: 'About',
+      href: '/about',
+      icon: Users,
+      description: 'Learn about our mission and team'
+    },
+    {
+      name: 'Resources',
+      href: '/resources',
+      icon: FileText,
+      description: 'Knowledge base and insights',
+      dropdown: [
+        {
+          name: 'Blog',
+          href: '/blog',
+          icon: FileText,
+          description: 'Latest insights and updates',
+          color: 'from-blue-500 to-cyan-500'
+        },
+        {
+          name: 'Case Studies',
+          href: '/case-studies',
+          icon: Star,
+          description: 'Success stories and results',
+          color: 'from-green-500 to-emerald-500'
+        },
+        {
+          name: 'Webinars',
+          href: '/webinars',
+          icon: Zap,
+          description: 'Educational content and events',
+          color: 'from-purple-500 to-pink-500'
+        },
+        {
+          name: 'Documentation',
+          href: '/docs',
+          icon: FileText,
+          description: 'Technical guides and API docs',
+          color: 'from-indigo-500 to-blue-500'
+        }
+      ]
+    },
+    {
+      name: 'Contact',
+      href: '/contact',
+      icon: Phone,
+      description: 'Get in touch with our experts'
     }
   }, []);
 
@@ -345,8 +508,8 @@ const UltraFuturisticNavigation2040: React.FC = () => {
                   </AnimatePresence>
                 )}
               </div>
-            ))}
-          </div>
+              <span className="text-lg font-bold text-white">Zion Tech</span>
+            </Link>
 
           {/* Right side actions */}
           <div className="hidden lg:flex items-center space-x-4">

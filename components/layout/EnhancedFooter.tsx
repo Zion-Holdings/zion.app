@@ -69,6 +69,7 @@ const contactInfo = {
 
 const EnhancedFooter: React.FC = () => {
   const currentYear = new Date().getFullYear();
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
 
   return (
     <footer className="bg-gray-900 border-t border-gray-800" role="contentinfo" aria-label="Site footer">
@@ -252,6 +253,7 @@ const EnhancedFooter: React.FC = () => {
       >
         <ArrowUp className="w-6 h-6 text-white" />
       </motion.button>
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
     </footer>
   );
 };

@@ -96,6 +96,7 @@ export default function Leadership() {
         {/* Hero Section */}
         <section className="relative pt-32 pb-20 px-4">
           <div className="max-w-7xl mx-auto text-center">
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -112,12 +113,14 @@ export default function Leadership() {
               <p className="text-xl md:text-2xl text-gray-300 max-w-4xl mx-auto leading-relaxed">
                 Meet the visionary leaders and expert teams driving Zion Tech Group's mission 
                 to revolutionize technology and create a better future for humanity.
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
               </p>
             </motion.div>
           </div>
         </section>
 
         {/* Leadership Team */}
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
         <section className="py-20 px-4">
           <div className="max-w-7xl mx-auto">
             <motion.div
@@ -132,6 +135,7 @@ export default function Leadership() {
               <p className="text-xl text-gray-300 max-w-3xl mx-auto">
                 Our leadership team brings together decades of experience in cutting-edge technology, 
                 strategic vision, and innovative thinking to drive Zion Tech Group forward.
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
               </p>
             </motion.div>
 
@@ -166,6 +170,7 @@ export default function Leadership() {
                               key={skillIndex}
                               className="px-3 py-1 bg-gray-800/50 text-cyan-400 text-sm rounded-full border border-gray-700/50"
                             >
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
                               {skill}
                             </span>
                           ))}
@@ -178,6 +183,7 @@ export default function Leadership() {
                             rel="noopener noreferrer"
                             className="flex items-center space-x-2 text-blue-400 hover:text-blue-300 transition-colors"
                           >
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
                             <Linkedin className="w-4 h-4" />
                             <span className="text-sm">LinkedIn</span>
                           </a>
@@ -241,6 +247,7 @@ export default function Leadership() {
         {/* Stats Section */}
         <section className="py-20 px-4">
           <div className="max-w-7xl mx-auto">
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -307,6 +314,7 @@ export default function Leadership() {
                 >
                   Contact Leadership
                   <Mail className="w-5 h-5 ml-2" />
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
                 </a>
               </div>
             </motion.div>
@@ -318,3 +326,4 @@ export default function Leadership() {
 };
 
 export default LeadershipPage;
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96

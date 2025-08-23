@@ -76,6 +76,7 @@ export const innovativeMicroSaasServices: InnovativeMicroSaasService[] = [
     link: 'https://ziontechgroup.com/services/ai-content-calendar-optimizer',
     marketPosition: 'Competitive with Buffer ($15/month), Hootsuite ($49/month), and Later ($25/month). Our advantage: AI optimization, predictive analytics, and automated scheduling.',
     targetAudience: 'Marketing teams, Social media managers, Content creators, Small businesses, Digital agencies',
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
     trialDays: 14,
     setupTime: '1 hour',
     category: 'AI & Content Marketing',
@@ -93,6 +94,7 @@ export const innovativeMicroSaasServices: InnovativeMicroSaasService[] = [
     implementationDetails: 'Complete AI-powered content optimization platform with machine learning algorithms for timing optimization and engagement prediction.',
     launchDate: '2025-01-15',
     customers: 127,
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
     rating: 4.7,
     reviews: 89
   },
@@ -140,6 +142,7 @@ export const innovativeMicroSaasServices: InnovativeMicroSaasService[] = [
     realImplementation: true,
     implementationDetails: 'Complete AI-powered expense management platform with OCR, machine learning categorization, and automated workflows.',
     launchDate: '2025-01-20',
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
     customers: 203,
     rating: 4.8,
     reviews: 127
@@ -334,6 +337,7 @@ export const innovativeMicroSaasServices: InnovativeMicroSaasService[] = [
     launchDate: '2025-02-01',
     customers: 156,
     rating: 4.5,
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
     reviews: 112
   },
 
@@ -482,6 +486,7 @@ export const innovativeMicroSaasServices: InnovativeMicroSaasService[] = [
   },
 
   // Smart HR Analytics Platform
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
   {
     id: 'quantum-safe-cybersecurity-platform',
     name: 'Quantum-Safe Cybersecurity Platform',

@@ -1,6 +1,7 @@
 import { ServiceVariant } from '../types/service-variants';
 
 export interface InnovativeAIServicesExpansion {
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
   id: string;
   name: string;
   tagline: string;
@@ -296,5 +297,6 @@ export const innovativeAIServicesExpansion: InnovativeAIServicesExpansion[] = [
     customers: 89,
     rating: 4.9,
     reviews: 67
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
   }
 ];

@@ -1,3 +1,4 @@
+=======
 import React from 'react';
 import Layout from '../components/layout/Layout';
 import { Phone, Mail, MapPin, Clock, MessageSquare, Send, Star, Award, Zap, Users } from 'lucide-react';
@@ -72,6 +73,7 @@ const ContactPage: React.FC = () => {
                 Ready to transform your business with revolutionary technology? 
                 Get in touch with our expert team today.
               </p>
+=======
             </div>
           </div>
         </section>
@@ -281,6 +283,3 @@ const ContactPage: React.FC = () => {
       </div>
     </Layout>
   );
-};
-
-export default ContactPage;

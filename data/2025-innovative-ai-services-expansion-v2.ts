@@ -67,6 +67,7 @@ export const innovativeAIServices2025V2: InnovativeAIService2025V2[] = [
       starter: '$199/month',
       professional: '$599/month',
       enterprise: '$1,499/month',
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
       custom: 'Contact for pricing'
     },
     features: [
@@ -564,5 +565,6 @@ export const innovativeAIServices2025V2: InnovativeAIService2025V2[] = [
     email: 'kleber@ziontechgroup.com',
     address: '364 E Main St STE 1008 Middletown DE 19709'
 =======
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
   }
 ];

@@ -57,6 +57,7 @@ export interface InnovativeITService2025V2 {
 
 export const innovativeITServices2025V2: InnovativeITService2025V2[] = [
   // Quantum-Safe Cybersecurity Platform
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
   {
     id: 'cloud-native-application-development',
     name: 'Cloud-Native Application Development Services',
@@ -462,5 +463,6 @@ export const innovativeITServices2025V2: InnovativeITService2025V2[] = [
     email: 'kleber@ziontechgroup.com',
     address: '364 E Main St STE 1008 Middletown DE 19709'
 =======
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
   }
 ];

@@ -8,7 +8,7 @@ chains:
   base:
     chainId: 8453
   cosmos:
-    chainId: "cosmwasm"
+    chainId: 'cosmwasm'
   arbitrum:
     chainId: 42161
   optimism:

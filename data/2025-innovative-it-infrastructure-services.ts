@@ -228,4 +228,5 @@ export const innovativeITInfrastructureServices: EnhancedRealMicroSaasService[] 
 		rating: 4.7,
 		reviews: 12
 	}
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
 ];

@@ -9,6 +9,7 @@ import {
 } from 'lucide-react';
 
 const AIServicesPage: React.FC = () => {
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
   const aiServices = [
     {
       icon: Brain,
@@ -80,6 +81,7 @@ const AIServicesPage: React.FC = () => {
       description: 'Customer personalization, inventory management, and demand forecasting',
       icon: <ShoppingBag className="w-8 h-8" />,
       color: 'from-purple-500 to-indigo-600'
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
     }
   ];
 
@@ -93,6 +95,7 @@ const AIServicesPage: React.FC = () => {
         {/* Hero Section */}
         <section className="relative py-20 px-4 sm:px-6 lg:px-8">
           <div className="max-w-7xl mx-auto text-center">
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -105,6 +108,7 @@ const AIServicesPage: React.FC = () => {
                   AI Services
                 </h1>
               </div>
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
             </motion.div>
           </div>
         </section>
@@ -252,6 +256,7 @@ const AIServicesPage: React.FC = () => {
                 >
                   Explore Solutions
                 </a>
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
               </div>
             </motion.div>
           </div>
@@ -262,3 +267,4 @@ const AIServicesPage: React.FC = () => {
 };
 
 export default AIServicesPage;
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96

@@ -35,6 +35,7 @@ const EnterpriseSolutionsPage: React.FC = () => {
       icon: <BarChart3 className="w-8 h-8" />,
       features: ["Real-time analytics", "Predictive modeling", "Data governance", "Executive dashboards"],
       href: "/services?category=bi"
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
     }
   ];
 
@@ -42,6 +43,7 @@ const EnterpriseSolutionsPage: React.FC = () => {
     {
       title: "Scalability",
       description: "Solutions that grow with your enterprise",
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
       icon: <TrendingUp className="w-6 h-6" />
     },
     {
@@ -57,6 +59,7 @@ const EnterpriseSolutionsPage: React.FC = () => {
     {
       title: "Support",
       description: "24/7 enterprise support and maintenance",
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
       icon: <Users className="w-6 h-6" />
     }
   ];
@@ -70,6 +73,7 @@ const EnterpriseSolutionsPage: React.FC = () => {
         {/* Hero Section */}
         <section className="relative py-20 px-4 sm:px-6 lg:px-8">
           <div className="max-w-7xl mx-auto text-center">
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -94,6 +98,7 @@ const EnterpriseSolutionsPage: React.FC = () => {
                   className="px-8 py-4 border border-cyan-500/30 text-cyan-400 rounded-lg font-semibold hover:bg-cyan-500/10 transition-all duration-300"
                 >
                   View Case Studies
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
                 </a>
               </div>
             </motion.div>
@@ -145,6 +150,7 @@ const EnterpriseSolutionsPage: React.FC = () => {
                   >
                     Learn More
                     <Zap className="w-4 h-4 ml-2" />
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
                   </a>
                 </motion.div>
               ))}
@@ -183,6 +189,7 @@ const EnterpriseSolutionsPage: React.FC = () => {
                   </div>
                   <h3 className="text-xl font-semibold mb-2">{benefit.title}</h3>
                   <p className="text-gray-400">{benefit.description}</p>
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
                 </motion.div>
               ))}
             </div>
@@ -200,6 +207,7 @@ const EnterpriseSolutionsPage: React.FC = () => {
               <h2 className="text-4xl font-bold mb-6">Ready to Transform Your Enterprise?</h2>
               <p className="text-xl text-gray-400 mb-8">
                 Let's discuss how our enterprise solutions can drive innovation and growth in your organization
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <a
@@ -213,6 +221,7 @@ const EnterpriseSolutionsPage: React.FC = () => {
                   className="px-8 py-4 border border-cyan-500/30 text-cyan-400 rounded-lg font-semibold hover:bg-cyan-500/10 transition-all duration-300"
                 >
                   View Pricing
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
                 </a>
               </div>
             </motion.div>

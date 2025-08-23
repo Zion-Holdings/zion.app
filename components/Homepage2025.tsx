@@ -1,4 +1,4 @@
-import React, { Suspense, lazy, useState, useEffect } from 'react';
+import React from 'react';
 import Layout from './layout/Layout';
 import Link from 'next/link';
 import { motion, useInView } from 'framer-motion';
@@ -195,30 +195,29 @@ const Homepage2025: React.FC = () => {
               transition={{ duration: 0.8 }}
               className="mb-8"
             >
-              {/* Theme Toggle */}
-              <motion.div
-                variants={itemVariants}
-                className="absolute top-4 right-4"
-              >
-                <button
-                  onClick={toggleTheme}
-                  className="p-2 rounded-full bg-gray-800/50 backdrop-blur-sm border border-gray-700/50 hover:bg-gray-700/50 transition-all duration-300"
-                  aria-label={`Switch to ${isDarkMode ? 'light' : 'dark'} mode`}
-                >
-                  {isDarkMode ? <Sun className="w-5 h-5 text-yellow-400" /> : <Moon className="w-5 h-5 text-blue-400" />}
-                </button>
-              </motion.div>
-
-              {/* Company Badge */}
-              <motion.div
-                variants={itemVariants}
-                className="inline-flex items-center space-x-2 px-4 py-2 bg-gradient-to-r from-cyan-500/20 to-purple-500/20 border border-cyan-400/30 rounded-full text-cyan-400 text-sm font-medium backdrop-blur-sm"
-                role="banner"
-                aria-label="Company recognition"
-              >
-                <Star className="w-4 h-4" aria-hidden="true" />
-                <span>Innovation Leader 2025</span>
-              </motion.div>
+              <div className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-cyan-500/20 to-blue-500/20 border border-cyan-500/30 rounded-full text-cyan-400 text-sm font-medium mb-6">
+                <Sparkles className="w-4 h-4" />
+                Pioneering the Future of Technology
+              </div>
+            </motion.div>
+            
+            <motion.h1 
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              className="text-6xl md:text-8xl font-bold mb-6 bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 bg-clip-text text-transparent leading-tight"
+            >
+              Zion Tech Group
+            </motion.h1>
+            
+            <motion.p 
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.4 }}
+              className="text-xl md:text-2xl text-gray-300 mb-12 max-w-3xl mx-auto leading-relaxed"
+            >
+              Empowering businesses with cutting-edge AI, quantum computing, and innovative solutions that drive digital transformation and competitive advantage
+            </motion.p>
               
             {/* Enhanced Search Bar */}
             <motion.div
@@ -393,11 +392,13 @@ const Homepage2025: React.FC = () => {
               transition={{ duration: 0.6, delay: 0.4 }}
               className="text-center mt-12"
             >
-              <Link href="/services" aria-label="View all services">
-                <button className="px-8 py-4 border-2 border-cyan-400 text-cyan-400 font-semibold rounded-lg hover:bg-cyan-400 hover:text-black transition-all duration-300 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-cyan-300 focus:ring-offset-2 focus:ring-offset-black">
-                  View All Services
-                </button>
-              </Link>
+              <button className="group px-8 py-4 bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-semibold rounded-xl hover:from-cyan-600 hover:to-blue-700 transition-all duration-300 transform hover:scale-105 hover:shadow-2xl hover:shadow-cyan-500/25 flex items-center gap-2">
+                Get Started Today
+                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+              </button>
+              <button className="px-8 py-4 border-2 border-cyan-400 text-cyan-400 font-semibold rounded-xl hover:bg-cyan-400 hover:text-black transition-all duration-300 transform hover:scale-105 backdrop-blur-sm">
+                Explore Solutions
+              </button>
             </motion.div>
           </div>
         </section>
@@ -442,57 +443,11 @@ const Homepage2025: React.FC = () => {
                       />
                     ))}
                   </div>
-                  <blockquote className="text-xl md:text-2xl text-white italic mb-6">
-                    "{testimonials[currentTestimonial].content}"
-                  </blockquote>
-                  <div className="flex items-center justify-center space-x-4">
-                    <div className="w-16 h-16 bg-gradient-to-r from-cyan-500 to-blue-600 rounded-full flex items-center justify-center text-white text-xl font-bold">
-                      {testimonials[currentTestimonial].name.charAt(0)}
-                    </div>
-                    <div>
-                      <div className="text-white font-semibold">
-                        {testimonials[currentTestimonial].name}
-                      </div>
-                      <div className="text-gray-400">
-                        {testimonials[currentTestimonial].role}
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Navigation Controls */}
-                <div className="flex justify-center space-x-4">
-                  <button
-                    onClick={prevTestimonial}
-                    className="p-2 bg-gray-700 hover:bg-gray-600 rounded-lg transition-colors"
-                    aria-label="Previous testimonial"
-                  >
-                    <ChevronLeft className="w-5 h-5 text-white" />
-                  </button>
-                  <div className="flex space-x-2">
-                    {testimonials.map((_, index) => (
-                      <button
-                        key={index}
-                        onClick={() => setCurrentTestimonial(index)}
-                        className={`w-3 h-3 rounded-full transition-colors ${
-                          index === currentTestimonial
-                            ? 'bg-cyan-500'
-                            : 'bg-gray-600 hover:bg-gray-500'
-                        }`}
-                        aria-label={`Go to testimonial ${index + 1}`}
-                      />
-                    ))}
-                  </div>
-                  <button
-                    onClick={nextTestimonial}
-                    className="p-2 bg-gray-700 hover:bg-gray-600 rounded-lg transition-colors"
-                    aria-label="Next testimonial"
-                  >
-                    <ChevronRight className="w-5 h-5 text-white" />
-                  </button>
-                </div>
-              </div>
-            </motion.div>
+                  <h3 className="text-xl font-semibold text-white mb-3">{feature.title}</h3>
+                  <p className="text-gray-300 leading-relaxed">{feature.description}</p>
+                </motion.div>
+              ))}
+            </div>
           </div>
         </section>
 

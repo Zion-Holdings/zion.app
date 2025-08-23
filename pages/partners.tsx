@@ -385,6 +385,3 @@ const Partners: React.FC = () => {
       </div>
     </Layout>
   );
-};
-
-export default Partners;

@@ -28,6 +28,7 @@ const AccessibilityPage: React.FC = () => {
       description: "Clear navigation and simplified user experience",
       icon: <Brain className="w-8 h-8" />,
       features: ["Simple navigation", "Clear language", "Consistent layout", "Error prevention"]
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
     }
   ];
 
@@ -52,6 +53,7 @@ const AccessibilityPage: React.FC = () => {
       description: "European accessibility requirements for ICT products and services",
       status: "Compliant"
     }
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
   ];
 
   const accessibilityTools = [
@@ -117,6 +119,7 @@ const AccessibilityPage: React.FC = () => {
               <p className="text-xl text-gray-300 max-w-3xl mx-auto">
                 We believe technology should be accessible to everyone. Our commitment to accessibility 
                 ensures that all users can experience the full potential of our platform.
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
               </p>
             </motion.div>
           </div>
@@ -124,6 +127,7 @@ const AccessibilityPage: React.FC = () => {
 
         {/* Accessibility Features */}
         <section className="py-16 px-4 sm:px-6 lg:px-8">
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
           <div className="max-w-7xl mx-auto">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -161,6 +165,7 @@ const AccessibilityPage: React.FC = () => {
                       </li>
                     ))}
                   </ul>
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
                 </motion.div>
               ))}
             </div>
@@ -169,6 +174,7 @@ const AccessibilityPage: React.FC = () => {
 
         {/* Compliance Standards */}
         <section className="py-16 px-4 sm:px-6 lg:px-8 bg-white/5">
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
           <div className="max-w-7xl mx-auto">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -239,6 +245,7 @@ const AccessibilityPage: React.FC = () => {
                   <p className="text-gray-300">{tool.description}</p>
                 </motion.div>
               ))}
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
             </div>
           </div>
         </section>
@@ -282,6 +289,7 @@ const AccessibilityPage: React.FC = () => {
 
         {/* Contact Section */}
         <section className="py-16 px-4 sm:px-6 lg:px-8">
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
           <div className="max-w-4xl mx-auto text-center">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -291,6 +299,7 @@ const AccessibilityPage: React.FC = () => {
             >
               <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
                 Have Accessibility Feedback?
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
               </h2>
               <p className="text-lg text-gray-300 mb-8">
                 We're committed to continuous improvement. If you have suggestions or encounter 
@@ -313,3 +322,4 @@ const AccessibilityPage: React.FC = () => {
 };
 
 export default AccessibilityPage;
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96

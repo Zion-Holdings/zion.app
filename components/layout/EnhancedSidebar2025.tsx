@@ -7,6 +7,7 @@ import {
   Brain, Atom, Shield, Cloud, BarChart, Code, Rocket as RocketIcon, Users, Info, Briefcase,
   Heart, DollarSign, Cog, FileText, Calendar, Lightbulb, HelpCircle, Monitor, Zap, Star,
   Settings, Globe, Lock, Server, Database, Network, Palette, Cpu, Layers, Globe2, Truck, Accessibility
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
 } from 'lucide-react';
 
 interface SidebarItem {
@@ -225,6 +226,7 @@ const EnhancedSidebar2025: React.FC<EnhancedSidebar2025Props> = ({ isOpen, onClo
     router.push(href);
     onClose();
   };
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
 
   return (
     <AnimatePresence>
@@ -261,6 +263,7 @@ const EnhancedSidebar2025: React.FC<EnhancedSidebar2025Props> = ({ isOpen, onClo
                 <button
                   onClick={onClose}
                   className="p-2 text-gray-400 hover:text-white hover:bg-gray-800 rounded-lg transition-colors"
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
                 >
                   <X className="w-5 h-5" />
                 </button>
@@ -268,12 +271,14 @@ const EnhancedSidebar2025: React.FC<EnhancedSidebar2025Props> = ({ isOpen, onClo
               
               {/* Search */}
               <div className="relative">
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
                 <input
                   type="text"
                   placeholder="Search navigation..."
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
                   className="w-full px-3 py-2 bg-gray-800/50 border border-gray-700 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:border-transparent text-sm"
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
                 />
               </div>
             </div>
@@ -388,6 +393,7 @@ const EnhancedSidebar2025: React.FC<EnhancedSidebar2025Props> = ({ isOpen, onClo
                   >
                     Privacy
                   </Link>
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
                 </div>
               </div>
             </div>

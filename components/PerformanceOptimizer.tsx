@@ -116,9 +116,42 @@ const PerformanceOptimizer: React.FC<PerformanceOptimizerProps> = ({
     setIsOptimizing(false);
   };
 
-  if (!showMetrics) {
-    return null;
-  }
+    // Run optimizations in sequence
+    await new Promise(resolve => setTimeout(resolve, 500));
+    optimizeImages();
+    
+    await new Promise(resolve => setTimeout(resolve, 1000));
+    optimizeFonts();
+    
+    await new Promise(resolve => setTimeout(resolve, 1000));
+    optimizeCSS();
+    
+    await new Promise(resolve => setTimeout(resolve, 500));
+    setOptimizationStatus('Optimization complete!');
+    
+    setTimeout(() => {
+      setIsOptimizing(false);
+      setOptimizationStatus('');
+    }, 2000);
+  }, [optimizeImages, optimizeFonts, optimizeCSS]);
+
+  // Get performance grade
+  const getPerformanceGrade = useCallback(() => {
+    let score = 100;
+    
+    if (metrics.fcp && metrics.fcp > 1800) score -= 20;
+    if (metrics.lcp && metrics.lcp > 2500) score -= 20;
+    if (metrics.fid && metrics.fid > 100) score -= 20;
+    if (metrics.cls && metrics.cls > 0.1) score -= 20;
+    if (metrics.ttfb && metrics.ttfb > 600) score -= 20;
+
+    if (score >= 90) return { grade: 'A', color: 'text-green-400' };
+    if (score >= 80) return { grade: 'B', color: 'text-yellow-400' };
+    if (score >= 70) return { grade: 'C', color: 'text-orange-400' };
+    return { grade: 'D', color: 'text-red-400' };
+  }, [metrics]);
+
+  const performanceGrade = getPerformanceGrade();
 
   return (
     <div className="fixed bottom-4 right-4 z-50">
@@ -162,23 +195,12 @@ const PerformanceOptimizer: React.FC<PerformanceOptimizerProps> = ({
               </span>
             </div>
           </div>
-        )}
-
-        {optimizations.length > 0 && (
-          <div className="border-t border-gray-700 pt-3">
-            <h4 className="text-xs font-medium text-gray-300 mb-2">Optimization Suggestions:</h4>
-            <ul className="space-y-1">
-              {optimizations.slice(0, 3).map((suggestion, index) => (
-                <li key={index} className="text-xs text-gray-400 flex items-start">
-                  <AlertTriangle className="w-3 h-3 mr-1 mt-0.5 text-yellow-400 flex-shrink-0" />
-                  {suggestion}
-                </li>
-              ))}
-            </ul>
-          </div>
-        )}
-      </motion.div>
-    </div>
+          {isOptimizing && (
+            <div className="text-cyan-400 text-xs mt-2">Optimizing resources...</div>
+          )}
+        </motion.div>
+      )}
+    </>
   );
 };
 

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Head from 'next/head';
 import UltraFuturisticNavigation2045 from './UltraFuturisticNavigation2045';
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
 import UltraFuturisticFooter2044 from './UltraFuturisticFooter2044';
 
 interface UltraFuturisticLayout2045Props {

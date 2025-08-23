@@ -162,8 +162,3 @@ const Privacy: React.FC = () => {
       </div>
     </Layout>
   );
-};
-
-export default Privacy;
-
- 

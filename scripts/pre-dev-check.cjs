@@ -1,16 +1,12 @@
-#!/usr/bin/env node
-
-const fs = require('fs');
-
+const _fs = require('fs');
 const requiredDependencies = [
   'react',
   'react-dom',
   'react-router-dom',
   'lucide-react',
-  '@tanstack/react-query'
+  '@tanstack/react-query',
 ];
-
-const missing = requiredDependencies.filter(dep => {
+const missing = requiredDependencies.filter((dep) => {
   try {
     require.resolve(dep);
     return false;
@@ -24,15 +20,17 @@ if (missing.length > 0) {
   console.error('Attempting to start offline development mode...');
 
   try {
-    const { execSync } = require('child_process');
+    const { _execSync } = require('child_process');
     execSync('bash offline-dev.sh', { stdio: 'inherit' });
-    console.log('\u2705 Offline development environment started.');
-  } catch (err) {
+    console.warn('\u2705 Offline development environment started.');
+  } catch (_err) {
     console.error('Failed to launch offline mode:', err.message);
   }
 
-  console.error('Please run "./setup.sh npm" once internet access is available.');
+  console.error(
+    'Please run "./setup.sh npm" once internet access is available.',
+  );
   process.exit(0);
 } else {
-  console.log('\u2705 All required dependencies found.');
+  console.warn('\u2705 All required dependencies found.');
 }

@@ -27,5 +27,24 @@ Thumbs.db
 .env.local
 .env.*.local
 
-# Local Netlify folder
-.netlify
+# Prevent compiled JS files from being committed when TS/TSX source exists
+# These should be generated at build time, not committed
+
+# pages/**/*.js
+# pages/**/*.d.ts
+
+# Prevent JSX/TSX conflicts - prefer TSX for consistency
+# pages/**/*.jsx
+
+# Media kit zip
+public/toolkit_assets/media_kit.zip
+__pycache__/
+
+# Automation files
+automation/logs/*.log
+automation/temp/*
+automation/reports/*.json
+automation/data/commit-metadata.json
+.autonomous-status.json
+auto_commit.log
+.auto_commit_status
