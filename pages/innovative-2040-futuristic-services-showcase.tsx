@@ -23,7 +23,7 @@ interface Service {
   price: string | { monthly: number; yearly: number; currency: string; trialDays: number; setupTime: string };
   period?: string;
   description: string;
-  features?: string[];
+  features: string[];
   popular?: boolean;
   icon?: string;
   color?: string;
@@ -47,7 +47,7 @@ interface Service {
   };
   realImplementation?: boolean | string;
   implementationDetails?: string;
-  launchDate: string;
+  launchDate?: string;
   customers: number | string;
   rating: number;
   reviews: number;

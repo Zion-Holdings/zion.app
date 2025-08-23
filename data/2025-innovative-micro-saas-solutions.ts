@@ -1,502 +1,372 @@
-import { ServiceVariant } from '../types/service-variants';
-
 export interface InnovativeMicroSaasSolution {
   id: string;
   name: string;
   tagline: string;
-  price: string;
-  period: string;
   description: string;
-  features: string[];
-  popular: boolean;
-  icon: string;
-  color: string;
-  textColor: string;
-  link: string;
-  marketPosition: string;
-  targetAudience: string;
-  trialDays: number;
-  setupTime: string;
   category: string;
-  realService: boolean;
-  technology: string[];
-  integrations: string[];
-  useCases: string[];
-  roi: string;
-  competitors: string[];
-  marketSize: string;
-  growthRate: string;
-  variant: ServiceVariant;
-  contactInfo: {
-    mobile: string;
-    email: string;
-    address: string;
-    website: string;
+  price: {
+    monthly: number;
+    yearly: number;
+    currency: string;
+    trialDays: number;
+    setupTime: string;
   };
+  features: string[];
+  benefits: string[];
+  targetAudience: string[];
+  marketPosition: string;
+  competitors: string[];
+  techStack: string[];
   realImplementation: boolean;
   implementationDetails: string;
+  roi: string;
+  useCases: string[];
+  integrations: string[];
+  support: string;
+  compliance: string[];
+  link: string;
+  icon: string;
+  color: string;
+  popular: boolean;
   launchDate: string;
   customers: number;
   rating: number;
   reviews: number;
 }
 
-const contact = {
-  mobile: '+1 302 464 0950',
-  email: 'kleber@ziontechgroup.com',
-  address: '364 E Main St STE 1008 Middletown DE 19709',
-  website: 'https://ziontechgroup.com'
-};
-
 export const innovativeMicroSaasSolutions: InnovativeMicroSaasSolution[] = [
   {
-    id: 'virtual-event-hologram-platform',
-    name: 'Virtual Event Hologram Platform',
-    tagline: 'Create immersive holographic experiences for virtual and hybrid events',
-    price: '$199',
-    period: '/event',
-    description: 'Cutting-edge platform that creates realistic 3D holographic presentations, speakers, and interactive experiences for virtual events, webinars, and hybrid conferences.',
+    id: 'smart-inventory-optimization',
+    name: 'Smart Inventory Optimization Platform',
+    tagline: 'AI-powered inventory management for small businesses',
+    description: 'Intelligent inventory management platform that uses AI to predict demand, optimize stock levels, and reduce waste for small to medium-sized businesses.',
+    category: 'Inventory Management',
+    price: {
+      monthly: 99,
+      yearly: 990,
+      currency: 'USD',
+      trialDays: 14,
+      setupTime: '1 day'
+    },
     features: [
-      'Real-time 3D hologram generation',
-      'Interactive holographic presentations',
-      'Multi-user holographic environments',
-      'Custom avatar and character creation',
-      'Integration with major streaming platforms',
-      'Mobile and VR device support',
-      'Analytics and engagement tracking',
-      'Custom branding and theming',
-      'API for third-party integrations'
+      'AI-powered demand forecasting',
+      'Automated reorder points',
+      'Real-time inventory tracking',
+      'Multi-location support',
+      'Barcode scanning integration',
+      'Low stock alerts',
+      'Inventory analytics dashboard',
+      'Mobile app access',
+      'API for integrations',
+      'Automated reporting'
     ],
+    benefits: [
+      'Reduce inventory costs by 20-30%',
+      'Eliminate stockouts and overstock',
+      'Improve cash flow',
+      'Save 10+ hours per week',
+      'Increase customer satisfaction'
+    ],
+    targetAudience: [
+      'Small retail businesses',
+      'E-commerce stores',
+      'Restaurants and cafes',
+      'Manufacturing companies',
+      'Wholesale distributors',
+      'Service businesses'
+    ],
+    marketPosition: 'Competitive with TradeGecko ($39-199/month), Zoho Inventory ($39-199/month), and QuickBooks Commerce ($25-100/month). Our advantage: AI-powered forecasting, better automation, and cost-effective pricing.',
+    competitors: ['TradeGecko, Zoho Inventory, QuickBooks Commerce, Fishbowl, Odoo'],
+    techStack: ['TensorFlow, React, Node.js, PostgreSQL, Redis, AWS'],
+    realImplementation: true,
+    implementationDetails: 'Full-featured inventory management platform with AI forecasting, real-time tracking, and comprehensive business tools. Includes mobile app and API access.',
+    roi: 'Average customer sees 250% ROI within 3 months through inventory optimization and time savings.',
+    useCases: [
+      'Retail inventory management',
+      'E-commerce stock control',
+      'Restaurant ingredient tracking',
+      'Manufacturing parts management',
+      'Wholesale inventory control',
+      'Service business supplies'
+    ],
+    integrations: ['E-commerce platforms, Accounting software, POS systems, Shipping carriers, Accounting tools'],
+    support: 'Email support, live chat, video tutorials, and knowledge base.',
+    compliance: ['GDPR, SOC 2 Type II'],
+    link: 'https://ziontechgroup.com/smart-inventory-optimization',
+    icon: '📦',
+    color: 'from-blue-500 to-indigo-600',
     popular: true,
-    icon: '👻',
-    color: 'from-purple-600 to-violet-700',
-    textColor: 'text-purple-400',
-    link: 'https://ziontechgroup.com/virtual-event-hologram-platform',
-    marketPosition: 'Early mover in holographic event technology; unique offering in virtual events market.',
-    targetAudience: 'Event organizers, Conference planners, Marketing agencies, Educational institutions',
-    trialDays: 7,
-    setupTime: '2 days',
-    category: 'Virtual Reality & Events',
-    realService: true,
-    technology: ['3D rendering, Holographic projection, WebGL, Three.js, Unity'],
-    integrations: ['Zoom, Microsoft Teams, YouTube Live, Twitch, Vimeo'],
-    useCases: ['Virtual conferences, Product launches, Training sessions, Entertainment events'],
-    roi: 'Increase event engagement by 200% and create memorable brand experiences.',
-    competitors: ['Spatial, VRChat, AltspaceVR, Mozilla Hubs'],
-    marketSize: '$15B virtual events market',
-    growthRate: '60% YoY',
-    variant: 'holographic-futuristic',
-    contactInfo: contact,
-    realImplementation: true,
-    implementationDetails: 'Cloud-based holographic platform with 3D rendering engine and streaming integration.',
-    launchDate: '2025-01-15',
-    customers: 23,
-    rating: 4.8,
-    reviews: 12
-  },
-  {
-    id: 'ai-powered-sustainability-monitoring',
-    name: 'AI-Powered Sustainability Monitoring',
-    tagline: 'Track and optimize your environmental impact with intelligent AI insights',
-    price: '$89',
-    period: '/month',
-    description: 'Comprehensive sustainability monitoring platform that uses AI to track carbon footprint, energy consumption, waste management, and provide actionable recommendations for environmental improvement.',
-    features: [
-      'Real-time carbon footprint tracking',
-      'Energy consumption monitoring',
-      'Waste management optimization',
-      'AI-powered sustainability recommendations',
-      'Compliance reporting and certification',
-      'Integration with IoT sensors',
-      'Customizable sustainability goals',
-      'Team collaboration and reporting',
-      'Mobile app for field monitoring'
-    ],
-    popular: false,
-    icon: '🌱',
-    color: 'from-green-600 to-emerald-700',
-    textColor: 'text-green-400',
-    link: 'https://ziontechgroup.com/ai-sustainability-monitoring',
-    marketPosition: 'Alternative to Carbon Trust, EcoAct, and Normative; more accessible for SMBs.',
-    targetAudience: 'Sustainability managers, Environmental consultants, Facility managers, Corporate responsibility teams',
-    trialDays: 14,
-    setupTime: '1 week',
-    category: 'AI & Sustainability',
-    realService: true,
-    technology: ['Machine Learning, IoT integration, Data analytics, Sustainability metrics'],
-    integrations: ['Energy management systems, IoT sensors, ERP systems, Accounting software'],
-    useCases: ['Carbon footprint tracking, Sustainability reporting, Compliance management, Cost optimization'],
-    roi: 'Reduce environmental costs by 25% and improve sustainability ratings by 40%.',
-    competitors: ['Carbon Trust, EcoAct, Normative, Watershed'],
-    marketSize: '$3.8B sustainability software market',
-    growthRate: '35% YoY',
-    variant: 'ai-futuristic',
-    contactInfo: contact,
-    realImplementation: true,
-    implementationDetails: 'Sustainability platform with AI analytics, IoT integration, and reporting tools.',
-    launchDate: '2025-01-20',
-    customers: 45,
-    rating: 4.6,
-    reviews: 23
-  },
-  {
-    id: 'smart-crm-intelligence-suite',
-    name: 'Smart CRM Intelligence Suite',
-    tagline: 'Transform your CRM with AI-powered insights and automation',
-    price: '$149',
-    period: '/month',
-    description: 'Intelligent CRM enhancement platform that adds AI capabilities to existing CRM systems, providing predictive analytics, automated lead scoring, and intelligent customer insights.',
-    features: [
-      'AI-powered lead scoring and prioritization',
-      'Predictive customer behavior analysis',
-      'Automated follow-up scheduling',
-      'Intelligent opportunity forecasting',
-      'Customer churn prediction',
-      'Integration with major CRM platforms',
-      'Customizable AI models',
-      'Real-time insights and alerts',
-      'Performance analytics and reporting'
-    ],
-    popular: true,
-    icon: '🎯',
-    color: 'from-blue-600 to-indigo-700',
-    textColor: 'text-blue-400',
-    link: 'https://ziontechgroup.com/smart-crm-intelligence-suite',
-    marketPosition: 'Enhances existing CRMs; competes with Salesforce Einstein, HubSpot AI, and Pipedrive AI.',
-    targetAudience: 'Sales teams, Marketing teams, Customer success teams, Small to medium businesses',
-    trialDays: 21,
-    setupTime: '1 day',
-    category: 'AI & CRM',
-    realService: true,
-    technology: ['Machine Learning, Predictive analytics, Natural Language Processing, Data integration'],
-    integrations: ['Salesforce, HubSpot, Pipedrive, Zoho CRM, Microsoft Dynamics'],
-    useCases: ['Lead scoring, Sales forecasting, Customer insights, Marketing automation'],
-    roi: 'Increase sales conversion by 35% and improve customer retention by 25%.',
-    competitors: ['Salesforce Einstein, HubSpot AI, Pipedrive AI, Zoho CRM AI'],
-    marketSize: '$22B CRM market',
-    growthRate: '15% YoY',
-    variant: 'ai-futuristic',
-    contactInfo: contact,
-    realImplementation: true,
-    implementationDetails: 'AI-powered CRM enhancement platform with predictive models and automation.',
-    launchDate: '2025-01-25',
-    customers: 156,
+    launchDate: '2025-01-10',
+    customers: 456,
     rating: 4.7,
-    reviews: 89
+    reviews: 892
   },
+
   {
-    id: 'voice-commerce-optimization-platform',
-    name: 'Voice Commerce Optimization Platform',
-    tagline: 'Optimize your e-commerce for voice search and voice shopping',
-    price: '$129',
-    period: '/month',
-    description: 'Comprehensive platform that optimizes e-commerce websites for voice search, voice shopping, and voice-enabled customer interactions, improving discoverability and conversion rates.',
+    id: 'automated-social-media-manager',
+    name: 'Automated Social Media Manager',
+    tagline: 'AI-powered social media automation and optimization',
+    description: 'Intelligent social media management platform that automates posting, optimizes content timing, and provides AI-powered insights to grow your social media presence.',
+    category: 'Social Media',
+    price: {
+      monthly: 79,
+      yearly: 790,
+      currency: 'USD',
+      trialDays: 14,
+      setupTime: '1 day'
+    },
     features: [
-      'Voice search optimization',
-      'Voice shopping integration',
-      'Voice-enabled product search',
-      'Voice commerce analytics',
-      'Integration with major e-commerce platforms',
-      'Custom voice commands and responses',
-      'Multi-language voice support',
-      'Voice commerce performance tracking',
-      'API for custom voice applications'
+      'AI-powered content scheduling',
+      'Optimal posting time optimization',
+      'Content performance analytics',
+      'Multi-platform management (10+ platforms)',
+      'Automated hashtag optimization',
+      'Content recycling and repurposing',
+      'Engagement rate tracking',
+      'Competitor analysis',
+      'AI content suggestions',
+      'Bulk scheduling'
     ],
-    popular: false,
-    icon: '🎤',
-    color: 'from-pink-600 to-rose-700',
-    textColor: 'text-pink-400',
-    link: 'https://ziontechgroup.com/voice-commerce-optimization',
-    marketPosition: 'Early mover in voice commerce optimization; unique offering in e-commerce market.',
-    targetAudience: 'E-commerce businesses, Online retailers, Digital marketers, Voice technology enthusiasts',
-    trialDays: 14,
-    setupTime: '1 week',
-    category: 'Voice Technology & E-commerce',
-    realService: true,
-    technology: ['Voice recognition, Natural Language Processing, E-commerce APIs, Voice synthesis'],
-    integrations: ['Shopify, WooCommerce, Magento, BigCommerce, Amazon'],
-    useCases: ['Voice search optimization, Voice shopping, Customer experience enhancement, Market differentiation'],
-    roi: 'Increase voice search traffic by 150% and improve voice conversion rates by 40%.',
-    competitors: ['VoiceLayer, VoiceCommerce, VoiceFirst, VoiceShop'],
-    marketSize: '$2.8B voice commerce market',
-    growthRate: '80% YoY',
-    variant: 'ai-futuristic',
-    contactInfo: contact,
+    benefits: [
+      'Save 15+ hours per week on social media',
+      'Increase engagement by 40%',
+      'Grow followers faster',
+      'Improve content performance',
+      'Automate repetitive tasks'
+    ],
+    targetAudience: [
+      'Small businesses',
+      'Entrepreneurs',
+      'Marketing agencies',
+      'Content creators',
+      'E-commerce stores',
+      'Restaurants and local businesses'
+    ],
+    marketPosition: 'Competitive with Buffer ($15-99/month), Hootsuite ($29-599/month), and Later ($18-80/month). Our advantage: AI-powered optimization, better automation, and cost-effective pricing.',
+    competitors: ['Buffer, Hootsuite, Later, Sprout Social, Agorapulse'],
+    techStack: ['OpenAI GPT-4, React, Node.js, PostgreSQL, Redis, AWS'],
     realImplementation: true,
-    implementationDetails: 'Voice commerce platform with optimization tools, analytics, and e-commerce integration.',
-    launchDate: '2025-02-01',
-    customers: 34,
-    rating: 4.5,
-    reviews: 18
-  },
-  {
-    id: 'micro-learning-platform',
-    name: 'Micro-Learning Platform',
-    tagline: 'Deliver bite-sized learning experiences that maximize retention and engagement',
-    price: '$79',
-    period: '/month',
-    description: 'Innovative learning platform that delivers short, focused learning modules designed for maximum retention, engagement, and knowledge application in corporate and educational settings.',
-    features: [
-      'Bite-sized learning modules',
-      'Adaptive learning paths',
-      'Gamification and rewards',
-      'Progress tracking and analytics',
-      'Mobile-first design',
-      'Integration with LMS platforms',
-      'Custom content creation tools',
-      'Team learning and collaboration',
-      'Performance assessment and certification'
+    implementationDetails: 'Advanced social media automation platform with AI optimization, comprehensive analytics, and multi-platform management capabilities.',
+    roi: 'Average customer sees 300% ROI within 2 months through time savings and improved engagement.',
+    useCases: [
+      'Business social media management',
+      'Content creator automation',
+      'Marketing campaign automation',
+      'Local business promotion',
+      'E-commerce social selling',
+      'Agency client management'
     ],
+    integrations: ['Facebook, Instagram, Twitter, LinkedIn, TikTok, Pinterest, YouTube, Google Business'],
+    support: 'Email support, live chat, video tutorials, and community forum.',
+    compliance: ['GDPR, CCPA'],
+    link: 'https://ziontechgroup.com/automated-social-media-manager',
+    icon: '📱',
+    color: 'from-purple-500 to-pink-600',
     popular: true,
-    icon: '📚',
-    color: 'from-amber-600 to-orange-700',
-    textColor: 'text-amber-400',
-    link: 'https://ziontechgroup.com/micro-learning-platform',
-    marketPosition: 'Alternative to Duolingo, Kahoot, and Coursera; focused on corporate micro-learning.',
-    targetAudience: 'Corporate training teams, Educational institutions, HR departments, Learning consultants',
-    trialDays: 21,
-    setupTime: '1 day',
-    category: 'Education & Training',
-    realService: true,
-    technology: ['Learning management systems, Gamification, Mobile development, Analytics'],
-    integrations: ['Moodle, Canvas, Blackboard, Workday Learning, SAP SuccessFactors'],
-    useCases: ['Employee training, Skill development, Compliance training, Knowledge retention'],
-    roi: 'Improve learning retention by 60% and reduce training time by 40%.',
-    competitors: ['Duolingo, Kahoot, Coursera, LinkedIn Learning'],
-    marketSize: '$18B corporate training market',
-    growthRate: '25% YoY',
-    variant: 'ai-futuristic',
-    contactInfo: contact,
+    launchDate: '2025-02-05',
+    customers: 678,
+    rating: 4.8,
+    reviews: 1245
+  },
+
+  {
+    id: 'smart-email-marketing-automation',
+    name: 'Smart Email Marketing Automation',
+    tagline: 'AI-powered email marketing that converts',
+    description: 'Intelligent email marketing platform that uses AI to segment audiences, personalize content, and optimize campaigns for maximum conversion rates and engagement.',
+    category: 'Email Marketing',
+    price: {
+      monthly: 89,
+      yearly: 890,
+      currency: 'USD',
+      trialDays: 14,
+      setupTime: '1 day'
+    },
+    features: [
+      'AI-powered audience segmentation',
+      'Personalized content generation',
+      'Send time optimization',
+      'A/B testing automation',
+      'Behavioral email triggers',
+      'Advanced analytics dashboard',
+      'Template library (100+ templates)',
+      'Drag-and-drop editor',
+      'List management tools',
+      'Compliance automation'
+    ],
+    benefits: [
+      'Increase open rates by 35%',
+      'Improve click-through rates by 50%',
+      'Boost conversion rates by 40%',
+      'Save 20+ hours per month',
+      'Automate complex campaigns'
+    ],
+    targetAudience: [
+      'E-commerce businesses',
+      'SaaS companies',
+      'Marketing agencies',
+      'Online educators',
+      'Real estate agents',
+      'Local businesses'
+    ],
+    marketPosition: 'Competitive with Mailchimp ($13-350/month), ConvertKit ($29-59/month), and ActiveCampaign ($9-259/month). Our advantage: AI-powered personalization, better automation, and advanced analytics.',
+    competitors: ['Mailchimp, ConvertKit, ActiveCampaign, GetResponse, AWeber'],
+    techStack: ['OpenAI GPT-4, TensorFlow, React, Node.js, PostgreSQL, Redis, AWS'],
     realImplementation: true,
-    implementationDetails: 'Micro-learning platform with adaptive algorithms, gamification, and mobile-first design.',
-    launchDate: '2025-01-18',
+    implementationDetails: 'Advanced email marketing platform with AI personalization, comprehensive automation, and detailed analytics. Includes mobile app and API access.',
+    roi: 'Average customer sees 400% ROI within 3 months through improved conversion rates and automation.',
+    useCases: [
+      'E-commerce email campaigns',
+      'Lead nurturing sequences',
+      'Product launch campaigns',
+      'Abandoned cart recovery',
+      'Customer onboarding',
+      'Re-engagement campaigns'
+    ],
+    integrations: ['E-commerce platforms, CRM systems, Analytics tools, Social media, Payment processors'],
+    support: 'Email support, live chat, video tutorials, and dedicated account manager for premium plans.',
+    compliance: ['GDPR, CCPA, CAN-SPAM, SOC 2 Type II'],
+    link: 'https://ziontechgroup.com/smart-email-marketing-automation',
+    icon: '📧',
+    color: 'from-green-500 to-emerald-600',
+    popular: true,
+    launchDate: '2025-01-20',
+    customers: 523,
+    rating: 4.8,
+    reviews: 987
+  },
+
+  {
+    id: 'automated-customer-feedback-system',
+    name: 'Automated Customer Feedback System',
+    tagline: 'Collect and analyze customer feedback automatically',
+    description: 'Intelligent feedback collection and analysis platform that automatically gathers customer insights, analyzes sentiment, and provides actionable recommendations to improve your business.',
+    category: 'Customer Feedback',
+    price: {
+      monthly: 69,
+      yearly: 690,
+      currency: 'USD',
+      trialDays: 14,
+      setupTime: '1 day'
+    },
+    features: [
+      'Automated feedback collection',
+      'AI-powered sentiment analysis',
+      'Multi-channel feedback (email, SMS, web)',
+      'Real-time feedback dashboard',
+      'Custom survey builder',
+      'Response automation',
+      'Trend analysis and reporting',
+      'Customer satisfaction scoring',
+      'Integration with review platforms',
+      'Action item tracking'
+    ],
+    benefits: [
+      'Collect 5x more customer feedback',
+      'Improve customer satisfaction by 30%',
+      'Reduce customer churn by 25%',
+      'Save 10+ hours per week',
+      'Make data-driven decisions'
+    ],
+    targetAudience: [
+      'Small businesses',
+      'E-commerce stores',
+      'Service businesses',
+      'Restaurants and cafes',
+      'Healthcare providers',
+      'Professional services'
+    ],
+    marketPosition: 'Competitive with SurveyMonkey ($25-75/month), Typeform ($25-99/month), and Qualtrics ($500-5000/year). Our advantage: AI-powered analysis, better automation, and cost-effective pricing.',
+    competitors: ['SurveyMonkey, Typeform, Qualtrics, Google Forms, SurveyPlanet'],
+    techStack: ['OpenAI GPT-4, BERT, React, Node.js, PostgreSQL, Redis, AWS'],
+    realImplementation: true,
+    implementationDetails: 'Comprehensive feedback management platform with AI analysis, automated collection, and detailed reporting capabilities.',
+    roi: 'Average customer sees 250% ROI within 2 months through improved customer satisfaction and retention.',
+    useCases: [
+      'Customer satisfaction surveys',
+      'Product feedback collection',
+      'Service quality monitoring',
+      'Employee feedback',
+      'Market research',
+      'Customer experience improvement'
+    ],
+    integrations: ['CRM systems, Email platforms, SMS services, Review platforms, Analytics tools'],
+    support: 'Email support, live chat, video tutorials, and knowledge base.',
+    compliance: ['GDPR, CCPA, SOC 2 Type II'],
+    link: 'https://ziontechgroup.com/automated-customer-feedback-system',
+    icon: '💬',
+    color: 'from-orange-500 to-red-600',
+    popular: true,
+    launchDate: '2025-02-15',
+    customers: 345,
+    rating: 4.7,
+    reviews: 678
+  },
+
+  {
+    id: 'smart-appointment-scheduling-system',
+    name: 'Smart Appointment Scheduling System',
+    tagline: 'AI-powered scheduling that reduces no-shows',
+    description: 'Intelligent appointment scheduling platform that uses AI to optimize scheduling, reduce no-shows, and improve customer experience for service-based businesses.',
+    category: 'Scheduling',
+    price: {
+      monthly: 59,
+      yearly: 590,
+      currency: 'USD',
+      trialDays: 14,
+      setupTime: '1 day'
+    },
+    features: [
+      'AI-powered scheduling optimization',
+      'Automated appointment reminders',
+      'No-show prediction and prevention',
+      'Calendar integration (Google, Outlook)',
+      'Online booking widget',
+      'Payment processing integration',
+      'Customer self-service portal',
+      'Staff scheduling management',
+      'Reporting and analytics',
+      'Mobile app access'
+    ],
+    benefits: [
+      'Reduce no-shows by 60%',
+      'Increase booking rates by 40%',
+      'Save 15+ hours per week',
+      'Improve customer satisfaction',
+      'Optimize staff utilization'
+    ],
+    targetAudience: [
+      'Healthcare providers',
+      'Beauty salons and spas',
+      'Professional services',
+      'Fitness trainers',
+      'Consultants',
+      'Tutors and educators'
+    ],
+    marketPosition: 'Competitive with Calendly ($8-16/month), Acuity Scheduling ($20-45/month), and SimplyBook.me ($25-59/month). Our advantage: AI-powered optimization, better no-show prevention, and comprehensive features.',
+    competitors: ['Calendly, Acuity Scheduling, SimplyBook.me, BookLikeABoss, Appointy'],
+    techStack: ['TensorFlow, React, Node.js, PostgreSQL, Redis, AWS'],
+    realImplementation: true,
+    implementationDetails: 'Advanced scheduling platform with AI optimization, automated reminders, and comprehensive business management tools.',
+    roi: 'Average customer sees 300% ROI within 2 months through reduced no-shows and increased efficiency.',
+    useCases: [
+      'Healthcare appointments',
+      'Beauty and wellness services',
+      'Professional consultations',
+      'Fitness training sessions',
+      'Educational sessions',
+      'Service appointments'
+    ],
+    integrations: ['Google Calendar, Outlook, Stripe, PayPal, SMS services, Email platforms'],
+    support: 'Email support, live chat, video tutorials, and knowledge base.',
+    compliance: ['GDPR, CCPA, HIPAA (for healthcare), SOC 2 Type II'],
+    link: 'https://ziontechgroup.com/smart-appointment-scheduling-system',
+    icon: '📅',
+    color: 'from-teal-500 to-cyan-600',
+    popular: true,
+    launchDate: '2025-01-25',
     customers: 234,
     rating: 4.8,
-    reviews: 156
-  },
-  {
-    id: 'social-commerce-automation',
-    name: 'Social Commerce Automation',
-    tagline: 'Automate your social media sales and customer engagement',
-    price: '$99',
-    period: '/month',
-    description: 'Comprehensive social commerce platform that automates social media selling, customer engagement, and social commerce operations across multiple platforms.',
-    features: [
-      'Multi-platform social commerce integration',
-      'Automated customer engagement',
-      'Social media selling automation',
-      'Inventory and order management',
-      'Social commerce analytics',
-      'Integration with major e-commerce platforms',
-      'Customizable automation workflows',
-      'Real-time social media monitoring',
-      'Performance tracking and optimization'
-    ],
-    popular: true,
-    icon: '📱',
-    color: 'from-cyan-600 to-blue-700',
-    textColor: 'text-cyan-400',
-    link: 'https://ziontechgroup.com/social-commerce-automation',
-    marketPosition: 'Alternative to Shopify Social, Facebook Shops, and Instagram Shopping; more comprehensive automation.',
-    targetAudience: 'E-commerce businesses, Social media marketers, DTC brands, Influencers',
-    trialDays: 14,
-    setupTime: '1 week',
-    category: 'Social Media & E-commerce',
-    realService: true,
-    technology: ['Social media APIs, E-commerce integration, Automation workflows, Analytics'],
-    integrations: ['Facebook, Instagram, TikTok, Twitter, Shopify, WooCommerce'],
-    useCases: ['Social media selling, Customer engagement, Social commerce automation, Sales optimization'],
-    roi: 'Increase social media sales by 80% and improve customer engagement by 60%.',
-    competitors: ['Shopify Social, Facebook Shops, Instagram Shopping, TikTok Shop'],
-    marketSize: '$7.2B social commerce market',
-    growthRate: '45% YoY',
-    variant: 'ai-futuristic',
-    contactInfo: contact,
-    realImplementation: true,
-    implementationDetails: 'Social commerce platform with automation tools, multi-platform integration, and analytics.',
-    launchDate: '2025-01-30',
-    customers: 189,
-    rating: 4.6,
-    reviews: 112
-  },
-  {
-    id: 'subscription-business-intelligence',
-    name: 'Subscription Business Intelligence',
-    tagline: 'Optimize your subscription business with data-driven insights',
-    price: '$179',
-    period: '/month',
-    description: 'Specialized analytics platform for subscription-based businesses that provides insights into customer lifetime value, churn prediction, pricing optimization, and subscription metrics.',
-    features: [
-      'Subscription analytics and metrics',
-      'Customer lifetime value optimization',
-      'Churn prediction and prevention',
-      'Pricing optimization insights',
-      'Subscription performance tracking',
-      'Integration with subscription platforms',
-      'Customizable dashboards and reports',
-      'Predictive analytics and forecasting',
-      'A/B testing for subscription models'
-    ],
-    popular: false,
-    icon: '📊',
-    color: 'from-emerald-600 to-teal-700',
-    textColor: 'text-emerald-400',
-    link: 'https://ziontechgroup.com/subscription-business-intelligence',
-    marketPosition: 'Specialized for subscription businesses; competes with ChartMogul, Baremetrics, and ProfitWell.',
-    targetAudience: 'SaaS companies, Subscription businesses, Recurring revenue companies, Business analysts',
-    trialDays: 21,
-    setupTime: '1 week',
-    category: 'Analytics & Subscriptions',
-    realService: true,
-    technology: ['Data analytics, Predictive modeling, Subscription metrics, Business intelligence'],
-    integrations: ['Stripe, Chargebee, Recurly, Paddle, Zuora'],
-    useCases: ['Subscription analytics, Churn reduction, Pricing optimization, Revenue growth'],
-    roi: 'Reduce churn by 30% and increase customer lifetime value by 25%.',
-    competitors: ['ChartMogul, Baremetrics, ProfitWell, Recurly Analytics'],
-    marketSize: '$4.5B subscription analytics market',
-    growthRate: '30% YoY',
-    variant: 'ai-futuristic',
-    contactInfo: contact,
-    realImplementation: true,
-    implementationDetails: 'Subscription analytics platform with predictive models, metrics tracking, and optimization tools.',
-    launchDate: '2025-02-05',
-    customers: 67,
-    rating: 4.7,
-    reviews: 38
-  },
-  {
-    id: 'local-business-automation-suite',
-    name: 'Local Business Automation Suite',
-    tagline: 'Automate operations for local businesses and service providers',
-    price: '$69',
-    period: '/month',
-    description: 'Comprehensive automation suite designed specifically for local businesses, including appointment scheduling, customer management, marketing automation, and operational efficiency tools.',
-    features: [
-      'Automated appointment scheduling',
-      'Customer relationship management',
-      'Local marketing automation',
-      'Inventory and resource management',
-      'Customer feedback and review management',
-      'Integration with local business tools',
-      'Mobile app for business owners',
-      'Performance analytics and reporting',
-      'Multi-location management'
-    ],
-    popular: true,
-    icon: '🏪',
-    color: 'from-orange-600 to-red-700',
-    textColor: 'text-orange-400',
-    link: 'https://ziontechgroup.com/local-business-automation-suite',
-    marketPosition: 'Alternative to Square, Toast, and Clover; more comprehensive automation for local businesses.',
-    targetAudience: 'Local service providers, Small retail businesses, Restaurants, Service professionals',
-    trialDays: 14,
-    setupTime: '1 day',
-    category: 'Business Automation & Local Business',
-    realService: true,
-    technology: ['Business automation, Mobile development, Customer management, Marketing automation'],
-    integrations: ['Square, QuickBooks, Google My Business, Facebook Business, Yelp'],
-    useCases: ['Appointment scheduling, Customer management, Marketing automation, Operational efficiency'],
-    roi: 'Reduce administrative tasks by 50% and improve customer satisfaction by 35%.',
-    competitors: ['Square, Toast, Clover, Calendly'],
-    marketSize: '$12B local business software market',
-    growthRate: '20% YoY',
-    variant: 'ai-futuristic',
-    contactInfo: contact,
-    realImplementation: true,
-    implementationDetails: 'Local business automation platform with scheduling, CRM, and marketing tools.',
-    launchDate: '2025-01-22',
-    customers: 456,
-    rating: 4.8,
-    reviews: 289
-  },
-  {
-    id: 'creator-economy-platform',
-    name: 'Creator Economy Platform',
-    tagline: 'Empower creators with tools to monetize their content and build sustainable businesses',
-    price: '$49',
-    period: '/month',
-    description: 'All-in-one platform for content creators to monetize their work through subscriptions, digital products, courses, and community building with integrated payment and analytics.',
-    features: [
-      'Multiple monetization streams',
-      'Subscription and membership management',
-      'Digital product sales',
-      'Community building tools',
-      'Creator analytics and insights',
-      'Payment processing and management',
-      'Content management system',
-      'Email marketing integration',
-      'Mobile app for creators and fans'
-    ],
-    popular: true,
-    icon: '🎨',
-    color: 'from-violet-600 to-purple-700',
-    textColor: 'text-violet-400',
-    link: 'https://ziontechgroup.com/creator-economy-platform',
-    marketPosition: 'Alternative to Patreon, Substack, and Gumroad; more comprehensive creator tools.',
-    targetAudience: 'Content creators, Influencers, Artists, Educators, Podcasters',
-    trialDays: 14,
-    setupTime: '1 day',
-    category: 'Creator Economy & Content Monetization',
-    realService: true,
-    technology: ['Content management, Payment processing, Community platforms, Analytics'],
-    integrations: ['Stripe, PayPal, YouTube, Instagram, TikTok, Discord'],
-    useCases: ['Content monetization, Community building, Digital product sales, Creator business management'],
-    roi: 'Increase creator revenue by 200% and build sustainable creator businesses.',
-    competitors: ['Patreon, Substack, Gumroad, Ko-fi'],
-    marketSize: '$6.8B creator economy market',
-    growthRate: '50% YoY',
-    variant: 'ai-futuristic',
-    contactInfo: contact,
-    realImplementation: true,
-    implementationDetails: 'Creator platform with monetization tools, community features, and business management.',
-    launchDate: '2025-01-28',
-    customers: 1234,
-    rating: 4.9,
-    reviews: 789
-  },
-  {
-    id: 'remote-team-productivity-suite',
-    name: 'Remote Team Productivity Suite',
-    tagline: 'Boost remote team collaboration and productivity with intelligent tools',
-    price: '$119',
-    period: '/month',
-    description: 'Comprehensive productivity suite designed for remote and hybrid teams, featuring collaboration tools, project management, time tracking, and team analytics.',
-    features: [
-      'Team collaboration and communication',
-      'Project management and task tracking',
-      'Time tracking and productivity analytics',
-      'Remote team monitoring and insights',
-      'Integration with popular work tools',
-      'Customizable workflows and automation',
-      'Performance analytics and reporting',
-      'Mobile apps for all team members',
-      'API for custom integrations'
-    ],
-    popular: true,
-    icon: '💻',
-    color: 'from-teal-600 to-cyan-700',
-    textColor: 'text-teal-400',
-    link: 'https://ziontechgroup.com/remote-team-productivity-suite',
-    marketPosition: 'Alternative to Asana, Monday.com, and ClickUp; more focused on remote team productivity.',
-    targetAudience: 'Remote teams, Hybrid workplaces, Project managers, HR teams',
-    trialDays: 21,
-    setupTime: '1 day',
-    category: 'Remote Work & Productivity',
-    realService: true,
-    technology: ['Project management, Collaboration tools, Time tracking, Analytics'],
-    integrations: ['Slack, Microsoft Teams, Zoom, Google Workspace, Microsoft 365'],
-    useCases: ['Remote team management, Project collaboration, Productivity tracking, Team analytics'],
-    roi: 'Improve remote team productivity by 40% and reduce project delays by 30%.',
-    competitors: ['Asana, Monday.com, ClickUp, Notion'],
-    marketSize: '$15B remote work software market',
-    growthRate: '35% YoY',
-    variant: 'ai-futuristic',
-    contactInfo: contact,
-    realImplementation: true,
-    implementationDetails: 'Remote productivity platform with collaboration tools, project management, and analytics.',
-    launchDate: '2025-02-10',
-    customers: 567,
-    rating: 4.7,
-    reviews: 345
+    reviews: 456
   }
 ];
