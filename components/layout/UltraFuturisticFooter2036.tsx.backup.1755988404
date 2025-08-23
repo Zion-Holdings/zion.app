@@ -110,6 +110,35 @@ const footerSections = [
     description: 'Specialized solutions for key industries',
     icon: <Target className="w-5 h-5 text-emerald-400" />,
     links: [
+<<<<<<< HEAD
+      { name: 'Healthcare AI Solutions', href: '/healthcare-ai-solutions' },
+      { name: 'Healthcare Technology', href: '/healthcare-solutions' },
+      { name: 'Manufacturing AI Solutions', href: '/manufacturing-ai-solutions' },
+      { name: 'Retail Technology Solutions', href: '/retail-technology-solutions' },
+      { name: 'Government Technology', href: '/government-technology-solutions' },
+      { name: 'Financial Technology', href: '/fintech-solutions' },
+      { name: 'Education Technology', href: '/education-solutions' },
+      { name: 'Energy Technology', href: '/energy-solutions' },
+      { name: 'Transportation Technology', href: '/transportation-solutions' },
+      { name: 'Supply Chain AI', href: '/supply-chain-ai' }
+    ]
+  },
+  {
+    title: 'Business Solutions',
+    description: 'Innovative business solutions for modern enterprises',
+    icon: <Rocket className="w-5 h-5 text-orange-400" />,
+    links: [
+      { name: 'Micro SAAS Platform', href: '/micro-saas' },
+      { name: 'Business Intelligence Suite', href: '/ai-business-intelligence' },
+      { name: 'Smart CRM Intelligence', href: '/smart-crm-intelligence-suite' },
+      { name: 'SEO Automation Suite', href: '/seo-automation-suite' },
+      { name: 'Incident Automation Suite', href: '/incident-automation-suite' },
+      { name: 'Incident Response Retainer', href: '/incident-response-retainer' },
+      { name: 'Status Pages & SLO Monitoring', href: '/status-pages-slo' },
+      { name: 'Uptime SLO Monitor', href: '/uptime-slo-monitor' },
+      { name: 'TLS Certificate Monitor', href: '/tls-certificate-monitor' },
+      { name: 'Synthetic Monitor Recorder', href: '/synthetic-monitor-recorder' }
+=======
       { name: 'AI Customer Success Platform', href: '/ai-customer-success-platform' },
       { name: 'Intelligent Supply Chain Optimization', href: '/intelligent-supply-chain-optimization' },
       { name: 'AI Financial Planning Platform', href: '/ai-financial-planning-platform' },
@@ -137,6 +166,7 @@ const footerSections = [
       { name: 'Documentation', href: '/docs' },
       { name: 'Support', href: '/support' },
       { name: 'Training', href: '/training' }
+>>>>>>> origin/cursor/website-audit-content-update-and-deployment-31bf
     ]
   }
 ];

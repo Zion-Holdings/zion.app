@@ -20,7 +20,11 @@
   "brain-computer-interface",
   "customer-intelligence-platform",
   "industrial-automation-ai",
+<<<<<<< HEAD
+  "interplanetary-communication",
+=======
   "intelligent-project-management-suite",
+>>>>>>> origin/cursor/website-audit-content-update-and-deployment-31bf
   "marketing-ai-platform",
   "metaverse-development-studio-pro",
   "metaverse-digital-reality-platform",
@@ -43,6 +47,11 @@
   "quantum-risk-financial-manager",
   "quantum-supply-chain-optimizer",
   "quantum-threat-detection",
+<<<<<<< HEAD
+  "real-estate-technology-solutions",
+  "services",
+=======
+>>>>>>> origin/cursor/website-audit-content-update-and-deployment-31bf
   "services/data-contracts-hub",
   "services/serverless-lakehouse-starter",
   "space-data-analytics",

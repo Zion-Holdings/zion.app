@@ -154,9 +154,33 @@ const navigationItems: NavigationItem[] = [
         icon: <Play className="w-4 h-4" />
       },
       { 
+<<<<<<< HEAD
+        name: 'AI Evaluation', 
+        href: '/services/ai-evaluation-orchestrator', 
+        description: 'AI model evaluation & testing',
+        icon: <Play className="w-4 h-4" />
+      },
+      { 
+        name: 'AI Support Router', 
+        href: '/services/ai-support-triage-router', 
+        description: 'Intelligent support routing',
+        icon: <Play className="w-4 h-4" />
+      },
+      { 
+        name: 'AI Code Review', 
+        href: '/services/ai-code-review-assistant-pro', 
+        description: 'AI-powered code analysis',
+        icon: <Play className="w-4 h-4" />
+      },
+      { 
+        name: 'AI Revenue Forecasting', 
+        href: '/services/ai-revenue-forecasting-copilot', 
+        description: 'Revenue prediction & planning',
+=======
         name: 'Micro SAAS', 
         href: '/micro-saas', 
         description: 'Business automation solutions',
+>>>>>>> origin/cursor/website-audit-content-update-and-deployment-31bf
         icon: <Play className="w-4 h-4" />
       }
     ]
@@ -195,6 +219,12 @@ const navigationItems: NavigationItem[] = [
         icon: <DollarSign className="w-4 h-4" />
       },
       { 
+<<<<<<< HEAD
+        name: 'Micro SAAS Solutions', 
+        href: '/ultimate-2025-micro-saas-showcase', 
+        description: 'Micro SAAS portfolio',
+        icon: <Rocket className="w-4 h-4" />
+=======
         name: 'Market Pricing', 
         href: '/market-pricing', 
         description: 'Market price references',
@@ -250,6 +280,7 @@ const navigationItems: NavigationItem[] = [
         href: '/news', 
         description: 'Latest company updates',
         icon: <Play className="w-4 h-4" />
+>>>>>>> origin/cursor/website-audit-content-update-and-deployment-31bf
       }
     ]
   },
@@ -272,6 +303,12 @@ const navigationItems: NavigationItem[] = [
         icon: <FileText className="w-4 h-4" />
       },
       { 
+<<<<<<< HEAD
+        name: 'Webinars', 
+        href: '/webinars', 
+        description: 'Educational content',
+        icon: <Video className="w-4 h-4" />
+=======
         name: 'Case Studies', 
         href: '/case-studies', 
         description: 'Success stories',
@@ -300,6 +337,7 @@ const navigationItems: NavigationItem[] = [
         href: '/white-papers', 
         description: 'In-depth research',
         icon: <Play className="w-4 h-4" />
+>>>>>>> origin/cursor/website-audit-content-update-and-deployment-31bf
       }
     ]
   },
@@ -322,6 +360,12 @@ const navigationItems: NavigationItem[] = [
         icon: <MessageCircle className="w-4 h-4" />
       },
       { 
+<<<<<<< HEAD
+        name: 'Knowledge Base', 
+        href: '/support', 
+        description: 'Self-service help',
+        icon: <BookOpen className="w-4 h-4" />
+=======
         name: 'Manufacturing', 
         href: '/manufacturing-ai-solutions', 
         description: 'Manufacturing automation',
@@ -383,6 +427,7 @@ const navigationItems: NavigationItem[] = [
         href: '/support', 
         description: 'Get immediate assistance',
         icon: <Play className="w-4 h-4" />
+>>>>>>> origin/cursor/website-audit-content-update-and-deployment-31bf
       }
     ]
   }
