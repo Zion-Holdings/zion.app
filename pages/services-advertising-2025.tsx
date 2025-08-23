@@ -75,7 +75,7 @@ export default function ServicesAdvertising2025() {
   const [viewMode, setViewMode] = useState<'grid' | 'list'>('grid');
 
   const filteredServices = allServices.filter(service => {
-    const matchesCategory = selectedCategory === 'all' || service.variant === selectedCategory;
+    const matchesCategory = selectedCategory === 'all' || service.category === selectedCategory;
     const matchesSearch = service.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
                          service.description.toLowerCase().includes(searchTerm.toLowerCase()) ||
                          service.category.toLowerCase().includes(searchTerm.toLowerCase());
@@ -258,8 +258,10 @@ export default function ServicesAdvertising2025() {
                     {/* Pricing */}
                     <div className="flex items-center justify-between mb-4">
                       <div className="text-2xl font-bold text-white">
-                        {service.price}
-                        <span className="text-lg text-gray-400">{service.period}</span>
+                        {typeof service.price === 'string' ? service.price : `$${service.price.monthly}/month`}
+                        <span className="text-lg text-gray-400">
+                          {typeof service.price === 'string' ? (('period' in service ? service.period : '') || '') : ''}
+                        </span>
                       </div>
                       <div className="flex items-center text-yellow-400">
                         <Star className="w-5 h-5 fill-current" />
@@ -283,10 +285,7 @@ export default function ServicesAdvertising2025() {
                     {/* Market Info */}
                     <div className="mb-6 space-y-2">
                       <div className="text-xs text-gray-400">
-                        <span className="font-semibold">Market Size:</span> {service.marketSize}
-                      </div>
-                      <div className="text-xs text-gray-400">
-                        <span className="font-semibold">Growth Rate:</span> {service.growthRate}
+                        <span className="font-semibold">Market Position:</span> {('marketPosition' in service ? service.marketPosition : '')}
                       </div>
                       <div className="text-xs text-gray-400">
                         <span className="font-semibold">ROI:</span> {service.roi}
@@ -322,8 +321,10 @@ export default function ServicesAdvertising2025() {
                         <div className="text-4xl mb-4">{service.icon}</div>
                         <div className="text-center">
                           <div className="text-2xl font-bold text-white mb-2">
-                            {service.price}
-                            <span className="text-lg text-gray-400">{service.period}</span>
+                            {typeof service.price === 'string' ? service.price : `$${service.price.monthly}/month`}
+                            <span className="text-lg text-gray-400">
+                              {typeof service.price === 'string' ? (('period' in service ? service.period : '') || '') : ''}
+                            </span>
                           </div>
                           <div className="flex items-center justify-center text-yellow-400 mb-2">
                             <Star className="w-4 h-4 fill-current" />
@@ -366,8 +367,7 @@ export default function ServicesAdvertising2025() {
                           <div>
                             <h4 className="text-sm font-semibold text-gray-400 mb-2">MARKET INFO</h4>
                             <div className="space-y-2 text-sm text-gray-300">
-                              <div><span className="font-semibold">Market Size:</span> {service.marketSize}</div>
-                              <div><span className="font-semibold">Growth Rate:</span> {service.growthRate}</div>
+                              <div><span className="font-semibold">Market Position:</span> {('marketPosition' in service ? service.marketPosition : '')}</div>
                               <div><span className="font-semibold">ROI:</span> {service.roi}</div>
                               <div><span className="font-semibold">Category:</span> {service.category}</div>
                             </div>
@@ -379,7 +379,7 @@ export default function ServicesAdvertising2025() {
                           <div>
                             <h4 className="text-sm font-semibold text-gray-400 mb-2">TECHNOLOGY</h4>
                             <div className="flex flex-wrap gap-2">
-                              {service.technology.slice(0, 4).map((tech, idx) => (
+                              {('technology' in service ? service.technology : ('techStack' in service ? service.techStack : [])).slice(0, 4).map((tech, idx) => (
                                 <span key={idx} className="px-2 py-1 bg-blue-600/20 text-blue-300 text-xs rounded">
                                   {tech}
                                 </span>
