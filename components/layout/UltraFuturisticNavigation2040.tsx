@@ -164,20 +164,34 @@ const navigationItems: NavigationItem[] = [
         neonColor: 'shadow-blue-400/50'
       },
       {
-        label: 'Webinars',
-        href: '/webinars',
-        icon: <Video className="w-4 h-4" />,
-        description: 'Educational webinars and events',
-        neonColor: 'shadow-purple-400/50'
-      },
-      {
         label: 'Documentation',
         href: '/docs',
         icon: <Code className="w-4 h-4" />,
         description: 'Technical documentation',
         neonColor: 'shadow-green-400/50'
+      },
+      {
+        label: 'API Reference',
+        href: '/api-documentation',
+        icon: <Code className="w-4 h-4" />,
+        description: 'API documentation and examples',
+        neonColor: 'shadow-blue-400/50'
+      },
+      {
+        label: 'Case Studies',
+        href: '/case-studies',
+        icon: <FileText className="w-4 h-4" />,
+        description: 'Client success stories',
+        neonColor: 'shadow-purple-400/50'
       }
     ]
+  },
+  {
+    label: 'Careers',
+    href: '/careers',
+    icon: <Users className="w-4 h-4" />,
+    description: 'Join our team',
+    neonColor: 'shadow-green-400/50'
   },
   {
     label: 'Contact',
