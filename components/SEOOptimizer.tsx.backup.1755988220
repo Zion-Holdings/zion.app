@@ -11,10 +11,17 @@ interface SEOOptimizerProps {
 }
 
 const SEOOptimizer: React.FC<SEOOptimizerProps> = ({
+<<<<<<< HEAD
+  title = "Zion Tech Group - Pioneering the Future of Technology",
+  description = "Zion Tech Group delivers cutting-edge technology solutions including AI, quantum computing, space technology, and cybersecurity. Transform your business with innovative solutions that drive growth and unlock human potential.",
+  keywords = "Zion Tech Group, AI solutions, quantum computing, space technology, cybersecurity, technology consulting, digital transformation, enterprise solutions, machine learning, cloud computing",
+  image = "https://ziontechgroup.com/og-image.jpg",
+=======
   title = "Zion Tech Group - Revolutionary AI Consciousness & Quantum Computing Solutions 2040-2041",
   description = "Pioneering the future of technology with revolutionary AI consciousness, quantum computing, and autonomous solutions. Transform your business with cutting-edge 2040-2041 technology.",
   keywords = "AI consciousness, quantum computing, autonomous systems, space technology, cybersecurity, business intelligence, Zion Tech Group, 2040 technology, revolutionary AI",
   image = "/og-image-zion-tech-group.jpg",
+>>>>>>> origin/cursor/analyze-improve-and-deploy-application-8ebe
   url = "https://ziontechgroup.com",
   type = "website"
 }) => {
@@ -22,6 +29,53 @@ const SEOOptimizer: React.FC<SEOOptimizerProps> = ({
     "@context": "https://schema.org",
     "@type": "Organization",
     "name": "Zion Tech Group",
+<<<<<<< HEAD
+    "url": "https://ziontechgroup.com",
+    "logo": "https://ziontechgroup.com/logo.png",
+    "description": "Pioneering the future of technology with innovative solutions that drive business transformation and unlock human potential.",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "364 E Main St STE 1008",
+      "addressLocality": "Middletown",
+      "addressRegion": "DE",
+      "postalCode": "19709",
+      "addressCountry": "US"
+    },
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "telephone": "+1-302-464-0950",
+      "contactType": "customer service",
+      "email": "contact@ziontechgroup.com"
+    },
+    "sameAs": [
+      "https://linkedin.com/company/ziontechgroup",
+      "https://twitter.com/ziontechgroup",
+      "https://github.com/ziontechgroup",
+      "https://youtube.com/@ziontechgroup",
+      "https://facebook.com/ziontechgroup"
+    ],
+    "foundingDate": "2020",
+    "numberOfEmployees": "50-200",
+    "serviceArea": "Worldwide",
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Technology Services",
+      "itemListElement": [
+        {
+          '@type': 'Offer',
+          itemOffered: {
+            '@type': 'Service',
+            name: 'AI & Machine Learning Solutions',
+            description: 'Advanced artificial intelligence and machine learning services'
+          }
+        },
+        {
+          '@type': 'Offer',
+          itemOffered: {
+            '@type': 'Service',
+            name: 'Quantum Computing Services',
+            description: 'Next-generation quantum technology solutions'
+=======
     "url": url,
     "logo": `${url}/logo.png`,
     "description": description,
@@ -47,14 +101,28 @@ const SEOOptimizer: React.FC<SEOOptimizerProps> = ({
             "@type": "Service",
             "name": "AI Consciousness Evolution",
             "description": "Next-generation AI consciousness and emotional intelligence"
+>>>>>>> origin/cursor/analyze-improve-and-deploy-application-8ebe
           }
         },
         {
           "@type": "Offer",
           "itemOffered": {
             "@type": "Service",
+<<<<<<< HEAD
+            "name": "Space Technology Applications",
+            "description": "Innovative space tech solutions for terrestrial and extraterrestrial applications"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Cybersecurity Solutions",
+            "description": "Enterprise-grade security solutions for modern businesses"
+=======
             "name": "Quantum Computing Solutions",
             "description": "Revolutionary quantum computing with consciousness integration"
+>>>>>>> origin/cursor/analyze-improve-and-deploy-application-8ebe
           }
         }
       ]
@@ -69,9 +137,12 @@ const SEOOptimizer: React.FC<SEOOptimizerProps> = ({
       <meta name="keywords" content={keywords} />
       <meta name="author" content="Zion Tech Group" />
       <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+<<<<<<< HEAD
+=======
       
       {/* Canonical URL */}
       <link rel="canonical" href={url} />
+>>>>>>> origin/cursor/analyze-improve-and-deploy-application-8ebe
       
       {/* Open Graph Meta Tags */}
       <meta property="og:title" content={title} />
@@ -90,17 +161,43 @@ const SEOOptimizer: React.FC<SEOOptimizerProps> = ({
       <meta name="twitter:description" content={description} />
       <meta name="twitter:image" content={image} />
       <meta name="twitter:site" content="@ziontechgroup" />
+<<<<<<< HEAD
+      <meta name="twitter:creator" content="@ziontechgroup" />
+      
+      {/* Additional Meta Tags */}
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+      <meta name="theme-color" content="#0891b2" />
+      <meta name="msapplication-TileColor" content="#0891b2" />
+      <meta name="apple-mobile-web-app-capable" content="yes" />
+      <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+      
+      {/* Canonical URL */}
+      <link rel="canonical" href={url} />
+      
+      {/* Favicon and Icons */}
+      <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+      <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+      <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+      <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+      <link rel="manifest" href="/site.webmanifest" />
+=======
       
       {/* Additional Meta Tags */}
       <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
       <meta name="theme-color" content="#000000" />
       <meta name="msapplication-TileColor" content="#000000" />
+>>>>>>> origin/cursor/analyze-improve-and-deploy-application-8ebe
       
       {/* Preconnect to External Domains */}
       <link rel="preconnect" href="https://fonts.googleapis.com" />
       <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
       <link rel="preconnect" href="https://www.googletagmanager.com" />
       
+<<<<<<< HEAD
+      {/* DNS Prefetch */}
+      <link rel="dns-prefetch" href="//www.google-analytics.com" />
+      <link rel="dns-prefetch" href="//www.googletagmanager.com" />
+=======
       {/* Favicon and App Icons */}
       <link rel="icon" href="/favicon.ico" />
       <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
@@ -109,6 +206,7 @@ const SEOOptimizer: React.FC<SEOOptimizerProps> = ({
       
       {/* Manifest */}
       <link rel="manifest" href="/site.webmanifest" />
+>>>>>>> origin/cursor/analyze-improve-and-deploy-application-8ebe
       
       {/* Structured Data */}
       <script
@@ -116,15 +214,35 @@ const SEOOptimizer: React.FC<SEOOptimizerProps> = ({
         dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
       />
       
+<<<<<<< HEAD
+      {/* Additional SEO Meta Tags */}
+      <meta name="application-name" content="Zion Tech Group" />
+      <meta name="mobile-web-app-capable" content="yes" />
+      <meta name="format-detection" content="telephone=no" />
+      <meta name="msapplication-config" content="/browserconfig.xml" />
+      
+      {/* Performance Optimizations */}
+      <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
+      <meta name="renderer" content="webkit" />
+=======
       {/* Additional Performance Optimizations */}
       <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
       <meta name="format-detection" content="telephone=no" />
+>>>>>>> origin/cursor/analyze-improve-and-deploy-application-8ebe
       
       {/* Security Headers */}
       <meta httpEquiv="X-Content-Type-Options" content="nosniff" />
       <meta httpEquiv="X-Frame-Options" content="DENY" />
       <meta httpEquiv="X-XSS-Protection" content="1; mode=block" />
       
+<<<<<<< HEAD
+      {/* Language and Region */}
+      <meta name="language" content="English" />
+      <meta name="geo.region" content="US-DE" />
+      <meta name="geo.placename" content="Middletown, Delaware" />
+      <meta name="geo.position" content="39.4496;-75.7163" />
+      <meta name="ICBM" content="39.4496, -75.7163" />
+=======
       {/* PWA Meta Tags */}
       <meta name="application-name" content="Zion Tech Group" />
       <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -134,6 +252,7 @@ const SEOOptimizer: React.FC<SEOOptimizerProps> = ({
       {/* Mobile Meta Tags */}
       <meta name="mobile-web-app-capable" content="yes" />
       <meta name="msapplication-config" content="/browserconfig.xml" />
+>>>>>>> origin/cursor/analyze-improve-and-deploy-application-8ebe
     </Head>
   );
 };

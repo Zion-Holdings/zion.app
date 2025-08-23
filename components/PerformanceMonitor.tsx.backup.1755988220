@@ -1,0 +1,771 @@
+import React, { useEffect, useState, useCallback } from 'react';
+<<<<<<< HEAD
+import { motion } from 'framer-motion';
+import { Activity, Zap, Clock, TrendingUp, CheckCircle } from 'lucide-react';
+
+interface PerformanceMetrics {
+  fcp: number | null;
+  lcp: number | null;
+  fid: number | null;
+  cls: number | null;
+  ttfb: number | null;
+  domLoad: number | null;
+  windowLoad: number | null;
+}
+
+interface PerformanceMonitorProps {
+  className?: string;
+  enabled?: boolean;
+  showMetrics?: boolean;
+}
+
+// Extended interface for First Input Delay
+interface FirstInputEntry extends PerformanceEntry {
+  processingStart: number;
+  target?: any;
+}
+
+// Extended interface for Layout Shift
+interface LayoutShiftEntry extends PerformanceEntry {
+  value: number;
+  hadRecentInput: boolean;
+}
+
+const PerformanceMonitor: React.FC<PerformanceMonitorProps> = ({ 
+  className = '', 
+  enabled = true, 
+  showMetrics = false 
+}) => {
+  const [metrics, setMetrics] = useState<PerformanceMetrics>({
+    fcp: null,
+    lcp: null,
+    fid: null,
+    cls: null,
+    ttfb: null,
+    domLoad: null,
+    windowLoad: null
+  });
+  const [isVisible, setIsVisible] = useState(false);
+  const [isExpanded, setIsExpanded] = useState(false);
+  const [optimizationTips, setOptimizationTips] = useState<string[]>([]);
+
+  // Performance monitoring
+  useEffect(() => {
+    if (!enabled || typeof window === 'undefined') return;
+
+    // First Contentful Paint
+    const fcpObserver = new PerformanceObserver((list) => {
+      const entries = list.getEntries();
+      const fcpEntry = entries.find(entry => entry.name === 'first-contentful-paint');
+      if (fcpEntry) {
+        setMetrics(prev => ({ ...prev, fcp: fcpEntry.startTime }));
+      }
+    });
+
+    // Largest Contentful Paint
+    const lcpObserver = new PerformanceObserver((list) => {
+      const entries = list.getEntries();
+      const lcpEntry = entries[entries.length - 1];
+      if (lcpEntry) {
+        setMetrics(prev => ({ ...prev, lcp: lcpEntry.startTime }));
+      }
+    });
+
+    // First Input Delay
+    const fidObserver = new PerformanceObserver((list) => {
+      const entries = list.getEntries();
+      const fidEntry = entries[0] as PerformanceEventTiming;
+      if (fidEntry && 'processingStart' in fidEntry) {
+        setMetrics(prev => ({ ...prev, fid: fidEntry.processingStart - fidEntry.startTime }));
+      }
+    });
+
+    // Cumulative Layout Shift
+    const clsObserver = new PerformanceObserver((list) => {
+      let clsValue = 0;
+      for (const entry of list.getEntries()) {
+        const layoutShiftEntry = entry as LayoutShiftEntry;
+        if (!layoutShiftEntry.hadRecentInput) {
+          clsValue += layoutShiftEntry.value;
+        }
+      }
+      setMetrics(prev => ({ ...prev, cls: clsValue }));
+    });
+
+    try {
+      fcpObserver.observe({ entryTypes: ['paint'] });
+      lcpObserver.observe({ entryTypes: ['largest-contentful-paint'] });
+      fidObserver.observe({ entryTypes: ['first-input'] });
+      clsObserver.observe({ entryTypes: ['layout-shift'] });
+    } catch (error) {
+      console.warn('Performance monitoring not supported:', error);
+    }
+
+    // Time to First Byte
+    const navigationEntry = performance.getEntriesByType('navigation')[0] as PerformanceNavigationTiming;
+    if (navigationEntry) {
+      setMetrics(prev => ({ ...prev, ttfb: navigationEntry.responseStart - navigationEntry.requestStart }));
+    }
+
+    // DOM and Window load times
+    const domLoadTime = performance.timing.domContentLoadedEventEnd - performance.timing.navigationStart;
+    const windowLoadTime = performance.timing.loadEventEnd - performance.timing.navigationStart;
+    
+    setMetrics(prev => ({ 
+      ...prev, 
+      domLoad: domLoadTime > 0 ? domLoadTime : null,
+      windowLoad: windowLoadTime > 0 ? windowLoadTime : null
+    }));
+
+    return () => {
+      if (monitoringInterval.current) {
+        clearInterval(monitoringInterval.current);
+      }
+      if (performanceObserver.current) {
+        performanceObserver.current.disconnect();
+      }
+=======
+
+interface PerformanceMetrics {
+  fcp: number;
+  lcp: number;
+  fid: number;
+  cls: number;
+  ttfb: number;
+  domLoad: number;
+  windowLoad: number;
+}
+
+interface PerformanceMonitorProps {
+  enabled?: boolean;
+  showMetrics?: boolean;
+  logToConsole?: boolean;
+}
+
+const PerformanceMonitor: React.FC<PerformanceMonitorProps> = ({
+  enabled = true,
+  showMetrics = false,
+  logToConsole = false
+}) => {
+  const [metrics, setMetrics] = useState<PerformanceMetrics | null>(null);
+  const [isMonitoring, setIsMonitoring] = useState(false);
+
+  const measurePerformance = useCallback(() => {
+    if (!enabled || typeof window === 'undefined') return;
+
+    const observer = new PerformanceObserver((list) => {
+      const entries = list.getEntries();
+      entries.forEach((entry) => {
+        if (logToConsole) {
+          console.log(`Performance Entry: ${entry.name}`, entry);
+        }
+      });
+    });
+
+    try {
+      observer.observe({ entryTypes: ['navigation', 'resource', 'paint', 'largest-contentful-paint', 'first-input'] });
+    } catch (e) {
+      // Fallback for browsers that don't support PerformanceObserver
+      if (logToConsole) {
+        console.warn('PerformanceObserver not supported');
+      }
+    }
+
+    // Measure Core Web Vitals
+    const measureCoreWebVitals = () => {
+      const navigation = performance.getEntriesByType('navigation')[0] as PerformanceNavigationTiming;
+      const paint = performance.getEntriesByType('paint');
+      
+      if (navigation) {
+        const fcp = paint.find(entry => entry.name === 'first-contentful-paint')?.startTime || 0;
+        const lcp = performance.getEntriesByType('largest-contentful-paint')[0]?.startTime || 0;
+        
+        const newMetrics: PerformanceMetrics = {
+          fcp: Math.round(fcp),
+          lcp: Math.round(lcp),
+          fid: 0, // Will be updated when first input occurs
+          cls: 0, // Will be updated by CLS observer
+          ttfb: Math.round(navigation.responseStart - navigation.requestStart),
+          domLoad: Math.round(navigation.domContentLoadedEventEnd - navigation.fetchStart),
+          windowLoad: Math.round(navigation.loadEventEnd - navigation.fetchStart)
+        };
+
+        setMetrics(newMetrics);
+
+        // Send to analytics if available
+        if (typeof window.gtag !== 'undefined') {
+          window.gtag('event', 'core_web_vitals', {
+            event_category: 'Web Vitals',
+            value: Math.round(lcp),
+            custom_parameter: {
+              fcp: newMetrics.fcp,
+              lcp: newMetrics.lcp,
+              ttfb: newMetrics.ttfb
+            }
+          });
+        }
+
+        if (logToConsole) {
+          console.log('Core Web Vitals:', newMetrics);
+        }
+      }
+    };
+
+    // Measure First Input Delay
+    const measureFID = () => {
+      const observer = new PerformanceObserver((list) => {
+        const entries = list.getEntries();
+        entries.forEach((entry) => {
+          if (entry.entryType === 'first-input') {
+            const fid = Math.round((entry as any).processingStart - entry.startTime);
+            setMetrics(prev => prev ? { ...prev, fid } : null);
+            
+            if (logToConsole) {
+              console.log('First Input Delay:', fid);
+            }
+          }
+        });
+      });
+
+      try {
+        observer.observe({ entryTypes: ['first-input'] });
+      } catch (e) {
+        if (logToConsole) {
+          console.warn('First Input Delay measurement not supported');
+        }
+      }
+    };
+
+    // Measure Cumulative Layout Shift
+    const measureCLS = () => {
+      let clsValue = 0;
+      let clsEntries: PerformanceEntry[] = [];
+
+      const observer = new PerformanceObserver((list) => {
+        for (const entry of list.getEntries()) {
+          if (!clsEntries.includes(entry)) {
+            clsEntries.push(entry);
+            clsValue += (entry as any).value;
+          }
+        }
+        
+        setMetrics(prev => prev ? { ...prev, cls: Math.round(clsValue * 1000) / 1000 } : null);
+      });
+
+      try {
+        observer.observe({ entryTypes: ['layout-shift'] });
+      } catch (e) {
+        if (logToConsole) {
+          console.warn('Cumulative Layout Shift measurement not supported');
+        }
+      }
+    };
+
+    // Initialize measurements
+    if (document.readyState === 'complete') {
+      measureCoreWebVitals();
+      measureFID();
+      measureCLS();
+    } else {
+      window.addEventListener('load', () => {
+        setTimeout(() => {
+          measureCoreWebVitals();
+          measureFID();
+          measureCLS();
+        }, 0);
+      });
+    }
+
+    setIsMonitoring(true);
+  }, [enabled, logToConsole]);
+
+  useEffect(() => {
+    measurePerformance();
+  }, [measurePerformance]);
+
+  // Monitor for performance issues
+  useEffect(() => {
+    if (!metrics || !enabled) return;
+
+    // Check for performance issues and provide suggestions
+    const issues: string[] = [];
+    
+    if (metrics.fcp > 1800) {
+      issues.push('First Contentful Paint is slow. Consider optimizing critical rendering path.');
+    }
+    
+    if (metrics.lcp > 2500) {
+      issues.push('Largest Contentful Paint is slow. Optimize images and reduce render-blocking resources.');
+    }
+    
+    if (metrics.fid > 100) {
+      issues.push('First Input Delay is high. Reduce JavaScript execution time.');
+    }
+    
+    if (metrics.cls > 0.1) {
+      issues.push('Cumulative Layout Shift is high. Avoid layout shifts during page load.');
+    }
+    
+    if (metrics.ttfb > 600) {
+      issues.push('Time to First Byte is slow. Optimize server response time.');
+    }
+
+    if (issues.length > 0 && logToConsole) {
+      console.warn('Performance Issues Detected:', issues);
+    }
+
+    // Send performance data to analytics
+    if (typeof window.gtag !== 'undefined') {
+      window.gtag('event', 'performance_metrics', {
+        event_category: 'Performance',
+        custom_parameter: {
+          fcp: metrics.fcp,
+          lcp: metrics.lcp,
+          fid: metrics.fid,
+          cls: metrics.cls,
+          ttfb: metrics.ttfb,
+          issues: issues.length
+        }
+      });
+    }
+  }, [metrics, enabled, logToConsole]);
+
+  // Cleanup on unmount
+  useEffect(() => {
+    return () => {
+      setIsMonitoring(false);
+>>>>>>> origin/cursor/analyze-improve-and-deploy-application-8ebe
+    };
+  }, [enabled]);
+
+  // Generate optimization tips based on metrics
+  useEffect(() => {
+    const tips: string[] = [];
+    
+    if (metrics.fcp && metrics.fcp > 1800) {
+      tips.push('First Contentful Paint is slow. Consider optimizing critical rendering path.');
+    }
+    
+    if (metrics.lcp && metrics.lcp > 2500) {
+      tips.push('Largest Contentful Paint is slow. Optimize images and reduce render-blocking resources.');
+    }
+    
+    if (metrics.fid && metrics.fid > 100) {
+      tips.push('First Input Delay is high. Consider code splitting and reducing JavaScript execution time.');
+    }
+    
+    if (metrics.cls && metrics.cls > 0.1) {
+      tips.push('Cumulative Layout Shift is high. Ensure stable layouts and avoid content jumping.');
+    }
+    
+    if (metrics.ttfb && metrics.ttfb > 600) {
+      tips.push('Time to First Byte is slow. Optimize server response time and reduce blocking requests.');
+    }
+
+    setOptimizationTips(tips);
+  }, [metrics]);
+
+  // Performance optimization functions
+  const optimizeImages = useCallback(() => {
+    const images = document.querySelectorAll('img');
+    images.forEach(img => {
+      if (!img.loading) {
+        img.loading = 'lazy';
+      }
+      if (!img.decoding) {
+        img.decoding = 'async';
+      }
+    });
+  }, []);
+
+<<<<<<< HEAD
+  const preloadCriticalResources = useCallback(() => {
+    const criticalResources = [
+      '/fonts/inter-var.woff2',
+      '/css/critical.css'
+    ];
+    
+    criticalResources.forEach(resource => {
+      const link = document.createElement('link');
+      link.rel = 'preload';
+      link.href = resource;
+      link.as = resource.endsWith('.css') ? 'style' : 'font';
+      link.crossOrigin = 'anonymous';
+      document.head.appendChild(link);
+    });
+  }, []);
+
+  const enableResourceHints = useCallback(() => {
+    // DNS prefetch for external domains
+    const externalDomains = [
+      'fonts.googleapis.com',
+      'fonts.gstatic.com',
+      'cdn.jsdelivr.net'
+    ];
+    
+    externalDomains.forEach(domain => {
+      const link = document.createElement('link');
+      link.rel = 'dns-prefetch';
+      link.href = `//${domain}`;
+      document.head.appendChild(link);
+    });
+  }, []);
+
+  // Apply optimizations on mount
+  useEffect(() => {
+    if (enabled) {
+      optimizeImages();
+      preloadCriticalResources();
+      enableResourceHints();
+    }
+  }, [enabled, optimizeImages, preloadCriticalResources, enableResourceHints]);
+
+  // Memory usage monitoring
+  useEffect(() => {
+    if (!enabled || !('memory' in performance)) return;
+
+    const checkMemoryUsage = () => {
+      const memory = (performance as any).memory;
+      if (memory.usedJSHeapSize > memory.jsHeapSizeLimit * 0.8) {
+        console.warn('High memory usage detected. Consider optimizing memory usage.');
+      }
+    };
+
+    const interval = setInterval(checkMemoryUsage, 10000);
+    return () => clearInterval(interval);
+  }, [enabled]);
+
+  // Network monitoring
+  useEffect(() => {
+    if (!enabled || !('connection' in navigator)) return;
+
+    const connection = (navigator as any).connection;
+    if (connection) {
+      const updateNetworkInfo = () => {
+        const effectiveType = connection.effectiveType;
+        const downlink = connection.downlink;
+        
+        if (effectiveType === 'slow-2g' || effectiveType === '2g') {
+          console.warn('Slow network detected. Consider enabling low-bandwidth mode.');
+        }
+        
+        if (downlink < 1) {
+          console.warn('Very slow connection detected. Optimizing for low bandwidth.');
+        }
+      };
+
+      connection.addEventListener('change', updateNetworkInfo);
+      updateNetworkInfo();
+
+      return () => connection.removeEventListener('change', updateNetworkInfo);
+    }
+  }, [enabled]);
+
+  // Calculate performance scores
+  const calculateScores = useCallback(() => {
+    const { firstContentfulPaint, largestContentfulPaint, cumulativeLayoutShift, firstInputDelay } = metrics;
+    
+    // Performance Score (based on Core Web Vitals)
+    let performanceScore = 100;
+    
+    if (firstContentfulPaint > 1800) performanceScore -= 20;
+    if (largestContentfulPaint > 2500) performanceScore -= 25;
+    if (cumulativeLayoutShift > 0.1) performanceScore -= 20;
+    if (firstInputDelay > 100) performanceScore -= 15;
+    
+    // SEO Score (simplified)
+    const seoScore = Math.max(0, 100 - Math.floor(metrics.loadTime / 100));
+    
+    // Accessibility Score (simplified)
+    const accessibilityScore = 95; // Would be calculated based on actual accessibility checks
+    
+    // Best Practices Score (simplified)
+    const bestPracticesScore = 90; // Would be calculated based on actual best practices checks
+    
+    setMetrics(prev => ({
+      ...prev,
+      performanceScore: Math.max(0, performanceScore),
+      seoScore,
+      accessibilityScore,
+      bestPracticesScore
+    }));
+  }, [metrics]);
+
+  // Detect performance issues
+  const detectPerformanceIssues = useCallback(() => {
+    const newIssues: PerformanceIssue[] = [];
+    
+    if (metrics.firstContentfulPaint > 1800) {
+      newIssues.push({
+        id: 'fcp-slow',
+        type: 'warning',
+        message: 'First Contentful Paint is slow',
+        impact: 'high',
+        suggestion: 'Optimize critical rendering path and reduce server response time',
+        category: 'Performance'
+      });
+    }
+    
+    if (metrics.largestContentfulPaint > 2500) {
+      newIssues.push({
+        id: 'lcp-slow',
+        type: 'warning',
+        message: 'Largest Contentful Paint is slow',
+        impact: 'high',
+        suggestion: 'Optimize images, implement lazy loading, and improve server response time',
+        category: 'Performance'
+      });
+    }
+    
+    if (metrics.cumulativeLayoutShift > 0.1) {
+      newIssues.push({
+        id: 'cls-high',
+        type: 'warning',
+        message: 'High Cumulative Layout Shift detected',
+        impact: 'medium',
+        suggestion: 'Set explicit dimensions for images and avoid inserting content above existing content',
+        category: 'User Experience'
+      });
+    }
+    
+    if (metrics.firstInputDelay > 100) {
+      newIssues.push({
+        id: 'fid-high',
+        type: 'warning',
+        message: 'First Input Delay is high',
+        impact: 'medium',
+        suggestion: 'Reduce JavaScript execution time and optimize event handlers',
+        category: 'Interactivity'
+      });
+    }
+    
+    if (metrics.memoryUsage > 50) {
+      newIssues.push({
+        id: 'memory-high',
+        type: 'info',
+        message: 'High memory usage detected',
+        impact: 'low',
+        suggestion: 'Consider implementing memory optimization techniques',
+        category: 'Resource Usage'
+      });
+    }
+    
+    setIssues(newIssues);
+  }, [metrics]);
+
+  // Refresh metrics manually
+  const refreshMetrics = useCallback(() => {
+    updateMetrics();
+    setLastUpdate(new Date());
+  }, [updateMetrics]);
+
+  // Toggle auto-refresh
+  const toggleAutoRefresh = useCallback(() => {
+    setAutoRefresh(!autoRefresh);
+    if (!autoRefresh) {
+      startMonitoring();
+    } else if (monitoringInterval.current) {
+      clearInterval(monitoringInterval.current);
+      setIsMonitoring(false);
+    }
+  }, [autoRefresh, startMonitoring]);
+
+  // Get score color
+  const getScoreColor = (score: number) => {
+    if (score >= 90) return 'text-green-400';
+    if (score >= 70) return 'text-yellow-400';
+    return 'text-red-400';
+  };
+
+  // Get score icon
+  const getScoreIcon = (score: number) => {
+    if (score >= 90) return <CheckCircle className="w-4 h-4" />;
+    if (score >= 70) return <AlertTriangle className="w-4 h-4" />;
+    return <X className="w-4 h-4" />;
+  };
+
+  const overallScore = getOverallScore();
+  const overallStatus = getPerformanceStatus(overallScore);
+
+  if (!enabled || !showMetrics) {
+    return (
+      <motion.button
+        initial={{ opacity: 0, scale: 0.8 }}
+        animate={{ opacity: 1, scale: 1 }}
+        className={`fixed bottom-4 right-4 bg-gray-800 hover:bg-gray-700 text-white p-3 rounded-full shadow-lg transition-all duration-300 z-50 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-offset-2 focus:ring-offset-black ${className}`}
+        onClick={() => setIsVisible(true)}
+        aria-label="Open performance monitor"
+      >
+        <Activity className="w-6 h-6" />
+      </motion.button>
+    );
+  }
+
+  return (
+    <>
+      {/* Performance Monitor Toggle Button */}
+      <button
+        onClick={() => setIsOpen(!isOpen)}
+        className="fixed bottom-6 right-24 z-50 w-14 h-14 bg-gradient-to-r from-green-500 to-blue-500 text-white rounded-full shadow-2xl hover:shadow-green-500/25 transition-all duration-300 hover:scale-110 focus:outline-none focus:ring-4 focus:ring-green-500/50"
+        aria-label="Performance Monitor"
+        aria-expanded={isOpen}
+        aria-controls="performance-panel"
+      >
+        <Activity className="w-6 h-6 mx-auto" />
+      </button>
+
+      {/* Performance Monitor Panel */}
+      <AnimatePresence>
+        {isOpen && (
+          <>
+            {/* Backdrop */}
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              className="fixed inset-0 bg-black/50 backdrop-blur-sm z-40"
+              onClick={() => setIsOpen(false)}
+            />
+            
+            {/* Panel */}
+            <motion.div
+              id="performance-panel"
+              initial={{ opacity: 0, scale: 0.95, y: 20 }}
+              animate={{ opacity: 1, scale: 1, y: 0 }}
+              exit={{ opacity: 0, scale: 0.95, y: 20 }}
+              transition={{ duration: 0.2 }}
+              className="fixed bottom-24 right-6 z-50 w-96 bg-black/95 backdrop-blur-xl border border-white/10 rounded-2xl shadow-2xl p-6 max-h-[80vh] overflow-y-auto"
+              role="dialog"
+              aria-labelledby="performance-title"
+              aria-describedby="performance-description"
+            >
+              {/* Header */}
+              <div className="flex items-center justify-between mb-6">
+                <div>
+                  <h2 id="performance-title" className="text-xl font-bold text-white flex items-center space-x-2">
+                    <Gauge className="w-5 h-5 text-green-400" />
+                    <span>Performance Monitor</span>
+                  </h2>
+                  <p id="performance-description" className="text-sm text-white/70">
+                    Real-time performance metrics and insights
+                  </p>
+                </div>
+                <button
+                  onClick={() => setIsOpen(false)}
+                  className="p-2 rounded-lg hover:bg-white/10 transition-colors duration-200 text-white/70 hover:text-white"
+                  aria-label="Close performance panel"
+                >
+                  <X className="w-5 h-5" />
+                </button>
+              </div>
+
+              {/* Controls */}
+              <div className="flex items-center justify-between mb-6">
+                <div className="flex items-center space-x-2">
+                  <button
+                    onClick={refreshMetrics}
+                    className="p-2 rounded-lg hover:bg-white/10 transition-colors duration-200 text-white/70 hover:text-white"
+                    aria-label="Refresh metrics"
+                  >
+                    <RefreshCw className="w-4 h-4" />
+                  </button>
+                  <button
+                    onClick={toggleAutoRefresh}
+                    className={`p-2 rounded-lg transition-colors duration-200 ${
+                      autoRefresh 
+                        ? 'bg-green-500/20 text-green-400' 
+                        : 'hover:bg-white/10 text-white/70 hover:text-white'
+                    }`}
+                    aria-label="Toggle auto-refresh"
+                  >
+                    <Settings className="w-4 h-4" />
+                  </button>
+                </div>
+                <div className="text-xs text-white/50">
+                  Last update: {lastUpdate.toLocaleTimeString()}
+                </div>
+              </div>
+
+      {/* Quick Actions */}
+      <div className="mt-4 flex gap-2">
+        <button
+          onClick={() => window.location.reload()}
+          className="flex-1 px-3 py-2 bg-blue-600 hover:bg-blue-700 text-white text-sm rounded-lg transition-colors"
+          aria-label="Refresh page to measure performance"
+        >
+          <Zap className="w-4 h-4 inline mr-1" />
+          Refresh
+        </button>
+        <button
+          onClick={() => {
+            setMetrics({
+              fcp: null,
+              lcp: null,
+              fid: null,
+              cls: null,
+              ttfb: null,
+              domLoad: null,
+              windowLoad: null
+            });
+          }}
+          className="flex-1 px-3 py-2 bg-gray-600 hover:bg-gray-500 text-white text-sm rounded-lg transition-colors"
+          aria-label="Reset performance metrics"
+        >
+          <Clock className="w-4 h-4 inline mr-1" />
+          Reset
+        </button>
+      </div>
+
+      {/* Optimization Tips */}
+      {optimizationTips.length > 0 && (
+        <div className="mt-4 p-3 bg-gray-800/50 rounded-lg">
+          <div className="text-sm font-medium mb-2">Optimization Tips:</div>
+          <ul className="space-y-1 text-xs text-gray-300">
+            {optimizationTips.slice(0, 2).map((tip, index) => (
+              <li key={index}>• {tip}</li>
+            ))}
+          </ul>
+        </div>
+      )}
+    </motion.div>
+=======
+  if (!enabled || !showMetrics) return null;
+
+  return (
+    <div className="fixed bottom-4 right-4 bg-black/80 backdrop-blur-sm border border-white/20 rounded-lg p-4 text-white text-xs z-50 max-w-xs">
+      <div className="font-semibold mb-2">Performance Monitor</div>
+      {metrics ? (
+        <div className="space-y-1">
+          <div>FCP: {metrics.fcp}ms</div>
+          <div>LCP: {metrics.lcp}ms</div>
+          <div>FID: {metrics.fid}ms</div>
+          <div>CLS: {metrics.cls}</div>
+          <div>TTFB: {metrics.ttfb}ms</div>
+        </div>
+      ) : (
+        <div>Measuring performance...</div>
+      )}
+      <div className="mt-2 text-gray-400">
+        Status: {isMonitoring ? 'Active' : 'Inactive'}
+      </div>
+    </div>
+>>>>>>> origin/cursor/analyze-improve-and-deploy-application-8ebe
+  );
+};
+
+// Helper function to get score colors
+const getScoreColor = (score: string): string => {
+  switch (score) {
+    case 'Good':
+    case 'Excellent':
+      return 'text-green-400';
+    case 'Needs Improvement':
+      return 'text-yellow-400';
+    case 'Poor':
+      return 'text-red-400';
+    default:
+      return 'text-white/60';
+  }
+};
+
+export default PerformanceMonitor;
