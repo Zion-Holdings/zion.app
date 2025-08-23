@@ -1,59 +1,59 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { DollarSign, TrendingUp, Shield, Brain, Cpu, Users, Target, Award, Globe, Zap } from 'lucide-react';
+import { Rocket, Zap, Brain, Users, Target, Award, Globe, Shield, Cpu, TrendingUp } from 'lucide-react';
 import Layout from '../components/layout/Layout';
 
-export default function FinancialSolutions() {
+export default function StartupSolutions() {
   const solutions = [
     {
-      icon: DollarSign,
-      title: 'AI Revenue Forecasting Copilot',
-      description: 'Advanced revenue prediction and financial analytics platform',
-      features: ['Revenue forecasting', 'Market analysis', 'Trend identification', 'Financial planning'],
-      href: '/ai-revenue-forecasting-copilot'
+      icon: Rocket,
+      title: 'MVP Development',
+      description: 'Rapid MVP development to validate your startup idea',
+      features: ['Quick prototyping', 'User feedback', 'Iterative development', 'Cost optimization'],
+      href: '/mvp-development'
     },
     {
-      icon: TrendingUp,
-      title: 'Quantum Financial Trading Platform',
-      description: 'Next-generation quantum computing for financial markets',
-      features: ['Quantum algorithms', 'High-frequency trading', 'Risk management', 'Market analysis'],
-      href: '/quantum-financial-trading-platform'
-    },
-    {
-      icon: Shield,
-      title: 'Financial Compliance Automation',
-      description: 'Automated compliance management for financial institutions',
-      features: ['Regulatory compliance', 'Audit automation', 'Risk assessment', 'Reporting automation'],
-      href: '/financial-compliance-automation'
+      icon: Zap,
+      title: 'Startup Automation',
+      description: 'Automate key processes to scale your startup efficiently',
+      features: ['Process automation', 'Workflow optimization', 'Resource management', 'Growth scaling'],
+      href: '/startup-automation'
     },
     {
       icon: Brain,
-      title: 'AI-Powered Investment Analysis',
-      description: 'Intelligent investment decision support system',
-      features: ['Portfolio analysis', 'Risk assessment', 'Market insights', 'Investment recommendations'],
-      href: '/ai-powered-investment-analysis'
-    },
-    {
-      icon: Cpu,
-      title: 'Blockchain Financial Solutions',
-      description: 'Innovative blockchain technology for financial services',
-      features: ['Smart contracts', 'DeFi platforms', 'Digital assets', 'Cross-border payments'],
-      href: '/blockchain-financial-solutions'
+      title: 'AI-Powered Growth',
+      description: 'Leverage AI to accelerate your startup growth',
+      features: ['Growth analytics', 'Customer insights', 'Marketing automation', 'Performance optimization'],
+      href: '/ai-powered-growth'
     },
     {
       icon: Users,
-      title: 'Financial Risk Management',
-      description: 'Comprehensive risk management and mitigation strategies',
-      features: ['Risk assessment', 'Stress testing', 'Scenario analysis', 'Mitigation planning'],
-      href: '/financial-risk-management'
+      title: 'Startup HR Solutions',
+      description: 'Build and manage your startup team effectively',
+      features: ['Talent acquisition', 'Performance management', 'Culture building', 'Scalable processes'],
+      href: '/startup-hr-solutions'
+    },
+    {
+      icon: Target,
+      title: 'Market Entry Strategy',
+      description: 'Strategic guidance for entering new markets',
+      features: ['Market research', 'Competitive analysis', 'Entry planning', 'Risk assessment'],
+      href: '/market-entry-strategy'
+    },
+    {
+      icon: Award,
+      title: 'Funding Preparation',
+      description: 'Prepare your startup for funding and investment',
+      features: ['Financial modeling', 'Pitch deck creation', 'Investor relations', 'Due diligence prep'],
+      href: '/funding-preparation'
     }
   ];
 
   const stats = [
-    { number: '$1B+', label: 'Assets Managed', icon: DollarSign },
-    { number: '99.9%', label: 'Accuracy', icon: TrendingUp },
-    { number: '24/7', label: 'Monitoring', icon: Shield },
-    { number: '100+', label: 'Financial Clients', icon: Users }
+    { number: '100+', label: 'Startups Helped', icon: Rocket },
+    { number: '90%', label: 'Success Rate', icon: Target },
+    { number: '24/7', label: 'Support', icon: Users },
+    { number: '50+', label: 'Industries', icon: Globe }
   ];
 
   return (
@@ -68,12 +68,12 @@ export default function FinancialSolutions() {
               transition={{ duration: 0.8 }}
               className="text-center"
             >
-              <h1 className="text-5xl md:text-7xl font-bold bg-gradient-to-r from-emerald-400 via-green-500 to-teal-400 bg-clip-text text-transparent mb-6">
-                Financial Solutions
+              <h1 className="text-5xl md:text-7xl font-bold bg-gradient-to-r from-pink-400 via-rose-500 to-red-400 bg-clip-text text-transparent mb-6">
+                Startup Solutions
               </h1>
               <p className="text-xl md:text-2xl text-gray-300 max-w-4xl mx-auto leading-relaxed">
-                Revolutionary financial technology solutions that transform how you manage, invest, and grow your wealth. 
-                From AI-powered forecasting to quantum trading platforms.
+                Accelerate your startup growth with our innovative solutions. 
+                From MVP development to AI-powered growth strategies.
               </p>
             </motion.div>
           </div>
@@ -91,8 +91,8 @@ export default function FinancialSolutions() {
                   transition={{ duration: 0.6, delay: index * 0.1 }}
                   className="text-center"
                 >
-                  <div className="w-16 h-16 bg-gradient-to-br from-emerald-500/20 to-green-500/20 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                    <stat.icon className="w-8 h-8 text-emerald-400" />
+                  <div className="w-16 h-16 bg-gradient-to-br from-pink-500/20 to-rose-500/20 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                    <stat.icon className="w-8 h-8 text-pink-400" />
                   </div>
                   <div className="text-3xl font-bold text-white mb-2">{stat.number}</div>
                   <div className="text-gray-400">{stat.label}</div>
@@ -112,10 +112,10 @@ export default function FinancialSolutions() {
               className="text-center mb-16"
             >
               <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-                Financial Solutions
+                Startup Solutions
               </h2>
               <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-                Cutting-edge financial technology designed to optimize performance and minimize risk
+                Comprehensive solutions designed to accelerate startup growth and success
               </p>
             </motion.div>
 
@@ -130,15 +130,15 @@ export default function FinancialSolutions() {
                 >
                   <a href={solution.href} className="block">
                     <div className="bg-gray-800/50 backdrop-blur-sm border border-gray-700/50 rounded-2xl p-6 h-full hover:bg-gray-700/50 transition-all duration-300 hover:scale-105">
-                      <div className="w-16 h-16 bg-gradient-to-br from-emerald-500/20 to-green-500/20 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
-                        <solution.icon className="w-8 h-8 text-emerald-400" />
+                      <div className="w-16 h-16 bg-gradient-to-br from-pink-500/20 to-rose-500/20 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                        <solution.icon className="w-8 h-8 text-pink-400" />
                       </div>
                       <h3 className="text-xl font-bold text-white mb-4">{solution.title}</h3>
                       <p className="text-gray-300 mb-6 leading-relaxed">{solution.description}</p>
                       <ul className="space-y-2">
                         {solution.features.map((feature, featureIndex) => (
                           <li key={featureIndex} className="flex items-center gap-2 text-sm text-gray-400">
-                            <div className="w-2 h-2 bg-emerald-400 rounded-full"></div>
+                            <div className="w-2 h-2 bg-pink-400 rounded-full"></div>
                             {feature}
                           </li>
                         ))}
@@ -160,21 +160,21 @@ export default function FinancialSolutions() {
               transition={{ duration: 0.8 }}
             >
               <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-                Transform Your Financial Future
+                Launch Your Startup Success
               </h2>
               <p className="text-xl text-gray-300 mb-8">
-                Let our financial technology experts help you optimize your financial operations
+                Let our startup experts help you build and scale your business
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <a
                   href="/contact"
-                  className="px-8 py-4 bg-gradient-to-r from-emerald-500 to-green-600 text-white font-semibold rounded-xl hover:from-emerald-600 hover:to-green-700 transition-all duration-300 transform hover:scale-105"
+                  className="px-8 py-4 bg-gradient-to-r from-pink-500 to-rose-600 text-white font-semibold rounded-xl hover:from-pink-600 hover:to-rose-700 transition-all duration-300 transform hover:scale-105"
                 >
                   Get Started
                 </a>
                 <a
                   href="/solutions"
-                  className="px-8 py-4 border border-emerald-500 text-emerald-400 font-semibold rounded-xl hover:bg-emerald-500/10 transition-all duration-300"
+                  className="px-8 py-4 border border-pink-500 text-pink-400 font-semibold rounded-xl hover:bg-pink-500/10 transition-all duration-300"
                 >
                   View All Solutions
                 </a>
