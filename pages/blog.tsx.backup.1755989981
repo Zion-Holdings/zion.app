@@ -175,7 +175,11 @@ const Blog: React.FC = () => {
     }
   ];
 
+<<<<<<< HEAD
+  const categories = ['All', 'AI & Automation', 'Sustainability & AI', 'Cybersecurity & AI', 'Edge Computing & IoT', 'Healthcare & AI', 'Content & AI', 'Infrastructure', 'AI Ethics', 'Performance', 'Future of Work'];
+=======
   const categories = ['All', 'AI & Automation', 'Quantum AI', 'Cybersecurity', 'Sustainability', 'Content & AI', 'Infrastructure', 'AI Ethics', 'Performance', 'Future of Work'];
+>>>>>>> origin/cursor/add-more-project-content-5956
 
   return (
     <Layout 
