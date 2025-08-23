@@ -1,155 +1,83 @@
 import React, { Component, ErrorInfo, ReactNode } from 'react';
-import { motion } from 'framer-motion';
-import { AlertTriangle, RefreshCw, Home, ArrowLeft, Bug, X } from 'lucide-react';
+import { AlertTriangle, RefreshCw, Home, Mail, Phone } from 'lucide-react';
 
 interface Props {
   children: ReactNode;
   fallback?: ReactNode;
-  onError?: (error: Error, errorInfo: ErrorInfo) => void;
-  resetKey?: string | number;
 }
 
 interface State {
   hasError: boolean;
-  error: Error | null;
-  errorInfo: ErrorInfo | null;
-  errorId: string;
-  showDetails: boolean;
-  isRecovering: boolean;
+  error?: Error;
+  errorInfo?: ErrorInfo;
+  errorId?: string;
 }
 
 class ErrorBoundary extends Component<Props, State> {
   constructor(props: Props) {
     super(props);
-    this.state = {
-      hasError: false,
-      error: null,
-      errorInfo: null,
-      errorId: this.generateErrorId(),
-      showDetails: false,
-      isRecovering: false
-    };
+    this.state = { hasError: false };
   }
 
-  static getDerivedStateFromError(error: Error): Partial<State> {
-    return {
-      hasError: true,
-      error,
-      errorId: `error_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`
-    };
+  static getDerivedStateFromError(error: Error): State {
+    return { hasError: true, error };
   }
 
   componentDidCatch(error: Error, errorInfo: ErrorInfo) {
+    // Generate unique error ID for tracking
+    const errorId = `error_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`;
+    
     this.setState({
-      errorInfo
+      error,
+      errorInfo,
+      errorId
     });
 
     // Log error to console in development
     if (process.env.NODE_ENV === 'development') {
-      console.group('🚨 Error Boundary Caught Error');
-      console.error('Error:', error);
-      console.error('Error Info:', errorInfo);
-      console.error('Error ID:', this.state.errorId);
-      console.groupEnd();
+      // eslint-disable-next-line no-console
+      console.error('Error caught by boundary:', error, errorInfo);
     }
 
-    // Call custom error handler if provided
-    if (this.props.onError) {
-      this.props.onError(error, errorInfo);
-    }
-
-    // Send error to analytics if available
-    if (typeof window !== 'undefined' && (window as any).gtag) {
-      (window as any).gtag('event', 'exception', {
-        description: error.message,
-        fatal: false,
-        custom_map: {
-          error_id: this.state.errorId,
-          error_stack: error.stack?.substring(0, 500),
-          error_component: errorInfo.componentStack?.substring(0, 200)
-        }
-      });
-    }
-
-    // Send error to error reporting service
-    this.reportError(error, errorInfo);
-  }
-
-  componentDidUpdate(prevProps: Props) {
-    // Reset error state when resetKey changes
-    if (prevProps.resetKey !== this.props.resetKey) {
-      this.setState({
-        hasError: false,
-        error: null,
-        errorInfo: null,
-        errorId: this.generateErrorId(),
-        showDetails: false,
-        isRecovering: false
-      });
+    // Send error to error reporting service in production
+    if (process.env.NODE_ENV === 'production') {
+      this.reportError(error, errorInfo, errorId);
     }
   }
 
-  generateErrorId = (): string => {
-    return `error_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`;
-  };
-
-  reportError = async (error: Error, errorInfo: ErrorInfo) => {
+  private reportError = async (error: Error, errorInfo: ErrorInfo, errorId: string) => {
     try {
-      // Send to internal error reporting endpoint
-      await fetch('/api/error-reporting', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          errorId: this.state.errorId,
-          message: error.message,
-          stack: error.stack,
-          componentStack: errorInfo.componentStack,
-          url: window.location.href,
-          userAgent: navigator.userAgent,
-          timestamp: new Date().toISOString(),
-          errorType: 'react_error_boundary'
-        })
-      });
-    } catch (reportError) {
-      // Silently handle reporting errors
-      console.warn('Failed to report error:', reportError);
+      // Send to error reporting service (e.g., Sentry, LogRocket, etc.)
+      const errorReport = {
+        errorId,
+        message: error.message,
+        stack: error.stack,
+        componentStack: errorInfo.componentStack,
+        url: window.location.href,
+        userAgent: navigator.userAgent,
+        timestamp: new Date().toISOString()
+      };
+
+      // You can implement your error reporting logic here
+      // For now, we'll just log it
+      // eslint-disable-next-line no-console
+      console.error('Error Report:', errorReport);
+    } catch (reportingError) {
+      // eslint-disable-next-line no-console
+      console.error('Failed to report error:', reportingError);
     }
   };
 
-  handleRetry = () => {
-    this.setState({ isRecovering: true });
-    
-    // Simulate recovery process
-    setTimeout(() => {
-      this.setState({
-        hasError: false,
-        error: null,
-        errorInfo: null,
-        errorId: this.generateErrorId(),
-        showDetails: false,
-        isRecovering: false
-      });
-    }, 1000);
+  private handleRetry = () => {
+    this.setState({ hasError: false, error: undefined, errorInfo: undefined, errorId: undefined });
   };
 
-  handleGoHome = () => {
-    if (typeof window !== 'undefined') {
-      window.location.href = '/';
-    }
+  private handleGoHome = () => {
+    window.location.href = '/';
   };
 
-  handleGoBack = () => {
-    if (typeof window !== 'undefined' && window.history.length > 1) {
-      window.history.back();
-    } else {
-      this.handleGoHome();
-    }
-  };
-
-  toggleDetails = () => {
-    this.setState(prev => ({ showDetails: !prev.showDetails }));
+  private handleContactSupport = () => {
+    window.location.href = 'mailto:kleber@ziontechgroup.com?subject=Website Error Report';
   };
 
   render() {
@@ -159,138 +87,102 @@ class ErrorBoundary extends Component<Props, State> {
         return this.props.fallback;
       }
 
+      // Default error UI
       return (
-        <div className="min-h-screen bg-gray-900 flex items-center justify-center p-4">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            className="max-w-2xl w-full"
-          >
-            {/* Error Header */}
-            <motion.div
-              initial={{ scale: 0.9 }}
-              animate={{ scale: 1 }}
-              transition={{ delay: 0.1 }}
-              className="text-center mb-8"
-            >
-              <div className="inline-flex items-center justify-center w-20 h-20 bg-red-500/20 rounded-full mb-6">
-                <AlertTriangle className="w-10 h-10 text-red-400" />
-              </div>
-              <h1 className="text-3xl font-bold text-white mb-4">
-                Oops! Something went wrong
-              </h1>
-              <p className="text-gray-400 text-lg">
-                We've encountered an unexpected error. Our team has been notified and is working to fix it.
-              </p>
-            </motion.div>
+        <div className="min-h-screen bg-black text-white flex items-center justify-center px-4">
+          <div className="max-w-2xl mx-auto text-center">
+            {/* Error Icon */}
+            <div className="w-24 h-24 bg-red-500/20 rounded-full flex items-center justify-center mx-auto mb-8">
+              <AlertTriangle className="w-12 h-12 text-red-400" />
+            </div>
 
-            {/* Error Details */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.2 }}
-              className="bg-gray-800/50 rounded-xl p-6 mb-8 border border-gray-700/50"
-            >
-              <div className="flex items-center justify-between mb-4">
-                <h2 className="text-lg font-semibold text-white flex items-center gap-2">
-                  <Bug className="w-5 h-5 text-yellow-400" />
-                  Error Details
-                </h2>
-                <button
-                  onClick={this.toggleDetails}
-                  className="text-gray-400 hover:text-white transition-colors"
-                >
-                  {this.state.showDetails ? <X className="w-5 h-5" /> : <Bug className="w-5 h-5" />}
-                </button>
-              </div>
-              
-              {this.state.showDetails && (
-                <motion.div
-                  initial={{ opacity: 0, height: 0 }}
-                  animate={{ opacity: 1, height: 'auto' }}
-                  exit={{ opacity: 0, height: 0 }}
-                  className="space-y-4"
-                >
+            {/* Error Message */}
+            <h1 className="text-3xl font-bold mb-4 text-red-400">
+              Oops! Something went wrong
+            </h1>
+            
+            <p className="text-gray-300 mb-6 text-lg">
+              We're sorry, but something unexpected happened. Our team has been notified and is working to fix this issue.
+            </p>
+
+            {/* Error Details (Development Only) */}
+            {process.env.NODE_ENV === 'development' && this.state.error && (
+              <details className="text-left bg-gray-900 p-4 rounded-lg mb-6 text-sm">
+                <summary className="cursor-pointer text-gray-400 hover:text-white mb-2">
+                  Error Details (Development)
+                </summary>
+                <div className="space-y-2">
                   <div>
-                    <h3 className="text-sm font-medium text-gray-300 mb-2">Error Message:</h3>
-                    <p className="text-red-400 text-sm font-mono bg-gray-900/50 p-3 rounded border border-gray-700">
-                      {this.state.error?.message || 'Unknown error'}
-                    </p>
+                    <strong>Error:</strong> {this.state.error.message}
                   </div>
-                  
                   <div>
-                    <h3 className="text-sm font-medium text-gray-300 mb-2">Error ID:</h3>
-                    <p className="text-gray-400 text-sm font-mono bg-gray-900/50 p-3 rounded border border-gray-700">
-                      {this.state.errorId}
-                    </p>
+                    <strong>Error ID:</strong> {this.state.errorId}
                   </div>
-                  
-                  {this.state.error?.stack && (
-                    <div>
-                      <h3 className="text-sm font-medium text-gray-300 mb-2">Stack Trace:</h3>
-                      <pre className="text-gray-400 text-xs font-mono bg-gray-900/50 p-3 rounded border border-gray-700 overflow-auto max-h-32">
-                        {this.state.error.stack}
-                      </pre>
-                    </div>
-                  )}
-                </motion.div>
-              )}
-            </motion.div>
+                  <div>
+                    <strong>Stack:</strong>
+                    <pre className="text-xs text-gray-500 mt-1 overflow-x-auto">
+                      {this.state.error.stack}
+                    </pre>
+                  </div>
+                </div>
+              </details>
+            )}
 
             {/* Action Buttons */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.3 }}
-              className="flex flex-col sm:flex-row gap-4 justify-center"
-            >
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <button
                 onClick={this.handleRetry}
-                disabled={this.state.isRecovering}
-                className="flex items-center justify-center gap-2 px-6 py-3 bg-blue-600 hover:bg-blue-700 disabled:bg-blue-800 text-white font-semibold rounded-lg transition-all duration-200 transform hover:scale-105 disabled:transform-none disabled:cursor-not-allowed"
+                className="px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg transition-colors duration-200 flex items-center justify-center gap-2"
               >
-                {this.state.isRecovering ? (
-                  <>
-                    <RefreshCw className="w-5 h-5 animate-spin" />
-                    Recovering...
-                  </>
-                ) : (
-                  <>
-                    <RefreshCw className="w-5 h-5" />
-                    Try Again
-                  </>
-                )}
-              </button>
-              
-              <button
-                onClick={this.handleGoBack}
-                className="flex items-center justify-center gap-2 px-6 py-3 bg-gray-700 hover:bg-gray-600 text-white font-semibold rounded-lg transition-all duration-200 transform hover:scale-105"
-              >
-                <ArrowLeft className="w-5 h-5" />
-                Go Back
+                <RefreshCw className="w-4 h-4" />
+                Try Again
               </button>
               
               <button
                 onClick={this.handleGoHome}
-                className="flex items-center justify-center gap-2 px-6 py-3 bg-gray-700 hover:bg-gray-600 text-white font-semibold rounded-lg transition-all duration-200 transform hover:scale-105"
+                className="px-6 py-3 bg-gray-700 hover:bg-gray-600 text-white font-semibold rounded-lg transition-colors duration-200 flex items-center justify-center gap-2"
               >
-                <Home className="w-5 h-5" />
+                <Home className="w-4 h-4" />
                 Go Home
               </button>
-            </motion.div>
+              
+              <button
+                onClick={this.handleContactSupport}
+                className="px-6 py-3 bg-green-600 hover:bg-green-700 text-white font-semibold rounded-lg transition-colors duration-200 flex items-center justify-center gap-2"
+              >
+                <Mail className="w-4 h-4" />
+                Contact Support
+              </button>
+            </div>
 
-            {/* Help Text */}
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 0.4 }}
-              className="text-center mt-8"
-            >
-              <p className="text-gray-500 text-sm">
-                If this problem persists, please contact our support team with error ID: {this.state.errorId}
-              </p>
-            </motion.div>
-          </motion.div>
+            {/* Contact Information */}
+            <div className="mt-8 pt-6 border-t border-gray-700">
+              <p className="text-gray-400 mb-2">Need immediate assistance?</p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center text-sm">
+                <a
+                  href="tel:+1-302-464-0950"
+                  className="text-blue-400 hover:text-blue-300 flex items-center justify-center gap-2"
+                >
+                  <Phone className="w-4 h-4" />
+                  +1 (302) 464-0950
+                </a>
+                <a
+                  href="mailto:kleber@ziontechgroup.com"
+                  className="text-blue-400 hover:text-blue-300 flex items-center justify-center gap-2"
+                >
+                  <Mail className="w-4 h-4" />
+                  kleber@ziontechgroup.com
+                </a>
+              </div>
+            </div>
+
+            {/* Error ID for Support */}
+            {this.state.errorId && (
+              <div className="mt-4 text-xs text-gray-500">
+                Error ID: {this.state.errorId}
+              </div>
+            )}
+          </div>
         </div>
       );
     }

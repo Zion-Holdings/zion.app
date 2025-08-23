@@ -1,47 +1,33 @@
 User-agent: *
 Allow: /
 
-# Sitemap
-Sitemap: https://ziontechgroup.com/sitemap.xml
-
-# Crawl-delay for respectful crawling
-Crawl-delay: 1
-
-# Disallow admin and API routes
+# Disallow admin and private areas
 Disallow: /admin/
+Disallow: /private/
 Disallow: /api/
 Disallow: /_next/
-Disallow: /static/
+Disallow: /automation/
+Disallow: /scripts/
+Disallow: /reports/
 
 # Allow important pages
-Allow: /
-Allow: /services
-Allow: /about
-Allow: /contact
+Allow: /services/
+Allow: /blog/
+Allow: /about/
+Allow: /contact/
+Allow: /solutions/
+Allow: /pricing/
 
-# Block common bot patterns
-User-agent: AhrefsBot
-Crawl-delay: 10
-
-User-agent: SemrushBot
-Crawl-delay: 10
-
-User-agent: MJ12bot
-Crawl-delay: 10
-
-User-agent: DotBot
-Crawl-delay: 10
-
-# Allow Google and Bing
-User-agent: Googlebot
-Allow: /
+# Crawl delay for respectful crawling
 Crawl-delay: 1
 
-User-agent: Bingbot
-Allow: /
-Crawl-delay: 1
+# Sitemap location
+Sitemap: https://ziontechgroup.com/sitemap.xml
 
-# Block archive.org
-User-agent: ia_archiver
-Disallow: /
+# Host directive
+Host: https://ziontechgroup.com
+
+# Additional sitemaps
+Sitemap: https://ziontechgroup.com/sitemap-services.xml
+Sitemap: https://ziontechgroup.com/sitemap-blog.xml
 
