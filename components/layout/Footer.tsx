@@ -26,51 +26,46 @@ const Footer: React.FC = () => {
   };
 
   const services = [
-    { name: 'AI & Machine Learning', href: '/services?category=AI%20%26%20Machine%20Learning' },
-    { name: 'Blockchain & Web3', href: '/services?category=Blockchain%20%26%20Web3' },
-    { name: 'Metaverse & VR/AR', href: '/services?category=Metaverse%20%26%20VR%2FAR' },
-    { name: 'IoT & Smart Cities', href: '/services?category=IoT%20%26%20Smart%20Cities' },
-    { name: 'Quantum Computing', href: '/services?category=Quantum%20Computing' },
-    { name: 'Robotics & Automation', href: '/services?category=Robotics%20%26%20Automation' },
-    { name: 'Analytics & Business Intelligence', href: '/services?category=Analytics%20%26%20Business%20Intelligence' },
-    { name: 'Cloud & Infrastructure', href: '/services?category=Cloud%20%26%20Infrastructure' },
+    { name: 'AI & Machine Learning', href: '/ai-services' },
+    { name: 'Quantum Technology', href: '/quantum-services' },
+    { name: 'Space Technology', href: '/space-technology' },
+    { name: 'IT Solutions', href: '/it-services' },
+    { name: 'Specialized Solutions', href: '/solutions' },
     { name: 'View All Services', href: '/services' }
   ];
 
   const solutions = [
+    { name: 'Services Showcase', href: '/comprehensive-services-showcase-2025' },
+    { name: 'Pricing Plans', href: '/pricing' },
     { name: 'Case Studies', href: '/case-studies' },
-    { name: 'Cloud Platform', href: '/cloud-platform' },
-    { name: 'AI Assistant', href: '/ai-assistant' },
-    { name: 'Analytics', href: '/analytics' },
-    { name: 'Automation', href: '/automation' },
-    { name: 'Micro SaaS', href: '/micro-saas' },
     { name: 'Resources', href: '/resources' },
-    { name: 'Support', href: '/support' }
+    { name: 'Support', href: '/support' },
+    { name: 'Documentation', href: '/docs' }
   ];
 
   const company = [
     { name: 'About Us', href: '/about' },
-    { name: 'Blog', href: '/blog' },
-    { name: 'Case Studies', href: '/case-studies' },
     { name: 'Contact', href: '/contact' },
-    { name: 'Pricing', href: '/pricing' },
-    { name: 'Privacy', href: '/privacy' },
-    { name: 'Terms', href: '/terms' },
-    { name: 'Cookies', href: '/cookies' }
+    { name: 'Partners', href: '/partners' },
+    { name: 'Investors', href: '/investors' },
+    { name: 'Blog', href: '/blog' },
+    { name: 'Careers', href: '/careers' }
   ];
 
   const resources = [
     { name: 'Documentation', href: '/docs' },
-    { name: 'Resources', href: '/resources' },
-    { name: 'Support Center', href: '/support' },
     { name: 'Blog', href: '/blog' },
     { name: 'Case Studies', href: '/case-studies' },
-    { name: 'Contact', href: '/contact' },
-    { name: 'Pricing', href: '/pricing' },
-    { name: 'About', href: '/about' },
-    { name: 'All Services', href: '/services' },
-    { name: 'Services Advertising', href: '/services-advertising' },
-    { name: 'Market Pricing', href: '/market-pricing' }
+    { name: 'Support Center', href: '/support' },
+    { name: 'Resources', href: '/resources' },
+    { name: 'Training', href: '/training' }
+  ];
+
+  const legal = [
+    { name: 'Privacy Policy', href: '/privacy' },
+    { name: 'Terms of Service', href: '/terms' },
+    { name: 'Cookie Policy', href: '/cookies' },
+    { name: 'Security', href: '/security' }
   ];
 
   const socialLinks = [
@@ -98,54 +93,35 @@ const Footer: React.FC = () => {
                 <div className="text-sm text-gray-400">Revolutionary Technology Solutions</div>
               </div>
             </div>
-            <p className="text-gray-300 mb-6 leading-relaxed">
-              Revolutionary AI & quantum computing solutions transforming industries worldwide. 
-              350+ real micro SaaS services with 1500%+ average ROI. 
-              Trusted by Fortune 500 companies and government agencies.
+            <p className="text-gray-300 mb-6 max-w-xs">
+              Pioneering the future of technology with innovative solutions that drive business transformation.
             </p>
-            
-            {/* Contact Information */}
-            <div className="space-y-3">
-              <div className="flex items-center text-gray-300">
-                <Phone className="w-4 h-4 mr-3 text-cyan-400" />
-                <a href={`tel:${contactInfo.mobile}`} className="hover:text-white transition-colors">
-                  {contactInfo.mobile}
+            <div className="flex space-x-4">
+              {socialLinks.map((social) => (
+                <a
+                  key={social.name}
+                  href={social.href}
+                  className="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-cyan-500 transition-colors"
+                  aria-label={social.name}
+                >
+                  <social.icon className="w-5 h-5 text-gray-300 hover:text-white" />
                 </a>
-              </div>
-              <div className="flex items-center text-gray-300">
-                <Mail className="w-4 h-4 mr-3 text-purple-400" />
-                <a href={`mailto:${contactInfo.email}`} className="hover:text-white transition-colors">
-                  {contactInfo.email}
-                </a>
-              </div>
-              <div className="flex items-start text-gray-300">
-                <MapPin className="w-4 h-4 mr-3 text-green-400 mt-1" />
-                <span className="text-sm">{contactInfo.address}</span>
-              </div>
-              <div className="flex items-center text-gray-300">
-                <Globe className="w-4 h-4 mr-3 text-orange-400" />
-                <a href={contactInfo.website} className="hover:text-white transition-colors">
-                  {contactInfo.website.replace('https://', '')}
-                </a>
-              </div>
+              ))}
             </div>
           </div>
 
           {/* Services */}
           <div>
-            <h3 className="text-lg font-semibold text-white mb-4 flex items-center">
-              <Sparkles className="w-5 h-5 mr-2 text-cyan-400" />
-              Services
-            </h3>
-            <ul className="space-y-2">
+            <h3 className="text-lg font-semibold text-white mb-6">Services</h3>
+            <ul className="space-y-3">
               {services.map((service) => (
                 <li key={service.name}>
-                  <Link
+                  <a
                     href={service.href}
-                    className="text-gray-400 hover:text-white transition-colors text-sm"
+                    className="text-gray-300 hover:text-cyan-400 transition-colors"
                   >
                     {service.name}
-                  </Link>
+                  </a>
                 </li>
               ))}
             </ul>
@@ -153,19 +129,16 @@ const Footer: React.FC = () => {
 
           {/* Solutions */}
           <div>
-            <h3 className="text-lg font-semibold text-white mb-4 flex items-center">
-              <Rocket className="w-5 h-5 mr-2 text-purple-400" />
-              Solutions
-            </h3>
-            <ul className="space-y-2">
+            <h3 className="text-lg font-semibold text-white mb-6">Solutions</h3>
+            <ul className="space-y-3">
               {solutions.map((solution) => (
                 <li key={solution.name}>
-                  <Link
+                  <a
                     href={solution.href}
-                    className="text-gray-400 hover:text-white transition-colors text-sm"
+                    className="text-gray-300 hover:text-cyan-400 transition-colors"
                   >
                     {solution.name}
-                  </Link>
+                  </a>
                 </li>
               ))}
             </ul>
@@ -173,39 +146,46 @@ const Footer: React.FC = () => {
 
           {/* Company */}
           <div>
-            <h3 className="text-lg font-semibold text-white mb-4 flex items-center">
-              <Shield className="w-5 h-5 mr-2 text-green-400" />
-              Company
-            </h3>
-            <ul className="space-y-2">
+            <h3 className="text-lg font-semibold text-white mb-6">Company</h3>
+            <ul className="space-y-3">
               {company.map((item) => (
                 <li key={item.name}>
-                  <Link
+                  <a
                     href={item.href}
-                    className="text-gray-400 hover:text-white transition-colors text-sm"
+                    className="text-gray-300 hover:text-cyan-400 transition-colors"
                   >
                     {item.name}
-                  </Link>
+                  </a>
                 </li>
               ))}
             </ul>
           </div>
 
-          {/* Resources */}
+          {/* Resources & Legal */}
           <div>
-            <h3 className="text-lg font-semibold text-white mb-4 flex items-center">
-              <Zap className="w-5 h-5 mr-2 text-orange-400" />
-              Resources
-            </h3>
-            <ul className="space-y-2">
+            <h3 className="text-lg font-semibold text-white mb-6">Resources</h3>
+            <ul className="space-y-3 mb-6">
               {resources.map((resource) => (
                 <li key={resource.name}>
-                  <Link
+                  <a
                     href={resource.href}
-                    className="text-gray-400 hover:text-white transition-colors text-sm"
+                    className="text-gray-300 hover:text-cyan-400 transition-colors"
                   >
                     {resource.name}
-                  </Link>
+                  </a>
+                </li>
+              ))}
+            </ul>
+            <h3 className="text-lg font-semibold text-white mb-6">Legal</h3>
+            <ul className="space-y-3">
+              {legal.map((item) => (
+                <li key={item.name}>
+                  <a
+                    href={item.href}
+                    className="text-gray-300 hover:text-cyan-400 transition-colors"
+                  >
+                    {item.name}
+                  </a>
                 </li>
               ))}
             </ul>

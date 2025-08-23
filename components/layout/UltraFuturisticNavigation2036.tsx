@@ -46,226 +46,49 @@ function normalizeHref(href: string): string {
 
 const navigationItems: NavigationItem[] = [
   {
-    name: 'Micro SAAS Services',
+    name: 'Services',
     href: '/services',
     icon: <Rocket className="w-5 h-5" />,
-    description: 'Innovative business solutions',
-    badge: 'New',
+    description: 'Complete technology solutions',
+    badge: 'Main',
     category: 'services',
     children: [
       { 
-        name: 'AI & Consciousness', 
-        href: '/services#ai-consciousness', 
-        description: 'AI consciousness and emotional intelligence',
-        icon: <BrainIcon className="w-4 h-4" />,
+        name: 'All Services', 
+        href: '/services', 
+        description: 'Complete services overview',
+        icon: <Grid className="w-4 h-4" />,
         featured: true
       },
       { 
+        name: 'AI & Machine Learning', 
+        href: '/ai-services', 
+        description: 'Advanced AI solutions',
+        icon: <BrainIcon className="w-4 h-4" />
+      },
+      { 
         name: 'Quantum Technology', 
-        href: '/services#quantum', 
-        description: 'Quantum computing and security',
+        href: '/quantum-services', 
+        description: 'Quantum computing solutions',
         icon: <AtomIcon className="w-4 h-4" />
       },
       { 
         name: 'Space Technology', 
-        href: '/services#space-tech', 
-        description: 'Space exploration and resource mining',
+        href: '/space-technology', 
+        description: 'Space exploration solutions',
         icon: <Rocket className="w-4 h-4" />
       },
       { 
-        name: 'Autonomous Systems', 
-        href: '/services#autonomous', 
-        description: 'AI-powered autonomous operations',
-        icon: <ZapIcon className="w-4 h-4" />
-      },
-      { 
-        name: 'Emerging Tech', 
-        href: '/services#emerging', 
-        description: 'Cutting-edge technologies',
-        icon: <SparklesIcon className="w-4 h-4" />
-      },
-      { 
-        name: 'Business Solutions', 
-        href: '/services#business', 
-        description: 'Enterprise and SMB solutions',
-        icon: <Building className="w-4 h-4" />
-      }
-    ]
-  },
-  {
-    name: 'AI Services',
-    href: '/ai-services',
-    icon: <Brain className="w-5 h-5" />,
-    description: 'Advanced AI and machine learning',
-    badge: 'Featured',
-    category: 'ai',
-    featured: true,
-    children: [
-      { 
-        name: 'AI Consciousness Evolution', 
-        href: '/ai-consciousness-evolution-2029', 
-        description: 'Revolutionary AI consciousness development',
-        icon: <BrainIcon className="w-4 h-4" />,
-        featured: true
-      },
-      { 
-        name: 'AI Emotional Intelligence', 
-        href: '/ai-emotional-intelligence-training', 
-        description: 'AI empathy and social intelligence',
-        icon: <Heart className="w-4 h-4" />
-      },
-      { 
-        name: 'AI Autonomous Operations', 
-        href: '/ai-autonomous-business-operations', 
-        description: 'Fully autonomous business systems',
-        icon: <ZapIcon className="w-4 h-4" />
-      },
-      { 
-        name: 'AI Research Assistant', 
-        href: '/ai-autonomous-research-assistant', 
-        description: 'Autonomous research and analysis',
-        icon: <BookOpen className="w-4 h-4" />
-      },
-      { 
-        name: 'AI Content Generation', 
-        href: '/ai-content-generator', 
-        description: 'Intelligent content creation',
-        icon: <FileText className="w-4 h-4" />
-      },
-      { 
-        name: 'AI Decision Engine', 
-        href: '/ai-powered-decision-engine', 
-        description: 'AI-powered decision making',
-        icon: <TargetIcon className="w-4 h-4" />
-      }
-    ]
-  },
-  {
-    name: 'IT Solutions',
-    href: '/it-services',
-    icon: <Cpu className="w-5 h-5" />,
-    description: 'Enterprise IT infrastructure',
-    badge: 'Enterprise',
-    category: 'it',
-    children: [
-      { 
-        name: 'Quantum-Secure Cloud', 
-        href: '/quantum-secure-cloud-infrastructure', 
-        description: 'Post-quantum cryptography cloud',
-        icon: <Cloud className="w-4 h-4" />,
-        featured: true
-      },
-      { 
-        name: 'Autonomous IT Operations', 
-        href: '/autonomous-it-operations-center', 
-        description: 'AI-powered IT operations',
-        icon: <Settings className="w-4 h-4" />
-      },
-      { 
-        name: 'Edge Computing', 
-        href: '/edge-computing-orchestration-platform', 
-        description: 'Intelligent edge orchestration',
-        icon: <Globe className="w-4 h-4" />
-      },
-      { 
-        name: 'Blockchain Infrastructure', 
-        href: '/blockchain-infrastructure-platform', 
-        description: 'Enterprise blockchain solutions',
-        icon: <Network className="w-4 h-4" />
-      },
-      { 
-        name: 'AI DevOps Platform', 
-        href: '/ai-powered-devops-platform', 
-        description: 'Intelligent DevOps automation',
-        icon: <Code className="w-4 h-4" />
-      },
-      { 
-        name: 'Zero Trust Security', 
-        href: '/zero-trust-security-platform', 
-        description: 'Comprehensive zero trust security',
-        icon: <ShieldIcon className="w-4 h-4" />
-      }
-    ]
-  },
-  {
-    name: 'Quantum Services',
-    href: '/quantum-services',
-    icon: <Atom className="w-5 h-5" />,
-    description: 'Quantum computing and security',
-    badge: 'Quantum',
-    category: 'quantum',
-    children: [
-      { 
-        name: 'Quantum Neural Networks', 
-        href: '/quantum-neural-network-platform', 
-        description: 'Quantum-powered AI networks',
-        icon: <BrainIcon className="w-4 h-4" />,
-        featured: true
-      },
-      { 
-        name: 'Quantum Financial Trading', 
-        href: '/quantum-financial-trading-platform', 
-        description: 'Quantum-powered trading',
-        icon: <DollarSign className="w-4 h-4" />
-      },
-      { 
-        name: 'Quantum Materials Discovery', 
-        href: '/quantum-materials-discovery-platform', 
-        description: 'AI-powered materials discovery',
-        icon: <AtomIcon className="w-4 h-4" />
-      },
-      { 
-        name: 'Quantum Bio-Computing', 
-        href: '/quantum-bio-computing-platform', 
-        description: 'Quantum-biological computing',
-        icon: <Database className="w-4 h-4" />
-      },
-      { 
-        name: 'Quantum Internet Security', 
-        href: '/quantum-internet-security-platform', 
-        description: 'Quantum-secure internet',
-        icon: <GlobeIcon className="w-4 h-4" />
-      },
-      { 
-        name: 'Quantum Cloud Infrastructure', 
-        href: '/quantum-cloud-infrastructure-platform', 
-        description: 'Quantum-ready cloud platform',
-        icon: <Cloud className="w-4 h-4" />
-      }
-    ]
-  },
-  {
-    name: 'Space Technology',
-    href: '/space-technology',
-    icon: <Rocket className="w-5 h-5" />,
-    description: 'Space exploration and mining',
-    badge: 'Space',
-    category: 'space',
-    children: [
-      { 
-        name: 'Space Resource Mining', 
-        href: '/space-resource-mining-platform', 
-        description: 'AI-powered space mining',
-        icon: <Rocket className="w-4 h-4" />,
-        featured: true
-      },
-      { 
-        name: 'AI Space Technology', 
-        href: '/ai-powered-space-technology', 
-        description: 'AI-powered space exploration',
-        icon: <BrainIcon className="w-4 h-4" />
-      },
-      { 
-        name: 'Space Tech AI Platform', 
-        href: '/space-technology-ai-platform', 
-        description: 'Comprehensive space AI platform',
+        name: 'IT Solutions', 
+        href: '/it-services', 
+        description: 'Enterprise IT infrastructure',
         icon: <Cpu className="w-4 h-4" />
       },
       { 
-        name: 'Virtual Event Holograms', 
-        href: '/virtual-event-hologram-platform', 
-        description: 'Holographic event technology',
-        icon: <Camera className="w-4 h-4" />
+        name: 'Specialized Solutions', 
+        href: '/solutions', 
+        description: 'Industry-specific solutions',
+        icon: <TargetIcon className="w-4 h-4" />
       }
     ]
   },
@@ -273,93 +96,95 @@ const navigationItems: NavigationItem[] = [
     name: 'Showcase & Pricing',
     href: '/comprehensive-services-showcase-2025',
     icon: <Star className="w-5 h-5" />,
-    description: 'Complete services portfolio',
+    description: 'Services portfolio & pricing',
     badge: 'Showcase',
     category: 'showcase',
     featured: true,
     children: [
       { 
-        name: 'Ultimate 2035 Services', 
-        href: '/ultimate-2035-futuristic-services-showcase', 
-        description: 'Revolutionary future technology',
-        icon: <SparklesIcon className="w-4 h-4" />,
+        name: 'Services Showcase', 
+        href: '/comprehensive-services-showcase-2025', 
+        description: 'Complete services overview',
+        icon: <Grid className="w-4 h-4" />,
         featured: true
       },
       { 
-        name: 'Ultimate 2025 Micro SAAS', 
-        href: '/ultimate-2025-micro-saas-showcase', 
-        description: 'Latest innovative services',
-        icon: <Rocket className="w-4 h-4" />,
-        featured: true
-      },
-      { 
-        name: '2026 Services', 
-        href: '/revolutionary-2026-services', 
-        description: 'Next generation solutions',
-        icon: <ZapIcon className="w-4 h-4" />
-      },
-      { 
-        name: '2027 Services', 
-        href: '/revolutionary-2027-services-showcase', 
-        description: 'Future-ready services',
-        icon: <TargetIcon className="w-4 h-4" />
+        name: 'Pricing Plans', 
+        href: '/pricing', 
+        description: 'Service pricing information',
+        icon: <DollarSign className="w-4 h-4" />
       },
       { 
         name: 'Market Pricing', 
         href: '/market-pricing', 
-        description: 'Average market prices & references',
-        icon: <DollarSign className="w-4 h-4" />
-      },
-      { 
-        name: 'Revolutionary 2026 Pricing', 
-        href: '/revolutionary-2026-pricing', 
-        description: 'Next-gen pricing models',
+        description: 'Market price references',
         icon: <BarChart3 className="w-4 h-4" />
       }
     ]
   },
   {
-    name: 'Specialized Solutions',
-    href: '/solutions',
-    icon: <Target className="w-5 h-5" />,
-    description: 'Industry-specific solutions',
-    category: 'solutions',
+    name: 'Company',
+    href: '/about',
+    icon: <Building className="w-5 h-5" />,
+    description: 'About Zion Tech Group',
+    category: 'company',
     children: [
       { 
-        name: 'SOC 2 Compliance', 
-        href: '/soc2-compliance-automation', 
-        description: 'Automated compliance evidence',
-        icon: <ShieldIcon className="w-4 h-4" />
+        name: 'About Us', 
+        href: '/about', 
+        description: 'Company information',
+        icon: <Building className="w-4 h-4" />
       },
       { 
-        name: 'RAG Evaluation Lab', 
-        href: '/rag-evaluation-lab', 
-        description: 'RAG quality measurement',
-        icon: <BrainIcon className="w-4 h-4" />
+        name: 'Contact', 
+        href: '/contact', 
+        description: 'Get in touch',
+        icon: <MessageCircle className="w-4 h-4" />
       },
       { 
-        name: 'Browser Automation', 
-        href: '/browser-automation-cloud', 
-        description: 'Scalable browser automation',
-        icon: <Globe className="w-4 h-4" />
+        name: 'Partners', 
+        href: '/partners', 
+        description: 'Partnership opportunities',
+        icon: <Users className="w-4 h-4" />
       },
       { 
-        name: 'Secrets Rotation', 
-        href: '/secrets-rotation-automation', 
-        description: 'Automated key rotation',
-        icon: <Lock className="w-4 h-4" />
+        name: 'Investors', 
+        href: '/investors', 
+        description: 'Investment information',
+        icon: <DollarSign className="w-4 h-4" />
+      }
+    ]
+  },
+  {
+    name: 'Resources',
+    href: '/resources',
+    icon: <BookOpen className="w-5 h-5" />,
+    description: 'Knowledge & support',
+    category: 'resources',
+    children: [
+      { 
+        name: 'Documentation', 
+        href: '/docs', 
+        description: 'Technical documentation',
+        icon: <FileText className="w-4 h-4" />
       },
       { 
-        name: 'API Performance Testing', 
-        href: '/api-performance-testing', 
-        description: 'Load testing with CI gates',
-        icon: <ZapIcon className="w-4 h-4" />
+        name: 'Blog', 
+        href: '/blog', 
+        description: 'Latest insights',
+        icon: <BookOpen className="w-4 h-4" />
       },
       { 
-        name: 'SEO Automation Suite', 
-        href: '/seo-automation-suite', 
-        description: 'Technical SEO automation',
-        icon: <TrendingUp className="w-4 h-4" />
+        name: 'Case Studies', 
+        href: '/case-studies', 
+        description: 'Success stories',
+        icon: <Award className="w-4 h-4" />
+      },
+      { 
+        name: 'Support', 
+        href: '/support', 
+        description: 'Technical support',
+        icon: <HelpCircle className="w-4 h-4" />
       }
     ]
   }

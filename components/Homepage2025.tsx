@@ -1,13 +1,10 @@
 import React from 'react';
-import UltraFuturisticBackground2026 from './ui/UltraFuturisticBackground2026';
+import Layout from './layout/Layout';
 import UltraFuturisticServiceCard2026 from './ui/UltraFuturisticServiceCard2026';
 
 const Homepage2025: React.FC = () => {
   return (
-    <div className="min-h-screen bg-black text-white relative overflow-hidden">
-      {/* Background */}
-      <UltraFuturisticBackground2026 />
-      
+    <Layout>
       {/* Main Content */}
       <main className="relative z-10">
         {/* Hero Section */}
@@ -86,7 +83,7 @@ const Homepage2025: React.FC = () => {
           </div>
         </section>
       </main>
-    </div>
+    </Layout>
   );
 };
 
