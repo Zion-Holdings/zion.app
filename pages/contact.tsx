@@ -47,7 +47,7 @@ const ContactPage: React.FC = () => {
   };
 
   const contactInfo = {
-    phone: '+1-302-464-0950',
+    phone: '+1 302 464 0950',
     email: 'kleber@ziontechgroup.com',
     address: '364 E Main St STE 1008, Middletown, DE 19709',
     hours: 'Monday - Friday: 9:00 AM - 6:00 PM EST',

@@ -4,7 +4,7 @@ import Link from 'next/link';
 import { 
   ArrowRight, Brain, Shield, Rocket, Globe, Cpu, Database, Atom, Target, Star, Sparkles as SparklesIcon,
   Brain as BrainIcon, Atom as AtomIcon, Shield as ShieldIcon, Rocket as RocketIcon, Zap, MessageCircle,
-  X, Menu, Linkedin, Twitter, Github
+  X, Menu, Linkedin, Twitter, Github, DollarSign
 } from 'lucide-react';
 import Head from 'next/head';
 
@@ -55,7 +55,9 @@ const EnhancedHomepage2045: React.FC = () => {
     { icon: Shield, title: "Quantum Cybersecurity Intelligence", description: "Quantum-resistant security with AI consciousness", href: "/quantum-cybersecurity-intelligence-2045", color: "from-red-500 to-orange-500" },
     { icon: Rocket, title: "Autonomous Business Intelligence", description: "Fully autonomous AI business intelligence", href: "/autonomous-ai-business-intelligence-2045", color: "from-indigo-500 to-purple-500" },
     { icon: Cpu, title: "Quantum Cloud Infrastructure", description: "Quantum-powered cloud with consciousness", href: "/quantum-cloud-infrastructure-platform-2045", color: "from-emerald-500 to-teal-500" },
-    { icon: Database, title: "Autonomous DevOps Intelligence", description: "AI-powered DevOps optimization", href: "/autonomous-devops-intelligence-platform-2045", color: "from-yellow-500 to-orange-500" }
+    { icon: Database, title: "Autonomous DevOps Intelligence", description: "AI-powered DevOps optimization", href: "/autonomous-devops-intelligence-platform-2045", color: "from-yellow-500 to-orange-500" },
+    { icon: SparklesIcon, title: "2025 Innovative Ecosystem", description: "Complete showcase of revolutionary services", href: "/2025-innovative-ecosystem-showcase", color: "from-pink-500 to-purple-500" },
+    { icon: DollarSign, title: "Innovative Pricing Showcase", description: "Transparent pricing for all services", href: "/2025-innovative-pricing-showcase", color: "from-green-500 to-emerald-500" }
   ];
 
   const stats = [
@@ -145,6 +147,8 @@ const EnhancedHomepage2045: React.FC = () => {
                 {[
                   { name: 'Home', href: '/' },
                   { name: 'Services', href: '/services' },
+                  { name: 'Innovative Ecosystem', href: '/2025-innovative-ecosystem-showcase' },
+                  { name: 'Pricing', href: '/2025-innovative-pricing-showcase' },
                   { name: 'Solutions', href: '/solutions' },
                   { name: 'About', href: '/about' },
                   { name: 'Contact', href: '/contact' }
