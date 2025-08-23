@@ -16,6 +16,13 @@ import { ScrollArea } from "@/components/ui/scroll-area";
 import { useRouter } from 'next/router';
 import {logErrorToProduction} from '@/utils/productionLogger';
 
+interface PreviewContent {
+  subject?: string;
+  previewText?: string;
+  body?: string;
+  generatedContent?: string;
+}
+
 export default function ContentGenerator() {
 
   const { user, isLoading } = useAuth();
@@ -27,7 +34,7 @@ export default function ContentGenerator() {
   const [autoPublish, setAutoPublish] = useState(false);
   const [includeImage, setIncludeImage] = useState(true);
   const [isGenerating, setIsGenerating] = useState(false);
-  const [previewContent, setPreviewContent] = useState<unknown>(null);
+  const [previewContent, setPreviewContent] = useState<PreviewContent | null>(null);
   const [testEmail, setTestEmail] = useState('');
 
   useEffect(() => {

@@ -509,6 +509,9 @@ if (typeof window !== 'undefined') {
     }
   }).catch(() => {
     // Fallback if import fails
-    console.warn('Could not hook into logError for advanced log collection');
+    import('@/utils/productionLogger').then((mod) => {
+      const logWarn: (msg: string, ctx?: Record<string, unknown>) => void = mod.logWarn;
+      logWarn('Could not hook into logError for advanced log collection', {});
+    });
   });
 } 

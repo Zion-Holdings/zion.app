@@ -1,3 +1,4 @@
+/// <reference types="node" />
 import { createServerClient, type CookieOptions } from '@supabase/ssr';
 import { NextResponse, type NextRequest } from 'next/server';
 // Import proper logging instead of using console directly

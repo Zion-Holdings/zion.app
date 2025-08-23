@@ -1,3 +1,4 @@
+/// <reference types="node" />
 import { createBrowserClient } from '@supabase/ssr';
 import type { SupabaseClient } from '@supabase/supabase-js';
 import { logDebug, logErrorToProduction } from '@/utils/productionLogger'; // Assuming logger is available and logError is added

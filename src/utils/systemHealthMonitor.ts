@@ -3,6 +3,7 @@
  * Real-time monitoring, analysis, and automated issue detection
  */
 
+/// <reference types="node" />
 import { logInfo, logWarn, logErrorToProduction } from './productionLogger';
 import { logDashboard } from './logDashboard';
 import { logManagement } from './logManagement';

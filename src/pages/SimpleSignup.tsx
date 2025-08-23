@@ -4,7 +4,7 @@ import { useFormik } from 'formik';
 import * as Yup from 'yup';
 import { useAuth } from '@/hooks/useAuth';
 import { toast } from '@/hooks/use-toast';
-import { signup } from '@/services/signupApi';
+import { signupUser } from '@/services/signupApi';
 import { PasswordStrengthMeter } from '@/components/PasswordStrengthMeter';
 import {logErrorToProduction} from '@/utils/productionLogger';
 
@@ -28,7 +28,7 @@ export default function SimpleSignup() {
     validationSchema: SignupSchema,
     onSubmit: async (values, { setSubmitting, setErrors }) => {
       try {
-        const data = await signup({ email: values.email, password: values.password });
+        const data = await signupUser(values.email, values.password, '');
         
         if (data?.emailVerificationRequired) {
           // Email verification required
@@ -44,9 +44,9 @@ export default function SimpleSignup() {
           router.push('/login');
         }
       } catch (err: unknown) {
-        const message = typeof err === 'object' && err !== null && 'message' in err ? (err as { message?: string }).message : undefined;
+        const message = typeof err === 'object' && err !== null && 'message' in err ? (err as { message?: string }).message : 'Signup failed';
         logErrorToProduction('Signup error:', { data: message });
-        setErrors({ email: message });
+        setErrors({ email: message || 'Signup failed' });
         toast.error(message || 'Signup failed');
       } finally {
         setSubmitting(false);

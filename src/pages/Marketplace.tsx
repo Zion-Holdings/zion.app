@@ -300,7 +300,7 @@ export default function Marketplace() {
         sort: sortBy
       };
       logInfo('Marketplace.tsx: Fetching products from API with params:', { data:  { data: params } });
-      const response = await apiClient.get('/products', { params });
+      const response = await (apiClient as any).get('/products', { params });
       let items: ProductListing[] = response.data?.items || [];
       const total = response.data?.total ?? items.length;
       const hasMore = (page * limit) < total;

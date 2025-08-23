@@ -193,6 +193,8 @@ console.log('Supabase configured:', !!window.location.origin.includes('localhost
    - A fail-safe message will now appear if the page stays blank for a few seconds
    - Detection logic improved to catch cases where only stylesheets or scripts are rendered
    - See [docs/BLANK_SCREEN_FIX_GUIDE.md](docs/BLANK_SCREEN_FIX_GUIDE.md) for detailed instructions
+5. **Playwright browsers missing**
+   - If end-to-end tests fail with `browserType.launch` errors, run `npx playwright install` to download the required browsers
 
 For detailed troubleshooting, see the [Supabase Authentication Setup Guide](docs/SUPABASE_AUTHENTICATION_SETUP.md).
 
