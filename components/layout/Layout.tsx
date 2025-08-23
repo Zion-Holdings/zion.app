@@ -7,6 +7,7 @@ import UltraFuturisticBackground2036 from '../backgrounds/UltraFuturisticBackgro
 import EnhancedPerformanceMonitor from '../EnhancedPerformanceMonitor';
 import EnhancedAccessibilityEnhancer from '../EnhancedAccessibilityEnhancer';
 import CookieConsentBanner from '../CookieConsentBanner';
+import TopContactBar from './TopContactBar';
 
 interface LayoutProps {
   children: React.ReactNode;
