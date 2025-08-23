@@ -1,10 +1,20 @@
 import type { NextPage } from 'next';
+import Head from 'next/head';
 
-const Verify: NextPage = () => (
-  <div>
-    <h1 className="text-2xl font-semibold mb-2">Verify Account</h1>
-    <p className="text-gray-700 dark:text-gray-300">Verifying your account...</p>
-  </div>
-);
+const Verify: NextPage = () => {
+  return (
+    <div>
+      <Head>
+        <title>Verify - Zion Tech Solutions</title>
+        <meta name="description" content="Verify page" />
+      </Head>
+      
+      <main>
+        <h1>Verify</h1>
+        <p>This page is under construction.</p>
+      </main>
+    </div>
+  );
+};
 
 export default Verify;
