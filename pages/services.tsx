@@ -456,11 +456,10 @@ export default function Services() {
                   <li>• Natural Language Processing</li>
                   <li>• Computer Vision</li>
                   <li>• Predictive Analytics</li>
+                  <li>• Neural Network Architecture</li>
+                  <li>• AI Model Training & Optimization</li>
                 </ul>
-                <div className="text-center">
-                  <div className="text-2xl font-bold text-cyan-400 mb-2">Starting at $15K</div>
-                  <div className="text-white/60 text-sm">Project-based pricing</div>
-                </div>
+                <div className="text-cyan-400 font-semibold">Starting at $15,000</div>
               </div>
 
               <div className="bg-white/10 backdrop-blur-xl rounded-2xl p-8 hover:bg-white/15 transition-all duration-300">
@@ -474,11 +473,10 @@ export default function Services() {
                   <li>• Workflow Optimization</li>
                   <li>• Robotic Process Automation</li>
                   <li>• Smart Workflows</li>
+                  <li>• Business Process Reengineering</li>
+                  <li>• Autonomous Decision Systems</li>
                 </ul>
-                <div className="text-center">
-                  <div className="text-2xl font-bold text-fuchsia-400 mb-2">Starting at $12K</div>
-                  <div className="text-white/60 text-sm">Monthly subscription available</div>
-                </div>
+                <div className="text-fuchsia-400 font-semibold">Starting at $12,000</div>
               </div>
 
               <div className="bg-white/10 backdrop-blur-xl rounded-2xl p-8 hover:bg-white/15 transition-all duration-300">
@@ -492,11 +490,10 @@ export default function Services() {
                   <li>• Auto-scaling</li>
                   <li>• Performance Optimization</li>
                   <li>• Security Hardening</li>
+                  <li>• Multi-cloud Strategy</li>
+                  <li>• Disaster Recovery</li>
                 </ul>
-                <div className="text-center">
-                  <div className="text-2xl font-bold text-green-400 mb-2">Starting at $8K</div>
-                  <div className="text-white/60 text-sm">Setup + monthly maintenance</div>
-                </div>
+                <div className="text-green-400 font-semibold">Starting at $18,000</div>
               </div>
 
               <div className="bg-white/10 backdrop-blur-xl rounded-2xl p-8 hover:bg-white/15 transition-all duration-300">
@@ -510,143 +507,10 @@ export default function Services() {
                   <li>• Automated Testing</li>
                   <li>• Infrastructure as Code</li>
                   <li>• Monitoring & Alerting</li>
+                  <li>• Container Orchestration</li>
+                  <li>• Security Scanning</li>
                 </ul>
-                <div className="text-center">
-                  <div className="text-2xl font-bold text-blue-400 mb-2">Starting at $10K</div>
-                  <div className="text-white/60 text-sm">One-time setup + support</div>
-                </div>
-              </div>
-            </div>
-
-            {/* Search and Sort */}
-            <div className="flex flex-col md:flex-row gap-4 mb-8">
-              <div className="flex-1">
-                <div className="relative">
-                  <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
-                  <input
-                    type="text"
-                    placeholder="Search services..."
-                    value={searchTerm}
-                    onChange={(e) => setSearchTerm(e.target.value)}
-                    className="w-full pl-10 pr-4 py-3 bg-white/5 border border-gray-700 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:border-transparent"
-                  />
-                </div>
-              </div>
-              <div className="flex gap-4">
-                <select
-                  value={sortBy}
-                  onChange={(e) => setSortBy(e.target.value as any)}
-                  className="px-4 py-3 bg-white/5 border border-gray-700 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-cyan-500"
-                >
-                  <option value="name">Sort by Name</option>
-                  <option value="price">Sort by Price</option>
-                  <option value="rating">Sort by Rating</option>
-                  <option value="popularity">Sort by Popularity</option>
-                </select>
-                <button
-                  onClick={toggleSortOrder}
-                  className="px-4 py-3 bg-white/5 border border-gray-700 rounded-lg text-white hover:bg-white/10 transition-colors"
-                >
-                  {sortOrder === 'asc' ? <SortAsc className="w-5 h-5" /> : <SortDesc className="w-5 h-5" />}
-                </button>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Services Grid */}
-        <section className="mb-16">
-          <div className="max-w-6xl mx-auto">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {sortedServices.map((service, index) => (
-                <motion.div
-                  key={service.id}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5, delay: index * 0.1 }}
-                  className="group relative"
-                >
-                  <div className={`relative p-6 rounded-2xl border transition-all duration-300 hover:scale-105 ${
-                    service.popular 
-                      ? 'bg-gradient-to-br from-yellow-500/10 to-orange-500/10 border-yellow-500/30 shadow-lg shadow-yellow-500/25' 
-                      : 'bg-white/5 border-gray-700 hover:border-cyan-500/50 hover:shadow-lg hover:shadow-cyan-500/25'
-                  }`}>
-                    {/* Popular Badge */}
-                    {service.popular && (
-                      <div className="absolute -top-3 left-6 px-3 py-1 bg-gradient-to-r from-yellow-500 to-orange-500 text-black text-xs font-bold rounded-full">
-                        Popular
-                      </div>
-                    )}
-
-                    {/* Service Icon and Category */}
-                    <div className="flex items-start justify-between mb-4">
-                      <div className={`p-3 rounded-xl bg-gradient-to-r ${getCategoryColor(service.name)}`}>
-                        {getCategoryIcon(service.name)}
-                      </div>
-                      <div className="text-right">
-                        <div className="text-sm text-gray-400">{service.category}</div>
-                        <div className="text-xs text-gray-500">{service.launchDate}</div>
-                      </div>
-                    </div>
-
-                    {/* Service Name and Tagline */}
-                    <h3 className="text-xl font-bold text-white mb-2 group-hover:text-cyan-400 transition-colors">
-                      {service.name}
-                    </h3>
-                    <p className="text-gray-300 text-sm mb-4 line-clamp-2">
-                      {service.tagline}
-                    </p>
-
-                    {/* Price */}
-                    <div className="mb-4">
-                      <div className="text-2xl font-bold text-white">
-                        ${service.price.monthly}
-                        <span className="text-sm text-gray-400 font-normal">/month</span>
-                      </div>
-                      <div className="text-sm text-gray-400">
-                        ${service.price.yearly}/year • {service.price.trialDays} days free trial
-                      </div>
-                    </div>
-
-                    {/* Key Features */}
-                    <div className="mb-4">
-                      <h4 className="text-sm font-semibold text-gray-300 mb-2">Key Features:</h4>
-                      <ul className="space-y-1">
-                        {service.features.slice(0, 3).map((feature, idx) => (
-                          <li key={idx} className="text-xs text-gray-400 flex items-center gap-2">
-                            <div className="w-1 h-1 bg-cyan-400 rounded-full"></div>
-                            {feature}
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-
-                    {/* Stats */}
-                    <div className="flex items-center justify-between text-sm text-gray-400 mb-4">
-                      <div className="flex items-center gap-1">
-                        <Star className="w-4 h-4 text-yellow-400" />
-                        {service.rating} ({service.reviews})
-                      </div>
-                      <div>{service.customers.toLocaleString()} customers</div>
-                    </div>
-
-                    {/* CTA Button */}
-                    <Link href={service.link}>
-                      <button className="w-full py-3 px-4 bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-semibold rounded-lg hover:from-cyan-600 hover:to-blue-700 transition-all duration-300 transform hover:scale-105 shadow-lg shadow-cyan-500/25">
-                        Learn More
-                      </button>
-                    </Link>
-                  </div>
-                </motion.div>
-              ))}
-            </div>
-
-            {/* No Results */}
-            {sortedServices.length === 0 && (
-              <div className="text-center py-16">
-                <div className="text-6xl mb-4">🔍</div>
-                <h3 className="text-2xl font-bold text-white mb-2">No services found</h3>
-                <p className="text-gray-400">Try adjusting your search or filter criteria</p>
+                <div className="text-blue-400 font-semibold">Starting at $10,000</div>
               </div>
 
               <div className="bg-white/10 backdrop-blur-xl rounded-2xl p-8 hover:bg-white/15 transition-all duration-300">
@@ -660,11 +524,10 @@ export default function Services() {
                   <li>• Predictive Analytics</li>
                   <li>• Business Intelligence</li>
                   <li>• Real-time Dashboards</li>
+                  <li>• Data Warehousing</li>
+                  <li>• Advanced Reporting</li>
                 </ul>
-                <div className="text-center">
-                  <div className="text-2xl font-bold text-purple-400 mb-2">Starting at $18K</div>
-                  <div className="text-white/60 text-sm">Custom dashboard development</div>
-                </div>
+                <div className="text-purple-400 font-semibold">Starting at $14,000</div>
               </div>
 
               <div className="bg-white/10 backdrop-blur-xl rounded-2xl p-8 hover:bg-white/15 transition-all duration-300">
@@ -678,51 +541,52 @@ export default function Services() {
                   <li>• Technology Roadmap</li>
                   <li>• Innovation Workshops</li>
                   <li>• Performance Audits</li>
+                  <li>• Risk Assessment</li>
+                  <li>• Change Management</li>
                 </ul>
-                <div className="text-center">
-                  <div className="text-2xl font-bold text-yellow-400 mb-2">$250/hour</div>
-                  <div className="text-white/60 text-sm">Expert consultation</div>
-                </div>
+                <div className="text-yellow-400 font-semibold">Starting at $8,000</div>
               </div>
             </div>
 
-            {/* New Service Categories */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
-              <div className="bg-gradient-to-br from-cyan-500/10 to-blue-500/10 rounded-2xl p-8 border border-cyan-500/20">
-                <div className="text-4xl mb-4">🔐</div>
-                <h3 className="text-2xl font-bold mb-4 text-cyan-400">AI Security & Ethics</h3>
-                <p className="text-white/80 mb-6">
-                  Comprehensive security solutions for AI systems, including ethical AI development, 
-                  bias detection, and secure autonomous operations.
-                </p>
-                <ul className="space-y-2 text-white/70 mb-6">
-                  <li>• AI Bias Detection & Mitigation</li>
-                  <li>• Secure AI Model Deployment</li>
-                  <li>• Ethical AI Guidelines</li>
-                  <li>• Compliance & Governance</li>
-                </ul>
+            {/* Technology Stack Section */}
+            <div className="bg-white/10 backdrop-blur-xl rounded-2xl p-8 mb-16">
+              <h2 className="text-3xl font-bold mb-6 text-cyan-400">Our Technology Stack</h2>
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                 <div className="text-center">
-                  <div className="text-2xl font-bold text-cyan-400 mb-2">Starting at $20K</div>
-                  <div className="text-white/60 text-sm">Comprehensive security audit</div>
+                  <h3 className="text-lg font-semibold mb-3 text-fuchsia-400">AI & Machine Learning</h3>
+                  <div className="space-y-2 text-sm text-white/70">
+                    <div>• TensorFlow & PyTorch</div>
+                    <div>• OpenAI GPT Models</div>
+                    <div>• Computer Vision APIs</div>
+                    <div>• NLP Frameworks</div>
+                  </div>
                 </div>
-              </div>
-
-              <div className="bg-gradient-to-br from-fuchsia-500/10 to-purple-500/10 rounded-2xl p-8 border border-fuchsia-500/20">
-                <div className="text-4xl mb-4">🌐</div>
-                <h3 className="text-2xl font-bold mb-4 text-fuchsia-400">Edge AI & IoT</h3>
-                <p className="text-white/80 mb-6">
-                  Deploy AI models at the edge for real-time processing, enabling intelligent IoT devices 
-                  and autonomous edge computing solutions.
-                </p>
-                <ul className="space-y-2 text-white/70 mb-6">
-                  <li>• Edge AI Model Optimization</li>
-                  <li>• IoT Device Intelligence</li>
-                  <li>• Real-time Processing</li>
-                  <li>• Edge-to-Cloud Integration</li>
-                </ul>
                 <div className="text-center">
-                  <div className="text-2xl font-bold text-fuchsia-400 mb-2">Starting at $25K</div>
-                  <div className="text-white/60 text-sm">Edge AI platform setup</div>
+                  <h3 className="text-lg font-semibold mb-3 text-green-400">Cloud & Infrastructure</h3>
+                  <div className="space-y-2 text-sm text-white/70">
+                    <div>• AWS, Azure, GCP</div>
+                    <div>• Kubernetes & Docker</div>
+                    <div>• Terraform & Ansible</div>
+                    <div>• Serverless Functions</div>
+                  </div>
+                </div>
+                <div className="text-center">
+                  <h3 className="text-lg font-semibold mb-3 text-blue-400">Development Tools</h3>
+                  <div className="space-y-2 text-sm text-white/70">
+                    <div>• React & Next.js</div>
+                    <div>• Python & Node.js</div>
+                    <div>• Git & CI/CD</div>
+                    <div>• Testing Frameworks</div>
+                  </div>
+                </div>
+                <div className="text-center">
+                  <h3 className="text-lg font-semibold mb-3 text-purple-400">Data & Analytics</h3>
+                  <div className="space-y-2 text-sm text-white/70">
+                    <div>• PostgreSQL & MongoDB</div>
+                    <div>• Apache Kafka</div>
+                    <div>• Tableau & Power BI</div>
+                    <div>• Apache Spark</div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -853,98 +717,32 @@ export default function Services() {
                     With 248 active automations and 3,127+ pages generated, we have a track record of delivering measurable business value.
                   </p>
                 </div>
+                <div>
+                  <h3 className="text-xl font-semibold mb-3 text-blue-400">24/7 Autonomous Operation</h3>
+                  <p className="text-white/70">
+                    Our systems run continuously, monitoring, optimizing, and improving your operations around the clock without human intervention.
+                  </p>
+                </div>
+                <div>
+                  <h3 className="text-xl font-semibold mb-3 text-yellow-400">Scalable Solutions</h3>
+                  <p className="text-white/70">
+                    Built to grow with your business, our solutions automatically scale up or down based on demand and performance requirements.
+                  </p>
+                </div>
               </div>
             </div>
 
-            {/* Additional Service Offerings */}
+            {/* Service Delivery Process */}
             <div className="bg-white/10 backdrop-blur-xl rounded-2xl p-8 mb-16">
-              <h2 className="text-3xl font-bold mb-6 text-purple-400">Specialized Solutions</h2>
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                <div className="bg-white/5 rounded-xl p-6 border border-white/20">
-                  <div className="text-3xl mb-3">🔐</div>
-                  <h3 className="text-xl font-semibold mb-3 text-cyan-400">Cybersecurity & AI</h3>
-                  <p className="text-white/70 text-sm">
-                    AI-powered threat detection, automated incident response, and intelligent security monitoring systems.
-                  </p>
-                </div>
-                
-                <div className="bg-white/5 rounded-xl p-6 border border-white/20">
-                  <div className="text-3xl mb-3">🏥</div>
-                  <h3 className="text-xl font-semibold mb-3 text-fuchsia-400">Healthcare AI</h3>
-                  <p className="text-white/70 text-sm">
-                    Medical image analysis, patient data processing, and automated diagnostic assistance systems.
-                  </p>
-                </div>
-                
-                <div className="bg-white/5 rounded-xl p-6 border border-white/20">
-                  <div className="text-3xl mb-3">🏭</div>
-                  <h3 className="text-xl font-semibold mb-3 text-green-400">Industrial IoT</h3>
-                  <p className="text-white/70 text-sm">
-                    Smart manufacturing, predictive maintenance, and automated quality control systems.
-                  </p>
-                </div>
-                
-                <div className="bg-white/5 rounded-xl p-6 border border-white/20">
-                  <div className="text-3xl mb-3">🚗</div>
-                  <h3 className="text-xl font-semibold mb-3 text-blue-400">Autonomous Vehicles</h3>
-                  <p className="text-white/70 text-sm">
-                    Self-driving systems, traffic optimization, and intelligent transportation infrastructure.
-                  </p>
-                </div>
-                
-                <div className="bg-white/5 rounded-xl p-6 border border-white/20">
-                  <div className="text-3xl mb-3">🌱</div>
-                  <h3 className="text-xl font-semibold mb-3 text-emerald-400">Green Tech</h3>
-                  <p className="text-white/70 text-sm">
-                    Renewable energy optimization, environmental monitoring, and sustainable resource management.
-                  </p>
-                </div>
-                
-                <div className="bg-white/5 rounded-xl p-6 border border-white/20">
-                  <div className="text-3xl mb-3">🎯</div>
-                  <h3 className="text-xl font-semibold mb-3 text-yellow-400">Marketing AI</h3>
-                  <p className="text-white/70 text-sm">
-                    Automated content generation, personalized campaigns, and intelligent customer engagement systems.
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            {/* Success Metrics */}
-            <div className="bg-white/10 backdrop-blur-xl rounded-2xl p-8 mb-16">
-              <h2 className="text-3xl font-bold mb-6 text-yellow-400">Our Success Metrics</h2>
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-                <div className="text-center">
-                  <div className="text-4xl font-bold text-cyan-400 mb-2">500+</div>
-                  <div className="text-sm text-white/70">Projects Delivered</div>
-                </div>
-                <div className="text-center">
-                  <div className="text-4xl font-bold text-fuchsia-400 mb-2">99.9%</div>
-                  <div className="text-sm text-white/70">Client Satisfaction</div>
-                </div>
-                <div className="text-center">
-                  <div className="text-4xl font-bold text-green-400 mb-2">40%</div>
-                  <div className="text-sm text-white/70">Avg. Efficiency Gain</div>
-                </div>
-                <div className="text-center">
-                  <div className="text-4xl font-bold text-blue-400 mb-2">24/7</div>
-                  <div className="text-sm text-white/70">Support Available</div>
-                </div>
-              </div>
-            </div>
-
-            <div className="bg-white/10 backdrop-blur-xl rounded-2xl p-8">
               <h2 className="text-3xl font-bold mb-6 text-blue-400">Service Delivery Process</h2>
               <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
                 <div className="text-center">
                   <div className="w-16 h-16 bg-gradient-to-br from-cyan-400 to-blue-500 rounded-full flex items-center justify-center text-white font-bold text-2xl mx-auto mb-4">1</div>
                   <h3 className="text-lg font-semibold mb-2">Discovery</h3>
-                  <p className="text-sm text-white/70 mb-3">Understanding your needs and objectives</p>
-                  <ul className="text-xs text-white/60 space-y-1">
-                    <li>• Requirements Analysis</li>
-                    <li>• Stakeholder Interviews</li>
-                    <li>• Technical Assessment</li>
-                  </ul>
+                  <p className="text-sm text-white/70">Understanding your needs and objectives</p>
+                  <div className="text-xs text-white/50 mt-2">• Requirements Analysis</div>
+                  <div className="text-xs text-white/50">• Current State Assessment</div>
+                  <div className="text-xs text-white/50">• Stakeholder Interviews</div>
                 </div>
               </div>
             </div>
@@ -956,34 +754,113 @@ export default function Services() {
                 <div className="text-center">
                   <div className="w-16 h-16 bg-gradient-to-br from-fuchsia-400 to-purple-500 rounded-full flex items-center justify-center text-white font-bold text-2xl mx-auto mb-4">2</div>
                   <h3 className="text-lg font-semibold mb-2">Planning</h3>
-                  <p className="text-sm text-white/70 mb-3">Creating detailed roadmap and strategy</p>
-                  <ul className="text-xs text-white/60 space-y-1">
-                    <li>• Architecture Design</li>
-                    <li>• Timeline Planning</li>
-                    <li>• Resource Allocation</li>
-                  </ul>
+                  <p className="text-sm text-white/70">Creating detailed roadmap and strategy</p>
+                  <div className="text-xs text-white/50 mt-2">• Architecture Design</div>
+                  <div className="text-xs text-white/50">• Implementation Plan</div>
+                  <div className="text-xs text-white/50">• Risk Mitigation</div>
                 </div>
 
                 <div className="text-center">
                   <div className="w-16 h-16 bg-gradient-to-br from-green-400 to-emerald-500 rounded-full flex items-center justify-center text-white font-bold text-2xl mx-auto mb-4">3</div>
                   <h3 className="text-lg font-semibold mb-2">Implementation</h3>
-                  <p className="text-sm text-white/70 mb-3">Building and deploying solutions</p>
-                  <ul className="text-xs text-white/60 space-y-1">
-                    <li>• Agile Development</li>
-                    <li>• Continuous Testing</li>
-                    <li>• Staged Deployment</li>
-                  </ul>
+                  <p className="text-sm text-white/70">Building and deploying solutions</p>
+                  <div className="text-xs text-white/50 mt-2">• Agile Development</div>
+                  <div className="text-xs text-white/50">• Continuous Testing</div>
+                  <div className="text-xs text-white/50">• Phased Rollout</div>
                 </div>
 
                 <div className="text-center">
                   <div className="w-16 h-16 bg-gradient-to-br from-yellow-400 to-orange-500 rounded-full flex items-center justify-center text-white font-bold text-2xl mx-auto mb-4">4</div>
                   <h3 className="text-lg font-semibold mb-2">Optimization</h3>
-                  <p className="text-sm text-white/70 mb-3">Continuous improvement and support</p>
-                  <ul className="text-xs text-white/60 space-y-1">
-                    <li>• Performance Monitoring</li>
-                    <li>• Regular Updates</li>
-                    <li>• 24/7 Support</li>
+                  <p className="text-sm text-white/70">Continuous improvement and support</p>
+                  <div className="text-xs text-white/50 mt-2">• Performance Monitoring</div>
+                  <div className="text-xs text-white/50">• Automated Optimization</div>
+                  <div className="text-xs text-white/50">• Ongoing Support</div>
+                </div>
+              </div>
+            </div>
+
+            {/* Pricing Tiers */}
+            <div className="bg-white/10 backdrop-blur-xl rounded-2xl p-8 mb-16">
+              <h2 className="text-3xl font-bold mb-6 text-purple-400">Service Tiers</h2>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div className="bg-white/5 rounded-xl p-6 border border-white/20">
+                  <h3 className="text-xl font-bold mb-4 text-cyan-400">Starter</h3>
+                  <div className="text-3xl font-bold text-white mb-4">$8,000</div>
+                  <p className="text-white/70 mb-6">Perfect for small businesses starting their automation journey</p>
+                  <ul className="space-y-2 text-sm text-white/60 mb-6">
+                    <li>• Basic AI Integration</li>
+                    <li>• Process Automation</li>
+                    <li>• 3 Months Support</li>
+                    <li>• Basic Analytics</li>
                   </ul>
+                  <div className="text-center">
+                    <button className="w-full px-6 py-3 bg-cyan-400 text-white font-semibold rounded-lg hover:bg-cyan-500 transition-colors">
+                      Get Started
+                    </button>
+                  </div>
+                </div>
+                
+                <div className="bg-gradient-to-br from-purple-500/20 to-fuchsia-500/20 rounded-xl p-6 border border-purple-400/30 relative">
+                  <div className="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-gradient-to-r from-purple-400 to-fuchsia-400 text-white px-4 py-1 rounded-full text-sm font-semibold">
+                    Most Popular
+                  </div>
+                  <h3 className="text-xl font-bold mb-4 text-fuchsia-400">Professional</h3>
+                  <div className="text-3xl font-bold text-white mb-4">$25,000</div>
+                  <p className="text-white/70 mb-6">Comprehensive solution for growing businesses</p>
+                  <ul className="space-y-2 text-sm text-white/60 mb-6">
+                    <li>• Advanced AI Systems</li>
+                    <li>• Full Process Automation</li>
+                    <li>• 12 Months Support</li>
+                    <li>• Advanced Analytics</li>
+                    <li>• Custom Integrations</li>
+                  </ul>
+                  <div className="text-center">
+                    <button className="w-full px-6 py-3 bg-gradient-to-r from-purple-400 to-fuchsia-400 text-white font-semibold rounded-lg hover:from-purple-500 hover:to-fuchsia-500 transition-all duration-300">
+                      Get Started
+                    </button>
+                  </div>
+                </div>
+                
+                <div className="bg-white/5 rounded-xl p-6 border border-white/20">
+                  <h3 className="text-xl font-bold mb-4 text-green-400">Enterprise</h3>
+                  <div className="text-3xl font-bold text-white mb-4">$75,000+</div>
+                  <p className="text-white/70 mb-6">Full-scale transformation for large organizations</p>
+                  <ul className="space-y-2 text-sm text-white/60 mb-6">
+                    <li>• Custom AI Development</li>
+                    <li>• Enterprise Integration</li>
+                    <li>• 24/7 Support</li>
+                    <li>• Advanced Security</li>
+                    <li>• Dedicated Team</li>
+                  </ul>
+                  <div className="text-center">
+                    <button className="w-full px-6 py-3 bg-green-400 text-white font-semibold rounded-lg hover:bg-green-500 transition-colors">
+                      Contact Sales
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Success Metrics */}
+            <div className="bg-white/10 backdrop-blur-xl rounded-2xl p-8">
+              <h2 className="text-3xl font-bold mb-6 text-green-400">Success Metrics</h2>
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div className="text-center">
+                  <div className="text-4xl font-bold text-cyan-400 mb-2">300%</div>
+                  <div className="text-white/70">Average Efficiency Increase</div>
+                </div>
+                <div className="text-center">
+                  <div className="text-4xl font-bold text-fuchsia-400 mb-2">50%</div>
+                  <div className="text-white/70">Cost Reduction</div>
+                </div>
+                <div className="text-center">
+                  <div className="text-4xl font-bold text-green-400 mb-2">99.9%</div>
+                  <div className="text-white/70">System Uptime</div>
+                </div>
+                <div className="text-center">
+                  <div className="text-4xl font-bold text-blue-400 mb-2">24/7</div>
+                  <div className="text-white/70">Autonomous Operation</div>
                 </div>
               </div>
             </div>
