@@ -3,9 +3,14 @@ import Head from 'next/head';
 import { Check, Star, Zap, Shield, Users, Globe, ArrowRight, ExternalLink, TrendingUp, Clock, Target, Building, Rocket, Award, DollarSign, ChartBar, Lock, Cpu, Database, Cloud, Smartphone, Palette, Search, MessageSquare, FileText, Calendar, CreditCard, BarChart3, Settings, Zap as ZapIcon, Code, BookOpen, Activity, Database as DatabaseIcon, Play, Mail, Phone, MapPin, Filter, Grid, List, ChevronDown, ChevronUp, Sparkles, FlaskConical, Dna, Car, Leaf, Factory, Truck, Microscope, GraduationCap, ShieldCheck, Brain, Atom, Globe2, Bot, ChevronRight, LinkIcon, Building2 } from 'lucide-react';
 import Button from '../components/ui/Button';
 import Card from '../components/ui/Card';
+<<<<<<< HEAD
+import QuantumNeuralBackground from '../components/ui/QuantumNeuralBackground';
+import { expandedMicroSaasServices, serviceCategories, getServicesByCategory, getPopularServices, getServicesByPriceRange } from '../data/expanded-micro-saas-services';
+=======
 import UltraFuturisticMatrixBackground from '../components/ui/UltraFuturisticMatrixBackground';
 import { enhancedRealMicroSaasServices, serviceCategories, getServicesByCategory, getPopularServices, getServicesByPriceRange } from '../data/enhanced-real-micro-saas-services';
 import { motion } from 'framer-motion';
+>>>>>>> origin/cursor/enhance-app-services-and-website-with-futuristic-design-b6e9
 
 export default function ServicesPage() {
   const [selectedCategory, setSelectedCategory] = useState('All');
@@ -83,9 +88,13 @@ export default function ServicesPage() {
   ];
 
   return (
+<<<<<<< HEAD
+    <AdvancedFuturisticBackground theme="quantum" intensity="high">
+=======
           <UltraAdvancedFuturisticBackground variant="holographic" intensity="medium">
 =======
     <UltraFuturisticMatrixBackground>
+>>>>>>> origin/cursor/enhance-app-services-and-website-with-futuristic-design-b6e9
       <Head>
         <title>Innovative Micro SAAS Services | Zion Tech Group</title>
         <meta name="description" content="Discover our cutting-edge micro SAAS services including AI, quantum computing, blockchain, and more. Real implementations with 1500%+ average ROI." />
@@ -1939,7 +1948,11 @@ export default function Services() {
         </section>
         <UltraFuturisticFooter2046 />
       </div>
+<<<<<<< HEAD
+    </Layout>
+=======
     </UltraFuturisticMatrixBackground>
+>>>>>>> origin/cursor/enhance-app-services-and-website-with-futuristic-design-b6e9
   );
 };
 
