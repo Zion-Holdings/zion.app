@@ -55,7 +55,11 @@ import { emergingTechBreakthroughServices2029 } from '../../data/2029-emerging-t
 import { practicalBusinessSolutionServices2029 } from '../../data/2029-practical-business-solutions';
 import { professionalServices } from '../../data/professional-services';
 import { real2032ServiceExpansions } from '../../data/real-2032-service-expansions';
+<<<<<<< HEAD
+import { real2026Q2VerifiedAdditions } from '../../data/real-2026-q2-verified-additions';
+=======
 import { real2025Q5Additions } from '../../data/real-2025-q5-additions';
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-ca73
 
 type Service = typeof enhancedRealMicroSaasServices[number] | {
   id: string;
@@ -156,7 +160,11 @@ function getAllServices(): Service[] {
 		.concat(practicalBusinessSolutionServices2029 as unknown as Service[])
 		.concat(professionalServices as unknown as Service[])
 		.concat(real2032ServiceExpansions as unknown as Service[])
+<<<<<<< HEAD
+		.concat(real2026Q2VerifiedAdditions as unknown as Service[]);
+=======
 		.concat(real2025Q5Additions as unknown as Service[]);
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-ca73
 }
 
 function toSlug(value: string): string {
