@@ -1,5 +1,13 @@
 {
+<<<<<<< HEAD
+<<<<<<< HEAD
+  "generatedAt": "2025-08-11T23:44:51.302Z",
+=======
+  "generatedAt": "2025-08-11T23:46:40.504Z",
+>>>>>>> 8cc7475fdf (feat(automation): autonomous front/home advertisers + schedules cleanup [skip ci])
+=======
   "generatedAt": "2025-08-11T23:47:08.417Z",
+>>>>>>> 91bb93fa9e (chore(sync): advanced autonomous sync)
   "functions": [
     "a11y-alt-text-runner",
     "adaptive-orchestrator",
@@ -11,7 +19,9 @@
     "broken-image-scanner",
     "broken-image-scanner-runner",
     "cloud_orchestrator",
+    "component-coupling-graph-runner",
     "component-size-report",
+    "content-freshness-score-runner",
     "continuous-front-runner",
     "continuous-orchestrator",
     "dead-code-audit",
@@ -69,6 +79,7 @@
     "security-audit",
     "security-audit-runner",
     "seo-audit-runner",
+    "site-404-map-runner",
     "site-crawler",
     "sitemap_runner",
     "stale-content-auditor-runner",
@@ -78,6 +89,7 @@
     "ui-enhancer",
     "ultrafast-front-orchestrator",
     "ultrafast-orchestrator",
+    "unused-exports-runner",
     "unused-media-scanner"
   ]
 }
