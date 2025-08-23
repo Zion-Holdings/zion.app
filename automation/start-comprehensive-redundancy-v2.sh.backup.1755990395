@@ -1,6 +1,12 @@
 #!/bin/bash
 
 # Comprehensive Redundancy Automation V2 Startup Script
+<<<<<<< HEAD
+# This script provides redundancy for all PM2, GitHub Actions, Netlify Functions, and automation scripts
+
+set -e
+
+=======
 # This script provides redundancy for all PM2 automations, GitHub Actions automations, and Netlify functions automations
 
 set -e
@@ -11,6 +17,7 @@ LOG_DIR="$WORKSPACE_DIR/automation/logs"
 PID_FILE="$WORKSPACE_DIR/automation/comprehensive-redundancy-v2.pid"
 LOG_FILE="$LOG_DIR/comprehensive-redundancy-v2.log"
 
+>>>>>>> origin/cursor/automate-all-existing-automations-and-clean-up-3f4b
 # Colors for output
 RED='\033[0;31m'
 GREEN='\033[0;32m'
@@ -18,6 +25,45 @@ YELLOW='\033[1;33m'
 BLUE='\033[0;34m'
 NC='\033[0m' # No Color
 
+<<<<<<< HEAD
+# Configuration
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+WORKSPACE_DIR="$(dirname "$SCRIPT_DIR")"
+LOG_DIR="$WORKSPACE_DIR/automation/logs"
+REDUNDANCY_SCRIPT="$WORKSPACE_DIR/automation/comprehensive-redundancy-automation-v2.cjs"
+PID_FILE="$LOG_DIR/comprehensive-redundancy-v2.pid"
+STATUS_FILE="$LOG_DIR/comprehensive-redundancy-v2-status.json"
+
+# Ensure log directory exists
+mkdir -p "$LOG_DIR"
+
+# Function to log messages
+log() {
+    local level="$1"
+    local message="$2"
+    local timestamp=$(date '+%Y-%m-%d %H:%M:%S')
+    
+    case "$level" in
+        "INFO")
+            echo -e "${BLUE}[$timestamp] [INFO]${NC} $message"
+            ;;
+        "SUCCESS")
+            echo -e "${GREEN}[$timestamp] [SUCCESS]${NC} $message"
+            ;;
+        "WARN")
+            echo -e "${YELLOW}[$timestamp] [WARN]${NC} $message"
+            ;;
+        "ERROR")
+            echo -e "${RED}[$timestamp] [ERROR]${NC} $message"
+            ;;
+        *)
+            echo -e "[$timestamp] [$level] $message"
+            ;;
+    esac
+    
+    # Also write to log file
+    echo "[$timestamp] [$level] $message" >> "$LOG_DIR/comprehensive-redundancy-v2-startup.log"
+=======
 # Function to print colored output
 print_status() {
     echo -e "${BLUE}[$(date '+%Y-%m-%d %H:%M:%S')]${NC} $1"
@@ -33,22 +79,73 @@ print_warning() {
 
 print_error() {
     echo -e "${RED}[$(date '+%Y-%m-%d %H:%M:%S')] ERROR:${NC} $1"
+>>>>>>> origin/cursor/automate-all-existing-automations-and-clean-up-3f4b
 }
 
 # Function to check if Node.js is available
 check_node() {
     if ! command -v node &> /dev/null; then
+<<<<<<< HEAD
+        log "ERROR" "Node.js is not installed or not in PATH"
+        exit 1
+    fi
+    
+    local node_version=$(node --version)
+    log "INFO" "Node.js version: $node_version"
+}
+
+# Function to check if npm is available
+check_npm() {
+    if ! command -v npm &> /dev/null; then
+        log "ERROR" "npm is not installed or not in PATH"
+        exit 1
+    fi
+    
+    local npm_version=$(npm --version)
+    log "INFO" "npm version: $npm_version"
+=======
         print_error "Node.js is not installed or not in PATH"
         exit 1
     fi
     
     NODE_VERSION=$(node --version)
     print_status "Node.js version: $NODE_VERSION"
+>>>>>>> origin/cursor/automate-all-existing-automations-and-clean-up-3f4b
 }
 
 # Function to check if PM2 is available
 check_pm2() {
     if ! command -v pm2 &> /dev/null; then
+<<<<<<< HEAD
+        log "WARN" "PM2 is not installed, attempting to install..."
+        npm install -g pm2 || {
+            log "ERROR" "Failed to install PM2"
+            exit 1
+        }
+    fi
+    
+    local pm2_version=$(pm2 --version)
+    log "INFO" "PM2 version: $pm2_version"
+}
+
+# Function to check dependencies
+check_dependencies() {
+    log "INFO" "Checking dependencies..."
+    
+    # Check if package.json exists
+    if [[ ! -f "$WORKSPACE_DIR/package.json" ]]; then
+        log "ERROR" "package.json not found in workspace"
+        exit 1
+    fi
+    
+    # Check if redundancy script exists
+    if [[ ! -f "$REDUNDANCY_SCRIPT" ]]; then
+        log "ERROR" "Redundancy script not found: $REDUNDANCY_SCRIPT"
+        exit 1
+    fi
+    
+    log "SUCCESS" "Dependencies check passed"
+=======
         print_warning "PM2 is not installed. Installing PM2..."
         npm install -g pm2
     fi
@@ -95,10 +192,23 @@ backup_configurations() {
     fi
     
     print_success "Configurations backed up to: $BACKUP_DIR"
+>>>>>>> origin/cursor/automate-all-existing-automations-and-clean-up-3f4b
 }
 
 # Function to start the redundancy system
 start_redundancy() {
+<<<<<<< HEAD
+    log "INFO" "Starting Comprehensive Redundancy Automation V2..."
+    
+    # Check if already running
+    if [[ -f "$PID_FILE" ]]; then
+        local pid=$(cat "$PID_FILE")
+        if kill -0 "$pid" 2>/dev/null; then
+            log "WARN" "Redundancy system already running with PID $pid"
+            return 0
+        else
+            log "WARN" "Stale PID file found, removing..."
+=======
     print_status "Starting Comprehensive Redundancy Automation V2..."
     
     cd "$WORKSPACE_DIR"
@@ -111,11 +221,35 @@ start_redundancy() {
             return 0
         else
             print_warning "Stale PID file found, removing..."
+>>>>>>> origin/cursor/automate-all-existing-automations-and-clean-up-3f4b
             rm -f "$PID_FILE"
         fi
     fi
     
     # Start the redundancy system
+<<<<<<< HEAD
+    cd "$WORKSPACE_DIR"
+    
+    # Run the redundancy script in the background
+    nohup node "$REDUNDANCY_SCRIPT" start > "$LOG_DIR/comprehensive-redundancy-v2.out" 2>&1 &
+    local pid=$!
+    
+    # Save PID
+    echo "$pid" > "$PID_FILE"
+    
+    # Wait a moment to see if it starts successfully
+    sleep 3
+    
+    if kill -0 "$pid" 2>/dev/null; then
+        log "SUCCESS" "Redundancy system started with PID $pid"
+        
+        # Update status
+        update_status "running" "$pid"
+        
+        return 0
+    else
+        log "ERROR" "Failed to start redundancy system"
+=======
     nohup node automation/comprehensive-redundancy-automation-v2.cjs start > "$LOG_FILE" 2>&1 &
     REDUNDANCY_PID=$!
     
@@ -132,6 +266,7 @@ start_redundancy() {
         print_status "PID file: $PID_FILE"
     else
         print_error "Failed to start redundancy system"
+>>>>>>> origin/cursor/automate-all-existing-automations-and-clean-up-3f4b
         rm -f "$PID_FILE"
         return 1
     fi
@@ -139,6 +274,38 @@ start_redundancy() {
 
 # Function to stop the redundancy system
 stop_redundancy() {
+<<<<<<< HEAD
+    log "INFO" "Stopping Comprehensive Redundancy Automation V2..."
+    
+    if [[ -f "$PID_FILE" ]]; then
+        local pid=$(cat "$PID_FILE")
+        
+        if kill -0 "$pid" 2>/dev/null; then
+            log "INFO" "Stopping process with PID $pid..."
+            kill "$pid"
+            
+            # Wait for process to stop
+            local count=0
+            while kill -0 "$pid" 2>/dev/null && [[ $count -lt 10 ]]; do
+                sleep 1
+                ((count++))
+            done
+            
+            if kill -0 "$pid" 2>/dev/null; then
+                log "WARN" "Process did not stop gracefully, force killing..."
+                kill -9 "$pid"
+            fi
+            
+            log "SUCCESS" "Redundancy system stopped"
+        else
+            log "WARN" "Process with PID $pid is not running"
+        fi
+        
+        rm -f "$PID_FILE"
+        update_status "stopped"
+    else
+        log "WARN" "No PID file found, system may not be running"
+=======
     print_status "Stopping Comprehensive Redundancy Automation V2..."
     
     if [ -f "$PID_FILE" ]; then
@@ -169,12 +336,17 @@ stop_redundancy() {
         rm -f "$PID_FILE"
     else
         print_warning "No PID file found"
+>>>>>>> origin/cursor/automate-all-existing-automations-and-clean-up-3f4b
     fi
 }
 
 # Function to restart the redundancy system
 restart_redundancy() {
+<<<<<<< HEAD
+    log "INFO" "Restarting Comprehensive Redundancy Automation V2..."
+=======
     print_status "Restarting Comprehensive Redundancy Automation V2..."
+>>>>>>> origin/cursor/automate-all-existing-automations-and-clean-up-3f4b
     stop_redundancy
     sleep 2
     start_redundancy
@@ -182,6 +354,40 @@ restart_redundancy() {
 
 # Function to check status
 check_status() {
+<<<<<<< HEAD
+    if [[ -f "$PID_FILE" ]]; then
+        local pid=$(cat "$PID_FILE")
+        if kill -0 "$pid" 2>/dev/null; then
+            log "SUCCESS" "Redundancy system is running with PID $pid"
+            
+            # Get detailed status from the script
+            if [[ -f "$REDUNDANCY_SCRIPT" ]]; then
+                cd "$WORKSPACE_DIR"
+                node "$REDUNDANCY_SCRIPT" status 2>/dev/null || log "WARN" "Could not get detailed status"
+            fi
+            
+            return 0
+        else
+            log "ERROR" "PID file exists but process is not running"
+            rm -f "$PID_FILE"
+            return 1
+        fi
+    else
+        log "INFO" "Redundancy system is not running"
+        return 1
+    fi
+}
+
+# Function to check health
+check_health() {
+    log "INFO" "Checking redundancy system health..."
+    
+    if [[ -f "$REDUNDANCY_SCRIPT" ]]; then
+        cd "$WORKSPACE_DIR"
+        node "$REDUNDANCY_SCRIPT" health 2>/dev/null || log "WARN" "Could not get health status"
+    else
+        log "ERROR" "Redundancy script not found"
+=======
     print_status "Checking Comprehensive Redundancy Automation V2 status..."
     
     if [ -f "$PID_FILE" ]; then
@@ -204,11 +410,42 @@ check_status() {
         fi
     else
         print_warning "Redundancy system is not running (no PID file)"
+>>>>>>> origin/cursor/automate-all-existing-automations-and-clean-up-3f4b
     fi
 }
 
 # Function to show logs
 show_logs() {
+<<<<<<< HEAD
+    log "INFO" "Showing redundancy system logs..."
+    
+    if [[ -f "$LOG_DIR/comprehensive-redundancy-v2.log" ]]; then
+        tail -n 50 "$LOG_DIR/comprehensive-redundancy-v2.log"
+    else
+        log "WARN" "No log file found"
+    fi
+    
+    if [[ -f "$LOG_DIR/comprehensive-redundancy-v2.out" ]]; then
+        echo ""
+        log "INFO" "Output log:"
+        tail -n 20 "$LOG_DIR/comprehensive-redundancy-v2.out"
+    fi
+}
+
+# Function to update status file
+update_status() {
+    local status="$1"
+    local pid="${2:-}"
+    
+    cat > "$STATUS_FILE" << EOF
+{
+  "status": "$status",
+  "pid": "$pid",
+  "lastUpdated": "$(date -u +%Y-%m-%dT%H:%M:%SZ)",
+  "workspace": "$WORKSPACE_DIR"
+}
+EOF
+=======
     if [ -f "$LOG_FILE" ]; then
         print_status "Showing logs from: $LOG_FILE"
         tail -f "$LOG_FILE"
@@ -248,6 +485,7 @@ run_health_check() {
     node automation/comprehensive-redundancy-automation-v2.cjs health
     
     print_success "Health check completed"
+>>>>>>> origin/cursor/automate-all-existing-automations-and-clean-up-3f4b
 }
 
 # Function to show help
@@ -260,10 +498,16 @@ show_help() {
     echo "  start     Start the redundancy system"
     echo "  stop      Stop the redundancy system"
     echo "  restart   Restart the redundancy system"
+<<<<<<< HEAD
+    echo "  status    Check if the system is running"
+    echo "  health    Check system health"
+    echo "  logs      Show recent logs"
+=======
     echo "  status    Check system status"
     echo "  logs      Show live logs"
     echo "  health    Run comprehensive health check"
     echo "  backup    Backup existing configurations"
+>>>>>>> origin/cursor/automate-all-existing-automations-and-clean-up-3f4b
     echo "  help      Show this help message"
     echo ""
     echo "Examples:"
@@ -272,6 +516,47 @@ show_help() {
     echo "  $0 health"
 }
 
+<<<<<<< HEAD
+# Main execution
+main() {
+    local command="${1:-start}"
+    
+    log "INFO" "Comprehensive Redundancy Automation V2 Management Script"
+    log "INFO" "Workspace: $WORKSPACE_DIR"
+    
+    case "$command" in
+        "start")
+            check_node
+            check_npm
+            check_pm2
+            check_dependencies
+            start_redundancy
+            ;;
+        "stop")
+            stop_redundancy
+            ;;
+        "restart")
+            check_node
+            check_npm
+            check_pm2
+            check_dependencies
+            restart_redundancy
+            ;;
+        "status")
+            check_status
+            ;;
+        "health")
+            check_health
+            ;;
+        "logs")
+            show_logs
+            ;;
+        "help"|"--help"|"-h")
+            show_help
+            ;;
+        *)
+            log "ERROR" "Unknown command: $command"
+=======
 # Main script logic
 main() {
     print_status "Comprehensive Redundancy Automation V2 Management Script"
@@ -311,6 +596,7 @@ main() {
             ;;
         *)
             print_error "Unknown command: $1"
+>>>>>>> origin/cursor/automate-all-existing-automations-and-clean-up-3f4b
             show_help
             exit 1
             ;;

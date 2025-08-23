@@ -366,6 +366,16 @@
     "redundancy:ultimate:master:stop": "node automation/ultimate-redundancy-master.cjs stop",
     "redundancy:ultimate:master:restart": "node automation/ultimate-redundancy-master.cjs restart",
     "redundancy:ultimate:master:status": "node automation/ultimate-redundancy-master.cjs status",
+<<<<<<< HEAD
+    "redundancy:ultimate:master:report": "node automation/ultimate-redundancy-master.cjs report",
+    "redundancy:ultimate:master:monitor": "node automation/ultimate-redundancy-master.cjs monitor",
+    "redundancy:master:start": "./automation/start-master-redundancy.sh start",
+    "redundancy:master:stop": "./automation/start-master-redundancy.sh stop",
+    "redundancy:master:restart": "./automation/start-master-redundancy.sh restart",
+    "redundancy:master:status": "./automation/start-master-redundancy.sh status",
+    "redundancy:master:health": "./automation/start-master-redundancy.sh health",
+    "redundancy:master:logs": "./automation/start-master-redundancy.sh logs"
+=======
     "redundancy:ultimate:master:health": "node automation/ultimate-redundancy-master.cjs health",
     "redundancy:ultimate:v2:start": "bash automation/start-ultimate-redundancy-v2.sh start",
     "redundancy:ultimate:v2:stop": "bash automation/start-ultimate-redundancy-v2.sh stop",
@@ -414,6 +424,7 @@
     "dashboard:v2:start": "node automation/comprehensive-automation-dashboard-v2.cjs start",
     "dashboard:v2:status": "node automation/comprehensive-automation-dashboard-v2.cjs status",
     "automation:master:v2": "npm run dashboard:v2:start & npm run orchestrator:v2:start & npm run redundancy:v2:start"
+>>>>>>> origin/cursor/automate-all-existing-automations-and-clean-up-3f4b
   },
   "dependencies": {
     "@google-analytics/data": "^5.2.0",
