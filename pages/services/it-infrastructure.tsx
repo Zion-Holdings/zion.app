@@ -1,235 +1,225 @@
 import React from 'react';
-import Layout from '../../components/layout/Layout';
+import Head from 'next/head';
+import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { 
-  Cpu, Cloud, Network, Zap, Shield, Target, Users, Star, CheckCircle, 
-  ArrowRight, Play, TrendingUp, Globe, Database, Brain, Rocket,
-  Lock, FileText, GraduationCap, DollarSign, Clock, Server
+  Cloud, Server, Database, Network, Settings, Shield, Zap, 
+  ArrowRight, Star, Check, Mail, Phone, MapPin, Cpu, HardDrive
 } from 'lucide-react';
 
-const ITInfrastructurePage: React.FC = () => {
-  const features = [
-    {
-      icon: Cpu,
-      title: "Cloud Infrastructure",
-      description: "Scalable cloud solutions with hybrid and multi-cloud capabilities",
-      color: "from-yellow-500 to-orange-500"
-    },
-    {
-      icon: Network,
-      title: "Network Solutions",
-      description: "High-performance networking with SDN and automation",
-      color: "from-orange-500 to-red-500"
-    },
-    {
-      icon: Server,
-      title: "Data Center Services",
-      description: "Enterprise-grade data center solutions and colocation",
-      color: "from-red-500 to-pink-500"
-    },
-    {
-      icon: Cloud,
-      title: "DevOps & Automation",
-      description: "Streamlined development and deployment with CI/CD pipelines",
-      color: "from-pink-500 to-purple-500"
-    }
-  ];
-
+const ITInfrastructureServices: React.FC = () => {
   const services = [
     {
-      title: "Cloud Infrastructure Platform",
-      description: "Comprehensive cloud platform with hybrid and multi-cloud management",
-      price: "From $100,000",
-      features: ["Multi-cloud orchestration", "Auto-scaling", "Cost optimization", "Security compliance"]
+      title: 'Quantum Cloud Infrastructure 2045',
+      description: 'Quantum-powered cloud computing and infrastructure solutions',
+      href: '/quantum-cloud-infrastructure-2045',
+      icon: Cloud,
+      features: ['Quantum Computing', 'Scalable Infrastructure', 'High Performance', 'Energy Efficient']
     },
     {
-      title: "Network Infrastructure Suite",
-      description: "Complete networking solution with SDN and automation capabilities",
-      price: "From $75,000",
-      features: ["Software-defined networking", "Network automation", "Performance monitoring", "Security integration"]
+      title: 'Quantum Data Center Management 2045',
+      description: 'Revolutionary data center management powered by quantum technology',
+      href: '/quantum-data-center-management-2045',
+      icon: Database,
+      features: ['Quantum Optimization', 'Resource Management', 'Energy Efficiency', 'Performance Monitoring']
     },
     {
-      title: "Data Center & Colocation",
-      description: "Enterprise data center services with high availability and redundancy",
-      price: "From $150,000",
-      features: ["High availability", "Disaster recovery", "24/7 monitoring", "Compliance ready"]
+      title: 'Autonomous DevOps Platform 2045',
+      description: 'AI-powered DevOps automation and infrastructure management',
+      href: '/autonomous-devops-platform-2045',
+      icon: Settings,
+      features: ['DevOps Automation', 'CI/CD Pipeline', 'Infrastructure as Code', 'Monitoring & Alerting']
+    },
+    {
+      title: 'Autonomous Network Management 2045',
+      description: 'Intelligent network infrastructure management and optimization',
+      href: '/autonomous-network-management-2045',
+      icon: Network,
+      features: ['Network Automation', 'Performance Optimization', 'Security Management', 'Traffic Analysis']
+    },
+    {
+      title: 'Autonomous IT Service Management 2045',
+      description: 'AI-driven IT service management and support automation',
+      href: '/autonomous-it-service-management-2045',
+      icon: Server,
+      features: ['Service Automation', 'Incident Management', 'Change Management', 'Service Desk']
+    },
+    {
+      title: '5G Enterprise Network Solutions 2045',
+      description: 'Advanced 5G network infrastructure for enterprise applications',
+      href: '/5g-enterprise-network-solutions',
+      icon: Network,
+      features: ['5G Infrastructure', 'Enterprise Networks', 'Low Latency', 'High Bandwidth']
     }
   ];
 
-  const stats = [
-    { number: "99.99%", label: "Uptime Guarantee", icon: Server },
-    { number: "1000+", label: "Servers Managed", icon: Cpu },
-    { number: "50+", label: "Data Centers", icon: Cloud },
-    { number: "24/7", label: "Support Available", icon: Clock }
-  ];
+  const contactInfo = {
+    mobile: '+1 302 464 0950',
+    email: 'kleber@ziontechgroup.com',
+    address: '364 E Main St STE 1008 Middletown DE 19709',
+    website: 'https://ziontechgroup.com'
+  };
 
   return (
-    <Layout 
-      title="IT Infrastructure Services - Zion Tech Group"
-      description="Comprehensive IT infrastructure solutions including cloud services, networking, data centers, and DevOps automation."
-      keywords="IT infrastructure, cloud services, networking, data centers, DevOps, automation, Zion Tech Group"
-      canonicalUrl="https://ziontechgroup.com/services/it-infrastructure"
-    >
-      <div className="min-h-screen bg-gradient-to-br from-slate-900 via-orange-900 to-slate-900">
-        {/* Hero Section */}
-        <section className="relative overflow-hidden py-20 px-4 sm:px-6 lg:px-8">
-          <div className="max-w-7xl mx-auto">
+    <>
+      <Head>
+        <title>IT Infrastructure Services 2045 - Zion Tech Group</title>
+        <meta name="description" content="Modern cloud computing, data center management, and IT infrastructure solutions powered by quantum technology and AI. Build the future with Zion Tech Group." />
+        <meta name="keywords" content="IT infrastructure, cloud computing, data center, DevOps, network management, quantum technology, Zion Tech Group" />
+        <link rel="canonical" href="https://ziontechgroup.com/services/it-infrastructure" />
+      </Head>
+
+      <div className="min-h-screen bg-black text-white relative overflow-hidden">
+        {/* Background Effects */}
+        <div className="absolute inset-0 bg-gradient-to-br from-blue-900/20 via-sky-900/20 to-cyan-900/20"></div>
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(59,130,246,0.1),transparent_50%)]"></div>
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_80%,rgba(14,165,233,0.1),transparent_50%)]"></div>
+
+        {/* Header Section */}
+        <div className="relative z-10 pt-32 pb-20 px-4 sm:px-6 lg:px-8">
+          <div className="max-w-7xl mx-auto text-center">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
-              className="text-center"
             >
-              <h1 className="text-5xl md:text-7xl font-bold text-white mb-6">
-                IT <span className="bg-gradient-to-r from-yellow-400 to-orange-400 bg-clip-text text-transparent">Infrastructure</span>
+              <div className="inline-flex items-center space-x-2 bg-gradient-to-r from-blue-500/20 to-sky-500/20 border border-blue-500/30 rounded-full px-4 py-2 mb-6">
+                <Cloud className="w-5 h-5 text-blue-400" />
+                <span className="text-blue-400 font-medium">IT Infrastructure Services 2045</span>
+              </div>
+              
+              <h1 className="text-5xl lg:text-7xl font-bold mb-6 bg-gradient-to-r from-blue-400 via-sky-400 to-cyan-400 bg-clip-text text-transparent">
+                Future-Ready Infrastructure
               </h1>
-              <p className="text-xl md:text-2xl text-gray-300 mb-8 max-w-4xl mx-auto">
-                Build robust, scalable, and secure IT infrastructure with our comprehensive 
-                cloud services, networking solutions, and data center expertise.
+              
+              <p className="text-xl lg:text-2xl text-gray-300 mb-8 max-w-4xl mx-auto leading-relaxed">
+                Build the foundation of tomorrow with our revolutionary IT infrastructure solutions. From quantum cloud 
+                computing to autonomous DevOps, we're redefining what's possible in infrastructure technology.
               </p>
+
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <button className="bg-gradient-to-r from-yellow-500 to-orange-500 text-white px-8 py-4 rounded-lg font-semibold hover:from-yellow-600 hover:to-orange-600 transition-all duration-300 flex items-center justify-center">
-                  Get Started <ArrowRight className="ml-2" />
-                </button>
-                <button className="border border-yellow-400 text-yellow-400 px-8 py-4 rounded-lg font-semibold hover:bg-yellow-400 hover:text-white transition-all duration-300 flex items-center justify-center">
-                  <Play className="mr-2" /> Watch Demo
-                </button>
+                <Link 
+                  href="/contact"
+                  className="inline-flex items-center space-x-2 bg-gradient-to-r from-blue-500 to-sky-600 hover:from-blue-400 hover:to-sky-500 text-black font-semibold px-8 py-4 rounded-xl transition-all duration-300 transform hover:scale-105 shadow-lg shadow-blue-500/25"
+                >
+                  <span>Build Your Infrastructure</span>
+                  <ArrowRight className="w-5 h-5" />
+                </Link>
+                <Link 
+                  href="/solutions"
+                  className="inline-flex items-center space-x-2 border border-blue-500/50 text-blue-400 hover:bg-blue-500/10 font-semibold px-8 py-4 rounded-xl transition-all duration-300"
+                >
+                  <span>Explore Solutions</span>
+                </Link>
               </div>
             </motion.div>
           </div>
-        </section>
+        </div>
 
-        {/* Features Section */}
-        <section className="py-20 px-4 sm:px-6 lg:px-8">
+        {/* Services Grid */}
+        <div className="relative z-10 pb-20 px-4 sm:px-6 lg:px-8">
           <div className="max-w-7xl mx-auto">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
               className="text-center mb-16"
             >
-              <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-                Revolutionary Infrastructure Features
+              <h2 className="text-4xl lg:text-5xl font-bold mb-6 bg-gradient-to-r from-blue-400 to-sky-400 bg-clip-text text-transparent">
+                Our IT Infrastructure Services
               </h2>
               <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-                Our IT infrastructure services provide the foundation for digital transformation 
-                with enterprise-grade reliability, security, and performance.
+                Discover our comprehensive suite of infrastructure solutions designed to power your digital transformation
               </p>
             </motion.div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-              {features.map((feature, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.8, delay: index * 0.1 }}
-                  className="bg-gradient-to-br from-slate-800 to-slate-700 p-6 rounded-xl border border-slate-600 hover:border-yellow-500 transition-all duration-300"
-                >
-                  <div className={`w-16 h-16 bg-gradient-to-r ${feature.color} rounded-lg flex items-center justify-center mb-4 mx-auto`}>
-                    <feature.icon className="w-8 h-8 text-white" />
-                  </div>
-                  <h3 className="text-xl font-semibold text-white mb-3">{feature.title}</h3>
-                  <p className="text-gray-300">{feature.description}</p>
-                </motion.div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* Services Section */}
-        <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-slate-800 to-slate-900">
-          <div className="max-w-7xl mx-auto">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-              className="text-center mb-16"
-            >
-              <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-                IT Infrastructure Services
-              </h2>
-              <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-                Comprehensive infrastructure solutions designed to support your business growth 
-                with scalable, secure, and high-performance technology foundations.
-              </p>
-            </motion.div>
-
-            <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {services.map((service, index) => (
                 <motion.div
-                  key={index}
+                  key={service.title}
                   initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.8, delay: index * 0.1 }}
-                  className="bg-gradient-to-br from-slate-700 to-slate-600 p-8 rounded-xl border border-slate-500 hover:border-yellow-400 transition-all duration-300"
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: index * 0.1 }}
+                  className="group"
                 >
-                  <h3 className="text-2xl font-bold text-white mb-4">{service.title}</h3>
-                  <p className="text-gray-300 mb-6">{service.description}</p>
-                  <div className="text-3xl font-bold text-yellow-400 mb-6">{service.price}</div>
-                  <ul className="space-y-3 mb-8">
-                    {service.features.map((feature, featureIndex) => (
-                      <li key={featureIndex} className="flex items-center text-gray-300">
-                        <CheckCircle className="w-5 h-5 text-green-400 mr-3 flex-shrink-0" />
-                        {feature}
-                      </li>
-                    ))}
-                  </ul>
-                  <button className="w-full bg-gradient-to-r from-yellow-500 to-orange-500 text-white py-3 rounded-lg font-semibold hover:from-yellow-600 hover:to-orange-600 transition-all duration-300">
-                    Get Started
-                  </button>
+                  <Link href={service.href} className="block">
+                    <div className="bg-gray-900/50 backdrop-blur-xl border border-blue-500/20 rounded-2xl p-8 h-full hover:border-blue-500/40 hover:bg-gray-900/70 transition-all duration-300 transform hover:scale-105">
+                      <div className="w-16 h-16 bg-gradient-to-br from-blue-500/20 to-sky-500/20 rounded-xl flex items-center justify-center mb-6 group-hover:from-blue-500/30 group-hover:to-sky-500/30 transition-all duration-300">
+                        <service.icon className="w-8 h-8 text-blue-400" />
+                      </div>
+                      
+                      <h3 className="text-2xl font-bold mb-4 text-white group-hover:text-blue-400 transition-colors">
+                        {service.title}
+                      </h3>
+                      
+                      <p className="text-gray-300 mb-6 leading-relaxed">
+                        {service.description}
+                      </p>
+                      
+                      <div className="space-y-2 mb-6">
+                        {service.features.map((feature, featureIndex) => (
+                          <div key={featureIndex} className="flex items-center space-x-2">
+                            <Check className="w-4 h-4 text-blue-400 flex-shrink-0" />
+                            <span className="text-sm text-gray-400">{feature}</span>
+                          </div>
+                        ))}
+                      </div>
+                      
+                      <div className="flex items-center text-blue-400 group-hover:text-blue-300 transition-colors">
+                        <span className="font-medium">Learn More</span>
+                        <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
+                      </div>
+                    </div>
+                  </Link>
                 </motion.div>
               ))}
             </div>
           </div>
-        </section>
+        </div>
 
-        {/* Stats Section */}
-        <section className="py-20 px-4 sm:px-6 lg:px-8">
-          <div className="max-w-7xl mx-auto">
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-              {stats.map((stat, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, scale: 0.8 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  transition={{ duration: 0.8, delay: index * 0.1 }}
-                  className="text-center"
-                >
-                  <div className="w-20 h-20 bg-gradient-to-r from-yellow-500 to-orange-500 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <stat.icon className="w-10 h-10 text-white" />
-                  </div>
-                  <div className="text-4xl font-bold text-white mb-2">{stat.number}</div>
-                  <div className="text-gray-300">{stat.label}</div>
-                </motion.div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* CTA Section */}
-        <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-yellow-600 to-orange-600">
+        {/* Contact Section */}
+        <div className="relative z-10 py-20 px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto text-center">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.4 }}
             >
-              <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-                Build Your Digital Foundation
+              <h2 className="text-4xl lg:text-5xl font-bold mb-6 bg-gradient-to-r from-blue-400 to-sky-400 bg-clip-text text-transparent">
+                Ready to Build the Future?
               </h2>
-              <p className="text-xl text-white/90 mb-8">
-                Ready to create a robust, scalable IT infrastructure that supports your business growth?
+              <p className="text-xl text-gray-300 mb-8">
+                Let's discuss how our IT infrastructure solutions can power your digital transformation
               </p>
-              <button className="bg-white text-yellow-600 px-8 py-4 rounded-lg font-semibold hover:bg-gray-100 transition-all duration-300 text-lg">
-                Start Building Today
-              </button>
+              
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+                <div className="flex items-center justify-center space-x-3">
+                  <Phone className="w-6 h-6 text-blue-400" />
+                  <span className="text-gray-300">{contactInfo.mobile}</span>
+                </div>
+                <div className="flex items-center justify-center space-x-3">
+                  <Mail className="w-6 h-6 text-blue-400" />
+                  <span className="text-gray-300">{contactInfo.email}</span>
+                </div>
+                <div className="flex items-center justify-center space-x-3">
+                  <MapPin className="w-6 h-6 text-blue-400" />
+                  <span className="text-gray-300">{contactInfo.address}</span>
+                </div>
+              </div>
+              
+              <Link 
+                href="/contact"
+                className="inline-flex items-center space-x-2 bg-gradient-to-r from-blue-500 to-sky-600 hover:from-blue-400 hover:to-sky-500 text-black font-semibold px-8 py-4 rounded-xl transition-all duration-300 transform hover:scale-105 shadow-lg shadow-blue-500/25"
+              >
+                <span>Contact Us Today</span>
+                <ArrowRight className="w-5 h-5" />
+              </Link>
             </motion.div>
           </div>
-        </section>
+        </div>
       </div>
-    </Layout>
+    </>
   );
 };
 
-export default ITInfrastructurePage;
+export default ITInfrastructureServices;
