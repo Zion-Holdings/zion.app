@@ -4,7 +4,7 @@ import {
   Menu, X, Search, ChevronDown, ChevronRight, 
   Home, Briefcase, Users, BookOpen, Phone, 
   Globe, Zap, Shield, Brain, Rocket, Building,
-  Target, Heart, Cpu, Cloud
+  Target, Heart, Cpu, Cloud, FileText, Handshake
 } from 'lucide-react';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
@@ -90,25 +90,25 @@ const navigationItems: NavigationItem[] = [
     children: [
       {
         label: 'Healthcare & Biotech',
-        href: '/solutions/healthcare',
+        href: '/healthcare-solutions',
         icon: <Heart className="w-4 h-4" />,
         description: 'Advanced healthcare solutions'
       },
       {
         label: 'Financial Services',
-        href: '/solutions/financial',
+        href: '/solutions?industry=financial',
         icon: <Zap className="w-4 h-4" />,
         description: 'Financial technology solutions'
       },
       {
         label: 'Manufacturing',
-        href: '/solutions/manufacturing',
+        href: '/solutions?industry=manufacturing',
         icon: <Cpu className="w-4 h-4" />,
         description: 'Smart manufacturing solutions'
       },
       {
         label: 'Retail & E-commerce',
-        href: '/solutions/retail',
+        href: '/solutions?industry=retail',
         icon: <Globe className="w-4 h-4" />,
         description: 'Digital commerce solutions'
       }
@@ -124,7 +124,65 @@ const navigationItems: NavigationItem[] = [
     label: 'Resources',
     href: '/resources',
     icon: <BookOpen className="w-4 h-4" />,
-    description: 'Whitepapers, case studies, and insights'
+    description: 'Whitepapers, case studies, and insights',
+    children: [
+      {
+        label: 'Documentation',
+        href: '/docs',
+        icon: <BookOpen className="w-4 h-4" />,
+        description: 'Technical guides and API references'
+      },
+      {
+        label: 'Blog',
+        href: '/blog',
+        icon: <BookOpen className="w-4 h-4" />,
+        description: 'Industry insights and updates'
+      },
+      {
+        label: 'Case Studies',
+        href: '/case-studies',
+        icon: <Target className="w-4 h-4" />,
+        description: 'Success stories and results'
+      },
+      {
+        label: 'White Papers',
+        href: '/resources?type=white-papers',
+        icon: <FileText className="w-4 h-4" />,
+        description: 'In-depth research and analysis'
+      }
+    ]
+  },
+  {
+    label: 'Company',
+    href: '#',
+    icon: <Building className="w-4 h-4" />,
+    description: 'Company information and opportunities',
+    children: [
+      {
+        label: 'About Us',
+        href: '/about',
+        icon: <Users className="w-4 h-4" />,
+        description: 'Our mission and values'
+      },
+      {
+        label: 'Partners',
+        href: '/partners',
+        icon: <Handshake className="w-4 h-4" />,
+        description: 'Strategic partnerships'
+      },
+      {
+        label: 'Careers',
+        href: '/careers',
+        icon: <Briefcase className="w-4 h-4" />,
+        description: 'Join our team'
+      },
+      {
+        label: 'Contact',
+        href: '/contact',
+        icon: <Phone className="w-4 h-4" />,
+        description: 'Get in touch with us'
+      }
+    ]
   },
   {
     label: 'Contact',

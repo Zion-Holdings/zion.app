@@ -1,38 +1,10 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { 
-  Smartphone, 
-  Tablet, 
-  Monitor, 
-  RotateCcw, 
-  Wifi, 
-  WifiOff,
-  Hand
+  Smartphone, Tablet, Monitor, RotateCcw, 
+  Wifi, WifiOff, Signal, SignalHigh, 
+  Mouse, Hand
 } from 'lucide-react';
-
-// Add proper types for TouchEvent
-declare global {
-  interface TouchEvent {
-    touches: TouchList;
-    changedTouches: TouchList;
-  }
-  
-  interface TouchList {
-    readonly length: number;
-    item(index: number): Touch | null;
-    [index: number]: Touch;
-  }
-  
-  interface Touch {
-    readonly clientX: number;
-    readonly clientY: number;
-  }
-  
-  var TouchEvent: {
-    prototype: TouchEvent;
-    new(): TouchEvent;
-  };
-}
 
 interface MobileOptimizerProps {
   children: React.ReactNode;
@@ -300,7 +272,7 @@ const MobileOptimizer: React.FC<MobileOptimizerProps> = ({
               <div className="flex items-center justify-between p-3 bg-white/5 rounded-lg">
                 <div className="flex items-center gap-3">
                   <div className="w-8 h-8 bg-gradient-to-r from-orange-500 to-red-600 rounded-lg flex items-center justify-center">
-                    {touchSupport ? <Hand className="w-4 h-4 text-white" /> : <WifiOff className="w-4 h-4 text-white" />}
+                    {touchSupport ? <Hand className="w-4 h-4 text-white" /> : <Mouse className="w-4 h-4 text-white" />}
                   </div>
                   <div>
                     <div className="text-white font-medium text-sm">Input Method</div>

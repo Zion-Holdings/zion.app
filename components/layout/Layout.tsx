@@ -10,15 +10,16 @@ interface LayoutProps {
 
 const Layout: React.FC<LayoutProps> = ({ children }) => {
   return (
-    <div className="min-h-screen bg-gray-900 text-white">
-      <UltraAdvancedFuturisticNavigation2025 />
-      <main className="relative z-10">
-        {children}
-      </main>
-      <UltraAdvancedFuturisticFooter2025 />
-      <AccessibilityEnhancer />
-      <PerformanceOptimizer showMetrics={true} autoOptimize={true} />
-    </div>
+    <AccessibilityEnhancer>
+      <div className="min-h-screen bg-gray-900 text-white">
+        <UltraAdvancedFuturisticNavigation2025 />
+        <main className="relative z-10">
+          {children}
+        </main>
+        <UltraAdvancedFuturisticFooter2025 />
+        <PerformanceOptimizer showMetrics={true} autoOptimize={true} />
+      </div>
+    </AccessibilityEnhancer>
   );
 };
 

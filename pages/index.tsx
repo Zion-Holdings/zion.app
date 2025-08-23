@@ -9,11 +9,12 @@ import AccessibilityEnhancer from '../components/AccessibilityEnhancer';
 const HomePage: React.FC = () => {
   return (
     <ErrorBoundary>
-      <SEOOptimizer />
-      <AnalyticsTracker />
-      <EnhancedHomepage2026 />
-      <PerformanceMonitor />
-      <AccessibilityEnhancer />
+      <AccessibilityEnhancer>
+        <SEOOptimizer />
+        <AnalyticsTracker />
+        <EnhancedHomepage2026 />
+        <PerformanceMonitor />
+      </AccessibilityEnhancer>
     </ErrorBoundary>
   );
 };
