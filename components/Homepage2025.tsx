@@ -296,13 +296,24 @@ const Homepage2025: React.FC = () => {
               />
             </div>
             
-            <div className="text-center mt-12">
-              <Link href="/services">
-                <button className="px-8 py-4 bg-gradient-to-r from-purple-500 to-pink-600 text-white font-semibold rounded-lg hover:from-purple-600 hover:to-pink-700 transition-all duration-300 transform hover:scale-105 flex items-center gap-2 mx-auto shadow-lg shadow-purple-500/25">
-                  View All Services
-                  <ArrowRight className="w-5 h-5" />
-                </button>
-              </Link>
+            <div className="text-center mt-12 space-y-4">
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <Link href="/services">
+                  <button className="px-8 py-4 bg-gradient-to-r from-purple-500 to-pink-600 text-white font-semibold rounded-lg hover:from-purple-600 hover:to-pink-700 transition-all duration-300 transform hover:scale-105 flex items-center gap-2 shadow-lg shadow-purple-500/25">
+                    View All Services
+                    <ArrowRight className="w-5 h-5" />
+                  </button>
+                </Link>
+                <Link href="/comprehensive-2025-services-showcase">
+                  <button className="px-8 py-4 bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-semibold rounded-lg hover:from-cyan-600 hover:to-blue-700 transition-all duration-300 transform hover:scale-105 flex items-center gap-2 shadow-lg shadow-cyan-500/25">
+                    2025 Services Showcase
+                    <ArrowRight className="w-5 h-5" />
+                  </button>
+                </Link>
+              </div>
+              <p className="text-gray-400 text-sm">
+                Explore our comprehensive portfolio of innovative micro SAAS, IT infrastructure, and AI services
+              </p>
             </div>
           </div>
         </section>
