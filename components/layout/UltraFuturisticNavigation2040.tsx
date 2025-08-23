@@ -23,7 +23,12 @@ import {
   BookOpen,
   FileText,
   Video,
-  Code
+  Code,
+  Server,
+  Cpu,
+  Play,
+  HelpCircle,
+  GraduationCap
 } from 'lucide-react';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
@@ -95,6 +100,20 @@ const navigationItems: NavigationItem[] = [
         icon: <Cloud className="w-4 h-4" />,
         description: 'Scalable cloud solutions',
         neonColor: 'shadow-indigo-400/50'
+      },
+      {
+        label: 'Enterprise IT',
+        href: '/it-services',
+        icon: <Server className="w-4 h-4" />,
+        description: 'Comprehensive IT solutions',
+        neonColor: 'shadow-green-400/50'
+      },
+      {
+        label: 'Micro SAAS',
+        href: '/micro-saas',
+        icon: <Rocket className="w-4 h-4" />,
+        description: 'Innovative software solutions',
+        neonColor: 'shadow-orange-400/50'
       }
     ]
   },
@@ -107,24 +126,45 @@ const navigationItems: NavigationItem[] = [
     children: [
       {
         label: 'Enterprise Solutions',
-        href: '/solutions/enterprise',
+        href: '/enterprise-solutions-showcase',
         icon: <Building className="w-4 h-4" />,
         description: 'Large-scale enterprise solutions',
         neonColor: 'shadow-blue-400/50'
       },
       {
-        label: 'Startup Solutions',
-        href: '/solutions/startup',
-        icon: <Rocket className="w-4 h-4" />,
-        description: 'Growth-focused startup solutions',
+        label: 'Healthcare Solutions',
+        href: '/healthcare-ai-solutions',
+        icon: <Shield className="w-4 h-4" />,
+        description: 'AI-powered healthcare technology',
+        neonColor: 'shadow-green-400/50'
+      },
+      {
+        label: 'Financial Solutions',
+        href: '/financial-solutions',
+        icon: <Target className="w-4 h-4" />,
+        description: 'Financial technology solutions',
+        neonColor: 'shadow-yellow-400/50'
+      },
+      {
+        label: 'Manufacturing Solutions',
+        href: '/manufacturing-ai-solutions',
+        icon: <Cpu className="w-4 h-4" />,
+        description: 'AI-powered manufacturing',
         neonColor: 'shadow-purple-400/50'
       },
       {
         label: 'Government Solutions',
-        href: '/solutions/government',
+        href: '/government-technology-solutions',
         icon: <Shield className="w-4 h-4" />,
         description: 'Secure government technology',
         neonColor: 'shadow-green-400/50'
+      },
+      {
+        label: 'Retail Solutions',
+        href: '/retail-technology-solutions',
+        icon: <Target className="w-4 h-4" />,
+        description: 'Retail technology innovation',
+        neonColor: 'shadow-pink-400/50'
       }
     ]
   },
@@ -133,7 +173,37 @@ const navigationItems: NavigationItem[] = [
     href: '/about',
     icon: <Users className="w-4 h-4" />,
     description: 'Learn about our company and mission',
-    neonColor: 'shadow-yellow-400/50'
+    neonColor: 'shadow-yellow-400/50',
+    children: [
+      {
+        label: 'Our Mission',
+        href: '/mission',
+        icon: <Target className="w-4 h-4" />,
+        description: 'Our vision and mission',
+        neonColor: 'shadow-cyan-400/50'
+      },
+      {
+        label: 'Careers',
+        href: '/careers',
+        icon: <Users className="w-4 h-4" />,
+        description: 'Join our team',
+        neonColor: 'shadow-purple-400/50'
+      },
+      {
+        label: 'Partners',
+        href: '/partners',
+        icon: <Building className="w-4 h-4" />,
+        description: 'Strategic partnerships',
+        neonColor: 'shadow-blue-400/50'
+      },
+      {
+        label: 'News',
+        href: '/news',
+        icon: <FileText className="w-4 h-4" />,
+        description: 'Latest company updates',
+        neonColor: 'shadow-green-400/50'
+      }
+    ]
   },
   {
     label: 'Resources',
@@ -162,6 +232,64 @@ const navigationItems: NavigationItem[] = [
         icon: <Code className="w-4 h-4" />,
         description: 'Technical documentation',
         neonColor: 'shadow-green-400/50'
+      },
+      {
+        label: 'Case Studies',
+        href: '/case-studies',
+        icon: <FileText className="w-4 h-4" />,
+        description: 'Success stories and examples',
+        neonColor: 'shadow-cyan-400/50'
+      },
+      {
+        label: 'White Papers',
+        href: '/white-papers',
+        icon: <FileText className="w-4 h-4" />,
+        description: 'In-depth research and insights',
+        neonColor: 'shadow-yellow-400/50'
+      },
+      {
+        label: 'Training',
+        href: '/training',
+        icon: <GraduationCap className="w-4 h-4" />,
+        description: 'Professional development',
+        neonColor: 'shadow-orange-400/50'
+      }
+    ]
+  },
+  {
+    label: 'Pricing',
+    href: '/pricing',
+    icon: <Target className="w-4 h-4" />,
+    description: 'Transparent pricing for all services',
+    neonColor: 'shadow-green-400/50',
+    children: [
+      {
+        label: 'Service Pricing',
+        href: '/pricing',
+        icon: <Target className="w-4 h-4" />,
+        description: 'Main pricing page',
+        neonColor: 'shadow-blue-400/50'
+      },
+      {
+        label: 'Market Pricing',
+        href: '/market-pricing',
+        icon: <Target className="w-4 h-4" />,
+        description: 'Competitive market analysis',
+        neonColor: 'shadow-purple-400/50'
+      },
+      {
+        label: '2025 Pricing',
+        href: '/2025-comprehensive-pricing',
+        icon: <Target className="w-4 h-4" />,
+        description: '2025 pricing structure',
+        neonColor: 'shadow-green-400/50'
+      },
+      {
+        label: '2026 Pricing',
+        href: '/pricing-enhanced-2026',
+        icon: <Target className="w-4 h-4" />,
+        description: '2026 enhanced pricing',
+        neonColor: 'shadow-cyan-400/50'
       }
     ]
   },
@@ -170,7 +298,37 @@ const navigationItems: NavigationItem[] = [
     href: '/contact',
     icon: <Phone className="w-4 h-4" />,
     description: 'Get in touch with our team',
-    neonColor: 'shadow-red-400/50'
+    neonColor: 'shadow-red-400/50',
+    children: [
+      {
+        label: 'Contact Us',
+        href: '/contact',
+        icon: <Phone className="w-4 h-4" />,
+        description: 'Main contact page',
+        neonColor: 'shadow-blue-400/50'
+      },
+      {
+        label: 'Get Quote',
+        href: '/quote',
+        icon: <Target className="w-4 h-4" />,
+        description: 'Request a custom quote',
+        neonColor: 'shadow-green-400/50'
+      },
+      {
+        label: 'Request Demo',
+        href: '/demo',
+        icon: <Play className="w-4 h-4" />,
+        description: 'Schedule a product demo',
+        neonColor: 'shadow-purple-400/50'
+      },
+      {
+        label: 'Support',
+        href: '/support',
+        icon: <HelpCircle className="w-4 h-4" />,
+        description: 'Technical support and help',
+        neonColor: 'shadow-orange-400/50'
+      }
+    ]
   }
 ];
 

@@ -7,7 +7,7 @@ import {
   BarChart3, Code, Smartphone, Server, Users, Award, 
   TrendingUp, BookOpen, FileText, GraduationCap, Headphones,
   Zap, Globe, Lock, Phone, Mail, MapPin, Star, MessageCircle,
-  ExternalLink, Home, Briefcase, Info, HelpCircle, Shield as ShieldIcon, Play
+  ExternalLink, Home, Briefcase, Info, HelpCircle, Shield as ShieldIcon, Play, Building
 } from 'lucide-react';
 
 const EnhancedSidebar2025: React.FC<{ isOpen: boolean; onClose: () => void }> = ({ 
@@ -70,6 +70,22 @@ const EnhancedSidebar2025: React.FC<{ isOpen: boolean; onClose: () => void }> = 
       ]
     },
     {
+      id: 'space-tech',
+      title: 'Space Technology',
+      icon: Globe,
+      color: 'from-indigo-500 to-purple-500',
+      items: [
+        { label: 'Space Resource Intelligence', href: '/space-resource-intelligence', badge: 'Future', featured: true },
+        { label: 'Satellite Technology', href: '/satellite-technology' },
+        { label: 'Space Data Analytics', href: '/space-data-analytics' },
+        { label: 'Orbital Computing', href: '/orbital-computing' },
+        { label: 'Space Cybersecurity', href: '/space-cybersecurity' },
+        { label: 'Interplanetary Communication', href: '/interplanetary-communication' },
+        { label: 'Space Mining Platform', href: '/space-mining-platform' },
+        { label: 'Space Colonization Services', href: '/space-colonization-services' }
+      ]
+    },
+    {
       id: 'enterprise-it',
       title: 'Enterprise IT Solutions',
       icon: Server,
@@ -88,6 +104,22 @@ const EnhancedSidebar2025: React.FC<{ isOpen: boolean; onClose: () => void }> = 
         { label: 'Network Automation', href: '/network-automation' },
         { label: 'IT Asset Management', href: '/it-asset-management' },
         { label: 'Compliance Automation', href: '/compliance-automation' }
+      ]
+    },
+    {
+      id: 'industry-solutions',
+      title: 'Industry Solutions',
+      icon: Building,
+      color: 'from-orange-500 to-red-500',
+      items: [
+        { label: 'Healthcare AI Solutions', href: '/healthcare-ai-solutions', badge: 'Critical', featured: true },
+        { label: 'Financial Solutions', href: '/financial-solutions', badge: 'Secure' },
+        { label: 'Manufacturing AI', href: '/manufacturing-ai-solutions', badge: 'Efficient' },
+        { label: 'Government Technology', href: '/government-technology-solutions', badge: 'Compliant' },
+        { label: 'Retail Technology', href: '/retail-technology-solutions', badge: 'Innovative' },
+        { label: 'Energy & Utilities', href: '/energy-utilities-solutions', badge: 'Sustainable' },
+        { label: 'Education Technology', href: '/education-technology-solutions', badge: 'Future-Ready' },
+        { label: 'Entertainment & Media', href: '/entertainment-media-solutions', badge: 'Creative' }
       ]
     },
     {
@@ -111,35 +143,29 @@ const EnhancedSidebar2025: React.FC<{ isOpen: boolean; onClose: () => void }> = 
       ]
     },
     {
-      id: 'space-tech',
-      title: 'Space Technology',
-      icon: Globe,
-      color: 'from-indigo-500 to-purple-500',
-      items: [
-        { label: 'Space Resource Intelligence', href: '/space-resource-intelligence', badge: 'Future', featured: true },
-        { label: 'Satellite Technology', href: '/satellite-technology' },
-        { label: 'Space Data Analytics', href: '/space-data-analytics' },
-        { label: 'Orbital Computing', href: '/orbital-computing' },
-        { label: 'Space Cybersecurity', href: '/space-cybersecurity' },
-        { label: 'Interplanetary Communication', href: '/interplanetary-communication' }
-      ]
-    },
-    {
       id: 'company',
       title: 'Company & Resources',
       icon: Users,
       color: 'from-gray-500 to-slate-500',
       items: [
         { label: 'About Us', href: '/about' },
+        { label: 'Our Mission', href: '/mission' },
         { label: 'Careers', href: '/careers' },
         { label: 'Contact', href: '/contact' },
         { label: 'Partners', href: '/partners' },
         { label: 'Blog', href: '/blog' },
         { label: 'Case Studies', href: '/case-studies' },
+        { label: 'News', href: '/news' },
         { label: 'Support', href: '/support' },
         { label: 'Training', href: '/training' },
         { label: 'Documentation', href: '/docs' },
-        { label: 'API Reference', href: '/api-docs' }
+        { label: 'API Reference', href: '/api-docs' },
+        { label: 'Webinars', href: '/webinars' },
+        { label: 'White Papers', href: '/white-papers' },
+        { label: 'Events', href: '/events' },
+        { label: 'Pricing', href: '/pricing' },
+        { label: 'Get Quote', href: '/quote' },
+        { label: 'Request Demo', href: '/demo' }
       ]
     }
   ];
