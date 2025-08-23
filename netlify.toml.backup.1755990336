@@ -18,6 +18,18 @@
 [[plugins]]
   package = "netlify-plugin-cloudinary"
 
+<<<<<<< HEAD
+[[headers]]
+  for = "/*"
+  [headers.values]
+    Strict-Transport-Security = "max-age=31536000; includeSubDomains; preload"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Permissions-Policy = "camera=(), microphone=(), geolocation=(), interest-cohort=()"
+    X-Frame-Options = "DENY"
+    X-XSS-Protection = "0"
+    Content-Security-Policy = "default-src 'self'; script-src 'self' https://plausible.io; connect-src 'self' https://plausible.io; img-src 'self' data: https:; style-src 'self' 'unsafe-inline'; font-src 'self' data: https:; object-src 'none'; base-uri 'self'; frame-ancestors 'none'"
+=======
 # Scheduled Functions (new automations replacing some GitHub Actions cadence)
 [[scheduled.functions]]
   name = "homepage_advertiser"
@@ -195,3 +207,4 @@
 [[scheduled.functions]]
   name = "branch-cleanup-runner"
   schedule = "0 2 * * *" # daily at 02:00 UTC
+>>>>>>> origin/cursor/automate-project-development-with-netlify-7f13
