@@ -6,7 +6,12 @@ import Link from 'next/link';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { 
   ArrowRight, Star, 
+<<<<<<< HEAD
+  Brain, Atom, Shield, Zap, TrendingUp, Globe, MapPin,
+  Rocket, MessageCircle
+=======
   Brain, Atom, Shield, Zap, TrendingUp, Globe, MapPin, Phone, Mail
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-1603
 } from 'lucide-react';
 
 // Import new service data
