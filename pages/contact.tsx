@@ -17,8 +17,6 @@ const Contact: NextPage = () => {
   );
 };
 
-export default Contact;
-=======
 export default function ContactPage() { return null; }
 =======
 import React from "react";
@@ -31,3 +29,5 @@ export default function ContactPage() {
     </main>
   );
 }
+=======
+export default Contact;

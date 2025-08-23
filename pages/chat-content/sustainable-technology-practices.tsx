@@ -1,10 +1,20 @@
-import React from "react";
+import type { NextPage } from 'next';
+import Head from 'next/head';
 
-export default function SustainableTechnologyPractices() {
+const SustainableTechnologyPractices: NextPage = () => {
   return (
-    <main className="p-6">
-      <h1 className="text-xl font-semibold">Sustainable Technology Practices</h1>
-      <p className="text-gray-600">Content coming soon.</p>
-    </main>
+    <div>
+      <Head>
+        <title>SustainableTechnologyPractices - Zion Tech Solutions</title>
+        <meta name="description" content="SustainableTechnologyPractices page" />
+      </Head>
+      
+      <main>
+        <h1>SustainableTechnologyPractices</h1>
+        <p>This page is under construction.</p>
+      </main>
+    </div>
   );
-}
+};
+
+export default SustainableTechnologyPractices;

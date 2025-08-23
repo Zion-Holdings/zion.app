@@ -1,10 +1,20 @@
-import React from "react";
+import type { NextPage } from 'next';
+import Head from 'next/head';
 
-export default function AuthIndexPage() {
+const Index: NextPage = () => {
   return (
-    <main className="p-6">
-      <h1 className="text-2xl font-bold">Auth</h1>
-      <p className="text-gray-600">Sign in or sign up.</p>
-    </main>
+    <div>
+      <Head>
+        <title>Index - Zion Tech Solutions</title>
+        <meta name="description" content="Index page" />
+      </Head>
+      
+      <main>
+        <h1>Index</h1>
+        <p>This page is under construction.</p>
+      </main>
+    </div>
   );
-}
+};
+
+export default Index;

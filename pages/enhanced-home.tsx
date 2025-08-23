@@ -1,10 +1,20 @@
-import React from "react";
+import type { NextPage } from 'next';
+import Head from 'next/head';
 
-export default function EnhancedHomePage() {
+const EnhancedHome: NextPage = () => {
   return (
-    <main className="p-6">
-      <h1 className="text-2xl font-bold">Enhanced Home</h1>
-      <p className="text-gray-600">Content coming soon.</p>
-    </main>
+    <div>
+      <Head>
+        <title>EnhancedHome - Zion Tech Solutions</title>
+        <meta name="description" content="EnhancedHome page" />
+      </Head>
+      
+      <main>
+        <h1>EnhancedHome</h1>
+        <p>This page is under construction.</p>
+      </main>
+    </div>
   );
-}
+};
+
+export default EnhancedHome;

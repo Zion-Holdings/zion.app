@@ -3,6 +3,8 @@ import '../styles/globals.css';
 import '../styles/enhanced-design-system.css';
 import '../styles/modern-design-system.css';
 
-export default function MyApp({ Component, pageProps }: AppProps) {
+function ZionApp({ Component, pageProps }: AppProps) {
   return <Component {...pageProps} />;
 }
+
+export default ZionApp;
