@@ -1,5 +1,9 @@
 {
+<<<<<<< HEAD
   "generatedAt": "2025-08-15T00:00:56.186Z",
+=======
+  "generatedAt": "2025-08-14T11:29:28.456Z",
+>>>>>>> 00e69079ba4a2bc4cdba9e37a08071e1f5d50112
   "items": [
     {
       "title": "Reference Architecture — Autonomous Content Mesh",
@@ -19,6 +23,7 @@
       "title": "Case Study — Trigger Homepage",
       "href": "/reports/cases/case-2025-08-15-000055",
       "desc": "New autonomous content",
+<<<<<<< HEAD
       "createdAt": "2025-08-15T00:00:55.873Z",
       "source": "cloud-deep-research-factory"
     },
@@ -34,6 +39,23 @@
       "href": "/reports/patterns/pattern-2025-08-15-000055",
       "desc": "New autonomous content",
       "createdAt": "2025-08-15T00:00:55.873Z",
+=======
+      "createdAt": "2025-08-14T11:29:28.358Z",
+      "source": "cloud-deep-research-factory"
+    },
+    {
+      "title": "Guide — Techcrunch Pebble Implementation",
+      "href": "/reports/guides/guide-2025-08-14-112928",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-14T11:29:28.358Z",
+      "source": "cloud-deep-research-factory"
+    },
+    {
+      "title": "Pattern — Trigger Homepage Sitemap",
+      "href": "/reports/patterns/pattern-2025-08-14-112928",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-14T11:29:28.358Z",
+>>>>>>> 00e69079ba4a2bc4cdba9e37a08071e1f5d50112
       "source": "cloud-deep-research-factory"
     }
   ]
