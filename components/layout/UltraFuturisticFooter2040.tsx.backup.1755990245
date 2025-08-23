@@ -24,6 +24,8 @@ import {
   CheckCircle
 } from 'lucide-react';
 
+<<<<<<< HEAD
+=======
 // Memoized footer data for better performance
 const footerData = {
   company: {
@@ -67,6 +69,7 @@ const footerData = {
   ]
 };
 
+>>>>>>> origin/cursor/website-audit-and-enhancement-72e9
 const UltraFuturisticFooter2040: React.FC = () => {
   const currentYear = new Date().getFullYear();
 

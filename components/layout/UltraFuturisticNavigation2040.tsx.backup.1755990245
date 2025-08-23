@@ -210,6 +210,16 @@ const navigationItems: NavigationItem[] = [
     neonColor: 'shadow-green-400/50'
   },
   {
+<<<<<<< HEAD
+    label: 'Careers',
+    href: '/careers',
+    icon: <Users className="w-4 h-4" />,
+    description: 'Join our team and build the future',
+    neonColor: 'shadow-purple-400/50'
+  },
+  {
+=======
+>>>>>>> origin/cursor/website-audit-and-enhancement-72e9
     label: 'Resources',
     href: '/resources',
     icon: <BookOpen className="w-4 h-4" />,

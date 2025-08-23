@@ -196,6 +196,8 @@ const AboutPage: React.FC = () => {
           </div>
         </section>
 
+<<<<<<< HEAD
+=======
         {/* Stats Section */}
         <section className="py-20">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -238,6 +240,7 @@ const AboutPage: React.FC = () => {
           </div>
         </section>
 
+>>>>>>> origin/cursor/website-audit-and-enhancement-72e9
         {/* Values Section */}
         <section className="py-20 bg-gray-900/50">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
