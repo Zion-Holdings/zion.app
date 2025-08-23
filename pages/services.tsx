@@ -66,6 +66,11 @@ import { innovativeITInfrastructureServices } from '../data/2025-innovative-it-i
 // Import our new innovative 2040 services
 import { innovative2040ITServices } from '../data/innovative-2040-it-services';
 
+// Import 2025 advanced services
+import { real2025AdvancedAIServices } from '../data/real-2025-advanced-ai-services';
+import { real2025ITInfrastructureServices } from '../data/real-2025-it-infrastructure-services';
+import { real2025InnovativeMicroSaas } from '../data/real-2025-innovative-micro-saas';
+
 // Import existing service data
 import { realMicroSaasServices } from '../data/real-micro-saas-services';
 import { innovativeAIServices } from '../data/innovative-ai-services';
@@ -171,39 +176,10 @@ const allServices = [
   ...real2036ServiceExpansions,
   ...innovative2036MicroSaasServices,
   ...innovative2036ITServices,
-  // Our new 2025 advanced services
-  ...advanced2025MicroSaasExpansion,
-  ...advanced2025ITSolutionsExpansion,
-  ...advanced2025AIServicesExpansion,
-  // Our new innovative services
-  ...innovative2037MicroSaasServices,
-  ...innovative2037ITServices,
-  ...innovative2037AIServices,
-  ...innovative2038CuttingEdgeServices,
-  ...innovative2038ITInfrastructureServices,
-  // Our additional innovative services
-  ...innovative2037Services,
-  ...advanced2038Services,
-  ...revolutionary2039Services,
-  
-  // Our new innovative 2040 services
-  ...innovative2040FuturisticServices,
-  ...innovative2040ITServices,
-  // Our new comprehensive services
-  ...revolutionary2040FuturisticServices,
-  ...revolutionary2041AdvancedServices,
-  // Our latest innovative services
-  ...advanced2041EnterpriseServices,
-  ...revolutionary2042MicroSaasServices,
-  // Our new 2025 innovative services expansion
-  ...innovative2025MicroSaasExpansion,
-  ...innovative2025ITSolutionsExpansion,
-  ...innovative2025AIServicesExpansion,
-  // Our new Q4 2025 innovative services
-  ...innovative2025Q4MicroSaasExpansion,
-  ...innovative2025Q4ITServicesExpansion,
-  ...innovative2025Q4AIServicesExpansion,
-  ...innovative2025Q4EmergingTechExpansion
+  // 2025 Advanced Services
+  ...real2025AdvancedAIServices,
+  ...real2025ITInfrastructureServices,
+  ...real2025InnovativeMicroSaas
 ];
 
 const categories = [
