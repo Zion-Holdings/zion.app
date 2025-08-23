@@ -4,7 +4,11 @@ import { motion } from 'framer-motion';
 // Add browser API types
 declare global {
   interface Window {
-    gtag?: (...args: unknown[]) => void;
+    gtag?: (
+      command: string,
+      action: string,
+      params?: Record<string, unknown>
+    ) => void;
   }
 }
 
