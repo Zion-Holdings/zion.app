@@ -99,6 +99,14 @@ const navigationItems: NavigationItem[] = [
     featured: true,
     children: [
       { 
+        name: 'Innovative 2027 Services', 
+        href: '/innovative-2027-services-showcase', 
+        description: 'Cutting-edge 2027 services showcase',
+        icon: <Star className="w-4 h-4" />,
+        featured: true,
+        badge: 'NEW'
+      },
+      { 
         name: 'Services Showcase', 
         href: '/comprehensive-services-showcase-2025', 
         description: 'Complete services overview',
