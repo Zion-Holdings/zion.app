@@ -136,8 +136,10 @@ const UltraFuturisticFooter2036: React.FC = () => {
     { name: 'Services', href: '/services' },
     { name: 'Case Studies', href: '/case-studies' },
     { name: 'Blog', href: '/blog' },
+    { name: 'Documentation', href: '/docs' },
     { name: 'Careers', href: '/careers' },
-    { name: 'Support', href: '/support' }
+    { name: 'Partners', href: '/partners' },
+    { name: 'Contact', href: '/contact' }
   ];
 
   const socialLinks = [

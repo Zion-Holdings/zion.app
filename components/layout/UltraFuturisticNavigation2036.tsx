@@ -146,12 +146,6 @@ const navigationItems: NavigationItem[] = [
         icon: <Play className="w-4 h-4" />
       },
       { 
-        name: 'Investors', 
-        href: '/investors', 
-        description: 'Investment information',
-        icon: <Play className="w-4 h-4" />
-      },
-      { 
         name: 'Careers', 
         href: '/careers', 
         description: 'Join our team',
@@ -188,12 +182,6 @@ const navigationItems: NavigationItem[] = [
         name: 'Support', 
         href: '/support', 
         description: 'Technical support',
-        icon: <Play className="w-4 h-4" />
-      },
-      { 
-        name: 'Training', 
-        href: '/training', 
-        description: 'Learning resources',
         icon: <Play className="w-4 h-4" />
       }
     ]
