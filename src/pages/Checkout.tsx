@@ -3,25 +3,9 @@ import { useTranslation } from 'react-i18next';
 import { useForm } from 'react-hook-form';
 import { safeStorage } from '@/utils/safeStorage';
 import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
-import { Button } from '@/components/ui/button';
-import { LoadingSpinner } from '@/components/ui/enhanced-loading-states';
-import { Form, FormField, FormItem, FormLabel, FormControl, FormMessage } from '@/components/ui/form';
-import { useAuth } from '@/hooks/useAuth';
-import { toast } from '@/hooks/use-toast';
-import { zodResolver } from '@hookform/resolvers/zod';
-import * as z from 'zod';
-import { getBreadcrumbsForPath } from '@/utils/routeUtils';
-import BreadcrumbJsonLd from '@/components/BreadcrumbJsonLd';
-import { fireEvent } from '@/lib/analytics';
-import {
-  Breadcrumb,
-  BreadcrumbList,
-  BreadcrumbItem,
-  BreadcrumbLink,
-  BreadcrumbSeparator,
-} from '@/components/ui/breadcrumb';
-import { logDev, logDevError } from '@/utils/developmentLogger';
+import { useNavigate } from 'react-router-dom';
+import { getStripe } from '@/utils/getStripe';
+import { apiClient } from '@/utils/apiClient';
 
 interface CartItem {
   id: string;
@@ -70,7 +54,7 @@ export default function Checkout() {
   const handleCheckout = async () => {
     const product = items[0];
     try {
-      const response = await fetch('/api/stripe/create-session', {
+      const response = await apiClient('/api/checkout_sessions', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ productId: product.id }),

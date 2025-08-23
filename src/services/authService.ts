@@ -1,9 +1,7 @@
-import apiClient, { setAuthToken } from './apiClient';
-
-const API_URL = import.meta.env.VITE_API_URL || '';
+import { apiClient } from '@/utils/apiClient';
 
 export async function loginUser(email: string, password: string) {
-  const res = await fetch(`${API_URL}/auth/login`, {
+  const res = await apiClient('/api/auth/login', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',

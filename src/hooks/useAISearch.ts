@@ -3,7 +3,7 @@ import { useState } from "react";
 import { TALENT_PROFILES } from "@/data/talentData";
 import { JOB_POSTS } from "@/data/jobsData";
 import { PROJECTS } from "@/data/projectsData";
-import api from '@/lib/api';
+import { apiClient } from "@/utils/apiClient";
 
 export interface SearchResult {
   id: string;
@@ -27,7 +27,7 @@ export function useAISearch() {
   const search = async (query: string) => {
     setLoading(true);
     try {
-      const response = await api.post(
+      const response = await apiClient(
         "https://ziontechgroup.functions.supabase.co/functions/v1/ai-search",
         { query }
       );

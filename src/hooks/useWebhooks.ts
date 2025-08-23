@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useAuth } from "@/hooks/useAuth";
 import { supabase } from "@/integrations/supabase/client";
 import { toast } from "@/hooks/use-toast";
-import api from '@/lib/api';
+import { apiClient } from "@/utils/apiClient";
 
 export type WebhookEventType = 'new_application' | 'quote_received' | 'milestone_approved' | 'talent_hired';
 
@@ -58,11 +58,7 @@ export function useWebhooks() {
         return;
       }
 
-      const authHeader = (typeof session === 'object' && session !== null && 'access_token' in session && typeof (session as { access_token: unknown }).access_token === 'string')
-        ? `Bearer ${(session as { access_token: string }).access_token}`
-        : undefined;
-
-      const response = await fetch(`${getWebhookUrl()}/webhooks`, {
+      const response = await apiClient(`${getWebhookUrl()}/webhooks`, {
         method: 'GET',
         headers: {
           ...(authHeader ? { 'Authorization': authHeader } : {}),
@@ -103,11 +99,7 @@ export function useWebhooks() {
         return;
       }
 
-      const authHeader = (typeof session === 'object' && session !== null && 'access_token' in session && typeof (session as { access_token: unknown }).access_token === 'string')
-        ? `Bearer ${(session as { access_token: string }).access_token}`
-        : undefined;
-
-      const response = await fetch(`${getWebhookUrl()}/create`, {
+      const response = await apiClient(`${getWebhookUrl()}/create`, {
         method: 'POST',
         headers: {
           ...(authHeader ? { 'Authorization': authHeader } : {}),
@@ -164,11 +156,7 @@ export function useWebhooks() {
         return;
       }
 
-      const authHeader = (typeof session === 'object' && session !== null && 'access_token' in session && typeof (session as { access_token: unknown }).access_token === 'string')
-        ? `Bearer ${(session as { access_token: string }).access_token}`
-        : undefined;
-
-      const response = await fetch(`${getWebhookUrl()}/toggle`, {
+      const response = await apiClient(`${getWebhookUrl()}/toggle`, {
         method: 'POST',
         headers: {
           ...(authHeader ? { 'Authorization': authHeader } : {}),
@@ -222,11 +210,7 @@ export function useWebhooks() {
         return;
       }
 
-      const authHeader = (typeof session === 'object' && session !== null && 'access_token' in session && typeof (session as { access_token: unknown }).access_token === 'string')
-        ? `Bearer ${(session as { access_token: string }).access_token}`
-        : undefined;
-
-      const response = await fetch(`${getWebhookUrl()}/delete`, {
+      const response = await apiClient(`${getWebhookUrl()}/delete`, {
         method: 'POST',
         headers: {
           ...(authHeader ? { 'Authorization': authHeader } : {}),
@@ -279,11 +263,7 @@ export function useWebhooks() {
         return;
       }
 
-      const authHeader = (typeof session === 'object' && session !== null && 'access_token' in session && typeof (session as { access_token: unknown }).access_token === 'string')
-        ? `Bearer ${(session as { access_token: string }).access_token}`
-        : undefined;
-
-      const response = await fetch(`${getWebhookUrl()}/test`, {
+      const response = await apiClient(`${getWebhookUrl()}/test`, {
         method: 'POST',
         headers: {
           ...(authHeader ? { 'Authorization': authHeader } : {}),

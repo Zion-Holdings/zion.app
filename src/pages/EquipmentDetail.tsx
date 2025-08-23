@@ -15,14 +15,8 @@ import { ShoppingCart, Star, Truck, Shield, RotateCcw, Clock, AlertTriangle, Arr
 
 import { toast } from "@/hooks/use-toast";
 import { useAuth } from "@/hooks/useAuth";
-import { useCart } from '@/context/CartContext';
-import { ImageWithRetry } from '@/components/ui/ImageWithRetry';
-import { equipmentListings } from '@/data/equipmentData';
-import type { ProductListing } from '@/types/listings';
-import { motion } from 'framer-motion';
-import { useCurrency } from '@/hooks/useCurrency';
-import {logErrorToProduction} from '@/utils/productionLogger';
-
+import { getStripe } from "@/utils/getStripe";
+import { apiClient } from "@/utils/apiClient";
 
 interface EquipmentSpecification {
   name: string;
@@ -202,53 +196,43 @@ export default function EquipmentDetail() {
     );
   }
 
-  // Error state
-  if (error || !equipment) {
-    return (
-      <>
-        <NextSeo
-          title="Equipment Not Found"
-          description="The equipment you're looking for doesn't exist or has been removed."
-        />
-        <div className="min-h-screen bg-zion-blue py-12 px-4">
-          <div className="container mx-auto">
-            <motion.div 
-              className="text-center py-20"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-            >
-              <AlertTriangle className="mx-auto h-16 w-16 text-red-500 mb-6" />
-              <h1 className="text-3xl font-bold text-white mb-4">
-                {error === 'Equipment not found' ? 'Equipment Not Found' : 'Something went wrong'}
-              </h1>
-              <p className="text-zion-slate-light mb-8 max-w-md mx-auto">
-                {error === 'Equipment not found' 
-                  ? "The equipment you're looking for doesn't exist or has been removed." 
-                  : error || "We couldn't load the equipment details. Please try again."
-                }
-              </p>
-              <div className="space-x-4">
-                <Button 
-                  onClick={() => router.back()} 
-                  variant="outline"
-                  className="border-zion-cyan text-zion-cyan hover:bg-zion-cyan hover:text-zion-blue"
-                >
-                  <ArrowLeft className="h-4 w-4 mr-2" />
-                  Go Back
-                </Button>
-                <Button 
-                  onClick={() => router.push('/equipment')}
-                  className="bg-zion-cyan hover:bg-zion-cyan/90 text-zion-blue"
-                >
-                  Browse Equipment
-                </Button>
-              </div>
-            </motion.div>
-          </div>
-        </div>
-      </>
-    );
-  }
+  const handleAddToCart = () => {
+    setIsAdding(true);
+    
+    // Simulate API call
+    setTimeout(() => {
+      setIsAdding(false);
+      toast({
+        title: "Added to cart",
+        description: `${quantity}x ${equipment.name} added to your cart.`,
+      });
+    }, 800);
+  };
+
+  const handleBuyNow = async () => {
+    if (!isAuthenticated) {
+      navigate(`/login?next=/equipment/${id}`);
+      return;
+    }
+
+    setIsAdding(true);
+    try {
+      const response = await apiClient('/api/checkout_sessions', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ productId: id }),
+      });
+      const { sessionId } = await response.json();
+      const stripe = await getStripe();
+      if (stripe && sessionId) {
+        await stripe.redirectToCheckout({ sessionId });
+      }
+    } catch (err) {
+      toast({ title: 'Payment error', description: 'Could not start checkout.' });
+    } finally {
+      setIsAdding(false);
+    }
+  };
 
   return (
     <>
