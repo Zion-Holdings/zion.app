@@ -6,7 +6,7 @@ import {
   Brain, Atom, Shield, Rocket, Target, 
   Star, 
   Twitter, Linkedin, Youtube, Github, 
-  ArrowUp
+  ArrowUp, MessageCircle
 } from 'lucide-react';
 
 
@@ -18,16 +18,16 @@ const footerSections = [
     icon: <Star className="w-5 h-5 text-yellow-400" />,
     color: 'from-yellow-500 to-orange-500',
     links: [
-      { name: 'AI Consciousness Evolution 2037', href: '/ai-consciousness-evolution-2037', featured: true },
-      { name: 'Quantum Neural Networks', href: '/quantum-neural-network-platform', featured: true },
-      { name: 'Autonomous Business Operations', href: '/autonomous-business-operations-platform', featured: true },
-      { name: 'Space Resource Mining', href: '/space-resource-mining-platform', featured: true },
-      { name: 'Brain-Computer Interface', href: '/brain-computer-interface-platform', featured: true },
-      { name: 'Quantum Financial Trading', href: '/quantum-financial-trading-platform', featured: true },
-      { name: 'AI Emotional Intelligence', href: '/ai-emotional-intelligence-coach', featured: true },
-      { name: 'Quantum Materials Discovery', href: '/quantum-materials-discovery-platform' },
-      { name: 'Autonomous Vehicle AI', href: '/autonomous-vehicle-ai-platform' },
-      { name: 'Quantum Bio-Computing', href: '/quantum-bio-computing-platform' }
+      { name: 'AI Consciousness Evolution 2038', href: '/ai-consciousness-evolution-2037', featured: true },
+      { name: 'Quantum AI Hybrid Platform', href: '/quantum-ai-hybrid-platform', featured: true },
+      { name: 'AI Autonomous Business Manager', href: '/ai-autonomous-business-manager', featured: true },
+      { name: 'Quantum Cybersecurity Suite', href: '/quantum-cybersecurity-suite', featured: true },
+      { name: 'AI Emotional Intelligence Coach', href: '/ai-emotional-intelligence-coach', featured: true },
+      { name: 'Quantum Financial Trading Platform', href: '/quantum-financial-trading-platform', featured: true },
+      { name: 'AI Autonomous Research Assistant', href: '/ai-autonomous-research-assistant', featured: true },
+      { name: 'Quantum Cloud Infrastructure', href: '/quantum-cloud-infrastructure-platform' },
+      { name: 'AI-Powered DevOps Automation', href: '/ai-powered-devops-automation' },
+      { name: 'Edge Computing Orchestration', href: '/edge-computing-orchestration-platform' }
     ]
   },
   {
@@ -118,6 +118,24 @@ const footerSections = [
       { name: 'Synthetic Monitor Recorder', href: '/synthetic-monitor-recorder' },
       { name: 'TLS Certificate Monitor', href: '/tls-certificate-monitor' },
       { name: 'Uptime SLO Monitor', href: '/uptime-slo-monitor' }
+    ]
+  },
+  {
+    title: 'Contact Information',
+    description: 'Get in touch with our team',
+    icon: <MessageCircle className="w-5 h-5 text-cyan-400" />,
+    color: 'from-cyan-500 to-blue-500',
+    links: [
+      { name: 'Mobile: +1 302 464 0950', href: 'tel:+13024640950' },
+      { name: 'Email: kleber@ziontechgroup.com', href: 'mailto:kleber@ziontechgroup.com' },
+      { name: 'Address: 364 E Main St STE 1008 Middletown DE 19709', href: '#' },
+      { name: 'Website: ziontechgroup.com', href: 'https://ziontechgroup.com' },
+      { name: 'Business Hours: Mon-Fri 9AM-6PM EST', href: '#' },
+      { name: 'Get Quote', href: '/contact' },
+      { name: 'Book Demo', href: '/contact' },
+      { name: 'Live Chat', href: '/support' },
+      { name: 'Technical Support', href: '/support' },
+      { name: 'Sales Inquiries', href: '/contact' }
     ]
   }
 ];

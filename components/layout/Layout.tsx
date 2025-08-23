@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import UltraFuturisticNavigation2037 from './UltraFuturisticNavigation2037';
 import UltraFuturisticFooter2037 from './UltraFuturisticFooter2037';
 import EnhancedSidebar2025 from './EnhancedSidebar2025';
-import UltraFuturisticBackground2037 from '../backgrounds/UltraFuturisticBackground2037';
+import UltraFuturisticBackground2038 from '../backgrounds/UltraFuturisticBackground2038';
 import TopContactBar from './TopContactBar';
 
 interface LayoutProps {
@@ -89,7 +89,7 @@ export default function Layout({ children }: LayoutProps) {
       </AnimatePresence>
 
       {/* Futuristic Background */}
-      <UltraFuturisticBackground2037 intensity="high" theme="quantum" />
+      <UltraFuturisticBackground2038 intensity="high" theme="consciousness" />
       
       {/* Layout Structure */}
       <div className="relative z-10">
@@ -97,10 +97,7 @@ export default function Layout({ children }: LayoutProps) {
         <TopContactBar />
         
         {/* Navigation */}
-        <UltraFuturisticNavigation2037 
-          onMenuToggle={() => setSidebarOpen(!sidebarOpen)}
-          aria-expanded={sidebarOpen}
-        />
+        <UltraFuturisticNavigation2037 />
         
         {/* Sidebar and Main Content */}
         <div className="flex">

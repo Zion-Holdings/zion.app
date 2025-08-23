@@ -99,36 +99,34 @@ const navigationItems: NavigationItem[] = [
     category: 'ai',
     color: 'from-purple-500 to-pink-500',
     children: [
-      {
-        name: 'AI Consciousness Evolution',
-        href: '/ai-consciousness-evolution-2037',
-        description: 'Next-generation AI consciousness',
+      { 
+        name: 'AI Consciousness Evolution', 
+        href: '/ai-consciousness-evolution-2037', 
+        description: 'Next evolution of AI consciousness',
         icon: <Brain className="w-4 h-4" />,
-        featured: true
+        featured: true,
+        color: 'from-purple-500 to-pink-500'
       },
-      {
-        name: 'Quantum Neural Networks',
-        href: '/quantum-neural-network-platform',
-        description: 'Quantum-powered AI systems',
-        icon: <Atom className="w-4 h-4" />
+      { 
+        name: 'Quantum AI Hybrid Platform', 
+        href: '/quantum-ai-hybrid-platform', 
+        description: 'Quantum computing meets AI',
+        icon: <Atom className="w-4 h-4" />,
+        color: 'from-blue-500 to-cyan-500'
       },
-      {
-        name: 'Autonomous Business Operations',
-        href: '/autonomous-business-operations-platform',
-        description: 'AI-driven business automation',
-        icon: <Settings className="w-4 h-4" />
+      { 
+        name: 'AI Autonomous Business Manager', 
+        href: '/ai-autonomous-business-manager', 
+        description: 'Autonomous business operations',
+        icon: <Rocket className="w-4 h-4" />,
+        color: 'from-green-500 to-emerald-500'
       },
-      {
-        name: 'AI Predictive Maintenance',
-        href: '/ai-predictive-maintenance-platform',
-        description: 'Intelligent asset management',
-        icon: <Monitor className="w-4 h-4" />
-      },
-      {
-        name: 'AI Content Personalization',
-        href: '/ai-content-personalization-engine',
-        description: 'Personalized user experiences',
-        icon: <Palette className="w-4 h-4" />
+      { 
+        name: 'AI Emotional Intelligence Coach', 
+        href: '/ai-emotional-intelligence-coach', 
+        description: 'AI-powered EI training',
+        icon: <Heart className="w-4 h-4" />,
+        color: 'from-pink-500 to-rose-500'
       }
     ]
   },

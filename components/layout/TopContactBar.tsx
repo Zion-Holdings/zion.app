@@ -12,7 +12,7 @@ const contactInfo = {
   address: '364 E Main St STE 1008 Middletown DE 19709',
   website: 'https://ziontechgroup.com',
   hours: 'Mon-Fri: 9AM-6PM EST',
-  rating: '4.9/5 (200+ Reviews)'
+  rating: '4.9/5 (500+ Reviews)'
 };
 
 const quickActions = [
