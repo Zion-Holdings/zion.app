@@ -16,40 +16,14 @@ export default function Layout({ children, seo }: LayoutProps) {
   const [showEnhancements, setShowEnhancements] = useState(false);
 
   return (
-    <div 
-      className="min-h-screen bg-black text-white relative overflow-x-hidden"
-      onKeyDown={handleKeyDown}
-      role="application"
-      aria-label="Zion Tech Group Application"
-    >
-      {/* Skip to content link for accessibility */}
-      <a href="#main" className="skip-link">Skip to main content</a>
-      {/* Futuristic Background */}
-      <UltraFuturisticBackground2035>
-        {/* Layout Structure */}
-        <div className="relative z-10">
-          {/* Top Contact Bar */}
-          <TopContactBar />
-          
-          {/* Navigation */}
-          <UltraFuturisticNavigation2035 />
-          
-          {/* Sidebar and Main Content */}
-          <div className="flex">
-            <EnhancedSidebar2025 
-              isOpen={sidebarOpen} 
-              onClose={() => setSidebarOpen(false)} 
-            />
-            
-            <main id="main" role="main" className="flex-1 pt-24 lg:pt-28">
-              {children}
-            </main>
-          </div>
-          
-          {/* Footer */}
-          <UltraFuturisticFooter2035 />
-        </div>
-      </UltraFuturisticBackground2035>
+    <div className="min-h-screen bg-black text-white">
+      <EnhancedFuturisticBackground variant="quantum" intensity="high">
+        <NeoFuturisticNavigation />
+        <main className="pt-24 lg:pt-28">
+          {children}
+        </main>
+        <NeoFuturisticFooter />
+      </EnhancedFuturisticBackground>
     </div>
   );
 };
