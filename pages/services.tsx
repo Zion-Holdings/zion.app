@@ -5,7 +5,7 @@ import {
   Search, Grid, List,
   Brain, Atom, Shield, Target, Rocket,
   ArrowRight, Check, Palette, Heart, Truck, GraduationCap,
-  Building, Cpu
+  Building, Cpu, BarChart3, TrendingUp
 } from 'lucide-react';
 
 // Import our new 2025 service data
@@ -72,6 +72,14 @@ import { marketReadyServices } from '../data/market-ready-services';
 import { marketValidatedServices } from '../data/market-validated-services';
 import { industryRealServices } from '../data/industry-real-services';
 
+// Import our new 2025 innovative services
+import { advancedCybersecurityAutomationServices } from '../data/2025-advanced-cybersecurity-automation';
+import { aiPoweredBusinessAutomationServices } from '../data/2025-ai-powered-business-automation';
+import { advancedCloudDevOpsSolutions } from '../data/2025-advanced-cloud-devops-solutions';
+import { advancedDataAnalyticsSolutions } from '../data/2025-advanced-data-analytics-solutions';
+import { fintechBlockchainInnovations } from '../data/2025-fintech-blockchain-innovations';
+import { healthcareBiotechInnovations } from '../data/2025-healthcare-biotech-innovations';
+
 // Helper function to get service category
 const getServiceCategory = (service: any) => {
   if (service.category) return service.category;
@@ -108,6 +116,14 @@ const allServices = [
   ...innovativeITInfrastructureServices2025,
   ...innovativeMicroSaasSolutions2025,
   ...cuttingEdgeAIServices2025,
+  
+  // Our new 2025 innovative services
+  ...advancedCybersecurityAutomationServices,
+  ...aiPoweredBusinessAutomationServices,
+  ...advancedCloudDevOpsSolutions,
+  ...advancedDataAnalyticsSolutions,
+  ...fintechBlockchainInnovations,
+  ...healthcareBiotechInnovations,
   
   ...enterpriseITSolutions,
   ...innovativeMicroSaasSolutions,
@@ -258,6 +274,34 @@ const categories = [
     icon: <GraduationCap className="w-6 h-6" />,
     color: 'from-yellow-500 to-orange-500',
     description: 'Learning and research platforms'
+  },
+  {
+    id: 'cybersecurity',
+    name: 'Cybersecurity',
+    icon: <Shield className="w-6 h-6" />,
+    color: 'from-red-500 to-orange-500',
+    description: 'Advanced security and compliance solutions'
+  },
+  {
+    id: 'cloud-devops',
+    name: 'Cloud & DevOps',
+    icon: <Rocket className="w-6 h-6" />,
+    color: 'from-blue-500 to-indigo-600',
+    description: 'Cloud infrastructure and DevOps automation'
+  },
+  {
+    id: 'data-analytics',
+    name: 'Data & Analytics',
+    icon: <BarChart3 className="w-6 h-6" />,
+    color: 'from-purple-500 to-pink-600',
+    description: 'Business intelligence and data solutions'
+  },
+  {
+    id: 'fintech-blockchain',
+    name: 'Fintech & Blockchain',
+    icon: <TrendingUp className="w-6 h-6" />,
+    color: 'from-green-500 to-emerald-600',
+    description: 'Financial technology and blockchain innovations'
   }
 ];
 
