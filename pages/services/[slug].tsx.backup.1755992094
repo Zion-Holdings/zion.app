@@ -6,6 +6,8 @@ import { enhancedRealMicroSaasServices } from '../../data/enhanced-real-micro-sa
 import { extraServices } from '../../data/extra-services';
 import { additionalEnhancedServices } from '../../data/additional-real-services';
 import { newlyAddedServices } from '../../data/newly-added-services';
+<<<<<<< HEAD
+=======
 import { curatedMarketServices } from '../../data/curated-market-services';
 import { new2025Services } from '../../data/new-2025-services';
 import { marketValidatedServices } from '../../data/market-validated-services';
@@ -54,6 +56,7 @@ import { real2032ServiceExpansions } from '../../data/real-2032-service-expansio
 import { real2035Q1Additions } from '../../data/real-2035-q1-additions';
 import { real2035Q2Additions } from '../../data/real-2035-q2-additions';
 import { newRealServices2026 } from '../../data/2025-2026-new-real-services';
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-1fa4
 
 type Service = typeof enhancedRealMicroSaasServices[number];
 
@@ -118,6 +121,9 @@ function getAllServices(): Service[] {
 		.concat(aiAutonomousEcosystemServices2029 as unknown as Service[])
 		.concat(emergingTechBreakthroughServices2029 as unknown as Service[])
 		.concat(practicalBusinessSolutionServices2029 as unknown as Service[])
+<<<<<<< HEAD
+		.concat(real2032AdditionalServices as unknown as Service[]);
+=======
 	return enhancedRealMicroSaasServices
 		.concat(extraServices as Service[], additionalEnhancedServices as Service[])
 		.concat(newlyAddedServices as unknown as Service[]);
@@ -127,6 +133,7 @@ function getAllServices(): Service[] {
 		.concat(real2035Q1Additions as unknown as Service[])
 		.concat(real2035Q2Additions as unknown as Service[])
 		.concat(newRealServices2026 as unknown as Service[]);
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-1fa4
 }
 
 function toSlug(value: string): string {
