@@ -1,1 +1,1 @@
-export default function Page() { return null }
+export default function ChatContentSustainable() { return <main className="p-10"><h1 className="text-2xl font-bold">Sustainable Technology Practices</h1></main>; }

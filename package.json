@@ -778,7 +778,7 @@
     "react": "18.2.0",
     "react-datepicker": "^8.4.0",
     "react-dom": "^17.0.2",
-    "resend": "^4.0.0",
+    "react-share": "^5.2.2",
     "uuid": "^11.1.0"
   },
   "devDependencies": {
