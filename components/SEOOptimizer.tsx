@@ -4,7 +4,10 @@ import Head from 'next/head';
 interface SEOOptimizerProps {
   title?: string;
   description?: string;
-  keywords?: string;
+  keywords?: string[];
+  type?: 'website' | 'article' | 'product' | 'service';
+  image?: string;
+  currentUrl?: string;
   ogImage?: string;
   ogUrl?: string;
   canonicalUrl?: string;
@@ -14,7 +17,10 @@ interface SEOOptimizerProps {
 const SEOOptimizer: React.FC<SEOOptimizerProps> = ({
   title = 'Zion Tech Group - Future of Technology | AI, Quantum Security, Micro SAAS',
   description = 'Revolutionary micro SAAS services, cutting-edge AI solutions, quantum cybersecurity, and emerging technologies that transform businesses. 98+ innovative services for the modern enterprise.',
-  keywords = 'AI services, quantum cybersecurity, micro SAAS, automation, IT solutions, emerging technologies, Zion Tech Group, Delaware technology company',
+  keywords = ['AI services', 'quantum cybersecurity', 'micro SAAS', 'automation', 'IT solutions', 'emerging technologies', 'Zion Tech Group', 'Delaware technology company'],
+  type = 'website',
+
+  currentUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://ziontechgroup.com',
   ogImage = '/og-image.jpg',
   ogUrl = 'https://ziontechgroup.com',
   canonicalUrl = 'https://ziontechgroup.com',
@@ -37,11 +43,21 @@ const SEOOptimizer: React.FC<SEOOptimizerProps> = ({
   // Default structured data for Zion Tech Group
   const defaultStructuredData = {
     '@context': 'https://schema.org',
-    '@type': 'Organization',
+    '@type': type === 'article' ? 'Article' : 'Organization',
     name: 'Zion Tech Group',
-    url: 'https://ziontechgroup.com',
+    description: description,
+    url: currentUrl,
     logo: 'https://ziontechgroup.com/logo.png',
-    description: 'Revolutionary technology solutions including AI, quantum cybersecurity, and micro SAAS services.',
+    sameAs: [
+      'https://ziontechgroup.com',
+      'https://linkedin.com/company/ziontechgroup'
+    ],
+    contactPoint: {
+      '@type': 'ContactPoint',
+      telephone: '+1-302-464-0950',
+      contactType: 'customer service',
+      email: 'kleber@ziontechgroup.com'
+    },
     address: {
       '@type': 'PostalAddress',
       streetAddress: '364 E Main St STE 1008',
@@ -50,20 +66,10 @@ const SEOOptimizer: React.FC<SEOOptimizerProps> = ({
       postalCode: '19709',
       addressCountry: 'US'
     },
-    contactPoint: {
-      '@type': 'ContactPoint',
-      telephone: '+1-302-464-0950',
-      contactType: 'customer service',
-      email: 'kleber@ziontechgroup.com'
-    },
-    sameAs: [
-      'https://ziontechgroup.com',
-      'https://linkedin.com/company/ziontechgroup'
-    ],
-    serviceArea: {
-      '@type': 'Country',
-      name: 'United States'
-    },
+    foundingDate: '2020',
+    numberOfEmployees: '50-100',
+    industry: 'Technology',
+    serviceType: 'AI, Quantum Computing, Space Technology, IT Services',
     hasOfferCatalog: {
       '@type': 'OfferCatalog',
       name: 'Technology Services',
@@ -103,7 +109,7 @@ const SEOOptimizer: React.FC<SEOOptimizerProps> = ({
       {/* Basic Meta Tags */}
       <title>{title}</title>
       <meta name="description" content={description} />
-      <meta name="keywords" content={keywords} />
+      <meta name="keywords" content={keywords.join(', ')} />
       <meta name="author" content="Zion Tech Group" />
       <meta name="robots" content="index, follow" />
       <meta name="language" content="English" />
@@ -113,7 +119,7 @@ const SEOOptimizer: React.FC<SEOOptimizerProps> = ({
       <link rel="canonical" href={canonicalUrl} />
       
       {/* Open Graph Meta Tags */}
-      <meta property="og:type" content="website" />
+      <meta property="og:type" content={type} />
       <meta property="og:title" content={title} />
       <meta property="og:description" content={description} />
       <meta property="og:image" content={ogImage} />

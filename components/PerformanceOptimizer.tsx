@@ -1,266 +1,436 @@
-import React, { useState, useEffect, useRef, ReactNode } from 'react';
-import { motion } from 'framer-motion';
+import React, { useEffect, useState, useRef, Suspense, lazy } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+
+// Type definitions for browser APIs
+declare global {
+  interface Window {
+    IntersectionObserver: typeof IntersectionObserver;
+  }
+}
+
+interface PerformanceEventTiming extends PerformanceEntry {
+  processingStart: number;
+  processingEnd: number;
+  target: EventTarget | null;
+}
 
 interface PerformanceOptimizerProps {
   children: React.ReactNode;
   threshold?: number;
-  rootMargin?: string;
   fallback?: React.ReactNode;
-  preload?: boolean;
-  priority?: 'low' | 'medium' | 'high';
+  enableIntersectionObserver?: boolean;
+  enableLazyLoading?: boolean;
+  enablePerformanceMonitoring?: boolean;
 }
 
-export const PerformanceOptimizer: React.FC<{
-  children: ReactNode;
-  threshold?: number;
-  rootMargin?: string;
-}> = ({ children, threshold = 0.1, rootMargin = '50px' }) => {
+interface PerformanceMetrics {
+  fcp: number | null;
+  lcp: number | null;
+  fid: number | null;
+  cls: number | null;
+  ttfb: number | null;
+}
+
+const PerformanceOptimizer: React.FC<PerformanceOptimizerProps> = ({
+  children,
+  threshold = 0.1,
+  fallback = <div className="animate-pulse bg-gray-800/50 rounded-lg h-32" />,
+  enableIntersectionObserver = true,
+  enableLazyLoading = true,
+  enablePerformanceMonitoring = true
+}) => {
   const [isVisible, setIsVisible] = useState(false);
-  const ref = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    if (typeof window !== 'undefined' && 'IntersectionObserver' in window) {
-      const observer = new IntersectionObserver(
-        ([entry]) => {
-          setIsVisible(entry.isIntersecting);
-        },
-        { threshold, rootMargin }
-      );
-
-      if (ref.current) {
-        observer.observe(ref.current);
-      }
-
-      return () => observer.disconnect();
-    }
-  }, [threshold, rootMargin]);
-
-  return (
-    <div ref={ref}>
-      {isVisible && (
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-        >
-          {children}
-        </motion.div>
-      )}
-    </div>
-  );
-};
-
-// Lazy Image Component for better performance
-interface LazyImageProps {
-  src: string;
-  alt: string;
-  className?: string;
-  placeholder?: string;
-  priority?: 'low' | 'medium' | 'high';
-}
-
-export const LazyImage: React.FC<{
-  src: string;
-  alt: string;
-  className?: string;
-  width?: number;
-  height?: number;
-}> = ({ src, alt, className, width, height }) => {
   const [isLoaded, setIsLoaded] = useState(false);
-  const [isInView, setIsInView] = useState(false);
-  const imgRef = useRef<HTMLImageElement>(null);
+  const [performanceMetrics, setPerformanceMetrics] = useState<PerformanceMetrics>({
+    fcp: null,
+    lcp: null,
+    fid: null,
+    cls: null,
+    ttfb: null
+  });
+  const containerRef = useRef<HTMLDivElement>(null);
+  const observerRef = useRef<IntersectionObserver | null>(null);
 
+  // Performance monitoring
   useEffect(() => {
-    if (typeof window !== 'undefined' && 'IntersectionObserver' in window) {
-      const observer = new IntersectionObserver(
-        ([entry]) => {
-          if (entry.isIntersecting) {
-            setIsInView(true);
-            observer.disconnect();
-          }
-        },
-        { threshold: 0.1 }
-      );
+    if (!enablePerformanceMonitoring) return;
 
-      if (imgRef.current) {
-        observer.observe(imgRef.current);
+    const measurePerformance = () => {
+      // First Contentful Paint
+      if ('PerformanceObserver' in window) {
+        try {
+          const fcpObserver = new PerformanceObserver((list) => {
+            const entries = list.getEntries();
+            const fcpEntry = entries.find(entry => entry.name === 'first-contentful-paint');
+            if (fcpEntry) {
+              setPerformanceMetrics(prev => ({
+                ...prev,
+                fcp: fcpEntry.startTime
+              }));
+            }
+          });
+          fcpObserver.observe({ entryTypes: ['paint'] });
+        } catch {
+          // FCP measurement not supported
+        }
+
+        // Largest Contentful Paint
+        try {
+          const lcpObserver = new PerformanceObserver((list) => {
+            const entries = list.getEntries();
+            const lastEntry = entries[entries.length - 1];
+            if (lastEntry) {
+              setPerformanceMetrics(prev => ({
+                ...prev,
+                lcp: lastEntry.startTime
+              }));
+            }
+          });
+          lcpObserver.observe({ entryTypes: ['largest-contentful-paint'] });
+        } catch {
+          // LCP measurement not supported
+        }
+
+        // First Input Delay
+        try {
+          const fidObserver = new PerformanceObserver((list) => {
+            const entries = list.getEntries();
+            entries.forEach(entry => {
+              if (entry.entryType === 'first-input') {
+                const firstInputEntry = entry as PerformanceEventTiming;
+                setPerformanceMetrics(prev => ({
+                  ...prev,
+                  fid: firstInputEntry.processingStart - firstInputEntry.startTime
+                }));
+              }
+            });
+          });
+          fidObserver.observe({ entryTypes: ['first-input'] });
+        } catch {
+          // FID measurement not supported
+        }
+
+        // Cumulative Layout Shift
+        try {
+          const clsObserver = new PerformanceObserver((list) => {
+            let clsValue = 0;
+            list.getEntries().forEach((entry: PerformanceEntry & { hadRecentInput?: boolean; value?: number }) => {
+              if (!entry.hadRecentInput) {
+                clsValue += entry.value || 0;
+              }
+            });
+            setPerformanceMetrics(prev => ({
+              ...prev,
+              cls: clsValue
+            }));
+          });
+          clsObserver.observe({ entryTypes: ['layout-shift'] });
+        } catch {
+          // CLS measurement not supported
+        }
       }
 
-      return () => observer.disconnect();
-    }
-  }, []);
+      // Time to First Byte
+      if ('navigation' in performance) {
+        const navigation = performance.getEntriesByType('navigation')[0] as PerformanceNavigationTiming;
+        if (navigation) {
+          setPerformanceMetrics(prev => ({
+            ...prev,
+            ttfb: navigation.responseStart - navigation.requestStart
+          }));
+        }
+      }
+    };
 
-  const handleLoad = () => {
-    setIsLoaded(true);
+    // Measure performance after page load
+    if (document.readyState === 'complete') {
+      measurePerformance();
+    } else {
+      window.addEventListener('load', measurePerformance);
+      return () => window.removeEventListener('load', measurePerformance);
+    }
+  }, [enablePerformanceMonitoring]);
+
+  // Intersection Observer for lazy loading
+  useEffect(() => {
+    if (!enableIntersectionObserver || !containerRef.current) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+          observer.disconnect();
+        }
+      },
+      {
+        threshold,
+        rootMargin: '50px'
+      }
+    );
+
+    observer.observe(containerRef.current);
+    observerRef.current = observer;
+
+    return () => {
+      if (observerRef.current) {
+        observerRef.current.disconnect();
+      }
+    };
+  }, [threshold, enableIntersectionObserver]);
+
+  // Simulate loading delay for better UX
+  useEffect(() => {
+    if (isVisible && enableLazyLoading) {
+      const timer = setTimeout(() => {
+        setIsLoaded(true);
+      }, 100); // Small delay for smooth animation
+
+      return () => clearTimeout(timer);
+    }
+  }, [isVisible, enableLazyLoading]);
+
+  // Performance warning system
+  useEffect(() => {
+    if (!enablePerformanceMonitoring) return;
+
+    const { fcp, lcp, fid, cls, ttfb } = performanceMetrics;
+    
+    // Log performance warnings (development only)
+    if (process.env.NODE_ENV === 'development') {
+      if (fcp && fcp > 1800) {
+        // ⚠️ First Contentful Paint is slow: {fcp}ms (target: <1800ms)
+      }
+      if (lcp && lcp > 2500) {
+        // ⚠️ Largest Contentful Paint is slow: {lcp}ms (target: <2500ms)
+      }
+      if (fid && fid > 100) {
+        // ⚠️ First Input Delay is high: {fid}ms (target: <100ms)
+      }
+      if (cls && cls > 0.1) {
+        // ⚠️ Cumulative Layout Shift is poor: {cls} (target: <0.1)
+      }
+      if (ttfb && ttfb > 600) {
+        // ⚠️ Time to First Byte is slow: {ttfb}ms (target: <600ms)
+      }
+    }
+  }, [performanceMetrics, enablePerformanceMonitoring]);
+
+  // Render performance metrics in development
+  const renderPerformanceMetrics = () => {
+    if (!enablePerformanceMonitoring || process.env.NODE_ENV !== 'development') return null;
+
+    return (
+      <div className="fixed bottom-4 right-4 bg-black/90 backdrop-blur-xl border border-cyan-400/30 rounded-lg p-4 text-xs text-white max-w-xs z-50">
+        <h4 className="font-semibold text-cyan-400 mb-2">Performance Metrics</h4>
+        <div className="space-y-1">
+          {performanceMetrics.fcp && (
+            <div className={`flex justify-between ${performanceMetrics.fcp > 1800 ? 'text-red-400' : 'text-green-400'}`}>
+              <span>FCP:</span>
+              <span>{performanceMetrics.fcp.toFixed(0)}ms</span>
+            </div>
+          )}
+          {performanceMetrics.lcp && (
+            <div className={`flex justify-between ${performanceMetrics.lcp > 2500 ? 'text-red-400' : 'text-green-400'}`}>
+              <span>LCP:</span>
+              <span>{performanceMetrics.lcp.toFixed(0)}ms</span>
+            </div>
+          )}
+          {performanceMetrics.fid && (
+            <div className={`flex justify-between ${performanceMetrics.fid > 100 ? 'text-red-400' : 'text-green-400'}`}>
+              <span>FID:</span>
+              <span>{performanceMetrics.fid.toFixed(0)}ms</span>
+            </div>
+          )}
+          {performanceMetrics.cls && (
+            <div className={`flex justify-between ${performanceMetrics.cls > 0.1 ? 'text-red-400' : 'text-green-400'}`}>
+              <span>CLS:</span>
+              <span>{performanceMetrics.cls.toFixed(3)}</span>
+            </div>
+          )}
+          {performanceMetrics.ttfb && (
+            <div className={`flex justify-between ${performanceMetrics.ttfb > 600 ? 'text-red-400' : 'text-green-400'}`}>
+              <span>TTFB:</span>
+              <span>{performanceMetrics.ttfb.toFixed(0)}ms</span>
+            </div>
+          )}
+        </div>
+      </div>
+    );
   };
 
+  if (!enableLazyLoading) {
+    return (
+      <>
+        {children}
+        {renderPerformanceMetrics()}
+      </>
+    );
+  }
+
   return (
-    <div className={`lazy-image-container ${className || ''}`}>
-      {isInView && (
-        <img
-          ref={imgRef}
-          src={src}
-          alt={alt}
-          width={width}
-          height={height}
-          onLoad={handleLoad}
-          className={`transition-opacity duration-300 ${isLoaded ? 'opacity-100' : 'opacity-0'}`}
-        />
-      )}
+    <div ref={containerRef} className="performance-optimizer">
+      <AnimatePresence mode="wait">
+        {!isVisible ? (
+          <motion.div
+            key="fallback"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.3 }}
+          >
+            {fallback}
+          </motion.div>
+        ) : !isLoaded ? (
+          <motion.div
+            key="loading"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.3 }}
+            className="flex items-center justify-center p-8"
+          >
+            <div className="flex items-center space-x-2">
+              <div className="w-2 h-2 bg-cyan-400 rounded-full animate-bounce" style={{ animationDelay: '0ms' }}></div>
+              <div className="w-2 h-2 bg-cyan-400 rounded-full animate-bounce" style={{ animationDelay: '150ms' }}></div>
+              <div className="w-2 h-2 bg-cyan-400 rounded-full animate-bounce" style={{ animationDelay: '300ms' }}></div>
+            </div>
+          </motion.div>
+        ) : (
+          <motion.div
+            key="content"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, ease: "easeOut" }}
+          >
+            {children}
+          </motion.div>
+        )}
+      </AnimatePresence>
+      
+      {renderPerformanceMetrics()}
     </div>
   );
 };
 
-// Preload Component for critical resources
-interface PreloadProps {
-  href: string;
-  as?: string;
-  type?: string;
-  crossOrigin?: 'anonymous' | 'use-credentials';
-}
+// Higher-order component for lazy loading
+export const withLazyLoading = <P extends object>(
+  Component: React.ComponentType<P>,
+  fallback?: React.ReactNode
+) => {
+  const LazyComponent = lazy(() => 
+    new Promise<{ default: React.ComponentType<P> }>(resolve => {
+      // Simulate network delay for better UX
+      setTimeout(() => {
+        resolve({ default: Component });
+      }, 100);
+    })
+  );
 
-export const Preload: React.FC<PreloadProps> = ({
-  href,
-  as = 'fetch',
-  type,
-  crossOrigin
-}) => {
-  return (
-    <link
-      rel="preload"
-      href={href}
-      as={as}
-      type={type}
-      crossOrigin={crossOrigin}
-    />
+  return (props: P) => (
+    <Suspense fallback={fallback || <div className="animate-pulse bg-gray-800/50 rounded-lg h-32" />}>
+      <LazyComponent {...props} />
+    </Suspense>
   );
 };
 
-// Resource Hints Component
-interface ResourceHintsProps {
-  href: string;
-  rel: 'preconnect' | 'dns-prefetch' | 'prefetch' | 'preload';
-  crossOrigin?: 'anonymous' | 'use-credentials';
-}
-
-export const ResourceHint: React.FC<ResourceHintsProps> = ({
-  href,
-  rel,
-  crossOrigin
-}) => {
-  return (
-    <link
-      rel={rel}
-      href={href}
-      crossOrigin={crossOrigin}
-    />
-  );
-};
-
-// Performance Monitor Component
-export const PerformanceMonitor: React.FC = () => {
-  const [metrics, setMetrics] = useState<{
-    fcp: number;
-    lcp: number;
-    fid: number;
-    cls: number;
-  }>({
-    fcp: 0,
-    lcp: 0,
-    fid: 0,
-    cls: 0,
+// Hook for performance monitoring
+export const usePerformanceMonitoring = () => {
+  const [metrics, setMetrics] = useState<PerformanceMetrics>({
+    fcp: null,
+    lcp: null,
+    fid: null,
+    cls: null,
+    ttfb: null
   });
 
   useEffect(() => {
-    if (typeof window !== 'undefined' && 'PerformanceObserver' in window) {
-      // First Contentful Paint (FCP)
-      const fcpObserver = new PerformanceObserver((list) => {
-        const entries = list.getEntries();
-        const fcpEntry = entries.find((entry) => entry.name === 'first-contentful-paint');
-        if (fcpEntry) {
-          setMetrics((prev) => ({ ...prev, fcp: fcpEntry.startTime }));
+    const updateMetrics = () => {
+      if ('PerformanceObserver' in window) {
+        // FCP
+        try {
+          const fcpObserver = new PerformanceObserver((list) => {
+            const entries = list.getEntries();
+            const fcpEntry = entries.find(entry => entry.name === 'first-contentful-paint');
+            if (fcpEntry) {
+              setMetrics(prev => ({ ...prev, fcp: fcpEntry.startTime }));
+            }
+          });
+          fcpObserver.observe({ entryTypes: ['paint'] });
+        } catch {
+          // FCP measurement not supported
         }
-      });
 
-      // Largest Contentful Paint (LCP)
-      const lcpObserver = new PerformanceObserver((list) => {
-        const entries = list.getEntries();
-        const lcpEntry = entries[entries.length - 1];
-        if (lcpEntry) {
-          setMetrics((prev) => ({ ...prev, lcp: lcpEntry.startTime }));
+        // LCP
+        try {
+          const lcpObserver = new PerformanceObserver((list) => {
+            const entries = list.getEntries();
+            const lastEntry = entries[entries.length - 1];
+            if (lastEntry) {
+              setMetrics(prev => ({ ...prev, lcp: lastEntry.startTime }));
+            }
+          });
+          lcpObserver.observe({ entryTypes: ['largest-contentful-paint'] });
+        } catch {
+          // LCP measurement not supported
         }
-      });
 
-      // First Input Delay (FID)
-      const fidObserver = new PerformanceObserver((list) => {
-        const entries = list.getEntries();
-        const fidEntry = entries[0];
-        if (fidEntry && 'processingStart' in fidEntry) {
-          const fid = (fidEntry as any).processingStart - fidEntry.startTime;
-          setMetrics((prev) => ({ ...prev, fid }));
+        // FID
+        try {
+          const fidObserver = new PerformanceObserver((list) => {
+            const entries = list.getEntries();
+            entries.forEach(entry => {
+              if (entry.entryType === 'first-input') {
+                const firstInputEntry = entry as PerformanceEventTiming;
+                setMetrics(prev => ({
+                  ...prev,
+                  fid: firstInputEntry.processingStart - firstInputEntry.startTime
+                }));
+              }
+            });
+          });
+          fidObserver.observe({ entryTypes: ['first-input'] });
+        } catch {
+          // FID measurement not supported
         }
-      });
 
-      // Cumulative Layout Shift (CLS)
-      const clsObserver = new PerformanceObserver((list) => {
-        let clsValue = 0;
-        for (const entry of list.getEntries()) {
-          const layoutShiftEntry = entry as any;
-          if (!layoutShiftEntry.hadRecentInput) {
-            clsValue += layoutShiftEntry.value || 0;
-          }
-        }
-        setMetrics((prev) => ({ ...prev, cls: clsValue }));
-      });
-
-      try {
-        fcpObserver.observe({ entryTypes: ['paint'] });
-        lcpObserver.observe({ entryTypes: ['largest-contentful-paint'] });
-        fidObserver.observe({ entryTypes: ['first-input'] });
-        clsObserver.observe({ entryTypes: ['layout-shift'] });
-      } catch (error) {
-        // Handle browsers that don't support all entry types
-        if (process.env.NODE_ENV === 'development') {
-          console.warn('Some performance metrics not supported:', error);
+        // CLS
+        try {
+          const clsObserver = new PerformanceObserver((list) => {
+            let clsValue = 0;
+            list.getEntries().forEach((entry: PerformanceEntry & { hadRecentInput?: boolean; value?: number }) => {
+              if (!entry.hadRecentInput) {
+                clsValue += entry.value || 0;
+              }
+            });
+            setMetrics(prev => ({ ...prev, cls: clsValue }));
+          });
+          clsObserver.observe({ entryTypes: ['layout-shift'] });
+        } catch {
+          // CLS measurement not supported
         }
       }
 
-      return () => {
-        fcpObserver.disconnect();
-        lcpObserver.disconnect();
-        fidObserver.disconnect();
-        clsObserver.disconnect();
-      };
+      // TTFB
+      if ('navigation' in performance) {
+        const navigation = performance.getEntriesByType('navigation')[0] as PerformanceNavigationTiming;
+        if (navigation) {
+          setMetrics(prev => ({
+            ...prev,
+            ttfb: navigation.responseStart - navigation.requestStart
+          }));
+        }
+      }
+    };
+
+    if (document.readyState === 'complete') {
+      updateMetrics();
+    } else {
+      window.addEventListener('load', updateMetrics);
+      return () => window.removeEventListener('load', updateMetrics);
     }
   }, []);
 
-  useEffect(() => {
-    if (process.env.NODE_ENV === 'development' && Object.values(metrics).some((v) => v > 0)) {
-      // Only log in development
-      console.log('Performance Metrics:', {
-        FCP: `${metrics.fcp.toFixed(2)}ms`,
-        LCP: `${metrics.lcp.toFixed(2)}ms`,
-        FID: `${metrics.fid.toFixed(2)}ms`,
-        CLS: metrics.cls.toFixed(3),
-      });
-    }
-  }, [metrics]);
-
-  return null;
-};
-
-// Code Splitting Wrapper
-export const CodeSplit: React.FC<{ children: React.ReactNode }> = ({ children }) => {
-  return (
-    <React.Suspense fallback={
-      <div className="flex items-center justify-center p-8">
-        <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-cyan-400"></div>
-        <span className="ml-2 text-gray-400">Loading...</span>
-      </div>
-    }>
-      {children}
-    </React.Suspense>
-  );
+  return metrics;
 };
 
 export default PerformanceOptimizer;
