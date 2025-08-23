@@ -229,14 +229,24 @@ const navigationItems: NavigationItem[] = [
       { 
         name: 'Revolutionary 2026', 
         href: '/revolutionary-2026-services', 
+<<<<<<< HEAD
+        description: 'Latest innovations showcase',
+        icon: <SparklesIcon className="w-4 h-4" />
+=======
         description: '2026 services showcase',
         icon: <Sparkles className="w-4 h-4" />
+>>>>>>> origin/cursor/website-audit-content-update-and-deployment-f1d0
       },
       { 
         name: 'Ultimate 2035', 
         href: '/ultimate-2035-futuristic-services-showcase', 
+<<<<<<< HEAD
+        description: 'Future technology preview',
+        icon: <ZapIcon className="w-4 h-4" />
+=======
         description: 'Future services preview',
         icon: <Zap className="w-4 h-4" />
+>>>>>>> origin/cursor/website-audit-content-update-and-deployment-f1d0
       }
     ]
   },
@@ -276,6 +286,8 @@ const navigationItems: NavigationItem[] = [
         href: '/financial-solutions',
         description: 'Fintech and banking solutions',
         icon: <DollarSign className="w-4 h-4" />
+<<<<<<< HEAD
+=======
       },
       { 
         name: 'Careers', 
@@ -288,6 +300,7 @@ const navigationItems: NavigationItem[] = [
         href: '/news', 
         description: 'Company updates',
         icon: <FileText className="w-4 h-4" />
+>>>>>>> origin/cursor/website-audit-content-update-and-deployment-f1d0
       }
     ]
   },
@@ -389,10 +402,17 @@ const navigationItems: NavigationItem[] = [
         icon: <BookOpenCheck className="w-4 h-4" />
       },
       { 
+<<<<<<< HEAD
+        name: 'Reports', 
+        href: '/reports', 
+        description: 'Performance reports',
+        icon: <BarChart3 className="w-4 h-4" />
+=======
         name: 'API Docs', 
         href: '/api-docs', 
         description: 'Developer resources',
         icon: <Code className="w-4 h-4" />
+>>>>>>> origin/cursor/website-audit-content-update-and-deployment-f1d0
       }
     ]
   },
@@ -438,6 +458,55 @@ const navigationItems: NavigationItem[] = [
         href: '/education-technology-solutions', 
         description: 'Education technology',
         icon: <BookOpen className="w-4 h-4" />
+<<<<<<< HEAD
+      },
+      { 
+        name: 'Energy & Utilities', 
+        href: '/energy-utilities-solutions', 
+        description: 'Energy solutions',
+        icon: <Zap className="w-4 h-4" />
+      },
+      { 
+        name: 'Entertainment & Media', 
+        href: '/entertainment-media-solutions', 
+        description: 'Media solutions',
+        icon: <Film className="w-4 h-4" />
+      }
+    ]
+  },
+  {
+    name: 'Get Started',
+    href: '/get-started',
+    icon: <ArrowRight className="w-5 h-5" />,
+    description: 'Start your journey',
+    category: 'get-started',
+    children: [
+      { 
+        name: 'Get Started Guide', 
+        href: '/get-started', 
+        description: 'Begin your journey',
+        icon: <ArrowRight className="w-4 h-4" />,
+        featured: true
+      },
+      { 
+        name: 'Request Quote', 
+        href: '/quote', 
+        description: 'Get a custom quote',
+        icon: <DollarSign className="w-4 h-4" />
+      },
+      { 
+        name: 'Schedule Demo', 
+        href: '/demo', 
+        description: 'See our solutions',
+        icon: <Video className="w-4 h-4" />
+      },
+      { 
+        name: 'Contact Sales', 
+        href: '/contact', 
+        description: 'Talk to our team',
+        icon: <MessageCircle className="w-4 h-4" />
+=======
+>>>>>>> origin/cursor/website-audit-content-update-and-deployment-f1d0
       }
     ]
   }
