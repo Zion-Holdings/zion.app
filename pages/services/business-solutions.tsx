@@ -1,173 +1,182 @@
 import React from 'react';
-import Head from 'next/head';
-import Link from 'next/link';
+import Layout from '../../components/layout/Layout';
 import { motion } from 'framer-motion';
-import { 
-  Target, Users, Brain, Zap, Shield, Rocket, Cloud, 
-  ArrowRight, Star, Check, Mail, Phone, MapPin, BarChart, TrendingUp
-} from 'lucide-react';
+import { Target, Sparkles, Zap, Users, Award, Clock, CheckCircle, Briefcase, TrendingUp } from 'lucide-react';
+import Link from 'next/link';
 
-const BusinessSolutionsServices: React.FC = () => {
+const BusinessSolutionsPage: React.FC = () => {
   const services = [
     {
-      title: 'AI Autonomous Business Intelligence 2045',
-      description: 'Self-aware business intelligence systems that operate autonomously',
-      href: '/ai-autonomous-business-intelligence-2045',
-      icon: Brain,
-      features: ['Autonomous Operations', 'Business Insights', 'Predictive Analytics', 'Strategic Planning']
-    },
-    {
-      title: 'Autonomous Customer Success 2045',
-      description: 'AI-powered customer success and relationship management',
-      href: '/autonomous-customer-success-2045',
-      icon: Users,
-      features: ['Customer Success', 'Relationship Management', 'AI Automation', 'Proactive Support']
-    },
-    {
-      title: 'Innovative Business Solutions 2045',
-      description: 'Cutting-edge business transformation and optimization solutions',
-      href: '/innovative-business-solutions',
+      name: 'Autonomous AI Business Intelligence 2045',
+      description: 'Fully autonomous AI business intelligence with consciousness evolution',
+      href: '/autonomous-ai-business-intelligence-2045',
       icon: Target,
-      features: ['Business Transformation', 'Process Optimization', 'Innovation Strategy', 'Digital Transformation']
+      color: 'from-emerald-500 to-teal-500'
     },
     {
-      title: 'AI Autonomous Business Process Automation 2045',
-      description: 'Intelligent automation of complex business processes',
-      href: '/ai-autonomous-business-process-automation',
-      icon: Zap,
-      features: ['Process Automation', 'AI Intelligence', 'Workflow Optimization', 'Efficiency Gains']
+      name: 'AI Content Intelligence Platform 2045',
+      description: 'Advanced AI content creation and optimization with consciousness',
+      href: '/ai-content-intelligence-platform-2045',
+      icon: Sparkles,
+      color: 'from-teal-500 to-cyan-500'
     },
     {
-      title: 'Financial Solutions 2045',
-      description: 'Advanced financial technology and automation solutions',
-      href: '/financial-solutions',
-      icon: BarChart,
-      features: ['Financial Technology', 'Automation', 'Risk Management', 'Compliance']
+      name: 'Predictive Analytics Platform 2045',
+      description: 'AI-powered predictive analytics with consciousness integration',
+      href: '/predictive-analytics-platform-2045',
+      icon: TrendingUp,
+      color: 'from-emerald-500 to-green-500'
     },
     {
-      title: 'Healthcare AI Solutions 2045',
-      description: 'Revolutionary AI-powered healthcare technology solutions',
-      href: '/healthcare-ai-solutions',
-      icon: Shield,
-      features: ['Healthcare AI', 'Medical Technology', 'Patient Care', 'Diagnostic Support']
+      name: 'Business Process Automation 2045',
+      description: 'Intelligent business process automation with AI consciousness',
+      href: '/business-process-automation-2045',
+      icon: Briefcase,
+      color: 'from-green-500 to-emerald-500'
     }
   ];
 
-  const contactInfo = {
-    mobile: '+1 302 464 0950',
-    email: 'kleber@ziontechgroup.com',
-    address: '364 E Main St STE 1008 Middletown DE 19709',
-    website: 'https://ziontechgroup.com'
-  };
+  const features = [
+    { icon: Target, title: "Autonomous Intelligence", description: "Self-governing business systems" },
+    { icon: Sparkles, title: "Content Optimization", description: "AI-powered content creation" },
+    { icon: TrendingUp, title: "Predictive Analytics", description: "Future-focused insights" },
+    { icon: Zap, title: "Process Automation", description: "Intelligent workflow optimization" }
+  ];
+
+  const stats = [
+    { number: "500%", label: "Efficiency Gain", icon: TrendingUp },
+    { number: "99.9%", label: "Accuracy Rate", icon: CheckCircle },
+    { number: "24/7", label: "Operation", icon: Clock },
+    { number: "100+", label: "Enterprise Clients", icon: Users }
+  ];
 
   return (
-    <>
-      <Head>
-        <title>Business Solutions Services 2045 - Zion Tech Group</title>
-        <meta name="description" content="Revolutionary business transformation solutions powered by AI and automation. Transform your business with Zion Tech Group's cutting-edge solutions." />
-        <meta name="keywords" content="business solutions, business transformation, AI automation, customer success, process automation, Zion Tech Group" />
-        <link rel="canonical" href="https://ziontechgroup.com/services/business-solutions" />
-      </Head>
-
-      <div className="min-h-screen bg-black text-white relative overflow-hidden">
-        {/* Background Effects */}
-        <div className="absolute inset-0 bg-gradient-to-br from-green-900/20 via-emerald-900/20 to-teal-900/20"></div>
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(34,197,94,0.1),transparent_50%)]"></div>
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_80%,rgba(16,185,129,0.1),transparent_50%)]"></div>
-
-        {/* Header Section */}
-        <div className="relative z-10 pt-32 pb-20 px-4 sm:px-6 lg:px-8">
-          <div className="max-w-7xl mx-auto text-center">
+    <Layout 
+      title="Business Solutions Services - Zion Tech Group"
+      description="Revolutionary business solutions with autonomous AI intelligence, content optimization, and predictive analytics. Leading the future of business automation."
+      keywords="business solutions, AI business intelligence, content intelligence, predictive analytics, business automation, Zion Tech Group"
+    >
+      <div className="min-h-screen bg-gradient-to-br from-black via-gray-900 to-black">
+        {/* Hero Section */}
+        <section className="relative pt-32 pb-20 overflow-hidden">
+          <div className="absolute inset-0 bg-gradient-to-r from-emerald-900/20 to-teal-900/20"></div>
+          <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
             >
-              <div className="inline-flex items-center space-x-2 bg-gradient-to-r from-green-500/20 to-emerald-500/20 border border-green-500/30 rounded-full px-4 py-2 mb-6">
-                <Target className="w-5 h-5 text-green-400" />
-                <span className="text-green-400 font-medium">Business Solutions Services 2045</span>
-              </div>
-              
-              <h1 className="text-5xl lg:text-7xl font-bold mb-6 bg-gradient-to-r from-green-400 via-emerald-400 to-teal-400 bg-clip-text text-transparent">
-                Business Transformation Revolution
+              <h1 className="text-5xl md:text-7xl font-bold text-white mb-6">
+                Business Solutions
+                <span className="block bg-gradient-to-r from-emerald-400 to-teal-400 bg-clip-text text-transparent">
+                  Revolution Platform
+                </span>
               </h1>
-              
-              <p className="text-xl lg:text-2xl text-gray-300 mb-8 max-w-4xl mx-auto leading-relaxed">
-                Transform your business with our revolutionary AI-powered solutions. From autonomous intelligence 
-                to customer success automation, we're redefining how businesses operate in the digital age.
+              <p className="text-xl md:text-2xl text-gray-300 mb-8 max-w-4xl mx-auto">
+                Pioneering the future of business with autonomous AI intelligence, content optimization, 
+                and predictive analytics for unprecedented growth.
               </p>
-
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Link 
                   href="/contact"
-                  className="inline-flex items-center space-x-2 bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-400 hover:to-emerald-500 text-black font-semibold px-8 py-4 rounded-xl transition-all duration-300 transform hover:scale-105 shadow-lg shadow-green-500/25"
+                  className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-emerald-500 to-teal-500 text-white font-semibold rounded-full hover:from-emerald-600 hover:to-teal-600 transition-all duration-300 transform hover:scale-105"
                 >
-                  <span>Transform Your Business</span>
-                  <ArrowRight className="w-5 h-5" />
+                  Transform Your Business
+                  <Target className="w-5 h-5 ml-2" />
                 </Link>
                 <Link 
-                  href="/solutions"
-                  className="inline-flex items-center space-x-2 border border-green-500/50 text-green-400 hover:bg-green-500/10 font-semibold px-8 py-4 rounded-xl transition-all duration-300"
+                  href="/services"
+                  className="inline-flex items-center px-8 py-4 border-2 border-emerald-500 text-emerald-400 font-semibold rounded-full hover:bg-emerald-500 hover:text-white transition-all duration-300"
                 >
-                  <span>Explore Solutions</span>
+                  Explore All Services
                 </Link>
               </div>
             </motion.div>
           </div>
-        </div>
+        </section>
 
-        {/* Services Grid */}
-        <div className="relative z-10 pb-20 px-4 sm:px-6 lg:px-8">
-          <div className="max-w-7xl mx-auto">
+        {/* Features Section */}
+        <section className="py-20">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
               className="text-center mb-16"
             >
-              <h2 className="text-4xl lg:text-5xl font-bold mb-6 bg-gradient-to-r from-green-400 to-emerald-400 bg-clip-text text-transparent">
-                Our Business Solutions
+              <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+                Revolutionary Business Capabilities
               </h2>
-              <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-                Discover our comprehensive suite of business transformation solutions designed to revolutionize your operations
+              <p className="text-xl text-gray-400 max-w-3xl mx-auto">
+                Our business solutions platform delivers unprecedented intelligence with autonomous AI, 
+                content optimization, and predictive analytics capabilities.
               </p>
             </motion.div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+              {features.map((feature, index) => (
+                <motion.div
+                  key={feature.title}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.8, delay: index * 0.1 }}
+                  viewport={{ once: true }}
+                  className="bg-gradient-to-br from-gray-800/50 to-gray-900/50 backdrop-blur-xl rounded-2xl p-6 border border-gray-700/50 hover:border-emerald-500/50 transition-all duration-300"
+                >
+                  <div className="w-16 h-16 bg-gradient-to-r from-emerald-500 to-teal-500 rounded-xl flex items-center justify-center mb-4">
+                    <feature.icon className="w-8 h-8 text-white" />
+                  </div>
+                  <h3 className="text-xl font-semibold text-white mb-2">{feature.title}</h3>
+                  <p className="text-gray-400">{feature.description}</p>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Services Grid */}
+        <section className="py-20">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+              className="text-center mb-16"
+            >
+              <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+                Our Business Solutions Services
+              </h2>
+              <p className="text-xl text-gray-400 max-w-3xl mx-auto">
+                Discover our comprehensive suite of AI-powered business intelligence and automation solutions.
+              </p>
+            </motion.div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               {services.map((service, index) => (
                 <motion.div
-                  key={service.title}
+                  key={service.name}
                   initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: index * 0.1 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.8, delay: index * 0.1 }}
+                  viewport={{ once: true }}
                   className="group"
                 >
-                  <Link href={service.href} className="block">
-                    <div className="bg-gray-900/50 backdrop-blur-xl border border-green-500/20 rounded-2xl p-8 h-full hover:border-green-500/40 hover:bg-gray-900/70 transition-all duration-300 transform hover:scale-105">
-                      <div className="w-16 h-16 bg-gradient-to-br from-green-500/20 to-emerald-500/20 rounded-xl flex items-center justify-center mb-6 group-hover:from-green-500/30 group-hover:to-emerald-500/30 transition-all duration-300">
-                        <service.icon className="w-8 h-8 text-green-400" />
+                  <Link href={service.href}>
+                    <div className="bg-gradient-to-br from-gray-800/50 to-gray-900/50 backdrop-blur-xl rounded-2xl p-8 border border-gray-700/50 hover:border-emerald-500/50 transition-all duration-300 group-hover:scale-105">
+                      <div className={`w-20 h-20 bg-gradient-to-r ${service.color} rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300`}>
+                        <service.icon className="w-10 h-10 text-white" />
                       </div>
-                      
-                      <h3 className="text-2xl font-bold mb-4 text-white group-hover:text-green-400 transition-colors">
-                        {service.title}
+                      <h3 className="text-2xl font-bold text-white mb-4 group-hover:text-emerald-400 transition-colors duration-300">
+                        {service.name}
                       </h3>
-                      
-                      <p className="text-gray-300 mb-6 leading-relaxed">
+                      <p className="text-gray-400 text-lg leading-relaxed">
                         {service.description}
                       </p>
-                      
-                      <div className="space-y-2 mb-6">
-                        {service.features.map((feature, featureIndex) => (
-                          <div key={featureIndex} className="flex items-center space-x-2">
-                            <Check className="w-4 h-4 text-green-400 flex-shrink-0" />
-                            <span className="text-sm text-gray-400">{feature}</span>
-                          </div>
-                        ))}
-                      </div>
-                      
-                      <div className="flex items-center text-green-400 group-hover:text-green-300 transition-colors">
-                        <span className="font-medium">Learn More</span>
-                        <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
+                      <div className="mt-6 flex items-center text-emerald-400 group-hover:text-emerald-300 transition-colors duration-300">
+                        <span className="font-semibold">Learn More</span>
+                        <Target className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform duration-300" />
                       </div>
                     </div>
                   </Link>
@@ -175,51 +184,69 @@ const BusinessSolutionsServices: React.FC = () => {
               ))}
             </div>
           </div>
-        </div>
+        </section>
 
-        {/* Contact Section */}
-        <div className="relative z-10 py-20 px-4 sm:px-6 lg:px-8">
-          <div className="max-w-4xl mx-auto text-center">
+        {/* Stats Section */}
+        <section className="py-20">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+              {stats.map((stat, index) => (
+                <motion.div
+                  key={stat.label}
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  transition={{ duration: 0.8, delay: index * 0.1 }}
+                  viewport={{ once: true }}
+                  className="text-center"
+                >
+                  <div className="w-20 h-20 bg-gradient-to-r from-emerald-500 to-teal-500 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                    <stat.icon className="w-10 h-10 text-white" />
+                  </div>
+                  <div className="text-3xl md:text-4xl font-bold text-white mb-2">{stat.number}</div>
+                  <div className="text-gray-400">{stat.label}</div>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* CTA Section */}
+        <section className="py-20">
+          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.4 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
             >
-              <h2 className="text-4xl lg:text-5xl font-bold mb-6 bg-gradient-to-r from-green-400 to-emerald-400 bg-clip-text text-transparent">
+              <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
                 Ready to Transform Your Business?
               </h2>
-              <p className="text-xl text-gray-300 mb-8">
-                Let's discuss how our business solutions can revolutionize your operations
+              <p className="text-xl text-gray-400 mb-8">
+                Join the business intelligence revolution with autonomous AI and predictive analytics. 
+                Transform your operations with the future of business automation.
               </p>
-              
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
-                <div className="flex items-center justify-center space-x-3">
-                  <Phone className="w-6 h-6 text-green-400" />
-                  <span className="text-gray-300">{contactInfo.mobile}</span>
-                </div>
-                <div className="flex items-center justify-center space-x-3">
-                  <Mail className="w-6 h-6 text-green-400" />
-                  <span className="text-gray-300">{contactInfo.email}</span>
-                </div>
-                <div className="flex items-center justify-center space-x-3">
-                  <MapPin className="w-6 h-6 text-green-400" />
-                  <span className="text-gray-300">{contactInfo.address}</span>
-                </div>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <Link 
+                  href="/contact"
+                  className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-emerald-500 to-teal-500 text-white font-semibold rounded-full hover:from-emerald-600 hover:to-teal-600 transition-all duration-300 transform hover:scale-105"
+                >
+                  Transform Your Business
+                  <Target className="w-5 h-5 ml-2" />
+                </Link>
+                <Link 
+                  href="/services"
+                  className="inline-flex items-center px-8 py-4 border-2 border-emerald-500 text-emerald-400 font-semibold rounded-full hover:bg-emerald-500 hover:text-white transition-all duration-300"
+                >
+                  Explore All Services
+                </Link>
               </div>
-              
-              <Link 
-                href="/contact"
-                className="inline-flex items-center space-x-2 bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-400 hover:to-emerald-500 text-black font-semibold px-8 py-4 rounded-xl transition-all duration-300 transform hover:scale-105 shadow-lg shadow-green-500/25"
-              >
-                <span>Contact Us Today</span>
-                <ArrowRight className="w-5 h-5" />
-              </Link>
             </motion.div>
           </div>
-        </div>
+        </section>
       </div>
-    </>
+    </Layout>
   );
 };
 
-export default BusinessSolutionsServices;
+export default BusinessSolutionsPage;

@@ -1,173 +1,182 @@
 import React from 'react';
-import Head from 'next/head';
-import Link from 'next/link';
+import Layout from '../../components/layout/Layout';
 import { motion } from 'framer-motion';
-import { 
-  Cloud, Server, Database, Network, Settings, Shield, Zap, 
-  ArrowRight, Star, Check, Mail, Phone, MapPin, Cpu, HardDrive
-} from 'lucide-react';
+import { Cpu, Sparkles, Zap, Target, Users, Award, Clock, CheckCircle, Database, Cloud } from 'lucide-react';
+import Link from 'next/link';
 
-const ITInfrastructureServices: React.FC = () => {
+const ITInfrastructurePage: React.FC = () => {
   const services = [
     {
-      title: 'Quantum Cloud Infrastructure 2045',
-      description: 'Quantum-powered cloud computing and infrastructure solutions',
-      href: '/quantum-cloud-infrastructure-2045',
+      name: 'Quantum Cloud Infrastructure Platform 2045',
+      description: 'Next-generation quantum cloud with consciousness and AI capabilities',
+      href: '/quantum-cloud-infrastructure-platform-2045',
       icon: Cloud,
-      features: ['Quantum Computing', 'Scalable Infrastructure', 'High Performance', 'Energy Efficient']
+      color: 'from-yellow-500 to-orange-500'
     },
     {
-      title: 'Quantum Data Center Management 2045',
-      description: 'Revolutionary data center management powered by quantum technology',
-      href: '/quantum-data-center-management-2045',
+      name: 'Autonomous IT Infrastructure Management 2045',
+      description: 'Fully autonomous IT infrastructure with AI consciousness',
+      href: '/autonomous-it-infrastructure-management-2045',
+      icon: Cpu,
+      color: 'from-orange-500 to-red-500'
+    },
+    {
+      name: 'AI-Powered Cloud Optimization 2045',
+      description: 'Intelligent cloud optimization with consciousness integration',
+      href: '/ai-powered-cloud-optimization-2045',
       icon: Database,
-      features: ['Quantum Optimization', 'Resource Management', 'Energy Efficiency', 'Performance Monitoring']
+      color: 'from-yellow-500 to-green-500'
     },
     {
-      title: 'Autonomous DevOps Platform 2045',
-      description: 'AI-powered DevOps automation and infrastructure management',
-      href: '/autonomous-devops-platform-2045',
-      icon: Settings,
-      features: ['DevOps Automation', 'CI/CD Pipeline', 'Infrastructure as Code', 'Monitoring & Alerting']
-    },
-    {
-      title: 'Autonomous Network Management 2045',
-      description: 'Intelligent network infrastructure management and optimization',
-      href: '/autonomous-network-management-2045',
-      icon: Network,
-      features: ['Network Automation', 'Performance Optimization', 'Security Management', 'Traffic Analysis']
-    },
-    {
-      title: 'Autonomous IT Service Management 2045',
-      description: 'AI-driven IT service management and support automation',
-      href: '/autonomous-it-service-management-2045',
-      icon: Server,
-      features: ['Service Automation', 'Incident Management', 'Change Management', 'Service Desk']
-    },
-    {
-      title: '5G Enterprise Network Solutions 2045',
-      description: 'Advanced 5G network infrastructure for enterprise applications',
-      href: '/5g-enterprise-network-solutions',
-      icon: Network,
-      features: ['5G Infrastructure', 'Enterprise Networks', 'Low Latency', 'High Bandwidth']
+      name: 'Quantum Edge Computing Platform 2045',
+      description: 'Quantum-powered edge computing with consciousness',
+      href: '/quantum-edge-computing-platform-2045',
+      icon: Sparkles,
+      color: 'from-orange-500 to-yellow-500'
     }
   ];
 
-  const contactInfo = {
-    mobile: '+1 302 464 0950',
-    email: 'kleber@ziontechgroup.com',
-    address: '364 E Main St STE 1008 Middletown DE 19709',
-    website: 'https://ziontechgroup.com'
-  };
+  const features = [
+    { icon: Cpu, title: "Quantum Computing", description: "Unprecedented processing power" },
+    { icon: Cloud, title: "Cloud Integration", description: "Seamless cloud infrastructure" },
+    { icon: Database, title: "AI Optimization", description: "Intelligent resource management" },
+    { icon: Zap, title: "Edge Computing", description: "Distributed processing power" }
+  ];
+
+  const stats = [
+    { number: "1000x", label: "Performance Boost", icon: Zap },
+    { number: "99.99%", label: "Uptime", icon: CheckCircle },
+    { number: "24/7", label: "Monitoring", icon: Clock },
+    { number: "100+", label: "Data Centers", icon: Cloud }
+  ];
 
   return (
-    <>
-      <Head>
-        <title>IT Infrastructure Services 2045 - Zion Tech Group</title>
-        <meta name="description" content="Modern cloud computing, data center management, and IT infrastructure solutions powered by quantum technology and AI. Build the future with Zion Tech Group." />
-        <meta name="keywords" content="IT infrastructure, cloud computing, data center, DevOps, network management, quantum technology, Zion Tech Group" />
-        <link rel="canonical" href="https://ziontechgroup.com/services/it-infrastructure" />
-      </Head>
-
-      <div className="min-h-screen bg-black text-white relative overflow-hidden">
-        {/* Background Effects */}
-        <div className="absolute inset-0 bg-gradient-to-br from-blue-900/20 via-sky-900/20 to-cyan-900/20"></div>
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(59,130,246,0.1),transparent_50%)]"></div>
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_80%,rgba(14,165,233,0.1),transparent_50%)]"></div>
-
-        {/* Header Section */}
-        <div className="relative z-10 pt-32 pb-20 px-4 sm:px-6 lg:px-8">
-          <div className="max-w-7xl mx-auto text-center">
+    <Layout 
+      title="IT Infrastructure Services - Zion Tech Group"
+      description="Revolutionary IT infrastructure with quantum computing, autonomous management, and AI optimization. Leading the future of technology infrastructure."
+      keywords="IT infrastructure, quantum cloud, autonomous IT, cloud optimization, edge computing, Zion Tech Group"
+    >
+      <div className="min-h-screen bg-gradient-to-br from-black via-gray-900 to-black">
+        {/* Hero Section */}
+        <section className="relative pt-32 pb-20 overflow-hidden">
+          <div className="absolute inset-0 bg-gradient-to-r from-yellow-900/20 to-orange-900/20"></div>
+          <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
             >
-              <div className="inline-flex items-center space-x-2 bg-gradient-to-r from-blue-500/20 to-sky-500/20 border border-blue-500/30 rounded-full px-4 py-2 mb-6">
-                <Cloud className="w-5 h-5 text-blue-400" />
-                <span className="text-blue-400 font-medium">IT Infrastructure Services 2045</span>
-              </div>
-              
-              <h1 className="text-5xl lg:text-7xl font-bold mb-6 bg-gradient-to-r from-blue-400 via-sky-400 to-cyan-400 bg-clip-text text-transparent">
-                Future-Ready Infrastructure
+              <h1 className="text-5xl md:text-7xl font-bold text-white mb-6">
+                IT Infrastructure
+                <span className="block bg-gradient-to-r from-yellow-400 to-orange-400 bg-clip-text text-transparent">
+                  Revolution Platform
+                </span>
               </h1>
-              
-              <p className="text-xl lg:text-2xl text-gray-300 mb-8 max-w-4xl mx-auto leading-relaxed">
-                Build the foundation of tomorrow with our revolutionary IT infrastructure solutions. From quantum cloud 
-                computing to autonomous DevOps, we're redefining what's possible in infrastructure technology.
+              <p className="text-xl md:text-2xl text-gray-300 mb-8 max-w-4xl mx-auto">
+                Pioneering the future of technology infrastructure with quantum computing, autonomous management, 
+                and AI optimization for unprecedented performance.
               </p>
-
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Link 
                   href="/contact"
-                  className="inline-flex items-center space-x-2 bg-gradient-to-r from-blue-500 to-sky-600 hover:from-blue-400 hover:to-sky-500 text-black font-semibold px-8 py-4 rounded-xl transition-all duration-300 transform hover:scale-105 shadow-lg shadow-blue-500/25"
+                  className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-yellow-500 to-orange-500 text-white font-semibold rounded-full hover:from-yellow-600 hover:to-orange-600 transition-all duration-300 transform hover:scale-105"
                 >
-                  <span>Build Your Infrastructure</span>
-                  <ArrowRight className="w-5 h-5" />
+                  Upgrade Your Infrastructure
+                  <Cpu className="w-5 h-5 ml-2" />
                 </Link>
                 <Link 
-                  href="/solutions"
-                  className="inline-flex items-center space-x-2 border border-blue-500/50 text-blue-400 hover:bg-blue-500/10 font-semibold px-8 py-4 rounded-xl transition-all duration-300"
+                  href="/services"
+                  className="inline-flex items-center px-8 py-4 border-2 border-yellow-500 text-yellow-400 font-semibold rounded-full hover:bg-yellow-500 hover:text-white transition-all duration-300"
                 >
-                  <span>Explore Solutions</span>
+                  Explore All Services
                 </Link>
               </div>
             </motion.div>
           </div>
-        </div>
+        </section>
 
-        {/* Services Grid */}
-        <div className="relative z-10 pb-20 px-4 sm:px-6 lg:px-8">
-          <div className="max-w-7xl mx-auto">
+        {/* Features Section */}
+        <section className="py-20">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
               className="text-center mb-16"
             >
-              <h2 className="text-4xl lg:text-5xl font-bold mb-6 bg-gradient-to-r from-blue-400 to-sky-400 bg-clip-text text-transparent">
-                Our IT Infrastructure Services
+              <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+                Revolutionary Infrastructure Capabilities
               </h2>
-              <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-                Discover our comprehensive suite of infrastructure solutions designed to power your digital transformation
+              <p className="text-xl text-gray-400 max-w-3xl mx-auto">
+                Our IT infrastructure platform delivers unprecedented performance with quantum computing, 
+                autonomous management, and AI optimization capabilities.
               </p>
             </motion.div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+              {features.map((feature, index) => (
+                <motion.div
+                  key={feature.title}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.8, delay: index * 0.1 }}
+                  viewport={{ once: true }}
+                  className="bg-gradient-to-br from-gray-800/50 to-gray-900/50 backdrop-blur-xl rounded-2xl p-6 border border-gray-700/50 hover:border-yellow-500/50 transition-all duration-300"
+                >
+                  <div className="w-16 h-16 bg-gradient-to-r from-yellow-500 to-orange-500 rounded-xl flex items-center justify-center mb-4">
+                    <feature.icon className="w-8 h-8 text-white" />
+                  </div>
+                  <h3 className="text-xl font-semibold text-white mb-2">{feature.title}</h3>
+                  <p className="text-gray-400">{feature.description}</p>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Services Grid */}
+        <section className="py-20">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+              className="text-center mb-16"
+            >
+              <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+                Our IT Infrastructure Services
+              </h2>
+              <p className="text-xl text-gray-400 max-w-3xl mx-auto">
+                Discover our comprehensive suite of quantum-powered infrastructure and optimization solutions.
+              </p>
+            </motion.div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               {services.map((service, index) => (
                 <motion.div
-                  key={service.title}
+                  key={service.name}
                   initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: index * 0.1 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.8, delay: index * 0.1 }}
+                  viewport={{ once: true }}
                   className="group"
                 >
-                  <Link href={service.href} className="block">
-                    <div className="bg-gray-900/50 backdrop-blur-xl border border-blue-500/20 rounded-2xl p-8 h-full hover:border-blue-500/40 hover:bg-gray-900/70 transition-all duration-300 transform hover:scale-105">
-                      <div className="w-16 h-16 bg-gradient-to-br from-blue-500/20 to-sky-500/20 rounded-xl flex items-center justify-center mb-6 group-hover:from-blue-500/30 group-hover:to-sky-500/30 transition-all duration-300">
-                        <service.icon className="w-8 h-8 text-blue-400" />
+                  <Link href={service.href}>
+                    <div className="bg-gradient-to-br from-gray-800/50 to-gray-900/50 backdrop-blur-xl rounded-2xl p-8 border border-gray-700/50 hover:border-yellow-500/50 transition-all duration-300 group-hover:scale-105">
+                      <div className={`w-20 h-20 bg-gradient-to-r ${service.color} rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300`}>
+                        <service.icon className="w-10 h-10 text-white" />
                       </div>
-                      
-                      <h3 className="text-2xl font-bold mb-4 text-white group-hover:text-blue-400 transition-colors">
-                        {service.title}
+                      <h3 className="text-2xl font-bold text-white mb-4 group-hover:text-yellow-400 transition-colors duration-300">
+                        {service.name}
                       </h3>
-                      
-                      <p className="text-gray-300 mb-6 leading-relaxed">
+                      <p className="text-gray-400 text-lg leading-relaxed">
                         {service.description}
                       </p>
-                      
-                      <div className="space-y-2 mb-6">
-                        {service.features.map((feature, featureIndex) => (
-                          <div key={featureIndex} className="flex items-center space-x-2">
-                            <Check className="w-4 h-4 text-blue-400 flex-shrink-0" />
-                            <span className="text-sm text-gray-400">{feature}</span>
-                          </div>
-                        ))}
-                      </div>
-                      
-                      <div className="flex items-center text-blue-400 group-hover:text-blue-300 transition-colors">
-                        <span className="font-medium">Learn More</span>
-                        <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
+                      <div className="mt-6 flex items-center text-yellow-400 group-hover:text-yellow-300 transition-colors duration-300">
+                        <span className="font-semibold">Learn More</span>
+                        <Cpu className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform duration-300" />
                       </div>
                     </div>
                   </Link>
@@ -175,51 +184,69 @@ const ITInfrastructureServices: React.FC = () => {
               ))}
             </div>
           </div>
-        </div>
+        </section>
 
-        {/* Contact Section */}
-        <div className="relative z-10 py-20 px-4 sm:px-6 lg:px-8">
-          <div className="max-w-4xl mx-auto text-center">
+        {/* Stats Section */}
+        <section className="py-20">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+              {stats.map((stat, index) => (
+                <motion.div
+                  key={stat.label}
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  transition={{ duration: 0.8, delay: index * 0.1 }}
+                  viewport={{ once: true }}
+                  className="text-center"
+                >
+                  <div className="w-20 h-20 bg-gradient-to-r from-yellow-500 to-orange-500 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                    <stat.icon className="w-10 h-10 text-white" />
+                  </div>
+                  <div className="text-3xl md:text-4xl font-bold text-white mb-2">{stat.number}</div>
+                  <div className="text-gray-400">{stat.label}</div>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* CTA Section */}
+        <section className="py-20">
+          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.4 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
             >
-              <h2 className="text-4xl lg:text-5xl font-bold mb-6 bg-gradient-to-r from-blue-400 to-sky-400 bg-clip-text text-transparent">
-                Ready to Build the Future?
+              <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+                Ready to Upgrade Your Infrastructure?
               </h2>
-              <p className="text-xl text-gray-300 mb-8">
-                Let's discuss how our IT infrastructure solutions can power your digital transformation
+              <p className="text-xl text-gray-400 mb-8">
+                Join the infrastructure revolution with quantum computing and autonomous management. 
+                Transform your technology foundation with the future of IT infrastructure.
               </p>
-              
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
-                <div className="flex items-center justify-center space-x-3">
-                  <Phone className="w-6 h-6 text-blue-400" />
-                  <span className="text-gray-300">{contactInfo.mobile}</span>
-                </div>
-                <div className="flex items-center justify-center space-x-3">
-                  <Mail className="w-6 h-6 text-blue-400" />
-                  <span className="text-gray-300">{contactInfo.email}</span>
-                </div>
-                <div className="flex items-center justify-center space-x-3">
-                  <MapPin className="w-6 h-6 text-blue-400" />
-                  <span className="text-gray-300">{contactInfo.address}</span>
-                </div>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <Link 
+                  href="/contact"
+                  className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-yellow-500 to-orange-500 text-white font-semibold rounded-full hover:from-yellow-600 hover:to-orange-600 transition-all duration-300 transform hover:scale-105"
+                >
+                  Upgrade Your Infrastructure
+                  <Cpu className="w-5 h-5 ml-2" />
+                </Link>
+                <Link 
+                  href="/services"
+                  className="inline-flex items-center px-8 py-4 border-2 border-yellow-500 text-yellow-400 font-semibold rounded-full hover:bg-yellow-500 hover:text-white transition-all duration-300"
+                >
+                  Explore All Services
+                </Link>
               </div>
-              
-              <Link 
-                href="/contact"
-                className="inline-flex items-center space-x-2 bg-gradient-to-r from-blue-500 to-sky-600 hover:from-blue-400 hover:to-sky-500 text-black font-semibold px-8 py-4 rounded-xl transition-all duration-300 transform hover:scale-105 shadow-lg shadow-blue-500/25"
-              >
-                <span>Contact Us Today</span>
-                <ArrowRight className="w-5 h-5" />
-              </Link>
             </motion.div>
           </div>
-        </div>
+        </section>
       </div>
-    </>
+    </Layout>
   );
 };
 
-export default ITInfrastructureServices;
+export default ITInfrastructurePage;
