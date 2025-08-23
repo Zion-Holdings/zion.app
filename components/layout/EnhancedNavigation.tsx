@@ -183,8 +183,7 @@ const EnhancedNavigation: React.FC = () => {
           <Link href="/blog"><a>Blog</a></Link>
           <Link href="/talent"><a>Talent</a></Link>
           <Link href="/contact"><a>Contact</a></Link>
-          <Link href="/community"><a>Community</a></Link>
-          <DarkModeToggle />
+          <Link href="/governance"><a>Governance</a></Link>
         </div>
       </nav>
 

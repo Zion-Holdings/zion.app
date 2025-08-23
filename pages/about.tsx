@@ -1,9 +1,1 @@
-import React from 'react';
-export default function About() {
-  return (
-    <div className="min-h-screen p-8">
-      <h1 className="text-2xl font-semibold">About</h1>
-      <p className="text-gray-600">This page is under construction.</p>
-    </div>
-  );
-}
+export default function About() { return null }

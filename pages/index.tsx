@@ -1,64 +1,60 @@
-import React from 'react';
-import AnimatedBackground from '@/components/ui/AnimatedBackground';
-import FuturisticHero from '@/components/ui/FuturisticHero';
-import FuturisticCard from '@/components/ui/FuturisticCard';
-
+import Link from 'next/link';
 export default function Home() {
   return (
-    <div className="relative min-h-screen text-white" style={{ background: 'var(--cyber-gradient)' }}>
-      <AnimatedBackground />
-      <div className="relative z-10">
-        <FuturisticHero />
+    <div className="space-y-8">
+      <div>
+        <h1 className="text-2xl font-semibold">Welcome to Zion</h1>
+        <p className="text-gray-600 mt-1">A modern platform powered by autonomous cloud agents.</p>
+      </div>
 
-        <section className="container mx-auto px-4 py-8 grid grid-cols-1 md:grid-cols-3 gap-4">
-          <FuturisticCard
-            title="AI-Assisted Proposals"
-            description="Start from governance-ready templates, auto-fill with AI, and iterate with versioned history."
-            cta={[{ href: '/dao/templates', label: 'Open Templates' }]}
-          />
-          <FuturisticCard
-            title="Autonomous Cloud Agents"
-            description="Self-running workflows publish archives, digests, and sitemaps with zero ops."
-            cta={[{ href: '/automation/cloud-agents', label: 'View Agents' }]}
-          />
-          <FuturisticCard
-            title="Public Governance"
-            description="Link proposals to voting, export PDFs, and share results across the ecosystem."
-            cta={[{ href: '/governance/zgp-library', label: 'Governance Hub' }]}
-          />
-        </section>
+      <div className="space-y-3">
+        <h2 className="text-lg font-medium">Featured</h2>
+        <ul className="list-disc pl-6 space-y-1 text-sm">
+          <li><Link href="/governance"><a className="underline">Zion Governance</a></Link> — Propose, vote, and track results.</li>
+          <li><Link href="/automation/governance"><a className="underline">Autonomous Governance Engine</a></Link> — Snapshots, status updates, roadmap queueing, and metrics.</li>
+          <li><Link href="/automation/news"><a className="underline">Autonomous News Digest</a></Link> — Curated tech digest, published on schedule.</li>
+          <li><Link href="/automation/repo"><a className="underline">Repo Stats</a></Link> — Tracks content stats and updates README badges.</li>
+          <li><Link href="/automation/stale"><a className="underline">Stale Content Detector</a></Link> — Flags content older than 30 days.</li>
+          <li><Link href="/automation/seo"><a className="underline">SEO Auditor</a></Link> — Finds missing alt, headings, thin content; updates reports.</li>
+          <li><Link href="/automation/security"><a className="underline">Security Scanner</a></Link> — Flags risky code patterns and vulnerable deps.</li>
+        </ul>
+      </div>
 
-        <section className="container mx-auto px-4 py-10">
-          <div className="rounded-2xl border border-white/15 bg-white/5 p-6 md:p-8">
-            <h2 className="text-2xl font-semibold">Why Zion Autonomous Cloud</h2>
-            <div className="mt-4 grid grid-cols-1 md:grid-cols-2 gap-4">
-              <FuturisticCard
-                title="Faster Decisions"
-                description="Template-driven proposals with AI assist compress drafting time from days to minutes."
-              />
-              <FuturisticCard
-                title="Trust & Transparency"
-                description="Versioned history and public archives keep your governance legible and auditable."
-              />
-              <FuturisticCard
-                title="Zero Maintenance"
-                description="Everything runs on cloud-native workflows—no servers, no cron boxes, no manual ops."
-              />
-              <FuturisticCard
-                title="Ecosystem-Ready"
-                description="Designed for ZionDAO and compatible with public governance flows and tooling."
-              />
-            </div>
+      <div className="space-y-3">
+        <h2 className="text-lg font-medium">Autonomous Cloud Agents</h2>
+        <p className="text-gray-600 text-sm">Agents run on a schedule in the cloud, continuously improving and syncing the site—no manual intervention.</p>
+        <div className="grid md:grid-cols-2 gap-3 text-sm">
+          <div className="border rounded p-3">
+            <div className="font-medium">Governance Snapshotter</div>
+            <div className="text-gray-600">Publishes proposal and vote snapshots to JSON for transparency.</div>
+            <Link href="/automation/governance"><a className="underline mt-1 inline-block">View dashboard</a></Link>
           </div>
-        </section>
-
-        <footer className="py-10 text-center text-white/70">
-          <div className="space-x-4">
-            <a className="underline" href="/dao/templates">Templates</a>
-            <a className="underline" href="/automation/cloud-agents">Automations</a>
-            <a className="underline" href="/governance/zgp-library">Governance Hub</a>
+          <div className="border rounded p-3">
+            <div className="font-medium">Roadmap Queue</div>
+            <div className="text-gray-600">Automatically queues approved proposals into the public roadmap.</div>
+            <a className="underline mt-1 inline-block" href="/ROADMAP.md">View ROADMAP</a>
           </div>
-        </footer>
+          <div className="border rounded p-3">
+            <div className="font-medium">News Digest Generator</div>
+            <div className="text-gray-600">Fetches trending tech stories and publishes a digest as a new page.</div>
+            <Link href="/automation/news"><a className="underline mt-1 inline-block">View digests</a></Link>
+          </div>
+          <div className="border rounded p-3">
+            <div className="font-medium">Links Auto-Fix</div>
+            <div className="text-gray-600">Scans for broken links and commits fixes automatically.</div>
+            <a className="underline mt-1 inline-block" href="https://github.com/Zion-Holdings/zion.app/actions">View runs</a>
+          </div>
+          <div className="border rounded p-3">
+            <div className="font-medium">SEO Auditor</div>
+            <div className="text-gray-600">Audits pages and reports issues; runs on a schedule.</div>
+            <Link href="/automation/seo"><a className="underline mt-1 inline-block">View SEO report</a></Link>
+          </div>
+          <div className="border rounded p-3">
+            <div className="font-medium">Security Scanner</div>
+            <div className="text-gray-600">Scans code and dependencies, publishing a security score.</div>
+            <Link href="/automation/security"><a className="underline mt-1 inline-block">View security report</a></Link>
+          </div>
+        </div>
       </div>
     </div>
   );
