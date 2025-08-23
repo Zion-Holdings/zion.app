@@ -1,6 +1,10 @@
 import React, { useState } from 'react';
 import UltraFuturisticNavigation2045 from './UltraFuturisticNavigation2045';
+<<<<<<< HEAD
+import UltraFuturisticFooter2040 from './UltraFuturisticFooter2040';
+=======
 import UltraFuturisticFooter2045 from './UltraFuturisticFooter2045';
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-b1ef
 import EnhancedSidebar2025 from './EnhancedSidebar2025';
 import UltraFuturisticBackground2045 from '../backgrounds/UltraFuturisticBackground2045';
 import TopContactBar from './TopContactBar';
@@ -165,7 +169,11 @@ export default function Layout({
           </main>
         </div>
         
+<<<<<<< HEAD
+        {/* Ultra-Futuristic Footer 2045 */}
+=======
         {/* Footer */}
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-b1ef
         <UltraFuturisticFooter2045 />
       </div>
 
