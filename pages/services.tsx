@@ -54,6 +54,21 @@ import { cuttingEdgeFuturisticServices } from '../data/2025-cutting-edge-futuris
 import { advancedAIAutomationServices2025 } from '../data/2025-advanced-ai-automation-services';
 import { advancedITInfrastructureServices } from '../data/2025-advanced-it-infrastructure-services';
 
+// Import our new 2025 advanced real micro SAAS expansion
+import { advancedRealMicroSaasExpansion2025 } from '../data/2025-advanced-real-micro-saas-expansion';
+
+// Import our new 2025 advanced IT infrastructure expansion
+import { advancedITInfrastructureExpansion2025 } from '../data/2025-advanced-it-infrastructure-expansion';
+
+// Import our new 2025 advanced AI services expansion
+import { advancedAIServicesExpansion2025 } from '../data/2025-advanced-ai-services-expansion';
+
+// Import our new 2025 emerging tech innovations expansion
+import { emergingTechInnovationsExpansion2025 } from '../data/2025-emerging-tech-innovations-expansion';
+
+// Import our new 2025 innovative business solutions expansion
+import { innovativeBusinessSolutionsExpansion2025 } from '../data/2025-innovative-business-solutions-expansion';
+
 // Import our new 2025 innovative services
 import { innovativeITInfrastructureServices2025 } from '../data/2025-innovative-it-infrastructure-services';
 import { innovativeMicroSaasSolutions2025 } from '../data/2025-innovative-micro-saas-solutions';
@@ -162,7 +177,22 @@ const allServices = [
   ...ultimate2025AIServicesExpansion,
   // Our new 2025 advanced enterprise services
   ...advancedEnterpriseServices,
-  ...cuttingEdgeITInfrastructureServices
+  ...cuttingEdgeITInfrastructureServices,
+  
+  // Our new 2025 advanced real micro SAAS expansion
+  ...advancedRealMicroSaasExpansion2025,
+  
+  // Our new 2025 advanced IT infrastructure expansion
+  ...advancedITInfrastructureExpansion2025,
+  
+  // Our new 2025 advanced AI services expansion
+  ...advancedAIServicesExpansion2025,
+  
+  // Our new 2025 emerging tech innovations expansion
+  ...emergingTechInnovationsExpansion2025,
+  
+  // Our new 2025 innovative business solutions expansion
+  ...innovativeBusinessSolutionsExpansion2025
 ];
 
 const categories = [
