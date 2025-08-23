@@ -1283,6 +1283,13 @@ export const enhancedRealMicroSaasServices: EnhancedRealMicroSaasService[] = [
       website: 'https://ziontechgroup.com'
     },
     realImplementation: true,
+<<<<<<< HEAD
+    implementationDetails: 'Complete quantum internet infrastructure with quantum networks, encryption, and global connectivity.',
+    launchDate: '2024-02-01',
+    customers: 6,
+    rating: 4.8,
+    reviews: 23
+=======
     implementationDetails: 'Event bus + rules + actions + comms templates.',
     launchDate: '2025-03-08',
     customers: 70,
@@ -2478,6 +2485,7 @@ export const injectedAdditionalServices: EnhancedRealMicroSaasService[] = [
     customers: 24,
     rating: 4.7,
     reviews: 11
+>>>>>>> origin/cursor/enhance-app-services-and-website-with-futuristic-design-316d
   }
 ];
 
