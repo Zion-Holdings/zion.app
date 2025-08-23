@@ -13,11 +13,19 @@ import {
 const Footer: React.FC = () => {
 
   const services = [
+<<<<<<< HEAD
+    { name: 'AI & Consciousness', href: '/ai-services' },
+    { name: 'Quantum Computing', href: '/quantum-services' },
+    { name: 'Space Technology', href: '/space-technology' },
+    { name: 'IT Solutions', href: '/it-services' },
+    { name: 'Cybersecurity', href: '/cybersecurity' },
+=======
     { name: 'AI & Machine Learning', href: '/ai-services' },
     { name: 'Quantum Technology', href: '/quantum-services' },
     { name: 'Space Technology', href: '/space-technology' },
     { name: 'IT Solutions', href: '/it-services' },
     { name: 'Specialized Solutions', href: '/solutions' },
+>>>>>>> origin/cursor/website-audit-content-update-and-deployment-838a
     { name: 'View All Services', href: '/services' }
   ];
 
@@ -25,13 +33,35 @@ const Footer: React.FC = () => {
     { name: 'Services Showcase', href: '/comprehensive-services-showcase-2025' },
     { name: 'Pricing Plans', href: '/pricing' },
     { name: 'Case Studies', href: '/case-studies' },
+<<<<<<< HEAD
+    { name: 'Industry Solutions', href: '/solutions' },
+    { name: 'Digital Transformation', href: '/digital-transformation' },
+    { name: 'Cloud Platform', href: '/cloud-platform' },
+=======
     { name: 'Resources', href: '/resources' },
+>>>>>>> origin/cursor/website-audit-content-update-and-deployment-838a
     { name: 'Support', href: '/support' },
     { name: 'Documentation', href: '/docs' }
   ];
 
   const company = [
     { name: 'About Us', href: '/about' },
+<<<<<<< HEAD
+    { name: 'Leadership', href: '/leadership' },
+    { name: 'Team', href: '/team' },
+    { name: 'Careers', href: '/careers' },
+    { name: 'Press', href: '/press' },
+    { name: 'Contact', href: '/contact' }
+  ];
+
+  const resources = [
+    { name: 'Blog', href: '/blog' },
+    { name: 'Case Studies', href: '/case-studies' },
+    { name: 'White Papers', href: '/white-papers' },
+    { name: 'Webinars', href: '/webinars' },
+    { name: 'Documentation', href: '/docs' },
+    { name: 'Support', href: '/support' }
+=======
     { name: 'Contact', href: '/contact' },
     { name: 'Partners', href: '/partners' },
     { name: 'Investors', href: '/investors' },
@@ -46,6 +76,7 @@ const Footer: React.FC = () => {
     { name: 'Support Center', href: '/support' },
     { name: 'Resources', href: '/resources' },
     { name: 'Training', href: '/training' }
+>>>>>>> origin/cursor/website-audit-content-update-and-deployment-838a
   ];
 
   const legal = [
@@ -78,6 +109,15 @@ const Footer: React.FC = () => {
                 </div>
                 <div className="absolute -inset-1 bg-gradient-to-r from-blue-600 to-cyan-500 rounded-xl blur opacity-0 group-hover:opacity-75 transition-opacity duration-300 -z-10" />
               </div>
+<<<<<<< HEAD
+              <span className="text-2xl font-bold gradient-text-blue group-hover:from-blue-600 group-hover:to-cyan-500 transition-all duration-300">
+                Zion Tech
+              </span>
+            </Link>
+            <p className="text-gray-400 mb-8 max-w-md leading-relaxed">
+              The world&apos;s most advanced autonomous innovation hub delivering cutting-edge technology solutions, 
+              intelligent automation systems, and the future of cloud-native AI infrastructure.
+=======
               <div>
                 <div className="text-2xl font-bold text-white">Zion Tech Group</div>
                 <div className="text-sm text-gray-400">Revolutionary Technology Solutions</div>
@@ -85,12 +125,18 @@ const Footer: React.FC = () => {
             </div>
             <p className="text-gray-300 mb-6 max-w-xs">
               Pioneering the future of technology with innovative solutions that drive business transformation.
+>>>>>>> origin/cursor/website-audit-content-update-and-deployment-838a
             </p>
             <div className="flex space-x-4">
               {socialLinks.map((social) => (
                 <a
                   key={social.name}
                   href={social.href}
+<<<<<<< HEAD
+                  target="_blank"
+                  rel="noopener noreferrer"
+=======
+>>>>>>> origin/cursor/website-audit-content-update-and-deployment-838a
                   className="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-cyan-500 transition-colors"
                   aria-label={social.name}
                 >

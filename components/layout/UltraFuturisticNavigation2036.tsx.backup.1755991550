@@ -61,6 +61,23 @@ const navigationItems: NavigationItem[] = [
         featured: true
       },
       { 
+<<<<<<< HEAD
+        name: '2036 Innovative Services', 
+        href: '/2036-innovative-services-showcase', 
+        description: 'Cutting-edge 2036 services showcase',
+        icon: <Star className="w-4 h-4" />,
+        featured: true
+      },
+      { 
+        name: 'AI & Machine Learning', 
+        href: '/services?category=ai', 
+        description: 'Advanced AI solutions',
+        icon: <Play className="w-4 h-4" />
+      },
+      { 
+        name: 'Quantum Technology', 
+        href: '/services?category=quantum', 
+=======
         name: 'AI & Machine Learning', 
         href: '/ai-services', 
         description: 'Advanced AI solutions',
@@ -69,6 +86,7 @@ const navigationItems: NavigationItem[] = [
       { 
         name: 'Quantum Technology', 
         href: '/quantum-services', 
+>>>>>>> origin/cursor/website-audit-content-update-and-deployment-838a
         description: 'Quantum computing solutions',
         icon: <AtomIcon className="w-4 h-4" />
       },
@@ -85,10 +103,23 @@ const navigationItems: NavigationItem[] = [
         icon: <Cpu className="w-4 h-4" />
       },
       { 
+<<<<<<< HEAD
+        name: 'Industry Solutions', 
+        href: '/solutions', 
+        description: 'Industry-specific solutions',
+        icon: <TargetIcon className="w-4 h-4" />
+      },
+      { 
+        name: 'Micro SAAS', 
+        href: '/micro-saas', 
+        description: 'Business automation tools',
+        icon: <Zap className="w-4 h-4" />
+=======
         name: 'Specialized Solutions', 
         href: '/solutions', 
         description: 'Industry-specific solutions',
         icon: <TargetIcon className="w-4 h-4" />
+>>>>>>> origin/cursor/website-audit-content-update-and-deployment-838a
       }
     ]
   },
@@ -96,11 +127,29 @@ const navigationItems: NavigationItem[] = [
     name: 'Showcase & Pricing',
     href: '/pricing',
     icon: <Star className="w-5 h-5" />,
+<<<<<<< HEAD
+    description: 'Service showcases and pricing',
+    badge: 'Featured',
+=======
     description: 'Services portfolio & pricing',
     badge: 'Showcase',
+>>>>>>> origin/cursor/website-audit-content-update-and-deployment-838a
     category: 'showcase',
     children: [
       { 
+<<<<<<< HEAD
+        name: 'Pricing Plans', 
+        href: '/pricing', 
+        description: 'Service pricing information',
+        icon: <DollarSign className="w-4 h-4" />,
+        featured: true
+      },
+      { 
+        name: 'Services Showcase', 
+        href: '/comprehensive-services-showcase-2025', 
+        description: 'Complete services overview',
+        icon: <Grid className="w-4 h-4" />
+=======
         name: 'Services Showcase', 
         href: '/comprehensive-services-showcase-2025', 
         description: 'Complete services overview',
@@ -112,18 +161,172 @@ const navigationItems: NavigationItem[] = [
         href: '/pricing', 
         description: 'Service pricing information',
         icon: <DollarSign className="w-4 h-4" />
+>>>>>>> origin/cursor/website-audit-content-update-and-deployment-838a
       },
       { 
         name: 'Market Pricing', 
         href: '/market-pricing', 
         description: 'Market price references',
         icon: <BarChart3 className="w-4 h-4" />
+<<<<<<< HEAD
+      },
+      { 
+        name: '2026 Services', 
+        href: '/revolutionary-2026-services', 
+        description: 'Next-gen service offerings',
+        icon: <TrendingUp className="w-4 h-4" />
+      },
+      { 
+        name: '2027 Services', 
+        href: '/revolutionary-2027-services-showcase', 
+        description: 'Future service roadmap',
+        icon: <Sparkles className="w-4 h-4" />
+=======
+>>>>>>> origin/cursor/website-audit-content-update-and-deployment-838a
       }
     ]
   },
   {
     name: 'Company',
     href: '/about',
+<<<<<<< HEAD
+    icon: <Star className="w-5 h-5" />,
+    description: 'About Zion Tech Group',
+    category: 'company',
+    children: [
+      { 
+        name: 'About Us', 
+        href: '/about', 
+        description: 'Our story and mission',
+        icon: <Users className="w-4 h-4" />,
+        featured: true
+      },
+      {
+        name: 'Leadership',
+        href: '/leadership',
+        description: 'Meet our team',
+        icon: <Star className="w-4 h-4" />
+      },
+      { 
+        name: 'Contact', 
+        href: '/contact', 
+        description: 'Get in touch',
+        icon: <MessageCircle className="w-4 h-4" />
+      },
+      { 
+        name: 'Partners', 
+        href: '/partners', 
+        description: 'Partnership opportunities',
+        icon: <div className="w-4 h-4" />
+      },
+      { 
+        name: 'Investors', 
+        href: '/investors', 
+        description: 'Investment information',
+        icon: <DollarSign className="w-4 h-4" />
+      },
+      { 
+        name: 'Careers', 
+        href: '/careers', 
+        description: 'Join our team',
+        icon: <User className="w-4 h-4" />
+      },
+      { 
+        name: 'News', 
+        href: '/news', 
+        description: 'Company updates',
+        icon: <FileText className="w-4 h-4" />
+      }
+    ]
+  },
+  {
+    name: 'Resources',
+    href: '/resources',
+    icon: <Play className="w-5 h-5" />,
+    description: 'Knowledge & support',
+    category: 'resources',
+    children: [
+      { 
+        name: 'Documentation', 
+        href: '/docs', 
+        description: 'Technical documentation',
+        icon: <Play className="w-4 h-4" />
+      },
+      { 
+        name: 'Blog', 
+        href: '/blog', 
+        description: 'Latest insights',
+        icon: <Play className="w-4 h-4" />
+      },
+      { 
+        name: 'Case Studies', 
+        href: '/case-studies', 
+        description: 'Success stories',
+        icon: <Star className="w-4 h-4" />
+      },
+      { 
+        name: 'Support', 
+        href: '/support', 
+        description: 'Technical support',
+        icon: <HelpCircle className="w-4 h-4" />
+      },
+      { 
+        name: 'Training', 
+        href: '/training', 
+        description: 'Educational resources',
+        icon: <BookOpenCheck className="w-4 h-4" />
+      },
+      { 
+        name: 'White Papers', 
+        href: '/white-papers', 
+        description: 'In-depth research',
+        icon: <FileText className="w-4 h-4" />
+      }
+    ]
+  },
+  {
+    name: 'Solutions',
+    href: '/solutions',
+    icon: <Target className="w-5 h-5" />,
+    description: 'Industry solutions',
+    category: 'solutions',
+    children: [
+      { 
+        name: 'Healthcare', 
+        href: '/healthcare-ai-solutions', 
+        description: 'AI healthcare solutions',
+        icon: <Heart className="w-4 h-4" />
+      },
+      { 
+        name: 'Financial', 
+        href: '/financial-solutions', 
+        description: 'Financial technology',
+        icon: <DollarSign className="w-4 h-4" />
+      },
+      { 
+        name: 'Government', 
+        href: '/government-technology-solutions', 
+        description: 'Public sector solutions',
+        icon: <Building className="w-4 h-4" />
+      },
+      { 
+        name: 'Manufacturing', 
+        href: '/manufacturing-ai-solutions', 
+        description: 'Industrial AI solutions',
+        icon: <Settings className="w-4 h-4" />
+      },
+      { 
+        name: 'Retail', 
+        href: '/retail-technology-solutions', 
+        description: 'Retail technology',
+        icon: <ShoppingCart className="w-4 h-4" />
+      },
+      { 
+        name: 'Education', 
+        href: '/education-technology-solutions', 
+        description: 'EdTech solutions',
+        icon: <BookOpen className="w-4 h-4" />
+=======
     icon: <Building className="w-5 h-5" />,
     description: 'About Zion Tech Group',
     category: 'company',
@@ -184,6 +387,7 @@ const navigationItems: NavigationItem[] = [
         href: '/support', 
         description: 'Technical support',
         icon: <HelpCircle className="w-4 h-4" />
+>>>>>>> origin/cursor/website-audit-content-update-and-deployment-838a
       }
     ]
   }
