@@ -1,9 +1,37 @@
+<<<<<<< HEAD
+=======
 const fs = require('fs');
+>>>>>>> origin/cursor/invent-and-deploy-autonomous-cloud-automations-430a
 const path = require('path');
 const { spawnSync } = require('child_process');
 
 function runNode(relPath, args = []) {
   const abs = path.resolve(__dirname, '..', '..', relPath);
+<<<<<<< HEAD
+  const res = spawnSync('node', [abs, ...args], { stdio: 'pipe', encoding: 'utf8', env: process.env });
+  return { status: res.status || 0, stdout: res.stdout || '', stderr: res.stderr || '' };
+}
+
+exports.config = { schedule: '*/5 * * * *' };
+
+exports.handler = async () => {
+  const logs = [];
+  const logStep = (name, fn) => {
+    logs.push(`\n=== ${name} ===`);
+    const { status, stdout, stderr } = fn();
+    if (stdout) logs.push(stdout);
+    if (stderr) logs.push(stderr);
+    logs.push(`exit=${status}`);
+    return status;
+  };
+
+  process.env.SITE_BASE_URL = process.env.SITE_BASE_URL || process.env.URL || process.env.NETLIFY_BASE_URL || '';
+  logStep('internal:link:graph', () => runNode('automation/internal-link-graph-runner.cjs'));
+  logStep('git:sync', () => runNode('automation/advanced-git-sync.cjs'));
+
+  return { statusCode: 200, body: logs.join('\n') };
+};
+=======
   const res = spawnSync('node', [abs, ...args], { stdio: 'pipe', encoding: 'utf8' });
   return { status: res.status || 0, stdout: res.stdout || '', stderr: res.stderr || '' };
 }
@@ -43,3 +71,4 @@ exports.handler = async () => {
 
   return { statusCode: 200, body: logs.join('\n') };
 };
+>>>>>>> origin/cursor/invent-and-deploy-autonomous-cloud-automations-430a

@@ -1,5 +1,9 @@
 {
+<<<<<<< HEAD
+  "generatedAt": "2025-08-12T00:08:38.293Z",
+=======
   "generatedAt": "2025-08-12T00:07:20.221Z",
+>>>>>>> origin/cursor/invent-and-deploy-autonomous-cloud-automations-430a
   "functions": [
     "a11y-alt-text-runner",
     "adaptive-orchestrator",
@@ -58,6 +62,11 @@
     "image-optimizer-runner",
     "innovation-lab",
     "internal-link-graph-runner",
+<<<<<<< HEAD
+    "knowledge-pack-runner",
+    "license-compliance-auditor",
+=======
+>>>>>>> origin/cursor/invent-and-deploy-autonomous-cloud-automations-430a
     "link-and-health-scheduler",
     "link-crawler",
     "maintenance-scheduler",
