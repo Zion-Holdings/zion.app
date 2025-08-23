@@ -65,25 +65,44 @@ export default function NeoFuturisticFooter() {
     {
       name: 'Quantum Computing & AI',
       services: [
+<<<<<<< HEAD
+        { name: 'Quantum AI Cognitive Platform', link: 'https://ziontechgroup.com/quantum-ai-platform' },
+        { name: 'Quantum Finance Platform', link: 'https://ziontechgroup.com/quantum-finance' },
+        { name: 'Quantum Cybersecurity Suite', link: 'https://ziontechgroup.com/quantum-cybersecurity' },
+        { name: 'Quantum Energy Optimization', link: 'https://ziontechgroup.com/quantum-energy' }
+=======
         { name: 'Quantum AI Platform', href: '/services?category=Quantum Computing' },
         { name: 'Quantum Optimization', href: '/services?category=Quantum Computing' },
         { name: 'Quantum Simulation', href: '/services?category=Quantum Computing' }
+>>>>>>> origin/cursor/enhance-app-services-and-website-with-futuristic-design-64da
       ]
     },
     {
       name: 'Autonomous Systems',
       services: [
+<<<<<<< HEAD
+        { name: 'Autonomous Manufacturing Platform', link: 'https://ziontechgroup.com/autonomous-manufacturing' },
+        { name: 'Autonomous Logistics Platform', link: 'https://ziontechgroup.com/autonomous-logistics' },
+        { name: 'Autonomous Robotics Platform', link: 'https://ziontechgroup.com/autonomous-robotics' }
+=======
         { name: 'AI Content Creation', href: '/services?category=AI & Machine Learning' },
         { name: 'ML Model Training', href: '/services?category=AI & Machine Learning' },
         { name: 'AI Analytics', href: '/services?category=AI & Machine Learning' }
+>>>>>>> origin/cursor/enhance-app-services-and-website-with-futuristic-design-64da
       ]
     },
     {
       name: 'Healthcare & Biotechnology',
       services: [
+<<<<<<< HEAD
+        { name: 'Biomedical AI Platform', link: 'https://ziontechgroup.com/biomedical-ai' },
+        { name: 'AI Healthcare Analytics', link: 'https://ziontechgroup.com/healthcare-analytics' },
+        { name: 'Personalized Medicine AI', link: 'https://ziontechgroup.com/personalized-medicine' }
+=======
         { name: 'Quantum Security', href: '/services?category=Cybersecurity' },
         { name: 'AI Threat Detection', href: '/services?category=Cybersecurity' },
         { name: 'Zero Trust Security', href: '/services?category=Cybersecurity' }
+>>>>>>> origin/cursor/enhance-app-services-and-website-with-futuristic-design-64da
       ]
     },
     {
