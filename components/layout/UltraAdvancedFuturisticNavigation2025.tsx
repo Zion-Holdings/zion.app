@@ -52,6 +52,12 @@ const navigationItems: NavigationItem[] = [
         description: 'Advanced AI solutions for enterprise'
       },
       {
+        label: 'Innovative 2040 Services',
+        href: '/innovative-2040-futuristic-services-showcase',
+        icon: <Rocket className="w-4 h-4" />,
+        description: 'Cutting-edge futuristic technology solutions'
+      },
+      {
         label: 'Quantum Computing',
         href: '/services?category=quantum',
         icon: <Zap className="w-4 h-4" />,
