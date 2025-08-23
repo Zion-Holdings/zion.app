@@ -104,7 +104,11 @@ export default function MarketPricingPage() {
             <div className="bg-black/30 rounded-2xl border border-rose-500/30 p-6">
               <h2 className="text-2xl font-semibold mb-2">PDF & Document Generation</h2>
               <ul className="list-disc list-inside text-slate-300 space-y-1">
+<<<<<<< HEAD
+                <li>DocRaptor pricing: <a className="text-cyan-400 underline" href={`https://docraptor.com/#pricing`} target="_blank" rel="noopener noreferrer">docraptor.com/#pricing</a></li>
+=======
                 <li>DocRaptor pricing: <a className="text-cyan-400 underline" href={`https://www.docraptor.com/pricing`} target="_blank" rel="noopener noreferrer">docraptor.com/pricing</a></li>
+>>>>>>> origin/cursor/website-audit-content-update-and-deployment-b32e
                 <li>PDFMonkey pricing: <a className="text-cyan-400 underline" href={`https://www.pdfmonkey.io/pricing`} target="_blank" rel="noopener noreferrer">pdfmonkey.io/pricing</a></li>
                 <li>CloudConvert: <a className="text-cyan-400 underline" href={`https://cloudconvert.com/pricing`} target="_blank" rel="noopener noreferrer">cloudconvert.com/pricing</a></li>
                 <li>Gotenberg (self-hosted): <a className="text-cyan-400 underline" href={`https://gotenberg.dev`} target="_blank" rel="noopener noreferrer">gotenberg.dev</a></li>
@@ -189,7 +193,11 @@ export default function MarketPricingPage() {
               <ul className="list-disc list-inside text-slate-300 space-y-1">
                 <li>Skyflow pricing: <a className="text-cyan-400 underline" href={`https://www.skyflow.com/pricing`} target="_blank" rel="noopener noreferrer">skyflow.com/pricing</a></li>
                 <li>VGS pricing: <a className="text-cyan-400 underline" href={`https://www.verygoodsecurity.com/pricing`} target="_blank" rel="noopener noreferrer">verygoodsecurity.com/pricing</a></li>
+<<<<<<< HEAD
+                <li>Transcend: <a className="text-cyan-400 underline" href={`https://transcend.io/`} target="_blank" rel="noopener noreferrer">transcend.io</a></li>
+=======
                 <li>Transcend: <a className="text-cyan-400 underline" href={`https://transcend.io/platform/`} target="_blank" rel="noopener noreferrer">transcend.io/platform</a></li>
+>>>>>>> origin/cursor/website-audit-content-update-and-deployment-b32e
               </ul>
               <div className="text-sm text-slate-400 mt-3">Typical SMB budgets: $100–$2,000/month by data volume and systems.</div>
             </div>
@@ -303,7 +311,11 @@ export default function MarketPricingPage() {
               <ul className="list-disc list-inside text-slate-300 space-y-1">
                 <li>Calendly pricing: <a className="text-cyan-400 underline" href={`https://calendly.com/pricing`} target="_blank" rel="noopener noreferrer">calendly.com/pricing</a></li>
                 <li>Cal.com pricing: <a className="text-cyan-400 underline" href={`https://cal.com/pricing`} target="_blank" rel="noopener noreferrer">cal.com/pricing</a></li>
+<<<<<<< HEAD
+                <li>Acuity pricing: <a className="text-cyan-400 underline" href={`https://acuityscheduling.com/pricing`} target="_blank" rel="noopener noreferrer">acuityscheduling.com/pricing</a></li>
+=======
                 <li>Acuity scheduling: <a className="text-cyan-400 underline" href={`https://www.squarespace.com/acuity/pricing`} target="_blank" rel="noopener noreferrer">squarespace.com/acuity/pricing</a></li>
+>>>>>>> origin/cursor/website-audit-content-update-and-deployment-b32e
               </ul>
               <div className="text-sm text-slate-400 mt-3">Typical SMB budgets: $10–$200/month depending on calendars and reminders.</div>
             </div>
