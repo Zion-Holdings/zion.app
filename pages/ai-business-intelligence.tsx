@@ -1,8 +1,8 @@
 import React from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
-import { CheckCircle, ArrowRight, Star, TrendingUp, Phone, Zap, DollarSign, Shield, Mail, MapPin, Rocket, BarChart3, Brain, Database, Users, Target, TrendingUp as TrendingUpIcon } from 'lucide-react';
-import { Button } from '../components/ui/Button';
+import { CheckCircle, ArrowRight, Star, TrendingUp, Phone, Zap, DollarSign, Shield, Mail, MapPin, Rocket, BarChart3, Brain, Database, Users, Target } from 'lucide-react';
+import Button from '../components/ui/Button';
 import UltraAdvancedFuturisticBackground from '../components/ui/UltraAdvancedFuturisticBackground';
 import { Layout } from '../components/layout/Layout';
 import { motion } from 'framer-motion';

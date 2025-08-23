@@ -28,7 +28,7 @@ export default function FuturisticServices2030Page() {
       icon: Brain,
       color: 'from-cyan-500 to-blue-500',
       services: futuristicAIServices2030,
-      description: 'Next-generation AI consciousness and autonomous systems'
+      description: 'ArrowRight-generation AI consciousness and autonomous systems'
     },
     {
       title: '⚛️ Quantum & Emerging Tech 2030',

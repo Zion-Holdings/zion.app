@@ -1,22 +1,4 @@
 import React from 'react';
-import { Layout } from '../components/layout/Layout';
-import { motion } from 'framer-motion';
-import { 
-  ExternalLink, 
-  Search, 
-  Filter,
-  ArrowRight,
-  Clock,
-  TrendingUp,
-  Award,
-  Globe,
-  Brain,
-  Atom,
-  Rocket,
-  Shield,
-  Cloud,
-  Zap
-=======
   Newspaper, Calendar, User, Tag, ArrowRight, 
   Star, Zap, Brain, Atom, Rocket, Globe
 } from 'lucide-react';
@@ -24,17 +6,28 @@ import Link from 'next/link';
 
 const News: React.FC = () => {
   const newsArticles = [
+=======
+import Layout from '../components/layout/Layout';
+import { motion } from 'framer-motion';
+import { 
+  Newspaper, Calendar, User, Tag, ArrowRight, 
+  Star, Zap, Brain, Atom, Rocket, Globe,
+  Clock, TrendingUp
+} from 'lucide-react';
+import Link from 'next/link';
+
+const NewsPage: React.FC = () => {
+  const featuredNews = [
     {
       title: 'Zion Tech Group Launches Revolutionary AI Consciousness Platform',
       excerpt: 'Breakthrough technology that brings emotional intelligence and self-awareness to artificial intelligence systems.',
       author: 'Press Team',
       date: '2025-01-15',
-      category: 'Product Launch',
-      readTime: '5 min read',
-      image: '/news/ai-consciousness-launch.jpg',
-      tags: ['AI', 'Consciousness', 'Product Launch', 'Innovation'],
-      icon: <Brain className="w-6 h-6" />,
-      featured: true
+      author: 'Dr. Kleber',
+      featured: true,
+      image: '/api/placeholder/600/400',
+      tags: ['AI Consciousness', 'Breakthrough', 'Innovation'],
+      readTime: '5 min read'
     },
     {
       title: 'Quantum Computing Breakthrough: Solving Complex Optimization Problems',
@@ -53,94 +46,6 @@ const News: React.FC = () => {
       excerpt: 'Strategic collaboration to advance AI-powered threat detection and response systems.',
       author: 'Partnerships Team',
       date: '2025-01-10',
-      category: 'Partnerships',
-      readTime: '4 min read',
-      image: '/news/cybersecurity-partnership.jpg',
-      tags: ['Cybersecurity', 'Partnerships', 'AI Security'],
-      icon: <Shield className="w-6 h-6" />,
-      featured: true
-    }
-  ];
-
-  const pressReleases = [
-    {
-      title: 'Zion Tech Group Announces Series A Funding Round',
-      excerpt: 'Company secures $25M in funding to accelerate AI consciousness research and development.',
-      date: '2025-01-08',
-      category: 'Funding',
-      readTime: '3 min read'
-    },
-    {
-      title: 'New Research Center Opening in Silicon Valley',
-      excerpt: 'Expansion to accelerate innovation in AI and quantum computing technologies.',
-      date: '2025-01-05',
-      category: 'Expansion',
-      readTime: '4 min read'
-    },
-    {
-      title: 'Partnership with Leading Universities Announced',
-      excerpt: 'Collaborative research initiatives with MIT, Stanford, and Oxford.',
-      date: '2025-01-03',
-      category: 'Partnerships',
-      readTime: '3 min read'
-    }
-  ];
-
-  const newsCategories = [
-    { name: 'Product Updates', icon: <Rocket className="w-5 h-5" />, count: 8 },
-    { name: 'Research & Development', icon: <Brain className="w-5 h-5" />, count: 15 },
-    { name: 'Partnerships', icon: <Globe className="w-5 h-5" />, count: 12 },
-    { name: 'Company News', icon: <Newspaper className="w-5 h-5" />, count: 20 },
-    { name: 'Industry Insights', icon: <TrendingUp className="w-5 h-5" />, count: 18 },
-    { name: 'Awards & Recognition', icon: <Award className="w-5 h-5" />, count: 6 }
-  ];
-
-  const recentNews = [
-    {
-      title: 'Edge Computing Platform Achieves Industry Recognition',
-      excerpt: 'Our edge computing orchestration platform receives top honors at Tech Innovation Awards.',
-      author: 'Product Team',
-      date: '2025-01-14',
-      category: 'Awards',
-      readTime: '4 min read'
-    },
-    {
-      title: 'AI Ethics Framework Implementation Success',
-      excerpt: 'Successful deployment of ethical AI guidelines across all client implementations.',
-      author: 'AI Ethics Team',
-      date: '2025-01-13',
-      category: 'Implementation',
-      readTime: '5 min read'
-    },
-    {
-      title: 'Quantum Security Solutions for Financial Sector',
-      excerpt: 'Launch of quantum-resistant cryptography solutions for banking and finance.',
-      author: 'Quantum Team',
-      date: '2025-01-11',
-      category: 'Product Launch',
-      readTime: '6 min read'
-    },
-    {
-      title: 'Space Technology Division Expansion',
-      excerpt: 'New team members join our space exploration and resource intelligence initiatives.',
-      author: 'Space Team',
-      date: '2025-01-09',
-      category: 'Team',
-      readTime: '3 min read'
-    }
-  ];
-
-  return (
-    <Layout 
-      title="News - Zion Tech Group"
-      description="Latest news, press releases, and company updates from Zion Tech Group"
-      canonicalUrl="https://ziontechgroup.com/news"
-    >
-      <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900">
-        {/* Hero Section */}
-        <section className="relative py-20 px-4 sm:px-6 lg:px-8">
-          <div className="max-w-7xl mx-auto text-center">
-=======
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedCategory, setSelectedCategory] = useState('all');
   const [selectedYear, setSelectedYear] = useState('all');
@@ -182,6 +87,12 @@ const News: React.FC = () => {
       featured: false,
       image: '/api/placeholder/600/400',
       tags: ['Quantum Computing', 'AI Integration', 'Technology']
+=======
+      author: 'Quantum Team',
+      featured: false,
+      image: '/api/placeholder/600/400',
+      tags: ['Quantum Computing', 'AI Integration', 'Technology'],
+      readTime: '7 min read'
     },
     {
       id: 3,
@@ -192,7 +103,8 @@ const News: React.FC = () => {
       author: 'Operations Team',
       featured: false,
       image: '/api/placeholder/600/400',
-      tags: ['Global Expansion', 'Growth', 'Operations']
+      tags: ['Global Expansion', 'Growth', 'Operations'],
+      readTime: '3 min read'
     },
     {
       id: 4,
@@ -203,7 +115,8 @@ const News: React.FC = () => {
       author: 'Partnership Team',
       featured: false,
       image: '/api/placeholder/600/400',
-      tags: ['Partnerships', 'Research', 'Collaboration']
+      tags: ['Partnerships', 'Research', 'Collaboration'],
+      readTime: '4 min read'
     },
     {
       id: 5,
@@ -214,7 +127,8 @@ const News: React.FC = () => {
       author: 'Ethics Committee',
       featured: false,
       image: '/api/placeholder/600/400',
-      tags: ['AI Ethics', 'Responsible AI', 'Framework']
+      tags: ['AI Ethics', 'Responsible AI', 'Framework'],
+      readTime: '6 min read'
     },
     {
       id: 6,
@@ -225,7 +139,8 @@ const News: React.FC = () => {
       author: 'Space Team',
       featured: false,
       image: '/api/placeholder/600/400',
-      tags: ['Space Technology', 'Autonomous Systems', 'Innovation']
+      tags: ['Space Technology', 'Autonomous Systems', 'Innovation'],
+      readTime: '5 min read'
     }
   ];
 
@@ -240,26 +155,6 @@ const News: React.FC = () => {
   ];
 
   const featuredArticle = newsArticles.find(article => article.featured);
-
-  const getCategoryIcon = (category: string) => {
-    switch (category) {
-      case 'ai': return Brain;
-      case 'quantum': return Atom;
-      case 'space': return Rocket;
-      case 'security': return Shield;
-      default: return Newspaper;
-    }
-  };
-
-  const getCategoryColor = (category: string) => {
-    switch (category) {
-      case 'ai': return 'from-purple-500 to-pink-500';
-      case 'quantum': return 'from-blue-500 to-cyan-500';
-      case 'space': return 'from-indigo-500 to-purple-500';
-      case 'security': return 'from-red-500 to-orange-500';
-      default: return 'from-gray-500 to-gray-600';
-    }
-  };
 
   return (
     <Layout
@@ -293,21 +188,6 @@ const News: React.FC = () => {
                 Discover the latest developments in AI consciousness, quantum computing, 
                 and revolutionary technology solutions from Zion Tech Group.
               </p>
-              
-              {/* Search Bar */}
-              <div className="max-w-2xl mx-auto mb-8">
-                <div className="relative">
-                  <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
-                  <input
-                    type="text"
-                    placeholder="Search news..."
-                    className="w-full px-12 py-4 bg-white/10 backdrop-blur-lg border border-white/20 rounded-2xl text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent"
-                  />
-                  <button className="absolute right-4 top-1/2 transform -translate-y-1/2 text-purple-400 hover:text-purple-300 transition-colors duration-300">
-                    <Filter className="w-5 h-5" />
-                  </button>
-                </div>
-=======
               <h1 className="text-4xl md:text-6xl font-bold bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 bg-clip-text text-transparent mb-6">
                 Latest News & Updates
               </h1>
@@ -324,153 +204,11 @@ const News: React.FC = () => {
                   Stay Updated
                 </motion.div>
               </div>
+=======
             </motion.div>
           </div>
         </section>
 
-        {/* Search and Filter Section */}
-        <section className="py-12 relative">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="flex flex-col lg:flex-row gap-6">
-              {/* Search */}
-              <div className="flex-1 relative">
-                <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
-                <input
-                  type="text"
-                  placeholder="Search news, articles, or topics..."
-                  value={searchQuery}
-                  onChange={(e) => setSearchQuery(e.target.value)}
-                  className="w-full pl-10 pr-4 py-3 bg-gray-800 border border-gray-700 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-cyan-400 focus:ring-1 focus:ring-cyan-400"
-                />
-              </div>
-              
-              {/* Category Filter */}
-              <div className="flex gap-2 overflow-x-auto pb-2">
-                {categories.map((category) => (
-                  <button
-                    key={category.id}
-                    onClick={() => setSelectedCategory(category.id)}
-                    className={`flex items-center gap-2 px-4 py-2 rounded-lg whitespace-nowrap transition-all duration-300 ${
-                      selectedCategory === category.id
-                        ? 'bg-cyan-500 text-white'
-                        : 'bg-gray-800 text-gray-300 hover:bg-gray-700'
-                    }`}
-                  >
-                    <category.icon className="w-4 h-4" />
-                    {category.name}
-                    <span className="text-xs bg-white/20 px-2 py-1 rounded-full">
-                      {category.count}
-                    </span>
-                  </button>
-                ))}
-              </div>
-
-              {/* Year Filter */}
-              <div className="flex gap-2">
-                {years.map((year) => (
-                  <button
-                    key={year.id}
-                    onClick={() => setSelectedYear(year.id)}
-                    className={`px-4 py-2 rounded-lg transition-all duration-300 ${
-                      selectedYear === year.id
-                        ? 'bg-cyan-500 text-white'
-                        : 'bg-gray-800 text-gray-300 hover:bg-gray-700'
-                    }`}
-                  >
-                    {year.name}
-                  </button>
-                ))}
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Featured News */}
-        {featuredNews.length > 0 && (
-          <section className="py-12 relative">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8 }}
-                className="text-center mb-12"
-              >
-                <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-                  Featured Stories
-                </h2>
-                <p className="text-xl text-gray-400">
-                  Top headlines and breakthrough announcements
-                </p>
-              </motion.div>
-
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-                {featuredNews.map((article, index) => (
-                  <motion.article
-                    key={article.id}
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.8, delay: index * 0.1 }}
-                    className="bg-gradient-to-br from-gray-900 to-gray-800 rounded-2xl overflow-hidden border border-cyan-400/20 hover:border-cyan-400/40 transition-all duration-300 group"
-                  >
-                    <div className="h-64 bg-gradient-to-br from-cyan-500/20 to-blue-600/20 flex items-center justify-center">
-                      <div className={`w-20 h-20 bg-gradient-to-br ${getCategoryColor(article.category)} rounded-full flex items-center justify-center`}>
-                        {React.createElement(getCategoryIcon(article.category), { className: "w-10 h-10 text-white" })}
-                      </div>
-                    </div>
-                    
-                    <div className="p-6">
-                      <div className="flex items-center gap-3 mb-3">
-                        <span className={`px-3 py-1 rounded-full text-xs font-semibold bg-gradient-to-r ${getCategoryColor(article.category)} text-white`}>
-                          {categories.find(c => c.id === article.category)?.name}
-                        </span>
-                        <span className="text-gray-400 text-sm flex items-center gap-1">
-                          <Clock className="w-3 h-3" />
-                          {article.readTime}
-                        </span>
-                      </div>
-                      
-                      <h3 className="text-xl font-bold text-white mb-3 group-hover:text-cyan-400 transition-colors duration-300">
-                        {article.title}
-                      </h3>
-                      
-                      <p className="text-gray-300 mb-4 line-clamp-3">
-                        {article.excerpt}
-                      </p>
-                      
-                      <div className="flex items-center justify-between mb-4">
-                        <div className="flex items-center gap-2 text-sm text-gray-400">
-                          <User className="w-4 h-4" />
-                          {article.author}
-                        </div>
-                        <div className="text-sm text-gray-400">
-                          {formatDate(article.date)}
-                        </div>
-                      </div>
-                      
-                      <div className="flex items-center justify-between">
-                        <div className="flex flex-wrap gap-2">
-                          {article.tags.slice(0, 3).map((tag, tagIndex) => (
-                            <span
-                              key={tagIndex}
-                              className="px-2 py-1 bg-cyan-500/20 text-cyan-300 rounded text-xs border border-cyan-500/30"
-                            >
-                              {tag}
-                            </span>
-                          ))}
-                        </div>
-                        
-                        <a
-                          href={article.url}
-                          className="inline-flex items-center gap-2 text-cyan-400 hover:text-cyan-300 transition-colors duration-300 group-hover:gap-3"
-                        >
-                          Read More
-                          <ArrowRight className="w-4 h-4" />
-                        </a>
-                      </div>
-                    </div>
-                  </motion.article>
-                ))}
-              </div>
 =======
         {/* Featured Article */}
         {featuredArticle && (
@@ -569,23 +307,6 @@ const News: React.FC = () => {
         )}
 
         {/* News Grid */}
-        <section className="py-20">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-              <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-                Latest Updates
-              </h2>
-              <p className="text-xl text-gray-400">
-                Recent news, announcements, and developments
-              </p>
-            </motion.div>
-
-            <div className="space-y-6">
-              {regularNews.map((article, index) => (
-=======
               viewport={{ once: true }}
               className="text-center mb-16"
             >
@@ -657,6 +378,142 @@ const News: React.FC = () => {
                       <ArrowRight className="w-4 h-4 ml-1" />
                     </Link>
                   </div>
+=======
+        <section className="py-20 px-4 sm:px-6 lg:px-8">
+          <div className="max-w-7xl mx-auto">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              className="text-center mb-16"
+            >
+              <h2 className="text-4xl font-bold mb-4">Featured Article</h2>
+              <p className="text-xl text-gray-400 max-w-3xl mx-auto">
+                Our latest breakthrough in AI consciousness technology
+              </p>
+            </motion.div>
+
+            {newsArticles.filter(article => article.featured).map((article, index) => (
+              <motion.div
+                key={article.title}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.3 }}
+                className="bg-gradient-to-br from-cyan-500/20 to-blue-600/20 backdrop-blur-sm rounded-2xl p-8 border border-cyan-500/30"
+              >
+                <div className="flex items-center gap-4 mb-4">
+                  <span className="px-3 py-1 bg-cyan-500 text-white text-sm font-medium rounded-full">
+                    {article.category}
+                  </span>
+                  <span className="text-gray-400 text-sm">Featured</span>
+                </div>
+                <h3 className="text-3xl font-bold mb-4">{article.title}</h3>
+                <p className="text-xl text-gray-300 mb-6 leading-relaxed">{article.excerpt}</p>
+                <div className="flex items-center justify-between">
+                  <div className="flex items-center gap-6 text-gray-400 text-sm">
+                    <div className="flex items-center gap-2">
+                      <Calendar className="w-4 h-4" />
+                      {new Date(article.date).toLocaleDateString()}
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <User className="w-4 h-4" />
+                      {article.author}
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <Clock className="w-4 h-4" />
+                      {article.readTime}
+                    </div>
+                  </div>
+                  <button className="px-6 py-3 bg-gradient-to-r from-cyan-500 to-blue-600 text-white rounded-lg font-semibold hover:from-cyan-600 hover:to-blue-700 transition-all duration-300 flex items-center gap-2">
+                    Read More
+                    <ArrowRight className="w-4 h-4" />
+                  </button>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </section>
+
+        {/* Categories Filter */}
+        <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gray-800/30">
+          <div className="max-w-7xl mx-auto">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.4 }}
+              className="text-center mb-16"
+            >
+              <h2 className="text-4xl font-bold mb-4">Browse by Category</h2>
+              <p className="text-xl text-gray-400 max-w-3xl mx-auto">
+                Filter news by topic to find the information most relevant to you
+              </p>
+            </motion.div>
+
+            <div className="flex flex-wrap justify-center gap-4 mb-12">
+              {categories.map((category, index) => (
+                <motion.button
+                  key={category.name}
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{ duration: 0.6, delay: 0.1 * index }}
+                  className={`px-6 py-3 rounded-lg font-medium transition-all duration-300 ${
+                    category.active
+                      ? 'bg-gradient-to-r from-cyan-500 to-blue-600 text-white'
+                      : 'bg-gray-800/50 text-gray-300 hover:bg-gray-700/50 border border-gray-700/50'
+                  }`}
+                >
+                  {category.name} ({category.count})
+                </motion.button>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* News Grid */}
+        <section className="py-20 px-4 sm:px-6 lg:px-8">
+          <div className="max-w-7xl mx-auto">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.6 }}
+              className="text-center mb-16"
+            >
+              <h2 className="text-4xl font-bold mb-4">Latest News</h2>
+              <p className="text-xl text-gray-400 max-w-3xl mx-auto">
+                Stay updated with our most recent developments and announcements
+              </p>
+            </motion.div>
+
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {newsArticles.filter(article => !article.featured).map((article, index) => (
+                <motion.article
+                  key={article.title}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: 0.1 * index }}
+                  className="bg-gray-800/50 backdrop-blur-sm rounded-xl p-6 border border-gray-700/50 hover:border-cyan-500/50 transition-all duration-300"
+                >
+                  <div className="flex items-center gap-4 mb-4">
+                    <span className="px-3 py-1 bg-cyan-500/20 text-cyan-400 text-sm font-medium rounded-full border border-cyan-500/30">
+                      {article.category}
+                    </span>
+                  </div>
+                  <h3 className="text-xl font-semibold mb-3 line-clamp-2">{article.title}</h3>
+                  <p className="text-gray-400 mb-4 line-clamp-3">{article.excerpt}</p>
+                  <div className="flex items-center justify-between text-sm text-gray-500 mb-4">
+                    <div className="flex items-center gap-2">
+                      <Calendar className="w-4 h-4" />
+                      {new Date(article.date).toLocaleDateString()}
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <Clock className="w-4 h-4" />
+                      {article.readTime}
+                    </div>
+                  </div>
+                  <button className="w-full px-4 py-2 border border-cyan-500/30 text-cyan-400 rounded-lg hover:bg-cyan-500/10 transition-all duration-300 flex items-center justify-center gap-2">
+                    Read More
+                    <ArrowRight className="w-4 h-4" />
+                  </button>
                 </motion.article>
               ))}
             </div>
@@ -664,89 +521,196 @@ const News: React.FC = () => {
         </section>
 
         {/* Newsletter Signup */}
-        <section className="py-20 bg-black/50">
-          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-              viewport={{ once: true }}
-            >
-              className="bg-gradient-to-r from-cyan-500/20 to-blue-600/20 rounded-2xl p-12 border border-cyan-400/30"
-            >
-              <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
-                Stay Connected
-              </h2>
-              <p className="text-xl text-gray-300 mb-8">
-                Never miss an update. Subscribe to our newsletter and follow us on social media 
-                for the latest news and insights.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <a
-                  href="/contact"
-                  className="inline-flex items-center gap-2 bg-gradient-to-r from-cyan-500 to-blue-600 text-white px-8 py-4 rounded-full font-semibold text-lg hover:from-cyan-600 hover:to-blue-700 transition-all duration-300"
-                >
-                  Subscribe to Newsletter
-                  <ArrowRight className="w-5 h-5" />
-                </a>
-                <a
-                  href="/press"
-                  className="inline-flex items-center gap-2 border border-cyan-400 text-cyan-400 px-8 py-4 rounded-full font-semibold text-lg hover:bg-cyan-400 hover:text-black transition-all duration-300"
-                >
-                  View Press Releases
-                  <Newspaper className="w-5 h-5" />
-                </a>
-              </div>
-=======
               <h2 className="text-3xl lg:text-4xl font-bold text-white mb-6">
                 Stay Updated
               </h2>
               <p className="text-xl text-gray-400 max-w-2xl mx-auto mb-8">
                 Subscribe to our newsletter for the latest news, insights, and breakthroughs in AI consciousness and quantum computing.
+=======
+        <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gray-800/30">
+          <div className="max-w-4xl mx-auto text-center">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.8 }}
+            >
+              <h2 className="text-4xl font-bold mb-6">Stay Updated</h2>
+              <p className="text-xl text-gray-400 mb-8">
+                Subscribe to our newsletter for the latest news, insights, and technology updates
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center max-w-md mx-auto">
                 <input
                   type="email"
                   placeholder="Enter your email"
-                  className="flex-1 px-6 py-3 bg-gray-800/50 border border-gray-700/50 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:border-purple-500/50"
+                  className="flex-1 px-4 py-3 bg-gray-800/50 border border-gray-700/50 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-cyan-500/50"
                 />
-                <button className="px-8 py-3 bg-gradient-to-r from-purple-500 to-blue-600 text-white font-semibold rounded-xl hover:from-purple-600 hover:to-blue-700 transition-all duration-300">
+                <button className="px-6 py-3 bg-gradient-to-r from-cyan-500 to-blue-600 text-white rounded-lg font-semibold hover:from-cyan-600 hover:to-blue-700 transition-all duration-300">
                   Subscribe
                 </button>
               </div>
             </motion.div>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              {pressReleases.map((release, index) => (
+                <motion.article
+                  key={release.title}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: index * 0.1 }}
+                  viewport={{ once: true }}
+                  className="bg-gradient-to-br from-gray-800/30 to-gray-900/30 p-6 rounded-2xl border border-gray-700/30 hover:border-purple-500/50 transition-all duration-300 group"
+                >
+                  <div className="flex items-center gap-2 mb-3">
+                    <span className="px-3 py-1 bg-purple-500/20 text-purple-300 rounded-full text-xs font-medium">
+                      {release.category}
+                    </span>
+                    <span className="text-gray-400 text-sm">{release.readTime}</span>
+                  </div>
+                  <h3 className="text-xl font-bold text-white mb-3 group-hover:text-purple-400 transition-colors duration-300">
+                    {release.title}
+                  </h3>
+                  <p className="text-gray-300 text-sm mb-4 leading-relaxed">
+                    {release.excerpt}
+                  </p>
+                  <div className="flex items-center gap-2">
+                    <Calendar className="w-4 h-4 text-gray-400" />
+                    <span className="text-gray-400 text-sm">{release.date}</span>
+                  </div>
+                </motion.article>
+              ))}
+            </div>
           </div>
         </section>
 
-        {/* CTA Section */}
-        <section className="py-20">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        {/* News Categories */}
+        <section className="py-20 px-4 sm:px-6 lg:px-8">
+          <div className="max-w-7xl mx-auto">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+              className="text-center mb-16"
+            >
+              <h2 className="text-4xl font-bold text-white mb-4">
+                News Categories
+              </h2>
+              <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+                Explore news by category to find updates in your areas of interest.
+              </p>
+            </motion.div>
+
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
+              {newsCategories.map((category, index) => (
+                <motion.div
+                  key={category.name}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: index * 0.1 }}
+                  viewport={{ once: true }}
+                  className="text-center group cursor-pointer"
+                >
+                  <div className="w-16 h-16 bg-white/10 backdrop-blur-lg rounded-2xl flex items-center justify-center mx-auto mb-3 group-hover:bg-purple-500/20 transition-all duration-300 border border-white/20">
+                    <div className="text-purple-400 group-hover:text-purple-300 transition-colors duration-300">
+                      {category.icon}
+                    </div>
+                  </div>
+                  <h3 className="text-sm font-semibold text-white mb-1">
+                    {category.name}
+                  </h3>
+                  <p className="text-gray-400 text-xs">{category.count} articles</p>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Recent News */}
+        <section className="py-20 px-4 sm:px-6 lg:px-8 bg-black/20">
+          <div className="max-w-7xl mx-auto">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+              className="text-center mb-16"
+            >
+              <h2 className="text-4xl font-bold text-white mb-4">
+                Recent News
+              </h2>
+              <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+                Stay updated with our latest announcements and developments.
+              </p>
+            </motion.div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              {recentNews.map((news, index) => (
+                <motion.article
+                  key={news.title}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: index * 0.1 }}
+                  viewport={{ once: true }}
+                  className="bg-gradient-to-br from-gray-800/30 to-gray-900/30 p-6 rounded-2xl border border-gray-700/30 hover:border-purple-500/50 transition-all duration-300 group"
+                >
+                  <div className="flex items-center gap-2 mb-3">
+                    <span className="px-3 py-1 bg-purple-500/20 text-purple-300 rounded-full text-xs font-medium">
+                      {news.category}
+                    </span>
+                    <span className="text-gray-400 text-sm">{news.readTime}</span>
+                  </div>
+                  <h3 className="text-xl font-bold text-white mb-3 group-hover:text-purple-400 transition-colors duration-300">
+                    {news.title}
+                  </h3>
+                  <p className="text-gray-300 text-sm mb-4 leading-relaxed">
+                    {news.excerpt}
+                  </p>
+                  <div className="flex items-center justify-between">
+                    <div className="flex items-center gap-2">
+                      <User className="w-4 h-4 text-gray-400" />
+                      <span className="text-gray-400 text-sm">{news.author}</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <Calendar className="w-4 h-4 text-gray-400" />
+                      <span className="text-gray-400 text-sm">{news.date}</span>
+                    </div>
+                  </div>
+                </motion.article>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Media Contact */}
+        <section className="py-20 px-4 sm:px-6 lg:px-8">
+          <div className="max-w-4xl mx-auto text-center">
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
               viewport={{ once: true }}
             >
-              <h2 className="text-3xl lg:text-4xl font-bold text-white mb-6">
-                Get in Touch
+              <h2 className="text-4xl font-bold text-white mb-4">
+                Media Inquiries
               </h2>
-              <p className="text-xl text-gray-400 max-w-3xl mx-auto mb-8">
-                Have questions about our latest developments? Want to learn more about our revolutionary technology solutions?
+              <p className="text-xl text-gray-300 mb-8">
+                For press inquiries, media interviews, or additional information, 
+                please contact our communications team.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Link
+                <a
                   href="/contact"
-                  className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-purple-500 to-blue-600 text-white font-semibold rounded-2xl hover:from-purple-600 hover:to-blue-700 transition-all duration-300 transform hover:scale-105"
+                  className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-purple-600 to-cyan-600 text-white font-semibold rounded-lg hover:from-purple-700 hover:to-cyan-700 transition-all duration-300 transform hover:scale-105"
                 >
-                  Contact Us
-                  <ArrowRight className="w-5 h-5 ml-2" />
-                </Link>
-                <Link
-                  href="/services"
-                  className="inline-flex items-center px-8 py-4 border-2 border-purple-500/30 text-purple-400 font-semibold rounded-2xl hover:border-purple-500/50 hover:text-purple-300 transition-all duration-300"
+                  Contact Media Team
+                  <Mic className="ml-2 w-5 h-5" />
+                </a>
+                <a
+                  href="/press"
+                  className="inline-flex items-center px-8 py-4 border-2 border-purple-500 text-purple-400 font-semibold rounded-lg hover:bg-purple-500 hover:text-white transition-all duration-300"
                 >
-                  Explore Services
-                </Link>
+                  Press Kit
+                </a>
               </div>
             </motion.div>
           </div>
@@ -757,5 +721,5 @@ const News: React.FC = () => {
 };
 
 export default NewsPage;
-=======
 export default News;
+=======

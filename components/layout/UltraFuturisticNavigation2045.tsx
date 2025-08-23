@@ -1,55 +1,9 @@
-import React, { useState, useEffect, useCallback, useMemo, useRef } from 'react';
+import React, { useState, useCallback } from 'react';
+import Link from 'next/link';
 import { motion, AnimatePresence } from 'framer-motion';
 import { 
-  Menu, 
-  X, 
-  Search, 
-  ChevronDown, 
-  Phone, 
-  Linkedin, 
-  Twitter, 
-  Github, 
-  Youtube,
-  Home,
-  Briefcase,
-  Brain,
-  Atom,
-  Rocket,
-  Shield,
-  Cloud,
-  Target,
-  Building,
-  Users,
-  BookOpen,
-  FileText,
-  Video,
-  Code,
-  Zap,
-  Star,
-  Sparkles,
-  Globe,
-  Cpu,
-  Database,
-  Eye,
-  Heart,
-  Infinity,
-  TrendingUp,
-  Palette,
-  Layers,
-  Grid,
-  BarChart3,
-  Settings,
-  HelpCircle,
-  MessageCircle,
-  Calendar,
-  Award,
-  Lightbulb,
-  Play,
-  DollarSign,
-  GraduationCap,
-  Mail,
-  MapPin,
-  ExternalLink
+  Search, Shield, Menu, X, ChevronDown, ChevronRight, ExternalLink, 
+  Building, Users, Brain, Cpu, Database, Atom, Rocket, Target, Zap, Globe
 } from 'lucide-react';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
@@ -87,25 +41,9 @@ const navigationItems: NavigationItem[] = [
     neonColor: 'shadow-blue-400/50',
     category: 'main',
     children: [
-      { 
-        name: 'All Services', 
-        href: '/services', 
-        description: 'Complete revolutionary services overview',
-        icon: <Grid className="w-4 h-4" />,
-        featured: true
-      },
-      { 
-        name: 'Real Enterprise Services 2025', 
-        href: '/2025-real-services-showcase', 
-        description: 'Professional, practical business solutions',
-        icon: <Building className="w-4 h-4" />,
-        color: 'from-emerald-500 to-teal-500',
-        featured: true
-      },
-      { 
-        name: 'AI Consciousness Evolution 2045', 
-        href: '/ai-consciousness-evolution-2045', 
-        description: 'Next-generation AI consciousness',
+      {
+        label: 'AI & Machine Learning',
+        href: '/services?category=ai-ml',
         icon: <Brain className="w-4 h-4" />,
         description: 'Advanced AI solutions for enterprise',
         featured: true,
@@ -130,20 +68,29 @@ const navigationItems: NavigationItem[] = [
         category: 'security'
       },
       {
-        label: 'Space Technology',
-        href: '/services?category=space',
-        icon: <Rocket className="w-4 h-4" />,
-        description: 'Innovative space solutions',
-        neonColor: 'shadow-indigo-400/50',
-        category: 'space'
+        label: 'Cloud Infrastructure',
+        href: '/services?category=cloud',
+        icon: <Cpu className="w-4 h-4" />,
+        description: 'Scalable cloud solutions',
+        neonColor: 'shadow-cyan-400/50',
+        category: 'cloud'
       },
       {
-        label: 'Enterprise Solutions',
-        href: '/services?category=enterprise',
-        icon: <Building className="w-4 h-4" />,
-        description: 'Business transformation services',
+        label: 'Business Intelligence',
+        href: '/services?category=bi',
+        icon: <Database className="w-4 h-4" />,
+        description: 'Data-driven insights and analytics',
         neonColor: 'shadow-green-400/50',
-        category: 'enterprise'
+        category: 'bi'
+      },
+      {
+        label: 'Micro SAAS',
+        href: '/services?category=saas',
+        icon: <Rocket className="w-4 h-4" />,
+        description: 'Revolutionary micro SAAS solutions',
+        featured: true,
+        neonColor: 'shadow-orange-400/50',
+        category: 'saas'
       }
     ]
   },
@@ -276,30 +223,44 @@ const navigationItems: NavigationItem[] = [
   {
     label: 'About',
     href: '/about',
-    icon: <Users className="w-4 h-4" />,
-    description: 'Learn about our company',
-    neonColor: 'shadow-purple-400/50',
-    category: 'main'
-  },
-  {
-    label: 'Contact',
-    href: '/contact',
-    icon: <MessageCircle className="w-4 h-4" />,
-    description: 'Get in touch with us',
-    neonColor: 'shadow-pink-400/50',
-    category: 'main'
+    icon: <Building className="w-4 h-4" />,
+    description: 'About Zion Tech Group',
+    neonColor: 'shadow-indigo-400/50',
+    category: 'main',
+    children: [
+      {
+        label: 'About Us',
+        href: '/about',
+        icon: <Users className="w-4 h-4" />,
+        description: 'Our story and mission',
+        neonColor: 'shadow-blue-400/50'
+      },
+      {
+        label: 'Team',
+        href: '/team',
+        icon: <Users className="w-4 h-4" />,
+        description: 'Meet our experts',
+        neonColor: 'shadow-green-400/50'
+      },
+      {
+        label: 'Careers',
+        href: '/careers',
+        icon: <Users className="w-4 h-4" />,
+        description: 'Join our team',
+        neonColor: 'shadow-orange-400/50'
+      },
+      {
+        label: 'Contact',
+        href: '/contact',
+        icon: <ExternalLink className="w-4 h-4" />,
+        description: 'Get in touch',
+        neonColor: 'shadow-cyan-400/50'
+      }
+    ]
   }
 ];
 
-interface UltraFuturisticNavigation2045Props {
-  sidebarOpen: boolean;
-  setSidebarOpen: (open: boolean) => void;
-}
-
-const UltraFuturisticNavigation2045: React.FC<UltraFuturisticNavigation2045Props> = ({ 
-  sidebarOpen, 
-  setSidebarOpen 
-}) => {
+const UltraFuturisticNavigation2045: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
   const [isSearchOpen, setIsSearchOpen] = useState(false);
@@ -353,20 +314,8 @@ const UltraFuturisticNavigation2045: React.FC = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // Close dropdowns when clicking outside
-  useEffect(() => {
-    const handleClickOutside = (event: MouseEvent) => {
-      if (navRef.current && !navRef.current.contains(event.target as Node)) {
-        setActiveDropdown(null);
-      }
-    };
-
-    document.addEventListener('mousedown', handleClickOutside);
-    return () => document.removeEventListener('mousedown', handleClickOutside);
-  }, []);
-
-  // Close search when clicking outside
-  useEffect(() => {
+  // Handle click outside search
+  React.useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
       if (searchRef.current && !searchRef.current.contains(event.target as Node)) {
         setIsSearchOpen(false);
@@ -393,7 +342,7 @@ const UltraFuturisticNavigation2045: React.FC = () => {
   React.useEffect(() => {
     setSidebarOpen(false);
     setActiveDropdown(null);
-  }, [router.asPath, setSidebarOpen]);
+  }, [router.asPath]);
 
   const toggleMenu = useCallback(() => {
     setIsOpen(!isOpen);
@@ -429,8 +378,74 @@ const UltraFuturisticNavigation2045: React.FC = () => {
     }
   }, [isSearchOpen]);
 
-  // Memoize navigation items to prevent unnecessary re-renders
-  const memoizedNavigationItems = useMemo(() => navigationItems, []);
+  const renderDropdown = useCallback((item: NavigationItem) => {
+    if (!item.children) return null;
+
+    return (
+      <AnimatePresence>
+        {activeDropdown === item.label && (
+          <motion.div
+            initial={{ opacity: 0, y: 10, scale: 0.95 }}
+            animate={{ opacity: 1, y: 0, scale: 1 }}
+            exit={{ opacity: 0, y: 10, scale: 0.95 }}
+            transition={{ duration: 0.2 }}
+            className="absolute top-full left-0 mt-2 w-80 bg-gray-900/95 backdrop-blur-xl border border-gray-700/50 rounded-2xl shadow-2xl shadow-black/50 z-50 overflow-hidden"
+          >
+            <div className="p-6">
+              <div className="mb-4">
+                <h3 className="text-lg font-semibold text-white mb-2">{item.label}</h3>
+                <p className="text-gray-400 text-sm">{item.description}</p>
+              </div>
+              
+              <div className="space-y-3">
+                {item.children.map((child) => (
+                  <Link
+                    key={child.href}
+                    href={child.href}
+                    className={`group flex items-start space-x-3 p-3 rounded-xl transition-all duration-200 hover:bg-gray-800/50 ${
+                      isActiveRoute(child.href) ? 'bg-cyan-500/20 border border-cyan-500/30' : ''
+                    }`}
+                  >
+                    <div className={`w-8 h-8 rounded-lg flex items-center justify-center transition-all duration-200 group-hover:scale-110 ${
+                      child.featured 
+                        ? 'bg-gradient-to-br from-purple-500 to-pink-600' 
+                        : 'bg-gray-700/50 group-hover:bg-gray-600/50'
+                    }`}>
+                      {child.icon}
+                    </div>
+                    <div className="flex-1 min-w-0">
+                      <div className="flex items-center space-x-2">
+                        <h4 className="text-white font-medium group-hover:text-cyan-400 transition-colors">
+                          {child.label}
+                        </h4>
+                        {child.badge && (
+                          <span className="px-2 py-1 bg-gradient-to-r from-cyan-500 to-blue-600 text-white text-xs font-bold rounded-full">
+                            {child.badge}
+                          </span>
+                        )}
+                      </div>
+                      <p className="text-gray-400 text-sm mt-1">{child.description}</p>
+                    </div>
+                    <ChevronRight className="w-4 h-4 text-gray-500 group-hover:text-cyan-400 transition-colors" />
+                  </Link>
+                ))}
+              </div>
+              
+              <div className="mt-4 pt-4 border-t border-gray-700/50">
+                <Link
+                  href={item.href}
+                  className="flex items-center justify-center space-x-2 w-full px-4 py-2 bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-medium rounded-xl hover:from-cyan-600 hover:to-blue-700 transition-all duration-200 transform hover:scale-105"
+                >
+                  <span>View All {item.label}</span>
+                  <ExternalLink className="w-4 h-4" />
+                </Link>
+              </div>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    );
+  }, [activeDropdown, isActiveRoute]);
 
   return (
     <>

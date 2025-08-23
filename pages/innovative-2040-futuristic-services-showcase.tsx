@@ -61,49 +61,6 @@ interface Service {
   variant?: string;
 }
 
-// Type guard to check if service has color property
-function hasColor(service: any): service is Service & { color: string } {
-  return 'color' in service && typeof service.color === 'string';
-}
-
-// Type guard to check if service has icon property
-function hasIcon(service: any): service is Service & { icon: string } {
-  return 'icon' in service && typeof service.icon === 'string';
-}
-
-// Helper function to get service icon or default
-function getServiceIcon(service: any): string {
-  if (hasIcon(service)) {
-    return service.icon;
-  }
-  // Return default icon based on category
-  if (service.category?.toLowerCase().includes('ai')) return '🤖';
-  if (service.category?.toLowerCase().includes('quantum')) return '⚛️';
-  if (service.category?.toLowerCase().includes('cyber')) return '🔒';
-  if (service.category?.toLowerCase().includes('space')) return '🚀';
-  if (service.category?.toLowerCase().includes('business')) return '💼';
-  return '💡';
-}
-
-// Helper function to get service period or default
-function getServicePeriod(service: any): string {
-  if ('period' in service && service.period) {
-    return service.period;
-  }
-  return '/month';
-}
-
-// Helper function to get service tagline or description
-function getServiceTagline(service: any): string {
-  if ('tagline' in service && service.tagline) {
-    return service.tagline;
-  }
-  if ('description' in service && service.description) {
-    return service.description.substring(0, 100) + (service.description.length > 100 ? '...' : '');
-  }
-  return 'Revolutionary service';
-}
-
 const Innovative2040FuturisticServicesShowcase: React.FC = () => {
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedCategory, setSelectedCategory] = useState('All');
@@ -397,8 +354,8 @@ const Innovative2040FuturisticServicesShowcase: React.FC = () => {
                     )}
 
                     {/* Service Icon */}
-                    <div className="w-16 h-16 bg-gradient-to-r from-cyan-500 to-blue-600 rounded-2xl flex items-center justify-center text-3xl mb-4 group-hover:scale-110 transition-transform duration-300">
-                      🚀
+                    <div className={`w-16 h-16 bg-gradient-to-r ${service.color || 'from-blue-600 to-purple-700'} rounded-2xl flex items-center justify-center text-3xl mb-4 group-hover:scale-110 transition-transform duration-300`}>
+                      {service.icon}
                     </div>
 
                     {/* Service Info */}
@@ -412,9 +369,9 @@ const Innovative2040FuturisticServicesShowcase: React.FC = () => {
                     {/* Price */}
                     <div className="flex items-center justify-between mb-4">
                       <div className="text-2xl font-bold text-cyan-400">
-                        {renderPrice(service.price)}
+                        {typeof service.price === 'string' ? service.price : `$${service.price.monthly}/${service.price.currency}`}
                         <span className="text-sm text-gray-400">
-                          /month
+                          {typeof service.price === 'string' ? (service as any).period || '/month' : '/month'}
                         </span>
                       </div>
                       <div className="flex items-center space-x-1 text-yellow-400">
@@ -487,8 +444,8 @@ const Innovative2040FuturisticServicesShowcase: React.FC = () => {
                   >
                     <div className="flex items-start space-x-6">
                       {/* Service Icon */}
-                      <div className="w-20 h-20 bg-gradient-to-r from-cyan-500 to-blue-600 rounded-2xl flex items-center justify-center text-4xl group-hover:scale-110 transition-transform duration-300 flex-shrink-0">
-                        🚀
+                      <div className={`w-20 h-20 bg-gradient-to-r ${service.color || 'from-blue-600 to-purple-700'} rounded-2xl flex items-center justify-center text-4xl group-hover:scale-110 transition-transform duration-300 flex-shrink-0`}>
+                        {service.icon}
                       </div>
 
                       {/* Service Details */}
@@ -505,7 +462,11 @@ const Innovative2040FuturisticServicesShowcase: React.FC = () => {
                               <span className="inline-block px-3 py-1 bg-gray-700 text-cyan-400 text-sm font-medium rounded-full">
                                 {service.category}
                               </span>
-
+                              {service.popular && (
+                                <span className="inline-block px-3 py-1 bg-gradient-to-r from-yellow-500 to-orange-500 text-white text-sm font-bold rounded-full">
+                                  Popular
+                                </span>
+                              )}
                             </div>
                           </div>
                           <div className="text-right">

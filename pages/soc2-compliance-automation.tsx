@@ -1,8 +1,11 @@
 import React from 'react';
-import Link from 'next/link';
 import SEO from '../components/SEO';
+import Link from 'next/link';
 
-export default function SOC2ComplianceAutomation() {
+export default function SOC2ComplianceAutomationPage() {
+	const title = 'SOC 2 Compliance Automation — Zion Tech Group';
+	const description = 'Automate evidence collection, controls mapping, and auditor-ready reports. Reduce audit time and ensure continuous compliance.';
+
 	return (
 		<div className="relative isolate">
 			<SEO title="SOC 2 Compliance Automation" description="Automate SOC 2 readiness with continuous controls, evidence pipelines, vendor risk and audit workspace." />

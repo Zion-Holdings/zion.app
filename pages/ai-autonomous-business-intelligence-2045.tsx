@@ -1,366 +1,194 @@
 import React from 'react';
-import Layout from '../components/layout/Layout';
 import { motion } from 'framer-motion';
-import { 
-  Brain, 
-  TrendingUp, 
-  Shield, 
-  Zap, 
-  Users, 
-  Globe, 
-  Award, 
-  CheckCircle,
-  ArrowRight,
-  Star,
-  Sparkles,
-  Cpu,
-  Database,
-  BarChart3,
-  Target,
-  Rocket,
-  Infinity,
-  Eye,
-  Heart,
-  Zap as ZapIcon,
-  MessageCircle
-} from 'lucide-react';
+import { BarChart3, Zap, Eye, Heart, Globe, ArrowRight, Shield, Cpu, Database, Cloud, Users, Lock, Star, Rocket, Atom, Network, Server, Globe2 } from 'lucide-react';
+import Link from 'next/link';
 
 const AIAutonomousBusinessIntelligence2045: React.FC = () => {
   const features = [
     {
-      icon: Brain,
-      title: "Fully Autonomous Decision-Making",
-      description: "AI consciousness that makes strategic business decisions without human intervention",
-      color: "from-purple-500 to-pink-500"
-    },
-    {
-      icon: TrendingUp,
-      title: "Real-time Strategy Generation",
-      description: "Continuous business strategy optimization based on live market data and AI consciousness",
-      color: "from-cyan-500 to-blue-500"
-    },
-    {
-      icon: Shield,
-      title: "AI Consciousness Integration",
-      description: "Advanced emotional intelligence and self-awareness for human-like business understanding",
-      color: "from-emerald-500 to-teal-500"
+      icon: BarChart3,
+      title: 'AI Autonomous',
+      description: 'Revolutionary ai & business with advanced capabilities',
+      color: 'from-emerald-500 to-teal-500'
     },
     {
       icon: Zap,
-      title: "Predictive Market Analysis",
-      description: "Quantum-level market predictions using consciousness-enhanced algorithms",
-      color: "from-yellow-500 to-orange-500"
+      title: 'Lightning Fast',
+      description: 'Unprecedented speed and performance for ai & business',
+      color: 'from-yellow-500 to-orange-500'
     },
     {
-      icon: Users,
-      title: "Autonomous Risk Assessment",
-      description: "Intelligent risk evaluation and mitigation strategies",
-      color: "from-red-500 to-pink-500"
+      icon: Shield,
+      title: 'Advanced Security',
+      description: 'Enterprise-grade security for ai & business',
+      color: 'from-red-500 to-orange-500'
     },
     {
       icon: Globe,
-      title: "Multi-dimensional Processing",
-      description: "Consciousness-based analysis across all business dimensions",
-      color: "from-indigo-500 to-purple-500"
+      title: 'Global Scale',
+      description: 'Worldwide deployment and scalability for ai & business',
+      color: 'from-green-500 to-emerald-500'
     }
   ];
 
-  const benefits = [
-    "100% autonomous business operations",
-    "24/7 strategic decision making",
-    "Zero human error in analysis",
-    "Real-time market adaptation",
-    "Predictive business insights",
-    "Automated risk mitigation",
-    "Scalable intelligence operations",
-    "Future-proof AI technology"
-  ];
-
-  const useCases = [
-    "Enterprise corporations",
-    "Financial institutions",
-    "Healthcare organizations",
-    "Manufacturing companies",
-    "Retail chains",
-    "Technology companies",
-    "Consulting firms",
-    "Government agencies"
-  ];
-
-  const pricing = [
-    {
-      name: "Starter",
-      price: "$1,299",
-      period: "/month",
-      features: [
-        "Basic autonomous decision-making",
-        "AI consciousness integration",
-        "Real-time business insights",
-        "Email support",
-        "Basic analytics dashboard"
-      ],
-      popular: false,
-      color: "from-cyan-500 to-blue-500"
-    },
-    {
-      name: "Professional",
-      price: "$2,999",
-      period: "/month",
-      features: [
-        "Advanced autonomous operations",
-        "Full consciousness integration",
-        "Predictive market analysis",
-        "Priority support",
-        "Advanced analytics suite",
-        "API access",
-        "Custom integrations"
-      ],
-      popular: true,
-      color: "from-purple-500 to-pink-500"
-    },
-    {
-      name: "Enterprise",
-      price: "$7,999",
-      period: "/month",
-      features: [
-        "Full autonomous business intelligence",
-        "Quantum-level consciousness",
-        "Custom AI training",
-        "Dedicated support team",
-        "White-label solutions",
-        "Advanced security features",
-        "Custom development",
-        "SLA guarantees"
-      ],
-      popular: false,
-      color: "from-emerald-500 to-teal-500"
-    }
+  const capabilities = [
+    'Advanced ai & business automation',
+    'Real-time monitoring and analytics',
+    'Intelligent optimization algorithms',
+    'Scalable architecture design',
+    'Enterprise integration capabilities',
+    'Advanced security protocols',
+    'Performance optimization tools',
+    'Cross-platform compatibility'
   ];
 
   return (
-    <Layout>
-      <div className="min-h-screen bg-black text-white">
-        {/* Hero Section */}
-        <section className="relative overflow-hidden py-20 px-4 sm:px-6 lg:px-8">
-          <div className="absolute inset-0 bg-animated-gradient opacity-50"></div>
-          <div className="relative max-w-7xl mx-auto text-center">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-            >
-              <div className="inline-flex items-center px-4 py-2 rounded-full bg-gradient-to-r from-purple-500/20 to-pink-500/20 border border-purple-500/30 mb-6">
-                <Brain className="w-5 h-5 mr-2 text-purple-400" />
-                <span className="text-purple-300">AI Consciousness 2045</span>
-              </div>
-              
-              <h1 className="text-5xl md:text-7xl font-bold mb-6">
-                <span className="text-gradient">AI Autonomous Business Intelligence</span>
-                <br />
-                <span className="text-white">Platform 2045</span>
-              </h1>
-              
-              <p className="text-xl md:text-2xl text-gray-300 mb-8 max-w-4xl mx-auto">
-                Revolutionary AI platform that autonomously analyzes business data, generates insights, 
-                and makes strategic decisions without human oversight, featuring advanced consciousness 
-                and emotional intelligence.
-              </p>
-              
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <button className="btn-futuristic btn-futuristic-secondary">
-                  <span>Get Started</span>
-                  <ArrowRight className="w-5 h-5 ml-2" />
-                </button>
-                <button className="btn-futuristic btn-futuristic-success">
-                  <span>Watch Demo</span>
-                  <Zap className="w-5 h-5 ml-2" />
-                </button>
-              </div>
-            </motion.div>
-          </div>
-        </section>
-
-        {/* Features Section */}
-        <section className="py-20 px-4 sm:px-6 lg:px-8">
-          <div className="max-w-7xl mx-auto">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-              className="text-center mb-16"
-            >
-              <h2 className="text-4xl md:text-5xl font-bold mb-6">
-                <span className="text-gradient">Revolutionary Features</span>
-              </h2>
-              <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-                Experience the future of business intelligence with AI consciousness and autonomous decision-making
-              </p>
-            </motion.div>
+    <div className="min-h-screen bg-black text-white">
+      {/* Hero Section */}
+      <section className="relative pt-32 pb-20 overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-br from-gray-900/20 via-emerald-900/20 to-teal-900/20"></div>
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(59,130,246,0.1),transparent_50%)]"></div>
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_80%,rgba(6,182,212,0.1),transparent_50%)]"></div>
+        
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            className="text-center"
+          >
+            <div className="inline-flex items-center px-4 py-2 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-sm font-medium mb-6">
+              <BarChart3 className="w-4 h-4 mr-2" />
+              Revolutionary AI & Business 2045
+            </div>
             
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {features.map((feature, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: index * 0.1 }}
-                  className="card-futuristic group"
-                >
-                  <div className={`w-16 h-16 rounded-2xl bg-gradient-to-r ${feature.color} p-4 mb-6 group-hover:scale-110 transition-transform duration-300`}>
+            <h1 className="text-5xl md:text-7xl font-bold bg-gradient-to-r from-emerald-400 via-teal-400 to-undefined-400 bg-clip-text text-transparent mb-6">
+              AI Autonomous Business Intelligence 2045
+            </h1>
+            
+            <p className="text-xl md:text-2xl text-gray-300 max-w-4xl mx-auto mb-8 leading-relaxed">
+              Revolutionary AI-powered business intelligence platform with autonomous decision-making capabilities
+            </p>
+            
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Link href="/contact" className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-emerald-500 to-teal-500 rounded-lg font-semibold text-white hover:from-emerald-600 hover:to-teal-600 transition-all duration-300 transform hover:scale-105">
+                Get Started
+                <ArrowRight className="w-5 h-5 ml-2" />
+              </Link>
+              <Link href="/services" className="inline-flex items-center px-8 py-4 border border-emerald-500/30 rounded-lg font-semibold text-emerald-400 hover:bg-emerald-500/10 transition-all duration-300">
+                Learn More
+              </Link>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Features Section */}
+      <section className="py-20 relative">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+              Revolutionary Features
+            </h2>
+            <p className="text-xl text-gray-400 max-w-3xl mx-auto">
+              Experience the future of ai & business with our groundbreaking platform
+            </p>
+          </motion.div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {features.map((feature, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+                viewport={{ once: true }}
+                className="relative group"
+              >
+                <div className="absolute inset-0 bg-gradient-to-br from-emerald-500/10 to-teal-500/10 rounded-2xl blur-xl group-hover:blur-2xl transition-all duration-500"></div>
+                <div className="relative bg-gray-900/50 backdrop-blur-xl border border-emerald-500/20 rounded-2xl p-8 h-full hover:border-emerald-500/40 transition-all duration-300">
+                  <div className={`inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-gradient-to-r ${feature.color} mb-6`}>
                     <feature.icon className="w-8 h-8 text-white" />
                   </div>
-                  <h3 className="text-xl font-bold mb-4 text-white">{feature.title}</h3>
-                  <p className="text-gray-300 leading-relaxed">{feature.description}</p>
-                </motion.div>
-              ))}
-            </div>
+                  <h3 className="text-xl font-bold text-white mb-4">{feature.title}</h3>
+                  <p className="text-gray-400 leading-relaxed">{feature.description}</p>
+                </div>
+              </motion.div>
+            ))}
           </div>
-        </section>
+        </div>
+      </section>
 
-        {/* Benefits Section */}
-        <section className="py-20 px-4 sm:px-6 lg:px-8 bg-animated-neon">
-          <div className="max-w-7xl mx-auto">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-              className="text-center mb-16"
-            >
-              <h2 className="text-4xl md:text-5xl font-bold mb-6">
-                <span className="text-gradient">Transform Your Business</span>
-              </h2>
-              <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-                Unlock unprecedented business intelligence with autonomous AI consciousness
-              </p>
-            </motion.div>
-            
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+      {/* Capabilities Section */}
+      <section className="py-20 relative bg-gray-900/30">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+              Advanced Capabilities
+            </h2>
+            <p className="text-xl text-gray-400 max-w-3xl mx-auto">
+              Our platform delivers unprecedented capabilities that redefine ai & business
+            </p>
+          </motion.div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+            {capabilities.map((capability, index) => (
               <motion.div
+                key={index}
                 initial={{ opacity: 0, x: -20 }}
                 whileInView={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.8 }}
-                className="space-y-6"
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+                viewport={{ once: true }}
+                className="flex items-center space-x-4 p-4 rounded-lg bg-gray-800/50 border border-emerald-500/20 hover:border-emerald-500/40 transition-all duration-300"
               >
-                <h3 className="text-2xl font-bold text-white mb-6">Key Benefits</h3>
-                <div className="space-y-4">
-                  {benefits.map((benefit, index) => (
-                    <div key={index} className="flex items-start space-x-3">
-                      <CheckCircle className="w-6 h-6 text-emerald-400 mt-1 flex-shrink-0" />
-                      <span className="text-gray-300">{benefit}</span>
-                    </div>
-                  ))}
-                </div>
+                <div className="w-2 h-2 bg-emerald-500 rounded-full"></div>
+                <span className="text-gray-300">{capability}</span>
               </motion.div>
-              
-              <motion.div
-                initial={{ opacity: 0, x: 20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.8 }}
-                className="space-y-6"
-              >
-                <h3 className="text-2xl font-bold text-white mb-6">Use Cases</h3>
-                <div className="space-y-4">
-                  {useCases.map((useCase, index) => (
-                    <div key={index} className="flex items-start space-x-3">
-                      <Target className="w-6 h-6 text-blue-400 mt-1 flex-shrink-0" />
-                      <span className="text-gray-300">{useCase}</span>
-                    </div>
-                  ))}
-                </div>
-              </motion.div>
-            </div>
+            ))}
           </div>
-        </section>
+        </div>
+      </section>
 
-        {/* Pricing Section */}
-        <section className="py-20 px-4 sm:px-6 lg:px-8">
-          <div className="max-w-7xl mx-auto">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-              className="text-center mb-16"
-            >
-              <h2 className="text-4xl md:text-5xl font-bold mb-6">
-                <span className="text-gradient">Pricing Plans</span>
-              </h2>
-              <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-                Choose the perfect plan for your autonomous business intelligence needs
-              </p>
-            </motion.div>
-            
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              {pricing.map((plan, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: index * 0.1 }}
-                  className={`card-futuristic relative ${plan.popular ? 'ring-2 ring-purple-500 scale-105' : ''}`}
-                >
-                  {plan.popular && (
-                    <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
-                      <span className="bg-gradient-to-r from-purple-500 to-pink-500 text-white px-4 py-2 rounded-full text-sm font-semibold">
-                        Most Popular
-                      </span>
-                    </div>
-                  )}
-                  
-                  <div className="text-center mb-8">
-                    <h3 className="text-2xl font-bold text-white mb-4">{plan.name}</h3>
-                    <div className="mb-6">
-                      <span className="text-4xl font-bold text-white">{plan.price}</span>
-                      <span className="text-gray-400">{plan.period}</span>
-                    </div>
-                  </div>
-                  
-                  <ul className="space-y-4 mb-8">
-                    {plan.features.map((feature, featureIndex) => (
-                      <li key={featureIndex} className="flex items-start space-x-3">
-                        <CheckCircle className="w-5 h-5 text-emerald-400 mt-1 flex-shrink-0" />
-                        <span className="text-gray-300 text-sm">{feature}</span>
-                      </li>
-                    ))}
-                  </ul>
-                  
-                  <button className={`w-full btn-futuristic bg-gradient-to-r ${plan.color}`}>
-                    Get Started
-                  </button>
-                </motion.div>
-              ))}
+      {/* CTA Section */}
+      <section className="py-20 relative">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+          >
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+              Ready to Experience the Future?
+            </h2>
+            <p className="text-xl text-gray-400 mb-8">
+              Join us in the next evolution of ai & business technology
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Link href="/contact" className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-emerald-500 to-teal-500 rounded-lg font-semibold text-white hover:from-emerald-600 hover:to-teal-600 transition-all duration-300 transform hover:scale-105">
+                Start Your Journey
+                <Rocket className="w-5 h-5 ml-2" />
+              </Link>
+              <Link href="/services" className="inline-flex items-center px-8 py-4 border border-emerald-500/30 rounded-lg font-semibold text-emerald-400 hover:bg-emerald-500/10 transition-all duration-300">
+                Explore Services
+              </Link>
             </div>
-          </div>
-        </section>
-
-        {/* CTA Section */}
-        <section className="py-20 px-4 sm:px-6 lg:px-8 bg-animated-gradient">
-          <div className="max-w-4xl mx-auto text-center">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-            >
-              <h2 className="text-4xl md:text-5xl font-bold mb-6">
-                <span className="text-gradient">Ready to Transform Your Business?</span>
-              </h2>
-              <p className="text-xl text-gray-300 mb-8">
-                Join the future of autonomous business intelligence with AI consciousness
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <button className="btn-futuristic btn-futuristic-secondary">
-                  <span>Start Free Trial</span>
-                  <Rocket className="w-5 h-5 ml-2" />
-                </button>
-                <button className="btn-futuristic btn-futuristic-success">
-                  <span>Contact Sales</span>
-                  <MessageCircle className="w-5 h-5 ml-2" />
-                </button>
-              </div>
-            </motion.div>
-          </div>
-        </section>
-      </div>
-    </Layout>
+          </motion.div>
+        </div>
+      </section>
+    </div>
   );
 };
 

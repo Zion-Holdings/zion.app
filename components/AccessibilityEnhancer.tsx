@@ -31,19 +31,20 @@ const AccessibilityEnhancer: React.FC<AccessibilityEnhancerProps> = ({
   autoOptimize = true 
 }) => {
   const [isVisible, setIsVisible] = useState(false);
-  const [activeFeatures, setActiveFeatures] = useState<AccessibilityFeature[]>([]);
-  const [report, setReport] = useState<AccessibilityReport | null>(null);
-  const [isAnalyzing, setIsAnalyzing] = useState(false);
-  const [fontSize, setFontSize] = useState(16);
-  const [contrastMode, setContrastMode] = useState(false);
-  const [reducedMotion, setReducedMotion] = useState(false);
-  const [highContrast, setHighContrast] = useState(false);
-  const [focusIndicator, setFocusIndicator] = useState(true);
-  const [skipLinks, setSkipLinks] = useState(true);
-  const [announcements, setAnnouncements] = useState<string[]>([]);
-  
-  const focusableElementsRef = useRef<HTMLElement[]>([]);
-  const liveRegionRef = useRef<HTMLDivElement>(null);
+  const [isExpanded, setIsExpanded] = useState(false);
+  const [settings, setSettings] = useState<AccessibilitySettings>({
+    highContrast: false,
+    largeText: false,
+    reducedMotion: false,
+    highlighter: false,
+    fontSize: 16,
+    colorScheme: 'auto',
+    focusIndicator: true,
+    screenReader: false
+  });
+
+  const [currentFocus, setCurrentFocus] = useState<HTMLElement | null>(null);
+  const [focusHistory, setFocusHistory] = useState<HTMLElement[]>([]);
 
   // Initialize accessibility features
   const initializeFeatures = useCallback(() => {
@@ -114,176 +115,70 @@ const AccessibilityEnhancer: React.FC<AccessibilityEnhancerProps> = ({
       }
     ];
     
-    setActiveFeatures(features);
-  }, []);
-
-  // Enhanced accessibility analysis
-  const analyzeAccessibility = useCallback(async () => {
-    setIsAnalyzing(true);
-    
-    try {
-      const issues: string[] = [];
-      const warnings: string[] = [];
-      const suggestions: string[] = [];
-      let score = 100;
-
-      // Check for missing alt text
-      const images = document.querySelectorAll('img');
-      const imagesWithoutAlt = Array.from(images).filter(img => !img.alt);
-      if (imagesWithoutAlt.length > 0) {
-        issues.push(`${imagesWithoutAlt.length} images missing alt text`);
-        score -= 10;
-      }
-
-      // Check for proper heading structure
-      const headings = document.querySelectorAll('h1, h2, h3, h4, h5, h6');
-      const headingLevels = Array.from(headings).map(h => parseInt(h.tagName.charAt(1)));
-      let previousLevel = 0;
-      for (const level of headingLevels) {
-        if (level - previousLevel > 1) {
-          warnings.push('Heading levels should not be skipped');
-          score -= 5;
-          break;
-        }
-        previousLevel = level;
-      }
-
-      // Check for form labels
-      const formInputs = document.querySelectorAll('input, select, textarea');
-      const inputsWithoutLabels = Array.from(formInputs).filter(input => {
-        const id = input.getAttribute('id');
-        const label = document.querySelector(`label[for="${id}"]`);
-        const ariaLabel = input.getAttribute('aria-label');
-        return !label && !ariaLabel;
-      });
-      if (inputsWithoutLabels.length > 0) {
-        issues.push(`${inputsWithoutLabels.length} form inputs missing labels`);
-        score -= 15;
-      }
-
-      // Check for sufficient color contrast
-      if (!contrastMode) {
-        suggestions.push('Enable high contrast mode for better visibility');
-      }
-
-      // Check for keyboard navigation
-      const focusableElements = document.querySelectorAll(
-        'a, button, input, select, textarea, [tabindex]:not([tabindex="-1"])'
-      );
-      focusableElementsRef.current = Array.from(focusableElements) as HTMLElement[];
-      
-      if (focusableElements.length === 0) {
-        warnings.push('No focusable elements found');
-        score -= 10;
-      }
-
-      // Check for ARIA landmarks
-      const landmarks = document.querySelectorAll('main, nav, aside, header, footer, [role="main"], [role="navigation"], [role="complementary"], [role="banner"], [role="contentinfo"]');
-      if (landmarks.length < 3) {
-        suggestions.push('Add more ARIA landmarks for better navigation');
-        score -= 5;
-      }
-
-      // Check for language declaration
-      const html = document.documentElement;
-      if (!html.lang) {
-        issues.push('HTML language attribute not set');
-        score -= 5;
-      }
-
-      // Check for skip links
-      if (!skipLinks) {
-        suggestions.push('Add skip links for keyboard users');
-        score -= 5;
-      }
-
-      // Check for focus management
-      if (!focusIndicator) {
-        warnings.push('Focus indicators are disabled');
-        score -= 10;
-      }
-
-      score = Math.max(0, score);
-
-      const newReport: AccessibilityReport = {
-        score,
-        issues,
-        warnings,
-        suggestions
-      };
-
-      setReport(newReport);
-
-      // Auto-optimize if enabled
-      if (autoOptimize) {
-        applyAccessibilityOptimizations(newReport);
-      }
-    } catch (error) {
-      console.warn('Accessibility analysis failed:', error);
-    } finally {
-      setIsAnalyzing(false);
-    }
-  }, [contrastMode, skipLinks, focusIndicator, autoOptimize]);
-
-  // Apply accessibility optimizations
-  const applyAccessibilityOptimizations = useCallback((currentReport: AccessibilityReport) => {
-    // Apply high contrast if needed
-    if (currentReport.score < 80 && !contrastMode) {
-      setContrastMode(true);
-      announceChange('High contrast mode enabled for better visibility');
+    // High contrast
+    if (settings.highContrast) {
+      root.style.setProperty('--bg-primary', '#000000');
+      root.style.setProperty('--bg-secondary', '#1a1a1a');
+      root.style.setProperty('--text-primary', '#ffffff');
+      root.style.setProperty('--text-secondary', '#e5e5e5');
+      root.style.setProperty('--accent-color', '#ffff00');
+      root.style.setProperty('--border-color', '#ffff00');
+    } else {
+      root.style.removeProperty('--bg-primary');
+      root.style.removeProperty('--bg-secondary');
+      root.style.removeProperty('--text-primary');
+      root.style.removeProperty('--text-secondary');
+      root.style.removeProperty('--accent-color');
+      root.style.removeProperty('--border-color');
     }
 
-    // Add missing alt text placeholders
-    const images = document.querySelectorAll('img:not([alt])');
-    images.forEach(img => {
-      const imgElement = img as HTMLImageElement;
-      if (!imgElement.alt) {
-        imgElement.alt = 'Image description needed';
-        imgElement.setAttribute('data-accessibility-fix', 'true');
-      }
-    });
-
-    // Add missing form labels
-    const formInputs = document.querySelectorAll('input:not([aria-label]):not([id])');
-    formInputs.forEach((input, index) => {
-      const id = `input-${index}`;
-      input.setAttribute('id', id);
-      input.setAttribute('aria-label', 'Form input');
-    });
-
-    // Ensure focus indicators
-    if (!focusIndicator) {
-      setFocusIndicator(true);
-      announceChange('Focus indicators enabled');
-    }
-  }, [contrastMode, focusIndicator]);
-
-  // Announce changes to screen readers
-  const announceChange = useCallback((message: string) => {
-    setAnnouncements(prev => [...prev, message]);
-    
-    if (liveRegionRef.current) {
-      liveRegionRef.current.textContent = message;
+    // Large text
+    if (settings.largeText) {
+      root.style.fontSize = '18px';
+      root.style.setProperty('--text-scale', '1.2');
+    } else {
+      root.style.fontSize = '16px';
+      root.style.setProperty('--text-scale', '1');
     }
 
-    // Clear announcement after 3 seconds
-    setTimeout(() => {
-      setAnnouncements(prev => prev.filter(announcement => announcement !== message));
-    }, 3000);
-  }, []);
+    // Reduced motion
+    if (settings.reducedMotion) {
+      root.style.setProperty('--reduced-motion', 'reduce');
+    } else {
+      root.style.removeProperty('--reduced-motion');
+    }
 
-  // Enhanced keyboard navigation
-  const setupKeyboardNavigation = useCallback(() => {
-    if (typeof window === 'undefined') return;
+    // Focus indicator
+    if (settings.focusIndicator) {
+      root.style.setProperty('--focus-outline', '3px solid #0066cc');
+    } else {
+      root.style.setProperty('--focus-outline', 'none');
+    }
 
-    const handleKeyDown = (e: KeyboardEvent) => {
-      // Skip to main content
-      if (e.key === 'Tab' && e.altKey) {
-        e.preventDefault();
-        const main = document.querySelector('main') || document.querySelector('[role="main"]');
-        if (main) {
-          (main as HTMLElement).focus();
-          announceChange('Skipped to main content');
+    // Color scheme
+    if (settings.colorScheme === 'light') {
+      root.classList.remove('dark');
+      root.classList.add('light');
+    } else if (settings.colorScheme === 'dark') {
+      root.classList.remove('light');
+      root.classList.add('dark');
+    } else {
+      root.classList.remove('light', 'dark');
+    }
+  }, [settings]);
+
+  // Track focus changes
+  useEffect(() => {
+    const handleFocusChange = (event: Event) => {
+      const target = event.target as HTMLElement;
+      if (target && target !== currentFocus) {
+        setCurrentFocus(target);
+        setFocusHistory(prev => [target, ...prev.slice(0, 9)]);
+        
+        // Add focus indicator
+        if (settings.focusIndicator) {
+          target.style.outline = '3px solid #0066cc';
+          target.style.outlineOffset = '2px';
         }
       }
 

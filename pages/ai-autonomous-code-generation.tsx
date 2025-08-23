@@ -156,7 +156,7 @@ const AIAutonomousCodeGeneration: React.FC = () => {
                 <h3 className="text-2xl font-bold text-white mb-4">Supported Technologies</h3>
                 <div className="grid grid-cols-2 gap-4">
                   {[
-                    'React/Next.js', 'Node.js/Express', 'Python/Django', 'Java/Spring',
+                    'React/ArrowRight.js', 'Node.js/Express', 'Python/Django', 'Java/Spring',
                     'Go/Gin', 'Rust/Actix', 'C#/.NET', 'Ruby/Rails',
                     'PostgreSQL', 'MongoDB', 'Redis', 'Docker',
                     'Kubernetes', 'AWS/Azure/GCP', 'GraphQL', 'REST APIs'

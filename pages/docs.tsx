@@ -1,14 +1,38 @@
 import React from 'react';
 import Layout from '../components/layout/Layout';
 import { motion } from 'framer-motion';
-import {
-  BookOpen, Code, FileText, ArrowRight, Search, Filter,
-  Star, Download, ExternalLink, Github, Terminal, Database,
-  Cpu, Brain, Atom, Shield, Rocket, Globe, Zap, Clock
+import { 
+  BookOpen, 
+  Code, 
+  Database, 
+  Shield, 
+  Cloud, 
+  Brain, 
+  Atom,
+  Rocket,
+  Search,
+  Download,
+  ExternalLink,
+  ChevronRight,
+  FileText,
+  Video,
+  Users,
+  Globe,
+  Zap,
+  Lightbulb,
+  Star,
+  ArrowRight,
+  Terminal,
+  Cpu,
+  Clock,
+  Filter,
+  Github
 } from 'lucide-react';
 import Link from 'next/link';
 
 const Docs: React.FC = () => {
+  const [searchQuery, setSearchQuery] = useState('');
+
   const documentationCategories = [
     {
       title: "AI Consciousness Platform",
@@ -76,26 +100,10 @@ const Docs: React.FC = () => {
       time: "15 min",
       icon: <Atom className="w-6 h-6" />,
       color: "from-blue-500 to-cyan-600"
-    },
-    {
-      title: "Cybersecurity Implementation",
-      description: "Implement our zero-trust security framework in your application.",
-      difficulty: "Intermediate",
-      time: "20 min",
-      icon: <Shield className="w-6 h-6" />,
-      color: "from-green-500 to-emerald-600"
-    },
-    {
-      title: "Space Technology APIs",
-      description: "Integrate space resource intelligence into your applications.",
-      difficulty: "Advanced",
-      time: "25 min",
-      icon: <Rocket className="w-6 h-6" />,
-      color: "from-orange-500 to-red-600"
     }
   ];
 
-  const apiDocs = [
+  const apiReferences = [
     {
       name: "AI Consciousness API",
       version: "v2.1.0",
@@ -344,8 +352,7 @@ const Docs: React.FC = () => {
               ))}
             </div>
           </div>
-        </div>
-      </section>
+        </section>
 
         {/* API References */}
         <section className="py-20">
@@ -422,98 +429,6 @@ const Docs: React.FC = () => {
         </div>
       </section>
 
-      {/* Additional Resources */}
-      <section className="py-20 bg-gradient-to-r from-gray-900/50 to-black/50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="text-center mb-16"
-          >
-            <h2 className="text-4xl font-bold mb-6 bg-gradient-to-r from-purple-400 to-cyan-400 bg-clip-text text-transparent">
-              Additional Resources
-            </h2>
-            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              Videos, tutorials, and community resources to help you succeed.
-            </p>
-          </motion.div>
-
-          <div className="grid md:grid-cols-3 gap-8">
-            {[
-              {
-                icon: <Video className="w-12 h-12" />,
-                title: 'Video Tutorials',
-                description: 'Step-by-step video guides for all our technologies.',
-                count: '50+ videos'
-              },
-              {
-                icon: <Play className="w-12 h-12" />,
-                title: 'Interactive Demos',
-                description: 'Try our technologies hands-on with live demonstrations.',
-                count: '25+ demos'
-              },
-              {
-                icon: <Download className="w-12 h-12" />,
-                title: 'Code Samples',
-                description: 'Downloadable code examples and starter templates.',
-                count: '100+ samples'
-              }
-            ].map((resource, index) => (
-              <motion.div
-                key={resource.title}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                viewport={{ once: true }}
-                className="text-center p-6"
-              >
-                <div className="text-cyan-400 mb-4 flex justify-center">
-                  {resource.icon}
-                </div>
-                <h3 className="text-xl font-semibold mb-3 text-white">{resource.title}</h3>
-                <p className="text-gray-300 mb-4">{resource.description}</p>
-                <div className="text-cyan-400 font-semibold">{resource.count}</div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* CTA Section */}
-      <section className="py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-          >
-            <h2 className="text-4xl font-bold mb-6 bg-gradient-to-r from-cyan-400 via-purple-400 to-blue-400 bg-clip-text text-transparent">
-              Need Help with Implementation?
-            </h2>
-            <p className="text-xl text-gray-300 mb-8 max-w-3xl mx-auto">
-              Our technical team is here to help you implement our solutions successfully. 
-              Get expert guidance and support for your projects.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a
-                href="/contact"
-                className="px-8 py-4 bg-gradient-to-r from-cyan-500 to-purple-500 text-white font-semibold rounded-xl hover:from-cyan-600 hover:to-purple-600 transition-all duration-300 transform hover:scale-105"
-              >
-                Get Technical Support
-              </a>
-              <a
-                href="/support"
-                className="px-8 py-4 border border-cyan-500 text-cyan-400 font-semibold rounded-xl hover:bg-cyan-500 hover:text-white transition-all duration-300"
-              >
-                View Support Resources
-              </a>
-            </div>
-          </div>
-        </section>
-
         {/* Developer Resources */}
         <section className="py-20 bg-black/50">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -559,7 +474,8 @@ const Docs: React.FC = () => {
               ))}
             </div>
           </div>
-        </section>
+        </div>
+      </section>
 
         {/* Newsletter Signup */}
         <section className="py-20">
@@ -605,26 +521,27 @@ const Docs: React.FC = () => {
               transition={{ duration: 0.8 }}
               viewport={{ once: true }}
             >
-              <h2 className="text-3xl lg:text-4xl font-bold text-white mb-6">
-                Need Help with Integration?
+              <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6">
+                Need Help Getting Started?
               </h2>
-              <p className="text-xl text-gray-400 max-w-3xl mx-auto mb-8">
-                Our developer support team is here to help you succeed with our technologies.
+              <p className="text-xl text-gray-300 mb-8 max-w-3xl mx-auto">
+                Our developer support team is here to help you succeed with our platform. 
+                Get in touch for personalized assistance.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Link
                   href="/contact"
-                  className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-purple-500 to-blue-600 text-white font-semibold rounded-2xl hover:from-purple-600 hover:to-blue-700 transition-all duration-300 transform hover:scale-105"
+                  className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-cyan-500 to-purple-500 text-white font-semibold rounded-full hover:from-cyan-600 hover:to-purple-600 transition-all duration-300 transform hover:scale-105"
                 >
-                  Get Developer Support
+                  Contact Support
                   <ArrowRight className="w-5 h-5 ml-2" />
                 </Link>
-                <Link
-                  href="/community"
-                  className="inline-flex items-center px-8 py-4 border-2 border-purple-500/30 text-purple-400 font-semibold rounded-2xl hover:border-purple-500/50 hover:text-purple-300 transition-all duration-300"
+                <a
+                  href="/docs/getting-started"
+                  className="inline-flex items-center px-8 py-4 border-2 border-cyan-500 text-cyan-400 font-semibold rounded-full hover:bg-cyan-500 hover:text-white transition-all duration-300"
                 >
-                  Join Community
-                </Link>
+                  View Getting Started
+                </a>
               </div>
             </motion.div>
           </div>

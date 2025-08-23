@@ -1,10 +1,14 @@
 import React from 'react';
 import Layout from '../components/layout/Layout';
 import { motion } from 'framer-motion';
-import { Brain, Rocket, Star } from 'lucide-react';
-import Link from 'next/link';
+import { 
+  Brain, Atom, Shield, Cloud, BarChart, Code, Rocket, Zap, Target, Users, 
+  Heart, DollarSign, Cog, FileText, Calendar, Lightbulb, HelpCircle, Monitor,
+  Star, Award, TrendingUp, Globe, Lock, Server, Database, Network, Palette, Building,
+  CheckCircle, ArrowRight, ShoppingBag
+} from 'lucide-react';
 
-const AIServices: React.FC = () => {
+const AIServicesPage: React.FC = () => {
   const aiServices = [
     {
       category: 'AI Consciousness & Evolution',
@@ -41,16 +45,75 @@ const AIServices: React.FC = () => {
         { name: 'AI Creativity Studio', href: '/ai-creativity-studio', description: 'Creative AI assistance' },
         { name: 'AI Video Editing', href: '/ai-video-editing', description: 'Automated video editing' }
       ]
+    },
+    {
+      category: 'AI Infrastructure & Operations',
+      services: [
+        {
+          name: 'AI Autonomous DevOps Platform',
+          description: 'Fully autonomous DevOps operations with AI-powered decision making',
+          href: '/ai-autonomous-devops-platform',
+          icon: <Cog className="w-6 h-6" />,
+          features: ['Autonomous Operations', 'Intelligent Monitoring', 'Predictive Maintenance', 'Self-healing Systems'],
+          badge: 'Advanced'
+        },
+        {
+          name: 'AI IT Operations Center',
+          description: 'AI-powered IT operations with autonomous incident response',
+          href: '/autonomous-it-operations-center',
+          icon: <Monitor className="w-6 h-6" />,
+          features: ['Autonomous Monitoring', 'Incident Response', 'Performance Optimization', 'Capacity Planning'],
+          badge: 'Enterprise'
+        },
+        {
+          name: 'AI Network Management',
+          description: 'Intelligent network management and optimization platform',
+          href: '/autonomous-network-management-2044',
+          icon: <Network className="w-6 h-6" />,
+          features: ['Autonomous Management', 'Performance Optimization', 'Security Monitoring', 'Traffic Analysis'],
+          badge: 'Critical'
+        }
+      ]
+    }
+  ];
+
+  const industries = [
+    {
+      name: 'Healthcare',
+      description: 'AI-powered diagnostics, treatment planning, and patient care',
+      icon: <Heart className="w-8 h-8" />,
+      color: 'from-red-500 to-pink-600'
+    },
+    {
+      name: 'Finance',
+      description: 'Intelligent trading, risk assessment, and fraud detection',
+      icon: <DollarSign className="w-8 h-8" />,
+      color: 'from-green-500 to-emerald-600'
+    },
+    {
+      name: 'Manufacturing',
+      description: 'Predictive maintenance, quality control, and process optimization',
+      icon: <Cog className="w-8 h-8" />,
+      color: 'from-blue-500 to-cyan-600'
+    },
+    {
+      name: 'Retail',
+      description: 'Customer personalization, inventory management, and demand forecasting',
+      icon: <ShoppingBag className="w-8 h-8" />,
+      color: 'from-purple-500 to-indigo-600'
     }
   ];
 
   return (
-    <Layout>
-      <div className="min-h-screen bg-gradient-to-br from-black via-gray-900 to-black">
+    <Layout 
+      title="AI Services - Zion Tech Group"
+      description="Revolutionary AI services including consciousness evolution, autonomous business intelligence, and next-generation AI solutions"
+      canonicalUrl="https://ziontechgroup.com/ai-services"
+    >
+      <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900">
         {/* Hero Section */}
-        <section className="relative py-20 px-4 overflow-hidden">
-          <div className="absolute inset-0 bg-gradient-to-r from-blue-500/10 via-purple-500/10 to-pink-500/10" />
-          <div className="relative z-10 max-w-7xl mx-auto text-center">
+        <section className="relative py-20 px-4 sm:px-6 lg:px-8">
+          <div className="max-w-7xl mx-auto text-center">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -63,10 +126,6 @@ const AIServices: React.FC = () => {
                   AI Services
                 </h1>
               </div>
-              <p className="text-xl md:text-2xl text-gray-300 max-w-4xl mx-auto leading-relaxed">
-                Revolutionary AI solutions that transform businesses through consciousness evolution, 
-                autonomous operations, and intelligent decision-making.
-              </p>
             </motion.div>
           </div>
         </section>
@@ -146,23 +205,70 @@ const AIServices: React.FC = () => {
               transition={{ duration: 0.8 }}
               viewport={{ once: true }}
             >
+              <h2 className="text-4xl font-bold text-white mb-4">
+                Industries We Serve
+              </h2>
+              <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+                Our AI solutions are designed to transform operations across diverse industries, 
+                driving innovation and efficiency in every sector.
+              </p>
+            </motion.div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+              {industries.map((industry, index) => (
+                <motion.div
+                  key={industry.name}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: index * 0.1 }}
+                  viewport={{ once: true }}
+                  className="text-center group"
+                >
+                  <div className={`w-20 h-20 bg-gradient-to-br ${industry.color} rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300`}>
+                    {industry.icon}
+                  </div>
+                  <h3 className="text-xl font-semibold text-white mb-2">
+                    {industry.name}
+                  </h3>
+                  <p className="text-gray-300 text-sm">
+                    {industry.description}
+                  </p>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* CTA Section */}
+        <section className="py-20 px-4 sm:px-6 lg:px-8">
+          <div className="max-w-4xl mx-auto text-center">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+            >
               <h2 className="text-4xl font-bold text-white mb-6">
-                Ready to Transform Your Business with AI?
+                Ready to Transform Your Business?
               </h2>
               <p className="text-xl text-gray-300 mb-8">
-                Let's discuss how our AI services can revolutionize your operations and drive growth.
+                Join the AI revolution and discover how our cutting-edge solutions 
+                can drive innovation and growth in your organization.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Link href="/contact">
-                  <button className="px-8 py-4 bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-semibold rounded-lg hover:from-cyan-600 hover:to-blue-700 transition-all duration-300 transform hover:scale-105">
-                    Get Started
-                  </button>
-                </Link>
-                <Link href="/services">
-                  <button className="px-8 py-4 border-2 border-cyan-400 text-cyan-400 font-semibold rounded-lg hover:bg-cyan-400 hover:text-black transition-all duration-300">
-                    View All Services
-                  </button>
-                </Link>
+                <a
+                  href="/contact"
+                  className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-purple-600 to-cyan-600 text-white font-semibold rounded-lg hover:from-purple-700 hover:to-cyan-700 transition-all duration-300 transform hover:scale-105"
+                >
+                  Start Your AI Journey
+                  <Rocket className="ml-2 w-5 h-5" />
+                </a>
+                <a
+                  href="/solutions"
+                  className="inline-flex items-center px-8 py-4 border-2 border-purple-500 text-purple-400 font-semibold rounded-lg hover:bg-purple-500 hover:text-white transition-all duration-300"
+                >
+                  Explore Solutions
+                </a>
               </div>
             </motion.div>
           </div>
@@ -172,4 +278,4 @@ const AIServices: React.FC = () => {
   );
 };
 
-export default AIServices;
+export default AIServicesPage;
