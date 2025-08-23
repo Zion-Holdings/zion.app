@@ -9,10 +9,25 @@ import {
 } from 'lucide-react';
 import Link from 'next/link';
 
-// Import our comprehensive service data
-import { innovative2025MicroSaasExpansion } from '../data/innovative-2025-micro-saas-expansion';
-import { innovative2025ITServicesExpansion } from '../data/innovative-2025-it-services-expansion';
-import { innovative2025AIServicesExpansion } from '../data/innovative-2025-ai-services-expansion';
+// Import all service data
+import { innovativeRealMicroSaasServices2025 } from '../data/2025-innovative-real-micro-saas-services';
+import { advancedFuturisticMicroSaasServices2025 } from '../data/2025-advanced-futuristic-micro-saas';
+import { cuttingEdgeAIInnovations2025 } from '../data/2025-cutting-edge-ai-innovations';
+import { innovativeRealMicroSaasServices2025 as innovativeServices } from '../data/2025-innovative-real-micro-saas-services';
+import { innovativeAIServicesEnhanced2025 } from '../data/2025-innovative-ai-services-enhanced';
+import { innovativeITServicesEnhanced2025 } from '../data/2025-innovative-it-services-enhanced';
+import { emergingTechServicesEnhanced2025 } from '../data/2025-emerging-tech-services-enhanced';
+import { advancedAIAutomationServices } from '../data/2025-advanced-ai-automation-services';
+import { advancedITInfrastructureServices2025 } from '../data/2025-advanced-it-infrastructure-services';
+import { innovativeBusinessSolutions2025 } from '../data/2025-innovative-business-solutions';
+import { ultimateInnovativeServices2025 } from '../data/2025-ultimate-innovative-services';
+
+const contactInfo = {
+  mobile: '+1 302 464 0950',
+  email: 'kleber@ziontechgroup.com',
+  address: '364 E Main St STE 1008 Middletown DE 19709',
+  website: 'https://ziontechgroup.com'
+};
 
 const ComprehensiveServicesShowcase2025: React.FC = () => {
   const [searchTerm, setSearchTerm] = useState('');
@@ -21,9 +36,16 @@ const ComprehensiveServicesShowcase2025: React.FC = () => {
 
   // Combine all services
   const allServices = [
-    ...innovative2025MicroSaasExpansion,
-    ...innovative2025ITServicesExpansion,
-    ...innovative2025AIServicesExpansion
+    ...innovativeRealMicroSaasServices2025,
+    ...advancedFuturisticMicroSaasServices2025,
+    ...cuttingEdgeAIInnovations2025,
+    ...innovativeServices,
+    ...innovativeAIServicesEnhanced2025,
+    ...innovativeITServicesEnhanced2025,
+    ...emergingTechServicesEnhanced2025,
+    ...advancedAIAutomationServices,
+    ...advancedITInfrastructureServices2025,
+    ...innovativeBusinessSolutions2025
   ];
 
   // Filter services based on search and category

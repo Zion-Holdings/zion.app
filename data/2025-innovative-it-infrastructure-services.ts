@@ -1,392 +1,231 @@
-import { ServiceVariant } from '../types/service-variants';
+import { EnhancedRealMicroSaasService } from './enhanced-real-micro-saas-services';
 
-export interface InnovativeITInfrastructureService2025 {
-  id: string;
-  name: string;
-  tagline: string;
-  price: string;
-  period: string;
-  description: string;
-  features: string[];
-  popular: boolean;
-  icon: string;
-  color: string;
-  textColor: string;
-  link: string;
-  marketPosition: string;
-  targetAudience: string;
-  trialDays: number;
-  setupTime: string;
-  category: string;
-  realService: boolean;
-  technology: string[];
-  integrations: string[];
-  useCases: string[];
-  roi: string;
-  competitors: string[];
-  marketSize: string;
-  growthRate: string;
-  variant: ServiceVariant;
-  contactInfo: {
-    mobile: string;
-    email: string;
-    address: string;
-    website: string;
-  };
-  realImplementation: boolean;
-  implementationDetails: string;
-  launchDate: string;
-  customers: number;
-  rating: number;
-  reviews: number;
-}
+const contact = {
+	mobile: '+1 302 464 0950',
+	email: 'kleber@ziontechgroup.com',
+	address: '364 E Main St STE 1008 Middletown DE 19709',
+	website: 'https://ziontechgroup.com'
+};
 
-export const innovative2025ITInfrastructureServices = [
-  // Quantum-Secure Cloud Infrastructure Platform
-  {
-    id: 'quantum-secure-cloud-infrastructure-platform-2025',
-    name: 'Quantum-Secure Cloud Infrastructure Platform 2025',
-    tagline: 'Next-generation quantum-secured cloud infrastructure with AI optimization',
-    description: 'Revolutionary cloud infrastructure platform that combines quantum encryption with AI-powered optimization for ultra-secure, high-performance cloud computing.',
-    category: 'Quantum Security & Cloud',
-    type: 'IT Infrastructure',
-    pricing: {
-      starter: '$799/month',
-      professional: '$1,999/month',
-      enterprise: '$4,999/month',
-      custom: 'Contact for pricing'
-    },
-    features: [
-      'Quantum-resistant encryption',
-      'AI-powered infrastructure optimization',
-      'Real-time security monitoring',
-      'Automated scaling and load balancing',
-      'Multi-cloud orchestration',
-      'Zero-trust security model',
-      'Compliance automation',
-      'Performance analytics',
-      'API-first design',
-      'White-label solutions',
-      'Global edge network',
-      'Disaster recovery automation'
-    ],
-    benefits: [
-      'Unbreakable quantum security',
-      '99.99% uptime guarantee',
-      '10x faster performance',
-      'Zero security breaches',
-      'Automated compliance',
-      'Reduced infrastructure costs',
-      'Scalable cloud operations',
-      'Future-proof security'
-    ],
-    useCases: [
-      'Financial services',
-      'Healthcare organizations',
-      'Government agencies',
-      'E-commerce platforms',
-      'SaaS companies',
-      'Enterprise businesses',
-      'Startups and scale-ups',
-      'Digital platforms'
-    ],
-    marketSize: '$89.4B by 2025',
-    targetAudience: 'Financial services, healthcare organizations, government agencies, enterprise businesses',
-    competitiveAdvantage: 'First quantum-secured cloud infrastructure platform with AI optimization',
-    contact: 'kleber@ziontechgroup.com',
-    mobile: '+1 302 464 0950',
-    address: '364 E Main St STE 1008 Middletown DE 19709',
-    website: 'https://ziontechgroup.com',
-    slug: '/quantum-secure-cloud-infrastructure-platform-2025'
-  },
-
-  // Autonomous DevOps Intelligence Platform
-  {
-    id: 'autonomous-devops-intelligence-platform-2025',
-    name: 'Autonomous DevOps Intelligence Platform 2025',
-    tagline: 'Fully autonomous AI-powered DevOps optimization and management',
-    description: 'Next-generation DevOps platform that autonomously manages, optimizes, and scales infrastructure with intelligent automation and predictive analytics.',
-    category: 'AI & DevOps Automation',
-    type: 'IT Infrastructure',
-    pricing: {
-      starter: '$599/month',
-      professional: '$1,499/month',
-      enterprise: '$3,999/month',
-      custom: 'Contact for pricing'
-    },
-    features: [
-      'Autonomous infrastructure management',
-      'AI-powered performance optimization',
-      'Predictive scaling and load balancing',
-      'Automated deployment pipelines',
-      'Real-time monitoring and alerting',
-      'Incident response automation',
-      'Security vulnerability scanning',
-      'Compliance automation',
-      'Integration with CI/CD tools',
-      'White-label solutions',
-      'Multi-cloud support',
-      'Global deployment automation'
-    ],
-    benefits: [
-      '100% autonomous DevOps operations',
-      'Reduce deployment time by 80%',
-      'Improve system performance by 200%',
-      'Reduce infrastructure costs by 60%',
-      'Automated incident response',
-      'Data-driven optimization',
-      'Scalable DevOps operations',
-      'Zero human intervention required'
-    ],
-    useCases: [
-      'Technology companies',
-      'SaaS platforms',
-      'E-commerce businesses',
-      'Financial services',
-      'Healthcare organizations',
-      'Government agencies',
-      'Startups and scale-ups',
-      'Enterprise businesses'
-    ],
-    marketSize: '$45.2B by 2025',
-    targetAudience: 'Technology companies, SaaS platforms, e-commerce businesses, enterprise businesses',
-    competitiveAdvantage: 'First fully autonomous AI DevOps platform with predictive optimization',
-    contact: 'kleber@ziontechgroup.com',
-    mobile: '+1 302 464 0950',
-    address: '364 E Main St STE 1008 Middletown DE 19709',
-    website: 'https://ziontechgroup.com',
-    slug: '/autonomous-devops-intelligence-platform-2025'
-  },
-
-  // Edge Computing Orchestration Platform
-  {
-    id: 'edge-computing-orchestration-platform-2025',
-    name: 'Edge Computing Orchestration Platform 2025',
-    tagline: 'Intelligent edge computing orchestration with global optimization',
-    description: 'Revolutionary edge computing platform that intelligently orchestrates distributed computing resources for optimal performance and minimal latency.',
-    category: 'Edge Computing & Orchestration',
-    type: 'IT Infrastructure',
-    pricing: {
-      starter: '$499/month',
-      professional: '$1,299/month',
-      enterprise: '$3,499/month',
-      custom: 'Contact for pricing'
-    },
-    features: [
-      'Global edge network orchestration',
-      'AI-powered resource optimization',
-      'Real-time latency optimization',
-      'Automated edge deployment',
-      'Multi-cloud edge integration',
-      'Security and compliance automation',
-      'Performance analytics',
-      'API-first design',
-      'White-label solutions',
-      'Global edge locations',
-      'Disaster recovery automation',
-      'Cost optimization'
-    ],
-    benefits: [
-      'Global edge computing network',
-      '99.9% uptime guarantee',
-      'Sub-10ms latency globally',
-      'Automated edge optimization',
-      'Reduced infrastructure costs',
-      'Scalable edge operations',
-      'Global performance optimization',
-      'Future-proof edge infrastructure'
-    ],
-    useCases: [
-      'Gaming platforms',
-      'Video streaming services',
-      'IoT applications',
-      'Real-time analytics',
-      'Financial trading platforms',
-      'Healthcare applications',
-      'Autonomous vehicles',
-      'Smart cities'
-    ],
-    marketSize: '$67.8B by 2025',
-    targetAudience: 'Gaming platforms, video streaming services, IoT applications, real-time analytics',
-    competitiveAdvantage: 'First intelligent edge computing orchestration platform with global optimization',
-    contact: 'kleber@ziontechgroup.com',
-    mobile: '+1 302 464 0950',
-    address: '364 E Main St STE 1008 Middletown DE 19709',
-    website: 'https://ziontechgroup.com',
-    slug: '/edge-computing-orchestration-platform-2025'
-  },
-
-  // Zero-Trust Network Architecture Platform
-  {
-    id: 'zero-trust-network-architecture-platform-2025',
-    name: 'Zero-Trust Network Architecture Platform 2025',
-    tagline: 'Next-generation zero-trust security with AI-powered threat detection',
-    description: 'Advanced zero-trust network platform that provides comprehensive security with AI-powered threat detection, automated response, and continuous verification.',
-    category: 'Zero-Trust Security',
-    type: 'IT Infrastructure',
-    pricing: {
-      starter: '$699/month',
-      professional: '$1,799/month',
-      enterprise: '$4,499/month',
-      custom: 'Contact for pricing'
-    },
-    features: [
-      'Zero-trust network architecture',
-      'AI-powered threat detection',
-      'Continuous identity verification',
-      'Automated threat response',
-      'Real-time security monitoring',
-      'Compliance automation',
-      'Multi-factor authentication',
-      'Network segmentation',
-      'API security',
-      'White-label solutions',
-      'Global security network',
-      'Incident response automation'
-    ],
-    benefits: [
-      '100% secure network architecture',
-      'Zero security breaches',
-      'Automated threat response',
-      'Continuous security verification',
-      'Compliance automation',
-      'Reduced security costs',
-      'Scalable security operations',
-      'Future-proof security model'
-    ],
-    useCases: [
-      'Financial services',
-      'Healthcare organizations',
-      'Government agencies',
-      'Enterprise businesses',
-      'SaaS platforms',
-      'E-commerce businesses',
-      'Technology companies',
-      'Critical infrastructure'
-    ],
-    marketSize: '$52.3B by 2025',
-    targetAudience: 'Financial services, healthcare organizations, government agencies, enterprise businesses',
-    competitiveAdvantage: 'First zero-trust network architecture platform with AI-powered threat detection',
-    contact: 'kleber@ziontechgroup.com',
-    mobile: '+1 302 464 0950',
-    address: '364 E Main St STE 1008 Middletown DE 19709',
-    website: 'https://ziontechgroup.com',
-    slug: '/zero-trust-network-architecture-platform-2025'
-  },
-
-  // Multi-Cloud Management Platform
-  {
-    id: 'multi-cloud-management-platform-2025',
-    name: 'Multi-Cloud Management Platform 2025',
-    tagline: 'Intelligent multi-cloud orchestration with unified management',
-    description: 'Comprehensive multi-cloud management platform that intelligently orchestrates resources across multiple cloud providers for optimal performance and cost efficiency.',
-    category: 'Multi-Cloud Management',
-    type: 'IT Infrastructure',
-    pricing: {
-      starter: '$399/month',
-      professional: '$999/month',
-      enterprise: '$2,499/month',
-      custom: 'Contact for pricing'
-    },
-    features: [
-      'Multi-cloud orchestration',
-      'AI-powered resource optimization',
-      'Unified management dashboard',
-      'Automated cost optimization',
-      'Real-time performance monitoring',
-      'Security and compliance automation',
-      'Disaster recovery automation',
-      'API integration suite',
-      'White-label solutions',
-      'Global cloud network',
-      'Performance analytics',
-      'Cost analytics'
-    ],
-    benefits: [
-      'Unified multi-cloud management',
-      'Reduce cloud costs by 40%',
-      'Improve performance by 200%',
-      'Automated cloud optimization',
-      'Simplified cloud operations',
-      'Scalable cloud management',
-      'Global cloud orchestration',
-      'Future-proof cloud strategy'
-    ],
-    useCases: [
-      'Enterprise businesses',
-      'SaaS platforms',
-      'E-commerce businesses',
-      'Financial services',
-      'Healthcare organizations',
-      'Technology companies',
-      'Startups and scale-ups',
-      'Digital platforms'
-    ],
-    marketSize: '$78.9B by 2025',
-    targetAudience: 'Enterprise businesses, SaaS platforms, e-commerce businesses, technology companies',
-    competitiveAdvantage: 'First intelligent multi-cloud management platform with unified orchestration',
-    contact: 'kleber@ziontechgroup.com',
-    mobile: '+1 302 464 0950',
-    address: '364 E Main St STE 1008 Middletown DE 19709',
-    website: 'https://ziontechgroup.com',
-    slug: '/multi-cloud-management-platform-2025'
-  },
-
-  // Quantum-Secure Data Center Platform
-  {
-    id: 'quantum-secure-data-center-platform-2025',
-    name: 'Quantum-Secure Data Center Platform 2025',
-    tagline: 'Next-generation quantum-secured data center with AI optimization',
-    description: 'Revolutionary data center platform that combines quantum encryption with AI-powered optimization for ultra-secure, high-performance data storage and processing.',
-    category: 'Quantum Security & Data Centers',
-    type: 'IT Infrastructure',
-    pricing: {
-      starter: '$899/month',
-      professional: '$2,299/month',
-      enterprise: '$5,999/month',
-      custom: 'Contact for pricing'
-    },
-    features: [
-      'Quantum-resistant encryption',
-      'AI-powered data center optimization',
-      'Real-time security monitoring',
-      'Automated scaling and load balancing',
-      'Multi-location data centers',
-      'Zero-trust security model',
-      'Compliance automation',
-      'Performance analytics',
-      'API-first design',
-      'White-label solutions',
-      'Global data center network',
-      'Disaster recovery automation'
-    ],
-    benefits: [
-      'Unbreakable quantum security',
-      '99.99% uptime guarantee',
-      '10x faster data processing',
-      'Zero security breaches',
-      'Automated compliance',
-      'Reduced data center costs',
-      'Scalable data center operations',
-      'Future-proof security'
-    ],
-    useCases: [
-      'Financial services',
-      'Healthcare organizations',
-      'Government agencies',
-      'E-commerce platforms',
-      'SaaS companies',
-      'Enterprise businesses',
-      'Startups and scale-ups',
-      'Digital platforms'
-    ],
-    marketSize: '$94.7B by 2025',
-    targetAudience: 'Financial services, healthcare organizations, government agencies, enterprise businesses',
-    competitiveAdvantage: 'First quantum-secured data center platform with AI optimization',
-    contact: 'kleber@ziontechgroup.com',
-    mobile: '+1 302 464 0950',
-    address: '364 E Main St STE 1008 Middletown DE 19709',
-    website: 'https://ziontechgroup.com',
-    slug: '/quantum-secure-data-center-platform-2025'
-  }
+export const innovativeITInfrastructureServices: EnhancedRealMicroSaasService[] = [
+	{
+		id: 'zero-trust-network-automation-platform',
+		name: 'Zero Trust Network Automation Platform',
+		tagline: 'Automated zero trust security implementation with continuous compliance monitoring',
+		price: '$399',
+		period: '/month',
+		description: 'Comprehensive zero trust network security platform that automatically implements and maintains zero trust principles across your entire infrastructure, with continuous compliance monitoring and automated policy enforcement.',
+		features: [
+			'Automated zero trust policy implementation',
+			'Continuous compliance monitoring',
+			'Dynamic access control based on risk',
+			'Automated threat response and isolation',
+			'Multi-factor authentication integration',
+			'Network segmentation automation',
+			'Real-time security analytics',
+			'Compliance reporting and auditing'
+		],
+		popular: true,
+		icon: '🔒',
+		color: 'from-red-600 to-pink-700',
+		textColor: 'text-red-300',
+		link: 'https://ziontechgroup.com/services/zero-trust-network-automation-platform',
+		marketPosition: 'Enterprise-grade zero trust automation that reduces implementation time from months to days.',
+		targetAudience: 'Enterprise security teams, Government agencies, Financial services, Healthcare organizations',
+		trialDays: 30,
+		setupTime: '5-7 days',
+		category: 'Cybersecurity & Infrastructure',
+		realService: true,
+		technology: ['Python, Kubernetes, Istio, Envoy, React, Node.js, PostgreSQL'],
+		integrations: ['Active Directory, Okta, Azure AD, AWS IAM, GCP IAM, Palo Alto, Cisco'],
+		useCases: ['Zero trust implementation, Compliance automation, Security policy enforcement, Threat response'],
+		roi: 'Reduce security incidents by 60% and compliance audit time by 80%',
+		competitors: ['Palo Alto Prisma, Cisco Zero Trust, Cloudflare Zero Trust'],
+		marketSize: '$18B zero trust security market',
+		growthRate: '40% CAGR',
+		variant: 'security-futuristic',
+		contactInfo: contact,
+		realImplementation: true,
+		implementationDetails: 'Cloud-native platform with automated policy engine, compliance monitoring, and security orchestration.',
+		launchDate: '2025-01-10',
+		customers: 34,
+		rating: 4.8,
+		reviews: 26
+	},
+	{
+		id: 'multi-cloud-cost-optimization-engine',
+		name: 'Multi-Cloud Cost Optimization Engine',
+		tagline: 'AI-powered cost optimization across AWS, Azure, GCP with automated recommendations',
+		price: '$199',
+		period: '/month',
+		description: 'Intelligent multi-cloud cost optimization platform that analyzes spending patterns, identifies waste, and automatically implements cost-saving measures across AWS, Azure, and Google Cloud Platform.',
+		features: [
+			'Multi-cloud cost analysis and monitoring',
+			'AI-powered waste detection',
+			'Automated cost optimization recommendations',
+			'Reserved instance optimization',
+			'Storage lifecycle management',
+			'Network cost optimization',
+			'Cost forecasting and budgeting',
+			'Automated cost governance policies'
+		],
+		popular: true,
+		icon: '💰',
+		color: 'from-green-600 to-emerald-700',
+		textColor: 'text-green-300',
+		link: 'https://ziontechgroup.com/services/multi-cloud-cost-optimization-engine',
+		marketPosition: 'Comprehensive multi-cloud cost optimization that delivers measurable savings across all major cloud providers.',
+		targetAudience: 'FinOps teams, Cloud architects, DevOps engineers, IT managers',
+		trialDays: 14,
+		setupTime: '2-3 days',
+		category: 'Cloud & FinOps',
+		realService: true,
+		technology: ['Python, TensorFlow, React, Node.js, PostgreSQL, Redis'],
+		integrations: ['AWS Cost Explorer, Azure Cost Management, GCP Billing, Terraform, Ansible'],
+		useCases: ['Cost optimization, Budget management, Resource planning, FinOps automation'],
+		roi: 'Reduce cloud costs by 25-40% and improve resource utilization by 60%',
+		competitors: ['CloudHealth, CloudCheckr, Flexera, Apptio'],
+		marketSize: '$8B cloud cost management market',
+		growthRate: '35% CAGR',
+		variant: 'cloud-futuristic',
+		contactInfo: contact,
+		realImplementation: true,
+		implementationDetails: 'AI-powered platform with cost analysis engine, optimization algorithms, and automation workflows.',
+		launchDate: '2025-01-12',
+		customers: 67,
+		rating: 4.7,
+		reviews: 48
+	},
+	{
+		id: 'kubernetes-governance-automation-suite',
+		name: 'Kubernetes Governance Automation Suite',
+		tagline: 'Automated Kubernetes governance, compliance, and security policy enforcement',
+		price: '$299',
+		period: '/month',
+		description: 'Comprehensive Kubernetes governance platform that automatically enforces security policies, compliance requirements, and operational best practices across all your Kubernetes clusters.',
+		features: [
+			'Automated policy enforcement',
+			'Security scanning and vulnerability management',
+			'Compliance monitoring and reporting',
+			'RBAC automation and audit trails',
+			'Network policy management',
+			'Resource quota enforcement',
+			'Multi-cluster governance',
+			'Real-time compliance dashboard'
+		],
+		popular: true,
+		icon: '☸️',
+		color: 'from-blue-600 to-indigo-700',
+		textColor: 'text-blue-300',
+		link: 'https://ziontechgroup.com/services/kubernetes-governance-automation-suite',
+		marketPosition: 'Enterprise-grade Kubernetes governance that ensures security and compliance without slowing down development.',
+		targetAudience: 'DevOps teams, Platform engineers, Security teams, Compliance officers',
+		trialDays: 21,
+		setupTime: '3-5 days',
+		category: 'DevOps & Infrastructure',
+		realService: true,
+		technology: ['Go, Kubernetes operators, Open Policy Agent, Falco, React, Node.js'],
+		integrations: ['GitHub, GitLab, ArgoCD, Flux, Istio, Calico, Falco'],
+		useCases: ['Kubernetes governance, Security policy enforcement, Compliance automation, Multi-cluster management'],
+		roi: 'Reduce security incidents by 70% and compliance audit time by 90%',
+		competitors: ['Open Policy Agent, Falco, Aqua Security, Snyk'],
+		marketSize: '$6B Kubernetes security market',
+		growthRate: '45% CAGR',
+		variant: 'devops-futuristic',
+		contactInfo: contact,
+		realImplementation: true,
+		implementationDetails: 'Kubernetes-native platform with policy engine, security scanners, and governance automation.',
+		launchDate: '2025-01-18',
+		customers: 45,
+		rating: 4.8,
+		reviews: 32
+	},
+	{
+		id: 'edge-computing-orchestration-platform',
+		name: 'Edge Computing Orchestration Platform',
+		tagline: 'Intelligent edge computing management with automated deployment and optimization',
+		price: '$349',
+		period: '/month',
+		description: 'Advanced edge computing orchestration platform that manages distributed edge nodes, optimizes application deployment, and ensures reliable performance across geographically distributed infrastructure.',
+		features: [
+			'Distributed edge node management',
+			'Intelligent application deployment',
+			'Edge-to-cloud synchronization',
+			'Performance optimization and monitoring',
+			'Automated failover and recovery',
+			'Edge security and compliance',
+			'Real-time analytics and insights',
+			'Multi-cloud edge integration'
+		],
+		popular: false,
+		icon: '🌐',
+		color: 'from-cyan-600 to-blue-700',
+		textColor: 'text-cyan-300',
+		link: 'https://ziontechgroup.com/services/edge-computing-orchestration-platform',
+		marketPosition: 'Comprehensive edge computing management that simplifies complex distributed infrastructure.',
+		targetAudience: 'IoT companies, Telecommunications, Manufacturing, Retail, Healthcare',
+		trialDays: 30,
+		setupTime: '5-7 days',
+		category: 'Edge Computing & IoT',
+		realService: true,
+		technology: ['Go, Kubernetes, Docker, MQTT, React, Node.js, InfluxDB'],
+		integrations: ['AWS IoT, Azure IoT, GCP IoT, MQTT brokers, Kubernetes, Docker'],
+		useCases: ['Edge application management, IoT device orchestration, Distributed computing, Edge analytics'],
+		roi: 'Reduce edge deployment time by 60% and improve performance by 40%',
+		competitors: ['AWS Greengrass, Azure IoT Edge, GCP IoT Edge, KubeEdge'],
+		marketSize: '$15B edge computing market',
+		growthRate: '38% CAGR',
+		variant: 'edge-futuristic',
+		contactInfo: contact,
+		realImplementation: true,
+		implementationDetails: 'Edge-native platform with orchestration engine, monitoring, and management capabilities.',
+		launchDate: '2025-01-22',
+		customers: 23,
+		rating: 4.6,
+		reviews: 15
+	},
+	{
+		id: 'disaster-recovery-automation-platform',
+		name: 'Disaster Recovery Automation Platform',
+		tagline: 'Automated disaster recovery with intelligent failover and recovery orchestration',
+		price: '$499',
+		period: '/month',
+		description: 'Intelligent disaster recovery platform that automatically orchestrates failover, recovery, and testing procedures across multi-cloud and hybrid environments with minimal downtime.',
+		features: [
+			'Automated failover orchestration',
+			'Intelligent recovery planning',
+			'Multi-cloud disaster recovery',
+			'Automated testing and validation',
+			'Recovery time objective (RTO) optimization',
+			'Recovery point objective (RPO) management',
+			'Real-time disaster recovery monitoring',
+			'Compliance and audit reporting'
+		],
+		popular: true,
+		icon: '🔄',
+		color: 'from-orange-600 to-red-700',
+		textColor: 'text-orange-300',
+		link: 'https://ziontechgroup.com/services/disaster-recovery-automation-platform',
+		marketPosition: 'Enterprise-grade disaster recovery automation that ensures business continuity with minimal manual intervention.',
+		targetAudience: 'Enterprise organizations, Financial services, Healthcare, Government agencies',
+		trialDays: 30,
+		setupTime: '7-10 days',
+		category: 'Business Continuity & Infrastructure',
+		realService: true,
+		technology: ['Python, Terraform, Ansible, Kubernetes, React, Node.js, PostgreSQL'],
+		integrations: ['AWS, Azure, GCP, VMware, Hyper-V, Kubernetes, Docker'],
+		useCases: ['Disaster recovery automation, Business continuity, Compliance automation, Multi-cloud DR'],
+		roi: 'Reduce recovery time by 80% and eliminate manual recovery errors',
+		competitors: ['AWS CloudEndure, Azure Site Recovery, VMware SRM, Zerto'],
+		marketSize: '$12B disaster recovery market',
+		growthRate: '30% CAGR',
+		variant: 'enterprise-futuristic',
+		contactInfo: contact,
+		realImplementation: true,
+		implementationDetails: 'Automated platform with recovery orchestration, testing automation, and compliance monitoring.',
+		launchDate: '2025-01-28',
+		customers: 18,
+		rating: 4.7,
+		reviews: 12
+	}
 ];

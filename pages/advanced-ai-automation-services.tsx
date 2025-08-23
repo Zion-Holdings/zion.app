@@ -9,7 +9,7 @@ import {
   Award, Code, TestTube, Server, Database, Shield as SecurityIcon, Mail
 } from 'lucide-react';
 import Layout from '../components/layout/Layout';
-import { advancedAIAutomationServices } from '../data/2026-advanced-ai-automation-services';
+import { advancedAIAutomationServices } from '../data/2025-advanced-ai-automation-services';
 
 const contactInfo = {
   mobile: '+1 302 464 0950',
