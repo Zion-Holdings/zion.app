@@ -26,6 +26,12 @@ export { AIAgentOrchestratorService } from './aiAgentOrchestratorService';
 export { AIGuardrailsService } from './aiGuardrailsService';
 export { AgenticRAGService } from './agenticRAGService';
 
+// New AI-powered services
+export { aiCybersecurityService } from './aiCybersecurityService';
+export { aiDevOpsAutomationService } from './aiDevOpsAutomationService';
+export { aiFinancialAnalyticsService } from './aiFinancialAnalyticsService';
+export { aiHealthcareAnalyticsService } from './aiHealthcareAnalyticsService';
+
 // Export types
 export type {
   ContentTemplate,
