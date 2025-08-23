@@ -56,6 +56,8 @@ import {
 } from 'lucide-react';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
+import EnhancedSearch from '../EnhancedSearch';
+import DarkModeToggle from '../DarkModeToggle';
 
 // Define Node type for DOM event handling
 type Node = HTMLElement | null;
@@ -325,22 +327,7 @@ const navigationItems: NavigationItem[] = [
 const UltraFuturisticNavigation2046: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
-  const [searchQuery, setSearchQuery] = useState('');
-  const [isSearchOpen, setIsSearchOpen] = useState(false);
   const router = useRouter();
-  const searchRef = useRef<HTMLDivElement>(null);
-
-  // Close dropdowns when clicking outside
-  useEffect(() => {
-    const handleClickOutside = (event: MouseEvent) => {
-      if (searchRef.current && !searchRef.current.contains(event.target as Node)) {
-        setIsSearchOpen(false);
-      }
-    };
-
-    document.addEventListener('mousedown', handleClickOutside);
-    return () => document.removeEventListener('mousedown', handleClickOutside);
-  }, []);
 
   // Close mobile menu when route changes
   useEffect(() => {
@@ -352,36 +339,7 @@ const UltraFuturisticNavigation2046: React.FC = () => {
     setActiveDropdown(activeDropdown === label ? null : label);
   }, [activeDropdown]);
 
-  const handleSearch = useCallback((e: React.FormEvent) => {
-    e.preventDefault();
-    if (searchQuery.trim()) {
-      router.push(`/services?search=${encodeURIComponent(searchQuery.trim())}`);
-      setIsSearchOpen(false);
-      setSearchQuery('');
-    }
-  }, [searchQuery, router]);
 
-  const filteredServices = useMemo(() => {
-    if (!searchQuery.trim()) return [];
-    
-    const query = searchQuery.toLowerCase();
-    const results: NavigationItem[] = [];
-    
-    const searchInItems = (items: NavigationItem[]) => {
-      items.forEach(item => {
-        if (item.label.toLowerCase().includes(query) || 
-            item.description?.toLowerCase().includes(query)) {
-          results.push(item);
-        }
-        if (item.children) {
-          searchInItems(item.children);
-        }
-      });
-    };
-    
-    searchInItems(navigationItems);
-    return results.slice(0, 10);
-  }, [searchQuery]);
 
   return (
     <nav className="relative z-50 bg-black/80 backdrop-blur-xl border-b border-cyan-500/20">
@@ -523,58 +481,11 @@ const UltraFuturisticNavigation2046: React.FC = () => {
 
           {/* Right side actions */}
           <div className="flex items-center space-x-4">
-            {/* Search */}
-            <div className="relative" ref={searchRef}>
-              <button
-                onClick={() => setIsSearchOpen(!isSearchOpen)}
-                className="p-2 text-gray-400 hover:text-cyan-400 transition-colors"
-              >
-                <Search className="w-5 h-5" />
-              </button>
-
-              <AnimatePresence>
-                {isSearchOpen && (
-                  <motion.div
-                    initial={{ opacity: 0, scale: 0.95, y: -10 }}
-                    animate={{ opacity: 1, scale: 1, y: 0 }}
-                    exit={{ opacity: 0, scale: 0.95, y: -10 }}
-                    transition={{ duration: 0.2 }}
-                    className="absolute right-0 top-full mt-2 w-96 bg-black/95 backdrop-blur-xl border border-cyan-500/20 rounded-xl shadow-2xl shadow-cyan-500/10 overflow-hidden"
-                  >
-                    <form onSubmit={handleSearch} className="p-4">
-                      <div className="relative">
-                        <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-gray-400" />
-                        <input
-                          type="text"
-                          value={searchQuery}
-                          onChange={(e) => setSearchQuery(e.target.value)}
-                          placeholder="Search services..."
-                          className="w-full pl-10 pr-4 py-2 bg-gray-900/50 border border-cyan-500/20 rounded-lg text-gray-200 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-cyan-500/50 focus:border-transparent"
-                        />
-                      </div>
-                      
-                      {filteredServices.length > 0 && (
-                        <div className="mt-4 space-y-2">
-                          {filteredServices.map((service) => (
-                            <Link
-                              key={service.label}
-                              href={service.href}
-                              className="block p-2 rounded-lg hover:bg-cyan-500/10 transition-colors"
-                              onClick={() => setIsSearchOpen(false)}
-                            >
-                              <p className="text-sm font-medium text-gray-200">{service.label}</p>
-                              {service.description && (
-                                <p className="text-xs text-gray-400">{service.description}</p>
-                              )}
-                            </Link>
-                          ))}
-                        </div>
-                      )}
-                    </form>
-                  </motion.div>
-                )}
-              </AnimatePresence>
-            </div>
+            {/* Dark Mode Toggle */}
+            <DarkModeToggle />
+            
+            {/* Enhanced Search */}
+            <EnhancedSearch />
 
             {/* CTA Button */}
             <motion.button

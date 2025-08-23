@@ -4,8 +4,8 @@ import UltraFuturisticNavigation2046 from './UltraFuturisticNavigation2046';
 import UltraFuturisticFooter2046 from './UltraFuturisticFooter2046';
 import EnhancedSidebar2025 from './EnhancedSidebar2025';
 import UltraFuturisticBackground2045 from '../backgrounds/UltraFuturisticBackground2045';
-import EnhancedPerformanceMonitor from '../EnhancedPerformanceMonitor';
-import AccessibilityEnhancer from '../EnhancedAccessibilityEnhancer';
+import PerformanceOptimizer from '../PerformanceOptimizer';
+import AccessibilityEnhancer from '../AccessibilityEnhancer';
 import CookieConsentBanner from '../CookieConsentBanner';
 import TopContactBar from './TopContactBar';
 
@@ -181,7 +181,7 @@ export default function Layout({
 
       {/* Accessibility and Performance Tools */}
       <AccessibilityEnhancer />
-      <EnhancedPerformanceMonitor />
+      <PerformanceOptimizer />
       
       {/* Cookie Consent Banner */}
       <CookieConsentBanner />
