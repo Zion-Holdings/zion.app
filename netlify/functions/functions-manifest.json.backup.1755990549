@@ -1,5 +1,9 @@
 {
+<<<<<<< HEAD
+  "generatedAt": "2025-08-11T23:52:17.835Z",
+=======
   "generatedAt": "2025-08-11T23:51:05.780Z",
+>>>>>>> origin/cursor/invent-and-deploy-autonomous-cloud-automations-c606
   "functions": [
     "a11y-alt-text-runner",
     "adaptive-orchestrator",
@@ -77,7 +81,11 @@
     "opengraph-coverage-runner",
     "orphan-pages-detector",
     "pagespeed-insights-runner",
+<<<<<<< HEAD
+    "qa-knowledge-runner",
+=======
     "rapid-sync",
+>>>>>>> origin/cursor/invent-and-deploy-autonomous-cloud-automations-c606
     "readme-advertiser",
     "readme-badges-runner",
     "release-cadence-runner",

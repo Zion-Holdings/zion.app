@@ -247,7 +247,11 @@
 
 [[scheduled.functions]]
   name = "deps-auto-upgrade-runner"
+<<<<<<< HEAD
+  schedule = "7 */12 * * *" # every 12 hours
+=======
   schedule = "0 3 * * *"
+>>>>>>> origin/cursor/invent-and-deploy-autonomous-cloud-automations-c606
 
 # New autonomous cloud scanners
 [[scheduled.functions]]
@@ -268,7 +272,11 @@
 
 [[scheduled.functions]]
   name = "pagespeed-insights-runner"
+<<<<<<< HEAD
+  schedule = "11 */6 * * *" # every 6 hours, offset
+=======
   schedule = "11 */6 * * *"
+>>>>>>> origin/cursor/invent-and-deploy-autonomous-cloud-automations-c606
 
 [[scheduled.functions]]
   name = "knowledge-pack-runner"
@@ -278,6 +286,28 @@
   name = "adaptive-orchestrator"
   schedule = "*/5 * * * *"
 
+<<<<<<< HEAD
+[[scheduled.functions]]
+  name = "site-404-map-runner"
+  schedule = "17 */6 * * *"
+
+[[scheduled.functions]]
+  name = "component-coupling-graph-runner"
+  schedule = "29 */6 * * *"
+
+[[scheduled.functions]]
+  name = "content-freshness-score-runner"
+  schedule = "7 */12 * * *"
+
+# Newly added intelligent automations
+[[scheduled.functions]]
+  name = "internal-link-graph-runner"
+  schedule = "*/10 * * * *"
+
+[[scheduled.functions]]
+  name = "asset-inventory-runner"
+  schedule = "*/30 * * * *"
+=======
 # New orchestrators for rapid sync and meta optimization
 [[scheduled.functions]]
   name = "autonomous-meta-orchestrator"
@@ -290,3 +320,4 @@
 [[scheduled.functions]]
   name = "autonomous-invention-orchestrator"
   schedule = "*/5 * * * *"
+>>>>>>> origin/cursor/invent-and-deploy-autonomous-cloud-automations-c606

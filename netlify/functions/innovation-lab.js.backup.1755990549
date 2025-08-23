@@ -1,3 +1,12 @@
+<<<<<<< HEAD
+const { execSync } = require('child_process');
+const fs = require('fs');
+const path = require('path');
+
+exports.handler = async function(event, context) {
+  console.log('🤖 Starting innovation-lab...');
+  
+=======
 // netlify/functions/innovation-lab.js
 exports.config = {
   schedule: '*/10 * * * *',
@@ -5,6 +14,7 @@ exports.config = {
 
 exports.handler = async function() {
   const { execSync } = require('child_process');
+>>>>>>> origin/cursor/invent-and-deploy-autonomous-cloud-automations-c606
   try {
     const timestamp = new Date().toISOString();
     const reportPath = path.join(process.cwd(), 'innovation-lab-report.md');
