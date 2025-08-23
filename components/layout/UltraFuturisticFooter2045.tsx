@@ -4,7 +4,8 @@ import { motion } from 'framer-motion';
 import { 
   Phone, Mail, MapPin, ArrowRight, Globe, Shield, Rocket, Brain, Atom, Cpu,
   Facebook, Twitter, Linkedin, Instagram, Youtube, Github, Zap, Heart, Star,
-  Users, Lock, Cloud, Code, Server, Database, Network, Settings, Target, Play
+  Users, Lock, Cloud, Code, Server, Database, Network, Settings, Target, Play,
+  FileText, TrendingUp
 } from 'lucide-react';
 
 const UltraFuturisticFooter2045: React.FC = () => {
@@ -20,45 +21,45 @@ const UltraFuturisticFooter2045: React.FC = () => {
     {
       title: 'Revolutionary Services 2045',
       links: [
-        { name: 'AI Consciousness Evolution 2045', href: '/ai-consciousness-evolution-2045' },
-        { name: 'Quantum Neural Networks 2045', href: '/quantum-neural-network-platform-2045' },
-        { name: 'AI Autonomous Business Intelligence 2045', href: '/ai-autonomous-business-intelligence-2045' },
-        { name: 'Quantum Cybersecurity 2045', href: '/quantum-cybersecurity-platform-2045' },
-        { name: 'Space Resource Intelligence 2045', href: '/space-resource-intelligence-2045' },
-        { name: 'Autonomous Customer Success 2045', href: '/autonomous-customer-success-2045' }
+        { name: 'AI Consciousness Evolution 2045', href: '/ai-consciousness-evolution-2045', icon: Brain },
+        { name: 'Quantum Neural Networks 2045', href: '/quantum-neural-network-platform-2045', icon: Atom },
+        { name: 'AI Autonomous Business Intelligence 2045', href: '/ai-autonomous-business-intelligence-2045', icon: Brain },
+        { name: 'Quantum Cybersecurity 2045', href: '/quantum-cybersecurity-platform-2045', icon: Shield },
+        { name: 'Space Resource Intelligence 2045', href: '/space-resource-intelligence-2045', icon: Rocket },
+        { name: 'Autonomous Customer Success 2045', href: '/autonomous-customer-success-2045', icon: Users }
       ]
     },
     {
       title: 'Technology Solutions',
       links: [
-        { name: 'Quantum Cloud Infrastructure 2045', href: '/quantum-cloud-infrastructure-2045' },
-        { name: 'Autonomous DevOps Platform 2045', href: '/autonomous-devops-platform-2045' },
-        { name: 'Quantum Data Center Management 2045', href: '/quantum-data-center-management-2045' },
-        { name: 'Autonomous Network Management 2045', href: '/autonomous-network-management-2045' },
-        { name: 'Autonomous IT Service Management 2045', href: '/autonomous-it-service-management-2045' },
-        { name: 'Autonomous Security Operations Center 2045', href: '/autonomous-security-operations-center-2045' }
+        { name: 'Quantum Cloud Infrastructure 2045', href: '/quantum-cloud-infrastructure-2045', icon: Cloud },
+        { name: 'Autonomous DevOps Platform 2045', href: '/autonomous-devops-platform-2045', icon: Code },
+        { name: 'Quantum Data Center Management 2045', href: '/quantum-data-center-management-2045', icon: Server },
+        { name: 'Autonomous Network Management 2045', href: '/autonomous-network-management-2045', icon: Network },
+        { name: 'Autonomous IT Service Management 2045', href: '/autonomous-it-service-management-2045', icon: Settings },
+        { name: 'Autonomous Security Operations Center 2045', href: '/autonomous-security-operations-center-2045', icon: Shield }
       ]
     },
     {
       title: 'AI & Consciousness',
       links: [
-        { name: 'AI Consciousness Evolution 2045', href: '/ai-consciousness-evolution-2045' },
-        { name: 'Quantum AI Cognitive 2045', href: '/quantum-ai-cognitive-2045' },
-        { name: 'Autonomous AI Research 2045', href: '/autonomous-ai-research-2045' },
-        { name: 'Emotional AI Intelligence 2045', href: '/emotional-ai-intelligence-2045' },
-        { name: 'Quantum AI Metaverse 2045', href: '/quantum-ai-metaverse-2045' },
-        { name: 'AI Autonomous Business Intelligence 2045', href: '/ai-autonomous-business-intelligence-2045' }
+        { name: 'AI Consciousness Evolution 2045', href: '/ai-consciousness-evolution-2045', icon: Brain },
+        { name: 'Quantum AI Cognitive 2045', href: '/quantum-ai-cognitive-2045', icon: Atom },
+        { name: 'Autonomous AI Research 2045', href: '/autonomous-ai-research-2045', icon: Brain },
+        { name: 'Emotional AI Intelligence 2045', href: '/emotional-ai-intelligence-2045', icon: Heart },
+        { name: 'Quantum AI Metaverse 2045', href: '/quantum-ai-metaverse-2045', icon: Globe },
+        { name: 'AI Autonomous Business Intelligence 2045', href: '/ai-autonomous-business-intelligence-2045', icon: Target }
       ]
     },
     {
       title: 'Company',
       links: [
-        { name: 'About Us', href: '/about' },
-        { name: 'Our Mission', href: '/mission' },
-        { name: 'Leadership Team', href: '/team' },
-        { name: 'Careers', href: '/careers' },
-        { name: 'News & Updates', href: '/news' },
-        { name: 'Press Kit', href: '/press' }
+        { name: 'About Us', href: '/about', icon: Users },
+        { name: 'Our Mission', href: '/mission', icon: Target },
+        { name: 'Leadership Team', href: '/team', icon: Users },
+        { name: 'Careers', href: '/careers', icon: Users },
+        { name: 'News & Updates', href: '/news', icon: Star },
+        { name: 'Press Kit', href: '/press', icon: FileText }
       ]
     }
   ];
@@ -154,7 +155,9 @@ const UltraFuturisticFooter2045: React.FC = () => {
                         href={link.href}
                         className="text-gray-400 hover:text-cyan-400 transition-all duration-200 group hover:translate-x-1"
                       >
-
+                        <div className="w-5 h-5 text-cyan-400 group-hover:scale-110 transition-transform duration-200">
+                          {React.createElement(link.icon, { className: "w-5 h-5" })}
+                        </div>
                         <span className="text-sm group-hover:text-cyan-400 transition-colors duration-200">
                           {link.name}
                         </span>
@@ -207,19 +210,16 @@ const UltraFuturisticFooter2045: React.FC = () => {
 
               {/* Social Links */}
               <div className="flex items-center space-x-4">
-                {socialLinks.map((social) => {
-                  const IconComponent = social.icon;
-                  return (
-                    <Link
-                      key={social.name}
-                      href={social.href}
-                      className={`p-2 rounded-lg bg-gray-900/50 border border-cyan-500/20 text-gray-400 ${social.color} transition-all duration-200 hover:scale-110 hover:border-cyan-500/50`}
-                      aria-label={social.name}
-                    >
-                      <IconComponent className="w-5 h-5" />
-                    </Link>
-                  );
-                })}
+                {socialLinks.map((social) => (
+                  <Link
+                    key={social.name}
+                    href={social.href}
+                    className={`p-2 rounded-lg bg-gray-900/50 border border-cyan-500/20 text-gray-400 ${social.color} transition-all duration-200 hover:scale-110 hover:border-cyan-500/50`}
+                    aria-label={social.name}
+                  >
+                    {React.createElement(social.icon, { className: "w-5 h-5" })}
+                  </Link>
+                ))}
               </div>
 
               {/* Additional Links */}
