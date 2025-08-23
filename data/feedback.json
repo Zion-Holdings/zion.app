@@ -1,0 +1,29 @@
+[
+  {
+    "id": "seed-1",
+    "title": "Team Builder Wizard",
+    "description": "Guided flow to define scope and auto-assemble a project team.",
+    "status": "in_progress",
+    "votes": 23,
+    "createdAt": "2025-08-08T00:00:00.000Z",
+    "source": "product"
+  },
+  {
+    "id": "seed-2",
+    "title": "Verified Talent Badges",
+    "description": "Add verification badges for vetted experts in marketplace.",
+    "status": "planned",
+    "votes": 15,
+    "createdAt": "2025-08-07T00:00:00.000Z",
+    "source": "customer"
+  },
+  {
+    "id": "seed-3",
+    "title": "Usage-based Pricing",
+    "description": "Introduce metered pricing options for AI workloads.",
+    "status": "shipped",
+    "votes": 31,
+    "createdAt": "2025-08-01T00:00:00.000Z",
+    "source": "sales"
+  }
+]
