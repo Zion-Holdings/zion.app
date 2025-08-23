@@ -1,6 +1,13 @@
+<<<<<<< HEAD
+import React, { useState, useEffect } from 'react';
+import Head from 'next/head';
+import UltraFuturisticNavigation2046 from './UltraFuturisticNavigation2046';
+import UltraFuturisticFooter2046 from './UltraFuturisticFooter2046';
+=======
 import React, { useState } from 'react';
 import UltraFuturisticNavigation2045 from './UltraFuturisticNavigation2045';
 import UltraFuturisticFooter2045 from './UltraFuturisticFooter2045';
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-92f8
 import EnhancedSidebar2025 from './EnhancedSidebar2025';
 import UltraFuturisticBackground2045 from '../backgrounds/UltraFuturisticBackground2045';
 import TopContactBar from './TopContactBar';
@@ -262,6 +269,12 @@ export default function Layout({
 
         {/* Navigation */}
         <UltraFuturisticNavigation2045 />
+<<<<<<< HEAD
+
+        {/* Theme Toggle */}
+        <div className="fixed top-24 right-4 z-50">
+          <ThemeToggle theme={theme} onToggle={toggleTheme} />
+=======
         
         {/* Sidebar and Main Content */}
         <div className="flex">
@@ -273,6 +286,7 @@ export default function Layout({
           <main id="main" role="main" className="flex-1 pt-24 lg:pt-28">
             {children}
           </main>
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-92f8
         </div>
 
         {/* Main Content */}
@@ -282,6 +296,42 @@ export default function Layout({
 
         {/* Footer */}
         <UltraFuturisticFooter2045 />
+<<<<<<< HEAD
+
+        {/* Sidebar */}
+        <EnhancedSidebar2025 
+          isOpen={sidebarOpen} 
+          onClose={() => setSidebarOpen(false)} 
+        />
+
+        {/* Background */}
+        <UltraFuturisticBackground2036 />
+        
+        {/* Layout Structure */}
+        <div className="relative z-10">
+          {/* Top Contact Bar */}
+          <TopContactBar />
+          
+          {/* Navigation */}
+          <UltraFuturisticNavigation2046 />
+          
+          {/* Sidebar and Main Content */}
+          <div className="flex">
+            <EnhancedSidebar2025 
+              isOpen={sidebarOpen} 
+              onClose={() => setSidebarOpen(false)} 
+            />
+            
+            <main id="main" role="main" className="flex-1 pt-24 lg:pt-28">
+              {children}
+            </main>
+          </div>
+          
+          {/* Footer */}
+          <UltraFuturisticFooter2046 />
+        </div>
+=======
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-92f8
       </div>
 
       {/* Accessibility and Performance Tools */}
