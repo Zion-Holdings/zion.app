@@ -89,31 +89,43 @@ const Homepage2044: React.FC = () => {
     window.location.href = service.slug;
   }, []);
 
+  // Loading state
   if (isLoading) {
-    return <LoadingSpinner />;
+    return (
+      <Layout>
+        <div className="min-h-screen flex items-center justify-center">
+          <div className="text-center space-y-4">
+            <div className="w-16 h-16 mx-auto border-4 border-cyan-500 border-t-transparent rounded-full animate-spin"></div>
+            <h2 className="text-2xl font-semibold text-white">Loading Zion Tech Group</h2>
+            <p className="text-white/70">Preparing the future of technology...</p>
+          </div>
+        </div>
+      </Layout>
+    );
   }
 
+  // Error state
   if (error) {
     return (
-      <div className="min-h-screen flex items-center justify-center">
-        <div className="text-center">
-          <div className="text-red-400 text-6xl mb-4">⚠️</div>
-          <h1 className="text-2xl font-bold text-white mb-2">Something went wrong</h1>
-          <p className="text-gray-400 mb-4">{error}</p>
-          <button 
-            onClick={() => window.location.reload()} 
-            className="px-6 py-3 bg-cyan-500 text-white rounded-lg hover:bg-cyan-600 transition-colors"
-          >
-            Try Again
-          </button>
+      <Layout>
+        <div className="min-h-screen flex items-center justify-center">
+          <div className="text-center space-y-4">
+            <div className="w-16 h-16 mx-auto bg-red-500 rounded-full flex items-center justify-center">
+              <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4c-.77-.833-1.964-.833-2.732 0L3.732 16.5c-.77.833.192 2.5 1.732 2.5z" />
+              </svg>
+            </div>
+            <h2 className="text-2xl font-semibold text-white">Error Loading Page</h2>
+            <p className="text-white/70">{error}</p>
+          </div>
         </div>
-      </div>
+      </Layout>
     );
   }
 
   return (
     <Layout>
-      <main className="min-h-screen bg-black text-white relative overflow-hidden">
+      <main className="relative z-10">
         {/* Hero Section */}
         <section 
           className="min-h-screen flex items-center justify-center px-4 relative overflow-hidden"

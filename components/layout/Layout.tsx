@@ -3,12 +3,12 @@ import Head from 'next/head';
 import UltraFuturisticNavigation2045 from './UltraFuturisticNavigation2045';
 import UltraFuturisticFooter2045 from './UltraFuturisticFooter2045';
 import EnhancedSidebar2025 from './EnhancedSidebar2025';
+import UltraFuturisticBackground2045 from '../backgrounds/UltraFuturisticBackground2045';
 import TopContactBar from './TopContactBar';
-import UltraFuturisticBackground2036 from '../backgrounds/UltraFuturisticBackground2036';
-
-import EnhancedAccessibilityEnhancer from '../EnhancedAccessibilityEnhancer';
-import EnhancedPerformanceMonitor from '../EnhancedPerformanceMonitor';
+import PerformanceMonitor from '../PerformanceMonitor';
+import AccessibilityEnhancer from '../EnhancedAccessibilityEnhancer';
 import CookieConsentBanner from '../CookieConsentBanner';
+import EnhancedErrorBoundary from '../EnhancedErrorBoundary';
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -21,9 +21,9 @@ interface LayoutProps {
 
 export default function Layout({ 
   children, 
-  title = "Zion Tech Group - Revolutionary 2044 Technology",
+  title = "Zion Tech Group - Revolutionary 2045 Technology",
   description = "Pioneering the future of technology with revolutionary AI consciousness, quantum computing, and autonomous solutions that transform businesses worldwide.",
-  keywords = "AI consciousness, quantum computing, autonomous solutions, space technology, cybersecurity, business intelligence, Zion Tech Group, 2044 technology",
+  keywords = "AI consciousness, quantum computing, autonomous solutions, space technology, cybersecurity, business intelligence, Zion Tech Group, 2045 technology",
   ogImage = "/og-image.jpg",
   canonicalUrl
 }: LayoutProps) {
@@ -78,20 +78,20 @@ export default function Layout({
   return (
     <>
       <Head>
-        {/* Basic Meta Tags */}
         <title>{title}</title>
         <meta name="description" content={description} />
         <meta name="keywords" content={keywords} />
-        <meta name="author" content="Zion Tech Group" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta charSet="utf-8" />
         <meta name="robots" content="index, follow" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="author" content="Zion Tech Group" />
+        <meta name="theme-color" content="#06b6d4" />
         
         {/* Canonical URL */}
         {canonicalUrl && <link rel="canonical" href={canonicalUrl} />}
         
         {/* PWA Manifest */}
         <link rel="manifest" href="/manifest.json" />
-        <meta name="theme-color" content="#06b6d4" />
         <meta name="msapplication-TileColor" content="#06b6d4" />
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
@@ -123,6 +123,20 @@ export default function Layout({
         <meta name="application-name" content="Zion Tech Group" />
         <meta name="mobile-web-app-capable" content="yes" />
         <meta name="format-detection" content="telephone=no" />
+        
+        {/* Preload Critical Resources */}
+        <link rel="preload" href="/fonts/inter-var.woff2" as="font" type="font/woff2" crossOrigin="anonymous" />
+        <link rel="preload" href="/_next/static/css/app.css" as="style" />
+        
+        {/* DNS Prefetch */}
+        <link rel="dns-prefetch" href="//fonts.googleapis.com" />
+        <link rel="dns-prefetch" href="//cdn.jsdelivr.net" />
+        
+        {/* Security Headers */}
+        <meta httpEquiv="X-Content-Type-Options" content="nosniff" />
+        <meta httpEquiv="X-Frame-Options" content="DENY" />
+        <meta httpEquiv="X-XSS-Protection" content="1; mode=block" />
+        <meta httpEquiv="Referrer-Policy" content="strict-origin-when-cross-origin" />
         
         {/* Structured Data */}
         <script
@@ -162,16 +176,8 @@ export default function Layout({
                     "@type": "Offer",
                     "itemOffered": {
                       "@type": "Service",
-                      "name": "AI Consciousness Evolution 2044",
+                      "name": "AI Consciousness Evolution 2045",
                       "description": "Next-generation AI consciousness with emotional intelligence"
-                    }
-                  },
-                  {
-                    "@type": "Offer",
-                    "itemOffered": {
-                      "@type": "Service",
-                      "name": "Quantum Neural Network Platform 2044",
-                      "description": "Quantum-powered neural networks with consciousness integration"
                     }
                   }
                 ]
@@ -179,20 +185,6 @@ export default function Layout({
             })
           }}
         />
-        
-        {/* Preload Critical Resources */}
-        <link rel="preload" href="/fonts/inter-var.woff2" as="font" type="font/woff2" crossOrigin="anonymous" />
-        <link rel="preload" href="/_next/static/css/app.css" as="style" />
-        
-        {/* DNS Prefetch */}
-        <link rel="dns-prefetch" href="//fonts.googleapis.com" />
-        <link rel="dns-prefetch" href="//cdn.jsdelivr.net" />
-        
-        {/* Security Headers */}
-        <meta httpEquiv="X-Content-Type-Options" content="nosniff" />
-        <meta httpEquiv="X-Frame-Options" content="DENY" />
-        <meta httpEquiv="X-XSS-Protection" content="1; mode=block" />
-        <meta httpEquiv="Referrer-Policy" content="strict-origin-when-cross-origin" />
       </Head>
 
       <div className="min-h-screen bg-black text-white relative overflow-x-hidden">
@@ -212,7 +204,7 @@ export default function Layout({
         )}
         
         {/* Futuristic Background */}
-        <UltraFuturisticBackground2036 />
+        <UltraFuturisticBackground2045 />
         
         {/* Layout Structure */}
         <div className="relative z-10">
@@ -237,15 +229,15 @@ export default function Layout({
           {/* Footer */}
           <UltraFuturisticFooter2045 />
         </div>
-
-        {/* Accessibility and Performance Tools */}
-        <EnhancedAccessibilityEnhancer />
-        <EnhancedPerformanceMonitor />
-        
-        {/* Cookie Consent Banner */}
-        <CookieConsentBanner />
       </div>
 
+      {/* Accessibility and Performance Tools */}
+      <AccessibilityEnhancer />
+      <PerformanceMonitor />
+      
+      {/* Cookie Consent Banner */}
+      <CookieConsentBanner />
+      
       {/* Service Worker Update Notification */}
       <div id="sw-update-notification" className="hidden fixed bottom-4 right-4 bg-cyan-600 text-white p-4 rounded-lg shadow-lg z-50 max-w-sm">
         <div className="flex items-start gap-3">
@@ -266,7 +258,7 @@ export default function Layout({
               </button>
               <button 
                 onClick={() => document.getElementById('sw-update-notification')?.classList.add('hidden')} 
-                className="text-cyan-500 hover:text-white text-sm transition-colors"
+                className="text-cyan-100 hover:text-white text-sm transition-colors"
               >
                 Later
               </button>

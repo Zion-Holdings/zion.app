@@ -45,11 +45,17 @@ const Footer: React.FC = () => {
 
   const company = [
     { name: 'About Us', href: '/about' },
+    { name: 'Company', href: '/company' },
+    { name: 'Mission', href: '/mission' },
+    { name: 'Culture', href: '/culture' },
+    { name: 'Values', href: '/values' },
     { name: 'Contact', href: '/contact' },
     { name: 'Partners', href: '/partners' },
     { name: 'Investors', href: '/investors' },
     { name: 'Blog', href: '/blog' },
-    { name: 'Careers', href: '/careers' }
+    { name: 'Careers', href: '/careers' },
+    { name: 'Career Development', href: '/career-development' },
+    { name: 'Benefits', href: '/benefits' }
   ];
 
   const resources = [
@@ -58,7 +64,12 @@ const Footer: React.FC = () => {
     { name: 'Case Studies', href: '/case-studies' },
     { name: 'Support Center', href: '/support' },
     { name: 'Resources', href: '/resources' },
-    { name: 'Training', href: '/training' }
+    { name: 'Training', href: '/training' },
+    { name: 'API Reference', href: '/api-docs' },
+    { name: 'Webinars', href: '/webinars' },
+    { name: 'Events & Webinars', href: '/events-webinars' },
+    { name: 'Press', href: '/press' },
+    { name: 'Media Kit', href: '/media-kit' }
   ];
 
   const legal = [
