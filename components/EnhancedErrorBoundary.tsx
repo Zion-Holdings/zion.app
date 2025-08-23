@@ -15,7 +15,7 @@ interface State {
   errorId?: string;
 }
 
-class ErrorBoundary extends Component<Props, State> {
+class EnhancedErrorBoundary extends Component<Props, State> {
   constructor(props: Props) {
     super(props);
     this.state = { hasError: false };
@@ -76,6 +76,88 @@ class ErrorBoundary extends Component<Props, State> {
 
   private handleRetry = () => {
     this.setState({ hasError: false, error: undefined, errorInfo: undefined, errorId: undefined });
+  };
+
+  private handleReportError = () => {
+    const { error, errorInfo, errorId } = this.state;
+    
+    if (!error) return;
+
+    const errorReport = `
+Error Report (ID: ${errorId})
+
+Error: ${error.message}
+Stack: ${error.stack}
+
+Component Stack: ${errorInfo?.componentStack}
+
+URL: ${typeof window !== 'undefined' ? window.location.href : 'unknown'}
+User Agent: ${typeof navigator !== 'undefined' ? navigator.userAgent : 'unknown'}
+Timestamp: ${new Date().toISOString()}
+    `;
+
+    // Copy to clipboard
+    if (navigator.clipboard) {
+      navigator.clipboard.writeText(errorReport).then(() => {
+        // Use a more modern approach instead of alert
+        if (typeof window !== 'undefined') {
+          const notification = document.createElement('div');
+          notification.style.cssText = `
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: #10b981;
+            color: white;
+            padding: 16px;
+            border-radius: 8px;
+            z-index: 10000;
+            font-family: system-ui, sans-serif;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+          `;
+          notification.textContent = 'Error report copied to clipboard. Please send this to support.';
+          document.body.appendChild(notification);
+          
+          setTimeout(() => {
+            if (document.body.contains(notification)) {
+              document.body.removeChild(notification);
+            }
+          }, 5000);
+        }
+      });
+    } else {
+      // Fallback for older browsers
+      const textArea = document.createElement('textarea');
+      textArea.value = errorReport;
+      document.body.appendChild(textArea);
+      textArea.select();
+      document.execCommand('copy');
+      document.body.removeChild(textArea);
+      
+      // Use the same notification approach
+      if (typeof window !== 'undefined') {
+        const notification = document.createElement('div');
+        notification.style.cssText = `
+          position: fixed;
+          top: 20px;
+          right: 20px;
+          background: #10b981;
+          color: white;
+          padding: 16px;
+          border-radius: 8px;
+          z-index: 10000;
+          font-family: system-ui, sans-serif;
+          box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        `;
+        notification.textContent = 'Error report copied to clipboard. Please send this to support.';
+        document.body.appendChild(notification);
+        
+        setTimeout(() => {
+          if (document.body.contains(notification)) {
+            document.body.removeChild(notification);
+          }
+        }, 5000);
+      }
+    }
   };
 
   render() {
@@ -165,16 +247,15 @@ class ErrorBoundary extends Component<Props, State> {
                 </motion.button>
               </Link>
 
-              <Link href="/contact">
-                <motion.button
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  className="flex items-center justify-center space-x-2 px-6 py-3 border-2 border-red-400 text-red-400 font-semibold rounded-lg hover:bg-red-400 hover:text-black transition-all duration-300"
-                >
-                  <Bug className="w-4 h-4" />
-                  <span>Contact Support</span>
-                </motion.button>
-              </Link>
+              <motion.button
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                onClick={this.handleReportError}
+                className="flex items-center justify-center space-x-2 px-6 py-3 border-2 border-red-400 text-red-400 font-semibold rounded-lg hover:bg-red-400 hover:text-black transition-all duration-300"
+              >
+                <Bug className="w-4 h-4" />
+                <span>Report Issue</span>
+              </motion.button>
             </div>
 
             {/* Contact Support */}
@@ -194,4 +275,4 @@ class ErrorBoundary extends Component<Props, State> {
   }
 }
 
-export default ErrorBoundary;
+export default EnhancedErrorBoundary;
