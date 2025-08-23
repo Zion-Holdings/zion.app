@@ -1,58 +1,14 @@
 import React, { useState, useCallback, useMemo } from 'react';
 import { motion } from 'framer-motion';
 import { 
-  Phone, Mail, MapPin, Globe, Shield, Rocket, Brain, Atom, 
+  Phone, Mail, MapPin, ArrowRight, Globe, Shield, Rocket, Brain, Atom, Cpu,
   Facebook, Twitter, Linkedin, Instagram, Youtube, Github, Zap, Heart, Star,
-  Users, Lock, Cloud, Code, Database, Network, Settings, Target, Play
+  Users, Lock, Cloud, Code, Server, Database, Network, Settings, Target, Play
 } from 'lucide-react';
 
-// Footer sections data
-const footerSections = [
-  {
-    title: 'Services',
-    items: [
-      { label: 'AI & Machine Learning', href: '/services?category=ai-ml', icon: Brain },
-      { label: 'Quantum Computing', href: '/services?category=quantum', icon: Atom },
-      { label: 'Cybersecurity', href: '/services?category=cybersecurity', icon: Shield },
-      { label: 'Space Technology', href: '/services?category=space', icon: Rocket },
-      { label: 'Enterprise Solutions', href: '/services?category=enterprise', icon: Target },
-      { label: 'Cloud Infrastructure', href: '/services?category=cloud', icon: Cloud }
-    ]
-  },
-  {
-    title: 'Solutions',
-    items: [
-      { label: 'Industry Solutions', href: '/solutions', icon: Target },
-      { label: 'Startup Solutions', href: '/solutions/startup', icon: Rocket },
-      { label: 'Government Solutions', href: '/solutions/government', icon: Shield },
-      { label: 'Healthcare Solutions', href: '/solutions/healthcare', icon: Heart },
-      { label: 'Financial Solutions', href: '/solutions/financial', icon: TrendingUp },
-      { label: 'Education Solutions', href: '/solutions/education', icon: GraduationCap }
-    ]
-  },
-  {
-    title: 'Resources',
-    items: [
-      { label: 'White Papers', href: '/white-papers', icon: FileText },
-      { label: 'Webinars', href: '/webinars', icon: Video },
-      { label: 'Case Studies', href: '/case-studies', icon: BarChart3 },
-      { label: 'Documentation', href: '/docs', icon: BookOpen },
-      { label: 'API Reference', href: '/api', icon: Code },
-      { label: 'Training', href: '/training', icon: GraduationCap }
-    ]
-  },
-  {
-    title: 'Company',
-    items: [
-      { label: 'About Us', href: '/about', icon: Users },
-      { label: 'Our Mission', href: '/mission', icon: Target },
-      { label: 'Team', href: '/team', icon: Users },
-      { label: 'Careers', href: '/careers', icon: Award },
-      { label: 'News', href: '/news', icon: FileText },
-      { label: 'Partners', href: '/partners', icon: Handshake }
-    ]
-  }
-];
+const UltraFuturisticFooter2045: React.FC = () => {
+  const currentYear = new Date().getFullYear();
+>>>>>>> 17df199e451813150094c5ab1fb554b04628cb60
 
   const contactInfo = {
     mobile: '+1 302 464 0950',
@@ -60,32 +16,15 @@ const footerSections = [
     address: '364 E Main St STE 1008 Middletown DE 19709'
   };
 
-  const contactInfo = {
-    mobile: '+1 302 464 0950',
-    email: 'kleber@ziontechgroup.com',
-    address: '364 E Main St STE 1008 Middletown DE 19709'
-  };
-
-  const contactInfo = {
-    phone: '+1 302 464 0950',
-    email: 'kleber@ziontechgroup.com',
-    address: '364 E Main St STE 1008 Middletown DE 19709',
-    website: 'https://ziontechgroup.com'
-  };
-
-  const contactInfo = {
-    mobile: '+1 302 464 0950',
-    email: 'kleber@ziontechgroup.com',
-    address: '364 E Main St STE 1008 Middletown DE 19709'
-  };
-
+>>>>>>> 17df199e451813150094c5ab1fb554b04628cb60
   const footerSections = [
     {
       title: 'Revolutionary Services 2045',
       links: [
         { name: 'AI Consciousness Evolution 2045', href: '/ai-consciousness-evolution-2045', icon: Brain },
         { name: 'Quantum Neural Networks 2045', href: '/quantum-neural-network-platform-2045', icon: Atom },
-        { name: 'AI Autonomous Business Intelligence 2045', href: '/ai-autonomous-business-intelligence-2045', icon: Target },
+        { name: 'AI Autonomous Business Intelligence 2045', href: '/ai-autonomous-business-intelligence-2045', icon: Cpu },
+>>>>>>> 17df199e451813150094c5ab1fb554b04628cb60
         { name: 'Quantum Cybersecurity 2045', href: '/quantum-cybersecurity-platform-2045', icon: Shield },
         { name: 'Space Resource Intelligence 2045', href: '/space-resource-intelligence-2045', icon: Rocket },
         { name: 'Autonomous Customer Success 2045', href: '/autonomous-customer-success-2045', icon: Users }
@@ -95,7 +34,8 @@ const footerSections = [
       title: 'Technology Solutions',
       links: [
         { name: 'Quantum Cloud Infrastructure 2045', href: '/quantum-cloud-infrastructure-2045', icon: Cloud },
-        { name: 'Autonomous DevOps Platform 2045', href: '/autonomous-devops-platform-2045', icon: Code },
+        { name: 'Autonomous DevOps Platform 2045', href: '/autonomous-devops-platform-2045', icon: Zap },
+>>>>>>> 17df199e451813150094c5ab1fb554b04628cb60
         { name: 'Quantum Data Center Management 2045', href: '/quantum-data-center-management-2045', icon: Server },
         { name: 'Autonomous Network Management 2045', href: '/autonomous-network-management-2045', icon: Network },
         { name: 'Autonomous IT Service Management 2045', href: '/autonomous-it-service-management-2045', icon: Settings },
@@ -107,9 +47,10 @@ const footerSections = [
       links: [
         { name: 'AI Consciousness Evolution 2045', href: '/ai-consciousness-evolution-2045', icon: Brain },
         { name: 'Quantum AI Cognitive 2045', href: '/quantum-ai-cognitive-2045', icon: Atom },
-        { name: 'Autonomous AI Research 2045', href: '/autonomous-ai-research-2045', icon: Zap },
+        { name: 'Autonomous AI Research 2045', href: '/autonomous-ai-research-2045', icon: Cpu },
         { name: 'Emotional AI Intelligence 2045', href: '/emotional-ai-intelligence-2045', icon: Heart },
-        { name: 'Quantum AI Metaverse 2045', href: '/quantum-ai-metaverse-2045', icon: Star },
+        { name: 'Quantum AI Metaverse 2045', href: '/quantum-ai-metaverse-2045', icon: Globe },
+>>>>>>> 17df199e451813150094c5ab1fb554b04628cb60
         { name: 'AI Autonomous Business Intelligence 2045', href: '/ai-autonomous-business-intelligence-2045', icon: Target }
       ]
     },
@@ -117,22 +58,24 @@ const footerSections = [
       title: 'Company',
       links: [
         { name: 'About Us', href: '/about', icon: Users },
-        { name: 'Our Mission', href: '/mission', icon: Target },
+        { name: 'Our Mission', href: '/mission', icon: Star },
         { name: 'Leadership Team', href: '/team', icon: Users },
-        { name: 'Careers', href: '/careers', icon: Star },
+        { name: 'Careers', href: '/careers', icon: Code },
         { name: 'News & Updates', href: '/news', icon: Globe },
-        { name: 'Press Kit', href: '/press', icon: Play }
+        { name: 'Press Kit', href: '/press', icon: Star }
+>>>>>>> 17df199e451813150094c5ab1fb554b04628cb60
       ]
     }
   ];
 
   const socialLinks = [
-    { name: 'Facebook', icon: <Facebook className="w-5 h-5" />, href: 'https://facebook.com/ziontechgroup', color: 'from-blue-500 to-blue-600' },
-    { name: 'Twitter', icon: <Twitter className="w-5 h-5" />, href: 'https://twitter.com/ziontechgroup', color: 'from-cyan-400 to-blue-500' },
-    { name: 'LinkedIn', icon: <Linkedin className="w-5 h-5" />, href: 'https://linkedin.com/company/ziontechgroup', color: 'from-blue-600 to-blue-700' },
-    { name: 'Instagram', icon: <Instagram className="w-5 h-5" />, href: 'https://instagram.com/ziontechgroup', color: 'from-purple-500 to-pink-500' },
-    { name: 'YouTube', icon: <Youtube className="w-5 h-5" />, href: 'https://youtube.com/@ziontechgroup', color: 'from-red-500 to-red-600' },
-    { name: 'GitHub', icon: <Github className="w-5 h-5" />, href: 'https://github.com/ziontechgroup', color: 'from-gray-600 to-gray-700' }
+    { name: 'Facebook', icon: Facebook, href: 'https://facebook.com/ziontechgroup', color: 'from-blue-500 to-blue-600' },
+    { name: 'Twitter', icon: Twitter, href: 'https://twitter.com/ziontechgroup', color: 'from-cyan-400 to-blue-500' },
+    { name: 'LinkedIn', icon: Linkedin, href: 'https://linkedin.com/company/ziontechgroup', color: 'from-blue-600 to-blue-700' },
+    { name: 'Instagram', icon: Instagram, href: 'https://instagram.com/ziontechgroup', color: 'from-purple-500 to-pink-500' },
+    { name: 'YouTube', icon: Youtube, href: 'https://youtube.com/@ziontechgroup', color: 'from-red-500 to-red-600' },
+    { name: 'GitHub', icon: Github, href: 'https://github.com/ziontechgroup', color: 'from-gray-600 to-gray-700' }
+>>>>>>> 17df199e451813150094c5ab1fb554b04628cb60
   ];
 
 // Quick stats
@@ -177,11 +120,12 @@ const NewsletterSignup: React.FC = () => {
   }
 
   return (
-    <div className="p-6 bg-gradient-to-r from-cyan-500/10 to-blue-500/10 border border-cyan-500/20 rounded-2xl">
-      <div className="text-center mb-6">
-        <h3 className="text-xl font-bold text-white mb-2">Stay Ahead of the Curve</h3>
-        <p className="text-cyan-300">Get the latest insights on AI, quantum computing, and emerging technologies.</p>
-      </div>
+    <footer className="bg-black/90 backdrop-blur-xl border-t border-cyan-500/20 relative overflow-hidden">
+      {/* Background Effects */}
+      <div className="absolute inset-0 bg-gradient-to-br from-cyan-900/10 via-blue-900/10 to-purple-900/10"></div>
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(6,182,212,0.1),transparent_50%)]"></div>
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_80%,rgba(139,92,246,0.1),transparent_50%)]"></div>
+>>>>>>> 17df199e451813150094c5ab1fb554b04628cb60
       
       <form onSubmit={handleSubmit} className="space-y-4">
         <div className="relative">
@@ -299,10 +243,11 @@ const UltraFuturisticFooter2045: React.FC = () => {
                     <li key={link.name}>
                       <Link
                         href={link.href}
-                        className="text-gray-400 hover:text-cyan-400 transition-all duration-200 group hover:translate-x-1"
+                        className="flex items-center space-x-3 text-gray-400 hover:text-cyan-400 transition-all duration-200 group hover:translate-x-1"
+>>>>>>> 17df199e451813150094c5ab1fb554b04628cb60
                       >
                         <div className="w-5 h-5 text-cyan-400 group-hover:scale-110 transition-transform duration-200">
-                          <link.icon className="w-5 h-5" />
+                          <link.icon />
                         </div>
                         <span className="text-sm group-hover:text-cyan-400 transition-colors duration-200">
                           {link.name}
@@ -356,140 +301,34 @@ const UltraFuturisticFooter2045: React.FC = () => {
 
               {/* Social Links */}
               <div className="flex items-center space-x-4">
-                {socialLinks.map((social) => {
-                  const IconComponent = social.icon;
-                  return (
-                    <Link
-                      key={social.name}
-                      href={social.href}
-                      className={`p-2 rounded-lg bg-gray-900/50 border border-cyan-500/20 text-gray-400 ${social.color} transition-all duration-200 hover:scale-110 hover:border-cyan-500/50`}
-                      aria-label={social.name}
-                    >
-                      <IconComponent className="w-5 h-5" />
-                    </Link>
-                  );
-                })}
-              </div>
-            </div>
-
-            {/* Newsletter Signup */}
-            <div className="lg:pl-8">
-              <NewsletterSignup />
-            </div>
-          </div>
-
-          {/* Footer Links Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
-            {memoizedFooterSections.map((section) => (
-              <div key={section.title}>
-                <h3 className="text-lg font-semibold text-white mb-6 flex items-center gap-2">
-                  {section.title}
-                  <button
-                    onClick={() => toggleSection(section.title)}
-                    className="lg:hidden p-1 hover:bg-white/10 rounded transition-colors"
-                    aria-label={`Toggle ${section.title} section`}
-                  >
-                    <social.icon className="w-5 h-5" />
-                  </Link>
-                ))}
-              </div>
-            </div>
-
-            {/* Social Media */}
-            <div>
-              <h3 className="text-lg font-semibold text-white mb-6">Follow Us</h3>
-              <div className="grid grid-cols-3 gap-4">
-                {socialLinks.map((social, index) => (
-                  <motion.a
-                    key={index}
+                {socialLinks.map((social) => (
+                  <Link
+                    key={social.name}
                     href={social.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex flex-col items-center p-4 bg-white/5 hover:bg-white/10 rounded-xl transition-all duration-200 group border border-white/10 hover:border-cyan-500/30"
-                    aria-label={`Visit our ${social.label} page`}
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: index * 0.1 }}
-                    whileHover={{ y: -2 }}
+                    className={`p-2 rounded-lg bg-gray-900/50 border border-cyan-500/20 text-gray-400 ${social.color} transition-all duration-200 hover:scale-110 hover:border-cyan-500/50`}
+                    aria-label={social.name}
                   >
-                    <social.icon className={`w-6 h-6 text-cyan-400 mb-2 group-hover:scale-110 transition-transform ${social.color}`} />
-                    <span className="text-xs text-gray-400 group-hover:text-white transition-colors">
-                      {social.label}
-                    </span>
-                  </motion.a>
+                    <social.icon />
+                  </Link>
                 ))}
               </div>
+
+              {/* Additional Links */}
+              <div className="flex items-center space-x-6 text-sm text-gray-400">
+                <Link href="/status" className="hover:text-cyan-400 transition-colors duration-200">
+                  System Status
+                </Link>
+                <Link href="/sitemap" className="hover:text-cyan-400 transition-colors duration-200">
+                  Sitemap
+                </Link>
+                <Link href="/accessibility" className="hover:text-cyan-400 transition-colors duration-200">
+                  Accessibility
+                </Link>
+              </div>
             </div>
           </div>
-
-          {/* Bottom Bar */}
-          <div className="pt-8 border-t border-white/10">
-            <div className="flex flex-col lg:flex-row items-center justify-between gap-4">
-              <div className="text-center lg:text-left">
-                <p className="text-gray-400 text-sm">
-                  © 2024 Zion Tech Group. All rights reserved. | 
-                  <Link href="/privacy" className="hover:text-cyan-300 transition-colors ml-1">
-                    Privacy Policy
-                  </Link>
-                  {' | '}
-                  <Link href="/terms" className="hover:text-cyan-300 transition-colors">
-                    Terms of Service
-                  </Link>
-                </p>
-              </div>
-              
-              <div className="flex items-center gap-2 text-gray-400 text-sm">
-                <HeartIcon className="w-4 h-4 text-red-400" />
-                <span>Made with cutting-edge technology</span>
-              </div>
-            </div>
-          </motion.div>
-
-          {/* Social Links */}
-          <motion.div
-            initial={{ opacity: 0, x: 30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
-          >
-            <h3 className="text-xl font-semibold text-white mb-6">Follow Us</h3>
-            <div className="grid grid-cols-3 gap-4">
-              {socialLinks.map((social) => (
-                <a
-                  key={social.name}
-                  href={social.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-12 h-12 bg-gradient-to-r from-gray-800 to-gray-700 rounded-xl flex items-center justify-center text-gray-400 hover:text-cyan-400 transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-cyan-500/25"
-                >
-                  <social.icon className="w-5 h-5" />
-                </a>
-              ))}
-            </div>
-          </motion.div>
         </div>
-
-        {/* Quick Links */}
-        <motion.div
-          className="mt-12 text-center"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          viewport={{ once: true }}
-        >
-          <div className="flex flex-wrap justify-center gap-6">
-            {quickLinks.map((link) => (
-              <Link
-                key={link.name}
-                href={link.href}
-                className="flex items-center space-x-2 text-gray-400 hover:text-cyan-400 transition-colors duration-200 group"
-              >
-                {link.icon}
-                <span className="text-sm group-hover:text-cyan-400">{link.name}</span>
-              </Link>
-            ))}
-          </div>
-        </motion.div>
+>>>>>>> 17df199e451813150094c5ab1fb554b04628cb60
       </div>
 
       {/* Enhanced Floating Elements */}
@@ -502,7 +341,7 @@ const UltraFuturisticFooter2045: React.FC = () => {
           }}
           transition={{
             duration: 4,
-            repeat: Infinity,
+            repeat: Infinity as any,
             ease: "easeInOut"
           }}
         />
@@ -514,7 +353,7 @@ const UltraFuturisticFooter2045: React.FC = () => {
           }}
           transition={{
             duration: 6,
-            repeat: Infinity,
+            repeat: Infinity as any,
             ease: "easeInOut"
           }}
         />

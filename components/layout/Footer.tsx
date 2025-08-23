@@ -13,45 +13,32 @@ import {
 const Footer: React.FC = () => {
 
   const services = [
-    { name: 'AI & Machine Learning', href: '/ai-services' },
-    { name: 'Quantum Computing', href: '/quantum-computing' },
-    { name: 'Space Technology', href: '/space-technology' },
-    { name: 'IT Solutions', href: '/it-services' },
-    { name: 'Cybersecurity', href: '/cybersecurity' },
-    { name: 'View All Services', href: '/services' }
-  ];
-
-  const solutions = [
-    { name: 'Enterprise Solutions', href: '/enterprise-solutions-showcase' },
-    { name: 'Healthcare Solutions', href: '/healthcare-solutions' },
-    { name: 'Financial Solutions', href: '/financial-solutions' },
-    { name: 'Government Solutions', href: '/government-technology-solutions' },
-    { name: 'Case Studies', href: '/case-studies' },
-    { name: 'Pricing Plans', href: '/pricing' }
+    { name: 'AI & Consciousness', href: '/ai-services', icon: Brain },
+    { name: 'Quantum Technology', href: '/quantum-services', icon: Atom },
+    { name: 'Cybersecurity', href: '/cybersecurity', icon: Shield },
+    { name: 'Business Solutions', href: '/business-solutions', icon: Target },
+    { name: 'IT Infrastructure', href: '/it-infrastructure', icon: Cpu },
+    { name: 'Space Technology', href: '/space-tech', icon: Rocket }
+>>>>>>> 17df199e451813150094c5ab1fb554b04628cb60
   ];
 
   const company = [
     { name: 'About Us', href: '/about' },
-    { name: 'Mission', href: '/mission' },
-    { name: 'Values', href: '/values' },
-    { name: 'Team', href: '/team' },
     { name: 'Leadership', href: '/leadership' },
-    { name: 'Culture', href: '/culture' },
+    { name: 'Team', href: '/team' },
     { name: 'Careers', href: '/careers' },
-    { name: 'Partners', href: '/partners' },
-    { name: 'Investors', href: '/investors' }
+    { name: 'Press', href: '/press' },
+    { name: 'Contact', href: '/contact' }
   ];
 
   const resources = [
-    { name: 'Documentation', href: '/docs' },
-    { name: 'API Reference', href: '/api-docs' },
     { name: 'Blog', href: '/blog' },
+    { name: 'Case Studies', href: '/case-studies' },
+    { name: 'White Papers', href: '/white-papers' },
     { name: 'Webinars', href: '/webinars' },
-    { name: 'Events', href: '/events' },
-    { name: 'Training', href: '/training' },
-    { name: 'Support Center', href: '/support' },
-    { name: 'Training', href: '/training' },
-    { name: 'White Papers', href: '/white-papers' }
+    { name: 'Documentation', href: '/docs' },
+    { name: 'Support', href: '/support' }
+>>>>>>> 17df199e451813150094c5ab1fb554b04628cb60
   ];
 
   const legal = [
@@ -61,13 +48,14 @@ const Footer: React.FC = () => {
     { name: 'Security', href: '/security' }
   ];
 
-  const socialLinks = [
-    { name: 'LinkedIn', href: 'https://linkedin.com/company/zion-tech-group', icon: Linkedin },
-    { name: 'GitHub', href: 'https://github.com/Zion-Holdings', icon: Github },
-    { name: 'Twitter', href: 'https://twitter.com/ziontechgroup', icon: Twitter },
-    { name: 'Facebook', href: 'https://facebook.com/ziontechgroup', icon: Facebook },
-    { name: 'Instagram', href: 'https://instagram.com/ziontechgroup', icon: Instagram },
-    { name: 'YouTube', href: 'https://youtube.com/@ziontechgroup', icon: Youtube }
+  const social = [
+    { name: 'Twitter', href: '#', icon: Twitter },
+    { name: 'LinkedIn', href: '#', icon: Linkedin },
+    { name: 'GitHub', href: '#', icon: Github },
+    { name: 'YouTube', href: '#', icon: Youtube },
+    { name: 'Instagram', href: '#', icon: Instagram },
+    { name: 'Facebook', href: '#', icon: Facebook }
+>>>>>>> 17df199e451813150094c5ab1fb554b04628cb60
   ];
 
   return (

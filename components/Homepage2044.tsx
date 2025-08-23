@@ -162,18 +162,25 @@ const Homepage2044: React.FC = () => {
     }, 300);
   }, []);
 
-  // Loading component
-  const LoadingSpinner = () => (
-    <div className="flex items-center justify-center p-8">
-      <Loader2 className="w-8 h-8 text-cyan-400 animate-spin" />
-      <span className="ml-3 text-cyan-400">Loading revolutionary services...</span>
-    </div>
-  );
+  if (isLoading) {
+    return <LoadingSpinner />;
+  }
+
+  if (error) {
+    return (
+      <div className="min-h-screen flex items-center justify-center">
+        <div className="text-center">
+          <h1 className="text-2xl font-bold text-red-400 mb-4">Error</h1>
+          <p className="text-gray-400">{error}</p>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <Layout>
-      {/* Main Content */}
-      <main className="relative z-10">
+      <main className="relative">
+>>>>>>> 17df199e451813150094c5ab1fb554b04628cb60
         {/* Hero Section */}
         <section 
           className="min-h-screen flex items-center justify-center px-4 relative overflow-hidden"

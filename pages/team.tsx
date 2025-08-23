@@ -1,7 +1,81 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Users, Award, Target, Globe, Zap, Brain, Rocket, Atom, Shield, Star, Cpu } from 'lucide-react';
-import Layout from '../components/layout/Layout';
+import { 
+  Users, Target, Award, Globe, 
+  ArrowRight, Star, Shield, CheckCircle, TrendingUp,
+  Infinity, Eye, Sparkles, Clock, Zap, Brain, Atom, Rocket
+} from 'lucide-react';
+
+const TeamPage: React.FC = () => {
+  const leadership = [
+    {
+      name: "Kleber",
+      role: "Founder & CEO",
+      description: "Visionary leader driving innovation and strategic growth with over 15 years of experience in cutting-edge technology",
+      expertise: ["AI & Consciousness", "Quantum Technology", "Strategic Leadership"],
+      color: "from-blue-500 to-cyan-500",
+      image: "/images/team/kleber.jpg"
+    },
+    {
+      name: "AI Consciousness Users",
+      role: "AI & Consciousness Division",
+      description: "Experts in next-generation artificial intelligence and consciousness systems, pioneering emotional AI and self-aware systems",
+      expertise: ["Emotional AI", "Consciousness Systems", "Ethical AI Governance"],
+      color: "from-purple-500 to-pink-500",
+      image: "/images/team/ai-team.jpg"
+    },
+    {
+      name: "Quantum Technology Users",
+      role: "Quantum Computing Division",
+      description: "Pioneers in quantum computing and quantum-resistant solutions, developing the next generation of computational power",
+      expertise: ["Quantum Computing", "Quantum Security", "Quantum Neural Networks"],
+      color: "from-indigo-500 to-purple-500",
+      image: "/images/team/quantum-team.jpg"
+    },
+    {
+      name: "Space Technology Users",
+      role: "Space Technology Division",
+      description: "Innovators in space exploration and resource intelligence, developing AI-powered space solutions",
+      expertise: ["Space Exploration", "Resource Intelligence", "AI Space Systems"],
+      color: "from-cyan-500 to-blue-500",
+      image: "/images/team/space-team.jpg"
+    }
+  ];
+
+  const values = [
+    {
+      icon: Target,
+      title: "Innovation First",
+      description: "Pioneering cutting-edge technology solutions that transform industries",
+      color: "from-blue-500 to-cyan-500"
+    },
+    {
+      icon: Shield,
+      title: "Excellence",
+      description: "Delivering world-class quality and reliability in everything we do",
+      color: "from-emerald-500 to-teal-500"
+    },
+    {
+      icon: Users,
+      title: "Collaboration",
+      description: "Working together with clients to achieve extraordinary results",
+      color: "from-purple-500 to-pink-500"
+    },
+    {
+      icon: Globe,
+      title: "Global Impact",
+      description: "Creating positive change across industries and communities worldwide",
+      color: "from-indigo-500 to-purple-500"
+    }
+  ];
+
+  const stats = [
+    { number: "50+", label: "Expert Users Members", icon: Users },
+    { number: "2000+", label: "Revolutionary Services", icon: Zap },
+    { number: "99.99%", label: "Client Satisfaction", icon: Star },
+    { number: "24/7", label: "Support Available", icon: Clock }
+  ];
+>>>>>>> 17df199e451813150094c5ab1fb554b04628cb60
 
 export default function Team() {
   return (
@@ -16,8 +90,13 @@ export default function Team() {
               transition={{ duration: 0.8 }}
               className="text-center"
             >
-              <h1 className="text-5xl md:text-7xl font-bold bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 bg-clip-text text-transparent mb-6">
-                Our Leadership Team
+              <div className="inline-flex items-center px-4 py-2 rounded-full bg-gradient-to-r from-blue-500/20 to-cyan-500/20 border border-blue-500/30 text-blue-300 text-sm font-medium mb-6">
+                <Users className="w-4 h-4 mr-2" />
+                Meet Our Users
+              </div>
+              <h1 className="text-5xl md:text-7xl font-bold bg-gradient-to-r from-blue-400 via-cyan-400 to-indigo-400 bg-clip-text text-transparent mb-6">
+                Leadership Users
+>>>>>>> 17df199e451813150094c5ab1fb554b04628cb60
               </h1>
               <p className="text-xl md:text-2xl text-gray-300 max-w-4xl mx-auto leading-relaxed">
                 Meet the visionary leaders and brilliant minds driving Zion Tech Group's 
@@ -27,7 +106,8 @@ export default function Team() {
           </div>
         </section>
 
-        {/* Executive Leadership */}
+        {/* Leadership Users Section */}
+>>>>>>> 17df199e451813150094c5ab1fb554b04628cb60
         <section className="py-20 px-4">
           <div className="container mx-auto max-w-6xl">
             <motion.div

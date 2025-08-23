@@ -3,8 +3,6 @@ import SEO from '../components/SEO';
 import { Check, ExternalLink } from 'lucide-react';
 
 export default function SecretsRotationAutomationPage() {
-	const title = 'Secrets Rotation Automation — Zion Tech Group';
-	const description = 'Automated key rotation, scheduled rollovers, drift detection, and blast-radius controls for safe secrets hygiene.';
 	const features = [
 		'Automated key and secret rotation',
 		'JIT credentials with expirations',

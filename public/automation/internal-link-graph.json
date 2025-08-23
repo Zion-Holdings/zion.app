@@ -1,0 +1,337 @@
+{
+  "generatedAt": "2025-08-11T23:48:25.122Z",
+  "pages": [
+    {
+      "route": "/",
+      "file": "pages/index.tsx",
+      "outbound": [
+        "/main/front",
+        "/automation",
+        "/newsroom",
+        "/site-health",
+        "/.netlify/functions/knowledge-pack-runner",
+        "/.netlify/functions/adaptive-orchestrator",
+        "/.netlify/functions/front-enhancer",
+        "/.netlify/functions/stale-content-auditor-runner",
+        "/.netlify/functions/deps-auto-upgrade-runner",
+        "/.netlify/functions/unused-media-scanner",
+        "/.netlify/functions/orphan-pages-detector",
+        "/.netlify/functions/component-size-report",
+        "/.netlify/functions/license-compliance-auditor",
+        "/.netlify/functions/pagespeed-insights-runner",
+        "/.netlify/functions/netlify-auto-healer-runner",
+        "/.netlify/functions/docs-index-runner",
+        "/.netlify/functions/front-visionary-expander",
+        "/.netlify/functions/home-visionary-expander",
+        "/.netlify/functions/continuous-orchestrator"
+      ],
+      "inboundCount": 1
+    },
+    {
+      "route": "/automation/",
+      "file": "pages/automation/index.tsx",
+      "outbound": [
+        "/.netlify/functions/schedule-homepage",
+        "/.netlify/functions/schedule-site-health",
+        "/.netlify/functions/schedule-content-index",
+        "/.netlify/functions/schedule-knowledge-graph",
+        "/.netlify/functions/front-enhancer",
+        "/.netlify/functions/fast-front-promoter",
+        "/.netlify/functions/marketing-and-features-promo",
+        "/.netlify/functions/fast-orchestrator",
+        "/.netlify/functions/continuous-orchestrator",
+        "/.netlify/functions/features-capabilities-benefits-advertiser",
+        "/.netlify/functions/hyper-front-index-accelerator",
+        "/.netlify/functions/innovation-lab",
+        "/.netlify/functions/auto-scheduler",
+        "/.netlify/functions/broken-image-scanner",
+        "/.netlify/functions/seo-audit-runner",
+        "/.netlify/functions/ai-trends-radar-runner",
+        "/.netlify/functions/deps-auto-upgrade-runner"
+      ],
+      "inboundCount": 0
+    },
+    {
+      "route": "/front/",
+      "file": "pages/front/index.tsx",
+      "outbound": [],
+      "inboundCount": 0
+    },
+    {
+      "route": "/main/front/",
+      "file": "pages/main/front/index.tsx",
+      "outbound": [
+        "/",
+        "/automation",
+        "/site-health",
+        "/reports/seo",
+        "/reports/ai-trends",
+        "/newsroom",
+        "/.netlify/functions/front-enhancer",
+        "/front",
+        "/.netlify/functions/docs-index-runner",
+        "/reports/a11y",
+        "/reports/metadata"
+      ],
+      "inboundCount": 0
+    },
+    {
+      "route": "/newsroom",
+      "file": "pages/newsroom.tsx",
+      "outbound": [],
+      "inboundCount": 2
+    },
+    {
+      "route": "/reports/ai-trends",
+      "file": "pages/reports/ai-trends.tsx",
+      "outbound": [],
+      "inboundCount": 1
+    },
+    {
+      "route": "/reports/seo",
+      "file": "pages/reports/seo.tsx",
+      "outbound": [],
+      "inboundCount": 1
+    },
+    {
+      "route": "/site-health",
+      "file": "pages/site-health.tsx",
+      "outbound": [],
+      "inboundCount": 2
+    }
+  ],
+  "edges": [
+    {
+      "from": "/",
+      "to": "/main/front"
+    },
+    {
+      "from": "/",
+      "to": "/automation"
+    },
+    {
+      "from": "/",
+      "to": "/newsroom"
+    },
+    {
+      "from": "/",
+      "to": "/site-health"
+    },
+    {
+      "from": "/",
+      "to": "/.netlify/functions/knowledge-pack-runner"
+    },
+    {
+      "from": "/",
+      "to": "/.netlify/functions/adaptive-orchestrator"
+    },
+    {
+      "from": "/",
+      "to": "/.netlify/functions/front-enhancer"
+    },
+    {
+      "from": "/",
+      "to": "/.netlify/functions/stale-content-auditor-runner"
+    },
+    {
+      "from": "/",
+      "to": "/.netlify/functions/deps-auto-upgrade-runner"
+    },
+    {
+      "from": "/",
+      "to": "/.netlify/functions/unused-media-scanner"
+    },
+    {
+      "from": "/",
+      "to": "/.netlify/functions/orphan-pages-detector"
+    },
+    {
+      "from": "/",
+      "to": "/.netlify/functions/component-size-report"
+    },
+    {
+      "from": "/",
+      "to": "/.netlify/functions/license-compliance-auditor"
+    },
+    {
+      "from": "/",
+      "to": "/.netlify/functions/pagespeed-insights-runner"
+    },
+    {
+      "from": "/",
+      "to": "/.netlify/functions/netlify-auto-healer-runner"
+    },
+    {
+      "from": "/",
+      "to": "/.netlify/functions/docs-index-runner"
+    },
+    {
+      "from": "/",
+      "to": "/.netlify/functions/front-visionary-expander"
+    },
+    {
+      "from": "/",
+      "to": "/.netlify/functions/home-visionary-expander"
+    },
+    {
+      "from": "/",
+      "to": "/.netlify/functions/continuous-orchestrator"
+    },
+    {
+      "from": "/main/front/",
+      "to": "/"
+    },
+    {
+      "from": "/main/front/",
+      "to": "/automation"
+    },
+    {
+      "from": "/main/front/",
+      "to": "/site-health"
+    },
+    {
+      "from": "/main/front/",
+      "to": "/reports/seo"
+    },
+    {
+      "from": "/main/front/",
+      "to": "/reports/ai-trends"
+    },
+    {
+      "from": "/main/front/",
+      "to": "/newsroom"
+    },
+    {
+      "from": "/main/front/",
+      "to": "/.netlify/functions/front-enhancer"
+    },
+    {
+      "from": "/main/front/",
+      "to": "/front"
+    },
+    {
+      "from": "/main/front/",
+      "to": "/.netlify/functions/docs-index-runner"
+    },
+    {
+      "from": "/main/front/",
+      "to": "/reports/a11y"
+    },
+    {
+      "from": "/main/front/",
+      "to": "/reports/metadata"
+    },
+    {
+      "from": "/automation/",
+      "to": "/.netlify/functions/schedule-homepage"
+    },
+    {
+      "from": "/automation/",
+      "to": "/.netlify/functions/schedule-site-health"
+    },
+    {
+      "from": "/automation/",
+      "to": "/.netlify/functions/schedule-content-index"
+    },
+    {
+      "from": "/automation/",
+      "to": "/.netlify/functions/schedule-knowledge-graph"
+    },
+    {
+      "from": "/automation/",
+      "to": "/.netlify/functions/front-enhancer"
+    },
+    {
+      "from": "/automation/",
+      "to": "/.netlify/functions/fast-front-promoter"
+    },
+    {
+      "from": "/automation/",
+      "to": "/.netlify/functions/marketing-and-features-promo"
+    },
+    {
+      "from": "/automation/",
+      "to": "/.netlify/functions/fast-orchestrator"
+    },
+    {
+      "from": "/automation/",
+      "to": "/.netlify/functions/continuous-orchestrator"
+    },
+    {
+      "from": "/automation/",
+      "to": "/.netlify/functions/features-capabilities-benefits-advertiser"
+    },
+    {
+      "from": "/automation/",
+      "to": "/.netlify/functions/hyper-front-index-accelerator"
+    },
+    {
+      "from": "/automation/",
+      "to": "/.netlify/functions/innovation-lab"
+    },
+    {
+      "from": "/automation/",
+      "to": "/.netlify/functions/auto-scheduler"
+    },
+    {
+      "from": "/automation/",
+      "to": "/.netlify/functions/broken-image-scanner"
+    },
+    {
+      "from": "/automation/",
+      "to": "/.netlify/functions/seo-audit-runner"
+    },
+    {
+      "from": "/automation/",
+      "to": "/.netlify/functions/ai-trends-radar-runner"
+    },
+    {
+      "from": "/automation/",
+      "to": "/.netlify/functions/deps-auto-upgrade-runner"
+    }
+  ],
+  "stats": {
+    "totalPages": 8,
+    "totalEdges": 47,
+    "orphanCount": 3,
+    "topOutbound": [
+      {
+        "route": "/",
+        "count": 19
+      },
+      {
+        "route": "/automation/",
+        "count": 17
+      },
+      {
+        "route": "/main/front/",
+        "count": 11
+      },
+      {
+        "route": "/front/",
+        "count": 0
+      },
+      {
+        "route": "/newsroom",
+        "count": 0
+      },
+      {
+        "route": "/reports/ai-trends",
+        "count": 0
+      },
+      {
+        "route": "/reports/seo",
+        "count": 0
+      },
+      {
+        "route": "/site-health",
+        "count": 0
+      }
+    ],
+    "orphans": [
+      "/automation/",
+      "/front/",
+      "/main/front/"
+    ]
+  }
+}

@@ -1,189 +1,89 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useCallback } from 'react';
 import { motion } from 'framer-motion';
 
-interface PerformanceMetrics {
-  fcp: number | null;
-  lcp: number | null;
-  fid: number | null;
-  cls: number | null;
-  ttfb: number | null;
+interface PerformanceLayoutShift {
+  value: number;
 }
 
-const PerformanceOptimizer: React.FC = () => {
-  const [metrics, setMetrics] = useState<PerformanceMetrics>({
-    fcp: null,
-    lcp: null,
-    fid: null,
-    cls: null,
-    ttfb: null
-  });
+interface PerformanceMetrics {
+  loadTime: number;
+  domContentLoaded: number;
+  firstContentfulPaint: number;
+  largestContentfulPaint: number;
+  cumulativeLayoutShift: number;
+}
 
-  const [isVisible, setIsVisible] = useState(false);
+interface PerformanceOptimizerProps {
+  children: React.ReactNode;
+  onMetricsUpdate?: (metrics: PerformanceMetrics) => void;
+}
 
-  useEffect(() => {
-    // Check if PerformanceObserver is supported
-    if (typeof window !== 'undefined' && 'PerformanceObserver' in window) {
-      // First Contentful Paint
-      const fcpObserver = new PerformanceObserver((list) => {
+const PerformanceOptimizer: React.FC<PerformanceOptimizerProps> = ({ 
+  children, 
+  onMetricsUpdate 
+}) => {
+  const [metrics, setMetrics] = useState<PerformanceMetrics | null>(null);
+  const [isOptimizing, setIsOptimizing] = useState(false);
+
+  // Measure performance metrics
+  const measurePerformance = useCallback(() => {
+    if (typeof window === 'undefined' || !window.performance) return;
+
+    const navigation = performance.getEntriesByType('navigation')[0] as PerformanceNavigationTiming;
+    const paintEntries = performance.getEntriesByType('paint');
+    const layoutShiftEntries = performance.getEntriesByType('layout-shift');
+
+    const newMetrics: PerformanceMetrics = {
+      loadTime: navigation.loadEventEnd - navigation.loadEventStart,
+      domContentLoaded: navigation.domContentLoadedEventEnd - navigation.domContentLoadedEventStart,
+      firstContentfulPaint: paintEntries.find(entry => entry.name === 'first-contentful-paint')?.startTime || 0,
+      largestContentfulPaint: 0,
+      cumulativeLayoutShift: layoutShiftEntries.reduce((sum, entry) => sum + (entry as PerformanceLayoutShift).value, 0)
+    };
+
+    // Measure LCP if supported
+    if ('PerformanceObserver' in window) {
+      const observer = new PerformanceObserver((list) => {
         const entries = list.getEntries();
-        const fcpEntry = entries.find(entry => entry.name === 'first-contentful-paint');
-        if (fcpEntry) {
-          setMetrics(prev => ({ ...prev, fcp: fcpEntry.startTime }));
-        }
+        const lastEntry = entries[entries.length - 1];
+        newMetrics.largestContentfulPaint = lastEntry.startTime;
+        setMetrics(newMetrics);
+        onMetricsUpdate?.(newMetrics);
       });
-      fcpObserver.observe({ entryTypes: ['paint'] });
-
-      // Largest Contentful Paint
-      const lcpObserver = new PerformanceObserver((list) => {
-        const entries = list.getEntries();
-        const lcpEntry = entries[entries.length - 1];
-        if (lcpEntry) {
-          setMetrics(prev => ({ ...prev, lcp: lcpEntry.startTime }));
-        }
-      });
-      lcpObserver.observe({ entryTypes: ['largest-contentful-paint'] });
-
-      // First Input Delay
-      const fidObserver = new PerformanceObserver((list) => {
-        const entries = list.getEntries();
-        const fidEntry = entries[entries.length - 1];
-        if (fidEntry) {
-          setMetrics(prev => ({ ...prev, fid: fidEntry.processingStart - fidEntry.startTime }));
-        }
-      });
-      fidObserver.observe({ entryTypes: ['first-input'] });
-
-      // Cumulative Layout Shift
-      const clsObserver = new PerformanceObserver((list) => {
-        let clsValue = 0;
-        for (const entry of list.getEntries()) {
-          if (!entry.hadRecentInput) {
-            clsValue += (entry as any).value;
-          }
-        }
-        setMetrics(prev => ({ ...prev, cls: clsValue }));
-      });
-      clsObserver.observe({ entryTypes: ['layout-shift'] });
-
-      // Time to First Byte
-      const navigationEntry = performance.getEntriesByType('navigation')[0] as PerformanceNavigationTiming;
-      if (navigationEntry) {
-        setMetrics(prev => ({ ...prev, ttfb: navigationEntry.responseStart - navigationEntry.requestStart }));
-      }
-
-      return () => {
-        fcpObserver.disconnect();
-        lcpObserver.disconnect();
-        fidObserver.disconnect();
-        clsObserver.disconnect();
-      };
-    }
-  }, []);
-
-  useEffect(() => {
-    const timer = setTimeout(() => setIsVisible(true), 1000);
-    return () => clearTimeout(timer);
-  }, []);
-
-  const getScore = (metric: keyof PerformanceMetrics, value: number | null): { score: number; color: string; label: string } => {
-    if (value === null) return { score: 0, color: 'text-gray-400', label: 'N/A' };
-
-    let score = 0;
-    let color = 'text-red-400';
-    let label = 'Poor';
-
-    switch (metric) {
-      case 'fcp':
-        if (value <= 1800) { score = 100; color = 'text-green-400'; label = 'Good'; }
-        else if (value <= 3000) { score = 80; color = 'text-yellow-400'; label = 'Needs Improvement'; }
-        break;
-      case 'lcp':
-        if (value <= 2500) { score = 100; color = 'text-green-400'; label = 'Good'; }
-        else if (value <= 4000) { score = 80; color = 'text-yellow-400'; label = 'Needs Improvement'; }
-        break;
-      case 'fid':
-        if (value <= 100) { score = 100; color = 'text-green-400'; label = 'Good'; }
-        else if (value <= 300) { score = 80; color = 'text-yellow-400'; label = 'Needs Improvement'; }
-        break;
-      case 'cls':
-        if (value <= 0.1) { score = 100; color = 'text-green-400'; label = 'Good'; }
-        else if (value <= 0.25) { score = 80; color = 'text-yellow-400'; label = 'Needs Improvement'; }
-        break;
-      case 'ttfb':
-        if (value <= 800) { score = 100; color = 'text-green-400'; label = 'Good'; }
-        else if (value <= 1800) { score = 80; color = 'text-yellow-400'; label = 'Needs Improvement'; }
-        break;
+      observer.observe({ entryTypes: ['largest-contentful-paint'] });
+>>>>>>> 17df199e451813150094c5ab1fb554b04628cb60
     }
 
     return { score, color, label };
   };
 
-  const formatMetric = (metric: keyof PerformanceMetrics, value: number | null): string => {
-    if (value === null) return 'N/A';
-    
-    switch (metric) {
-      case 'fcp':
-      case 'lcp':
-      case 'fid':
-      case 'ttfb':
-        return `${Math.round(value)}ms`;
-      case 'cls':
-        return value.toFixed(3);
-      default:
-        return value.toString();
-    }
-  };
-
-  const getOverallScore = (): number => {
-    const scores = Object.values(metrics).map(value => 
-      value !== null ? getScore('fcp', value).score : 0
-    );
-    return Math.round(scores.reduce((a, b) => a + b, 0) / scores.length);
-  };
-
-  if (!isVisible) return null;
-
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.6 }}
-      className="fixed bottom-4 right-4 z-50"
-    >
-      <div className="bg-gray-900/95 backdrop-blur-xl border border-gray-700/50 rounded-2xl p-4 shadow-2xl max-w-sm">
-        <div className="flex items-center justify-between mb-3">
-          <h3 className="text-white font-semibold text-sm">Performance Monitor</h3>
-          <div className="flex items-center space-x-2">
-            <div className={`w-2 h-2 rounded-full ${getOverallScore() >= 90 ? 'bg-green-400' : getOverallScore() >= 70 ? 'bg-yellow-400' : 'bg-red-400'}`} />
-            <span className="text-white text-xs font-bold">{getOverallScore()}</span>
+    <>
+      {children}
+      <PerformanceWarning />
+      
+      {/* Performance Debug Panel (only in development) */}
+      {process.env.NODE_ENV === 'development' && metrics && (
+        <motion.div
+          initial={{ opacity: 0, x: 300 }}
+          animate={{ opacity: 1, x: 0 }}
+          className="fixed bottom-4 right-4 bg-gray-900 text-white p-4 rounded-lg shadow-lg z-50 max-w-xs"
+        >
+          <div className="text-sm font-bold mb-2">Performance Metrics</div>
+          <div className="text-xs space-y-1">
+            <div>Load Time: {Math.round(metrics.loadTime)}ms</div>
+            <div>DOM Ready: {Math.round(metrics.domContentLoaded)}ms</div>
+            <div>FCP: {Math.round(metrics.firstContentfulPaint)}ms</div>
+            <div>LCP: {Math.round(metrics.largestContentfulPaint)}ms</div>
+            <div>CLS: {metrics.cumulativeLayoutShift.toFixed(3)}</div>
           </div>
-        </div>
-
-        <div className="space-y-2">
-          {Object.entries(metrics).map(([key, value]) => {
-            const { score, color, label } = getScore(key as keyof PerformanceMetrics, value);
-            return (
-              <div key={key} className="flex items-center justify-between text-xs">
-                <span className="text-gray-400 uppercase tracking-wide">{key}</span>
-                <div className="flex items-center space-x-2">
-                  <span className="text-white">{formatMetric(key as keyof PerformanceMetrics, value)}</span>
-                  <span className={color}>{label}</span>
-                </div>
-              </div>
-            );
-          })}
-        </div>
-
-        <div className="mt-3 pt-3 border-t border-gray-700/50">
-          <div className="flex items-center justify-between text-xs">
-            <span className="text-gray-400">Overall Score</span>
-            <span className={`font-bold ${getOverallScore() >= 90 ? 'text-green-400' : getOverallScore() >= 70 ? 'text-yellow-400' : 'text-red-400'}`}>
-              {getOverallScore()}/100
-            </span>
-          </div>
-        </div>
-      </div>
-    </motion.div>
+          {isOptimizing && (
+            <div className="text-cyan-400 text-xs mt-2">Optimizing resources...</div>
+          )}
+        </motion.div>
+      )}
+    </>
+>>>>>>> 17df199e451813150094c5ab1fb554b04628cb60
   );
 };
 

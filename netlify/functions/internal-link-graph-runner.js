@@ -1,60 +1,28 @@
-const { execSync } = require('child_process');
-const fs = require('fs');
 const path = require('path');
+const { spawnSync } = require('child_process');
 
-exports.handler = async function(event, context) {
-  console.log('🤖 Starting internal-link-graph-runner...');
-  
-  try {
-    const timestamp = new Date().toISOString();
-    const reportPath = path.join(process.cwd(), 'internal-link-graph-runner-report.md');
-    
-    const reportContent = `# internal-link-graph-runner Report
+function runNode(relativePath, args = []) {
+  const abs = path.resolve(__dirname, '..', '..', relativePath);
+  const res = spawnSync('node', [abs, ...args], { stdio: 'pipe', encoding: 'utf8' });
+  return { status: res.status || 0, stdout: res.stdout || '', stderr: res.stderr || '' };
+}
 
-Generated: ${timestamp}
+exports.config = { schedule: '*/5 * * * *' };
 
-## Status
-- Task: internal-link-graph-runner
-- Status: Completed
-- Timestamp: ${timestamp}
+exports.handler = async () => {
+  const logs = [];
+  const step = (name, fn) => {
+    logs.push(`\n=== ${name} ===`);
+    const { status, stdout, stderr } = fn();
+    if (stdout) logs.push(stdout);
+    if (stderr) logs.push(stderr);
+    logs.push(`exit=${status}`);
+    return status;
+  };
 
-## Next Steps
-- Implement actual internal-link-graph-runner functionality
-- Add proper error handling
-- Add logging and monitoring
-`;
+  step('links:crawler', () => runNode('automation/site-link-crawler.cjs'));
+  step('git:sync', () => runNode('automation/advanced-git-sync.cjs'));
 
-    fs.writeFileSync(reportPath, reportContent);
-    console.log('📝 Report generated');
-    
-    try {
-      execSync('git add ' + reportPath, { stdio: 'inherit' });
-      execSync('git commit -m "🤖 Add internal-link-graph-runner report [skip ci]"', { stdio: 'inherit' });
-      execSync('git push', { stdio: 'inherit' });
-      console.log('✅ Report committed and pushed');
-    } catch (gitError) {
-      console.log('Git error:', gitError.message);
-    }
-    
-    console.log('✅ internal-link-graph-runner completed successfully');
-    
-    return {
-      statusCode: 200,
-      body: JSON.stringify({
-        message: 'internal-link-graph-runner completed successfully',
-        timestamp: timestamp
-      })
-    };
-    
-  } catch (error) {
-    console.error('❌ internal-link-graph-runner failed:', error.message);
-    
-    return {
-      statusCode: 500,
-      body: JSON.stringify({
-        error: error.message,
-        timestamp: new Date().toISOString()
-      })
-    };
-  }
+  return { statusCode: 200, headers: { 'content-type': 'text/plain' }, body: logs.join('\n') };
 };
+>>>>>>> 17df199e451813150094c5ab1fb554b04628cb60

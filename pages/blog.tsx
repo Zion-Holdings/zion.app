@@ -2,47 +2,25 @@ import React, { useState } from 'react';
 import Layout from '../components/layout/Layout';
 import { motion } from 'framer-motion';
 import { 
-  Search, 
-  Filter, 
-  Calendar, 
-  User, 
-  Tag, 
-  ArrowRight,
-  Clock,
-  Eye,
-  BookOpen,
-  TrendingUp,
-  Brain,
-  Atom,
-  Rocket
+  BookOpen, Calendar, Clock, User, ArrowRight, 
+  Tag, Search, Filter, TrendingUp, Brain, Atom,
+  Shield, Rocket, Star, Globe, Zap
 } from 'lucide-react';
 import Link from 'next/link';
 
-const BlogPage: React.FC = () => {
-  const [searchQuery, setSearchQuery] = useState('');
-  const [selectedCategory, setSelectedCategory] = useState('all');
-
-  const categories = [
-    { id: 'all', name: 'All Posts', icon: <BookOpen className="w-4 h-4" /> },
-    { id: 'ai', name: 'AI & Machine Learning', icon: <Brain className="w-4 h-4" /> },
-    { id: 'quantum', name: 'Quantum Computing', icon: <Atom className="w-4 h-4" /> },
-    { id: 'space', name: 'Space Technology', icon: <Rocket className="w-4 h-4" /> },
-    { id: 'enterprise', name: 'Enterprise IT', icon: <TrendingUp className="w-4 h-4" /> }
-  ];
-
-  const blogPosts = [
+const Blog: React.FC = () => {
+  const featuredPosts = [
     {
-      id: 1,
-      title: "The Future of AI Consciousness: Beyond Machine Learning",
-      excerpt: "Exploring how AI systems are evolving from simple pattern recognition to true consciousness and emotional intelligence.",
-      category: "ai",
-      author: "Dr. Sarah Chen",
-      date: "2025-01-15",
-      readTime: "8 min read",
-      views: "2.4k",
-      featured: true,
-      image: "/api/placeholder/600/400",
-      tags: ["AI Consciousness", "Machine Learning", "Ethics"]
+      title: 'The Future of AI Consciousness: What to Expect in 2045',
+      excerpt: 'Explore the revolutionary developments in AI consciousness and how they will transform our understanding of intelligence.',
+      author: 'AI Research Team',
+      date: '2025-01-15',
+      category: 'AI & Consciousness',
+      readTime: '8 min read',
+      image: '/blog/ai-consciousness-2045.jpg',
+      tags: ['AI', 'Consciousness', 'Future Tech', '2045'],
+      icon: <Brain className="w-6 h-6" />
+>>>>>>> 17df199e451813150094c5ab1fb554b04628cb60
     },
     {
       id: 2,
@@ -111,105 +89,290 @@ const BlogPage: React.FC = () => {
     }
   ];
 
-  const filteredPosts = blogPosts.filter(post => {
-    const matchesSearch = post.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
-                         post.excerpt.toLowerCase().includes(searchQuery.toLowerCase()) ||
-                         post.tags.some(tag => tag.toLowerCase().includes(searchQuery.toLowerCase()));
-    const matchesCategory = selectedCategory === 'all' || post.category === selectedCategory;
-    return matchesSearch && matchesCategory;
-  });
+  const categories = [
+    { name: 'AI & Consciousness', icon: <Brain className="w-5 h-5" />, count: 15 },
+    { name: 'Quantum Computing', icon: <Atom className="w-5 h-5" />, count: 12 },
+    { name: 'Cybersecurity', icon: <Shield className="w-5 h-5" />, count: 18 },
+    { name: 'Space Technology', icon: <Rocket className="w-5 h-5" />, count: 8 },
+    { name: 'Edge Computing', icon: <Cloud className="w-5 h-5" />, count: 10 },
+    { name: 'Innovation', icon: <Zap className="w-5 h-5" />, count: 22 }
+  ];
 
-  const featuredPost = blogPosts.find(post => post.featured);
+  const trendingTopics = [
+    "AI Consciousness Evolution",
+    "Quantum Supremacy",
+    "Zero-Trust Security",
+    "Autonomous Systems",
+    "Ethical AI",
+    "Space Mining",
+    "Neural Networks",
+    "Blockchain Security"
+  ];
 
-const BlogPage: React.FC = () => {
+  const blogCategories = [
+    { name: "All", count: 45, active: true },
+    { name: "AI & Consciousness", count: 18, active: false },
+    { name: "Quantum Computing", count: 12, active: false },
+    { name: "Cybersecurity", count: 8, active: false },
+    { name: "Space Technology", count: 7, active: false }
+  ];
+
+  const recentArticles = [
+    {
+      title: 'Edge Computing Orchestration: The Future of Distributed Systems',
+      excerpt: 'How edge computing is transforming the way we process and analyze data.',
+      author: 'Edge Computing Team',
+      date: '2025-01-12',
+      category: 'Edge Computing',
+      readTime: '6 min read'
+    },
+    {
+      title: 'The Rise of Autonomous AI Systems in Enterprise',
+      excerpt: 'Exploring how autonomous AI is reshaping business operations and decision-making.',
+      author: 'AI Research Team',
+      date: '2025-01-10',
+      category: 'AI & Consciousness',
+      readTime: '7 min read'
+    },
+    {
+      title: 'Quantum Cybersecurity: Protecting Data in the Quantum Era',
+      excerpt: 'Understanding the security challenges and solutions in quantum computing.',
+      author: 'Quantum Team',
+      date: '2025-01-08',
+      category: 'Quantum Computing',
+      readTime: '9 min read'
+    },
+    {
+      title: 'Cloud Platform Evolution: From Infrastructure to Intelligence',
+      excerpt: 'How cloud platforms are becoming intelligent and autonomous.',
+      author: 'Cloud Team',
+      date: '2025-01-05',
+      category: 'Edge Computing',
+      readTime: '5 min read'
+    }
+  ];
+
   return (
-    <Layout>
-      {/* Hero Section */}
-      <section className="relative py-20 px-4 bg-gradient-to-br from-blue-900/20 via-purple-900/20 to-black">
-        <div className="max-w-6xl mx-auto text-center">
-          <motion.h1
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="text-5xl md:text-6xl font-bold bg-gradient-to-r from-blue-400 via-purple-400 to-cyan-400 bg-clip-text text-transparent mb-6"
-          >
-            Zion Tech Blog
-          </motion.h1>
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-xl text-gray-300 max-w-3xl mx-auto"
-          >
-            Insights, innovations, and thought leadership from the forefront of AI, quantum computing, and space technology.
-          </motion.p>
-        </div>
-      </section>
+    <Layout 
+      title="Blog - Zion Tech Group"
+      description="Insights, research, and thought leadership on AI consciousness, quantum computing, cybersecurity, and the future of technology."
+      keywords="blog, AI consciousness, quantum computing, cybersecurity, space technology, business intelligence, Zion Tech Group"
+    >
+      <div className="min-h-screen bg-gradient-to-br from-gray-900 via-black to-gray-900 text-white">
+        {/* Hero Section */}
+        <section className="relative overflow-hidden py-20 lg:py-32">
+          <div className="absolute inset-0 bg-gradient-to-r from-purple-900/20 via-blue-900/20 to-cyan-900/20" />
+          <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              className="text-center"
+            >
+              <div className="flex items-center justify-center mb-6">
+                <div className="w-16 h-16 bg-gradient-to-br from-purple-500 to-blue-600 rounded-2xl flex items-center justify-center mr-4">
+                  <BookOpen className="w-8 h-8 text-white" />
+                </div>
+                <h1 className="text-4xl lg:text-6xl font-bold bg-gradient-to-r from-purple-400 via-blue-400 to-cyan-400 bg-clip-text text-transparent">
+                  Blog & Insights
+                </h1>
+              </div>
+              <p className="text-xl lg:text-2xl text-gray-300 max-w-4xl mx-auto mb-8">
+                Thought leadership in AI consciousness and quantum computing
+              </p>
+              <p className="text-lg text-gray-400 max-w-3xl mx-auto">
+                Stay ahead of the curve with expert insights, breakthrough research, 
+                and industry analysis from Zion Tech Group's leading researchers and engineers.
+              </p>
+            </motion.div>
+          </div>
+        </section>
 
-      {/* Search and Filters */}
-      <section className="py-12 px-4 bg-black">
-        <div className="max-w-6xl mx-auto">
-          <div className="flex flex-col lg:flex-row gap-6 items-center justify-between">
-            {/* Search */}
-            <div className="relative flex-1 max-w-md">
-              <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
-              <input
-                type="text"
-                value={searchQuery}
-                onChange={(e) => setSearchQuery(e.target.value)}
-                placeholder="Search articles..."
-                className="w-full pl-12 pr-4 py-3 bg-white/10 backdrop-blur-md border border-white/20 rounded-full text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-              />
-            </div>
+        {/* Search and Categories */}
+        <section className="py-12">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="flex flex-col lg:flex-row gap-6 items-center justify-between">
+              {/* Search Bar */}
+              <div className="relative flex-1 max-w-md">
+                <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-400" />
+                <input
+                  type="text"
+                  placeholder="Search articles..."
+                  className="w-full pl-10 pr-4 py-3 bg-gray-800/50 border border-gray-600/50 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent"
+                />
+              </div>
 
-            {/* Category Filters */}
-            <div className="flex flex-wrap gap-2">
-              {categories.map((category) => (
-                <button
-                  key={category.id}
-                  onClick={() => setSelectedCategory(category.id)}
-                  className={`flex items-center gap-2 px-4 py-2 rounded-full border transition-all duration-300 ${
-                    selectedCategory === category.id
-                      ? 'bg-blue-600 border-blue-600 text-white'
-                      : 'border-white/20 text-gray-300 hover:border-white/40 hover:bg-white/10'
-                  }`}
-                >
-                  {category.icon}
-                  {category.name}
-                </button>
-              ))}
+              {/* Category Filter */}
+              <div className="flex items-center gap-4">
+                <Filter className="w-5 h-5 text-gray-400" />
+                <select className="px-4 py-3 bg-gray-800/50 border border-gray-600/50 rounded-xl text-white focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent">
+                  <option value="all">All Categories</option>
+                  {categories.map((category) => (
+                    <option key={category.name} value={category.name}>
+                      {category.name} ({category.count})
+                    </option>
+                  ))}
+                </select>
+              </div>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* Featured Post */}
-      {featuredPost && (
-        <section className="py-16 px-4 bg-gradient-to-b from-black to-gray-900">
-          <div className="max-w-6xl mx-auto">
+        {/* Featured Posts */}
+        <section className="py-20 px-4 sm:px-6 lg:px-8">
+          <div className="max-w-7xl mx-auto">
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
               viewport={{ once: true }}
-              className="text-center mb-12"
+              className="text-center mb-16"
             >
-              <h2 className="text-3xl font-bold text-white mb-4">Featured Article</h2>
-              <p className="text-gray-300">Our most popular and insightful content</p>
+              <h2 className="text-4xl font-bold text-white mb-4">
+                Featured Articles
+              </h2>
+              <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+                Deep insights and analysis on the latest developments in revolutionary technology.
+              </p>
             </motion.div>
 
-            <motion.article
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+              {featuredPosts.map((post, index) => (
+                <motion.article
+                  key={post.title}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: index * 0.1 }}
+                  viewport={{ once: true }}
+                  className="bg-gradient-to-br from-gray-800/30 to-gray-900/30 rounded-2xl border border-gray-700/30 hover:border-purple-500/50 transition-all duration-300 overflow-hidden group"
+                >
+                  <div className="h-48 bg-gradient-to-br from-purple-500/20 to-blue-500/20 flex items-center justify-center">
+                    <div className="text-purple-400 text-6xl">
+                      {post.icon}
+                    </div>
+                  </div>
+                  <div className="p-6">
+                    <div className="flex items-center gap-2 mb-3">
+                      <span className="px-3 py-1 bg-purple-500/20 text-purple-400 rounded-full text-sm font-medium">
+                        {post.category}
+                      </span>
+                      <span className="text-gray-400 text-sm">{post.readTime}</span>
+                    </div>
+                    <h3 className="text-xl font-bold text-white mb-3 group-hover:text-purple-400 transition-colors duration-300">
+                      {post.title}
+                    </h3>
+                    <p className="text-gray-300 text-sm mb-4 leading-relaxed">
+                      {post.excerpt}
+                    </p>
+                    
+                    <div className="flex items-center gap-4 text-xs text-gray-500 mb-4">
+                      <div className="flex items-center gap-1">
+                        <User className="w-3 h-3" />
+                        {post.author}
+                      </div>
+                      <div className="flex items-center gap-1">
+                        <Calendar className="w-3 h-3" />
+                        {new Date(post.publishDate).toLocaleDateString()}
+                      </div>
+                      <div className="flex items-center gap-1">
+                        <Clock className="w-3 h-3" />
+                        {post.readTime}
+                      </div>
+                    </div>
+                    
+                    <div className="flex items-center justify-between">
+                      <div className="flex items-center gap-4 text-xs text-gray-500">
+                        <span>{post.views} views</span>
+                        <span>{post.comments} comments</span>
+                      </div>
+                      
+                      <button className="text-purple-400 hover:text-purple-300 transition-colors duration-300 flex items-center gap-1 group-hover:gap-2">
+                        Read More
+                        <ArrowRight className="w-4 h-4 transition-all duration-300" />
+                      </button>
+                    </div>
+                  </div>
+                </motion.article>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Categories Grid */}
+        <section className="py-20 bg-black/50">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <motion.div
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
+              transition={{ duration: 0.8 }}
               viewport={{ once: true }}
-              className="bg-gradient-to-br from-blue-900/20 to-purple-900/20 backdrop-blur-md border border-white/10 rounded-2xl overflow-hidden hover:border-white/20 transition-all duration-300"
+              className="text-center mb-16"
             >
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-                <div className="p-8">
-                  <div className="flex items-center gap-4 mb-4">
-                    <span className="px-3 py-1 bg-blue-600/20 text-blue-400 text-sm rounded-full border border-blue-600/30">
-                      Featured
+              <h2 className="text-4xl font-bold text-white mb-4">
+                Explore by Category
+              </h2>
+              <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+                Find articles and insights in your areas of interest.
+              </p>
+            </motion.div>
+
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
+              {categories.map((category, index) => (
+                <motion.div
+                  key={category.name}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: index * 0.1 }}
+                  viewport={{ once: true }}
+                  className="text-center group cursor-pointer"
+                >
+                  <div className="w-16 h-16 bg-white/10 backdrop-blur-lg rounded-2xl flex items-center justify-center mx-auto mb-3 group-hover:bg-purple-500/20 transition-all duration-300 border border-white/20">
+                    <div className="text-purple-400 group-hover:text-purple-300 transition-colors duration-300">
+                      {category.icon}
+                    </div>
+                  </div>
+                  <h3 className="text-sm font-semibold text-white mb-1">
+                    {category.name}
+                  </h3>
+                  <p className="text-gray-400 text-xs">{category.count} articles</p>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Recent Posts */}
+        <section className="py-20 px-4 sm:px-6 lg:px-8">
+          <div className="max-w-7xl mx-auto">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+              className="text-center mb-16"
+            >
+              <h2 className="text-4xl font-bold text-white mb-4">
+                Recent Articles
+              </h2>
+              <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+                Stay updated with our latest insights and analysis.
+              </p>
+            </motion.div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              {recentPosts.map((post, index) => (
+                <motion.article
+                  key={post.title}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: index * 0.1 }}
+                  viewport={{ once: true }}
+                  className="bg-gradient-to-br from-gray-800/30 to-gray-900/30 p-6 rounded-2xl border border-gray-700/30 hover:border-purple-500/50 transition-all duration-300 group"
+                >
+                  <div className="flex items-center gap-2 mb-3">
+                    <span className="px-3 py-1 bg-purple-500/20 text-purple-300 rounded-full text-xs font-medium">
+                      {post.category}
+>>>>>>> 17df199e451813150094c5ab1fb554b04628cb60
                     </span>
                     <span className="text-gray-400 text-sm">{featuredPost.category.toUpperCase()}</span>
                   </div>
@@ -237,124 +400,29 @@ const BlogPage: React.FC = () => {
                       {featuredPost.views}
                     </div>
                   </div>
-                  <div className="flex flex-wrap gap-2 mb-6">
-                    {featuredPost.tags.map((tag, index) => (
-                      <span
-                        key={index}
-                        className="px-3 py-1 bg-white/10 text-gray-300 text-sm rounded-full border border-white/20"
-                      >
-                        {tag}
-                      </span>
-                    ))}
-                  </div>
-                  <Link
-                    href={`/blog/${featuredPost.id}`}
-                    className="inline-flex items-center bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-6 py-3 rounded-full font-semibold transition-all duration-300 transform hover:scale-105"
-                  >
-                    Read Full Article
-                    <ArrowRight className="w-4 h-4 ml-2" />
-                  </Link>
-                </div>
-                <div className="bg-gradient-to-br from-blue-600/20 to-purple-600/20 flex items-center justify-center">
-                  <div className="text-center p-8">
-                    <div className="text-6xl mb-4">🚀</div>
-                    <p className="text-gray-300">Featured Content</p>
-                  </div>
-                </div>
-              </div>
-            </motion.article>
-          </div>
-        </section>
-      )}
-
-      {/* Blog Posts Grid */}
-      <section className="py-20 px-4 bg-black">
-        <div className="max-w-6xl mx-auto">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="text-center mb-16"
-          >
-            <h2 className="text-4xl font-bold text-white mb-6">Latest Articles</h2>
-            <p className="text-xl text-gray-300">
-              Stay updated with the latest insights and innovations
-            </p>
-          </motion.div>
-
-          {filteredPosts.length > 0 ? (
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {filteredPosts.map((post, index) => (
-                <motion.article
-                  key={post.id}
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.8, delay: index * 0.1 }}
-                  viewport={{ once: true }}
-                  className="bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl overflow-hidden hover:border-white/20 transition-all duration-300 group"
-                >
-                  <div className="p-6">
-                    <div className="flex items-center gap-4 mb-4">
-                      <span className="px-3 py-1 bg-blue-600/20 text-blue-400 text-sm rounded-full border border-blue-600/30">
-                        {post.category.toUpperCase()}
-                      </span>
-                      {post.featured && (
-                        <span className="px-3 py-1 bg-yellow-600/20 text-yellow-400 text-sm rounded-full border border-yellow-600/30">
-                          Featured
-                        </span>
-                      )}
-                    </div>
-                    <h3 className="text-xl font-bold text-white mb-3 leading-tight group-hover:text-blue-400 transition-colors">
-                      {post.title}
-                    </h3>
-                    <p className="text-gray-300 mb-4 leading-relaxed line-clamp-3">
-                      {post.excerpt}
-                    </p>
-                    <div className="flex items-center gap-4 text-sm text-gray-400 mb-4">
-                      <div className="flex items-center gap-2">
-                        <User className="w-4 h-4" />
-                        {post.author}
-                      </div>
-                      <div className="flex items-center gap-2">
-                        <Clock className="w-4 h-4" />
-                        {post.readTime}
-                      </div>
-                    </div>
-                    <div className="flex items-center justify-between">
-                      <div className="flex flex-wrap gap-2">
-                        {post.tags.slice(0, 2).map((tag, tagIndex) => (
-                          <span
-                            key={tagIndex}
-                            className="px-2 py-1 bg-white/10 text-gray-300 text-xs rounded-full border border-white/20"
-                          >
-                            {tag}
-                          </span>
-                        ))}
-                      </div>
-                      <Link
-                        href={`/blog/${post.id}`}
-                        className="text-blue-400 hover:text-blue-300 transition-colors group-hover:translate-x-1"
-                      >
-                        <ArrowRight className="w-4 h-4" />
-                      </Link>
-                    </div>
-                  </div>
                 </motion.article>
               ))}
             </div>
-          ) : (
+          </div>
+        </section>
+
+        {/* Trending Topics */}
+        <section className="py-20 bg-black/50">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+>>>>>>> 17df199e451813150094c5ab1fb554b04628cb60
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
               viewport={{ once: true }}
-              className="text-center py-16"
+              className="text-center mb-16"
             >
-              <div className="text-6xl mb-4">🔍</div>
-              <h3 className="text-2xl font-bold text-white mb-4">No articles found</h3>
-              <p className="text-gray-300 mb-6">
-                Try adjusting your search terms or category filters
+              <h2 className="text-3xl lg:text-4xl font-bold text-white mb-6">
+                Trending Topics
+              </h2>
+              <p className="text-xl text-gray-400 max-w-3xl mx-auto">
+                What's hot in the world of AI consciousness and quantum computing
+>>>>>>> 17df199e451813150094c5ab1fb554b04628cb60
               </p>
               <button
                 onClick={() => {
@@ -366,41 +434,139 @@ const BlogPage: React.FC = () => {
                 Clear Filters
               </button>
             </motion.div>
-          )}
-        </div>
-      </section>
-
-      {/* Newsletter Signup */}
-      <section className="py-20 px-4 bg-gradient-to-r from-blue-900/20 via-purple-900/20 to-cyan-900/20">
-        <div className="max-w-4xl mx-auto text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-          >
-            <h2 className="text-4xl font-bold text-white mb-6">
-              Stay Updated with Our Latest Insights
-            </h2>
-            <p className="text-xl text-gray-300 mb-8">
-              Get notified about new articles, industry trends, and technological breakthroughs
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center max-w-md mx-auto">
-              <input
-                type="email"
-                placeholder="Enter your email"
-                className="flex-1 px-4 py-3 bg-white/10 border border-white/20 rounded-full text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-              />
-              <button className="px-6 py-3 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white rounded-full font-semibold transition-all duration-300 transform hover:scale-105">
-                Subscribe
-              </button>
+            
+            <div className="flex flex-wrap justify-center gap-4">
+              {trendingTopics.map((topic, index) => (
+                <motion.div
+                  key={topic}
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  transition={{ duration: 0.4, delay: index * 0.05 }}
+                  viewport={{ once: true }}
+                  className="px-6 py-3 bg-gradient-to-r from-purple-500/20 to-blue-500/20 border border-purple-500/30 rounded-full text-purple-300 hover:from-purple-500/30 hover:to-blue-500/30 hover:border-purple-500/50 transition-all duration-300 cursor-pointer group"
+                >
+                  <div className="flex items-center gap-2">
+                    <TrendingUp className="w-4 h-4 text-purple-400 group-hover:text-purple-300 transition-colors duration-300" />
+                    <span className="font-medium">{topic}</span>
+                  </div>
+                </motion.div>
+              ))}
             </div>
-            <p className="text-sm text-gray-400 mt-4">
-              No spam, unsubscribe at any time
-            </p>
-          </motion.div>
-        </div>
-      </section>
+          </div>
+        </section>
+
+        {/* Popular Tags Section */}
+        <section className="py-20 px-4 sm:px-6 lg:px-8">
+          <div className="max-w-7xl mx-auto">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.8 }}
+              className="text-center mb-16"
+            >
+              <h2 className="text-4xl font-bold mb-4">Explore by Topic</h2>
+              <p className="text-xl text-gray-400 max-w-3xl mx-auto">
+                Discover articles by your areas of interest
+              </p>
+            </motion.div>
+
+            <div className="flex flex-wrap justify-center gap-3">
+              {popularTags.map((tag, index) => (
+                <motion.button
+                  key={tag}
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{ duration: 0.3, delay: 0.1 * index }}
+                  className="px-4 py-2 bg-gray-800/50 text-gray-300 rounded-lg border border-gray-700/50 hover:bg-cyan-500/20 hover:text-cyan-400 hover:border-cyan-500/50 transition-all duration-300"
+                >
+                  {tag}
+                </motion.button>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Newsletter Section */}
+        <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gray-800/30">
+          <div className="max-w-4xl mx-auto text-center">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 1.0 }}
+            >
+              <h2 className="text-4xl font-bold mb-6">Stay Updated</h2>
+              <p className="text-xl text-gray-400 mb-8">
+                Get the latest insights, research updates, and technological breakthroughs 
+                delivered directly to your inbox.
+              </p>
+              
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-8">
+                {newsletterStats.map((stat, index) => (
+                  <motion.div
+                    key={stat.label}
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.6, delay: 0.1 * index }}
+                    className="text-center"
+                  >
+                    <div className="text-3xl font-bold text-cyan-400 mb-2">{stat.metric}</div>
+                    <div className="text-gray-400 text-sm">{stat.label}</div>
+                  </motion.div>
+                ))}
+              </div>
+
+              <div className="max-w-md mx-auto">
+                <div className="flex gap-3">
+                  <input
+                    type="email"
+                    placeholder="Enter your email address"
+                    className="flex-1 px-4 py-3 bg-gray-800/50 border border-gray-700/50 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:border-transparent"
+                  />
+                  <button className="px-6 py-3 bg-gradient-to-r from-cyan-500 to-blue-600 text-white rounded-lg font-semibold hover:from-cyan-600 hover:to-blue-700 transition-all duration-300 transform hover:scale-105">
+                    Subscribe
+                  </button>
+                </div>
+                <p className="text-xs text-gray-500 mt-2">
+                  No spam, unsubscribe at any time. We respect your privacy.
+                </p>
+              </div>
+            </motion.div>
+          </div>
+        </section>
+
+        {/* CTA Section */}
+        <section className="py-20 px-4 sm:px-6 lg:px-8">
+          <div className="max-w-4xl mx-auto text-center">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 1.2 }}
+            >
+              <h2 className="text-4xl font-bold mb-6">Contribute to Our Blog</h2>
+              <p className="text-xl text-gray-400 mb-8">
+                Are you a researcher, technologist, or thought leader? We welcome contributions 
+                from experts in AI, quantum computing, cybersecurity, and space technology.
+              </p>
+              
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <a
+                  href="/contact"
+                  className="px-8 py-4 bg-gradient-to-r from-cyan-500 to-blue-600 text-white rounded-lg font-semibold hover:from-cyan-600 hover:to-blue-700 transition-all duration-300 transform hover:scale-105"
+                >
+                  Submit an Article
+                </a>
+                <a
+                  href="mailto:blog@ziontechgroup.com"
+                  className="px-8 py-4 border border-cyan-500/30 text-cyan-400 rounded-lg font-semibold hover:bg-cyan-500/10 transition-all duration-300"
+                >
+                  Contact Editorial Team
+                </a>
+              </div>
+            </motion.div>
+          </div>
+        </section>
+      </div>
+>>>>>>> 17df199e451813150094c5ab1fb554b04628cb60
     </Layout>
   );
 };

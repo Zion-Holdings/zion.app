@@ -1,4 +1,7 @@
-import React, { useState, useCallback, memo } from 'react';
+import React, { useState, useCallback, useMemo } from 'react';
+import { motion } from 'framer-motion';
+import { ArrowRight, Crown, Building, Rocket } from 'lucide-react';
+>>>>>>> 17df199e451813150094c5ab1fb554b04628cb60
 
 interface Service {
   id: string;
@@ -15,88 +18,57 @@ interface Service {
 
 interface UltraFuturisticServiceCard2026Props {
   service: Service;
-  variant?: 'ai' | 'quantum' | 'automation' | 'space' | 'enterprise';
+  variant?: 'default' | 'quantum' | 'ai' | 'automation' | 'it' | 'emerging' | 'enterprise' | 'premium';
+  theme?: 'quantum' | 'cyber' | 'neon';
+  className?: string;
+  onClick?: () => void;
 }
 
 const UltraFuturisticServiceCard2026: React.FC<UltraFuturisticServiceCard2026Props> = memo(({
   service,
-  variant = 'ai'
+  variant = 'default',
+  className = '',
+  onClick
+>>>>>>> 17df199e451813150094c5ab1fb554b04628cb60
 }) => {
   const [isHovered, setIsHovered] = useState(false);
+  const [isExpanded, setIsExpanded] = useState(false);
 
   // Get variant-specific styles
-  const getVariantStyles = useCallback((variantType: string) => {
-    switch (variantType) {
-      case 'quantum':
-        return {
-          border: 'border-cyan-500/30 hover:border-cyan-400/60',
-          gradient: 'from-cyan-500/20 to-blue-500/20',
-          text: 'text-cyan-400',
-          accent: 'bg-cyan-500/20'
-        };
-      case 'ai':
-        return {
-          gradient: 'from-cyan-500 to-blue-600',
-          border: 'border-cyan-400/30',
-          hoverBorder: 'hover:border-cyan-400/60',
-          iconBg: 'bg-gradient-to-br from-cyan-400 to-blue-500',
-          badgeBg: 'bg-gradient-to-r from-cyan-500 to-blue-600',
-          featureIcon: <Brain className="w-4 h-4 text-cyan-400" />
-        };
-      case 'quantum':
-        return {
-          gradient: 'from-purple-500 to-pink-600',
-          border: 'border-purple-400/30',
-          hoverBorder: 'hover:border-purple-400/60',
-          iconBg: 'bg-gradient-to-br from-purple-400 to-pink-500',
-          badgeBg: 'bg-gradient-to-r from-purple-500 to-pink-600',
-          featureIcon: <Atom className="w-4 h-4 text-purple-400" />
-        };
-      case 'automation':
-        return {
-          gradient: 'from-green-500 to-emerald-600',
-          border: 'border-green-400/30',
-          hoverBorder: 'hover:border-green-400/60',
-          iconBg: 'bg-gradient-to-br from-green-400 to-emerald-500',
-          badgeBg: 'bg-gradient-to-r from-green-500 to-emerald-600',
-          featureIcon: <Zap className="w-4 h-4 text-green-400" />
-        };
-      case 'space':
-        return {
-          border: 'border-blue-500/30 hover:border-blue-400/60',
-          gradient: 'from-blue-500/20 to-indigo-500/20',
-          text: 'text-blue-400',
-          accent: 'bg-blue-400/20'
-        };
-      case 'emerging':
-        return {
-          border: 'border-yellow-500/30 hover:border-yellow-400/60',
-          gradient: 'from-yellow-500/20 to-orange-500/20',
-          text: 'text-yellow-400',
-          accent: 'bg-yellow-500/20'
-        };
-      case 'enterprise':
-        return {
-          gradient: 'from-gray-500 to-slate-600',
-          border: 'border-gray-400/30',
-          hoverBorder: 'hover:border-gray-400/60',
-          iconBg: 'bg-gradient-to-br from-gray-400 to-slate-500',
-          badgeBg: 'bg-gradient-to-r from-gray-500 to-slate-600',
-          featureIcon: <Cpu className="w-4 h-4 text-gray-400" />
-        };
-      default:
-        return {
-          gradient: 'from-cyan-500 to-blue-600',
-          border: 'border-cyan-400/30',
-          hoverBorder: 'hover:border-cyan-400/60',
-          iconBg: 'bg-gradient-to-br from-cyan-400 to-blue-500',
-          badgeBg: 'bg-gradient-to-r from-cyan-500 to-blue-600',
-          featureIcon: <Target className="w-4 h-4 text-cyan-400" />
-        };
+  const variantStyles = useMemo(() => {
+    if (variant === 'premium') {
+      return {
+        container: 'border-cyan-400/50 bg-gradient-to-br from-cyan-900/20 to-blue-900/20',
+        icon: <Crown className="w-5 h-5 text-yellow-400" />,
+        badge: 'bg-gradient-to-r from-yellow-400 to-orange-500 text-black',
+        button: 'bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-600 hover:to-blue-700',
+        text: 'text-cyan-50',
+        accent: 'bg-cyan-400'
+      };
     }
-  };
-
-  const variantStyles = getVariantStyles(variant);
+    
+    if (variant === 'enterprise') {
+      return {
+        container: 'border-purple-400/50 bg-gradient-to-br from-purple-900/20 to-pink-900/20',
+        icon: <Building className="w-5 h-5 text-purple-400" />,
+        badge: 'bg-gradient-to-r from-purple-500 to-pink-600',
+        button: 'bg-gradient-to-r from-purple-500 to-pink-600 hover:from-purple-600 hover:to-pink-700',
+        text: 'text-purple-50',
+        accent: 'bg-purple-400'
+      };
+    }
+    
+    // Default variant
+    return {
+      container: 'border-gray-600/50 bg-gradient-to-br from-gray-800/20 to-gray-700/20',
+      icon: <Rocket className="w-5 h-5 text-cyan-400" />,
+      badge: 'bg-gradient-to-r from-cyan-500 to-blue-600',
+      button: 'bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-600 hover:to-blue-700',
+      text: 'text-gray-50',
+      accent: 'bg-cyan-400'
+    };
+  }, [variant]);
+>>>>>>> 17df199e451813150094c5ab1fb554b04628cb60
 
   const handleCardClick = useCallback(() => {
     if (onClick) {

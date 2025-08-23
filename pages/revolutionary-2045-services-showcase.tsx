@@ -22,9 +22,185 @@ const Revolutionary2045ServicesShowcase: React.FC = () => {
 
   // Combine all services
   const allServices = [
-    ...revolutionary2045AIConsciousnessServices,
-    ...revolutionary2045ITInfrastructureServices,
-    ...revolutionary2045MicroSaasServices
+    // AI & Machine Learning Services
+    {
+      name: "AI Consciousness Evolution 2045",
+      description: "Revolutionary AI consciousness platform with emotional intelligence and self-awareness",
+      icon: <Brain className="w-8 h-8" />,
+      color: "from-purple-600 to-pink-700",
+      link: "/ai-consciousness-evolution-2045",
+      price: "$2,999/month",
+      category: "ai",
+      features: ["Emotional Intelligence", "Self-Awareness", "Cognitive Evolution", "Ethical Decision Making"],
+      badge: "BREAKTHROUGH",
+      rating: 5.0,
+      reviews: 128
+    },
+    {
+      name: "AI Autonomous Business Process Automation 2045",
+      description: "Fully autonomous business process automation with AI decision-making and continuous learning capabilities",
+      icon: <Brain className="w-8 h-8" />,
+      color: "from-purple-600 to-indigo-700",
+      link: "/ai-autonomous-business-process-automation-2045",
+      price: "$1,999/month",
+      category: "ai",
+      features: ["Autonomous Decision Making", "Continuous Learning", "Process Optimization", "Real-time Analytics"],
+      badge: "NEW",
+      rating: 4.9,
+      reviews: 89
+    },
+    {
+      name: "AI Consciousness Training Platform 2045",
+      description: "Advanced AI consciousness training with emotional intelligence development and ethical decision making",
+      icon: <Brain className="w-8 h-8" />,
+      color: "from-purple-600 to-pink-700",
+      link: "/ai-consciousness-training-platform-2045",
+      price: "$3,499/month",
+      category: "ai",
+      features: ["Emotional Intelligence", "Ethical Training", "Consciousness Development", "Behavioral Analysis"],
+      badge: "INNOVATIVE",
+      rating: 4.8,
+      reviews: 67
+    },
+
+    // Quantum Computing Services
+    {
+      name: "Quantum Neural Ecosystem 2045",
+      description: "Hybrid quantum-AI computing for unprecedented computational power",
+      icon: <Atom className="w-8 h-8" />,
+      color: "from-cyan-600 to-blue-700",
+      link: "/quantum-neural-ecosystem-2045",
+      price: "$4,999/month",
+      category: "quantum",
+      features: ["Quantum Processing", "Neural Networks", "Hybrid Computing", "Exponential Performance"],
+      badge: "QUANTUM",
+      rating: 5.0,
+      reviews: 156
+    },
+    {
+      name: "Quantum Bio-Computing Platform 2045",
+      description: "Revolutionary quantum computing platform that integrates biological systems for unprecedented processing power",
+      icon: <Atom className="w-8 h-8" />,
+      color: "from-cyan-600 to-indigo-700",
+      link: "/quantum-bio-computing-platform-2045",
+      price: "$3,999/month",
+      category: "quantum",
+      features: ["Biological Integration", "Quantum Processing", "DNA Computing", "Bio-Security"],
+      badge: "BREAKTHROUGH",
+      rating: 4.9,
+      reviews: 92
+    },
+    {
+      name: "Quantum Neural Network Platform 2045",
+      description: "Revolutionary quantum neural networks with hybrid quantum-classical computing capabilities",
+      icon: <Atom className="w-8 h-8" />,
+      color: "from-cyan-600 to-blue-700",
+      link: "/quantum-neural-network-platform-2045",
+      price: "$4,499/month",
+      category: "quantum",
+      features: ["Quantum Neural Networks", "Hybrid Computing", "Pattern Recognition", "Learning Optimization"],
+      badge: "ADVANCED",
+      rating: 4.8,
+      reviews: 78
+    },
+
+    // Space Technology Services
+    {
+      name: "Space Resource Intelligence 2045",
+      description: "Advanced space technology solutions for resource exploration and management",
+      icon: <Rocket className="w-8 h-8" />,
+      color: "from-pink-600 to-red-700",
+      link: "/space-resource-intelligence-2045",
+      price: "$3,999/month",
+      category: "space",
+      features: ["Space Mining", "Resource Mapping", "Colonization Planning", "Interplanetary Logistics"],
+      badge: "FUTURE",
+      rating: 4.9,
+      reviews: 134
+    },
+    {
+      name: "Space Mining Automation Platform 2045",
+      description: "Advanced space mining automation with AI-powered resource discovery and extraction optimization",
+      icon: <Rocket className="w-8 h-8" />,
+      color: "from-pink-600 to-orange-700",
+      link: "/space-mining-automation-platform-2045",
+      price: "$2,999/month",
+      category: "space",
+      features: ["Resource Discovery", "Extraction Optimization", "Autonomous Operations", "Interplanetary Logistics"],
+      badge: "FUTURE",
+      rating: 4.7,
+      reviews: 56
+    },
+    {
+      name: "Space Colonization Services 2045",
+      description: "Comprehensive space colonization planning and management with AI-powered optimization",
+      icon: <Rocket className="w-8 h-8" />,
+      color: "from-pink-600 to-red-700",
+      link: "/space-colonization-services-2045",
+      price: "$5,999/month",
+      category: "space",
+      features: ["Colonization Planning", "Resource Management", "Life Support Systems", "Sustainable Development"],
+      badge: "REVOLUTIONARY",
+      rating: 5.0,
+      reviews: 89
+    },
+
+    // Metaverse & VR Services
+    {
+      name: "Metaverse Development Studio Pro 2045",
+      description: "Complete metaverse creation and management platform",
+      icon: <Globe className="w-8 h-8" />,
+      color: "from-green-600 to-emerald-700",
+      link: "/metaverse-development-studio-pro-2045",
+      price: "$1,999/month",
+      category: "metaverse",
+      features: ["3D World Building", "AI Content Generation", "Blockchain Integration", "User Experience Design"],
+      badge: "IMMERSIVE",
+      rating: 4.8,
+      reviews: 112
+    },
+    {
+      name: "Metaverse Digital Reality Platform 2045",
+      description: "Complete metaverse platform with AI-generated content, blockchain integration, and immersive experiences",
+      icon: <Globe className="w-8 h-8" />,
+      color: "from-green-600 to-teal-700",
+      link: "/metaverse-digital-reality-platform-2045",
+      price: "$1,499/month",
+      category: "metaverse",
+      features: ["AI Content Generation", "Blockchain Integration", "Immersive Experiences", "Social Networking"],
+      badge: "IMMERSIVE",
+      rating: 4.6,
+      reviews: 78
+    },
+
+    // Cybersecurity Services
+    {
+      name: "Quantum Cybersecurity Platform 2045",
+      description: "ArrowRight-generation quantum-resistant security solutions",
+      icon: <Shield className="w-8 h-8" />,
+      color: "from-red-600 to-pink-700",
+      link: "/quantum-cybersecurity-platform-2045",
+      price: "$2,499/month",
+      category: "cybersecurity",
+      features: ["Quantum Resistance", "AI Threat Detection", "Advanced Encryption", "Real-time Monitoring"],
+      badge: "SECURE",
+      rating: 4.9,
+      reviews: 145
+    },
+    {
+      name: "Quantum Internet Security Gateway 2045",
+      description: "ArrowRight-generation quantum internet security with advanced encryption and threat detection",
+      icon: <Shield className="w-8 h-8" />,
+      color: "from-red-600 to-purple-700",
+      link: "/quantum-internet-security-gateway-2045",
+      price: "$2,499/month",
+      category: "cybersecurity",
+      features: ["Quantum Encryption", "Threat Detection", "Network Security", "Real-time Monitoring"],
+      badge: "ADVANCED",
+      rating: 4.7,
+      reviews: 89
+    }
+>>>>>>> 17df199e451813150094c5ab1fb554b04628cb60
   ];
 
   // Get unique categories and types

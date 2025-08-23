@@ -1,109 +1,120 @@
-import React, { useState, useEffect, useCallback, useMemo } from 'react';
+import React, { useEffect, useState, useCallback } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { 
   Activity, Zap, Clock, TrendingUp, AlertTriangle, 
-  CheckCircle, X, Settings, BarChart3, Gauge,
-  Wifi, WifiOff, Battery, BatteryCharging, Monitor,
-  Smartphone, Tablet, Laptop, HardDrive, Memory
+  CheckCircle, XCircle, Info, BarChart3, Gauge
 } from 'lucide-react';
 
 interface PerformanceMetrics {
-  loadTime: number;
-  firstContentfulPaint: number;
-  largestContentfulPaint: number;
-  cumulativeLayoutShift: number;
-  firstInputDelay: number;
-  timeToInteractive: number;
-  memoryUsage: number;
-  cpuUsage: number;
-  networkLatency: number;
-  fps: number;
-  domSize: number;
-  resourceCount: number;
-  timestamp: number;
-  // Core Web Vitals
-  lcp: number; // Largest Contentful Paint
-  fid: number; // First Input Delay
-  cls: number; // Cumulative Layout Shift
-  ttfb: number; // Time to First Byte
-  fmp: number; // First Meaningful Paint
-  si: number; // Speed Index
-  tti: number; // Time to Interactive
-  tbt: number; // Total Blocking Time
+  lcp: number;
+  fid: number;
+  cls: number;
+  ttfb: number;
+  fcp: number;
+  fmp: number;
+  tti: number;
 }
 
-interface DeviceInfo {
-  type: 'mobile' | 'tablet' | 'desktop';
-  screenSize: string;
-  userAgent: string;
-  connection: string;
-  memory?: number;
-  cores?: number;
+interface PerformanceMonitorProps {
+  showUI?: boolean;
+  autoHide?: boolean;
+  threshold?: {
+    lcp: number;
+    fid: number;
+    cls: number;
+    ttfb: number;
+  };
 }
 
-interface PerformanceAlert {
-  id: string;
-  type: 'warning' | 'error' | 'info' | 'success';
-  message: string;
-  metric: keyof PerformanceMetrics;
+// Type definitions for PerformanceObserver entries
+interface FirstInputEntry extends PerformanceEntry {
+  processingStart: number;
+  processingEnd: number;
+  target?: EventTarget;
+}
+
+interface LayoutShiftEntry extends PerformanceEntry {
   value: number;
-  threshold: number;
-  timestamp: Date;
+  hadRecentInput: boolean;
 }
 
-const PerformanceMonitor: React.FC<{ showUI?: boolean }> = ({ showUI = false }) => {
+interface PerformanceResourceTiming extends PerformanceEntry {
+  initiatorType: string;
+  duration: number;
+  name: string;
+}
+
+const PerformanceMonitor: React.FC<PerformanceMonitorProps> = ({
+  showUI = false,
+  autoHide = true,
+  threshold = {
+    lcp: 2500,
+    fid: 100,
+    cls: 0.1,
+    ttfb: 800
+  }
+}) => {
   const [metrics, setMetrics] = useState<PerformanceMetrics>({
-    loadTime: 0,
-    firstContentfulPaint: 0,
-    largestContentfulPaint: 0,
-    cumulativeLayoutShift: 0,
-    firstInputDelay: 0,
-    timeToInteractive: 0,
-    memoryUsage: 0,
-    cpuUsage: 0,
-    networkLatency: 0,
-    fps: 0,
-    domSize: 0,
-    resourceCount: 0,
-    timestamp: Date.now(),
+>>>>>>> 17df199e451813150094c5ab1fb554b04628cb60
     lcp: 0,
     fid: 0,
     cls: 0,
     ttfb: 0,
+    fcp: 0,
     fmp: 0,
-    si: 0,
-    tti: 0,
-    tbt: 0
+    tti: 0
   });
-  
-  const [deviceInfo, setDeviceInfo] = useState<DeviceInfo>({
-    type: 'desktop',
-    screenSize: '0x0',
-    userAgent: '',
-    connection: 'unknown'
-  });
-  
-  const [alerts, setAlerts] = useState<PerformanceAlert[]>([]);
-  const [isVisible, setIsVisible] = useState(false);
-  const [isExpanded, setIsExpanded] = useState(false);
-  const [autoOptimize, setAutoOptimize] = useState(false);
-  const [optimizationHistory, setOptimizationHistory] = useState<string[]>([]);
+  const [isVisible, setIsVisible] = useState(showUI);
+  const [alerts, setAlerts] = useState<string[]>([]);
+  const [overallScore, setOverallScore] = useState(0);
 
-  // Performance thresholds for different metrics
-  const thresholds = useMemo(() => ({
-    fcp: { good: 1800, poor: 3000 },
-    lcp: { good: 2500, poor: 4000 },
-    fid: { good: 100, poor: 300 },
-    cls: { good: 0.1, poor: 0.25 },
-    ttfb: { good: 800, poor: 1800 },
-    fmp: { good: 2000, poor: 4000 },
-    si: { good: 3400, poor: 5800 },
-    tti: { good: 3800, poor: 7300 },
-    tbt: { good: 300, poor: 600 }
-  }), []);
+  const calculateScore = useCallback((metrics: PerformanceMetrics) => {
+    let score = 100;
+    
+    // LCP scoring (0-2500ms, lower is better)
+    if (metrics.lcp > threshold.lcp) {
+      score -= Math.min(30, (metrics.lcp - threshold.lcp) / 100);
+    }
+    
+    // FID scoring (0-100ms, lower is better)
+    if (metrics.fid > threshold.fid) {
+      score -= Math.min(25, (metrics.fid - threshold.fid) / 10);
+    }
+    
+    // CLS scoring (0-0.1, lower is better)
+    if (metrics.cls > threshold.cls) {
+      score -= Math.min(25, (metrics.cls / threshold.cls) * 25);
+    }
+    
+    // TTFB scoring (0-800ms, lower is better)
+    if (metrics.ttfb > threshold.ttfb) {
+      score -= Math.min(20, (metrics.ttfb - threshold.ttfb) / 100);
+    }
+    
+    return Math.max(0, Math.round(score));
+  }, [threshold]);
 
-  // Get performance grade based on metric value
-  const getGrade = useCallback((metric: keyof PerformanceMetrics, value: number): 'good' | 'needs-improvement' | 'poor' => {
+  const getScoreColor = (score: number) => {
+    if (score >= 90) return 'text-green-400';
+    if (score >= 70) return 'text-yellow-400';
+    return 'text-red-400';
+  };
+
+  const getScoreIcon = (score: number) => {
+    if (score >= 90) return <CheckCircle className="w-5 h-5 text-green-400" />;
+    if (score >= 70) return <AlertTriangle className="w-5 h-5 text-yellow-400" />;
+    return <XCircle className="w-5 h-5 text-red-400" />;
+  };
+
+  const getMetricStatus = (metric: keyof PerformanceMetrics, value: number) => {
+    const thresholds = {
+      lcp: { good: 2500, needsImprovement: 4000 },
+      fid: { good: 100, needsImprovement: 300 },
+      cls: { good: 0.1, needsImprovement: 0.25 },
+      ttfb: { good: 800, needsImprovement: 1800 }
+    };
+    
+>>>>>>> 17df199e451813150094c5ab1fb554b04628cb60
     const threshold = thresholds[metric];
     if (value <= threshold.good) return 'good';
     if (value <= threshold.poor) return 'needs-improvement';
@@ -333,205 +344,113 @@ const PerformanceMonitor: React.FC<{ showUI?: boolean }> = ({ showUI = false }) 
   if (!showUI) return null;
 
   return (
-    <>
-      {/* Floating Performance Button */}
-      <motion.div
-        className="fixed bottom-8 left-8 z-40"
-        initial={{ opacity: 0, scale: 0 }}
-        animate={{ opacity: 1, scale: 1 }}
-        transition={{ delay: 1, duration: 0.5 }}
-      >
-        <button
-          onClick={() => setIsVisible(!isVisible)}
-          className={`p-4 rounded-full shadow-lg transition-all duration-200 ${
-            isVisible 
-              ? 'bg-red-500 hover:bg-red-600 text-white' 
-              : 'bg-cyan-500 hover:bg-cyan-600 text-white'
-          }`}
-          aria-label="Toggle performance monitor"
+    <AnimatePresence>
+      {isVisible && (
+        <motion.div
+          initial={{ opacity: 0, y: 20, scale: 0.95 }}
+          animate={{ opacity: 1, y: 0, scale: 1 }}
+          exit={{ opacity: 0, y: 20, scale: 0.95 }}
+          transition={{ duration: 0.3 }}
+          className="fixed bottom-4 right-4 z-50 max-w-sm w-full"
         >
-          <Activity className="w-6 h-6" />
-        </button>
-      </motion.div>
-
-      {/* Performance Monitor Panel */}
-      <AnimatePresence>
-        {isVisible && (
-          <motion.div
-            className="fixed bottom-24 left-8 z-50 w-96 max-h-[80vh] overflow-hidden"
-            initial={{ opacity: 0, y: 20, scale: 0.9 }}
-            animate={{ opacity: 1, y: 0, scale: 1 }}
-            exit={{ opacity: 0, y: 20, scale: 0.9 }}
-            transition={{ duration: 0.3 }}
-          >
-            <div className="bg-black/90 backdrop-blur-xl rounded-2xl border border-cyan-500/30 shadow-2xl">
-              {/* Header */}
-              <div className="flex items-center justify-between p-4 border-b border-cyan-500/30">
-                <div className="flex items-center gap-2">
-                  <Activity className="w-5 h-5 text-cyan-400" />
-                  <h3 className="text-white font-semibold">Performance Monitor</h3>
-                </div>
-                <div className="flex items-center gap-2">
-                  <button
-                    onClick={() => setIsExpanded(!isExpanded)}
-                    className="p-1 text-cyan-400 hover:text-cyan-300 transition-colors"
-                    aria-label="Toggle expanded view"
-                  >
-                    <BarChart3 className="w-4 h-4" />
-                  </button>
-                  <button
-                    onClick={() => setIsVisible(false)}
-                    className="p-1 text-gray-400 hover:text-white transition-colors"
-                    aria-label="Close performance monitor"
-                  >
-                    <X className="w-4 h-4" />
-                  </button>
-                </div>
+          <div className="bg-black/95 backdrop-blur-xl border border-white/20 rounded-2xl shadow-2xl overflow-hidden">
+            {/* Header */}
+            <div className="flex items-center justify-between p-4 border-b border-white/10">
+              <div className="flex items-center space-x-2">
+                <Activity className="w-5 h-5 text-cyan-400" />
+                <span className="font-semibold text-white">Performance Monitor</span>
               </div>
+              <button
+                onClick={() => setIsVisible(false)}
+                className="p-1 text-gray-400 hover:text-white transition-colors"
+              >
+                <XCircle className="w-4 h-4" />
+              </button>
+            </div>
 
-              {/* Content */}
-              <div className="p-4 space-y-4 max-h-[60vh] overflow-y-auto">
-                {/* Overall Score */}
-                <div className="text-center p-4 bg-gradient-to-r from-cyan-500/10 to-blue-500/10 rounded-xl border border-cyan-500/30">
-                  <div className="text-3xl font-bold text-white mb-2">
-                    <span className={getScoreColor(overallScore)}>{overallScore}</span>
-                    <span className="text-gray-400">/100</span>
-                  </div>
-                  <div className="text-sm text-gray-400">Performance Score</div>
+            {/* Overall Score */}
+            <div className="p-4 bg-gradient-to-r from-gray-900/50 to-gray-800/50">
+              <div className="flex items-center justify-between mb-2">
+                <span className="text-sm text-gray-400">Overall Score</span>
+                {getScoreIcon(overallScore)}
+              </div>
+              <div className="flex items-center space-x-3">
+                <div className={`text-3xl font-bold ${getScoreColor(overallScore)}`}>
+                  {overallScore}
                 </div>
-
-                {/* Device Info */}
-                <div className="bg-black/30 rounded-xl p-3 border border-cyan-500/20">
-                  <div className="flex items-center gap-2 mb-2">
-                    <Monitor className="w-4 h-4 text-cyan-400" />
-                    <span className="text-white text-sm font-medium">Device Info</span>
-                  </div>
-                  <div className="grid grid-cols-2 gap-2 text-xs text-gray-400">
-                    <div>Type: <span className="text-white">{deviceInfo.type}</span></div>
-                    <div>Screen: <span className="text-white">{deviceInfo.screenSize}</span></div>
-                    <div>Connection: <span className="text-white">{deviceInfo.connection}</span></div>
-                    {deviceInfo.memory && <div>Memory: <span className="text-white">{deviceInfo.memory}GB</span></div>}
-                    {deviceInfo.cores && <div>Cores: <span className="text-white">{deviceInfo.cores}</span></div>}
-                  </div>
-                </div>
-
-                {/* Performance Metrics */}
-                <div className="space-y-2">
-                  <div className="flex items-center gap-2">
-                    <Gauge className="w-4 h-4 text-cyan-400" />
-                    <span className="text-white text-sm font-medium">Metrics</span>
-                  </div>
-                  
-                  {Object.entries(metrics).map(([metric, value]) => {
-                    if (value === 0) return null;
-                    const grade = getGrade(metric as keyof PerformanceMetrics, value);
-                    const color = getGradeColor(grade);
-                    
-                    return (
-                      <div key={metric} className="flex items-center justify-between p-2 bg-black/20 rounded-lg">
-                        <div className="flex items-center gap-2">
-                          {getGradeIcon(grade)}
-                          <span className="text-gray-300 text-xs uppercase">{metric}</span>
-                        </div>
-                        <div className="flex items-center gap-2">
-                          <span className={`text-sm font-mono ${color}`}>
-                            {value.toFixed(2)}ms
-                          </span>
-                          <span className={`text-xs px-2 py-1 rounded-full ${
-                            grade === 'good' ? 'bg-green-500/20 text-green-400' :
-                            grade === 'needs-improvement' ? 'bg-yellow-500/20 text-yellow-400' :
-                            'bg-red-500/20 text-red-400'
-                          }`}>
-                            {grade}
-                          </span>
-                        </div>
-                      </div>
-                    );
-                  })}
-                </div>
-
-                {/* Alerts */}
-                {alerts.length > 0 && (
-                  <div className="space-y-2">
-                    <div className="flex items-center gap-2">
-                      <AlertTriangle className="w-4 h-4 text-yellow-400" />
-                      <span className="text-white text-sm font-medium">Alerts</span>
-                    </div>
-                    {alerts.slice(0, 3).map(alert => (
-                      <div key={alert.id} className={`p-2 rounded-lg text-xs border ${
-                        alert.type === 'error' ? 'bg-red-500/20 border-red-500/30 text-red-400' :
-                        alert.type === 'warning' ? 'bg-yellow-500/20 border-yellow-500/30 text-yellow-400' :
-                        'bg-blue-500/20 border-blue-500/30 text-blue-400'
-                      }`}>
-                        {alert.message}
-                      </div>
-                    ))}
-                  </div>
-                )}
-
-                {/* Optimization Controls */}
-                <div className="space-y-3">
-                  <div className="flex items-center gap-2">
-                    <Settings className="w-4 h-4 text-cyan-400" />
-                    <span className="text-white text-sm font-medium">Optimization</span>
-                  </div>
-                  
-                  <div className="flex items-center gap-2">
-                    <input
-                      type="checkbox"
-                      id="autoOptimize"
-                      checked={autoOptimize}
-                      onChange={(e) => setAutoOptimize(e.target.checked)}
-                      className="rounded border-cyan-500/30 text-cyan-500 focus:ring-cyan-500"
+                <div className="flex-1">
+                  <div className="w-full bg-gray-700 rounded-full h-2">
+                    <div
+                      className={`h-2 rounded-full transition-all duration-500 ${
+                        overallScore >= 90 ? 'bg-green-500' : overallScore >= 70 ? 'bg-yellow-500' : 'bg-red-500'
+                      }`}
+                      style={{ width: `${overallScore}%` }}
                     />
-                    <label htmlFor="autoOptimize" className="text-gray-300 text-sm">
-                      Auto-optimize
-                    </label>
-                  </div>
-                  
-                  <div className="grid grid-cols-2 gap-2">
-                    <button
-                      onClick={optimizeImages}
-                      className="px-3 py-2 bg-cyan-500/20 text-cyan-400 rounded-lg hover:bg-cyan-500/30 transition-colors text-xs"
-                    >
-                      Optimize Images
-                    </button>
-                    <button
-                      onClick={optimizeFonts}
-                      className="px-3 py-2 bg-cyan-500/20 text-cyan-400 rounded-lg hover:bg-cyan-500/30 transition-colors text-xs"
-                    >
-                      Optimize Fonts
-                    </button>
                   </div>
                 </div>
-
-                {/* Optimization History */}
-                {optimizationHistory.length > 0 && (
-                  <div className="space-y-2">
-                    <div className="flex items-center justify-between">
-                      <span className="text-white text-sm font-medium">History</span>
-                      <button
-                        onClick={clearOptimizationHistory}
-                        className="text-xs text-gray-400 hover:text-white transition-colors"
-                      >
-                        Clear
-                      </button>
-                    </div>
-                    <div className="max-h-32 overflow-y-auto space-y-1">
-                      {optimizationHistory.slice(-5).map((item, index) => (
-                        <div key={index} className="text-xs text-gray-400 bg-black/20 p-2 rounded">
-                          {item}
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                )}
               </div>
             </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
-    </>
+
+            {/* Metrics Grid */}
+            <div className="p-4 space-y-3">
+              {Object.entries(metrics).map(([key, value]) => {
+                if (key === 'fmp' || key === 'tti') return null; // Skip less important metrics
+                
+                const status = getMetricStatus(key as keyof PerformanceMetrics, value);
+                const color = getMetricColor(status);
+                const icon = getMetricIcon(status);
+                
+                return (
+                  <div key={key} className="flex items-center justify-between">
+                    <div className="flex items-center space-x-2">
+                      {icon}
+                      <span className="text-sm text-gray-300 uppercase">{key}</span>
+                    </div>
+                    <div className={`text-sm font-mono ${color}`}>
+                      {key === 'cls' ? value.toFixed(3) : `${Math.round(value)}ms`}
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+
+            {/* Alerts */}
+            {alerts.length > 0 && (
+              <div className="p-4 border-t border-white/10 bg-red-500/10">
+                <div className="flex items-center space-x-2 mb-2">
+                  <AlertTriangle className="w-4 h-4 text-red-400" />
+                  <span className="text-sm font-medium text-red-400">Performance Issues</span>
+                </div>
+                <div className="space-y-1">
+                  {alerts.slice(0, 3).map((alert, index) => (
+                    <div key={index} className="text-xs text-red-300">
+                      • {alert}
+                    </div>
+                  ))}
+                  {alerts.length > 3 && (
+                    <div className="text-xs text-red-400">
+                      +{alerts.length - 3} more issues
+                    </div>
+                  )}
+                </div>
+              </div>
+            )}
+
+            {/* Footer */}
+            <div className="p-3 bg-gray-900/50 border-t border-white/10">
+              <div className="flex items-center justify-between text-xs text-gray-500">
+                <span>Real-time monitoring</span>
+                <div className="flex items-center space-x-1">
+                  <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
+                  <span>Live</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </motion.div>
+      )}
+    </AnimatePresence>
+>>>>>>> 17df199e451813150094c5ab1fb554b04628cb60
   );
 };
 

@@ -37,7 +37,43 @@ import { real2028ServiceExpansions } from '../../data/real-2028-service-expansio
 import { real2029Q1Additions } from '../../data/real-2029-q1-additions';
 import { real2029Q2Additions } from '../../data/real-2029-q2-additions';
 import { real2029Q3Additions } from '../../data/real-2029-q3-additions';
-import { real2029Q4Additions } from '../../data/real-2029-q4-additions';
+import { real2030Q1Additions } from '../../data/real-2030-q1-additions';
+import { real2031MicroSaasAdditions } from '../../data/real-2031-micro-saas-additions';
+import { real2031ITServicesAdditions } from '../../data/real-2031-it-services-additions';
+import { real2031AIServicesAdditions } from '../../data/real-2031-ai-services-additions';
+import { real2030Q2Additions } from '../../data/real-2030-q2-additions';
+import { real2027Q3Additions } from '../../data/real-2027-q3-additions';
+import { professionalServices } from '../../data/professional-services';
+import { real2032ServiceExpansions } from '../../data/real-2032-service-expansions';
+import { real2035Q1Additions } from '../../data/real-2035-q1-additions';
+import { real2035Q2AdditionsExtra } from '../../data/real-2035-q2-additions-extra';
+import { real2025ExtraServices } from '../../data/real-2025-extra-services';
+import { real2026Q4ExpansionsV2 } from '../../data/real-2026-q4-expansions-v2';
+import { real2036ServiceExpansions } from '../../data/real-2036-service-expansions';
+import { real2026Q4ExpansionsV3 } from '../../data/real-2026-q4-expansions-v3';
+import { real2036MicroSaasAdditions } from '../../data/real-2036-micro-saas-additions';
+import { real2036ITServicesAdditions } from '../../data/real-2036-it-services-additions';
+import { real2036AIServicesAdditions } from '../../data/real-2036-ai-services-additions';
+import { innovative2025MicroSaasBatch } from '../../data/innovative-2025-micro-saas-batch';
+import { innovative2025ITEnterpriseBatch } from '../../data/innovative-2025-it-enterprise-batch';
+import { innovativeMicroSaasServices } from '../../data/innovative-2025-micro-saas-expansions';
+import { innovativeITServices } from '../../data/innovative-2025-it-services-expansions';
+import { innovativeAIServices } from '../../data/innovative-2025-ai-services-expansions';
+// Import our new 2025 advanced services
+import { advanced2025MicroSaasExpansion } from '../../data/2025-advanced-micro-saas-expansion';
+import { advanced2025ITSolutionsExpansion } from '../../data/2025-advanced-it-solutions-expansion';
+import { advancedAIServicesExpansion2025 } from '../../data/2025-advanced-ai-services-expansion';
+
+// Import our new 2025 innovative services
+import { innovativeMicroSaasExpansion2025 } from '../../data/2025-innovative-micro-saas-expansion';
+import { innovative2025ITSolutionsExpansion } from '../../data/2025-innovative-it-solutions-expansion';
+import { innovative2025AISolutionsExpansion } from '../../data/2025-innovative-ai-solutions-expansion';
+
+// Import our new 2025 innovative services V3
+import { innovativeMicroSaasExpansionV32025 } from '../../data/2025-innovative-micro-saas-expansion-v3';
+import { innovativeITServicesExpansion2025V3 } from '../../data/2025-innovative-it-services-expansion-v3';
+import { innovativeAIServicesExpansion2025V3 } from '../../data/2025-innovative-ai-services-expansion-v3';
+>>>>>>> 17df199e451813150094c5ab1fb554b04628cb60
 
 function toSlug(value: string) {
   return value.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
@@ -50,8 +86,9 @@ const categories = [
   'Observability',
   'Quality & Monitoring',
   'Quantum Computing',
-  'Neuromorphic AI',
-  'Edge Computing',
+  'Space Technology',
+  'Metaverse',
+>>>>>>> 17df199e451813150094c5ab1fb554b04628cb60
   'Cybersecurity',
   'Supply Chain',
   'Financial Services',
@@ -61,11 +98,8 @@ const categories = [
   'Education',
   'Government',
   'Energy',
-  'Transportation',
-  'Blockchain & Web3',
-  'IoT & Edge Computing',
-  'Enterprise Solutions',
-  'Innovation & Research'
+  'Transportation'
+>>>>>>> 17df199e451813150094c5ab1fb554b04628cb60
 ];
 
 // Transform services data to match the expected Service interface
@@ -159,48 +193,73 @@ export default function ServicesIndexPage() {
       real2029Q1Additions as unknown[],
       real2029Q2Additions as unknown[],
       real2029Q3Additions as unknown[],
-      real2029Q4Additions as unknown[]
+      real2030Q1Additions as unknown[],
+      real2031MicroSaasAdditions as unknown[],
+      real2031ITServicesAdditions as unknown[],
+      real2031AIServicesAdditions as unknown[],
+      real2030Q2Additions as unknown[],
+      real2027Q3Additions as unknown[],
+      professionalServices as unknown[],
+      real2032ServiceExpansions as unknown[],
+      real2035Q1Additions as unknown[],
+      real2035Q2AdditionsExtra as unknown[],
+      real2025ExtraServices as unknown[],
+      real2026Q4ExpansionsV2 as unknown[],
+      real2026Q4ExpansionsV3 as unknown[],
+      real2036ServiceExpansions as unknown[],
+      real2036MicroSaasAdditions as unknown[],
+      real2036ITServicesAdditions as unknown[],
+      real2036AIServicesAdditions as unknown[]
+    )
+    .concat(innovative2025MicroSaasBatch as unknown[])
+    .concat(innovative2025ITEnterpriseBatch as unknown[])
+    .concat(innovativeMicroSaasServices as unknown[])
+    .concat(innovativeITServices as unknown[])
+    .concat(innovativeAIServices as unknown[])
+    // Our new 2025 advanced services
+    .concat(advanced2025MicroSaasExpansion as unknown[])
+    .concat(advanced2025ITSolutionsExpansion as unknown[])
+    .concat(advanced2025AIServicesExpansion as unknown[])
+    // Our new 2025 innovative services
+    .concat(innovativeMicroSaasExpansion2025 as unknown[])
+    .concat(innovative2025ITSolutionsExpansion as unknown[])
+    .concat(innovative2025AISolutionsExpansion as unknown[])
+    // Our new 2025 advanced services V2
+    // .concat(advancedMicroSaasExpansion2025V2 as unknown[])
+    // .concat(advancedITInfrastructureExpansion2025V2 as unknown[])
+    // .concat(advancedAIServicesExpansion2025V2 as unknown[])
+    // Our new 2025 innovative services V3
+    .concat(innovativeMicroSaasExpansionV32025 as unknown[])
+    .concat(innovativeITServicesExpansion2025V3 as unknown[])
+    .concat(innovativeAIServicesExpansion2025V3 as unknown[])
+    ;
+
+  // Filter out services without required properties
+  const validServices = all.filter(service => 
+    service && 
+    typeof service === 'object' && 
+    'name' in service && 
+    'description' in service &&
+    'price' in service
+  );
+
+  // Group services by category
+  const servicesByCategory = categories.reduce((acc, category) => {
+    acc[category] = validServices.filter((service: any) => 
+      service.category && service.category.toLowerCase().includes(category.toLowerCase().replace(/\s+/g, ''))
     );
-  const byCategory: Record<string, unknown[]> = {};
-  for (const c of categories) byCategory[c] = [];
-  // Normalize various category labels into our main buckets
-  const categoryAliases: Record<string, string> = {
-    'AI & Data': 'AI & Data',
-    'AI & Machine Learning': 'AI & Data',
-    'GenAI': 'AI & Data',
-    'Cloud & FinOps': 'Cloud & FinOps',
-    'Cloud & Data': 'Cloud & FinOps',
-    'Platform Engineering': 'Cloud & FinOps',
-    'Observability': 'Observability',
-    'Observability & Telemetry': 'Observability',
-    'Quality & Monitoring': 'Quality & Monitoring',
-    'Security & Reliability': 'Quality & Monitoring',
-    'Security & Compliance': 'Quality & Monitoring',
-    'Developer Tools': 'Developer Tools',
-    'Growth & Marketing': 'Developer Tools'
-  };
-  for (const s of all) {
-    const service = s as { category?: string | string[] };
-    const rawCatValue = service.category;
-    const rawCat = Array.isArray(rawCatValue) ? (rawCatValue[0] || '') : (rawCatValue || '');
-    const mapped = categoryAliases[rawCat] || (categories.includes(rawCat) ? rawCat : 'Developer Tools');
-    byCategory[mapped].push(s);
-  }
+    return acc;
+  }, {} as Record<string, any[]>);
 
-  const anchorMap: Record<string, string> = {
-    'AI & Data': 'ai',
-    'Developer Tools': 'developer-tools',
-    'Cloud & FinOps': 'cloud',
-    'Observability': 'observability',
-    'Quality & Monitoring': 'quality',
-  };
+  // Get featured services (marked as popular)
+  const featuredServices = validServices.filter((service: any) => service.popular).slice(0, 6);
 
-  const [shownCounts, setShownCounts] = React.useState<Record<string, number>>(() => Object.fromEntries(categories.map(c => [c, 12])));
-  const [searchQuery, setSearchQuery] = React.useState('');
-
-
-
-
+  // Get latest services (assuming they have a launchDate)
+  const latestServices = validServices
+    .filter((service: any) => service.launchDate)
+    .sort((a: any, b: any) => new Date(b.launchDate).getTime() - new Date(a.launchDate).getTime())
+    .slice(0, 6);
+>>>>>>> 17df199e451813150094c5ab1fb554b04628cb60
 
   return (
     <div className="min-h-screen bg-black text-white">
@@ -229,7 +288,7 @@ export default function ServicesIndexPage() {
                   {categories.length} Categories
                 </span>
                 <span className="px-4 py-2 bg-gradient-to-r from-green-500/20 to-emerald-500/20 border border-green-500/30 rounded-full text-green-300">
-                  Latest 2024-2025 Tech
+                  Latest 2036 Tech
                 </span>
               </div>
             </div>

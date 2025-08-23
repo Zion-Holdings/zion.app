@@ -222,31 +222,7 @@ const EnhancedHomepage2026: React.FC = () => {
                   </p>
                 </motion.div>
 
-                {/* Call to Action Buttons */}
-                <motion.div 
-                  className="flex flex-col sm:flex-row gap-6 justify-center items-center mb-12"
-                  variants={fadeInUp}
-                >
-                  <button 
-                    className="group px-12 py-6 bg-gradient-to-r from-cyan-500 via-blue-600 to-purple-600 text-white font-bold text-xl rounded-2xl hover:from-cyan-600 hover:via-blue-700 hover:to-purple-700 transition-all duration-300 transform hover:scale-105 hover:shadow-2xl hover:shadow-cyan-500/25 flex items-center gap-3 focus:outline-none focus:ring-4 focus:ring-cyan-500/50 relative overflow-hidden"
-                    aria-label="Explore our revolutionary 2040 services"
-                    onClick={() => window.location.href = '/comprehensive-2040-services-showcase'}
-                  >
-                    <span className="relative z-10">Explore 2040 Services</span>
-                    <ArrowRight className="w-6 h-6 group-hover:translate-x-2 transition-transform relative z-10" />
-                    <div className="absolute inset-0 bg-gradient-to-r from-cyan-400 to-blue-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                  </button>
-                  
-                  <button 
-                    className="px-12 py-6 border-2 border-cyan-400 text-cyan-400 font-bold text-xl rounded-2xl hover:bg-cyan-400 hover:text-black transition-all duration-300 transform hover:scale-105 flex items-center gap-3 focus:outline-none focus:ring-4 focus:ring-cyan-400/50 group"
-                    aria-label="View 2040 technology pricing"
-                    onClick={() => window.location.href = '/pricing-2040'}
-                  >
-                    <span>View Pricing</span>
-                  </button>
-                </motion.div>
-
-                {/* Featured Services Grid */}
+>>>>>>> 17df199e451813150094c5ab1fb554b04628cb60
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                   {featuredServices.map((service, index) => (
                     <motion.div

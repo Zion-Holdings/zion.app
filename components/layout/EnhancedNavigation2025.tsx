@@ -250,9 +250,7 @@ const EnhancedNavigation2025: React.FC = () => {
                 {item.children ? (
                   <button
                     onClick={() => toggleDropdown(item.name)}
-                    className="flex items-center space-x-1 text-gray-300 hover:text-white transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-cyan-500 rounded-lg px-3 py-2"
-                    aria-expanded={activeDropdown === item.name}
-                    aria-haspopup="true"
+                    className="flex items-center space-x-1 px-3 py-2 text-sm font-medium text-gray-300 hover:text-white transition-colors duration-200 group"
                   >
                     {item.icon}
                     <span>{item.name}</span>
@@ -263,8 +261,7 @@ const EnhancedNavigation2025: React.FC = () => {
                 ) : (
                   <Link
                     href={item.href}
-                    onClick={closeMobileMenu}
-                    className="text-gray-300 hover:text-white transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-cyan-500 rounded-lg px-3 py-2"
+                    className="flex items-center space-x-1 px-3 py-2 text-sm font-medium text-gray-300 hover:text-white transition-colors duration-200"
                   >
                     {item.icon}
                     <span>{item.name}</span>
@@ -325,41 +322,23 @@ const EnhancedNavigation2025: React.FC = () => {
           <div className="hidden lg:flex lg:items-center lg:space-x-4">
             <Link
               href="/contact"
-              className="px-4 py-2 text-sm font-medium text-cyan-300 hover:text-white transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-cyan-500 rounded-lg"
+              className="px-4 py-2 text-sm font-medium text-cyan-300 hover:text-white transition-colors duration-200"
             >
               Contact Sales
             </Link>
             <Link
               href="/get-started"
-              className="px-4 py-2 text-sm font-medium bg-gradient-to-r from-cyan-500 to-blue-500 text-white rounded-lg hover:from-cyan-600 hover:to-blue-600 transition-all duration-200 shadow-lg hover:shadow-cyan-500/25 focus:outline-none focus:ring-2 focus:ring-cyan-500"
+              className="px-4 py-2 text-sm font-medium bg-gradient-to-r from-cyan-500 to-blue-500 text-white rounded-lg hover:from-cyan-600 hover:to-blue-600 transition-all duration-200 shadow-lg hover:shadow-cyan-500/25"
             >
               Get Started
             </Link>
-          </div>
-
-          {/* Search */}
-          <div className="hidden md:block">
-            <form onSubmit={handleSearch} className="flex items-center space-x-4">
-              <div className="relative">
-                <input
-                  type="text"
-                  name="search"
-                  placeholder="Search solutions..."
-                  className="w-64 pl-10 pr-4 py-2 bg-gray-800/50 border border-gray-600/50 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:border-transparent"
-                  aria-label="Search solutions"
-                />
-                <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-gray-400" />
-              </div>
-            </form>
           </div>
 
           {/* Mobile menu button */}
           <div className="lg:hidden">
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="lg:hidden p-2 text-gray-300 hover:text-white transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-cyan-500 rounded-lg"
-              aria-label="Toggle mobile menu"
-              aria-expanded={isOpen}
+              className="p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
             >
               {isOpen ? (
                 <X className="block h-6 w-6" />
@@ -374,7 +353,6 @@ const EnhancedNavigation2025: React.FC = () => {
       {/* Mobile Navigation */}
       <AnimatePresence>
         {isOpen && (
-=======
           <>
             {/* Backdrop */}
             <motion.div
@@ -471,6 +449,45 @@ const EnhancedNavigation2025: React.FC = () => {
                         >
                           {item.label}
                         </Link>
+=======
+          <motion.div
+            initial={{ opacity: 0, height: 0 }}
+            animate={{ opacity: 1, height: 'auto' }}
+            exit={{ opacity: 0, height: 0 }}
+            transition={{ duration: 0.3 }}
+            className="lg:hidden bg-black/95 backdrop-blur-md border-t border-cyan-500/20"
+          >
+            <div className="px-4 py-6 space-y-4">
+              {navigationItems.map((item) => (
+                <div key={item.name}>
+                  {item.children ? (
+                    <div>
+                      <button
+                        onClick={() => toggleDropdown(item.name)}
+                        className="flex items-center justify-between w-full px-3 py-2 text-base font-medium text-gray-300 hover:text-white transition-colors duration-200"
+                      >
+                        <div className="flex items-center space-x-2">
+                          {item.icon}
+                          <span>{item.name}</span>
+                        </div>
+                        <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${
+                          activeDropdown === item.name ? 'rotate-180' : ''
+                        }`} />
+                      </button>
+                      {activeDropdown === item.name && (
+                        <div className="ml-6 mt-2 space-y-2">
+                          {item.children.map((child) => (
+                            <Link
+                              key={child.name}
+                              href={child.href}
+                              className="block px-3 py-2 text-sm text-gray-400 hover:text-white transition-colors duration-200"
+                              onClick={() => setIsOpen(false)}
+                            >
+                              {child.name}
+                            </Link>
+                          ))}
+                        </div>
+>>>>>>> 17df199e451813150094c5ab1fb554b04628cb60
                       )}
                     </div>
                   ) : (

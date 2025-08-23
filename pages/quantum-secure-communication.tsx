@@ -3,7 +3,7 @@ import Head from 'next/head';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { 
-  CheckCircle, Shield, Lock, TrendingUp as TrendingUpIcon, Phone, Rocket, ArrowRight
+  CheckCircle, Shield, Lock, TrendingUp as TrendingUp, Phone, Rocket, ArrowRight
 } from 'lucide-react';
 import Button from '../components/ui/Button';
 import UltraAdvancedFuturisticBackground from '../components/ui/UltraAdvancedFuturisticBackground';
@@ -112,7 +112,7 @@ export default function QuantumSecureCommunication() {
                 transition={{ duration: 0.8, delay: 0.5 }}
                 className="text-lg md:text-xl text-gray-400 mb-12 max-w-3xl mx-auto leading-relaxed"
               >
-                Next-generation communication platform that uses quantum cryptography to provide unbreakable encryption for sensitive communications, ensuring your data remains secure even against quantum computers.
+                ArrowRight-generation communication platform that uses quantum cryptography to provide unbreakable encryption for sensitive communications, ensuring your data remains secure even against quantum computers.
               </motion.p>
 
               {/* Pricing and CTA */}
@@ -401,15 +401,15 @@ export default function QuantumSecureCommunication() {
                 </p>
                 <div className="space-y-4">
                   <div className="flex items-center space-x-3">
-                    <TrendingUpIcon className="w-5 h-5 text-green-400" />
+                    <TrendingUp className="w-5 h-5 text-green-400" />
                     <span className="text-gray-200">Avoided security breaches</span>
                   </div>
                   <div className="flex items-center space-x-3">
-                    <TrendingUpIcon className="w-5 h-5 text-green-400" />
+                    <TrendingUp className="w-5 h-5 text-green-400" />
                     <span className="text-gray-200">Compliance cost savings</span>
                   </div>
                   <div className="flex items-center space-x-3">
-                    <TrendingUpIcon className="w-5 h-5 text-green-400" />
+                    <TrendingUp className="w-5 h-5 text-green-400" />
                     <span className="text-gray-200">Future-proof security</span>
                   </div>
                 </div>

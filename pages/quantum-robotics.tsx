@@ -1,6 +1,6 @@
 import React from 'react';
 import Head from 'next/head';
-import { Phone, Mail, MapPin, Check, ArrowRight, Cpu as CpuIcon, Star } from 'lucide-react';
+import { Phone, Mail, MapPin, Check, ArrowRight, Cpu as Cpu, Star } from 'lucide-react';
 import UltraAdvancedFuturisticBackground from '../components/ui/UltraAdvancedFuturisticBackground';
 import Button from '../components/ui/Button';
 import { enhancedRealMicroSaasServices } from '../data/enhanced-real-micro-saas-services';
@@ -19,7 +19,7 @@ export default function QuantumRoboticsPage() {
       <div className="min-h-screen pt-24 pb-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-10">
-            <h1 className="text-5xl md:text-7xl font-bold bg-gradient-to-r from-orange-400 via-red-400 to-rose-400 bg-clip-text text-transparent flex items-center justify-center gap-3"><CpuIcon className="w-10 h-10" />{service.name}</h1>
+            <h1 className="text-5xl md:text-7xl font-bold bg-gradient-to-r from-orange-400 via-red-400 to-rose-400 bg-clip-text text-transparent flex items-center justify-center gap-3"><Cpu className="w-10 h-10" />{service.name}</h1>
             <p className="mt-4 text-xl text-slate-300 max-w-3xl mx-auto">{service.tagline}</p>
           </div>
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-12">

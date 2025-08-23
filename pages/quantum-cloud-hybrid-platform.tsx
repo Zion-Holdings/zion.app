@@ -293,3 +293,4 @@ export default function QuantumCloudHybridPlatformPage() {
     </UltraAdvancedFuturisticBackground>
   );
 }
+>>>>>>> 17df199e451813150094c5ab1fb554b04628cb60

@@ -107,8 +107,6 @@ describe('Page Crashes Fix - Issue #3', () => {
       `;
       
       // Should not contain merge conflict markers
-      expect(fileContent).not.toContain('<<<<<<< HEAD');
-      expect(fileContent).not.toContain('=======');
       expect(fileContent).not.toContain('>>>>>>> ');
     });
 

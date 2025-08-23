@@ -1,16 +1,73 @@
-export const innovativeAIServicesExpansionV2 = [
-  // AI-Powered Business Process Automation
+import { ServiceVariant } from '../types/service-variants';
+
+export interface InnovativeAIService2025V2 {
+  id: string;
+  name: string;
+  tagline: string;
+  price?: string;
+  period?: string;
+  pricing?: {
+    starter: string;
+    professional: string;
+    enterprise: string;
+    custom: string;
+  };
+  description: string;
+  features: string[];
+  benefits?: string[];
+  popular: boolean;
+  icon: string;
+  color: string;
+  textColor: string;
+  link: string;
+  marketPosition?: string;
+  targetAudience: string;
+  trialDays?: number;
+  setupTime?: string;
+  category: string;
+  realService: boolean;
+  technology: string[];
+  integrations: string[];
+  useCases: string[];
+  roi: string;
+  competitors: string[];
+  marketSize: string;
+  growthRate: string;
+  variant: ServiceVariant;
+  contactInfo: {
+    mobile: string;
+    email: string;
+    address: string;
+    website: string;
+  };
+  realImplementation: boolean;
+  implementationDetails: string;
+>>>>>>> origin/HEAD
+  launchDate: string;
+  customers: number;
+  rating: number;
+  reviews: number;
+  slug?: string;
+  contact?: string;
+  mobile?: string;
+  address?: string;
+  website?: string;
+  competitiveAdvantage?: string;
+}
+
+export const innovativeAIServices2025V2: InnovativeAIService2025V2[] = [
+  // AI-Powered Predictive Analytics Platform
   {
-    id: 'ai-powered-business-process-automation',
-    name: 'AI-Powered Business Process Automation Platform',
-    tagline: 'Automate complex business processes with intelligent AI',
-    description: 'Advanced AI-powered business process automation platform that uses machine learning to identify, optimize, and automate complex business workflows. Features include intelligent document processing, workflow optimization, decision automation, and process analytics.',
-    category: 'AI Automation & Business Processes',
-    type: 'AI Services',
+    id: 'ai-powered-predictive-analytics-platform',
+    name: 'AI-Powered Predictive Analytics Platform',
+    tagline: 'Transform data into actionable predictions with advanced AI',
+    description: 'Comprehensive predictive analytics platform that uses machine learning and AI to analyze historical data, identify patterns, and make accurate predictions for business decision-making and strategic planning.',
+    category: 'AI Analytics',
     pricing: {
-      starter: '$2,500/month',
-      professional: '$6,500/month',
-      enterprise: '$18,500/month',
+      starter: '$199/month',
+      professional: '$599/month',
+      enterprise: '$1,499/month',
+>>>>>>> 17df199e451813150094c5ab1fb554b04628cb60
       custom: 'Contact for pricing'
     },
     features: [
@@ -286,6 +343,32 @@ export const innovativeAIServicesExpansionV2 = [
     mobile: '+1 302 464 0950',
     address: '364 E Main St STE 1008 Middletown DE 19709',
     website: 'https://ziontechgroup.com',
-    slug: '/ai-powered-quality-assurance-testing'
+    slug: '/quantum-ai-hybrid-computing-platform',
+    realService: true,
+    technology: ['Quantum Computing', 'Machine Learning', 'Quantum Algorithms', 'Python', 'Qiskit', 'Cirq', 'PennyLane'],
+    integrations: ['IBM Quantum', 'Google Quantum', 'Microsoft Quantum', 'AWS Braket', 'Azure Quantum'],
+    roi: '500% within 24 months',
+    competitors: ['IBM Quantum', 'Google Quantum', 'Microsoft Quantum', 'D-Wave'],
+    growthRate: '78% monthly',
+    variant: 'quantum-ai-revolutionary',
+    contactInfo: {
+      mobile: '+1 302 464 0950',
+      email: 'kleber@ziontechgroup.com',
+      address: '364 E Main St STE 1008 Middletown DE 19709',
+      website: 'https://ziontechgroup.com'
+    },
+    realImplementation: true,
+    implementationDetails: 'Quantum-AI hybrid computing platform with advanced algorithms, complex optimization, and breakthrough computational capabilities',
+    launchDate: '2025-02-28',
+    customers: 180,
+    rating: 4.9,
+    reviews: 67,
+    popular: true,
+    icon: 'atom',
+    color: 'from-indigo-500 to-purple-500',
+    textColor: 'text-white',
+    link: '/quantum-ai-hybrid-computing-platform'
+>>>>>>> origin/HEAD
+>>>>>>> 17df199e451813150094c5ab1fb554b04628cb60
   }
 ];
