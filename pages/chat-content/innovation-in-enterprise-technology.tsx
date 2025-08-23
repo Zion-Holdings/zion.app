@@ -1,20 +1,8 @@
-import type { NextPage } from 'next';
-import Head from 'next/head';
-
-const InnovationInEnterpriseTechnology: NextPage = () => {
+export default function InnovationInEnterpriseTechnology() {
   return (
-    <div>
-      <Head>
-        <title>InnovationInEnterpriseTechnology - Zion Tech Solutions</title>
-        <meta name="description" content="InnovationInEnterpriseTechnology page" />
-      </Head>
-      
-      <main>
-        <h1>InnovationInEnterpriseTechnology</h1>
-        <p>This page is under construction.</p>
-      </main>
+    <div className="space-y-2">
+      <h1 className="text-2xl font-bold">Innovation in Enterprise Technology</h1>
+      <p className="text-gray-600 dark:text-gray-300">Content coming soon.</p>
     </div>
   );
-};
-
-export default InnovationInEnterpriseTechnology;
+}

@@ -24,36 +24,11 @@ const BlogHome: NextPage<Props> = ({ posts, authors, topics, tags }) => {
   const hero = filtered[0];
   const rest = filtered.slice(1);
 
+export default function BlogIndex() {
   return (
-    <div>
-      <Head>
-        <title>Blog - Zion AI Marketplace</title>
-        <meta name="description" content="Insights on AI, DevOps, and digital transformation." />
-        <meta property="og:title" content="Zion Blog" />
-        <meta property="og:description" content="Insights on AI, DevOps, and digital transformation." />
-        <meta property="og:image" content="/images/og/blog-default.jpg" />
-        <meta property="og:type" content="website" />
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Zion Blog" />
-        <meta name="twitter:description" content="Insights on AI, DevOps, and digital transformation." />
-        <meta name="twitter:image" content="/images/og/blog-default.jpg" />
-      </Head>
-      
-      <main>
-        <h1>Index</h1>
-        <p>Blog content coming soon...</p>
-        <a href="/blog">Back to Blog</a>
-      </main>
+    <div className="space-y-2">
+      <h1 className="text-3xl font-bold">Blog</h1>
+      <p className="text-gray-600 dark:text-gray-300">Thoughts on AI, autonomy, and product engineering.</p>
     </div>
   );
-};
-
-export const getServerSideProps: GetServerSideProps = async () => {
-  const posts = listPublishedPosts();
-  const authors = listAllAuthors();
-  const topics = listAllTopics();
-  const tags = listAllTags();
-  return { props: { posts, authors, topics, tags } };
-};
-
-export default BlogHome;
+}
