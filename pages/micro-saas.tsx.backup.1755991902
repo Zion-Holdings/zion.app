@@ -106,7 +106,11 @@ export default function MicroSaasPage() {
   const categories = ['All', 'Content & Marketing', 'Development & DevOps', 'Sales & CRM', 'Legal & Compliance', 'Human Resources', 'Analytics & Data', 'Productivity & Collaboration', 'Customer Service', 'Finance & Accounting', 'Design & UX', 'Finance & Investment', 'Operations & Logistics', 'Security & Compliance', 'Healthcare & Life Sciences', 'Education & Training', 'Real Estate & Property', 'Manufacturing & Industry', 'Energy & Utilities'];
 
   return (
+<<<<<<< HEAD
+    <EnhancedFuturisticBackground>
+=======
           <EnhancedFuturisticBackground variant="neural-cyber" intensity="high">
+>>>>>>> origin/cursor/enhance-app-services-and-website-with-futuristic-design-a01f
       <div className="min-h-screen">
         <Head>
           <title>100+ Micro SaaS Services | Zion Tech Group - AI, Cloud, Security Solutions</title>
@@ -120,6 +124,19 @@ export default function MicroSaasPage() {
           <link rel="canonical" href="https://ziontechgroup.com/micro-saas" />
         </Head>
 
+<<<<<<< HEAD
+      <div className="min-h-screen bg-black/90 text-white">
+        {/* Enhanced Hero Section */}
+        <section className="relative py-20 px-4 sm:px-6 lg:px-8">
+          <div className="max-w-7xl mx-auto text-center">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+            >
+              <h1 className="text-5xl md:text-7xl font-bold bg-gradient-to-r from-cyan-400 via-purple-500 to-pink-500 bg-clip-text text-transparent mb-6">
+                Revolutionary Micro SAAS Services
+=======
         {/* Hero Section */}
         <section className="relative py-20 overflow-hidden">
           <div className="container mx-auto px-4 text-center">
@@ -130,6 +147,7 @@ export default function MicroSaasPage() {
                 </span>
                 <br />
                 <span className="text-white">Ready to Deploy</span>
+>>>>>>> origin/cursor/enhance-app-services-and-website-with-futuristic-design-a01f
               </h1>
               <p className="text-xl md:text-2xl text-gray-300 mb-8 max-w-4xl mx-auto">
                 Transform your business with 150+ cutting-edge micro SAAS services powered by quantum AI, autonomous systems, and breakthrough technology. 
