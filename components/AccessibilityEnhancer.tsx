@@ -118,6 +118,7 @@ const AccessibilityEnhancer: React.FC<AccessibilityEnhancerProps> = ({
     }
   }, [applySettings]);
 
+
   // Announce to screen reader
   const announceToScreenReader = useCallback((message: string) => {
     // Create live region for screen readers
