@@ -1,3 +1,8 @@
+<<<<<<< HEAD
+export default function Contact() {
+  return <div>Contact Us</div>;
+}
+=======
 export default function Page(){return null}
 =======
 =======
@@ -9,9 +14,16 @@ import Button from '../components/ui/Button';
 import Card from '../components/ui/Card';
 import { Mail, Phone, MapPin, MessageSquare, Clock, Globe, Send, CheckCircle, Star, Zap, Shield, Users, ArrowRight, DollarSign } from 'lucide-react';
 import { motion } from 'framer-motion';
+>>>>>>> origin/cursor/enhance-app-services-and-website-with-futuristic-design-19ef
 
 export default function ContactPage() {
   return (
+<<<<<<< HEAD
+    <div className="container mx-auto px-4 py-10">
+      <h1 className="text-2xl font-semibold">Contact</h1>
+import type { NextPage } from 'next';
+import Head from 'next/head';
+=======
     <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-100">
       <Head>
         <title>Contact Us - Zion Tech Group</title>
@@ -32,6 +44,7 @@ export default function ContactPage() {
         <meta name="twitter:description" content="Get in touch with Zion Tech Group. Contact our team of experts for support, sales inquiries, or technical assistance." />
         <meta name="twitter:image" content="https://ziontechgroup.com/og-image.jpg" />
       </Head>
+>>>>>>> origin/cursor/enhance-app-services-and-website-with-futuristic-design-19ef
 
 const Contact: NextPage = () => (
   <div className="py-10">
@@ -41,6 +54,9 @@ const Contact: NextPage = () => (
   </div>
 );
 
+<<<<<<< HEAD
+export default Contact;
+=======
       <p className="mt-2 text-gray-600 dark:text-gray-300">Get in touch with us.</p>
 =======
       {/* Contact Information Section */}
@@ -414,6 +430,7 @@ const Contact: NextPage = () => (
           </Card>
         </div>
       </section>
+>>>>>>> origin/cursor/enhance-app-services-and-website-with-futuristic-design-19ef
     </div>
   );
 }
