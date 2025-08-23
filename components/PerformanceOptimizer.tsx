@@ -1,12 +1,7 @@
 import React, { useEffect } from 'react';
 import { motion } from 'framer-motion';
 
-// Add browser API types
-declare global {
-  interface Window {
-    gtag?: (...args: unknown[]) => void;
-  }
-}
+// gtag is already declared in AnalyticsTracker.tsx
 
 
 

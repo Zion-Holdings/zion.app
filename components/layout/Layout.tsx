@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import UltraFuturisticNavigation2036 from './UltraFuturisticNavigation2036';
-import UltraFuturisticFooter2036 from './UltraFuturisticFooter2036';
+import UltraAdvancedFuturisticNavigation2038 from './UltraAdvancedFuturisticNavigation2038';
+import UltraAdvancedFuturisticFooter2038 from './UltraAdvancedFuturisticFooter2038';
 import EnhancedSidebar2025 from './EnhancedSidebar2025';
-import UltraFuturisticBackground2036 from '../backgrounds/UltraFuturisticBackground2036';
+import UltraAdvancedFuturisticBackground2038 from '../backgrounds/UltraAdvancedFuturisticBackground2038';
+import UltraAdvancedNeonEffects2038 from '../effects/UltraAdvancedNeonEffects2038';
 import TopContactBar from './TopContactBar';
 
 interface LayoutProps {
@@ -89,7 +90,10 @@ export default function Layout({ children }: LayoutProps) {
       </AnimatePresence>
 
       {/* Futuristic Background */}
-      <UltraFuturisticBackground2036 />
+      <UltraAdvancedFuturisticBackground2038 intensity="high" theme="quantum-neon" />
+      
+      {/* Advanced Neon Effects */}
+      <UltraAdvancedNeonEffects2038 intensity="high" theme="quantum-neon" />
       
       {/* Layout Structure */}
       <div className="relative z-10">
@@ -97,7 +101,7 @@ export default function Layout({ children }: LayoutProps) {
         <TopContactBar />
         
         {/* Navigation */}
-        <UltraFuturisticNavigation2036 />
+        <UltraAdvancedFuturisticNavigation2038 />
         
         {/* Sidebar and Main Content */}
         <div className="flex">
@@ -128,7 +132,7 @@ export default function Layout({ children }: LayoutProps) {
         </div>
         
         {/* Footer */}
-        <UltraFuturisticFooter2036 />
+        <UltraAdvancedFuturisticFooter2038 />
       </div>
 
       {/* Back to top button */}
