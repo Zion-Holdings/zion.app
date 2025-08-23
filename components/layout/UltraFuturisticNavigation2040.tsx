@@ -23,7 +23,8 @@ import {
   BookOpen,
   FileText,
   Video,
-  Code
+  Code,
+  Star
 } from 'lucide-react';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
@@ -198,13 +199,49 @@ const UltraFuturisticNavigation2040: React.FC = () => {
     setIsScrolled(window.scrollY > 20);
   }, []);
 
-  // Memoized dropdown toggle handler
-  const toggleDropdown = useCallback((label: string) => {
-    setActiveDropdown(activeDropdown === label ? null : label);
+  // Enhanced mobile menu handling
+  const handleMobileMenuToggle = useCallback(() => {
+    setIsOpen(!isOpen);
+    // Close any open dropdowns when mobile menu is toggled
+    setActiveDropdown(null);
+  }, [isOpen]);
+
+  // Enhanced dropdown handling for mobile
+  const handleDropdownToggle = useCallback((label: string) => {
+    if (window.innerWidth < 1024) {
+      // On mobile, toggle dropdown
+      setActiveDropdown(activeDropdown === label ? null : label);
+    }
   }, [activeDropdown]);
 
-  // Memoized search handler
-  const handleSearch = useCallback((e: React.FormEvent) => {
+  // Close mobile menu when route changes
+  useEffect(() => {
+    const handleRouteChange = () => {
+      setIsOpen(false);
+      setActiveDropdown(null);
+    };
+
+    router.events.on('routeChangeStart', handleRouteChange);
+    return () => {
+      router.events.off('routeChangeStart', handleRouteChange);
+    };
+  }, [router]);
+
+  // Enhanced touch handling for mobile
+  const handleTouchStart = useCallback((e: React.TouchEvent) => {
+    // Add touch feedback
+    const target = e.currentTarget as HTMLElement;
+    target.style.transform = 'scale(0.95)';
+  }, []);
+
+  const handleTouchEnd = useCallback((e: React.TouchEvent) => {
+    // Remove touch feedback
+    const target = e.currentTarget as HTMLElement;
+    target.style.transform = 'scale(1)';
+  }, []);
+
+  // Enhanced search functionality
+  const handleSearchSubmit = useCallback((e: React.FormEvent) => {
     e.preventDefault();
     if (searchQuery.trim()) {
       router.push(`/search?q=${encodeURIComponent(searchQuery.trim())}`);
@@ -213,349 +250,355 @@ const UltraFuturisticNavigation2040: React.FC = () => {
     }
   }, [searchQuery, router]);
 
-  // Memoized navigation close handler
-  const closeNavigation = useCallback(() => {
-    setIsOpen(false);
-    setActiveDropdown(null);
-    setIsSearchOpen(false);
+  // Enhanced keyboard navigation
+  const handleKeyDown = useCallback((e: React.KeyboardEvent, action: () => void) => {
+    if (e.key === 'Enter' || e.key === ' ') {
+      e.preventDefault();
+      action();
+    }
   }, []);
 
-  // Memoized click outside handler
-  const handleClickOutside = useCallback((event: MouseEvent) => {
-    if (navRef.current && !navRef.current.contains(event.target as Node)) {
-      closeNavigation();
-    }
-  }, [closeNavigation]);
+  // Enhanced accessibility
+  const getAriaExpanded = (label: string) => {
+    return activeDropdown === label ? 'true' : 'false';
+  };
 
-  // Memoized keyboard navigation handler
-  const handleKeyDown = useCallback((event: KeyboardEvent) => {
-    if (event.key === 'Escape') {
-      closeNavigation();
-    }
-  }, [closeNavigation]);
-
-  // Effects for scroll, click outside, and keyboard navigation
-  useEffect(() => {
-    window.addEventListener('scroll', handleScroll);
-    document.addEventListener('mousedown', handleClickOutside);
-    document.addEventListener('keydown', handleKeyDown);
-    
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-      document.removeEventListener('mousedown', handleClickOutside);
-      document.removeEventListener('keydown', handleKeyDown);
-    };
-  }, [handleScroll, handleClickOutside, handleKeyDown]);
-
-  // Focus search input when search is opened
-  useEffect(() => {
-    if (isSearchOpen && searchRef.current) {
-      searchRef.current.focus();
-    }
-  }, [isSearchOpen]);
-
-  // Close navigation on route change
-  useEffect(() => {
-    closeNavigation();
-  }, [router.asPath, closeNavigation]);
-
-  // Memoized navigation classes
-  const navClasses = useMemo(() => {
-    const baseClasses = "fixed top-0 left-0 right-0 z-50 transition-all duration-300";
-    const scrolledClasses = isScrolled 
-      ? "bg-black/90 backdrop-blur-md border-b border-cyan-400/20" 
-      : "bg-transparent";
-    return `${baseClasses} ${scrolledClasses}`;
-  }, [isScrolled]);
-
-  // Memoized logo classes
-  const logoClasses = useMemo(() => {
-    return isScrolled ? "text-2xl" : "text-3xl";
-  }, [isScrolled]);
+  const getAriaHasPopup = (item: NavigationItem) => {
+    return item.children && item.children.length > 0 ? 'true' : 'false';
+  };
 
   return (
-    <nav ref={navRef} className={navClasses} role="navigation" aria-label="Main navigation">
+    <nav 
+      ref={navRef}
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        isScrolled 
+          ? 'bg-black/90 backdrop-blur-xl border-b border-cyan-400/20 shadow-[0_0_50px_rgba(6,182,212,0.1)]' 
+          : 'bg-transparent'
+      }`}
+      role="navigation"
+      aria-label="Main navigation"
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-20">
+        <div className="flex items-center justify-between h-16 lg:h-20">
           {/* Logo */}
-          <Link href="/" className="flex items-center space-x-2 group" aria-label="Zion Tech Group Home">
-            <motion.div
-              className={`font-bold text-white group-hover:text-cyan-400 transition-colors duration-300 ${logoClasses}`}
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              <span className="bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
-                Zion
+          <div className="flex-shrink-0">
+            <Link href="/" className="flex items-center space-x-2 group" aria-label="Zion Tech Group Home">
+              <div className="w-8 h-8 lg:w-10 lg:h-10 bg-gradient-to-br from-cyan-400 to-purple-600 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                <Star className="w-5 h-5 lg:w-6 lg:h-6 text-white" />
+              </div>
+              <span className="text-xl lg:text-2xl font-bold bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
+                Zion Tech Group
               </span>
-              <span className="text-white">Tech</span>
-            </motion.div>
-          </Link>
+            </Link>
+          </div>
 
           {/* Desktop Navigation */}
-          <div className="hidden lg:flex items-center space-x-8">
+          <div className="hidden lg:flex lg:items-center lg:space-x-8">
             {navigationItems.map((item) => (
               <div key={item.label} className="relative group">
                 {item.children ? (
-                  <button
-                    onClick={() => toggleDropdown(item.label)}
-                    onKeyDown={(e) => e.key === 'Enter' && toggleDropdown(item.label)}
-                    className="flex items-center space-x-1 px-3 py-2 text-gray-300 hover:text-white transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-cyan-400/50 rounded-lg"
-                    aria-expanded={activeDropdown === item.label}
-                    aria-haspopup="true"
-                  >
-                    {item.icon}
-                    <span>{item.label}</span>
-                    {item.badge && (
-                      <span className="ml-2 px-2 py-1 text-xs bg-gradient-to-r from-cyan-500 to-purple-600 text-white rounded-full">
-                        {item.badge}
-                      </span>
-                    )}
-                    <ChevronDown className={`w-4 h-4 transition-transform duration-300 ${activeDropdown === item.label ? 'rotate-180' : ''}`} />
-                  </button>
+                  <div className="relative">
+                    <button
+                      className="flex items-center space-x-1 px-4 py-2 text-gray-300 hover:text-white transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-cyan-400/50 rounded-lg"
+                      onMouseEnter={() => setActiveDropdown(item.label)}
+                      onMouseLeave={() => setActiveDropdown(null)}
+                      onFocus={() => setActiveDropdown(item.label)}
+                      onBlur={() => setActiveDropdown(null)}
+                      aria-expanded={getAriaExpanded(item.label)}
+                      aria-haspopup={getAriaHasPopup(item)}
+                      aria-label={`${item.label} menu`}
+                    >
+                      <span>{item.label}</span>
+                      <ChevronDown className="w-4 h-4 transition-transform duration-300 group-hover:rotate-180" />
+                    </button>
+                    
+                    {/* Enhanced Dropdown */}
+                    <AnimatePresence>
+                      {activeDropdown === item.label && (
+                        <motion.div
+                          initial={{ opacity: 0, y: 10, scale: 0.95 }}
+                          animate={{ opacity: 1, y: 0, scale: 1 }}
+                          exit={{ opacity: 0, y: 10, scale: 0.95 }}
+                          transition={{ duration: 0.2, ease: "easeOut" }}
+                          className="absolute top-full left-0 mt-2 w-80 bg-gray-900/95 backdrop-blur-xl border border-cyan-400/20 rounded-2xl shadow-[0_0_50px_rgba(0,0,0,0.8)] overflow-hidden"
+                          onMouseEnter={() => setActiveDropdown(item.label)}
+                          onMouseLeave={() => setActiveDropdown(null)}
+                        >
+                          <div className="p-4">
+                            <div className="grid grid-cols-1 gap-2">
+                              {item.children.map((child) => (
+                                <Link
+                                  key={child.label}
+                                  href={child.href}
+                                  className="group flex items-start space-x-3 p-3 rounded-xl hover:bg-cyan-500/10 transition-all duration-300"
+                                  onTouchStart={handleTouchStart}
+                                  onTouchEnd={handleTouchEnd}
+                                >
+                                  <div className={`w-8 h-8 rounded-lg bg-gradient-to-r ${child.neonColor} flex items-center justify-center flex-shrink-0`}>
+                                    {child.icon}
+                                  </div>
+                                  <div className="flex-1 min-w-0">
+                                    <div className="flex items-center space-x-2">
+                                      <span className="text-white font-medium group-hover:text-cyan-400 transition-colors duration-300">
+                                        {child.label}
+                                      </span>
+                                      {child.featured && (
+                                        <span className="px-2 py-1 text-xs font-medium bg-gradient-to-r from-purple-500 to-pink-500 text-white rounded-full">
+                                          Featured
+                                        </span>
+                                      )}
+                                    </div>
+                                    {child.description && (
+                                      <p className="text-sm text-gray-400 mt-1 group-hover:text-gray-300 transition-colors duration-300">
+                                        {child.description}
+                                      </p>
+                                    )}
+                                  </div>
+                                </Link>
+                              ))}
+                            </div>
+                          </div>
+                        </motion.div>
+                      )}
+                    </AnimatePresence>
+                  </div>
                 ) : (
                   <Link
                     href={item.href}
-                    className="flex items-center space-x-1 px-3 py-2 text-gray-300 hover:text-white transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-cyan-400/50 rounded-lg"
+                    className="px-4 py-2 text-gray-300 hover:text-white transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-cyan-400/50 rounded-lg"
+                    onTouchStart={handleTouchStart}
+                    onTouchEnd={handleTouchEnd}
                   >
-                    {item.icon}
-                    <span>{item.label}</span>
-                    {item.badge && (
-                      <span className="ml-2 px-2 py-1 text-xs bg-gradient-to-r from-cyan-500 to-purple-600 text-white rounded-full">
-                        {item.badge}
-                      </span>
-                    )}
+                    {item.label}
                   </Link>
-                )}
-
-                {/* Dropdown Menu */}
-                {item.children && activeDropdown === item.label && (
-                  <motion.div
-                    initial={{ opacity: 0, y: 10, scale: 0.95 }}
-                    animate={{ opacity: 1, y: 0, scale: 1 }}
-                    exit={{ opacity: 0, y: 10, scale: 0.95 }}
-                    transition={{ duration: 0.2 }}
-                    className="absolute top-full left-0 mt-2 w-80 bg-gray-900/95 backdrop-blur-md border border-cyan-400/20 rounded-xl shadow-2xl shadow-cyan-400/10 z-50"
-                    role="menu"
-                    aria-orientation="vertical"
-                    aria-labelledby={`${item.label}-button`}
-                  >
-                    <div className="p-4">
-                      <div className="grid grid-cols-1 gap-2">
-                        {item.children.map((child) => (
-                          <Link
-                            key={child.label}
-                            href={child.href}
-                            className={`group flex items-start space-x-3 p-3 rounded-lg hover:bg-cyan-500/10 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-cyan-400/50 ${
-                              child.featured ? 'bg-gradient-to-r from-cyan-500/10 to-purple-500/10 border border-cyan-400/20' : ''
-                            }`}
-                            role="menuitem"
-                          >
-                            <div className={`p-2 rounded-lg bg-gray-800/50 group-hover:bg-cyan-500/20 transition-colors duration-300 ${child.neonColor}`}>
-                              {child.icon}
-                            </div>
-                            <div className="flex-1">
-                              <div className="flex items-center space-x-2">
-                                <span className="font-medium text-white group-hover:text-cyan-400 transition-colors duration-300">
-                                  {child.label}
-                                </span>
-                                {child.featured && (
-                                  <span className="px-2 py-1 text-xs bg-gradient-to-r from-yellow-400 to-orange-500 text-black font-bold rounded-full">
-                                    Featured
-                                  </span>
-                                )}
-                              </div>
-                              {child.description && (
-                                <p className="text-sm text-gray-400 mt-1 group-hover:text-gray-300 transition-colors duration-300">
-                                  {child.description}
-                                </p>
-                              )}
-                            </div>
-                          </Link>
-                        ))}
-                      </div>
-                    </div>
-                  </motion.div>
                 )}
               </div>
             ))}
           </div>
 
-          {/* Right Side Actions */}
-          <div className="hidden lg:flex items-center space-x-4">
-            {/* Search Button */}
-            <button
-              onClick={() => setIsSearchOpen(!isSearchOpen)}
-              className="p-2 text-gray-300 hover:text-white transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-cyan-400/50 rounded-lg"
-              aria-label="Open search"
+          {/* Enhanced Right Section */}
+          <div className="flex items-center space-x-4">
+            {/* Enhanced Search */}
+            <div className="relative">
+              <button
+                onClick={() => setIsSearchOpen(!isSearchOpen)}
+                className="p-2 text-gray-300 hover:text-white transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-cyan-400/50 rounded-lg"
+                aria-label="Toggle search"
+                onTouchStart={handleTouchStart}
+                onTouchEnd={handleTouchEnd}
+              >
+                <Search className="w-5 h-5" />
+              </button>
+              
+              <AnimatePresence>
+                {isSearchOpen && (
+                  <motion.div
+                    initial={{ opacity: 0, scale: 0.95, y: -10 }}
+                    animate={{ opacity: 1, scale: 1, y: 0 }}
+                    exit={{ opacity: 0, scale: 0.95, y: -10 }}
+                    transition={{ duration: 0.2, ease: "easeOut" }}
+                    className="absolute top-full right-0 mt-2 w-80 bg-gray-900/95 backdrop-blur-xl border border-cyan-400/20 rounded-2xl shadow-[0_0_50px_rgba(0,0,0,0.8)] p-4"
+                  >
+                    <form onSubmit={handleSearchSubmit} className="space-y-4">
+                      <div className="relative">
+                        <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-gray-400" />
+                        <input
+                          ref={searchRef}
+                          type="text"
+                          value={searchQuery}
+                          onChange={(e) => setSearchQuery(e.target.value)}
+                          placeholder="Search services, solutions..."
+                          className="w-full pl-10 pr-4 py-3 bg-gray-800/50 border border-cyan-400/30 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-cyan-400/50 focus:border-transparent"
+                          aria-label="Search query"
+                        />
+                      </div>
+                      <button
+                        type="submit"
+                        className="w-full px-4 py-2 bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-medium rounded-lg hover:from-cyan-600 hover:to-blue-700 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-cyan-400/50"
+                        aria-label="Submit search"
+                      >
+                        Search
+                      </button>
+                    </form>
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            </div>
+
+            {/* Enhanced Social Links */}
+            <div className="hidden md:flex items-center space-x-2">
+              {socialLinks.map((social) => (
+                <a
+                  key={social.label}
+                  href={social.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="p-2 text-gray-300 hover:text-cyan-400 transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-cyan-400/50 rounded-lg"
+                  aria-label={`Visit our ${social.label} page`}
+                  onTouchStart={handleTouchStart}
+                  onTouchEnd={handleTouchEnd}
+                >
+                  {social.icon}
+                </a>
+              ))}
+            </div>
+
+            {/* Enhanced Contact Button */}
+            <Link
+              href="/contact"
+              className="hidden md:block px-6 py-2 bg-gradient-to-r from-cyan-500 to-purple-600 text-white font-semibold rounded-lg hover:from-cyan-600 hover:to-purple-700 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-cyan-400/50"
+              aria-label="Contact us"
+              onTouchStart={handleTouchStart}
+              onTouchEnd={handleTouchEnd}
             >
-              <Search className="w-5 h-5" />
-            </button>
-
-            {/* Social Links */}
-            {socialLinks.map((social) => (
-              <a
-                key={social.label}
-                href={social.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="p-2 text-gray-300 hover:text-cyan-400 transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-cyan-400/50 rounded-lg"
-                aria-label={`Visit our ${social.label} page`}
-              >
-                {social.icon}
-              </a>
-            ))}
-
-            {/* CTA Button */}
-            <Link href="/contact">
-              <motion.button
-                className="px-6 py-2 bg-gradient-to-r from-cyan-500 to-purple-600 text-white font-semibold rounded-lg hover:from-cyan-600 hover:to-purple-700 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-cyan-400/50"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                aria-label="Contact us"
-              >
-                Get Started
-              </motion.button>
+              Get Started
             </Link>
-          </div>
 
-          {/* Mobile Menu Button */}
-          <button
-            onClick={() => setIsOpen(!isOpen)}
-            className="lg:hidden p-2 text-gray-300 hover:text-white transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-cyan-400/50 rounded-lg"
-            aria-label={isOpen ? "Close menu" : "Open menu"}
-            aria-expanded={isOpen}
-          >
-            {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-          </button>
+            {/* Enhanced Mobile Menu Button */}
+            <button
+              className="lg:hidden p-2 text-gray-300 hover:text-white transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-cyan-400/50 rounded-lg"
+              onClick={handleMobileMenuToggle}
+              aria-label="Open menu"
+              aria-expanded={isOpen}
+              onTouchStart={handleTouchStart}
+              onTouchEnd={handleTouchEnd}
+            >
+              {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+            </button>
+          </div>
         </div>
       </div>
 
-      {/* Search Bar */}
-      <AnimatePresence>
-        {isSearchOpen && (
-          <motion.div
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: 'auto' }}
-            exit={{ opacity: 0, height: 0 }}
-            transition={{ duration: 0.3 }}
-            className="bg-gray-900/95 backdrop-blur-md border-t border-cyan-400/20"
-          >
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
-              <form onSubmit={handleSearch} className="relative">
-                <input
-                  ref={searchRef}
-                  type="text"
-                  value={searchQuery}
-                  onChange={(e) => setSearchQuery(e.target.value)}
-                  placeholder="Search for services, solutions, or resources..."
-                  className="w-full px-4 py-3 bg-gray-800/50 border border-cyan-400/30 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-cyan-400/50 focus:border-transparent"
-                  aria-label="Search query"
-                />
-                <button
-                  type="submit"
-                  className="absolute right-3 top-1/2 transform -translate-y-1/2 p-2 text-cyan-400 hover:text-white transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-cyan-400/50 rounded-lg"
-                  aria-label="Submit search"
-                >
-                  <Search className="w-5 h-5" />
-                </button>
-              </form>
-            </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
-
-      {/* Mobile Navigation */}
+      {/* Enhanced Mobile Menu */}
       <AnimatePresence>
         {isOpen && (
           <motion.div
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
-            transition={{ duration: 0.3 }}
-            className="lg:hidden bg-gray-900/95 backdrop-blur-md border-t border-cyan-400/20"
+            transition={{ duration: 0.3, ease: "easeInOut" }}
+            className="lg:hidden bg-black/95 backdrop-blur-xl border-t border-cyan-400/20 overflow-hidden"
           >
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
-              <div className="space-y-4">
-                {navigationItems.map((item) => (
-                  <div key={item.label}>
-                    {item.children ? (
-                      <div>
-                        <button
-                          onClick={() => toggleDropdown(item.label)}
-                          className="flex items-center justify-between w-full px-4 py-3 text-left text-gray-300 hover:text-white transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-cyan-400/50 rounded-lg"
-                          aria-expanded={activeDropdown === item.label}
-                        >
-                          <div className="flex items-center space-x-3">
-                            {item.icon}
-                            <span>{item.label}</span>
-                            {item.badge && (
-                              <span className="px-2 py-1 text-xs bg-gradient-to-r from-cyan-500 to-purple-600 text-white rounded-full">
-                                {item.badge}
-                              </span>
-                            )}
-                          </div>
-                          <ChevronDown className={`w-4 h-4 transition-transform duration-300 ${activeDropdown === item.label ? 'rotate-180' : ''}`} />
-                        </button>
-                        
+            <div className="px-4 py-6 space-y-4">
+              {/* Mobile Search */}
+              <form onSubmit={handleSearchSubmit} className="relative">
+                <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-gray-400" />
+                <input
+                  type="text"
+                  value={searchQuery}
+                  onChange={(e) => setSearchQuery(e.target.value)}
+                  placeholder="Search services, solutions..."
+                  className="w-full pl-10 pr-4 py-3 bg-gray-800/50 border border-cyan-400/30 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-cyan-400/50 focus:border-transparent"
+                  aria-label="Search query"
+                />
+              </form>
+
+              {/* Mobile Navigation Items */}
+              {navigationItems.map((item) => (
+                <div key={item.label} className="space-y-2">
+                  {item.children ? (
+                    <div>
+                      <button
+                        className="w-full flex items-center justify-between px-4 py-3 text-left text-gray-300 hover:text-white transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-cyan-400/50 rounded-lg"
+                        onClick={() => handleDropdownToggle(item.label)}
+                        aria-expanded={getAriaExpanded(item.label)}
+                        aria-haspopup={getAriaHasPopup(item)}
+                        onTouchStart={handleTouchStart}
+                        onTouchEnd={handleTouchEnd}
+                      >
+                        <span className="flex items-center space-x-2">
+                          {item.icon}
+                          <span>{item.label}</span>
+                        </span>
+                        <ChevronDown 
+                          className={`w-4 h-4 transition-transform duration-300 ${
+                            activeDropdown === item.label ? 'rotate-180' : ''
+                          }`} 
+                        />
+                      </button>
+                      
+                      <AnimatePresence>
                         {activeDropdown === item.label && (
                           <motion.div
                             initial={{ opacity: 0, height: 0 }}
                             animate={{ opacity: 1, height: 'auto' }}
                             exit={{ opacity: 0, height: 0 }}
-                            transition={{ duration: 0.2 }}
-                            className="ml-8 mt-2 space-y-2"
+                            transition={{ duration: 0.2, ease: "easeInOut" }}
+                            className="ml-4 space-y-2"
                           >
                             {item.children.map((child) => (
                               <Link
                                 key={child.label}
                                 href={child.href}
-                                className="flex items-center space-x-3 px-4 py-2 text-gray-400 hover:text-white transition-colors duration-300 rounded-lg"
-                                onClick={closeNavigation}
+                                className="block px-4 py-2 text-gray-400 hover:text-cyan-400 transition-colors duration-300 rounded-lg"
+                                onTouchStart={handleTouchStart}
+                                onTouchEnd={handleTouchEnd}
                               >
-                                {child.icon}
-                                <span>{child.label}</span>
-                                {child.featured && (
-                                  <span className="ml-auto px-2 py-1 text-xs bg-gradient-to-r from-yellow-400 to-orange-500 text-black font-bold rounded-full">
-                                    Featured
-                                  </span>
+                                <div className="flex items-center space-x-2">
+                                  {child.icon}
+                                  <span>{child.label}</span>
+                                  {child.featured && (
+                                    <span className="px-2 py-1 text-xs font-medium bg-gradient-to-r from-purple-500 to-pink-500 text-white rounded-full">
+                                      Featured
+                                    </span>
+                                  )}
+                                </div>
+                                {child.description && (
+                                  <p className="text-sm text-gray-500 mt-1 ml-6">
+                                    {child.description}
+                                  </p>
                                 )}
                               </Link>
                             ))}
                           </motion.div>
                         )}
-                      </div>
-                    ) : (
-                      <Link
-                        href={item.href}
-                        className="flex items-center space-x-3 px-4 py-3 text-gray-300 hover:text-white transition-colors duration-300 rounded-lg"
-                        onClick={closeNavigation}
-                      >
-                        {item.icon}
-                        <span>{item.label}</span>
-                        {item.badge && (
-                          <span className="ml-auto px-2 py-1 text-xs bg-gradient-to-r from-cyan-500 to-purple-600 text-white rounded-full">
-                            {item.badge}
-                          </span>
-                        )}
-                      </Link>
-                    )}
-                  </div>
-                ))}
-                
-                {/* Mobile CTA */}
-                <div className="pt-4 border-t border-gray-700">
-                  <Link href="/contact">
-                    <motion.button
-                      className="w-full px-6 py-3 bg-gradient-to-r from-cyan-500 to-purple-600 text-white font-semibold rounded-lg hover:from-cyan-600 hover:to-purple-700 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-cyan-400/50"
-                      whileHover={{ scale: 1.02 }}
-                      whileTap={{ scale: 0.98 }}
-                      onClick={closeNavigation}
-                      aria-label="Contact us"
+                      </AnimatePresence>
+                    </div>
+                  ) : (
+                    <Link
+                      href={item.href}
+                      className="flex items-center space-x-2 px-4 py-3 text-gray-300 hover:text-white transition-colors duration-300 rounded-lg"
+                      onTouchStart={handleTouchStart}
+                      onTouchEnd={handleTouchEnd}
                     >
-                      Get Started
-                    </motion.button>
-                  </Link>
+                      {item.icon}
+                      <span>{item.label}</span>
+                    </Link>
+                  )}
                 </div>
+              ))}
+
+              {/* Mobile Social Links */}
+              <div className="pt-4 border-t border-gray-700/50">
+                <div className="flex items-center justify-center space-x-4">
+                  {socialLinks.map((social) => (
+                    <a
+                      key={social.label}
+                      href={social.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="p-2 text-gray-400 hover:text-cyan-400 transition-colors duration-300 rounded-lg"
+                      aria-label={`Visit our ${social.label} page`}
+                      onTouchStart={handleTouchStart}
+                      onTouchEnd={handleTouchEnd}
+                    >
+                      {social.icon}
+                    </a>
+                  ))}
+                </div>
+              </div>
+
+              {/* Mobile Contact Button */}
+              <div className="pt-4">
+                <Link
+                  href="/contact"
+                  className="block w-full px-6 py-3 bg-gradient-to-r from-cyan-500 to-purple-600 text-white font-semibold text-center rounded-lg hover:from-cyan-600 hover:to-purple-700 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-cyan-400/50"
+                  aria-label="Contact us"
+                  onTouchStart={handleTouchStart}
+                  onTouchEnd={handleTouchEnd}
+                >
+                  Get Started
+                </Link>
               </div>
             </div>
           </motion.div>

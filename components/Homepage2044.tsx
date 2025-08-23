@@ -1,9 +1,9 @@
-import React, { useEffect, useState, useCallback } from 'react';
+import React, { useEffect, useState, useCallback, Suspense, lazy } from 'react';
 import Layout from './layout/Layout';
 import { motion, AnimatePresence } from 'framer-motion';
 import { 
   ArrowRight, Play, TrendingUp, Brain, Shield, Rocket, Globe, Cpu, Database, Atom, Target, Star, Sparkles as SparklesIcon,
-  Brain as BrainIcon, Atom as AtomIcon, Shield as ShieldIcon, Rocket as RocketIcon, Zap, Eye, Heart, Infinity
+  Brain as BrainIcon, Atom as AtomIcon, Shield as ShieldIcon, Rocket as RocketIcon, Zap, Eye, Heart, Infinity, Loader2
 } from 'lucide-react';
 
 // Import our new revolutionary services
@@ -11,14 +11,23 @@ import { revolutionary2044AdvancedMicroSaas } from '../data/revolutionary-2044-a
 import { revolutionary2044ITServices } from '../data/revolutionary-2044-it-services';
 import { revolutionary2044AIServices } from '../data/revolutionary-2044-ai-services';
 
+// Lazy load heavy components
+const ServiceCard = lazy(() => import('./ServiceCard'));
+
 const Homepage2044: React.FC = () => {
   const [isVisible, setIsVisible] = useState(false);
   const [currentServiceIndex, setCurrentServiceIndex] = useState(0);
   const [selectedCategory, setSelectedCategory] = useState('all');
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+  const [isLoading, setIsLoading] = useState(true);
   
   useEffect(() => {
     setIsVisible(true);
+    
+    // Simulate loading time for better UX
+    const loadingTimer = setTimeout(() => {
+      setIsLoading(false);
+    }, 1000);
     
     // Auto-rotate featured services
     const interval = setInterval(() => {
@@ -34,6 +43,7 @@ const Homepage2044: React.FC = () => {
     
     return () => {
       clearInterval(interval);
+      clearTimeout(loadingTimer);
       window.removeEventListener('mousemove', handleMouseMove);
     };
   }, []);
@@ -93,6 +103,14 @@ const Homepage2044: React.FC = () => {
   const handleServiceClick = useCallback((service: any) => {
     window.location.href = service.slug;
   }, []);
+
+  // Loading component
+  const LoadingSpinner = () => (
+    <div className="flex items-center justify-center p-8">
+      <Loader2 className="w-8 h-8 text-cyan-400 animate-spin" />
+      <span className="ml-3 text-cyan-400">Loading revolutionary services...</span>
+    </div>
+  );
 
   return (
     <Layout>
@@ -187,7 +205,7 @@ const Homepage2044: React.FC = () => {
 
             <motion.h1
               id="hero-heading"
-              className="text-7xl md:text-9xl lg:text-[12rem] font-black mb-10 leading-none"
+              className="text-4xl sm:text-6xl md:text-8xl lg:text-9xl xl:text-[12rem] font-black mb-6 md:mb-10 leading-none px-4"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: isVisible ? 1 : 0, y: isVisible ? 0 : 30 }}
               transition={{ duration: 0.8, ease: "easeOut" }}
@@ -198,7 +216,7 @@ const Homepage2044: React.FC = () => {
             </motion.h1>
             
             <motion.p
-              className="text-3xl md:text-4xl text-gray-300 mb-16 max-w-6xl mx-auto leading-relaxed font-light"
+              className="text-xl sm:text-2xl md:text-3xl lg:text-4xl text-gray-300 mb-8 md:mb-16 max-w-4xl md:max-w-6xl mx-auto leading-relaxed font-light px-4"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: isVisible ? 1 : 0, y: isVisible ? 0 : 30 }}
               transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
@@ -207,93 +225,99 @@ const Homepage2044: React.FC = () => {
             </motion.p>
 
             <motion.div
-              className="flex flex-col sm:flex-row gap-6 justify-center items-center mb-20"
+              className="flex flex-col sm:flex-row gap-4 md:gap-6 justify-center items-center mb-12 md:mb-20 px-4"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: isVisible ? 1 : 0, y: isVisible ? 0 : 30 }}
               transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
             >
               <button 
-                className="group px-12 py-6 bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-bold rounded-3xl hover:from-cyan-600 hover:to-blue-700 transition-all duration-300 transform hover:scale-105 shadow-[0_0_50px_rgba(6,182,212,0.4)] focus:outline-none focus:ring-4 focus:ring-cyan-500/50 text-xl relative overflow-hidden"
+                className="group w-full sm:w-auto px-8 md:px-12 py-4 md:py-6 bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-bold rounded-2xl md:rounded-3xl hover:from-cyan-600 hover:to-blue-700 transition-all duration-300 transform hover:scale-105 active:scale-95 shadow-[0_0_50px_rgba(6,182,212,0.4)] focus:outline-none focus:ring-4 focus:ring-cyan-500/50 text-lg md:text-xl relative overflow-hidden touch-manipulation"
                 onClick={handleGetStarted}
                 aria-label="Get started with Zion Tech Group revolutionary services"
               >
-                <span className="relative z-10 flex items-center">
+                <span className="relative z-10 flex items-center justify-center">
                   Experience the Future
-                  <ArrowRight className="w-7 h-7 ml-4 group-hover:translate-x-2 transition-transform duration-300" />
+                  <ArrowRight className="w-5 h-5 md:w-7 md:h-7 ml-2 md:ml-4 group-hover:translate-x-2 transition-transform duration-300" />
                 </span>
-                <div className="absolute inset-0 bg-gradient-to-r from-cyan-400 to-blue-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-3xl"></div>
+                <div className="absolute inset-0 bg-gradient-to-r from-cyan-400 to-blue-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl md:rounded-3xl"></div>
               </button>
               <button 
-                className="px-12 py-6 border-2 border-cyan-400 text-cyan-400 font-bold rounded-3xl hover:bg-cyan-400 hover:text-black transition-all duration-300 focus:outline-none focus:ring-4 focus:ring-cyan-400/50 text-xl shadow-[0_0_30px_rgba(6,182,212,0.3)] backdrop-blur-sm"
+                className="w-full sm:w-auto px-8 md:px-12 py-4 md:py-6 border-2 border-cyan-400 text-cyan-400 font-bold rounded-2xl md:rounded-3xl hover:bg-cyan-400 hover:text-black transition-all duration-300 focus:outline-none focus:ring-4 focus:ring-cyan-400/50 text-lg md:text-xl shadow-[0_0_30px_rgba(6,182,212,0.3)] backdrop-blur-sm active:scale-95 touch-manipulation"
                 onClick={handleWatchDemo}
                 aria-label="Explore our revolutionary services"
               >
-                <span className="flex items-center">
+                <span className="flex items-center justify-center">
                   Explore Services
-                  <Play className="w-7 h-7 ml-4" />
+                  <Play className="w-5 h-5 md:w-7 md:h-7 ml-2 md:ml-4" />
                 </span>
               </button>
             </motion.div>
 
             {/* Featured Service Showcase */}
             <motion.div
-              className="max-w-6xl mx-auto"
+              className="max-w-6xl mx-auto px-4"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: isVisible ? 1 : 0, y: isVisible ? 0 : 30 }}
               transition={{ duration: 0.8, delay: 0.6, ease: "easeOut" }}
             >
-              <div className="text-center mb-12">
-                <h2 className="text-4xl font-bold text-white mb-4">
+              <div className="text-center mb-8 md:mb-12">
+                <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-3 md:mb-4">
                   Featured Revolutionary Services
                 </h2>
-                <p className="text-xl text-gray-400">
+                <p className="text-lg md:text-xl text-gray-400">
                   Experience the future of technology with our cutting-edge solutions
                 </p>
               </div>
 
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                {featuredServices.map((service, index) => (
-                  <motion.div
-                    key={service.id}
-                    className={`relative group cursor-pointer ${
-                      index === currentServiceIndex ? 'scale-105' : 'scale-100'
-                    } transition-transform duration-500`}
-                    onClick={() => handleServiceClick(service)}
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
-                  >
-                    <div className="relative p-8 bg-gradient-to-br from-gray-900/80 to-gray-800/80 border border-gray-700/50 rounded-3xl backdrop-blur-xl shadow-[0_0_50px_rgba(0,0,0,0.5)] hover:shadow-[0_0_80px_rgba(6,182,212,0.3)] transition-all duration-300 group-hover:border-cyan-500/50">
-                      <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/5 to-blue-500/5 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                      
-                      <div className="relative z-10">
-                        <div className="flex items-center justify-between mb-6">
-                          <div className="w-16 h-16 bg-gradient-to-br from-cyan-500 to-blue-600 rounded-2xl flex items-center justify-center shadow-[0_0_30px_rgba(6,182,212,0.3)]">
-                            <Brain className="w-8 h-8 text-white" />
+              {isLoading ? (
+                <LoadingSpinner />
+              ) : (
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 lg:gap-8">
+                  <Suspense fallback={<LoadingSpinner />}>
+                    {featuredServices.map((service, index) => (
+                      <motion.div
+                        key={service.id}
+                        className={`relative group cursor-pointer ${
+                          index === currentServiceIndex ? 'scale-105' : 'scale-100'
+                        } transition-transform duration-500 touch-manipulation`}
+                        onClick={() => handleServiceClick(service)}
+                        whileHover={{ scale: 1.05 }}
+                        whileTap={{ scale: 0.95 }}
+                      >
+                        <div className="relative p-6 md:p-8 bg-gradient-to-br from-gray-900/80 to-gray-800/80 border border-gray-700/50 rounded-2xl md:rounded-3xl backdrop-blur-xl shadow-[0_0_50px_rgba(0,0,0,0.5)] hover:shadow-[0_0_80px_rgba(6,182,212,0.3)] transition-all duration-300 group-hover:border-cyan-500/50">
+                          <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/5 to-blue-500/5 rounded-2xl md:rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                          
+                          <div className="relative z-10">
+                            <div className="flex items-center justify-between mb-4 md:mb-6">
+                              <div className="w-12 h-12 md:w-16 md:h-16 bg-gradient-to-br from-cyan-500 to-blue-600 rounded-xl md:rounded-2xl flex items-center justify-center shadow-[0_0_30px_rgba(6,182,212,0.3)]">
+                                <Brain className="w-6 h-6 md:w-8 md:h-8 text-white" />
+                              </div>
+                              <span className="px-2 md:px-3 py-1 bg-gradient-to-r from-purple-500/20 to-pink-500/20 border border-purple-500/30 rounded-full text-purple-300 text-xs md:text-sm font-medium">
+                                {service.type}
+                              </span>
+                            </div>
+                            
+                            <h3 className="text-lg md:text-xl font-bold text-white mb-2 md:mb-3 group-hover:text-cyan-400 transition-colors duration-300">
+                              {service.name}
+                            </h3>
+                            
+                            <p className="text-gray-400 text-xs md:text-sm leading-relaxed mb-3 md:mb-4">
+                              {service.description.substring(0, 100)}...
+                            </p>
+                            
+                            <div className="flex items-center justify-between">
+                              <span className="text-lg md:text-2xl font-bold text-cyan-400">
+                                {service.pricing.starter}
+                              </span>
+                              <ArrowRight className="w-4 h-4 md:w-5 md:h-5 text-gray-500 group-hover:text-cyan-400 transition-colors duration-300" />
+                            </div>
                           </div>
-                          <span className="px-3 py-1 bg-gradient-to-r from-purple-500/20 to-pink-500/20 border border-purple-500/30 rounded-full text-purple-300 text-sm font-medium">
-                            {service.type}
-                          </span>
                         </div>
-                        
-                        <h3 className="text-xl font-bold text-white mb-3 group-hover:text-cyan-400 transition-colors duration-300">
-                          {service.name}
-                        </h3>
-                        
-                        <p className="text-gray-400 text-sm leading-relaxed mb-4">
-                          {service.description.substring(0, 120)}...
-                        </p>
-                        
-                        <div className="flex items-center justify-between">
-                          <span className="text-2xl font-bold text-cyan-400">
-                            {service.pricing.starter}
-                          </span>
-                          <ArrowRight className="w-5 h-5 text-gray-500 group-hover:text-cyan-400 transition-colors duration-300" />
-                        </div>
-                      </div>
-                    </div>
-                  </motion.div>
-                ))}
-              </div>
+                      </motion.div>
+                    ))}
+                  </Suspense>
+                </div>
+              )}
             </motion.div>
           </div>
         </section>
