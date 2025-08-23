@@ -1,210 +1,350 @@
 import React from 'react';
-import Layout from '../components/layout/Layout';
-import SEO from '../components/SEO';
-import { Link, Shield, Zap, Users, Database, Globe, Lock, BarChart3, CheckCircle } from 'lucide-react';
+import Head from 'next/head';
+import { Shield, Link, Zap, Users, Globe, Lock, TrendingUp, Cpu } from 'lucide-react';
 
 const BlockchainEnterprisePlatformPage: React.FC = () => {
-  const platformFeatures = [
-    {
-      icon: Shield,
-      title: 'Enterprise Security',
-      description: 'Military-grade security with multi-layer encryption and access controls'
-    },
-    {
-      icon: Zap,
-      title: 'High Performance',
-      description: 'Scalable architecture supporting thousands of transactions per second'
-    },
-    {
-      icon: Users,
-      title: 'Permission Management',
-      description: 'Granular role-based access control and identity management'
-    },
-    {
-      icon: Database,
-      title: 'Data Privacy',
-      description: 'Zero-knowledge proofs and confidential computing capabilities'
-    }
-  ];
-
-  const useCases = [
-    {
-      title: 'Supply Chain Management',
-      description: 'End-to-end visibility and traceability across global supply chains'
-    },
-    {
-      title: 'Financial Services',
-      description: 'Secure, transparent, and efficient financial transactions and settlements'
-    },
-    {
-      title: 'Healthcare',
-      description: 'Patient data management and pharmaceutical supply chain verification'
-    },
-    {
-      title: 'Government',
-      description: 'Digital identity, voting systems, and public record management'
-    }
-  ];
-
-  const benefits = [
-    'Enhanced transparency and trust',
-    'Reduced operational costs',
-    'Improved data security',
-    'Streamlined processes',
-    'Regulatory compliance',
-    'Real-time audit trails'
-  ];
-
   return (
-    <Layout>
-      <SEO
-        title="Blockchain Enterprise Platform - Zion Tech Group"
-        description="Enterprise-grade blockchain platform for secure, scalable, and compliant business solutions"
-        keywords={['blockchain', 'enterprise blockchain', 'distributed ledger', 'smart contracts', 'enterprise platform']}
-        image="https://ziontechgroup.com/og-blockchain-enterprise.jpg"
-      />
-      
-      <div className="min-h-screen bg-gradient-to-br from-slate-900 via-emerald-900 to-slate-900">
+    <>
+      <Head>
+        <title>Blockchain Enterprise Platform - Zion Tech Group</title>
+        <meta name="description" content="Transform your business with Zion Tech Group's enterprise blockchain platform. Secure, scalable, and compliant blockchain solutions for enterprise applications." />
+        <meta name="keywords" content="blockchain, enterprise blockchain, distributed ledger, smart contracts, Zion Tech Group" />
+        <link rel="canonical" href="https://ziontechgroup.com/blockchain-enterprise-platform" />
+      </Head>
+
+      <div className="min-h-screen bg-gradient-to-br from-slate-900 via-green-900 to-slate-900">
         {/* Hero Section */}
         <section className="relative py-20 px-4 sm:px-6 lg:px-8">
           <div className="max-w-7xl mx-auto text-center">
-            <div className="flex justify-center mb-6">
-              <div className="p-4 bg-emerald-600/20 rounded-full">
-                <Link className="w-12 h-12 text-emerald-400" />
-              </div>
+            <div className="mb-8">
+              <Link className="mx-auto h-16 w-16 text-green-400" />
             </div>
             <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
-              Blockchain
-              <span className="text-emerald-400"> Enterprise Platform</span>
+              Blockchain Enterprise Platform
             </h1>
-            <p className="text-xl text-gray-300 max-w-3xl mx-auto mb-8">
-              Transform your business with enterprise-grade blockchain technology. Secure, scalable, 
-              and compliant solutions for the modern enterprise.
+            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+              Revolutionize your business operations with our enterprise-grade blockchain platform. 
+              Secure, scalable, and compliant solutions for the modern enterprise.
             </p>
-            <div className="flex flex-wrap justify-center gap-4">
-              <button className="px-8 py-3 bg-emerald-600 hover:bg-emerald-700 text-white font-semibold rounded-lg transition-colors">
-                Explore Platform
-              </button>
-              <button className="px-8 py-3 border border-emerald-400 text-emerald-400 hover:bg-emerald-400/10 font-semibold rounded-lg transition-colors">
-                Request Demo
-              </button>
+          </div>
+        </section>
+
+        {/* Platform Overview */}
+        <section className="py-16 px-4 sm:px-6 lg:px-8">
+          <div className="max-w-7xl mx-auto">
+            <div className="text-center mb-16">
+              <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+                Enterprise Blockchain Solutions
+              </h2>
+              <p className="text-lg text-gray-300 max-w-3xl mx-auto">
+                Our blockchain platform provides the foundation for secure, transparent, 
+                and efficient business processes across industries.
+              </p>
+            </div>
+
+            <div className="grid md:grid-cols-3 gap-8">
+              <div className="bg-slate-800/50 backdrop-blur-sm rounded-xl p-8 border border-slate-700">
+                <Shield className="h-12 w-12 text-green-400 mb-4" />
+                <h3 className="text-xl font-semibold text-white mb-3">Security First</h3>
+                <p className="text-gray-300">
+                  Enterprise-grade security with advanced cryptography, 
+                  multi-signature wallets, and comprehensive audit trails.
+                </p>
+              </div>
+
+              <div className="bg-slate-800/50 backdrop-blur-sm rounded-xl p-8 border border-slate-700">
+                <Zap className="h-12 w-12 text-blue-400 mb-4" />
+                <h3 className="text-xl font-semibold text-white mb-3">High Performance</h3>
+                <p className="text-gray-300">
+                  Optimized for enterprise workloads with high throughput, 
+                  low latency, and scalable architecture.
+                </p>
+              </div>
+
+              <div className="bg-slate-800/50 backdrop-blur-sm rounded-xl p-8 border border-slate-700">
+                <Users className="h-12 w-12 text-purple-400 mb-4" />
+                <h3 className="text-xl font-semibold text-white mb-3">Enterprise Ready</h3>
+                <p className="text-gray-300">
+                  Built for enterprise needs with role-based access control, 
+                  compliance features, and integration capabilities.
+                </p>
+              </div>
             </div>
           </div>
         </section>
 
-        {/* Platform Features */}
-        <section className="py-20 px-4 sm:px-6 lg:px-8">
+        {/* Core Features */}
+        <section className="py-16 px-4 sm:px-6 lg:px-8 bg-slate-800/20">
           <div className="max-w-7xl mx-auto">
-            <div className="text-center mb-16">
-              <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-                Enterprise-Grade Features
-              </h2>
-              <p className="text-xl text-gray-300 max-w-2xl mx-auto">
-                Built for enterprise requirements with security, scalability, and compliance in mind
-              </p>
-            </div>
-            
+            <h2 className="text-3xl md:text-4xl font-bold text-white text-center mb-16">
+              Core Platform Features
+            </h2>
+
             <div className="grid md:grid-cols-2 gap-8">
-              {platformFeatures.map((feature, index) => (
-                <div key={index} className="bg-white/5 backdrop-blur-sm rounded-xl p-8 border border-white/10">
-                  <div className="flex items-start mb-6">
-                    <div className="p-3 bg-emerald-600/20 rounded-lg mr-4">
-                      <feature.icon className="w-8 h-8 text-emerald-400" />
-                    </div>
-                    <div>
-                      <h3 className="text-2xl font-semibold text-white mb-3">
-                        {feature.title}
-                      </h3>
-                      <p className="text-gray-300">
-                        {feature.description}
-                      </p>
-                    </div>
-                  </div>
+              <div className="space-y-6">
+                <div className="bg-slate-800/50 backdrop-blur-sm rounded-xl p-6 border border-slate-700">
+                  <h3 className="text-xl font-semibold text-white mb-3">Smart Contracts</h3>
+                  <p className="text-gray-300">
+                    Advanced smart contract engine supporting multiple programming languages, 
+                    automated execution, and comprehensive testing frameworks.
+                  </p>
                 </div>
-              ))}
+
+                <div className="bg-slate-800/50 backdrop-blur-sm rounded-xl p-6 border border-slate-700">
+                  <h3 className="text-xl font-semibold text-white mb-3">Consensus Mechanisms</h3>
+                  <p className="text-gray-300">
+                    Multiple consensus algorithms including Proof of Stake, 
+                    Practical Byzantine Fault Tolerance, and hybrid approaches.
+                  </p>
+                </div>
+
+                <div className="bg-slate-800/50 backdrop-blur-sm rounded-xl p-6 border border-slate-700">
+                  <h3 className="text-xl font-semibold text-white mb-3">Identity Management</h3>
+                  <p className="text-gray-300">
+                    Decentralized identity solutions with self-sovereign identity, 
+                    verifiable credentials, and privacy-preserving authentication.
+                  </p>
+                </div>
+              </div>
+
+              <div className="space-y-6">
+                <div className="bg-slate-800/50 backdrop-blur-sm rounded-xl p-6 border border-slate-700">
+                  <h3 className="text-xl font-semibold text-white mb-3">Data Privacy</h3>
+                  <p className="text-gray-300">
+                    Zero-knowledge proofs, homomorphic encryption, and 
+                    selective disclosure for enhanced data privacy and control.
+                  </p>
+                </div>
+
+                <div className="bg-slate-800/50 backdrop-blur-sm rounded-xl p-6 border border-slate-700">
+                  <h3 className="text-xl font-semibold text-white mb-3">Interoperability</h3>
+                  <p className="text-gray-300">
+                    Cross-chain communication protocols, atomic swaps, and 
+                    seamless integration with existing enterprise systems.
+                  </p>
+                </div>
+
+                <div className="bg-slate-800/50 backdrop-blur-sm rounded-xl p-6 border border-slate-700">
+                  <h3 className="text-xl font-semibold text-white mb-3">Governance</h3>
+                  <p className="text-gray-300">
+                    On-chain governance mechanisms, voting systems, and 
+                    upgradeable protocols for platform evolution.
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
         </section>
 
         {/* Use Cases */}
-        <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white/5">
+        <section className="py-16 px-4 sm:px-6 lg:px-8">
           <div className="max-w-7xl mx-auto">
-            <div className="text-center mb-16">
-              <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-                Industry Use Cases
-              </h2>
-              <p className="text-xl text-gray-300 max-w-2xl mx-auto">
-                Proven blockchain solutions across diverse industries and applications
-              </p>
-            </div>
-            
-            <div className="grid md:grid-cols-2 gap-8">
-              {useCases.map((useCase, index) => (
-                <div key={index} className="bg-white/5 backdrop-blur-sm rounded-xl p-8 border border-white/10">
-                  <div className="mb-4">
-                    <Globe className="w-12 h-12 text-emerald-400" />
-                  </div>
-                  <h3 className="text-2xl font-semibold text-white mb-4">
-                    {useCase.title}
-                  </h3>
-                  <p className="text-gray-300">
-                    {useCase.description}
-                  </p>
-                </div>
-              ))}
+            <h2 className="text-3xl md:text-4xl font-bold text-white text-center mb-16">
+              Enterprise Use Cases
+            </h2>
+
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+              <div className="bg-slate-800/50 backdrop-blur-sm rounded-xl p-6 border border-slate-700">
+                <h3 className="text-xl font-semibold text-white mb-3">Supply Chain Management</h3>
+                <p className="text-gray-300">
+                  End-to-end traceability, automated compliance, and 
+                  real-time visibility across global supply networks.
+                </p>
+              </div>
+
+              <div className="bg-slate-800/50 backdrop-blur-sm rounded-xl p-6 border border-slate-700">
+                <h3 className="text-xl font-semibold text-white mb-3">Financial Services</h3>
+                <p className="text-gray-300">
+                  Cross-border payments, trade finance, asset tokenization, 
+                  and regulatory compliance automation.
+                </p>
+              </div>
+
+              <div className="bg-slate-800/50 backdrop-blur-sm rounded-xl p-6 border border-slate-700">
+                <h3 className="text-xl font-semibold text-white mb-3">Healthcare</h3>
+                <p className="text-gray-300">
+                  Patient data management, drug supply chain tracking, 
+                  and secure medical record sharing.
+                </p>
+              </div>
+
+              <div className="bg-slate-800/50 backdrop-blur-sm rounded-xl p-6 border border-slate-700">
+                <h3 className="text-xl font-semibold text-white mb-3">Real Estate</h3>
+                <p className="text-gray-300">
+                  Property tokenization, automated escrow services, 
+                  and streamlined title management.
+                </p>
+              </div>
+
+              <div className="bg-slate-800/50 backdrop-blur-sm rounded-xl p-6 border border-slate-700">
+                <h3 className="text-xl font-semibold text-white mb-3">Energy Trading</h3>
+                <p className="text-gray-300">
+                  Peer-to-peer energy trading, carbon credit management, 
+                  and renewable energy certificate tracking.
+                </p>
+              </div>
+
+              <div className="bg-slate-800/50 backdrop-blur-sm rounded-xl p-6 border border-slate-700">
+                <h3 className="text-xl font-semibold text-white mb-3">Government Services</h3>
+                <p className="text-gray-300">
+                  Digital identity, voting systems, land registry, 
+                  and public service delivery optimization.
+                </p>
+              </div>
             </div>
           </div>
         </section>
 
-        {/* Benefits */}
-        <section className="py-20 px-4 sm:px-6 lg:px-8">
+        {/* Technology Stack */}
+        <section className="py-16 px-4 sm:px-6 lg:px-8 bg-slate-800/20">
           <div className="max-w-7xl mx-auto">
-            <div className="text-center mb-16">
-              <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-                Key Benefits
-              </h2>
-              <p className="text-xl text-gray-300 max-w-2xl mx-auto">
-                Transform your business operations with blockchain technology
-              </p>
-            </div>
-            
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {benefits.map((benefit, index) => (
-                <div key={index} className="bg-white/5 backdrop-blur-sm rounded-xl p-6 border border-white/10">
-                  <div className="flex items-center">
-                    <CheckCircle className="w-6 h-6 text-emerald-400 mr-3" />
-                    <span className="text-white font-medium">{benefit}</span>
-                  </div>
-                </div>
-              ))}
+            <h2 className="text-3xl md:text-4xl font-bold text-white text-center mb-16">
+              Technology Architecture
+            </h2>
+
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+              <div className="bg-slate-800/50 backdrop-blur-sm rounded-xl p-6 border border-slate-700 text-center">
+                <Cpu className="h-12 w-12 text-blue-400 mx-auto mb-4" />
+                <h3 className="text-lg font-semibold text-white mb-2">Layer 1 Protocol</h3>
+                <p className="text-gray-300 text-sm">High-performance base blockchain with custom consensus</p>
+              </div>
+
+              <div className="bg-slate-800/50 backdrop-blur-sm rounded-xl p-6 border border-slate-700 text-center">
+                <Globe className="h-12 w-12 text-green-400 mx-auto mb-4" />
+                <h3 className="text-lg font-semibold text-white mb-2">Layer 2 Solutions</h3>
+                <p className="text-gray-300 text-sm">State channels and rollups for scalability</p>
+              </div>
+
+              <div className="bg-slate-800/50 backdrop-blur-sm rounded-xl p-6 border border-slate-700 text-center">
+                <Lock className="h-12 w-12 text-purple-400 mx-auto mb-4" />
+                <h3 className="text-lg font-semibold text-white mb-2">Privacy Layer</h3>
+                <p className="text-gray-300 text-sm">Zero-knowledge proofs and encryption</p>
+              </div>
+
+              <div className="bg-slate-800/50 backdrop-blur-sm rounded-xl p-6 border border-slate-700 text-center">
+                <TrendingUp className="h-12 w-12 text-yellow-400 mx-auto mb-4" />
+                <h3 className="text-lg font-semibold text-white mb-2">Analytics Engine</h3>
+                <p className="text-gray-300 text-sm">Real-time insights and reporting</p>
+              </div>
             </div>
           </div>
         </section>
 
-        {/* CTA Section */}
-        <section className="py-20 px-4 sm:px-6 lg:px-8">
+        {/* Compliance & Security */}
+        <section className="py-16 px-4 sm:px-6 lg:px-8">
+          <div className="max-w-7xl mx-auto">
+            <div className="bg-slate-800/50 backdrop-blur-sm rounded-xl p-8 border border-slate-700">
+              <h2 className="text-3xl md:text-4xl font-bold text-white text-center mb-8">
+                Compliance & Security
+              </h2>
+              
+              <div className="grid md:grid-cols-2 gap-8">
+                <div>
+                  <h3 className="text-xl font-semibold text-white mb-4">Regulatory Compliance</h3>
+                  <ul className="space-y-3 text-gray-300">
+                    <li>• GDPR and data privacy compliance</li>
+                    <li>• Financial services regulations (AML/KYC)</li>
+                    <li>• Industry-specific compliance frameworks</li>
+                    <li>• Regular audit and certification</li>
+                  </ul>
+                </div>
+
+                <div>
+                  <h3 className="text-xl font-semibold text-white mb-4">Security Features</h3>
+                  <ul className="space-y-3 text-gray-300">
+                    <li>• Multi-signature wallets and access control</li>
+                    <li>• Advanced cryptography and key management</li>
+                    <li>• Continuous security monitoring</li>
+                    <li>• Incident response and recovery</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Implementation Process */}
+        <section className="py-16 px-4 sm:px-6 lg:px-8 bg-slate-800/20">
+          <div className="max-w-7xl mx-auto">
+            <h2 className="text-3xl md:text-4xl font-bold text-white text-center mb-16">
+              Implementation Process
+            </h2>
+
+            <div className="grid md:grid-cols-4 gap-8">
+              <div className="text-center">
+                <div className="bg-green-500/20 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+                  <span className="text-2xl font-bold text-green-400">1</span>
+                </div>
+                <h3 className="text-lg font-semibold text-white mb-2">Assessment</h3>
+                <p className="text-gray-300">Evaluate current systems and identify blockchain opportunities</p>
+              </div>
+
+              <div className="text-center">
+                <div className="bg-blue-500/20 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+                  <span className="text-2xl font-bold text-blue-400">2</span>
+                </div>
+                <h3 className="text-lg font-semibold text-white mb-2">Design</h3>
+                <p className="text-gray-300">Architect blockchain solution and smart contracts</p>
+              </div>
+
+              <div className="text-center">
+                <div className="bg-purple-500/20 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+                  <span className="text-2xl font-bold text-purple-400">3</span>
+                </div>
+                <h3 className="text-lg font-semibold text-white mb-2">Development</h3>
+                <p className="text-gray-300">Build and test the blockchain platform</p>
+              </div>
+
+              <div className="text-center">
+                <div className="bg-yellow-500/20 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+                  <span className="text-2xl font-bold text-yellow-400">4</span>
+                </div>
+                <h3 className="text-lg font-semibold text-white mb-2">Deployment</h3>
+                <p className="text-gray-300">Launch and integrate with existing systems</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Get Started */}
+        <section className="py-16 px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto text-center">
-            <div className="bg-gradient-to-r from-emerald-600/20 to-blue-600/20 rounded-2xl p-12 border border-white/10">
-              <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
-                Ready to Transform Your Business?
-              </h2>
-              <p className="text-xl text-gray-300 mb-8">
-                Join leading enterprises that are already leveraging blockchain technology 
-                to gain competitive advantages and operational efficiencies.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <button className="px-8 py-4 bg-emerald-600 hover:bg-emerald-700 text-white font-semibold rounded-lg transition-colors">
-                  Start Building
-                </button>
-                <button className="px-8 py-4 border border-emerald-400 text-emerald-400 hover:bg-emerald-400/10 font-semibold rounded-lg transition-colors">
-                  Contact Sales
-                </button>
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
+              Get Started with Enterprise Blockchain
+            </h2>
+            <p className="text-lg text-gray-300 mb-8">
+              Ready to transform your business with blockchain technology? 
+              Our team of experts will guide you through every step of the process.
+            </p>
+            
+            <div className="bg-slate-800/50 backdrop-blur-sm rounded-xl p-8 border border-slate-700">
+              <Link className="mx-auto h-12 w-12 text-green-400 mb-4" />
+              <h3 className="text-xl font-semibold text-white mb-4">Next Steps</h3>
+              <div className="grid md:grid-cols-2 gap-6 text-left">
+                <div>
+                  <h4 className="font-semibold text-white mb-2">Consultation</h4>
+                  <ul className="space-y-1 text-gray-300 text-sm">
+                    <li>• Free initial consultation</li>
+                    <li>• Use case analysis</li>
+                    <li>• Technology assessment</li>
+                    <li>• ROI evaluation</li>
+                  </ul>
+                </div>
+                <div>
+                  <h4 className="font-semibold text-white mb-2">Implementation</h4>
+                  <ul className="space-y-1 text-gray-300 text-sm">
+                    <li>• Custom development</li>
+                    <li>• Integration services</li>
+                    <li>• Training and support</li>
+                    <li>• Ongoing maintenance</li>
+                  </ul>
+                </div>
               </div>
             </div>
           </div>
         </section>
       </div>
-    </Layout>
+    </>
   );
 };
 

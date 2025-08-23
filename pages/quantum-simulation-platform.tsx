@@ -1,30 +1,30 @@
 import React from 'react';
 import Head from 'next/head';
-import { Shield, CheckCircle, Zap, Brain, Atom, Globe, Lock, Users } from 'lucide-react';
+import { Atom, Zap, Target, Network, Globe, Users, Brain, TrendingUp } from 'lucide-react';
 
-const QuantumComplianceAutomationPage: React.FC = () => {
+const QuantumSimulationPlatformPage: React.FC = () => {
   return (
     <>
       <Head>
-        <title>Quantum Compliance Automation - Zion Tech Group</title>
-        <meta name="description" content="Automate compliance with Zion Tech Group's quantum-powered solutions. AI-driven compliance monitoring, automated reporting, and regulatory adherence." />
-        <meta name="keywords" content="quantum compliance, compliance automation, regulatory compliance, AI compliance, Zion Tech Group" />
-        <link rel="canonical" href="https://ziontechgroup.com/quantum-compliance-automation" />
+        <title>Quantum Simulation Platform - Zion Tech Group</title>
+        <meta name="description" content="Simulate quantum systems with Zion Tech Group's quantum simulation platform. Molecular modeling, material science, and quantum chemistry simulations." />
+        <meta name="keywords" content="quantum simulation, molecular modeling, quantum chemistry, material science, Zion Tech Group" />
+        <link rel="canonical" href="https://ziontechgroup.com/quantum-simulation-platform" />
       </Head>
 
-      <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900">
+      <div className="min-h-screen bg-gradient-to-br from-slate-900 via-teal-900 to-slate-900">
         {/* Hero Section */}
         <section className="relative py-20 px-4 sm:px-6 lg:px-8">
           <div className="max-w-7xl mx-auto text-center">
             <div className="mb-8">
-              <Shield className="mx-auto h-16 w-16 text-purple-400" />
+              <Atom className="mx-auto h-16 w-16 text-teal-400" />
             </div>
             <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
-              Quantum Compliance Automation
+              Quantum Simulation Platform
             </h1>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              Next-generation compliance automation powered by quantum computing, 
-              providing intelligent monitoring, automated reporting, and regulatory adherence.
+              Advanced quantum simulation platform for modeling complex quantum systems, 
+              molecular dynamics, and material properties with unprecedented accuracy.
             </p>
           </div>
         </section>
@@ -34,39 +34,39 @@ const QuantumComplianceAutomationPage: React.FC = () => {
           <div className="max-w-7xl mx-auto">
             <div className="text-center mb-16">
               <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-                Intelligent Compliance Platform
+                Quantum System Simulation
               </h2>
               <p className="text-lg text-gray-300 max-w-3xl mx-auto">
-                Our quantum-powered compliance platform provides automated monitoring, 
-                intelligent risk assessment, and seamless regulatory reporting for modern organizations.
+                Our quantum simulation platform provides accurate modeling of quantum systems, 
+                enabling breakthroughs in chemistry, materials science, and quantum physics.
               </p>
             </div>
 
             <div className="grid md:grid-cols-3 gap-8">
               <div className="bg-slate-800/50 backdrop-blur-sm rounded-xl p-8 border border-slate-700">
-                <Atom className="h-12 w-12 text-purple-400 mb-4" />
-                <h3 className="text-xl font-semibold text-white mb-3">Quantum Computing</h3>
+                <Atom className="h-12 w-12 text-teal-400 mb-4" />
+                <h3 className="text-xl font-semibold text-white mb-3">Quantum Mechanics</h3>
                 <p className="text-gray-300">
-                  Leveraging quantum algorithms for complex compliance 
-                  analysis and pattern recognition at unprecedented speeds.
+                  Accurate simulation of quantum mechanical 
+                  phenomena and wave function evolution.
                 </p>
               </div>
 
               <div className="bg-slate-800/50 backdrop-blur-sm rounded-xl p-8 border border-slate-700">
                 <Brain className="h-12 w-12 text-blue-400 mb-4" />
-                <h3 className="text-xl font-semibold text-white mb-3">AI-Powered Analysis</h3>
+                <h3 className="text-xl font-semibold text-white mb-3">Molecular Modeling</h3>
                 <p className="text-gray-300">
-                  Intelligent automation that continuously monitors, 
-                  analyzes, and reports on compliance requirements.
+                  Precise simulation of molecular structures, 
+                  interactions, and chemical reactions.
                 </p>
               </div>
 
               <div className="bg-slate-800/50 backdrop-blur-sm rounded-xl p-8 border border-slate-700">
-                <CheckCircle className="h-12 w-12 text-green-400 mb-4" />
-                <h3 className="text-xl font-semibold text-white mb-3">Automated Reporting</h3>
+                <TrendingUp className="h-12 w-12 text-green-400 mb-4" />
+                <h3 className="text-xl font-semibold text-white mb-3">Material Properties</h3>
                 <p className="text-gray-300">
-                  Seamless generation and submission of compliance 
-                  reports with real-time monitoring and alerts.
+                  Simulation of material behavior, electronic 
+                  properties, and quantum effects.
                 </p>
               </div>
             </div>
@@ -77,58 +77,58 @@ const QuantumComplianceAutomationPage: React.FC = () => {
         <section className="py-16 px-4 sm:px-6 lg:px-8 bg-slate-800/20">
           <div className="max-w-7xl mx-auto">
             <h2 className="text-3xl md:text-4xl font-bold text-white text-center mb-16">
-              Compliance Capabilities
+              Simulation Capabilities
             </h2>
 
             <div className="grid md:grid-cols-2 gap-8">
               <div className="space-y-6">
                 <div className="bg-slate-800/50 backdrop-blur-sm rounded-xl p-6 border border-slate-700">
-                  <h3 className="text-xl font-semibold text-white mb-3">Regulatory Monitoring</h3>
+                  <h3 className="text-xl font-semibold text-white mb-3">Quantum Chemistry</h3>
                   <p className="text-gray-300">
-                    Continuous monitoring of regulatory changes, 
-                    requirements, and compliance obligations across jurisdictions.
+                    Accurate simulation of chemical reactions, 
+                    molecular orbitals, and electronic structure.
                   </p>
                 </div>
 
                 <div className="bg-slate-800/50 backdrop-blur-sm rounded-xl p-6 border border-slate-700">
-                  <h3 className="text-xl font-semibold text-white mb-3">Risk Assessment</h3>
+                  <h3 className="text-xl font-semibold text-white mb-3">Molecular Dynamics</h3>
                   <p className="text-gray-300">
-                    Quantum-powered risk analysis and assessment 
-                    for identifying potential compliance vulnerabilities.
+                    Time evolution of molecular systems with 
+                    quantum mechanical accuracy.
                   </p>
                 </div>
 
                 <div className="bg-slate-800/50 backdrop-blur-sm rounded-xl p-6 border border-slate-700">
-                  <h3 className="text-xl font-semibold text-white mb-3">Policy Management</h3>
+                  <h3 className="text-xl font-semibold text-white mb-3">Quantum Many-Body Systems</h3>
                   <p className="text-gray-300">
-                    Automated policy creation, updates, and distribution 
-                    based on regulatory requirements and best practices.
+                    Simulation of complex quantum systems with 
+                    multiple interacting particles.
                   </p>
                 </div>
               </div>
 
               <div className="space-y-6">
                 <div className="bg-slate-800/50 backdrop-blur-sm rounded-xl p-6 border border-slate-700">
-                  <h3 className="text-xl font-semibold text-white mb-3">Audit Automation</h3>
+                  <h3 className="text-xl font-semibold text-white mb-3">Material Simulation</h3>
                   <p className="text-gray-300">
-                    Intelligent audit processes with automated 
-                    evidence collection and compliance verification.
+                    Modeling of crystalline structures, defects, 
+                    and quantum material properties.
                   </p>
                 </div>
 
                 <div className="bg-slate-800/50 backdrop-blur-sm rounded-xl p-6 border border-slate-700">
-                  <h3 className="text-xl font-semibold text-white mb-3">Incident Management</h3>
+                  <h3 className="text-xl font-semibold text-white mb-3">Quantum Transport</h3>
                   <p className="text-gray-300">
-                    Automated incident detection, response, and 
-                    reporting for compliance violations and breaches.
+                    Simulation of quantum transport phenomena 
+                    and electronic conduction.
                   </p>
                 </div>
 
                 <div className="bg-slate-800/50 backdrop-blur-sm rounded-xl p-6 border border-slate-700">
-                  <h3 className="text-xl font-semibold text-white mb-3">Training & Awareness</h3>
-                  <p className="text-gray-300">
-                    Automated compliance training programs and 
-                    awareness campaigns for employees and stakeholders.
+                  <h3 className="text-xl font-semibold text-white mb-3">Quantum Optics</h3>
+                    <p className="text-gray-300">
+                    Modeling of quantum light-matter interactions 
+                    and photonic systems.
                   </p>
                 </div>
               </div>
@@ -136,130 +136,67 @@ const QuantumComplianceAutomationPage: React.FC = () => {
           </div>
         </section>
 
-        {/* Quantum Technologies */}
+        {/* Simulation Methods */}
         <section className="py-16 px-4 sm:px-6 lg:px-8">
           <div className="max-w-7xl mx-auto">
             <h2 className="text-3xl md:text-4xl font-bold text-white text-center mb-16">
-              Quantum Technologies
+              Simulation Methods
             </h2>
 
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
               <div className="bg-slate-800/50 backdrop-blur-sm rounded-xl p-6 border border-slate-700">
-                <h3 className="text-xl font-semibold text-white mb-3">Quantum Machine Learning</h3>
+                <h3 className="text-xl font-semibold text-white mb-3">Variational Methods</h3>
                 <p className="text-gray-300">
-                  Advanced quantum algorithms for pattern recognition, 
-                  anomaly detection, and predictive compliance analytics.
+                  VQE and VQD for finding ground and excited 
+                  states of quantum systems.
                 </p>
               </div>
 
               <div className="bg-slate-800/50 backdrop-blur-sm rounded-xl p-6 border border-slate-700">
-                <h3 className="text-xl font-semibold text-white mb-3">Quantum Cryptography</h3>
+                <h3 className="text-xl font-semibold text-white mb-3">Quantum Monte Carlo</h3>
                 <p className="text-gray-300">
-                  Unbreakable encryption for sensitive compliance 
-                  data and secure communication channels.
+                  Stochastic simulation methods for quantum 
+                  systems and many-body problems.
                 </p>
               </div>
 
               <div className="bg-slate-800/50 backdrop-blur-sm rounded-xl p-6 border border-slate-700">
-                <h3 className="text-xl font-semibold text-white mb-3">Quantum Optimization</h3>
+                <h3 className="text-xl font-semibold text-white mb-3">Density Functional Theory</h3>
                 <p className="text-gray-300">
-                  Optimal resource allocation and scheduling 
-                  for compliance activities and audits.
+                  Quantum mechanical modeling of electronic 
+                  structure and material properties.
                 </p>
               </div>
 
               <div className="bg-slate-800/50 backdrop-blur-sm rounded-xl p-6 border border-slate-700">
-                <h3 className="text-xl font-semibold text-white mb-3">Quantum Simulation</h3>
+                <h3 className="text-xl font-semibold text-white mb-3">Coupled Cluster</h3>
                 <p className="text-gray-300">
-                  Complex scenario modeling and risk assessment 
-                  for compliance planning and decision-making.
+                  High-accuracy quantum chemistry method 
+                  for molecular calculations.
                 </p>
               </div>
 
               <div className="bg-slate-800/50 backdrop-blur-sm rounded-xl p-6 border border-slate-700">
-                <h3 className="text-xl font-semibold text-white mb-3">Quantum Sensing</h3>
+                <h3 className="text-xl font-semibold text-white mb-3">Configuration Interaction</h3>
                 <p className="text-gray-300">
-                  High-precision monitoring and detection of 
-                  compliance-related activities and events.
+                  Multi-reference methods for excited states 
+                  and strong correlation effects.
                 </p>
               </div>
 
               <div className="bg-slate-800/50 backdrop-blur-sm rounded-xl p-6 border border-slate-700">
-                <h3 className="text-xl font-semibold text-white mb-3">Quantum Communication</h3>
+                <h3 className="text-xl font-semibold text-white mb-3">Time Evolution</h3>
                 <p className="text-gray-300">
-                  Secure and instant communication for compliance 
-                  teams and regulatory authorities.
+                  Real-time simulation of quantum system 
+                  dynamics and evolution.
                 </p>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Compliance Frameworks */}
-        <section className="py-16 px-4 sm:px-6 lg:px-8 bg-slate-800/20">
-          <div className="max-w-7xl mx-auto">
-            <h2 className="text-3xl md:text-4xl font-bold text-white text-center mb-16">
-              Supported Frameworks
-            </h2>
-
-            <div className="grid md:grid-cols-2 gap-8">
-              <div className="space-y-6">
-                <div className="bg-slate-800/50 backdrop-blur-sm rounded-xl p-6 border border-slate-700">
-                  <h3 className="text-xl font-semibold text-white mb-3">Financial Regulations</h3>
-                  <p className="text-gray-300">
-                    SOX, Basel III, Dodd-Frank, PCI DSS, and other 
-                    financial compliance requirements.
-                  </p>
-                </div>
-
-                <div className="bg-slate-800/50 backdrop-blur-sm rounded-xl p-6 border border-slate-700">
-                  <h3 className="text-xl font-semibold text-white mb-3">Data Protection</h3>
-                  <p className="text-gray-300">
-                    GDPR, CCPA, HIPAA, and other data privacy 
-                    and protection regulations.
-                  </p>
-                </div>
-
-                <div className="bg-slate-800/50 backdrop-blur-sm rounded-xl p-6 border border-slate-700">
-                  <h3 className="text-xl font-semibold text-white mb-3">Industry Standards</h3>
-                  <p className="text-gray-300">
-                    ISO 27001, NIST, COBIT, and other 
-                    industry-specific compliance frameworks.
-                  </p>
-                </div>
-              </div>
-
-              <div className="space-y-6">
-                <div className="bg-slate-800/50 backdrop-blur-sm rounded-xl p-6 border border-slate-700">
-                  <h3 className="text-xl font-semibold text-white mb-3">Cybersecurity</h3>
-                  <p className="text-gray-300">
-                    SOC 2, FedRAMP, and other cybersecurity 
-                    compliance and certification requirements.
-                  </p>
-                </div>
-
-                <div className="bg-slate-800/50 backdrop-blur-sm rounded-xl p-6 border border-slate-700">
-                  <h3 className="text-xl font-semibold text-white mb-3">Environmental</h3>
-                    <p className="text-gray-300">
-                    ESG, sustainability, and environmental 
-                    compliance and reporting requirements.
-                  </p>
-                </div>
-
-                <div className="bg-slate-800/50 backdrop-blur-sm rounded-xl p-6 border border-slate-700">
-                  <h3 className="text-xl font-semibold text-white mb-3">Custom Frameworks</h3>
-                  <p className="text-gray-300">
-                    Tailored compliance frameworks for specific 
-                    industries and organizational requirements.
-                  </p>
-                </div>
               </div>
             </div>
           </div>
         </section>
 
         {/* Use Cases */}
-        <section className="py-16 px-4 sm:px-6 lg:px-8">
+        <section className="py-16 px-4 sm:px-6 lg:px-8 bg-slate-800/20">
           <div className="max-w-7xl mx-auto">
             <h2 className="text-3xl md:text-4xl font-bold text-white text-center mb-16">
               Applications & Use Cases
@@ -268,52 +205,115 @@ const QuantumComplianceAutomationPage: React.FC = () => {
             <div className="grid md:grid-cols-2 gap-8">
               <div className="space-y-6">
                 <div className="bg-slate-800/50 backdrop-blur-sm rounded-xl p-6 border border-slate-700">
-                  <h3 className="text-xl font-semibold text-white mb-3">Financial Services</h3>
+                  <h3 className="text-xl font-semibold text-white mb-3">Pharmaceutical Research</h3>
                   <p className="text-gray-300">
-                    Comprehensive compliance automation for banks, 
-                    insurance companies, and financial institutions.
+                    Drug discovery through molecular modeling, 
+                    binding affinity prediction, and ADMET properties.
                   </p>
                 </div>
 
                 <div className="bg-slate-800/50 backdrop-blur-sm rounded-xl p-6 border border-slate-700">
-                  <h3 className="text-xl font-semibold text-white mb-3">Healthcare</h3>
+                  <h3 className="text-xl font-semibold text-white mb-3">Material Design</h3>
                   <p className="text-gray-300">
-                    HIPAA compliance automation for hospitals, 
-                    clinics, and healthcare providers.
+                    Design of new materials with specific 
+                    electronic, magnetic, and optical properties.
                   </p>
                 </div>
 
                 <div className="bg-slate-800/50 backdrop-blur-sm rounded-xl p-6 border border-slate-700">
-                  <h3 className="text-xl font-semibold text-white mb-3">Technology</h3>
+                  <h3 className="text-xl font-semibold text-white mb-3">Catalysis</h3>
                   <p className="text-gray-300">
-                    SOC 2 and cybersecurity compliance for 
-                    software companies and technology platforms.
+                    Understanding catalytic mechanisms and 
+                    designing efficient catalysts for chemical processes.
                   </p>
                 </div>
               </div>
 
               <div className="space-y-6">
                 <div className="bg-slate-800/50 backdrop-blur-sm rounded-xl p-6 border border-slate-700">
-                  <h3 className="text-xl font-semibold text-white mb-3">Manufacturing</h3>
+                  <h3 className="text-xl font-semibold text-white mb-3">Energy Storage</h3>
                   <p className="text-gray-300">
-                    Quality and safety compliance automation 
-                    for manufacturing and industrial operations.
+                    Design of battery materials, fuel cells, 
+                    and energy storage systems.
                   </p>
                 </div>
 
                 <div className="bg-slate-800/50 backdrop-blur-sm rounded-xl p-6 border border-slate-700">
-                  <h3 className="text-xl font-semibold text-white mb-3">Government</h3>
+                  <h3 className="text-xl font-semibold text-white mb-3">Quantum Computing</h3>
                   <p className="text-gray-300">
-                    Regulatory compliance for government agencies 
-                    and public sector organizations.
+                    Simulation of quantum algorithms and 
+                    quantum error correction codes.
                   </p>
                 </div>
 
                 <div className="bg-slate-800/50 backdrop-blur-sm rounded-xl p-6 border border-slate-700">
-                  <h3 className="text-xl font-semibold text-white mb-3">Retail & E-commerce</h3>
+                  <h3 className="text-xl font-semibold text-white mb-3">Climate Science</h3>
+                    <p className="text-gray-300">
+                    Atmospheric chemistry modeling and 
+                    environmental impact assessment.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Technology Stack */}
+        <section className="py-16 px-4 sm:px-6 lg:px-8">
+          <div className="max-w-7xl mx-auto">
+            <h2 className="text-3xl md:text-4xl font-bold text-white text-center mb-16">
+              Technology & Architecture
+            </h2>
+
+            <div className="grid md:grid-cols-2 gap-8">
+              <div className="space-y-6">
+                <div className="bg-slate-800/50 backdrop-blur-sm rounded-xl p-6 border border-slate-700">
+                  <h3 className="text-xl font-semibold text-white mb-3">Quantum Hardware</h3>
                   <p className="text-gray-300">
-                    PCI DSS and consumer protection compliance 
-                    for retail and online businesses.
+                    Access to quantum computers and quantum 
+                    processing units for simulation tasks.
+                  </p>
+                </div>
+
+                <div className="bg-slate-800/50 backdrop-blur-sm rounded-xl p-6 border border-slate-700">
+                  <h3 className="text-xl font-semibold text-white mb-3">Classical Computing</h3>
+                  <p className="text-gray-300">
+                    High-performance classical computing 
+                    for hybrid quantum-classical simulations.
+                  </p>
+                </div>
+
+                <div className="bg-slate-800/50 backdrop-blur-sm rounded-xl p-6 border border-slate-700">
+                  <h3 className="text-xl font-semibold text-white mb-3">Simulation Frameworks</h3>
+                  <p className="text-gray-300">
+                    Integration with Qiskit, Cirq, PennyLane, 
+                    and other quantum simulation tools.
+                  </p>
+                </div>
+              </div>
+
+              <div className="space-y-6">
+                <div className="bg-slate-800/50 backdrop-blur-sm rounded-xl p-6 border border-slate-700">
+                  <h3 className="text-xl font-semibold text-white mb-3">Chemistry Software</h3>
+                  <p className="text-gray-300">
+                    Integration with Gaussian, VASP, and 
+                    other chemistry simulation packages.
+                  </p>
+                </div>
+
+                <div className="bg-slate-800/50 backdrop-blur-sm rounded-xl p-6 border border-slate-700">
+                  <h3 className="text-xl font-semibold text-white mb-3">Data Management</h3>
+                  <p className="text-gray-300">
+                    Comprehensive data storage, analysis, 
+                    and visualization capabilities.
+                  </p>
+                </div>
+
+                <div className="bg-slate-800/50 backdrop-blur-sm rounded-xl p-6 border border-slate-700">
+                  <h3 className="text-xl font-semibold text-white mb-3">API & Integration</h3>
+                  <p className="text-gray-300">
+                    RESTful APIs and SDKs for easy 
+                    integration with existing workflows.
                   </p>
                 </div>
               </div>
@@ -331,52 +331,52 @@ const QuantumComplianceAutomationPage: React.FC = () => {
             <div className="grid md:grid-cols-2 gap-8">
               <div className="space-y-6">
                 <div className="bg-slate-800/50 backdrop-blur-sm rounded-xl p-6 border border-slate-700">
-                  <h3 className="text-xl font-semibold text-white mb-3">Operational Efficiency</h3>
+                  <h3 className="text-xl font-semibold text-white mb-3">Accelerated Discovery</h3>
                   <p className="text-gray-300">
-                    Significant reduction in manual compliance tasks, 
-                    allowing teams to focus on strategic initiatives.
+                    Faster discovery of new materials, 
+                    drugs, and chemical processes.
                   </p>
                 </div>
 
                 <div className="bg-slate-800/50 backdrop-blur-sm rounded-xl p-6 border border-slate-700">
-                  <h3 className="text-xl font-semibold text-white mb-3">Risk Reduction</h3>
+                  <h3 className="text-xl font-semibold text-white mb-3">Cost Reduction</h3>
                   <p className="text-gray-300">
-                    Proactive identification and mitigation of 
-                    compliance risks and vulnerabilities.
+                    Reduced experimental costs through 
+                    accurate computational prediction.
                   </p>
                 </div>
 
                 <div className="bg-slate-800/50 backdrop-blur-sm rounded-xl p-6 border border-slate-700">
-                  <h3 className="text-xl font-semibold text-white mb-3">Cost Savings</h3>
+                  <h3 className="text-xl font-semibold text-white mb-3">Risk Mitigation</h3>
                   <p className="text-gray-300">
-                    Reduced compliance costs through automation 
-                    and intelligent resource allocation.
+                    Better understanding of system behavior 
+                    before experimental validation.
                   </p>
                 </div>
               </div>
 
               <div className="space-y-6">
                 <div className="bg-slate-800/50 backdrop-blur-sm rounded-xl p-6 border border-slate-700">
-                  <h3 className="text-xl font-semibold text-white mb-3">Real-time Monitoring</h3>
+                  <h3 className="text-xl font-semibold text-white mb-3">Innovation Leadership</h3>
                   <p className="text-gray-300">
-                    Continuous compliance monitoring with 
-                    instant alerts and notifications.
+                    Early adoption of quantum simulation 
+                    for competitive advantage.
                   </p>
                 </div>
 
                 <div className="bg-slate-800/50 backdrop-blur-sm rounded-xl p-6 border border-slate-700">
-                  <h3 className="text-xl font-semibold text-white mb-3">Audit Readiness</h3>
+                  <h3 className="text-xl font-semibold text-white mb-3">Collaboration</h3>
                   <p className="text-gray-300">
-                    Always-ready audit trails and evidence 
-                    collection for regulatory examinations.
+                    Enhanced collaboration between computational 
+                    and experimental researchers.
                   </p>
                 </div>
 
                 <div className="bg-slate-800/50 backdrop-blur-sm rounded-xl p-6 border border-slate-700">
-                  <h3 className="text-xl font-semibold text-white mb-3">Competitive Advantage</h3>
+                  <h3 className="text-xl font-semibold text-white mb-3">Regulatory Compliance</h3>
                   <p className="text-gray-300">
-                    Enhanced reputation and trust through 
-                    robust compliance and risk management.
+                    Better understanding of product properties 
+                    for regulatory submissions.
                   </p>
                 </div>
               </div>
@@ -393,35 +393,35 @@ const QuantumComplianceAutomationPage: React.FC = () => {
 
             <div className="grid md:grid-cols-4 gap-8">
               <div className="text-center">
-                <div className="bg-purple-500/20 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
-                  <span className="text-2xl font-bold text-purple-400">1</span>
+                <div className="bg-teal-500/20 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+                  <span className="text-2xl font-bold text-teal-400">1</span>
                 </div>
                 <h3 className="text-lg font-semibold text-white mb-2">Assessment</h3>
-                <p className="text-gray-300">Current compliance posture and automation opportunities</p>
+                <p className="text-gray-300">Simulation requirements analysis and quantum approach evaluation</p>
               </div>
 
               <div className="text-center">
                 <div className="bg-blue-500/20 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
                   <span className="text-2xl font-bold text-blue-400">2</span>
                 </div>
-                <h3 className="text-lg font-semibold text-white mb-2">Strategy</h3>
-                <p className="text-gray-300">Compliance automation roadmap and quantum technology integration</p>
+                <h3 className="text-lg font-semibold text-white mb-2">Design</h3>
+                <p className="text-gray-300">Simulation strategy and quantum algorithm selection</p>
               </div>
 
               <div className="text-center">
-                <div className="bg-green-500/20 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
-                  <span className="text-2xl font-bold text-green-400">3</span>
+                <div className="bg-purple-500/20 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+                  <span className="text-2xl font-bold text-purple-400">3</span>
                 </div>
-                <h3 className="text-lg font-semibold text-white mb-2">Deployment</h3>
-                <p className="text-gray-300">Platform deployment and quantum model training</p>
+                <h3 className="text-lg font-semibold text-white mb-2">Development</h3>
+                <p className="text-gray-300">Quantum simulation implementation and validation</p>
               </div>
 
               <div className="text-center">
                 <div className="bg-orange-500/20 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
                   <span className="text-2xl font-bold text-orange-400">4</span>
                 </div>
-                <h3 className="text-lg font-semibold text-white mb-2">Optimization</h3>
-                <p className="text-gray-300">Continuous improvement and compliance enhancement</p>
+                <h3 className="text-lg font-semibold text-white mb-2">Deployment</h3>
+                <p className="text-gray-300">Production deployment and ongoing optimization</p>
               </div>
             </div>
           </div>
@@ -431,33 +431,33 @@ const QuantumComplianceAutomationPage: React.FC = () => {
         <section className="py-16 px-4 sm:px-6 lg:px-8 bg-slate-800/20">
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
-              Automate Your Compliance
+              Simulate the Future
             </h2>
             <p className="text-lg text-gray-300 mb-8">
-              Ready to implement quantum-powered compliance automation? Our platform will help you 
-              achieve regulatory excellence and operational efficiency.
+              Ready to leverage quantum simulation? Our platform will help you model complex 
+              quantum systems with unprecedented accuracy and speed.
             </p>
             
             <div className="bg-slate-800/50 backdrop-blur-sm rounded-xl p-8 border border-slate-700">
-              <Shield className="mx-auto h-12 w-12 text-purple-400 mb-4" />
+              <Atom className="mx-auto h-12 w-12 text-teal-400 mb-4" />
               <h3 className="text-xl font-semibold text-white mb-4">Getting Started</h3>
               <div className="grid md:grid-cols-2 gap-6 text-left">
                 <div>
-                  <h4 className="font-semibold text-white mb-2">For Enterprises</h4>
+                  <h4 className="font-semibold text-white mb-2">For Research Organizations</h4>
                   <ul className="space-y-1 text-gray-300 text-sm">
-                    <li>• Comprehensive compliance assessment</li>
-                    <li>• Custom automation strategies</li>
-                    <li>• Enterprise integration</li>
-                    <li>• 24/7 compliance monitoring</li>
+                    <li>• Comprehensive simulation assessment</li>
+                    <li>• Custom quantum algorithms</li>
+                    <li>• Research collaboration</li>
+                    <li>• Academic partnerships</li>
                   </ul>
                 </div>
                 <div>
-                  <h4 className="font-semibold text-white mb-2">For Growing Companies</h4>
+                  <h4 className="font-semibold text-white mb-2">For Industry</h4>
                   <ul className="space-y-1 text-gray-300 text-sm">
-                    <li>• Compliance foundation setup</li>
-                    <li>• Intelligent automation</li>
-                    <li>• Risk management</li>
-                    <li>• Scalable solutions</li>
+                    <li>• Industry-specific simulations</li>
+                    <li>• Product development support</li>
+                    <li>• Regulatory compliance</li>
+                    <li>• Commercial applications</li>
                   </ul>
                 </div>
               </div>
@@ -469,4 +469,4 @@ const QuantumComplianceAutomationPage: React.FC = () => {
   );
 };
 
-export default QuantumComplianceAutomationPage;
+export default QuantumSimulationPlatformPage;

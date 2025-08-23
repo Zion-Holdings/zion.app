@@ -1,30 +1,30 @@
 import React from 'react';
 import Head from 'next/head';
-import { Shield, AlertTriangle, TrendingUp, Zap, Users, Globe, Brain, Target } from 'lucide-react';
+import { Brain, BarChart3, TrendingUp, Target, Zap, Users, Globe, Shield } from 'lucide-react';
 
-const AIFinancialFraudDetectionPage: React.FC = () => {
+const AIPoweredBusinessIntelligencePlatformPage: React.FC = () => {
   return (
     <>
       <Head>
-        <title>AI Financial Fraud Detection - Zion Tech Group</title>
-        <meta name="description" content="Protect your financial assets with Zion Tech Group's AI-powered fraud detection platform. Real-time monitoring, advanced analytics, and proactive threat prevention." />
-        <meta name="keywords" content="AI fraud detection, financial fraud, fraud prevention, AI security, financial security, Zion Tech Group" />
-        <link rel="canonical" href="https://ziontechgroup.com/ai-financial-fraud-detection" />
+        <title>AI-Powered Business Intelligence Platform - Zion Tech Group</title>
+        <meta name="description" content="Transform your business with Zion Tech Group's AI-powered business intelligence platform. Advanced analytics, predictive insights, and data-driven decision making." />
+        <meta name="keywords" content="AI business intelligence, business analytics, predictive insights, data analytics, Zion Tech Group" />
+        <link rel="canonical" href="https://ziontechgroup.com/ai-powered-business-intelligence-platform" />
       </Head>
 
-      <div className="min-h-screen bg-gradient-to-br from-slate-900 via-red-900 to-slate-900">
+      <div className="min-h-screen bg-gradient-to-br from-slate-900 via-emerald-900 to-slate-900">
         {/* Hero Section */}
         <section className="relative py-20 px-4 sm:px-6 lg:px-8">
           <div className="max-w-7xl mx-auto text-center">
             <div className="mb-8">
-              <Shield className="mx-auto h-16 w-16 text-red-400" />
+              <Brain className="mx-auto h-16 w-16 text-emerald-400" />
             </div>
             <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
-              AI Financial Fraud Detection
+              AI-Powered Business Intelligence Platform
             </h1>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              Advanced AI-powered protection against financial fraud with 
-              real-time monitoring, predictive analytics, and proactive threat prevention.
+              Transform raw data into actionable intelligence with our AI-powered 
+              business intelligence platform. Make smarter decisions, faster.
             </p>
           </div>
         </section>
@@ -34,39 +34,39 @@ const AIFinancialFraudDetectionPage: React.FC = () => {
           <div className="max-w-7xl mx-auto">
             <div className="text-center mb-16">
               <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-                Intelligent Fraud Protection
+                Intelligent Business Analytics
               </h2>
               <p className="text-lg text-gray-300 max-w-3xl mx-auto">
-                Our AI platform provides comprehensive fraud detection capabilities, 
-                protecting financial institutions and businesses from sophisticated threats.
+                Our platform combines advanced AI algorithms with comprehensive 
+                business intelligence tools for unprecedented insights and foresight.
               </p>
             </div>
 
             <div className="grid md:grid-cols-3 gap-8">
               <div className="bg-slate-800/50 backdrop-blur-sm rounded-xl p-8 border border-slate-700">
-                <AlertTriangle className="h-12 w-12 text-red-400 mb-4" />
-                <h3 className="text-xl font-semibold text-white mb-3">Real-time Detection</h3>
+                <BarChart3 className="h-12 w-12 text-emerald-400 mb-4" />
+                <h3 className="text-xl font-semibold text-white mb-3">Advanced Analytics</h3>
                 <p className="text-gray-300">
-                  Instant identification of fraudulent activities 
-                  and suspicious patterns in financial transactions.
+                  Deep data analysis and visualization with 
+                  AI-powered pattern recognition and insights.
                 </p>
               </div>
 
               <div className="bg-slate-800/50 backdrop-blur-sm rounded-xl p-8 border border-slate-700">
                 <TrendingUp className="h-12 w-12 text-blue-400 mb-4" />
-                <h3 className="text-xl font-semibold text-white mb-3">Predictive Analytics</h3>
+                <h3 className="text-xl font-semibold text-white mb-3">Predictive Insights</h3>
                 <p className="text-gray-300">
-                  AI-powered forecasting to identify potential 
-                  fraud risks before they materialize.
+                  AI-driven forecasting and trend analysis 
+                  for proactive business decision making.
                 </p>
               </div>
 
               <div className="bg-slate-800/50 backdrop-blur-sm rounded-xl p-8 border border-slate-700">
-                <Zap className="h-12 w-12 text-green-400 mb-4" />
-                <h3 className="text-xl font-semibold text-white mb-3">Proactive Prevention</h3>
+                <Target className="h-12 w-12 text-green-400 mb-4" />
+                <h3 className="text-xl font-semibold text-white mb-3">Strategic Planning</h3>
                 <p className="text-gray-300">
-                  Automated prevention measures and early 
-                  warning systems to stop fraud in its tracks.
+                  Data-driven strategic insights and 
+                  actionable recommendations for growth.
                 </p>
               </div>
             </div>
@@ -77,58 +77,58 @@ const AIFinancialFraudDetectionPage: React.FC = () => {
         <section className="py-16 px-4 sm:px-6 lg:px-8 bg-slate-800/20">
           <div className="max-w-7xl mx-auto">
             <h2 className="text-3xl md:text-4xl font-bold text-white text-center mb-16">
-              Platform Features
+              Platform Capabilities
             </h2>
 
             <div className="grid md:grid-cols-2 gap-8">
               <div className="space-y-6">
                 <div className="bg-slate-800/50 backdrop-blur-sm rounded-xl p-6 border border-slate-700">
-                  <h3 className="text-xl font-semibold text-white mb-3">Transaction Monitoring</h3>
+                  <h3 className="text-xl font-semibold text-white mb-3">Data Integration</h3>
                   <p className="text-gray-300">
-                    Real-time analysis of all financial transactions 
-                    for suspicious patterns and anomalies.
+                    Connect and consolidate data from multiple sources 
+                    including databases, APIs, and external systems.
                   </p>
                 </div>
 
                 <div className="bg-slate-800/50 backdrop-blur-sm rounded-xl p-6 border border-slate-700">
-                  <h3 className="text-xl font-semibold text-white mb-3">Behavioral Analysis</h3>
+                  <h3 className="text-xl font-semibold text-white mb-3">Real-time Processing</h3>
                   <p className="text-gray-300">
-                    AI-powered analysis of user behavior patterns 
-                    to detect unusual or suspicious activities.
+                    Instant data processing and analysis for 
+                    up-to-the-minute business intelligence.
                   </p>
                 </div>
 
                 <div className="bg-slate-800/50 backdrop-blur-sm rounded-xl p-6 border border-slate-700">
-                  <h3 className="text-xl font-semibold text-white mb-3">Risk Scoring</h3>
+                  <h3 className="text-xl font-semibold text-white mb-3">Natural Language Query</h3>
                   <p className="text-gray-300">
-                    Dynamic risk assessment and scoring for 
-                    transactions, accounts, and user activities.
+                    Ask questions in plain English and get 
+                    instant insights from your data.
                   </p>
                 </div>
               </div>
 
               <div className="space-y-6">
                 <div className="bg-slate-800/50 backdrop-blur-sm rounded-xl p-6 border border-slate-700">
-                  <h3 className="text-xl font-semibold text-white mb-3">Alert Management</h3>
+                  <h3 className="text-xl font-semibold text-white mb-3">Automated Reporting</h3>
                   <p className="text-gray-300">
-                    Intelligent alert system with prioritization 
-                    and automated response capabilities.
+                    AI-generated reports and dashboards with 
+                    intelligent insights and recommendations.
                   </p>
                 </div>
 
                 <div className="bg-slate-800/50 backdrop-blur-sm rounded-xl p-6 border border-slate-700">
-                  <h3 className="text-xl font-semibold text-white mb-3">Investigation Tools</h3>
+                  <h3 className="text-xl font-semibold text-white mb-3">Predictive Modeling</h3>
                   <p className="text-gray-300">
-                    Comprehensive tools for fraud investigation, 
-                    evidence collection, and case management.
+                    Advanced machine learning models for 
+                    forecasting and trend prediction.
                   </p>
                 </div>
 
                 <div className="bg-slate-800/50 backdrop-blur-sm rounded-xl p-6 border border-slate-700">
-                  <h3 className="text-xl font-semibold text-white mb-3">Compliance Reporting</h3>
+                  <h3 className="text-xl font-semibold text-white mb-3">Collaborative Analytics</h3>
                   <p className="text-gray-300">
-                    Automated compliance reporting and 
-                    regulatory requirement fulfillment.
+                    Team-based analytics with shared insights 
+                    and collaborative decision making.
                   </p>
                 </div>
               </div>
@@ -136,59 +136,59 @@ const AIFinancialFraudDetectionPage: React.FC = () => {
           </div>
         </section>
 
-        {/* Fraud Types */}
+        {/* Intelligence Modules */}
         <section className="py-16 px-4 sm:px-6 lg:px-8">
           <div className="max-w-7xl mx-auto">
             <h2 className="text-3xl md:text-4xl font-bold text-white text-center mb-16">
-              Fraud Types Detected
+              Intelligence Modules
             </h2>
 
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
               <div className="bg-slate-800/50 backdrop-blur-sm rounded-xl p-6 border border-slate-700">
-                <h3 className="text-xl font-semibold text-white mb-3">Payment Fraud</h3>
+                <h3 className="text-xl font-semibold text-white mb-3">Financial Intelligence</h3>
                 <p className="text-gray-300">
-                  Detection of fraudulent credit card transactions, 
-                  unauthorized payments, and payment manipulation.
+                  Revenue analysis, cost optimization, profitability 
+                  insights, and financial forecasting.
                 </p>
               </div>
 
               <div className="bg-slate-800/50 backdrop-blur-sm rounded-xl p-6 border border-slate-700">
-                <h3 className="text-xl font-semibold text-white mb-3">Identity Theft</h3>
+                <h3 className="text-xl font-semibold text-white mb-3">Operational Intelligence</h3>
                 <p className="text-gray-300">
-                  Identification of stolen identities, synthetic 
-                  identities, and account takeover attempts.
+                  Process optimization, efficiency metrics, 
+                  resource allocation, and performance tracking.
                 </p>
               </div>
 
               <div className="bg-slate-800/50 backdrop-blur-sm rounded-xl p-6 border border-slate-700">
-                <h3 className="text-xl font-semibold text-white mb-3">Money Laundering</h3>
+                <h3 className="text-xl font-semibold text-white mb-3">Customer Intelligence</h3>
                 <p className="text-gray-300">
-                  Detection of suspicious transaction patterns, 
-                  structuring, and money laundering schemes.
+                  Customer behavior analysis, satisfaction metrics, 
+                  churn prediction, and loyalty insights.
                 </p>
               </div>
 
               <div className="bg-slate-800/50 backdrop-blur-sm rounded-xl p-6 border border-slate-700">
-                <h3 className="text-xl font-semibold text-white mb-3">Insider Fraud</h3>
+                <h3 className="text-xl font-semibold text-white mb-3">Market Intelligence</h3>
                 <p className="text-gray-300">
-                  Detection of fraudulent activities by 
-                  employees or authorized users.
+                  Competitive analysis, market trends, 
+                  opportunity identification, and risk assessment.
                 </p>
               </div>
 
               <div className="bg-slate-800/50 backdrop-blur-sm rounded-xl p-6 border border-slate-700">
-                <h3 className="text-xl font-semibold text-white mb-3">Application Fraud</h3>
+                <h3 className="text-xl font-semibold text-white mb-3">Sales Intelligence</h3>
                 <p className="text-gray-300">
-                  Detection of fraudulent loan applications, 
-                  insurance claims, and account openings.
+                  Sales performance analytics, pipeline optimization, 
+                  lead scoring, and conversion insights.
                 </p>
               </div>
 
               <div className="bg-slate-800/50 backdrop-blur-sm rounded-xl p-6 border border-slate-700">
-                <h3 className="text-xl font-semibold text-white mb-3">Social Engineering</h3>
+                <h3 className="text-xl font-semibold text-white mb-3">Supply Chain Intelligence</h3>
                 <p className="text-gray-300">
-                  Detection of phishing attempts, social 
-                  engineering attacks, and fraud schemes.
+                  Inventory optimization, supplier performance, 
+                  logistics efficiency, and demand forecasting.
                 </p>
               </div>
             </div>
@@ -199,32 +199,32 @@ const AIFinancialFraudDetectionPage: React.FC = () => {
         <section className="py-16 px-4 sm:px-6 lg:px-8 bg-slate-800/20">
           <div className="max-w-7xl mx-auto">
             <h2 className="text-3xl md:text-4xl font-bold text-white text-center mb-16">
-              AI-Powered Capabilities
+              AI-Powered Features
             </h2>
 
             <div className="grid md:grid-cols-2 gap-8">
               <div className="space-y-6">
                 <div className="bg-slate-800/50 backdrop-blur-sm rounded-xl p-6 border border-slate-700">
-                  <h3 className="text-xl font-semibold text-white mb-3">Machine Learning Models</h3>
+                  <h3 className="text-xl font-semibold text-white mb-3">Anomaly Detection</h3>
                   <p className="text-gray-300">
-                    Advanced ML models trained on historical fraud data 
-                    for pattern recognition and anomaly detection.
+                    AI algorithms automatically identify unusual 
+                    patterns and potential issues in your data.
                   </p>
                 </div>
 
                 <div className="bg-slate-800/50 backdrop-blur-sm rounded-xl p-6 border border-slate-700">
-                  <h3 className="text-xl font-semibold text-white mb-3">Deep Learning</h3>
+                  <h3 className="text-xl font-semibold text-white mb-3">Pattern Recognition</h3>
                   <p className="text-gray-300">
-                    Neural networks for complex pattern recognition 
-                    and sophisticated fraud detection.
+                    Discover hidden correlations and patterns 
+                    that human analysts might miss.
                   </p>
                 </div>
 
                 <div className="bg-slate-800/50 backdrop-blur-sm rounded-xl p-6 border border-slate-700">
-                  <h3 className="text-xl font-semibold text-white mb-3">Natural Language Processing</h3>
+                  <h3 className="text-xl font-semibold text-white mb-3">Automated Insights</h3>
                   <p className="text-gray-300">
-                    AI analysis of text-based fraud indicators 
-                    in communications and documentation.
+                    AI-generated explanations and recommendations 
+                    for complex data relationships.
                   </p>
                 </div>
               </div>
@@ -233,24 +233,24 @@ const AIFinancialFraudDetectionPage: React.FC = () => {
                 <div className="bg-slate-800/50 backdrop-blur-sm rounded-xl p-6 border border-slate-700">
                   <h3 className="text-xl font-semibold text-white mb-3">Predictive Analytics</h3>
                   <p className="text-gray-300">
-                    Forecasting of fraud risks and 
-                    proactive threat prevention.
+                    Forecast future trends and outcomes based 
+                    on historical data and current patterns.
                   </p>
                 </div>
 
                 <div className="bg-slate-800/50 backdrop-blur-sm rounded-xl p-6 border border-slate-700">
-                  <h3 className="text-xl font-semibold text-white mb-3">Adaptive Learning</h3>
+                  <h3 className="text-xl font-semibold text-white mb-3">Natural Language Generation</h3>
                   <p className="text-gray-300">
-                    Continuous learning and adaptation to 
-                    new fraud patterns and techniques.
+                    Automatically generate human-readable 
+                    reports and insights from complex data.
                   </p>
                 </div>
 
                 <div className="bg-slate-800/50 backdrop-blur-sm rounded-xl p-6 border border-slate-700">
-                  <h3 className="text-xl font-semibold text-white mb-3">Ensemble Methods</h3>
+                  <h3 className="text-xl font-semibold text-white mb-3">Intelligent Alerts</h3>
                   <p className="text-gray-300">
-                    Combination of multiple AI models for 
-                    improved accuracy and reliability.
+                    Smart notifications for important changes, 
+                    trends, and actionable opportunities.
                   </p>
                 </div>
               </div>
@@ -262,58 +262,58 @@ const AIFinancialFraudDetectionPage: React.FC = () => {
         <section className="py-16 px-4 sm:px-6 lg:px-8">
           <div className="max-w-7xl mx-auto">
             <h2 className="text-3xl md:text-4xl font-bold text-white text-center mb-16">
-              Applications & Use Cases
+              Business Applications
             </h2>
 
             <div className="grid md:grid-cols-2 gap-8">
               <div className="space-y-6">
                 <div className="bg-slate-800/50 backdrop-blur-sm rounded-xl p-6 border border-slate-700">
-                  <h3 className="text-xl font-semibold text-white mb-3">Banks & Credit Unions</h3>
+                  <h3 className="text-xl font-semibold text-white mb-3">Executive Dashboards</h3>
                   <p className="text-gray-300">
-                    Comprehensive fraud protection for retail banking, 
-                    commercial banking, and credit card operations.
+                    Real-time executive dashboards with KPIs, 
+                    performance metrics, and strategic insights.
                   </p>
                 </div>
 
                 <div className="bg-slate-800/50 backdrop-blur-sm rounded-xl p-6 border border-slate-700">
-                  <h3 className="text-xl font-semibold text-white mb-3">Insurance Companies</h3>
+                  <h3 className="text-xl font-semibold text-white mb-3">Performance Management</h3>
                   <p className="text-gray-300">
-                    Detection of fraudulent insurance claims, 
-                    policy applications, and premium fraud.
+                    Track and optimize business performance 
+                    across all departments and functions.
                   </p>
                 </div>
 
                 <div className="bg-slate-800/50 backdrop-blur-sm rounded-xl p-6 border border-slate-700">
-                  <h3 className="text-xl font-semibold text-white mb-3">E-commerce Platforms</h3>
+                  <h3 className="text-xl font-semibold text-white mb-3">Strategic Planning</h3>
                   <p className="text-gray-300">
-                    Protection against payment fraud, account 
-                    takeover, and fraudulent transactions.
+                    Data-driven strategic planning with 
+                    scenario analysis and risk assessment.
                   </p>
                 </div>
               </div>
 
               <div className="space-y-6">
                 <div className="bg-slate-800/50 backdrop-blur-sm rounded-xl p-6 border border-slate-700">
-                  <h3 className="text-xl font-semibold text-white mb-3">Investment Firms</h3>
+                  <h3 className="text-xl font-semibold text-white mb-3">Operational Excellence</h3>
                   <p className="text-gray-300">
-                    Detection of investment fraud, market 
-                    manipulation, and insider trading.
+                    Optimize operations, reduce costs, and 
+                    improve efficiency through data insights.
                   </p>
                 </div>
 
                 <div className="bg-slate-800/50 backdrop-blur-sm rounded-xl p-6 border border-slate-700">
-                  <h3 className="text-xl font-semibold text-white mb-3">Government Agencies</h3>
-                    <p className="text-gray-300">
-                    Fraud detection in tax systems, social 
-                    programs, and government services.
+                  <h3 className="text-xl font-semibold text-white mb-3">Risk Management</h3>
+                  <p className="text-gray-300">
+                    Identify and mitigate risks through 
+                    predictive analytics and early warning systems.
                   </p>
                 </div>
 
                 <div className="bg-slate-800/50 backdrop-blur-sm rounded-xl p-6 border border-slate-700">
-                  <h3 className="text-xl font-semibold text-white mb-3">Healthcare Organizations</h3>
+                  <h3 className="text-xl font-semibold text-white mb-3">Innovation Insights</h3>
                   <p className="text-gray-300">
-                    Detection of healthcare fraud, insurance 
-                    fraud, and billing irregularities.
+                    Discover new opportunities and innovation 
+                    possibilities through data analysis.
                   </p>
                 </div>
               </div>
@@ -331,52 +331,52 @@ const AIFinancialFraudDetectionPage: React.FC = () => {
             <div className="grid md:grid-cols-2 gap-8">
               <div className="space-y-6">
                 <div className="bg-slate-800/50 backdrop-blur-sm rounded-xl p-6 border border-slate-700">
-                  <h3 className="text-xl font-semibold text-white mb-3">Real-time Processing</h3>
+                  <h3 className="text-xl font-semibold text-white mb-3">Data Warehouse</h3>
                   <p className="text-gray-300">
-                    High-performance streaming analytics for 
-                    real-time fraud detection and response.
+                    Scalable data storage with Snowflake, 
+                    Amazon Redshift, or Google BigQuery.
                   </p>
                 </div>
 
                 <div className="bg-slate-800/50 backdrop-blur-sm rounded-xl p-6 border border-slate-700">
-                  <h3 className="text-xl font-semibold text-white mb-3">Big Data Infrastructure</h3>
+                  <h3 className="text-xl font-semibold text-white mb-3">ETL & Data Pipeline</h3>
                   <p className="text-gray-300">
-                    Scalable data processing with Apache Spark, 
-                    Kafka, and distributed computing systems.
+                    Automated data extraction, transformation, 
+                    and loading with Apache Airflow and dbt.
                   </p>
                 </div>
 
                 <div className="bg-slate-800/50 backdrop-blur-sm rounded-xl p-6 border border-slate-700">
-                  <h3 className="text-xl font-semibold text-white mb-3">Cloud-Native Architecture</h3>
+                  <h3 className="text-xl font-semibold text-white mb-3">Machine Learning</h3>
                   <p className="text-gray-300">
-                    Scalable cloud infrastructure with 
-                    high availability and performance optimization.
+                    Advanced AI models with TensorFlow, PyTorch, 
+                    and scikit-learn for predictive analytics.
                   </p>
                 </div>
               </div>
 
               <div className="space-y-6">
                 <div className="bg-slate-800/50 backdrop-blur-sm rounded-xl p-6 border border-slate-700">
-                  <h3 className="text-xl font-semibold text-white mb-3">API Integration</h3>
+                  <h3 className="text-xl font-semibold text-white mb-3">Visualization Engine</h3>
                   <p className="text-gray-300">
-                    Seamless integration with existing financial 
-                    systems and third-party platforms.
+                    Interactive dashboards with Tableau, 
+                    Power BI, and custom visualization tools.
                   </p>
                 </div>
 
                 <div className="bg-slate-800/50 backdrop-blur-sm rounded-xl p-6 border border-slate-700">
-                  <h3 className="text-xl font-semibold text-white mb-3">Security & Encryption</h3>
+                  <h3 className="text-xl font-semibold text-white mb-3">API & Integrations</h3>
                   <p className="text-gray-300">
-                    End-to-end encryption and secure data 
-                    handling for sensitive financial information.
+                    Comprehensive APIs for third-party 
+                    integrations and custom applications.
                   </p>
                 </div>
 
                 <div className="bg-slate-800/50 backdrop-blur-sm rounded-xl p-6 border border-slate-700">
-                  <h3 className="text-xl font-semibold text-white mb-3">Compliance & Audit</h3>
+                  <h3 className="text-xl font-semibold text-white mb-3">Cloud Infrastructure</h3>
                   <p className="text-gray-300">
-                    Built-in compliance features and 
-                    comprehensive audit trails.
+                    Scalable cloud hosting with AWS, Azure, 
+                    or Google Cloud for reliability and performance.
                   </p>
                 </div>
               </div>
@@ -394,52 +394,52 @@ const AIFinancialFraudDetectionPage: React.FC = () => {
             <div className="grid md:grid-cols-2 gap-8">
               <div className="space-y-6">
                 <div className="bg-slate-800/50 backdrop-blur-sm rounded-xl p-6 border border-slate-700">
-                  <h3 className="text-xl font-semibold text-white mb-3">Fraud Prevention</h3>
+                  <h3 className="text-xl font-semibold text-white mb-3">Faster Decision Making</h3>
                   <p className="text-gray-300">
-                    Proactive prevention of fraudulent activities, 
-                    reducing financial losses and reputational damage.
+                    Real-time insights and AI-powered recommendations 
+                    enable quicker, more informed decisions.
                   </p>
                 </div>
 
                 <div className="bg-slate-800/50 backdrop-blur-sm rounded-xl p-6 border border-slate-700">
-                  <h3 className="text-xl font-semibold text-white mb-3">Cost Reduction</h3>
-                    <p className="text-gray-300">
-                    Significant reduction in fraud-related costs, 
-                    including investigation and recovery expenses.
+                  <h3 className="text-xl font-semibold text-white mb-3">Improved Efficiency</h3>
+                  <p className="text-gray-300">
+                    Automated reporting and analysis reduce 
+                    manual work and increase productivity.
                   </p>
                 </div>
 
                 <div className="bg-slate-800/50 backdrop-blur-sm rounded-xl p-6 border border-slate-700">
-                  <h3 className="text-xl font-semibold text-white mb-3">Operational Efficiency</h3>
+                  <h3 className="text-xl font-semibold text-white mb-3">Better Predictions</h3>
                   <p className="text-gray-300">
-                    Automated fraud detection processes, 
-                    reducing manual review and investigation time.
+                    AI-powered forecasting improves planning 
+                    accuracy and reduces uncertainty.
                   </p>
                 </div>
               </div>
 
               <div className="space-y-6">
                 <div className="bg-slate-800/50 backdrop-blur-sm rounded-xl p-6 border border-slate-700">
-                  <h3 className="text-xl font-semibold text-white mb-3">Customer Trust</h3>
-                  <p className="text-gray-300">
-                    Enhanced customer confidence through 
-                    robust fraud protection and security measures.
-                  </p>
-                </div>
-
-                <div className="bg-slate-800/50 backdrop-blur-sm rounded-xl p-6 border border-slate-700">
-                  <h3 className="text-xl font-semibold text-white mb-3">Regulatory Compliance</h3>
-                  <p className="text-gray-300">
-                    Meeting regulatory requirements for 
-                    fraud detection and financial security.
-                  </p>
-                </div>
-
-                <div className="bg-slate-800/50 backdrop-blur-sm rounded-xl p-6 border border-slate-700">
                   <h3 className="text-xl font-semibold text-white mb-3">Competitive Advantage</h3>
                   <p className="text-gray-300">
-                    Positioning as a secure and trustworthy 
-                    financial institution or business.
+                    Data-driven insights provide competitive 
+                    edge and market intelligence advantages.
+                  </p>
+                </div>
+
+                <div className="bg-slate-800/50 backdrop-blur-sm rounded-xl p-6 border border-slate-700">
+                  <h3 className="text-xl font-semibold text-white mb-3">Cost Optimization</h3>
+                  <p className="text-gray-300">
+                    Identify cost-saving opportunities and 
+                    optimize resource allocation through data.
+                  </p>
+                </div>
+
+                <div className="bg-slate-800/50 backdrop-blur-sm rounded-xl p-6 border border-slate-700">
+                  <h3 className="text-xl font-semibold text-white mb-3">Innovation Insights</h3>
+                  <p className="text-gray-300">
+                    Discover new opportunities and innovation 
+                    possibilities through data analysis.
                   </p>
                 </div>
               </div>
@@ -456,11 +456,11 @@ const AIFinancialFraudDetectionPage: React.FC = () => {
 
             <div className="grid md:grid-cols-4 gap-8">
               <div className="text-center">
-                <div className="bg-red-500/20 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
-                  <span className="text-2xl font-bold text-red-400">1</span>
+                <div className="bg-emerald-500/20 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+                  <span className="text-2xl font-bold text-emerald-400">1</span>
                 </div>
                 <h3 className="text-lg font-semibold text-white mb-2">Assessment</h3>
-                <p className="text-gray-300">Current fraud detection capabilities and requirements analysis</p>
+                <p className="text-gray-300">Data audit and business requirements analysis</p>
               </div>
 
               <div className="text-center">
@@ -468,7 +468,7 @@ const AIFinancialFraudDetectionPage: React.FC = () => {
                   <span className="text-2xl font-bold text-blue-400">2</span>
                 </div>
                 <h3 className="text-lg font-semibold text-white mb-2">Design</h3>
-                <p className="text-gray-300">Fraud detection strategy and system architecture design</p>
+                <p className="text-gray-300">Platform architecture and data model design</p>
               </div>
 
               <div className="text-center">
@@ -484,7 +484,7 @@ const AIFinancialFraudDetectionPage: React.FC = () => {
                   <span className="text-2xl font-bold text-purple-400">4</span>
                 </div>
                 <h3 className="text-lg font-semibold text-white mb-2">Deployment</h3>
-                <p className="text-gray-300">System launch and ongoing monitoring</p>
+                <p className="text-gray-300">Platform launch and ongoing support</p>
               </div>
             </div>
           </div>
@@ -494,33 +494,33 @@ const AIFinancialFraudDetectionPage: React.FC = () => {
         <section className="py-16 px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
-              Protect Your Financial Assets
+              Transform Your Business Intelligence
             </h2>
             <p className="text-lg text-gray-300 mb-8">
-              Ready to implement advanced AI-powered fraud detection? 
-              Our platform will help you safeguard your financial operations.
+              Ready to unlock the power of AI-powered business intelligence? 
+              Our platform will help you make smarter decisions and drive growth.
             </p>
             
             <div className="bg-slate-800/50 backdrop-blur-sm rounded-xl p-8 border border-slate-700">
-              <Shield className="mx-auto h-12 w-12 text-red-400 mb-4" />
+              <Brain className="mx-auto h-12 w-12 text-emerald-400 mb-4" />
               <h3 className="text-xl font-semibold text-white mb-4">Getting Started</h3>
               <div className="grid md:grid-cols-2 gap-6 text-left">
                 <div>
-                  <h4 className="font-semibold text-white mb-2">For Financial Institutions</h4>
+                  <h4 className="font-semibold text-white mb-2">For Small Businesses</h4>
                   <ul className="space-y-1 text-gray-300 text-sm">
-                    <li>• Comprehensive fraud detection</li>
-                    <li>• Regulatory compliance</li>
-                    <li>• Integration support</li>
-                    <li>• 24/7 monitoring</li>
+                    <li>• Basic analytics dashboard</li>
+                    <li>• Key performance indicators</li>
+                    <li>• Standard reporting</li>
+                    <li>• Training and support</li>
                   </ul>
                 </div>
                 <div>
-                  <h4 className="font-semibold text-white mb-2">For Businesses</h4>
+                  <h4 className="font-semibold text-white mb-2">For Enterprises</h4>
                   <ul className="space-y-1 text-gray-300 text-sm">
-                    <li>• Payment fraud protection</li>
-                    <li>• Account security</li>
-                    <li>• Real-time alerts</li>
-                    <li>• Custom solutions</li>
+                    <li>• Advanced AI models</li>
+                    <li>• Custom integrations</li>
+                    <li>• Dedicated support team</li>
+                    <li>• White-label solutions</li>
                   </ul>
                 </div>
               </div>
@@ -532,4 +532,4 @@ const AIFinancialFraudDetectionPage: React.FC = () => {
   );
 };
 
-export default AIFinancialFraudDetectionPage;
+export default AIPoweredBusinessIntelligencePlatformPage;
