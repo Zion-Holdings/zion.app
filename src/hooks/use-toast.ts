@@ -1,27 +1,31 @@
-import { toast as hotToast, type ToastOptions as HotToastOptions } from 'react-hot-toast';
+import React from 'react';
+import { useSnackbar, VariantType, OptionsObject } from 'notistack';
 
-export type ToastOptions = HotToastOptions & {
-  title?: string;
-  description?: string;
-  variant?: 'default' | 'destructive' | 'success';
-};
+export type ToastOptions = OptionsObject & { variant?: VariantType };
 
-export const useToast = () => ({ toast });
+export function useToast() {
+  const { enqueueSnackbar } = useSnackbar();
+  const toast = React.useCallback((message: string, options?: ToastOptions) => {
+    enqueueSnackbar(message, options);
+  }, [enqueueSnackbar]);
 
-function toast(options: ToastOptions) {
-  const message = options.description || options.title || '';
-  if (options.variant === 'destructive') {
-    hotToast.error(message, options);
-  } else if (options.variant === 'success') {
-    hotToast.success(message, options);
-  } else {
-    hotToast(message, options);
-  }
+  toast.error = (msg: string) => enqueueSnackbar(msg, { variant: 'error' });
+  toast.success = (msg: string) => enqueueSnackbar(msg, { variant: 'success' });
+
+  return { toast } as { toast: typeof toast };
 }
 
-toast.title = (title: string) => hotToast(title);
-toast.description = (description: string) => hotToast(description);
-toast.error = (error: string) => hotToast.error(error);
-toast.success = (message: string) => hotToast.success(message);
+let globalEnqueue: (msg: string, opts?: OptionsObject) => void;
 
-export { toast };
+export function ToastInitializer() {
+  const { enqueueSnackbar } = useSnackbar();
+  React.useEffect(() => {
+    globalEnqueue = enqueueSnackbar;
+  }, [enqueueSnackbar]);
+  return null;
+}
+
+export const toast = {
+  error: (msg: string) => globalEnqueue?.(msg, { variant: 'error' }),
+  success: (msg: string) => globalEnqueue?.(msg, { variant: 'success' }),
+};

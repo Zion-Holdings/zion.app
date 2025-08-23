@@ -41,31 +41,55 @@ const queryClient = new QueryClient({
   },
 });
 
-const rootElement = document.getElementById('root');
+function GlobalErrorFallback({ error, resetErrorBoundary }: { error: Error; resetErrorBoundary: () => void }) {
+  const { t } = useTranslation();
+  React.useEffect(() => {
+    captureException(error);
+  }, [error]);
+  return (
+    <div role="alert" className="p-4 text-center">
+      <p className="mb-2">{t('error_boundary.message', 'Something went wrong.')}</p>
+      <button className="rounded bg-blue-600 px-4 py-2 text-white" onClick={resetErrorBoundary}>
+        {t('error_boundary.retry', 'Retry')}
+      </button>
+    </div>
+  );
+}
 
-function renderApp() {
-  const app = (
+try {
+  console.log("main.tsx: Before ReactDOM.createRoot");
+  // Render the app with proper provider structure
+  ReactDOM.createRoot(document.getElementById('root')!).render(
     <React.StrictMode>
       <HelmetProvider>
         <QueryClientProvider client={queryClient}>
+          <SnackbarProvider maxSnack={3}>
+            <ToastInitializer />
           <WhitelabelProvider>
             <Router>
               <AuthProvider>
                 <NotificationProvider>
                   <AnalyticsProvider>
                     <LanguageProvider authState={{ isAuthenticated: false, user: null }}>
-                      <ViewModeProvider>
-                        <AppLayout>
-                          <App />
-                        </AppLayout>
-                      </ViewModeProvider>
-                      <LanguageDetectionPopup />
+                      <ErrorBoundary FallbackComponent={GlobalErrorFallback}>
+                        <ViewModeProvider>
+                          <CartProvider>
+                            <ReferralMiddleware>
+                              <AppLayout>
+                                <App />
+                              </AppLayout>
+                            </ReferralMiddleware>
+                          </CartProvider>
+                        </ViewModeProvider>
+                        <LanguageDetectionPopup />
+                      </ErrorBoundary>
                     </LanguageProvider>
                   </AnalyticsProvider>
                 </NotificationProvider>
               </AuthProvider>
             </Router>
           </WhitelabelProvider>
+          </SnackbarProvider>
         </QueryClientProvider>
       </HelmetProvider>
     </React.StrictMode>
