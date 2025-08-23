@@ -163,7 +163,13 @@ const EnhancedSearch: React.FC<SearchProps> = ({
       addToSearchHistory(query);
       setShowResults(false);
     }
-  };
+  }, [router, handleSearch]);
+
+  // Handle quick action click
+  const handleQuickAction = useCallback((action: string) => {
+    router.push(action);
+    setIsOpen(false);
+  }, [router]);
 
   // Add search to history
   const addToSearchHistory = (searchTerm: string) => {
@@ -274,8 +280,68 @@ const EnhancedSearch: React.FC<SearchProps> = ({
                       <category.icon className="w-3 h-3" />
                       {category.name}
                     </button>
-                  ))}
+                  )}
+                  <div className="flex-shrink-0 pr-4">
+                    <button
+                      onClick={() => handleSearch()}
+                      disabled={isSearching || !query.trim()}
+                      className="px-6 py-2 bg-gradient-to-r from-cyan-500 to-blue-500 text-white rounded-lg font-medium hover:from-cyan-600 hover:to-blue-600 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
+                    >
+                      {isSearching ? 'Searching...' : 'Search'}
+                    </button>
+                  </div>
                 </div>
+
+                {/* Search Suggestions */}
+                <AnimatePresence>
+                  {showSuggestions && suggestions.length > 0 && (
+                    <motion.div
+                      initial={{ opacity: 0, y: -10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      exit={{ opacity: 0, y: -10 }}
+                      className="absolute top-full left-0 right-0 mt-2 bg-gray-900 border border-gray-700 rounded-xl shadow-2xl overflow-hidden z-10"
+                    >
+                      {/* Quick Actions */}
+                      <div className="p-4 border-b border-gray-700">
+                        <h3 className="text-sm font-medium text-gray-400 mb-3">Quick Actions</h3>
+                        <div className="grid grid-cols-2 gap-2">
+                          {quickActions.map((action) => (
+                            <button
+                              key={action.name}
+                              onClick={() => handleQuickAction(action.action)}
+                              className="flex items-center space-x-2 p-2 text-sm text-gray-300 hover:text-white hover:bg-gray-800 rounded-lg transition-colors"
+                            >
+                              {action.icon}
+                              <span>{action.name}</span>
+                            </button>
+                          ))}
+                        </div>
+                      </div>
+
+                      {/* Suggestions */}
+                      <div className="max-h-64 overflow-y-auto">
+                        {suggestions.map((suggestion) => (
+                          <button
+                            key={suggestion.id}
+                            onClick={() => handleSuggestionClick(suggestion)}
+                            className="w-full flex items-center space-x-3 p-3 text-left hover:bg-gray-800 transition-colors"
+                          >
+                            <div className="text-gray-400">
+                              {suggestion.icon}
+                            </div>
+                            <div className="flex-1">
+                              <div className="text-white">{suggestion.text}</div>
+                              <div className="text-sm text-gray-400 capitalize">
+                                {suggestion.type} • {suggestion.category}
+                              </div>
+                            </div>
+                            <ArrowRight className="w-4 h-4 text-gray-400" />
+                          </button>
+                        ))}
+                      </div>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
               </div>
             )}
 

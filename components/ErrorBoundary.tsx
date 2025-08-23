@@ -168,6 +168,10 @@ class ErrorBoundary extends Component<Props, State> {
     return suggestions;
   }
 
+  private toggleDetails = () => {
+    this.setState(prev => ({ showDetails: !prev.showDetails }));
+  };
+
   render() {
     if (this.state.hasError) {
       if (this.props.fallback) {

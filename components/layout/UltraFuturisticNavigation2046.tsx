@@ -11,6 +11,8 @@ import {
 } from 'lucide-react';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
+import EnhancedSearch from '../EnhancedSearch';
+import DarkModeToggle from '../DarkModeToggle';
 
 interface NavigationItem {
   label: string;
