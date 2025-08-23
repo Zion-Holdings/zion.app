@@ -1,3 +1,6 @@
+<<<<<<< HEAD
+export default function Page(){return null}
+=======
 import React from 'react';
 import Head from 'next/head';
 import UltraFuturisticBackground from '../components/ui/UltraFuturisticBackground';
@@ -99,6 +102,7 @@ export default function AboutPage() {
 
 import React from 'react';
 =======
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-202e
 import Head from 'next/head';
 import Card from '../components/ui/Card';
 import Button from '../components/ui/Button';
@@ -146,10 +150,17 @@ export default function AboutPage() {
   ];
 
   const achievements = [
+<<<<<<< HEAD
+    { number: '500+', label: 'Micro SaaS Services', color: 'text-cyan-400' },
+    { number: '5000%+', label: 'Average ROI', color: 'text-fuchsia-400' },
+    { number: '99.99%', label: 'Uptime Guarantee', color: 'text-green-400' },
+    { number: '21', label: 'Day Free Trials', color: 'text-blue-400' },
+=======
     { number: '600+', label: 'Services', color: 'text-cyan-400' },
     { number: '1000%', label: 'ROI', color: 'text-fuchsia-400' },
     { number: '24/7', label: 'Support', color: 'text-green-400' },
     { number: '99.9%', label: 'SLA', color: 'text-blue-400' },
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-202e
   ];
 
   const contactInfo = {
@@ -160,6 +171,23 @@ export default function AboutPage() {
   };
 
   return (
+<<<<<<< HEAD
+    <div className="container mx-auto px-4 py-10">
+      <h1 className="text-2xl font-semibold">About Zion</h1>
+import type { NextPage } from 'next';
+import Head from 'next/head';
+
+const About: NextPage = () => (
+  <div className="py-10">
+    <Head><title>About - Zion</title></Head>
+    <h1 className="text-2xl font-semibold text-white">About</h1>
+    <p className="text-white/80 mt-2">About page content coming soon.</p>
+  </div>
+);
+
+      <p className="mt-2 text-gray-600 dark:text-gray-300">Information coming soon.</p>
+    </div>
+=======
       {/* Mission & Vision */}
 =======
     <>
@@ -190,6 +218,7 @@ export default function AboutPage() {
         </div>
       </section>
 
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-202e
       <section className="section-padding bg-gradient-cursor-accent">
         <div className="container-cursor">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-20">
