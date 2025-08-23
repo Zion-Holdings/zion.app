@@ -1,23 +1,12 @@
-import React, { useState, useEffect, useCallback, useRef } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { 
-  Smartphone, Tablet, Monitor, Wifi, Battery, 
-  Hand, RotateCw, ZoomIn, ZoomOut, CheckCircle, AlertTriangle
+  Smartphone, Tablet, Monitor, RotateCcw, 
+  Wifi, WifiOff, Signal, SignalHigh, 
+  Mouse, Hand
 } from 'lucide-react';
 
-interface MobileOptimizerProps {
-  showPanel?: boolean;
-  autoOptimize?: boolean;
-}
-
-interface DeviceInfo {
-  type: 'mobile' | 'tablet' | 'desktop';
-  orientation: 'portrait' | 'landscape';
-  screenSize: { width: number; height: number };
-  pixelRatio: number;
-  touchSupport: boolean;
-  userAgent: string;
-}
+// TouchEvent types are already defined in DOM
 
 interface MobileOptimizerProps {
   children: React.ReactNode;
@@ -507,13 +496,16 @@ const MobileOptimizer: React.FC<MobileOptimizerProps> = ({
                 </div>
               </div>
 
-              {/* Touch Gestures */}
-              <div className="mb-6 p-4 bg-purple-500/20 border border-purple-500/30 rounded-lg">
-                <h3 className="text-sm font-medium text-purple-400 mb-2">Recent Gestures</h3>
-                <div className="space-y-1">
-                  {touchGestures.map((gesture, index) => (
-                    <div key={index} className="text-xs text-gray-300">
-                      {gesture.type} {gesture.direction && `(${gesture.direction})`}
+              {/* Touch Support */}
+              <div className="flex items-center justify-between p-3 bg-white/5 rounded-lg">
+                <div className="flex items-center gap-3">
+                  <div className="w-8 h-8 bg-gradient-to-r from-orange-500 to-red-600 rounded-lg flex items-center justify-center">
+                    {touchSupport ? <Hand className="w-4 h-4 text-white" /> : <Mouse className="w-4 h-4 text-white" />}
+                  </div>
+                  <div>
+                    <div className="text-white font-medium text-sm">Input Method</div>
+                    <div className="text-gray-400 text-xs">
+                      {touchSupport ? 'Touch Enabled' : 'Mouse/Keyboard'}
                     </div>
                   ))}
                 </div>

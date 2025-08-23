@@ -1,39 +1,183 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  poweredByHeader: false,
-  trailingSlash: false,
+  // Enable React strict mode for better development experience
   reactStrictMode: true,
-  productionBrowserSourceMaps: false,
   
-  // Environment configuration
-  env: {
-    NEXT_PUBLIC_APP_URL: process.env.NEXT_PUBLIC_APP_URL || 'http://localhost:3000',
-    NEXT_PUBLIC_SUPABASE_URL: process.env.NEXT_PUBLIC_SUPABASE_URL,
-    NEXT_PUBLIC_SUPABASE_ANON_KEY: process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY,
-  },
-
-module.exports = {
-  reactStrictMode: true,
-  images: {
-    domains: ["localhost"],
-  },
+  // Disable TypeScript checking during build
   typescript: {
     ignoreBuildErrors: true,
   },
-  eslint: {
-    ignoreDuringBuilds: true,
+  
+  // Enable experimental features for better performance
+  experimental: {
+    optimizePackageImports: ['lucide-react', 'framer-motion'],
+    optimizeCss: true,
   },
-  webpack: (config) => {
-    // Support TS path alias '@/...' by mapping it to the project root
-    config.resolve = config.resolve || {};
-    config.resolve.alias = config.resolve.alias || {};
-    config.resolve.alias['@'] = path.resolve(__dirname);
 
-    // Ensure plugins array exists (Netlify Next.js Runtime v4 may expect this)
-    if (!Array.isArray(config.plugins)) {
-      config.plugins = [];
+
+
+  // Image optimization
+  images: {
+    formats: ['image/webp', 'image/avif'],
+    deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048, 3840],
+    imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
+    minimumCacheTTL: 60,
+    dangerouslyAllowSVG: true,
+    contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
+  },
+
+  // Compression and optimization
+  compress: true,
+  poweredByHeader: false,
+  generateEtags: false,
+
+  // Bundle analyzer
+  webpack: (config, { dev, isServer }) => {
+    // Optimize bundle splitting
+    if (!dev && !isServer) {
+      config.optimization.splitChunks = {
+        chunks: 'all',
+        cacheGroups: {
+          vendor: {
+            test: /[\\/]node_modules[\\/]/,
+            name: 'vendors',
+            chunks: 'all',
+            priority: 10,
+          },
+          common: {
+            name: 'common',
+            minChunks: 2,
+            chunks: 'all',
+            priority: 5,
+            reuseExistingChunk: true,
+          },
+        },
+      };
     }
 
+    // SVG optimization
+    config.module.rules.push({
+      test: /\.svg$/,
+      use: ['@svgr/webpack'],
+    });
+
     return config;
+  },
+
+  // Headers for performance
+  async headers() {
+    return [
+      {
+        source: '/(.*)',
+        headers: [
+          {
+            key: 'X-Content-Type-Options',
+            value: 'nosniff',
+          },
+          {
+            key: 'X-Frame-Options',
+            value: 'DENY',
+          },
+          {
+            key: 'X-XSS-Protection',
+            value: '1; mode=block',
+          },
+          {
+            key: 'Referrer-Policy',
+            value: 'origin-when-cross-origin',
+          },
+        ],
+      },
+      {
+        source: '/static/(.*)',
+        headers: [
+          {
+            key: 'Cache-Control',
+            value: 'public, max-age=31536000, immutable',
+          },
+        ],
+      },
+    ];
+  },
+
+  // Redirects for better UX
+  async redirects() {
+    return [
+      {
+        source: '/home',
+        destination: '/',
+        permanent: true,
+      },
+      {
+        source: '/services/ai',
+        destination: '/ai-services',
+        permanent: true,
+      },
+      {
+        source: '/services/quantum',
+        destination: '/quantum-services',
+        permanent: true,
+      },
+    ];
+  },
+
+  // Enhanced compiler options
+  compiler: {
+    removeConsole: process.env.NODE_ENV === 'production',
+    styledComponents: true,
+  },
+
+  // TypeScript
+  typescript: {
+    ignoreBuildErrors: false,
+  },
+
+  // ESLint
+  eslint: {
+    ignoreDuringBuilds: false,
+  },
+
+  // Output configuration
+  output: 'standalone',
+  trailingSlash: false,
+  skipTrailingSlashRedirect: true,
+};
+
+  // Enhanced compress
+  compress: true,
+
+  // Enhanced devIndicators
+  devIndicators: {
+    buildActivity: true,
+    buildActivityPosition: 'bottom-right',
+  },
+
+  // Enhanced onDemandEntries
+  onDemandEntries: {
+    maxInactiveAge: 25 * 1000,
+    pagesBufferLength: 2,
+  },
+
+  // Enhanced pageExtensions
+  pageExtensions: ['tsx', 'ts', 'jsx', 'js'],
+
+  // Enhanced typescript
+  typescript: {
+    ignoreBuildErrors: false,
+  },
+
+  // Enhanced eslint
+  eslint: {
+    ignoreDuringBuilds: false,
+  },
+
+  // Enhanced swcMinify
+  swcMinify: true,
+
+  // Enhanced modularizeImports
+  modularizeImports: {
+    'lucide-react': {
+      transform: 'lucide-react/dist/esm/icons/{{kebabCase}}',
+    },
   },
 };

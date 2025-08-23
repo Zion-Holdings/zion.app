@@ -1,196 +1,261 @@
 import React from 'react';
-import SEO from '../components/SEO';
+import Layout from '../components/layout/Layout';
 import { motion } from 'framer-motion';
-import { 
-  Heart, Brain, Zap, Target, CheckCircle, ArrowRight,
-  Cpu, Database, Users, Globe, MessageCircle, TrendingUp
-} from 'lucide-react';
-import Link from 'next/link';
+import { Heart, Users, Target, Zap, Shield, Globe, Brain, BarChart3 } from 'lucide-react';
 
 const AutonomousCustomerSuccess2043: React.FC = () => {
-  const features = [
-    {
-      icon: <Heart className="w-8 h-8" />,
-      title: 'AI-Powered Customer Insights',
-      description: 'Deep understanding of customer needs and behavior patterns',
-      color: 'from-pink-500 to-purple-500'
-    },
-    {
-      icon: <Brain className="w-8 h-8" />,
-      title: 'Autonomous Support Systems',
-      description: 'Self-learning customer support with intelligent problem resolution',
-      color: 'from-purple-500 to-pink-500'
-    },
-    {
-      icon: <Zap className="w-8 h-8" />,
-      title: 'Predictive Customer Success',
-      description: 'Anticipate customer needs and prevent churn before it happens',
-      color: 'from-cyan-500 to-blue-500'
-    },
-    {
-      icon: <TrendingUp className="w-8 h-8" />,
-      title: 'Automated Success Metrics',
-      description: 'Real-time tracking and optimization of customer success metrics',
-      color: 'from-green-500 to-emerald-500'
-    }
-  ];
-
-  const useCases = [
-    'Customer Onboarding',
-    'Support Automation',
-    'Success Metrics',
-    'Churn Prevention',
-    'Customer Engagement',
-    'Revenue Optimization'
-  ];
-
   return (
-    <div className="min-h-screen bg-black text-white">
-      <SEO 
-        title="Autonomous Customer Success 2043 - AI-Powered Customer Success Platform"
-        description="Revolutionary autonomous customer success platform for 2024. AI-powered insights, automated support, and predictive customer success management."
-        keywords={["autonomous customer success", "customer success", "AI customer support", "customer engagement", "churn prevention", "2024"]}
-      />
+    <Layout>
+      <div className="min-h-screen bg-gradient-to-br from-black via-pink-900/20 to-black">
+        {/* Hero Section */}
+        <section className="relative py-20 px-4 sm:px-6 lg:px-8">
+          <div className="max-w-7xl mx-auto text-center">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+            >
+              <div className="inline-flex items-center px-4 py-2 rounded-full bg-pink-500/10 border border-pink-500/20 text-pink-400 text-sm font-medium mb-6">
+                <Heart className="w-4 h-4 mr-2" />
+                Autonomous Customer Success 2043
+              </div>
+              <h1 className="text-5xl md:text-7xl font-bold text-white mb-6">
+                Autonomous
+                <span className="block bg-gradient-to-r from-pink-400 via-purple-400 to-violet-400 bg-clip-text text-transparent">
+                  Customer Success
+                </span>
+                Platform
+              </h1>
+              <p className="text-xl text-gray-300 max-w-3xl mx-auto mb-8">
+                Revolutionize customer success with AI-powered autonomous systems. 
+                Proactive engagement, predictive insights, and personalized experiences.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <button className="px-8 py-4 bg-gradient-to-r from-pink-500 to-purple-500 text-white font-semibold rounded-lg hover:from-pink-600 hover:to-purple-600 transition-all duration-300 transform hover:scale-105">
+                  Start Free Trial
+                </button>
+                <button className="px-8 py-4 border border-pink-500/30 text-pink-400 font-semibold rounded-lg hover:bg-pink-500/10 transition-all duration-300">
+                  Watch Demo
+                </button>
+              </div>
+            </motion.div>
+          </div>
+        </section>
 
-      {/* Hero Section */}
-      <section className="pt-32 pb-20 px-4 relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-pink-500/10 via-purple-500/10 to-cyan-500/10"></div>
-        <div className="max-w-6xl mx-auto relative z-10">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="text-center"
-          >
-            <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-pink-400 via-purple-400 to-cyan-400 bg-clip-text text-transparent">
-              Autonomous Customer Success 2043
-            </h1>
-            <p className="text-xl md:text-2xl text-gray-300 mb-8 max-w-4xl mx-auto">
-              Revolutionary autonomous customer success platform with AI-powered insights, 
-              automated support systems, and predictive customer success management.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link href="/contact">
-                <motion.button
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  className="px-8 py-4 bg-gradient-to-r from-pink-500 to-purple-600 text-white font-semibold rounded-xl hover:from-pink-600 hover:to-purple-700 transition-all duration-300 shadow-lg shadow-pink-500/25"
+        {/* Features Section */}
+        <section className="py-20 px-4 sm:px-6 lg:px-8">
+          <div className="max-w-7xl mx-auto">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+              className="text-center mb-16"
+            >
+              <h2 className="text-4xl font-bold text-white mb-4">
+                Revolutionary Customer Success Features
+              </h2>
+              <p className="text-xl text-gray-400 max-w-2xl mx-auto">
+                Advanced capabilities that transform customer relationships and drive success
+              </p>
+            </motion.div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {[
+                {
+                  icon: <Brain className="w-8 h-8" />,
+                  title: "AI-Powered Insights",
+                  description: "Deep learning algorithms that predict customer needs and behavior patterns",
+                  color: "from-pink-500 to-purple-500"
+                },
+                {
+                  icon: <Target className="w-8 h-8" />,
+                  title: "Proactive Engagement",
+                  description: "Automated outreach and engagement before customers even realize they need help",
+                  color: "from-blue-500 to-cyan-500"
+                },
+                {
+                  icon: <Zap className="w-8 h-8" />,
+                  title: "Real-time Response",
+                  description: "Instant customer support and issue resolution with autonomous systems",
+                  color: "from-emerald-500 to-teal-500"
+                },
+                {
+                  icon: <Users className="w-8 h-8" />,
+                  title: "Personalized Experiences",
+                  description: "Tailored customer journeys and recommendations based on individual preferences",
+                  color: "from-orange-500 to-red-500"
+                },
+                {
+                  icon: <Shield className="w-8 h-8" />,
+                  title: "Predictive Analytics",
+                  description: "Forecast customer churn and identify expansion opportunities",
+                  color: "from-indigo-500 to-purple-500"
+                },
+                {
+                  icon: <Globe className="w-8 h-8" />,
+                  title: "Global Support",
+                  description: "24/7 multilingual customer support across all time zones",
+                  color: "from-green-500 to-emerald-500"
+                }
+              ].map((feature, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: index * 0.1 }}
+                  viewport={{ once: true }}
+                  className="bg-gradient-to-br from-gray-900/50 to-gray-800/30 p-8 rounded-2xl border border-gray-700/50 hover:border-pink-500/50 transition-all duration-300"
                 >
-                  Get Started
-                </motion.button>
-              </Link>
-              <Link href="/ai-services">
-                <motion.button
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  className="px-8 py-4 border border-pink-500/50 text-pink-400 font-semibold rounded-xl hover:bg-pink-500/10 transition-all duration-300"
-                >
-                  Learn More
-                </motion.button>
-              </Link>
+                  <div className={`inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-gradient-to-r ${feature.color} mb-6`}>
+                    {feature.icon}
+                  </div>
+                  <h3 className="text-xl font-semibold text-white mb-4">{feature.title}</h3>
+                  <p className="text-gray-400">{feature.description}</p>
+                </motion.div>
+              ))}
             </div>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* Features Section */}
-      <section className="py-20 px-4">
-        <div className="max-w-6xl mx-auto">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="text-center mb-16"
-          >
-            <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-pink-400 to-purple-400 bg-clip-text text-transparent">
-              Autonomous Features
-            </h2>
-            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              Experience the future of customer success with autonomous AI systems
-            </p>
-          </motion.div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-8">
-            {features.map((feature, index) => (
-              <motion.div
-                key={feature.title}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: index * 0.1 }}
-                className="p-8 rounded-2xl border border-white/10 bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-sm hover:border-pink-500/30 transition-all duration-300"
-              >
-                <div className={`w-16 h-16 rounded-2xl bg-gradient-to-r ${feature.color} p-4 mb-6 flex items-center justify-center`}>
-                  {feature.icon}
-                </div>
-                <h3 className="text-2xl font-bold mb-4 text-white">{feature.title}</h3>
-                <p className="text-gray-300 text-lg">{feature.description}</p>
-              </motion.div>
-            ))}
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* Use Cases Section */}
-      <section className="py-20 px-4 bg-gradient-to-br from-pink-500/5 to-purple-500/5">
-        <div className="max-w-6xl mx-auto">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="text-center mb-16"
-          >
-            <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-pink-400 to-purple-400 bg-clip-text text-transparent">
-              Use Cases
-            </h2>
-            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              Transform your customer success with autonomous AI
-            </p>
-          </motion.div>
+        {/* Customer Success Dashboard Preview */}
+        <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-pink-900/10 to-purple-900/10">
+          <div className="max-w-7xl mx-auto">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+              className="text-center mb-16"
+            >
+              <h2 className="text-4xl font-bold text-white mb-4">
+                Customer Success Dashboard
+              </h2>
+              <p className="text-xl text-gray-400 max-w-2xl mx-auto">
+                Real-time customer success metrics and autonomous engagement monitoring
+              </p>
+            </motion.div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {useCases.map((useCase, index) => (
-              <motion.div
-                key={useCase}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: index * 0.1 }}
-                className="flex items-center space-x-4 p-6 rounded-xl border border-white/10 bg-white/5 hover:border-pink-500/30 transition-all duration-300"
-              >
-                <CheckCircle className="w-6 h-6 text-pink-400 flex-shrink-0" />
-                <span className="text-white font-medium">{useCase}</span>
-              </motion.div>
-            ))}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.95 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+              className="bg-gradient-to-br from-gray-900/50 to-gray-800/30 p-8 rounded-2xl border border-gray-700/50"
+            >
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+                {[
+                  { metric: "Customer Satisfaction", value: "96.8%", change: "+2.3%", color: "text-green-400" },
+                  { metric: "Retention Rate", value: "94.2%", change: "+1.8%", color: "text-blue-400" },
+                  { metric: "Response Time", value: "<30s", change: "-15s", color: "text-purple-400" },
+                  { metric: "Success Score", value: "92.5%", change: "+3.1%", color: "text-pink-400" }
+                ].map((stat, index) => (
+                  <div key={index} className="text-center p-4 bg-gray-800/50 rounded-xl">
+                    <p className="text-gray-400 text-sm mb-2">{stat.metric}</p>
+                    <p className={`text-2xl font-bold ${stat.color}`}>{stat.value}</p>
+                    <p className="text-green-400 text-sm">{stat.change}</p>
+                  </div>
+                ))}
+              </div>
+              
+              <div className="text-center">
+                <p className="text-gray-400 mb-4">Autonomous customer success monitoring with proactive engagement</p>
+                <button className="px-6 py-3 bg-pink-500/20 border border-pink-500/30 text-pink-400 rounded-lg hover:bg-pink-500/30 transition-all duration-300">
+                  View Customer Dashboard
+                </button>
+              </div>
+            </motion.div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* CTA Section */}
-      <section className="py-20 px-4">
-        <div className="max-w-4xl mx-auto text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-          >
-            <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-pink-400 to-purple-400 bg-clip-text text-transparent">
-              Ready for Autonomous Success?
-            </h2>
-            <p className="text-xl text-gray-300 mb-8">
-              Transform your customer success with Zion Tech Group
-            </p>
-            <Link href="/contact">
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="px-8 py-4 bg-gradient-to-r from-pink-500 to-purple-600 text-white font-semibold rounded-xl hover:from-pink-600 hover:to-purple-700 transition-all duration-300 shadow-lg shadow-pink-500/25"
-              >
-                Start Your Journey
-              </motion.button>
-            </Link>
-          </motion.div>
-        </div>
-      </section>
-    </div>
+        {/* Use Cases */}
+        <section className="py-20 px-4 sm:px-6 lg:px-8">
+          <div className="max-w-7xl mx-auto">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+              className="text-center mb-16"
+            >
+              <h2 className="text-4xl font-bold text-white mb-4">
+                Transform Customer Relationships
+              </h2>
+              <p className="text-xl text-gray-400 max-w-2xl mx-auto">
+                Revolutionary use cases that drive customer success and loyalty
+              </p>
+            </motion.div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              {[
+                {
+                  title: "SaaS Customer Success",
+                  description: "Automated onboarding, feature adoption tracking, and proactive support for SaaS customers",
+                  color: "from-green-500 to-emerald-500"
+                },
+                {
+                  title: "Enterprise Support",
+                  description: "Large-scale customer success management with AI-powered insights and automation",
+                  color: "from-blue-500 to-cyan-500"
+                },
+                {
+                  title: "E-commerce Success",
+                  description: "Personalized shopping experiences, order tracking, and customer retention optimization",
+                  color: "from-purple-500 to-pink-500"
+                },
+                {
+                  title: "Financial Services",
+                  description: "Proactive financial advice, risk management, and personalized banking experiences",
+                  color: "from-orange-500 to-red-500"
+                }
+              ].map((useCase, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, x: index % 2 === 0 ? -20 : 20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.6, delay: index * 0.1 }}
+                  viewport={{ once: true }}
+                  className="bg-gradient-to-br from-gray-900/50 to-gray-800/30 p-8 rounded-2xl border border-gray-700/50"
+                >
+                  <div className={`inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-gradient-to-r ${useCase.color} mb-6`}>
+                    <Target className="w-8 h-8" />
+                  </div>
+                  <h3 className="text-2xl font-semibold text-white mb-4">{useCase.title}</h3>
+                  <p className="text-gray-400 text-lg">{useCase.description}</p>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* CTA Section */}
+        <section className="py-20 px-4 sm:px-6 lg:px-8">
+          <div className="max-w-4xl mx-auto text-center">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+            >
+              <h2 className="text-4xl font-bold text-white mb-6">
+                Ready to Transform Customer Success?
+              </h2>
+              <p className="text-xl text-gray-400 mb-8">
+                Join the autonomous customer success revolution. Start your transformation today.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <button className="px-8 py-4 bg-gradient-to-r from-pink-500 to-purple-500 text-white font-semibold rounded-lg hover:from-pink-600 hover:to-purple-600 transition-all duration-300 transform hover:scale-105">
+                  Get Started Now
+                </button>
+                <button className="px-8 py-4 border border-pink-500/30 text-pink-400 font-semibold rounded-lg hover:bg-pink-500/10 transition-all duration-300">
+                  Contact Sales
+                </button>
+              </div>
+            </motion.div>
+          </div>
+        </section>
+      </div>
+    </Layout>
   );
 };
 

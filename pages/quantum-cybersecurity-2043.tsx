@@ -1,196 +1,261 @@
 import React from 'react';
-import SEO from '../components/SEO';
+import Layout from '../components/layout/Layout';
 import { motion } from 'framer-motion';
-import { 
-  Shield, Atom, Zap, Target, CheckCircle, ArrowRight,
-  Cpu, Database, Lock, Globe, Users, Network
-} from 'lucide-react';
-import Link from 'next/link';
+import { Shield, Atom, Lock, Target, Users, Globe, Cpu, Network } from 'lucide-react';
 
 const QuantumCybersecurity2043: React.FC = () => {
-  const features = [
-    {
-      icon: <Shield className="w-8 h-8" />,
-      title: 'Quantum-Resistant Security',
-      description: 'Advanced cryptographic algorithms resistant to quantum attacks',
-      color: 'from-red-500 to-orange-500'
-    },
-    {
-      icon: <Atom className="w-8 h-8" />,
-      title: 'Quantum Key Distribution',
-      description: 'Unbreakable encryption using quantum mechanics principles',
-      color: 'from-blue-500 to-cyan-500'
-    },
-    {
-      icon: <Zap className="w-8 h-8" />,
-      title: 'AI-Powered Threat Detection',
-      description: 'Intelligent threat detection and response systems',
-      color: 'from-purple-500 to-pink-500'
-    },
-    {
-      icon: <Network className="w-8 h-8" />,
-      title: 'Zero Trust Architecture',
-      description: 'Comprehensive security framework with continuous verification',
-      color: 'from-green-500 to-emerald-500'
-    }
-  ];
-
-  const useCases = [
-    'Data Protection',
-    'Network Security',
-    'Identity Management',
-    'Threat Detection',
-    'Compliance & Governance',
-    'Incident Response'
-  ];
-
   return (
-    <div className="min-h-screen bg-black text-white">
-      <SEO 
-        title="Quantum Cybersecurity 2043 - Quantum-Resistant Security Platform"
-        description="Revolutionary quantum cybersecurity platform for 2024. Quantum-resistant encryption, AI-powered threat detection, and zero trust architecture."
-        keywords={["quantum cybersecurity", "quantum security", "cybersecurity", "quantum encryption", "threat detection", "2024"]}
-      />
+    <Layout>
+      <div className="min-h-screen bg-gradient-to-br from-black via-red-900/20 to-black">
+        {/* Hero Section */}
+        <section className="relative py-20 px-4 sm:px-6 lg:px-8">
+          <div className="max-w-7xl mx-auto text-center">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+            >
+              <div className="inline-flex items-center px-4 py-2 rounded-full bg-red-500/10 border border-red-500/20 text-red-400 text-sm font-medium mb-6">
+                <Shield className="w-4 h-4 mr-2" />
+                Quantum Cybersecurity 2043
+              </div>
+              <h1 className="text-5xl md:text-7xl font-bold text-white mb-6">
+                Quantum-Resistant
+                <span className="block bg-gradient-to-r from-red-400 via-orange-400 to-yellow-400 bg-clip-text text-transparent">
+                  Cybersecurity
+                </span>
+                Platform
+              </h1>
+              <p className="text-xl text-gray-300 max-w-3xl mx-auto mb-8">
+                Protect your digital assets with next-generation quantum-resistant cybersecurity. 
+                Advanced threat detection, encryption, and autonomous security response.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <button className="px-8 py-4 bg-gradient-to-r from-red-500 to-orange-500 text-white font-semibold rounded-lg hover:from-red-600 hover:to-orange-600 transition-all duration-300 transform hover:scale-105">
+                  Start Free Trial
+                </button>
+                <button className="px-8 py-4 border border-red-500/30 text-red-400 font-semibold rounded-lg hover:bg-red-500/10 transition-all duration-300">
+                  Watch Demo
+                </button>
+              </div>
+            </motion.div>
+          </div>
+        </section>
 
-      {/* Hero Section */}
-      <section className="pt-32 pb-20 px-4 relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-red-500/10 via-orange-500/10 to-blue-500/10"></div>
-        <div className="max-w-6xl mx-auto relative z-10">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="text-center"
-          >
-            <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-red-400 via-orange-400 to-blue-400 bg-clip-text text-transparent">
-              Quantum Cybersecurity 2043
-            </h1>
-            <p className="text-xl md:text-2xl text-gray-300 mb-8 max-w-4xl mx-auto">
-              Revolutionary quantum cybersecurity platform with quantum-resistant encryption, 
-              AI-powered threat detection, and zero trust architecture for ultimate protection.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link href="/contact">
-                <motion.button
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  className="px-8 py-4 bg-gradient-to-r from-red-500 to-orange-600 text-white font-semibold rounded-xl hover:from-red-600 hover:to-orange-700 transition-all duration-300 shadow-lg shadow-red-500/25"
+        {/* Features Section */}
+        <section className="py-20 px-4 sm:px-6 lg:px-8">
+          <div className="max-w-7xl mx-auto">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+              className="text-center mb-16"
+            >
+              <h2 className="text-4xl font-bold text-white mb-4">
+                Revolutionary Security Features
+              </h2>
+              <p className="text-xl text-gray-400 max-w-2xl mx-auto">
+                Advanced capabilities that provide unprecedented protection against quantum threats
+              </p>
+            </motion.div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {[
+                {
+                  icon: <Atom className="w-8 h-8" />,
+                  title: "Quantum-Resistant Encryption",
+                  description: "Post-quantum cryptography algorithms that withstand quantum computing attacks",
+                  color: "from-red-500 to-orange-500"
+                },
+                {
+                  icon: <Shield className="w-8 h-8" />,
+                  title: "Advanced Threat Detection",
+                  description: "AI-powered threat detection with real-time response and mitigation",
+                  color: "from-blue-500 to-cyan-500"
+                },
+                {
+                  icon: <Lock className="w-8 h-8" />,
+                  title: "Zero Trust Security",
+                  description: "Comprehensive zero trust architecture with continuous verification",
+                  color: "from-purple-500 to-pink-500"
+                },
+                {
+                  icon: <Target className="w-8 h-8" />,
+                  title: "Predictive Security",
+                  description: "AI-driven threat prediction and proactive security measures",
+                  color: "from-emerald-500 to-teal-500"
+                },
+                {
+                  icon: <Users className="w-8 h-8" />,
+                  title: "Identity Management",
+                  description: "Advanced identity verification and access control systems",
+                  color: "from-indigo-500 to-purple-500"
+                },
+                {
+                  icon: <Globe className="w-8 h-8" />,
+                  title: "Global Security Network",
+                  description: "Distributed security infrastructure with global threat intelligence",
+                  color: "from-green-500 to-emerald-500"
+                }
+              ].map((feature, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: index * 0.1 }}
+                  viewport={{ once: true }}
+                  className="bg-gradient-to-br from-gray-900/50 to-gray-800/30 p-8 rounded-2xl border border-gray-700/50 hover:border-red-500/50 transition-all duration-300"
                 >
-                  Get Started
-                </motion.button>
-              </Link>
-              <Link href="/cybersecurity">
-                <motion.button
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  className="px-8 py-4 border border-red-500/50 text-red-400 font-semibold rounded-xl hover:bg-red-500/10 transition-all duration-300"
-                >
-                  Learn More
-                </motion.button>
-              </Link>
+                  <div className={`inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-gradient-to-r ${feature.color} mb-6`}>
+                    {feature.icon}
+                  </div>
+                  <h3 className="text-xl font-semibold text-white mb-4">{feature.title}</h3>
+                  <p className="text-gray-400">{feature.description}</p>
+                </motion.div>
+              ))}
             </div>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* Features Section */}
-      <section className="py-20 px-4">
-        <div className="max-w-6xl mx-auto">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="text-center mb-16"
-          >
-            <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-red-400 to-orange-400 bg-clip-text text-transparent">
-              Quantum Security Features
-            </h2>
-            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              Experience the future of cybersecurity with quantum-resistant protection
-            </p>
-          </motion.div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-8">
-            {features.map((feature, index) => (
-              <motion.div
-                key={feature.title}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: index * 0.1 }}
-                className="p-8 rounded-2xl border border-white/10 bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-sm hover:border-red-500/30 transition-all duration-300"
-              >
-                <div className={`w-16 h-16 rounded-2xl bg-gradient-to-r ${feature.color} p-4 mb-6 flex items-center justify-center`}>
-                  {feature.icon}
-                </div>
-                <h3 className="text-2xl font-bold mb-4 text-white">{feature.title}</h3>
-                <p className="text-gray-300 text-lg">{feature.description}</p>
-              </motion.div>
-            ))}
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* Use Cases Section */}
-      <section className="py-20 px-4 bg-gradient-to-br from-red-500/5 to-orange-500/5">
-        <div className="max-w-6xl mx-auto">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="text-center mb-16"
-          >
-            <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-red-400 to-orange-400 bg-clip-text text-transparent">
-              Use Cases
-            </h2>
-            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              Protect your organization with quantum cybersecurity
-            </p>
-          </motion.div>
+        {/* Security Dashboard Preview */}
+        <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-red-900/10 to-orange-900/10">
+          <div className="max-w-7xl mx-auto">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+              className="text-center mb-16"
+            >
+              <h2 className="text-4xl font-bold text-white mb-4">
+                Advanced Security Dashboard
+              </h2>
+              <p className="text-xl text-gray-400 max-w-2xl mx-auto">
+                Real-time security monitoring and threat intelligence dashboard
+              </p>
+            </motion.div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {useCases.map((useCase, index) => (
-              <motion.div
-                key={useCase}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: index * 0.1 }}
-                className="flex items-center space-x-4 p-6 rounded-xl border border-white/10 bg-white/5 hover:border-red-500/30 transition-all duration-300"
-              >
-                <CheckCircle className="w-6 h-6 text-red-400 flex-shrink-0" />
-                <span className="text-white font-medium">{useCase}</span>
-              </motion.div>
-            ))}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.95 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+              className="bg-gradient-to-br from-gray-900/50 to-gray-800/30 p-8 rounded-2xl border border-gray-700/50"
+            >
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+                {[
+                  { metric: "Threat Level", value: "Low", status: "Secure", color: "text-green-400" },
+                  { metric: "Active Threats", value: "0", status: "Protected", color: "text-blue-400" },
+                  { metric: "Security Score", value: "98.5%", status: "Excellent", color: "text-purple-400" },
+                  { metric: "Response Time", value: "<50ms", status: "Ultra-Fast", color: "text-emerald-400" }
+                ].map((stat, index) => (
+                  <div key={index} className="text-center p-4 bg-gray-800/50 rounded-xl">
+                    <p className="text-gray-400 text-sm mb-2">{stat.metric}</p>
+                    <p className={`text-2xl font-bold ${stat.color}`}>{stat.value}</p>
+                    <p className="text-green-400 text-sm">{stat.status}</p>
+                  </div>
+                ))}
+              </div>
+              
+              <div className="text-center">
+                <p className="text-gray-400 mb-4">Real-time security monitoring with instant threat response</p>
+                <button className="px-6 py-3 bg-red-500/20 border border-red-500/30 text-red-400 rounded-lg hover:bg-red-500/30 transition-all duration-300">
+                  View Security Dashboard
+                </button>
+              </div>
+            </motion.div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* CTA Section */}
-      <section className="py-20 px-4">
-        <div className="max-w-4xl mx-auto text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-          >
-            <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-red-400 to-orange-400 bg-clip-text text-transparent">
-              Ready for Quantum Security?
-            </h2>
-            <p className="text-xl text-gray-300 mb-8">
-              Secure your future with Zion Tech Group
-            </p>
-            <Link href="/contact">
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="px-8 py-4 bg-gradient-to-r from-red-500 to-orange-600 text-white font-semibold rounded-xl hover:from-red-600 hover:to-orange-700 transition-all duration-300 shadow-lg shadow-red-500/25"
-              >
-                Start Your Journey
-              </motion.button>
-            </Link>
-          </motion.div>
-        </div>
-      </section>
-    </div>
+        {/* Use Cases */}
+        <section className="py-20 px-4 sm:px-6 lg:px-8">
+          <div className="max-w-7xl mx-auto">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+              className="text-center mb-16"
+            >
+              <h2 className="text-4xl font-bold text-white mb-4">
+                Protect Critical Infrastructure
+              </h2>
+              <p className="text-xl text-gray-400 max-w-2xl mx-auto">
+                Revolutionary use cases that secure the digital future
+              </p>
+            </motion.div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              {[
+                {
+                  title: "Financial Security",
+                  description: "Protect banking systems, payment networks, and financial transactions with quantum-resistant security",
+                  color: "from-green-500 to-emerald-500"
+                },
+                {
+                  title: "Healthcare Protection",
+                  description: "Secure patient data, medical devices, and healthcare systems with advanced cybersecurity",
+                  color: "from-blue-500 to-cyan-500"
+                },
+                {
+                  title: "Government Defense",
+                  description: "Protect critical government infrastructure and national security systems",
+                  color: "from-purple-500 to-pink-500"
+                },
+                {
+                  title: "Industrial Security",
+                  description: "Secure industrial control systems, IoT devices, and critical infrastructure",
+                  color: "from-orange-500 to-red-500"
+                }
+              ].map((useCase, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, x: index % 2 === 0 ? -20 : 20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.6, delay: index * 0.1 }}
+                  viewport={{ once: true }}
+                  className="bg-gradient-to-br from-gray-900/50 to-gray-800/30 p-8 rounded-2xl border border-gray-700/50"
+                >
+                  <div className={`inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-gradient-to-r ${useCase.color} mb-6`}>
+                    <Target className="w-8 h-8" />
+                  </div>
+                  <h3 className="text-2xl font-semibold text-white mb-4">{useCase.title}</h3>
+                  <p className="text-gray-400 text-lg">{useCase.description}</p>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* CTA Section */}
+        <section className="py-20 px-4 sm:px-6 lg:px-8">
+          <div className="max-w-4xl mx-auto text-center">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+            >
+              <h2 className="text-4xl font-bold text-white mb-6">
+                Ready to Secure Your Future?
+              </h2>
+              <p className="text-xl text-gray-400 mb-8">
+                Join the quantum cybersecurity revolution. Protect your digital assets today.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <button className="px-8 py-4 bg-gradient-to-r from-red-500 to-orange-500 text-white font-semibold rounded-lg hover:from-red-600 hover:to-orange-600 transition-all duration-300 transform hover:scale-105">
+                  Get Started Now
+                </button>
+                <button className="px-8 py-4 border border-red-500/30 text-red-400 font-semibold rounded-lg hover:bg-red-500/10 transition-all duration-300">
+                  Contact Sales
+                </button>
+              </div>
+            </motion.div>
+          </div>
+        </section>
+      </div>
+    </Layout>
   );
 };
 

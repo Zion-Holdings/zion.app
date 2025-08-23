@@ -13,13 +13,21 @@ import {
 const Footer: React.FC = () => {
 
   const services = [
-    { name: 'AI & Consciousness', href: '/ai-services', icon: Brain },
-    { name: 'Quantum Technology', href: '/quantum-services', icon: Atom },
-    { name: 'Cybersecurity', href: '/cybersecurity', icon: Shield },
-    { name: 'Business Solutions', href: '/business-solutions', icon: Target },
-    { name: 'IT Infrastructure', href: '/it-infrastructure', icon: Cpu },
-    { name: 'Space Technology', href: '/space-tech', icon: Rocket }
->>>>>>> 916d02471c24718d698d51219f240472f9d52b96
+    { name: 'AI & Consciousness', href: '/ai-services' },
+    { name: 'Quantum Computing', href: '/quantum-services' },
+    { name: 'Space Technology', href: '/space-technology' },
+    { name: 'IT Solutions', href: '/it-services' },
+    { name: 'Cybersecurity', href: '/cybersecurity' },
+    { name: 'View All Services', href: '/services' }
+  ];
+
+  const solutions = [
+    { name: 'Case Studies', href: '/case-studies' },
+    { name: 'Industry Solutions', href: '/solutions' },
+    { name: 'Digital Transformation', href: '/digital-transformation' },
+    { name: 'Cloud Platform', href: '/cloud-platform' },
+    { name: 'Support', href: '/support' },
+    { name: 'Documentation', href: '/docs' }
   ];
 
   const company = [
@@ -38,7 +46,6 @@ const Footer: React.FC = () => {
     { name: 'Webinars', href: '/webinars' },
     { name: 'Documentation', href: '/docs' },
     { name: 'Support', href: '/support' }
->>>>>>> 916d02471c24718d698d51219f240472f9d52b96
   ];
 
   const legal = [
@@ -48,14 +55,13 @@ const Footer: React.FC = () => {
     { name: 'Security', href: '/security' }
   ];
 
-  const social = [
-    { name: 'Twitter', href: '#', icon: Twitter },
-    { name: 'LinkedIn', href: '#', icon: Linkedin },
-    { name: 'GitHub', href: '#', icon: Github },
-    { name: 'YouTube', href: '#', icon: Youtube },
-    { name: 'Instagram', href: '#', icon: Instagram },
-    { name: 'Facebook', href: '#', icon: Facebook }
->>>>>>> 916d02471c24718d698d51219f240472f9d52b96
+  const socialLinks = [
+    { name: 'X', href: 'https://twitter.com/ziontechgroup', icon: Twitter },
+    { name: 'LinkedIn', href: 'https://linkedin.com/company/ziontechgroup', icon: Linkedin },
+    { name: 'GitHub', href: 'https://github.com/Zion-Holdings', icon: Github },
+    { name: 'Facebook', href: 'https://facebook.com/ziontechgroup', icon: Facebook },
+    { name: 'Instagram', href: 'https://instagram.com/ziontechgroup', icon: Instagram },
+    { name: 'YouTube', href: 'https://youtube.com/@ziontechgroup', icon: Youtube }
   ];
 
   return (
@@ -81,7 +87,110 @@ const Footer: React.FC = () => {
               intelligent automation systems, and the future of cloud-native AI infrastructure.
             </p>
             <div className="flex space-x-4">
-              {social.map((social) => (
+              {socialLinks.map((social) => (
+                <a
+                  key={social.name}
+                  href={social.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-cyan-500 transition-colors"
+                  aria-label={social.name}
+                >
+                  <social.icon className="w-5 h-5 text-gray-300 hover:text-white" />
+                </a>
+              ))}
+            </div>
+          </div>
+
+          {/* Services */}
+          <div>
+            <h3 className="text-lg font-semibold text-white mb-6">Services</h3>
+            <ul className="space-y-3">
+              {services.map((service) => (
+                <li key={service.name}>
+                  <a
+                    href={service.href}
+                    className="text-gray-300 hover:text-cyan-400 transition-colors"
+                  >
+                    {service.name}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Solutions */}
+          <div>
+            <h3 className="text-lg font-semibold text-white mb-6">Solutions</h3>
+            <ul className="space-y-3">
+              {solutions.map((solution) => (
+                <li key={solution.name}>
+                  <a
+                    href={solution.href}
+                    className="text-gray-300 hover:text-cyan-400 transition-colors"
+                  >
+                    {solution.name}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Company */}
+          <div>
+            <h3 className="text-lg font-semibold text-white mb-6">Company</h3>
+            <ul className="space-y-3">
+              {company.map((item) => (
+                <li key={item.name}>
+                  <a
+                    href={item.href}
+                    className="text-gray-300 hover:text-cyan-400 transition-colors"
+                  >
+                    {item.name}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Resources & Legal */}
+          <div>
+            <h3 className="text-lg font-semibold text-white mb-6">Resources</h3>
+            <ul className="space-y-3 mb-6">
+              {resources.map((resource) => (
+                <li key={resource.name}>
+                  <a
+                    href={resource.href}
+                    className="text-gray-300 hover:text-cyan-400 transition-colors"
+                  >
+                    {resource.name}
+                  </a>
+                </li>
+              ))}
+            </ul>
+            <h3 className="text-lg font-semibold text-white mb-6">Legal</h3>
+            <ul className="space-y-3">
+              {legal.map((item) => (
+                <li key={item.name}>
+                  <a
+                    href={item.href}
+                    className="text-gray-300 hover:text-cyan-400 transition-colors"
+                  >
+                    {item.name}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+
+        {/* Social Links & Newsletter */}
+        <div className="mt-12 pt-8 border-t border-gray-800">
+          <div className="flex flex-col lg:flex-row items-center justify-between">
+            {/* Social Links */}
+            <div className="flex items-center space-x-4 mb-6 lg:mb-0">
+              <span className="text-gray-400 text-sm mr-4">Follow Us:</span>
+              {socialLinks.map((social) => (
                 <a
                   key={social.name}
                   href={social.href}
