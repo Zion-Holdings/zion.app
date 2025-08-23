@@ -16,6 +16,13 @@
   --neon-indigo: #6366f1;
   --neon-teal: #14b8a6;
   --neon-gold: #fbbf24;
+<<<<<<< HEAD
+  --neon-emerald: #10b981;
+  --neon-rose: #f43f5e;
+  --neon-violet: #8b5cf6;
+  --neon-sky: #0ea5e9;
+  --neon-lime: #84cc16;
+=======
   --neon-silver: #94a3b8;
   --neon-bronze: #cd7f32;
   --neon-platinum: #e5e7eb;
@@ -25,6 +32,7 @@
   --neon-sapphire: #1d4ed8;
   --neon-amethyst: #7c3aed;
   --neon-topaz: #f59e0b;
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-5e0c
 }
 
 * {

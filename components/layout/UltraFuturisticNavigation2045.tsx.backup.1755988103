@@ -44,6 +44,17 @@ const navigationItems: NavigationItem[] = [
     neonColor: 'shadow-blue-400/50',
     category: 'main',
     children: [
+<<<<<<< HEAD
+      {
+        label: 'AI & Machine Learning',
+        href: '/services?category=ai-ml',
+        icon: <Brain className="w-4 h-4" />,
+        description: 'Advanced AI solutions for enterprise',
+        featured: true,
+        neonColor: 'shadow-purple-400/50',
+        category: 'ai'
+      },
+=======
               {
           label: 'AI & Machine Learning',
           href: '/services?category=ai-ml',
@@ -205,6 +216,7 @@ const navigationItems: NavigationItem[] = [
     neonColor: 'shadow-emerald-400/50',
     category: 'main',
     children: [
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-5e0c
       {
         label: 'Quantum Computing',
         href: '/services?category=quantum',
