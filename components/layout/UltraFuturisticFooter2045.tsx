@@ -225,7 +225,7 @@ const UltraFuturisticFooter2045: React.FC = () => {
                   <Link
                     key={social.name}
                     href={social.href}
-                    className={`p-2 rounded-lg bg-gray-900/50 border border-cyan-500/20 text-gray-400 ${social.color} transition-all duration-200 hover:scale-110 hover:border-cyan-500/50`}
+                    className="p-2 rounded-lg bg-gray-900/50 border border-cyan-500/20 text-gray-400 transition-all duration-200 hover:scale-110 hover:border-cyan-500/50"
                     aria-label={social.name}
                   >
                     {social.icon}
