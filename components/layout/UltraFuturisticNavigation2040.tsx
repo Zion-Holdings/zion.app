@@ -119,19 +119,22 @@ const navigationItems: NavigationItem[] = [
         name: 'AI Emotional Intelligence 2040',
         href: '/ai-emotional-intelligence-2040',
         description: 'Advanced emotional AI with consciousness',
-        icon: <HeartIcon className="w-4 h-4" />
+        icon: <HeartIcon className="w-4 h-4" />,
+        featured: true
       },
       {
         name: 'AI Autonomous Research 2041',
         href: '/ai-autonomous-research-2041',
         description: 'Fully autonomous AI research',
-        icon: <CodeIcon className="w-4 h-4" />
+        icon: <CodeIcon className="w-4 h-4" />,
+        featured: true
       },
       {
         name: 'AI Content Personalization 2041',
         href: '/ai-content-personalization-2041',
         description: 'Consciousness-based content AI',
-        icon: <PaletteIcon className="w-4 h-4" />
+        icon: <PaletteIcon className="w-4 h-4" />,
+        featured: true
       },
       {
         name: 'AI Ethics & Governance 2041',
@@ -167,7 +170,8 @@ const navigationItems: NavigationItem[] = [
         name: 'Quantum Internet Security 2041',
         href: '/quantum-internet-security-2041',
         description: 'Quantum internet protection',
-        icon: <Network className="w-4 h-4" />
+        icon: <Network className="w-4 h-4" />,
+        featured: true
       },
       {
         name: 'Quantum Cloud Infrastructure 2041',

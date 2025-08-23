@@ -65,6 +65,14 @@ const getServicePricing = (service: any) => {
   if (service.pricing?.starter) return service.pricing.starter;
   if (service.pricing?.monthly) return `$${service.pricing.monthly}/month`;
   if (service.price?.monthly) return `$${service.price.monthly}/month`;
+  if (service.price?.yearly) return `$${service.price.yearly}/year`;
+  if (typeof service.pricing === 'string') return service.pricing;
+  if (typeof service.price === 'string') return service.price;
+  if (service.price && typeof service.price === 'object') {
+    // Handle case where price is an object with monthly/yearly
+    if (service.price.monthly) return `$${service.price.monthly}/month`;
+    if (service.price.yearly) return `$${service.price.yearly}/year`;
+  }
   return 'Contact for pricing';
 };
 

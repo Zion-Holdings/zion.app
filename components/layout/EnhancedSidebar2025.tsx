@@ -26,10 +26,10 @@ const sidebarSections = [
     items: [
       { name: 'AI Consciousness Evolution', href: '/ai-consciousness-evolution-2029', badge: 'New' },
       { name: 'AI Quantum Neural Network', href: '/ai-quantum-neural-network', badge: 'Hot' },
-      { name: 'AI Autonomous Research', href: '/ai-autonomous-research-assistant', badge: 'New' },
-      { name: 'AI Emotional Intelligence', href: '/ai-emotional-intelligence-training', badge: 'Popular' },
+      { name: 'AI Autonomous Research 2041', href: '/ai-autonomous-research-2041', badge: 'New' },
+      { name: 'AI Emotional Intelligence 2040', href: '/ai-emotional-intelligence-2040', badge: 'New' },
       { name: 'AI Predictive Maintenance', href: '/ai-predictive-maintenance-platform', badge: 'New' },
-      { name: 'AI Content Personalization', href: '/ai-content-personalization-engine', badge: 'New' },
+      { name: 'AI Content Personalization 2041', href: '/ai-content-personalization-2041', badge: 'New' },
       { name: 'AI Autonomous Ecosystem', href: '/ai-autonomous-ecosystem-manager' },
       { name: 'AI Ethics & Governance', href: '/ai-ethics-governance-framework' },
       { name: 'RAG Evaluation Lab', href: '/rag-evaluation-lab/', badge: 'New' },
@@ -48,7 +48,7 @@ const sidebarSections = [
     color: 'text-indigo-400',
     items: [
       { name: 'Space Resource Mining', href: '/space-resource-mining-platform', badge: 'Hot' },
-      { name: 'Quantum Internet Security', href: '/quantum-internet-security-platform', badge: 'New' },
+      { name: 'Quantum Internet Security 2041', href: '/quantum-internet-security-2041', badge: 'New' },
       { name: 'Brain-Computer Interface', href: '/brain-computer-interface-platform', badge: 'New' },
       { name: 'Quantum Materials Discovery', href: '/quantum-materials-discovery-platform', badge: 'New' },
       { name: 'Autonomous Vehicle AI', href: '/autonomous-vehicle-ai-platform', badge: 'New' },

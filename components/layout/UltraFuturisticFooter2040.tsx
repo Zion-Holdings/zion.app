@@ -22,8 +22,8 @@ const footerSections = [
       { name: 'Autonomous Business Intelligence 2040', href: '/autonomous-business-intelligence-2040', featured: true },
       { name: 'Quantum Cybersecurity Future 2040', href: '/quantum-cybersecurity-future-2040', featured: true },
       { name: 'Brain-Computer Interface 2040', href: '/brain-computer-interface-2040', featured: true },
-      { name: 'AI Autonomous Research 2041', href: '/ai-autonomous-research-2041' },
-      { name: 'Quantum Internet Security 2041', href: '/quantum-internet-security-2041' },
+      { name: 'AI Autonomous Research 2041', href: '/ai-autonomous-research-2041', featured: true },
+      { name: 'Quantum Internet Security 2041', href: '/quantum-internet-security-2041', featured: true },
       { name: 'AI Customer Success 2041', href: '/ai-customer-success-2041' },
       { name: 'AI Sales Intelligence 2041', href: '/ai-sales-intelligence-2041' }
     ]
@@ -35,9 +35,9 @@ const footerSections = [
     color: 'from-purple-500 to-pink-500',
     links: [
       { name: 'AI Consciousness Evolution 2040', href: '/ai-consciousness-evolution-2040' },
-      { name: 'AI Emotional Intelligence 2040', href: '/ai-emotional-intelligence-2040' },
+      { name: 'AI Emotional Intelligence 2040', href: '/ai-emotional-intelligence-2040', featured: true },
       { name: 'AI Autonomous Research 2041', href: '/ai-autonomous-research-2041' },
-      { name: 'AI Content Personalization 2041', href: '/ai-content-personalization-2041' },
+      { name: 'AI Content Personalization 2041', href: '/ai-content-personalization-2041', featured: true },
       { name: 'AI Ethics & Governance 2041', href: '/ai-ethics-governance-2041' },
       { name: 'AI Autonomous Ecosystem 2041', href: '/ai-autonomous-ecosystem-2041' },
       { name: 'AI Predictive Maintenance 2041', href: '/ai-predictive-maintenance-2041' },
@@ -52,9 +52,9 @@ const footerSections = [
     icon: <Atom className="w-5 h-5 text-blue-400" />,
     color: 'from-blue-500 to-cyan-500',
     links: [
-      { name: 'Quantum Neural Ecosystem 2040', href: '/quantum-neural-ecosystem-2040' },
-      { name: 'Quantum Cybersecurity Future 2040', href: '/quantum-cybersecurity-future-2040' },
-      { name: 'Quantum Internet Security 2041', href: '/quantum-internet-security-2041' },
+      { name: 'Quantum Neural Ecosystem 2040', href: '/quantum-neural-ecosystem-2040', featured: true },
+      { name: 'Quantum Cybersecurity Future 2040', href: '/quantum-cybersecurity-future-2040', featured: true },
+      { name: 'Quantum Internet Security 2041', href: '/quantum-internet-security-2041', featured: true },
       { name: 'Quantum Cloud Infrastructure 2041', href: '/quantum-cloud-infrastructure-2041' },
       { name: 'Quantum Bio-Computing 2041', href: '/quantum-bio-computing-2041' },
       { name: 'Space Resource Intelligence 2040', href: '/space-resource-intelligence-2040' },

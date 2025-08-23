@@ -195,7 +195,12 @@ const UltraFuturisticServiceCard2026: React.FC<UltraFuturisticServiceCard2026Pro
             animate={{ opacity: 1 }}
             transition={{ delay: 0.3 }}
           >
-            <span className="text-2xl font-bold text-white">{service.price}</span>
+            <span className="text-2xl font-bold text-white">
+              {typeof service.price === 'string' ? service.price : 
+               (service.price && typeof service.price === 'object' && 'monthly' in service.price) ? `$${(service.price as any).monthly}/month` :
+               (service.price && typeof service.price === 'object' && 'yearly' in service.price) ? `$${(service.price as any).yearly}/year` :
+               'Contact for pricing'}
+            </span>
             <span className="text-gray-400 text-sm ml-1">{service.period}</span>
           </motion.div>
 
