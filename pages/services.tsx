@@ -1,3 +1,5 @@
+=======
+import React from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
 
@@ -20,7 +22,6 @@ export default function Services() {
     </div>
   );
 }
-=======
 import Head from 'next/head';
 import Link from 'next/link';
 
@@ -39,3 +40,4 @@ export default function Placeholder() {
     </main>
   );
 }
+=======

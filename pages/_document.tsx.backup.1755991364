@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 import Document, { Html, Head, Main, NextScript } from 'next/document';
 
 class MyDocument extends Document {
@@ -10,10 +11,21 @@ class MyDocument extends Document {
         </Head>
         <body>
 =======
+=======
+>>>>>>> 5f48a381108fa3a8a43c189dd4b043133ce9307e
 import Document, { Html, Head, Main, NextScript, DocumentContext } from 'next/document';
 
 class MyDocument extends Document {
   static async getInitialProps(ctx: DocumentContext) {
+<<<<<<< HEAD
+=======
+=======
+import Document, { Html, Head, Main, NextScript, DocumentContext, DocumentInitialProps } from "next/document";
+
+export default class MyDocument extends Document {
+  static async getInitialProps(ctx: DocumentContext): Promise<DocumentInitialProps> {
+>>>>>>> origin/cursor/build-partner-integration-portal-and-api-da2c
+>>>>>>> 5f48a381108fa3a8a43c189dd4b043133ce9307e
     const initialProps = await Document.getInitialProps(ctx);
     return { ...initialProps };
   }
@@ -22,14 +34,19 @@ class MyDocument extends Document {
     return (
       <Html lang="en">
         <Head />
+<<<<<<< HEAD
         <body className="bg-high-contrast-primary text-high-contrast">
 >>>>>>> origin/cursor/create-responsive-talent-onboarding-form-e178
+=======
+        <body>
+>>>>>>> 5f48a381108fa3a8a43c189dd4b043133ce9307e
           <Main />
           <NextScript />
         </body>
       </Html>
     );
   }
+<<<<<<< HEAD
 }
 
 <<<<<<< HEAD
@@ -37,3 +54,12 @@ export default MyDocument;
 =======
 export default MyDocument;
 >>>>>>> origin/cursor/create-responsive-talent-onboarding-form-e178
+=======
+<<<<<<< HEAD
+}
+
+export default MyDocument;
+=======
+}
+>>>>>>> origin/cursor/build-partner-integration-portal-and-api-da2c
+>>>>>>> 5f48a381108fa3a8a43c189dd4b043133ce9307e

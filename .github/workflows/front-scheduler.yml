@@ -1,24 +1,28 @@
-name: Front Scheduler
+name: Front Continuous Scheduler
 
 on:
-  workflow_dispatch: {}
   schedule:
-    - cron: '*/10 * * * *'
+    - cron: '*/5 * * * *'
+  workflow_dispatch: {}
 
 permissions:
   contents: write
   actions: read
 
+concurrency:
+  group: front-scheduler-${{ github.ref_name }}
+  cancel-in-progress: false
+
 jobs:
-  main:
-    name: Main Job
+  run:
     runs-on: ubuntu-latest
-    timeout-minutes: 20
+    timeout-minutes: 15
     steps:
-      - name: Checkout repository
+      - name: Checkout
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
+          persist-credentials: true
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
@@ -27,6 +31,36 @@ jobs:
           cache: 'npm'
 
       - name: Install dependencies
-        run: npm ci --no-audit --no-fund
-      - name: Run workflow
-        run: echo "Workflow completed successfully"
+        run: npm ci
+
+      - name: Configure Git identity
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+      - name: Ensure branch up to date
+        env:
+          BRANCH: ${{ github.ref_name }}
+        run: |
+          git fetch origin
+          git checkout "$BRANCH"
+          git pull --rebase origin "$BRANCH" || true
+
+      - name: Run continuous front runner
+        env:
+          FRONT_SCHEDULER_INTERVAL_MINUTES: '5'
+          FRONT_MAX_INTERVAL_MINUTES: '30'
+          FRONT_RUN_TIMEOUT_MS: '270000'
+          FRONT_JITTER_PCT: '0.15'
+          FRONT_BACKOFF_MULTIPLIER: '1.6'
+          FRONT_HEARTBEAT_MS: '60000'
+        run: npm run front:continuous
+
+      - name: Commit and push any changes
+        env:
+          BRANCH: ${{ github.ref_name }}
+        run: |
+          set -e
+          git add -A
+          git commit -m "chore: front CI sync [skip ci]" || true
+          git push origin "$BRANCH" || true

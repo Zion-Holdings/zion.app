@@ -22,17 +22,17 @@ exports.handler = async () => {
     return status;
   }
 
-  // Generate sitemap for crawling
-  logStep('sitemap:generate', () => runNode('scripts/generate-sitemap.js'));
+  // Crawl external links and generate report
+  logStep('links:check', () => runNode('scripts/automations/check_links.cjs'));
 
-  // Build search index if available
+  // If there are any local link fixers, run them (optional best-effort)
   try {
-    logStep('search:index', () => runNode('scripts/generate-search-index.js'));
+    logStep('links:fixer', () => runNode('automation/site-link-fixer.cjs'));
   } catch (error) {
-    logs.push(`Search index generation skipped: ${String(error)}`);
+    logs.push(`No site-link-fixer found or failed gracefully: ${String(error)}`);
   }
 
-  // Commit and push
+  // Commit and push any changes
   logStep('git:sync', () => runNode('automation/git-sync.cjs'));
 
   return { statusCode: 200, body: logs.join('\n') };

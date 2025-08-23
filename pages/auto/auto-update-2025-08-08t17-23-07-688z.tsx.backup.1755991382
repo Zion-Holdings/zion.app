@@ -1,5 +1,6 @@
 <<<<<<< HEAD
 export default function Auto(){
+<<<<<<< HEAD
   return <div style={{padding:20}}>Auto Update</div>
 }
 =======
@@ -24,3 +25,10 @@ const AutoUpdate20250808t172307688z: NextPage = () => {
 
 export default AutoUpdate20250808t172307688z;
 >>>>>>> origin/cursor/deploy-offworld-zion-os-on-ipfs-and-orbitdb-92ee
+=======
+  return <div className="max-w-3xl mx-auto p-6">Auto Update</div>;
+}
+=======
+export default function AutoUpdatePage() { return null }
+>>>>>>> origin/cursor/build-zion-ai-api-developer-documentation-hub-2aa3
+>>>>>>> 5f48a381108fa3a8a43c189dd4b043133ce9307e

@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 export default function Enhanced(){
   return <div style={{padding:20}}>Enhanced Home</div>
 }
@@ -24,3 +25,11 @@ const EnhancedHome: NextPage = () => {
 
 export default EnhancedHome;
 >>>>>>> origin/cursor/deploy-offworld-zion-os-on-ipfs-and-orbitdb-92ee
+=======
+export default function EnhancedHome(){
+  return <div className="max-w-3xl mx-auto p-6">Enhanced Home</div>;
+}
+=======
+export default function EnhancedHomePage() { return null }
+>>>>>>> origin/cursor/build-zion-ai-api-developer-documentation-hub-2aa3
+>>>>>>> 5f48a381108fa3a8a43c189dd4b043133ce9307e

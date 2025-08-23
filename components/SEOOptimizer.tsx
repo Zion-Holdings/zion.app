@@ -223,7 +223,7 @@ const SEOOptimizer: React.FC<SEOOptimizerProps> = ({
   return (
     <Head>
       {/* Basic Meta Tags */}
-      <title>{fullTitle}</title>
+      <title>{title}</title>
       <meta name="description" content={description} />
       <meta name="keywords" content={keywords} />
       <meta name="author" content={author} />

@@ -18,19 +18,22 @@ export default function EnhancedNavigation() {
           <a className="font-semibold">Zion</a>
         </Link>
         <div className="flex items-center gap-4 text-sm">
-          <Link href="/grants"><a>Grants</a></Link>
-          <Link href="/incubator"><a>Incubator</a></Link>
+          <Link href="/services"><a>Marketplace</a></Link>
           <Link href="/about"><a>About</a></Link>
           <Link href="/blog"><a>Blog</a></Link>
-          <Link href="/automation"><a>Automations</a></Link>
-          <Link href="/automation/innovation"><a>Innovation</a></Link>
-          <Link href="/automation/tech-radar"><a>Tech Radar</a></Link>
-          <Link href="/automation/security"><a>Security</a></Link>
-          <Link href="/automation/site-validator"><a>Validator</a></Link>
-          <Link href="/automation/knowledge-graph"><a>Graph</a></Link>
+          <Link href="/salary-insights"><a>Salary Insights</a></Link>
+          <Link href="/admin"><a>Admin</a></Link>
           <Link href="/contact"><a>Contact</a></Link>
-          <Link href="/vendors"><a>Vendors</a></Link>
-          <Link href="/agency-dashboard"><a>Agency Dashboard</a></Link>
+          <Link href="/notifications">
+            <a className="relative inline-flex items-center justify-center rounded-full border border-gray-200 dark:border-gray-700 p-2 hover:bg-gray-50 dark:hover:bg-gray-800">
+              <Bell className="h-5 w-5" />
+              {isClient && unread > 0 && (
+                <span className="absolute -right-1 -top-1 inline-flex h-5 min-w-[20px] items-center justify-center rounded-full bg-gradient-to-r from-blue-500 via-cyan-500 to-purple-500 px-1 text-xs font-bold text-white shadow">
+                  {unread}
+                </span>
+              )}
+            </a>
+          </Link>
         </div>
       </nav>
 

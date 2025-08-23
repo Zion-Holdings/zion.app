@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 import { useRouter } from 'next/router'
 export default function TalentSlug(){
   const { query } = useRouter()
@@ -26,3 +27,13 @@ const [slug]: NextPage = () => {
 
 export default [slug];
 >>>>>>> origin/cursor/deploy-offworld-zion-os-on-ipfs-and-orbitdb-92ee
+=======
+import { useRouter } from 'next/router';
+export default function TalentDetail(){
+  const { query } = useRouter();
+  return <div className="max-w-3xl mx-auto p-6">Talent: {String(query.slug || '')}</div>;
+}
+=======
+export default function TalentSlugPage() { return null }
+>>>>>>> origin/cursor/build-zion-ai-api-developer-documentation-hub-2aa3
+>>>>>>> 5f48a381108fa3a8a43c189dd4b043133ce9307e

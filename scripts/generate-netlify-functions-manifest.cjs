@@ -22,4 +22,16 @@ function main() {
   console.log(`Updated functions manifest with ${names.length} entries.`);
 }
 
-main();
+(function main() {
+  const scheduled = parseScheduledFunctionNamesFromToml(safeRead(tomlPath));
+  const fromDir = listFunctionNamesFromDir(functionsDir);
+  const all = Array.from(new Set([...scheduled, ...fromDir])).sort();
+  const manifest = { generatedAt: new Date().toISOString(), functions: all };
+  const extra = [
+    { name: 'ops-consolidator', path: 'netlify/functions/ops-consolidator.js' },
+    { name: 'automation-health', path: 'netlify/functions/automation-health.js' },
+  ];
+  manifest.functions.push(...extra.filter(x => !manifest.functions.find(f => f.name === x.name)));
+  fs.writeFileSync(manifestPath, JSON.stringify(manifest, null, 2));
+  log(`Wrote ${manifestPath} with ${manifest.functions.length} functions.`);
+})();

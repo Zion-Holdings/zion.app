@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 export default function AboutPage() { return null; }
 =======
 import React from "react";
@@ -33,3 +34,30 @@ const About: NextPage = () => {
 
 export default About;
 >>>>>>> origin/cursor/create-responsive-talent-onboarding-form-e178
+=======
+export default function About() {
+  return <div>About page</div>;
+}
+=======
+import React from "react";
+import Head from "next/head";
+
+const Page: React.FC = () => {
+  return (
+    <>
+      <Head>
+        <title>Placeholder Page</title>
+        <meta name="robots" content="noindex" />
+      </Head>
+      <main>
+        <h1>Coming soon</h1>
+      </main>
+    </>
+  );
+};
+
+export default Page;
+=======
+export default function About() { return null; }
+>>>>>>> origin/cursor/build-partner-integration-portal-and-api-da2c
+>>>>>>> 5f48a381108fa3a8a43c189dd4b043133ce9307e
