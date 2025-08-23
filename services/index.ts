@@ -36,6 +36,12 @@ export { aiDataEngineeringService } from './aiDataEngineeringService';
 export { aiFintechService } from './aiFintechService';
 export { aiHealthcareService } from './aiHealthcareService';
 
+// New AI-powered services
+export { aiCybersecurityService } from './aiCybersecurityService';
+export { aiDevOpsAutomationService } from './aiDevOpsAutomationService';
+export { aiFinancialAnalyticsService } from './aiFinancialAnalyticsService';
+export { aiHealthcareAnalyticsService } from './aiHealthcareAnalyticsService';
+
 // Export types
 export type {
   ContentTemplate,
