@@ -33,6 +33,26 @@ export default class ErrorBoundary extends Component<Props, State> {
       errorId
     });
 
+<<<<<<< HEAD
+    // Send error to analytics if available
+    if (typeof window !== 'undefined' && window.gtag) {
+      window.gtag('event', 'exception', {
+        description: error.message,
+        fatal: false,
+        custom_parameter_1: errorId,
+        custom_parameter_2: errorInfo.componentStack
+      });
+    }
+
+    // Send error to error reporting service (if configured)
+    this.reportError(error, errorInfo, errorId);
+  }
+
+  private reportError = (error: Error, errorInfo: ErrorInfo, errorId: string) => {
+    // You can integrate with services like Sentry, LogRocket, etc.
+    try {
+      fetch('/api/error-reporting', {
+=======
     // Log error to console in development
     if (process.env.NODE_ENV === 'development') {
       // console.error('ErrorBoundary caught an error:', error, errorInfo);
@@ -54,6 +74,7 @@ export default class ErrorBoundary extends Component<Props, State> {
   private async reportError(error: Error, errorInfo: ErrorInfo, errorId: string) {
     try {
       await fetch('/api/error-reporting', {
+>>>>>>> origin/cursor/analyze-improve-and-deploy-application-cdb7
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -67,10 +88,18 @@ export default class ErrorBoundary extends Component<Props, State> {
           userAgent: navigator.userAgent,
           timestamp: new Date().toISOString()
         })
+<<<<<<< HEAD
+      }).catch(() => {
+        // Silently handle fetch errors
+      });
+    } catch {
+      // Silently handle reporting errors
+=======
       });
     } catch {
       // Silently handle reporting errors
       // console.warn('Failed to report error:', reportError);
+>>>>>>> origin/cursor/analyze-improve-and-deploy-application-cdb7
     }
   }
 

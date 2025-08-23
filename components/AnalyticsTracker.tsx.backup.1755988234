@@ -276,6 +276,9 @@ interface AnalyticsTrackerProps {
   return null;
 };
 
+<<<<<<< HEAD
+// Note: gtag and dataLayer are declared globally in PerformanceOptimizer.tsx
+=======
 // Performance entry types
 interface PerformanceEventTiming extends PerformanceEntry {
   processingStart: number;
@@ -300,5 +303,6 @@ declare global {
     gtag?: (...args: unknown[]) => void;
   }
 }
+>>>>>>> origin/cursor/analyze-improve-and-deploy-application-cdb7
 
 export default AnalyticsTracker;

@@ -11,7 +11,17 @@ import {
 } from 'lucide-react';
 import SEO from '../components/SEO';
 
+<<<<<<< HEAD
+// Import enhanced service data
+import { 
+  allEnhancedServices, 
+  getServicesByCategory, 
+  getPopularServices,
+  getServicesByRating 
+} from '../data/enhanced-2037-services';
+=======
 
+>>>>>>> origin/cursor/analyze-improve-and-deploy-application-cdb7
 
 const contact = {
   mobile: '+1 302 464 0950',
@@ -98,6 +108,25 @@ const ServiceShowcase = () => {
   const [sortBy, setSortBy] = useState('name');
   
   const categories = [
+<<<<<<< HEAD
+    { id: 'all', name: 'All Services', icon: <Star className="w-5 h-5" />, count: allEnhancedServices.length },
+    { id: 'ai', name: 'AI & Consciousness', icon: <Brain className="w-5 h-5" />, count: getServicesByCategory('AI').length },
+    { id: 'quantum', name: 'Quantum Technology', icon: <Atom className="w-5 h-5" />, count: getServicesByCategory('Quantum').length },
+    { id: 'autonomous', name: 'Autonomous Systems', icon: <Zap className="w-5 h-5" />, count: getServicesByCategory('Autonomous').length },
+    { id: 'cybersecurity', name: 'Cybersecurity', icon: <Shield className="w-5 h-5" />, count: getServicesByCategory('Cybersecurity').length },
+    { id: 'cloud', name: 'Cloud & Infrastructure', icon: <Cloud className="w-5 h-5" />, count: getServicesByCategory('Cloud').length }
+  ];
+
+  const getFilteredServices = () => {
+    let filtered = allEnhancedServices;
+    
+    // Category filtering
+    if (activeCategory !== 'all') {
+      filtered = filtered.filter(service => 
+        service.category.toLowerCase().includes(activeCategory.toLowerCase())
+      );
+    }
+=======
     { id: 'all', name: 'All Services', icon: <Star className="w-5 h-5" />, count: 0 },
     { id: 'ai', name: 'AI & Consciousness', icon: <Brain className="w-5 h-5" />, count: 0 },
     { id: 'quantum', name: 'Quantum Technology', icon: <Atom className="w-5 h-5" />, count: 0 },
@@ -115,6 +144,7 @@ const ServiceShowcase = () => {
     if (activeCategory === 'autonomous') return [];
     if (activeCategory === 'micro-saas') return [];
     if (activeCategory === 'it') return [];
+>>>>>>> origin/cursor/analyze-improve-and-deploy-application-cdb7
     
     // Search filtering
     if (searchQuery) {

@@ -1,11 +1,33 @@
+<<<<<<< HEAD
+import React, { useState, useEffect } from 'react';
+import Layout from './layout/Layout';
+import { motion, AnimatePresence } from 'framer-motion';
+import { ArrowRight, Play, Star, Users, Award, TrendingUp, Brain, Shield, Rocket, Loader2, CheckCircle, Zap, Globe, Target, Lightbulb } from 'lucide-react';
+=======
 import React, { useEffect, useState } from 'react';
 import Layout from './layout/Layout';
 import Link from 'next/link';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ArrowRight, Users, TrendingUp, Brain, Shield, Rocket, Globe, Lock, Cpu, Database, Cloud, BarChart3, Star, Zap, X, Search, MessageCircle, Phone, Mail, Atom } from 'lucide-react';
+>>>>>>> origin/cursor/analyze-improve-and-deploy-application-cdb7
 
 const Homepage2025: React.FC = () => {
   const [isLoading, setIsLoading] = useState(true);
+<<<<<<< HEAD
+  const [activeSection, setActiveSection] = useState(0);
+
+  useEffect(() => {
+    // Optimized loading experience
+    const timer = setTimeout(() => {
+      setIsLoading(false);
+      setIsVisible(true);
+    }, 300); // Reduced from 500ms for better UX
+
+    return () => clearTimeout(timer);
+  }, []);
+
+  // Intersection Observer for scroll animations
+=======
   const [activeFeature, setActiveFeature] = useState(0);
   const [showNewsletter, setShowNewsletter] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
@@ -28,6 +50,7 @@ const Homepage2025: React.FC = () => {
   }, [isLoading]);
 
   // Show floating actions after scroll
+>>>>>>> origin/cursor/analyze-improve-and-deploy-application-cdb7
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
@@ -87,6 +110,14 @@ const Homepage2025: React.FC = () => {
           <motion.div
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
+<<<<<<< HEAD
+            transition={{ duration: 0.3 }}
+            className="text-center"
+          >
+            <div className="w-16 h-16 border-4 border-cyan-500 border-t-transparent rounded-full animate-spin mx-auto mb-4"></div>
+            <p className="text-xl text-gray-300">Loading Zion Tech Group...</p>
+            <p className="text-sm text-gray-500 mt-2">Preparing your future...</p>
+=======
             className="text-center"
           >
             <div className="w-20 h-20 mx-auto mb-6">
@@ -98,6 +129,7 @@ const Homepage2025: React.FC = () => {
             </div>
             <h2 className="text-2xl font-bold text-white mb-2">Loading Zion Tech Group</h2>
             <p className="text-gray-400">Preparing the future...</p>
+>>>>>>> origin/cursor/analyze-improve-and-deploy-application-cdb7
           </motion.div>
         </div>
       </Layout>
@@ -242,6 +274,63 @@ const Homepage2025: React.FC = () => {
           </div>
         </section>
 
+<<<<<<< HEAD
+        {/* Company Stats */}
+        <section 
+          className="py-20 px-4 bg-gradient-to-b from-black/30 to-black/50 relative"
+          aria-labelledby="stats-heading"
+        >
+          <div className="max-w-6xl mx-auto">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+            >
+              Why Choose Zion Tech Group?
+            </motion.h2>
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+              {[
+                { icon: Brain, title: "500+ Services", description: "Comprehensive technology solutions", color: "cyan", highlight: "AI to Quantum" },
+                { icon: Shield, title: "98% Satisfaction", description: "Client success rate", color: "blue", highlight: "Proven Results" },
+                { icon: Rocket, title: "24/7 Support", description: "Round-the-clock assistance", color: "purple", highlight: "Always Available" },
+                { icon: Star, title: "50+ Industries", description: "Cross-sector expertise", color: "emerald", highlight: "Global Reach" }
+              ].map((stat, index) => (
+                <motion.div
+                  key={stat.title}
+                  className="text-center p-6 rounded-xl bg-gray-800/50 backdrop-blur-sm border border-gray-700/50 hover:border-cyan-400/50 transition-all duration-300 hover:transform hover:scale-105 group"
+                  initial={{ opacity: 0, y: 50 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.6, delay: index * 0.1 }}
+                  whileHover={{ y: -10 }}
+                >
+                  <stat.icon className={`w-12 h-12 mx-auto mb-4 text-${stat.color}-400 group-hover:scale-110 transition-transform`} />
+                  <h3 className="text-2xl font-bold text-white mb-2">{stat.title}</h3>
+                  <p className="text-gray-400 mb-2">{stat.description}</p>
+                  <span className={`text-sm text-${stat.color}-400 font-semibold`}>{stat.highlight}</span>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </motion.section>
+
+        {/* New: Core Capabilities Section */}
+        <motion.section 
+          className="py-20 px-4 bg-gray-900"
+          initial={{ opacity: 0, y: 100 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.8 }}
+        >
+          <div className="max-w-7xl mx-auto">
+            <motion.h2 
+              className="text-4xl md:text-5xl font-bold text-center mb-16 bg-gradient-to-r from-purple-400 to-pink-500 bg-clip-text text-transparent"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+=======
       {/* Performance & Innovation */}
       <section className="py-20 px-4 bg-black">
         <div className="max-w-7xl mx-auto">
@@ -265,9 +354,97 @@ const Homepage2025: React.FC = () => {
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.1 }}
+>>>>>>> origin/cursor/analyze-improve-and-deploy-application-cdb7
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.2 }}
             >
+<<<<<<< HEAD
+              Core Capabilities
+            </motion.h2>
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {[
+                {
+                  icon: Brain,
+                  title: "Artificial Intelligence",
+                  description: "Advanced AI solutions including machine learning, natural language processing, and computer vision",
+                  features: ["ML Models", "NLP", "Computer Vision", "AI Ethics"],
+                  color: "cyan"
+                },
+                {
+                  icon: Zap,
+                  title: "Quantum Computing",
+                  description: "Next-generation quantum solutions for complex computational challenges",
+                  features: ["Quantum Algorithms", "Quantum Security", "Hybrid Systems", "Optimization"],
+                  color: "blue"
+                },
+                {
+                  icon: Rocket,
+                  title: "Space Technology",
+                  description: "Innovative space tech for terrestrial and extraterrestrial applications",
+                  features: ["Satellite Systems", "Space Mining", "Navigation", "Communication"],
+                  color: "purple"
+                },
+                {
+                  icon: Shield,
+                  title: "Cybersecurity",
+                  description: "Enterprise-grade security solutions for modern threats",
+                  features: ["Zero Trust", "Threat Detection", "Compliance", "Incident Response"],
+                  color: "emerald"
+                },
+                {
+                  icon: Globe,
+                  title: "Cloud Solutions",
+                  description: "Scalable cloud infrastructure and platform services",
+                  features: ["Multi-Cloud", "Serverless", "DevOps", "Monitoring"],
+                  color: "orange"
+                },
+                {
+                  icon: Target,
+                  title: "Digital Transformation",
+                  description: "End-to-end digital transformation consulting and implementation",
+                  features: ["Strategy", "Implementation", "Change Management", "Training"],
+                  color: "pink"
+                }
+              ].map((capability, index) => (
+                <motion.div
+                  key={capability.title}
+                  className="p-6 rounded-xl bg-gray-800/50 backdrop-blur-sm border border-gray-700/50 hover:border-cyan-400/50 transition-all duration-300 hover:transform hover:scale-105 group"
+                  initial={{ opacity: 0, y: 50 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.6, delay: index * 0.1 }}
+                  whileHover={{ y: -5 }}
+                >
+                  <capability.icon className={`w-12 h-12 mb-4 text-${capability.color}-400 group-hover:scale-110 transition-transform`} />
+                  <h3 className="text-xl font-bold text-white mb-3">{capability.title}</h3>
+                  <p className="text-gray-400 mb-4 text-sm leading-relaxed">{capability.description}</p>
+                  <div className="space-y-2">
+                    {capability.features.map((feature, idx) => (
+                      <div key={idx} className="flex items-center gap-2 text-sm">
+                        <CheckCircle className="w-4 h-4 text-emerald-400 flex-shrink-0" />
+                        <span className="text-gray-300">{feature}</span>
+                      </div>
+                    ))}
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </motion.section>
+
+        {/* New: Success Stories Section */}
+        <motion.section 
+          className="py-20 px-4 bg-gradient-to-b from-gray-800/50 to-gray-900/50"
+          initial={{ opacity: 0, y: 100 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.8 }}
+        >
+          <div className="max-w-7xl mx-auto">
+            <motion.h2 
+              className="text-4xl md:text-5xl font-bold text-center mb-16 bg-gradient-to-r from-emerald-400 to-teal-500 bg-clip-text text-transparent"
+=======
               <div className="w-20 h-20 bg-gradient-to-r from-green-500 to-emerald-500 rounded-full flex items-center justify-center mx-auto mb-6">
                 <Shield className="w-10 h-10 text-white" />
               </div>
@@ -278,6 +455,7 @@ const Homepage2025: React.FC = () => {
             </motion.div>
 
             <motion.div
+>>>>>>> origin/cursor/analyze-improve-and-deploy-application-cdb7
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -388,6 +566,95 @@ const Homepage2025: React.FC = () => {
           </div>
         </section>
 
+<<<<<<< HEAD
+        {/* Services Preview */}
+        <section 
+          className="py-20 px-4 relative"
+          aria-labelledby="services-heading"
+        >
+          <div className="max-w-6xl mx-auto">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+              className="text-center mb-16"
+            >
+              <h2 
+                id="services-heading"
+                className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent"
+              >
+                Our Services
+              </h2>
+              <p className="text-xl text-gray-300 max-w-4xl mx-auto leading-relaxed">
+                Discover our comprehensive range of cutting-edge technology solutions designed to transform your business and accelerate your digital transformation journey
+              </p>
+            </motion.div>
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              <Suspense fallback={
+                <div className="h-64 bg-gray-800/50 rounded-xl animate-pulse flex items-center justify-center">
+                  <div className="text-gray-400">Loading...</div>
+                </div>
+              }>
+                <UltraFuturisticServiceCard2026
+                  service={{
+                    id: 'ai-ml',
+                    name: 'AI & Machine Learning',
+                    tagline: 'Advanced artificial intelligence solutions',
+                    description: 'Advanced artificial intelligence solutions for modern businesses',
+                    icon: '🧠',
+                    features: ['Predictive Analytics', 'Natural Language Processing', 'Computer Vision'],
+                    price: 'From $2,999/month',
+                    period: 'month',
+                    category: 'AI & ML'
+                  }}
+                  variant="ai"
+                />
+              </Suspense>
+              
+              <Suspense fallback={
+                <div className="h-64 bg-gray-800/50 rounded-xl animate-pulse flex items-center justify-center">
+                  <div className="text-gray-400">Loading...</div>
+                </div>
+              }>
+                <UltraFuturisticServiceCard2026
+                  service={{
+                    id: 'quantum',
+                    name: 'Quantum Technology',
+                    tagline: 'Next-generation quantum computing',
+                    description: 'Revolutionary quantum computing solutions for complex problems',
+                    icon: '⚛️',
+                    features: ['Quantum Algorithms', 'Quantum Security', 'Quantum Optimization'],
+                    price: 'From $5,999/month',
+                    period: 'month',
+                    category: 'Quantum'
+                  }}
+                  variant="quantum"
+                />
+              </Suspense>
+              
+              <Suspense fallback={
+                <div className="h-64 bg-gray-800/50 rounded-xl animate-pulse flex items-center justify-center">
+                  <div className="text-gray-400">Loading...</div>
+                </div>
+              }>
+                <UltraFuturisticServiceCard2026
+                  service={{
+                    id: 'space-tech',
+                    name: 'Space Technology',
+                    tagline: 'Innovative space solutions',
+                    description: 'Cutting-edge space technology and exploration solutions',
+                    icon: '🚀',
+                    features: ['Satellite Systems', 'Space Mining', 'Interplanetary Tech'],
+                    price: 'From $8,999/month',
+                    period: 'month',
+                    category: 'Space'
+                  }}
+                  variant="emerging"
+                />
+              </Suspense>
+=======
       {/* Enhanced Features Section */}
       <section className="py-20 px-4" aria-labelledby="features-heading">
         <div className="max-w-6xl mx-auto">
@@ -585,6 +852,7 @@ const Homepage2025: React.FC = () => {
               >
                 Schedule a Demo
               </button>
+>>>>>>> origin/cursor/analyze-improve-and-deploy-application-cdb7
             </div>
             
             {/* View All Services CTA */}
@@ -637,6 +905,52 @@ const Homepage2025: React.FC = () => {
                 viewport={{ once: true }}
                 className="p-6 bg-gradient-to-br from-cyan-500/10 to-blue-500/10 border border-cyan-400/20 rounded-xl backdrop-blur-sm hover:border-cyan-400/40 transition-all duration-300"
               >
+<<<<<<< HEAD
+                <div className="text-cyan-400 mb-4">
+                  <Brain className="w-12 h-12" />
+                </div>
+                <h3 className="text-xl font-semibold text-white mb-3">Autonomous AI</h3>
+                <p className="text-gray-300 leading-relaxed">
+                  Self-learning systems that continuously improve and adapt to your business needs
+                </p>
+              </motion.div>
+              
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.1 }}
+                viewport={{ once: true }}
+                className="p-6 bg-gradient-to-br from-purple-500/10 to-pink-500/10 border border-purple-400/20 rounded-xl backdrop-blur-sm hover:border-purple-400/40 transition-all duration-300"
+              >
+                <div className="text-purple-400 mb-4">
+                  <Atom className="w-12 h-12" />
+                </div>
+                <h3 className="text-xl font-semibold text-white mb-3">Quantum Computing</h3>
+                <p className="text-gray-300 leading-relaxed">
+                  Harness the power of quantum mechanics for unprecedented computational capabilities
+                </p>
+              </motion.div>
+              
+              <motion.div
+                initial={{ opacity: 0, x: 20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.6, delay: 0.2 }}
+                viewport={{ once: true }}
+                className="p-6 bg-gradient-to-br from-green-500/10 to-emerald-500/10 border border-green-400/20 rounded-xl backdrop-blur-sm hover:border-green-400/40 transition-all duration-300"
+              >
+                <div className="text-green-400 mb-4">
+                  <Rocket className="w-12 h-12" />
+                </div>
+                <h3 className="text-xl font-semibold text-white mb-3">Space Innovation</h3>
+                <p className="text-gray-300 leading-relaxed">
+                  Pioneering solutions for space exploration, mining, and interplanetary technology
+                </p>
+              </motion.div>
+            </div>
+          </div>
+        </section>
+      </main>
+=======
                 <Mail className="w-6 h-6 group-hover:rotate-12 transition-transform" />
               </a>
             </motion.div>
@@ -697,6 +1011,7 @@ const Homepage2025: React.FC = () => {
       >
         <Zap className="w-6 h-6 text-white mx-auto" />
       </motion.button>
+>>>>>>> origin/cursor/analyze-improve-and-deploy-application-cdb7
     </Layout>
   );
 };

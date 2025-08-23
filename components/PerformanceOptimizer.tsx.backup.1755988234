@@ -4,7 +4,11 @@ import { motion, AnimatePresence } from 'framer-motion';
 // Type definitions for browser APIs
 declare global {
   interface Window {
+<<<<<<< HEAD
+    IntersectionObserver: typeof IntersectionObserver;
+=======
     gtag?: (...args: unknown[]) => void;
+>>>>>>> origin/cursor/analyze-improve-and-deploy-application-cdb7
   }
 }
 
