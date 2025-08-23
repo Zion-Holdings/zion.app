@@ -26,6 +26,12 @@ export { AIAgentOrchestratorService } from './aiAgentOrchestratorService';
 export { AIGuardrailsService } from './aiGuardrailsService';
 export { AgenticRAGService } from './agenticRAGService';
 
+// 2025 Innovative AI Services Expansion
+export { aiFinancialAdvisorService } from './aiFinancialAdvisorService';
+export { aiSupplyChainOptimizerService } from './aiSupplyChainOptimizerService';
+export { aiCybersecurityThreatIntelligenceService } from './aiCybersecurityThreatIntelligenceService';
+export { aiHealthcareAnalyticsService } from './aiHealthcareAnalyticsService';
+
 // Export types
 export type {
   ContentTemplate,
@@ -235,3 +241,35 @@ export type { AdvancedCybersecurityService } from '../data/2025-advanced-cyberse
 export type { AdvancedCloudDevOpsService } from '../data/2025-advanced-cloud-devops-services';
 export type { IndustrySpecificSolution } from '../data/2025-industry-specific-solutions';
 export type { EmergingTechnologyService } from '../data/2025-emerging-technology-services';
+
+// Export new 2025 AI service types
+export type {
+  FinancialProfile,
+  InvestmentRecommendation,
+  PortfolioAnalysis,
+  FinancialPlan
+} from './aiFinancialAdvisorService';
+
+export type {
+  SupplyChainNode,
+  SupplyChainRoute,
+  DemandForecast,
+  InventoryOptimization,
+  SupplyChainOptimization
+} from './aiSupplyChainOptimizerService';
+
+export type {
+  SecurityThreat,
+  VulnerabilityAssessment,
+  SecurityIncident,
+  ThreatIntelligence,
+  SecurityAutomation
+} from './aiCybersecurityThreatIntelligenceService';
+
+export type {
+  PatientData,
+  DiagnosisPrediction,
+  TreatmentRecommendation,
+  HealthMonitoring,
+  PopulationHealthAnalytics
+} from './aiHealthcareAnalyticsService';
