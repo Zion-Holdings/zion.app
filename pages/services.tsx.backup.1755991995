@@ -1,22 +1,40 @@
 import React, { useState } from 'react';
 import Head from 'next/head';
+<<<<<<< HEAD
+import Link from 'next/link';
+import { Check, Star, Zap, Shield, Users, Globe, ArrowRight, ExternalLink, TrendingUp, Clock, Target, Building, Rocket, Award, DollarSign, ChartBar, Lock, Cpu, Database, Cloud, Smartphone, Palette, Search, MessageSquare, FileText, Calendar, CreditCard, BarChart3, Settings, Zap as ZapIcon, Code, BookOpen, Activity, Database as DatabaseIcon, Play, Mail, Phone, MapPin, Filter, Grid, List, ChevronDown, ChevronUp, Sparkles, FlaskConical, Dna, Car, Leaf, Factory, Truck, Microscope, GraduationCap, ShieldCheck, Brain, Atom, Globe2, Bot, ChevronRight } from 'lucide-react';
+=======
 import { useRouter } from 'next/router';
 import { Check, Star, TrendingUp, Clock, DollarSign, ShieldCheck, Search, Filter, Grid3X3, List, Phone, Mail, MapPin, ArrowRight, ExternalLink, Brain, Rocket, Globe, Cpu, Lock, Eye, Zap } from 'lucide-react';
+>>>>>>> origin/cursor/enhance-app-services-and-website-with-futuristic-design-ee3d
 import Button from '../components/ui/Button';
 import Card from '../components/ui/Card';
+<<<<<<< HEAD
+import UltraFuturisticBackground from '../components/ui/UltraFuturisticBackground';
+import UltraFuturisticCard from '../components/ui/UltraFuturisticCard';
+import { enhancedRealMicroSaasServices, serviceCategories, getServicesByCategory, getPopularServices, getServicesByPriceRange } from '../data/enhanced-real-micro-saas-services';
+=======
 import { motion } from 'framer-motion';
 import { enhancedRealMicroSaasServices, serviceCategories } from '../data/enhanced-real-micro-saas-services';
 import { extraServices } from '../data/extra-services';
 import { additionalEnhancedServices } from '../data/additional-real-services';
 import { innovativeNewServices, innovativeServiceCategories } from '../data/innovative-new-services';
+>>>>>>> origin/cursor/enhance-app-services-and-website-with-futuristic-design-ee3d
 
 export default function ServicesPage() {
   const [selectedCategory, setSelectedCategory] = useState('All');
   const [viewMode, setViewMode] = useState<'grid' | 'list'>('grid');
+<<<<<<< HEAD
+  const [priceRange, setPriceRange] = useState('All');
+  const [searchQuery, setSearchQuery] = useState('');
+  const [sortBy, setSortBy] = useState('name');
+  const [showFilters, setShowFilters] = useState(false);
+=======
   const [sortBy, setSortBy] = useState<'name' | 'price' | 'rating' | 'roi' | 'category'>('name');
   const [priceRange, setPriceRange] = useState<[number, number]>([0, 10000]);
   const [showInnovative, setShowInnovative] = useState(true);
   const router = useRouter();
+>>>>>>> origin/cursor/enhance-app-services-and-website-with-futuristic-design-ee3d
 
   const priceRanges = [
     { value: 'All', label: 'All Prices' },
@@ -72,6 +90,9 @@ export default function ServicesPage() {
       default:
         return a.name.localeCompare(b.name);
     }
+<<<<<<< HEAD
+  });
+=======
   }, [router.query.category, router.query.cat]);
 
   const allServices = useMemo(() => {
@@ -145,6 +166,7 @@ export default function ServicesPage() {
 
     return filtered;
   }, [searchTerm, selectedCategory, sortBy, allServices, priceRange]);
+>>>>>>> origin/cursor/enhance-app-services-and-website-with-futuristic-design-ee3d
 
   const contactInfo = {
     mobile: '+1 302 464 0950',
@@ -153,6 +175,69 @@ export default function ServicesPage() {
     website: 'https://ziontechgroup.com'
   };
 
+<<<<<<< HEAD
+  const popularServices = getPopularServices();
+
+  // Enhanced service categories with better descriptions and market data
+  const enhancedCategories = [
+    {
+      name: 'Quantum Computing & AI',
+      description: 'Revolutionary quantum AI solutions with unprecedented computing power',
+      icon: <Brain className="w-6 h-6" />,
+      count: enhancedRealMicroSaasServices.filter(s => s.category === 'Quantum Computing & AI' || s.category === 'AI & Machine Learning').length,
+      color: 'from-violet-500 to-purple-600'
+    },
+    {
+      name: 'Space Technology & Mining',
+      description: 'AI-powered space exploration and asteroid mining platforms',
+      icon: <Rocket className="w-6 h-6" />,
+      count: enhancedRealMicroSaasServices.filter(s => s.category === 'Space Technology & Mining' || s.category === 'Space Technology & Colonization').length,
+      marketSize: '$70B+',
+      growthRate: '500%'
+    },
+    {
+      name: 'Manufacturing & Industry 4.0',
+      description: 'Next-generation autonomous manufacturing and robotics platforms',
+      icon: <Factory className="w-6 h-6" />,
+      count: enhancedRealMicroSaasServices.filter(s => s.category === 'Manufacturing & Industry 4.0' || s.category === 'Robotics & Automation').length,
+      color: 'from-orange-500 to-red-600'
+    },
+    {
+      name: 'Healthcare & Biotechnology',
+      description: 'AI-powered biomedical research and drug discovery platforms',
+  // Get variant for service category
+  const getCategoryVariant = (category: string) => {
+    switch (category) {
+      case 'AI & Machine Learning':
+        return 'neural';
+      case 'Quantum Computing':
+        return 'quantum';
+      case 'Space Technology':
+        return 'space';
+      case 'Biotechnology':
+        return 'biotech';
+      case 'Renewable Energy':
+        return 'energy';
+      case 'Advanced Manufacturing':
+        return 'holographic';
+      case 'Autonomous Vehicles':
+        return 'cyberpunk';
+      case 'Blockchain & Web3':
+        return 'quantum';
+      case 'Metaverse & VR/AR':
+        return 'holographic';
+      case 'IoT & Connected Devices':
+        return 'neural';
+      case 'Cybersecurity':
+        return 'cyberpunk';
+      case 'Healthcare & Life Sciences':
+        return 'biotech';
+      case 'Financial Technology':
+        return 'quantum';
+      default:
+        return 'neural';
+    }
+=======
       icon: <FlaskConical className="w-6 h-6" />,
       count: enhancedRealMicroSaasServices.filter(s => s.category === 'Healthcare & Biotechnology').length,
       color: 'from-green-500 to-emerald-600'
@@ -277,11 +362,30 @@ export default function ServicesPage() {
     'Quantum IoT': <Cpu className="w-5 h-5" />,
     'Autonomous Vehicles': <Rocket className="w-5 h-5" />,
     'Smart Energy': <Zap className="w-5 h-5" />
+>>>>>>> origin/cursor/enhance-app-services-and-website-with-futuristic-design-ee3d
   };
 
   return (
     <UltraFuturisticBackground>
       <Head>
+<<<<<<< HEAD
+        <title>500+ Revolutionary Micro SAAS Services | Zion Tech Group</title>
+        <meta name="description" content="Explore 500+ cutting-edge micro SAAS services powered by quantum AI, autonomous systems, and next-generation technology. Transform your business today." />
+        <meta name="keywords" content="micro SAAS services, AI solutions, quantum computing, autonomous systems, business automation" />
+        <meta property="og:title" content="500+ Revolutionary Micro SAAS Services | Zion Tech Group" />
+        <meta property="og:description" content="Transform your business with cutting-edge micro SAAS services powered by quantum AI and autonomous systems." />
+        <meta property="og:url" content="https://ziontechgroup.com/services" />
+        <meta property="og:type" content="website" />
+        <link rel="canonical" href="https://ziontechgroup.com/services" />
+      </Head>
+
+      {/* Hero Section */}
+            <h2 className="text-3xl sm:text-4xl font-bold text-white mb-6">
+              Ready to <span className="bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent">Transform</span> Your Business?
+            </h2>
+            <p className="text-xl text-gray-300 mb-8">
+              Choose from our comprehensive collection of revolutionary micro SaaS services and start your transformation journey today.
+=======
         <title>Services - Zion Tech Group | 250+ Micro SaaS, IT and AI Solutions</title>
         <meta name="description" content="Explore 250+ revolutionary micro SaaS, IT services and AI solutions delivering 1000%+ ROI. Quantum AI, autonomous systems, space technology, and more. Free trials available." />
         <link rel="canonical" href="https://ziontechgroup.com/services" />
@@ -295,6 +399,7 @@ export default function ServicesPage() {
             <p className="text-xl text-gray-300 max-w-3xl mx-auto mb-8">
               Discover our complete portfolio of revolutionary micro SaaS, IT services, and AI solutions. 
               Each service is designed to deliver exceptional value and measurable ROI.
+>>>>>>> origin/cursor/enhance-app-services-and-website-with-futuristic-design-ee3d
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8">
@@ -315,6 +420,30 @@ export default function ServicesPage() {
               </Button>
             </div>
 
+<<<<<<< HEAD
+            {/* Contact Information */}
+            <div className="p-6 bg-black/30 backdrop-blur-sm rounded-2xl border border-white/20">
+              <h3 className="text-lg font-semibold text-white mb-4">Need Help Choosing?</h3>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-sm">
+                <div className="flex items-center justify-center gap-2 text-cyan-400">
+                  <Phone className="w-4 h-4" />
+                  <span>{contactInfo.mobile}</span>
+                </div>
+                <div className="flex items-center justify-center gap-2 text-purple-400">
+                  <Mail className="w-4 h-4" />
+                  <span>{contactInfo.email}</span>
+                </div>
+                <div className="flex items-center justify-center gap-2 text-green-400">
+                  <MapPin className="w-4 h-4" />
+                  <span className="text-xs">{contactInfo.address}</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </UltraFuturisticBackground>
+=======
             </div>
           </div>
         </section>
@@ -778,6 +907,7 @@ export default function ServicesPage() {
                           </div>
                           <div className="text-sm text-green-400 font-semibold">
                             {service.roi.match(/(\d+)/)?.[1]}% ROI
+>>>>>>> origin/cursor/enhance-app-services-and-website-with-futuristic-design-ee3d
                           </div>
                         </div>
                         
@@ -801,6 +931,169 @@ export default function ServicesPage() {
                           </Button>
                         </div>
                       </div>
+<<<<<<< HEAD
+                    </EnhancedFuturisticCard>
+                  ))}
+                </div>
+              )}
+
+              {/* No Results */}
+              {filteredServices.length === 0 && (
+                <div className="text-center py-20">
+                  <div className="text-6xl mb-4">🔍</div>
+                  <h3 className="text-2xl font-bold text-white mb-2">No services found</h3>
+                  <p className="text-gray-400 mb-6">Try adjusting your search criteria or browse all categories.</p>
+                  <Button
+                    onClick={() => {
+                      setSearchQuery('');
+                      setSelectedCategory('All');
+                      setPriceRange('All');
+                    }}
+                    variant="primary"
+                  >
+                    Clear Filters
+                  </Button>
+                </div>
+              )}
+            </div>
+          </div>
+        </section>
+
+        {/* Contact Information */}
+        <section className="py-20 bg-gradient-to-br from-gray-900/50 to-black/50">
+          <div className="container mx-auto px-4">
+            <div className="text-center mb-16">
+              <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">
+                Expert Support & Consultation
+              </h2>
+              <p className="text-xl text-gray-400 max-w-3xl mx-auto">
+                Our team of AI and quantum computing experts is here to help you choose the right services and implement them successfully.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto mb-12">
+              <EnhancedFuturisticCard
+                variant="neural"
+                intensity="medium"
+                className="text-center"
+              >
+                <div className="text-cyan-400 mb-4">
+                  <Phone className="w-8 h-8 mx-auto" />
+                </div>
+                <h3 className="text-xl font-semibold text-white mb-2">Phone Support</h3>
+                <p className="text-lg text-cyan-400 font-mono">{contactInfo.mobile}</p>
+                <p className="text-sm text-gray-400 mt-2">Available 24/7</p>
+              </EnhancedFuturisticCard>
+
+              <EnhancedFuturisticCard
+                variant="quantum"
+                intensity="medium"
+                className="text-center"
+              >
+                <div className="text-fuchsia-400 mb-4">
+                  <Mail className="w-8 h-8 mx-auto" />
+                </div>
+                <h3 className="text-xl font-semibold text-white mb-2">Email Consultation</h3>
+                <p className="text-lg text-fuchsia-400 font-mono break-all">{contactInfo.email}</p>
+                <p className="text-sm text-gray-400 mt-2">Response within 2 hours</p>
+              </EnhancedFuturisticCard>
+
+              <EnhancedFuturisticCard
+                variant="holographic"
+                intensity="medium"
+                className="text-center"
+              >
+                <div className="text-green-400 mb-4">
+                  <MapPin className="w-8 h-8 mx-auto" />
+                </div>
+                <h3 className="text-xl font-semibold text-white mb-2">Headquarters</h3>
+                <p className="text-sm text-green-400 font-mono leading-relaxed">{contactInfo.address}</p>
+                <p className="text-sm text-gray-400 mt-2">Visit us anytime</p>
+              </EnhancedFuturisticCard>
+            </div>
+
+            <div className="text-center">
+              <EnhancedFuturisticCard
+                variant="quantum"
+                intensity="low"
+                className="max-w-3xl mx-auto"
+              >
+                <div className="text-center">
+                  <h3 className="text-2xl font-bold text-white mb-4">Why Choose Our Services?</h3>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-left mb-6">
+                    <div className="flex items-center space-x-3">
+                      <Check className="w-5 h-5 text-green-400 flex-shrink-0" />
+                      <span className="text-gray-300">300+ Production-Ready Services</span>
+                    </div>
+                    <div className="flex items-center space-x-3">
+                      <Check className="w-5 h-5 text-green-400 flex-shrink-0" />
+                      <span className="text-gray-300">21-Day Free Trials</span>
+                    </div>
+                    <div className="flex items-center space-x-3">
+                      <Check className="w-5 h-5 text-green-400 flex-shrink-0" />
+                      <span className="text-gray-300">Expert Implementation Support</span>
+                    </div>
+                    <div className="flex items-center space-x-3">
+                      <Check className="w-5 h-5 text-green-400 flex-shrink-0" />
+                      <span className="text-gray-300">1500%+ Average ROI</span>
+                    </div>
+                    <div className="flex items-center space-x-3">
+                      <Check className="w-5 h-5 text-green-400 flex-shrink-0" />
+                      <span className="text-gray-300">24/7 Technical Support</span>
+                    </div>
+                    <div className="flex items-center space-x-3">
+                      <Check className="w-5 h-5 text-green-400 flex-shrink-0" />
+                      <span className="text-gray-300">Quantum-Safe Security & Compliance</span>
+                    </div>
+                  </div>
+                  <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                    <Button href="/contact" variant="primary" size="lg">
+                      Get Free Consultation
+                      <ArrowRight className="w-5 h-5 ml-2" />
+                    </Button>
+                    <Button href="tel:+13024640950" variant="secondary" size="lg">
+                      Call Now
+                      <Phone className="w-5 h-5 ml-2" />
+                    </Button>
+                  </div>
+                </div>
+              </EnhancedFuturisticCard>
+            </div>
+          </div>
+        </section>
+
+        {/* Call to Action */}
+        <section className="py-20">
+          <div className="container mx-auto px-4 text-center">
+            <EnhancedFuturisticCard
+              variant="quantum"
+              intensity="high"
+              className="max-w-4xl mx-auto"
+            >
+              <div className="text-center">
+                <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">
+                  Ready to Transform Your Business?
+                </h2>
+                <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
+                  Contact our team to discuss your specific needs and find the perfect solution for your business. 
+                  Get a free consultation and start your 21-day trial today.
+                </p>
+                <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8">
+                  <Button href="/contact" variant="primary" size="lg">
+                    Get Free Consultation
+                    <ArrowRight className="w-5 h-5 ml-2" />
+                  </Button>
+                  <Button href="/pricing" variant="secondary" size="lg">
+                    View Pricing
+                  </Button>
+                </div>
+              </div>
+            </EnhancedFuturisticCard>
+          </div>
+        </section>
+      </div>
+    </EnhancedFuturisticBackground>
+=======
       <section className="py-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto text-center">
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6">
@@ -1221,6 +1514,7 @@ export default function ServicesPage() {
               </div>
             </div>
           </motion.div>
+>>>>>>> origin/cursor/enhance-app-services-and-website-with-futuristic-design-ee3d
         </div>
       </section>
     </UltraFuturisticBackground>
