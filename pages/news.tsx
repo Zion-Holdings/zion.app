@@ -18,7 +18,7 @@ import {
   Zap,
   Globe,
   Award,
-  Microphone
+  Mic
 } from 'lucide-react';
 import Link from 'next/link';
 
@@ -408,7 +408,7 @@ const NewsPage: React.FC = () => {
                   className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-purple-600 to-cyan-600 text-white font-semibold rounded-lg hover:from-purple-700 hover:to-cyan-700 transition-all duration-300 transform hover:scale-105"
                 >
                   Contact Media Team
-                  <Microphone className="ml-2 w-5 h-5" />
+                  <Mic className="ml-2 w-5 h-5" />
                 </a>
                 <a
                   href="/press"
