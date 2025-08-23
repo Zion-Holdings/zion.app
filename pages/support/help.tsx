@@ -1,412 +1,346 @@
 import React from 'react';
-import Layout from '../../components/layout/Layout';
-import { motion } from 'framer-motion';
+import Head from 'next/head';
+import Link from 'next/link';
 import { 
-  HelpCircle, 
-  Search, 
-  BookOpen, 
-  Video, 
-  MessageCircle, 
-  Phone, 
-  Mail, 
-  Clock, 
-  Star, 
-  CheckCircle,
-  ArrowRight,
-  ExternalLink,
-  FileText,
-  Code,
-  Shield,
-  Brain,
-  Cloud,
-  Rocket
+  HelpCircle, Search, MessageCircle, Phone, Mail, Clock, 
+  BookOpen, Video, Users, FileText, ArrowRight, CheckCircle,
+  Brain, Atom, Shield, Rocket, Cpu, Database, Globe, Building, Eye
 } from 'lucide-react';
 
-const HelpCenterPage: React.FC = () => {
-  const categories = [
+const SupportHelpPage: React.FC = () => {
+  const helpCategories = [
     {
       title: 'Getting Started',
-      description: 'Quick start guides and tutorials for new users',
-      icon: <Rocket className="w-8 h-8" />,
-      color: 'from-blue-500 to-indigo-500',
+      description: 'Quick start guides and onboarding resources',
+      icon: Rocket,
+      color: 'from-cyan-500 to-blue-500',
       articles: [
-        { title: 'Welcome to Zion Tech Group', views: '12.5k', time: '5 min read' },
-        { title: 'First Steps Setup Guide', views: '8.9k', time: '10 min read' },
-        { title: 'Account Configuration', views: '6.7k', time: '8 min read' }
-      ]
-    },
-    {
-      title: 'Account & Billing',
-      description: 'Manage your account, billing, and subscription',
-      icon: <Shield className="w-8 h-8" />,
-      color: 'from-green-500 to-teal-500',
-      articles: [
-        { title: 'Managing Your Account', views: '15.2k', time: '7 min read' },
-        { title: 'Billing & Payment Methods', views: '11.8k', time: '6 min read' },
-        { title: 'Subscription Plans', views: '9.3k', time: '5 min read' }
-      ]
-    },
-    {
-      title: 'Technical Support',
-      description: 'Technical issues and troubleshooting guides',
-      icon: <Code className="w-8 h-8" />,
-      color: 'from-purple-500 to-pink-500',
-      articles: [
-        { title: 'Common Technical Issues', views: '18.7k', time: '12 min read' },
-        { title: 'API Troubleshooting', views: '14.2k', time: '15 min read' },
-        { title: 'Performance Optimization', views: '10.9k', time: '10 min read' }
-      ]
-    },
-    {
-      title: 'Security & Compliance',
-      description: 'Security best practices and compliance information',
-      icon: <Shield className="w-8 h-8" />,
-      color: 'from-red-500 to-orange-500',
-      articles: [
-        { title: 'Security Best Practices', views: '16.3k', time: '8 min read' },
-        { title: 'Compliance Guidelines', views: '13.1k', time: '10 min read' },
-        { title: 'Data Protection', views: '11.5k', time: '7 min read' }
+        'First Steps with Zion Tech Group',
+        'Setting Up Your Account',
+        'Quick Tour of Features',
+        'Common Setup Issues'
       ]
     },
     {
       title: 'AI & Machine Learning',
-      description: 'AI model development and deployment help',
-      icon: <Brain className="w-8 h-8" />,
-      color: 'from-orange-500 to-red-500',
+      description: 'AI platform setup and troubleshooting',
+      icon: Brain,
+      color: 'from-purple-500 to-pink-500',
       articles: [
-        { title: 'AI Model Development', views: '9.8k', time: '20 min read' },
-        { title: 'Model Deployment Guide', views: '7.6k', time: '15 min read' },
-        { title: 'AI Ethics & Bias', views: '5.4k', time: '12 min read' }
+        'AI Model Configuration',
+        'Training Data Setup',
+        'Performance Optimization',
+        'AI Ethics Guidelines'
       ]
     },
     {
-      title: 'Cloud & Infrastructure',
-      description: 'Cloud deployment and infrastructure management',
-      icon: <Cloud className="w-8 h-8" />,
-      color: 'from-cyan-500 to-blue-500',
+      title: 'Quantum Computing',
+      description: 'Quantum platform implementation support',
+      icon: Atom,
+      color: 'from-blue-500 to-indigo-500',
       articles: [
-        { title: 'Cloud Deployment', views: '12.1k', time: '18 min read' },
-        { title: 'Infrastructure Management', views: '8.9k', time: '14 min read' },
-        { title: 'Monitoring & Logging', views: '6.7k', time: '11 min read' }
+        'Quantum Circuit Design',
+        'Quantum Error Correction',
+        'Quantum-Classical Integration',
+        'Performance Benchmarks'
+      ]
+    },
+    {
+      title: 'Cybersecurity',
+      description: 'Security implementation and best practices',
+      icon: Shield,
+      color: 'from-red-500 to-orange-500',
+      articles: [
+        'Security Configuration',
+        'Threat Detection Setup',
+        'Compliance Guidelines',
+        'Incident Response'
+      ]
+    },
+    {
+      title: 'Space Technology',
+      description: 'Space tech platform support',
+      icon: Rocket,
+      color: 'from-indigo-500 to-purple-500',
+      articles: [
+        'Satellite Integration',
+        'Data Processing Pipelines',
+        'Mission Planning Tools',
+        'Ground Station Setup'
+      ]
+    },
+    {
+      title: 'Enterprise Solutions',
+      description: 'Large-scale deployment support',
+      icon: Building,
+      color: 'from-green-500 to-emerald-500',
+      articles: [
+        'Enterprise Architecture',
+        'Scalability Planning',
+        'Integration Services',
+        'Custom Development'
       ]
     }
   ];
 
   const popularArticles = [
-    { title: 'Getting Started with Zion Tech Group', category: 'Getting Started', views: '25.3k', rating: 4.9 },
-    { title: 'API Authentication Guide', category: 'Technical Support', views: '22.1k', rating: 4.8 },
-    { title: 'Security Best Practices', category: 'Security & Compliance', views: '19.8k', rating: 4.9 },
-    { title: 'Cloud Deployment Tutorial', category: 'Cloud & Infrastructure', views: '17.5k', rating: 4.7 }
+    {
+      title: 'How to Set Up AI Consciousness Evolution',
+      category: 'AI & Machine Learning',
+      views: '2.5k',
+      href: '/ai-consciousness-evolution-2045'
+    },
+    {
+      title: 'Quantum Neural Network Implementation Guide',
+      category: 'Quantum Computing',
+      views: '1.8k',
+      href: '/quantum-neural-network-platform'
+    },
+    {
+      title: 'Space Resource Intelligence Platform Setup',
+      category: 'Space Technology',
+      views: '1.2k',
+      href: '/space-resource-intelligence-2045'
+    },
+    {
+      title: 'Zero Trust Security Architecture',
+      category: 'Cybersecurity',
+      views: '3.1k',
+      href: '/zero-trust-network-architecture-platform'
+    }
   ];
 
-  const supportChannels = [
+  const contactMethods = [
     {
       title: 'Live Chat',
       description: 'Get instant help from our support team',
-      icon: <MessageCircle className="w-8 h-8" />,
+      icon: MessageCircle,
+      color: 'from-cyan-500 to-blue-500',
       availability: '24/7',
-      responseTime: '< 2 minutes',
-      color: 'from-green-500 to-teal-500'
-    },
-    {
-      title: 'Email Support',
-      description: 'Send us a detailed message',
-      icon: <Mail className="w-8 h-8" />,
-      availability: '24/7',
-      responseTime: '< 4 hours',
-      color: 'from-blue-500 to-indigo-500'
+      response: '< 2 minutes'
     },
     {
       title: 'Phone Support',
       description: 'Speak directly with our experts',
-      icon: <Phone className="w-8 h-8" />,
+      icon: Phone,
+      color: 'from-green-500 to-emerald-500',
       availability: 'Mon-Fri 9AM-6PM EST',
-      responseTime: 'Immediate',
-      color: 'from-purple-500 to-pink-500'
+      response: 'Immediate'
+    },
+    {
+      title: 'Email Support',
+      description: 'Detailed technical assistance',
+      icon: Mail,
+      color: 'from-purple-500 to-pink-500',
+      availability: '24/7',
+      response: '< 4 hours'
     }
   ];
 
-  const quickActions = [
-    { title: 'Report a Bug', icon: <FileText className="w-6 h-6" />, href: '/support/report-bug' },
-    { title: 'Request Feature', icon: <Star className="w-6 h-6" />, href: '/support/request-feature' },
-    { title: 'Download SDKs', icon: <Code className="w-6 h-6" />, href: '/resources/sdk' },
-    { title: 'View Status', icon: <Clock className="w-6 h-6" />, href: '/status' }
-  ];
-
   return (
-    <Layout 
-      title="Help Center - Zion Tech Group"
-      description="Comprehensive help center with guides, tutorials, and support resources. Get help with Zion Tech Group services and solutions."
-      keywords="help center, support, tutorials, guides, Zion Tech Group, customer support"
-    >
+    <>
+      <Head>
+        <title>Help Center - Zion Tech Group | Support & Documentation</title>
+        <meta name="description" content="Get help and support for all Zion Tech Group products and services. Find answers, contact support, and access comprehensive documentation." />
+        <meta name="keywords" content="help center, support, documentation, troubleshooting, Zion Tech Group" />
+        <link rel="canonical" href="https://ziontechgroup.com/support/help" />
+      </Head>
+
       <div className="min-h-screen bg-black text-white">
         {/* Hero Section */}
         <section className="relative pt-32 pb-20 overflow-hidden">
-          <div className="absolute inset-0 bg-gradient-to-br from-green-900/20 via-teal-900/20 to-blue-900/20"></div>
-          <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-              className="text-center"
-            >
-              <div className="flex items-center justify-center mb-6">
-                <HelpCircle className="w-16 h-16 text-green-400 mr-4" />
-                <h1 className="text-5xl md:text-6xl font-bold bg-gradient-to-r from-green-400 via-teal-500 to-blue-600 bg-clip-text text-transparent">
-                  Help Center
-                </h1>
+          <div className="absolute inset-0 bg-gradient-to-br from-cyan-900/20 via-blue-900/20 to-purple-900/20"></div>
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(6,182,212,0.1),transparent_50%)]"></div>
+          
+          <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <div className="flex items-center justify-center mb-8">
+              <div className="w-20 h-20 bg-gradient-to-r from-cyan-400 via-purple-500 to-pink-500 rounded-2xl shadow-2xl shadow-cyan-500/25 flex items-center justify-center">
+                <HelpCircle className="w-10 h-10 text-white" />
               </div>
-              <p className="text-xl md:text-2xl text-gray-300 max-w-4xl mx-auto mb-8">
-                Find answers to your questions, learn from our guides, and get the support you need 
-                to succeed with Zion Tech Group solutions.
-              </p>
-              
-              {/* Search Bar */}
-              <div className="max-w-2xl mx-auto mb-8">
-                <div className="relative">
-                  <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
-                  <input
-                    type="text"
-                    placeholder="Search for help articles, guides, or solutions..."
-                    className="w-full bg-gray-900/50 border border-gray-700 rounded-lg pl-12 pr-4 py-4 text-white placeholder-gray-400 focus:outline-none focus:border-green-500 focus:ring-2 focus:ring-green-500/20"
-                  />
-                </div>
-              </div>
-
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <button className="bg-gradient-to-r from-green-500 to-teal-600 hover:from-green-600 hover:to-teal-700 text-white px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300 transform hover:scale-105">
-                  Browse Help Articles
-                </button>
-                <button className="border border-green-500 text-green-400 hover:bg-green-500 hover:text-white px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300">
-                  Contact Support
+            </div>
+            
+            <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
+              Help Center
+            </h1>
+            
+            <p className="text-xl md:text-2xl text-gray-300 mb-8 max-w-4xl mx-auto">
+              Find answers to your questions, troubleshoot issues, and get expert support 
+              for all Zion Tech Group products and services.
+            </p>
+            
+            {/* Search Bar */}
+            <div className="max-w-2xl mx-auto mb-8">
+              <div className="relative">
+                <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-400" />
+                <input
+                  type="text"
+                  placeholder="Search for help articles, guides, and solutions..."
+                  className="w-full px-12 py-4 bg-gray-800/50 border border-gray-700/50 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:border-cyan-500/50 focus:ring-2 focus:ring-cyan-500/20"
+                />
+                <button className="absolute right-2 top-1/2 transform -translate-y-1/2 px-4 py-2 bg-gradient-to-r from-cyan-500 to-purple-500 text-white rounded-lg hover:from-cyan-600 hover:to-purple-600 transition-all duration-300">
+                  Search
                 </button>
               </div>
-            </motion.div>
+            </div>
+            
+            <div className="flex flex-wrap justify-center gap-4">
+              <Link href="/contact" className="px-8 py-4 bg-gradient-to-r from-cyan-500 to-purple-500 text-white rounded-xl font-semibold hover:from-cyan-600 hover:to-purple-600 transition-all duration-300 shadow-lg shadow-cyan-500/25">
+                Contact Support
+              </Link>
+              <Link href="/resources" className="px-8 py-4 border border-cyan-500/50 text-cyan-400 rounded-xl font-semibold hover:bg-cyan-500/10 transition-all duration-300">
+                Browse Resources
+              </Link>
+            </div>
           </div>
         </section>
 
-        {/* Quick Actions */}
-        <section className="py-20">
+        {/* Help Categories */}
+        <section className="py-20 bg-gradient-to-b from-black to-gray-900">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-              className="text-center mb-16"
-            >
-              <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-                Quick Actions
+            <div className="text-center mb-16">
+              <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+                Help Categories
               </h2>
-              <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-                Get help quickly with these common support actions.
+              <p className="text-xl text-gray-400 max-w-3xl mx-auto">
+                Find help organized by product category and topic area.
               </p>
-            </motion.div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-              {quickActions.map((action, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: index * 0.1 }}
-                  className="bg-gradient-to-br from-gray-900/50 to-gray-800/50 backdrop-blur-xl border border-gray-700/50 rounded-xl p-6 hover:border-green-500/50 transition-all duration-300 cursor-pointer group"
-                >
-                  <div className="w-12 h-12 bg-gradient-to-r from-green-500 to-teal-600 rounded-lg flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
-                    {action.icon}
+            </div>
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {helpCategories.map((category, index) => (
+                <div key={index} className="bg-gradient-to-br from-gray-800/50 to-gray-900/50 rounded-2xl p-8 border border-gray-700/50 hover:border-cyan-500/50 transition-all duration-300">
+                  <div className={`w-16 h-16 bg-gradient-to-r ${category.color} rounded-2xl flex items-center justify-center mb-6`}>
+                    <category.icon className="w-8 h-8 text-white" />
                   </div>
-                  <h3 className="text-lg font-semibold text-white mb-2 group-hover:text-green-400 transition-colors">
-                    {action.title}
-                  </h3>
-                </motion.div>
+                  
+                  <h3 className="text-2xl font-bold text-white mb-3">{category.title}</h3>
+                  <p className="text-gray-400 mb-6 leading-relaxed">{category.description}</p>
+                  
+                  <ul className="space-y-2 mb-6">
+                    {category.articles.map((article, articleIndex) => (
+                      <li key={articleIndex} className="flex items-center text-sm text-gray-300">
+                        <CheckCircle className="w-4 h-4 text-cyan-400 mr-2 flex-shrink-0" />
+                        {article}
+                      </li>
+                    ))}
+                  </ul>
+                  
+                  <Link href={`/support/${category.title.toLowerCase().replace(/\s+/g, '-')}`} className="inline-flex items-center text-cyan-400 hover:text-cyan-300 transition-colors">
+                    <span className="font-medium">View All Articles</span>
+                    <ArrowRight className="w-4 h-4 ml-2" />
+                  </Link>
+                </div>
               ))}
             </div>
           </div>
         </section>
 
         {/* Popular Articles */}
-        <section className="py-20 bg-gradient-to-r from-gray-900/50 to-gray-800/50">
+        <section className="py-20 bg-black">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-              className="text-center mb-16"
-            >
-              <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+            <div className="text-center mb-16">
+              <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
                 Popular Help Articles
               </h2>
-              <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-                Most viewed and highly-rated help articles to get you started quickly.
+              <p className="text-xl text-gray-400 max-w-3xl mx-auto">
+                Most viewed and helpful articles from our community.
               </p>
-            </motion.div>
-
+            </div>
+            
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               {popularArticles.map((article, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: index * 0.1 }}
-                  className="bg-gradient-to-br from-gray-900/50 to-gray-800/50 backdrop-blur-xl border border-gray-700/50 rounded-2xl p-8 hover:border-green-500/50 transition-all duration-300 cursor-pointer group"
-                >
-                  <div className="flex items-center justify-between mb-4">
-                    <span className="text-sm text-green-400">{article.category}</span>
-                    <div className="flex items-center">
-                      <Star className="w-4 h-4 text-yellow-400 fill-current" />
-                      <span className="text-sm text-gray-300 ml-1">{article.rating}</span>
+                <Link key={index} href={article.href} className="group">
+                  <div className="bg-gradient-to-br from-gray-800/50 to-gray-900/50 rounded-2xl p-8 border border-gray-700/50 hover:border-cyan-500/50 transition-all duration-300">
+                    <div className="flex items-start justify-between mb-4">
+                      <span className="inline-block px-3 py-1 bg-cyan-500/20 text-cyan-400 rounded-full text-sm border border-cyan-500/30">
+                        {article.category}
+                      </span>
+                      <span className="text-sm text-gray-400 flex items-center">
+                        <Eye className="w-4 h-4 mr-1" />
+                        {article.views}
+                      </span>
+                    </div>
+                    
+                    <h3 className="text-xl font-bold text-white group-hover:text-cyan-400 transition-colors mb-4">
+                      {article.title}
+                    </h3>
+                    
+                    <div className="flex items-center text-cyan-400 group-hover:text-cyan-300 transition-colors">
+                      <span className="font-medium">Read Article</span>
+                      <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
                     </div>
                   </div>
-                  <h3 className="text-xl font-semibold text-white mb-4 group-hover:text-green-400 transition-colors">
-                    {article.title}
-                  </h3>
-                  <div className="flex items-center text-sm text-gray-400">
-                    <Clock className="w-4 h-4 mr-1" />
-                    {article.views} views
-                  </div>
-                </motion.div>
+                </Link>
               ))}
             </div>
           </div>
         </section>
 
-        {/* Help Categories */}
-        <section className="py-20">
+        {/* Contact Methods */}
+        <section className="py-20 bg-gradient-to-b from-gray-900 to-black">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-              className="text-center mb-16"
-            >
-              <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-                Help Categories
+            <div className="text-center mb-16">
+              <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+                Get in Touch
               </h2>
-              <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-                Browse help articles organized by topic to find exactly what you need.
+              <p className="text-xl text-gray-400 max-w-3xl mx-auto">
+                Multiple ways to reach our support team for personalized assistance.
               </p>
-            </motion.div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {categories.map((category, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: index * 0.1 }}
-                  className="bg-gradient-to-br from-gray-900/50 to-gray-800/50 backdrop-blur-xl border border-gray-700/50 rounded-2xl p-8 hover:border-green-500/50 transition-all duration-300"
-                >
-                  <div className={`w-16 h-16 bg-gradient-to-r ${category.color} rounded-xl flex items-center justify-center mb-6`}>
-                    {category.icon}
-                  </div>
-                  <h3 className="text-2xl font-bold text-white mb-4">{category.title}</h3>
-                  <p className="text-gray-300 mb-6">{category.description}</p>
-                  
-                  <div className="space-y-3 mb-6">
-                    {category.articles.map((article, articleIndex) => (
-                      <div key={articleIndex} className="flex items-center justify-between p-3 bg-gray-800/30 rounded-lg hover:bg-gray-800/50 transition-colors cursor-pointer group">
-                        <div className="flex-1">
-                          <h4 className="text-white font-medium group-hover:text-green-400 transition-colors">{article.title}</h4>
-                          <div className="flex items-center space-x-4 text-sm text-gray-400">
-                            <span>{article.views} views</span>
-                            <span>{article.time}</span>
-                          </div>
-                        </div>
-                        <ArrowRight className="w-4 h-4 text-gray-500 group-hover:text-green-400 transition-colors" />
-                      </div>
-                    ))}
-                  </div>
-                  
-                  <button className="w-full bg-gradient-to-r from-green-500 to-teal-600 hover:from-green-600 hover:to-teal-700 text-white py-3 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105">
-                    View All {category.title}
-                  </button>
-                </motion.div>
-              ))}
             </div>
-          </div>
-        </section>
-
-        {/* Support Channels */}
-        <section className="py-20 bg-gradient-to-r from-gray-900/50 to-gray-800/50">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-              className="text-center mb-16"
-            >
-              <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-                Get Support
-              </h2>
-              <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-                Multiple ways to get help when you need it most.
-              </p>
-            </motion.div>
-
+            
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              {supportChannels.map((channel, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: index * 0.1 }}
-                  className="bg-gradient-to-br from-gray-900/50 to-gray-800/50 backdrop-blur-xl border border-gray-700/50 rounded-2xl p-8 text-center hover:border-green-500/50 transition-all duration-300"
-                >
-                  <div className={`w-20 h-20 bg-gradient-to-r ${channel.color} rounded-full flex items-center justify-center mx-auto mb-6`}>
-                    {channel.icon}
+              {contactMethods.map((method, index) => (
+                <div key={index} className="bg-gradient-to-br from-gray-800/50 to-gray-900/50 rounded-2xl p-8 border border-gray-700/50 hover:border-cyan-500/50 transition-all duration-300 text-center">
+                  <div className={`w-16 h-16 bg-gradient-to-r ${method.color} rounded-2xl flex items-center justify-center mx-auto mb-6`}>
+                    <method.icon className="w-8 h-8 text-white" />
                   </div>
-                  <h3 className="text-2xl font-bold text-white mb-4">{channel.title}</h3>
-                  <p className="text-gray-300 mb-6">{channel.description}</p>
                   
-                  <div className="space-y-3 mb-6">
-                    <div className="flex items-center justify-center">
-                      <Clock className="w-4 h-4 text-gray-400 mr-2" />
-                      <span className="text-gray-300">Available: {channel.availability}</span>
+                  <h3 className="text-2xl font-bold text-white mb-3">{method.title}</h3>
+                  <p className="text-gray-400 mb-6 leading-relaxed">{method.description}</p>
+                  
+                  <div className="space-y-2 text-sm">
+                    <div className="flex items-center justify-center text-gray-300">
+                      <Clock className="w-4 h-4 mr-2" />
+                      {method.availability}
                     </div>
-                    <div className="flex items-center justify-center">
-                      <CheckCircle className="w-4 h-4 text-green-400 mr-2" />
-                      <span className="text-gray-300">Response: {channel.responseTime}</span>
+                    <div className="flex items-center justify-center text-gray-300">
+                      <CheckCircle className="w-4 h-4 mr-2 text-green-400" />
+                      {method.response} response
                     </div>
                   </div>
                   
-                  <button className="w-full bg-gradient-to-r from-green-500 to-teal-600 hover:from-green-600 hover:to-teal-700 text-white py-3 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105">
+                  <Link href="/contact" className="inline-block mt-6 px-6 py-3 bg-gradient-to-r from-cyan-500 to-purple-500 text-white rounded-lg font-medium hover:from-cyan-600 hover:to-purple-600 transition-all duration-300">
                     Get Help
-                  </button>
-                </motion.div>
+                  </Link>
+                </div>
               ))}
             </div>
           </div>
         </section>
 
-        {/* CTA Section */}
-        <section className="py-20">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-              className="text-center"
-            >
-              <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-                Still Need Help?
-              </h2>
-              <p className="text-xl text-gray-300 max-w-3xl mx-auto mb-8">
-                Can't find what you're looking for? Our support team is here to help you 
-                get the most out of Zion Tech Group solutions.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <button className="bg-gradient-to-r from-green-500 to-teal-600 hover:from-green-600 hover:to-teal-700 text-white px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300 transform hover:scale-105">
-                  Contact Support Team
-                </button>
-                <button className="border border-green-500 text-green-400 hover:bg-green-500 hover:text-white px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300">
-                  Schedule a Call
-                </button>
-              </div>
-            </motion.div>
+        {/* Call to Action */}
+        <section className="py-20 bg-black">
+          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
+              Still Need Help?
+            </h2>
+            <p className="text-xl text-gray-400 mb-8">
+              Our expert support team is ready to assist you with any questions or issues.
+            </p>
+            
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Link href="/contact" className="px-8 py-4 bg-gradient-to-r from-cyan-500 to-purple-500 text-white rounded-xl font-semibold hover:from-cyan-600 hover:to-purple-600 transition-all duration-300 shadow-lg shadow-cyan-500/25">
+                Contact Support Team
+              </Link>
+              <Link href="/support" className="px-8 py-4 border border-cyan-500/50 text-cyan-400 rounded-xl font-semibold hover:bg-cyan-500/10 transition-all duration-300">
+                Support Center
+              </Link>
+            </div>
           </div>
         </section>
       </div>
-    </Layout>
+    </>
   );
 };
 
-export default HelpCenterPage;
+export default SupportHelpPage;

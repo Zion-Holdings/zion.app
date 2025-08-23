@@ -3,8 +3,9 @@ import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { 
   Phone, Mail, MapPin, ArrowRight, Globe, Shield, Rocket, Brain, Atom, Cpu,
-  Linkedin, Youtube, Github, Zap, Heart, Star,
-  Users, Lock, Cloud, Code, Server, Database, Network, Settings, Target, Play
+  Facebook, Twitter, Linkedin, Instagram, Youtube, Github, Zap, Heart, Star,
+  Users, Lock, Cloud, Code, Server, Database, Network, Settings, Target, Play,
+  FileText, Video, BarChart3, GraduationCap, HelpCircle, MessageCircle, TrendingUp
 } from 'lucide-react';
 
 const UltraFuturisticFooter2045: React.FC = () => {
@@ -59,15 +60,42 @@ const UltraFuturisticFooter2045: React.FC = () => {
         { name: 'Leadership Team', href: '/team', icon: <Star className="w-5 h-5" /> },
         { name: 'Careers', href: '/careers', icon: <Zap className="w-5 h-5" /> },
         { name: 'News & Updates', href: '/news', icon: <Globe className="w-5 h-5" /> },
-        { name: 'Press Kit', href: '/press', icon: <Play className="w-5 h-5" /> }
+        { name: 'Press Kit', href: '/press', icon: <Play className="w-5 h-5" /> },
+        { name: 'Partners', href: '/partners', icon: <Users className="w-5 h-5" /> },
+        { name: 'Investors', href: '/investors', icon: <TrendingUp className="w-5 h-5" /> }
+      ]
+    },
+    {
+      title: 'Resources',
+      links: [
+        { name: 'Documentation', href: '/docs', icon: <FileText className="w-5 h-5" /> },
+        { name: 'Webinars', href: '/webinars', icon: <Video className="w-5 h-5" /> },
+        { name: 'Case Studies', href: '/case-studies', icon: <BarChart3 className="w-5 h-5" /> },
+        { name: 'Blog', href: '/blog', icon: <FileText className="w-5 h-5" /> },
+        { name: 'Training', href: '/training', icon: <GraduationCap className="w-5 h-5" /> },
+        { name: 'API Reference', href: '/docs', icon: <Code className="w-5 h-5" /> }
+      ]
+    },
+    {
+      title: 'Support',
+      links: [
+        { name: 'Help Center', href: '/support/help', icon: <HelpCircle className="w-5 h-5" /> },
+        { name: 'Contact Support', href: '/contact', icon: <MessageCircle className="w-5 h-5" /> },
+        { name: 'System Status', href: '/status', icon: <BarChart3 className="w-5 h-5" /> },
+        { name: 'Support Portal', href: '/support', icon: <Settings className="w-5 h-5" /> },
+        { name: 'Community', href: '/community', icon: <Users className="w-5 h-5" /> },
+        { name: 'FAQ', href: '/support/help', icon: <HelpCircle className="w-5 h-5" /> }
       ]
     }
   ];
 
   const socialLinks = [
-    { name: 'LinkedIn', icon: Linkedin, href: 'https://linkedin.com/company/zion-tech-group', color: 'from-blue-600 to-blue-700' },
-    { name: 'GitHub', icon: Github, href: 'https://github.com/Zion-Holdings', color: 'from-gray-600 to-gray-700' },
-    { name: 'YouTube', icon: Youtube, href: 'https://youtube.com/@ziontechgroup', color: 'from-red-500 to-red-600' }
+    { name: 'Facebook', icon: Facebook, href: 'https://facebook.com/ziontechgroup', color: 'from-blue-500 to-blue-600' },
+    { name: 'Twitter', icon: Twitter, href: 'https://twitter.com/ziontechgroup', color: 'from-cyan-400 to-blue-500' },
+    { name: 'LinkedIn', icon: Linkedin, href: 'https://linkedin.com/company/ziontechgroup', color: 'from-blue-600 to-blue-700' },
+    { name: 'Instagram', icon: Instagram, href: 'https://instagram.com/ziontechgroup', color: 'from-purple-500 to-pink-500' },
+    { name: 'YouTube', icon: Youtube, href: 'https://youtube.com/@ziontechgroup', color: 'from-red-500 to-red-600' },
+    { name: 'GitHub', icon: Github, href: 'https://github.com/ziontechgroup', color: 'from-gray-600 to-gray-700' }
   ];
 
   const fadeInUp = {
