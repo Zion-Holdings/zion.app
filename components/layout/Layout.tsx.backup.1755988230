@@ -1,3 +1,9 @@
+<<<<<<< HEAD
+import React, { ReactNode } from 'react';
+import EnhancedNavigation2025 from './EnhancedNavigation2025';
+import EnhancedFooter2025 from './EnhancedFooter2025';
+import LiveChatWidget from '../LiveChatWidget';
+=======
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import UltraFuturisticNavigation2036 from './UltraFuturisticNavigation2036';
@@ -5,11 +11,48 @@ import UltraFuturisticFooter2036 from './UltraFuturisticFooter2036';
 import EnhancedSidebar2025 from './EnhancedSidebar2025';
 import UltraFuturisticBackground2036 from '../backgrounds/UltraFuturisticBackground2036';
 import TopContactBar from './TopContactBar';
+>>>>>>> origin/cursor/analyze-improve-and-deploy-application-b79e
 
 interface LayoutProps {
 	children: React.ReactNode;
 }
 
+<<<<<<< HEAD
+const Layout: React.FC<LayoutProps> = ({ children }) => {
+  return (
+    <div className="min-h-screen bg-black text-white">
+      <EnhancedNavigation2025 />
+      <main className="pt-0">
+        {children}
+      </main>
+      <EnhancedFooter2025 />
+      <LiveChatWidget />
+    </div>
+  );
+};
+
+  // Handle online/offline status
+  useEffect(() => {
+    const handleOnline = () => setIsOnline(true);
+    const handleOffline = () => setIsOnline(false);
+
+    window.addEventListener('online', handleOnline);
+    window.addEventListener('offline', handleOffline);
+
+    // Set initial loading state
+    const timer = setTimeout(() => {
+      setIsLoading(false);
+    }, 100);
+
+    return () => {
+      window.removeEventListener('online', handleOnline);
+      window.removeEventListener('offline', handleOffline);
+      clearTimeout(timer);
+    };
+  }, []);
+
+  // Handle keyboard navigation for sidebar
+=======
 export default function Layout({ children }: LayoutProps) {
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
@@ -36,6 +79,7 @@ export default function Layout({ children }: LayoutProps) {
   }, [sidebarOpen]);
 
   // Handle escape key
+>>>>>>> origin/cursor/analyze-improve-and-deploy-application-b79e
   useEffect(() => {
     const handleEscape = (e: KeyboardEvent) => {
       if (e.key === 'Escape' && sidebarOpen) {
@@ -45,6 +89,10 @@ export default function Layout({ children }: LayoutProps) {
 
     if (sidebarOpen) {
       document.addEventListener('keydown', handleEscape);
+<<<<<<< HEAD
+      // Prevent body scroll when sidebar is open
+=======
+>>>>>>> origin/cursor/analyze-improve-and-deploy-application-b79e
       document.body.style.overflow = 'hidden';
     } else {
       document.body.style.overflow = 'unset';
@@ -55,6 +103,8 @@ export default function Layout({ children }: LayoutProps) {
       document.body.style.overflow = 'unset';
     };
   }, [sidebarOpen]);
+<<<<<<< HEAD
+=======
 
   if (isLoading) {
     return (
@@ -70,12 +120,27 @@ export default function Layout({ children }: LayoutProps) {
       </div>
     );
   }
+>>>>>>> origin/cursor/analyze-improve-and-deploy-application-b79e
 
   return (
     <div className="min-h-screen bg-black text-white relative overflow-x-hidden">
       {/* Skip to content link for accessibility */}
       <a 
         href="#main" 
+<<<<<<< HEAD
+        className="skip-link sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2 focus:bg-cyan-500 focus:text-white focus:rounded focus:outline-none focus:ring-2 focus:ring-cyan-300"
+      >
+        Skip to main content
+      </a>
+      
+      {/* Offline indicator */}
+      {!isOnline && (
+        <div className="fixed top-0 left-0 right-0 bg-red-600 text-white text-center py-2 z-50">
+          <span className="text-sm">You are currently offline. Some features may not be available.</span>
+        </div>
+      )}
+      
+=======
         className="skip-link sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 z-50 bg-cyan-500 text-black px-4 py-2 rounded-lg font-semibold focus:outline-none focus:ring-4 focus:ring-cyan-500/50"
         onClick={(e) => {
           e.preventDefault();
@@ -89,6 +154,7 @@ export default function Layout({ children }: LayoutProps) {
         Skip to main content
       </a>
 
+>>>>>>> origin/cursor/analyze-improve-and-deploy-application-b79e
       {/* Futuristic Background */}
       <UltraFuturisticBackground2036 />
       
@@ -105,6 +171,14 @@ export default function Layout({ children }: LayoutProps) {
         
         {/* Sidebar and Main Content */}
         <div className="flex">
+<<<<<<< HEAD
+          <EnhancedSidebar2025 
+            isOpen={sidebarOpen} 
+            onClose={() => setSidebarOpen(false)}
+            aria-hidden={!sidebarOpen}
+            aria-label="Main navigation menu"
+          />
+=======
           <AnimatePresence>
             {sidebarOpen && (
               <motion.div
@@ -122,15 +196,34 @@ export default function Layout({ children }: LayoutProps) {
               </motion.div>
             )}
           </AnimatePresence>
+>>>>>>> origin/cursor/analyze-improve-and-deploy-application-b79e
           
           <main 
             id="main" 
             role="main" 
+<<<<<<< HEAD
+            className="flex-1 pt-24 lg:pt-28 min-h-screen"
+            aria-label="Main content"
+          >
+            {/* Loading state */}
+            {isLoading && (
+              <div className="flex items-center justify-center min-h-screen">
+                <div className="text-center">
+                  <div className="animate-spin rounded-full h-16 w-16 border-b-2 border-cyan-400 mx-auto mb-4"></div>
+                  <p className="text-gray-400 text-lg">Loading Zion Tech Group...</p>
+                </div>
+              </div>
+            )}
+            
+            {/* Main content */}
+            {!isLoading && children}
+=======
             className="flex-1 pt-24 lg:pt-28 focus:outline-none"
             tabIndex={-1}
             aria-label="Main content"
           >
             {children}
+>>>>>>> origin/cursor/analyze-improve-and-deploy-application-b79e
           </main>
         </div>
         
@@ -138,14 +231,30 @@ export default function Layout({ children }: LayoutProps) {
         <UltraFuturisticFooter2036 />
       </div>
 
+<<<<<<< HEAD
+      {/* Accessibility and Performance Tools */}
+      <AccessibilityEnhancer />
+      <PerformanceMonitor />
+      
+      {/* Cookie Consent Banner */}
+      <CookieConsentBanner />
+      
+      {/* Focus trap for sidebar when open */}
+      {sidebarOpen && (
+        <div 
+          className="fixed inset-0 bg-black bg-opacity-50 z-40 lg:hidden"
+=======
       {/* Focus trap overlay */}
       {focusTrap && (
         <div 
           className="fixed inset-0 bg-black/50 z-30 lg:hidden"
+>>>>>>> origin/cursor/analyze-improve-and-deploy-application-b79e
           onClick={() => setSidebarOpen(false)}
           aria-hidden="true"
         />
       )}
+<<<<<<< HEAD
+=======
 
       {/* Back to top button */}
       <motion.button
@@ -160,6 +269,7 @@ export default function Layout({ children }: LayoutProps) {
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 10l7-7m0 0l7 7m-7-7v18" />
         </svg>
       </motion.button>
+>>>>>>> origin/cursor/analyze-improve-and-deploy-application-b79e
     </div>
 =======
     <PerformanceOptimizer>
