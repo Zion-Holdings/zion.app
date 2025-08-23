@@ -4,7 +4,11 @@ import plugin from 'tailwindcss/plugin';
 import animatePlugin from 'tailwindcss-animate';
 
 const config: Config = {
+<<<<<<< HEAD
+  darkMode: ['class'],
+=======
   darkMode: "class",
+>>>>>>> origin/8z9e37-codex/implement-light/dark-theme-with-persistence
   content: [
     './pages/**/*.{ts,tsx}',
     './components/**/*.{ts,tsx}',
