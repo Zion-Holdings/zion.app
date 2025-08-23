@@ -1,81 +1,38 @@
 import React from 'react';
 import Head from 'next/head';
 
-interface SEOProps {
-  title?: string;
-  description?: string;
-  keywords?: string;
-  author?: string;
-  robots?: string;
-  ogTitle?: string;
-  ogDescription?: string;
-  ogType?: string;
-  ogUrl?: string;
-  ogImage?: string;
-  ogImageAlt?: string;
-  twitterCard?: string;
-  twitterTitle?: string;
-  twitterDescription?: string;
-  twitterImage?: string;
-  canonical?: string;
-  structuredData?: any;
-  additionalMeta?: Array<{ name: string; content: string }>;
-  additionalLinks?: Array<{ rel: string; href: string; type?: string }>;
-}
-
-const EnhancedSEO: React.FC<SEOProps> = ({
-  title = "Zion Tech Group - Revolutionary 2044 Technology Solutions | AI, Quantum Computing, Space Tech",
-  description = "Pioneering the future of technology with revolutionary AI consciousness, quantum computing, and autonomous solutions. Transform your business with cutting-edge 2044 technology.",
-  keywords = "AI consciousness, quantum computing, space technology, cybersecurity, autonomous solutions, business intelligence, Zion Tech Group, 2044 technology, AI evolution, quantum neural networks, space resource intelligence, autonomous business intelligence, quantum cloud infrastructure",
-  author = "Zion Tech Group",
-  robots = "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
-  ogTitle,
-  ogDescription,
-  ogType = "website",
-  ogUrl = "https://ziontechgroup.com",
-  ogImage = "https://ziontechgroup.com/og-image.jpg",
-  ogImageAlt = "Zion Tech Group - Revolutionary 2044 Technology Solutions",
-  twitterCard = "summary_large_image",
-  twitterTitle,
-  twitterDescription,
-  twitterImage,
-  canonical,
-  structuredData,
-  additionalMeta = [],
-  additionalLinks = []
-}) => {
-  // Default structured data if none provided
-  const defaultStructuredData = {
+const EnhancedSEO: React.FC = () => {
+  const structuredData = {
     "@context": "https://schema.org",
     "@type": "Organization",
     "name": "Zion Tech Group",
-    "description": "Pioneering the future of technology with revolutionary AI consciousness, quantum computing, and autonomous solutions",
     "url": "https://ziontechgroup.com",
     "logo": "https://ziontechgroup.com/logo.png",
-    "foundingDate": "2024",
-    "contactPoint": {
-      "@type": "ContactPoint",
-      "telephone": "+1-302-464-0950",
-      "contactType": "customer service",
-      "email": "kleber@ziontechgroup.com",
-      "availableLanguage": "English"
-    },
+    "description": "Pioneering the future of technology with revolutionary AI consciousness, quantum computing, and autonomous solutions that transform businesses.",
+    "foundingDate": "2025",
     "address": {
       "@type": "PostalAddress",
-      "streetAddress": "364 E Main St STE 1008",
-      "addressLocality": "Middletown",
-      "addressRegion": "DE",
-      "postalCode": "19709",
-      "addressCountry": "US"
+      "addressCountry": "US",
+      "addressRegion": "CA",
+      "addressLocality": "Tech Valley"
+    },
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "telephone": "+1-555-123-4567",
+      "contactType": "customer service",
+      "email": "contact@ziontechgroup.com"
     },
     "sameAs": [
-      "https://linkedin.com/company/ziontechgroup",
+      "https://facebook.com/ziontechgroup",
       "https://twitter.com/ziontechgroup",
+      "https://linkedin.com/company/ziontechgroup",
+      "https://instagram.com/ziontechgroup",
+      "https://youtube.com/@ziontechgroup",
       "https://github.com/ziontechgroup"
     ],
     "hasOfferCatalog": {
       "@type": "OfferCatalog",
-      "name": "Technology Services",
+      "name": "Revolutionary Technology Services 2044",
       "itemListElement": [
         {
           "@type": "Offer",
@@ -97,138 +54,101 @@ const EnhancedSEO: React.FC<SEOProps> = ({
           "@type": "Offer",
           "itemOffered": {
             "@type": "Service",
-            "name": "Space Resource Intelligence 2044",
-            "description": "AI-powered space exploration with consciousness"
+            "name": "Quantum Cybersecurity 2044",
+            "description": "Quantum-resistant security with AI consciousness"
           }
         }
       ]
-    },
-    "areaServed": {
-      "@type": "Country",
-      "name": "Worldwide"
-    },
-    "serviceType": [
-      "AI Development",
-      "Quantum Computing",
-      "Space Technology",
-      "Cybersecurity",
-      "Business Intelligence",
-      "Cloud Infrastructure"
-    ]
+    }
   };
-
-  const finalStructuredData = structuredData || defaultStructuredData;
 
   return (
     <Head>
       {/* Basic Meta Tags */}
-      <title>{title}</title>
-      <meta name="description" content={description} />
-      <meta name="keywords" content={keywords} />
-      <meta name="author" content={author} />
-      <meta name="robots" content={robots} />
+      <title>Zion Tech Group - Revolutionary 2044 Technology Solutions | AI Consciousness & Quantum Computing</title>
+      <meta name="description" content="Experience the future with Zion Tech Group's cutting-edge AI consciousness, quantum computing, and autonomous solutions. Transform your business with revolutionary 2044 technology." />
+      <meta name="keywords" content="AI consciousness, quantum computing, autonomous solutions, space technology, cybersecurity, business transformation, AI evolution 2044, quantum neural networks, space resource intelligence" />
+      <meta name="author" content="Zion Tech Group" />
+      <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
       
-      {/* Viewport and Mobile Optimization */}
-      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-      <meta name="theme-color" content="#000000" />
-      <meta name="msapplication-TileColor" content="#000000" />
-      <meta name="apple-mobile-web-app-capable" content="yes" />
-      <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+      {/* Canonical URL */}
+      <link rel="canonical" href="https://ziontechgroup.com" />
       
-      {/* Open Graph Meta Tags */}
-      <meta property="og:title" content={ogTitle || title} />
-      <meta property="og:description" content={ogDescription || description} />
-      <meta property="og:type" content={ogType} />
-      <meta property="og:url" content={ogUrl} />
-      <meta property="og:image" content={ogImage} />
-      <meta property="og:image:alt" content={ogImageAlt} />
+      {/* Open Graph Tags */}
+      <meta property="og:type" content="website" />
+      <meta property="og:title" content="Zion Tech Group - Revolutionary 2044 Technology Solutions" />
+      <meta property="og:description" content="Experience the future with Zion Tech Group's cutting-edge AI consciousness, quantum computing, and autonomous solutions that transform businesses." />
+      <meta property="og:url" content="https://ziontechgroup.com" />
       <meta property="og:site_name" content="Zion Tech Group" />
+      <meta property="og:image" content="https://ziontechgroup.com/og-image.jpg" />
+      <meta property="og:image:width" content="1200" />
+      <meta property="og:image:height" content="630" />
+      <meta property="og:image:alt" content="Zion Tech Group - Revolutionary Technology Solutions" />
       <meta property="og:locale" content="en_US" />
       
-      {/* Twitter Card Meta Tags */}
-      <meta name="twitter:card" content={twitterCard} />
-      <meta name="twitter:title" content={twitterTitle || title} />
-      <meta name="twitter:description" content={twitterDescription || description} />
-      <meta name="twitter:image" content={twitterImage || ogImage} />
+      {/* Twitter Card Tags */}
+      <meta name="twitter:card" content="summary_large_image" />
+      <meta name="twitter:title" content="Zion Tech Group - Revolutionary 2044 Technology Solutions" />
+      <meta name="twitter:description" content="Experience the future with Zion Tech Group's cutting-edge AI consciousness, quantum computing, and autonomous solutions." />
+      <meta name="twitter:image" content="https://ziontechgroup.com/twitter-card.jpg" />
       <meta name="twitter:site" content="@ziontechgroup" />
       <meta name="twitter:creator" content="@ziontechgroup" />
       
-      {/* Canonical URL */}
-      <link rel="canonical" href={canonical || ogUrl} />
+      {/* Additional Meta Tags */}
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+      <meta name="theme-color" content="#06b6d4" />
+      <meta name="msapplication-TileColor" content="#06b6d4" />
+      <meta name="apple-mobile-web-app-capable" content="yes" />
+      <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+      <meta name="apple-mobile-web-app-title" content="Zion Tech Group" />
       
       {/* Favicon and App Icons */}
-      <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+      <link rel="icon" href="/favicon.ico" />
+      <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
       <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
       <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
-      <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-      <link rel="manifest" href="/manifest.json" />
+      <link rel="manifest" href="/site.webmanifest" />
       
-      {/* Preconnect to External Domains for Performance */}
+      {/* Preconnect to external domains for performance */}
       <link rel="preconnect" href="https://fonts.googleapis.com" />
       <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
       <link rel="preconnect" href="https://www.google-analytics.com" />
-      <link rel="preconnect" href="https://www.googletagmanager.com" />
-      
-      {/* DNS Prefetch for Performance */}
-      <link rel="dns-prefetch" href="//fonts.googleapis.com" />
-      <link rel="dns-prefetch" href="//www.google-analytics.com" />
-      <link rel="dns-prefetch" href="//www.googletagmanager.com" />
-      
-      {/* Additional Meta Tags */}
-      {additionalMeta.map((meta, index) => (
-        <meta key={index} name={meta.name} content={meta.content} />
-      ))}
-      
-      {/* Additional Links */}
-      {additionalLinks.map((link, index) => (
-        <link key={index} rel={link.rel} href={link.href} type={link.type} />
-      ))}
       
       {/* Structured Data */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
-          __html: JSON.stringify(finalStructuredData)
+          __html: JSON.stringify(structuredData)
         }}
       />
       
-      {/* Additional SEO Scripts */}
-      <script
-        dangerouslySetInnerHTML={{
-          __html: `
-            // Performance monitoring
-            if ('performance' in window) {
-              window.addEventListener('load', () => {
-                setTimeout(() => {
-                  const perfData = performance.getEntriesByType('navigation')[0];
-                  if (perfData) {
-                    const loadTime = perfData.loadEventEnd - perfData.loadEventStart;
-                    console.log('Page load time:', loadTime + 'ms');
-                  }
-                }, 0);
-              });
-            }
-            
-            // SEO-friendly error handling
-            window.addEventListener('error', (e) => {
-              console.error('JavaScript error:', e.error);
-            });
-            
-            // SEO-friendly console logging
-            const originalLog = console.log;
-            console.log = function(...args) {
-              if (process.env.NODE_ENV === 'production') {
-                // In production, only log critical information
-                if (args.some(arg => typeof arg === 'string' && arg.includes('SEO') || arg.includes('performance'))) {
-                  originalLog.apply(console, args);
-                }
-              } else {
-                originalLog.apply(console, args);
-              }
-            };
-          `
-        }}
-      />
+      {/* Additional SEO Meta Tags */}
+      <meta name="application-name" content="Zion Tech Group" />
+      <meta name="mobile-web-app-capable" content="yes" />
+      <meta name="format-detection" content="telephone=no" />
+      <meta name="msapplication-config" content="/browserconfig.xml" />
+      
+      {/* Language and Region */}
+      <meta httpEquiv="Content-Language" content="en" />
+      <meta name="language" content="English" />
+      <meta name="geo.region" content="US-CA" />
+      <meta name="geo.placename" content="Tech Valley, California" />
+      
+      {/* Business Information */}
+      <meta name="business:contact_data:street_address" content="123 Innovation Drive" />
+      <meta name="business:contact_data:locality" content="Tech Valley" />
+      <meta name="business:contact_data:region" content="CA" />
+      <meta name="business:contact_data:postal_code" content="94000" />
+      <meta name="business:contact_data:country_name" content="United States" />
+      <meta name="business:contact_data:phone_number" content="+1-555-123-4567" />
+      <meta name="business:contact_data:email" content="contact@ziontechgroup.com" />
+      
+      {/* Service Categories for SEO */}
+      <meta name="service:ai_consciousness" content="AI Consciousness Evolution 2044, Emotional AI Intelligence, Quantum AI Cognitive" />
+      <meta name="service:quantum_computing" content="Quantum Neural Networks, Quantum Cybersecurity, Quantum Cloud Infrastructure" />
+      <meta name="service:space_technology" content="Space Resource Intelligence, Space Mining Automation, Interplanetary Communication" />
+      <meta name="service:cybersecurity" content="Zero Trust Security, Quantum Encryption, Autonomous Security Operations" />
+      <meta name="service:business_intelligence" content="Autonomous Business Intelligence, AI Customer Success, Autonomous DevOps" />
     </Head>
   );
 };
