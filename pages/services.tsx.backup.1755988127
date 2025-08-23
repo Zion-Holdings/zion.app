@@ -376,6 +376,30 @@ const categories = [
     name: 'Cybersecurity',
     icon: <Shield className="w-6 h-6" />,
     color: 'from-red-500 to-orange-500',
+<<<<<<< HEAD
+    description: 'Advanced security and compliance solutions'
+  },
+  {
+    id: 'cloud-devops',
+    name: 'Cloud & DevOps',
+    icon: <Rocket className="w-6 h-6" />,
+    color: 'from-blue-500 to-indigo-600',
+    description: 'Cloud infrastructure and DevOps automation'
+  },
+  {
+    id: 'data-analytics',
+    name: 'Data & Analytics',
+    icon: <BarChart3 className="w-6 h-6" />,
+    color: 'from-purple-500 to-pink-600',
+    description: 'Business intelligence and data solutions'
+  },
+  {
+    id: 'fintech-blockchain',
+    name: 'Fintech & Blockchain',
+    icon: <TrendingUp className="w-6 h-6" />,
+    color: 'from-green-500 to-emerald-600',
+    description: 'Financial technology and blockchain innovations'
+=======
     description: 'Advanced security and threat protection'
   },
   {
@@ -384,6 +408,7 @@ const categories = [
     icon: <Cpu className="w-6 h-6" />,
     color: 'from-cyan-500 to-blue-500',
     description: 'Intelligent data analysis and insights'
+>>>>>>> origin/cursor/expand-services-and-deploy-updates-c38e
   }
 ];
 
