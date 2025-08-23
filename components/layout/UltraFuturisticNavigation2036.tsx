@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback, useMemo } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import {
   Menu,
@@ -12,7 +12,18 @@ import {
   Clock,
   MessageCircle,
   Calculator,
-  Play
+  Play,
+  Brain,
+  Shield,
+  Rocket,
+  Globe,
+  Cpu,
+  Database,
+  Cloud,
+  Lock,
+  BarChart3,
+  Zap,
+  Target
 } from 'lucide-react';
 import Link from 'next/link';
 import EnhancedSearch from '../EnhancedSearch';
@@ -29,8 +40,6 @@ interface NavigationItem {
   category?: string;
 }
 
-
-
 function normalizeHref(href: string): string {
   if (!href) return href;
   if (href.startsWith('http://') || href.startsWith('https://') || href.startsWith('mailto:') || href.startsWith('tel:')) {
@@ -46,7 +55,7 @@ const navigationItems: NavigationItem[] = [
   {
     name: 'Services',
     href: '/services',
-    icon: <Play className="w-5 h-5" />,
+    icon: <Rocket className="w-5 h-5" />,
     description: 'Complete technology solutions',
     badge: 'Main',
     category: 'services',
@@ -62,31 +71,31 @@ const navigationItems: NavigationItem[] = [
         name: 'AI & Machine Learning', 
         href: '/ai-services', 
         description: 'Advanced AI solutions',
-        icon: <Play className="w-4 h-4" />
+        icon: <Brain className="w-4 h-4" />
       },
       { 
         name: 'Quantum Technology', 
         href: '/quantum-services', 
         description: 'Quantum computing solutions',
-        icon: <Play className="w-4 h-4" />
+        icon: <Cpu className="w-4 h-4" />
       },
       { 
         name: 'Space Technology', 
         href: '/space-technology', 
         description: 'Space exploration solutions',
-        icon: <Play className="w-4 h-4" />
+        icon: <Globe className="w-4 h-4" />
       },
       { 
         name: 'IT Solutions', 
         href: '/it-services', 
         description: 'Enterprise IT infrastructure',
-        icon: <Play className="w-4 h-4" />
+        icon: <Database className="w-4 h-4" />
       },
       { 
         name: 'Specialized Solutions', 
         href: '/solutions', 
         description: 'Industry-specific solutions',
-        icon: <Play className="w-4 h-4" />
+        icon: <Target className="w-4 h-4" />
       }
     ]
   },
