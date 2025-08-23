@@ -93,10 +93,10 @@ const UltraFuturisticFooter2046: React.FC = () => {
   };
 
   const socialLinks = [
-    { name: 'LinkedIn', href: 'https://linkedin.com', icon: Linkedin, color: 'hover:text-blue-400' },
-    { name: 'Twitter', href: 'https://twitter.com', icon: Twitter, color: 'hover:text-cyan-400' },
-    { name: 'GitHub', href: 'https://github.com', icon: Github, color: 'hover:text-gray-400' },
-    { name: 'YouTube', href: 'https://youtube.com', icon: Youtube, color: 'hover:text-red-400' }
+    { name: 'LinkedIn', href: 'https://linkedin.com/company/ziontechgroup', icon: Linkedin, color: 'hover:text-blue-400' },
+    { name: 'Twitter', href: 'https://twitter.com/ziontechgroup', icon: Twitter, color: 'hover:text-cyan-400' },
+    { name: 'GitHub', href: 'https://github.com/Zion-Holdings', icon: Github, color: 'hover:text-gray-400' },
+    { name: 'YouTube', href: 'https://youtube.com/@ziontechgroup', icon: Youtube, color: 'hover:text-red-400' }
   ];
 
   return (
