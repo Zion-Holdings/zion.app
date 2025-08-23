@@ -24,7 +24,16 @@ import { cuttingEdgeITServices } from '../data/cutting-edge-it-services';
 import { nextGenAIServices } from '../data/next-gen-ai-services';
 import { industryRealServices } from '../data/industry-real-services';
 import { professionalServices } from '../data/professional-services';
+<<<<<<< HEAD
+import { realEnterpriseServices2025 } from '../data/real-enterprise-services-2025';
+import { augmentedServicesBatch3 } from '../data/real-augmented-services-2025-batch3';
+import { real2025Q3Additions } from '../data/real-2025-q3-additions';
+import { realQ4Services2025 } from '../data/real-2025-q4-additions';
+import { real2026Q1Additions } from '../data/real-2026-q1-additions';
+import { ultimateFuturisticServices2025 } from '../data/2025-ultimate-futuristic-services';
+=======
 import { realVerifiedServices } from '../data/real-verified-services';
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-32ac
 
 export default function DynamicServicePage() {
   const router = useRouter();
@@ -156,9 +165,24 @@ function collectAllServices(): Svc[] {
       emergingTechnologyServices as Svc[],
       comprehensiveITSolutions as Svc[],
       marketValidatedServices as Svc[],
+<<<<<<< HEAD
+      curatedMarketServices as Svc[],
+      cuttingEdgeITServices as Svc[],
+      nextGenerationAIServices as Svc[],
+      nextGenAIServices as Svc[],
+      industryRealServices as Svc[],
+      professionalServices as Svc[],
+      realEnterpriseServices2025 as Svc[],
+      augmentedServicesBatch3 as Svc[],
+      real2025Q3Additions as Svc[],
+      realQ4Services2025 as Svc[],
+      real2026Q1Additions as Svc[],
+      ultimateFuturisticServices2025 as unknown as Svc[]
+=======
       newRealInnovations as Svc[],
       realMarketServices as Svc[],
       realVerifiedServices as unknown as Svc[]
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-32ac
     );
 }
 
@@ -183,6 +207,31 @@ export const getStaticPaths: GetStaticPaths = async () => {
   const services = collectAllServices();
   const candidateSlugs = new Set<string>();
 
+<<<<<<< HEAD
+  // Discover top-level pages that already exist to avoid conflicts with [slug]
+  const pagesDir = path.join(process.cwd(), 'pages');
+  let reservedTopLevelSlugs = new Set<string>();
+  try {
+    const entries = fs.readdirSync(pagesDir, { withFileTypes: true });
+    for (const entry of entries) {
+      if (entry.isFile() && entry.name.endsWith('.tsx')) {
+        const base = entry.name.replace(/\.tsx$/, '');
+        if (
+          base !== 'index' &&
+          base !== '_app' &&
+          base !== '_document' &&
+          base !== '[slug]' &&
+          !base.startsWith('_') &&
+          !base.startsWith('[')
+        ) {
+          reservedTopLevelSlugs.add(base);
+        }
+      }
+    }
+  } catch {
+    reservedTopLevelSlugs = new Set<string>();
+  }
+=======
   // Gather existing root-level page slugs to avoid conflicts
   const pagesDir = path.join(process.cwd(), 'pages');
   const staticSlugs = new Set<string>();
@@ -197,6 +246,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
       }
     }
   } catch {}
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-32ac
 
   for (const s of services) {
     const fromLink = extractRootSlugFromLink((s as any).link);

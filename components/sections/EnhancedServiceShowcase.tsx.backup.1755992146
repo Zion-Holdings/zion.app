@@ -1,3 +1,9 @@
+<<<<<<< HEAD
+import React from 'react';
+import { motion } from 'framer-motion';
+import { ArrowRight, Star, TrendingUp, Users, Shield, Zap } from 'lucide-react';
+import Link from 'next/link';
+=======
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { 
@@ -17,6 +23,7 @@ import { newRealInnovations } from '../../data/new-real-innovations';
 import { realMarketServices } from '../../data/real-market-services';
 import { realOperationalServices } from '../../data/real-operational-services';
 import { realVerifiedServices } from '../../data/real-verified-services';
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-32ac
 
 interface Service {
   id: string;
@@ -72,6 +79,8 @@ const EnhancedServiceShowcase: React.FC<EnhancedServiceShowcaseProps> = ({
   subtitle = "Cutting-edge technology solutions that transform businesses",
   showStats = true
 }) => {
+<<<<<<< HEAD
+=======
   const [selectedCategory, setSelectedCategory] = useState<string>('all');
   const [searchTerm, setSearchTerm] = useState('');
 
@@ -121,6 +130,7 @@ const EnhancedServiceShowcase: React.FC<EnhancedServiceShowcaseProps> = ({
     return matchesCategory && matchesSearch;
   });
 
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-32ac
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {

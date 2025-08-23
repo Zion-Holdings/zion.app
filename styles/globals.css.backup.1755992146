@@ -675,6 +675,176 @@ h3 {
 
 /* Enhanced Responsive Design */
 @media (max-width: 768px) {
+<<<<<<< HEAD
+  .card-futuristic:hover {
+    transform: translateY(-4px);
+  }
+  
+  h1 {
+    font-size: clamp(2rem, 10vw, 3rem);
+  }
+  
+  h2 {
+    font-size: clamp(1.5rem, 8vw, 2.5rem);
+  }
+  
+  h3 {
+    font-size: clamp(1.25rem, 6vw, 2rem);
+  }
+}
+
+@media (max-width: 480px) {
+  .btn-futuristic {
+    padding: 12px 20px;
+    font-size: 14px;
+  }
+  
+  .input-futuristic {
+    padding: 10px 14px;
+    font-size: 14px;
+  }
+}
+
+/* Enhanced Loading States */
+.loading-futuristic {
+  position: relative;
+  overflow: hidden;
+}
+
+.loading-futuristic::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(0, 255, 255, 0.3), transparent);
+  animation: loadingShimmer 1.5s infinite;
+}
+
+@keyframes loadingShimmer {
+  0% {
+    left: -100%;
+  }
+  100% {
+    left: 100%;
+  }
+}
+
+/* Enhanced Focus States */
+.focus-visible {
+  outline: 2px solid var(--neon-cyan);
+  outline-offset: 2px;
+}
+
+/* Enhanced Hover Effects */
+.hover-lift {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hover-lift:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+/* Enhanced Text Gradients */
+.text-gradient-cyan-purple {
+  background: linear-gradient(135deg, var(--neon-cyan), var(--neon-purple));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.text-gradient-purple-pink {
+  background: linear-gradient(135deg, var(--neon-purple), var(--neon-pink));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.text-gradient-cyan-green {
+  background: linear-gradient(135deg, var(--neon-cyan), var(--neon-green));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Enhanced Border Gradients */
+.border-gradient-cyan {
+  border: 2px solid;
+  border-image: linear-gradient(45deg, var(--neon-cyan), transparent) 1;
+}
+
+.border-gradient-purple {
+  border: 2px solid;
+  border-image: linear-gradient(45deg, var(--neon-purple), transparent) 1;
+}
+
+/* Enhanced Glassmorphism */
+.glass {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 16px;
+}
+
+.glass-dark {
+  background: rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+}
+
+/* Enhanced Grid Layouts */
+.grid-auto-fit {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.grid-auto-fill {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+
+/* Enhanced Spacing Utilities */
+.space-y-responsive > * + * {
+  margin-top: clamp(1rem, 4vw, 2rem);
+}
+
+.space-x-responsive > * + * {
+  margin-left: clamp(1rem, 4vw, 2rem);
+}
+
+/* Enhanced Container Queries */
+@container (min-width: 400px) {
+  .container-adaptive {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@container (min-width: 600px) {
+  .container-adaptive {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Enhanced Print Styles */
+@media print {
+  .no-print {
+    display: none !important;
+  }
+  
+  body {
+    background: #000000 !important;
+    color: #ffffff !important;
+  }
+  
+  .card-futuristic {
+    box-shadow: none;
+    border: 1px solid #ccc;
+=======
   .quantum-grid {
     background-size: 25px 25px;
     opacity: 0.35;
@@ -693,6 +863,7 @@ h3 {
   .cyberpunk-elements {
     background-size: 100px 100px;
     opacity: 0.26;
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-32ac
   }
 }
 
