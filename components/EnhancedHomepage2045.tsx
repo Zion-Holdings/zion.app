@@ -15,6 +15,11 @@ import { revolutionary2044AIServices } from '../data/revolutionary-2044-ai-servi
 import { realPracticalMicroSaasServices2025 } from '../data/2025-real-practical-micro-saas-services';
 import { advancedAIITSpecializedServices2025 } from '../data/2025-advanced-ai-it-specialized-services';
 
+// Import our new 2025 Ultimate Real Services
+import { ultimateRealMicroSaas2025Expansion } from '../data/2025-ultimate-real-micro-saas-expansion';
+import { ultimateRealITServices2025Expansion } from '../data/2025-ultimate-real-it-services-expansion';
+import { ultimateRealAIServices2025Expansion } from '../data/2025-ultimate-real-ai-services-expansion';
+
 const EnhancedHomepage2045: React.FC = () => {
   const [showMobileMenu, setShowMobileMenu] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
@@ -26,7 +31,10 @@ const EnhancedHomepage2045: React.FC = () => {
     ...revolutionary2044ITServices,
     ...revolutionary2044AIServices,
     ...realPracticalMicroSaasServices2025,
-    ...advancedAIITSpecializedServices2025
+    ...advancedAIITSpecializedServices2025,
+    ...ultimateRealMicroSaas2025Expansion,
+    ...ultimateRealITServices2025Expansion,
+    ...ultimateRealAIServices2025Expansion
   ], []);
 
   const categories = useMemo(() => [
@@ -48,7 +56,7 @@ const EnhancedHomepage2045: React.FC = () => {
   ], []);
 
   const stats = useMemo(() => [
-    { number: "5000+", label: "Revolutionary Services", icon: Star },
+    { number: "7500+", label: "Revolutionary Services", icon: Star },
     { number: "99.99%", label: "Uptime Guarantee", icon: Star },
     { number: "24/7", label: "AI Support Available", icon: Brain },
     { number: "250+", label: "Countries Served", icon: Globe }
