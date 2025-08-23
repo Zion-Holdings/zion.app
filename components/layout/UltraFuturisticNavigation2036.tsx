@@ -12,7 +12,8 @@ import {
   Clock,
   MessageCircle,
   Calculator,
-  Play
+  Play,
+  Sparkles
 } from 'lucide-react';
 import Link from 'next/link';
 import EnhancedSearch from '../EnhancedSearch';
@@ -63,6 +64,13 @@ const navigationItems: NavigationItem[] = [
         href: '/comprehensive-2025-services-showcase', 
         description: 'Comprehensive showcase of our latest services',
         icon: <Star className="w-4 h-4" />,
+        featured: true
+      },
+      { 
+        name: '2038 Futuristic Services', 
+        href: '/ultimate-2038-futuristic-services-showcase', 
+        description: 'Ultimate 2038 futuristic services showcase',
+        icon: <Sparkles className="w-4 h-4" />,
         featured: true
       },
       { 

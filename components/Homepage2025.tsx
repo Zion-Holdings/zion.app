@@ -67,6 +67,11 @@ const Homepage2025: React.FC = () => {
                     2025 Services Showcase
                   </button>
                 </Link>
+                <Link href="/ultimate-2038-futuristic-services-showcase">
+                  <button className="px-8 py-4 border-2 border-pink-400 text-pink-400 font-semibold rounded-lg hover:bg-pink-400 hover:text-black transition-all duration-300 transform hover:scale-105">
+                    2038 Futuristic Services
+                  </button>
+                </Link>
               </div>
               
               {/* Trust Indicators */}

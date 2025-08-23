@@ -5,7 +5,7 @@ import {
   Search, Grid, List,
   Brain, Atom, Shield, Target, Rocket,
   ArrowRight, Check, Palette, Heart, Truck, GraduationCap,
-  Building
+  Building, Sparkles
 } from 'lucide-react';
 
 // Import our new service data
@@ -22,6 +22,9 @@ import { innovative2036ITServices } from '../data/innovative-2036-it-services';
 import { innovative2037MicroSaasServices } from '../data/innovative-2037-micro-saas-services';
 import { innovative2037ITServices } from '../data/innovative-2037-it-services';
 import { innovative2037AIServices } from '../data/innovative-2037-ai-services';
+import { innovative2038MicroSaasServices } from '../data/innovative-2038-micro-saas-services';
+import { innovative2038AIServices } from '../data/innovative-2038-ai-services';
+import { innovative2038ITServices } from '../data/innovative-2038-it-services';
 
 // Import existing service data
 import { realMicroSaasServices } from '../data/real-micro-saas-services';
@@ -86,7 +89,10 @@ const allServices = [
   ...innovative2036ITServices,
   ...innovative2037MicroSaasServices,
   ...innovative2037ITServices,
-  ...innovative2037AIServices
+  ...innovative2037AIServices,
+  ...innovative2038MicroSaasServices,
+  ...innovative2038AIServices,
+  ...innovative2038ITServices
 ];
 
 const categories = [
@@ -328,10 +334,25 @@ export default function Services() {
                 Transform Your <span className="bg-gradient-to-r from-blue-400 via-purple-500 to-red-500 bg-clip-text text-transparent">Business</span> with Our Services
               </h1>
               
-              <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+              <p className="text-xl text-gray-300 max-w-3xl mx-auto mb-6">
                 From enterprise IT solutions to cutting-edge AI services and innovative micro SAAS platforms, 
                 we provide the technology you need to succeed in the digital age.
               </p>
+              <div className="flex flex-wrap justify-center gap-4">
+                <a
+                  href="/ultimate-2038-futuristic-services-showcase"
+                  className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-semibold rounded-lg hover:from-cyan-600 hover:to-blue-700 transition-all duration-300 transform hover:scale-105 shadow-lg shadow-cyan-500/25"
+                >
+                  <Sparkles className="w-4 h-4 mr-2" />
+                  2038 Futuristic Services
+                </a>
+                <a
+                  href="/comprehensive-2025-services-showcase"
+                  className="inline-flex items-center px-6 py-3 border-2 border-purple-400 text-purple-400 font-semibold rounded-lg hover:bg-purple-400 hover:text-black transition-all duration-300 transform hover:scale-105"
+                >
+                  2025 Services Showcase
+                </a>
+              </div>
             </motion.div>
 
             {/* Search and Filters */}
