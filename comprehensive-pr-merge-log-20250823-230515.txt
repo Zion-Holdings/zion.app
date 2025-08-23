@@ -1449,3 +1449,40 @@ scripts/generate-readme.js[0m
 2025-08-23 23:07:47 - [1;33m⚠️  Found conflicts in scripts/generate-readme.js, resolving...[0m
 2025-08-23 23:07:47 - [0;34m💻 Code file detected, attempting intelligent merge...[0m
 2025-08-23 23:07:47 - [0;32m✅ Resolved conflicts in scripts/generate-readme.js[0m
+2025-08-23 23:07:47 - [0;32m✅ Successfully resolved conflicts and merged cursor/invent-and-deploy-autonomous-github-actions-fa8c[0m
+2025-08-23 23:07:47 - [0;32m✅ PR #3846 (cursor/invent-and-deploy-autonomous-github-actions-fa8c) processed successfully[0m
+2025-08-23 23:07:47 - [0;34m🔒 Closing PR #3846 via GitHub API...[0m
+2025-08-23 23:07:47 - [0;34m📊 Progress: 43/100, ✅ 43, ❌ 0[0m
+2025-08-23 23:07:49 - [0;34m📋 Processing PR #3845: Invent and deploy autonomous github actions (branch: cursor/invent-and-deploy-autonomous-github-actions-b774)[0m
+2025-08-23 23:07:50 - [0;34m🔄 Attempting to merge cursor/invent-and-deploy-autonomous-github-actions-b774...[0m
+2025-08-23 23:07:50 - [1;33m⚠️  Merge conflicts detected in cursor/invent-and-deploy-autonomous-github-actions-b774 (attempt 1/3), resolving...[0m
+2025-08-23 23:07:50 - [0;34m📋 Conflicted files: .github/workflows/homepage-auto-update.yml
+.github/workflows/readme-autogen.yml
+README.md
+netlify/functions/functions-manifest.json
+pages/index.tsx
+pages/main/front/index.tsx[0m
+2025-08-23 23:07:50 - [0;34m🔧 Resolving conflicts in .github/workflows/homepage-auto-update.yml for branch cursor/invent-and-deploy-autonomous-github-actions-b774...[0m
+2025-08-23 23:07:50 - [1;33m⚠️  Found conflicts in .github/workflows/homepage-auto-update.yml, resolving...[0m
+2025-08-23 23:07:50 - [0;34m📝 Regular file, removing conflict markers...[0m
+2025-08-23 23:07:50 - [0;32m✅ Resolved conflicts in .github/workflows/homepage-auto-update.yml[0m
+2025-08-23 23:07:50 - [0;34m🔧 Resolving conflicts in .github/workflows/readme-autogen.yml for branch cursor/invent-and-deploy-autonomous-github-actions-b774...[0m
+2025-08-23 23:07:50 - [1;33m⚠️  Found conflicts in .github/workflows/readme-autogen.yml, resolving...[0m
+2025-08-23 23:07:50 - [0;34m📝 Regular file, removing conflict markers...[0m
+2025-08-23 23:07:50 - [0;32m✅ Resolved conflicts in .github/workflows/readme-autogen.yml[0m
+2025-08-23 23:07:50 - [0;34m🔧 Resolving conflicts in README.md for branch cursor/invent-and-deploy-autonomous-github-actions-b774...[0m
+2025-08-23 23:07:50 - [1;33m⚠️  Found conflicts in README.md, resolving...[0m
+2025-08-23 23:07:50 - [0;34m📝 Regular file, removing conflict markers...[0m
+2025-08-23 23:07:50 - [0;32m✅ Resolved conflicts in README.md[0m
+2025-08-23 23:07:50 - [0;34m🔧 Resolving conflicts in netlify/functions/functions-manifest.json for branch cursor/invent-and-deploy-autonomous-github-actions-b774...[0m
+2025-08-23 23:07:50 - [1;33m⚠️  Found conflicts in netlify/functions/functions-manifest.json, resolving...[0m
+2025-08-23 23:07:50 - [0;34m📝 Regular file, removing conflict markers...[0m
+2025-08-23 23:07:50 - [0;32m✅ Resolved conflicts in netlify/functions/functions-manifest.json[0m
+2025-08-23 23:07:50 - [0;34m🔧 Resolving conflicts in pages/index.tsx for branch cursor/invent-and-deploy-autonomous-github-actions-b774...[0m
+2025-08-23 23:07:50 - [1;33m⚠️  Found conflicts in pages/index.tsx, resolving...[0m
+2025-08-23 23:07:50 - [0;34m💻 Code file detected, attempting intelligent merge...[0m
+2025-08-23 23:07:51 - [0;32m✅ Resolved conflicts in pages/index.tsx[0m
+2025-08-23 23:07:51 - [0;34m🔧 Resolving conflicts in pages/main/front/index.tsx for branch cursor/invent-and-deploy-autonomous-github-actions-b774...[0m
+2025-08-23 23:07:51 - [1;33m⚠️  Found conflicts in pages/main/front/index.tsx, resolving...[0m
+2025-08-23 23:07:51 - [0;34m💻 Code file detected, attempting intelligent merge...[0m
+2025-08-23 23:07:51 - [0;32m✅ Resolved conflicts in pages/main/front/index.tsx[0m

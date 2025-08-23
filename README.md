@@ -1,6 +1,6 @@
 # Zion Tech Group - Innovative Technology Solutions
 
-![Automations: 31](https://img.shields.io/badge/Automations-31-informational) ![Pages: 10](https://img.shields.io/badge/Pages-10-success) ![Components: 1](https://img.shields.io/badge/Components-1-blue)
+![Automations: 5](https://img.shields.io/badge/Automations-5-informational) ![Pages: 10](https://img.shields.io/badge/Pages-10-success) ![Components: 1](https://img.shields.io/badge/Components-1-blue)
 
 ## 🚀 2025 Comprehensive Services Portfolio
 
@@ -25,37 +25,11 @@ Home: https://github.com/Zion-Holdings/zion#readme
 - /site-health
 
 ### Automations
-- [actions-catalog.yml](https://github.com/Zion-Holdings/zion.app/actions/workflows/actions-catalog.yml)
-- [auto-fix.yml](https://github.com/Zion-Holdings/zion.app/actions/workflows/auto-fix.yml)
-- [automerge-main.yml](https://github.com/Zion-Holdings/zion.app/actions/workflows/automerge-main.yml)
-- [autonomous-meta.yml](https://github.com/Zion-Holdings/zion.app/actions/workflows/autonomous-meta.yml)
-- [ci-self-heal.yml](https://github.com/Zion-Holdings/zion.app/actions/workflows/ci-self-heal.yml)
-- [ci.yml](https://github.com/Zion-Holdings/zion.app/actions/workflows/ci.yml)
-- [cloud-maintenance.yml](https://github.com/Zion-Holdings/zion.app/actions/workflows/cloud-maintenance.yml)
-- [cloud-marketing.yml](https://github.com/Zion-Holdings/zion.app/actions/workflows/cloud-marketing.yml)
-- [continuous-improvement.yml](https://github.com/Zion-Holdings/zion.app/actions/workflows/continuous-improvement.yml)
-- [cursor-rules-autoupdate.yml](https://github.com/Zion-Holdings/zion.app/actions/workflows/cursor-rules-autoupdate.yml)
-- [dependency-maintenance.yml](https://github.com/Zion-Holdings/zion.app/actions/workflows/dependency-maintenance.yml)
-- [diverse-agent-matrix.yml](https://github.com/Zion-Holdings/zion.app/actions/workflows/diverse-agent-matrix.yml)
-- [frontend-sync-continuous.yml](https://github.com/Zion-Holdings/zion.app/actions/workflows/frontend-sync-continuous.yml)
-- [git-health.yml](https://github.com/Zion-Holdings/zion.app/actions/workflows/git-health.yml)
-- [infinite-improvement-loop.yml](https://github.com/Zion-Holdings/zion.app/actions/workflows/infinite-improvement-loop.yml)
-- [instagram-six-hourly.yml](https://github.com/Zion-Holdings/zion.app/actions/workflows/instagram-six-hourly.yml)
-- [labeler.yml](https://github.com/Zion-Holdings/zion.app/actions/workflows/labeler.yml)
-- [marketing-daily.yml](https://github.com/Zion-Holdings/zion.app/actions/workflows/marketing-daily.yml)
-- [merge-conflict-guard.yml](https://github.com/Zion-Holdings/zion.app/actions/workflows/merge-conflict-guard.yml)
-- [monetization-continuous.yml](https://github.com/Zion-Holdings/zion.app/actions/workflows/monetization-continuous.yml)
-- [monetization-daily.yml](https://github.com/Zion-Holdings/zion.app/actions/workflows/monetization-daily.yml)
-- [netlify-config.yml](https://github.com/Zion-Holdings/zion.app/actions/workflows/netlify-config.yml)
-- [netlify-functions-trigger.yml](https://github.com/Zion-Holdings/zion.app/actions/workflows/netlify-functions-trigger.yml)
-- [netlify-monitor.yml](https://github.com/Zion-Holdings/zion.app/actions/workflows/netlify-monitor.yml)
-- [performance-weekly.yml](https://github.com/Zion-Holdings/zion.app/actions/workflows/performance-weekly.yml)
-- [rapid-sync.yml](https://github.com/Zion-Holdings/zion.app/actions/workflows/rapid-sync.yml)
-- [release-drafter.yml](https://github.com/Zion-Holdings/zion.app/actions/workflows/release-drafter.yml)
-- [revenue-ideas-daily.yml](https://github.com/Zion-Holdings/zion.app/actions/workflows/revenue-ideas-daily.yml)
-- [sync-health.yml](https://github.com/Zion-Holdings/zion.app/actions/workflows/sync-health.yml)
-- [ui-evolution-schedule.yml](https://github.com/Zion-Holdings/zion.app/actions/workflows/ui-evolution-schedule.yml)
-- [ui-evolution-weekly-beautify.yml](https://github.com/Zion-Holdings/zion.app/actions/workflows/ui-evolution-weekly-beautify.yml)
+- homepage-auto-update.yml
+- netlify-config.yml
+- netlify-functions-trigger.yml
+- readme-autogen.yml
+- ultrafast-cloud-orchestrator.yml
 
 ### Local Development
 1. Install Node 20+ and npm 10+.

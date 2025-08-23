@@ -1,6 +1,26 @@
 name: Homepage Auto Update
 
 on:
+<<<<<<< HEAD
+  workflow_dispatch: {}
+  schedule:
+    - cron: '*/10 * * * *'
+
+permissions:
+  contents: write
+  actions: read
+
+jobs:
+  main:
+    name: Main Job
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+=======
   schedule:
     - cron: '*/10 * * * *'
   workflow_dispatch: {}
@@ -20,6 +40,7 @@ jobs:
         uses: actions/checkout@v4
         with:
           persist-credentials: true
+>>>>>>> origin/cursor/invent-and-deploy-autonomous-github-actions-b774
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
@@ -28,6 +49,14 @@ jobs:
           cache: 'npm'
 
       - name: Install dependencies
+<<<<<<< HEAD
+        run: npm ci --no-audit --no-fund
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+=======
         run: npm ci
 
       - name: Generate homepage promos (logs only)
@@ -40,3 +69,4 @@ jobs:
           git add -A
           git diff --quiet && git diff --staged --quiet || git commit -m "feat(home): refresh homepage promos & links [skip ci]"
           git push
+>>>>>>> origin/cursor/invent-and-deploy-autonomous-github-actions-b774
