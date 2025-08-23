@@ -6,24 +6,14 @@ const fs = require('fs');
 const path = require('path');
 
 const ROOT = path.resolve(__dirname, '..');
-const LOG_DIR = path.join(ROOT, 'automation', 'logs');
-const LOG_FILE = path.join(LOG_DIR, 'front-index-auto-advertiser.log');
-
-function ensureDir(p) {
-  if (!fs.existsSync(p)) fs.mkdirSync(p, { recursive: true });
-}
-
-ensureDir(LOG_DIR);
+const FRONT_PAGE = path.join(ROOT, 'pages', 'main', 'front', 'index.tsx');
+const START_MARKER = '/* AUTO-GENERATED: FRONT_ADS_START */';
+const END_MARKER = '/* AUTO-GENERATED: FRONT_ADS_END */';
 
 function log(message) {
   const line = `[${new Date().toISOString()}] ${message}`;
   console.log(line);
-  try { fs.appendFileSync(LOG_FILE, line + '\n'); } catch {}
 }
-
-const FRONT_PAGE = path.join(ROOT, 'pages', 'main', 'front', 'index.tsx');
-const START_MARKER = '/* AUTO:FRONT_INDEX_DIRECTORY_START */';
-const END_MARKER = '/* AUTO:FRONT_INDEX_DIRECTORY_END */';
 
 function titleCase(slug) {
   return slug
@@ -79,7 +69,6 @@ function discoverInternalCards() {
 }
 
 function discoverExternalCards() {
-  // Prefer repo URL from package.json
   let repoUrl = 'https://github.com/Zion-Holdings/zion.app';
   try {
     const pkg = JSON.parse(fs.readFileSync(path.join(ROOT, 'package.json'), 'utf8'));
@@ -87,42 +76,38 @@ function discoverExternalCards() {
       repoUrl = pkg.repository.url.replace(/^git\+/, '').replace(/\.git$/, '');
     }
   } catch {}
-
-  const cards = [];
-  // External docs and AI changelog
-  cards.push({ type: 'external', href: `${repoUrl}/tree/main/docs`, label: 'Docs & Guides', desc: 'Technical notes and architecture' });
-  cards.push({ type: 'external', href: `${repoUrl}/blob/main/docs/CHANGELOG_AI.md`, label: 'AI Changelog', desc: 'Summarized autonomous changes' });
-  // Live pipelines (transparency; source-of-truth now Netlify scheduled functions)
-  cards.push({ type: 'external', href: `${repoUrl}/actions`, label: 'Live Pipelines', desc: 'CI logs & artifacts 24/7' });
-  // Company site
-  cards.push({ type: 'external', href: 'https://ziontechgroup.com', label: 'Zion Cloud', desc: 'Deployments and cloud platform' });
-
-  return cards;
+  return [
+    { type: 'external', href: `${repoUrl}/tree/main/docs`, label: 'Docs — technical notes & guides', desc: 'Documentation' },
+    { type: 'external', href: `${repoUrl}/blob/main/docs/CHANGELOG_AI.md`, label: 'AI Changelog — highlights', desc: 'Summarized updates' },
+  ];
 }
 
 function buildCard(item) {
-  const base = 'group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-cyan-400/30 tilt-on-hover neon-ring';
-  const heading = `<div className=\"text-base font-semibold\">${item.label}</div>`;
-  const desc = item.desc ? `<div className=\"mt-1 text-sm text-white/75\">${item.desc}</div>` : '';
-  if (item.type === 'internal') {
-    return `          <Link href=\"${item.href}\"><a className=\"${base}\">${heading}${desc}<div className=\"mt-3 inline-flex items-center gap-1 text-xs text-cyan-300/90\">Open <span aria-hidden>→</span></div></a></Link>`;
+  const common = 'group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-cyan-400/30 tilt-on-hover holo';
+  const inner = `\n  <div className="text-base font-semibold">${item.label}</div>\n  <div className="mt-1 text-sm text-white/75">${item.desc || item.tagline || ''}</div>\n`;
+  if (item.type === 'external') {
+    return `              <a href="${item.href}" target="_blank" rel="noopener" className="${common}">${inner}  <div className=\"mt-3 inline-flex items-center gap-1 text-xs text-cyan-300/90\">Open <span aria-hidden>↗</span></div></a>`;
   }
-  return `          <a href=\"${item.href}\" target=\"_blank\" rel=\"noopener\" className=\"${base}\">${heading}${desc}<div className=\"mt-3 inline-flex items-center gap-1 text-xs text-cyan-300/90\">Open <span aria-hidden>↗</span></div></a>`;
+  return `              <Link href=\"${item.href}\"><a className=\"${common}\">${inner}  <div className=\"mt-3 inline-flex items-center gap-1 text-xs text-cyan-300/90\">Open <span aria-hidden>→</span></div></a></Link>`;
 }
 
-function generateSectionTSX(items) {
-  const header = `
-<section id=\"auto-catalog\" className=\"mx-auto max-w-7xl px-6 pb-16\">\n  <h2 className=\"text-center text-2xl font-bold tracking-wide text-white/90\">Autonomous Catalog</h2>\n  <p className=\"mx-auto mt-2 max-w-3xl text-center text-sm text-white/70\">Auto‑discovered features, capabilities, and resources. Kept fresh by in‑repo Node tools.</p>\n  <div className=\"mt-6 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4\">`;
-  const body = items.map(buildCard).join('\n');
-  const footer = `\n  </div>\n</section>`;
-  return header + (body ? `\n${body}\n` : '\n') + footer;
+function generateSection(items) {
+  return [
+    '<section id="auto-promoted" className="mx-auto max-w-7xl px-6 pb-14">',
+    '  <h2 className="text-center text-2xl font-bold tracking-wide text-white/90">Auto‑Promoted Features</h2>',
+    '  <p className="mx-auto mt-2 max-w-3xl text-center text-sm text-white/70">Continuously curated promos linking to live hubs, reports, and docs.</p>',
+    '  <div className="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">',
+    items.map(buildCard).join('\n'),
+    '  </div>',
+    '</section>'
+  ].join('\n');
 }
 
 function replaceBetweenMarkers(source, startMarker, endMarker, replacement) {
   const startIdx = source.indexOf(startMarker);
   const endIdx = source.indexOf(endMarker);
   if (startIdx === -1 || endIdx === -1 || endIdx < startIdx) {
-    throw new Error('Markers not found or in wrong order in pages/main/front/index.tsx');
+    throw new Error('Markers not found or invalid order in front index');
   }
   const before = source.slice(0, startIdx + startMarker.length);
   const after = source.slice(endIdx);
@@ -139,7 +124,7 @@ function replaceBetweenMarkers(source, startMarker, endMarker, replacement) {
   const internal = discoverInternalCards();
   const external = discoverExternalCards();
   const items = [...internal, ...external].slice(0, 20);
-  const tsxBlock = generateSectionTSX(items);
+  const tsxBlock = generateSection(items);
 
   const original = fs.readFileSync(FRONT_PAGE, 'utf8');
   let updated;
@@ -152,9 +137,9 @@ function replaceBetweenMarkers(source, startMarker, endMarker, replacement) {
 
   if (updated !== original) {
     fs.writeFileSync(FRONT_PAGE, updated);
-    log('Front index updated between markers.');
+    log('Front index auto‑promotions updated.');
   } else {
-    log('No changes needed.');
+    log('No updates required.');
   }
 
   log('Front Index Auto Advertiser finished');
