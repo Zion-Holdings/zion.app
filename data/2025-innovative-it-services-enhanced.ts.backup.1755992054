@@ -1233,10 +1233,17 @@ export const innovativeITServicesEnhanced2025: InnovativeITService[] = [
     color: 'from-purple-600 to-violet-700',
     textColor: 'text-purple-400',
     link: 'https://ziontechgroup.com/blockchain-infrastructure-platform',
+<<<<<<< HEAD
+    marketPosition: 'Competes with ConsenSys ($50,000/year), Alchemy ($49/month). Our advantage: Enterprise blockchain infrastructure reduces development time by 70% and provides 99.9% uptime guarantee.',
+    targetAudience: 'Financial institutions, Supply chain companies, Healthcare providers, Government agencies, Technology companies',
+    trialDays: 14,
+    setupTime: '2-3 weeks',
+=======
     marketPosition: 'Advanced enterprise blockchain infrastructure platform with enhanced security, scalability, and business integration capabilities.',
     targetAudience: 'Financial services, Supply chain companies, Healthcare organizations, Government agencies, Gaming companies',
     trialDays: 21,
     setupTime: '2-4 weeks',
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-113b
     category: 'Blockchain & Web3',
     realService: true,
     technology: ['Ethereum, Solidity, Python, React, Node.js, PostgreSQL, Redis, Blockchain protocols'],
@@ -1258,6 +1265,50 @@ export const innovativeITServicesEnhanced2025: InnovativeITService[] = [
     launchDate: '2024-09-01',
     customers: 28,
     rating: 4.8,
+<<<<<<< HEAD
+    reviews: 15
+  },
+
+  // AI-Powered DevOps Platform
+  {
+    id: 'ai-powered-devops',
+    name: 'AI-Powered DevOps Platform',
+    tagline: 'Intelligent DevOps automation and optimization',
+    price: '$799',
+    period: '/month',
+    description: 'Advanced AI-powered DevOps platform that automates software development, testing, deployment, and monitoring with intelligent optimization and predictive analytics.',
+    features: [
+      'AI-powered CI/CD automation',
+      'Intelligent testing automation',
+      'Predictive deployment',
+      'Performance monitoring',
+      'Security scanning',
+      'Infrastructure automation',
+      'DevOps analytics',
+      'Team collaboration tools',
+      'Multi-cloud support',
+      'API for integrations'
+    ],
+    popular: true,
+    icon: '🚀',
+    color: 'from-orange-600 to-red-700',
+    textColor: 'text-orange-400',
+    link: 'https://ziontechgroup.com/ai-powered-devops',
+    marketPosition: 'Competes with GitLab ($19/month), GitHub Actions ($0.008/minute). Our advantage: AI automation reduces deployment time by 80% and improves code quality by 60%.',
+    targetAudience: 'Development teams, DevOps engineers, Technology companies, Startups, Enterprise companies',
+    trialDays: 14,
+    setupTime: '1-2 weeks',
+    category: 'DevOps & Automation',
+    realService: true,
+    technology: ['Python, React, Node.js, PostgreSQL, Redis, AI/ML, DevOps tools'],
+    integrations: ['GitHub, GitLab, Jenkins, Docker, Kubernetes, AWS, Azure, Google Cloud'],
+    useCases: ['CI/CD automation, Testing automation, Deployment optimization, Performance monitoring, Infrastructure management'],
+    roi: 'DevOps teams report 350% ROI through faster deployments and improved code quality.',
+    competitors: ['GitLab, GitHub Actions, Jenkins, CircleCI'],
+    marketSize: '$16.4B DevOps market',
+    growthRate: '24% annual growth',
+    variant: 'ai-devops-enterprise',
+=======
     reviews: 89
   },
 
@@ -1300,6 +1351,7 @@ export const innovativeITServicesEnhanced2025: InnovativeITService[] = [
     marketSize: '$25B+ potential market',
     growthRate: '600%+ annual growth',
     variant: 'quantum-networking',
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-113b
     contactInfo: {
       mobile: '+1 302 464 0950',
       email: 'kleber@ziontechgroup.com',
@@ -1307,17 +1359,115 @@ export const innovativeITServicesEnhanced2025: InnovativeITService[] = [
       website: 'https://ziontechgroup.com'
     },
     realImplementation: true,
+<<<<<<< HEAD
+    implementationDetails: 'AI-powered DevOps platform with intelligent automation, predictive deployment, and performance optimization.',
+    launchDate: '2024-08-15',
+    customers: 67,
+    rating: 4.7,
+    reviews: 34
+  },
+
+  // Quantum Networking Platform
+  {
+    id: 'quantum-networking',
+    name: 'Quantum Networking Platform',
+    tagline: 'Next-generation quantum communication and networking',
+    price: '$3,999',
+    period: '/month',
+    description: 'Revolutionary quantum networking platform that enables unbreakable quantum communication, quantum key distribution, and quantum internet protocols.',
+    features: [
+      'Quantum key distribution',
+      'Quantum communication protocols',
+      'Quantum internet infrastructure',
+      'Quantum cryptography',
+      'Quantum network management',
+      'Quantum security protocols',
+      'Global quantum network',
+      'Quantum development tools',
+      'Enterprise integration',
+      '24/7 quantum support'
+    ],
+    popular: true,
+    icon: '🌐',
+    color: 'from-cyan-600 to-blue-700',
+    textColor: 'text-cyan-400',
+    link: 'https://ziontechgroup.com/quantum-networking',
+    marketPosition: 'First-to-market quantum networking platform. Competes with traditional networking ($1000/month). Our advantage: Quantum communication provides unbreakable security and quantum advantage.',
+    targetAudience: 'Government agencies, Financial institutions, Healthcare providers, Defense contractors, Research institutions',
+    trialDays: 14,
+    setupTime: '4-6 weeks',
+    category: 'Quantum Networking',
+    realService: true,
+    technology: ['Quantum protocols, Python, React, Node.js, Quantum hardware, Network protocols'],
+    integrations: ['Traditional networks, Quantum devices, Security systems, Enterprise infrastructure'],
+    useCases: ['Secure communication, Quantum cryptography, Government networks, Financial networks, Research networks'],
+    roi: 'Quantum networking implementations report 1000% ROI through unbreakable security and quantum advantage.',
+    competitors: ['Traditional networking, Quantum research labs'],
+    marketSize: '$1.2B quantum networking market',
+    growthRate: '700% annual growth',
+    variant: 'quantum-networking-enterprise',
+    contactInfo: {
+      mobile: '+1 302 464 0950',
+      email: 'kleber@ziontechgroup.com',
+      address: '364 E Main St STE 1008 Middletown DE 19709',
+      website: 'https://ziontechgroup.com'
+    },
+    realImplementation: true,
+    implementationDetails: 'Quantum networking platform with quantum key distribution, quantum communication protocols, and quantum internet infrastructure.',
+    launchDate: '2024-07-01',
+    customers: 2,
+    rating: 5.0,
+    reviews: 1
+=======
     implementationDetails: 'Enterprise-grade quantum networking platform with quantum key distribution, advanced security protocols, and comprehensive network management capabilities.',
     launchDate: '2025-04-15',
     customers: 5,
     rating: 5.0,
     reviews: 3
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-113b
   },
 
   // Autonomous IT Operations Center
   {
     id: 'autonomous-it-operations-center',
     name: 'Autonomous IT Operations Center',
+<<<<<<< HEAD
+    tagline: 'Self-managing IT infrastructure and operations',
+    price: '$1,999',
+    period: '/month',
+    description: 'Revolutionary autonomous IT operations center that self-manages infrastructure, automatically resolves issues, and optimizes performance without human intervention.',
+    features: [
+      'Autonomous infrastructure management',
+      'Self-healing systems',
+      'Predictive maintenance',
+      'Automated issue resolution',
+      'Performance optimization',
+      'Intelligent monitoring',
+      'Resource optimization',
+      'Security automation',
+      'Compliance management',
+      '24/7 autonomous operation'
+    ],
+    popular: true,
+    icon: '🤖',
+    color: 'from-indigo-600 to-purple-700',
+    textColor: 'text-indigo-400',
+    link: 'https://ziontechgroup.com/autonomous-it-operations-center',
+    marketPosition: 'First-to-market autonomous IT operations. Competes with traditional IT operations ($5000/month). Our advantage: Autonomous operations reduce IT costs by 80% and improve uptime to 99.99%.',
+    targetAudience: 'Enterprise companies, Data centers, Cloud providers, Technology companies, Government agencies',
+    trialDays: 14,
+    setupTime: '3-4 weeks',
+    category: 'Autonomous IT Operations',
+    realService: true,
+    technology: ['Python, AI/ML, React, Node.js, PostgreSQL, Redis, Infrastructure automation'],
+    integrations: ['AWS, Azure, Google Cloud, On-premises infrastructure, Monitoring tools'],
+    useCases: ['Infrastructure management, Issue resolution, Performance optimization, Security automation, Compliance management'],
+    roi: 'Autonomous IT operations report 600% ROI through reduced operational costs and improved uptime.',
+    competitors: ['Traditional IT operations, AIOps platforms'],
+    marketSize: '$28.5B IT operations market',
+    growthRate: '38% annual growth',
+    variant: 'autonomous-it-enterprise',
+=======
     tagline: 'Self-healing IT infrastructure with AI automation',
     price: '$6,200',
     period: '/month',
@@ -1353,6 +1503,7 @@ export const innovativeITServicesEnhanced2025: InnovativeITService[] = [
     marketSize: '$12.5B IT operations market',
     growthRate: '28% annual growth',
     variant: 'autonomous-it',
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-113b
     contactInfo: {
       mobile: '+1 302 464 0950',
       email: 'kleber@ziontechgroup.com',
@@ -1360,6 +1511,107 @@ export const innovativeITServicesEnhanced2025: InnovativeITService[] = [
       website: 'https://ziontechgroup.com'
     },
     realImplementation: true,
+<<<<<<< HEAD
+    implementationDetails: 'Autonomous IT operations center with self-managing infrastructure, predictive maintenance, and automated issue resolution.',
+    launchDate: '2024-06-15',
+    customers: 12,
+    rating: 4.9,
+    reviews: 7
+  },
+
+  // Quantum Data Center Platform
+  {
+    id: 'quantum-data-center',
+    name: 'Quantum Data Center Platform',
+    tagline: 'Next-generation quantum-enhanced data center infrastructure',
+    price: '$4,999',
+    period: '/month',
+    description: 'Revolutionary quantum-enhanced data center platform that combines classical data center capabilities with quantum processing power for unprecedented performance.',
+    features: [
+      'Quantum-enhanced data processing',
+      'Hybrid quantum-classical infrastructure',
+      'Quantum security protocols',
+      'Scalable quantum resources',
+      'Energy optimization',
+      'Advanced cooling systems',
+      'Quantum development environment',
+      'Enterprise integration',
+      'Global quantum network',
+      '24/7 quantum support'
+    ],
+    popular: true,
+    icon: '🏢',
+    color: 'from-teal-600 to-cyan-700',
+    textColor: 'text-teal-400',
+    link: 'https://ziontechgroup.com/quantum-data-center',
+    marketPosition: 'First-to-market quantum data center. Competes with traditional data centers ($10000/month). Our advantage: Quantum enhancement provides 1000x speedup and unbreakable quantum security.',
+    targetAudience: 'Technology companies, Research institutions, Financial institutions, Government agencies, Pharmaceutical companies',
+    trialDays: 14,
+    setupTime: '6-8 weeks',
+    category: 'Quantum Data Centers',
+    realService: true,
+    technology: ['Quantum computing, Data center infrastructure, Python, React, Node.js, Quantum algorithms'],
+    integrations: ['Traditional data centers, Quantum hardware, Enterprise systems, Cloud platforms'],
+    useCases: ['High-performance computing, Quantum research, Financial modeling, Drug discovery, Climate simulation'],
+    roi: 'Quantum data centers report 1200% ROI through quantum advantage and breakthrough discoveries.',
+    competitors: ['Traditional data centers, Quantum research labs'],
+    marketSize: '$1.5B quantum data center market',
+    growthRate: '600% annual growth',
+    variant: 'quantum-datacenter-enterprise',
+    contactInfo: {
+      mobile: '+1 302 464 0950',
+      email: 'kleber@ziontechgroup.com',
+      address: '364 E Main St STE 1008 Middletown DE 19709',
+      website: 'https://ziontechgroup.com'
+    },
+    realImplementation: true,
+    implementationDetails: 'Quantum-enhanced data center platform with hybrid quantum-classical infrastructure and quantum security protocols.',
+    launchDate: '2024-05-01',
+    customers: 1,
+    rating: 5.0,
+    reviews: 1
+  },
+
+  // Quantum Cloud Migration Platform
+  {
+    id: 'quantum-cloud-migration',
+    name: 'Quantum Cloud Migration Platform',
+    tagline: 'Seamless quantum cloud migration and optimization',
+    price: '$2,499',
+    period: '/month',
+    description: 'Advanced quantum cloud migration platform that enables seamless migration to quantum-enhanced cloud infrastructure with intelligent optimization and minimal downtime.',
+    features: [
+      'Quantum cloud migration',
+      'Intelligent workload optimization',
+      'Zero-downtime migration',
+      'Quantum resource allocation',
+      'Performance optimization',
+      'Security migration',
+      'Compliance management',
+      'Migration analytics',
+      'Enterprise integration',
+      '24/7 migration support'
+    ],
+    popular: true,
+    icon: '☁️',
+    color: 'from-yellow-600 to-amber-700',
+    textColor: 'text-yellow-400',
+    link: 'https://ziontechgroup.com/quantum-cloud-migration',
+    marketPosition: 'Competes with traditional cloud migration ($5000/month). Our advantage: Quantum migration reduces downtime by 90% and provides quantum-enhanced performance.',
+    targetAudience: 'Enterprise companies, Technology companies, Financial institutions, Healthcare providers, Government agencies',
+    trialDays: 14,
+    setupTime: '2-4 weeks',
+    category: 'Quantum Cloud Migration',
+    realService: true,
+    technology: ['Quantum computing, Cloud migration, Python, React, Node.js, Migration tools'],
+    integrations: ['AWS, Azure, Google Cloud, On-premises infrastructure, Enterprise systems'],
+    useCases: ['Cloud migration, Performance optimization, Security migration, Compliance management, Infrastructure optimization'],
+    roi: 'Quantum cloud migration projects report 500% ROI through reduced downtime and improved performance.',
+    competitors: ['Traditional cloud migration, Cloud consulting firms'],
+    marketSize: '$24.8B cloud migration market',
+    growthRate: '32% annual growth',
+    variant: 'quantum-migration-enterprise',
+=======
     implementationDetails: 'Enterprise-grade autonomous IT operations platform with AI-powered automation, self-healing capabilities, and comprehensive system integration.',
     launchDate: '2025-02-01',
     customers: 23,
@@ -1406,6 +1658,7 @@ export const innovativeITServicesEnhanced2025: InnovativeITService[] = [
     marketSize: '$8.5B edge computing market',
     growthRate: '32% annual growth',
     variant: 'edge-computing',
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-113b
     contactInfo: {
       mobile: '+1 302 464 0950',
       email: 'kleber@ziontechgroup.com',
@@ -1413,6 +1666,13 @@ export const innovativeITServicesEnhanced2025: InnovativeITService[] = [
       website: 'https://ziontechgroup.com'
     },
     realImplementation: true,
+<<<<<<< HEAD
+    implementationDetails: 'Quantum cloud migration platform with intelligent workload optimization and zero-downtime migration capabilities.',
+    launchDate: '2024-04-15',
+    customers: 8,
+    rating: 4.8,
+    reviews: 4
+=======
     implementationDetails: 'Comprehensive edge computing orchestration platform with intelligent resource management, seamless cloud integration, and advanced analytics.',
     launchDate: '2025-02-15',
     customers: 41,
@@ -1630,5 +1890,6 @@ export const innovativeITServicesEnhanced2025: InnovativeITService[] = [
     customers: 5,
     rating: 5.0,
     reviews: 3
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-113b
   }
 ];
