@@ -5,7 +5,11 @@
     "failedChecks": 0,
     "criticalFailures": 0,
     "canBuild": true,
+<<<<<<< HEAD
+    "timestamp": "2025-08-19T18:00:43.621Z"
+=======
     "timestamp": "2025-08-19T17:33:41.810Z"
+>>>>>>> origin/cursor/automate-all-existing-automations-and-clean-up-911b
   },
   "results": [
     {
