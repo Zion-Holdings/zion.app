@@ -268,6 +268,11 @@
     "automation:pm2:cron": "npm run pm2:cron:start && npm run pm2:bootstrap:logrotate && pm2 save",
     "postautomation": "npm run automation:git-sync",
     "lint:staged": "lint-staged",
+<<<<<<< HEAD
+    "performance:audit": "node automation/performance-audit.cjs",
+    "automation:trends": "node scripts/curate-trends.mjs",
+    "automation:health": "node scripts/health-check.mjs"
+=======
     "ui-evolution:start": "node automation/ui-evolution-launcher.js start",
     "ui-evolution:once": "node automation/ui-evolution-launcher.js once",
     "ui-evolution:analyze": "node automation/ui-evolution-launcher.js analyze",
@@ -293,6 +298,7 @@
     "git:cron:stop": "bash automation/git-sync-cron.sh stop",
     "git:cron:status": "bash automation/git-sync-cron.sh status",
     "home:update": "node automation/homepage-updater.cjs"
+>>>>>>> origin/cursor/autonomous-cloud-page-enhancer-and-advertiser-6a86
   },
   "dependencies": {
     "@google-analytics/data": "^5.2.0",

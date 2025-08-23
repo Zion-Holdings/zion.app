@@ -11441,7 +11441,14 @@ export default function HomePage() {
             <Link href="/newsroom"><a className="bg-white/5 hover:bg-white/10 rounded-lg p-4 transition-colors border border-white/10"><span className="text-white/90">Newsroom — latest autonomous updates</span></a></Link>
 
             <Link href="/site-health"><a className="bg-white/5 hover:bg-white/10 rounded-lg p-4 transition-colors border border-white/10"><span className="text-white/90">Site Health — audits & insights</span></a></Link>
+<<<<<<< HEAD
+
+            <Link href="/reports/seo"><a className="bg-white/5 hover:bg-white/10 rounded-lg p-4 transition-colors border border-white/10"><span className="text-white/90">SEO Report — latest audit</span></a></Link>
+
+            <Link href="/reports/ai-trends"><a className="bg-white/5 hover:bg-white/10 rounded-lg p-4 transition-colors border border-white/10"><span className="text-white/90">AI Trends Radar — autonomous feed</span></a></Link>
+=======
   
+>>>>>>> origin/cursor/autonomous-cloud-page-enhancer-and-advertiser-6a86
   </div>
 
   <div className="mt-6 flex flex-wrap gap-2">
@@ -11487,8 +11494,12 @@ export default function HomePage() {
 
   <div className="mt-8 grid grid-cols-1 gap-5 md:grid-cols-2"><div className="space-y-2"><div className="text-xs uppercase tracking-wide text-white/60">Active workflows</div><ul className="list-disc list-inside text-sm text-white/80"><li>accessibility-audit</li><li>auto-media-release</li><li>automation-guardian-10min</li><li>automations</li><li>autonomous-auto-discovery</li><li>autonomous-cloud-automations</li><li>autonomous-cloud-runner</li><li>autonomous-cloud</li></ul></div><div className="space-y-2"><div className="text-xs uppercase tracking-wide text-white/60">Automation modules</div><ul className="list-disc list-inside text-sm text-white/80"><li>ai-changelog-generator</li><li>automation-guardian-10min</li><li>broken-image-scanner</li><li>changelog-generator</li><li>cloud-autonomous-orchestrator</li><li>image-optimizer</li><li>newsroom-generator</li><li>og-image-generator</li></ul></div></div>
 </section>
+<<<<<<< HEAD
+/* AUTO-GENERATED: HOME_UPDATER_END */
+=======
 
 {/* AUTO-GENERATED: HOME_UPDATER_END */}
+>>>>>>> origin/cursor/autonomous-cloud-page-enhancer-and-advertiser-6a86
 </main>
     </div>
   );
