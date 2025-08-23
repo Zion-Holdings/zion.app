@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import SEO from '../components/SEO';
 import { motion, AnimatePresence } from 'framer-motion';
+import UltraFuturisticNavigation2046 from '../components/layout/UltraFuturisticNavigation2046';
+import UltraFuturisticFooter2046 from '../components/layout/UltraFuturisticFooter2046';
 import { 
   Search, Grid, List,
   Brain, Atom, Shield, Target, Rocket,
@@ -10,9 +12,11 @@ import {
 
 // Import our new 2025 service data
 import { advancedAIAutomationServices2025 } from '../data/2025-advanced-ai-automation-services';
+import { innovativeITInfrastructureServices2025 } from '../data/2025-innovative-it-infrastructure-services';
 import { innovativeMicroSaasSolutions2025 } from '../data/2025-innovative-micro-saas-solutions';
 import { cuttingEdgeAIServices2025 } from '../data/2025-cutting-edge-ai-services';
 import { innovativeAIAutonomousServices2025 } from '../data/2025-innovative-ai-autonomous-services';
+import { innovativeAIServices2025 } from '../data/2025-innovative-ai-services';
 
 // Import our new practical and specialized services
 import { realPracticalMicroSaasServices2025 } from '../data/2025-real-practical-micro-saas-services';
@@ -20,11 +24,6 @@ import { advancedAIITSpecializedServices2025 } from '../data/2025-advanced-ai-it
 
 // Import our new 2025 enterprise services
 import { realEnterpriseMicroSaas2025 } from '../data/2025-real-enterprise-micro-saas';
-
-// Import our new innovative 2025 services
-import { realInnovativeMicroSaasServices2025 } from '../data/2025-real-innovative-micro-saas-expansion';
-import { innovativeITInfrastructureServices2025 } from '../data/2025-innovative-it-infrastructure-services-expansion';
-import { innovativeAIServices2025 } from '../data/2025-innovative-ai-services-expansion';
 
 // Import our new 2025 advanced services
 import { advancedBusinessIntelligenceServices2025 } from '../data/2025-advanced-business-intelligence-services';
@@ -34,11 +33,6 @@ import { advancedITInfrastructureServices2025 } from '../data/2025-advanced-it-i
 import { realMicroSaas2025Expansion } from '../data/real-micro-saas-2025-expansion';
 import { realITServices2025Expansion } from '../data/real-it-services-2025-expansion';
 import { realAIServices2025Expansion } from '../data/real-ai-services-2025-expansion';
-
-// Import our new innovative 2025 services
-import { innovativeAIAutonomousEcosystemServices2025 } from '../data/2025-innovative-ai-autonomous-ecosystem';
-import { cuttingEdgeITInfrastructureInnovations2025 } from '../data/2025-cutting-edge-it-infrastructure-innovations';
-import { innovativeMicroSaasBreakthroughs2025 } from '../data/2025-innovative-micro-saas-breakthroughs';
 
 // Import our new service data
 import { enterpriseITSolutions } from '../data/2034-enterprise-it-solutions';
@@ -77,7 +71,6 @@ import { innovativeMicroSaasServices2025V2 } from '../data/2025-innovative-micro
 import { innovativeITServices2025V2 } from '../data/2025-innovative-it-services-expansion-v2';
 import { innovativeAIServices2025V2 } from '../data/2025-innovative-ai-services-expansion-v2';
 
-
 // Import our new innovative 2040 services
 import { innovative2040ITServices } from '../data/innovative-2040-it-services';
 import { innovative2040FuturisticServices } from '../data/innovative-2040-futuristic-services';
@@ -95,6 +88,13 @@ import { cuttingEdgeInnovativeServices2025 } from '../data/2025-cutting-edge-inn
 import { advancedITInfrastructureSolutions2025 } from '../data/2025-advanced-it-infrastructure-solutions';
 import { advancedAIAutomationSolutions2025 } from '../data/2025-advanced-ai-automation-solutions';
 
+// Import our new 2025 innovative AI services expansion
+import { innovativeAIServices2025Expansion } from '../data/2025-innovative-ai-services-expansion';
+
+// Import our new revolutionary 2046 services
+import { revolutionary2046AdvancedMicroSaasServices } from '../data/revolutionary-2046-advanced-micro-saas-services';
+import { revolutionary2046AdvancedITServices } from '../data/revolutionary-2046-advanced-it-services';
+import { revolutionary2046AdvancedAIServices } from '../data/revolutionary-2046-advanced-ai-services';
 // Import existing service data
 import { realMicroSaasServices } from '../data/real-micro-saas-services';
 import { innovativeAIServices } from '../data/innovative-ai-services';
@@ -135,10 +135,14 @@ const getServiceDescription = (service: any) => {
   return 'No description available';
 };
 
-// Create unified services array
+// Combine all services including new ones
 const allServices = [
+  // New practical and specialized services
+  ...realPracticalMicroSaasServices2025,
+  ...advancedAIITSpecializedServices2025,
+  
   // Our new 2025 services
-  ...realInnovativeMicroSaasServices2025,
+  ...advancedAIAutomationServices2025,
   ...innovativeITInfrastructureServices2025,
   ...innovativeAIServices2025,
   ...innovativeMicroSaasSolutions2025,
@@ -154,11 +158,6 @@ const allServices = [
   ...realMicroSaas2025Expansion,
   ...realITServices2025Expansion,
   ...realAIServices2025Expansion,
-  
-  // Our new innovative 2025 services
-  ...innovativeAIAutonomousEcosystemServices2025,
-  ...cuttingEdgeITInfrastructureInnovations2025,
-  ...innovativeMicroSaasBreakthroughs2025,
   
   // Existing services
   ...enterpriseITSolutions,
@@ -185,35 +184,23 @@ const allServices = [
   ...real2036ServiceExpansions,
   ...innovative2036MicroSaasServices,
   ...innovative2036ITServices,
-  // Our new 2025 advanced services
-  ...ultimate2025MicroSaasExpansion,
-  ...ultimate2025ITServicesExpansion,
-  ...ultimate2025AIServicesExpansion,
-  // Our new innovative services
   ...innovative2037MicroSaasServices,
   ...innovative2037ITServices,
   ...innovative2037AIServices,
   ...innovative2038CuttingEdgeServices,
   ...innovative2038ITInfrastructureServices,
-  // Our additional innovative services
   ...innovative2037Services,
   ...advanced2038Services,
   ...revolutionary2039Services,
-  
-  // Our new innovative 2040 services
-  ...innovative2040FuturisticServices,
-  ...innovative2040ITServices,
-  // Our new comprehensive services
   ...revolutionary2040FuturisticServices,
   ...revolutionary2041AdvancedServices,
-  // Our latest innovative services
   ...advanced2041EnterpriseServices,
   ...revolutionary2042MicroSaasServices,
-  // Our new 2025 ultimate services expansion
   ...ultimate2025MicroSaasExpansion,
   ...ultimate2025ITServicesExpansion,
   ...ultimate2025AIServicesExpansion,
-  // Our new 2025 advanced enterprise services
+  ...innovative2040ITServices,
+  ...innovative2040FuturisticServices,
   ...advancedEnterpriseServices,
   ...cuttingEdgeITInfrastructureServices,
   
@@ -225,7 +212,15 @@ const allServices = [
   // Our new innovative 2025 V2 services
   ...innovativeMicroSaasServices2025V2,
   ...innovativeITServices2025V2,
-  ...innovativeAIServices2025V2
+  ...innovativeAIServices2025V2,
+  
+  // Our new revolutionary 2046 services
+  ...revolutionary2046AdvancedMicroSaasServices,
+  ...revolutionary2046AdvancedITServices,
+  ...revolutionary2046AdvancedAIServices,
+  
+  // Our new 2025 innovative AI services expansion
+  ...innovativeAIServices2025Expansion
 ];
 
 const categories = [
@@ -284,6 +279,14 @@ const categories = [
     icon: <Brain className="w-6 h-6" />,
     color: 'from-cyan-500 to-blue-500',
     description: 'Revolutionary AI consciousness and emotional intelligence'
+  },
+  {
+    id: 'revolutionary-2046',
+    name: 'Revolutionary 2046',
+    icon: <Rocket className="w-6 h-6" />,
+    color: 'from-emerald-500 to-cyan-500',
+    description: 'Future-defining 2046 technology solutions',
+    badge: 'New'
   },
   {
     id: 'quantum-emerging',
@@ -452,6 +455,7 @@ export default function Services() {
     <>
       <SEO title="Services | Zion Tech Group - Enterprise IT, AI, Micro SAAS Solutions" description="Discover our comprehensive portfolio of enterprise IT solutions, AI services, and innovative micro SAAS platforms. Transform your business with cutting-edge technology." canonical="https://ziontechgroup.com/services/" />
 
+      <UltraFuturisticNavigation2046 />
       <div className="min-h-screen bg-black text-white pt-24">
         {/* Loading State */}
         <AnimatePresence>
@@ -789,6 +793,16 @@ export default function Services() {
                 </motion.a>
                 
                 <motion.a
+                  href="/2025-ultimate-services-showcase"
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  className="inline-flex items-center space-x-3 px-8 py-4 bg-gradient-to-r from-purple-500 to-pink-600 text-white font-bold text-lg rounded-xl hover:from-purple-600 hover:to-pink-700 transition-all duration-200 shadow-2xl shadow-purple-500/25"
+                >
+                  <Rocket className="w-6 h-6" />
+                  <span>2025 Ultimate Services</span>
+                </motion.a>
+                
+                <motion.a
                   href="/enterprise-solutions-showcase"
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
@@ -801,6 +815,7 @@ export default function Services() {
             </motion.div>
           </div>
         </section>
+        <UltraFuturisticFooter2046 />
       </div>
     </>
   );
