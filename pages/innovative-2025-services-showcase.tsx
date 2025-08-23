@@ -80,7 +80,7 @@ const Innovative2025ServicesShowcase: React.FC = () => {
         title="Innovative 2025 Services Showcase - Zion Tech Group"
         description="Discover our comprehensive portfolio of innovative 2025 micro SAAS services, IT solutions, and AI services. Leading-edge technology solutions for modern businesses."
         keywords={["innovative services", "micro SAAS", "IT solutions", "AI services", "2025 technology", "Zion Tech Group"]}
-        image="/og-image.jpg"
+        ogImage="/og-image.jpg"
       />
 
       {/* Hero Section */}
