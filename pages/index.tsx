@@ -4,6 +4,9 @@ import SEOOptimizer from '../components/SEOOptimizer';
 import AnalyticsTracker from '../components/AnalyticsTracker';
 import ErrorBoundary from '../components/ErrorBoundary';
 import PerformanceOptimizer from '../components/PerformanceOptimizer';
+import AccessibilityEnhancer from '../components/AccessibilityEnhancer';
+import PerformanceMonitor from '../components/PerformanceMonitor';
+import MobileOptimizer from '../components/MobileOptimizer';
 
 const HomePage: React.FC = () => {
   return (
@@ -11,7 +14,12 @@ const HomePage: React.FC = () => {
       <SEOOptimizer />
       <AnalyticsTracker />
       <PerformanceOptimizer>
-        <Homepage2025 />
+        <MobileOptimizer showDebugInfo={false}>
+          <AccessibilityEnhancer>
+            <Homepage2025 />
+            <PerformanceMonitor showUI={true} />
+          </AccessibilityEnhancer>
+        </MobileOptimizer>
       </PerformanceOptimizer>
     </ErrorBoundary>
   );

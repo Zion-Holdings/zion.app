@@ -206,24 +206,18 @@ const Homepage2025: React.FC = () => {
               />
             </div>
             
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-              viewport={{ once: true }}
-              className="text-center mt-12"
-            >
+            <div className="text-center mt-12">
               <Link href="/services">
                 <button className="px-8 py-4 bg-gradient-to-r from-purple-500 to-pink-600 text-white font-semibold rounded-lg hover:from-purple-600 hover:to-pink-700 transition-all duration-300 transform hover:scale-105 flex items-center gap-2 mx-auto shadow-lg shadow-purple-500/25">
                   View All Services
                   <ArrowRight className="w-5 h-5" />
                 </button>
               </Link>
-            </motion.div>
+            </div>
           </div>
         </section>
 
-        {/* Why Choose Us */}
+        {/* Why Choose Us Section */}
         <section className="py-20 px-4 bg-black/20 relative">
           <div className="absolute inset-0 bg-gradient-to-r from-purple-500/5 to-pink-500/5"></div>
           <div className="max-w-6xl mx-auto relative z-10">
@@ -243,13 +237,12 @@ const Homepage2025: React.FC = () => {
             </motion.div>
             
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-              <motion.div
+              <motion.div 
+                className="text-center p-6 group hover:bg-white/5 rounded-xl transition-all duration-300"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.1 }}
                 viewport={{ once: true }}
-                className="text-center p-6 group hover:bg-white/5 rounded-xl transition-all duration-300"
-                whileHover={{ scale: 1.05 }}
               >
                 <div className="w-16 h-16 bg-gradient-to-r from-cyan-500 to-blue-600 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
                   <Brain className="w-8 h-8 text-white" />
@@ -258,13 +251,12 @@ const Homepage2025: React.FC = () => {
                 <p className="text-gray-300">Leading-edge artificial intelligence solutions that adapt and evolve</p>
               </motion.div>
               
-              <motion.div
+              <motion.div 
+                className="text-center p-6 group hover:bg-white/5 rounded-xl transition-all duration-300"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.2 }}
                 viewport={{ once: true }}
-                className="text-center p-6 group hover:bg-white/5 rounded-xl transition-all duration-300"
-                whileHover={{ scale: 1.05 }}
               >
                 <div className="w-16 h-16 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
                   <Atom className="w-8 h-8 text-white" />
@@ -273,13 +265,12 @@ const Homepage2025: React.FC = () => {
                 <p className="text-gray-300">Next-generation quantum computing and security solutions</p>
               </motion.div>
               
-              <motion.div
+              <motion.div 
+                className="text-center p-6 group hover:bg-white/5 rounded-xl transition-all duration-300"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.3 }}
                 viewport={{ once: true }}
-                className="text-center p-6 group hover:bg-white/5 rounded-xl transition-all duration-300"
-                whileHover={{ scale: 1.05 }}
               >
                 <div className="w-16 h-16 bg-gradient-to-r from-purple-500 to-pink-600 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
                   <Shield className="w-8 h-8 text-white" />
@@ -288,13 +279,12 @@ const Homepage2025: React.FC = () => {
                 <p className="text-gray-300">Military-grade security and compliance solutions</p>
               </motion.div>
               
-              <motion.div
+              <motion.div 
+                className="text-center p-6 group hover:bg-white/5 rounded-xl transition-all duration-300"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.4 }}
                 viewport={{ once: true }}
-                className="text-center p-6 group hover:bg-white/5 rounded-xl transition-all duration-300"
-                whileHover={{ scale: 1.05 }}
               >
                 <div className="w-16 h-16 bg-gradient-to-r from-green-500 to-teal-600 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
                   <Zap className="w-8 h-8 text-white" />
@@ -306,7 +296,7 @@ const Homepage2025: React.FC = () => {
           </div>
         </section>
 
-        {/* Call to Action */}
+        {/* CTA Section */}
         <section className="py-20 px-4 relative">
           <div className="absolute inset-0 bg-gradient-to-r from-green-500/5 to-teal-500/5"></div>
           <div className="max-w-4xl mx-auto text-center relative z-10">
