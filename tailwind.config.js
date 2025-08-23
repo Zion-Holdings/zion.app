@@ -324,6 +324,23 @@ module.exports = {
         'energy-field': 'radial-gradient(ellipse at center, rgba(59, 130, 246, 0.1) 0%, transparent 70%)',
         'cyber-circuit': 'linear-gradient(90deg, transparent 0%, rgba(59, 130, 246, 0.05) 25%, rgba(59, 130, 246, 0.1) 50%, rgba(59, 130, 246, 0.05) 75%, transparent 100%)',
       },
+      ringColor: {
+        'cyan': {
+          500: '#06b6d4',
+        },
+      },
+      ringWidth: {
+        '1': '1px',
+        '2': '2px',
+        '4': '4px',
+      },
+      ringOffsetWidth: {
+        '2': '2px',
+      },
+      ringOffsetColor: {
+        'black': '#000000',
+        'white': '#ffffff',
+      },
       container: {
         center: true,
         padding: {

@@ -4,7 +4,7 @@ import {
   DollarSign, Brain, Shield, Zap, BarChart3, Cpu, 
   CheckCircle, ArrowRight, Star, TrendingUp, Award, Clock
 } from 'lucide-react';
-import { UltraFuturisticBackground } from '../../components/UltraFuturisticBackground';
+import UltraFuturisticBackground from '../../components/ui/UltraFuturisticBackground';
 
 const FinancialSolutionsPage: React.FC = () => {
   const solutions = [
@@ -71,9 +71,8 @@ const FinancialSolutionsPage: React.FC = () => {
         <link rel="canonical" href="https://ziontechgroup.com/solutions/financial" />
       </Head>
 
-      <UltraFuturisticBackground />
-
-      <div className="min-h-screen bg-black text-white relative z-10">
+      <UltraFuturisticBackground>
+        <div className="min-h-screen bg-black text-white relative z-10">
         {/* Hero Section */}
         <section className="pt-32 pb-20 px-4 sm:px-6 lg:px-8">
           <div className="max-w-7xl mx-auto text-center">
@@ -184,7 +183,8 @@ const FinancialSolutionsPage: React.FC = () => {
             </button>
           </div>
         </section>
-      </div>
+        </div>
+      </UltraFuturisticBackground>
     </>
   );
 };

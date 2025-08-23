@@ -4,7 +4,7 @@ import {
   Cpu, Brain, Shield, Zap, BarChart3, Settings, 
   CheckCircle, ArrowRight, Star, TrendingUp, Award, Clock
 } from 'lucide-react';
-import { UltraFuturisticBackground } from '../../components/UltraFuturisticBackground';
+import UltraFuturisticBackground from '../../components/ui/UltraFuturisticBackground';
 
 const ManufacturingSolutionsPage: React.FC = () => {
   const solutions = [
@@ -71,9 +71,8 @@ const ManufacturingSolutionsPage: React.FC = () => {
         <link rel="canonical" href="https://ziontechgroup.com/solutions/manufacturing" />
       </Head>
 
-      <UltraFuturisticBackground />
-
-      <div className="min-h-screen bg-black text-white relative z-10">
+      <UltraFuturisticBackground>
+        <div className="min-h-screen bg-black text-white relative z-10">
         {/* Hero Section */}
         <section className="pt-32 pb-20 px-4 sm:px-6 lg:px-8">
           <div className="max-w-7xl mx-auto text-center">
@@ -184,7 +183,8 @@ const ManufacturingSolutionsPage: React.FC = () => {
             </button>
           </div>
         </section>
-      </div>
+        </div>
+      </UltraFuturisticBackground>
     </>
   );
 };
