@@ -1,59 +1,59 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Shield, Lock, Eye, Zap, Brain, Cpu, Globe, Users, Target, Award } from 'lucide-react';
+import { Atom, Cpu, Brain, Zap, Shield, Globe, Rocket, Users, Target, Award } from 'lucide-react';
 import Layout from '../components/layout/Layout';
 
-export default function Cybersecurity() {
+export default function QuantumComputing() {
   const services = [
     {
-      icon: Shield,
-      title: 'Zero Trust Security Platform',
-      description: 'Comprehensive zero trust architecture for modern enterprises',
-      features: ['Identity verification', 'Continuous monitoring', 'Micro-segmentation', 'Threat prevention'],
-      href: '/zero-trust-security-platform'
-    },
-    {
-      icon: Lock,
-      title: 'Zero Trust Network Architecture',
-      description: 'Advanced network security with zero trust principles',
-      features: ['Network segmentation', 'Access control', 'Traffic monitoring', 'Security policies'],
-      href: '/zero-trust-network-architecture'
-    },
-    {
-      icon: Eye,
-      title: 'Vulnerability Assessment & Penetration Testing',
-      description: 'Comprehensive security testing and assessment services',
-      features: ['Security audits', 'Penetration testing', 'Vulnerability scanning', 'Risk assessment'],
-      href: '/vulnerability-assessment-penetration-testing'
-    },
-    {
       icon: Brain,
-      title: 'AI-Powered Threat Detection',
-      description: 'Intelligent security monitoring and threat response',
-      features: ['Machine learning', 'Behavioral analysis', 'Real-time alerts', 'Automated response'],
-      href: '/ai-powered-threat-detection'
+      title: 'Quantum AI Brain-Computer Interface',
+      description: 'Next-generation quantum-enhanced brain-computer interface technology',
+      features: ['Quantum neural processing', 'Real-time communication', 'Medical applications', 'Research tools'],
+      href: '/quantum-ai-brain-computer-interface'
     },
     {
       icon: Cpu,
+      title: 'Quantum AI Hybrid Computing',
+      description: 'Hybrid quantum-classical computing solutions for complex problems',
+      features: ['Quantum algorithm optimization', 'Hybrid processing', 'Performance acceleration', 'Scalable architecture'],
+      href: '/ai-quantum-hybrid-computing'
+    },
+    {
+      icon: Atom,
+      title: 'Quantum Bio-Computing Platform',
+      description: 'Revolutionary quantum computing platform for biological applications',
+      features: ['DNA computing', 'Protein folding', 'Drug discovery', 'Biological modeling'],
+      href: '/quantum-bio-computing-platform'
+    },
+    {
+      icon: Shield,
       title: 'Quantum Cybersecurity Platform',
-      description: 'Future-proof security solutions for the quantum era',
+      description: 'Quantum-resistant security solutions for the future',
       features: ['Post-quantum cryptography', 'Quantum key distribution', 'Threat detection', 'Secure communications'],
       href: '/quantum-cybersecurity-platform'
     },
     {
       icon: Zap,
-      title: 'Incident Response & Automation',
-      description: 'Rapid incident response with automated security operations',
-      features: ['24/7 monitoring', 'Automated response', 'Incident management', 'Recovery planning'],
-      href: '/incident-automation-suite'
+      title: 'Quantum Energy Platform',
+      description: 'Quantum computing solutions for energy optimization',
+      features: ['Grid optimization', 'Renewable energy', 'Storage solutions', 'Efficiency analysis'],
+      href: '/quantum-energy-platform'
+    },
+    {
+      icon: Globe,
+      title: 'Quantum IoT Platform',
+      description: 'Quantum-enhanced Internet of Things infrastructure',
+      features: ['Quantum sensors', 'Secure communications', 'Real-time processing', 'Scalable deployment'],
+      href: '/quantum-iot-platform'
     }
   ];
 
   const stats = [
-    { number: '99.9%', label: 'Threat Detection', icon: Shield },
-    { number: '24/7', label: 'Security Monitoring', icon: Eye },
-    { number: '100+', label: 'Security Solutions', icon: Lock },
-    { number: '500+', label: 'Protected Clients', icon: Users }
+    { number: '100+', label: 'Quantum Solutions', icon: Atom },
+    { number: '1000+', label: 'Qubits', icon: Cpu },
+    { number: '24/7', label: 'Quantum Operations', icon: Zap },
+    { number: '99.99%', label: 'Reliability', icon: Shield }
   ];
 
   return (
@@ -68,12 +68,12 @@ export default function Cybersecurity() {
               transition={{ duration: 0.8 }}
               className="text-center"
             >
-              <h1 className="text-5xl md:text-7xl font-bold bg-gradient-to-r from-red-400 via-orange-500 to-yellow-400 bg-clip-text text-transparent mb-6">
-                Cybersecurity
+              <h1 className="text-5xl md:text-7xl font-bold bg-gradient-to-r from-purple-400 via-pink-500 to-cyan-400 bg-clip-text text-transparent mb-6">
+                Quantum Computing
               </h1>
               <p className="text-xl md:text-2xl text-gray-300 max-w-4xl mx-auto leading-relaxed">
-                Advanced cybersecurity solutions that protect your digital assets and ensure business continuity. 
-                From zero trust architecture to quantum-resistant security.
+                Revolutionary quantum computing solutions that solve previously impossible problems. 
+                From brain-computer interfaces to cybersecurity, we're building the quantum future.
               </p>
             </motion.div>
           </div>
@@ -91,8 +91,8 @@ export default function Cybersecurity() {
                   transition={{ duration: 0.6, delay: index * 0.1 }}
                   className="text-center"
                 >
-                  <div className="w-16 h-16 bg-gradient-to-br from-red-500/20 to-orange-500/20 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                    <stat.icon className="w-8 h-8 text-red-400" />
+                  <div className="w-16 h-16 bg-gradient-to-br from-purple-500/20 to-pink-500/20 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                    <stat.icon className="w-8 h-8 text-purple-400" />
                   </div>
                   <div className="text-3xl font-bold text-white mb-2">{stat.number}</div>
                   <div className="text-gray-400">{stat.label}</div>
@@ -112,10 +112,10 @@ export default function Cybersecurity() {
               className="text-center mb-16"
             >
               <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-                Cybersecurity Services
+                Quantum Computing Services
               </h2>
               <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-                Comprehensive security solutions designed to protect your organization from evolving threats
+                Cutting-edge quantum solutions designed to revolutionize industries and solve complex problems
               </p>
             </motion.div>
 
@@ -130,15 +130,15 @@ export default function Cybersecurity() {
                 >
                   <a href={service.href} className="block">
                     <div className="bg-gray-800/50 backdrop-blur-sm border border-gray-700/50 rounded-2xl p-6 h-full hover:bg-gray-700/50 transition-all duration-300 hover:scale-105">
-                      <div className="w-16 h-16 bg-gradient-to-br from-red-500/20 to-orange-500/20 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
-                        <service.icon className="w-8 h-8 text-red-400" />
+                      <div className="w-16 h-16 bg-gradient-to-br from-purple-500/20 to-pink-500/20 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                        <service.icon className="w-8 h-8 text-purple-400" />
                       </div>
                       <h3 className="text-xl font-bold text-white mb-4">{service.title}</h3>
                       <p className="text-gray-300 mb-6 leading-relaxed">{service.description}</p>
                       <ul className="space-y-2">
                         {service.features.map((feature, featureIndex) => (
                           <li key={featureIndex} className="flex items-center gap-2 text-sm text-gray-400">
-                            <div className="w-2 h-2 bg-red-400 rounded-full"></div>
+                            <div className="w-2 h-2 bg-purple-400 rounded-full"></div>
                             {feature}
                           </li>
                         ))}
@@ -160,21 +160,21 @@ export default function Cybersecurity() {
               transition={{ duration: 0.8 }}
             >
               <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-                Secure Your Digital Future
+                Ready for the Quantum Revolution?
               </h2>
               <p className="text-xl text-gray-300 mb-8">
-                Let our cybersecurity experts help you build a robust security foundation
+                Let our quantum computing experts help you harness the power of quantum technology
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <a
                   href="/contact"
-                  className="px-8 py-4 bg-gradient-to-r from-red-500 to-orange-600 text-white font-semibold rounded-xl hover:from-red-600 hover:to-orange-700 transition-all duration-300 transform hover:scale-105"
+                  className="px-8 py-4 bg-gradient-to-r from-purple-500 to-pink-600 text-white font-semibold rounded-xl hover:from-purple-600 hover:to-pink-700 transition-all duration-300 transform hover:scale-105"
                 >
                   Get Started
                 </a>
                 <a
                   href="/services"
-                  className="px-8 py-4 border border-red-500 text-red-400 font-semibold rounded-xl hover:bg-red-500/10 transition-all duration-300"
+                  className="px-8 py-4 border border-purple-500 text-purple-400 font-semibold rounded-xl hover:bg-purple-500/10 transition-all duration-300"
                 >
                   View All Services
                 </a>

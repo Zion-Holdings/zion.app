@@ -1,59 +1,59 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { DollarSign, TrendingUp, Shield, Brain, Cpu, Users, Target, Award, Globe, Zap } from 'lucide-react';
+import { Building, Shield, Users, Globe, Zap, Brain, Cpu, Rocket, Target, Award } from 'lucide-react';
 import Layout from '../components/layout/Layout';
 
-export default function FinancialSolutions() {
+export default function EnterpriseSolutions() {
   const solutions = [
     {
-      icon: DollarSign,
-      title: 'AI Revenue Forecasting Copilot',
-      description: 'Advanced revenue prediction and financial analytics platform',
-      features: ['Revenue forecasting', 'Market analysis', 'Trend identification', 'Financial planning'],
-      href: '/ai-revenue-forecasting-copilot'
-    },
-    {
-      icon: TrendingUp,
-      title: 'Quantum Financial Trading Platform',
-      description: 'Next-generation quantum computing for financial markets',
-      features: ['Quantum algorithms', 'High-frequency trading', 'Risk management', 'Market analysis'],
-      href: '/quantum-financial-trading-platform'
+      icon: Building,
+      title: 'Enterprise AI Solutions',
+      description: 'Scalable AI platforms designed for enterprise-scale operations',
+      features: ['AI governance', 'Scalable infrastructure', 'Enterprise security', 'Performance optimization'],
+      href: '/enterprise-ai-solutions'
     },
     {
       icon: Shield,
-      title: 'Financial Compliance Automation',
-      description: 'Automated compliance management for financial institutions',
-      features: ['Regulatory compliance', 'Audit automation', 'Risk assessment', 'Reporting automation'],
-      href: '/financial-compliance-automation'
-    },
-    {
-      icon: Brain,
-      title: 'AI-Powered Investment Analysis',
-      description: 'Intelligent investment decision support system',
-      features: ['Portfolio analysis', 'Risk assessment', 'Market insights', 'Investment recommendations'],
-      href: '/ai-powered-investment-analysis'
-    },
-    {
-      icon: Cpu,
-      title: 'Blockchain Financial Solutions',
-      description: 'Innovative blockchain technology for financial services',
-      features: ['Smart contracts', 'DeFi platforms', 'Digital assets', 'Cross-border payments'],
-      href: '/blockchain-financial-solutions'
+      title: 'Enterprise Security',
+      description: 'Comprehensive security solutions for large organizations',
+      features: ['Zero trust architecture', 'Threat detection', 'Compliance management', 'Incident response'],
+      href: '/enterprise-security'
     },
     {
       icon: Users,
-      title: 'Financial Risk Management',
-      description: 'Comprehensive risk management and mitigation strategies',
-      features: ['Risk assessment', 'Stress testing', 'Scenario analysis', 'Mitigation planning'],
-      href: '/financial-risk-management'
+      title: 'Enterprise HR Solutions',
+      description: 'AI-powered human resources management for enterprise organizations',
+      features: ['Workforce analytics', 'Talent management', 'Performance optimization', 'Compliance tracking'],
+      href: '/enterprise-hr-solutions'
+    },
+    {
+      icon: Globe,
+      title: 'Global Infrastructure',
+      description: 'Worldwide infrastructure and deployment solutions',
+      features: ['Multi-region deployment', 'Global CDN', 'Load balancing', 'Disaster recovery'],
+      href: '/global-infrastructure'
+    },
+    {
+      icon: Zap,
+      title: 'Enterprise Automation',
+      description: 'Large-scale process automation and optimization',
+      features: ['Workflow automation', 'Process optimization', 'Performance monitoring', 'Scalability'],
+      href: '/enterprise-automation'
+    },
+    {
+      icon: Brain,
+      title: 'Enterprise Analytics',
+      description: 'Advanced analytics and business intelligence for enterprises',
+      features: ['Big data processing', 'Real-time analytics', 'Predictive modeling', 'Business intelligence'],
+      href: '/enterprise-analytics'
     }
   ];
 
   const stats = [
-    { number: '$1B+', label: 'Assets Managed', icon: DollarSign },
-    { number: '99.9%', label: 'Accuracy', icon: TrendingUp },
-    { number: '24/7', label: 'Monitoring', icon: Shield },
-    { number: '100+', label: 'Financial Clients', icon: Users }
+    { number: '500+', label: 'Enterprise Clients', icon: Building },
+    { number: '99.99%', label: 'Uptime', icon: Shield },
+    { number: '24/7', label: 'Support', icon: Users },
+    { number: '50+', label: 'Countries', icon: Globe }
   ];
 
   return (
@@ -68,12 +68,12 @@ export default function FinancialSolutions() {
               transition={{ duration: 0.8 }}
               className="text-center"
             >
-              <h1 className="text-5xl md:text-7xl font-bold bg-gradient-to-r from-emerald-400 via-green-500 to-teal-400 bg-clip-text text-transparent mb-6">
-                Financial Solutions
+              <h1 className="text-5xl md:text-7xl font-bold bg-gradient-to-r from-indigo-400 via-purple-500 to-pink-400 bg-clip-text text-transparent mb-6">
+                Enterprise Solutions
               </h1>
               <p className="text-xl md:text-2xl text-gray-300 max-w-4xl mx-auto leading-relaxed">
-                Revolutionary financial technology solutions that transform how you manage, invest, and grow your wealth. 
-                From AI-powered forecasting to quantum trading platforms.
+                Enterprise-grade solutions designed to scale with your organization. 
+                From AI platforms to global infrastructure and security.
               </p>
             </motion.div>
           </div>
@@ -91,8 +91,8 @@ export default function FinancialSolutions() {
                   transition={{ duration: 0.6, delay: index * 0.1 }}
                   className="text-center"
                 >
-                  <div className="w-16 h-16 bg-gradient-to-br from-emerald-500/20 to-green-500/20 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                    <stat.icon className="w-8 h-8 text-emerald-400" />
+                  <div className="w-16 h-16 bg-gradient-to-br from-indigo-500/20 to-purple-500/20 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                    <stat.icon className="w-8 h-8 text-indigo-400" />
                   </div>
                   <div className="text-3xl font-bold text-white mb-2">{stat.number}</div>
                   <div className="text-gray-400">{stat.label}</div>
@@ -112,10 +112,10 @@ export default function FinancialSolutions() {
               className="text-center mb-16"
             >
               <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-                Financial Solutions
+                Enterprise Solutions
               </h2>
               <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-                Cutting-edge financial technology designed to optimize performance and minimize risk
+                Comprehensive solutions designed to meet the complex needs of enterprise organizations
               </p>
             </motion.div>
 
@@ -130,15 +130,15 @@ export default function FinancialSolutions() {
                 >
                   <a href={solution.href} className="block">
                     <div className="bg-gray-800/50 backdrop-blur-sm border border-gray-700/50 rounded-2xl p-6 h-full hover:bg-gray-700/50 transition-all duration-300 hover:scale-105">
-                      <div className="w-16 h-16 bg-gradient-to-br from-emerald-500/20 to-green-500/20 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
-                        <solution.icon className="w-8 h-8 text-emerald-400" />
+                      <div className="w-16 h-16 bg-gradient-to-br from-indigo-500/20 to-purple-500/20 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                        <solution.icon className="w-8 h-8 text-indigo-400" />
                       </div>
                       <h3 className="text-xl font-bold text-white mb-4">{solution.title}</h3>
                       <p className="text-gray-300 mb-6 leading-relaxed">{solution.description}</p>
                       <ul className="space-y-2">
                         {solution.features.map((feature, featureIndex) => (
                           <li key={featureIndex} className="flex items-center gap-2 text-sm text-gray-400">
-                            <div className="w-2 h-2 bg-emerald-400 rounded-full"></div>
+                            <div className="w-2 h-2 bg-indigo-400 rounded-full"></div>
                             {feature}
                           </li>
                         ))}
@@ -160,21 +160,21 @@ export default function FinancialSolutions() {
               transition={{ duration: 0.8 }}
             >
               <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-                Transform Your Financial Future
+                Scale Your Enterprise
               </h2>
               <p className="text-xl text-gray-300 mb-8">
-                Let our financial technology experts help you optimize your financial operations
+                Let our enterprise experts help you build scalable solutions for your organization
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <a
                   href="/contact"
-                  className="px-8 py-4 bg-gradient-to-r from-emerald-500 to-green-600 text-white font-semibold rounded-xl hover:from-emerald-600 hover:to-green-700 transition-all duration-300 transform hover:scale-105"
+                  className="px-8 py-4 bg-gradient-to-r from-indigo-500 to-purple-600 text-white font-semibold rounded-xl hover:from-indigo-600 hover:to-purple-700 transition-all duration-300 transform hover:scale-105"
                 >
                   Get Started
                 </a>
                 <a
                   href="/solutions"
-                  className="px-8 py-4 border border-emerald-500 text-emerald-400 font-semibold rounded-xl hover:bg-emerald-500/10 transition-all duration-300"
+                  className="px-8 py-4 border border-indigo-500 text-indigo-400 font-semibold rounded-xl hover:bg-indigo-500/10 transition-all duration-300"
                 >
                   View All Solutions
                 </a>

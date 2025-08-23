@@ -41,7 +41,7 @@ const navigationItems: NavigationItem[] = [
     children: [
       { label: 'Enterprise Solutions', href: '/enterprise-solutions' },
       { label: 'Startup Solutions', href: '/startup-solutions' },
-      { label: 'Government Solutions', href: '/government-solutions' },
+      { label: 'Government Solutions', href: '/government-technology-solutions' },
       { label: 'Healthcare Solutions', href: '/healthcare-solutions' }
     ]
   },
