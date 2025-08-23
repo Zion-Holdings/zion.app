@@ -1,195 +1,341 @@
-import Head from 'next/head';
-import Link from 'next/link';
+import React, { useState } from 'react';
+import SEO from '../components/SEO';
+import { motion } from 'framer-motion';
+import { 
+  Brain, Atom,
+  ArrowRight,
+  Building, Cpu, Phone, Mail, MapPin
+} from 'lucide-react';
 
-export default function Home() {
+// Import our new innovative services
+import { innovativeAIAutonomousServicesExpansion2025 } from '../data/2025-innovative-ai-autonomous-services-expansion';
+import { innovativeITInfrastructureExpansion2025 } from '../data/2025-innovative-it-infrastructure-expansion';
+import { innovativeMicroSaasExpansionV32025 } from '../data/2025-innovative-micro-saas-expansion-v3';
+
+// Import existing service data
+import { realMicroSaasServices } from '../data/real-micro-saas-services';
+import { innovativeAIServices } from '../data/innovative-ai-services';
+import { enterpriseITServices } from '../data/enterprise-it-services';
+import { emergingTechServices } from '../data/emerging-tech-services';
+import { newRealServices } from '../data/new-real-services';
+import { realOperationalServices } from '../data/real-operational-services';
+import { marketReadyServices } from '../data/market-ready-services';
+import { marketValidatedServices } from '../data/market-validated-services';
+import { industryRealServices } from '../data/industry-real-services';
+
+// Import our new futuristic components
+import UltraFuturisticNeonBackground from '../components/ui/UltraFuturisticNeonBackground';
+import UltraFuturisticNavigation2026 from '../components/layout/UltraFuturisticNavigation2026';
+import UltraFuturisticFooter2026 from '../components/layout/UltraFuturisticFooter2026';
+
+// Import our new enhanced components
+import EnhancedPerformanceMonitor from '../components/EnhancedPerformanceMonitor';
+import EnhancedAccessibilityEnhancer from '../components/EnhancedAccessibilityEnhancer';
+import EnhancedSEO from '../components/EnhancedSEO';
+
+// Helper function to get service website safely
+const getServiceWebsite = (service: { website?: string; link?: string; id?: string; name: string }) => {
+  if (service.website) return service.website;
+  if (service.link) return service.link;
+  return `/services/${service.id || service.name.toLowerCase().replace(/\s+/g, '-')}`;
+};
+
+// Helper function to get service price safely
+const getServicePrice = (service: any): string => {
+  if ('price' in service && typeof service.price === 'string') {
+    return service.price;
+  }
+  
+  if ('price' in service && typeof service.price === 'object' && service.price.monthly) {
+    return `$${service.price.monthly}/month`;
+  }
+  
+  if ('pricing' in service && service.pricing) {
+    if (typeof service.pricing === 'string') {
+      return service.pricing;
+    }
+    if (typeof service.pricing === 'object' && 'starter' in service.pricing) {
+      return service.pricing.starter;
+    }
+    if (typeof service.pricing === 'object' && 'monthly' in service.pricing) {
+      return `$${service.pricing.monthly}/month`;
+    }
+  }
+  
+  return 'Contact Us';
+};
+
+const HomePage: React.FC = () => {
+  const [selectedCategory, setSelectedCategory] = useState('all');
+
+  // Combine all services for showcase
+  const allServices = [
+    ...innovativeAIAutonomousServicesExpansion2025,
+    ...innovativeITInfrastructureExpansion2025,
+    ...innovativeMicroSaasExpansionV32025,
+    ...realMicroSaasServices,
+    ...innovativeAIServices,
+    ...enterpriseITServices,
+    ...emergingTechServices,
+    ...newRealServices,
+    ...realOperationalServices,
+    ...marketReadyServices,
+    ...marketValidatedServices,
+    ...industryRealServices
+  ];
+
+  // Get featured services
+  const featuredServices = allServices.slice(0, 6);
+
+  const categories = [
+    { id: 'all', name: 'All Services', icon: Brain, color: 'from-purple-500 to-pink-500' },
+    { id: 'ai', name: 'AI & Autonomous', icon: Brain, color: 'from-cyan-500 to-blue-500' },
+    { id: 'quantum', name: 'Quantum Technology', icon: Atom, color: 'from-blue-500 to-indigo-500' },
+    { id: 'infrastructure', name: 'IT Infrastructure', icon: Cpu, color: 'from-green-500 to-teal-500' },
+    { id: 'micro-saas', name: 'Micro SAAS', icon: Building, color: 'from-orange-500 to-red-500' }
+  ];
+
   return (
-    <div className="relative min-h-screen overflow-hidden bg-slate-950 text-white">
-      <Head>
-        <title>Zion — Autonomous Cloud Automations</title>
-        <meta name="description" content="Futuristic, cloud-native autonomous automations that innovate, optimize, and sync changes to the repo continuously." />
-      </Head>
+    <UltraFuturisticNeonBackground>
+      <SEO 
+        title="Zion Tech Group - Innovative AI, IT & Micro SAAS Solutions"
+        description="Transform your business with our cutting-edge AI autonomous systems, quantum computing infrastructure, and revolutionary micro SAAS solutions. Leading innovation since 2025."
+        keywords={[
+          'AI autonomous systems',
+          'quantum computing',
+          'IT infrastructure',
+          'micro SAAS',
+          'innovative technology',
+          'Zion Tech Group'
+        ]}
+      />
 
-      {/* Futuristic animated background */}
-      <div aria-hidden className="pointer-events-none absolute inset-0 -z-10">
-        {/* Gradient Nebula Blobs */}
-        <div className="absolute -top-24 -left-24 h-[38rem] w-[38rem] rounded-full bg-fuchsia-500/20 blur-3xl animate-float" />
-        <div className="absolute top-1/4 -right-32 h-[30rem] w-[30rem] rounded-full bg-cyan-400/20 blur-3xl animate-float-slow" />
-        <div className="absolute bottom-0 left-1/4 h-[26rem] w-[26rem] rounded-full bg-violet-400/10 blur-2xl animate-float-fast" />
-        {/* Subtle animated grid */}
-        <div className="absolute inset-0 opacity-[0.08] [background:radial-gradient(circle_at_center,rgba(255,255,255,0.35)_0,rgba(255,255,255,0)_60%),linear-gradient(90deg,rgba(255,255,255,0.12)_1px,transparent_1px),linear-gradient(0deg,rgba(255,255,255,0.12)_1px,transparent_1px)] bg-[size:100%_100%,3rem_3rem,3rem_3rem] animate-grid" />
-        {/* Star field */}
-        <div className="absolute inset-0 [mask-image:radial-gradient(ellipse_at_center,white,transparent_70%)]">
-          <div className="twinkle-field absolute inset-0" />
-        </div>
-      </div>
+      {/* Skip Link for Accessibility */}
+      <a href="#main-content" className="skip-link sr-only-focusable">
+        Skip to main content
+      </a>
 
-      {/* Header */}
-      <header className="relative z-10">
-        <nav className="mx-auto flex max-w-7xl items-center justify-between px-6 py-6">
-          <div className="text-2xl font-bold tracking-wide">
-            <span className="bg-gradient-to-r from-fuchsia-400 via-violet-400 to-cyan-400 bg-clip-text text-transparent drop-shadow-neon">Zion</span>
+      {/* Futuristic Navigation */}
+      <UltraFuturisticNavigation2026 />
+
+      {/* Main Content */}
+      <main id="main-content">
+        {/* Hero Section */}
+        <motion.section 
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 1.0 }}
+          className="relative min-h-screen flex items-center justify-center pt-32 pb-20"
+          aria-labelledby="hero-heading"
+        >
+          <div className="container mx-auto px-4 text-center relative z-10">
+            <motion.div
+              initial={{ opacity: 0, y: 50 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1.0, delay: 0.2 }}
+              className="max-w-6xl mx-auto"
+            >
+              {/* Main Heading */}
+              <h1 
+                id="hero-heading"
+                className="text-5xl md:text-7xl font-bold mb-6 text-gradient"
+              >
+                Zion Tech Group
+              </h1>
+              
+              {/* Subtitle */}
+              <motion.p
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 1.0, delay: 0.4 }}
+                className="text-xl md:text-2xl text-gray-300 mb-8 max-w-4xl mx-auto leading-relaxed"
+              >
+                Pioneering the future of technology with revolutionary AI consciousness, 
+                quantum computing, and autonomous solutions that transform businesses worldwide.
+              </motion.p>
+
+              {/* CTA Buttons */}
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 1.0, delay: 0.6 }}
+                className="flex flex-col sm:flex-row gap-4 justify-center items-center"
+              >
+                <button className="btn-primary text-lg px-8 py-4">
+                  Explore Services
+                  <ArrowRight className="w-5 h-5 ml-2 inline" />
+                </button>
+                <button className="btn-secondary text-lg px-8 py-4">
+                  Get Started
+                </button>
+              </motion.div>
+            </motion.div>
           </div>
-          <div className="hidden gap-6 md:flex">
-            <Link href="/services"><a className="text-white/80 hover:text-white">Services</a></Link>
-            <Link href="/products"><a className="text-white/80 hover:text-white">Products</a></Link>
-            <Link href="/automation"><a className="text-white/80 hover:text-white">Automations</a></Link>
-            <Link href="/contact"><a className="text-white/80 hover:text-white">Contact</a></Link>
-          </div>
-        </nav>
-      </header>
+        </motion.section>
 
-      {/* Hero */}
-      <main className="relative z-10">
-        <section className="mx-auto max-w-7xl px-6 pt-10 pb-16 md:pt-16 md:pb-24">
-          <div className="text-center">
-            <div className="mx-auto inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-3 py-1 text-xs text-white/70 backdrop-blur-md">
-              <span className="h-2 w-2 animate-pulse rounded-full bg-emerald-400 shadow-[0_0_12px_rgba(52,211,153,0.9)]" />
-              Autonomous cloud systems are live and improving the app in real time
-            </div>
-            <h1 className="mt-6 text-5xl font-extrabold leading-[1.05] tracking-tight md:text-6xl">
-              <span className="gradient-text">Autonomous Cloud Automations</span>
-            </h1>
-            <p className="mx-auto mt-5 max-w-3xl text-lg text-white/80">
-              Self-improving, cloud-native agents that invent, generate, and run new automation factories—fixing, optimizing, and syncing changes to the repository continuously.
-            </p>
-            <div className="mt-8 flex flex-wrap justify-center gap-3">
-              <Link href="/automation"><a className="rounded-xl bg-gradient-to-r from-fuchsia-500 to-cyan-500 px-6 py-3 font-semibold shadow-[0_0_30px_rgba(34,211,238,0.35)] hover:shadow-[0_0_40px_rgba(34,211,238,0.6)] transition-shadow">Explore Automations</a></Link>
-              <a href="https://github.com/Zion-Holdings/zion.app/actions/workflows/autonomous-meta.yml" target="_blank" rel="noopener" className="rounded-xl border border-white/20 bg-white/5 px-6 py-3 font-semibold backdrop-blur-md hover:bg-white/10">Live Meta Factory</a>
+        {/* Services Overview Section */}
+        <motion.section 
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 1.0 }}
+          viewport={{ once: true }}
+          className="py-20 bg-gray-900/50"
+          aria-labelledby="services-heading"
+        >
+          <div className="container mx-auto px-4">
+            <div className="text-center mb-16">
+              <h2 
+                id="services-heading"
+                className="text-4xl md:text-5xl font-bold mb-6 text-gradient"
+              >
+                Our Revolutionary Services
+              </h2>
+              <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+                From AI autonomous systems to quantum computing infrastructure, 
+                we deliver cutting-edge solutions that drive innovation.
+              </p>
             </div>
 
-            {/* Futuristic info strip */}
-            <div className="mt-8 grid grid-cols-2 gap-3 sm:grid-cols-4">
-              {[
-                ['24/7', 'Autonomous'],
-                ['Main', 'Direct Sync'],
-                ['0 Ops', 'Cloud‑Native'],
-                ['Safety', 'Guardrails'],
-              ].map(([k,v]) => (
-                <div key={k} className="glow-card rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-left">
-                  <div className="text-lg font-bold text-white">{k}</div>
-                  <div className="text-xs text-white/70">{v}</div>
-                </div>
+            {/* Category Filter */}
+            <div className="flex flex-wrap justify-center gap-4 mb-12">
+              {categories.map((category) => (
+                <button
+                  key={category.id}
+                  onClick={() => setSelectedCategory(category.id)}
+                  className={`flex items-center space-x-2 px-6 py-3 rounded-full border-2 transition-all duration-300 ${
+                    selectedCategory === category.id
+                      ? `bg-gradient-to-r ${category.color} border-transparent text-white`
+                      : 'border-gray-600 text-gray-300 hover:border-gray-500 hover:text-white'
+                  }`}
+                  aria-pressed={selectedCategory === category.id}
+                >
+                  <category.icon className="w-5 h-5" />
+                  <span>{category.name}</span>
+                </button>
               ))}
             </div>
 
-            {/* Trusted by */}
-            <div className="mx-auto mt-10 max-w-5xl">
-              <div className="text-xs uppercase tracking-widest text-white/50">Trusted by forward‑looking teams</div>
-              <div className="mt-3 grid grid-cols-2 gap-3 opacity-80 sm:grid-cols-4">
-                {['Nebula Labs', 'Aurora Cloud', 'Quanta AI', 'NovaOps'].map((brand) => (
-                  <div key={brand} className="rounded-lg border border-white/10 bg-white/5 px-4 py-3 text-center text-white/70 backdrop-blur-md">{brand}</div>
-                ))}
-              </div>
+            {/* Services Grid */}
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {featuredServices.map((service, index) => (
+                <motion.div
+                  key={service.id || index}
+                  initial={{ opacity: 0, y: 50 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: index * 0.1 }}
+                  viewport={{ once: true }}
+                  className="card card-hover group"
+                >
+                  <div className="p-6">
+                    <div className="flex items-center justify-between mb-4">
+                      <h3 className="text-xl font-semibold text-white group-hover:text-cyan-400 transition-colors">
+                        {service.name}
+                      </h3>
+                      <div className="w-12 h-12 bg-gradient-to-r from-cyan-500 to-blue-500 rounded-lg flex items-center justify-center">
+                        <Brain className="w-6 h-6 text-white" />
+                      </div>
+                    </div>
+                    
+                    <p className="text-gray-300 mb-4 line-clamp-3">
+                      {service.description || 'Revolutionary technology solution designed to transform your business operations and drive innovation.'}
+                    </p>
+                    
+                    <div className="flex items-center justify-between">
+                      <span className="text-cyan-400 font-semibold">
+                        {getServicePrice(service)}
+                      </span>
+                      <a
+                        href={getServiceWebsite(service)}
+                        className="text-cyan-400 hover:text-cyan-300 transition-colors flex items-center space-x-1"
+                        aria-label={`Learn more about ${service.name}`}
+                      >
+                        <span>Learn More</span>
+                        <ArrowRight className="w-4 h-4" />
+                      </a>
+                    </div>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+
+            {/* View All Services Button */}
+            <div className="text-center mt-12">
+              <button className="btn-primary text-lg px-8 py-4">
+                View All Services
+                <ArrowRight className="w-5 h-5 ml-2 inline" />
+              </button>
             </div>
           </div>
-        </section>
+        </motion.section>
 
-        {/* Features */}
-        <section className="mx-auto max-w-7xl px-6 pb-14">
-          <h2 className="text-center text-2xl font-bold tracking-wide text-white/90">Features</h2>
-          <div className="mt-6 grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3">
-            {[
-              { title: 'Self‑Improving', desc: 'Agents continuously analyze, invent, and evolve automations.' },
-              { title: 'Repo Sync', desc: 'Changes are committed and pushed automatically to main.' },
-              { title: 'Zero Ops', desc: 'Runs fully in the cloud—no servers or manual intervention.' },
-              { title: 'Safety‑First', desc: 'Conservative edits with logs, reports, and guardrails.' },
-              { title: 'Scalable', desc: 'Generates domain‑specific factories on demand.' },
-              { title: 'Observability', desc: 'Dashboards, reports, and GitHub Actions artifacts.' },
-            ].map((f) => (
-              <article key={f.title} className="group glow-card relative overflow-hidden rounded-2xl border border-white/10 bg-white/5 p-5 backdrop-blur-md hover:border-cyan-400/30">
-                <div className="pointer-events-none absolute -inset-px -z-10 bg-gradient-to-r from-fuchsia-500/0 via-cyan-400/10 to-fuchsia-500/0 opacity-0 blur-2xl transition-opacity group-hover:opacity-100" />
-                <h3 className="text-lg font-semibold">{f.title}</h3>
-                <p className="mt-1 text-sm text-white/75">{f.desc}</p>
-              </article>
-            ))}
-          </div>
-        </section>
+        {/* Contact Section */}
+        <motion.section 
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 1.0 }}
+          viewport={{ once: true }}
+          className="py-20 bg-gray-800/50"
+          aria-labelledby="contact-heading"
+        >
+          <div className="container mx-auto px-4">
+            <div className="text-center mb-16">
+              <h2 
+                id="contact-heading"
+                className="text-4xl md:text-5xl font-bold mb-6 text-gradient"
+              >
+                Ready to Transform Your Business?
+              </h2>
+              <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+                Let's discuss how our innovative solutions can drive your success 
+                and position you at the forefront of technological advancement.
+              </p>
+            </div>
 
-        {/* How it works */}
-        <section className="mx-auto max-w-7xl px-6 pb-14">
-          <h2 className="text-center text-2xl font-bold tracking-wide text-white/90">How it works</h2>
-          <div className="mx-auto mt-6 max-w-4xl grid grid-cols-1 gap-4 md:grid-cols-4">
-            {[
-              ['Discover', 'Scan code, issues, UX, and ops signals'],
-              ['Plan', 'Draft safe, high‑impact improvements'],
-              ['Apply', 'Open edits with conservative diffs'],
-              ['Validate', 'Audit builds, links, a11y, and performance'],
-            ].map(([title, desc]) => (
-              <div key={title} className="rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-5 text-left backdrop-blur-xl">
-                <div className="text-sm font-semibold text-white">{title}</div>
-                <div className="mt-1 text-xs text-white/70">{desc}</div>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
+              <div className="text-center">
+                <div className="w-16 h-16 bg-gradient-to-r from-cyan-500 to-blue-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <Phone className="w-8 h-8 text-white" />
+                </div>
+                <h3 className="text-xl font-semibold text-white mb-2">Call Us</h3>
+                <p className="text-gray-300">+1 302 464 0950</p>
               </div>
-            ))}
-          </div>
-        </section>
 
-        {/* Capabilities */}
-        <section className="mx-auto max-w-7xl px-6 pb-14">
-          <h2 className="text-center text-2xl font-bold tracking-wide text-white/90">Capabilities</h2>
-          <div className="mt-6 grid grid-cols-1 gap-5 md:grid-cols-3">
-            {[
-              { title: 'Code Quality & Refactors', desc: 'Lints, fixes, and proposes refactors with type‑safety improvements.' },
-              { title: 'Performance & A11y', desc: 'Optimizes bundles, assets, and accessibility with continuous checks.' },
-              { title: 'Content & SEO', desc: 'Curates content, updates promotions, and tunes metadata for reach.' },
-            ].map((c) => (
-              <article key={c.title} className="relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl">
-                <div className="absolute right-0 top-0 h-24 w-24 rounded-bl-[4rem] bg-cyan-400/10 blur-2xl" />
-                <h3 className="text-lg font-semibold">{c.title}</h3>
-                <p className="mt-1 text-sm text-white/75">{c.desc}</p>
-              </article>
-            ))}
-          </div>
-        </section>
-
-        {/* Benefits */}
-        <section className="mx-auto max-w-7xl px-6 pb-20">
-          <h2 className="text-center text-2xl font-bold tracking-wide text-white/90">Benefits</h2>
-          <div className="mx-auto mt-6 max-w-4xl grid grid-cols-1 gap-3 md:grid-cols-2">
-            {[
-              '24/7 progress without human intervention',
-              'Rapid feedback loop with safe, incremental edits',
-              'Continuous delivery directly to main branch',
-              'Fewer regressions via layered checks and reports',
-            ].map((b) => (
-              <div key={b} className="flex items-start gap-3 rounded-xl border border-white/10 bg-white/5 p-4 backdrop-blur-md">
-                <span className="mt-1 inline-block h-2.5 w-2.5 rounded-full bg-emerald-400 shadow-[0_0_12px_rgba(52,211,153,0.9)]" />
-                <span className="text-sm text-white/80">{b}</span>
+              <div className="text-center">
+                <div className="w-16 h-16 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <Mail className="w-8 h-8 text-white" />
+                </div>
+                <h3 className="text-xl font-semibold text-white mb-2">Email Us</h3>
+                <p className="text-gray-300">kleber@ziontechgroup.com</p>
               </div>
-            ))}
-          </div>
-        </section>
 
-        {/* CTA */}
-        <section className="mx-auto max-w-7xl px-6 pb-24">
-          <div className="animated-border relative overflow-hidden rounded-3xl border border-white/10 bg-gradient-to-r from-fuchsia-600/20 via-violet-600/20 to-cyan-600/20 p-8 text-center backdrop-blur-xl">
-            <h3 className="text-2xl font-bold">Ready to build with autonomous cloud agents?</h3>
-            <p className="mx-auto mt-2 max-w-2xl text-white/80">Scale development with a tireless fleet of self‑improving automations.</p>
-            <div className="mt-6 flex flex-wrap justify-center gap-3">
-              <Link href="/services"><a className="rounded-xl bg-white/90 px-6 py-3 font-semibold text-slate-900 hover:bg-white">Get Started</a></Link>
-              <Link href="/automation"><a className="rounded-xl border border-white/20 bg-white/5 px-6 py-3 font-semibold backdrop-blur-md hover:bg-white/10">View Automations</a></Link>
+              <div className="text-center">
+                <div className="w-16 h-16 bg-gradient-to-r from-green-500 to-teal-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <MapPin className="w-8 h-8 text-white" />
+                </div>
+                <h3 className="text-xl font-semibold text-white mb-2">Visit Us</h3>
+                <p className="text-gray-300">364 E Main St STE 1008<br />Middletown DE 19709</p>
+              </div>
+            </div>
+
+            <div className="text-center mt-12">
+              <button className="btn-primary text-lg px-8 py-4">
+                Get in Touch
+                <ArrowRight className="w-5 h-5 ml-2 inline" />
+              </button>
             </div>
           </div>
-        </section>
-      
-{/* AUTO-GENERATED: HOME_UPDATER_START */
- <section className="mx-auto max-w-7xl px-6 pb-16">
-   <h2 className="text-center text-2xl font-bold tracking-wide text-white/90">Explore more</h2>
-   <div className="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+        </motion.section>
+      </main>
 
-            <Link href="/automation"><a className="bg-white/5 hover:bg-white/10 rounded-lg p-4 transition-colors border border-white/10"><span className="text-white/90">Automation Hub — live agents & reports</span></a></Link>
-  
-            <Link href="/newsroom"><a className="bg-white/5 hover:bg-white/10 rounded-lg p-4 transition-colors border border-white/10"><span className="text-white/90">Newsroom — latest autonomous updates</span></a></Link>
-  
-            <Link href="/site-health"><a className="bg-white/5 hover:bg-white/10 rounded-lg p-4 transition-colors border border-white/10"><span className="text-white/90">Site Health — audits & insights</span></a></Link>
-  
-            <a href="https://github.com/Zion-Holdings/zion.app/actions" target="_blank" rel="noopener" className="bg-white/5 hover:bg-white/10 rounded-lg p-4 transition-colors border border-white/10"><span className="text-white/90">GitHub Actions — live workflows</span></a>
-  
-            <a href="https://github.com/Zion-Holdings/zion.app/tree/main/docs" target="_blank" rel="noopener" className="bg-white/5 hover:bg-white/10 rounded-lg p-4 transition-colors border border-white/10"><span className="text-white/90">Docs — technical notes & guides</span></a>
-  
-   </div>
- </section>
- /* AUTO-GENERATED: HOME_UPDATER_END */}
-</main>
-    </div>
+      {/* Futuristic Footer */}
+      <UltraFuturisticFooter2026 />
+
+      {/* Enhanced Components */}
+      <EnhancedPerformanceMonitor />
+      <EnhancedAccessibilityEnhancer />
+      <EnhancedSEO />
+    </UltraFuturisticNeonBackground>
   );
-}
+};
+
+export default HomePage;
