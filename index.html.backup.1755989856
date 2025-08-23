@@ -14,7 +14,12 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600&display=swap" rel="stylesheet" />
 
+<<<<<<< HEAD
+    <meta name="theme-color" content="#000000" />
+    <link rel="manifest" href="/manifest.json" />
+=======
     <meta name="theme-color" content="#0d0d0d" />
+>>>>>>> origin/4pkscj-codex/disable-theme-toggle-and-set-default-dark-theme
     
     <!-- Open Graph / Facebook -->
     <meta property="og:title" content="Zion - The Future of Tech & AI Marketplace" />

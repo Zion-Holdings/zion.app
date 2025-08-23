@@ -93,3 +93,7 @@
 2025-08-23 22:57:35 - Resolving conflicts in src/hooks/use-toast.ts for branch 4o9pcp-codex/add-test-for-failed-login-toast
 2025-08-23 22:57:35 - Resolving conflicts in src/services/authService.ts for branch 4o9pcp-codex/add-test-for-failed-login-toast
 2025-08-23 22:57:35 - Resolving conflicts in tests/Login.test.tsx for branch 4o9pcp-codex/add-test-for-failed-login-toast
+2025-08-23 22:57:36 - Merge conflicts detected in 4pkscj-codex/disable-theme-toggle-and-set-default-dark-theme
+2025-08-23 22:57:36 - Resolving conflicts in index.html for branch 4pkscj-codex/disable-theme-toggle-and-set-default-dark-theme
+2025-08-23 22:57:36 - Resolving conflicts in src/index.css for branch 4pkscj-codex/disable-theme-toggle-and-set-default-dark-theme
+2025-08-23 22:57:36 - Resolving conflicts in src/layout/AppHeader.tsx for branch 4pkscj-codex/disable-theme-toggle-and-set-default-dark-theme
