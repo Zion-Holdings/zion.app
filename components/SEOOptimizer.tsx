@@ -5,51 +5,101 @@ import { useRouter } from 'next/router';
 interface SEOProps {
   title?: string;
   description?: string;
-  keywords?: string;
+  keywords?: string[];
+  type?: 'website' | 'article' | 'product' | 'service';
   image?: string;
-  url?: string;
-  type?: string;
-  author?: string;
-  publishedTime?: string;
-  modifiedTime?: string;
-  section?: string;
-  tags?: string[];
+  currentUrl?: string;
+  ogImage?: string;
+  ogUrl?: string;
+  canonicalUrl?: string;
+  structuredData?: object;
 }
 
 const SEOOptimizer: React.FC<SEOOptimizerProps> = ({
-  title = "Zion Tech Group - The Future of Technology | AI, Quantum Computing & Autonomous Solutions",
-  description = "Pioneering AI consciousness, quantum computing, and autonomous solutions that transform businesses worldwide. Discover cutting-edge technology solutions.",
-  keywords = "AI consciousness, quantum computing, autonomous systems, technology solutions, artificial intelligence, machine learning, cybersecurity, space technology",
-  image = "/images/zion-tech-group-og.jpg",
-  url = "https://ziontechgroup.com",
-  type = "website"
+  title = 'Zion Tech Group - Future of Technology | AI, Quantum Security, Micro SAAS',
+  description = 'Revolutionary micro SAAS services, cutting-edge AI solutions, quantum cybersecurity, and emerging technologies that transform businesses. 98+ innovative services for the modern enterprise.',
+  keywords = ['AI services', 'quantum cybersecurity', 'micro SAAS', 'automation', 'IT solutions', 'emerging technologies', 'Zion Tech Group', 'Delaware technology company'],
+  type = 'website',
+
+  currentUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://ziontechgroup.com',
+  ogImage = '/og-image.jpg',
+  ogUrl = 'https://ziontechgroup.com',
+  canonicalUrl = 'https://ziontechgroup.com',
+  structuredData = {}
 }) => {
-  const structuredData = {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "Zion Tech Group",
-    "url": "https://ziontechgroup.com",
-    "logo": "https://ziontechgroup.com/images/zion-tech-group-logo.png",
-    "description": "Pioneering AI consciousness, quantum computing, and autonomous solutions that transform businesses worldwide.",
-    "foundingDate": "2020",
-    "address": {
-      "@type": "PostalAddress",
-      "addressCountry": "US"
-    },
-    "contactPoint": {
-      "@type": "ContactPoint",
-      "contactType": "customer service",
-      "email": "contact@ziontechgroup.com"
-    },
-    "sameAs": [
-      "https://linkedin.com/company/zion-tech-group",
-      "https://twitter.com/ziontechgroup",
-      "https://github.com/Zion-Holdings"
+  useEffect(() => {
+    // Add structured data to page
+    if (structuredData && Object.keys(structuredData).length > 0) {
+      const script = document.createElement('script');
+      script.type = 'application/ld+json';
+      script.text = JSON.stringify(structuredData);
+      document.head.appendChild(script);
+
+      return () => {
+        document.head.removeChild(script);
+      };
+    }
+  }, [structuredData]);
+
+  // Default structured data for Zion Tech Group
+  const defaultStructuredData = {
+    '@context': 'https://schema.org',
+    '@type': type === 'article' ? 'Article' : 'Organization',
+    name: 'Zion Tech Group',
+    description: description,
+    url: currentUrl,
+    logo: 'https://ziontechgroup.com/logo.png',
+    sameAs: [
+      'https://ziontechgroup.com',
+      'https://linkedin.com/company/ziontechgroup'
     ],
-    "offers": {
-      "@type": "Offer",
-      "category": "Technology Services",
-      "description": "AI, Quantum Computing, and Autonomous Solutions"
+    contactPoint: {
+      '@type': 'ContactPoint',
+      telephone: '+1-302-464-0950',
+      contactType: 'customer service',
+      email: 'kleber@ziontechgroup.com'
+    },
+    address: {
+      '@type': 'PostalAddress',
+      streetAddress: '364 E Main St STE 1008',
+      addressLocality: 'Middletown',
+      addressRegion: 'DE',
+      postalCode: '19709',
+      addressCountry: 'US'
+    },
+    foundingDate: '2020',
+    numberOfEmployees: '50-100',
+    industry: 'Technology',
+    serviceType: 'AI, Quantum Computing, Space Technology, IT Services',
+    hasOfferCatalog: {
+      '@type': 'OfferCatalog',
+      name: 'Technology Services',
+      itemListElement: [
+        {
+          '@type': 'Offer',
+          itemOffered: {
+            '@type': 'Service',
+            name: 'AI Services',
+            description: 'Cutting-edge artificial intelligence solutions'
+          }
+        },
+        {
+          '@type': 'Offer',
+          itemOffered: {
+            '@type': 'Service',
+            name: 'Quantum Cybersecurity',
+            description: 'Next-generation quantum-resistant security'
+          }
+        },
+        {
+          '@type': 'Offer',
+          itemOffered: {
+            '@type': 'Service',
+            name: 'Micro SAAS Services',
+            description: 'Revolutionary micro software-as-a-service solutions'
+          }
+        }
+      ]
     }
   };
 
@@ -78,16 +128,15 @@ const SEOOptimizer: React.FC<SEOOptimizerProps> = ({
       {/* Basic Meta Tags */}
       <title>{title}</title>
       <meta name="description" content={description} />
-      <meta name="keywords" content={keywords} />
+      <meta name="keywords" content={keywords.join(', ')} />
       <meta name="author" content="Zion Tech Group" />
       <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
       
       {/* Canonical URL */}
       <link rel="canonical" href={url} />
       
-      {/* Open Graph / Facebook */}
+      {/* Open Graph Meta Tags */}
       <meta property="og:type" content={type} />
-      <meta property="og:url" content={url} />
       <meta property="og:title" content={title} />
       <meta property="og:description" content={description} />
       <meta property="og:image" content={image} />

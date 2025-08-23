@@ -1,33 +1,55 @@
-import React from 'react';
-import Head from 'next/head';
-import Link from 'next/link';
+import React, { Suspense } from 'react';
+import Homepage2025 from '../components/Homepage2025';
+import SEOOptimizer from '../components/SEOOptimizer';
+import AnalyticsTracker from '../components/AnalyticsTracker';
+import ErrorBoundary from '../components/ErrorBoundary';
+import PerformanceOptimizer from '../components/PerformanceOptimizer';
+import { AccessibilityProvider } from '../components/AccessibilityEnhancer';
+import { SkipLink } from '../components/AccessibilityEnhancer';
 
-export default function HomePage() {
-	return (
-		<>
-			<Head>
-				<title>Zion Tech Group — AI, Quantum, and Enterprise Solutions</title>
-				<meta name="description" content="Transform your business with AI automation, quantum-grade security, and enterprise IT solutions. Explore services, pricing, and case-ready offerings." />
-				<link rel="canonical" href="https://ziontechgroup.com/" />
-			</Head>
-			<section className="relative px-6 py-24 sm:py-28 lg:px-8">
-				<div className="mx-auto max-w-4xl text-center">
-					<h1 className="text-4xl font-extrabold tracking-tight sm:text-6xl">
-						Revolutionary Technology Solutions
-					</h1>
-					<p className="mt-6 text-lg leading-8 text-gray-300">
-						AI-native automation, quantum-secure infrastructure, and enterprise-grade platforms — delivered with measurable outcomes.
-					</p>
-					<div className="mt-10 flex items-center justify-center gap-x-6">
-						<Link href="/services" className="rounded-md bg-white/10 px-5 py-3 text-base font-semibold text-white shadow-sm ring-1 ring-inset ring-white/20 hover:bg-white/20">
-							Explore Services
-						</Link>
-						<Link href="/pricing" className="text-base font-semibold leading-6 text-white/80 hover:text-white">
-							View Pricing <span aria-hidden>→</span>
-						</Link>
-					</div>
-				</div>
-			</section>
+const HomePage: React.FC = () => {
+  return (
+    <ErrorBoundary>
+      <AccessibilityProvider>
+        <SEOOptimizer 
+          title="Zion Tech Group - Pioneering Future Technology Solutions"
+          description="Leading provider of AI, Quantum Computing, Space Technology, and IT solutions. Transform your business with cutting-edge technology from Zion Tech Group."
+          keywords={[
+            'AI solutions', 'Machine Learning', 'Quantum Computing', 'Space Technology',
+            'IT Services', 'Digital Transformation', 'Business Technology', 'Innovation',
+            'Artificial Intelligence', 'Quantum Technology', 'Space Innovation', 'Tech Solutions'
+          ]}
+          type="website"
+          image="/images/zion-tech-group-og.jpg"
+        />
+        <AnalyticsTracker />
+        
+        {/* Skip to main content link for accessibility */}
+        <SkipLink href="#main">Skip to main content</SkipLink>
+        
+        <PerformanceOptimizer
+          enableIntersectionObserver={true}
+          enableLazyLoading={true}
+          enablePerformanceMonitoring={true}
+        >
+          <main id="main" role="main" aria-label="Zion Tech Group Homepage">
+            <Suspense fallback={
+              <div className="min-h-screen flex items-center justify-center">
+                <div className="flex items-center space-x-2">
+                  <div className="w-2 h-2 bg-cyan-400 rounded-full animate-bounce" style={{ animationDelay: '0ms' }}></div>
+                  <div className="w-2 h-2 bg-cyan-400 rounded-full animate-bounce" style={{ animationDelay: '150ms' }}></div>
+                  <div className="w-2 h-2 bg-cyan-400 rounded-full animate-bounce" style={{ animationDelay: '300ms' }}></div>
+                </div>
+              </div>
+            }>
+              <Homepage2025 />
+            </Suspense>
+          </main>
+        </PerformanceOptimizer>
+      </AccessibilityProvider>
+    </ErrorBoundary>
+  );
+};
 
 			<section className="px-6 pb-20 lg:px-8">
 				<div className="mx-auto max-w-5xl grid grid-cols-1 gap-8 sm:grid-cols-2">

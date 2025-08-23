@@ -1,58 +1,60 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect, useState, useRef, createContext, useContext } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { 
-  Volume2, 
-  VolumeX, 
-  Eye, 
-  EyeOff, 
-  Type, 
-  Contrast, 
-  ZoomIn, 
-  ZoomOut,
-  Keyboard,
-  Accessibility,
-  HelpCircle
+  Volume2, Type, 
+  Contrast, RotateCcw,
+  Accessibility, MousePointer
 } from 'lucide-react';
 
-interface AccessibilityEnhancerProps {
-  onAccessibilityChange?: (settings: AccessibilitySettings) => void;
-}
-
-interface AccessibilitySettings {
+interface AccessibilityContextType {
   highContrast: boolean;
   largeText: boolean;
   reducedMotion: boolean;
   screenReader: boolean;
-  keyboardNavigation: boolean;
-  focusIndicator: boolean;
+  fontSize: number;
+  toggleHighContrast: () => void;
+  toggleLargeText: () => void;
+  toggleReducedMotion: () => void;
+  toggleScreenReader: () => void;
+  setFontSize: (size: number) => void;
+  resetSettings: () => void;
 }
 
-const AccessibilityEnhancer: React.FC<AccessibilityEnhancerProps> = ({
-  onAccessibilityChange
-}) => {
+const AccessibilityContext = createContext<AccessibilityContextType | undefined>(undefined);
+
+export const useAccessibility = () => {
+  const context = useContext(AccessibilityContext);
+  if (!context) {
+    throw new Error('useAccessibility must be used within an AccessibilityProvider');
+  }
+  return context;
+};
+
+interface AccessibilityProviderProps {
+  children: React.ReactNode;
+}
+
+export const AccessibilityProvider: React.FC<AccessibilityProviderProps> = ({ children }) => {
+  const [highContrast, setHighContrast] = useState(false);
+  const [largeText, setLargeText] = useState(false);
+  const [reducedMotion, setReducedMotion] = useState(false);
+  const [screenReader, setScreenReader] = useState(false);
+  const [fontSize, setFontSize] = useState(16);
   const [isOpen, setIsOpen] = useState(false);
-  const [settings, setSettings] = useState<AccessibilitySettings>({
-    highContrast: false,
-    largeText: false,
-    reducedMotion: false,
-    screenReader: false,
-    keyboardNavigation: false,
-    focusIndicator: false
-  });
 
-  const [currentZoom, setCurrentZoom] = useState(100);
-  const [isMuted, setIsMuted] = useState(false);
-
+  // Load settings from localStorage
   useEffect(() => {
-    // Load saved accessibility settings from localStorage
-    const savedSettings = localStorage.getItem('zion-accessibility-settings');
+    const savedSettings = localStorage.getItem('accessibility-settings');
     if (savedSettings) {
       try {
-        const parsed = JSON.parse(savedSettings);
-        setSettings(parsed);
-        applyAccessibilitySettings(parsed);
-      } catch (error) {
-        console.warn('Failed to parse saved accessibility settings:', error);
+        const settings = JSON.parse(savedSettings);
+        setHighContrast(settings.highContrast || false);
+        setLargeText(settings.largeText || false);
+        setReducedMotion(settings.reducedMotion || false);
+        setScreenReader(settings.screenReader || false);
+        setFontSize(settings.fontSize || 16);
+      } catch {
+        // Failed to load accessibility settings
       }
     }
 
@@ -60,387 +62,454 @@ const AccessibilityEnhancer: React.FC<AccessibilityEnhancerProps> = ({
     checkSystemPreferences();
   }, []);
 
+  // Save settings to localStorage
   useEffect(() => {
-    // Save settings to localStorage
-    localStorage.setItem('zion-accessibility-settings', JSON.stringify(settings));
-    
-    // Apply settings
-    applyAccessibilitySettings(settings);
-    
-    // Notify parent component
-    if (onAccessibilityChange) {
-      onAccessibilityChange(settings);
-    }
-  }, [settings, onAccessibilityChange]);
+    const settings = {
+      highContrast,
+      largeText,
+      reducedMotion,
+      screenReader,
+      fontSize
+    };
+    localStorage.setItem('accessibility-settings', JSON.stringify(settings));
+  }, [highContrast, largeText, reducedMotion, screenReader, fontSize]);
 
-  const checkSystemPreferences = () => {
-    // Check for reduced motion preference
-    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    if (prefersReducedMotion) {
-      setSettings(prev => ({ ...prev, reducedMotion: true }));
-    }
-
-    // Check for high contrast preference
-    const prefersHighContrast = window.matchMedia('(prefers-contrast: high)').matches;
-    if (prefersHighContrast) {
-      setSettings(prev => ({ ...prev, highContrast: true }));
-    }
-  };
-
-  const applyAccessibilitySettings = (newSettings: AccessibilitySettings) => {
+  // Apply accessibility settings to document
+  useEffect(() => {
     const root = document.documentElement;
     
-    // Apply high contrast
-    if (newSettings.highContrast) {
+    // High contrast
+    if (highContrast) {
       root.classList.add('high-contrast');
     } else {
       root.classList.remove('high-contrast');
     }
-    
-    // Apply large text
-    if (newSettings.largeText) {
+
+    // Large text
+    if (largeText) {
       root.classList.add('large-text');
     } else {
       root.classList.remove('large-text');
     }
-    
-    // Apply reduced motion
-    if (newSettings.reducedMotion) {
+
+    // Reduced motion
+    if (reducedMotion) {
       root.classList.add('reduced-motion');
     } else {
       root.classList.remove('reduced-motion');
     }
-    
-    // Apply focus indicator
-    if (newSettings.focusIndicator) {
-      root.classList.add('focus-visible');
-    } else {
-      root.classList.remove('focus-visible');
-    }
-  };
 
-  const toggleSetting = (key: keyof AccessibilitySettings) => {
-    setSettings(prev => ({ ...prev, [key]: !prev[key] }));
-  };
+    // Font size
+    root.style.fontSize = `${fontSize}px`;
 
-  const handleZoom = (direction: 'in' | 'out') => {
-    const newZoom = direction === 'in' ? currentZoom + 25 : currentZoom - 25;
-    if (newZoom >= 50 && newZoom <= 200) {
-      setCurrentZoom(newZoom);
-      document.documentElement.style.zoom = `${newZoom}%`;
-    }
-  };
-
-  const resetZoom = () => {
-    setCurrentZoom(100);
-    document.documentElement.style.zoom = '100%';
-  };
-
-  const toggleMute = () => {
-    setIsMuted(!isMuted);
-    // Implement audio muting logic here
-  };
-
-  const announceToScreenReader = (message: string) => {
-    if (settings.screenReader) {
+    // Screen reader announcements
+    if (screenReader) {
       const announcement = document.createElement('div');
       announcement.setAttribute('aria-live', 'polite');
       announcement.setAttribute('aria-atomic', 'true');
       announcement.className = 'sr-only';
-      announcement.textContent = message;
-      
       document.body.appendChild(announcement);
-      
-      setTimeout(() => {
-        document.body.removeChild(announcement);
-      }, 1000);
     }
+  }, [highContrast, largeText, reducedMotion, screenReader, fontSize]);
+
+  const toggleHighContrast = () => setHighContrast(!highContrast);
+  const toggleLargeText = () => setLargeText(!largeText);
+  const toggleReducedMotion = () => setReducedMotion(!reducedMotion);
+  const toggleScreenReader = () => setScreenReader(!screenReader);
+
+  const resetSettings = () => {
+    setHighContrast(false);
+    setLargeText(false);
+    setReducedMotion(false);
+    setScreenReader(false);
+    setFontSize(16);
   };
 
-  const handleKeyboardShortcuts = (event: KeyboardEvent) => {
-    if (event.ctrlKey || event.metaKey) {
-      switch (event.key) {
-        case '=':
-          event.preventDefault();
-          handleZoom('in');
-          announceToScreenReader('Zoomed in');
-          break;
-        case '-':
-          event.preventDefault();
-          handleZoom('out');
-          announceToScreenReader('Zoomed out');
-          break;
-        case '0':
-          event.preventDefault();
-          resetZoom();
-          announceToScreenReader('Zoom reset');
-          break;
-        case 'm':
-          event.preventDefault();
-          toggleMute();
-          announceToScreenReader(isMuted ? 'Audio unmuted' : 'Audio muted');
-          break;
-        case 'h':
-          event.preventDefault();
-          toggleSetting('highContrast');
-          announceToScreenReader(settings.highContrast ? 'High contrast disabled' : 'High contrast enabled');
-          break;
-        case 'l':
-          event.preventDefault();
-          toggleSetting('largeText');
-          announceToScreenReader(settings.largeText ? 'Large text disabled' : 'Large text enabled');
-          break;
-      }
-    }
+  const value: AccessibilityContextType = {
+    highContrast,
+    largeText,
+    reducedMotion,
+    screenReader,
+    fontSize,
+    toggleHighContrast,
+    toggleLargeText,
+    toggleReducedMotion,
+    toggleScreenReader,
+    setFontSize,
+    resetSettings
   };
 
+  return (
+    <AccessibilityContext.Provider value={value}>
+      {children}
+      <AccessibilityPanel isOpen={isOpen} setIsOpen={setIsOpen} />
+    </AccessibilityContext.Provider>
+  );
+};
+
+interface AccessibilityPanelProps {
+  isOpen: boolean;
+  setIsOpen: (open: boolean) => void;
+}
+
+const AccessibilityPanel: React.FC<AccessibilityPanelProps> = ({ isOpen, setIsOpen }) => {
+  const {
+    highContrast,
+    largeText,
+    reducedMotion,
+    screenReader,
+    fontSize,
+    toggleHighContrast,
+    toggleLargeText,
+    toggleReducedMotion,
+    toggleScreenReader,
+    setFontSize,
+    resetSettings
+  } = useAccessibility();
+
+  const panelRef = useRef<HTMLDivElement>(null);
+
+  // Close panel when clicking outside
   useEffect(() => {
-    document.addEventListener('keydown', handleKeyboardShortcuts);
-    return () => document.removeEventListener('keydown', handleKeyboardShortcuts);
-  }, [settings, isMuted]);
+    const handleClickOutside = (event: MouseEvent) => {
+      if (panelRef.current && !panelRef.current.contains(event.target as HTMLElement)) {
+        setIsOpen(false);
+      }
+    };
+
+    if (isOpen) {
+      document.addEventListener('mousedown', handleClickOutside);
+      return () => document.removeEventListener('mousedown', handleClickOutside);
+    }
+  }, [isOpen, setIsOpen]);
+
+  // Handle escape key
+  useEffect(() => {
+    const handleEscape = (event: KeyboardEvent) => {
+      if (event.key === 'Escape' && isOpen) {
+        setIsOpen(false);
+      }
+    };
+
+    document.addEventListener('keydown', handleEscape);
+    return () => document.removeEventListener('keydown', handleEscape);
+  }, [isOpen, setIsOpen]);
 
   return (
     <>
-      {/* Accessibility Controls Toggle */}
-      <motion.button
-        className="fixed bottom-6 right-6 z-50 w-14 h-14 bg-gradient-to-r from-cyan-500 to-blue-600 text-white rounded-full shadow-lg hover:shadow-xl transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-cyan-400 focus:ring-offset-2 focus:ring-offset-black"
+      {/* Accessibility Toggle Button */}
+      <button
         onClick={() => setIsOpen(!isOpen)}
-        aria-label="Open accessibility menu"
+        className="fixed bottom-4 left-4 z-50 p-3 bg-gradient-to-r from-cyan-500 to-blue-600 text-white rounded-full shadow-lg hover:shadow-xl transition-all duration-300 focus:outline-none focus:ring-4 focus:ring-cyan-400/50"
+        aria-label="Open accessibility panel"
         aria-expanded={isOpen}
-        whileHover={{ scale: 1.1 }}
-        whileTap={{ scale: 0.9 }}
+        aria-controls="accessibility-panel"
       >
-        <Accessibility className="w-6 h-6 mx-auto" />
-      </motion.button>
+        <Accessibility className="w-6 h-6" />
+      </button>
 
-      {/* Accessibility Controls Panel */}
+      {/* Accessibility Panel */}
       <AnimatePresence>
         {isOpen && (
           <motion.div
-            initial={{ opacity: 0, y: 20, scale: 0.9 }}
-            animate={{ opacity: 1, y: 0, scale: 1 }}
-            exit={{ opacity: 0, y: 20, scale: 0.9 }}
-            transition={{ duration: 0.3, ease: "easeOut" }}
-            className="fixed bottom-24 right-6 z-40 w-80 bg-black/90 backdrop-blur-md border border-white/20 rounded-2xl p-6 shadow-2xl"
+            ref={panelRef}
+            initial={{ opacity: 0, x: -20, scale: 0.95 }}
+            animate={{ opacity: 1, x: 0, scale: 1 }}
+            exit={{ opacity: 0, x: -20, scale: 0.95 }}
+            transition={{ duration: 0.2 }}
+            className="fixed bottom-20 left-4 z-50 w-80 bg-black/95 backdrop-blur-xl border border-cyan-400/30 rounded-xl shadow-2xl shadow-cyan-500/20 p-6"
+            id="accessibility-panel"
             role="dialog"
-            aria-labelledby="accessibility-panel-title"
-            aria-describedby="accessibility-panel-description"
+            aria-labelledby="accessibility-title"
+            aria-describedby="accessibility-description"
           >
-            <div className="flex items-center justify-between mb-6">
-              <h2 id="accessibility-panel-title" className="text-xl font-bold text-white">
+            <div className="flex items-center justify-between mb-4">
+              <h2 id="accessibility-title" className="text-lg font-semibold text-white">
                 Accessibility Settings
               </h2>
               <button
                 onClick={() => setIsOpen(false)}
                 className="text-gray-400 hover:text-white transition-colors"
-                aria-label="Close accessibility menu"
+                aria-label="Close accessibility panel"
               >
-                <span className="sr-only">Close</span>
-                ×
+                <RotateCcw className="w-5 h-5" />
               </button>
             </div>
             
-            <p id="accessibility-panel-description" className="text-gray-300 text-sm mb-6">
-              Customize your experience with these accessibility features. Use keyboard shortcuts for quick access.
+            <p id="accessibility-description" className="text-sm text-gray-300 mb-6">
+              Customize your experience with these accessibility options
             </p>
 
-            {/* Quick Actions */}
-            <div className="grid grid-cols-2 gap-3 mb-6">
-              <button
-                onClick={() => handleZoom('in')}
-                className="flex items-center justify-center gap-2 px-3 py-2 bg-white/10 hover:bg-white/20 rounded-lg text-white text-sm transition-colors focus:outline-none focus:ring-2 focus:ring-cyan-400"
-                aria-label="Zoom in (Ctrl/Cmd + =)"
-              >
-                <ZoomIn className="w-4 h-4" />
-                Zoom In
-              </button>
-              <button
-                onClick={() => handleZoom('out')}
-                className="flex items-center justify-center gap-2 px-3 py-2 bg-white/10 hover:bg-white/20 rounded-lg text-white text-sm transition-colors focus:outline-none focus:ring-2 focus:ring-cyan-400"
-                aria-label="Zoom out (Ctrl/Cmd + -)"
-              >
-                <ZoomOut className="w-4 h-4" />
-                Zoom Out
-              </button>
-              <button
-                onClick={resetZoom}
-                className="flex items-center justify-center gap-2 px-3 py-2 bg-white/10 hover:bg-white/20 rounded-lg text-white text-sm transition-colors focus:outline-none focus:ring-2 focus:ring-cyan-400"
-                aria-label="Reset zoom (Ctrl/Cmd + 0)"
-              >
-                <Type className="w-4 h-4" />
-                Reset Zoom
-              </button>
-              <button
-                onClick={toggleMute}
-                className="flex items-center justify-center gap-2 px-3 py-2 bg-white/10 hover:bg-white/20 rounded-lg text-white text-sm transition-colors focus:outline-none focus:ring-2 focus:ring-cyan-400"
-                aria-label="Toggle audio (Ctrl/Cmd + M)"
-              >
-                {isMuted ? <VolumeX className="w-4 h-4" /> : <Volume2 className="w-4 h-4" />}
-                {isMuted ? 'Unmute' : 'Mute'}
-              </button>
-            </div>
-
-            {/* Current Zoom Level */}
-            <div className="mb-6">
-              <label className="block text-sm font-medium text-white mb-2">
-                Zoom Level: {currentZoom}%
-              </label>
-              <input
-                type="range"
-                min="50"
-                max="200"
-                step="25"
-                value={currentZoom}
-                onChange={(e) => {
-                  const value = parseInt(e.target.value);
-                  setCurrentZoom(value);
-                  document.documentElement.style.zoom = `${value}%`;
-                }}
-                className="w-full h-2 bg-white/20 rounded-lg appearance-none cursor-pointer slider"
-                aria-label="Adjust zoom level"
-              />
-            </div>
-
-            {/* Accessibility Toggles */}
             <div className="space-y-4">
+              {/* High Contrast */}
               <div className="flex items-center justify-between">
-                <div className="flex items-center gap-3">
+                <div className="flex items-center space-x-3">
                   <Contrast className="w-5 h-5 text-cyan-400" />
                   <div>
-                    <label className="text-white font-medium">High Contrast</label>
+                    <label htmlFor="high-contrast" className="text-white font-medium">
+                      High Contrast
+                    </label>
                     <p className="text-xs text-gray-400">Enhanced color contrast</p>
                   </div>
                 </div>
                 <button
-                  onClick={() => toggleSetting('highContrast')}
+                  id="high-contrast"
+                  onClick={toggleHighContrast}
                   className={`relative inline-flex h-6 w-11 items-center rounded-full transition-colors focus:outline-none focus:ring-2 focus:ring-cyan-400 focus:ring-offset-2 focus:ring-offset-black ${
-                    settings.highContrast ? 'bg-cyan-500' : 'bg-white/20'
+                    highContrast ? 'bg-cyan-500' : 'bg-gray-600'
                   }`}
-                  role="switch"
-                  aria-checked={settings.highContrast}
+                  aria-pressed={highContrast}
                   aria-label="Toggle high contrast mode"
                 >
                   <span
                     className={`inline-block h-4 w-4 transform rounded-full bg-white transition-transform ${
-                      settings.highContrast ? 'translate-x-6' : 'translate-x-1'
+                      highContrast ? 'translate-x-6' : 'translate-x-1'
                     }`}
                   />
                 </button>
               </div>
 
+              {/* Large Text */}
               <div className="flex items-center justify-between">
-                <div className="flex items-center gap-3">
-                  <Type className="w-5 h-5 text-blue-400" />
+                <div className="flex items-center space-x-3">
+                  <Type className="w-5 h-5 text-cyan-400" />
                   <div>
-                    <label className="text-white font-medium">Large Text</label>
-                    <p className="text-xs text-gray-400">Increased font sizes</p>
+                    <label htmlFor="large-text" className="text-white font-medium">
+                      Large Text
+                    </label>
+                    <p className="text-xs text-gray-400">Increase text size</p>
                   </div>
                 </div>
                 <button
-                  onClick={() => toggleSetting('largeText')}
+                  id="large-text"
+                  onClick={toggleLargeText}
                   className={`relative inline-flex h-6 w-11 items-center rounded-full transition-colors focus:outline-none focus:ring-2 focus:ring-cyan-400 focus:ring-offset-2 focus:ring-offset-black ${
-                    settings.largeText ? 'bg-blue-500' : 'bg-white/20'
+                    largeText ? 'bg-cyan-500' : 'bg-gray-600'
                   }`}
-                  role="switch"
-                  aria-checked={settings.largeText}
+                  aria-pressed={largeText}
                   aria-label="Toggle large text mode"
                 >
                   <span
                     className={`inline-block h-4 w-4 transform rounded-full bg-white transition-transform ${
-                      settings.largeText ? 'translate-x-6' : 'translate-x-1'
+                      largeText ? 'translate-x-6' : 'translate-x-1'
                     }`}
                   />
                 </button>
               </div>
 
+              {/* Reduced Motion */}
               <div className="flex items-center justify-between">
-                <div className="flex items-center gap-3">
-                  <Eye className="w-5 h-5 text-purple-400" />
+                <div className="flex items-center space-x-3">
+                  <MousePointer className="w-5 h-5 text-cyan-400" />
                   <div>
-                    <label className="text-white font-medium">Reduced Motion</label>
+                    <label htmlFor="reduced-motion" className="text-white font-medium">
+                      Reduced Motion
+                    </label>
                     <p className="text-xs text-gray-400">Minimize animations</p>
                   </div>
                 </div>
                 <button
-                  onClick={() => toggleSetting('reducedMotion')}
+                  id="reduced-motion"
+                  onClick={toggleReducedMotion}
                   className={`relative inline-flex h-6 w-11 items-center rounded-full transition-colors focus:outline-none focus:ring-2 focus:ring-cyan-400 focus:ring-offset-2 focus:ring-offset-black ${
-                    settings.reducedMotion ? 'bg-purple-500' : 'bg-white/20'
+                    reducedMotion ? 'bg-cyan-500' : 'bg-gray-600'
                   }`}
-                  role="switch"
-                  aria-checked={settings.reducedMotion}
+                  aria-pressed={reducedMotion}
                   aria-label="Toggle reduced motion mode"
                 >
                   <span
                     className={`inline-block h-4 w-4 transform rounded-full bg-white transition-transform ${
-                      settings.reducedMotion ? 'translate-x-6' : 'translate-x-1'
+                      reducedMotion ? 'translate-x-6' : 'translate-x-1'
                     }`}
                   />
-                  <Eye className="w-4 h-4 text-gray-400" />
-                  <span className="text-gray-300">Show Focus Indicators</span>
-                </label>
+                </button>
               </div>
 
+              {/* Screen Reader */}
               <div className="flex items-center justify-between">
-                <div className="flex items-center gap-3">
-                  <Keyboard className="w-5 h-5 text-green-400" />
+                <div className="flex items-center space-x-3">
+                  <Volume2 className="w-5 h-5 text-cyan-400" />
                   <div>
-                    <label className="text-white font-medium">Focus Indicator</label>
-                    <p className="text-xs text-gray-400">Enhanced focus visibility</p>
+                    <label htmlFor="screen-reader" className="text-white font-medium">
+                      Screen Reader
+                    </label>
+                    <p className="text-xs text-gray-400">Enhanced announcements</p>
                   </div>
                 </div>
                 <button
-                  onClick={() => toggleSetting('focusIndicator')}
+                  id="screen-reader"
+                  onClick={toggleScreenReader}
                   className={`relative inline-flex h-6 w-11 items-center rounded-full transition-colors focus:outline-none focus:ring-2 focus:ring-cyan-400 focus:ring-offset-2 focus:ring-offset-black ${
-                    settings.focusIndicator ? 'bg-green-500' : 'bg-white/20'
+                    screenReader ? 'bg-cyan-500' : 'bg-gray-600'
                   }`}
-                  role="switch"
-                  aria-checked={settings.focusIndicator}
-                  aria-label="Toggle focus indicator mode"
+                  aria-pressed={screenReader}
+                  aria-label="Toggle screen reader mode"
                 >
                   <span
                     className={`inline-block h-4 w-4 transform rounded-full bg-white transition-transform ${
-                      settings.focusIndicator ? 'translate-x-6' : 'translate-x-1'
+                      screenReader ? 'translate-x-6' : 'translate-x-1'
                     }`}
                   />
-                  {reducedMotion ? (
-                    <EyeOff className="w-4 h-4 text-gray-400" />
-                  ) : (
-                    <Eye className="w-4 h-4 text-gray-400" />
-                  )}
-                  <span className="text-gray-300">Reduce Motion</span>
-                </label>
+                </button>
               </div>
-            </div>
 
-            {/* Keyboard Shortcuts Help */}
-            <div className="mt-6 pt-4 border-t border-white/20">
-              <div className="flex items-center gap-2 mb-3">
-                <HelpCircle className="w-4 h-4 text-yellow-400" />
-                <span className="text-sm font-medium text-white">Keyboard Shortcuts</span>
+              {/* Font Size Slider */}
+              <div className="space-y-2">
+                <div className="flex items-center justify-between">
+                  <label htmlFor="font-size" className="text-white font-medium">
+                    Font Size
+                  </label>
+                  <span className="text-sm text-gray-400">{fontSize}px</span>
+                </div>
+                <input
+                  id="font-size"
+                  type="range"
+                  min="12"
+                  max="24"
+                  step="1"
+                  value={fontSize}
+                  onChange={(e) => setFontSize(Number(e.target.value))}
+                  className="w-full h-2 bg-gray-600 rounded-lg appearance-none cursor-pointer slider"
+                  aria-label="Adjust font size"
+                  aria-valuemin={12}
+                  aria-valuemax={24}
+                  aria-valuenow={fontSize}
+                />
+                <div className="flex justify-between text-xs text-gray-400">
+                  <span>A</span>
+                  <span>A</span>
+                  <span>A</span>
+                </div>
               </div>
-              <div className="grid grid-cols-2 gap-2 text-xs text-gray-400">
-                <div>Ctrl/Cmd + = : Zoom In</div>
-                <div>Ctrl/Cmd + - : Zoom Out</div>
-                <div>Ctrl/Cmd + 0 : Reset Zoom</div>
-                <div>Ctrl/Cmd + M : Toggle Mute</div>
-                <div>Ctrl/Cmd + H : High Contrast</div>
-                <div>Ctrl/Cmd + L : Large Text</div>
-              </div>
+
+              {/* Reset Button */}
+              <button
+                onClick={resetSettings}
+                className="w-full px-4 py-2 bg-gray-600 hover:bg-gray-500 text-white rounded-lg transition-colors focus:outline-none focus:ring-2 focus:ring-cyan-400 focus:ring-offset-2 focus:ring-offset-black"
+                aria-label="Reset all accessibility settings to default"
+              >
+                Reset to Default
+              </button>
             </div>
           </motion.div>
         )}
       </AnimatePresence>
-
-      {/* Screen Reader Only Content */}
-      <div className="sr-only" aria-live="polite" aria-atomic="true">
-        Accessibility panel {isOpen ? 'opened' : 'closed'}
-      </div>
     </>
   );
 };
 
-      {/* Screen Reader Announcements */}
-      <div ref={announcementRef} className="sr-only" aria-live="polite" aria-atomic="true" />
-    </>
-  );
-}
+// Keyboard Navigation Hook
+export const useKeyboardNavigation = (items: string[], onSelect: (item: string) => void) => {
+  const [selectedIndex, setSelectedIndex] = useState(0);
+
+  useEffect(() => {
+    const handleKeyDown = (event: KeyboardEvent) => {
+      switch (event.key) {
+        case 'ArrowDown':
+          event.preventDefault();
+          setSelectedIndex(prev => (prev + 1) % items.length);
+          break;
+        case 'ArrowUp':
+          event.preventDefault();
+          setSelectedIndex(prev => (prev - 1 + items.length) % items.length);
+          break;
+        case 'Enter':
+        case ' ':
+          event.preventDefault();
+          onSelect(items[selectedIndex]);
+          break;
+        case 'Home':
+          event.preventDefault();
+          setSelectedIndex(0);
+          break;
+        case 'End':
+          event.preventDefault();
+          setSelectedIndex(items.length - 1);
+          break;
+      }
+    };
+
+    document.addEventListener('keydown', handleKeyDown);
+    return () => document.removeEventListener('keydown', handleKeyDown);
+  }, [items, selectedIndex, onSelect]);
+
+  return { selectedIndex, setSelectedIndex };
+};
+
+// Focus Trap Hook
+export const useFocusTrap = (isActive: boolean) => {
+  const containerRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (!isActive) return;
+
+    const container = containerRef.current;
+    if (!container) return;
+
+    const focusableElements = container.querySelectorAll(
+      'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
+    );
+
+    const firstElement = focusableElements[0] as HTMLElement;
+    const lastElement = focusableElements[focusableElements.length - 1] as HTMLElement;
+
+    const handleTabKey = (event: KeyboardEvent) => {
+      if (event.key === 'Tab') {
+        if (event.shiftKey) {
+          if (document.activeElement === firstElement) {
+            event.preventDefault();
+            lastElement.focus();
+          }
+        } else {
+          if (document.activeElement === lastElement) {
+            event.preventDefault();
+            firstElement.focus();
+          }
+        }
+      }
+    };
+
+    container.addEventListener('keydown', handleTabKey);
+    return () => container.removeEventListener('keydown', handleTabKey);
+  }, [isActive]);
+
+  return containerRef;
+};
+
+// Screen Reader Announcement Hook
+export const useScreenReaderAnnouncement = () => {
+  const announce = (message: string, priority: 'polite' | 'assertive' = 'polite') => {
+    const announcement = document.createElement('div');
+    announcement.setAttribute('aria-live', priority);
+    announcement.setAttribute('aria-atomic', 'true');
+    announcement.className = 'sr-only';
+    announcement.textContent = message;
+    
+    document.body.appendChild(announcement);
+    
+    // Remove after announcement
+    setTimeout(() => {
+      document.body.removeChild(announcement);
+    }, 1000);
+  };
+
+  return announce;
+};
+
+// Skip Link Component
+export const SkipLink: React.FC<{ href: string; children: React.ReactNode }> = ({ href, children }) => (
+  <a
+    href={href}
+    className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 z-50 px-4 py-2 bg-cyan-500 text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-cyan-400 focus:ring-offset-2"
+  >
+    {children}
+  </a>
+);
+
+// Screen Reader Only Text
+export const SrOnly: React.FC<{ children: React.ReactNode }> = ({ children }) => (
+  <span className="sr-only">{children}</span>
+);
+
+// Export the main provider component as default
+export default AccessibilityProvider;
