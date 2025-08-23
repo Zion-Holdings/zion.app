@@ -251,7 +251,7 @@ const UltraFuturisticFooter2036: React.FC = () => {
                   className="w-10 h-10 bg-gray-800/50 border border-gray-700/50 rounded-lg flex items-center justify-center text-gray-400 hover:text-cyan-400 hover:bg-gray-700/50 hover:border-cyan-500/50 transition-all duration-200"
                   aria-label={`Follow us on ${social.name}`}
                 >
-                  <social.icon className="w-5 h-5" />
+                  {social.icon}
                 </a>
               ))}
             </motion.div>
