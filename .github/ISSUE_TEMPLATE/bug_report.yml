@@ -1,0 +1,50 @@
+name: Bug report
+description: Report a reproducible problem
+labels: [needs-triage, type/bug]
+title: 'bug: '
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to fill out this bug report!
+  - type: input
+    id: summary
+    attributes:
+      label: Summary
+      description: Briefly describe the bug
+      placeholder: e.g. Lint step fails on Node 20
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      description: Provide steps to reproduce the issue
+      placeholder: |
+        1. Run ...
+        2. Click ...
+        3. See error
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+    validations:
+      required: true
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual behavior
+    validations:
+      required: true
+  - type: input
+    id: env
+    attributes:
+      label: Environment
+      placeholder: OS, Node, npm versions
+  - type: textarea
+    id: logs
+    attributes:
+      label: Logs
+      description: Paste relevant logs or screenshots

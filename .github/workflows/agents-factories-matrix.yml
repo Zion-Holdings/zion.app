@@ -1,0 +1,92 @@
+name: Agents Factories Matrix
+
+on:
+  schedule:
+    - cron: '7 */4 * * *' # every 4 hours
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+concurrency:
+  group: agents-factories-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  discover:
+    runs-on: ubuntu-latest
+    outputs:
+      factories: ${{ steps.set-matrix.outputs.factories }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci --no-audit --no-fund
+
+      - name: Discover factories
+        id: set-matrix
+        run: |
+          list=$(node -e "const fs=require('fs');const p='automation';const items=fs.readdirSync(p).filter(f=>f.endsWith('-factory.cjs'));console.log(JSON.stringify(items));")
+          echo "Found factories: $list"
+          echo "factories=$list" >> $GITHUB_OUTPUT
+
+  run:
+    needs: discover
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        factory: ${{ fromJson(needs.discover.outputs.factories) }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci --no-audit --no-fund
+
+      - name: Run factory
+        env:
+          NODE_OPTIONS: --max_old_space_size=2048
+        run: |
+          set -e
+          echo "Running ${{ matrix.factory }}"
+          node automation/${{ matrix.factory }} || (
+            echo "Retrying ${{ matrix.factory }} after failure" && sleep 5 && node automation/${{ matrix.factory }} || true
+          )
+
+      - name: Upload factory logs
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: factory-${{ matrix.factory }}-logs
+          path: |
+            automation/logs/**/*.log
+            automation/**/reports/**/*.json
+          if-no-files-found: ignore
+
+      - name: Commit and push changes
+        run: |
+          if [ -n "$(git status --porcelain)" ]; then
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add -A
+            git commit -m "chore(agents): run factory ${{ matrix.factory }} [skip ci]"
+            git push
+          else
+            echo "No changes to commit"
+          fi

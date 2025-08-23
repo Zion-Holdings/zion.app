@@ -1,0 +1,57 @@
+const path = require('path');
+const { spawnSync } = require('child_process');
+
+function runNode(relPath, args = []) {
+  const abs = path.resolve(__dirname, '..', '..', relPath);
+<<<<<<<< HEAD:netlify/functions/automation-insights-runner.js.backup.1755991431
+  const res = spawnSync('node', [abs, ...args], { stdio: 'pipe', encoding: 'utf8' });
+========
+  const res = spawnSync('node', [abs, ...args], { stdio: 'pipe', encoding: 'utf8', shell: false });
+>>>>>>>> 5f48a381108fa3a8a43c189dd4b043133ce9307e:netlify/functions/internal-link-map-runner.js.backup.1755990404
+  return { status: res.status || 0, stdout: res.stdout || '', stderr: res.stderr || '' };
+}
+
+exports.config = {
+<<<<<<<< HEAD:netlify/functions/automation-insights-runner.js.backup.1755991431
+  schedule: '*/20 * * * *', // every 20 minutes
+========
+  schedule: '*/30 * * * *',
+>>>>>>>> 5f48a381108fa3a8a43c189dd4b043133ce9307e:netlify/functions/internal-link-map-runner.js.backup.1755990404
+};
+
+exports.handler = async () => {
+  const logs = [];
+  function logStep(name, fn) {
+    logs.push(`\n=== ${name} ===`);
+    const { status, stdout, stderr } = fn();
+    if (stdout) logs.push(stdout);
+    if (stderr) logs.push(stderr);
+    logs.push(`exit=${status}`);
+    return status;
+  }
+
+<<<<<<<< HEAD:netlify/functions/automation-insights-runner.js.backup.1755991431
+<<<<<<< HEAD:netlify/functions/automation-insights-runner.js
+  logStep('automation:insights', () => runNode('automation/automation-insights-digest.cjs'));
+========
+<<<<<<< HEAD:netlify/functions/internal-link-map-runner.js
+  logStep('internal-link-graph', () => runNode('automation/internal-link-graph.cjs'));
+>>>>>>>> 5f48a381108fa3a8a43c189dd4b043133ce9307e:netlify/functions/internal-link-map-runner.js.backup.1755990404
+  logStep('git:sync', () => runNode('automation/advanced-git-sync.cjs'));
+=======
+  // Generate sitemap for crawling
+  logStep('sitemap:generate', () => runNode('scripts/generate-sitemap.js'));
+
+  // Build search index if available
+  try {
+    logStep('search:index', () => runNode('scripts/generate-search-index.js'));
+  } catch (error) {
+    logs.push(`Search index generation skipped: ${String(error)}`);
+  }
+
+  // Commit and push
+  logStep('git:sync', () => runNode('automation/git-sync.cjs'));
+>>>>>>> origin/cursor/develop-autonomous-cloud-agents-for-automation-orchestration-ded0:netlify/functions/site-crawler.js
+
+  return { statusCode: 200, body: logs.join('\n') };
+};
