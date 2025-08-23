@@ -133,7 +133,7 @@ export default function Comprehensive2025InnovativeServicesShowcase() {
         title="2025 Comprehensive Innovative Services Showcase | Zion Tech Group"
         description="Discover our comprehensive portfolio of innovative micro SAAS services, AI solutions, and cutting-edge technology platforms. From quantum computing to healthcare AI, explore the future of business technology."
         keywords={["innovative micro SAAS", "AI services", "quantum computing", "healthcare AI", "cybersecurity", "blockchain", "space technology", "autonomous vehicles", "IoT", "metaverse", "Zion Tech Group"]}
-        ogImage="https://ziontechgroup.com/og-innovative-services-2025.jpg"
+        image="https://ziontechgroup.com/og-innovative-services-2025.jpg"
       />
 
       {/* Hero Section */}
