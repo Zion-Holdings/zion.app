@@ -15,7 +15,7 @@ const EnhancedSEO: React.FC<EnhancedSEOProps> = ({
   description = "Pioneering the future of technology with revolutionary AI consciousness, quantum computing, and autonomous solutions that transform businesses worldwide. From micro SAAS to enterprise infrastructure.",
   keywords = "AI consciousness, quantum computing, autonomous solutions, space technology, cybersecurity, business intelligence, Zion Tech Group, 2045 technology, micro SAAS, enterprise solutions",
   ogImage = "/og-image-2045.jpg",
-  canonicalUrl,
+  canonicalUrl = "https://ziontechgroup.com",
   structuredData
 }) => {
   const defaultStructuredData = {
@@ -26,7 +26,7 @@ const EnhancedSEO: React.FC<EnhancedSEOProps> = ({
     "url": "https://ziontechgroup.com",
     "logo": "https://ziontechgroup.com/logo.png",
     "description": "Revolutionary technology company pioneering AI consciousness, quantum computing, and autonomous solutions for businesses worldwide.",
-    "foundingDate": "2020",
+    "foundingDate": "2025",
     "address": {
       "@type": "PostalAddress",
       "streetAddress": "364 E Main St STE 1008",
@@ -130,14 +130,13 @@ const EnhancedSEO: React.FC<EnhancedSEOProps> = ({
       <meta name="keywords" content={keywords} />
       <meta name="author" content="Zion Tech Group" />
       <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
-      <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
       
       {/* Canonical URL */}
-      {canonicalUrl && <link rel="canonical" href={canonicalUrl} />}
+      <link rel="canonical" href={canonicalUrl} />
       
       {/* Open Graph / Facebook */}
       <meta property="og:type" content="website" />
-      <meta property="og:url" content={canonicalUrl || "https://ziontechgroup.com"} />
+      <meta property="og:url" content={canonicalUrl} />
       <meta property="og:title" content={title} />
       <meta property="og:description" content={description} />
       <meta property="og:image" content={ogImage} />
@@ -149,7 +148,7 @@ const EnhancedSEO: React.FC<EnhancedSEOProps> = ({
       
       {/* Twitter */}
       <meta property="twitter:card" content="summary_large_image" />
-      <meta property="twitter:url" content={canonicalUrl || "https://ziontechgroup.com"} />
+      <meta property="twitter:url" content={canonicalUrl} />
       <meta property="twitter:title" content={title} />
       <meta property="twitter:description" content={description} />
       <meta property="twitter:image" content={ogImage} />
@@ -157,6 +156,7 @@ const EnhancedSEO: React.FC<EnhancedSEOProps> = ({
       <meta property="twitter:creator" content="@ziontechgroup" />
       
       {/* Additional Meta Tags */}
+      <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
       <meta name="theme-color" content="#06b6d4" />
       <meta name="msapplication-TileColor" content="#06b6d4" />
       <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -168,12 +168,24 @@ const EnhancedSEO: React.FC<EnhancedSEOProps> = ({
       <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
       <link rel="preconnect" href="https://www.google-analytics.com" />
       
-      {/* Favicon and App Icons */}
+      {/* PWA Manifest */}
+      <link rel="manifest" href="/manifest.json" />
+      
+      {/* Favicons */}
       <link rel="icon" type="image/x-icon" href="/favicon.ico" />
       <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
       <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
       <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-      <link rel="manifest" href="/site.webmanifest" />
+      
+      {/* Additional Preconnect and DNS Prefetch */}
+      <link rel="preconnect" href="https://cdn.jsdelivr.net" />
+      <link rel="dns-prefetch" href="//cdn.jsdelivr.net" />
+      
+      {/* Security Headers */}
+      <meta httpEquiv="X-Content-Type-Options" content="nosniff" />
+      <meta httpEquiv="X-Frame-Options" content="DENY" />
+      <meta httpEquiv="X-XSS-Protection" content="1; mode=block" />
+      <meta httpEquiv="Referrer-Policy" content="strict-origin-when-cross-origin" />
       
       {/* Structured Data */}
       <script
@@ -183,19 +195,15 @@ const EnhancedSEO: React.FC<EnhancedSEOProps> = ({
         }}
       />
       
-      {/* Additional SEO Meta Tags */}
-      <meta name="application-name" content="Zion Tech Group" />
-      <meta name="mobile-web-app-capable" content="yes" />
+      {/* Additional Performance Optimizations */}
       <meta name="format-detection" content="telephone=no" />
-      <meta name="msapplication-config" content="/browserconfig.xml" />
+      <meta name="mobile-web-app-capable" content="yes" />
+      <meta name="application-name" content="Zion Tech Group" />
       
-      {/* Security Headers */}
-      <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
-      <meta name="referrer" content="strict-origin-when-cross-origin" />
-      
-      {/* Performance Hints */}
-      <link rel="dns-prefetch" href="//www.google-analytics.com" />
-      <link rel="dns-prefetch" href="//fonts.googleapis.com" />
+      {/* Social Media Verification */}
+      <meta name="google-site-verification" content="your-verification-code" />
+      <meta name="msvalidate.01" content="your-verification-code" />
+      <meta name="yandex-verification" content="your-verification-code" />
     </Head>
   );
 };

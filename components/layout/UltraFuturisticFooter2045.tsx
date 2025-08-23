@@ -1,10 +1,9 @@
 import React from 'react';
-import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { 
-  Phone, Mail, MapPin, Globe, Shield, Rocket, Brain, Atom,
-  Facebook, Twitter, Linkedin, Instagram, Youtube, Github, Zap, Heart, Star,
-  Users, Lock, Cloud, Code, Server, Database, Network, Settings, Target, Play
+  Brain, Atom, Target, Shield, Rocket, Users, Cloud, Code, Server, Network, Settings, Lock,
+  Zap, Heart, Globe, Star, Play, Database, Facebook, Twitter, Linkedin, Instagram, Youtube, Github,
+  Phone, Mail, MapPin
 } from 'lucide-react';
 
 const UltraFuturisticFooter2045: React.FC = () => {
@@ -141,16 +140,13 @@ const UltraFuturisticFooter2045: React.FC = () => {
             </motion.div>
 
             {/* Footer Sections */}
-            {footerSections.map((section) => (
-              <motion.div key={section.title} variants={fadeInUp} className="lg:col-span-1">
-                <h4 className="text-lg font-semibold text-white mb-6 flex items-center space-x-2">
-                  <span className="w-1 h-6 bg-gradient-to-r from-cyan-500 to-blue-500 rounded-full"></span>
-                  <span>{section.title}</span>
-                </h4>
+            {footerSections.map((section, sectionIndex) => (
+              <motion.div key={section.title} variants={fadeInUp} className="space-y-4">
+                <h4 className="text-lg font-semibold text-white mb-4">{section.title}</h4>
                 <ul className="space-y-3">
-                  {section.links.map((link) => (
+                  {section.links.map((link, linkIndex) => (
                     <li key={link.name}>
-                      <Link
+                      <a
                         href={link.href}
                         className="flex items-center space-x-3 text-gray-400 hover:text-cyan-400 transition-all duration-200 group hover:translate-x-1"
                       >
@@ -160,7 +156,7 @@ const UltraFuturisticFooter2045: React.FC = () => {
                         <span className="text-sm group-hover:text-cyan-400 transition-colors duration-200">
                           {link.name}
                         </span>
-                      </Link>
+                      </a>
                     </li>
                   ))}
                 </ul>
@@ -168,102 +164,44 @@ const UltraFuturisticFooter2045: React.FC = () => {
             ))}
           </motion.div>
 
-          {/* Newsletter Section */}
-          <motion.div
-            variants={fadeInUp}
-            initial="initial"
-            whileInView="animate"
-            viewport={{ once: true }}
-            className="mt-16 pt-12 border-t border-cyan-500/20"
-          >
-            <div className="text-center">
-              <h3 className="text-2xl font-bold text-white mb-4">
-                Stay Ahead with Innovation
-              </h3>
-              <p className="text-gray-400 mb-8 max-w-2xl mx-auto">
-                Get the latest insights on AI, quantum computing, and cutting-edge technology solutions delivered to your inbox.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
-                <input
-                  type="email"
-                  placeholder="Enter your email"
-                  className="flex-1 px-4 py-3 bg-gray-900/50 border border-cyan-500/20 rounded-lg text-gray-300 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-cyan-500/50 focus:border-cyan-500/50 transition-all duration-200"
-                />
-                <button className="px-6 py-3 bg-gradient-to-r from-cyan-500 to-blue-500 text-white font-medium rounded-lg hover:from-cyan-600 hover:to-blue-600 transition-all duration-200 hover:scale-105 shadow-lg hover:shadow-cyan-500/25">
-                  Subscribe
-                </button>
-              </div>
-            </div>
-          </motion.div>
-        </div>
-
-        {/* Bottom Footer */}
-        <div className="border-t border-cyan-500/20 bg-black/50">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-            <div className="flex flex-col lg:flex-row items-center justify-between space-y-4 lg:space-y-0">
+          {/* Bottom Section */}
+          <div className="mt-16 pt-8 border-t border-gray-800/50">
+            <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
               {/* Copyright */}
-              <div className="text-gray-400 text-sm">
-                <p>&copy; {currentYear} Zion Tech Group. All rights reserved.</p>
-                <p className="mt-1">Pioneering the future of technology since 2025</p>
-              </div>
+              <motion.div
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                transition={{ duration: 0.5 }}
+                viewport={{ once: true }}
+                className="text-gray-400 text-sm"
+              >
+                © {currentYear} Zion Tech Group. All rights reserved. Revolutionary Technology 2045.
+              </motion.div>
 
               {/* Social Links */}
-              <div className="flex items-center space-x-4">
-                {socialLinks.map((social) => (
-                  <Link
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.2 }}
+                viewport={{ once: true }}
+                className="flex space-x-4"
+              >
+                {socialLinks.map((social, index) => (
+                  <a
                     key={social.name}
                     href={social.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className={`p-2 rounded-lg bg-gray-900/50 border border-cyan-500/20 text-gray-400 ${social.color} transition-all duration-200 hover:scale-110 hover:border-cyan-500/50`}
                     aria-label={social.name}
                   >
                     <social.icon className="w-5 h-5" />
-                  </Link>
+                  </a>
                 ))}
-              </div>
-
-              {/* Additional Links */}
-              <div className="flex items-center space-x-6 text-sm text-gray-400">
-                <Link href="/status" className="hover:text-cyan-400 transition-colors duration-200">
-                  System Status
-                </Link>
-                <Link href="/sitemap" className="hover:text-cyan-400 transition-colors duration-200">
-                  Sitemap
-                </Link>
-                <Link href="/accessibility" className="hover:text-cyan-400 transition-colors duration-200">
-                  Accessibility
-                </Link>
-              </div>
+              </motion.div>
             </div>
           </div>
         </div>
-      </div>
-
-      {/* Enhanced Floating Elements */}
-      <div className="absolute inset-0 -z-10 pointer-events-none">
-        <motion.div
-          className="absolute top-20 right-20 w-2 h-2 bg-cyan-400/40 rounded-full"
-          animate={{
-            scale: [1, 2, 1],
-            opacity: [0.4, 0.8, 0.4],
-          }}
-          transition={{
-            duration: 4,
-            repeat: Infinity,
-            ease: "easeInOut"
-          }}
-        />
-        <motion.div
-          className="absolute bottom-20 left-20 w-3 h-3 bg-purple-400/40 rounded-full"
-          animate={{
-            scale: [1, 1.5, 1],
-            opacity: [0.3, 0.7, 0.3],
-          }}
-          transition={{
-            duration: 6,
-            repeat: Infinity,
-            ease: "easeInOut"
-          }}
-        />
       </div>
     </footer>
   );

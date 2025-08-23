@@ -111,7 +111,7 @@ const Homepage2044: React.FC = () => {
 
   return (
     <Layout>
-      <main className="relative">
+      <main className="relative z-10" role="main" aria-label="Zion Tech Group Homepage">
         {/* Hero Section */}
         <section 
           className="min-h-screen flex items-center justify-center px-4 relative overflow-hidden"
