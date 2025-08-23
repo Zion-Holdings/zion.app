@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { 
   Brain, Atom, Shield, Target, Rocket,
   Mail, Phone, MapPin, Globe, ArrowUp,
-  Facebook, Twitter, Linkedin, Youtube, Github,
+  Facebook, Twitter, Linkedin, Youtube, Github, Instagram,
   Cloud, Code, Server, Network, Settings, Lock,
   Star, Heart, Users, FileText, ArrowRight, HelpCircle
 } from 'lucide-react';

@@ -13,7 +13,7 @@ import { revolutionary2044AdvancedMicroSaas } from '../data/revolutionary-2044-a
 import { revolutionary2044ITServices } from '../data/revolutionary-2044-it-services';
 import { revolutionary2044AIServices } from '../data/revolutionary-2044-ai-services';
 import { realEnterpriseMicroSaas2025 } from '../data/2025-real-enterprise-micro-saas';
-import { innovativeITInfrastructureServices2025 } from '../data/2025-innovative-it-infrastructure-services';
+import { innovative2025ITInfrastructureServices } from '../data/2025-innovative-it-infrastructure-services';
 import { innovativeAIAutonomousServices2025 } from '../data/2025-innovative-ai-autonomous-services';
 import { revolutionary2045AdvancedAIServices } from '../data/revolutionary-2045-advanced-ai-services';
 import { revolutionary2045AdvancedITServices } from '../data/revolutionary-2045-advanced-it-services';
@@ -70,7 +70,7 @@ const Homepage2045: React.FC = () => {
     ...revolutionary2044ITServices,
     ...revolutionary2044AIServices,
     ...realEnterpriseMicroSaas2025,
-    ...innovativeITInfrastructureServices2025,
+    ...innovative2025ITInfrastructureServices,
     ...innovativeAIAutonomousServices2025
   ];
 

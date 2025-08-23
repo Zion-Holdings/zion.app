@@ -3,10 +3,13 @@ import Link from 'next/link';
 import { motion, AnimatePresence } from 'framer-motion';
 import { 
   Menu, ChevronDown, X, Phone, Mail, MapPin, ArrowRight,
-  Brain, Rocket, Shield, Atom, BookOpen,
-  DollarSign, BarChart3, Star, Sparkles, 
-  Grid, Globe,
-  HelpCircle, FileText, Video, 
+  Brain, Rocket, Shield, Zap, Target, Atom, BookOpen,
+  Truck, DollarSign, BarChart3, Globe, Users, Star, Sparkles, 
+  Cpu, Lock, Cloud, Settings, Eye, Award, Clock, Heart, Lightbulb,
+  Search, Grid, List, TrendingUp, Shield as ShieldIcon, Globe as GlobeIcon,
+  User, ShoppingCart, Bell, HelpCircle, FileText, Video, Headphones, 
+  Code, Database, Network, Server, Monitor, Smartphone,
+  Camera, Gamepad2, Palette, Music, Film, BookOpenCheck,
   Building, MessageCircle
 } from 'lucide-react';
 
@@ -28,19 +31,41 @@ const contactInfo = {
   website: 'https://ziontechgroup.com'
 };
 
-function normalizeHref(href: string): string {
-  if (!href) return href;
-  if (href.startsWith('http://') || href.startsWith('https://') || href.startsWith('mailto:') || href.startsWith('tel:')) {
-    return href;
-  }
-  if (!href.startsWith('/')) return href;
-  const hasQueryOrHash = href.includes('?') || href.includes('#');
-  if (hasQueryOrHash) return href;
-  return href.endsWith('/') ? href : href + '/';
-}
-
-
 const navigationItems: NavigationItem[] = [
+  {
+    name: 'Pricing',
+    href: '/pricing',
+    icon: <DollarSign className="w-5 h-5" />,
+    description: 'Plans and average market prices',
+    children: [
+      { name: 'Standard Pricing', href: '/pricing', description: 'Our plans' },
+      { name: 'Market Pricing', href: '/market-pricing', description: 'Compare market averages' }
+    ]
+  },
+  {
+    name: 'Resources',
+    href: '/resources',
+    icon: <BookOpen className="w-5 h-5" />,
+    description: 'Guides, reports and tools',
+    children: [
+      { name: 'Blog', href: '/blog', description: 'Insights and updates' },
+      { name: 'Case Studies', href: '/case-studies', description: 'Proven results' },
+      { name: 'Developer', href: '/developer', description: 'Docs and SDKs' },
+      { name: 'API Docs', href: '/api-documentation', description: 'API reference' },
+      { name: 'Services Advertising', href: '/services-advertising', description: 'Features, benefits and market pricing links' }
+    ]
+  },
+  {
+    name: 'Contact',
+    href: '/contact',
+    icon: <Phone className="w-5 h-5" />,
+    description: 'Talk to our team',
+    featured: true,
+    children: [
+      { name: 'Contact Sales', href: '/contact', description: 'Get a quote' },
+      { name: 'Support', href: '/support', description: 'Help center' }
+    ]
+  },
   {
     name: 'Services',
     href: '/services',
@@ -49,20 +74,14 @@ const navigationItems: NavigationItem[] = [
     badge: 'New',
     children: [
       { name: 'AI & Data', href: '/services#ai', description: 'AI, data, ML services' },
+      { name: 'Developer Tools', href: '/services#developer-tools', description: 'Dev productivity & tooling' },
       { name: 'Cloud & FinOps', href: '/services#cloud', description: 'Cloud, cost, platform' },
       { name: 'Observability', href: '/services#observability', description: 'Monitoring & telemetry' },
-      { name: 'Developer Tools', href: '/services#developer-tools', description: 'Developer productivity' },
-      { name: 'Training & Education', href: '/training', description: 'Learning and R&D' },
-      { name: 'SEO Automation Suite', href: '/seo-automation-suite', description: 'Technical SEO automation' },
-      { name: 'IT Asset Discovery Agent', href: '/it-asset-discovery-agent', description: 'Agentless discovery' },
-      { name: 'Managed Postgres HA', href: '/managed-postgres-ha', description: 'HA Postgres ops' },
-      { name: 'Micro SAAS', href: '/micro-saas', description: 'Business tools and automation' },
-      { name: 'New 2034 Services', href: '/services?sort=newest', description: 'Latest additions' },
-      { name: 'RAG Evaluation Lab', href: '/rag-evaluation-lab', description: 'Measure RAG quality & cost' },
-      { name: 'SOC 2 Compliance Automation', href: '/soc2-compliance-automation', description: 'Automate evidence & controls' },
-      { name: 'Browser Automation Cloud', href: '/browser-automation-cloud', description: 'Scale headless browser flows' },
-      { name: 'Secrets Rotation Automation', href: '/secrets-rotation-automation', description: 'Policy-driven key rotation' },
-      { name: 'API Performance Testing', href: '/api-performance-testing', description: 'Load/soak tests with CI gates' }
+      { name: 'Quality & Monitoring', href: '/services#quality', description: 'QA, testing, reliability' },
+      { name: 'AI Evaluation Orchestrator', href: '/services/ai-evaluation-orchestrator', description: 'Automated LLM evals' },
+      { name: 'SEO Automation Suite', href: '/services/seo-automation-suite', description: 'Technical SEO automation' },
+      { name: 'IT Asset Discovery Agent', href: '/services/it-asset-discovery-agent', description: 'Agentless discovery' },
+      { name: 'Managed Postgres HA', href: '/services/managed-postgres-ha', description: 'HA Postgres ops' }
     ]
   },
   {
@@ -74,18 +93,10 @@ const navigationItems: NavigationItem[] = [
     featured: true,
     children: [
       { name: 'View All Services', href: '/comprehensive-services-showcase-2025', description: 'Complete services portfolio' },
-      { name: 'Ultimate 2035 Futuristic', href: '/ultimate-2035-futuristic-services-showcase', description: 'Revolutionary future technology', featured: true },
-      { name: 'Ultimate 2025 Micro SAAS', href: '/ultimate-2025-micro-saas-showcase', description: 'Latest innovative services', featured: true },
-      { name: 'Service Categories', href: '/comprehensive-services-showcase-2025', description: 'Browse by category' },
-      { name: 'Pricing Comparison', href: '/comprehensive-services-showcase-2025', description: 'Compare service costs' },
-      { name: 'Service Search', href: '/comprehensive-services-showcase-2025', description: 'Find specific services' },
       { name: 'Market Pricing', href: '/market-pricing', description: 'Average market prices & references' },
       { name: 'Latest Innovations', href: '/revolutionary-2025-services-showcase', description: 'Cutting-edge solutions' },
       { name: '2026 Services', href: '/revolutionary-2026-services', description: 'Next generation solutions' },
-      { name: '2027 Services', href: '/revolutionary-2027-services-showcase', description: 'Future-ready services' },
-      { name: 'Ultimate 2026', href: '/ultimate-2026-services-showcase', description: 'Premium service collection' },
-      { name: 'Enterprise Solutions', href: '/enterprise-solutions-showcase', description: 'Enterprise-grade solutions' },
-      { name: 'Innovative Business Solutions', href: '/innovative-business-solutions', description: 'Business transformation services' }
+      { name: 'Enterprise Solutions', href: '/enterprise-solutions-showcase', description: 'Enterprise-grade solutions' }
     ]
   },
   {
@@ -97,12 +108,12 @@ const navigationItems: NavigationItem[] = [
     featured: true,
     children: [
       { name: 'AI Customer Success Platform', href: '/ai-customer-success-platform', description: 'Predict and prevent churn with AI', featured: true },
-      { name: 'AI Sales Intelligence', href: '/ai-sales-intelligence-platform', description: 'Supercharge sales with AI automation', featured: true },
+      { name: 'AI Sales Intelligence', href: '/ai-sales-intelligence-platform', description: 'Supercharge sales with AI automation' },
       { name: 'AI Financial Planning', href: '/ai-financial-planning-platform', description: 'Intelligent financial forecasting' },
       { name: 'AI Decision Engine', href: '/ai-powered-decision-engine', description: 'AI-powered business decisions' },
       { name: 'AI Content Automation', href: '/intelligent-content-automation-platform', description: 'Automate content creation' },
       { name: 'AI HR Analytics', href: '/ai-hr-analytics-platform', description: 'Transform HR with AI insights' },
-      { name: 'AI Consciousness Evolution', href: '/ai-consciousness-evolution-2029', description: 'Emotional intelligence and self-awareness' },
+      { name: 'AI Consciousness Evolution', href: '/ai-consciousness-evolution-2025', description: 'Emotional intelligence and self-awareness' },
       { name: 'AI Quantum Neural Network', href: '/ai-quantum-neural-network', description: 'Hybrid AI-Quantum computing platform' },
       { name: 'AI Autonomous Business Operations', href: '/ai-autonomous-business-operations', description: 'Fully autonomous business management' },
       { name: 'AI Autonomous Research', href: '/ai-autonomous-research-assistant', description: 'Self-directed AI research' },
@@ -155,7 +166,7 @@ const navigationItems: NavigationItem[] = [
       { name: 'Quantum Logistics', href: '/quantum-logistics-optimization', description: 'Route optimization' },
       { name: 'Quantum Metaverse', href: '/quantum-metaverse', description: 'Quantum-enhanced virtual worlds' },
       { name: 'Quantum IoT Platform', href: '/quantum-iot', description: 'Quantum-secured IoT' },
-      { name: 'AI-Powered Space Technology', href: '/space-technology-ai-platform', description: 'Revolutionary space AI' }
+      { name: 'AI-Powered Space Technology', href: '/ai-powered-space-technology', description: 'Revolutionary space AI' }
     ]
   },
   {
@@ -172,70 +183,53 @@ const navigationItems: NavigationItem[] = [
       { name: 'Edge Computing Orchestration', href: '/edge-computing-orchestration-platform', description: 'Distributed edge computing' },
       { name: 'Blockchain Infrastructure', href: '/blockchain-infrastructure-platform', description: 'Enterprise blockchain solutions' },
       { name: 'AI-Powered DevOps', href: '/ai-powered-devops-platform', description: 'Intelligent development operations' },
-      { name: 'Quantum Cybersecurity', href: '/quantum-cybersecurity-platform', description: 'Next-gen quantum security' },
+      { name: 'Quantum Cybersecurity', href: '/quantum-cybersecurity-services', description: 'Next-gen quantum security' },
       { name: 'AI-Powered Cybersecurity', href: '/ai-powered-cybersecurity', description: 'Intelligent threat detection' }
     ]
   },
   {
     name: 'Industry Solutions',
-    href: '/solutions',
+    href: '/industry-solutions',
     icon: <Building className="w-5 h-5" />,
     description: 'Industry-specific technology solutions',
     badge: 'Industry',
     children: [
-      { name: 'Healthcare & Biotech', href: '/biotech-ai', description: 'AI-powered healthcare' },
-      { name: 'Financial Technology', href: '/billing-analytics', description: 'Next-gen fintech analytics' },
-      { name: 'Manufacturing AI', href: '/autonomous-manufacturing', description: 'Smart manufacturing' },
-      { name: 'Retail Technology', href: '/retail-technology-solutions', description: 'Digital retail transformation' },
+      { name: 'Healthcare AI', href: '/healthcare-ai-solutions', description: 'AI-powered healthcare' },
+      { name: 'Financial Technology', href: '/fintech-solutions', description: 'Next-gen fintech' },
+      { name: 'Manufacturing AI', href: '/manufacturing-ai-solutions', description: 'Smart manufacturing' },
+      { name: 'Retail Technology', href: '/innovative-business-solutions', description: 'Digital retail transformation' },
       { name: 'Education Technology', href: '/training', description: 'AI-powered learning' },
       { name: 'Government Solutions', href: '/enterprise-solutions-showcase', description: 'Public sector innovation' },
       { name: 'Energy & Utilities', href: '/quantum-energy', description: 'Sustainable energy tech' },
-      { name: 'Transportation & Logistics', href: '/quantum-logistics', description: 'Route optimization' },
-      { name: 'Space Technology', href: '/space-technology', description: 'Advanced space tech' }
+      { name: 'Biotech AI Research', href: '/biotech-ai', description: 'AI-driven biotech' }
     ]
   },
   {
     name: 'Resources',
     href: '/resources',
     icon: <BookOpen className="w-5 h-5" />,
-    description: 'Guides, reports and tools',
+    description: 'Documentation, support, and learning resources',
     children: [
-      { name: 'Blog', href: '/blog', description: 'Insights and updates' },
-      { name: 'Case Studies', href: '/case-studies', description: 'Proven results' },
-      { name: 'Resources Hub', href: '/resources', description: 'Docs, SDKs, guides' },
-      { name: 'Events', href: '/events', description: 'Conferences and workshops' },
-      { name: 'Webinars', href: '/webinars', description: 'On-demand and live sessions' },
-      { name: 'Services Advertising', href: '/services-advertising', description: 'Features, benefits and market pricing links' },
-      { name: 'Serverless Lakehouse Starter', href: '/services/serverless-lakehouse-starter', description: 'ELT + dbt + dashboards' },
-      { name: 'Data Contracts Hub', href: '/services/data-contracts-hub', description: 'Schema diffs & CI gates' }
-    ]
-  },
-  {
-    name: 'Company',
-    href: '/about',
-    icon: <Building className="w-5 h-5" />,
-    description: 'About Zion Tech Group',
-    children: [
-      { name: 'About Us', href: '/about', description: 'Our mission and vision' },
-      { name: 'Careers', href: '/careers', description: 'Join our team' },
-      { name: 'Contact', href: '/contact', description: 'Get in touch' },
-      { name: 'Get Started', href: '/get-started', description: 'Begin your journey' },
-      { name: 'Quote Request', href: '/quote', description: 'Get a custom quote' }
+      { name: 'Documentation', href: '/docs', description: 'Technical documentation' },
+      { name: 'API Reference', href: '/api-documentation', description: 'API documentation' },
+      { name: 'Case Studies', href: '/case-studies', description: 'Success stories' },
+      { name: 'Blog & News', href: '/blog', description: 'Latest insights' },
+      { name: 'Support Center', href: '/support', description: 'Help and support' },
+      { name: 'Training', href: '/training', description: 'Learning resources' },
+      { name: 'Community', href: '/community', description: 'User community' }
     ]
   }
 ];
 
 const quickActions = [
-  { name: 'Call +1 302 464 0950', href: 'tel:+13024640950', icon: <Phone className="w-4 h-4" />, primary: true },
-  { name: 'Email kleber@ziontechgroup.com', href: 'mailto:kleber@ziontechgroup.com', icon: <Mail className="w-4 h-4" /> },
+  { name: 'Get Started', href: '/contact', icon: <ArrowRight className="w-4 h-4" />, primary: true },
   { name: 'Get a Quote', href: '/quote', icon: <DollarSign className="w-4 h-4" /> },
   { name: 'Book Demo', href: '/demo', icon: <Video className="w-4 h-4" /> },
-  { name: 'Contact Us', href: '/contact', icon: <MessageCircle className="w-4 h-4" /> },
+  { name: 'Live Chat', href: '/chat', icon: <MessageCircle className="w-4 h-4" /> },
   { name: 'View Pricing', href: '/pricing', icon: <DollarSign className="w-4 h-4" /> },
   { name: 'Market Pricing', href: '/market-pricing', icon: <BarChart3 className="w-4 h-4" /> },
   { name: 'Services Advertising', href: '/services-advertising', icon: <Sparkles className="w-4 h-4" /> },
-  { name: 'Resources', href: '/resources', icon: <BookOpen className="w-4 h-4" /> },
-  { name: 'Blog', href: '/blog', icon: <FileText className="w-4 h-4" /> },
+  { name: 'Documentation', href: '/docs', icon: <BookOpen className="w-4 h-4" /> },
   { name: 'Support', href: '/support', icon: <HelpCircle className="w-4 h-4" /> }
 ];
 
@@ -351,15 +345,15 @@ const UltraFuturisticNavigation2035: React.FC = () => {
                           <div className="space-y-2">
                             {item.children?.map((child) => (
                               <Link
-                              key={child.name}
-                              href={normalizeHref(child.href)}
-                              className={`flex items-center gap-3 p-3 rounded-xl transition-all duration-200 ${
-                                child.featured 
-                                  ? 'bg-gradient-to-r from-cyan-500/10 to-blue-500/10 border border-cyan-500/20 text-cyan-400 hover:bg-cyan-500/20' 
-                                  : 'text-gray-300 hover:text-white hover:bg-gray-800/50'
-                              }`}
-                              onClick={closeDropdowns}
-                            >
+                                key={child.name}
+                                href={child.href}
+                                className={`flex items-center gap-3 p-3 rounded-xl transition-all duration-200 ${
+                                  child.featured 
+                                    ? 'bg-gradient-to-r from-cyan-500/10 to-blue-500/10 border border-cyan-500/20 text-cyan-400 hover:bg-cyan-500/20' 
+                                    : 'text-gray-300 hover:text-white hover:bg-gray-800/50'
+                                }`}
+                                onClick={closeDropdowns}
+                              >
                                 {child.featured && <Star className="w-4 h-4 text-cyan-400" />}
                                 <div className="flex-1">
                                   <div className="font-medium">{child.name}</div>
@@ -382,18 +376,17 @@ const UltraFuturisticNavigation2035: React.FC = () => {
             {/* Right Side Actions */}
             <div className="hidden lg:flex items-center gap-4">
               {/* Quick Actions */}
-              <div className="flex items-center gap-2" role="navigation" aria-label="Quick actions">
+              <div className="flex items-center gap-2">
                 {quickActions.map((action) => (
                   <Link
-                  key={action.name}
-                  href={normalizeHref(action.href)}
-                  className={`flex items-center gap-2 px-4 py-2 rounded-xl text-sm font-medium transition-all duration-200 ${
-                    action.primary
-                      ? 'bg-gradient-to-r from-cyan-500 to-blue-500 text-white hover:from-cyan-600 hover:to-blue-600 shadow-lg shadow-cyan-500/25'
-                      : 'text-gray-300 hover:text-white hover:bg-gray-800/50'
-                  }`}
-                  aria-label={action.name}
-                >
+                    key={action.name}
+                    href={action.href}
+                    className={`flex items-center gap-2 px-4 py-2 rounded-xl text-sm font-medium transition-all duration-200 ${
+                      action.primary
+                        ? 'bg-gradient-to-r from-cyan-500 to-blue-500 text-white hover:from-cyan-600 hover:to-blue-600 shadow-lg shadow-cyan-500/25'
+                        : 'text-gray-300 hover:text-white hover:bg-gray-800/50'
+                    }`}
+                  >
                     {action.icon}
                     <span>{action.name}</span>
                   </Link>
@@ -475,7 +468,7 @@ const UltraFuturisticNavigation2035: React.FC = () => {
                             {item.children?.map((child) => (
                               <Link
                                 key={child.name}
-                                href={normalizeHref(child.href)}
+                                href={child.href}
                                 className={`block p-3 rounded-lg transition-colors duration-200 ${
                                   child.featured 
                                     ? 'bg-gradient-to-r from-cyan-500/10 to-blue-500/10 text-cyan-400' 
@@ -501,7 +494,7 @@ const UltraFuturisticNavigation2035: React.FC = () => {
                       {quickActions.map((action) => (
                         <Link
                           key={action.name}
-                          href={normalizeHref(action.href)}
+                          href={action.href}
                           className={`flex items-center gap-3 p-3 rounded-xl text-sm font-medium transition-all duration-200 ${
                             action.primary
                               ? 'bg-gradient-to-r from-cyan-500 to-blue-500 text-white'
