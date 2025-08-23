@@ -83,29 +83,15 @@ export default function AutomationHub() {
             <p className="text-white/70">Finds broken images, optimizes assets, and syncs fixes.</p>
             <a className="text-cyan-300 underline" href="/.netlify/functions/broken-image-scanner" target="_blank" rel="noopener">Trigger / View</a>
           </li>
-
           <li className="rounded-lg bg-white/5 border border-white/10 p-5">
-            <h2 className="text-xl font-bold">Internal Link Fixer</h2>
-            <p className="text-white/70">Crawls the site, fixes broken internal links, and syncs changes.</p>
-            <a className="text-cyan-300 underline" href="/.netlify/functions/internal-link-fixer-runner" target="_blank" rel="noopener">Trigger / View</a>
+            <h2 className="text-xl font-bold">AI Trends Radar</h2>
+            <p className="text-white/70">Aggregates trending AI topics and publishes a live report.</p>
+            <a className="text-cyan-300 underline" href="/.netlify/functions/ai-trends-radar-runner" target="_blank" rel="noopener">Trigger / View</a>
           </li>
-
           <li className="rounded-lg bg-white/5 border border-white/10 p-5">
-            <h2 className="text-xl font-bold">Revenue Ideas Lab</h2>
-            <p className="text-white/70">Runs revenue idea agents and commits proposals to the repo.</p>
-            <a className="text-cyan-300 underline" href="/.netlify/functions/revenue-ideas-agents-runner" target="_blank" rel="noopener">Trigger / View</a>
-          </li>
-
-          <li className="rounded-lg bg-white/5 border border-white/10 p-5">
-            <h2 className="text-xl font-bold">Branch Cleanup</h2>
-            <p className="text-white/70">Safely deletes merged or stale branches (requires GitHub token).</p>
-            <a className="text-cyan-300 underline" href="/.netlify/functions/branch-cleanup-runner" target="_blank" rel="noopener">Trigger / View</a>
-          </li>
-
-          <li className="rounded-lg bg-white/5 border border-white/10 p-5">
-            <h2 className="text-xl font-bold">Media Release Runner</h2>
-            <p className="text-white/70">Publishes autonomous media updates and syncs changes.</p>
-            <a className="text-cyan-300 underline" href="/.netlify/functions/media-release-runner" target="_blank" rel="noopener">Trigger / View</a>
+            <h2 className="text-xl font-bold">A11y Audit Runner</h2>
+            <p className="text-white/70">Checks for accessibility issues across key pages and commits a report.</p>
+            <a className="text-cyan-300 underline" href="/.netlify/functions/a11y-audit-runner" target="_blank" rel="noopener">Trigger / View</a>
           </li>
         </ul>
       </main>
