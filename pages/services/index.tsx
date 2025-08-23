@@ -56,9 +56,9 @@ import { real2036ITServicesAdditions } from '../../data/real-2036-it-services-ad
 import { real2036AIServicesAdditions } from '../../data/real-2036-ai-services-additions';
 import { innovative2025MicroSaasBatch } from '../../data/innovative-2025-micro-saas-batch';
 import { innovative2025ITEnterpriseBatch } from '../../data/innovative-2025-it-enterprise-batch';
-import { innovative2025MicroSaasExpansions } from '../../data/innovative-2025-micro-saas-expansions';
-import { innovative2025ITServicesExpansions } from '../../data/innovative-2025-it-services-expansions';
-import { innovative2025AIServicesExpansions } from '../../data/innovative-2025-ai-services-expansions';
+import { innovativeMicroSaasServices as innovative2025MicroSaasExpansions } from '../../data/innovative-2025-micro-saas-expansions';
+import { innovativeITServices as innovative2025ITServicesExpansions } from '../../data/innovative-2025-it-services-expansions';
+import { innovativeAIServices as innovative2025AIServicesExpansions } from '../../data/innovative-2025-ai-services-expansions';
 // Import our new 2025 advanced services
 import { advanced2025MicroSaasExpansion } from '../../data/2025-advanced-micro-saas-expansion';
 import { advanced2025ITSolutionsExpansion } from '../../data/2025-advanced-it-solutions-expansion';

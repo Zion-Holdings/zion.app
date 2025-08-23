@@ -7,20 +7,20 @@ import PerformanceOptimizer from '../components/PerformanceOptimizer';
 import AccessibilityEnhancer from '../components/AccessibilityEnhancer';
 import PerformanceMonitor from '../components/PerformanceMonitor';
 import MobileOptimizer from '../components/MobileOptimizer';
+import PerformanceDashboard from '../components/PerformanceDashboard';
 
 const HomePage: React.FC = () => {
   return (
     <ErrorBoundary>
       <SEOOptimizer />
       <AnalyticsTracker />
-      <PerformanceOptimizer>
-        <MobileOptimizer showDebugInfo={false}>
-          <AccessibilityEnhancer>
-            <Homepage2025 />
-            <PerformanceMonitor showUI={true} />
-          </AccessibilityEnhancer>
-        </MobileOptimizer>
-      </PerformanceOptimizer>
+      <PerformanceOptimizer />
+      <MobileOptimizer showDebugInfo={false}>
+        <AccessibilityEnhancer />
+        <Homepage2025 />
+        <PerformanceMonitor showUI={true} />
+        <PerformanceDashboard />
+      </MobileOptimizer>
     </ErrorBoundary>
   );
 };

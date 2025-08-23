@@ -2,15 +2,16 @@ import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { motion, AnimatePresence } from 'framer-motion';
 import { 
-  Menu, ChevronDown, X, Phone, Mail, MapPin, ArrowRight,
+  Menu, ChevronDown, X, Phone, Mail, ArrowRight,
   Brain, Rocket, Target, Atom, Shield,
-  DollarSign, BarChart3, Globe, Star, Sparkles, 
-  Grid, List, TrendingUp, 
-  Calendar, Calculator, GraduationCap,
-  Cpu, Cloud, Settings, Monitor, Palette, Network, Layers, Code, Heart, ShoppingCart, Clock, MessageCircle, HelpCircle, Building,
-  Zap, Infinity, Eye, Heart as HeartIcon, Code as CodeIcon, Palette as PaletteIcon,
-  BookOpen, FileText, Handshake
+  BarChart3, Star, 
+  Grid, TrendingUp, 
+  GraduationCap,
+  Cpu, Cloud, Monitor, Network, Heart, ShoppingCart, MessageCircle, HelpCircle, Building,
+  Zap, Heart as HeartIcon, Code as CodeIcon, Palette as PaletteIcon,
+  BookOpen, FileText, Handshake, Sun, Moon
 } from 'lucide-react';
+import EnhancedSearch from '../EnhancedSearch';
 
 interface NavigationItem {
   name: string;
@@ -397,6 +398,7 @@ const UltraFuturisticNavigation2040: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isDarkMode, setIsDarkMode] = useState(true);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -406,6 +408,23 @@ const UltraFuturisticNavigation2040: React.FC = () => {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
+  // Dark mode effect
+  useEffect(() => {
+    const savedMode = localStorage.getItem('dark-mode');
+    if (savedMode !== null) {
+      setIsDarkMode(savedMode === 'true');
+    }
+  }, []);
+
+  useEffect(() => {
+    localStorage.setItem('dark-mode', isDarkMode.toString());
+    if (isDarkMode) {
+      document.documentElement.classList.add('dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+    }
+  }, [isDarkMode]);
 
   const toggleDropdown = (name: string) => {
     setActiveDropdown(activeDropdown === name ? null : name);
@@ -537,6 +556,20 @@ const UltraFuturisticNavigation2040: React.FC = () => {
                 </AnimatePresence>
               </div>
             ))}
+          </div>
+
+          {/* Search and Dark Mode */}
+          <div className="hidden lg:flex items-center space-x-4">
+            <EnhancedSearch />
+            
+            {/* Dark Mode Toggle */}
+            <button
+              onClick={() => setIsDarkMode(!isDarkMode)}
+              className="p-3 text-gray-300 hover:text-cyan-400 transition-colors duration-200 rounded-xl hover:bg-white/5"
+              aria-label="Toggle dark mode"
+            >
+              {isDarkMode ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
+            </button>
           </div>
 
           {/* CTA Buttons */}
