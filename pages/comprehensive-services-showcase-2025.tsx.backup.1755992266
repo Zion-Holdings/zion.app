@@ -194,6 +194,9 @@ const ComprehensiveServicesShowcase2025: NextPage = () => {
               href="/contact"
               className="px-8 py-4 bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-600 hover:to-blue-700 text-white font-semibold rounded-xl shadow-2xl shadow-cyan-500/25 hover:shadow-cyan-500/40 transition-all duration-200 hover:scale-105"
             >
+<<<<<<< HEAD
+              Get Started Today
+=======
               <option value="name">Sort by Name</option>
               <option value="price">Sort by Price</option>
               <option value="category">Sort by Category</option>
@@ -391,6 +394,7 @@ const ComprehensiveServicesShowcase2025: NextPage = () => {
                   <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
                 </span>
               </button>
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-4b2d
             </Link>
             <Link
               href="/revolutionary-2025-pricing"

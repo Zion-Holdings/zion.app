@@ -73,6 +73,129 @@ export default function HomePage() {
     }
   };
 
+<<<<<<< HEAD
+  const itemVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.5
+      }
+    }
+  };
+
+  return (
+    <EnhancedFuturisticBackground intensity="high" colorScheme="quantum">
+      <div className="min-h-screen">
+        <Head>
+          <title>Zion Tech Group - Revolutionary Micro SaaS Services & AI Solutions</title>
+          <meta name="description" content="Discover 300+ revolutionary micro SaaS services, quantum AI solutions, and cutting-edge technology platforms. Transform your business with our innovative services." />
+          <meta name="keywords" content="micro SaaS, AI services, quantum computing, space technology, biotech AI, quantum trading, cybersecurity, autonomous vehicles, robotics" />
+          <meta property="og:title" content="Zion Tech Group - Revolutionary Micro SaaS Services" />
+          <meta property="og:description" content="300+ revolutionary micro SaaS services with quantum AI and cutting-edge technology" />
+          <meta property="og:url" content="https://ziontechgroup.com" />
+          <meta property="og:type" content="website" />
+          <link rel="canonical" href="https://ziontechgroup.com" />
+        </Head>
+
+        {/* Hero Section */}
+        <section className="relative pt-32 pb-20 px-4 sm:px-6 lg:px-8">
+          <div className="max-w-7xl mx-auto text-center">
+            <motion.div
+              initial={{ opacity: 0, y: 50 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1, ease: "easeOut" }}
+            >
+              <Star className="w-5 h-5 mr-2 text-cyan-400" />
+              2034 Future Technology Revolution
+            </motion.div>
+
+        {/* Stats Section */}
+        <section className="py-16 px-4 sm:px-6 lg:px-8">
+          <div className="max-w-7xl mx-auto">
+            <motion.div 
+              className="grid grid-cols-2 md:grid-cols-4 gap-8"
+              variants={containerVariants}
+              initial="hidden"
+              animate="visible"
+            >
+              {stats.map((stat, index) => (
+                <motion.div
+                  key={index}
+                  className="text-center"
+                  variants={itemVariants}
+                >
+                  <div className={`${stat.color} mb-4 flex justify-center`}>
+                    <stat.icon className="w-12 h-12" />
+                  </div>
+                  <div className="text-3xl font-bold text-white mb-2">{stat.value}+</div>
+                  <div className="text-gray-400">{stat.label}</div>
+                </motion.div>
+              ))}
+            </motion.div>
+          </div>
+        </section>
+
+        {/* Enhanced Service Showcase */}
+        <EnhancedServiceShowcase 
+          title="Revolutionary AI & Technology Services"
+          subtitle="Discover the future of business with our cutting-edge solutions"
+          showFilters={true}
+        />
+
+        {/* Featured Services Section */}
+        <section className="py-20 px-4 sm:px-6 lg:px-8">
+          <div className="max-w-7xl mx-auto">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+              className="text-center mb-16"
+            >
+              <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+                Featured Revolutionary Services
+              </h2>
+              <p className="text-xl text-gray-400 max-w-3xl mx-auto">
+                Experience the power of our most innovative and high-impact solutions
+              </p>
+            </motion.div>
+
+            <motion.div 
+              className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+              variants={containerVariants}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+            >
+              {/* AI Agent Orchestrator */}
+              <motion.div
+                className="group relative"
+                variants={itemVariants}
+              >
+                <div className="relative bg-gradient-to-br from-gray-800/80 to-gray-900/80 backdrop-blur-sm rounded-2xl p-6 border border-gray-700/50 hover:border-purple-500/50 transition-all duration-300 hover:shadow-2xl hover:shadow-purple-500/20 group-hover:scale-105">
+                  <div className="absolute -top-3 -right-3 bg-gradient-to-r from-purple-500 to-pink-500 text-white text-xs font-bold px-3 py-1 rounded-full flex items-center gap-1">
+                    <Star className="w-3 h-3" />
+                    Featured
+                  </div>
+                  
+                  <div className="text-4xl mb-4">🤖</div>
+                  <h3 className="text-xl font-bold text-white mb-2 group-hover:text-purple-400 transition-colors">
+                    AI Agent Orchestrator Platform
+                  </h3>
+                  <p className="text-gray-300 mb-4 text-sm">
+                    Orchestrate multiple AI agents for complex business workflows
+                  </p>
+                  
+                  <div className="flex items-center justify-between mb-4">
+                    <div className="text-2xl font-bold text-purple-400">
+                      $2,999<span className="text-sm text-gray-400">/month</span>
+                    </div>
+                    <div className="flex items-center gap-2 text-sm text-gray-400">
+                      <Users className="w-4 h-4" />
+                      150
+=======
 const heroFeatures = [
   {
     title: 'Cutting-Edge Technology',
@@ -345,6 +468,7 @@ export default function Home() {
                         <span className="text-sm font-medium">Learn More</span>
                         <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform duration-300" />
                       </div>
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-4b2d
                     </div>
                   </div>
 
@@ -683,9 +807,15 @@ export default function Home() {
         </div>
       </section>
 
+<<<<<<< HEAD
+      {/* Stats Section */}
+      <section className="py-20 px-6 relative">
+        <div className="max-w-7xl mx-auto">
+=======
       {/* Service Categories Section */}
       <section className="py-20 bg-black">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-4b2d
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -693,6 +823,36 @@ export default function Home() {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
+<<<<<<< HEAD
+            <h2 className="text-4xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-cyan-400 to-purple-500 bg-clip-text text-transparent">
+              Why Choose Zion Tech Group?
+            </h2>
+            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+              We deliver real results with innovative technology solutions that drive business growth and transformation.
+            </p>
+          </motion.div>
+
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+            {stats.map((stat, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, scale: 0.5 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                viewport={{ once: true }}
+                className="text-center"
+              >
+                <div className={`text-4xl md:text-6xl font-bold mb-4 ${stat.color}`}>
+                  {stat.number}
+                </div>
+                <div className="text-gray-300 text-lg">{stat.label}</div>
+              </motion.div>
+            ))}
+          </div>
+        </section>
+      </div>
+    </EnhancedFuturisticBackground>
+=======
             <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
               Comprehensive <span className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">Service Categories</span>
             </h2>
@@ -849,5 +1009,6 @@ export default function Home() {
         </div>
       </section>
     </Layout>
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-4b2d
   );
 }

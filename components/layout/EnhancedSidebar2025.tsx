@@ -1,456 +1,375 @@
-'use client';
-
-import { useState } from 'react';
+import React from 'react';
 import Link from 'next/link';
-import {
-  Brain, Atom, Server, Package, Satellite, Bot, Briefcase, Factory,
-  Rocket, Target, BookOpen, Users, Phone, Mail, MapPin, Globe,
-  Zap, Menu, X, ChevronDown, Search, Cpu, Gem, Car, Cloud,
-  Settings, HardDrive, Link as LinkIcon, Code, Lock, Wifi,
-  BarChart, Megaphone, Headphones, UserCheck, Calculator, Calendar,
-  Stethoscope, CreditCard, ShoppingCart, GraduationCap, Building2,
-  Truck, Eye, View, BarChart3, FileText, MessageSquare, Sparkles,
-  Heart, Activity, Palette, Network, Lightbulb, Cog, Code2,
-  TestTube, GitBranch, TrendingUp, Home, Star, Award, Clock,
-  Shield, Database, Layers, CpuIcon, BrainCircuit, AtomIcon
+import { motion, AnimatePresence } from 'framer-motion';
+import { 
+  X, Home, Brain, Rocket, Shield, Zap, Target, Atom, BookOpen,
+  Truck, DollarSign, BarChart3, Globe, Users, Settings, 
+  ChevronRight, Star, Sparkles, Cpu, Lock, Cloud, BarChart3 as BarChart3Icon,
+  Eye, Award, Clock, Heart, Lightbulb, Phone, Mail, MapPin,
+  Facebook, Twitter, Linkedin, Instagram, Youtube, Github, MessageCircle, MessageSquare
 } from 'lucide-react';
 
-export default function EnhancedSidebar2025() {
-  const [isOpen, setIsOpen] = useState(false);
-  const [activeSection, setActiveSection] = useState<string | null>(null);
+interface EnhancedSidebar2025Props {
+  isOpen: boolean;
+  onClose: () => void;
+}
 
-  const toggleSidebar = () => setIsOpen(!isOpen);
-  const closeSidebar = () => setIsOpen(false);
+const contactInfo = {
+  mobile: '+1 302 464 0950',
+  email: 'kleber@ziontechgroup.com',
+  address: '364 E Main St STE 1008 Middletown DE 19709',
+  website: 'https://ziontechgroup.com'
+};
 
-  const navigationSections = [
-    {
-      id: 'home',
-      title: 'Home',
-      icon: Home,
-      color: 'text-blue-400',
-      href: '/',
-      items: [
-        { name: 'Dashboard', href: '/', icon: Target },
-        { name: 'Featured Services', href: '/comprehensive-services-showcase-2025', icon: Star },
-        { name: 'Latest Updates', href: '/news', icon: Megaphone },
-        { name: 'Company Overview', href: '/about', icon: Building2 }
-      ]
-    },
-    {
-      id: 'ai-consciousness',
-      title: 'AI & Consciousness',
-      icon: Brain,
-      color: 'text-cyan-400',
-      href: '/ai-services',
-      items: [
-        { name: 'AI Consciousness Evolution', href: '/ai-consciousness-evolution', icon: Sparkles },
-        { name: 'Emotional Intelligence Training', href: '/ai-emotional-intelligence-training', icon: Heart },
-        { name: 'Autonomous Research Assistant', href: '/ai-autonomous-research-assistant', icon: Search },
-        { name: 'Predictive Maintenance Platform', href: '/ai-predictive-maintenance-platform', icon: Activity },
-        { name: 'Content Personalization Engine', href: '/ai-content-personalization-engine', icon: Palette },
-        { name: 'Autonomous Ecosystem Manager', href: '/ai-autonomous-ecosystem-manager', icon: Network },
-        { name: 'AI Ethics Governance Framework', href: '/ai-ethics-governance-framework', icon: Lock },
-        { name: 'AI Creativity Studio', href: '/ai-creativity-studio', icon: Lightbulb }
-      ]
-    },
-    {
-      id: 'quantum-emerging',
-      title: 'Quantum & Emerging Tech',
-      icon: Atom,
-      color: 'text-purple-400',
-      href: '/quantum-services',
-      items: [
-        { name: 'Space Resource Mining', href: '/space-resource-mining', icon: Rocket },
-        { name: 'Brain-Computer Interface', href: '/quantum-ai-brain-computer-interface', icon: Cpu },
-        { name: 'Quantum Materials Discovery', href: '/quantum-materials-discovery', icon: Gem },
-        { name: 'Autonomous Vehicles', href: '/autonomous-vehicles', icon: Car },
-        { name: 'Quantum Computing Solutions', href: '/quantum-computing-solutions', icon: Zap },
-        { name: 'Metaverse Development', href: '/metaverse-development', icon: Globe }
-      ]
-    },
-    {
-      id: 'enterprise-it',
-      title: 'Enterprise IT',
-      icon: Server,
-      color: 'text-green-400',
-      href: '/enterprise-it',
-      items: [
-        { name: 'Quantum-Secure Cloud Infrastructure', href: '/quantum-secure-cloud-infrastructure', icon: Cloud },
-        { name: 'Autonomous IT Operations Center', href: '/autonomous-it-operations-center', icon: Settings },
-        { name: 'Edge Computing Orchestration', href: '/edge-computing-orchestration-platform', icon: HardDrive },
-        { name: 'Blockchain Infrastructure', href: '/blockchain-infrastructure-platform', icon: LinkIcon },
-        { name: 'AI-Powered DevOps Platform', href: '/ai-powered-devops-platform', icon: Code },
-        { name: 'Zero Trust Security Platform', href: '/zero-trust-security-platform', icon: Lock },
-        { name: 'Quantum Networking', href: '/quantum-networking', icon: Wifi }
-      ]
-    },
-    {
-      id: 'micro-saas',
-      title: 'Micro SAAS',
-      icon: Package,
-      color: 'text-blue-400',
-      href: '/micro-saas',
-      items: [
-        { name: 'AI Customer Success Platform', href: '/ai-customer-success-platform', icon: Users },
-        { name: 'Supply Chain Optimization', href: '/intelligent-supply-chain-optimization', icon: Truck },
-        { name: 'AI Financial Planning Platform', href: '/ai-financial-planning-platform', icon: CreditCard },
-        { name: 'HR Analytics Platform', href: '/intelligent-hr-analytics-platform', icon: BarChart3 },
-        { name: 'Sales Intelligence Platform', href: '/ai-sales-intelligence-platform', icon: TrendingUp },
-        { name: 'AI Decision Engine', href: '/ai-powered-decision-engine', icon: Target },
-        { name: 'Content Automation Platform', href: '/intelligent-content-automation-platform', icon: FileText },
-        { name: 'Smart CRM Intelligence Suite', href: '/smart-crm-intelligence-suite', icon: MessageSquare }
-      ]
-    },
-    {
-      id: 'space-metaverse',
-      title: 'Space & Metaverse',
-      icon: Satellite,
-      color: 'text-pink-400',
-      href: '/space-tech',
-      items: [
-        { name: 'Space Technology Solutions', href: '/space-technology-solutions', icon: Satellite },
-        { name: 'Metaverse Development Platform', href: '/metaverse-development-platform', icon: Globe },
-        { name: 'Virtual Reality Solutions', href: '/virtual-reality-solutions', icon: Eye },
-        { name: 'Augmented Reality Platform', href: '/augmented-reality-platform', icon: View }
-      ]
-    },
-    {
-      id: 'ai-automation',
-      title: 'AI Automation',
-      icon: Bot,
-      color: 'text-yellow-400',
-      href: '/advanced-ai-automation-services',
-      items: [
-        { name: 'AI-Powered Development', href: '/ai-powered-development', icon: Code2 },
-        { name: 'Intelligent Operations', href: '/intelligent-operations', icon: Cog },
-        { name: 'Automated Testing Platform', href: '/automated-testing-platform', icon: TestTube },
-        { name: 'Continuous Integration AI', href: '/continuous-integration-ai', icon: GitBranch }
-      ]
-    },
-    {
-      id: 'solutions',
-      title: 'Industry Solutions',
-      icon: Target,
-      color: 'text-indigo-400',
-      href: '/solutions',
-      items: [
-        { name: 'Healthcare Solutions', href: '/healthcare-solutions', icon: Stethoscope },
-        { name: 'Financial Services', href: '/financial-solutions', icon: CreditCard },
-        { name: 'Manufacturing AI', href: '/manufacturing-ai-solutions', icon: Factory },
-        { name: 'Retail Technology', href: '/retail-technology-solutions', icon: ShoppingCart },
-        { name: 'Education Technology', href: '/education-technology-solutions', icon: GraduationCap },
-        { name: 'Government Solutions', href: '/government-technology-solutions', icon: Building2 }
-      ]
-    },
-    {
-      id: 'resources',
-      title: 'Resources',
-      icon: BookOpen,
-      color: 'text-emerald-400',
-      href: '/resources',
-      items: [
-        { name: 'Documentation', href: '/docs', icon: FileText },
-        { name: 'API Reference', href: '/api-documentation', icon: Code },
-        { name: 'Case Studies', href: '/case-studies', icon: BookOpen },
-        { name: 'Blog & News', href: '/blog', icon: Megaphone },
-        { name: 'Support Center', href: '/support', icon: Headphones },
-        { name: 'Training & Certification', href: '/training', icon: GraduationCap }
-      ]
-    }
-  ];
+const mainNavigation = [
+  {
+    name: 'Home',
+    href: '/',
+    icon: Home,
+    description: 'Main landing page'
+  },
+  {
+    name: 'All Services',
+    href: '/comprehensive-services-showcase-2025',
+    icon: Globe,
+    description: 'Complete portfolio showcase',
+    badge: 'Showcase'
+  },
+  {
+    name: 'AI & Consciousness',
+    href: '/ai-services',
+    icon: Brain,
+    description: 'Revolutionary AI solutions',
+    badge: 'New'
+  },
+  {
+    name: 'Micro SAAS',
+    href: '/micro-saas',
+    icon: Rocket,
+    description: 'Business solutions'
+  },
+  {
+    name: 'IT Services',
+    href: '/it-services',
+    icon: Shield,
+    description: 'Enterprise technology'
+  },
+  {
+    name: 'Emerging Tech',
+    href: '/emerging-tech-services',
+    icon: Atom,
+    description: 'Cutting-edge innovations'
+  },
+  {
+    name: 'Pricing',
+    href: '/pricing',
+    icon: DollarSign,
+    description: 'Service plans & pricing'
+  },
+  {
+    name: 'About Us',
+    href: '/about',
+    icon: Users,
+    description: 'Company information'
+  },
+  {
+    name: 'Contact',
+    href: '/contact',
+    icon: Phone,
+    description: 'Get in touch'
+  }
+];
 
-  const quickActions = [
-    { name: 'Get Quote', href: '/contact', icon: Phone, color: 'bg-gradient-to-r from-cyan-500 to-blue-600' },
-    { name: 'View Pricing', href: '/revolutionary-2025-pricing', icon: Target, color: 'bg-gradient-to-r from-purple-500 to-pink-600' },
-    { name: 'Schedule Demo', href: '/demo', icon: Calendar, color: 'bg-gradient-to-r from-green-500 to-emerald-600' },
-    { name: 'Support', href: '/support', icon: Headphones, color: 'bg-gradient-to-r from-orange-500 to-red-600' }
-  ];
+const serviceCategories = [
+  {
+    title: 'AI & Consciousness',
+    icon: Brain,
+    services: [
+      { name: 'AI Consciousness Evolution', href: '/ai-consciousness-evolution' },
+      { name: 'AI Autonomous Ecosystem', href: '/ai-autonomous-ecosystem' },
+      { name: 'AI Ethics & Governance', href: '/ai-ethics-governance' },
+      { name: 'AI Creativity Studio', href: '/ai-creativity-studio' },
+      { name: 'AI Education Platform', href: '/ai-education-platform' },
+      { name: 'AI Healthcare Diagnostics', href: '/ai-healthcare-diagnostics' },
+      { name: 'AI Financial Intelligence', href: '/ai-financial-intelligence' },
+      { name: 'AI Sustainability Platform', href: '/ai-sustainability-platform' },
+      { name: 'AI Emotional Intelligence', href: '/ai-emotional-intelligence-platform' },
+      { name: 'AI Legal Contract Analyzer', href: '/ai-legal-contract-analyzer' }
+    ]
+  },
+  {
+    title: 'Quantum & Emerging Tech',
+    icon: Atom,
+    services: [
+      { name: 'Space Mining Platform', href: '/space-mining-platform' },
+      { name: 'Quantum Bio-Computing', href: '/quantum-bio-computing' },
+      { name: 'Brain-Computer Interface', href: '/brain-computer-interface' },
+      { name: 'Quantum Energy Platform', href: '/quantum-energy-platform' },
+      { name: 'Autonomous Vehicle AI', href: '/autonomous-vehicle-ai-platform' },
+      { name: 'Quantum Materials Discovery', href: '/quantum-materials-discovery' },
+      { name: 'Quantum Robotics', href: '/quantum-robotics' },
+      { name: 'Quantum Internet Security', href: '/quantum-internet-security-platform' },
+      { name: 'Quantum Logistics', href: '/quantum-logistics-optimization' },
+      { name: 'Quantum Metaverse', href: '/quantum-metaverse' }
+    ]
+  },
+  {
+    title: 'Enterprise IT',
+    icon: Shield,
+    services: [
+      { name: 'Quantum Cloud Infrastructure', href: '/quantum-cloud-infrastructure' },
+      { name: 'Edge Computing Orchestration', href: '/edge-computing-orchestration' },
+      { name: 'Zero Trust Security Platform', href: '/zero-trust-network-architecture' },
+      { name: 'Blockchain Enterprise Platform', href: '/blockchain-infrastructure-platform' },
+      { name: 'AI-Powered DevOps', href: '/ai-powered-devops' },
+      { name: 'Quantum Networking', href: '/quantum-networking' },
+      { name: 'Autonomous IT Operations', href: '/autonomous-it-operations' },
+      { name: 'Quantum Data Center', href: '/quantum-data-center' },
+      { name: 'Quantum Cybersecurity', href: '/quantum-cybersecurity' },
+      { name: 'Quantum Cloud Migration', href: '/quantum-cloud-migration' }
+    ]
+  },
+  {
+    title: 'Micro SAAS',
+    icon: Rocket,
+    services: [
+      { name: 'AI Content Automation', href: '/ai-content-automation-platform' },
+      { name: 'CRM Intelligence Platform', href: '/crm-intelligence-platform' },
+      { name: 'Decision Engine Platform', href: '/decision-engine-platform' },
+      { name: 'E-commerce Optimization', href: '/ecommerce-optimization-platform' },
+      { name: 'Financial Analytics Platform', href: '/financial-analytics-platform' },
+      { name: 'HR Automation Platform', href: '/hr-automation-platform' },
+      { name: 'Supply Chain Optimization', href: '/supply-chain-optimization-platform' },
+      { name: 'Customer Service Automation', href: '/customer-service-automation-platform' },
+      { name: 'Project Management Intelligence', href: '/project-management-intelligence-platform' }
+    ]
+  }
+];
 
-  const toggleSection = (sectionId: string) => {
-    setActiveSection(activeSection === sectionId ? null : sectionId);
-  };
+const quickLinks = [
+  { name: 'Documentation', href: '/docs', icon: BookOpen },
+  { name: 'API Reference', href: '/api-docs', icon: Cpu },
+  { name: 'Blog', href: '/blog', icon: Lightbulb },
+  { name: 'Case Studies', href: '/case-studies', icon: Award },
+  { name: 'Support', href: '/support', icon: Heart },
+  { name: 'Status', href: '/status', icon: BarChart3Icon }
+];
 
+const socialLinks = [
+  { name: 'LinkedIn', href: 'https://linkedin.com/company/ziontechgroup', icon: Linkedin },
+  { name: 'Twitter', href: 'https://twitter.com/ziontechgroup', icon: Twitter },
+  { name: 'Facebook', href: 'https://facebook.com/ziontechgroup', icon: Facebook },
+  { name: 'Instagram', href: 'https://instagram.com/ziontechgroup', icon: Instagram },
+  { name: 'YouTube', href: 'https://youtube.com/@ziontechgroup', icon: Youtube },
+  { name: 'GitHub', href: 'https://github.com/ziontechgroup', icon: Github },
+  { name: 'Discord', href: 'https://discord.gg/ziontechgroup', icon: MessageCircle },
+  { name: 'Slack', href: 'https://ziontechgroup.slack.com', icon: MessageSquare }
+];
+
+export default function EnhancedSidebar2025({ isOpen, onClose }: EnhancedSidebar2025Props) {
   return (
-    <>
-      {/* Mobile Toggle Button */}
-      <button
-        onClick={toggleSidebar}
-        className="fixed top-4 left-4 z-50 lg:hidden p-2 bg-black/80 backdrop-blur-sm border border-cyan-500/30 rounded-lg text-cyan-400 hover:text-white hover:bg-cyan-500/20 transition-all duration-200"
-      >
-        {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-      </button>
-
-      {/* Sidebar Overlay */}
+    <AnimatePresence>
       {isOpen && (
-        <div
-          className="fixed inset-0 bg-black/50 backdrop-blur-sm z-40 lg:hidden"
-          onClick={closeSidebar}
-        />
-      )}
+        <>
+          {/* Backdrop */}
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            onClick={onClose}
+            className="fixed inset-0 bg-black/50 backdrop-blur-sm z-40 lg:hidden"
+          />
 
-      {/* Sidebar */}
-      <aside
-        className={`fixed top-0 left-0 h-full w-80 bg-black/95 backdrop-blur-xl border-r border-cyan-500/20 z-50 transform transition-transform duration-300 ease-in-out ${
-          isOpen ? 'translate-x-0' : '-translate-x-full'
-        } lg:translate-x-0 lg:relative lg:z-auto`}
-      >
-        {/* Sidebar Header */}
-        <div className="p-6 border-b border-cyan-500/20">
-          <div className="flex items-center space-x-3 mb-4">
-            <div className="relative">
-              <div className="w-10 h-10 bg-gradient-to-r from-cyan-500 to-blue-600 rounded-xl flex items-center justify-center">
-                <Zap className="w-6 h-6 text-white" />
-              </div>
-              <div className="absolute inset-0 bg-gradient-to-r from-cyan-400 to-blue-500 rounded-xl blur-lg opacity-50"></div>
-            </div>
-            <div>
-              <h2 className="text-lg font-bold bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
-                Zion Tech Group
-              </h2>
-              <p className="text-xs text-cyan-300">Navigation</p>
-            </div>
-          </div>
-
-          {/* Search Bar */}
-          <div className="relative">
-            <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-gray-400" />
-            <input
-              type="text"
-              placeholder="Search services..."
-              className="w-full pl-10 pr-4 py-2 bg-gray-800/50 border border-cyan-500/30 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-cyan-400 transition-colors duration-200"
-            />
-          </div>
-        </div>
-
-        {/* Sidebar Content */}
-        <div className="flex-1 overflow-y-auto">
-          <div className="p-4 space-y-6">
-            {/* Quick Actions */}
-            <div className="space-y-3">
-              <h3 className="text-sm font-semibold text-gray-300 uppercase tracking-wider">Quick Actions</h3>
-              <div className="grid grid-cols-2 gap-2">
-                {quickActions.map((action) => (
-                  <Link
-                    key={action.href}
-                    href={action.href}
-                    className={`${action.color} p-3 rounded-lg text-white text-center hover:scale-105 transition-transform duration-200 group`}
-                    onClick={closeSidebar}
-                  >
-                    <action.icon className="w-5 h-5 mx-auto mb-1 group-hover:scale-110 transition-transform duration-200" />
-                    <span className="text-xs font-medium">{action.name}</span>
-                  </Link>
-                ))}
-              </div>
-            </div>
-
-            {/* Navigation Sections */}
-            <div className="space-y-2">
-              {navigationSections.map((section) => (
-                <div key={section.id} className="space-y-1">
-                  <button
-                    onClick={() => toggleSection(section.id)}
-                    className="w-full flex items-center justify-between p-3 text-left text-gray-300 hover:text-white hover:bg-cyan-500/10 rounded-lg transition-all duration-200 group"
-                  >
-                    <div className="flex items-center space-x-3">
-                      <section.icon className={`w-5 h-5 ${section.color}`} />
-                      <span className="font-medium">{section.title}</span>
+          {/* Sidebar */}
+          <motion.div
+            initial={{ x: '-100%' }}
+            animate={{ x: 0 }}
+            exit={{ x: '-100%' }}
+            transition={{ type: 'spring', damping: 25, stiffness: 200 }}
+            className="fixed left-0 top-0 h-full w-80 bg-black/95 backdrop-blur-xl border-r border-cyan-500/20 z-50 overflow-y-auto"
+          >
+            {/* Header */}
+            <div className="sticky top-0 bg-black/80 backdrop-blur-xl border-b border-cyan-500/20 p-6">
+              <div className="flex items-center justify-between">
+                <Link href="/" className="flex items-center space-x-3 group" onClick={onClose}>
+                  <div className="relative">
+                    <div className="w-12 h-12 bg-gradient-to-r from-cyan-500 to-blue-600 rounded-xl flex items-center justify-center shadow-lg shadow-cyan-500/25 group-hover:shadow-cyan-500/40 transition-all duration-300">
+                      <Zap className="w-6 h-6 text-white" />
                     </div>
-                    <ChevronDown
-                      className={`w-4 h-4 text-gray-400 transition-transform duration-200 ${
-                        activeSection === section.id ? 'rotate-180' : ''
-                      }`}
-                    />
-                  </button>
+                    <div className="absolute inset-0 bg-gradient-to-r from-cyan-400 to-blue-500 rounded-xl opacity-0 group-hover:opacity-20 transition-opacity duration-300"></div>
+                  </div>
+                  <div className="flex flex-col">
+                    <span className="text-xl font-bold bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
+                      Zion Tech Group
+                    </span>
+                    <span className="text-xs text-gray-400">Revolutionary Technology</span>
+                  </div>
+                </Link>
+                
+                <button
+                  onClick={onClose}
+                  className="p-2 rounded-lg bg-gray-800/50 hover:bg-gray-700/50 text-gray-400 hover:text-white transition-all duration-200"
+                >
+                  <X className="w-5 h-5" />
+                </button>
+              </div>
 
-                  {/* Section Items */}
-                  {activeSection === section.id && (
-                    <div className="ml-8 space-y-1">
-                      {section.items.map((item) => (
-                        <Link
-                          key={item.href}
-                          href={item.href}
-                          className="flex items-center space-x-2 px-3 py-2 text-sm text-gray-400 hover:text-cyan-400 hover:bg-cyan-500/5 rounded-md transition-all duration-200 group"
-                          onClick={closeSidebar}
-                        >
-                          <item.icon className="w-4 h-4 group-hover:scale-110 transition-transform duration-200" />
-                          <span>{item.name}</span>
-                        </Link>
-                      ))}
-                      <Link
-                        href={section.href}
-                        className="flex items-center space-x-2 px-3 py-2 text-sm text-cyan-400 hover:text-cyan-300 font-medium hover:bg-cyan-500/10 rounded-md transition-all duration-200"
-                        onClick={closeSidebar}
-                      >
-                        <span>View All {section.title}</span>
-                        <ChevronDown className="w-3 h-3 rotate-[-90deg]" />
-                      </Link>
-                    </div>
-                  )}
+              {/* Contact Info */}
+              <div className="mt-6 space-y-3">
+                <div className="flex items-center space-x-3 text-sm text-cyan-300">
+                  <Phone className="w-4 h-4" />
+                  <a href={`tel:${contactInfo.mobile}`} className="hover:underline">
+                    {contactInfo.mobile}
+                  </a>
                 </div>
-              ))}
+                <div className="flex items-center space-x-3 text-sm text-cyan-300">
+                  <Mail className="w-4 h-4" />
+                  <a href={`mailto:${contactInfo.email}`} className="hover:underline">
+                    {contactInfo.email}
+                  </a>
+                </div>
+                <div className="flex items-center space-x-3 text-sm text-cyan-300">
+                  <MapPin className="w-4 h-4" />
+                  <span className="text-xs">{contactInfo.address}</span>
+                </div>
+              </div>
             </div>
 
-            {/* Main Navigation */}
-            <div className="p-6">
-              <div className="mb-6">
-                <h3 className="text-sm font-semibold text-gray-400 uppercase tracking-wider mb-3">
+            {/* Navigation */}
+            <div className="p-6 space-y-8">
+              {/* Main Navigation */}
+              <div>
+                <h3 className="text-sm font-semibold text-gray-400 uppercase tracking-wider mb-4">
                   Main Navigation
                 </h3>
-                <div className="space-y-2">
+                <nav className="space-y-2">
                   {mainNavigation.map((item) => (
                     <Link
-                      key={item.title}
+                      key={item.name}
                       href={item.href}
                       onClick={onClose}
-                      className="flex items-center space-x-3 p-3 text-gray-300 hover:text-white hover:bg-gray-800/50 rounded-lg transition-all duration-200 group"
+                      className="flex items-center justify-between p-3 rounded-lg text-gray-300 hover:text-white hover:bg-cyan-500/10 border border-transparent hover:border-cyan-500/20 transition-all duration-200 group"
                     >
-                      <div className="text-gray-400 group-hover:text-cyan-400 transition-colors duration-200">
-                        {item.icon}
+                      <div className="flex items-center space-x-3">
+                        <item.icon className="w-5 h-5 text-cyan-400 group-hover:text-cyan-300 transition-colors duration-200" />
+                        <div>
+                          <span className="font-medium">{item.name}</span>
+                          <p className="text-xs text-gray-500">{item.description}</p>
+                        </div>
                       </div>
-                      <div className="flex-1">
-                        <div className="font-medium">{item.title}</div>
-                        <div className="text-xs text-gray-500">{item.description}</div>
-                      </div>
+                      {item.badge && (
+                        <span className="px-2 py-1 text-xs font-medium bg-cyan-500/20 text-cyan-400 rounded-full">
+                          {item.badge}
+                        </span>
+                      )}
                     </Link>
                   ))}
-                </div>
+                </nav>
               </div>
 
               {/* Service Categories */}
-              <div className="mb-6">
-                <h3 className="text-sm font-semibold text-gray-400 uppercase tracking-wider mb-3">
+              <div>
+                <h3 className="text-sm font-semibold text-gray-400 uppercase tracking-wider mb-4">
                   Service Categories
                 </h3>
-                <div className="space-y-2">
+                <div className="space-y-4">
                   {serviceCategories.map((category) => (
-                    <div key={category.title} className="border border-gray-800 rounded-lg overflow-hidden">
-                      <button
-                        onClick={() => toggleCategory(category.title)}
-                        className="w-full flex items-center justify-between p-3 text-left text-gray-300 hover:text-white hover:bg-gray-800/50 transition-all duration-200"
-                      >
-                        <div className="flex items-center space-x-3">
-                          <div className={`p-2 rounded-lg bg-gradient-to-r ${category.color}`}>
-                            {category.icon}
-                          </div>
-                          <span className="font-medium">{category.title}</span>
-                        </div>
-                        {expandedCategories.includes(category.title) ? (
-                          <ChevronDown className="w-4 h-4 text-gray-400" />
-                        ) : (
-                          <ChevronRight className="w-4 h-4 text-gray-400" />
-                        )}
-                      </button>
-                      
-                      <AnimatePresence>
-                        {expandedCategories.includes(category.title) && (
-                          <motion.div
-                            initial={{ height: 0, opacity: 0 }}
-                            animate={{ height: 'auto', opacity: 1 }}
-                            exit={{ height: 0, opacity: 0 }}
-                            transition={{ duration: 0.2 }}
-                            className="bg-gray-800/30"
+                    <div key={category.title} className="space-y-2">
+                      <div className="flex items-center space-x-2 text-sm font-medium text-white">
+                        <category.icon className="w-4 h-4 text-cyan-400" />
+                        <span>{category.title}</span>
+                      </div>
+                      <div className="ml-6 space-y-1">
+                        {category.services.slice(0, 4).map((service) => (
+                          <Link
+                            key={service.name}
+                            href={service.href}
+                            onClick={onClose}
+                            className="block text-xs text-gray-400 hover:text-cyan-400 transition-colors duration-200 hover:underline"
                           >
-                            <div className="p-3 space-y-2">
-                              {category.services.map((service) => (
-                                <Link
-                                  key={service.name}
-                                  href={service.href}
-                                  onClick={onClose}
-                                  className="flex items-center justify-between p-2 text-sm text-gray-400 hover:text-white hover:bg-gray-700/50 rounded transition-colors duration-200 group"
-                                >
-                                  <span className="truncate">{service.name}</span>
-                                  {service.popular && (
-                                    <Star className="w-3 h-3 text-yellow-400" />
-                                  )}
-                                </Link>
-                              ))}
-                            </div>
-                          </motion.div>
+                            {service.name}
+                          </Link>
+                        ))}
+                        {category.services.length > 4 && (
+                          <Link
+                            href={`/${category.title.toLowerCase().replace(/\s+/g, '-').replace(/&/g, 'and')}`}
+                            onClick={onClose}
+                            className="block text-xs text-cyan-400 hover:text-cyan-300 transition-colors duration-200 font-medium hover:underline"
+                          >
+                            View all {category.services.length} services →
+                          </Link>
                         )}
-                      </AnimatePresence>
+                      </div>
                     </div>
                   ))}
                 </div>
               </div>
 
               {/* Quick Links */}
-              <div className="mb-6">
-                <h3 className="text-sm font-semibold text-gray-400 uppercase tracking-wider mb-3">
+              <div>
+                <h3 className="text-sm font-semibold text-gray-400 uppercase tracking-wider mb-4">
                   Quick Links
                 </h3>
-                <div className="space-y-2">
+                <div className="grid grid-cols-2 gap-2">
                   {quickLinks.map((link) => (
                     <Link
                       key={link.name}
                       href={link.href}
                       onClick={onClose}
-                      className="flex items-center space-x-3 p-3 text-gray-300 hover:text-white hover:bg-gray-800/50 rounded-lg transition-all duration-200 group"
+                      className="flex items-center space-x-2 p-2 rounded-lg bg-gray-800/30 hover:bg-cyan-500/10 border border-transparent hover:border-cyan-500/20 transition-all duration-200 group"
                     >
-                      <div className="text-gray-400 group-hover:text-cyan-400 transition-colors duration-200">
-                        {link.icon}
-                      </div>
-                      <span className="font-medium">{link.name}</span>
+                      <link.icon className="w-4 h-4 text-gray-400 group-hover:text-cyan-400 transition-colors duration-200" />
+                      <span className="text-xs text-gray-300 group-hover:text-white transition-colors duration-200">
+                        {link.name}
+                      </span>
                     </Link>
                   ))}
                 </div>
               </div>
 
-              {/* Company Links */}
-              <div className="mb-6">
-                <h3 className="text-sm font-semibold text-gray-400 uppercase tracking-wider mb-3">
-                  Company
+              {/* Social Links */}
+              <div>
+                <h3 className="text-sm font-semibold text-gray-400 uppercase tracking-wider mb-4">
+                  Connect With Us
                 </h3>
-                <div className="space-y-2">
-                  {companyLinks.map((link) => (
-                    <Link
-                      key={link.name}
-                      href={link.href}
-                      onClick={onClose}
-                      className="flex items-center space-x-3 p-3 text-gray-300 hover:text-white hover:bg-gray-800/50 rounded-lg transition-all duration-200 group"
+                <div className="grid grid-cols-4 gap-2">
+                  {socialLinks.map((social) => (
+                    <a
+                      key={social.name}
+                      href={social.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex flex-col items-center p-2 rounded-lg bg-gray-800/30 hover:bg-cyan-500/10 border border-transparent hover:border-cyan-500/20 transition-all duration-200 group"
                     >
-                      <div className="text-gray-400 group-hover:text-cyan-400 transition-colors duration-200">
-                        {link.icon}
-                      </div>
-                      <span className="font-medium">{link.name}</span>
-                    </Link>
+                      <social.icon className="w-4 h-4 text-gray-400 group-hover:text-cyan-400 transition-colors duration-200 mb-1" />
+                      <span className="text-xs text-gray-300 group-hover:text-white transition-colors duration-200 text-center">
+                        {social.name}
+                      </span>
+                    </a>
                   ))}
                 </div>
               </div>
-            </div>
 
-            {/* Contact Information */}
-            <div className="pt-6 border-t border-cyan-500/20">
-              <h3 className="text-sm font-semibold text-gray-300 uppercase tracking-wider mb-3">Contact Info</h3>
-              <div className="space-y-2 text-sm">
-                <div className="flex items-center space-x-2 text-gray-400">
-                  <Phone className="w-4 h-4 text-cyan-400" />
-                  <span>+1 302 464 0950</span>
-                </div>
-                <div className="flex items-center space-x-2 text-gray-400">
-                  <Mail className="w-4 h-4 text-cyan-400" />
-                  <span>kleber@ziontechgroup.com</span>
-                </div>
-                <div className="flex items-start space-x-2 text-gray-400">
-                  <MapPin className="w-4 h-4 text-cyan-400 mt-1" />
-                  <span className="text-xs">364 E Main St STE 1008<br />Middletown DE 19709</span>
+              {/* Footer */}
+              <div className="pt-6 border-t border-cyan-500/20">
+                <div className="text-center text-xs text-gray-500 space-y-2">
+                  <p>&copy; 2025 Zion Tech Group</p>
+                  <p>Revolutionary Technology Solutions</p>
+                  <div className="flex justify-center space-x-4 pt-2">
+                    <Link href="/privacy" className="hover:text-cyan-400 transition-colors duration-200">
+                      Privacy
+                    </Link>
+                    <Link href="/terms" className="hover:text-cyan-400 transition-colors duration-200">
+                      Terms
+                    </Link>
+                  </div>
                 </div>
               </div>
             </div>
-
-            {/* System Status */}
-            <div className="pt-4 border-t border-cyan-500/20">
-              <div className="flex items-center justify-between text-sm">
-                <span className="text-gray-400">System Status</span>
-                <div className="flex items-center space-x-2">
-                  <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
-                  <span className="text-green-400">Operational</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </aside>
-    </>
+          </motion.div>
+        </>
+      )}
+    </AnimatePresence>
   );
 };
 
