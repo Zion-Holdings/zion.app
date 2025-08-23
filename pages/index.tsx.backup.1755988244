@@ -3,8 +3,14 @@ import EnhancedHomepage2026 from '../components/EnhancedHomepage2026';
 import EnhancedSEOOptimizer from '../components/EnhancedSEOOptimizer';
 import EnhancedAnalyticsTracker from '../components/EnhancedAnalyticsTracker';
 import ErrorBoundary from '../components/ErrorBoundary';
+<<<<<<< HEAD
+import EnhancedPerformanceOptimizer from '../components/EnhancedPerformanceOptimizer';
+import EnhancedAccessibilityEnhancer from '../components/EnhancedAccessibilityEnhancer';
+import SecurityEnhancer from '../components/SecurityEnhancer';
+=======
 import PerformanceOptimizer from '../components/PerformanceOptimizer';
 import AccessibilityEnhancer from '../components/AccessibilityEnhancer';
+>>>>>>> origin/cursor/analyze-improve-and-deploy-application-e69d
 
 const HomePage: React.FC = () => {
   // Structured data for better SEO
@@ -39,12 +45,22 @@ const HomePage: React.FC = () => {
 
   return (
     <ErrorBoundary>
+<<<<<<< HEAD
+      <EnhancedSEOOptimizer />
+      <EnhancedAnalyticsTracker />
+      <EnhancedPerformanceOptimizer>
+        <EnhancedHomepage2026 />
+      </EnhancedPerformanceOptimizer>
+      <EnhancedAccessibilityEnhancer />
+      <SecurityEnhancer />
+=======
       <SEOOptimizer />
       <AnalyticsTracker />
       <PerformanceOptimizer>
         <Homepage2025 />
       </PerformanceOptimizer>
       <AccessibilityEnhancer />
+>>>>>>> origin/cursor/analyze-improve-and-deploy-application-e69d
     </ErrorBoundary>
   );
 };

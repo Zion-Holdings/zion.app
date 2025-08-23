@@ -1,61 +1,41 @@
 {
-  "name": "Zion Tech Group - Pioneering the Future of Technology",
-  "short_name": "Zion Tech Group",
-  "description": "Leading technology company specializing in AI, quantum computing, space technology, and enterprise solutions. Transform your business with cutting-edge innovation.",
+  "name": "Zion Tech Group",
+  "short_name": "Zion Tech",
+  "description": "Leading provider of AI, quantum computing, and space technology solutions",
   "start_url": "/",
   "display": "standalone",
-  "background_color": "#111827",
-  "theme_color": "#06b6d4",
+  "background_color": "#000000",
+  "theme_color": "#00d4ff",
   "orientation": "portrait-primary",
   "scope": "/",
-  "lang": "en-US",
+  "lang": "en",
   "categories": ["business", "productivity", "technology"],
   "icons": [
     {
-      "src": "/images/icon-72x72.png",
-      "sizes": "72x72",
-      "type": "image/png",
-      "purpose": "maskable any"
-    },
-    {
-      "src": "/images/icon-96x96.png",
-      "sizes": "96x96",
-      "type": "image/png",
-      "purpose": "maskable any"
-    },
-    {
-      "src": "/images/icon-128x128.png",
-      "sizes": "128x128",
-      "type": "image/png",
-      "purpose": "maskable any"
-    },
-    {
-      "src": "/logo192.png",
+      "src": "/logo.png",
       "sizes": "192x192",
       "type": "image/png",
       "purpose": "maskable any"
     },
     {
-      "src": "/logo512.png",
+      "src": "/logo.png",
       "sizes": "512x512",
       "type": "image/png",
-      "purpose": "maskable any"
+      "purpose": "any maskable"
     }
   ],
   "screenshots": [
     {
-      "src": "/images/screenshot-desktop.png",
+      "src": "/og-image.jpg",
       "sizes": "1280x720",
-      "type": "image/png",
-      "form_factor": "wide",
-      "label": "Zion Tech Group Desktop Experience"
+      "type": "image/jpeg",
+      "form_factor": "wide"
     },
     {
-      "src": "/images/screenshot-mobile.png",
-      "sizes": "390x844",
-      "type": "image/png",
-      "form_factor": "narrow",
-      "label": "Zion Tech Group Mobile Experience"
+      "src": "/og-image.jpg",
+      "sizes": "750x1334",
+      "type": "image/jpeg",
+      "form_factor": "narrow"
     }
   ],
   "shortcuts": [
@@ -66,8 +46,8 @@
       "url": "/services",
       "icons": [
         {
-          "src": "/logo192.png",
-          "sizes": "192x192"
+          "src": "/logo.png",
+          "sizes": "96x96"
         }
       ]
     },
@@ -78,8 +58,8 @@
       "url": "/contact",
       "icons": [
         {
-          "src": "/logo192.png",
-          "sizes": "192x192"
+          "src": "/logo.png",
+          "sizes": "96x96"
         }
       ]
     },
@@ -90,26 +70,10 @@
       "url": "/ai-consciousness-evolution-2040",
       "icons": [
         {
-          "src": "/logo192.png",
-          "sizes": "192x192"
+          "src": "/logo.png",
+          "sizes": "96x96"
         }
       ]
-    }
-  ],
-  "screenshots": [
-    {
-      "src": "/screenshot-wide.png",
-      "sizes": "1280x720",
-      "type": "image/png",
-      "form_factor": "wide",
-      "label": "Zion Tech Group Homepage"
-    },
-    {
-      "src": "/screenshot-narrow.png",
-      "sizes": "750x1334",
-      "type": "image/png",
-      "form_factor": "narrow",
-      "label": "Zion Tech Group Mobile View"
     }
   ],
   "related_applications": [],
@@ -119,12 +83,5 @@
   },
   "launch_handler": {
     "client_mode": "navigate-existing"
-  },
-  "handle_links": "preferred",
-  "protocol_handlers": [
-    {
-      "protocol": "web+zion",
-      "url": "/?protocol=%s"
-    }
-  ]
+  }
 }
