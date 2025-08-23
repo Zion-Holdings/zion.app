@@ -3,9 +3,14 @@ import Head from 'next/head';
 import { Check, Star, Zap, Shield, Users, Globe, ArrowRight, ExternalLink, TrendingUp, Clock, Target, Building, Rocket, Award, DollarSign, ChartBar, Lock, Cpu, Database, Cloud, Smartphone, Palette, Search, MessageSquare, FileText, Calendar, CreditCard, BarChart3, Settings, Zap as ZapIcon, Code, BookOpen, Activity, Database as DatabaseIcon, Play, Mail, Phone, MapPin, Filter, Grid, List, ChevronDown, ChevronUp, Sparkles, Filter as FilterIcon } from 'lucide-react';
 import Button from '../components/ui/Button';
 import Card from '../components/ui/Card';
+<<<<<<< HEAD
+import QuantumNeuralBackground from '../components/ui/QuantumNeuralBackground';
+import { expandedMicroSaasServices, serviceCategories, getServicesByCategory, getPopularServices, getServicesByPriceRange } from '../data/expanded-micro-saas-services';
+=======
 import UltraFuturisticMatrixBackground from '../components/ui/UltraFuturisticMatrixBackground';
 import { enhancedRealMicroSaasServices, serviceCategories, getServicesByCategory, getPopularServices, getServicesByPriceRange } from '../data/enhanced-real-micro-saas-services';
 import { motion } from 'framer-motion';
+>>>>>>> origin/cursor/enhance-app-services-and-website-with-futuristic-design-b6e9
 
 export default function ServicesPage() {
   const [searchTerm, setSearchTerm] = useState('');
@@ -289,7 +294,11 @@ export default function ServicesPage() {
   ];
 
   return (
+<<<<<<< HEAD
+          <UltraAdvancedFuturisticBackground variant="holographic" intensity="medium">
+=======
     <UltraFuturisticMatrixBackground>
+>>>>>>> origin/cursor/enhance-app-services-and-website-with-futuristic-design-b6e9
       <Head>
         <title>Revolutionary Micro SAAS Services - Zion Tech Group</title>
         <meta name="description" content="Discover our cutting-edge micro SAAS services including quantum AI, autonomous manufacturing, cybersecurity, and more. Transform your business with next-generation technology." />
@@ -1364,6 +1373,10 @@ export default function ServicesPage() {
     </div>
 =======
       </div>
+<<<<<<< HEAD
+    </QuantumNeuralBackground>
+=======
     </UltraFuturisticMatrixBackground>
+>>>>>>> origin/cursor/enhance-app-services-and-website-with-futuristic-design-b6e9
   );
 }
