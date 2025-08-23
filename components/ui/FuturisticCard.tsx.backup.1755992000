@@ -7,6 +7,10 @@ interface FuturisticCardProps {
   variant?: 'default' | 'gradient' | 'glass' | 'neon' | 'holographic';
   hoverEffect?: boolean;
   onClick?: () => void;
+<<<<<<< HEAD
+  style?: React.CSSProperties;
+=======
+>>>>>>> origin/cursor/enhance-app-services-and-website-with-futuristic-design-f757
 }
 
 export default function FuturisticCard({ 
@@ -14,7 +18,12 @@ export default function FuturisticCard({
   className = '', 
   variant = 'default',
   hoverEffect = true,
+<<<<<<< HEAD
+  onClick,
+  style
+=======
   onClick 
+>>>>>>> origin/cursor/enhance-app-services-and-website-with-futuristic-design-f757
 }: FuturisticCardProps) {
   const [isHovered, setIsHovered] = useState(false);
 
@@ -57,6 +66,10 @@ export default function FuturisticCard({
   return (
     <motion.div
       className={`${baseClasses} ${variants[variant]}`}
+<<<<<<< HEAD
+      style={style}
+=======
+>>>>>>> origin/cursor/enhance-app-services-and-website-with-futuristic-design-f757
       onHoverStart={() => setIsHovered(true)}
       onHoverEnd={() => setIsHovered(false)}
       onClick={onClick}
@@ -162,7 +175,11 @@ export function FeatureCard({
 }: {
   title: string;
   description: string;
+<<<<<<< HEAD
+  icon: string | React.ReactElement;
+=======
   icon: string;
+>>>>>>> origin/cursor/enhance-app-services-and-website-with-futuristic-design-f757
   className?: string;
   onClick?: () => void;
 }) {
@@ -172,7 +189,13 @@ export function FeatureCard({
       className={`${className} text-center`}
       onClick={onClick}
     >
+<<<<<<< HEAD
+      <div className="text-5xl mb-4">
+        {typeof icon === 'string' ? icon : icon}
+      </div>
+=======
       <div className="text-5xl mb-4">{icon}</div>
+>>>>>>> origin/cursor/enhance-app-services-and-website-with-futuristic-design-f757
       <h3 className="text-xl font-bold text-white mb-3">{title}</h3>
       <p className="text-gray-300">{description}</p>
     </FuturisticCard>

@@ -1,7 +1,12 @@
 import React from 'react';
+<<<<<<< HEAD
+import FuturisticNavigation from './FuturisticNavigation';
+import FuturisticFooter from './FuturisticFooter';
+=======
 import FuturisticNav from './FuturisticNav';
 import FuturisticFooter from './FuturisticFooter';
 import AnimatedBackground from '../ui/AnimatedBackground';
+>>>>>>> origin/cursor/enhance-app-services-and-website-with-futuristic-design-f757
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -23,6 +28,13 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
 };
 
   return (
+<<<<<<< HEAD
+    <div className="min-h-screen bg-black text-white">
+      <FuturisticNavigation />
+      <main className="pt-24 lg:pt-28">
+        {children}
+      </main>
+=======
     <div className="min-h-screen bg-black text-white relative">
       {/* Animated background */}
       <AnimatedBackground variant="stars" intensity="low" />
@@ -36,6 +48,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
       </main>
       
       {/* Footer */}
+>>>>>>> origin/cursor/enhance-app-services-and-website-with-futuristic-design-f757
       <FuturisticFooter />
     </div>
   );
