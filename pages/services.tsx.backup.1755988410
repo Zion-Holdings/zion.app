@@ -145,6 +145,13 @@ const allServices = [
   ...real2036ServiceExpansions,
   ...innovative2036MicroSaasServices,
   ...innovative2036ITServices,
+<<<<<<< HEAD
+  // Add our new innovative 2027 services
+  ...innovative2027AIBusinessIntelligenceServices,
+  ...innovative2027CybersecurityComplianceServices,
+  ...innovative2027CloudDevOpsServices,
+  ...innovative2027IndustrySolutions
+=======
   ...innovative2037MicroSaasServices,
   ...innovative2037ITServices,
   ...innovative2037AIServices,
@@ -152,6 +159,7 @@ const allServices = [
   ...cuttingEdgeServices,
   ...itInfrastructureServices,
   ...businessSolutionServices
+>>>>>>> origin/cursor/add-and-advertise-new-services-then-build-d68c
 ];
 
 const categories = [
