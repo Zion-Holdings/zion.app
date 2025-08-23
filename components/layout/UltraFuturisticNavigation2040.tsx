@@ -1,10 +1,11 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef, useCallback } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { motion, AnimatePresence } from 'framer-motion';
 import { 
   Menu, X, Search, ChevronDown, Zap, Globe, Lock, 
-  Phone, Mail, MapPin, ArrowRight, Star, Users, Award
+  Phone, Mail, MapPin, ArrowRight, Star, Users, Award,
+  ChevronUp, ExternalLink, Home, Briefcase, BookOpen, Building
 } from 'lucide-react';
 
 interface NavigationItem {
@@ -19,7 +20,7 @@ const navigationItems: NavigationItem[] = [
   {
     label: 'Home',
     href: '/',
-    icon: <Zap className="w-4 h-4" />
+    icon: <Home className="w-4 h-4" />
   },
   {
     label: 'Services',
@@ -138,13 +139,13 @@ const navigationItems: NavigationItem[] = [
       {
         label: 'About Us',
         href: '/about',
-        icon: <Users className="w-4 h-4" />,
+        icon: <Building className="w-4 h-4" />,
         description: 'Our story and mission'
       },
       {
         label: 'Careers',
         href: '/careers',
-        icon: <Users className="w-4 h-4" />,
+        icon: <Briefcase className="w-4 h-4" />,
         description: 'Join our team'
       },
       {
@@ -174,35 +175,37 @@ const UltraFuturisticNavigation2040: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isSearchOpen, setIsSearchOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
+  const [isSearchFocused, setIsSearchFocused] = useState(false);
   
   const mobileMenuRef = useRef<HTMLDivElement>(null);
   const searchRef = useRef<HTMLDivElement>(null);
   const searchInputRef = useRef<HTMLInputElement>(null);
   const router = useRouter();
 
-  // Handle scroll effect
+  // Handle scroll effect with throttling
   useEffect(() => {
+    let ticking = false;
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20);
+      if (!ticking) {
+        requestAnimationFrame(() => {
+          setIsScrolled(window.scrollY > 20);
+          ticking = false;
+        });
+        ticking = true;
+      }
     };
 
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  // Enhanced click outside handling
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
       if (searchRef.current && !searchRef.current.contains(event.target as HTMLElement)) {
         setIsSearchOpen(false);
+        setIsSearchFocused(false);
       }
-    };
-
-    document.addEventListener('mousedown', handleClickOutside);
-    return () => document.removeEventListener('mousedown', handleClickOutside);
-  }, []);
-
-  useEffect(() => {
-    const handleClickOutside = (event: MouseEvent) => {
       if (mobileMenuRef.current && !mobileMenuRef.current.contains(event.target as HTMLElement)) {
         setIsMobileMenuOpen(false);
       }
@@ -212,43 +215,69 @@ const UltraFuturisticNavigation2040: React.FC = () => {
     return () => document.removeEventListener('mousedown', handleClickOutside);
   }, []);
 
+  // Close mobile menu on route change
   useEffect(() => {
-    if (isSearchOpen && searchInputRef.current) {
-      searchInputRef.current.focus();
-    }
-  }, [isSearchOpen]);
-
-  const toggleMobileMenu = () => {
-    setIsMobileMenuOpen(!isMobileMenuOpen);
-    if (isMobileMenuOpen) {
+    const handleRouteChange = () => {
+      setIsMobileMenuOpen(false);
       setActiveDropdown(null);
+    };
+
+    router.events.on('routeChangeStart', handleRouteChange);
+    return () => router.events.off('routeChangeStart', handleRouteChange);
+  }, [router]);
+
+  // Enhanced search functionality
+  const handleSearch = useCallback((query: string) => {
+    setSearchQuery(query);
+    if (query.length > 2) {
+      // Implement search logic here
+      console.log('Searching for:', query);
     }
-  };
+  }, []);
 
-  const toggleDropdown = (label: string) => {
-    setActiveDropdown(activeDropdown === label ? null : label);
-  };
+  // Enhanced mobile menu toggle
+  const toggleMobileMenu = useCallback(() => {
+    setIsMobileMenuOpen(prev => !prev);
+    setActiveDropdown(null);
+  }, []);
 
-  const handleSearch = (e: React.FormEvent) => {
+  // Enhanced dropdown toggle
+  const toggleDropdown = useCallback((label: string) => {
+    setActiveDropdown(prev => prev === label ? null : label);
+  }, []);
+
+  // Check if current route is active
+  const isActive = useCallback((href: string) => {
+    return router.pathname === href;
+  }, [router.pathname]);
+
+  // Enhanced search submit
+  const handleSearchSubmit = useCallback((e: React.FormEvent) => {
     e.preventDefault();
     if (searchQuery.trim()) {
-      router.push(`/services?search=${encodeURIComponent(searchQuery.trim())}`);
+      // Implement search navigation
+      router.push(`/search?q=${encodeURIComponent(searchQuery.trim())}`);
       setIsSearchOpen(false);
       setSearchQuery('');
     }
-  };
+  }, [searchQuery, router]);
 
-  const isActive = (href: string) => {
-    return router.pathname === href;
-  };
+  // Focus search input when search opens
+  useEffect(() => {
+    if (isSearchOpen && searchInputRef.current) {
+      setTimeout(() => searchInputRef.current?.focus(), 100);
+    }
+  }, [isSearchOpen]);
 
   return (
     <nav 
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled 
-          ? 'bg-gray-900/95 backdrop-blur-md border-b border-gray-800/50 shadow-2xl' 
+          ? 'bg-gray-900/95 backdrop-blur-md border-b border-gray-700/50 shadow-2xl' 
           : 'bg-transparent'
       }`}
+      role="navigation"
+      aria-label="Main navigation"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 lg:h-20">
@@ -257,47 +286,49 @@ const UltraFuturisticNavigation2040: React.FC = () => {
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5 }}
-            className="flex items-center space-x-3"
+            className="flex-shrink-0"
           >
-            <Link href="/" className="flex items-center space-x-3 group">
-              <div className="relative">
-                <div className="w-10 h-10 lg:w-12 lg:h-12 bg-gradient-to-r from-cyan-400 to-blue-500 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                  <Zap className="w-6 h-6 lg:w-7 lg:h-7 text-white" />
-                </div>
-                <div className="absolute inset-0 bg-gradient-to-r from-cyan-400 to-blue-500 rounded-xl blur-lg opacity-50 group-hover:opacity-75 transition-opacity duration-300"></div>
+            <Link href="/" className="flex items-center space-x-2 group" aria-label="Zion Tech Group Home">
+              <div className="w-10 h-10 lg:w-12 lg:h-12 bg-gradient-to-r from-cyan-400 to-blue-500 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                <Zap className="w-6 h-6 lg:w-7 lg:h-7 text-white" />
               </div>
               <div className="hidden sm:block">
                 <span className="text-xl lg:text-2xl font-bold bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
-                  Zion Tech Group
+                  Zion Tech
                 </span>
-                <div className="text-xs text-gray-400">2040</div>
               </div>
             </Link>
           </motion.div>
 
           {/* Desktop Navigation */}
-          <div className="hidden lg:flex items-center space-x-8">
+          <div className="hidden lg:flex items-center space-x-1">
             {navigationItems.map((item, index) => (
               <motion.div
                 key={item.label}
                 initial={{ opacity: 0, y: -20 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="relative group"
+                transition={{ duration: 0.3, delay: index * 0.1 }}
+                className="relative"
               >
                 {item.children ? (
-                  <div>
+                  <div className="relative">
                     <button
                       onClick={() => toggleDropdown(item.label)}
-                      className="flex items-center space-x-2 px-4 py-2 text-gray-300 hover:text-white transition-colors duration-200 group-hover:text-cyan-400"
+                      onMouseEnter={() => setActiveDropdown(item.label)}
+                      onMouseLeave={() => setActiveDropdown(null)}
+                      className={`px-4 py-2 text-gray-300 hover:text-white transition-colors duration-200 flex items-center gap-1 group ${
+                        activeDropdown === item.label ? 'text-cyan-400' : ''
+                      }`}
+                      aria-expanded={activeDropdown === item.label}
+                      aria-haspopup="true"
                     >
-                      <span>{item.label}</span>
+                      {item.label}
                       <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${
                         activeDropdown === item.label ? 'rotate-180' : ''
                       }`} />
                     </button>
-                    
-                    {/* Dropdown Menu */}
+
+                    {/* Enhanced Dropdown Menu */}
                     <AnimatePresence>
                       {activeDropdown === item.label && (
                         <motion.div
@@ -306,6 +337,8 @@ const UltraFuturisticNavigation2040: React.FC = () => {
                           exit={{ opacity: 0, y: 10, scale: 0.95 }}
                           transition={{ duration: 0.2 }}
                           className="absolute top-full left-0 mt-2 w-80 bg-gray-800/95 backdrop-blur-md border border-gray-700/50 rounded-2xl shadow-2xl overflow-hidden"
+                          onMouseEnter={() => setActiveDropdown(item.label)}
+                          onMouseLeave={() => setActiveDropdown(null)}
                         >
                           <div className="p-4 space-y-2">
                             {item.children.map((child, childIndex) => (
@@ -313,6 +346,7 @@ const UltraFuturisticNavigation2040: React.FC = () => {
                                 key={child.label}
                                 href={child.href || '#'}
                                 className="flex items-start space-x-3 p-3 rounded-xl hover:bg-gray-700/50 transition-all duration-200 group/item"
+                                onClick={() => setActiveDropdown(null)}
                               >
                                 <div className="flex-shrink-0 mt-1">
                                   {child.icon}
@@ -351,38 +385,40 @@ const UltraFuturisticNavigation2040: React.FC = () => {
 
           {/* Right Side Actions */}
           <div className="flex items-center space-x-4">
-            {/* Search Button */}
+            {/* Enhanced Search Button */}
             <motion.button
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.3, delay: 0.4 }}
               onClick={() => setIsSearchOpen(true)}
-              className="p-2 text-gray-400 hover:text-white transition-colors duration-200"
-              aria-label="Search"
+              className="p-2 text-gray-400 hover:text-white transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-cyan-400/50 rounded-lg"
+              aria-label="Search website"
             >
               <Search className="w-5 h-5" />
             </motion.button>
 
-            {/* Contact Button */}
+            {/* Enhanced Contact Button */}
             <motion.button
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.3, delay: 0.5 }}
               onClick={() => router.push('/contact')}
               className="hidden sm:inline-flex items-center space-x-2 px-4 py-2 bg-gradient-to-r from-cyan-400 to-blue-500 text-white font-medium rounded-xl hover:from-cyan-500 hover:to-blue-600 transition-all duration-300 focus:outline-none focus:ring-4 focus:ring-cyan-400/50"
+              aria-label="Contact us"
             >
               <Phone className="w-4 h-4" />
               <span>Contact Us</span>
             </motion.button>
 
-            {/* Mobile Menu Button */}
+            {/* Enhanced Mobile Menu Button */}
             <motion.button
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.3, delay: 0.6 }}
               onClick={toggleMobileMenu}
-              className="lg:hidden p-2 text-gray-400 hover:text-white transition-colors duration-200"
-              aria-label="Toggle mobile menu"
+              className="lg:hidden p-2 text-gray-400 hover:text-white transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-cyan-400/50 rounded-lg"
+              aria-label={isMobileMenuOpen ? "Close mobile menu" : "Open mobile menu"}
+              aria-expanded={isMobileMenuOpen}
             >
               {isMobileMenuOpen ? (
                 <X className="w-6 h-6" />
@@ -394,53 +430,77 @@ const UltraFuturisticNavigation2040: React.FC = () => {
         </div>
       </div>
 
-      {/* Search Overlay */}
+      {/* Enhanced Search Overlay */}
       <AnimatePresence>
         {isSearchOpen && (
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 bg-black/80 backdrop-blur-sm z-50"
+            className="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 flex items-start justify-center pt-20"
+            ref={searchRef}
           >
-            <div className="flex items-center justify-center min-h-screen p-4">
-              <motion.div
-                ref={searchRef}
-                initial={{ opacity: 0, scale: 0.9, y: 20 }}
-                animate={{ opacity: 1, scale: 1, y: 0 }}
-                exit={{ opacity: 0, scale: 0.9, y: 20 }}
-                className="w-full max-w-2xl"
-              >
-                <form onSubmit={handleSearch} className="relative">
-                  <input
-                    ref={searchInputRef}
-                    type="text"
-                    value={searchQuery}
-                    onChange={(e) => setSearchQuery(e.target.value)}
-                    placeholder="Search for services, solutions, or technologies..."
-                    className="w-full px-6 py-4 text-lg bg-gray-800/95 backdrop-blur-md border border-gray-700/50 rounded-2xl text-white placeholder-gray-400 focus:outline-none focus:ring-4 focus:ring-cyan-400/50 focus:border-cyan-400/50"
-                  />
-                  <button
-                    type="submit"
-                    className="absolute right-2 top-1/2 transform -translate-y-1/2 p-3 bg-gradient-to-r from-cyan-400 to-blue-500 text-white rounded-xl hover:from-cyan-500 hover:to-blue-600 transition-all duration-300 focus:outline-none focus:ring-4 focus:ring-cyan-400/50"
-                  >
-                    <Search className="w-5 h-5" />
-                  </button>
-                </form>
-                
+            <motion.div
+              initial={{ opacity: 0, scale: 0.95, y: -20 }}
+              animate={{ opacity: 1, scale: 1, y: 0 }}
+              exit={{ opacity: 0, scale: 0.95, y: -20 }}
+              transition={{ duration: 0.2 }}
+              className="w-full max-w-2xl mx-4"
+            >
+              <form onSubmit={handleSearchSubmit} className="relative">
+                <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
+                <input
+                  ref={searchInputRef}
+                  type="text"
+                  placeholder="Search for services, solutions, or resources..."
+                  value={searchQuery}
+                  onChange={(e) => handleSearch(e.target.value)}
+                  onFocus={() => setIsSearchFocused(true)}
+                  onBlur={() => setIsSearchFocused(false)}
+                  className={`w-full px-12 py-4 bg-white/10 border rounded-2xl text-white placeholder-gray-400 focus:outline-none transition-all duration-300 text-lg ${
+                    isSearchFocused ? 'border-cyan-400 shadow-lg shadow-cyan-400/25' : 'border-gray-600'
+                  }`}
+                  aria-label="Search input"
+                />
                 <button
-                  onClick={() => setIsSearchOpen(false)}
-                  className="absolute top-4 right-4 p-2 text-gray-400 hover:text-white transition-colors duration-200"
+                  type="submit"
+                  className="absolute right-2 top-1/2 transform -translate-y-1/2 px-4 py-2 bg-gradient-to-r from-cyan-400 to-blue-500 text-white rounded-xl hover:from-cyan-500 hover:to-blue-600 transition-all duration-300 focus:outline-none focus:ring-4 focus:ring-cyan-400/50"
+                  aria-label="Submit search"
                 >
-                  <X className="w-6 h-6" />
+                  Search
                 </button>
-              </motion.div>
-            </div>
+              </form>
+              
+              {/* Search suggestions */}
+              {searchQuery.length > 2 && (
+                <motion.div
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  className="mt-4 bg-gray-800/95 backdrop-blur-md border border-gray-700/50 rounded-2xl p-4"
+                >
+                  <p className="text-sm text-gray-400 mb-2">Popular searches:</p>
+                  <div className="flex flex-wrap gap-2">
+                    {['AI Services', 'Quantum Computing', 'Cloud Solutions', 'Cybersecurity'].map((suggestion) => (
+                      <button
+                        key={suggestion}
+                        onClick={() => {
+                          setSearchQuery(suggestion);
+                          handleSearchSubmit(new Event('submit') as any);
+                        }}
+                        className="px-3 py-1 bg-gray-700/50 text-gray-300 rounded-full text-sm hover:bg-gray-600/50 transition-colors duration-200"
+                      >
+                        {suggestion}
+                      </button>
+                    ))}
+                  </div>
+                </motion.div>
+              )}
+            </motion.div>
           </motion.div>
         )}
       </AnimatePresence>
 
-      {/* Mobile Menu */}
+      {/* Enhanced Mobile Menu */}
       <AnimatePresence>
         {isMobileMenuOpen && (
           <motion.div
@@ -448,21 +508,18 @@ const UltraFuturisticNavigation2040: React.FC = () => {
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.3 }}
-            className="lg:hidden bg-gray-900/95 backdrop-blur-md border-t border-gray-800/50"
+            className="lg:hidden bg-gray-900/95 backdrop-blur-md border-t border-gray-700/50"
+            ref={mobileMenuRef}
           >
-            <div ref={mobileMenuRef} className="px-4 py-6 space-y-4">
-              {navigationItems.map((item, index) => (
-                <motion.div
-                  key={item.label}
-                  initial={{ opacity: 0, x: -20 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.3, delay: index * 0.1 }}
-                >
+            <div className="px-4 py-6 space-y-4">
+              {navigationItems.map((item) => (
+                <div key={item.label} className="border-b border-gray-700/50 pb-4 last:border-b-0">
                   {item.children ? (
                     <div>
                       <button
                         onClick={() => toggleDropdown(item.label)}
-                        className="flex items-center justify-between w-full px-4 py-3 text-left text-gray-300 hover:text-white transition-colors duration-200"
+                        className="flex items-center justify-between w-full text-left py-2 text-gray-300 hover:text-white transition-colors duration-200"
+                        aria-expanded={activeDropdown === item.label}
                       >
                         <span className="font-medium">{item.label}</span>
                         <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${
@@ -470,60 +527,53 @@ const UltraFuturisticNavigation2040: React.FC = () => {
                         }`} />
                       </button>
                       
-                      {activeDropdown === item.label && (
-                        <motion.div
-                          initial={{ opacity: 0, height: 0 }}
-                          animate={{ opacity: 1, height: 'auto' }}
-                          exit={{ opacity: 0, height: 0 }}
-                          className="ml-4 mt-2 space-y-2"
-                        >
-                          {item.children.map((child) => (
-                            <Link
-                              key={child.label}
-                              href={child.href || '#'}
-                              onClick={() => setIsMobileMenuOpen(false)}
-                              className="block px-4 py-2 text-gray-400 hover:text-white transition-colors duration-200"
-                            >
-                              {child.label}
-                            </Link>
-                          ))}
-                        </motion.div>
-                      )}
+                      <AnimatePresence>
+                        {activeDropdown === item.label && (
+                          <motion.div
+                            initial={{ opacity: 0, height: 0 }}
+                            animate={{ opacity: 1, height: 'auto' }}
+                            exit={{ opacity: 0, height: 0 }}
+                            transition={{ duration: 0.2 }}
+                            className="mt-2 ml-4 space-y-2"
+                          >
+                            {item.children.map((child) => (
+                              <Link
+                                key={child.label}
+                                href={child.href || '#'}
+                                className="block py-2 text-gray-400 hover:text-cyan-400 transition-colors duration-200"
+                                onClick={() => setIsMobileMenuOpen(false)}
+                              >
+                                {child.label}
+                              </Link>
+                            ))}
+                          </motion.div>
+                        )}
+                      </AnimatePresence>
                     </div>
                   ) : (
                     <Link
                       href={item.href || '#'}
+                      className="block py-2 text-gray-300 hover:text-white transition-colors duration-200 font-medium"
                       onClick={() => setIsMobileMenuOpen(false)}
-                      className={`block px-4 py-3 text-gray-300 hover:text-white transition-colors duration-200 ${
-                        isActive(item.href || '') ? 'text-cyan-400' : ''
-                      }`}
                     >
                       {item.label}
                     </Link>
                   )}
-                </motion.div>
+                </div>
               ))}
               
               {/* Mobile Contact Button */}
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.3, delay: 0.4 }}
-                className="pt-4 border-t border-gray-800/50"
-              >
+              <div className="pt-4">
                 <button
                   onClick={() => {
                     router.push('/contact');
                     setIsMobileMenuOpen(false);
                   }}
-                  className="w-full px-4 py-3 bg-gradient-to-r from-cyan-400 to-blue-500 text-white font-medium rounded-xl hover:from-cyan-500 hover:to-blue-600 transition-all duration-300 focus:outline-none focus:ring-4 focus:ring-cyan-400/50"
+                  className="w-full px-6 py-3 bg-gradient-to-r from-cyan-400 to-blue-500 text-white font-medium rounded-xl hover:from-cyan-500 hover:to-blue-600 transition-all duration-300 focus:outline-none focus:ring-4 focus:ring-cyan-400/50"
                 >
-                  <div className="flex items-center justify-center space-x-2">
-                    <Phone className="w-4 h-4" />
-                    <span>Contact Us</span>
-                  </div>
+                  Contact Us
                 </button>
-              </motion.div>
+              </div>
             </div>
           </motion.div>
         )}
