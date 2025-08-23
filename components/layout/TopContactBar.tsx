@@ -16,9 +16,10 @@ const contactInfo = {
 };
 
 const quickActions = [
-  { name: 'Get Quote', href: '/contact', icon: <MessageCircle className="w-4 h-4" /> },
-  { name: 'Book Demo', href: '/contact', icon: <Calendar className="w-4 h-4" /> },
-  { name: 'Live Chat', href: '/support', icon: <MessageCircle className="w-4 h-4" /> }
+  { name: 'Get Quote', href: '/quote', icon: '💬' },
+  { name: 'Book Demo', href: '/contact', icon: '🎯' },
+  { name: 'Live Chat', href: '/support', icon: '💻' },
+  { name: 'Support', href: '/support', icon: '🆘' }
 ];
 
 export default function TopContactBar() {

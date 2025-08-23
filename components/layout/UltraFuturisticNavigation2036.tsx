@@ -87,6 +87,12 @@ const navigationItems: NavigationItem[] = [
         href: '/solutions', 
         description: 'Industry-specific solutions',
         icon: <Play className="w-4 h-4" />
+      },
+      { 
+        name: 'Micro SAAS', 
+        href: '/micro-saas', 
+        description: 'Business automation solutions',
+        icon: <Play className="w-4 h-4" />
       }
     ]
   },
@@ -116,6 +122,12 @@ const navigationItems: NavigationItem[] = [
         name: 'Market Pricing', 
         href: '/market-pricing', 
         description: 'Market price references',
+        icon: <Play className="w-4 h-4" />
+      },
+      { 
+        name: 'Get Quote', 
+        href: '/quote', 
+        description: 'Request custom pricing',
         icon: <Play className="w-4 h-4" />
       }
     ]
@@ -156,6 +168,12 @@ const navigationItems: NavigationItem[] = [
         href: '/careers', 
         description: 'Join our team',
         icon: <Play className="w-4 h-4" />
+      },
+      { 
+        name: 'News & Events', 
+        href: '/news', 
+        description: 'Latest company updates',
+        icon: <Play className="w-4 h-4" />
       }
     ]
   },
@@ -195,6 +213,18 @@ const navigationItems: NavigationItem[] = [
         href: '/training', 
         description: 'Learning resources',
         icon: <Play className="w-4 h-4" />
+      },
+      { 
+        name: 'Webinars', 
+        href: '/webinars', 
+        description: 'Educational sessions',
+        icon: <Play className="w-4 h-4" />
+      },
+      { 
+        name: 'White Papers', 
+        href: '/white-papers', 
+        description: 'In-depth research',
+        icon: <Play className="w-4 h-4" />
       }
     ]
   },
@@ -233,6 +263,51 @@ const navigationItems: NavigationItem[] = [
         name: 'Government', 
         href: '/government-technology-solutions', 
         description: 'Government technology solutions',
+        icon: <Play className="w-4 h-4" />
+      },
+      { 
+        name: 'Education', 
+        href: '/education-technology-solutions', 
+        description: 'Educational technology solutions',
+        icon: <Play className="w-4 h-4" />
+      },
+      { 
+        name: 'Entertainment', 
+        href: '/entertainment-media-solutions', 
+        description: 'Media and entertainment solutions',
+        icon: <Play className="w-4 h-4" />
+      }
+    ]
+  },
+  {
+    name: 'Get Started',
+    href: '/get-started',
+    icon: <Play className="w-5 h-5" />,
+    description: 'Start your journey',
+    category: 'get-started',
+    children: [
+      { 
+        name: 'Get Started', 
+        href: '/get-started', 
+        description: 'Begin your transformation',
+        icon: <Play className="w-4 h-4" />
+      },
+      { 
+        name: 'Request Demo', 
+        href: '/contact', 
+        description: 'See our solutions in action',
+        icon: <Play className="w-4 h-4" />
+      },
+      { 
+        name: 'Get Quote', 
+        href: '/quote', 
+        description: 'Custom pricing for your needs',
+        icon: <Play className="w-4 h-4" />
+      },
+      { 
+        name: 'Live Chat', 
+        href: '/support', 
+        description: 'Get immediate assistance',
         icon: <Play className="w-4 h-4" />
       }
     ]

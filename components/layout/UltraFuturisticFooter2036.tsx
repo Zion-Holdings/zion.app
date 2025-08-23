@@ -98,16 +98,33 @@ const footerSections = [
     description: 'Innovative business solutions for modern enterprises',
     icon: <Rocket className="w-5 h-5 text-emerald-400" />,
     links: [
-      { name: 'AI Content Generator', href: '/ai-content-generator' },
-      { name: 'AI Code Review', href: '/ai-code-review' },
-      { name: 'AI HR Analytics Platform', href: '/intelligent-hr-analytics-platform' },
+      { name: 'AI Customer Success Platform', href: '/ai-customer-success-platform' },
+      { name: 'Intelligent Supply Chain Optimization', href: '/intelligent-supply-chain-optimization' },
       { name: 'AI Financial Planning Platform', href: '/ai-financial-planning-platform' },
-      { name: 'Supply Chain Optimization', href: '/intelligent-supply-chain-optimization' },
-      { name: 'Content Automation Platform', href: '/intelligent-content-automation-platform' },
-      { name: 'AI Meeting Transcriber Pro', href: '/ai-meeting-transcriber-pro' },
-      { name: 'AI Legal Contract Analyzer', href: '/ai-legal-contract-analyzer' },
-      { name: 'AI Healthcare Diagnostics', href: '/ai-healthcare-diagnostics' },
-      { name: 'AI Customer Journey Analytics', href: '/ai-customer-journey-analytics' }
+      { name: 'AI HR Analytics Platform', href: '/ai-hr-analytics-platform' },
+      { name: 'AI Sales Intelligence Platform', href: '/ai-sales-intelligence-platform' },
+      { name: 'AI-Powered Decision Engine', href: '/ai-powered-decision-engine' },
+      { name: 'Intelligent Content Automation', href: '/intelligent-content-automation-platform' },
+      { name: 'Smart CRM Intelligence Suite', href: '/smart-crm-intelligence-suite' },
+      { name: 'Automated Financial Analytics', href: '/automated-financial-analytics-platform' },
+      { name: 'Intelligent Project Management', href: '/intelligent-project-management-suite' }
+    ]
+  },
+  {
+    title: 'Company & Resources',
+    description: 'Learn more about Zion Tech Group',
+    icon: <Target className="w-5 h-5 text-orange-400" />,
+    links: [
+      { name: 'About Us', href: '/about' },
+      { name: 'Contact', href: '/contact' },
+      { name: 'Partners', href: '/partners' },
+      { name: 'Investors', href: '/investors' },
+      { name: 'Careers', href: '/careers' },
+      { name: 'Blog', href: '/blog' },
+      { name: 'Case Studies', href: '/case-studies' },
+      { name: 'Documentation', href: '/docs' },
+      { name: 'Support', href: '/support' },
+      { name: 'Training', href: '/training' }
     ]
   }
 ];

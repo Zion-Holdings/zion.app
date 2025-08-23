@@ -97,68 +97,41 @@ const sidebarSections = [
       { name: 'Financial Analytics', href: '/automated-financial-analytics-platform' },
       { name: 'Project Management', href: '/intelligent-project-management-suite' },
       { name: 'Business Intelligence', href: '/ai-business-intelligence-suite' },
-      { name: 'Marketing Automation', href: '/ai-autonomous-marketing-platform' },
-      { name: 'Customer Service AI', href: '/ai-customer-service' },
-      { name: 'HR & Recruitment', href: '/ai-hr-recruitment' },
-      { name: 'Legal Contract Analysis', href: '/ai-legal-contract-analyzer' }
+      { name: 'Marketing Automation', href: '/ai-autonomous-marketing-platform' }
     ]
   },
   {
-    title: 'Solutions',
+    title: 'Industry Solutions',
     icon: <Target className="w-5 h-5" />,
     color: 'text-orange-400',
     items: [
-      { name: 'Healthcare & Biotech', href: '/biotech-ai' },
-      { name: 'Financial Services', href: '/billing-analytics' },
-      { name: 'Manufacturing AI', href: '/autonomous-manufacturing' },
+      { name: 'Healthcare Solutions', href: '/healthcare-solutions' },
+      { name: 'Financial Solutions', href: '/financial-solutions' },
+      { name: 'Manufacturing AI', href: '/manufacturing-ai-solutions' },
       { name: 'Retail Technology', href: '/retail-technology-solutions' },
-      { name: 'Education Technology', href: '/training' },
-      { name: 'Government Solutions', href: '/enterprise-solutions-showcase' },
-      { name: 'Energy & Utilities', href: '/quantum-energy' },
-      { name: 'Transportation & Logistics', href: '/quantum-logistics' },
-      { name: 'Real Estate Technology', href: '/real-estate-technology-solutions' },
+      { name: 'Government Tech', href: '/government-technology-solutions' },
+      { name: 'Education Technology', href: '/education-technology-solutions' },
       { name: 'Entertainment & Media', href: '/entertainment-media-solutions' },
-      { name: 'Space Technology', href: '/space-technology' },
-      { name: 'Biotech & Healthcare', href: '/biotech-ai' }
+      { name: 'Energy & Utilities', href: '/energy-utilities-solutions' },
+      { name: 'Biotech AI', href: '/biotech-ai' },
+      { name: 'Space Technology', href: '/space-technology' }
     ]
   },
   {
-    title: 'Resources',
-    icon: <BookOpen className="w-5 h-5" />,
-    color: 'text-cyan-400',
+    title: 'Quick Links',
+    icon: <Zap className="w-5 h-5" />,
+    color: 'text-yellow-400',
     items: [
-      { name: 'Documentation', href: '/docs' },
-      { name: 'API Reference', href: '/api-documentation' },
+      { name: 'Get Started', href: '/get-started' },
+      { name: 'Pricing', href: '/pricing' },
+      { name: 'Contact', href: '/contact' },
+      { name: 'Support', href: '/support' },
+      { name: 'Blog', href: '/blog' },
       { name: 'Case Studies', href: '/case-studies' },
-      { name: 'Blog & News', href: '/blog' },
-      { name: 'Support Center', href: '/support' },
-      { name: 'Training & Certification', href: '/training' },
-      { name: 'Community Forum', href: '/community' },
-      { name: 'Developer Resources', href: '/developer-resources' },
-      { name: 'Research & Development', href: '/research-development' },
-      { name: 'White Papers', href: '/white-papers' },
-      { name: 'Performance Reports', href: '/reports' },
-      { name: 'Market Analysis', href: '/market-pricing' },
-      { name: 'Services Advertising', href: '/services-advertising' }
-    ]
-  },
-  {
-    title: 'Company',
-    icon: <Users className="w-5 h-5" />,
-    color: 'text-pink-400',
-    items: [
-      { name: 'About Us', href: '/about' },
-      { name: 'Leadership Team', href: '/leadership' },
-      { name: 'Careers', href: '/careers' },
-      { name: 'News & Press', href: '/news' },
-      { name: 'Partners', href: '/partners' },
-      { name: 'Investors', href: '/investors' },
-      { name: 'Contact Us', href: '/contact' },
-      { name: 'Locations', href: '/locations' },
-      { name: 'Sustainability', href: '/sustainability' },
-      { name: 'Diversity & Inclusion', href: '/diversity-inclusion' },
-      { name: 'Terms of Service', href: '/terms' },
-      { name: 'Privacy Policy', href: '/privacy' }
+      { name: 'Documentation', href: '/docs' },
+      { name: 'Training', href: '/training' },
+      { name: 'Webinars', href: '/webinars' },
+      { name: 'White Papers', href: '/white-papers' }
     ]
   }
 ];
