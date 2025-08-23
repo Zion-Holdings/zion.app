@@ -74,6 +74,7 @@ const HealthcareSolutionsPage: React.FC = () => {
       <UltraFuturisticBackground2045 />
 
       <div className="min-h-screen bg-black text-white relative z-10">
+
         {/* Hero Section */}
         <section className="pt-32 pb-20 px-4 sm:px-6 lg:px-8">
           <div className="max-w-7xl mx-auto text-center">

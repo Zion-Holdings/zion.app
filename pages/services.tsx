@@ -14,6 +14,11 @@ import { innovativeMicroSaasSolutions2025 } from '../data/2025-innovative-micro-
 import { cuttingEdgeAIServices2025 } from '../data/2025-cutting-edge-ai-services';
 import { innovative2025AIAutonomousServices } from '../data/2025-innovative-ai-autonomous-services';
 
+// Import our new 2025 cutting-edge real micro SAAS expansion services
+import { cuttingEdgeRealMicroSaasExpansion2025 } from '../data/2025-cutting-edge-real-micro-saas-expansion';
+import { advancedAIAutonomousEcosystemExpansion2025 } from '../data/2025-advanced-ai-autonomous-ecosystem-expansion';
+import { emergingTechBreakthroughServices2025 } from '../data/2025-emerging-tech-breakthrough-services';
+
 // Import our new practical and specialized services
 import { realPracticalMicroSaasServices2025 } from '../data/2025-real-practical-micro-saas-services';
 import { advancedAIITSpecializedServices2025 } from '../data/2025-advanced-ai-it-specialized-services';
@@ -24,7 +29,7 @@ import { realEnterpriseMicroSaas2025 } from '../data/2025-real-enterprise-micro-
 // Import our new innovative 2025 services
 import { realInnovativeMicroSaasServices2025 } from '../data/2025-real-innovative-micro-saas-expansion';
 import { innovativeITInfrastructureServices2025 } from '../data/2025-innovative-it-infrastructure-services-expansion';
-import { innovativeAIServices2025 } from '../data/2025-innovative-ai-services-expansion';
+import { innovativeAIServices2025Expansion } from '../data/2025-innovative-ai-services-expansion';
 
 // Import our new 2025 advanced services
 import { advancedBusinessIntelligenceServices2025 } from '../data/2025-advanced-business-intelligence-services';
@@ -145,7 +150,7 @@ const allServices = [
   // Our new 2025 services
   ...realInnovativeMicroSaasServices2025,
   ...innovativeITInfrastructureServices2025,
-  ...innovativeAIServices2025,
+      ...innovativeAIServices2025Expansion,
   ...innovativeMicroSaasSolutions2025,
   ...cuttingEdgeAIServices2025,
   ...realEnterpriseMicroSaas2025,
@@ -244,6 +249,11 @@ const allServices = [
   ...realPracticalMicroSaasServices2025,
   ...advancedAIITSpecializedServices2025,
   ...realEnterpriseMicroSaas2025,
+  
+  // Our new 2025 cutting-edge real micro SAAS expansion services
+  ...cuttingEdgeRealMicroSaasExpansion2025,
+  ...advancedAIAutonomousEcosystemExpansion2025,
+  ...emergingTechBreakthroughServices2025,
   
   ...advancedAIAutomationSolutions2025
 ];
