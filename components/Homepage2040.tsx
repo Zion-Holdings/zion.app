@@ -7,7 +7,7 @@ import {
 } from 'lucide-react';
 
 // Import our new revolutionary services
-import { revolutionary2040FuturisticServices } from '../data/revolutionary-2040-futuristic-services';
+// import { revolutionary2040FuturisticServices } from '../data/revolutionary-2040-futuristic-services';
 import { revolutionary2041AdvancedServices } from '../data/revolutionary-2041-advanced-services';
 
 const Homepage2040: React.FC = () => {
@@ -26,7 +26,7 @@ const Homepage2040: React.FC = () => {
   }, []);
 
   // Combine all revolutionary services
-  const allRevolutionaryServices = [...revolutionary2040FuturisticServices, ...revolutionary2041AdvancedServices];
+  const allRevolutionaryServices = [...revolutionary2041AdvancedServices];
 
   // Get featured services for rotation
   const featuredServices = allRevolutionaryServices.slice(0, 6);
