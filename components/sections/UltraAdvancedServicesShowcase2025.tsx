@@ -15,7 +15,7 @@ import { innovativeAIServicesEnhanced2025 } from '../../data/2025-innovative-ai-
 import { innovativeITServicesEnhanced2025 } from '../../data/2025-innovative-it-services-enhanced';
 import { emergingTechServicesEnhanced2025 } from '../../data/2025-emerging-tech-services-enhanced';
 import { advancedAIAutomationServices } from '../../data/2025-advanced-ai-automation-services';
-import { advancedITInfrastructureServices2025 } from '../../data/2025-advanced-it-infrastructure-services';
+import { advancedITInfrastructureServices } from '../../data/2025-advanced-it-infrastructure-services';
 import { innovativeBusinessSolutions2025 } from '../../data/2025-innovative-business-solutions';
 
 const UltraAdvancedServicesShowcase2025: React.FC = () => {
@@ -33,7 +33,7 @@ const UltraAdvancedServicesShowcase2025: React.FC = () => {
     ...innovativeITServicesEnhanced2025,
     ...emergingTechServicesEnhanced2025,
     ...advancedAIAutomationServices,
-    ...advancedITInfrastructureServices2025,
+    ...advancedITInfrastructureServices,
     ...innovativeBusinessSolutions2025
   ];
 

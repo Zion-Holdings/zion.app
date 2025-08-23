@@ -10,6 +10,7 @@ import {
 
 // Import our new service data
 import { enterpriseITSolutions } from '../data/2034-enterprise-it-solutions';
+import { innovativeMicroSaasSolutions } from '../data/2034-innovative-micro-saas-solutions';
 import { cuttingEdgeAIServices } from '../data/2034-cutting-edge-ai-services';
 import { real2025Q4AugmentedBatch } from '../data/real-2025-q4-augmented-batch';
 import { real2029Q3Additions } from '../data/real-2029-q3-additions';
@@ -28,24 +29,31 @@ import { advanced2038Services } from '../data/advanced-2038-services';
 import { revolutionary2039Services } from '../data/revolutionary-2039-services';
 import { revolutionary2040FuturisticServices } from '../data/revolutionary-2040-futuristic-services';
 import { revolutionary2041AdvancedServices } from '../data/revolutionary-2041-advanced-services';
-import { innovative2040FuturisticServices } from '../data/innovative-2040-futuristic-services';
 import { advanced2041EnterpriseServices } from '../data/advanced-2041-enterprise-services';
 import { revolutionary2042MicroSaasServices } from '../data/revolutionary-2042-micro-saas-services';
 
-// Import our new 2025 advanced services
-import { advanced2025MicroSaasExpansion } from '../data/2025-advanced-micro-saas-expansion';
-import { advanced2025ITSolutionsExpansion } from '../data/2025-advanced-it-solutions-expansion';
-import { advanced2025AIServicesExpansion } from '../data/2025-advanced-ai-services-expansion';
-// Import our new 2025 innovative services expansion
-import { innovative2025MicroSaasExpansion } from '../data/innovative-2025-micro-saas-expansion';
-import { innovative2025ITSolutionsExpansion } from '../data/innovative-2025-it-solutions-expansion';
-import { innovative2025AIServicesExpansion } from '../data/innovative-2025-ai-services-expansion';
+// Import our new 2025 ultimate services expansion
+import { ultimate2025MicroSaasExpansion } from '../data/2025-ultimate-micro-saas-expansion';
+import { ultimate2025ITServicesExpansion } from '../data/2025-ultimate-it-services-expansion';
+import { ultimate2025AIServicesExpansion } from '../data/2025-ultimate-ai-services-expansion';
 
-// Import our new 2025 advanced services
+// Import our new 2025 Q4 innovative services
+import { innovative2025Q4NewServices } from '../data/innovative-2025-q4-new-services';
+import { advancedITInfrastructureServices2025 } from '../data/advanced-it-infrastructure-services-2025';
+import { comprehensiveServicesAdvertising2025 } from '../data/comprehensive-services-advertising-2025';
+
+// Import our new innovative 2040 services
+import { innovative2040ITServices } from '../data/innovative-2040-it-services';
+import { innovative2040FuturisticServices } from '../data/innovative-2040-futuristic-services';
+
+// Import our new 2025 advanced enterprise services
+import { advancedEnterpriseServices } from '../data/2025-advanced-enterprise-services-expansion';
+import { cuttingEdgeITInfrastructureServices } from '../data/2025-cutting-edge-it-infrastructure';
+
+// Import our new 2025 cutting-edge futuristic services
+import { cuttingEdgeFuturisticServices } from '../data/2025-cutting-edge-futuristic-services';
 import { advancedAIAutomationServices } from '../data/2025-advanced-ai-automation-services';
-import { innovativeITInfrastructureServices } from '../data/2025-innovative-it-infrastructure-services';
-import { innovativeMicroSaasSolutions } from '../data/2025-innovative-micro-saas-solutions';
-import { emergingTechnologyServices } from '../data/2025-emerging-technology-services';
+import { advancedITInfrastructureServices } from '../data/2025-advanced-it-infrastructure-services';
 
 // Import existing service data
 import { realMicroSaasServices } from '../data/real-micro-saas-services';
@@ -59,7 +67,7 @@ import { marketValidatedServices } from '../data/market-validated-services';
 import { industryRealServices } from '../data/industry-real-services';
 
 // Helper function to get service category
-const getServiceCategory = (service: { category?: string; type?: string }) => {
+const getServiceCategory = (service: any) => {
   if (service.category) return service.category;
   if (service.type) return service.type;
   return 'Other';
@@ -70,19 +78,18 @@ const getServicePricing = (service: any) => {
   if (service.pricing?.starter) return service.pricing.starter;
   if (service.pricing?.monthly) return `$${service.pricing.monthly}/month`;
   if (service.price?.monthly) return `$${service.price.monthly}/month`;
-  if (typeof service.price === 'string') return service.price;
   return 'Contact for pricing';
 };
 
 // Helper function to get service features
-const getServiceFeatures = (service: { features?: string[]; keyFeatures?: string[] }) => {
+const getServiceFeatures = (service: any) => {
   if (service.features) return service.features;
   if (service.keyFeatures) return service.keyFeatures;
   return [];
 };
 
 // Helper function to get service description
-const getServiceDescription = (service: { description?: string; tagline?: string }) => {
+const getServiceDescription = (service: any) => {
   if (service.description) return service.description;
   if (service.tagline) return service.tagline;
   return 'No description available';
@@ -96,28 +103,29 @@ const allServices = [
   ...realMicroSaasServices,
   ...innovativeAIServices,
   ...enterpriseITServices,
+  ...cuttingEdgeFuturisticServices,
+  ...advancedAIAutomationServices,
+  ...advancedITInfrastructureServices,
   ...emergingTechServices,
   ...newRealServices,
   ...realOperationalServices,
   ...marketReadyServices,
   ...marketValidatedServices,
+  // Our new 2025 Q4 innovative services
+  ...innovative2025Q4NewServices,
+  ...advancedITInfrastructureServices2025,
   ...industryRealServices,
   ...real2025Q4AugmentedBatch,
   ...real2029Q3Additions,
-  // Our new 2025 advanced services
-  ...advancedAIAutomationServices,
-  ...innovativeITInfrastructureServices,
-  ...innovativeMicroSaasSolutions,
-  ...emergingTechnologyServices,
   ...validatedServices2025Q4,
   ...real2035Q2Additions,
   ...real2036ServiceExpansions,
   ...innovative2036MicroSaasServices,
   ...innovative2036ITServices,
   // Our new 2025 advanced services
-  ...advanced2025MicroSaasExpansion,
-  ...advanced2025ITSolutionsExpansion,
-  ...advanced2025AIServicesExpansion,
+  ...ultimate2025MicroSaasExpansion,
+  ...ultimate2025ITServicesExpansion,
+  ...ultimate2025AIServicesExpansion,
   // Our new innovative services
   ...innovative2037MicroSaasServices,
   ...innovative2037ITServices,
@@ -128,17 +136,23 @@ const allServices = [
   ...innovative2037Services,
   ...advanced2038Services,
   ...revolutionary2039Services,
-  // Our revolutionary 2040-2041 services
+  
+  // Our new innovative 2040 services
+  ...innovative2040FuturisticServices,
+  ...innovative2040ITServices,
+  // Our new comprehensive services
   ...revolutionary2040FuturisticServices,
   ...revolutionary2041AdvancedServices,
   // Our latest innovative services
-  ...innovative2040FuturisticServices,
   ...advanced2041EnterpriseServices,
   ...revolutionary2042MicroSaasServices,
-  // Our new 2025 innovative services expansion
-  ...innovative2025MicroSaasExpansion,
-  ...innovative2025ITSolutionsExpansion,
-  ...innovative2025AIServicesExpansion
+  // Our new 2025 ultimate services expansion
+  ...ultimate2025MicroSaasExpansion,
+  ...ultimate2025ITServicesExpansion,
+  ...ultimate2025AIServicesExpansion,
+  // Our new 2025 advanced enterprise services
+  ...advancedEnterpriseServices,
+  ...cuttingEdgeITInfrastructureServices
 ];
 
 const categories = [
@@ -268,10 +282,10 @@ export default function Services() {
         return (parseInt(getServicePricing(b).replace(/[^0-9]/g, '')) || 0) - 
                (parseInt(getServicePricing(a).replace(/[^0-9]/g, '')) || 0);
       case 'newest':
-        return new Date((b as { launchDate?: string }).launchDate || '2020-01-01').getTime() - 
-               new Date((a as { launchDate?: string }).launchDate || '2020-01-01').getTime();
+        return new Date((b as any).launchDate || '2020-01-01').getTime() - 
+               new Date((a as any).launchDate || '2020-01-01').getTime();
       case 'rating':
-        return (((b as { rating?: number }).rating || 0) as number) - (((a as { rating?: number }).rating || 0) as number);
+        return (((b as any).rating || 0) as number) - (((a as any).rating || 0) as number);
       default:
         return 0;
     }
@@ -499,7 +513,7 @@ export default function Services() {
               >
                 {paginatedServices.map((service, index) => (
                   <motion.div
-                    key={(service as { id?: string; slug?: string; name: string }).id || (service as { id?: string; slug?: string; name: string }).slug || (service as { id?: string; slug?: string; name: string }).name}
+                    key={(service as any).id || (service as any).slug || (service as any).name}
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5, delay: index * 0.1 }}
@@ -556,7 +570,7 @@ export default function Services() {
                       {/* Action Button */}
                       <div className="flex flex-col space-y-3">
                         <motion.a
-                          href={(service as { link?: string; slug?: string; name: string }).link || `/services/${((service as { link?: string; slug?: string; name: string }).slug || (service as { link?: string; slug?: string; name: string }).name || 'service').toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '')}`}
+                          href={(service as any).link || `/services/${((service as any).slug || (service as any).name || 'service').toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '')}`}
                           whileHover={{ scale: 1.02 }}
                           whileTap={{ scale: 0.98 }}
                           className="flex items-center justify-center space-x-2 px-4 py-3 bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-medium rounded-lg hover:from-cyan-600 hover:to-blue-700 transition-all duration-200 shadow-lg shadow-cyan-500/25"

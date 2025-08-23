@@ -9,7 +9,7 @@ import {
 
 // Import our new service data
 import { advancedEnterpriseServices } from '../data/2025-advanced-enterprise-services-expansion';
-import { innovativeMicroSaasServices } from '../data/2025-innovative-micro-saas-expansion';
+import { innovative2025MicroSaasExpansion } from '../data/2025-innovative-micro-saas-expansion';
 import { cuttingEdgeITInfrastructureServices } from '../data/2025-cutting-edge-it-infrastructure';
 
 const contactInfo = {
@@ -21,7 +21,7 @@ const contactInfo = {
 
 const allServices = [
   ...advancedEnterpriseServices,
-  ...innovativeMicroSaasServices,
+      ...innovative2025MicroSaasExpansion,
   ...cuttingEdgeITInfrastructureServices
 ];
 
