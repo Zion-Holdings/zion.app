@@ -1,3 +1,20 @@
+<<<<<<< HEAD
+/* eslint-env serviceworker */
+/* global self, caches, Response, clients */
+
+const CACHE_NAME = 'zion-tech-group-v1.0.0';
+const urlsToCache = [
+  '/',
+  '/services',
+  '/about',
+  '/contact',
+  '/static/css/main.css',
+  '/static/js/main.js'
+];
+
+// Install event - cache resources
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
+=======
 // Zion Tech Group Service Worker
 // Enhanced caching and offline capabilities
 
@@ -25,10 +42,15 @@ const API_ROUTES = [
 ];
 
 // Install event - cache static files
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-960d
 self.addEventListener('install', (event) => {
   event.waitUntil(
     caches.open(CACHE_NAME)
       .then((cache) => {
+<<<<<<< HEAD
+        console.log('Opened cache');
+        return cache.addAll(urlsToCache);
+=======
         console.log('Caching static files');
         return cache.addAll(STATIC_FILES);
       })
@@ -38,6 +60,7 @@ self.addEventListener('install', (event) => {
       })
       .catch((error) => {
         console.error('Error caching static files:', error);
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-960d
       })
   );
 });
@@ -54,12 +77,29 @@ self.addEventListener('fetch', (event) => {
         return fetch(event.request);
       }
     )
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
   );
 });
 
 // Activate event - clean up old caches
 self.addEventListener('activate', (event) => {
   event.waitUntil(
+<<<<<<< HEAD
+    caches.keys().then((cacheNames) => {
+      return Promise.all(
+        cacheNames.map((cacheName) => {
+          if (cacheName !== CACHE_NAME) {
+            console.log('Deleting old cache:', cacheName);
+            return caches.delete(cacheName);
+          }
+        })
+      );
+    })
+  );
+});
+
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
+=======
     caches.keys()
       .then((cacheNames) => {
         return Promise.all(
@@ -154,6 +194,7 @@ async function networkFirst(request, cacheName) {
   }
 }
 
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-960d
 // Background sync for offline actions
 self.addEventListener('sync', (event) => {
   if (event.tag === 'background-sync') {
@@ -164,12 +205,18 @@ self.addEventListener('sync', (event) => {
 // Background sync function
 async function doBackgroundSync() {
   try {
+<<<<<<< HEAD
+    // Handle offline actions when connection is restored
+    console.log('Background sync completed');
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
+=======
     // Sync any pending data
     console.log('Performing background sync');
     
     // You can implement specific sync logic here
     // For example, syncing form submissions, analytics data, etc.
     
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-960d
   } catch (error) {
     console.error('Background sync failed:', error);
   }
@@ -177,6 +224,22 @@ async function doBackgroundSync() {
 
 // Push notification handling
 self.addEventListener('push', (event) => {
+<<<<<<< HEAD
+  const options = {
+    body: event.data ? event.data.text() : 'New update from Zion Tech Group',
+    icon: '/icon-192x192.png',
+    badge: '/badge-72x72.png',
+    vibrate: [100, 50, 100],
+    data: {
+      dateOfArrival: Date.now(),
+      primaryKey: 1
+    },
+    actions: [
+      {
+        action: 'explore',
+        title: 'Explore',
+        icon: '/icon-192x192.png'
+=======
   if (event.data) {
     const data = event.data.json();
     const options = {
@@ -187,6 +250,7 @@ self.addEventListener('push', (event) => {
       data: {
         dateOfArrival: Date.now(),
         primaryKey: 1
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-960d
       },
       actions: [
         {
@@ -203,7 +267,12 @@ self.addEventListener('push', (event) => {
     };
 
     event.waitUntil(
+<<<<<<< HEAD
+      self.registration.showNotification(data.title || 'Zion Tech Group', options)
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
+=======
       self.registration.showNotification(data.title, options)
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-960d
     );
   }
 });
@@ -218,6 +287,9 @@ self.addEventListener('notificationclick', (event) => {
     );
   }
 });
+<<<<<<< HEAD
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
+=======
 
 // Message handling for communication with main thread
 self.addEventListener('message', (event) => {
@@ -239,3 +311,4 @@ self.addEventListener('error', (event) => {
 self.addEventListener('unhandledrejection', (event) => {
   console.error('Service worker unhandled rejection:', event.reason);
 });
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-960d

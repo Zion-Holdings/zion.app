@@ -1,3 +1,9 @@
+<<<<<<< HEAD
+const { i18n } = require('./next-i18next.config');
+
+module.exports = {
+  i18n,
+=======
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   // Enhanced performance optimizations
@@ -193,4 +199,6 @@ const nextConfig = {
       transform: 'lucide-react/dist/esm/icons/{{kebabCase}}',
     },
   },
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-960d
 };
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
