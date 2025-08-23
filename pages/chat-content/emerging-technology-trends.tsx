@@ -1,1 +1,1 @@
-export default function EmergingTechnologyTrends() { return null }
+export default function Article6() { return <div className="p-6">Article</div>; }

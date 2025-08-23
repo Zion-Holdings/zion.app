@@ -1,1 +1,1 @@
-export default function ResetPassword() { return null }
+export default function ResetPassword() { return <div className="p-6">Reset Password</div>; }

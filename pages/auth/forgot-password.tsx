@@ -1,1 +1,1 @@
-export default function ForgotPassword() { return null }
+export default function ForgotPassword() { return <div className="p-6">Forgot Password</div>; }

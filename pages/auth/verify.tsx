@@ -1,1 +1,1 @@
-export default function Verify() { return null }
+export default function Verify() { return <div className="p-6">Verify Account</div>; }
