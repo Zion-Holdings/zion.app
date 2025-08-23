@@ -1,3 +1,7 @@
+<<<<<<< HEAD
+import React, { useEffect, useState, useCallback } from 'react';
+import Layout from './layout/Layout';
+=======
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { 
@@ -24,6 +28,7 @@ import {
 import { advancedAIAutomationServices } from '../data/2026-advanced-ai-automation-services';
 import { quantumCybersecurityServices } from '../data/2026-quantum-cybersecurity-services';
 import UltraFuturisticBackground2035 from './backgrounds/UltraFuturisticBackground2035';
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-62b6
 import UltraFuturisticServiceCard2026 from './ui/UltraFuturisticServiceCard2026';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
@@ -87,9 +92,17 @@ const Homepage2025: React.FC<Homepage2025Props> = ({ showInternalNav = true }) =
   ];
 
   return (
+<<<<<<< HEAD
+    <UltraFuturisticBackground2026 intensity="medium" theme="quantum">
+      {showInternalNav && (
+      <>
+        {/* Navigation */}
+        <nav className="fixed top-0 left-0 right-0 z-50 bg-black/20 backdrop-blur-xl border-b border-white/10">
+=======
     <UltraFuturisticBackground2035>
       {/* Navigation */}
       <nav className="fixed top-0 left-0 right-0 z-50 bg-black/20 backdrop-blur-xl border-b border-white/10" aria-label="Primary">
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-62b6
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
             <motion.div
@@ -546,10 +559,194 @@ const Homepage2025: React.FC<Homepage2025Props> = ({ showInternalNav = true }) =
               </a>
             </motion.div>
           </div>
+<<<<<<< HEAD
+        </section>
+
+        {/* Enhanced CTA Section */}
+        <section className="py-20 px-4" aria-labelledby="cta-heading">
+          <div className="max-w-4xl mx-auto text-center">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+              className="space-y-8"
+            >
+              <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-cyan-400 to-purple-500 bg-clip-text text-transparent">
+                Ready to Transform Your Business?
+              </h2>
+              <p className="text-xl text-gray-300 max-w-2xl mx-auto">
+                Get in touch with our team to discuss how our innovative services can drive your success
+              </p>
+              
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <a 
+                  href="tel:+13024640950"
+                  className="px-8 py-4 bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-semibold rounded-lg hover:from-cyan-600 hover:to-blue-700 transition-all duration-300 transform hover:scale-105 shadow-lg shadow-cyan-500/25 flex items-center justify-center space-x-2"
+                >
+                  <Zap className="w-5 h-5" />
+                  <span>Call Now: +1 302 464 0950</span>
+                </a>
+                <a 
+                  href="mailto:kleber@ziontechgroup.com"
+                  className="px-8 py-4 border-2 border-purple-400 text-purple-400 font-semibold rounded-lg hover:bg-purple-400 hover:text-black transition-all duration-300 transform hover:scale-105"
+                >
+                  Email Us
+                </a>
+              </div>
+              
+              <div className="text-sm text-gray-400">
+                <p>Address: 364 E Main St STE 1008, Middletown DE 19709</p>
+                <p>Website: <a href="https://ziontechgroup.com" className="text-cyan-400 hover:text-cyan-300">https://ziontechgroup.com</a></p>
+              </div>
+            </motion.div>
+          </div>
+        </section>
+
+        {/* Service Categories Section */}
+        <section 
+          className="py-24 px-4 relative"
+          aria-labelledby="categories-heading"
+        >
+          <div className="max-w-7xl mx-auto">
+            <motion.div 
+              className="text-center mb-20"
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+            >
+              <h2 
+                id="categories-heading"
+                className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 bg-clip-text text-transparent"
+              >
+                Our Service Categories
+              </h2>
+              <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+                Comprehensive solutions across all major technology domains
+              </p>
+            </motion.div>
+
+            <motion.div 
+              className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+              variants={staggerContainer}
+              initial="initial"
+              whileInView="animate"
+              viewport={{ once: true }}
+            >
+              {[
+                {
+                  icon: '🧠',
+                  title: "AI & Machine Learning",
+                  description: "Advanced artificial intelligence solutions for business transformation",
+                  services: "50+ AI Services",
+                  color: "from-cyan-500 to-blue-600"
+                },
+                {
+                  icon: '⚛️',
+                  title: "Quantum Technology",
+                  description: "Breakthrough quantum computing and quantum-secure solutions",
+                  services: "25+ Quantum Services",
+                  color: "from-purple-500 to-pink-600"
+                },
+                {
+                  icon: '🛡️',
+                  title: "Cybersecurity",
+                  description: "Enterprise-grade security and compliance solutions",
+                  services: "40+ Security Services",
+                  color: "from-red-500 to-orange-600"
+                },
+                {
+                  icon: '🌐',
+                  title: "IT Infrastructure",
+                  description: "Scalable and secure enterprise infrastructure solutions",
+                  services: "35+ Infrastructure Services",
+                  color: "from-green-500 to-emerald-600"
+                },
+                {
+                  icon: '📱',
+                  title: "Micro SAAS",
+                  description: "Innovative business solutions for modern enterprises",
+                  services: "60+ Micro SAAS Services",
+                  color: "from-yellow-500 to-amber-600"
+                },
+                {
+                  icon: '🚀',
+                  title: "Emerging Tech",
+                  description: "Cutting-edge technologies for future-ready businesses",
+                  services: "30+ Emerging Tech Services",
+                  color: "from-indigo-500 to-violet-600"
+                }
+              ].map((category, index) => (
+                <motion.div
+                  key={index}
+                  className="group p-8 rounded-2xl bg-gray-800/30 backdrop-blur-sm border border-gray-700/50 hover:border-cyan-500/50 transition-all duration-300 hover:transform hover:scale-105 cursor-pointer"
+                  variants={fadeInUp}
+                  whileHover={{ y: -10 }}
+                >
+                  <div className="mb-6 flex justify-center">
+                    <div className={`text-6xl group-hover:scale-110 transition-transform duration-300`}>
+                      {category.icon}
+                    </div>
+                  </div>
+                  <h3 className="text-2xl font-bold mb-3 text-white text-center">{category.title}</h3>
+                  <p className="text-gray-300 text-center mb-4">{category.description}</p>
+                  <div className={`text-center text-sm font-semibold bg-gradient-to-r ${category.color} bg-clip-text text-transparent`}>
+                    {category.services}
+                  </div>
+                </motion.div>
+              ))}
+            </motion.div>
+          </div>
+        </section>
+      </main>
+
+      {/* Video Modal */}
+      <AnimatePresence>
+        {isVideoModalOpen && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 bg-black/90 backdrop-blur-sm z-50 flex items-center justify-center p-4"
+            onClick={() => setIsVideoModalOpen(false)}
+          >
+            <motion.div
+              initial={{ scale: 0.9, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.9, opacity: 0 }}
+              className="relative w-full max-w-4xl aspect-video bg-gray-900 rounded-2xl overflow-hidden"
+              onClick={(e) => e.stopPropagation()}
+            >
+              <button
+                onClick={() => setIsVideoModalOpen(false)}
+                className="absolute top-4 right-4 z-10 p-2 bg-black/50 hover:bg-black/70 rounded-full transition-colors"
+                aria-label="Close video modal"
+              >
+                <X className="w-6 h-6 text-white" />
+              </button>
+              <div className="w-full h-full flex items-center justify-center">
+                <div className="text-center text-white">
+                  <Play className="w-20 h-20 mx-auto mb-4 text-cyan-400" />
+                  <p className="text-xl">Company Overview Video</p>
+                  <p className="text-gray-400 mt-2">Video content would be embedded here</p>
+                </div>
+              </div>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </Layout>
+  );
+});
+
+Homepage2025.displayName = 'Homepage2025';
+=======
         </div>
       </footer>
     </UltraFuturisticBackground2035>
   );
 }
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-62b6
 
 export default Homepage2025;

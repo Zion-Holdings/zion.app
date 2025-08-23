@@ -469,6 +469,18 @@ export type ServiceVariant =
   | 'biotech-futuristic'
   | 'simulation-futuristic'
   | 'space-futuristic'
+<<<<<<< HEAD
+  | 'quantum-futuristic'
+  | 'blockchain-futuristic'
+  | 'ai-consciousness-futuristic'
+  | 'ai-creativity-futuristic'
+  | 'ai-business-futuristic'
+  | 'ai-emotional-futuristic'
+  | 'ai-multimodal-futuristic'
+  | 'ai-research-futuristic'
+  | 'quantum-education-futuristic'
+  | 'autonomous-futuristic';
+=======
   // New 2035 variants
   | 'consciousness-evolution'
   | 'quantum-emotional'
@@ -493,3 +505,4 @@ export type ServiceVariant =
   | 'quantum-edge'
   | 'service-desk-ai'
   | 'logistics-futuristic';
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-62b6

@@ -1,5 +1,23 @@
 import { motion, AnimatePresence, Variants } from 'framer-motion';
 import { 
+<<<<<<< HEAD
+  Search, Filter, Star, Users, TrendingUp, 
+  DollarSign, Clock, CheckCircle, ArrowRight,
+  Brain, Rocket, Dna, Globe, Shield, Wifi, 
+  Package, Bot, Car, Building2, Monitor, Cpu, 
+  Zap, Atom, Database, Cloud, Lock, Code,
+  Sparkles, Target, BarChart3, ShieldCheck
+} from 'lucide-react';
+
+// Import our service data
+import { realMarketServices } from '../data/real-market-services';
+
+const contactInfo = {
+  mobile: '+1 302 464 0950',
+  email: 'kleber@ziontechgroup.com',
+  address: '364 E Main St STE 1008 Middletown DE 19709',
+  website: 'https://ziontechgroup.com'
+=======
   Search, Grid, List,
   Brain, Atom, Shield, Target, Rocket,
   ArrowRight, Check, Palette, Heart, Truck, GraduationCap,
@@ -35,6 +53,7 @@ const getServiceCategory = (service: any) => {
   if (service.category) return service.category;
   if (service.type) return service.type;
   return 'Other';
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-62b6
 };
 
 // Helper function to get service pricing
@@ -61,6 +80,9 @@ const getServiceDescription = (service: any) => {
 
 // Create unified services array with new 2035 services
 const allServices = [
+<<<<<<< HEAD
+  ...realMarketServices,
+=======
   // New 2035 services (featured first)
   ...innovative2035MicroSaasServices,
   ...innovative2035AIServices,
@@ -70,6 +92,7 @@ const allServices = [
   ...enterpriseITSolutions,
   ...innovativeMicroSaasSolutions,
   ...cuttingEdgeAIServices,
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-62b6
   ...realMicroSaasServices,
   ...innovativeAIServices,
   ...enterpriseITServices,
@@ -97,6 +120,12 @@ const categories = [
     gradient: 'from-cyan-500/20 to-purple-500/20'
   },
   {
+<<<<<<< HEAD
+    id: 'AI & Consciousness',
+    title: '🧠 AI & Consciousness',
+    description: 'Revolutionary AI consciousness and emotional intelligence platforms',
+    icon: Brain,
+=======
     id: 'micro-saas',
     name: 'Micro SAAS Services',
     icon: <Rocket className="w-6 h-6" />,
@@ -135,6 +164,7 @@ const categories = [
     id: 'space-metaverse',
     name: 'Space & Metaverse',
     icon: <Rocket className="w-6 h-6" />,
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-62b6
     color: 'from-pink-500 to-rose-500',
     services: [
       ...ultimateFuturisticServices2034.filter(s => s.category === 'AI & Consciousness'),
@@ -143,11 +173,30 @@ const categories = [
     gradient: 'from-pink-500/20 to-rose-500/20'
   },
   {
+<<<<<<< HEAD
+    id: 'Quantum & Emerging Tech',
+    title: '⚛️ Quantum & Emerging Tech',
+    description: 'Quantum computing, DNA computing, and beyond',
+    icon: Atom,
+    color: 'from-cyan-500 to-blue-500',
+    services: ultimateFuturisticServices2034.filter(s => s.category === 'Quantum & Emerging Tech'),
+    gradient: 'from-cyan-500/20 to-blue-500/20'
+  },
+  {
+    id: 'Space & Metaverse',
+    title: '🌌 Space & Metaverse',
+    description: 'Space mining, metaverse development, and more',
+    icon: Rocket,
+    color: 'from-purple-500 to-indigo-500',
+    services: ultimateFuturisticServices2034.filter(s => s.category === 'Space & Metaverse'),
+    gradient: 'from-purple-500/20 to-indigo-500/20'
+=======
     id: 'creative-media',
     name: 'Creative & Media',
     icon: <Palette className="w-6 h-6" />,
     color: 'from-indigo-500 to-purple-500',
     description: 'AI-powered creative solutions'
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-62b6
   },
   {
     id: 'Enterprise IT',
