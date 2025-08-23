@@ -3481,5 +3481,41 @@ Home: https://github.com/Zion-Holdings/zion.app#readme
 - `npm run sitemap` – Regenerate sitemap
 - `npm run readme:generate` – Refresh this README
 
----
-This README is auto-generated. Do not edit manually.# Triggering GitHub Actions workflows for testing
+If the app logs **"Error loading tenant"** during startup, the request to the
+Supabase edge function that provides whitelabel settings failed. Confirm that
+`VITE_SUPABASE_URL` and `VITE_SUPABASE_ANON_KEY` are set in your environment and
+that you have network connectivity. The tenant hook will retry a few times
+before giving up.
+
+## Testing
+
+Run unit tests with:
+
+```sh
+npm run test
+```
+
+To watch tests during development:
+
+```sh
+npm run test:watch
+```
+
+### End-to-End Tests
+
+Open Cypress for interactive debugging:
+
+```sh
+npm run cypress:open
+```
+
+Run the Cypress suite headlessly:
+
+```sh
+npm run cypress:run
+```
+
+### Coverage Report
+
+After running `npm run test`, open `coverage/lcov-report/index.html` in your
+browser to view detailed coverage information.
