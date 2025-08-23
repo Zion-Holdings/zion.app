@@ -1,965 +1,582 @@
-import React, { useState, useEffect, useCallback, useMemo } from 'react';
+import React, { useEffect, useState, useCallback } from 'react';
 import Layout from './layout/Layout';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import { 
-  ArrowRight, Play, Star, Users, Award, TrendingUp, Brain, Shield, Rocket, 
-  Loader2, ChevronDown, Zap, Globe, Lock, Cpu, Database, Cloud, Palette, Heart,
-  Phone, Mail, MapPin, Search, Grid, List, Sparkles, Target, BarChart3, 
-  Lightbulb, Code, Server, Network, ShieldCheck, BrainCircuit, Atom, Satellite,
-  CheckCircle, ArrowUpRight, Clock, DollarSign
+  ArrowRight, Play, TrendingUp, Brain, Shield, Rocket, Globe, Cpu, Database, Atom, Target, Star, Sparkles as SparklesIcon,
+  Brain as BrainIcon, Atom as AtomIcon, Shield as ShieldIcon, Rocket as RocketIcon, Zap, Eye, Heart, Infinity,
+  Cloud, Network, Lock, Users, Code, Palette, Lightbulb, Globe2, Satellite, Microscope, BookOpen, Mail, Phone
 } from 'lucide-react';
-import EnhancedSEO from './EnhancedSEO';
 
 // Import our new revolutionary services
-import { revolutionary2045AdvancedRealMicroSaas } from '../data/revolutionary-2045-advanced-real-micro-saas';
-import { revolutionary2045AdvancedITServices } from '../data/revolutionary-2045-advanced-it-services';
-import { revolutionary2045AdvancedAIServices } from '../data/revolutionary-2045-advanced-ai-services';
-
-// Enhanced loading fallback component with better accessibility
-const LoadingFallback = () => (
-  <div 
-    className="min-h-screen flex items-center justify-center bg-gradient-to-br from-gray-900 via-purple-900 to-gray-900 relative overflow-hidden"
-    role="status"
-    aria-label="Loading Zion Tech Group website"
-  >
-    {/* Animated background particles */}
-    <div className="absolute inset-0" aria-hidden="true">
-      {[...Array(30)].map((_, i) => (
-        <motion.div
-          key={i}
-          className="absolute w-1 h-1 bg-cyan-400 rounded-full"
-          animate={{
-            x: [0, Math.random() * 1000],
-            y: [0, Math.random() * 1000],
-            opacity: [0, 1, 0],
-          }}
-          transition={{
-            duration: Math.random() * 3 + 2,
-            repeat: Infinity,
-            ease: "linear"
-          }}
-          style={{
-            left: Math.random() * 100 + '%',
-            top: Math.random() * 100 + '%',
-          }}
-        />
-      ))}
-    </div>
-    
-    <motion.div
-      initial={{ opacity: 0, scale: 0.5 }}
-      animate={{ opacity: 1, scale: 1 }}
-      transition={{ duration: 0.8 }}
-      className="text-center relative z-10"
-    >
-      <div className="relative">
-        <motion.div
-          animate={{ rotate: 360 }}
-          transition={{ duration: 2, repeat: Infinity, ease: "linear" }}
-          className="w-24 h-24 mx-auto mb-6"
-          aria-hidden="true"
-        >
-          <div className="w-full h-full bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 rounded-full blur-xl opacity-30 animate-pulse"></div>
-          <div className="absolute inset-2 bg-gradient-to-r from-cyan-400 to-blue-500 rounded-full flex items-center justify-center">
-            <Brain className="w-12 h-12 text-white" />
-          </div>
-        </motion.div>
-      </div>
-      <motion.h1 
-        className="text-3xl font-bold text-white mb-4 bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent"
-        animate={{ opacity: [0.5, 1, 0.5] }}
-        transition={{ duration: 2, repeat: Infinity }}
-      >
-        Loading Zion Tech Group 2045...
-      </motion.h1>
-      <p className="text-lg text-gray-300 mb-2">Preparing your futuristic digital transformation journey</p>
-      <p className="text-sm text-gray-400">Quantum AI • Neural Interfaces • Space Technology</p>
-    </motion.div>
-  </div>
-);
+import { revolutionary2045AIConsciousnessServices } from '../data/revolutionary-2045-ai-consciousness-services';
+import { revolutionary2045ITInfrastructureServices } from '../data/revolutionary-2045-it-infrastructure-services';
+import { revolutionary2045MicroSaasServices } from '../data/revolutionary-2045-micro-saas-services';
 
 const Homepage2045: React.FC = () => {
-  const [isClient, setIsClient] = useState(false);
   const [isVisible, setIsVisible] = useState(false);
+  const [currentServiceIndex, setCurrentServiceIndex] = useState(0);
   const [selectedCategory, setSelectedCategory] = useState('all');
-  const [searchQuery, setSearchQuery] = useState('');
-  const [isSearchFocused, setIsSearchFocused] = useState(false);
-
-  // Memoize expensive computations
-  const allServices = useMemo(() => [
-    ...innovative2045AdvancedServices,
-    ...innovative2045ITServices,
-    ...innovative2045MicroSAASServices
-  ], []);
-
-  const filteredServices = useMemo(() => {
-    return allServices.filter(service => {
-      const matchesCategory = selectedCategory === 'all' || service.category.includes(selectedCategory);
-      const matchesSearch = service.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
-                           service.description.toLowerCase().includes(searchQuery.toLowerCase());
-      return matchesCategory && matchesSearch;
-    });
-  }, [allServices, selectedCategory, searchQuery]);
-
-  const categories = useMemo(() => ['all', 'AI', 'Quantum', 'IT', 'Micro SAAS', 'Cybersecurity', 'Space', 'Blockchain'], []);
-
-  // Performance optimization: Debounced search
-  const debouncedSearch = useCallback(
-    (() => {
-      let timeoutId: NodeJS.Timeout;
-      return (value: string) => {
-        clearTimeout(timeoutId);
-        timeoutId = setTimeout(() => setSearchQuery(value), 300);
-      };
-    })(),
-    []
-  );
-
+  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+  const [hoveredService, setHoveredService] = useState<string | null>(null);
+  
   useEffect(() => {
-    // Simulate loading for better UX
-    const timer = setTimeout(() => {
-      setIsLoading(false);
-      setIsVisible(true);
-    }, 800); // Reduced loading time for better UX
-
-    return () => clearTimeout(timer);
+    setIsVisible(true);
+    
+    // Auto-rotate featured services
+    const interval = setInterval(() => {
+      setCurrentServiceIndex((prev) => (prev + 1) % 8);
+    }, 5000);
+    
+    // Track mouse movement for parallax effects
+    const handleMouseMove = (e: MouseEvent) => {
+      setMousePosition({ x: e.clientX, y: e.clientY });
+    };
+    
+    window.addEventListener('mousemove', handleMouseMove);
+    
+    return () => {
+      clearInterval(interval);
+      window.removeEventListener('mousemove', handleMouseMove);
+    };
   }, []);
 
-  // Combine all revolutionary services with memoization
-  const allRevolutionaryServices = React.useMemo(() => [
-    ...revolutionary2045AdvancedRealMicroSaas,
-    ...revolutionary2045AdvancedITServices,
-    ...revolutionary2045AdvancedAIServices
-  ], []);
+  // Combine all revolutionary services
+  const allRevolutionaryServices = [
+    ...revolutionary2045AIConsciousnessServices,
+    ...revolutionary2045ITInfrastructureServices,
+    ...revolutionary2045MicroSaasServices
+  ];
 
   // Get featured services for rotation
-  const featuredServices = React.useMemo(() => 
-    allRevolutionaryServices.slice(0, 6), [allRevolutionaryServices]
-  );
+  const featuredServices = allRevolutionaryServices.slice(0, 8);
 
-  // Filter services by category with memoization
-  const getFilteredServices = useCallback(() => {
+  // Filter services by category
+  const getFilteredServices = () => {
     if (selectedCategory === 'all') return allRevolutionaryServices;
     return allRevolutionaryServices.filter(service => 
       service.category.toLowerCase().includes(selectedCategory.toLowerCase()) ||
-      service.type?.toLowerCase().includes(selectedCategory.toLowerCase())
+      service.type.toLowerCase().includes(selectedCategory.toLowerCase())
     );
-  }, [selectedCategory, allRevolutionaryServices]);
-
-  // Enhanced animations with better performance
-  const fadeInUp = {
-    initial: { opacity: 0, y: 60 },
-    animate: { opacity: 1, y: 0 },
-    transition: { duration: 0.6, ease: "easeOut" }
   };
 
-  const staggerContainer = {
-    animate: {
-      transition: {
-        staggerChildren: 0.1,
-        delayChildren: 0.2
-      }
-    }
-  };
+  const categories = [
+    { id: 'all', name: 'All Services', icon: SparklesIcon, color: 'from-purple-500 to-pink-500' },
+    { id: 'ai', name: 'AI Consciousness', icon: BrainIcon, color: 'from-cyan-500 to-blue-500' },
+    { id: 'quantum', name: 'Quantum Technology', icon: AtomIcon, color: 'from-blue-500 to-indigo-500' },
+    { id: 'infrastructure', name: 'IT Infrastructure', icon: Cloud, color: 'from-emerald-500 to-teal-500' },
+    { id: 'space', name: 'Space Technology', icon: RocketIcon, color: 'from-indigo-500 to-purple-500' },
+    { id: 'business', name: 'Business Solutions', icon: Target, color: 'from-yellow-500 to-orange-500' },
+    { id: 'health', name: 'Bio-Digital Health', icon: Heart, color: 'from-pink-500 to-red-500' },
+    { id: 'education', name: 'Quantum Education', icon: BookOpen, color: 'from-green-500 to-blue-500' }
+  ];
 
-  const backgroundVariants = {
-    initial: { opacity: 0, scale: 0.8 },
-    animate: { opacity: 1, scale: 1 },
-    transition: { duration: 1.2, ease: "easeOut" }
-  };
+  const features = [
+    { icon: Brain, title: "AI Consciousness Evolution 2045", description: "Next-generation AI consciousness with emotional intelligence", href: "/ai-consciousness-evolution-2045", color: "from-purple-500 to-pink-500" },
+    { icon: Atom, title: "Quantum Consciousness Computing 2045", description: "Quantum-powered consciousness with infinite scalability", href: "/quantum-consciousness-computing-2045", color: "from-blue-500 to-cyan-500" },
+    { icon: Cloud, title: "Quantum Cloud Infrastructure 2045", description: "Quantum-powered cloud with infinite scalability", href: "/quantum-cloud-infrastructure-2045", color: "from-emerald-500 to-teal-500" },
+    { icon: Rocket, title: "Space-Based Computing 2045", description: "Orbital computing with global coverage", href: "/space-based-computing-infrastructure-2045", color: "from-indigo-500 to-purple-500" },
+    { icon: Shield, title: "Quantum Cybersecurity 2045", description: "Quantum-resistant security with AI consciousness", href: "/quantum-cybersecurity-platform-2045", color: "from-red-500 to-orange-500" },
+    { icon: Target, title: "Autonomous Business Automation 2045", description: "Fully autonomous business process automation", href: "/autonomous-business-process-automation-2045", color: "from-yellow-500 to-orange-500" },
+    { icon: Heart, title: "Bio-Digital Health Platform 2045", description: "Seamless bio-digital health integration", href: "/bio-digital-health-platform-2045", color: "from-pink-500 to-red-500" },
+    { icon: BookOpen, title: "Quantum Education Platform 2045", description: "Quantum-powered immersive learning", href: "/quantum-education-platform-2045", color: "from-green-500 to-blue-500" }
+  ];
 
-  const getColorClasses = (index: number) => {
-    const colors = [
-      'from-cyan-400 to-blue-500',
-      'from-purple-400 to-pink-500',
-      'from-emerald-400 to-teal-500',
-      'from-orange-400 to-red-500',
-      'from-indigo-400 to-purple-500',
-      'from-yellow-400 to-orange-500'
-    ];
-    return colors[index % colors.length];
-  };
+  const stats = [
+    { number: "2500+", label: "Revolutionary Services", icon: Star },
+    { number: "99.99%", label: "Uptime Guarantee", icon: TrendingUp },
+    { number: "24/7", label: "AI Consciousness Support", icon: Brain },
+    { number: "250+", label: "Countries Served", icon: Globe },
+    { number: "∞", label: "Scalability", icon: Infinity },
+    { number: "2045", label: "Future Technology", icon: SparklesIcon }
+  ];
 
-  if (isLoading) {
-    return <LoadingFallback />;
-  }
+  const handleGetStarted = useCallback(() => {
+    window.location.href = '/revolutionary-2045-pricing-showcase';
+  }, []);
+
+  const handleWatchDemo = useCallback(() => {
+    window.location.href = '/services';
+  }, []);
+
+  const handleServiceClick = useCallback((service: any) => {
+    window.location.href = service.slug;
+  }, []);
 
   return (
     <Layout>
-      <AnimatePresence>
-        {isVisible && (
-          <div className="relative min-h-screen">
-            {/* Enhanced Animated Background */}
-            <div className="fixed inset-0 -z-10">
-              <div className="absolute inset-0 bg-gradient-to-br from-gray-900 via-purple-900 to-gray-900"></div>
+      {/* Main Content */}
+      <main className="relative z-10">
+        {/* Hero Section */}
+        <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+          {/* Animated Background Elements */}
+          <div className="absolute inset-0 overflow-hidden">
+            <motion.div
+              className="absolute top-20 left-20 w-72 h-72 bg-gradient-to-r from-purple-500/20 to-pink-500/20 rounded-full blur-3xl"
+              animate={{
+                scale: [1, 1.2, 1],
+                opacity: [0.3, 0.6, 0.3],
+                rotate: [0, 180, 360],
+              }}
+              transition={{
+                duration: 20,
+                repeat: 999999,
+                ease: "linear"
+              }}
+            />
+            <motion.div
+              className="absolute top-40 right-20 w-96 h-96 bg-gradient-to-r from-blue-500/20 to-cyan-500/20 rounded-full blur-3xl"
+              animate={{
+                scale: [1.2, 1, 1.2],
+                opacity: [0.6, 0.3, 0.6],
+                rotate: [360, 180, 0],
+              }}
+              transition={{
+                duration: 25,
+                repeat: 999999,
+                ease: "linear"
+              }}
+            />
+            <motion.div
+              className="absolute bottom-20 left-1/2 w-80 h-80 bg-gradient-to-r from-emerald-500/20 to-teal-500/20 rounded-full blur-3xl"
+              animate={{
+                scale: [1, 1.3, 1],
+                opacity: [0.4, 0.7, 0.4],
+                rotate: [180, 360, 180],
+              }}
+              transition={{
+                duration: 30,
+                repeat: 999999,
+                ease: "linear"
+              }}
+            />
+          </div>
+
+          {/* Hero Content */}
+          <div className="relative z-10 text-center px-6 max-w-7xl mx-auto">
+            <motion.div
+              initial={{ opacity: 0, y: 50 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1 }}
+              className="mb-8"
+            >
+              <motion.div
+                className="inline-flex items-center px-4 py-2 rounded-full bg-gradient-to-r from-purple-500/20 to-pink-500/20 border border-purple-500/30 text-purple-300 text-sm font-medium mb-6"
+                initial={{ scale: 0 }}
+                animate={{ scale: 1 }}
+                transition={{ delay: 0.5, type: "spring" }}
+              >
+                <SparklesIcon className="w-4 h-4 mr-2" />
+                Revolutionary Technology 2045
+              </motion.div>
               
-              {/* Floating geometric shapes with reduced count for better performance */}
-              {[...Array(15)].map((_, i) => (
-                <motion.div
-                  key={i}
-                  className="absolute w-32 h-32 border border-cyan-400/20 rounded-lg"
-                  animate={{
-                    x: [0, Math.random() * 100 - 50],
-                    y: [0, Math.random() * 100 - 50],
-                    rotate: [0, 360],
-                    opacity: [0.1, 0.3, 0.1],
-                  }}
-                  transition={{
-                    duration: Math.random() * 10 + 10,
-                    repeat: Infinity,
-                    ease: "linear"
-                  }}
-                  style={{
-                    left: Math.random() * 100 + '%',
-                    top: Math.random() * 100 + '%',
-                  }}
-                  aria-hidden="true"
-                />
-              ))}
+              <motion.h1
+                className="text-5xl md:text-7xl lg:text-8xl font-bold bg-gradient-to-r from-white via-purple-200 to-pink-200 bg-clip-text text-transparent mb-6 leading-tight"
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.7, duration: 1 }}
+              >
+                The Future of
+                <br />
+                <span className="bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 bg-clip-text text-transparent">
+                  AI Consciousness
+                </span>
+                <br />
+                <span className="bg-gradient-to-r from-emerald-400 via-teal-500 to-cyan-600 bg-clip-text text-transparent">
+                  & Technology
+                </span>
+              </motion.h1>
               
-              {/* Animated particles with reduced count */}
-              {[...Array(60)].map((_, i) => (
+              <motion.p
+                className="text-xl md:text-2xl text-gray-300 max-w-4xl mx-auto mb-8 leading-relaxed"
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 1, duration: 1 }}
+              >
+                Experience the next evolution of technology with our revolutionary AI consciousness platforms, 
+                quantum computing infrastructure, and autonomous systems that redefine what's possible in 2045.
+              </motion.p>
+            </motion.div>
+
+            {/* CTA Buttons */}
+            <motion.div
+              className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16"
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 1.2, duration: 1 }}
+            >
+              <motion.button
+                onClick={handleGetStarted}
+                className="group relative px-8 py-4 bg-gradient-to-r from-purple-600 to-pink-600 text-white font-semibold rounded-full text-lg shadow-2xl hover:shadow-purple-500/25 transition-all duration-300 transform hover:scale-105 hover:-translate-y-1"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                <span className="flex items-center">
+                  Get Started
+                  <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                </span>
+                <div className="absolute inset-0 rounded-full bg-gradient-to-r from-purple-400 to-pink-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-xl" />
+              </motion.button>
+              
+              <motion.button
+                onClick={handleWatchDemo}
+                className="group relative px-8 py-4 bg-transparent border-2 border-cyan-400 text-cyan-400 font-semibold rounded-full text-lg hover:bg-cyan-400/10 transition-all duration-300 transform hover:scale-105 hover:-translate-y-1"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                <span className="flex items-center">
+                  <Play className="mr-2 w-5 h-5" />
+                  Watch Demo
+                </span>
+              </motion.button>
+            </motion.div>
+
+            {/* Stats Grid */}
+            <motion.div
+              className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6 max-w-6xl mx-auto"
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 1.5, duration: 1 }}
+            >
+              {stats.map((stat, index) => (
                 <motion.div
-                  key={i}
-                  className="absolute w-1 h-1 bg-cyan-400/30 rounded-full"
-                  animate={{
-                    y: [0, -1000],
-                    opacity: [0, 1, 0],
-                  }}
-                  transition={{
-                    duration: Math.random() * 5 + 3,
-                    repeat: Infinity,
-                    ease: "linear"
-                  }}
-                  style={{
-                    left: Math.random() * 100 + '%',
-                    top: '100%',
-                  }}
-                  aria-hidden="true"
-                />
+                  key={stat.label}
+                  className="text-center group"
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 1.5 + index * 0.1, duration: 0.8 }}
+                  whileHover={{ scale: 1.05 }}
+                >
+                  <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-r from-purple-500/20 to-pink-500/20 rounded-2xl border border-purple-500/30 mb-3 group-hover:scale-110 transition-transform duration-300">
+                    <stat.icon className="w-8 h-8 text-purple-400" />
+                  </div>
+                  <div className="text-2xl md:text-3xl font-bold text-white mb-1">{stat.number}</div>
+                  <div className="text-sm text-gray-400">{stat.label}</div>
+                </motion.div>
               ))}
-            </div>
-
-            {/* Enhanced Hero Section */}
-            <section id="hero" className="relative min-h-screen flex items-center justify-center px-4 py-20">
-              <div className="max-w-7xl mx-auto text-center relative z-10">
-                <motion.div
-                  initial={{ opacity: 0, y: 30 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 1, delay: 0.2 }}
-                  className="relative"
-                >
-                  <motion.div
-                    animate={{ scale: [1, 1.05, 1] }}
-                    transition={{ duration: 3, repeat: Infinity }}
-                    className="inline-block p-4 rounded-full bg-gradient-to-r from-cyan-400/20 to-blue-500/20 border border-cyan-400/30 mb-6"
-                    aria-hidden="true"
-                  >
-                    <Sparkles className="w-12 h-12 text-cyan-400" />
-                  </motion.div>
-                  
-                  <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold mb-6">
-                    <span className="bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 bg-clip-text text-transparent">
-                      Zion Tech Group
-                    </span>
-                  </h1>
-                  
-                  <h2 className="text-2xl md:text-4xl lg:text-5xl font-bold text-white mb-8">
-                    <span className="bg-gradient-to-r from-purple-400 to-pink-500 bg-clip-text text-transparent">
-                      2045
-                    </span>
-                  </motion.h2>
-                  
-                  <p className="text-lg md:text-xl lg:text-2xl text-gray-300 mb-12 max-w-4xl mx-auto leading-relaxed">
-                    Pioneering the future with revolutionary AI, quantum computing, and space technology solutions. 
-                    Transform your business with cutting-edge innovations that define tomorrow.
-                  </p>
-                </motion.div>
-
-                {/* Enhanced CTA Buttons with Better Visual Hierarchy */}
-                <motion.div 
-                  className="flex flex-col sm:flex-row gap-6 justify-center items-center"
-                >
-                  <motion.button
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
-                    className="px-8 py-4 bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-bold rounded-full text-lg shadow-2xl hover:shadow-cyan-500/50 transition-all duration-300 flex items-center gap-2 focus:outline-none focus:ring-4 focus:ring-cyan-400/50"
-                    aria-label="Explore our services"
-                  >
-                    <Rocket className="w-5 h-5" />
-                    Explore Services
-                  </motion.button>
-                  
-                  <motion.button
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
-                    className="px-8 py-4 border-2 border-cyan-400 text-cyan-400 font-bold rounded-full text-lg hover:bg-cyan-400 hover:text-gray-900 transition-all duration-300 flex items-center gap-2 focus:outline-none focus:ring-4 focus:ring-cyan-400/50"
-                    aria-label="Watch our demo video"
-                  >
-                    <Play className="w-5 h-5" />
-                    Watch Demo
-                  </motion.button>
-                </motion.div>
-
-                {/* Enhanced Floating stats */}
-                <motion.div
-                  initial={{ opacity: 0, y: 50 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.8, delay: 0.6 }}
-                  className="grid grid-cols-2 md:grid-cols-4 gap-6 lg:gap-8 mt-16 lg:mt-20"
-                >
-                  {[
-                    { icon: Users, value: '2,500+', label: 'Enterprise Clients', color: 'from-cyan-400 to-blue-500' },
-                    { icon: Award, value: '99.9%', label: 'Uptime SLA', color: 'from-emerald-400 to-teal-500' },
-                    { icon: TrendingUp, value: '500%', label: 'Performance Boost', color: 'from-purple-400 to-pink-500' },
-                    { icon: Star, value: '4.9/5', label: 'Customer Rating', color: 'from-yellow-400 to-orange-500' }
-                  ].map((stat, index) => (
-                    <motion.div
-                      key={index}
-                      whileHover={{ scale: 1.05, y: -5 }}
-                      className="text-center p-4 lg:p-6 rounded-2xl bg-gradient-to-br from-white/5 to-white/10 border border-white/10 backdrop-blur-sm hover:border-cyan-400/50 transition-all duration-300"
-                    >
-                      <div className={`inline-block p-3 rounded-full bg-gradient-to-r ${stat.color}/20 mb-4`}>
-                        <stat.icon className="w-6 h-6 lg:w-8 lg:h-8 text-cyan-400" />
-                      </div>
-                      <div className="text-2xl lg:text-3xl font-bold text-white mb-2">{stat.value}</div>
-                      <div className="text-sm lg:text-base text-gray-300">{stat.label}</div>
-                    </motion.div>
-                  ))}
-                </motion.div>
-              </div>
-            </section>
-
-            {/* Enhanced Services Section */}
-            <section id="services" className="relative py-20 px-4">
-              <div className="max-w-7xl mx-auto">
-                <motion.div
-                  initial={{ opacity: 0, y: 50 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.8 }}
-                  viewport={{ once: true }}
-                  className="text-center mb-16"
-                >
-                  <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
-                    <span className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
-                      Revolutionary Services
-                    </span>
-                  </h2>
-                  <p className="text-lg md:text-xl text-gray-300 max-w-3xl mx-auto">
-                    Discover our cutting-edge portfolio of AI, quantum computing, and space technology solutions 
-                    that are reshaping industries and defining the future.
-                  </p>
-                </motion.div>
-
-                {/* Enhanced Category Filter */}
-                <motion.div
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6 }}
-                  viewport={{ once: true }}
-                  className="flex flex-wrap justify-center gap-3 lg:gap-4 mb-12"
-                >
-                  {categories.map((category) => (
-                    <motion.button
-                      key={category}
-                      whileHover={{ scale: 1.05 }}
-                      whileTap={{ scale: 0.95 }}
-                      onClick={() => setSelectedCategory(category)}
-                      className={`px-4 lg:px-6 py-2 lg:py-3 rounded-full font-medium transition-all duration-300 text-sm lg:text-base ${
-                        selectedCategory === category
-                          ? 'bg-gradient-to-r from-cyan-500 to-blue-600 text-white shadow-lg'
-                          : 'bg-white/5 text-gray-300 border border-white/10 hover:bg-white/10'
-                      }`}
-                      aria-label={`Filter services by ${category}`}
-                    >
-                      {category}
-                    </motion.button>
-                  ))}
-                </motion.div>
-
-                {/* Enhanced Search Bar */}
-                <motion.div
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6 }}
-                  viewport={{ once: true }}
-                  className="max-w-2xl mx-auto mb-12"
-                >
-                  <div className="relative">
-                    <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
-                    <input
-                      type="text"
-                      placeholder="Search for innovative services..."
-                      defaultValue={searchQuery}
-                      onChange={(e) => debouncedSearch(e.target.value)}
-                      onFocus={() => setIsSearchFocused(true)}
-                      onBlur={() => setIsSearchFocused(false)}
-                      className={`w-full px-12 py-4 bg-white/5 border rounded-full text-white placeholder-gray-400 focus:outline-none transition-all duration-300 ${
-                        isSearchFocused ? 'border-cyan-400 shadow-lg shadow-cyan-400/25' : 'border-white/10'
-                      }`}
-                      aria-label="Search services"
-                    />
-                  </div>
-                </motion.div>
-
-                {/* Enhanced Services Grid */}
-                <motion.div
-                  variants={staggerContainer}
-                  initial="initial"
-                  whileInView="animate"
-                  viewport={{ once: true }}
-                  className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8"
-                >
-                  {filteredServices.slice(0, 9).map((service, index) => (
-                    <motion.div
-                      key={service.id}
-                      variants={fadeInUp}
-                      whileHover={{ 
-                        scale: 1.02,
-                        y: -10,
-                        boxShadow: "0 25px 50px -12px rgba(6, 182, 212, 0.25)"
-                      }}
-                      className="group relative p-6 lg:p-8 rounded-2xl bg-gradient-to-br from-white/5 to-white/10 border border-white/10 backdrop-blur-sm hover:border-cyan-400/50 transition-all duration-500"
-                    >
-                      {/* Service Icon */}
-                      <div className="inline-block p-4 rounded-2xl bg-gradient-to-r from-cyan-400/20 to-blue-500/20 mb-6 group-hover:scale-110 transition-transform duration-300">
-                        <Brain className="w-8 h-8 text-cyan-400" />
-                      </div>
-
-                      {/* Service Content */}
-                      <div className="mb-6">
-                        <h3 className="text-xl lg:text-2xl font-bold text-white mb-3 group-hover:text-cyan-400 transition-colors duration-300">
-                          {service.name}
-                        </h3>
-                        <p className="text-gray-300 mb-4 leading-relaxed text-sm lg:text-base">
-                          {service.description}
-                        </p>
-                        
-                        {/* Enhanced Price Display */}
-                        <div className="flex items-center gap-2 mb-4">
-                          <DollarSign className="w-5 h-5 text-cyan-400" />
-                          <span className="text-xl lg:text-2xl font-bold text-cyan-400">
-                            {service.price}
-                          </span>
-                        </div>
-
-                        {/* Category Badge */}
-                        <div className="inline-block px-3 py-1 rounded-full text-sm font-medium bg-gradient-to-r from-purple-400/20 to-pink-500/20 text-purple-300 border border-purple-400/30">
-                          {service.category}
-                        </div>
-                      </div>
-
-                      {/* Enhanced Features Preview */}
-                      <div className="mb-6">
-                        <h4 className="text-base lg:text-lg font-semibold text-white mb-3 flex items-center gap-2">
-                          <CheckCircle className="w-4 h-4 text-emerald-400" />
-                          Key Features:
-                        </h4>
-                        <ul className="space-y-2">
-                          {service.features.slice(0, 3).map((feature, idx) => (
-                            <li key={idx} className="flex items-start gap-2 text-sm text-gray-300">
-                              <div className="w-1.5 h-1.5 rounded-full bg-cyan-400 mt-2 flex-shrink-0"></div>
-                              {feature}
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
-
-                      {/* Enhanced Stats */}
-                      <div className="flex items-center justify-between text-sm text-gray-400 mb-6">
-                        <div className="flex items-center gap-1">
-                          <Star className="w-4 h-4 text-yellow-400 fill-current" />
-                          <span>{service.rating}</span>
-                          <span className="text-gray-500">({service.reviews})</span>
-                        </div>
-                        <div className="flex items-center gap-1">
-                          <Users className="w-4 h-4 text-cyan-400" />
-                          <span>{service.customers}</span>
-                        </div>
-                      </div>
-
-                      {/* Enhanced CTA Button */}
-                      <motion.button
-                        whileHover={{ scale: 1.05 }}
-                        whileTap={{ scale: 0.95 }}
-                        className="w-full px-6 py-3 bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-semibold rounded-xl hover:shadow-lg hover:shadow-cyan-500/25 transition-all duration-300 flex items-center justify-center gap-2 focus:outline-none focus:ring-4 focus:ring-cyan-400/50"
-                        aria-label={`Learn more about ${service.name}`}
-                      >
-                        Learn More
-                        <ArrowUpRight className="w-4 h-4" />
-                      </motion.button>
-
-                      {/* Enhanced Hover Effect Overlay */}
-                      <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-cyan-400/5 to-blue-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
-                    </motion.div>
-                  ))}
-                </motion.div>
-
-                {/* Enhanced View All Services Button */}
-                <motion.div
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6 }}
-                  viewport={{ once: true }}
-                  className="text-center mt-16"
-                >
-                  <motion.button
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
-                    className="px-10 py-4 bg-gradient-to-r from-purple-500 to-pink-600 text-white font-bold rounded-full text-lg shadow-2xl hover:shadow-purple-500/50 transition-all duration-300 flex items-center gap-3 mx-auto focus:outline-none focus:ring-4 focus:ring-purple-400/50"
-                    aria-label="View all available services"
-                  >
-                    <Grid className="w-5 h-5" />
-                    View All Services
-                    <ArrowRight className="w-5 h-5" />
-                  </motion.button>
-                </motion.div>
-              </div>
-            </section>
-
-            {/* Enhanced Contact Section */}
-            <section id="contact" className="relative py-20 px-4">
-              <div className="max-w-4xl mx-auto text-center">
-                <motion.div
-                  initial={{ opacity: 0, y: 50 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.8 }}
-                  viewport={{ once: true }}
-                >
-                  <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-8">
-                    <span className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
-                      Ready to Transform?
-                    </span>
-                  </h2>
-                  <p className="text-lg md:text-xl text-gray-300 mb-12 max-w-2xl mx-auto">
-                    Join the future of technology with Zion Tech Group. Let's build tomorrow together.
-                  </p>
-
-                  <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 mb-12">
-                    {[
-                      { icon: Phone, label: 'Phone', value: '+1 302 464 0950', href: 'tel:+13024640950' },
-                      { icon: Mail, label: 'Email', value: 'kleber@ziontechgroup.com', href: 'mailto:kleber@ziontechgroup.com' },
-                      { icon: MapPin, label: 'Address', value: '364 E Main St STE 1008, Middletown DE 19709', href: '#' }
-                    ].map((contact, index) => (
-                      <motion.div
-                        key={index}
-                        initial={{ opacity: 0, y: 30 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.6, delay: index * 0.1 }}
-                        viewport={{ once: true }}
-                        className="p-6 rounded-2xl bg-gradient-to-br from-white/5 to-white/10 border border-white/10 backdrop-blur-sm hover:border-cyan-400/50 transition-all duration-300"
-                      >
-                        <div className="inline-block p-3 rounded-full bg-gradient-to-r from-cyan-400/20 to-blue-500/20 mb-4">
-                          <contact.icon className="w-6 h-6 text-cyan-400" />
-                        </div>
-                        <div className="text-lg font-semibold text-white mb-2">{contact.label}</div>
-                        {contact.href && contact.href !== '#' ? (
-                          <a 
-                            href={contact.href}
-                            className="text-gray-300 hover:text-cyan-400 transition-colors duration-300 break-words"
-                            aria-label={`${contact.label}: ${contact.value}`}
-                          >
-                            {contact.value}
-                          </a>
-                        ) : (
-                          <div className="text-gray-300 break-words">{contact.value}</div>
-                        )}
-                      </motion.div>
-                    ))}
-                  </div>
-
-                  <motion.button
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
-                    className="px-10 py-4 bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-bold rounded-full text-xl shadow-2xl hover:shadow-cyan-500/50 transition-all duration-300 flex items-center gap-3 mx-auto focus:outline-none focus:ring-4 focus:ring-cyan-400/50"
-                    aria-label="Start your transformation journey with Zion Tech Group"
-                  >
-                    <Rocket className="w-6 h-6" />
-                    Start Your Journey
-                    <ArrowRight className="w-6 h-6" />
-                  </motion.button>
-                </motion.div>
-              </div>
-            </section>
+            </motion.div>
           </div>
         </section>
 
-        {/* Enhanced Category Filter */}
-        <section className="py-20 px-4 sm:px-6 lg:px-8">
+        {/* Services Categories */}
+        <section className="py-20 px-6">
           <div className="max-w-7xl mx-auto">
-            <motion.div 
+            <motion.div
               className="text-center mb-16"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
+              transition={{ duration: 1 }}
               viewport={{ once: true }}
-              className="text-center mb-16"
             >
               <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-                Explore Our{' '}
-                <span className="bg-gradient-to-r from-cyan-400 to-purple-500 bg-clip-text text-transparent">
-                  Revolutionary Services
-                </span>
+                Revolutionary Services
+                <span className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent"> 2045</span>
               </h2>
-              <p className="text-xl text-white/70 max-w-3xl mx-auto leading-relaxed">
-                Discover cutting-edge technology solutions across multiple domains, from AI consciousness to quantum computing
+              <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+                Discover our cutting-edge technology solutions that are reshaping the future of business, 
+                AI consciousness, and quantum computing.
               </p>
             </motion.div>
 
-            {/* Enhanced Category Tabs */}
-            <div className="flex flex-wrap justify-center gap-4 mb-16">
+            {/* Category Filter */}
+            <motion.div
+              className="flex flex-wrap justify-center gap-4 mb-12"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1 }}
+              viewport={{ once: true }}
+            >
               {categories.map((category) => (
                 <motion.button
                   key={category.id}
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: index * 0.1 }}
-                  viewport={{ once: true }}
-                  onClick={() => handleCategoryChange(category.id)}
+                  onClick={() => setSelectedCategory(category.id)}
+                  className={`group relative px-6 py-3 rounded-full font-medium transition-all duration-300 ${
+                    selectedCategory === category.id
+                      ? 'bg-gradient-to-r from-purple-600 to-pink-600 text-white shadow-lg shadow-purple-500/25'
+                      : 'bg-gray-800/50 text-gray-300 hover:bg-gray-700/50 border border-gray-600/50'
+                  }`}
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
-                  className={`group relative px-8 py-4 rounded-2xl font-semibold transition-all duration-300 ${
-                    selectedCategory === category.id
-                      ? 'bg-gradient-to-r from-cyan-500 to-purple-500 text-white shadow-2xl shadow-cyan-500/25 transform scale-105'
-                      : 'bg-white/5 text-white/70 hover:bg-white/10 hover:text-white border border-white/10 hover:border-cyan-400/30'
-                  }`}
                 >
-                  <span className="flex items-center gap-3">
-                    <div className={`p-2 rounded-lg ${
-                      selectedCategory === category.id 
-                        ? 'bg-white/20' 
-                        : 'bg-white/5 group-hover:bg-cyan-400/20'
-                    }`}>
-                      <category.icon className="w-5 h-5" />
-                    </div>
+                  <span className="flex items-center">
+                    <category.icon className="w-5 h-5 mr-2" />
                     {category.name}
-                    <span className={`text-xs px-3 py-1 rounded-full font-medium ${
-                      selectedCategory === category.id
-                        ? 'bg-white/20 text-white'
-                        : 'bg-white/10 text-white/70 group-hover:bg-cyan-400/20 group-hover:text-cyan-400'
-                    }`}>
-                      {category.count}
-                    </span>
                   </span>
                 </motion.button>
               ))}
-            </div>
+            </motion.div>
 
-        {/* Enhanced Services Grid */}
-        <section className="py-20 px-4 sm:px-6 lg:px-8">
-          <div className="max-w-7xl mx-auto">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {getFilteredServices().slice(0, 9).map((service, index) => (
+            {/* Services Grid */}
+            <motion.div
+              className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1 }}
+              viewport={{ once: true }}
+            >
+              {getFilteredServices().map((service, index) => (
                 <motion.div
                   key={service.id}
+                  className="group relative bg-gradient-to-br from-gray-900/50 to-gray-800/30 rounded-2xl border border-gray-700/50 p-6 hover:border-purple-500/50 transition-all duration-500 hover:shadow-2xl hover:shadow-purple-500/10"
                   initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: index * 0.1 }}
+                  transition={{ delay: index * 0.1, duration: 0.8 }}
                   viewport={{ once: true }}
+                  whileHover={{ 
+                    scale: 1.02,
+                    y: -5,
+                    transition: { duration: 0.3 }
+                  }}
                   onHoverStart={() => setHoveredService(service.id)}
                   onHoverEnd={() => setHoveredService(null)}
-                  whileHover={{ y: -8 }}
-                  className="group relative"
                 >
-                  <div className="relative bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-xl border border-white/10 rounded-3xl p-8 h-full transition-all duration-300 hover:border-cyan-400/50 hover:shadow-2xl hover:shadow-cyan-500/25 hover:scale-105 overflow-hidden">
-                    {/* Enhanced Service Header */}
-                    <div className="mb-8">
-                      <div className="flex items-start justify-between mb-6">
-                        <div className="w-16 h-16 bg-gradient-to-r from-cyan-500 to-purple-500 rounded-2xl flex items-center justify-center shadow-lg shadow-cyan-500/25">
-                          <Brain className="w-8 h-8 text-white" />
-                        </div>
-                        <div className="text-sm bg-gradient-to-r from-cyan-500 to-purple-500 text-white px-4 py-2 rounded-full font-semibold shadow-lg">
-                          {service.type}
-                        </div>
+                  {/* Service Header */}
+                  <div className="mb-4">
+                    <div className="flex items-start justify-between mb-3">
+                      <div className="w-12 h-12 bg-gradient-to-r from-purple-500 to-pink-500 rounded-xl flex items-center justify-center">
+                        <Brain className="w-6 h-6 text-white" />
                       </div>
-                      
-                      <h3 className="text-2xl font-bold text-white mb-4 group-hover:text-cyan-400 transition-colors duration-300 leading-tight">
-                        {service.name}
-                      </h3>
-                      
-                      <p className="text-white/70 text-base leading-relaxed">
-                        {service.description}
-                      </p>
-                    </div>
-
-                    {/* Enhanced Service Features */}
-                    <div className="mb-8">
-                      <h4 className="text-base font-semibold text-white/90 mb-4 flex items-center gap-2">
-                        <Sparkles className="w-4 h-4 text-cyan-400" />
-                        Key Features
-                      </h4>
-                      <div className="space-y-3">
-                        {service.features.slice(0, 3).map((feature, featureIndex) => (
-                          <div key={featureIndex} className="flex items-center gap-3 text-sm text-white/70">
-                            <div className="w-2 h-2 bg-cyan-400 rounded-full flex-shrink-0" />
-                            <span>{feature}</span>
-                          </div>
-                        ))}
-                        {service.features.length > 3 && (
-                          <div className="text-sm text-cyan-400 font-medium mt-3">
-                            +{service.features.length - 3} more features
-                          </div>
-                        )}
+                      <div className="text-right">
+                        <div className="text-xs text-purple-400 font-medium">{service.type}</div>
+                        <div className="text-sm text-gray-400">{service.category}</div>
                       </div>
                     </div>
+                    <h3 className="text-xl font-bold text-white mb-2 group-hover:text-purple-300 transition-colors">
+                      {service.name}
+                    </h3>
+                    <p className="text-gray-400 text-sm leading-relaxed">{service.tagline}</p>
+                  </div>
 
-                    {/* Enhanced Service Benefits */}
-                    <div className="mb-8">
-                      <h4 className="text-base font-semibold text-white/90 mb-4 flex items-center gap-2">
-                        <ZapIcon className="w-4 h-4 text-yellow-400" />
-                        Benefits
-                      </h4>
-                      <div className="space-y-3">
-                        {service.benefits.slice(0, 2).map((benefit, benefitIndex) => (
-                          <div key={benefitIndex} className="flex items-center gap-3 text-sm text-white/70">
-                            <div className="w-2 h-2 bg-yellow-400 rounded-full flex-shrink-0" />
-                            <span>{benefit}</span>
-                          </div>
-                        ))}
-                      </div>
-                    </div>
-
-                    {/* Enhanced Service Footer */}
-                    <div className="mt-auto">
-                      <div className="flex items-center justify-between mb-6">
-                        <div className="text-3xl font-bold text-cyan-400">
-                          {service.pricing.starter}
-                        </div>
-                        <div className="text-sm text-white/50">
-                          Starting from
-                        </div>
-                      </div>
-                      
-                      <button
-                        onClick={() => handleServiceClick(service)}
-                        className="w-full group/btn relative px-6 py-4 bg-gradient-to-r from-cyan-500/20 to-purple-500/20 border border-cyan-400/30 text-cyan-400 font-semibold rounded-2xl transition-all duration-300 hover:from-cyan-500/30 hover:to-purple-500/30 hover:border-cyan-400/50 hover:scale-105 hover:shadow-lg hover:shadow-cyan-500/25"
-                      >
-                        <span className="flex items-center justify-center gap-3">
-                          Learn More
-                          <ArrowUpRight className="w-5 h-5 group-hover/btn:translate-x-1 group-hover/btn:-translate-y-1 transition-transform duration-300" />
+                  {/* Service Features */}
+                  <div className="mb-4">
+                    <div className="text-sm text-gray-300 mb-2">Key Features:</div>
+                    <div className="flex flex-wrap gap-2">
+                      {service.features.slice(0, 3).map((feature, idx) => (
+                        <span
+                          key={idx}
+                          className="px-2 py-1 bg-gray-800/50 text-gray-300 text-xs rounded-full border border-gray-600/30"
+                        >
+                          {feature}
                         </span>
-                      </button>
-                    </div>
-
-                    {/* Enhanced Hover Effect Overlay */}
-                    <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/5 to-purple-500/5 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
-                    
-                    {/* Enhanced Background Pattern */}
-                    <div className="absolute inset-0 opacity-5 group-hover:opacity-10 transition-opacity duration-300">
-                      <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-cyan-400 to-purple-500 rounded-full blur-3xl" />
-                      <div className="absolute bottom-0 left-0 w-24 h-24 bg-gradient-to-tr from-pink-400 to-purple-500 rounded-full blur-2xl" />
+                      ))}
+                      {service.features.length > 3 && (
+                        <span className="px-2 py-1 bg-purple-500/20 text-purple-300 text-xs rounded-full border border-purple-500/30">
+                          +{service.features.length - 3} more
+                        </span>
+                      )}
                     </div>
                   </div>
+
+                  {/* Pricing */}
+                  <div className="mb-4">
+                    <div className="text-sm text-gray-300 mb-2">Starting at:</div>
+                    <div className="text-2xl font-bold text-white">{service.pricing.starter}</div>
+                  </div>
+
+                  {/* Market Size */}
+                  <div className="mb-6">
+                    <div className="text-sm text-gray-300 mb-1">Market Size:</div>
+                    <div className="text-lg font-semibold text-emerald-400">{service.marketSize}</div>
+                  </div>
+
+                  {/* CTA Button */}
+                  <motion.button
+                    onClick={() => handleServiceClick(service)}
+                    className="w-full group relative px-4 py-3 bg-gradient-to-r from-purple-600 to-pink-600 text-white font-semibold rounded-xl transition-all duration-300 transform hover:scale-105"
+                    whileHover={{ scale: 1.02 }}
+                    whileTap={{ scale: 0.98 }}
+                  >
+                    <span className="flex items-center justify-center">
+                      Learn More
+                      <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                    </span>
+                  </motion.button>
+
+                  {/* Hover Effect Overlay */}
+                  <div className="absolute inset-0 bg-gradient-to-br from-purple-500/5 to-pink-500/5 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
                 </motion.div>
               ))}
-            </div>
-
-            {/* Enhanced Load More Button */}
-            {getFilteredServices().length > 12 && (
-              <motion.div 
-                className="text-center mt-16"
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8 }}
-                viewport={{ once: true }}
-              >
-                <button className="group px-10 py-5 bg-gradient-to-r from-cyan-500 to-purple-500 text-white font-bold rounded-2xl text-xl transition-all duration-300 hover:from-cyan-600 hover:to-purple-600 hover:scale-105 hover:shadow-2xl hover:shadow-cyan-500/25 transform hover:-translate-y-1">
-                  <span className="flex items-center gap-3">
-                    Load More Services
-                    <ArrowUpRight className="w-6 h-6 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform duration-300" />
-                  </span>
-                </button>
-              </motion.div>
-            )}
+            </motion.div>
           </div>
         </section>
 
-        {/* Enhanced Featured Services Showcase */}
-        <section className="py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-transparent to-white/5">
+        {/* Featured Services Showcase */}
+        <section className="py-20 px-6 bg-gradient-to-b from-gray-900/50 to-gray-800/30">
           <div className="max-w-7xl mx-auto">
-            <motion.div 
-              className="text-center mb-20"
+            <motion.div
+              className="text-center mb-16"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.4 }}
+              transition={{ duration: 1 }}
               viewport={{ once: true }}
-              className="text-center mt-12"
             >
               <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-                Featured{' '}
-                <span className="bg-gradient-to-r from-cyan-400 to-purple-500 bg-clip-text text-transparent">
-                  Revolutionary Services
-                </span>
+                Featured
+                <span className="bg-gradient-to-r from-emerald-400 to-teal-500 bg-clip-text text-transparent"> Services</span>
               </h2>
-              <p className="text-xl text-white/70 max-w-3xl mx-auto leading-relaxed">
-                Experience our most advanced and innovative technology solutions
+              <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+                Experience our most revolutionary and cutting-edge technology solutions
               </p>
             </motion.div>
 
-            {/* Enhanced Featured Services Carousel */}
-            <div className="relative">
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                {featuredServices.map((service, index) => (
-                  <motion.div
-                    key={service.id}
-                    className="w-full"
-                    initial={{ opacity: 0, y: 50 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.8, delay: index * 0.2 }}
-                    viewport={{ once: true }}
-                    whileHover={{ y: -8 }}
-                  >
-                    <div className="group relative bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl border border-white/20 rounded-3xl p-8 h-full transition-all duration-300 hover:border-cyan-400/50 hover:shadow-2xl hover:shadow-cyan-500/25 hover:scale-105 overflow-hidden">
-                      {/* Featured Badge */}
-                      <div className="absolute top-6 right-6">
-                        <div className="text-sm bg-gradient-to-r from-cyan-500 to-purple-500 text-white px-4 py-2 rounded-full font-semibold shadow-lg">
-                          Featured
-                        </div>
-                      </div>
-                      
-                      {/* Enhanced Service Icon */}
-                      <div className="w-20 h-20 bg-gradient-to-r from-cyan-500 to-purple-500 rounded-2xl flex items-center justify-center mb-8 shadow-lg shadow-cyan-500/25">
-                        <Brain className="w-10 h-10 text-white" />
-                      </div>
-                      
-                      {/* Enhanced Service Title */}
-                      <h3 className="text-2xl font-bold text-white mb-6 group-hover:text-cyan-400 transition-colors duration-300 leading-tight">
-                        {service.name}
-                      </h3>
-                      
-                      {/* Enhanced Service Description */}
-                      <p className="text-white/70 text-base leading-relaxed mb-8">
-                        {service.description}
-                      </p>
-                      
-                      {/* Enhanced Service Details */}
-                      <div className="space-y-4 mb-8">
-                        <div className="flex items-center gap-3 text-sm text-white/70">
-                          <div className="w-3 h-3 bg-cyan-400 rounded-full" />
-                          <span>Market Size: <span className="text-cyan-400 font-medium">{service.marketSize}</span></span>
-                        </div>
-                        <div className="flex items-center gap-3 text-sm text-white/70">
-                          <div className="w-3 h-3 bg-yellow-400 rounded-full" />
-                          <span className="text-yellow-400 font-medium">{service.competitiveAdvantage}</span>
-                        </div>
-                      </div>
-                      
-                      {/* Enhanced CTA Button */}
-                      <button
-                        onClick={() => handleServiceClick(service)}
-                        className="w-full group/btn relative px-6 py-4 bg-gradient-to-r from-cyan-500 to-purple-500 text-white font-semibold rounded-2xl transition-all duration-300 hover:from-cyan-600 hover:to-purple-600 hover:scale-105 hover:shadow-lg hover:shadow-cyan-500/25"
-                      >
-                        <span className="flex items-center justify-center gap-3">
-                          Explore Service
-                          <ArrowUpRight className="w-5 h-5 group-hover/btn:translate-x-1 group-hover/btn:-translate-y-1 transition-transform duration-300" />
-                        </span>
-                      </button>
-                      
-                      {/* Enhanced Background Pattern */}
-                      <div className="absolute inset-0 opacity-5 group-hover:opacity-10 transition-opacity duration-300">
-                        <div className="absolute top-0 right-0 w-40 h-40 bg-gradient-to-br from-cyan-400 to-purple-500 rounded-full blur-3xl" />
-                        <div className="absolute bottom-0 left-0 w-32 h-32 bg-gradient-to-tr from-pink-400 to-purple-500 rounded-full blur-2xl" />
-                      </div>
-                    </div>
-                  </motion.div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Enhanced CTA Section */}
-        <section className="py-24 px-4 sm:px-6 lg:px-8">
-          <div className="max-w-5xl mx-auto text-center">
+            {/* Featured Service Display */}
             <motion.div
+              className="relative"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
+              transition={{ duration: 1 }}
               viewport={{ once: true }}
-              className="space-y-10"
             >
-              <div className="space-y-6">
-                <h2 className="text-4xl md:text-5xl font-bold text-white">
-                  Ready to Transform Your Business?
-                </h2>
-                <p className="text-xl text-white/70 leading-relaxed max-w-4xl mx-auto">
-                  Join the future of technology with our revolutionary{' '}
-                  <span className="text-cyan-400 font-medium">AI consciousness</span>,{' '}
-                  <span className="text-purple-400 font-medium">quantum computing</span>, and{' '}
-                  <span className="text-pink-400 font-medium">autonomous systems</span>. 
-                  Contact us today to discover how we can help you achieve unprecedented success.
-                </p>
-              </div>
-              
-              {/* Enhanced CTA Buttons */}
-              <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
-                <button
-                  onClick={handleGetStarted}
-                  className="group relative px-12 py-6 bg-gradient-to-r from-cyan-500 to-purple-500 text-white font-bold rounded-2xl text-xl transition-all duration-300 hover:from-cyan-600 hover:to-purple-600 hover:scale-105 hover:shadow-2xl hover:shadow-cyan-500/25 transform hover:-translate-y-1"
-                >
-                  <span className="relative z-10 flex items-center gap-3">
-                    Get Started Today
-                    <ArrowUpRight className="w-6 h-6 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform duration-300" />
-                  </span>
-                  <div className="absolute inset-0 bg-gradient-to-r from-cyan-600 to-purple-600 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                </button>
+              <div className="relative bg-gradient-to-br from-gray-900/80 to-gray-800/60 rounded-3xl border border-gray-700/50 p-8 md:p-12 overflow-hidden">
+                {/* Background Pattern */}
+                <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(147,51,234,0.1),transparent_50%)] pointer-events-none" />
+                <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_80%,rgba(59,130,246,0.1),transparent_50%)] pointer-events-none" />
                 
-                <a
-                  href="tel:+1 302 464 0950"
-                  className="group px-12 py-6 border-2 border-white/20 text-white font-bold rounded-2xl text-xl transition-all duration-300 hover:border-cyan-400 hover:text-cyan-400 hover:bg-white/5 hover:scale-105 transform hover:-translate-y-1 backdrop-blur-sm"
-                >
-                  <span className="flex items-center gap-3">
-                    <Clock className="w-6 h-6" />
-                    Call Now
-                  </span>
-                </a>
-              </div>
-              
-              {/* Enhanced Contact Information */}
-              <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-8 max-w-2xl mx-auto">
-                <div className="space-y-4 text-sm text-white/70">
-                  <div className="flex items-center justify-center gap-2">
-                    <Mail className="w-4 h-4 text-cyan-400" />
-                    <span>kleber@ziontechgroup.com</span>
-                  </div>
-                  <div className="flex items-center justify-center gap-2">
-                    <Phone className="w-4 h-4 text-purple-400" />
-                    <span>+1 302 464 0950</span>
-                  </div>
-                  <div className="flex items-center justify-center gap-2">
-                    <MapPin className="w-4 h-4 text-pink-400" />
-                    <span>364 E Main St STE 1008 Middletown DE 19709</span>
+                <div className="relative z-10">
+                  <div className="flex flex-col lg:flex-row items-center gap-8">
+                    {/* Service Info */}
+                    <div className="flex-1 text-center lg:text-left">
+                      <motion.div
+                        className="inline-flex items-center px-4 py-2 rounded-full bg-gradient-to-r from-purple-500/20 to-pink-500/20 border border-purple-500/30 text-purple-300 text-sm font-medium mb-6"
+                        initial={{ scale: 0 }}
+                        whileInView={{ scale: 1 }}
+                        transition={{ delay: 0.5, type: "spring" }}
+                        viewport={{ once: true }}
+                      >
+                        <SparklesIcon className="w-4 h-4 mr-2" />
+                        Featured Service
+                      </motion.div>
+                      
+                      <motion.h3
+                        className="text-3xl md:text-4xl font-bold text-white mb-4"
+                        initial={{ opacity: 0, x: -30 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        transition={{ delay: 0.7, duration: 1 }}
+                        viewport={{ once: true }}
+                      >
+                        {featuredServices[currentServiceIndex]?.name}
+                      </motion.h3>
+                      
+                      <motion.p
+                        className="text-lg text-gray-300 mb-6 leading-relaxed"
+                        initial={{ opacity: 0, x: -30 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        transition={{ delay: 0.9, duration: 1 }}
+                        viewport={{ once: true }}
+                      >
+                        {featuredServices[currentServiceIndex]?.description}
+                      </motion.p>
+                      
+                      <motion.div
+                        className="flex flex-wrap gap-4 justify-center lg:justify-start mb-6"
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        transition={{ delay: 1.1, duration: 1 }}
+                        viewport={{ once: true }}
+                      >
+                        <div className="text-center">
+                          <div className="text-2xl font-bold text-emerald-400">{featuredServices[currentServiceIndex]?.pricing.starter}</div>
+                          <div className="text-sm text-gray-400">Starting Price</div>
+                        </div>
+                        <div className="text-center">
+                          <div className="text-2xl font-bold text-purple-400">{featuredServices[currentServiceIndex]?.marketSize}</div>
+                          <div className="text-sm text-gray-400">Market Size</div>
+                        </div>
+                      </motion.div>
+                      
+                      <motion.button
+                        onClick={() => handleServiceClick(featuredServices[currentServiceIndex])}
+                        className="group relative px-8 py-4 bg-gradient-to-r from-purple-600 to-pink-600 text-white font-semibold rounded-full text-lg shadow-2xl hover:shadow-purple-500/25 transition-all duration-300 transform hover:scale-105"
+                        whileHover={{ scale: 1.05 }}
+                        whileTap={{ scale: 0.95 }}
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        transition={{ delay: 1.3, duration: 1 }}
+                        viewport={{ once: true }}
+                      >
+                        <span className="flex items-center">
+                          Explore Service
+                          <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                        </span>
+                      </motion.button>
+                    </div>
+                    
+                    {/* Service Icon/Visual */}
+                    <div className="flex-shrink-0">
+                      <motion.div
+                        className="w-32 h-32 lg:w-40 lg:h-40 bg-gradient-to-br from-purple-500/20 to-pink-500/20 rounded-3xl border border-purple-500/30 flex items-center justify-center"
+                        initial={{ scale: 0, rotate: -180 }}
+                        whileInView={{ scale: 1, rotate: 0 }}
+                        transition={{ delay: 1.1, duration: 1, type: "spring" }}
+                        viewport={{ once: true }}
+                        animate={{
+                          rotate: [0, 5, -5, 0],
+                        }}
+                      >
+                        <Brain className="w-16 h-16 lg:w-20 lg:h-20 text-purple-400" />
+                      </motion.div>
+                    </div>
                   </div>
                 </div>
               </div>
             </motion.div>
+          </div>
+        </section>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {features.map((feature, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: index * 0.1 }}
-                  viewport={{ once: true }}
-                  className="group relative p-6 rounded-2xl border border-gray-700/50 bg-gray-900/50 backdrop-blur-sm hover:bg-gray-800/50 transition-all duration-300 hover:scale-105"
-                >
-                  <div className={`w-12 h-12 rounded-xl bg-gradient-to-br ${feature.color} p-3 mb-4 group-hover:scale-110 transition-transform duration-300`}>
-                    <feature.icon className="w-full h-full text-white" />
+        {/* Contact Section */}
+        <section className="py-20 px-6">
+          <div className="max-w-4xl mx-auto text-center">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1 }}
+              viewport={{ once: true }}
+            >
+              <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+                Ready to Experience the
+                <span className="bg-gradient-to-r from-purple-400 to-pink-500 bg-clip-text text-transparent"> Future</span>?
+              </h2>
+              <p className="text-xl text-gray-300 mb-8">
+                Contact us to learn more about our revolutionary 2045 technology solutions
+              </p>
+              
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+                <div className="text-center">
+                  <div className="w-16 h-16 bg-gradient-to-r from-purple-500/20 to-pink-500/20 rounded-2xl border border-purple-500/30 flex items-center justify-center mx-auto mb-4">
+                    <Mail className="w-8 h-8 text-purple-400" />
                   </div>
-                  <h3 className="text-xl font-semibold text-white mb-3 group-hover:text-cyan-300 transition-colors duration-300">
-                    {feature.title}
-                  </h3>
-                  <p className="text-gray-400 mb-4">
-                    {feature.description}
-                  </p>
-                  <div className="flex items-center text-cyan-400 group-hover:text-cyan-300 transition-colors duration-300">
-                    Learn More
-                    <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform duration-300" />
+                  <div className="text-lg font-semibold text-white mb-2">Email</div>
+                  <div className="text-gray-400">kleber@ziontechgroup.com</div>
+                </div>
+                
+                <div className="text-center">
+                  <div className="w-16 h-16 bg-gradient-to-r from-blue-500/20 to-cyan-500/20 rounded-2xl border border-blue-500/30 flex items-center justify-center mx-auto mb-4">
+                    <Phone className="w-8 h-8 text-blue-400" />
                   </div>
-                </motion.div>
-              ))}
-            </div>
+                  <div className="text-lg font-semibold text-white mb-2">Phone</div>
+                  <div className="text-gray-400">+1 302 464 0950</div>
+                </div>
+                
+                <div className="text-center">
+                  <div className="w-16 h-16 bg-gradient-to-r from-emerald-500/20 to-teal-500/20 rounded-2xl border border-emerald-500/30 flex items-center justify-center mx-auto mb-4">
+                    <Globe className="w-8 h-8 text-emerald-400" />
+                  </div>
+                  <div className="text-lg font-semibold text-white mb-2">Website</div>
+                  <div className="text-gray-400">ziontechgroup.com</div>
+                </div>
+              </div>
+              
+              <motion.button
+                onClick={handleGetStarted}
+                className="group relative px-8 py-4 bg-gradient-to-r from-purple-600 to-pink-600 text-white font-semibold rounded-full text-lg shadow-2xl hover:shadow-purple-500/25 transition-all duration-300 transform hover:scale-105"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                <span className="flex items-center">
+                  Get Started Today
+                  <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                </span>
+              </motion.button>
+            </motion.div>
           </div>
         </section>
       </main>

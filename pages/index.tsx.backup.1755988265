@@ -10,6 +10,14 @@ const HomePage: React.FC = () => {
   return (
     <ErrorBoundary>
       <SEOOptimizer />
+<<<<<<< HEAD
+      <Analytics />
+      <Homepage2045 />
+      <PerformanceMonitor showUI={true} />
+      <AccessibilityEnhancer>
+        <div></div>
+      </AccessibilityEnhancer>
+=======
       <AnalyticsTracker />
       <PerformanceOptimizer showMetrics={true} autoOptimize={true} />
       <AccessibilityEnhancer showPanel={true} autoOptimize={true} />
@@ -17,6 +25,7 @@ const HomePage: React.FC = () => {
         <Homepage2045 />
         <PerformanceMonitor showUI={true} />
       </MobileOptimizer>
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-ef4e
     </ErrorBoundary>
   );
 };
