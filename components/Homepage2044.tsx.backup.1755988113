@@ -118,6 +118,16 @@ const Homepage2044: React.FC = () => {
 
   if (error) {
     return (
+<<<<<<< HEAD
+      <Layout>
+        <div className="min-h-screen flex items-center justify-center">
+          <div className="text-center">
+            <h1 className="text-2xl font-bold text-red-400 mb-4">Error Loading Page</h1>
+            <p className="text-gray-400">{error}</p>
+          </div>
+        </div>
+      </Layout>
+=======
       <div className="min-h-screen flex items-center justify-center bg-gray-900">
         <div className="text-center">
           <div className="text-red-400 text-6xl mb-4">⚠️</div>
@@ -131,12 +141,17 @@ const Homepage2044: React.FC = () => {
           </button>
         </div>
       </div>
+>>>>>>> origin/cursor/expand-services-and-deploy-updates-803d
     );
   }
 
   return (
     <Layout>
+<<<<<<< HEAD
+      <main className="min-h-screen bg-gradient-to-br from-gray-900 via-black to-gray-900 text-white relative overflow-hidden">
+=======
       <main className="min-h-screen bg-gradient-to-br from-gray-900 via-gray-800 to-black text-white overflow-hidden">
+>>>>>>> origin/cursor/expand-services-and-deploy-updates-803d
         {/* Hero Section */}
         <section 
           className="min-h-screen flex items-center justify-center px-4 relative overflow-hidden"

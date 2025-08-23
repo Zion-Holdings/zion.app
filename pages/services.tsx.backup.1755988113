@@ -90,10 +90,18 @@ import { cuttingEdgeFuturisticServices } from '../data/2025-cutting-edge-futuris
 import { advancedAIAutomationServices2025 } from '../data/2025-advanced-ai-automation-services';
 import { advancedITInfrastructureServices } from '../data/2025-advanced-it-infrastructure-services';
 
+<<<<<<< HEAD
+// Import our new 2025 advanced specialized services
+import { advancedFinancialTechServices2025 } from '../data/2025-advanced-financial-tech-services';
+import { advancedHealthcareTechServices2025 } from '../data/2025-advanced-healthcare-tech-services';
+import { advancedLogisticsSupplyChainServices2025 } from '../data/2025-advanced-logistics-supply-chain-services';
+import { advancedCybersecurityServices2025 } from '../data/2025-advanced-cybersecurity-services';
+=======
 // Import our new 2025 advanced real micro SAAS expansion
 import { advancedRealMicroSaasExpansion2025 } from '../data/2025-advanced-real-micro-saas-expansion';
 import { emergingTechBreakthroughServices2025 } from '../data/2025-emerging-tech-breakthrough-services';
 import { practicalBusinessSolutions2025 } from '../data/2025-practical-business-solutions';
+>>>>>>> origin/cursor/expand-services-and-deploy-updates-803d
 
 // Import existing service data
 import { realMicroSaasServices } from '../data/real-micro-saas-services';
@@ -252,10 +260,20 @@ const allServices = [
   // Our new 2025 advanced enterprise services
   ...advancedEnterpriseServices,
   ...cuttingEdgeITInfrastructureServices,
+<<<<<<< HEAD
+  
+  // NEW: Innovative 2025 Service Suites
+  ...innovativeAIAutomationSuite,
+  ...innovativeITInfrastructureSuite,
+  ...innovativeCybersecuritySuite,
+  ...innovativeDataAnalyticsSuite,
+  ...innovativeBusinessAutomationSuite
+=======
   // Our new 2025 advanced real micro SAAS expansion
   ...advancedRealMicroSaasExpansion2025,
   ...emergingTechBreakthroughServices2025,
   ...practicalBusinessSolutions2025
+>>>>>>> origin/cursor/expand-services-and-deploy-updates-803d
 ];
 
 const categories = [
