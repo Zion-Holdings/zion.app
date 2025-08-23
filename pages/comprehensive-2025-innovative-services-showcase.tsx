@@ -10,7 +10,7 @@ import {
 } from 'lucide-react';
 
 // Import our new innovative services
-import { innovativeMicroSaasServices2025V2 } from '../data/2025-innovative-micro-saas-expansion-v2';
+import { innovativeMicroSaas2025ExpansionV2 } from '../data/2025-innovative-micro-saas-expansion-v2';
 import { emergingTechInnovations2025 } from '../data/2025-emerging-tech-innovations';
 
 // Import existing services for comprehensive showcase
@@ -18,7 +18,7 @@ import { realMicroSaasServices2025 } from '../data/2025-real-micro-saas-services
 
 // Combine all services
 const allServices = [
-  ...innovativeMicroSaasServices2025V2,
+  ...innovativeMicroSaas2025ExpansionV2,
   ...emergingTechInnovations2025,
   ...realMicroSaasServices2025
 ];
@@ -333,7 +333,7 @@ export default function Comprehensive2025InnovativeServicesShowcase() {
                       Key Benefits
                     </h4>
                     <ul className="space-y-1">
-                      {service.benefits.slice(0, 3).map((benefit, idx) => (
+                      {(service as any).benefits?.slice(0, 3)?.map((benefit: string, idx: number) => (
                         <li key={idx} className="text-gray-300 text-sm flex items-start gap-2">
                           <Check className="w-3 h-3 text-green-400 mt-1 flex-shrink-0" />
                           {benefit}

@@ -4,7 +4,8 @@ import { motion } from 'framer-motion';
 import { 
   Phone, Mail, MapPin, ArrowRight, Globe, Shield, Rocket, Brain, Atom, Cpu,
   Facebook, Twitter, Linkedin, Instagram, Youtube, Github, Zap, Heart, Star,
-  Users, Lock, Cloud, Code, Server, Database, Network, Settings, Target, Play, FileText, ArrowUp, HelpCircle
+  Users, Lock, Cloud, Code, Server, Database, Network, Settings, Target, Play, FileText, ArrowUp, HelpCircle,
+  DollarSign, Truck, Eye
 } from 'lucide-react';
 
 const UltraFuturisticFooter2045: React.FC = () => {
@@ -21,34 +22,34 @@ const UltraFuturisticFooter2045: React.FC = () => {
     {
       title: 'Revolutionary Services 2045',
       links: [
-        { name: 'AI Consciousness Evolution 2045', href: '/ai-consciousness-evolution-2045', icon: <Brain className="w-4 h-4" /> },
-        { name: 'Quantum Neural Networks 2045', href: '/quantum-neural-network-platform-2045', icon: <Atom className="w-4 h-4" /> },
-        { name: 'AI Autonomous Business Intelligence 2045', href: '/ai-autonomous-business-intelligence-2045', icon: <Target className="w-4 h-4" /> },
-        { name: 'Quantum Cybersecurity 2045', href: '/quantum-cybersecurity-platform-2045', icon: <Shield className="w-4 h-4" /> },
-        { name: 'Space Resource Intelligence 2045', href: '/space-resource-intelligence-2045', icon: <Rocket className="w-4 h-4" /> },
-        { name: 'Autonomous Customer Success 2045', href: '/autonomous-customer-success-2045', icon: <Users className="w-4 h-4" /> }
+        { name: 'AI Consciousness Evolution 2045', href: '/ai-consciousness-evolution-platform', icon: <Brain className="w-4 h-4" /> },
+        { name: 'Quantum AI Neural Networks 2045', href: '/quantum-ai-neural-network-platform', icon: <Atom className="w-4 h-4" /> },
+        { name: 'Autonomous AI Research 2045', href: '/autonomous-ai-research-assistant', icon: <Eye className="w-4 h-4" /> },
+        { name: 'Emotional AI Intelligence 2045', href: '/emotional-ai-intelligence-platform', icon: <Heart className="w-4 h-4" /> },
+        { name: 'Quantum AI Metaverse 2045', href: '/quantum-ai-metaverse-platform', icon: <Globe className="w-4 h-4" /> },
+        { name: 'AI Autonomous Business Intelligence 2045', href: '/ai-autonomous-business-intelligence', icon: <Target className="w-4 h-4" /> }
       ]
     },
     {
       title: 'Technology Solutions',
       links: [
-        { name: 'Quantum Cloud Infrastructure 2045', href: '/quantum-cloud-infrastructure-2045', icon: <Cloud className="w-4 h-4" /> },
-        { name: 'Autonomous DevOps Platform 2045', href: '/autonomous-devops-platform-2045', icon: <Code className="w-4 h-4" /> },
-        { name: 'Quantum Data Center Management 2045', href: '/quantum-data-center-management-2045', icon: <Server className="w-4 h-4" /> },
-        { name: 'Autonomous Network Management 2045', href: '/autonomous-network-management-2045', icon: <Network className="w-4 h-4" /> },
-        { name: 'Autonomous IT Service Management 2045', href: '/autonomous-it-service-management-2045', icon: <Settings className="w-4 h-4" /> },
-        { name: 'Autonomous Security Operations Center 2045', href: '/autonomous-security-operations-center-2045', icon: <Lock className="w-4 h-4" /> }
+        { name: 'Quantum-Secure Cloud Infrastructure', href: '/quantum-secure-cloud-infrastructure', icon: <Cloud className="w-4 h-4" /> },
+        { name: 'Autonomous DevOps Intelligence', href: '/autonomous-devops-intelligence-platform', icon: <Code className="w-4 h-4" /> },
+        { name: 'Edge Computing Orchestration', href: '/edge-computing-orchestration-platform', icon: <Network className="w-4 h-4" /> },
+        { name: 'Zero-Trust Network Architecture', href: '/zero-trust-network-architecture-platform', icon: <Shield className="w-4 h-4" /> },
+        { name: 'Intelligent Data Pipeline', href: '/intelligent-data-pipeline-orchestration', icon: <Database className="w-4 h-4" /> },
+        { name: 'Autonomous Infrastructure Management', href: '/autonomous-infrastructure-management', icon: <Settings className="w-4 h-4" /> }
       ]
     },
     {
-      title: 'AI & Consciousness',
+      title: 'Micro SAAS Solutions',
       links: [
-        { name: 'AI Consciousness Evolution 2045', href: '/ai-consciousness-evolution-2045', icon: <Brain className="w-4 h-4" /> },
-        { name: 'Quantum AI Cognitive 2045', href: '/quantum-ai-cognitive-2045', icon: <Atom className="w-4 h-4" /> },
-        { name: 'Autonomous AI Research 2045', href: '/autonomous-ai-research-2045', icon: <Star className="w-4 h-4" /> },
-        { name: 'Emotional AI Intelligence 2045', href: '/emotional-ai-intelligence-2045', icon: <Heart className="w-4 h-4" /> },
-        { name: 'Quantum AI Metaverse 2045', href: '/quantum-ai-metaverse-2045', icon: <Globe className="w-4 h-4" /> },
-        { name: 'AI Autonomous Business Intelligence 2045', href: '/ai-autonomous-business-intelligence-2045', icon: <Target className="w-4 h-4" /> }
+        { name: 'AI Financial Intelligence Platform', href: '/ai-financial-intelligence-platform', icon: <DollarSign className="w-4 h-4" /> },
+        { name: 'Autonomous Supply Chain Optimization', href: '/autonomous-supply-chain-optimization', icon: <Truck className="w-4 h-4" /> },
+        { name: 'Quantum-Secure Communication Platform', href: '/quantum-secure-communication-platform', icon: <Lock className="w-4 h-4" /> },
+        { name: 'AI Healthcare Diagnostics Platform', href: '/ai-healthcare-diagnostics-platform', icon: <Heart className="w-4 h-4" /> },
+        { name: 'Autonomous Energy Management System', href: '/autonomous-energy-management-system', icon: <Zap className="w-4 h-4" /> },
+        { name: 'Quantum AI Research Assistant', href: '/quantum-ai-research-assistant', icon: <Brain className="w-4 h-4" /> }
       ]
     },
     {
@@ -189,7 +190,7 @@ const UltraFuturisticFooter2045: React.FC = () => {
                 Stay Ahead with Innovation
               </h3>
               <p className="text-gray-400 mb-8 max-w-2xl mx-auto">
-                Get the latest insights on AI, quantum computing, and cutting-edge technology solutions delivered to your inbox.
+                Get the latest insights on AI consciousness, quantum computing, and cutting-edge technology solutions delivered to your inbox.
               </p>
               <form className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
                 <input
@@ -199,25 +200,28 @@ const UltraFuturisticFooter2045: React.FC = () => {
                   aria-label="Email address for newsletter"
                   required
                 />
-                <button 
+                <button
                   type="submit"
-                  className="px-6 py-3 bg-gradient-to-r from-cyan-500 to-blue-500 text-white font-medium rounded-lg hover:from-cyan-600 hover:to-blue-600 transition-all duration-200 hover:scale-105 shadow-lg hover:shadow-cyan-500/25"
+                  className="px-6 py-3 bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 text-white font-medium rounded-lg transition-all duration-200 hover:shadow-lg hover:shadow-cyan-500/25"
                 >
                   Subscribe
                 </button>
               </form>
             </div>
           </motion.div>
-        </div>
 
-        {/* Bottom Footer */}
-        <div className="border-t border-cyan-500/20 bg-black/50">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-            <div className="flex flex-col lg:flex-row items-center justify-between space-y-4 lg:space-y-0">
+          {/* Bottom Section */}
+          <motion.div
+            variants={fadeInUp}
+            initial="initial"
+            whileInView="animate"
+            viewport={{ once: true }}
+            className="mt-16 pt-8 border-t border-cyan-500/20"
+          >
+            <div className="flex flex-col lg:flex-row justify-between items-center space-y-4 lg:space-y-0">
               {/* Copyright */}
-              <div className="text-gray-400 text-sm text-center lg:text-left">
-                <p>&copy; {currentYear} Zion Tech Group. All rights reserved.</p>
-                <p className="mt-1">Pioneering the future of technology since 2025</p>
+              <div className="text-gray-400 text-sm">
+                © {currentYear} Zion Tech Group. All rights reserved. Revolutionary Technology 2045.
               </div>
 
               {/* Social Links */}
@@ -228,70 +232,41 @@ const UltraFuturisticFooter2045: React.FC = () => {
                     href={social.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="p-2 rounded-lg bg-gray-900/50 border border-cyan-500/20 text-gray-400 transition-all duration-200 hover:scale-110 hover:border-cyan-500/50 hover:text-cyan-400"
+                    className="w-10 h-10 bg-gray-800/50 hover:bg-cyan-500/20 border border-gray-600/50 hover:border-cyan-500/30 rounded-lg flex items-center justify-center text-gray-400 hover:text-cyan-400 transition-all duration-200"
                     aria-label={social.name}
                   >
                     <social.icon className="w-5 h-5" />
-                    <span className="sr-only">{social.name}</span>
                   </a>
                 ))}
               </div>
 
-              {/* Additional Links */}
-              <div className="flex items-center space-x-6 text-sm text-gray-400">
-                <Link href="/status" className="hover:text-cyan-400 transition-colors duration-200">
-                  System Status
-                </Link>
-                <Link href="/sitemap" className="hover:text-cyan-400 transition-colors duration-200">
-                  Sitemap
-                </Link>
-                <Link href="/accessibility" className="hover:text-cyan-400 transition-colors duration-200">
-                  Accessibility
-                </Link>
+              {/* Quick Links */}
+              <div className="flex items-center space-x-6">
+                {quickLinks.map((link) => (
+                  <Link
+                    key={link.name}
+                    href={link.href}
+                    className="flex items-center space-x-2 text-gray-400 hover:text-cyan-400 transition-colors text-sm"
+                  >
+                    {link.icon}
+                    <span>{link.name}</span>
+                  </Link>
+                ))}
               </div>
             </div>
-          </div>
+          </motion.div>
         </div>
-      </div>
-
-      {/* Enhanced Floating Elements */}
-      <div className="absolute inset-0 -z-10 pointer-events-none">
-        <motion.div
-          className="absolute top-20 right-20 w-2 h-2 bg-cyan-400/40 rounded-full"
-          animate={{
-            scale: [1, 2, 1],
-            opacity: [0.4, 0.8, 0.4],
-          }}
-          transition={{
-            duration: 4,
-            repeat: Infinity,
-            ease: "easeInOut"
-          }}
-        />
-        <motion.div
-          className="absolute bottom-20 left-20 w-3 h-3 bg-purple-400/40 rounded-full"
-          animate={{
-            scale: [1, 1.5, 1],
-            opacity: [0.3, 0.7, 0.3],
-          }}
-          transition={{
-            duration: 6,
-            repeat: Infinity,
-            ease: "easeInOut"
-          }}
-        />
       </div>
 
       {/* Scroll to Top Button */}
       <motion.button
         onClick={scrollToTop}
-        className="fixed bottom-8 right-8 w-12 h-12 bg-gradient-to-r from-cyan-500 to-blue-600 text-white rounded-full shadow-lg hover:shadow-xl hover:shadow-cyan-500/25 transition-all duration-300 hover:scale-110 z-40"
+        whileHover={{ scale: 1.1 }}
+        whileTap={{ scale: 0.9 }}
+        className="fixed bottom-8 left-8 w-12 h-12 bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 rounded-full shadow-2xl shadow-cyan-500/25 flex items-center justify-center text-white hover:shadow-cyan-500/40 transition-all duration-300 z-50"
         aria-label="Scroll to top"
-        initial={{ opacity: 0, scale: 0 }}
-        animate={{ opacity: 1, scale: 1 }}
-        transition={{ delay: 1 }}
       >
-        <ArrowUp className="w-6 h-6 mx-auto" />
+        <ArrowUp className="w-6 h-6" />
       </motion.button>
     </footer>
   );

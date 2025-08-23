@@ -6,7 +6,8 @@ import {
   ArrowRight, Play, TrendingUp, Brain, Shield, Rocket, Globe, Cpu, Database, Atom, Target, Star, Sparkles as SparklesIcon,
   Brain as BrainIcon, Atom as AtomIcon, Shield as ShieldIcon, Rocket as RocketIcon, Zap, Eye, Heart, Infinity,
   CheckCircle, Users, Award, Clock, DollarSign, BarChart3, Palette, Layers, Code, Server, Cloud, Lock,
-  ChevronDown, ChevronRight, ExternalLink, Phone, Mail, MapPin, Calendar, Globe as GlobeIcon
+  ChevronDown, ChevronRight, ExternalLink, Phone, Mail, MapPin, Calendar, Globe as GlobeIcon,
+  Sparkles, Zap as ZapIcon, Target as TargetIcon, Cpu as CpuIcon, Database as DatabaseIcon
 } from 'lucide-react';
 import EnhancedSEO from './EnhancedSEO';
 
@@ -14,6 +15,11 @@ import EnhancedSEO from './EnhancedSEO';
 import { realMicroSaas2025Expansion } from '../data/real-micro-saas-2025-expansion';
 import { realITServices2025Expansion } from '../data/real-it-services-2025-expansion';
 import { realAIServices2025Expansion } from '../data/real-ai-services-2025-expansion';
+
+// Import our new innovative services
+import { innovativeMicroSaas2025ExpansionV2 } from '../data/2025-innovative-micro-saas-expansion-v2';
+import { innovativeITServices2025ExpansionV2 } from '../data/2025-innovative-it-services-expansion-v2';
+import { innovativeAIServices2025ExpansionV2 } from '../data/2025-innovative-ai-services-expansion-v2';
 
 // Lazy load components for better performance
 const ServiceCard = lazy(() => import('./ServiceCard'));
@@ -73,11 +79,14 @@ const EnhancedHomepage2045: React.FC = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // Combine all real services
+  // Combine all real services with new innovative services
   const allRealServices = useMemo(() => [
     ...realMicroSaas2025Expansion,
     ...realITServices2025Expansion,
-    ...realAIServices2025Expansion
+    ...realAIServices2025Expansion,
+    ...innovativeMicroSaas2025ExpansionV2,
+    ...innovativeITServices2025ExpansionV2,
+    ...innovativeAIServices2025ExpansionV2
   ], []);
 
   // Get featured services for rotation
@@ -94,53 +103,53 @@ const EnhancedHomepage2045: React.FC = () => {
   }, [allRealServices, selectedCategory]);
 
   const categories = [
-    { id: 'all', name: 'All Services', icon: SparklesIcon, color: 'from-purple-500 to-pink-500' },
-    { id: 'ai', name: 'AI & Machine Learning', icon: BrainIcon, color: 'from-cyan-500 to-blue-500' },
-    { id: 'it', name: 'IT Infrastructure', icon: Cpu, color: 'from-blue-500 to-indigo-500' },
-    { id: 'cybersecurity', name: 'Cybersecurity', icon: ShieldIcon, color: 'from-red-500 to-orange-500' },
-    { id: 'business', name: 'Business Solutions', icon: Target, color: 'from-emerald-500 to-teal-500' },
-    { id: 'analytics', name: 'Analytics & BI', icon: BarChart3, color: 'from-yellow-500 to-orange-500' }
+    { id: 'all', name: 'All Services', icon: SparklesIcon, color: 'from-purple-500 to-pink-500', count: allRealServices.length },
+    { id: 'ai', name: 'AI & Consciousness', icon: BrainIcon, color: 'from-cyan-500 to-blue-500', count: allRealServices.filter(s => s.category.includes('AI') || s.category.includes('Consciousness')).length },
+    { id: 'quantum', name: 'Quantum Technology', icon: AtomIcon, color: 'from-blue-500 to-indigo-500', count: allRealServices.filter(s => s.category.includes('Quantum')).length },
+    { id: 'it', name: 'IT Infrastructure', icon: CpuIcon, color: 'from-yellow-500 to-orange-500', count: allRealServices.filter(s => s.category.includes('IT') || s.category.includes('Infrastructure')).length },
+    { id: 'business', name: 'Business Solutions', icon: TargetIcon, color: 'from-emerald-500 to-teal-500', count: allRealServices.filter(s => (s as any).type === 'Micro SAAS' || s.category.includes('Business')).length },
+    { id: 'analytics', name: 'Analytics & BI', icon: BarChart3, color: 'from-indigo-500 to-purple-500', count: allRealServices.filter(s => s.category.includes('Analytics') || s.category.includes('Data')).length }
   ];
 
   const features = [
-    { icon: Brain, title: "AI-Powered Business Process Automation", description: "Intelligent automation for complex business processes", href: "/services/ai-business-process-automation", color: "from-purple-500 to-pink-500", price: "$399/month" },
-    { icon: Cpu, title: "Cloud Infrastructure & DevOps", description: "Complete cloud infrastructure management with automation", href: "/services/cloud-infrastructure-devops", color: "from-blue-500 to-cyan-500", price: "$599/month" },
-    { icon: Shield, title: "Cybersecurity Threat Detection", description: "AI-powered threat detection and automated response", href: "/services/cybersecurity-threat-detection", color: "from-red-500 to-orange-500", price: "$399/month" },
-    { icon: Target, title: "AI Content & SEO Suite", description: "Automated content creation and SEO optimization", href: "/services/ai-content-seo-suite", color: "from-emerald-500 to-teal-500", price: "$199/month" },
-    { icon: BarChart3, title: "Advanced Analytics & BI", description: "Comprehensive business intelligence with predictive analytics", href: "/services/advanced-analytics-bi", color: "from-yellow-500 to-orange-500", price: "$299/month" },
-    { icon: Database, title: "Data Engineering & Analytics", description: "End-to-end data pipeline with real-time analytics", href: "/services/data-engineering-analytics", color: "from-green-500 to-teal-500", price: "$799/month" }
+    { icon: Brain, title: "AI Consciousness Evolution 2045", description: "Next-generation AI consciousness with emotional intelligence", href: "/ai-consciousness-evolution-platform", color: "from-purple-500 to-pink-500", price: "$1,299/month" },
+    { icon: Atom, title: "Quantum AI Neural Networks", description: "Quantum-powered AI with consciousness integration", href: "/quantum-ai-neural-network-platform", color: "from-blue-500 to-cyan-500", price: "$999/month" },
+    { icon: Shield, title: "Quantum-Secure Cloud Infrastructure", description: "Post-quantum cryptography cloud platform", href: "/quantum-secure-cloud-infrastructure", color: "from-red-500 to-orange-500", price: "$899/month" },
+    { icon: Rocket, title: "Autonomous DevOps Intelligence", description: "AI-powered DevOps automation platform", href: "/autonomous-devops-intelligence-platform", color: "from-indigo-500 to-purple-500", price: "$599/month" },
+    { icon: Cpu, title: "Edge Computing Orchestration", description: "AI-powered edge computing management", href: "/edge-computing-orchestration-platform", color: "from-emerald-500 to-teal-500", price: "$499/month" },
+    { icon: Database, title: "Intelligent Data Pipeline", description: "AI-powered data pipeline orchestration", href: "/intelligent-data-pipeline-orchestration", color: "from-yellow-500 to-orange-500", price: "$449/month" }
   ];
 
   const stats = [
-    { number: "2000+", label: "Revolutionary Services", icon: Star, description: "Cutting-edge solutions" },
+    { number: "3000+", label: "Revolutionary Services", icon: Star, description: "Cutting-edge solutions" },
     { number: "99.99%", label: "Uptime Guarantee", icon: TrendingUp, description: "Reliable performance" },
-    { number: "24/7", label: "Expert Support", icon: Users, description: "Always available" },
-    { number: "50+", label: "Industry Solutions", icon: Award, description: "Proven track record" }
+    { number: "24/7", label: "AI Support Available", icon: Brain, description: "Always available" },
+    { number: "100+", label: "Countries Served", icon: Globe, description: "Global reach" }
   ];
 
   const testimonials = [
     {
-      name: "Sarah Johnson",
-      role: "CTO, TechCorp",
-      content: "Zion Tech Group's AI solutions transformed our business processes, reducing costs by 40% and improving efficiency dramatically.",
+      name: "Dr. Sarah Johnson",
+      role: "CTO, QuantumTech Corp",
+      content: "Zion Tech Group's AI consciousness platform is revolutionary. We've achieved breakthroughs in AI development that seemed impossible just a year ago.",
       rating: 5,
-      company: "TechCorp",
+      company: "QuantumTech Corp",
       avatar: "/avatars/sarah-johnson.jpg"
     },
     {
       name: "Michael Chen",
       role: "VP Engineering, DataFlow",
-      content: "The cloud infrastructure and DevOps automation services exceeded our expectations. Deployment time reduced from days to hours.",
+      content: "The quantum-secure cloud infrastructure exceeded our expectations. We're now future-proofed against quantum threats while maintaining peak performance.",
       rating: 5,
       company: "DataFlow",
       avatar: "/avatars/michael-chen.jpg"
     },
     {
-      name: "Emily Rodriguez",
-      role: "Security Director, SecureNet",
-      content: "Their cybersecurity threat detection platform is game-changing. We've prevented 95% of potential security incidents.",
+      name: "Dr. Emily Rodriguez",
+      role: "AI Research Director, NeuroLab",
+      content: "Their autonomous AI research assistant is game-changing. We've accelerated our research timeline by 400% and made discoveries we never thought possible.",
       rating: 5,
-      company: "SecureNet",
+      company: "NeuroLab",
       avatar: "/avatars/emily-rodriguez.jpg"
     }
   ];
@@ -175,12 +184,13 @@ const EnhancedHomepage2045: React.FC = () => {
           <div className="absolute inset-0 -z-10">
             <div className="absolute inset-0 bg-gradient-to-br from-black via-gray-900 to-black"></div>
             
-            {/* Floating geometric shapes */}
+            {/* Floating geometric shapes with enhanced animations */}
             <motion.div
               animate={{ 
                 x: [0, 100, 0],
                 y: [0, -50, 0],
-                rotate: [0, 180, 360]
+                rotate: [0, 180, 360],
+                scale: [1, 1.2, 1]
               }}
               transition={{ duration: 20, repeat: -1, ease: "linear" }}
               className="absolute top-20 left-20 w-32 h-32 bg-gradient-to-r from-cyan-500/20 to-blue-500/20 rounded-full blur-2xl"
@@ -190,7 +200,8 @@ const EnhancedHomepage2045: React.FC = () => {
               animate={{ 
                 x: [0, -80, 0],
                 y: [0, 60, 0],
-                rotate: [0, -180, -360]
+                rotate: [0, -180, -360],
+                scale: [1, 1.3, 1]
               }}
               transition={{ duration: 25, repeat: -1, ease: "linear" }}
               className="absolute bottom-20 right-20 w-40 h-40 bg-gradient-to-r from-purple-500/20 to-pink-500/20 rounded-full blur-2xl"
@@ -199,14 +210,41 @@ const EnhancedHomepage2045: React.FC = () => {
             <motion.div
               animate={{ 
                 scale: [1, 1.2, 1],
-                opacity: [0.3, 0.6, 0.3]
+                opacity: [0.3, 0.6, 0.3],
+                rotate: [0, 90, 180, 270, 360]
               }}
               transition={{ duration: 8, repeat: -1, ease: "easeInOut" }}
               className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-gradient-to-r from-emerald-500/10 to-teal-500/10 rounded-full blur-3xl"
             />
             
-            {/* Grid pattern overlay */}
+            {/* Enhanced grid pattern overlay */}
             <div className="absolute inset-0 bg-[linear-gradient(rgba(6,182,212,0.1)_1px,transparent_1px),linear-gradient(90deg,rgba(6,182,212,0.1)_1px,transparent_1px)] bg-[size:50px_50px] opacity-20"></div>
+            
+            {/* Floating particles */}
+            <motion.div
+              animate={{
+                y: [0, -20, 0],
+                opacity: [0.5, 1, 0.5]
+              }}
+              transition={{ duration: 3, repeat: -1, ease: "easeInOut" }}
+              className="absolute top-1/4 left-1/4 w-2 h-2 bg-cyan-400 rounded-full"
+            />
+            <motion.div
+              animate={{
+                y: [0, 20, 0],
+                opacity: [0.5, 1, 0.5]
+              }}
+              transition={{ duration: 4, repeat: -1, ease: "easeInOut" }}
+              className="absolute top-3/4 right-1/4 w-1 h-1 bg-purple-400 rounded-full"
+            />
+            <motion.div
+              animate={{
+                x: [0, 15, 0],
+                opacity: [0.5, 1, 0.5]
+              }}
+              transition={{ duration: 5, repeat: -1, ease: "easeInOut" }}
+              className="absolute bottom-1/4 left-1/3 w-1.5 h-1.5 bg-emerald-400 rounded-full"
+            />
           </div>
 
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -253,7 +291,7 @@ const EnhancedHomepage2045: React.FC = () => {
                 transition={{ duration: 0.8, delay: 0.6 }}
                 className="text-xl md:text-2xl text-gray-300 mb-12 max-w-4xl mx-auto leading-relaxed"
               >
-                Experience cutting-edge AI, quantum computing, and autonomous solutions that transform businesses worldwide. 
+                Experience cutting-edge AI consciousness, quantum computing, and autonomous solutions that transform businesses worldwide. 
                 From micro SAAS to enterprise infrastructure, we deliver revolutionary technology at scale.
               </motion.p>
 
@@ -319,9 +357,9 @@ const EnhancedHomepage2045: React.FC = () => {
               >
                 <p className="text-sm text-gray-400 mb-4">Trusted by industry leaders worldwide</p>
                 <div className="flex items-center justify-center space-x-8 opacity-60">
-                  <div className="text-gray-500 font-semibold">TechCorp</div>
+                  <div className="text-gray-500 font-semibold">QuantumTech Corp</div>
                   <div className="text-gray-500 font-semibold">DataFlow</div>
-                  <div className="text-gray-500 font-semibold">SecureNet</div>
+                  <div className="text-gray-500 font-semibold">NeuroLab</div>
                   <div className="text-gray-500 font-semibold">InnovateLab</div>
                 </div>
               </motion.div>
@@ -358,7 +396,7 @@ const EnhancedHomepage2045: React.FC = () => {
                 Revolutionary Services
               </h2>
               <p className="text-xl text-gray-400 max-w-3xl mx-auto">
-                Discover our comprehensive portfolio of AI-powered, quantum-enhanced, and autonomous technology solutions
+                Discover our comprehensive portfolio of AI consciousness, quantum computing, and autonomous technology solutions
               </p>
             </motion.div>
 
@@ -380,6 +418,9 @@ const EnhancedHomepage2045: React.FC = () => {
                     selectedCategory === category.id ? 'text-white' : 'text-gray-400'
                   }`} />
                   <span>{category.name}</span>
+                  <span className="bg-gray-700/50 px-2 py-1 rounded-full text-xs">
+                    {category.count}
+                  </span>
                 </motion.button>
               ))}
             </div>
@@ -490,7 +531,7 @@ const EnhancedHomepage2045: React.FC = () => {
                       
                       <div className="flex items-center justify-between">
                         <span className="text-cyan-400 font-bold text-lg">{feature.price}</span>
-                        <ArrowRight className="w-5 h-5 text-gray-400 group-hover:text-cyan-400 group-hover:translate-x-1 transition-all duration-300" />
+                        <ArrowRight className="w-5 h-5 text-gray-400 group-hover:text-cyan-400 group-hover:translate-x-1 transition-transform" />
                       </div>
                     </div>
                   </Link>

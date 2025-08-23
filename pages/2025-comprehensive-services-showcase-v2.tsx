@@ -8,9 +8,9 @@ import {
 } from 'lucide-react';
 
 // Import our new 2025 V2 innovative services
-import { innovativeMicroSaasServices2025V2 } from '../data/2025-innovative-micro-saas-expansion-v2';
-import { innovativeITInfrastructureServices2025V2 } from '../data/2025-innovative-it-infrastructure-services-v2';
-import { innovativeAIServices2025V2 } from '../data/2025-innovative-ai-services-v2';
+import { innovativeMicroSaas2025ExpansionV2 } from '../data/2025-innovative-micro-saas-expansion-v2';
+import { innovativeITServices2025ExpansionV2 } from '../data/2025-innovative-it-services-expansion-v2';
+import { innovativeAIServices2025ExpansionV2 } from '../data/2025-innovative-ai-services-expansion-v2';
 import { industrySpecificSolutions2025V2 } from '../data/2025-industry-specific-solutions-v2';
 import { emergingTechBreakthroughs2025V2 } from '../data/2025-emerging-tech-breakthroughs-v2';
 
@@ -30,9 +30,9 @@ const staggerContainer = {
 
 export default function ComprehensiveServicesShowcase2025V2() {
   const allNewServices = [
-    ...innovativeMicroSaasServices2025V2,
-    ...innovativeITInfrastructureServices2025V2,
-    ...innovativeAIServices2025V2,
+    ...innovativeMicroSaas2025ExpansionV2,
+    ...innovativeITServices2025ExpansionV2,
+    ...innovativeAIServices2025ExpansionV2,
     ...industrySpecificSolutions2025V2,
     ...emergingTechBreakthroughs2025V2
   ];
@@ -43,7 +43,7 @@ export default function ComprehensiveServicesShowcase2025V2() {
       name: 'Innovative Micro SAAS',
       icon: <Smartphone className="w-8 h-8" />,
       color: 'from-blue-500 to-cyan-500',
-      services: innovativeMicroSaasServices2025V2,
+      services: innovativeMicroSaas2025ExpansionV2,
       description: 'Cutting-edge micro SAAS solutions for modern businesses'
     },
     {
@@ -51,7 +51,7 @@ export default function ComprehensiveServicesShowcase2025V2() {
       name: 'IT Infrastructure Services',
       icon: <Cloud className="w-8 h-8" />,
       color: 'from-purple-500 to-pink-500',
-      services: innovativeITInfrastructureServices2025V2,
+      services: innovativeITServices2025ExpansionV2,
       description: 'Advanced IT infrastructure and security solutions'
     },
     {
@@ -59,7 +59,7 @@ export default function ComprehensiveServicesShowcase2025V2() {
       name: 'AI & Machine Learning',
       icon: <Brain className="w-8 h-8" />,
       color: 'from-green-500 to-emerald-500',
-      services: innovativeAIServices2025V2,
+      services: innovativeAIServices2025ExpansionV2,
       description: 'Intelligent AI solutions for business transformation'
     },
     {
@@ -237,10 +237,13 @@ export default function ComprehensiveServicesShowcase2025V2() {
                       
                       <div className="mb-6">
                         <div className="text-2xl font-bold text-white mb-2">
-                          Starting at {service.pricing.starter}
+                          Starting at {(service as any).pricing?.starter || service.price}
                         </div>
                         <div className="text-sm text-gray-400">
-                          Professional: {service.pricing.professional} | Enterprise: {service.pricing.enterprise}
+                          {(service as any).pricing?.professional ? 
+                            `Professional: ${(service as any).pricing.professional} | Enterprise: ${(service as any).pricing.enterprise}` :
+                            `${service.price} ${service.period}`
+                          }
                         </div>
                       </div>
                       

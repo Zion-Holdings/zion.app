@@ -6,7 +6,8 @@ import {
   Brain, Rocket, Target, Atom, Shield,
   DollarSign, BarChart3, Globe, Grid, Heart, Database,
   Cpu, Palette, Cloud, Network, TrendingUp, ShoppingCart, Settings, Building, Monitor,
-  Zap, Eye, Infinity, Sparkles, Users, Lock, Code, Server, Layers, Globe2, Truck
+  Zap, Eye, Infinity, Sparkles, Users, Lock, Code, Server, Layers, Globe2, Truck,
+  Sparkles as SparklesIcon, Zap as ZapIcon, Target as TargetIcon, Cpu as CpuIcon, Database as DatabaseIcon
 } from 'lucide-react';
 
 interface NavigationItem {
@@ -52,61 +53,47 @@ const navigationItems: NavigationItem[] = [
       },
       { 
         name: 'AI Consciousness Evolution 2045', 
-        href: '/ai-consciousness-evolution-2045', 
+        href: '/ai-consciousness-evolution-platform', 
         description: 'Next-generation AI consciousness',
         icon: <Brain className="w-4 h-4" />,
         color: 'from-purple-500 to-pink-500',
         featured: true
       },
       { 
-        name: 'Quantum Neural Network 2045', 
-        href: '/quantum-neural-network-platform-2045', 
+        name: 'Quantum AI Neural Networks 2045', 
+        href: '/quantum-ai-neural-network-platform', 
         description: 'Quantum-powered AI neural networks',
         icon: <Atom className="w-4 h-4" />,
         color: 'from-blue-500 to-cyan-500',
         featured: true
       },
       { 
-        name: 'AI Autonomous Business Intelligence 2045', 
-        href: '/ai-autonomous-business-intelligence-2045', 
-        description: 'AI-powered business intelligence',
-        icon: <BarChart3 className="w-4 h-4" />,
+        name: 'Autonomous AI Research 2045', 
+        href: '/autonomous-ai-research-assistant', 
+        description: 'Fully autonomous AI research',
+        icon: <Brain className="w-4 h-4" />,
         color: 'from-emerald-500 to-teal-500'
       },
       { 
-        name: 'Quantum Cybersecurity 2045', 
-        href: '/quantum-cybersecurity-platform-2045', 
-        description: 'Quantum-resistant security',
-        icon: <Shield className="w-4 h-4" />,
-        color: 'from-red-500 to-orange-500'
-      },
-      { 
-        name: 'Autonomous Customer Success 2045', 
-        href: '/autonomous-customer-success-2045', 
-        description: 'AI-powered customer success',
+        name: 'Emotional AI Intelligence 2045', 
+        href: '/emotional-ai-intelligence-platform', 
+        description: 'Advanced emotional AI intelligence',
         icon: <Heart className="w-4 h-4" />,
         color: 'from-pink-500 to-purple-500'
       },
       { 
-        name: 'AI Customer Success Automation', 
-        href: '/ai-customer-success-automation-2025', 
-        description: 'AI-powered customer success automation',
-        icon: <Users className="w-4 h-4" />,
-        color: 'from-green-500 to-emerald-500'
+        name: 'Quantum AI Metaverse 2045', 
+        href: '/quantum-ai-metaverse-platform', 
+        description: 'Quantum-powered metaverse',
+        icon: <Globe className="w-4 h-4" />,
+        color: 'from-indigo-500 to-purple-500'
       },
       { 
-        name: 'Intelligent Content Marketing', 
-        href: '/intelligent-content-marketing-suite-2025', 
-        description: 'AI-powered content marketing automation',
-        icon: <TrendingUp className="w-4 h-4" />,
-        color: 'from-blue-500 to-indigo-500'
-      },
-      { 
-        name: 'Smart E-commerce Analytics', 
-        href: '/smart-ecommerce-analytics-2025', 
-        description: 'AI-powered e-commerce analytics',
+        name: 'AI Autonomous Business Intelligence 2045', 
+        href: '/ai-autonomous-business-intelligence', 
+        description: 'Autonomous AI business intelligence',
         icon: <BarChart3 className="w-4 h-4" />,
-        color: 'from-purple-500 to-pink-500'
+        color: 'from-yellow-500 to-orange-500'
       }
     ]
   },
@@ -121,15 +108,15 @@ const navigationItems: NavigationItem[] = [
     children: [
       { 
         name: 'Quantum-Secure Cloud Infrastructure', 
-        href: '/quantum-secure-cloud-infrastructure-2025', 
-        description: 'Quantum-resistant cloud infrastructure',
+        href: '/quantum-secure-cloud-infrastructure', 
+        description: 'Post-quantum cryptography cloud platform',
         icon: <Cloud className="w-4 h-4" />,
         color: 'from-cyan-500 to-blue-500',
         featured: true
       },
       { 
         name: 'Autonomous DevOps Intelligence', 
-        href: '/autonomous-devops-intelligence-2025', 
+        href: '/autonomous-devops-intelligence-platform', 
         description: 'AI-powered DevOps automation',
         icon: <Cpu className="w-4 h-4" />,
         color: 'from-green-500 to-emerald-500',
@@ -137,45 +124,31 @@ const navigationItems: NavigationItem[] = [
       },
       { 
         name: 'Edge Computing Orchestration', 
-        href: '/edge-computing-orchestration-2025', 
-        description: 'AI-powered edge computing',
+        href: '/edge-computing-orchestration-platform', 
+        description: 'AI-powered edge computing management',
         icon: <Network className="w-4 h-4" />,
         color: 'from-purple-500 to-pink-500'
       },
       { 
         name: 'Zero-Trust Network Architecture', 
-        href: '/zero-trust-network-architecture-2025', 
+        href: '/zero-trust-network-architecture-platform', 
         description: 'AI-powered zero-trust security',
         icon: <Shield className="w-4 h-4" />,
         color: 'from-red-500 to-orange-500'
       },
       { 
         name: 'Intelligent Data Pipeline', 
-        href: '/intelligent-data-pipeline-orchestration-2025', 
+        href: '/intelligent-data-pipeline-orchestration', 
         description: 'AI-powered data pipeline orchestration',
         icon: <Database className="w-4 h-4" />,
         color: 'from-indigo-500 to-purple-500'
       },
       { 
-        name: 'Quantum Cybersecurity Intelligence', 
-        href: '/quantum-cybersecurity-intelligence-2025', 
-        description: 'Quantum-resistant cybersecurity',
-        icon: <Lock className="w-4 h-4" />,
-        color: 'from-red-500 to-pink-500'
-      },
-      { 
         name: 'Autonomous Infrastructure Management', 
-        href: '/autonomous-infrastructure-management-2025', 
-        description: 'AI-powered infrastructure management',
+        href: '/autonomous-infrastructure-management', 
+        description: 'AI-powered infrastructure automation',
         icon: <Settings className="w-4 h-4" />,
         color: 'from-yellow-500 to-orange-500'
-      },
-      { 
-        name: 'Intelligent API Management', 
-        href: '/intelligent-api-management-2025', 
-        description: 'AI-powered API management',
-        icon: <Code className="w-4 h-4" />,
-        color: 'from-cyan-500 to-blue-500'
       }
     ]
   },
@@ -189,163 +162,93 @@ const navigationItems: NavigationItem[] = [
     color: 'from-emerald-500 to-teal-500',
     children: [
       { 
-        name: 'AI Customer Success Automation', 
-        href: '/ai-customer-success-automation-2025', 
-        description: 'AI-powered customer success automation',
-        icon: <Users className="w-4 h-4" />,
-        color: 'from-green-500 to-emerald-500',
+        name: 'AI Financial Intelligence Platform', 
+        href: '/ai-financial-intelligence-platform', 
+        description: 'Real-time financial analysis and insights',
+        icon: <DollarSign className="w-4 h-4" />,
+        color: 'from-emerald-500 to-teal-500',
         featured: true
       },
       { 
-        name: 'Intelligent Content Marketing', 
-        href: '/intelligent-content-marketing-suite-2025', 
-        description: 'AI-powered content marketing automation',
-        icon: <TrendingUp className="w-4 h-4" />,
+        name: 'Autonomous Supply Chain Optimization', 
+        href: '/autonomous-supply-chain-optimization', 
+        description: 'AI-driven supply chain automation',
+        icon: <Truck className="w-4 h-4" />,
         color: 'from-blue-500 to-indigo-500',
         featured: true
       },
       { 
-        name: 'Smart E-commerce Analytics', 
-        href: '/smart-ecommerce-analytics-2025', 
-        description: 'AI-powered e-commerce analytics',
-        icon: <BarChart3 className="w-4 h-4" />,
+        name: 'Quantum-Secure Communication Platform', 
+        href: '/quantum-secure-communication-platform', 
+        description: 'Post-quantum cryptography communications',
+        icon: <Lock className="w-4 h-4" />,
         color: 'from-purple-500 to-pink-500'
       },
       { 
-        name: 'Automated Social Media Management', 
-        href: '/automated-social-media-management-2025', 
-        description: 'AI-powered social media automation',
-        icon: <Globe2 className="w-4 h-4" />,
-        color: 'from-cyan-500 to-blue-500'
+        name: 'AI Healthcare Diagnostics Platform', 
+        href: '/ai-healthcare-diagnostics-platform', 
+        description: 'Advanced medical imaging analysis',
+        icon: <Heart className="w-4 h-4" />,
+        color: 'from-red-500 to-orange-500'
       },
       { 
-        name: 'Intelligent Project Management', 
-        href: '/intelligent-project-management-2025', 
-        description: 'AI-powered project management',
-        icon: <Target className="w-4 h-4" />,
-        color: 'from-orange-500 to-red-500'
+        name: 'Autonomous Energy Management System', 
+        href: '/autonomous-energy-management-system', 
+        description: 'AI-powered energy optimization',
+        icon: <Zap className="w-4 h-4" />,
+        color: 'from-yellow-500 to-orange-500'
       },
       { 
-        name: 'Smart HR Analytics & Automation', 
-        href: '/smart-hr-analytics-automation-2025', 
-        description: 'AI-powered HR analytics and automation',
-        icon: <Users className="w-4 h-4" />,
-        color: 'from-pink-500 to-purple-500'
-      },
-      { 
-        name: 'Intelligent Financial Planning', 
-        href: '/intelligent-financial-planning-2025', 
-        description: 'AI-powered financial planning',
-        icon: <DollarSign className="w-4 h-4" />,
-        color: 'from-green-500 to-emerald-500'
-      },
-      { 
-        name: 'Smart Supply Chain Optimization', 
-        href: '/smart-supply-chain-optimization-2025', 
-        description: 'AI-powered supply chain optimization',
-        icon: <Truck className="w-4 h-4" />,
-        color: 'from-blue-500 to-cyan-500'
+        name: 'Quantum AI Research Assistant', 
+        href: '/quantum-ai-research-assistant', 
+        description: 'AI research with quantum insights',
+        icon: <Brain className="w-4 h-4" />,
+        color: 'from-indigo-500 to-purple-500'
       }
     ]
   },
   {
     name: 'AI & Consciousness',
-    href: '/ai-services',
+    href: '/ai-consciousness',
     icon: <Brain className="w-5 h-5" />,
     description: 'Advanced AI consciousness solutions',
-    badge: '2045',
-    category: 'ai',
+    badge: 'Revolutionary',
+    category: 'ai-consciousness',
     color: 'from-purple-500 to-pink-500',
     children: [
       { 
-        name: 'AI Business Intelligence', 
-        href: '/ai-business-intelligence-platform-2025', 
-        description: 'AI-powered business intelligence',
-        icon: <BarChart3 className="w-4 h-4" />,
+        name: 'AI Consciousness Evolution', 
+        href: '/ai-consciousness-evolution-platform', 
+        description: 'Next-generation AI consciousness',
+        icon: <Brain className="w-4 h-4" />,
+        color: 'from-purple-500 to-pink-500',
+        featured: true
+      },
+      { 
+        name: 'Quantum AI Neural Networks', 
+        href: '/quantum-ai-neural-network-platform', 
+        description: 'Quantum-powered AI with consciousness',
+        icon: <Atom className="w-4 h-4" />,
         color: 'from-blue-500 to-cyan-500',
         featured: true
       },
       { 
-        name: 'Intelligent Customer Experience', 
-        href: '/intelligent-customer-experience-2025', 
-        description: 'AI-powered customer experience optimization',
-        icon: <Heart className="w-4 h-4" />,
-        color: 'from-pink-500 to-purple-500',
-        featured: true
-      },
-      { 
-        name: 'AI Marketing Automation', 
-        href: '/ai-marketing-automation-suite-2025', 
-        description: 'AI-powered marketing automation',
-        icon: <TrendingUp className="w-4 h-4" />,
-        color: 'from-green-500 to-emerald-500'
-      },
-      { 
-        name: 'Intelligent Sales Intelligence', 
-        href: '/intelligent-sales-intelligence-2025', 
-        description: 'AI-powered sales intelligence',
-        icon: <Target className="w-4 h-4" />,
-        color: 'from-orange-500 to-red-500'
-      },
-      { 
-        name: 'AI Product Recommendations', 
-        href: '/ai-product-recommendation-engine-2025', 
-        description: 'AI-powered product recommendations',
-        icon: <ShoppingCart className="w-4 h-4" />,
-        color: 'from-indigo-500 to-purple-500'
-      },
-      { 
-        name: 'Intelligent Fraud Detection', 
-        href: '/intelligent-fraud-detection-2025', 
-        description: 'AI-powered fraud detection',
-        icon: <Shield className="w-4 h-4" />,
-        color: 'from-red-500 to-pink-500'
-      },
-      { 
-        name: 'AI Predictive Maintenance', 
-        href: '/ai-predictive-maintenance-2025', 
-        description: 'AI-powered predictive maintenance',
-        icon: <Settings className="w-4 h-4" />,
-        color: 'from-yellow-500 to-orange-500'
-      },
-      { 
-        name: 'Intelligent Language Processing', 
-        href: '/intelligent-language-processing-2025', 
-        description: 'AI-powered language processing',
-        icon: <Code className="w-4 h-4" />,
-        color: 'from-cyan-500 to-blue-500'
-      },
-      { 
-        name: 'AI Consciousness Evolution 2045', 
-        href: '/ai-consciousness-evolution-2045', 
-        description: 'Next-generation AI consciousness',
-        icon: <Brain className="w-4 h-4" />,
-        featured: true
-      },
-      { 
-        name: 'Quantum AI Cognitive 2045', 
-        href: '/quantum-ai-cognitive-2045', 
-        description: 'Quantum-powered AI cognition',
-        icon: <Atom className="w-4 h-4" />,
-        featured: true
-      },
-      { 
-        name: 'Autonomous AI Research 2045', 
-        href: '/autonomous-ai-research-2045', 
+        name: 'Autonomous AI Research', 
+        href: '/autonomous-ai-research-assistant', 
         description: 'Fully autonomous AI research',
         icon: <Eye className="w-4 h-4" />,
-        color: 'from-blue-500 to-cyan-500'
+        color: 'from-emerald-500 to-teal-500'
       },
       { 
-        name: 'Emotional AI Intelligence 2045', 
-        href: '/emotional-ai-intelligence-2045', 
-        description: 'Advanced emotional AI',
+        name: 'Emotional AI Intelligence', 
+        href: '/emotional-ai-intelligence-platform', 
+        description: 'Advanced emotional AI intelligence',
         icon: <Heart className="w-4 h-4" />,
         color: 'from-pink-500 to-purple-500'
       },
       { 
-        name: 'Quantum AI Metaverse 2045', 
-        href: '/quantum-ai-metaverse-2045', 
+        name: 'Quantum AI Metaverse', 
+        href: '/quantum-ai-metaverse-platform', 
         description: 'Quantum-powered metaverse',
         icon: <Globe className="w-4 h-4" />,
         color: 'from-indigo-500 to-purple-500'
@@ -354,129 +257,89 @@ const navigationItems: NavigationItem[] = [
   },
   {
     name: 'Quantum Technology',
-    href: '/quantum-services',
+    href: '/quantum-technology',
     icon: <Atom className="w-5 h-5" />,
-    description: 'Quantum computing solutions',
-    badge: '2045',
-    category: 'quantum',
-    color: 'from-blue-500 to-cyan-500',
+    description: 'Quantum computing and technology',
+    badge: 'Future',
+    category: 'quantum-technology',
+    color: 'from-blue-500 to-indigo-500',
     children: [
       { 
-        name: 'Quantum Cloud Infrastructure 2045', 
-        href: '/quantum-cloud-infrastructure-2045', 
-        description: 'Quantum-powered cloud',
+        name: 'Quantum AI Neural Networks', 
+        href: '/quantum-ai-neural-network-platform', 
+        description: 'Quantum-powered AI neural networks',
+        icon: <Atom className="w-4 h-4" />,
+        color: 'from-blue-500 to-cyan-500',
+        featured: true
+      },
+      { 
+        name: 'Quantum-Secure Cloud Infrastructure', 
+        href: '/quantum-secure-cloud-infrastructure', 
+        description: 'Post-quantum cryptography cloud',
         icon: <Cloud className="w-4 h-4" />,
+        color: 'from-cyan-500 to-blue-500',
         featured: true
       },
       { 
-        name: 'Quantum Data Center Management 2045', 
-        href: '/quantum-data-center-management-2045', 
-        description: 'Quantum data center optimization',
-        icon: <Database className="w-4 h-4" />,
-        featured: true
-      },
-      { 
-        name: 'Quantum Neural Network 2045', 
-        href: '/quantum-neural-network-platform-2045', 
-        description: 'Quantum neural networks',
-        icon: <Brain className="w-4 h-4" />,
+        name: 'Quantum-Secure Communication', 
+        href: '/quantum-secure-communication-platform', 
+        description: 'Post-quantum cryptography communications',
+        icon: <Lock className="w-4 h-4" />,
         color: 'from-purple-500 to-pink-500'
       },
       { 
-        name: 'Quantum Cybersecurity 2045', 
-        href: '/quantum-cybersecurity-platform-2045', 
-        description: 'Quantum-resistant security',
-        icon: <Shield className="w-4 h-4" />,
-        color: 'from-red-500 to-orange-500'
+        name: 'Quantum AI Metaverse', 
+        href: '/quantum-ai-metaverse-platform', 
+        description: 'Quantum-powered metaverse',
+        icon: <Globe className="w-4 h-4" />,
+        color: 'from-indigo-500 to-purple-500'
+      },
+      { 
+        name: 'Quantum AI Research Assistant', 
+        href: '/quantum-ai-research-assistant', 
+        description: 'AI research with quantum insights',
+        icon: <Brain className="w-4 h-4" />,
+        color: 'from-indigo-500 to-purple-500'
       }
     ]
   },
   {
-    name: 'IT Services',
-    href: '/it-services',
-    icon: <Cpu className="w-5 h-5" />,
-    description: 'Advanced IT infrastructure',
-    badge: '2045',
-    category: 'it',
-    color: 'from-emerald-500 to-teal-500',
+    name: 'Company',
+    href: '/about',
+    icon: <Building className="w-5 h-5" />,
+    description: 'About Zion Tech Group',
+    category: 'company',
+    color: 'from-gray-500 to-gray-600',
     children: [
       { 
-        name: 'Autonomous DevOps Platform 2045', 
-        href: '/autonomous-devops-platform-2045', 
-        description: 'Fully autonomous DevOps',
-        icon: <Settings className="w-4 h-4" />,
-        featured: true
+        name: 'About Us', 
+        href: '/about', 
+        description: 'Learn about our mission and vision',
+        icon: <Users className="w-4 h-4" />
       },
       { 
-        name: 'Autonomous Network Management 2045', 
-        href: '/autonomous-network-management-2045', 
-        description: 'AI-powered network management',
-        icon: <Network className="w-4 h-4" />,
-        featured: true
+        name: 'Leadership Team', 
+        href: '/team', 
+        description: 'Meet our leadership team',
+        icon: <Users className="w-4 h-4" />
       },
       { 
-        name: 'Autonomous IT Service Management 2045', 
-        href: '/autonomous-it-service-management-2045', 
-        description: 'Autonomous IT service management',
-        icon: <Server className="w-4 h-4" />,
-        color: 'from-blue-500 to-indigo-500'
+        name: 'Careers', 
+        href: '/careers', 
+        description: 'Join our revolutionary team',
+        icon: <Target className="w-4 h-4" />
       },
       { 
-        name: 'Autonomous Security Operations Center 2045', 
-        href: '/autonomous-security-operations-center-2045', 
-        description: 'AI-powered security operations',
-        icon: <Shield className="w-4 h-4" />,
-        color: 'from-red-500 to-orange-500'
-      }
-    ]
-  },
-  {
-    name: 'Space Technology',
-    href: '/space-technology',
-    icon: <Rocket className="w-5 h-5" />,
-    description: 'Space exploration solutions',
-    badge: '2045',
-    category: 'space',
-    color: 'from-indigo-500 to-purple-500',
-    children: [
-      { 
-        name: 'Space Resource Intelligence 2045', 
-        href: '/space-resource-intelligence-2045', 
-        description: 'AI-powered space exploration',
-        icon: <Globe2 className="w-4 h-4" />,
-        featured: true
+        name: 'News & Blog', 
+        href: '/blog', 
+        description: 'Latest insights and updates',
+        icon: <Globe className="w-4 h-4" />
       },
       { 
-        name: 'Space Mining Automation 2045', 
-        href: '/space-mining-automation-2045', 
-        description: 'Automated space mining',
-        icon: <Rocket className="w-4 h-4" />,
-        color: 'from-pink-500 to-red-500'
-      }
-    ]
-  },
-  {
-    name: 'Business Solutions',
-    href: '/business-solutions',
-    icon: <Target className="w-5 h-5" />,
-    description: 'Enterprise transformation',
-    badge: '2045',
-    category: 'business',
-    color: 'from-emerald-500 to-teal-500',
-    children: [
-      { 
-        name: 'AI Autonomous Business Intelligence 2045', 
-        href: '/ai-autonomous-business-intelligence-2045', 
-        description: 'Autonomous business intelligence',
-        icon: <BarChart3 className="w-4 h-4" />,
-        featured: true
-      },
-      { 
-        name: 'Autonomous Customer Success 2045', 
-        href: '/autonomous-customer-success-2045', 
-        description: 'AI-powered customer success',
-        icon: <Heart className="w-4 h-4" />,
-        color: 'from-pink-500 to-purple-500'
+        name: 'Case Studies', 
+        href: '/case-studies', 
+        description: 'Success stories and results',
+        icon: <BarChart3 className="w-4 h-4" />
       }
     ]
   }
