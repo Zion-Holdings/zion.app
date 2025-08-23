@@ -1,3 +1,13 @@
+<<<<<<< HEAD
+import ServicePage, { getStaticProps as getSlugStaticProps } from './services/[slug]';
+
+export async function getStaticProps() {
+	return (getSlugStaticProps as any)({ params: { slug: 'transportation-logistics-solutions' } });
+}
+
+export default function TransportationLogisticsSolutions(props: any) {
+	return <ServicePage {...props} />;
+=======
 import React from 'react';
 import Head from 'next/head';
 
@@ -17,4 +27,5 @@ export default function TransportationLogisticsSolutions() {
       </div>
     </>
   );
+>>>>>>> origin/cursor/website-audit-content-update-and-deployment-a851
 }

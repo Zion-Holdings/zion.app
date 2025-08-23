@@ -1,3 +1,14 @@
+<<<<<<< HEAD
+import ServicePage, { getStaticProps as getSlugStaticProps } from './services/[slug]';
+
+export async function getStaticProps() {
+	return (getSlugStaticProps as any)({ params: { slug: 'real-estate-technology-solutions' } });
+}
+
+export default function RealEstateTechnologySolutions(props: any) {
+	return <ServicePage {...props} />;
+}
+=======
 import React from 'react';
 import Head from 'next/head';
 
@@ -18,3 +29,4 @@ export default function RealEstateTechnologySolutions() {
     </>
   );
 }
+>>>>>>> origin/cursor/website-audit-content-update-and-deployment-a851

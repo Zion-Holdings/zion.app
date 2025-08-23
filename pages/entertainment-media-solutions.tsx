@@ -1,26 +1,20 @@
 import React from 'react';
-import UltraFuturisticBackground from '../components/ui/UltraFuturisticBackground';
+import Head from 'next/head';
 
 export default function EntertainmentMediaSolutions() {
-	const links = [
-		{ href: '/virtual-event-hologram-platform', label: 'Virtual Event Hologram Platform' },
-		{ href: '/ai-content-generator', label: 'AI Content Generator' },
-		{ href: '/ai-autonomous-marketing-platform', label: 'AI Autonomous Marketing' }
-	];
-	return (
-		<UltraFuturisticBackground variant="quantum" intensity="medium">
-			<div className="container mx-auto px-4 py-16 text-white">
-				<h1 className="text-4xl md:text-5xl font-bold mb-4">Entertainment & Media Solutions</h1>
-				<p className="text-gray-300 mb-8">Explore AI-powered solutions for media production, events, and marketing.</p>
-				<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-					{links.map((l) => (
-						<a key={l.href} href={l.href} className="p-6 rounded-xl bg-black/40 border border-gray-700/60 hover:border-cyan-500/50 transition-colors">
-							<div className="text-xl font-semibold">{l.label}</div>
-							<div className="text-gray-400 mt-2">Learn more</div>
-						</a>
-					))}
-				</div>
-			</div>
-		</UltraFuturisticBackground>
-	);
+  return (
+    <>
+      <Head>
+        <title>Entertainment & Media Solutions | Zion Tech Group</title>
+        <meta name="description" content="AI solutions for entertainment and media: content automation, personalization, analytics, and monetization." />
+        <link rel="canonical" href="https://ziontechgroup.com/entertainment-media-solutions" />
+      </Head>
+      <div className="min-h-screen bg-black text-white">
+        <section className="container mx-auto px-4 py-20">
+          <h1 className="text-4xl font-bold mb-6">Entertainment & Media Solutions</h1>
+          <p className="text-gray-300">Accelerate production, optimize distribution, and personalize experiences with AI-driven media platforms.</p>
+        </section>
+      </div>
+    </>
+  );
 }
