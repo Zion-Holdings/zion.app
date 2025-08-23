@@ -102,6 +102,7 @@ const companyLinks = [
   { name: 'About Us', href: '/about' },
   { name: 'Revolutionary 2026', href: '/revolutionary-2026-services' },
   { name: '2026 Services', href: '/2026-services-showcase' },
+  { name: 'Innovative 2026', href: '/innovative-2026-services-showcase' },
   { name: 'All Services', href: '/services' },
   { name: 'Market Pricing', href: '/market-pricing-2026' },
   { name: 'News', href: '/news' },

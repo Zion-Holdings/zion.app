@@ -48,7 +48,26 @@ import { enterpriseIT2026Services as enterpriseIT2026ServicesNew } from '../data
 import { innovative2026MicroSaasServicesV2 } from '../data/innovative-2026-micro-saas-v2';
 import { emergingTech2026ServicesV2 } from '../data/emerging-tech-2026-services-v2';
 import { enterpriseIT2026ServicesV2 } from '../data/enterprise-it-2026-services-v2';
+<<<<<<< HEAD
+import { revolutionary2026Innovations } from '../data/revolutionary-2026-innovations';
+import { nextGenAI2026Services } from '../data/next-gen-ai-2026-services';
+import { revolutionary2026AIServices } from '../data/revolutionary-2026-ai-services';
+import { revolutionary2027Services } from '../data/revolutionary-2027-services';
+import { emergingTech2027Services } from '../data/emerging-tech-2027-services';
+import { revolutionary2027AIServices } from '../data/revolutionary-2027-ai-services';
+import { revolutionary2027ITServices } from '../data/revolutionary-2027-it-services';
+import { revolutionary2027MicroSaasServices } from '../data/revolutionary-2027-micro-saas';
+import { cuttingEdge2028MicroSaas } from '../data/2028-cutting-edge-micro-saas';
+import { practicalBusinessSolutions2028 } from '../data/2028-practical-business-solutions';
+import { futuristic2028Services } from '../data/2028-futuristic-innovations';
+import { emergingTech2028Services } from '../data/2028-emerging-tech-services';
+import { futuristic2029AIServices } from '../data/2029-futuristic-ai-services';
+import { quantumSpace2029Services } from '../data/2029-quantum-space-services';
+import { biotechEmerging2029Services } from '../data/2029-biotech-emerging-services';
+import { enterpriseIT2029Services } from '../data/2029-enterprise-it-services';
+=======
 import { allInnovative2026Services, innovative2026ServiceStats } from '../data/comprehensive-2026-services-index';
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-3e22
 
 const heroStats = [
   { label: 'Revolutionary Services', value: '600+', icon: <Star className="w-5 h-5" /> },
@@ -94,7 +113,24 @@ const heroStats = [
     ...innovative2026MicroSaasServicesV2,
     ...emergingTech2026ServicesV2,
     ...enterpriseIT2026ServicesV2,
+<<<<<<< HEAD
+    ...revolutionary2026Innovations,
+    ...nextGenAI2026Services,
+    ...revolutionary2026AIServices,
+    ...revolutionary2027Services,
+    ...emergingTech2027Services,
+    ...revolutionary2027AIServices,
+    ...revolutionary2027ITServices,
+    ...revolutionary2027MicroSaasServices,
+    ...cuttingEdge2028MicroSaas,
+    ...practicalBusinessSolutions2028,
+    ...futuristic2029AIServices,
+    ...quantumSpace2029Services,
+    ...biotechEmerging2029Services,
+    ...enterpriseIT2029Services
+=======
     ...allInnovative2026Services
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-3e22
   ];
 
   // Get new 2029 services for enhanced showcase
@@ -107,6 +143,16 @@ const heroStats = [
   // Service statistics
   const serviceStats = {
     totalServices: allServices.length,
+<<<<<<< HEAD
+    aiServices: nextGenerationAIServices.length + innovativeAIServices.length + realMarketServices.filter(s => s.category.includes('AI')).length + revolutionary2025Services.filter(s => s.category.includes('AI')).length + nextGenInnovations2025.filter(s => s.category.includes('AI')).length + innovative2026Services.filter(s => s.category.includes('AI')).length + emergingTech2026Services.filter(s => s.category.includes('AI')).length + innovative2026MicroSaasServices.filter(s => s.category.includes('AI')).length + innovative2026MicroSaasServicesV2.filter(s => s.category.includes('AI')).length + emergingTech2026ServicesV2.filter(s => s.category.includes('AI')).length + enterpriseIT2026ServicesV2.filter(s => s.category.includes('AI')).length + revolutionary2026AIServices.length,
+    emergingTech: emergingTechnologyServices.length + emergingTechServices2025.length + emergingTech2026Services.length + emergingTech2026ServicesNew.length + emergingTech2026ServicesV2.length + revolutionary2026EmergingTechServices.length,
+    itSolutions: comprehensiveITSolutions.length + enterpriseITServices.length + enterpriseIT2026Services.length + enterpriseIT2026ServicesNew.length + enterpriseIT2026ServicesV2.length + revolutionary2026ITServices.length,
+          microSaas: enhancedRealMicroSaasServices.length + innovativeMicroSaasServices.length + innovative2026Services.filter(s => s.category.includes('SaaS')).length + innovative2026MicroSaasServices.length + innovative2026MicroSaasServicesV2.length + revolutionary2026MicroSaasServices.length,
+      revolutionaryServices: revolutionary2025Services.length + nextGenInnovations2025.length + innovative2026Services.length + emergingTech2026Services.length + enterpriseIT2026Services.length + innovative2026MicroSaasServices.length + innovative2026MicroSaasServicesV2.length + emergingTech2026ServicesV2.length + enterpriseIT2026ServicesV2.length + revolutionary2026AIServices.length + revolutionary2026ITServices.length + revolutionary2026EmergingTechServices.length + revolutionary2026MicroSaasServices.length,
+    quantumServices: quantumSpaceServices.length + quantumAIServices2025.filter(s => s.category.includes('Quantum')).length,
+    blockchainServices: enterpriseIT2026Services.filter(s => s.category.includes('Blockchain')).length,
+    spaceTech: quantumSpaceServices.filter(s => s.category.includes('Space')).length
+=======
     aiServices: nextGenerationAIServices.length + innovativeAIServices.length + realMarketServices.filter(s => s.category.includes('AI')).length + revolutionary2025Services.filter(s => s.category.includes('AI')).length + nextGenInnovations2025.filter(s => s.category.includes('AI')).length + innovative2026Services.filter(s => s.category.includes('AI')).length + emergingTech2026Services.filter(s => s.category.includes('AI')).length + innovative2026MicroSaasServices.filter(s => s.category.includes('AI')).length + innovative2026MicroSaasServicesV2.filter(s => s.category.includes('AI')).length + emergingTech2026ServicesV2.filter(s => s.category.includes('AI')).length + enterpriseIT2026ServicesV2.filter(s => s.category.includes('AI')).length + innovative2026ServiceStats.aiServices,
     emergingTech: emergingTechnologyServices.length + emergingTechServices2025.length + emergingTech2026Services.length + emergingTech2026ServicesNew.length + emergingTech2026ServicesV2.length + innovative2026ServiceStats.spaceQuantumServices + innovative2026ServiceStats.energySustainabilityServices,
     itSolutions: comprehensiveITSolutions.length + enterpriseITServices.length + enterpriseIT2026Services.length + enterpriseIT2026ServicesNew.length + enterpriseIT2026ServicesV2.length + innovative2026ServiceStats.cybersecurityServices,
@@ -120,6 +166,7 @@ const heroStats = [
     educationResearch: innovative2026ServiceStats.educationResearchServices,
     manufacturingLogistics: innovative2026ServiceStats.manufacturingLogisticsServices,
     entertainmentMedia: innovative2026ServiceStats.entertainmentMediaServices
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-3e22
   };
 
   // Get featured services for the hero section
