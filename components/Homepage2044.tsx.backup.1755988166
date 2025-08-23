@@ -67,9 +67,15 @@ const Homepage2044: React.FC = () => {
     ...revolutionary2044AdvancedMicroSaas,
     ...revolutionary2044ITServices,
     ...revolutionary2044AIServices,
+<<<<<<< HEAD
+    ...advancedRealMicroSaasServices,
+    ...advancedITInfrastructureServices,
+    ...advancedAIServices
+=======
     ...innovative2025AIAutonomousEcosystemV3,
     ...emerging2025TechBreakthroughsV4,
     ...advanced2025ITInfrastructureServicesV2
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-7f19
   ];
 
   // Get featured services for rotation
