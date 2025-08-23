@@ -304,12 +304,20 @@ const allServices = [
   ...ultimate2025AIServicesExpansion,
   // Our new 2025 advanced enterprise services
   ...advancedEnterpriseServices,
+<<<<<<< HEAD
+  ...cuttingEdgeITInfrastructureServices,
+  
+  // Our new 2025 innovative real-world services
+  ...innovativeRealWorldServices,
+  ...cuttingEdgeEnterpriseSolutions
+=======
   ...innovativeMicroSaasServices,
   ...cuttingEdgeITInfrastructureServices,
   // Our new Q4 2025 innovative services
   ...innovative2025Q4MicroSaasServices,
   ...innovative2025Q4ITServices,
   ...innovative2025Q4AIServices
+>>>>>>> origin/cursor/expand-services-and-deploy-updates-fd4e
 ];
 
 const categories = [
