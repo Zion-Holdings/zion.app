@@ -1,7 +1,3 @@
-export default function Contact(){
-  return <div style={{padding:20}}>Contact</div>
-}
-=======
 =======
 import type { NextPage } from 'next';
 import Head from 'next/head';
@@ -23,3 +19,14 @@ const Contact: NextPage = () => {
 };
 
 export default Contact;
+=======
+import React from 'react';
+
+export default function ContactPage() {
+  return (
+    <div>
+      <h1 className="text-2xl font-bold">Contact</h1>
+      <p className="text-gray-600 dark:text-gray-300">Get in touch.</p>
+    </div>
+  );
+}
