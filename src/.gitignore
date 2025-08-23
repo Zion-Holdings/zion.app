@@ -1,0 +1,21 @@
+# Ignore TypeScript declaration files
+*.d.ts
+
+# Ignore compiled JavaScript files
+*.js
+
+# Allow PWA event type declarations
+!types/pwa.d.ts
+!types/react-devtools.d.ts
+!types/shoplocket.d.ts
+!types/reown-appkit.d.ts
+!types/next.d.ts
+!types/import-meta-env.d.ts
+!types/react.d.ts
+!types/react-dom.d.ts
+!types/jest.d.ts
+!types/vite/client.d.ts
+!types/vitest/globals.d.ts
+!types/TermsOfService.d.ts
+!types/PrivacyPolicy.d.ts
+!types/wallet.d.ts

@@ -17,6 +17,46 @@ import { realServicesQ12025 } from '../../data/real-services-q1-2025';
 import { realEnterpriseServices2025 } from '../../data/real-enterprise-services-2025';
 import { verifiedRealServices2025Batch2 } from '../../data/verified-real-services-2025-batch2';
 import { realMarketAugmentations2025 } from '../../data/real-market-augmentations-2025';
+import { additionalLiveServices2025 } from '../../data/additional-live-services-2025';
+import { real2025Q2Additions } from '../../data/real-2025-q2-additions';
+import { augmentedServicesBatch3 } from '../../data/real-augmented-services-2025-batch3';
+import { realServicesQ22025 } from '../../data/real-services-q2-2025';
+import { realServicesQ32025 } from '../../data/real-services-q3-2025';
+import { realQ4Services2025, } from '../../data/real-2025-q4-additions';
+import { real2025Q4Additions } from '../../data/real-2025-q4-additions';
+import { realMarketServicesExtended } from '../../data/real-market-services-extended';
+import { real2026Additions } from '../../data/real-2026-additions';
+import { real2026Q1Additions } from '../../data/real-2026-q1-additions';
+import { added2026Q2Services } from '../../data/added-2026-q2-services';
+import { real2026Q3Additions } from '../../data/real-2026-q3-additions';
+import { real2026Q4Additions } from '../../data/real-2026-q4-additions';
+import { real2026Q4NewServices } from '../../data/real-2026-q4-new-services';
+import { real2027Q1Additions } from '../../data/real-2027-q1-additions';
+import { real2027Q2Additions } from '../../data/real-2027-q2-additions';
+import { real2028ServiceExpansions } from '../../data/real-2028-service-expansions';
+
+import { real2029Q1Additions } from '../../data/real-2029-q1-additions';
+import { realMarketServices } from '../../data/real-market-services';
+import { real2029Q2Additions } from '../../data/real-2029-q2-additions';
+import { real2029Q3Additions } from '../../data/real-2029-q3-additions';
+import { real2030Q1Additions } from '../../data/real-2030-q1-additions';
+import { enterpriseITSolutions } from '../../data/2034-enterprise-it-solutions';
+import { innovativeMicroSaasSolutions } from '../../data/2034-innovative-micro-saas-solutions';
+import { cuttingEdgeAIServices } from '../../data/2034-cutting-edge-ai-services';
+import { real2031MicroSaasAdditions } from '../../data/real-2031-micro-saas-additions';
+import { real2031ITServicesAdditions } from '../../data/real-2031-it-services-additions';
+import { real2031AIServicesAdditions } from '../../data/real-2031-ai-services-additions';
+import { real2030Q2Additions } from '../../data/real-2030-q2-additions';
+import { real2027Q3Additions } from '../../data/real-2027-q3-additions';
+import { aiAutonomousEcosystemServices2029 } from '../../data/2029-ai-autonomous-ecosystem';
+import { emergingTechBreakthroughServices2029 } from '../../data/2029-emerging-tech-breakthroughs';
+import { practicalBusinessSolutionServices2029 } from '../../data/2029-practical-business-solutions';
+import { professionalServices } from '../../data/professional-services';
+import { real2032ServiceExpansions } from '../../data/real-2032-service-expansions';
+import { real2035Q1Additions } from '../../data/real-2035-q1-additions';
+import { real2035Q2AdditionsExtra } from '../../data/real-2035-q2-additions-extra';
+import { real2036ServiceExpansions } from '../../data/real-2036-service-expansions';
+import { real2026Q4ExpansionsV3 } from '../../data/real-2026-q4-expansions-v3';
 
 type Service = typeof enhancedRealMicroSaasServices[number];
 
@@ -39,7 +79,44 @@ function getAllServices(): Service[] {
 		.concat(realServicesQ12025 as unknown as Service[])
 		.concat(realEnterpriseServices2025 as unknown as Service[])
 		.concat(verifiedRealServices2025Batch2 as unknown as Service[])
-		.concat(realMarketAugmentations2025 as unknown as Service[]);
+		.concat(realMarketAugmentations2025 as unknown as Service[])
+		.concat(additionalLiveServices2025 as unknown as Service[])
+		.concat(real2025Q2Additions as unknown as Service[])
+		.concat(augmentedServicesBatch3 as unknown as Service[])
+		.concat(realServicesQ22025 as unknown as Service[])
+		.concat(realServicesQ32025 as unknown as Service[])
+		.concat(realQ4Services2025 as unknown as Service[])
+		.concat(real2025Q4Additions as unknown as Service[])
+		.concat(realMarketServicesExtended as unknown as Service[])
+		.concat(real2026Q1Additions as unknown as Service[])
+		.concat(real2026Additions as unknown as Service[])
+		.concat(added2026Q2Services as unknown as Service[])
+		.concat(real2026Q3Additions as unknown as Service[])
+		.concat(real2026Q4Additions as unknown as Service[])
+		.concat(real2026Q4NewServices as unknown as Service[])
+		.concat(real2027Q1Additions as unknown as Service[])
+		.concat(real2027Q2Additions as unknown as Service[])
+		.concat(real2028ServiceExpansions as unknown as Service[])
+		.concat(real2029Q1Additions as unknown as Service[])
+		.concat(realMarketServices as unknown as Service[])
+		.concat(real2029Q2Additions as unknown as Service[])
+		.concat(real2029Q3Additions as unknown as Service[])
+		.concat(real2030Q1Additions as unknown as Service[])
+		.concat(real2030Q2Additions as unknown as Service[])
+		.concat(real2031MicroSaasAdditions as unknown as Service[])
+		.concat(real2031ITServicesAdditions as unknown as Service[])
+		.concat(real2031AIServicesAdditions as unknown as Service[])
+		.concat(real2027Q3Additions as unknown as Service[])
+		// 2029 showcase/pricing arrays to ensure matching /services/* pages are generated
+		.concat(aiAutonomousEcosystemServices2029 as unknown as Service[])
+		.concat(emergingTechBreakthroughServices2029 as unknown as Service[])
+		.concat(practicalBusinessSolutionServices2029 as unknown as Service[])
+		.concat(professionalServices as unknown as Service[])
+		.concat(real2032ServiceExpansions as unknown as Service[])
+		.concat(real2035Q1Additions as unknown as Service[])
+		.concat(real2035Q2AdditionsExtra as unknown as Service[])
+		.concat(real2026Q4ExpansionsV3 as unknown as Service[])
+		.concat(real2036ServiceExpansions as unknown as Service[]);
 }
 
 function toSlug(value: string): string {
@@ -106,11 +183,11 @@ export async function getStaticProps({ params }: { params: { slug: string } }) {
 
 export default function ServiceDetailPage({ service }: { service: Service }) {
 	return (
-		<UltraFuturisticBackground variant="quantum" intensity="high">
+		<UltraFuturisticBackground variant="holographic" intensity="high">
 			<Head>
 				<title>{service.name} | Zion Tech Group</title>
 				<meta name="description" content={service.tagline || service.description} />
-				<link rel="canonical" href={service.link} />
+				<link rel="canonical" href={service.link || `https://ziontechgroup.com/services/${(service.id || service.name || '').toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '')}`} />
 				<script
 					type="application/ld+json"
 					dangerouslySetInnerHTML={{

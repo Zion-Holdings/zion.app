@@ -1,0 +1,47 @@
+{% extends "ipo_portal/base_portal.html" %}
+{% load i18n %}
+
+{% block title %}{{ page_title|default:"Manage Investor Update" }} - IPO Portal{% endblock %}
+
+{% block page_title %}{{ page_title|default:"Manage Investor Update" }}{% endblock %}
+
+{% block content %}
+<h3>{{ form_title|default:"Investor Update Form" }}</h3>
+<form method="post" style="background-color: #f9f9f9; padding: 20px; border-radius: 8px; border: 1px solid #eee;">
+    {% csrf_token %}
+
+    {# Render form fields manually for more control or use {{ form.as_p }} / {{ form.as_table }} #}
+    <div style="margin-bottom: 15px;">
+        <label for="{{ form.title.id_for_label }}" style="display: block; margin-bottom: 5px; font-weight: bold;">{{ form.title.label }}</label>
+        {{ form.title }}
+        {% if form.title.errors %}<div style="color: red; font-size: 0.9em;">{{ form.title.errors }}</div>{% endif %}
+        {% if form.title.help_text %}<small style="display: block; margin-top: 5px; color: #555;">{{ form.title.help_text }}</small>{% endif %}
+    </div>
+
+    <div style="margin-bottom: 15px;">
+        <label for="{{ form.publication_date.id_for_label }}" style="display: block; margin-bottom: 5px; font-weight: bold;">{{ form.publication_date.label }}</label>
+        {{ form.publication_date }}
+        {% if form.publication_date.errors %}<div style="color: red; font-size: 0.9em;">{{ form.publication_date.errors }}</div>{% endif %}
+        {% if form.publication_date.help_text %}<small style="display: block; margin-top: 5px; color: #555;">{{ form.publication_date.help_text }}</small>{% endif %}
+    </div>
+
+    <div style="margin-bottom: 15px;">
+        <label for="{{ form.summary.id_for_label }}" style="display: block; margin-bottom: 5px; font-weight: bold;">{{ form.summary.label }}</label>
+        {{ form.summary }}
+        {% if form.summary.errors %}<div style="color: red; font-size: 0.9em;">{{ form.summary.errors }}</div>{% endif %}
+        {% if form.summary.help_text %}<small style="display: block; margin-top: 5px; color: #555;">{{ form.summary.help_text }}</small>{% endif %}
+    </div>
+
+    <div style="margin-bottom: 15px;">
+        <label for="{{ form.kpis_snapshot.id_for_label }}" style="display: block; margin-bottom: 5px; font-weight: bold;">{{ form.kpis_snapshot.label }}</label>
+        {{ form.kpis_snapshot }}
+        {% if form.kpis_snapshot.errors %}<div style="color: red; font-size: 0.9em;">{{ form.kpis_snapshot.errors }}</div>{% endif %}
+        {% if form.kpis_snapshot.help_text %}<small style="display: block; margin-top: 5px; color: #555;">{{ form.kpis_snapshot.help_text }}</small>{% endif %}
+    </div>
+
+    <button type="submit" style="background-color: #007bff; color: white; padding: 10px 15px; border: none; border-radius: 4px; cursor: pointer;">
+        {{ form_button_text|default:"Save Update" }}
+    </button>
+    <a href="{% url 'ipo_portal:investor_updates' %}" style="margin-left: 10px; color: #555; text-decoration: none;">{% trans "Cancel" %}</a>
+</form>
+{% endblock %}

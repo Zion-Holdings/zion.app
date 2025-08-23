@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSP Test Page</title>
+</head>
+<body>
+    <h1>CSP Test Page</h1>
+    <p>This page has no CSP headers or meta tags.</p>
+    
+    <script>
+        console.log('Testing eval...');
+        try {
+            eval('console.log("Eval test successful")');
+            document.body.innerHTML += '<p style="color: green;">✅ Eval works - No CSP blocking</p>';
+        } catch (error) {
+            document.body.innerHTML += '<p style="color: red;">❌ Eval blocked by CSP: ' + error.message + '</p>';
+        }
+        
+        try {
+            new Function('console.log("Function test successful")')();
+            document.body.innerHTML += '<p style="color: green;">✅ new Function() works</p>';
+        } catch (error) {
+            document.body.innerHTML += '<p style="color: red;">❌ new Function() blocked: ' + error.message + '</p>';
+        }
+    </script>
+</body>
+</html> 

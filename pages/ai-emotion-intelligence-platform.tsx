@@ -136,8 +136,7 @@ export default function AIEmotionIntelligencePlatform() {
         <title>AI Emotion Intelligence Platform - Zion Tech Group</title>
         <meta name="description" content="Advanced AI platform that analyzes customer emotions in real-time across voice, video, and text interactions, providing intelligent responses and sentiment-driven insights." />
         <meta name="keywords" content="AI emotion detection, sentiment analysis, customer experience, emotion AI, real-time analysis" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/favicon.svg" />
       </Head>
 
       <UltraFuturisticBackground2030>

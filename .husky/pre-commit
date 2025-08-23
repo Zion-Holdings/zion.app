@@ -24,14 +24,13 @@ if [ $? -ne 0 ]; then
   exit 1
 fi
 
-# Run linting (if not already done)
-echo "  🧹 Running linting..."
-npm run lint
+# Run linting on staged files only
+echo "  🧹 Running lint-staged..."
+npx lint-staged
 
 if [ $? -ne 0 ]; then
-  echo "❌ Linting failed!"
-  echo "   Please fix the linting issues before committing."
-  echo "   Run 'npm run lint -- --fix' to auto-fix some issues."
+  echo "❌ Lint-staged failed!"
+  echo "   Please fix the issues in staged files."
   exit 1
 fi
 

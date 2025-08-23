@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import Head from 'next/head';
 import { motion } from 'framer-motion';
-import { Star, Zap, Shield, Users, Globe, ArrowRight, ExternalLink, TrendingUp, Clock, Target, Building, Rocket, Award, DollarSign, ChartBar, Lock, Cpu, Database, Cloud, Smartphone, Palette, Search, MessageSquare, FileText, Calendar, CreditCard, BarChart3, Settings, Code, BookOpen, Activity, Play, Mail, Phone, MapPin, Filter, Grid, List, ChevronDown, ChevronUp, Sparkles, FlaskConical, Dna, Car, Leaf, Factory, Truck, Microscope, GraduationCap, ShieldCheck, Brain, Atom, Globe2, Bot, ChevronRight, Crown, Infinity, Zap as ZapIcon, Shield as ShieldIcon, Users as UsersIcon, Globe as GlobeIcon, Cpu as CpuIcon, Database as DatabaseIcon, Cloud as CloudIcon, Smartphone as SmartphoneIcon, Palette as PaletteIcon, Search as SearchIcon, MessageSquare as MessageSquareIcon, FileText as FileTextIcon, Calendar as CalendarIcon, CreditCard as CreditCardIcon, BarChart3 as BarChart3Icon, Settings as SettingsIcon, Code as CodeIcon, BookOpen as BookIcon, Activity as ActivityIcon, Database as DatabaseIcon2, Play as PlayIcon, Mail as MailIcon, Phone as PhoneIcon, MapPin as MapPinIcon, Filter as FilterIcon, Grid as GridIcon, List as ListIcon, ChevronDown as ChevronDownIcon, ChevronUp as ChevronUpIcon, Sparkles as SparklesIcon, FlaskConical as FlaskConicalIcon, Dna as DnaIcon, Car as CarIcon, Leaf as LeafIcon, Factory as FactoryIcon, Truck as TruckIcon, Microscope as MicroscopeIcon, GraduationCap as GraduationCapIcon, ShieldCheck as ShieldCheckIcon, Brain as BrainIcon, Atom as AtomIcon, Globe2 as Globe2Icon, Bot as BotIcon, ChevronRight as ChevronRightIcon, Eye, Heart, Share2, Download, Bookmark, ThumbsUp, MessageCircle, Share, Users as UsersIcon2, Target as TargetIcon, Zap as ZapIcon2 } from 'lucide-react';
+import { Star, Mail, Phone, MapPin, Sparkles, Brain, Cpu, Zap, Grid, List, ExternalLink, Rocket, BookOpen } from 'lucide-react';
 import Button from '../components/ui/Button';
 import UltraQuantumHolographicBackground from '../components/ui/UltraQuantumHolographicBackground';
-import UltraAdvancedNavigation from '../components/layout/UltraAdvancedNavigation';
+import Layout from '../components/layout/Layout';
 import { revolutionaryAI2025Services } from '../data/revolutionary-2025-ai-services';
 import { revolutionaryITInfrastructure2025Services } from '../data/revolutionary-2025-it-infrastructure';
 import { revolutionary2025MicroSaasServices } from '../data/revolutionary-2025-micro-saas';
@@ -74,8 +74,9 @@ export default function Revolutionary2025ServicesShowcase() {
   };
 
   return (
-    <UltraQuantumHolographicBackground intensity={2.0}>
-      <div className="min-h-screen">
+    <Layout>
+      <UltraQuantumHolographicBackground intensity={2.0}>
+        <div className="min-h-screen">
         <Head>
           <title>Revolutionary 2025 Services Showcase - Zion Tech Group | Cutting-Edge AI & IT Solutions</title>
           <meta name="description" content="Explore Zion Tech Group's revolutionary 2025 services including AI consciousness simulation, quantum computing, zero trust security, and innovative micro SaaS solutions. Contact: +1 302 464 0950" />
@@ -88,8 +89,6 @@ export default function Revolutionary2025ServicesShowcase() {
           <meta property="og:type" content="website" />
           <link rel="canonical" href="https://ziontechgroup.com/revolutionary-2025-services-showcase" />
         </Head>
-
-        <UltraAdvancedNavigation />
 
         {/* Hero Section */}
         <section className="relative py-20 px-4 sm:px-6 lg:px-8">
@@ -421,7 +420,8 @@ export default function Revolutionary2025ServicesShowcase() {
             </motion.div>
           </div>
         </section>
-      </div>
-    </UltraQuantumHolographicBackground>
+              </div>
+      </UltraQuantumHolographicBackground>
+    </Layout>
   );
 }

@@ -1,0 +1,43 @@
+name: Auto Report Errors to Cursor
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    types: [ opened, synchronize, reopened ]
+
+jobs:
+  report-errors:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Install deps
+        run: npm ci --prefer-offline --no-audit --progress=false
+      - name: Run tests & collect logs
+        id: tests
+        continue-on-error: true
+        run: npm run test:collect
+      - name: Upload log archive
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: test-logs
+          path: logs/archive/*.tar.gz
+      - name: Report errors to Cursor (only on failures)
+        if: steps.tests.outcome == 'failure'
+        env:
+          CURSOR_API_KEY: ${{ secrets.CURSOR_API_KEY }}
+          CURSOR_PROJECT_ID: ${{ secrets.CURSOR_PROJECT_ID }}
+        run: npm run errors:report
+      - name: Auto-fix with Cursor (experimental)
+        if: steps.tests.outcome == 'failure'
+        env:
+          CURSOR_API_KEY: ${{ secrets.CURSOR_API_KEY }}
+          CURSOR_PROJECT_ID: ${{ secrets.CURSOR_PROJECT_ID }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: npm run errors:autofix 

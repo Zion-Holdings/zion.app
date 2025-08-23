@@ -1,0 +1,26 @@
+name: Auto Report Errors to Codex
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    types: [ opened, synchronize, reopened ]
+
+jobs:
+  report-errors:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Install deps
+        run: npm ci --prefer-offline --no-audit --progress=false
+      - name: Run tests & collect logs
+        run: npm run test:collect
+      - name: Create Codex issue
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: npm run errors:report-codex

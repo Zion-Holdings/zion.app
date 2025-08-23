@@ -1,120 +1,123 @@
 import React from 'react';
-import { professionalServices } from '../../data/professional-services';
-import { ArrowRight, CheckCircle, DollarSign, Mail, Phone } from 'lucide-react';
+import Head from 'next/head';
+import Link from 'next/link';
+import { motion } from 'framer-motion';
+import { CheckCircle, DollarSign, Phone, Mail, ArrowRight } from 'lucide-react';
 
 interface ServiceLandingProps {
-	serviceId: string;
+	title: string;
+	slug?: string;
+	description: string;
+	subtitle?: string;
+	pricePerMonthUSD?: number;
+	implementationWeeks?: string;
+	roiNote?: string;
+	features: string[];
+	industries?: string[];
+	ctaHref?: string;
+	canonical?: string;
 }
 
-export default function ServiceLanding({ serviceId }: ServiceLandingProps) {
-	const service = professionalServices.find(s => s.id === serviceId);
+export default function ServiceLanding(props: ServiceLandingProps) {
+	const {
+		title,
+		slug,
+		description,
+		subtitle,
+		pricePerMonthUSD,
+		implementationWeeks,
+		roiNote,
+		features,
+		industries,
+		ctaHref,
+		canonical
+	} = props;
 
-	if (!service) {
-		return (
-			<section className="pt-20 pb-20 px-4 sm:px-6 lg:px-8">
-				<div className="max-w-4xl mx-auto text-center">
-					<h1 className="text-4xl md:text-6xl font-bold bg-gradient-to-r from-cyan-400 via-purple-500 to-pink-500 bg-clip-text text-transparent mb-6">
-						Service Coming Soon
-					</h1>
-					<p className="text-gray-300">We are preparing this offering. Please contact us for early access.</p>
-					<div className="mt-8 flex justify-center gap-4">
-						<a href="/contact" className="inline-flex items-center bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-semibold py-3 px-6 rounded-lg">
-							Contact Us <ArrowRight className="w-5 h-5 ml-2" />
-						</a>
+	const price = typeof pricePerMonthUSD === 'number' ? `$${pricePerMonthUSD.toLocaleString()}/month` : undefined;
+	const contactHref = ctaHref || '/contact';
+
+	return (
+		<>
+			<Head>
+				<title>{title} | Zion Tech Group</title>
+				<meta name="description" content={description} />
+				{canonical ? <link rel="canonical" href={canonical} /> : null}
+			</Head>
+			<section className="relative py-16 lg:py-24">
+				<div className="container mx-auto px-4">
+					<div className="grid lg:grid-cols-3 gap-10">
+						<div className="lg:col-span-2">
+							<motion.h1 initial={{opacity:0,y:8}} whileInView={{opacity:1,y:0}} transition={{duration:.5}} className="text-3xl md:text-5xl font-extrabold text-white mb-4">
+								{title}
+							</motion.h1>
+							{subtitle ? (
+								<p className="text-gray-300 text-lg mb-6">{subtitle}</p>
+							) : null}
+							<p className="text-gray-300 leading-relaxed mb-8">{description}</p>
+
+							<div className="grid sm:grid-cols-2 gap-4 mb-10">
+								{features.map((feature) => (
+									<div key={feature} className="flex items-start gap-3 p-4 rounded-xl bg-white/5 border border-white/10">
+										<CheckCircle className="w-5 h-5 text-emerald-400 mt-0.5" />
+										<p className="text-gray-200 text-sm">{feature}</p>
+									</div>
+								))}
+							</div>
+
+							{industries && industries.length > 0 ? (
+								<div className="mb-10">
+									<h3 className="text-white font-semibold mb-3">Best for</h3>
+									<div className="flex flex-wrap gap-2">
+										{industries.map((i) => (
+											<span key={i} className="inline-flex items-center px-3 py-1 rounded-full text-xs bg-white/10 text-gray-300 border border-white/10">{i}</span>
+										))}
+									</div>
+								</div>
+							) : null}
+						</div>
+
+						<div>
+							<div className="sticky top-28 p-6 rounded-2xl bg-white/5 border border-white/10">
+								<div className="space-y-4">
+									{price ? (
+										<div className="flex items-end gap-2">
+											<span className="text-3xl font-bold text-white">{price.replace('/month','')}</span>
+											<span className="text-gray-400 text-sm">/month</span>
+										</div>
+									) : null}
+									{implementationWeeks || roiNote ? (
+										<div className="text-sm text-gray-400 space-y-1">
+											{implementationWeeks ? <div className="flex items-center gap-2"><ClockIcon /><span>{implementationWeeks}</span></div> : null}
+											{roiNote ? <div className="flex items-center gap-2"><DollarSign className="w-3 h-3" /><span>{roiNote}</span></div> : null}
+										</div>
+									) : null}
+
+									<div className="flex flex-col gap-3 pt-2">
+										<Link href={contactHref} className="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl bg-gradient-to-r from-cyan-500 to-purple-600 text-white font-semibold hover:from-cyan-600 hover:to-purple-700 transition-all">
+											<span>Get a Demo</span>
+											<ArrowRight className="w-4 h-4" />
+										</Link>
+										<a href="tel:+13024640950" className="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl bg-white/10 text-white hover:bg-white/20 transition-all">
+											<Phone className="w-4 h-4" />
+											<span>+1 302 464 0950</span>
+										</a>
+										<a href="mailto:kleber@ziontechgroup.com" className="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl bg-white/10 text-white hover:bg-white/20 transition-all">
+											<Mail className="w-4 h-4" />
+											<span>kleber@ziontechgroup.com</span>
+										</a>
+									</div>
+								</div>
+							</div>
+						</div>
 					</div>
 				</div>
 			</section>
-		);
-	}
+		</>
+	);
+}
 
-	const priceLabel = typeof (service as any).price === 'number'
-		? `$${(service as any).price.toLocaleString()}${(service as any).period || '/month'}`
-		: `${(service as any).price}${(service as any).period || ''}`;
-
+function ClockIcon() {
 	return (
-		<section className="pt-24 pb-20 px-4 sm:px-6 lg:px-8">
-			<div className="max-w-6xl mx-auto">
-				<header className="mb-10 text-center">
-					<h1 className="text-5xl md:text-7xl font-bold bg-gradient-to-r from-cyan-400 via-purple-500 to-pink-500 bg-clip-text text-transparent mb-4">
-						{service.name}
-					</h1>
-					<p className="text-gray-300 text-lg max-w-3xl mx-auto">{service.tagline}</p>
-				</header>
-
-				<div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-					<div className="lg:col-span-2 space-y-6">
-						<div className="p-6 rounded-2xl bg-black/40 border border-gray-700/60">
-							<h2 className="text-2xl font-semibold text-white mb-3">Overview</h2>
-							<p className="text-gray-300 leading-relaxed">{service.description}</p>
-						</div>
-
-						<div className="p-6 rounded-2xl bg-black/40 border border-gray-700/60">
-							<h3 className="text-xl font-semibold text-white mb-4">Key Features</h3>
-							<ul className="space-y-2">
-								{service.features.slice(0, 8).map((f, i) => (
-									<li key={i} className="flex items-start gap-2 text-gray-200">
-										<CheckCircle className="w-4 h-4 text-emerald-400 mt-1" />
-										<span>{f}</span>
-									</li>
-								))}
-							</ul>
-						</div>
-
-						<div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-							<div className="p-6 rounded-2xl bg-black/40 border border-gray-700/60">
-								<h3 className="text-xl font-semibold text-white mb-3">Use Cases</h3>
-								<ul className="list-disc list-inside text-gray-300 space-y-1">
-									{service.useCases?.map((u, i) => <li key={i}>{u}</li>)}
-								</ul>
-							</div>
-							<div className="p-6 rounded-2xl bg-black/40 border border-gray-700/60">
-								<h3 className="text-xl font-semibold text-white mb-3">Integrations</h3>
-								<ul className="list-disc list-inside text-gray-300 space-y-1">
-									{(service.integrations as any)?.map((u: string, i: number) => <li key={i}>{u}</li>)}
-								</ul>
-							</div>
-						</div>
-					</div>
-
-					<div className="space-y-6">
-						<div className="p-6 rounded-2xl bg-black/40 border border-cyan-500/30">
-							<div className="text-sm text-gray-400 mb-1">From</div>
-							<div className="text-3xl font-bold text-white flex items-center gap-2">
-								<DollarSign className="w-6 h-6 text-cyan-400" /> {priceLabel}
-							</div>
-							{(service as any).trialDays ? (
-								<div className="text-sm text-gray-400 mt-1">Free trial: {(service as any).trialDays} days</div>
-							) : null}
-							<div className="mt-4 grid grid-cols-1 gap-3">
-								<a href="/contact" className="inline-flex items-center justify-center bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-600 hover:to-blue-700 text-white font-semibold py-3 px-4 rounded-lg">
-									Talk to Sales <ArrowRight className="w-5 h-5 ml-2" />
-								</a>
-								<a href="/market-pricing" className="inline-flex items-center justify-center bg-black/40 border border-gray-700/60 text-gray-200 font-semibold py-3 px-4 rounded-lg">
-									View Market Pricing
-								</a>
-							</div>
-						</div>
-
-						<div className="p-6 rounded-2xl bg-black/40 border border-gray-700/60">
-							<h3 className="text-xl font-semibold text-white mb-2">ROI & Positioning</h3>
-							<p className="text-gray-300"><span className="font-semibold text-cyan-300">ROI:</span> {service.roi}</p>
-							<p className="text-gray-300 mt-2"><span className="font-semibold text-cyan-300">Market Position:</span> {service.marketPosition}</p>
-						</div>
-
-						<div className="p-6 rounded-2xl bg-black/40 border border-gray-700/60">
-							<h3 className="text-xl font-semibold text-white mb-3">Contact</h3>
-							<div className="space-y-2 text-gray-300">
-								<a className="flex items-center gap-2" href={`tel:${(service as any).contactInfo?.mobile?.replace(/[^+\d]/g, '') || ''}`}>
-									<Phone className="w-4 h-4 text-cyan-400" /> {(service as any).contactInfo?.mobile}
-								</a>
-								<a className="flex items-center gap-2" href={`mailto:${(service as any).contactInfo?.email || ''}`}>
-									<Mail className="w-4 h-4 text-purple-400" /> {(service as any).contactInfo?.email}
-								</a>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</section>
+		<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-3 h-3"><path d="M12 6v6l4 2"></path><circle cx="12" cy="12" r="10"></circle></svg>
 	);
 }

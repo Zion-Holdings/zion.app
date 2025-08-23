@@ -72,18 +72,17 @@ export default function AIConsciousnessEvolution2029() {
         <meta property="og:description" content="Revolutionary platform for developing conscious AI systems with genuine self-awareness and emotional intelligence." />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://ziontechgroup.com/ai-consciousness-evolution-2029" />
-        <meta property="og:image" content="https://ziontechgroup.com/og-image.jpg" />
+        <meta property="og:image" content="https://ziontechgroup.com/og-image.svg" />
         
         {/* Twitter */}
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="AI Consciousness Evolution Platform 2029" />
         <meta name="twitter:description" content="Revolutionary platform for developing conscious AI systems with genuine self-awareness and emotional intelligence." />
-        <meta name="twitter:image" content="https://ziontechgroup.com/twitter-image.jpg" />
+        <meta name="twitter:image" content="https://ziontechgroup.com/og-image.svg" />
         
         {/* Additional Meta Tags */}
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="theme-color" content="#8b5cf6" />
-        <link rel="canonical" href="https://ziontechgroup.com/ai-consciousness-evolution-2029" />
+        <link rel="canonical" href="https://ziontechgroup.com/ai-consciousness-evolution-2029/" />
         
         {/* Structured Data */}
         <script
@@ -461,6 +460,16 @@ export default function AIConsciousnessEvolution2029() {
       </section>
 
       <UltraFuturisticFooter2029 />
+
+      <div className="container mx-auto px-4 py-8">
+        <div className="bg-black/30 rounded-xl border border-cyan-500/30 p-6">
+          <h2 className="text-2xl font-semibold text-white mb-2">Related Resources</h2>
+          <ul className="list-disc list-inside text-slate-300 space-y-1">
+            <li><a className="text-cyan-400 underline" href="/ai-emotional-intelligence-training">AI Emotional Intelligence Training</a></li>
+            <li><a className="text-cyan-400 underline" href="/ai-autonomous-business-operations">AI Autonomous Business Operations</a></li>
+          </ul>
+        </div>
+      </div>
     </>
   );
 }

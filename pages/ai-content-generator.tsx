@@ -1,55 +1,59 @@
 import React from 'react';
-import Head from 'next/head';
-import { Phone, Mail, MapPin, Check, ArrowRight, Star } from 'lucide-react';
-import UltraAdvancedFuturisticBackground from '../components/ui/UltraAdvancedFuturisticBackground';
-import Button from '../components/ui/Button';
-import { enhancedRealMicroSaasServices } from '../data/enhanced-real-micro-saas-services';
+import Link from 'next/link';
 
-export default function AIContentGeneratorPage() {
-  const service = enhancedRealMicroSaasServices.find(s => s.link.endsWith('/ai-content-generator'));
-  if (!service) return null;
+export default function AIContentGenerator() {
+	return (
+		<div className="relative isolate">
+			<section className="px-6 lg:px-10 py-16 lg:py-24">
+				<div className="max-w-6xl mx-auto">
+					<h1 className="text-3xl lg:text-5xl font-bold tracking-tight bg-gradient-to-r from-rose-400 via-cyan-400 to-emerald-400 bg-clip-text text-transparent">AI Content Generator</h1>
+					<p className="mt-4 text-gray-300 max-w-3xl">Generate on-brand blog posts, landing pages, and social content with reusable templates, SEO optimization, and review workflows.</p>
 
-  return (
-    <UltraAdvancedFuturisticBackground>
-      <Head>
-        <title>{service.name} - Zion Tech Group</title>
-        <meta name="description" content={service.description} />
-        <link rel="canonical" href="https://ziontechgroup.com/ai-content-generator" />
-      </Head>
-      <div className="min-h-screen pt-24 pb-20 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-10">
-            <h1 className="text-5xl md:text-7xl font-bold bg-gradient-to-r from-pink-400 via-rose-400 to-red-400 bg-clip-text text-transparent">{service.name}</h1>
-            <p className="mt-4 text-xl text-slate-300 max-w-3xl mx-auto">{service.tagline}</p>
-          </div>
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-12">
-            <div className="lg:col-span-2 bg-black/30 rounded-2xl border border-pink-500/30 p-6">
-              <h2 className="text-2xl font-semibold mb-4">What you get</h2>
-              <p className="text-slate-300 mb-6">{service.description}</p>
-              <ul className="grid grid-cols-1 md:grid-cols-2 gap-3">
-                {service.features.slice(0, 12).map((feat, i) => (
-                  <li key={i} className="flex items-start space-x-3 text-slate-200"><Check className="w-5 h-5 text-pink-400 mt-0.5" /><span>{feat}</span></li>
-                ))}
-              </ul>
-            </div>
-            <div className="bg-black/30 rounded-2xl border border-pink-500/30 p-6 h-fit">
-              <div className="flex items-end justify-between mb-3">
-                <div>
-                  <div className="text-3xl font-bold text-white">{service.price}<span className="text-slate-400 text-base">{service.period}</span></div>
-                  <div className="text-slate-400">{service.trialDays}-day free trial • Setup: {service.setupTime}</div>
-                </div>
-                <div className="flex items-center text-yellow-400"><Star className="w-4 h-4 mr-1" />{service.rating.toFixed(1)}</div>
-              </div>
-              <Button href="/contact" variant="quantum" size="lg" className="w-full">Start Free Trial<ArrowRight className="w-5 h-5 ml-2" /></Button>
-              <div className="mt-6 space-y-3 text-sm text-slate-300">
-                <div className="flex items-center space-x-2"><Phone className="w-4 h-4 text-pink-400" /><span>{service.contactInfo.mobile}</span></div>
-                <div className="flex items-center space-x-2"><Mail className="w-4 h-4 text-purple-400" /><span>{service.contactInfo.email}</span></div>
-                <div className="flex items-center space-x-2"><MapPin className="w-4 h-4 text-green-400" /><span className="text-xs">{service.contactInfo.address}</span></div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </UltraAdvancedFuturisticBackground>
-  );
+					<div className="mt-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+						{[
+							{ title: 'Templates', desc: 'Brand voice, tone, and structure controls for teams.' },
+							{ title: 'SEO', desc: 'Keyword suggestions, schema, and internal link hints.' },
+							{ title: 'Multichannel', desc: 'Export to CMS and schedule to social platforms.' },
+							{ title: 'Review Workflow', desc: 'Editorial approvals and change history.' },
+							{ title: 'Localization', desc: 'Translate and adapt content for regions.' },
+							{ title: 'Integrations', desc: 'WordPress, Webflow, HubSpot, Notion.' }
+						].map((f) => (
+							<div key={f.title} className="rounded-xl border border-white/10 bg-white/5 p-6 backdrop-blur">
+								<h3 className="text-lg font-semibold text-white">{f.title}</h3>
+								<p className="mt-2 text-sm text-gray-300">{f.desc}</p>
+							</div>
+						))}
+					</div>
+
+					<div className="mt-12">
+						<h2 className="text-2xl font-semibold">Pricing</h2>
+						<div className="mt-6 grid grid-cols-1 md:grid-cols-3 gap-6">
+							<div className="rounded-2xl border border-rose-400/30 p-6">
+								<h3 className="text-xl font-bold">Starter</h3>
+								<p className="mt-2 text-gray-300">50k tokens/mo, 3 templates.</p>
+								<p className="mt-4 text-3xl font-bold">$29<span className="text-base font-normal text-gray-300">/mo</span></p>
+							</div>
+							<div className="rounded-2xl border border-cyan-400/30 p-6">
+								<h3 className="text-xl font-bold">Growth</h3>
+								<p className="mt-2 text-gray-300">500k tokens/mo, SEO, workflows.</p>
+								<p className="mt-4 text-3xl font-bold">$99<span className="text-base font-normal text-gray-300">/mo</span></p>
+							</div>
+							<div className="rounded-2xl border border-emerald-400/30 p-6">
+								<h3 className="text-xl font-bold">Enterprise</h3>
+								<p className="mt-2 text-gray-300">Unlimited, SSO, brand governance.</p>
+								<p className="mt-4 text-3xl font-bold">Custom</p>
+							</div>
+						</div>
+						<p className="mt-4 text-sm text-gray-400">Market references: <a className="underline hover:text-cyan-300" href="https://www.jasper.ai/pricing" target="_blank" rel="noreferrer">Jasper</a>, <a className="underline hover:text-cyan-300" href="https://www.copy.ai/pricing" target="_blank" rel="noreferrer">Copy.ai</a>, <a className="underline hover:text-cyan-300" href="https://writesonic.com/pricing" target="_blank" rel="noreferrer">Writesonic</a>.</p>
+					</div>
+
+					<div className="mt-12 flex flex-wrap items-center gap-4">
+						<Link href="/contact" className="px-5 py-3 rounded-lg bg-rose-400 text-black font-semibold">Generate Content</Link>
+						<a href="mailto:kleber@ziontechgroup.com" className="px-5 py-3 rounded-lg border border-white/20">Email: kleber@ziontechgroup.com</a>
+						<span className="text-gray-400">Call: +1 302 464 0950</span>
+					</div>
+				</div>
+			</section>
+		</div>
+	);
 }

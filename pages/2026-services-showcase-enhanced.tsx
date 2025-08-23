@@ -179,21 +179,21 @@ export default function Services2026ShowcaseEnhancedPage() {
   };
 
   return (
-    <UltraFuturisticBackground variant="quantum" intensity="high">
+    <UltraFuturisticBackground variant="holographic" intensity="high">
       <div className="min-h-screen">
         <Head>
           <title>Enhanced 2026 Services Showcase - Zion Tech Group</title>
           <meta name="description" content="Discover our comprehensive collection of innovative 2026 micro SAAS services, AI solutions, quantum computing, and enterprise IT services. Transform your business with cutting-edge technology." />
           <meta name="keywords" content="2026 services, micro SAAS, AI services, quantum computing, enterprise IT, blockchain, 5G networks, edge computing, zero trust security" />
-          <meta name="viewport" content="width=device-width, initial-scale=1" />
-          <link rel="icon" href="/favicon.ico" />
+          <link rel="icon" href="/favicon.svg" />
           
           {/* Open Graph */}
           <meta property="og:title" content="Enhanced 2026 Services Showcase - Zion Tech Group" />
           <meta property="og:description" content="Discover our comprehensive collection of innovative 2026 micro SAAS services, AI solutions, quantum computing, and enterprise IT services." />
           <meta property="og:type" content="website" />
-          <meta property="og:url" content="https://ziontechgroup.com/2026-services-showcase-enhanced" />
-          <meta property="og:image" content="https://ziontechgroup.com/og-image.jpg" />
+          <meta property="og:url" content="https://ziontechgroup.com/2026-services-showcase-enhanced/" />
+          <meta property="og:image" content="https://ziontechgroup.com/og-image.svg" />
+          <meta property="og:image:type" content="image/svg+xml" />
           
           {/* Twitter */}
           <meta name="twitter:card" content="summary_large_image" />
@@ -458,7 +458,7 @@ export default function Services2026ShowcaseEnhancedPage() {
                           {/* Action Buttons */}
                           <div className="flex space-x-2">
                             <Button
-                              variant="quantum"
+                              variant="primary"
                               size="sm"
                               className="flex-1"
                               onClick={() => window.open(service.link, '_blank')}
@@ -467,7 +467,7 @@ export default function Services2026ShowcaseEnhancedPage() {
                               <ArrowRight className="w-4 h-4 ml-1" />
                             </Button>
                             <Button
-                              variant="futuristic"
+                              variant="outline"
                               size="sm"
                               onClick={() => window.open(`mailto:${contactInfo.email}?subject=Inquiry about ${service.name}`)}
                             >
@@ -502,7 +502,7 @@ export default function Services2026ShowcaseEnhancedPage() {
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Button
-                  variant="quantum"
+                  variant="primary"
                   size="lg"
                   onClick={() => window.open(`mailto:${contactInfo.email}?subject=Business Transformation Consultation`, '_blank')}
                 >
@@ -510,7 +510,7 @@ export default function Services2026ShowcaseEnhancedPage() {
                   Schedule Consultation
                 </Button>
                 <Button
-                  variant="futuristic"
+                  variant="secondary"
                   size="lg"
                   onClick={() => window.open(`tel:${contactInfo.mobile}`, '_blank')}
                 >

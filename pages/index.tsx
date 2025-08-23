@@ -129,297 +129,279 @@ const testimonials = [
 
 export default function Home() {
   return (
-    <>
+    <Layout>
       <Head>
-        <title>Zion Tech Group | Future Technology Solutions</title>
-        <meta name="description" content="Leading provider of cutting-edge AI, quantum computing, emerging technology, and micro SAAS solutions. Transform your business with revolutionary technology." />
-        <meta name="keywords" content="AI services, quantum computing, emerging technology, micro SAAS, enterprise solutions, space technology, metaverse development" />
+        <title>Zion Tech Group - Revolutionary 2045 Technology Solutions</title>
+        <meta name="description" content="Leading provider of cutting-edge AI consciousness, quantum computing, and emerging technology solutions. Transform your business with revolutionary innovations." />
+        <meta name="keywords" content="AI consciousness, quantum computing, autonomous solutions, space technology, cybersecurity, business intelligence, Zion Tech Group, 2045 technology" />
+        <meta property="og:title" content="Zion Tech Group - Revolutionary 2045 Technology Solutions" />
+        <meta property="og:description" content="Leading provider of cutting-edge AI consciousness, quantum computing, and emerging technology solutions." />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://ziontechgroup.com" />
         <link rel="canonical" href="https://ziontechgroup.com" />
       </Head>
 
-      <Layout>
-        <div className="min-h-screen bg-black text-white relative overflow-hidden">
-          {/* Background Effects */}
-          <div className="absolute inset-0 bg-gradient-to-br from-gray-900 via-black to-gray-900"></div>
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(56,189,248,0.1),transparent_50%)]"></div>
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_80%,rgba(168,85,247,0.1),transparent_50%)]"></div>
+      {/* Hero Section */}
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+        {/* Background Effects */}
+        <div className="absolute inset-0 bg-gradient-to-br from-black via-gray-900 to-black"></div>
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(56,189,248,0.1),transparent_50%)]"></div>
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_80%,rgba(168,85,247,0.1),transparent_50%)]"></div>
+        
+        {/* Floating Elements */}
+        <div className="absolute top-20 left-20 w-2 h-2 bg-cyan-400 rounded-full animate-pulse opacity-60"></div>
+        <div className="absolute top-40 right-40 w-1 h-1 bg-purple-400 rounded-full animate-ping opacity-40"></div>
+        <div className="absolute bottom-40 left-1/3 w-1.5 h-1.5 bg-green-400 rounded-full animate-bounce opacity-50"></div>
 
-          {/* Main Content */}
-          <div className="relative z-10">
-            {/* Hero Section */}
-            <section className="pt-32 pb-20 px-4 sm:px-6 lg:px-8">
-              <div className="max-w-7xl mx-auto text-center">
-                <motion.div
-                  initial={{ opacity: 0, y: 30 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.8 }}
-                  className="mb-8"
-                >
-                  <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
-                    <span className="bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent">
-                      Future Technology
-                    </span>
-                    <br />
-                    <span className="bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
-                      Solutions
-                    </span>
-                  </h1>
-                  <p className="text-xl md:text-2xl text-gray-300 max-w-4xl mx-auto leading-relaxed mb-8">
-                    Leading provider of cutting-edge AI, quantum computing, emerging technology, and micro SAAS solutions. 
-                    Transform your business with revolutionary technology that drives innovation and competitive advantage.
-                  </p>
-                  
-                  <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
-                    <a
-                      href="/services"
-                      className="bg-gradient-to-r from-cyan-500 to-purple-600 text-white px-8 py-4 rounded-xl font-semibold text-lg hover:from-cyan-600 hover:to-purple-700 transition-all duration-200 transform hover:scale-105"
-                    >
-                      Explore Services
-                      <ArrowRight className="w-5 h-5 inline ml-2" />
-                    </a>
-                    <a
-                      href="/contact"
-                      className="border border-gray-600 text-white px-8 py-4 rounded-xl font-semibold text-lg hover:border-gray-500 hover:bg-gray-800/50 transition-all duration-200"
-                    >
-                      Get Started
-                    </a>
-                  </div>
-                </motion.div>
+        <div className="relative z-10 container mx-auto px-4 text-center">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            className="max-w-4xl mx-auto"
+          >
+            <h1 className="text-5xl md:text-7xl font-bold mb-6">
+              <span className="bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
+                Revolutionary
+              </span>
+              <br />
+              <span className="text-white">2045 Technology</span>
+            </h1>
+            
+            <p className="text-xl md:text-2xl text-gray-300 mb-8 leading-relaxed">
+              Pioneering the future with revolutionary AI consciousness, quantum computing, and autonomous solutions that transform businesses worldwide.
+            </p>
 
-                {/* Hero Stats */}
+            <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
+              <motion.button
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className="bg-gradient-to-r from-cyan-500 to-blue-500 text-white px-8 py-4 rounded-full text-lg font-semibold hover:from-cyan-600 hover:to-blue-600 transition-all duration-300 shadow-lg hover:shadow-cyan-500/25"
+              >
+                Get Started Today
+              </motion.button>
+              
+              <motion.button
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className="border-2 border-cyan-500/50 text-cyan-400 px-8 py-4 rounded-full text-lg font-semibold hover:bg-cyan-500/10 hover:border-cyan-400 transition-all duration-300"
+              >
+                <div className="flex items-center gap-2">
+                  <Play className="w-5 h-5" />
+                  Watch Demo
+                </div>
+              </motion.button>
+            </div>
+
+            {/* Hero Stats */}
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-3xl mx-auto">
+              {heroStats.map((stat, index) => (
                 <motion.div
+                  key={stat.label}
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.8, delay: 0.2 }}
-                  className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto"
-                >
-                  {heroStats.map((stat, index) => (
-                    <motion.div
-                      key={stat.label}
-                      initial={{ opacity: 0, y: 20 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      transition={{ duration: 0.8, delay: 0.4 + index * 0.1 }}
-                      className="text-center"
-                    >
-                      <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-r from-cyan-500/20 to-purple-500/20 rounded-2xl mb-4">
-                        {stat.icon}
-                      </div>
-                      <div className="text-3xl font-bold text-white mb-2">{stat.value}</div>
-                      <div className="text-sm text-gray-400">{stat.label}</div>
-                    </motion.div>
-                  ))}
-                </motion.div>
-              </div>
-            </section>
-
-            {/* Service Categories */}
-            <section className="py-20 px-4 sm:px-6 lg:px-8">
-              <div className="max-w-7xl mx-auto">
-                <motion.div
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.8 }}
-                  viewport={{ once: true }}
-                  className="text-center mb-16"
-                >
-                  <h2 className="text-4xl md:text-5xl font-bold mb-6">
-                    <span className="bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent">
-                      Our Service Categories
-                    </span>
-                  </h2>
-                  <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-                    Discover our comprehensive suite of innovative solutions designed to transform your business 
-                    and drive innovation across industries.
-                  </p>
-                </motion.div>
-
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                  {serviceCategories.map((category, index) => (
-                    <motion.div
-                      key={category.name}
-                      initial={{ opacity: 0, y: 30 }}
-                      whileInView={{ opacity: 1, y: 0 }}
-                      transition={{ duration: 0.8, delay: index * 0.1 }}
-                      viewport={{ once: true }}
-                      className="bg-gray-900/50 backdrop-blur-sm border border-gray-700/50 rounded-2xl p-8 hover:border-gray-600/50 transition-all duration-300"
-                    >
-                      <div className={`w-20 h-20 bg-gradient-to-r ${category.color} rounded-2xl flex items-center justify-center mb-6`}>
-                        {category.icon}
-                      </div>
-                      
-                      <h3 className="text-2xl font-bold text-white mb-4">{category.name}</h3>
-                      <p className="text-gray-400 mb-6">{category.description}</p>
-                      
-                      <div className="space-y-3 mb-6">
-                        {category.services.map((service) => (
-                          <div key={service.id} className="flex items-center justify-between p-3 bg-gray-800/30 rounded-lg">
-                            <div>
-                              <h4 className="font-semibold text-white">{service.name}</h4>
-                              <p className="text-sm text-gray-400">{service.tagline}</p>
-                            </div>
-                            <div className="text-right">
-                              <div className="text-lg font-bold text-white">${service.price.monthly}</div>
-                              <div className="text-sm text-gray-400">/month</div>
-                            </div>
-                          </div>
-                        ))}
-                      </div>
-                      
-                      <a
-                        href={category.link}
-                        className="inline-flex items-center text-cyan-400 hover:text-cyan-300 transition-colors duration-200"
-                      >
-                        View All {category.name} Services
-                        <ChevronRight className="w-4 h-4 ml-2" />
-                      </a>
-                    </motion.div>
-                  ))}
-                </div>
-              </div>
-            </section>
-
-            {/* Features Section */}
-            <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gray-900/30">
-              <div className="max-w-7xl mx-auto">
-                <motion.div
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.8 }}
-                  viewport={{ once: true }}
-                  className="text-center mb-16"
-                >
-                  <h2 className="text-4xl md:text-5xl font-bold mb-6">
-                    <span className="bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent">
-                      Why Choose Zion Tech Group?
-                    </span>
-                  </h2>
-                  <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-                    We deliver cutting-edge technology solutions with unmatched quality, speed, and support.
-                  </p>
-                </motion.div>
-
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                  {features.map((feature, index) => (
-                    <motion.div
-                      key={feature.title}
-                      initial={{ opacity: 0, x: index % 2 === 0 ? -30 : 30 }}
-                      whileInView={{ opacity: 1, x: 0 }}
-                      transition={{ duration: 0.8, delay: index * 0.1 }}
-                      viewport={{ once: true }}
-                      className="flex items-start space-x-4"
-                    >
-                      <div className={`w-16 h-16 bg-gradient-to-r ${feature.color} rounded-2xl flex items-center justify-center flex-shrink-0`}>
-                        {feature.icon}
-                      </div>
-                      <div>
-                        <h3 className="text-xl font-bold text-white mb-2">{feature.title}</h3>
-                        <p className="text-gray-400">{feature.description}</p>
-                      </div>
-                    </motion.div>
-                  ))}
-                </div>
-              </div>
-            </section>
-
-            {/* Testimonials Section */}
-            <section className="py-20 px-4 sm:px-6 lg:px-8">
-              <div className="max-w-7xl mx-auto">
-                <motion.div
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.8 }}
-                  viewport={{ once: true }}
-                  className="text-center mb-16"
-                >
-                  <h2 className="text-4xl md:text-5xl font-bold mb-6">
-                    <span className="bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent">
-                      What Our Clients Say
-                    </span>
-                  </h2>
-                  <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-                    Join thousands of satisfied clients who have transformed their businesses with our technology solutions.
-                  </p>
-                </motion.div>
-
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                  {testimonials.map((testimonial, index) => (
-                    <motion.div
-                      key={testimonial.name}
-                      initial={{ opacity: 0, y: 30 }}
-                      whileInView={{ opacity: 1, y: 0 }}
-                      transition={{ duration: 0.8, delay: index * 0.1 }}
-                      viewport={{ once: true }}
-                      className="bg-gray-900/50 backdrop-blur-sm border border-gray-700/50 rounded-2xl p-8"
-                    >
-                      <div className="flex items-center mb-4">
-                        {[...Array(testimonial.rating)].map((_, i) => (
-                          <Star key={i} className="w-5 h-5 text-yellow-400 fill-current" />
-                        ))}
-                      </div>
-                      
-                      <p className="text-gray-300 mb-6 leading-relaxed">"{testimonial.content}"</p>
-                      
-                      <div className="flex items-center space-x-3">
-                        <div className="w-12 h-12 bg-gradient-to-r from-cyan-500 to-purple-600 rounded-full flex items-center justify-center text-white font-semibold">
-                          {testimonial.avatar}
-                        </div>
-                        <div>
-                          <div className="font-semibold text-white">{testimonial.name}</div>
-                          <div className="text-sm text-gray-400">{testimonial.role}</div>
-                          <div className="text-sm text-cyan-400">{testimonial.company}</div>
-                        </div>
-                      </div>
-                    </motion.div>
-                  ))}
-                </div>
-              </div>
-            </section>
-
-            {/* CTA Section */}
-            <section className="py-20 px-4 sm:px-6 lg:px-8">
-              <div className="max-w-7xl mx-auto">
-                <motion.div
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.8 }}
-                  viewport={{ once: true }}
+                  transition={{ duration: 0.6, delay: index * 0.1 }}
                   className="text-center"
                 >
-                  <div className="bg-gradient-to-r from-cyan-500/10 to-purple-500/10 border border-cyan-500/20 rounded-3xl p-12">
-                    <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-                      Ready to Transform Your Business?
-                    </h2>
-                    <p className="text-xl text-gray-300 mb-8 max-w-3xl mx-auto">
-                      Join thousands of businesses already using our cutting-edge technology solutions 
-                      to drive growth and competitive advantage.
-                    </p>
-                    
-                    <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
-                      <a
-                        href="/contact"
-                        className="bg-gradient-to-r from-cyan-500 to-purple-600 text-white px-8 py-4 rounded-xl font-semibold text-lg hover:from-cyan-600 hover:to-purple-700 transition-all duration-200 transform hover:scale-105"
-                      >
-                        Get Started Today
-                      </a>
-                      <a
-                        href="/pricing"
-                        className="border border-gray-600 text-white px-8 py-4 rounded-xl font-semibold text-lg hover:border-gray-500 hover:bg-gray-800/50 transition-all duration-200"
-                      >
-                        View Pricing
-                      </a>
-                    </div>
-                    
-                    <div className="text-sm text-gray-400">
-                      <p>✓ 14-90 Day Free Trials • ✓ No Credit Card Required • ✓ Instant Setup</p>
-                      <p className="mt-2">✓ 24/7 Support • ✓ 99.9% Uptime SLA • ✓ Global Infrastructure</p>
-                    </div>
+                  <div className="flex items-center justify-center mb-2 text-cyan-400">
+                    {stat.icon}
+                  </div>
+                  <div className="text-2xl md:text-3xl font-bold text-white mb-1">
+                    {stat.value}
+                  </div>
+                  <div className="text-sm text-gray-400">
+                    {stat.label}
                   </div>
                 </motion.div>
-              </div>
-            </section>
+              ))}
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Service Categories Section */}
+      <section className="py-20 bg-gradient-to-b from-gray-900 to-black">
+        <div className="container mx-auto px-4">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+              Revolutionary <span className="bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent">Technology Solutions</span>
+            </h2>
+            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+              Discover our comprehensive portfolio of cutting-edge AI, quantum computing, and emerging technology solutions designed to transform your business.
+            </p>
+          </motion.div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {serviceCategories.map((category, index) => (
+              <motion.div
+                key={category.name}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+                viewport={{ once: true }}
+                className="bg-gray-800/50 backdrop-blur-sm border border-gray-700/50 rounded-2xl p-6 hover:border-cyan-500/50 transition-all duration-300 hover:transform hover:scale-105"
+              >
+                <div className={`w-16 h-16 bg-gradient-to-r ${category.color} rounded-2xl flex items-center justify-center text-white mb-4`}>
+                  {category.icon}
+                </div>
+                
+                <h3 className="text-xl font-bold text-white mb-3">{category.name}</h3>
+                <p className="text-gray-400 mb-4">{category.description}</p>
+                
+                <div className="space-y-3 mb-6">
+                  {category.services.map((service) => (
+                    <div key={service.name} className="flex items-center gap-3 text-sm">
+                      <Check className="w-4 h-4 text-cyan-400 flex-shrink-0" />
+                      <span className="text-gray-300">{service.name}</span>
+                    </div>
+                  ))}
+                </div>
+                
+                <Link href={category.link} className="inline-flex items-center gap-2 text-cyan-400 hover:text-cyan-300 transition-colors">
+                  Explore {category.name}
+                  <ChevronRight className="w-4 h-4" />
+                </Link>
+              </motion.div>
+            ))}
           </div>
         </div>
-      </Layout>
-    </>
+      </section>
+
+      {/* Features Section */}
+      <section className="py-20 bg-black">
+        <div className="container mx-auto px-4">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+              Why Choose <span className="bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent">Zion Tech Group</span>
+            </h2>
+            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+              We combine cutting-edge technology with proven expertise to deliver solutions that drive real business transformation.
+            </p>
+          </motion.div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {features.map((feature, index) => (
+              <motion.div
+                key={feature.title}
+                initial={{ opacity: 0, x: index % 2 === 0 ? -30 : 30 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+                viewport={{ once: true }}
+                className="flex items-start gap-4"
+              >
+                <div className={`w-12 h-12 bg-gradient-to-r ${feature.color} rounded-xl flex items-center justify-center text-white flex-shrink-0`}>
+                  {feature.icon}
+                </div>
+                <div>
+                  <h3 className="text-xl font-semibold text-white mb-2">{feature.title}</h3>
+                  <p className="text-gray-400">{feature.description}</p>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Testimonials Section */}
+      <section className="py-20 bg-gradient-to-b from-black to-gray-900">
+        <div className="container mx-auto px-4">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+              Trusted by <span className="bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent">Industry Leaders</span>
+            </h2>
+            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+              See how our revolutionary technology solutions are transforming businesses across industries.
+            </p>
+          </motion.div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {testimonials.map((testimonial, index) => (
+              <motion.div
+                key={testimonial.name}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+                viewport={{ once: true }}
+                className="bg-gray-800/50 backdrop-blur-sm border border-gray-700/50 rounded-2xl p-6"
+              >
+                <div className="flex items-center gap-4 mb-4">
+                  <div className="w-12 h-12 bg-gradient-to-r from-cyan-500 to-purple-500 rounded-full flex items-center justify-center text-white font-bold">
+                    {testimonial.avatar}
+                  </div>
+                  <div>
+                    <div className="font-semibold text-white">{testimonial.name}</div>
+                    <div className="text-sm text-gray-400">{testimonial.role}</div>
+                  </div>
+                </div>
+                
+                <p className="text-gray-300 mb-4">{testimonial.content}</p>
+                
+                <div className="flex items-center gap-1">
+                  {[...Array(testimonial.rating)].map((_, i) => (
+                    <Star key={i} className="w-4 h-4 text-yellow-400 fill-current" />
+                  ))}
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className="py-20 bg-gradient-to-r from-cyan-900/50 via-purple-900/50 to-pink-900/50">
+        <div className="container mx-auto px-4 text-center">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="max-w-3xl mx-auto"
+          >
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+              Ready to Transform Your <span className="bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent">Business?</span>
+            </h2>
+            <p className="text-xl text-gray-300 mb-8">
+              Join the future of technology with our revolutionary AI consciousness, quantum computing, and autonomous solutions.
+            </p>
+            
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <motion.button
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className="bg-gradient-to-r from-cyan-500 to-blue-500 text-white px-8 py-4 rounded-full text-lg font-semibold hover:from-cyan-600 hover:to-blue-600 transition-all duration-300 shadow-lg hover:shadow-cyan-500/25"
+              >
+                Get Started Today
+              </motion.button>
+              
+              <motion.button
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className="border-2 border-white/50 text-white px-8 py-4 rounded-full text-lg font-semibold hover:bg-white/10 hover:border-white transition-all duration-300"
+              >
+                Schedule a Demo
+              </motion.button>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+    </Layout>
   );
 }

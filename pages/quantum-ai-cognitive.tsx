@@ -15,15 +15,7 @@ export default function QuantumAICognitivePage() {
   const contactInfo = service.contactInfo;
 
   return (
-    <UltraAdvancedFuturisticBackground 
-      intensity="high" 
-      colorScheme="holographic"
-      particleCount={300}
-      animationSpeed={1.5}
-      
-      
-      
-    >
+    <UltraAdvancedFuturisticBackground>
       <Head>
         <title>{service.name} - Zion Tech Group</title>
         <meta name="description" content={service.description} />
@@ -62,7 +54,7 @@ export default function QuantumAICognitivePage() {
                 <div className="flex items-center text-yellow-400"><Star className="w-4 h-4 mr-1" />{service.rating.toFixed(1)}</div>
               </div>
               <div className="text-slate-300 text-sm mb-4">Market: {service.marketSize}, Growth: {service.growthRate}</div>
-              <Button href="/contact" variant="quantum" size="lg" className="w-full">
+              <Button href="/contact" variant="primary" size="lg" className="w-full">
                 Start Free Trial
                 <ArrowRight className="w-5 h-5 ml-2" />
               </Button>

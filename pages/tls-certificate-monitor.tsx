@@ -3,7 +3,7 @@ import Head from 'next/head';
 import UltraAdvancedFuturisticBackground from '../components/ui/UltraAdvancedFuturisticBackground';
 import Button from '../components/ui/Button';
 import Card from '../components/ui/Card';
-import { Shield, Check, Phone, Mail, MapPin, ExternalLink, Lock } from 'lucide-react';
+import { Check, Phone, Mail, MapPin, ExternalLink, Lock } from 'lucide-react';
 
 export default function TLSCertificateMonitorPage() {
   const contactInfo = {

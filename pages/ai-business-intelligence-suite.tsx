@@ -52,14 +52,7 @@ export default function AIBusinessIntelligenceSuite() {
   ];
 
   return (
-    <UltraAdvancedFuturisticBackground 
-      intensity="extreme" 
-      colorScheme="quantum-fusion"
-      particleCount={500}
-      animationSpeed={2.0}
-      enableHolographic={true}
-      enableQuantumEffects={true}
-    >
+    <UltraAdvancedFuturisticBackground>
       <div className="min-h-screen">
         <Head>
           <title>AI Business Intelligence Suite - Zion Tech Group | Transform Data into Insights</title>
