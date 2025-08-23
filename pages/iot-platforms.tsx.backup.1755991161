@@ -1,0 +1,5 @@
+<<<<<<< HEAD
+export default function IotPlatforms() { return null }
+=======
+export default function IotPlatforms() { return <div className="p-6">IoT Platforms</div>; }
+>>>>>>> origin/cursor/build-developer-api-and-webhook-integration-62ab
