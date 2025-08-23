@@ -5,6 +5,9 @@ export AUTONOMOUS_MODE=true
 export HUSKY_AUTOMATION=true
 export AUTO_FIX_ENABLED=true
 
+<<<<<<< HEAD
+# TypeScript type check if available
+=======
 # Run lint-staged for staged files
 if [ -x "./node_modules/.bin/lint-staged" ]; then
   npx lint-staged || {
@@ -16,6 +19,7 @@ else
 fi
 
 # Skip type-check if tsc is not available locally
+>>>>>>> origin/cursor/automate-cursor-warning-fixes-and-merge-9f31
 if [ -x "./node_modules/.bin/tsc" ]; then
   npm run -s type-check || {
     echo "❌ TypeScript type check failed. Please fix issues before committing."
