@@ -10,6 +10,9 @@ import {
 import { revolutionary2044AdvancedMicroSaas } from '../data/revolutionary-2044-advanced-micro-saas';
 import { revolutionary2044ITServices } from '../data/revolutionary-2044-it-services';
 import { revolutionary2044AIServices } from '../data/revolutionary-2044-ai-services';
+import { innovative2025AIAutonomousEcosystemV3 } from '../data/2025-innovative-ai-autonomous-ecosystem-v3';
+import { emerging2025TechBreakthroughsV4 } from '../data/2025-emerging-tech-breakthroughs-v4';
+import { advanced2025ITInfrastructureServicesV2 } from '../data/2025-advanced-it-infrastructure-services-v2';
 
 const Homepage2044: React.FC = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -42,7 +45,10 @@ const Homepage2044: React.FC = () => {
   const allRevolutionaryServices = [
     ...revolutionary2044AdvancedMicroSaas,
     ...revolutionary2044ITServices,
-    ...revolutionary2044AIServices
+    ...revolutionary2044AIServices,
+    ...innovative2025AIAutonomousEcosystemV3,
+    ...emerging2025TechBreakthroughsV4,
+    ...advanced2025ITInfrastructureServicesV2
   ];
 
   // Get featured services for rotation
@@ -76,7 +82,7 @@ const Homepage2044: React.FC = () => {
   ];
 
   const stats = [
-    { number: "2000+", label: "Revolutionary Services", icon: Star },
+    { number: "2500+", label: "Revolutionary Services", icon: Star },
     { number: "99.99%", label: "Uptime Guarantee", icon: TrendingUp },
     { number: "24/7", label: "AI Support Available", icon: Brain },
     { number: "200+", label: "Countries Served", icon: Globe }
