@@ -94,6 +94,39 @@ const SEOOptimizer: React.FC<SEOOptimizerProps> = ({
       <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
       <meta name="theme-color" content="#00d4ff" />
       <meta name="msapplication-TileColor" content="#00d4ff" />
+      {/* Additional Open Graph Tags */}
+      <meta property="og:image:type" content="image/jpeg" />
+      <meta property="og:image:secure_url" content={ogImage} />
+      
+      {/* Business and Contact Information */}
+      <meta property="business:contact_data:street_address" content="364 E Main St STE 1008" />
+      <meta property="business:contact_data:locality" content="Middletown" />
+      <meta property="business:contact_data:region" content="DE" />
+      <meta property="business:contact_data:postal_code" content="19709" />
+      <meta property="business:contact_data:country_name" content="United States" />
+      <meta property="business:contact_data:phone_number" content="+1-302-464-0950" />
+              <meta property="business:contact_data:email" content="kleber@ziontechgroup.com" />
+      <meta property="business:contact_data:website" content="https://ziontechgroup.com" />
+      
+      {/* Business Hours */}
+      <meta property="business:business_hours:day_of_week" content="Monday" />
+      <meta property="business:business_hours:opens" content="09:00" />
+      <meta property="business:business_hours:closes" content="18:00" />
+      <meta property="business:business_hours:day_of_week" content="Tuesday" />
+      <meta property="business:business_hours:day_of_week" content="Wednesday" />
+      <meta property="business:business_hours:day_of_week" content="Thursday" />
+      <meta property="business:business_hours:day_of_week" content="Friday" />
+      
+      {/* Geo-location */}
+      <meta name="geo.region" content="US-DE" />
+      <meta name="geo.placename" content="Middletown, Delaware" />
+      <meta name="geo.position" content="39.4496;-75.7163" />
+      <meta name="ICBM" content="39.4496, -75.7163" />
+      
+      {/* Mobile and Viewport */}
+      <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
+      <meta name="mobile-web-app-capable" content="yes" />
+
       <meta name="apple-mobile-web-app-capable" content="yes" />
       <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
       
