@@ -1,5 +1,4 @@
 =======
->>>>>>> 916d02471c24718d698d51219f240472f9d52b96
 import React from 'react';
 import Layout from '../components/layout/Layout';
 import { Phone, Mail, MapPin, Clock, MessageSquare, Send, Star, Award, Zap, Users } from 'lucide-react';
@@ -33,7 +32,6 @@ const ContactPage: React.FC = () => {
       icon: Clock,
       description: 'We\'re here when you need us',
       color: 'from-orange-500 to-red-500'
->>>>>>> 916d02471c24718d698d51219f240472f9d52b96
     }
   ];
 
@@ -52,7 +50,6 @@ const ContactPage: React.FC = () => {
     'Business Solutions',
     'IT Infrastructure',
     'Space Technology',
->>>>>>> 916d02471c24718d698d51219f240472f9d52b96
     'Other'
   ];
 
@@ -81,7 +78,6 @@ const ContactPage: React.FC = () => {
           </div>
         </section>
 
->>>>>>> 916d02471c24718d698d51219f240472f9d52b96
         {/* Contact Methods */}
         <section className="py-20 px-4 sm:px-6 lg:px-8">
           <div className="max-w-7xl mx-auto">
@@ -216,7 +212,6 @@ const ContactPage: React.FC = () => {
           <div className="max-w-7xl mx-auto">
             <div className="text-center mb-16">
               <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
->>>>>>> 916d02471c24718d698d51219f240472f9d52b96
                 Why Choose Zion Tech Group?
               </h2>
               <p className="text-xl text-gray-300 max-w-3xl mx-auto">
@@ -234,7 +229,6 @@ const ContactPage: React.FC = () => {
                     We can typically begin small projects within 2-4 weeks. For larger enterprise implementations, 
                     we usually start within 6-8 weeks after initial consultation and planning.
                   </p>
->>>>>>> 916d02471c24718d698d51219f240472f9d52b96
                 </div>
                 
                 <div className="bg-white/10 backdrop-blur-xl rounded-xl p-6 border border-white/20">
@@ -288,8 +282,4 @@ const ContactPage: React.FC = () => {
         </main>
       </div>
     </Layout>
->>>>>>> 17df199e451813150094c5ab1fb554b04628cb60
   );
-};
-
-export default ContactPage;

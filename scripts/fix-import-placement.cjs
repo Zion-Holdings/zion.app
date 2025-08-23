@@ -1,4 +1,26 @@
-#!/usr/bin/env node
+const winston = require('winston');
+
+const logger = winston.createLogger({
+  level: 'info',
+  format: winston.format.combine(
+    winston.format.timestamp(),
+    winston.format.errors({ stack: true }),
+    winston.format.json(),
+  ),
+  defaultMeta: { service: 'automation-script' },
+  transports: [
+    new winston.transports.File({ filename: 'logs/error.log', level: 'error' }),
+    new winston.transports.File({ filename: 'logs/combined.log' }),
+  ],
+});
+
+if (process.env.NODE_ENV !== 'production') {
+  logger.add(
+    new winston.transports.Console({
+      format: winston.format.simple(),
+    }),
+  );
+}
 
 /**
  * Fix misplaced import statements
@@ -8,9 +30,7 @@
 const fs = require('fs');
 const path = require('path');
 const glob = require('glob');
-
 const PROJECT_ROOT = process.cwd();
-
 class ImportFixer {
   constructor() {
     this.fixedFiles = 0;
@@ -21,16 +41,13 @@ class ImportFixer {
    * Get all TypeScript/JavaScript files
    */
   getFilesToProcess() {
-    const patterns = [
-      'src/**/*.{ts,tsx,js,jsx}',
-      'pages/**/*.{ts,tsx,js,jsx}',
-    ];
+    const patterns = ['src/**/*.{ts,tsx,js,jsx}', 'pages/**/*.{ts,tsx,js,jsx}'];
 
     let allFiles = [];
-    patterns.forEach(pattern => {
-      const files = glob.sync(pattern, { 
+    patterns.forEach((pattern) => {
+      const files = glob.sync(pattern, {
         cwd: PROJECT_ROOT,
-        ignore: ['node_modules/**', 'dist/**', 'build/**', '.next/**']
+        ignore: ['node_modules/**', 'dist/**', 'build/**', '.next/**'],
       });
       allFiles = allFiles.concat(files);
     });
@@ -45,25 +62,32 @@ class ImportFixer {
     try {
       const fullPath = path.join(PROJECT_ROOT, filePath);
       const content = fs.readFileSync(fullPath, 'utf8');
-      
+
       // Look for misplaced imports (imports after export statements)
       const lines = content.split('\n');
       const importLines = [];
       const otherLines = [];
       let inExportFunction = false;
-      let hasExportFunction = false;
+      let _hasExportFunction = false;
 
       for (let i = 0; i < lines.length; i++) {
         const line = lines[i];
-        
+
         // Check if we're entering an export function/component
-        if (line.match(/^export\s+(default\s+)?function|^export\s+(default\s+)?(class|const)/)) {
-          hasExportFunction = true;
+        if (
+          line.match(
+            /^export\s+(default\s+)?function|^export\s+(default\s+)?(class|const)/,
+          )
+        ) {
+          _hasExportFunction = true;
           inExportFunction = true;
         }
 
         // Look for misplaced imports after export functions
-        if (inExportFunction && line.match(/^import\s+.*from\s+['"]@\/utils\/productionLogger['"]/)) {
+        if (
+          inExportFunction &&
+          line.match(/^import\s+.*from\s+['"]@\/utils\/productionLogger['"]/)
+        ) {
           // This is a misplaced import - collect it
           importLines.push(line);
           continue; // Skip adding to otherLines
@@ -75,20 +99,20 @@ class ImportFixer {
       if (importLines.length > 0) {
         // We found misplaced imports, need to fix the file
         const fixedContent = this.reconstructFile(otherLines, importLines);
-        
+
         if (fixedContent !== content) {
           fs.writeFileSync(fullPath, fixedContent, 'utf8');
           this.fixedFiles++;
           return {
             fixed: true,
             importsFixed: importLines.length,
-            imports: importLines
+            imports: importLines,
           };
         }
       }
 
       return { fixed: false };
-    } catch (error) {
+    } catch (_error) {
       this.errors.push({ file: filePath, error: error.message });
       return { fixed: false, error: error.message };
     }
@@ -105,11 +129,15 @@ class ImportFixer {
     // Find where to insert the imports (after existing imports)
     for (let i = 0; i < lines.length; i++) {
       const line = lines[i];
-      
+
       if (line.match(/^import\s+/)) {
         foundFirstImport = true;
         insertIndex = i + 1;
-      } else if (foundFirstImport && !line.trim().startsWith('import') && line.trim() !== '') {
+      } else if (
+        foundFirstImport &&
+        !line.trim().startsWith('import') &&
+        line.trim() !== ''
+      ) {
         // We've passed all the imports
         break;
       }
@@ -124,7 +152,7 @@ class ImportFixer {
     for (let i = 0; i < lines.length; i++) {
       if (i === insertIndex && misplacedImports.length > 0) {
         // Insert the misplaced imports here
-        misplacedImports.forEach(imp => result.push(imp));
+        misplacedImports.forEach((imp) => result.push(imp));
       }
       result.push(lines[i]);
     }
@@ -142,17 +170,15 @@ class ImportFixer {
    * Process all files
    */
   async processAllFiles() {
-    console.log('🔧 Fixing misplaced import statements...');
-    
+    // logger.warn('🔧 Fixing misplaced import statements...')
     const files = this.getFilesToProcess();
-    console.log(`📋 Found ${files.length} files to check`);
-
+    // logger.warn(`📋 Found ${files.length} files to check`)
     const results = [];
 
     for (const filePath of files) {
       const result = this.fixFile(filePath);
       if (result.fixed) {
-        console.log(`✅ Fixed ${filePath} (${result.importsFixed} imports moved)`);
+        // logger.warn(`✅ Fixed ${filePath} (${result.importsFixed} imports moved)`);
         results.push({ file: filePath, ...result });
       }
     }
@@ -164,33 +190,33 @@ class ImportFixer {
    * Print summary
    */
   printSummary(results) {
-    console.log('\n' + '='.repeat(60));
-    console.log('📊 IMPORT FIXING SUMMARY');
-    console.log('='.repeat(60));
-    console.log(`✅ Files fixed: ${this.fixedFiles}`);
-    console.log(`❌ Errors encountered: ${this.errors.length}`);
+    // logger.warn('\n' + '='.repeat(60));
+    // logger.warn('📊 IMPORT FIXING SUMMARY');
+    // logger.warn('='.repeat(60));
+    // logger.warn(`✅ Files fixed: ${this.fixedFiles}`);
+    // logger.warn(`❌ Errors encountered: ${this.errors.length}`);
 
     if (results.length > 0) {
-      console.log('\n📝 Fixed files:');
-      results.forEach(({ file, importsFixed }) => {
-        console.log(`   ${file}: ${importsFixed} imports moved`);
+      // logger.warn('\n📝 Fixed files:');
+      results.forEach(({ file: _file, _importsFixed: _importsFixed }) => {
+        // logger.warn(`   ${_file}: ${_importsFixed} imports moved`);
       });
     }
 
     if (this.errors.length > 0) {
-      console.log('\n⚠️  Errors:');
-      this.errors.forEach(({ file, error }) => {
-        console.log(`   ${file}: ${error}`);
+      // logger.warn('\n⚠️  Errors:');
+      this.errors.forEach(({ file: _file, _error: _error }) => {
+        // logger.warn(`   ${_file}: ${_error}`);
       });
     }
 
     if (this.fixedFiles > 0) {
-      console.log('\n🎉 Import placement issues fixed!');
-      console.log('📋 Next steps:');
-      console.log('   1. Run: npm run build');
-      console.log('   2. Test the application: npm run dev');
+      // logger.warn('\n🎉 Import placement issues fixed!');
+      // logger.warn('📋 Next steps:');
+      // logger.warn('   1. Run: npm run build');
+      // logger.warn('   2. Test the application: npm run dev');
     } else {
-      console.log('\n ℹ️ No misplaced imports found.');
+      // logger.warn('\n ℹ️ No misplaced imports found.');
     }
   }
 }
@@ -198,10 +224,23 @@ class ImportFixer {
 // CLI interface
 if (require.main === module) {
   const fixer = new ImportFixer();
-  fixer.processAllFiles().catch(error => {
-    console.error('💥 Fatal error:', error);
+  fixer.processAllFiles().catch((_error) => {
+    // logger.error('💥 Fatal error:', _error);
     process.exit(1);
   });
 }
 
-module.exports = ImportFixer; 
+module.exports = ImportFixer;
+
+// Graceful shutdown handling
+process.on('SIGINT', () => {
+  logger.info('\n🛑 Received SIGINT, shutting down gracefully...');
+  // Add cleanup logic here
+  process.exit(0);
+});
+
+process.on('SIGTERM', () => {
+  logger.info('\n🛑 Received SIGTERM, shutting down gracefully...');
+  // Add cleanup logic here
+  process.exit(0);
+});

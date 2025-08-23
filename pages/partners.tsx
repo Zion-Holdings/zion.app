@@ -4,7 +4,6 @@ import {
   Handshake, Users, Globe, Zap, Brain, Atom, 
   ArrowRight, CheckCircle, Star, Building, Shield,
   Award, Rocket
->>>>>>> 916d02471c24718d698d51219f240472f9d52b96
 } from 'lucide-react';
 import Link from 'next/link';
 
@@ -153,7 +152,6 @@ const Partners: React.FC = () => {
       industry: "Consulting Services",
       result: "Expanded service portfolio to include AI and quantum solutions",
       testimonial: "Partnering with Zion Tech Group allowed us to offer cutting-edge technology solutions that our clients demand."
->>>>>>> 916d02471c24718d698d51219f240472f9d52b96
     }
   ];
 
@@ -166,7 +164,6 @@ const Partners: React.FC = () => {
         {/* Hero Section */}
         <section className="relative py-20 px-4 sm:px-6 lg:px-8">
           <div className="max-w-7xl mx-auto text-center">
->>>>>>> 916d02471c24718d698d51219f240472f9d52b96
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
@@ -193,7 +190,6 @@ const Partners: React.FC = () => {
                   Learn More
                 </a>
               </div>
->>>>>>> 916d02471c24718d698d51219f240472f9d52b96
             </motion.div>
           </div>
         </section>
@@ -208,7 +204,6 @@ const Partners: React.FC = () => {
               className="text-center mb-16"
             >
               <h2 className="text-4xl font-bold mb-4">Partnership Types</h2>
->>>>>>> 916d02471c24718d698d51219f240472f9d52b96
               <p className="text-xl text-gray-400 max-w-3xl mx-auto">
                 Choose the partnership model that best fits your business goals and capabilities
               </p>
@@ -311,7 +306,6 @@ const Partners: React.FC = () => {
                       {story.industry}
                     </span>
                   </div>
->>>>>>> 916d02471c24718d698d51219f240472f9d52b96
                 </motion.div>
               ))}
             </div>
@@ -361,7 +355,6 @@ const Partners: React.FC = () => {
         {/* CTA Section */}
         <section className="py-20 px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto text-center">
->>>>>>> 916d02471c24718d698d51219f240472f9d52b96
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -382,7 +375,6 @@ const Partners: React.FC = () => {
                 <a
                   href="mailto:partnerships@ziontechgroup.com"
                   className="px-8 py-4 border border-cyan-500/30 text-cyan-400 rounded-lg font-semibold hover:bg-cyan-500/10 transition-all duration-300"
->>>>>>> 916d02471c24718d698d51219f240472f9d52b96
                 >
                   Email Partnerships Team
                 </a>
@@ -393,6 +385,3 @@ const Partners: React.FC = () => {
       </div>
     </Layout>
   );
-};
-
-export default Partners;

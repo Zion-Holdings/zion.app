@@ -79,7 +79,7 @@ export const innovativeMicroSaasSolutionsV2: InnovativeMicroSaasSolutionV2[] = [
     competitors: ['Buffer, Hootsuite, Sprout Social, Later, Planoly'],
     marketSize: '$23.4B social media management market',
     growthRate: '26% annual growth',
-    variant: 'micro-saas',
+    variant: 'micro-saas-futuristic',
     contactInfo: {
       mobile: '+1 302 464 0950',
       email: 'kleber@ziontechgroup.com',
@@ -130,7 +130,7 @@ export const innovativeMicroSaasSolutionsV2: InnovativeMicroSaasSolutionV2[] = [
     competitors: ['TradeGecko, Zoho Inventory, Fishbowl, NetSuite, SAP Business One'],
     marketSize: '$18.7B inventory management market',
     growthRate: '24% annual growth',
-    variant: 'micro-saas',
+    variant: 'micro-saas-futuristic',
     contactInfo: {
       mobile: '+1 302 464 0950',
       email: 'kleber@ziontechgroup.com',
@@ -181,7 +181,7 @@ export const innovativeMicroSaasSolutionsV2: InnovativeMicroSaasSolutionV2[] = [
     competitors: ['Qualtrics, SurveyMonkey, Typeform, Hotjar, UserVoice'],
     marketSize: '$15.8B customer feedback market',
     growthRate: '22% annual growth',
-    variant: 'micro-saas',
+    variant: 'micro-saas-futuristic',
     contactInfo: {
       mobile: '+1 302 464 0950',
       email: 'kleber@ziontechgroup.com',
@@ -232,7 +232,7 @@ export const innovativeMicroSaasSolutionsV2: InnovativeMicroSaasSolutionV2[] = [
     competitors: ['Expensify, Concur, Receipt Bank, Rydoo, Zoho Expense'],
     marketSize: '$12.3B expense management market',
     growthRate: '21% annual growth',
-    variant: 'micro-saas',
+    variant: 'micro-saas-futuristic',
     contactInfo: {
       mobile: '+1 302 464 0950',
       email: 'kleber@ziontechgroup.com',
@@ -283,7 +283,7 @@ export const innovativeMicroSaasSolutionsV2: InnovativeMicroSaasSolutionV2[] = [
     competitors: ['Asana, Trello, Monday.com, ClickUp, Notion'],
     marketSize: '$16.8B project management market',
     growthRate: '25% annual growth',
-    variant: 'micro-saas',
+    variant: 'micro-saas-futuristic',
     contactInfo: {
       mobile: '+1 302 464 0950',
       email: 'kleber@ziontechgroup.com',
@@ -334,7 +334,7 @@ export const innovativeMicroSaasSolutionsV2: InnovativeMicroSaasSolutionV2[] = [
     competitors: ['Mailchimp, ConvertKit, ActiveCampaign, Drip, Klaviyo'],
     marketSize: '$12B email marketing market',
     growthRate: '22% annual growth',
-    variant: 'micro-saas',
+    variant: 'micro-saas-futuristic',
     contactInfo: {
       mobile: '+1 302 464 0950',
       email: 'kleber@ziontechgroup.com',
@@ -385,7 +385,7 @@ export const innovativeMicroSaasSolutionsV2: InnovativeMicroSaasSolutionV2[] = [
     competitors: ['HubSpot, Salesforce, Pipedrive, Zoho CRM, Freshsales'],
     marketSize: '$14.8B CRM market',
     growthRate: '23% annual growth',
-    variant: 'micro-saas',
+    variant: 'micro-saas-futuristic',
     contactInfo: {
       mobile: '+1 302 464 0950',
       email: 'kleber@ziontechgroup.com',
@@ -436,7 +436,7 @@ export const innovativeMicroSaasSolutionsV2: InnovativeMicroSaasSolutionV2[] = [
     competitors: ['Toggl, Harvest, Time Doctor, RescueTime, Clockify'],
     marketSize: '$8.9B time tracking market',
     growthRate: '19% annual growth',
-    variant: 'micro-saas',
+    variant: 'micro-saas-futuristic',
     contactInfo: {
       mobile: '+1 302 464 0950',
       email: 'kleber@ziontechgroup.com',

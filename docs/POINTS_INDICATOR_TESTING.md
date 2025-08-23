@@ -3,10 +3,13 @@
 ## Issue #14 - Points Indicator (0 pts) Unexplained
 
 ### Problem Description
+
 The points indicator showing "0 pts" in the navigation was not providing any user feedback when hovered or clicked. Users expected either a tooltip explanation or a redirect to a rewards page, but no action occurred.
 
 ### Root Cause Analysis
+
 The issue was caused by **inadequate user experience** around the loyalty program:
+
 - Points badge had basic tooltip functionality but wasn't informative enough
 - The `/points` page showed only an empty state with "Rewards Coming Soon"
 - Non-authenticated users received minimal information about the rewards program
@@ -15,6 +18,7 @@ The issue was caused by **inadequate user experience** around the loyalty progra
 ### Solution Implemented
 
 #### 1. **Enhanced Points Page** (`src/pages/Points.tsx`)
+
 - **Complete loyalty program explainer** for non-authenticated users
 - **Comprehensive points dashboard** for authenticated users
 - **Clear earning opportunities** with point values and actions
@@ -22,6 +26,7 @@ The issue was caused by **inadequate user experience** around the loyalty progra
 - **Visual progress tracking** and engaging UI design
 
 #### 2. **Improved PointsBadge Component** (`src/components/loyalty/PointsBadge.tsx`)
+
 - **Enhanced tooltips** with detailed point breakdown
 - **Clear call-to-action** instructions for both user states
 - **Better visual feedback** about what clicking does
@@ -32,11 +37,13 @@ The issue was caused by **inadequate user experience** around the loyalty progra
 #### **Basic Functionality Test**
 
 1. **Navigate to Application Homepage**
+
    ```
    Visit: https://app.ziontechgroup.com/
    ```
 
 2. **Test Points Badge - Non-Authenticated User**
+
    ```
    1. Ensure you're logged out
    2. Locate the "0 pts" indicator in the navigation
@@ -49,6 +56,7 @@ The issue was caused by **inadequate user experience** around the loyalty progra
    ```
 
 3. **Test Points Badge Click - Non-Authenticated**
+
    ```
    1. Click on the "0 pts" badge
    2. Verify expected behavior:
@@ -59,6 +67,7 @@ The issue was caused by **inadequate user experience** around the loyalty progra
    ```
 
 4. **Test Points Badge - Authenticated User**
+
    ```
    1. Log in to the application
    2. Hover over the points badge
@@ -82,6 +91,7 @@ The issue was caused by **inadequate user experience** around the loyalty progra
 #### **Points Page Testing**
 
 6. **Test Points Page - Non-Authenticated**
+
    ```
    1. Visit /points while logged out
    2. Verify page content:

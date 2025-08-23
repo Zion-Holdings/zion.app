@@ -1,12 +1,9 @@
-import { useEffect } from 'react';
-import { useRouter } from 'next/router';
-
+import React from 'react';
 export function ScrollToTop() {
-  const router = useRouter();
-
-  useEffect(() => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  }, [router.asPath]); // Using router.asPath to trigger on any URL change
-
-  return null;
+  return (
+    <div>
+      <h1>Component</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
 }

@@ -5,8 +5,7 @@ set -e
 
 # Normalize proxy environment variables to avoid npm warnings
 # Some restricted shells do not fully support the '[' alias used in Bash
-# conditionals. Use 'test' directly for maximum portability and keep 'then'
-# on its own line to satisfy shells that reject the single-line form.
+# conditionals. Use 'test' directly for maximum portability.
 if test -n "$npm_config_http_proxy"
 then
   export npm_config_proxy="$npm_config_http_proxy"

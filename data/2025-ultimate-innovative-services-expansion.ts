@@ -79,7 +79,7 @@ export const ultimateInnovativeServices2025: UltimateInnovativeService2025[] = [
     competitors: ['Gainsight, Totango, ChurnZero, ClientSuccess, Planhat'],
     marketSize: '$8.5B customer success software market',
     growthRate: '28% annual growth',
-    variant: 'ai-automation',
+    variant: 'ai-autonomous',
     contactInfo: {
       mobile: '+1 302 464 0950',
       email: 'kleber@ziontechgroup.com',
@@ -130,7 +130,7 @@ export const ultimateInnovativeServices2025: UltimateInnovativeService2025[] = [
     competitors: ['SAP Ariba, Oracle SCM, Manhattan Associates, JDA Software, Blue Yonder'],
     marketSize: '$15.8B supply chain management market',
     growthRate: '24% annual growth',
-    variant: 'ai-automation',
+    variant: 'ai-autonomous',
     contactInfo: {
       mobile: '+1 302 464 0950',
       email: 'kleber@ziontechgroup.com',
@@ -232,7 +232,7 @@ export const ultimateInnovativeServices2025: UltimateInnovativeService2025[] = [
     competitors: ['Datadog, New Relic, Splunk, Dynatrace, PagerDuty'],
     marketSize: '$12.3B DevOps tools market',
     growthRate: '26% annual growth',
-    variant: 'ai-automation',
+    variant: 'ai-autonomous',
     contactInfo: {
       mobile: '+1 302 464 0950',
       email: 'kleber@ziontechgroup.com',
@@ -334,7 +334,7 @@ export const ultimateInnovativeServices2025: UltimateInnovativeService2025[] = [
     competitors: ['DocuSign, ContractPodAi, Evisort, Kira Systems, Luminance'],
     marketSize: '$18.5B legal tech market',
     growthRate: '22% annual growth',
-    variant: 'ai-automation',
+    variant: 'ai-autonomous',
     contactInfo: {
       mobile: '+1 302 464 0950',
       email: 'kleber@ziontechgroup.com',
@@ -436,7 +436,7 @@ export const ultimateInnovativeServices2025: UltimateInnovativeService2025[] = [
     competitors: ['Siemens, GE Digital, Rockwell Automation, ABB, Schneider Electric'],
     marketSize: '$22.4B industrial IoT market',
     growthRate: '29% annual growth',
-    variant: 'ai-automation',
+    variant: 'ai-autonomous',
     contactInfo: {
       mobile: '+1 302 464 0950',
       email: 'kleber@ziontechgroup.com',

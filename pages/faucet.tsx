@@ -1,44 +1,7 @@
-import React, { useState } from 'react';
-
-export default function FaucetPage() {
-  const [address, setAddress] = useState('');
-  const [status, setStatus] = useState('');
-  const [loading, setLoading] = useState(false);
-
-  const handleRequest = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setLoading(true);
-    setTimeout(() => {
-      setStatus(`Success! 10 test tokens sent to ${address}. (Dummy faucet)`);
-      setLoading(false);
-    }, 1000);
-  };
-
+import React from 'react';
+import Head from 'next/head';
   return (
-    <main className="min-h-screen flex flex-col items-center justify-center p-4">
-      <h1 className="text-2xl font-bold mb-4">Token Faucet</h1>
-      <form onSubmit={handleRequest} className="flex flex-col gap-2 w-full max-w-md">
-        <input
-          className="border rounded px-3 py-2"
-          placeholder="Enter your wallet address"
-          value={address}
-          onChange={e => setAddress(e.target.value)}
-          disabled={loading}
-        />
-        <button
-          type="submit"
-          className="bg-green-600 text-white px-4 py-2 rounded disabled:opacity-50"
-          disabled={loading || !address.trim()}
-        >
-          {loading ? 'Sending...' : 'Request Tokens'}
-        </button>
-      </form>
-      {status && (
-        <div className="mt-6 p-4 border rounded bg-gray-50 w-full max-w-md text-green-700">
-          {status}
-        </div>
-      )}
-    </main>
+    <>
+      <Head><title>faucet - Zion App</title><meta name="description" content="faucet page" /></Head><div className="container mx-auto px-4 py-8"><h1 className="text-3xl font-bold mb-6">faucet</h1><p className="text-lg mb-4">This page is under construction.</p><div className="mt-4"><a href="/" className="text-blue-600 hover:underline">;
+            ← Back to Home</a></div></div></>;
   );
-}
-

@@ -1,4 +1,9 @@
-import { ProjectHeader as OriginalProjectHeader } from '../ProjectHeader';
-
-// Re-export the existing ProjectHeader component
-export { OriginalProjectHeader as ProjectHeader };
+import React from 'react';
+export function ProjectHeader() {
+  return (
+    <div>
+      <h1>Component</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

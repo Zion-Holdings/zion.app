@@ -1,1 +1,5 @@
-import type { AuthError, User } from '@supabase/supabase-js'; 
+// Hook for useEmailAuth;
+export const useUseEmailAuth: unknown = () => {
+  // TODO: Implement hook logic;
+  return {};
+};

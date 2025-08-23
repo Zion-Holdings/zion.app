@@ -92,8 +92,8 @@ declare module 'next/link' {
 declare module 'next/router' {
   interface NextRouter {
     pathname: string
-    92kxb3-codex/populate-forum-category-with-posts
-    query: Record<string, string | string[]>
+    amourx-codex/populate-forum-category-with-posts
+    query: Record<string, string | string[] | undefined>
       main
     isFallback?: boolean
   }

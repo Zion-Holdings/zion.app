@@ -41,8 +41,6 @@ import { realMarketServices } from '../../data/real-market-services';
 import { real2029Q2Additions } from '../../data/real-2029-q2-additions';
 import { real2029Q3Additions } from '../../data/real-2029-q3-additions';
 import { real2029Q4Additions } from '../../data/real-2029-q4-additions';
-<<<<<<< HEAD
-=======
 import { real2030Q1Additions } from '../../data/real-2030-q1-additions';
 import { enterpriseITSolutions } from '../../data/2034-enterprise-it-solutions';
 import { innovativeMicroSaasSolutions } from '../../data/2034-innovative-micro-saas-solutions';
@@ -61,7 +59,6 @@ import { real2035Q1Additions } from '../../data/real-2035-q1-additions';
 import { real2035Q2AdditionsExtra } from '../../data/real-2035-q2-additions-extra';
 import { real2036ServiceExpansions } from '../../data/real-2036-service-expansions';
 import { real2026Q4ExpansionsV3 } from '../../data/real-2026-q4-expansions-v3';
->>>>>>> 3d0c36eea3be5345cefaebf51a30415fed79edb9
 
 type Service = typeof enhancedRealMicroSaasServices[number];
 
@@ -107,9 +104,6 @@ function getAllServices(): Service[] {
 		.concat(realMarketServices as unknown as Service[])
 		.concat(real2029Q2Additions as unknown as Service[])
 		.concat(real2029Q3Additions as unknown as Service[])
-<<<<<<< HEAD
-		.concat(real2029Q4Additions as unknown as Service[]);
-=======
 		.concat(real2029Q4Additions as unknown as Service[])
 		.concat(real2030Q1Additions as unknown as Service[])
 		.concat(real2030Q2Additions as unknown as Service[])
@@ -127,7 +121,6 @@ function getAllServices(): Service[] {
 		.concat(real2035Q2AdditionsExtra as unknown as Service[])
 		.concat(real2026Q4ExpansionsV3 as unknown as Service[])
 		.concat(real2036ServiceExpansions as unknown as Service[]);
->>>>>>> 3d0c36eea3be5345cefaebf51a30415fed79edb9
 }
 
 function toSlug(value: string): string {
@@ -337,4 +330,10 @@ export default function ServiceDetailPage({ service }: { service: Service }) {
 			</div>
 		</UltraFuturisticBackground>
 	);
+  return (
+    <>
+      <Head><title>services/[slug] - Zion App</title><meta name="description" content="services/[slug] page" /></Head><div className="container mx-auto px-4 py-8"><h1 className="text-3xl font-bold mb-6">services/[slug]</h1><p className="text-lg mb-4">This page is under construction.</p><div className="mt-4"><a href="/" className="text-blue-600 hover:underline">;
+            ← Back to Home</a></div></div></>;
+  );
+=======
 }

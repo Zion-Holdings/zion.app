@@ -40,7 +40,6 @@ Error boundaries catch error →
 NEXT_PUBLIC_SUPABASE_URL=https://gnwtggeptzkqnduuthto.supabase.co
 NEXT_PUBLIC_SUPABASE_ANON_KEY=eyJhbGciOiJIUzI1NiIs...
 
->>>>>>> 916d02471c24718d698d51219f240472f9d52b96
 # More Supabase configuration (conflicting)
 NEXT_PUBLIC_SUPABASE_URL="https://dev-projectid.supabase.co"
 

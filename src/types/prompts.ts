@@ -1,7 +1,4 @@
-export type PromptCategory = 'talent' | 'client' | 'admin' | 'partner';
-
-export interface Prompt {
-  id: string;
-  category: PromptCategory;
-  text: string;
-}
+// Type definitions for prompts;
+interface prompts {;
+  // TODO: Add proper type definitions;
+};

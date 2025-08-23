@@ -2,9 +2,9 @@ name: Auto Report Errors to Cursor
 
 on:
   push:
-    branches: [ main ]
+    branches: [main]
   pull_request:
-    types: [ opened, synchronize, reopened ]
+    types: [opened, synchronize, reopened]
 
 jobs:
   report-errors:
@@ -40,4 +40,4 @@ jobs:
           CURSOR_API_KEY: ${{ secrets.CURSOR_API_KEY }}
           CURSOR_PROJECT_ID: ${{ secrets.CURSOR_PROJECT_ID }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: npm run errors:autofix 
+        run: npm run errors:autofix
