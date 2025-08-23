@@ -20,4 +20,10 @@ describe('Talent Profile Page', () => {
     // but targeting h1 directly is also fine as per issue.
     cy.get('h1', { timeout: 10000 }).should('contain.text', 'Alexander Chen');
   });
+
+  it('displays skills for first talent slug', () => {
+    cy.visit('/talent/t-001');
+    cy.contains('Alexandra Chen');
+    cy.contains('Machine Learning');
+  });
 });
