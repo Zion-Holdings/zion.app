@@ -22,8 +22,18 @@ exports.handler = async () => {
     return status;
   }
 
-  logStep('automation:insights', () => runNode('automation/automation-insights-digest.cjs'));
-  logStep('git:sync', () => runNode('automation/advanced-git-sync.cjs'));
+  // Generate sitemap for crawling
+  logStep('sitemap:generate', () => runNode('scripts/generate-sitemap.js'));
+
+  // Build search index if available
+  try {
+    logStep('search:index', () => runNode('scripts/generate-search-index.js'));
+  } catch (error) {
+    logs.push(`Search index generation skipped: ${String(error)}`);
+  }
+
+  // Commit and push
+  logStep('git:sync', () => runNode('automation/git-sync.cjs'));
 
   return { statusCode: 200, body: logs.join('\n') };
 };
