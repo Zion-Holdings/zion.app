@@ -4588,6 +4588,14 @@ export const innovativeMicroSaasServices: EnhancedRealMicroSaasService[] = [
       'Performance analytics'
     ],
     popular: true,
+<<<<<<< HEAD
+    icon: '📦',
+    color: 'from-teal-600 to-cyan-500',
+    textColor: 'text-teal-400',
+    link: 'https://ziontechgroup.com/quantum-logistics',
+    marketPosition: 'Industry-leading logistics optimization with 40% cost reduction',
+    targetAudience: 'Logistics companies, E-commerce businesses, Manufacturers, Retailers',
+=======
     icon: '🔐',
     color: 'from-green-600 to-emerald-700',
     textColor: 'text-green-400',
@@ -5188,6 +5196,7 @@ export const serviceCategories = [
     link: 'https://ziontechgroup.com/ai-climate-prediction-engine',
     marketPosition: 'Advanced AI climate prediction platform. Competes with IBM ($500+/month) and Microsoft ($400+/month) with quantum enhancements.',
     targetAudience: 'Government agencies, Research institutions, Insurance companies, Agricultural companies, Energy companies, Environmental organizations',
+>>>>>>> origin/cursor/enhance-app-services-and-website-with-futuristic-design-b637
     trialDays: 21,
     setupTime: '1 week',
     category: 'Logistics & Supply Chain',
