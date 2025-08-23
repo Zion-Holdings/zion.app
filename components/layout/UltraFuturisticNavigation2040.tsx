@@ -6,7 +6,8 @@ import {
   Brain, Atom, Shield, Rocket, Cpu, Database, Target, Sparkles,
   Home, Briefcase, Users, FileText, Phone, Mail, MapPin, Globe,
   Zap, Star, TrendingUp, Award, Clock, CheckCircle, ExternalLink,
-  GraduationCap, Building, Truck, Zap as ZapIcon, Heart, DollarSign
+  Building, GraduationCap, Heart, Palette, BarChart3, Cloud, Lock,
+  Handshake, Video, BookOpen
 } from 'lucide-react';
 
 const UltraFuturisticNavigation2040: React.FC = () => {
@@ -57,45 +58,63 @@ const UltraFuturisticNavigation2040: React.FC = () => {
         },
         {
           name: 'AI & Consciousness',
-          href: '/services/ai-consciousness',
+          href: '/services/ai-consciousness-evolution-platform-2045',
           icon: Brain,
           description: 'AI consciousness evolution and development',
-          color: 'from-cyan-500 to-blue-500'
+          color: 'from-purple-500 to-pink-500',
+          featured: true
         },
         {
           name: 'Quantum Technology',
-          href: '/services/quantum-technology',
+          href: '/services/quantum-ai-hybrid-computing-platform-2045',
           icon: Atom,
           description: 'Quantum computing and hybrid systems',
-          color: 'from-blue-500 to-indigo-500'
+          color: 'from-cyan-500 to-blue-500',
+          featured: true
         },
         {
           name: 'Cybersecurity',
-          href: '/services/cybersecurity',
+          href: '/services/quantum-cybersecurity-intelligence-2045',
           icon: Shield,
           description: 'Advanced security and protection',
-          color: 'from-red-500 to-orange-500'
+          color: 'from-red-500 to-orange-500',
+          featured: true
         },
         {
           name: 'Business Solutions',
-          href: '/services/business-solutions',
+          href: '/services/autonomous-ai-business-intelligence-2045',
           icon: Target,
           description: 'Micro SAAS and business automation',
-          color: 'from-emerald-500 to-teal-500'
+          color: 'from-emerald-500 to-teal-500',
+          featured: true
         },
         {
           name: 'IT Infrastructure',
-          href: '/services/it-infrastructure',
+          href: '/services/quantum-cloud-infrastructure-platform-2045',
           icon: Cpu,
           description: 'Cloud and infrastructure solutions',
           color: 'from-yellow-500 to-orange-500'
         },
         {
           name: 'Space Technology',
-          href: '/services/space-technology',
+          href: '/services/space-resource-intelligence-platform-2045',
           icon: Rocket,
           description: 'Space exploration and resource management',
           color: 'from-pink-500 to-red-500'
+        },
+        {
+          name: 'Data & Analytics',
+          href: '/data-analytics',
+          icon: BarChart3,
+          description: 'Advanced data intelligence solutions',
+          color: 'from-indigo-500 to-purple-500'
+        },
+        {
+          name: 'Automation & DevOps',
+          href: '/automation',
+          icon: Zap,
+          description: 'Intelligent automation platforms',
+          color: 'from-green-500 to-emerald-500'
         }
       ]
     },
@@ -110,21 +129,24 @@ const UltraFuturisticNavigation2040: React.FC = () => {
           href: '/solutions/healthcare',
           icon: Heart,
           description: 'AI-powered healthcare solutions',
-          color: 'from-red-500 to-pink-500'
+          color: 'from-red-500 to-pink-500',
+          featured: true
         },
         {
           name: 'Financial Services',
           href: '/solutions/financial',
           icon: DollarSign,
           description: 'Fintech and banking solutions',
-          color: 'from-green-500 to-emerald-500'
+          color: 'from-green-500 to-emerald-500',
+          featured: true
         },
         {
           name: 'Manufacturing',
           href: '/solutions/manufacturing',
           icon: Cpu,
           description: 'Smart manufacturing and automation',
-          color: 'from-blue-500 to-indigo-500'
+          color: 'from-blue-500 to-indigo-500',
+          featured: true
         },
         {
           name: 'Retail & E-commerce',
@@ -148,26 +170,113 @@ const UltraFuturisticNavigation2040: React.FC = () => {
           color: 'from-gray-500 to-blue-500'
         },
         {
-          name: 'Energy & Utilities',
-          href: '/solutions/energy',
-          icon: ZapIcon,
-          description: 'Smart energy and grid solutions',
-          color: 'from-yellow-500 to-orange-500'
+          name: 'Entertainment & Media',
+          href: '/entertainment-media-solutions',
+          icon: Palette,
+          description: 'Creative technology solutions',
+          color: 'from-pink-500 to-rose-500'
         },
         {
-          name: 'Transportation',
-          href: '/solutions/transportation',
-          icon: Truck,
-          description: 'Smart transportation and logistics',
-          color: 'from-blue-500 to-cyan-500'
+          name: 'Energy & Utilities',
+          href: '/energy-utilities-solutions',
+          icon: Zap,
+          description: 'Smart energy management',
+          color: 'from-yellow-500 to-orange-500'
         }
       ]
     },
     {
-      name: 'About',
+      name: 'Company',
       href: '/about',
       icon: Users,
-      description: 'Learn about our mission and team'
+      description: 'Learn about our mission and team',
+      dropdown: [
+        {
+          name: 'About Us',
+          href: '/about',
+          icon: Users,
+          description: 'Our story and mission',
+          color: 'from-blue-500 to-indigo-500'
+        },
+        {
+          name: 'Our Team',
+          href: '/team',
+          icon: Users,
+          description: 'Meet our experts',
+          color: 'from-green-500 to-emerald-500'
+        },
+        {
+          name: 'Careers',
+          href: '/careers',
+          icon: Briefcase,
+          description: 'Join our team',
+          color: 'from-purple-500 to-pink-500'
+        },
+        {
+          name: 'Partners',
+          href: '/partners',
+          icon: Handshake,
+          description: 'Strategic partnerships',
+          color: 'from-orange-500 to-red-500'
+        },
+        {
+          name: 'News & Press',
+          href: '/news',
+          icon: FileText,
+          description: 'Latest updates',
+          color: 'from-indigo-500 to-purple-500'
+        },
+        {
+          name: 'Case Studies',
+          href: '/case-studies',
+          icon: Award,
+          description: 'Success stories',
+          color: 'from-emerald-500 to-teal-500'
+        }
+      ]
+    },
+    {
+      name: 'Resources',
+      href: '/resources',
+      icon: FileText,
+      description: 'Knowledge and tools',
+      dropdown: [
+        {
+          name: 'Blog',
+          href: '/blog',
+          icon: FileText,
+          description: 'Insights and trends',
+          color: 'from-blue-500 to-indigo-500'
+        },
+        {
+          name: 'Webinars',
+          href: '/webinars',
+          icon: Video,
+          description: 'Educational sessions',
+          color: 'from-purple-500 to-pink-500'
+        },
+        {
+          name: 'White Papers',
+          href: '/white-papers',
+          icon: FileText,
+          description: 'In-depth research',
+          color: 'from-green-500 to-emerald-500'
+        },
+        {
+          name: 'Documentation',
+          href: '/docs',
+          icon: BookOpen,
+          description: 'Technical guides',
+          color: 'from-orange-500 to-red-500'
+        },
+        {
+          name: 'Training',
+          href: '/training',
+          icon: GraduationCap,
+          description: 'Skill development',
+          color: 'from-indigo-500 to-purple-500'
+        }
+      ]
     },
     {
       name: 'Resources',
@@ -267,32 +376,39 @@ const UltraFuturisticNavigation2040: React.FC = () => {
                     <AnimatePresence>
                       {activeDropdown === item.name && (
                         <motion.div
-                          initial={{ opacity: 0, y: 10, scale: 0.95 }}
-                          animate={{ opacity: 1, y: 0, scale: 1 }}
-                          exit={{ opacity: 0, y: 10, scale: 0.95 }}
+                          initial={{ opacity: 0, y: -10 }}
+                          animate={{ opacity: 1, y: 0 }}
+                          exit={{ opacity: 0, y: -10 }}
                           transition={{ duration: 0.2 }}
                           className="absolute top-full left-0 mt-2 w-80 bg-black/90 backdrop-blur-xl border border-white/10 rounded-2xl shadow-2xl overflow-hidden"
                         >
                           <div className="p-4">
-                            <div className="grid grid-cols-1 gap-2">
-                              {item.dropdown.map((dropdownItem) => (
+                            <div className="grid grid-cols-1 gap-3">
+                              {item.dropdown.map((subItem) => (
                                 <Link
-                                  key={dropdownItem.name}
-                                  href={dropdownItem.href}
-                                  className="group/item flex items-start space-x-3 p-3 rounded-xl hover:bg-white/5 transition-all duration-300"
+                                  key={subItem.name}
+                                  href={subItem.href}
+                                  className="group flex items-start space-x-3 p-3 rounded-xl hover:bg-white/5 transition-all duration-300"
+                                  onClick={closeMobileMenu}
                                 >
-                                  <div className={`w-10 h-10 rounded-xl bg-gradient-to-r ${dropdownItem.color} flex items-center justify-center flex-shrink-0 group-hover/item:scale-110 transition-transform duration-300`}>
-                                    <dropdownItem.icon className="w-5 h-5 text-white" />
+                                  <div className={`w-10 h-10 rounded-lg bg-gradient-to-r ${subItem.color} flex items-center justify-center group-hover:scale-110 transition-transform duration-300`}>
+                                    <subItem.icon className="w-5 h-5 text-white" />
                                   </div>
                                   <div className="flex-1 min-w-0">
-                                    <div className="text-white font-medium group-hover/item:text-cyan-400 transition-colors duration-300">
-                                      {dropdownItem.name}
+                                    <div className="flex items-center space-x-2">
+                                      <p className="text-sm font-medium text-white group-hover:text-cyan-400 transition-colors duration-300">
+                                        {subItem.name}
+                                      </p>
+                                      {subItem.featured && (
+                                        <span className="px-2 py-1 text-xs font-medium bg-gradient-to-r from-yellow-400 to-orange-500 text-black rounded-full">
+                                          Featured
+                                        </span>
+                                      )}
                                     </div>
-                                    <div className="text-sm text-white/60 mt-1">
-                                      {dropdownItem.description}
-                                    </div>
+                                    <p className="text-xs text-white/60 mt-1 line-clamp-2">
+                                      {subItem.description}
+                                    </p>
                                   </div>
-                                  <ChevronRight className="w-4 h-4 text-white/40 group-hover/item:text-white/60 transition-colors duration-300" />
                                 </Link>
                               ))}
                             </div>
@@ -314,7 +430,7 @@ const UltraFuturisticNavigation2040: React.FC = () => {
                   placeholder="Search services..."
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
-                  className="w-64 px-4 py-2 pl-10 bg-white/10 border border-white/20 rounded-xl text-white placeholder-white/50 focus:outline-none focus:border-cyan-400 focus:bg-white/20 transition-all duration-300"
+                  className="w-64 px-4 py-2 pl-10 bg-white/10 border border-white/20 rounded-lg text-white placeholder-white/50 focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:border-transparent transition-all duration-300"
                 />
                 <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-white/50" />
               </div>
@@ -322,7 +438,7 @@ const UltraFuturisticNavigation2040: React.FC = () => {
               {/* Contact Button */}
               <Link
                 href="/contact"
-                className="px-6 py-2 bg-gradient-to-r from-cyan-500 to-purple-500 text-white font-medium rounded-xl hover:from-cyan-600 hover:to-purple-600 transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-cyan-500/25"
+                className="px-6 py-2 bg-gradient-to-r from-cyan-500 to-purple-500 text-white font-medium rounded-lg hover:from-cyan-600 hover:to-purple-600 transition-all duration-300 transform hover:scale-105"
               >
                 Get Started
               </Link>
@@ -332,14 +448,10 @@ const UltraFuturisticNavigation2040: React.FC = () => {
       </nav>
 
       {/* Mobile Navigation */}
-      <nav className="lg:hidden fixed top-0 left-0 right-0 z-50">
-        <div className={`transition-all duration-300 ${
-          isScrolled 
-            ? 'bg-black/90 backdrop-blur-xl border-b border-white/10' 
-            : 'bg-transparent'
-        }`}>
-          <div className="flex items-center justify-between h-16 px-4">
-            {/* Mobile Logo */}
+      <nav className="lg:hidden fixed top-0 left-0 right-0 z-50 bg-black/90 backdrop-blur-xl border-b border-white/10">
+        <div className="px-4 py-3">
+          <div className="flex items-center justify-between">
+            {/* Logo */}
             <Link href="/" className="flex items-center space-x-2">
               <div className="w-8 h-8 bg-gradient-to-r from-cyan-500 to-purple-500 rounded-lg flex items-center justify-center">
                 <Brain className="w-5 h-5 text-white" />
@@ -365,7 +477,7 @@ const UltraFuturisticNavigation2040: React.FC = () => {
               animate={{ opacity: 1, height: 'auto' }}
               exit={{ opacity: 0, height: 0 }}
               transition={{ duration: 0.3 }}
-              className="bg-black/95 backdrop-blur-xl border-b border-white/10 overflow-hidden"
+              className="bg-black/95 border-t border-white/10 overflow-hidden"
             >
               <div className="px-4 py-6 space-y-4">
                 {/* Search */}
@@ -375,9 +487,9 @@ const UltraFuturisticNavigation2040: React.FC = () => {
                     placeholder="Search services..."
                     value={searchQuery}
                     onChange={(e) => setSearchQuery(e.target.value)}
-                    className="w-full px-4 py-3 pl-10 bg-white/10 border border-white/20 rounded-xl text-white placeholder-white/50 focus:outline-none focus:border-cyan-400 focus:bg-white/20 transition-all duration-300"
+                    className="w-full px-4 py-3 pl-10 bg-white/10 border border-white/20 rounded-lg text-white placeholder-white/50 focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:border-transparent"
                   />
-                  <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-white/50" />
+                  <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-white/50" />
                 </div>
 
                 {/* Navigation Items */}
@@ -387,81 +499,74 @@ const UltraFuturisticNavigation2040: React.FC = () => {
                       <div>
                         <button
                           onClick={() => handleDropdownToggle(item.name)}
-                          className="flex items-center justify-between w-full p-3 text-left text-white hover:text-cyan-400 transition-colors duration-300 rounded-lg hover:bg-white/5"
+                          className="flex items-center justify-between w-full px-4 py-3 text-left text-white hover:text-cyan-400 transition-colors duration-300"
                         >
                           <span className="font-medium">{item.name}</span>
-                          <ChevronDown className={`w-5 h-5 transition-transform duration-300 ${
-                            activeDropdown === item.name ? 'rotate-180' : ''
+                          <ChevronRight className={`w-4 h-4 transition-transform duration-300 ${
+                            activeDropdown === item.name ? 'rotate-90' : ''
                           }`} />
                         </button>
                         
-                        {activeDropdown === item.label && (
-                          <motion.div
-                            initial={{ opacity: 0, height: 0 }}
-                            animate={{ opacity: 1, height: 'auto' }}
-                            exit={{ opacity: 0, height: 0 }}
-                            transition={{ duration: 0.2 }}
-                            className="ml-8 mt-2 space-y-2"
-                          >
-                            {item.children.map((child) => (
+                        {activeDropdown === item.name && (
+                          <div className="ml-4 mt-2 space-y-2">
+                            {item.dropdown.map((subItem) => (
                               <Link
-                                key={child.label}
-                                href={child.href}
-                                className="flex items-center space-x-3 px-4 py-2 text-gray-400 hover:text-white transition-colors duration-300 rounded-lg"
-                                onClick={closeNavigation}
+                                key={subItem.name}
+                                href={subItem.href}
+                                className="block px-4 py-2 text-white/80 hover:text-cyan-400 transition-colors duration-300"
+                                onClick={closeMobileMenu}
                               >
-                                {child.icon}
-                                <span>{child.label}</span>
-                                {child.featured && (
-                                  <span className="ml-auto px-2 py-1 text-xs bg-gradient-to-r from-yellow-400 to-orange-500 text-black font-bold rounded-full">
-                                    Featured
-                                  </span>
-                                )}
+                                {subItem.name}
                               </Link>
                             ))}
-                          </motion.div>
+                          </div>
                         )}
                       </div>
                     ) : (
                       <Link
                         href={item.href}
-                        className="flex items-center space-x-3 px-4 py-3 text-gray-300 hover:text-white transition-colors duration-300 rounded-lg"
-                        onClick={closeNavigation}
+                        className="block px-4 py-3 text-white hover:text-cyan-400 transition-colors duration-300"
+                        onClick={closeMobileMenu}
                       >
-                        {item.icon}
-                        <span>{item.label}</span>
-                        {item.badge && (
-                          <span className="ml-auto px-2 py-1 text-xs bg-gradient-to-r from-cyan-500 to-purple-600 text-white rounded-full">
-                            {item.badge}
-                          </span>
-                        )}
+                        {item.name}
                       </Link>
                     )}
                   </div>
                 ))}
-                
-                {/* Mobile CTA */}
-                <div className="pt-4 border-t border-gray-700">
-                  <Link href="/contact">
-                    <motion.button
-                      className="w-full px-6 py-3 bg-gradient-to-r from-cyan-500 to-purple-600 text-white font-semibold rounded-lg hover:from-cyan-600 hover:to-purple-700 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-cyan-400/50"
-                      whileHover={{ scale: 1.02 }}
-                      whileTap={{ scale: 0.98 }}
-                      onClick={closeNavigation}
-                      aria-label="Contact us"
-                    >
-                      Get Started
-                    </motion.button>
+
+                {/* Contact Button */}
+                <div className="pt-4">
+                  <Link
+                    href="/contact"
+                    className="block w-full px-6 py-3 bg-gradient-to-r from-cyan-500 to-purple-500 text-white font-medium text-center rounded-lg hover:from-cyan-600 hover:to-purple-600 transition-all duration-300"
+                    onClick={closeMobileMenu}
+                  >
+                    Get Started
                   </Link>
+                </div>
+
+                {/* Contact Info */}
+                <div className="pt-4 border-t border-white/10">
+                  <div className="space-y-2 text-sm text-white/60">
+                    <div className="flex items-center space-x-2">
+                      <Phone className="w-4 h-4" />
+                      <span>{contactInfo.phone}</span>
+                    </div>
+                    <div className="flex items-center space-x-2">
+                      <Mail className="w-4 h-4" />
+                      <span>{contactInfo.email}</span>
+                    </div>
+                    <div className="flex items-center space-x-2">
+                      <MapPin className="w-4 h-4" />
+                      <span>{contactInfo.address}</span>
+                    </div>
+                  </div>
                 </div>
               </div>
             </motion.div>
           )}
         </AnimatePresence>
       </nav>
-
-      {/* Spacer for fixed navigation */}
-      <div className="h-20 lg:h-20" />
     </>
   );
 };

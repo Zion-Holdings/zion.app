@@ -11,6 +11,7 @@ import {
 } from 'lucide-react';
 
 // Import our new service data
+<<<<<<< HEAD
 import { advancedEnterpriseSolutions2025 } from '../data/2025-advanced-enterprise-solutions';
 import { innovativeAIAutomationServices2025 } from '../data/2025-innovative-ai-automation-services';
 import { innovativeITInfrastructureServices2025 } from '../data/2025-innovative-it-infrastructure-services';
@@ -45,6 +46,39 @@ const categories = [
   'Marketing',
   'Finance',
   'HR & Operations'
+=======
+import { advancedAIMLServices } from '../data/2025-advanced-ai-ml-services';
+import { advancedCybersecurityServices2025 } from '../data/2025-advanced-cybersecurity-services';
+import { advancedCloudDevOpsServices } from '../data/2025-advanced-cloud-devops-services';
+import { industrySpecificSolutions } from '../data/2025-industry-specific-solutions';
+import { emergingTechnologyServices } from '../data/2025-emerging-technology-services';
+
+// Contact information
+const contactInfo = {
+  mobile: '+1 302 464 0950',
+  email: 'kleber@ziontechgroup.com',
+  address: '364 E Main St STE 1008 Middletown DE 19709',
+  website: 'https://ziontechgroup.com'
+};
+
+// All services combined
+const allServices = [
+  ...advancedAIMLServices,
+  ...advancedCybersecurityServices2025,
+  ...advancedCloudDevOpsServices,
+  ...industrySpecificSolutions,
+  ...emergingTechnologyServices
+];
+
+// Service categories
+const serviceCategories = [
+  'All Services',
+  'AI & Machine Learning',
+  'Cybersecurity',
+  'Cloud & DevOps',
+  'Industry Solutions',
+  'Emerging Tech'
+>>>>>>> 0d3d59dc48bc65c272e3c7f2106b07881fc97407
 ];
 
 const ComprehensiveServicesShowcase: React.FC = () => {

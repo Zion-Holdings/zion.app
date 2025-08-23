@@ -1,238 +1,413 @@
-import React, { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import Link from 'next/link';
-import { 
-  ArrowRight, Clock, Users, Zap, Shield, Brain, Atom, Rocket, 
-  ExternalLink, Heart, Share2, Bookmark
+import React, { useState, useCallback, memo, useMemo } from 'react';
+import { motion } from 'framer-motion';
+import {
+  Brain,
+  ArrowRight,
+  Star,
+  Zap,
+  CheckCircle,
+  ExternalLink,
+  TrendingUp,
+  Clock,
+  Users,
+  Award,
+  Shield,
+  Rocket,
+  Globe,
+  Cpu,
+  Database,
+  Atom,
+  Target,
+  Sparkles
 } from 'lucide-react';
 
 interface ServiceCardProps {
   service: {
-    id: string;
+    id?: string;
+    slug: string;
     name: string;
-    tagline: string;
     description: string;
     category: string;
     type: string;
-    pricing: {
-      starter: string;
-      professional: string;
-      enterprise: string;
-      custom: string;
-    };
     features: string[];
     benefits: string[];
-    useCases: string[];
-    marketSize: string;
-    targetAudience: string;
-    competitiveAdvantage: string;
-    contact: string;
-    mobile: string;
-    address: string;
-    website: string;
-    slug: string;
+    pricing: {
+      starter: string;
+      professional?: string;
+      enterprise?: string;
+    };
+    marketSize?: string;
+    competitiveAdvantage?: string;
+    icon?: string;
+    popular?: boolean;
+    rating?: number;
+    reviews?: number;
+    launchDate?: string;
+    customers?: number;
   };
+  features?: string[];
+  benefits?: string[];
+  rating?: number;
+  responseTime?: string;
+  clients?: number;
+  performance?: string;
+  security?: string;
+  ai?: string;
+  quantum?: string;
+  space?: string;
+  enterprise?: string;
+  tagline?: string;
+  useCases?: string[];
+  marketSize?: string;
+  targetAudience?: string;
+  competitiveAdvantage?: string;
+  contact?: string;
+  mobile?: string;
+  address?: string;
+  website?: string;
+  slug?: string;
 }
 
-const ServiceCard: React.FC<ServiceCardProps> = ({ service }) => {
+// Enhanced icon mapping for different service categories
+const getCategoryIcon = (category: string) => {
+  const categoryLower = category.toLowerCase();
+  if (categoryLower.includes('ai') || categoryLower.includes('consciousness') || categoryLower.includes('machine learning')) return Brain;
+  if (categoryLower.includes('quantum')) return Atom;
+  if (categoryLower.includes('security') || categoryLower.includes('cyber')) return Shield;
+  if (categoryLower.includes('infrastructure') || categoryLower.includes('it')) return Cpu;
+  if (categoryLower.includes('data') || categoryLower.includes('database')) return Database;
+  if (categoryLower.includes('space') || categoryLower.includes('rocket')) return Rocket;
+  if (categoryLower.includes('business') || categoryLower.includes('saas')) return Target;
+  if (categoryLower.includes('global') || categoryLower.includes('world')) return Globe;
+  if (categoryLower.includes('automation')) return Zap;
+  return Sparkles; // Default icon
+};
+
+// Enhanced color mapping for categories
+const getCategoryColor = (category: string) => {
+  const categoryLower = category.toLowerCase();
+  if (categoryLower.includes('ai') || categoryLower.includes('consciousness')) return 'from-cyan-500 to-blue-500';
+  if (categoryLower.includes('quantum')) return 'from-blue-500 to-indigo-500';
+  if (categoryLower.includes('security') || categoryLower.includes('cyber')) return 'from-red-500 to-orange-500';
+  if (categoryLower.includes('infrastructure') || categoryLower.includes('it')) return 'from-green-500 to-teal-500';
+  if (categoryLower.includes('data') || categoryLower.includes('database')) return 'from-purple-500 to-pink-500';
+  if (categoryLower.includes('space') || categoryLower.includes('rocket')) return 'from-indigo-500 to-purple-500';
+  if (categoryLower.includes('business') || categoryLower.includes('saas')) return 'from-yellow-500 to-orange-500';
+  if (categoryLower.includes('global') || categoryLower.includes('world')) return 'from-emerald-500 to-green-500';
+  if (categoryLower.includes('automation')) return 'from-violet-500 to-purple-500';
+  return 'from-gray-500 to-slate-500';
+};
+
+const ServiceCard: React.FC<ServiceCardProps> = ({ service, priority = false }) => {
   const [isHovered, setIsHovered] = useState(false);
-  const [isLiked, setIsLiked] = useState(false);
-  const [isBookmarked, setIsBookmarked] = useState(false);
-  const [showFullDescription, setShowFullDescription] = useState(false);
+  const [isExpanded, setIsExpanded] = useState(false);
 
-  // Get category icon and color
-  const getCategoryIcon = (category: string) => {
-    if (category.toLowerCase().includes('ai') || category.toLowerCase().includes('consciousness')) {
-      return { icon: Brain, color: 'from-cyan-500 to-blue-600' };
-    } else if (category.toLowerCase().includes('quantum')) {
-      return { icon: Atom, color: 'from-blue-500 to-indigo-600' };
-    } else if (category.toLowerCase().includes('cybersecurity') || category.toLowerCase().includes('security')) {
-      return { icon: Shield, color: 'from-red-500 to-orange-600' };
-    } else if (category.toLowerCase().includes('space')) {
-      return { icon: Rocket, color: 'from-indigo-500 to-purple-600' };
-    } else if (category.toLowerCase().includes('enterprise') || category.toLowerCase().includes('business')) {
-      return { icon: Users, color: 'from-green-500 to-teal-600' };
-    } else {
-      return { icon: Zap, color: 'from-purple-500 to-pink-600' };
+  const CategoryIcon = getCategoryIcon(service.category);
+  const categoryColor = getCategoryColor(service.category);
+
+  // Memoize computed values
+  const displayFeatures = useMemo(() => 
+    service.features.slice(0, isExpanded ? service.features.length : 3), 
+    [service.features, isExpanded]
+  );
+
+  const displayBenefits = useMemo(() => 
+    service.benefits.slice(0, isExpanded ? service.benefits.length : 2), 
+    [service.benefits, isExpanded]
+  );
+
+    const category = service.category.toLowerCase();
+    return iconMap[category] || iconMap.default;
+  }, [service.category]);
+
+  // Memoize color scheme
+  const colorScheme = useMemo(() => {
+    const colorMap: Record<string, string> = {
+      ai: 'from-cyan-500 to-blue-600',
+      quantum: 'from-blue-500 to-indigo-600',
+      space: 'from-indigo-500 to-purple-600',
+      enterprise: 'from-green-500 to-teal-600',
+      cybersecurity: 'from-red-500 to-orange-600',
+      default: 'from-purple-500 to-pink-600'
+    };
+
+    const category = service.category.toLowerCase();
+    return colorMap[category] || colorMap.default;
+  }, [service.category]);
+
+  // Memoize gradient colors for text
+  const textGradient = useMemo(() => {
+    const gradientMap: Record<string, string> = {
+      ai: 'from-cyan-400 to-blue-500',
+      quantum: 'from-blue-400 to-indigo-500',
+      space: 'from-indigo-400 to-purple-500',
+      enterprise: 'from-green-400 to-teal-500',
+      cybersecurity: 'from-red-400 to-orange-500',
+      default: 'from-purple-400 to-pink-500'
+    };
+
+    const category = service.category.toLowerCase();
+    return gradientMap[category] || gradientMap.default;
+  }, [service.category]);
+
+  // Handle hover state with debouncing
+  const handleMouseEnter = useCallback(() => {
+    setIsHovered(true);
+  }, []);
+
+  const handleMouseLeave = useCallback(() => {
+    setIsHovered(false);
+  }, []);
+
+  const handleToggleExpand = useCallback((e: React.MouseEvent) => {
+    e.preventDefault();
+    e.stopPropagation();
+    setIsExpanded(!isExpanded);
+  }, [isExpanded]);
+
+  // Memoize truncated description
+  const truncatedDescription = useMemo(() => {
+    const maxLength = 120;
+    if (service.description.length <= maxLength) {
+      return service.description;
     }
-  };
+    return service.description.substring(0, maxLength) + '...';
+  }, [service.description]);
 
-  const { icon: CategoryIcon, color } = getCategoryIcon(service.category);
+  const handleKeyDown = useCallback((e: React.KeyboardEvent) => {
+    if (e.key === 'Enter' || e.key === ' ') {
+      e.preventDefault();
+      handleServiceClick();
+    }
+  }, [handleServiceClick]);
 
-  // Truncate description for better card layout
-  const truncatedDescription = service.description.length > 120 
-    ? service.description.substring(0, 120) + '...' 
-    : service.description;
-
-  const fullDescription = service.description;
+  // Calculate card height based on expanded state
+  const cardHeight = isExpanded ? 'auto' : 'h-full';
 
   return (
     <motion.div
       className="group relative bg-gray-800/30 rounded-2xl border border-gray-700/50 hover:border-gray-600/50 transition-all duration-300 hover:bg-gray-800/50 overflow-hidden"
-      onHoverStart={() => setIsHovered(true)}
-      onHoverEnd={() => setIsHovered(false)}
-      whileHover={{ y: -8, scale: 1.02 }}
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
+      whileHover={{ y: -5, scale: 1.02 }}
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.3 }}
+      transition={{ duration: 0.5 }}
+      role="article"
+      aria-label={`Service: ${service.name}`}
     >
-      {/* Background gradient overlay */}
-      <div className={`absolute inset-0 bg-gradient-to-br ${color} opacity-0 group-hover:opacity-5 transition-opacity duration-300`} />
-      
-      {/* Header */}
-      <div className="p-6">
-        {/* Category badge and actions */}
-        <div className="flex items-start justify-between mb-4">
-          <div className={`inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-gradient-to-r ${color} text-white`}>
-            <CategoryIcon className="w-3 h-3 mr-1" />
-            {service.category}
-          </div>
-          
-          <div className="flex items-center space-x-2">
-            <motion.button
-              onClick={() => setIsLiked(!isLiked)}
-              className={`p-2 rounded-lg transition-colors ${
-                isLiked 
-                  ? 'text-red-500 bg-red-500/10' 
-                  : 'text-gray-400 hover:text-red-500 hover:bg-red-500/10'
-              }`}
-              whileHover={{ scale: 1.1 }}
-              whileTap={{ scale: 0.9 }}
-              aria-label={isLiked ? 'Unlike service' : 'Like service'}
-            >
-              <Heart className={`w-4 h-4 ${isLiked ? 'fill-current' : ''}`} />
-            </motion.button>
-            
-            <motion.button
-              onClick={() => setIsBookmarked(!isBookmarked)}
-              className={`p-2 rounded-lg transition-colors ${
-                isBookmarked 
-                  ? 'text-yellow-500 bg-yellow-500/10' 
-                  : 'text-gray-400 hover:text-yellow-500 hover:bg-yellow-500/10'
-              }`}
-              whileHover={{ scale: 1.1 }}
-              whileTap={{ scale: 0.9 }}
-              aria-label={isBookmarked ? 'Remove bookmark' : 'Bookmark service'}
-            >
-              <Bookmark className={`w-4 h-4 ${isBookmarked ? 'fill-current' : ''}`} />
-            </motion.button>
+      {/* Popular Badge */}
+      {service.popular && (
+        <div className="absolute top-4 right-4 z-10">
+          <div className="flex items-center gap-1 bg-gradient-to-r from-yellow-400 to-orange-500 text-black text-xs px-2 py-1 rounded-full font-semibold shadow-lg">
+            <Star className="w-3 h-3 fill-current" />
+            Popular
           </div>
         </div>
+      )}
 
-        {/* Service title */}
-        <h3 className="text-xl font-bold text-white mb-2 group-hover:text-cyan-400 transition-colors">
-          {service.name}
-        </h3>
+      {/* Hover Effect Overlay */}
+      <motion.div
+        className="absolute inset-0 bg-gradient-to-br from-cyan-500/5 to-purple-500/5 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"
+        initial={false}
+        animate={{ opacity: isHovered ? 1 : 0 }}
+      />
 
-        {/* Tagline */}
-        <p className="text-sm text-cyan-400 mb-3 font-medium">
-          {service.tagline}
-        </p>
-
-        {/* Description */}
-        <div className="mb-4">
-          <p className="text-gray-300 text-sm leading-relaxed">
-            {showFullDescription ? fullDescription : truncatedDescription}
-          </p>
-          {service.description.length > 120 && (
-            <button
-              onClick={() => setShowFullDescription(!showFullDescription)}
-              className="text-cyan-400 hover:text-cyan-300 text-xs mt-2 transition-colors"
-            >
-              {showFullDescription ? 'Show less' : 'Read more'}
-            </button>
+      {/* Header with icon and category */}
+      <div className="p-6">
+        <div className="flex items-start justify-between mb-4">
+          <div className={`w-12 h-12 bg-gradient-to-r ${categoryColor} rounded-xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300`}>
+            <CategoryIcon className="w-6 h-6 text-white" />
+          </div>
+          <div className="flex items-center gap-2">
+            <div className={`text-xs bg-gradient-to-r ${categoryColor} text-white px-3 py-1 rounded-full font-medium`}>
+              {service.type}
+            </div>
+            {service.marketSize && (
+              <div className="text-xs bg-white/10 text-white/70 px-2 py-1 rounded-full backdrop-blur-sm">
+                {service.marketSize}
+              </div>
+            )}
+          </div>
+          {service.pricing?.enterprise && (
+            <span className="px-2 py-1 bg-gradient-to-r from-yellow-400 to-orange-500 text-black text-xs font-bold rounded-full">
+              ENTERPRISE
+            </span>
           )}
         </div>
 
-        {/* Quick stats */}
-        <div className="grid grid-cols-2 gap-3 mb-4">
-          <div className="flex items-center text-xs text-gray-400">
-            <Clock className="w-3 h-3 mr-1" />
-            <span>Market: {service.marketSize}</span>
+        {/* Rating and Reviews */}
+        {(service.rating || service.reviews) && (
+          <div className="flex items-center gap-2 mb-3">
+            {service.rating && (
+              <div className="flex items-center gap-1">
+                <Star className="w-4 h-4 text-yellow-400 fill-current" />
+                <span className="text-sm text-white/80 font-medium">{service.rating}</span>
+              </div>
+            )}
+            {service.reviews && (
+              <span className="text-xs text-white/60">({service.reviews} reviews)</span>
+            )}
           </div>
-          <div className="flex items-center text-xs text-gray-400">
-            <Users className="w-3 h-3 mr-1" />
-            <span>{service.type}</span>
-          </div>
-        </div>
+        )}
 
-        {/* Features preview */}
+        <h3 className="text-xl font-bold text-white mb-3 group-hover:text-cyan-400 transition-colors duration-300 line-clamp-2 leading-tight">
+          {service.name}
+        </h3>
+
+        {/* Service description */}
+        <p className="text-gray-300 leading-relaxed mb-4">
+          {isExpanded ? service.description : truncatedDescription}
+        </p>
+
+        {/* Quick Stats */}
+        {service.competitiveAdvantage && (
+          <div className="flex items-center gap-2 text-xs text-white/60 mb-4 p-2 bg-white/5 rounded-lg">
+            <TrendingUp className="w-3 h-3 text-green-400" />
+            <span className="line-clamp-2">{service.competitiveAdvantage}</span>
+          </div>
+        )}
+
+        {/* Service Features */}
         <div className="mb-4">
-          <h4 className="text-sm font-semibold text-white mb-2">Key Features</h4>
-          <div className="flex flex-wrap gap-1">
-            {service.features.slice(0, 3).map((feature, index) => (
-              <span
-                key={index}
-                className="inline-block px-2 py-1 bg-gray-700/50 text-gray-300 text-xs rounded-md"
+          <h4 className="text-sm font-semibold text-white/90 mb-3 flex items-center gap-2">
+            <Star className="w-4 h-4 text-yellow-400" />
+            Key Features
+          </h4>
+          <div className="space-y-2">
+            {displayFeatures.map((feature, featureIndex) => (
+              <motion.div
+                key={featureIndex}
+                className="flex items-center gap-2 text-sm text-white/70"
+                initial={{ opacity: 0, x: -10 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ delay: featureIndex * 0.1 }}
               >
-                {feature}
-              </span>
+                <CheckCircle className="w-4 h-4 text-cyan-400 flex-shrink-0" />
+                <span className="line-clamp-1">{feature}</span>
+              </motion.div>
             ))}
-            {service.features.length > 3 && (
-              <span className="inline-block px-2 py-1 bg-gray-700/50 text-gray-400 text-xs rounded-md">
-                +{service.features.length - 3} more
-              </span>
+            {!isExpanded && service.features.length > 3 && (
+              <button
+                onClick={handleToggleExpand}
+                className="text-xs text-cyan-400 hover:text-cyan-300 transition-colors duration-300 flex items-center gap-1 hover:underline focus:outline-none focus:ring-2 focus:ring-cyan-500/50 rounded"
+                aria-label={`Show ${service.features.length - 3} more features`}
+              >
+                +{service.features.length - 3} more features
+                <ArrowRight className="w-3 h-3" />
+              </button>
+            )}
+            {isExpanded && service.features.length > 3 && (
+              <button
+                onClick={handleToggleExpand}
+                className="text-xs text-cyan-400 hover:text-cyan-300 transition-colors duration-300 flex items-center gap-1 hover:underline focus:outline-none focus:ring-2 focus:ring-cyan-500/50 rounded"
+                aria-label="Show fewer features"
+              >
+                Show less
+                <ArrowRight className="w-3 h-3 rotate-90" />
+              </button>
             )}
           </div>
         </div>
 
-        {/* Pricing preview */}
-        <div className="mb-4">
-          <h4 className="text-sm font-semibold text-white mb-2">Starting at</h4>
-          <div className="text-2xl font-bold text-cyan-400">
-            {service.pricing.starter}
+        {/* Service Benefits */}
+        <div className="mb-6">
+          <h4 className="text-sm font-semibold text-white/90 mb-3 flex items-center gap-2">
+            <Zap className="w-4 h-4 text-yellow-400" />
+            Benefits
+          </h4>
+          <div className="space-y-2">
+            {displayBenefits.map((benefit, benefitIndex) => (
+              <motion.div
+                key={benefitIndex}
+                className="flex items-center gap-2 text-sm text-white/70"
+                initial={{ opacity: 0, x: -10 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ delay: benefitIndex * 0.1 }}
+              >
+                <div className="w-2 h-2 bg-yellow-400 rounded-full flex-shrink-0" />
+                <span className="line-clamp-1">{benefit}</span>
+              </motion.div>
+            ))}
           </div>
         </div>
-      </div>
 
-      {/* Footer actions */}
-      <div className="px-6 pb-6">
-        <div className="flex items-center justify-between">
-          <Link href={service.slug || `/services/${service.id}`}>
-            <motion.button 
-              className="flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-cyan-500 to-blue-600 text-white text-sm font-medium rounded-lg hover:from-cyan-600 hover:to-blue-700 transition-all duration-300"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              Learn More
-              <ArrowRight className="w-4 h-4" />
-            </motion.button>
+        {/* Additional Service Info */}
+        <div className="flex items-center justify-between text-xs text-white/50 mb-4">
+          {service.launchDate && (
+            <div className="flex items-center gap-1">
+              <Clock className="w-3 h-3" />
+              <span>{service.launchDate}</span>
+            </div>
+          )}
+          {service.customers && (
+            <div className="flex items-center gap-1">
+              <Users className="w-3 h-3" />
+              <span>{service.customers}+ users</span>
+            </div>
+          )}
+        </div>
+
+        {/* Service Footer */}
+        <div className="mt-auto">
+          <div className="flex items-center justify-between mb-4">
+            <div className="text-2xl font-bold text-cyan-400">
+              {service.pricing.starter}
+            </div>
+            <div className="text-xs text-white/50">
+              Starting from
+            </div>
+          </div>
+        )}
+
+          <button
+            onClick={handleServiceClick}
+            onKeyDown={handleKeyDown}
+            className="w-full group/btn relative px-4 py-3 bg-gradient-to-r from-cyan-500/20 to-purple-500/20 border border-cyan-400/30 text-cyan-400 font-medium rounded-xl transition-all duration-300 hover:from-cyan-500/30 hover:to-purple-500/30 hover:border-cyan-400/50 hover:scale-105 hover:shadow-lg hover:shadow-cyan-500/25 focus:outline-none focus:ring-4 focus:ring-cyan-500/50 focus:scale-105"
+            aria-label={`Learn more about ${service.name}`}
+          >
+            Learn More
           </Link>
           
-          <div className="flex items-center space-x-2">
-            <motion.button
-              className="p-2 text-gray-400 hover:text-white hover:bg-gray-700/50 rounded-lg transition-colors"
-              whileHover={{ scale: 1.1 }}
-              whileTap={{ scale: 0.9 }}
-              aria-label="Share service"
-            >
-              <Share2 className="w-4 h-4" />
-            </motion.button>
-            
-            <motion.button
-              className="p-2 text-gray-400 hover:text-white hover:bg-gray-700/50 rounded-lg transition-colors"
-              whileHover={{ scale: 1.1 }}
-              whileTap={{ scale: 0.9 }}
-              aria-label="View external link"
-            >
-              <ExternalLink className="w-4 h-4" />
-            </motion.button>
-          </div>
+          <motion.div
+            className="w-8 h-8 bg-gradient-to-r from-cyan-500 to-blue-600 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300"
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.9 }}
+          >
+            <ArrowRight className="w-4 h-4 text-white" aria-hidden="true" />
+          </motion.div>
+        </div>
+        
+        {/* Hover Effect Overlay */}
+        <motion.div
+          className="absolute inset-0 bg-gradient-to-br from-purple-500/10 to-pink-500/10 rounded-2xl"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: isHovered ? 1 : 0 }}
+          transition={{ duration: 0.3 }}
+        />
+      </div>
+
+      {/* Category Badge */}
+      <div className="absolute top-4 left-4">
+        <div className="text-xs bg-white/10 text-white/70 px-2 py-1 rounded-full backdrop-blur-sm border border-white/20">
+          {service.category}
         </div>
       </div>
 
-      {/* Hover effect overlay */}
-      <AnimatePresence>
-        {isHovered && (
-          <motion.div
-            className={`absolute inset-0 bg-gradient-to-br ${color} opacity-10 rounded-2xl`}
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 0.1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.2 }}
-          />
-        )}
-      </AnimatePresence>
+      {/* Hover Effects */}
+      <motion.div
+        className="absolute inset-0 border-2 border-cyan-400/0 rounded-2xl transition-all duration-300 pointer-events-none"
+        animate={{
+          borderColor: isHovered ? 'rgba(34, 211, 238, 0.3)' : 'rgba(34, 211, 238, 0)',
+        }}
+      />
+
+      {/* Enhanced hover indicator */}
+      <div className="absolute bottom-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+        <div className="w-8 h-8 bg-cyan-400/20 rounded-full flex items-center justify-center backdrop-blur-sm">
+          <ArrowRight className="w-4 h-4 text-cyan-400" />
+        </div>
+      </div>
     </motion.div>
   );
 };

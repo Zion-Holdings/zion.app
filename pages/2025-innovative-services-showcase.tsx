@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import React, { useState, useEffect } from 'react';
 import SEO from '../components/SEO';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -225,6 +226,8 @@ const InnovativeServicesShowcase2025: React.FC = () => {
                 <button
                   key={category.id}
                   onClick={() => setSelectedCategory(category.id)}
+=======
+>>>>>>> 0d3d59dc48bc65c272e3c7f2106b07881fc97407
 import React from 'react';
 import SEO from '../components/SEO';
 import { motion } from 'framer-motion';
@@ -553,6 +556,68 @@ const InnovativeServicesShowcase2025 = () => {
             </div>
           </div>
         </div>
+=======
+          </div>
+        </section>
+      ))}
+
+      {/* Market Overview */}
+      <section className="py-16 bg-gradient-to-r from-gray-50 to-blue-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="text-center mb-12"
+          >
+            <h2 className="text-4xl font-bold text-gray-900 mb-4">
+              Market Overview & Competitive Advantage
+            </h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              Our services are positioned at the forefront of innovation, addressing the most pressing 
+              business challenges with cutting-edge technology solutions
+            </p>
+          </motion.div>
+
+          <div className="grid md:grid-cols-3 gap-8">
+            <div className="bg-white p-8 rounded-2xl shadow-lg text-center">
+              <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                <TrendingUp className="w-8 h-8 text-blue-600" />
+              </div>
+              <h3 className="text-2xl font-bold text-gray-900 mb-4">Market Growth</h3>
+              <p className="text-gray-600 mb-4">
+                Our services address markets with 20-35% annual growth rates, positioning clients 
+                for exponential success in rapidly expanding sectors
+              </p>
+              <div className="text-3xl font-bold text-blue-600">25%+ CAGR</div>
+            </div>
+
+            <div className="bg-white p-8 rounded-2xl shadow-lg text-center">
+              <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                <Zap className="w-8 h-8 text-green-600" />
+              </div>
+              <h3 className="text-2xl font-bold text-gray-900 mb-4">Technology Leadership</h3>
+              <p className="text-gray-600 mb-4">
+                Leveraging the latest AI, quantum computing, and emerging technologies to deliver 
+                solutions that are 2-3 years ahead of the market
+              </p>
+              <div className="text-3xl font-bold text-green-600">Future-Ready</div>
+            </div>
+
+            <div className="bg-white p-8 rounded-2xl shadow-lg text-center">
+              <div className="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                <Shield className="w-8 h-8 text-purple-600" />
+              </div>
+              <h3 className="text-2xl font-bold text-gray-900 mb-4">Enterprise Security</h3>
+              <p className="text-gray-600 mb-4">
+                Built with enterprise-grade security, compliance, and scalability to meet the 
+                most demanding business requirements
+              </p>
+              <div className="text-3xl font-bold text-purple-600">Enterprise-Grade</div>
+            </div>
+          </div>
+        </div>
       </section>
 
       {/* Call to Action */}
@@ -598,6 +663,7 @@ const InnovativeServicesShowcase2025 = () => {
   );
 };
 
+<<<<<<< HEAD
       {/* Contact Section */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="bg-gradient-to-r from-purple-600/20 to-blue-600/20 rounded-3xl p-8 border border-white/20 text-center">
@@ -851,3 +917,6 @@ const InnovativeServicesShowcase2025 = () => {
 };
 
 export default InnovativeServicesShowcase2025;
+=======
+export default InnovativeServicesShowcase2025;
+>>>>>>> 0d3d59dc48bc65c272e3c7f2106b07881fc97407

@@ -204,12 +204,43 @@ export type {
 } from './aiDataAnalyticsService';
 
 export type {
-  SecurityThreat,
-  VulnerabilityAssessment,
-  SecurityIncident,
-  SecurityPolicy,
-  ComplianceReport,
-  SecurityMetrics,
-  SecurityScanRequest,
-  SecurityScanResponse
-} from './aiCybersecurityService';
+  SmartContract,
+  NFT,
+  NFTMetadata,
+  NFTAttribute,
+  DeFiPool,
+  BlockchainTransaction,
+  TransactionResult,
+  BlockchainStats,
+  WalletAnalytics,
+  NetworkStatus
+} from './blockchainService';
+
+// Export new 2025 services
+export { advancedAIMLServices } from '../data/2025-advanced-ai-ml-services';
+export { advancedCybersecurityServices2025 } from '../data/2025-advanced-cybersecurity-services';
+export { advancedCloudDevOpsServices } from '../data/2025-advanced-cloud-devops-services';
+export { industrySpecificSolutions } from '../data/2025-industry-specific-solutions';
+export { emergingTechnologyServices } from '../data/2025-emerging-technology-services';
+
+// Export new 2025 advanced services
+export { advancedEdgeComputingServices } from '../data/2025-advanced-edge-computing-services';
+export { advancedIoTSmartCityServices } from '../data/2025-advanced-iot-smart-city-services';
+export { advancedFintechBlockchainServicesExpanded } from '../data/2025-advanced-fintech-blockchain-services-expanded';
+export { advancedHealthcareBiotechServices } from '../data/2025-advanced-healthcare-biotech-services';
+export { advancedSpaceAerospaceServices } from '../data/2025-advanced-space-aerospace-services';
+
+// Export new service types
+export type { AIMLService } from '../data/2025-advanced-ai-ml-services';
+export type { CybersecurityComplianceService } from '../data/2025-advanced-cybersecurity-compliance-services';
+export type { CloudDevOpsService } from '../data/2025-advanced-cloud-devops-services';
+export type { DataAnalyticsBIService } from '../data/2025-advanced-data-analytics-bi-services';
+export type { EnterpriseAutomationService } from '../data/2025-advanced-enterprise-automation-services';
+export type { FintechBlockchainService } from '../data/2025-advanced-fintech-blockchain-services';
+
+// Export new 2025 service types
+export type { EdgeComputingService } from '../data/2025-advanced-edge-computing-services';
+export type { IoTSmartCityService } from '../data/2025-advanced-iot-smart-city-services';
+export type { AdvancedFintechBlockchainService } from '../data/2025-advanced-fintech-blockchain-services-expanded';
+export type { HealthcareBiotechService } from '../data/2025-advanced-healthcare-biotech-services';
+export type { SpaceAerospaceService } from '../data/2025-advanced-space-aerospace-services';

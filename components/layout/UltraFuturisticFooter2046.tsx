@@ -19,21 +19,32 @@ import {
   Rocket,
   Cloud,
   Lock,
-  Network,
-  FileText,
-  GraduationCap,
-  DollarSign,
-  Satellite,
-  Cpu,
-  Truck,
-  Heart,
-  Building,
-  Users,
-  Target,
-  Briefcase,
-  MessageCircle,
-  Home
+  Key,
+  CheckCircle,
+  XCircle,
+  PlusCircle,
+  MinusCircle,
+  GraduationCap
 } from 'lucide-react';
+
+// Add missing icon components
+const DollarSign = ({ className }: { className?: string }) => (
+  <svg className={className} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1" />
+  </svg>
+);
+
+const ShoppingCart = ({ className }: { className?: string }) => (
+  <svg className={className} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 3h2l.4 2M7 13h10l4-8H5.4m0 0L7 13m0 0l-2.5 5M7 13l2.5 5m6-5v6a2 2 0 01-2 2H9a2 2 0 01-2-2v-6m8 0V9a2 2 0 00-2-2H9a2 2 0 00-2 2v4.01" />
+  </svg>
+);
+
+const Leaf = ({ className }: { className?: string }) => (
+  <svg className={className} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+  </svg>
+);
 
 const UltraFuturisticFooter2046: React.FC = () => {
   const currentYear = new Date().getFullYear();
@@ -85,11 +96,8 @@ const UltraFuturisticFooter2046: React.FC = () => {
     }
   ];
 
-  const contactInfo = {
-    mobile: '+1 302 464 0950',
-    email: 'kleber@ziontechgroup.com',
-    address: '364 E Main St STE 1008 Middletown DE 19709',
-    website: 'https://ziontechgroup.com'
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
   const socialLinks = [
@@ -315,7 +323,65 @@ const UltraFuturisticFooter2046: React.FC = () => {
         {/* Bottom Gradient Bar */}
         <div className="h-1 bg-gradient-to-r from-cyan-500 via-purple-500 to-pink-500"></div>
       </div>
-    </footer>
+
+      {/* Scroll to Top Button */}
+      <motion.button
+        initial={{ opacity: 0, scale: 0 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ delay: 0.8 }}
+        onClick={scrollToTop}
+        className="fixed bottom-8 right-8 w-12 h-12 bg-gradient-to-r from-cyan-400 to-purple-500 rounded-full flex items-center justify-center text-white shadow-lg hover:shadow-cyan-400/25 transition-all duration-300 hover:scale-110 z-50"
+        style={{
+          boxShadow: '0 0 20px rgba(0, 255, 255, 0.3)'
+        }}
+      >
+        <ArrowUp className="w-5 h-5" />
+      </motion.button>
+
+      {/* Floating Elements */}
+      <div className="absolute inset-0 pointer-events-none overflow-hidden">
+        {/* Floating quantum particles */}
+        {[...Array(6)].map((_, i) => (
+          <motion.div
+            key={i}
+            className="absolute w-2 h-2 bg-cyan-400 rounded-full opacity-30"
+            style={{
+              left: `${20 + i * 15}%`,
+              top: `${80 + i * 5}%`,
+              boxShadow: '0 0 10px rgba(0, 255, 255, 0.5)'
+            }}
+            animate={{
+              y: [0, -20, 0],
+              opacity: [0.3, 0.8, 0.3]
+            }}
+            transition={{
+              duration: 4 + i,
+              repeat: Infinity,
+              ease: "easeInOut",
+              delay: i * 0.5
+            }}
+          />
+        ))}
+
+        {/* Energy waves */}
+        <motion.div
+          className="absolute bottom-0 left-0 w-full h-32"
+          animate={{
+            background: [
+              'linear-gradient(to top, rgba(0, 255, 255, 0.1) 0%, transparent 100%)',
+              'linear-gradient(to top, rgba(147, 51, 234, 0.1) 0%, transparent 100%)',
+              'linear-gradient(to top, rgba(236, 72, 153, 0.1) 0%, transparent 100%)',
+              'linear-gradient(to top, rgba(0, 255, 255, 0.1) 0%, transparent 100%)'
+            ]
+          }}
+          transition={{
+            duration: 6,
+            repeat: Infinity,
+            ease: "easeInOut"
+          }}
+        />
+      </div>
+    </motion.footer>
   );
 };
 
