@@ -1,8 +1,9 @@
-export default function IoTPlatformsPage() {
+import EnhancedLayout from '../components/layout/EnhancedLayout';
+
+export default function IotPlatforms() {
   return (
-    <div className="prose dark:prose-invert">
-      <h1>IoT Platforms</h1>
-      <p>Content coming soon.</p>
-    </div>
+    <EnhancedLayout>
+      <div className="py-10">IoT Platforms</div>
+    </EnhancedLayout>
   );
 }

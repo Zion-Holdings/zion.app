@@ -181,7 +181,8 @@ const EnhancedNavigation: React.FC = () => {
           <Link href="/nation-builder"><a>Create Nation</a></Link>
           <Link href="/about"><a>About</a></Link>
           <Link href="/blog"><a>Blog</a></Link>
-          <Link href="/talent"><a>Talent</a></Link>
+          <Link href="/investor-match"><a>Investor Match</a></Link>
+          <Link href="/automation/reports"><a>Reports</a></Link>
           <Link href="/contact"><a>Contact</a></Link>
           <Link href="/investors"><a>Investors</a></Link>
           <Link href="/franchise-portal"><a>Franchise</a></Link>

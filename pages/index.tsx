@@ -1,40 +1,40 @@
-import Link from 'next/link';
+import EnhancedLayout from '../components/layout/EnhancedLayout';
 
-export default function HomePage() {
+export default function Home() {
   return (
-    <div className="space-y-8">
-      <div className="space-y-2">
-        <h1 className="text-3xl font-bold">Welcome to Zion</h1>
-        <p className="text-gray-600 dark:text-gray-300">Explore our portals and autonomous systems:</p>
-      </div>
+    <EnhancedLayout>
+      <div className="py-10 space-y-6">
+        <h1 className="text-3xl font-semibold">Zion</h1>
+        <p className="opacity-80">Advanced AI-powered autonomous systems for growth, fundraising, and operations.</p>
 
-      <div className="flex flex-wrap gap-4">
-        <Link href="/investors"><a className="px-4 py-2 rounded bg-gray-900 text-white">Investor Portal</a></Link>
-        <Link href="/franchise-portal"><a className="px-4 py-2 rounded bg-gray-200 dark:bg-gray-800">Franchise Portal</a></Link>
-        <Link href="/changelog"><a className="px-4 py-2 rounded bg-blue-600 text-white">Changelog</a></Link>
-      </div>
+        <div className="grid md:grid-cols-3 gap-4">
+          <div className="p-4 border rounded-xl bg-white/60 dark:bg-white/5">
+            <h2 className="font-semibold">Autonomous Cloud Suite</h2>
+            <p className="text-sm opacity-70">Always-on agents running in the cloud. They research, generate, and commit results automatically.</p>
+            <div className="mt-2 flex gap-3 text-sm">
+              <a className="underline" href="/automation/reports">View Reports</a>
+              <a className="underline" href="https://github.com/Zion-Holdings/zion.app/actions" target="_blank" rel="noreferrer">Action Runs</a>
+            </div>
+          </div>
 
-      <section className="space-y-3">
-        <h2 className="text-xl font-semibold">Autonomous Cloud Automations</h2>
-        <p className="text-gray-600 dark:text-gray-400">Intelligent agents run on a schedule in the cloud—no human or local machine required. Results are committed back to the repo and surfaced in the admin dashboard.</p>
-        <ul className="list-disc pl-5 space-y-1 text-sm">
-          <li>
-            Weekly Feedback Intelligence → <Link href="/admin/feedback-insights"><a className="text-blue-600">Feedback Insights</a></Link>
-          </li>
-          <li>
-            Journey Friction Detector → <Link href="/api/admin/journey-report"><a className="text-blue-600">Latest Report (Admin)</a></Link>
-          </li>
-          <li>
-            Market Health Forecaster → <Link href="/api/admin/forecast-report"><a className="text-blue-600">Latest Forecast (Admin)</a></Link>
-          </li>
-          <li>
-            Weekly Changelog Summarizer → <Link href="/changelog"><a className="text-blue-600">Read Changelog</a></Link>
-          </li>
-          <li>
-            Sync Health & Git Automation → <Link href="/admin/automation-status"><a className="text-blue-600">Automation Status (Admin)</a></Link>
-          </li>
-        </ul>
-      </section>
-    </div>
+          <div className="p-4 border rounded-xl bg-white/60 dark:bg-white/5">
+            <h2 className="font-semibold">Investor Match Autopilot</h2>
+            <p className="text-sm opacity-70">Discovers top-fit VCs and angels for your stage and thesis. Generates intros automatically.</p>
+            <div className="mt-2 flex gap-3 text-sm">
+              <a className="underline" href="/investor-match">Try Matching</a>
+              <a className="underline" href="/automation/reports">Latest Matches</a>
+            </div>
+          </div>
+
+          <div className="p-4 border rounded-xl bg-white/60 dark:bg-white/5">
+            <h2 className="font-semibold">Grant & Opportunity Radar</h2>
+            <p className="text-sm opacity-70">Continuously scans opportunities and drafts applications for review.</p>
+            <div className="mt-2 flex gap-3 text-sm">
+              <a className="underline" href="/automation/reports">See Artifacts</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </EnhancedLayout>
   );
 }
