@@ -64,6 +64,36 @@ import { advanced2025MicroSaasExpansion } from '../../data/2025-advanced-micro-s
 import { advanced2025ITSolutionsExpansion } from '../../data/2025-advanced-it-solutions-expansion';
 import { advanced2025AIServicesExpansion } from '../../data/2025-advanced-ai-services-expansion';
 
+// Import our new 2025 innovative services
+import { innovativeRetailServices } from '../../data/innovative-retail-services';
+import { innovativeEntertainmentServices } from '../../data/innovative-entertainment-services';
+import { innovativeGamingServices } from '../../data/innovative-gaming-services';
+import { innovativeRealEstateServices } from '../../data/innovative-real-estate-services';
+import { innovativeLegalServices } from '../../data/innovative-legal-services';
+import { innovativeAgricultureServices } from '../../data/innovative-agriculture-services';
+import { innovativeHospitalityServices } from '../../data/innovative-hospitality-services';
+import { innovativeSportsServices } from '../../data/innovative-sports-services';
+import { innovativeEnvironmentalServices } from '../../data/innovative-environmental-services';
+import { innovativeResearchServices } from '../../data/innovative-research-services';
+import { innovativeSpaceServices } from '../../data/innovative-space-services';
+import { innovativeBiotechServices } from '../../data/innovative-biotech-services';
+import { innovativeNanotechServices } from '../../data/innovative-nanotech-services';
+import { innovativeRoboticsServices } from '../../data/innovative-robotics-services';
+import { innovativeQuantumServices } from '../../data/innovative-quantum-services';
+import { innovativeBlockchainServices } from '../../data/innovative-blockchain-services';
+import { innovativeIoTServices } from '../../data/innovative-iot-services';
+import { innovativeARVRServices } from '../../data/innovative-ar-vr-services';
+import { innovativeEdgeComputingServices } from '../../data/innovative-edge-computing-services';
+import { innovativeCybersecurityServices } from '../../data/2025-innovative-cybersecurity-services';
+import { innovativeFintechServices } from '../../data/2025-innovative-fintech-services';
+import { innovativeHealthtechServices } from '../../data/2025-innovative-healthtech-services';
+import { innovativeSupplyChainServices } from '../../data/2025-innovative-supply-chain-services';
+import { innovativeManufacturingServices } from '../../data/2025-innovative-manufacturing-services';
+import { innovativeEnergyServices } from '../../data/2025-innovative-energy-services';
+import { innovativeEducationServices } from '../../data/2025-innovative-education-services';
+import { innovativeGovernmentServices } from '../../data/2025-innovative-government-services';
+import { innovativeTransportationServices } from '../../data/2025-innovative-transportation-services';
+
 function toSlug(value: string) {
   return value.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
 }
@@ -77,16 +107,32 @@ const categories = [
   'Quantum Computing',
   'Space Technology',
   'Metaverse',
-  'Cybersecurity',
-  'Supply Chain',
-  'Financial Services',
-  'Healthcare',
-  'Manufacturing',
-  'Retail',
-  'Education',
-  'Government',
-  'Energy',
-  'Transportation'
+  'Cybersecurity & Threat Intelligence',
+  'Supply Chain & Logistics',
+  'Financial Technology & Fintech',
+  'Healthcare Technology & Healthtech',
+  'Manufacturing & Industry 4.0',
+  'Retail & E-commerce',
+  'Entertainment & Media',
+  'Gaming & Esports',
+  'Real Estate & Property',
+  'Legal & Compliance',
+  'Agriculture & Food Technology',
+  'Hospitality & Tourism',
+  'Sports & Fitness',
+  'Environmental & Sustainability',
+  'Research & Development',
+  'Biotechnology & Life Sciences',
+  'Nanotechnology & Materials',
+  'Robotics & Automation',
+  'Blockchain & Web3',
+  'Internet of Things (IoT)',
+  'Augmented Reality & Virtual Reality',
+  'Edge Computing & 5G',
+  'Education & Training',
+  'Government & Public Sector',
+  'Transportation & Mobility',
+  'Renewable Energy & Sustainability'
 ];
 
 export default function ServicesIndexPage() {
@@ -155,7 +201,36 @@ export default function ServicesIndexPage() {
     // Our new 2025 advanced services
     .concat(advanced2025MicroSaasExpansion as unknown[])
     .concat(advanced2025ITSolutionsExpansion as unknown[])
-    .concat(advanced2025AIServicesExpansion as unknown[]);
+    .concat(advanced2025AIServicesExpansion as unknown[])
+    // Our new 2025 innovative services
+    .concat(innovativeRetailServices as unknown[])
+    .concat(innovativeEntertainmentServices as unknown[])
+    .concat(innovativeGamingServices as unknown[])
+    .concat(innovativeRealEstateServices as unknown[])
+    .concat(innovativeLegalServices as unknown[])
+    .concat(innovativeAgricultureServices as unknown[])
+    .concat(innovativeHospitalityServices as unknown[])
+    .concat(innovativeSportsServices as unknown[])
+    .concat(innovativeEnvironmentalServices as unknown[])
+    .concat(innovativeResearchServices as unknown[])
+    .concat(innovativeSpaceServices as unknown[])
+    .concat(innovativeBiotechServices as unknown[])
+    .concat(innovativeNanotechServices as unknown[])
+    .concat(innovativeRoboticsServices as unknown[])
+    .concat(innovativeQuantumServices as unknown[])
+    .concat(innovativeBlockchainServices as unknown[])
+    .concat(innovativeIoTServices as unknown[])
+    .concat(innovativeARVRServices as unknown[])
+    .concat(innovativeEdgeComputingServices as unknown[])
+    .concat(innovativeCybersecurityServices as unknown[])
+    .concat(innovativeFintechServices as unknown[])
+    .concat(innovativeHealthtechServices as unknown[])
+    .concat(innovativeSupplyChainServices as unknown[])
+    .concat(innovativeManufacturingServices as unknown[])
+    .concat(innovativeEnergyServices as unknown[])
+    .concat(innovativeEducationServices as unknown[])
+    .concat(innovativeGovernmentServices as unknown[])
+    .concat(innovativeTransportationServices as unknown[]);
 
   // Filter out services without required properties
   const validServices = all.filter(service => 

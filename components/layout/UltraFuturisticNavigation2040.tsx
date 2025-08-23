@@ -142,6 +142,174 @@ const navigationItems: NavigationItem[] = [
     ]
   },
   {
+    name: 'Innovative Services 2025',
+    href: '/services',
+    icon: <Sparkles className="w-5 h-5" />,
+    description: 'Cutting-edge innovative technology solutions',
+    badge: 'Innovative',
+    category: 'innovative',
+    color: 'from-yellow-500 to-orange-500',
+    children: [
+      {
+        name: 'Cybersecurity & Threat Intelligence',
+        href: '/services#cybersecurity-threat-intelligence',
+        description: 'Advanced cybersecurity solutions',
+        icon: <Shield className="w-4 h-4" />,
+        featured: true
+      },
+      {
+        name: 'Financial Technology & Fintech',
+        href: '/services#financial-technology-fintech',
+        description: 'Innovative financial solutions',
+        icon: <DollarSign className="w-4 h-4" />
+      },
+      {
+        name: 'Healthcare Technology & Healthtech',
+        href: '/services#healthcare-technology-healthtech',
+        description: 'Advanced healthcare solutions',
+        icon: <Heart className="w-4 h-4" />
+      },
+      {
+        name: 'Supply Chain & Logistics',
+        href: '/services#supply-chain-logistics',
+        description: 'Intelligent supply chain solutions',
+        icon: <Network className="w-4 h-4" />
+      },
+      {
+        name: 'Manufacturing & Industry 4.0',
+        href: '/services#manufacturing-industry-40',
+        description: 'Smart manufacturing solutions',
+        icon: <Settings className="w-4 h-4" />
+      },
+      {
+        name: 'Renewable Energy & Sustainability',
+        href: '/services#renewable-energy-sustainability',
+        description: 'Sustainable energy solutions',
+        icon: <Zap className="w-4 h-4" />
+      },
+      {
+        name: 'Education & Training',
+        href: '/services#education-training',
+        description: 'Innovative learning solutions',
+        icon: <GraduationCap className="w-4 h-4" />
+      },
+      {
+        name: 'Government & Public Sector',
+        href: '/services#government-public-sector',
+        description: 'Government technology solutions',
+        icon: <Building className="w-4 h-4" />
+      },
+      {
+        name: 'Transportation & Mobility',
+        href: '/services#transportation-mobility',
+        description: 'Smart transportation solutions',
+        icon: <Globe className="w-4 h-4" />
+      },
+      {
+        name: 'Retail & E-commerce',
+        href: '/services#retail-e-commerce',
+        description: 'Digital retail solutions',
+        icon: <ShoppingCart className="w-4 h-4" />
+      },
+      {
+        name: 'Entertainment & Media',
+        href: '/services#entertainment-media',
+        description: 'Digital entertainment solutions',
+        icon: <Star className="w-4 h-4" />
+      },
+      {
+        name: 'Gaming & Esports',
+        href: '/services#gaming-esports',
+        description: 'Advanced gaming solutions',
+        icon: <Target className="w-4 h-4" />
+      },
+      {
+        name: 'Real Estate & Property',
+        href: '/services#real-estate-property',
+        description: 'Property technology solutions',
+        icon: <Building className="w-4 h-4" />
+      },
+      {
+        name: 'Legal & Compliance',
+        href: '/services#legal-compliance',
+        description: 'Legal technology solutions',
+        icon: <FileText className="w-4 h-4" />
+      },
+      {
+        name: 'Agriculture & Food Technology',
+        href: '/services#agriculture-food-technology',
+        description: 'Agricultural technology solutions',
+        icon: <Heart className="w-4 h-4" />
+      },
+      {
+        name: 'Hospitality & Tourism',
+        href: '/services#hospitality-tourism',
+        description: 'Hospitality technology solutions',
+        icon: <Globe className="w-4 h-4" />
+      },
+      {
+        name: 'Sports & Fitness',
+        href: '/services#sports-fitness',
+        description: 'Sports technology solutions',
+        icon: <Target className="w-4 h-4" />
+      },
+      {
+        name: 'Environmental & Sustainability',
+        href: '/services#environmental-sustainability',
+        description: 'Environmental technology solutions',
+        icon: <Zap className="w-4 h-4" />
+      },
+      {
+        name: 'Research & Development',
+        href: '/services#research-development',
+        description: 'Research technology solutions',
+        icon: <Code className="w-4 h-4" />
+      },
+      {
+        name: 'Biotechnology & Life Sciences',
+        href: '/services#biotechnology-life-sciences',
+        description: 'Biotechnology solutions',
+        icon: <Heart className="w-4 h-4" />
+      },
+      {
+        name: 'Nanotechnology & Materials',
+        href: '/services#nanotechnology-materials',
+        description: 'Nanotechnology solutions',
+        icon: <Atom className="w-4 h-4" />
+      },
+      {
+        name: 'Robotics & Automation',
+        href: '/services#robotics-automation',
+        description: 'Robotics solutions',
+        icon: <Settings className="w-4 h-4" />
+      },
+      {
+        name: 'Blockchain & Web3',
+        href: '/services#blockchain-web3',
+        description: 'Blockchain technology solutions',
+        icon: <Network className="w-4 h-4" />
+      },
+      {
+        name: 'Internet of Things (IoT)',
+        href: '/services#internet-of-things-iot',
+        description: 'IoT technology solutions',
+        icon: <Layers className="w-4 h-4" />
+      },
+      {
+        name: 'Augmented Reality & Virtual Reality',
+        href: '/services#augmented-reality-virtual-reality',
+        description: 'AR/VR technology solutions',
+        icon: <Eye className="w-4 h-4" />
+      },
+      {
+        name: 'Edge Computing & 5G',
+        href: '/services#edge-computing-5g',
+        description: 'Edge computing solutions',
+        icon: <Cpu className="w-4 h-4" />
+      }
+    ]
+  },
+  {
     name: 'Quantum Technology',
     href: '/quantum-services',
     icon: <Atom className="w-5 h-5" />,
