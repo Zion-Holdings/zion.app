@@ -1,0 +1,39 @@
+name: Autonomous Home Index
+
+on:
+  schedule:
+    - cron: '*/20 * * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  run-fast-orchestrator:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Use Node.js 20.x
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20.x
+          cache: 'npm'
+      - name: Install dependencies
+        run: npm ci
+      - name: Run cloud fast orchestrator
+        run: npm run automation:cloud || true
+      - name: Update homepage section
+        run: node automation/home-index-updater.cjs
+      - name: Commit changes if any
+        run: |
+          if [ -n "$(git status --porcelain)" ]; then
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add -A
+            git commit -m "chore(home): autonomous fast cycle homepage refresh"
+            git push origin HEAD:main
+          else
+            echo "No changes to commit."
+          fi

@@ -1,0 +1,36 @@
+name: Feature request
+description: Suggest an idea that would make this project more useful
+labels: [needs-triage]
+title: 'feat: '
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Tell us about your idea!
+  - type: input
+    id: summary
+    attributes:
+      label: Summary
+      placeholder: Short description of the feature
+    validations:
+      required: true
+  - type: textarea
+    id: motivation
+    attributes:
+      label: Motivation
+      description: What problem does this solve?
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposal
+      description: How should it work?
+  - type: checkboxes
+    id: scope
+    attributes:
+      label: Areas affected
+      options:
+        - label: area/frontend
+        - label: area/backend
+        - label: area/automation
