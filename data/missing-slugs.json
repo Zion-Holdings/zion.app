@@ -1,6 +1,4 @@
 [
-  "accessibility",
-  "ai-consciousness-evolution",
   "ai-content-marketing-automation",
   "ai-creativity-orchestrator",
   "ai-customer-intelligence-platform",
@@ -12,9 +10,6 @@
   "autonomous-devops-platform",
   "autonomous-it-operations",
   "autonomous-vehicle-ai",
-  "blockchain-enterprise-platform",
-  "compliance",
-  "metaverse-digital-reality-platform",
   "quantum-compliance-automation",
   "quantum-creativity-studio",
   "quantum-data-center",
@@ -28,6 +23,5 @@
   "quantum-networking",
   "quantum-threat-detection",
   "services/data-contracts-hub",
-  "services/serverless-lakehouse-starter",
-  "space-mining-automation-platform"
+  "services/serverless-lakehouse-starter"
 ]
