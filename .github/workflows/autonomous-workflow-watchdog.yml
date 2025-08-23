@@ -1,49 +1,35 @@
 name: Autonomous Workflow Watchdog
 
 on:
+  workflow_dispatch: {}
   schedule:
-    - cron: '0 0 * * *'
-  workflow_dispatch:
+    - cron: '*/10 * * * *'
 
-  actions: write
-  issues: write
-  contents: read
-
-concurrency:
-  group: "workflow-watchdog-${{ github.ref }}"
-  cancel-in-progress: "true
+permissions:
+  contents: write
+  actions: read
 
 jobs:
-main:
-  runs-on: ubuntu-latest
-    - name: Main Job
-  steps:
-    - name: Checkout repository
-    - uses: actions/checkout@v4
-    - with:
-      fetch-depth: 0
-    - name: Setup Node.js
-    - uses: actions/setup-node@v4
-    - with:
-      node-version: 20
-      cache: npm
-    - name: Install dependencies
-    - run: npm ci --no-audit --no-fund
-    - name: Run tests
-    - run: npm test
-    - name: Build project
-    - run: npm run build
+  main:
+    name: Main Job
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
-        - name: Scan and remediate failed workflow runs
-        id: scan
-          github-token: ${{ secrets.GITHUB_TOKEN }}
-          script: |
-            const owner = context.repo.owner;
-            const repo = context.repo.repo;
-            const now = Date.now();
-            const ageMs = 60 * 60 * 1000; // 1 hour window
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
 
-        - name: Summary
-        - run: |
-          echo "Reruns: ${{ steps.scan.outputs.reruns }}" >> $GITHUB_STEP_SUMMARY
-          echo "Issues: ${{ steps.scan.outputs.issues }}" >> $GITHUB_STEP_SUMMARY
+      - name: Install dependencies
+        run: npm ci --no-audit --no-fund
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+

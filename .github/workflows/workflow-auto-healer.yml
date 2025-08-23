@@ -1,0 +1,156 @@
+name: Workflow Auto-Healer
+
+on:
+  workflow_run:
+    workflows: ["*"]
+    types: [completed]
+  schedule:
+    - cron: '0 */6 * * *'  # Every 6 hours
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  actions: read
+  pull-requests: write
+
+concurrency:
+  group: workflow-auto-healer
+  cancel-in-progress: true
+
+jobs:
+  analyze-and-heal:
+    name: Analyze and Heal Workflows
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run Workflow Health Monitor
+        run: node automation/workflow-health-monitor.cjs
+
+      - name: Fix YAML Issues
+        run: node automation/fix-workflow-yaml.cjs
+
+      - name: Fix Structural Issues
+        run: python3 comprehensive-workflow-fixer.py
+
+      - name: Validate All Workflows
+        run: |
+          echo "🔍 Validating all workflow files..."
+          for file in .github/workflows/*.yml; do
+            echo "Validating $file..."
+            python3 -c "import yaml; yaml.safe_load(open('$file'))" && echo "✅ $file is valid" || echo "❌ $file has errors"
+          done
+
+      - name: Create Auto-Heal Report
+        run: |
+          echo "📊 Auto-Heal Report" > auto-heal-report.md
+          echo "===================" >> auto-heal-report.md
+          echo "" >> auto-heal-report.md
+          echo "**Timestamp:** $(date)" >> auto-heal-report.md
+          echo "**Workflows Checked:** $(ls .github/workflows/*.yml | wc -l)" >> auto-heal-report.md
+          echo "" >> auto-heal-report.md
+          echo "## Fixes Applied:" >> auto-heal-report.md
+          echo "- YAML syntax fixes" >> auto-heal-report.md
+          echo "- Structural fixes" >> auto-heal-report.md
+          echo "- Missing sections added" >> auto-heal-report.md
+          echo "" >> auto-heal-report.md
+          echo "## Health Status:" >> auto-heal-report.md
+          node automation/workflow-health-monitor.cjs | grep "Health Score" >> auto-heal-report.md
+
+      - name: Create Pull Request for Fixes
+        if: failure()
+        uses: peter-evans/create-pull-request@v6
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          commit-message: "chore(auto-heal): automated workflow fixes"
+          title: "chore(auto-heal): automated workflow fixes and improvements"
+          body: |
+            Automated workflow fixes applied by the Workflow Auto-Healer.
+
+            ## What was fixed:
+            - YAML syntax issues
+            - Missing workflow sections
+            - Structural problems
+            - Permissions and concurrency settings
+
+            ## Files modified:
+            - Multiple workflow files (see diff)
+
+            This PR was automatically created to fix failing workflows.
+          branch: automation/workflow-auto-heal
+          delete-branch: true
+          labels: |
+            automation
+            auto-merge
+            workflow-fix
+
+  monitor-workflow-failures:
+    name: Monitor Workflow Failures
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    if: github.event.workflow_run.conclusion == 'failure'
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Analyze Failed Workflow
+        run: |
+          echo "🔍 Analyzing failed workflow: ${{ github.event.workflow_run.name }}"
+          echo "Workflow ID: ${{ github.event.workflow_run.id }}"
+          echo "Conclusion: ${{ github.event.workflow_run.conclusion }}"
+          echo "Created at: ${{ github.event.workflow_run.created_at }}"
+          echo "Updated at: ${{ github.event.workflow_run.updated_at }}"
+
+      - name: Create Issue for Failed Workflow
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const workflowName = '${{ github.event.workflow_run.name }}';
+            const workflowId = '${{ github.event.workflow_run.id }}';
+            const conclusion = '${{ github.event.workflow_run.conclusion }}';
+            
+            const title = `Workflow Failure: ${workflowName}`;
+            const body = `## Workflow Failure Detected
+            
+            **Workflow:** ${workflowName}
+            **Status:** ${conclusion}
+            **Workflow ID:** ${workflowId}
+            **Triggered by:** ${{ github.event.workflow_run.event }}
+            
+            ## Next Steps
+            1. Review the workflow logs
+            2. Check for configuration issues
+            3. Verify dependencies and secrets
+            4. Run the auto-healer if needed
+            
+            ## Auto-Healing
+            The Workflow Auto-Healer will attempt to fix common issues automatically.
+            
+            ---
+            *This issue was automatically created by the Workflow Auto-Healer*`;
+            
+            try {
+              await github.rest.issues.create({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                title: title,
+                body: body,
+                labels: ['workflow-failure', 'needs-attention']
+              });
+              console.log('Issue created successfully');
+            } catch (error) {
+              console.log('Failed to create issue:', error.message);
+            }

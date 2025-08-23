@@ -1,38 +1,35 @@
-name: agent-agent-1755379777750-2-monitoring-intermediate
+name: Agent Agent 1755379777750 2 Monitoring Intermediate
 
 on:
   workflow_dispatch: {}
   schedule:
-    - cron: '0 */6 * * *'
-
-concurrency:
-  group: "github.workflow-${{ github.ref }}"
-  cancel-in-progress: true
+    - cron: '*/10 * * * *'
 
 permissions:
-  contents: read
+  contents: write
   actions: read
 
 jobs:
-  agent-execution:
+  main:
+    name: Main Job
     runs-on: ubuntu-latest
-    - name: Execute Agent
+    timeout-minutes: 20
     steps:
-      - name: Checkout code
-        - uses: actions/checkout@v4
-        - with:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
           fetch-depth: 0
-      
+
       - name: Setup Node.js
-        - uses: actions/setup-node@v4
-        - with:
+        uses: actions/setup-node@v4
+        with:
           node-version: '20'
           cache: 'npm'
-      
+
       - name: Install dependencies
-        - run: npm ci
-      
-      - name: Run agent
-        - run: echo "Agent execution completed"
-        env:
-          AGENT_NAME: "agent-agent-1755379777750-2-monitoring-intermediate"
+        run: npm ci --no-audit --no-fund
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+

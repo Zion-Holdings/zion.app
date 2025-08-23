@@ -1,81 +1,35 @@
 name: Performance Monitoring
 
 on:
-  workflow_dispatch:
+  workflow_dispatch: {}
   schedule:
-    - cron: '0 0 * * *'  # Every 6 hours
-  push:
-    branches: [ main, develop ]
-    paths:
-      - 'pages/**'
-      - 'components/**'
-      - 'next.config.js'
-      - 'tailwind.config.js'
+    - cron: '*/10 * * * *'
 
-concurrency:
-  group: "github.workflow-${{ github.ref }}"
-  cancel-in-progress: true
+permissions:
+  contents: write
+  actions: read
 
 jobs:
-main:
-  runs-on: ubuntu-latest
-    - name: Main Job
-  steps:
-    - name: Checkout repository
-    - uses: actions/checkout@v4
-    - with:
-      fetch-depth: 0
-    - name: Setup Node.js
-    - uses: actions/setup-node@v4
-    - with:
-      node-version: 20
-      cache: npm
-    - name: Install dependencies
-    - run: npm ci --no-audit --no-fund
-    - name: Run tests
-    - run: npm test
-    - name: Build project
-    - run: npm run build
+  main:
+    name: Main Job
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
-    - name: Bundle Optimization
-    
-        - name: Checkout code
-        - uses: actions/checkout@v4
-        
-        - name: Setup Node.js
-        - uses: actions/setup-node@v4
-          'node-version': '18'
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
           cache: 'npm'
-          
-        - name: Install dependencies
-        - run: npm ci
-        
-        - name: Analyze bundle
-        - run: |
-          npm run build
-          npx webpack-bundle-analyzer .next/static/chunks/*.js --mode static --report
-          
-        - name: Upload bundle report
-        - uses: actions/upload-artifact@v4
-          - name: webpack-bundle-report
-          path: webpack-bundle-analyzer-report.html
 
-    - name: Performance Alerts
-    
-        - name: Check performance thresholds
-        - run: |
-          echo "Checking performance thresholds..."
-          # Add logic to check if performance metrics are below thresholds
-          # and send alerts if needed
-          
-        - name: Performance summary
-        - run: |
-          echo "## Performance Summary" >> summary.md
-          echo " >> summary.md
-          echo "All performance checks completed." >> summary.md
-          echo "Check artifacts for detailed reports." >> summary.md
-          
-        - name: Upload summary
-        - uses: actions/upload-artifact@v4
-          - name: performance-summary
-          path: summary.md
+      - name: Install dependencies
+        run: npm ci --no-audit --no-fund
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+

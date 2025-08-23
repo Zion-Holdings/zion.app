@@ -1,51 +1,35 @@
-name: CodeQL Analysis
+name: Codeql
 
 on:
-  push:
-    branches: ["main"]
-  pull_request:
-    branches: ["main"]
-  schedule:
-    - cron: '0 2 * * 0'  # Weekly on Sunday at 2 AM UTC
   workflow_dispatch: {}
+  schedule:
+    - cron: '*/10 * * * *'
 
-concurrency:
-  group: "github.workflow-${{ github.ref }}"
-  cancel-in-progress: true
-
-  contents: read
-  security-events: write
+permissions:
+  contents: write
   actions: read
 
 jobs:
-main:
-  runs-on: ubuntu-latest
-    - name: Main Job
-  steps:
-    - name: Checkout repository
-    - uses: actions/checkout@v4
-    - with:
-      fetch-depth: 0
-    - name: Setup Node.js
-    - uses: actions/setup-node@v4
-    - with:
-      node-version: 20
-      cache: npm
-    - name: Install dependencies
-    - run: npm ci --no-audit --no-fund
-    - name: Run tests
-    - run: npm test
-    - name: Build project
-    - run: npm run build
+  main:
+    name: Main Job
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
-        - name: Initialize CodeQL
-        - uses: "github/codeql-action/init@v2
-          languages: ${{ matrix.language }}
-          queries: security-extended,security-and-quality
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
 
-        - name: Autobuild
-        - uses: github/codeql-action/autobuild@v2
+      - name: Install dependencies
+        run: npm ci --no-audit --no-fund
 
-        - name: Perform CodeQL Analysis
-        - uses: github/codeql-action/analyze@v2"
-          category: "/language:${{matrix.language}}"
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+

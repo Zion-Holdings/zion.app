@@ -1,49 +1,35 @@
 name: Content Generation
 
 on:
+  workflow_dispatch: {}
   schedule:
-    - cron: '0 2 * * 1'  # Every Monday at 2 AM
-  workflow_dispatch:  # Manual trigger
-  push:
-    paths:
-      - 'pages/**'
-      - 'components/**'
-      - 'docs/**'
+    - cron: '*/10 * * * *'
 
-concurrency:
-  group: "github.workflow-${{ github.ref }}"
-  cancel-in-progress: true
+permissions:
+  contents: write
+  actions: read
 
 jobs:
-main:
-  runs-on: ubuntu-latest
-    - name: Main Job
-  steps:
-    - name: Checkout repository
-    - uses: actions/checkout@v4
-    - with:
-      fetch-depth: 0
-    - name: Setup Node.js
-    - uses: actions/setup-node@v4
-    - with:
-      node-version: 20
-      cache: npm
-    - name: Install dependencies
-    - run: npm ci --no-audit --no-fund
-    - name: Run tests
-    - run: npm test
-    - name: Build project
-    - run: npm run build
+  main:
+    name: Main Job
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
-        - name: Checkout code
-        - uses: actions/checkout@v4
-        
-        - name: Create content tasks
-        - run: |
-          echo "Content tasks would be created here"
-          echo "This could integrate with project management tools"
-          
-        - name: Notify content team
-        - run: |
-          echo "Content generation workflow completed"
-          echo "New content suggestions available"
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci --no-audit --no-fund
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+

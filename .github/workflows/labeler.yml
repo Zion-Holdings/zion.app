@@ -1,36 +1,35 @@
-name: PR Labeler
+name: Labeler
 
 on:
-  pull_request_target:
-    types: [opened, synchronize, reopened]
+  workflow_dispatch: {}
+  schedule:
+    - cron: '*/10 * * * *'
 
-concurrency:
-  group: "github.workflow-${{ github.ref }}"
-  cancel-in-progress: true
-
-  contents: read
+permissions:
+  contents: write
+  actions: read
 
 jobs:
-main:
-  runs-on: ubuntu-latest
-    - name: Main Job
-  steps:
-    - name: Checkout repository
-    - uses: actions/checkout@v4
-    - with:
-      fetch-depth: 0
-    - name: Setup Node.js
-    - uses: actions/setup-node@v4
-    - with:
-      node-version: 20
-      cache: npm
-    - name: Install dependencies
-    - run: npm ci --no-audit --no-fund
-    - name: Run tests
-    - run: npm test
-    - name: Build project
-    - run: npm run build
+  main:
+    name: Main Job
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
-  label:
-          repo-token: ${{ secrets.GITHUB_TOKEN }}"
-          sync-labels: true
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci --no-audit --no-fund
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+

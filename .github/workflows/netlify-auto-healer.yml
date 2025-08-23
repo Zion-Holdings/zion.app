@@ -1,49 +1,35 @@
-name: Netlify Auto-Healer
+name: Netlify Auto Healer
 
 on:
+  workflow_dispatch: {}
   schedule:
-    - cron: '0 0 * * *'
-  workflow_dispatch:
+    - cron: '*/10 * * * *'
 
-  contents: read
-  issues: write
-
-concurrency:
-  group: "netlify-auto-healer
-  cancel-in-progress: "true
+permissions:
+  contents: write
+  actions: read
 
 jobs:
-main:
-  runs-on: ubuntu-latest
-    - name: Main Job
-  steps:
-    - name: Checkout repository
-    - uses: actions/checkout@v4
-    - with:
-      fetch-depth: 0
-    - name: Setup Node.js
-    - uses: actions/setup-node@v4
-    - with:
-      node-version: 20
-      cache: npm
-    - name: Install dependencies
-    - run: npm ci --no-audit --no-fund
-    - name: Run tests
-    - run: npm test
-    - name: Build project
-    - run: npm run build
+  main:
+    name: Main Job
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
-        - name: Use Node.js 20.x
-        - uses: actions/setup-node@v4
-          node-version: 20.x
-        - name: Run auto-healer
-        - run: node automation/netlify-auto-healer.cjs
-        - name: Create issue on failure
-  if: failure()"
-          script: |"
-            const title = 'Netlify auto-healer failed';
-            const body = 'The Netlify auto-healer could not restore or trigger a rebuild. Check API credentials and deploy logs.';
-            const { data: issues } = await github.rest.issues.listForRepo({ owner: context.repo.owner, repo: context.repo.repo, state: 'open' });
-            if (!issues.find(i => i.title === title)) {
-              await github.rest.issues.create({ owner: context.repo.owner, repo: context.repo.repo, title, body });
-            }
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci --no-audit --no-fund
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+

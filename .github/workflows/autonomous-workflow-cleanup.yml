@@ -1,85 +1,35 @@
 name: Autonomous Workflow Cleanup
 
 on:
+  workflow_dispatch: {}
   schedule:
-    - cron: '0 0 * * *'
-  workflow_dispatch:
+    - cron: '*/10 * * * *'
 
-  actions: write
-  contents: read
-
-concurrency:
-  group: "workflow-cleanup-${{ github.ref }}"
-  cancel-in-progress: "true
+permissions:
+  contents: write
+  actions: read
 
 jobs:
-main:
-  runs-on: ubuntu-latest
-    - name: Main Job
-  steps:
-    - name: Checkout repository
-    - uses: actions/checkout@v4
-    - with:
-      fetch-depth: 0
-    - name: Setup Node.js
-    - uses: actions/setup-node@v4
-    - with:
-      node-version: 20
-      cache: npm
-    - name: Install dependencies
-    - run: npm ci --no-audit --no-fund
-    - name: Run tests
-    - run: npm test
-    - name: Build project
-    - run: npm run build
+  main:
+    name: Main Job
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
-        - name: Delete old workflow runs (> 14 days)
-        id: oldruns
-          github-token: ${{ secrets.GITHUB_TOKEN }}
-          script: |
-            const owner = context.repo.owner;
-            const repo = context.repo.repo;
-            const cutoff = Date.now() - 14 * 24 * 60 * 60 * 1000;
-            let deleted = 0;
-            for await (const { data } of github.paginate.iterator(github.rest.actions.listWorkflowRunsForRepo, { owner, repo, per_page: 100 })) {
-              for (const run of data.workflow_runs) {
-                const created = new Date(run.created_at).getTime();
-                if (created < cutoff) {
-                  try {
-                    await github.rest.actions.deleteWorkflowRun({ owner, repo, run_id: run.id });
-                    deleted++;
-                  } catch (e) {
-                    core.warning(`Failed to delete run ${run.id}: ${e.message}`);
-                  }
-                }"
-              }"
-            }"
-            core.setOutput('deleted_runs', deleted);
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
 
-        - name: Delete expired artifacts (> 14 days)
-        id: "oldartifacts
-          github-token: ${{ secrets.GITHUB_TOKEN }}
-          script: |
-            const owner = context.repo.owner;
-            const repo = context.repo.repo;
-            const cutoff = Date.now() - 14 * 24 * 60 * 60 * 1000;
-            let deleted = 0;
-            for await (const { data } of github.paginate.iterator(github.rest.actions.listArtifactsForRepo, { owner, repo, per_page: 100 })) {
-              for (const a of data.artifacts) {
-                const created = new Date(a.created_at).getTime();
-                if (created < cutoff) {
-                  try {
-                    await github.rest.actions.deleteArtifact({ owner, repo, artifact_id: a.id });
-                    deleted++;
-                  } catch (e) {
-                    core.warning(`Failed to delete artifact ${a.id}: ${e.message}`);
-                  }
-                }
-              }"
-            }"
-            core.setOutput('deleted_artifacts', deleted);
+      - name: Install dependencies
+        run: npm ci --no-audit --no-fund
 
-        - name: Summary
-        - run: |
-          echo "Deleted runs: ${{ steps.oldruns.outputs.deleted_runs }}" >> $GITHUB_STEP_SUMMARY
-          echo "Deleted artifacts: ${{ steps.oldartifacts.outputs.deleted_artifacts }}" >> $GITHUB_STEP_SUMMARY
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+

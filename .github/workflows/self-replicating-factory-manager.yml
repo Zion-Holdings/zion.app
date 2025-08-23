@@ -1,133 +1,35 @@
-name: 🏭 Self-Replicating Factory Manager - Infinite Growth Engine
+name: Self Replicating Factory Manager
 
 on:
+  workflow_dispatch: {}
   schedule:
-    # Run every 4 hours to manage self-replication
-    - cron: '0 0 * * *'
-  workflow_dispatch:
-    inputs:
-      replication_mode:
-        description: 'Replication mode (aggressive, balanced, conservative)'
-        required: false
-        default: 'balanced'
-      max_factories:
-        description: 'Maximum number of factories to allow'
-        required: false
-        default: '1000'
-  push:
-    branches: [main, develop]
-    paths:
-      - 'automation/**'
-      - '.github/workflows/**'
+    - cron: '*/10 * * * *'
 
-  REPLICATION_MODE: "${{ github.event.inputs.replication_mode || 'balanced' }}"
-  MAX_FACTORIES: "${{ github.event.inputs.max_factories || '1000' }}"
-  REPLICATION_FACTOR: 2.0
-  HEALTH_CHECK_INTERVAL: 3600
-
-concurrency:
-  group: "github.workflow-${{ github.ref }}"
-  cancel-in-progress: "true
+permissions:
+  contents: write
+  actions: read
 
 jobs:
-main:
-  runs-on: ubuntu-latest
-    - name: Main Job
-  steps:
-    - name: Checkout repository
-    - uses: actions/checkout@v4
-    - with:
-      fetch-depth: 0
-    - name: Setup Node.js
-    - uses: actions/setup-node@v4
-    - with:
-      node-version: 20
-      cache: npm
-    - name: Install dependencies
-    - run: npm ci --no-audit --no-fund
-    - name: Run tests
-    - run: npm test
-    - name: Build project
-    - run: npm run build
+  main:
+    name: Main Job
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
-        - name: Setup Node.js
-        - uses: actions/setup-node@v4
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
           node-version: '20'
           cache: 'npm'
-      
-        - name: Execute replication strategy
-        - run: |
-          REPLICATION_TYPE="${{ matrix.replication-type }}"
-          CURRENT_FACTORIES="${{ needs.factory-health-check.outputs.total-factories }}"
-          MAX_FACTORIES="${{ env.MAX_FACTORIES }}"
-          MODE="${{ env.REPLICATION_MODE }}"
-          
-                - name: `${config.type}-factory-replica`,
-                version: "1.0.0",
-                description: `Self-replicating ${config.type} factory with exponential growth`,
-                main: "factory.js",
-                scripts: {
-                  start: "node factory.js",
-                  test: "node -e 'console.log(\"Self-replicating factory ready!\")'",
-                  replicate: "node -e 'const Factory = require(\"./factory.js\"); const f = new Factory(require(\"./factory-config.json\")); console.log(\"Growth metrics:\", f.getGrowthMetrics())'"
-                },
-                keywords: ["agent", "factory", "autonomous", "self-replicating", "exponential-growth"],
-                author: "Zion App Automation System",
-                license: "MIT"
-              };
-              
-        - name: Monitor self-replication
-        - run: |
-          echo "📊 Monitoring self-replication progress..."
-          
-        - name: Generate replication report
-        - run: "|
-          mkdir -p automation/reports
-          
-          - Total Factories: $(find automation/factories/ -name "factory-config.json" | wc -l)
-          - Replicated Factories: $(find automation/factories/ -name "factory-config.json" -exec grep -l "replicated" {} \; | wc -l)
-          - Self-Replicating: $(find automation/factories/ -name "*.js" -exec grep -l "selfReplicate\|self-replicating" {} \; | wc -l)
-          
-          - Healthy: ${{ needs.factory-health-check.outputs.healthy-factories }}
-          - Unhealthy: ${{ needs.factory-health-check.outputs.unhealthy-factories }}
-          
-          - Mode: ${{ env.REPLICATION_MODE }}
-          - Factor: ${{ env.REPLICATION_FACTOR }}
-          - Max Factories: ${{ env.MAX_FACTORIES }}
-          
-          - Base replication rate: 2x per cycle
-          - Self-replication trigger: Every 2 agents
-          - Expected growth: Infinite (self-sustaining)
-          
-          - Continue self-replication
-          - Monitor health status
-          - Optimize replication patterns
-          - Scale as needed
-          EOF
-          
-        - name: Validate infinite growth potential
-        - run: |
-          echo "♾️ Validating infinite growth potential..."
-          
-        - name: Run validation
-        - run: |
-          cd automation/validation
-          node -e "
-            const InfiniteGrowthValidator = require('./infinite-growth-validator.js');
-            const validator = new InfiniteGrowthValidator();
-            validator.validateInfiniteGrowth().then(result => {
-              console.log('Validation result:', result);
-              const report = validator.generateValidationReport();
-              console.log('Validation report:', report);
-            });
-          
-        - name: Replication completion notification
-        - run: |
-          echo "🏭 Self-Replicating Factory Manager Complete!"
-          echo "📊 Total factories: ${{ needs.factory-health-check.outputs.total-factories }}"
-          echo "🏥 Healthy factories: ${{ needs.factory-health-check.outputs.healthy-factories }}"
-          echo "🔄 Replication mode: ${{ env.REPLICATION_MODE }}"
-          echo "♾️ Max factories: ${{ env.MAX_FACTORIES }}"
-          echo "⏰ Next replication cycle: In 4 hours"
-          echo "
-          echo "The system is now autonomously self-replicating for infinite growth!"
+
+      - name: Install dependencies
+        run: npm ci --no-audit --no-fund
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+

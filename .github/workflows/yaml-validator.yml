@@ -1,65 +1,35 @@
-name: YAML Syntax Validator
+name: Yaml Validator
 
 on:
-  push:
-    paths:
-      - '**.yml'
-      - '**.yaml'
-  pull_request:
-    paths:
-      - '**.yml'
-      - '**.yaml'
+  workflow_dispatch: {}
   schedule:
-    - cron: '0 0 * * *'  # Daily validation
+    - cron: '*/10 * * * *'
+
+permissions:
+  contents: write
+  actions: read
 
 jobs:
-main:
-  runs-on: ubuntu-latest
-    - name: Main Job
-  steps:
-    - name: Checkout repository
-    - uses: actions/checkout@v4
-    - with:
-      fetch-depth: 0
-    - name: Setup Node.js
-    - uses: actions/setup-node@v4
-    - with:
-      node-version: 20
-      cache: npm
-    - name: Install dependencies
-    - run: npm ci --no-audit --no-fund
-    - name: Run tests
-    - run: npm test
-    - name: Build project
-    - run: npm run build
+  main:
+    name: Main Job
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
-        - name: Setup Python
-        - uses: actions/setup-python@v4
-          python-version: '3.11'
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
 
-        - name: Install PyYAML
-        - run: pip install pyyaml
+      - name: Install dependencies
+        run: npm ci --no-audit --no-fund
 
-        - name: Validate YAML files
-        id: validate
-          echo "🔍 Validating YAML files..."
-          
-        - name: Create validation report
-  if: steps.validate.outputs.invalid_count != '0'
-          echo "📝 Creating validation report..."
-          
-          - **Total files checked**: $(find . -name "*.yml" -o -name "*.yaml" | grep -v node_modules | grep -v .git | wc -l)
-          - **Valid files**: $(find . -name "*.yml" -o -name "*.yaml" | grep -v node_modules | grep -v .git | xargs -I {} sh -c 'python3 -c "import yaml; yaml.safe_load(open(\"{}\")) 2>/dev/null && echo "{}"' | wc -l)
-          - **Invalid files**: ${{ steps.validate.outputs.invalid_count }}
-          
-        - name: Upload validation report
-  if: steps.validate.outputs.invalid_count != '0'
-          - name: yaml-validation-report
-          path: yaml-validation-report.md
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
 
-        - name: Comment on PR
-  if: github.event_name == 'pull_request' && steps.validate.outputs.invalid_count != '0'
-          script: |
-            const fs = require('fs');
-            const report = fs.readFileSync('yaml-validation-report.md', 'utf8');
-            

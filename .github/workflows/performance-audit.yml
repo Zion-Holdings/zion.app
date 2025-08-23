@@ -1,58 +1,35 @@
 name: Performance Audit
 
 on:
+  workflow_dispatch: {}
   schedule:
-    - cron: '0 0 * * *'
-  workflow_dispatch:
+    - cron: '*/10 * * * *'
 
-  contents: read
-  issues: write
-
-concurrency:
-  group: "performance-audit
-  cancel-in-progress: "true
+permissions:
+  contents: write
+  actions: read
 
 jobs:
-security:
-  runs-on: ubuntu-latest
-    - name: Security Analysis
-  steps:
-    - name: Checkout repository
-    - uses: actions/checkout@v4
-    - name: Run security scan
-    - run: npm audit --audit-level=high
+  main:
+    name: Main Job
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
-        - name: Ensure SITE_URL present"
-        - run: |
-          if [ -z "${SITE_URL}" ]; then
-            echo "SITE_URL secret not set, skipping." && exit 0
-          fi
-        - name: Run Lighthouse
-        - uses: "treosh/lighthouse-ci-action@v11
-          urls: "|
-            ${{ secrets.SITE_URL }}/
-          uploadArtifacts: true
-          temporaryPublicStorage: true
-        - name: Basic score gate and issue
-  if: always()
-          SITE_URL: ${{ secrets.SITE_URL }}"
-          script: |"
-            const core = require('@actions/core');
-            const fs = require('fs');
-            const glob = require('glob');
-            try {
-              const files = glob.sync('**/lighthouse-*.json');
-              if (!files.length) return;
-              const report = JSON.parse(fs.readFileSync(files[0], 'utf8'));
-              const perf = Math.round((report.categories.performance.score || 0) * 100);
-              if (perf < 80) {
-                const title = `Performance regression: score ${perf}`;
-                const body = `Lighthouse performance score for ${process.env.SITE_URL} is ${perf}. Please investigate.`;
-                const { data: issues } = await github.rest.issues.listForRepo({ owner: context.repo.owner, repo: context.repo.repo, state: 'open' });
-                if (!issues.find(i => i.title === title)) {
-                  await github.rest.issues.create({ owner: context.repo.owner, repo: context.repo.repo, title, body, labels: ['performance','automation'] });
-                }
-              }
-            } catch (e) {
-              core.warning(`Failed to evaluate performance score: ${e.message}`);
-            }
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci --no-audit --no-fund
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+

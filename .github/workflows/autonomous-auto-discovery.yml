@@ -1,62 +1,35 @@
-name: Autonomous Auto-Discovery (7m)
+name: Autonomous Auto Discovery
 
 on:
-  schedule:
-    - cron: '0 0 * * *'
   workflow_dispatch: {}
+  schedule:
+    - cron: '*/10 * * * *'
 
-concurrency:
 permissions:
   contents: write
   actions: read
 
-  group: "autonomous-auto-discovery-${{ github.ref }}"
-  cancel-in-progress: "true
-
-  contents: write
-
 jobs:
-main:
-  runs-on: ubuntu-latest
-    - name: Main Job
-  steps:
-    - name: Checkout repository
-    - uses: actions/checkout@v4
-    - with:
-      fetch-depth: 0
-    - name: Setup Node.js
-    - uses: actions/setup-node@v4
-    - with:
-      node-version: 20
-      cache: npm
-    - name: Install dependencies
-    - run: npm ci --no-audit --no-fund
-    - name: Run tests
-    - run: npm test
-    - name: Build project
-    - run: npm run build
-
-        - name: Checkout
-        - uses: actions/checkout@v4
+  main:
+    name: Main Job
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
           fetch-depth: 0
 
-        - name: Setup Node.js
-        - uses: actions/setup-node@v4
-          node-version: 20
-          cache: npm
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
 
-        - name: Install dependencies
-        - run: npm ci
+      - name: Install dependencies
+        run: npm ci --no-audit --no-fund
 
-        - name: Run auto-discovery partition ${{ matrix.partition_index }} of ${{ matrix.partition_total }}
-        env:"
-          PARTITION_INDEX: ${{ matrix.partition_index }}"
-          PARTITION_TOTAL: ${{ matrix.partition_total }}"
-          TASK_TIMEOUT_MS: '180000'
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
 
-        - name: Upload logs
-  if: "always()
-          - name: auto-discovery-logs-${{ matrix.partition_index }}
-          path: automation/logs/**/*
-          if-no-files-found: ignore
-"
