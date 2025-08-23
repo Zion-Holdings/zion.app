@@ -1,3 +1,17 @@
+<<<<<<< HEAD
+const { execSync } = require('child_process');
+const fs = require('fs');
+const path = require('path');
+
+exports.handler = async function(event, context) {
+  console.log('🤖 Starting trigger-all-and-commit...');
+  
+  try {
+    const timestamp = new Date().toISOString();
+    const reportPath = path.join(process.cwd(), 'trigger-all-and-commit-report.md');
+    
+    const reportContent = `# trigger-all-and-commit Report
+=======
 exports.handler = async function() {
   const baseUrl = (process.env.SITE_URL || process.env.URL || process.env.DEPLOY_PRIME_URL || '').replace(/\/$/, '');
   const buildHook = process.env.NETLIFY_BUILD_HOOK_URL || process.env.BUILD_HOOK_URL || '';
@@ -17,6 +31,7 @@ exports.handler = async function() {
     functionNames = [];
     log(`manifest load failed: ${String(error)}`);
   }
+>>>>>>> origin/cursor/develop-autonomous-cloud-agents-for-automation-orchestration-ded0
 
 Generated: ${timestamp}
 
@@ -42,6 +57,11 @@ Generated: ${timestamp}
     } catch (gitError) {
       console.log('Git error:', gitError.message);
     }
+<<<<<<< HEAD
+    
+    console.log('✅ trigger-all-and-commit completed successfully');
+    
+=======
   }
 
   async function invokeAll(functionNames) {
@@ -120,6 +140,7 @@ Generated: ${timestamp}
       buildResult = { method: 'none', ok: false, error: 'No build method available (set NETLIFY_BUILD_HOOK_URL or GITHUB_TOKEN/GITHUB_REPO/GIT_BRANCH)' };
     }
 
+>>>>>>> origin/cursor/develop-autonomous-cloud-agents-for-automation-orchestration-ded0
     return {
       statusCode: 200,
       body: JSON.stringify({
