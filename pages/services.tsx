@@ -5,7 +5,7 @@ import {
   Search, Grid, List,
   Brain, Atom, Shield, Target, Rocket,
   ArrowRight, Check, Palette, Heart, Truck, GraduationCap,
-  Building, Cpu, Database, Cloud, Lock, Globe
+  Building, Cpu, Globe
 } from 'lucide-react';
 
 // Import our new service data
@@ -19,17 +19,21 @@ import { real2035Q2Additions } from '../data/real-2035-q2-additions';
 import { real2036ServiceExpansions } from '../data/real-2036-service-expansions';
 import { innovative2036MicroSaasServices } from '../data/innovative-2036-micro-saas-services';
 import { innovative2036ITServices } from '../data/innovative-2036-it-services';
-import { innovative2037MicroSaasServices } from '../data/innovative-2037-micro-saas-services';
-import { innovative2037ITServices } from '../data/innovative-2037-it-services';
-import { innovative2037AIServices } from '../data/innovative-2037-ai-services';
+import { innovative2026MicroSaasExpansions } from '../data/innovative-2026-micro-saas-expansions';
+import { innovative2026ITServicesExpansions } from '../data/innovative-2026-it-services-expansions';
+import { innovative2026AIServicesExpansions } from '../data/innovative-2026-ai-services-expansions';
 
-// Import our new innovative services
-import { innovative2037Services } from '../data/innovative-2037-services';
-import { advanced2038Services } from '../data/advanced-2038-services';
-import { revolutionary2039Services } from '../data/revolutionary-2039-services';
+// Import our new innovative 2038 services
+import { innovative2038MicroSaasExpansions } from '../data/innovative-2038-micro-saas-expansions';
+import { innovative2038ITServicesExpansions } from '../data/innovative-2038-it-services-expansions';
+import { innovative2038AIServicesExpansions } from '../data/innovative-2038-ai-services-expansions';
+
+// Import our new comprehensive services
+import { innovative2038AdvancedServices } from '../data/innovative-2038-advanced-services';
+// import { revolutionary2040FuturisticServices } from '../data/revolutionary-2040-futuristic-services';
+import { comprehensiveAdvertisingMarketingServices } from '../data/comprehensive-advertising-marketing-services';
 
 // Import our revolutionary 2040-2041 services
-import { revolutionary2040FuturisticServices } from '../data/revolutionary-2040-futuristic-services';
 import { revolutionary2041AdvancedServices } from '../data/revolutionary-2041-advanced-services';
 
 // Import our latest innovative services
@@ -104,12 +108,16 @@ const allServices = [
   ...innovative2036MicroSaasServices,
   ...innovative2036ITServices,
   // Our new innovative services
-  ...innovative2037Services,
-  ...advanced2038Services,
-  ...revolutionary2039Services,
-  // Our revolutionary 2040-2041 services
-  ...revolutionary2040FuturisticServices,
-  ...revolutionary2041AdvancedServices,
+  ...innovative2026MicroSaasExpansions,
+  ...innovative2026ITServicesExpansions,
+  ...innovative2026AIServicesExpansions,
+  ...innovative2038MicroSaasExpansions,
+  ...innovative2038ITServicesExpansions,
+  ...innovative2038AIServicesExpansions,
+  // Our new comprehensive services
+  ...innovative2038AdvancedServices,
+  // ...revolutionary2040FuturisticServices,
+  ...comprehensiveAdvertisingMarketingServices,
   
   // Our latest innovative services
   ...innovative2040FuturisticServices,
@@ -227,6 +235,27 @@ const categories = [
     icon: <Atom className="w-6 h-6" />,
     color: 'from-purple-600 to-pink-700',
     description: 'Neural networks and quantum computing fusion'
+  },
+  {
+    id: 'advertising-marketing',
+    name: 'Advertising & Marketing',
+    icon: <Target className="w-6 h-6" />,
+    color: 'from-orange-500 to-red-500',
+    description: 'AI-powered advertising and marketing solutions'
+  },
+  {
+    id: 'consciousness-ai',
+    name: 'Consciousness & AI',
+    icon: <Brain className="w-6 h-6" />,
+    color: 'from-violet-500 to-purple-600',
+    description: 'AI consciousness and human augmentation'
+  },
+  {
+    id: 'quantum-reality',
+    name: 'Quantum Reality',
+    icon: <Atom className="w-6 h-6" />,
+    color: 'from-cyan-500 to-blue-600',
+    description: 'Quantum reality manipulation and simulation'
   },
   {
     id: 'space-technology',
