@@ -17,8 +17,8 @@ export default function Layout({ children }: LayoutProps) {
     <div className="min-h-screen bg-black text-white relative overflow-x-hidden">
       {/* Skip to content link for accessibility */}
       <a href="#main" className="skip-link">Skip to main content</a>
-      {/* Futuristic Background */}
-      <UltraFuturisticBackground2036 />
+              {/* Futuristic Background */}
+        <UltraFuturisticBackground2036 variant="quantum" intensity="high" />
       
       {/* Layout Structure */}
       <div className="relative z-10">
