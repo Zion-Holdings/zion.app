@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Head from 'next/head';
 
 interface SEOOptimizerProps {
@@ -11,119 +11,152 @@ interface SEOOptimizerProps {
 }
 
 const SEOOptimizer: React.FC<SEOOptimizerProps> = ({
-  title = "Zion Tech Group - Pioneering the Future of Technology",
-  description = "Leading provider of AI, quantum computing, cybersecurity, and autonomous solutions. Transform your business with cutting-edge technology from Zion Tech Group.",
-  keywords = "AI, artificial intelligence, quantum computing, cybersecurity, cloud infrastructure, data analytics, process automation, enterprise solutions, technology consulting",
+  title = "Zion Tech Group - Pioneering the Future of Technology with AI, Quantum Computing & Autonomous Solutions",
+  description = "Leading provider of cutting-edge AI, quantum computing, cybersecurity, and autonomous solutions. Transform your business with revolutionary technology from Zion Tech Group. Expert consulting, implementation, and support.",
+  keywords = "AI, artificial intelligence, quantum computing, cybersecurity, cloud infrastructure, data analytics, process automation, enterprise solutions, technology consulting, autonomous systems, machine learning, neural networks, blockchain, space technology, quantum encryption, AI consciousness, autonomous robotics, quantum AI fusion, enterprise security, digital transformation, innovation consulting",
   image = "https://ziontechgroup.com/images/zion-tech-group-og.jpg",
   url = "https://ziontechgroup.com",
   type = "website"
 }) => {
-  const structuredData = {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "Zion Tech Group",
-    "url": "https://ziontechgroup.com",
-    "logo": "https://ziontechgroup.com/images/zion-tech-group-logo.png",
-    "description": "Pioneering the future of technology with innovative solutions that drive business transformation and unlock human potential",
-    "foundingDate": "2020",
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "364 E Main St STE 1008",
-      "addressLocality": "Middletown",
-      "addressRegion": "DE",
-      "postalCode": "19709",
-      "addressCountry": "US"
-    },
-    "contactPoint": {
-      "@type": "ContactPoint",
-      "telephone": "+1-302-464-0950",
-      "contactType": "customer service",
-      "email": "kleber@ziontechgroup.com",
-      "availableLanguage": "English"
-    },
-    "sameAs": [
-      "https://linkedin.com/company/ziontechgroup",
-      "https://twitter.com/ziontechgroup",
-      "https://github.com/Zion-Holdings"
-    ],
-    "hasOfferCatalog": {
-      "@type": "OfferCatalog",
-      "name": "Technology Services",
-      "itemListElement": [
-        {
-          "@type": "Offer",
-          "itemOffered": {
-            "@type": "Service",
-            "name": "AI & Machine Learning Solutions",
-            "description": "Advanced artificial intelligence and machine learning solutions for enterprise automation"
-          }
+  useEffect(() => {
+    // Add structured data for better SEO
+    const addStructuredData = () => {
+      const structuredData = {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Zion Tech Group",
+        "url": "https://ziontechgroup.com",
+        "logo": "https://ziontechgroup.com/logo.png",
+        "description": description,
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "364 E Main St STE 1008",
+          "addressLocality": "Middletown",
+          "addressRegion": "DE",
+          "postalCode": "19709",
+          "addressCountry": "US"
         },
-        {
-          "@type": "Offer",
-          "itemOffered": {
-            "@type": "Service",
-            "name": "Quantum Computing Services",
-            "description": "Next-generation quantum computing solutions for complex problem solving"
-          }
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "telephone": "+1-302-464-0950",
+          "contactType": "customer service",
+          "email": "kleber@ziontechgroup.com"
         },
-        {
-          "@type": "Offer",
-          "itemOffered": {
-            "@type": "Service",
-            "name": "Space Technology Solutions",
-            "description": "Innovative space exploration and technology solutions"
-          }
-        }
-      ]
-    }
-  };
+        "sameAs": [
+          "https://linkedin.com/company/ziontechgroup",
+          "https://twitter.com/ziontechgroup",
+          "https://facebook.com/ziontechgroup",
+          "https://instagram.com/ziontechgroup",
+          "https://youtube.com/@ziontechgroup",
+          "https://github.com/ziontechgroup"
+        ],
+        "foundingDate": "2020",
+        "numberOfEmployees": "50-100",
+        "serviceType": [
+          "AI Services",
+          "Quantum Computing",
+          "Autonomous Systems",
+          "Cybersecurity",
+          "Space Technology"
+        ]
+      };
 
-  const faqStructuredData = {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-      {
-        "@type": "Question",
-        "name": "What services does Zion Tech Group offer?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Zion Tech Group offers comprehensive AI, quantum computing, cybersecurity, cloud infrastructure, and blockchain solutions for enterprise clients."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "How does Zion Tech Group ensure security?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "We implement military-grade cybersecurity protocols, regular security audits, and compliance with international security standards including ISO 27001."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "What makes Zion Tech Group unique?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Our combination of cutting-edge AI, quantum computing expertise, autonomous operations, and space technology solutions sets us apart in the technology industry."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "What industries do you serve?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "We serve diverse industries including healthcare, finance, government, manufacturing, retail, and entertainment with tailored technology solutions."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Do you provide 24/7 support?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Yes, we provide 24/7 technical support and monitoring to ensure your systems run smoothly with our 99.9% uptime guarantee."
-        }
+      // Remove existing structured data
+      const existingScript = document.querySelector('script[type="application/ld+json"]');
+      if (existingScript) {
+        existingScript.remove();
       }
-    ]
-  };
+
+      // Add new structured data
+      const script = document.createElement('script');
+      script.type = 'application/ld+json';
+      script.text = JSON.stringify(structuredData);
+      document.head.appendChild(script);
+    };
+
+    // Add FAQ structured data
+    const addFAQStructuredData = () => {
+      const faqData = {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What services does Zion Tech Group offer?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Zion Tech Group offers cutting-edge AI consciousness evolution, quantum cybersecurity, autonomous content creation, quantum supply chain optimization, and space technology solutions."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How can AI consciousness benefit my business?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "AI consciousness can provide advanced decision-making capabilities, emotional intelligence in customer interactions, and ethical reasoning for complex business scenarios."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What makes quantum computing different from traditional computing?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Quantum computing uses quantum bits (qubits) that can exist in multiple states simultaneously, enabling exponentially faster processing for complex problems like cryptography, optimization, and AI training."
+            }
+          }
+        ]
+      };
+
+      const faqScript = document.createElement('script');
+      faqScript.type = 'application/ld+json';
+      faqScript.text = JSON.stringify(faqData);
+      document.head.appendChild(faqScript);
+    };
+
+    // Add breadcrumb structured data
+    const addBreadcrumbData = () => {
+      const breadcrumbData = {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://ziontechgroup.com"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Services",
+            "item": "https://ziontechgroup.com/services"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "AI & Consciousness",
+            "item": "https://ziontechgroup.com/ai-services"
+          }
+        ]
+      };
+
+      const breadcrumbScript = document.createElement('script');
+      breadcrumbScript.type = 'application/ld+json';
+      breadcrumbScript.text = JSON.stringify(breadcrumbData);
+      document.head.appendChild(breadcrumbScript);
+    };
+
+    // Initialize structured data
+    addStructuredData();
+    addFAQStructuredData();
+    addBreadcrumbData();
+
+    // Cleanup function
+    return () => {
+      const scripts = document.querySelectorAll('script[type="application/ld+json"]');
+      scripts.forEach(script => script.remove());
+    };
+  }, [description]);
 
   const websiteStructuredData = {
     "@context": "https://schema.org",
@@ -166,10 +199,10 @@ const SEOOptimizer: React.FC<SEOOptimizerProps> = ({
       <meta name="twitter:description" content={description} />
       <meta name="twitter:image" content={image} />
       
-      {/* Additional Meta Tags */}
+      {/* Additional SEO Meta Tags */}
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      <meta name="theme-color" content="#0891b2" />
-      <meta name="msapplication-TileColor" content="#0891b2" />
+      <meta name="theme-color" content="#00d4ff" />
+      <meta name="msapplication-TileColor" content="#00d4ff" />
       <meta name="apple-mobile-web-app-capable" content="yes" />
       <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
       
@@ -177,29 +210,22 @@ const SEOOptimizer: React.FC<SEOOptimizerProps> = ({
       <link rel="canonical" href={url} />
       
       {/* Favicon and App Icons */}
-      <link rel="icon" href="/favicon.ico" />
-      <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+      <link rel="icon" type="image/x-icon" href="/favicon.ico" />
       <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
       <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
       <link rel="manifest" href="/site.webmanifest" />
       
-      {/* Preconnect to External Domains */}
+      {/* Preconnect to external domains for performance */}
       <link rel="preconnect" href="https://fonts.googleapis.com" />
       <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+      <link rel="preconnect" href="https://www.google-analytics.com" />
+      <link rel="preconnect" href="https://www.googletagmanager.com" />
       
-      {/* DNS Prefetch */}
+      {/* DNS prefetch for performance */}
       <link rel="dns-prefetch" href="//www.google-analytics.com" />
       <link rel="dns-prefetch" href="//www.googletagmanager.com" />
       
       {/* Structured Data */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqStructuredData) }}
-      />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteStructuredData) }}
@@ -228,6 +254,45 @@ const SEOOptimizer: React.FC<SEOOptimizerProps> = ({
       <meta name="google-site-verification" content="your-verification-code" />
       <meta name="msvalidate.01" content="your-verification-code" />
       <meta name="yandex-verification" content="your-verification-code" />
+      
+      {/* Additional structured data for business */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "LocalBusiness",
+            "name": "Zion Tech Group",
+            "image": "https://ziontechgroup.com/logo.png",
+            "priceRange": "$$$",
+            "currenciesAccepted": "USD",
+            "paymentAccepted": "Credit Card, Bank Transfer, PayPal",
+            "areaServed": "Worldwide",
+            "hasOfferCatalog": {
+              "@type": "OfferCatalog",
+              "name": "Technology Services",
+              "itemListElement": [
+                {
+                  "@type": "Offer",
+                  "itemOffered": {
+                    "@type": "Service",
+                    "name": "AI Consciousness Evolution",
+                    "description": "Advanced AI consciousness development platform"
+                  }
+                },
+                {
+                  "@type": "Offer",
+                  "itemOffered": {
+                    "@type": "Service",
+                    "name": "Quantum Cybersecurity",
+                    "description": "Quantum-resistant security solutions"
+                  }
+                }
+              ]
+            }
+          })
+        }}
+      />
     </Head>
   );
 };
