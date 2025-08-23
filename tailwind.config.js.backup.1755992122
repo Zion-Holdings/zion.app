@@ -7,6 +7,14 @@ module.exports = {
   theme: {
     extend: {
       colors: {
+<<<<<<< HEAD
+        'fade-in': 'fadeIn 0.6s ease-out forwards',
+        'fade-in-up': 'fadeInUp 0.6s ease-out forwards',
+        'fade-in-down': 'fadeInDown 0.6s ease-out forwards',
+        'slide-in-left': 'slideInLeft 0.6s ease-out forwards',
+        'slide-in-right': 'slideInRight 0.6s ease-out forwards',
+        'scale-in': 'scaleIn 0.6s ease-out forwards',
+=======
         // Modern color palette
         primary: {
           50: '#eff6ff',
@@ -198,6 +206,7 @@ module.exports = {
         'glow-xl': '0 0 60px rgba(59, 130, 246, 0.5)',
       },
       animation: {
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-2889
         'float': 'float 6s ease-in-out infinite',
         'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
         'bounce-slow': 'bounce 3s infinite',
@@ -207,6 +216,173 @@ module.exports = {
         'slide-up': 'slideUp 0.5s ease-out',
         'scale-in': 'scaleIn 0.3s ease-out',
         'glow': 'glow 2s ease-in-out infinite alternate',
+<<<<<<< HEAD
+        'shimmer': 'shimmer 2.5s linear infinite',
+        'matrix': 'matrix 20s linear infinite',
+        'neon-pulse': 'neonPulse 1.5s ease-in-out infinite',
+        'cyber-float': 'cyberFloat 8s ease-in-out infinite',
+        'hologram': 'hologram 3s ease-in-out infinite',
+        'energy-wave': 'energyWave 4s ease-in-out infinite',
+        'quantum-spin': 'quantumSpin 6s linear infinite',
+        'neural-network': 'neuralNetwork 10s linear infinite',
+        'plasma-flow': 'plasmaFlow 5s ease-in-out infinite',
+        'cyber-grid': 'cyberGrid 15s linear infinite',
+        primary: {
+          50: '#eff6ff',
+          100: '#dbeafe',
+          200: '#bfdbfe',
+          300: '#93c5fd',
+          400: '#60a5fa',
+          500: '#3b82f6',
+          600: '#2563eb',
+          700: '#1d4ed8',
+          800: '#1e40af',
+          900: '#1e3a8a',
+        },
+        secondary: {
+          50: '#fdf4ff',
+          100: '#fae8ff',
+          200: '#f5d0fe',
+          300: '#f0abfc',
+          400: '#e879f9',
+          500: '#d946ef',
+          600: '#c026d3',
+          700: '#a21caf',
+          800: '#86198f',
+          900: '#701a75',
+        },
+        accent: {
+          DEFAULT: "hsl(var(--accent))",
+          foreground: "hsl(var(--accent-foreground))",
+        },
+        popover: {
+          DEFAULT: "hsl(var(--popover))",
+          foreground: "hsl(var(--popover-foreground))",
+        },
+        card: {
+          DEFAULT: "hsl(var(--card))",
+          foreground: "hsl(var(--card-foreground))",
+        },
+        yellow: {
+          50: '#fefce8',
+          100: '#fef3c7',
+          200: '#fde68a',
+          300: '#fcd34d',
+          400: '#fbbf24',
+          500: '#f59e0b',
+          600: '#d97706',
+          700: '#b45309',
+          800: '#92400e',
+          900: '#78350f',
+          950: '#451a03',
+        },
+        warning: {
+          DEFAULT: "hsl(38 92% 50%)",
+          foreground: "hsl(48 96% 89%)",
+          50: "hsl(48 96% 89%)",
+          100: "hsl(48 96% 89%)",
+          200: "hsl(48 96% 89%)",
+          300: "hsl(48 96% 89%)",
+          400: "hsl(48 96% 89%)",
+          500: "hsl(38 92% 50%)",
+          600: "hsl(32 95% 44%)",
+          700: "hsl(26 90% 37%)",
+          800: "hsl(23 83% 31%)",
+          900: "hsl(22 78% 26%)",
+        },
+        orange: {
+          50: '#fff7ed',
+          100: '#ffedd5',
+          200: '#fed7aa',
+          300: '#fdba74',
+          400: '#fb923c',
+          500: '#f97316',
+          600: '#ea580c',
+          700: '#c2410c',
+          800: '#9a3412',
+          900: '#7c2d12',
+          950: '#431407',
+        },
+        pink: {
+          50: '#fdf2f8',
+          100: '#fce7f3',
+          200: '#fbcfe8',
+          300: '#f9a8d4',
+          400: '#f472b6',
+          500: '#ec4899',
+          600: '#db2777',
+          700: '#be185d',
+          800: '#9d174d',
+          900: '#831843',
+          950: '#500724',
+        }
+      },
+      fontFamily: {
+        sans: ['Inter', 'system-ui', 'sans-serif'],
+        mono: ['JetBrains Mono', 'monospace'],
+        display: ['Orbitron', 'monospace'],
+      },
+      fontSize: {
+        'xs': ['0.75rem', { lineHeight: '1rem' }],
+        'sm': ['0.875rem', { lineHeight: '1.25rem' }],
+        'base': ['1rem', { lineHeight: '1.5rem' }],
+        'lg': ['1.125rem', { lineHeight: '1.75rem' }],
+        'xl': ['1.25rem', { lineHeight: '1.75rem' }],
+        '2xl': ['1.5rem', { lineHeight: '2rem' }],
+        '3xl': ['1.875rem', { lineHeight: '2.25rem' }],
+        '4xl': ['2.25rem', { lineHeight: '2.5rem' }],
+        '5xl': ['3rem', { lineHeight: '1' }],
+        '6xl': ['3.75rem', { lineHeight: '1' }],
+        '7xl': ['4.5rem', { lineHeight: '1' }],
+        '8xl': ['6rem', { lineHeight: '1' }],
+        '9xl': ['8rem', { lineHeight: '1' }],
+      },
+      spacing: {
+        '18': '4.5rem',
+        '88': '22rem',
+        '128': '32rem',
+      },
+      borderRadius: {
+        '4xl': '2rem',
+        '5xl': '2.5rem',
+      },
+      boxShadow: {
+        'glow': '0 0 20px rgba(6, 182, 212, 0.5)',
+        'glow-lg': '0 0 40px rgba(6, 182, 212, 0.5)',
+        'glow-xl': '0 0 60px rgba(6, 182, 212, 0.5)',
+        'neon': '0 0 5px currentColor, 0 0 10px currentColor, 0 0 15px currentColor',
+        'neon-lg': '0 0 10px currentColor, 0 0 20px currentColor, 0 0 30px currentColor',
+      },
+      animation: {
+        'fade-in': 'fadeIn 0.5s ease-in-out',
+        'fade-in-up': 'fadeInUp 0.5s ease-out',
+        'fade-in-down': 'fadeInDown 0.5s ease-out',
+        'fade-in-left': 'fadeInLeft 0.5s ease-out',
+        'fade-in-right': 'fadeInRight 0.5s ease-out',
+        'slide-in-up': 'slideInUp 0.5s ease-out',
+        'slide-in-down': 'slideInDown 0.5s ease-out',
+        'slide-in-left': 'slideInLeft 0.5s ease-out',
+        'slide-in-right': 'slideInRight 0.5s ease-out',
+        'scale-in': 'scaleIn 0.3s ease-out',
+        'scale-out': 'scaleOut 0.3s ease-out',
+        'bounce-in': 'bounceIn 0.6s ease-out',
+        'bounce-out': 'bounceOut 0.6s ease-out',
+        'rotate-in': 'rotateIn 0.6s ease-out',
+        'rotate-out': 'rotateOut 0.6s ease-out',
+        'flip-in-x': 'flipInX 0.6s ease-out',
+        'flip-in-y': 'flipInY 0.6s ease-out',
+        'zoom-in': 'zoomIn 0.3s ease-out',
+        'zoom-out': 'zoomOut 0.3s ease-out',
+        'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+        'spin-slow': 'spin 3s linear infinite',
+        'bounce-slow': 'bounce 2s infinite',
+        'grid-flow': 'gridFlow 20s linear infinite',
+        'particle': 'particle 7s linear infinite',
+        'scan-line': 'scanLine 3s ease-in-out infinite',
+        'gradient-x': 'gradientX 3s ease-in-out infinite',
+        'bounce-x': 'bounceX 2s ease-in-out infinite',
+        'count-up': 'countUp 2s ease-out forwards',
+=======
         'spin-slow': 'spin 8s linear infinite',
 =======
         'shimmer': 'shimmer 2s linear infinite',
@@ -256,15 +432,34 @@ module.exports = {
         'quantum-learning-accelerator': 'quantumLearningAccelerator 8.5s ease-in-out infinite',
         'intelligent-data-governance': 'intelligentDataGovernance 6.5s ease-in-out infinite',
         'ai-meeting-transcriber': 'aiMeetingTranscriber 4.5s ease-in-out infinite'
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-2889
       },
       keyframes: {
         fadeIn: {
           '0%': { opacity: '0' },
           '100%': { opacity: '1' }
         },
+<<<<<<< HEAD
+        fadeInUp: {
+          '0%': { opacity: '0', transform: 'translateY(30px)' },
+          '100%': { opacity: '1', transform: 'translateY(0)' },
+        },
+        fadeInDown: {
+          '0%': { opacity: '0', transform: 'translateY(-30px)' },
+          '100%': { opacity: '1', transform: 'translateY(0)' },
+        },
+        fadeInLeft: {
+          '0%': { opacity: '0', transform: 'translateX(-30px)' },
+          '100%': { opacity: '1', transform: 'translateX(0)' },
+        },
+        fadeInRight: {
+          '0%': { opacity: '0', transform: 'translateX(30px)' },
+          '100%': { opacity: '1', transform: 'translateX(0)' },
+=======
         slideUp: {
           '0%': { transform: 'translateY(20px)', opacity: '0' },
           '100%': { transform: 'translateY(0px)', opacity: '1' }
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-2889
         },
         slideInUp: {
           '0%': { transform: 'translateY(100%)' },
@@ -283,6 +478,93 @@ module.exports = {
           '100%': { transform: 'translateX(0)' },
         },
         scaleIn: {
+<<<<<<< HEAD
+          '0%': { transform: 'scale(0)' },
+          '100%': { transform: 'scale(1)' },
+        },
+        scaleOut: {
+          '0%': { transform: 'scale(1)' },
+          '100%': { transform: 'scale(0)' },
+        },
+        bounceIn: {
+          '0%': { transform: 'scale(0.3)', opacity: '0' },
+          '50%': { transform: 'scale(1.05)' },
+          '70%': { transform: 'scale(0.9)' },
+          '100%': { transform: 'scale(1)', opacity: '1' },
+        },
+        bounceOut: {
+          '0%': { transform: 'scale(1)', opacity: '1' },
+          '20%': { transform: 'scale(0.9)' },
+          '50%': { transform: 'scale(1.05)' },
+          '100%': { transform: 'scale(0.3)', opacity: '0' },
+        },
+        rotateIn: {
+          '0%': { transform: 'rotate(-200deg)', opacity: '0' },
+          '100%': { transform: 'rotate(0)', opacity: '1' },
+        },
+        rotateOut: {
+          '0%': { transform: 'rotate(0)', opacity: '1' },
+          '100%': { transform: 'rotate(200deg)', opacity: '0' },
+        },
+        flipInX: {
+          '0%': { transform: 'perspective(400px) rotateX(90deg)', opacity: '0' },
+          '40%': { transform: 'perspective(400px) rotateX(-20deg)' },
+          '60%': { transform: 'perspective(400px) rotateX(10deg)' },
+          '80%': { transform: 'perspective(400px) rotateX(-5deg)' },
+          '100%': { transform: 'perspective(400px) rotateX(0deg)', opacity: '1' },
+        },
+        flipInY: {
+          '0%': { transform: 'perspective(400px) rotateY(90deg)', opacity: '0' },
+          '40%': { transform: 'perspective(400px) rotateY(-20deg)' },
+          '60%': { transform: 'perspective(400px) rotateY(10deg)' },
+          '80%': { transform: 'perspective(400px) rotateY(-5deg)' },
+          '100%': { transform: 'perspective(400px) rotateY(0deg)', opacity: '1' },
+        },
+        zoomIn: {
+          '0%': { transform: 'scale(0.3)', opacity: '0' },
+          '50%': { opacity: '1' },
+          '100%': { transform: 'scale(1)', opacity: '1' },
+        },
+        zoomOut: {
+          '0%': { transform: 'scale(1)', opacity: '1' },
+          '50%': { opacity: '0' },
+          '100%': { transform: 'scale(0.3)', opacity: '0' },
+        },
+        float: {
+          '0%, 100%': { transform: 'translateY(0px)' },
+          '50%': { transform: 'translateY(-20px)' },
+        },
+        gridFlow: {
+          '0%': { transform: 'translateX(0) translateY(0)' },
+          '100%': { transform: 'translateX(60px) translateY(60px)' },
+        },
+        particle: {
+          '0%': { transform: 'translateY(0) scale(1)', opacity: '1' },
+          '50%': { transform: 'translateY(-100px) scale(1.5)', opacity: '0.7' },
+          '100%': { transform: 'translateY(-200px) scale(0.5)', opacity: '0' },
+        },
+        scanLine: {
+          '0%': { transform: 'translateX(-100%)' },
+          '100%': { transform: 'translateX(100%)' },
+        },
+        gradientX: {
+          '0%, 100%': { backgroundPosition: '0% 50%' },
+          '50%': { backgroundPosition: '100% 50%' },
+        },
+        bounceX: {
+          '0%, 100%': { transform: 'translateX(0)' },
+          '50%': { transform: 'translateX(25%)' },
+        },
+        countUp: {
+          '0%': { transform: 'scale(0.8)', opacity: '0' },
+          '100%': { transform: 'scale(1)', opacity: '1' },
+        },
+        blob: {
+          '0%': { transform: 'translate(0px, 0px) scale(1)' },
+          '33%': { transform: 'translate(30px, -50px) scale(1.1)' },
+          '66%': { transform: 'translate(-20px, 20px) scale(0.9)' },
+          '100%': { transform: 'translate(0px, 0px) scale(1)' },
+=======
           '0%': { transform: 'scale(0.8)', opacity: '0' },
           '100%': { transform: 'scale(1)', opacity: '1' }
         },
@@ -397,6 +679,7 @@ module.exports = {
           '60%': { transform: 'translateX(-20px) translateY(-20px) scale(1.1)' },
           '80%': { transform: 'translateX(0px) translateY(0px) scale(1)' },
           '100%': { transform: 'translateX(0px) translateY(0px) scale(1)' }
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-2889
         },
         aiCreativity: {
           '0%, 100%': { transform: 'scale(1) rotate(0deg)' },
