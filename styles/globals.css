@@ -99,6 +99,180 @@ body {
   animation: gradient-shift 3s ease-in-out infinite;
 }
 
+/* Futuristic Neon Effects */
+.neon-glow {
+  text-shadow: 
+    0 0 5px currentColor,
+    0 0 10px currentColor,
+    0 0 15px currentColor,
+    0 0 20px currentColor;
+  animation: neon-pulse 2s ease-in-out infinite alternate;
+}
+
+.neon-border {
+  box-shadow: 
+    0 0 5px currentColor,
+    0 0 10px currentColor,
+    0 0 15px currentColor,
+    inset 0 0 5px currentColor;
+  animation: neon-border-pulse 3s ease-in-out infinite alternate;
+}
+
+.neon-bg {
+  background: linear-gradient(45deg, 
+    rgba(0, 212, 255, 0.1),
+    rgba(59, 130, 246, 0.1),
+    rgba(139, 92, 246, 0.1)
+  );
+  border: 1px solid rgba(0, 212, 255, 0.3);
+  box-shadow: 
+    0 0 20px rgba(0, 212, 255, 0.2),
+    inset 0 0 20px rgba(0, 212, 255, 0.1);
+}
+
+/* Futuristic Animations */
+@keyframes neon-pulse {
+  0% { opacity: 0.8; }
+  100% { opacity: 1; }
+}
+
+@keyframes neon-border-pulse {
+  0% { box-shadow: 
+    0 0 5px currentColor,
+    0 0 10px currentColor,
+    0 0 15px currentColor,
+    inset 0 0 5px currentColor; }
+  100% { box-shadow: 
+    0 0 10px currentColor,
+    0 0 20px currentColor,
+    0 0 30px currentColor,
+    inset 0 0 10px currentColor; }
+}
+
+@keyframes gradient-shift {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-20px); }
+}
+
+@keyframes glow {
+  0%, 100% { filter: brightness(1); }
+  50% { filter: brightness(1.2); }
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
+
+@keyframes rotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* Futuristic Background Effects */
+.futuristic-bg {
+  background: 
+    radial-gradient(circle at 20% 80%, rgba(0, 212, 255, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(139, 92, 246, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 40% 40%, rgba(236, 72, 153, 0.1) 0%, transparent 50%);
+  position: relative;
+}
+
+.futuristic-bg::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    linear-gradient(45deg, transparent 30%, rgba(0, 212, 255, 0.05) 50%, transparent 70%);
+  animation: gradient-sweep 8s linear infinite;
+}
+
+@keyframes gradient-sweep {
+  0% { transform: translateX(-100%) translateY(-100%); }
+  100% { transform: translateX(100%) translateY(100%); }
+}
+
+/* Enhanced Responsive Design */
+@media (max-width: 768px) {
+  .neon-glow {
+    text-shadow: 
+      0 0 3px currentColor,
+      0 0 6px currentColor,
+      0 0 9px currentColor;
+  }
+  
+  .neon-border {
+    box-shadow: 
+      0 0 3px currentColor,
+      0 0 6px currentColor,
+      0 0 9px currentColor;
+  }
+}
+
+/* Futuristic Card Effects */
+.futuristic-card {
+  background: rgba(31, 41, 55, 0.8);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(0, 212, 255, 0.2);
+  border-radius: 16px;
+  transition: all 0.3s ease;
+}
+
+.futuristic-card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(0, 212, 255, 0.5);
+  box-shadow: 
+    0 20px 40px rgba(0, 212, 255, 0.2),
+    0 0 20px rgba(0, 212, 255, 0.1);
+}
+
+/* Futuristic Button Effects */
+.futuristic-btn {
+  background: linear-gradient(135deg, 
+    rgba(0, 212, 255, 0.8),
+    rgba(59, 130, 246, 0.8),
+    rgba(139, 92, 246, 0.8)
+  );
+  border: none;
+  border-radius: 8px;
+  padding: 12px 24px;
+  color: white;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.futuristic-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s ease;
+}
+
+.futuristic-btn:hover::before {
+  left: 100%;
+}
+
+.futuristic-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 
+    0 10px 20px rgba(0, 212, 255, 0.3),
+    0 0 20px rgba(0, 212, 255, 0.2);
+}
+
 .text-gradient-cyan {
   background: linear-gradient(135deg, var(--neon-cyan), var(--neon-blue));
   -webkit-background-clip: text;
