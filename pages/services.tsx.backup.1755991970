@@ -84,6 +84,11 @@ export default function ServicesPage() {
     {
       name: 'Quantum Computing & AI',
       description: 'Revolutionary quantum AI solutions with unprecedented computing power',
+<<<<<<< HEAD
+      icon: <BrainIcon className="w-6 h-6" />,
+      count: enhancedRealMicroSaasServices.filter(s => s.category === 'Quantum Computing & AI' || s.category === 'AI & Machine Learning').length,
+      color: 'from-purple-600 to-indigo-700'
+=======
       icon: <Brain className="w-6 h-6" />,
       count: enhancedRealMicroSaasServices.filter(s => s.category === 'Quantum Computing & AI' || s.category === 'AI & Machine Learning').length,
       marketSize: '$12.5B+',
@@ -96,18 +101,89 @@ export default function ServicesPage() {
       count: enhancedRealMicroSaasServices.filter(s => s.category === 'Space Technology & Mining' || s.category === 'Space Technology & Colonization').length,
       marketSize: '$70B+',
       growthRate: '500%'
+>>>>>>> origin/cursor/enhance-app-services-and-website-with-futuristic-design-dc1e
     },
     {
       name: 'Manufacturing & Industry 4.0',
       description: 'Next-generation autonomous manufacturing and robotics platforms',
+<<<<<<< HEAD
+      icon: <FactoryIcon className="w-6 h-6" />,
+      count: enhancedRealMicroSaasServices.filter(s => s.category === 'Manufacturing & Industry 4.0' || s.category === 'Robotics & Automation').length,
+      color: 'from-orange-500 to-red-600'
+=======
       icon: <Factory className="w-6 h-6" />,
       count: enhancedRealMicroSaasServices.filter(s => s.category === 'Manufacturing & Industry 4.0' || s.category === 'Robotics & Automation').length,
       marketSize: '$45B+',
       growthRate: '350%'
+>>>>>>> origin/cursor/enhance-app-services-and-website-with-futuristic-design-dc1e
     },
     {
       name: 'Healthcare & Biotechnology',
       description: 'AI-powered biomedical research and drug discovery platforms',
+<<<<<<< HEAD
+      icon: <FlaskIcon className="w-6 h-6" />,
+      count: enhancedRealMicroSaasServices.filter(s => s.category === 'Healthcare & Biotechnology').length,
+      color: 'from-blue-600 to-cyan-700'
+    },
+    {
+      name: 'Cybersecurity',
+      description: 'Future-proof security solutions with quantum-resistant encryption',
+      icon: <ShieldIcon className="w-6 h-6" />,
+      count: enhancedRealMicroSaasServices.filter(s => s.category === 'Cybersecurity').length,
+      color: 'from-green-600 to-emerald-700'
+    },
+    {
+      name: 'Financial Technology',
+      description: 'Quantum-powered financial optimization and risk management',
+      icon: <DollarIcon className="w-6 h-6" />,
+      count: enhancedRealMicroSaasServices.filter(s => s.category === 'Financial Technology').length,
+      color: 'from-yellow-500 to-amber-600'
+    },
+    {
+      name: 'Logistics & Supply Chain',
+      description: 'Autonomous logistics and supply chain optimization',
+      icon: <TruckIcon className="w-6 h-6" />,
+      count: enhancedRealMicroSaasServices.filter(s => s.category === 'Logistics & Supply Chain').length,
+      color: 'from-teal-500 to-green-600'
+    },
+    {
+      name: 'Space Technology',
+      description: 'Advanced space analytics and satellite data processing',
+      icon: <RocketIcon className="w-6 h-6" />,
+      count: enhancedRealMicroSaasServices.filter(s => s.category === 'Space Technology').length,
+      color: 'from-indigo-600 to-purple-700'
+    },
+    {
+      name: 'Education Technology',
+      description: 'AI-powered personalized learning and education platforms',
+      icon: <GraduationCapIcon className="w-6 h-6" />,
+      count: enhancedRealMicroSaasServices.filter(s => s.category === 'Education Technology').length,
+      color: 'from-blue-500 to-indigo-600'
+    }
+  ];
+
+  const categoryIcons: { [key: string]: React.ReactNode } = {
+    'AI & Machine Learning': <Brain className="w-6 h-6" />,
+    'Blockchain & Web3': <Globe2 className="w-6 h-6" />,
+    'AR/VR & Metaverse': <Globe className="w-6 h-6" />,
+    'IoT & Smart Cities': <Smartphone className="w-6 h-6" />,
+    'Cloud & Infrastructure': <Cloud className="w-6 h-6" />,
+    'Data Analytics & BI': <BarChart3 className="w-6 h-6" />,
+    'Cybersecurity': <Shield className="w-6 h-6" />,
+    'Emerging Technologies': <Rocket className="w-6 h-6" />,
+    'Quantum Computing': <Atom className="w-6 h-6" />,
+    'Autonomous Systems': <Bot className="w-6 h-6" />,
+    'Sustainable Technology': <Leaf className="w-6 h-6" />,
+    'Biomedical & Healthcare': <FlaskConical className="w-6 h-6" />,
+    'Financial Technology': <DollarSign className="w-6 h-6" />,
+    'Climate & Environment': <Leaf className="w-6 h-6" />,
+    'Manufacturing & Industry 4.0': <Factory className="w-6 h-6" />,
+    'Transportation & Logistics': <Truck className="w-6 h-6" />,
+    'Energy & Utilities': <Zap className="w-6 h-6" />,
+    'Research & Development': <Microscope className="w-6 h-6" />,
+    'Government & Defense': <ShieldCheck className="w-6 h-6" />,
+    'Education & Training': <GraduationCap className="w-6 h-6" />
+=======
   // Get variant for service category
   const getCategoryVariant = (category: string) => {
     switch (category) {
@@ -252,6 +328,7 @@ export default function ServicesPage() {
       "🔄 Continuous Innovation Updates",
       "🌍 Global 24/7 Support"
     ]
+>>>>>>> origin/cursor/enhance-app-services-and-website-with-futuristic-design-dc1e
   };
 
   return (
