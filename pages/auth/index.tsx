@@ -1,10 +1,20 @@
 import type { NextPage } from 'next';
+import Head from 'next/head';
 
-const AuthIndex: NextPage = () => (
-  <div>
-    <h1 className="text-2xl font-semibold mb-2">Auth</h1>
-    <p className="text-gray-700 dark:text-gray-300">Authentication portal.</p>
-  </div>
-);
+const Index: NextPage = () => {
+  return (
+    <div>
+      <Head>
+        <title>Index - Zion Tech Solutions</title>
+        <meta name="description" content="Index page" />
+      </Head>
+      
+      <main>
+        <h1>Index</h1>
+        <p>This page is under construction.</p>
+      </main>
+    </div>
+  );
+};
 
-export default AuthIndex;
+export default Index;

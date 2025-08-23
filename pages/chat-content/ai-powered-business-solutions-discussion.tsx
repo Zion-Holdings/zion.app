@@ -1,4 +1,20 @@
 import type { NextPage } from 'next';
+import Head from 'next/head';
 
-const Page: NextPage = () => (<div><h1 className="text-2xl font-semibold mb-2">AI-Powered Business Solutions</h1></div>);
-export default Page;
+const AiPoweredBusinessSolutionsDiscussion: NextPage = () => {
+  return (
+    <div>
+      <Head>
+        <title>AiPoweredBusinessSolutionsDiscussion - Zion Tech Solutions</title>
+        <meta name="description" content="AiPoweredBusinessSolutionsDiscussion page" />
+      </Head>
+      
+      <main>
+        <h1>AiPoweredBusinessSolutionsDiscussion</h1>
+        <p>This page is under construction.</p>
+      </main>
+    </div>
+  );
+};
+
+export default AiPoweredBusinessSolutionsDiscussion;
