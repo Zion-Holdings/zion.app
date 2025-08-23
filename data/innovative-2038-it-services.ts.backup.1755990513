@@ -19,10 +19,102 @@ export type Innovative2038ITService = {
   technology: string[];
   integrations: string[];
   compliance: string[];
+<<<<<<< HEAD
+  deployment: string[];
+  infrastructure: string[];
+  scalability: string;
+  uptime: string;
+  securityLevel: string;
+=======
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-a9a3
 };
 
 export const innovative2038ITServices: Innovative2038ITService[] = [
   {
+<<<<<<< HEAD
+    id: 'quantum-secure-cloud-infrastructure',
+    name: 'Quantum-Secure Cloud Infrastructure',
+    tagline: 'Future-proof cloud infrastructure with quantum security',
+    description: 'Revolutionary cloud infrastructure platform that integrates quantum-resistant cryptography, advanced security protocols, and quantum computing capabilities for next-generation enterprise applications.',
+    category: 'Quantum IT Infrastructure',
+    pricing: {
+      starter: '$799/month',
+      pro: '$1999/month',
+      enterprise: '$4999/month'
+    },
+    features: [
+      'Quantum-resistant encryption',
+      'Post-quantum cryptography',
+      'Quantum key distribution',
+      'Advanced threat protection',
+      'Real-time security monitoring',
+      'Automated incident response',
+      'Compliance automation',
+      'Quantum computing access'
+    ],
+    benefits: [
+      'Future-proof security against quantum attacks',
+      'Enhanced data protection',
+      'Regulatory compliance',
+      'Scalable quantum infrastructure',
+      'Advanced threat intelligence'
+    ],
+    useCases: [
+      'Financial institutions',
+      'Government agencies',
+      'Healthcare organizations',
+      'Defense contractors',
+      'Research institutions'
+    ],
+    marketPrice: '$799-4999/month',
+    link: 'https://ziontechgroup.com/services/quantum-secure-cloud-infrastructure',
+    launchDate: '2038-01-25',
+    rating: 4.9,
+    technology: ['Quantum Computing', 'Post-Quantum Cryptography', 'Cloud Infrastructure', 'Advanced Security'],
+    integrations: ['AWS', 'Azure', 'Google Cloud', 'Security Tools', 'Monitoring Systems'],
+    compliance: ['SOC 2', 'ISO 27001', 'FedRAMP', 'Quantum Security Standards'],
+    deployment: ['Multi-Cloud', 'Hybrid', 'On-Premises'],
+    infrastructure: ['Quantum Nodes', 'Secure Data Centers', 'Edge Computing', 'Quantum Networks'],
+    scalability: 'Infinite quantum scaling',
+    uptime: '99.999% uptime guarantee',
+    securityLevel: 'Quantum-resistant security'
+  },
+  {
+    id: 'autonomous-it-operations-center',
+    name: 'Autonomous IT Operations Center',
+    tagline: 'Fully autonomous IT operations management',
+    description: 'Next-generation IT operations center that operates autonomously, using AI to manage infrastructure, resolve incidents, optimize performance, and ensure continuous operations without human intervention.',
+    category: 'Autonomous IT Operations',
+    pricing: {
+      starter: '$599/month',
+      pro: '$1499/month',
+      enterprise: '$3999/month'
+    },
+    features: [
+      'Critical infrastructure',
+      'Enterprise companies'
+    ],
+    marketPrice: '$499-3999/month',
+    link: 'https://ziontechgroup.com/services/quantum-secure-zero-trust-platform',
+    launchDate: '2038-02-20',
+    rating: 4.9,
+    technology: ['Quantum Cryptography', 'Zero Trust', 'AI/ML', 'Cybersecurity', 'Identity Management'],
+    integrations: ['Active Directory', 'Okta', 'Ping Identity', 'CrowdStrike', 'SentinelOne'],
+    compliance: ['SOC 2', 'ISO 27001', 'NIST', 'Zero Trust Standards'],
+    deployment: ['Cloud', 'On-Premises', 'Hybrid', 'Edge'],
+    contactInfo: {
+      mobile: '+1 302 464 0950',
+      email: 'kleber@ziontechgroup.com',
+      address: '364 E Main St STE 1008 Middletown DE 19709'
+    }
+  },
+  {
+    id: 'ai-powered-it-asset-lifecycle-manager',
+    name: 'AI-Powered IT Asset Lifecycle Manager',
+    tagline: 'Intelligent IT asset management from procurement to retirement',
+    description: 'Advanced platform that uses AI to manage the complete lifecycle of IT assets, optimize procurement, and ensure compliance throughout the asset journey.',
+    category: 'IT Asset Management & AI',
+=======
     id: 'quantum-cloud-infrastructure-platform',
     name: 'Quantum Cloud Infrastructure Platform',
     tagline: 'Next-generation cloud computing with quantum capabilities',
@@ -157,12 +249,22 @@ export const innovative2038ITServices: Innovative2038ITService[] = [
     tagline: 'Future-proof network security with quantum encryption',
     description: 'Next-generation network security platform that implements quantum-resistant encryption and advanced threat detection, protecting networks from current and future cyber threats.',
     category: 'Network Security',
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-a9a3
     pricing: {
       starter: '$199/month',
       pro: '$599/month',
       enterprise: '$1599/month'
     },
     features: [
+<<<<<<< HEAD
+      'Asset discovery and tracking',
+      'Lifecycle management',
+      'Procurement optimization',
+      'Maintenance scheduling',
+      'Compliance monitoring',
+      'Cost analysis',
+      'Vendor management',
+=======
       'Autonomous incident resolution',
       'Predictive maintenance',
       'Self-healing infrastructure',
@@ -775,5 +877,6 @@ export const innovative2038ITServices: Innovative2038ITService[] = [
     technology: ['Quantum Cryptography', 'IoT Security', 'AI/ML', 'Network Security', 'Device Management'],
     integrations: ['AWS IoT', 'Azure IoT', 'Google Cloud IoT', 'HomeKit', 'SmartThings'],
     compliance: ['SOC 2', 'ISO 27001', 'NIST', 'GDPR', 'IEC 62443']
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-a9a3
   }
 ];

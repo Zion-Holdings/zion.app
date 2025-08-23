@@ -42,8 +42,13 @@ import { innovative2037MicroSaasServices } from '../data/innovative-2037-micro-s
 import { innovative2037ITServices } from '../data/innovative-2037-it-services';
 import { innovative2037AIServices } from '../data/innovative-2037-ai-services';
 import { innovative2038MicroSaasServices } from '../data/innovative-2038-micro-saas-services';
+<<<<<<< HEAD:pages/services.tsx.backup.1755988043
+import { innovative2038AIServices } from '../data/innovative-2038-ai-services';
+import { innovative2038ITServices } from '../data/innovative-2038-it-services';
+=======
 import { innovative2038ITServices } from '../data/innovative-2038-it-services';
 import { innovative2038AIServices } from '../data/innovative-2038-ai-services';
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-a9a3:pages/services.tsx
 
 // Import existing service data
 import { realMicroSaasServices } from '../data/real-micro-saas-services';
@@ -142,8 +147,13 @@ const allServices = [
   ...innovative2037ITServices,
   ...innovative2037AIServices,
   ...innovative2038MicroSaasServices,
+<<<<<<< HEAD:pages/services.tsx.backup.1755988043
+  ...innovative2038AIServices,
+  ...innovative2038ITServices
+=======
   ...innovative2038ITServices,
   ...innovative2038AIServices
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-a9a3:pages/services.tsx
 ];
 
 const categories = [

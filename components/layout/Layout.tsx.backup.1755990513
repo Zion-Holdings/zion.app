@@ -22,6 +22,12 @@ export default function Layout({ children, seo }: LayoutProps) {
       {/* Skip to content link for accessibility */}
       <a href="#main" className="skip-link">Skip to main content</a>
       
+<<<<<<< HEAD
+      {/* Futuristic Background */}
+      <UltraFuturisticBackground2038 />
+      
+=======
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-a9a3
       {/* Layout Structure */}
       <div className="relative z-10">
         {/* Top Contact Bar */}
