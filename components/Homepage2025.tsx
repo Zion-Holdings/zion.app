@@ -1,43 +1,17 @@
-import React, { Suspense, lazy, useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Layout from './layout/Layout';
-import { motion, useScroll, useTransform, AnimatePresence } from 'framer-motion';
-import { ArrowRight, Play, Star, Users, Award, TrendingUp, Brain, Shield, Rocket, Zap, Globe, Lock, Cpu, Database, Cloud, Code, BarChart3, Target, Lightbulb, CheckCircle } from 'lucide-react';
-
-// Lazy load components for better performance
-const UltraFuturisticServiceCard2026 = lazy(() => import('./ui/UltraFuturisticServiceCard2026'));
+import { motion, useScroll, useTransform } from 'framer-motion';
+import { ArrowRight, Play, Users, TrendingUp, Brain, Shield, Rocket, Globe, Lock, Cpu, Database, Cloud, BarChart3 } from 'lucide-react';
 
 const Homepage2025: React.FC = () => {
-  const [isVisible, setIsVisible] = useState(false);
-  const [currentFeature, setCurrentFeature] = useState(0);
   const { scrollYProgress } = useScroll();
   
   const y = useTransform(scrollYProgress, [0, 1], [0, -50]);
   const opacity = useTransform(scrollYProgress, [0, 0.5], [1, 0]);
 
   useEffect(() => {
-    setIsVisible(true);
-    
-    // Auto-rotate features
-    const interval = setInterval(() => {
-      setCurrentFeature((prev) => (prev + 1) % 6);
-    }, 3000);
-    
-    return () => clearInterval(interval);
+    // Component mounted
   }, []);
-
-  const fadeInUp = {
-    initial: { opacity: 0, y: 60 },
-    animate: { opacity: 1, y: 0 },
-    transition: { duration: 0.6, ease: "easeOut" }
-  };
-
-  const staggerContainer = {
-    animate: {
-      transition: {
-        staggerChildren: 0.1
-      }
-    }
-  };
 
   const features = [
     { icon: Brain, title: "AI-Powered Solutions", description: "Cutting-edge artificial intelligence driving business transformation" },
