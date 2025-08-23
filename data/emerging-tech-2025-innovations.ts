@@ -139,7 +139,7 @@ export const emergingTech2025Innovations: RealMarketService[] = [
     competitors: ['Neuralink', 'Kernel', 'CTRL-labs', 'OpenBCI'],
     marketSize: 'Global BCI market $2B+, growing 400% annually',
     growthRate: '600% YoY',
-    variant: 'human-augmentation',
+    variant: 'biotech-futuristic',
     contactInfo: contact,
     realImplementation: true,
     implementationDetails: 'Advanced BCI platform with high-precision signal processing, machine learning algorithms, and comprehensive development tools.',

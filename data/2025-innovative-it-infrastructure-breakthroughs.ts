@@ -79,7 +79,7 @@ export const innovativeITInfrastructureBreakthroughServices2025: InnovativeITInf
     competitors: ['AWS Edge', 'Azure Edge', 'Google Edge', 'No direct quantum edge competitors'],
     marketSize: '$200B edge computing market',
     growthRate: '600% annual growth',
-    variant: 'it-infrastructure',
+    variant: 'it-futuristic',
     contactInfo: {
       mobile: '+1 302 464 0950',
       email: 'kleber@ziontechgroup.com',

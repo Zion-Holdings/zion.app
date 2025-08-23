@@ -181,7 +181,7 @@ export const innovativeAIAutonomousEcosystemServices2025: InnovativeAIAutonomous
     competitors: ['No direct competitors - revolutionary technology'],
     marketSize: '$15B AI research market',
     growthRate: '200% annual growth',
-    variant: 'ai-consciousness',
+    variant: 'ai-emotional',
     contactInfo: {
       mobile: '+1 302 464 0950',
       email: 'kleber@ziontechgroup.com',

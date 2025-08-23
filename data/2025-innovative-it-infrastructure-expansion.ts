@@ -233,7 +233,9 @@ export const innovativeITInfrastructureExpansion2025 = [
       phone: '+1 302 464 0950',
       email: 'kleber@ziontechgroup.com'
     }
-=======
+  }
+];
+
 import { ServiceVariant } from '../types/service-variants';
 
 export interface InnovativeITInfrastructureService {

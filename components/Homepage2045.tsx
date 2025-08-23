@@ -328,7 +328,7 @@ const Homepage2045: React.FC = () => {
                     
                     <div className="flex items-center justify-between">
                       <span className="text-cyan-400 font-semibold">
-                        ${service.price}/month
+                        Starting at $99/month
                       </span>
                       <button
                         onClick={() => handleServiceClick(service)}
@@ -416,7 +416,7 @@ const Homepage2045: React.FC = () => {
                     
                     <div className="flex items-center justify-between">
                       <span className="text-cyan-400 font-semibold">
-                        ${service.price}/month
+                        Starting at $99/month
                       </span>
                       <button
                         onClick={() => handleServiceClick(service)}

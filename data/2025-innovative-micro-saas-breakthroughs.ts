@@ -232,7 +232,7 @@ export const innovativeMicroSaasBreakthroughs2025: InnovativeMicroSaasBreakthrou
     competitors: ['No direct competitors - revolutionary approach'],
     marketSize: '$350B online education market',
     growthRate: '100% annual growth',
-    variant: 'ai-consciousness',
+    variant: 'ai-emotional',
     contactInfo: {
       mobile: '+1 302 464 0950',
       email: 'kleber@ziontechgroup.com',
