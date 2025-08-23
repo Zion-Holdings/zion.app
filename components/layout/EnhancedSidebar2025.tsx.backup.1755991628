@@ -62,12 +62,19 @@ const sidebarSections = [
       { name: 'API Performance Testing', href: '/api-performance-testing/' },
       { name: 'AI Creativity Studio', href: '/ai-creativity-studio' },
       { name: 'AI Education Platform', href: '/ai-education-platform' },
+<<<<<<< HEAD
+      { name: 'AI Healthcare Diagnostics', href: '/healthcare-solutions', badge: 'Popular' },
+      { name: 'AI Financial Intelligence', href: '/ai-financial-intelligence', badge: 'New' },
+      { name: 'AI Sustainability Platform', href: '/ai-sustainability-platform', badge: 'New' },
+      { name: 'AI Legal Contract Analyzer', href: '/ai-legal-contract-analyzer' }
+=======
       { name: 'AI Healthcare Diagnostics', href: '/healthcare-solutions' },
       { name: 'AI Financial Intelligence', href: '/ai-financial-intelligence' },
       { name: 'AI Sustainability Platform', href: '/ai-sustainability-platform' },
       { name: 'AI Legal Contract Analyzer', href: '/ai-legal-contract-analyzer' },
       // Newly added
       { name: 'RAG Evaluation Lab', href: '/services/rag-evaluation-lab', badge: 'New' }
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-13fb
     ]
   },
   {
