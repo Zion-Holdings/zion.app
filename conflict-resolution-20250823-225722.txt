@@ -33,3 +33,15 @@
 2025-08-23 22:57:29 - Resolving conflicts in pages/500.tsx for branch 42l7l1-codex/check-logs-and-fix-errors
 2025-08-23 22:57:29 - Resolving conflicts in pages/_document.tsx for branch 42l7l1-codex/check-logs-and-fix-errors
 2025-08-23 22:57:29 - Resolving conflicts in pages/offline.tsx for branch 42l7l1-codex/check-logs-and-fix-errors
+2025-08-23 22:57:30 - Merge conflicts detected in 4b9zsu-codex/surface-api-errors-across-the-app
+2025-08-23 22:57:30 - Resolving conflicts in src/components/ChatAssistantTrigger.tsx for branch 4b9zsu-codex/surface-api-errors-across-the-app
+2025-08-23 22:57:30 - Resolving conflicts in src/components/QuoteRequestForm/ServiceTypeStep.tsx for branch 4b9zsu-codex/surface-api-errors-across-the-app
+2025-08-23 22:57:31 - Resolving conflicts in src/hooks/useAISearch.ts for branch 4b9zsu-codex/surface-api-errors-across-the-app
+2025-08-23 22:57:31 - Resolving conflicts in src/hooks/useApiKeys.ts for branch 4b9zsu-codex/surface-api-errors-across-the-app
+2025-08-23 22:57:31 - Resolving conflicts in src/hooks/useFraudPreventionSignup.ts for branch 4b9zsu-codex/surface-api-errors-across-the-app
+2025-08-23 22:57:31 - Resolving conflicts in src/hooks/useWebhooks.ts for branch 4b9zsu-codex/surface-api-errors-across-the-app
+2025-08-23 22:57:31 - Resolving conflicts in src/integrations/supabase/client.ts for branch 4b9zsu-codex/surface-api-errors-across-the-app
+2025-08-23 22:57:31 - Resolving conflicts in src/pages/Contact.tsx for branch 4b9zsu-codex/surface-api-errors-across-the-app
+2025-08-23 22:57:31 - Resolving conflicts in src/pages/admin/TokenManager.tsx for branch 4b9zsu-codex/surface-api-errors-across-the-app
+2025-08-23 22:57:31 - Resolving conflicts in src/utils/referralUtils.ts for branch 4b9zsu-codex/surface-api-errors-across-the-app
+2025-08-23 22:57:31 - Resolving conflicts in src/utils/tokenRewards.ts for branch 4b9zsu-codex/surface-api-errors-across-the-app

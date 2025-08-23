@@ -26,12 +26,24 @@ export function useAISearch() {
 
   const search = async (query: string) => {
     setLoading(true);
+<<<<<<< HEAD
+    const response = await fetch(
+      "https://ziontechgroup.functions.supabase.co/functions/v1/ai-search",
+      {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ query }),
+      }
+    );
+    const data = await response.json();
+=======
     try {
       const response = await api.post(
         "https://ziontechgroup.functions.supabase.co/functions/v1/ai-search",
         { query }
       );
       const data = response.data;
+>>>>>>> origin/4b9zsu-codex/surface-api-errors-across-the-app
       const filters: SearchFilters = data.filters || {};
 
       const items: SearchResult[] = [];

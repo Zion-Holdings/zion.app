@@ -44,9 +44,13 @@ export function checkUrlForReferralCode(): string | null {
 /**
  * Track referral when a user signs up
  */
+<<<<<<< HEAD
+export async function trackReferral(userId: string, email: string): Promise<boolean> {
+=======
 import api from '@/lib/api';
 
 export async function trackReferral(userId: string, email: string) {
+>>>>>>> origin/4b9zsu-codex/surface-api-errors-across-the-app
   try {
     const refCode = safeStorage.getItem('referral_code');
     if (!refCode) return false;
