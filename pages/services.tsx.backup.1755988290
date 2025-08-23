@@ -71,6 +71,22 @@ const getServiceCategory = (service: any) => {
 
 // Helper function to get service pricing
 const getServicePricing = (service: any) => {
+<<<<<<< HEAD
+  try {
+    if (service.pricing?.starter) return service.pricing.starter;
+    if (service.pricing?.monthly) return `$${service.pricing.monthly}/month`;
+    if (typeof service.price === 'string') return service.price;
+    if (service.price?.monthly) return `$${service.price.monthly}/month`;
+    if (service.price && typeof service.price === 'object') {
+      // Handle case where price is an object but doesn't have monthly
+      return 'Contact for pricing';
+    }
+    return 'Contact for pricing';
+  } catch (error) {
+    console.error('Error getting service pricing:', error, service);
+    return 'Contact for pricing';
+  }
+=======
   // Debug logging to identify problematic services
   if (!service.price && !service.pricing) {
     console.warn('Service missing price field:', service.id, service.name);
@@ -89,6 +105,7 @@ const getServicePricing = (service: any) => {
   // If we get here, log the problematic service
   console.warn('Service with unexpected price structure:', service.id, service.name, service.price);
   return 'Contact for pricing';
+>>>>>>> origin/cursor/add-and-advertise-new-services-then-build-e1f5
 };
 
 // Helper function to get service features
@@ -149,6 +166,21 @@ const allServices = [
   // ...innovative2038CuttingEdgeServices,
   // ...innovative2038ITInfrastructureServices,
   // Our additional innovative services
+<<<<<<< HEAD
+  ...innovative2037Services,
+  ...advanced2038Services,
+  ...revolutionary2039Services,
+  
+  // Our new innovative 2040 services
+  ...innovative2040FuturisticServices,
+  ...innovative2040ITServices,
+  // Our new comprehensive services
+  ...revolutionary2040FuturisticServices,
+  ...revolutionary2041AdvancedServices,
+  // Our latest innovative services
+  ...advanced2041EnterpriseServices,
+  ...revolutionary2042MicroSaasServices,
+=======
   // ...innovative2037Services,
   // ...advanced2038Services,
   // ...revolutionary2039Services,
@@ -159,6 +191,7 @@ const allServices = [
   // ...innovative2040FuturisticServices,
   // ...advanced2041EnterpriseServices,
   // ...revolutionary2042MicroSaasServices,
+>>>>>>> origin/cursor/add-and-advertise-new-services-then-build-e1f5
   // Our new 2025 innovative services expansion
   // ...innovative2025MicroSaasExpansion,
   // ...innovative2025ITSolutionsExpansion,
