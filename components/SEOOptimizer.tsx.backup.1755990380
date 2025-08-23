@@ -16,6 +16,74 @@ interface SEOProps {
   tags?: string[];
   noindex?: boolean;
   nofollow?: boolean;
+<<<<<<< HEAD
+  canonical?: string;
+}
+
+const SEOOptimizer: React.FC<SEOOptimizerProps> = ({
+  title = 'Zion Tech Group 2045 - Revolutionary AI, Quantum Computing & Space Technology Solutions',
+  description = 'Transform your business with Zion Tech Group\'s cutting-edge AI, quantum computing, and space technology solutions. Enterprise-grade innovation for the future.',
+  keywords = 'AI, artificial intelligence, quantum computing, space technology, cybersecurity, cloud solutions, enterprise IT, micro SaaS, Zion Tech Group',
+  image = '/og-image-zion-tech-group-2045.jpg',
+  url,
+  type = 'website',
+  author = 'Zion Tech Group',
+  publishedTime,
+  modifiedTime,
+  section = 'Technology',
+  tags = ['AI', 'Quantum Computing', 'Space Technology', 'Cybersecurity'],
+  noindex = false,
+  nofollow = false,
+  canonical
+}) => {
+  const router = useRouter();
+  const currentUrl = url || `${process.env.NEXT_PUBLIC_SITE_URL || 'https://ziontechgroup.com'}${router.asPath}`;
+  const canonicalUrl = canonical || currentUrl;
+  const ogImage = image.startsWith('http') ? image : `${process.env.NEXT_PUBLIC_SITE_URL || 'https://ziontechgroup.com'}${image}`;
+
+  // Generate structured data for organization
+  const organizationSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'Organization',
+    name: 'Zion Tech Group',
+    url: 'https://ziontechgroup.com',
+    logo: 'https://ziontechgroup.com/logo.png',
+    description: 'Pioneering the future with revolutionary AI, quantum computing, and space technology solutions.',
+    sameAs: [
+      'https://linkedin.com/company/zion-tech-group',
+      'https://twitter.com/ziontechgroup',
+      'https://github.com/Zion-Holdings'
+    ],
+    contactPoint: {
+      '@type': 'ContactPoint',
+      telephone: '+1-555-123-4567',
+      contactType: 'customer service',
+      email: 'hello@ziontechgroup.com'
+    },
+    address: {
+      '@type': 'PostalAddress',
+      addressCountry: 'US',
+      addressLocality: 'Middletown',
+      addressRegion: 'DE'
+    },
+    founder: {
+      '@type': 'Person',
+      name: 'Kleber Oliveira',
+      jobTitle: 'CEO & Founder',
+      url: 'https://ziontechgroup.com/about'
+    },
+    foundingDate: '2020',
+    numberOfEmployees: '50-100',
+    industry: 'Technology',
+    knowsAbout: [
+      'Artificial Intelligence',
+      'Quantum Computing',
+      'Space Technology',
+      'Cybersecurity',
+      'Cloud Computing',
+      'Enterprise Software'
+    ]
+=======
 }
 
 const SEOOptimizer: React.FC<SEOProps> = ({
@@ -104,6 +172,7 @@ const SEOOptimizer: React.FC<SEOProps> = ({
       "@type": "OfferCatalog",
       "name": "Technology Services"
     }
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-e6d1
   };
 
   // Generate structured data for website
@@ -195,6 +264,32 @@ const SEOOptimizer: React.FC<SEOProps> = ({
       <meta name="keywords" content={keywords} />
       <meta name="author" content={author} />
       <meta name="robots" content={`${noindex ? 'noindex' : 'index'}, ${nofollow ? 'nofollow' : 'follow'}`} />
+<<<<<<< HEAD
+      
+      {/* Canonical URL */}
+      <link rel="canonical" href={canonicalUrl} />
+      
+      {/* Open Graph Meta Tags */}
+      <meta property="og:title" content={title} />
+      <meta property="og:description" content={description} />
+      <meta property="og:type" content={type} />
+      <meta property="og:url" content={currentUrl} />
+      <meta property="og:image" content={ogImage} />
+      <meta property="og:image:width" content="1200" />
+      <meta property="og:image:height" content="630" />
+      <meta property="og:image:alt" content="Zion Tech Group - Revolutionary Technology Solutions" />
+      <meta property="og:site_name" content="Zion Tech Group" />
+      <meta property="og:locale" content="en_US" />
+      
+      {/* Twitter Card Meta Tags */}
+      <meta name="twitter:card" content="summary_large_image" />
+      <meta name="twitter:site" content="@ziontechgroup" />
+      <meta name="twitter:creator" content="@ziontechgroup" />
+      <meta name="twitter:title" content={title} />
+      <meta name="twitter:description" content={description} />
+      <meta name="twitter:image" content={ogImage} />
+      <meta name="twitter:image:alt" content="Zion Tech Group - Revolutionary Technology Solutions" />
+=======
       
       {/* Canonical URL */}
       <link rel="canonical" href={fullUrl} />
@@ -215,6 +310,7 @@ const SEOOptimizer: React.FC<SEOProps> = ({
       <meta name="twitter:title" content={fullTitle} />
       <meta name="twitter:description" content={description} />
       <meta name="twitter:image" content={fullImage} />
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-e6d1
       
       {/* Additional Meta Tags */}
       <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
@@ -224,6 +320,37 @@ const SEOOptimizer: React.FC<SEOProps> = ({
       <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
       <meta name="apple-mobile-web-app-title" content="Zion Tech Group" />
       
+<<<<<<< HEAD
+      {/* Article specific meta tags */}
+      {type === 'article' && publishedTime && (
+        <>
+          <meta property="article:published_time" content={publishedTime} />
+          {modifiedTime && <meta property="article:modified_time" content={modifiedTime} />}
+          <meta property="article:section" content={section} />
+          {tags.map((tag, index) => (
+            <meta key={index} property="article:tag" content={tag} />
+          ))}
+        </>
+      )}
+      
+      {/* Preconnect to external domains for performance */}
+      <link rel="preconnect" href="https://fonts.googleapis.com" />
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+      <link rel="preconnect" href="https://www.google-analytics.com" />
+      <link rel="preconnect" href="https://www.googletagmanager.com" />
+      
+      {/* DNS prefetch for performance */}
+      <link rel="dns-prefetch" href="//www.google-analytics.com" />
+      <link rel="dns-prefetch" href="//www.googletagmanager.com" />
+      <link rel="dns-prefetch" href="//fonts.googleapis.com" />
+      
+      {/* Favicon and app icons */}
+      <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+      <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+      <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+      <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+      <link rel="manifest" href="/site.webmanifest" />
+=======
       {/* Favicon */}
       <link rel="icon" href="/favicon.ico" />
       <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
@@ -239,6 +366,7 @@ const SEOOptimizer: React.FC<SEOProps> = ({
       {/* DNS Prefetch */}
       <link rel="dns-prefetch" href="//www.google-analytics.com" />
       <link rel="dns-prefetch" href="//fonts.googleapis.com" />
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-e6d1
       
       {/* Structured Data */}
       <script
@@ -253,6 +381,30 @@ const SEOOptimizer: React.FC<SEOProps> = ({
           __html: JSON.stringify(websiteSchema)
         }}
       />
+<<<<<<< HEAD
+      {breadcrumbSchema && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(breadcrumbSchema)
+          }}
+        />
+      )}
+      
+      {/* Additional SEO meta tags */}
+      <meta name="application-name" content="Zion Tech Group" />
+      <meta name="mobile-web-app-capable" content="yes" />
+      <meta name="format-detection" content="telephone=no" />
+      <meta name="msapplication-config" content="/browserconfig.xml" />
+      
+      {/* Security headers */}
+      <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
+      <meta httpEquiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.google-analytics.com https://www.googletagmanager.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://www.google-analytics.com https://www.googletagmanager.com;" />
+      
+      {/* Performance hints */}
+      <link rel="preload" href="/fonts/inter-var.woff2" as="font" type="font/woff2" crossOrigin="anonymous" />
+      <link rel="preload" href="/fonts/jetbrains-mono-var.woff2" as="font" type="font/woff2" crossOrigin="anonymous" />
+=======
       {type === "article" && (
         <script
           type="application/ld+json"
@@ -289,6 +441,7 @@ const SEOOptimizer: React.FC<SEOProps> = ({
           }}
         />
       )}
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-e6d1
     </Head>
   );
 };
