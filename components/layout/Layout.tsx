@@ -26,20 +26,7 @@ export default function Layout({ children }: LayoutProps) {
         <TopContactBar />
         
         {/* Navigation */}
-        <UltraFuturisticNavigation2036 />
-        
-        {/* Dark Mode Toggle */}
-        <button
-          onClick={toggleDarkMode}
-          className="fixed top-24 right-4 z-50 p-3 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 hover:bg-white/20 transition-all duration-300 group"
-          aria-label={`Switch to ${darkMode ? 'light' : 'dark'} mode`}
-        >
-          {darkMode ? (
-            <Sun className="w-5 h-5 text-yellow-400 group-hover:scale-110 transition-transform" />
-          ) : (
-            <Moon className="w-5 h-5 text-blue-600 group-hover:scale-110 transition-transform" />
-          )}
-        </button>
+        <UltraFuturisticNavigation2040 />
         
         {/* Sidebar and Main Content */}
         <div className="flex">

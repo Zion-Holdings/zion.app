@@ -76,10 +76,10 @@ import { innovative2025MicroSaasExpansion } from '../data/innovative-2025-micro-
 import { innovative2025ITServicesExpansion } from '../data/innovative-2025-it-services-expansion';
 import { innovative2025AIServicesExpansion } from '../data/innovative-2025-ai-services-expansion';
 
-// Import our new 2025 comprehensive service expansions
-import { advancedEnterpriseSolutions } from '../data/2025-advanced-enterprise-solutions-expansion';
-import { innovativeMicroSaasSolutions2025 } from '../data/2025-innovative-micro-saas-solutions-expansion';
-import { cuttingEdgeITServices } from '../data/2025-cutting-edge-it-ai-services-expansion';
+// Import our new 2025 cutting-edge innovative services
+import { cuttingEdgeInnovativeServices2025 } from '../data/2025-cutting-edge-innovative-services';
+import { emergingTechInnovativeServices2025 } from '../data/2025-emerging-tech-innovative-services';
+import { specializedIndustryServices2025 } from '../data/2025-specialized-industry-services';
 
 // Import existing service data
 import { realMicroSaasServices } from '../data/real-micro-saas-services';
@@ -218,10 +218,10 @@ const allServices = [
   ...innovative2025MicroSaasExpansion,
   ...innovative2025ITSolutionsExpansion,
   ...innovative2025AIServicesExpansion,
-  // Our new 2025 comprehensive service expansions
-  ...advancedEnterpriseSolutions,
-  ...innovativeMicroSaasSolutions2025,
-  ...cuttingEdgeITServices
+  // Our new 2025 cutting-edge innovative services
+  ...cuttingEdgeInnovativeServices2025,
+  ...emergingTechInnovativeServices2025,
+  ...specializedIndustryServices2025
 ];
 
 const categories = [
