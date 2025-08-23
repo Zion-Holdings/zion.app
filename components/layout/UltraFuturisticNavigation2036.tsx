@@ -119,18 +119,32 @@ const navigationItems: NavigationItem[] = [
     featured: true,
     children: [
       { 
+        name: '2040 Services Showcase', 
+        href: '/comprehensive-2040-services-showcase', 
+        description: 'Revolutionary 2040 technology solutions',
+        icon: <Star className="w-4 h-4" />,
+        featured: true,
+        badge: 'New'
+      },
+      { 
         name: '2037 Services Showcase', 
         href: '/comprehensive-2037-services-showcase', 
         description: 'Revolutionary 2037 technology solutions',
         icon: <Star className="w-4 h-4" />,
-        featured: true,
-        badge: 'New'
+        featured: true
       },
       { 
         name: '2025 Services Showcase', 
         href: '/comprehensive-services-showcase-2025', 
         description: '2025 services overview',
         icon: <Calculator className="w-4 h-4" />
+      },
+      { 
+        name: '2040 Pricing', 
+        href: '/pricing-2040', 
+        description: 'Revolutionary 2040 technology pricing',
+        icon: <Star className="w-4 h-4" />,
+        badge: 'New'
       },
       { 
         name: 'Pricing Plans', 

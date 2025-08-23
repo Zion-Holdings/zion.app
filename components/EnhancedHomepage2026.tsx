@@ -55,52 +55,52 @@ const EnhancedHomepage2026: React.FC = () => {
 
   const featuredServices = [
     {
-      title: "Quantum AI Orchestration Platform",
-      description: "Revolutionary AI orchestration leveraging quantum computing for unprecedented performance",
+      title: "AI Consciousness Orchestrator",
+      description: "Revolutionary AI consciousness management with ethical frameworks and human-AI collaboration",
       icon: Brain,
-      color: "from-purple-600 to-indigo-700",
-      price: "$4,999/month",
-      features: ["Quantum AI coordination", "Zero-latency switching", "Multi-model management"]
+      color: "from-cyan-600 to-blue-700",
+      price: "$2,999/month",
+      features: ["Consciousness monitoring", "Ethical AI frameworks", "Human-AI collaboration"]
     },
     {
-      title: "Autonomous Cybersecurity Orchestrator",
-      description: "AI-powered cybersecurity automation with autonomous threat response",
+      title: "Quantum Neural Interface Platform",
+      description: "Quantum-powered brain-computer interface for next-generation human-AI interaction",
+      icon: Atom,
+      color: "from-purple-600 to-pink-700",
+      price: "$4,999/month",
+      features: ["Quantum neural processing", "Brain-AI sync", "Real-time monitoring"]
+    },
+    {
+      title: "Autonomous Space Mining AI",
+      description: "AI-powered autonomous space resource extraction and management system",
+      icon: Rocket,
+      color: "from-orange-600 to-red-700",
+      price: "$8,999/month",
+      features: ["Autonomous mining", "Resource optimization", "Mission control"]
+    },
+    {
+      title: "Quantum Financial Prediction Engine",
+      description: "Quantum-powered financial prediction with 99.9% accuracy for institutional trading",
+      icon: Zap,
+      color: "from-green-600 to-emerald-700",
+      price: "$15,999/month",
+      features: ["Quantum analysis", "99.9% accuracy", "Real-time predictions"]
+    },
+    {
+      title: "Quantum Cybersecurity Fortress",
+      description: "Quantum-resistant cybersecurity with AI-powered threat detection and autonomous response",
       icon: Shield,
       color: "from-red-600 to-pink-700",
-      price: "$1,299/month",
-      features: ["Autonomous threat detection", "Real-time response", "Zero-trust architecture"]
-    },
-    {
-      title: "Quantum Financial Modeling Suite",
-      description: "Quantum-powered financial modeling for superior risk assessment and optimization",
-      icon: Zap,
-      color: "from-yellow-600 to-orange-700",
-      price: "$2,999/month",
-      features: ["Quantum Monte Carlo", "Portfolio optimization", "Risk assessment"]
-    },
-    {
-      title: "Metaverse Commerce Platform",
-      description: "Complete e-commerce solution for virtual worlds and digital asset management",
-      icon: Globe,
-      color: "from-purple-600 to-indigo-700",
-      price: "$799/month",
-      features: ["3D storefronts", "NFT management", "Virtual currency"]
+      price: "$3,999/month",
+      features: ["Quantum encryption", "AI threat detection", "Autonomous response"]
     },
     {
       title: "Autonomous DevOps Orchestrator",
-      description: "AI-powered DevOps automation with intelligent infrastructure management",
+      description: "AI-powered autonomous DevOps with self-healing infrastructure and predictive optimization",
       icon: Cpu,
-      color: "from-green-600 to-emerald-700",
-      price: "$1,199/month",
-      features: ["Autonomous CI/CD", "Self-healing infrastructure", "Predictive optimization"]
-    },
-    {
-      title: "Quantum Computer Vision Suite",
-      description: "Quantum-powered computer vision for unprecedented image analysis accuracy",
-      icon: Eye,
-      color: "from-cyan-600 to-blue-700",
-      price: "$3,499/month",
-      features: ["Quantum image processing", "Real-time analysis", "3D vision"]
+      color: "from-emerald-600 to-teal-700",
+      price: "$2,499/month",
+      features: ["Self-healing systems", "Predictive optimization", "Autonomous management"]
     }
   ];
 
@@ -186,21 +186,20 @@ const EnhancedHomepage2026: React.FC = () => {
                 >
                   <button 
                     className="group px-12 py-6 bg-gradient-to-r from-cyan-500 via-blue-600 to-purple-600 text-white font-bold text-xl rounded-2xl hover:from-cyan-600 hover:via-blue-700 hover:to-purple-700 transition-all duration-300 transform hover:scale-105 hover:shadow-2xl hover:shadow-cyan-500/25 flex items-center gap-3 focus:outline-none focus:ring-4 focus:ring-cyan-500/50 relative overflow-hidden"
-                    aria-label="Get started with Zion Tech Group services"
-                    onClick={() => window.location.href = '/get-started'}
+                    aria-label="Explore our revolutionary 2040 services"
+                    onClick={() => window.location.href = '/comprehensive-2040-services-showcase'}
                   >
-                    <span className="relative z-10">Get Started</span>
+                    <span className="relative z-10">Explore 2040 Services</span>
                     <ArrowRight className="w-6 h-6 group-hover:translate-x-2 transition-transform relative z-10" />
                     <div className="absolute inset-0 bg-gradient-to-r from-cyan-400 to-blue-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                   </button>
                   
                   <button 
                     className="px-12 py-6 border-2 border-cyan-400 text-cyan-400 font-bold text-xl rounded-2xl hover:bg-cyan-400 hover:text-black transition-all duration-300 transform hover:scale-105 flex items-center gap-3 focus:outline-none focus:ring-4 focus:ring-cyan-400/50 group"
-                    aria-label="Learn more about Zion Tech Group"
-                    onClick={() => window.location.href = '/about'}
+                    aria-label="View 2040 technology pricing"
+                    onClick={() => window.location.href = '/pricing-2040'}
                   >
-                    <Play className="w-6 h-6 group-hover:scale-110 transition-transform" />
-                    <span>Learn More</span>
+                    <span>View Pricing</span>
                   </button>
                 </motion.div>
 

@@ -33,6 +33,12 @@ import { innovative2038AdvancedServices } from '../data/innovative-2038-advanced
 import { revolutionary2040FuturisticServices } from '../data/revolutionary-2040-futuristic-services';
 import { comprehensiveAdvertisingMarketingServices } from '../data/comprehensive-advertising-marketing-services';
 
+// Import our new innovative 2040 services
+import { innovative2039FuturisticServices } from '../data/innovative-2039-futuristic-services';
+import { innovative2040AdvancedSolutions } from '../data/innovative-2040-advanced-solutions';
+import { innovative2040ITSolutions } from '../data/innovative-2040-it-solutions';
+import { innovative2040MicroSaasSolutions } from '../data/innovative-2040-micro-saas-solutions';
+
 // Import existing service data
 import { realMicroSaasServices } from '../data/real-micro-saas-services';
 import { innovativeAIServices } from '../data/innovative-ai-services';
@@ -104,7 +110,12 @@ const allServices = [
   // Our new comprehensive services
   ...innovative2038AdvancedServices,
   ...revolutionary2040FuturisticServices,
-  ...comprehensiveAdvertisingMarketingServices
+  ...comprehensiveAdvertisingMarketingServices,
+  // Our new innovative 2040 services
+  ...innovative2039FuturisticServices,
+  ...innovative2040AdvancedSolutions,
+  ...innovative2040ITSolutions,
+  ...innovative2040MicroSaasSolutions
 ];
 
 const categories = [
