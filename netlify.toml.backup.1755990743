@@ -1,5 +1,8 @@
 [build]
+<<<<<<< HEAD
+=======
   command = "npm ci && npm run sitemap && npm run build"
+>>>>>>> origin/cursor/autonomous-cloud-automations
   publish = ".next"
   functions = "netlify/functions"
 
