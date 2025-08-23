@@ -173,6 +173,8 @@ export default function MainFrontIndex() {
               <Link href="/automation"><a className="rounded-xl border border-white/20 bg-white/5 px-6 py-3 font-semibold backdrop-blur-md hover:bg-white/10">View Cloud Automations</a></Link>
             </div>
 
+<<<<<<< HEAD
+=======
             {/* Cloud Automations Spotlight */}
             <div className="mx-auto mt-6 max-w-5xl text-left">
               <div className="mb-2 text-xs uppercase tracking-wide text-white/60">Cloud Automations (live)</div>
@@ -184,6 +186,7 @@ export default function MainFrontIndex() {
                </div>
             </div>
 
+>>>>>>> origin/cursor/automate-cloud-cron-jobs-and-sync-repository-5730
             {/* Live metrics strip */}
             <div className="mt-10 grid grid-cols-2 gap-3 sm:grid-cols-4">
               {[

@@ -10,12 +10,17 @@ export default function AutomationHub() {
       <main className="container mx-auto px-4 py-12">
         <h1 className="text-4xl font-extrabold mb-2">Automation Hub</h1>
         <p className="text-white/70 mb-8">Discover our autonomous, self-healing systems that keep the codebase evergreen. Powered by scheduled cloud functions — no GitHub Actions required.</p>
-        <ul className="space-y-4">
-          <li className="rounded-lg bg-white/5 border border-white/10 p-5">
-            <h2 className="text-xl font-bold">Homepage Updates</h2>
-            <p className="text-white/70">Keeps the homepage fresh and the sitemap up to date.</p>
-            <a className="text-cyan-300 underline" href="/.netlify/functions/schedule-homepage" target="_blank" rel="noopener">Trigger / View</a>
-          </li>
+                 <ul className="space-y-4">
+           <li className="rounded-lg bg-white/5 border border-white/10 p-5">
+             <h2 className="text-xl font-bold">Accelerated Sync Orchestrator</h2>
+             <p className="text-white/70">Triggers prioritized automations and commits a heartbeat every minute.</p>
+             <a className="text-cyan-300 underline" href="/.netlify/functions/accelerated-sync-orchestrator" target="_blank" rel="noopener">Trigger / View</a>
+           </li>
+           <li className="rounded-lg bg-white/5 border border-white/10 p-5">
+             <h2 className="text-xl font-bold">Homepage Updates</h2>
+             <p className="text-white/70">Keeps the homepage fresh and the sitemap up to date.</p>
+             <a className="text-cyan-300 underline" href="/.netlify/functions/schedule-homepage" target="_blank" rel="noopener">Trigger / View</a>
+           </li>
           <li className="rounded-lg bg-white/5 border border-white/10 p-5">
             <h2 className="text-xl font-bold">Site Health</h2>
             <p className="text-white/70">Link checks, image optimization, and sitemap refresh.</p>
