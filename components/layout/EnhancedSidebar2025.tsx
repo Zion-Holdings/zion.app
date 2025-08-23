@@ -8,7 +8,8 @@ import {
   Zap,
   TrendingUp, Award, CheckCircle, Clock,
   Search, X as CloseIcon,
-  Target, BookOpen, Calendar, Video, FileText, Handshake
+  Target, BookOpen, Calendar, Video, FileText,
+  Cpu, Globe, Lock, Settings
 } from 'lucide-react';
 
 const contactInfo = {
@@ -97,59 +98,52 @@ const sidebarSections = [
       { name: 'Financial Analytics', href: '/automated-financial-analytics-platform' },
       { name: 'Project Management', href: '/intelligent-project-management-suite' },
       { name: 'Business Intelligence', href: '/ai-business-intelligence-suite' },
-      { name: 'Marketing Automation', href: '/ai-autonomous-marketing-platform' },
-      { name: 'Customer Service AI', href: '/ai-customer-service' },
-      { name: 'HR & Recruitment', href: '/ai-hr-recruitment' },
-      { name: 'Legal Contract Analysis', href: '/ai-legal-contract-analyzer' }
+      { name: 'Marketing Automation', href: '/ai-autonomous-marketing-platform' }
     ]
   },
   {
-    title: 'Solutions',
+    title: 'Industry Solutions',
     icon: <Target className="w-5 h-5" />,
     color: 'text-orange-400',
     items: [
-      { name: 'Healthcare & Biotech', href: '/biotech-ai' },
-      { name: 'Financial Services', href: '/billing-analytics' },
-      { name: 'Manufacturing AI', href: '/autonomous-manufacturing' },
+      { name: 'Healthcare Solutions', href: '/healthcare-solutions', badge: 'Hot' },
+      { name: 'Financial Services', href: '/financial-solutions', badge: 'Popular' },
+      { name: 'Manufacturing AI', href: '/manufacturing-ai-solutions', badge: 'New' },
       { name: 'Retail Technology', href: '/retail-technology-solutions' },
-      { name: 'Education Technology', href: '/training' },
-      { name: 'Government Solutions', href: '/enterprise-solutions-showcase' },
-      { name: 'Energy & Utilities', href: '/quantum-energy' },
-      { name: 'Transportation & Logistics', href: '/quantum-logistics' },
-      { name: 'Real Estate Technology', href: '/real-estate-technology-solutions' },
-      { name: 'Entertainment & Media', href: '/entertainment-media-solutions' },
-      { name: 'Space Technology', href: '/space-technology' },
-      { name: 'Biotech & Healthcare', href: '/biotech-ai' }
+      { name: 'Government Tech', href: '/government-technology-solutions' },
+      { name: 'Energy & Utilities', href: '/energy-utilities-solutions' },
+      { name: 'Education Technology', href: '/education-technology-solutions' },
+      { name: 'Entertainment & Media', href: '/entertainment-media-solutions' }
     ]
   },
   {
-    title: 'Resources',
+    title: 'Resources & Support',
     icon: <BookOpen className="w-5 h-5" />,
-    color: 'text-cyan-400',
+    color: 'text-purple-400',
     items: [
-      { name: 'Case Studies', href: '/case-studies' },
-      { name: 'Blog & News', href: '/blog' },
-      { name: 'Resources Hub', href: '/resources' },
+      { name: 'API Documentation', href: '/api', badge: 'New' },
+      { name: 'Technical Docs', href: '/docs' },
       { name: 'Webinars', href: '/webinars' },
-      { name: 'Training & Certification', href: '/training' },
-      { name: 'Developer Resources', href: '/developer-resources' },
-      { name: 'Research & Development', href: '/research-development' },
-      { name: 'White Papers', href: '/white-papers' },
-      { name: 'Performance Reports', href: '/reports' }
+      { name: 'Case Studies', href: '/case-studies' },
+      { name: 'Blog', href: '/blog' },
+      { name: 'Training', href: '/training' },
+      { name: 'Support Center', href: '/support' },
+      { name: 'Developer Resources', href: '/developer-resources' }
     ]
   },
   {
     title: 'Company',
     icon: <Users className="w-5 h-5" />,
-    color: 'text-pink-400',
+    color: 'text-gray-400',
     items: [
       { name: 'About Us', href: '/about' },
       { name: 'Careers', href: '/careers' },
+      { name: 'News', href: '/news' },
       { name: 'Partners', href: '/partners' },
-      { name: 'Contact Us', href: '/contact' },
-      { name: 'Case Studies', href: '/case-studies' },
-      { name: 'Blog', href: '/blog' },
-      { name: 'Resources', href: '/resources' }
+      { name: 'Investors', href: '/investors' },
+      { name: 'Contact', href: '/contact' },
+      { name: 'Privacy Policy', href: '/privacy' },
+      { name: 'Terms of Service', href: '/terms' }
     ]
   }
 ];
@@ -158,29 +152,35 @@ const quickLinks = [
   { name: 'Home', href: '/', icon: <Home className="w-4 h-4" /> },
   { name: 'All Services', href: '/comprehensive-services-showcase-2025', icon: <Star className="w-4 h-4" /> },
   { name: 'Pricing', href: '/pricing', icon: <DollarSign className="w-4 h-4" /> },
+  { name: 'Market Pricing', href: '/market-pricing', icon: <DollarSign className="w-4 h-4" /> },
+  { name: 'Services Advertising', href: '/services-advertising', icon: <BookOpen className="w-4 h-4" /> },
+  { name: 'Get Quote', href: '/quote', icon: <DollarSign className="w-4 h-4" /> },
+  { name: 'Book Demo', href: '/demo', icon: <Video className="w-4 h-4" /> },
   { name: 'Blog', href: '/blog', icon: <FileText className="w-4 h-4" /> },
   { name: 'Resources', href: '/resources', icon: <BookOpen className="w-4 h-4" /> },
-  { name: 'Case Studies', href: '/case-studies', icon: <FileText className="w-4 h-4" /> },
+  { name: 'Events', href: '/events', icon: <Calendar className="w-4 h-4" /> },
+  { name: 'Webinars', href: '/webinars', icon: <Video className="w-4 h-4" /> },
   { name: 'About Us', href: '/about', icon: <Users className="w-4 h-4" /> },
   { name: 'Contact', href: '/contact', icon: <Mail className="w-4 h-4" /> },
-  { name: 'Careers', href: '/careers', icon: <Users className="w-4 h-4" /> },
-  { name: 'Partners', href: '/partners', icon: <Handshake className="w-4 h-4" /> }
+  { name: 'Support', href: '/support', icon: <HelpCircle className="w-4 h-4" /> }
 ];
 
 const companyLinks = [
   { name: 'About Us', href: '/about', description: 'Our mission and vision' },
   { name: 'Careers', href: '/careers', description: 'Join our team' },
-  { name: 'Partners', href: '/partners', description: 'Technology partnerships' },
+  { name: 'News & Updates', href: '/news', description: 'Latest company news' },
   { name: 'Case Studies', href: '/case-studies', description: 'Success stories' },
-  { name: 'Resources', href: '/resources', description: 'Documentation and tools' },
+  { name: 'Resources', href: '/resources', description: 'Whitepapers and guides' },
   { name: 'Blog', href: '/blog', description: 'Industry insights' }
 ];
 
 const supportLinks = [
-  { name: 'Contact Us', href: '/contact', description: 'Get in touch with our team' },
-  { name: 'Resources', href: '/resources', description: 'Documentation and guides' },
-  { name: 'Webinars', href: '/webinars', description: 'Educational content' },
-  { name: 'Status Page', href: '/status-pages-slo', description: 'Service status' }
+  { name: 'Contact Support', href: '/support', description: 'Get help from our team' },
+  { name: 'Documentation', href: '/docs', description: 'Technical guides' },
+  { name: 'API Reference', href: '/api-documentation', description: 'Developer documentation' },
+  { name: 'Status Page', href: '/status-pages-slo', description: 'Service status' },
+  { name: 'Training', href: '/training', description: 'Learn our platforms' },
+  { name: 'Community', href: '/community', description: 'Connect with users' }
 ];
 
 const stats = [

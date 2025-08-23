@@ -4,7 +4,9 @@ import { useRouter } from 'next/router';
 import { motion, AnimatePresence } from 'framer-motion';
 import { 
   Menu, X, Search, ChevronDown, Zap, Globe, Lock, 
-  Phone, Mail, MapPin, ArrowRight, Star, Users, Award
+  Phone, Mail, MapPin, ArrowRight, Star, Users, Award,
+  Brain, Atom, Rocket, Shield, Target, BookOpen, Video,
+  FileText, Calendar, TrendingUp, Settings, Cpu
 } from 'lucide-react';
 
 interface NavigationItem {
@@ -27,19 +29,19 @@ const navigationItems: NavigationItem[] = [
       {
         label: 'AI & Machine Learning',
         href: '/ai-services',
-        icon: <Star className="w-4 h-4" />,
+        icon: <Brain className="w-4 h-4" />,
         description: 'Advanced AI solutions for enterprise'
       },
       {
         label: 'Quantum Computing',
         href: '/quantum-services',
-        icon: <Zap className="w-4 h-4" />,
+        icon: <Atom className="w-4 h-4" />,
         description: 'Next-generation quantum solutions'
       },
       {
         label: 'Space Technology',
         href: '/space-tech',
-        icon: <Star className="w-4 h-4" />,
+        icon: <Rocket className="w-4 h-4" />,
         description: 'Innovative space solutions'
       },
       {
@@ -61,6 +63,12 @@ const navigationItems: NavigationItem[] = [
         description: 'Rapid deployment SaaS solutions'
       },
       {
+        label: 'Enterprise IT',
+        href: '/enterprise-it',
+        icon: <Shield className="w-4 h-4" />,
+        description: 'Complete enterprise IT solutions'
+      },
+      {
         label: 'View All Services',
         href: '/services',
         icon: <ArrowRight className="w-4 h-4" />,
@@ -72,12 +80,6 @@ const navigationItems: NavigationItem[] = [
     label: 'Solutions',
     children: [
       {
-        label: 'Enterprise IT',
-        href: '/enterprise-solutions-showcase',
-        icon: <Globe className="w-4 h-4" />,
-        description: 'Complete enterprise IT solutions'
-      },
-      {
         label: 'Healthcare',
         href: '/healthcare-solutions',
         icon: <Star className="w-4 h-4" />,
@@ -86,14 +88,32 @@ const navigationItems: NavigationItem[] = [
       {
         label: 'Financial Services',
         href: '/financial-solutions',
-        icon: <Star className="w-4 h-4" />,
+        icon: <TrendingUp className="w-4 h-4" />,
         description: 'Fintech and banking solutions'
       },
       {
         label: 'Manufacturing',
         href: '/manufacturing-ai-solutions',
-        icon: <Star className="w-4 h-4" />,
+        icon: <Cpu className="w-4 h-4" />,
         description: 'Smart manufacturing solutions'
+      },
+      {
+        label: 'Retail Technology',
+        href: '/retail-technology-solutions',
+        icon: <Target className="w-4 h-4" />,
+        description: 'Retail and e-commerce solutions'
+      },
+      {
+        label: 'Government Tech',
+        href: '/government-technology-solutions',
+        icon: <Shield className="w-4 h-4" />,
+        description: 'Government technology solutions'
+      },
+      {
+        label: 'Energy & Utilities',
+        href: '/energy-utilities-solutions',
+        icon: <Zap className="w-4 h-4" />,
+        description: 'Energy sector solutions'
       }
     ]
   },
@@ -101,28 +121,46 @@ const navigationItems: NavigationItem[] = [
     label: 'Resources',
     children: [
       {
-        label: 'Resources Hub',
-        href: '/resources',
+        label: 'API Documentation',
+        href: '/api',
         icon: <Globe className="w-4 h-4" />,
-        description: 'Documentation, tools & learning materials'
+        description: 'Developer APIs and documentation'
+      },
+      {
+        label: 'Webinars',
+        href: '/webinars',
+        icon: <Video className="w-4 h-4" />,
+        description: 'Technology webinars and events'
       },
       {
         label: 'Case Studies',
         href: '/case-studies',
-        icon: <Star className="w-4 h-4" />,
+        icon: <FileText className="w-4 h-4" />,
         description: 'Customer success stories'
       },
       {
         label: 'Blog',
         href: '/blog',
-        icon: <Star className="w-4 h-4" />,
+        icon: <BookOpen className="w-4 h-4" />,
         description: 'Technology insights and trends'
       },
       {
-        label: 'Webinars',
-        href: '/webinars',
-        icon: <Star className="w-4 h-4" />,
-        description: 'Technology webinars and events'
+        label: 'Documentation',
+        href: '/docs',
+        icon: <FileText className="w-4 h-4" />,
+        description: 'Technical documentation'
+      },
+      {
+        label: 'Training',
+        href: '/training',
+        icon: <BookOpen className="w-4 h-4" />,
+        description: 'Professional training programs'
+      },
+      {
+        label: 'White Papers',
+        href: '/white-papers',
+        icon: <FileText className="w-4 h-4" />,
+        description: 'Industry research and insights'
       }
     ]
   },
@@ -136,32 +174,42 @@ const navigationItems: NavigationItem[] = [
         description: 'Our story and mission'
       },
       {
-        label: 'Leadership',
-        href: '/leadership',
-        icon: <Users className="w-4 h-4" />,
-        description: 'Meet our leadership team'
-      },
-      {
         label: 'Careers',
         href: '/careers',
         icon: <Users className="w-4 h-4" />,
         description: 'Join our team'
       },
       {
+        label: 'News',
+        href: '/news',
+        icon: <Calendar className="w-4 h-4" />,
+        description: 'Latest company news'
+      },
+      {
         label: 'Partners',
         href: '/partners',
-        icon: <Star className="w-4 h-4" />,
+        icon: <Users className="w-4 h-4" />,
         description: 'Technology partners'
+      },
+      {
+        label: 'Investors',
+        href: '/investors',
+        icon: <TrendingUp className="w-4 h-4" />,
+        description: 'Investment opportunities'
       },
       {
         label: 'Contact',
         href: '/contact',
-        icon: <Users className="w-4 h-4" />,
+        icon: <Phone className="w-4 h-4" />,
         description: 'Get in touch with us'
       }
     ]
   },
-
+  {
+    label: 'Support',
+    href: '/support',
+    icon: <Settings className="w-4 h-4" />
+  }
 ];
 
 const UltraFuturisticNavigation2040: React.FC = () => {
