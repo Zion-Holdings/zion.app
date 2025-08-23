@@ -9,7 +9,19 @@ import EnhancedPerformanceMonitor from '../EnhancedPerformanceMonitor';
 import AccessibilityEnhancer from '../EnhancedAccessibilityEnhancer';
 import CookieConsentBanner from '../CookieConsentBanner';
 import ServiceWorkerRegistration from '../ServiceWorkerRegistration';
+<<<<<<< HEAD
+
+interface SEOConfig {
+  title: string;
+  description: string;
+  keywords: string;
+  image: string;
+  url: string;
+  type: string;
+}
+=======
 import SEOHead from '../SEOHead';
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-a647
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -62,11 +74,38 @@ export default function Layout({ children, seo }: LayoutProps) {
   const finalSEO = seo || defaultSEO;
 
   return (
+<<<<<<< HEAD
+    <div className="min-h-screen bg-black text-white relative overflow-x-hidden">
+      {/* SEO Head */}
+      <Head>
+        <title>{finalSEO.title}</title>
+        <meta name="description" content={finalSEO.description} />
+        <meta name="keywords" content={finalSEO.keywords} />
+        <meta property="og:title" content={finalSEO.title} />
+        <meta property="og:description" content={finalSEO.description} />
+        <meta property="og:image" content={finalSEO.image} />
+        <meta property="og:url" content={finalSEO.url} />
+        <meta property="og:type" content={finalSEO.type} />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={finalSEO.title} />
+        <meta name="twitter:description" content={finalSEO.description} />
+        <meta name="twitter:image" content={finalSEO.image} />
+        <link rel="canonical" href={finalSEO.url} />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="theme-color" content="#000000" />
+      </Head>
+
+      {/* Skip to content link for accessibility */}
+      <a href="#main" className="skip-link sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2 focus:bg-blue-600 focus:text-white focus:rounded focus:outline-none">
+        Skip to main content
+      </a>
+=======
     <>
       <SEOHead />
       <div className="min-h-screen bg-black text-white relative overflow-x-hidden">
         {/* Skip to content link for accessibility */}
         <a href="#main" className="skip-link">Skip to main content</a>
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-a647
       
       {/* Futuristic Background */}
       <UltraFuturisticBackground2036 theme={getBackgroundTheme(theme)} />

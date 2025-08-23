@@ -9,6 +9,19 @@ Disallow: /admin/
 Disallow: /private/
 Disallow: /api/
 Disallow: /_next/
+<<<<<<< HEAD
+Disallow: /automation/
+
+# Allow important pages
+Allow: /services/
+Allow: /pricing/
+Allow: /about/
+Allow: /contact/
+Allow: /blog/
+Allow: /news/
+
+# Crawl delay for better server performance
+=======
 Disallow: /static/
 
 # Allow important pages
@@ -20,5 +33,6 @@ Allow: /resources/
 Allow: /blog/
 
 # Crawl delay (optional)
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-a647
 Crawl-delay: 1
 
