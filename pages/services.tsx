@@ -45,6 +45,10 @@ import { innovative2025AIServicesExpansion } from '../data/innovative-2025-ai-se
 // Import our new innovative 2040 services
 import { innovative2040ITServices } from '../data/innovative-2040-it-services';
 
+// Import our new comprehensive services expansion
+import { comprehensiveServicesExpansion } from '../data/2025-comprehensive-services-expansion';
+import { advancedInnovativeServices } from '../data/2025-advanced-innovative-services';
+
 // Import existing service data
 import { realMicroSaasServices } from '../data/real-micro-saas-services';
 import { innovativeAIServices } from '../data/innovative-ai-services';
@@ -133,7 +137,10 @@ const allServices = [
   // Our new 2025 innovative services expansion
   ...innovative2025MicroSaasExpansion,
   ...innovative2025ITSolutionsExpansion,
-  ...innovative2025AIServicesExpansion
+  ...innovative2025AIServicesExpansion,
+  // Our new comprehensive services expansion
+  ...comprehensiveServicesExpansion,
+  ...advancedInnovativeServices
 ];
 
 const categories = [

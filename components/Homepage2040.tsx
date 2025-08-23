@@ -315,7 +315,7 @@ const Homepage2040: React.FC = () => {
                       {/* Service Price */}
                       <div className="mb-6">
                         <span className="text-2xl font-bold text-cyan-400">
-                          {typeof service.price === 'string' ? service.price : `$${service.price.monthly}/mo`}
+                          {service.price}
                         </span>
                       </div>
 

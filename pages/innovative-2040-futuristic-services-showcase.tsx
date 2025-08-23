@@ -19,14 +19,14 @@ import { enterpriseITServices } from '../data/enterprise-it-services';
 interface Service {
   id: string;
   name: string;
-  tagline: string;
+  tagline?: string;
   price: string | { monthly: number; yearly: number; currency: string; trialDays: number; setupTime: string };
   period?: string;
   description: string;
-  features: string[];
-  popular: boolean;
-  icon: string;
-  color: string;
+  features?: string[];
+  popular?: boolean;
+  icon?: string;
+  color?: string;
   textColor?: string;
   link: string;
   category: string;
@@ -39,15 +39,16 @@ interface Service {
   marketSize?: string;
   growthRate?: string;
   contactInfo?: {
-    mobile: string;
+    mobile?: string;
+    phone?: string;
     email: string;
-    address: string;
+    address?: string;
     website: string;
   };
-  realImplementation?: boolean;
+  realImplementation?: boolean | string;
   implementationDetails?: string;
-  launchDate?: string;
-  customers: number;
+  launchDate: string;
+  customers: number | string;
   rating: number;
   reviews: number;
 }
