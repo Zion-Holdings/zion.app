@@ -651,7 +651,11 @@ class ComprehensiveRedundancyOrchestrator {
       await this.checkOverallHealth();
     }, this.config.intervals.overallHealth));
     
+<<<<<<< HEAD
+    // Start backup sync
+=======
     // Start backup sync monitoring
+>>>>>>> origin/cursor/automate-automation-redundancy-and-build-improvement-e3e4
     this.checkIntervals.set("backup", setInterval(async () => {
       await this.performBackupSync();
     }, this.config.intervals.backupSync));
@@ -662,7 +666,11 @@ class ComprehensiveRedundancyOrchestrator {
   // Stop monitoring
   stop() {
     if (!this.monitoring) {
+<<<<<<< HEAD
+      this.log("Monitoring not running", "WARN");
+=======
       this.log("Monitoring not started", "WARN");
+>>>>>>> origin/cursor/automate-automation-redundancy-and-build-improvement-e3e4
       return;
     }
     
@@ -673,8 +681,13 @@ class ComprehensiveRedundancyOrchestrator {
       clearInterval(interval);
       this.log(`Stopped ${name} monitoring`, "INFO");
     }
+<<<<<<< HEAD
+    
+    this.checkIntervals.clear();
+=======
     this.checkIntervals.clear();
     
+>>>>>>> origin/cursor/automate-automation-redundancy-and-build-improvement-e3e4
     this.log("Comprehensive redundancy monitoring stopped", "INFO");
   }
 
@@ -682,7 +695,11 @@ class ComprehensiveRedundancyOrchestrator {
   getStatus() {
     return {
       monitoring: this.monitoring,
+<<<<<<< HEAD
+      health: this.healthHistory.get("overall") || null,
+=======
       healthHistory: Object.fromEntries(this.healthHistory),
+>>>>>>> origin/cursor/automate-automation-redundancy-and-build-improvement-e3e4
       restartCounts: Object.fromEntries(this.restartCounts),
       lastBackupSync: this.lastBackupSync,
       config: this.config
@@ -692,9 +709,13 @@ class ComprehensiveRedundancyOrchestrator {
   // Run once
   async runOnce() {
     this.log("Running comprehensive redundancy check once", "INFO");
+<<<<<<< HEAD
+    return await this.checkOverallHealth();
+=======
     await this.checkOverallHealth();
     await this.performBackupSync();
     return this.getStatus();
+>>>>>>> origin/cursor/automate-automation-redundancy-and-build-improvement-e3e4
   }
 }
 
@@ -714,14 +735,24 @@ if (require.main === module) {
       console.log(JSON.stringify(orchestrator.getStatus(), null, 2));
       break;
     case "once":
+<<<<<<< HEAD
+      orchestrator.runOnce().then(result => {
+        console.log(JSON.stringify(result, null, 2));
+=======
       orchestrator.runOnce().then(status => {
         console.log(JSON.stringify(status, null, 2));
+>>>>>>> origin/cursor/automate-automation-redundancy-and-build-improvement-e3e4
         process.exit(0);
       });
       break;
     case "health":
+<<<<<<< HEAD
+      orchestrator.checkOverallHealth().then(result => {
+        console.log(JSON.stringify(result, null, 2));
+=======
       orchestrator.checkOverallHealth().then(status => {
         console.log(JSON.stringify(status, null, 2));
+>>>>>>> origin/cursor/automate-automation-redundancy-and-build-improvement-e3e4
         process.exit(0);
       });
       break;
