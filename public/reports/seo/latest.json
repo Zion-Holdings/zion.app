@@ -46,14 +46,6 @@
     ]
   },
   {
-    "file": "/reports/roadmap.tsx",
-    "title": "Autonomous Roadmap",
-    "description": "Auto-generated roadmap of cloud automations.",
-    "issues": [
-      "Description length suboptimal (44)"
-    ]
-  },
-  {
     "file": "/reports/seo.tsx",
     "title": null,
     "description": null,
@@ -65,10 +57,8 @@
   },
   {
     "file": "/site-health.tsx",
-    "title": "Site Health — Broken Images",
-    "description": null,
-    "issues": [
-      "Missing meta description"
-    ]
+    "title": "Site Health — A11y, Performance, Links",
+    "description": "Dashboards and audits for accessibility, performance, and link integrity.",
+    "issues": []
   }
 ]
