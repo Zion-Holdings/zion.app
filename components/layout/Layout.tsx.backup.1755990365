@@ -74,8 +74,13 @@ export default function Layout({
         <TopContactBar />
         
         {/* Navigation */}
+<<<<<<< HEAD
+        <UltraFuturisticNavigation2036 />
+        
+=======
         <UltraFuturisticNavigation2045 />
 
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-a118
         {/* Theme Toggle */}
         <ThemeToggle currentTheme={theme} onThemeChange={handleThemeChange} />
         
