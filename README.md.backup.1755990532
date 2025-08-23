@@ -6,9 +6,16 @@
 
 - Knowledge Pack Runner: `/.netlify/functions/knowledge-pack-runner` — generates `public/automation/knowledge-pack.json` every 10 minutes.
 - Adaptive Orchestrator: `/.netlify/functions/adaptive-orchestrator` — selectively triggers relevant functions based on recent changes, then syncs.
+<<<<<<< HEAD
+- LLM Content Curator: `/.netlify/functions/llm-content-curator-runner` — curates content and promos with LLM; commits changes to main.
+- Link Sentinel Aggregator: `/.netlify/functions/link-sentinel-aggregator-runner` — aggregates link integrity data and proposes fixes; auto-syncs.
+- Site Promo Orchestrator: `/.netlify/functions/site-promo-orchestrator` — analyzes, generates and applies homepage/site promos automatically.
+- Auto‑Discovery Orchestrator: `/.netlify/functions/auto-discovery-orchestrator` — discovers new automation ideas and runs the guardian; then syncs.
+=======
 - Tech Debt Heatmap: `/.netlify/functions/tech-debt-heatmap-runner` — scans repo for debt signals and publishes live reports.
 - Revenue Ideas Runner: `/.netlify/functions/revenue-ideas-runner` — aggregates monetization proposals into public reports.
 - Code Ownership Map: `/.netlify/functions/code-ownership-map-runner` — infers contributors per area and publishes a map.
+>>>>>>> origin/cursor/invent-and-deploy-autonomous-cloud-automations-0b41
 
 ### **New Service Categories Added:**
 

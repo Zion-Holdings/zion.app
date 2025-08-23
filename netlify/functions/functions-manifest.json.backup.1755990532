@@ -1,5 +1,9 @@
 {
+<<<<<<< HEAD
+  "generatedAt": "2025-08-11T23:55:56.085Z",
+=======
   "generatedAt": "2025-08-11T23:55:13.837Z",
+>>>>>>> origin/cursor/invent-and-deploy-autonomous-cloud-automations-0b41
   "functions": [
     "a11y-alt-text-runner",
     "adaptive-orchestrator",
@@ -85,7 +89,11 @@
     "repo-knowledge-graph-runner",
     "repo-radar-and-graph",
     "repo-radar-runner",
+<<<<<<< HEAD
+    "roadmap-synthesizer",
+=======
     "revenue-ideas-runner",
+>>>>>>> origin/cursor/invent-and-deploy-autonomous-cloud-automations-0b41
     "schedule-content-index",
     "schedule-homepage",
     "schedule-knowledge-graph",

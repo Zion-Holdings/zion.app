@@ -278,6 +278,33 @@
   name = "content-freshness-score-runner"
   schedule = "7 */12 * * *"
 
+<<<<<<< HEAD
+# Newly added intelligent automations
+[[scheduled.functions]]
+  name = "anchor-links-auto-fixer"
+  schedule = "*/5 * * * *"
+
+[[scheduled.functions]]
+  name = "internal-link-graph-runner"
+  schedule = "*/5 * * * *"
+
+# New: Invented automations
+[[scheduled.functions]]
+  name = "llm-content-curator-runner"
+  schedule = "*/15 * * * *"
+
+[[scheduled.functions]]
+  name = "link-sentinel-aggregator-runner"
+  schedule = "*/20 * * * *"
+
+[[scheduled.functions]]
+  name = "site-promo-orchestrator"
+  schedule = "*/10 * * * *"
+
+[[scheduled.functions]]
+  name = "auto-discovery-orchestrator"
+  schedule = "*/30 * * * *"
+=======
 [[scheduled.functions]]
   name = "tech-debt-heatmap-runner"
   schedule = "13 */6 * * *"
@@ -289,3 +316,4 @@
 [[scheduled.functions]]
   name = "code-ownership-map-runner"
   schedule = "23 3 * * *"
+>>>>>>> origin/cursor/invent-and-deploy-autonomous-cloud-automations-0b41
