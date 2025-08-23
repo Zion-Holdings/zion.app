@@ -13,34 +13,61 @@ const nextConfig = {
 		ignoreDuringBuilds: true
 	},
 	experimental: {
-		optimizePackageImports: ['lucide-react', 'framer-motion'],
+		optimizeCss: true,
+		scrollRestoration: true,
 	},
 	compiler: {
 		removeConsole: process.env.NODE_ENV === 'production',
 	},
+	headers: async () => {
+		return [
+			{
+				source: '/(.*)',
+				headers: [
+					{
+						key: 'X-Content-Type-Options',
+						value: 'nosniff',
+					},
+					{
+						key: 'X-Frame-Options',
+						value: 'DENY',
+					},
+					{
+						key: 'X-XSS-Protection',
+						value: '1; mode=block',
+					},
+					{
+						key: 'Referrer-Policy',
+						value: 'strict-origin-when-cross-origin',
+					},
+					{
+						key: 'Permissions-Policy',
+						value: 'camera=(), microphone=(), geolocation=()',
+					},
+				],
+			},
+		];
+	},
 	webpack: (config, { dev, isServer }) => {
-		// Bundle analyzer in development
-		if (dev && !isServer) {
-			try {
-				const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
-				config.plugins.push(
-					new BundleAnalyzerPlugin({
-						analyzerMode: 'static',
-						openAnalyzer: false,
-					})
-				);
-			} catch (e) {
-				// Bundle analyzer not available
-			}
+		// Performance optimizations
+		if (!dev && !isServer) {
+			config.optimization.splitChunks = {
+				chunks: 'all',
+				cacheGroups: {
+					vendor: {
+						test: /[\\/]node_modules[\\/]/,
+						name: 'vendors',
+						chunks: 'all',
+					},
+					common: {
+						name: 'common',
+						minChunks: 2,
+						chunks: 'all',
+						enforce: true,
+					},
+				},
+			};
 		}
-
-		// Tree shaking optimization
-		config.optimization = {
-			...config.optimization,
-			usedExports: true,
-			sideEffects: false,
-		};
-
 		return config;
 	},
 };

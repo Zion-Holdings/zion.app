@@ -12,9 +12,12 @@ import {
   DollarSign as Finance, Factory as Manufacturing, Scale as Legal
 } from 'lucide-react';
 
-// Lazy load components for better performance
-const UltraAdvancedHeroSection2025 = lazy(() => import('../components/sections/UltraAdvancedHeroSection2025'));
-const UltraAdvancedServicesShowcase2025 = lazy(() => import('../components/sections/UltraAdvancedServicesShowcase2025'));
+// Import enhanced components
+import SEOEnhancer from '../components/ui/SEOEnhancer';
+import ErrorBoundary from '../components/ui/ErrorBoundary';
+import PerformanceOptimizer from '../components/ui/PerformanceOptimizer';
+import AccessibilityEnhancer from '../components/ui/AccessibilityEnhancer';
+import PerformanceMonitor from '../components/ui/PerformanceMonitor';
 
 const contactInfo = {
   mobile: '+1 302 464 0950',
@@ -158,64 +161,22 @@ const LoadingSpinner = () => (
 
 export default function Home() {
   return (
-    <>
-      <Head>
-        <title>Zion Tech Group - Leading AI, Quantum & Micro SAAS Solutions</title>
-        <meta name="description" content="Transform your business with Zion Tech Group's cutting-edge AI automation, quantum cybersecurity, and micro SAAS platforms. Enterprise-grade solutions with rapid deployment." />
-        <meta name="keywords" content="AI automation, quantum cybersecurity, micro SAAS, enterprise IT, business automation, AI services, quantum computing" />
-        <meta name="author" content="Zion Tech Group" />
-        <meta name="robots" content="index, follow" />
-        
-        {/* Open Graph */}
-        <meta property="og:title" content="Zion Tech Group - Leading AI, Quantum & Micro SAAS Solutions" />
-        <meta property="og:description" content="Transform your business with cutting-edge AI automation, quantum cybersecurity, and micro SAAS platforms." />
-        <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://ziontechgroup.com" />
-        <meta property="og:image" content="https://ziontechgroup.com/og-image.jpg" />
-        
-        {/* Twitter Card */}
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Zion Tech Group - Leading AI, Quantum & Micro SAAS Solutions" />
-        <meta name="twitter:description" content="Transform your business with cutting-edge AI automation, quantum cybersecurity, and micro SAAS platforms." />
-        <meta name="twitter:image" content="https://ziontechgroup.com/og-image.jpg" />
-        
-        {/* Structured Data */}
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "Organization",
-              "name": "Zion Tech Group",
-              "url": "https://ziontechgroup.com",
-              "logo": "https://ziontechgroup.com/logo.png",
-              "description": "Leading provider of AI automation, quantum cybersecurity, and micro SAAS solutions",
-              "address": {
-                "@type": "PostalAddress",
-                "streetAddress": "364 E Main St STE 1008",
-                "addressLocality": "Middletown",
-                "addressRegion": "DE",
-                "postalCode": "19709",
-                "addressCountry": "US"
-              },
-              "contactPoint": {
-                "@type": "ContactPoint",
-                "telephone": "+1-302-464-0950",
-                "contactType": "customer service",
-                "email": "kleber@ziontechgroup.com"
-              },
-              "sameAs": [
-                "https://github.com/Zion-Holdings"
-              ]
-            })
-          }}
-        />
-        
-        {/* Preload critical resources */}
-        <link rel="preload" href="/fonts/inter-var.woff2" as="font" type="font/woff2" crossOrigin="anonymous" />
-        <link rel="dns-prefetch" href="//fonts.googleapis.com" />
-        <link rel="dns-prefetch" href="//fonts.gstatic.com" />
-      </Head>
+    <ErrorBoundary>
+      <PerformanceOptimizer>
+        <>
+          <SEOEnhancer
+            title="Zion Tech Group - Revolutionary Technology Solutions | AI, Quantum Computing, Micro SAAS"
+            description="Transform your business with Zion Tech Group's revolutionary AI, quantum computing, and micro SAAS solutions. Leading-edge technology for unprecedented growth."
+            keywords={[
+              'AI', 'quantum computing', 'micro SAAS', 'technology solutions', 
+              'business transformation', 'Zion Tech Group', 'artificial intelligence',
+              'machine learning', 'quantum technology', 'business automation',
+              'cybersecurity', 'cloud infrastructure', 'digital transformation'
+            ]}
+            type="website"
+            url="/"
+            image="/og-image.jpg"
+          />
 
       <main className="min-h-screen bg-gradient-to-br from-gray-900 via-black to-gray-900">
         {/* Hero Section */}
@@ -480,11 +441,11 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Services Showcase */}
-        <Suspense fallback={<LoadingSpinner />}>
-          <UltraAdvancedServicesShowcase2025 />
-        </Suspense>
-      </main>
-    </>
+        {/* Enhanced Components */}
+        <AccessibilityEnhancer />
+        <PerformanceMonitor />
+        </>
+      </PerformanceOptimizer>
+    </ErrorBoundary>
   );
 }

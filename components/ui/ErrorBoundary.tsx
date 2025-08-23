@@ -1,19 +1,9 @@
 import React, { Component, ErrorInfo, ReactNode } from 'react';
 import { motion } from 'framer-motion';
-import { AlertTriangle, RefreshCw, Home, Bug, Shield, Zap } from 'lucide-react';
-
-// Global type declarations
-declare global {
-  interface Window {
-    gtag?: (
-      command: string,
-      action: string,
-      params: Record<string, any>
-    ) => void;
-  }
-}
-
-const gtag = typeof window !== 'undefined' ? window.gtag : undefined;
+import { 
+  AlertTriangle, RefreshCw, Home, ArrowLeft, 
+  Bug, FileText, Phone, Mail
+} from 'lucide-react';
 
 interface Props {
   children: ReactNode;
@@ -25,7 +15,7 @@ interface State {
   hasError: boolean;
   error: Error | null;
   errorInfo: ErrorInfo | null;
-  errorId: string | null;
+  errorId: string;
 }
 
 class ErrorBoundary extends Component<Props, State> {
@@ -35,7 +25,7 @@ class ErrorBoundary extends Component<Props, State> {
       hasError: false,
       error: null,
       errorInfo: null,
-      errorId: null,
+      errorId: ''
     };
   }
 
@@ -43,18 +33,18 @@ class ErrorBoundary extends Component<Props, State> {
     return {
       hasError: true,
       error,
-      errorId: `error_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`,
+      errorId: `error-${Date.now()}-${Math.random().toString(36).substr(2, 9)}`
     };
   }
 
   componentDidCatch(error: Error, errorInfo: ErrorInfo) {
     this.setState({
-      errorInfo,
+      errorInfo
     });
 
     // Log error to console in development
     if (process.env.NODE_ENV === 'development') {
-      console.error('ErrorBoundary caught an error:', error, errorInfo);
+      console.error('Error caught by boundary:', error, errorInfo);
     }
 
     // Call custom error handler if provided
@@ -62,87 +52,74 @@ class ErrorBoundary extends Component<Props, State> {
       this.props.onError(error, errorInfo);
     }
 
-    // Send error to analytics/monitoring service
-    this.logErrorToService(error, errorInfo);
+    // Log error to external service in production
+    if (process.env.NODE_ENV === 'production') {
+      this.logErrorToService(error, errorInfo);
+    }
   }
 
-  logErrorToService = (error: Error, errorInfo: ErrorInfo) => {
+  private logErrorToService = (error: Error, errorInfo: ErrorInfo) => {
     try {
-      // Send to Google Analytics if available
-      if (gtag) {
-        gtag('event', 'exception', {
-          description: error.message,
-          fatal: false,
-          custom_map: {
-            error_id: this.state.errorId,
-            error_stack: error.stack,
-            component_stack: errorInfo.componentStack,
-          },
-        });
-      }
+      // You can integrate with services like Sentry, LogRocket, etc.
+      const errorData = {
+        errorId: this.state.errorId,
+        message: error.message,
+        stack: error.stack,
+        componentStack: errorInfo.componentStack,
+        timestamp: new Date().toISOString(),
+        url: window.location.href,
+        userAgent: navigator.userAgent,
+        viewport: {
+          width: window.innerWidth,
+          height: window.innerHeight
+        }
+      };
 
-      // Send to custom error tracking service
-      fetch('/api/error-tracking', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          errorId: this.state.errorId,
-          message: error.message,
-          stack: error.stack,
-          componentStack: errorInfo.componentStack,
-          url: window.location.href,
-          userAgent: navigator.userAgent,
-          timestamp: new Date().toISOString(),
-        }),
-      }).catch(() => {
-        // Silently fail if error tracking fails
-      });
-    } catch (e) {
-      // Silently fail if error logging fails
+      // Example: Send to your error logging service
+      // fetch('/api/error-log', {
+      //   method: 'POST',
+      //   headers: { 'Content-Type': 'application/json' },
+      //   body: JSON.stringify(errorData)
+      // });
+
+      console.log('Error logged:', errorData);
+    } catch (logError) {
+      console.warn('Failed to log error:', logError);
     }
   };
 
-  handleRetry = () => {
+  private handleRetry = () => {
     this.setState({
       hasError: false,
       error: null,
       errorInfo: null,
-      errorId: null,
+      errorId: ''
     });
   };
 
-  handleGoHome = () => {
+  private handleGoHome = () => {
     window.location.href = '/';
   };
 
-  handleReportError = () => {
-    const { error, errorInfo, errorId } = this.state;
-    if (!error || !errorInfo) return;
+  private handleGoBack = () => {
+    window.history.back();
+  };
 
-    const errorReport = `
-Error Report (ID: ${errorId})
+  private handleReportError = () => {
+    const errorData = {
+      errorId: this.state.errorId,
+      message: this.state.error?.message,
+      stack: this.state.error?.stack,
+      componentStack: this.state.errorInfo?.componentStack,
+      url: window.location.href,
+      timestamp: new Date().toISOString()
+    };
 
-Error: ${error.message}
-Stack: ${error.stack}
-
-Component Stack: ${errorInfo.componentStack}
-
-URL: ${window.location.href}
-User Agent: ${navigator.userAgent}
-Timestamp: ${new Date().toISOString()}
-    `;
-
-    // Copy to clipboard
-    navigator.clipboard.writeText(errorReport).then(() => {
-      alert('Error report copied to clipboard. Please send this to support.');
-    }).catch(() => {
-      // Fallback: open email client
-      const subject = encodeURIComponent(`Error Report - ${errorId}`);
-      const body = encodeURIComponent(errorReport);
-      window.open(`mailto:support@ziontechgroup.com?subject=${subject}&body=${body}`);
-    });
+    const emailBody = `Error Report\n\nError ID: ${errorData.errorId}\nMessage: ${errorData.message}\nURL: ${errorData.url}\nTimestamp: ${errorData.timestamp}\n\nStack Trace:\n${errorData.stack}\n\nComponent Stack:\n${errorData.componentStack}`;
+    
+    const mailtoLink = `mailto:kleber@ziontechgroup.com?subject=Error Report - ${errorData.errorId}&body=${encodeURIComponent(emailBody)}`;
+    
+    window.open(mailtoLink);
   };
 
   render() {
@@ -154,123 +131,134 @@ Timestamp: ${new Date().toISOString()}
 
       // Default error UI
       return (
-        <motion.div
-          initial={{ opacity: 0, scale: 0.9 }}
-          animate={{ opacity: 1, scale: 1 }}
-          className="min-h-screen bg-gradient-to-br from-black via-gray-900 to-black flex items-center justify-center p-4"
-        >
-          <div className="max-w-2xl w-full bg-black/50 backdrop-blur-sm border border-red-500/20 rounded-2xl p-8 text-center">
-            {/* Error Icon */}
-            <motion.div
-              initial={{ y: -20, opacity: 0 }}
-              animate={{ y: 0, opacity: 1 }}
-              transition={{ delay: 0.1 }}
-              className="mb-6"
-            >
-              <div className="w-24 h-24 mx-auto bg-gradient-to-br from-red-500/20 to-red-600/20 rounded-full flex items-center justify-center border border-red-500/30">
-                <AlertTriangle className="w-12 h-12 text-red-400" />
+        <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-800 flex items-center justify-center p-4">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            className="max-w-2xl w-full bg-white dark:bg-gray-800 rounded-2xl shadow-2xl border border-gray-200 dark:border-gray-700 overflow-hidden"
+          >
+            {/* Header */}
+            <div className="bg-gradient-to-r from-red-500 to-red-600 p-6 text-white">
+              <div className="flex items-center gap-3">
+                <AlertTriangle className="w-8 h-8" />
+                <div>
+                  <h1 className="text-2xl font-bold">Something went wrong</h1>
+                  <p className="text-red-100">We've encountered an unexpected error</p>
+                </div>
               </div>
-            </motion.div>
+            </div>
 
-            {/* Error Title */}
-            <motion.h1
-              initial={{ y: -20, opacity: 0 }}
-              animate={{ y: 0, opacity: 1 }}
-              transition={{ delay: 0.2 }}
-              className="text-3xl font-bold text-white mb-4"
-            >
-              Oops! Something went wrong
-            </motion.h1>
-
-            {/* Error Message */}
-            <motion.p
-              initial={{ y: -20, opacity: 0 }}
-              animate={{ y: 0, opacity: 1 }}
-              transition={{ delay: 0.3 }}
-              className="text-gray-300 mb-6 text-lg"
-            >
-              We've encountered an unexpected error. Our team has been notified and is working to fix it.
-            </motion.p>
-
-            {/* Error Details */}
-            {process.env.NODE_ENV === 'development' && this.state.error && (
-              <motion.div
-                initial={{ y: -20, opacity: 0 }}
-                animate={{ y: 0, opacity: 1 }}
-                transition={{ delay: 0.4 }}
-                className="mb-6 p-4 bg-red-500/10 border border-red-500/20 rounded-lg text-left"
-              >
-                <h3 className="text-sm font-semibold text-red-400 mb-2">Error Details (Development)</h3>
-                <p className="text-xs text-red-300 font-mono break-all">
-                  {this.state.error.message}
-                </p>
-                {this.state.errorId && (
-                  <p className="text-xs text-gray-400 mt-2">Error ID: {this.state.errorId}</p>
-                )}
-              </motion.div>
-            )}
-
-            {/* Action Buttons */}
-            <motion.div
-              initial={{ y: -20, opacity: 0 }}
-              animate={{ y: 0, opacity: 1 }}
-              transition={{ delay: 0.5 }}
-              className="flex flex-col sm:flex-row gap-4 justify-center"
-            >
-              <button
-                onClick={this.handleRetry}
-                className="flex items-center justify-center gap-2 bg-cyan-600 hover:bg-cyan-700 text-white px-6 py-3 rounded-lg font-medium transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-cyan-500/50"
-              >
-                <RefreshCw className="w-5 h-5" />
-                Try Again
-              </button>
-
-              <button
-                onClick={this.handleGoHome}
-                className="flex items-center justify-center gap-2 bg-gray-700 hover:bg-gray-600 text-white px-6 py-3 rounded-lg font-medium transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-gray-500/50"
-              >
-                <Home className="w-5 h-5" />
-                Go Home
-              </button>
-
-              <button
-                onClick={this.handleReportError}
-                className="flex items-center justify-center gap-2 bg-red-600 hover:bg-red-700 text-white px-6 py-3 rounded-lg font-medium transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-red-500/50"
-              >
-                <Bug className="w-5 h-5" />
-                Report Error
-              </button>
-            </motion.div>
-
-            {/* Support Info */}
-            <motion.div
-              initial={{ y: -20, opacity: 0 }}
-              animate={{ y: 0, opacity: 1 }}
-              transition={{ delay: 0.6 }}
-              className="mt-8 pt-6 border-t border-gray-700"
-            >
-              <div className="flex items-center justify-center gap-2 text-gray-400">
-                <Shield className="w-4 h-4" />
-                <span className="text-sm">Need help? Contact our support team</span>
+            {/* Content */}
+            <div className="p-6 space-y-6">
+              {/* Error Details */}
+              <div className="bg-gray-50 dark:bg-gray-700 rounded-lg p-4">
+                <div className="flex items-start gap-3">
+                  <Bug className="w-5 h-5 text-gray-500 mt-0.5" />
+                  <div className="flex-1">
+                    <h3 className="font-semibold text-gray-900 dark:text-white mb-2">
+                      Error Details
+                    </h3>
+                    <div className="text-sm text-gray-600 dark:text-gray-300 space-y-1">
+                      <p><strong>Error ID:</strong> {this.state.errorId}</p>
+                      <p><strong>Message:</strong> {this.state.error?.message}</p>
+                      <p><strong>Time:</strong> {new Date().toLocaleString()}</p>
+                    </div>
+                  </div>
+                </div>
               </div>
-              <div className="flex items-center justify-center gap-4 mt-3">
-                <a
-                  href="mailto:support@ziontechgroup.com"
-                  className="text-cyan-400 hover:text-cyan-300 text-sm transition-colors"
+
+              {/* Actions */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                <button
+                  onClick={this.handleRetry}
+                  className="flex items-center justify-center gap-2 bg-blue-600 hover:bg-blue-700 text-white px-4 py-3 rounded-lg font-medium transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
                 >
-                  support@ziontechgroup.com
-                </a>
-                <span className="text-gray-600">|</span>
-                <a
-                  href="tel:+13024640950"
-                  className="text-cyan-400 hover:text-cyan-300 text-sm transition-colors"
+                  <RefreshCw className="w-4 h-4" />
+                  Try Again
+                </button>
+                
+                <button
+                  onClick={this.handleGoBack}
+                  className="flex items-center justify-center gap-2 bg-gray-600 hover:bg-gray-700 text-white px-4 py-3 rounded-lg font-medium transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2"
                 >
-                  +1 (302) 464-0950
-                </a>
+                  <ArrowLeft className="w-4 h-4" />
+                  Go Back
+                </button>
+                
+                <button
+                  onClick={this.handleGoHome}
+                  className="flex items-center justify-center gap-2 bg-green-600 hover:bg-green-700 text-white px-4 py-3 rounded-lg font-medium transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2"
+                >
+                  <Home className="w-4 h-4" />
+                  Go Home
+                </button>
+                
+                <button
+                  onClick={this.handleReportError}
+                  className="flex items-center justify-center gap-2 bg-orange-600 hover:bg-orange-700 text-white px-4 py-3 rounded-lg font-medium transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:ring-offset-2"
+                >
+                  <Mail className="w-4 h-4" />
+                  Report Error
+                </button>
               </div>
-            </motion.div>
-          </div>
-        </motion.div>
+
+              {/* Contact Support */}
+              <div className="bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-800 rounded-lg p-4">
+                <div className="flex items-start gap-3">
+                  <Phone className="w-5 h-5 text-blue-600 mt-0.5" />
+                  <div>
+                    <h3 className="font-semibold text-blue-900 dark:text-blue-100 mb-1">
+                      Need Help?
+                    </h3>
+                    <p className="text-sm text-blue-700 dark:text-blue-300 mb-2">
+                      Our support team is here to help you resolve this issue.
+                    </p>
+                    <div className="flex items-center gap-4 text-sm">
+                      <a
+                        href="tel:+13024640950"
+                        className="text-blue-600 dark:text-blue-400 hover:underline flex items-center gap-1"
+                      >
+                        <Phone className="w-4 h-4" />
+                        +1 (302) 464-0950
+                      </a>
+                      <a
+                        href="mailto:kleber@ziontechgroup.com"
+                        className="text-blue-600 dark:text-blue-400 hover:underline flex items-center gap-1"
+                      >
+                        <Mail className="w-4 h-4" />
+                        kleber@ziontechgroup.com
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Technical Details (Collapsible) */}
+              {process.env.NODE_ENV === 'development' && (
+                <details className="bg-gray-50 dark:bg-gray-700 rounded-lg">
+                  <summary className="p-4 cursor-pointer font-medium text-gray-900 dark:text-white hover:bg-gray-100 dark:hover:bg-gray-600 transition-colors">
+                    <FileText className="w-4 h-4 inline mr-2" />
+                    Technical Details (Development)
+                  </summary>
+                  <div className="p-4 border-t border-gray-200 dark:border-gray-600">
+                    <pre className="text-xs text-gray-600 dark:text-gray-300 overflow-auto max-h-64">
+                      {this.state.error?.stack}
+                    </pre>
+                    {this.state.errorInfo && (
+                      <div className="mt-4">
+                        <h4 className="font-medium text-gray-900 dark:text-white mb-2">Component Stack:</h4>
+                        <pre className="text-xs text-gray-600 dark:text-gray-300 overflow-auto max-h-32">
+                          {this.state.errorInfo.componentStack}
+                        </pre>
+                      </div>
+                    )}
+                  </div>
+                </details>
+              )}
+            </div>
+          </motion.div>
+        </div>
       );
     }
 
