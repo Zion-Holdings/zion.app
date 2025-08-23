@@ -183,7 +183,11 @@ export const innovative2025ITSolutionsExpanded: Innovative2025ITSolutionsExpande
     competitors: ['Accenture, Deloitte, IBM, Capgemini, Cognizant'],
     marketSize: '$12.4B data center services market',
     growthRate: '16.2% annual growth',
+<<<<<<< HEAD
+    variant: 'infrastructure-futuristic',
+=======
     variant: 'it-futuristic',
+>>>>>>> origin/cursor/add-and-advertise-new-services-then-build-17cc
     contactInfo: contact,
     realImplementation: true,
     implementationDetails: 'Complete data center migration services including planning, execution, and optimization. Includes training and ongoing support.',
@@ -423,7 +427,11 @@ export const innovative2025ITSolutionsExpanded: Innovative2025ITSolutionsExpande
     competitors: ['McKinsey, BCG, Bain, Accenture, Deloitte'],
     marketSize: '$18.7B digital transformation market',
     growthRate: '28.4% annual growth',
+<<<<<<< HEAD
+    variant: 'transformation-futuristic',
+=======
     variant: 'enterprise-futuristic',
+>>>>>>> origin/cursor/add-and-advertise-new-services-then-build-17cc
     contactInfo: contact,
     realImplementation: true,
     implementationDetails: 'Complete digital transformation services including strategy, implementation, and optimization. Includes training and ongoing support.',
@@ -471,7 +479,11 @@ export const innovative2025ITSolutionsExpanded: Innovative2025ITSolutionsExpande
     competitors: ['Dell Technologies, HP Enterprise, IBM, Accenture, Deloitte'],
     marketSize: '$14.2B managed IT services market',
     growthRate: '15.8% annual growth',
+<<<<<<< HEAD
+    variant: 'support-futuristic',
+=======
     variant: 'it-futuristic',
+>>>>>>> origin/cursor/add-and-advertise-new-services-then-build-17cc
     contactInfo: contact,
     realImplementation: true,
     implementationDetails: 'Complete IT support and managed services including help desk, monitoring, and management. Includes training and ongoing support.',
