@@ -1,4 +1,11 @@
 const nextConfig = {
+<<<<<<< HEAD
+	reactStrictMode: true,
+	swcMinify: true,
+	optimizeFonts: false,
+	output: 'export',
+	trailingSlash: true
+=======
   compiler: {
     removeConsole: process.env.NODE_ENV === "production",
   },
@@ -24,6 +31,7 @@ const nextConfig = {
     };
     return config;
   },
+>>>>>>> origin/cursor/build-nextjs-app-with-react-version-check-7756
 };
 
 module.exports = withSentryConfig(baseConfig);
