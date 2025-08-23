@@ -1,6 +1,10 @@
 import React, { useState } from 'react';
 import Head from 'next/head';
+<<<<<<< HEAD
+import { Check, Star, Zap, Shield, Users, Globe, ArrowRight, ExternalLink, TrendingUp, Clock, Target, Building, Rocket, Award, DollarSign, ChartBar, Lock, Cpu, Database, Cloud, Smartphone, Palette, Search, MessageSquare, FileText, Calendar, CreditCard, BarChart3, Settings, Zap as ZapIcon, Code, BookOpen, Activity, Database as DatabaseIcon, Play, Mail, Phone, MapPin } from 'lucide-react';
+=======
 import { Shield, Clock, DollarSign, TrendingUp, Brain, Rocket, ArrowRight, ExternalLink, Search, Filter, Grid, List, Phone, Mail, MapPin, Star } from 'lucide-react';
+>>>>>>> origin/cursor/enhance-app-services-and-website-with-futuristic-design-30f9
 import Button from '../components/ui/Button';
 import Card from '../components/ui/Card';
 import { realMicroSaasServices, getServicesByCategory } from '../data/real-micro-saas-services';
@@ -541,6 +545,42 @@ export default function MicroSaasPage() {
         {/* Hero Section */}
         <section className="relative py-20 overflow-hidden">
           <div className="container mx-auto px-4 text-center">
+<<<<<<< HEAD
+            <div className="max-w-4xl mx-auto">
+              <h1 className="text-5xl md:text-7xl font-bold mb-6 futuristic-glow">
+                <span className="bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
+                  600+ Micro SaaS Services
+                </span>
+                <br />
+                <span className="text-white">Ready to Deploy</span>
+              </h1>
+              <p className="text-xl md:text-2xl text-gray-300 mb-8 leading-relaxed">
+                Access enterprise-grade micro SaaS solutions across AI, cloud, cybersecurity, data analytics, IoT, blockchain, and emerging technologies. 
+                Each service is built for immediate business impact with measurable ROI.
+              </p>
+              
+              {/* Service Count Stats */}
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-12">
+                <div className="text-center p-4 rounded-lg bg-gradient-to-br from-cyan-500/10 to-blue-500/10 border border-cyan-500/20">
+                  <div className="text-3xl font-bold text-cyan-400 mb-2">600+</div>
+                  <div className="text-sm text-gray-300">Real Services</div>
+                </div>
+                <div className="text-center p-4 rounded-lg bg-gradient-to-br from-purple-500/10 to-pink-500/10 border border-purple-500/20">
+                  <div className="text-3xl font-bold text-purple-400 mb-2">$18.5B+</div>
+                  <div className="text-sm text-gray-300">Market Value</div>
+                </div>
+                <div className="text-center p-4 rounded-lg bg-gradient-to-br from-green-500/10 to-emerald-500/10 border border-green-500/20">
+                  <div className="text-3xl font-bold text-green-400 mb-2">2,800+</div>
+                  <div className="text-sm text-gray-300">Active Customers</div>
+                </div>
+                <div className="text-center p-4 rounded-lg bg-gradient-to-br from-yellow-500/10 to-orange-500/10 border border-yellow-500/20">
+                  <div className="text-3xl font-bold text-yellow-400 mb-2">600%+</div>
+                  <div className="text-sm text-gray-300">Average ROI</div>
+                </div>
+              </div>
+
+              {/* CTA Buttons */}
+=======
             <div className="max-w-6xl mx-auto">
               <motion.h1 
                 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 bg-clip-text text-transparent"
@@ -804,6 +844,7 @@ export default function MicroSaasPage() {
                 </div>
               </div>
 
+>>>>>>> origin/cursor/enhance-app-services-and-website-with-futuristic-design-30f9
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Button 
                   href="/services" 
