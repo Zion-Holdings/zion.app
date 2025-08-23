@@ -10,7 +10,7 @@ import {
 
 // Import our new 2025 services
 import { advancedAIAutomationServices } from '../data/2026-advanced-ai-automation-services';
-import { innovativeITInfrastructureServices2025 } from '../data/2025-innovative-it-infrastructure-services';
+import { innovative2025ITInfrastructureServices } from '../data/2025-innovative-it-infrastructure-services';
 import { innovativeMicroSaasSolutions2025 } from '../data/2025-innovative-micro-saas-solutions';
 import { emergingTechnologyServices } from '../data/2025-emerging-technology-services';
 
@@ -148,7 +148,7 @@ const normalizeService = (service: any): UnifiedService => {
 // Combine all services
 const allServices: UnifiedService[] = [
   ...advancedAIAutomationServices.map(normalizeService),
-  ...innovativeITInfrastructureServices2025.map(normalizeService),
+      ...innovative2025ITInfrastructureServices.map(normalizeService),
   ...innovativeMicroSaasSolutions2025.map(normalizeService),
   ...emergingTechnologyServices.map(normalizeService)
 ];
