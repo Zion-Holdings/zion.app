@@ -220,22 +220,17 @@ const navigationItems: NavigationItem[] = [
         description: 'Complete services overview',
         icon: <Grid className="w-4 h-4" />,
       },
-      {
-        name: '2026 Services Showcase',
-        href: '/revolutionary-2026-services-showcase',
-        description: 'Next-generation solutions',
-        icon: <TrendingUp className="w-4 h-4" />
+      { 
+        name: 'Innovative 2037 Services', 
+        href: '/innovative-2037-services-showcase', 
+        description: 'Cutting-edge 2037 services',
+        icon: <Sparkles className="w-4 h-4" />,
+        featured: true
       },
-      {
-        name: 'Ultimate 2025 Micro SAAS',
-        href: '/ultimate-2025-micro-saas-showcase',
-        description: 'Comprehensive micro SaaS portfolio',
-        icon: <Layers className="w-4 h-4" />
-      },
-      {
-        name: 'Pricing Plans',
-        href: '/pricing',
-        description: 'Transparent pricing structure',
+      { 
+        name: 'Pricing Plans', 
+        href: '/pricing', 
+        description: 'Service pricing information',
         icon: <DollarSign className="w-4 h-4" />
       },
       { 
