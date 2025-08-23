@@ -63,13 +63,17 @@ const UltraAdvancedServicesShowcase2025: React.FC = () => {
         case 'popularity':
           return (b.popular ? 1 : 0) - (a.popular ? 1 : 0);
         case 'price-low': {
-          const aPrice = typeof a.price === 'string' ? parseFloat(a.price.replace(/[^0-9.]/g, '')) : a.price.monthly;
-          const bPrice = typeof b.price === 'string' ? parseFloat(b.price.replace(/[^0-9.]/g, '')) : b.price.monthly;
+          const aPrice = 'price' in a && typeof a.price === 'string' ? parseFloat(a.price.replace(/[^0-9.]/g, '')) : 
+                         'pricing' in a ? a.pricing.starter : 0;
+          const bPrice = 'price' in b && typeof b.price === 'string' ? parseFloat(b.price.replace(/[^0-9.]/g, '')) : 
+                         'pricing' in b ? b.pricing.starter : 0;
           return aPrice - bPrice;
         }
         case 'price-high': {
-          const aPriceHigh = typeof a.price === 'string' ? parseFloat(a.price.replace(/[^0-9.]/g, '')) : a.price.monthly;
-          const bPriceHigh = typeof b.price === 'string' ? parseFloat(b.price.replace(/[^0-9.]/g, '')) : b.price.monthly;
+          const aPriceHigh = 'price' in a && typeof a.price === 'string' ? parseFloat(a.price.replace(/[^0-9.]/g, '')) : 
+                            'pricing' in a ? a.pricing.starter : 0;
+          const bPriceHigh = 'price' in b && typeof b.price === 'string' ? parseFloat(b.price.replace(/[^0-9.]/g, '')) : 
+                            'pricing' in b ? b.pricing.starter : 0;
           return bPriceHigh - aPriceHigh;
         }
         case 'name':
@@ -339,7 +343,8 @@ const UltraAdvancedServicesShowcase2025: React.FC = () => {
                   <div className="flex items-center justify-between">
                     <div className="flex items-center space-x-2">
                       <span className="text-2xl font-bold text-white">
-                        ${typeof service.price === 'string' ? service.price : service.price.monthly}
+                        ${'price' in service && typeof service.price === 'string' ? service.price : 
+                          'pricing' in service ? service.pricing.starter : 'Custom'}
                       </span>
                       <span className="text-gray-400 text-sm">/month</span>
                     </div>
@@ -369,7 +374,8 @@ const UltraAdvancedServicesShowcase2025: React.FC = () => {
                       <div className="flex items-center space-x-4">
                         <span className="flex items-center space-x-1">
                           <Clock className="w-3 h-3" />
-                          <span>{typeof service.price === 'string' ? (service as any).setupTime : service.price.setupTime}</span>
+                          <span>{'price' in service && typeof service.price === 'string' ? (service as any).setupTime : 
+                                'pricing' in service ? service.pricing.setupTime : 'Custom'}</span>
                         </span>
                         <span className="flex items-center space-x-1">
                           <DollarSign className="w-3 h-3" />
