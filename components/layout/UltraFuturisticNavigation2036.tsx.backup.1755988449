@@ -1,5 +1,25 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+<<<<<<< HEAD
+import {
+  Menu,
+  X,
+  ChevronDown,
+  Search,
+  Phone,
+  Mail,
+  MapPin,
+  Star,
+  Clock,
+  MessageCircle,
+  Calculator,
+  Play,
+  Users,
+  Brain,
+  Atom,
+  Rocket,
+  Zap
+=======
 import { 
   Menu, ChevronDown, X, Phone, Mail, MapPin, ArrowRight,
   Brain, Rocket, Shield, Zap, Target, Atom, BookOpen,
@@ -13,6 +33,7 @@ import {
   Target as TargetIcon, Atom as AtomIcon, Brain as BrainIcon,
   Cpu as Quantum, Brain as AI, Code as MicroSaas, Server as ITServices, 
   Globe as Metaverse, Shield as Cybersecurity, Leaf, Mountain, Plane
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-cfba
 } from 'lucide-react';
 import Link from 'next/link';
 
@@ -172,6 +193,29 @@ const navigationItems: NavigationItem[] = [
     href: '/comprehensive-2025-services-showcase',
     icon: <Star className="w-5 h-5" />,
     description: 'Service showcases and pricing',
+<<<<<<< HEAD
+    badge: 'Showcase',
+    children: [
+      { 
+        name: 'Innovative 2027 Services', 
+        href: '/innovative-2027-services-showcase', 
+        description: 'Cutting-edge 2027 services showcase',
+        icon: <Star className="w-4 h-4" />,
+        featured: true,
+        badge: 'NEW'
+      },
+      { 
+        name: 'Services Showcase', 
+        href: '/comprehensive-2025-services-showcase', 
+        description: 'Complete services overview',
+        icon: <Calculator className="w-4 h-4" />,
+        featured: true
+      },
+      { 
+        name: 'Pricing Plans', 
+        href: '/revolutionary-2025-pricing', 
+        description: 'Transparent pricing structure',
+=======
     badge: 'Featured',
     category: 'showcase',
     children: [
@@ -192,6 +236,7 @@ const navigationItems: NavigationItem[] = [
         name: 'Pricing Plans',
         href: '/pricing',
         description: 'Transparent pricing',
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-cfba
         icon: <DollarSign className="w-4 h-4" />
       },
       { 
@@ -227,6 +272,12 @@ const navigationItems: NavigationItem[] = [
         description: 'Executive team',
         icon: <Users className="w-4 h-4" />
       },
+<<<<<<< HEAD
+      { 
+        name: 'Contact', 
+        href: '/contact', 
+        description: 'Get in touch',
+=======
       {
         name: 'Quantum Micro SAAS',
         href: '/quantum-micro-saas',
@@ -319,6 +370,7 @@ const navigationItems: NavigationItem[] = [
         name: 'Natural Language Processing',
         href: '/nlp-services',
         description: 'Text and language AI',
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-cfba
         icon: <MessageCircle className="w-4 h-4" />
       },
       { 
@@ -327,6 +379,13 @@ const navigationItems: NavigationItem[] = [
         description: 'Partnership opportunities',
         icon: <Play className="w-4 h-4" />
       },
+<<<<<<< HEAD
+      { 
+        name: 'Investors', 
+        href: '/investors', 
+        description: 'Investment information',
+        icon: <Play className="w-4 h-4" />
+=======
       {
         name: 'Predictive Analytics',
         href: '/predictive-analytics',
@@ -390,6 +449,7 @@ const navigationItems: NavigationItem[] = [
         description: 'Complete IT services overview',
         icon: <Grid className="w-4 h-4" />,
         featured: true
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-cfba
       },
       { 
         name: 'Careers', 
@@ -397,6 +457,13 @@ const navigationItems: NavigationItem[] = [
         description: 'Join our team',
         icon: <Play className="w-4 h-4" />
       },
+<<<<<<< HEAD
+      { 
+        name: 'News & Events', 
+        href: '/news', 
+        description: 'Latest company updates',
+        icon: <Play className="w-4 h-4" />
+=======
       {
         name: 'Cybersecurity',
         href: '/cybersecurity',
@@ -566,6 +633,7 @@ const navigationItems: NavigationItem[] = [
         href: '/3d-worlds',
         description: '3D environment creation',
         icon: <Globe className="w-4 h-4" />
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-cfba
       }
     ]
   },

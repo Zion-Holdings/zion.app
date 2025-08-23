@@ -94,6 +94,16 @@ export type ServiceVariant =
   | 'biotech-futuristic'
   | 'simulation-futuristic'
   | 'space-futuristic'
+<<<<<<< HEAD
+  | 'ai-business-intelligence'
+  | 'cybersecurity-compliance'
+  | 'cloud-devops'
+  | 'healthcare-biotech'
+  | 'financial-technology'
+  | 'retail-ecommerce'
+  | 'manufacturing-industrial'
+  | 'transportation-logistics';
+=======
   | 'cybersecurity-quantum-futuristic'
   | 'cybersecurity-ai-futuristic'
   | 'blockchain-quantum-futuristic'
@@ -104,3 +114,4 @@ export type ServiceVariant =
   | 'education-futuristic'
   | 'creative-futuristic'
   | 'logistics-futuristic';
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-cfba

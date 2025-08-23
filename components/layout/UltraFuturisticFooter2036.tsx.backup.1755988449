@@ -158,6 +158,20 @@ const footerSections = [
   }
 ];
 
+<<<<<<< HEAD
+const quickLinks = [
+  { name: 'About Us', href: '/about' },
+  { name: 'Contact', href: '/contact' },
+  { name: 'Services', href: '/services' },
+  { name: 'Pricing', href: '/pricing' },
+  { name: 'Resources', href: '/resources' },
+  { name: 'Support', href: '/support' },
+  { name: 'Blog', href: '/news' },
+  { name: 'Careers', href: '/careers' },
+  { name: 'Partners', href: '/partners' },
+  { name: 'Investors', href: '/investors' }
+];
+=======
   const footerSections = [
     {
       title: 'Core Services',
@@ -226,6 +240,7 @@ const footerSections = [
       ]
     }
   ];
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-cfba
 
 const socialLinks = [
   { name: 'LinkedIn', href: 'https://linkedin.com/company/zion-tech-group', icon: <Linkedin className="w-5 h-5" /> },
@@ -249,6 +264,18 @@ export default function UltraFuturisticFooter2036() {
   ];
 
   return (
+<<<<<<< HEAD
+    <footer className="bg-gradient-to-b from-gray-900 to-black border-t border-white/10">
+      {/* Main Footer Content */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-12">
+          {/* Company Info & Contact */}
+          <div className="lg:col-span-1 xl:col-span-1">
+            <div className="mb-8">
+              <div className="flex items-center space-x-3 mb-4">
+                <div className="w-12 h-12 bg-gradient-to-r from-cyan-500 to-purple-500 rounded-xl flex items-center justify-center">
+                  <span className="text-white font-bold text-2xl">Z</span>
+=======
     <footer className="bg-gradient-to-b from-gray-900 to-black text-white relative overflow-hidden">
       {/* Background Elements */}
       <div className="absolute inset-0 overflow-hidden">
@@ -307,6 +334,7 @@ export default function UltraFuturisticFooter2036() {
                   <a href={`tel:${contactInfo.phone}`} className="hover:text-white transition-colors">
                     {contactInfo.phone}
                   </a>
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-cfba
                 </div>
                 <div>
                   <h3 className="text-white font-bold text-xl">Zion Tech Group</h3>
