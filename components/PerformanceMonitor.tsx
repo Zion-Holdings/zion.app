@@ -17,9 +17,9 @@ interface PerformanceMetrics {
   tbt: number; // Total Blocking Time
 }
 
-interface PerformanceEntryExtended extends PerformanceEntry {
-  name?: string;
-  startTime?: number;
+interface PerformanceEntryExtended {
+  name: string;
+  startTime: number;
   processingStart?: number;
   value?: number;
 }
