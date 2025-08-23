@@ -1,12 +1,31 @@
-import { useRouter } from 'next/router';
+import type { GetStaticPaths, GetStaticProps, NextPage } from 'next';
+import Head from 'next/head';
 
-export default function TalentProfile() {
-  const { query } = useRouter();
-  const slug = query.slug as string;
+type Props = { slug: string };
+
+const TalentSlugPage: NextPage<Props> = ({ slug }) => {
   return (
-    <div className="py-16">
-      <h1 className="text-2xl font-semibold">Talent Profile</h1>
-      <p className="text-gray-600 mt-2">Slug: {slug || 'loading...'}</p>
+    <div>
+      <Head>
+        <title>{slug} - Zion Tech Solutions</title>
+        <meta name="description" content={`${slug} page`} />
+      </Head>
+      
+      <main>
+        <h1>{slug}</h1>
+        <p>This page is under construction.</p>
+      </main>
     </div>
   );
-}
+};
+
+export const getStaticPaths: GetStaticPaths = async () => {
+  return { paths: [], fallback: 'blocking' };
+};
+
+export const getStaticProps: GetStaticProps<Props> = async ({ params }) => {
+  const slug = typeof params?.slug === 'string' ? params.slug : 'unknown';
+  return { props: { slug } };
+};
+
+export default TalentSlugPage;

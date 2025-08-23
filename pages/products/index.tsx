@@ -1,8 +1,20 @@
-export default function Products() {
+import type { NextPage } from 'next';
+import Head from 'next/head';
+
+const Index: NextPage = () => {
   return (
-    <div className="py-16">
-      <h1 className="text-2xl font-semibold">Products</h1>
-      <p className="text-gray-600 mt-2">Product catalog coming soon.</p>
+    <div>
+      <Head>
+        <title>Index - Zion Tech Solutions</title>
+        <meta name="description" content="Index page" />
+      </Head>
+      
+      <main>
+        <h1>Index</h1>
+        <p>This page is under construction.</p>
+      </main>
     </div>
   );
-}
+};
+
+export default Index;

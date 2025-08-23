@@ -1,78 +1,3 @@
-import React from 'react';
-import Layout from '../components/layout/Layout';
-import { Phone, Mail, MapPin, Clock, MessageSquare, Send, Star, Award, Zap, Users } from 'lucide-react';
-
-const ContactPage: React.FC = () => {
-  const contactMethods = [
-    {
-      title: 'Phone',
-      value: '+1 302 464 0950',
-      icon: Phone,
-      description: 'Call us directly for immediate assistance',
-      color: 'from-green-500 to-emerald-500'
-    },
-    {
-      title: 'Email',
-      value: 'kleber@ziontechgroup.com',
-      icon: Mail,
-      description: 'Send us a detailed message',
-      color: 'from-blue-500 to-cyan-500'
-    },
-    {
-      title: 'Address',
-      value: '364 E Main St STE 1008 Middletown DE 19709',
-      icon: MapPin,
-      description: 'Visit our headquarters',
-      color: 'from-purple-500 to-pink-500'
-    },
-    {
-      title: 'Business Hours',
-      value: 'Mon-Fri: 9:00 AM - 6:00 PM EST',
-      icon: Clock,
-      description: 'We\'re here when you need us',
-      color: 'from-orange-500 to-red-500'
-    }
-  ];
-
-  const contactForm = {
-    name: '',
-    email: '',
-    company: '',
-    service: '',
-    message: ''
-  };
-
-  const services = [
-    'AI Consciousness & Evolution',
-    'Quantum Technology',
-    'Cybersecurity',
-    'Business Solutions',
-    'IT Infrastructure',
-    'Space Technology',
-    'Other'
-  ];
-
-  return (
-    <Layout
-      title="Contact Us | Zion Tech Group"
-      description="Get in touch with Zion Tech Group for AI consciousness, quantum computing, cybersecurity, and space technology solutions. Contact our expert team today."
-      keywords="contact Zion Tech Group, AI consciousness, quantum computing, cybersecurity, space technology, business solutions"
-      canonicalUrl="https://ziontechgroup.com/contact"
-    >
-      <div className="min-h-screen bg-gradient-to-br from-slate-900 via-green-900 to-slate-900">
-        {/* Hero Section */}
-        <section className="relative py-20 px-4 sm:px-6 lg:px-8">
-          <div className="max-w-7xl mx-auto text-center">
-            <div className="mb-8">
-              <MessageSquare className="mx-auto h-20 w-20 text-green-400 mb-6" />
-              <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
-                Contact Us
-              </h1>
-              <p className="text-xl md:text-2xl text-gray-300 max-w-4xl mx-auto">
-                Ready to transform your business with revolutionary technology? 
-                Get in touch with our expert team today.
-              </p>
-=======
             </div>
           </div>
         </section>
@@ -296,3 +221,24 @@ export default function Contact() {
     </>
   );
 }
+=======
+import type { NextPage } from 'next';
+import Head from 'next/head';
+
+const Contact: NextPage = () => {
+  return (
+    <div>
+      <Head>
+        <title>Contact - Zion Tech Solutions</title>
+        <meta name="description" content="Contact page" />
+      </Head>
+      
+      <main>
+        <h1>Contact</h1>
+        <p>This page is under construction.</p>
+      </main>
+    </div>
+  );
+};
+
+export default Contact;

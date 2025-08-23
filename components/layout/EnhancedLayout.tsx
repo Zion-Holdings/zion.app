@@ -1,9 +1,5 @@
-import React from 'react';
+import React, { PropsWithChildren } from 'react';
 
-type EnhancedLayoutProps = {
-  children?: React.ReactNode;
-};
-
-export default function EnhancedLayout({ children }: EnhancedLayoutProps) {
+export default function EnhancedLayout({ children }: PropsWithChildren<{}>) {
   return <>{children}</>;
 }
