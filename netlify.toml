@@ -222,13 +222,17 @@
   schedule = "0 3 * * *" # daily at 03:00 UTC
 
 [[scheduled.functions]]
-  name = "dependency-upgrade-runner"
-  schedule = "7 4 * * 1" # weekly Monday 04:07 UTC
+  name = "autonomous-front-home-accelerator"
+  schedule = "*/1 * * * *" # every minute
 
 [[scheduled.functions]]
-  name = "content-drift-detector-runner"
-  schedule = "19 */12 * * *" # every 12 hours, staggered
+  name = "link-healer-committer"
+  schedule = "*/30 * * * *" # every 30 minutes
 
 [[scheduled.functions]]
-  name = "accessibility-remediator-runner"
-  schedule = "29 */12 * * *" # every 12 hours, staggered
+  name = "newsroom-auto-curator"
+  schedule = "0 * * * *" # hourly
+
+[[scheduled.functions]]
+  name = "trends-to-promos-writer"
+  schedule = "*/10 * * * *" # every 10 minutes
