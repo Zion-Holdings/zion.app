@@ -1,7 +1,9 @@
-<<<<<<< HEAD
-export default function Page() {
-  return <div className="py-10">Sustainable Technology Practices</div>;
-}
-=======
 export default function Page(){return <div className="prose dark:prose-invert"><h1>Sustainable Technology Practices</h1><p>Content coming soon.</p></div>}
->>>>>>> origin/cursor/build-zion-global-expo-platform-712b
+=======
+export default function ArticlePage() { return <div className="py-8">Sustainable technology practices</div>; }
+=======
+import React from 'react';
+
+export default function SustainableTechnologyPracticesPage() {
+  return <div>Sustainable Technology Practices</div>;
+}

@@ -1,0 +1,40 @@
+<<<<<<< HEAD
+export default function AboutPage() {
+  return (
+<<<<<<< HEAD
+export default function About() {
+  return (
+    <div className="py-10">
+      <h1 className="text-2xl font-bold">About Zion</h1>
+      <p className="mt-2 text-gray-600 dark:text-gray-300">We connect companies with vetted AI and IT professionals.</p>
+=======
+    <div className="py-8">
+      <h1 className="text-xl font-semibold mb-2">About Zion</h1>
+      <p className="text-gray-600 dark:text-gray-300">Zion connects top AI talent with companies.</p>
+>>>>>>> 5fe4d4a516412daaecc6e2e3437df4b5fdac83d3
+    </div>
+  );
+}
+=======
+<<<<<<< HEAD
+    <div className="prose dark:prose-invert">
+      <h1>About Zion</h1>
+      <p>Zion accelerates sovereign innovation across nations, DAOs, and the global talent economy.</p>
+    </div>
+  );
+}
+=======
+export default function About() { return <div className="p-8">About</div>; }
+>>>>>>> origin/cursor/build-zion-ipo-readiness-portal-e565
+=======
+import React from 'react';
+
+export default function AboutPage() {
+  return <div>About Zion</div>;
+}
+=======
+export default function About(){
+  return <div style={{padding:20}}>About Zion</div>
+}
+>>>>>>> origin/cursor/deploy-anonymous-zk-voting-for-dao-e4d6
+>>>>>>> 5fe4d4a516412daaecc6e2e3437df4b5fdac83d3

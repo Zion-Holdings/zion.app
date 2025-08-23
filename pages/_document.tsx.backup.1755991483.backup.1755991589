@@ -1,0 +1,82 @@
+<<<<<<< HEAD
+<<<<<<< HEAD
+import type { NextPage } from 'next';
+import Head from 'next/head';
+
+const _document: NextPage = () => {
+  return (
+    <div>
+      <Head>
+        <title>_document - Zion Tech Solutions</title>
+        <meta name="description" content="_document page" />
+      </Head>
+      
+      <main>
+        <h1>_document</h1>
+        <p>This page is under construction.</p>
+      </main>
+    </div>
+  );
+};
+
+export default _document;
+=======
+import Document, { Html, Head, Main, NextScript } from 'next/document';
+
+export default class ZionDocument extends Document {
+	render() {
+		return (
+			<Html lang="en">
+				<Head>
+					<meta name="viewport" content="width=device-width, initial-scale=1" />
+					<meta name="theme-color" content="#020617" />
+					<meta name="color-scheme" content="dark light" />
+					<link rel="icon" href="/og/zion-tech-group.svg" type="image/svg+xml" />
+					<link rel="manifest" href="/manifest.webmanifest" />
+					<link rel="preconnect" href="https://fonts.googleapis.com" />
+					<link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+					<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Orbitron:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+				</Head>
+				<body className="bg-slate-950 text-white">
+					<Main />
+					<NextScript />
+				</body>
+			</Html>
+		);
+	}
+}
+>>>>>>> 5fe4d4a516412daaecc6e2e3437df4b5fdac83d3
+=======
+import Document, { Html, Head, Main, NextScript, DocumentContext } from 'next/document';
+
+class MyDocument extends Document {
+  static async getInitialProps(ctx: DocumentContext) {
+    const initialProps = await Document.getInitialProps(ctx);
+    return { ...initialProps };
+  }
+
+  render() {
+    return (
+<<<<<<< HEAD
+      <Html>
+        <Head />
+        <body>
+=======
+      <Html lang="en">
+        <Head />
+        <body className="bg-white dark:bg-black text-gray-900 dark:text-gray-100">
+>>>>>>> 5fe4d4a516412daaecc6e2e3437df4b5fdac83d3
+          <Main />
+          <NextScript />
+        </body>
+      </Html>
+    );
+  }
+}
+
+export default MyDocument;
+<<<<<<< HEAD
+>>>>>>> origin/cursor/deploy-zion-brain-ai-system-5783
+=======
+>>>>>>> 5f48a381108fa3a8a43c189dd4b043133ce9307e
+>>>>>>> 5fe4d4a516412daaecc6e2e3437df4b5fdac83d3

@@ -1,55 +1,54 @@
-#!/usr/bin/env node
+import fs from 'fs';
+import path from 'path';
 
-import { promises as fs } from 'node:fs';
-import path from 'node:path';
-
-const projectRoot = process.cwd();
-const baseUrlRaw = process.env.BASE_URL || '';
-if (!baseUrlRaw) {
-  console.error('BASE_URL environment variable is required, e.g. https://user.github.io/repo/');
-  process.exit(1);
-}
-let baseUrl = baseUrlRaw.trim();
-if (!baseUrl.endsWith('/')) baseUrl += '/';
+/**
+ * Recursively collect route paths from the provided directory. The function
+ * converts Next.js style dynamic segments like `[id]` to `:id` so they appear
+ * consistently in the generated sitemap. Files inside `api/` or directories
+ * starting with an underscore are ignored.
+ */
+function collectRoutes(dir, base = '') {
+  if (!fs.existsSync(dir)) return [];
 
 const IGNORE_DIRS = new Set(['.git', '.github', 'node_modules', 'dist']);
 
-function toUrlPath(filePath) {
-  const rel = path.relative(projectRoot, filePath).replace(/\\/g, '/');
-  if (rel === 'index.html') return '';
-  if (rel.endsWith('/index.html')) return rel.slice(0, -'index.html'.length);
-  if (rel.endsWith('.html')) return rel.slice(0, -'.html'.length);
-  return null;
-}
-
-async function* walk(dir) {
-  const entries = await fs.readdir(dir, { withFileTypes: true });
   for (const entry of entries) {
-    if (entry.name.startsWith('.')) {
-      if (entry.name === '.well-known') {
-        // allow
-      } else if (IGNORE_DIRS.has(entry.name)) {
-        continue;
-      }
+    if (entry.startsWith('_') || entry === 'api') continue;
+    const full = path.join(dir, entry);
+    const stat = fs.statSync(full);
+
+    if (stat.isDirectory()) {
+      routes.push(...collectRoutes(full, `${base}/${entry}`));
+      continue;
     }
-    const full = path.join(dir, entry.name);
-    if (entry.isDirectory()) {
-      if (IGNORE_DIRS.has(entry.name)) continue;
-      yield* walk(full);
-    } else if (entry.isFile()) {
-      yield full;
+
+    if (!/\.(?:js|jsx|ts|tsx)$/.test(entry)) continue;
+
+    let route = base;
+    const name = entry.replace(/\.(?:js|jsx|ts|tsx)$/, '');
+
+    if (name !== 'index') {
+      route += `/${name}`;
     }
+
+    route = route
+      .replace(/\[\.\.\.(.+?)\]/g, ':$1*')
+      .replace(/\[(.+?)\]/g, ':$1');
+
+    route = route.replace(/\/+/g, '/');
+    if (route === '') route = '/';
+
+    routes.push(route);
   }
+
+  return routes;
 }
 
-async function main() {
-  const urls = [];
-  for await (const filePath of walk(projectRoot)) {
-    if (!filePath.endsWith('.html')) continue;
-    const urlPath = toUrlPath(filePath);
-    if (urlPath === null) continue;
-    urls.push(urlPath);
-  }
+// Gather routes from the Next.js pages directories
+let routes = [
+  ...collectRoutes(path.join(process.cwd(), 'pages')),
+  ...collectRoutes(path.join(process.cwd(), 'src', 'pages')),
+];
 
   // Ensure root is present
   if (!urls.includes('')) urls.push('');
@@ -69,7 +68,7 @@ async function main() {
   console.log(`Generated sitemap.xml with ${urls.length} URLs.`);
 }
 
-main().catch((err) => {
-  console.error(err);
-  process.exit(1);
-});
+const robots = `User-agent: *\nAllow: /\n\nSitemap: ${baseUrl}/sitemap.xml\n`;
+fs.writeFileSync(path.join(process.cwd(), 'public', 'robots.txt'), robots);
+
+console.warn(`Generated ${routes.length} routes to sitemap.xml and robots.txt`);

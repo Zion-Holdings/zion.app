@@ -1,125 +1,53 @@
-<<<<<<< HEAD
-import React from 'react';
-import Link from 'next/link';
+import type { NextPage } from 'next';
+import Head from 'next/head';
 
-const Home = () => {
+const Index: NextPage = () => {
   return (
-    <div className="space-y-10">
-      <section className="text-center py-10">
-        <h1 className="text-4xl font-extrabold">Zion Autonomous Cloud</h1>
-        <p className="mt-3 text-gray-600 dark:text-gray-300">
-          New intelligent automations running 24/7 in the cloud — no servers, no humans.
-        </p>
-        <div className="mt-6 flex flex-wrap gap-3 justify-center">
-          <Link href="/cloud-automations" legacyBehavior>
-            <a className="px-5 py-3 bg-black text-white dark:bg-white dark:text-black rounded">View Automations</a>
-          </Link>
-          <Link href="/whitepaper-builder" legacyBehavior>
-            <a className="px-5 py-3 border rounded">Whitepaper Builder</a>
-          </Link>
-          <Link href="/docs/zion-protocol.pdf" legacyBehavior>
-            <a className="px-5 py-3 border rounded">Download Whitepaper PDF</a>
-          </Link>
-          <Link href="/automations/index.json" legacyBehavior>
-            <a className="px-5 py-3 border rounded">Automations Index JSON</a>
-          </Link>
-          <Link href="/metrics/emissions.csv" legacyBehavior>
-            <a className="px-5 py-3 border rounded">Emissions CSV</a>
-          </Link>
-        </div>
-      </section>
-
-      <section>
-        <h2 className="text-2xl font-bold mb-4">Autonomous Agents</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-          <Feature
-            title="Autonomous Whitepaper Publisher"
-            description="Continuously validates and republishes the whitepaper source with integrity checks."
-            href="/cloud-automations"
-          />
-          <Feature
-            title="Static Whitepaper PDF Exporter"
-            description="Publishes a static PDF artifact for direct download."
-            href="/docs/zion-protocol.pdf"
-          />
-          <Feature
-            title="Content Drift Sentinel"
-            description="Detects structural changes in the whitepaper to alert stakeholders."
-            href="/cloud-automations"
-          />
-          <Feature
-            title="Emissions Simulator"
-            description="Projects token emissions over 10 years with CSV/JSON outputs."
-            href="/metrics/emissions.csv"
-          />
-          <Feature
-            title="Governance Quorum Forecaster"
-            description="Computes global and regional quorum requirements."
-            href="/docs/governance-quorum-forecast.md"
-          />
-          <Feature
-            title="Route Inventory"
-            description="Snapshots public routes for monitoring and docs."
-            href="/cloud-automations"
-          />
-          <Feature
-            title="Repository Health Audit"
-            description="Monitors repo size and file counts to prevent bloat."
-            href="/cloud-automations"
-          />
-          <Feature
-            title="Automations Index Writer"
-            description="Exports a consolidated JSON index of all automations."
-            href="/automations/index.json"
-          />
-          <Feature
-            title="Multiverse Health Monitor"
-            description="Observes regional deployment health and posts telemetry."
-            href="/cloud-automations"
-          />
-          <Feature
-            title="Governance Snapshot Syncer"
-            description="Tracks governance proposals and participation signals."
-            href="/cloud-automations"
-          />
-          <Feature
-            title="AI Cache Refresher"
-            description="Refreshes prompt graphs, adapters, and policy filters."
-            href="/cloud-automations"
-          />
-          <Feature
-            title="Talent Passport Evaluator"
-            description="Evaluates credential updates and reputational signals."
-            href="/cloud-automations"
-          />
-        </div>
-      </section>
+    <div>
+      <Head>
+        <title>Index - Zion Tech Solutions</title>
+        <meta name="description" content="Index page" />
+      </Head>
+      
+      <main>
+        <h1>Index</h1>
+        <p>This page is under construction.</p>
+      </main>
     </div>
   );
 };
 
-function Feature({ title, description, href }: { title: string; description: string; href: string }) {
-  return (
-    <Link href={href} legacyBehavior>
-      <a className="block border rounded p-4 hover:bg-gray-50 dark:hover:bg-gray-900">
-        <h3 className="text-lg font-semibold">{title}</h3>
-        <p className="text-sm text-gray-600 dark:text-gray-300">{description}</p>
-      </a>
-    </Link>
-  );
-}
-
-export default Home;
+export default Index;
 =======
 import Link from 'next/link';
 
 export default function Home() {
   return (
-    <div className="space-y-4">
-      <h1 className="text-2xl font-bold">Zion</h1>
-      <p>Welcome. Visit the org chart:</p>
-      <Link className="text-indigo-600 underline" href="/team">/team</Link>
+    <div className="min-h-screen bg-gradient-to-b from-white to-gray-50">
+      <header className="max-w-6xl mx-auto px-6 py-5 flex items-center gap-4">
+        <div className="font-semibold text-lg">Zion Hire AI</div>
+        <nav className="ml-auto flex items-center gap-4 text-sm text-gray-600">
+          <Link href="/pricing">Pricing</Link>
+          <a href="#embed">Embed</a>
+        </nav>
+      </header>
+      <main className="max-w-6xl mx-auto px-6 py-16 grid md:grid-cols-2 gap-10">
+        <div>
+          <h1 className="text-3xl font-semibold tracking-tight mb-4">White‑label AI Recruiting Suite</h1>
+          <p className="text-gray-600 mb-6">Brandable dashboard, AI tools, embeddable applicant assistant, and reporting. Co‑brand as YourCompany.ai powered by Zion.</p>
+          <div className="flex gap-3">
+            <Link className="bg-gray-900 text-white rounded px-4 py-2 text-sm" href="/dashboard">Open Dashboard</Link>
+            <Link className="border border-gray-300 rounded px-4 py-2 text-sm" href="/pricing">View Pricing</Link>
+          </div>
+        </div>
+        <div className="bg-white border rounded p-4">
+          <div className="text-sm font-medium mb-2">Embeddable Widget</div>
+          <pre className="text-xs bg-gray-50 border rounded p-3 overflow-auto" id="embed">{`<script src="/embed/zion.js" data-tenant-id="TENANT_ID" data-brand="YourCompany.ai" async></script>`}</pre>
+          <div className="text-xs text-gray-600 mt-2">Adds a "Powered by Zion AI" chat bubble to your careers site.</div>
+        </div>
+      </main>
     </div>
   );
 }
->>>>>>> origin/cursor/build-zion-s-modular-org-chart-builder-7425
+=======
+export default function HomePage() { return null }

@@ -1,0 +1,18 @@
+<<<<<<< HEAD
+<<<<<<< HEAD
+export default function Page() {
+  return <div className="py-10">Digital Transformation Insights</div>;
+}
+=======
+export default function Page(){return <div className="prose dark:prose-invert"><h1>Digital Transformation Insights</h1><p>Content coming soon.</p></div>}
+>>>>>>> origin/cursor/build-zion-global-expo-platform-712b
+=======
+export default function ArticlePage() { return <div className="py-8">Digital transformation insights</div>; }
+=======
+import React from 'react';
+
+export default function DigitalTransformationInsightsPage() {
+  return <div>Digital Transformation Insights</div>;
+}
+>>>>>>> origin/cursor/deploy-ai-podcast-host-with-ziongpt-9517
+>>>>>>> 5fe4d4a516412daaecc6e2e3437df4b5fdac83d3

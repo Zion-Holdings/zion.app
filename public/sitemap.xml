@@ -13,6 +13,8 @@
     <priority>0.6</priority>
   </url>
   <url>
+    <lastmod>2025-08-14T09:38:12.068Z</lastmod>
+=======
 =======
     <loc>https://ziontechgroup.com/500</loc>
     <lastmod>2025-08-19T03:44:42.325Z</lastmod>
@@ -20,15 +22,13 @@
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://ziontechgroup.com/about</loc>
-    <lastmod>2025-08-19T03:44:42.325Z</lastmod>
-=======
     <loc>https://zion.app/contact</loc>
     <lastmod>2025-08-11T11:14:25.268Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
+=======
     <loc>https://zion.app/front</loc>
     <lastmod>2025-08-11T11:14:25.268Z</lastmod>
     <changefreq>weekly</changefreq>

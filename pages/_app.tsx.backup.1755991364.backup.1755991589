@@ -1,0 +1,58 @@
+<<<<<<< HEAD
+import type { AppProps } from 'next/app';
+import EnhancedLayout from '../components/layout/EnhancedLayout';
+import '../styles/globals.css';
+import '../styles/enhanced-design-system.css';
+import '../styles/modern-design-system.css';
+<<<<<<< HEAD
+import '../styles/globals.css';
+=======
+>>>>>>> origin/cursor/build-zion-ai-talent-directory-page-f450
+
+export default function MyApp({ Component, pageProps }: AppProps) {
+  return (
+    <EnhancedLayout>
+      <Component {...pageProps} />
+    </EnhancedLayout>
+  );
+}
+=======
+<<<<<<< HEAD
+import type { AppProps } from 'next/app';
+import '../styles/globals.css';
+import '../styles/enhanced-design-system.css';
+import '../styles/modern-design-system.css';
+
+<<<<<<< HEAD
+export default function MyApp({ Component, pageProps }: AppProps) {
+  return <Component {...pageProps} />;
+}
+=======
+function ZionApp({ Component, pageProps }: AppProps) {
+  return <Component {...pageProps} />;
+}
+
+export default ZionApp;
+>>>>>>> origin/cursor/create-responsive-talent-onboarding-form-e178
+=======
+<<<<<<< HEAD
+import type { AppProps } from 'next/app';
+import '../styles/enhanced-design-system.css';
+import '../styles/modern-design-system.css';
+
+function MyApp({ Component, pageProps }: AppProps) {
+  return <Component {...pageProps} />;
+}
+
+export default MyApp;
+=======
+import type { AppProps } from "next/app";
+import "../styles/enhanced-design-system.css";
+import "../styles/modern-design-system.css";
+
+export default function App({ Component, pageProps }: AppProps) {
+  return <Component {...pageProps} />;
+}
+>>>>>>> origin/cursor/build-partner-integration-portal-and-api-da2c
+>>>>>>> 5f48a381108fa3a8a43c189dd4b043133ce9307e
+>>>>>>> 5fe4d4a516412daaecc6e2e3437df4b5fdac83d3

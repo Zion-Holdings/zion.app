@@ -1,12 +1,11 @@
-<<<<<<< HEAD
+export default function NotFound() { return <div className="p-8">Not found</div>; }
+=======
+import React from 'react';
+
 export default function NotFoundPage() {
-  return (
-    <div className="text-center py-20">
-      <h1 className="text-4xl font-bold mb-4">404</h1>
-      <p>Page not found.</p>
-    </div>
-  );
+  return <div>404 – Page Not Found</div>;
 }
 =======
-export default function NotFound() { return <div className="p-8">Not found</div>; }
->>>>>>> origin/cursor/build-zion-ipo-readiness-portal-e565
+export default function NotFound(){
+  return <div style={{padding:20}}>Not Found</div>
+}

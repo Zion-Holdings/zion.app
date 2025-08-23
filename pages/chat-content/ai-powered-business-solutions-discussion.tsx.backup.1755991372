@@ -1,5 +1,11 @@
-<<<<<<< HEAD
-export default function Page(){return <div className="prose dark:prose-invert"><h1>AI-Powered Business Solutions</h1><p>Content coming soon.</p></div>}
-=======
 export default function Page() { return <div className="p-8">AI Business Solutions Discussion</div>; }
->>>>>>> origin/cursor/build-zion-ipo-readiness-portal-e565
+=======
+import React from 'react';
+
+export default function AiPoweredBusinessSolutionsDiscussionPage() {
+  return <div>AI-Powered Business Solutions Discussion</div>;
+}
+=======
+export default function Page(){
+  return <div style={{padding:20}}>Content</div>
+}

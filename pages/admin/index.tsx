@@ -1,6 +1,6 @@
-import Link from 'next/link';
+import AdminTable from '../../components/admin/AdminTable';
 
-export default function AdminIndexPage() {
+export default function AdminDashboard() {
   return (
     <div className="space-y-6">
       <h1 className="text-2xl font-semibold">Admin</h1>

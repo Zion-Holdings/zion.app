@@ -1,0 +1,56 @@
+<<<<<<<< HEAD:.github/workflows/monetization.yml.backup.1755991400
+name: Monetization
+========
+name: External Links
+>>>>>>>> 5fe4d4a516412daaecc6e2e3437df4b5fdac83d3:.github/workflows/external-links.yml.backup.1755990322
+
+on:
+  workflow_dispatch: {}
+  schedule:
+    - cron: '*/10 * * * *'
+
+permissions:
+<<<<<<<< HEAD:.github/workflows/monetization.yml.backup.1755991400
+========
+<<<<<<< HEAD
+>>>>>>>> 5fe4d4a516412daaecc6e2e3437df4b5fdac83d3:.github/workflows/external-links.yml.backup.1755990322
+  contents: write
+  actions: read
+=======
+  contents: read
+>>>>>>> origin/cursor/fix-github-actions-errors-987b
+
+jobs:
+  main:
+    name: Main Job
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci --no-audit --no-fund
+<<<<<<<< HEAD:.github/workflows/monetization.yml.backup.1755991400
+      - name: Run workflow
+<<<<<<< HEAD
+        run: |
+          echo "Workflow Workflow completed successfully"
+=======
+        run: echo "Workflow completed successfully"
+>>>>>>> origin/cursor/check-and-fix-github-actions-workflows-efb2
+========
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+>>>>>>>> 5fe4d4a516412daaecc6e2e3437df4b5fdac83d3:.github/workflows/external-links.yml.backup.1755990322

@@ -1,25 +1,21 @@
-import Document, { Html, Head, Main, NextScript } from 'next/document';
+import Document, { Html, Head, Main, NextScript } from 'next/document'
 
 export default class MyDocument extends Document {
   render() {
     return (
-<<<<<<< HEAD
-      <Html lang="en">
+      <Html>
         <Head />
-        <body className="bg-white dark:bg-black text-gray-900 dark:text-gray-100">
+        <body>
 =======
       <Html>
         <Head />
         <body>
->>>>>>> origin/cursor/build-zion-ipo-readiness-portal-e565
           <Main />
           <NextScript />
         </body>
       </Html>
-    );
-  }
-<<<<<<< HEAD
 }
 =======
+    )
+  }
 }
->>>>>>> origin/cursor/build-zion-ipo-readiness-portal-e565

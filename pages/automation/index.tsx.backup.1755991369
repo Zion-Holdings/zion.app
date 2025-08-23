@@ -1,7 +1,15 @@
-<<<<<<< HEAD
-export default function AutomationIndex() {
-  return <div className="py-10">Automation</div>;
+export default function AutomationIndex(){return <div className="prose dark:prose-invert"><h1>Automation</h1><p>Tools coming soon.</p></div>}
+=======
+  return (
+    <div className="py-8">
+      <h1 className="text-xl font-semibold">Automation</h1>
+      <p className="text-gray-600 dark:text-gray-300">Automation dashboard placeholder.</p>
+    </div>
+  );
 }
 =======
-export default function AutomationIndex(){return <div className="prose dark:prose-invert"><h1>Automation</h1><p>Tools coming soon.</p></div>}
->>>>>>> origin/cursor/build-zion-global-expo-platform-712b
+import React from 'react';
+
+export default function AutomationIndexPage() {
+  return <div>Automation Overview</div>;
+}

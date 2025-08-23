@@ -1,0 +1,18 @@
+<<<<<<< HEAD
+<<<<<<< HEAD
+export default function AutoUpdate(){return <div className="prose dark:prose-invert"><h1>Auto Update</h1><p>2025-08-08T16:07:55.171Z</p></div>}
+=======
+export default function Page() { return <div className="p-8">Auto Update</div>; }
+>>>>>>> origin/cursor/build-zion-ipo-readiness-portal-e565
+=======
+import React from 'react';
+
+export default function AutoUpdatePage_160755171z() {
+  return <div>Auto Update 2025-08-08T16:07:55.171Z</div>;
+}
+=======
+export default function Auto(){
+  return <div style={{padding:20}}>Auto Update</div>
+}
+>>>>>>> origin/cursor/deploy-anonymous-zk-voting-for-dao-e4d6
+>>>>>>> 5fe4d4a516412daaecc6e2e3437df4b5fdac83d3

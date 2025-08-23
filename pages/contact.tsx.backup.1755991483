@@ -1,16 +1,8 @@
-<<<<<<< HEAD
-import React from 'react';
-
-export default function ContactPage() {
-  return <div>Contact Zion</div>;
-}
-=======
 export default function Contact(){
   return <div style={{padding:20}}>Contact</div>
 }
 =======
 =======
->>>>>>> origin/cursor/deploy-zion-brain-ai-system-5783
 import type { NextPage } from 'next';
 import Head from 'next/head';
 
@@ -30,8 +22,44 @@ const Contact: NextPage = () => {
   );
 };
 
-<<<<<<< HEAD
 export default Contact;
 =======
+export default function Contact() {
+  return (
+    <div className="space-y-2">
+      <h1 className="text-3xl font-bold">Contact</h1>
+      <p className="text-gray-600 dark:text-gray-300">Reach us at contact@zion.holdings</p>
+    </div>
+  );
+}
+=======
+export default function Contact() {
+  return <div>Contact Us</div>;
+}
+=======
+export default function Page(){return null}
+=======
+=======
+import React from 'react';
+
+export default function ContactPage() {
+  return (
+    <div className="container mx-auto px-4 py-10">
+      <h1 className="text-2xl font-semibold">Contact</h1>
+import type { NextPage } from 'next';
+import Head from 'next/head';
+
+const Contact: NextPage = () => (
+  <div className="py-10">
+    <Head><title>Contact - Zion</title></Head>
+    <h1 className="text-2xl font-semibold text-white">Contact</h1>
+    <p className="text-white/80 mt-2">Get in touch at contact@zion.ai</p>
+  </div>
+);
+
 export default Contact;
->>>>>>> origin/cursor/deploy-zion-brain-ai-system-5783
+=======
+      <p className="mt-2 text-gray-600 dark:text-gray-300">Get in touch with us.</p>
+    </div>
+  );
+}

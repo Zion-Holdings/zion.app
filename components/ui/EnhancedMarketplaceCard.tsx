@@ -1,91 +1,83 @@
-import Link from 'next/link';
 import React from 'react';
+import { motion } from 'framer-motion';
+import { Star, ArrowRight } from 'lucide-react';
 
-export type EnhancedMarketplaceCardProps = {
-  imageUrl: string;
+export type ServiceItem = {
+  id?: string;
+  slug?: string;
   title: string;
   description: string;
-  tags: string[];
-  priceRangeLabel: string;
-  rating?: number; // 0 - 5
-  href?: string;
-  quoteHref?: string;
-  onQuoteRequest?: () => void;
+  provider: string;
+  priceFromUSD?: number;
+  priceRangeUSD?: [number, number];
+  categories: string[];
+  rating?: number; // 0-5
 };
 
-function renderStars(rating?: number) {
-  if (!rating || rating <= 0) return null;
-  const clamped = Math.max(0, Math.min(5, rating));
-  const fullStars = Math.floor(clamped);
-  const half = clamped - fullStars >= 0.5;
-  const emptyStars = 5 - fullStars - (half ? 1 : 0);
-  const stars: React.ReactNode[] = [];
-  for (let i = 0; i < fullStars; i += 1) stars.push(<span key={`f-${i}`}>★</span>);
-  if (half) stars.push(<span key="half">☆</span>);
-  for (let i = 0; i < emptyStars; i += 1) stars.push(<span key={`e-${i}`}>✩</span>);
-  return <div className="text-yellow-500 text-sm leading-none" aria-label={`${clamped.toFixed(1)} out of 5`}>{stars}</div>;
-}
+type Props = {
+  service: ServiceItem;
+  onRequestQuote: (service: ServiceItem) => void;
+};
 
-export default function EnhancedMarketplaceCard({
-  imageUrl,
-  title,
-  description,
-  tags,
-  priceRangeLabel,
-  rating,
-  href,
-  quoteHref,
-  onQuoteRequest,
-}: EnhancedMarketplaceCardProps) {
-  const content = (
-    <div className="group rounded-xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-zinc-900 overflow-hidden hover:shadow-lg transition-shadow">
-      <div className="aspect-[16/9] bg-gray-100 dark:bg-zinc-800 overflow-hidden">
-        {/* Using img to avoid remote domain config requirements */}
-        <img src={imageUrl} alt={title} className="h-full w-full object-cover group-hover:scale-[1.02] transition-transform duration-300" />
+export default function EnhancedMarketplaceCard({ service, onRequestQuote }: Props) {
+  const minPrice = service.priceFromUSD ?? (service.priceRangeUSD ? service.priceRangeUSD[0] : undefined);
+
+  return (
+    <motion.div
+      whileHover={{ y: -4, scale: 1.01 }}
+      transition={{ type: 'spring', stiffness: 300, damping: 20 }}
+      className="group relative rounded-2xl border border-white/10 bg-white/5 dark:bg-black/20 backdrop-blur p-5 shadow-[0_8px_30px_rgba(0,0,0,0.12)] overflow-hidden"
+    >
+      <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"
+        style={{
+          background: 'radial-gradient(600px circle at var(--x,50%) var(--y,50%), rgba(56,189,248,0.15), transparent 40%)',
+        }}
+      />
+      <div className="absolute -top-20 -right-20 w-60 h-60 rounded-full blur-3xl opacity-30 bg-gradient-to-tr from-cyan-400 via-blue-500 to-purple-500" />
+
+      <div className="flex items-start justify-between gap-4">
+        <div>
+          <h3 className="text-lg font-semibold tracking-tight text-white">
+            {service.title}
+          </h3>
+          <p className="mt-2 text-sm text-white/80 line-clamp-3">{service.description}</p>
+        </div>
+        {typeof service.rating === 'number' && (
+          <div className="flex items-center gap-1 shrink-0">
+            {Array.from({ length: 5 }).map((_, i) => (
+              <Star key={i} size={16} className={i < (service.rating ?? 0) ? 'text-yellow-400 fill-yellow-400' : 'text-white/20'} />
+            ))}
+            <span className="ml-1 text-xs text-white/70">{service.rating?.toFixed(1)}</span>
+          </div>
+        )}
       </div>
-      <div className="p-4 flex flex-col gap-3">
-        <div className="flex items-start justify-between gap-3">
-          <h3 className="font-semibold text-base line-clamp-2">{title}</h3>
-          {renderStars(rating)}
-        </div>
-        <p className="text-sm text-gray-600 dark:text-gray-300 line-clamp-3">{description}</p>
-        <div className="flex flex-wrap gap-2">
-          {tags.slice(0, 4).map((tag) => (
-            <span key={tag} className="text-xs px-2 py-1 rounded-full bg-gray-100 dark:bg-zinc-800 text-gray-700 dark:text-gray-200 border border-gray-200 dark:border-zinc-700">
-              {tag}
-            </span>
-          ))}
-          {tags.length > 4 && (
-            <span className="text-xs px-2 py-1 rounded-full bg-gray-100 dark:bg-zinc-800 text-gray-700 dark:text-gray-200 border border-gray-200 dark:border-zinc-700">
-              +{tags.length - 4}
-            </span>
-          )}
-        </div>
-        <div className="flex items-center justify-between mt-1">
-          <div className="text-sm font-medium opacity-80">{priceRangeLabel}</div>
-          {quoteHref ? (
-            <Link href={quoteHref}>
-              <a className="inline-flex items-center gap-1 text-sm px-3 py-1.5 rounded-md bg-blue-600 text-white hover:bg-blue-700">
-                Request Quote
-              </a>
-            </Link>
+
+      <div className="mt-3 text-xs text-white/70">By {service.provider}</div>
+
+      <div className="mt-3 flex flex-wrap gap-2">
+        {service.categories.map((cat) => (
+          <span key={cat} className="px-2 py-1 text-xs rounded-full border border-cyan-300/30 text-cyan-200 bg-cyan-400/10">
+            {cat}
+          </span>
+        ))}
+      </div>
+
+      <div className="mt-4 flex items-center justify-between">
+        <div className="text-sm">
+          {minPrice !== undefined ? (
+            <span className="text-white font-medium">From ${minPrice.toLocaleString()}</span>
           ) : (
-            <button onClick={onQuoteRequest} className="text-sm px-3 py-1.5 rounded-md bg-blue-600 text-white hover:bg-blue-700">
-              Request Quote
-            </button>
+            <span className="text-white/70">Custom pricing</span>
           )}
         </div>
+        <button
+          onClick={() => onRequestQuote(service)}
+          className="inline-flex items-center gap-2 rounded-full px-4 py-2 text-sm font-medium bg-gradient-to-r from-cyan-500 via-blue-500 to-purple-500 text-white shadow hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-cyan-400/60"
+        >
+          Request Quote
+          <ArrowRight size={16} />
+        </button>
       </div>
-    </div>
+    </motion.div>
   );
-
-  if (href) {
-    return (
-      <Link href={href}>
-        <a className="block">{content}</a>
-      </Link>
-    );
-  }
-
-  return content;
 }

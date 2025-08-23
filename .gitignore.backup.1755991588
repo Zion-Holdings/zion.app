@@ -1,0 +1,64 @@
+<<<<<<< HEAD
+# Node
+node_modules/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-store
+.DS_Store
+.env
+.env.*
+coverage/
+dist/
+build/
+.tmp/
+
+# TypeScript
+*.tsbuildinfo
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.python-version
+.venv/
+venv/
+.eggs/
+*.egg-info/
+.pytest_cache/
+
+# OS
+Thumbs.db
+
+# Editors
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS files
+.DS_Store
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Large log files
+logs/enhanced-sync-manager.log
+logs/enhanced-sync-manager.log.backup
+automation/logs/autonomous-system.log .next/
+
+# Allow committing workspace VSCode config
+!/.vscode
+!/.vscode/extensions.json
+!/.vscode/settings.json
+=======
+node_modules
+.DS_Store
+.env
+server/.env
+npm-debug.log*
+yarn-error.log
+>>>>>>> 5fe4d4a516412daaecc6e2e3437df4b5fdac83d3

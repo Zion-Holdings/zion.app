@@ -1,7 +1,9 @@
-<<<<<<< HEAD
-export default function Page() {
-  return <div className="py-10">Data Analytics Implementation</div>;
-}
-=======
 export default function Page(){return <div className="prose dark:prose-invert"><h1>Data Analytics Implementation</h1><p>Content coming soon.</p></div>}
->>>>>>> origin/cursor/build-zion-global-expo-platform-712b
+=======
+export default function ArticlePage() { return <div className="py-8">Data analytics implementation</div>; }
+=======
+import React from 'react';
+
+export default function DataAnalyticsImplementationPage() {
+  return <div>Data Analytics Implementation</div>;
+}

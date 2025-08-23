@@ -1,10 +1,10 @@
-const { execSync } = require('child_process');
-const fs = require('fs');
-const path = require('path');
+// netlify/functions/innovation-lab.js
+exports.config = {
+  schedule: '*/10 * * * *',
+};
 
-exports.handler = async function(event, context) {
-  console.log('🤖 Starting innovation-lab...');
-  
+exports.handler = async function() {
+  const { execSync } = require('child_process');
   try {
     const timestamp = new Date().toISOString();
     const reportPath = path.join(process.cwd(), 'innovation-lab-report.md');
