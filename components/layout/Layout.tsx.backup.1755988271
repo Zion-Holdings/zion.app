@@ -6,7 +6,13 @@ import UltraFuturisticBackground2045 from '../backgrounds/UltraFuturisticBackgro
 import PerformanceOptimizer from '../PerformanceOptimizer';
 import AccessibilityEnhancer from '../AccessibilityEnhancer';
 import CookieConsentBanner from '../CookieConsentBanner';
+<<<<<<< HEAD
+import ThemeToggle from '../ThemeToggle';
+import LoadingSkeleton from '../LoadingSkeleton';
+import ErrorBoundary from '../ErrorBoundary';
+=======
 import ServiceWorkerRegistration from '../ServiceWorkerRegistration';
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-960d
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -119,10 +125,47 @@ export default function Layout({
       <PerformanceMonitor enabled={true} showMetrics={process.env.NODE_ENV === 'development'} />
       
       {/* Cookie Consent Banner */}
+<<<<<<< HEAD
+      <CookieConsentBanner 
+        enabled={isCookieConsentEnabled}
+        showUI={isCookieConsentEnabled}
+      />
+
+      {/* Performance Monitoring Toggle Button */}
+      {!isPerformanceMonitoringEnabled && (
+        <button
+          onClick={() => {
+            setIsPerformanceMonitoringEnabled(true);
+            localStorage.setItem('performance-monitoring-enabled', 'true');
+          }}
+          className="fixed bottom-4 right-4 z-40 p-3 bg-gray-800/80 hover:bg-gray-700/80 text-gray-300 hover:text-white rounded-full shadow-lg backdrop-blur-sm border border-gray-600/50 hover:border-gray-500/50 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-cyan-300 focus:ring-offset-2 focus:ring-offset-black"
+          aria-label="Enable performance monitoring"
+          title="Press Ctrl+Shift+P to enable performance monitoring"
+        >
+          📊
+        </button>
+      )}
+
+      {/* Accessibility Toggle Button */}
+      {!isAccessibilityEnabled && (
+        <button
+          onClick={() => {
+            setIsAccessibilityEnabled(true);
+            localStorage.setItem('accessibility-disabled', 'false');
+          }}
+          className="fixed bottom-4 left-4 z-40 p-3 bg-gray-800/80 hover:bg-gray-700/80 text-gray-300 hover:text-white rounded-full shadow-lg backdrop-blur-sm border border-gray-600/50 hover:border-gray-500/50 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-cyan-300 focus:ring-offset-2 focus:ring-offset-black"
+          aria-label="Enable accessibility features"
+          title="Press Ctrl+Shift+A to enable accessibility features"
+        >
+          ♿
+        </button>
+      )}
+=======
       <CookieConsentBanner />
       
       {/* Service Worker Registration */}
       <ServiceWorkerRegistration />
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-960d
     </div>
 =======
       "telephone": "+1-302-464-0950",
