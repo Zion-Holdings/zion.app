@@ -95,6 +95,11 @@ export default function Home() {
             <Link href="/fundraising"><a className="px-5 py-2.5 rounded-full bg-black text-white dark:bg-white dark:text-black">Start now</a></Link>
             <Link href="/automations"><a className="px-5 py-2.5 rounded-full border border-black/10 dark:border-white/20">Explore agents</a></Link>
           </div>
+<<<<<<< HEAD
+        </div>
+      </section>
+    </>
+=======
         </section>
 
         {/* Benefits */}
@@ -214,5 +219,6 @@ export default function Home() {
    {/* AUTO-GENERATED: HOME_UPDATER_END */}
  </main>
     </div>
+>>>>>>> origin/cursor/automate-futuristic-front-page-enhancements-aafa
   );
 }

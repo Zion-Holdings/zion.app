@@ -27,16 +27,29 @@
 # Scheduled Functions (new automations replacing some GitHub Actions cadence)
 [[scheduled.functions]]
   name = "homepage_advertiser"
+<<<<<<< HEAD
+  schedule = "*/15 * * * *" # every 15 minutes
+
+[[scheduled.functions]]
+  name = "cloud_orchestrator"
+  schedule = "0 */3 * * *" # every 3 hours
+=======
   schedule = "*/20 * * * *" # every 20 minutes
 
 [[scheduled.functions]]
   name = "cloud_orchestrator"
   schedule = "0 */4 * * *" # every 4 hours
+>>>>>>> origin/cursor/automate-futuristic-front-page-enhancements-aafa
 
 [[scheduled.functions]]
   name = "front-enhancer"
   schedule = "*/10 * * * *" # every 10 minutes
 
 [[scheduled.functions]]
+<<<<<<< HEAD
+  name = "fast-fusion-scheduler"
+  schedule = "*/10 * * * *" # every 10 minutes
+=======
   name = "feature-catalog"
   schedule = "*/15 * * * *" # every 15 minutes
+>>>>>>> origin/cursor/automate-futuristic-front-page-enhancements-aafa
