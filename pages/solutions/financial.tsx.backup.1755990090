@@ -6,7 +6,10 @@ import {
   TrendingUp, BarChart3, Lock, Cloud, Server, Network, Settings, Brain,
   DollarSign, CreditCard, PieChart, LineChart, Shield as ShieldIcon
 } from 'lucide-react';
+<<<<<<< HEAD
+=======
 import UltraFuturisticBackground from '../../components/backgrounds/UltraFuturisticBackground2045';
+>>>>>>> origin/cursor/expand-services-and-deploy-updates-9191
 
 const FinancialSolutionsPage: React.FC = () => {
   const solutions = [

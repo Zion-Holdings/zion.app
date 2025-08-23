@@ -1,4 +1,8 @@
 [
+<<<<<<< HEAD
+  "services/data-contracts-hub",
+  "services/serverless-lakehouse-starter"
+=======
   "accessibility",
   "ai-consciousness-evolution",
   "ai-content-marketing-automation",
@@ -36,4 +40,5 @@
   "services/serverless-lakehouse-starter",
   "services/space-technology",
   "space-mining-automation-platform"
+>>>>>>> origin/cursor/expand-services-and-deploy-updates-9191
 ]

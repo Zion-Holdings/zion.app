@@ -1,4 +1,7 @@
 import React from 'react';
+<<<<<<< HEAD
+import Layout from '../../components/layout/Layout';
+=======
 import { motion } from 'framer-motion';
 import { Brain, Sparkles, Zap, Target, Users, Award, Clock, CheckCircle, Heart, Activity } from 'lucide-react';
 import Link from 'next/link';
@@ -9,6 +12,7 @@ import {
   CheckCircle, ArrowRight, Star, TrendingUp, Award, Clock
 } from 'lucide-react';
 import UltraFuturisticBackground from '../../components/backgrounds/UltraFuturisticBackground2045';
+>>>>>>> origin/cursor/expand-services-and-deploy-updates-9191
 
 const HealthcareSolutionsPage: React.FC = () => {
   const solutions = [
