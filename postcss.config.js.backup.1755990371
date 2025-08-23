@@ -3,5 +3,9 @@ module.exports = {
     '@tailwindcss/postcss': {},
     autoprefixer: {},
   },
+<<<<<<< HEAD
+};
+=======
 }
 
+>>>>>>> origin/cursor/bc-85c13f69-d674-45c3-ae5d-2ff76a6c2c81-991b
