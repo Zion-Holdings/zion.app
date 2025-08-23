@@ -102,9 +102,9 @@ const navigationItems: NavigationItem[] = [
     featured: true,
     children: [
       { 
-        name: 'Services Showcase', 
-        href: '/comprehensive-services-showcase-2025', 
-        description: 'Complete services overview',
+        name: 'Services Showcase 2036', 
+        href: '/comprehensive-services-showcase-2036', 
+        description: 'Complete 2036 services overview',
         icon: <Grid className="w-4 h-4" />,
         featured: true
       },
