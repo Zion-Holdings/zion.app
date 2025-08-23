@@ -197,6 +197,14 @@ const EnhancedSidebar2025: React.FC<EnhancedSidebar2025Props> = ({ isOpen, onClo
     setExpandedItems(newExpandedItems);
   }, [router.pathname]);
 
+<<<<<<< HEAD
+  const toggleExpanded = (itemName: string) => {
+    const newExpandedItems = new Set(expandedItems);
+    if (newExpandedItems.has(itemName)) {
+      newExpandedItems.delete(itemName);
+    } else {
+      newExpandedItems.add(itemName);
+=======
   const sidebarSections = [
     {
       id: 'ai-services',
@@ -315,6 +323,7 @@ const EnhancedSidebar2025: React.FC<EnhancedSidebar2025Props> = ({ isOpen, onClo
         { label: 'Documentation', href: '/docs' },
         { label: 'API Reference', href: '/api-docs' }
       ]
+>>>>>>> origin/cursor/website-audit-and-enhancement-fdbf
     }
     setExpandedItems(newExpandedItems);
   };

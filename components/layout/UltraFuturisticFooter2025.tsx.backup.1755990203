@@ -74,6 +74,20 @@ const UltraFuturisticFooter2025: React.FC = () => {
         { label: 'API Reference', href: '/api', icon: Code }
       ]
     },
+<<<<<<< HEAD
+    {
+      title: 'Company',
+      items: [
+        { label: 'About Us', href: '/about', icon: Users },
+        { label: 'Leadership', href: '/leadership', icon: Star },
+        { label: 'Careers', href: '/careers', icon: Users },
+        { label: 'News & Press', href: '/news', icon: FileText },
+        { label: 'Case Studies', href: '/case-studies', icon: Award },
+        { label: 'Partners', href: '/partners', icon: Handshake },
+        { label: 'Contact', href: '/contact', icon: Phone }
+      ]
+    }
+=======
           {
         title: 'Company',
         items: [
@@ -85,6 +99,7 @@ const UltraFuturisticFooter2025: React.FC = () => {
           { label: 'Contact', href: '/contact', icon: Phone }
         ]
       }
+>>>>>>> origin/cursor/website-audit-and-enhancement-fdbf
   ];
 
   return (
