@@ -42,6 +42,18 @@ const footerSections = [
     description: 'Cutting-edge future technology services',
     icon: <Lightbulb className="w-5 h-5 text-yellow-400" />,
     links: [
+<<<<<<< HEAD
+      { name: 'AI Consciousness Evolution', href: '/ai-consciousness-evolution-2029', featured: true },
+      { name: 'Quantum Neural Networks', href: '/quantum-neural-network-platform', featured: true },
+      { name: 'Autonomous Business Operations', href: '/autonomous-business-operations-platform', featured: true },
+      { name: 'Space Resource Mining', href: '/space-resource-mining-platform', featured: true },
+      { name: 'AI Evaluation Orchestrator', href: '/services/ai-evaluation-orchestrator', featured: true },
+      { name: 'AI Support Triage Router', href: '/services/ai-support-triage-router', featured: true },
+      { name: 'AI Code Review Assistant Pro', href: '/services/ai-code-review-assistant-pro', featured: true },
+      { name: 'AI Revenue Forecasting Copilot', href: '/services/ai-revenue-forecasting-copilot', featured: true },
+      { name: 'Quantum Financial Trading', href: '/quantum-financial-trading', featured: true },
+      { name: 'AI Emotional Intelligence', href: '/ai-emotional-intelligence-training', featured: true }
+=======
       { name: 'AI Consciousness Evolution', href: '/ai-consciousness-evolution-platform', featured: true },
       { name: 'Quantum Secure Communication', href: '/quantum-secure-communication-hub', featured: true },
       { name: 'Autonomous DevOps Orchestrator', href: '/autonomous-devops-orchestrator', featured: true },
@@ -52,6 +64,7 @@ const footerSections = [
       { name: 'Metaverse Development Studio', href: '/metaverse-development-studio-pro' },
       { name: 'AI Ethics Governance', href: '/ai-ethics-governance-framework' },
       { name: 'Quantum Bio-Computing', href: '/quantum-bio-computing-platform' }
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-b3b1
     ]
   },
   {

@@ -197,6 +197,8 @@ const Homepage2025: React.FC = () => {
                 }}
                 variant="automation"
               />
+<<<<<<< HEAD
+=======
               <UltraFuturisticServiceCard2026
                 service={{
                   id: 'space-technology',
@@ -257,10 +259,31 @@ const Homepage2025: React.FC = () => {
                   <ArrowRight className="w-5 h-5" />
                 </button>
               </Link>
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-b3b1
             </motion.div>
           </motion.div>
         </section>
 
+<<<<<<< HEAD
+        {/* About Section */}
+        <section 
+          id="about"
+          className="py-20 px-4 bg-gradient-to-r from-black/50 to-gray-900/50 relative"
+          aria-label="About Zion Tech Group"
+        >
+          <motion.div 
+            className="max-w-4xl mx-auto text-center"
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+          >
+            <motion.h2 
+              className="text-4xl md:text-5xl font-bold mb-8 bg-gradient-to-r from-purple-400 to-pink-500 bg-clip-text text-transparent"
+              initial={{ opacity: 0, scale: 0.9 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+=======
         {/* Latest Innovations Showcase */}
         <section className="py-20 px-4 bg-gradient-to-r from-black/40 to-purple-900/20 relative">
           <div className="absolute inset-0 bg-gradient-to-r from-purple-500/5 to-pink-500/5"></div>
@@ -450,6 +473,7 @@ const Homepage2025: React.FC = () => {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-b3b1
               viewport={{ once: true }}
             >
               About Zion Tech Group

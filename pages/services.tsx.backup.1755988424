@@ -178,10 +178,25 @@ const allServices = [
   ...real2036ServiceExpansions,
   ...innovative2036MicroSaasServices,
   ...innovative2036ITServices,
+<<<<<<< HEAD
+  // Our new 2025 advanced services
+  ...advanced2025MicroSaasExpansion,
+  ...advanced2025ITSolutionsExpansion,
+  ...advanced2025AIServicesExpansion,
+  // Our new innovative services
+  ...innovative2037MicroSaasServices,
+  ...innovative2037ITServices,
+  ...innovative2037AIServices,
+  // Q4 2037 cutting-edge services
+  ...cuttingEdgeServices,
+  ...itInfrastructureServices,
+  ...businessSolutionServices
+=======
   // New 2036 expansion services
   ...innovativeMicroSaasExpansion,
   ...innovativeITServicesExpansion,
   ...innovativeAIServicesExpansion
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-b3b1
 ];
 
 const categories = [

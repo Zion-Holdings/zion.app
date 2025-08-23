@@ -169,11 +169,25 @@ const navigationItems: NavigationItem[] = [
         featured: true
       },
       { 
+<<<<<<< HEAD
+        name: 'Revolutionary 2025 Pricing', 
+        href: '/revolutionary-2025-pricing', 
+        description: 'Innovative pricing models',
+        icon: <Calculator className="w-4 h-4" />
+      },
+      { 
+        name: '2040 Pricing', 
+        href: '/pricing-2040', 
+        description: 'Revolutionary 2040 technology pricing',
+        icon: <Star className="w-4 h-4" />,
+        badge: 'New'
+=======
         name: '2036 Innovations', 
         href: '/innovative-2036-services-showcase', 
         description: 'Latest innovations showcase',
         icon: <Star className="w-4 h-4" />,
         featured: true
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-b3b1
       },
       { 
         name: 'Pricing Plans', 
