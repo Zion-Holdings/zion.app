@@ -37,17 +37,14 @@ export default function HomePage() {
               <Link href="/features" className="px-6 py-3 bg-white/10 hover:bg-white/20 border border-white/20 rounded-lg text-white transition-all duration-200 hover:border-fuchsia-400/50">
                 Features
               </Link>
-              <Link href="/dashboard" className="px-6 py-3 bg-white/10 hover:bg-white/20 border border-white/20 rounded-lg text-white transition-all duration-200 hover:border-blue-400/50">
-                Live Dashboard
-              </Link>
-              <Link href="/pricing" className="px-6 py-3 bg-white/10 hover:bg-white/20 border border-white/20 rounded-lg text-white transition-all duration-200 hover:border-green-400/50">
-                Pricing
-              </Link>
-              <Link href="/services" className="px-6 py-3 bg-white/10 hover:bg-white/20 border border-white/20 rounded-lg text-white transition-all duration-200 hover:border-yellow-400/50">
+              <Link href="/services" className="px-6 py-3 bg-white/10 hover:bg-white/20 border border-white/20 rounded-lg text-white transition-all duration-200 hover:border-blue-400/50">
                 Our Services
               </Link>
-              <Link href="/case-studies" className="px-6 py-3 bg-white/10 hover:bg-white/20 border border-white/20 rounded-lg text-white transition-all duration-200 hover:border-purple-400/50">
-                Case Studies
+              <Link href="/pricing" className="px-6 py-3 bg-white/10 hover:bg-white/20 border border-white/20 rounded-lg text-white transition-all duration-200 hover:border-yellow-400/50">
+                Pricing
+              </Link>
+              <Link href="/documentation" className="px-6 py-3 bg-white/10 hover:bg-white/20 border border-white/20 rounded-lg text-white transition-all duration-200 hover:border-purple-400/50">
+                Documentation
               </Link>
               <Link href="/contact" className="px-6 py-3 bg-white/10 hover:bg-white/20 border border-white/20 rounded-lg text-white transition-all duration-200 hover:border-cyan-400/50">
                 Contact
@@ -55,48 +52,121 @@ export default function HomePage() {
             </div>
           </section>
 
-          {/* Key Pages & Resources */}
-          <section className="mx-auto max-w-7xl px-6 pb-16">
-            <h2 className="text-center text-4xl font-bold tracking-wide text-white/90 mb-12">📚 Explore Key Pages & Resources</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              <div className="bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl rounded-2xl p-6 border border-white/20">
-                <h3 className="text-xl font-bold text-blue-400 mb-4 text-center">📖 Company & Platform</h3>
-                <ul className="text-white/80 text-sm space-y-2 mb-4">
-                  <li>• <a href="https://github.com/Zion-Holdings/zion.app/blob/main/README.md" className="text-blue-400 hover:text-blue-300" target="_blank" rel="noopener noreferrer">Main README</a> - Project overview</li>
-                  <li>• <a href="https://github.com/Zion-Holdings/zion.app/blob/main/ARCHITECTURE.md" className="text-blue-400 hover:text-blue-300" target="_blank" rel="noopener noreferrer">Architecture Guide</a> - System design</li>
-                  <li>• <a href="https://github.com/Zion-Holdings/zion.app/blob/main/API.md" className="text-blue-400 hover:text-blue-300" target="_blank" rel="noopener noreferrer">API Documentation</a> - Integration guide</li>
-                  <li>• <a href="https://github.com/Zion-Holdings/zion.app/blob/main/DEPLOYMENT.md" className="text-blue-400 hover:text-blue-300" target="_blank" rel="noopener noreferrer">Deployment Guide</a> - Setup instructions</li>
-                  <li>• <a href="https://github.com/Zion-Holdings/zion.app/blob/main/CONTRIBUTING.md" className="text-blue-400 hover:text-blue-300" target="_blank" rel="noopener noreferrer">Contributing Guide</a> - Development workflow</li>
-                </ul>
+          {/* Hero Statistics Section */}
+          <section className="mx-auto max-w-7xl px-6 pb-14 mb-16">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+              <div className="text-center p-6 bg-white/5 backdrop-blur-xl rounded-xl border border-white/10">
+                <div className="text-3xl font-bold text-cyan-400 mb-2">227</div>
+                <div className="text-sm text-white/70">Active Automations</div>
               </div>
-
-              <div className="bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl rounded-2xl p-6 border border-white/20">
-                <h3 className="text-xl font-bold text-purple-400 mb-4 text-center">🧠 Resources & Insights</h3>
-                <ul className="text-white/80 text-sm space-y-2 mb-4">
-                  <li>• <a href="https://github.com/Zion-Holdings/zion.app/blob/main/README_ULTIMATE_REDUNDANCY.md" className="text-purple-400 hover:text-purple-300" target="_blank" rel="noopener noreferrer">Ultimate Redundancy</a> - System overview</li>
-                  <li>• <a href="https://github.com/Zion-Holdings/zion.app/blob/main/COMPREHENSIVE_REDUNDANCY_README.md" className="text-purple-400 hover:text-purple-300" target="_blank" rel="noopener noreferrer">Comprehensive Redundancy</a> - Advanced features</li>
-                  <li>• <a href="https://github.com/Zion-Holdings/zion.app/search?q=pm2+redundancy+readme&type=code" className="text-purple-400 hover:text-purple-300" target="_blank" rel="noopener noreferrer">PM2 Redundancy</a> - Process management</li>
-                  <li>• <a href="https://github.com/Zion-Holdings/zion.app/search?q=GITHUB_ACTIONS_README&type=code" className="text-purple-400 hover:text-purple-300" target="_blank" rel="noopener noreferrer">GitHub Actions</a> - CI/CD automation</li>
-                  <li>• <a href="https://github.com/Zion-Holdings/zion.app/search?q=Continuous+Operation+README&type=code" className="text-purple-400 hover:text-purple-300" target="_blank" rel="noopener noreferrer">Continuous Operation</a> - Zero-downtime</li>
-                </ul>
+              <div className="text-center p-6 bg-white/5 backdrop-blur-xl rounded-xl border border-white/10">
+                <div className="text-3xl font-bold text-fuchsia-400 mb-2">2,960</div>
+                <div className="text-sm text-white/70">Pages Generated</div>
               </div>
-
-              <div className="bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl rounded-2xl p-6 border border-white/20">
-                <h3 className="text-xl font-bold text-green-400 mb-4 text-center">🌟 Advanced Features</h3>
-                <ul className="text-white/80 text-sm space-y-2 mb-4">
-                  <li>• <a href="https://github.com/Zion-Holdings/zion.app/blob/main/SECURITY.md" className="text-green-400 hover:text-green-300" target="_blank" rel="noopener noreferrer">Security Guide</a> - Protection measures</li>
-                  <li>• <a href="https://github.com/Zion-Holdings/zion.app/blob/main/TESTING.md" className="text-green-400 hover:text-green-300" target="_blank" rel="noopener noreferrer">Testing Guide</a> - Quality assurance</li>
-                  <li>• <a href="https://github.com/Zion-Holdings/zion.app/blob/main/SERVICE_GENERATION_README.md" className="text-green-400 hover:text-green-300" target="_blank" rel="noopener noreferrer">Service Generation</a> - Auto-creation</li>
-                  <li>• <a href="https://github.com/Zion-Holdings/zion.app/blob/main/ULTIMATE_REDUNDANCY_AUTOMATION_README.md" className="text-green-400 hover:text-green-300" target="_blank" rel="noopener noreferrer">Automation README</a> - System details</li>
-                  <li>• <a href="https://github.com/Zion-Holdings/zion.app/blob/main/EXPONENTIAL_GROWTH_AUTOMATION.md" className="text-green-400 hover:text-green-300" target="_blank" rel="noopener noreferrer">Growth Automation</a> - Scaling systems</li>
-                </ul>
+              <div className="text-center p-6 bg-white/5 backdrop-blur-xl rounded-xl border border-white/10">
+                <div className="text-3xl font-bold text-blue-400 mb-2">12</div>
+                <div className="text-sm text-white/70">Core Components</div>
+              </div>
+              <div className="text-center p-6 bg-white/5 backdrop-blur-xl rounded-xl border border-white/10">
+                <div className="text-3xl font-bold text-green-400 mb-2">99.9%</div>
+                <div className="text-sm text-white/70">Uptime</div>
               </div>
             </div>
           </section>
 
-          {/* Latest updates */}
-          <section className="mx-auto max-w-7xl px-2 pb-10">
-            <h2 className="text-center text-2xl font-bold tracking-wide text-white/90">Latest Autonomous Updates</h2>
+          {/* Features Showcase */}
+          <section className="mx-auto max-w-7xl px-6 pb-14 mb-16">
+            <h2 className="text-center text-3xl font-bold tracking-wide text-white/90 mb-12">Revolutionary Features</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              <div className="group bg-white/5 backdrop-blur-xl rounded-2xl p-8 border border-white/10 hover:border-cyan-400/30 transition-all duration-300">
+                <div className="w-16 h-16 bg-gradient-to-br from-cyan-400 to-blue-500 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                  <span className="text-2xl">🤖</span>
+                </div>
+                <h3 className="text-xl font-semibold text-cyan-400 mb-4">Autonomous AI Agents</h3>
+                <p className="text-white/70 leading-relaxed">
+                  Self-running AI systems that continuously monitor, optimize, and improve your digital infrastructure without human intervention.
+                </p>
+                <div className="mt-4 flex items-center text-cyan-300 text-sm">
+                  <span>Learn more</span>
+                  <span className="ml-2">→</span>
+                </div>
+              </div>
+
+              <div className="group bg-white/5 backdrop-blur-xl rounded-2xl p-8 border border-white/10 hover:border-fuchsia-400/30 transition-all duration-300">
+                <div className="w-16 h-16 bg-gradient-to-br from-fuchsia-400 to-purple-500 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                  <span className="text-2xl">⚡</span>
+                </div>
+                <h3 className="text-xl font-semibold text-fuchsia-400 mb-4">Real-time Monitoring</h3>
+                <p className="text-white/70 leading-relaxed">
+                  Advanced monitoring systems that provide instant alerts, performance metrics, and predictive analytics for proactive issue resolution.
+                </p>
+                <div className="mt-4 flex items-center text-fuchsia-300 text-sm">
+                  <span>Learn more</span>
+                  <span className="ml-2">→</span>
+                </div>
+              </div>
+
+              <div className="group bg-white/5 backdrop-blur-xl rounded-2xl p-8 border border-white/10 hover:border-blue-400/30 transition-all duration-300">
+                <div className="w-16 h-16 bg-gradient-to-br from-blue-400 to-indigo-500 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                  <span className="text-2xl">🔄</span>
+                </div>
+                <h3 className="text-xl font-semibold text-blue-400 mb-4">Auto-healing Systems</h3>
+                <p className="text-white/70 leading-relaxed">
+                  Intelligent systems that automatically detect and resolve issues, deploy fixes, and maintain optimal performance around the clock.
+                </p>
+                <div className="mt-4 flex items-center text-blue-300 text-sm">
+                  <span>Learn more</span>
+                  <span className="ml-2">→</span>
+                </div>
+              </div>
+
+              <div className="group bg-white/5 backdrop-blur-xl rounded-2xl p-8 border border-white/10 hover:border-yellow-400/30 transition-all duration-300">
+                <div className="w-16 h-16 bg-gradient-to-br from-yellow-400 to-orange-500 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                  <span className="text-2xl">📊</span>
+                </div>
+                <h3 className="text-xl font-semibold text-yellow-400 mb-4">Advanced Analytics</h3>
+                <p className="text-white/70 leading-relaxed">
+                  Comprehensive data insights and reporting that help you understand performance trends and make data-driven decisions.
+                </p>
+                <div className="mt-4 flex items-center text-yellow-300 text-sm">
+                  <span>Learn more</span>
+                  <span className="ml-2">→</span>
+                </div>
+              </div>
+
+              <div className="group bg-white/5 backdrop-blur-xl rounded-2xl p-8 border border-white/10 hover:border-green-400/30 transition-all duration-300">
+                <div className="w-16 h-16 bg-gradient-to-br from-green-400 to-emerald-500 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                  <span className="text-2xl">🔒</span>
+                </div>
+                <h3 className="text-xl font-semibold text-green-400 mb-4">Security First</h3>
+                <p className="text-white/70 leading-relaxed">
+                  Enterprise-grade security with continuous threat detection, automated vulnerability scanning, and compliance monitoring.
+                </p>
+                <div className="mt-4 flex items-center text-green-300 text-sm">
+                  <span>Learn more</span>
+                  <span className="ml-2">→</span>
+                </div>
+              </div>
+
+              <div className="group bg-white/5 backdrop-blur-xl rounded-2xl p-8 border border-white/10 hover:border-purple-400/30 transition-all duration-300">
+                <div className="w-16 h-16 bg-gradient-to-br from-purple-400 to-pink-500 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                  <span className="text-2xl">🚀</span>
+                </div>
+                <h3 className="text-xl font-semibold text-purple-400 mb-4">Scalable Infrastructure</h3>
+                <p className="text-white/70 leading-relaxed">
+                  Cloud-native architecture that automatically scales with your needs, ensuring optimal performance and cost efficiency.
+                </p>
+                <div className="mt-4 flex items-center text-purple-300 text-sm">
+                  <span>Learn more</span>
+                  <span className="ml-2">→</span>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          {/* AUTO-GENERATED: HOME_LATEST_CONTENT_START */}
+          <section className="mx-auto max-w-7xl px-6 pb-14 mb-16">
+            <h2 className="text-center text-2xl font-bold tracking-wide text-white/90">Latest Autonomous Content</h2>
             <div className="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
               <Link href="/reports/updates/update-2025-08-15-0406" className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-cyan-400/30">
                 <div className="pointer-events-none absolute -inset-px -z-10 bg-gradient-to-r from-fuchsia-500/0 via-cyan-400/10 to-fuchsia-500/0 opacity-0 blur-2xl transition-opacity group-hover:opacity-100" />
@@ -140,166 +210,176 @@ export default function HomePage() {
               </Link>
             </div>
           </section>
+          {/* AUTO-GENERATED: HOME_LATEST_CONTENT_END */}
+          
+          {/* Testimonials Section */}
+          <section className="mx-auto max-w-7xl px-6 pb-14 mb-16">
+            <h2 className="text-center text-3xl font-bold tracking-wide text-white/90 mb-12">What Our Clients Say</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              <div className="bg-white/5 backdrop-blur-xl rounded-2xl p-8 border border-white/10">
+                <div className="flex items-center mb-4">
+                  <div className="w-12 h-12 bg-gradient-to-br from-cyan-400 to-blue-500 rounded-full flex items-center justify-center text-white font-bold text-lg">
+                    JD
+                  </div>
+                  <div className="ml-4">
+                    <div className="font-semibold text-white">John Doe</div>
+                    <div className="text-sm text-white/60">CTO, TechCorp</div>
+                  </div>
+                </div>
+                <p className="text-white/80 italic">
+                  "Zion Tech Group's autonomous systems have revolutionized our infrastructure. We've seen a 40% reduction in downtime and our team can focus on innovation instead of maintenance."
+                </p>
+                <div className="flex text-yellow-400 mt-4">
+                  {[...Array(5)].map((_, i) => (
+                    <span key={i}>⭐</span>
+                  ))}
+                </div>
+              </div>
 
-          {/* Advanced Features Showcase */}
-          <section className="mx-auto max-w-7xl px-6 pb-16">
-            <h2 className="text-center text-4xl font-bold tracking-wide text-white/90 mb-12">🌟 Advanced Features & Capabilities</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              <div className="space-y-6">
-                <div className="flex items-start space-x-4">
-                  <div className="w-8 h-8 bg-gradient-to-br from-cyan-400 to-blue-500 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                    <span className="text-white text-sm font-bold">🚀</span>
+              <div className="bg-white/5 backdrop-blur-xl rounded-2xl p-8 border border-white/10">
+                <div className="flex items-center mb-4">
+                  <div className="w-12 h-12 bg-gradient-to-br from-fuchsia-400 to-purple-500 rounded-full flex items-center justify-center text-white font-bold text-lg">
+                    SJ
                   </div>
-                  <div>
-                    <h3 className="text-lg font-semibold text-cyan-400 mb-2">Autonomous Content Generation</h3>
-                    <p className="text-white/80">AI-powered content creation with automatic SEO optimization, quality assurance, and intelligent scheduling.</p>
+                  <div className="ml-4">
+                    <div className="font-semibold text-white">Sarah Johnson</div>
+                    <div className="text-sm text-white/60">VP Engineering, StartupXYZ</div>
                   </div>
+                </div>
+                <p className="text-white/80 italic">
+                  "The AI-powered monitoring and auto-healing capabilities have been game-changing. Our deployment process is now completely automated and reliable."
+                </p>
+                <div className="flex text-yellow-400 mt-4">
+                  {[...Array(5)].map((_, i) => (
+                    <span key={i}>⭐</span>
+                  ))}
+                </div>
+              </div>
+
+              <div className="bg-white/5 backdrop-blur-xl rounded-2xl p-8 border border-white/10">
+                <div className="flex items-center mb-4">
+                  <div className="w-12 h-12 bg-gradient-to-br from-blue-400 to-indigo-500 rounded-full flex items-center justify-center text-white font-bold text-lg">
+                    MW
+                  </div>
+                  <div className="ml-4">
+                    <div className="font-semibold text-white">Mike Wilson</div>
+                    <div className="text-sm text-white/60">DevOps Lead, EnterpriseInc</div>
+                  </div>
+                </div>
+                <p className="text-white/80 italic">
+                  "We've been using Zion Tech Group for over a year now. The autonomous redundancy systems have eliminated our manual failover procedures completely."
+                </p>
+                <div className="flex text-yellow-400 mt-4">
+                  {[...Array(5)].map((_, i) => (
+                    <span key={i}>⭐</span>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </section>
+
+          {/* Technology Stack Section */}
+          <section className="mx-auto max-w-7xl px-6 pb-14 mb-16">
+            <h2 className="text-center text-3xl font-bold tracking-wide text-white/90 mb-12">Powered by Cutting-Edge Technology</h2>
+            <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6">
+              {[
+                { name: 'Next.js', icon: '⚛️', color: 'from-blue-400 to-indigo-500' },
+                { name: 'React', icon: '⚛️', color: 'from-cyan-400 to-blue-500' },
+                { name: 'TypeScript', icon: '📘', color: 'from-blue-500 to-indigo-600' },
+                { name: 'Node.js', icon: '🟢', color: 'from-green-400 to-emerald-500' },
+                { name: 'PM2', icon: '🚀', color: 'from-purple-400 to-pink-500' },
+                { name: 'GitHub Actions', icon: '🐙', color: 'from-gray-400 to-slate-500' },
+                { name: 'Netlify', icon: '🌐', color: 'from-cyan-400 to-blue-500' },
+                { name: 'Tailwind CSS', icon: '🎨', color: 'from-cyan-400 to-teal-500' },
+                { name: 'Docker', icon: '🐳', color: 'from-blue-400 to-indigo-500' },
+                { name: 'PostgreSQL', icon: '🐘', color: 'from-blue-500 to-indigo-600' },
+                { name: 'Redis', icon: '🔴', color: 'from-red-400 to-pink-500' },
+                { name: 'AWS', icon: '☁️', color: 'from-orange-400 to-yellow-500' }
+              ].map((tech, index) => (
+                <div key={index} className="text-center group">
+                  <div className={`w-16 h-16 bg-gradient-to-br ${tech.color} rounded-xl flex items-center justify-center mx-auto mb-3 group-hover:scale-110 transition-transform duration-300`}>
+                    <span className="text-2xl">{tech.icon}</span>
+                  </div>
+                  <div className="text-sm text-white/70 font-medium">{tech.name}</div>
+                </div>
+              ))}
+            </div>
+          </section>
+
+          {/* Additional Content Section */}
+          <section className="mx-auto max-w-7xl px-6 pb-14 mb-16">
+            <h2 className="text-center text-2xl font-bold tracking-wide text-white/90 mb-8">Explore Our Platform</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+              <Link href="/about" className="group bg-white/10 backdrop-blur-xl rounded-xl p-6 border border-white/20 hover:border-cyan-400/30 transition-all duration-300 text-center">
+                <div className="w-12 h-12 bg-gradient-to-br from-cyan-400 to-blue-500 rounded-lg flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
+                  <span className="text-xl">🏢</span>
                 </div>
                 <h3 className="text-lg font-semibold mb-2">About Us</h3>
                 <p className="text-sm text-white/70">Discover our mission and vision</p>
               </Link>
               
-              <Link href="/services" className="group bg-white/10 backdrop-blur-xl rounded-xl p-6 border border-white/20 hover:border-fuchsia-400/30 transition-all duration-300 text-center">
+              <Link href="/features" className="group bg-white/10 backdrop-blur-xl rounded-xl p-6 border border-white/20 hover:border-fuchsia-400/30 transition-all duration-300 text-center">
                 <div className="w-12 h-12 bg-gradient-to-br from-fuchsia-400 to-purple-500 rounded-lg flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
                   <span className="text-xl">⚡</span>
                 </div>
-                <h3 className="text-lg font-semibold mb-2">Services</h3>
-                <p className="text-sm text-white/70">Explore our solutions</p>
+                <h3 className="text-lg font-semibold text-fuchsia-400 mb-2">Features</h3>
+                <p className="text-white/70 text-sm">Explore our AI capabilities</p>
               </Link>
               
-              {/* Technical Resources */}
-              <Link href="/resources" className="group bg-white/10 backdrop-blur-xl rounded-xl p-6 border border-white/20 hover:border-blue-400/30 transition-all duration-300 text-center">
-                <div className="w-12 h-12 bg-gradient-to-br from-blue-400 to-cyan-500 rounded-lg flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
+              <Link href="/pricing" className="group bg-white/10 backdrop-blur-xl rounded-xl p-6 border border-white/20 hover:border-blue-400/30 transition-all duration-300 text-center">
+                <div className="w-12 h-12 bg-gradient-to-br from-blue-400 to-indigo-500 rounded-lg flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
+                  <span className="text-xl">💰</span>
+                </div>
+                <h3 className="text-lg font-semibold text-blue-400 mb-2">Pricing</h3>
+                <p className="text-white/70 text-sm">View our plans and pricing</p>
+              </Link>
+              
+              <Link href="/documentation" className="group bg-white/10 backdrop-blur-xl rounded-xl p-6 border border-white/20 hover:border-yellow-400/30 transition-all duration-300 text-center">
+                <div className="w-12 h-12 bg-gradient-to-br from-yellow-400 to-orange-500 rounded-lg flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
                   <span className="text-xl">📚</span>
                 </div>
-                <h3 className="text-lg font-semibold mb-2">Resources</h3>
-                <p className="text-sm text-white/70">Access our knowledge base</p>
-              </Link>
-              
-              {/* Case Studies */}
-              <Link href="/case-studies" className="group bg-white/10 backdrop-blur-xl rounded-xl p-6 border border-white/20 hover:border-yellow-400/30 transition-all duration-300 text-center">
-                <div className="w-12 h-12 bg-gradient-to-br from-yellow-400 to-orange-500 rounded-lg flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
-                  <span className="text-xl">📊</span>
-                </div>
-                <h3 className="text-lg font-semibold mb-2">Case Studies</h3>
-                <p className="text-sm text-white/70">See our success stories</p>
+                <h3 className="text-lg font-semibold text-yellow-400 mb-2">Documentation</h3>
+                <p className="text-white/70 text-sm">Read guides and tutorials</p>
               </Link>
             </div>
           </section>
 
-          {/* Features Showcase */}
-          <section className="mx-auto max-w-7xl px-6 pb-14">
-            <h2 className="text-center text-3xl font-bold tracking-wide text-white/90 mb-12">Why Choose Zion Tech Group?</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              <div className="bg-white/5 backdrop-blur-xl rounded-2xl p-8 border border-white/10 hover:border-cyan-400/30 transition-all duration-300">
-                <div className="w-16 h-16 bg-gradient-to-br from-cyan-400 to-blue-500 rounded-xl flex items-center justify-center mb-6">
-                  <span className="text-2xl">🤖</span>
-                </div>
-                <h3 className="text-xl font-bold mb-4 text-white">Autonomous Innovation</h3>
-                <p className="text-white/80 leading-relaxed">
-                  Our AI-powered systems continuously evolve and improve, delivering cutting-edge solutions without human intervention.
-                </p>
-              </div>
-              
-              <div className="bg-white/5 backdrop-blur-xl rounded-2xl p-8 border border-white/10 hover:border-fuchsia-400/30 transition-all duration-300">
-                <div className="w-16 h-16 bg-gradient-to-br from-fuchsia-400 to-purple-500 rounded-xl flex items-center justify-center mb-6">
-                  <span className="text-2xl">⚡</span>
-                </div>
-                <h3 className="text-xl font-bold mb-4 text-white">Lightning Fast</h3>
-                <p className="text-white/80 leading-relaxed">
-                  Experience rapid deployment and real-time updates with our optimized infrastructure and automation systems.
-                </p>
-              </div>
-              
-              <div className="bg-white/5 backdrop-blur-xl rounded-2xl p-8 border border-white/10 hover:border-green-400/30 transition-all duration-300">
-                <div className="w-16 h-16 bg-gradient-to-br from-green-400 to-emerald-500 rounded-xl flex items-center justify-center mb-6">
-                  <span className="text-2xl">🔒</span>
-                </div>
-                <h3 className="text-xl font-bold mb-4 text-white">Enterprise Security</h3>
-                <p className="text-white/80 leading-relaxed">
-                  Bank-grade security protocols and continuous monitoring ensure your data and systems remain protected.
-                </p>
-              </div>
-              
-              <div className="bg-white/5 backdrop-blur-xl rounded-2xl p-8 border border-white/10 hover:border-yellow-400/30 transition-all duration-300">
-                <div className="w-16 h-16 bg-gradient-to-br from-yellow-400 to-orange-500 rounded-xl flex items-center justify-center mb-6">
-                  <span className="text-2xl">📈</span>
-                </div>
-                <h3 className="text-xl font-bold mb-4 text-white">Scalable Growth</h3>
-                <p className="text-white/80 leading-relaxed">
-                  Our solutions grow with your business, from startup to enterprise, with seamless scaling capabilities.
-                </p>
-              </div>
-              
-              <div className="bg-white/5 backdrop-blur-xl rounded-2xl p-8 border border-white/10 hover:border-blue-400/30 transition-all duration-300">
-                <div className="w-16 h-16 bg-gradient-to-br from-blue-400 to-cyan-500 rounded-xl flex items-center justify-center mb-6">
-                  <span className="text-2xl">🌐</span>
-                </div>
-                <h3 className="text-xl font-bold mb-4 text-white">Global Reach</h3>
-                <p className="text-white/80 leading-relaxed">
-                  Deploy anywhere in the world with our distributed infrastructure and edge computing capabilities.
-                </p>
-              </div>
-              
-              <div className="bg-white/5 backdrop-blur-xl rounded-2xl p-8 border border-white/10 hover:border-purple-400/30 transition-all duration-300">
-                <div className="w-16 h-16 bg-gradient-to-br from-purple-400 to-pink-500 rounded-xl flex items-center justify-center mb-6">
-                  <span className="text-2xl">🎯</span>
-                </div>
-                <h3 className="text-xl font-bold mb-4 text-white">Precision Solutions</h3>
-                <p className="text-white/80 leading-relaxed">
-                  Tailored solutions designed specifically for your industry and business requirements.
-                </p>
-              </div>
-            </div>
-          </section>
-
-          {/* Statistics Section */}
-          <section className="mx-auto max-w-7xl px-6 pb-14">
-            <div className="bg-white/5 backdrop-blur-xl rounded-3xl p-12 border border-white/10">
-              <h2 className="text-center text-3xl font-bold tracking-wide text-white/90 mb-12">Our Impact in Numbers</h2>
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-                <div className="text-center">
-                  <div className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent mb-2">
-                    227+
-                  </div>
-                  <p className="text-white/70 text-sm">Automations</p>
-                </div>
-                <div className="text-center">
-                  <div className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-fuchsia-400 to-purple-500 bg-clip-text text-transparent mb-2">
-                    2,960+
-                  </div>
-                  <p className="text-white/70 text-sm">Pages Generated</p>
-                </div>
-                <div className="text-center">
-                  <div className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-green-400 to-emerald-500 bg-clip-text text-transparent mb-2">
-                    99.9%
-                  </div>
-                  <p className="text-white/70 text-sm">Uptime</p>
-                </div>
-                <div className="text-center">
-                  <div className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-yellow-400 to-orange-500 bg-clip-text text-transparent mb-2">
-                    24/7
-                  </div>
-                  <p className="text-white/70 text-sm">Monitoring</p>
-                </div>
-              </div>
-            </div>
-          </section>
-
-          {/* Call to Action */}
-          <section className="mx-auto max-w-7xl px-6 pb-14">
-            <div className="bg-gradient-to-r from-cyan-500/20 to-fuchsia-500/20 backdrop-blur-xl rounded-3xl p-12 border border-cyan-400/30 text-center">
-              <h2 className="text-3xl font-bold text-white mb-6">Ready to Transform Your Business?</h2>
-              <p className="text-xl text-white/80 mb-8 max-w-2xl mx-auto">
-                Join the future of autonomous technology. Let our AI-powered systems revolutionize your operations.
+          {/* Call to Action Section */}
+          <section className="mx-auto max-w-7xl px-6 pb-14 mb-16">
+            <div className="bg-gradient-to-r from-cyan-500/20 to-fuchsia-500/20 backdrop-blur-xl rounded-3xl p-12 text-center border border-white/20">
+              <h2 className="text-4xl font-bold text-white mb-6">
+                Ready to Transform Your Infrastructure?
+              </h2>
+              <p className="text-xl text-white/80 mb-8 max-w-3xl mx-auto">
+                Join the future of autonomous technology. Our AI-powered systems will revolutionize how you manage, monitor, and optimize your digital infrastructure.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Link href="/contact" className="px-8 py-4 bg-gradient-to-r from-cyan-400 to-blue-500 hover:from-cyan-500 hover:to-blue-600 text-white font-semibold rounded-xl transition-all duration-300 transform hover:scale-105">
+                <Link href="/contact" className="px-8 py-4 bg-gradient-to-r from-cyan-400 to-fuchsia-400 text-white font-semibold rounded-xl hover:from-cyan-500 hover:to-fuchsia-500 transition-all duration-300 transform hover:scale-105">
                   Get Started Today
                 </Link>
-                <Link href="/case-studies" className="px-8 py-4 bg-white/10 hover:bg-white/20 border border-white/30 text-white font-semibold rounded-xl transition-all duration-300">
+                <Link href="/case-studies" className="px-8 py-4 bg-white/10 text-white font-semibold rounded-xl border border-white/20 hover:bg-white/20 transition-all duration-300">
                   View Case Studies
                 </Link>
+              </div>
+            </div>
+          </section>
+
+          {/* Newsletter Signup */}
+          <section className="mx-auto max-w-4xl px-6 pb-14">
+            <div className="bg-white/5 backdrop-blur-xl rounded-2xl p-8 border border-white/10 text-center">
+              <h3 className="text-2xl font-bold text-white mb-4">Stay Updated</h3>
+              <p className="text-white/70 mb-6">
+                Get the latest insights on autonomous technology, AI innovations, and industry trends delivered to your inbox.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
+                <input
+                  type="email"
+                  placeholder="Enter your email"
+                  className="flex-1 px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-white/50 focus:outline-none focus:border-cyan-400/50"
+                />
+                <button className="px-6 py-3 bg-gradient-to-r from-cyan-400 to-fuchsia-400 text-white font-semibold rounded-lg hover:from-cyan-500 hover:to-fuchsia-500 transition-all duration-300">
+                  Subscribe
+                </button>
               </div>
             </div>
           </section>
