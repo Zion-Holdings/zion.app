@@ -11,6 +11,11 @@ import { revolutionary2044AdvancedMicroSaas } from '../data/revolutionary-2044-a
 import { revolutionary2044ITServices } from '../data/revolutionary-2044-it-services';
 import { revolutionary2044AIServices } from '../data/revolutionary-2044-ai-services';
 
+// Import new advanced services
+import { advancedRealMicroSaasServices } from '../data/2025-advanced-real-micro-saas-services';
+import { advancedITInfrastructureServices } from '../data/2025-advanced-it-infrastructure-services';
+import { advancedAIServices } from '../data/2025-advanced-ai-services';
+
 const Homepage2044: React.FC = () => {
   const [isVisible, setIsVisible] = useState(false);
   const [currentServiceIndex, setCurrentServiceIndex] = useState(0);
@@ -42,7 +47,10 @@ const Homepage2044: React.FC = () => {
   const allRevolutionaryServices = [
     ...revolutionary2044AdvancedMicroSaas,
     ...revolutionary2044ITServices,
-    ...revolutionary2044AIServices
+    ...revolutionary2044AIServices,
+    ...advancedRealMicroSaasServices,
+    ...advancedITInfrastructureServices,
+    ...advancedAIServices
   ];
 
   // Get featured services for rotation
