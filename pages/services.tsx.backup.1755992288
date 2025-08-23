@@ -8,8 +8,20 @@ import {
   Sparkles, Target, BarChart3, ShieldCheck
 } from 'lucide-react';
 
+<<<<<<< HEAD
+// Import new 2034 service data
+import { ultimateFuturisticServices2034 } from '../data/2034-ultimate-futuristic-services';
+// Import new 2034 services from remote
+import { cuttingEdge2034Services } from '../data/2034-cutting-edge-innovations';
+import { emergingTech2034Services } from '../data/2034-emerging-tech-breakthroughs';
+// Import new innovative services
+import { innovativeMicroSaasSolutions } from '../data/2034-innovative-micro-saas-solutions';
+import { innovativeITSolutions } from '../data/2034-innovative-it-solutions';
+import { innovativeAISolutions } from '../data/2034-innovative-ai-solutions';
+=======
 // Import our service data
 import { realMarketServices } from '../data/real-market-services';
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-5350
 
 const contactInfo = {
   mobile: '+1 302 464 0950',
@@ -18,6 +30,9 @@ const contactInfo = {
   website: 'https://ziontechgroup.com'
 };
 
+<<<<<<< HEAD
+const serviceCategories = [
+=======
 // Helper function to get service pricing
 const getServicePricing = (service: any) => {
   if (service.pricing?.starter) return service.pricing.starter;
@@ -55,6 +70,7 @@ const allServices = [
 ];
 
 const categories = [
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-5350
   {
     id: 'all',
     title: '🚀 All Services',
