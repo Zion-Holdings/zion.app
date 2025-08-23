@@ -134,7 +134,7 @@ export default function Pricing2033Page() {
         'Premium Support (24/7)',
         '90-Day Free Trial',
         'Enterprise Analytics Suite',
-        'Dedicated Support Team',
+        'Dedicated Support Users',
         '99.99% Uptime Guarantee',
         'Enterprise Security Features',
         'Unlimited API Access',

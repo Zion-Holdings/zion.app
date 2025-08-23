@@ -48,42 +48,42 @@ const UltraFuturisticNavigation2040: React.FC = () => {
       dropdown: [
         {
           name: 'AI & Consciousness',
-          href: '/services/ai-consciousness',
+          href: '/services/ai-consciousness-evolution-platform-2045',
           icon: Brain,
           description: 'AI consciousness evolution and development',
           color: 'from-purple-500 to-pink-500'
         },
         {
           name: 'Quantum Technology',
-          href: '/services/quantum-technology',
+          href: '/services/quantum-ai-hybrid-computing-platform-2045',
           icon: Atom,
           description: 'Quantum computing and hybrid systems',
           color: 'from-cyan-500 to-blue-500'
         },
         {
           name: 'Cybersecurity',
-          href: '/services/cybersecurity',
+          href: '/services/quantum-cybersecurity-intelligence-2045',
           icon: Shield,
           description: 'Advanced security and protection',
           color: 'from-red-500 to-orange-500'
         },
         {
           name: 'Business Solutions',
-          href: '/services/business-solutions',
+          href: '/services/autonomous-ai-business-intelligence-2045',
           icon: Target,
           description: 'Micro SAAS and business automation',
           color: 'from-emerald-500 to-teal-500'
         },
         {
           name: 'IT Infrastructure',
-          href: '/services/it-infrastructure',
+          href: '/services/quantum-cloud-infrastructure-platform-2045',
           icon: Cpu,
           description: 'Cloud and infrastructure solutions',
           color: 'from-yellow-500 to-orange-500'
         },
         {
           name: 'Space Technology',
-          href: '/services/space-technology',
+          href: '/services/space-resource-intelligence-platform-2045',
           icon: Rocket,
           description: 'Space exploration and resource management',
           color: 'from-pink-500 to-red-500'

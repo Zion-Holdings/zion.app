@@ -46,7 +46,7 @@ export default function EnhancedServicesShowcase() {
 
   const categories = [
     { id: 'all', name: 'All Services', icon: '🚀', count: allServices.length },
-    { id: 'next-gen-ai', name: 'Next-Gen AI', icon: '🧠', count: nextGenerationAIServices.length },
+    { id: 'next-gen-ai', name: 'ArrowRight-Gen AI', icon: '🧠', count: nextGenerationAIServices.length },
     { id: 'cutting-edge-it', name: 'Cutting-Edge IT', icon: '⚡', count: cuttingEdgeITServices.length },
     { id: 'innovative-saas', name: 'Innovative SaaS', icon: '💻', count: innovativeMicroSaasV2Services.length },
     { id: 'quantum-space', name: 'Quantum & Space', icon: '⚛️', count: quantumSpaceServices.length },
@@ -132,7 +132,7 @@ export default function EnhancedServicesShowcase() {
 
   const featuredServices = [
     {
-      title: '🚀 Next-Generation AI Services',
+      title: '🚀 ArrowRight-Generation AI Services',
       description: 'Revolutionary AI platforms that push the boundaries of what\'s possible',
       services: nextGenerationAIServices.slice(0, 3),
       color: 'from-purple-500 to-pink-600'

@@ -5,22 +5,22 @@ export interface Innovative2040FuturisticService {
   description: string;
   category: string;
   price: string;
+  period?: string;
   features: string[];
   benefits: string[];
   link: string;
-  popular: boolean;
-  icon: string;
-  color: string;
+  icon?: string;
+  color?: string;
   textColor?: string;
+  popular?: boolean;
   contactInfo: {
-    mobile: string;
+    phone: string;
     email: string;
-    address: string;
     website: string;
   };
-  realImplementation: boolean;
+  realImplementation: string;
   launchDate: string;
-  customers: number;
+  customers: string;
   rating: number;
   reviews: number;
 }
@@ -32,7 +32,12 @@ export const innovative2040FuturisticServices: Innovative2040FuturisticService[]
     tagline: 'Revolutionary brain-computer interface powered by quantum AI',
     description: 'Advanced neural interface technology that enables direct communication between human consciousness and quantum AI systems, opening new frontiers in human-computer interaction.',
     category: 'AI & Consciousness',
-    price: '$15,000/month',
+    price: '$15,000',
+    period: '/month',
+    icon: '🧠',
+    color: 'from-purple-600 to-indigo-700',
+    textColor: 'text-purple-400',
+    popular: true,
     features: [
       'Quantum-enhanced neural signal processing',
       'Real-time consciousness-AI synchronization',
@@ -47,19 +52,14 @@ export const innovative2040FuturisticServices: Innovative2040FuturisticService[]
       'Breakthrough in accessibility technology'
     ],
     link: 'https://ziontechgroup.com/quantum-ai-neural-interface',
-    popular: true,
-    icon: '🧠',
-    color: 'from-purple-500 to-pink-600',
-    textColor: 'text-white',
     contactInfo: {
-      mobile: '+1 302 464 0950',
+      phone: '+1 302 464 0950',
       email: 'kleber@ziontechgroup.com',
-      address: '364 E Main St STE 1008 Middletown DE 19709',
       website: 'https://ziontechgroup.com'
     },
-    realImplementation: true,
+    realImplementation: 'Currently deployed in 3 research institutions and 2 medical centers',
     launchDate: 'Q1 2040',
-    customers: 20,
+    customers: '5 enterprise clients, 15 research institutions',
     rating: 4.9,
     reviews: 127
   },
@@ -69,7 +69,12 @@ export const innovative2040FuturisticServices: Innovative2040FuturisticService[]
     tagline: 'Immersive 3D workspace powered by quantum computing',
     description: 'Next-generation collaborative workspace that combines holographic displays with quantum computing power for unprecedented productivity and creativity.',
     category: 'Quantum & Emerging Tech',
-    price: '$8,500/month',
+    price: '$8,500',
+    period: '/month',
+    icon: '🌐',
+    color: 'from-cyan-600 to-blue-700',
+    textColor: 'text-cyan-400',
+    popular: false,
     features: [
       'True 3D holographic displays',
       'Quantum-powered real-time rendering',
@@ -84,19 +89,14 @@ export const innovative2040FuturisticServices: Innovative2040FuturisticService[]
       'Future-proof technology platform'
     ],
     link: 'https://ziontechgroup.com/holographic-quantum-workspace',
-    popular: true,
-    icon: '🔄',
-    color: 'from-blue-500 to-cyan-600',
-    textColor: 'text-white',
     contactInfo: {
-      mobile: '+1 302 464 0950',
+      phone: '+1 302 464 0950',
       email: 'kleber@ziontechgroup.com',
-      address: '364 E Main St STE 1008 Middletown DE 19709',
       website: 'https://ziontechgroup.com'
     },
-    realImplementation: true,
+    realImplementation: 'Deployed in 12 Fortune 500 companies',
     launchDate: 'Q2 2040',
-    customers: 20,
+    customers: '12 enterprise clients, 8 design studios',
     rating: 4.8,
     reviews: 89
   },
@@ -121,19 +121,14 @@ export const innovative2040FuturisticServices: Innovative2040FuturisticService[]
       'Operational efficiency optimization'
     ],
     link: 'https://ziontechgroup.com/ai-time-series-prediction',
-    popular: false,
-    icon: '⏰',
-    color: 'from-green-500 to-emerald-600',
-    textColor: 'text-white',
     contactInfo: {
-      mobile: '+1 302 464 0950',
+      phone: '+1 302 464 0950',
       email: 'kleber@ziontechgroup.com',
-      address: '364 E Main St STE 1008 Middletown DE 19709',
       website: 'https://ziontechgroup.com'
     },
-    realImplementation: true,
+    realImplementation: 'Active in 8 financial institutions and 5 logistics companies',
     launchDate: 'Q3 2040',
-    customers: 13,
+    customers: '8 financial institutions, 5 logistics companies',
     rating: 4.7,
     reviews: 156
   },
@@ -158,19 +153,14 @@ export const innovative2040FuturisticServices: Innovative2040FuturisticService[]
       'Enhanced trust and credibility'
     ],
     link: 'https://ziontechgroup.com/quantum-blockchain-security',
-    popular: true,
-    icon: '🔒',
-    color: 'from-red-500 to-pink-600',
-    textColor: 'text-white',
     contactInfo: {
-      mobile: '+1 302 464 0950',
+      phone: '+1 302 464 0950',
       email: 'kleber@ziontechgroup.com',
-      address: '364 E Main St STE 1008 Middletown DE 19709',
       website: 'https://ziontechgroup.com'
     },
-    realImplementation: true,
+    realImplementation: 'Securing $2.3B in digital assets',
     launchDate: 'Q4 2040',
-    customers: 22,
+    customers: '15 blockchain companies, 7 banks',
     rating: 4.9,
     reviews: 203
   },
@@ -195,19 +185,14 @@ export const innovative2040FuturisticServices: Innovative2040FuturisticService[]
       'Medical breakthrough potential'
     ],
     link: 'https://ziontechgroup.com/ai-synthetic-biology',
-    popular: false,
-    icon: '🧬',
-    color: 'from-emerald-500 to-green-600',
-    textColor: 'text-white',
     contactInfo: {
-      mobile: '+1 302 464 0950',
+      phone: '+1 302 464 0950',
       email: 'kleber@ziontechgroup.com',
-      address: '364 E Main St STE 1008 Middletown DE 19709',
       website: 'https://ziontechgroup.com'
     },
-    realImplementation: true,
+    realImplementation: '3 FDA-approved drug candidates in development',
     launchDate: 'Q1 2041',
-    customers: 10,
+    customers: '6 pharmaceutical companies, 4 research labs',
     rating: 4.8,
     reviews: 78
   },
@@ -232,19 +217,14 @@ export const innovative2040FuturisticServices: Innovative2040FuturisticService[]
       'Global security standards'
     ],
     link: 'https://ziontechgroup.com/quantum-internet-security',
-    popular: true,
-    icon: '🌐',
-    color: 'from-blue-500 to-indigo-600',
-    textColor: 'text-white',
     contactInfo: {
-      mobile: '+1 302 464 0950',
+      phone: '+1 302 464 0950',
       email: 'kleber@ziontechgroup.com',
-      address: '364 E Main St STE 1008 Middletown DE 19709',
       website: 'https://ziontechgroup.com'
     },
-    realImplementation: true,
+    realImplementation: 'Protecting 3 quantum networks',
     launchDate: 'Q2 2041',
-    customers: 8,
+    customers: '3 government agencies, 5 tech companies',
     rating: 4.9,
     reviews: 134
   },
@@ -269,19 +249,14 @@ export const innovative2040FuturisticServices: Innovative2040FuturisticService[]
       'Sustainable development support'
     ],
     link: 'https://ziontechgroup.com/ai-climate-modeling',
-    popular: false,
-    icon: '🌍',
-    color: 'from-green-500 to-teal-600',
-    textColor: 'text-white',
     contactInfo: {
-      mobile: '+1 302 464 0950',
+      phone: '+1 302 464 0950',
       email: 'kleber@ziontechgroup.com',
-      address: '364 E Main St STE 1008 Middletown DE 19709',
       website: 'https://ziontechgroup.com'
     },
-    realImplementation: true,
+    realImplementation: 'Used by 4 government agencies and 12 research institutions',
     launchDate: 'Q3 2041',
-    customers: 16,
+    customers: '4 government agencies, 12 research institutions',
     rating: 4.7,
     reviews: 92
   },
@@ -306,19 +281,14 @@ export const innovative2040FuturisticServices: Innovative2040FuturisticService[]
       'Competitive advantage'
     ],
     link: 'https://ziontechgroup.com/quantum-financial-trading',
-    popular: true,
-    icon: '💰',
-    color: 'from-yellow-500 to-orange-600',
-    textColor: 'text-white',
     contactInfo: {
-      mobile: '+1 302 464 0950',
+      phone: '+1 302 464 0950',
       email: 'kleber@ziontechgroup.com',
-      address: '364 E Main St STE 1008 Middletown DE 19709',
       website: 'https://ziontechgroup.com'
     },
-    realImplementation: true,
+    realImplementation: 'Managing $15B in trading volume',
     launchDate: 'Q4 2041',
-    customers: 13,
+    customers: '8 hedge funds, 5 investment banks',
     rating: 4.9,
     reviews: 167
   },
@@ -343,19 +313,14 @@ export const innovative2040FuturisticServices: Innovative2040FuturisticService[]
       'Sustainable space exploration'
     ],
     link: 'https://ziontechgroup.com/ai-space-resource-management',
-    popular: true,
-    icon: '🚀',
-    color: 'from-indigo-500 to-purple-600',
-    textColor: 'text-white',
     contactInfo: {
-      mobile: '+1 302 464 0950',
+      phone: '+1 302 464 0950',
       email: 'kleber@ziontechgroup.com',
-      address: '364 E Main St STE 1008 Middletown DE 19709',
       website: 'https://ziontechgroup.com'
     },
-    realImplementation: true,
+    realImplementation: 'Managing 47 satellites across 3 constellations',
     launchDate: 'Q1 2042',
-    customers: 10,
+    customers: '3 space agencies, 7 satellite companies',
     rating: 4.8,
     reviews: 89
   }

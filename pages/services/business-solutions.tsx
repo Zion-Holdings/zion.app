@@ -2,205 +2,186 @@ import React from 'react';
 import Layout from '../../components/layout/Layout';
 import { motion } from 'framer-motion';
 import { 
-  Target, Cpu, Zap, Shield, Users, Star, CheckCircle, 
-  ArrowRight, Play, TrendingUp, Globe, Database, Brain, Rocket,
-  Lock, Cloud, Network, FileText, GraduationCap, DollarSign, Clock, Briefcase
+  Target, Sparkles, Zap, Star, ArrowRight, 
+  CheckCircle, Users, Award, Clock, TrendingUp, Briefcase
 } from 'lucide-react';
+import Link from 'next/link';
 
-const BusinessSolutionsPage: React.FC = () => {
-  const features = [
-    {
-      icon: Target,
-      title: "Micro SAAS Development",
-      description: "Custom software-as-a-service solutions tailored to your business needs",
-      color: "from-emerald-500 to-teal-500"
-    },
-    {
-      icon: Briefcase,
-      title: "Business Process Automation",
-      description: "Streamline operations with intelligent automation and workflow optimization",
-      color: "from-teal-500 to-emerald-500"
-    },
-    {
-      icon: TrendingUp,
-      title: "Digital Transformation",
-      description: "Complete business modernization and digital strategy implementation",
-      color: "from-emerald-500 to-green-500"
-    },
-    {
-      icon: Users,
-      title: "Strategic Consulting",
-      description: "Expert guidance for technology strategy and business optimization",
-      color: "from-green-500 to-emerald-500"
-    }
-  ];
-
+const BusinessSolutionsServices: React.FC = () => {
   const services = [
     {
-      title: "Micro SAAS Platform",
-      description: "Custom software-as-a-service platform designed for your specific business requirements",
-      price: "From $75,000",
-      features: ["Custom development", "Cloud deployment", "User management", "Analytics dashboard"]
+      title: "Autonomous AI Business Intelligence",
+      description: "Revolutionary AI-powered business intelligence with autonomous decision making",
+      href: "/autonomous-ai-business-intelligence-2045",
+      features: ["Autonomous Decision Making", "AI Consciousness", "Business Intelligence", "Predictive Analytics"],
+      price: "$19,999/month",
+      badge: "Featured"
     },
     {
-      title: "Business Automation Suite",
-      description: "Comprehensive automation platform for business processes and workflows",
-      price: "From $50,000",
-      features: ["Workflow automation", "Process optimization", "Integration APIs", "Performance monitoring"]
+      title: "AI Content Intelligence Platform",
+      description: "Advanced AI content intelligence with consciousness and automation",
+      href: "/ai-content-intelligence-platform-2045",
+      features: ["Content Intelligence", "AI Consciousness", "Automation", "Content Optimization"],
+      price: "$14,999/month",
+      badge: "Popular"
     },
     {
-      title: "Digital Transformation Package",
-      description: "End-to-end digital transformation services for modern business operations",
-      price: "From $200,000",
-      features: ["Strategy planning", "Technology implementation", "Change management", "Ongoing support"]
+      title: "Predictive Analytics Platform",
+      description: "Next-generation predictive analytics with AI consciousness and forecasting",
+      href: "/predictive-analytics-platform-2045",
+      features: ["Predictive Analytics", "AI Forecasting", "Consciousness Integration", "Business Insights"],
+      price: "$24,999/month",
+      badge: "Advanced"
+    },
+    {
+      title: "Business Process Automation",
+      description: "Comprehensive business process automation with AI consciousness",
+      href: "/business-process-automation-2045",
+      features: ["Process Automation", "AI Consciousness", "Workflow Optimization", "Efficiency Boost"],
+      price: "$9,999/month",
+      badge: "Essential"
     }
   ];
 
   const stats = [
-    { number: "500+", label: "Projects Delivered", icon: Target },
-    { number: "95%", label: "Client Satisfaction", icon: Star },
-    { number: "40%", label: "Cost Reduction", icon: TrendingUp },
-    { number: "24/7", label: "Support Available", icon: Clock }
+    { number: "2000+", label: "Business Projects", icon: Target },
+    { number: "99.9%", label: "Success Rate", icon: CheckCircle },
+    { number: "500+", label: "Business Clients", icon: Users },
+    { number: "24/7", label: "Business Support", icon: Clock }
   ];
 
   return (
     <Layout 
       title="Business Solutions Services - Zion Tech Group"
-      description="Revolutionary business solutions including micro SAAS development, process automation, and digital transformation services."
-      keywords="business solutions, micro SAAS, business automation, digital transformation, strategic consulting, Zion Tech Group"
-      canonicalUrl="https://ziontechgroup.com/services/business-solutions"
+      description="Revolutionary business solutions including AI business intelligence, content intelligence, and process automation. Transform your business with cutting-edge AI technology."
+      keywords="business solutions, AI business intelligence, content intelligence, process automation, Zion Tech Group"
     >
-      <div className="min-h-screen bg-gradient-to-br from-slate-900 via-emerald-900 to-slate-900">
+      <div className="min-h-screen bg-gradient-to-br from-gray-900 via-emerald-900 to-gray-900">
         {/* Hero Section */}
-        <section className="relative overflow-hidden py-20 px-4 sm:px-6 lg:px-8">
-          <div className="max-w-7xl mx-auto">
+        <section className="relative py-20 px-4 sm:px-6 lg:px-8">
+          <div className="max-w-7xl mx-auto text-center">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
-              className="text-center"
             >
-              <h1 className="text-5xl md:text-7xl font-bold text-white mb-6">
-                Business <span className="bg-gradient-to-r from-emerald-400 to-teal-400 bg-clip-text text-transparent">Solutions</span>
+              <div className="inline-flex items-center space-x-2 bg-emerald-500/20 border border-emerald-500/30 rounded-full px-4 py-2 mb-6">
+                <Target className="w-5 h-5 text-emerald-400" />
+                <span className="text-emerald-300 text-sm font-medium">Business Solutions Services</span>
+              </div>
+              
+              <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
+                Revolutionary
+                <span className="bg-gradient-to-r from-emerald-400 via-teal-400 to-cyan-400 bg-clip-text text-transparent">
+                  {" "}Business Solutions
+                </span>
+                <br />
+                with AI
               </h1>
-              <p className="text-xl md:text-2xl text-gray-300 mb-8 max-w-4xl mx-auto">
-                Transform your business with cutting-edge technology solutions, 
-                micro SAAS platforms, and intelligent automation that drives growth and efficiency.
+              
+              <p className="text-xl text-gray-300 max-w-3xl mx-auto mb-8">
+                Transform your business with autonomous AI intelligence, content optimization, 
+                and process automation that drives growth and efficiency.
               </p>
+              
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <button className="bg-gradient-to-r from-emerald-500 to-teal-500 text-white px-8 py-4 rounded-lg font-semibold hover:from-emerald-600 hover:to-teal-600 transition-all duration-300 flex items-center justify-center">
-                  Get Started <ArrowRight className="ml-2" />
-                </button>
-                <button className="border border-emerald-400 text-emerald-400 px-8 py-4 rounded-lg font-semibold hover:bg-emerald-400 hover:text-white transition-all duration-300 flex items-center justify-center">
-                  <Play className="mr-2" /> Watch Demo
-                </button>
+                <Link 
+                  href="/contact"
+                  className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-emerald-500 to-teal-500 text-white font-semibold rounded-full hover:from-emerald-600 hover:to-teal-600 transition-all duration-300 shadow-lg hover:shadow-emerald-500/25"
+                >
+                  Transform Your Business
+                  <ArrowRight className="w-5 h-5 ml-2" />
+                </Link>
+                <Link 
+                  href="/solutions"
+                  className="inline-flex items-center px-8 py-4 border-2 border-emerald-500 text-emerald-400 font-semibold rounded-full hover:bg-emerald-500 hover:text-white transition-all duration-300"
+                >
+                  Explore Solutions
+                </Link>
               </div>
             </motion.div>
           </div>
         </section>
 
-        {/* Features Section */}
-        <section className="py-20 px-4 sm:px-6 lg:px-8">
-          <div className="max-w-7xl mx-auto">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-              className="text-center mb-16"
-            >
-              <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-                Revolutionary Business Features
-              </h2>
-              <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-                Our business solutions combine innovative technology with proven business methodologies 
-                to deliver measurable results and competitive advantages.
-              </p>
-            </motion.div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-              {features.map((feature, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.8, delay: index * 0.1 }}
-                  className="bg-gradient-to-br from-slate-800 to-slate-700 p-6 rounded-xl border border-slate-600 hover:border-emerald-500 transition-all duration-300"
-                >
-                  <div className={`w-16 h-16 bg-gradient-to-r ${feature.color} rounded-lg flex items-center justify-center mb-4 mx-auto`}>
-                    <feature.icon className="w-8 h-8 text-white" />
-                  </div>
-                  <h3 className="text-xl font-semibold text-white mb-3">{feature.title}</h3>
-                  <p className="text-gray-300">{feature.description}</p>
-                </motion.div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* Services Section */}
-        <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-slate-800 to-slate-900">
-          <div className="max-w-7xl mx-auto">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-              className="text-center mb-16"
-            >
-              <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-                Business Solutions Services
-              </h2>
-              <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-                Comprehensive business solutions designed to optimize operations, 
-                increase efficiency, and drive sustainable growth for your organization.
-              </p>
-            </motion.div>
-
-            <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-              {services.map((service, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.8, delay: index * 0.1 }}
-                  className="bg-gradient-to-br from-slate-700 to-slate-600 p-8 rounded-xl border border-slate-500 hover:border-emerald-400 transition-all duration-300"
-                >
-                  <h3 className="text-2xl font-bold text-white mb-4">{service.title}</h3>
-                  <p className="text-gray-300 mb-6">{service.description}</p>
-                  <div className="text-3xl font-bold text-emerald-400 mb-6">{service.price}</div>
-                  <ul className="space-y-3 mb-8">
-                    {service.features.map((feature, featureIndex) => (
-                      <li key={featureIndex} className="flex items-center text-gray-300">
-                        <CheckCircle className="w-5 h-5 text-green-400 mr-3 flex-shrink-0" />
-                        {feature}
-                      </li>
-                    ))}
-                  </ul>
-                  <button className="w-full bg-gradient-to-r from-emerald-500 to-teal-500 text-white py-3 rounded-lg font-semibold hover:from-emerald-600 hover:to-teal-600 transition-all duration-300">
-                    Get Started
-                  </button>
-                </motion.div>
-              ))}
-            </div>
-          </div>
-        </section>
-
         {/* Stats Section */}
-        <section className="py-20 px-4 sm:px-6 lg:px-8">
+        <section className="py-16 px-4 sm:px-6 lg:px-8">
           <div className="max-w-7xl mx-auto">
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
               {stats.map((stat, index) => (
                 <motion.div
                   key={index}
-                  initial={{ opacity: 0, scale: 0.8 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.8, delay: index * 0.1 }}
                   className="text-center"
                 >
-                  <div className="w-20 h-20 bg-gradient-to-r from-emerald-500 to-teal-500 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <stat.icon className="w-10 h-10 text-white" />
+                  <div className="inline-flex items-center justify-center w-16 h-16 bg-emerald-500/20 rounded-full mb-4">
+                    <stat.icon className="w-8 h-8 text-emerald-400" />
                   </div>
-                  <div className="text-4xl font-bold text-white mb-2">{stat.number}</div>
-                  <div className="text-gray-300">{stat.label}</div>
+                  <div className="text-3xl font-bold text-white mb-2">{stat.number}</div>
+                  <div className="text-gray-400">{stat.label}</div>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Services Grid */}
+        <section className="py-20 px-4 sm:px-6 lg:px-8">
+          <div className="max-w-7xl mx-auto">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              className="text-center mb-16"
+            >
+              <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
+                Business Solutions Services
+              </h2>
+              <p className="text-xl text-gray-300 max-w-2xl mx-auto">
+                Choose from our comprehensive suite of business transformation and AI intelligence services
+              </p>
+            </motion.div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
+              {services.map((service, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.8, delay: index * 0.1 }}
+                  className="bg-gray-800/50 backdrop-blur-sm border border-gray-700/50 rounded-2xl p-8 hover:border-emerald-500/50 transition-all duration-300 hover:shadow-2xl hover:shadow-emerald-500/10"
+                >
+                  {service.badge && (
+                    <div className="inline-flex items-center px-3 py-1 bg-emerald-500/20 border border-emerald-500/30 rounded-full text-xs font-medium text-emerald-300 mb-4">
+                      {service.badge}
+                    </div>
+                  )}
+                  
+                  <h3 className="text-2xl font-bold text-white mb-4">{service.title}</h3>
+                  <p className="text-gray-300 mb-6">{service.description}</p>
+                  
+                  <div className="space-y-3 mb-6">
+                    {service.features.map((feature, featureIndex) => (
+                      <div key={featureIndex} className="flex items-center space-x-3">
+                        <CheckCircle className="w-5 h-5 text-emerald-400 flex-shrink-0" />
+                        <span className="text-gray-300">{feature}</span>
+                      </div>
+                    ))}
+                  </div>
+                  
+                  <div className="flex items-center justify-between mb-6">
+                    <div className="text-2xl font-bold text-emerald-400">{service.price}</div>
+                    <Star className="w-5 h-5 text-yellow-400" />
+                  </div>
+                  
+                  <Link 
+                    href={service.href}
+                    className="inline-flex items-center justify-center w-full px-6 py-3 bg-gradient-to-r from-emerald-500 to-teal-500 text-white font-semibold rounded-lg hover:from-emerald-600 hover:to-teal-600 transition-all duration-300"
+                  >
+                    Learn More
+                    <ArrowRight className="w-5 h-5 ml-2" />
+                  </Link>
                 </motion.div>
               ))}
             </div>
@@ -208,22 +189,36 @@ const BusinessSolutionsPage: React.FC = () => {
         </section>
 
         {/* CTA Section */}
-        <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-emerald-600 to-teal-600">
+        <section className="py-20 px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto text-center">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
             >
-              <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-                Transform Your Business Today
+              <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
+                Ready to Transform Your Business?
               </h2>
-              <p className="text-xl text-white/90 mb-8">
-                Ready to revolutionize your business operations with cutting-edge technology solutions?
+              <p className="text-xl text-gray-300 mb-8">
+                Join the AI revolution in business. Transform your operations, intelligence, 
+                and processes with our revolutionary business solutions.
               </p>
-              <button className="bg-white text-emerald-600 px-8 py-4 rounded-lg font-semibold hover:bg-gray-100 transition-all duration-300 text-lg">
-                Start Your Transformation
-              </button>
+              
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <Link 
+                  href="/contact"
+                  className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-emerald-500 to-teal-500 text-white font-semibold rounded-full hover:from-emerald-600 hover:to-teal-600 transition-all duration-300 shadow-lg hover:shadow-emerald-500/25"
+                >
+                  Start Business Transformation
+                  <ArrowRight className="w-5 h-5 ml-2" />
+                </Link>
+                <Link 
+                  href="/team"
+                  className="inline-flex items-center px-8 py-4 border-2 border-emerald-500 text-emerald-400 font-semibold rounded-full hover:bg-emerald-500 hover:text-white transition-all duration-300"
+                >
+                  Meet Our Team
+                </Link>
+              </div>
             </motion.div>
           </div>
         </section>
@@ -232,4 +227,4 @@ const BusinessSolutionsPage: React.FC = () => {
   );
 };
 
-export default BusinessSolutionsPage;
+export default BusinessSolutionsServices;

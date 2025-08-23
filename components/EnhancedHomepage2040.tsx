@@ -62,6 +62,7 @@ const EnhancedHomepage2040: React.FC = () => {
     { name: 'Emerging Technologies', icon: <Rocket className="w-8 h-8" />, href: '/emerging-tech', color: 'from-orange-500 to-red-600' },
     { name: 'Enterprise Solutions', icon: <Shield className="w-8 h-8" />, href: '/enterprise', color: 'from-green-500 to-emerald-600' },
     { name: 'Micro SAAS', icon: <Zap className="w-8 h-8" />, href: '/micro-saas', color: 'from-yellow-500 to-orange-600' },
+    { name: 'Innovative Services', icon: <Star className="w-8 h-8" />, href: '/innovative-services-showcase-2025', color: 'from-yellow-500 to-orange-600' },
     { name: 'All Services', icon: <Globe className="w-8 h-8" />, href: '/services', color: 'from-indigo-500 to-purple-600' }
   ];
 
