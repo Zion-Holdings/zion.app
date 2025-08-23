@@ -1,4 +1,4 @@
-import React, { Suspense, lazy } from 'react';
+import React, { useEffect, useState, useCallback, memo } from 'react';
 import Layout from './layout/Layout';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
@@ -26,6 +26,98 @@ interface UnifiedService {
 
 // Lazy load components for better performance
 const UltraFuturisticServiceCard2026 = lazy(() => import('./ui/UltraFuturisticServiceCard2026'));
+
+// Memoized feature components for better performance
+const FeatureCard = memo(({ feature, index }: { feature: any; index: number }) => (
+  <motion.div
+    className="group relative overflow-hidden rounded-2xl bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-sm border border-white/10 p-8 cursor-pointer"
+    initial={{ opacity: 0, y: 40 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    transition={{ duration: 0.6, delay: index * 0.1, ease: "easeOut" }}
+    viewport={{ once: true, margin: "-50px" }}
+    whileHover={{ y: -10, scale: 1.02 }}
+    onClick={() => window.location.href = feature.href}
+    role="button"
+    tabIndex={0}
+    onKeyDown={(e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        window.location.href = feature.href;
+      }
+    }}
+    aria-label={`Learn more about ${feature.title}`}
+  >
+    <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/5 to-blue-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+    <div className="relative">
+      <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-cyan-500 to-blue-600 p-3 mb-6">
+        <feature.icon className="w-full h-full text-white" aria-hidden="true" />
+      </div>
+      <h3 className="text-xl font-semibold text-white mb-4">{feature.title}</h3>
+      <p className="text-gray-300 leading-relaxed">{feature.description}</p>
+      <div className="mt-4 flex items-center text-cyan-400 group-hover:text-cyan-300 transition-colors">
+        <span className="text-sm font-medium">Learn More</span>
+        <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
+      </div>
+    </div>
+  </motion.div>
+));
+
+FeatureCard.displayName = 'FeatureCard';
+
+// Memoized service card component
+const ServiceCard = memo(({ service, index }: { service: any; index: number }) => (
+  <motion.div
+    className="group relative overflow-hidden rounded-2xl bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-sm border border-white/10 cursor-pointer"
+    initial={{ opacity: 0, y: 40 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    transition={{ duration: 0.6, delay: index * 0.1, ease: "easeOut" }}
+    viewport={{ once: true, margin: "-50px" }}
+    whileHover={{ y: -5, scale: 1.02 }}
+    onClick={() => window.location.href = service.href}
+    role="button"
+    tabIndex={0}
+    onKeyDown={(e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        window.location.href = service.href;
+      }
+    }}
+    aria-label={`Learn more about ${service.title}`}
+  >
+    <div className={`absolute inset-0 bg-gradient-to-br ${service.gradient} opacity-0 group-hover:opacity-10 transition-opacity duration-300`} />
+    <div className="relative p-6">
+      <div className={`w-12 h-12 rounded-lg bg-gradient-to-br ${service.gradient} p-3 mb-4`}>
+        <service.icon className="w-full h-full text-white" aria-hidden="true" />
+      </div>
+      <h3 className="text-xl font-semibold text-white mb-3">{service.title}</h3>
+      <p className="text-gray-300 leading-relaxed mb-4">{service.description}</p>
+      <div className="flex items-center text-cyan-400 group-hover:text-cyan-300 transition-colors">
+        <span className="text-sm font-medium">Learn More</span>
+        <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
+      </div>
+    </div>
+  </motion.div>
+));
+
+ServiceCard.displayName = 'ServiceCard';
+
+// Memoized stats component
+const StatsCard = memo(({ stat, index }: { stat: any; index: number }) => (
+  <motion.div
+    className="text-center group"
+    initial={{ opacity: 0, y: 40 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    transition={{ duration: 0.6, delay: index * 0.1, ease: "easeOut" }}
+    viewport={{ once: true, margin: "-50px" }}
+    whileHover={{ y: -5 }}
+  >
+    <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-gradient-to-r from-cyan-500/20 to-blue-500/20 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+      <stat.icon className="w-8 h-8 text-cyan-400" aria-hidden="true" />
+    </div>
+    <div className="text-3xl md:text-4xl font-bold text-white mb-2">{stat.number}</div>
+    <div className="text-gray-400">{stat.label}</div>
+  </motion.div>
+));
+
+StatsCard.displayName = 'StatsCard';
 
 const Homepage2025: React.FC = () => {
   const [isLoading, setIsLoading] = useState(true);
@@ -176,6 +268,15 @@ const Homepage2025: React.FC = () => {
     { id: 'contact', label: 'Contact', icon: '📞' }
   ];
 
+  const services = [
+    { icon: Brain, title: "AI & Machine Learning", description: "Advanced AI solutions for enterprise automation", gradient: "from-purple-500 to-pink-500", href: "/ai-services" },
+    { icon: Cpu, title: "Quantum Computing", description: "Next-generation computational power", gradient: "from-cyan-500 to-blue-500", href: "/quantum-computing" },
+    { icon: Shield, title: "Cybersecurity", description: "Military-grade protection for digital assets", gradient: "from-red-500 to-orange-500", href: "/cybersecurity" },
+    { icon: Cloud, title: "Cloud Infrastructure", description: "Scalable cloud solutions for growth", gradient: "from-emerald-500 to-teal-500", href: "/cloud-platform" },
+    { icon: BarChart3, title: "Data Analytics", description: "Transform data into actionable insights", gradient: "from-indigo-500 to-purple-500", href: "/data-analytics" },
+    { icon: Lock, title: "Blockchain Solutions", description: "Secure, transparent digital infrastructure", gradient: "from-yellow-500 to-orange-500", href: "/blockchain" }
+  ];
+
   return (
     <Layout>
       {/* Main Content */}
@@ -197,20 +298,17 @@ const Homepage2025: React.FC = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 1, ease: "easeOut" }}
             >
-              {/* Company Badge */}
-              <motion.div
-                initial={{ opacity: 0, scale: 0.8 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ delay: 0.2, duration: 0.6 }}
-                className="inline-flex items-center gap-2 px-4 py-2 bg-black/20 backdrop-blur-sm border border-cyan-400/30 rounded-full text-cyan-400 text-sm font-medium mb-6"
+              <button 
+                className="px-8 py-4 bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-semibold rounded-xl hover:from-cyan-600 hover:to-blue-700 transition-all duration-300 transform hover:scale-105 shadow-lg shadow-cyan-500/25 focus:outline-none focus:ring-4 focus:ring-cyan-500 focus:ring-opacity-50"
+                onClick={handleGetStarted}
+                aria-label="Get started with Zion Tech Group services"
               >
-                <Star className="w-4 h-4" />
-                <span>Pioneering Future Technology</span>
-              </motion.div>
-
-              <h1 
-                id="hero-heading"
-                className="text-5xl md:text-7xl lg:text-8xl font-bold mb-6 bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 bg-clip-text text-transparent leading-tight"
+                Get Started Today
+              </button>
+              <button 
+                className="px-8 py-4 border-2 border-cyan-400 text-cyan-400 font-semibold rounded-xl hover:bg-cyan-400 hover:text-black transition-all duration-300 focus:outline-none focus:ring-4 focus:ring-cyan-400 focus:ring-opacity-50"
+                onClick={handleWatchDemo}
+                aria-label="Watch a demo of our services"
               >
                 Zion Tech Group
               </h1>
@@ -288,7 +386,18 @@ const Homepage2025: React.FC = () => {
                 Our track record speaks for itself with proven results across multiple industries
               </p>
             </motion.div>
-            
+
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+              {stats.map((stat, index) => (
+                <StatsCard key={index} stat={stat} index={index} />
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Enhanced Features Section */}
+        <section className="py-20 px-4" aria-labelledby="features-heading">
+          <div className="max-w-6xl mx-auto">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -340,6 +449,12 @@ const Homepage2025: React.FC = () => {
                 <div className="text-sm text-gray-500 mt-1">Unlimited potential</div>
               </motion.div>
             </motion.div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {features.map((feature, index) => (
+                <FeatureCard key={index} feature={feature} index={index} />
+              ))}
+            </div>
           </div>
         </section>
 
@@ -386,68 +501,9 @@ const Homepage2025: React.FC = () => {
             </motion.div>
             
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              <Suspense fallback={
-                <div className="h-64 bg-gray-800/50 rounded-xl animate-pulse flex items-center justify-center">
-                  <div className="text-gray-400">Loading...</div>
-                </div>
-              }>
-                <UltraFuturisticServiceCard2026
-                  service={{
-                    id: 'ai-ml',
-                    name: 'AI & Machine Learning',
-                    tagline: 'Advanced artificial intelligence solutions',
-                    description: 'Advanced artificial intelligence solutions for modern businesses',
-                    icon: '🧠',
-                    features: ['Predictive Analytics', 'Natural Language Processing', 'Computer Vision'],
-                    price: 'From $2,999/month',
-                    period: 'month',
-                    category: 'AI & ML'
-                  }}
-                  variant="ai"
-                />
-              </Suspense>
-              
-              <Suspense fallback={
-                <div className="h-64 bg-gray-800/50 rounded-xl animate-pulse flex items-center justify-center">
-                  <div className="text-gray-400">Loading...</div>
-                </div>
-              }>
-                <UltraFuturisticServiceCard2026
-                  service={{
-                    id: 'quantum',
-                    name: 'Quantum Technology',
-                    tagline: 'Next-generation quantum computing',
-                    description: 'Revolutionary quantum computing solutions for complex problems',
-                    icon: '⚛️',
-                    features: ['Quantum Algorithms', 'Quantum Security', 'Quantum Optimization'],
-                    price: 'From $5,999/month',
-                    period: 'month',
-                    category: 'Quantum'
-                  }}
-                  variant="quantum"
-                />
-              </Suspense>
-              
-              <Suspense fallback={
-                <div className="h-64 bg-gray-800/50 rounded-xl animate-pulse flex items-center justify-center">
-                  <div className="text-gray-400">Loading...</div>
-                </div>
-              }>
-                <UltraFuturisticServiceCard2026
-                  service={{
-                    id: 'space-tech',
-                    name: 'Space Technology',
-                    tagline: 'Innovative space solutions',
-                    description: 'Cutting-edge space technology and exploration solutions',
-                    icon: '🚀',
-                    features: ['Satellite Systems', 'Space Mining', 'Interplanetary Tech'],
-                    price: 'From $8,999/month',
-                    period: 'month',
-                    category: 'Space'
-                  }}
-                  variant="emerging"
-                />
-              </Suspense>
+              {services.map((service, index) => (
+                <ServiceCard key={index} service={service} index={index} />
+              ))}
             </div>
             
             {/* View All Services CTA */}
@@ -490,6 +546,22 @@ const Homepage2025: React.FC = () => {
               <p className="text-xl text-gray-300 max-w-3xl mx-auto">
                 From autonomous operations to quantum breakthroughs, we're redefining what's possible in technology
               </p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <button 
+                  className="px-8 py-4 bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-semibold rounded-xl hover:from-cyan-600 hover:to-blue-700 transition-all duration-300 transform hover:scale-105 focus:outline-none focus:ring-4 focus:ring-cyan-500 focus:ring-opacity-50"
+                  onClick={() => window.location.href = '/get-started'}
+                  aria-label="Start your journey with Zion Tech Group"
+                >
+                  Start Your Journey
+                </button>
+                <button 
+                  className="px-8 py-4 border-2 border-cyan-400 text-cyan-400 font-semibold rounded-xl hover:bg-cyan-400 hover:text-black transition-all duration-300 focus:outline-none focus:ring-4 focus:ring-cyan-400 focus:ring-opacity-50"
+                  onClick={() => window.location.href = '/demo'}
+                  aria-label="Schedule a demo of our services"
+                >
+                  Schedule a Demo
+                </button>
+              </div>
             </motion.div>
             
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
