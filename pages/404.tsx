@@ -1,8 +1,10 @@
-export default function Custom404() {
+export default function NotFound() {
   return (
-    <div className="py-16 text-center">
-      <h1 className="text-3xl font-semibold mb-2">404 - Page Not Found</h1>
-      <p className="text-gray-600 dark:text-gray-300">The page you are looking for does not exist.</p>
-    </div>
+    <main className="min-h-screen flex items-center justify-center bg-zinc-950 text-white">
+      <div className="text-center">
+        <h1 className="text-2xl font-bold">404 - Page Not Found</h1>
+        <p className="mt-2 text-zinc-400">The page you are looking for does not exist.</p>
+      </div>
+    </main>
   );
 }
