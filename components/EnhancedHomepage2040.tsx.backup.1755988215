@@ -61,12 +61,22 @@ const EnhancedHomepage2040: React.FC = () => {
   ];
 
   const categories = [
+<<<<<<< HEAD
+    { name: 'AI & Machine Learning', icon: <Brain className="w-8 h-8" />, href: '/ai-services', color: 'from-cyan-500 to-blue-600' },
+    { name: 'Quantum Computing', icon: <Atom className="w-8 h-8" />, href: '/quantum-services', color: 'from-purple-500 to-pink-600' },
+    { name: 'Emerging Technologies', icon: <Rocket className="w-8 h-8" />, href: '/emerging-tech', color: 'from-orange-500 to-red-600' },
+    { name: 'Enterprise Solutions', icon: <Shield className="w-8 h-8" />, href: '/enterprise', color: 'from-green-500 to-emerald-600' },
+    { name: 'Micro SAAS', icon: <Zap className="w-8 h-8" />, href: '/micro-saas', color: 'from-yellow-500 to-orange-600' },
+    { name: 'Innovative Services', icon: <Star className="w-8 h-8" />, href: '/innovative-services-showcase-2025', color: 'from-yellow-500 to-orange-600' },
+    { name: 'All Services', icon: <Globe className="w-8 h-8" />, href: '/services', color: 'from-indigo-500 to-purple-600' }
+=======
     { name: 'AI & Machine Learning', icon: <Brain className="w-8 h-8" />, href: '/ai-services', color: 'from-cyan-500 to-blue-600', id: 'ai' },
     { name: 'Quantum Computing', icon: <Atom className="w-8 h-8" />, href: '/quantum-services', color: 'from-purple-500 to-pink-600', id: 'quantum' },
     { name: 'Emerging Technologies', icon: <Rocket className="w-8 h-8" />, href: '/emerging-tech', color: 'from-orange-500 to-red-600', id: 'emerging' },
     { name: 'Enterprise Solutions', icon: <Shield className="w-8 h-8" />, href: '/enterprise', color: 'from-green-500 to-emerald-600', id: 'enterprise' },
     { name: 'Micro SAAS', icon: <Zap className="w-8 h-8" />, href: '/micro-saas', color: 'from-yellow-500 to-orange-600', id: 'saas' },
     { name: 'All Services', icon: <Globe className="w-8 h-8" />, href: '/services', color: 'from-indigo-500 to-purple-600', id: 'all' }
+>>>>>>> origin/cursor/analyze-improve-and-deploy-application-82b7
   ];
 
   const filteredCategories = selectedCategory === 'all' 

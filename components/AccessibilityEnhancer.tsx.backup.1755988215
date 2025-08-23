@@ -64,6 +64,10 @@ const AccessibilityEnhancer: React.FC<AccessibilityEnhancerProps> = () => {
       root.style.removeProperty('--animation-duration');
     }
 
+<<<<<<< HEAD
+    // Apply font size
+    root.style.fontSize = `${fontSize}px`;
+=======
   // Load saved settings
   useEffect(() => {
     const saved = localStorage.getItem('accessibility-settings');
@@ -177,6 +181,7 @@ const AccessibilityEnhancer: React.FC<AccessibilityEnhancerProps> = () => {
   // Quick accessibility shortcuts
   const toggleHighContrast = () => {
     applySettings({ ...settings, highContrast: !settings.highContrast });
+>>>>>>> origin/cursor/analyze-improve-and-deploy-application-82b7
   };
 
   const increaseFontSize = () => {

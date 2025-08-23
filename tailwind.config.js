@@ -7,6 +7,7 @@ module.exports = {
     './automation/**/*.{js,ts,jsx,tsx,mdx}',
     './scripts/**/*.{js,ts,jsx,tsx,mdx}',
   ],
+  darkMode: 'class',
   theme: {
     extend: {
       colors: {

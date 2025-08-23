@@ -6,7 +6,16 @@ import {
   Phone, Mail, MapPin, ArrowRight, Star, Users, Award,
   Bell, User, Settings, HelpCircle
 } from 'lucide-react';
+<<<<<<< HEAD
+import Link from 'next/link';
+import { useRouter } from 'next/router';
 import ThemeToggle from '../ThemeToggle';
+
+// Define Node type for DOM event handling
+type Node = HTMLElement | null;
+=======
+import ThemeToggle from '../ThemeToggle';
+>>>>>>> origin/cursor/analyze-improve-and-deploy-application-82b7
 
 interface NavigationItem {
   label: string;
@@ -41,6 +50,9 @@ const navigationItems: NavigationItem[] = [
     neonColor: 'shadow-cyan-400/50'
   },
   {
+<<<<<<< HEAD
+    label: 'Services',
+=======
     name: 'Quantum Computing',
     href: '/quantum-services',
     icon: <Atom className="w-5 h-5" />,
@@ -100,6 +112,7 @@ const navigationItems: NavigationItem[] = [
   },
   {
     name: 'All Services',
+>>>>>>> origin/cursor/analyze-improve-and-deploy-application-82b7
     href: '/services',
     icon: <Briefcase className="w-4 h-4" />,
     description: 'Explore our comprehensive technology solutions',
@@ -416,11 +429,69 @@ const UltraFuturisticNavigation2040: React.FC<UltraFuturisticNavigation2040Props
             ))}
           </div>
 
+<<<<<<< HEAD
+          {/* Right side actions */}
+          <div className="hidden lg:flex lg:items-center lg:space-x-4">
+            {/* Search */}
+            <div className="relative" ref={searchRef}>
+              <button
+                onClick={() => setIsSearchOpen(!isSearchOpen)}
+                className="p-2 text-gray-400 hover:text-white transition-colors duration-200 rounded-lg hover:bg-white/5"
+                aria-label="Open search"
+              >
+                <Search className="w-5 h-5" />
+              </button>
+              
+              <AnimatePresence>
+                {isSearchOpen && (
+                  <motion.div
+                    initial={{ opacity: 0, scale: 0.95, y: -10 }}
+                    animate={{ opacity: 1, scale: 1, y: 0 }}
+                    exit={{ opacity: 0, scale: 0.95, y: -10 }}
+                    transition={{ duration: 0.2 }}
+                    className="absolute top-full right-0 mt-2 w-80 bg-black/95 backdrop-blur-md border border-gray-800/50 rounded-xl shadow-2xl p-4"
+                  >
+                    <form onSubmit={handleSearch} className="space-y-4">
+                      <div className="relative">
+                        <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-gray-400" />
+                        <input
+                          ref={searchInputRef}
+                          type="text"
+                          value={searchQuery}
+                          onChange={(e) => setSearchQuery(e.target.value)}
+                          placeholder="Search services, solutions..."
+                          className="w-full pl-10 pr-4 py-2 bg-gray-900/50 border border-gray-700 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:border-transparent"
+                          autoFocus
+                        />
+                      </div>
+                      <button
+                        type="submit"
+                        className="w-full px-4 py-2 bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-medium rounded-lg hover:from-cyan-600 hover:to-blue-700 transition-all duration-300"
+                      >
+                        Search
+                      </button>
+                    </form>
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            </div>
+
+            {/* Notifications */}
+            <button className="relative p-2 text-gray-400 hover:text-white transition-colors duration-200 rounded-lg hover:bg-white/5">
+              <Bell className="w-5 h-5" />
+              {notifications > 0 && (
+                <span className="absolute -top-1 -right-1 w-5 h-5 bg-red-500 text-white text-xs rounded-full flex items-center justify-center">
+                  {notifications}
+                </span>
+              )}
+              <span className="sr-only">Notifications</span>
+=======
           {/* Right Side Actions */}
           <div className="hidden lg:flex items-center space-x-4">
             <ThemeToggle />
             <button className="p-2 text-gray-400 hover:text-white transition-colors">
               <Search className="w-5 h-5" />
+>>>>>>> origin/cursor/analyze-improve-and-deploy-application-82b7
             </button>
 
             {/* User Menu */}
@@ -552,6 +623,13 @@ const UltraFuturisticNavigation2040: React.FC<UltraFuturisticNavigation2040Props
                   )}
                 </div>
               ))}
+<<<<<<< HEAD
+
+              {/* Mobile CTA */}
+              <div className="pt-4 border-t border-gray-800">
+                <Link href="/get-started" className="block w-full px-4 py-3 bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-medium text-center rounded-lg hover:from-cyan-600 hover:to-blue-700 transition-all duration-300">
+                  Get Started
+=======
               
               <div className="pt-4 border-t border-cyan-500/20 space-y-3">
                 <Link href="/pricing-calculator">
@@ -568,6 +646,7 @@ const UltraFuturisticNavigation2040: React.FC<UltraFuturisticNavigation2040Props
                   <button className="w-full px-6 py-3 bg-gradient-to-r from-cyan-500 to-purple-600 text-white rounded-lg hover:from-cyan-600 hover:to-purple-700 transition-all duration-200">
                     Contact Us
                   </button>
+>>>>>>> origin/cursor/analyze-improve-and-deploy-application-82b7
                 </Link>
               </div>
             </div>
