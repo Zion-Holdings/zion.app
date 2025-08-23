@@ -1,81 +1,97 @@
 import React from 'react';
-import Head from 'next/head';
 import Layout from '../components/layout/Layout';
 import { motion } from 'framer-motion';
 import { 
-  Brain, TrendingUp, Shield, Zap, 
-  ArrowRight, DollarSign,
-  Phone, MessageCircle, BarChart3,
-  Heart, Rocket
+  Users, Brain, Zap, Target, Award, Clock, TrendingUp, 
+  MessageSquare, Heart, Star, CheckCircle, 
+  Shield, Database, Settings, Activity
 } from 'lucide-react';
 
-// const contactInfo = {
-//   mobile: '+1 302 464 0950',
-//   email: 'kleber@ziontechgroup.com',
-//   address: '364 E Main St STE 1008 Middletown DE 19709',
-//   website: 'https://ziontechgroup.com'
-// };
-
 const AICustomerSuccessPlatform: React.FC = () => {
+  const platformFeatures = [
+    {
+      title: "Intelligent Customer Insights",
+      icon: <Brain className="w-8 h-8 text-purple-400" />,
+      description: "AI-powered analytics that provide deep insights into customer behavior and satisfaction",
+      features: [
+        "Behavioral pattern analysis",
+        "Satisfaction prediction",
+        "Churn risk assessment",
+        "Engagement optimization"
+      ]
+    },
+    {
+      title: "Proactive Success Management",
+      icon: <Target className="w-8 h-8 text-blue-400" />,
+      description: "Proactively identify and address customer needs before they become issues",
+      features: [
+        "Predictive analytics",
+        "Early warning systems",
+        "Automated interventions",
+        "Success planning"
+      ]
+    },
+    {
+      title: "Personalized Customer Experience",
+      icon: <Users className="w-8 h-8 text-green-400" />,
+      description: "Deliver personalized experiences that increase customer satisfaction and loyalty",
+      features: [
+        "Individualized recommendations",
+        "Customized communication",
+        "Personalized onboarding",
+        "Tailored support"
+      ]
+    },
+    {
+      title: "Automated Success Workflows",
+      icon: <Zap className="w-8 h-8 text-yellow-400" />,
+      description: "Automate routine customer success tasks and workflows for maximum efficiency",
+      features: [
+        "Workflow automation",
+        "Task prioritization",
+        "Resource allocation",
+        "Performance tracking"
+      ]
+    }
+  ];
+
   return (
     <Layout>
-      <Head>
-        <title>AI Customer Success Platform | Zion Tech Group</title>
-        <meta name="description" content="Revolutionary AI-powered customer success platform that predicts and prevents churn with advanced machine learning and emotional intelligence." />
-        <meta name="keywords" content="AI customer success, churn prevention, customer retention, machine learning, predictive analytics" />
-        <link rel="canonical" href="https://ziontechgroup.com/ai-customer-success-platform" />
-      </Head>
-
-      <div className="min-h-screen bg-gradient-to-br from-black via-gray-900 to-black">
+      <div className="min-h-screen bg-gradient-to-br from-black via-pink-900/20 to-rose-900/20">
         {/* Hero Section */}
-        <section className="relative py-20 px-4 overflow-hidden">
-          <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/10 via-purple-500/10 to-pink-500/10" />
-          <div className="relative z-10 max-w-7xl mx-auto text-center">
+        <section className="relative py-20 px-4 sm:px-6 lg:px-8">
+          <div className="max-w-7xl mx-auto text-center">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
-              className="mb-8"
             >
-              <div className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-cyan-500/20 to-blue-500/20 rounded-full border border-cyan-500/30 mb-6">
-                <Brain className="w-5 h-5 text-cyan-400" />
-                <span className="text-cyan-400 font-medium">AI-Powered Platform</span>
+              <div className="flex justify-center mb-6">
+                <div className="p-4 bg-gradient-to-r from-pink-500/20 to-rose-500/20 rounded-full">
+                  <Users className="w-12 h-12 text-pink-400" />
+                </div>
               </div>
-              <h1 className="text-5xl md:text-7xl font-bold bg-gradient-to-r from-cyan-400 via-blue-400 to-purple-400 bg-clip-text text-transparent mb-6">
+              <h1 className="text-5xl md:text-7xl font-bold bg-gradient-to-r from-pink-400 via-rose-400 to-pink-400 bg-clip-text text-transparent mb-6">
                 AI Customer Success Platform
               </h1>
-              <p className="text-xl md:text-2xl text-gray-300 max-w-4xl mx-auto leading-relaxed">
-                Revolutionary AI-powered customer success platform that predicts and prevents churn with advanced machine learning and emotional intelligence.
+              <p className="text-xl md:text-2xl text-white/80 max-w-4xl mx-auto mb-8">
+                Revolutionary AI-powered platform that transforms customer success operations, 
+                maximizes satisfaction, and drives long-term customer loyalty through intelligent automation.
               </p>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-              className="flex flex-col sm:flex-row gap-4 justify-center items-center"
-            >
-              <a
-                href="/contact"
-                className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-cyan-500 to-blue-500 text-white font-semibold rounded-xl hover:from-cyan-600 hover:to-blue-600 transition-all duration-300 transform hover:scale-105"
-              >
-                <Rocket className="w-5 h-5" />
-                Get Started
-                <ArrowRight className="w-5 h-5" />
-              </a>
-              <a
-                href="/demo"
-                className="inline-flex items-center gap-2 px-8 py-4 border border-cyan-500/30 text-cyan-400 font-semibold rounded-xl hover:bg-cyan-500/10 transition-all duration-300"
-              >
-                <MessageCircle className="w-5 h-5" />
-                Book Demo
-              </a>
+              <div className="flex flex-wrap justify-center gap-4">
+                <button className="px-8 py-4 bg-gradient-to-r from-pink-500 to-rose-500 text-white font-semibold rounded-lg hover:from-pink-600 hover:to-rose-600 transition-all duration-300 transform hover:scale-105">
+                  Explore Platform
+                </button>
+                <button className="px-8 py-4 border border-pink-400/30 text-pink-400 font-semibold rounded-lg hover:bg-pink-400/10 transition-all duration-300">
+                  Request Demo
+                </button>
+              </div>
             </motion.div>
           </div>
         </section>
 
-        {/* Features Section */}
-        <section className="py-20 px-4">
+        {/* Platform Features */}
+        <section className="py-20 px-4 sm:px-6 lg:px-8">
           <div className="max-w-7xl mx-auto">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -85,65 +101,91 @@ const AICustomerSuccessPlatform: React.FC = () => {
               className="text-center mb-16"
             >
               <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-                Revolutionary Features
+                Advanced Platform Capabilities
               </h2>
-              <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-                Our AI platform combines cutting-edge technology with deep customer insights to deliver unprecedented customer success outcomes.
+              <p className="text-xl text-white/70 max-w-3xl mx-auto">
+                Our customer success platform combines cutting-edge AI with comprehensive analytics 
+                to revolutionize how you manage and optimize customer relationships.
               </p>
             </motion.div>
 
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {[
-                {
-                  icon: <Brain className="w-8 h-8" />,
-                  title: "Predictive Churn Analysis",
-                  description: "Advanced ML algorithms predict customer churn before it happens with 95%+ accuracy",
-                  color: "from-purple-500 to-pink-500"
-                },
-                {
-                  icon: <Heart className="w-8 h-8" />,
-                  title: "Emotional Intelligence",
-                  description: "AI-powered sentiment analysis and emotional response generation for human-like interactions",
-                  color: "from-red-500 to-pink-500"
-                },
-                {
-                  icon: <TrendingUp className="w-8 h-8" />,
-                  title: "Proactive Engagement",
-                  description: "Automated outreach and engagement strategies based on customer behavior patterns",
-                  color: "from-green-500 to-emerald-500"
-                },
-                {
-                  icon: <Shield className="w-8 h-8" />,
-                  title: "Risk Assessment",
-                  description: "Real-time customer health scoring and risk stratification for targeted interventions",
-                  color: "from-blue-500 to-indigo-500"
-                },
-                {
-                  icon: <Zap className="w-8 h-8" />,
-                  title: "Automated Workflows",
-                  description: "Intelligent automation of customer success processes and follow-up sequences",
-                  color: "from-yellow-500 to-orange-500"
-                },
-                {
-                  icon: <BarChart3 className="w-8 h-8" />,
-                  title: "Advanced Analytics",
-                  description: "Comprehensive reporting and insights for data-driven customer success strategies",
-                  color: "from-cyan-500 to-blue-500"
-                }
-              ].map((feature, index) => (
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              {platformFeatures.map((feature, index) => (
                 <motion.div
                   key={index}
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.8, delay: index * 0.1 }}
+                  transition={{ duration: 0.6, delay: index * 0.1 }}
                   viewport={{ once: true }}
-                  className="group p-8 rounded-2xl bg-gradient-to-br from-gray-900/50 to-gray-800/50 border border-gray-700/50 hover:border-cyan-500/50 transition-all duration-300 hover:transform hover:scale-105"
+                  className="p-8 bg-white/5 backdrop-blur-sm rounded-xl border border-white/10 hover:border-pink-400/30 transition-all duration-300"
                 >
-                  <div className={`w-16 h-16 rounded-xl bg-gradient-to-r ${feature.color} flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300`}>
+                  <div className="flex items-center mb-6">
                     {feature.icon}
+                    <h3 className="text-2xl font-bold text-white ml-3">{feature.title}</h3>
                   </div>
-                  <h3 className="text-xl font-semibold text-white mb-4">{feature.title}</h3>
-                  <p className="text-gray-300 leading-relaxed">{feature.description}</p>
+                  <p className="text-white/70 mb-6">{feature.description}</p>
+                  <ul className="space-y-2">
+                    {feature.features.map((feat, featureIndex) => (
+                      <li key={featureIndex} className="flex items-center text-white/80">
+                        <CheckCircle className="w-4 h-4 text-pink-400 mr-2" />
+                        {feat}
+                      </li>
+                    ))}
+                  </ul>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Benefits Section */}
+        <section className="py-20 px-4 sm:px-6 lg:px-8">
+          <div className="max-w-7xl mx-auto">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+              className="text-center mb-16"
+            >
+              <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+                Transformative Benefits
+              </h2>
+              <p className="text-xl text-white/70 max-w-3xl mx-auto">
+                Experience unprecedented improvements in customer satisfaction, 
+                retention rates, and success team productivity with AI-powered automation.
+              </p>
+            </motion.div>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              {[
+                {
+                  icon: <Heart className="w-8 h-8 text-pink-400" />,
+                  title: "Increased Satisfaction",
+                  description: "Boost customer satisfaction through personalized experiences and proactive support."
+                },
+                {
+                  icon: <TrendingUp className="w-8 h-8 text-green-400" />,
+                  title: "Higher Retention",
+                  description: "Improve customer retention rates with intelligent success management."
+                },
+                {
+                  icon: <Zap className="w-8 h-8 text-yellow-400" />,
+                  title: "Team Efficiency",
+                  description: "Maximize success team productivity with automated workflows and insights."
+                }
+              ].map((benefit, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: index * 0.1 }}
+                  viewport={{ once: true }}
+                  className="text-center p-6"
+                >
+                  <div className="flex justify-center mb-4">{benefit.icon}</div>
+                  <h3 className="text-xl font-semibold text-white mb-3">{benefit.title}</h3>
+                  <p className="text-white/70">{benefit.description}</p>
                 </motion.div>
               ))}
             </div>
@@ -151,7 +193,7 @@ const AICustomerSuccessPlatform: React.FC = () => {
         </section>
 
         {/* CTA Section */}
-        <section className="py-20 px-4">
+        <section className="py-20 px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto text-center">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -160,26 +202,19 @@ const AICustomerSuccessPlatform: React.FC = () => {
               viewport={{ once: true }}
             >
               <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-                Ready to Transform Your Customer Success?
+                Ready to Transform Customer Success?
               </h2>
-              <p className="text-xl text-gray-300 mb-8">
-                Join the future of customer success with AI-powered insights and automation.
+              <p className="text-xl text-white/70 mb-8">
+                Join us in the future of customer success. Maximize satisfaction, 
+                boost retention, and drive growth with AI-powered success management.
               </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <a
-                  href="/contact"
-                  className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-cyan-500 to-blue-500 text-white font-semibold rounded-xl hover:from-cyan-600 hover:to-blue-600 transition-all duration-300"
-                >
-                  <Phone className="w-5 h-5" />
-                  Contact Us
-                </a>
-                <a
-                  href="/pricing"
-                  className="inline-flex items-center gap-2 px-8 py-4 border border-cyan-500/30 text-cyan-400 font-semibold rounded-xl hover:bg-cyan-500/10 transition-all duration-300"
-                >
-                  <DollarSign className="w-5 h-5" />
-                  View Pricing
-                </a>
+              <div className="flex flex-wrap justify-center gap-4">
+                <button className="px-8 py-4 bg-gradient-to-r from-pink-500 to-rose-500 text-white font-semibold rounded-lg hover:from-pink-600 hover:to-rose-600 transition-all duration-300 transform hover:scale-105">
+                  Get Started Today
+                </button>
+                <button className="px-8 py-4 border border-pink-400/30 text-pink-400 font-semibold rounded-lg hover:bg-pink-400/10 transition-all duration-300">
+                  Schedule Consultation
+                </button>
               </div>
             </motion.div>
           </div>
