@@ -96,24 +96,36 @@ const Homepage2025: React.FC = () => {
                 <span className="text-purple-400 font-semibold">digital evolution</span>
               </p>
               
-              <div className="flex flex-col sm:flex-row gap-6 justify-center mb-12">
-                <motion.button 
-                  className="group px-10 py-5 bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-semibold rounded-xl hover:from-cyan-600 hover:to-blue-700 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-cyan-500/25 flex items-center gap-2"
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                >
-                  Get Started Today
-                  <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                </motion.button>
-                
-                <motion.button 
-                  className="px-10 py-5 border-2 border-cyan-400 text-cyan-400 font-semibold rounded-xl hover:bg-cyan-400 hover:text-black transition-all duration-300 transform hover:scale-105 flex items-center gap-2"
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                >
-                  <Play className="w-5 h-5" />
-                  Watch Demo
-                </motion.button>
+              {/* Enhanced CTA Section */}
+              <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
+                <Link href="/get-started">
+                  <button className="group px-8 py-4 bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-semibold rounded-lg hover:from-cyan-600 hover:to-blue-700 transition-all duration-300 transform hover:scale-105 shadow-lg shadow-cyan-500/25">
+                    <span className="flex items-center gap-2">
+                      Get Started
+                      <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                    </span>
+                  </button>
+                </Link>
+                <Link href="/services">
+                  <button className="px-8 py-4 border-2 border-cyan-400 text-cyan-400 font-semibold rounded-lg hover:bg-cyan-400 hover:text-black transition-all duration-300 transform hover:scale-105">
+                    Learn More
+                  </button>
+                </Link>
+                <Link href="/comprehensive-2025-services-showcase">
+                  <button className="px-8 py-4 border-2 border-purple-400 text-purple-400 font-semibold rounded-lg hover:bg-purple-400 hover:text-black transition-all duration-300 transform hover:scale-105">
+                    2025 Services Showcase
+                  </button>
+                </Link>
+                <Link href="/2037-innovative-services-showcase">
+                  <button className="px-8 py-4 border-2 border-cyan-400 text-cyan-400 font-semibold rounded-lg hover:bg-cyan-400 hover:text-black transition-all duration-300 transform hover:scale-105">
+                    2037 Innovation Showcase
+                  </button>
+                </Link>
+                <Link href="/2037-innovative-pricing-showcase">
+                  <button className="px-8 py-4 border-2 border-green-400 text-green-400 font-semibold rounded-lg hover:bg-green-400 hover:text-black transition-all duration-300 transform hover:scale-105">
+                    2037 Pricing Showcase
+                  </button>
+                </Link>
               </div>
 
               {/* Stats Section */}
