@@ -8,6 +8,10 @@ import type { ForumPost } from '@/types/community';
 import { fetchPostsByCategory } from '@/services/forumPostService';
 import {logErrorToProduction} from '@/utils/productionLogger';
 
+<<<<<<< HEAD
+
+const POSTS_PER_PAGE = 20; // Or any other limit you prefer
+
 const POSTS_QUERY = `
   query Posts($slug: String!, $cursor: String) {
     Posts(where: { category: $slug }, after: $cursor) {
@@ -62,6 +66,62 @@ export default function CategoryPage() {
     }
   }, [slug]);
 
+=======
+const POSTS_QUERY = `
+  query Posts($slug: String!, $cursor: String) {
+    Posts(where: { category: $slug }, after: $cursor) {
+      edges {
+        node {
+          id
+          title
+          excerpt
+        }
+        cursor
+      }
+      pageInfo {
+        hasNextPage
+        endCursor
+      }
+    }
+  }
+`;
+
+export default function CategoryPage() {
+  const router = useRouter();
+  const { slug } = router.query as { slug?: string };
+  const [posts, setPosts] = useState<ForumPost[]>([]);
+  const [cursor, setCursor] = useState<string | null>(null);
+  const [hasMore, setHasMore] = useState(true);
+  const [loading, setLoading] = useState(false);
+
+  const loadPosts = async (after: string | null = null) => {
+    if (!slug) return;
+    setLoading(true);
+    const res = await fetch('/api/graphql', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ query: POSTS_QUERY, variables: { slug, cursor: after } }),
+    });
+    const json = await res.json();
+    const result = json.data?.Posts;
+    if (result) {
+      const newPosts = result.edges.map((e: any) => e.node) as ForumPost[];
+      setPosts((prev) => (after ? [...prev, ...newPosts] : newPosts));
+      setCursor(result.pageInfo.endCursor);
+      setHasMore(result.pageInfo.hasNextPage);
+    }
+    setLoading(false);
+  };
+
+  useEffect(() => {
+    setPosts([]);
+    setCursor(null);
+    if (slug) {
+      loadPosts(null);
+    }
+  }, [slug]);
+
+>>>>>>> origin/amourx-codex/populate-forum-category-with-posts
   return (
     <>
       <Head>
