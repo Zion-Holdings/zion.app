@@ -91,7 +91,7 @@ const Solutions: React.FC = () => {
   return (
     <UltraFuturisticBackground variant="quantum">
       <div className="min-h-screen">
-        <SEO title="Solutions - Zion Tech Group | Revolutionary AI, Quantum Computing & Emerging Technology Solutions" description="Discover Zion Tech Group's comprehensive solutions portfolio including Micro SaaS platforms, AI-powered tools, Business Intelligence, Process Automation, and Cloud platforms." canonicalUrl="https://ziontechgroup.com/solutions/" />
+        <SEO title="Solutions - Zion Tech Group | Revolutionary AI, Quantum Computing & Emerging Technology Solutions" description="Discover Zion Tech Group's comprehensive solutions portfolio including Micro SaaS platforms, AI-powered tools, Business Intelligence, Process Automation, and Cloud platforms." url="https://ziontechgroup.com/solutions/" />
 
         {/* Hero Section */}
         <section className="relative py-20 px-4 overflow-hidden">

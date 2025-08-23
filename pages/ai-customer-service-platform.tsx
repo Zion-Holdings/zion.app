@@ -21,6 +21,7 @@ export default function AiCustomerServicePlatform() {
 				"Workflow analytics and CSAT tracking]}
 			]}
 			industries={["E-commerce", "SaaS", "Telecom", "Financial Services"]}
+			url="https://ziontechgroup.com/ai-customer-service-platform"
 		/>
 	);
 }
