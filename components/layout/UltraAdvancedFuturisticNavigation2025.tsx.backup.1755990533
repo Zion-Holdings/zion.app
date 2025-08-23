@@ -3,7 +3,13 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { 
   Menu, X, Search, ChevronDown, ChevronRight, 
   Home, Briefcase, Users, BookOpen, Phone, 
+<<<<<<< HEAD
+  Zap, Shield, Brain, Rocket, Cpu, Building, 
+  Heart, DollarSign, Factory, GraduationCap, 
+  TrendingUp, Newspaper, FileText, Video, HelpCircle
+=======
   Globe, Zap, Shield, Brain, Rocket, Sparkles, DollarSign
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-bd79
 } from 'lucide-react';
 
 // Define Node type for DOM event handling
@@ -83,6 +89,8 @@ const navigationItems: NavigationItem[] = [
         href: '/space-tech',
         icon: <Rocket className="w-4 h-4" />,
         description: 'Innovative space tech applications'
+<<<<<<< HEAD
+=======
       },
       {
         label: 'Q4 2025 Innovation',
@@ -101,6 +109,7 @@ const navigationItems: NavigationItem[] = [
         href: '/cybersecurity',
         icon: <Shield className="w-4 h-4" />,
         description: 'Enterprise-grade security solutions'
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-bd79
       }
     ]
   },

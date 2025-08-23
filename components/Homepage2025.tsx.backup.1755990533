@@ -159,6 +159,8 @@ const Homepage2025: React.FC = () => {
                   <div className="text-gray-300">{stat.label}</div>
                 </motion.div>
               ))}
+<<<<<<< HEAD
+=======
             </div>
           </div>
         </motion.section>
@@ -278,6 +280,7 @@ const Homepage2025: React.FC = () => {
               >
                 View Pricing
               </button>
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-bd79
             </motion.div>
           </div>
         </section>
