@@ -4,8 +4,12 @@ import { motion } from 'framer-motion';
 import { 
   ArrowRight, Play, TrendingUp, Brain, Shield, Rocket, Globe, Cpu, Database, Atom, Target, Star, Sparkles as SparklesIcon,
   Brain as BrainIcon, Atom as AtomIcon, Shield as ShieldIcon, Rocket as RocketIcon, Zap, Eye, Heart, Infinity,
+<<<<<<< HEAD
+  CheckCircle, Users, Award, Clock
+=======
   ChevronRight, ChevronLeft, ExternalLink, Users, Award, Clock, CheckCircle, Zap as ZapIcon,
   ArrowUpRight, Sparkles, Target as TargetIcon, Globe as GlobeIcon, Mail, Phone, MapPin
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-a9cc
 } from 'lucide-react';
 import EnhancedSEO from './EnhancedSEO';
 
@@ -27,7 +31,11 @@ const Homepage2045: React.FC = () => {
   const [selectedCategory, setSelectedCategory] = useState('all');
   const [isLoading, setIsLoading] = useState(true);
   const [hoveredService, setHoveredService] = useState<string | null>(null);
+<<<<<<< HEAD
+  const [isClient, setIsClient] = useState(false);
+=======
   const [isTyping, setIsTyping] = useState(false);
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-a9cc
   
   // Memoize services to prevent unnecessary re-renders
   const allRevolutionaryServices = useMemo(() => [
@@ -160,11 +168,19 @@ const Homepage2045: React.FC = () => {
   ];
 
   const stats = [
+<<<<<<< HEAD
+    { number: "3000+", label: "Revolutionary Services", icon: Star },
+    { number: "99.99%", label: "Uptime Guarantee", icon: TrendingUp },
+    { number: "24/7", label: "AI Support Available", icon: Brain },
+    { number: "250+", label: "Countries Served", icon: Globe }
+  ], []);
+=======
     { number: "3000+", label: "Revolutionary Services", icon: Star, description: "Cutting-edge solutions" },
     { number: "99.99%", label: "Uptime Guarantee", icon: TrendingUp, description: "Reliable performance" },
     { number: "24/7", label: "AI Support Available", icon: Brain, description: "Always here to help" },
     { number: "250+", label: "Countries Served", icon: Globe, description: "Global reach" }
   ];
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-a9cc
 
   const handleGetStarted = useCallback(() => {
     if (typeof window !== 'undefined') {
@@ -200,6 +216,36 @@ const Homepage2045: React.FC = () => {
       
       {/* Main Content */}
       <main className="relative z-10">
+<<<<<<< HEAD
+        {/* Hero Section */}
+        <section 
+          className="min-h-screen flex items-center justify-center px-4 relative overflow-hidden"
+          aria-labelledby="hero-heading"
+        >
+          {/* Enhanced Animated Background */}
+          <div className="absolute inset-0 -z-10">
+            {/* Floating orbs with neon effects */}
+            <div 
+              className="absolute top-20 left-20 w-96 h-96 bg-gradient-to-r from-cyan-500/20 to-blue-500/20 rounded-full blur-3xl animate-pulse shadow-[0_0_100px_rgba(6,182,212,0.5)]"
+              style={{
+                transform: `translate(${(mousePosition.x - (typeof window !== 'undefined' ? window.innerWidth / 2 : 0)) * 0.02}px, ${(mousePosition.y - (typeof window !== 'undefined' ? window.innerHeight / 2 : 0)) * 0.02}px)`
+              }}
+            ></div>
+            
+            <div 
+              className="absolute bottom-20 right-20 w-80 h-80 bg-gradient-to-r from-purple-500/20 to-pink-500/20 rounded-full blur-3xl animate-pulse shadow-[0_0_100px_rgba(168,85,247,0.5)]"
+              style={{
+                transform: `translate(${-(mousePosition.x - (typeof window !== 'undefined' ? window.innerWidth / 2 : 0)) * 0.01}px, ${-(mousePosition.y - (typeof window !== 'undefined' ? window.innerHeight / 2 : 0)) * 0.01}px)`
+              }}
+            ></div>
+            
+            {/* Grid pattern */}
+            <div className="absolute inset-0 bg-[linear-gradient(rgba(6,182,212,0.1)_1px,transparent_1px),linear-gradient(90deg,rgba(6,182,212,0.1)_1px,transparent_1px)] bg-[size:50px_50px]"></div>
+          </div>
+
+          {/* Hero Content */}
+          <div className="text-center max-w-7xl mx-auto relative z-10">
+=======
         {/* Enhanced Hero Section */}
         <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
           {/* Enhanced Animated Background */}
@@ -270,12 +316,79 @@ const Homepage2045: React.FC = () => {
 
           {/* Enhanced Hero Content */}
           <div className="relative z-10 text-center px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-a9cc
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: isVisible ? 1 : 0, y: isVisible ? 0 : 30 }}
               transition={{ duration: 0.8, delay: 0.2 }}
               className="mb-8"
             >
+<<<<<<< HEAD
+              <div className="inline-flex items-center px-4 py-2 rounded-full bg-gradient-to-r from-cyan-500/20 to-blue-500/20 border border-cyan-500/30 text-cyan-300 text-sm font-medium mb-6 backdrop-blur-sm">
+                <SparklesIcon className="w-4 h-4 mr-2" />
+                Revolutionary Technology 2045
+              </div>
+              
+              <h1 
+                id="hero-heading"
+                className="text-5xl md:text-7xl lg:text-8xl font-bold bg-gradient-to-r from-white via-cyan-300 to-blue-400 bg-clip-text text-transparent mb-6 leading-tight"
+              >
+                The Future of
+                <span className="block bg-gradient-to-r from-purple-400 via-pink-400 to-cyan-400 bg-clip-text text-transparent">
+                  Technology
+                </span>
+                <span className="block bg-gradient-to-r from-emerald-400 via-teal-400 to-cyan-400 bg-clip-text text-transparent">
+                  is Here
+                </span>
+              </h1>
+              
+              <p className="text-xl md:text-2xl text-gray-300 max-w-4xl mx-auto mb-8 leading-relaxed">
+                Experience the next evolution of AI consciousness, quantum computing, and space technology. 
+                Zion Tech Group delivers revolutionary solutions that redefine what's possible.
+              </p>
+            </motion.div>
+
+            {/* CTA Buttons */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: isVisible ? 1 : 0, y: isVisible ? 0 : 30 }}
+              transition={{ duration: 0.8, delay: 0.4 }}
+              className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12"
+            >
+              <button
+                onClick={handleGetStarted}
+                className="group relative px-8 py-4 bg-gradient-to-r from-cyan-500 to-blue-600 rounded-full text-white font-semibold text-lg shadow-lg hover:shadow-2xl transform hover:scale-105 transition-all duration-300 overflow-hidden"
+              >
+                <span className="relative z-10">Get Started</span>
+                <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-purple-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <ArrowRight className="w-5 h-5 ml-2 inline-block group-hover:translate-x-1 transition-transform duration-300" />
+              </button>
+              
+              <button
+                onClick={handleWatchDemo}
+                className="group px-8 py-4 border-2 border-cyan-500/50 rounded-full text-cyan-300 font-semibold text-lg hover:bg-cyan-500/10 hover:border-cyan-400 transition-all duration-300 backdrop-blur-sm"
+              >
+                <Play className="w-5 h-5 mr-2 inline-block" />
+                Watch Demo
+              </button>
+            </motion.div>
+
+            {/* Stats */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: isVisible ? 1 : 0, y: isVisible ? 0 : 30 }}
+              transition={{ duration: 0.8, delay: 0.6 }}
+              className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto"
+            >
+              {stats.map((stat, index) => (
+                <div key={index} className="text-center">
+                  <div className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent mb-2">
+                    {stat.number}
+                  </div>
+                  <div className="text-gray-400 text-sm md:text-base">{stat.label}</div>
+                </div>
+              ))}
+=======
               {/* Enhanced Main Heading with Typing Effect */}
               <div className="space-y-6">
                 <motion.div
@@ -379,15 +492,23 @@ const Homepage2045: React.FC = () => {
                   ))}
                 </motion.div>
               </div>
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-a9cc
             </motion.div>
           </div>
         </section>
 
+<<<<<<< HEAD
+        {/* Services Categories */}
+        <section className="py-20 px-4">
+          <div className="max-w-7xl mx-auto">
+            <motion.div
+=======
         {/* Enhanced Category Filter */}
         <section className="py-20 px-4 sm:px-6 lg:px-8">
           <div className="max-w-7xl mx-auto">
             <motion.div 
               className="text-center mb-16"
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-a9cc
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
@@ -395,6 +516,18 @@ const Homepage2045: React.FC = () => {
               className="text-center mb-16"
             >
               <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+<<<<<<< HEAD
+                Revolutionary <span className="bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent">Services</span>
+              </h2>
+              <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+                Discover our cutting-edge technology solutions that are shaping the future
+              </p>
+            </motion.div>
+
+            {/* Category Grid */}
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+              {categories.map((category, index) => (
+=======
                 Explore Our{' '}
                 <span className="bg-gradient-to-r from-cyan-400 to-purple-500 bg-clip-text text-transparent">
                   Revolutionary Services
@@ -408,6 +541,7 @@ const Homepage2045: React.FC = () => {
             {/* Enhanced Category Tabs */}
             <div className="flex flex-wrap justify-center gap-4 mb-16">
               {categories.map((category) => (
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-a9cc
                 <motion.button
                   key={category.id}
                   initial={{ opacity: 0, y: 30 }}
@@ -415,6 +549,21 @@ const Homepage2045: React.FC = () => {
                   transition={{ duration: 0.6, delay: index * 0.1 }}
                   viewport={{ once: true }}
                   onClick={() => handleCategoryChange(category.id)}
+<<<<<<< HEAD
+                  className={`group relative p-6 rounded-2xl border border-gray-700/50 backdrop-blur-sm transition-all duration-300 hover:scale-105 ${
+                    selectedCategory === category.id 
+                      ? 'bg-gradient-to-br from-cyan-500/20 to-blue-500/20 border-cyan-500/50' 
+                      : 'bg-gray-900/50 hover:bg-gray-800/50'
+                  }`}
+                >
+                  <div className={`w-12 h-12 rounded-xl bg-gradient-to-br ${category.color} p-3 mb-4 group-hover:scale-110 transition-transform duration-300`}>
+                    <category.icon className="w-full h-full text-white" />
+                  </div>
+                  <h3 className="text-lg font-semibold text-white mb-2">{category.name}</h3>
+                  <div className="text-2xl font-bold bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent">
+                    {category.count}
+                  </div>
+=======
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                   className={`group relative px-8 py-4 rounded-2xl font-semibold transition-all duration-300 ${
@@ -440,13 +589,18 @@ const Homepage2045: React.FC = () => {
                       {category.count}
                     </span>
                   </span>
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-a9cc
                 </motion.button>
               ))}
             </div>
 
+<<<<<<< HEAD
+            {/* Featured Services Grid */}
+=======
         {/* Enhanced Services Grid */}
         <section className="py-20 px-4 sm:px-6 lg:px-8">
           <div className="max-w-7xl mx-auto">
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-a9cc
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {getFilteredServices().slice(0, 9).map((service, index) => (
                 <motion.div
@@ -455,6 +609,29 @@ const Homepage2045: React.FC = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: index * 0.1 }}
                   viewport={{ once: true }}
+<<<<<<< HEAD
+                  className="group relative p-6 rounded-2xl border border-gray-700/50 bg-gray-900/50 backdrop-blur-sm hover:bg-gray-800/50 transition-all duration-300 hover:scale-105 cursor-pointer"
+                  onClick={() => handleServiceClick(service)}
+                  onMouseEnter={() => setHoveredService(service.id)}
+                  onMouseLeave={() => setHoveredService(null)}
+                >
+                  <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/10 to-blue-500/10 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  
+                  <div className="relative z-10">
+                    <h3 className="text-xl font-semibold text-white mb-3 group-hover:text-cyan-300 transition-colors duration-300">
+                      {service.name}
+                    </h3>
+                    <p className="text-gray-400 mb-4 line-clamp-3">
+                      {service.description}
+                    </p>
+                    
+                    <div className="flex items-center justify-between">
+                      <div className="text-2xl font-bold bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent">
+                        {service.pricing.starter}
+                      </div>
+                      <ArrowRight className="w-5 h-5 text-cyan-400 group-hover:translate-x-1 transition-transform duration-300" />
+                    </div>
+=======
                   onHoverStart={() => setHoveredService(service.id)}
                   onHoverEnd={() => setHoveredService(null)}
                   whileHover={{ y: -8 }}
@@ -548,11 +725,16 @@ const Homepage2045: React.FC = () => {
                       <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-cyan-400 to-purple-500 rounded-full blur-3xl" />
                       <div className="absolute bottom-0 left-0 w-24 h-24 bg-gradient-to-tr from-pink-400 to-purple-500 rounded-full blur-2xl" />
                     </div>
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-a9cc
                   </div>
                 </motion.div>
               ))}
             </div>
 
+<<<<<<< HEAD
+            {/* View All Services Button */}
+            <motion.div
+=======
             {/* Enhanced Load More Button */}
             {getFilteredServices().length > 12 && (
               <motion.div 
@@ -578,12 +760,29 @@ const Homepage2045: React.FC = () => {
           <div className="max-w-7xl mx-auto">
             <motion.div 
               className="text-center mb-20"
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-a9cc
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}
               viewport={{ once: true }}
               className="text-center mt-12"
             >
+<<<<<<< HEAD
+              <button
+                onClick={handleWatchDemo}
+                className="group px-8 py-4 bg-gradient-to-r from-purple-500 to-pink-600 rounded-full text-white font-semibold text-lg shadow-lg hover:shadow-2xl transform hover:scale-105 transition-all duration-300"
+              >
+                View All Revolutionary Services
+                <ArrowRight className="w-5 h-5 ml-2 inline-block group-hover:translate-x-1 transition-transform duration-300" />
+              </button>
+            </motion.div>
+          </div>
+        </section>
+
+        {/* Features Section */}
+        <section className="py-20 px-4 bg-gradient-to-b from-transparent to-gray-900/20">
+          <div className="max-w-7xl mx-auto">
+=======
               <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
                 Featured{' '}
                 <span className="bg-gradient-to-r from-cyan-400 to-purple-500 bg-clip-text text-transparent">
@@ -670,11 +869,22 @@ const Homepage2045: React.FC = () => {
         {/* Enhanced CTA Section */}
         <section className="py-24 px-4 sm:px-6 lg:px-8">
           <div className="max-w-5xl mx-auto text-center">
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-a9cc
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
               viewport={{ once: true }}
+<<<<<<< HEAD
+              className="text-center mb-16"
+            >
+              <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+                Revolutionary <span className="bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">Features</span>
+              </h2>
+              <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+                Experience the cutting-edge capabilities that set our technology apart
+              </p>
+=======
               className="space-y-10"
             >
               <div className="space-y-6">
@@ -731,6 +941,7 @@ const Homepage2045: React.FC = () => {
                   </div>
                 </div>
               </div>
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-a9cc
             </motion.div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
