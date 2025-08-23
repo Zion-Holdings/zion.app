@@ -383,21 +383,29 @@ export default function Innovative2038ServicesShowcase() {
 
                     <div className="border-t border-white/10 pt-4 mb-4">
                       <div className="text-center">
-                        <div className="text-3xl font-bold text-white">${service.price.monthly}</div>
-                        <div className="text-gray-400 text-sm">per month</div>
-                        <div className="text-xs text-gray-500 mt-1">
-                          ${service.price.yearly.toLocaleString()}/year (save ${(service.price.monthly * 12 - service.price.yearly).toLocaleString()})
+                        <div className="text-3xl font-bold text-white">
+                          ${typeof service.price.monthly === 'number' ? service.price.monthly : 'Contact'}
                         </div>
+                        <div className="text-gray-400 text-sm">per month</div>
+                        {service.price.yearly && typeof service.price.yearly === 'number' && (
+                          <div className="text-xs text-gray-500 mt-1">
+                            ${service.price.yearly.toLocaleString()}/year (save ${(service.price.monthly * 12 - service.price.yearly).toLocaleString()})
+                          </div>
+                        )}
                       </div>
                     </div>
 
                     <div className="space-y-2 mb-4">
-                      <div className="text-xs text-gray-400">
-                        <span className="font-medium">Setup:</span> {service.price.setupTime}
-                      </div>
-                      <div className="text-xs text-gray-400">
-                        <span className="font-medium">Trial:</span> {service.price.trialDays} days
-                      </div>
+                      {service.price.setupTime && (
+                        <div className="text-xs text-gray-400">
+                          <span className="font-medium">Setup:</span> {service.price.setupTime}
+                        </div>
+                      )}
+                      {service.price.trialDays && (
+                        <div className="text-xs text-gray-400">
+                          <span className="font-medium">Trial:</span> {service.price.trialDays} days
+                        </div>
+                      )}
                     </div>
 
                     <a
