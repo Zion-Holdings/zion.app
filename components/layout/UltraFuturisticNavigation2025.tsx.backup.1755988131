@@ -25,8 +25,14 @@ import {
   Code,
   Sparkles,
   Lightbulb,
+<<<<<<< HEAD
+  BarChart3,
+  Star,
+  Info
+=======
   Award,
   DollarSign
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-6a71
 } from 'lucide-react';
 import Link from 'next/link';
 import { useRouter } from 'next/router';

@@ -11,6 +11,9 @@ import {
 import { realInnovativeMicroSaas2025 } from '../data/2025-real-innovative-micro-saas';
 import { cuttingEdgeITServices2025 } from '../data/2025-cutting-edge-it-services';
 import { innovativeAIServices2025 } from '../data/2025-innovative-ai-services';
+import { ultimateInnovativeMicroSaas2025V2 } from '../data/2025-ultimate-innovative-micro-saas-v2';
+import { cuttingEdgeITServices2025V2 } from '../data/2025-cutting-edge-it-services-v2';
+import { innovativeAIServices2025V2 } from '../data/2025-innovative-ai-services-v2';
 
 const EnhancedHomepage2025: React.FC = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -44,7 +47,10 @@ const EnhancedHomepage2025: React.FC = () => {
   const allNewServices = [
     ...realInnovativeMicroSaas2025,
     ...cuttingEdgeITServices2025,
-    ...innovativeAIServices2025
+    ...innovativeAIServices2025,
+    ...ultimateInnovativeMicroSaas2025V2,
+    ...cuttingEdgeITServices2025V2,
+    ...innovativeAIServices2025V2
   ];
 
   // Get featured services for rotation

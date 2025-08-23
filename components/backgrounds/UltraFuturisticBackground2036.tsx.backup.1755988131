@@ -9,6 +9,10 @@ const UltraFuturisticBackground2036: React.FC = () => {
     setIsClient(true);
   }, []);
 
+<<<<<<< HEAD
+  useEffect(() => {
+    if (!isClient) return;
+=======
   // Enhanced theme-based color schemes with more vibrant colors
   const getThemeColors = useCallback(() => {
     switch (theme) {
@@ -61,6 +65,7 @@ const UltraFuturisticBackground2036: React.FC = () => {
     const colors = getThemeColors();
     const isSmallScreen = window.innerWidth < 768;
     const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-6a71
     
     const canvas = canvasRef.current;
     if (!canvas) return;
