@@ -150,20 +150,34 @@ const navigationItems: NavigationItem[] = [
         neonColor: 'shadow-blue-400/50'
       },
       {
-        label: 'Webinars',
-        href: '/webinars',
-        icon: <Video className="w-4 h-4" />,
-        description: 'Educational webinars and events',
-        neonColor: 'shadow-purple-400/50'
-      },
-      {
         label: 'Documentation',
         href: '/docs',
         icon: <Code className="w-4 h-4" />,
         description: 'Technical documentation',
         neonColor: 'shadow-green-400/50'
+      },
+      {
+        label: 'Case Studies',
+        href: '/case-studies',
+        icon: <FileText className="w-4 h-4" />,
+        description: 'Success stories and implementations',
+        neonColor: 'shadow-purple-400/50'
+      },
+      {
+        label: 'Webinars',
+        href: '/webinars',
+        icon: <Video className="w-4 h-4" />,
+        description: 'Educational webinars and events',
+        neonColor: 'shadow-blue-400/50'
       }
     ]
+  },
+  {
+    label: 'Careers',
+    href: '/careers',
+    icon: <Users className="w-4 h-4" />,
+    description: 'Join our team of innovators',
+    neonColor: 'shadow-pink-400/50'
   },
   {
     label: 'Contact',
@@ -176,10 +190,10 @@ const navigationItems: NavigationItem[] = [
 
 // Memoized social links
 const socialLinks = [
-  { href: 'https://linkedin.com/company/ziontechgroup', icon: <Linkedin className="w-5 h-5" />, label: 'LinkedIn' },
+  { href: 'https://www.linkedin.com/company/ziontechgroup', icon: <Linkedin className="w-5 h-5" />, label: 'LinkedIn' },
   { href: 'https://twitter.com/ziontechgroup', icon: <Twitter className="w-5 h-5" />, label: 'Twitter' },
-  { href: 'https://github.com/ziontechgroup', icon: <Github className="w-5 h-5" />, label: 'GitHub' },
-  { href: 'https://youtube.com/ziontechgroup', icon: <Youtube className="w-5 h-5" />, label: 'YouTube' }
+  { href: 'https://github.com/Zion-Holdings', icon: <Github className="w-5 h-5" />, label: 'GitHub' },
+  { href: 'https://www.youtube.com/@ziontechgroup', icon: <Youtube className="w-5 h-5" />, label: 'YouTube' }
 ];
 
 const UltraFuturisticNavigation2040: React.FC = () => {
