@@ -26,8 +26,8 @@ const ServiceCard = ({ service, index }: { service: any; index: number }) => (
     transition={{ duration: 0.5, delay: index * 0.1 }}
     className="relative group"
   >
-    <div className={`absolute inset-0 bg-gradient-to-r ${service.color} rounded-2xl blur-xl group-hover:blur-2xl transition-all duration-500 opacity-20`}></div>
-    <div className={`relative bg-gradient-to-r ${service.color.replace('from-', 'from-').replace('to-', 'to-')} bg-opacity-10 border border-opacity-30 rounded-2xl p-8 hover:border-opacity-50 transition-all duration-300 h-full`}>
+    <div className="absolute inset-0 bg-gradient-to-r from-cyan-500 to-blue-500 rounded-2xl blur-xl group-hover:blur-2xl transition-all duration-500 opacity-20"></div>
+    <div className="relative bg-gradient-to-r from-cyan-500/10 to-blue-500/10 border border-cyan-500/30 rounded-2xl p-8 hover:border-cyan-500/50 transition-all duration-300 h-full">
       <div className="flex items-start justify-between mb-6">
         <div className="text-4xl">{service.icon}</div>
         {service.popular && (
@@ -57,25 +57,25 @@ const ServiceCard = ({ service, index }: { service: any; index: number }) => (
         <div className="text-right">
           <div className="flex items-center space-x-1 text-yellow-400">
             {[...Array(5)].map((_, i) => (
-              <Star key={i} className={`w-4 h-4 ${i < Math.floor(service.rating) ? 'fill-current' : ''}`} />
+              <Star key={i} className={`w-4 h-4 ${i < Math.floor(service.rating || 4.5) ? 'fill-current' : ''}`} />
             ))}
           </div>
-          <span className="text-gray-400 text-xs">{service.rating}/5 ({service.reviews} reviews)</span>
+          <span className="text-gray-400 text-xs">{service.rating || 4.5}/5 ({service.reviews || 100} reviews)</span>
         </div>
       </div>
       
       <div className="space-y-3 mb-6 text-xs text-gray-400">
         <div className="flex justify-between">
           <span>Setup Time:</span>
-          <span>{service.setupTime}</span>
+          <span>{service.setupTime || 'Immediate'}</span>
         </div>
         <div className="flex justify-between">
           <span>Trial:</span>
-          <span>{service.trialDays} days</span>
+          <span>{service.trialDays || 14} days</span>
         </div>
         <div className="flex justify-between">
           <span>Customers:</span>
-          <span>{service.customers.toLocaleString()}</span>
+          <span>{service.customers ? service.customers.toLocaleString() : '1000+'}</span>
         </div>
       </div>
       
