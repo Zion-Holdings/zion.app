@@ -1,4 +1,5 @@
 import { format } from 'date-fns';
+import { apiClient } from './apiClient';
 
 /**
  * Formats a date for display in the referral system
@@ -8,12 +9,14 @@ import { format } from 'date-fns';
 export function formatDate(date: Date | string | undefined): string {
   if (!date) return '-';
   try {
-    if (typeof date === 'string') {
-      return format(new Date(date), 'MMM d, yyyy');
-    }
-    return format(date, 'MMM d, yyyy');
+    const d = typeof date === 'string' ? new Date(date) : date;
+    return new Intl.DateTimeFormat('en-US', {
+      month: 'short',
+      day: 'numeric',
+      year: 'numeric',
+    }).format(d);
   } catch (e) {
-    console.error('Error formatting date:', e);
+    logErrorToProduction('Error formatting date:', { data:  e });
     return '-';
   }
 }
@@ -28,14 +31,14 @@ export function checkUrlForReferralCode(): string | null {
   const refCode = url.searchParams.get('ref');
   
   if (refCode) {
-    localStorage.setItem('referral_code', refCode);
+    safeStorage.setItem('referral_code', refCode);
     // Remove it from URL to keep it clean
     url.searchParams.delete('ref');
     window.history.replaceState({}, document.title, url.toString());
     return refCode;
   }
   
-  return localStorage.getItem('referral_code');
+  return safeStorage.getItem('referral_code');
 }
 
 /**
@@ -45,22 +48,30 @@ import api from '@/lib/api';
 
 export async function trackReferral(userId: string, email: string) {
   try {
-    const refCode = localStorage.getItem('referral_code');
-    if (!refCode) return;
+    const refCode = safeStorage.getItem('referral_code');
+    if (!refCode) return false;
     
     // Call API to record the referral
-    const response = await api.post('/api/track-referral', {
-      refCode,
-      userId,
-      email,
-      ipAddress: '', // This will be captured by the server
+    const response = await apiClient('/api/track-referral', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        refCode,
+        userId,
+        email,
+        ipAddress: '', // This will be captured by the server
+      }),
     });
 
     if (response.status >= 200 && response.status < 300) {
       // Clear the stored referral code
-      localStorage.removeItem('referral_code');
+      safeStorage.removeItem('referral_code');
+      return true;
     }
   } catch (error) {
-    console.error('Error tracking referral:', error);
+    logErrorToProduction('Error tracking referral:', { data: error });
   }
+  return false;
 }

@@ -1,0 +1,2 @@
+# Hourly check for unauthorized configuration file changes
+0 * * * * cd /app && ./scripts/monitor_config_changes.sh > /dev/null 2>&1
