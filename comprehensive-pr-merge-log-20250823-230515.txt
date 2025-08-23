@@ -745,3 +745,15 @@ pages/_document.tsx[0m
 2025-08-23 23:06:19 - [1;33m⚠️  Found conflicts in pages/_document.tsx, resolving...[0m
 2025-08-23 23:06:19 - [0;34m💻 Code file detected, attempting intelligent merge...[0m
 2025-08-23 23:06:19 - [0;32m✅ Resolved conflicts in pages/_document.tsx[0m
+2025-08-23 23:06:20 - [0;32m✅ Successfully resolved conflicts and merged cursor/enhance-and-automate-web-app-with-ai-ae0d[0m
+2025-08-23 23:06:20 - [0;32m✅ PR #3876 (cursor/enhance-and-automate-web-app-with-ai-ae0d) processed successfully[0m
+2025-08-23 23:06:20 - [0;34m🔒 Closing PR #3876 via GitHub API...[0m
+2025-08-23 23:06:20 - [0;34m📊 Progress: 18/100, ✅ 18, ❌ 0[0m
+2025-08-23 23:06:22 - [0;34m📋 Processing PR #3875: Continuous AI content generation and promotion (branch: cursor/continuous-ai-content-generation-and-promotion-3fb3)[0m
+2025-08-23 23:06:22 - [0;34m🔄 Attempting to merge cursor/continuous-ai-content-generation-and-promotion-3fb3...[0m
+2025-08-23 23:06:23 - [1;33m⚠️  Merge conflicts detected in cursor/continuous-ai-content-generation-and-promotion-3fb3 (attempt 1/3), resolving...[0m
+2025-08-23 23:06:23 - [0;34m📋 Conflicted files: netlify/functions/functions-manifest.json[0m
+2025-08-23 23:06:23 - [0;34m🔧 Resolving conflicts in netlify/functions/functions-manifest.json for branch cursor/continuous-ai-content-generation-and-promotion-3fb3...[0m
+2025-08-23 23:06:23 - [1;33m⚠️  Found conflicts in netlify/functions/functions-manifest.json, resolving...[0m
+2025-08-23 23:06:23 - [0;34m📝 Regular file, removing conflict markers...[0m
+2025-08-23 23:06:23 - [0;32m✅ Resolved conflicts in netlify/functions/functions-manifest.json[0m
