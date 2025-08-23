@@ -121,7 +121,11 @@
   schedule = "*/5 * * * *" # every 5 minutes
 
 [[scheduled.functions]]
+<<<<<<< HEAD
+  name = "autonomous-meta-orchestrator"
+=======
   name = "accelerated-sync-orchestrator"
+>>>>>>> origin/cursor/automate-cloud-cron-jobs-and-sync-repository-5730
   schedule = "*/1 * * * *" # every minute
 
 # New ultra-fast tools
