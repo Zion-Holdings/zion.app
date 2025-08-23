@@ -101,63 +101,30 @@ module.exports = {
           900: '#064e3b',
           950: '#022c22',
         },
-        orange: {
-          50: '#fff7ed',
-          100: '#ffedd5',
-          200: '#fed7aa',
-          300: '#fdba74',
-          400: '#fb923c',
-          500: '#f97316',
-          600: '#ea580c',
-          700: '#c2410c',
-          800: '#9a3412',
-          900: '#7c2d12',
-          950: '#431407',
-        },
-        red: {
-          50: '#fef2f2',
-          100: '#fee2e2',
-          200: '#fecaca',
-          300: '#fca5a5',
-          400: '#f87171',
-          500: '#ef4444',
-          600: '#dc2626',
-          700: '#b91c1c',
-          800: '#991b1b',
-          900: '#7f1d1d',
-          950: '#450a0a',
-        },
-        fuchsia: {
-          50: '#fdf4ff',
-          100: '#fae8ff',
-          200: '#f5d0fe',
-          300: '#f0abfc',
-          400: '#e879f9',
-          500: '#d946ef',
-          600: '#c026d3',
-          700: '#a21caf',
-          800: '#86198f',
-          900: '#701a75',
-          950: '#4a044e',
-        },
-        teal: {
-          50: '#f0fdfa',
-          100: '#ccfbf1',
-          200: '#99f6e4',
-          300: '#5eead4',
-          400: '#2dd4bf',
-          500: '#14b8a6',
-          600: '#0d9488',
-          700: '#0f766e',
-          800: '#115e59',
-          900: '#134e4a',
-          950: '#042f2e',
-        },
+        // Add focus ring colors
+        focus: {
+          ring: {
+            cyan: '#06b6d4',
+            blue: '#3b82f6',
+            purple: '#a855f7',
+            pink: '#ec4899',
+            red: '#ef4444',
+            orange: '#f97316',
+            yellow: '#eab308',
+            green: '#22c55e',
+            teal: '#14b8a6',
+            indigo: '#6366f1',
+          }
+        }
       },
-      fontFamily: {
-        sans: ['Inter', 'system-ui', 'sans-serif'],
-        mono: ['JetBrains Mono', 'Fira Code', 'monospace'],
+      // Enhanced spacing scale
+      spacing: {
+        '18': '4.5rem',
+        '88': '22rem',
+        '128': '32rem',
+        '144': '36rem',
       },
+      // Enhanced font sizes
       fontSize: {
         'xs': ['0.75rem', { lineHeight: '1rem' }],
         'sm': ['0.875rem', { lineHeight: '1.25rem' }],
@@ -173,54 +140,19 @@ module.exports = {
         '8xl': ['6rem', { lineHeight: '1' }],
         '9xl': ['8rem', { lineHeight: '1' }],
       },
-      fontWeight: {
-        thin: '100',
-        extralight: '200',
-        light: '300',
-        normal: '400',
-        medium: '500',
-        semibold: '600',
-        bold: '700',
-        extrabold: '800',
-        black: '900',
-      },
-      spacing: {
-        '18': '4.5rem',
-        '88': '22rem',
-        '128': '32rem',
-      },
-      borderRadius: {
-        '4xl': '2rem',
-        '5xl': '2.5rem',
-      },
-      boxShadow: {
-        'glow': '0 0 20px rgba(59, 130, 246, 0.3)',
-        'glow-lg': '0 0 40px rgba(59, 130, 246, 0.4)',
-        'glow-xl': '0 0 60px rgba(59, 130, 246, 0.5)',
-      },
+      // Enhanced animations
       animation: {
-        'fade-in': 'fadeIn 0.6s ease-out forwards',
-        'fade-in-up': 'fadeInUp 0.6s ease-out forwards',
-        'fade-in-down': 'fadeInDown 0.6s ease-out forwards',
-        'slide-in-left': 'slideInLeft 0.6s ease-out forwards',
-        'slide-in-right': 'slideInRight 0.6s ease-out forwards',
-        'scale-in': 'scaleIn 0.6s ease-out forwards',
+        'fade-in': 'fadeIn 0.5s ease-in-out',
+        'fade-in-up': 'fadeInUp 0.5s ease-out',
+        'fade-in-down': 'fadeInDown 0.5s ease-out',
+        'slide-in-left': 'slideInLeft 0.5s ease-out',
+        'slide-in-right': 'slideInRight 0.5s ease-out',
+        'bounce-gentle': 'bounceGentle 2s infinite',
+        'pulse-gentle': 'pulseGentle 3s infinite',
         'float': 'float 6s ease-in-out infinite',
-        'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
-        'bounce-slow': 'bounce 2s infinite',
         'glow': 'glow 2s ease-in-out infinite alternate',
-        'shimmer': 'shimmer 2.5s linear infinite',
-        'matrix': 'matrix 20s linear infinite',
-        'neon-pulse': 'neonPulse 1.5s ease-in-out infinite',
-        'cyber-float': 'cyberFloat 8s ease-in-out infinite',
-        'hologram': 'hologram 3s ease-in-out infinite',
-        'energy-wave': 'energyWave 4s ease-in-out infinite',
-        'quantum-spin': 'quantumSpin 6s linear infinite',
-        'neural-network': 'neuralNetwork 10s linear infinite',
-        'plasma-flow': 'plasmaFlow 5s ease-in-out infinite',
-        'cyber-grid': 'cyberGrid 15s linear infinite',
-        'spin-slow': 'spin 20s linear infinite',
       },
+      // Enhanced keyframes
       keyframes: {
         fadeIn: {
           '0%': { opacity: '0' },
@@ -235,106 +167,97 @@ module.exports = {
           '100%': { opacity: '1', transform: 'translateY(0)' },
         },
         slideInLeft: {
-          '0%': { opacity: '0', transform: 'translateX(-30px)' },
+          '0%': { opacity: '0', transform: 'translateX(-20px)' },
           '100%': { opacity: '1', transform: 'translateX(0)' },
         },
         slideInRight: {
-          '0%': { opacity: '0', transform: 'translateX(30px)' },
+          '0%': { opacity: '0', transform: 'translateX(20px)' },
           '100%': { opacity: '1', transform: 'translateX(0)' },
         },
-        scaleIn: {
-          '0%': { opacity: '0', transform: 'scale(0.9)' },
-          '100%': { opacity: '1', transform: 'scale(1)' },
+        bounceGentle: {
+          '0%, 100%': { transform: 'translateY(0)' },
+          '50%': { transform: 'translateY(-10px)' },
+        },
+        pulseGentle: {
+          '0%, 100%': { opacity: '1' },
+          '50%': { opacity: '0.8' },
         },
         float: {
           '0%, 100%': { transform: 'translateY(0px)' },
           '50%': { transform: 'translateY(-20px)' },
         },
         glow: {
-          '0%': { boxShadow: '0 0 20px rgba(59, 130, 246, 0.3)' },
-          '100%': { boxShadow: '0 0 40px rgba(59, 130, 246, 0.6)' },
-        },
-        shimmer: {
-          '0%': { backgroundPosition: '-200% 0' },
-          '100%': { backgroundPosition: '200% 0' },
-        },
-        matrix: {
-          '0%': { transform: 'translateY(0)' },
-          '100%': { transform: 'translateY(-100%)' },
-        },
-        neonPulse: {
-          '0%, 100%': { 
-            textShadow: '0 0 5px currentColor, 0 0 10px currentColor, 0 0 15px currentColor',
-            opacity: '1'
-          },
-          '50%': { 
-            textShadow: '0 0 10px currentColor, 0 0 20px currentColor, 0 0 30px currentColor',
-            opacity: '0.8'
-          },
-        },
-        cyberFloat: {
-          '0%, 100%': { transform: 'translateY(0px) rotate(0deg)' },
-          '25%': { transform: 'translateY(-15px) rotate(2deg)' },
-          '50%': { transform: 'translateY(-25px) rotate(0deg)' },
-          '75%': { transform: 'translateY(-15px) rotate(-2deg)' },
-        },
-        hologram: {
-          '0%, 100%': { opacity: '0.7', transform: 'scale(1)' },
-          '50%': { opacity: '1', transform: 'scale(1.05)' },
-        },
-        energyWave: {
-          '0%': { transform: 'scaleX(0)', opacity: '1' },
-          '50%': { transform: 'scaleX(1)', opacity: '0.5' },
-          '100%': { transform: 'scaleX(0)', opacity: '0' },
-        },
-        quantumSpin: {
-          '0%': { transform: 'rotate(0deg)' },
-          '100%': { transform: 'rotate(360deg)' },
-        },
-        neuralNetwork: {
-          '0%': { strokeDasharray: '0 1000', opacity: '0' },
-          '50%': { opacity: '1' },
-          '100%': { strokeDasharray: '1000 0', opacity: '0' },
-        },
-        plasmaFlow: {
-          '0%': { transform: 'translateX(-100%)', opacity: '0' },
-          '50%': { opacity: '1' },
-          '100%': { transform: 'translateX(100%)', opacity: '0' },
-        },
-        cyberGrid: {
-          '0%': { transform: 'translateY(0) scale(1)' },
-          '50%': { transform: 'translateY(-10px) scale(1.1)' },
-          '100%': { transform: 'translateY(0) scale(1)' },
+          '0%': { boxShadow: '0 0 20px rgba(6, 182, 212, 0.5)' },
+          '100%': { boxShadow: '0 0 30px rgba(6, 182, 212, 0.8)' },
         },
       },
+      // Enhanced backdrop blur
       backdropBlur: {
-        'xs': '2px',
+        xs: '2px',
       },
+      // Enhanced box shadows
+      boxShadow: {
+        'glow': '0 0 20px rgba(6, 182, 212, 0.3)',
+        'glow-lg': '0 0 40px rgba(6, 182, 212, 0.4)',
+        'glow-xl': '0 0 60px rgba(6, 182, 212, 0.5)',
+        'inner-glow': 'inset 0 0 20px rgba(6, 182, 212, 0.2)',
+      },
+      // Enhanced gradients
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
         'gradient-conic': 'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
-        'gradient-primary': 'linear-gradient(135deg, #3b82f6 0%, #60a5fa 100%)',
-        'gradient-primary-hover': 'linear-gradient(135deg, #2563eb 0%, #3b82f6 100%)',
-        'cyber-grid': 'linear-gradient(rgba(59, 130, 246, 0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(59, 130, 246, 0.1) 1px, transparent 1px)',
-        'neural-dots': 'radial-gradient(circle at 1px 1px, rgba(59, 130, 246, 0.15) 1px, transparent 0)',
-        'quantum-waves': 'repeating-linear-gradient(45deg, transparent, transparent 35px, rgba(59, 130, 246, 0.03) 35px, rgba(59, 130, 246, 0.03) 70px)',
-        'plasma-flow': 'linear-gradient(90deg, transparent 0%, rgba(59, 130, 246, 0.1) 50%, transparent 100%)',
-        'hologram-pattern': 'conic-gradient(from 0deg at 50% 50%, rgba(59, 130, 246, 0.1) 0deg, transparent 60deg, rgba(34, 197, 94, 0.1) 120deg, transparent 180deg, rgba(168, 85, 247, 0.1) 240deg, transparent 300deg, rgba(59, 130, 246, 0.1) 360deg)',
-        'matrix-rain': 'linear-gradient(180deg, transparent 0%, rgba(34, 197, 94, 0.1) 50%, transparent 100%)',
-        'energy-field': 'radial-gradient(ellipse at center, rgba(59, 130, 246, 0.1) 0%, transparent 70%)',
-        'cyber-circuit': 'linear-gradient(90deg, transparent 0%, rgba(59, 130, 246, 0.05) 25%, rgba(59, 130, 246, 0.1) 50%, rgba(59, 130, 246, 0.05) 75%, transparent 100%)',
+        'gradient-mesh': 'linear-gradient(45deg, #667eea 0%, #764ba2 100%)',
+        'gradient-cyber': 'linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%)',
       },
-      container: {
-        center: true,
-        padding: {
-          DEFAULT: '1rem',
-          sm: '2rem',
-          lg: '4rem',
-          xl: '5rem',
-          '2xl': '6rem',
-        },
+      // Enhanced transitions
+      transitionProperty: {
+        'height': 'height',
+        'spacing': 'margin, padding',
+      },
+      // Enhanced z-index
+      zIndex: {
+        '60': '60',
+        '70': '70',
+        '80': '80',
+        '90': '90',
+        '100': '100',
       },
     },
   },
-  plugins: [],
+  plugins: [
+    // Custom plugin for focus ring utilities
+    function({ addUtilities, theme }) {
+      const newUtilities = {
+        '.focus-ring': {
+          '&:focus': {
+            outline: '2px solid transparent',
+            outlineOffset: '2px',
+            boxShadow: `0 0 0 2px ${theme('colors.white')}, 0 0 0 4px ${theme('colors.cyan.500')}`,
+          },
+        },
+        '.focus-ring-cyan': {
+          '&:focus': {
+            outline: '2px solid transparent',
+            outlineOffset: '2px',
+            boxShadow: `0 0 0 2px ${theme('colors.white')}, 0 0 0 4px ${theme('colors.cyan.500')}`,
+          },
+        },
+        '.focus-ring-blue': {
+          '&:focus': {
+            outline: '2px solid transparent',
+            outlineOffset: '2px',
+            boxShadow: `0 0 0 2px ${theme('colors.white')}, 0 0 0 4px ${theme('colors.blue.500')}`,
+          },
+        },
+        '.focus-ring-purple': {
+          '&:focus': {
+            outline: '2px solid transparent',
+            outlineOffset: '2px',
+            boxShadow: `0 0 0 2px ${theme('colors.white')}, 0 0 0 4px ${theme('colors.purple.500')}`,
+          },
+        },
+      }
+      addUtilities(newUtilities)
+    }
+  ],
 }
