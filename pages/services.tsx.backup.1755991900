@@ -3,8 +3,14 @@ import Head from 'next/head';
 import { Check, Star, Zap, Shield, Users, Globe, ArrowRight, ExternalLink, TrendingUp, Clock, Target, Building, Rocket, Award, DollarSign, ChartBar, Lock, Cpu, Database, Cloud, Smartphone, Palette, Search, MessageSquare, FileText, Calendar, CreditCard, BarChart3, Settings, Zap as ZapIcon, Code, BookOpen, Activity, Database as DatabaseIcon, Play, Mail, Phone, MapPin, Filter, Grid, List, ChevronDown, ChevronUp, Sparkles, FlaskConical, Dna, Car, Leaf, Factory, Truck, Microscope, GraduationCap, ShieldCheck, Brain, Atom, Globe2, Bot, ChevronRight, LinkIcon, Building2 } from 'lucide-react';
 import Button from '../components/ui/Button';
 import Card from '../components/ui/Card';
+<<<<<<< HEAD
+import UltraAdvancedFuturisticBackground from '../components/ui/UltraAdvancedFuturisticBackground';
+import { enhancedRealMicroSaasServices, serviceCategories, getServicesByCategory, getPopularServices, getServicesByPriceRange } from '../data/enhanced-real-micro-saas-services';
+import { motion } from 'framer-motion';
+=======
 import UltraFuturisticBackground from '../components/ui/UltraFuturisticBackground';
 import { enhancedMicroSaasServices, serviceCategories, getServicesByCategory, getPopularServices, getServicesByPriceRange } from '../data/enhanced-micro-saas-services';
+>>>>>>> origin/cursor/enhance-app-services-and-website-with-futuristic-design-9ec4
 
 export default function ServicesPage() {
   const [selectedCategory, setSelectedCategory] = useState('All');
@@ -30,7 +36,11 @@ export default function ServicesPage() {
   ];
 
   // Filter and sort services
+<<<<<<< HEAD
+  let filteredServices = enhancedRealMicroSaasServices;
+=======
   let filteredServices = enhancedMicroSaasServices;
+>>>>>>> origin/cursor/enhance-app-services-and-website-with-futuristic-design-9ec4
 
   // Category filter
   if (selectedCategory !== 'All') {
@@ -257,6 +267,20 @@ export default function ServicesPage() {
   ];
 
   return (
+<<<<<<< HEAD
+    <div className="min-h-screen bg-black text-white">
+      <Head>
+        <title>AI-Powered Micro SAAS Services - Zion Tech Group</title>
+        <meta name="description" content="Discover 25+ real AI-powered micro SAAS services that transform businesses. From legal automation to quantum computing, we deliver cutting-edge solutions with proven ROI." />
+        <meta name="keywords" content="AI services, micro SAAS, business automation, legal tech, customer service AI, SEO automation, video editing AI, data analytics, quantum computing" />
+        <meta name="author" content="Zion Tech Group" />
+        <meta property="og:title" content="AI-Powered Micro SAAS Services - Zion Tech Group" />
+        <meta property="og:description" content="Transform your business with 25+ real AI-powered micro SAAS services. Proven ROI, 21-day free trials, 24/7 support." />
+        <meta property="og:url" content="https://ziontechgroup.com/services" />
+        <meta property="og:type" content="website" />
+        <link rel="canonical" href="https://ziontechgroup.com/services" />
+      </Head>
+=======
     <UltraFuturisticBackground variant="neural" intensity="high">
       <div className="min-h-screen">
         <Head>
@@ -270,6 +294,7 @@ export default function ServicesPage() {
           <meta property="og:type" content="website" />
           <link rel="canonical" href="https://ziontechgroup.com/services" />
         </Head>
+>>>>>>> origin/cursor/enhance-app-services-and-website-with-futuristic-design-9ec4
 
       {/* Hero Section */}
       <section className="relative py-20 overflow-hidden">
@@ -412,6 +437,8 @@ export default function ServicesPage() {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.8, delay: index * 0.1 }}
                 >
+<<<<<<< HEAD
+=======
                   <div className="p-6">
                     <div className="flex items-start justify-between mb-4">
                       <div className="text-3xl">{service.icon}</div>
@@ -606,6 +633,7 @@ export default function ServicesPage() {
             {viewMode === 'grid' ? (
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 {filteredServices.map((service) => (
+>>>>>>> origin/cursor/enhance-app-services-and-website-with-futuristic-design-9ec4
                   <Card
                     variant="futuristic"
                     size="lg"
@@ -1234,7 +1262,11 @@ export default function ServicesPage() {
           </div>
         </section>
       </div>
+<<<<<<< HEAD
+    </AdvancedFuturisticBackground>
+=======
     </UltraFuturisticBackground>
+>>>>>>> origin/cursor/enhance-app-services-and-website-with-futuristic-design-9ec4
   );
 }
 =======

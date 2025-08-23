@@ -1,11 +1,31 @@
 import React from 'react';
 import Head from 'next/head';
+<<<<<<< HEAD
+import { 
+  Shield, Rocket, Clock, DollarSign, TrendingUp, Brain, Factory, Globe, 
+  Zap, Link, Building2, FlaskConical, Leaf, Car, Truck, Microscope, 
+  GraduationCap, ShieldCheck, Globe2, Cloud, Cpu, Database, Lock, 
+  Smartphone, Palette, Search, MessageSquare, FileText, Calendar, 
+  CreditCard, BarChart3, Code, BookOpen, Activity, Settings, Mail, 
+  Phone, MapPin, Sparkles, Atom, Eye, Trophy, Dna, ArrowRight, 
+  ExternalLink, Star, Users, ChevronRight, Play, Check, CpuIcon, 
+  BrainCircuit, Network, Satellite, ShieldAlert, FlaskConicalIcon,
+  RocketIcon, GlobeIcon, CpuIcon as CpuIcon2
+} from 'lucide-react';
+import Button from '../components/ui/Button';
+import QuantumMatrixBackground from '../components/ui/QuantumMatrixBackground';
+import UltraAdvancedFuturisticCard from '../components/ui/UltraAdvancedFuturisticCard';
+import { enhancedRealMicroSaasServices, getServicesByCategory, getPopularServices, serviceCategories } from '../data/enhanced-real-micro-saas-services';
+import { motion } from 'framer-motion';
+import { enhancedRealMicroSaasServices, getServicesByCategory, getPopularServices, serviceCategories } from '../data/enhanced-real-micro-saas-services';
+=======
 import Hero from '../components/sections/Hero';
 import Features from '../components/sections/Features';
 import UltraFuturisticCard from '../components/ui/UltraFuturisticCard';
 import Button from '../components/ui/Button';
 import UltraFuturisticBackground from '../components/ui/UltraFuturisticBackground';
 import { Cloud, Bot, RefreshCw, Zap, Shield, BarChart3, ArrowRight, Check, ExternalLink, Star, Users, Globe, Lock, Rocket, Cpu, Database, TrendingUp, Clock, Target, Building, Award, DollarSign, ChartBar, Code, BookOpen, Activity, Smartphone, Palette, Search, MessageSquare, FileText, Calendar, CreditCard, Settings, BookOpen as BookOpenIcon, Activity as ActivityIcon, Database as DatabaseIcon, Play, Mail, Phone, MapPin, Sparkles, Atom, Brain, Eye, Shield as ShieldIcon, Zap as ZapIcon, Globe as GlobeIcon, Cpu as CpuIcon, Cloud as CloudIcon, Bot as BotIcon, Lock as LockIcon, BarChart3 as BarChart3Icon, TrendingUp as TrendingUpIcon, Users as UsersIcon, Award as AwardIcon, Star as StarIcon, Check as CheckIcon, ArrowRight as ArrowRightIcon, ExternalLink as ExternalLinkIcon, Phone as PhoneIcon, Mail as MailIcon, MapPin as MapPinIcon } from 'lucide-react';
+>>>>>>> origin/cursor/enhance-app-services-and-website-with-futuristic-design-9ec4
 
 const HomePage: React.FC = () => {
   const seoConfig = {
@@ -84,6 +104,22 @@ const HomePage: React.FC = () => {
       }
     },
     {
+<<<<<<< HEAD
+      title: '🧬 Biotech AI Platform',
+      description: 'AI-powered drug discovery and biotech research. Accelerate research with 800% ROI within 12 months.',
+      price: 'Starting at $599/month',
+      features: ['AI-powered drug discovery algorithms', 'Protein folding prediction with 99.2% accuracy', 'Genomic data analysis and interpretation', 'Clinical trial optimization'],
+      link: 'https://ziontechgroup.com/biotech-ai',
+      color: 'from-emerald-500 to-teal-600',
+      marketData: '$8.5B biotech AI market, 420% annual growth',
+      competitors: 'Insitro ($1000+/month), Atomwise ($800+/month)',
+      savings: 'Save 40% vs. competitors',
+      contactInfo: {
+        mobile: '+1 302 464 0950',
+        email: 'kleber@ziontechgroup.com',
+        address: '364 E Main St STE 1008 Middletown DE 19709'
+      }
+=======
       icon: <Shield className="w-8 h-8 text-white" />,
       title: 'Bank-Level Security',
       description: 'SOC 2 compliance, advanced encryption, and automated security monitoring.',
@@ -205,6 +241,7 @@ const HomePage: React.FC = () => {
       color: 'from-emerald-500 to-teal-600',
       link: 'https://ziontechgroup.com/metaverse-development-platform',
       contactInfo: contactInfo
+>>>>>>> origin/cursor/enhance-app-services-and-website-with-futuristic-design-9ec4
     },
     {
       title: '💰 Quantum Financial Trading Platform',
@@ -245,6 +282,46 @@ const HomePage: React.FC = () => {
       features: ['Quantum-secured device communication', 'AI-powered device management', 'Real-time data analytics', 'Edge computing optimization'],
       link: 'https://ziontechgroup.com/quantum-iot',
       color: 'from-teal-500 to-cyan-600',
+<<<<<<< HEAD
+      marketData: '$1.1T IoT market, 250% annual growth',
+      competitors: 'AWS IoT ($0.50/device/month), Azure IoT ($0.40/device/month)',
+      savings: 'Save 60% vs. competitors',
+      contactInfo: {
+        mobile: '+1 302 464 0950',
+        email: 'kleber@ziontechgroup.com',
+        address: '364 E Main St STE 1008 Middletown DE 19709'
+      }
+    }
+  ];
+
+  const testimonials = [
+    {
+      avatar: '🚀',
+      name: 'Dr. Sarah Chen',
+      role: 'CTO',
+      company: 'QuantumTech Solutions',
+      rating: 5,
+      content: 'The Quantum AI Cognitive Platform has revolutionized our research capabilities. We\'ve achieved breakthroughs in weeks that used to take years.',
+      service: 'Quantum AI Cognitive Platform'
+    },
+    {
+      avatar: '🏭',
+      name: 'Marcus Rodriguez',
+      role: 'Operations Director',
+      company: 'AutoManufacture Inc.',
+      rating: 5,
+      content: 'The Autonomous Manufacturing Platform increased our production by 300% while reducing costs by 50%. It\'s like having a factory from the future.',
+      service: 'Autonomous Manufacturing Platform'
+    },
+    {
+      avatar: '🧬',
+      name: 'Dr. Emily Watson',
+      role: 'Research Lead',
+      company: 'BioGen Research',
+      rating: 5,
+      content: 'The Biomedical AI Platform accelerated our drug discovery process by 10x. We\'re now leading the industry in breakthrough treatments.',
+      service: 'Biomedical AI Platform'
+=======
       link: 'https://ziontechgroup.com/iot-smart-city-platform',
       contactInfo: contactInfo
     },
@@ -257,10 +334,31 @@ const HomePage: React.FC = () => {
       color: 'from-cyan-600 to-blue-600',
       link: 'https://ziontechgroup.com/autonomous-ai-agents',
       contactInfo: contactInfo
+>>>>>>> origin/cursor/enhance-app-services-and-website-with-futuristic-design-9ec4
     }
   ];
 
   return (
+<<<<<<< HEAD
+    <QuantumMatrixBackground variant="quantum" intensity="high">
+      <Head>
+        <title>Zion Tech Group - Revolutionary Micro SAAS Services & AI Solutions</title>
+        <meta name="description" content="Leading the revolution in quantum computing, AI, space technology, and autonomous systems. 150+ revolutionary micro SAAS services with 500%+ average ROI." />
+        <meta name="keywords" content="quantum computing, AI, space technology, micro SAAS, cybersecurity, biomedical AI, metaverse, autonomous manufacturing" />
+        <meta property="og:title" content="Zion Tech Group - Future Technology Solutions" />
+        <meta property="og:description" content="Revolutionary micro SAAS services and AI solutions for the future." />
+        <meta property="og:url" content="https://ziontechgroup.com" />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://ziontechgroup.com" />
+        <meta property="og:image" content="https://ziontechgroup.com/og-image.jpg" />
+        
+        {/* Twitter Meta Tags */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Zion Tech Group - Revolutionary Micro SAAS Services" />
+        <meta name="twitter:description" content="150+ revolutionary micro SAAS services with 500%+ ROI. Quantum AI, cybersecurity, manufacturing, and more." />
+        <meta name="twitter:image" content="https://ziontechgroup.com/og-image.jpg" />
+      </Head>
+=======
     <UltraFuturisticBackground variant="neural" intensity="extreme">
       <div className="min-h-screen">
         <Head>
@@ -274,6 +372,7 @@ const HomePage: React.FC = () => {
           <meta property="og:type" content="website" />
           <link rel="canonical" href="https://ziontechgroup.com" />
         </Head>
+>>>>>>> origin/cursor/enhance-app-services-and-website-with-futuristic-design-9ec4
 
       {/* Enhanced Futuristic Backgrounds */}
       <UltraAdvancedFuturisticBackground variant="quantum-holographic">
@@ -363,6 +462,76 @@ const HomePage: React.FC = () => {
         </div>
       </section>
 
+<<<<<<< HEAD
+      {/* Stats Section */}
+      <section className="py-20 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6"
+          >
+            {heroStats.map((stat, index) => (
+              <motion.div
+                key={stat.label}
+                initial={{ opacity: 0, scale: 0.8 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                viewport={{ once: true }}
+                className="text-center p-6 bg-black/40 backdrop-blur-xl border border-cyan-500/20 rounded-xl hover:border-cyan-400/40 transition-all duration-300 group"
+              >
+                <div className={`${stat.color} mb-2 flex justify-center group-hover:scale-110 transition-transform duration-300`}>
+                  {stat.icon}
+                </div>
+                <div className="text-2xl lg:text-3xl font-bold text-white mb-1">
+                  {stat.value}
+                </div>
+                <div className="text-sm text-gray-400 leading-tight">
+                  {stat.label}
+                </div>
+                <div className="text-cyan-400 font-bold text-lg mb-2">{service.price}</div>
+                <div className="text-slate-400 text-sm mb-4">Market Size: {service.marketSize}</div>
+                <div className="text-slate-400 text-sm">Growth Rate: {service.growthRate}</div>
+              </motion.div>
+            ))}
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Market Insights Section */}
+      <section className="py-20 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-6">
+              Market <span className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">Insights</span>
+            </h2>
+            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+              Discover the explosive growth in emerging technology markets where Zion Tech Group leads innovation
+            </p>
+          </motion.div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {marketInsights.map((insight, index) => (
+              <motion.div
+                key={insight.label}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+                viewport={{ once: true }}
+                className="group"
+              >
+                <UltraAdvancedFuturisticCard
+                  variant="quantum-holographic"
+                  className="h-full hover:scale-105 transition-transform duration-300"
+=======
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {platformFeatures.map((feature, index) => (
                 <UltraFuturisticCard
@@ -371,6 +540,7 @@ const HomePage: React.FC = () => {
                   intensity="high"
                   delay={index}
                   className={`${feature.color} p-8 text-center transform hover:scale-105 transition-all duration-300 hover:shadow-2xl`}
+>>>>>>> origin/cursor/enhance-app-services-and-website-with-futuristic-design-9ec4
                 >
                   <div className="p-8 text-center">
                     <div className={`w-16 h-16 mx-auto mb-6 rounded-full bg-gradient-to-r ${insight.color} flex items-center justify-center text-white group-hover:scale-110 transition-transform duration-300`}>
@@ -386,11 +556,17 @@ const HomePage: React.FC = () => {
                       {insight.description}
                     </div>
                   </div>
+<<<<<<< HEAD
+                </UltraAdvancedFuturisticCard>
+              </motion.div>
+            ))}
+=======
                   <h3 className="text-2xl font-bold text-white mb-4">{feature.title}</h3>
                   <p className="text-gray-200 leading-relaxed">{feature.description}</p>
                 </UltraFuturisticCard>
               ))}
             </div>
+>>>>>>> origin/cursor/enhance-app-services-and-website-with-futuristic-design-9ec4
           </div>
         </div>
       </section>
@@ -413,6 +589,21 @@ const HomePage: React.FC = () => {
             </p>
           </motion.div>
 
+<<<<<<< HEAD
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {revolutionaryServices.map((service, index) => (
+              <motion.div
+                key={service.id}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+                viewport={{ once: true }}
+                className="group"
+              >
+                <UltraAdvancedFuturisticCard
+                  variant={service.variant as any}
+                  className="h-full hover:scale-105 transition-transform duration-300"
+=======
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {innovativeServices.map((service, index) => (
                 <UltraFuturisticCard
@@ -421,6 +612,7 @@ const HomePage: React.FC = () => {
                   intensity="high"
                   delay={index}
                   className="bg-gradient-to-br from-gray-800/80 to-gray-900/80 backdrop-blur-sm border border-gray-700 p-6 hover:border-gray-600 transition-all duration-300 hover:shadow-2xl hover:scale-105"
+>>>>>>> origin/cursor/enhance-app-services-and-website-with-futuristic-design-9ec4
                 >
                   <div className="p-8">
                     <div className="text-4xl mb-4">{service.icon}</div>
@@ -461,9 +653,16 @@ const HomePage: React.FC = () => {
                       <ExternalLink className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
                     </Button>
                   </div>
+<<<<<<< HEAD
+                </UltraAdvancedFuturisticCard>
+              </motion.div>
+            ))}
+          </div>
+=======
                 </UltraFuturisticCard>
               ))}
             </div>
+>>>>>>> origin/cursor/enhance-app-services-and-website-with-futuristic-design-9ec4
 
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -587,6 +786,13 @@ const HomePage: React.FC = () => {
                     +1 302 464 0950
                   </a>
                 </div>
+<<<<<<< HEAD
+                <div className="flex items-center space-x-3 text-gray-300">
+                  <Mail className="w-4 h-4 text-cyan-400" />
+                  <a href="mailto:kleber@ziontechgroup.com" className="hover:text-cyan-400 transition-colors">
+                    kleber@ziontechgroup.com
+                  </a>
+=======
               ))}
             </div>
           </div>
@@ -681,6 +887,7 @@ const HomePage: React.FC = () => {
                     <div className="text-sm text-gray-400">Address</div>
                     <div className="text-white font-medium text-sm">{contactInfo.address}</div>
                   </div>
+>>>>>>> origin/cursor/enhance-app-services-and-website-with-futuristic-design-9ec4
                 </div>
                 <div className="flex items-start space-x-3 text-gray-300 md:col-span-2">
                   <MapPin className="w-4 h-4 text-cyan-400 mt-1 flex-shrink-0" />
@@ -696,9 +903,16 @@ const HomePage: React.FC = () => {
                 </div>
               </div>
             </div>
+<<<<<<< HEAD
+          </motion.div>
+        </div>
+      </section>
+    </QuantumMatrixBackground>
+=======
           </div>
         </section>
       </div>
     </UltraFuturisticBackground>
+>>>>>>> origin/cursor/enhance-app-services-and-website-with-futuristic-design-9ec4
   );
 }

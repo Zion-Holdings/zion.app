@@ -1,6 +1,11 @@
 import React from 'react';
+<<<<<<< HEAD
+import QuantumNavigation from './QuantumNavigation';
+import QuantumFooter from './QuantumFooter';
+=======
 import EnhancedNavigation from './EnhancedNavigation';
 import EnhancedFooter from './EnhancedFooter';
+>>>>>>> origin/cursor/enhance-app-services-and-website-with-futuristic-design-9ec4
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -13,11 +18,19 @@ export default function Layout({ children, seo }: LayoutProps) {
 
   return (
     <div className="min-h-screen bg-black text-white">
+<<<<<<< HEAD
+      <QuantumNavigation />
+      <main className="pt-24 lg:pt-28">
+        {children}
+      </main>
+      <QuantumFooter />
+=======
       <EnhancedNavigation />
       <main className="pt-24 lg:pt-28">
         {children}
       </main>
       <EnhancedFooter />
+>>>>>>> origin/cursor/enhance-app-services-and-website-with-futuristic-design-9ec4
     </div>
   );
 };
