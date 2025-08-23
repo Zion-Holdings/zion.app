@@ -2,10 +2,13 @@ import React, { useState, useEffect, useCallback } from 'react';
 import UltraFuturisticNavigation2040 from './UltraFuturisticNavigation2040';
 import UltraFuturisticFooter2040 from './UltraFuturisticFooter2040';
 import EnhancedSidebar2025 from './EnhancedSidebar2025';
+<<<<<<< HEAD
+=======
 import UltraFuturisticBackground2045 from '../backgrounds/UltraFuturisticBackground2045';
 import PerformanceOptimizer from '../PerformanceOptimizer';
 import AccessibilityEnhancer from '../AccessibilityEnhancer';
 import CookieConsentBanner from '../CookieConsentBanner';
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-69f0
 import TopContactBar from './TopContactBar';
 import UltraFuturisticBackground2036 from '../backgrounds/UltraFuturisticBackground2036';
 import TopContactBar from './TopContactBar';
@@ -209,8 +212,20 @@ export default function Layout({
       </div>
 
       {/* Accessibility and Performance Tools */}
+<<<<<<< HEAD
+      <AccessibilityEnhancer 
+        enabled={isAccessibilityEnabled}
+        showUI={isAccessibilityEnabled}
+      />
+      <PerformanceMonitor 
+        enabled={isPerformanceMonitoringEnabled}
+        logToConsole={process.env.NODE_ENV === 'development'}
+        showUI={isPerformanceMonitoringEnabled}
+      />
+=======
       <AccessibilityEnhancer />
       <PerformanceOptimizer />
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-69f0
       
       {/* Cookie Consent Banner */}
       <CookieConsentBanner 

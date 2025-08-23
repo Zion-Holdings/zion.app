@@ -1,3 +1,10 @@
+<<<<<<< HEAD
+import React, { useState, useEffect, useCallback, useRef } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { 
+  Eye, EyeOff, Volume2, VolumeX, Type, Palette, 
+  MousePointer, ArrowUp, Settings, X, Check
+=======
 import React, { useState, useEffect, useCallback } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { 
@@ -14,6 +21,7 @@ import {
   Settings,
   CheckCircle,
   AlertTriangle
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-69f0
 } from 'lucide-react';
 
 interface AccessibilityEnhancerProps {
@@ -24,6 +32,23 @@ interface AccessibilitySettings {
   highContrast: boolean;
   fontSize: 'small' | 'medium' | 'large' | 'xlarge';
   reducedMotion: boolean;
+<<<<<<< HEAD
+  highSaturation: boolean;
+  focusIndicator: boolean;
+  soundEffects: boolean;
+}
+
+interface AccessibilityEnhancerProps {
+  enabled?: boolean;
+  showUI?: boolean;
+}
+
+const AccessibilityEnhancer: React.FC<AccessibilityEnhancerProps> = ({
+  enabled = true,
+  showUI = false
+}) => {
+  const [isOpen, setIsOpen] = useState(false);
+=======
   screenReader: boolean;
   keyboardNavigation: boolean;
   focusIndicator: boolean;
@@ -41,11 +66,92 @@ interface AccessibilityFeature {
 const AccessibilityEnhancer: React.FC = () => {
   const [isVisible, setIsVisible] = useState(false);
   const [isExpanded, setIsExpanded] = useState(false);
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-69f0
   const [settings, setSettings] = useState<AccessibilitySettings>({
     highContrast: false,
     fontSize: 'medium',
     reducedMotion: false,
     screenReader: false,
+<<<<<<< HEAD
+    keyboardNavigation: false,
+    focusIndicator: true,
+    soundEffects: false
+  });
+  const [isVisible, setIsVisible] = useState(false);
+  const timeoutRef = useRef<NodeJS.Timeout | null>(null);
+
+  // Performance optimization: Memoized settings application
+  const applySettings = useCallback((newSettings: AccessibilitySettings) => {
+    if (!enabled) return;
+
+    const root = document.documentElement;
+    
+    // Apply high contrast
+    if (newSettings.highContrast) {
+      root.classList.add('high-contrast');
+    } else {
+      root.classList.remove('high-contrast');
+    }
+
+    // Apply large text
+    if (newSettings.largeText) {
+      root.style.fontSize = '18px';
+      root.style.setProperty('--text-scale', '1.2');
+    } else {
+      root.style.fontSize = '16px';
+      root.style.setProperty('--text-scale', '1');
+    }
+
+    // Apply reduced motion
+    if (newSettings.reducedMotion) {
+      root.style.setProperty('--motion-reduced', 'true');
+      root.classList.add('motion-reduced');
+    } else {
+      root.style.removeProperty('--motion-reduced');
+      root.classList.remove('motion-reduced');
+    }
+
+    // Apply high saturation
+    if (newSettings.highSaturation) {
+      root.style.setProperty('--saturation', '1.5');
+      root.style.filter = 'saturate(1.5)';
+    } else {
+      root.style.removeProperty('--saturation');
+      root.style.filter = 'none';
+    }
+
+    // Apply focus indicator
+    if (newSettings.focusIndicator) {
+      root.style.setProperty('--focus-visible', '2px solid #3b82f6');
+    } else {
+      root.style.setProperty('--focus-ring', 'none');
+    }
+
+    // Apply sound effects
+    if (newSettings.soundEffects) {
+      root.style.setProperty('--sound-enabled', 'true');
+    } else {
+      root.style.setProperty('--sound-enabled', 'false');
+    }
+
+    // Save to localStorage
+    localStorage.setItem('accessibility-settings', JSON.stringify(newSettings));
+  }, [enabled]);
+
+  // Performance optimization: Load saved settings
+  useEffect(() => {
+    if (!enabled) return;
+
+    try {
+      const saved = localStorage.getItem('accessibility-settings');
+      if (saved) {
+        const savedSettings = JSON.parse(saved);
+        setSettings(savedSettings);
+        applySettings(savedSettings);
+      }
+    } catch (error) {
+      console.warn('Failed to load accessibility settings:', error);
+=======
     keyboardNavigation: true,
     focusIndicator: true
   });
@@ -110,6 +216,7 @@ const AccessibilityEnhancer: React.FC = () => {
       root.classList.add('focus-visible');
     } else {
       root.classList.remove('focus-visible');
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-69f0
     }
   }, [enabled, applySettings]);
 
@@ -159,6 +266,19 @@ const AccessibilityEnhancer: React.FC = () => {
     }));
   }, []);
 
+<<<<<<< HEAD
+  // Performance optimization: Reset settings
+  const resetSettings = useCallback(() => {
+    const defaultSettings: AccessibilitySettings = {
+      highContrast: false,
+      largeText: false,
+      reducedMotion: false,
+      screenReader: false,
+      keyboardNavigation: false,
+      focusIndicator: true,
+      `}</style>
+    </>
+=======
       soundEffects: false
     };
     setSettings(defaultSettings);
@@ -348,11 +468,17 @@ export const useKeyboardNavigation = (items: string[], onSelect: (item: string) 
       // Toggle accessibility panel
       if (event.key === 'Escape' && isExpanded) {
         setIsExpanded(false);
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-69f0
       }
     };
 
     document.addEventListener('keydown', handleKeyDown);
     return () => document.removeEventListener('keydown', handleKeyDown);
+<<<<<<< HEAD
+  }, [items, selectedIndex, onSelect]);
+
+  return { selectedIndex, setSelectedIndex };
+=======
   }, [settings.keyboardNavigation, isExpanded]);
 
   const setupFocusIndicators = useCallback(() => {
@@ -610,6 +736,7 @@ export const useKeyboardNavigation = (items: string[], onSelect: (item: string) 
       )}
     </AnimatePresence>
   );
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-69f0
 };
 
 // Focus Trap Hook

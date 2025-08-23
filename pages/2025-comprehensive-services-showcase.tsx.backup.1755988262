@@ -15,10 +15,23 @@ import { emergingTechnologyServices } from '../data/2025-emerging-technology-ser
   TrendingUp, Zap, Lock, Eye, Users, Star, Cloud, Phone, Mail
 } from 'lucide-react';
 
+<<<<<<< HEAD
+// Import our new comprehensive service data
+import { advancedFinancialTechServices2025 } from '../data/2025-advanced-financial-tech-services';
+import { advancedHealthcareTechServices2025 } from '../data/2025-advanced-healthcare-tech-services';
+import { advancedCybersecurityIoTServices2025 } from '../data/2025-advanced-cybersecurity-iot-services';
+import { advancedSustainabilityTechServices2025 } from '../data/2025-advanced-sustainability-tech-services';
+import { advancedEducationTechServices2025 } from '../data/2025-advanced-education-tech-services';
+
+// Import existing service data for comprehensive coverage
+import { innovativeAIServices2025 } from '../data/2025-innovative-ai-services';
+import { innovativeITServices2025 } from '../data/2025-innovative-it-services';
+=======
 // Import our new service data
 import { advancedBusinessIntelligenceServices2025 } from '../data/2025-advanced-business-intelligence-services';
 import { advancedAIAutomationServices2025 } from '../data/2025-advanced-ai-automation-services';
 import { innovative2025ITInfrastructureServices } from '../data/2025-innovative-it-infrastructure-services';
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-69f0
 import { innovativeMicroSaasSolutions2025 } from '../data/2025-innovative-micro-saas-solutions';
 
 interface Service {
@@ -57,6 +70,11 @@ interface Service {
   reviews: number;
 }
 
+<<<<<<< HEAD
+        description="Explore our complete portfolio of micro SAAS, IT services, and AI solutions. Discover innovative services designed to transform your business with cutting-edge technology."
+        keywords="micro SAAS, AI services, cybersecurity, cloud infrastructure, DevOps, healthcare AI, fintech, manufacturing IoT, quantum computing, blockchain, AR/VR, robotics"
+        image="https://ziontechgroup.com/og-image.jpg"
+=======
   const allServices = [
     ...advancedBusinessIntelligenceServices2025,
     ...advancedAIAutomationServices2025,
@@ -91,6 +109,7 @@ interface Service {
         title="2025 Comprehensive Services Showcase - Zion Tech Group"
         description="Discover our comprehensive portfolio of innovative micro SAAS, IT infrastructure, and AI services. Transform your business with cutting-edge solutions."
         keywords={["micro SAAS", "IT services", "AI services", "business intelligence", "automation", "cloud infrastructure"]}
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-69f0
       />
 
       {/* Hero Section */}

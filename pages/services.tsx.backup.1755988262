@@ -8,6 +8,8 @@ import {
   Building
 } from 'lucide-react';
 
+<<<<<<< HEAD
+=======
 // Import our new 2025 service data
 import { advancedAIAutomationServices2025 } from '../data/2025-advanced-ai-automation-services';
 import { innovativeMicroSaasSolutions2025 } from '../data/2025-innovative-micro-saas-solutions';
@@ -40,6 +42,7 @@ import { innovativeAIAutonomousEcosystemServices2025 } from '../data/2025-innova
 import { cuttingEdgeITInfrastructureInnovations2025 } from '../data/2025-cutting-edge-it-infrastructure-innovations';
 import { innovativeMicroSaasBreakthroughs2025 } from '../data/2025-innovative-micro-saas-breakthroughs';
 
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-69f0
 // Import our new service data
 import { enterpriseITSolutions } from '../data/2034-enterprise-it-solutions';
 import { innovativeMicroSaasSolutions } from '../data/2034-innovative-micro-saas-solutions';
@@ -124,6 +127,8 @@ const getServiceDescription = (service: { description?: string; tagline?: string
 
 // Create unified services array
 const allServices = [
+<<<<<<< HEAD
+=======
   // Our new 2025 services
   ...realInnovativeMicroSaasServices2025,
   ...innovativeITInfrastructureServices2025,
@@ -148,6 +153,7 @@ const allServices = [
   ...innovativeMicroSaasBreakthroughs2025,
   
   // Existing services
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-69f0
   ...enterpriseITSolutions,
   ...innovativeMicroSaasSolutions,
   ...cuttingEdgeAIServices,
@@ -201,6 +207,10 @@ const allServices = [
   ...innovative2025AIServicesExpansion,
   // Our new 2025 advanced enterprise services
   ...advancedEnterpriseServices,
+<<<<<<< HEAD
+  ...innovative2025MicroSaasExpansion,
+  ...cuttingEdgeITInfrastructureServices
+=======
   ...cuttingEdgeITInfrastructureServices,
   
   // Our new 2025 cutting-edge innovative services expansion
@@ -222,6 +232,7 @@ const allServices = [
   ...realEnterpriseMicroSaas2025,
   
   ...advancedAIAutomationSolutions2025
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-69f0
 ];
 
 const categories = [
