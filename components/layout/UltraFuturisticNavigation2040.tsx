@@ -180,6 +180,18 @@ const navigationItems: NavigationItem[] = [
         href: '/quantum-bio-computing-2041',
         description: 'Quantum biological computing',
         icon: <Atom className="w-4 h-4" />
+      },
+      {
+        name: 'Quantum Neural Network Simulator',
+        href: '/quantum-neural-network-simulator',
+        description: 'Simulate quantum neural networks',
+        icon: <Brain className="w-4 h-4" />
+      },
+      {
+        name: 'Quantum-Enhanced Cybersecurity',
+        href: '/quantum-cybersecurity-suite',
+        description: 'Future-proof quantum security',
+        icon: <Shield className="w-4 h-4" />
       }
     ]
   },
@@ -198,6 +210,24 @@ const navigationItems: NavigationItem[] = [
         description: 'Consciousness-driven BI',
         icon: <BarChart3 className="w-4 h-4" />,
         featured: true
+      },
+      {
+        name: 'Zero-Trust Network Architecture',
+        href: '/zero-trust-network-architecture-platform',
+        description: 'Secure every connection',
+        icon: <Shield className="w-4 h-4" />
+      },
+      {
+        name: 'Autonomous Cloud Infrastructure',
+        href: '/autonomous-cloud-infrastructure-manager',
+        description: 'Self-managing cloud infrastructure',
+        icon: <Cloud className="w-4 h-4" />
+      },
+      {
+        name: 'Intelligent API Gateway',
+        href: '/intelligent-api-gateway-and-management',
+        description: 'Smart API management',
+        icon: <Network className="w-4 h-4" />
       },
       {
         name: 'AI Customer Success 2041',
@@ -222,6 +252,24 @@ const navigationItems: NavigationItem[] = [
         href: '/ai-predictive-maintenance-2041',
         description: 'Consciousness-based maintenance',
         icon: <Monitor className="w-4 h-4" />
+      },
+      {
+        name: 'Autonomous AI Research Assistant',
+        href: '/autonomous-ai-research-assistant',
+        description: 'Self-directed research with AI',
+        icon: <Brain className="w-4 h-4" />
+      },
+      {
+        name: 'Emotional Intelligence AI',
+        href: '/emotional-intelligence-ai-platform',
+        description: 'Human-like emotional understanding',
+        icon: <HeartIcon className="w-4 h-4" />
+      },
+      {
+        name: 'Autonomous Content Creation',
+        href: '/autonomous-content-creation-engine',
+        description: 'Self-generating content with AI',
+        icon: <CodeIcon className="w-4 h-4" />
       }
     ]
   },

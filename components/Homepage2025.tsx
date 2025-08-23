@@ -249,6 +249,51 @@ const Homepage2025: React.FC = () => {
                 }}
                 variant="automation"
               />
+              <UltraFuturisticServiceCard2026
+                service={{
+                  id: 'quantum-cybersecurity-suite',
+                  name: 'Quantum Cybersecurity Suite',
+                  tagline: 'Future-proof security with quantum-resistant encryption',
+                  description: 'Next-generation cybersecurity platform with quantum-resistant algorithms and AI threat detection',
+                  price: '$899',
+                  period: 'month',
+                  features: ['Quantum-Resistant Encryption', 'AI Threat Detection', 'Real-time Monitoring', 'Zero-Trust Security'],
+                  popular: true,
+                  category: 'Quantum Security',
+                  icon: '🔒⚛️🛡️'
+                }}
+                variant="quantum"
+              />
+              <UltraFuturisticServiceCard2026
+                service={{
+                  id: 'autonomous-content-creation',
+                  name: 'Autonomous Content Creation',
+                  tagline: 'Self-generating content with AI creativity',
+                  description: 'Intelligent content creation platform that autonomously generates high-quality, brand-consistent content',
+                  price: '$599',
+                  period: 'month',
+                  features: ['AI Content Generation', 'Brand Voice Consistency', 'Multi-format Support', 'SEO Optimization'],
+                  popular: true,
+                  category: 'AI Content',
+                  icon: '✍️🤖🎨'
+                }}
+                variant="ai"
+              />
+              <UltraFuturisticServiceCard2026
+                service={{
+                  id: 'edge-ai-computing',
+                  name: 'Edge AI Computing Platform',
+                  tagline: 'Intelligent computing at the edge',
+                  description: 'Advanced edge computing platform with real-time AI processing and optimization',
+                  price: '$899',
+                  period: 'month',
+                  features: ['Edge AI Deployment', 'Real-time Processing', 'IoT Integration', 'Privacy-Preserving Computing'],
+                  popular: false,
+                  category: 'Edge Computing',
+                  icon: '🌐🤖💻'
+                }}
+                variant="ai"
+              />
             </div>
             
             <div className="text-center mt-12">
