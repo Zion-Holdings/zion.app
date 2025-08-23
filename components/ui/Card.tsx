@@ -6,11 +6,9 @@ interface CardProps extends React.HTMLAttributes<HTMLDivElement> {
   variant?: 'default' | 'glass' | 'futuristic' | 'holographic' | 'neon';
   size?: 'sm' | 'md' | 'lg' | 'xl';
   hover?: boolean;
-  glow?: boolean;
-  animated?: boolean;
-  border?: boolean;
-  shadow?: boolean;
-  className?: string;
+  role?: string;
+  'aria-label'?: string;
+  'aria-describedby'?: string;
 }
 
 const Card: React.FC<CardProps> = ({
@@ -18,12 +16,9 @@ const Card: React.FC<CardProps> = ({
   variant = 'default',
   size = 'md',
   hover = true,
-  glow = false,
-  animated = true,
-  border = true,
-  shadow = true,
-  className,
-  ...props
+  role,
+  'aria-label': ariaLabel,
+  'aria-describedby': ariaDescribedby,
 }) => {
   const baseClasses = cn(
     'relative overflow-hidden transition-all duration-300',
@@ -87,38 +82,20 @@ const Card: React.FC<CardProps> = ({
 
   const borderClasses = border ? 'rounded-2xl' : 'rounded-none';
 
+  const commonProps = {
+    className: classes,
+    style,
+    onClick,
+    role,
+    'aria-label': ariaLabel,
+    'aria-describedby': ariaDescribedby,
+  };
+
   return (
-    <div
-      className={cn(
-        baseClasses,
-        sizeClasses[size],
-        variantClasses[variant],
-        borderClasses
-      )}
-      {...props}
-    >
-      {/* Futuristic background patterns */}
-      {variant === 'futuristic' && (
-        <>
-          <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 via-transparent to-purple-500/5 opacity-0 hover:opacity-100 transition-opacity duration-500" />
-          <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-blue-500/50 to-transparent" />
-          <div className="absolute bottom-0 right-0 w-full h-px bg-gradient-to-r from-transparent via-purple-500/50 to-transparent" />
-        </>
-      )}
-
-      {/* Holographic effect overlay */}
-      {variant === 'holographic' && (
-        <div className="absolute inset-0 bg-gradient-to-br from-purple-500/10 via-transparent to-blue-500/10 opacity-0 hover:opacity-100 transition-opacity duration-500" />
-      )}
-
-      {/* Neon glow effect */}
-      {variant === 'neon' && (
-        <>
-          <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/5 via-transparent to-cyan-500/5 opacity-0 hover:opacity-100 transition-opacity duration-500" />
-          <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-cyan-500/20 via-transparent to-cyan-500/20 opacity-0 hover:opacity-100 transition-opacity duration-500 blur-xl" />
-        </>
-      )}
-
+    <div {...commonProps}>
+      {/* Subtle background pattern */}
+      <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 via-transparent to-purple-500/5 opacity-0 hover:opacity-100 transition-opacity duration-300" />
+      
       {/* Content wrapper */}
       <div className="relative z-10">
         {children}

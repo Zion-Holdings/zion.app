@@ -6,12 +6,9 @@ interface BaseButtonProps {
   size?: 'sm' | 'md' | 'lg' | 'xl';
   icon?: React.ReactNode;
   iconPosition?: 'left' | 'right';
-  loading?: boolean;
-  disabled?: boolean;
-  fullWidth?: boolean;
-  rounded?: boolean;
-  glow?: boolean;
-  animated?: boolean;
+  style?: React.CSSProperties;
+  'aria-label'?: string;
+  'aria-describedby'?: string;
 }
 
 interface ButtonProps extends BaseButtonProps, React.ButtonHTMLAttributes<HTMLButtonElement> {
@@ -31,13 +28,9 @@ const Button: React.FC<ButtonComponentProps> = ({
   className,
   icon,
   iconPosition = 'left',
-  loading = false,
-  disabled = false,
-  fullWidth = false,
-  rounded = false,
-  glow = false,
-  animated = true,
-  ...props
+  style,
+  'aria-label': ariaLabel,
+  'aria-describedby': ariaDescribedby,
 }) => {
   const baseClasses = cn(
     'inline-flex items-center justify-center font-semibold transition-all duration-300',
@@ -163,35 +156,27 @@ const Button: React.FC<ButtonComponentProps> = ({
     </>
   );
 
-  if ('href' in props && props.href) {
-    const { href, ...anchorProps } = props as LinkButtonProps;
+  const commonProps = {
+    className: classes,
+    style,
+    'aria-label': ariaLabel,
+    'aria-describedby': ariaDescribedby,
+    disabled,
+  };
+
+  if (href) {
     return (
-      <a
-        href={href}
-        className={cn(
-          baseClasses,
-          sizeClasses[size],
-          variantClasses[variant],
-          'no-underline'
-        )}
-        {...anchorProps}
-      >
-        {buttonContent}
-      </a>
+      <Link href={href} {...commonProps}>
+        {content}
+      </Link>
     );
   }
 
     return (
     <button
-      className={cn(
-        baseClasses,
-        sizeClasses[size],
-        variantClasses[variant],
-        loading && 'cursor-wait',
-        disabled && 'cursor-not-allowed'
-      )}
-      disabled={disabled || loading}
-      {...(props as ButtonProps)}
+      type={type}
+      onClick={onClick}
+      {...commonProps}
     >
       {buttonContent}
     </button>

@@ -92,39 +92,25 @@ const Features: React.FC<FeaturesProps> = ({
   };
 
   return (
-    <section className="py-20 relative overflow-hidden">
-      {/* Background effects */}
-      <div className="absolute inset-0">
-        <div className="particles-bg opacity-30" />
-        <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-blue-500/50 to-transparent" />
-        <div className="absolute bottom-0 right-0 w-full h-px bg-gradient-to-r from-transparent via-purple-500/50 to-transparent" />
-      </div>
-
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Header */}
-        <div className="text-center mb-16">
-          <div className="inline-flex items-center px-4 py-2 rounded-full bg-gradient-to-r from-blue-500/20 to-purple-500/20 border border-blue-500/30 backdrop-blur-sm mb-6">
-            <Star className="w-4 h-4 text-yellow-400 mr-2" />
-            <span className="text-sm font-medium text-blue-300">
-              Industry Leading Features
-            </span>
+    <section className="py-16 sm:py-20 md:py-24 bg-black relative overflow-hidden" role="region" aria-labelledby="features-heading">
+      <div className="absolute inset-0 bg-[linear-gradient(rgba(59,130,246,0.05)_1px,transparent_1px),linear-gradient(90deg,rgba(59,130,246,0.05)_1px,transparent_1px)] bg-[size:50px_50px] opacity-20" />
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        {/* Section Header */}
+        <div className="text-center mb-16 sm:mb-20 animate-fade-in">
+          <div className="inline-flex items-center px-4 py-2 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 text-sm font-medium mb-6">
+            <Zap className="w-4 h-4 mr-2" />
+            Platform Features
           </div>
-          
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-6">
-            <span className="bg-gradient-to-r from-white via-blue-100 to-cyan-100 bg-clip-text text-transparent">
-              {title}
-            </span>
+          <h2 id="features-heading" className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6 sm:mb-8 text-white leading-tight">
+            {title}
           </h2>
-          
-          {subtitle && (
-            <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
-              {subtitle}
-            </p>
-          )}
+          <p className="text-lg sm:text-xl text-gray-400 max-w-4xl mx-auto leading-relaxed">
+            {subtitle}
+          </p>
         </div>
 
-        {/* Features grid */}
-        <div className={layoutClasses[layout]}>
+        {/* Features Grid */}
+        <div className={`grid grid-cols-1 gap-6 sm:gap-8 ${gridCols[columns]}`}>
           {features.map((feature, index) => (
             <Card
               key={index}
@@ -154,9 +140,10 @@ const Features: React.FC<FeaturesProps> = ({
                   </h3>
                 </div>
               </div>
-
-              {/* Description */}
-              <p className="text-gray-300 mb-6 leading-relaxed">
+              <h3 className="text-xl font-bold mb-4 text-white group-hover:text-blue-400 transition-colors duration-300">
+                {feature.title}
+              </h3>
+              <p className="text-gray-400 leading-relaxed text-sm sm:text-base">
                 {feature.description}
               </p>
 

@@ -14,36 +14,12 @@ export default function Layout({ children }: LayoutProps) {
   const [sidebarOpen, setSidebarOpen] = useState(false);
 
   return (
-    <div className="min-h-screen bg-black text-white relative overflow-x-hidden">
-      {/* Skip to content link for accessibility */}
-      <a href="#main" className="skip-link">Skip to main content</a>
-      
-      {/* Futuristic Background */}
-      <UltraFuturisticBackground2037 />
-      
-      {/* Layout Structure */}
-      <div className="relative z-10">
-        {/* Top Contact Bar */}
-        <TopContactBar />
-        
-        {/* Navigation */}
-        <UltraFuturisticNavigation2037 />
-        
-        {/* Sidebar and Main Content */}
-        <div className="flex">
-          <EnhancedSidebar2025 
-            isOpen={sidebarOpen} 
-            onClose={() => setSidebarOpen(false)} 
-          />
-          
-          <main id="main" role="main" className="flex-1 pt-24 lg:pt-28">
-            {children}
-          </main>
-        </div>
-        
-        {/* Footer */}
-        <UltraFuturisticFooter2037 />
-      </div>
+    <div className="min-h-screen bg-black text-white flex flex-col">
+      <Header />
+      <main className="flex-1 pt-20 sm:pt-24 lg:pt-28">
+        {children}
+      </main>
+      <Footer />
     </div>
   );
 }

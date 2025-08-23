@@ -4,34 +4,35 @@
 
 /* Custom CSS Variables for Theme Support */
 :root {
-  --neon-cyan: #00d4ff;
-  --neon-purple: #a855f7;
-  --neon-pink: #ec4899;
-  --neon-blue: #3b82f6;
-  --neon-green: #10b981;
-  --neon-red: #ef4444;
-  --neon-yellow: #f59e0b;
-  --neon-orange: #f97316;
-  --neon-indigo: #6366f1;
-  --neon-teal: #14b8a6;
+  --background: #000000;
+  --foreground: #ffffff;
+  --primary: #3b82f6;
+  --primary-foreground: #ffffff;
+  --secondary: #1f2937;
+  --secondary-foreground: #f9fafb;
+  --accent: #10b981;
+  --accent-foreground: #ffffff;
+  --muted: #374151;
+  --muted-foreground: #9ca3af;
+  --border: #374151;
+  --input: #374151;
+  --ring: #3b82f6;
+  --radius: 0.75rem;
+  --shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
   
-  /* Enhanced color palette */
-  --gradient-primary: linear-gradient(135deg, #00d4ff, #3b82f6, #8b5cf6);
-  --gradient-secondary: linear-gradient(135deg, #ec4899, #f97316, #f59e0b);
-  --gradient-accent: linear-gradient(135deg, #10b981, #14b8a6, #06b6d4);
-  
-  /* Animation variables */
-  --animation-duration: 0.3s;
-  --animation-timing: cubic-bezier(0.4, 0, 0.2, 1);
-  
-  /* Additional theme colors */
-  --primary-color: #06b6d4;
-  --secondary-color: #3b82f6;
-  --accent-color: #8b5cf6;
-  --background-color: #000000;
-  --text-color: #ffffff;
-  --surface-color: #1f2937;
-  --border-color: #374151;
+  /* Custom cursor theme colors */
+  --cursor-blue: #3b82f6;
+  --cursor-blue-hover: #2563eb;
+  --cursor-accent: #10b981;
+  --cursor-accent-hover: #059669;
+  --cursor-purple: #8b5cf6;
+  --cursor-purple-hover: #7c3aed;
+  --cursor-green: #22c55e;
+  --cursor-green-hover: #16a34a;
+  --cursor-dark: #111827;
+  --cursor-darker: #030712;
+  --cursor-light: #374151;
+  --cursor-lighter: #6b7280;
 }
 
 .light {
@@ -84,84 +85,46 @@ body {
   text-shadow: 0 0 10px rgba(0, 212, 255, 0.8);
 }
 
-::-moz-selection {
-  background: rgba(0, 212, 255, 0.4);
-  color: #ffffff;
-  text-shadow: 0 0 10px rgba(0, 212, 255, 0.8);
+/* Button styles */
+.btn {
+  @apply inline-flex items-center justify-center font-semibold rounded-lg transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-black focus:ring-blue-500 disabled:opacity-50 disabled:cursor-not-allowed;
 }
 
-/* Enhanced Typography */
-.text-gradient {
-  background: var(--gradient-primary);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  animation: gradient-shift 3s ease-in-out infinite;
+.btn-primary {
+  @apply bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white shadow-lg hover:shadow-xl hover:-translate-y-0.5 border-0;
 }
 
-/* Futuristic Neon Effects */
-.neon-glow {
-  text-shadow: 
-    0 0 5px currentColor,
-    0 0 10px currentColor,
-    0 0 15px currentColor,
-    0 0 20px currentColor;
-  animation: neon-pulse 2s ease-in-out infinite alternate;
+.btn-secondary {
+  @apply bg-gray-800 hover:bg-gray-700 text-white border border-gray-600 hover:border-gray-500;
 }
 
-.neon-border {
-  box-shadow: 
-    0 0 5px currentColor,
-    0 0 10px currentColor,
-    0 0 15px currentColor,
-    inset 0 0 5px currentColor;
-  animation: neon-border-pulse 3s ease-in-out infinite alternate;
+.btn-outline {
+  @apply bg-transparent border border-gray-600 text-gray-300 hover:bg-gray-800 hover:border-blue-500 hover:text-white;
 }
 
-.neon-bg {
-  background: linear-gradient(45deg, 
-    rgba(0, 212, 255, 0.1),
-    rgba(59, 130, 246, 0.1),
-    rgba(139, 92, 246, 0.1)
-  );
-  border: 1px solid rgba(0, 212, 255, 0.3);
-  box-shadow: 
-    0 0 20px rgba(0, 212, 255, 0.2),
-    inset 0 0 20px rgba(0, 212, 255, 0.1);
+.btn-ghost {
+  @apply bg-transparent hover:bg-gray-800 text-gray-300 hover:text-white;
 }
 
-/* Futuristic Animations */
-@keyframes neon-pulse {
-  0% { opacity: 0.8; }
-  100% { opacity: 1; }
+.btn-accent {
+  @apply bg-gradient-to-r from-green-600 to-emerald-700 hover:from-green-700 hover:to-emerald-800 text-white shadow-lg hover:shadow-xl hover:-translate-y-0.5 border-0;
 }
 
-@keyframes neon-border-pulse {
-  0% { box-shadow: 
-    0 0 5px currentColor,
-    0 0 10px currentColor,
-    0 0 15px currentColor,
-    inset 0 0 5px currentColor; }
-  100% { box-shadow: 
-    0 0 10px currentColor,
-    0 0 20px currentColor,
-    0 0 30px currentColor,
-    inset 0 0 10px currentColor; }
+.btn-purple {
+  @apply bg-gradient-to-r from-purple-600 to-purple-700 hover:from-purple-700 hover:to-purple-800 text-white shadow-lg hover:shadow-xl hover:-translate-y-0.5 border-0;
 }
 
-@keyframes gradient-shift {
-  0%, 100% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
+/* Card styles */
+.card {
+  @apply bg-gray-900/50 border border-gray-800 rounded-xl p-6 transition-all duration-300 hover:border-blue-500/30 hover:shadow-lg hover:shadow-blue-500/10;
 }
 
-@keyframes float {
-  0%, 100% { transform: translateY(0px); }
-  50% { transform: translateY(-20px); }
+.card-hover {
+  @apply hover:border-blue-500/40 hover:shadow-2xl hover:shadow-blue-500/20 hover:-translate-y-1;
 }
 
-@keyframes glow {
-  0%, 100% { filter: brightness(1); }
-  50% { filter: brightness(1.2); }
+.card-gradient {
+  @apply bg-gradient-to-br from-gray-900 to-gray-950 border border-gray-800/50;
 }
 
 @keyframes pulse {
@@ -767,4 +730,140 @@ html {
 
 .focus-ring-light {
   @apply focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:ring-offset-2 focus:ring-offset-white;
+}
+
+.gradient-text-blue {
+  @apply bg-gradient-to-r from-blue-500 via-blue-400 to-blue-300 bg-clip-text text-transparent;
+}
+
+.gradient-text-accent {
+  @apply bg-gradient-to-r from-green-500 via-emerald-400 to-green-300 bg-clip-text text-transparent;
+}
+
+.gradient-text-purple {
+  @apply bg-gradient-to-r from-purple-500 via-purple-400 to-purple-300 bg-clip-text text-transparent;
+}
+
+/* Glass morphism effect */
+.glass {
+  @apply bg-white/5 backdrop-blur-xl border border-white/10;
+}
+
+.glass-dark {
+  @apply bg-black/20 backdrop-blur-xl border border-white/5;
+}
+
+/* Responsive utilities */
+.container-cursor {
+  @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+}
+
+.container-cursor-sm {
+  @apply max-w-5xl mx-auto px-4 sm:px-6 lg:px-8;
+}
+
+.container-cursor-lg {
+  @apply max-w-8xl mx-auto px-4 sm:px-6 lg:px-8;
+}
+
+/* Background patterns */
+.bg-grid {
+  background-image: 
+    linear-gradient(rgba(59, 130, 246, 0.1) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(59, 130, 246, 0.1) 1px, transparent 1px);
+  background-size: 50px 50px;
+}
+
+.bg-dots {
+  background-image: radial-gradient(circle, rgba(59, 130, 246, 0.3) 1px, transparent 1px);
+  background-size: 20px 20px;
+}
+
+/* Gradient backgrounds */
+.bg-gradient-cursor {
+  @apply bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900;
+}
+
+.bg-gradient-cursor-blue {
+  @apply bg-gradient-to-br from-gray-900 via-gray-800 to-blue-900/20;
+}
+
+.bg-gradient-cursor-accent {
+  @apply bg-gradient-to-br from-gray-900 via-gray-800 to-green-500/10;
+}
+
+/* Border gradients */
+.border-gradient-blue {
+  border: 1px solid transparent;
+  background: linear-gradient(var(--background), var(--background)) padding-box,
+              linear-gradient(45deg, #3b82f6, #10b981) border-box;
+}
+
+.border-gradient-purple {
+  border: 1px solid transparent;
+  background: linear-gradient(var(--background), var(--background)) padding-box,
+              linear-gradient(45deg, #8b5cf6, #3b82f6) border-box;
+}
+
+/* Text shadows */
+.text-shadow {
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.text-shadow-lg {
+  text-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+}
+
+/* Responsive text sizes */
+.text-responsive-xl {
+  @apply text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl;
+}
+
+.text-responsive-lg {
+  @apply text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl;
+}
+
+.text-responsive-md {
+  @apply text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl;
+}
+
+/* Spacing utilities */
+.section-padding {
+  @apply py-16 sm:py-20 md:py-24 lg:py-32;
+}
+
+.section-padding-sm {
+  @apply py-12 sm:py-16 md:py-20 lg:py-24;
+}
+
+.section-padding-lg {
+  @apply py-20 sm:py-24 md:py-32 lg:py-40;
+}
+
+/* Improved focus and accessibility */
+.focus-visible:focus {
+  outline: 2px solid var(--ring);
+  outline-offset: 2px;
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .card {
+    border-width: 2px;
+  }
+  
+  .btn {
+    border-width: 2px;
+  }
 }
