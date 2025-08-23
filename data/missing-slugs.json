@@ -1,0 +1,11 @@
+[
+  "services/ai-sales-sequence-personalizer",
+  "services/ai-synthetic-data-studio",
+  "services/data-contracts-hub",
+  "services/edge-personalization-kit",
+  "services/etl-reliability-copilot",
+  "services/kubernetes-cost-anomaly-guard",
+  "services/postgres-performance-tuner",
+  "services/serverless-lakehouse-starter",
+  "services/zero-trust-sso-mesh"
+]

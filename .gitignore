@@ -12,6 +12,10 @@ yarn-debug.log*
 yarn-error.log*
 pnpm-debug.log*
 automation/logs/
+automation/.git-sync.lock
+automation/.content-completer.lock
+automation/.chat-to-agents.lock
+.npm-cache/
 
 # OS/Editor
 .DS_Store
@@ -23,3 +27,9 @@ Thumbs.db
 .env
 .env.local
 .env.*.local
+core
+public/reports/
+public/reports/
+public/reports/
+public/reports/
+public/reports/

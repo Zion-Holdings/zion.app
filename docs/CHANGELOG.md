@@ -1,3 +1,0 @@
-# Changelog
-
-Updated: 2025-08-09T18:44:48.522Z
