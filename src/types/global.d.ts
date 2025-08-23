@@ -12,6 +12,13 @@ declare module '@/components/FeatureCard' {
   }
 }
 
+// PWA install prompt event typing
+interface BeforeInstallPromptEvent extends Event {
+  readonly platforms: string[];
+  prompt(): Promise<void>;
+  userChoice: Promise<{ outcome: 'accepted' | 'dismissed'; platform: string }>;
+}
+
 // Extend ListingScoreCardProps to include key for mapping
 declare module '@/components/ListingScoreCard' {
   export interface ListingScoreCardProps {
@@ -49,14 +56,4 @@ declare module '@/components/ProductListingCard' {
     key?: string | number;
     detailBasePath?: string;
   }
-}
-
-// Define global type for the PWA install prompt event
-interface BeforeInstallPromptEvent extends Event {
-  readonly platforms: string[];
-  readonly userChoice: Promise<{
-    outcome: 'accepted' | 'dismissed';
-    platform: string;
-  }>;
-  prompt(): Promise<void>;
 }

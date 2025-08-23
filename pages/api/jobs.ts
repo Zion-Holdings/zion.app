@@ -1,18 +1,18 @@
-import { JOB_POSTS } from '@/data/jobsData';
+import type { NextApiRequest, NextApiResponse } from "next";
+import fs from "fs-extra";
+import path from "path";
 
-// Generic request/response types so this handler works in Node or Next.js
-interface Req { method?: string }
-interface JsonRes {
-  status: (code: number) => JsonRes;
-  json: (data: any) => void;
-  end: (data?: any) => void;
-  setHeader: (name: string, value: string) => void;
-}
+const JOBS_FILE = path.join(process.cwd(), "data", "jobs", "jobs.json");
 
-export default function handler(req: Req, res: JsonRes) {
-  if (req.method && req.method !== 'GET') {
-    res.status(405).end();
-    return;
+export default async function handler(req: NextApiRequest, res: NextApiResponse) {
+  if (req.method !== "GET") {
+    res.setHeader("Allow", "GET");
+    return res.status(405).json({ error: "Method Not Allowed" });
   }
-  res.status(200).json(JOB_POSTS);
+  try {
+    const jobs = (await fs.pathExists(JOBS_FILE)) ? await fs.readJSON(JOBS_FILE) : [];
+    return res.status(200).json({ jobs });
+  } catch (e) {
+    return res.status(500).json({ error: "Failed to load jobs" });
+  }
 }
