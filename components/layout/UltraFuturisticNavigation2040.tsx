@@ -136,6 +136,20 @@ const navigationItems: NavigationItem[] = [
     neonColor: 'shadow-yellow-400/50'
   },
   {
+    label: 'Case Studies',
+    href: '/case-studies',
+    icon: <Target className="w-4 h-4" />,
+    description: 'Success stories and client results',
+    neonColor: 'shadow-green-400/50'
+  },
+  {
+    label: 'Careers',
+    href: '/careers',
+    icon: <Users className="w-4 h-4" />,
+    description: 'Join our team and mission',
+    neonColor: 'shadow-orange-400/50'
+  },
+  {
     label: 'Resources',
     href: '/resources',
     icon: <BookOpen className="w-4 h-4" />,
@@ -158,10 +172,17 @@ const navigationItems: NavigationItem[] = [
       },
       {
         label: 'Documentation',
-        href: '/docs',
+        href: '/documentation',
         icon: <Code className="w-4 h-4" />,
         description: 'Technical documentation',
         neonColor: 'shadow-green-400/50'
+      },
+      {
+        label: 'API Reference',
+        href: '/api-documentation',
+        icon: <Code className="w-4 h-4" />,
+        description: 'API documentation and guides',
+        neonColor: 'shadow-indigo-400/50'
       }
     ]
   },

@@ -184,7 +184,7 @@ export default function ServicesAdvertisingPage() {
 					<ul className="list-disc list-inside text-slate-300 space-y-1">
 						<li>Typical SMB budget: $50–$500/mo + API usage</li>
 						<li>Learn more: <a className="text-cyan-400 underline" href="/services/ai-red-teaming-suite">/services/ai-red-teaming-suite</a></li>
-						<li>References: https://openai.com/safety, https://www.anthropic.com/news, https://www.promptfoo.dev/pricing</li>
+						<li>References: <a href="https://platform.openai.com/docs/guides/safety-best-practices" target="_blank" rel="noopener noreferrer" className="text-cyan-400 underline">OpenAI Safety</a>, <a href="https://www.anthropic.com/news" target="_blank" rel="noopener noreferrer" className="text-cyan-400 underline">Anthropic News</a>, <a href="https://www.promptfoo.dev/pricing" target="_blank" rel="noopener noreferrer" className="text-cyan-400 underline">Promptfoo Pricing</a></li>
 					</ul>
 				</section>
 
@@ -265,7 +265,7 @@ export default function ServicesAdvertisingPage() {
 					<h2 className="text-2xl font-semibold text-white">Latest Real Additions</h2>
 					<ul className="list-disc list-inside text-slate-300 space-y-2">
 						<li>
-							<strong className="text-white">Postgres Index Advisor Pro</strong> — $79/mo. Auto index insights, PR rollouts. Learn: <a className="text-cyan-400 underline" href="/services/postgres-index-advisor-pro">/services/postgres-index-advisor-pro</a>. Benchmarks: {ext('https://www.postgresql.org/docs/current/auto-explain.html')}{', '}{ext('https://pganalyze.com/blog/postgres-index-tuning')}
+							<strong className="text-white">Postgres Index Advisor Pro</strong> — $79/mo. Auto index insights, PR rollouts. Learn: <a className="text-cyan-400 underline" href="/services/postgres-index-advisor-pro">/services/postgres-index-advisor-pro</a>. Benchmarks: <a href="https://www.postgresql.org/docs/current/auto-explain.html" target="_blank" rel="noopener noreferrer" className="text-cyan-400 underline">PostgreSQL Auto Explain</a>, <a href="https://pganalyze.com/pricing" target="_blank" rel="noopener noreferrer" className="text-cyan-400 underline">pganalyze.com/pricing</a>
 						</li>
 						<li>
 							<strong className="text-white">S3 Lifecycle Optimizer</strong> — $59/mo. Smart storage class moves. Learn: <a className="text-cyan-400 underline" href="/services/s3-lifecycle-optimizer">/services/s3-lifecycle-optimizer</a>. References: {ext('https://aws.amazon.com/s3/pricing/')}{', '}{ext('https://aws.amazon.com/s3/storage-classes/')}
@@ -277,7 +277,7 @@ export default function ServicesAdvertisingPage() {
 							<strong className="text-white">Feature Flag Auditor</strong> — $29/mo. Hygiene checks + PRs. Learn: <a className="text-cyan-400 underline" href="/services/feature-flag-auditor">/services/feature-flag-auditor</a>. References: {ext('https://launchdarkly.com/pricing/')}{', '}{ext('https://www.flagsmith.com/pricing')}
 						</li>
 						<li>
-							<strong className="text-white">SOC 2 Evidence Collector</strong> — $99/mo. Continuous evidence bundles. Learn: <a className="text-cyan-400 underline" href="/services/soc2-evidence-collector">/services/soc2-evidence-collector</a>. References: {ext('https://www.servicenow.com/trust/compliance-reports.html')}{', '}{ext('https://www.aicpa.org/resources/certification/soc-2')}
+							<strong className="text-white">SOC 2 Evidence Collector</strong> — $99/mo. Continuous evidence bundles. Learn: <a className="text-cyan-400 underline" href="/services/soc2-evidence-collector">/services/soc2-evidence-collector</a>. References: <a href="https://www.servicenow.com/trust/compliance-reports.html" target="_blank" rel="noopener noreferrer" className="text-cyan-400 underline">ServiceNow Compliance</a>, <a href="https://www.aicpa.org/interestareas/frc/assuranceadvisoryservices/soc2.html" target="_blank" rel="noopener noreferrer" className="text-cyan-400 underline">AICPA SOC 2</a>
 						</li>
 						<li>
 							<strong className="text-white">IAM Permission Analyzer</strong> — $79/mo. Least privilege guidance. Learn: <a className="text-cyan-400 underline" href="/services/iam-permission-analyzer">/services/iam-permission-analyzer</a>. References: {ext('https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html')}{', '}{ext('https://cloud.google.com/iam/docs')}

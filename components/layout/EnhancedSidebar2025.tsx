@@ -138,8 +138,8 @@ const EnhancedSidebar2025: React.FC<{ isOpen: boolean; onClose: () => void }> = 
         { label: 'Case Studies', href: '/case-studies' },
         { label: 'Support', href: '/support' },
         { label: 'Training', href: '/training' },
-        { label: 'Documentation', href: '/docs' },
-        { label: 'API Reference', href: '/api-docs' }
+        { label: 'Documentation', href: '/documentation' },
+        { label: 'API Reference', href: '/api-documentation' }
       ]
     }
   ];
