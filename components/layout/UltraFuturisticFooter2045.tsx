@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 import { 
   Phone, Mail, MapPin, ArrowRight, Globe, Shield, Rocket, Brain, Atom, Cpu,
   Facebook, Twitter, Linkedin, Instagram, Youtube, Github, Zap, Heart, Star,
-  Users, Lock, Cloud, Code, Server, Database, Network, Settings, Target, Play, FileText, ArrowUp
+  Users, Lock, Cloud, Code, Server, Database, Network, Settings, Target, Play, FileText, ArrowUp, HelpCircle
 } from 'lucide-react';
 
 const UltraFuturisticFooter2045: React.FC = () => {
@@ -65,12 +65,19 @@ const UltraFuturisticFooter2045: React.FC = () => {
   ];
 
   const socialLinks = [
-    { name: 'Facebook', icon: Facebook, href: 'https://facebook.com/ziontechgroup', color: 'from-blue-500 to-blue-600' },
-    { name: 'Twitter', icon: Twitter, href: 'https://twitter.com/ziontechgroup', color: 'from-cyan-400 to-blue-500' },
-    { name: 'LinkedIn', icon: Linkedin, href: 'https://linkedin.com/company/ziontechgroup', color: 'from-blue-600 to-blue-700' },
-    { name: 'Instagram', icon: Instagram, href: 'https://instagram.com/ziontechgroup', color: 'from-purple-500 to-pink-500' },
-    { name: 'YouTube', icon: Youtube, href: 'https://youtube.com/@ziontechgroup', color: 'from-red-500 to-red-600' },
-    { name: 'GitHub', icon: Github, href: 'https://github.com/ziontechgroup', color: 'from-gray-600 to-gray-700' }
+    { name: 'Facebook', href: 'https://facebook.com/ziontechgroup', icon: Facebook },
+    { name: 'Twitter', href: 'https://twitter.com/ziontechgroup', icon: Twitter },
+    { name: 'LinkedIn', href: 'https://linkedin.com/company/zion-tech-group', icon: Linkedin },
+    { name: 'Instagram', href: 'https://instagram.com/ziontechgroup', icon: Instagram },
+    { name: 'YouTube', href: 'https://youtube.com/@ziontechgroup', icon: Youtube },
+    { name: 'GitHub', href: 'https://github.com/Zion-Holdings', icon: Github }
+  ];
+
+  const quickLinks = [
+    { name: 'Get Started', href: '/contact', icon: <ArrowRight className="w-4 h-4" /> },
+    { name: 'Contact Sales', href: '/contact', icon: <Phone className="w-4 h-4" /> },
+    { name: 'Support', href: '/support', icon: <HelpCircle className="w-4 h-4" /> },
+    { name: 'Documentation', href: '/docs', icon: <Code className="w-4 h-4" /> }
   ];
 
   const fadeInUp = {
@@ -221,8 +228,8 @@ const UltraFuturisticFooter2045: React.FC = () => {
                     href={social.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className={`p-2 rounded-lg bg-gray-900/50 border border-cyan-500/20 text-gray-400 hover:text-white transition-all duration-200 hover:scale-110 hover:border-cyan-500/50 group`}
-                    aria-label={`Follow us on ${social.name}`}
+                    className="p-2 rounded-lg bg-gray-900/50 border border-cyan-500/20 text-gray-400 transition-all duration-200 hover:scale-110 hover:border-cyan-500/50 hover:text-cyan-400"
+                    aria-label={social.name}
                   >
                     <social.icon className="w-5 h-5" />
                     <span className="sr-only">{social.name}</span>
