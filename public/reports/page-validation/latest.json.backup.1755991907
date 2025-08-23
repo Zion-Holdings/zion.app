@@ -63,7 +63,12 @@
   ],
   "results": [],
   "buildBreakingFiles": [],
+<<<<<<< HEAD
+  "buildBreakingFiles": [],
+  "generatedAt": "2025-08-20T18:46:21.467Z"
+=======
   "generatedAt": "2025-08-20T18:44:36.333Z"
 =======
   "generatedAt": "2025-08-20T18:47:22.457Z"
+>>>>>>> origin/cursor/enhance-app-with-micro-saas-and-advertising-602f
 }
