@@ -1,0 +1,120 @@
+<<<<<<< HEAD
+import { useEffect, useState } from "react";
+import { useRouter } from "next/router";
+import CreatePostButton from "@/components/community/CreatePostButton";
+import { LoginModal } from "@/components/auth/LoginModal";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { SEO } from "@/components/SEO";
+import ForumCategories from "@/components/community/ForumCategories";
+import PostCard from "@/components/community/PostCard";
+import { useAuth } from "@/hooks/useAuth";
+import { useCommunity } from "@/context";
+
+
+export default function CommunityPage() {
+  const { user } = useAuth();
+  const { featuredPosts, recentPosts } = useCommunity();
+  const [activeTab, setActiveTab] = useState("categories");
+  const router = useRouter();
+  const [showNewPost, setShowNewPost] = useState(false);
+  const [loginOpen, setLoginOpen] = useState(false);
+  const { markCommunityVisited } = useAdvancedOnboardingStatus();
+
+  // Combine posts for Q&A section, removing duplicates by id
+  const qaPosts = Array.from(
+    new Map(
+      [...featuredPosts, ...recentPosts].map((post) => [post.id, post])
+    ).values()
+  );
+
+  const initialCategory = router.query.category as ForumCategory | null;
+
+  useEffect(() => {
+    const wantsNew = router.query.new === "1";
+    if (wantsNew && !user) {
+      setLoginOpen(true);
+      setShowNewPost(false);
+      return;
+    }
+    setShowNewPost(wantsNew && !!user);
+    if (user) {
+      setLoginOpen(false);
+    }
+    markCommunityVisited();
+  }, [router, user, initialCategory, markCommunityVisited]);
+
+  // Handle tab changes in URL query params for better UX
+  useEffect(() => {
+    const tab = router.query.tab as string;
+    if (tab && ["categories", "featured", "recent", "qa"].includes(tab)) {
+      setActiveTab(tab);
+    }
+  }, [router.query.tab]);
+
+  // Early returns after all hooks, before useEffect
+  if (loading) {
+    return (
+      <div className="min-h-screen flex items-center justify-center">
+        <div className="text-center">
+          <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-600 mx-auto mb-4"></div>
+          <p className="text-gray-600">Loading community...</p>
+        </div>
+      </div>
+    );
+  }
+
+  if (!user) {
+    return (
+      <div className="min-h-screen flex items-center justify-center">
+        <div className="text-center">
+          <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-600 mx-auto mb-4"></div>
+          <p className="text-gray-600">Redirecting to login...</p>
+        </div>
+      </div>
+    );
+  }
+
+  const handleTabChange = (value: string) => {
+    setActiveTab(value);
+    // Update URL to reflect active tab
+    const newQuery = { ...router.query, tab: value };
+    router.replace({ pathname: router.pathname, query: newQuery }, undefined, { shallow: true });
+  };
+
+  const handleDialogChange = (open: boolean) => {
+    setShowNewPost(open);
+    if (!open) {
+      const currentQuery = { ...router.query };
+      delete currentQuery.new;
+      router.replace({ pathname: router.pathname, query: currentQuery }, undefined, { shallow: true });
+    }
+  };
+
+  const handleLoginModalChange = (open: boolean) => {
+    setLoginOpen(open);
+    if (!open) {
+      const currentQuery = { ...router.query };
+      delete currentQuery.new;
+      router.replace({ pathname: router.pathname, query: currentQuery }, undefined, { shallow: true });
+    }
+  };
+
+  logInfo('CommunityPage featuredPosts:', { data:  { data: featuredPosts } });
+  logInfo('CommunityPage recentPosts:', { data:  { data: recentPosts } });
+  logInfo('CommunityPage activeTab:', { data:  { data: activeTab } });
+  
+  if (!featuredPosts || !recentPosts) {
+    logErrorToProduction('CommunityPage: Posts data is missing from context!', undefined, { message: 'CommunityPage: Posts data is missing from context!' });
+  }
+  
+=======
+import React from 'react';
+export function CommunityPage() {
+>>>>>>> origin/automation-error-fixes
+  return (
+    <div>
+      <h1>Component</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

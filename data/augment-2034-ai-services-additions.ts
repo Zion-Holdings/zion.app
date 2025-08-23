@@ -1,0 +1,42 @@
+export const cuttingEdgeAIServices2034Additions = [
+  {
+    id: 'ai-redteaming-eval-lab-2034',
+    name: 'AI Red-Teaming & Eval Lab',
+    tagline: 'Automate adversarial prompts, evals and regression checks',
+    price: '$189',
+    period: '/month',
+    description: 'Schedule eval suites, generate adversarial prompts, and gate PRs with scorecards to ship safer AI.',
+    features: ['Datasets and eval runners', 'Adversarial prompt library', 'PR gates and dashboards'],
+    popular: false,
+    icon: '🧪',
+    color: 'from-fuchsia-600 to-pink-700',
+    textColor: 'text-fuchsia-300',
+    link: 'https://ziontechgroup.com/services/ai-redteaming-eval-lab-2034',
+    marketPosition: 'Complements OpenAI Evals with orchestration and reports.',
+    targetAudience: 'AI platform, QA and security',
+    trialDays: 14,
+    setupTime: '2 hours',
+    category: 'AI & Data',
+    realService: true,
+    technology: ['TypeScript', 'OpenAI', 'Langfuse'],
+    integrations: ['GitHub', 'Datadog', 'Slack'],
+    useCases: ['Regression testing', 'Safety audits', 'Compliance gates'],
+    roi: 'Reduce AI incidents and regressions 20–40%',
+    competitors: ['Promptfoo', 'OpenAI Evals'],
+    marketSize: '$0.8B eval tooling',
+    growthRate: '30% CAGR',
+    variant: 'ai-futuristic',
+    contactInfo: {
+      mobile: '+1 302 464 0950',
+      email: 'kleber@ziontechgroup.com',
+      address: '364 E Main St STE 1008 Middletown DE 19709',
+      website: 'https://ziontechgroup.com'
+    },
+    realImplementation: true,
+    implementationDetails: 'Hosted eval runner, dataset manager and PR gate bot.',
+    launchDate: '2025-08-09',
+    customers: 18,
+    rating: 4.7,
+    reviews: 11
+  }
+];

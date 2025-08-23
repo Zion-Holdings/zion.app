@@ -1,0 +1,213 @@
+# Page snapshot
+
+```yaml
+- banner:
+  - link "Skip to content":
+    - /url: "#main-content"
+  - navigation:
+    - link "Zion":
+      - /url: /
+    - text: Autonomous Cloud Automations
+    - link "Landing":
+      - /url: /landing/
+    - link "Explore":
+      - /url: /explore/
+    - link "Services":
+      - /url: /services/
+    - link "Automations":
+      - /url: /automation/
+    - link "Reports":
+      - /url: /reports/
+    - link "Updates":
+      - /url: /newsroom/
+    - link "Search":
+      - /url: /search/
+    - link "Get Started":
+      - /url: /main/front/#features
+- main:
+  - main:
+    - text: Autonomous cloud systems are live and improving the app in real time
+    - heading "Autonomous Cloud Automations" [level=1]
+    - paragraph: Self-improving, cloud-native agents that invent, generate, and run new automation factories—fixing, optimizing, and syncing changes to the repository continuously.
+    - link "Explore Automations":
+      - /url: /automation/
+    - link "Live Meta Factory":
+      - /url: /site-health/
+    - text: 24/7 Autonomous Main Direct Sync 0 Ops Cloud‑Native Safety Guardrails
+    - heading "Features" [level=2]
+    - article:
+      - heading "Self‑Improving" [level=3]
+      - paragraph: Agents continuously analyze, invent, and evolve automations.
+    - article:
+      - heading "Repo Sync" [level=3]
+      - paragraph: Changes are committed and pushed automatically to main.
+    - article:
+      - heading "Zero Ops" [level=3]
+      - paragraph: Runs fully in the cloud—no servers or manual intervention.
+    - article:
+      - heading "Safety‑First" [level=3]
+      - paragraph: Conservative edits with logs, reports, and guardrails.
+    - article:
+      - heading "Scalable" [level=3]
+      - paragraph: Generates domain‑specific factories on demand.
+    - article:
+      - heading "Observability" [level=3]
+      - paragraph: Dashboards, reports, and GitHub Actions artifacts.
+    - heading "Capabilities" [level=2]
+    - article:
+      - heading "Code Quality & Refactors" [level=3]
+      - paragraph: Lints, fixes, and proposes refactors with type‑safety improvements.
+    - article:
+      - heading "Performance & A11y" [level=3]
+      - paragraph: Optimizes bundles, assets, and accessibility with continuous checks.
+    - article:
+      - heading "Content & SEO" [level=3]
+      - paragraph: Curates content, updates promotions, and tunes metadata for reach.
+    - heading "Benefits" [level=2]
+    - text: 24/7 progress without human intervention Rapid feedback loop with safe, incremental edits Continuous delivery directly to main branch Fewer regressions via layered checks and reports
+    - paragraph: Powered by modern cloud and AI tooling
+    - text: Next.js TypeScript Tailwind Framer Motion Supabase Netlify
+    - heading "Ready to build with autonomous cloud agents?" [level=3]
+    - paragraph: Scale development with a tireless fleet of self‑improving automations.
+    - link "Get Started":
+      - /url: /main/front/#capabilities
+    - link "View Automations":
+      - /url: /automation/
+    - heading "Explore more" [level=2]
+    - link "AI SEO Auditor — automate SEO improvements":
+      - /url: /services/ai-seo-auditor/
+    - link "Customer Support Chatbot — reduce response time":
+      - /url: /services/customer-support-chatbot/
+    - link "Landing Page Generator — launch pages instantly":
+      - /url: /services/landing-page-generator/
+    - link "Price Intelligence — market‑aware pricing":
+      - /url: /services/price-intelligence-service/
+    - link "Automation Status — live agents & reports":
+      - /url: /automation/
+    - link "Newsroom — latest autonomous updates":
+      - /url: /newsroom/
+    - link "Site Health — audits & insights":
+      - /url: /site-health/
+    - link "Contact — discuss your use‑case":
+      - /url: /newsroom/
+  - main:
+    - heading "Explore" [level=1]
+    - heading "Everything at a glance" [level=2]
+    - paragraph: Features, benefits, services, key pages, and content hubs.
+    - article:
+      - heading "Autonomous Agents" [level=3]
+      - paragraph: Self‑improving systems that build and run new automations.
+    - article:
+      - heading "Direct Repo Sync" [level=3]
+      - paragraph: Edits are committed and pushed to main safely.
+    - article:
+      - heading "Zero‑Ops Cloud" [level=3]
+      - paragraph: Fully managed execution with layered guardrails.
+    - article:
+      - heading "Observability" [level=3]
+      - paragraph: Dashboards, reports, and health checks across the site.
+    - article:
+      - heading "Scalable Factories" [level=3]
+      - paragraph: Domain‑specific content and automation factories on demand.
+    - article:
+      - heading "A11y & SEO" [level=3]
+      - paragraph: Continuous improvements to accessibility and search.
+    - heading "Benefits" [level=2]
+    - text: 24/7 progress without manual intervention Faster delivery with incremental, safe edits Lower maintenance via automated checks Higher quality from continuous auditing
+    - heading "Services" [level=2]
+    - link "View all →":
+      - /url: /services/
+    - link "AI SEO Auditor Automate SEO improvements Open":
+      - /url: /services/ai-seo-auditor/
+      - heading "AI SEO Auditor" [level=3]
+      - paragraph: Automate SEO improvements
+      - text: Open
+    - link "Customer Support Chatbot Reduce response time Open":
+      - /url: /services/customer-support-chatbot/
+      - heading "Customer Support Chatbot" [level=3]
+      - paragraph: Reduce response time
+      - text: Open
+    - link "Landing Page Generator Launch pages instantly Open":
+      - /url: /services/landing-page-generator/
+      - heading "Landing Page Generator" [level=3]
+      - paragraph: Launch pages instantly
+      - text: Open
+    - link "Price Intelligence Market‑aware pricing Open":
+      - /url: /services/price-intelligence-service/
+      - heading "Price Intelligence" [level=3]
+      - paragraph: Market‑aware pricing
+      - text: Open
+    - heading "Key Pages" [level=2]
+    - link "Automation Hub Live agents, runners, and schedulers Open":
+      - /url: /automation/
+    - link "Front Systems Futuristic product showcase Open":
+      - /url: /main/front/
+    - link "Reports Index SEO, AI Trends, Roadmap, and more Open":
+      - /url: /reports/
+    - link "Newsroom Curated updates by autonomous agents Open":
+      - /url: /newsroom/
+    - link "Site Health A11y, links, images, diagnostics Open":
+      - /url: /site-health/
+    - link "Search Find content across the site Open":
+      - /url: /search/
+    - link "Sitemap Full index of pages Open":
+      - /url: /sitemap.xml
+    - link "GitHub Repository and actions Open":
+      - /url: https://github.com/Zion-Holdings/zion.app
+    - heading "Content Hubs" [level=2]
+    - link "AI Trends Radar Signals that inspire automations Open":
+      - /url: /reports/ai-trends/
+    - link "AI Lab Research, experiments, and results Open":
+      - /url: /reports/ai-lab/
+    - link "Innovations Insights, guides, and patterns Open":
+      - /url: /reports/innovations/
+    - link "Autonomous Updates Freshly published content Open":
+      - /url: /newsroom/
+    - heading "Latest" [level=2]
+    - link "Innovation Insight — 2025-08-13 21-30 New autonomous content Open":
+      - /url: /reports/innovations/insight-2025-08-13T21-30/
+    - link "Autonomous Update — 2025-08-13 21-30 New autonomous content Open":
+      - /url: /reports/updates/update-2025-08-13T21-30/
+    - heading "Quick Links" [level=2]
+    - link "Automation Hub Live agents, runners, and schedulers Open":
+      - /url: /automation/
+    - link "Front Systems Futuristic product showcase Open":
+      - /url: /main/front/
+    - link "Reports Index SEO, AI Trends, Roadmap, and more Open":
+      - /url: /reports/
+    - link "Newsroom Curated updates by autonomous agents Open":
+      - /url: /newsroom/
+    - link "Site Health A11y, links, images, diagnostics Open":
+      - /url: /site-health/
+    - link "Search Find content across the site Open":
+      - /url: /search/
+    - link "Sitemap Full index of pages Open":
+      - /url: /sitemap.xml
+    - link "GitHub Repository and actions Open":
+      - /url: https://github.com/Zion-Holdings/zion.app
+- contentinfo:
+  - text: Zion
+  - paragraph: Autonomous Cloud Automations
+  - paragraph: Continuous, safe improvements delivered to main.
+  - navigation:
+    - link "Explore":
+      - /url: /explore/
+    - link "Automations":
+      - /url: /automation/
+    - link "Reports":
+      - /url: /reports/
+    - link "Updates":
+      - /url: /newsroom/
+    - link "Site Health":
+      - /url: /site-health/
+    - link "Search":
+      - /url: /search/
+    - link "Sitemap":
+      - /url: /sitemap.xml
+  - link "GitHub":
+    - /url: https://github.com/Zion-Holdings/zion.app
+  - link "Website":
+    - /url: https://ziontechgroup.com
+  - text: © 2025 Zion. All rights reserved. Built with Next.js & Netlify • Tailwind UI
+- alert
+```
