@@ -1,0 +1,56 @@
+name: Scheduled Automations
+
+on:
+  schedule:
+    - cron: '*/30 * * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  run-automations:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Generate artifacts (reports, search index, manifests)
+        run: |
+          npm run netlify:manifest
+          npm run search:index
+          npm run sitemap
+          npm run readme:generate
+
+      - name: Run quality automations (non-blocking)
+        run: |
+          npm run links:scan || true
+          npm run content:fix || true
+          npm run ai:innovate || true
+          npm run ai:research || true
+          npm run homepage:update || true
+          npm run front:directory || true
+          npm run front:advertise || true
+          node automation/optimize-images.cjs || true
+        env:
+          NEXT_PUBLIC_SUPABASE_URL: ${{ secrets.NEXT_PUBLIC_SUPABASE_URL }}
+          NEXT_PUBLIC_SUPABASE_ANON_KEY: ${{ secrets.NEXT_PUBLIC_SUPABASE_ANON_KEY }}
+
+      - name: Commit and push changes
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -m "chore(automation): scheduled automations artifacts [skip ci]" || echo "No changes"
+          git push origin HEAD:${GITHUB_REF#refs/heads/}
