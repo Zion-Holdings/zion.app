@@ -1,8 +1,13 @@
-import React from 'react';
-import Head from 'next/head';
+import Link from 'next/link';
+
+export default function NotFound() {
   return (
-    <>
-      <Head><title>404 - Zion App</title><meta name="description" content="404 page" /></Head><div className="container mx-auto px-4 py-8"><h1 className="text-3xl font-bold mb-6">404</h1><p className="text-lg mb-4">This page is under construction.</p><div className="mt-4"><a href="/" className="text-blue-600 hover:underline">;
-            ← Back to Home</a></div></div></>;
+    <div className="py-16 text-center">
+      <h1 className="text-3xl font-semibold">404 - Page Not Found</h1>
+      <p className="text-gray-600 mt-2">The page you are looking for does not exist.</p>
+      <div className="mt-6">
+        <Link href="/"><a className="underline">Go home</a></Link>
+      </div>
+    </div>
   );
 }
