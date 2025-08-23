@@ -1,7 +1,13 @@
+<<<<<<< HEAD
+import React, { useState, useEffect } from 'react';
+import UltraAdvancedFuturisticNavigation2041 from './UltraAdvancedFuturisticNavigation2041';
+import UltraAdvancedFuturisticFooter2041 from './UltraAdvancedFuturisticFooter2041';
+=======
 import React, { useState } from 'react';
 import Head from 'next/head';
 import UltraFuturisticNavigation2044 from './UltraFuturisticNavigation2044';
 import UltraFuturisticFooter2044 from './UltraFuturisticFooter2044';
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-a2aa
 import EnhancedSidebar2025 from './EnhancedSidebar2025';
 import UltraAdvancedFuturisticBackground2040 from '../backgrounds/UltraAdvancedFuturisticBackground2040';
 import TopContactBar from './TopContactBar';
@@ -11,6 +17,25 @@ import CookieConsentBanner from '../CookieConsentBanner';
 import ServiceWorkerRegistration from '../ServiceWorkerRegistration';
 import SEOHead from '../SEOHead';
 
+<<<<<<< HEAD
+interface LayoutProps {
+  children: React.ReactNode;
+  title?: string;
+  description?: string;
+  keywords?: string;
+  ogImage?: string;
+  canonicalUrl?: string;
+}
+
+export default function Layout({ 
+  children, 
+  title = "Zion Tech Group - Revolutionary 2046 Technology",
+  description = "Pioneering the future of technology with revolutionary AI consciousness, quantum computing, and autonomous solutions that transform businesses worldwide.",
+  keywords = "AI consciousness, quantum computing, autonomous solutions, space technology, cybersecurity, business intelligence, Zion Tech Group, 2046 technology",
+  ogImage = "/og-image.jpg",
+  canonicalUrl
+}: LayoutProps) {
+=======
 interface SEOConfig {
   title: string;
   description: string;
@@ -26,6 +51,7 @@ interface LayoutProps {
 }
 
 export default function Layout({ children, seo }: LayoutProps) {
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-a2aa
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
   const [theme, setTheme] = useState<'dark' | 'light'>('dark');
@@ -71,6 +97,13 @@ export default function Layout({ children, seo }: LayoutProps) {
   const finalSEO = seo || defaultSEO;
 
   return (
+<<<<<<< HEAD
+    <>
+      <SEOHead />
+      <div className="min-h-screen bg-black text-white relative overflow-x-hidden">
+        {/* Skip to content link for accessibility */}
+        <a href="#main" className="skip-link">Skip to main content</a>
+=======
     <div className="min-h-screen bg-black text-white relative overflow-x-hidden">
       {/* SEO Head */}
       <Head>
@@ -93,6 +126,7 @@ export default function Layout({ children, seo }: LayoutProps) {
 
       {/* Skip to content link for accessibility */}
       <a href="#main" className="skip-link">Skip to main content</a>
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-a2aa
       
       {/* Ultra Advanced Futuristic Background */}
       <UltraAdvancedFuturisticBackground2040 
