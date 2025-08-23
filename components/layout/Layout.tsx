@@ -1,57 +1,26 @@
-import React, { useState } from 'react';
-import ImprovedNavigation from './ImprovedNavigation';
-import UltraFuturisticFooter2040 from './UltraFuturisticFooter2040';
-import EnhancedSidebar2025 from './EnhancedSidebar2025';
-import UltraFuturisticBackground2043 from '../backgrounds/UltraFuturisticBackground2043';
+import React from 'react';
+import UltraAdvancedNavigation from './UltraAdvancedNavigation';
+import NeoFuturisticFooter from './NeoFuturisticFooter';
+import UltraAdvancedFuturisticBackground from '../ui/UltraAdvancedFuturisticBackground';
 import TopContactBar from './TopContactBar';
-import PerformanceMonitor from '../PerformanceMonitor';
-import AccessibilityEnhancer from '../AccessibilityEnhancer';
-import CookieConsentBanner from '../CookieConsentBanner';
 
 interface LayoutProps {
-  children: React.ReactNode;
+	children: React.ReactNode;
 }
 
-export default function Layout({ children }: LayoutProps) {
-  const [sidebarOpen, setSidebarOpen] = useState(false);
+const Layout: React.FC<LayoutProps> = ({ children }) => {
+	return (
+		<div className="min-h-screen bg-black text-white overflow-x-hidden">
+			<UltraAdvancedFuturisticBackground variant="quantum-holographic" intensity={0.85}>
+				<TopContactBar />
+				<UltraAdvancedNavigation />
+				<main className="pt-24 lg:pt-28 overflow-x-hidden">
+					{children}
+				</main>
+				<NeoFuturisticFooter />
+			</UltraAdvancedFuturisticBackground>
+		</div>
+	);
+};
 
-  return (
-    <div className="min-h-screen bg-black text-white relative overflow-x-hidden">
-      {/* Skip to content link for accessibility */}
-      <a href="#main" className="skip-link">Skip to main content</a>
-      
-      {/* Futuristic Background */}
-      <UltraFuturisticBackground2043 theme="consciousness" intensity="high" />
-      
-      {/* Layout Structure */}
-      <div className="relative z-10">
-        {/* Top Contact Bar */}
-        <TopContactBar />
-        
-        {/* Navigation */}
-        <ImprovedNavigation />
-        
-        {/* Sidebar and Main Content */}
-        <div className="flex">
-          <EnhancedSidebar2025 
-            isOpen={sidebarOpen} 
-            onClose={() => setSidebarOpen(false)} 
-          />
-          
-          <main id="main" role="main" className="flex-1 pt-24 lg:pt-28">
-            {children}
-          </main>
-        </div>
-        
-        {/* Footer */}
-        <UltraFuturisticFooter2040 />
-      </div>
-
-      {/* Performance Tools */}
-      <PerformanceMonitor />
-      
-      {/* Cookie Consent Banner */}
-      <CookieConsentBanner />
-    </div>
-  );
-}
+export default Layout;
