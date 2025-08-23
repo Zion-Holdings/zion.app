@@ -385,6 +385,8 @@ export default function EnhancedSidebar2025({ isOpen, onClose }: EnhancedSidebar
               </div>
             </div>
 
+<<<<<<< HEAD
+=======
             {/* Compact Links */}
             <div className="p-6 border-b border-cyan-500/30">
               <h3 className="text-lg font-semibold text-white mb-4 flex items-center space-x-2">
@@ -416,6 +418,7 @@ export default function EnhancedSidebar2025({ isOpen, onClose }: EnhancedSidebar
               </div>
             </div>
 
+>>>>>>> origin/cursor/website-audit-content-update-and-deployment-0fc2
             {/* Service Categories */}
             <div className="p-6 border-b border-cyan-500/30">
               <h3 className="text-lg font-semibold text-white mb-4 flex items-center space-x-2">
