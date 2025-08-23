@@ -55,10 +55,14 @@ const mockService: SimpleService = {
 		.concat(realMarketAugmentations2025 as unknown as Service[])
 		.concat(additionalLiveServices2025 as unknown as Service[])
 		.concat(real2025Q2Additions as unknown as Service[])
+<<<<<<< HEAD
+		.concat(real2025Q3Additions as unknown as Service[]);
+=======
 		.concat(augmentedServicesBatch3 as unknown as Service[])
 		.concat(realServicesQ22025 as unknown as Service[])
 		.concat(real2025Q3Additions as unknown as Service[])
 		.concat(real2025Q4Additions as unknown as Service[]);
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-5ee5
 }
 
 function toSlug(value: string): string {

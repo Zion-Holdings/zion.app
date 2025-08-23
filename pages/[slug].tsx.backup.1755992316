@@ -62,9 +62,14 @@ export default function ServiceFallbackPage() {
         industryRealServices as any,
         professionalServices as any,
         realEnterpriseServices2025 as any,
+<<<<<<< HEAD
+        real2025Q2Additions as any,
+        real2025Q3Additions as any
+=======
         augmentedServicesBatch3 as any,
         real2025Q3Additions as any,
         real2025Q4Additions as any
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-5ee5
       );
     const byLink = all.find(s => {
       try {
@@ -152,6 +157,8 @@ export default function ServiceFallbackPage() {
     </Layout>
   );
 }
+<<<<<<< HEAD
+=======
 
 // Static export support: generate root-level pages for service slugs
 type Svc = typeof enhancedRealMicroSaasServices[number];
@@ -264,3 +271,4 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
   // No dynamic fetching needed; the component resolves the service client-side.
   return { props: {} };
 };
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-5ee5

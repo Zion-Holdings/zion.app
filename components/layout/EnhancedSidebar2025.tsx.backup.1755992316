@@ -99,6 +99,18 @@ const serviceCategories = [
     icon: <Brain className="w-5 h-5" />,
     badge: 'New',
     items: [
+<<<<<<< HEAD
+      { name: 'AI Consciousness Evolution', href: '/ai-consciousness-evolution-platform', description: 'Emotional intelligence and self-awareness' },
+      { name: 'AI Quantum Neural Network', href: '/ai-quantum-neural-network-platform', description: 'Hybrid AI-Quantum computing' },
+      { name: 'AI Autonomous Research', href: '/ai-autonomous-research-assistant', description: 'Self-directed AI research' },
+      { name: 'AI Emotional Intelligence', href: '/ai-emotional-intelligence-training', description: 'EQ training platform' },
+      { name: 'AI Creativity Studio', href: '/ai-creativity-studio-platform', description: 'AI-powered creative content' },
+      { name: 'AI Education Platform', href: '/ai-education-platform', description: 'Personalized AI learning' },
+      { name: 'AI Healthcare Diagnostics', href: '/ai-powered-healthcare-diagnostics', description: 'Medical AI solutions' },
+      { name: 'AI Financial Intelligence', href: '/ai-financial-intelligence', description: 'Financial AI analytics' },
+      { name: 'AI Sustainability Platform', href: '/ai-sustainability-platform', description: 'Environmental AI solutions' },
+      { name: 'AI Legal Contract Analyzer', href: '/ai-legal-contract-analyzer', description: 'Legal document analysis' }
+=======
       { name: 'AI Consciousness Evolution', href: '/ai-consciousness-evolution-2025', badge: 'New' },
       { name: 'AI Quantum Neural Network', href: '/ai-quantum-neural-network', badge: 'Hot' },
       { name: 'AI Autonomous Research', href: '/ai-autonomous-research-assistant', badge: 'New' },
@@ -114,6 +126,7 @@ const serviceCategories = [
       { name: 'AI Sustainability Platform', href: '/ai-sustainability-platform' },
       { name: 'AI Legal Contract Analyzer', href: '/ai-legal-contract-analyzer' },
       { name: 'SB Website Analytics', href: '/services/sb-website-analytics-dashboard' }
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-5ee5
     ]
   },
   {
@@ -141,6 +154,22 @@ const serviceCategories = [
     title: 'Enterprise IT',
     icon: <Shield className="w-5 h-5" />,
     items: [
+<<<<<<< HEAD
+      { name: 'Zero Trust Security', href: '/zero-trust-security-architecture', description: 'Never trust, always verify' },
+      { name: 'Quantum-Secure Cloud', href: '/quantum-secure-cloud-infrastructure', description: 'Future-proof cloud security' },
+      { name: 'Autonomous DevOps', href: '/autonomous-devops-orchestrator', description: 'Self-healing infrastructure' },
+      { name: 'Edge Computing', href: '/edge-computing-orchestration-platform', description: 'Intelligent edge orchestration' },
+      { name: 'AI Data Pipeline', href: '/ai-powered-data-pipeline-platform', description: 'Intelligent data processing' },
+      { name: 'Quantum Communication', href: '/quantum-secure-communication-platform', description: 'Unbreakable encryption' },
+      { name: 'Autonomous Network', href: '/autonomous-network-management-platform', description: 'Self-optimizing networks' },
+      { name: 'AI IT Service Management', href: '/ai-powered-it-service-management', description: 'Intelligent service delivery' },
+      { name: 'Quantum Database', href: '/quantum-database-management-system', description: 'Next-gen database system' },
+      { name: 'Autonomous API Management', href: '/autonomous-api-management-platform', description: 'Intelligent API lifecycle' },
+      { name: 'AI Predictive Analytics', href: '/ai-predictive-analytics-engine', description: 'Future insights with AI' },
+      { name: 'AI Computer Vision', href: '/ai-computer-vision-platform', description: 'See through AI eyes' },
+      { name: 'AI NLP Suite', href: '/ai-nlp-suite', description: 'Understand human language' },
+      { name: 'AI Fraud Detection', href: '/ai-fraud-detection-system', description: 'Protect with intelligent detection' }
+=======
       { name: 'Quantum-Secure Cloud', href: '/quantum-secure-cloud-infrastructure', badge: 'New' },
       { name: 'Autonomous IT Operations', href: '/autonomous-it-operations-center', badge: 'New' },
       { name: 'Edge Computing Orchestration', href: '/edge-computing-orchestration-platform', badge: 'New' },
@@ -153,12 +182,29 @@ const serviceCategories = [
       { name: 'Quantum Cybersecurity', href: '/quantum-cybersecurity' },
       { name: 'Quantum Cloud Migration', href: '/quantum-cloud-migration' },
       { name: 'MSP Helpdesk', href: '/services/msp-helpdesk-starter' }
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-5ee5
     ]
   },
   {
     title: 'Micro SAAS',
     icon: <Rocket className="w-5 h-5" />,
     items: [
+<<<<<<< HEAD
+      { name: 'AI Business Intelligence', href: '/ai-business-intelligence-suite', description: 'Transform data into insights' },
+      { name: 'AI Content Generation', href: '/ai-content-generation-platform', description: 'Create content in seconds' },
+      { name: 'AI Customer Service', href: '/ai-customer-service-automation', description: 'Automate support with AI' },
+      { name: 'AI Sales Intelligence', href: '/ai-sales-intelligence-platform', description: 'Boost sales performance' },
+      { name: 'AI Project Management', href: '/ai-project-management-suite', description: 'Streamline workflows' },
+      { name: 'AI Financial Analytics', href: '/ai-financial-analytics-platform', description: 'Smarter financial decisions' },
+      { name: 'AI HR Management', href: '/ai-hr-management-platform', description: 'Optimize HR operations' },
+      { name: 'AI Marketing Automation', href: '/ai-marketing-automation-suite', description: 'Automate and optimize campaigns' },
+      { name: 'AI Supply Chain', href: '/ai-supply-chain-optimization', description: 'Optimize with AI insights' },
+      { name: 'AI Creativity Studio', href: '/ai-creativity-studio-platform', description: 'Unleash creativity with AI' },
+      { name: 'AI Education Platform', href: '/ai-education-platform', description: 'Personalized learning experiences' },
+      { name: 'AI Healthcare Diagnostics', href: '/ai-powered-healthcare-diagnostics', description: 'Revolutionary medical diagnostics' },
+      { name: 'AI Financial Intelligence', href: '/ai-financial-intelligence', description: 'Transform financial decision-making' },
+      { name: 'AI Sustainability Platform', href: '/ai-sustainability-platform', description: 'Drive environmental impact' }
+=======
       { name: 'AI Customer Success', href: '/services/ai-customer-success-platform', badge: 'New' },
       { name: 'Supply Chain Optimization', href: '/intelligent-supply-chain-optimization', badge: 'New' },
       { name: 'Financial Planning AI', href: '/services/ai-financial-planning-platform', badge: 'New' },
@@ -170,6 +216,7 @@ const serviceCategories = [
       { name: 'Affiliate Analytics', href: '/services/affiliate-partner-analytics-suite' },
       { name: 'AI Content Studio', href: '/services/ai-content-studio-pro' },
       { name: 'Returns Automation', href: '/services/returns-automation-suite' }
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-5ee5
     ]
   },
   {

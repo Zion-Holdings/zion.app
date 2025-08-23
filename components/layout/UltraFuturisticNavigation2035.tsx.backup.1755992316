@@ -67,6 +67,18 @@ const navigationItems: NavigationItem[] = [
     description: 'Browse by category',
     badge: 'New',
     children: [
+<<<<<<< HEAD
+      { name: 'AI & Data', href: '/services#ai-consciousness', description: 'AI, data, ML services' },
+      { name: 'Cloud & FinOps', href: '/services#enterprise-it', description: 'Cloud, cost, platform' },
+      { name: 'Observability', href: '/services#enterprise-it', description: 'Monitoring & telemetry' },
+      { name: 'Developer Tools', href: '/services#enterprise-it', description: 'Developer productivity' },
+      { name: 'Training & Education', href: '/training', description: 'Learning and R&D' },
+      { name: 'SEO Automation Suite', href: '/seo-automation-suite', description: 'Technical SEO automation' },
+      { name: 'IT Asset Discovery Agent', href: '/it-asset-discovery-agent', description: 'Agentless discovery' },
+      { name: 'Managed Postgres HA', href: '/managed-postgres-ha', description: 'HA Postgres ops' },
+      { name: 'Micro SAAS', href: '/micro-saas', description: 'Business tools and automation' },
+      { name: 'New 2034 Services', href: '/services?sort=newest', description: 'Latest additions' }
+=======
       { name: 'AI & Data', href: '/services#ai', description: 'AI, data, ML services' },
       { name: 'Developer Tools', href: '/services#developer-tools', description: 'Dev productivity & tooling' },
       { name: 'Cloud & FinOps', href: '/services#cloud', description: 'Cloud, cost, platform' },
@@ -77,6 +89,7 @@ const navigationItems: NavigationItem[] = [
       { name: 'MSP Helpdesk', href: '/services/msp-helpdesk-starter', description: 'Ticketing & SLAs' },
       { name: 'AI Content Studio', href: '/services/ai-content-studio-pro', description: 'SEO briefs & drafts' },
       { name: 'Returns Automation', href: '/services/returns-automation-suite', description: 'Self-serve returns & labels' }
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-5ee5
     ]
   },
   {
