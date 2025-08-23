@@ -1,0 +1,45 @@
+name: Link Check
+
+on:
+  schedule:
+    - cron: '*/30 * * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with: { fetch-depth: 0 }
+      - uses: actions/setup-node@v4
+        with: { node-version: 20 }
+      - name: Install linkinator
+        run: npm i -g linkinator
+      - name: Run link check
+        env:
+          SITE_URL: ${{ vars.SITE_URL }}
+        run: |
+          mkdir -p data/reports
+          linkinator "${SITE_URL}" --verbosity error --skip "mailto:,tel:" --json > data/reports/broken-links.json
+      - name: Commit report
+        run: |
+          if [[ -n "$(git status --porcelain)" ]]; then
+            git config user.name "github-actions"
+            git config user.email "github-actions@github.com"
+            git add data/reports/broken-links.json
+            git commit -m "chore(autonomy): update broken links report"
+            git push
+          fi
+      - name: Open issue on failures
+        if: always()
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          set -e
+          FAILS=$(cat data/reports/broken-links.json | jq '.links | map(select(.state!="OK")) | length')
+          if [ "$FAILS" -gt 0 ]; then
+            gh issue create -t "Link check: $FAILS failures" -b "Automated link check found $FAILS failing links. See data/reports/broken-links.json." || true
+          fi

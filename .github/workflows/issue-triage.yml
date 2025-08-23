@@ -1,0 +1,27 @@
+name: Issue Triage
+
+on:
+  issues:
+    types: [opened, edited]
+
+permissions:
+  issues: write
+
+jobs:
+  triage:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/github-script@v7
+        with:
+          script: |
+            const { owner, repo } = context.repo;
+            const issue = context.payload.issue;
+            const title = issue.title.toLowerCase() + ' ' + (issue.body || '').toLowerCase();
+            const labels = [];
+            if (title.includes('security') || title.includes('vulnerability')) labels.push('security');
+            if (title.includes('performance') || title.includes('lighthouse')) labels.push('performance');
+            if (title.includes('link') && (title.includes('broken') || title.includes('404'))) labels.push('link-check');
+            if (title.includes('dependency') || title.includes('bump')) labels.push('dependencies');
+            if (labels.length > 0) {
+              await github.rest.issues.addLabels({ owner, repo, issue_number: issue.number, labels });
+            }
