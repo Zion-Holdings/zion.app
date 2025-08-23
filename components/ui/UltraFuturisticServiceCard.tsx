@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ArrowRight, ExternalLink, Star, Users, TrendingUp, Zap, Shield, Clock } from 'lucide-react';
+import { ArrowRight, ExternalLink, Star, TrendingUp, Users, Clock, Zap } from 'lucide-react';
 
 interface UltraFuturisticServiceCardProps {
   service: {
@@ -43,12 +43,12 @@ interface UltraFuturisticServiceCardProps {
     rating: number;
     reviews: number;
   };
-  className?: string;
+  variant?: 'default' | 'holographic' | 'quantum' | 'cyberpunk' | 'neural';
 }
 
 const UltraFuturisticServiceCard: React.FC<UltraFuturisticServiceCardProps> = ({
   service,
-  className = ''
+  variant = 'default'
 }) => {
   const [isHovered, setIsHovered] = useState(false);
   const [isExpanded, setIsExpanded] = useState(false);
@@ -56,190 +56,141 @@ const UltraFuturisticServiceCard: React.FC<UltraFuturisticServiceCardProps> = ({
   const cardRef = useRef<HTMLDivElement>(null);
   const glowRef = useRef<HTMLDivElement>(null);
 
-  const cardVariants = {
-    initial: { 
-      scale: 1, 
-      rotateY: 0,
-      boxShadow: "0 0 20px rgba(0, 255, 255, 0.3)"
-    },
-    hover: { 
-      scale: 1.02, 
-      rotateY: 2,
-      boxShadow: "0 0 40px rgba(0, 255, 255, 0.6)"
-    },
-    expanded: {
-      scale: 1.05,
-      rotateY: 0,
-      boxShadow: "0 0 60px rgba(139, 92, 246, 0.8)"
+  const getVariantStyles = () => {
+    switch (variant) {
+      case 'holographic':
+        return {
+          card: 'bg-gradient-to-br from-purple-900/20 via-pink-900/20 to-cyan-900/20 border-purple-500/30',
+          glow: 'shadow-[0_0_30px_rgba(139,92,246,0.3)]',
+          accent: 'from-purple-500 to-pink-500'
+        };
+      case 'quantum':
+        return {
+          card: 'bg-gradient-to-br from-cyan-900/20 via-blue-900/20 to-indigo-900/20 border-cyan-500/30',
+          glow: 'shadow-[0_0_30px_rgba(0,255,255,0.3)]',
+          accent: 'from-cyan-500 to-blue-500'
+        };
+      case 'cyberpunk':
+        return {
+          card: 'bg-gradient-to-br from-pink-900/20 via-red-900/20 to-orange-900/20 border-pink-500/30',
+          glow: 'shadow-[0_0_30px_rgba(236,73,153,0.3)]',
+          accent: 'from-pink-500 to-red-500'
+        };
+      case 'neural':
+        return {
+          card: 'bg-gradient-to-br from-green-900/20 via-emerald-900/20 to-teal-900/20 border-green-500/30',
+          glow: 'shadow-[0_0_30px_rgba(16,185,129,0.3)]',
+          accent: 'from-green-500 to-emerald-500'
+        };
+      default:
+        return {
+          card: 'bg-gradient-to-br from-gray-900/20 via-slate-900/20 to-zinc-900/20 border-gray-500/30',
+          glow: 'shadow-[0_0_20px_rgba(100,100,100,0.3)]',
+          accent: 'from-gray-500 to-slate-500'
+        };
     }
   };
 
-  const contentVariants = {
-    initial: { opacity: 0, y: 20 },
-    animate: { opacity: 1, y: 0 },
-    exit: { opacity: 0, y: -20 }
-  };
-
-  const featureVariants = {
-    initial: { opacity: 0, x: -20 },
-    animate: { opacity: 1, x: 0 },
-    exit: { opacity: 0, x: 20 }
-  };
-
-  const getGradientClass = (color: string) => {
-    const gradients: { [key: string]: string } = {
-      'from-pink-500 to-rose-600': 'from-pink-500 via-rose-600 to-pink-700',
-      'from-purple-600 to-indigo-700': 'from-purple-600 via-indigo-700 to-purple-800',
-      'from-blue-600 to-cyan-700': 'from-blue-600 via-cyan-700 to-blue-800',
-      'from-green-600 to-emerald-700': 'from-green-600 via-emerald-700 to-green-800',
-      'from-orange-600 to-red-700': 'from-orange-600 via-red-700 to-orange-800',
-      'from-indigo-600 to-purple-700': 'from-indigo-600 via-purple-700 to-indigo-800',
-      'from-pink-600 to-rose-700': 'from-pink-600 via-rose-700 to-pink-800',
-      'from-yellow-600 to-amber-700': 'from-yellow-600 via-amber-700 to-yellow-800',
-      'from-red-600 to-pink-700': 'from-red-600 via-pink-700 to-red-800',
-      'from-cyan-600 to-blue-700': 'from-cyan-600 via-blue-700 to-cyan-800'
-    };
-    return gradients[color] || color;
-  };
+  const styles = getVariantStyles();
 
   return (
     <motion.div
-      className={`relative group cursor-pointer ${className}`}
-      variants={cardVariants}
-      initial="initial"
-      animate={isExpanded ? "expanded" : isHovered ? "hover" : "initial"}
-      whileHover="hover"
+      className={`relative group cursor-pointer overflow-hidden rounded-2xl border backdrop-blur-xl transition-all duration-500 ${styles.card} ${styles.glow}`}
       onHoverStart={() => setIsHovered(true)}
       onHoverEnd={() => setIsHovered(false)}
       onClick={() => setIsExpanded(!isExpanded)}
-      transition={{ duration: 0.3, ease: "easeInOut" }}
+      whileHover={{ 
+        scale: 1.02,
+        y: -5,
+        transition: { duration: 0.3 }
+      }}
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6 }}
     >
-      {/* Quantum Holographic Border */}
-      <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-cyan-400 via-purple-500 to-pink-500 p-[2px] opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-        <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-cyan-400 via-purple-500 to-pink-500 blur-sm opacity-50" />
+      {/* Animated background */}
+      <div className="absolute inset-0 opacity-20">
+        <motion.div
+          className="absolute inset-0"
+          style={{
+            background: `conic-gradient(from 0deg, transparent, ${service.textColor}20, transparent)`
+          }}
+          animate={{ rotate: 360 }}
+          transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+        />
       </div>
 
-      {/* Main Card */}
-      <div className="relative bg-black/80 backdrop-blur-xl rounded-2xl p-6 border border-gray-800/50 overflow-hidden">
-        {/* Animated Background Pattern */}
-        <div className="absolute inset-0 opacity-20">
-          <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/10 via-purple-500/5 to-pink-500/10" />
-          <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_50%_50%,rgba(0,255,255,0.1),transparent_50%)]" />
-        </div>
-
-        {/* Header Section */}
+      {/* Popular badge */}
+      {service.popular && (
         <motion.div
-          className="flex items-start justify-between mb-4"
-          variants={contentVariants}
-          initial="initial"
-          animate="animate"
+          className="absolute top-4 right-4 z-10"
+          initial={{ scale: 0 }}
+          animate={{ scale: 1 }}
+          transition={{ delay: 0.2 }}
         >
-          <div className="flex items-center space-x-3">
+          <div className="bg-gradient-to-r from-yellow-500 to-orange-500 text-black text-xs font-bold px-3 py-1 rounded-full flex items-center gap-1">
+            <Star className="w-3 h-3 fill-current" />
+            POPULAR
+          </div>
+        </motion.div>
+      )}
+
+      {/* Header */}
+      <div className="relative p-6">
+        <div className="flex items-start justify-between mb-4">
+          <div className="flex items-center gap-3">
             <motion.div
-              className={`text-4xl ${service.textColor}`}
-              animate={{ rotate: isHovered ? [0, 10, -10, 0] : 0 }}
-              transition={{ duration: 0.5 }}
+              className={`text-4xl ${isHovered ? 'scale-110' : 'scale-100'}`}
+              transition={{ duration: 0.3 }}
             >
               {service.icon}
             </motion.div>
             <div>
               <h3 className="text-xl font-bold text-white mb-1">{service.name}</h3>
-              <p className="text-gray-400 text-sm">{service.tagline}</p>
-            </div>
-          </div>
-          
-          {service.popular && (
-            <motion.div
-              className="px-3 py-1 bg-gradient-to-r from-yellow-500 to-orange-500 rounded-full text-xs font-semibold text-black"
-              animate={{ scale: isHovered ? 1.1 : 1 }}
-              transition={{ duration: 0.2 }}
-            >
-              POPULAR
-            </motion.div>
-          )}
-        </motion.div>
-
-        {/* Price and Trial Info */}
-        <motion.div
-          className="mb-4"
-          variants={contentVariants}
-          initial="initial"
-          animate="animate"
-          transition={{ delay: 0.1 }}
-        >
-          <div className="flex items-center justify-between mb-2">
-            <div className="flex items-baseline space-x-2">
-              <span className="text-3xl font-bold text-white">{service.price}</span>
-              <span className="text-gray-400">{service.period}</span>
-            </div>
-            <div className="flex items-center space-x-2 text-sm text-gray-400">
-              <Clock className="w-4 h-4" />
-              <span>{service.trialDays} day trial</span>
-            </div>
-          </div>
-          
-          <div className="flex items-center space-x-4 text-sm text-gray-400">
-            <div className="flex items-center space-x-1">
-              <Users className="w-4 h-4" />
-              <span>{service.customers.toLocaleString()}+ users</span>
-            </div>
-            <div className="flex items-center space-x-1">
-              <Star className="w-4 h-4 text-yellow-400 fill-current" />
-              <span>{service.rating} ({service.reviews})</span>
+              <p className="text-gray-300 text-sm">{service.tagline}</p>
             </div>
           </div>
         </motion.div>
 
-        {/* Description */}
-        <motion.p
-          className="text-gray-300 mb-4 leading-relaxed"
-          variants={contentVariants}
-          initial="initial"
-          animate="animate"
-          transition={{ delay: 0.2 }}
-        >
-          {service.description}
-        </motion.p>
-
-        {/* Market Position */}
-        <motion.div
-          className="mb-4 p-3 bg-gradient-to-r from-blue-900/20 to-purple-900/20 rounded-lg border border-blue-500/20"
-          variants={contentVariants}
-          initial="initial"
-          animate="animate"
-          transition={{ delay: 0.3 }}
-        >
-          <div className="flex items-center space-x-2 mb-2">
-            <TrendingUp className="w-4 h-4 text-blue-400" />
-            <span className="text-sm font-semibold text-blue-400">Market Position</span>
+        {/* Price */}
+        <div className="mb-4">
+          <div className="flex items-baseline gap-2">
+            <span className="text-3xl font-bold text-white">{service.price}</span>
+            <span className="text-gray-400">{service.period}</span>
           </div>
-          <p className="text-sm text-gray-300">{service.marketPosition}</p>
-        </motion.div>
+          <p className="text-sm text-gray-400 mt-1">{service.description}</p>
+        </div>
 
-        {/* Features Grid */}
-        <motion.div
-          className="mb-4"
-          variants={contentVariants}
-          initial="initial"
-          animate="animate"
-          transition={{ delay: 0.4 }}
-        >
-          <h4 className="text-sm font-semibold text-gray-300 mb-3 flex items-center space-x-2">
-            <Zap className="w-4 h-4 text-yellow-400" />
-            <span>Key Features</span>
-          </h4>
-          <div className="grid grid-cols-1 gap-2">
-            {service.features.slice(0, isExpanded ? service.features.length : 4).map((feature, index) => (
+        {/* Quick stats */}
+        <div className="grid grid-cols-3 gap-4 mb-4">
+          <div className="text-center">
+            <div className="text-lg font-bold text-white">{service.customers.toLocaleString()}+</div>
+            <div className="text-xs text-gray-400">Customers</div>
+          </div>
+          <div className="text-center">
+            <div className="text-lg font-bold text-white">{service.rating}</div>
+            <div className="text-xs text-gray-400">Rating</div>
+          </div>
+          <div className="text-center">
+            <div className="text-lg font-bold text-white">{service.trialDays}</div>
+            <div className="text-xs text-gray-400">Day Trial</div>
+          </div>
+        </div>
+
+        {/* Features preview */}
+        <div className="mb-4">
+          <h4 className="text-sm font-semibold text-gray-300 mb-2">Key Features:</h4>
+          <div className="space-y-1">
+            {service.features.slice(0, 3).map((feature, index) => (
               <motion.div
                 key={index}
-                className="flex items-center space-x-2 text-sm text-gray-400"
-                variants={featureVariants}
-                initial="initial"
-                animate="animate"
-                transition={{ delay: 0.5 + index * 0.1 }}
+                className="flex items-center gap-2 text-sm text-gray-400"
+                initial={{ opacity: 0, x: -20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ delay: index * 0.1 }}
               >
-                <div className="w-1.5 h-1.5 bg-cyan-400 rounded-full" />
-                <span>{feature}</span>
+                <div className="w-1.5 h-1.5 rounded-full bg-gradient-to-r from-cyan-500 to-blue-500" />
+                {feature}
               </motion.div>
             ))}
           </div>
@@ -257,147 +208,135 @@ const UltraFuturisticServiceCard: React.FC<UltraFuturisticServiceCardProps> = ({
           )}
         </motion.div>
 
-        {/* ROI and Market Data */}
-        <motion.div
-          className="mb-4 grid grid-cols-2 gap-3"
-          variants={contentVariants}
-          initial="initial"
-          animate="animate"
-          transition={{ delay: 0.5 }}
-        >
-          <div className="p-3 bg-gradient-to-r from-green-900/20 to-emerald-900/20 rounded-lg border border-green-500/20">
-            <div className="text-sm font-semibold text-green-400 mb-1">ROI</div>
-            <div className="text-xs text-gray-300">{service.roi}</div>
+        {/* Market position */}
+        <div className="mb-4 p-3 bg-black/20 rounded-lg border border-gray-700/50">
+          <h4 className="text-sm font-semibold text-gray-300 mb-2">Market Position:</h4>
+          <p className="text-xs text-gray-400">{service.marketPosition}</p>
+        </div>
+
+        {/* ROI and competitors */}
+        <div className="grid grid-cols-2 gap-4 mb-4">
+          <div className="p-3 bg-black/20 rounded-lg border border-gray-700/50">
+            <h4 className="text-sm font-semibold text-gray-300 mb-1">ROI</h4>
+            <p className="text-xs text-gray-400">{service.roi}</p>
           </div>
-          <div className="p-3 bg-gradient-to-r from-purple-900/20 to-pink-900/20 rounded-lg border border-purple-500/20">
-            <div className="text-sm font-semibold text-purple-400 mb-1">Market Size</div>
-            <div className="text-xs text-gray-300">{service.marketSize}</div>
+          <div className="p-3 bg-black/20 rounded-lg border border-gray-700/50">
+            <h4 className="text-sm font-semibold text-gray-300 mb-1">Market Size</h4>
+            <p className="text-xs text-gray-400">{service.marketSize}</p>
           </div>
-        </motion.div>
-
-        {/* Action Buttons */}
-        <motion.div
-          className="flex space-x-3"
-          variants={contentVariants}
-          initial="initial"
-          animate="animate"
-          transition={{ delay: 0.6 }}
-        >
-          <motion.a
-            href={service.link}
-            className={`flex-1 bg-gradient-to-r ${getGradientClass(service.color)} text-white py-3 px-4 rounded-lg font-semibold text-center hover:shadow-lg transition-all duration-300 flex items-center justify-center space-x-2`}
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            onClick={(e) => e.stopPropagation()}
-          >
-            <span>Get Started</span>
-            <ArrowRight className="w-4 h-4" />
-          </motion.a>
-          
-          <motion.button
-            className="px-4 py-3 border border-gray-600 text-gray-300 rounded-lg hover:border-cyan-400 hover:text-cyan-400 transition-colors duration-300"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            onClick={(e) => {
-              e.stopPropagation();
-              // Add to favorites or show more info
-            }}
-          >
-            <Star className="w-4 h-4" />
-          </motion.button>
-        </motion.div>
-
-        {/* Contact Information */}
-        <motion.div
-          className="mt-4 pt-4 border-t border-gray-700/50"
-          variants={contentVariants}
-          initial="initial"
-          animate="animate"
-          transition={{ delay: 0.7 }}
-        >
-          <div className="text-xs text-gray-500 space-y-1">
-            <div className="flex items-center space-x-2">
-              <span>📱 {service.contactInfo.mobile}</span>
-            </div>
-            <div className="flex items-center space-x-2">
-              <span>✉️ {service.contactInfo.email}</span>
-            </div>
-            <div className="flex items-center space-x-2">
-              <span>📍 {service.contactInfo.address}</span>
-            </div>
-          </div>
-        </motion.div>
-
-        {/* Expanded Content */}
-        <AnimatePresence>
-          {isExpanded && (
-            <motion.div
-              className="mt-4 pt-4 border-t border-gray-700/50"
-              initial={{ opacity: 0, height: 0 }}
-              animate={{ opacity: 1, height: "auto" }}
-              exit={{ opacity: 0, height: 0 }}
-              transition={{ duration: 0.3 }}
-            >
-              <div className="space-y-4">
-                {/* Technology Stack */}
-                <div>
-                  <h4 className="text-sm font-semibold text-gray-300 mb-2">Technology Stack</h4>
-                  <div className="flex flex-wrap gap-2">
-                    {service.technology.map((tech, index) => (
-                      <span
-                        key={index}
-                        className="px-2 py-1 bg-gray-800/50 text-gray-300 text-xs rounded-md border border-gray-600/50"
-                      >
-                        {tech}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-
-                {/* Use Cases */}
-                <div>
-                  <h4 className="text-sm font-semibold text-gray-300 mb-2">Use Cases</h4>
-                  <div className="grid grid-cols-1 gap-1">
-                    {service.useCases.map((useCase, index) => (
-                      <div key={index} className="text-sm text-gray-400 flex items-center space-x-2">
-                        <div className="w-1.5 h-1.5 bg-purple-400 rounded-full" />
-                        <span>{useCase}</span>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-
-                {/* Competitors */}
-                <div>
-                  <h4 className="text-sm font-semibold text-gray-300 mb-2">Competitors</h4>
-                  <div className="flex flex-wrap gap-2">
-                    {service.competitors.map((competitor, index) => (
-                      <span
-                        key={index}
-                        className="px-2 py-1 bg-red-900/20 text-red-300 text-xs rounded-md border border-red-500/20"
-                      >
-                        {competitor}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-              </div>
-            </motion.div>
-          )}
-        </AnimatePresence>
+        </div>
       </div>
 
-      {/* Hover Effects */}
+      {/* Expanded content */}
+      <AnimatePresence>
+        {isExpanded && (
+          <motion.div
+            className="border-t border-gray-700/50"
+            initial={{ height: 0, opacity: 0 }}
+            animate={{ height: 'auto', opacity: 1 }}
+            exit={{ height: 0, opacity: 0 }}
+            transition={{ duration: 0.3 }}
+          >
+            <div className="p-6 space-y-4">
+              {/* Technology stack */}
+              <div>
+                <h4 className="text-sm font-semibold text-gray-300 mb-2">Technology Stack:</h4>
+                <div className="flex flex-wrap gap-2">
+                  {service.technology.map((tech, index) => (
+                    <span
+                      key={index}
+                      className="px-2 py-1 bg-gradient-to-r from-cyan-500/20 to-blue-500/20 text-cyan-400 text-xs rounded-full border border-cyan-500/30"
+                    >
+                      {tech}
+                    </span>
+                  ))}
+                </div>
+              </div>
+
+              {/* Integrations */}
+              <div>
+                <h4 className="text-sm font-semibold text-gray-300 mb-2">Integrations:</h4>
+                <div className="flex flex-wrap gap-2">
+                  {service.integrations.map((integration, index) => (
+                    <span
+                      key={index}
+                      className="px-2 py-1 bg-gradient-to-r from-purple-500/20 to-pink-500/20 text-purple-400 text-xs rounded-full border border-purple-500/30"
+                    >
+                      {integration}
+                    </span>
+                  ))}
+                </div>
+              </div>
+
+              {/* Use cases */}
+              <div>
+                <h4 className="text-sm font-semibold text-gray-300 mb-2">Use Cases:</h4>
+                <div className="grid grid-cols-2 gap-2">
+                  {service.useCases.map((useCase, index) => (
+                    <div key={index} className="flex items-center gap-2 text-sm text-gray-400">
+                      <div className="w-1.5 h-1.5 rounded-full bg-gradient-to-r from-green-500 to-emerald-500" />
+                      {useCase}
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* Contact information */}
+              <div className="p-4 bg-gradient-to-r from-gray-800/50 to-gray-900/50 rounded-lg border border-gray-600/50">
+                <h4 className="text-sm font-semibold text-gray-300 mb-2">Contact Information:</h4>
+                <div className="space-y-1 text-sm text-gray-400">
+                  <div>📱 {service.contactInfo.mobile}</div>
+                  <div>✉️ {service.contactInfo.email}</div>
+                  <div>📍 {service.contactInfo.address}</div>
+                </div>
+              </div>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+
+      {/* Action buttons */}
+      <div className="p-6 pt-0">
+        <div className="flex gap-3">
+          <motion.button
+            className="flex-1 bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 text-white font-semibold py-3 px-4 rounded-lg transition-all duration-300 flex items-center justify-center gap-2 group"
+            whileHover={{ scale: 1.02 }}
+            whileTap={{ scale: 0.98 }}
+            onClick={(e) => {
+              e.stopPropagation();
+              window.open(service.link, '_blank');
+            }}
+          >
+            <span>Learn More</span>
+            <ExternalLink className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+          </motion.button>
+          
+          <motion.button
+            className="px-4 py-3 border border-gray-600 hover:border-gray-500 text-gray-300 hover:text-white rounded-lg transition-all duration-300 flex items-center gap-2"
+            whileHover={{ scale: 1.02 }}
+            whileTap={{ scale: 0.98 }}
+            onClick={(e) => {
+              e.stopPropagation();
+              setIsExpanded(!isExpanded);
+            }}
+          >
+            {isExpanded ? 'Show Less' : 'Show More'}
+            <motion.div
+              animate={{ rotate: isExpanded ? 180 : 0 }}
+              transition={{ duration: 0.3 }}
+            >
+              <ArrowRight className="w-4 h-4" />
+            </motion.div>
+          </motion.button>
+        </div>
+      </div>
+
+      {/* Hover effects */}
       <motion.div
-        className="absolute inset-0 rounded-2xl bg-gradient-to-r from-cyan-400/20 via-purple-500/20 to-pink-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"
-        animate={{
-          background: isHovered ? [
-            "radial-gradient(circle at 20% 20%, rgba(0, 255, 255, 0.1) 0%, transparent 50%)",
-            "radial-gradient(circle at 80% 80%, rgba(139, 92, 246, 0.1) 0%, transparent 50%)",
-            "radial-gradient(circle at 20% 20%, rgba(0, 255, 255, 0.1) 0%, transparent 50%)"
-          ] : "radial-gradient(circle at 50% 50%, rgba(0, 255, 255, 0.05) 0%, transparent 50%)"
+        className="absolute inset-0 bg-gradient-to-r from-cyan-500/5 to-blue-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"
+        style={{
+          background: `radial-gradient(circle at ${isHovered ? '50% 50%' : '0% 0%'}, rgba(0,255,255,0.1) 0%, transparent 70%)`
         }}
-        transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
       />
     </motion.div>
   );

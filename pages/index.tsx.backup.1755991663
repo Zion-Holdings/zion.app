@@ -1,6 +1,30 @@
 import React from 'react';
 import Head from 'next/head';
 import { 
+<<<<<<< HEAD
+  Cloud, Bot, RefreshCw, Zap, Shield, BarChart3, ArrowRight, Check, ExternalLink, 
+  Star, Users, Globe, Lock, Rocket, Cpu, Database, TrendingUp, Clock, Target, 
+  Building, Award, DollarSign, ChartBar, Code, BookOpen, Activity, Smartphone, 
+  Palette, Search, MessageSquare, FileText, Calendar, CreditCard, Settings, 
+  Mail, Phone, MapPin, Sparkles, Atom, Brain, Eye, Trophy, FlaskConical, Dna, 
+  Car, Leaf, Factory, Truck, Microscope, GraduationCap, ShieldCheck, Globe2,
+  ChevronRight, Play, Star as StarIcon, Check as CheckIcon, ArrowRight as ArrowRightIcon,
+  Brain as BrainIcon, Factory as FactoryIcon, Shield as ShieldIcon, FlaskConical as FlaskIcon,
+  DollarSign as DollarIcon, Rocket as RocketIcon, Globe as GlobeIcon, Zap as ZapIcon,
+  Link as LinkIcon, Building2 as Building2Icon, Users as UsersIcon
+} from 'lucide-react';
+import Button from '../components/ui/Button';
+import ParticleBackground from '../components/ui/ParticleBackground';
+
+export default function HomePage() {
+  const heroStats = [
+    { value: '200+', label: 'Real Micro SaaS Services', color: 'text-cyan-400' },
+    { value: '99.9%', label: 'Uptime Guarantee', color: 'text-fuchsia-400' },
+    { value: '14', label: 'Day Free Trials', color: 'text-blue-400' },
+    { value: '24/7', label: 'AI Support', color: 'text-green-400' },
+    { value: '$100M+', label: 'Market Value', color: 'text-yellow-400' },
+    { value: '800%+', label: 'Average ROI', color: 'text-purple-400' },
+=======
   Clock, DollarSign, TrendingUp, Brain, 
   Zap, Rocket, Mail, Phone, MapPin, Sparkles, 
   ArrowRight, ExternalLink, Check, Cpu, 
@@ -26,6 +50,7 @@ export default function HomePage() {
     { value: '24/7', label: 'AI Support', color: 'text-green-400', icon: <Brain className="w-6 h-6" /> },
     { value: '$50B+', label: 'Combined Market Value', color: 'text-yellow-400', icon: <TrendingUp className="w-6 h-6" /> },
     { value: '1000%+', label: 'Average ROI', color: 'text-purple-400', icon: <DollarSign className="w-6 h-6" /> },
+>>>>>>> origin/cursor/enhance-app-services-and-website-with-futuristic-design-7888
   ];
 
   const contactInfo = {
@@ -533,6 +558,20 @@ export default function HomePage() {
   );
 
   return (
+<<<<<<< HEAD
+    <UltraFuturisticBackground variant="quantum-entanglement" intensity="high">
+      <div className="min-h-screen">
+        <Head>
+          <title>Zion Tech Group | Revolutionary Micro SAAS Solutions & AI Services</title>
+          <meta name="description" content="Discover 500+ revolutionary micro SAAS services, AI solutions, and quantum computing platforms. Transform your business with cutting-edge technology from Zion Tech Group." />
+          <meta name="keywords" content="micro SAAS, AI services, quantum computing, cybersecurity, automation, cloud solutions, Zion Tech Group" />
+          <meta property="og:title" content="Zion Tech Group | Revolutionary Micro SAAS Solutions" />
+          <meta property="og:description" content="500+ revolutionary micro SAAS services and AI solutions transforming businesses worldwide." />
+          <meta property="og:url" content="https://ziontechgroup.com" />
+          <meta property="og:type" content="website" />
+          <link rel="canonical" href="https://ziontechgroup.com" />
+        </Head>
+=======
     <UltraAdvancedQuantumBackground variant="quantum" intensity="high">
       <Head>
         <title>Zion Tech Group - Revolutionary AI & Quantum Computing Solutions</title>
@@ -694,6 +733,7 @@ export default function HomePage() {
           }))
         ]}
       />
+>>>>>>> origin/cursor/enhance-app-services-and-website-with-futuristic-design-7888
 
         {/* Hero Section */}
         <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
@@ -801,6 +841,17 @@ export default function HomePage() {
                 </p>
               </motion.div>
 
+<<<<<<< HEAD
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.2 }}
+                viewport={{ once: true }}
+                className="text-center p-6"
+              >
+                <div className="w-16 h-16 bg-gradient-to-br from-purple-500/20 to-pink-500/20 rounded-full flex items-center justify-center mx-auto mb-4 border border-purple-400/30">
+                  <UsersIcon className="w-8 h-8 text-purple-400" />
+=======
       {/* Innovative Services Section */}
       <section className="py-20 px-4">
         <div className="container mx-auto">
@@ -887,6 +938,7 @@ export default function HomePage() {
                     <div className="text-sm text-gray-400">Phone</div>
                     <div className="text-white font-semibold">{contactInfo.mobile}</div>
                   </div>
+>>>>>>> origin/cursor/enhance-app-services-and-website-with-futuristic-design-7888
                 </div>
                 <h3 className="text-xl font-bold text-white mb-3">24/7 AI Support</h3>
                 <p className="text-gray-300">
@@ -954,6 +1006,13 @@ export default function HomePage() {
                   </span>
                 </div>
               </div>
+<<<<<<< HEAD
+            </motion.div>
+          </div>
+        </section>
+      </div>
+    </UltraFuturisticBackground>
+=======
             </div>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -977,5 +1036,6 @@ export default function HomePage() {
         </div>
       </section>
     </UltraAdvancedQuantumBackground>
+>>>>>>> origin/cursor/enhance-app-services-and-website-with-futuristic-design-7888
   );
 }
