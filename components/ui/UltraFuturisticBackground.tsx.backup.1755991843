@@ -1,4 +1,9 @@
+<<<<<<< HEAD
+import React, { useEffect, useRef } from 'react';
+import { motion } from 'framer-motion';
+=======
 import React, { useEffect, useRef, useMemo } from 'react';
+>>>>>>> origin/cursor/enhance-app-services-and-website-with-futuristic-design-dc1e
 
 interface UltraFuturisticBackgroundProps {
   variant?: 'quantum' | 'holographic' | 'cyberpunk' | 'neural' | 'space' | 'matrix';
@@ -276,6 +281,41 @@ const UltraFuturisticBackground: React.FC<UltraFuturisticBackgroundProps> = ({
       const time = Date.now();
       ctx.clearRect(0, 0, canvas.width, canvas.height);
       
+<<<<<<< HEAD
+      // Draw background gradient
+      const gradient = ctx.createLinearGradient(0, 0, canvas.width, canvas.height);
+      switch (variant) {
+        case 'quantum':
+          gradient.addColorStop(0, 'rgba(0, 0, 0, 0.9)');
+          gradient.addColorStop(0.5, 'rgba(0, 100, 200, 0.1)');
+          gradient.addColorStop(1, 'rgba(0, 0, 0, 0.9)');
+          break;
+        case 'holographic':
+          gradient.addColorStop(0, 'rgba(0, 0, 0, 0.9)');
+          gradient.addColorStop(0.5, 'rgba(150, 0, 255, 0.1)');
+          gradient.addColorStop(1, 'rgba(0, 0, 0, 0.9)');
+          break;
+        case 'cyberpunk':
+          gradient.addColorStop(0, 'rgba(0, 0, 0, 0.9)');
+          gradient.addColorStop(0.5, 'rgba(0, 255, 100, 0.1)');
+          gradient.addColorStop(1, 'rgba(0, 0, 0, 0.9)');
+          break;
+        case 'neural':
+          gradient.addColorStop(0, 'rgba(0, 0, 0, 0.9)');
+          gradient.addColorStop(0.5, 'rgba(255, 0, 255, 0.1)');
+          gradient.addColorStop(1, 'rgba(0, 0, 0, 0.9)');
+          break;
+        case 'space':
+          gradient.addColorStop(0, 'rgba(0, 0, 0, 0.9)');
+          gradient.addColorStop(0.5, 'rgba(0, 150, 255, 0.1)');
+          gradient.addColorStop(1, 'rgba(0, 0, 0, 0.9)');
+          break;
+        case 'matrix':
+          gradient.addColorStop(0, 'rgba(0, 0, 0, 0.95)');
+          gradient.addColorStop(0.5, 'rgba(0, 50, 0, 0.1)');
+          gradient.addColorStop(1, 'rgba(0, 0, 0, 0.95)');
+          break;
+=======
       // Update and draw enhanced quantum particles
       quantumParticles.forEach(particle => {
         ctx.save();
@@ -454,6 +494,7 @@ const UltraFuturisticBackground: React.FC<UltraFuturisticBackgroundProps> = ({
           ctx.lineWidth = 2;
           ctx.stroke();
         }
+>>>>>>> origin/cursor/enhance-app-services-and-website-with-futuristic-design-dc1e
       }
       ctx.fillStyle = gradient;
       ctx.fillRect(0, 0, canvas.width, canvas.height);
