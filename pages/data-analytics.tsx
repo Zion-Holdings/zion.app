@@ -1,148 +1,155 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { 
-  Cloud, Server, Database, Shield, Zap, Globe, 
-  Lock, Cpu, Network, BarChart3, ArrowRight, CheckCircle,
-  Users, Rocket, Brain, Target, Star, TrendingUp, ShoppingCart, Gamepad2, Wifi, Heart
+  BarChart3, PieChart, TrendingUp, Database, Brain, 
+  Zap, Globe, Target, CheckCircle, ArrowRight, Users,
+  Rocket, Star, Cpu, Shield, Network, BarChart4, ShoppingCart, Truck, Heart
 } from 'lucide-react';
 import Link from 'next/link';
 
-const CloudPlatform: React.FC = () => {
-  const cloudServices = [
+const DataAnalytics: React.FC = () => {
+  const analyticsServices = [
     {
-      title: 'Quantum-Secure Cloud Infrastructure',
-      description: 'Next-generation cloud infrastructure with quantum-resistant encryption and AI-powered optimization',
-      features: ['Quantum Cryptography', 'AI Auto-scaling', '99.99% Uptime', 'Global Edge Network'],
-      icon: <Shield className="w-8 h-8" />,
+      title: 'AI-Powered Business Intelligence',
+      description: 'Advanced analytics platform with machine learning insights and predictive modeling',
+      features: ['Predictive Analytics', 'Natural Language Queries', 'Auto-generated Insights', 'Real-time Dashboards'],
+      icon: <Brain className="w-8 h-8" />,
       color: 'from-blue-500 to-cyan-500'
     },
     {
-      title: 'AI-Powered Cloud Management',
-      description: 'Intelligent cloud orchestration with autonomous resource management and predictive analytics',
-      features: ['Auto-optimization', 'Predictive Scaling', 'Cost Optimization', 'Smart Monitoring'],
-      icon: <Brain className="w-8 h-8" />,
+      title: 'Real-time Data Streaming',
+      description: 'Process and analyze data in real-time with sub-millisecond latency',
+      features: ['Stream Processing', 'Event-driven Architecture', 'Real-time Alerts', 'Live Dashboards'],
+      icon: <Zap className="w-8 h-8" />,
       color: 'from-purple-500 to-pink-500'
     },
     {
-      title: 'Multi-Cloud Orchestration',
-      description: 'Seamless management across multiple cloud providers with unified control and monitoring',
-      features: ['Multi-Cloud Support', 'Unified Dashboard', 'Cross-Cloud Migration', 'Cost Analysis'],
-      icon: <Globe className="w-8 h-8" />,
+      title: 'Big Data Processing',
+      description: 'Handle petabytes of data with distributed computing and advanced algorithms',
+      features: ['Distributed Computing', 'Scalable Storage', 'Advanced Algorithms', 'Cost Optimization'],
+      icon: <Database className="w-8 h-8" />,
       color: 'from-green-500 to-emerald-500'
     },
     {
-      title: 'Edge Computing Platform',
-      description: 'Distributed edge computing infrastructure for ultra-low latency applications',
-      features: ['Global Edge Network', '5G Integration', 'Real-time Processing', 'Local Data Centers'],
-      icon: <Network className="w-8 h-8" />,
+      title: 'Predictive Analytics',
+      description: 'Forecast future trends and behaviors using advanced machine learning models',
+      features: ['Time Series Analysis', 'Machine Learning Models', 'Scenario Planning', 'Risk Assessment'],
+      icon: <TrendingUp className="w-8 h-8" />,
       color: 'from-orange-500 to-red-500'
     },
     {
-      title: 'Serverless Computing',
-      description: 'Event-driven serverless platform with automatic scaling and pay-per-use pricing',
-      features: ['Auto-scaling', 'Event-driven', 'Pay-per-use', 'Zero Management'],
-      icon: <Zap className="w-8 h-8" />,
+      title: 'Data Visualization',
+      description: 'Interactive charts and dashboards that bring your data to life',
+      features: ['Interactive Charts', 'Custom Dashboards', 'Real-time Updates', 'Mobile Responsive'],
+      icon: <BarChart3 className="w-8 h-8" />,
       color: 'from-yellow-500 to-orange-500'
     },
     {
-      title: 'Container Orchestration',
-      description: 'Advanced container management with Kubernetes integration and microservices support',
-      features: ['Kubernetes Native', 'Microservices', 'Auto-healing', 'Load Balancing'],
-      icon: <Server className="w-8 h-8" />,
+      title: 'Data Governance',
+      description: 'Ensure data quality, security, and compliance across your organization',
+      features: ['Data Quality', 'Security & Privacy', 'Compliance Tools', 'Audit Trails'],
+      icon: <Shield className="w-8 h-8" />,
       color: 'from-indigo-500 to-purple-500'
     }
   ];
 
   const platformFeatures = [
     {
-      title: 'Quantum Security',
-      description: 'Post-quantum cryptography and quantum key distribution for future-proof security',
-      icon: <Lock className="w-6 h-6" />
-    },
-    {
-      title: 'AI Optimization',
-      description: 'Machine learning algorithms that continuously optimize performance and costs',
+      title: 'AI-Driven Insights',
+      description: 'Machine learning algorithms automatically discover patterns and generate actionable insights',
       icon: <Brain className="w-6 h-6" />
     },
     {
-      title: 'Global Network',
-      description: 'Worldwide edge network with 200+ data centers for optimal performance',
-      icon: <Globe className="w-6 h-6" />
+      title: 'Real-time Processing',
+      description: 'Analyze data as it arrives with sub-millisecond latency for instant decision making',
+      icon: <Zap className="w-6 h-6" />
     },
     {
-      title: 'Real-time Analytics',
-      description: 'Live monitoring and analytics with instant insights and alerts',
-      icon: <BarChart3 className="w-6 h-6" />
-    },
-    {
-      title: 'Auto-scaling',
-      description: 'Intelligent scaling based on demand with zero downtime',
+      title: 'Scalable Architecture',
+      description: 'Handle any volume of data with auto-scaling infrastructure that grows with your needs',
       icon: <TrendingUp className="w-6 h-6" />
     },
     {
-      title: 'Disaster Recovery',
-      description: 'Multi-region backup and recovery with 99.999% data durability',
+      title: 'Advanced Security',
+      description: 'Enterprise-grade security with encryption, access controls, and compliance certifications',
       icon: <Shield className="w-6 h-6" />
+    },
+    {
+      title: 'Global Performance',
+      description: 'Distributed infrastructure ensures fast performance regardless of user location',
+      icon: <Globe className="w-6 h-6" />
+    },
+    {
+      title: 'Easy Integration',
+      description: 'Connect to any data source with pre-built connectors and APIs',
+      icon: <Network className="w-6 h-6" />
     }
   ];
 
   const useCases = [
     {
-      title: 'E-commerce Platforms',
-      description: 'High-traffic online stores with auto-scaling and global CDN',
+      title: 'E-commerce Analytics',
+      description: 'Track customer behavior, optimize pricing, and increase conversion rates',
       icon: <ShoppingCart className="w-8 h-8" />
     },
     {
-      title: 'Gaming & Streaming',
-      description: 'Low-latency gaming and video streaming with edge computing',
-      icon: <Gamepad2 className="w-8 h-8" />
-    },
-    {
-      title: 'IoT Applications',
-      description: 'Massive IoT deployments with real-time data processing',
-      icon: <Wifi className="w-8 h-8" />
-    },
-    {
-      title: 'AI/ML Workloads',
-      description: 'GPU-powered computing for machine learning and AI training',
-      icon: <Cpu className="w-8 h-8" />
-    },
-    {
-      title: 'Financial Services',
-      description: 'High-frequency trading and real-time financial analytics',
+      title: 'Financial Risk Analysis',
+      description: 'Monitor market trends, assess risks, and optimize investment strategies',
       icon: <TrendingUp className="w-8 h-8" />
     },
     {
-      title: 'Healthcare Systems',
-      description: 'HIPAA-compliant cloud infrastructure for medical applications',
+      title: 'Healthcare Analytics',
+      description: 'Improve patient outcomes with predictive analytics and population health insights',
       icon: <Heart className="w-8 h-8" />
+    },
+    {
+      title: 'Manufacturing Optimization',
+      description: 'Predict maintenance needs, optimize production, and reduce costs',
+      icon: <Cpu className="w-8 h-8" />
+    },
+    {
+      title: 'Marketing Intelligence',
+      description: 'Track campaign performance, understand customer segments, and optimize ROI',
+      icon: <Target className="w-8 h-8" />
+    },
+    {
+      title: 'Supply Chain Analytics',
+      description: 'Monitor inventory levels, predict demand, and optimize logistics',
+      icon: <Truck className="w-8 h-8" />
     }
   ];
 
-  const pricingTiers = [
+  const dataSources = [
+    'Databases (SQL, NoSQL)',
+    'Cloud Storage (AWS S3, Azure Blob)',
+    'APIs and Web Services',
+    'IoT Devices and Sensors',
+    'Social Media Platforms',
+    'Email and Communication Tools',
+    'CRM and ERP Systems',
+    'Log Files and Metrics'
+  ];
+
+  const benefits = [
     {
-      name: 'Starter',
-      price: '$99',
-      period: '/month',
-      description: 'Perfect for small businesses and startups',
-      features: ['100 GB Storage', '2 vCPUs', '4 GB RAM', 'Basic Support', '99.9% Uptime'],
-      popular: false
+      number: '300%',
+      label: 'Faster Insights',
+      description: 'Real-time processing delivers insights in seconds, not hours'
     },
     {
-      name: 'Professional',
-      price: '$299',
-      period: '/month',
-      description: 'Ideal for growing businesses and applications',
-      features: ['500 GB Storage', '4 vCPUs', '8 GB RAM', 'Priority Support', '99.95% Uptime', 'Auto-scaling'],
-      popular: true
+      number: '40%',
+      label: 'Cost Reduction',
+      description: 'Automated analytics reduce manual work and operational costs'
     },
     {
-      name: 'Enterprise',
-      price: 'Custom',
-      period: '',
-      description: 'For large-scale enterprise deployments',
-      features: ['Unlimited Storage', 'Custom Resources', 'Dedicated Support', '99.99% Uptime', 'Custom SLAs', 'On-premise Options'],
-      popular: false
+      number: '95%',
+      label: 'Accuracy Improvement',
+      description: 'AI-powered analysis reduces errors and improves decision quality'
+    },
+    {
+      number: '24/7',
+      label: 'Continuous Monitoring',
+      description: 'Always-on analytics with automated alerts and notifications'
     }
   ];
 
@@ -157,11 +164,11 @@ const CloudPlatform: React.FC = () => {
             transition={{ duration: 0.8 }}
           >
             <h1 className="text-5xl md:text-7xl font-bold bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 bg-clip-text text-transparent mb-6">
-              Cloud Platform
+              Data Analytics
             </h1>
             <p className="text-xl md:text-2xl text-gray-300 max-w-4xl mx-auto mb-8">
-              Next-generation cloud infrastructure powered by AI, quantum security, and global edge computing. 
-              Build, deploy, and scale with unprecedented performance and security.
+              Transform your data into actionable insights with AI-powered analytics, real-time processing, 
+              and predictive modeling. Make data-driven decisions that drive business growth.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link href="#services" className="bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-600 hover:to-blue-700 text-white px-8 py-4 rounded-xl font-semibold text-lg transition-all duration-300 transform hover:scale-105">
@@ -181,14 +188,14 @@ const CloudPlatform: React.FC = () => {
             transition={{ duration: 8, repeat: Infinity }}
             className="absolute top-20 left-10 text-cyan-400/20"
           >
-            <Cloud className="w-16 h-16" />
+            <BarChart3 className="w-16 h-16" />
           </motion.div>
           <motion.div
             animate={{ y: [0, 25, 0], scale: [1, 1.3, 1] }}
             transition={{ duration: 6, repeat: Infinity }}
             className="absolute top-40 right-20 text-purple-400/20"
           >
-            <Server className="w-12 h-12" />
+            <Brain className="w-12 h-12" />
           </motion.div>
           <motion.div
             animate={{ y: [0, -15, 0], rotate: [360, 0] }}
@@ -210,10 +217,10 @@ const CloudPlatform: React.FC = () => {
             className="text-center mb-16"
           >
             <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-              Why Choose Our Cloud Platform?
+              Why Choose Our Data Analytics Platform?
             </h2>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              Experience the future of cloud computing with cutting-edge technology and unmatched performance
+              Experience the power of AI-driven analytics with enterprise-grade performance and security
             </p>
           </motion.div>
 
@@ -237,7 +244,7 @@ const CloudPlatform: React.FC = () => {
         </div>
       </section>
 
-      {/* Cloud Services */}
+      {/* Analytics Services */}
       <section id="services" className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-cyan-500/5 to-purple-500/5">
         <div className="max-w-7xl mx-auto">
           <motion.div
@@ -247,15 +254,15 @@ const CloudPlatform: React.FC = () => {
             className="text-center mb-16"
           >
             <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-              Cloud Services
+              Analytics Services
             </h2>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              Comprehensive cloud solutions designed for modern applications and workloads
+              Comprehensive analytics solutions designed for modern data challenges
             </p>
           </motion.div>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-            {cloudServices.map((service, index) => (
+            {analyticsServices.map((service, index) => (
               <motion.div
                 key={service.title}
                 initial={{ opacity: 0, y: 20 }}
@@ -301,7 +308,7 @@ const CloudPlatform: React.FC = () => {
               Use Cases
             </h2>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              Our cloud platform powers applications across industries and use cases
+              Our analytics platform powers insights across industries and business functions
             </p>
           </motion.div>
 
@@ -327,7 +334,7 @@ const CloudPlatform: React.FC = () => {
         </div>
       </section>
 
-      {/* Pricing */}
+      {/* Data Sources */}
       <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-cyan-500/5 to-purple-500/5">
         <div className="max-w-7xl mx-auto">
           <motion.div
@@ -337,58 +344,64 @@ const CloudPlatform: React.FC = () => {
             className="text-center mb-16"
           >
             <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-              Pricing Plans
+              Connect Any Data Source
             </h2>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              Flexible pricing options designed to scale with your business needs
+              Our platform integrates with all your existing data sources and systems
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {pricingTiers.map((tier, index) => (
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+            {dataSources.map((source, index) => (
               <motion.div
-                key={tier.name}
+                key={source}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
-                className={`relative bg-gradient-to-br from-gray-800/50 to-gray-900/50 backdrop-blur-xl border rounded-xl p-8 ${
-                  tier.popular 
-                    ? 'border-cyan-500/50 scale-105' 
-                    : 'border-cyan-500/20 hover:border-cyan-500/40'
-                } transition-all duration-300`}
+                className="bg-gradient-to-br from-gray-800/30 to-gray-900/30 backdrop-blur-xl border border-cyan-500/20 rounded-xl p-6 text-center hover:border-cyan-500/40 transition-all duration-300"
               >
-                {tier.popular && (
-                  <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
-                    <span className="bg-gradient-to-r from-cyan-500 to-blue-600 text-white px-4 py-2 rounded-full text-sm font-semibold">
-                      Most Popular
-                    </span>
-                  </div>
-                )}
-                
-                <div className="text-center mb-8">
-                  <h3 className="text-2xl font-bold text-white mb-2">{tier.name}</h3>
-                  <div className="flex items-baseline justify-center">
-                    <span className="text-4xl font-bold text-white">{tier.price}</span>
-                    <span className="text-gray-400 ml-1">{tier.period}</span>
-                  </div>
-                  <p className="text-gray-300 mt-2">{tier.description}</p>
+                <div className="w-12 h-12 bg-gradient-to-r from-cyan-500/20 to-blue-500/20 rounded-xl flex items-center justify-center mx-auto mb-4">
+                  <Database className="w-6 h-6" />
                 </div>
-                
-                <ul className="space-y-3 mb-8">
-                  {tier.features.map((feature, idx) => (
-                    <li key={idx} className="flex items-center text-gray-300">
-                      <CheckCircle className="w-4 h-4 text-cyan-400 mr-3 flex-shrink-0" />
-                      {feature}
-                    </li>
-                  ))}
-                </ul>
-                
-                <Link 
-                  href="/contact"
-                  className="w-full bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-600 hover:to-blue-700 text-white py-3 px-6 rounded-xl font-semibold text-center block transition-all duration-300 transform hover:scale-105"
-                >
-                  Get Started
-                </Link>
+                <p className="text-gray-300 text-sm">{source}</p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Benefits Metrics */}
+      <section className="py-20 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+              Proven Results
+            </h2>
+            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+              Organizations using our analytics platform see measurable improvements across key metrics
+            </p>
+          </motion.div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {benefits.map((benefit, index) => (
+              <motion.div
+                key={benefit.label}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+                className="text-center"
+              >
+                <div className="w-20 h-20 bg-gradient-to-r from-cyan-500/20 to-blue-500/20 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                  <TrendingUp className="w-8 h-8" />
+                </div>
+                <div className="text-3xl md:text-4xl font-bold text-white mb-2">{benefit.number}</div>
+                <div className="text-lg font-semibold text-cyan-400 mb-2">{benefit.label}</div>
+                <div className="text-gray-300 text-sm">{benefit.description}</div>
               </motion.div>
             ))}
           </div>
@@ -396,7 +409,7 @@ const CloudPlatform: React.FC = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8">
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-cyan-500/5 to-purple-500/5">
         <div className="max-w-4xl mx-auto text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -404,11 +417,11 @@ const CloudPlatform: React.FC = () => {
             transition={{ duration: 0.8 }}
           >
             <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-              Ready to Scale Your Infrastructure?
+              Ready to Unlock Your Data's Potential?
             </h2>
             <p className="text-xl text-gray-300 mb-8">
-              Join thousands of businesses that trust our cloud platform for their critical applications. 
-              Start your cloud journey today with enterprise-grade infrastructure and AI-powered optimization.
+              Transform your business with AI-powered analytics and real-time insights. 
+              Start making data-driven decisions that drive growth and innovation.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link href="/contact" className="bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-600 hover:to-blue-700 text-white px-8 py-4 rounded-xl font-semibold text-lg transition-all duration-300 transform hover:scale-105">
@@ -425,4 +438,4 @@ const CloudPlatform: React.FC = () => {
   );
 };
 
-export default CloudPlatform;
+export default DataAnalytics;

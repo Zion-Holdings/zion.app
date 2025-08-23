@@ -1,117 +1,117 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { 
-  Shield, Zap, Cpu, Database, Lock, Cloud, 
+  Globe, Zap, Cpu, Database, Shield, Cloud, 
   Users, Target, TrendingUp, ArrowRight, Star,
-  CheckCircle, Brain, Atom, Rocket, Code, Eye, Key
+  CheckCircle, Brain, Atom, Rocket, Code, Eye
 } from 'lucide-react';
 import Link from 'next/link';
 
-const Cybersecurity: React.FC = () => {
+const MetaverseDevelopment: React.FC = () => {
   const services = [
     {
-      title: 'Quantum Cybersecurity Platform',
-      description: 'Next-generation security solutions powered by quantum computing',
-      icon: <Shield className="w-8 h-8" />,
-      features: ['Quantum encryption', 'Post-quantum cryptography', 'Advanced threat detection'],
-      href: '/quantum-cybersecurity-platform-2045',
-      badge: 'QUANTUM'
+      title: 'Metaverse Development Studio Pro',
+      description: 'Complete metaverse creation platform for immersive virtual experiences',
+      icon: <Globe className="w-8 h-8" />,
+      features: ['3D world building', 'Avatar systems', 'Virtual economies'],
+      href: '/metaverse-development-studio-pro-2045',
+      badge: 'IMMERSIVE'
     },
     {
-      title: 'Zero Trust Security',
-      description: 'Comprehensive zero-trust network architecture and security platform',
-      icon: <Lock className="w-8 h-8" />,
-      features: ['Identity verification', 'Access control', 'Network segmentation'],
-      href: '/zero-trust-security-platform',
-      badge: 'TRUST'
-    },
-    {
-      title: 'Vulnerability Assessment',
-      description: 'Comprehensive security testing and penetration testing services',
+      title: 'VR/AR Development',
+      description: 'Advanced virtual and augmented reality solutions for immersive experiences',
       icon: <Eye className="w-8 h-8" />,
-      features: ['Security audits', 'Penetration testing', 'Risk assessment'],
-      href: '/vulnerability-assessment-penetration-testing',
-      badge: 'ASSESSMENT'
+      features: ['VR applications', 'AR overlays', 'Mixed reality'],
+      href: '/vr-ar-development-platform',
+      badge: 'REALITY'
     },
     {
-      title: 'SOC2 Compliance',
-      description: 'Automated SOC2 compliance and evidence management',
-      icon: <CheckCircle className="w-8 h-8" />,
-      features: ['Compliance automation', 'Evidence collection', 'Audit preparation'],
-      href: '/soc2-compliance-automation',
-      badge: 'COMPLIANCE'
-    },
-    {
-      title: 'Secrets Management',
-      description: 'Automated secrets rotation and management platform',
-      icon: <Key className="w-8 h-8" />,
-      features: ['Automated rotation', 'Secure storage', 'Access control'],
-      href: '/secrets-rotation-automation',
-      badge: 'SECRETS'
-    },
-    {
-      title: 'Security Consulting',
-      description: 'Strategic cybersecurity consulting and implementation services',
+      title: 'Virtual Event Platforms',
+      description: 'Holographic and virtual event solutions for global audiences',
       icon: <Users className="w-8 h-8" />,
-      features: ['Security strategy', 'Implementation planning', 'Training & support'],
-      href: '/cybersecurity-consulting-services',
+      features: ['Virtual conferences', 'Holographic presentations', 'Interactive events'],
+      href: '/virtual-event-hologram-platform',
+      badge: 'EVENTS'
+    },
+    {
+      title: 'Digital Twin Technology',
+      description: 'Virtual replicas of physical systems and environments',
+      icon: <Cpu className="w-8 h-8" />,
+      features: ['3D modeling', 'Real-time monitoring', 'Predictive analytics'],
+      href: '/digital-twin-platform',
+      badge: 'TWIN'
+    },
+    {
+      title: 'Virtual Commerce',
+      description: 'E-commerce solutions for the metaverse economy',
+      icon: <Target className="w-8 h-8" />,
+      features: ['Virtual stores', 'NFT marketplaces', 'Digital assets'],
+      href: '/virtual-commerce-platform',
+      badge: 'COMMERCE'
+    },
+    {
+      title: 'Metaverse Consulting',
+      description: 'Strategic metaverse consulting and implementation services',
+      icon: <Brain className="w-8 h-8" />,
+      features: ['Strategy development', 'Implementation planning', 'Training & support'],
+      href: '/metaverse-consulting-services',
       badge: 'EXPERT'
     }
   ];
 
   const applications = [
     {
-      title: 'Enterprise Security',
-      description: 'Comprehensive security solutions for large organizations',
+      title: 'Virtual Workspaces',
+      description: 'Collaborative virtual environments for remote teams',
+      icon: <Users className="w-6 h-6" />
+    },
+    {
+      title: 'Virtual Learning',
+      description: 'Immersive educational experiences and training platforms',
+      icon: <Brain className="w-6 h-6" />
+    },
+    {
+      title: 'Virtual Entertainment',
+      description: 'Gaming and entertainment experiences in virtual worlds',
+      icon: <Eye className="w-6 h-6" />
+    },
+    {
+      title: 'Virtual Real Estate',
+      description: 'Digital property and virtual land development',
+      icon: <Globe className="w-6 h-6" />
+    },
+    {
+      title: 'Virtual Healthcare',
+      description: 'Telemedicine and virtual health experiences',
       icon: <Shield className="w-6 h-6" />
     },
     {
-      title: 'Cloud Security',
-      description: 'Security solutions for cloud infrastructure and applications',
-      icon: <Cloud className="w-6 h-6" />
-    },
-    {
-      title: 'Network Security',
-      description: 'Advanced network protection and monitoring systems',
-      icon: <Cpu className="w-6 h-6" />
-    },
-    {
-      title: 'Application Security',
-      description: 'Security testing and protection for applications',
-      icon: <Code className="w-6 h-6" />
-    },
-    {
-      title: 'Data Protection',
-      description: 'Data encryption and privacy compliance solutions',
-      icon: <Database className="w-6 h-6" />
-    },
-    {
-      title: 'Incident Response',
-      description: 'Rapid response and recovery from security incidents',
-      icon: <Target className="w-6 h-6" />
+      title: 'Virtual Tourism',
+      description: 'Virtual travel experiences and destination exploration',
+      icon: <Rocket className="w-6 h-6" />
     }
   ];
 
   const technologies = [
     {
-      title: 'AI-Powered Threat Detection',
-      description: 'Machine learning algorithms for advanced threat identification',
-      icon: <Brain className="w-8 h-8" />
+      title: '3D Graphics & Rendering',
+      description: 'Advanced 3D graphics and real-time rendering technologies',
+      icon: <Eye className="w-8 h-8" />
     },
     {
-      title: 'Blockchain Security',
-      description: 'Distributed security and immutable audit trails',
+      title: 'Spatial Computing',
+      description: 'Computing systems that understand and interact with 3D space',
+      icon: <Cpu className="w-8 h-8" />
+    },
+    {
+      title: 'Blockchain Integration',
+      description: 'Secure digital asset management and virtual economies',
       icon: <Shield className="w-8 h-8" />
     },
     {
-      title: 'Quantum Cryptography',
-      description: 'Unbreakable encryption using quantum mechanics',
-      icon: <Atom className="w-8 h-8" />
-    },
-    {
-      title: 'Zero Trust Architecture',
-      description: 'Never trust, always verify security model',
-      icon: <Lock className="w-8 h-8" />
+      title: 'AI & Machine Learning',
+      description: 'Intelligent systems for enhanced virtual experiences',
+      icon: <Brain className="w-8 h-8" />
     }
   ];
 
@@ -126,10 +126,10 @@ const Cybersecurity: React.FC = () => {
             transition={{ duration: 0.8 }}
           >
             <h1 className="text-5xl md:text-7xl font-bold bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 bg-clip-text text-transparent mb-6">
-              Cybersecurity
+              Metaverse Development
             </h1>
             <p className="text-xl md:text-2xl text-gray-300 max-w-4xl mx-auto mb-8">
-              Next-generation cybersecurity solutions that protect your digital assets and ensure business continuity in an evolving threat landscape
+              Revolutionary metaverse and virtual reality solutions that create immersive digital experiences and transform how we interact with technology
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link href="/contact" className="bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-600 hover:to-blue-700 text-white px-8 py-4 rounded-xl font-semibold text-lg transition-all duration-300 transform hover:scale-105">
@@ -142,28 +142,28 @@ const Cybersecurity: React.FC = () => {
           </motion.div>
         </div>
         
-        {/* Floating Security Elements */}
+        {/* Floating Metaverse Elements */}
         <div className="absolute inset-0 pointer-events-none">
           <motion.div
-            animate={{ y: [0, -20, 0], rotate: [0, 360] }}
+            animate={{ y: [0, -25, 0], rotate: [0, 360] }}
             transition={{ duration: 8, repeat: Infinity }}
             className="absolute top-20 left-10 text-cyan-400/20"
           >
-            <Shield className="w-16 h-16" />
+            <Globe className="w-16 h-16" />
           </motion.div>
           <motion.div
-            animate={{ y: [0, 25, 0], scale: [1, 1.3, 1] }}
+            animate={{ y: [0, 20, 0], scale: [1, 1.2, 1] }}
             transition={{ duration: 6, repeat: Infinity }}
             className="absolute top-40 right-20 text-purple-400/20"
           >
-            <Lock className="w-12 h-12" />
+            <Eye className="w-12 h-12" />
           </motion.div>
           <motion.div
-            animate={{ y: [0, -15, 0], rotate: [360, 0] }}
+            animate={{ y: [0, -18, 0], rotate: [360, 0] }}
             transition={{ duration: 10, repeat: Infinity }}
             className="absolute bottom-40 left-20 text-blue-400/20"
           >
-            <Eye className="w-14 h-14" />
+            <Brain className="w-14 h-14" />
           </motion.div>
         </div>
       </section>
@@ -178,10 +178,10 @@ const Cybersecurity: React.FC = () => {
             className="text-center mb-16"
           >
             <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-              Our Cybersecurity Portfolio
+              Our Metaverse Development Portfolio
             </h2>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              Comprehensive security solutions designed to protect against modern cyber threats
+              Comprehensive metaverse solutions designed to create immersive digital experiences
             </p>
           </motion.div>
 
@@ -243,10 +243,10 @@ const Cybersecurity: React.FC = () => {
             className="text-center mb-16"
           >
             <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-              Cybersecurity Applications
+              Metaverse Applications
             </h2>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              Discover how our cybersecurity solutions protect diverse industries and use cases
+              Discover how metaverse technology is transforming industries and creating new possibilities
             </p>
           </motion.div>
 
@@ -284,10 +284,10 @@ const Cybersecurity: React.FC = () => {
             className="text-center mb-16"
           >
             <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-              Core Security Technologies
+              Core Metaverse Technologies
             </h2>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              The fundamental technologies that power our cybersecurity solutions
+              The fundamental technologies that power our metaverse solutions
             </p>
           </motion.div>
 
@@ -317,7 +317,7 @@ const Cybersecurity: React.FC = () => {
         </div>
       </section>
 
-      {/* Security Innovation Section */}
+      {/* Metaverse Innovation Section */}
       <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-cyan-500/5 to-purple-500/5">
         <div className="max-w-7xl mx-auto">
           <motion.div
@@ -327,10 +327,10 @@ const Cybersecurity: React.FC = () => {
             className="text-center mb-16"
           >
             <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-              The Future of Cybersecurity
+              The Future of Metaverse
             </h2>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              How we're shaping the next generation of digital security and threat protection
+              How we're shaping the next generation of digital experiences and virtual worlds
             </p>
           </motion.div>
 
@@ -341,16 +341,16 @@ const Cybersecurity: React.FC = () => {
               transition={{ duration: 0.8 }}
               className="bg-gradient-to-br from-gray-800/50 to-gray-900/50 backdrop-blur-xl border border-cyan-500/20 rounded-2xl p-8"
             >
-              <h3 className="text-2xl font-bold text-white mb-4">AI-Powered Defense</h3>
+              <h3 className="text-2xl font-bold text-white mb-4">Immersive Experiences</h3>
               <p className="text-gray-300 mb-4">
-                Our cybersecurity solutions leverage artificial intelligence and machine learning 
-                to detect and respond to threats in real-time, providing proactive protection.
+                We're creating truly immersive digital experiences that blur the line between 
+                virtual and physical reality, enabling new forms of interaction and engagement.
               </p>
               <ul className="space-y-2 text-gray-300">
-                <li>• Behavioral analysis</li>
-                <li>• Threat intelligence</li>
-                <li>• Automated response</li>
-                <li>• Predictive security</li>
+                <li>• Spatial audio and haptic feedback</li>
+                <li>• Real-time collaboration tools</li>
+                <li>• AI-powered virtual assistants</li>
+                <li>• Cross-platform compatibility</li>
               </ul>
             </motion.div>
 
@@ -360,16 +360,16 @@ const Cybersecurity: React.FC = () => {
               transition={{ duration: 0.8 }}
               className="bg-gradient-to-br from-gray-800/50 to-gray-900/50 backdrop-blur-xl border border-cyan-500/20 rounded-2xl p-8"
             >
-              <h3 className="text-2xl font-bold text-white mb-4">Quantum Security</h3>
+              <h3 className="text-2xl font-bold text-white mb-4">Virtual Economy</h3>
               <p className="text-gray-300 mb-4">
-                We're developing quantum-resistant cryptography and quantum-enhanced security 
-                solutions to protect against future threats from quantum computers.
+                Our metaverse platforms support robust virtual economies with digital assets, 
+                NFTs, and secure blockchain integration for true digital ownership.
               </p>
               <ul className="space-y-2 text-gray-300">
-                <li>• Post-quantum cryptography</li>
-                <li>• Quantum key distribution</li>
-                <li>• Quantum-resistant algorithms</li>
-                <li>• Future-proof security</li>
+                <li>• Digital asset creation</li>
+                <li>• NFT marketplace integration</li>
+                <li>• Virtual currency systems</li>
+                <li>• Secure transactions</li>
               </ul>
             </motion.div>
           </div>
@@ -385,10 +385,10 @@ const Cybersecurity: React.FC = () => {
             transition={{ duration: 0.8 }}
           >
             <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-              Ready to Secure Your Future?
+              Ready to Build the Future?
             </h2>
             <p className="text-xl text-gray-300 mb-8">
-              Let's discuss how our cybersecurity solutions can protect your organization
+              Let's create immersive metaverse experiences that transform how people interact with technology
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link href="/contact" className="bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-600 hover:to-blue-700 text-white px-8 py-4 rounded-xl font-semibold text-lg transition-all duration-300 transform hover:scale-105">
@@ -405,4 +405,4 @@ const Cybersecurity: React.FC = () => {
   );
 };
 
-export default Cybersecurity;
+export default MetaverseDevelopment;

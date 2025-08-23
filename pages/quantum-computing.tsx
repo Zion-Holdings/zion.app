@@ -1,117 +1,94 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { 
-  Shield, Zap, Cpu, Database, Lock, Cloud, 
+  Atom, Zap, Cpu, Database, Shield, Cloud, 
   Users, Target, TrendingUp, ArrowRight, Star,
-  CheckCircle, Brain, Atom, Rocket, Code, Eye, Key
+  CheckCircle, Rocket, Brain, Globe, Code, Lock
 } from 'lucide-react';
 import Link from 'next/link';
 
-const Cybersecurity: React.FC = () => {
+const QuantumComputing: React.FC = () => {
   const services = [
     {
-      title: 'Quantum Cybersecurity Platform',
+      title: 'Quantum Neural Ecosystem',
+      description: 'Hybrid quantum-AI computing platform for next-generation neural networks',
+      icon: <Brain className="w-8 h-8" />,
+      features: ['Quantum neural networks', 'Hybrid computing', 'Advanced algorithms'],
+      href: '/quantum-neural-ecosystem-2045',
+      badge: 'BREAKTHROUGH'
+    },
+    {
+      title: 'Quantum Cloud Infrastructure',
+      description: 'Scalable quantum computing infrastructure for enterprise applications',
+      icon: <Cloud className="w-8 h-8" />,
+      features: ['Quantum cloud services', 'Scalable infrastructure', 'Enterprise solutions'],
+      href: '/quantum-cloud-infrastructure',
+      badge: 'CLOUD'
+    },
+    {
+      title: 'Quantum Cybersecurity',
       description: 'Next-generation security solutions powered by quantum computing',
       icon: <Shield className="w-8 h-8" />,
-      features: ['Quantum encryption', 'Post-quantum cryptography', 'Advanced threat detection'],
+      features: ['Quantum encryption', 'Post-quantum cryptography', 'Advanced security'],
       href: '/quantum-cybersecurity-platform-2045',
-      badge: 'QUANTUM'
+      badge: 'SECURE'
     },
     {
-      title: 'Zero Trust Security',
-      description: 'Comprehensive zero-trust network architecture and security platform',
+      title: 'Quantum Blockchain',
+      description: 'Quantum-resistant blockchain technology for secure transactions',
       icon: <Lock className="w-8 h-8" />,
-      features: ['Identity verification', 'Access control', 'Network segmentation'],
-      href: '/zero-trust-security-platform',
-      badge: 'TRUST'
+      features: ['Quantum-resistant algorithms', 'Secure transactions', 'Blockchain innovation'],
+      href: '/quantum-blockchain',
+      badge: 'BLOCKCHAIN'
     },
     {
-      title: 'Vulnerability Assessment',
-      description: 'Comprehensive security testing and penetration testing services',
-      icon: <Eye className="w-8 h-8" />,
-      features: ['Security audits', 'Penetration testing', 'Risk assessment'],
-      href: '/vulnerability-assessment-penetration-testing',
-      badge: 'ASSESSMENT'
+      title: 'Quantum Bio-Computing',
+      description: 'Revolutionary bio-quantum computing platform',
+      icon: <Atom className="w-8 h-8" />,
+      features: ['Bio-quantum integration', 'Molecular computing', 'Biological algorithms'],
+      href: '/quantum-bio-computing-platform',
+      badge: 'BIO'
     },
     {
-      title: 'SOC2 Compliance',
-      description: 'Automated SOC2 compliance and evidence management',
-      icon: <CheckCircle className="w-8 h-8" />,
-      features: ['Compliance automation', 'Evidence collection', 'Audit preparation'],
-      href: '/soc2-compliance-automation',
-      badge: 'COMPLIANCE'
-    },
-    {
-      title: 'Secrets Management',
-      description: 'Automated secrets rotation and management platform',
-      icon: <Key className="w-8 h-8" />,
-      features: ['Automated rotation', 'Secure storage', 'Access control'],
-      href: '/secrets-rotation-automation',
-      badge: 'SECRETS'
-    },
-    {
-      title: 'Security Consulting',
-      description: 'Strategic cybersecurity consulting and implementation services',
+      title: 'Quantum Consulting',
+      description: 'Strategic quantum computing consulting and implementation',
       icon: <Users className="w-8 h-8" />,
-      features: ['Security strategy', 'Implementation planning', 'Training & support'],
-      href: '/cybersecurity-consulting-services',
+      features: ['Strategy development', 'Implementation planning', 'Training & support'],
+      href: '/quantum-consulting-services',
       badge: 'EXPERT'
     }
   ];
 
   const applications = [
     {
-      title: 'Enterprise Security',
-      description: 'Comprehensive security solutions for large organizations',
+      title: 'Cryptography & Security',
+      description: 'Quantum-resistant encryption and advanced security protocols',
       icon: <Shield className="w-6 h-6" />
     },
     {
-      title: 'Cloud Security',
-      description: 'Security solutions for cloud infrastructure and applications',
-      icon: <Cloud className="w-6 h-6" />
+      title: 'Drug Discovery',
+      description: 'Accelerated molecular simulation and drug development',
+      icon: <Atom className="w-6 h-6" />
     },
     {
-      title: 'Network Security',
-      description: 'Advanced network protection and monitoring systems',
-      icon: <Cpu className="w-6 h-6" />
+      title: 'Financial Modeling',
+      description: 'Complex financial calculations and risk assessment',
+      icon: <TrendingUp className="w-6 h-6" />
     },
     {
-      title: 'Application Security',
-      description: 'Security testing and protection for applications',
-      icon: <Code className="w-6 h-6" />
+      title: 'Climate Modeling',
+      description: 'Advanced climate simulation and prediction models',
+      icon: <Globe className="w-6 h-6" />
     },
     {
-      title: 'Data Protection',
-      description: 'Data encryption and privacy compliance solutions',
-      icon: <Database className="w-6 h-6" />
+      title: 'AI & Machine Learning',
+      description: 'Quantum-enhanced AI algorithms and neural networks',
+      icon: <Brain className="w-6 h-6" />
     },
     {
-      title: 'Incident Response',
-      description: 'Rapid response and recovery from security incidents',
+      title: 'Logistics Optimization',
+      description: 'Complex optimization problems and route planning',
       icon: <Target className="w-6 h-6" />
-    }
-  ];
-
-  const technologies = [
-    {
-      title: 'AI-Powered Threat Detection',
-      description: 'Machine learning algorithms for advanced threat identification',
-      icon: <Brain className="w-8 h-8" />
-    },
-    {
-      title: 'Blockchain Security',
-      description: 'Distributed security and immutable audit trails',
-      icon: <Shield className="w-8 h-8" />
-    },
-    {
-      title: 'Quantum Cryptography',
-      description: 'Unbreakable encryption using quantum mechanics',
-      icon: <Atom className="w-8 h-8" />
-    },
-    {
-      title: 'Zero Trust Architecture',
-      description: 'Never trust, always verify security model',
-      icon: <Lock className="w-8 h-8" />
     }
   ];
 
@@ -126,10 +103,10 @@ const Cybersecurity: React.FC = () => {
             transition={{ duration: 0.8 }}
           >
             <h1 className="text-5xl md:text-7xl font-bold bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 bg-clip-text text-transparent mb-6">
-              Cybersecurity
+              Quantum Computing
             </h1>
             <p className="text-xl md:text-2xl text-gray-300 max-w-4xl mx-auto mb-8">
-              Next-generation cybersecurity solutions that protect your digital assets and ensure business continuity in an evolving threat landscape
+              Next-generation quantum computing solutions that solve previously impossible problems and unlock new possibilities
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link href="/contact" className="bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-600 hover:to-blue-700 text-white px-8 py-4 rounded-xl font-semibold text-lg transition-all duration-300 transform hover:scale-105">
@@ -142,28 +119,28 @@ const Cybersecurity: React.FC = () => {
           </motion.div>
         </div>
         
-        {/* Floating Security Elements */}
+        {/* Floating Quantum Elements */}
         <div className="absolute inset-0 pointer-events-none">
           <motion.div
             animate={{ y: [0, -20, 0], rotate: [0, 360] }}
             transition={{ duration: 8, repeat: Infinity }}
             className="absolute top-20 left-10 text-cyan-400/20"
           >
-            <Shield className="w-16 h-16" />
+            <Atom className="w-16 h-16" />
           </motion.div>
           <motion.div
-            animate={{ y: [0, 25, 0], scale: [1, 1.3, 1] }}
+            animate={{ y: [0, 20, 0], scale: [1, 1.2, 1] }}
             transition={{ duration: 6, repeat: Infinity }}
             className="absolute top-40 right-20 text-purple-400/20"
           >
-            <Lock className="w-12 h-12" />
+            <Cpu className="w-12 h-12" />
           </motion.div>
           <motion.div
             animate={{ y: [0, -15, 0], rotate: [360, 0] }}
             transition={{ duration: 10, repeat: Infinity }}
             className="absolute bottom-40 left-20 text-blue-400/20"
           >
-            <Eye className="w-14 h-14" />
+            <Database className="w-14 h-14" />
           </motion.div>
         </div>
       </section>
@@ -178,10 +155,10 @@ const Cybersecurity: React.FC = () => {
             className="text-center mb-16"
           >
             <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-              Our Cybersecurity Portfolio
+              Our Quantum Computing Portfolio
             </h2>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              Comprehensive security solutions designed to protect against modern cyber threats
+              Cutting-edge quantum solutions designed to revolutionize computing and solve complex problems
             </p>
           </motion.div>
 
@@ -243,10 +220,10 @@ const Cybersecurity: React.FC = () => {
             className="text-center mb-16"
           >
             <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-              Cybersecurity Applications
+              Quantum Computing Applications
             </h2>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              Discover how our cybersecurity solutions protect diverse industries and use cases
+              Discover how quantum computing is transforming industries and solving complex challenges
             </p>
           </motion.div>
 
@@ -274,7 +251,7 @@ const Cybersecurity: React.FC = () => {
         </div>
       </section>
 
-      {/* Core Technologies Section */}
+      {/* Quantum Advantage Section */}
       <section className="py-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
           <motion.div
@@ -284,53 +261,10 @@ const Cybersecurity: React.FC = () => {
             className="text-center mb-16"
           >
             <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-              Core Security Technologies
+              The Quantum Advantage
             </h2>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              The fundamental technologies that power our cybersecurity solutions
-            </p>
-          </motion.div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {technologies.map((tech, index) => (
-              <motion.div
-                key={tech.title}
-                initial={{ opacity: 0, x: index % 2 === 0 ? -20 : 20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.8 }}
-                className="bg-gradient-to-br from-gray-800/50 to-gray-900/50 backdrop-blur-xl border border-cyan-500/20 rounded-2xl p-8 hover:border-cyan-500/40 transition-all duration-300 group"
-              >
-                <div className="flex items-center mb-6">
-                  <div className="p-3 bg-gradient-to-r from-cyan-500/20 to-blue-500/20 rounded-xl mr-4">
-                    {tech.icon}
-                  </div>
-                  <h3 className="text-2xl font-bold text-white group-hover:text-cyan-400 transition-colors">
-                    {tech.title}
-                  </h3>
-                </div>
-                <p className="text-gray-300 leading-relaxed text-lg">
-                  {tech.description}
-                </p>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Security Innovation Section */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-cyan-500/5 to-purple-500/5">
-        <div className="max-w-7xl mx-auto">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="text-center mb-16"
-          >
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-              The Future of Cybersecurity
-            </h2>
-            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              How we're shaping the next generation of digital security and threat protection
+              Why quantum computing represents the future of computational power
             </p>
           </motion.div>
 
@@ -341,16 +275,16 @@ const Cybersecurity: React.FC = () => {
               transition={{ duration: 0.8 }}
               className="bg-gradient-to-br from-gray-800/50 to-gray-900/50 backdrop-blur-xl border border-cyan-500/20 rounded-2xl p-8"
             >
-              <h3 className="text-2xl font-bold text-white mb-4">AI-Powered Defense</h3>
+              <h3 className="text-2xl font-bold text-white mb-4">Exponential Speed</h3>
               <p className="text-gray-300 mb-4">
-                Our cybersecurity solutions leverage artificial intelligence and machine learning 
-                to detect and respond to threats in real-time, providing proactive protection.
+                Quantum computers can solve certain problems exponentially faster than classical computers, 
+                reducing computation time from years to minutes for complex algorithms.
               </p>
               <ul className="space-y-2 text-gray-300">
-                <li>• Behavioral analysis</li>
-                <li>• Threat intelligence</li>
-                <li>• Automated response</li>
-                <li>• Predictive security</li>
+                <li>• Factorization problems</li>
+                <li>• Optimization algorithms</li>
+                <li>• Machine learning training</li>
+                <li>• Cryptography breaking</li>
               </ul>
             </motion.div>
 
@@ -360,16 +294,16 @@ const Cybersecurity: React.FC = () => {
               transition={{ duration: 0.8 }}
               className="bg-gradient-to-br from-gray-800/50 to-gray-900/50 backdrop-blur-xl border border-cyan-500/20 rounded-2xl p-8"
             >
-              <h3 className="text-2xl font-bold text-white mb-4">Quantum Security</h3>
+              <h3 className="text-2xl font-bold text-white mb-4">Quantum Supremacy</h3>
               <p className="text-gray-300 mb-4">
-                We're developing quantum-resistant cryptography and quantum-enhanced security 
-                solutions to protect against future threats from quantum computers.
+                Achieve computational tasks that are impossible for classical computers, 
+                opening new frontiers in science, technology, and business.
               </p>
               <ul className="space-y-2 text-gray-300">
-                <li>• Post-quantum cryptography</li>
-                <li>• Quantum key distribution</li>
-                <li>• Quantum-resistant algorithms</li>
-                <li>• Future-proof security</li>
+                <li>• Quantum simulation</li>
+                <li>• Quantum machine learning</li>
+                <li>• Quantum chemistry</li>
+                <li>• Quantum optimization</li>
               </ul>
             </motion.div>
           </div>
@@ -385,10 +319,10 @@ const Cybersecurity: React.FC = () => {
             transition={{ duration: 0.8 }}
           >
             <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-              Ready to Secure Your Future?
+              Ready to Harness Quantum Power?
             </h2>
             <p className="text-xl text-gray-300 mb-8">
-              Let's discuss how our cybersecurity solutions can protect your organization
+              Let's explore how quantum computing can revolutionize your business and solve your most complex challenges
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link href="/contact" className="bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-600 hover:to-blue-700 text-white px-8 py-4 rounded-xl font-semibold text-lg transition-all duration-300 transform hover:scale-105">
@@ -405,4 +339,4 @@ const Cybersecurity: React.FC = () => {
   );
 };
 
-export default Cybersecurity;
+export default QuantumComputing;
