@@ -97,10 +97,7 @@ export default function Layout({ children }: LayoutProps) {
         <TopContactBar />
         
         {/* Navigation */}
-        <UltraFuturisticNavigation2036 
-          onMenuToggle={() => setSidebarOpen(!sidebarOpen)}
-          aria-expanded={sidebarOpen}
-        />
+        <UltraFuturisticNavigation2036 />
         
         {/* Sidebar and Main Content */}
         <div className="flex">

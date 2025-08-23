@@ -10,6 +10,12 @@ declare global {
       params?: Record<string, unknown>
     ) => void;
   }
+  
+  // Add missing browser API types
+  interface PerformanceResourceTiming extends PerformanceEntry {}
+  interface EventTarget {}
+  interface Node {}
+  interface DOMRectReadOnly {}
 }
 
 

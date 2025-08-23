@@ -1,6 +1,8 @@
 import React, { useEffect } from 'react';
 import { useRouter } from 'next/router';
 
+// Browser API types are declared globally in PerformanceOptimizer.tsx
+
 const AnalyticsTracker: React.FC = () => {
   const router = useRouter();
 
@@ -134,7 +136,7 @@ const AnalyticsTracker: React.FC = () => {
 
             // Track resource loading performance
             const resources = performance.getEntriesByType('resource');
-            const slowResources = resources.filter((resource) => (resource as PerformanceResourceTiming).duration > 1000);
+            const slowResources = resources.filter((resource) => (resource as any).duration > 1000);
             if (slowResources.length > 0) {
               trackMetric('SlowResources', slowResources.length);
             }
@@ -338,7 +340,7 @@ const AnalyticsTracker: React.FC = () => {
 interface PerformanceEventTiming extends PerformanceEntry {
   processingStart: number;
   processingEnd: number;
-  target?: EventTarget;
+  target?: any;
 }
 
 interface LayoutShift extends PerformanceEntry {
@@ -347,16 +349,11 @@ interface LayoutShift extends PerformanceEntry {
 }
 
 interface LayoutShiftSource {
-  node?: Node;
-  currentRect?: DOMRectReadOnly;
-  previousRect?: DOMRectReadOnly;
+  node?: any;
+  currentRect?: any;
+  previousRect?: any;
 }
 
-// Extend Window interface for gtag
-declare global {
-  interface Window {
-    gtag: (...args: unknown[]) => void;
-  }
-}
+// gtag is declared globally in PerformanceOptimizer.tsx
 
 export default AnalyticsTracker;

@@ -1,506 +1,608 @@
-import React from 'react';
+import React, { useState } from 'react';
+import Head from 'next/head';
 import { motion } from 'framer-motion';
-import { Brain, Rocket, Shield, Users, Target, Award, Globe, Zap, ArrowRight, Mail, MapPin, Clock, DollarSign, Heart, Lightbulb, Code, Database, Network, Server, Monitor, Smartphone, Camera, Gamepad2, Palette, Music, Film, BookOpenCheck, Building, MessageCircle } from 'lucide-react';
-import Layout from '../components/layout/Layout';
-
-const openPositions = [
-  {
-    id: 'ai-research-scientist',
-    title: 'AI Research Scientist',
-    department: 'AI & Consciousness',
-    location: 'Remote / Middletown, DE',
-    type: 'Full-time',
-    experience: '5+ years',
-    salary: '$150K - $250K',
-    description: 'Lead research in AI consciousness, emotional intelligence, and autonomous systems. Develop breakthrough algorithms that push the boundaries of artificial intelligence.',
-    requirements: [
-      'PhD in Computer Science, AI, or related field',
-      'Expertise in deep learning, NLP, and consciousness research',
-      'Experience with large language models and neural networks',
-      'Published research in top AI conferences',
-      'Passion for ethical AI development'
-    ],
-    benefits: [
-      'Competitive salary with equity options',
-      'Flexible remote work environment',
-      'Cutting-edge research opportunities',
-      'Conference and publication support',
-      'Health, dental, and vision coverage'
-    ],
-    icon: <Brain className="w-8 h-8" />,
-    color: 'text-cyan-400',
-    bgColor: 'bg-cyan-400/10',
-    borderColor: 'border-cyan-400/20'
-  },
-  {
-    id: 'quantum-computing-engineer',
-    title: 'Quantum Computing Engineer',
-    department: 'Quantum & Emerging Tech',
-    location: 'Remote / Middletown, DE',
-    type: 'Full-time',
-    experience: '3+ years',
-    salary: '$120K - $200K',
-    description: 'Develop quantum algorithms and quantum-resistant security solutions. Work on breakthrough quantum computing applications for real-world problems.',
-    requirements: [
-      'MS/PhD in Physics, Computer Science, or Quantum Computing',
-      'Experience with quantum programming languages (Qiskit, Cirq)',
-      'Knowledge of quantum algorithms and quantum cryptography',
-      'Understanding of quantum error correction',
-      'Experience with quantum simulators and hardware'
-    ],
-    benefits: [
-      'Competitive salary with equity options',
-      'Access to quantum computing resources',
-      'Collaboration with leading quantum researchers',
-      'Professional development opportunities',
-      'Comprehensive benefits package'
-    ],
-    icon: <Rocket className="w-8 h-8" />,
-    color: 'text-blue-400',
-    bgColor: 'bg-blue-400/10',
-    borderColor: 'border-blue-400/20'
-  },
-  {
-    id: 'autonomous-systems-engineer',
-    title: 'Autonomous Systems Engineer',
-    department: 'Enterprise IT',
-    location: 'Remote / Middletown, DE',
-    type: 'Full-time',
-    experience: '4+ years',
-    salary: '$130K - $220K',
-    description: 'Build self-managing, autonomous IT infrastructure systems. Develop AI-powered automation for enterprise operations and security.',
-    requirements: [
-      'BS/MS in Computer Science or Engineering',
-      'Experience with DevOps, Kubernetes, and cloud platforms',
-      'Knowledge of AI/ML for automation',
-      'Experience with monitoring and observability tools',
-      'Understanding of enterprise security and compliance'
-    ],
-    benefits: [
-      'Competitive salary with equity options',
-      'Remote-first work environment',
-      'Latest technology and tools',
-      'Professional certification support',
-      'Flexible PTO and work hours'
-    ],
-    icon: <Shield className="w-8 h-8" />,
-    color: 'text-purple-400',
-    bgColor: 'bg-purple-400/10',
-    borderColor: 'border-purple-400/20'
-  },
-  {
-    id: 'space-technology-researcher',
-    title: 'Space Technology Researcher',
-    department: 'Quantum & Emerging Tech',
-    location: 'Remote / Middletown, DE',
-    type: 'Full-time',
-    experience: '6+ years',
-    salary: '$160K - $280K',
-    description: 'Research and develop revolutionary space technologies including resource mining, autonomous navigation, and AI-powered space systems.',
-    requirements: [
-      'PhD in Aerospace Engineering, Physics, or related field',
-      'Experience with space systems and satellite technology',
-      'Knowledge of orbital mechanics and space robotics',
-      'Experience with AI for space applications',
-      'Published research in space technology'
-    ],
-    benefits: [
-      'Competitive salary with equity options',
-      'Collaboration with space agencies and companies',
-      'Access to space technology resources',
-      'Conference and publication support',
-      'Comprehensive benefits and equity'
-    ],
-    icon: <Globe className="w-8 h-8" />,
-    color: 'text-green-400',
-    bgColor: 'bg-green-400/10',
-    borderColor: 'border-green-400/20'
-  }
-];
-
-const companyValues = [
-  {
-    icon: <Brain className="w-12 h-12 text-cyan-400" />,
-    title: "AI Consciousness First",
-    description: "We prioritize the development of conscious, ethical AI systems that enhance human capabilities."
-  },
-  {
-    icon: <Rocket className="w-12 h-12 text-blue-400" />,
-    title: "Revolutionary Innovation",
-    description: "We push boundaries and create technologies that were once thought impossible."
-  },
-  {
-    icon: <Shield className="w-12 h-12 text-purple-400" />,
-    title: "Ethical Responsibility",
-    description: "Every innovation is guided by strong ethical principles and human safety."
-  },
-  {
-    icon: <Users className="w-12 h-12 text-green-400" />,
-    title: "Human-Centric Design",
-    description: "Technology serves humanity, not the other way around."
-  },
-  {
-    icon: <Zap className="w-12 h-12 text-yellow-400" />,
-    title: "Exponential Growth",
-    description: "We accelerate progress through autonomous systems and AI augmentation."
-  },
-  {
-    icon: <Award className="w-12 h-12 text-pink-400" />,
-    title: "Excellence in Execution",
-    description: "We deliver world-class solutions with precision and reliability."
-  }
-];
-
-const benefits = [
-  {
-    icon: <DollarSign className="w-8 h-8 text-cyan-400" />,
-    title: "Competitive Compensation",
-    description: "Above-market salaries with equity options and performance bonuses"
-  },
-  {
-    icon: <Heart className="w-8 h-8 text-blue-400" />,
-    title: "Health & Wellness",
-    description: "Comprehensive health, dental, vision, and mental health coverage"
-  },
-  {
-    icon: <Lightbulb className="w-8 h-8 text-purple-400" />,
-    title: "Learning & Development",
-    description: "Continuous learning opportunities, conferences, and skill development"
-  },
-  {
-    icon: <Globe className="w-8 h-8 text-green-400" />,
-    title: "Remote-First Culture",
-    description: "Work from anywhere with flexible hours and work-life balance"
-  },
-  {
-    icon: <Users className="w-8 h-8 text-yellow-400" />,
-    title: "Collaborative Environment",
-    description: "Work with brilliant minds in AI, quantum computing, and emerging tech"
-  },
-  {
-    icon: <Rocket className="w-8 h-8 text-pink-400" />,
-    title: "Innovation Projects",
-    description: "Work on cutting-edge technologies that will shape the future"
-  }
-];
+import { 
+  Briefcase, 
+  Users, 
+  Heart, 
+  Zap, 
+  Globe, 
+  Award, 
+  ArrowRight,
+  MapPin,
+  Clock,
+  DollarSign,
+  Send,
+  CheckCircle,
+  Star,
+  Brain,
+  Atom,
+  Rocket,
+  Shield
+} from 'lucide-react';
 
 export default function Careers() {
+  const [selectedDepartment, setSelectedDepartment] = useState('all');
+  const [selectedLocation, setSelectedLocation] = useState('all');
+
+  const departments = [
+    { id: 'all', name: 'All Departments', icon: <Briefcase className="w-5 h-5" /> },
+    { id: 'ai', name: 'AI & Machine Learning', icon: <Brain className="w-5 h-5" /> },
+    { id: 'quantum', name: 'Quantum Computing', icon: <Atom className="w-5 h-5" /> },
+    { id: 'space', name: 'Space Technology', icon: <Rocket className="w-5 h-5" /> },
+    { id: 'engineering', name: 'Engineering', icon: <Zap className="w-5 h-5" /> },
+    { id: 'security', name: 'Cybersecurity', icon: <Shield className="w-5 h-5" /> }
+  ];
+
+  const locations = [
+    { id: 'all', name: 'All Locations', icon: <Globe className="w-5 h-5" /> },
+    { id: 'remote', name: 'Remote', icon: <Globe className="w-5 h-5" /> },
+    { id: 'middletown', name: 'Middletown, DE', icon: <MapPin className="w-5 h-5" /> },
+    { id: 'newyork', name: 'New York, NY', icon: <MapPin className="w-5 h-5" /> },
+    { id: 'siliconvalley', name: 'Silicon Valley, CA', icon: <MapPin className="w-5 h-5" /> }
+  ];
+
+  const jobs = [
+    {
+      id: 1,
+      title: 'Senior AI Research Scientist',
+      department: 'ai',
+      location: 'remote',
+      type: 'Full-time',
+      experience: '5+ years',
+      salary: '$150,000 - $250,000',
+      description: 'Lead cutting-edge research in AI consciousness, neural networks, and autonomous systems.',
+      requirements: [
+        'PhD in Computer Science, AI, or related field',
+        'Experience with large language models and neural networks',
+        'Published research in top AI conferences',
+        'Experience leading research teams'
+      ],
+      benefits: [
+        'Competitive salary with equity',
+        'Flexible remote work',
+        'Conference attendance and research budget',
+        'Cutting-edge technology access'
+      ]
+    },
+    {
+      id: 2,
+      title: 'Quantum Software Engineer',
+      department: 'quantum',
+      location: 'remote',
+      type: 'Full-time',
+      experience: '3+ years',
+      salary: '$120,000 - $180,000',
+      description: 'Develop quantum algorithms and software for our quantum computing platform.',
+      requirements: [
+        'MS/PhD in Physics, Computer Science, or related field',
+        'Experience with quantum programming languages (Qiskit, Cirq)',
+        'Understanding of quantum algorithms and quantum mechanics',
+        'Strong programming skills in Python'
+      ],
+      benefits: [
+        'Competitive salary with equity',
+        'Remote work flexibility',
+        'Quantum computing lab access',
+        'Professional development opportunities'
+      ]
+    },
+    {
+      id: 3,
+      title: 'Space Technology Engineer',
+      department: 'space',
+      location: 'middletown',
+      type: 'Full-time',
+      experience: '4+ years',
+      salary: '$130,000 - $200,000',
+      description: 'Design and develop space resource mining and satellite technology solutions.',
+      requirements: [
+        'BS/MS in Aerospace Engineering or related field',
+        'Experience with satellite systems and space technology',
+        'Knowledge of orbital mechanics and propulsion systems',
+        'Experience with CAD and simulation software'
+      ],
+      benefits: [
+        'Competitive salary with equity',
+        'On-site and remote hybrid work',
+        'Space technology lab access',
+        'Professional certification support'
+      ]
+    },
+    {
+      id: 4,
+      title: 'Senior Cybersecurity Engineer',
+      department: 'security',
+      location: 'remote',
+      type: 'Full-time',
+      experience: '6+ years',
+      salary: '$140,000 - $220,000',
+      description: 'Lead cybersecurity initiatives and develop quantum-safe security solutions.',
+      requirements: [
+        'BS/MS in Cybersecurity, Computer Science, or related field',
+        'Experience with penetration testing and security architecture',
+        'Knowledge of quantum cryptography and post-quantum security',
+        'Relevant certifications (CISSP, CEH, etc.)'
+      ],
+      benefits: [
+        'Competitive salary with equity',
+        'Remote work flexibility',
+        'Security conference attendance',
+        'Advanced security training'
+      ]
+    },
+    {
+      id: 5,
+      title: 'Full Stack Developer',
+      department: 'engineering',
+      location: 'remote',
+      type: 'Full-time',
+      experience: '3+ years',
+      salary: '$100,000 - $150,000',
+      description: 'Build scalable web applications and microservices for our technology platforms.',
+      requirements: [
+        'BS in Computer Science or related field',
+        'Experience with React, Node.js, and cloud platforms',
+        'Knowledge of microservices architecture',
+        'Experience with DevOps and CI/CD'
+      ],
+      benefits: [
+        'Competitive salary with equity',
+        'Remote work flexibility',
+        'Latest development tools and equipment',
+        'Professional development budget'
+      ]
+    },
+    {
+      id: 6,
+      title: 'AI Ethics Specialist',
+      department: 'ai',
+      location: 'remote',
+      type: 'Full-time',
+      experience: '4+ years',
+      salary: '$110,000 - $170,000',
+      description: 'Develop ethical frameworks and governance policies for AI systems.',
+      requirements: [
+        'MS/PhD in Ethics, Philosophy, or related field',
+        'Experience with AI ethics and responsible AI',
+        'Understanding of AI governance and policy',
+        'Experience working with cross-functional teams'
+      ],
+      benefits: [
+        'Competitive salary with equity',
+        'Remote work flexibility',
+        'Ethics conference attendance',
+        'Research publication support'
+      ]
+    }
+  ];
+
+  const filteredJobs = jobs.filter(job => {
+    const departmentMatch = selectedDepartment === 'all' || job.department === selectedDepartment;
+    const locationMatch = selectedLocation === 'all' || job.location === selectedLocation;
+    return departmentMatch && locationMatch;
+  });
+
+  const culture = [
+    {
+      icon: <Brain className="w-8 h-8" />,
+      title: 'Innovation First',
+      description: 'We encourage creative thinking and breakthrough ideas that push the boundaries of what\'s possible.'
+    },
+    {
+      icon: <Users className="w-8 h-8" />,
+      title: 'Collaborative Excellence',
+      description: 'Work with world-class experts across disciplines to solve humanity\'s greatest challenges.'
+    },
+    {
+      icon: <Heart className="w-8 h-8" />,
+      title: 'Human-Centric',
+      description: 'Technology serves humanity. We prioritize ethical development and human well-being.'
+    },
+    {
+      icon: <Zap className="w-8 h-8" />,
+      title: 'Fast-Paced Growth',
+      description: 'Rapid learning, career advancement, and opportunities to work on cutting-edge projects.'
+    }
+  ];
+
+  const benefits = [
+    {
+      icon: <DollarSign className="w-6 h-6" />,
+      title: 'Competitive Compensation',
+      description: 'Above-market salaries, equity packages, and performance bonuses'
+    },
+    {
+      icon: <Globe className="w-6 h-6" />,
+      title: 'Remote-First Culture',
+      description: 'Work from anywhere with flexible schedules and work-life balance'
+    },
+    {
+      icon: <Award className="w-6 h-6" />,
+      title: 'Professional Development',
+      description: 'Continuous learning, conference attendance, and certification support'
+    },
+    {
+      icon: <Star className="w-6 h-6" />,
+      title: 'Cutting-Edge Technology',
+      description: 'Access to the latest AI, quantum, and space technology platforms'
+    }
+  ];
+
   return (
-    <Layout>
-      <div className="min-h-screen bg-gradient-to-br from-black via-gray-900 to-black">
+    <>
+      <Head>
+        <title>Careers - Zion Tech Group | Join Our Team</title>
+        <meta name="description" content="Join Zion Tech Group's team of innovators working on AI, quantum computing, and space technology. Explore career opportunities and help shape the future." />
+        <meta name="keywords" content="careers Zion Tech Group, AI jobs, quantum computing careers, space technology jobs, technology careers" />
+        <meta name="robots" content="index, follow" />
+        <link rel="canonical" href="https://ziontechgroup.com/careers" />
+        <meta property="og:title" content="Careers - Zion Tech Group" />
+        <meta property="og:description" content="Join Zion Tech Group's team of innovators working on AI, quantum computing, and space technology." />
+        <meta property="og:url" content="https://ziontechgroup.com/careers" />
+        <meta property="og:type" content="website" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Careers - Zion Tech Group" />
+        <meta name="twitter:description" content="Join Zion Tech Group's team of innovators working on AI, quantum computing, and space technology." />
+      </Head>
+
+      <div className="min-h-screen bg-black text-white">
         {/* Hero Section */}
-        <section className="relative py-20 px-4">
-          <div className="container mx-auto max-w-6xl">
+        <section className="relative py-20 lg:py-32 overflow-hidden">
+          <div className="absolute inset-0 bg-gradient-to-br from-cyan-900/20 via-purple-900/20 to-pink-900/20"></div>
+          <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
-              className="text-center"
             >
-              <h1 className="text-5xl md:text-7xl font-bold bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 bg-clip-text text-transparent mb-6">
-                Join the Future
+              <h1 className="text-4xl lg:text-6xl font-bold mb-6 bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
+                Join Our Mission
               </h1>
-              <p className="text-xl md:text-2xl text-gray-300 max-w-4xl mx-auto leading-relaxed mb-8">
-                Build revolutionary AI consciousness, quantum computing, and autonomous systems 
-                that will transform humanity. Join our team of visionaries and innovators.
+              <p className="text-xl lg:text-2xl text-gray-300 mb-8 max-w-4xl mx-auto">
+                Help us revolutionize technology and shape the future of AI, quantum computing, and space exploration. Join a team of visionaries building tomorrow's solutions today.
               </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <a
-                  href="#open-positions"
-                  className="px-8 py-4 bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-semibold rounded-full hover:from-cyan-600 hover:to-blue-700 transition-all duration-300 transform hover:scale-105"
-                >
+              <div className="flex flex-wrap justify-center gap-4">
+                <a href="#open-positions" className="px-8 py-4 bg-gradient-to-r from-cyan-500 to-purple-600 text-white font-semibold rounded-full hover:from-cyan-600 hover:to-purple-700 transition-all duration-300 transform hover:scale-105">
                   View Open Positions
                 </a>
-                <a
-                  href="/contact"
-                  className="px-8 py-4 border-2 border-cyan-500 text-cyan-400 font-semibold rounded-full hover:bg-cyan-500 hover:text-black transition-all duration-300"
-                >
-                  Contact Our Team
+                <a href="/contact" className="px-8 py-4 border-2 border-cyan-400 text-cyan-400 font-semibold rounded-full hover:bg-cyan-400 hover:text-black transition-all duration-300">
+                  Get in Touch
                 </a>
               </div>
             </motion.div>
           </div>
         </section>
 
-        {/* Company Values */}
-        <section className="py-20 px-4">
-          <div className="container mx-auto max-w-6xl">
+        {/* Culture Section */}
+        <section className="py-20">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
               className="text-center mb-16"
             >
-              <h2 className="text-4xl font-bold text-white mb-4">Our Values</h2>
-              <p className="text-xl text-gray-300">The principles that guide our revolutionary journey</p>
+              <h2 className="text-3xl lg:text-4xl font-bold mb-6 text-white">
+                Our Culture
+              </h2>
+              <p className="text-lg text-gray-300 max-w-3xl mx-auto">
+                At Zion Tech Group, we foster an environment of innovation, collaboration, and continuous learning. Join a team that values creativity, ethics, and human progress.
+              </p>
             </motion.div>
 
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {companyValues.map((value, index) => (
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+              {culture.map((item, index) => (
                 <motion.div
-                  key={index}
+                  key={item.title}
                   initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.8, delay: 0.4 + index * 0.1 }}
-                  className="p-8 bg-black/40 border border-gray-800 rounded-2xl hover:border-cyan-500/50 transition-all duration-300"
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: index * 0.1 }}
+                  viewport={{ once: true }}
+                  className="text-center p-6 bg-gradient-to-br from-white/5 to-white/10 rounded-xl border border-white/10 hover:border-cyan-500/30 transition-all duration-300"
                 >
-                  <div className="flex justify-center mb-4">{value.icon}</div>
-                  <h3 className="text-xl font-bold text-white mb-3 text-center">{value.title}</h3>
-                  <p className="text-gray-300 leading-relaxed text-center">{value.description}</p>
+                  <div className="flex justify-center mb-4 text-cyan-400">
+                    {item.icon}
+                  </div>
+                  <h3 className="text-xl font-semibold mb-3 text-white">
+                    {item.title}
+                  </h3>
+                  <p className="text-gray-400">
+                    {item.description}
+                  </p>
                 </motion.div>
               ))}
             </div>
           </div>
         </section>
 
-        {/* Benefits */}
-        <section className="py-20 px-4 bg-black/30">
-          <div className="container mx-auto max-w-6xl">
+        {/* Benefits Section */}
+        <section className="py-20 bg-gradient-to-r from-gray-900/50 to-black/50">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.8 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
               className="text-center mb-16"
             >
-              <h2 className="text-4xl font-bold text-white mb-4">Why Work With Us</h2>
-              <p className="text-xl text-gray-300">Comprehensive benefits and opportunities for growth</p>
+              <h2 className="text-3xl lg:text-4xl font-bold mb-6 text-white">
+                Why Work With Us?
+              </h2>
+              <p className="text-lg text-gray-300 max-w-3xl mx-auto">
+                We offer comprehensive benefits and opportunities that support your growth, well-being, and career advancement.
+              </p>
             </motion.div>
 
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="grid md:grid-cols-2 gap-8">
               {benefits.map((benefit, index) => (
                 <motion.div
-                  key={index}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.8, delay: 1.0 + index * 0.1 }}
-                  className="p-6 bg-black/40 border border-gray-800 rounded-2xl hover:border-cyan-500/50 transition-all duration-300"
+                  key={benefit.title}
+                  initial={{ opacity: 0, x: index % 2 === 0 ? -20 : 20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.6, delay: index * 0.1 }}
+                  viewport={{ once: true }}
+                  className="flex items-start space-x-4 p-6 bg-gradient-to-br from-white/5 to-white/10 rounded-xl border border-white/10"
                 >
-                  <div className="flex justify-center mb-4">{benefit.icon}</div>
-                  <h3 className="text-lg font-bold text-white mb-3 text-center">{benefit.title}</h3>
-                  <p className="text-gray-300 leading-relaxed text-center text-sm">{benefit.description}</p>
+                  <div className="flex-shrink-0 w-12 h-12 bg-gradient-to-r from-cyan-500 to-purple-600 rounded-lg flex items-center justify-center text-cyan-400">
+                    {benefit.icon}
+                  </div>
+                  <div>
+                    <h3 className="text-lg font-semibold mb-2 text-white">
+                      {benefit.title}
+                    </h3>
+                    <p className="text-gray-400">
+                      {benefit.description}
+                    </p>
+                  </div>
                 </motion.div>
               ))}
             </div>
           </div>
         </section>
 
-        {/* Open Positions */}
-        <section id="open-positions" className="py-20 px-4">
-          <div className="container mx-auto max-w-6xl">
+        {/* Job Listings Section */}
+        <section className="py-20" id="open-positions">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 1.2 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
               className="text-center mb-16"
             >
-              <h2 className="text-4xl font-bold text-white mb-4">Open Positions</h2>
-              <p className="text-xl text-gray-300">Join our team of innovators and visionaries</p>
+              <h2 className="text-3xl lg:text-4xl font-bold mb-6 text-white">
+                Open Positions
+              </h2>
+              <p className="text-lg text-gray-300 max-w-3xl mx-auto">
+                Explore exciting opportunities to join our team of innovators and help shape the future of technology.
+              </p>
             </motion.div>
 
-            <div className="space-y-8">
-              {openPositions.map((position, index) => (
-                <motion.article
-                  key={position.id}
+            {/* Filters */}
+            <div className="mb-8 flex flex-wrap gap-4 justify-center">
+              <div className="flex flex-wrap gap-2">
+                {departments.map((dept) => (
+                  <button
+                    key={dept.id}
+                    onClick={() => setSelectedDepartment(dept.id)}
+                    className={`flex items-center space-x-2 px-4 py-2 rounded-lg border transition-all duration-300 ${
+                      selectedDepartment === dept.id
+                        ? 'bg-cyan-500/20 border-cyan-500/50 text-cyan-400'
+                        : 'bg-white/5 border-white/20 text-gray-300 hover:border-cyan-500/30 hover:text-cyan-400'
+                    }`}
+                  >
+                    {dept.icon}
+                    <span>{dept.name}</span>
+                  </button>
+                ))}
+              </div>
+              <div className="flex flex-wrap gap-2">
+                {locations.map((loc) => (
+                  <button
+                    key={loc.id}
+                    onClick={() => setSelectedLocation(loc.id)}
+                    className={`flex items-center space-x-2 px-4 py-2 rounded-lg border transition-all duration-300 ${
+                      selectedLocation === loc.id
+                        ? 'bg-cyan-500/20 border-cyan-500/50 text-cyan-400'
+                        : 'bg-white/5 border-white/20 text-gray-300 hover:border-cyan-500/30 hover:text-cyan-400'
+                    }`}
+                  >
+                    {loc.icon}
+                    <span>{loc.name}</span>
+                  </button>
+                ))}
+              </div>
+            </div>
+
+            {/* Job Cards */}
+            <div className="space-y-6">
+              {filteredJobs.map((job, index) => (
+                <motion.div
+                  key={job.id}
                   initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.8, delay: 1.4 + index * 0.1 }}
-                  className="group"
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: index * 0.1 }}
+                  viewport={{ once: true }}
+                  className="bg-gradient-to-br from-white/5 to-white/10 rounded-xl border border-white/10 hover:border-cyan-500/30 transition-all duration-300 p-6"
                 >
-                  <div className={`p-8 rounded-2xl border ${position.borderColor} bg-black/40 hover:bg-black/60 transition-all duration-300 group-hover:scale-105 group-hover:shadow-2xl group-hover:shadow-cyan-500/10`}>
-                    <div className="grid lg:grid-cols-3 gap-8">
-                      {/* Position Info */}
-                      <div className="lg:col-span-2">
-                        <div className="flex items-center gap-3 mb-4">
-                          <div className={`${position.bgColor} w-12 h-12 rounded-xl flex items-center justify-center`}>
-                            {position.icon}
-                          </div>
-                          <div>
-                            <h3 className="text-2xl font-bold text-white group-hover:text-cyan-400 transition-colors duration-300">
-                              {position.title}
-                            </h3>
-                            <p className="text-cyan-400 font-medium">{position.department}</p>
-                          </div>
+                  <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4">
+                    <div className="flex-1">
+                      <div className="flex items-center gap-3 mb-2">
+                        <h3 className="text-xl font-semibold text-white">
+                          {job.title}
+                        </h3>
+                        <span className="px-3 py-1 bg-cyan-500/20 text-cyan-400 text-sm rounded-full border border-cyan-500/30">
+                          {job.type}
+                        </span>
+                      </div>
+                      
+                      <div className="flex flex-wrap items-center gap-4 text-sm text-gray-400 mb-4">
+                        <div className="flex items-center gap-1">
+                          <MapPin className="w-4 h-4" />
+                          <span className="capitalize">{job.location}</span>
                         </div>
+                        <div className="flex items-center gap-1">
+                          <Clock className="w-4 h-4" />
+                          <span>{job.experience}</span>
+                        </div>
+                        <div className="flex items-center gap-1">
+                          <DollarSign className="w-4 h-4" />
+                          <span>{job.salary}</span>
+                        </div>
+                      </div>
 
-                        <p className="text-gray-300 leading-relaxed mb-6">
-                          {position.description}
-                        </p>
+                      <p className="text-gray-300 mb-4">
+                        {job.description}
+                      </p>
 
-                        {/* Requirements */}
-                        <div className="mb-6">
-                          <h4 className="text-lg font-semibold text-white mb-3">Requirements</h4>
-                          <ul className="space-y-2">
-                            {position.requirements.map((req, idx) => (
-                              <li key={idx} className="flex items-start gap-2 text-gray-300">
-                                <div className="w-2 h-2 bg-cyan-400 rounded-full mt-2 flex-shrink-0"></div>
+                      <div className="grid md:grid-cols-2 gap-6">
+                        <div>
+                          <h4 className="font-semibold text-white mb-2">Requirements:</h4>
+                          <ul className="space-y-1">
+                            {job.requirements.map((req, idx) => (
+                              <li key={idx} className="flex items-start gap-2 text-sm text-gray-400">
+                                <CheckCircle className="w-4 h-4 text-green-400 mt-0.5 flex-shrink-0" />
                                 <span>{req}</span>
                               </li>
                             ))}
                           </ul>
                         </div>
-
-                        {/* Benefits */}
                         <div>
-                          <h4 className="text-lg font-semibold text-white mb-3">Benefits</h4>
-                          <ul className="space-y-2">
-                            {position.benefits.map((benefit, idx) => (
-                              <li key={idx} className="flex items-start gap-2 text-gray-300">
-                                <div className="w-2 h-2 bg-green-400 rounded-full mt-2 flex-shrink-0"></div>
+                          <h4 className="font-semibold text-white mb-2">Benefits:</h4>
+                          <ul className="space-y-1">
+                            {job.benefits.map((benefit, idx) => (
+                              <li key={idx} className="flex items-start gap-2 text-sm text-gray-400">
+                                <Star className="w-4 h-4 text-yellow-400 mt-0.5 flex-shrink-0" />
                                 <span>{benefit}</span>
                               </li>
                             ))}
                           </ul>
                         </div>
                       </div>
+                    </div>
 
-                      {/* Position Details */}
-                      <div className="space-y-6">
-                        <div className="p-6 bg-gray-800/30 rounded-xl">
-                          <h4 className="text-lg font-semibold text-white mb-4">Position Details</h4>
-                          <div className="space-y-4">
-                            <div className="flex items-center gap-3">
-                              <MapPin className="w-5 h-5 text-cyan-400" />
-                              <span className="text-gray-300">{position.location}</span>
-                            </div>
-                            <div className="flex items-center gap-3">
-                              <Clock className="w-5 h-5 text-blue-400" />
-                              <span className="text-gray-300">{position.type}</span>
-                            </div>
-                            <div className="flex items-center gap-3">
-                              <Users className="w-5 h-5 text-purple-400" />
-                              <span className="text-gray-300">{position.experience}</span>
-                            </div>
-                            <div className="flex items-center gap-3">
-                              <DollarSign className="w-5 h-5 text-green-400" />
-                              <span className="text-gray-300">{position.salary}</span>
-                            </div>
-                          </div>
-                        </div>
-
-                        <a
-                          href={`/contact?position=${position.id}`}
-                          className="w-full px-6 py-4 bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-semibold rounded-xl hover:from-cyan-600 hover:to-blue-700 transition-all duration-300 transform hover:scale-105 flex items-center justify-center gap-2"
-                        >
-                          Apply Now
-                          <ArrowRight className="w-5 h-5" />
-                        </a>
-                      </div>
+                    <div className="lg:flex-shrink-0">
+                      <a
+                        href={`/contact?position=${encodeURIComponent(job.title)}`}
+                        className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-cyan-500 to-purple-600 text-white font-semibold rounded-lg hover:from-cyan-600 hover:to-purple-700 transition-all duration-300 transform hover:scale-105"
+                      >
+                        Apply Now
+                        <ArrowRight className="w-4 h-4 ml-2" />
+                      </a>
                     </div>
                   </div>
-                </motion.article>
+                </motion.div>
+              ))}
+            </div>
+
+            {filteredJobs.length === 0 && (
+              <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                className="text-center py-12"
+              >
+                <p className="text-gray-400 text-lg">
+                  No positions match your current filters. Try adjusting your selection or check back later for new opportunities.
+                </p>
+              </motion.div>
+            )}
+          </div>
+        </section>
+
+        {/* Application Process */}
+        <section className="py-20 bg-gradient-to-r from-gray-900/50 to-black/50">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+              className="text-center mb-16"
+            >
+              <h2 className="text-3xl lg:text-4xl font-bold mb-6 text-white">
+                How to Apply
+              </h2>
+              <p className="text-lg text-gray-300 max-w-3xl mx-auto">
+                Our application process is designed to be simple and efficient, ensuring we find the best talent to join our mission.
+              </p>
+            </motion.div>
+
+            <div className="grid md:grid-cols-3 gap-8">
+              {[
+                {
+                  step: '01',
+                  title: 'Submit Application',
+                  description: 'Send us your resume and cover letter through our contact form or email.',
+                  icon: <Send className="w-8 h-8" />
+                },
+                {
+                  step: '02',
+                  title: 'Initial Review',
+                  description: 'Our team reviews your application and reaches out within 48 hours.',
+                  icon: <CheckCircle className="w-8 h-8" />
+                },
+                {
+                  step: '03',
+                  title: 'Interview Process',
+                  description: 'Technical interviews, culture fit discussions, and final team review.',
+                  icon: <Users className="w-8 h-8" />
+                }
+              ].map((step, index) => (
+                <motion.div
+                  key={step.step}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: index * 0.1 }}
+                  viewport={{ once: true }}
+                  className="text-center"
+                >
+                  <div className="w-16 h-16 bg-gradient-to-r from-cyan-500 to-purple-600 rounded-full flex items-center justify-center mx-auto mb-6 text-white">
+                    {step.icon}
+                  </div>
+                  <div className="text-2xl font-bold text-cyan-400 mb-2">
+                    {step.step}
+                  </div>
+                  <h3 className="text-xl font-semibold mb-3 text-white">
+                    {step.title}
+                  </h3>
+                  <p className="text-gray-400">
+                    {step.description}
+                  </p>
+                </motion.div>
               ))}
             </div>
           </div>
         </section>
 
-        {/* Culture & Team */}
-        <section className="py-20 px-4 bg-black/30">
-          <div className="container mx-auto max-w-6xl">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 1.8 }}
-              className="text-center mb-16"
-            >
-              <h2 className="text-4xl font-bold text-white mb-4">Our Culture</h2>
-              <p className="text-xl text-gray-300">Building the future together with innovation and collaboration</p>
-            </motion.div>
-
-            <div className="grid md:grid-cols-2 gap-12">
-              <motion.div
-                initial={{ opacity: 0, x: -20 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.8, delay: 2.0 }}
-              >
-                <h3 className="text-2xl font-bold text-white mb-6">Innovation at the Core</h3>
-                <p className="text-lg text-gray-300 leading-relaxed mb-6">
-                  At Zion Tech Group, innovation isn't just a buzzword—it's our DNA. We encourage 
-                  creative thinking, experimentation, and pushing the boundaries of what's possible.
-                </p>
-                <p className="text-gray-300 leading-relaxed mb-6">
-                  Our team members have the freedom to explore new ideas, work on cutting-edge projects, 
-                  and contribute to technologies that will shape the future of humanity.
-                </p>
-                <div className="space-y-3">
-                  <div className="flex items-center gap-3">
-                    <div className="w-2 h-2 bg-cyan-400 rounded-full"></div>
-                    <span className="text-gray-300">20% time for personal projects</span>
-                  </div>
-                  <div className="flex items-center gap-3">
-                    <div className="w-2 h-2 bg-cyan-400 rounded-full"></div>
-                    <span className="text-gray-300">Hackathons and innovation challenges</span>
-                  </div>
-                  <div className="flex items-center gap-3">
-                    <div className="w-2 h-2 bg-cyan-400 rounded-full"></div>
-                    <span className="text-gray-300">Research publication support</span>
-                  </div>
-                </div>
-              </motion.div>
-
-              <motion.div
-                initial={{ opacity: 0, x: 20 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.8, delay: 2.2 }}
-              >
-                <h3 className="text-2xl font-bold text-white mb-6">Collaborative Excellence</h3>
-                <p className="text-lg text-gray-300 leading-relaxed mb-6">
-                  We believe that the best solutions come from diverse perspectives and collaborative effort. 
-                  Our team includes experts from various fields working together to solve complex challenges.
-                </p>
-                <p className="text-gray-300 leading-relaxed mb-6">
-                  From AI researchers to quantum physicists, from space engineers to ethicists, 
-                  we bring together the brightest minds to create revolutionary technology.
-                </p>
-                <div className="space-y-3">
-                  <div className="flex items-center gap-3">
-                    <div className="w-2 h-2 bg-blue-400 rounded-full"></div>
-                    <span className="text-gray-300">Cross-functional project teams</span>
-                  </div>
-                  <div className="flex items-center gap-3">
-                    <div className="w-2 h-2 bg-blue-400 rounded-full"></div>
-                    <span className="text-gray-300">Regular knowledge sharing sessions</span>
-                  </div>
-                  <div className="flex items-center gap-3">
-                    <div className="w-2 h-2 bg-blue-400 rounded-full"></div>
-                    <span className="text-gray-300">Mentorship and learning programs</span>
-                  </div>
-                </div>
-              </motion.div>
-            </div>
-          </div>
-        </section>
-
         {/* CTA Section */}
-        <section className="py-20 px-4">
-          <div className="container mx-auto max-w-4xl text-center">
+        <section className="py-20">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 2.4 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
             >
-              <h2 className="text-4xl font-bold text-white mb-6">Ready to Build the Future?</h2>
-              <p className="text-xl text-gray-300 mb-8">
-                Join our team of visionaries and help create technologies that will transform humanity. 
-                We're looking for brilliant minds who share our passion for innovation and ethical technology.
+              <h2 className="text-3xl lg:text-4xl font-bold mb-6 text-white">
+                Ready to Join Our Mission?
+              </h2>
+              <p className="text-lg text-gray-300 mb-8 max-w-3xl mx-auto">
+                Don't see the perfect role? We're always looking for talented individuals who share our passion for innovation and technology. Send us your resume and let's discuss how you can contribute to our mission.
               </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <a
-                  href="/contact"
-                  className="px-8 py-4 bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-semibold rounded-full hover:from-cyan-600 hover:to-blue-700 transition-all duration-300 transform hover:scale-105"
-                >
-                  Get in Touch
+              <div className="flex flex-wrap justify-center gap-4">
+                <a href="/contact" className="px-8 py-4 bg-gradient-to-r from-cyan-500 to-purple-600 text-white font-semibold rounded-full hover:from-cyan-600 hover:to-purple-700 transition-all duration-300 transform hover:scale-105">
+                  Send Your Resume
                 </a>
-                <a
-                  href="mailto:careers@ziontechgroup.com"
-                  className="px-8 py-4 border-2 border-cyan-500 text-cyan-400 font-semibold rounded-full hover:bg-cyan-500 hover:text-black transition-all duration-300"
-                >
-                  Email Our Team
+                <a href="/about" className="px-8 py-4 border-2 border-cyan-400 text-cyan-400 font-semibold rounded-full hover:bg-cyan-400 hover:text-black transition-all duration-300">
+                  Learn More About Us
                 </a>
               </div>
             </motion.div>
           </div>
         </section>
       </div>
-    </Layout>
+    </>
   );
 }
