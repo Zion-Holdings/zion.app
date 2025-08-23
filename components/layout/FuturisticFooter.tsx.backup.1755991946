@@ -26,6 +26,53 @@ export default function FuturisticFooter() {
 
   const currentYear = new Date().getFullYear();
 
+<<<<<<< HEAD
+  const footerSections = [
+    {
+      title: 'Services',
+      links: [
+        { name: 'AI & Automation', href: '/services#ai' },
+        { name: 'Cloud Infrastructure', href: '/services#cloud' },
+        { name: 'Security & Compliance', href: '/services#security' },
+        { name: 'Data Analytics', href: '/services#analytics' },
+        { name: 'DevOps & CI/CD', href: '/services#devops' },
+        { name: 'Digital Transformation', href: '/services#digital' }
+      ]
+    },
+    {
+      title: 'Micro SaaS',
+      links: [
+        { name: 'Content & Marketing', href: '/micro-saas?category=Content+%26+Marketing' },
+        { name: 'Development & DevOps', href: '/micro-saas?category=Development+%26+DevOps' },
+        { name: 'Sales & CRM', href: '/micro-saas?category=Sales+%26+CRM' },
+        { name: 'Analytics & Data', href: '/micro-saas?category=Analytics+%26+Data' },
+        { name: 'AI & Machine Learning', href: '/micro-saas?category=AI+%26+Machine+Learning' },
+        { name: 'Emerging Technologies', href: '/micro-saas?category=Emerging+Technologies' }
+      ]
+    },
+    {
+      title: 'Company',
+      links: [
+        { name: 'About Us', href: '/about' },
+        { name: 'Our Team', href: '/about#team' },
+        { name: 'Careers', href: '/careers' },
+        { name: 'Press & Media', href: '/press' },
+        { name: 'Partnerships', href: '/partnerships' },
+        { name: 'Investor Relations', href: '/investors' }
+      ]
+    },
+    {
+      title: 'Resources',
+      links: [
+        { name: 'Documentation', href: '/docs' },
+        { name: 'API Reference', href: '/api' },
+        { name: 'Blog', href: '/blog' },
+        { name: 'Case Studies', href: '/case-studies' },
+        { name: 'Webinars', href: '/webinars' },
+        { name: 'Support Center', href: '/support' }
+      ]
+    }
+=======
   const serviceCategories = [
     { name: 'AI & Machine Learning', href: '/services#ai', count: 25 },
     { name: 'Quantum Computing', href: '/services#quantum', count: 12 },
@@ -35,6 +82,7 @@ export default function FuturisticFooter() {
     { name: 'Blockchain & Web3', href: '/services#blockchain', count: 8 },
     { name: 'AR/VR & Metaverse', href: '/services#metaverse', count: 6 },
     { name: 'Edge Computing & 5G', href: '/services#edge', count: 4 }
+>>>>>>> origin/cursor/enhance-app-services-and-website-with-futuristic-design-cca0
   ];
 
   const socialLinks = [
@@ -142,6 +190,8 @@ export default function FuturisticFooter() {
                   </ul>
                 </div>
               ))}
+<<<<<<< HEAD
+=======
             </ul>
           </div>
 
@@ -212,6 +262,7 @@ export default function FuturisticFooter() {
                   </a>
                 </div>
               </div>
+>>>>>>> origin/cursor/enhance-app-services-and-website-with-futuristic-design-cca0
             </div>
           </div>
         </div>

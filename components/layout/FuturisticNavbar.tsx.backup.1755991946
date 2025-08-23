@@ -24,11 +24,81 @@ const FuturisticNavbar: React.FC = () => {
   }, [isClient]);
 
   const navItems = [
+<<<<<<< HEAD
+    { 
+      name: 'Home', 
+      href: '/', 
+      icon: <Zap className="w-4 h-4" />,
+      description: 'Welcome to the future'
+    },
+=======
     { name: 'Home', href: '/', icon: <Zap className="w-4 h-4" /> },
+>>>>>>> origin/cursor/enhance-app-services-and-website-with-futuristic-design-cca0
     { 
       name: 'Services', 
       href: '/services', 
       icon: <Cloud className="w-4 h-4" />,
+<<<<<<< HEAD
+      description: '300+ Micro SaaS Solutions',
+      dropdown: [
+        { name: 'AI & Machine Learning', href: '/services?category=AI%20%26%20Machine%20Learning', icon: <Brain className="w-4 h-4" /> },
+        { name: 'Quantum Computing', href: '/services?category=Quantum%20Computing', icon: <Atom className="w-4 h-4" /> },
+        { name: 'Financial Technology', href: '/services?category=Financial%20Technology', icon: <DollarSign className="w-4 h-4" /> },
+        { name: 'Biomedical & Healthcare', href: '/services?category=Biomedical%20%26%20Healthcare', icon: <FlaskConical className="w-4 h-4" /> },
+        { name: 'Cybersecurity', href: '/services?category=Cybersecurity', icon: <Lock className="w-4 h-4" /> },
+        { name: 'Autonomous Systems', href: '/services?category=Autonomous%20Systems', icon: <Bot className="w-4 h-4" /> },
+        { name: 'Climate & Environment', href: '/services?category=Climate%20%26%20Environment', icon: <Leaf className="w-4 h-4" /> },
+        { name: 'Energy & Utilities', href: '/services?category=Energy%20%26%20Utilities', icon: <Zap className="w-4 h-4" /> },
+        { name: 'Manufacturing & Industry 4.0', href: '/services?category=Manufacturing%20%26%20Industry%204.0', icon: <Factory className="w-4 h-4" /> },
+        { name: 'Legal Technology', href: '/services?category=Legal%20Technology', icon: <ShieldCheck className="w-4 h-4" /> }
+      ]
+    },
+    { 
+      name: 'IT Services', 
+      href: '/it-services', 
+      icon: <Globe className="w-4 h-4" />,
+      description: 'Cloud, DevOps, SRE, FinOps'
+    },
+    { 
+      name: 'AI Services', 
+      href: '/ai-services', 
+      icon: <Brain className="w-4 h-4" />,
+      description: 'LLM, RAG, MLOps'
+    },
+    { 
+      name: 'Micro SaaS', 
+      href: '/micro-saas', 
+      icon: <Bot className="w-4 h-4" />,
+      description: 'Innovative Solutions'
+    },
+    { 
+      name: 'Pricing', 
+      href: '/pricing', 
+      icon: <Globe className="w-4 h-4" />,
+      description: 'Transparent Plans'
+    },
+    { 
+      name: 'About', 
+      href: '/about', 
+      icon: <Shield className="w-4 h-4" />,
+      description: 'Our Mission'
+    },
+    { 
+      name: 'Contact', 
+      href: '/contact', 
+      icon: <Zap className="w-4 h-4" />,
+      description: 'Get in Touch'
+    },
+  ];
+
+  const handleDropdownEnter = (name: string) => {
+    setActiveDropdown(name);
+  };
+
+  const handleDropdownLeave = () => {
+    setActiveDropdown(null);
+  };
+=======
       submenu: [
         { name: 'AI & Machine Learning', href: '/services#ai', icon: '🤖' },
         { name: 'Quantum Computing', href: '/services#quantum', icon: '⚛️' },
@@ -47,6 +117,7 @@ const FuturisticNavbar: React.FC = () => {
   ];
 
   const [activeSubmenu, setActiveSubmenu] = useState<string | null>(null);
+>>>>>>> origin/cursor/enhance-app-services-and-website-with-futuristic-design-cca0
 
   return (
     <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
@@ -78,6 +149,47 @@ const FuturisticNavbar: React.FC = () => {
           {/* Desktop Navigation */}
           <div className="hidden lg:flex items-center space-x-1">
             {navItems.map((item) => (
+<<<<<<< HEAD
+              <div
+                key={item.name}
+                className="relative group"
+                onMouseEnter={() => handleDropdownEnter(item.name)}
+                onMouseLeave={handleDropdownLeave}
+              >
+                <Link
+                  href={item.href}
+                  className="flex items-center space-x-2 px-4 py-3 text-gray-300 hover:text-white transition-all duration-300 group relative rounded-xl hover:bg-white/5"
+                >
+                  <span className="group-hover:scale-110 transition-transform duration-300">
+                    {item.icon}
+                  </span>
+                  <span className="relative font-medium">
+                    {item.name}
+                    <div className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-500 via-purple-500 to-cyan-500 group-hover:w-full transition-all duration-500" />
+                  </span>
+                </Link>
+
+                {/* Enhanced Dropdown */}
+                {item.dropdown && activeDropdown === item.name && (
+                  <div className="absolute top-full left-0 mt-2 w-80 bg-black/95 backdrop-blur-xl border border-blue-500/20 rounded-2xl shadow-2xl shadow-blue-500/20 overflow-hidden">
+                    <div className="p-4">
+                      <div className="grid grid-cols-1 gap-2">
+                        {item.dropdown.map((dropdownItem) => (
+                          <Link
+                            key={dropdownItem.name}
+                            href={dropdownItem.href}
+                            className="flex items-center space-x-3 p-3 rounded-xl hover:bg-white/5 transition-all duration-300 group"
+                          >
+                            <span className="text-blue-400 group-hover:text-cyan-400 transition-colors duration-300">
+                              {dropdownItem.icon}
+                            </span>
+                            <span className="text-gray-300 group-hover:text-white transition-colors duration-300 font-medium">
+                              {dropdownItem.name}
+                            </span>
+                          </Link>
+                        ))}
+                      </div>
+=======
               <div key={item.name} className="relative group">
                 <Link
                   href={item.href}
@@ -110,6 +222,7 @@ const FuturisticNavbar: React.FC = () => {
                           </span>
                         </Link>
                       ))}
+>>>>>>> origin/cursor/enhance-app-services-and-website-with-futuristic-design-cca0
                     </div>
                   </div>
                 )}
