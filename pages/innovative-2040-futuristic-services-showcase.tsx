@@ -19,7 +19,7 @@ import { enterpriseITServices } from '../data/enterprise-it-services';
 interface Service {
   id: string;
   name: string;
-  tagline: string;
+  tagline?: string;
   price: string | { monthly: number; yearly: number; currency: string; trialDays: number; setupTime: string };
   period?: string;
   description: string;
@@ -28,7 +28,7 @@ interface Service {
   icon?: string;
   color?: string;
   textColor?: string;
-  link: string;
+  link?: string;
   category: string;
   realService?: boolean;
   technology?: string[];
@@ -51,6 +51,45 @@ interface Service {
   customers: number | string;
   rating: number;
   reviews: number;
+}
+
+// Utility function to get service properties with defaults
+function getServiceProperty<T>(service: any, property: string, defaultValue: T): T {
+  return service && service[property] !== undefined ? service[property] : defaultValue;
+}
+
+// Default icon mapping based on category
+function getDefaultIcon(category: string): string {
+  const iconMap: { [key: string]: string } = {
+    'AI & Consciousness': '🧠',
+    'Quantum & Emerging Tech': '⚛️',
+    'AI & Machine Learning': '🤖',
+    'Cybersecurity': '🛡️',
+    'Space Technology': '🚀',
+    'Business Solutions': '💼',
+    'IT Services': '💻',
+    'Content Marketing & AI': '📝',
+    'Cybersecurity & Communication': '🔐',
+    'default': '✨'
+  };
+  return iconMap[category] || iconMap.default;
+}
+
+// Default color mapping based on category
+function getDefaultColor(category: string): string {
+  const colorMap: { [key: string]: string } = {
+    'AI & Consciousness': 'from-purple-500 to-pink-500',
+    'Quantum & Emerging Tech': 'from-blue-500 to-cyan-500',
+    'AI & Machine Learning': 'from-emerald-500 to-teal-500',
+    'Cybersecurity': 'from-red-500 to-orange-500',
+    'Space Technology': 'from-indigo-500 to-purple-500',
+    'Business Solutions': 'from-yellow-500 to-orange-500',
+    'IT Services': 'from-gray-500 to-blue-500',
+    'Content Marketing & AI': 'from-green-500 to-blue-500',
+    'Cybersecurity & Communication': 'from-red-500 to-purple-500',
+    'default': 'from-cyan-500 to-blue-600'
+  };
+  return colorMap[category] || colorMap.default;
 }
 
 const Innovative2040FuturisticServicesShowcase: React.FC = () => {
@@ -300,8 +339,8 @@ const Innovative2040FuturisticServicesShowcase: React.FC = () => {
                     )}
 
                     {/* Service Icon */}
-                    <div className={`w-16 h-16 bg-gradient-to-r ${(service as any).color || 'from-cyan-500 to-blue-500'} rounded-2xl flex items-center justify-center text-3xl mb-4 group-hover:scale-110 transition-transform duration-300`}>
-                      {(service as any).icon || '🚀'}
+                    <div className={`w-16 h-16 bg-gradient-to-r ${getServiceProperty(service, 'color', getDefaultColor(service.category))} rounded-2xl flex items-center justify-center text-3xl mb-4 group-hover:scale-110 transition-transform duration-300`}>
+                      {getServiceProperty(service, 'icon', getDefaultIcon(service.category))}
                     </div>
 
                     {/* Service Info */}
@@ -309,7 +348,7 @@ const Innovative2040FuturisticServicesShowcase: React.FC = () => {
                       {service.name}
                     </h3>
                     <p className="text-gray-300 mb-4 line-clamp-2">
-                      {service.tagline}
+                      {getServiceProperty(service, 'tagline', service.description.substring(0, 100) + '...')}
                     </p>
 
                     {/* Price */}
@@ -317,7 +356,7 @@ const Innovative2040FuturisticServicesShowcase: React.FC = () => {
                       <div className="text-2xl font-bold text-cyan-400">
                         {typeof service.price === 'string' ? service.price : `$${service.price.monthly}/${service.price.currency}`}
                         <span className="text-sm text-gray-400">
-                          {typeof service.price === 'string' ? (service as any).period || '/month' : '/month'}
+                          {typeof service.price === 'string' ? getServiceProperty(service, 'period', '/month') : '/month'}
                         </span>
                       </div>
                       <div className="flex items-center space-x-1 text-yellow-400">
@@ -390,8 +429,8 @@ const Innovative2040FuturisticServicesShowcase: React.FC = () => {
                   >
                     <div className="flex items-start space-x-6">
                       {/* Service Icon */}
-                      <div className={`w-20 h-20 bg-gradient-to-r ${(service as any).color || 'from-cyan-500 to-blue-500'} rounded-2xl flex items-center justify-center text-4xl group-hover:scale-110 transition-transform duration-300 flex-shrink-0`}>
-                        {(service as any).icon || '🚀'}
+                      <div className={`w-20 h-20 bg-gradient-to-r ${getServiceProperty(service, 'color', getDefaultColor(service.category))} rounded-2xl flex items-center justify-center text-4xl group-hover:scale-110 transition-transform duration-300 flex-shrink-0`}>
+                        {getServiceProperty(service, 'icon', getDefaultIcon(service.category))}
                       </div>
 
                       {/* Service Details */}
@@ -408,7 +447,7 @@ const Innovative2040FuturisticServicesShowcase: React.FC = () => {
                               <span className="inline-block px-3 py-1 bg-gray-700 text-cyan-400 text-sm font-medium rounded-full">
                                 {service.category}
                               </span>
-                              {(service as any).popular && (
+                              {getServiceProperty(service, 'popular', false) && (
                                 <span className="inline-block px-3 py-1 bg-gradient-to-r from-yellow-500 to-orange-500 text-white text-sm font-bold rounded-full">
                                   Popular
                                 </span>
@@ -419,7 +458,7 @@ const Innovative2040FuturisticServicesShowcase: React.FC = () => {
                                                        <div className="text-3xl font-bold text-cyan-400 mb-1">
                              {typeof service.price === 'string' ? service.price : `$${service.price.monthly}/${service.price.currency}`}
                                                            <span className="text-lg text-gray-400">
-                                {typeof service.price === 'string' ? (service as any).period || '/month' : '/month'}
+                                {typeof service.price === 'string' ? getServiceProperty(service, 'period', '/month') : '/month'}
                               </span>
                            </div>
                             <div className="flex items-center justify-end space-x-1 text-yellow-400 mb-2">
