@@ -70,9 +70,10 @@ import { innovative2025ITSolutionsExpansion } from '../../data/2025-innovative-i
 import { innovative2025AISolutionsExpansion } from '../../data/2025-innovative-ai-solutions-expansion';
 
 // Import our new 2025 advanced services V2
-import { advancedMicroSaasExpansion2025V2 } from '../../data/2025-advanced-micro-saas-expansion-v2';
-import { advancedITInfrastructureExpansion2025V2 } from '../../data/2025-advanced-it-infrastructure-expansion-v2';
-import { advancedAIServicesExpansion2025V2 } from '../../data/2025-advanced-ai-services-expansion-v2';
+// Note: These files don't exist yet, commenting out for now
+// import { advancedMicroSaasExpansion2025V2 } from '../../data/2025-advanced-micro-saas-expansion-v2';
+// import { advancedITInfrastructureExpansion2025V2 } from '../../data/2025-advanced-it-infrastructure-expansion-v2';
+// import { advancedAIServicesExpansion2025V2 } from '../../data/2025-advanced-ai-services-expansion-v2';
 
 function toSlug(value: string) {
   return value.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
@@ -171,9 +172,9 @@ export default function ServicesIndexPage() {
     .concat(innovative2025ITSolutionsExpansion as unknown[])
     .concat(innovative2025AISolutionsExpansion as unknown[])
     // Our new 2025 advanced services V2
-    .concat(advancedMicroSaasExpansion2025V2 as unknown[])
-    .concat(advancedITInfrastructureExpansion2025V2 as unknown[])
-    .concat(advancedAIServicesExpansion2025V2 as unknown[]);
+    // .concat(advancedMicroSaasExpansion2025V2 as unknown[])
+    // .concat(advancedITInfrastructureExpansion2025V2 as unknown[])
+    // .concat(advancedAIServicesExpansion2025V2 as unknown[]);
 
   // Filter out services without required properties
   const validServices = all.filter(service => 
