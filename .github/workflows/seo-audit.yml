@@ -6,8 +6,11 @@ on:
     - cron: '*/10 * * * *'
 
 permissions:
-  contents: write
-  actions: read
+  contents: read
+
+concurrency:
+  group: seo-audit-${{ github.ref }}
+  cancel-in-progress: true
 
 jobs:
   main:

@@ -5,12 +5,8 @@ on:
   schedule:
     - cron: '0 */2 * * *'
 permissions:
-  contents: write
-  actions: read
-  pull-requests: write
-concurrency:
-  group: workflow-${{ github.ref }}
-  cancel-in-progress: false
+  contents: read
+
 jobs:
   attempt-fix:
     name: Attempt Fix

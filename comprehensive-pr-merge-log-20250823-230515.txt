@@ -38,3 +38,255 @@ tsconfig.tsbuildinfo[0m
 2025-08-23 23:05:19 - [1;33m⚠️  Found conflicts in tsconfig.tsbuildinfo, resolving...[0m
 2025-08-23 23:05:19 - [0;34m📝 Regular file, removing conflict markers...[0m
 2025-08-23 23:05:19 - [0;32m✅ Resolved conflicts in tsconfig.tsbuildinfo[0m
+2025-08-23 23:05:19 - [0;32m✅ Successfully resolved conflicts and merged cursor/fix-failing-github-actions-e413[0m
+2025-08-23 23:05:19 - [0;32m✅ PR #3900 (cursor/fix-failing-github-actions-e413) processed successfully[0m
+2025-08-23 23:05:19 - [0;34m🔒 Closing PR #3900 via GitHub API...[0m
+2025-08-23 23:05:19 - [0;34m📊 Progress: 1/100, ✅ 1, ❌ 0[0m
+2025-08-23 23:05:21 - [0;34m📋 Processing PR #3899: Fix github actions errors (branch: cursor/fix-github-actions-errors-987b)[0m
+2025-08-23 23:05:21 - [0;34m🔄 Attempting to merge cursor/fix-github-actions-errors-987b...[0m
+2025-08-23 23:05:22 - [1;33m⚠️  Merge conflicts detected in cursor/fix-github-actions-errors-987b (attempt 1/3), resolving...[0m
+2025-08-23 23:05:22 - [0;34m📋 Conflicted files: .github/workflows/ai-changelog.yml
+.github/workflows/ai-content-autonomy.yml
+.github/workflows/ai-it-ads-sync.yml
+.github/workflows/ai-it-innovations.yml
+.github/workflows/ai-it-multi-factory.yml
+.github/workflows/ai-it-ultrafast-sync.yml
+.github/workflows/ai-trends-radar.yml
+.github/workflows/auto-heal-workflows.yml
+.github/workflows/automation-advertiser.yml
+.github/workflows/broken-images.yml
+.github/workflows/ci-self-heal.yml
+.github/workflows/cloud-autonomous-orchestrator.yml
+.github/workflows/cloud-deep-research.yml
+.github/workflows/cloud-orchestrator-plus.yml
+.github/workflows/codeql.yml
+.github/workflows/commitlint.yml
+.github/workflows/components-size-report.yml
+.github/workflows/crawl-normalize.yml
+.github/workflows/cursor-chat.yml
+.github/workflows/dead-code-report.yml
+.github/workflows/docs-intelligence.yml
+.github/workflows/external-links.yml
+.github/workflows/front-scheduler.yml
+.github/workflows/guardian-scheduler.yml
+.github/workflows/instagram-marketing.yml
+.github/workflows/knowledge-graph-radar.yml
+.github/workflows/lighthouse-budgets.yml
+.github/workflows/linkedin-marketing.yml
+.github/workflows/linkedin-pro.yml
+.github/workflows/marketing-sync.yml
+.github/workflows/media-optimizer.yml
+.github/workflows/monetization.yml
+.github/workflows/netlify-config.yml
+.github/workflows/netlify-functions-trigger.yml
+.github/workflows/og-image-refresh.yml
+.github/workflows/pr-auto-curator.yml
+.github/workflows/readme-auto-advertiser.yml
+.github/workflows/responsive-content.yml
+.github/workflows/security-auto-heal.yml
+.github/workflows/seo-audit.yml
+.github/workflows/seo-validator.yml
+.github/workflows/site-health-guardian.yml
+.github/workflows/site-link.yml
+.github/workflows/sitemap-and-search.yml
+.github/workflows/topics-and-clusters.yml
+.github/workflows/ultra-rapid-sync.yml
+.github/workflows/variation.yml
+.github/workflows/venture.yml
+.github/workflows/workflow-radar.yml[0m
+2025-08-23 23:05:22 - [0;34m🔧 Resolving conflicts in .github/workflows/ai-changelog.yml for branch cursor/fix-github-actions-errors-987b...[0m
+2025-08-23 23:05:22 - [1;33m⚠️  Found conflicts in .github/workflows/ai-changelog.yml, resolving...[0m
+2025-08-23 23:05:22 - [0;34m📝 Regular file, removing conflict markers...[0m
+2025-08-23 23:05:22 - [0;32m✅ Resolved conflicts in .github/workflows/ai-changelog.yml[0m
+2025-08-23 23:05:22 - [0;34m🔧 Resolving conflicts in .github/workflows/ai-content-autonomy.yml for branch cursor/fix-github-actions-errors-987b...[0m
+2025-08-23 23:05:22 - [1;33m⚠️  Found conflicts in .github/workflows/ai-content-autonomy.yml, resolving...[0m
+2025-08-23 23:05:22 - [0;34m📝 Regular file, removing conflict markers...[0m
+2025-08-23 23:05:22 - [0;32m✅ Resolved conflicts in .github/workflows/ai-content-autonomy.yml[0m
+2025-08-23 23:05:22 - [0;34m🔧 Resolving conflicts in .github/workflows/ai-it-ads-sync.yml for branch cursor/fix-github-actions-errors-987b...[0m
+2025-08-23 23:05:22 - [1;33m⚠️  Found conflicts in .github/workflows/ai-it-ads-sync.yml, resolving...[0m
+2025-08-23 23:05:22 - [0;34m📝 Regular file, removing conflict markers...[0m
+2025-08-23 23:05:22 - [0;32m✅ Resolved conflicts in .github/workflows/ai-it-ads-sync.yml[0m
+2025-08-23 23:05:22 - [0;34m🔧 Resolving conflicts in .github/workflows/ai-it-innovations.yml for branch cursor/fix-github-actions-errors-987b...[0m
+2025-08-23 23:05:22 - [1;33m⚠️  Found conflicts in .github/workflows/ai-it-innovations.yml, resolving...[0m
+2025-08-23 23:05:22 - [0;34m📝 Regular file, removing conflict markers...[0m
+2025-08-23 23:05:22 - [0;32m✅ Resolved conflicts in .github/workflows/ai-it-innovations.yml[0m
+2025-08-23 23:05:22 - [0;34m🔧 Resolving conflicts in .github/workflows/ai-it-multi-factory.yml for branch cursor/fix-github-actions-errors-987b...[0m
+2025-08-23 23:05:22 - [1;33m⚠️  Found conflicts in .github/workflows/ai-it-multi-factory.yml, resolving...[0m
+2025-08-23 23:05:22 - [0;34m📝 Regular file, removing conflict markers...[0m
+2025-08-23 23:05:22 - [0;32m✅ Resolved conflicts in .github/workflows/ai-it-multi-factory.yml[0m
+2025-08-23 23:05:22 - [0;34m🔧 Resolving conflicts in .github/workflows/ai-it-ultrafast-sync.yml for branch cursor/fix-github-actions-errors-987b...[0m
+2025-08-23 23:05:22 - [1;33m⚠️  Found conflicts in .github/workflows/ai-it-ultrafast-sync.yml, resolving...[0m
+2025-08-23 23:05:22 - [0;34m📝 Regular file, removing conflict markers...[0m
+2025-08-23 23:05:22 - [0;32m✅ Resolved conflicts in .github/workflows/ai-it-ultrafast-sync.yml[0m
+2025-08-23 23:05:22 - [0;34m🔧 Resolving conflicts in .github/workflows/ai-trends-radar.yml for branch cursor/fix-github-actions-errors-987b...[0m
+2025-08-23 23:05:22 - [1;33m⚠️  Found conflicts in .github/workflows/ai-trends-radar.yml, resolving...[0m
+2025-08-23 23:05:22 - [0;34m📝 Regular file, removing conflict markers...[0m
+2025-08-23 23:05:22 - [0;32m✅ Resolved conflicts in .github/workflows/ai-trends-radar.yml[0m
+2025-08-23 23:05:22 - [0;34m🔧 Resolving conflicts in .github/workflows/auto-heal-workflows.yml for branch cursor/fix-github-actions-errors-987b...[0m
+2025-08-23 23:05:22 - [1;33m⚠️  Found conflicts in .github/workflows/auto-heal-workflows.yml, resolving...[0m
+2025-08-23 23:05:22 - [0;34m📝 Regular file, removing conflict markers...[0m
+2025-08-23 23:05:22 - [0;32m✅ Resolved conflicts in .github/workflows/auto-heal-workflows.yml[0m
+2025-08-23 23:05:22 - [0;34m🔧 Resolving conflicts in .github/workflows/automation-advertiser.yml for branch cursor/fix-github-actions-errors-987b...[0m
+2025-08-23 23:05:22 - [1;33m⚠️  Found conflicts in .github/workflows/automation-advertiser.yml, resolving...[0m
+2025-08-23 23:05:22 - [0;34m📝 Regular file, removing conflict markers...[0m
+2025-08-23 23:05:22 - [0;32m✅ Resolved conflicts in .github/workflows/automation-advertiser.yml[0m
+2025-08-23 23:05:22 - [0;34m🔧 Resolving conflicts in .github/workflows/broken-images.yml for branch cursor/fix-github-actions-errors-987b...[0m
+2025-08-23 23:05:22 - [1;33m⚠️  Found conflicts in .github/workflows/broken-images.yml, resolving...[0m
+2025-08-23 23:05:22 - [0;34m📝 Regular file, removing conflict markers...[0m
+2025-08-23 23:05:22 - [0;32m✅ Resolved conflicts in .github/workflows/broken-images.yml[0m
+2025-08-23 23:05:22 - [0;34m🔧 Resolving conflicts in .github/workflows/ci-self-heal.yml for branch cursor/fix-github-actions-errors-987b...[0m
+2025-08-23 23:05:22 - [1;33m⚠️  Found conflicts in .github/workflows/ci-self-heal.yml, resolving...[0m
+2025-08-23 23:05:22 - [0;34m📝 Regular file, removing conflict markers...[0m
+2025-08-23 23:05:22 - [0;32m✅ Resolved conflicts in .github/workflows/ci-self-heal.yml[0m
+2025-08-23 23:05:22 - [0;34m🔧 Resolving conflicts in .github/workflows/cloud-autonomous-orchestrator.yml for branch cursor/fix-github-actions-errors-987b...[0m
+2025-08-23 23:05:22 - [1;33m⚠️  Found conflicts in .github/workflows/cloud-autonomous-orchestrator.yml, resolving...[0m
+2025-08-23 23:05:22 - [0;34m📝 Regular file, removing conflict markers...[0m
+2025-08-23 23:05:22 - [0;32m✅ Resolved conflicts in .github/workflows/cloud-autonomous-orchestrator.yml[0m
+2025-08-23 23:05:22 - [0;34m🔧 Resolving conflicts in .github/workflows/cloud-deep-research.yml for branch cursor/fix-github-actions-errors-987b...[0m
+2025-08-23 23:05:22 - [1;33m⚠️  Found conflicts in .github/workflows/cloud-deep-research.yml, resolving...[0m
+2025-08-23 23:05:22 - [0;34m📝 Regular file, removing conflict markers...[0m
+2025-08-23 23:05:22 - [0;32m✅ Resolved conflicts in .github/workflows/cloud-deep-research.yml[0m
+2025-08-23 23:05:22 - [0;34m🔧 Resolving conflicts in .github/workflows/cloud-orchestrator-plus.yml for branch cursor/fix-github-actions-errors-987b...[0m
+2025-08-23 23:05:22 - [1;33m⚠️  Found conflicts in .github/workflows/cloud-orchestrator-plus.yml, resolving...[0m
+2025-08-23 23:05:22 - [0;34m📝 Regular file, removing conflict markers...[0m
+2025-08-23 23:05:22 - [0;32m✅ Resolved conflicts in .github/workflows/cloud-orchestrator-plus.yml[0m
+2025-08-23 23:05:22 - [0;34m🔧 Resolving conflicts in .github/workflows/codeql.yml for branch cursor/fix-github-actions-errors-987b...[0m
+2025-08-23 23:05:22 - [1;33m⚠️  Found conflicts in .github/workflows/codeql.yml, resolving...[0m
+2025-08-23 23:05:22 - [0;34m📝 Regular file, removing conflict markers...[0m
+2025-08-23 23:05:22 - [0;32m✅ Resolved conflicts in .github/workflows/codeql.yml[0m
+2025-08-23 23:05:22 - [0;34m🔧 Resolving conflicts in .github/workflows/commitlint.yml for branch cursor/fix-github-actions-errors-987b...[0m
+2025-08-23 23:05:22 - [1;33m⚠️  Found conflicts in .github/workflows/commitlint.yml, resolving...[0m
+2025-08-23 23:05:22 - [0;34m📝 Regular file, removing conflict markers...[0m
+2025-08-23 23:05:22 - [0;32m✅ Resolved conflicts in .github/workflows/commitlint.yml[0m
+2025-08-23 23:05:22 - [0;34m🔧 Resolving conflicts in .github/workflows/components-size-report.yml for branch cursor/fix-github-actions-errors-987b...[0m
+2025-08-23 23:05:22 - [1;33m⚠️  Found conflicts in .github/workflows/components-size-report.yml, resolving...[0m
+2025-08-23 23:05:22 - [0;34m📝 Regular file, removing conflict markers...[0m
+2025-08-23 23:05:22 - [0;32m✅ Resolved conflicts in .github/workflows/components-size-report.yml[0m
+2025-08-23 23:05:22 - [0;34m🔧 Resolving conflicts in .github/workflows/crawl-normalize.yml for branch cursor/fix-github-actions-errors-987b...[0m
+2025-08-23 23:05:22 - [1;33m⚠️  Found conflicts in .github/workflows/crawl-normalize.yml, resolving...[0m
+2025-08-23 23:05:22 - [0;34m📝 Regular file, removing conflict markers...[0m
+2025-08-23 23:05:22 - [0;32m✅ Resolved conflicts in .github/workflows/crawl-normalize.yml[0m
+2025-08-23 23:05:22 - [0;34m🔧 Resolving conflicts in .github/workflows/cursor-chat.yml for branch cursor/fix-github-actions-errors-987b...[0m
+2025-08-23 23:05:22 - [1;33m⚠️  Found conflicts in .github/workflows/cursor-chat.yml, resolving...[0m
+2025-08-23 23:05:22 - [0;34m📝 Regular file, removing conflict markers...[0m
+2025-08-23 23:05:22 - [0;32m✅ Resolved conflicts in .github/workflows/cursor-chat.yml[0m
+2025-08-23 23:05:22 - [0;34m🔧 Resolving conflicts in .github/workflows/dead-code-report.yml for branch cursor/fix-github-actions-errors-987b...[0m
+2025-08-23 23:05:22 - [1;33m⚠️  Found conflicts in .github/workflows/dead-code-report.yml, resolving...[0m
+2025-08-23 23:05:22 - [0;34m📝 Regular file, removing conflict markers...[0m
+2025-08-23 23:05:22 - [0;32m✅ Resolved conflicts in .github/workflows/dead-code-report.yml[0m
+2025-08-23 23:05:22 - [0;34m🔧 Resolving conflicts in .github/workflows/docs-intelligence.yml for branch cursor/fix-github-actions-errors-987b...[0m
+2025-08-23 23:05:22 - [1;33m⚠️  Found conflicts in .github/workflows/docs-intelligence.yml, resolving...[0m
+2025-08-23 23:05:22 - [0;34m📝 Regular file, removing conflict markers...[0m
+2025-08-23 23:05:22 - [0;32m✅ Resolved conflicts in .github/workflows/docs-intelligence.yml[0m
+2025-08-23 23:05:22 - [0;34m🔧 Resolving conflicts in .github/workflows/external-links.yml for branch cursor/fix-github-actions-errors-987b...[0m
+2025-08-23 23:05:22 - [1;33m⚠️  Found conflicts in .github/workflows/external-links.yml, resolving...[0m
+2025-08-23 23:05:22 - [0;34m📝 Regular file, removing conflict markers...[0m
+2025-08-23 23:05:22 - [0;32m✅ Resolved conflicts in .github/workflows/external-links.yml[0m
+2025-08-23 23:05:22 - [0;34m🔧 Resolving conflicts in .github/workflows/front-scheduler.yml for branch cursor/fix-github-actions-errors-987b...[0m
+2025-08-23 23:05:22 - [1;33m⚠️  Found conflicts in .github/workflows/front-scheduler.yml, resolving...[0m
+2025-08-23 23:05:22 - [0;34m📝 Regular file, removing conflict markers...[0m
+2025-08-23 23:05:22 - [0;32m✅ Resolved conflicts in .github/workflows/front-scheduler.yml[0m
+2025-08-23 23:05:22 - [0;34m🔧 Resolving conflicts in .github/workflows/guardian-scheduler.yml for branch cursor/fix-github-actions-errors-987b...[0m
+2025-08-23 23:05:22 - [1;33m⚠️  Found conflicts in .github/workflows/guardian-scheduler.yml, resolving...[0m
+2025-08-23 23:05:22 - [0;34m📝 Regular file, removing conflict markers...[0m
+2025-08-23 23:05:23 - [0;32m✅ Resolved conflicts in .github/workflows/guardian-scheduler.yml[0m
+2025-08-23 23:05:23 - [0;34m🔧 Resolving conflicts in .github/workflows/instagram-marketing.yml for branch cursor/fix-github-actions-errors-987b...[0m
+2025-08-23 23:05:23 - [1;33m⚠️  Found conflicts in .github/workflows/instagram-marketing.yml, resolving...[0m
+2025-08-23 23:05:23 - [0;34m📝 Regular file, removing conflict markers...[0m
+2025-08-23 23:05:23 - [0;32m✅ Resolved conflicts in .github/workflows/instagram-marketing.yml[0m
+2025-08-23 23:05:23 - [0;34m🔧 Resolving conflicts in .github/workflows/knowledge-graph-radar.yml for branch cursor/fix-github-actions-errors-987b...[0m
+2025-08-23 23:05:23 - [1;33m⚠️  Found conflicts in .github/workflows/knowledge-graph-radar.yml, resolving...[0m
+2025-08-23 23:05:23 - [0;34m📝 Regular file, removing conflict markers...[0m
+2025-08-23 23:05:23 - [0;32m✅ Resolved conflicts in .github/workflows/knowledge-graph-radar.yml[0m
+2025-08-23 23:05:23 - [0;34m🔧 Resolving conflicts in .github/workflows/lighthouse-budgets.yml for branch cursor/fix-github-actions-errors-987b...[0m
+2025-08-23 23:05:23 - [1;33m⚠️  Found conflicts in .github/workflows/lighthouse-budgets.yml, resolving...[0m
+2025-08-23 23:05:23 - [0;34m📝 Regular file, removing conflict markers...[0m
+2025-08-23 23:05:23 - [0;32m✅ Resolved conflicts in .github/workflows/lighthouse-budgets.yml[0m
+2025-08-23 23:05:23 - [0;34m🔧 Resolving conflicts in .github/workflows/linkedin-marketing.yml for branch cursor/fix-github-actions-errors-987b...[0m
+2025-08-23 23:05:23 - [1;33m⚠️  Found conflicts in .github/workflows/linkedin-marketing.yml, resolving...[0m
+2025-08-23 23:05:23 - [0;34m📝 Regular file, removing conflict markers...[0m
+2025-08-23 23:05:23 - [0;32m✅ Resolved conflicts in .github/workflows/linkedin-marketing.yml[0m
+2025-08-23 23:05:23 - [0;34m🔧 Resolving conflicts in .github/workflows/linkedin-pro.yml for branch cursor/fix-github-actions-errors-987b...[0m
+2025-08-23 23:05:23 - [1;33m⚠️  Found conflicts in .github/workflows/linkedin-pro.yml, resolving...[0m
+2025-08-23 23:05:23 - [0;34m📝 Regular file, removing conflict markers...[0m
+2025-08-23 23:05:23 - [0;32m✅ Resolved conflicts in .github/workflows/linkedin-pro.yml[0m
+2025-08-23 23:05:23 - [0;34m🔧 Resolving conflicts in .github/workflows/marketing-sync.yml for branch cursor/fix-github-actions-errors-987b...[0m
+2025-08-23 23:05:23 - [1;33m⚠️  Found conflicts in .github/workflows/marketing-sync.yml, resolving...[0m
+2025-08-23 23:05:23 - [0;34m📝 Regular file, removing conflict markers...[0m
+2025-08-23 23:05:23 - [0;32m✅ Resolved conflicts in .github/workflows/marketing-sync.yml[0m
+2025-08-23 23:05:23 - [0;34m🔧 Resolving conflicts in .github/workflows/media-optimizer.yml for branch cursor/fix-github-actions-errors-987b...[0m
+2025-08-23 23:05:23 - [1;33m⚠️  Found conflicts in .github/workflows/media-optimizer.yml, resolving...[0m
+2025-08-23 23:05:23 - [0;34m📝 Regular file, removing conflict markers...[0m
+2025-08-23 23:05:23 - [0;32m✅ Resolved conflicts in .github/workflows/media-optimizer.yml[0m
+2025-08-23 23:05:23 - [0;34m🔧 Resolving conflicts in .github/workflows/monetization.yml for branch cursor/fix-github-actions-errors-987b...[0m
+2025-08-23 23:05:23 - [1;33m⚠️  Found conflicts in .github/workflows/monetization.yml, resolving...[0m
+2025-08-23 23:05:23 - [0;34m📝 Regular file, removing conflict markers...[0m
+2025-08-23 23:05:23 - [0;32m✅ Resolved conflicts in .github/workflows/monetization.yml[0m
+2025-08-23 23:05:23 - [0;34m🔧 Resolving conflicts in .github/workflows/netlify-config.yml for branch cursor/fix-github-actions-errors-987b...[0m
+2025-08-23 23:05:23 - [1;33m⚠️  Found conflicts in .github/workflows/netlify-config.yml, resolving...[0m
+2025-08-23 23:05:23 - [0;34m📝 Regular file, removing conflict markers...[0m
+2025-08-23 23:05:23 - [0;32m✅ Resolved conflicts in .github/workflows/netlify-config.yml[0m
+2025-08-23 23:05:23 - [0;34m🔧 Resolving conflicts in .github/workflows/netlify-functions-trigger.yml for branch cursor/fix-github-actions-errors-987b...[0m
+2025-08-23 23:05:23 - [1;33m⚠️  Found conflicts in .github/workflows/netlify-functions-trigger.yml, resolving...[0m
+2025-08-23 23:05:23 - [0;34m📝 Regular file, removing conflict markers...[0m
+2025-08-23 23:05:23 - [0;32m✅ Resolved conflicts in .github/workflows/netlify-functions-trigger.yml[0m
+2025-08-23 23:05:23 - [0;34m🔧 Resolving conflicts in .github/workflows/og-image-refresh.yml for branch cursor/fix-github-actions-errors-987b...[0m
+2025-08-23 23:05:23 - [1;33m⚠️  Found conflicts in .github/workflows/og-image-refresh.yml, resolving...[0m
+2025-08-23 23:05:23 - [0;34m📝 Regular file, removing conflict markers...[0m
+2025-08-23 23:05:23 - [0;32m✅ Resolved conflicts in .github/workflows/og-image-refresh.yml[0m
+2025-08-23 23:05:23 - [0;34m🔧 Resolving conflicts in .github/workflows/pr-auto-curator.yml for branch cursor/fix-github-actions-errors-987b...[0m
+2025-08-23 23:05:23 - [1;33m⚠️  Found conflicts in .github/workflows/pr-auto-curator.yml, resolving...[0m
+2025-08-23 23:05:23 - [0;34m📝 Regular file, removing conflict markers...[0m
+2025-08-23 23:05:23 - [0;32m✅ Resolved conflicts in .github/workflows/pr-auto-curator.yml[0m
+2025-08-23 23:05:23 - [0;34m🔧 Resolving conflicts in .github/workflows/readme-auto-advertiser.yml for branch cursor/fix-github-actions-errors-987b...[0m
+2025-08-23 23:05:23 - [1;33m⚠️  Found conflicts in .github/workflows/readme-auto-advertiser.yml, resolving...[0m
+2025-08-23 23:05:23 - [0;34m📝 Regular file, removing conflict markers...[0m
+2025-08-23 23:05:23 - [0;32m✅ Resolved conflicts in .github/workflows/readme-auto-advertiser.yml[0m
+2025-08-23 23:05:23 - [0;34m🔧 Resolving conflicts in .github/workflows/responsive-content.yml for branch cursor/fix-github-actions-errors-987b...[0m
+2025-08-23 23:05:23 - [1;33m⚠️  Found conflicts in .github/workflows/responsive-content.yml, resolving...[0m
+2025-08-23 23:05:23 - [0;34m📝 Regular file, removing conflict markers...[0m
+2025-08-23 23:05:23 - [0;32m✅ Resolved conflicts in .github/workflows/responsive-content.yml[0m
+2025-08-23 23:05:23 - [0;34m🔧 Resolving conflicts in .github/workflows/security-auto-heal.yml for branch cursor/fix-github-actions-errors-987b...[0m
+2025-08-23 23:05:23 - [1;33m⚠️  Found conflicts in .github/workflows/security-auto-heal.yml, resolving...[0m
+2025-08-23 23:05:23 - [0;34m📝 Regular file, removing conflict markers...[0m
+2025-08-23 23:05:23 - [0;32m✅ Resolved conflicts in .github/workflows/security-auto-heal.yml[0m
+2025-08-23 23:05:23 - [0;34m🔧 Resolving conflicts in .github/workflows/seo-audit.yml for branch cursor/fix-github-actions-errors-987b...[0m
+2025-08-23 23:05:23 - [1;33m⚠️  Found conflicts in .github/workflows/seo-audit.yml, resolving...[0m
+2025-08-23 23:05:23 - [0;34m📝 Regular file, removing conflict markers...[0m
+2025-08-23 23:05:23 - [0;32m✅ Resolved conflicts in .github/workflows/seo-audit.yml[0m
+2025-08-23 23:05:23 - [0;34m🔧 Resolving conflicts in .github/workflows/seo-validator.yml for branch cursor/fix-github-actions-errors-987b...[0m
+2025-08-23 23:05:23 - [1;33m⚠️  Found conflicts in .github/workflows/seo-validator.yml, resolving...[0m
+2025-08-23 23:05:23 - [0;34m📝 Regular file, removing conflict markers...[0m
+2025-08-23 23:05:23 - [0;32m✅ Resolved conflicts in .github/workflows/seo-validator.yml[0m
+2025-08-23 23:05:23 - [0;34m🔧 Resolving conflicts in .github/workflows/site-health-guardian.yml for branch cursor/fix-github-actions-errors-987b...[0m
+2025-08-23 23:05:23 - [1;33m⚠️  Found conflicts in .github/workflows/site-health-guardian.yml, resolving...[0m
+2025-08-23 23:05:23 - [0;34m📝 Regular file, removing conflict markers...[0m
+2025-08-23 23:05:23 - [0;32m✅ Resolved conflicts in .github/workflows/site-health-guardian.yml[0m
+2025-08-23 23:05:23 - [0;34m🔧 Resolving conflicts in .github/workflows/site-link.yml for branch cursor/fix-github-actions-errors-987b...[0m
+2025-08-23 23:05:23 - [1;33m⚠️  Found conflicts in .github/workflows/site-link.yml, resolving...[0m
+2025-08-23 23:05:23 - [0;34m📝 Regular file, removing conflict markers...[0m
+2025-08-23 23:05:23 - [0;32m✅ Resolved conflicts in .github/workflows/site-link.yml[0m
+2025-08-23 23:05:23 - [0;34m🔧 Resolving conflicts in .github/workflows/sitemap-and-search.yml for branch cursor/fix-github-actions-errors-987b...[0m
+2025-08-23 23:05:23 - [1;33m⚠️  Found conflicts in .github/workflows/sitemap-and-search.yml, resolving...[0m
+2025-08-23 23:05:23 - [0;34m📝 Regular file, removing conflict markers...[0m
+2025-08-23 23:05:23 - [0;32m✅ Resolved conflicts in .github/workflows/sitemap-and-search.yml[0m
+2025-08-23 23:05:23 - [0;34m🔧 Resolving conflicts in .github/workflows/topics-and-clusters.yml for branch cursor/fix-github-actions-errors-987b...[0m
+2025-08-23 23:05:23 - [1;33m⚠️  Found conflicts in .github/workflows/topics-and-clusters.yml, resolving...[0m
+2025-08-23 23:05:23 - [0;34m📝 Regular file, removing conflict markers...[0m
+2025-08-23 23:05:23 - [0;32m✅ Resolved conflicts in .github/workflows/topics-and-clusters.yml[0m
+2025-08-23 23:05:23 - [0;34m🔧 Resolving conflicts in .github/workflows/ultra-rapid-sync.yml for branch cursor/fix-github-actions-errors-987b...[0m
+2025-08-23 23:05:23 - [1;33m⚠️  Found conflicts in .github/workflows/ultra-rapid-sync.yml, resolving...[0m
+2025-08-23 23:05:23 - [0;34m📝 Regular file, removing conflict markers...[0m
+2025-08-23 23:05:23 - [0;32m✅ Resolved conflicts in .github/workflows/ultra-rapid-sync.yml[0m
+2025-08-23 23:05:23 - [0;34m🔧 Resolving conflicts in .github/workflows/variation.yml for branch cursor/fix-github-actions-errors-987b...[0m
+2025-08-23 23:05:23 - [1;33m⚠️  Found conflicts in .github/workflows/variation.yml, resolving...[0m
+2025-08-23 23:05:23 - [0;34m📝 Regular file, removing conflict markers...[0m
+2025-08-23 23:05:23 - [0;32m✅ Resolved conflicts in .github/workflows/variation.yml[0m
+2025-08-23 23:05:23 - [0;34m🔧 Resolving conflicts in .github/workflows/venture.yml for branch cursor/fix-github-actions-errors-987b...[0m
+2025-08-23 23:05:23 - [1;33m⚠️  Found conflicts in .github/workflows/venture.yml, resolving...[0m
+2025-08-23 23:05:23 - [0;34m📝 Regular file, removing conflict markers...[0m
+2025-08-23 23:05:23 - [0;32m✅ Resolved conflicts in .github/workflows/venture.yml[0m
+2025-08-23 23:05:23 - [0;34m🔧 Resolving conflicts in .github/workflows/workflow-radar.yml for branch cursor/fix-github-actions-errors-987b...[0m
+2025-08-23 23:05:23 - [1;33m⚠️  Found conflicts in .github/workflows/workflow-radar.yml, resolving...[0m
+2025-08-23 23:05:23 - [0;34m📝 Regular file, removing conflict markers...[0m
+2025-08-23 23:05:23 - [0;32m✅ Resolved conflicts in .github/workflows/workflow-radar.yml[0m

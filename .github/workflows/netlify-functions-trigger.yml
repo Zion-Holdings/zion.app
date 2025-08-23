@@ -13,7 +13,9 @@ jobs:
   main:
     name: Main Job
     runs-on: ubuntu-latest
-    timeout-minutes: 20
+    timeout-minutes: 15
+    env:
+      NETLIFY_BASE_URL: ${{ vars.NETLIFY_BASE_URL }}
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
