@@ -13,6 +13,18 @@ const HomePage: React.FC = () => {
     type: "website"
   };
 
+<<<<<<< HEAD
+export default function Home() {
+  return (
+    <>
+      <SEO />
+      <Layout>
+        <main id="main">
+          <Homepage2025 showInternalNav={false} />
+        </main>
+      </Layout>
+    </>
+=======
   // Enhanced service advertising content with real market data and competitive advantages
   const serviceHighlights = [
     {
@@ -663,5 +675,6 @@ const HomePage: React.FC = () => {
         </section>
       </div>
     </QuantumHolographicMatrixBackground>
+>>>>>>> origin/cursor/enhance-app-services-and-website-with-futuristic-design-98d9
   );
 }
