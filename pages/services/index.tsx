@@ -49,31 +49,7 @@ import { real2032ServiceExpansions } from '../../data/real-2032-service-expansio
 import { real2035Q1Additions } from '../../data/real-2035-q1-additions';
 import { real2035Q2AdditionsExtra } from '../../data/real-2035-q2-additions-extra';
 import { real2025ExtraServices } from '../../data/real-2025-extra-services';
-import { real2026Q4ExpansionsV2 } from '../../data/real-2026-q4-expansions-v2';
-import { real2036ServiceExpansions } from '../../data/real-2036-service-expansions';
-import { real2026Q4ExpansionsV3 } from '../../data/real-2026-q4-expansions-v3';
-import { real2036MicroSaasAdditions } from '../../data/real-2036-micro-saas-additions';
-import { real2036ITServicesAdditions } from '../../data/real-2036-it-services-additions';
-import { real2036AIServicesAdditions } from '../../data/real-2036-ai-services-additions';
-import { innovative2025MicroSaasBatch } from '../../data/innovative-2025-micro-saas-batch';
-import { innovative2025ITEnterpriseBatch } from '../../data/innovative-2025-it-enterprise-batch';
-import { innovativeMicroSaasServices } from '../../data/innovative-2025-micro-saas-expansions';
-import { innovativeITServices } from '../../data/innovative-2025-it-services-expansions';
-import { innovativeAIServices } from '../../data/innovative-2025-ai-services-expansions';
-// Import our new 2025 advanced services
-import { advanced2025MicroSaasExpansion } from '../../data/2025-advanced-micro-saas-expansion';
-import { advanced2025ITSolutionsExpansion } from '../../data/2025-advanced-it-solutions-expansion';
-import { advanced2025AIServicesExpansion } from '../../data/2025-advanced-ai-services-expansion';
-
-// Import our new 2025 innovative services
-import { innovativeMicroSaasExpansion2025 } from '../../data/2025-innovative-micro-saas-expansion';
-import { innovative2025ITSolutionsExpansion } from '../../data/2025-innovative-it-solutions-expansion';
-import { innovative2025AISolutionsExpansion } from '../../data/2025-innovative-ai-solutions-expansion';
-
-// Import our new 2025 innovative services V3
-import { innovativeMicroSaasExpansionV32025 } from '../../data/2025-innovative-micro-saas-expansion-v3';
-import { innovativeITServicesExpansion2025V3 } from '../../data/2025-innovative-it-services-expansion-v3';
-import { innovativeAIServicesExpansion2025V3 } from '../../data/2025-innovative-ai-services-expansion-v3';
+import { real2025ExtraServicesBatch2 } from '../../data/real-2025-extra-services-batch2';
 
 function toSlug(value: string) {
   return value.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
@@ -140,8 +116,17 @@ export default function ServicesIndexPage() {
       real2029Q1Additions as unknown[],
       real2029Q2Additions as unknown[],
       real2029Q3Additions as unknown[],
-      real2029Q4Additions as unknown[],
-      real2030Q1Additions as unknown[]
+      real2030Q1Additions as unknown[],
+      real2030Q2Additions as unknown[],
+      real2031MicroSaasAdditions as unknown[],
+      real2031ITServicesAdditions as unknown[],
+      real2031AIServicesAdditions as unknown[],
+      professionalServices as unknown[],
+      real2032ServiceExpansions as unknown[],
+      real2035Q1Additions as unknown[],
+      real2035Q2Additions as unknown[],
+      real2025ExtraServices as unknown[],
+      real2025ExtraServicesBatch2 as unknown[]
     );
     return acc;
   }, {} as Record<string, any[]>);
