@@ -93,6 +93,19 @@ export type ServiceVariant =
   | 'biotech-futuristic'
   | 'simulation-futuristic'
   | 'space-futuristic'
+<<<<<<< HEAD
+  | 'manufacturing-futuristic'
+  | 'retail-futuristic'
+  | 'fintech-futuristic'
+  | 'customer-futuristic'
+  | 'ecommerce-futuristic'
+  | 'real-estate-futuristic'
+  | 'logistics-futuristic'
+  | 'quantum-security-futuristic'
+  | 'energy-futuristic'
+  | 'transportation-futuristic'
+  | 'education-futuristic';
+=======
   | 'ai-consensus'
   | 'quantum-security'
   | 'autonomous-logistics'
@@ -123,3 +136,4 @@ export type ServiceVariant =
   | 'ai-research'
   | 'quantum-neural'
   | 'space-manufacturing';
+>>>>>>> origin/cursor/add-and-advertise-new-services-then-build-4074

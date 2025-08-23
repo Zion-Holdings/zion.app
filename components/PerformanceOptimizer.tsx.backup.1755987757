@@ -1,4 +1,8 @@
+<<<<<<< HEAD
+import React, { useEffect, useState, useCallback, useMemo } from 'react';
+=======
 import React, { useEffect, useState } from 'react';
+>>>>>>> origin/cursor/add-and-advertise-new-services-then-build-4074
 import { motion, AnimatePresence } from 'framer-motion';
 import { 
   Zap, TrendingUp, Gauge, Database, Image, Code, Cpu, 
@@ -13,11 +17,22 @@ declare global {
   }
 }
 
+<<<<<<< HEAD
+interface OptimizationSuggestion {
+  id: string;
+  title: string;
+  description: string;
+  impact: 'high' | 'medium' | 'low';
+  category: 'bundle' | 'images' | 'components' | 'network' | 'caching';
+  status: 'pending' | 'in-progress' | 'completed' | 'failed';
+  estimatedSavings: string;
+=======
 // Performance entry types for Core Web Vitals
 interface PerformanceEventTiming extends PerformanceEntry {
   processingStart: number;
   processingEnd: number;
   target?: any;
+>>>>>>> origin/cursor/add-and-advertise-new-services-then-build-4074
 }
 
 const PerformanceOptimizer: React.FC = () => {
