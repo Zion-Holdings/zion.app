@@ -107,7 +107,7 @@ const PerformanceMonitor: React.FC = () => {
         const entries = list.getEntries();
         entries.forEach((entry) => {
           if ('hadRecentInput' in entry && !entry.hadRecentInput && 'value' in entry) {
-            clsValue += entry.value;
+            clsValue += (entry.value as number);
           }
         });
         setMetrics(prev => prev ? { ...prev, cls: clsValue } : null);
