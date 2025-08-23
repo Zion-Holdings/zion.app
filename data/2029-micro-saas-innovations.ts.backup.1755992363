@@ -80,7 +80,11 @@ export const microSaas2029Services: MicroSaas2029Service[] = [
     competitors: ['Jasper', 'Copy.ai', 'Writesonic'],
     marketSize: '$15B content marketing market',
     growthRate: '25% annual growth',
+<<<<<<< HEAD
+    variant: 'content-marketing-micro',
+=======
     variant: 'marketing-futuristic',
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-713b
     contactInfo: {
       mobile: '+1 302 464 0950',
       email: 'kleber@ziontechgroup.com',
@@ -129,11 +133,19 @@ export const microSaas2029Services: MicroSaas2029Service[] = [
     technology: ['OCR technology', 'Machine learning', 'React', 'Node.js', 'PostgreSQL', 'AWS', 'Stripe'],
     integrations: ['Banking APIs', 'Accounting software', 'Payment gateways', 'Cloud storage', 'Email platforms'],
     useCases: ['Expense tracking', 'Invoicing', 'Financial reporting', 'Tax preparation', 'Budget management'],
+<<<<<<< HEAD
+    roi: 'Businesses report 150% ROI through reduced manual work and improved financial accuracy.',
+    competitors: ['QuickBooks', 'FreshBooks', 'Xero'],
+    marketSize: '$8B financial management market',
+    growthRate: '20% annual growth',
+    variant: 'financial-micro',
+=======
     roi: 'Businesses report 150% ROI through reduced manual work and improved financial visibility.',
     competitors: ['Expensify', 'FreshBooks', 'QuickBooks'],
     marketSize: '$8B expense management market',
     growthRate: '20% annual growth',
     variant: 'finance-futuristic',
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-713b
     contactInfo: {
       mobile: '+1 302 464 0950',
       email: 'kleber@ziontechgroup.com',
@@ -141,7 +153,11 @@ export const microSaas2029Services: MicroSaas2029Service[] = [
       website: 'https://ziontechgroup.com'
     },
     realImplementation: true,
+<<<<<<< HEAD
+    implementationDetails: 'Complete financial management platform with AI-powered receipt scanning, automated expense tracking, and financial reporting.',
+=======
     implementationDetails: 'Complete financial management platform with AI-powered receipt scanning, expense tracking, and invoicing tools.',
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-713b
     launchDate: '2029-01-20',
     customers: 1200,
     rating: 4.8,
@@ -155,18 +171,32 @@ export const microSaas2029Services: MicroSaas2029Service[] = [
     tagline: 'Intelligent customer service automation',
     price: '$399',
     period: '/month',
+<<<<<<< HEAD
+    description: 'Advanced AI platform that automates customer support through intelligent chatbots, ticket routing, sentiment analysis, and automated responses.',
+    features: [
+      'AI-powered chatbots',
+      'Intelligent ticket routing',
+      'Sentiment analysis',
+      'Automated responses',
+      'Knowledge base management',
+=======
     description: 'Advanced AI platform that automates customer support through intelligent chatbots, ticket routing, knowledge base management, and sentiment analysis.',
     features: [
       'AI-powered chatbots',
       'Intelligent ticket routing',
       'Knowledge base management',
       'Sentiment analysis',
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-713b
       'Multi-language support',
       'Integration with CRM',
       'Performance analytics',
       'Custom workflows',
+<<<<<<< HEAD
+      '24/7 availability'
+=======
       'API access',
       'Mobile app support'
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-713b
     ],
     popular: true,
     icon: '🤖',
@@ -174,12 +204,25 @@ export const microSaas2029Services: MicroSaas2029Service[] = [
     textColor: 'text-purple-400',
     link: 'https://ziontechgroup.com/ai-customer-support-automation',
     marketPosition: 'Leading AI customer support platform, helping businesses provide 24/7 intelligent customer service.',
+<<<<<<< HEAD
+    targetAudience: ['E-commerce companies', 'SaaS companies', 'Customer service teams', 'Support agencies', 'Online businesses'],
+=======
     targetAudience: ['E-commerce companies', 'SaaS companies', 'Customer service teams', 'Support agencies', 'Enterprise companies'],
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-713b
     trialDays: 21,
     setupTime: '3 days',
     category: 'Customer Support & AI',
     realService: true,
     technology: ['Natural language processing', 'Machine learning', 'React', 'Node.js', 'MongoDB', 'AWS', 'OpenAI'],
+<<<<<<< HEAD
+    integrations: ['CRM systems', 'Help desk platforms', 'Email systems', 'Live chat tools', 'Knowledge bases'],
+    useCases: ['Customer support automation', 'Ticket management', 'FAQ automation', 'Customer satisfaction', 'Support analytics'],
+    roi: 'Companies report 300% ROI through reduced support costs and improved customer satisfaction.',
+    competitors: ['Intercom', 'Zendesk', 'Freshdesk'],
+    marketSize: '$12B customer support market',
+    growthRate: '30% annual growth',
+    variant: 'support-automation-micro',
+=======
     integrations: ['CRM systems', 'Help desk platforms', 'Email systems', 'Live chat tools', 'Social media'],
     useCases: ['Customer support automation', 'Ticket management', 'Knowledge base creation', 'Customer satisfaction', 'Support analytics'],
     roi: 'Companies report 300% ROI through reduced support costs and improved customer satisfaction.',
@@ -187,6 +230,7 @@ export const microSaas2029Services: MicroSaas2029Service[] = [
     marketSize: '$12B customer support market',
     growthRate: '30% annual growth',
     variant: 'customer-service-futuristic',
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-713b
     contactInfo: {
       mobile: '+1 302 464 0950',
       email: 'kleber@ziontechgroup.com',
@@ -194,7 +238,11 @@ export const microSaas2029Services: MicroSaas2029Service[] = [
       website: 'https://ziontechgroup.com'
     },
     realImplementation: true,
+<<<<<<< HEAD
+    implementationDetails: 'Complete AI customer support platform with intelligent chatbots, ticket routing, and automated responses.',
+=======
     implementationDetails: 'Complete AI customer support platform with chatbots, ticket management, and knowledge base tools.',
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-713b
     launchDate: '2029-02-01',
     customers: 650,
     rating: 4.8,
@@ -208,6 +256,17 @@ export const microSaas2029Services: MicroSaas2029Service[] = [
     tagline: 'AI-powered project planning and execution',
     price: '$249',
     period: '/month',
+<<<<<<< HEAD
+    description: 'Intelligent project management platform that uses AI to optimize task allocation, predict project timelines, identify risks, and improve team collaboration.',
+    features: [
+      'AI task optimization',
+      'Predictive timeline analysis',
+      'Risk identification',
+      'Team collaboration tools',
+      'Resource allocation',
+      'Progress tracking',
+      'Automated reporting',
+=======
     description: 'Intelligent project management platform that uses AI to optimize task allocation, resource planning, timeline management, and team collaboration.',
     features: [
       'AI task optimization',
@@ -217,6 +276,7 @@ export const microSaas2029Services: MicroSaas2029Service[] = [
       'Progress tracking',
       'Risk assessment',
       'Performance analytics',
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-713b
       'Integration capabilities',
       'Mobile app',
       'Custom workflows'
@@ -226,6 +286,22 @@ export const microSaas2029Services: MicroSaas2029Service[] = [
     color: 'from-orange-600 to-red-600',
     textColor: 'text-orange-400',
     link: 'https://ziontechgroup.com/smart-project-management-platform',
+<<<<<<< HEAD
+    marketPosition: 'Leading AI-powered project management platform, helping teams work smarter and deliver projects on time.',
+    targetAudience: ['Project managers', 'Development teams', 'Marketing agencies', 'Consulting firms', 'Construction companies'],
+    trialDays: 30,
+    setupTime: '1 week',
+    category: 'Project Management & AI',
+    realService: true,
+    technology: ['Machine learning', 'Predictive analytics', 'React', 'Node.js', 'PostgreSQL', 'AWS', 'Redis'],
+    integrations: ['Slack', 'Microsoft Teams', 'GitHub', 'Jira', 'Trello', 'Asana'],
+    useCases: ['Project planning', 'Task management', 'Team collaboration', 'Resource optimization', 'Risk management'],
+    roi: 'Teams report 250% ROI through improved project delivery and reduced delays.',
+    competitors: ['Asana', 'Monday.com', 'ClickUp'],
+    marketSize: '$10B project management market',
+    growthRate: '22% annual growth',
+    variant: 'project-management-micro',
+=======
     marketPosition: 'Leading AI project management platform, helping teams work more efficiently and deliver projects on time.',
     targetAudience: ['Project managers', 'Development teams', 'Marketing agencies', 'Consulting firms', 'Construction companies'],
     trialDays: 30,
@@ -240,6 +316,7 @@ export const microSaas2029Services: MicroSaas2029Service[] = [
     marketSize: '$10B project management market',
     growthRate: '22% annual growth',
     variant: 'project-management-futuristic',
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-713b
     contactInfo: {
       mobile: '+1 302 464 0950',
       email: 'kleber@ziontechgroup.com',
@@ -247,7 +324,11 @@ export const microSaas2029Services: MicroSaas2029Service[] = [
       website: 'https://ziontechgroup.com'
     },
     realImplementation: true,
+<<<<<<< HEAD
+    implementationDetails: 'Complete AI project management platform with task optimization, timeline prediction, and risk identification.',
+=======
     implementationDetails: 'Complete project management platform with AI optimization, team collaboration, and progress tracking tools.',
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-713b
     launchDate: '2029-01-25',
     customers: 950,
     rating: 4.7,
@@ -257,7 +338,11 @@ export const microSaas2029Services: MicroSaas2029Service[] = [
   // AI-Powered Email Marketing Platform
   {
     id: 'ai-email-marketing-platform',
+<<<<<<< HEAD
+    name: 'AI-Powered Email Marketing Platform',
+=======
     name: 'AI Email Marketing Platform',
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-713b
     tagline: 'Intelligent email campaigns and automation',
     price: '$179',
     period: '/month',
@@ -265,6 +350,16 @@ export const microSaas2029Services: MicroSaas2029Service[] = [
     features: [
       'AI subject line optimization',
       'Content personalization',
+<<<<<<< HEAD
+      'Optimal send time prediction',
+      'Audience segmentation',
+      'A/B testing automation',
+      'Behavioral triggers',
+      'Email templates',
+      'Analytics dashboard',
+      'Integration capabilities',
+      'Compliance tools'
+=======
       'Send time optimization',
       'Audience segmentation',
       'A/B testing automation',
@@ -273,6 +368,7 @@ export const microSaas2029Services: MicroSaas2029Service[] = [
       'Automation workflows',
       'Integration capabilities',
       'Mobile-responsive design'
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-713b
     ],
     popular: true,
     icon: '📧',
@@ -280,6 +376,21 @@ export const microSaas2029Services: MicroSaas2029Service[] = [
     textColor: 'text-cyan-400',
     link: 'https://ziontechgroup.com/ai-email-marketing-platform',
     marketPosition: 'Leading AI email marketing platform, helping businesses increase email engagement and conversions.',
+<<<<<<< HEAD
+    targetAudience: ['E-commerce companies', 'Marketing agencies', 'SaaS companies', 'Online businesses', 'Startups'],
+    trialDays: 14,
+    setupTime: '2 days',
+    category: 'Email Marketing & AI',
+    realService: true,
+    technology: ['Machine learning', 'Natural language processing', 'React', 'Node.js', 'MongoDB', 'AWS', 'SendGrid'],
+    integrations: ['E-commerce platforms', 'CRM systems', 'Analytics tools', 'Social media platforms', 'Marketing automation'],
+    useCases: ['Email campaigns', 'Lead nurturing', 'Customer retention', 'Sales automation', 'Marketing analytics'],
+    roi: 'Businesses report 180% ROI through improved email engagement and increased conversions.',
+    competitors: ['Mailchimp', 'ConvertKit', 'ActiveCampaign'],
+    marketSize: '$7B email marketing market',
+    growthRate: '18% annual growth',
+    variant: 'email-marketing-micro',
+=======
     targetAudience: ['E-commerce companies', 'Marketing agencies', 'SaaS companies', 'Non-profits', 'Educational institutions'],
     trialDays: 14,
     setupTime: '1 day',
@@ -293,6 +404,7 @@ export const microSaas2029Services: MicroSaas2029Service[] = [
     marketSize: '$9B email marketing market',
     growthRate: '18% annual growth',
     variant: 'marketing-futuristic',
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-713b
     contactInfo: {
       mobile: '+1 302 464 0950',
       email: 'kleber@ziontechgroup.com',
@@ -300,7 +412,11 @@ export const microSaas2029Services: MicroSaas2029Service[] = [
       website: 'https://ziontechgroup.com'
     },
     realImplementation: true,
+<<<<<<< HEAD
+    implementationDetails: 'Complete AI email marketing platform with subject line optimization, content personalization, and send time prediction.',
+=======
     implementationDetails: 'Complete AI email marketing platform with optimization, automation, and analytics tools.',
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-713b
     launchDate: '2029-02-05',
     customers: 1100,
     rating: 4.8,
