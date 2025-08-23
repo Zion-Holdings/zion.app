@@ -51,7 +51,10 @@ const UserManagement: React.FC = () => {
       <Head>
         <title>User Management | Zion Tech Group</title>
         <meta name="description" content="Manage users, roles, and permissions" />
-      </Head>
+      
+        <meta property="og:title" content="User Management" />
+        <meta property="og:description" content="User Management — automatically suggested description." />
+        <meta name="twitter:card" content="summary_large_image" /></Head>
       
       <div className="min-h-screen bg-gray-50">
         <div className="max-w-7xl mx-auto py-6 sm:px-6 lg:px-8">
