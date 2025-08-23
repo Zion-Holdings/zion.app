@@ -235,6 +235,26 @@ export const aiAutonomousServices: AIAutonomousService[] = [
       'Reduce content creation costs by 70%',
       'Maintain consistent brand voice'
     ],
+<<<<<<< HEAD
+    icon: '✍️🤖',
+    color: 'from-indigo-600 to-blue-700',
+    textColor: 'text-indigo-400',
+    link: 'https://ziontechgroup.com/services/ai-content-factory-pro',
+    contactInfo: contact,
+    realImplementation: 'Generating content for 200+ brands and agencies',
+    launchDate: 'Q1 2025',
+    customers: '200+ brands, 50+ agencies',
+    rating: 4.8,
+    reviews: 156,
+    popular: true,
+    technology: ['AI/ML', 'NLP', 'Content Generation', 'Machine Learning', 'Python', 'React'],
+    integrations: ['WordPress', 'HubSpot', 'Contentful', 'Social media platforms', 'Custom APIs'],
+    useCases: ['Content marketing', 'Social media management', 'Blog creation', 'Email marketing'],
+    roi: 'Average ROI of 250% within 4 months',
+    competitors: ['Jasper', 'Copy.ai', 'Writesonic', 'ContentBot'],
+    marketSize: 'AI content creation market $1.2B+, growing 35% annually',
+    growthRate: '280% YoY'
+=======
     useCases: [
       'Marketing agencies',
       'E-commerce platforms',
@@ -659,5 +679,6 @@ export const aiAutonomousServices: AIAutonomousService[] = [
     address: '364 E Main St STE 1008 Middletown DE 19709',
     website: 'https://ziontechgroup.com',
     slug: '/ai-autonomous-financial-intelligence'
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-96da
   }
 ];

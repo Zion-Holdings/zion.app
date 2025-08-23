@@ -1,11 +1,19 @@
 import React from 'react';
+<<<<<<< HEAD
+import Homepage2046 from '../components/Homepage2046';
+=======
 import EnhancedHomepage2045 from '../components/EnhancedHomepage2045';
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-96da
 import ErrorBoundary from '../components/ErrorBoundary';
 
 export default function Home() {
   return (
     <ErrorBoundary>
+<<<<<<< HEAD
+      <Homepage2046 />
+=======
       <EnhancedHomepage2045 />
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-96da
     </ErrorBoundary>
   );
 };

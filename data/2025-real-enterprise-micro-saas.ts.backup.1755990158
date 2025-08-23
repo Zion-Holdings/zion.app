@@ -481,6 +481,12 @@ export const realEnterpriseMicroSaas2025 = [
     mobile: '+1 302 464 0950',
     address: '364 E Main St STE 1008 Middletown DE 19709',
     website: 'https://ziontechgroup.com',
+<<<<<<< HEAD
+    slug: '/intelligent-hr-analytics-platform-2025',
+    realService: true,
+    implementationTime: '3-4 weeks',
+    supportLevel: '24/7 HR support'
+=======
     slug: '/intelligent-document-processing-platform'
   },
 
@@ -772,5 +778,6 @@ export const realEnterpriseMicroSaas2025 = [
     address: '364 E Main St STE 1008 Middletown DE 19709',
     website: 'https://ziontechgroup.com',
     slug: '/ai-autonomous-sustainability-intelligence'
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-96da
   }
 ];

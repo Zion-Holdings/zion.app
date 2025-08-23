@@ -48,7 +48,20 @@ import {
   Play,
   DollarSign,
   GraduationCap,
+<<<<<<< HEAD
+  Mail,
+  ArrowRight,
+  Network,
+  ShoppingCart,
+  Monitor,
+  Lock,
+  Server,
+  Globe2,
+  Newspaper,
+  CheckCircle
+=======
   Activity
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-96da
 } from 'lucide-react';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
@@ -86,6 +99,62 @@ const navigationItems: NavigationItem[] = [
     neonColor: 'shadow-blue-400/50',
     category: 'main',
     children: [
+<<<<<<< HEAD
+      {
+        label: 'AI & Machine Learning',
+        href: '/services?category=ai-ml',
+        icon: <Brain className="w-4 h-4" />,
+        description: 'Advanced AI solutions for enterprise',
+        children: [
+          { label: 'AI Autonomous Services', href: '/services?category=ai-autonomous', icon: <Brain className="w-4 h-4" /> },
+          { label: 'AI Automation Solutions', href: '/services?category=ai-automation', icon: <Zap className="w-4 h-4" /> },
+          { label: 'Machine Learning Platforms', href: '/services?category=ml-platforms', icon: <Cpu className="w-4 h-4" /> }
+        ]
+      },
+      {
+        label: 'IT Infrastructure',
+        href: '/services?category=it-infrastructure',
+        icon: <Server className="w-4 h-4" />,
+        description: 'Scalable infrastructure solutions',
+        children: [
+          { label: 'Cloud Computing', href: '/services?category=cloud', icon: <Cloud className="w-4 h-4" /> },
+          { label: 'DevOps & Automation', href: '/services?category=devops', icon: <Code className="w-4 h-4" /> },
+          { label: 'Edge Computing', href: '/services?category=edge', icon: <Network className="w-4 h-4" /> }
+        ]
+      },
+      {
+        label: 'Micro SAAS',
+        href: '/services?category=micro-saas',
+        icon: <Target className="w-4 h-4" />,
+        description: 'Innovative software solutions',
+        children: [
+          { label: 'Business Solutions', href: '/services?category=business', icon: <Building className="w-4 h-4" /> },
+          { label: 'Sales & Marketing', href: '/services?category=sales-marketing', icon: <TrendingUp className="w-4 h-4" /> },
+          { label: 'HR & Operations', href: '/services?category=hr-operations', icon: <Users className="w-4 h-4" /> }
+        ]
+      },
+      {
+        label: 'Quantum Technology',
+        href: '/services?category=quantum',
+        icon: <Atom className="w-4 h-4" />,
+        description: 'Next-generation quantum solutions',
+        children: [
+          { label: 'Quantum Computing', href: '/services?category=quantum-computing', icon: <Atom className="w-4 h-4" /> },
+          { label: 'Quantum Security', href: '/services?category=quantum-security', icon: <Shield className="w-4 h-4" /> },
+          { label: 'Quantum AI', href: '/services?category=quantum-ai', icon: <Brain className="w-4 h-4" /> }
+        ]
+      },
+      {
+        label: 'Cybersecurity',
+        href: '/services?category=cybersecurity',
+        icon: <Shield className="w-4 h-4" />,
+        description: 'Advanced security solutions',
+        children: [
+          { label: 'Zero Trust Security', href: '/services?category=zero-trust', icon: <Lock className="w-4 h-4" /> },
+          { label: 'Threat Detection', href: '/services?category=threat-detection', icon: <Eye className="w-4 h-4" /> },
+          { label: 'Compliance & Audit', href: '/services?category=compliance', icon: <CheckCircle className="w-4 h-4" /> }
+        ]
+=======
       {
         label: 'AI & Machine Learning',
         href: '/services?category=ai-ml',
@@ -154,6 +223,7 @@ const navigationItems: NavigationItem[] = [
         featured: true,
         neonColor: 'shadow-yellow-400/50',
         category: 'autonomous'
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-96da
       }
     ]
   },
@@ -194,6 +264,13 @@ const navigationItems: NavigationItem[] = [
         icon: <Shield className="w-4 h-4" />,
         featured: true
       },
+<<<<<<< HEAD
+      { 
+        name: 'Quantum Cloud Infrastructure', 
+        href: '/quantum-cloud-infrastructure-platform-2045', 
+        description: 'Quantum-powered cloud solutions',
+        icon: <Cloud className="w-4 h-4" />
+=======
       {
         label: 'Healthcare Solutions',
         href: '/solutions/healthcare',
@@ -217,6 +294,7 @@ const navigationItems: NavigationItem[] = [
         description: 'Smart manufacturing and Industry 4.0',
         neonColor: 'shadow-orange-400/50',
         category: 'manufacturing'
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-96da
       }
     ]
   },
@@ -254,6 +332,21 @@ const navigationItems: NavigationItem[] = [
     icon: <BookOpen className="w-4 h-4" />,
     category: 'main',
     children: [
+<<<<<<< HEAD
+      { label: 'Blog', href: '/blog', icon: <Newspaper className="w-4 h-4" /> },
+      { label: 'Case Studies', href: '/case-studies', icon: <FileText className="w-4 h-4" /> },
+      { label: 'White Papers', href: '/white-papers', icon: <FileText className="w-4 h-4" /> },
+      { label: 'Webinars', href: '/webinars', icon: <Video className="w-4 h-4" /> },
+      { label: 'Training', href: '/training', icon: <GraduationCap className="w-4 h-4" /> }
+    ]
+  },
+  {
+    label: 'Contact',
+    href: '/contact',
+    icon: <MessageCircle className="w-4 h-4" />,
+    neonColor: 'shadow-pink-400/50',
+    category: 'main'
+=======
       {
         label: 'Documentation',
         href: '/resources/documentation',
@@ -387,6 +480,7 @@ const navigationItems: NavigationItem[] = [
         category: 'training'
       }
     ]
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-96da
   }
 ];
 
