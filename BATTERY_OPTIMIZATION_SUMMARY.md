@@ -14,4 +14,4 @@ This update introduces a small energy‑saving enhancement to the Zion app.
 
 ---
 
-*Generated on: 2025-06-27T00:54:03+00:00*
+_Generated on: 2025-06-27T00:54:03+00:00_

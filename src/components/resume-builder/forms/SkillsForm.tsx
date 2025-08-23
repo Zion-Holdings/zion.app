@@ -1,7 +1,9 @@
-
-import { SkillsForm as SkillsFormComponent } from './skills';
-import type { SkillsFormProps } from './skills/types';
-
-export function SkillsForm(props: SkillsFormProps) {
-  return <SkillsFormComponent {...props} />;
+import React from 'react';
+export function SkillsForm() {
+  return (
+    <div>
+      <h1>Component</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
 }

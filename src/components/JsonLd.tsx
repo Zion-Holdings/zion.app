@@ -1,14 +1,9 @@
 import React from 'react';
-import Head from 'next/head';
-
-interface JsonLdProps {
-  data: Record<string, any>;
+export function JsonLd() {
+  return (
+    <div>
+      <h1>Component</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
 }
-
-const JsonLd: React.FC<JsonLdProps> = ({ data }) => (
-  <Head>
-    <script type="application/ld+json">{JSON.stringify(data)}</script>
-  </Head>
-);
-
-export default JsonLd;

@@ -1,44 +1,7 @@
-import React, { useState } from 'react';
-
-export default function GPTPlayground() {
-  const [input, setInput] = useState('');
-  const [response, setResponse] = useState('');
-  const [loading, setLoading] = useState(false);
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setLoading(true);
-    setTimeout(() => {
-      setResponse(`AI: This is a dummy response to "${input}"`);
-      setLoading(false);
-    }, 800);
-  };
-
+import React from 'react';
+import Head from 'next/head';
   return (
-    <main className="min-h-screen flex flex-col items-center justify-center p-4">
-      <h1 className="text-2xl font-bold mb-4">GPT Playground</h1>
-      <form onSubmit={handleSubmit} className="flex flex-col gap-2 w-full max-w-md">
-        <input
-          className="border rounded px-3 py-2"
-          placeholder="Type your prompt..."
-          value={input}
-          onChange={e => setInput(e.target.value)}
-          disabled={loading}
-        />
-        <button
-          type="submit"
-          className="bg-blue-600 text-white px-4 py-2 rounded disabled:opacity-50"
-          disabled={loading || !input.trim()}
-        >
-          {loading ? 'Thinking...' : 'Send'}
-        </button>
-      </form>
-      {response && (
-        <div className="mt-6 p-4 border rounded bg-gray-50 w-full max-w-md">
-          {response}
-        </div>
-      )}
-    </main>
+    <>
+      <Head><title>gpt-playground - Zion App</title><meta name="description" content="gpt-playground page" /></Head><div className="container mx-auto px-4 py-8"><h1 className="text-3xl font-bold mb-6">gpt-playground</h1><p className="text-lg mb-4">This page is under construction.</p><div className="mt-4"><a href="/" className="text-blue-600 hover:underline">;
+            ← Back to Home</a></div></div></>;
   );
-}
-

@@ -1,7 +1,4 @@
-declare module "@/api/wallet" {
-  interface WalletResponse {
-    points: number;
-    history: import("@/types/tokens").TokenTransaction[];
-  }
-  export function getWallet(): Promise<WalletResponse>;
+// Type definitions for wallet.d;
+export interface wallet.d {;
+  // TODO: Add proper type definitions;
 }

@@ -24,33 +24,33 @@ The service periodically checks several URLs, measures response times, verifies 
 ## Setup and Local Development
 
 1.  **Prerequisites:**
-    *   Node.js (refer to project's Node version).
-    *   npm or yarn.
+    - Node.js (refer to project's Node version).
+    - npm or yarn.
 
 2.  **Install Dependencies:**
-    *   Navigate to this `monitoring/` directory.
-    *   If it has its own `package.json`:
-        ```bash
-        cd monitoring
-        npm install
-        ```
-    *   If dependencies are managed in the root `package.json`, they should already be installed.
+    - Navigate to this `monitoring/` directory.
+    - If it has its own `package.json`:
+      ```bash
+      cd monitoring
+      npm install
+      ```
+    - If dependencies are managed in the root `package.json`, they should already be installed.
 
 3.  **Configure Environment Variables:**
-    *   Copy `.env.example` to `.env` and adjust values as needed.
-    *   Variables include:
-        *   `DJANGO_API_BASE_URL`, `NEXTJS_API_BASE_URL`, `CUSTOM_SERVER_BASE_URL` – base URLs for monitored services
-        *   `ALERT_WEBHOOK_URL` – where alert notifications are sent
-        *   `LOG_LEVEL` – logging verbosity
+    - Copy `.env.example` to `.env` and adjust values as needed.
+    - Variables include:
+      - `DJANGO_API_BASE_URL`, `NEXTJS_API_BASE_URL`, `CUSTOM_SERVER_BASE_URL` – base URLs for monitored services
+      - `ALERT_WEBHOOK_URL` – where alert notifications are sent
+      - `LOG_LEVEL` – logging verbosity
 
 4.  **Running the Service:**
-    *   There might be an npm script in `monitoring/package.json` or the root `package.json`.
-    *   Example:
-        ```bash
-        npm run start:monitoring
-        # or
-        node monitoring/index.js # (or whatever the entry point is)
-        ```
+    - There might be an npm script in `monitoring/package.json` or the root `package.json`.
+    - Example:
+      ```bash
+      npm run start:monitoring
+      # or
+      node monitoring/index.js # (or whatever the entry point is)
+      ```
 
 ## Running Tests
 

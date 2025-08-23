@@ -1,7 +1,41 @@
-#!/usr/bin/env node
 
-const fs = require('fs');
-const path = require('path');
+const winston = require('winston');
+
+const logger = winston.createLogger({
+  level: 'info',
+  format: winston.format.combine(
+    winston.format.timestamp(),
+    winston.format.errors({ stack: true }),
+    winston.format.json()
+  ),
+  defaultMeta: { service: 'automation-script' },
+  transports: [
+    new winston.transports.File({ filename: 'logs/error.log', level: 'error' }),
+    new winston.transports.File({ filename: 'logs/combined.log' })
+  ]
+});
+
+if (process.env.NODE_ENV !== 'production') {
+  logger.add(new winston.transports.Console({
+    format: winston.format.simple()
+  }));
+}
+
+
+class Script {
+  constructor() {
+    this.isRunning = false;
+  }
+
+  async start() {
+    this.isRunning = true;
+    logger.info('Starting Script...');
+    
+    try {
+      #!/usr/bin/env node
+
+const fs = require('fs')
+const _path = require('path');
 
 // Files to fix
 const filesToFix = [
@@ -10,13 +44,12 @@ const filesToFix = [
   'src/components/enterprise/billing/BillingHeader.tsx',
   'src/components/interviews/UpcomingInterviewsCard.tsx',
   'src/components/jobs/JobsList.tsx'
-];
-
+]
 function fixReactRouterImports() {
   filesToFix.forEach(filePath => {
     try {
       if (!fs.existsSync(filePath)) {
-        console.log(`⚠️  File not found: ${filePath}`);
+        logger.warn(`⚠️  File not found: ${filePath}`);
         return;
       }
 
@@ -25,7 +58,7 @@ function fixReactRouterImports() {
 
       // Replace React Router imports
       if (content.includes('import { Link } from "react-router-dom"')) {
-        content = content.replace('import { Link } from "react-router-dom";', 'import Link from "next/link";');
+        content = content.replace('import { Link } from 'react-router-dom';, 'import Link from 'next/link';);
         hasChanges = true;
       }
 
@@ -43,20 +76,57 @@ function fixReactRouterImports() {
 
       if (hasChanges) {
         fs.writeFileSync(filePath, content);
-        console.log(`✅ Fixed: ${filePath}`);
+        logger.warn(`✅ Fixed: ${filePath}`);
       } else {
-        console.log(`ℹ️  No changes needed: ${filePath}`);
+        logger.warn(`ℹ️  No changes needed: ${filePath}`);
       }
-    } catch (error) {
-      console.error(`❌ Error fixing ${filePath}:`, error.message);
+    } catch (_error) {
+      logger.error(`❌ Error fixing ${filePath}:`, error.message);
     }
   });
 }
 
 if (require.main === module) {
-  console.log('🔧 Fixing remaining React Router imports...\n');
+  logger.warn('🔧 Fixing remaining React Router imports...\n');
   fixReactRouterImports();
-  console.log('\n✨ Done!');
+  logger.warn('\n✨ Done!');
 }
 
-module.exports = { fixReactRouterImports }; 
+module.exports = { fixReactRouterImports };
+    } catch (error) {
+      logger.error('Error in Script:', error);
+      throw error;
+    }
+  }
+
+  stop() {
+    this.isRunning = false;
+    logger.info('Stopping Script...');
+  }
+}
+
+// Start the script
+if (require.main === module) {
+  const script = new Script();
+  script.start().catch(error => {
+    logger.error('Failed to start Script:', error);
+    process.exit(1);
+  });
+}
+
+module.exports = Script;
+
+
+// Graceful shutdown handling
+process.on('SIGINT', () => {
+  console.log('\n🛑 Received SIGINT, shutting down gracefully...');
+  // Add cleanup logic here
+  process.exit(0);
+});
+
+process.on('SIGTERM', () => {
+  console.log('\n🛑 Received SIGTERM, shutting down gracefully...');
+  // Add cleanup logic here
+  process.exit(0);
+});
+

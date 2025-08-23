@@ -29,7 +29,7 @@ The response will include a `key` value which should be kept secret.
 
 ```javascript
 const res = await fetch('https://api.ziontechgroup.com/v1/api/ping/', {
-  headers: { 'X-API-KEY': 'abcd.1234...' }
+  headers: { 'X-API-KEY': 'abcd.1234...' },
 });
 const data = await res.json();
 console.log(data);
