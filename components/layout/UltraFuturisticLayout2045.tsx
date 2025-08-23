@@ -1,7 +1,7 @@
 import React from 'react';
 import Head from 'next/head';
 import UltraFuturisticNavigation2045 from './UltraFuturisticNavigation2045';
-import UltraFuturisticFooter2045 from './UltraFuturisticFooter2045';
+import UltraFuturisticFooter2044 from './UltraFuturisticFooter2044';
 
 interface UltraFuturisticLayout2045Props {
   children: React.ReactNode;
@@ -103,7 +103,7 @@ const UltraFuturisticLayout2045: React.FC<UltraFuturisticLayout2045Props> = ({
         </main>
         
         {/* Footer */}
-        <UltraFuturisticFooter2045 />
+        <UltraFuturisticFooter2044 />
       </div>
     </>
   );
