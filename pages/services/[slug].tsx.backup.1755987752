@@ -44,6 +44,8 @@ import { real2030Q1Additions } from '../../data/real-2030-q1-additions';
 import { enterpriseITSolutions } from '../../data/2034-enterprise-it-solutions';
 import { innovativeMicroSaasSolutions } from '../../data/2034-innovative-micro-saas-solutions';
 import { cuttingEdgeAIServices } from '../../data/2034-cutting-edge-ai-services';
+<<<<<<< HEAD
+=======
 import { real2031MicroSaasAdditions } from '../../data/real-2031-micro-saas-additions';
 import { real2031ITServicesAdditions } from '../../data/real-2031-it-services-additions';
 import { real2031AIServicesAdditions } from '../../data/real-2031-ai-services-additions';
@@ -58,6 +60,7 @@ import { real2035Q1Additions } from '../../data/real-2035-q1-additions';
 import { real2035Q2Additions } from '../../data/real-2035-q2-additions';
 import { real2025ExtraServices } from '../../data/real-2025-extra-services';
 import { real2025ExtraServicesBatch2 } from '../../data/real-2025-extra-services-batch2';
+>>>>>>> origin/cursor/add-and-advertise-new-services-then-build-2c85
 
 type Service = typeof enhancedRealMicroSaasServices[number];
 
@@ -104,6 +107,11 @@ function getAllServices(): Service[] {
 		.concat(real2029Q3Additions as unknown as Service[])
 		.concat(real2029Q4Additions as unknown as Service[])
 		.concat(real2030Q1Additions as unknown as Service[])
+<<<<<<< HEAD
+		.concat(enterpriseITSolutions as unknown as Service[])
+		.concat(innovativeMicroSaasSolutions as unknown as Service[])
+		.concat(cuttingEdgeAIServices as unknown as Service[]);
+=======
 		.concat(real2030Q2Additions as unknown as Service[])
 		.concat(real2031MicroSaasAdditions as unknown as Service[])
 		.concat(real2031ITServicesAdditions as unknown as Service[])
@@ -119,6 +127,7 @@ function getAllServices(): Service[] {
 		.concat(real2035Q2Additions as unknown as Service[])
 		.concat(real2025ExtraServices as unknown as Service[])
 		.concat(real2025ExtraServicesBatch2 as unknown as Service[]);
+>>>>>>> origin/cursor/add-and-advertise-new-services-then-build-2c85
 }
 
 function toSlug(value: string): string {

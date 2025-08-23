@@ -39,6 +39,8 @@ import { real2029Q2Additions } from '../../data/real-2029-q2-additions';
 import { real2029Q3Additions } from '../../data/real-2029-q3-additions';
 import { real2029Q4Additions } from '../../data/real-2029-q4-additions';
 import { real2030Q1Additions } from '../../data/real-2030-q1-additions';
+<<<<<<< HEAD
+=======
 import { real2031MicroSaasAdditions } from '../../data/real-2031-micro-saas-additions';
 import { real2031ITServicesAdditions } from '../../data/real-2031-it-services-additions';
 import { real2031AIServicesAdditions } from '../../data/real-2031-ai-services-additions';
@@ -50,6 +52,7 @@ import { real2035Q1Additions } from '../../data/real-2035-q1-additions';
 import { real2035Q2Additions } from '../../data/real-2035-q2-additions';
 import { real2025ExtraServices } from '../../data/real-2025-extra-services';
 import { real2025ExtraServicesBatch2 } from '../../data/real-2025-extra-services-batch2';
+>>>>>>> origin/cursor/add-and-advertise-new-services-then-build-2c85
 
 function toSlug(value: string) {
   return value.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
@@ -98,6 +101,10 @@ export default function ServicesIndexPage() {
       real2029Q1Additions as unknown[],
       real2029Q2Additions as unknown[],
       real2029Q3Additions as unknown[],
+<<<<<<< HEAD
+      real2029Q4Additions as unknown[],
+      real2030Q1Additions as unknown[]
+=======
       real2030Q1Additions as unknown[],
       real2030Q2Additions as unknown[],
       real2031MicroSaasAdditions as unknown[],
@@ -109,6 +116,7 @@ export default function ServicesIndexPage() {
       real2035Q2Additions as unknown[],
       real2025ExtraServices as unknown[],
       real2025ExtraServicesBatch2 as unknown[]
+>>>>>>> origin/cursor/add-and-advertise-new-services-then-build-2c85
     );
   const byCategory: Record<string, unknown[]> = {};
   for (const c of categories) byCategory[c] = [];
