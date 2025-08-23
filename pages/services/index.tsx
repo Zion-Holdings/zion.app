@@ -63,6 +63,9 @@ import { innovativeAIServices } from '../../data/innovative-2025-ai-services-exp
 import { advanced2025MicroSaasExpansion } from '../../data/2025-advanced-micro-saas-expansion';
 import { advanced2025ITSolutionsExpansion } from '../../data/2025-advanced-it-solutions-expansion';
 import { advanced2025AIServicesExpansion } from '../../data/2025-advanced-ai-services-expansion';
+import { revolutionary2025InnovativeServices } from '../../data/revolutionary-2025-innovative-services';
+import { revolutionary2025EmergingTechServices } from '../../data/revolutionary-2025-emerging-tech-services';
+import { revolutionary2025MicroSaasSpecialized } from '../../data/revolutionary-2025-micro-saas-specialized';
 
 function toSlug(value: string) {
   return value.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
@@ -98,6 +101,9 @@ export default function ServicesIndexPage() {
       curatedMarketServices as unknown[],
       realMarketServices as unknown[],
       realMarketServicesExtended as unknown[],
+      revolutionary2025InnovativeServices as unknown[],
+      revolutionary2025EmergingTechServices as unknown[],
+      revolutionary2025MicroSaasSpecialized as unknown[],
       new2025Services as unknown[],
       marketValidatedServices as unknown[],
       moreRealServices2025 as unknown[],
