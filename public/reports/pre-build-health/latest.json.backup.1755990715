@@ -5,11 +5,11 @@
     "failedChecks": 1,
     "criticalFailures": 0,
     "canBuild": true,
-<<<<<<< HEAD
+    "timestamp": "2025-08-19T16:26:24.380Z"
+=======
     "timestamp": "2025-08-19T16:26:24.380Z"
 =======
     "timestamp": "2025-08-19T18:52:46.389Z"
->>>>>>> origin/cursor/automate-redundancy-and-cleanup-d88b
   },
   "results": [
     {

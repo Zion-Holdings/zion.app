@@ -140,7 +140,10 @@
     "language_changed": "Idioma cambiado a {{language}}",
     "switch_to_detected": "¿Cambiar a {{language}}?"
   },
+<<<<<<< HEAD:src/i18n/locales/es/translation.json
+=======
 <<<<<<< HEAD
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96:public/locales/es-ES/translation.json.backup.1755989848.backup.1755989862
   "features": {
     "ai_talent_matching": "Emparejamiento de Talento IA",
     "ai_talent_matching_desc": "Nuestro algoritmo conecta el talento perfecto o trabajo según habilidades y experiencia",
@@ -377,10 +380,13 @@
   },
   "login": "Iniciar Sesión",
   "signup": "Registrarse"
+<<<<<<< HEAD:src/i18n/locales/es/translation.json
+=======
 =======
   "error_boundary": {
     "message": "Algo salió mal.",
     "retry": "Reintentar"
   }
 >>>>>>> origin/3ycx6d-codex/implement-global-error-boundary-with-toasts
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96:public/locales/es-ES/translation.json.backup.1755989848.backup.1755989862
 }

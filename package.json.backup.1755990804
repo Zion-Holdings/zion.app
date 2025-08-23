@@ -401,11 +401,29 @@
     "git:cron:start": "bash automation/git-sync-cron.sh start",
     "git:cron:stop": "bash automation/git-sync-cron.sh stop",
     "git:cron:status": "bash automation/git-sync-cron.sh status",
-<<<<<<< HEAD
+    "sync-health:run": "node automation/sync-health-check.cjs --fix",
+    "sync-health:cron:start": "bash automation/sync-health-cron.sh start",
+    "sync-health:cron:stop": "bash automation/sync-health-cron.sh stop",
+    "sync-health:cron:status": "bash automation/sync-health-cron.sh status",
+    "sync:all:start": "npm run git:cron:start && npm run sync-health:cron:start",
+    "git:health": "node automation/git-health.cjs --fast",
+    "git:health:fix": "node automation/git-health.cjs --fast --fix",
+    "git:health:deep": "node automation/git-health.cjs --deep",
+    "git:health:cron": "bash automation/git-health-cron.sh",
+    "conflicts:check": "bash scripts/check-merge-conflicts.sh",
+    "conflicts:watch": "watch -n 30 bash scripts/check-merge-conflicts.sh || true",
+    "conflicts:cron:start": "bash automation/merge-conflict-cron.sh start",
+    "conflicts:cron:stop": "bash automation/merge-conflict-cron.sh stop",
+        "conflicts:cron:status": "bash automation/merge-conflict-cron.sh status",
+    "content:blog:once": "node automation/blog-automation-orchestrator.cjs",
+    "content:blog:cron:start": "bash automation/blog-automation-cron.sh start",
+    "content:blog:cron:stop": "bash automation/blog-automation-cron.sh stop",
+    "content:blog:cron:status": "bash automation/blog-automation-cron.sh status"
+   },
+=======
     "home:update": "node automation/homepage-updater.cjs"
 =======
     "homepage:update": "node automation/homepage-auto-updater.cjs"
->>>>>>> origin/cursor/autonomous-cloud-page-enhancer-and-advertiser-e70a
   },
   "dependencies": {
     "@google-analytics/data": "^5.2.0",

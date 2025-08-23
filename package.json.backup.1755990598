@@ -392,15 +392,14 @@
     "meta:factory": "node automation/autonomous-meta-factory.cjs",
     "meta:orchestrator": "node automation/autonomous-meta-orchestrator.cjs",
     "meta:cron:start": "bash automation/autonomous-meta-cron.sh",
-<<<<<<< HEAD
-    "venture:start": "node automation/venture-orchestrator.cjs continuous",
-    "venture:once": "node automation/venture-orchestrator.cjs once",
-    "venture:analyze": "node automation/venture-services-analyzer.cjs && node automation/venture-services-factory.cjs && node automation/ads-generator.cjs && node automation/service-sales-agents-factory.cjs",
-    "venture:cron:start": "bash automation/venture-cron.sh start",
-    "venture:cron:stop": "bash automation/venture-cron.sh stop",
-    "venture:cron:status": "bash automation/venture-cron.sh status",
-    "venture:report": "node automation/venture-orchestrator.cjs report",
-    "frontend-sync:autonomous:start": "node automation/launch-frontend-sync-autonomous.js",
+    "husky:check": "bash scripts/husky-health-check.sh",
+    "husky:repair": "bash scripts/husky-repair.sh",
+    "husky:cron:start": "bash automation/husky-cron.sh start",
+    "husky:cron:stop": "bash automation/husky-cron.sh stop",
+    "husky:cron:status": "bash automation/husky-cron.sh status",
+    "husky:cron:run": "bash automation/husky-cron.sh run"
+  },
+=======
           "frontend-sync:autonomous:once": "node automation/frontend-sync-autonomous-orchestrator.cjs once 0",
       "frontend-sync:autonomous:cron": "bash automation/frontend-sync-autonomous-cron.sh"
     },
@@ -409,7 +408,6 @@
     "marketplace:factory": "node automation/intelligent-solutions-factory.cjs",
     "marketplace:orchestrator": "node automation/marketplace-orchestrator.cjs"
   },
->>>>>>> origin/cursor/automated-agent-creation-and-market-research-9320
   "dependencies": {
     "@google-analytics/data": "^5.2.0",
     "@google/generative-ai": "^0.24.1",

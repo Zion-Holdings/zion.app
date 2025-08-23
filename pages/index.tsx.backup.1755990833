@@ -1,9 +1,3 @@
-<<<<<<< HEAD
-import type { NextPage } from 'next';
-import Head from 'next/head';
-import Link from 'next/link';
-import homepageData from '../data/homepage.json';
-=======
 import React from 'react';
 import Homepage2037 from '../components/Homepage2037';
 import SEOOptimizer from '../components/SEOOptimizer';
@@ -23,66 +17,11 @@ const HomePage: React.FC = () => {
     url: "https://ziontechgroup.com",
     type: "website"
   };
->>>>>>> 83415ede492b23ecd0f96dcc700efe0026b04f84
 
 const Index: NextPage = () => {
   return (
-<<<<<<< HEAD
-    <div>
-      <Head>
-        <title>Zion App — Next Generation Platform</title>
-        <meta name="description" content="Experience the future with our AI-powered marketplace, cloud architecture, and digital transformation solutions." />
-      <link rel="preload" as="fetch" href="/trends.json" crossOrigin="anonymous" />
-        <link rel="preload" as="fetch" href="/health.json" crossOrigin="anonymous" />
-      </Head>
-
-      {/* Futuristic animated background */}
-      <div aria-hidden className="pointer-events-none absolute inset-0 -z-10">
-        {/* Gradient Nebula Blobs */}
-        <div className="absolute -top-24 -left-24 h-[38rem] w-[38rem] rounded-full bg-fuchsia-500/20 blur-3xl animate-float" />
-        <div className="absolute top-1/4 -right-32 h-[30rem] w-[30rem] rounded-full bg-cyan-400/20 blur-3xl animate-float-slow" />
-        <div className="absolute bottom-0 left-1/4 h-[26rem] w-[26rem] rounded-full bg-violet-400/10 blur-2xl animate-float-fast" />
-        {/* Subtle animated grid */}
-        <div className="absolute inset-0 opacity-[0.08] [background:radial-gradient(circle_at_center,rgba(255,255,255,0.35)_0,rgba(255,255,255,0)_60%),linear-gradient(90deg,rgba(255,255,255,0.12)_1px,transparent_1px),linear-gradient(0deg,rgba(255,255,255,0.12)_1px,transparent_1px)] bg-[size:100%_100%,3rem_3rem,3rem_3rem] animate-grid" />
-        <div className="absolute inset-0 opacity-[0.06] hex-grid" />
-        {/* Star field */}
-        <div className="absolute inset-0 [mask-image:radial-gradient(ellipse_at_center,white,transparent_70%)]">
-          <div className="twinkle-field absolute inset-0" />
-        </div>
-        <div className="absolute inset-0 beams opacity-[0.06]" />
-      </div>
-
-      {/* Header */}
-      <header className="relative z-10">
-        <nav className="mx-auto flex max-w-7xl items-center justify-between px-6 py-6">
-          <div className="text-2xl font-bold tracking-wide">
-            <span className="bg-gradient-to-r from-fuchsia-400 via-violet-400 to-cyan-400 bg-clip-text text-transparent drop-shadow-neon">Zion</span>
-          </div>
-          <div className="hidden gap-6 md:flex">
-            <Link href="/main/front#capabilities"><a className="text-white/80 hover:text-white">Services</a></Link>
-            <Link href="/main/front"><a className="text-white/80 hover:text-white">Products</a></Link>
-            <Link href="/automation"><a className="text-white/80 hover:text-white">Automations</a></Link>
-            <Link href="/newsroom"><a className="text-white/80 hover:text-white">Contact</a></Link>
-          </div>
-        </nav>
-      </header>
-
-      {/* Hero */}
-      <main className="relative z-10">
-        <section className="mx-auto max-w-7xl px-6 pt-10 pb-16 md:pt-16 md:pb-24">
-          <div className="text-center">
-            <div className="mx-auto inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-3 py-1 text-xs text-white/70 backdrop-blur-md">
-              <span className="h-2 w-2 animate-pulse rounded-full bg-emerald-400 shadow-[0_0_12px_rgba(52,211,153,0.9)]" />
-              Autonomous cloud systems are live and improving the app in real time
-            </div>
-            <h1 className="mt-6 text-5xl font-extrabold leading-[1.05] tracking-tight md:text-6xl">
-              <span className="gradient-text">Autonomous Cloud Automations</span>
-            </h1>
-            <p className="mx-auto mt-5 max-w-3xl text-lg text-white/80">
-              Self-improving, cloud-native agents that invent, generate, and run new automation factories—fixing, optimizing, and syncing changes to the repository continuously.
-            </p>
-            <div className="mt-8 flex flex-wrap justify-center gap-3">
-              <Link href="/automation"><a className="rounded-xl bg-gradient-to-r from-fuchsia-500 to-cyan-500 px-6 py-3 font-semibold shadow-[0_0_30px_rgba(34,211,238,0.35)] hover:shadow-[0_0_40px_rgba(34,211,238,0.6)] transition-shadow">Explore Automations</a></Link>
+              <a href="https://github.com/Zion-Holdings/zion.app/actions/workflows/autonomous-cloud.yml" target="_blank" rel="noopener" className="rounded-xl border border-white/20 bg-white/5 px-6 py-3 font-semibold backdrop-blur-md hover:bg-white/10">Live Meta Factory</a>
+=======
               <a href="https://github.com/Zion-Holdings/zion.app/actions/workflows/autonomous-cloud.yml" target="_blank" rel="noopener" className="rounded-xl border border-white/20 bg-white/5 px-6 py-3 font-semibold backdrop-blur-md hover:bg-white/10">Live Meta Factory</a>
             </div>
             <div className="bg-white/10 backdrop-blur-xl rounded-2xl p-6 border border-white/10 hover:border-cyan-400/30 transition">
@@ -10980,7 +10919,6 @@ const Index: NextPage = () => {
     </ErrorBoundary>
   );
 };
->>>>>>> 83415ede492b23ecd0f96dcc700efe0026b04f84
 
 <section className="mx-auto max-w-7xl px-6 pb-16">
   <h2 className="text-center text-2xl font-bold tracking-wide text-white/90">Explore more</h2>
@@ -11019,6 +10957,14 @@ const Index: NextPage = () => {
             <Link href="/site-health"><a className="bg-white/5 hover:bg-white/10 rounded-lg p-4 transition-colors border border-white/10"><span className="text-white/90">Site Health — audits & insights</span></a></Link>
   
 
+            <Link href="/automation"><a className="bg-white/5 hover:bg-white/10 rounded-lg p-4 transition-colors border border-white/10"><span className="text-white/90">Automation Status — Live agents & reports</span></a></Link>
+
+
+            <Link href="/newsroom"><a className="bg-white/5 hover:bg-white/10 rounded-lg p-4 transition-colors border border-white/10"><span className="text-white/90">Newsroom — Latest autonomous updates</span></a></Link>
+
+
+            <Link href="/site-health"><a className="bg-white/5 hover:bg-white/10 rounded-lg p-4 transition-colors border border-white/10"><span className="text-white/90">Site Health — Audits & insights</span></a></Link>
+=======
             <a href="https://github.com/Zion-Holdings/zion.app/actions/workflows/autonomous-quick-fixes.yml" target="_blank" rel="noopener" className="bg-white/5 hover:bg-white/10 rounded-lg p-4 transition-colors border border-white/10"><span className="text-white/90">Quick Fixes — run / view</span></a>
   
 
