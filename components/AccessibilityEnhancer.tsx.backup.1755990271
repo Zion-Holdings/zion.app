@@ -75,6 +75,10 @@ const AccessibilityEnhancer: React.FC = () => {
     setSettings(prev => ({ ...prev, [key]: value }));
   }, []);
 
+<<<<<<< HEAD
+  const resetSettings = useCallback(() => {
+    setSettings({
+=======
   // Load saved settings
   useEffect(() => {
     const saved = localStorage.getItem('accessibility-settings');
@@ -200,6 +204,7 @@ const AccessibilityEnhancer: React.FC = () => {
 
   const resetSettings = () => {
     const defaultSettings: AccessibilitySettings = {
+>>>>>>> origin/cursor/website-audit-content-update-and-deployment-1a7b
       highContrast: false,
       reducedMotion: false,
       fontSize: 'medium',
