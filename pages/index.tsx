@@ -1,5 +1,7 @@
 import type { NextPage } from 'next';
 import Head from 'next/head';
+import Link from 'next/link';
+import homepageData from '../data/homepage.json';
 
 const Index: NextPage = () => {
   return (
@@ -10821,17 +10823,7 @@ const Index: NextPage = () => {
         <section className="mx-auto max-w-7xl px-6 pb-14">
           <h2 className="text-center text-2xl font-bold tracking-wide text-white/90">Features</h2>
           <div className="mt-6 grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3">
-            {[
-              { title: 'Self‑Improving', desc: 'Agents continuously analyze, invent, and evolve automations.' },
-              { title: 'Repo Sync', desc: 'Changes are committed and pushed automatically to main.' },
-              { title: 'Zero Ops', desc: 'Runs fully in the cloud—no servers or manual intervention.' },
-              { title: 'Safety‑First', desc: 'Conservative edits with logs, reports, and guardrails.' },
-              { title: 'Scalable', desc: 'Generates domain‑specific factories on demand.' },
-              { title: 'Observability', desc: 'Dashboards, reports, and artifacts across hubs.' },
-              { title: 'Futuristic UI', desc: 'Neon, animated, holographic surfaces with tilt and beams.' },
-              { title: 'Cloud Automations', desc: 'Scheduled functions that replace GitHub Actions.' },
-              { title: 'Edge‑Optimized', desc: 'Global performance with smart bundling and caching.' },
-            ].map((f) => (
+            {homepageData.features.map((f) => (
               <article key={f.title} className="group glow-card relative overflow-hidden rounded-2xl border border-white/10 bg-white/5 p-5 backdrop-blur-md hover:border-cyan-400/30">
                 <div className="pointer-events-none absolute -inset-px -z-10 bg-gradient-to-r from-fuchsia-500/0 via-cyan-400/10 to-fuchsia-500/0 opacity-0 blur-2xl transition-opacity group-hover:opacity-100" />
                 <h3 className="text-lg font-semibold">{f.title}</h3>
@@ -10863,14 +10855,7 @@ const Index: NextPage = () => {
         <section className="mx-auto max-w-7xl px-6 pb-14">
           <h2 className="text-center text-2xl font-bold tracking-wide text-white/90">Capabilities</h2>
           <div className="mt-6 grid grid-cols-1 gap-5 md:grid-cols-3">
-            {[
-              { title: 'Code Quality & Refactors', desc: 'Lints, fixes, and proposes refactors with type‑safety improvements.' },
-              { title: 'Performance & A11y', desc: 'Optimizes bundles, assets, and accessibility with continuous checks.' },
-              { title: 'Content & SEO', desc: 'Curates content, updates promotions, and tunes metadata for reach.' },
-              { title: 'Front Systems', desc: 'Futuristic front with animated templates and layouts.' },
-              { title: 'Automation Hub', desc: 'Orchestrate cloud agents and review outputs.' },
-              { title: 'Reports & Insights', desc: 'Health, SEO and AI trend dashboards.' },
-            ].map((c) => (
+            {homepageData.capabilities.map((c) => (
               <article key={c.title} className="relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl">
                 <div className="absolute right-0 top-0 h-24 w-24 rounded-bl-[4rem] bg-cyan-400/10 blur-2xl" />
                 <h3 className="text-lg font-semibold">{c.title}</h3>
@@ -10908,67 +10893,13 @@ const Index: NextPage = () => {
 
         {/* Automation Engine — New Tools */}
         <section className="mx-auto max-w-7xl px-6 pb-20">
-          <h2 className="text-center text-2xl font-bold tracking-wide text-white/90">Automation Engine — New Tools</h2>
-          <p className="mx-auto mt-2 max-w-3xl text-center text-sm text-white/70">Now powered by scheduled cloud functions — no GitHub Actions required. Live homepage promos, health checks, and link integrity run automatically.</p>
-          <div className="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
-            {[
-              { title: 'Frontpage Enhancer', desc: 'Auto‑advertises features and refreshes homepage content hourly.', href: '/.netlify/functions/frontpage-enhancer' },
-              { title: 'Link & Health Scheduler', desc: 'Runs link checks, health scans, and sitemap updates every 6h.', href: '/.netlify/functions/link-and-health-scheduler' },
-              { title: 'Marketing & Features Promo', desc: 'Regenerates homepage promos and deep links every 2h.', href: '/.netlify/functions/marketing-and-features-promo' },
-              { title: 'Front Enhancer (fast)', desc: 'Runs front improvements every 10 minutes.', href: '/.netlify/functions/front-enhancer' },
-              { title: 'Homepage Advertiser', desc: 'Pushes fresh highlights every 15 minutes.', href: '/.netlify/functions/homepage_advertiser' },
-              { title: 'Cloud Orchestrator', desc: 'Coordinates broader agents on a 4h cadence.', href: '/.netlify/functions/cloud_orchestrator' },
-              { title: 'Autonomous Meta Orchestrator (1m)', desc: 'Invents and coordinates high‑impact automations continuously.', href: '/.netlify/functions/autonomous-meta-orchestrator' },
-              { title: 'Fast Orchestrator (1m)', desc: 'Continuously refreshes front + homepage and commits to main every minute.', href: '/.netlify/functions/fast-orchestrator' },
-              { title: 'Continuous Orchestrator (5m)', desc: 'Runs a lightweight pipeline including sitemap and UI futurizer.', href: '/.netlify/functions/continuous-orchestrator' },
-              { title: 'Front Maximizer', desc: 'High‑frequency auto‑advertising and futurizing every 5m.', href: '/.netlify/functions/front-maximizer' },
-              { title: 'Continuous Front Runner', desc: 'Ultra‑fast subset runner every 3m.', href: '/.netlify/functions/continuous-front-runner' },
-              { title: 'README Advertiser', desc: 'Refresh README and docs indexes every 6h.', href: '/.netlify/functions/readme-advertiser' },
-              { title: 'Features/Capabilities/Benefits Advertiser (2m)', desc: 'Continuously advertises new features with deep links on the front pages.', href: '/.netlify/functions/features-capabilities-benefits-advertiser' },
-              { title: 'Hyper Front Index Accelerator (1m)', desc: 'Ultra-fast front index futurizer and directory builder.', href: '/.netlify/functions/hyper-front-index-accelerator' },
-              { title: 'Dead Code Report', desc: 'Scans the codebase and updates reports with dead and unused code.', href: '/.netlify/functions/dead-code-report' },
-              { title: 'Security Audit Runner', desc: 'Runs security checks and commits actionable findings.', href: '/.netlify/functions/security-audit-runner' },
-              { title: 'Docs Index Runner', desc: 'Refreshes docs indexes and README for better discovery.', href: '/.netlify/functions/docs-index-runner' },
-              { title: 'Repo Knowledge Graph', desc: 'Regenerates the repository knowledge graph and radar metrics.', href: '/.netlify/functions/repo-knowledge-graph-runner' },
-              { title: 'Autonomous Cloud Brain (1m)', desc: 'Prioritizes and triggers critical cloud functions and commits a heartbeat.', href: '/.netlify/functions/autonomous-cloud-brain' },
-              { title: 'Function Health Monitor (5m)', desc: 'Checks all functions and publishes a live health report JSON.', href: '/.netlify/functions/function-health-monitor' },
-              { title: 'Knowledge Pack Runner (10m)', desc: 'Generates a live repo knowledge pack JSON and commits it.', href: '/.netlify/functions/knowledge-pack-runner' },
-              { title: 'Adaptive Orchestrator (5m)', desc: 'Triggers only the most relevant cloud functions based on recent changes.', href: '/.netlify/functions/adaptive-orchestrator' },
-              { title: 'Cloud Bootstrap (10m)', desc: 'Self‑heals manifests and schedules; ensures everything runs.', href: '/.netlify/functions/autonomous-cloud-bootstrap' },
-              { title: 'Image Optimizer', desc: 'Optimizes media assets for performance and quality.', href: '/.netlify/functions/image-optimizer-runner' },
-              { title: 'AI Changelog Runner', desc: 'Generates human-friendly release notes automatically.', href: '/.netlify/functions/ai-changelog-runner' },
-              { title: 'Newsroom Runner', desc: 'Publishes autonomous product updates to the newsroom.', href: '/.netlify/functions/newsroom-runner' },
-              { title: 'TODO Scanner', desc: 'Generates a consolidated TODO report and dashboard.', href: '/.netlify/functions/todo-scanner-runner' },
-              { title: 'Broken Image Scanner', desc: 'Detects broken images and proposes or applies fixes.', href: '/.netlify/functions/broken-image-scanner-runner' },
-              { title: 'External Link Check', desc: 'Crawls external links and opens fixes for rot and redirects.', href: '/.netlify/functions/external-link-check-runner' },
-              { title: 'OG Image Update', desc: 'Regenerates Open Graph images for rich social sharing.', href: '/.netlify/functions/og-image-update-runner' },
-              { title: 'Docs Search Index', desc: 'Refreshes the site search index for instant discovery.', href: '/.netlify/functions/docs-search-index-runner' },
-              { title: 'Netlify Auto‑Healer', desc: 'Monitors and self-heals Netlify deploy issues.', href: '/.netlify/functions/netlify-auto-healer-runner' },
-              { title: 'Innovation Lab (10m)', desc: 'Invents, curates, and promotes fresh ideas across the site.', href: '/.netlify/functions/innovation-lab' },
-              { title: 'Auto Scheduler (15m)', desc: 'Smart time-based runner that chooses and executes the best tasks.', href: '/.netlify/functions/auto-scheduler' },
-              { title: 'Broken Image Scanner (6h)', desc: 'Finds broken images, optimizes assets, and syncs fixes.', href: '/.netlify/functions/broken-image-scanner' },
-              { title: 'SEO Audit Runner', desc: 'Analyzes pages for title/description issues and writes an HTML report.', href: '/.netlify/functions/seo-audit-runner' },
-              { title: 'AI Trends Radar', desc: 'Aggregates trending AI topics into a public report.', href: '/.netlify/functions/ai-trends-radar-runner' },
-              { title: 'Dependency Auto‑Upgrade', desc: 'Safely bumps minor/patch deps with build verification.', href: '/.netlify/functions/deps-auto-upgrade-runner' },
-              { title: 'Autonomous Invention Orchestrator', desc: 'Discovers opportunities and applies safe, visible changes.', href: '/.netlify/functions/autonomous-invention-orchestrator' },
-              { title: 'Structured Data Auditor', desc: 'Checks JSON‑LD coverage and publishes a report.', href: '/.netlify/functions/structured-data-auditor' },
-              { title: 'Robots Auditor', desc: 'Validates robots.txt and sitemap linkage.', href: '/.netlify/functions/robots-auditor' },
-              { title: 'Canonical Auditor', desc: 'Scans canonical tags for correctness.', href: '/.netlify/functions/canonical-auditor' },
-              { title: 'Roadmap Curator', desc: 'Generates ROADMAP.md from live schedules and functions.', href: '/.netlify/functions/roadmap-curator' },
-              { title: 'Revenue Ideas Lab', desc: 'Runs revenue agents and commits growth components.', href: '/.netlify/functions/revenue-ideas-lab' },
-              { title: 'Auto Discovery Runner', desc: 'Discovers new automation opportunities and seeds factories.', href: '/.netlify/functions/auto-discovery-runner' },
-              { title: 'Topic Cluster Builder', desc: 'Discovers content/code topic clusters and publishes reports.', href: '/.netlify/functions/topic-cluster-builder-runner' },
-              { title: 'Code Smell Audit', desc: 'Heuristic code smell scan with lint-style reports in public.', href: '/.netlify/functions/code-smell-audit-runner' },
-              { title: 'Duplicate Media Finder', desc: 'Detects duplicate images by content hash and reports.', href: '/.netlify/functions/duplicate-media-finder-runner' },
-              { title: 'Orchestrator Swarm (3m)', desc: 'Triggers a curated set of front/marketing runners, then syncs.', href: '/.netlify/functions/orchestrator-swarm' },
-              { title: 'Cloud Swarm Committer (2m)', desc: 'Commits homepage/front updates back to GitHub automatically.', href: '/.netlify/functions/cloud-swarm-committer' }
-            ].map((tool) => (
-              <a key={tool.title} href={tool.href} className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-cyan-400/30 tilt-on-hover">
-                <div className="pointer-events-none absolute -inset-px -z-10 bg-gradient-to-r from-fuchsia-500/0 via-cyan-400/10 to-fuchsia-500/0 opacity-0 blur-2xl transition-opacity group-hover:opacity-100" />
-                <h3 className="text-lg font-semibold">{tool.title}</h3>
-                <p className="mt-1 text-sm text-white/75">{tool.desc}</p>
-                <div className="mt-3 inline-flex items-center gap-1 text-xs text-cyan-300/90">Open <span aria-hidden>↗</span></div>
-              </a>
+          <h2 className="text-center text-2xl font-bold tracking-wide text-white/90">Benefits</h2>
+          <div className="mx-auto mt-6 max-w-4xl grid grid-cols-1 gap-3 md:grid-cols-2">
+            {homepageData.benefits.map((b: string) => (
+              <div key={b} className="flex items-start gap-3 rounded-xl border border-white/10 bg-white/5 p-4 backdrop-blur-md">
+                <span className="mt-1 inline-block h-2.5 w-2.5 rounded-full bg-emerald-400 shadow-[0_0_12px_rgba(52,211,153,0.9)]" />
+                <span className="text-sm text-white/80">{b}</span>
+              </div>
             ))}
           </div>
         </section>
@@ -11045,14 +10976,9 @@ const Index: NextPage = () => {
 
   <div className="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
 
-            <Link href="/automation"><a className="bg-white/5 hover:bg-white/10 rounded-lg p-4 transition-colors border border-white/10"><span className="text-white/90">Automation Hub — live agents &amp; reports</span></a></Link>
-  
-
-            <Link href="/newsroom"><a className="bg-white/5 hover:bg-white/10 rounded-lg p-4 transition-colors border border-white/10"><span className="text-white/90">Newsroom — latest autonomous updates</span></a></Link>
-
-            <Link href="/site-health"><a className="bg-white/5 hover:bg-white/10 rounded-lg p-4 transition-colors border border-white/10"><span className="text-white/90">Site Health — audits &amp; insights</span></a></Link>
-  
-
+            {homepageData.explore.map((item) => (
+              <Link key={item.href} href={item.href}><a className="bg-white/5 hover:bg-white/10 rounded-lg p-4 transition-colors border border-white/10"><span className="text-white/90">{item.text}</span></a></Link>
+            ))}
   </div>
 
   <div className="mt-6 flex flex-wrap gap-2">
