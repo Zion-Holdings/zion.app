@@ -83,6 +83,23 @@ const navigationItems: NavigationItem[] = [
     icon: <Grid className="w-5 h-5" />,
     description: 'Browse by category',
     badge: 'New',
+<<<<<<< HEAD
+    	    children: [
+	      { name: 'AI & Data', href: '/services#ai', description: 'AI, data, ML services' },
+	      { name: 'Developer Tools', href: '/services#developer-tools', description: 'SDKs, automation, agents' },
+	      { name: 'Cloud & FinOps', href: '/services#cloud', description: 'Cloud, cost, platform' },
+	      { name: 'Observability', href: '/services#observability', description: 'Monitoring & telemetry' },
+	      { name: 'Quality & Monitoring', href: '/services#quality', description: 'QA, security, reliability' },
+	      { name: 'AI Evaluation Orchestrator', href: '/services/ai-evaluation-orchestrator', description: 'Automated LLM evals' },
+	      { name: 'SEO Automation Suite', href: '/seo-automation-suite', description: 'Technical SEO automation' },
+	      { name: 'IT Asset Discovery Agent', href: '/services/it-asset-discovery-agent', description: 'Agentless discovery' },
+	      { name: 'Managed Postgres HA', href: '/services/managed-postgres-ha', description: 'HA Postgres ops' }
+	    ]
+  },
+  {
+    name: 'Solutions',
+    href: '/solutions',
+=======
     children: [
       { name: 'AI & Data', href: '/services#ai', description: 'AI, data, ML services' },
       { name: 'Cloud & FinOps', href: '/services#cloud', description: 'Cloud, cost, platform' },
@@ -192,9 +209,21 @@ const navigationItems: NavigationItem[] = [
   {
     name: 'Enterprise IT',
     href: '/enterprise-it',
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-28aa
     icon: <Shield className="w-5 h-5" />,
     description: 'Industry-specific solutions',
     children: [
+<<<<<<< HEAD
+      { name: 'Enterprise', href: '/solutions/enterprise', description: 'Large-scale deployments' },
+      { name: 'Healthcare', href: '/solutions/healthcare', description: 'HIPAA-compliant solutions' },
+      { name: 'Financial Services', href: '/solutions/financial', description: 'Fintech & banking' },
+      { name: 'Manufacturing', href: '/solutions/manufacturing', description: 'Industry 4.0 & IoT' },
+      { name: 'Retail', href: '/solutions/retail', description: 'E-commerce & omnichannel' },
+      { name: 'Government', href: '/solutions/government', description: 'Public sector & compliance' },
+      { name: 'Education', href: '/solutions/education', description: 'EdTech & learning platforms' },
+      { name: 'Energy & Utilities', href: '/solutions/energy', description: 'Smart grid & sustainability' },
+      { name: 'Transportation', href: '/solutions/transportation', description: 'Logistics & mobility' }
+=======
       { name: 'Zero Trust Security', href: '/zero-trust-security-platform', description: 'Next-generation security architecture' },
       { name: 'Quantum Cloud Infrastructure', href: '/quantum-cloud-infrastructure', description: 'Quantum-enhanced cloud computing' },
       { name: 'Autonomous IT Operations', href: '/autonomous-it-operations-center', description: 'Self-managing IT infrastructure' },
@@ -220,6 +249,7 @@ const navigationItems: NavigationItem[] = [
       { name: 'Government Solutions', href: '/enterprise-solutions-showcase', description: 'Public sector innovation' },
       { name: 'Energy & Utilities', href: '/quantum-energy', description: 'Sustainable energy tech' },
       { name: 'Biotech AI Research', href: '/biotech-ai', description: 'AI-driven biotech' }
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-28aa
     ]
   },
   {

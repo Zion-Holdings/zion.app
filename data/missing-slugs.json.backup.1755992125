@@ -35,6 +35,11 @@
   "autonomous-vehicle-ai-2040",
   "blockchain-enterprise-platform",
   "customer-intelligence-platform",
+<<<<<<< HEAD
+  "energy-technology-solutions",
+  "entertainment-media-solutions",
+=======
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-28aa
   "industrial-automation-ai",
   "intelligent-project-management-suite",
   "marketing-ai-platform",
@@ -67,10 +72,21 @@
   "quantum-risk-financial-manager",
   "quantum-storage-platform-2045",
   "quantum-supply-chain-optimizer",
+<<<<<<< HEAD
+  "quantum-threat-detection",
+  "real-estate-technology-solutions",
+  "services/data-contracts-hub",
+  "services/serverless-lakehouse-starter",
+  "space-colonization-services",
+  "space-mining-automation-platform",
+  "space-mining-platform",
+  "transportation-logistics-solutions"
+=======
   "services/ai-knowledge-graph-studio",
   "services/data-contracts-hub",
   "services/llm-guarded-api-gateway",
   "services/serverless-lakehouse-starter",
   "space-colonization-services",
   "space-mining-platform"
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-28aa
 ]

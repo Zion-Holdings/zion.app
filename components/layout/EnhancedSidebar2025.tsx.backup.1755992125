@@ -100,6 +100,21 @@ const serviceCategories = [
   },
   {
     title: 'Micro SAAS',
+<<<<<<< HEAD
+    icon: <Rocket className="w-5 h-5 text-purple-400" />,
+    color: 'from-purple-500/20 to-pink-600/20',
+    services: [
+      { name: 'AI Autonomous Content Factory', href: '/ai-autonomous-content-factory', popular: true },
+      { name: 'Quantum CRM Intelligence Suite', href: '/quantum-crm-intelligence-suite', popular: true },
+      { name: 'AI Autonomous Decision Engine', href: '/ai-autonomous-decision-engine', popular: false },
+      { name: 'AI Creativity Studio Pro', href: '/ai-creativity-studio-pro', popular: true },
+      { name: 'AI Education Platform Pro', href: '/ai-education-platform-pro', popular: false },
+      { name: 'AI Healthcare Diagnostics Pro', href: '/ai-healthcare-diagnostics-pro', popular: true },
+      { name: 'AI Financial Intelligence Pro', href: '/ai-financial-intelligence-pro', popular: true },
+      { name: 'AI Sustainability Platform Pro', href: '/ai-sustainability-platform-pro', popular: false },
+      { name: 'AI Emotional Intelligence Platform', href: '/ai-emotional-intelligence-platform', popular: false },
+      { name: 'AI Legal Contract Analyzer Pro', href: '/ai-legal-contract-analyzer-pro', popular: false }
+=======
     icon: <Rocket className="w-5 h-5" />,
     color: 'text-emerald-400',
     items: [
@@ -176,6 +191,7 @@ const serviceCategories = [
       { name: 'Diversity & Inclusion', href: '/diversity-inclusion' },
       { name: 'Terms of Service', href: '/terms' },
       { name: 'Privacy Policy', href: '/privacy' }
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-28aa
     ]
   }
 ];
