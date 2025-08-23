@@ -1,13 +1,23 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { 
+<<<<<<< HEAD
+  Settings, X, Eye, EyeOff, Volume2, VolumeX, Type, Contrast, 
+  Zap, Sun, Moon, Monitor, Smartphone, Tablet, RotateCcw
+=======
   Eye, Keyboard, MousePointer,
   Accessibility, X, Contrast, Type, Ear
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-d2b2
 } from 'lucide-react';
 
 interface AccessibilitySettings {
   highContrast: boolean;
   reducedMotion: boolean;
+<<<<<<< HEAD
+  fontSize: 'small' | 'medium' | 'large';
+  audioMuted: boolean;
+  focusIndicator: boolean;
+=======
   largeText: boolean;
   screenReader: boolean;
   keyboardNavigation: boolean;
@@ -18,6 +28,7 @@ interface AccessibilitySettings {
   lineSpacing: 'normal' | 'relaxed' | 'very-relaxed';
   cursorSize: 'normal' | 'large' | 'xlarge';
   soundEffects: boolean;
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-d2b2
 }
 
 const AccessibilityEnhancer: React.FC = () => {
@@ -26,6 +37,14 @@ const AccessibilityEnhancer: React.FC = () => {
   const [settings, setSettings] = useState<AccessibilitySettings>({
     highContrast: false,
     reducedMotion: false,
+<<<<<<< HEAD
+    fontSize: 'medium',
+    audioMuted: false,
+    focusIndicator: false
+  });
+
+  // Load settings from localStorage on mount
+=======
     largeText: false,
     screenReader: false,
     keyboardNavigation: true,
@@ -86,6 +105,7 @@ const AccessibilityEnhancer: React.FC = () => {
   }, []);
 
   // Load saved settings
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-d2b2
   useEffect(() => {
     const savedSettings = localStorage.getItem('accessibility-settings');
     if (savedSettings) {
@@ -93,7 +113,11 @@ const AccessibilityEnhancer: React.FC = () => {
         const parsed = JSON.parse(savedSettings);
         setSettings(prev => ({ ...prev, ...parsed }));
       } catch (error) {
+<<<<<<< HEAD
+        console.warn('Failed to parse accessibility settings:', error);
+=======
         // Failed to load accessibility settings
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-d2b2
       }
     }
   }, []);
@@ -133,7 +157,25 @@ const AccessibilityEnhancer: React.FC = () => {
     localStorage.setItem('accessibility-settings', JSON.stringify(settings));
   }, [settings]);
 
+<<<<<<< HEAD
+  const updateSetting = useCallback((key: keyof AccessibilitySettings, value: any) => {
+    setSettings(prev => ({ ...prev, [key]: value }));
+  }, []);
+
+  const resetSettings = useCallback(() => {
+    setSettings({
+      highContrast: false,
+      reducedMotion: false,
+      fontSize: 'medium',
+      audioMuted: false,
+      focusIndicator: false
+    });
+  }, []);
+
+  // Keyboard shortcuts
+=======
   // Enhanced keyboard navigation
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-d2b2
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
       // Ctrl/Cmd + Shift + A to toggle accessibility panel
@@ -435,6 +477,37 @@ const AccessibilityEnhancer: React.FC<AccessibilityEnhancerProps> = ({
         return;
       }
 
+<<<<<<< HEAD
+      // Navigation shortcuts
+      if (e.altKey) {
+        switch (e.key) {
+          case 'h':
+            e.preventDefault();
+            document.querySelector('main')?.focus();
+            break;
+          case 'n':
+            e.preventDefault();
+            document.querySelector('nav')?.focus();
+            break;
+          case 'f':
+            e.preventDefault();
+            document.querySelector('footer')?.focus();
+            break;
+          case 's':
+            e.preventDefault();
+            const searchInput = document.querySelector('input[type="search"], .search-input') as HTMLElement;
+            if (searchInput) searchInput.focus();
+            break;
+        }
+      }
+
+      // Skip to content
+      if (e.key === 'Tab' && e.shiftKey && document.activeElement === document.body) {
+        e.preventDefault();
+        const skipLink = document.querySelector('.skip-link') as HTMLElement;
+        if (skipLink) {
+          skipLink.focus();
+=======
       // Enhanced keyboard shortcuts
       switch (e.key) {
         case 'Tab':
@@ -489,6 +562,7 @@ const AccessibilityEnhancer: React.FC<AccessibilityEnhancerProps> = ({
             navigateToMainContent();
           }
           break;
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-d2b2
         }
       }
     };
@@ -499,6 +573,27 @@ const AccessibilityEnhancer: React.FC<AccessibilityEnhancerProps> = ({
 
   // Enhanced focus management
   useEffect(() => {
+<<<<<<< HEAD
+    if (!enabled) return;
+
+    // Add focus indicators
+    const addFocusIndicators = () => {
+      const style = document.createElement('style');
+      style.textContent = `
+        .focus-visible *:focus {
+          outline: 3px solid #3b82f6 !important;
+          outline-offset: 2px !important;
+          border-radius: 4px !important;
+        }
+        
+        .high-contrast {
+          filter: contrast(1.5) brightness(1.2) !important;
+        }
+        
+        .high-contrast * {
+          border-color: #ffffff !important;
+        }
+=======
       {/* Global CSS for accessibility features */}
       <style jsx global>{`
         :root {
@@ -793,10 +888,21 @@ export const useFocusTrap = (isActive: boolean) => {
         target.style.outlineOffset = '';
       }
     };
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-d2b2
 
   return containerRef;
 };
 
+<<<<<<< HEAD
+// Screen Reader Announcement Hook
+export const useScreenReaderAnnouncement = () => {
+  const announce = (message: string, priority: 'polite' | 'assertive' = 'polite') => {
+    const announcement = document.createElement('div');
+    announcement.setAttribute('aria-live', priority);
+    announcement.setAttribute('aria-atomic', 'true');
+    announcement.className = 'sr-only';
+    announcement.textContent = message;
+=======
   // Navigation functions
   const navigateToNextHeading = useCallback(() => {
     const headings = Array.from(document.querySelectorAll('h1, h2, h3, h4, h5, h6'));
@@ -816,6 +922,7 @@ export const useFocusTrap = (isActive: boolean) => {
     const currentIndex = links.findIndex(l => l === currentFocus);
     const nextIndex = (currentIndex + 1) % links.length;
     const nextLink = links[nextIndex] as HTMLElement;
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-d2b2
     
     if (nextLink) {
       nextLink.focus();
@@ -837,6 +944,15 @@ export const useFocusTrap = (isActive: boolean) => {
   const announceToScreenReader = useCallback((message: string) => {
     if (!settings.screenReader) return;
     
+<<<<<<< HEAD
+    // Remove after announcement
+    setTimeout(() => {
+      document.body.removeChild(announcement);
+    }, 1000);
+  };
+
+  return announce;
+=======
     // Create live region for announcements
     let liveRegion = document.getElementById('accessibility-live-region');
     if (!liveRegion) {
@@ -1156,6 +1272,7 @@ export const useFocusTrap = (isActive: boolean) => {
       {children}
     </>
   );
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-d2b2
 };
 
 // Skip Link Component

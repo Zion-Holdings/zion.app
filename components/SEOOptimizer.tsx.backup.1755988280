@@ -14,6 +14,75 @@ interface SEOOptimizerProps {
   modifiedTime?: string;
   section?: string;
   tags?: string[];
+<<<<<<< HEAD
+  noindex?: boolean;
+  nofollow?: boolean;
+  canonical?: string;
+}
+
+const SEOOptimizer: React.FC<SEOOptimizerProps> = ({
+  title = 'Zion Tech Group 2045 - Revolutionary AI, Quantum Computing & Space Technology Solutions',
+  description = 'Transform your business with Zion Tech Group\'s cutting-edge AI, quantum computing, and space technology solutions. Enterprise-grade innovation for the future.',
+  keywords = 'AI, artificial intelligence, quantum computing, space technology, cybersecurity, cloud solutions, enterprise IT, micro SaaS, Zion Tech Group',
+  image = '/og-image-zion-tech-group-2045.jpg',
+  url,
+  type = 'website',
+  author = 'Zion Tech Group',
+  publishedTime,
+  modifiedTime,
+  section = 'Technology',
+  tags = ['AI', 'Quantum Computing', 'Space Technology', 'Cybersecurity'],
+  noindex = false,
+  nofollow = false,
+  canonical
+}) => {
+  const router = useRouter();
+  const currentUrl = url || `${process.env.NEXT_PUBLIC_SITE_URL || 'https://ziontechgroup.com'}${router.asPath}`;
+  const canonicalUrl = canonical || currentUrl;
+  const ogImage = image.startsWith('http') ? image : `${process.env.NEXT_PUBLIC_SITE_URL || 'https://ziontechgroup.com'}${image}`;
+
+  // Generate structured data for organization
+  const organizationSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'Organization',
+    name: 'Zion Tech Group',
+    url: 'https://ziontechgroup.com',
+    logo: 'https://ziontechgroup.com/logo.png',
+    description: 'Pioneering the future with revolutionary AI, quantum computing, and space technology solutions.',
+    sameAs: [
+      'https://linkedin.com/company/zion-tech-group',
+      'https://twitter.com/ziontechgroup',
+      'https://github.com/Zion-Holdings'
+    ],
+    contactPoint: {
+      '@type': 'ContactPoint',
+      telephone: '+1-555-123-4567',
+      contactType: 'customer service',
+      email: 'hello@ziontechgroup.com'
+    },
+    address: {
+      '@type': 'PostalAddress',
+      addressCountry: 'US',
+      addressLocality: 'Middletown',
+      addressRegion: 'DE'
+    },
+    founder: {
+      '@type': 'Person',
+      name: 'Kleber Oliveira',
+      jobTitle: 'CEO & Founder',
+      url: 'https://ziontechgroup.com/about'
+    },
+    foundingDate: '2020',
+    numberOfEmployees: '50-100',
+    industry: 'Technology',
+    knowsAbout: [
+      'Artificial Intelligence',
+      'Quantum Computing',
+      'Space Technology',
+      'Cybersecurity',
+      'Cloud Computing',
+      'Enterprise Software'
+=======
   readingTime?: string;
   wordCount?: number;
 }
@@ -279,6 +348,7 @@ const SEOOptimizer: React.FC<SEOOptimizerProps> = ({
           "text": "We specialize in cutting-edge technologies like quantum computing, AI consciousness, and autonomous systems, positioning us at the forefront of technological innovation and digital transformation."
         }
       }
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-d2b2
     ]
   };
 
@@ -370,11 +440,15 @@ const SEOOptimizer: React.FC<SEOOptimizerProps> = ({
       <meta name="description" content={description} />
       <meta name="keywords" content={keywords} />
       <meta name="author" content={author} />
+<<<<<<< HEAD
+      <meta name="robots" content={`${noindex ? 'noindex' : 'index'}, ${nofollow ? 'nofollow' : 'follow'}`} />
+=======
       <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
       <meta name="language" content="English" />
       <meta name="revisit-after" content="7 days" />
       <meta name="rating" content="General" />
       <meta name="referrer" content="strict-origin-when-cross-origin" />
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-d2b2
       
       {/* Canonical URL */}
       <link rel="canonical" href={canonicalUrl} />
@@ -400,6 +474,16 @@ const SEOOptimizer: React.FC<SEOOptimizerProps> = ({
         <meta key={tag} property="article:tag" content={tag} />
       ))}
       
+<<<<<<< HEAD
+      {/* Twitter Card Meta Tags */}
+      <meta name="twitter:card" content="summary_large_image" />
+      <meta name="twitter:site" content="@ziontechgroup" />
+      <meta name="twitter:creator" content="@ziontechgroup" />
+      <meta name="twitter:title" content={title} />
+      <meta name="twitter:description" content={description} />
+      <meta name="twitter:image" content={ogImage} />
+      <meta name="twitter:image:alt" content="Zion Tech Group - Revolutionary Technology Solutions" />
+=======
       {/* Twitter */}
       <meta property="twitter:card" content="summary_large_image" />
       <meta property="twitter:url" content={url} />
@@ -408,6 +492,7 @@ const SEOOptimizer: React.FC<SEOOptimizerProps> = ({
       <meta property="twitter:image" content={image} />
       <meta property="twitter:site" content="@ziontechgroup" />
       <meta property="twitter:creator" content="@ziontechgroup" />
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-d2b2
       
       {/* Additional Meta Tags */}
       <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
@@ -417,6 +502,19 @@ const SEOOptimizer: React.FC<SEOOptimizerProps> = ({
       <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
       <meta name="apple-mobile-web-app-title" content="Zion Tech Group" />
       
+<<<<<<< HEAD
+      {/* Article specific meta tags */}
+      {type === 'article' && publishedTime && (
+        <>
+          <meta property="article:published_time" content={publishedTime} />
+          {modifiedTime && <meta property="article:modified_time" content={modifiedTime} />}
+          <meta property="article:section" content={section} />
+          {tags.map((tag, index) => (
+            <meta key={index} property="article:tag" content={tag} />
+          ))}
+        </>
+      )}
+=======
       {/* Canonical URL */}
       <link rel="canonical" href={url} />
       
@@ -426,6 +524,7 @@ const SEOOptimizer: React.FC<SEOOptimizerProps> = ({
       <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
       <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
       <link rel="manifest" href="/site.webmanifest" />
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-d2b2
       
       {/* Preconnect to external domains for performance */}
       <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -433,15 +532,45 @@ const SEOOptimizer: React.FC<SEOOptimizerProps> = ({
       <link rel="preconnect" href="https://www.google-analytics.com" />
       <link rel="preconnect" href="https://www.googletagmanager.com" />
       
+<<<<<<< HEAD
+      {/* DNS prefetch for performance */}
+      <link rel="dns-prefetch" href="//www.google-analytics.com" />
+      <link rel="dns-prefetch" href="//www.googletagmanager.com" />
+      <link rel="dns-prefetch" href="//fonts.googleapis.com" />
+      
+      {/* Favicon and app icons */}
+      <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+      <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+      <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+      <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+      <link rel="manifest" href="/site.webmanifest" />
+=======
       {/* DNS Prefetch for performance */}
       <link rel="dns-prefetch" href="//fonts.googleapis.com" />
       <link rel="dns-prefetch" href="//www.google-analytics.com" />
       <link rel="dns-prefetch" href="//www.googletagmanager.com" />
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-d2b2
       
       {/* Structured Data */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
+<<<<<<< HEAD
+          __html: JSON.stringify(organizationSchema)
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(websiteSchema)
+        }}
+      />
+      {breadcrumbSchema && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(breadcrumbSchema)
+=======
           __html: JSON.stringify(organizationStructuredData)
         }}
       />
@@ -451,10 +580,26 @@ const SEOOptimizer: React.FC<SEOOptimizerProps> = ({
           type="application/ld+json"
           dangerouslySetInnerHTML={{
             __html: JSON.stringify(articleStructuredData)
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-d2b2
           }}
         />
       )}
       
+<<<<<<< HEAD
+      {/* Additional SEO meta tags */}
+      <meta name="application-name" content="Zion Tech Group" />
+      <meta name="mobile-web-app-capable" content="yes" />
+      <meta name="format-detection" content="telephone=no" />
+      <meta name="msapplication-config" content="/browserconfig.xml" />
+      
+      {/* Security headers */}
+      <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
+      <meta httpEquiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.google-analytics.com https://www.googletagmanager.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://www.google-analytics.com https://www.googletagmanager.com;" />
+      
+      {/* Performance hints */}
+      <link rel="preload" href="/fonts/inter-var.woff2" as="font" type="font/woff2" crossOrigin="anonymous" />
+      <link rel="preload" href="/fonts/jetbrains-mono-var.woff2" as="font" type="font/woff2" crossOrigin="anonymous" />
+=======
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
@@ -502,6 +647,7 @@ const SEOOptimizer: React.FC<SEOOptimizerProps> = ({
       
       {/* Service Worker */}
       <link rel="serviceworker" href="/sw.js" />
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-d2b2
     </Head>
   );
 };
