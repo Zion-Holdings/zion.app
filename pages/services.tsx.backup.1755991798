@@ -3,8 +3,16 @@ import Head from 'next/head';
 import { Check, Star, Zap, Shield, Users, Globe, ArrowRight, ExternalLink, TrendingUp, Clock, Target, Building, Rocket, Award, DollarSign, ChartBar, Lock, Cpu, Database, Cloud, Smartphone, Palette, Search, MessageSquare, FileText, Calendar, CreditCard, BarChart3, Settings, Zap as ZapIcon, Code, BookOpen, Activity, Database as DatabaseIcon, Play, Mail, Phone, MapPin, Filter, Grid, List, ChevronDown, ChevronUp, Sparkles, Filter as FilterIcon } from 'lucide-react';
 import Button from '../components/ui/Button';
 import Card from '../components/ui/Card';
+<<<<<<< HEAD
+import EnhancedFuturisticBackground from '../components/ui/EnhancedFuturisticBackground';
+import EnhancedFuturisticCard from '../components/ui/EnhancedFuturisticCard';
+import QuantumHolographicBackground from '../components/ui/QuantumHolographicBackground';
+import QuantumHolographicCard from '../components/ui/QuantumHolographicCard';
+import { realMicroSaasServices, serviceCategories, getServicesByCategory, getPopularServices, getServicesByPriceRange } from '../data/real-micro-saas-services';
+=======
 import UltraFuturisticBackground from '../components/ui/UltraFuturisticBackground';
 import { enhancedMicroSaasServices, serviceCategories, getServicesByCategory, getPopularServices, getServicesByPriceRange } from '../data/enhanced-micro-saas-services';
+>>>>>>> origin/cursor/enhance-app-services-and-website-with-futuristic-design-91c9
 
 export default function ServicesPage() {
   const [searchTerm, setSearchTerm] = useState('');
@@ -28,8 +36,17 @@ export default function ServicesPage() {
     { value: 'category', label: 'Category' }
   ];
 
+<<<<<<< HEAD
+  const contactInfo = {
+    mobile: '+1 302 464 0950',
+    email: 'kleber@ziontechgroup.com',
+    address: '364 E Main St STE 1008 Middletown DE 19709',
+    website: 'https://ziontechgroup.com'
+  };
+=======
   // Filter and sort services
   let filteredServices = enhancedMicroSaasServices;
+>>>>>>> origin/cursor/enhance-app-services-and-website-with-futuristic-design-91c9
 
   const filteredServices = useMemo(() => {
     let filtered = [...enhancedRealMicroSaasServices];
@@ -155,7 +172,11 @@ export default function ServicesPage() {
   ];
 
   return (
+<<<<<<< HEAD
+    <EnhancedFuturisticBackground variant="holographic-matrix" intensity="medium">
+=======
     <UltraFuturisticBackground variant="neural" intensity="high">
+>>>>>>> origin/cursor/enhance-app-services-and-website-with-futuristic-design-91c9
       <div className="min-h-screen">
         <Head>
           <title>Complete Services Portfolio | Zion Tech Group - AI, Cloud, Security & More</title>
@@ -494,6 +515,8 @@ export default function ServicesPage() {
               </div>
             </div>
 
+<<<<<<< HEAD
+=======
             {/* Results Count */}
             <div className="text-center mb-8">
               <p className="text-gray-300">
@@ -501,6 +524,7 @@ export default function ServicesPage() {
               </p>
             </div>
 
+>>>>>>> origin/cursor/enhance-app-services-and-website-with-futuristic-design-91c9
             {/* Services Grid/List */}
             <div className={`grid gap-6 ${
               viewMode === 'grid' 
@@ -646,8 +670,14 @@ export default function ServicesPage() {
               Showing {filteredServices.length} of {enhancedRealMicroSaasServices.length} total services
             </div>
           </div>
+<<<<<<< HEAD
+        </div>
+      </section>
+    </div>
+=======
         </section>
       </div>
     </UltraFuturisticBackground>
+>>>>>>> origin/cursor/enhance-app-services-and-website-with-futuristic-design-91c9
   );
 }
