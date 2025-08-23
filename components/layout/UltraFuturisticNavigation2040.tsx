@@ -61,6 +61,12 @@ const navigationItems: NavigationItem[] = [
         description: 'Rapid deployment SaaS solutions'
       },
       {
+        label: '2046 Services Showcase',
+        href: '/services-2046-showcase',
+        icon: <Star className="w-4 h-4" />,
+        description: 'Revolutionary 2046 technology showcase'
+      },
+      {
         label: 'View All Services',
         href: '/services',
         icon: <ArrowRight className="w-4 h-4" />,

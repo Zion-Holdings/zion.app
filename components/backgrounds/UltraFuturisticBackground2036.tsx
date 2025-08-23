@@ -83,8 +83,8 @@ export default function UltraFuturisticBackground2036({
     const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     
     // Enhanced particle count for better performance
-    const baseCount = prefersReducedMotion ? 20 : (isSmallScreen ? 60 : 120);
-    const particleCount = Math.floor(baseCount * (intensity === 'low' ? 0.6 : intensity === 'medium' ? 1 : 1.8));
+    const baseCount = prefersReducedMotion ? 30 : (isSmallScreen ? 80 : 150);
+    const particleCount = Math.floor(baseCount * (intensity === 'low' ? 0.8 : intensity === 'medium' ? 1.2 : 2.0));
 
     particles.current = [];
     

@@ -11,21 +11,21 @@ import {
 
 const footerSections = [
   {
-    title: 'Featured Revolutionary Services',
-    description: 'Our most innovative and cutting-edge solutions',
+    title: 'Featured Revolutionary Services 2046',
+    description: 'Our most innovative and cutting-edge 2046 solutions',
     icon: <Star className="w-5 h-5 text-yellow-400" />,
     color: 'from-yellow-500 to-orange-500',
     links: [
-      { name: 'AI Consciousness Evolution 2040', href: '/ai-consciousness-evolution-2040', featured: true },
-      { name: 'Quantum Neural Ecosystem 2040', href: '/quantum-neural-ecosystem-2040', featured: true },
-      { name: 'Space Resource Intelligence 2040', href: '/space-resource-intelligence-2040', featured: true },
-      { name: 'Autonomous Business Intelligence 2040', href: '/autonomous-business-intelligence-2040', featured: true },
-      { name: 'Quantum Cybersecurity Future 2040', href: '/quantum-cybersecurity-future-2040', featured: true },
-      { name: 'Brain-Computer Interface 2040', href: '/brain-computer-interface-2040', featured: true },
-      { name: 'AI Autonomous Research 2041', href: '/ai-autonomous-research-2041' },
-      { name: 'Quantum Internet Security 2041', href: '/quantum-internet-security-2041' },
-      { name: 'AI Customer Success 2041', href: '/ai-customer-success-2041' },
-      { name: 'AI Sales Intelligence 2041', href: '/ai-sales-intelligence-2041' }
+      { name: '2046 Services Showcase', href: '/services-2046-showcase', featured: true },
+      { name: 'Quantum AI Brain-Computer Interface 2046', href: '/quantum-ai-brain-computer-interface-platform-2046', featured: true },
+      { name: 'Space Resource Intelligence 2046', href: '/space-resource-intelligence-platform-2046', featured: true },
+      { name: 'Quantum Financial Trading Intelligence 2046', href: '/quantum-financial-trading-intelligence-2046', featured: true },
+      { name: 'Quantum Cybersecurity Future 2046', href: '/quantum-cybersecurity-future-platform-2046', featured: true },
+      { name: 'AI Healthcare Diagnostics 2046', href: '/ai-powered-healthcare-diagnostics-platform-2046', featured: true },
+      { name: 'Quantum Energy Optimization 2046', href: '/quantum-energy-optimization-platform-2046' },
+      { name: 'Quantum Supply Chain Intelligence 2046', href: '/quantum-supply-chain-intelligence-2046' },
+      { name: 'Quantum Manufacturing Intelligence 2046', href: '/quantum-manufacturing-intelligence-2046' },
+      { name: 'Quantum Education Intelligence 2046', href: '/quantum-education-intelligence-platform-2046' }
     ]
   },
   {
