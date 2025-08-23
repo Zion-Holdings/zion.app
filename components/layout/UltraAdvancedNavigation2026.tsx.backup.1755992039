@@ -16,6 +16,9 @@ interface ServiceCategory {
   services: Service[];
 }
 
+<<<<<<< HEAD
+const UltraAdvancedNavigation2026: React.FC = () => {
+=======
 const companyLinks = [
   { name: 'Home', href: '/', icon: Home },
   { name: 'About Us', href: '/about', icon: Users },
@@ -28,6 +31,7 @@ const companyLinks = [
 ];
 
 const UltraAdvancedNavigation2026 = () => {
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-071d
   const [isOpen, setIsOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
   const [scrolled, setScrolled] = useState(false);

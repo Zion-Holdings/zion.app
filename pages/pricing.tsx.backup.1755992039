@@ -2,6 +2,12 @@ import React, { useState } from 'react';
 import Head from 'next/head';
 import { Check, Star, Zap, Shield, Users, Globe, ArrowRight, ExternalLink, TrendingUp, Clock, Target, DollarSign } from 'lucide-react';
 import Button from '../components/ui/Button';
+<<<<<<< HEAD
+import { microSaasServices, serviceCategories, getServicesByCategory } from '../data/micro-saas-services';
+
+export default function PricingPage() {
+  const microSaasServices = [
+=======
 import Card from '../components/ui/Card';
 import UltraFuturisticBackground from '../components/ui/UltraFuturisticBackground';
 import UltraFuturisticCard from '../components/ui/UltraFuturisticCard';
@@ -47,6 +53,7 @@ export default function PricingPage() {
 
   // Enhanced service categories with pricing
   const serviceCategories = [
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-071d
     {
       name: 'AI Content Generator Pro',
       tagline: 'Professional AI-powered content creation',

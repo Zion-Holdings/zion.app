@@ -466,5 +466,31 @@ export type ServiceVariant =
   | 'supply-chain-futuristic'
   | 'legal-futuristic'
   | 'healthcare-futuristic'
+<<<<<<< HEAD
+  | 'biotech-futuristic'
+  | 'simulation-futuristic'
+  | 'space-futuristic'
+  | 'quantum-ai-consciousness'
+  | 'space-mining-ai'
+  | 'quantum-security'
+  | 'business-ecosystem-ai'
+  | 'quantum-bio-computing'
+  | 'vehicle-consciousness-ai'
+  | 'quantum-financial'
+  | 'healthcare-ecosystem-ai'
+  | 'quantum-materials-ai'
+  | 'education-ecosystem-ai'
+  | 'neural-holographic'
+  | 'quantum-time-ai'
+  | 'climate-control-ai'
+  | 'consciousness-transfer'
+  | 'energy-grid-ai'
+  | 'quantum-neural-evolution'
+  | 'transportation-network-ai'
+  | 'quantum-financial-manipulation'
+  | 'manufacturing-ecosystem-ai'
+  | 'consciousness-research';
+=======
   | 'climate-futuristic'
   | 'creative-futuristic';
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-071d
