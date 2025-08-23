@@ -1,34 +1,34 @@
 import React from 'react';
 import Layout from '../components/layout/Layout';
-import { Brain, Sparkles, Zap, Target, Users, Award, Clock, CheckCircle, Heart, Shield, TrendingUp, Stethoscope, Pill, Microscope } from 'lucide-react';
+import { Brain, Heart, Sparkles, Zap, Target, Users, Award, Clock, CheckCircle, Smile, Eye, Shield, TrendingUp } from 'lucide-react';
 
-export default function HealthcareSolutions() {
+export default function AIEmotionalIntelligence2040() {
   return (
     <Layout>
       <div className="min-h-screen bg-gradient-to-br from-black via-gray-900 to-black">
         {/* Hero Section */}
         <section className="relative py-20 px-4 overflow-hidden">
-          <div className="absolute inset-0 bg-gradient-to-r from-pink-500/10 via-red-500/10 to-pink-500/10"></div>
+          <div className="absolute inset-0 bg-gradient-to-r from-pink-500/10 via-purple-500/10 to-pink-500/10"></div>
           <div className="relative z-10 max-w-7xl mx-auto text-center">
             <div className="mb-8">
-              <div className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-pink-500/20 to-red-500/20 border border-pink-500/30 rounded-full text-pink-300 text-sm mb-6">
+              <div className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-pink-500/20 to-purple-500/20 border border-pink-500/30 rounded-full text-pink-300 text-sm mb-6">
                 <Sparkles className="w-4 h-4" />
-                Revolutionary Healthcare Technology
+                Revolutionary 2040 Technology
               </div>
               <h1 className="text-5xl md:text-7xl font-bold mb-6">
-                <span className="bg-gradient-to-r from-pink-400 via-red-400 to-pink-400 bg-clip-text text-transparent">
-                  Healthcare Solutions
+                <span className="bg-gradient-to-r from-pink-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
+                  AI Emotional Intelligence
                 </span>
                 <br />
-                <span className="text-white">Powered by AI & Quantum Technology</span>
+                <span className="text-white">2040</span>
               </h1>
               <p className="text-xl md:text-2xl text-gray-300 max-w-4xl mx-auto mb-8">
-                Experience the future of healthcare with revolutionary AI and quantum technology that provides 
-                advanced diagnostics, personalized treatment, and breakthrough medical innovations.
+                Experience the future of emotional AI with revolutionary empathy, understanding, and human-like emotional responses 
+                that create meaningful connections and authentic interactions.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <button className="px-8 py-4 bg-gradient-to-r from-pink-500 to-red-600 text-white font-semibold rounded-xl hover:from-pink-600 hover:to-red-700 transition-all duration-300 transform hover:scale-105">
-                  Transform Healthcare
+                <button className="px-8 py-4 bg-gradient-to-r from-pink-500 to-purple-600 text-white font-semibold rounded-xl hover:from-pink-600 hover:to-purple-700 transition-all duration-300 transform hover:scale-105">
+                  Experience Emotional AI
                 </button>
                 <button className="px-8 py-4 border-2 border-pink-400 text-pink-400 font-semibold rounded-xl hover:bg-pink-400 hover:text-black transition-all duration-300">
                   Learn More
@@ -43,50 +43,50 @@ export default function HealthcareSolutions() {
           <div className="max-w-7xl mx-auto">
             <div className="text-center mb-16">
               <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-                Revolutionary Healthcare Technology Features
+                Revolutionary Emotional Intelligence Features
               </h2>
               <p className="text-xl text-gray-400 max-w-3xl mx-auto">
-                Our healthcare solutions platform represents the pinnacle of medical technology, 
-                combining advanced AI with quantum computing and cutting-edge medical innovations.
+                Our AI emotional intelligence platform represents the pinnacle of empathetic artificial intelligence, 
+                combining advanced neuroscience with sophisticated emotional understanding algorithms.
               </p>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {[
                 {
-                  icon: <Brain className="w-8 h-8" />,
-                  title: "AI-Powered Diagnostics",
-                  description: "Advanced AI algorithms for accurate and rapid medical diagnosis.",
-                  color: "from-pink-500 to-red-500"
+                  icon: <Heart className="w-8 h-8" />,
+                  title: "Advanced Empathy",
+                  description: "Deep understanding of human emotions and the ability to respond with genuine empathy and compassion.",
+                  color: "from-pink-500 to-purple-500"
                 },
                 {
-                  icon: <Heart className="w-8 h-8" />,
-                  title: "Personalized Medicine",
-                  description: "Tailored treatment plans based on individual patient data and genetics.",
+                  icon: <Smile className="w-8 h-8" />,
+                  title: "Emotional Recognition",
+                  description: "Real-time detection and interpretation of facial expressions, voice tones, and emotional cues.",
                   color: "from-blue-500 to-cyan-500"
                 },
                 {
-                  icon: <Microscope className="w-8 h-8" />,
-                  title: "Quantum Medical Imaging",
-                  description: "Next-generation imaging technology with quantum-enhanced resolution.",
-                  color: "from-purple-500 to-pink-500"
-                },
-                {
-                  icon: <Stethoscope className="w-8 h-8" />,
-                  title: "Remote Patient Monitoring",
-                  description: "Advanced monitoring systems for continuous patient care.",
+                  icon: <Brain className="w-8 h-8" />,
+                  title: "Emotional Learning",
+                  description: "Continuous learning from emotional interactions to improve understanding and responses.",
                   color: "from-green-500 to-emerald-500"
                 },
                 {
-                  icon: <Pill className="w-8 h-8" />,
-                  title: "Drug Discovery",
-                  description: "AI and quantum computing for accelerated pharmaceutical development.",
-                  color: "from-yellow-500 to-orange-500"
+                  icon: <Eye className="w-8 h-8" />,
+                  title: "Contextual Understanding",
+                  description: "Deep comprehension of emotional context and situational awareness.",
+                  color: "from-orange-500 to-red-500"
                 },
                 {
                   icon: <Shield className="w-8 h-8" />,
-                  title: "Healthcare Security",
-                  description: "Advanced security protocols protecting patient data and privacy.",
+                  title: "Emotional Safety",
+                  description: "Built-in safeguards to ensure emotional AI interactions are safe and beneficial.",
+                  color: "from-yellow-500 to-orange-500"
+                },
+                {
+                  icon: <Users className="w-8 h-8" />,
+                  title: "Human-AI Bonding",
+                  description: "Creation of meaningful emotional connections between humans and AI systems.",
                   color: "from-indigo-500 to-purple-500"
                 }
               ].map((feature, index) => (
@@ -103,14 +103,14 @@ export default function HealthcareSolutions() {
         </section>
 
         {/* Benefits Section */}
-        <section className="py-20 px-4 bg-gradient-to-r from-pink-500/5 to-red-500/5">
+        <section className="py-20 px-4 bg-gradient-to-r from-pink-500/5 to-purple-500/5">
           <div className="max-w-7xl mx-auto">
             <div className="text-center mb-16">
               <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-                Why Choose AI Healthcare Solutions?
+                Why Choose AI Emotional Intelligence?
               </h2>
               <p className="text-xl text-gray-400 max-w-3xl mx-auto">
-                Transform healthcare delivery with technology that improves outcomes and enhances patient care.
+                Transform your business with AI that truly understands and connects with your customers on an emotional level.
               </p>
             </div>
 
@@ -118,21 +118,21 @@ export default function HealthcareSolutions() {
               {[
                 {
                   icon: <CheckCircle className="w-8 h-8" />,
-                  title: "Improved Outcomes",
-                  description: "Better patient outcomes through AI-powered diagnosis and treatment.",
-                  color: "from-pink-500 to-red-500"
+                  title: "Enhanced Customer Experience",
+                  description: "Create deeper emotional connections with customers through empathetic AI interactions.",
+                  color: "from-pink-500 to-purple-500"
                 },
                 {
                   icon: <TrendingUp className="w-8 h-8" />,
-                  title: "Cost Efficiency",
-                  description: "Reduced healthcare costs through optimized treatment and prevention.",
+                  title: "Improved Engagement",
+                  description: "Higher customer engagement rates through emotionally intelligent responses.",
                   color: "from-blue-500 to-cyan-500"
                 },
                 {
-                  icon: <Award className="w-8 h-8" />,
-                  title: "Innovation Leadership",
-                  description: "Stay ahead with cutting-edge healthcare technology and solutions.",
-                  color: "from-purple-500 to-pink-500"
+                  icon: <Shield className="w-8 h-8" />,
+                  title: "Trust Building",
+                  description: "Build trust and loyalty through consistent emotional understanding and support.",
+                  color: "from-green-500 to-emerald-500"
                 }
               ].map((benefit, index) => (
                 <div key={index} className="text-center p-6">
@@ -151,14 +151,14 @@ export default function HealthcareSolutions() {
         <section className="py-20 px-4">
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-              Ready to Transform Healthcare?
+              Ready to Experience Emotional AI?
             </h2>
             <p className="text-xl text-gray-400 mb-8">
-              Join the future of AI-powered healthcare and improve patient outcomes with cutting-edge technology.
+              Join the revolution in artificial emotional intelligence and transform how your business connects with customers.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="px-8 py-4 bg-gradient-to-r from-pink-500 to-red-600 text-white font-semibold rounded-xl hover:from-pink-600 hover:to-red-700 transition-all duration-300 transform hover:scale-105">
-                Start Healthcare AI Today
+              <button className="px-8 py-4 bg-gradient-to-r from-pink-500 to-purple-600 text-white font-semibold rounded-xl hover:from-pink-600 hover:to-purple-700 transition-all duration-300 transform hover:scale-105">
+                Get Started Today
               </button>
               <button className="px-8 py-4 border-2 border-pink-400 text-pink-400 font-semibold rounded-xl hover:bg-pink-400 hover:text-black transition-all duration-300">
                 Schedule Demo
