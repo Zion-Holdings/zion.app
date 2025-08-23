@@ -21,6 +21,11 @@ function buildAds() {
     { title: 'Docs & Guides', desc: 'Technical notes and architecture', href: '/.netlify/functions/docs-index-runner' },
     { title: 'AI Changelog', desc: 'Summarized autonomous changes', href: '/newsroom' },
     { title: 'Cloud Automations', desc: 'Netlify scheduled functions powering jobs 24/7', href: '/automation' },
+    { title: 'A11y Alt Text Auditor', desc: 'Find and propose alt text across images', href: '/reports/a11y' },
+    { title: 'Metadata Optimizer', desc: 'Detect missing meta tags and propose fixes', href: '/reports/metadata' },
+    { title: 'Stale Content Auditor', desc: 'Find stale files and publish a live report', href: '/.netlify/functions/stale-content-auditor-runner' },
+    { title: 'Unused Exports Report', desc: 'Detects unused TS/JS exports and writes reports', href: '/.netlify/functions/unused-exports-runner' },
+    { title: 'Site Topic Map', desc: 'Auto‑generated knowledge graph of site topics', href: '/.netlify/functions/topic-map-runner' },
   ];
 
   const cards = items.map((item) => (

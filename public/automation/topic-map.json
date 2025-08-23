@@ -1,0 +1,10952 @@
+{
+  "generatedAt": "2025-08-11T23:53:54.988Z",
+  "totals": {
+    "files": 13,
+    "topics": 188,
+    "edges": 2000
+  },
+  "topics": [
+    {
+      "id": "features",
+      "label": "features",
+      "count": 4
+    },
+    {
+      "id": "front",
+      "label": "front",
+      "count": 4
+    },
+    {
+      "id": "automation",
+      "label": "automation",
+      "count": 4
+    },
+    {
+      "id": "capabilities",
+      "label": "capabilities",
+      "count": 3
+    },
+    {
+      "id": "hub",
+      "label": "hub",
+      "count": 3
+    },
+    {
+      "id": "report",
+      "label": "report",
+      "count": 3
+    },
+    {
+      "id": "site",
+      "label": "site",
+      "count": 2
+    },
+    {
+      "id": "health",
+      "label": "health",
+      "count": 2
+    },
+    {
+      "id": "autonomous",
+      "label": "autonomous",
+      "count": 2
+    },
+    {
+      "id": "cloud",
+      "label": "cloud",
+      "count": 2
+    },
+    {
+      "id": "automations",
+      "label": "automations",
+      "count": 2
+    },
+    {
+      "id": "title",
+      "label": "title",
+      "count": 2
+    },
+    {
+      "id": "futuristic",
+      "label": "futuristic",
+      "count": 2
+    },
+    {
+      "id": "enhancer",
+      "label": "enhancer",
+      "count": 2
+    },
+    {
+      "id": "content",
+      "label": "content",
+      "count": 2
+    },
+    {
+      "id": "dependency",
+      "label": "dependency",
+      "count": 2
+    },
+    {
+      "id": "auto‑upgrade",
+      "label": "auto‑upgrade",
+      "count": 2
+    },
+    {
+      "id": "unused",
+      "label": "unused",
+      "count": 2
+    },
+    {
+      "id": "media",
+      "label": "media",
+      "count": 2
+    },
+    {
+      "id": "scanner",
+      "label": "scanner",
+      "count": 2
+    },
+    {
+      "id": "pages",
+      "label": "pages",
+      "count": 2
+    },
+    {
+      "id": "runner",
+      "label": "runner",
+      "count": 2
+    },
+    {
+      "id": "map",
+      "label": "map",
+      "count": 2
+    },
+    {
+      "id": "graph",
+      "label": "graph",
+      "count": 2
+    },
+    {
+      "id": "explore",
+      "label": "explore",
+      "count": 2
+    },
+    {
+      "id": "benefits",
+      "label": "benefits",
+      "count": 2
+    },
+    {
+      "id": "github",
+      "label": "github",
+      "count": 2
+    },
+    {
+      "id": "netlify",
+      "label": "netlify",
+      "count": 2
+    },
+    {
+      "id": "zion",
+      "label": "zion",
+      "count": 2
+    },
+    {
+      "id": "updates",
+      "label": "updates",
+      "count": 2
+    },
+    {
+      "id": "index",
+      "label": "index",
+      "count": 2
+    },
+    {
+      "id": "changelog",
+      "label": "changelog",
+      "count": 2
+    },
+    {
+      "id": "newsroom",
+      "label": "newsroom",
+      "count": 1
+    },
+    {
+      "id": "how",
+      "label": "how",
+      "count": 1
+    },
+    {
+      "id": "works",
+      "label": "works",
+      "count": 1
+    },
+    {
+      "id": "templates",
+      "label": "templates",
+      "count": 1
+    },
+    {
+      "id": "systems",
+      "label": "systems",
+      "count": 1
+    },
+    {
+      "id": "automation‑driven",
+      "label": "automation‑driven",
+      "count": 1
+    },
+    {
+      "id": "on‑demand",
+      "label": "on‑demand",
+      "count": 1
+    },
+    {
+      "id": "engine",
+      "label": "engine",
+      "count": 1
+    },
+    {
+      "id": "new",
+      "label": "new",
+      "count": 1
+    },
+    {
+      "id": "tools",
+      "label": "tools",
+      "count": 1
+    },
+    {
+      "id": "tool",
+      "label": "tool",
+      "count": 1
+    },
+    {
+      "id": "stale",
+      "label": "stale",
+      "count": 1
+    },
+    {
+      "id": "auditor",
+      "label": "auditor",
+      "count": 1
+    },
+    {
+      "id": "orphan",
+      "label": "orphan",
+      "count": 1
+    },
+    {
+      "id": "detector",
+      "label": "detector",
+      "count": 1
+    },
+    {
+      "id": "component",
+      "label": "component",
+      "count": 1
+    },
+    {
+      "id": "size",
+      "label": "size",
+      "count": 1
+    },
+    {
+      "id": "license",
+      "label": "license",
+      "count": 1
+    },
+    {
+      "id": "compliance",
+      "label": "compliance",
+      "count": 1
+    },
+    {
+      "id": "pagespeed",
+      "label": "pagespeed",
+      "count": 1
+    },
+    {
+      "id": "insights",
+      "label": "insights",
+      "count": 1
+    },
+    {
+      "id": "404",
+      "label": "404",
+      "count": 1
+    },
+    {
+      "id": "builder",
+      "label": "builder",
+      "count": 1
+    },
+    {
+      "id": "coupling",
+      "label": "coupling",
+      "count": 1
+    },
+    {
+      "id": "freshness",
+      "label": "freshness",
+      "count": 1
+    },
+    {
+      "id": "scores",
+      "label": "scores",
+      "count": 1
+    },
+    {
+      "id": "visionary",
+      "label": "visionary",
+      "count": 1
+    },
+    {
+      "id": "experience",
+      "label": "experience",
+      "count": 1
+    },
+    {
+      "id": "showcase",
+      "label": "showcase",
+      "count": 1
+    },
+    {
+      "id": "browse",
+      "label": "browse",
+      "count": 1
+    },
+    {
+      "id": "see",
+      "label": "see",
+      "count": 1
+    },
+    {
+      "id": "feature",
+      "label": "feature",
+      "count": 1
+    },
+    {
+      "id": "guardrails",
+      "label": "guardrails",
+      "count": 1
+    },
+    {
+      "id": "engines",
+      "label": "engines",
+      "count": 1
+    },
+    {
+      "id": "beyond",
+      "label": "beyond",
+      "count": 1
+    },
+    {
+      "id": "actions",
+      "label": "actions",
+      "count": 1
+    },
+    {
+      "id": "command",
+      "label": "command",
+      "count": 1
+    },
+    {
+      "id": "center",
+      "label": "center",
+      "count": 1
+    },
+    {
+      "id": "card",
+      "label": "card",
+      "count": 1
+    },
+    {
+      "id": "spotlight",
+      "label": "spotlight",
+      "count": 1
+    },
+    {
+      "id": "outcome‑focused",
+      "label": "outcome‑focused",
+      "count": 1
+    },
+    {
+      "id": "suites",
+      "label": "suites",
+      "count": 1
+    },
+    {
+      "id": "suite",
+      "label": "suite",
+      "count": 1
+    },
+    {
+      "id": "superpowers",
+      "label": "superpowers",
+      "count": 1
+    },
+    {
+      "id": "get",
+      "label": "get",
+      "count": 1
+    },
+    {
+      "id": "started",
+      "label": "started",
+      "count": 1
+    },
+    {
+      "id": "minutes",
+      "label": "minutes",
+      "count": 1
+    },
+    {
+      "id": "outcomes",
+      "label": "outcomes",
+      "count": 1
+    },
+    {
+      "id": "catalog",
+      "label": "catalog",
+      "count": 1
+    },
+    {
+      "id": "platform",
+      "label": "platform",
+      "count": 1
+    },
+    {
+      "id": "modules",
+      "label": "modules",
+      "count": 1
+    },
+    {
+      "id": "neural",
+      "label": "neural",
+      "count": 1
+    },
+    {
+      "id": "matrix",
+      "label": "matrix",
+      "count": 1
+    },
+    {
+      "id": "extended",
+      "label": "extended",
+      "count": 1
+    },
+    {
+      "id": "directory",
+      "label": "directory",
+      "count": 1
+    },
+    {
+      "id": "capability",
+      "label": "capability",
+      "count": 1
+    },
+    {
+      "id": "deep",
+      "label": "deep",
+      "count": 1
+    },
+    {
+      "id": "links",
+      "label": "links",
+      "count": 1
+    },
+    {
+      "id": "use",
+      "label": "use",
+      "count": 1
+    },
+    {
+      "id": "cases",
+      "label": "cases",
+      "count": 1
+    },
+    {
+      "id": "live",
+      "label": "live",
+      "count": 1
+    },
+    {
+      "id": "impact",
+      "label": "impact",
+      "count": 1
+    },
+    {
+      "id": "why",
+      "label": "why",
+      "count": 1
+    },
+    {
+      "id": "value",
+      "label": "value",
+      "count": 1
+    },
+    {
+      "id": "pillars",
+      "label": "pillars",
+      "count": 1
+    },
+    {
+      "id": "practice",
+      "label": "practice",
+      "count": 1
+    },
+    {
+      "id": "tailored",
+      "label": "tailored",
+      "count": 1
+    },
+    {
+      "id": "team",
+      "label": "team",
+      "count": 1
+    },
+    {
+      "id": "ecosystem",
+      "label": "ecosystem",
+      "count": 1
+    },
+    {
+      "id": "integrations",
+      "label": "integrations",
+      "count": 1
+    },
+    {
+      "id": "supabase",
+      "label": "supabase",
+      "count": 1
+    },
+    {
+      "id": "framer",
+      "label": "framer",
+      "count": 1
+    },
+    {
+      "id": "motion",
+      "label": "motion",
+      "count": 1
+    },
+    {
+      "id": "quality",
+      "label": "quality",
+      "count": 1
+    },
+    {
+      "id": "gates",
+      "label": "gates",
+      "count": 1
+    },
+    {
+      "id": "quick",
+      "label": "quick",
+      "count": 1
+    },
+    {
+      "id": "start",
+      "label": "start",
+      "count": 1
+    },
+    {
+      "id": "ready",
+      "label": "ready",
+      "count": 1
+    },
+    {
+      "id": "build",
+      "label": "build",
+      "count": 1
+    },
+    {
+      "id": "agents",
+      "label": "agents",
+      "count": 1
+    },
+    {
+      "id": "gallery",
+      "label": "gallery",
+      "count": 1
+    },
+    {
+      "id": "label",
+      "label": "label",
+      "count": 1
+    },
+    {
+      "id": "auto‑promoted",
+      "label": "auto‑promoted",
+      "count": 1
+    },
+    {
+      "id": "highlights",
+      "label": "highlights",
+      "count": 1
+    },
+    {
+      "id": "homepage",
+      "label": "homepage",
+      "count": 1
+    },
+    {
+      "id": "indexing",
+      "label": "indexing",
+      "count": 1
+    },
+    {
+      "id": "knowledge",
+      "label": "knowledge",
+      "count": 1
+    },
+    {
+      "id": "fast",
+      "label": "fast",
+      "count": 1
+    },
+    {
+      "id": "promoter",
+      "label": "promoter",
+      "count": 1
+    },
+    {
+      "id": "marketing",
+      "label": "marketing",
+      "count": 1
+    },
+    {
+      "id": "promo",
+      "label": "promo",
+      "count": 1
+    },
+    {
+      "id": "orchestrator",
+      "label": "orchestrator",
+      "count": 1
+    },
+    {
+      "id": "continuous",
+      "label": "continuous",
+      "count": 1
+    },
+    {
+      "id": "advertiser",
+      "label": "advertiser",
+      "count": 1
+    },
+    {
+      "id": "hyper",
+      "label": "hyper",
+      "count": 1
+    },
+    {
+      "id": "accelerator",
+      "label": "accelerator",
+      "count": 1
+    },
+    {
+      "id": "innovation",
+      "label": "innovation",
+      "count": 1
+    },
+    {
+      "id": "lab",
+      "label": "lab",
+      "count": 1
+    },
+    {
+      "id": "auto",
+      "label": "auto",
+      "count": 1
+    },
+    {
+      "id": "scheduler",
+      "label": "scheduler",
+      "count": 1
+    },
+    {
+      "id": "broken",
+      "label": "broken",
+      "count": 1
+    },
+    {
+      "id": "image",
+      "label": "image",
+      "count": 1
+    },
+    {
+      "id": "seo",
+      "label": "seo",
+      "count": 1
+    },
+    {
+      "id": "audit",
+      "label": "audit",
+      "count": 1
+    },
+    {
+      "id": "trends",
+      "label": "trends",
+      "count": 1
+    },
+    {
+      "id": "radar",
+      "label": "radar",
+      "count": 1
+    },
+    {
+      "id": "todo",
+      "label": "todo",
+      "count": 1
+    },
+    {
+      "id": "fixme",
+      "label": "fixme",
+      "count": 1
+    },
+    {
+      "id": "workflows",
+      "label": "workflows",
+      "count": 1
+    },
+    {
+      "id": "disabled",
+      "label": "disabled",
+      "count": 1
+    },
+    {
+      "id": "autonomous-content-scanner",
+      "label": "autonomous-content-scanner",
+      "count": 1
+    },
+    {
+      "id": "yml",
+      "label": "yml",
+      "count": 1
+    },
+    {
+      "id": "todo-issue-sync",
+      "label": "todo-issue-sync",
+      "count": 1
+    },
+    {
+      "id": "data",
+      "label": "data",
+      "count": 1
+    },
+    {
+      "id": "reports",
+      "label": "reports",
+      "count": 1
+    },
+    {
+      "id": "external-links",
+      "label": "external-links",
+      "count": 1
+    },
+    {
+      "id": "external-links-1754934673584",
+      "label": "external-links-1754934673584",
+      "count": 1
+    },
+    {
+      "id": "json",
+      "label": "json",
+      "count": 1
+    },
+    {
+      "id": "external-links-1754934698424",
+      "label": "external-links-1754934698424",
+      "count": 1
+    },
+    {
+      "id": "external-links-1754935976218",
+      "label": "external-links-1754935976218",
+      "count": 1
+    },
+    {
+      "id": "external-links-1754936019100",
+      "label": "external-links-1754936019100",
+      "count": 1
+    },
+    {
+      "id": "external-links-1754936059379",
+      "label": "external-links-1754936059379",
+      "count": 1
+    },
+    {
+      "id": "external-links-1754936083279",
+      "label": "external-links-1754936083279",
+      "count": 1
+    },
+    {
+      "id": "external-links-1754944498414",
+      "label": "external-links-1754944498414",
+      "count": 1
+    },
+    {
+      "id": "external-links-1754944541119",
+      "label": "external-links-1754944541119",
+      "count": 1
+    },
+    {
+      "id": "link-sentinel",
+      "label": "link-sentinel",
+      "count": 1
+    },
+    {
+      "id": "report-2025-08-11t17-51-16-470z",
+      "label": "report-2025-08-11t17-51-16-470z",
+      "count": 1
+    },
+    {
+      "id": "report-2025-08-11t18-14-21-632z",
+      "label": "report-2025-08-11t18-14-21-632z",
+      "count": 1
+    },
+    {
+      "id": "report-2025-08-11t20-34-56-983z",
+      "label": "report-2025-08-11t20-34-56-983z",
+      "count": 1
+    },
+    {
+      "id": "repo-knowledge-graph",
+      "label": "repo-knowledge-graph",
+      "count": 1
+    },
+    {
+      "id": "docs",
+      "label": "docs",
+      "count": 1
+    },
+    {
+      "id": "changelog_ai",
+      "label": "changelog_ai",
+      "count": 1
+    },
+    {
+      "id": "todo_report",
+      "label": "todo_report",
+      "count": 1
+    },
+    {
+      "id": "functions",
+      "label": "functions",
+      "count": 1
+    },
+    {
+      "id": "functions-manifest",
+      "label": "functions-manifest",
+      "count": 1
+    },
+    {
+      "id": "todo-scanner-runner",
+      "label": "todo-scanner-runner",
+      "count": 1
+    },
+    {
+      "id": "todo-summary-runner",
+      "label": "todo-summary-runner",
+      "count": 1
+    },
+    {
+      "id": "tsx",
+      "label": "tsx",
+      "count": 1
+    },
+    {
+      "id": "main",
+      "label": "main",
+      "count": 1
+    },
+    {
+      "id": "public",
+      "label": "public",
+      "count": 1
+    },
+    {
+      "id": "content-registry",
+      "label": "content-registry",
+      "count": 1
+    },
+    {
+      "id": "todo-summary",
+      "label": "todo-summary",
+      "count": 1
+    },
+    {
+      "id": "search",
+      "label": "search",
+      "count": 1
+    },
+    {
+      "id": "release",
+      "label": "release",
+      "count": 1
+    },
+    {
+      "id": "draft",
+      "label": "draft",
+      "count": 1
+    },
+    {
+      "id": "overview",
+      "label": "overview",
+      "count": 1
+    },
+    {
+      "id": "top",
+      "label": "top",
+      "count": 1
+    },
+    {
+      "id": "call",
+      "label": "call",
+      "count": 1
+    },
+    {
+      "id": "action",
+      "label": "action",
+      "count": 1
+    },
+    {
+      "id": "2025-08-11",
+      "label": "2025-08-11",
+      "count": 1
+    },
+    {
+      "id": "fixes",
+      "label": "fixes",
+      "count": 1
+    },
+    {
+      "id": "chores",
+      "label": "chores",
+      "count": 1
+    },
+    {
+      "id": "other",
+      "label": "other",
+      "count": 1
+    },
+    {
+      "id": "autogenerated",
+      "label": "autogenerated",
+      "count": 1
+    },
+    {
+      "id": "2025-08-09",
+      "label": "2025-08-09",
+      "count": 1
+    },
+    {
+      "id": "exports",
+      "label": "exports",
+      "count": 1
+    }
+  ],
+  "edges": [
+    {
+      "source": "automation",
+      "target": "front",
+      "weight": 4
+    },
+    {
+      "source": "capabilities",
+      "target": "features",
+      "weight": 3
+    },
+    {
+      "source": "features",
+      "target": "front",
+      "weight": 3
+    },
+    {
+      "source": "features",
+      "target": "hub",
+      "weight": 3
+    },
+    {
+      "source": "automation",
+      "target": "features",
+      "weight": 3
+    },
+    {
+      "source": "capabilities",
+      "target": "front",
+      "weight": 3
+    },
+    {
+      "source": "capabilities",
+      "target": "hub",
+      "weight": 3
+    },
+    {
+      "source": "automation",
+      "target": "capabilities",
+      "weight": 3
+    },
+    {
+      "source": "front",
+      "target": "hub",
+      "weight": 3
+    },
+    {
+      "source": "automation",
+      "target": "hub",
+      "weight": 3
+    },
+    {
+      "source": "health",
+      "target": "site",
+      "weight": 2
+    },
+    {
+      "source": "autonomous",
+      "target": "cloud",
+      "weight": 2
+    },
+    {
+      "source": "automations",
+      "target": "autonomous",
+      "weight": 2
+    },
+    {
+      "source": "autonomous",
+      "target": "features",
+      "weight": 2
+    },
+    {
+      "source": "autonomous",
+      "target": "title",
+      "weight": 2
+    },
+    {
+      "source": "autonomous",
+      "target": "capabilities",
+      "weight": 2
+    },
+    {
+      "source": "autonomous",
+      "target": "futuristic",
+      "weight": 2
+    },
+    {
+      "source": "autonomous",
+      "target": "front",
+      "weight": 2
+    },
+    {
+      "source": "autonomous",
+      "target": "hub",
+      "weight": 2
+    },
+    {
+      "source": "automation",
+      "target": "autonomous",
+      "weight": 2
+    },
+    {
+      "source": "autonomous",
+      "target": "map",
+      "weight": 2
+    },
+    {
+      "source": "autonomous",
+      "target": "explore",
+      "weight": 2
+    },
+    {
+      "source": "automations",
+      "target": "cloud",
+      "weight": 2
+    },
+    {
+      "source": "cloud",
+      "target": "features",
+      "weight": 2
+    },
+    {
+      "source": "cloud",
+      "target": "title",
+      "weight": 2
+    },
+    {
+      "source": "capabilities",
+      "target": "cloud",
+      "weight": 2
+    },
+    {
+      "source": "cloud",
+      "target": "futuristic",
+      "weight": 2
+    },
+    {
+      "source": "cloud",
+      "target": "front",
+      "weight": 2
+    },
+    {
+      "source": "cloud",
+      "target": "hub",
+      "weight": 2
+    },
+    {
+      "source": "automation",
+      "target": "cloud",
+      "weight": 2
+    },
+    {
+      "source": "cloud",
+      "target": "map",
+      "weight": 2
+    },
+    {
+      "source": "cloud",
+      "target": "explore",
+      "weight": 2
+    },
+    {
+      "source": "automations",
+      "target": "features",
+      "weight": 2
+    },
+    {
+      "source": "automations",
+      "target": "title",
+      "weight": 2
+    },
+    {
+      "source": "automations",
+      "target": "capabilities",
+      "weight": 2
+    },
+    {
+      "source": "automations",
+      "target": "futuristic",
+      "weight": 2
+    },
+    {
+      "source": "automations",
+      "target": "front",
+      "weight": 2
+    },
+    {
+      "source": "automations",
+      "target": "hub",
+      "weight": 2
+    },
+    {
+      "source": "automation",
+      "target": "automations",
+      "weight": 2
+    },
+    {
+      "source": "automations",
+      "target": "map",
+      "weight": 2
+    },
+    {
+      "source": "automations",
+      "target": "explore",
+      "weight": 2
+    },
+    {
+      "source": "features",
+      "target": "title",
+      "weight": 2
+    },
+    {
+      "source": "features",
+      "target": "futuristic",
+      "weight": 2
+    },
+    {
+      "source": "enhancer",
+      "target": "features",
+      "weight": 2
+    },
+    {
+      "source": "content",
+      "target": "features",
+      "weight": 2
+    },
+    {
+      "source": "dependency",
+      "target": "features",
+      "weight": 2
+    },
+    {
+      "source": "auto‑upgrade",
+      "target": "features",
+      "weight": 2
+    },
+    {
+      "source": "features",
+      "target": "scanner",
+      "weight": 2
+    },
+    {
+      "source": "features",
+      "target": "runner",
+      "weight": 2
+    },
+    {
+      "source": "features",
+      "target": "map",
+      "weight": 2
+    },
+    {
+      "source": "features",
+      "target": "graph",
+      "weight": 2
+    },
+    {
+      "source": "explore",
+      "target": "features",
+      "weight": 2
+    },
+    {
+      "source": "capabilities",
+      "target": "title",
+      "weight": 2
+    },
+    {
+      "source": "futuristic",
+      "target": "title",
+      "weight": 2
+    },
+    {
+      "source": "front",
+      "target": "title",
+      "weight": 2
+    },
+    {
+      "source": "hub",
+      "target": "title",
+      "weight": 2
+    },
+    {
+      "source": "automation",
+      "target": "title",
+      "weight": 2
+    },
+    {
+      "source": "map",
+      "target": "title",
+      "weight": 2
+    },
+    {
+      "source": "explore",
+      "target": "title",
+      "weight": 2
+    },
+    {
+      "source": "capabilities",
+      "target": "futuristic",
+      "weight": 2
+    },
+    {
+      "source": "capabilities",
+      "target": "enhancer",
+      "weight": 2
+    },
+    {
+      "source": "capabilities",
+      "target": "content",
+      "weight": 2
+    },
+    {
+      "source": "capabilities",
+      "target": "dependency",
+      "weight": 2
+    },
+    {
+      "source": "auto‑upgrade",
+      "target": "capabilities",
+      "weight": 2
+    },
+    {
+      "source": "capabilities",
+      "target": "scanner",
+      "weight": 2
+    },
+    {
+      "source": "capabilities",
+      "target": "runner",
+      "weight": 2
+    },
+    {
+      "source": "capabilities",
+      "target": "map",
+      "weight": 2
+    },
+    {
+      "source": "capabilities",
+      "target": "graph",
+      "weight": 2
+    },
+    {
+      "source": "capabilities",
+      "target": "explore",
+      "weight": 2
+    },
+    {
+      "source": "front",
+      "target": "futuristic",
+      "weight": 2
+    },
+    {
+      "source": "futuristic",
+      "target": "hub",
+      "weight": 2
+    },
+    {
+      "source": "automation",
+      "target": "futuristic",
+      "weight": 2
+    },
+    {
+      "source": "futuristic",
+      "target": "map",
+      "weight": 2
+    },
+    {
+      "source": "explore",
+      "target": "futuristic",
+      "weight": 2
+    },
+    {
+      "source": "enhancer",
+      "target": "front",
+      "weight": 2
+    },
+    {
+      "source": "content",
+      "target": "front",
+      "weight": 2
+    },
+    {
+      "source": "dependency",
+      "target": "front",
+      "weight": 2
+    },
+    {
+      "source": "auto‑upgrade",
+      "target": "front",
+      "weight": 2
+    },
+    {
+      "source": "front",
+      "target": "scanner",
+      "weight": 2
+    },
+    {
+      "source": "front",
+      "target": "pages",
+      "weight": 2
+    },
+    {
+      "source": "front",
+      "target": "report",
+      "weight": 2
+    },
+    {
+      "source": "front",
+      "target": "runner",
+      "weight": 2
+    },
+    {
+      "source": "front",
+      "target": "map",
+      "weight": 2
+    },
+    {
+      "source": "front",
+      "target": "graph",
+      "weight": 2
+    },
+    {
+      "source": "explore",
+      "target": "front",
+      "weight": 2
+    },
+    {
+      "source": "enhancer",
+      "target": "hub",
+      "weight": 2
+    },
+    {
+      "source": "content",
+      "target": "hub",
+      "weight": 2
+    },
+    {
+      "source": "dependency",
+      "target": "hub",
+      "weight": 2
+    },
+    {
+      "source": "auto‑upgrade",
+      "target": "hub",
+      "weight": 2
+    },
+    {
+      "source": "hub",
+      "target": "scanner",
+      "weight": 2
+    },
+    {
+      "source": "hub",
+      "target": "runner",
+      "weight": 2
+    },
+    {
+      "source": "hub",
+      "target": "map",
+      "weight": 2
+    },
+    {
+      "source": "graph",
+      "target": "hub",
+      "weight": 2
+    },
+    {
+      "source": "explore",
+      "target": "hub",
+      "weight": 2
+    },
+    {
+      "source": "automation",
+      "target": "enhancer",
+      "weight": 2
+    },
+    {
+      "source": "content",
+      "target": "enhancer",
+      "weight": 2
+    },
+    {
+      "source": "dependency",
+      "target": "enhancer",
+      "weight": 2
+    },
+    {
+      "source": "auto‑upgrade",
+      "target": "enhancer",
+      "weight": 2
+    },
+    {
+      "source": "enhancer",
+      "target": "scanner",
+      "weight": 2
+    },
+    {
+      "source": "enhancer",
+      "target": "runner",
+      "weight": 2
+    },
+    {
+      "source": "enhancer",
+      "target": "graph",
+      "weight": 2
+    },
+    {
+      "source": "automation",
+      "target": "content",
+      "weight": 2
+    },
+    {
+      "source": "automation",
+      "target": "dependency",
+      "weight": 2
+    },
+    {
+      "source": "automation",
+      "target": "auto‑upgrade",
+      "weight": 2
+    },
+    {
+      "source": "automation",
+      "target": "scanner",
+      "weight": 2
+    },
+    {
+      "source": "automation",
+      "target": "pages",
+      "weight": 2
+    },
+    {
+      "source": "automation",
+      "target": "report",
+      "weight": 2
+    },
+    {
+      "source": "automation",
+      "target": "runner",
+      "weight": 2
+    },
+    {
+      "source": "automation",
+      "target": "map",
+      "weight": 2
+    },
+    {
+      "source": "automation",
+      "target": "graph",
+      "weight": 2
+    },
+    {
+      "source": "automation",
+      "target": "explore",
+      "weight": 2
+    },
+    {
+      "source": "content",
+      "target": "dependency",
+      "weight": 2
+    },
+    {
+      "source": "auto‑upgrade",
+      "target": "content",
+      "weight": 2
+    },
+    {
+      "source": "content",
+      "target": "scanner",
+      "weight": 2
+    },
+    {
+      "source": "content",
+      "target": "runner",
+      "weight": 2
+    },
+    {
+      "source": "content",
+      "target": "graph",
+      "weight": 2
+    },
+    {
+      "source": "auto‑upgrade",
+      "target": "dependency",
+      "weight": 2
+    },
+    {
+      "source": "dependency",
+      "target": "scanner",
+      "weight": 2
+    },
+    {
+      "source": "dependency",
+      "target": "runner",
+      "weight": 2
+    },
+    {
+      "source": "dependency",
+      "target": "graph",
+      "weight": 2
+    },
+    {
+      "source": "auto‑upgrade",
+      "target": "scanner",
+      "weight": 2
+    },
+    {
+      "source": "auto‑upgrade",
+      "target": "runner",
+      "weight": 2
+    },
+    {
+      "source": "auto‑upgrade",
+      "target": "graph",
+      "weight": 2
+    },
+    {
+      "source": "report",
+      "target": "unused",
+      "weight": 2
+    },
+    {
+      "source": "runner",
+      "target": "scanner",
+      "weight": 2
+    },
+    {
+      "source": "graph",
+      "target": "scanner",
+      "weight": 2
+    },
+    {
+      "source": "pages",
+      "target": "report",
+      "weight": 2
+    },
+    {
+      "source": "graph",
+      "target": "runner",
+      "weight": 2
+    },
+    {
+      "source": "explore",
+      "target": "map",
+      "weight": 2
+    },
+    {
+      "source": "benefits",
+      "target": "front",
+      "weight": 2
+    },
+    {
+      "source": "front",
+      "target": "github",
+      "weight": 2
+    },
+    {
+      "source": "front",
+      "target": "netlify",
+      "weight": 2
+    },
+    {
+      "source": "benefits",
+      "target": "features",
+      "weight": 2
+    },
+    {
+      "source": "benefits",
+      "target": "capabilities",
+      "weight": 2
+    },
+    {
+      "source": "automation",
+      "target": "benefits",
+      "weight": 2
+    },
+    {
+      "source": "benefits",
+      "target": "hub",
+      "weight": 2
+    },
+    {
+      "source": "automation",
+      "target": "github",
+      "weight": 2
+    },
+    {
+      "source": "automation",
+      "target": "netlify",
+      "weight": 2
+    },
+    {
+      "source": "github",
+      "target": "netlify",
+      "weight": 2
+    },
+    {
+      "source": "automation",
+      "target": "index",
+      "weight": 2
+    },
+    {
+      "source": "front",
+      "target": "index",
+      "weight": 2
+    },
+    {
+      "source": "autonomous",
+      "target": "how",
+      "weight": 1
+    },
+    {
+      "source": "autonomous",
+      "target": "works",
+      "weight": 1
+    },
+    {
+      "source": "autonomous",
+      "target": "templates",
+      "weight": 1
+    },
+    {
+      "source": "autonomous",
+      "target": "systems",
+      "weight": 1
+    },
+    {
+      "source": "automation‑driven",
+      "target": "autonomous",
+      "weight": 1
+    },
+    {
+      "source": "autonomous",
+      "target": "on‑demand",
+      "weight": 1
+    },
+    {
+      "source": "autonomous",
+      "target": "enhancer",
+      "weight": 1
+    },
+    {
+      "source": "autonomous",
+      "target": "engine",
+      "weight": 1
+    },
+    {
+      "source": "autonomous",
+      "target": "new",
+      "weight": 1
+    },
+    {
+      "source": "autonomous",
+      "target": "tools",
+      "weight": 1
+    },
+    {
+      "source": "autonomous",
+      "target": "tool",
+      "weight": 1
+    },
+    {
+      "source": "autonomous",
+      "target": "stale",
+      "weight": 1
+    },
+    {
+      "source": "autonomous",
+      "target": "content",
+      "weight": 1
+    },
+    {
+      "source": "auditor",
+      "target": "autonomous",
+      "weight": 1
+    },
+    {
+      "source": "autonomous",
+      "target": "dependency",
+      "weight": 1
+    },
+    {
+      "source": "autonomous",
+      "target": "auto‑upgrade",
+      "weight": 1
+    },
+    {
+      "source": "autonomous",
+      "target": "unused",
+      "weight": 1
+    },
+    {
+      "source": "autonomous",
+      "target": "media",
+      "weight": 1
+    },
+    {
+      "source": "autonomous",
+      "target": "scanner",
+      "weight": 1
+    },
+    {
+      "source": "autonomous",
+      "target": "orphan",
+      "weight": 1
+    },
+    {
+      "source": "autonomous",
+      "target": "pages",
+      "weight": 1
+    },
+    {
+      "source": "autonomous",
+      "target": "detector",
+      "weight": 1
+    },
+    {
+      "source": "autonomous",
+      "target": "component",
+      "weight": 1
+    },
+    {
+      "source": "autonomous",
+      "target": "size",
+      "weight": 1
+    },
+    {
+      "source": "autonomous",
+      "target": "report",
+      "weight": 1
+    },
+    {
+      "source": "autonomous",
+      "target": "license",
+      "weight": 1
+    },
+    {
+      "source": "autonomous",
+      "target": "compliance",
+      "weight": 1
+    },
+    {
+      "source": "autonomous",
+      "target": "pagespeed",
+      "weight": 1
+    },
+    {
+      "source": "autonomous",
+      "target": "insights",
+      "weight": 1
+    },
+    {
+      "source": "autonomous",
+      "target": "runner",
+      "weight": 1
+    },
+    {
+      "source": "404",
+      "target": "autonomous",
+      "weight": 1
+    },
+    {
+      "source": "autonomous",
+      "target": "builder",
+      "weight": 1
+    },
+    {
+      "source": "autonomous",
+      "target": "coupling",
+      "weight": 1
+    },
+    {
+      "source": "autonomous",
+      "target": "graph",
+      "weight": 1
+    },
+    {
+      "source": "autonomous",
+      "target": "freshness",
+      "weight": 1
+    },
+    {
+      "source": "autonomous",
+      "target": "scores",
+      "weight": 1
+    },
+    {
+      "source": "autonomous",
+      "target": "visionary",
+      "weight": 1
+    },
+    {
+      "source": "cloud",
+      "target": "how",
+      "weight": 1
+    },
+    {
+      "source": "cloud",
+      "target": "works",
+      "weight": 1
+    },
+    {
+      "source": "cloud",
+      "target": "templates",
+      "weight": 1
+    },
+    {
+      "source": "cloud",
+      "target": "systems",
+      "weight": 1
+    },
+    {
+      "source": "automation‑driven",
+      "target": "cloud",
+      "weight": 1
+    },
+    {
+      "source": "cloud",
+      "target": "on‑demand",
+      "weight": 1
+    },
+    {
+      "source": "cloud",
+      "target": "enhancer",
+      "weight": 1
+    },
+    {
+      "source": "cloud",
+      "target": "engine",
+      "weight": 1
+    },
+    {
+      "source": "cloud",
+      "target": "new",
+      "weight": 1
+    },
+    {
+      "source": "cloud",
+      "target": "tools",
+      "weight": 1
+    },
+    {
+      "source": "cloud",
+      "target": "tool",
+      "weight": 1
+    },
+    {
+      "source": "cloud",
+      "target": "stale",
+      "weight": 1
+    },
+    {
+      "source": "cloud",
+      "target": "content",
+      "weight": 1
+    },
+    {
+      "source": "auditor",
+      "target": "cloud",
+      "weight": 1
+    },
+    {
+      "source": "cloud",
+      "target": "dependency",
+      "weight": 1
+    },
+    {
+      "source": "auto‑upgrade",
+      "target": "cloud",
+      "weight": 1
+    },
+    {
+      "source": "cloud",
+      "target": "unused",
+      "weight": 1
+    },
+    {
+      "source": "cloud",
+      "target": "media",
+      "weight": 1
+    },
+    {
+      "source": "cloud",
+      "target": "scanner",
+      "weight": 1
+    },
+    {
+      "source": "cloud",
+      "target": "orphan",
+      "weight": 1
+    },
+    {
+      "source": "cloud",
+      "target": "pages",
+      "weight": 1
+    },
+    {
+      "source": "cloud",
+      "target": "detector",
+      "weight": 1
+    },
+    {
+      "source": "cloud",
+      "target": "component",
+      "weight": 1
+    },
+    {
+      "source": "cloud",
+      "target": "size",
+      "weight": 1
+    },
+    {
+      "source": "cloud",
+      "target": "report",
+      "weight": 1
+    },
+    {
+      "source": "cloud",
+      "target": "license",
+      "weight": 1
+    },
+    {
+      "source": "cloud",
+      "target": "compliance",
+      "weight": 1
+    },
+    {
+      "source": "cloud",
+      "target": "pagespeed",
+      "weight": 1
+    },
+    {
+      "source": "cloud",
+      "target": "insights",
+      "weight": 1
+    },
+    {
+      "source": "cloud",
+      "target": "runner",
+      "weight": 1
+    },
+    {
+      "source": "404",
+      "target": "cloud",
+      "weight": 1
+    },
+    {
+      "source": "builder",
+      "target": "cloud",
+      "weight": 1
+    },
+    {
+      "source": "cloud",
+      "target": "coupling",
+      "weight": 1
+    },
+    {
+      "source": "cloud",
+      "target": "graph",
+      "weight": 1
+    },
+    {
+      "source": "cloud",
+      "target": "freshness",
+      "weight": 1
+    },
+    {
+      "source": "cloud",
+      "target": "scores",
+      "weight": 1
+    },
+    {
+      "source": "cloud",
+      "target": "visionary",
+      "weight": 1
+    },
+    {
+      "source": "automations",
+      "target": "how",
+      "weight": 1
+    },
+    {
+      "source": "automations",
+      "target": "works",
+      "weight": 1
+    },
+    {
+      "source": "automations",
+      "target": "templates",
+      "weight": 1
+    },
+    {
+      "source": "automations",
+      "target": "systems",
+      "weight": 1
+    },
+    {
+      "source": "automations",
+      "target": "automation‑driven",
+      "weight": 1
+    },
+    {
+      "source": "automations",
+      "target": "on‑demand",
+      "weight": 1
+    },
+    {
+      "source": "automations",
+      "target": "enhancer",
+      "weight": 1
+    },
+    {
+      "source": "automations",
+      "target": "engine",
+      "weight": 1
+    },
+    {
+      "source": "automations",
+      "target": "new",
+      "weight": 1
+    },
+    {
+      "source": "automations",
+      "target": "tools",
+      "weight": 1
+    },
+    {
+      "source": "automations",
+      "target": "tool",
+      "weight": 1
+    },
+    {
+      "source": "automations",
+      "target": "stale",
+      "weight": 1
+    },
+    {
+      "source": "automations",
+      "target": "content",
+      "weight": 1
+    },
+    {
+      "source": "auditor",
+      "target": "automations",
+      "weight": 1
+    },
+    {
+      "source": "automations",
+      "target": "dependency",
+      "weight": 1
+    },
+    {
+      "source": "automations",
+      "target": "auto‑upgrade",
+      "weight": 1
+    },
+    {
+      "source": "automations",
+      "target": "unused",
+      "weight": 1
+    },
+    {
+      "source": "automations",
+      "target": "media",
+      "weight": 1
+    },
+    {
+      "source": "automations",
+      "target": "scanner",
+      "weight": 1
+    },
+    {
+      "source": "automations",
+      "target": "orphan",
+      "weight": 1
+    },
+    {
+      "source": "automations",
+      "target": "pages",
+      "weight": 1
+    },
+    {
+      "source": "automations",
+      "target": "detector",
+      "weight": 1
+    },
+    {
+      "source": "automations",
+      "target": "component",
+      "weight": 1
+    },
+    {
+      "source": "automations",
+      "target": "size",
+      "weight": 1
+    },
+    {
+      "source": "automations",
+      "target": "report",
+      "weight": 1
+    },
+    {
+      "source": "automations",
+      "target": "license",
+      "weight": 1
+    },
+    {
+      "source": "automations",
+      "target": "compliance",
+      "weight": 1
+    },
+    {
+      "source": "automations",
+      "target": "pagespeed",
+      "weight": 1
+    },
+    {
+      "source": "automations",
+      "target": "insights",
+      "weight": 1
+    },
+    {
+      "source": "automations",
+      "target": "runner",
+      "weight": 1
+    },
+    {
+      "source": "404",
+      "target": "automations",
+      "weight": 1
+    },
+    {
+      "source": "automations",
+      "target": "builder",
+      "weight": 1
+    },
+    {
+      "source": "automations",
+      "target": "coupling",
+      "weight": 1
+    },
+    {
+      "source": "automations",
+      "target": "graph",
+      "weight": 1
+    },
+    {
+      "source": "automations",
+      "target": "freshness",
+      "weight": 1
+    },
+    {
+      "source": "automations",
+      "target": "scores",
+      "weight": 1
+    },
+    {
+      "source": "automations",
+      "target": "visionary",
+      "weight": 1
+    },
+    {
+      "source": "features",
+      "target": "how",
+      "weight": 1
+    },
+    {
+      "source": "features",
+      "target": "works",
+      "weight": 1
+    },
+    {
+      "source": "features",
+      "target": "templates",
+      "weight": 1
+    },
+    {
+      "source": "features",
+      "target": "systems",
+      "weight": 1
+    },
+    {
+      "source": "automation‑driven",
+      "target": "features",
+      "weight": 1
+    },
+    {
+      "source": "features",
+      "target": "on‑demand",
+      "weight": 1
+    },
+    {
+      "source": "engine",
+      "target": "features",
+      "weight": 1
+    },
+    {
+      "source": "features",
+      "target": "new",
+      "weight": 1
+    },
+    {
+      "source": "features",
+      "target": "tools",
+      "weight": 1
+    },
+    {
+      "source": "features",
+      "target": "tool",
+      "weight": 1
+    },
+    {
+      "source": "features",
+      "target": "stale",
+      "weight": 1
+    },
+    {
+      "source": "auditor",
+      "target": "features",
+      "weight": 1
+    },
+    {
+      "source": "features",
+      "target": "unused",
+      "weight": 1
+    },
+    {
+      "source": "features",
+      "target": "media",
+      "weight": 1
+    },
+    {
+      "source": "features",
+      "target": "orphan",
+      "weight": 1
+    },
+    {
+      "source": "features",
+      "target": "pages",
+      "weight": 1
+    },
+    {
+      "source": "detector",
+      "target": "features",
+      "weight": 1
+    },
+    {
+      "source": "component",
+      "target": "features",
+      "weight": 1
+    },
+    {
+      "source": "features",
+      "target": "size",
+      "weight": 1
+    },
+    {
+      "source": "features",
+      "target": "report",
+      "weight": 1
+    },
+    {
+      "source": "features",
+      "target": "license",
+      "weight": 1
+    },
+    {
+      "source": "compliance",
+      "target": "features",
+      "weight": 1
+    },
+    {
+      "source": "features",
+      "target": "pagespeed",
+      "weight": 1
+    },
+    {
+      "source": "features",
+      "target": "insights",
+      "weight": 1
+    },
+    {
+      "source": "404",
+      "target": "features",
+      "weight": 1
+    },
+    {
+      "source": "builder",
+      "target": "features",
+      "weight": 1
+    },
+    {
+      "source": "coupling",
+      "target": "features",
+      "weight": 1
+    },
+    {
+      "source": "features",
+      "target": "freshness",
+      "weight": 1
+    },
+    {
+      "source": "features",
+      "target": "scores",
+      "weight": 1
+    },
+    {
+      "source": "features",
+      "target": "visionary",
+      "weight": 1
+    },
+    {
+      "source": "how",
+      "target": "title",
+      "weight": 1
+    },
+    {
+      "source": "title",
+      "target": "works",
+      "weight": 1
+    },
+    {
+      "source": "templates",
+      "target": "title",
+      "weight": 1
+    },
+    {
+      "source": "systems",
+      "target": "title",
+      "weight": 1
+    },
+    {
+      "source": "automation‑driven",
+      "target": "title",
+      "weight": 1
+    },
+    {
+      "source": "on‑demand",
+      "target": "title",
+      "weight": 1
+    },
+    {
+      "source": "enhancer",
+      "target": "title",
+      "weight": 1
+    },
+    {
+      "source": "engine",
+      "target": "title",
+      "weight": 1
+    },
+    {
+      "source": "new",
+      "target": "title",
+      "weight": 1
+    },
+    {
+      "source": "title",
+      "target": "tools",
+      "weight": 1
+    },
+    {
+      "source": "title",
+      "target": "tool",
+      "weight": 1
+    },
+    {
+      "source": "stale",
+      "target": "title",
+      "weight": 1
+    },
+    {
+      "source": "content",
+      "target": "title",
+      "weight": 1
+    },
+    {
+      "source": "auditor",
+      "target": "title",
+      "weight": 1
+    },
+    {
+      "source": "dependency",
+      "target": "title",
+      "weight": 1
+    },
+    {
+      "source": "auto‑upgrade",
+      "target": "title",
+      "weight": 1
+    },
+    {
+      "source": "title",
+      "target": "unused",
+      "weight": 1
+    },
+    {
+      "source": "media",
+      "target": "title",
+      "weight": 1
+    },
+    {
+      "source": "scanner",
+      "target": "title",
+      "weight": 1
+    },
+    {
+      "source": "orphan",
+      "target": "title",
+      "weight": 1
+    },
+    {
+      "source": "pages",
+      "target": "title",
+      "weight": 1
+    },
+    {
+      "source": "detector",
+      "target": "title",
+      "weight": 1
+    },
+    {
+      "source": "component",
+      "target": "title",
+      "weight": 1
+    },
+    {
+      "source": "size",
+      "target": "title",
+      "weight": 1
+    },
+    {
+      "source": "report",
+      "target": "title",
+      "weight": 1
+    },
+    {
+      "source": "license",
+      "target": "title",
+      "weight": 1
+    },
+    {
+      "source": "compliance",
+      "target": "title",
+      "weight": 1
+    },
+    {
+      "source": "pagespeed",
+      "target": "title",
+      "weight": 1
+    },
+    {
+      "source": "insights",
+      "target": "title",
+      "weight": 1
+    },
+    {
+      "source": "runner",
+      "target": "title",
+      "weight": 1
+    },
+    {
+      "source": "404",
+      "target": "title",
+      "weight": 1
+    },
+    {
+      "source": "builder",
+      "target": "title",
+      "weight": 1
+    },
+    {
+      "source": "coupling",
+      "target": "title",
+      "weight": 1
+    },
+    {
+      "source": "graph",
+      "target": "title",
+      "weight": 1
+    },
+    {
+      "source": "freshness",
+      "target": "title",
+      "weight": 1
+    },
+    {
+      "source": "scores",
+      "target": "title",
+      "weight": 1
+    },
+    {
+      "source": "title",
+      "target": "visionary",
+      "weight": 1
+    },
+    {
+      "source": "how",
+      "target": "works",
+      "weight": 1
+    },
+    {
+      "source": "capabilities",
+      "target": "how",
+      "weight": 1
+    },
+    {
+      "source": "futuristic",
+      "target": "how",
+      "weight": 1
+    },
+    {
+      "source": "how",
+      "target": "templates",
+      "weight": 1
+    },
+    {
+      "source": "front",
+      "target": "how",
+      "weight": 1
+    },
+    {
+      "source": "how",
+      "target": "systems",
+      "weight": 1
+    },
+    {
+      "source": "how",
+      "target": "hub",
+      "weight": 1
+    },
+    {
+      "source": "automation‑driven",
+      "target": "how",
+      "weight": 1
+    },
+    {
+      "source": "how",
+      "target": "on‑demand",
+      "weight": 1
+    },
+    {
+      "source": "enhancer",
+      "target": "how",
+      "weight": 1
+    },
+    {
+      "source": "automation",
+      "target": "how",
+      "weight": 1
+    },
+    {
+      "source": "engine",
+      "target": "how",
+      "weight": 1
+    },
+    {
+      "source": "how",
+      "target": "new",
+      "weight": 1
+    },
+    {
+      "source": "how",
+      "target": "tools",
+      "weight": 1
+    },
+    {
+      "source": "how",
+      "target": "tool",
+      "weight": 1
+    },
+    {
+      "source": "how",
+      "target": "stale",
+      "weight": 1
+    },
+    {
+      "source": "content",
+      "target": "how",
+      "weight": 1
+    },
+    {
+      "source": "auditor",
+      "target": "how",
+      "weight": 1
+    },
+    {
+      "source": "dependency",
+      "target": "how",
+      "weight": 1
+    },
+    {
+      "source": "auto‑upgrade",
+      "target": "how",
+      "weight": 1
+    },
+    {
+      "source": "how",
+      "target": "unused",
+      "weight": 1
+    },
+    {
+      "source": "how",
+      "target": "media",
+      "weight": 1
+    },
+    {
+      "source": "how",
+      "target": "scanner",
+      "weight": 1
+    },
+    {
+      "source": "how",
+      "target": "orphan",
+      "weight": 1
+    },
+    {
+      "source": "how",
+      "target": "pages",
+      "weight": 1
+    },
+    {
+      "source": "detector",
+      "target": "how",
+      "weight": 1
+    },
+    {
+      "source": "component",
+      "target": "how",
+      "weight": 1
+    },
+    {
+      "source": "how",
+      "target": "size",
+      "weight": 1
+    },
+    {
+      "source": "how",
+      "target": "report",
+      "weight": 1
+    },
+    {
+      "source": "how",
+      "target": "license",
+      "weight": 1
+    },
+    {
+      "source": "compliance",
+      "target": "how",
+      "weight": 1
+    },
+    {
+      "source": "how",
+      "target": "pagespeed",
+      "weight": 1
+    },
+    {
+      "source": "how",
+      "target": "insights",
+      "weight": 1
+    },
+    {
+      "source": "how",
+      "target": "runner",
+      "weight": 1
+    },
+    {
+      "source": "404",
+      "target": "how",
+      "weight": 1
+    },
+    {
+      "source": "how",
+      "target": "map",
+      "weight": 1
+    },
+    {
+      "source": "builder",
+      "target": "how",
+      "weight": 1
+    },
+    {
+      "source": "coupling",
+      "target": "how",
+      "weight": 1
+    },
+    {
+      "source": "graph",
+      "target": "how",
+      "weight": 1
+    },
+    {
+      "source": "freshness",
+      "target": "how",
+      "weight": 1
+    },
+    {
+      "source": "how",
+      "target": "scores",
+      "weight": 1
+    },
+    {
+      "source": "explore",
+      "target": "how",
+      "weight": 1
+    },
+    {
+      "source": "how",
+      "target": "visionary",
+      "weight": 1
+    },
+    {
+      "source": "capabilities",
+      "target": "works",
+      "weight": 1
+    },
+    {
+      "source": "futuristic",
+      "target": "works",
+      "weight": 1
+    },
+    {
+      "source": "templates",
+      "target": "works",
+      "weight": 1
+    },
+    {
+      "source": "front",
+      "target": "works",
+      "weight": 1
+    },
+    {
+      "source": "systems",
+      "target": "works",
+      "weight": 1
+    },
+    {
+      "source": "hub",
+      "target": "works",
+      "weight": 1
+    },
+    {
+      "source": "automation‑driven",
+      "target": "works",
+      "weight": 1
+    },
+    {
+      "source": "on‑demand",
+      "target": "works",
+      "weight": 1
+    },
+    {
+      "source": "enhancer",
+      "target": "works",
+      "weight": 1
+    },
+    {
+      "source": "automation",
+      "target": "works",
+      "weight": 1
+    },
+    {
+      "source": "engine",
+      "target": "works",
+      "weight": 1
+    },
+    {
+      "source": "new",
+      "target": "works",
+      "weight": 1
+    },
+    {
+      "source": "tools",
+      "target": "works",
+      "weight": 1
+    },
+    {
+      "source": "tool",
+      "target": "works",
+      "weight": 1
+    },
+    {
+      "source": "stale",
+      "target": "works",
+      "weight": 1
+    },
+    {
+      "source": "content",
+      "target": "works",
+      "weight": 1
+    },
+    {
+      "source": "auditor",
+      "target": "works",
+      "weight": 1
+    },
+    {
+      "source": "dependency",
+      "target": "works",
+      "weight": 1
+    },
+    {
+      "source": "auto‑upgrade",
+      "target": "works",
+      "weight": 1
+    },
+    {
+      "source": "unused",
+      "target": "works",
+      "weight": 1
+    },
+    {
+      "source": "media",
+      "target": "works",
+      "weight": 1
+    },
+    {
+      "source": "scanner",
+      "target": "works",
+      "weight": 1
+    },
+    {
+      "source": "orphan",
+      "target": "works",
+      "weight": 1
+    },
+    {
+      "source": "pages",
+      "target": "works",
+      "weight": 1
+    },
+    {
+      "source": "detector",
+      "target": "works",
+      "weight": 1
+    },
+    {
+      "source": "component",
+      "target": "works",
+      "weight": 1
+    },
+    {
+      "source": "size",
+      "target": "works",
+      "weight": 1
+    },
+    {
+      "source": "report",
+      "target": "works",
+      "weight": 1
+    },
+    {
+      "source": "license",
+      "target": "works",
+      "weight": 1
+    },
+    {
+      "source": "compliance",
+      "target": "works",
+      "weight": 1
+    },
+    {
+      "source": "pagespeed",
+      "target": "works",
+      "weight": 1
+    },
+    {
+      "source": "insights",
+      "target": "works",
+      "weight": 1
+    },
+    {
+      "source": "runner",
+      "target": "works",
+      "weight": 1
+    },
+    {
+      "source": "404",
+      "target": "works",
+      "weight": 1
+    },
+    {
+      "source": "map",
+      "target": "works",
+      "weight": 1
+    },
+    {
+      "source": "builder",
+      "target": "works",
+      "weight": 1
+    },
+    {
+      "source": "coupling",
+      "target": "works",
+      "weight": 1
+    },
+    {
+      "source": "graph",
+      "target": "works",
+      "weight": 1
+    },
+    {
+      "source": "freshness",
+      "target": "works",
+      "weight": 1
+    },
+    {
+      "source": "scores",
+      "target": "works",
+      "weight": 1
+    },
+    {
+      "source": "explore",
+      "target": "works",
+      "weight": 1
+    },
+    {
+      "source": "visionary",
+      "target": "works",
+      "weight": 1
+    },
+    {
+      "source": "capabilities",
+      "target": "templates",
+      "weight": 1
+    },
+    {
+      "source": "capabilities",
+      "target": "systems",
+      "weight": 1
+    },
+    {
+      "source": "automation‑driven",
+      "target": "capabilities",
+      "weight": 1
+    },
+    {
+      "source": "capabilities",
+      "target": "on‑demand",
+      "weight": 1
+    },
+    {
+      "source": "capabilities",
+      "target": "engine",
+      "weight": 1
+    },
+    {
+      "source": "capabilities",
+      "target": "new",
+      "weight": 1
+    },
+    {
+      "source": "capabilities",
+      "target": "tools",
+      "weight": 1
+    },
+    {
+      "source": "capabilities",
+      "target": "tool",
+      "weight": 1
+    },
+    {
+      "source": "capabilities",
+      "target": "stale",
+      "weight": 1
+    },
+    {
+      "source": "auditor",
+      "target": "capabilities",
+      "weight": 1
+    },
+    {
+      "source": "capabilities",
+      "target": "unused",
+      "weight": 1
+    },
+    {
+      "source": "capabilities",
+      "target": "media",
+      "weight": 1
+    },
+    {
+      "source": "capabilities",
+      "target": "orphan",
+      "weight": 1
+    },
+    {
+      "source": "capabilities",
+      "target": "pages",
+      "weight": 1
+    },
+    {
+      "source": "capabilities",
+      "target": "detector",
+      "weight": 1
+    },
+    {
+      "source": "capabilities",
+      "target": "component",
+      "weight": 1
+    },
+    {
+      "source": "capabilities",
+      "target": "size",
+      "weight": 1
+    },
+    {
+      "source": "capabilities",
+      "target": "report",
+      "weight": 1
+    },
+    {
+      "source": "capabilities",
+      "target": "license",
+      "weight": 1
+    },
+    {
+      "source": "capabilities",
+      "target": "compliance",
+      "weight": 1
+    },
+    {
+      "source": "capabilities",
+      "target": "pagespeed",
+      "weight": 1
+    },
+    {
+      "source": "capabilities",
+      "target": "insights",
+      "weight": 1
+    },
+    {
+      "source": "404",
+      "target": "capabilities",
+      "weight": 1
+    },
+    {
+      "source": "builder",
+      "target": "capabilities",
+      "weight": 1
+    },
+    {
+      "source": "capabilities",
+      "target": "coupling",
+      "weight": 1
+    },
+    {
+      "source": "capabilities",
+      "target": "freshness",
+      "weight": 1
+    },
+    {
+      "source": "capabilities",
+      "target": "scores",
+      "weight": 1
+    },
+    {
+      "source": "capabilities",
+      "target": "visionary",
+      "weight": 1
+    },
+    {
+      "source": "futuristic",
+      "target": "templates",
+      "weight": 1
+    },
+    {
+      "source": "futuristic",
+      "target": "systems",
+      "weight": 1
+    },
+    {
+      "source": "automation‑driven",
+      "target": "futuristic",
+      "weight": 1
+    },
+    {
+      "source": "futuristic",
+      "target": "on‑demand",
+      "weight": 1
+    },
+    {
+      "source": "enhancer",
+      "target": "futuristic",
+      "weight": 1
+    },
+    {
+      "source": "engine",
+      "target": "futuristic",
+      "weight": 1
+    },
+    {
+      "source": "futuristic",
+      "target": "new",
+      "weight": 1
+    },
+    {
+      "source": "futuristic",
+      "target": "tools",
+      "weight": 1
+    },
+    {
+      "source": "futuristic",
+      "target": "tool",
+      "weight": 1
+    },
+    {
+      "source": "futuristic",
+      "target": "stale",
+      "weight": 1
+    },
+    {
+      "source": "content",
+      "target": "futuristic",
+      "weight": 1
+    },
+    {
+      "source": "auditor",
+      "target": "futuristic",
+      "weight": 1
+    },
+    {
+      "source": "dependency",
+      "target": "futuristic",
+      "weight": 1
+    },
+    {
+      "source": "auto‑upgrade",
+      "target": "futuristic",
+      "weight": 1
+    },
+    {
+      "source": "futuristic",
+      "target": "unused",
+      "weight": 1
+    },
+    {
+      "source": "futuristic",
+      "target": "media",
+      "weight": 1
+    },
+    {
+      "source": "futuristic",
+      "target": "scanner",
+      "weight": 1
+    },
+    {
+      "source": "futuristic",
+      "target": "orphan",
+      "weight": 1
+    },
+    {
+      "source": "futuristic",
+      "target": "pages",
+      "weight": 1
+    },
+    {
+      "source": "detector",
+      "target": "futuristic",
+      "weight": 1
+    },
+    {
+      "source": "component",
+      "target": "futuristic",
+      "weight": 1
+    },
+    {
+      "source": "futuristic",
+      "target": "size",
+      "weight": 1
+    },
+    {
+      "source": "futuristic",
+      "target": "report",
+      "weight": 1
+    },
+    {
+      "source": "futuristic",
+      "target": "license",
+      "weight": 1
+    },
+    {
+      "source": "compliance",
+      "target": "futuristic",
+      "weight": 1
+    },
+    {
+      "source": "futuristic",
+      "target": "pagespeed",
+      "weight": 1
+    },
+    {
+      "source": "futuristic",
+      "target": "insights",
+      "weight": 1
+    },
+    {
+      "source": "futuristic",
+      "target": "runner",
+      "weight": 1
+    },
+    {
+      "source": "404",
+      "target": "futuristic",
+      "weight": 1
+    },
+    {
+      "source": "builder",
+      "target": "futuristic",
+      "weight": 1
+    },
+    {
+      "source": "coupling",
+      "target": "futuristic",
+      "weight": 1
+    },
+    {
+      "source": "futuristic",
+      "target": "graph",
+      "weight": 1
+    },
+    {
+      "source": "freshness",
+      "target": "futuristic",
+      "weight": 1
+    },
+    {
+      "source": "futuristic",
+      "target": "scores",
+      "weight": 1
+    },
+    {
+      "source": "futuristic",
+      "target": "visionary",
+      "weight": 1
+    },
+    {
+      "source": "front",
+      "target": "templates",
+      "weight": 1
+    },
+    {
+      "source": "systems",
+      "target": "templates",
+      "weight": 1
+    },
+    {
+      "source": "hub",
+      "target": "templates",
+      "weight": 1
+    },
+    {
+      "source": "automation‑driven",
+      "target": "templates",
+      "weight": 1
+    },
+    {
+      "source": "on‑demand",
+      "target": "templates",
+      "weight": 1
+    },
+    {
+      "source": "enhancer",
+      "target": "templates",
+      "weight": 1
+    },
+    {
+      "source": "automation",
+      "target": "templates",
+      "weight": 1
+    },
+    {
+      "source": "engine",
+      "target": "templates",
+      "weight": 1
+    },
+    {
+      "source": "new",
+      "target": "templates",
+      "weight": 1
+    },
+    {
+      "source": "templates",
+      "target": "tools",
+      "weight": 1
+    },
+    {
+      "source": "templates",
+      "target": "tool",
+      "weight": 1
+    },
+    {
+      "source": "stale",
+      "target": "templates",
+      "weight": 1
+    },
+    {
+      "source": "content",
+      "target": "templates",
+      "weight": 1
+    },
+    {
+      "source": "auditor",
+      "target": "templates",
+      "weight": 1
+    },
+    {
+      "source": "dependency",
+      "target": "templates",
+      "weight": 1
+    },
+    {
+      "source": "auto‑upgrade",
+      "target": "templates",
+      "weight": 1
+    },
+    {
+      "source": "templates",
+      "target": "unused",
+      "weight": 1
+    },
+    {
+      "source": "media",
+      "target": "templates",
+      "weight": 1
+    },
+    {
+      "source": "scanner",
+      "target": "templates",
+      "weight": 1
+    },
+    {
+      "source": "orphan",
+      "target": "templates",
+      "weight": 1
+    },
+    {
+      "source": "pages",
+      "target": "templates",
+      "weight": 1
+    },
+    {
+      "source": "detector",
+      "target": "templates",
+      "weight": 1
+    },
+    {
+      "source": "component",
+      "target": "templates",
+      "weight": 1
+    },
+    {
+      "source": "size",
+      "target": "templates",
+      "weight": 1
+    },
+    {
+      "source": "report",
+      "target": "templates",
+      "weight": 1
+    },
+    {
+      "source": "license",
+      "target": "templates",
+      "weight": 1
+    },
+    {
+      "source": "compliance",
+      "target": "templates",
+      "weight": 1
+    },
+    {
+      "source": "pagespeed",
+      "target": "templates",
+      "weight": 1
+    },
+    {
+      "source": "insights",
+      "target": "templates",
+      "weight": 1
+    },
+    {
+      "source": "runner",
+      "target": "templates",
+      "weight": 1
+    },
+    {
+      "source": "404",
+      "target": "templates",
+      "weight": 1
+    },
+    {
+      "source": "map",
+      "target": "templates",
+      "weight": 1
+    },
+    {
+      "source": "builder",
+      "target": "templates",
+      "weight": 1
+    },
+    {
+      "source": "coupling",
+      "target": "templates",
+      "weight": 1
+    },
+    {
+      "source": "graph",
+      "target": "templates",
+      "weight": 1
+    },
+    {
+      "source": "freshness",
+      "target": "templates",
+      "weight": 1
+    },
+    {
+      "source": "scores",
+      "target": "templates",
+      "weight": 1
+    },
+    {
+      "source": "explore",
+      "target": "templates",
+      "weight": 1
+    },
+    {
+      "source": "templates",
+      "target": "visionary",
+      "weight": 1
+    },
+    {
+      "source": "front",
+      "target": "systems",
+      "weight": 1
+    },
+    {
+      "source": "automation‑driven",
+      "target": "front",
+      "weight": 1
+    },
+    {
+      "source": "front",
+      "target": "on‑demand",
+      "weight": 1
+    },
+    {
+      "source": "engine",
+      "target": "front",
+      "weight": 1
+    },
+    {
+      "source": "front",
+      "target": "new",
+      "weight": 1
+    },
+    {
+      "source": "front",
+      "target": "tools",
+      "weight": 1
+    },
+    {
+      "source": "front",
+      "target": "tool",
+      "weight": 1
+    },
+    {
+      "source": "front",
+      "target": "stale",
+      "weight": 1
+    },
+    {
+      "source": "auditor",
+      "target": "front",
+      "weight": 1
+    },
+    {
+      "source": "front",
+      "target": "unused",
+      "weight": 1
+    },
+    {
+      "source": "front",
+      "target": "media",
+      "weight": 1
+    },
+    {
+      "source": "front",
+      "target": "orphan",
+      "weight": 1
+    },
+    {
+      "source": "detector",
+      "target": "front",
+      "weight": 1
+    },
+    {
+      "source": "component",
+      "target": "front",
+      "weight": 1
+    },
+    {
+      "source": "front",
+      "target": "size",
+      "weight": 1
+    },
+    {
+      "source": "front",
+      "target": "license",
+      "weight": 1
+    },
+    {
+      "source": "compliance",
+      "target": "front",
+      "weight": 1
+    },
+    {
+      "source": "front",
+      "target": "pagespeed",
+      "weight": 1
+    },
+    {
+      "source": "front",
+      "target": "insights",
+      "weight": 1
+    },
+    {
+      "source": "404",
+      "target": "front",
+      "weight": 1
+    },
+    {
+      "source": "builder",
+      "target": "front",
+      "weight": 1
+    },
+    {
+      "source": "coupling",
+      "target": "front",
+      "weight": 1
+    },
+    {
+      "source": "freshness",
+      "target": "front",
+      "weight": 1
+    },
+    {
+      "source": "front",
+      "target": "scores",
+      "weight": 1
+    },
+    {
+      "source": "front",
+      "target": "visionary",
+      "weight": 1
+    },
+    {
+      "source": "hub",
+      "target": "systems",
+      "weight": 1
+    },
+    {
+      "source": "automation‑driven",
+      "target": "systems",
+      "weight": 1
+    },
+    {
+      "source": "on‑demand",
+      "target": "systems",
+      "weight": 1
+    },
+    {
+      "source": "enhancer",
+      "target": "systems",
+      "weight": 1
+    },
+    {
+      "source": "automation",
+      "target": "systems",
+      "weight": 1
+    },
+    {
+      "source": "engine",
+      "target": "systems",
+      "weight": 1
+    },
+    {
+      "source": "new",
+      "target": "systems",
+      "weight": 1
+    },
+    {
+      "source": "systems",
+      "target": "tools",
+      "weight": 1
+    },
+    {
+      "source": "systems",
+      "target": "tool",
+      "weight": 1
+    },
+    {
+      "source": "stale",
+      "target": "systems",
+      "weight": 1
+    },
+    {
+      "source": "content",
+      "target": "systems",
+      "weight": 1
+    },
+    {
+      "source": "auditor",
+      "target": "systems",
+      "weight": 1
+    },
+    {
+      "source": "dependency",
+      "target": "systems",
+      "weight": 1
+    },
+    {
+      "source": "auto‑upgrade",
+      "target": "systems",
+      "weight": 1
+    },
+    {
+      "source": "systems",
+      "target": "unused",
+      "weight": 1
+    },
+    {
+      "source": "media",
+      "target": "systems",
+      "weight": 1
+    },
+    {
+      "source": "scanner",
+      "target": "systems",
+      "weight": 1
+    },
+    {
+      "source": "orphan",
+      "target": "systems",
+      "weight": 1
+    },
+    {
+      "source": "pages",
+      "target": "systems",
+      "weight": 1
+    },
+    {
+      "source": "detector",
+      "target": "systems",
+      "weight": 1
+    },
+    {
+      "source": "component",
+      "target": "systems",
+      "weight": 1
+    },
+    {
+      "source": "size",
+      "target": "systems",
+      "weight": 1
+    },
+    {
+      "source": "report",
+      "target": "systems",
+      "weight": 1
+    },
+    {
+      "source": "license",
+      "target": "systems",
+      "weight": 1
+    },
+    {
+      "source": "compliance",
+      "target": "systems",
+      "weight": 1
+    },
+    {
+      "source": "pagespeed",
+      "target": "systems",
+      "weight": 1
+    },
+    {
+      "source": "insights",
+      "target": "systems",
+      "weight": 1
+    },
+    {
+      "source": "runner",
+      "target": "systems",
+      "weight": 1
+    },
+    {
+      "source": "404",
+      "target": "systems",
+      "weight": 1
+    },
+    {
+      "source": "map",
+      "target": "systems",
+      "weight": 1
+    },
+    {
+      "source": "builder",
+      "target": "systems",
+      "weight": 1
+    },
+    {
+      "source": "coupling",
+      "target": "systems",
+      "weight": 1
+    },
+    {
+      "source": "graph",
+      "target": "systems",
+      "weight": 1
+    },
+    {
+      "source": "freshness",
+      "target": "systems",
+      "weight": 1
+    },
+    {
+      "source": "scores",
+      "target": "systems",
+      "weight": 1
+    },
+    {
+      "source": "explore",
+      "target": "systems",
+      "weight": 1
+    },
+    {
+      "source": "systems",
+      "target": "visionary",
+      "weight": 1
+    },
+    {
+      "source": "automation‑driven",
+      "target": "hub",
+      "weight": 1
+    },
+    {
+      "source": "hub",
+      "target": "on‑demand",
+      "weight": 1
+    },
+    {
+      "source": "engine",
+      "target": "hub",
+      "weight": 1
+    },
+    {
+      "source": "hub",
+      "target": "new",
+      "weight": 1
+    },
+    {
+      "source": "hub",
+      "target": "tools",
+      "weight": 1
+    },
+    {
+      "source": "hub",
+      "target": "tool",
+      "weight": 1
+    },
+    {
+      "source": "hub",
+      "target": "stale",
+      "weight": 1
+    },
+    {
+      "source": "auditor",
+      "target": "hub",
+      "weight": 1
+    },
+    {
+      "source": "hub",
+      "target": "unused",
+      "weight": 1
+    },
+    {
+      "source": "hub",
+      "target": "media",
+      "weight": 1
+    },
+    {
+      "source": "hub",
+      "target": "orphan",
+      "weight": 1
+    },
+    {
+      "source": "hub",
+      "target": "pages",
+      "weight": 1
+    },
+    {
+      "source": "detector",
+      "target": "hub",
+      "weight": 1
+    },
+    {
+      "source": "component",
+      "target": "hub",
+      "weight": 1
+    },
+    {
+      "source": "hub",
+      "target": "size",
+      "weight": 1
+    },
+    {
+      "source": "hub",
+      "target": "report",
+      "weight": 1
+    },
+    {
+      "source": "hub",
+      "target": "license",
+      "weight": 1
+    },
+    {
+      "source": "compliance",
+      "target": "hub",
+      "weight": 1
+    },
+    {
+      "source": "hub",
+      "target": "pagespeed",
+      "weight": 1
+    },
+    {
+      "source": "hub",
+      "target": "insights",
+      "weight": 1
+    },
+    {
+      "source": "404",
+      "target": "hub",
+      "weight": 1
+    },
+    {
+      "source": "builder",
+      "target": "hub",
+      "weight": 1
+    },
+    {
+      "source": "coupling",
+      "target": "hub",
+      "weight": 1
+    },
+    {
+      "source": "freshness",
+      "target": "hub",
+      "weight": 1
+    },
+    {
+      "source": "hub",
+      "target": "scores",
+      "weight": 1
+    },
+    {
+      "source": "hub",
+      "target": "visionary",
+      "weight": 1
+    },
+    {
+      "source": "automation‑driven",
+      "target": "on‑demand",
+      "weight": 1
+    },
+    {
+      "source": "automation‑driven",
+      "target": "enhancer",
+      "weight": 1
+    },
+    {
+      "source": "automation",
+      "target": "automation‑driven",
+      "weight": 1
+    },
+    {
+      "source": "automation‑driven",
+      "target": "engine",
+      "weight": 1
+    },
+    {
+      "source": "automation‑driven",
+      "target": "new",
+      "weight": 1
+    },
+    {
+      "source": "automation‑driven",
+      "target": "tools",
+      "weight": 1
+    },
+    {
+      "source": "automation‑driven",
+      "target": "tool",
+      "weight": 1
+    },
+    {
+      "source": "automation‑driven",
+      "target": "stale",
+      "weight": 1
+    },
+    {
+      "source": "automation‑driven",
+      "target": "content",
+      "weight": 1
+    },
+    {
+      "source": "auditor",
+      "target": "automation‑driven",
+      "weight": 1
+    },
+    {
+      "source": "automation‑driven",
+      "target": "dependency",
+      "weight": 1
+    },
+    {
+      "source": "automation‑driven",
+      "target": "auto‑upgrade",
+      "weight": 1
+    },
+    {
+      "source": "automation‑driven",
+      "target": "unused",
+      "weight": 1
+    },
+    {
+      "source": "automation‑driven",
+      "target": "media",
+      "weight": 1
+    },
+    {
+      "source": "automation‑driven",
+      "target": "scanner",
+      "weight": 1
+    },
+    {
+      "source": "automation‑driven",
+      "target": "orphan",
+      "weight": 1
+    },
+    {
+      "source": "automation‑driven",
+      "target": "pages",
+      "weight": 1
+    },
+    {
+      "source": "automation‑driven",
+      "target": "detector",
+      "weight": 1
+    },
+    {
+      "source": "automation‑driven",
+      "target": "component",
+      "weight": 1
+    },
+    {
+      "source": "automation‑driven",
+      "target": "size",
+      "weight": 1
+    },
+    {
+      "source": "automation‑driven",
+      "target": "report",
+      "weight": 1
+    },
+    {
+      "source": "automation‑driven",
+      "target": "license",
+      "weight": 1
+    },
+    {
+      "source": "automation‑driven",
+      "target": "compliance",
+      "weight": 1
+    },
+    {
+      "source": "automation‑driven",
+      "target": "pagespeed",
+      "weight": 1
+    },
+    {
+      "source": "automation‑driven",
+      "target": "insights",
+      "weight": 1
+    },
+    {
+      "source": "automation‑driven",
+      "target": "runner",
+      "weight": 1
+    },
+    {
+      "source": "404",
+      "target": "automation‑driven",
+      "weight": 1
+    },
+    {
+      "source": "automation‑driven",
+      "target": "map",
+      "weight": 1
+    },
+    {
+      "source": "automation‑driven",
+      "target": "builder",
+      "weight": 1
+    },
+    {
+      "source": "automation‑driven",
+      "target": "coupling",
+      "weight": 1
+    },
+    {
+      "source": "automation‑driven",
+      "target": "graph",
+      "weight": 1
+    },
+    {
+      "source": "automation‑driven",
+      "target": "freshness",
+      "weight": 1
+    },
+    {
+      "source": "automation‑driven",
+      "target": "scores",
+      "weight": 1
+    },
+    {
+      "source": "automation‑driven",
+      "target": "explore",
+      "weight": 1
+    },
+    {
+      "source": "automation‑driven",
+      "target": "visionary",
+      "weight": 1
+    },
+    {
+      "source": "enhancer",
+      "target": "on‑demand",
+      "weight": 1
+    },
+    {
+      "source": "automation",
+      "target": "on‑demand",
+      "weight": 1
+    },
+    {
+      "source": "engine",
+      "target": "on‑demand",
+      "weight": 1
+    },
+    {
+      "source": "new",
+      "target": "on‑demand",
+      "weight": 1
+    },
+    {
+      "source": "on‑demand",
+      "target": "tools",
+      "weight": 1
+    },
+    {
+      "source": "on‑demand",
+      "target": "tool",
+      "weight": 1
+    },
+    {
+      "source": "on‑demand",
+      "target": "stale",
+      "weight": 1
+    },
+    {
+      "source": "content",
+      "target": "on‑demand",
+      "weight": 1
+    },
+    {
+      "source": "auditor",
+      "target": "on‑demand",
+      "weight": 1
+    },
+    {
+      "source": "dependency",
+      "target": "on‑demand",
+      "weight": 1
+    },
+    {
+      "source": "auto‑upgrade",
+      "target": "on‑demand",
+      "weight": 1
+    },
+    {
+      "source": "on‑demand",
+      "target": "unused",
+      "weight": 1
+    },
+    {
+      "source": "media",
+      "target": "on‑demand",
+      "weight": 1
+    },
+    {
+      "source": "on‑demand",
+      "target": "scanner",
+      "weight": 1
+    },
+    {
+      "source": "on‑demand",
+      "target": "orphan",
+      "weight": 1
+    },
+    {
+      "source": "on‑demand",
+      "target": "pages",
+      "weight": 1
+    },
+    {
+      "source": "detector",
+      "target": "on‑demand",
+      "weight": 1
+    },
+    {
+      "source": "component",
+      "target": "on‑demand",
+      "weight": 1
+    },
+    {
+      "source": "on‑demand",
+      "target": "size",
+      "weight": 1
+    },
+    {
+      "source": "on‑demand",
+      "target": "report",
+      "weight": 1
+    },
+    {
+      "source": "license",
+      "target": "on‑demand",
+      "weight": 1
+    },
+    {
+      "source": "compliance",
+      "target": "on‑demand",
+      "weight": 1
+    },
+    {
+      "source": "on‑demand",
+      "target": "pagespeed",
+      "weight": 1
+    },
+    {
+      "source": "insights",
+      "target": "on‑demand",
+      "weight": 1
+    },
+    {
+      "source": "on‑demand",
+      "target": "runner",
+      "weight": 1
+    },
+    {
+      "source": "404",
+      "target": "on‑demand",
+      "weight": 1
+    },
+    {
+      "source": "map",
+      "target": "on‑demand",
+      "weight": 1
+    },
+    {
+      "source": "builder",
+      "target": "on‑demand",
+      "weight": 1
+    },
+    {
+      "source": "coupling",
+      "target": "on‑demand",
+      "weight": 1
+    },
+    {
+      "source": "graph",
+      "target": "on‑demand",
+      "weight": 1
+    },
+    {
+      "source": "freshness",
+      "target": "on‑demand",
+      "weight": 1
+    },
+    {
+      "source": "on‑demand",
+      "target": "scores",
+      "weight": 1
+    },
+    {
+      "source": "explore",
+      "target": "on‑demand",
+      "weight": 1
+    },
+    {
+      "source": "on‑demand",
+      "target": "visionary",
+      "weight": 1
+    },
+    {
+      "source": "engine",
+      "target": "enhancer",
+      "weight": 1
+    },
+    {
+      "source": "enhancer",
+      "target": "new",
+      "weight": 1
+    },
+    {
+      "source": "enhancer",
+      "target": "tools",
+      "weight": 1
+    },
+    {
+      "source": "enhancer",
+      "target": "tool",
+      "weight": 1
+    },
+    {
+      "source": "enhancer",
+      "target": "stale",
+      "weight": 1
+    },
+    {
+      "source": "auditor",
+      "target": "enhancer",
+      "weight": 1
+    },
+    {
+      "source": "enhancer",
+      "target": "unused",
+      "weight": 1
+    },
+    {
+      "source": "enhancer",
+      "target": "media",
+      "weight": 1
+    },
+    {
+      "source": "enhancer",
+      "target": "orphan",
+      "weight": 1
+    },
+    {
+      "source": "enhancer",
+      "target": "pages",
+      "weight": 1
+    },
+    {
+      "source": "detector",
+      "target": "enhancer",
+      "weight": 1
+    },
+    {
+      "source": "component",
+      "target": "enhancer",
+      "weight": 1
+    },
+    {
+      "source": "enhancer",
+      "target": "size",
+      "weight": 1
+    },
+    {
+      "source": "enhancer",
+      "target": "report",
+      "weight": 1
+    },
+    {
+      "source": "enhancer",
+      "target": "license",
+      "weight": 1
+    },
+    {
+      "source": "compliance",
+      "target": "enhancer",
+      "weight": 1
+    },
+    {
+      "source": "enhancer",
+      "target": "pagespeed",
+      "weight": 1
+    },
+    {
+      "source": "enhancer",
+      "target": "insights",
+      "weight": 1
+    },
+    {
+      "source": "404",
+      "target": "enhancer",
+      "weight": 1
+    },
+    {
+      "source": "enhancer",
+      "target": "map",
+      "weight": 1
+    },
+    {
+      "source": "builder",
+      "target": "enhancer",
+      "weight": 1
+    },
+    {
+      "source": "coupling",
+      "target": "enhancer",
+      "weight": 1
+    },
+    {
+      "source": "enhancer",
+      "target": "freshness",
+      "weight": 1
+    },
+    {
+      "source": "enhancer",
+      "target": "scores",
+      "weight": 1
+    },
+    {
+      "source": "enhancer",
+      "target": "explore",
+      "weight": 1
+    },
+    {
+      "source": "enhancer",
+      "target": "visionary",
+      "weight": 1
+    },
+    {
+      "source": "automation",
+      "target": "engine",
+      "weight": 1
+    },
+    {
+      "source": "automation",
+      "target": "new",
+      "weight": 1
+    },
+    {
+      "source": "automation",
+      "target": "tools",
+      "weight": 1
+    },
+    {
+      "source": "automation",
+      "target": "tool",
+      "weight": 1
+    },
+    {
+      "source": "automation",
+      "target": "stale",
+      "weight": 1
+    },
+    {
+      "source": "auditor",
+      "target": "automation",
+      "weight": 1
+    },
+    {
+      "source": "automation",
+      "target": "unused",
+      "weight": 1
+    },
+    {
+      "source": "automation",
+      "target": "media",
+      "weight": 1
+    },
+    {
+      "source": "automation",
+      "target": "orphan",
+      "weight": 1
+    },
+    {
+      "source": "automation",
+      "target": "detector",
+      "weight": 1
+    },
+    {
+      "source": "automation",
+      "target": "component",
+      "weight": 1
+    },
+    {
+      "source": "automation",
+      "target": "size",
+      "weight": 1
+    },
+    {
+      "source": "automation",
+      "target": "license",
+      "weight": 1
+    },
+    {
+      "source": "automation",
+      "target": "compliance",
+      "weight": 1
+    },
+    {
+      "source": "automation",
+      "target": "pagespeed",
+      "weight": 1
+    },
+    {
+      "source": "automation",
+      "target": "insights",
+      "weight": 1
+    },
+    {
+      "source": "404",
+      "target": "automation",
+      "weight": 1
+    },
+    {
+      "source": "automation",
+      "target": "builder",
+      "weight": 1
+    },
+    {
+      "source": "automation",
+      "target": "coupling",
+      "weight": 1
+    },
+    {
+      "source": "automation",
+      "target": "freshness",
+      "weight": 1
+    },
+    {
+      "source": "automation",
+      "target": "scores",
+      "weight": 1
+    },
+    {
+      "source": "automation",
+      "target": "visionary",
+      "weight": 1
+    },
+    {
+      "source": "engine",
+      "target": "new",
+      "weight": 1
+    },
+    {
+      "source": "engine",
+      "target": "tools",
+      "weight": 1
+    },
+    {
+      "source": "engine",
+      "target": "tool",
+      "weight": 1
+    },
+    {
+      "source": "engine",
+      "target": "stale",
+      "weight": 1
+    },
+    {
+      "source": "content",
+      "target": "engine",
+      "weight": 1
+    },
+    {
+      "source": "auditor",
+      "target": "engine",
+      "weight": 1
+    },
+    {
+      "source": "dependency",
+      "target": "engine",
+      "weight": 1
+    },
+    {
+      "source": "auto‑upgrade",
+      "target": "engine",
+      "weight": 1
+    },
+    {
+      "source": "engine",
+      "target": "unused",
+      "weight": 1
+    },
+    {
+      "source": "engine",
+      "target": "media",
+      "weight": 1
+    },
+    {
+      "source": "engine",
+      "target": "scanner",
+      "weight": 1
+    },
+    {
+      "source": "engine",
+      "target": "orphan",
+      "weight": 1
+    },
+    {
+      "source": "engine",
+      "target": "pages",
+      "weight": 1
+    },
+    {
+      "source": "detector",
+      "target": "engine",
+      "weight": 1
+    },
+    {
+      "source": "component",
+      "target": "engine",
+      "weight": 1
+    },
+    {
+      "source": "engine",
+      "target": "size",
+      "weight": 1
+    },
+    {
+      "source": "engine",
+      "target": "report",
+      "weight": 1
+    },
+    {
+      "source": "engine",
+      "target": "license",
+      "weight": 1
+    },
+    {
+      "source": "compliance",
+      "target": "engine",
+      "weight": 1
+    },
+    {
+      "source": "engine",
+      "target": "pagespeed",
+      "weight": 1
+    },
+    {
+      "source": "engine",
+      "target": "insights",
+      "weight": 1
+    },
+    {
+      "source": "engine",
+      "target": "runner",
+      "weight": 1
+    },
+    {
+      "source": "404",
+      "target": "engine",
+      "weight": 1
+    },
+    {
+      "source": "engine",
+      "target": "map",
+      "weight": 1
+    },
+    {
+      "source": "builder",
+      "target": "engine",
+      "weight": 1
+    },
+    {
+      "source": "coupling",
+      "target": "engine",
+      "weight": 1
+    },
+    {
+      "source": "engine",
+      "target": "graph",
+      "weight": 1
+    },
+    {
+      "source": "engine",
+      "target": "freshness",
+      "weight": 1
+    },
+    {
+      "source": "engine",
+      "target": "scores",
+      "weight": 1
+    },
+    {
+      "source": "engine",
+      "target": "explore",
+      "weight": 1
+    },
+    {
+      "source": "engine",
+      "target": "visionary",
+      "weight": 1
+    },
+    {
+      "source": "new",
+      "target": "tools",
+      "weight": 1
+    },
+    {
+      "source": "new",
+      "target": "tool",
+      "weight": 1
+    },
+    {
+      "source": "new",
+      "target": "stale",
+      "weight": 1
+    },
+    {
+      "source": "content",
+      "target": "new",
+      "weight": 1
+    },
+    {
+      "source": "auditor",
+      "target": "new",
+      "weight": 1
+    },
+    {
+      "source": "dependency",
+      "target": "new",
+      "weight": 1
+    },
+    {
+      "source": "auto‑upgrade",
+      "target": "new",
+      "weight": 1
+    },
+    {
+      "source": "new",
+      "target": "unused",
+      "weight": 1
+    },
+    {
+      "source": "media",
+      "target": "new",
+      "weight": 1
+    },
+    {
+      "source": "new",
+      "target": "scanner",
+      "weight": 1
+    },
+    {
+      "source": "new",
+      "target": "orphan",
+      "weight": 1
+    },
+    {
+      "source": "new",
+      "target": "pages",
+      "weight": 1
+    },
+    {
+      "source": "detector",
+      "target": "new",
+      "weight": 1
+    },
+    {
+      "source": "component",
+      "target": "new",
+      "weight": 1
+    },
+    {
+      "source": "new",
+      "target": "size",
+      "weight": 1
+    },
+    {
+      "source": "new",
+      "target": "report",
+      "weight": 1
+    },
+    {
+      "source": "license",
+      "target": "new",
+      "weight": 1
+    },
+    {
+      "source": "compliance",
+      "target": "new",
+      "weight": 1
+    },
+    {
+      "source": "new",
+      "target": "pagespeed",
+      "weight": 1
+    },
+    {
+      "source": "insights",
+      "target": "new",
+      "weight": 1
+    },
+    {
+      "source": "new",
+      "target": "runner",
+      "weight": 1
+    },
+    {
+      "source": "404",
+      "target": "new",
+      "weight": 1
+    },
+    {
+      "source": "map",
+      "target": "new",
+      "weight": 1
+    },
+    {
+      "source": "builder",
+      "target": "new",
+      "weight": 1
+    },
+    {
+      "source": "coupling",
+      "target": "new",
+      "weight": 1
+    },
+    {
+      "source": "graph",
+      "target": "new",
+      "weight": 1
+    },
+    {
+      "source": "freshness",
+      "target": "new",
+      "weight": 1
+    },
+    {
+      "source": "new",
+      "target": "scores",
+      "weight": 1
+    },
+    {
+      "source": "explore",
+      "target": "new",
+      "weight": 1
+    },
+    {
+      "source": "new",
+      "target": "visionary",
+      "weight": 1
+    },
+    {
+      "source": "tool",
+      "target": "tools",
+      "weight": 1
+    },
+    {
+      "source": "stale",
+      "target": "tools",
+      "weight": 1
+    },
+    {
+      "source": "content",
+      "target": "tools",
+      "weight": 1
+    },
+    {
+      "source": "auditor",
+      "target": "tools",
+      "weight": 1
+    },
+    {
+      "source": "dependency",
+      "target": "tools",
+      "weight": 1
+    },
+    {
+      "source": "auto‑upgrade",
+      "target": "tools",
+      "weight": 1
+    },
+    {
+      "source": "tools",
+      "target": "unused",
+      "weight": 1
+    },
+    {
+      "source": "media",
+      "target": "tools",
+      "weight": 1
+    },
+    {
+      "source": "scanner",
+      "target": "tools",
+      "weight": 1
+    },
+    {
+      "source": "orphan",
+      "target": "tools",
+      "weight": 1
+    },
+    {
+      "source": "pages",
+      "target": "tools",
+      "weight": 1
+    },
+    {
+      "source": "detector",
+      "target": "tools",
+      "weight": 1
+    },
+    {
+      "source": "component",
+      "target": "tools",
+      "weight": 1
+    },
+    {
+      "source": "size",
+      "target": "tools",
+      "weight": 1
+    },
+    {
+      "source": "report",
+      "target": "tools",
+      "weight": 1
+    },
+    {
+      "source": "license",
+      "target": "tools",
+      "weight": 1
+    },
+    {
+      "source": "compliance",
+      "target": "tools",
+      "weight": 1
+    },
+    {
+      "source": "pagespeed",
+      "target": "tools",
+      "weight": 1
+    },
+    {
+      "source": "insights",
+      "target": "tools",
+      "weight": 1
+    },
+    {
+      "source": "runner",
+      "target": "tools",
+      "weight": 1
+    },
+    {
+      "source": "404",
+      "target": "tools",
+      "weight": 1
+    },
+    {
+      "source": "map",
+      "target": "tools",
+      "weight": 1
+    },
+    {
+      "source": "builder",
+      "target": "tools",
+      "weight": 1
+    },
+    {
+      "source": "coupling",
+      "target": "tools",
+      "weight": 1
+    },
+    {
+      "source": "graph",
+      "target": "tools",
+      "weight": 1
+    },
+    {
+      "source": "freshness",
+      "target": "tools",
+      "weight": 1
+    },
+    {
+      "source": "scores",
+      "target": "tools",
+      "weight": 1
+    },
+    {
+      "source": "explore",
+      "target": "tools",
+      "weight": 1
+    },
+    {
+      "source": "tools",
+      "target": "visionary",
+      "weight": 1
+    },
+    {
+      "source": "stale",
+      "target": "tool",
+      "weight": 1
+    },
+    {
+      "source": "content",
+      "target": "tool",
+      "weight": 1
+    },
+    {
+      "source": "auditor",
+      "target": "tool",
+      "weight": 1
+    },
+    {
+      "source": "dependency",
+      "target": "tool",
+      "weight": 1
+    },
+    {
+      "source": "auto‑upgrade",
+      "target": "tool",
+      "weight": 1
+    },
+    {
+      "source": "tool",
+      "target": "unused",
+      "weight": 1
+    },
+    {
+      "source": "media",
+      "target": "tool",
+      "weight": 1
+    },
+    {
+      "source": "scanner",
+      "target": "tool",
+      "weight": 1
+    },
+    {
+      "source": "orphan",
+      "target": "tool",
+      "weight": 1
+    },
+    {
+      "source": "pages",
+      "target": "tool",
+      "weight": 1
+    },
+    {
+      "source": "detector",
+      "target": "tool",
+      "weight": 1
+    },
+    {
+      "source": "component",
+      "target": "tool",
+      "weight": 1
+    },
+    {
+      "source": "size",
+      "target": "tool",
+      "weight": 1
+    },
+    {
+      "source": "report",
+      "target": "tool",
+      "weight": 1
+    },
+    {
+      "source": "license",
+      "target": "tool",
+      "weight": 1
+    },
+    {
+      "source": "compliance",
+      "target": "tool",
+      "weight": 1
+    },
+    {
+      "source": "pagespeed",
+      "target": "tool",
+      "weight": 1
+    },
+    {
+      "source": "insights",
+      "target": "tool",
+      "weight": 1
+    },
+    {
+      "source": "runner",
+      "target": "tool",
+      "weight": 1
+    },
+    {
+      "source": "404",
+      "target": "tool",
+      "weight": 1
+    },
+    {
+      "source": "map",
+      "target": "tool",
+      "weight": 1
+    },
+    {
+      "source": "builder",
+      "target": "tool",
+      "weight": 1
+    },
+    {
+      "source": "coupling",
+      "target": "tool",
+      "weight": 1
+    },
+    {
+      "source": "graph",
+      "target": "tool",
+      "weight": 1
+    },
+    {
+      "source": "freshness",
+      "target": "tool",
+      "weight": 1
+    },
+    {
+      "source": "scores",
+      "target": "tool",
+      "weight": 1
+    },
+    {
+      "source": "explore",
+      "target": "tool",
+      "weight": 1
+    },
+    {
+      "source": "tool",
+      "target": "visionary",
+      "weight": 1
+    },
+    {
+      "source": "content",
+      "target": "stale",
+      "weight": 1
+    },
+    {
+      "source": "auditor",
+      "target": "stale",
+      "weight": 1
+    },
+    {
+      "source": "dependency",
+      "target": "stale",
+      "weight": 1
+    },
+    {
+      "source": "auto‑upgrade",
+      "target": "stale",
+      "weight": 1
+    },
+    {
+      "source": "stale",
+      "target": "unused",
+      "weight": 1
+    },
+    {
+      "source": "media",
+      "target": "stale",
+      "weight": 1
+    },
+    {
+      "source": "scanner",
+      "target": "stale",
+      "weight": 1
+    },
+    {
+      "source": "orphan",
+      "target": "stale",
+      "weight": 1
+    },
+    {
+      "source": "pages",
+      "target": "stale",
+      "weight": 1
+    },
+    {
+      "source": "detector",
+      "target": "stale",
+      "weight": 1
+    },
+    {
+      "source": "component",
+      "target": "stale",
+      "weight": 1
+    },
+    {
+      "source": "size",
+      "target": "stale",
+      "weight": 1
+    },
+    {
+      "source": "report",
+      "target": "stale",
+      "weight": 1
+    },
+    {
+      "source": "license",
+      "target": "stale",
+      "weight": 1
+    },
+    {
+      "source": "compliance",
+      "target": "stale",
+      "weight": 1
+    },
+    {
+      "source": "pagespeed",
+      "target": "stale",
+      "weight": 1
+    },
+    {
+      "source": "insights",
+      "target": "stale",
+      "weight": 1
+    },
+    {
+      "source": "runner",
+      "target": "stale",
+      "weight": 1
+    },
+    {
+      "source": "404",
+      "target": "stale",
+      "weight": 1
+    },
+    {
+      "source": "map",
+      "target": "stale",
+      "weight": 1
+    },
+    {
+      "source": "builder",
+      "target": "stale",
+      "weight": 1
+    },
+    {
+      "source": "coupling",
+      "target": "stale",
+      "weight": 1
+    },
+    {
+      "source": "graph",
+      "target": "stale",
+      "weight": 1
+    },
+    {
+      "source": "freshness",
+      "target": "stale",
+      "weight": 1
+    },
+    {
+      "source": "scores",
+      "target": "stale",
+      "weight": 1
+    },
+    {
+      "source": "explore",
+      "target": "stale",
+      "weight": 1
+    },
+    {
+      "source": "stale",
+      "target": "visionary",
+      "weight": 1
+    },
+    {
+      "source": "auditor",
+      "target": "content",
+      "weight": 1
+    },
+    {
+      "source": "content",
+      "target": "unused",
+      "weight": 1
+    },
+    {
+      "source": "content",
+      "target": "media",
+      "weight": 1
+    },
+    {
+      "source": "content",
+      "target": "orphan",
+      "weight": 1
+    },
+    {
+      "source": "content",
+      "target": "pages",
+      "weight": 1
+    },
+    {
+      "source": "content",
+      "target": "detector",
+      "weight": 1
+    },
+    {
+      "source": "component",
+      "target": "content",
+      "weight": 1
+    },
+    {
+      "source": "content",
+      "target": "size",
+      "weight": 1
+    },
+    {
+      "source": "content",
+      "target": "report",
+      "weight": 1
+    },
+    {
+      "source": "content",
+      "target": "license",
+      "weight": 1
+    },
+    {
+      "source": "compliance",
+      "target": "content",
+      "weight": 1
+    },
+    {
+      "source": "content",
+      "target": "pagespeed",
+      "weight": 1
+    },
+    {
+      "source": "content",
+      "target": "insights",
+      "weight": 1
+    },
+    {
+      "source": "404",
+      "target": "content",
+      "weight": 1
+    },
+    {
+      "source": "content",
+      "target": "map",
+      "weight": 1
+    },
+    {
+      "source": "builder",
+      "target": "content",
+      "weight": 1
+    },
+    {
+      "source": "content",
+      "target": "coupling",
+      "weight": 1
+    },
+    {
+      "source": "content",
+      "target": "freshness",
+      "weight": 1
+    },
+    {
+      "source": "content",
+      "target": "scores",
+      "weight": 1
+    },
+    {
+      "source": "content",
+      "target": "explore",
+      "weight": 1
+    },
+    {
+      "source": "content",
+      "target": "visionary",
+      "weight": 1
+    },
+    {
+      "source": "auditor",
+      "target": "dependency",
+      "weight": 1
+    },
+    {
+      "source": "auditor",
+      "target": "auto‑upgrade",
+      "weight": 1
+    },
+    {
+      "source": "auditor",
+      "target": "unused",
+      "weight": 1
+    },
+    {
+      "source": "auditor",
+      "target": "media",
+      "weight": 1
+    },
+    {
+      "source": "auditor",
+      "target": "scanner",
+      "weight": 1
+    },
+    {
+      "source": "auditor",
+      "target": "orphan",
+      "weight": 1
+    },
+    {
+      "source": "auditor",
+      "target": "pages",
+      "weight": 1
+    },
+    {
+      "source": "auditor",
+      "target": "detector",
+      "weight": 1
+    },
+    {
+      "source": "auditor",
+      "target": "component",
+      "weight": 1
+    },
+    {
+      "source": "auditor",
+      "target": "size",
+      "weight": 1
+    },
+    {
+      "source": "auditor",
+      "target": "report",
+      "weight": 1
+    },
+    {
+      "source": "auditor",
+      "target": "license",
+      "weight": 1
+    },
+    {
+      "source": "auditor",
+      "target": "compliance",
+      "weight": 1
+    },
+    {
+      "source": "auditor",
+      "target": "pagespeed",
+      "weight": 1
+    },
+    {
+      "source": "auditor",
+      "target": "insights",
+      "weight": 1
+    },
+    {
+      "source": "auditor",
+      "target": "runner",
+      "weight": 1
+    },
+    {
+      "source": "404",
+      "target": "auditor",
+      "weight": 1
+    },
+    {
+      "source": "auditor",
+      "target": "map",
+      "weight": 1
+    },
+    {
+      "source": "auditor",
+      "target": "builder",
+      "weight": 1
+    },
+    {
+      "source": "auditor",
+      "target": "coupling",
+      "weight": 1
+    },
+    {
+      "source": "auditor",
+      "target": "graph",
+      "weight": 1
+    },
+    {
+      "source": "auditor",
+      "target": "freshness",
+      "weight": 1
+    },
+    {
+      "source": "auditor",
+      "target": "scores",
+      "weight": 1
+    },
+    {
+      "source": "auditor",
+      "target": "explore",
+      "weight": 1
+    },
+    {
+      "source": "auditor",
+      "target": "visionary",
+      "weight": 1
+    },
+    {
+      "source": "dependency",
+      "target": "unused",
+      "weight": 1
+    },
+    {
+      "source": "dependency",
+      "target": "media",
+      "weight": 1
+    },
+    {
+      "source": "dependency",
+      "target": "orphan",
+      "weight": 1
+    },
+    {
+      "source": "dependency",
+      "target": "pages",
+      "weight": 1
+    },
+    {
+      "source": "dependency",
+      "target": "detector",
+      "weight": 1
+    },
+    {
+      "source": "component",
+      "target": "dependency",
+      "weight": 1
+    },
+    {
+      "source": "dependency",
+      "target": "size",
+      "weight": 1
+    },
+    {
+      "source": "dependency",
+      "target": "report",
+      "weight": 1
+    },
+    {
+      "source": "dependency",
+      "target": "license",
+      "weight": 1
+    },
+    {
+      "source": "compliance",
+      "target": "dependency",
+      "weight": 1
+    },
+    {
+      "source": "dependency",
+      "target": "pagespeed",
+      "weight": 1
+    },
+    {
+      "source": "dependency",
+      "target": "insights",
+      "weight": 1
+    },
+    {
+      "source": "404",
+      "target": "dependency",
+      "weight": 1
+    },
+    {
+      "source": "dependency",
+      "target": "map",
+      "weight": 1
+    },
+    {
+      "source": "builder",
+      "target": "dependency",
+      "weight": 1
+    },
+    {
+      "source": "coupling",
+      "target": "dependency",
+      "weight": 1
+    },
+    {
+      "source": "dependency",
+      "target": "freshness",
+      "weight": 1
+    },
+    {
+      "source": "dependency",
+      "target": "scores",
+      "weight": 1
+    },
+    {
+      "source": "dependency",
+      "target": "explore",
+      "weight": 1
+    },
+    {
+      "source": "dependency",
+      "target": "visionary",
+      "weight": 1
+    },
+    {
+      "source": "auto‑upgrade",
+      "target": "unused",
+      "weight": 1
+    },
+    {
+      "source": "auto‑upgrade",
+      "target": "media",
+      "weight": 1
+    },
+    {
+      "source": "auto‑upgrade",
+      "target": "orphan",
+      "weight": 1
+    },
+    {
+      "source": "auto‑upgrade",
+      "target": "pages",
+      "weight": 1
+    },
+    {
+      "source": "auto‑upgrade",
+      "target": "detector",
+      "weight": 1
+    },
+    {
+      "source": "auto‑upgrade",
+      "target": "component",
+      "weight": 1
+    },
+    {
+      "source": "auto‑upgrade",
+      "target": "size",
+      "weight": 1
+    },
+    {
+      "source": "auto‑upgrade",
+      "target": "report",
+      "weight": 1
+    },
+    {
+      "source": "auto‑upgrade",
+      "target": "license",
+      "weight": 1
+    },
+    {
+      "source": "auto‑upgrade",
+      "target": "compliance",
+      "weight": 1
+    },
+    {
+      "source": "auto‑upgrade",
+      "target": "pagespeed",
+      "weight": 1
+    },
+    {
+      "source": "auto‑upgrade",
+      "target": "insights",
+      "weight": 1
+    },
+    {
+      "source": "404",
+      "target": "auto‑upgrade",
+      "weight": 1
+    },
+    {
+      "source": "auto‑upgrade",
+      "target": "map",
+      "weight": 1
+    },
+    {
+      "source": "auto‑upgrade",
+      "target": "builder",
+      "weight": 1
+    },
+    {
+      "source": "auto‑upgrade",
+      "target": "coupling",
+      "weight": 1
+    },
+    {
+      "source": "auto‑upgrade",
+      "target": "freshness",
+      "weight": 1
+    },
+    {
+      "source": "auto‑upgrade",
+      "target": "scores",
+      "weight": 1
+    },
+    {
+      "source": "auto‑upgrade",
+      "target": "explore",
+      "weight": 1
+    },
+    {
+      "source": "auto‑upgrade",
+      "target": "visionary",
+      "weight": 1
+    },
+    {
+      "source": "media",
+      "target": "unused",
+      "weight": 1
+    },
+    {
+      "source": "scanner",
+      "target": "unused",
+      "weight": 1
+    },
+    {
+      "source": "orphan",
+      "target": "unused",
+      "weight": 1
+    },
+    {
+      "source": "pages",
+      "target": "unused",
+      "weight": 1
+    },
+    {
+      "source": "detector",
+      "target": "unused",
+      "weight": 1
+    },
+    {
+      "source": "component",
+      "target": "unused",
+      "weight": 1
+    },
+    {
+      "source": "size",
+      "target": "unused",
+      "weight": 1
+    },
+    {
+      "source": "license",
+      "target": "unused",
+      "weight": 1
+    },
+    {
+      "source": "compliance",
+      "target": "unused",
+      "weight": 1
+    },
+    {
+      "source": "pagespeed",
+      "target": "unused",
+      "weight": 1
+    },
+    {
+      "source": "insights",
+      "target": "unused",
+      "weight": 1
+    },
+    {
+      "source": "runner",
+      "target": "unused",
+      "weight": 1
+    },
+    {
+      "source": "404",
+      "target": "unused",
+      "weight": 1
+    },
+    {
+      "source": "map",
+      "target": "unused",
+      "weight": 1
+    },
+    {
+      "source": "builder",
+      "target": "unused",
+      "weight": 1
+    },
+    {
+      "source": "coupling",
+      "target": "unused",
+      "weight": 1
+    },
+    {
+      "source": "graph",
+      "target": "unused",
+      "weight": 1
+    },
+    {
+      "source": "freshness",
+      "target": "unused",
+      "weight": 1
+    },
+    {
+      "source": "scores",
+      "target": "unused",
+      "weight": 1
+    },
+    {
+      "source": "explore",
+      "target": "unused",
+      "weight": 1
+    },
+    {
+      "source": "unused",
+      "target": "visionary",
+      "weight": 1
+    },
+    {
+      "source": "media",
+      "target": "scanner",
+      "weight": 1
+    },
+    {
+      "source": "media",
+      "target": "orphan",
+      "weight": 1
+    },
+    {
+      "source": "media",
+      "target": "pages",
+      "weight": 1
+    },
+    {
+      "source": "detector",
+      "target": "media",
+      "weight": 1
+    },
+    {
+      "source": "component",
+      "target": "media",
+      "weight": 1
+    },
+    {
+      "source": "media",
+      "target": "size",
+      "weight": 1
+    },
+    {
+      "source": "media",
+      "target": "report",
+      "weight": 1
+    },
+    {
+      "source": "license",
+      "target": "media",
+      "weight": 1
+    },
+    {
+      "source": "compliance",
+      "target": "media",
+      "weight": 1
+    },
+    {
+      "source": "media",
+      "target": "pagespeed",
+      "weight": 1
+    },
+    {
+      "source": "insights",
+      "target": "media",
+      "weight": 1
+    },
+    {
+      "source": "media",
+      "target": "runner",
+      "weight": 1
+    },
+    {
+      "source": "404",
+      "target": "media",
+      "weight": 1
+    },
+    {
+      "source": "map",
+      "target": "media",
+      "weight": 1
+    },
+    {
+      "source": "builder",
+      "target": "media",
+      "weight": 1
+    },
+    {
+      "source": "coupling",
+      "target": "media",
+      "weight": 1
+    },
+    {
+      "source": "graph",
+      "target": "media",
+      "weight": 1
+    },
+    {
+      "source": "freshness",
+      "target": "media",
+      "weight": 1
+    },
+    {
+      "source": "media",
+      "target": "scores",
+      "weight": 1
+    },
+    {
+      "source": "explore",
+      "target": "media",
+      "weight": 1
+    },
+    {
+      "source": "media",
+      "target": "visionary",
+      "weight": 1
+    },
+    {
+      "source": "orphan",
+      "target": "scanner",
+      "weight": 1
+    },
+    {
+      "source": "pages",
+      "target": "scanner",
+      "weight": 1
+    },
+    {
+      "source": "detector",
+      "target": "scanner",
+      "weight": 1
+    },
+    {
+      "source": "component",
+      "target": "scanner",
+      "weight": 1
+    },
+    {
+      "source": "scanner",
+      "target": "size",
+      "weight": 1
+    },
+    {
+      "source": "report",
+      "target": "scanner",
+      "weight": 1
+    },
+    {
+      "source": "license",
+      "target": "scanner",
+      "weight": 1
+    },
+    {
+      "source": "compliance",
+      "target": "scanner",
+      "weight": 1
+    },
+    {
+      "source": "pagespeed",
+      "target": "scanner",
+      "weight": 1
+    },
+    {
+      "source": "insights",
+      "target": "scanner",
+      "weight": 1
+    },
+    {
+      "source": "404",
+      "target": "scanner",
+      "weight": 1
+    },
+    {
+      "source": "map",
+      "target": "scanner",
+      "weight": 1
+    },
+    {
+      "source": "builder",
+      "target": "scanner",
+      "weight": 1
+    },
+    {
+      "source": "coupling",
+      "target": "scanner",
+      "weight": 1
+    },
+    {
+      "source": "freshness",
+      "target": "scanner",
+      "weight": 1
+    },
+    {
+      "source": "scanner",
+      "target": "scores",
+      "weight": 1
+    },
+    {
+      "source": "explore",
+      "target": "scanner",
+      "weight": 1
+    },
+    {
+      "source": "scanner",
+      "target": "visionary",
+      "weight": 1
+    },
+    {
+      "source": "orphan",
+      "target": "pages",
+      "weight": 1
+    },
+    {
+      "source": "detector",
+      "target": "orphan",
+      "weight": 1
+    },
+    {
+      "source": "component",
+      "target": "orphan",
+      "weight": 1
+    },
+    {
+      "source": "orphan",
+      "target": "size",
+      "weight": 1
+    },
+    {
+      "source": "orphan",
+      "target": "report",
+      "weight": 1
+    },
+    {
+      "source": "license",
+      "target": "orphan",
+      "weight": 1
+    },
+    {
+      "source": "compliance",
+      "target": "orphan",
+      "weight": 1
+    },
+    {
+      "source": "orphan",
+      "target": "pagespeed",
+      "weight": 1
+    },
+    {
+      "source": "insights",
+      "target": "orphan",
+      "weight": 1
+    },
+    {
+      "source": "orphan",
+      "target": "runner",
+      "weight": 1
+    },
+    {
+      "source": "404",
+      "target": "orphan",
+      "weight": 1
+    },
+    {
+      "source": "map",
+      "target": "orphan",
+      "weight": 1
+    },
+    {
+      "source": "builder",
+      "target": "orphan",
+      "weight": 1
+    },
+    {
+      "source": "coupling",
+      "target": "orphan",
+      "weight": 1
+    },
+    {
+      "source": "graph",
+      "target": "orphan",
+      "weight": 1
+    },
+    {
+      "source": "freshness",
+      "target": "orphan",
+      "weight": 1
+    },
+    {
+      "source": "orphan",
+      "target": "scores",
+      "weight": 1
+    },
+    {
+      "source": "explore",
+      "target": "orphan",
+      "weight": 1
+    },
+    {
+      "source": "orphan",
+      "target": "visionary",
+      "weight": 1
+    },
+    {
+      "source": "detector",
+      "target": "pages",
+      "weight": 1
+    },
+    {
+      "source": "component",
+      "target": "pages",
+      "weight": 1
+    },
+    {
+      "source": "pages",
+      "target": "size",
+      "weight": 1
+    },
+    {
+      "source": "license",
+      "target": "pages",
+      "weight": 1
+    },
+    {
+      "source": "compliance",
+      "target": "pages",
+      "weight": 1
+    },
+    {
+      "source": "pages",
+      "target": "pagespeed",
+      "weight": 1
+    },
+    {
+      "source": "insights",
+      "target": "pages",
+      "weight": 1
+    },
+    {
+      "source": "pages",
+      "target": "runner",
+      "weight": 1
+    },
+    {
+      "source": "404",
+      "target": "pages",
+      "weight": 1
+    },
+    {
+      "source": "map",
+      "target": "pages",
+      "weight": 1
+    },
+    {
+      "source": "builder",
+      "target": "pages",
+      "weight": 1
+    },
+    {
+      "source": "coupling",
+      "target": "pages",
+      "weight": 1
+    },
+    {
+      "source": "graph",
+      "target": "pages",
+      "weight": 1
+    },
+    {
+      "source": "freshness",
+      "target": "pages",
+      "weight": 1
+    },
+    {
+      "source": "pages",
+      "target": "scores",
+      "weight": 1
+    },
+    {
+      "source": "explore",
+      "target": "pages",
+      "weight": 1
+    },
+    {
+      "source": "pages",
+      "target": "visionary",
+      "weight": 1
+    },
+    {
+      "source": "component",
+      "target": "detector",
+      "weight": 1
+    },
+    {
+      "source": "detector",
+      "target": "size",
+      "weight": 1
+    },
+    {
+      "source": "detector",
+      "target": "report",
+      "weight": 1
+    },
+    {
+      "source": "detector",
+      "target": "license",
+      "weight": 1
+    },
+    {
+      "source": "compliance",
+      "target": "detector",
+      "weight": 1
+    },
+    {
+      "source": "detector",
+      "target": "pagespeed",
+      "weight": 1
+    },
+    {
+      "source": "detector",
+      "target": "insights",
+      "weight": 1
+    },
+    {
+      "source": "detector",
+      "target": "runner",
+      "weight": 1
+    },
+    {
+      "source": "404",
+      "target": "detector",
+      "weight": 1
+    },
+    {
+      "source": "detector",
+      "target": "map",
+      "weight": 1
+    },
+    {
+      "source": "builder",
+      "target": "detector",
+      "weight": 1
+    },
+    {
+      "source": "coupling",
+      "target": "detector",
+      "weight": 1
+    },
+    {
+      "source": "detector",
+      "target": "graph",
+      "weight": 1
+    },
+    {
+      "source": "detector",
+      "target": "freshness",
+      "weight": 1
+    },
+    {
+      "source": "detector",
+      "target": "scores",
+      "weight": 1
+    },
+    {
+      "source": "detector",
+      "target": "explore",
+      "weight": 1
+    },
+    {
+      "source": "detector",
+      "target": "visionary",
+      "weight": 1
+    },
+    {
+      "source": "component",
+      "target": "size",
+      "weight": 1
+    },
+    {
+      "source": "component",
+      "target": "report",
+      "weight": 1
+    },
+    {
+      "source": "component",
+      "target": "license",
+      "weight": 1
+    },
+    {
+      "source": "compliance",
+      "target": "component",
+      "weight": 1
+    },
+    {
+      "source": "component",
+      "target": "pagespeed",
+      "weight": 1
+    },
+    {
+      "source": "component",
+      "target": "insights",
+      "weight": 1
+    },
+    {
+      "source": "component",
+      "target": "runner",
+      "weight": 1
+    },
+    {
+      "source": "404",
+      "target": "component",
+      "weight": 1
+    },
+    {
+      "source": "component",
+      "target": "map",
+      "weight": 1
+    },
+    {
+      "source": "builder",
+      "target": "component",
+      "weight": 1
+    },
+    {
+      "source": "component",
+      "target": "coupling",
+      "weight": 1
+    },
+    {
+      "source": "component",
+      "target": "graph",
+      "weight": 1
+    },
+    {
+      "source": "component",
+      "target": "freshness",
+      "weight": 1
+    },
+    {
+      "source": "component",
+      "target": "scores",
+      "weight": 1
+    },
+    {
+      "source": "component",
+      "target": "explore",
+      "weight": 1
+    },
+    {
+      "source": "component",
+      "target": "visionary",
+      "weight": 1
+    },
+    {
+      "source": "report",
+      "target": "size",
+      "weight": 1
+    },
+    {
+      "source": "license",
+      "target": "size",
+      "weight": 1
+    },
+    {
+      "source": "compliance",
+      "target": "size",
+      "weight": 1
+    },
+    {
+      "source": "pagespeed",
+      "target": "size",
+      "weight": 1
+    },
+    {
+      "source": "insights",
+      "target": "size",
+      "weight": 1
+    },
+    {
+      "source": "runner",
+      "target": "size",
+      "weight": 1
+    },
+    {
+      "source": "404",
+      "target": "size",
+      "weight": 1
+    },
+    {
+      "source": "map",
+      "target": "size",
+      "weight": 1
+    },
+    {
+      "source": "builder",
+      "target": "size",
+      "weight": 1
+    },
+    {
+      "source": "coupling",
+      "target": "size",
+      "weight": 1
+    },
+    {
+      "source": "graph",
+      "target": "size",
+      "weight": 1
+    },
+    {
+      "source": "freshness",
+      "target": "size",
+      "weight": 1
+    },
+    {
+      "source": "scores",
+      "target": "size",
+      "weight": 1
+    },
+    {
+      "source": "explore",
+      "target": "size",
+      "weight": 1
+    },
+    {
+      "source": "size",
+      "target": "visionary",
+      "weight": 1
+    },
+    {
+      "source": "license",
+      "target": "report",
+      "weight": 1
+    },
+    {
+      "source": "compliance",
+      "target": "report",
+      "weight": 1
+    },
+    {
+      "source": "pagespeed",
+      "target": "report",
+      "weight": 1
+    },
+    {
+      "source": "insights",
+      "target": "report",
+      "weight": 1
+    },
+    {
+      "source": "report",
+      "target": "runner",
+      "weight": 1
+    },
+    {
+      "source": "404",
+      "target": "report",
+      "weight": 1
+    },
+    {
+      "source": "map",
+      "target": "report",
+      "weight": 1
+    },
+    {
+      "source": "builder",
+      "target": "report",
+      "weight": 1
+    },
+    {
+      "source": "coupling",
+      "target": "report",
+      "weight": 1
+    },
+    {
+      "source": "graph",
+      "target": "report",
+      "weight": 1
+    },
+    {
+      "source": "freshness",
+      "target": "report",
+      "weight": 1
+    },
+    {
+      "source": "report",
+      "target": "scores",
+      "weight": 1
+    },
+    {
+      "source": "explore",
+      "target": "report",
+      "weight": 1
+    },
+    {
+      "source": "report",
+      "target": "visionary",
+      "weight": 1
+    },
+    {
+      "source": "compliance",
+      "target": "license",
+      "weight": 1
+    },
+    {
+      "source": "license",
+      "target": "pagespeed",
+      "weight": 1
+    },
+    {
+      "source": "insights",
+      "target": "license",
+      "weight": 1
+    },
+    {
+      "source": "license",
+      "target": "runner",
+      "weight": 1
+    },
+    {
+      "source": "404",
+      "target": "license",
+      "weight": 1
+    },
+    {
+      "source": "license",
+      "target": "map",
+      "weight": 1
+    },
+    {
+      "source": "builder",
+      "target": "license",
+      "weight": 1
+    },
+    {
+      "source": "coupling",
+      "target": "license",
+      "weight": 1
+    },
+    {
+      "source": "graph",
+      "target": "license",
+      "weight": 1
+    },
+    {
+      "source": "freshness",
+      "target": "license",
+      "weight": 1
+    },
+    {
+      "source": "license",
+      "target": "scores",
+      "weight": 1
+    },
+    {
+      "source": "explore",
+      "target": "license",
+      "weight": 1
+    },
+    {
+      "source": "license",
+      "target": "visionary",
+      "weight": 1
+    },
+    {
+      "source": "compliance",
+      "target": "pagespeed",
+      "weight": 1
+    },
+    {
+      "source": "compliance",
+      "target": "insights",
+      "weight": 1
+    },
+    {
+      "source": "compliance",
+      "target": "runner",
+      "weight": 1
+    },
+    {
+      "source": "404",
+      "target": "compliance",
+      "weight": 1
+    },
+    {
+      "source": "compliance",
+      "target": "map",
+      "weight": 1
+    },
+    {
+      "source": "builder",
+      "target": "compliance",
+      "weight": 1
+    },
+    {
+      "source": "compliance",
+      "target": "coupling",
+      "weight": 1
+    },
+    {
+      "source": "compliance",
+      "target": "graph",
+      "weight": 1
+    },
+    {
+      "source": "compliance",
+      "target": "freshness",
+      "weight": 1
+    },
+    {
+      "source": "compliance",
+      "target": "scores",
+      "weight": 1
+    },
+    {
+      "source": "compliance",
+      "target": "explore",
+      "weight": 1
+    },
+    {
+      "source": "compliance",
+      "target": "visionary",
+      "weight": 1
+    },
+    {
+      "source": "insights",
+      "target": "pagespeed",
+      "weight": 1
+    },
+    {
+      "source": "pagespeed",
+      "target": "runner",
+      "weight": 1
+    },
+    {
+      "source": "404",
+      "target": "pagespeed",
+      "weight": 1
+    },
+    {
+      "source": "map",
+      "target": "pagespeed",
+      "weight": 1
+    },
+    {
+      "source": "builder",
+      "target": "pagespeed",
+      "weight": 1
+    },
+    {
+      "source": "coupling",
+      "target": "pagespeed",
+      "weight": 1
+    },
+    {
+      "source": "graph",
+      "target": "pagespeed",
+      "weight": 1
+    },
+    {
+      "source": "freshness",
+      "target": "pagespeed",
+      "weight": 1
+    },
+    {
+      "source": "pagespeed",
+      "target": "scores",
+      "weight": 1
+    },
+    {
+      "source": "explore",
+      "target": "pagespeed",
+      "weight": 1
+    },
+    {
+      "source": "pagespeed",
+      "target": "visionary",
+      "weight": 1
+    },
+    {
+      "source": "insights",
+      "target": "runner",
+      "weight": 1
+    },
+    {
+      "source": "404",
+      "target": "insights",
+      "weight": 1
+    },
+    {
+      "source": "insights",
+      "target": "map",
+      "weight": 1
+    },
+    {
+      "source": "builder",
+      "target": "insights",
+      "weight": 1
+    },
+    {
+      "source": "coupling",
+      "target": "insights",
+      "weight": 1
+    },
+    {
+      "source": "graph",
+      "target": "insights",
+      "weight": 1
+    },
+    {
+      "source": "freshness",
+      "target": "insights",
+      "weight": 1
+    },
+    {
+      "source": "insights",
+      "target": "scores",
+      "weight": 1
+    },
+    {
+      "source": "explore",
+      "target": "insights",
+      "weight": 1
+    },
+    {
+      "source": "insights",
+      "target": "visionary",
+      "weight": 1
+    },
+    {
+      "source": "404",
+      "target": "runner",
+      "weight": 1
+    },
+    {
+      "source": "map",
+      "target": "runner",
+      "weight": 1
+    },
+    {
+      "source": "builder",
+      "target": "runner",
+      "weight": 1
+    },
+    {
+      "source": "coupling",
+      "target": "runner",
+      "weight": 1
+    },
+    {
+      "source": "freshness",
+      "target": "runner",
+      "weight": 1
+    },
+    {
+      "source": "runner",
+      "target": "scores",
+      "weight": 1
+    },
+    {
+      "source": "explore",
+      "target": "runner",
+      "weight": 1
+    },
+    {
+      "source": "runner",
+      "target": "visionary",
+      "weight": 1
+    },
+    {
+      "source": "404",
+      "target": "map",
+      "weight": 1
+    },
+    {
+      "source": "404",
+      "target": "builder",
+      "weight": 1
+    },
+    {
+      "source": "404",
+      "target": "coupling",
+      "weight": 1
+    },
+    {
+      "source": "404",
+      "target": "graph",
+      "weight": 1
+    },
+    {
+      "source": "404",
+      "target": "freshness",
+      "weight": 1
+    },
+    {
+      "source": "404",
+      "target": "scores",
+      "weight": 1
+    },
+    {
+      "source": "404",
+      "target": "explore",
+      "weight": 1
+    },
+    {
+      "source": "404",
+      "target": "visionary",
+      "weight": 1
+    },
+    {
+      "source": "builder",
+      "target": "map",
+      "weight": 1
+    },
+    {
+      "source": "coupling",
+      "target": "map",
+      "weight": 1
+    },
+    {
+      "source": "graph",
+      "target": "map",
+      "weight": 1
+    },
+    {
+      "source": "freshness",
+      "target": "map",
+      "weight": 1
+    },
+    {
+      "source": "map",
+      "target": "scores",
+      "weight": 1
+    },
+    {
+      "source": "map",
+      "target": "visionary",
+      "weight": 1
+    },
+    {
+      "source": "builder",
+      "target": "coupling",
+      "weight": 1
+    },
+    {
+      "source": "builder",
+      "target": "graph",
+      "weight": 1
+    },
+    {
+      "source": "builder",
+      "target": "freshness",
+      "weight": 1
+    },
+    {
+      "source": "builder",
+      "target": "scores",
+      "weight": 1
+    },
+    {
+      "source": "builder",
+      "target": "explore",
+      "weight": 1
+    },
+    {
+      "source": "builder",
+      "target": "visionary",
+      "weight": 1
+    },
+    {
+      "source": "coupling",
+      "target": "graph",
+      "weight": 1
+    },
+    {
+      "source": "coupling",
+      "target": "freshness",
+      "weight": 1
+    },
+    {
+      "source": "coupling",
+      "target": "scores",
+      "weight": 1
+    },
+    {
+      "source": "coupling",
+      "target": "explore",
+      "weight": 1
+    },
+    {
+      "source": "coupling",
+      "target": "visionary",
+      "weight": 1
+    },
+    {
+      "source": "freshness",
+      "target": "graph",
+      "weight": 1
+    },
+    {
+      "source": "graph",
+      "target": "scores",
+      "weight": 1
+    },
+    {
+      "source": "explore",
+      "target": "graph",
+      "weight": 1
+    },
+    {
+      "source": "graph",
+      "target": "visionary",
+      "weight": 1
+    },
+    {
+      "source": "freshness",
+      "target": "scores",
+      "weight": 1
+    },
+    {
+      "source": "explore",
+      "target": "freshness",
+      "weight": 1
+    },
+    {
+      "source": "freshness",
+      "target": "visionary",
+      "weight": 1
+    },
+    {
+      "source": "explore",
+      "target": "scores",
+      "weight": 1
+    },
+    {
+      "source": "scores",
+      "target": "visionary",
+      "weight": 1
+    },
+    {
+      "source": "explore",
+      "target": "visionary",
+      "weight": 1
+    },
+    {
+      "source": "experience",
+      "target": "futuristic",
+      "weight": 1
+    },
+    {
+      "source": "futuristic",
+      "target": "showcase",
+      "weight": 1
+    },
+    {
+      "source": "benefits",
+      "target": "futuristic",
+      "weight": 1
+    },
+    {
+      "source": "browse",
+      "target": "futuristic",
+      "weight": 1
+    },
+    {
+      "source": "futuristic",
+      "target": "see",
+      "weight": 1
+    },
+    {
+      "source": "feature",
+      "target": "futuristic",
+      "weight": 1
+    },
+    {
+      "source": "futuristic",
+      "target": "guardrails",
+      "weight": 1
+    },
+    {
+      "source": "engines",
+      "target": "futuristic",
+      "weight": 1
+    },
+    {
+      "source": "beyond",
+      "target": "futuristic",
+      "weight": 1
+    },
+    {
+      "source": "futuristic",
+      "target": "github",
+      "weight": 1
+    },
+    {
+      "source": "actions",
+      "target": "futuristic",
+      "weight": 1
+    },
+    {
+      "source": "command",
+      "target": "futuristic",
+      "weight": 1
+    },
+    {
+      "source": "center",
+      "target": "futuristic",
+      "weight": 1
+    },
+    {
+      "source": "card",
+      "target": "futuristic",
+      "weight": 1
+    },
+    {
+      "source": "futuristic",
+      "target": "netlify",
+      "weight": 1
+    },
+    {
+      "source": "futuristic",
+      "target": "spotlight",
+      "weight": 1
+    },
+    {
+      "source": "futuristic",
+      "target": "outcome‑focused",
+      "weight": 1
+    },
+    {
+      "source": "futuristic",
+      "target": "suites",
+      "weight": 1
+    },
+    {
+      "source": "futuristic",
+      "target": "suite",
+      "weight": 1
+    },
+    {
+      "source": "futuristic",
+      "target": "superpowers",
+      "weight": 1
+    },
+    {
+      "source": "futuristic",
+      "target": "get",
+      "weight": 1
+    },
+    {
+      "source": "futuristic",
+      "target": "started",
+      "weight": 1
+    },
+    {
+      "source": "futuristic",
+      "target": "minutes",
+      "weight": 1
+    },
+    {
+      "source": "futuristic",
+      "target": "outcomes",
+      "weight": 1
+    },
+    {
+      "source": "catalog",
+      "target": "futuristic",
+      "weight": 1
+    },
+    {
+      "source": "futuristic",
+      "target": "platform",
+      "weight": 1
+    },
+    {
+      "source": "futuristic",
+      "target": "modules",
+      "weight": 1
+    },
+    {
+      "source": "futuristic",
+      "target": "neural",
+      "weight": 1
+    },
+    {
+      "source": "futuristic",
+      "target": "matrix",
+      "weight": 1
+    },
+    {
+      "source": "extended",
+      "target": "futuristic",
+      "weight": 1
+    },
+    {
+      "source": "directory",
+      "target": "futuristic",
+      "weight": 1
+    },
+    {
+      "source": "capability",
+      "target": "futuristic",
+      "weight": 1
+    },
+    {
+      "source": "deep",
+      "target": "futuristic",
+      "weight": 1
+    },
+    {
+      "source": "futuristic",
+      "target": "links",
+      "weight": 1
+    },
+    {
+      "source": "futuristic",
+      "target": "use",
+      "weight": 1
+    },
+    {
+      "source": "cases",
+      "target": "futuristic",
+      "weight": 1
+    },
+    {
+      "source": "futuristic",
+      "target": "live",
+      "weight": 1
+    },
+    {
+      "source": "futuristic",
+      "target": "impact",
+      "weight": 1
+    },
+    {
+      "source": "futuristic",
+      "target": "why",
+      "weight": 1
+    },
+    {
+      "source": "futuristic",
+      "target": "zion",
+      "weight": 1
+    },
+    {
+      "source": "futuristic",
+      "target": "value",
+      "weight": 1
+    },
+    {
+      "source": "futuristic",
+      "target": "pillars",
+      "weight": 1
+    },
+    {
+      "source": "futuristic",
+      "target": "practice",
+      "weight": 1
+    },
+    {
+      "source": "futuristic",
+      "target": "tailored",
+      "weight": 1
+    },
+    {
+      "source": "futuristic",
+      "target": "team",
+      "weight": 1
+    },
+    {
+      "source": "ecosystem",
+      "target": "futuristic",
+      "weight": 1
+    },
+    {
+      "source": "futuristic",
+      "target": "integrations",
+      "weight": 1
+    },
+    {
+      "source": "futuristic",
+      "target": "supabase",
+      "weight": 1
+    },
+    {
+      "source": "framer",
+      "target": "futuristic",
+      "weight": 1
+    },
+    {
+      "source": "futuristic",
+      "target": "motion",
+      "weight": 1
+    },
+    {
+      "source": "futuristic",
+      "target": "quality",
+      "weight": 1
+    },
+    {
+      "source": "futuristic",
+      "target": "gates",
+      "weight": 1
+    },
+    {
+      "source": "futuristic",
+      "target": "quick",
+      "weight": 1
+    },
+    {
+      "source": "futuristic",
+      "target": "start",
+      "weight": 1
+    },
+    {
+      "source": "futuristic",
+      "target": "ready",
+      "weight": 1
+    },
+    {
+      "source": "build",
+      "target": "futuristic",
+      "weight": 1
+    },
+    {
+      "source": "agents",
+      "target": "futuristic",
+      "weight": 1
+    },
+    {
+      "source": "futuristic",
+      "target": "gallery",
+      "weight": 1
+    },
+    {
+      "source": "futuristic",
+      "target": "label",
+      "weight": 1
+    },
+    {
+      "source": "auto‑promoted",
+      "target": "futuristic",
+      "weight": 1
+    },
+    {
+      "source": "futuristic",
+      "target": "highlights",
+      "weight": 1
+    },
+    {
+      "source": "experience",
+      "target": "front",
+      "weight": 1
+    },
+    {
+      "source": "front",
+      "target": "showcase",
+      "weight": 1
+    },
+    {
+      "source": "browse",
+      "target": "front",
+      "weight": 1
+    },
+    {
+      "source": "front",
+      "target": "see",
+      "weight": 1
+    },
+    {
+      "source": "feature",
+      "target": "front",
+      "weight": 1
+    },
+    {
+      "source": "front",
+      "target": "guardrails",
+      "weight": 1
+    },
+    {
+      "source": "engines",
+      "target": "front",
+      "weight": 1
+    },
+    {
+      "source": "beyond",
+      "target": "front",
+      "weight": 1
+    },
+    {
+      "source": "actions",
+      "target": "front",
+      "weight": 1
+    },
+    {
+      "source": "command",
+      "target": "front",
+      "weight": 1
+    },
+    {
+      "source": "center",
+      "target": "front",
+      "weight": 1
+    },
+    {
+      "source": "card",
+      "target": "front",
+      "weight": 1
+    },
+    {
+      "source": "front",
+      "target": "spotlight",
+      "weight": 1
+    },
+    {
+      "source": "front",
+      "target": "outcome‑focused",
+      "weight": 1
+    },
+    {
+      "source": "front",
+      "target": "suites",
+      "weight": 1
+    },
+    {
+      "source": "front",
+      "target": "suite",
+      "weight": 1
+    },
+    {
+      "source": "front",
+      "target": "superpowers",
+      "weight": 1
+    },
+    {
+      "source": "front",
+      "target": "get",
+      "weight": 1
+    },
+    {
+      "source": "front",
+      "target": "started",
+      "weight": 1
+    },
+    {
+      "source": "front",
+      "target": "minutes",
+      "weight": 1
+    },
+    {
+      "source": "front",
+      "target": "outcomes",
+      "weight": 1
+    },
+    {
+      "source": "catalog",
+      "target": "front",
+      "weight": 1
+    },
+    {
+      "source": "front",
+      "target": "platform",
+      "weight": 1
+    },
+    {
+      "source": "front",
+      "target": "modules",
+      "weight": 1
+    },
+    {
+      "source": "front",
+      "target": "neural",
+      "weight": 1
+    },
+    {
+      "source": "front",
+      "target": "matrix",
+      "weight": 1
+    },
+    {
+      "source": "extended",
+      "target": "front",
+      "weight": 1
+    },
+    {
+      "source": "directory",
+      "target": "front",
+      "weight": 1
+    },
+    {
+      "source": "capability",
+      "target": "front",
+      "weight": 1
+    },
+    {
+      "source": "deep",
+      "target": "front",
+      "weight": 1
+    },
+    {
+      "source": "front",
+      "target": "links",
+      "weight": 1
+    },
+    {
+      "source": "front",
+      "target": "use",
+      "weight": 1
+    },
+    {
+      "source": "cases",
+      "target": "front",
+      "weight": 1
+    },
+    {
+      "source": "front",
+      "target": "live",
+      "weight": 1
+    },
+    {
+      "source": "front",
+      "target": "impact",
+      "weight": 1
+    },
+    {
+      "source": "front",
+      "target": "why",
+      "weight": 1
+    },
+    {
+      "source": "front",
+      "target": "zion",
+      "weight": 1
+    },
+    {
+      "source": "front",
+      "target": "value",
+      "weight": 1
+    },
+    {
+      "source": "front",
+      "target": "pillars",
+      "weight": 1
+    },
+    {
+      "source": "front",
+      "target": "practice",
+      "weight": 1
+    },
+    {
+      "source": "front",
+      "target": "tailored",
+      "weight": 1
+    },
+    {
+      "source": "front",
+      "target": "team",
+      "weight": 1
+    },
+    {
+      "source": "ecosystem",
+      "target": "front",
+      "weight": 1
+    },
+    {
+      "source": "front",
+      "target": "integrations",
+      "weight": 1
+    },
+    {
+      "source": "front",
+      "target": "supabase",
+      "weight": 1
+    },
+    {
+      "source": "framer",
+      "target": "front",
+      "weight": 1
+    },
+    {
+      "source": "front",
+      "target": "motion",
+      "weight": 1
+    },
+    {
+      "source": "front",
+      "target": "quality",
+      "weight": 1
+    },
+    {
+      "source": "front",
+      "target": "gates",
+      "weight": 1
+    },
+    {
+      "source": "front",
+      "target": "quick",
+      "weight": 1
+    },
+    {
+      "source": "front",
+      "target": "start",
+      "weight": 1
+    },
+    {
+      "source": "front",
+      "target": "ready",
+      "weight": 1
+    },
+    {
+      "source": "build",
+      "target": "front",
+      "weight": 1
+    },
+    {
+      "source": "agents",
+      "target": "front",
+      "weight": 1
+    },
+    {
+      "source": "front",
+      "target": "gallery",
+      "weight": 1
+    },
+    {
+      "source": "front",
+      "target": "label",
+      "weight": 1
+    },
+    {
+      "source": "auto‑promoted",
+      "target": "front",
+      "weight": 1
+    },
+    {
+      "source": "front",
+      "target": "highlights",
+      "weight": 1
+    },
+    {
+      "source": "experience",
+      "target": "showcase",
+      "weight": 1
+    },
+    {
+      "source": "experience",
+      "target": "features",
+      "weight": 1
+    },
+    {
+      "source": "capabilities",
+      "target": "experience",
+      "weight": 1
+    },
+    {
+      "source": "benefits",
+      "target": "experience",
+      "weight": 1
+    },
+    {
+      "source": "experience",
+      "target": "explore",
+      "weight": 1
+    },
+    {
+      "source": "browse",
+      "target": "experience",
+      "weight": 1
+    },
+    {
+      "source": "experience",
+      "target": "see",
+      "weight": 1
+    },
+    {
+      "source": "experience",
+      "target": "feature",
+      "weight": 1
+    },
+    {
+      "source": "experience",
+      "target": "map",
+      "weight": 1
+    },
+    {
+      "source": "experience",
+      "target": "guardrails",
+      "weight": 1
+    },
+    {
+      "source": "automation",
+      "target": "experience",
+      "weight": 1
+    },
+    {
+      "source": "experience",
+      "target": "hub",
+      "weight": 1
+    },
+    {
+      "source": "autonomous",
+      "target": "experience",
+      "weight": 1
+    },
+    {
+      "source": "engines",
+      "target": "experience",
+      "weight": 1
+    },
+    {
+      "source": "beyond",
+      "target": "experience",
+      "weight": 1
+    },
+    {
+      "source": "experience",
+      "target": "github",
+      "weight": 1
+    },
+    {
+      "source": "actions",
+      "target": "experience",
+      "weight": 1
+    },
+    {
+      "source": "command",
+      "target": "experience",
+      "weight": 1
+    },
+    {
+      "source": "center",
+      "target": "experience",
+      "weight": 1
+    },
+    {
+      "source": "card",
+      "target": "experience",
+      "weight": 1
+    },
+    {
+      "source": "experience",
+      "target": "title",
+      "weight": 1
+    },
+    {
+      "source": "experience",
+      "target": "netlify",
+      "weight": 1
+    },
+    {
+      "source": "automations",
+      "target": "experience",
+      "weight": 1
+    },
+    {
+      "source": "experience",
+      "target": "spotlight",
+      "weight": 1
+    },
+    {
+      "source": "experience",
+      "target": "outcome‑focused",
+      "weight": 1
+    },
+    {
+      "source": "experience",
+      "target": "suites",
+      "weight": 1
+    },
+    {
+      "source": "experience",
+      "target": "suite",
+      "weight": 1
+    },
+    {
+      "source": "experience",
+      "target": "superpowers",
+      "weight": 1
+    },
+    {
+      "source": "experience",
+      "target": "get",
+      "weight": 1
+    },
+    {
+      "source": "experience",
+      "target": "started",
+      "weight": 1
+    },
+    {
+      "source": "experience",
+      "target": "minutes",
+      "weight": 1
+    },
+    {
+      "source": "experience",
+      "target": "outcomes",
+      "weight": 1
+    },
+    {
+      "source": "catalog",
+      "target": "experience",
+      "weight": 1
+    },
+    {
+      "source": "experience",
+      "target": "platform",
+      "weight": 1
+    },
+    {
+      "source": "experience",
+      "target": "modules",
+      "weight": 1
+    },
+    {
+      "source": "experience",
+      "target": "neural",
+      "weight": 1
+    },
+    {
+      "source": "experience",
+      "target": "matrix",
+      "weight": 1
+    },
+    {
+      "source": "experience",
+      "target": "extended",
+      "weight": 1
+    },
+    {
+      "source": "directory",
+      "target": "experience",
+      "weight": 1
+    },
+    {
+      "source": "capability",
+      "target": "experience",
+      "weight": 1
+    },
+    {
+      "source": "deep",
+      "target": "experience",
+      "weight": 1
+    },
+    {
+      "source": "experience",
+      "target": "links",
+      "weight": 1
+    },
+    {
+      "source": "experience",
+      "target": "use",
+      "weight": 1
+    },
+    {
+      "source": "cases",
+      "target": "experience",
+      "weight": 1
+    },
+    {
+      "source": "experience",
+      "target": "live",
+      "weight": 1
+    },
+    {
+      "source": "experience",
+      "target": "impact",
+      "weight": 1
+    },
+    {
+      "source": "experience",
+      "target": "why",
+      "weight": 1
+    },
+    {
+      "source": "experience",
+      "target": "zion",
+      "weight": 1
+    },
+    {
+      "source": "experience",
+      "target": "value",
+      "weight": 1
+    },
+    {
+      "source": "experience",
+      "target": "pillars",
+      "weight": 1
+    },
+    {
+      "source": "experience",
+      "target": "practice",
+      "weight": 1
+    },
+    {
+      "source": "experience",
+      "target": "tailored",
+      "weight": 1
+    },
+    {
+      "source": "experience",
+      "target": "team",
+      "weight": 1
+    },
+    {
+      "source": "ecosystem",
+      "target": "experience",
+      "weight": 1
+    },
+    {
+      "source": "experience",
+      "target": "integrations",
+      "weight": 1
+    },
+    {
+      "source": "experience",
+      "target": "supabase",
+      "weight": 1
+    },
+    {
+      "source": "experience",
+      "target": "framer",
+      "weight": 1
+    },
+    {
+      "source": "experience",
+      "target": "motion",
+      "weight": 1
+    },
+    {
+      "source": "experience",
+      "target": "quality",
+      "weight": 1
+    },
+    {
+      "source": "experience",
+      "target": "gates",
+      "weight": 1
+    },
+    {
+      "source": "experience",
+      "target": "quick",
+      "weight": 1
+    },
+    {
+      "source": "experience",
+      "target": "start",
+      "weight": 1
+    },
+    {
+      "source": "experience",
+      "target": "ready",
+      "weight": 1
+    },
+    {
+      "source": "build",
+      "target": "experience",
+      "weight": 1
+    },
+    {
+      "source": "cloud",
+      "target": "experience",
+      "weight": 1
+    },
+    {
+      "source": "agents",
+      "target": "experience",
+      "weight": 1
+    },
+    {
+      "source": "experience",
+      "target": "gallery",
+      "weight": 1
+    },
+    {
+      "source": "experience",
+      "target": "label",
+      "weight": 1
+    },
+    {
+      "source": "auto‑promoted",
+      "target": "experience",
+      "weight": 1
+    },
+    {
+      "source": "experience",
+      "target": "highlights",
+      "weight": 1
+    },
+    {
+      "source": "features",
+      "target": "showcase",
+      "weight": 1
+    },
+    {
+      "source": "capabilities",
+      "target": "showcase",
+      "weight": 1
+    },
+    {
+      "source": "benefits",
+      "target": "showcase",
+      "weight": 1
+    },
+    {
+      "source": "explore",
+      "target": "showcase",
+      "weight": 1
+    },
+    {
+      "source": "browse",
+      "target": "showcase",
+      "weight": 1
+    },
+    {
+      "source": "see",
+      "target": "showcase",
+      "weight": 1
+    },
+    {
+      "source": "feature",
+      "target": "showcase",
+      "weight": 1
+    },
+    {
+      "source": "map",
+      "target": "showcase",
+      "weight": 1
+    },
+    {
+      "source": "guardrails",
+      "target": "showcase",
+      "weight": 1
+    },
+    {
+      "source": "automation",
+      "target": "showcase",
+      "weight": 1
+    },
+    {
+      "source": "hub",
+      "target": "showcase",
+      "weight": 1
+    },
+    {
+      "source": "autonomous",
+      "target": "showcase",
+      "weight": 1
+    },
+    {
+      "source": "engines",
+      "target": "showcase",
+      "weight": 1
+    },
+    {
+      "source": "beyond",
+      "target": "showcase",
+      "weight": 1
+    },
+    {
+      "source": "github",
+      "target": "showcase",
+      "weight": 1
+    },
+    {
+      "source": "actions",
+      "target": "showcase",
+      "weight": 1
+    },
+    {
+      "source": "command",
+      "target": "showcase",
+      "weight": 1
+    },
+    {
+      "source": "center",
+      "target": "showcase",
+      "weight": 1
+    },
+    {
+      "source": "card",
+      "target": "showcase",
+      "weight": 1
+    },
+    {
+      "source": "showcase",
+      "target": "title",
+      "weight": 1
+    },
+    {
+      "source": "netlify",
+      "target": "showcase",
+      "weight": 1
+    },
+    {
+      "source": "automations",
+      "target": "showcase",
+      "weight": 1
+    },
+    {
+      "source": "showcase",
+      "target": "spotlight",
+      "weight": 1
+    },
+    {
+      "source": "outcome‑focused",
+      "target": "showcase",
+      "weight": 1
+    },
+    {
+      "source": "showcase",
+      "target": "suites",
+      "weight": 1
+    },
+    {
+      "source": "showcase",
+      "target": "suite",
+      "weight": 1
+    },
+    {
+      "source": "showcase",
+      "target": "superpowers",
+      "weight": 1
+    },
+    {
+      "source": "get",
+      "target": "showcase",
+      "weight": 1
+    },
+    {
+      "source": "showcase",
+      "target": "started",
+      "weight": 1
+    },
+    {
+      "source": "minutes",
+      "target": "showcase",
+      "weight": 1
+    },
+    {
+      "source": "outcomes",
+      "target": "showcase",
+      "weight": 1
+    },
+    {
+      "source": "catalog",
+      "target": "showcase",
+      "weight": 1
+    },
+    {
+      "source": "platform",
+      "target": "showcase",
+      "weight": 1
+    },
+    {
+      "source": "modules",
+      "target": "showcase",
+      "weight": 1
+    },
+    {
+      "source": "neural",
+      "target": "showcase",
+      "weight": 1
+    },
+    {
+      "source": "matrix",
+      "target": "showcase",
+      "weight": 1
+    },
+    {
+      "source": "extended",
+      "target": "showcase",
+      "weight": 1
+    },
+    {
+      "source": "directory",
+      "target": "showcase",
+      "weight": 1
+    },
+    {
+      "source": "capability",
+      "target": "showcase",
+      "weight": 1
+    },
+    {
+      "source": "deep",
+      "target": "showcase",
+      "weight": 1
+    },
+    {
+      "source": "links",
+      "target": "showcase",
+      "weight": 1
+    },
+    {
+      "source": "showcase",
+      "target": "use",
+      "weight": 1
+    },
+    {
+      "source": "cases",
+      "target": "showcase",
+      "weight": 1
+    },
+    {
+      "source": "live",
+      "target": "showcase",
+      "weight": 1
+    },
+    {
+      "source": "impact",
+      "target": "showcase",
+      "weight": 1
+    },
+    {
+      "source": "showcase",
+      "target": "why",
+      "weight": 1
+    },
+    {
+      "source": "showcase",
+      "target": "zion",
+      "weight": 1
+    },
+    {
+      "source": "showcase",
+      "target": "value",
+      "weight": 1
+    },
+    {
+      "source": "pillars",
+      "target": "showcase",
+      "weight": 1
+    },
+    {
+      "source": "practice",
+      "target": "showcase",
+      "weight": 1
+    },
+    {
+      "source": "showcase",
+      "target": "tailored",
+      "weight": 1
+    },
+    {
+      "source": "showcase",
+      "target": "team",
+      "weight": 1
+    },
+    {
+      "source": "ecosystem",
+      "target": "showcase",
+      "weight": 1
+    },
+    {
+      "source": "integrations",
+      "target": "showcase",
+      "weight": 1
+    },
+    {
+      "source": "showcase",
+      "target": "supabase",
+      "weight": 1
+    },
+    {
+      "source": "framer",
+      "target": "showcase",
+      "weight": 1
+    },
+    {
+      "source": "motion",
+      "target": "showcase",
+      "weight": 1
+    },
+    {
+      "source": "quality",
+      "target": "showcase",
+      "weight": 1
+    },
+    {
+      "source": "gates",
+      "target": "showcase",
+      "weight": 1
+    },
+    {
+      "source": "quick",
+      "target": "showcase",
+      "weight": 1
+    },
+    {
+      "source": "showcase",
+      "target": "start",
+      "weight": 1
+    },
+    {
+      "source": "ready",
+      "target": "showcase",
+      "weight": 1
+    },
+    {
+      "source": "build",
+      "target": "showcase",
+      "weight": 1
+    },
+    {
+      "source": "cloud",
+      "target": "showcase",
+      "weight": 1
+    },
+    {
+      "source": "agents",
+      "target": "showcase",
+      "weight": 1
+    },
+    {
+      "source": "gallery",
+      "target": "showcase",
+      "weight": 1
+    },
+    {
+      "source": "label",
+      "target": "showcase",
+      "weight": 1
+    },
+    {
+      "source": "auto‑promoted",
+      "target": "showcase",
+      "weight": 1
+    },
+    {
+      "source": "highlights",
+      "target": "showcase",
+      "weight": 1
+    },
+    {
+      "source": "browse",
+      "target": "features",
+      "weight": 1
+    },
+    {
+      "source": "features",
+      "target": "see",
+      "weight": 1
+    },
+    {
+      "source": "feature",
+      "target": "features",
+      "weight": 1
+    },
+    {
+      "source": "features",
+      "target": "guardrails",
+      "weight": 1
+    },
+    {
+      "source": "engines",
+      "target": "features",
+      "weight": 1
+    },
+    {
+      "source": "beyond",
+      "target": "features",
+      "weight": 1
+    },
+    {
+      "source": "features",
+      "target": "github",
+      "weight": 1
+    },
+    {
+      "source": "actions",
+      "target": "features",
+      "weight": 1
+    },
+    {
+      "source": "command",
+      "target": "features",
+      "weight": 1
+    },
+    {
+      "source": "center",
+      "target": "features",
+      "weight": 1
+    },
+    {
+      "source": "card",
+      "target": "features",
+      "weight": 1
+    },
+    {
+      "source": "features",
+      "target": "netlify",
+      "weight": 1
+    },
+    {
+      "source": "features",
+      "target": "spotlight",
+      "weight": 1
+    },
+    {
+      "source": "features",
+      "target": "outcome‑focused",
+      "weight": 1
+    },
+    {
+      "source": "features",
+      "target": "suites",
+      "weight": 1
+    },
+    {
+      "source": "features",
+      "target": "suite",
+      "weight": 1
+    },
+    {
+      "source": "features",
+      "target": "superpowers",
+      "weight": 1
+    },
+    {
+      "source": "features",
+      "target": "get",
+      "weight": 1
+    },
+    {
+      "source": "features",
+      "target": "started",
+      "weight": 1
+    },
+    {
+      "source": "features",
+      "target": "minutes",
+      "weight": 1
+    },
+    {
+      "source": "features",
+      "target": "outcomes",
+      "weight": 1
+    },
+    {
+      "source": "catalog",
+      "target": "features",
+      "weight": 1
+    },
+    {
+      "source": "features",
+      "target": "platform",
+      "weight": 1
+    },
+    {
+      "source": "features",
+      "target": "modules",
+      "weight": 1
+    },
+    {
+      "source": "features",
+      "target": "neural",
+      "weight": 1
+    },
+    {
+      "source": "features",
+      "target": "matrix",
+      "weight": 1
+    },
+    {
+      "source": "extended",
+      "target": "features",
+      "weight": 1
+    },
+    {
+      "source": "directory",
+      "target": "features",
+      "weight": 1
+    },
+    {
+      "source": "capability",
+      "target": "features",
+      "weight": 1
+    },
+    {
+      "source": "deep",
+      "target": "features",
+      "weight": 1
+    },
+    {
+      "source": "features",
+      "target": "links",
+      "weight": 1
+    },
+    {
+      "source": "features",
+      "target": "use",
+      "weight": 1
+    },
+    {
+      "source": "cases",
+      "target": "features",
+      "weight": 1
+    },
+    {
+      "source": "features",
+      "target": "live",
+      "weight": 1
+    },
+    {
+      "source": "features",
+      "target": "impact",
+      "weight": 1
+    },
+    {
+      "source": "features",
+      "target": "why",
+      "weight": 1
+    },
+    {
+      "source": "features",
+      "target": "zion",
+      "weight": 1
+    },
+    {
+      "source": "features",
+      "target": "value",
+      "weight": 1
+    },
+    {
+      "source": "features",
+      "target": "pillars",
+      "weight": 1
+    },
+    {
+      "source": "features",
+      "target": "practice",
+      "weight": 1
+    },
+    {
+      "source": "features",
+      "target": "tailored",
+      "weight": 1
+    },
+    {
+      "source": "features",
+      "target": "team",
+      "weight": 1
+    },
+    {
+      "source": "ecosystem",
+      "target": "features",
+      "weight": 1
+    },
+    {
+      "source": "features",
+      "target": "integrations",
+      "weight": 1
+    },
+    {
+      "source": "features",
+      "target": "supabase",
+      "weight": 1
+    },
+    {
+      "source": "features",
+      "target": "framer",
+      "weight": 1
+    },
+    {
+      "source": "features",
+      "target": "motion",
+      "weight": 1
+    },
+    {
+      "source": "features",
+      "target": "quality",
+      "weight": 1
+    },
+    {
+      "source": "features",
+      "target": "gates",
+      "weight": 1
+    },
+    {
+      "source": "features",
+      "target": "quick",
+      "weight": 1
+    },
+    {
+      "source": "features",
+      "target": "start",
+      "weight": 1
+    },
+    {
+      "source": "features",
+      "target": "ready",
+      "weight": 1
+    },
+    {
+      "source": "build",
+      "target": "features",
+      "weight": 1
+    },
+    {
+      "source": "agents",
+      "target": "features",
+      "weight": 1
+    },
+    {
+      "source": "features",
+      "target": "gallery",
+      "weight": 1
+    },
+    {
+      "source": "features",
+      "target": "label",
+      "weight": 1
+    },
+    {
+      "source": "auto‑promoted",
+      "target": "features",
+      "weight": 1
+    },
+    {
+      "source": "features",
+      "target": "highlights",
+      "weight": 1
+    },
+    {
+      "source": "browse",
+      "target": "capabilities",
+      "weight": 1
+    },
+    {
+      "source": "capabilities",
+      "target": "see",
+      "weight": 1
+    },
+    {
+      "source": "capabilities",
+      "target": "feature",
+      "weight": 1
+    },
+    {
+      "source": "capabilities",
+      "target": "guardrails",
+      "weight": 1
+    },
+    {
+      "source": "capabilities",
+      "target": "engines",
+      "weight": 1
+    },
+    {
+      "source": "beyond",
+      "target": "capabilities",
+      "weight": 1
+    },
+    {
+      "source": "capabilities",
+      "target": "github",
+      "weight": 1
+    },
+    {
+      "source": "actions",
+      "target": "capabilities",
+      "weight": 1
+    },
+    {
+      "source": "capabilities",
+      "target": "command",
+      "weight": 1
+    },
+    {
+      "source": "capabilities",
+      "target": "center",
+      "weight": 1
+    },
+    {
+      "source": "capabilities",
+      "target": "card",
+      "weight": 1
+    },
+    {
+      "source": "capabilities",
+      "target": "netlify",
+      "weight": 1
+    },
+    {
+      "source": "capabilities",
+      "target": "spotlight",
+      "weight": 1
+    },
+    {
+      "source": "capabilities",
+      "target": "outcome‑focused",
+      "weight": 1
+    },
+    {
+      "source": "capabilities",
+      "target": "suites",
+      "weight": 1
+    },
+    {
+      "source": "capabilities",
+      "target": "suite",
+      "weight": 1
+    },
+    {
+      "source": "capabilities",
+      "target": "superpowers",
+      "weight": 1
+    },
+    {
+      "source": "capabilities",
+      "target": "get",
+      "weight": 1
+    },
+    {
+      "source": "capabilities",
+      "target": "started",
+      "weight": 1
+    },
+    {
+      "source": "capabilities",
+      "target": "minutes",
+      "weight": 1
+    },
+    {
+      "source": "capabilities",
+      "target": "outcomes",
+      "weight": 1
+    },
+    {
+      "source": "capabilities",
+      "target": "catalog",
+      "weight": 1
+    },
+    {
+      "source": "capabilities",
+      "target": "platform",
+      "weight": 1
+    },
+    {
+      "source": "capabilities",
+      "target": "modules",
+      "weight": 1
+    },
+    {
+      "source": "capabilities",
+      "target": "neural",
+      "weight": 1
+    },
+    {
+      "source": "capabilities",
+      "target": "matrix",
+      "weight": 1
+    },
+    {
+      "source": "capabilities",
+      "target": "extended",
+      "weight": 1
+    },
+    {
+      "source": "capabilities",
+      "target": "directory",
+      "weight": 1
+    },
+    {
+      "source": "capabilities",
+      "target": "capability",
+      "weight": 1
+    },
+    {
+      "source": "capabilities",
+      "target": "deep",
+      "weight": 1
+    },
+    {
+      "source": "capabilities",
+      "target": "links",
+      "weight": 1
+    },
+    {
+      "source": "capabilities",
+      "target": "use",
+      "weight": 1
+    },
+    {
+      "source": "capabilities",
+      "target": "cases",
+      "weight": 1
+    },
+    {
+      "source": "capabilities",
+      "target": "live",
+      "weight": 1
+    },
+    {
+      "source": "capabilities",
+      "target": "impact",
+      "weight": 1
+    },
+    {
+      "source": "capabilities",
+      "target": "why",
+      "weight": 1
+    },
+    {
+      "source": "capabilities",
+      "target": "zion",
+      "weight": 1
+    },
+    {
+      "source": "capabilities",
+      "target": "value",
+      "weight": 1
+    },
+    {
+      "source": "capabilities",
+      "target": "pillars",
+      "weight": 1
+    },
+    {
+      "source": "capabilities",
+      "target": "practice",
+      "weight": 1
+    },
+    {
+      "source": "capabilities",
+      "target": "tailored",
+      "weight": 1
+    },
+    {
+      "source": "capabilities",
+      "target": "team",
+      "weight": 1
+    },
+    {
+      "source": "capabilities",
+      "target": "ecosystem",
+      "weight": 1
+    },
+    {
+      "source": "capabilities",
+      "target": "integrations",
+      "weight": 1
+    },
+    {
+      "source": "capabilities",
+      "target": "supabase",
+      "weight": 1
+    },
+    {
+      "source": "capabilities",
+      "target": "framer",
+      "weight": 1
+    },
+    {
+      "source": "capabilities",
+      "target": "motion",
+      "weight": 1
+    },
+    {
+      "source": "capabilities",
+      "target": "quality",
+      "weight": 1
+    },
+    {
+      "source": "capabilities",
+      "target": "gates",
+      "weight": 1
+    },
+    {
+      "source": "capabilities",
+      "target": "quick",
+      "weight": 1
+    },
+    {
+      "source": "capabilities",
+      "target": "start",
+      "weight": 1
+    },
+    {
+      "source": "capabilities",
+      "target": "ready",
+      "weight": 1
+    },
+    {
+      "source": "build",
+      "target": "capabilities",
+      "weight": 1
+    },
+    {
+      "source": "agents",
+      "target": "capabilities",
+      "weight": 1
+    },
+    {
+      "source": "capabilities",
+      "target": "gallery",
+      "weight": 1
+    },
+    {
+      "source": "capabilities",
+      "target": "label",
+      "weight": 1
+    },
+    {
+      "source": "auto‑promoted",
+      "target": "capabilities",
+      "weight": 1
+    },
+    {
+      "source": "capabilities",
+      "target": "highlights",
+      "weight": 1
+    },
+    {
+      "source": "benefits",
+      "target": "explore",
+      "weight": 1
+    },
+    {
+      "source": "benefits",
+      "target": "browse",
+      "weight": 1
+    },
+    {
+      "source": "benefits",
+      "target": "see",
+      "weight": 1
+    },
+    {
+      "source": "benefits",
+      "target": "feature",
+      "weight": 1
+    },
+    {
+      "source": "benefits",
+      "target": "map",
+      "weight": 1
+    },
+    {
+      "source": "benefits",
+      "target": "guardrails",
+      "weight": 1
+    },
+    {
+      "source": "autonomous",
+      "target": "benefits",
+      "weight": 1
+    },
+    {
+      "source": "benefits",
+      "target": "engines",
+      "weight": 1
+    },
+    {
+      "source": "benefits",
+      "target": "beyond",
+      "weight": 1
+    },
+    {
+      "source": "benefits",
+      "target": "github",
+      "weight": 1
+    },
+    {
+      "source": "actions",
+      "target": "benefits",
+      "weight": 1
+    },
+    {
+      "source": "benefits",
+      "target": "command",
+      "weight": 1
+    },
+    {
+      "source": "benefits",
+      "target": "center",
+      "weight": 1
+    },
+    {
+      "source": "benefits",
+      "target": "card",
+      "weight": 1
+    },
+    {
+      "source": "benefits",
+      "target": "title",
+      "weight": 1
+    },
+    {
+      "source": "benefits",
+      "target": "netlify",
+      "weight": 1
+    },
+    {
+      "source": "automations",
+      "target": "benefits",
+      "weight": 1
+    },
+    {
+      "source": "benefits",
+      "target": "spotlight",
+      "weight": 1
+    },
+    {
+      "source": "benefits",
+      "target": "outcome‑focused",
+      "weight": 1
+    },
+    {
+      "source": "benefits",
+      "target": "suites",
+      "weight": 1
+    },
+    {
+      "source": "benefits",
+      "target": "suite",
+      "weight": 1
+    },
+    {
+      "source": "benefits",
+      "target": "superpowers",
+      "weight": 1
+    },
+    {
+      "source": "benefits",
+      "target": "get",
+      "weight": 1
+    },
+    {
+      "source": "benefits",
+      "target": "started",
+      "weight": 1
+    },
+    {
+      "source": "benefits",
+      "target": "minutes",
+      "weight": 1
+    },
+    {
+      "source": "benefits",
+      "target": "outcomes",
+      "weight": 1
+    },
+    {
+      "source": "benefits",
+      "target": "catalog",
+      "weight": 1
+    },
+    {
+      "source": "benefits",
+      "target": "platform",
+      "weight": 1
+    },
+    {
+      "source": "benefits",
+      "target": "modules",
+      "weight": 1
+    },
+    {
+      "source": "benefits",
+      "target": "neural",
+      "weight": 1
+    },
+    {
+      "source": "benefits",
+      "target": "matrix",
+      "weight": 1
+    },
+    {
+      "source": "benefits",
+      "target": "extended",
+      "weight": 1
+    },
+    {
+      "source": "benefits",
+      "target": "directory",
+      "weight": 1
+    },
+    {
+      "source": "benefits",
+      "target": "capability",
+      "weight": 1
+    },
+    {
+      "source": "benefits",
+      "target": "deep",
+      "weight": 1
+    },
+    {
+      "source": "benefits",
+      "target": "links",
+      "weight": 1
+    },
+    {
+      "source": "benefits",
+      "target": "use",
+      "weight": 1
+    },
+    {
+      "source": "benefits",
+      "target": "cases",
+      "weight": 1
+    },
+    {
+      "source": "benefits",
+      "target": "live",
+      "weight": 1
+    },
+    {
+      "source": "benefits",
+      "target": "impact",
+      "weight": 1
+    },
+    {
+      "source": "benefits",
+      "target": "why",
+      "weight": 1
+    },
+    {
+      "source": "benefits",
+      "target": "zion",
+      "weight": 1
+    },
+    {
+      "source": "benefits",
+      "target": "value",
+      "weight": 1
+    },
+    {
+      "source": "benefits",
+      "target": "pillars",
+      "weight": 1
+    },
+    {
+      "source": "benefits",
+      "target": "practice",
+      "weight": 1
+    },
+    {
+      "source": "benefits",
+      "target": "tailored",
+      "weight": 1
+    },
+    {
+      "source": "benefits",
+      "target": "team",
+      "weight": 1
+    },
+    {
+      "source": "benefits",
+      "target": "ecosystem",
+      "weight": 1
+    },
+    {
+      "source": "benefits",
+      "target": "integrations",
+      "weight": 1
+    },
+    {
+      "source": "benefits",
+      "target": "supabase",
+      "weight": 1
+    },
+    {
+      "source": "benefits",
+      "target": "framer",
+      "weight": 1
+    },
+    {
+      "source": "benefits",
+      "target": "motion",
+      "weight": 1
+    },
+    {
+      "source": "benefits",
+      "target": "quality",
+      "weight": 1
+    },
+    {
+      "source": "benefits",
+      "target": "gates",
+      "weight": 1
+    },
+    {
+      "source": "benefits",
+      "target": "quick",
+      "weight": 1
+    },
+    {
+      "source": "benefits",
+      "target": "start",
+      "weight": 1
+    },
+    {
+      "source": "benefits",
+      "target": "ready",
+      "weight": 1
+    },
+    {
+      "source": "benefits",
+      "target": "build",
+      "weight": 1
+    },
+    {
+      "source": "benefits",
+      "target": "cloud",
+      "weight": 1
+    },
+    {
+      "source": "agents",
+      "target": "benefits",
+      "weight": 1
+    },
+    {
+      "source": "benefits",
+      "target": "gallery",
+      "weight": 1
+    },
+    {
+      "source": "benefits",
+      "target": "label",
+      "weight": 1
+    },
+    {
+      "source": "auto‑promoted",
+      "target": "benefits",
+      "weight": 1
+    },
+    {
+      "source": "benefits",
+      "target": "highlights",
+      "weight": 1
+    },
+    {
+      "source": "browse",
+      "target": "explore",
+      "weight": 1
+    },
+    {
+      "source": "explore",
+      "target": "see",
+      "weight": 1
+    },
+    {
+      "source": "explore",
+      "target": "feature",
+      "weight": 1
+    },
+    {
+      "source": "explore",
+      "target": "guardrails",
+      "weight": 1
+    },
+    {
+      "source": "engines",
+      "target": "explore",
+      "weight": 1
+    },
+    {
+      "source": "beyond",
+      "target": "explore",
+      "weight": 1
+    },
+    {
+      "source": "explore",
+      "target": "github",
+      "weight": 1
+    },
+    {
+      "source": "actions",
+      "target": "explore",
+      "weight": 1
+    },
+    {
+      "source": "command",
+      "target": "explore",
+      "weight": 1
+    },
+    {
+      "source": "center",
+      "target": "explore",
+      "weight": 1
+    },
+    {
+      "source": "card",
+      "target": "explore",
+      "weight": 1
+    },
+    {
+      "source": "explore",
+      "target": "netlify",
+      "weight": 1
+    },
+    {
+      "source": "explore",
+      "target": "spotlight",
+      "weight": 1
+    },
+    {
+      "source": "explore",
+      "target": "outcome‑focused",
+      "weight": 1
+    },
+    {
+      "source": "explore",
+      "target": "suites",
+      "weight": 1
+    },
+    {
+      "source": "explore",
+      "target": "suite",
+      "weight": 1
+    },
+    {
+      "source": "explore",
+      "target": "superpowers",
+      "weight": 1
+    },
+    {
+      "source": "explore",
+      "target": "get",
+      "weight": 1
+    },
+    {
+      "source": "explore",
+      "target": "started",
+      "weight": 1
+    },
+    {
+      "source": "explore",
+      "target": "minutes",
+      "weight": 1
+    },
+    {
+      "source": "explore",
+      "target": "outcomes",
+      "weight": 1
+    },
+    {
+      "source": "catalog",
+      "target": "explore",
+      "weight": 1
+    },
+    {
+      "source": "explore",
+      "target": "platform",
+      "weight": 1
+    },
+    {
+      "source": "explore",
+      "target": "modules",
+      "weight": 1
+    },
+    {
+      "source": "explore",
+      "target": "neural",
+      "weight": 1
+    },
+    {
+      "source": "explore",
+      "target": "matrix",
+      "weight": 1
+    },
+    {
+      "source": "explore",
+      "target": "extended",
+      "weight": 1
+    },
+    {
+      "source": "directory",
+      "target": "explore",
+      "weight": 1
+    },
+    {
+      "source": "capability",
+      "target": "explore",
+      "weight": 1
+    },
+    {
+      "source": "deep",
+      "target": "explore",
+      "weight": 1
+    },
+    {
+      "source": "explore",
+      "target": "links",
+      "weight": 1
+    },
+    {
+      "source": "explore",
+      "target": "use",
+      "weight": 1
+    },
+    {
+      "source": "cases",
+      "target": "explore",
+      "weight": 1
+    },
+    {
+      "source": "explore",
+      "target": "live",
+      "weight": 1
+    },
+    {
+      "source": "explore",
+      "target": "impact",
+      "weight": 1
+    },
+    {
+      "source": "explore",
+      "target": "why",
+      "weight": 1
+    },
+    {
+      "source": "explore",
+      "target": "zion",
+      "weight": 1
+    },
+    {
+      "source": "explore",
+      "target": "value",
+      "weight": 1
+    },
+    {
+      "source": "explore",
+      "target": "pillars",
+      "weight": 1
+    },
+    {
+      "source": "explore",
+      "target": "practice",
+      "weight": 1
+    },
+    {
+      "source": "explore",
+      "target": "tailored",
+      "weight": 1
+    },
+    {
+      "source": "explore",
+      "target": "team",
+      "weight": 1
+    },
+    {
+      "source": "ecosystem",
+      "target": "explore",
+      "weight": 1
+    },
+    {
+      "source": "explore",
+      "target": "integrations",
+      "weight": 1
+    },
+    {
+      "source": "explore",
+      "target": "supabase",
+      "weight": 1
+    },
+    {
+      "source": "explore",
+      "target": "framer",
+      "weight": 1
+    },
+    {
+      "source": "explore",
+      "target": "motion",
+      "weight": 1
+    },
+    {
+      "source": "explore",
+      "target": "quality",
+      "weight": 1
+    },
+    {
+      "source": "explore",
+      "target": "gates",
+      "weight": 1
+    },
+    {
+      "source": "explore",
+      "target": "quick",
+      "weight": 1
+    },
+    {
+      "source": "explore",
+      "target": "start",
+      "weight": 1
+    },
+    {
+      "source": "explore",
+      "target": "ready",
+      "weight": 1
+    },
+    {
+      "source": "build",
+      "target": "explore",
+      "weight": 1
+    },
+    {
+      "source": "agents",
+      "target": "explore",
+      "weight": 1
+    },
+    {
+      "source": "explore",
+      "target": "gallery",
+      "weight": 1
+    },
+    {
+      "source": "explore",
+      "target": "label",
+      "weight": 1
+    },
+    {
+      "source": "auto‑promoted",
+      "target": "explore",
+      "weight": 1
+    },
+    {
+      "source": "explore",
+      "target": "highlights",
+      "weight": 1
+    },
+    {
+      "source": "browse",
+      "target": "see",
+      "weight": 1
+    },
+    {
+      "source": "browse",
+      "target": "feature",
+      "weight": 1
+    },
+    {
+      "source": "browse",
+      "target": "map",
+      "weight": 1
+    },
+    {
+      "source": "browse",
+      "target": "guardrails",
+      "weight": 1
+    },
+    {
+      "source": "automation",
+      "target": "browse",
+      "weight": 1
+    },
+    {
+      "source": "browse",
+      "target": "hub",
+      "weight": 1
+    },
+    {
+      "source": "autonomous",
+      "target": "browse",
+      "weight": 1
+    },
+    {
+      "source": "browse",
+      "target": "engines",
+      "weight": 1
+    },
+    {
+      "source": "beyond",
+      "target": "browse",
+      "weight": 1
+    },
+    {
+      "source": "browse",
+      "target": "github",
+      "weight": 1
+    },
+    {
+      "source": "actions",
+      "target": "browse",
+      "weight": 1
+    },
+    {
+      "source": "browse",
+      "target": "command",
+      "weight": 1
+    },
+    {
+      "source": "browse",
+      "target": "center",
+      "weight": 1
+    },
+    {
+      "source": "browse",
+      "target": "card",
+      "weight": 1
+    },
+    {
+      "source": "browse",
+      "target": "title",
+      "weight": 1
+    },
+    {
+      "source": "browse",
+      "target": "netlify",
+      "weight": 1
+    },
+    {
+      "source": "automations",
+      "target": "browse",
+      "weight": 1
+    },
+    {
+      "source": "browse",
+      "target": "spotlight",
+      "weight": 1
+    },
+    {
+      "source": "browse",
+      "target": "outcome‑focused",
+      "weight": 1
+    },
+    {
+      "source": "browse",
+      "target": "suites",
+      "weight": 1
+    },
+    {
+      "source": "browse",
+      "target": "suite",
+      "weight": 1
+    },
+    {
+      "source": "browse",
+      "target": "superpowers",
+      "weight": 1
+    },
+    {
+      "source": "browse",
+      "target": "get",
+      "weight": 1
+    },
+    {
+      "source": "browse",
+      "target": "started",
+      "weight": 1
+    },
+    {
+      "source": "browse",
+      "target": "minutes",
+      "weight": 1
+    },
+    {
+      "source": "browse",
+      "target": "outcomes",
+      "weight": 1
+    },
+    {
+      "source": "browse",
+      "target": "catalog",
+      "weight": 1
+    },
+    {
+      "source": "browse",
+      "target": "platform",
+      "weight": 1
+    },
+    {
+      "source": "browse",
+      "target": "modules",
+      "weight": 1
+    },
+    {
+      "source": "browse",
+      "target": "neural",
+      "weight": 1
+    },
+    {
+      "source": "browse",
+      "target": "matrix",
+      "weight": 1
+    },
+    {
+      "source": "browse",
+      "target": "extended",
+      "weight": 1
+    },
+    {
+      "source": "browse",
+      "target": "directory",
+      "weight": 1
+    },
+    {
+      "source": "browse",
+      "target": "capability",
+      "weight": 1
+    },
+    {
+      "source": "browse",
+      "target": "deep",
+      "weight": 1
+    },
+    {
+      "source": "browse",
+      "target": "links",
+      "weight": 1
+    },
+    {
+      "source": "browse",
+      "target": "use",
+      "weight": 1
+    },
+    {
+      "source": "browse",
+      "target": "cases",
+      "weight": 1
+    },
+    {
+      "source": "browse",
+      "target": "live",
+      "weight": 1
+    },
+    {
+      "source": "browse",
+      "target": "impact",
+      "weight": 1
+    },
+    {
+      "source": "browse",
+      "target": "why",
+      "weight": 1
+    },
+    {
+      "source": "browse",
+      "target": "zion",
+      "weight": 1
+    },
+    {
+      "source": "browse",
+      "target": "value",
+      "weight": 1
+    },
+    {
+      "source": "browse",
+      "target": "pillars",
+      "weight": 1
+    },
+    {
+      "source": "browse",
+      "target": "practice",
+      "weight": 1
+    },
+    {
+      "source": "browse",
+      "target": "tailored",
+      "weight": 1
+    },
+    {
+      "source": "browse",
+      "target": "team",
+      "weight": 1
+    },
+    {
+      "source": "browse",
+      "target": "ecosystem",
+      "weight": 1
+    },
+    {
+      "source": "browse",
+      "target": "integrations",
+      "weight": 1
+    },
+    {
+      "source": "browse",
+      "target": "supabase",
+      "weight": 1
+    },
+    {
+      "source": "browse",
+      "target": "framer",
+      "weight": 1
+    },
+    {
+      "source": "browse",
+      "target": "motion",
+      "weight": 1
+    },
+    {
+      "source": "browse",
+      "target": "quality",
+      "weight": 1
+    },
+    {
+      "source": "browse",
+      "target": "gates",
+      "weight": 1
+    },
+    {
+      "source": "browse",
+      "target": "quick",
+      "weight": 1
+    },
+    {
+      "source": "browse",
+      "target": "start",
+      "weight": 1
+    },
+    {
+      "source": "browse",
+      "target": "ready",
+      "weight": 1
+    },
+    {
+      "source": "browse",
+      "target": "build",
+      "weight": 1
+    },
+    {
+      "source": "browse",
+      "target": "cloud",
+      "weight": 1
+    },
+    {
+      "source": "agents",
+      "target": "browse",
+      "weight": 1
+    },
+    {
+      "source": "browse",
+      "target": "gallery",
+      "weight": 1
+    },
+    {
+      "source": "browse",
+      "target": "label",
+      "weight": 1
+    },
+    {
+      "source": "auto‑promoted",
+      "target": "browse",
+      "weight": 1
+    },
+    {
+      "source": "browse",
+      "target": "highlights",
+      "weight": 1
+    },
+    {
+      "source": "feature",
+      "target": "see",
+      "weight": 1
+    },
+    {
+      "source": "map",
+      "target": "see",
+      "weight": 1
+    },
+    {
+      "source": "guardrails",
+      "target": "see",
+      "weight": 1
+    },
+    {
+      "source": "automation",
+      "target": "see",
+      "weight": 1
+    },
+    {
+      "source": "hub",
+      "target": "see",
+      "weight": 1
+    },
+    {
+      "source": "autonomous",
+      "target": "see",
+      "weight": 1
+    },
+    {
+      "source": "engines",
+      "target": "see",
+      "weight": 1
+    },
+    {
+      "source": "beyond",
+      "target": "see",
+      "weight": 1
+    },
+    {
+      "source": "github",
+      "target": "see",
+      "weight": 1
+    },
+    {
+      "source": "actions",
+      "target": "see",
+      "weight": 1
+    },
+    {
+      "source": "command",
+      "target": "see",
+      "weight": 1
+    },
+    {
+      "source": "center",
+      "target": "see",
+      "weight": 1
+    },
+    {
+      "source": "card",
+      "target": "see",
+      "weight": 1
+    },
+    {
+      "source": "see",
+      "target": "title",
+      "weight": 1
+    },
+    {
+      "source": "netlify",
+      "target": "see",
+      "weight": 1
+    },
+    {
+      "source": "automations",
+      "target": "see",
+      "weight": 1
+    },
+    {
+      "source": "see",
+      "target": "spotlight",
+      "weight": 1
+    },
+    {
+      "source": "outcome‑focused",
+      "target": "see",
+      "weight": 1
+    },
+    {
+      "source": "see",
+      "target": "suites",
+      "weight": 1
+    },
+    {
+      "source": "see",
+      "target": "suite",
+      "weight": 1
+    },
+    {
+      "source": "see",
+      "target": "superpowers",
+      "weight": 1
+    },
+    {
+      "source": "get",
+      "target": "see",
+      "weight": 1
+    },
+    {
+      "source": "see",
+      "target": "started",
+      "weight": 1
+    },
+    {
+      "source": "minutes",
+      "target": "see",
+      "weight": 1
+    },
+    {
+      "source": "outcomes",
+      "target": "see",
+      "weight": 1
+    },
+    {
+      "source": "catalog",
+      "target": "see",
+      "weight": 1
+    },
+    {
+      "source": "platform",
+      "target": "see",
+      "weight": 1
+    },
+    {
+      "source": "modules",
+      "target": "see",
+      "weight": 1
+    },
+    {
+      "source": "neural",
+      "target": "see",
+      "weight": 1
+    },
+    {
+      "source": "matrix",
+      "target": "see",
+      "weight": 1
+    },
+    {
+      "source": "extended",
+      "target": "see",
+      "weight": 1
+    },
+    {
+      "source": "directory",
+      "target": "see",
+      "weight": 1
+    },
+    {
+      "source": "capability",
+      "target": "see",
+      "weight": 1
+    },
+    {
+      "source": "deep",
+      "target": "see",
+      "weight": 1
+    },
+    {
+      "source": "links",
+      "target": "see",
+      "weight": 1
+    },
+    {
+      "source": "see",
+      "target": "use",
+      "weight": 1
+    },
+    {
+      "source": "cases",
+      "target": "see",
+      "weight": 1
+    },
+    {
+      "source": "live",
+      "target": "see",
+      "weight": 1
+    },
+    {
+      "source": "impact",
+      "target": "see",
+      "weight": 1
+    },
+    {
+      "source": "see",
+      "target": "why",
+      "weight": 1
+    },
+    {
+      "source": "see",
+      "target": "zion",
+      "weight": 1
+    },
+    {
+      "source": "see",
+      "target": "value",
+      "weight": 1
+    },
+    {
+      "source": "pillars",
+      "target": "see",
+      "weight": 1
+    },
+    {
+      "source": "practice",
+      "target": "see",
+      "weight": 1
+    },
+    {
+      "source": "see",
+      "target": "tailored",
+      "weight": 1
+    },
+    {
+      "source": "see",
+      "target": "team",
+      "weight": 1
+    },
+    {
+      "source": "ecosystem",
+      "target": "see",
+      "weight": 1
+    },
+    {
+      "source": "integrations",
+      "target": "see",
+      "weight": 1
+    },
+    {
+      "source": "see",
+      "target": "supabase",
+      "weight": 1
+    },
+    {
+      "source": "framer",
+      "target": "see",
+      "weight": 1
+    },
+    {
+      "source": "motion",
+      "target": "see",
+      "weight": 1
+    },
+    {
+      "source": "quality",
+      "target": "see",
+      "weight": 1
+    },
+    {
+      "source": "gates",
+      "target": "see",
+      "weight": 1
+    },
+    {
+      "source": "quick",
+      "target": "see",
+      "weight": 1
+    },
+    {
+      "source": "see",
+      "target": "start",
+      "weight": 1
+    },
+    {
+      "source": "ready",
+      "target": "see",
+      "weight": 1
+    },
+    {
+      "source": "build",
+      "target": "see",
+      "weight": 1
+    },
+    {
+      "source": "cloud",
+      "target": "see",
+      "weight": 1
+    },
+    {
+      "source": "agents",
+      "target": "see",
+      "weight": 1
+    },
+    {
+      "source": "gallery",
+      "target": "see",
+      "weight": 1
+    },
+    {
+      "source": "label",
+      "target": "see",
+      "weight": 1
+    },
+    {
+      "source": "auto‑promoted",
+      "target": "see",
+      "weight": 1
+    },
+    {
+      "source": "highlights",
+      "target": "see",
+      "weight": 1
+    },
+    {
+      "source": "feature",
+      "target": "map",
+      "weight": 1
+    },
+    {
+      "source": "feature",
+      "target": "guardrails",
+      "weight": 1
+    },
+    {
+      "source": "automation",
+      "target": "feature",
+      "weight": 1
+    },
+    {
+      "source": "feature",
+      "target": "hub",
+      "weight": 1
+    },
+    {
+      "source": "autonomous",
+      "target": "feature",
+      "weight": 1
+    },
+    {
+      "source": "engines",
+      "target": "feature",
+      "weight": 1
+    },
+    {
+      "source": "beyond",
+      "target": "feature",
+      "weight": 1
+    },
+    {
+      "source": "feature",
+      "target": "github",
+      "weight": 1
+    },
+    {
+      "source": "actions",
+      "target": "feature",
+      "weight": 1
+    },
+    {
+      "source": "command",
+      "target": "feature",
+      "weight": 1
+    },
+    {
+      "source": "center",
+      "target": "feature",
+      "weight": 1
+    },
+    {
+      "source": "card",
+      "target": "feature",
+      "weight": 1
+    },
+    {
+      "source": "feature",
+      "target": "title",
+      "weight": 1
+    },
+    {
+      "source": "feature",
+      "target": "netlify",
+      "weight": 1
+    },
+    {
+      "source": "automations",
+      "target": "feature",
+      "weight": 1
+    },
+    {
+      "source": "feature",
+      "target": "spotlight",
+      "weight": 1
+    },
+    {
+      "source": "feature",
+      "target": "outcome‑focused",
+      "weight": 1
+    },
+    {
+      "source": "feature",
+      "target": "suites",
+      "weight": 1
+    },
+    {
+      "source": "feature",
+      "target": "suite",
+      "weight": 1
+    },
+    {
+      "source": "feature",
+      "target": "superpowers",
+      "weight": 1
+    },
+    {
+      "source": "feature",
+      "target": "get",
+      "weight": 1
+    },
+    {
+      "source": "feature",
+      "target": "started",
+      "weight": 1
+    },
+    {
+      "source": "feature",
+      "target": "minutes",
+      "weight": 1
+    },
+    {
+      "source": "feature",
+      "target": "outcomes",
+      "weight": 1
+    },
+    {
+      "source": "catalog",
+      "target": "feature",
+      "weight": 1
+    },
+    {
+      "source": "feature",
+      "target": "platform",
+      "weight": 1
+    },
+    {
+      "source": "feature",
+      "target": "modules",
+      "weight": 1
+    },
+    {
+      "source": "feature",
+      "target": "neural",
+      "weight": 1
+    },
+    {
+      "source": "feature",
+      "target": "matrix",
+      "weight": 1
+    },
+    {
+      "source": "extended",
+      "target": "feature",
+      "weight": 1
+    },
+    {
+      "source": "directory",
+      "target": "feature",
+      "weight": 1
+    },
+    {
+      "source": "capability",
+      "target": "feature",
+      "weight": 1
+    },
+    {
+      "source": "deep",
+      "target": "feature",
+      "weight": 1
+    },
+    {
+      "source": "feature",
+      "target": "links",
+      "weight": 1
+    },
+    {
+      "source": "feature",
+      "target": "use",
+      "weight": 1
+    },
+    {
+      "source": "cases",
+      "target": "feature",
+      "weight": 1
+    },
+    {
+      "source": "feature",
+      "target": "live",
+      "weight": 1
+    },
+    {
+      "source": "feature",
+      "target": "impact",
+      "weight": 1
+    },
+    {
+      "source": "feature",
+      "target": "why",
+      "weight": 1
+    },
+    {
+      "source": "feature",
+      "target": "zion",
+      "weight": 1
+    },
+    {
+      "source": "feature",
+      "target": "value",
+      "weight": 1
+    },
+    {
+      "source": "feature",
+      "target": "pillars",
+      "weight": 1
+    },
+    {
+      "source": "feature",
+      "target": "practice",
+      "weight": 1
+    },
+    {
+      "source": "feature",
+      "target": "tailored",
+      "weight": 1
+    },
+    {
+      "source": "feature",
+      "target": "team",
+      "weight": 1
+    },
+    {
+      "source": "ecosystem",
+      "target": "feature",
+      "weight": 1
+    },
+    {
+      "source": "feature",
+      "target": "integrations",
+      "weight": 1
+    },
+    {
+      "source": "feature",
+      "target": "supabase",
+      "weight": 1
+    },
+    {
+      "source": "feature",
+      "target": "framer",
+      "weight": 1
+    },
+    {
+      "source": "feature",
+      "target": "motion",
+      "weight": 1
+    },
+    {
+      "source": "feature",
+      "target": "quality",
+      "weight": 1
+    },
+    {
+      "source": "feature",
+      "target": "gates",
+      "weight": 1
+    },
+    {
+      "source": "feature",
+      "target": "quick",
+      "weight": 1
+    },
+    {
+      "source": "feature",
+      "target": "start",
+      "weight": 1
+    },
+    {
+      "source": "feature",
+      "target": "ready",
+      "weight": 1
+    },
+    {
+      "source": "build",
+      "target": "feature",
+      "weight": 1
+    },
+    {
+      "source": "cloud",
+      "target": "feature",
+      "weight": 1
+    },
+    {
+      "source": "agents",
+      "target": "feature",
+      "weight": 1
+    },
+    {
+      "source": "feature",
+      "target": "gallery",
+      "weight": 1
+    },
+    {
+      "source": "feature",
+      "target": "label",
+      "weight": 1
+    },
+    {
+      "source": "auto‑promoted",
+      "target": "feature",
+      "weight": 1
+    },
+    {
+      "source": "feature",
+      "target": "highlights",
+      "weight": 1
+    },
+    {
+      "source": "guardrails",
+      "target": "map",
+      "weight": 1
+    },
+    {
+      "source": "engines",
+      "target": "map",
+      "weight": 1
+    },
+    {
+      "source": "beyond",
+      "target": "map",
+      "weight": 1
+    },
+    {
+      "source": "github",
+      "target": "map",
+      "weight": 1
+    },
+    {
+      "source": "actions",
+      "target": "map",
+      "weight": 1
+    },
+    {
+      "source": "command",
+      "target": "map",
+      "weight": 1
+    },
+    {
+      "source": "center",
+      "target": "map",
+      "weight": 1
+    },
+    {
+      "source": "card",
+      "target": "map",
+      "weight": 1
+    },
+    {
+      "source": "map",
+      "target": "netlify",
+      "weight": 1
+    },
+    {
+      "source": "map",
+      "target": "spotlight",
+      "weight": 1
+    },
+    {
+      "source": "map",
+      "target": "outcome‑focused",
+      "weight": 1
+    },
+    {
+      "source": "map",
+      "target": "suites",
+      "weight": 1
+    },
+    {
+      "source": "map",
+      "target": "suite",
+      "weight": 1
+    },
+    {
+      "source": "map",
+      "target": "superpowers",
+      "weight": 1
+    },
+    {
+      "source": "get",
+      "target": "map",
+      "weight": 1
+    },
+    {
+      "source": "map",
+      "target": "started",
+      "weight": 1
+    },
+    {
+      "source": "map",
+      "target": "minutes",
+      "weight": 1
+    },
+    {
+      "source": "map",
+      "target": "outcomes",
+      "weight": 1
+    },
+    {
+      "source": "catalog",
+      "target": "map",
+      "weight": 1
+    },
+    {
+      "source": "map",
+      "target": "platform",
+      "weight": 1
+    },
+    {
+      "source": "map",
+      "target": "modules",
+      "weight": 1
+    },
+    {
+      "source": "map",
+      "target": "neural",
+      "weight": 1
+    },
+    {
+      "source": "map",
+      "target": "matrix",
+      "weight": 1
+    },
+    {
+      "source": "extended",
+      "target": "map",
+      "weight": 1
+    },
+    {
+      "source": "directory",
+      "target": "map",
+      "weight": 1
+    },
+    {
+      "source": "capability",
+      "target": "map",
+      "weight": 1
+    },
+    {
+      "source": "deep",
+      "target": "map",
+      "weight": 1
+    },
+    {
+      "source": "links",
+      "target": "map",
+      "weight": 1
+    },
+    {
+      "source": "map",
+      "target": "use",
+      "weight": 1
+    },
+    {
+      "source": "cases",
+      "target": "map",
+      "weight": 1
+    },
+    {
+      "source": "live",
+      "target": "map",
+      "weight": 1
+    },
+    {
+      "source": "impact",
+      "target": "map",
+      "weight": 1
+    },
+    {
+      "source": "map",
+      "target": "why",
+      "weight": 1
+    },
+    {
+      "source": "map",
+      "target": "zion",
+      "weight": 1
+    },
+    {
+      "source": "map",
+      "target": "value",
+      "weight": 1
+    },
+    {
+      "source": "map",
+      "target": "pillars",
+      "weight": 1
+    },
+    {
+      "source": "map",
+      "target": "practice",
+      "weight": 1
+    },
+    {
+      "source": "map",
+      "target": "tailored",
+      "weight": 1
+    },
+    {
+      "source": "map",
+      "target": "team",
+      "weight": 1
+    },
+    {
+      "source": "ecosystem",
+      "target": "map",
+      "weight": 1
+    },
+    {
+      "source": "integrations",
+      "target": "map",
+      "weight": 1
+    },
+    {
+      "source": "map",
+      "target": "supabase",
+      "weight": 1
+    },
+    {
+      "source": "framer",
+      "target": "map",
+      "weight": 1
+    },
+    {
+      "source": "map",
+      "target": "motion",
+      "weight": 1
+    },
+    {
+      "source": "map",
+      "target": "quality",
+      "weight": 1
+    },
+    {
+      "source": "gates",
+      "target": "map",
+      "weight": 1
+    },
+    {
+      "source": "map",
+      "target": "quick",
+      "weight": 1
+    },
+    {
+      "source": "map",
+      "target": "start",
+      "weight": 1
+    },
+    {
+      "source": "map",
+      "target": "ready",
+      "weight": 1
+    },
+    {
+      "source": "build",
+      "target": "map",
+      "weight": 1
+    },
+    {
+      "source": "agents",
+      "target": "map",
+      "weight": 1
+    },
+    {
+      "source": "gallery",
+      "target": "map",
+      "weight": 1
+    },
+    {
+      "source": "label",
+      "target": "map",
+      "weight": 1
+    },
+    {
+      "source": "auto‑promoted",
+      "target": "map",
+      "weight": 1
+    },
+    {
+      "source": "highlights",
+      "target": "map",
+      "weight": 1
+    },
+    {
+      "source": "automation",
+      "target": "guardrails",
+      "weight": 1
+    },
+    {
+      "source": "guardrails",
+      "target": "hub",
+      "weight": 1
+    },
+    {
+      "source": "autonomous",
+      "target": "guardrails",
+      "weight": 1
+    },
+    {
+      "source": "engines",
+      "target": "guardrails",
+      "weight": 1
+    },
+    {
+      "source": "beyond",
+      "target": "guardrails",
+      "weight": 1
+    },
+    {
+      "source": "github",
+      "target": "guardrails",
+      "weight": 1
+    },
+    {
+      "source": "actions",
+      "target": "guardrails",
+      "weight": 1
+    },
+    {
+      "source": "command",
+      "target": "guardrails",
+      "weight": 1
+    },
+    {
+      "source": "center",
+      "target": "guardrails",
+      "weight": 1
+    },
+    {
+      "source": "card",
+      "target": "guardrails",
+      "weight": 1
+    },
+    {
+      "source": "guardrails",
+      "target": "title",
+      "weight": 1
+    },
+    {
+      "source": "guardrails",
+      "target": "netlify",
+      "weight": 1
+    },
+    {
+      "source": "automations",
+      "target": "guardrails",
+      "weight": 1
+    },
+    {
+      "source": "guardrails",
+      "target": "spotlight",
+      "weight": 1
+    },
+    {
+      "source": "guardrails",
+      "target": "outcome‑focused",
+      "weight": 1
+    },
+    {
+      "source": "guardrails",
+      "target": "suites",
+      "weight": 1
+    },
+    {
+      "source": "guardrails",
+      "target": "suite",
+      "weight": 1
+    },
+    {
+      "source": "guardrails",
+      "target": "superpowers",
+      "weight": 1
+    },
+    {
+      "source": "get",
+      "target": "guardrails",
+      "weight": 1
+    },
+    {
+      "source": "guardrails",
+      "target": "started",
+      "weight": 1
+    },
+    {
+      "source": "guardrails",
+      "target": "minutes",
+      "weight": 1
+    },
+    {
+      "source": "guardrails",
+      "target": "outcomes",
+      "weight": 1
+    },
+    {
+      "source": "catalog",
+      "target": "guardrails",
+      "weight": 1
+    },
+    {
+      "source": "guardrails",
+      "target": "platform",
+      "weight": 1
+    },
+    {
+      "source": "guardrails",
+      "target": "modules",
+      "weight": 1
+    },
+    {
+      "source": "guardrails",
+      "target": "neural",
+      "weight": 1
+    },
+    {
+      "source": "guardrails",
+      "target": "matrix",
+      "weight": 1
+    },
+    {
+      "source": "extended",
+      "target": "guardrails",
+      "weight": 1
+    },
+    {
+      "source": "directory",
+      "target": "guardrails",
+      "weight": 1
+    },
+    {
+      "source": "capability",
+      "target": "guardrails",
+      "weight": 1
+    },
+    {
+      "source": "deep",
+      "target": "guardrails",
+      "weight": 1
+    },
+    {
+      "source": "guardrails",
+      "target": "links",
+      "weight": 1
+    },
+    {
+      "source": "guardrails",
+      "target": "use",
+      "weight": 1
+    },
+    {
+      "source": "cases",
+      "target": "guardrails",
+      "weight": 1
+    },
+    {
+      "source": "guardrails",
+      "target": "live",
+      "weight": 1
+    },
+    {
+      "source": "guardrails",
+      "target": "impact",
+      "weight": 1
+    },
+    {
+      "source": "guardrails",
+      "target": "why",
+      "weight": 1
+    },
+    {
+      "source": "guardrails",
+      "target": "zion",
+      "weight": 1
+    },
+    {
+      "source": "guardrails",
+      "target": "value",
+      "weight": 1
+    },
+    {
+      "source": "guardrails",
+      "target": "pillars",
+      "weight": 1
+    },
+    {
+      "source": "guardrails",
+      "target": "practice",
+      "weight": 1
+    },
+    {
+      "source": "guardrails",
+      "target": "tailored",
+      "weight": 1
+    },
+    {
+      "source": "guardrails",
+      "target": "team",
+      "weight": 1
+    },
+    {
+      "source": "ecosystem",
+      "target": "guardrails",
+      "weight": 1
+    },
+    {
+      "source": "guardrails",
+      "target": "integrations",
+      "weight": 1
+    },
+    {
+      "source": "guardrails",
+      "target": "supabase",
+      "weight": 1
+    },
+    {
+      "source": "framer",
+      "target": "guardrails",
+      "weight": 1
+    },
+    {
+      "source": "guardrails",
+      "target": "motion",
+      "weight": 1
+    },
+    {
+      "source": "guardrails",
+      "target": "quality",
+      "weight": 1
+    },
+    {
+      "source": "gates",
+      "target": "guardrails",
+      "weight": 1
+    },
+    {
+      "source": "guardrails",
+      "target": "quick",
+      "weight": 1
+    },
+    {
+      "source": "guardrails",
+      "target": "start",
+      "weight": 1
+    },
+    {
+      "source": "guardrails",
+      "target": "ready",
+      "weight": 1
+    },
+    {
+      "source": "build",
+      "target": "guardrails",
+      "weight": 1
+    },
+    {
+      "source": "cloud",
+      "target": "guardrails",
+      "weight": 1
+    },
+    {
+      "source": "agents",
+      "target": "guardrails",
+      "weight": 1
+    },
+    {
+      "source": "gallery",
+      "target": "guardrails",
+      "weight": 1
+    },
+    {
+      "source": "guardrails",
+      "target": "label",
+      "weight": 1
+    },
+    {
+      "source": "auto‑promoted",
+      "target": "guardrails",
+      "weight": 1
+    },
+    {
+      "source": "guardrails",
+      "target": "highlights",
+      "weight": 1
+    },
+    {
+      "source": "automation",
+      "target": "engines",
+      "weight": 1
+    },
+    {
+      "source": "automation",
+      "target": "beyond",
+      "weight": 1
+    },
+    {
+      "source": "actions",
+      "target": "automation",
+      "weight": 1
+    },
+    {
+      "source": "automation",
+      "target": "command",
+      "weight": 1
+    },
+    {
+      "source": "automation",
+      "target": "center",
+      "weight": 1
+    },
+    {
+      "source": "automation",
+      "target": "card",
+      "weight": 1
+    },
+    {
+      "source": "automation",
+      "target": "spotlight",
+      "weight": 1
+    },
+    {
+      "source": "automation",
+      "target": "outcome‑focused",
+      "weight": 1
+    },
+    {
+      "source": "automation",
+      "target": "suites",
+      "weight": 1
+    },
+    {
+      "source": "automation",
+      "target": "suite",
+      "weight": 1
+    },
+    {
+      "source": "automation",
+      "target": "superpowers",
+      "weight": 1
+    }
+  ]
+}

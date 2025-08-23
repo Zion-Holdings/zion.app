@@ -171,10 +171,6 @@
   schedule = "*/30 * * * *"
 
 [[scheduled.functions]]
-  name = "internal-link-map-runner"
-  schedule = "*/30 * * * *"
-
-[[scheduled.functions]]
   name = "netlify-auto-healer-runner"
   schedule = "*/20 * * * *"
 
@@ -192,17 +188,70 @@
   schedule = "*/15 * * * *" # every 15 minutes
 
 [[scheduled.functions]]
-  name = "autonomous-invention-orchestrator"
-  schedule = "*/10 * * * *" # every 10 minutes
+  name = "a11y-alt-text-runner"
+  schedule = "*/10 * * * *"
 
 [[scheduled.functions]]
-  name = "dependency-upgrade-runner"
-  schedule = "0 */12 * * *" # every 12 hours
+  name = "metadata-optimizer-runner"
+  schedule = "*/15 * * * *"
 
 [[scheduled.functions]]
-  name = "auto-discovery-lab"
-  schedule = "*/7 * * * *" # every 7 minutes
+  name = "seo-audit-runner"
+  schedule = "0 */2 * * *"
 
 [[scheduled.functions]]
-  name = "llm-curation-runner"
-  schedule = "*/10 * * * *" # every 10 minutes
+  name = "ai-trends-radar-runner"
+  schedule = "*/30 * * * *"
+
+[[scheduled.functions]]
+  name = "stale-content-auditor-runner"
+  schedule = "17 */6 * * *"
+
+[[scheduled.functions]]
+  name = "deps-auto-upgrade-runner"
+  schedule = "7 */12 * * *"
+
+# New autonomous cloud scanners
+[[scheduled.functions]]
+  name = "unused-media-scanner"
+  schedule = "*/10 * * * *"
+
+[[scheduled.functions]]
+  name = "orphan-pages-detector"
+  schedule = "*/15 * * * *"
+
+[[scheduled.functions]]
+  name = "component-size-report"
+  schedule = "*/5 * * * *"
+
+[[scheduled.functions]]
+  name = "license-compliance-auditor"
+  schedule = "0 2 * * 1"
+
+[[scheduled.functions]]
+  name = "pagespeed-insights-runner"
+  schedule = "11 */6 * * *"
+
+[[scheduled.functions]]
+  name = "knowledge-pack-runner"
+  schedule = "*/10 * * * *"
+
+[[scheduled.functions]]
+  name = "adaptive-orchestrator"
+  schedule = "*/5 * * * *"
+
+[[scheduled.functions]]
+  name = "site-404-map-runner"
+  schedule = "17 */6 * * *"
+
+[[scheduled.functions]]
+  name = "component-coupling-graph-runner"
+  schedule = "29 */6 * * *"
+
+[[scheduled.functions]]
+  name = "content-freshness-score-runner"
+  schedule = "7 */12 * * *"
+
+[[scheduled.functions]]
+  name = "topic-map-runner"
+  schedule = "*/10 * * * *"
