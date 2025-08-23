@@ -5,7 +5,7 @@ import {
   Search, Grid, List,
   Brain, Atom, Shield, Target, Rocket,
   ArrowRight, Check, Palette, Heart, Truck, GraduationCap,
-  Building, Cpu, Database, Cloud, Lock, Sparkles
+  Building, Cpu, Database, Cloud, Lock, ShoppingCart, Lightbulb
 } from 'lucide-react';
 import { innovative2025MicroSaasExpansionV2 } from '../data/innovative-2025-micro-saas-expansion-v2';
 import { innovative2025ITServicesExpansionV2 } from '../data/innovative-2025-it-services-expansion-v2';
@@ -58,6 +58,13 @@ import { emergingTech2025Innovations } from '../data/emerging-tech-2025-innovati
 
 // Import additional 2038 services
 import { innovative2038ITMicroSaasServices } from '../data/innovative-2038-it-micro-saas-services';
+
+// Import 2038 innovative services
+import { innovative2038AIServices } from '../data/innovative-2038-ai-services';
+import { innovative2038ITServices } from '../data/innovative-2038-it-services';
+import { innovative2038MicroSaasServices } from '../data/innovative-2038-micro-saas-services';
+import { innovative2038IndustryServices } from '../data/innovative-2038-industry-services';
+import { innovative2038ConsultingServices } from '../data/innovative-2038-consulting-services';
 
 // Import existing service data
 import { realMicroSaasServices } from '../data/real-micro-saas-services';
@@ -135,10 +142,15 @@ const allServices = [
   ...real2036ServiceExpansions,
   ...innovative2036MicroSaasServices,
   ...innovative2036ITServices,
-  // 2025 Advanced Services
-  ...real2025AdvancedAIServices,
-  ...real2025ITInfrastructureServices,
-  ...real2025InnovativeMicroSaas
+  ...innovative2037MicroSaasServices,
+  ...innovative2037ITServices,
+  ...innovative2037AIServices,
+  // 2038 innovative services
+  ...innovative2038AIServices,
+  ...innovative2038ITServices,
+  ...innovative2038MicroSaasServices,
+  ...innovative2038IndustryServices,
+  ...innovative2038ConsultingServices
 ];
 
 const categories = [
@@ -213,11 +225,25 @@ const categories = [
     description: 'Learning and research platforms'
   },
   {
-    id: 'revolutionary-2025-2026',
-    name: 'Revolutionary 2025-2026',
-    icon: <Sparkles className="w-6 h-6" />,
-    color: 'from-cyan-500 to-purple-500',
-    description: 'Cutting-edge services for the future'
+    id: 'manufacturing-industry',
+    name: 'Manufacturing & Industry',
+    icon: <Building className="w-6 h-6" />,
+    color: 'from-gray-500 to-slate-500',
+    description: 'Industrial automation and smart manufacturing'
+  },
+  {
+    id: 'retail-ecommerce',
+    name: 'Retail & E-commerce',
+    icon: <ShoppingCart className="w-6 h-6" />,
+    color: 'from-pink-500 to-rose-500',
+    description: 'Retail technology and e-commerce solutions'
+  },
+  {
+    id: 'consulting-strategy',
+    name: 'Consulting & Strategy',
+    icon: <Lightbulb className="w-6 h-6" />,
+    color: 'from-indigo-500 to-purple-500',
+    description: 'Strategic consulting and advisory services'
   }
 ];
 
@@ -266,11 +292,57 @@ const ServicesPage: React.FC = () => {
     return <Award className="w-6 h-6" />;
   };
 
-  const getCategoryColor = (serviceName: string) => {
-    if (serviceName.toLowerCase().includes('ai')) return 'from-purple-500 to-pink-600';
-    if (serviceName.toLowerCase().includes('quantum')) return 'from-blue-500 to-cyan-600';
-    if (serviceName.toLowerCase().includes('infrastructure') || serviceName.toLowerCase().includes('devops') || serviceName.toLowerCase().includes('security')) return 'from-orange-500 to-red-600';
-    return 'from-green-500 to-emerald-600';
+  // Reset to first page when filters/sort change
+  React.useEffect(() => {
+    setCurrentPage(1);
+  }, [searchQuery, selectedCategory, sortBy]);
+
+  const getCategoryIcon = (category: string) => {
+    switch (category.toLowerCase()) {
+      case 'enterprise it':
+      case 'enterprise security':
+      case 'devops & automation':
+      case 'data & analytics':
+      case 'cloud services':
+      case 'cybersecurity':
+        return <Building className="w-6 h-6 text-blue-400" />;
+      case 'ai & consciousness':
+      case 'ai services':
+      case 'artificial intelligence':
+        return <Brain className="w-6 h-6 text-cyan-400" />;
+      case 'quantum':
+      case 'quantum & emerging tech':
+        return <Atom className="w-6 h-6 text-purple-400" />;
+      case 'space':
+      case 'space & metaverse':
+        return <Rocket className="w-6 h-6 text-pink-400" />;
+      case 'micro saas':
+      case 'micro saas solutions':
+        return <Target className="w-6 h-6 text-orange-400" />;
+      case 'creative':
+      case 'creative & media':
+        return <Palette className="w-6 h-6 text-indigo-400" />;
+      case 'healthcare':
+      case 'healthcare & biotech':
+        return <Heart className="w-6 h-6 text-red-400" />;
+      case 'transportation':
+      case 'transportation & logistics':
+        return <Truck className="w-6 h-6 text-blue-400" />;
+      case 'education':
+      case 'education & research':
+        return <GraduationCap className="w-6 h-6 text-yellow-400" />;
+      case 'manufacturing':
+      case 'manufacturing & industry':
+        return <Building className="w-6 h-6 text-gray-400" />;
+      case 'retail':
+      case 'retail & e-commerce':
+        return <ShoppingCart className="w-6 h-6 text-pink-400" />;
+      case 'consulting':
+      case 'consulting & strategy':
+        return <Lightbulb className="w-6 h-6 text-indigo-400" />;
+      default:
+        return <Shield className="w-6 h-6 text-gray-400" />;
+    }
   };
 
   const toggleSortOrder = () => {

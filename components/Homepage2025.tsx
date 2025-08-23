@@ -87,25 +87,28 @@ const Homepage2025: React.FC = () => {
               </a>
             </motion.div>
 
-            {/* Market Stats */}
-            <motion.div 
-              className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto"
-              initial={{ opacity: 0, y: 50 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 1, delay: 0.6 }}
-            >
-              <div className="text-center p-4 rounded-xl bg-gradient-to-br from-purple-900/20 to-blue-900/20 border border-purple-500/30">
-                <div className="text-3xl font-bold text-purple-400 mb-2">$450B+</div>
-                <div className="text-sm text-gray-300">Market Opportunity</div>
-              </div>
-              <div className="text-center p-4 rounded-xl bg-gradient-to-br from-cyan-900/20 to-green-900/20 border border-cyan-500/30">
-                <div className="text-3xl font-bold text-cyan-400 mb-2">25%+</div>
-                <div className="text-sm text-gray-300">Annual Growth</div>
-              </div>
-              <div className="text-center p-4 rounded-xl bg-gradient-to-br from-green-900/20 to-emerald-900/20 border border-green-500/30">
-                <div className="text-3xl font-bold text-green-400 mb-2">10K+</div>
-                <div className="text-sm text-gray-300">Enterprise Clients</div>
-              </div>
+                          <motion.div
+                className="flex flex-col sm:flex-row gap-4 justify-center items-center"
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.4 }}
+              >
+                <motion.a
+                  href="/innovative-2038-services-showcase"
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  className="inline-flex items-center space-x-3 px-8 py-4 bg-gradient-to-r from-purple-500 to-pink-600 text-white font-bold text-lg rounded-xl hover:from-purple-600 hover:to-pink-700 transition-all duration-200 shadow-2xl shadow-purple-500/25 mb-4 sm:mb-0"
+                >
+                  <span>Explore 2038 Services</span>
+                  <ArrowRight className="w-6 h-6" />
+                </motion.a>
+              <button className="px-8 py-4 bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-semibold rounded-xl hover:from-cyan-600 hover:to-blue-700 transition-all duration-300 transform hover:scale-105 shadow-lg shadow-cyan-500/25">
+                Get Started Today
+              </button>
+              <button className="px-8 py-4 border-2 border-cyan-400 text-cyan-400 font-semibold rounded-xl hover:bg-cyan-400 hover:text-black transition-all duration-300">
+                Watch Demo
+                <Play className="w-5 h-5 ml-2 inline" />
+              </button>
             </motion.div>
           </div>
         </section>
