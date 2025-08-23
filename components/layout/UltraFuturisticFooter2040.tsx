@@ -29,6 +29,22 @@ const footerSections = [
     ]
   },
   {
+    title: 'Innovative 2025 Services',
+    description: 'Latest cutting-edge micro SAAS and IT solutions',
+    icon: <Rocket className="w-5 h-5 text-green-400" />,
+    color: 'from-green-500 to-emerald-500',
+    links: [
+      { name: 'AI Content Intelligence Platform', href: '/ai-content-intelligence-platform', featured: true },
+      { name: 'Quantum-Enhanced Cybersecurity Suite', href: '/quantum-cybersecurity-suite', featured: true },
+      { name: 'Autonomous Business Process Orchestrator', href: '/autonomous-business-process-orchestrator', featured: true },
+      { name: 'Neural Network Performance Optimizer', href: '/neural-network-performance-optimizer' },
+      { name: 'Blockchain Supply Chain Transparency', href: '/blockchain-supply-chain-transparency' },
+      { name: 'Quantum Machine Learning Platform', href: '/quantum-machine-learning-platform' },
+      { name: 'Autonomous Data Quality Management', href: '/autonomous-data-quality-management' },
+      { name: 'Edge AI Computing Platform', href: '/edge-ai-computing-platform' }
+    ]
+  },
+  {
     title: 'AI & Consciousness',
     description: 'Revolutionary AI consciousness platforms',
     icon: <Brain className="w-5 h-5 text-cyan-400" />,
@@ -62,6 +78,21 @@ const footerSections = [
       { name: 'Autonomous Vehicle AI 2040', href: '/autonomous-vehicle-ai-2040' },
       { name: 'Quantum Materials Discovery 2040', href: '/quantum-materials-discovery-2040' },
       { name: 'Quantum Financial Intelligence 2040', href: '/quantum-financial-intelligence-2040' }
+    ]
+  },
+  {
+    title: 'Enterprise IT Solutions',
+    description: 'Advanced infrastructure and security solutions',
+    icon: <Shield className="w-5 h-5 text-red-400" />,
+    color: 'from-red-500 to-pink-500',
+    links: [
+      { name: 'Zero-Trust Network Architecture', href: '/zero-trust-network-architecture-platform', featured: true },
+      { name: 'Autonomous Cloud Infrastructure Manager', href: '/autonomous-cloud-infrastructure-manager', featured: true },
+      { name: 'Quantum-Resistant Data Encryption Suite', href: '/quantum-resistant-data-encryption-suite' },
+      { name: 'Intelligent API Gateway and Management', href: '/intelligent-api-gateway-and-management' },
+      { name: 'Autonomous Database Performance Optimizer', href: '/autonomous-database-performance-optimizer' },
+      { name: 'Edge Computing Infrastructure Platform', href: '/edge-computing-infrastructure-platform' },
+      { name: 'Intelligent Load Balancing and Traffic Management', href: '/intelligent-load-balancing-traffic-management' }
     ]
   },
   {
