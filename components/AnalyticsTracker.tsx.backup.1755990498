@@ -1,3 +1,7 @@
+<<<<<<< HEAD
+
+=======
+>>>>>>> origin/cursor/website-audit-content-update-and-deployment-f821
 import React, { useEffect, useCallback } from 'react';
 
 interface AnalyticsTrackerProps {
@@ -13,7 +17,19 @@ interface AnalyticsTrackerProps {
 interface PerformanceEventTiming extends PerformanceEntry {
   processingStart: number;
   processingEnd: number;
+<<<<<<< HEAD
+  target?: unknown;
+}
+
+// Global type declarations for browser APIs
+declare global {
+  interface Window {
+    gtag?: (...args: unknown[]) => void;
+    dataLayer?: unknown[];
+  }
+=======
   target?: any | null;
+>>>>>>> origin/cursor/website-audit-content-update-and-deployment-f821
 }
 
 const AnalyticsTracker: React.FC<AnalyticsTrackerProps> = ({

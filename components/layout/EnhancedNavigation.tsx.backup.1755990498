@@ -1,3 +1,7 @@
+<<<<<<< HEAD
+
+=======
+>>>>>>> origin/cursor/website-audit-content-update-and-deployment-f821
 import React, { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Search, Menu, X, ChevronDown, Rocket, Star } from 'lucide-react';
@@ -33,12 +37,20 @@ const EnhancedNavigation: React.FC = () => {
       href: '/services',
       icon: <Star className="w-4 h-4" />,
       children: [
+<<<<<<< HEAD
+        { name: 'AI & Automation', description: 'Intelligent automation solutions', href: '/ai-automation-services' },
+        { name: 'IT Infrastructure', description: 'Enterprise infrastructure solutions', href: '/it-infrastructure-services' },
+        { name: 'Cloud Solutions', description: 'Scalable cloud platforms', href: '/cloud-solutions' },
+        { name: 'Cybersecurity', description: 'Advanced security solutions', href: '/cybersecurity-services' },
+        { name: 'Quantum Computing', description: 'Next-gen quantum solutions', href: '/quantum-computing' }
+=======
         { label: 'AI & Automation', href: '/ai-automation-services' },
         { label: 'Quantum Computing', href: '/quantum-services' },
         { label: 'IT Infrastructure', href: '/it-services' },
         { label: 'Cloud Solutions', href: '/cloud-platform' },
         { label: 'Cybersecurity', href: '/security' },
         { label: 'Micro SAAS', href: '/micro-saas' }
+>>>>>>> origin/cursor/website-audit-content-update-and-deployment-f821
       ]
     },
     {
@@ -47,12 +59,18 @@ const EnhancedNavigation: React.FC = () => {
       href: '/showcase',
       icon: <Star className="w-4 h-4" />,
       children: [
+<<<<<<< HEAD
+        { name: 'Case Studies', description: 'Real-world success stories', href: '/case-studies' },
+        { name: 'Success Stories', description: 'Client transformations', href: '/success-stories' },
+        { name: 'Innovation Lab', description: 'Our research & development', href: '/innovation-lab' }
+=======
         { label: 'Case Studies', href: '/case-studies' },
         { label: 'Success Stories', href: '/success-stories' },
         { label: 'Innovation Lab', href: '/innovation-lab' },
         { label: '2025 Services', href: '/comprehensive-2025-services-showcase' },
         { label: '2026 Services', href: '/ultimate-2026-services-showcase' },
         { label: '2037 Services', href: '/2037-innovative-services-showcase' }
+>>>>>>> origin/cursor/website-audit-content-update-and-deployment-f821
       ]
     },
     {
@@ -61,12 +79,19 @@ const EnhancedNavigation: React.FC = () => {
       href: '/resources',
       icon: <Star className="w-4 h-4" />,
       children: [
+<<<<<<< HEAD
+        { name: 'Documentation', description: 'Technical guides and APIs', href: '/docs' },
+        { name: 'Blog', description: 'Latest insights and updates', href: '/blog' },
+        { name: 'Research', description: 'Industry research and trends', href: '/research' },
+        { name: 'Training', description: 'Professional development', href: '/training' }
+=======
         { label: 'Documentation', href: '/docs' },
         { label: 'Blog', href: '/blog' },
         { label: 'Research', href: '/research-development' },
         { label: 'Training', href: '/training' },
         { label: 'Reports', href: '/reports' },
         { label: 'Events', href: '/events' }
+>>>>>>> origin/cursor/website-audit-content-update-and-deployment-f821
       ]
     },
     {
@@ -75,12 +100,19 @@ const EnhancedNavigation: React.FC = () => {
       href: '/about',
       icon: <Star className="w-4 h-4" />,
       children: [
+<<<<<<< HEAD
+        { name: 'About Us', description: 'Our story and mission', href: '/about' },
+        { name: 'Team', description: 'Meet our experts', href: '/team' },
+        { name: 'Careers', description: 'Join our team', href: '/careers' },
+        { name: 'Contact', description: 'Get in touch', href: '/contact' }
+=======
         { label: 'About Us', href: '/about' },
         { label: 'Careers', href: '/careers' },
         { label: 'Contact', href: '/contact' },
         { label: 'Partners', href: '/partners' },
         { label: 'Investors', href: '/investors' },
         { label: 'Locations', href: '/locations' }
+>>>>>>> origin/cursor/website-audit-content-update-and-deployment-f821
       ]
     }
   ];
@@ -97,7 +129,11 @@ const EnhancedNavigation: React.FC = () => {
   // Close mobile menu when clicking outside
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
+<<<<<<< HEAD
+      const target = event.target as HTMLElement;
+=======
       const target = event.target as any;
+>>>>>>> origin/cursor/website-audit-content-update-and-deployment-f821
       if (!target.closest('.navigation-dropdown')) {
         closeDropdown();
       }
