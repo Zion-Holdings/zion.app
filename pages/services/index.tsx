@@ -314,7 +314,6 @@ export default function ServicesIndexPage() {
                       key={`${service.id || service.name}-${index}`}
                       service={service}
                       variant="quantum"
-                      theme="quantum"
                     />
                   ))}
                 </div>
@@ -333,7 +332,6 @@ export default function ServicesIndexPage() {
                       key={`${service.id || service.name}-${index}`}
                       service={service}
                       variant="ai"
-                      theme="neon"
                     />
                   ))}
                 </div>
@@ -384,7 +382,6 @@ export default function ServicesIndexPage() {
                             key={`${service.id || service.name}-${index}`}
                             service={service}
                             variant="default"
-                            theme="cyber"
                           />
                         ))}
                       </div>
@@ -472,7 +469,6 @@ export default function ServicesIndexPage() {
                     key={`${service.id || service.name}-${index}`}
                     service={service}
                     variant="quantum"
-                    theme="quantum"
                   />
                 ))}
               </div>
@@ -491,7 +487,6 @@ export default function ServicesIndexPage() {
                     key={`${service.id || service.name}-${index}`}
                     service={service}
                     variant="ai"
-                    theme="neon"
                   />
                 ))}
               </div>
@@ -542,7 +537,6 @@ export default function ServicesIndexPage() {
                           key={`${service.id || service.name}-${index}`}
                           service={service}
                           variant="default"
-                          theme="cyber"
                         />
                       ))}
                     </div>
