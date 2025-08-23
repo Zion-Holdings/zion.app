@@ -161,9 +161,15 @@ const navigationItems: NavigationItem[] = [
     category: 'showcase',
     children: [
       { 
+<<<<<<< HEAD
+        name: '2036 Services Showcase', 
+        href: '/comprehensive-2036-services-showcase', 
+        description: 'Latest innovative services',
+=======
         name: 'Services Showcase 2036', 
         href: '/comprehensive-services-showcase-2036', 
         description: 'Complete 2036 services overview',
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-fee1
         icon: <Grid className="w-4 h-4" />,
         featured: true
       },
