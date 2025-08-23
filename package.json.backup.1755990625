@@ -242,6 +242,10 @@
     "automation:guardian": "node automation/automation-guardian-10min.cjs",
     "automation:cloud": "node automation/cloud-autonomous-orchestrator.cjs",
     "automation:discover": "node automation/auto-discovery-runner.cjs",
+<<<<<<< HEAD
+    "redundancy:start": "./automation/start-redundancy-system.sh start",
+    "redundancy:stop": "./automation/start-redundancy-system.sh stop",
+=======
     "redundancy:start": "node automation/redundancy/master-redundancy-orchestrator.cjs start",
     "redundancy:stop": "node automation/redundancy/master-redundancy-orchestrator.cjs stop",
     "redundancy:status": "node automation/redundancy/master-redundancy-orchestrator.cjs status",
@@ -257,15 +261,26 @@
     "redundancy:netlify:stop": "node automation/redundancy/netlify-functions-redundancy.cjs stop",
     "redundancy:netlify:status": "node automation/redundancy/netlify-functions-redundancy.cjs status",
     "redundancy:test": "node automation/redundancy/pm2-redundancy-sync.cjs && node automation/redundancy/marketing-sync-redundancy.cjs",
+>>>>>>> origin/cursor/automate-deployment-redundancy-and-clean-up-94f3
     "redundancy:restart": "./automation/start-redundancy-system.sh restart",
     "redundancy:logs": "./automation/start-redundancy-system.sh logs",
     "redundancy:system": "node automation/redundancy-automation-system.cjs",
+<<<<<<< HEAD
+    "redundancy:health": "./automation/start-redundancy-system.sh health",
+    "redundancy:git-sync": "node automation/redundancy-git-sync.cjs",
+    "redundancy:build": "node automation/redundancy-build-monitor.cjs",
+    "redundancy:pm2": "node automation/pm2-redundancy-monitor.cjs check",
+    "redundancy:pm2:stop": "pm2 stop ecosystem.redundancy.cjs",
+    "redundancy:pm2:restart": "pm2 restart ecosystem.redundancy.cjs",
+    "redundancy:pm2:status": "pm2 status",
+=======
     "redundancy:git-sync": "node automation/redundancy-git-sync.cjs",
     "redundancy:build": "node automation/redundancy-build-monitor.cjs",
     "redundancy:pm2:legacy": "pm2 start ecosystem.redundancy.cjs",
     "redundancy:pm2:legacy:stop": "pm2 stop ecosystem.redundancy.cjs",
     "redundancy:pm2:legacy:restart": "pm2 restart ecosystem.redundancy.cjs",
     "redundancy:pm2:legacy:status": "pm2 status",
+>>>>>>> origin/cursor/automate-deployment-redundancy-and-clean-up-94f3
     "automation:improvement:dev": "nodemon automation/continuous-automation-improvement-system.js",
     "automation:coordinator": "node automation/master-automation-coordinator.js",
     "automation:coordinator:dev": "nodemon automation/master-automation-coordinator.js",
@@ -349,6 +364,7 @@
     "feature-marketing:start": "node automation/feature-marketing-orchestrator.cjs",
     "feature-marketing:cron:start": "bash automation/feature-marketing-cron.sh",
     "feature-marketing:analyze": "node automation/feature-marketing-analyzer.cjs && node automation/feature-marketing-factory.cjs",
+>>>>>>> d5664ab6b5d13e5fc3647e0ad86c2a40ea393974
     "linkedin:marketing:start": "node automation/linkedin-marketing-orchestrator.cjs",
     "linkedin:marketing:cron:start": "bash automation/linkedin-marketing-cron.sh",
     "linkedin:marketing:analyze": "node automation/linkedin-marketing-analyzer.cjs && node automation/linkedin-marketing-factory.cjs",
