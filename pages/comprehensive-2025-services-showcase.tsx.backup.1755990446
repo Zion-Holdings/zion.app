@@ -217,6 +217,61 @@ const Comprehensive2025ServicesShowcase: React.FC = () => {
                   onChange={(e) => setSelectedCategory(e.target.value)}
                   className="px-4 py-3 bg-white/10 border border-white/20 rounded-xl text-white focus:outline-none focus:border-cyan-400 focus:ring-2 focus:ring-cyan-400/20"
                 >
+<<<<<<< HEAD
+                  {categories.map(category => (
+                    <option key={category} value={category} className="bg-gray-800 text-white">
+                      {category === 'all' ? 'All Categories' : category}
+                    </option>
+                  ))}
+                </select>
+
+                {/* Sort */}
+                <select
+                  value={sortBy}
+                  onChange={(e) => setSortBy(e.target.value as any)}
+                  className="px-4 py-3 bg-white/10 border border-white/20 rounded-xl text-white focus:outline-none focus:border-cyan-400 focus:ring-2 focus:ring-cyan-400/20"
+                >
+                  <option value="name" className="bg-gray-800 text-white">Sort by Name</option>
+                  <option value="price" className="bg-gray-800 text-white">Sort by Price</option>
+                  <option value="category" className="bg-gray-800 text-white">Sort by Category</option>
+                </select>
+
+                {/* View Mode Toggle */}
+                <div className="flex items-center space-x-2 bg-white/10 border border-white/20 rounded-xl p-1">
+                  <button
+                    onClick={() => setViewMode('grid')}
+                    className={`p-2 rounded-lg transition-all duration-200 ${
+                      viewMode === 'grid' 
+                        ? 'bg-cyan-500 text-white' 
+                        : 'text-gray-400 hover:text-white'
+                    }`}
+                    aria-label="Grid view"
+                  >
+                    <Grid3X3 className="w-5 h-5" />
+                  </button>
+                  <button
+                    onClick={() => setViewMode('list')}
+                    className={`p-2 rounded-lg transition-all duration-200 ${
+                      viewMode === 'list' 
+                        ? 'bg-cyan-500 text-white' 
+                        : 'text-gray-400 hover:text-white'
+                    }`}
+                    aria-label="List view"
+                  >
+                    <List className="w-5 h-5" />
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            {/* Results Count */}
+            <div className="mt-6 text-center">
+              <p className="text-gray-300">
+                Showing <span className="text-cyan-400 font-semibold">{filteredServices.length}</span> of{' '}
+                <span className="text-purple-400 font-semibold">{allServices.length}</span> services
+              </p>
+            </div>
+=======
                   <div className="text-center mb-16">
                     <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
                       {category}
@@ -330,6 +385,7 @@ const Comprehensive2025ServicesShowcase: React.FC = () => {
                 </motion.div>
               );
             })}
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-b2df
           </div>
         </section>
 

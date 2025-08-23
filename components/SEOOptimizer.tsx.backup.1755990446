@@ -249,6 +249,12 @@ const SEOOptimizer: React.FC<SEOOptimizerProps> = ({
       <meta name="twitter:site" content="@ziontechgroup" />
       <meta name="twitter:creator" content="@ziontechgroup" />
       
+<<<<<<< HEAD
+      {/* Additional Meta Tags */}
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+      <meta name="theme-color" content="#0891b2" />
+      <meta name="msapplication-TileColor" content="#0891b2" />
+=======
       {/* Additional Open Graph Tags */}
       <meta property="og:image:type" content="image/jpeg" />
       <meta property="og:image:secure_url" content={image} />
@@ -281,6 +287,7 @@ const SEOOptimizer: React.FC<SEOOptimizerProps> = ({
       {/* Mobile and Viewport */}
       <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
       <meta name="mobile-web-app-capable" content="yes" />
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-b2df
       <meta name="apple-mobile-web-app-capable" content="yes" />
       <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
       <meta name="apple-mobile-web-app-title" content="Zion Tech Group" />

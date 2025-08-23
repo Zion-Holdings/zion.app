@@ -3,6 +3,8 @@ import { motion } from 'framer-motion';
 import { Search, Filter, ArrowRight, Star, CheckCircle } from 'lucide-react';
 import Layout from '../../components/layout/Layout';
 import SEO from '../../components/SEO';
+<<<<<<< HEAD
+=======
 import UltraFuturisticBackground from '../../components/ui/UltraFuturisticBackground';
 import UltraFuturisticServiceCard2026 from '../../components/ui/UltraFuturisticServiceCard2026';
 import Link from 'next/link';
@@ -60,6 +62,7 @@ import { real2036AIServicesAdditions } from '../../data/real-2036-ai-services-ad
 import { innovative2025MicroSaasBatch } from '../../data/innovative-2025-micro-saas-batch';
 import { innovative2025ITEnterpriseBatch } from '../../data/innovative-2025-it-enterprise-batch';
 import { innovative2025AIServicesBatch } from '../../data/innovative-2025-ai-services-batch';
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-b2df
 
 // Define a unified service interface
 interface Service {
@@ -130,6 +133,9 @@ const sampleServices: Service[] = [
   }
 ];
 
+<<<<<<< HEAD
+const categories = ['All', 'AI', 'Quantum', 'Security', 'Cloud', 'Space'];
+=======
 export default function ServicesIndexPage() {
   const all = (enhancedRealMicroSaasServices as unknown[])
     .concat(
@@ -190,6 +196,7 @@ export default function ServicesIndexPage() {
     )
     .concat(innovative2025MicroSaasBatch as unknown[])
     .concat(innovative2025ITEnterpriseBatch as unknown[]);
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-b2df
 
   // Filter out services without required properties
   const validServices = all.filter((service: any) => {
