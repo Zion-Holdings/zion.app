@@ -1,35 +1,102 @@
-import React, { useEffect } from 'react';
-import { motion } from 'framer-motion';
-
-// Add browser API types
-declare global {
-  interface Window {
-    gtag?: (
-      command: string,
-      action: string,
-      params?: Record<string, unknown>
-    ) => void;
-  }
-}
-
-
+import React, { ReactNode, useEffect, useRef, useState } from 'react';
 
 interface PerformanceOptimizerProps {
-  children: React.ReactNode;
+  children: ReactNode;
+  threshold?: number;
+  rootMargin?: string;
+  lazyLoad?: boolean;
+  preload?: boolean;
 }
 
-export default function PerformanceOptimizer({ children }: PerformanceOptimizerProps) {
+// Performance entry type definitions
+interface FirstInputEntry extends PerformanceEntry {
+  processingStart: number;
+  startTime: number;
+}
+
+interface LayoutShiftEntry extends PerformanceEntry {
+  value: number;
+}
+
+// IntersectionObserver polyfill check
+const getIntersectionObserver = () => {
+  if (typeof window !== 'undefined' && 'IntersectionObserver' in window) {
+    return window.IntersectionObserver;
+  }
+  // Return a mock observer for SSR
+  return class MockIntersectionObserver {
+    constructor() {}
+    observe() {}
+    unobserve() {}
+    disconnect() {}
+  };
+};
+
+const PerformanceOptimizer: React.FC<PerformanceOptimizerProps> = ({
+  children,
+  threshold = 0.1,
+  rootMargin = '50px',
+  lazyLoad = true,
+  preload = true
+}) => {
+  const [isVisible, setIsVisible] = useState(false);
+  const [isLoaded, setIsLoaded] = useState(false);
+  const containerRef = useRef<HTMLDivElement>(null);
+
   useEffect(() => {
-    // Preload critical resources
-    const preloadCriticalResources = () => {
+    if (!lazyLoad) {
+      setIsVisible(true);
+      setIsLoaded(true);
+      return;
+    }
+
+    const IntersectionObserver = getIntersectionObserver();
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setIsVisible(true);
+            
+            // Add a small delay for smooth animation
+            setTimeout(() => {
+              setIsLoaded(true);
+            }, 100);
+            
+            // Once visible, disconnect the observer
+            if (containerRef.current) {
+              observer.unobserve(containerRef.current);
+            }
+          }
+        });
+      },
+      {
+        threshold,
+        rootMargin,
+        root: null
+      }
+    );
+
+    if (containerRef.current) {
+      observer.observe(containerRef.current);
+    }
+
+    return () => {
+      if (containerRef.current) {
+        observer.unobserve(containerRef.current);
+      }
+    };
+  }, [lazyLoad, threshold, rootMargin]);
+
+  // Preload critical resources
+  useEffect(() => {
+    if (preload && isVisible) {
       // Preload critical images
       const criticalImages = [
-        '/og-image.jpg',
-        '/favicon.ico',
-        '/logo.png'
+        '/images/zion-tech-group-logo.png',
+        '/images/zion-tech-group-og.jpg'
       ];
 
-      criticalImages.forEach(src => {
+      criticalImages.forEach((src) => {
         const link = document.createElement('link');
         link.rel = 'preload';
         link.as = 'image';
@@ -42,181 +109,99 @@ export default function PerformanceOptimizer({ children }: PerformanceOptimizerP
         'https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap'
       ];
 
-      criticalFonts.forEach(href => {
+      criticalFonts.forEach((href) => {
         const link = document.createElement('link');
         link.rel = 'preload';
         link.as = 'style';
         link.href = href;
         document.head.appendChild(link);
       });
-    };
+    }
+  }, [preload, isVisible]);
 
-    // Lazy load non-critical images
-    const lazyLoadImages = () => {
-      if (typeof window !== 'undefined' && 'IntersectionObserver' in window) {
-        const imageObserver = new (window as any).IntersectionObserver((entries: any[], observer: any) => {
-          entries.forEach(entry => {
-            if (entry.isIntersecting) {
-              const img = entry.target as any;
-              if (img.dataset.src) {
-                img.src = img.dataset.src;
-                img.classList.remove('lazy');
-                observer.unobserve(img);
+  // Performance monitoring
+  useEffect(() => {
+    if (typeof window !== 'undefined' && 'performance' in window) {
+      // Monitor Core Web Vitals
+      const observer = new PerformanceObserver((list) => {
+        list.getEntries().forEach((entry) => {
+          if (entry.entryType === 'largest-contentful-paint') {
+            // Log LCP for development only
+            if (process.env.NODE_ENV === 'development') {
+              // eslint-disable-next-line no-console
+              console.log('LCP:', entry.startTime);
+            }
+          }
+          if (entry.entryType === 'first-input') {
+            const firstInputEntry = entry as FirstInputEntry;
+            if (firstInputEntry.processingStart) {
+              // Log FID for development only
+              if (process.env.NODE_ENV === 'development') {
+                // eslint-disable-next-line no-console
+                console.log('FID:', firstInputEntry.processingStart - firstInputEntry.startTime);
               }
             }
-          });
+          }
+          if (entry.entryType === 'layout-shift') {
+            const layoutShiftEntry = entry as LayoutShiftEntry;
+            // Log CLS for development only
+            if (process.env.NODE_ENV === 'development') {
+              // eslint-disable-next-line no-console
+              console.log('CLS:', layoutShiftEntry.value);
+            }
+          }
         });
+      });
 
-        document.querySelectorAll('img[data-src]').forEach(img => {
-          imageObserver.observe(img);
-        });
-      }
-    };
-
-    // Optimize animations for reduced motion preference
-    const optimizeAnimations = () => {
-      if (typeof window !== 'undefined') {
-        const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-        
-        if (prefersReducedMotion) {
-          document.documentElement.style.setProperty('--animation-duration', '0.1s');
-          document.documentElement.style.setProperty('--transition-duration', '0.1s');
-        }
-      }
-    };
-
-    // Initialize performance optimizations
-    preloadCriticalResources();
-    lazyLoadImages();
-    optimizeAnimations();
-
-    // Cleanup function
-    return () => {
-      // Cleanup any observers or event listeners if needed
-    };
-  }, []);
-
-  return (
-    <motion.div
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      transition={{ duration: 0.3 }}
-      className="performance-optimized"
-    >
-      {children}
-    </motion.div>
-  );
-}
-
-// Performance monitoring utilities
-export const performanceUtils = {
-  // Measure page load time
-  measurePageLoad: () => {
-    if (typeof window !== 'undefined' && 'performance' in window) {
-      const navigation = performance.getEntriesByType('navigation')[0] as PerformanceNavigationTiming;
-      if (navigation) {
-        const loadTime = navigation.loadEventEnd - navigation.loadEventStart;
-        const domContentLoaded = navigation.domContentLoadedEventEnd - navigation.domContentLoadedEventStart;
-        
-        // Log performance metrics (only in development)
+      try {
+        observer.observe({ entryTypes: ['largest-contentful-paint', 'first-input', 'layout-shift'] });
+      } catch (error) {
+        // Log warning for development only
         if (process.env.NODE_ENV === 'development') {
           // eslint-disable-next-line no-console
-          console.log('Performance Metrics:', {
-            pageLoadTime: `${loadTime}ms`,
-            domContentLoaded: `${domContentLoaded}ms`,
-            totalTime: `${navigation.loadEventEnd - navigation.fetchStart}ms`
-          });
-        }
-
-        // Send to analytics if available
-        if (typeof window !== 'undefined' && window.gtag) {
-          window.gtag('event', 'timing_complete', {
-            name: 'page_load',
-            value: Math.round(loadTime),
-            event_category: 'performance'
-          });
+          console.warn('PerformanceObserver not supported:', error);
         }
       }
+
+      return () => {
+        observer.disconnect();
+      };
     }
-  },
+  }, []);
 
-  // Measure component render time
-  measureRenderTime: (componentName: string) => {
-    const startTime = performance.now();
-    
-    return () => {
-      const endTime = performance.now();
-      const renderTime = endTime - startTime;
-      
-      // Log render time (only in development)
-      if (process.env.NODE_ENV === 'development') {
-        // eslint-disable-next-line no-console
-        console.log(`${componentName} render time: ${renderTime.toFixed(2)}ms`);
-      }
-      
-      // Send to analytics if available
-      if (typeof window !== 'undefined' && window.gtag) {
-        window.gtag('event', 'timing_complete', {
-          name: 'component_render',
-          value: Math.round(renderTime),
-          event_category: 'performance',
-          custom_parameter: componentName
-        });
-      }
-    };
-  },
-
-  // Optimize images based on viewport
-  optimizeImageSrc: (src: string, width: number) => {
-    if (src.includes('placeholder.com') || src.startsWith('data:')) {
-      return src;
-    }
-
-    // Add width parameter for responsive images
-    const url = new URL(src, window.location.origin);
-    url.searchParams.set('w', width.toString());
-    url.searchParams.set('q', '80'); // Quality parameter
-    
-    return url.toString();
-  },
-
-  // Debounce function for performance
-  debounce: <T extends (...args: unknown[]) => unknown>(
-    func: T,
-    wait: number
-  ): ((...args: Parameters<T>) => void) => {
-    let timeout: NodeJS.Timeout;
-    
-    return (...args: Parameters<T>) => {
-      clearTimeout(timeout);
-      timeout = setTimeout(() => func(...args), wait);
-    };
-  },
-
-  // Throttle function for performance
-  throttle: <T extends (...args: unknown[]) => unknown>(
-    func: T,
-    limit: number
-  ): ((...args: Parameters<T>) => void) => {
-    let inThrottle: boolean;
-    
-    return (...args: Parameters<T>) => {
-      if (!inThrottle) {
-        func(...args);
-        inThrottle = true;
-        setTimeout(() => inThrottle = false, limit);
-      }
-    };
+  if (!lazyLoad) {
+    return <div className="performance-optimized">{children}</div>;
   }
+
+  return (
+    <div
+      ref={containerRef}
+      className={`performance-optimized transition-opacity duration-500 ${
+        isVisible ? 'opacity-100' : 'opacity-0'
+      }`}
+      style={{
+        opacity: isVisible ? 1 : 0,
+        transform: isVisible ? 'translateY(0)' : 'translateY(20px)',
+        transition: 'opacity 0.5s ease-out, transform 0.5s ease-out'
+      }}
+    >
+      {isLoaded ? (
+        <div className="animate-fade-in">
+          {children}
+        </div>
+      ) : (
+        <div className="min-h-screen flex items-center justify-center">
+          <div className="text-center">
+            <div className="w-16 h-16 mx-auto mb-4">
+              <div className="w-full h-full border-4 border-cyan-500/20 border-t-cyan-500 rounded-full animate-spin"></div>
+            </div>
+            <div className="text-cyan-400 text-lg font-medium">Loading Zion Tech Group</div>
+            <div className="text-gray-500 text-sm mt-2">Pioneering the Future</div>
+          </div>
+        </div>
+      )}
+    </div>
+  );
 };
 
-// Performance monitoring hook
-export const usePerformanceMonitoring = (componentName: string) => {
-  useEffect(() => {
-    const endMeasure = performanceUtils.measureRenderTime(componentName);
-    
-    return () => {
-      endMeasure();
-    };
-  }, [componentName]);
-};
+export default PerformanceOptimizer;

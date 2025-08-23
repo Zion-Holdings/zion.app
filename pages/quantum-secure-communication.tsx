@@ -49,14 +49,7 @@ export default function QuantumSecureCommunication() {
   ];
 
   return (
-    <UltraAdvancedFuturisticBackground 
-      intensity="extreme" 
-      colorScheme="quantum-fusion"
-      particleCount={500}
-      animationSpeed={2.0}
-      enableHolographic={true}
-      enableQuantumEffects={true}
-    >
+    <UltraAdvancedFuturisticBackground>
       <div className="min-h-screen">
         <Head>
           <title>Quantum-Secure Communication - Zion Tech Group | Unbreakable Encryption</title>
