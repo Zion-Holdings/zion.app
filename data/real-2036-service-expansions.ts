@@ -7,6 +7,13 @@ export type Real2036Service = {
 	price: string;
 	period?: string;
 	features: string[];
+	popular?: boolean;
+	icon?: string;
+	marketPrice?: string;
+	competitors?: string[];
+	benefits?: string[];
+	useCases?: string[];
+	technicalSpecs?: Record<string, string>;
 	link: string;
 	launchDate?: string;
 	rating?: number;
@@ -318,5 +325,475 @@ export const real2036ServiceExpansions: Real2036Service[] = [
 		link: 'https://ziontechgroup.com/services/license-key-usage-metering',
 		launchDate: '2036-01-15',
 		rating: 4.6
+	},
+
+	// AI-Powered Business Intelligence Services
+	{
+		id: 'ai-business-intelligence-platform',
+		name: 'AI Business Intelligence Platform',
+		tagline: 'Transform data into actionable business insights',
+		description: 'Advanced AI-powered business intelligence platform that provides real-time analytics, predictive insights, and automated reporting for data-driven decision making.',
+		price: '$2,499',
+		period: 'month',
+		features: [
+			'Real-time data analytics',
+			'AI-powered predictive insights',
+			'Automated report generation',
+			'Custom dashboard creation',
+			'Multi-source data integration',
+			'Advanced visualization tools',
+			'Natural language querying',
+			'Mobile-responsive interface'
+		],
+		popular: true,
+		category: 'AI & Analytics',
+		icon: '📊',
+		marketPrice: '$3,000-$5,000/month',
+		competitors: ['Tableau', 'Power BI', 'Looker'],
+		benefits: [
+			'Reduce decision-making time by 60%',
+			'Increase operational efficiency by 40%',
+			'Real-time insights for competitive advantage',
+			'Scalable solution for growing businesses'
+		],
+		useCases: [
+			'Financial performance analysis',
+			'Customer behavior insights',
+			'Operational efficiency monitoring',
+			'Market trend analysis'
+		],
+		technicalSpecs: {
+			'Data Sources': 'Unlimited',
+			'Users': 'Up to 100',
+			'Storage': '1TB included',
+			'API Calls': '100,000/month',
+			'Uptime': '99.9%'
+		},
+		link: 'https://ziontechgroup.com/services/ai-business-intelligence-platform',
+		launchDate: '2036-01-15',
+		rating: 4.8
+	},
+
+	// Quantum-Secure Communication Platform
+	{
+		id: 'quantum-secure-communication',
+		name: 'Quantum-Secure Communication Platform',
+		tagline: 'Unbreakable communication for the quantum era',
+		description: 'Next-generation quantum-secure communication platform that provides unbreakable encryption using quantum key distribution and post-quantum cryptography.',
+		price: '$4,999',
+		period: 'month',
+		features: [
+			'Quantum key distribution (QKD)',
+			'Post-quantum cryptography',
+			'End-to-end encryption',
+			'Multi-protocol support',
+			'Real-time key generation',
+			'Quantum-resistant algorithms',
+			'Secure file sharing',
+			'Audit trail and compliance'
+		],
+		popular: false,
+		category: 'Quantum Security',
+		icon: '🔐',
+		marketPrice: '$6,000-$10,000/month',
+		competitors: ['Quantum Xchange', 'ID Quantique', 'Toshiba Quantum'],
+		benefits: [
+			'Future-proof security against quantum attacks',
+			'Compliance with emerging regulations',
+			'Unbreakable encryption for sensitive data',
+			'Competitive advantage in security'
+		],
+		useCases: [
+			'Government communications',
+			'Financial transactions',
+			'Healthcare data protection',
+			'Military communications'
+		],
+		technicalSpecs: {
+			'Encryption': 'Quantum-resistant',
+			'Key Length': '256-bit minimum',
+			'Latency': '<10ms',
+			'Throughput': '10 Gbps',
+			'Uptime': '99.99%'
+		},
+		link: 'https://ziontechgroup.com/services/quantum-secure-communication',
+		launchDate: '2036-01-15',
+		rating: 4.9
+	},
+
+	// Autonomous Supply Chain Optimization
+	{
+		id: 'autonomous-supply-chain-optimization',
+		name: 'Autonomous Supply Chain Optimization',
+		tagline: 'Self-optimizing supply chains for maximum efficiency',
+		description: 'AI-powered autonomous supply chain platform that continuously optimizes inventory, logistics, and supplier relationships for maximum efficiency and cost savings.',
+		price: '$3,999',
+		period: 'month',
+		features: [
+			'Autonomous inventory management',
+			'Predictive demand forecasting',
+			'Real-time logistics optimization',
+			'Supplier performance analytics',
+			'Cost optimization algorithms',
+			'Risk assessment and mitigation',
+			'Sustainability tracking',
+			'Multi-warehouse management'
+		],
+		popular: true,
+		category: 'Supply Chain',
+		icon: '🚚',
+		marketPrice: '$5,000-$8,000/month',
+		competitors: ['SAP Ariba', 'Oracle SCM', 'Blue Yonder'],
+		benefits: [
+			'Reduce supply chain costs by 25%',
+			'Improve delivery times by 30%',
+			'Minimize inventory waste by 40%',
+			'Enhance supplier relationships'
+		],
+		useCases: [
+			'Manufacturing supply chains',
+			'Retail inventory management',
+			'E-commerce logistics',
+			'Healthcare supply chains'
+		],
+		technicalSpecs: {
+			'Integrations': '100+ ERP systems',
+			'Real-time Updates': 'Yes',
+			'AI Models': '10+ specialized',
+			'Data Processing': '1M+ records/day',
+			'Uptime': '99.8%'
+		},
+		link: 'https://ziontechgroup.com/services/autonomous-supply-chain-optimization',
+		launchDate: '2036-01-15',
+		rating: 4.7
+	},
+
+	// AI-Powered Customer Experience Platform
+	{
+		id: 'ai-customer-experience-platform',
+		name: 'AI Customer Experience Platform',
+		tagline: 'Personalized experiences that drive customer loyalty',
+		description: 'Comprehensive AI platform that delivers personalized customer experiences across all touchpoints, from marketing to support, using advanced machine learning and behavioral analysis.',
+		price: '$2,999',
+		period: 'month',
+		features: [
+			'360-degree customer view',
+			'Personalized recommendations',
+			'Predictive customer behavior',
+			'Automated customer service',
+			'Multi-channel engagement',
+			'Sentiment analysis',
+			'Customer journey mapping',
+			'ROI optimization'
+		],
+		popular: true,
+		category: 'Customer Experience',
+		icon: '💬',
+		marketPrice: '$4,000-$7,000/month',
+		competitors: ['Salesforce', 'HubSpot', 'Adobe Experience Cloud'],
+		benefits: [
+			'Increase customer satisfaction by 35%',
+			'Boost customer lifetime value by 45%',
+			'Reduce customer churn by 30%',
+			'Improve marketing ROI by 50%'
+		],
+		useCases: [
+			'E-commerce personalization',
+			'SaaS customer success',
+			'Financial services',
+			'Healthcare patient engagement'
+		],
+		technicalSpecs: {
+			'Customer Profiles': 'Unlimited',
+			'Real-time Processing': 'Yes',
+			'AI Models': '15+ specialized',
+			'Integrations': '200+ platforms',
+			'Uptime': '99.9%'
+		},
+		link: 'https://ziontechgroup.com/services/ai-customer-experience-platform',
+		launchDate: '2036-01-15',
+		rating: 4.6
+	},
+
+	// Quantum Machine Learning Platform
+	{
+		id: 'quantum-machine-learning-platform',
+		name: 'Quantum Machine Learning Platform',
+		tagline: 'Quantum advantage for machine learning applications',
+		description: 'Revolutionary platform that combines quantum computing with machine learning to solve complex problems that are intractable for classical computers.',
+		price: '$5,999',
+		period: 'month',
+		features: [
+			'Quantum neural networks',
+			'Quantum feature selection',
+			'Quantum optimization algorithms',
+			'Hybrid classical-quantum models',
+			'Quantum data encoding',
+			'Real-time quantum simulation',
+			'Advanced visualization tools',
+			'API access for developers'
+		],
+		popular: false,
+		category: 'Quantum AI',
+		icon: '🧠',
+		marketPrice: '$8,000-$15,000/month',
+		competitors: ['IBM Quantum', 'Google Quantum AI', 'Microsoft Azure Quantum'],
+		benefits: [
+			'Solve previously intractable problems',
+			'Exponential speedup for specific tasks',
+			'Competitive advantage in AI research',
+			'Future-proof technology investment'
+		],
+		useCases: [
+			'Drug discovery and development',
+			'Financial modeling and risk assessment',
+			'Climate modeling and prediction',
+			'Materials science research'
+		],
+		technicalSpecs: {
+			'Qubits': '100+ logical qubits',
+			'Error Correction': 'Advanced',
+			'Classical Integration': 'Seamless',
+			'API Rate Limit': '10,000/hour',
+			'Uptime': '99.5%'
+		},
+		link: 'https://ziontechgroup.com/services/quantum-machine-learning-platform',
+		launchDate: '2036-01-15',
+		rating: 4.8
+	},
+
+	// Autonomous DevOps Platform
+	{
+		id: 'autonomous-devops-platform',
+		name: 'Autonomous DevOps Platform',
+		tagline: 'Self-healing infrastructure and automated operations',
+		description: 'Intelligent DevOps platform that autonomously manages infrastructure, monitors applications, and resolves issues before they impact users.',
+		price: '$3,499',
+		period: 'month',
+		features: [
+			'Autonomous infrastructure management',
+			'Self-healing applications',
+			'Predictive incident prevention',
+			'Automated scaling and optimization',
+			'Intelligent monitoring and alerting',
+			'Automated testing and deployment',
+			'Security vulnerability scanning',
+			'Performance optimization'
+		],
+		popular: true,
+		category: 'DevOps',
+		icon: '⚡',
+		marketPrice: '$4,500-$8,000/month',
+		competitors: ['GitLab', 'Jenkins', 'CircleCI'],
+		benefits: [
+			'Reduce downtime by 90%',
+			'Decrease deployment time by 70%',
+			'Lower operational costs by 40%',
+			'Improve team productivity by 60%'
+		],
+		useCases: [
+			'Microservices architecture',
+			'Cloud-native applications',
+			'High-availability systems',
+			'Continuous deployment pipelines'
+		],
+		technicalSpecs: {
+			'Infrastructure': 'Multi-cloud support',
+			'Monitoring': 'Real-time',
+			'Automation': '90%+ tasks',
+			'Integrations': '150+ tools',
+			'Uptime': '99.95%'
+		},
+		link: 'https://ziontechgroup.com/services/autonomous-devops-platform',
+		launchDate: '2036-01-15',
+		rating: 4.7
+	},
+
+	// Space Data Analytics Platform
+	{
+		id: 'space-data-analytics-platform',
+		name: 'Space Data Analytics Platform',
+		tagline: 'Extraterrestrial insights for terrestrial applications',
+		description: 'Advanced platform that processes and analyzes space data from satellites, telescopes, and space missions to provide valuable insights for various industries.',
+		price: '$4,499',
+		period: 'month',
+		features: [
+			'Satellite data processing',
+			'Astronomical data analysis',
+			'Earth observation insights',
+			'Space weather monitoring',
+			'Climate change tracking',
+			'Agricultural monitoring',
+			'Urban development analysis',
+			'Disaster response support'
+		],
+		popular: false,
+		category: 'Space Technology',
+		icon: '🛰️',
+		marketPrice: '$6,000-$12,000/month',
+		competitors: ['Planet Labs', 'Maxar', 'Airbus Defence and Space'],
+		benefits: [
+			'Access to unique space-based insights',
+			'Competitive advantage in data analysis',
+			'Support for sustainability initiatives',
+			'Innovation in multiple industries'
+		],
+		useCases: [
+			'Agriculture and precision farming',
+			'Urban planning and development',
+			'Environmental monitoring',
+			'Disaster management and response'
+		],
+		technicalSpecs: {
+			'Data Sources': '50+ satellites',
+			'Processing Power': '100+ GPUs',
+			'Storage': '10PB+',
+			'Update Frequency': 'Real-time',
+			'Uptime': '99.8%'
+		},
+		link: 'https://ziontechgroup.com/services/space-data-analytics-platform',
+		launchDate: '2036-01-15',
+		rating: 4.6
+	},
+
+	// AI-Powered Cybersecurity Platform
+	{
+		id: 'ai-cybersecurity-platform',
+		name: 'AI-Powered Cybersecurity Platform',
+		tagline: 'Intelligent threat detection and response',
+		description: 'Next-generation cybersecurity platform that uses artificial intelligence to detect, analyze, and respond to threats in real-time, providing comprehensive protection for modern enterprises.',
+		price: '$3,999',
+		period: 'month',
+		features: [
+			'AI-powered threat detection',
+			'Behavioral analysis',
+			'Automated incident response',
+			'Threat intelligence sharing',
+			'Vulnerability assessment',
+			'Compliance monitoring',
+			'Security analytics dashboard',
+			'24/7 security operations'
+		],
+		popular: true,
+		category: 'Cybersecurity',
+		icon: '🛡️',
+		marketPrice: '$5,000-$10,000/month',
+		competitors: ['CrowdStrike', 'SentinelOne', 'Darktrace'],
+		benefits: [
+			'Detect threats 10x faster than traditional methods',
+			'Reduce false positives by 80%',
+			'Automate 90% of security responses',
+			'Comply with industry regulations'
+		],
+		useCases: [
+			'Enterprise security operations',
+			'Financial services protection',
+			'Healthcare data security',
+			'Government cybersecurity'
+		],
+		technicalSpecs: {
+			'Threat Detection': 'Real-time',
+			'AI Models': '20+ specialized',
+			'Integrations': '300+ security tools',
+			'Data Processing': '1TB+/day',
+			'Uptime': '99.99%'
+		},
+		link: 'https://ziontechgroup.com/services/ai-cybersecurity-platform',
+		launchDate: '2036-01-15',
+		rating: 4.8
+	},
+
+	// Quantum Financial Trading Platform
+	{
+		id: 'quantum-financial-trading-platform',
+		name: 'Quantum Financial Trading Platform',
+		tagline: 'Quantum advantage in financial markets',
+		description: 'Revolutionary trading platform that leverages quantum computing to analyze market data, optimize portfolios, and execute trades with unprecedented speed and accuracy.',
+		price: '$6,999',
+		period: 'month',
+		features: [
+			'Quantum market analysis',
+			'Portfolio optimization',
+			'Risk assessment algorithms',
+			'High-frequency trading',
+			'Market prediction models',
+			'Real-time data processing',
+			'Multi-asset support',
+			'Regulatory compliance'
+		],
+		popular: false,
+		category: 'Quantum Finance',
+		icon: '💰',
+		marketPrice: '$10,000-$20,000/month',
+		competitors: ['Bloomberg Terminal', 'Thomson Reuters', 'FactSet'],
+		benefits: [
+			'Execute trades 1000x faster',
+			'Improve portfolio returns by 15-25%',
+			'Reduce risk through better analysis',
+			'Gain competitive advantage in markets'
+		],
+		useCases: [
+			'Institutional trading',
+			'Hedge fund operations',
+			'Risk management',
+			'Algorithmic trading'
+		],
+		technicalSpecs: {
+			'Processing Speed': 'Quantum advantage',
+			'Data Sources': '100+ exchanges',
+			'Asset Classes': 'All major',
+			'Latency': '<1ms',
+			'Uptime': '99.99%'
+		},
+		link: 'https://ziontechgroup.com/services/quantum-financial-trading-platform',
+		launchDate: '2036-01-15',
+		rating: 4.9
+	},
+
+	// Autonomous Research Assistant
+	{
+		id: 'autonomous-research-assistant',
+		name: 'Autonomous Research Assistant',
+		tagline: 'AI-powered research automation for breakthrough discoveries',
+		description: 'Intelligent research platform that autonomously conducts research, analyzes data, generates hypotheses, and provides insights across multiple domains.',
+		price: '$2,999',
+		period: 'month',
+		features: [
+			'Autonomous literature review',
+			'Data analysis and visualization',
+			'Hypothesis generation',
+			'Research methodology optimization',
+			'Citation management',
+			'Collaborative research tools',
+			'Publication assistance',
+			'Knowledge graph creation'
+		],
+		popular: true,
+		category: 'Research & Development',
+		icon: '🔬',
+		marketPrice: '$4,000-$7,000/month',
+		competitors: ['ResearchGate', 'Mendeley', 'Zotero'],
+		benefits: [
+			'Accelerate research by 5x',
+			'Improve research quality by 40%',
+			'Reduce research costs by 30%',
+			'Enable breakthrough discoveries'
+		],
+		useCases: [
+			'Academic research',
+			'Pharmaceutical development',
+			'Technology innovation',
+			'Market research'
+		],
+		technicalSpecs: {
+			'Data Sources': '1000+ databases',
+			'AI Models': '25+ specialized',
+			'Processing Power': '100+ GPUs',
+			'Storage': '5PB+',
+			'Uptime': '99.9%'
+		},
+		link: 'https://ziontechgroup.com/services/autonomous-research-assistant',
+		launchDate: '2036-01-15',
+		rating: 4.7
 	}
 ];
