@@ -11367,6 +11367,11 @@ export default function HomePage() {
 
   <div className="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
 
+<<<<<<< HEAD
+            {homepageData.explore.map((item) => (
+              <Link key={item.href} href={item.href}><a className="bg-white/5 hover:bg-white/10 rounded-lg p-4 transition-colors border border-white/10"><span className="text-white/90">{item.text}</span></a></Link>
+            ))}
+=======
             <Link href="/automation"><a className="bg-white/5 hover:bg-white/10 rounded-lg p-4 transition-colors border border-white/10"><span className="text-white/90">Automation Hub — live agents & reports</span></a></Link>
   
 
@@ -11397,6 +11402,7 @@ export default function HomePage() {
             <a href="https://github.com/Zion-Holdings/zion.app/actions/workflows/autonomous-auto-discovery.yml" target="_blank" rel="noopener" className="bg-white/5 hover:bg-white/10 rounded-lg p-4 transition-colors border border-white/10"><span className="text-white/90">Auto Discovery — run / view</span></a>
   
 
+>>>>>>> origin/cursor/autonomous-cloud-page-enhancer-and-advertiser-e70a
   </div>
 
   <div className="mt-6 flex flex-wrap gap-2">
