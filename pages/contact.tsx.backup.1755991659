@@ -172,6 +172,28 @@ export default function ContactPage() {
   ];
 
   return (
+<<<<<<< HEAD
+    <UltraFuturisticBackground variant="neural" intensity={1}>
+      <Head>
+        <title>Contact Us - Zion Tech Group</title>
+        <meta name="description" content="Get in touch with Zion Tech Group. Contact our team of experts for support, sales inquiries, or technical assistance. Available 24/7." />
+        <meta name="keywords" content="contact Zion Tech Group, support, sales, technical assistance, micro SaaS services" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        
+        {/* Open Graph */}
+        <meta property="og:title" content="Contact Us - Zion Tech Group" />
+        <meta property="og:description" content="Get in touch with Zion Tech Group. Contact our team of experts for support, sales inquiries, or technical assistance." />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://ziontechgroup.com/contact" />
+        <meta property="og:image" content="https://ziontechgroup.com/og-image.jpg" />
+        
+        {/* Twitter */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Contact Us - Zion Tech Group" />
+        <meta name="twitter:description" content="Get in touch with Zion Tech Group. Contact our team of experts for support, sales inquiries, or technical assistance." />
+        <meta name="twitter:image" content="https://ziontechgroup.com/og-image.jpg" />
+      </Head>
+=======
     <QuantumHolographicBackground variant="quantum">
       <div className="min-h-screen">
         <Head>
@@ -182,6 +204,7 @@ export default function ContactPage() {
           <meta property="og:description" content="Get started with revolutionary technology solutions. Free consultation available." />
           <meta property="og:url" content="https://ziontechgroup.com/contact" />
         </Head>
+>>>>>>> origin/cursor/enhance-app-services-and-website-with-futuristic-design-7563
 
 const Contact: NextPage = () => (
   <div className="py-10">
