@@ -1,5 +1,9 @@
 {
+<<<<<<< HEAD
+  "generatedAt": "2025-08-11T23:49:39.266Z",
+=======
   "generatedAt": "2025-08-11T23:48:43.553Z",
+>>>>>>> origin/cursor/invent-and-deploy-autonomous-cloud-automations-8155
   "functions": [
     "a11y-alt-text-runner",
     "adaptive-orchestrator",
@@ -9,7 +13,12 @@
     "auto-scheduler",
     "automation-health",
     "automation-matrix",
+<<<<<<< HEAD
+    "autonomous-git-sync",
+    "autonomous-invention-lab",
+=======
     "autonomous-content-curator",
+>>>>>>> origin/cursor/invent-and-deploy-autonomous-cloud-automations-8155
     "autonomous-invention-orchestrator",
     "autonomy-score-runner",
     "broken-image-scanner",
@@ -82,7 +91,11 @@
     "repo-knowledge-graph-runner",
     "repo-radar-and-graph",
     "repo-radar-runner",
+<<<<<<< HEAD
+    "roadmap-curator",
+=======
     "revenue-ideas-lab",
+>>>>>>> origin/cursor/invent-and-deploy-autonomous-cloud-automations-8155
     "schedule-content-index",
     "schedule-homepage",
     "schedule-knowledge-graph",
