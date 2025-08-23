@@ -55,6 +55,9 @@ function ensureImports(tsx) {
   return tsx;
 }
 
+<<<<<<< HEAD
+function apply() {
+=======
 function discoverExternalLinks() {
   return [
     { type: 'internal', href: '/.netlify/functions/supreme-orchestrator', label: 'Supreme Orchestrator', tagline: 'Meta trigger (1m)' },
@@ -96,6 +99,7 @@ function replaceBetweenMarkers(source, startMarker, endMarker, replacement) {
 }
 
 (function main() {
+>>>>>>> origin/cursor/develop-autonomous-cloud-agents-for-automation-orchestration-7a18
   if (!fs.existsSync(FRONT_PAGE)) {
     throw new Error(`Front page not found at ${FRONT_PAGE}`);
   }
