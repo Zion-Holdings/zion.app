@@ -161,6 +161,65 @@ export default function Layout({ children }: LayoutProps) {
         />
       </Head>
 
+<<<<<<< HEAD
+      <div className={`min-h-screen ${theme === 'dark' ? 'bg-black text-white' : 'bg-gray-50 text-gray-900'} relative overflow-hidden transition-colors duration-300`}>
+        {/* Skip to content link for accessibility */}
+        <a href="#main" className="skip-link sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2 focus:bg-blue-600 focus:text-white focus:rounded">
+          Skip to main content
+        </a>
+        
+        {/* Background Effects */}
+        <UltraFuturisticBackground2045 theme={theme === 'dark' ? 'quantum-neon' : 'holographic'} />
+        
+        {/* Layout Structure */}
+        <div className="relative z-10">
+          {/* Top Contact Bar */}
+          <TopContactBar />
+          
+          {/* Enhanced Navigation */}
+          <EnhancedNavigation2025 />
+          
+          {/* Enhanced Sidebar */}
+          <EnhancedSidebar2025 isOpen={sidebarOpen} onClose={() => setSidebarOpen(false)} />
+          
+          {/* Main Content */}
+          <main id="main" role="main" className="pt-32 pb-16 relative z-10">
+            <EnhancedErrorBoundary>
+              {children}
+            </EnhancedErrorBoundary>
+          </main>
+          
+          {/* Enhanced Footer */}
+          <EnhancedFooter2025 />
+          
+          {/* Performance Monitor */}
+          <EnhancedPerformanceMonitor />
+          
+          {/* Accessibility Enhancer */}
+          <AccessibilityEnhancer />
+          
+          {/* Cookie Consent Banner */}
+          <CookieConsentBanner />
+          
+          {/* Offline Indicator */}
+          {!isOnline && (
+            <div className="fixed bottom-4 right-4 bg-red-600 text-white px-4 py-2 rounded-lg shadow-lg z-50">
+              <div className="flex items-center space-x-2">
+                <div className="w-2 h-2 bg-white rounded-full animate-pulse"></div>
+                <span className="text-sm">You are offline</span>
+              </div>
+            </div>
+          )}
+        </div>
+
+        {/* Theme Toggle Floating Button */}
+        <ThemeToggle theme={theme} onToggle={handleThemeToggle} />
+        
+        {/* Service Worker Registration */}
+        <ServiceWorkerRegistration />
+      </div>
+    </>
+=======
       {/* Accessibility and Performance Tools */}
       <AccessibilityEnhancer />
       <PerformanceMonitor />
@@ -168,5 +227,6 @@ export default function Layout({ children }: LayoutProps) {
       {/* Cookie Consent Banner */}
       <CookieConsentBanner />
     </div>
+>>>>>>> origin/cursor/add-and-advertise-new-services-then-build-e1f5
   );
 }

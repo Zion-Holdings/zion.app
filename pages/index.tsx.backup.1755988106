@@ -24,6 +24,13 @@ const HomePage: React.FC = () => {
 
   return (
     <ErrorBoundary>
+<<<<<<< HEAD
+      <PerformanceOptimizer onMetricsUpdate={handlePerformanceMetrics}>
+        <AccessibilityEnhancer>
+          <EnhancedHomepage2045 />
+        </AccessibilityEnhancer>
+      </PerformanceOptimizer>
+=======
       <SEOOptimizer />
       <AnalyticsTracker />
       <PerformanceOptimizer />
@@ -32,6 +39,7 @@ const HomePage: React.FC = () => {
         <Homepage2025 />
         <PerformanceMonitor showUI={true} />
       </MobileOptimizer>
+>>>>>>> origin/cursor/add-and-advertise-new-services-then-build-e1f5
     </ErrorBoundary>
   );
 };
