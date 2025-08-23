@@ -1,10 +1,11 @@
-import React, { useEffect, useState, useCallback } from 'react';
+import React, { useEffect, useState, useCallback, useRef } from 'react';
 import Layout from './layout/Layout';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion, useInView } from 'framer-motion';
 import { 
   ArrowRight, Play, TrendingUp, Brain, Shield, Rocket, Globe, Cpu, Database, Atom, Target, Star, Sparkles as SparklesIcon,
-  Brain as BrainIcon, Atom as AtomIcon, Shield as ShieldIcon, Rocket as RocketIcon, Zap, Eye, Heart, Infinity
+  Brain as BrainIcon, Atom as AtomIcon, Shield as ShieldIcon, Rocket as RocketIcon
 } from 'lucide-react';
+import SearchBar from './SearchBar';
 
 // Import our new revolutionary services
 import { revolutionary2044AdvancedMicroSaas } from '../data/revolutionary-2044-advanced-micro-saas';
@@ -15,7 +16,25 @@ const Homepage2044: React.FC = () => {
   const [isVisible, setIsVisible] = useState(false);
   const [currentServiceIndex, setCurrentServiceIndex] = useState(0);
   const [selectedCategory, setSelectedCategory] = useState('all');
-  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+  
+  // Refs for intersection observer
+  const heroRef = useRef<HTMLElement>(null);
+  const servicesRef = useRef<HTMLDivElement>(null);
+  const statsRef = useRef<HTMLElement>(null);
+  
+  // Intersection observer hooks
+  const isHeroInView = useInView(heroRef, { 
+    amount: 0.3,
+    once: false 
+  });
+  const isServicesInView = useInView(servicesRef, { 
+    amount: 0.2,
+    once: false 
+  });
+  const isStatsInView = useInView(statsRef, { 
+    amount: 0.3,
+    once: false 
+  });
   
   useEffect(() => {
     setIsVisible(true);
@@ -25,16 +44,8 @@ const Homepage2044: React.FC = () => {
       setCurrentServiceIndex((prev) => (prev + 1) % 6);
     }, 6000);
     
-    // Track mouse movement for parallax effects
-    const handleMouseMove = (e: MouseEvent) => {
-      setMousePosition({ x: e.clientX, y: e.clientY });
-    };
-    
-    window.addEventListener('mousemove', handleMouseMove);
-    
     return () => {
       clearInterval(interval);
-      window.removeEventListener('mousemove', handleMouseMove);
     };
   }, []);
 
@@ -47,15 +58,6 @@ const Homepage2044: React.FC = () => {
 
   // Get featured services for rotation
   const featuredServices = allRevolutionaryServices.slice(0, 6);
-
-  // Filter services by category
-  const getFilteredServices = () => {
-    if (selectedCategory === 'all') return allRevolutionaryServices;
-    return allRevolutionaryServices.filter(service => 
-      service.category.toLowerCase().includes(selectedCategory.toLowerCase()) ||
-      service.type.toLowerCase().includes(selectedCategory.toLowerCase())
-    );
-  };
 
   const categories = [
     { id: 'all', name: 'All Services', icon: SparklesIcon, color: 'from-purple-500 to-pink-500' },
@@ -90,8 +92,21 @@ const Homepage2044: React.FC = () => {
     window.location.href = '/services';
   }, []);
 
-  const handleServiceClick = useCallback((service: any) => {
+  const handleServiceClick = useCallback((service: { slug: string }) => {
     window.location.href = service.slug;
+  }, []);
+
+  const handleCategoryChange = useCallback((categoryId: string) => {
+    setSelectedCategory(categoryId);
+  }, []);
+
+  const handleSearch = useCallback((query: string) => {
+    // Handle search functionality
+    if (query.trim()) {
+      // In a real app, this would trigger a search
+      // For now, we'll just store the query
+      setSelectedCategory('all');
+    }
   }, []);
 
   return (
@@ -100,15 +115,49 @@ const Homepage2044: React.FC = () => {
       <main className="relative z-10">
         {/* Hero Section */}
         <section 
+          ref={heroRef}
           className="min-h-screen flex items-center justify-center px-4 relative overflow-hidden"
           aria-labelledby="hero-heading"
         >
           {/* Enhanced Animated Background */}
           <div className="absolute inset-0 -z-10">
             {/* Floating orbs with neon effects */}
-            <div className="absolute top-20 left-20 w-96 h-96 bg-gradient-to-r from-cyan-500/20 to-blue-500/20 rounded-full blur-3xl animate-pulse shadow-[0_0_100px_rgba(6,182,212,0.5)]"></div>
-            <div className="absolute bottom-20 right-20 w-[500px] h-[500px] bg-gradient-to-r from-purple-500/20 to-pink-500/20 rounded-full blur-3xl animate-pulse delay-1000 shadow-[0_0_100px_rgba(168,85,247,0.5)]"></div>
-            <div className="absolute top-1/2 left-1/2 w-80 h-80 bg-gradient-to-r from-emerald-500/20 to-teal-500/20 rounded-full blur-3xl animate-pulse delay-500 shadow-[0_0_100px_rgba(16,185,129,0.5)]"></div>
+            <motion.div 
+              className="absolute top-20 left-20 w-96 h-96 bg-gradient-to-r from-cyan-500/20 to-blue-500/20 rounded-full blur-3xl animate-pulse shadow-[0_0_100px_rgba(6,182,212,0.5)]"
+              animate={{
+                scale: [1, 1.1, 1],
+                opacity: [0.2, 0.3, 0.2],
+              }}
+              transition={{
+                duration: 4,
+                repeat: -1,
+                ease: "easeInOut"
+              }}
+            />
+            <motion.div 
+              className="absolute bottom-20 right-20 w-[500px] h-[500px] bg-gradient-to-r from-purple-500/20 to-pink-500/20 rounded-full blur-3xl animate-pulse delay-1000 shadow-[0_0_100px_rgba(168,85,247,0.5)]"
+              animate={{
+                scale: [1, 1.2, 1],
+                opacity: [0.2, 0.4, 0.2],
+              }}
+              transition={{
+                duration: 6,
+                repeat: -1,
+                ease: "easeInOut"
+              }}
+            />
+            <motion.div 
+              className="absolute top-1/2 left-1/2 w-80 h-80 bg-gradient-to-r from-emerald-500/20 to-teal-500/20 rounded-full blur-3xl animate-pulse delay-500 shadow-[0_0_100px_rgba(16,185,129,0.5)]"
+              animate={{
+                scale: [1, 1.15, 1],
+                opacity: [0.2, 0.35, 0.2],
+              }}
+              transition={{
+                duration: 5,
+                repeat: -1,
+                ease: "easeInOut"
+              }}
+            />
             
             {/* Animated particles with neon trails */}
             <div className="absolute inset-0">
@@ -124,7 +173,7 @@ const Homepage2044: React.FC = () => {
                   }}
                   transition={{
                     duration: 8 + i * 0.3,
-                    repeat: Infinity as any,
+                    repeat: -1,
                     delay: i * 0.2,
                     ease: "easeInOut"
                   }}
@@ -154,7 +203,7 @@ const Homepage2044: React.FC = () => {
               }}
               transition={{
                 duration: 10,
-                repeat: Infinity as any,
+                repeat: -1,
                 ease: "linear"
               }}
             />
@@ -166,7 +215,7 @@ const Homepage2044: React.FC = () => {
               }}
               transition={{
                 duration: 8,
-                repeat: Infinity as any,
+                repeat: -1,
                 ease: "easeInOut"
               }}
             />
@@ -177,7 +226,7 @@ const Homepage2044: React.FC = () => {
             <motion.div
               className="mb-8"
               initial={{ opacity: 0, scale: 0.8 }}
-              animate={{ opacity: isVisible ? 1 : 0, scale: isVisible ? 1 : 0.8 }}
+              animate={{ opacity: isVisible && isHeroInView ? 1 : 0, scale: isVisible && isHeroInView ? 1 : 0.8 }}
               transition={{ duration: 1, ease: "easeOut" }}
             >
               <span className="inline-block px-6 py-3 bg-gradient-to-r from-purple-500/20 to-pink-500/20 border border-purple-500/40 rounded-full text-purple-300 text-lg font-medium mb-8 shadow-[0_0_30px_rgba(168,85,247,0.3)] backdrop-blur-sm">
@@ -189,7 +238,7 @@ const Homepage2044: React.FC = () => {
               id="hero-heading"
               className="text-7xl md:text-9xl lg:text-[12rem] font-black mb-10 leading-none"
               initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: isVisible ? 1 : 0, y: isVisible ? 0 : 30 }}
+              animate={{ opacity: isVisible && isHeroInView ? 1 : 0, y: isVisible && isHeroInView ? 0 : 30 }}
               transition={{ duration: 0.8, ease: "easeOut" }}
             >
               <span className="bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 bg-clip-text text-transparent drop-shadow-[0_0_30px_rgba(6,182,212,0.5)]">
@@ -200,7 +249,7 @@ const Homepage2044: React.FC = () => {
             <motion.p
               className="text-3xl md:text-4xl text-gray-300 mb-16 max-w-6xl mx-auto leading-relaxed font-light"
               initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: isVisible ? 1 : 0, y: isVisible ? 0 : 30 }}
+              animate={{ opacity: isVisible && isHeroInView ? 1 : 0, y: isVisible && isHeroInView ? 0 : 30 }}
               transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
             >
               Pioneering the future of technology with revolutionary AI consciousness, quantum computing, and autonomous solutions that transform businesses worldwide.
@@ -209,7 +258,7 @@ const Homepage2044: React.FC = () => {
             <motion.div
               className="flex flex-col sm:flex-row gap-6 justify-center items-center mb-20"
               initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: isVisible ? 1 : 0, y: isVisible ? 0 : 30 }}
+              animate={{ opacity: isVisible && isHeroInView ? 1 : 0, y: isVisible && isHeroInView ? 0 : 30 }}
               transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
             >
               <button 
@@ -235,11 +284,26 @@ const Homepage2044: React.FC = () => {
               </button>
             </motion.div>
 
+            {/* Search Bar */}
+            <motion.div
+              className="max-w-2xl mx-auto mb-16"
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: isVisible && isHeroInView ? 1 : 0, y: isVisible && isHeroInView ? 0 : 30 }}
+              transition={{ duration: 0.8, delay: 0.5, ease: "easeOut" }}
+            >
+              <SearchBar 
+                theme="dark"
+                placeholder="Search for revolutionary services..."
+                onSearch={handleSearch}
+              />
+            </motion.div>
+
             {/* Featured Service Showcase */}
             <motion.div
+              ref={servicesRef}
               className="max-w-6xl mx-auto"
               initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: isVisible ? 1 : 0, y: isVisible ? 0 : 30 }}
+              animate={{ opacity: isVisible && isServicesInView ? 1 : 0, y: isVisible && isServicesInView ? 0 : 30 }}
               transition={{ duration: 0.8, delay: 0.6, ease: "easeOut" }}
             >
               <div className="text-center mb-12">
@@ -249,6 +313,25 @@ const Homepage2044: React.FC = () => {
                 <p className="text-xl text-gray-400">
                   Experience the future of technology with our cutting-edge solutions
                 </p>
+              </div>
+
+              {/* Category Filter */}
+              <div className="flex flex-wrap justify-center gap-4 mb-8">
+                {categories.map((category) => (
+                  <button
+                    key={category.id}
+                    onClick={() => handleCategoryChange(category.id)}
+                    className={`flex items-center gap-2 px-4 py-2 rounded-full border transition-all duration-300 ${
+                      selectedCategory === category.id
+                        ? `bg-gradient-to-r ${category.color} text-white border-transparent shadow-lg`
+                        : 'bg-gray-800/50 text-gray-300 border-gray-600 hover:bg-gray-700/50'
+                    }`}
+                    aria-label={`Filter by ${category.name}`}
+                  >
+                    <category.icon className="w-4 h-4" />
+                    {category.name}
+                  </button>
+                ))}
               </div>
 
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -261,6 +344,9 @@ const Homepage2044: React.FC = () => {
                     onClick={() => handleServiceClick(service)}
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: index * 0.1, duration: 0.5 }}
                   >
                     <div className="relative p-8 bg-gradient-to-br from-gray-900/80 to-gray-800/80 border border-gray-700/50 rounded-3xl backdrop-blur-xl shadow-[0_0_50px_rgba(0,0,0,0.5)] hover:shadow-[0_0_80px_rgba(6,182,212,0.3)] transition-all duration-300 group-hover:border-cyan-500/50">
                       <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/5 to-blue-500/5 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
@@ -358,27 +444,42 @@ const Homepage2044: React.FC = () => {
         </section>
 
         {/* Stats Section */}
-        <section className="py-24 px-4 relative">
+        <section 
+          ref={statsRef}
+          className="py-20 px-4 relative"
+          aria-labelledby="stats-heading"
+        >
           <div className="max-w-7xl mx-auto">
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: isStatsInView ? 1 : 0, y: isStatsInView ? 0 : 30 }}
+              transition={{ duration: 0.8 }}
+              className="text-center mb-16"
+            >
+              <h2 id="stats-heading" className="text-4xl font-bold text-white mb-4">
+                Trusted by Global Leaders
+              </h2>
+              <p className="text-xl text-gray-400">
+                Our revolutionary solutions power the future of technology worldwide
+              </p>
+            </motion.div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
               {stats.map((stat, index) => (
                 <motion.div
                   key={stat.label}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: isStatsInView ? 1 : 0, y: isStatsInView ? 0 : 20 }}
+                  transition={{ delay: index * 0.1, duration: 0.5 }}
                   className="text-center group"
-                  initial={{ opacity: 0, scale: 0.8 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  transition={{ duration: 0.8, delay: index * 0.1 }}
-                  viewport={{ once: true }}
                 >
-                  <div className="w-20 h-20 bg-gradient-to-br from-cyan-500 to-blue-600 rounded-3xl flex items-center justify-center mx-auto mb-6 shadow-[0_0_40px_rgba(6,182,212,0.3)] group-hover:shadow-[0_0_60px_rgba(6,182,212,0.5)] transition-all duration-300">
+                  <div className="w-20 h-20 bg-gradient-to-br from-cyan-500 to-blue-600 rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-[0_0_30px_rgba(6,182,212,0.3)] group-hover:shadow-[0_0_50px_rgba(6,182,212,0.5)] transition-all duration-300">
                     <stat.icon className="w-10 h-10 text-white" />
                   </div>
-                  
                   <div className="text-4xl font-bold text-white mb-2 group-hover:text-cyan-400 transition-colors duration-300">
                     {stat.number}
                   </div>
-                  
-                  <div className="text-gray-400 font-medium">
+                  <div className="text-gray-400 text-lg">
                     {stat.label}
                   </div>
                 </motion.div>
