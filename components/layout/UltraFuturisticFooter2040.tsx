@@ -12,6 +12,7 @@ import {
   Brain,
   Atom,
   Shield,
+  Target,
   Linkedin,
   Twitter,
   Github,
@@ -29,10 +30,10 @@ const footerData = {
   },
   quickLinks: [
     { label: 'About Us', href: '/about' },
+    { label: 'Mission', href: '/mission' },
     { label: 'Services', href: '/services' },
     { label: 'Solutions', href: '/solutions' },
-    { label: 'Case Studies', href: '/case-studies' },
-    { label: 'Blog', href: '/blog' },
+    { label: 'Partners', href: '/partners' },
     { label: 'Careers', href: '/careers' }
   ],
   services: [
@@ -40,8 +41,13 @@ const footerData = {
     { label: 'Quantum Computing', href: '/services?category=quantum' },
     { label: 'Space Technology', href: '/services?category=space-tech' },
     { label: 'Cybersecurity', href: '/services?category=cybersecurity' },
-    { label: 'Cloud Infrastructure', href: '/services?category=cloud' },
-    { label: 'Enterprise Solutions', href: '/solutions/enterprise' }
+    { label: 'Cloud Infrastructure', href: '/services?category=cloud' }
+  ],
+  solutions: [
+    { label: 'Enterprise Solutions', href: '/solutions/enterprise' },
+    { label: 'Startup Solutions', href: '/solutions/startup' },
+    { label: 'Government Solutions', href: '/solutions/government' },
+    { label: 'Case Studies', href: '/case-studies' }
   ],
   resources: [
     { label: 'Documentation', href: '/docs' },
@@ -52,10 +58,10 @@ const footerData = {
     { label: 'Status', href: '/status' }
   ],
   social: [
-    { label: 'LinkedIn', href: 'https://linkedin.com/company/ziontechgroup', icon: <Linkedin className="w-5 h-5" /> },
+    { label: 'LinkedIn', href: 'https://www.linkedin.com/company/ziontechgroup', icon: <Linkedin className="w-5 h-5" /> },
     { label: 'Twitter', href: 'https://twitter.com/ziontechgroup', icon: <Twitter className="w-5 h-5" /> },
-    { label: 'GitHub', href: 'https://github.com/ziontechgroup', icon: <Github className="w-5 h-5" /> },
-    { label: 'YouTube', href: 'https://youtube.com/ziontechgroup', icon: <Youtube className="w-5 h-5" /> }
+    { label: 'GitHub', href: 'https://github.com/Zion-Holdings', icon: <Github className="w-5 h-5" /> },
+    { label: 'YouTube', href: 'https://www.youtube.com/@ziontechgroup', icon: <Youtube className="w-5 h-5" /> }
   ]
 };
 
@@ -67,7 +73,7 @@ const UltraFuturisticFooter2040: React.FC = () => {
     <footer className="bg-gradient-to-br from-gray-900 via-black to-gray-900 border-t border-cyan-400/20" role="contentinfo">
       {/* Main Footer Content */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 lg:gap-12">
           
           {/* Company Information */}
           <div className="lg:col-span-1">
@@ -175,6 +181,34 @@ const UltraFuturisticFooter2040: React.FC = () => {
                       aria-label={`Explore ${service.label} services`}
                     >
                       {service.label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </motion.div>
+          </div>
+
+          {/* Solutions */}
+          <div>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.25 }}
+            >
+              <h3 className="text-lg font-semibold text-white mb-6 flex items-center">
+                <Target className="w-4 h-4 mr-2 text-green-400" />
+                Solutions
+              </h3>
+              <ul className="space-y-3">
+                {footerData.solutions.map((solution) => (
+                  <li key={solution.label}>
+                    <Link
+                      href={solution.href}
+                      className="text-gray-300 hover:text-green-400 transition-colors duration-300 hover:underline focus:outline-none focus:ring-2 focus:ring-green-400/50 rounded"
+                      aria-label={`Explore ${solution.label} solutions`}
+                    >
+                      {solution.label}
                     </Link>
                   </li>
                 ))}
