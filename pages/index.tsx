@@ -11,6 +11,9 @@ import {
 import { innovativeAIAutonomousServicesExpansion2025 } from '../data/2025-innovative-ai-autonomous-services-expansion';
 import { innovativeITInfrastructureExpansion2025 } from '../data/2025-innovative-it-infrastructure-expansion';
 import { innovativeMicroSaasExpansionV32025 } from '../data/2025-innovative-micro-saas-expansion-v3';
+import { innovativeMicroSaasExpansionV42025 } from '../data/2025-innovative-micro-saas-expansion-v4';
+import { innovativeITInfrastructureExpansionV22025 } from '../data/2025-innovative-it-infrastructure-expansion-v2';
+import { innovativeAIServicesExpansionV22025 } from '../data/2025-innovative-ai-services-expansion-v2';
 
 // Import existing service data
 import { realMicroSaasServices } from '../data/real-micro-saas-services';
@@ -43,6 +46,9 @@ const HomePage: React.FC = () => {
     ...innovativeAIAutonomousServicesExpansion2025,
     ...innovativeITInfrastructureExpansion2025,
     ...innovativeMicroSaasExpansionV32025,
+    ...innovativeMicroSaasExpansionV42025,
+    ...innovativeITInfrastructureExpansionV22025,
+    ...innovativeAIServicesExpansionV22025,
     ...realMicroSaasServices,
     ...innovativeAIServices,
     ...enterpriseITServices,
@@ -136,10 +142,10 @@ const HomePage: React.FC = () => {
               </a>
               
               <a
-                href="/2025-innovative-services-showcase-v2"
+                href="/2025-ultimate-innovative-services-showcase"
                 className="group relative px-8 py-4 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-2xl text-white font-bold text-xl hover:from-blue-600 hover:to-cyan-600 transition-all duration-300 transform hover:scale-105 shadow-2xl shadow-blue-500/25"
               >
-                <span className="relative z-10">2025 Innovation Showcase</span>
+                <span className="relative z-10">2025 Ultimate Services Showcase</span>
                 <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-cyan-600 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               </a>
 
