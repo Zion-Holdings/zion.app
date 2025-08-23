@@ -177,8 +177,8 @@ const EnhancedNavigation: React.FC = () => {
           <a className="font-semibold">Zion</a>
         </Link>
         <div className="flex items-center gap-4 text-sm">
-          <Link href="/team-builder"><a className="font-medium text-blue-600">Team Builder</a></Link>
-          <Link href="/feedback"><a>Feedback</a></Link>
+          <Link href="/nations"><a>Nations</a></Link>
+          <Link href="/nation-builder"><a>Create Nation</a></Link>
           <Link href="/about"><a>About</a></Link>
           <Link href="/blog"><a>Blog</a></Link>
           <Link href="/talent"><a>Talent</a></Link>

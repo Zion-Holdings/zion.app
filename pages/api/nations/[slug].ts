@@ -1,26 +1,27 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
-import { getNationBySlug, updateNation } from '../../../lib/nations';
+import { getNationBySlug, upsertNation, deleteNationBySlug } from '../../../utils/nationStore';
 
 export default function handler(req: NextApiRequest, res: NextApiResponse) {
   const { slug } = req.query as { slug: string };
-
-  if (!slug) return res.status(400).json({ error: 'Missing slug' });
+  const nation = getNationBySlug(slug);
 
   if (req.method === 'GET') {
-    const nation = getNationBySlug(slug);
-    if (!nation) return res.status(404).json({ error: 'Nation not found' });
+    if (!nation) return res.status(404).json({ error: 'Not found' });
     return res.status(200).json({ nation });
   }
 
   if (req.method === 'PUT') {
-    try {
-      const nation = updateNation(slug, req.body || {});
-      if (!nation) return res.status(404).json({ error: 'Nation not found' });
-      return res.status(200).json({ nation });
-    } catch (error: any) {
-      return res.status(500).json({ error: error?.message || 'Failed to update nation' });
-    }
+    if (!nation) return res.status(404).json({ error: 'Not found' });
+    const updated = { ...nation, ...req.body, updatedAt: new Date().toISOString() };
+    upsertNation(updated);
+    return res.status(200).json({ nation: updated });
   }
 
-  return res.status(405).json({ error: 'Method not allowed' });
+  if (req.method === 'DELETE') {
+    const deleted = deleteNationBySlug(slug);
+    return res.status(deleted ? 200 : 404).json({ ok: deleted });
+  }
+
+  res.setHeader('Allow', ['GET', 'PUT', 'DELETE']);
+  return res.status(405).end('Method Not Allowed');
 }
