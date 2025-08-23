@@ -141,10 +141,16 @@ const allServices = [
   ...realOperationalServices,
   ...marketReadyServices,
   ...marketValidatedServices,
+<<<<<<< HEAD
+  // Our new 2025 Q4 innovative services
+  ...innovative2025Q4NewServices,
+  ...advancedITInfrastructureServices,
+=======
   ...advancedEnterpriseSolutions,
   ...innovativeAISolutions,
   ...innovativeMicroSaasSolutions2025,
   ...innovativeITInfrastructureServices,
+>>>>>>> origin/cursor/add-and-advertise-new-services-then-build-ab61
   ...industryRealServices,
   ...real2025Q4AugmentedBatch,
   ...real2029Q3Additions,

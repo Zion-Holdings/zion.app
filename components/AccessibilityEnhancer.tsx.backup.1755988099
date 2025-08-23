@@ -63,6 +63,22 @@ const AccessibilityEnhancer: React.FC<AccessibilityEnhancerProps> = ({ children 
         return;
       }
 
+<<<<<<< HEAD
+      // Tab navigation enhancement
+      if (e.key === 'Tab') {
+        setIsKeyboardMode(true);
+        
+        // Add focus indicator
+        const focusableElements = document.querySelectorAll(
+          'a, button, input, textarea, select, [tabindex]:not([tabindex="-1"])'
+        );
+        
+        focusableElements.forEach((el) => {
+          el.addEventListener('focus', () => setCurrentFocus(el as HTMLElement));
+          el.addEventListener('blur', () => setCurrentFocus(null));
+        });
+      }
+=======
   // Focus management
   const handleFocusChange = useCallback((e: FocusEvent) => {
     const target = e.target as HTMLElement;
@@ -71,6 +87,7 @@ const AccessibilityEnhancer: React.FC<AccessibilityEnhancerProps> = ({ children 
       announceToScreenReader(`Focused on ${target.textContent || target.tagName.toLowerCase()}`);
     }
   }, []);
+>>>>>>> origin/cursor/add-and-advertise-new-services-then-build-ab61
 
       // Escape key to close modals/panels
       if (e.key === 'Escape') {

@@ -413,6 +413,8 @@ const Homepage2040: React.FC = () => {
                           </span>
                         ))}
                       </div>
+<<<<<<< HEAD
+=======
 
                       {/* Service Price */}
                       <div className="mb-6">
@@ -557,6 +559,7 @@ const Homepage2040: React.FC = () => {
                     <div className="flex items-center space-x-3 text-blue-400">
                       <Mail className="w-5 h-5" />
                       <span>kleber@ziontechgroup.com</span>
+>>>>>>> origin/cursor/add-and-advertise-new-services-then-build-ab61
                     </div>
                   </div>
                 </Link>
