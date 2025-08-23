@@ -1,9 +1,18 @@
 import React, { useState } from 'react';
-import Head from 'next/head';
+import Layout from '../components/layout/Layout';
 import { motion } from 'framer-motion';
 import { 
-  Phone, Mail, MapPin, Clock, Globe, MessageSquare,
-  Send, CheckCircle, AlertCircle, ArrowRight
+  Phone, 
+  Mail, 
+  MapPin, 
+  Clock, 
+  MessageCircle,
+  Send,
+  CheckCircle,
+  Globe,
+  Building,
+  Users,
+  ArrowRight
 } from 'lucide-react';
 
 const ContactPage: React.FC = () => {
@@ -16,7 +25,7 @@ const ContactPage: React.FC = () => {
     message: ''
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
+  const [isSubmitted, setIsSubmitted] = useState(false);
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     setFormData({
@@ -30,9 +39,14 @@ const ContactPage: React.FC = () => {
     setIsSubmitting(true);
     
     // Simulate form submission
+    await new Promise(resolve => setTimeout(resolve, 2000));
+    
+    setIsSubmitting(false);
+    setIsSubmitted(true);
+    
+    // Reset form after 3 seconds
     setTimeout(() => {
-      setSubmitStatus('success');
-      setIsSubmitting(false);
+      setIsSubmitted(false);
       setFormData({
         name: '',
         email: '',
@@ -41,195 +55,172 @@ const ContactPage: React.FC = () => {
         service: '',
         message: ''
       });
-    }, 2000);
+    }, 3000);
   };
-
-  const fadeInUp = {
-    initial: { opacity: 0, y: 20 },
-    animate: { opacity: 1, y: 0 },
-    transition: { duration: 0.5 }
-  };
-
-  const staggerContainer = {
-    animate: {
-      transition: {
-        staggerChildren: 0.1
-      }
-    }
-  };
-
-  const contactInfo = {
-    phone: '+1 (302) 555-0123',
-    email: 'contact@ziontechgroup.com',
-    address: '123 Innovation Drive, Middletown, DE 19709',
-    website: 'https://ziontechgroup.com',
-    hours: 'Monday - Friday: 9:00 AM - 6:00 PM EST',
-    support: '24/7 Technical Support Available'
-  };
-
-  const services = [
-    'AI Consciousness Evolution',
-    'Quantum Cybersecurity',
-    'Space Technology Solutions',
-    'Autonomous DevOps',
-    'Quantum Cloud Infrastructure',
-    'AI Business Intelligence',
-    'Custom Development',
-    'Other'
-  ];
 
   const contactMethods = [
     {
-      title: 'Phone Support',
-      description: 'Speak directly with our technology experts',
       icon: Phone,
-      value: contactInfo.phone,
-      action: `tel:${contactInfo.phone}`,
+      title: 'Phone',
+      details: ['+1 (555) 123-4567', '+1 (555) 987-6543'],
       color: 'from-blue-500 to-cyan-500'
     },
     {
-      title: 'Email Us',
-      description: 'Send us a detailed message anytime',
       icon: Mail,
-      value: contactInfo.email,
-      action: `mailto:${contactInfo.email}`,
+      title: 'Email',
+      details: ['hello@ziontechgroup.com', 'support@ziontechgroup.com'],
       color: 'from-purple-500 to-pink-500'
     },
     {
-      title: 'Live Chat',
-      description: 'Get instant answers to your questions',
-      icon: MessageSquare,
-      value: 'Start Chat',
-      action: '#',
-      color: 'from-emerald-500 to-teal-500'
+      icon: MapPin,
+      title: 'Office',
+      details: ['123 Innovation Drive', 'Tech Valley, CA 94000'],
+      color: 'from-green-500 to-emerald-500'
     },
     {
-      title: 'Office Hours',
-      description: 'Visit our headquarters',
       icon: Clock,
-      value: contactInfo.hours,
-      action: '#',
+      title: 'Business Hours',
+      details: ['Mon-Fri: 9AM-6PM PST', '24/7 Support Available'],
       color: 'from-orange-500 to-red-500'
     }
   ];
 
-  return (
-    <>
-      <Head>
-        <title>Contact Us - Zion Tech Group | Get in Touch</title>
-        <meta name="description" content="Contact Zion Tech Group for AI, quantum computing, and space technology solutions. Get expert consultation and support." />
-        <meta name="keywords" content="Zion Tech Group contact, AI consultation, quantum computing support, technology solutions" />
-        <link rel="canonical" href="https://ziontechgroup.com/contact" />
-        <meta property="og:title" content="Contact Us - Zion Tech Group" />
-        <meta property="og:description" content="Get in touch with our technology experts for innovative AI, quantum computing, and space technology solutions." />
-        <meta property="og:url" content="https://ziontechgroup.com/contact" />
-        <meta property="og:type" content="website" />
-      </Head>
+  const services = [
+    'AI & Machine Learning',
+    'Quantum Computing',
+    'Space Technology',
+    'Cybersecurity',
+    'Cloud Infrastructure',
+    'Edge Computing',
+    'Data & Analytics',
+    'Blockchain & Web3',
+    'Custom Solution',
+    'Other'
+  ];
 
+  const offices = [
+    {
+      city: 'San Francisco',
+      country: 'United States',
+      address: '123 Innovation Drive, Tech Valley, CA 94000',
+      phone: '+1 (555) 123-4567',
+      email: 'sf@ziontechgroup.com'
+    },
+    {
+      city: 'London',
+      country: 'United Kingdom',
+      address: '456 Tech Square, Innovation District, EC1A 1BB',
+      phone: '+44 20 1234 5678',
+      email: 'london@ziontechgroup.com'
+    },
+    {
+      city: 'Tokyo',
+      country: 'Japan',
+      address: '789 Future Street, Shibuya-ku, Tokyo 150-0002',
+      phone: '+81 3 1234 5678',
+      email: 'tokyo@ziontechgroup.com'
+    },
+    {
+      city: 'Singapore',
+      country: 'Singapore',
+      address: '321 Innovation Road, Marina Bay, 018956',
+      phone: '+65 6123 4567',
+      email: 'singapore@ziontechgroup.com'
+    }
+  ];
+
+  return (
+    <Layout>
       <div className="min-h-screen bg-black text-white">
         {/* Hero Section */}
-        <section className="relative pt-32 pb-20 overflow-hidden">
-          <div className="absolute inset-0 bg-gradient-to-br from-cyan-900/20 via-blue-900/20 to-purple-900/20"></div>
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(6,182,212,0.1),transparent_50%)]"></div>
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_80%,rgba(139,92,246,0.1),transparent_50%)]"></div>
-          
-          <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <section className="relative py-20 lg:py-32 overflow-hidden">
+          <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/10 via-purple-500/10 to-pink-500/10" />
+          <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
+              className="text-center"
             >
-              <h1 className="text-5xl md:text-7xl font-bold bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 bg-clip-text text-transparent mb-6">
-                Get in Touch
+              <h1 className="text-5xl lg:text-7xl font-bold bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 bg-clip-text text-transparent mb-6">
+                Get In Touch
               </h1>
-              <p className="text-xl md:text-2xl text-gray-300 max-w-4xl mx-auto leading-relaxed">
-                Ready to revolutionize your business with cutting-edge technology? Let's discuss how our AI, quantum computing, and space technology solutions can transform your operations.
+              <p className="text-xl lg:text-2xl text-gray-300 max-w-4xl mx-auto leading-relaxed">
+                Ready to transform your business with cutting-edge technology? 
+                Let's discuss how we can help you achieve your goals.
               </p>
             </motion.div>
           </div>
         </section>
 
-        {/* Contact Methods */}
-        <section className="py-20 relative">
+        {/* Contact Methods Section */}
+        <section className="py-20 bg-gradient-to-b from-black via-gray-900 to-black">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
               transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
               className="text-center mb-16"
             >
-              <h2 className="text-4xl font-bold text-white mb-6">
+              <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6">
                 Multiple Ways to Connect
               </h2>
-              <p className="text-xl text-gray-400 max-w-3xl mx-auto">
-                Choose the method that works best for you. Our team is ready to help with your technology needs.
+              <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+                Choose the method that works best for you. Our team is ready to help.
               </p>
             </motion.div>
 
-            <motion.div
-              variants={staggerContainer}
-              initial="initial"
-              whileInView="animate"
-              viewport={{ once: true }}
-              className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8"
-            >
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
               {contactMethods.map((method, index) => (
                 <motion.div
-                  key={index}
-                  variants={fadeInUp}
-                  className="group"
+                  key={method.title}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: index * 0.1 }}
+                  viewport={{ once: true }}
+                  className="text-center p-6 rounded-2xl bg-gradient-to-br from-gray-800/50 to-gray-900/50 border border-gray-700/50 hover:border-cyan-500/50 transition-all duration-300"
                 >
-                  <div className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${method.color} p-4 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300`}>
+                  <div className={`w-16 h-16 mx-auto mb-4 rounded-full bg-gradient-to-r ${method.color} flex items-center justify-center`}>
                     <method.icon className="w-8 h-8 text-white" />
                   </div>
                   <h3 className="text-xl font-semibold text-white mb-3">{method.title}</h3>
-                  <p className="text-gray-400 mb-4 leading-relaxed">{method.description}</p>
-                  <a
-                    href={method.action}
-                    className="inline-flex items-center text-cyan-400 hover:text-cyan-300 transition-colors duration-300 font-medium"
-                  >
-                    {method.value}
-                    <ArrowRight className="w-4 h-4 ml-2" />
-                  </a>
+                  {method.details.map((detail, idx) => (
+                    <p key={idx} className="text-gray-300 text-sm mb-1">{detail}</p>
+                  ))}
                 </motion.div>
               ))}
-            </motion.div>
+            </div>
           </div>
         </section>
 
-        {/* Contact Form & Info */}
-        <section className="py-20 relative bg-gray-900/30">
+        {/* Contact Form Section */}
+        <section className="py-20 bg-black">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
-              {/* Contact Form */}
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+              {/* Form */}
               <motion.div
                 initial={{ opacity: 0, x: -20 }}
                 whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
                 transition={{ duration: 0.8 }}
+                viewport={{ once: true }}
               >
-                <h2 className="text-3xl font-bold text-white mb-8">
+                <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6">
                   Send Us a Message
                 </h2>
-                
-                {submitStatus === 'success' ? (
+                <p className="text-xl text-gray-300 mb-8">
+                  Tell us about your project and we'll get back to you within 24 hours.
+                </p>
+
+                {isSubmitted ? (
                   <motion.div
-                    initial={{ opacity: 0, scale: 0.9 }}
+                    initial={{ opacity: 0, scale: 0.8 }}
                     animate={{ opacity: 1, scale: 1 }}
-                    className="bg-emerald-900/20 border border-emerald-500/30 rounded-2xl p-8 text-center"
+                    className="bg-gradient-to-r from-green-500/20 to-emerald-500/20 border border-green-500/50 rounded-2xl p-8 text-center"
                   >
-                    <CheckCircle className="w-16 h-16 text-emerald-400 mx-auto mb-4" />
-                    <h3 className="text-2xl font-bold text-white mb-2">Message Sent!</h3>
-                    <p className="text-emerald-300 mb-4">
-                      Thank you for reaching out. We'll get back to you within 24 hours.
-                    </p>
-                    <button
-                      onClick={() => setSubmitStatus('idle')}
-                      className="px-6 py-3 bg-emerald-600 hover:bg-emerald-700 text-white rounded-xl font-semibold transition-colors duration-300"
-                    >
-                      Send Another Message
-                    </button>
+                    <CheckCircle className="w-16 h-16 text-green-400 mx-auto mb-4" />
+                    <h3 className="text-2xl font-semibold text-white mb-2">Message Sent!</h3>
+                    <p className="text-gray-300">Thank you for reaching out. We'll get back to you soon.</p>
                   </motion.div>
                 ) : (
                   <form onSubmit={handleSubmit} className="space-y-6">
@@ -242,10 +233,10 @@ const ContactPage: React.FC = () => {
                           type="text"
                           id="name"
                           name="name"
+                          required
                           value={formData.name}
                           onChange={handleInputChange}
-                          required
-                          className="w-full px-4 py-3 bg-gray-800/50 border border-gray-700/50 rounded-xl text-white placeholder-gray-400 focus:border-cyan-500 focus:ring-2 focus:ring-cyan-500/20 transition-colors duration-300"
+                          className="w-full px-4 py-3 bg-gray-800/50 border border-gray-700/50 rounded-lg text-white placeholder-gray-400 focus:border-cyan-500 focus:ring-2 focus:ring-cyan-500/20 transition-all duration-300"
                           placeholder="Enter your full name"
                         />
                       </div>
@@ -257,10 +248,10 @@ const ContactPage: React.FC = () => {
                           type="email"
                           id="email"
                           name="email"
+                          required
                           value={formData.email}
                           onChange={handleInputChange}
-                          required
-                          className="w-full px-4 py-3 bg-gray-800/50 border border-gray-700/50 rounded-xl text-white placeholder-gray-400 focus:border-cyan-500 focus:ring-2 focus:ring-cyan-500/20 transition-colors duration-300"
+                          className="w-full px-4 py-3 bg-gray-800/50 border border-gray-700/50 rounded-lg text-white placeholder-gray-400 focus:border-cyan-500 focus:ring-2 focus:ring-cyan-500/20 transition-all duration-300"
                           placeholder="Enter your email"
                         />
                       </div>
@@ -277,8 +268,8 @@ const ContactPage: React.FC = () => {
                           name="company"
                           value={formData.company}
                           onChange={handleInputChange}
-                          className="w-full px-4 py-3 bg-gray-800/50 border border-gray-700/50 rounded-xl text-white placeholder-gray-400 focus:border-cyan-500 focus:ring-2 focus:ring-cyan-500/20 transition-colors duration-300"
-                          placeholder="Enter company name"
+                          className="w-full px-4 py-3 bg-gray-800/50 border border-gray-700/50 rounded-lg text-white placeholder-gray-400 focus:border-cyan-500 focus:ring-2 focus:ring-cyan-500/20 transition-all duration-300"
+                          placeholder="Enter your company name"
                         />
                       </div>
                       <div>
@@ -291,8 +282,8 @@ const ContactPage: React.FC = () => {
                           name="phone"
                           value={formData.phone}
                           onChange={handleInputChange}
-                          className="w-full px-4 py-3 bg-gray-800/50 border border-gray-700/50 rounded-xl text-white placeholder-gray-400 focus:border-cyan-500 focus:ring-2 focus:ring-cyan-500/20 transition-colors duration-300"
-                          placeholder="Enter phone number"
+                          className="w-full px-4 py-3 bg-gray-800/50 border border-gray-700/50 rounded-lg text-white placeholder-gray-400 focus:border-cyan-500 focus:ring-2 focus:ring-cyan-500/20 transition-all duration-300"
+                          placeholder="Enter your phone number"
                         />
                       </div>
                     </div>
@@ -306,11 +297,11 @@ const ContactPage: React.FC = () => {
                         name="service"
                         value={formData.service}
                         onChange={handleInputChange}
-                        className="w-full px-4 py-3 bg-gray-800/50 border border-gray-700/50 rounded-xl text-white focus:border-cyan-500 focus:ring-2 focus:ring-cyan-500/20 transition-colors duration-300"
+                        className="w-full px-4 py-3 bg-gray-800/50 border border-gray-700/50 rounded-lg text-white focus:border-cyan-500 focus:ring-2 focus:ring-cyan-500/20 transition-all duration-300"
                       >
                         <option value="">Select a service</option>
-                        {services.map((service, index) => (
-                          <option key={index} value={service}>{service}</option>
+                        {services.map((service) => (
+                          <option key={service} value={service}>{service}</option>
                         ))}
                       </select>
                     </div>
@@ -322,29 +313,29 @@ const ContactPage: React.FC = () => {
                       <textarea
                         id="message"
                         name="message"
-                        value={formData.message}
-                        onChange={handleInputChange}
                         required
                         rows={6}
-                        className="w-full px-4 py-3 bg-gray-800/50 border border-gray-700/50 rounded-xl text-white placeholder-gray-400 focus:border-cyan-500 focus:ring-2 focus:ring-cyan-500/20 transition-colors duration-300 resize-none"
-                        placeholder="Tell us about your project or inquiry..."
+                        value={formData.message}
+                        onChange={handleInputChange}
+                        className="w-full px-4 py-3 bg-gray-800/50 border border-gray-700/50 rounded-lg text-white placeholder-gray-400 focus:border-cyan-500 focus:ring-2 focus:ring-cyan-500/20 transition-all duration-300 resize-none"
+                        placeholder="Tell us about your project, goals, and how we can help..."
                       />
                     </div>
 
                     <button
                       type="submit"
                       disabled={isSubmitting}
-                      className="w-full px-8 py-4 bg-gradient-to-r from-cyan-500 to-blue-600 text-white rounded-2xl font-semibold hover:from-cyan-600 hover:to-blue-700 transition-all duration-300 hover:shadow-2xl hover:shadow-cyan-500/25 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center"
+                      className="w-full px-8 py-4 bg-gradient-to-r from-cyan-500 to-purple-500 text-white font-semibold rounded-lg hover:from-cyan-600 hover:to-purple-600 transition-all duration-300 transform hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none flex items-center justify-center"
                     >
                       {isSubmitting ? (
                         <>
-                          <div className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin mr-2"></div>
+                          <div className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin mr-2" />
                           Sending Message...
                         </>
                       ) : (
                         <>
-                          <Send className="w-5 h-5 mr-2" />
                           Send Message
+                          <Send className="w-5 h-5 ml-2" />
                         </>
                       )}
                     </button>
@@ -352,72 +343,59 @@ const ContactPage: React.FC = () => {
                 )}
               </motion.div>
 
-              {/* Contact Information */}
+              {/* Contact Info */}
               <motion.div
                 initial={{ opacity: 0, x: 20 }}
                 whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
                 transition={{ duration: 0.8 }}
+                viewport={{ once: true }}
+                className="space-y-8"
               >
-                <h2 className="text-3xl font-bold text-white mb-8">
-                  Contact Information
-                </h2>
-                
-                <div className="space-y-8">
-                  <div className="flex items-start space-x-4">
-                    <div className="w-12 h-12 rounded-xl bg-gradient-to-r from-cyan-500 to-blue-500 p-3 flex items-center justify-center flex-shrink-0">
-                      <Phone className="w-6 h-6 text-white" />
+                <div className="bg-gradient-to-br from-gray-800/50 to-gray-900/50 rounded-2xl p-8 border border-gray-700/50">
+                  <h3 className="text-2xl font-semibold text-white mb-6">Why Choose Zion Tech Group?</h3>
+                  <div className="space-y-4">
+                    <div className="flex items-start space-x-3">
+                      <div className="w-6 h-6 bg-gradient-to-r from-cyan-500 to-purple-500 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                        <CheckCircle className="w-4 h-4 text-white" />
+                      </div>
+                      <p className="text-gray-300">15+ years of technology innovation experience</p>
                     </div>
-                    <div>
-                      <h3 className="text-lg font-semibold text-white mb-2">Phone</h3>
-                      <p className="text-gray-300 mb-1">{contactInfo.phone}</p>
-                      <p className="text-gray-400 text-sm">{contactInfo.hours}</p>
+                    <div className="flex items-start space-x-3">
+                      <div className="w-6 h-6 bg-gradient-to-r from-cyan-500 to-purple-500 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                        <CheckCircle className="w-4 h-4 text-white" />
+                      </div>
+                      <p className="text-gray-300">500+ successful client implementations worldwide</p>
                     </div>
-                  </div>
-
-                  <div className="flex items-start space-x-4">
-                    <div className="w-12 h-12 rounded-xl bg-gradient-to-r from-purple-500 to-pink-500 p-3 flex items-center justify-center flex-shrink-0">
-                      <Mail className="w-6 h-6 text-white" />
+                    <div className="flex items-start space-x-3">
+                      <div className="w-6 h-6 bg-gradient-to-r from-cyan-500 to-purple-500 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                        <CheckCircle className="w-4 h-4 text-white" />
+                      </div>
+                      <p className="text-gray-300">24/7 technical support and monitoring</p>
                     </div>
-                    <div>
-                      <h3 className="text-lg font-semibold text-white mb-2">Email</h3>
-                      <p className="text-gray-300 mb-1">{contactInfo.email}</p>
-                      <p className="text-gray-400 text-sm">We respond within 24 hours</p>
-                    </div>
-                  </div>
-
-                  <div className="flex items-start space-x-4">
-                    <div className="w-12 h-12 rounded-xl bg-gradient-to-r from-emerald-500 to-teal-500 p-3 flex items-center justify-center flex-shrink-0">
-                      <MapPin className="w-6 h-6 text-white" />
-                    </div>
-                    <div>
-                      <h3 className="text-lg font-semibold text-white mb-2">Address</h3>
-                      <p className="text-gray-300 mb-1">{contactInfo.address}</p>
-                      <p className="text-gray-400 text-sm">Headquarters & Innovation Center</p>
-                    </div>
-                  </div>
-
-                  <div className="flex items-start space-x-4">
-                    <div className="w-12 h-12 rounded-xl bg-gradient-to-r from-orange-500 to-red-500 p-3 flex items-center justify-center flex-shrink-0">
-                      <Globe className="w-6 h-6 text-white" />
-                    </div>
-                    <div>
-                      <h3 className="text-lg font-semibold text-white mb-2">Website</h3>
-                      <p className="text-gray-300 mb-1">{contactInfo.website}</p>
-                      <p className="text-gray-400 text-sm">Explore our services and solutions</p>
+                    <div className="flex items-start space-x-3">
+                      <div className="w-6 h-6 bg-gradient-to-r from-cyan-500 to-purple-500 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                        <CheckCircle className="w-4 h-4 text-white" />
+                      </div>
+                      <p className="text-gray-300">Cutting-edge AI, quantum, and space technology</p>
                     </div>
                   </div>
                 </div>
 
-                {/* Support Information */}
-                <div className="mt-12 p-6 bg-gradient-to-r from-cyan-900/20 to-blue-900/20 rounded-2xl border border-cyan-500/30">
-                  <h3 className="text-xl font-semibold text-white mb-3">24/7 Technical Support</h3>
-                  <p className="text-gray-300 mb-4">
-                    Our technical team is available around the clock to ensure your systems run smoothly and securely.
-                  </p>
-                  <div className="flex items-center text-cyan-400">
-                    <CheckCircle className="w-5 h-5 mr-2" />
-                    <span className="text-sm font-medium">Always Available</span>
+                <div className="bg-gradient-to-br from-gray-800/50 to-gray-900/50 rounded-2xl p-8 border border-gray-700/50">
+                  <h3 className="text-2xl font-semibold text-white mb-6">Response Time</h3>
+                  <div className="space-y-3">
+                    <div className="flex justify-between items-center">
+                      <span className="text-gray-300">Initial Response</span>
+                      <span className="text-cyan-400 font-semibold">Within 24 hours</span>
+                    </div>
+                    <div className="flex justify-between items-center">
+                      <span className="text-gray-300">Project Proposal</span>
+                      <span className="text-cyan-400 font-semibold">Within 48 hours</span>
+                    </div>
+                    <div className="flex justify-between items-center">
+                      <span className="text-gray-300">Technical Consultation</span>
+                      <span className="text-cyan-400 font-semibold">Within 72 hours</span>
+                    </div>
                   </div>
                 </div>
               </motion.div>
@@ -425,40 +403,92 @@ const ContactPage: React.FC = () => {
           </div>
         </section>
 
-        {/* CTA Section */}
-        <section className="py-20 relative">
-          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        {/* Global Offices Section */}
+        <section className="py-20 bg-gradient-to-b from-black via-gray-900 to-black">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
               transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+              className="text-center mb-16"
             >
-              <h2 className="text-4xl font-bold text-white mb-6">
-                Ready to Get Started?
+              <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6">
+                Global Presence
               </h2>
-              <p className="text-xl text-gray-300 mb-8">
-                Let's discuss how our revolutionary technology solutions can transform your business and accelerate your success.
+              <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+                We're strategically located around the world to serve our global clients.
+              </p>
+            </motion.div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+              {offices.map((office, index) => (
+                <motion.div
+                  key={office.city}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: index * 0.1 }}
+                  viewport={{ once: true }}
+                  className="bg-gradient-to-br from-gray-800/50 to-gray-900/50 rounded-2xl p-6 border border-gray-700/50 hover:border-cyan-500/50 transition-all duration-300"
+                >
+                  <div className="flex items-center mb-4">
+                    <Building className="w-6 h-6 text-cyan-400 mr-2" />
+                    <h3 className="text-xl font-semibold text-white">{office.city}</h3>
+                  </div>
+                  <p className="text-gray-400 text-sm mb-3">{office.country}</p>
+                  <p className="text-gray-300 text-sm mb-3">{office.address}</p>
+                  <div className="space-y-2 text-sm">
+                    <p className="text-gray-300">
+                      <Phone className="w-4 h-4 inline mr-2 text-cyan-400" />
+                      {office.phone}
+                    </p>
+                    <p className="text-gray-300">
+                      <Mail className="w-4 h-4 inline mr-2 text-cyan-400" />
+                      {office.email}
+                    </p>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* CTA Section */}
+        <section className="py-20 bg-black">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+            >
+              <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6">
+                Ready to Start Your Project?
+              </h2>
+              <p className="text-xl text-gray-300 mb-8 max-w-3xl mx-auto">
+                Let's discuss how our innovative technology solutions can transform your business 
+                and drive unprecedented growth.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <a
                   href="/services"
-                  className="px-8 py-4 bg-gradient-to-r from-cyan-500 to-blue-600 text-white rounded-2xl font-semibold hover:from-cyan-600 hover:to-blue-700 transition-all duration-300 hover:shadow-2xl hover:shadow-cyan-500/25"
+                  className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-cyan-500 to-purple-500 text-white font-semibold rounded-full hover:from-cyan-600 hover:to-purple-600 transition-all duration-300 transform hover:scale-105"
                 >
-                  Explore Our Services
+                  Explore Services
+                  <ArrowRight className="w-5 h-5 ml-2" />
                 </a>
                 <a
-                  href="/pricing"
-                  className="px-8 py-4 border border-gray-600 text-gray-300 rounded-2xl font-semibold hover:border-cyan-500 hover:text-cyan-400 transition-all duration-300"
+                  href="/solutions"
+                  className="inline-flex items-center px-8 py-4 border-2 border-cyan-500 text-cyan-400 font-semibold rounded-full hover:bg-cyan-500 hover:text-white transition-all duration-300"
                 >
-                  View Pricing
+                  View Solutions
                 </a>
               </div>
             </motion.div>
           </div>
         </section>
       </div>
-    </>
+    </Layout>
   );
 };
 
