@@ -432,7 +432,7 @@ export default function Services() {
 
   return (
     <>
-      <SEO title="Services | Zion Tech Group - Enterprise IT, AI, Micro SAAS Solutions" description="Discover our comprehensive portfolio of enterprise IT solutions, AI services, and innovative micro SAAS platforms. Transform your business with cutting-edge technology." canonical="https://ziontechgroup.com/services/" />
+      <SEO title="Services | Zion Tech Group - Enterprise IT, AI, Micro SAAS Solutions" description="Discover our comprehensive portfolio of enterprise IT solutions, AI services, and innovative micro SAAS platforms. Transform your business with cutting-edge technology." canonicalUrl="https://ziontechgroup.com/services/" />
 
       <UltraFuturisticNavigation2046 />
       <div className="min-h-screen bg-black text-white pt-24">

@@ -72,7 +72,7 @@ export default function FuturisticServices2030Page() {
       <SEO 
         title="2030 Futuristic Technology Services | Zion Tech Group - Revolutionary AI, Quantum, Space Tech" 
         description="Experience the future with our revolutionary 2030 technology services. From AI consciousness to space mining, quantum computing to metaverse development - we're building tomorrow's solutions today." 
-        canonical="https://ziontechgroup.com/services/2030-futuristic-services/"
+        canonicalUrl="https://ziontechgroup.com/services/2030-futuristic-services/"
       />
 
       <UltraFuturisticBackground2031>

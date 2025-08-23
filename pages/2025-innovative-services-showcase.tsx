@@ -191,7 +191,7 @@ export default function InnovativeServicesShowcase2025() {
       <SEO 
         title="2025 Innovative Services Showcase | Zion Tech Group"
         description="Discover our cutting-edge 2025 innovative services including AI automation, IT infrastructure, micro SAAS solutions, and emerging technology services."
-        keywords={["2025 innovative services", "AI automation", "IT infrastructure", "micro SAAS", "emerging technology", "Zion Tech Group"]}
+        keywords="2025 innovative services, AI automation, IT infrastructure, micro SAAS, emerging technology, Zion Tech Group"
       />
 
       {/* Hero Section */}

@@ -209,12 +209,20 @@ const navigationItems: NavigationItem[] = [
   }
 ];
 
-const UltraFuturisticNavigation2045: React.FC = () => {
+interface UltraFuturisticNavigation2045Props {
+  sidebarOpen: boolean;
+  setSidebarOpen: (open: boolean) => void;
+}
+
+const UltraFuturisticNavigation2045: React.FC<UltraFuturisticNavigation2045Props> = ({ 
+  sidebarOpen, 
+  setSidebarOpen 
+}) => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
   const [isSearchOpen, setIsSearchOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const isMobileMenuOpen = sidebarOpen;
   const router = useRouter();
   const searchRef = React.useRef<HTMLDivElement>(null);
   const mobileMenuRef = React.useRef<HTMLDivElement>(null);
@@ -245,7 +253,7 @@ const UltraFuturisticNavigation2045: React.FC = () => {
   React.useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
       if (mobileMenuRef.current && !mobileMenuRef.current.contains(event.target as Node)) {
-        setIsMobileMenuOpen(false);
+        setSidebarOpen(false);
       }
     };
 
@@ -255,9 +263,9 @@ const UltraFuturisticNavigation2045: React.FC = () => {
 
   // Close mobile menu on route change
   React.useEffect(() => {
-    setIsMobileMenuOpen(false);
+    setSidebarOpen(false);
     setActiveDropdown(null);
-  }, [router.asPath]);
+  }, [router.asPath, setSidebarOpen]);
 
   const handleDropdownToggle = useCallback((itemLabel: string) => {
     setActiveDropdown(activeDropdown === itemLabel ? null : itemLabel);
@@ -283,8 +291,8 @@ const UltraFuturisticNavigation2045: React.FC = () => {
   }, [searchQuery, router]);
 
   const handleMobileMenuToggle = useCallback(() => {
-    setIsMobileMenuOpen(!isMobileMenuOpen);
-  }, [isMobileMenuOpen]);
+    setSidebarOpen(!sidebarOpen);
+  }, [sidebarOpen, setSidebarOpen]);
 
   const isActiveRoute = useCallback((href: string) => {
     if (href === '/') {

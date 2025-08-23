@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Head from 'next/head';
 import UltraFuturisticNavigation2045 from './UltraFuturisticNavigation2045';
 import UltraFuturisticFooter2045 from './UltraFuturisticFooter2045';
@@ -20,6 +20,7 @@ const UltraFuturisticLayout2045: React.FC<UltraFuturisticLayout2045Props> = ({
   ogImage = "https://ziontechgroup.com/og-image-2045.jpg",
   canonical = "https://ziontechgroup.com"
 }) => {
+  const [sidebarOpen, setSidebarOpen] = useState(false);
   return (
     <>
       <Head>
@@ -95,7 +96,10 @@ const UltraFuturisticLayout2045: React.FC<UltraFuturisticLayout2045Props> = ({
 
       <div className="min-h-screen bg-gradient-to-br from-gray-900 via-black to-gray-900">
         {/* Navigation */}
-        <UltraFuturisticNavigation2045 />
+        <UltraFuturisticNavigation2045 
+          sidebarOpen={sidebarOpen} 
+          setSidebarOpen={setSidebarOpen} 
+        />
         
         {/* Main Content */}
         <main className="relative z-10">

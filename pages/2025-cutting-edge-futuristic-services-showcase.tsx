@@ -92,10 +92,7 @@ const CuttingEdgeFuturisticServicesShowcase: React.FC = () => {
       <SEO 
         title="2025 Cutting-Edge Futuristic Services Showcase | Zion Tech Group"
         description="Discover our revolutionary cutting-edge futuristic services including quantum AI, autonomous systems, holographic technology, and more. Transform your business with next-generation solutions."
-        keywords={[
-          'cutting-edge services', 'futuristic technology', 'quantum AI', 'autonomous systems', 
-          'holographic technology', 'AI automation', 'quantum computing', 'neural interfaces'
-        ]}
+                keywords="cutting-edge services, futuristic technology, quantum AI, autonomous systems, holographic technology, AI automation, quantum computing, neural interfaces"
         ogImage="/og-cutting-edge-services.jpg"
       />
 

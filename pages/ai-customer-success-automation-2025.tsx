@@ -103,7 +103,7 @@ export default function AICustomerSuccessAutomation2025() {
       <SEO 
         title="AI Customer Success Automation Platform 2025 | Zion Tech Group"
         description="Revolutionary AI-powered customer success automation with predictive analytics. Reduce churn by 40%, increase upsell revenue by 60%, and automate 80% of customer success tasks."
-        keywords={["AI customer success", "customer success automation", "churn prediction", "customer onboarding", "upsell automation", "customer analytics"]}
+        keywords="AI customer success, customer success automation, churn prediction, customer onboarding, upsell automation, customer analytics"
       />
       
       {/* Hero Section */}

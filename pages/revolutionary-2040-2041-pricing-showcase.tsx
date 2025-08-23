@@ -66,10 +66,7 @@ const Revolutionary20402041PricingShowcase: React.FC = () => {
       <SEO 
         title="Revolutionary 2040-2041 Futuristic Services Pricing | Zion Tech Group"
         description="Explore our revolutionary 2040-2041 futuristic micro SAAS, IT, and AI services with comprehensive pricing. From AI consciousness evolution to quantum computing solutions."
-        keywords={[
-          "2040 services", "2041 services", "futuristic pricing", "AI consciousness", 
-          "quantum computing", "micro SAAS", "IT services", "AI services", "Zion Tech Group"
-        ]}
+                keywords="2040 services, 2041 services, futuristic pricing, AI consciousness, quantum computing, micro SAAS, IT services, AI services, Zion Tech Group"
       />
 
       {/* Hero Section */}

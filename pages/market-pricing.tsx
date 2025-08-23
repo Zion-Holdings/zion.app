@@ -5,7 +5,7 @@ import UltraAdvancedFuturisticBackground from '../components/ui/UltraAdvancedFut
 export default function MarketPricingPage() {
   return (
     <UltraAdvancedFuturisticBackground>
-      <SEO title="Market Pricing & Competitor References | Zion Tech Group" description="Transparent market pricing references and competitor links for AI, security, analytics, and cloud services." canonical="https://ziontechgroup.com/market-pricing/" />
+      <SEO title="Market Pricing & Competitor References | Zion Tech Group" description="Transparent market pricing references and competitor links for AI, security, analytics, and cloud services." canonicalUrl="https://ziontechgroup.com/market-pricing/" />
       <div className="min-h-screen pt-24 pb-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-5xl mx-auto space-y-8">
           <h1 className="text-4xl md:text-6xl font-bold bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">Market Pricing & References</h1>

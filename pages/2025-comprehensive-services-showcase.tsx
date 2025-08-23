@@ -50,7 +50,7 @@ const ComprehensiveServicesShowcase2025 = () => {
       <SEO 
         title="2025 Comprehensive Services Showcase - Zion Tech Group"
         description="Discover our comprehensive portfolio of innovative micro SAAS, IT infrastructure, and AI services. Transform your business with cutting-edge solutions."
-        keywords={["micro SAAS", "IT services", "AI services", "business intelligence", "automation", "cloud infrastructure"]}
+        keywords="micro SAAS, IT services, AI services, business intelligence, automation, cloud infrastructure"
       />
 
       {/* Hero Section */}
