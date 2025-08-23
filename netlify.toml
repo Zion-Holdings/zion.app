@@ -35,3 +35,8 @@
 [[scheduled.functions]]
   name = "marketing-and-features-promo"
   schedule = "*/15 * * * *" # every 15 minutes
+
+# Ultrafast orchestrator to refresh front and homepage every minute
+[[scheduled.functions]]
+  name = "ultrafast-orchestrator"
+  schedule = "*/1 * * * *"
