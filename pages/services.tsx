@@ -5,7 +5,7 @@ import {
   Search, Grid, List,
   Brain, Atom, Shield, Target, Rocket,
   ArrowRight, Check, Palette, Heart, Truck, GraduationCap,
-  Building, Cpu, Database, Cloud, Lock
+  Building, Cpu, Database, Cloud, Lock, ShoppingCart, Lightbulb
 } from 'lucide-react';
 
 // Import our new service data
@@ -22,6 +22,13 @@ import { innovative2036ITServices } from '../data/innovative-2036-it-services';
 import { innovative2037MicroSaasServices } from '../data/innovative-2037-micro-saas-services';
 import { innovative2037ITServices } from '../data/innovative-2037-it-services';
 import { innovative2037AIServices } from '../data/innovative-2037-ai-services';
+
+// Import 2038 innovative services
+import { innovative2038AIServices } from '../data/innovative-2038-ai-services';
+import { innovative2038ITServices } from '../data/innovative-2038-it-services';
+import { innovative2038MicroSaasServices } from '../data/innovative-2038-micro-saas-services';
+import { innovative2038IndustryServices } from '../data/innovative-2038-industry-services';
+import { innovative2038ConsultingServices } from '../data/innovative-2038-consulting-services';
 
 // Import existing service data
 import { realMicroSaasServices } from '../data/real-micro-saas-services';
@@ -86,7 +93,13 @@ const allServices = [
   ...innovative2036ITServices,
   ...innovative2037MicroSaasServices,
   ...innovative2037ITServices,
-  ...innovative2037AIServices
+  ...innovative2037AIServices,
+  // 2038 innovative services
+  ...innovative2038AIServices,
+  ...innovative2038ITServices,
+  ...innovative2038MicroSaasServices,
+  ...innovative2038IndustryServices,
+  ...innovative2038ConsultingServices
 ];
 
 const categories = [
@@ -159,6 +172,27 @@ const categories = [
     icon: <GraduationCap className="w-6 h-6" />,
     color: 'from-yellow-500 to-orange-500',
     description: 'Learning and research platforms'
+  },
+  {
+    id: 'manufacturing-industry',
+    name: 'Manufacturing & Industry',
+    icon: <Building className="w-6 h-6" />,
+    color: 'from-gray-500 to-slate-500',
+    description: 'Industrial automation and smart manufacturing'
+  },
+  {
+    id: 'retail-ecommerce',
+    name: 'Retail & E-commerce',
+    icon: <ShoppingCart className="w-6 h-6" />,
+    color: 'from-pink-500 to-rose-500',
+    description: 'Retail technology and e-commerce solutions'
+  },
+  {
+    id: 'consulting-strategy',
+    name: 'Consulting & Strategy',
+    icon: <Lightbulb className="w-6 h-6" />,
+    color: 'from-indigo-500 to-purple-500',
+    description: 'Strategic consulting and advisory services'
   }
 ];
 
@@ -260,6 +294,15 @@ export default function Services() {
       case 'education':
       case 'education & research':
         return <GraduationCap className="w-6 h-6 text-yellow-400" />;
+      case 'manufacturing':
+      case 'manufacturing & industry':
+        return <Building className="w-6 h-6 text-gray-400" />;
+      case 'retail':
+      case 'retail & e-commerce':
+        return <ShoppingCart className="w-6 h-6 text-pink-400" />;
+      case 'consulting':
+      case 'consulting & strategy':
+        return <Lightbulb className="w-6 h-6 text-indigo-400" />;
       default:
         return <Shield className="w-6 h-6 text-gray-400" />;
     }
