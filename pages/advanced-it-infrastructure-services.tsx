@@ -3,16 +3,16 @@ import Head from 'next/head';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { 
-  CheckCircle, ArrowRight, Star, TrendingUp, Phone, Zap, DollarSign, 
-  Shield, Mail, MapPin, Rocket, Brain, Sparkles, Atom, Dna, Users, 
-  Globe, Cpu, Target, Microscope, Lock, Cloud, BarChart3, Settings, 
-  Eye, Award, Clock, Heart, Lightbulb, Target as TargetIcon, 
-  Zap as ZapIcon, Shield as ShieldIcon, Globe as GlobeIcon,
-  Search, Code, TestTube, Server, Database, Network, Shield as SecurityIcon,
-  Wifi, Building, Cpu as CpuIcon
+  CheckCircle, ArrowRight, Star, TrendingUp, Phone, 
+  Shield, Mail, Brain, Sparkles, Atom, 
+  Cloud, 
+  Award, 
+  Shield as ShieldIcon, 
+  Server, Network, Shield as SecurityIcon,
+  Wifi, Building
 } from 'lucide-react';
 import Layout from '../components/layout/Layout';
-import { advancedITInfrastructureServices2025 } from '../data/2025-advanced-it-infrastructure-services';
+import { advancedITInfrastructureServices } from '../data/2025-advanced-it-infrastructure-services';
 
 const contactInfo = {
   mobile: '+1 302 464 0950',
@@ -32,7 +32,7 @@ const serviceCategories = [
   {
     title: 'Quantum Cloud Computing',
     description: 'Next-generation cloud infrastructure with quantum processing capabilities',
-    services: advancedITInfrastructureServices2025.filter(s => s.category === 'Quantum Cloud Computing'),
+    services: advancedITInfrastructureServices.filter(s => s.category === 'Quantum Cloud Computing'),
     icon: Cloud,
     color: 'from-indigo-500 to-purple-600',
     features: ['Quantum Processing', 'Hybrid Computing', 'AI Acceleration']
@@ -40,7 +40,7 @@ const serviceCategories = [
   {
     title: 'Edge Computing & IoT',
     description: 'Autonomous edge infrastructure with intelligent optimization',
-    services: advancedITInfrastructureServices2025.filter(s => s.category === 'Edge Computing & IoT'),
+    services: advancedITInfrastructureServices.filter(s => s.category === 'Edge Computing & IoT'),
     icon: Wifi,
     color: 'from-green-500 to-emerald-600',
     features: ['Edge Processing', 'IoT Orchestration', '5G Optimization']
@@ -48,7 +48,7 @@ const serviceCategories = [
   {
     title: 'Cybersecurity',
     description: 'Comprehensive security framework with continuous verification',
-    services: advancedITInfrastructureServices2025.filter(s => s.category === 'Cybersecurity'),
+    services: advancedITInfrastructureServices.filter(s => s.category === 'Cybersecurity'),
     icon: SecurityIcon,
     color: 'from-red-500 to-orange-600',
     features: ['Zero Trust', 'Threat Detection', 'Compliance Automation']
@@ -56,7 +56,7 @@ const serviceCategories = [
   {
     title: 'Data Center Infrastructure',
     description: 'Self-managing data center infrastructure with AI optimization',
-    services: advancedITInfrastructureServices2025.filter(s => s.category === 'Data Center Infrastructure'),
+    services: advancedITInfrastructureServices.filter(s => s.category === 'Data Center Infrastructure'),
     icon: Building,
     color: 'from-blue-500 to-cyan-600',
     features: ['AI Management', 'Predictive Maintenance', 'Cost Optimization']
@@ -64,7 +64,7 @@ const serviceCategories = [
   {
     title: 'Quantum Networking',
     description: 'Next-generation networking with quantum encryption and optimization',
-    services: advancedITInfrastructureServices2025.filter(s => s.category === 'Quantum Networking'),
+    services: advancedITInfrastructureServices.filter(s => s.category === 'Quantum Networking'),
     icon: Network,
     color: 'from-purple-500 to-pink-600',
     features: ['Quantum Encryption', 'Network Optimization', 'Security Monitoring']
@@ -287,8 +287,8 @@ export default function AdvancedITInfrastructureServices() {
                           <h4 className="text-xl font-semibold text-white mb-2">{service.name}</h4>
                           <p className="text-gray-300 text-sm mb-4">{service.tagline}</p>
                           <div className="flex items-center justify-between mb-4">
-                            <span className="text-2xl font-bold text-white">{service.price}</span>
-                            <span className="text-gray-400">{service.period}</span>
+                            <span className="text-2xl font-bold text-white">${service.pricing?.starter || 0}</span>
+                            <span className="text-gray-400">/month</span>
                           </div>
                           <p className="text-gray-300 text-sm mb-4">{service.description}</p>
                           <div className="space-y-2 mb-6">

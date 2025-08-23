@@ -1,5 +1,4 @@
 import React, { useState, useEffect, useCallback, useRef } from 'react';
-import type { FocusEvent, KeyboardEvent } from 'react';
 import { motion } from 'framer-motion';
 import { 
   Eye, 
@@ -115,7 +114,7 @@ const AccessibilityEnhancer: React.FC<AccessibilityEnhancerProps> = ({
   }, [applySettings]);
 
   // Focus management
-  const handleFocusChange = useCallback((e: FocusEvent) => {
+  const handleFocusChange = useCallback((e: Event) => {
     const target = e.target as HTMLElement;
     if (target) {
       setCurrentFocus(target);
@@ -124,7 +123,7 @@ const AccessibilityEnhancer: React.FC<AccessibilityEnhancerProps> = ({
   }, []);
 
   // Keyboard navigation enhancements
-  const handleKeyDown = useCallback((e: KeyboardEvent) => {
+  const handleKeyDown = useCallback((e: Event) => {
     // Tab navigation detected
   }, []);
 
