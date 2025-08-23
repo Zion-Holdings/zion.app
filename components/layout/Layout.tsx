@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import Head from 'next/head';
-import UltraFuturisticNavigation2045 from './UltraFuturisticNavigation2045';
-import UltraFuturisticFooter2045 from './UltraFuturisticFooter2045';
+import UltraFuturisticNavigation2040 from './UltraFuturisticNavigation2040';
+import UltraFuturisticFooter2040 from './UltraFuturisticFooter2040';
 import EnhancedSidebar2025 from './EnhancedSidebar2025';
-import UltraFuturisticBackground2045 from '../backgrounds/UltraFuturisticBackground2045';
 import TopContactBar from './TopContactBar';
+import UltraFuturisticBackground2045 from '../backgrounds/UltraFuturisticBackground2045';
 import EnhancedPerformanceMonitor from '../EnhancedPerformanceMonitor';
 import AccessibilityEnhancer from '../EnhancedAccessibilityEnhancer';
 import CookieConsentBanner from '../CookieConsentBanner';
@@ -212,7 +212,7 @@ export default function Layout({
           <TopContactBar />
           
           {/* Navigation */}
-          <UltraFuturisticNavigation2045 />
+          <UltraFuturisticNavigation2040 />
           
           {/* Sidebar and Main Content */}
           <div className="flex">
@@ -227,13 +227,13 @@ export default function Layout({
           </div>
           
           {/* Footer */}
-          <UltraFuturisticFooter2045 />
+          <UltraFuturisticFooter2040 />
         </div>
       </div>
 
       {/* Accessibility and Performance Tools */}
       <AccessibilityEnhancer />
-              <EnhancedPerformanceMonitor />
+      <EnhancedPerformanceMonitor />
       
       {/* Cookie Consent Banner */}
       <CookieConsentBanner />
