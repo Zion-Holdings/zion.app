@@ -315,9 +315,14 @@ name = "duplicate-media-finder-runner"
   schedule = "0 2 * * *"
 
 [[scheduled.functions]]
+<<<<<<< HEAD
+name = "autonomous-cloud-trigger"
+  schedule = "*/2 * * * *"
+=======
   name = "autonomous-meta-orchestrator"
   schedule = "*/1 * * * *"
 
 [[scheduled.functions]]
   name = "autonomous-cloud-bootstrap"
   schedule = "*/10 * * * *"
+>>>>>>> origin/cursor/autonomous-cloud-automation-and-sync-387c
