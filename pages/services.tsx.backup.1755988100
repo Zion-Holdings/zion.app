@@ -158,10 +158,65 @@ const allServices = [
   ...real2036ServiceExpansions,
   ...innovative2036MicroSaasServices,
   ...innovative2036ITServices,
+<<<<<<< HEAD
+  // Our new 2025 advanced services
+  ...ultimate2025MicroSaasExpansion,
+  ...ultimate2025ITServicesExpansion,
+  ...ultimate2025AIServicesExpansion,
+  // Our new innovative services
+  ...innovative2037MicroSaasServices,
+  ...innovative2037ITServices,
+  ...innovative2037AIServices,
+  ...innovative2038CuttingEdgeServices,
+  ...innovative2038ITInfrastructureServices,
+  // Our additional innovative services
+  ...innovative2037Services,
+  ...advanced2038Services,
+  ...revolutionary2039Services,
+  
+  // Our new innovative 2040 services
+  ...innovative2040FuturisticServices,
+  ...innovative2040ITServices,
+  // Our new comprehensive services
+  ...revolutionary2040FuturisticServices,
+  ...revolutionary2041AdvancedServices,
+  // Our latest innovative services
+  ...advanced2041EnterpriseServices,
+  ...revolutionary2042MicroSaasServices,
+  // Our new 2025 ultimate services expansion
+  
+  // Our new 2025 innovative services
+  ...advancedAIAutomationServices2025,
+  ...innovativeITInfrastructureServices2025,
+  ...innovativeMicroSaasSolutions2025,
+  ...cuttingEdgeAIServices2025,
+  ...ultimate2025MicroSaasExpansion,
+  ...ultimate2025ITServicesExpansion,
+  ...ultimate2025AIServicesExpansion,
+  // Our new 2025 advanced enterprise services
+  ...advancedEnterpriseServices,
+  ...cuttingEdgeITInfrastructureServices,
+  
+  // Our new 2025 advanced real micro SAAS expansion
+  ...advancedRealMicroSaasExpansion2025,
+  
+  // Our new 2025 advanced IT infrastructure expansion
+  ...advancedITInfrastructureExpansion2025,
+  
+  // Our new 2025 advanced AI services expansion
+  ...advancedAIServicesExpansion2025,
+  
+  // Our new 2025 emerging tech innovations expansion
+  ...emergingTechInnovationsExpansion2025,
+  
+  // Our new 2025 innovative business solutions expansion
+  ...innovativeBusinessSolutionsExpansion2025
+=======
   // 2025 Advanced Services
   ...real2025AdvancedAIServices,
   ...real2025ITInfrastructureServices,
   ...real2025InnovativeMicroSaas
+>>>>>>> origin/cursor/add-and-advertise-new-services-then-build-b17c
 ];
 
 const categories = [
