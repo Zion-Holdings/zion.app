@@ -68,13 +68,19 @@ const AccessibilityEnhancer: React.FC<AccessibilityEnhancerProps> = () => {
     root.style.fontSize = `${fontSize}px`;
   };
 
-  const increaseFontSize = () => {
-    setFontSize(prev => Math.min(prev + 2, 24));
-  };
+  // Focus management
+  const handleFocusChange = useCallback((e: Event) => {
+    const target = e.target as HTMLElement;
+    if (target) {
+      setCurrentFocus(target);
+      announceToScreenReader(`Focused on ${target.textContent || target.tagName.toLowerCase()}`);
+    }
+  }, []);
 
-  const decreaseFontSize = () => {
-    setFontSize(prev => Math.max(prev - 2, 12));
-  };
+  // Keyboard navigation enhancements
+  const handleKeyDown = useCallback((e: Event) => {
+    // Tab navigation detected
+  }, []);
 
   const resetFontSize = () => {
     setFontSize(16);

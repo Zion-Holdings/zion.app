@@ -81,6 +81,7 @@ module.exports = {
     'focus:ring-white/25',
     'focus:ring-black/25',
   ],
+  darkMode: 'class',
   theme: {
     extend: {
       animation: {

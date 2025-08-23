@@ -5,12 +5,7 @@ import {
   Menu, X, Search, ChevronDown, Zap, Globe, Lock, 
   Phone, ArrowRight, Star, Users, Bell, User
 } from 'lucide-react';
-import Link from 'next/link';
-import { useRouter } from 'next/router';
 import ThemeToggle from '../ThemeToggle';
-
-// Define Node type for DOM event handling
-type Node = HTMLElement | null;
 
 interface NavigationItem {
   label: string;
@@ -309,36 +304,10 @@ const navigationItems: NavigationItem[] = [
     category: 'resources',
     color: 'from-teal-500 to-cyan-500',
     children: [
-      {
-        name: 'Documentation',
-        href: '/docs',
-        description: 'Technical documentation',
-        icon: <FileText className="w-4 h-4" />
-      },
-      {
-        name: 'API Reference',
-        href: '/api',
-        description: 'API documentation',
-        icon: <Code className="w-4 h-4" />
-      },
-      {
-        name: 'Tutorials',
-        href: '/tutorials',
-        description: 'Step-by-step guides',
-        icon: <GraduationCap className="w-4 h-4" />
-      },
-      {
-        name: 'Case Studies',
-        href: '/case-studies',
-        description: 'Success stories',
-        icon: <Star className="w-4 h-4" />
-      },
-      {
-        name: 'Blog',
-        href: '/blog',
-        description: 'Latest insights and news',
-        icon: <BookOpen className="w-4 h-4" />
-      }
+      { name: 'Pricing Calculator', href: '/pricing-calculator', description: 'Interactive pricing tool', featured: true },
+      { name: 'Service Comparison', href: '/service-comparison', description: 'Compare services side by side', featured: true },
+      { name: 'Micro SAAS Platform', href: '/micro-saas-platform', description: 'Scalable SAAS solutions' },
+      { name: 'Subscription Management', href: '/subscription-management', description: 'Handle recurring billing' }
     ]
   },
   {
@@ -599,14 +568,10 @@ const UltraFuturisticNavigation2040: React.FC<UltraFuturisticNavigation2040Props
             ))}
           </div>
 
-          {/* Right side actions */}
-          <div className="hidden lg:flex lg:items-center lg:space-x-4">
-            {/* Search Button */}
-            <button
-              onClick={() => setIsSearchOpen(true)}
-              className="p-2 text-gray-400 hover:text-white transition-colors rounded-lg hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-cyan-300"
-              aria-label="Search"
-            >
+          {/* Right Side Actions */}
+          <div className="hidden lg:flex items-center space-x-4">
+            <ThemeToggle />
+            <button className="p-2 text-gray-400 hover:text-white transition-colors">
               <Search className="w-5 h-5" />
             </button>
 
@@ -718,12 +683,21 @@ const UltraFuturisticNavigation2040: React.FC<UltraFuturisticNavigation2040Props
                   )}
                 </div>
               ))}
-
-              {/* Mobile CTA */}
-              <div className="pt-4 border-t border-white/20">
-                <Link href="/get-started" className="block">
-                  <button className="w-full px-4 py-3 bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-medium rounded-lg hover:from-cyan-600 hover:to-blue-700 transition-all duration-300">
-                    Get Started
+              
+              <div className="pt-4 border-t border-cyan-500/20 space-y-3">
+                <Link href="/pricing-calculator">
+                  <button className="w-full px-6 py-3 border border-cyan-400 text-cyan-400 rounded-lg hover:bg-cyan-400 hover:text-black transition-all duration-200">
+                    Pricing Calculator
+                  </button>
+                </Link>
+                <Link href="/service-comparison">
+                  <button className="w-full px-6 py-3 border border-purple-400 text-purple-400 rounded-lg hover:bg-purple-400 hover:text-black transition-all duration-200">
+                    Compare Services
+                  </button>
+                </Link>
+                <Link href="/contact">
+                  <button className="w-full px-6 py-3 bg-gradient-to-r from-cyan-500 to-purple-600 text-white rounded-lg hover:from-cyan-600 hover:to-purple-700 transition-all duration-200">
+                    Contact Us
                   </button>
                 </Link>
               </div>
