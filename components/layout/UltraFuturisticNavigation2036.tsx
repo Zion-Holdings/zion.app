@@ -11,7 +11,7 @@ import {
   Code, Database, Network, Server, Monitor, Smartphone,
   Camera, Gamepad2, Palette, Music, Film, BookOpenCheck,
   Building, MessageCircle, Sparkles as SparklesIcon, Zap as ZapIcon,
-  Target as TargetIcon, Atom as AtomIcon, Brain as BrainIcon
+  Target as TargetIcon, Atom as AtomIcon, Brain as BrainIcon, Home
 } from 'lucide-react';
 
 interface NavigationItem {
@@ -45,6 +45,14 @@ function normalizeHref(href: string): string {
 }
 
 const navigationItems: NavigationItem[] = [
+  {
+    name: 'Home',
+    href: '/',
+    icon: <Home className="w-5 h-5" />,
+    description: 'Welcome to Zion Tech Group',
+    badge: 'Main',
+    category: 'main'
+  },
   {
     name: 'Services',
     href: '/services',
@@ -85,6 +93,18 @@ const navigationItems: NavigationItem[] = [
         icon: <Cpu className="w-4 h-4" />
       },
       { 
+        name: 'Cybersecurity', 
+        href: '/security', 
+        description: 'Advanced security solutions',
+        icon: <Shield className="w-4 h-4" />
+      },
+      { 
+        name: 'Cloud Solutions', 
+        href: '/cloud-platform', 
+        description: 'Cloud infrastructure & services',
+        icon: <Cloud className="w-4 h-4" />
+      },
+      { 
         name: 'Specialized Solutions', 
         href: '/solutions', 
         description: 'Industry-specific solutions',
@@ -119,6 +139,24 @@ const navigationItems: NavigationItem[] = [
         href: '/market-pricing', 
         description: 'Market price references',
         icon: <BarChart3 className="w-4 h-4" />
+      },
+      {
+        name: '2026 Services Showcase',
+        href: '/2026-services-showcase',
+        description: '2026 services overview',
+        icon: <Star className="w-4 h-4" />
+      },
+      {
+        name: '2027 Services Showcase',
+        href: '/2027-services-showcase',
+        description: '2027 services overview',
+        icon: <Star className="w-4 h-4" />
+      },
+      {
+        name: '2028 Services Showcase',
+        href: '/2028-services-showcase',
+        description: '2028 services overview',
+        icon: <Star className="w-4 h-4" />
       }
     ]
   },
@@ -152,6 +190,18 @@ const navigationItems: NavigationItem[] = [
         href: '/investors', 
         description: 'Investment information',
         icon: <DollarSign className="w-4 h-4" />
+      },
+      {
+        name: 'Careers',
+        href: '/careers',
+        description: 'Job opportunities',
+        icon: <Users className="w-4 h-4" />
+      },
+      {
+        name: 'News',
+        href: '/news',
+        description: 'Company updates',
+        icon: <FileText className="w-4 h-4" />
       }
     ]
   },
@@ -185,6 +235,104 @@ const navigationItems: NavigationItem[] = [
         href: '/support', 
         description: 'Technical support',
         icon: <HelpCircle className="w-4 h-4" />
+      },
+      {
+        name: 'Training',
+        href: '/training',
+        description: 'Training programs',
+        icon: <BookOpenCheck className="w-4 h-4" />
+      },
+      {
+        name: 'White Papers',
+        href: '/white-papers',
+        description: 'Research & insights',
+        icon: <FileText className="w-4 h-4" />
+      },
+      {
+        name: 'Webinars',
+        href: '/webinars',
+        description: 'Educational sessions',
+        icon: <Video className="w-4 h-4" />
+      }
+    ]
+  },
+  {
+    name: 'Solutions',
+    href: '/solutions',
+    icon: <Target className="w-5 h-5" />,
+    description: 'Industry solutions',
+    category: 'solutions',
+    children: [
+      {
+        name: 'Healthcare Solutions',
+        href: '/healthcare-solutions',
+        description: 'Healthcare technology',
+        icon: <Heart className="w-4 h-4" />
+      },
+      {
+        name: 'Financial Solutions',
+        href: '/financial-solutions',
+        description: 'Financial technology',
+        icon: <DollarSign className="w-4 h-4" />
+      },
+      {
+        name: 'Government Solutions',
+        href: '/government-technology-solutions',
+        description: 'Government technology',
+        icon: <Building className="w-4 h-4" />
+      },
+      {
+        name: 'Retail Solutions',
+        href: '/retail-technology-solutions',
+        description: 'Retail technology',
+        icon: <ShoppingCart className="w-4 h-4" />
+      },
+      {
+        name: 'Manufacturing Solutions',
+        href: '/manufacturing-ai-solutions',
+        description: 'Manufacturing technology',
+        icon: <Settings className="w-4 h-4" />
+      },
+      {
+        name: 'Education Solutions',
+        href: '/education-technology-solutions',
+        description: 'Education technology',
+        icon: <BookOpen className="w-4 h-4" />
+      }
+    ]
+  },
+  {
+    name: 'Get Started',
+    href: '/get-started',
+    icon: <Zap className="w-5 h-5" />,
+    description: 'Start your journey',
+    badge: 'CTA',
+    category: 'cta',
+    children: [
+      {
+        name: 'Get Started',
+        href: '/get-started',
+        description: 'Begin your journey',
+        icon: <Zap className="w-4 h-4" />,
+        featured: true
+      },
+      {
+        name: 'Request Quote',
+        href: '/quote',
+        description: 'Get a custom quote',
+        icon: <DollarSign className="w-4 h-4" />
+      },
+      {
+        name: 'Schedule Demo',
+        href: '/demo',
+        description: 'See our solutions',
+        icon: <Video className="w-4 h-4" />
+      },
+      {
+        name: 'Contact Sales',
+        href: '/contact',
+        description: 'Talk to our team',
+        icon: <MessageCircle className="w-4 h-4" />
       }
     ]
   }
