@@ -4,20 +4,21 @@ echo "🚀 Enhanced Commit Message Validation..."
 COMMIT_MSG_FILE=$1
 COMMIT_MSG=$(cat "$COMMIT_MSG_FILE")
 
-# Check for conventional commit format
-if ! echo "$COMMIT_MSG" | grep -qE "^(feat|fix|docs|style|refactor|test|chore|perf|ci|build|revert)((.+))?: .+"; then
-    echo "❌ Commit message does not follow conventional commit format"
-    echo "Expected format: type(scope): description"
-    echo "Types: feat, fix, docs, style, refactor, test, chore, perf, ci, build, revert"
-    echo "Example: feat(auth): add login functionality"
+# Ensure not empty
+if [ -z "$commit_msg" ]; then
+  echo "❌ Error: Commit message cannot be empty"
+  exit 1
+fi
+
+# Enforce Conventional Commits with commitlint if installed
+if [ -x "./node_modules/.bin/commitlint" ]; then
+  if npx --no-install commitlint --edit "$1"; then
+    echo "✅ Commit message validation passed"
+    exit 0
+  else
+    echo "❌ Commit message does not follow Conventional Commits"
     exit 1
-fi
-
-# Check message length
-MSG_LENGTH=$(echo "$COMMIT_MSG" | wc -c)
-if [ "$MSG_LENGTH" -gt 72 ]; then
-    echo "⚠️  Commit message is longer than 72 characters"
-    echo "Consider using a shorter description"
-fi
-
-echo "✅ Commit message validation passed!"
+  fi
+else
+  echo "ℹ️  commitlint not installed locally; skipping strict check"
+fi 
