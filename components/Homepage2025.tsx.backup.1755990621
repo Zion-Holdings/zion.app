@@ -4,8 +4,14 @@ import UltraFuturisticServiceCard2026 from './ui/UltraFuturisticServiceCard2026'
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { 
+<<<<<<< HEAD
+  ArrowRight, Star, 
+  Brain, Atom, Shield, Zap, TrendingUp, Globe,
+  Rocket, Palette, Factory, Database
+=======
   ArrowRight, Star,
   Brain, Atom, Shield, Zap
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-225e
 } from 'lucide-react';
 import { innovative2025MicroSaasBatch } from '../data/innovative-2025-micro-saas-batch';
 
@@ -269,6 +275,8 @@ const Homepage2025: React.FC = () => {
                 </motion.div>
               ))}
             </div>
+<<<<<<< HEAD
+=======
             
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -293,6 +301,7 @@ const Homepage2025: React.FC = () => {
                 </Link>
               </div>
             </motion.div>
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-225e
           </div>
         </section>
 

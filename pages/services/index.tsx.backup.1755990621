@@ -53,9 +53,18 @@ import { real2025ExtraServices } from '../../data/real-2025-extra-services';
 import { real2026Q4ExpansionsV2 } from '../../data/real-2026-q4-expansions-v2';
 import { real2036ServiceExpansions } from '../../data/real-2036-service-expansions';
 import { real2026Q4ExpansionsV3 } from '../../data/real-2026-q4-expansions-v3';
+<<<<<<< HEAD
+import { real2036MicroSaasAdditions } from '../../data/real-2036-micro-saas-additions';
+import { real2036ITServicesAdditions } from '../../data/real-2036-it-services-additions';
+import { real2036AIServicesAdditions } from '../../data/real-2036-ai-services-additions';
+import { real2037CuttingEdgeServices } from '../../data/real-2037-cutting-edge-services';
+import { real2037ITServices } from '../../data/real-2037-it-services-additions';
+import { real2037AIServices } from '../../data/real-2037-ai-services-additions';
+=======
 import { innovativeServices2036 } from '../../data/real-2036-innovative-services';
 import { itInfrastructureServices2036 } from '../../data/real-2036-it-infrastructure-services';
 import { specializedSolutions2036 } from '../../data/real-2036-specialized-solutions';
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-225e
 
 // Define a common service interface
 interface Service {
@@ -193,9 +202,16 @@ export default function ServicesIndexPage() {
       real2025ExtraServices as unknown[],
       real2026Q4ExpansionsV2 as unknown[],
       real2026Q4ExpansionsV3 as unknown[],
+<<<<<<< HEAD
+      real2036ServiceExpansions as unknown[],
+      real2036MicroSaasAdditions as unknown[],
+      real2036ITServicesAdditions as unknown[],
+      real2036AIServicesAdditions as unknown[]
+=======
       innovativeServices2036 as unknown[],
       itInfrastructureServices2036 as unknown[],
       specializedSolutions2036 as unknown[]
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-225e
     )
           .concat(innovative2025MicroSaasServices as unknown[])
     .concat(innovative2025ITEnterpriseBatch as unknown[]);
@@ -224,9 +240,20 @@ export default function ServicesIndexPage() {
     return acc;
   }, {} as Record<string, Service[]>);
 
+<<<<<<< HEAD
+  // Get featured services (marked as popular)
+  const featuredServices = validServices.filter((service: Service) => service.popular).slice(0, 6);
+
+  // Get latest services (assuming they have a launchDate)
+  const latestServices = validServices
+    .filter((service: Service) => service.launchDate)
+    .sort((a: Service, b: Service) => new Date(b.launchDate).getTime() - new Date(a.launchDate).getTime())
+    .slice(0, 6);
+=======
 
 
 
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-225e
 
   return (
     <Layout>

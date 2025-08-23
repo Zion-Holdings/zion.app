@@ -1,3 +1,10 @@
+<<<<<<< HEAD
+import React, { useState } from 'react';
+import { motion } from 'framer-motion';
+import { 
+  Phone, Mail, MapPin, Clock, MessageCircle, Send,
+  Building, Globe, ArrowRight, CheckCircle
+=======
 import React from 'react';
 import Layout from '../components/layout/Layout';
 import SEO from '../components/SEO';
@@ -5,9 +12,231 @@ import { motion } from 'framer-motion';
 import { 
   Phone, Mail, MapPin, Clock, Globe,
   Send, CheckCircle, ArrowRight
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-225e
 } from 'lucide-react';
 import Link from 'next/link';
 
+<<<<<<< HEAD
+export default function Contact() {
+  const [formData, setFormData] = useState({
+    firstName: '',
+    lastName: '',
+    email: '',
+    company: '',
+    phone: '',
+    service: '',
+    message: ''
+  });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
+
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value
+    });
+  };
+
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value
+    });
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    
+    // Simulate form submission
+    await new Promise(resolve => setTimeout(resolve, 2000));
+    
+    setIsSubmitting(false);
+    setIsSubmitted(true);
+    
+    // Reset form after 3 seconds
+    setTimeout(() => {
+      setIsSubmitted(false);
+      setFormData({
+        name: '',
+        email: '',
+        company: '',
+        phone: '',
+        service: '',
+        message: ''
+      });
+    }, 3000);
+  };
+
+  const contactInfo = [
+    {
+      icon: <Phone className="w-6 h-6" />,
+      title: 'Phone',
+      value: '+1 302 464 0950',
+      link: 'tel:+13024640950',
+      color: 'text-blue-400'
+    },
+    {
+      icon: <Mail className="w-6 h-6" />,
+      title: 'Email',
+      value: 'kleber@ziontechgroup.com',
+      link: 'mailto:kleber@ziontechgroup.com',
+      color: 'text-green-400'
+    },
+    {
+      icon: <MapPin className="w-6 h-6" />,
+      title: 'Address',
+      value: '364 E Main St STE 1008\nMiddletown DE 19709',
+      link: null,
+      color: 'text-purple-400'
+    },
+    {
+      icon: <Clock className="w-6 h-6" />,
+      title: 'Business Hours',
+      value: 'Monday - Friday: 9:00 AM - 6:00 PM EST\n24/7 Support Available',
+      link: null,
+      color: 'text-yellow-400'
+    }
+  ];
+
+  const services = [
+    'AI & Machine Learning',
+    'Quantum Computing',
+    'Space Technology',
+    'IT Solutions',
+    'Cybersecurity',
+    'Cloud Infrastructure',
+    'Custom Development',
+    'Consulting'
+  ];
+
+  const services = [
+    'AI & Machine Learning',
+    'Quantum Computing',
+    'Space Technology',
+    'IT Solutions',
+    'Cybersecurity',
+    'Process Automation',
+    'Custom Development',
+    'Consulting',
+    'Other'
+  ];
+
+  const officeLocations = [
+    {
+      city: 'Middletown, DE',
+      country: 'United States',
+      address: '364 E Main St STE 1008',
+      zip: '19709',
+      phone: '+1 302 464 0950',
+      email: 'kleber@ziontechgroup.com'
+    },
+    {
+      city: 'Global',
+      country: 'Remote & Cloud',
+      address: 'Worldwide Operations',
+      zip: 'Digital First',
+      phone: 'Contact Local Office',
+      email: 'info@ziontechgroup.com'
+    }
+  ];
+
+  return (
+    <Layout>
+      <Head>
+        <title>Contact Us - Zion Tech Group | Get In Touch</title>
+        <meta name="description" content="Contact Zion Tech Group for technology solutions, AI services, quantum computing, and IT consulting. Get in touch with our experts today." />
+        <meta name="keywords" content="contact, Zion Tech Group, technology consulting, AI services, quantum computing" />
+        <meta property="og:title" content="Contact Us - Zion Tech Group" />
+        <meta property="og:description" content="Get in touch with our technology experts for innovative solutions." />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://ziontechgroup.com/contact" />
+      </Head>
+
+      <div className="min-h-screen py-12 px-4 sm:px-6 lg:px-8">
+        {/* Hero Section */}
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          className="text-center mb-16"
+        >
+          <h1 className="text-4xl md:text-6xl font-bold bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500 bg-clip-text text-transparent mb-6">
+            Get In Touch
+          </h1>
+          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+            Ready to transform your business with cutting-edge technology? Let's discuss how we can help you achieve your goals.
+          </p>
+        </motion.div>
+
+        <div className="grid lg:grid-cols-2 gap-12 max-w-7xl mx-auto">
+          {/* Contact Information */}
+          <motion.div 
+            initial={{ opacity: 0, x: -20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+          >
+            <h2 className="text-3xl font-bold text-white mb-8">Contact Information</h2>
+            
+            <div className="space-y-6">
+              {contactInfo.map((info, index) => (
+                <div key={index} className="flex items-start space-x-4">
+                  <div className={`w-12 h-12 bg-gray-800/50 rounded-lg flex items-center justify-center ${info.color}`}>
+                    {info.icon}
+                  </div>
+                  <div className="flex-1">
+                    <h3 className="text-lg font-semibold text-white mb-1">{info.title}</h3>
+                    {info.link ? (
+                      <a 
+                        href={info.link}
+                        className="text-gray-300 hover:text-white transition-colors duration-300"
+                      >
+                        {info.value}
+                      </a>
+                    ) : (
+                      <p className="text-gray-300 whitespace-pre-line">{info.value}</p>
+                    )}
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            {/* Company Info */}
+            <div className="mt-12 p-6 bg-gradient-to-br from-gray-900/40 to-blue-900/20 rounded-2xl border border-gray-600/20">
+              <div className="flex items-center mb-4">
+                <Building className="w-6 h-6 text-blue-400 mr-3" />
+                <h3 className="text-xl font-bold text-white">About Zion Tech Group</h3>
+              </div>
+              <p className="text-gray-300 mb-4">
+                We're a leading technology solutions provider specializing in AI, quantum computing, 
+                space technology, and enterprise IT solutions.
+              </p>
+              <div className="flex items-center text-gray-300">
+                <Globe className="w-4 h-4 mr-2" />
+                <span>Global reach with local expertise</span>
+              </div>
+            </div>
+          </motion.div>
+
+          {/* Contact Form */}
+          <motion.div 
+            initial={{ opacity: 0, x: 20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.6, delay: 0.4 }}
+            className="bg-gradient-to-br from-gray-900/40 to-purple-900/20 p-8 rounded-2xl border border-gray-600/20"
+          >
+            <h2 className="text-3xl font-bold text-white mb-6">Send Us a Message</h2>
+            
+            {isSubmitted ? (
+              <motion.div 
+                initial={{ opacity: 0, scale: 0.9 }}
+                animate={{ opacity: 1, scale: 1 }}
+                className="text-center py-8"
+              >
+                <CheckCircle className="w-16 h-16 text-green-400 mx-auto mb-4" />
+                <h3 className="text-2xl font-bold text-white mb-2">Message Sent!</h3>
+                <p className="text-gray-300">Thank you for contacting us. We'll get back to you within 24 hours.</p>
+=======
 const ContactPage: React.FC = () => {
   const contactInfo = {
     mobile: '+1 302 464 0950',
@@ -290,6 +519,7 @@ const ContactPage: React.FC = () => {
                     <span>Message sent successfully! We'll get back to you soon.</span>
                   </div>
                 </div>
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-225e
               </motion.div>
             ) : (
               <form onSubmit={handleSubmit} className="space-y-6">
@@ -443,6 +673,13 @@ const ContactPage: React.FC = () => {
               </a>
             </div>
           </div>
+<<<<<<< HEAD
+        </motion.div>
+      </div>
+    </Layout>
+  );
+}
+=======
         </section>
 
         {/* Call to Action */}
@@ -487,3 +724,4 @@ const ContactPage: React.FC = () => {
 };
 
 export default ContactPage;
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-225e
