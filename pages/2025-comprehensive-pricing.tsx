@@ -93,7 +93,7 @@ const ComprehensivePricing: React.FC = () => {
         title="2025 Comprehensive Pricing Guide | Zion Tech Group"
         description="Explore our complete pricing guide for micro SAAS, IT services, and AI solutions. Find the perfect plan for your business needs with transparent pricing and feature comparisons."
         keywords={["pricing", "micro SAAS pricing", "AI services pricing", "cybersecurity pricing", "cloud services pricing", "enterprise solutions pricing"]}
-        image="https://ziontechgroup.com/og-image.jpg"
+        ogImage="https://ziontechgroup.com/og-image.jpg"
       />
 
       {/* Hero Section */}
