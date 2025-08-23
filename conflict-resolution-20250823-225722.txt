@@ -45,3 +45,6 @@
 2025-08-23 22:57:31 - Resolving conflicts in src/pages/admin/TokenManager.tsx for branch 4b9zsu-codex/surface-api-errors-across-the-app
 2025-08-23 22:57:31 - Resolving conflicts in src/utils/referralUtils.ts for branch 4b9zsu-codex/surface-api-errors-across-the-app
 2025-08-23 22:57:31 - Resolving conflicts in src/utils/tokenRewards.ts for branch 4b9zsu-codex/surface-api-errors-across-the-app
+2025-08-23 22:57:32 - Merge conflicts detected in 4cssl2-codex/fix-typescript-errors-in-components
+2025-08-23 22:57:32 - Resolving conflicts in src/types/offline-shims.d.ts for branch 4cssl2-codex/fix-typescript-errors-in-components
+2025-08-23 22:57:32 - Resolving conflicts in tsconfig.json for branch 4cssl2-codex/fix-typescript-errors-in-components
