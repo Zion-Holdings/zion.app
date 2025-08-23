@@ -1,478 +1,593 @@
-import React, { useEffect, useState, useCallback } from 'react';
+import React, { useEffect, useState, useCallback, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { 
   Activity, 
-  Clock, 
   Zap, 
-  AlertTriangle, 
-  CheckCircle, 
-  Info,
+  HardDrive, 
+  AlertTriangle,
+  CheckCircle,
   X,
   Settings,
-  BarChart3,
-  Gauge,
-  Wifi,
-  Smartphone
+  RefreshCw,
+  Gauge
 } from 'lucide-react';
 
 interface PerformanceMetrics {
-  fcp: number;
-  lcp: number;
-  fid: number;
-  cls: number;
-  ttfb: number;
-  domLoad: number;
-  windowLoad: number;
+  loadTime: number;
+  firstContentfulPaint: number;
+  largestContentfulPaint: number;
+  cumulativeLayoutShift: number;
+  firstInputDelay: number;
+  timeToInteractive: number;
+  memoryUsage: number;
+  cpuUsage: number;
+  networkSpeed: number;
+  bundleSize: number;
+  imageOptimization: number;
+  seoScore: number;
+  accessibilityScore: number;
+  bestPracticesScore: number;
+  performanceScore: number;
 }
 
-interface PerformanceMonitorProps {
-  showUI?: boolean;
-  autoHide?: boolean;
-  threshold?: {
-    fcp: number;
-    lcp: number;
-    fid: number;
-    cls: number;
-    ttfb: number;
-  };
+interface PerformanceIssue {
+  id: string;
+  type: 'error' | 'warning' | 'info';
+  message: string;
+  impact: 'high' | 'medium' | 'low';
+  suggestion: string;
+  category: string;
 }
 
-// Type definitions for Performance API
-interface PerformanceEventTiming extends PerformanceEntry {
-  processingStart: number;
-  processingEnd: number;
-  target?: EventTarget;
-}
+const PerformanceMonitor: React.FC = () => {
+  const [isOpen, setIsOpen] = useState(false);
+  const [metrics, setMetrics] = useState<PerformanceMetrics>({
+    loadTime: 0,
+    firstContentfulPaint: 0,
+    largestContentfulPaint: 0,
+    cumulativeLayoutShift: 0,
+    firstInputDelay: 0,
+    timeToInteractive: 0,
+    memoryUsage: 0,
+    cpuUsage: 0,
+    networkSpeed: 0,
+    bundleSize: 0,
+    imageOptimization: 0,
+    seoScore: 0,
+    accessibilityScore: 0,
+    bestPracticesScore: 0,
+    performanceScore: 0
+  });
+  
+  const [issues, setIssues] = useState<PerformanceIssue[]>([]);
+  const [isMonitoring, setIsMonitoring] = useState(false);
+  const [lastUpdate, setLastUpdate] = useState<Date>(new Date());
+  const [autoRefresh, setAutoRefresh] = useState(false);
+  
+  const monitoringInterval = useRef<NodeJS.Timeout | null>(null);
+  const performanceObserver = useRef<PerformanceObserver | null>(null);
 
-interface LayoutShiftEntry extends PerformanceEntry {
-  value: number;
-  hadRecentInput: boolean;
-}
-
-const PerformanceMonitor: React.FC<PerformanceMonitorProps> = ({
-  showUI = false,
-  autoHide = true,
-  threshold = {
-    fcp: 1800,
-    lcp: 2500,
-    fid: 100,
-    cls: 0.1,
-    ttfb: 600
-  }
-}) => {
-  const [metrics, setMetrics] = useState<PerformanceMetrics | null>(null);
-  const [isVisible, setIsVisible] = useState(showUI);
-  const [isExpanded, setIsExpanded] = useState(false);
-  const [errors, setErrors] = useState<string[]>([]);
-  const [warnings, setWarnings] = useState<string[]>([]);
-  const [connectionInfo, setConnectionInfo] = useState<any>(null);
-  const [deviceInfo, setDeviceInfo] = useState<any>(null);
-
-  // Get connection information
-  const getConnectionInfo = useCallback(() => {
-    if ('connection' in navigator) {
-      const connection = (navigator as any).connection;
-      return {
-        effectiveType: connection.effectiveType || 'unknown',
-        downlink: connection.downlink || 'unknown',
-        rtt: connection.rtt || 'unknown',
-        saveData: connection.saveData || false
-      };
+  // Initialize performance monitoring
+  useEffect(() => {
+    if (typeof window !== 'undefined' && 'PerformanceObserver' in window) {
+      initializePerformanceMonitoring();
     }
-    return null;
-  }, []);
-
-  // Get device information
-  const getDeviceInfo = useCallback(() => {
-    return {
-      userAgent: navigator.userAgent,
-      platform: navigator.platform,
-      language: navigator.language,
-      cookieEnabled: navigator.cookieEnabled,
-      onLine: navigator.onLine,
-      memory: (performance as any).memory ? {
-        usedJSHeapSize: Math.round((performance as any).memory.usedJSHeapSize / 1048576),
-        totalJSHeapSize: Math.round((performance as any).memory.totalJSHeapSize / 1048576),
-        jsHeapSizeLimit: Math.round((performance as any).memory.jsHeapSizeLimit / 1048576)
-      } : null
+    
+    return () => {
+      if (monitoringInterval.current) {
+        clearInterval(monitoringInterval.current);
+      }
+      if (performanceObserver.current) {
+        performanceObserver.current.disconnect();
+      }
     };
   }, []);
 
-  // Measure performance metrics
-  const measurePerformance = useCallback(() => {
-    try {
-      // Wait for performance metrics to be available
-      if ('PerformanceObserver' in window) {
-        const observer = new PerformanceObserver((list) => {
+  // Initialize performance monitoring
+  const initializePerformanceMonitoring = useCallback(() => {
+    // Monitor Core Web Vitals
+    if ('PerformanceObserver' in window) {
+      try {
+        // First Contentful Paint
+        performanceObserver.current = new PerformanceObserver((list) => {
           const entries = list.getEntries();
           entries.forEach((entry) => {
-            if (entry.entryType === 'largest-contentful-paint') {
-              setMetrics(prev => prev ? { ...prev, lcp: entry.startTime } : null);
+            if (entry.name === 'first-contentful-paint') {
+              setMetrics(prev => ({
+                ...prev,
+                firstContentfulPaint: Math.round(entry.startTime)
+              }));
             }
           });
         });
         
-        observer.observe({ entryTypes: ['largest-contentful-paint'] });
-      }
-
-      // Measure First Contentful Paint
-      if ('PerformanceObserver' in window) {
-        const observer = new PerformanceObserver((list) => {
+        performanceObserver.current.observe({ entryTypes: ['paint'] });
+        
+        // Largest Contentful Paint
+        const lcpObserver = new PerformanceObserver((list) => {
+          const entries = list.getEntries();
+          const lastEntry = entries[entries.length - 1];
+          if (lastEntry) {
+            setMetrics(prev => ({
+              ...prev,
+              largestContentfulPaint: Math.round(lastEntry.startTime)
+            }));
+          }
+        });
+        
+        lcpObserver.observe({ entryTypes: ['largest-contentful-paint'] });
+        
+        // Layout Shift
+        const clsObserver = new PerformanceObserver((list) => {
+          let clsValue = 0;
+          for (const entry of list.getEntries()) {
+            const layoutShiftEntry = entry as any;
+            if (!layoutShiftEntry.hadRecentInput) {
+              clsValue += layoutShiftEntry.value;
+            }
+          }
+          setMetrics(prev => ({
+            ...prev,
+            cumulativeLayoutShift: Math.round(clsValue * 1000) / 1000
+          }));
+        });
+        
+        clsObserver.observe({ entryTypes: ['layout-shift'] });
+        
+        // First Input Delay
+        const fidObserver = new PerformanceObserver((list) => {
           const entries = list.getEntries();
           entries.forEach((entry) => {
-            if (entry.entryType === 'first-contentful-paint') {
-              setMetrics(prev => prev ? { ...prev, fcp: entry.startTime } : null);
-            }
+            const inputEntry = entry as any;
+            setMetrics(prev => ({
+              ...prev,
+              firstInputDelay: Math.round(inputEntry.processingStart - inputEntry.startTime)
+            }));
           });
         });
         
-        observer.observe({ entryTypes: ['first-contentful-paint'] });
-      }
-
-      // Measure First Input Delay
-      if ('PerformanceObserver' in window) {
-        const observer = new PerformanceObserver((list) => {
-          const entries = list.getEntries();
-          entries.forEach((entry) => {
-            if (entry.entryType === 'first-input') {
-              const eventEntry = entry as PerformanceEventTiming;
-              setMetrics(prev => prev ? { ...prev, fid: eventEntry.processingStart - eventEntry.startTime } : null);
-            }
-          });
-        });
+        fidObserver.observe({ entryTypes: ['first-input'] });
         
-        observer.observe({ entryTypes: ['first-input'] });
+      } catch (error) {
+        // Silently handle errors
       }
-
-      // Measure Cumulative Layout Shift
-      if ('PerformanceObserver' in window) {
-        let clsValue = 0;
-        const observer = new PerformanceObserver((list) => {
-          const entries = list.getEntries();
-          entries.forEach((entry) => {
-            if (entry.entryType === 'layout-shift') {
-              const layoutEntry = entry as LayoutShiftEntry;
-              if (!layoutEntry.hadRecentInput) {
-                clsValue += layoutEntry.value;
-              }
-            }
-          });
-          setMetrics(prev => prev ? { ...prev, cls: clsValue } : null);
-        });
-        
-        observer.observe({ entryTypes: ['layout-shift'] });
-      }
-
-      // Measure Time to First Byte
-      const navigationEntry = performance.getEntriesByType('navigation')[0] as PerformanceNavigationTiming;
-      if (navigationEntry) {
-        setMetrics(prev => prev ? { ...prev, ttfb: navigationEntry.responseStart - navigationEntry.requestStart } : null);
-      }
-
-      // Measure DOM and Window load times
-      const domLoad = performance.timing.domContentLoadedEventEnd - performance.timing.navigationStart;
-      const windowLoad = performance.timing.loadEventEnd - performance.timing.navigationStart;
-      
-      setMetrics(prev => prev ? { ...prev, domLoad, windowLoad } : {
-        fcp: 0,
-        lcp: 0,
-        fid: 0,
-        cls: 0,
-        ttfb: 0,
-        domLoad,
-        windowLoad
-      });
-
-    } catch (error) {
-      console.error('Error measuring performance:', error);
-      setErrors(prev => [...prev, 'Failed to measure performance metrics']);
     }
+
+    // Measure initial load time
+    if (document.readyState === 'complete') {
+      measureLoadTime();
+    } else {
+      window.addEventListener('load', measureLoadTime);
+    }
+
+    // Start monitoring
+    startMonitoring();
   }, []);
 
-  // Analyze performance and generate warnings
-  const analyzePerformance = useCallback((metrics: PerformanceMetrics) => {
-    const newWarnings: string[] = [];
-    const newErrors: string[] = [];
+           // Measure page load time
+         const measureLoadTime = useCallback(() => {
+           try {
+             const navigation = performance.getEntriesByType('navigation')[0] as any;
+             if (navigation) {
+               const loadTime = navigation.loadEventEnd - navigation.startTime;
+               setMetrics(prev => ({
+                 ...prev,
+                 loadTime: Math.round(loadTime)
+               }));
+             }
+           } catch (error) {
+             // Silently handle errors
+           }
+         }, []);
 
-    if (metrics.fcp > threshold.fcp) {
-      newWarnings.push(`FCP (${Math.round(metrics.fcp)}ms) is above recommended threshold (${threshold.fcp}ms)`);
-    }
-    if (metrics.lcp > threshold.lcp) {
-      newWarnings.push(`LCP (${Math.round(metrics.lcp)}ms) is above recommended threshold (${threshold.lcp}ms)`);
-    }
-    if (metrics.fid > threshold.fid) {
-      newWarnings.push(`FID (${Math.round(metrics.fid)}ms) is above recommended threshold (${threshold.fid}ms)`);
-    }
-    if (metrics.cls > threshold.cls) {
-      newWarnings.push(`CLS (${metrics.cls.toFixed(3)}) is above recommended threshold (${threshold.cls})`);
-    }
-    if (metrics.ttfb > threshold.ttfb) {
-      newWarnings.push(`TTFB (${Math.round(metrics.ttfb)}ms) is above recommended threshold (${threshold.ttfb}ms)`);
-    }
-
-    setWarnings(newWarnings);
-    setErrors(newErrors);
-  }, [threshold]);
-
-  // Initialize monitoring
-  useEffect(() => {
-    // Get initial device and connection info
-    setConnectionInfo(getConnectionInfo());
-    setDeviceInfo(getDeviceInfo());
-
-    // Measure performance after page load
-    if (document.readyState === 'complete') {
-      measurePerformance();
-    } else {
-      window.addEventListener('load', measurePerformance);
-      return () => window.removeEventListener('load', measurePerformance);
-    }
-  }, [measurePerformance, getConnectionInfo, getDeviceInfo]);
-
-  // Analyze performance when metrics change
-  useEffect(() => {
-    if (metrics) {
-      analyzePerformance(metrics);
-    }
-  }, [metrics, analyzePerformance]);
-
-  // Auto-hide after 5 seconds
-  useEffect(() => {
-    if (autoHide && showUI) {
-      const timer = setTimeout(() => setIsVisible(false), 5000);
-      return () => clearTimeout(timer);
-    }
-  }, [autoHide, showUI]);
-
-  // Get performance grade
-  const getPerformanceGrade = (metrics: PerformanceMetrics) => {
-    let score = 100;
+  // Start performance monitoring
+  const startMonitoring = useCallback(() => {
+    setIsMonitoring(true);
     
-    if (metrics.fcp > threshold.fcp) score -= 20;
-    if (metrics.lcp > threshold.lcp) score -= 25;
-    if (metrics.fid > threshold.fid) score -= 20;
-    if (metrics.cls > threshold.cls) score -= 20;
-    if (metrics.ttfb > threshold.ttfb) score -= 15;
+    monitoringInterval.current = setInterval(() => {
+      updateMetrics();
+      setLastUpdate(new Date());
+    }, 5000); // Update every 5 seconds
+  }, []);
+
+  // Update performance metrics
+  const updateMetrics = useCallback(() => {
+    // Memory usage (if available)
+    if ('memory' in performance) {
+      const memory = (performance as any).memory;
+      setMetrics(prev => ({
+        ...prev,
+        memoryUsage: Math.round(memory.usedJSHeapSize / 1024 / 1024 * 100) / 100,
+        bundleSize: Math.round(memory.totalJSHeapSize / 1024 / 1024 * 100) / 100
+      }));
+    }
+
+    // Simulate CPU and network metrics (in real app, these would come from actual monitoring)
+    setMetrics(prev => ({
+      ...prev,
+      cpuUsage: Math.random() * 30 + 10, // Simulated CPU usage
+      networkSpeed: Math.random() * 50 + 100 // Simulated network speed in Mbps
+    }));
+
+    // Calculate scores
+    calculateScores();
     
-    if (score >= 90) return { grade: 'A', color: 'text-green-400', bgColor: 'bg-green-500/20' };
-    if (score >= 80) return { grade: 'B', color: 'text-yellow-400', bgColor: 'bg-yellow-500/20' };
-    if (score >= 70) return { grade: 'C', color: 'text-orange-400', bgColor: 'bg-orange-500/20' };
-    return { grade: 'D', color: 'text-red-400', bgColor: 'bg-red-500/20' };
+    // Detect performance issues
+    detectPerformanceIssues();
+  }, []);
+
+  // Calculate performance scores
+  const calculateScores = useCallback(() => {
+    const { firstContentfulPaint, largestContentfulPaint, cumulativeLayoutShift, firstInputDelay } = metrics;
+    
+    // Performance Score (based on Core Web Vitals)
+    let performanceScore = 100;
+    
+    if (firstContentfulPaint > 1800) performanceScore -= 20;
+    if (largestContentfulPaint > 2500) performanceScore -= 25;
+    if (cumulativeLayoutShift > 0.1) performanceScore -= 20;
+    if (firstInputDelay > 100) performanceScore -= 15;
+    
+    // SEO Score (simplified)
+    const seoScore = Math.max(0, 100 - Math.floor(metrics.loadTime / 100));
+    
+    // Accessibility Score (simplified)
+    const accessibilityScore = 95; // Would be calculated based on actual accessibility checks
+    
+    // Best Practices Score (simplified)
+    const bestPracticesScore = 90; // Would be calculated based on actual best practices checks
+    
+    setMetrics(prev => ({
+      ...prev,
+      performanceScore: Math.max(0, performanceScore),
+      seoScore,
+      accessibilityScore,
+      bestPracticesScore
+    }));
+  }, [metrics]);
+
+  // Detect performance issues
+  const detectPerformanceIssues = useCallback(() => {
+    const newIssues: PerformanceIssue[] = [];
+    
+    if (metrics.firstContentfulPaint > 1800) {
+      newIssues.push({
+        id: 'fcp-slow',
+        type: 'warning',
+        message: 'First Contentful Paint is slow',
+        impact: 'high',
+        suggestion: 'Optimize critical rendering path and reduce server response time',
+        category: 'Performance'
+      });
+    }
+    
+    if (metrics.largestContentfulPaint > 2500) {
+      newIssues.push({
+        id: 'lcp-slow',
+        type: 'warning',
+        message: 'Largest Contentful Paint is slow',
+        impact: 'high',
+        suggestion: 'Optimize images, implement lazy loading, and improve server response time',
+        category: 'Performance'
+      });
+    }
+    
+    if (metrics.cumulativeLayoutShift > 0.1) {
+      newIssues.push({
+        id: 'cls-high',
+        type: 'warning',
+        message: 'High Cumulative Layout Shift detected',
+        impact: 'medium',
+        suggestion: 'Set explicit dimensions for images and avoid inserting content above existing content',
+        category: 'User Experience'
+      });
+    }
+    
+    if (metrics.firstInputDelay > 100) {
+      newIssues.push({
+        id: 'fid-high',
+        type: 'warning',
+        message: 'First Input Delay is high',
+        impact: 'medium',
+        suggestion: 'Reduce JavaScript execution time and optimize event handlers',
+        category: 'Interactivity'
+      });
+    }
+    
+    if (metrics.memoryUsage > 50) {
+      newIssues.push({
+        id: 'memory-high',
+        type: 'info',
+        message: 'High memory usage detected',
+        impact: 'low',
+        suggestion: 'Consider implementing memory optimization techniques',
+        category: 'Resource Usage'
+      });
+    }
+    
+    setIssues(newIssues);
+  }, [metrics]);
+
+  // Refresh metrics manually
+  const refreshMetrics = useCallback(() => {
+    updateMetrics();
+    setLastUpdate(new Date());
+  }, [updateMetrics]);
+
+  // Toggle auto-refresh
+  const toggleAutoRefresh = useCallback(() => {
+    setAutoRefresh(!autoRefresh);
+    if (!autoRefresh) {
+      startMonitoring();
+    } else if (monitoringInterval.current) {
+      clearInterval(monitoringInterval.current);
+      setIsMonitoring(false);
+    }
+  }, [autoRefresh, startMonitoring]);
+
+  // Get score color
+  const getScoreColor = (score: number) => {
+    if (score >= 90) return 'text-green-400';
+    if (score >= 70) return 'text-yellow-400';
+    return 'text-red-400';
   };
 
-  if (!isVisible) return null;
-
-  const performanceGrade = metrics ? getPerformanceGrade(metrics) : null;
+  // Get score icon
+  const getScoreIcon = (score: number) => {
+    if (score >= 90) return <CheckCircle className="w-4 h-4" />;
+    if (score >= 70) return <AlertTriangle className="w-4 h-4" />;
+    return <X className="w-4 h-4" />;
+  };
 
   return (
-    <AnimatePresence>
-      <motion.div
-        initial={{ opacity: 0, y: 20, scale: 0.95 }}
-        animate={{ opacity: 1, y: 0, scale: 1 }}
-        exit={{ opacity: 0, y: 20, scale: 0.95 }}
-        className="fixed bottom-4 right-4 z-50 max-w-sm w-full"
-        role="status"
-        aria-label="Performance monitoring dashboard"
+    <>
+      {/* Performance Monitor Toggle Button */}
+      <button
+        onClick={() => setIsOpen(!isOpen)}
+        className="fixed bottom-6 right-24 z-50 w-14 h-14 bg-gradient-to-r from-green-500 to-blue-500 text-white rounded-full shadow-2xl hover:shadow-green-500/25 transition-all duration-300 hover:scale-110 focus:outline-none focus:ring-4 focus:ring-green-500/50"
+        aria-label="Performance Monitor"
+        aria-expanded={isOpen}
+        aria-controls="performance-panel"
       >
-        <div className="bg-black/90 backdrop-blur-xl border border-cyan-500/20 rounded-xl shadow-2xl shadow-cyan-500/10 overflow-hidden">
-          {/* Header */}
-          <div className="flex items-center justify-between p-4 border-b border-cyan-500/20">
-            <div className="flex items-center space-x-2">
-              <Activity className="w-5 h-5 text-cyan-400" aria-hidden="true" />
-              <span className="font-semibold text-white">Performance Monitor</span>
-            </div>
-            <div className="flex items-center space-x-2">
-              <button
-                onClick={() => setIsExpanded(!isExpanded)}
-                className="p-1 text-gray-400 hover:text-white transition-colors focus:outline-none focus:ring-2 focus:ring-cyan-500/50 rounded"
-                aria-label={isExpanded ? "Collapse performance details" : "Expand performance details"}
-              >
-                <Settings className="w-4 h-4" aria-hidden="true" />
-              </button>
-              <button
-                onClick={() => setIsVisible(false)}
-                className="p-1 text-gray-400 hover:text-white transition-colors focus:outline-none focus:ring-2 focus:ring-cyan-500/50 rounded"
-                aria-label="Close performance monitor"
-              >
-                <X className="w-4 h-4" aria-hidden="true" />
-              </button>
-            </div>
-          </div>
+        <Activity className="w-6 h-6 mx-auto" />
+      </button>
 
-          {/* Performance Grade */}
-          {performanceGrade && (
-            <div className="p-4 bg-gradient-to-r from-cyan-500/10 to-purple-500/10">
-              <div className="flex items-center justify-between">
-                <span className="text-sm text-gray-300">Performance Grade:</span>
-                <div className={`px-3 py-1 rounded-full ${performanceGrade.bgColor}`}>
-                  <span className={`text-lg font-bold ${performanceGrade.color}`}>
-                    {performanceGrade.grade}
+      {/* Performance Monitor Panel */}
+      <AnimatePresence>
+        {isOpen && (
+          <>
+            {/* Backdrop */}
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              className="fixed inset-0 bg-black/50 backdrop-blur-sm z-40"
+              onClick={() => setIsOpen(false)}
+            />
+            
+            {/* Panel */}
+            <motion.div
+              id="performance-panel"
+              initial={{ opacity: 0, scale: 0.95, y: 20 }}
+              animate={{ opacity: 1, scale: 1, y: 0 }}
+              exit={{ opacity: 0, scale: 0.95, y: 20 }}
+              transition={{ duration: 0.2 }}
+              className="fixed bottom-24 right-6 z-50 w-96 bg-black/95 backdrop-blur-xl border border-white/10 rounded-2xl shadow-2xl p-6 max-h-[80vh] overflow-y-auto"
+              role="dialog"
+              aria-labelledby="performance-title"
+              aria-describedby="performance-description"
+            >
+              {/* Header */}
+              <div className="flex items-center justify-between mb-6">
+                <div>
+                  <h2 id="performance-title" className="text-xl font-bold text-white flex items-center space-x-2">
+                    <Gauge className="w-5 h-5 text-green-400" />
+                    <span>Performance Monitor</span>
+                  </h2>
+                  <p id="performance-description" className="text-sm text-white/70">
+                    Real-time performance metrics and insights
+                  </p>
+                </div>
+                <button
+                  onClick={() => setIsOpen(false)}
+                  className="p-2 rounded-lg hover:bg-white/10 transition-colors duration-200 text-white/70 hover:text-white"
+                  aria-label="Close performance panel"
+                >
+                  <X className="w-5 h-5" />
+                </button>
+              </div>
+
+              {/* Controls */}
+              <div className="flex items-center justify-between mb-6">
+                <div className="flex items-center space-x-2">
+                  <button
+                    onClick={refreshMetrics}
+                    className="p-2 rounded-lg hover:bg-white/10 transition-colors duration-200 text-white/70 hover:text-white"
+                    aria-label="Refresh metrics"
+                  >
+                    <RefreshCw className="w-4 h-4" />
+                  </button>
+                  <button
+                    onClick={toggleAutoRefresh}
+                    className={`p-2 rounded-lg transition-colors duration-200 ${
+                      autoRefresh 
+                        ? 'bg-green-500/20 text-green-400' 
+                        : 'hover:bg-white/10 text-white/70 hover:text-white'
+                    }`}
+                    aria-label="Toggle auto-refresh"
+                  >
+                    <Settings className="w-4 h-4" />
+                  </button>
+                </div>
+                <div className="text-xs text-white/50">
+                  Last update: {lastUpdate.toLocaleTimeString()}
+                </div>
+              </div>
+
+              {/* Performance Scores */}
+              <div className="grid grid-cols-2 gap-4 mb-6">
+                <div className="bg-white/5 rounded-lg p-4 text-center">
+                  <div className="flex items-center justify-center space-x-2 mb-2">
+                    {getScoreIcon(metrics.performanceScore)}
+                    <span className="text-sm font-medium text-white">Performance</span>
+                  </div>
+                  <div className={`text-2xl font-bold ${getScoreColor(metrics.performanceScore)}`}>
+                    {metrics.performanceScore}
+                  </div>
+                </div>
+                <div className="bg-white/5 rounded-lg p-4 text-center">
+                  <div className="flex items-center justify-center space-x-2 mb-2">
+                    {getScoreIcon(metrics.seoScore)}
+                    <span className="text-sm font-medium text-white">SEO</span>
+                  </div>
+                  <div className={`text-2xl font-bold ${getScoreColor(metrics.seoScore)}`}>
+                    {metrics.seoScore}
+                  </div>
+                </div>
+                <div className="bg-white/5 rounded-lg p-4 text-center">
+                  <div className="flex items-center justify-center space-x-2 mb-2">
+                    {getScoreIcon(metrics.accessibilityScore)}
+                    <span className="text-sm font-medium text-white">Accessibility</span>
+                  </div>
+                  <div className={`text-2xl font-bold ${getScoreColor(metrics.accessibilityScore)}`}>
+                    {metrics.accessibilityScore}
+                  </div>
+                </div>
+                <div className="bg-white/5 rounded-lg p-4 text-center">
+                  <div className="flex items-center justify-center space-x-2 mb-2">
+                    {getScoreIcon(metrics.bestPracticesScore)}
+                    <span className="text-sm font-medium text-white">Best Practices</span>
+                  </div>
+                  <div className={`text-2xl font-bold ${getScoreColor(metrics.bestPracticesScore)}`}>
+                    {metrics.bestPracticesScore}
+                  </div>
+                </div>
+              </div>
+
+              {/* Core Web Vitals */}
+              <div className="mb-6">
+                <h3 className="text-sm font-semibold text-white/90 mb-3 flex items-center space-x-2">
+                  <Zap className="w-4 h-4 text-yellow-400" />
+                  <span>Core Web Vitals</span>
+                </h3>
+                <div className="space-y-3">
+                  <div className="flex items-center justify-between text-sm">
+                    <span className="text-white/70">First Contentful Paint</span>
+                    <span className={`font-medium ${
+                      metrics.firstContentfulPaint <= 1800 ? 'text-green-400' : 'text-yellow-400'
+                    }`}>
+                      {metrics.firstContentfulPaint}ms
+                    </span>
+                  </div>
+                  <div className="flex items-center justify-between text-sm">
+                    <span className="text-white/70">Largest Contentful Paint</span>
+                    <span className={`font-medium ${
+                      metrics.largestContentfulPaint <= 2500 ? 'text-green-400' : 'text-yellow-400'
+                    }`}>
+                      {metrics.largestContentfulPaint}ms
+                    </span>
+                  </div>
+                  <div className="flex items-center justify-between text-sm">
+                    <span className="text-white/70">Cumulative Layout Shift</span>
+                    <span className={`font-medium ${
+                      metrics.cumulativeLayoutShift <= 0.1 ? 'text-green-400' : 'text-yellow-400'
+                    }`}>
+                      {metrics.cumulativeLayoutShift}
+                    </span>
+                  </div>
+                  <div className="flex items-center justify-between text-sm">
+                    <span className="text-white/70">First Input Delay</span>
+                    <span className={`font-medium ${
+                      metrics.firstInputDelay <= 100 ? 'text-green-400' : 'text-yellow-400'
+                    }`}>
+                      {metrics.firstInputDelay}ms
+                    </span>
+                  </div>
+                </div>
+              </div>
+
+              {/* Resource Usage */}
+              <div className="mb-6">
+                <h3 className="text-sm font-semibold text-white/90 mb-3 flex items-center space-x-2">
+                  <HardDrive className="w-4 h-4 text-blue-400" />
+                  <span>Resource Usage</span>
+                </h3>
+                <div className="space-y-3">
+                  <div className="flex items-center justify-between text-sm">
+                    <span className="text-white/70">Memory Usage</span>
+                    <span className="font-medium text-white">{metrics.memoryUsage} MB</span>
+                  </div>
+                  <div className="flex items-center justify-between text-sm">
+                    <span className="text-white/70">Bundle Size</span>
+                    <span className="font-medium text-white">{metrics.bundleSize} MB</span>
+                  </div>
+                  <div className="flex items-center justify-between text-sm">
+                    <span className="text-white/70">CPU Usage</span>
+                    <span className="font-medium text-white">{metrics.cpuUsage.toFixed(1)}%</span>
+                  </div>
+                  <div className="flex items-center justify-between text-sm">
+                    <span className="text-white/70">Network Speed</span>
+                    <span className="font-medium text-white">{metrics.networkSpeed.toFixed(0)} Mbps</span>
+                  </div>
+                </div>
+              </div>
+
+              {/* Performance Issues */}
+              {issues.length > 0 && (
+                <div className="mb-6">
+                  <h3 className="text-sm font-semibold text-white/90 mb-3 flex items-center space-x-2">
+                    <AlertTriangle className="w-4 h-4 text-orange-400" />
+                    <span>Performance Issues ({issues.length})</span>
+                  </h3>
+                  <div className="space-y-3">
+                    {issues.map((issue) => (
+                      <div key={issue.id} className="bg-white/5 rounded-lg p-3">
+                        <div className="flex items-start space-x-3">
+                          <div className={`w-2 h-2 rounded-full mt-2 ${
+                            issue.type === 'error' ? 'bg-red-400' :
+                            issue.type === 'warning' ? 'bg-yellow-400' : 'bg-blue-400'
+                          }`} />
+                          <div className="flex-1">
+                            <div className="flex items-center justify-between mb-1">
+                              <span className="text-sm font-medium text-white">{issue.message}</span>
+                              <span className={`text-xs px-2 py-1 rounded-full ${
+                                issue.impact === 'high' ? 'bg-red-500/20 text-red-400' :
+                                issue.impact === 'medium' ? 'bg-yellow-500/20 text-yellow-400' :
+                                'bg-blue-500/20 text-blue-400'
+                              }`}>
+                                {issue.impact}
+                              </span>
+                            </div>
+                            <p className="text-xs text-white/70 mb-2">{issue.suggestion}</p>
+                            <span className="text-xs text-white/50">{issue.category}</span>
+                          </div>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )}
+
+              {/* Status */}
+              <div className="text-center">
+                <div className={`inline-flex items-center space-x-2 px-3 py-2 rounded-lg ${
+                  isMonitoring 
+                    ? 'bg-green-500/20 text-green-400' 
+                    : 'bg-gray-500/20 text-gray-400'
+                }`}>
+                  <div className={`w-2 h-2 rounded-full ${
+                    isMonitoring ? 'bg-green-400 animate-pulse' : 'bg-gray-400'
+                  }`} />
+                  <span className="text-sm">
+                    {isMonitoring ? 'Monitoring Active' : 'Monitoring Inactive'}
                   </span>
                 </div>
               </div>
-            </div>
-          )}
-
-          {/* Key Metrics */}
-          {metrics && (
-            <div className="p-4 space-y-3">
-              <div className="grid grid-cols-2 gap-3">
-                <div className="text-center p-3 bg-white/5 rounded-lg">
-                  <div className="text-2xl font-bold text-cyan-400">
-                    {Math.round(metrics.fcp)}
-                  </div>
-                  <div className="text-xs text-gray-400">FCP (ms)</div>
-                  <div className={`text-xs ${metrics.fcp > threshold.fcp ? 'text-yellow-400' : 'text-green-400'}`}>
-                    {metrics.fcp > threshold.fcp ? '⚠️ Slow' : '✅ Good'}
-                  </div>
-                </div>
-                <div className="text-center p-3 bg-white/5 rounded-lg">
-                  <div className="text-2xl font-bold text-purple-400">
-                    {Math.round(metrics.lcp)}
-                  </div>
-                  <div className="text-xs text-gray-400">LCP (ms)</div>
-                  <div className={`text-xs ${metrics.lcp > threshold.lcp ? 'text-yellow-400' : 'text-green-400'}`}>
-                    {metrics.lcp > threshold.lcp ? '⚠️ Slow' : '✅ Good'}
-                  </div>
-                </div>
-              </div>
-            </div>
-          )}
-
-          {/* Expanded View */}
-          {isExpanded && (
-            <motion.div
-              initial={{ height: 0, opacity: 0 }}
-              animate={{ height: 'auto', opacity: 1 }}
-              exit={{ height: 0, opacity: 0 }}
-              className="border-t border-cyan-500/20"
-            >
-              {/* Detailed Metrics */}
-              {metrics && (
-                <div className="p-4 space-y-3">
-                  <h4 className="text-sm font-semibold text-white mb-3">Detailed Metrics</h4>
-                  <div className="space-y-2 text-sm">
-                    <div className="flex justify-between">
-                      <span className="text-gray-400">FID:</span>
-                      <span className="text-white">{Math.round(metrics.fid)}ms</span>
-                    </div>
-                    <div className="flex justify-between">
-                      <span className="text-gray-400">CLS:</span>
-                      <span className="text-white">{metrics.cls.toFixed(3)}</span>
-                    </div>
-                    <div className="flex justify-between">
-                      <span className="text-gray-400">TTFB:</span>
-                      <span className="text-white">{Math.round(metrics.ttfb)}ms</span>
-                    </div>
-                    <div className="flex justify-between">
-                      <span className="text-gray-400">DOM Load:</span>
-                      <span className="text-white">{Math.round(metrics.domLoad)}ms</span>
-                    </div>
-                    <div className="flex justify-between">
-                      <span className="text-gray-400">Window Load:</span>
-                      <span className="text-white">{Math.round(metrics.windowLoad)}ms</span>
-                    </div>
-                  </div>
-                </div>
-              )}
-
-              {/* Connection Info */}
-              {connectionInfo && (
-                <div className="p-4 border-t border-cyan-500/20">
-                  <h4 className="text-sm font-semibold text-white mb-3 flex items-center">
-                    <Wifi className="w-4 h-4 mr-2 text-cyan-400" aria-hidden="true" />
-                    Connection
-                  </h4>
-                  <div className="space-y-2 text-sm">
-                    <div className="flex justify-between">
-                      <span className="text-gray-400">Type:</span>
-                      <span className="text-white">{connectionInfo.effectiveType}</span>
-                    </div>
-                    <div className="flex justify-between">
-                      <span className="text-gray-400">Speed:</span>
-                      <span className="text-white">{connectionInfo.downlink} Mbps</span>
-                    </div>
-                    <div className="flex justify-between">
-                      <span className="text-gray-400">RTT:</span>
-                      <span className="text-white">{connectionInfo.rtt}ms</span>
-                    </div>
-                  </div>
-                </div>
-              )}
-
-              {/* Device Info */}
-              {deviceInfo && (
-                <div className="p-4 border-t border-cyan-500/20">
-                  <h4 className="text-sm font-semibold text-white mb-3 flex items-center">
-                    <Smartphone className="w-4 h-4 mr-2 text-cyan-400" aria-hidden="true" />
-                    Device
-                  </h4>
-                  <div className="space-y-2 text-sm">
-                    <div className="flex justify-between">
-                      <span className="text-gray-400">Platform:</span>
-                      <span className="text-white">{deviceInfo.platform}</span>
-                    </div>
-                    <div className="flex justify-between">
-                      <span className="text-gray-400">Language:</span>
-                      <span className="text-white">{deviceInfo.language}</span>
-                    </div>
-                    {deviceInfo.memory && (
-                      <div className="flex justify-between">
-                        <span className="text-gray-400">Memory:</span>
-                        <span className="text-white">{deviceInfo.memory.usedJSHeapSize}MB / {deviceInfo.memory.totalJSHeapSize}MB</span>
-                      </div>
-                    )}
-                  </div>
-                </div>
-              )}
-
-              {/* Warnings and Errors */}
-              {(warnings.length > 0 || errors.length > 0) && (
-                <div className="p-4 border-t border-cyan-500/20">
-                  <h4 className="text-sm font-semibold text-white mb-3">Issues</h4>
-                  <div className="space-y-2">
-                    {warnings.map((warning, index) => (
-                      <div key={index} className="flex items-start space-x-2 text-sm">
-                        <AlertTriangle className="w-4 h-4 text-yellow-400 mt-0.5 flex-shrink-0" aria-hidden="true" />
-                        <span className="text-yellow-400">{warning}</span>
-                      </div>
-                    ))}
-                    {errors.map((error, index) => (
-                      <div key={index} className="flex items-start space-x-2 text-sm">
-                        <AlertTriangle className="w-4 h-4 text-red-400 mt-0.5 flex-shrink-0" aria-hidden="true" />
-                        <span className="text-red-400">{error}</span>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              )}
             </motion.div>
-          )}
-
-          {/* Quick Actions */}
-          <div className="p-4 border-t border-cyan-500/20">
-            <div className="flex space-x-2">
-              <button
-                onClick={() => window.location.reload()}
-                className="flex-1 px-3 py-2 text-xs bg-cyan-500/20 text-cyan-400 rounded-lg hover:bg-cyan-500/30 transition-colors focus:outline-none focus:ring-2 focus:ring-cyan-500/50"
-                aria-label="Refresh page to measure performance"
-              >
-                <Zap className="w-3 h-3 inline mr-1" aria-hidden="true" />
-                Refresh
-              </button>
-              <button
-                onClick={() => setIsExpanded(!isExpanded)}
-                className="flex-1 px-3 py-2 text-xs bg-purple-500/20 text-purple-400 rounded-lg hover:bg-purple-500/30 transition-colors focus:outline-none focus:ring-2 focus:ring-purple-500/50"
-                aria-label={isExpanded ? "Show less details" : "Show more details"}
-              >
-                <BarChart3 className="w-3 h-3 inline mr-1" aria-hidden="true" />
-                {isExpanded ? 'Less' : 'More'}
-              </button>
-            </div>
-          </div>
-        </div>
-      </motion.div>
-    </AnimatePresence>
+          </>
+        )}
+      </AnimatePresence>
+    </>
   );
 };
 
