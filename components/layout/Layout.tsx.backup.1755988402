@@ -1,3 +1,11 @@
+<<<<<<< HEAD
+import React, { ReactNode } from 'react';
+import UltraAdvancedFuturisticNavigation2025 from './UltraAdvancedFuturisticNavigation2025';
+import UltraAdvancedFuturisticFooter2025 from './UltraAdvancedFuturisticFooter2025';
+import AccessibilityEnhancer from '../AccessibilityEnhancer';
+import PerformanceMonitor from '../PerformanceMonitor';
+import FloatingActionMenu from '../FloatingActionMenu';
+=======
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import UltraFuturisticNavigation2036 from './UltraFuturisticNavigation2036';
@@ -5,6 +13,7 @@ import UltraFuturisticFooter2036 from './UltraFuturisticFooter2036';
 import EnhancedSidebar2025 from './EnhancedSidebar2025';
 import UltraAdvancedFuturisticBackground2036 from '../backgrounds/UltraAdvancedFuturisticBackground2036';
 import TopContactBar from './TopContactBar';
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-524b
 
 interface LayoutProps {
 	children: React.ReactNode;
@@ -72,6 +81,17 @@ export default function Layout({ children }: LayoutProps) {
   }
 
   return (
+<<<<<<< HEAD
+    <div className="min-h-screen bg-gray-900 text-white">
+      <UltraAdvancedFuturisticNavigation2025 />
+      <main className="relative z-10">
+        {children}
+      </main>
+      <UltraAdvancedFuturisticFooter2025 />
+      <AccessibilityEnhancer />
+      <PerformanceMonitor />
+      <FloatingActionMenu />
+=======
     <div className="min-h-screen bg-black text-white relative overflow-x-hidden">
       {/* Skip to content link for accessibility */}
       <a href="#main" className="skip-link">Skip to main content</a>
@@ -105,6 +125,7 @@ export default function Layout({ children }: LayoutProps) {
         {/* Footer */}
         <UltraFuturisticFooter2036 />
       </div>
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-524b
     </div>
   );
 }

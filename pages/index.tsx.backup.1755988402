@@ -1,7 +1,13 @@
 import React from 'react';
+<<<<<<< HEAD
+import EnhancedHomepage2026 from '../components/EnhancedHomepage2026';
+import EnhancedSEOOptimizer from '../components/EnhancedSEOOptimizer';
+import EnhancedAnalyticsTracker from '../components/EnhancedAnalyticsTracker';
+=======
 import Homepage2026 from '../components/Homepage2026';
 import SEOOptimizer from '../components/SEOOptimizer';
 import AnalyticsTracker from '../components/AnalyticsTracker';
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-524b
 import ErrorBoundary from '../components/ErrorBoundary';
 import EnhancedPerformanceOptimizer from '../components/EnhancedPerformanceOptimizer';
 import EnhancedAccessibilityEnhancer from '../components/EnhancedAccessibilityEnhancer';
@@ -10,9 +16,19 @@ import SecurityEnhancer from '../components/SecurityEnhancer';
 const HomePage: React.FC = () => {
   return (
     <ErrorBoundary>
+<<<<<<< HEAD
+      <EnhancedSEOOptimizer />
+      <EnhancedAnalyticsTracker />
+      <EnhancedPerformanceOptimizer>
+        <EnhancedHomepage2026 />
+      </EnhancedPerformanceOptimizer>
+      <EnhancedAccessibilityEnhancer />
+      <SecurityEnhancer />
+=======
       <SEOOptimizer />
       <AnalyticsTracker />
       <Homepage2026 />
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-524b
     </ErrorBoundary>
   );
 };
