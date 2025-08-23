@@ -10,19 +10,29 @@ import {
 const BlogPage: React.FC = () => {
   const featuredPosts = [
     {
-      id: 1,
-      title: 'The Future of AI Consciousness: Beyond Traditional Machine Learning',
-      excerpt: 'Explore how our AI Consciousness Platform is revolutionizing the way machines think, learn, and interact with humans.',
-      author: 'Dr. Sarah Chen',
-      authorRole: 'Chief AI Scientist',
-      publishDate: '2024-01-15',
+      id: 'quantum-ai-revolution-2025',
+      title: 'Quantum AI Revolution 2025: The Next Frontier of Computing',
+      excerpt: 'Discover how quantum computing is revolutionizing AI and automation in 2025, unlocking unprecedented computational power.',
+      date: 'January 20, 2025',
+      readTime: '12 min read',
+      category: 'Quantum Computing',
+      featured: true
+    },
+    {
+      id: 'ai-automation-trends-2025',
+      title: 'AI Automation Trends 2025: The Future of Autonomous Systems',
+      excerpt: 'Explore the cutting-edge trends shaping the future of AI automation and autonomous technology systems.',
+      date: 'January 17, 2025',
       readTime: '8 min read',
-      category: 'AI & Machine Learning',
-      tags: ['AI Consciousness', 'Machine Learning', 'Future Tech'],
-      image: '/api/placeholder/600/400',
-      featured: true,
-      views: '12.5K',
-      comments: 45
+      category: 'AI & Automation'
+    },
+    {
+      id: 'sustainable-ai-green-computing-2025',
+      title: 'Sustainable AI: Green Computing Practices for 2025',
+      excerpt: 'Discover how Zion Tech Group is leading the charge in sustainable AI development and green computing practices.',
+      date: 'January 22, 2025',
+      readTime: '10 min read',
+      category: 'Sustainability'
     },
     {
       id: 2,
@@ -56,88 +66,7 @@ const BlogPage: React.FC = () => {
     }
   ];
 
-  const recentPosts = [
-    {
-      id: 4,
-      title: 'Blockchain Governance: Building Trust in Decentralized Systems',
-      excerpt: 'How our blockchain governance platform ensures transparency and trust in decentralized applications.',
-      author: 'Alex Thompson',
-      authorRole: 'Blockchain Architect',
-      publishDate: '2024-01-08',
-      readTime: '5 min read',
-      category: 'Blockchain',
-      tags: ['Blockchain', 'Governance', 'Web3'],
-      image: '/api/placeholder/400/250',
-      views: '4.2K',
-      comments: 18
-    },
-    {
-      id: 5,
-      title: 'Edge Computing: Bringing AI to the Edge of the Network',
-      excerpt: 'Explore the benefits of edge computing and how it\'s transforming real-time AI applications.',
-      author: 'Lisa Park',
-      authorRole: 'Edge Computing Specialist',
-      publishDate: '2024-01-05',
-      readTime: '6 min read',
-      category: 'Edge Computing',
-      tags: ['Edge Computing', 'AI', 'Real-time Processing'],
-      image: '/api/placeholder/400/250',
-      views: '3.8K',
-      comments: 15
-    },
-    {
-      id: 6,
-      title: 'Cybersecurity in the Age of Quantum Threats',
-      excerpt: 'Understanding the new security challenges and our quantum-resistant cybersecurity solutions.',
-      author: 'David Kim',
-      authorRole: 'Security Expert',
-      publishDate: '2024-01-03',
-      readTime: '7 min read',
-      category: 'Cybersecurity',
-      tags: ['Cybersecurity', 'Quantum Threats', 'Security'],
-      image: '/api/placeholder/400/250',
-      views: '5.1K',
-      comments: 22
-    },
-    {
-      id: 7,
-      title: 'Metaverse Development: Building the Digital Future',
-      excerpt: 'Insights into our metaverse development studio and the future of digital experiences.',
-      author: 'Emma Davis',
-      authorRole: 'Metaverse Developer',
-      publishDate: '2024-01-01',
-      readTime: '5 min read',
-      category: 'Metaverse',
-      tags: ['Metaverse', 'Digital Experiences', 'VR/AR'],
-      image: '/api/placeholder/400/250',
-      views: '3.5K',
-      comments: 12
-    }
-  ];
-
-  const categories = [
-    { name: 'AI & Machine Learning', count: 24, icon: <Brain className="w-5 h-5" /> },
-    { name: 'Quantum Computing', count: 18, icon: <Rocket className="w-5 h-5" /> },
-    { name: 'Space Technology', count: 15, icon: <Globe className="w-5 h-5" /> },
-    { name: 'Blockchain & Web3', count: 22, icon: <Shield className="w-5 h-5" /> },
-    { name: 'Edge Computing', count: 16, icon: <Zap className="w-5 h-5" /> },
-    { name: 'Cybersecurity', count: 20, icon: <Shield className="w-5 h-5" /> },
-    { name: 'Metaverse', count: 12, icon: <Lightbulb className="w-5 h-5" /> },
-    { name: 'Company News', count: 8, icon: <BookOpen className="w-5 h-5" /> }
-  ];
-
-  const popularTags = [
-    'AI Consciousness', 'Quantum Computing', 'Space Tech', 'Blockchain',
-    'Edge Computing', 'Cybersecurity', 'Machine Learning', 'Innovation',
-    'Research', 'Technology', 'Future Tech', 'Digital Transformation'
-  ];
-
-  const newsletterSignup = {
-    title: 'Stay Updated with Tech Insights',
-    description: 'Get the latest articles, research updates, and technology insights delivered to your inbox.',
-    placeholder: 'Enter your email address',
-    buttonText: 'Subscribe'
-  };
+  const categories = ['All', 'Quantum Computing', 'AI & Automation', 'Sustainability', 'Content & AI', 'Infrastructure', 'AI Ethics', 'Performance', 'Future of Work'];
 
   return (
     <Layout>
