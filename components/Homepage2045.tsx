@@ -6,6 +6,9 @@ import {
   Brain as BrainIcon, Atom as AtomIcon, Shield as ShieldIcon, Rocket as RocketIcon, Zap, Eye, Heart, Infinity,
   ChevronRight, ChevronLeft, ExternalLink, Users, Award, Clock, CheckCircle, Zap as ZapIcon
 } from 'lucide-react';
+import EnhancedServiceCard from './ui/EnhancedServiceCard';
+import { ServiceCardSkeleton } from './ui/LoadingSkeleton';
+import EnhancedSEO from './ui/EnhancedSEO';
 
 // Import our new revolutionary services
 import { revolutionary2045AdvancedRealMicroSaas } from '../data/revolutionary-2045-advanced-real-micro-saas';
@@ -18,9 +21,15 @@ const Homepage2045: React.FC = () => {
   const [selectedCategory, setSelectedCategory] = useState('all');
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const [hoveredService, setHoveredService] = useState<string | null>(null);
+  const [isLoading, setIsLoading] = useState(true);
   
   useEffect(() => {
     setIsVisible(true);
+    
+    // Simulate loading time for better UX
+    const loadingTimer = setTimeout(() => {
+      setIsLoading(false);
+    }, 1500);
     
     // Auto-rotate featured services
     const interval = setInterval(() => {
@@ -35,6 +44,7 @@ const Homepage2045: React.FC = () => {
     window.addEventListener('mousemove', handleMouseMove);
     
     return () => {
+      clearTimeout(loadingTimer);
       clearInterval(interval);
       window.removeEventListener('mousemove', handleMouseMove);
     };
@@ -101,9 +111,29 @@ const Homepage2045: React.FC = () => {
   }, []);
 
   return (
-    <Layout>
-      {/* Main Content */}
-      <main className="relative z-10">
+    <>
+      <EnhancedSEO
+        title="Revolutionary Technology Solutions for 2045 and Beyond"
+        description="Experience the future of technology with Zion Tech Group's cutting-edge AI consciousness, quantum computing, and autonomous systems. Transform your business with revolutionary micro SAAS solutions."
+        keywords={[
+          'AI consciousness',
+          'quantum computing',
+          'autonomous systems',
+          'micro SAAS',
+          'futuristic technology',
+          'business transformation',
+          'AI solutions',
+          'quantum technology',
+          'space technology',
+          'cybersecurity'
+        ]}
+        canonical="https://ziontechgroup.com"
+        ogType="website"
+        section="Home"
+      />
+      <Layout>
+        {/* Main Content */}
+        <main className="relative z-10">
         {/* Hero Section */}
         <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
           {/* Animated Background */}
@@ -292,98 +322,34 @@ const Homepage2045: React.FC = () => {
         {/* Services Grid */}
         <section className="py-16 px-4 sm:px-6 lg:px-8">
           <div className="max-w-7xl mx-auto">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {getFilteredServices().map((service, index) => (
-                <motion.div
-                  key={service.id}
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: index * 0.1 }}
-                  viewport={{ once: true }}
-                  onHoverStart={() => setHoveredService(service.id)}
-                  onHoverEnd={() => setHoveredService(null)}
-                  className="group relative"
-                >
-                  <div className="relative bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-xl border border-white/10 rounded-2xl p-6 h-full transition-all duration-300 hover:border-cyan-400/50 hover:shadow-2xl hover:shadow-cyan-500/25 hover:scale-105">
-                    {/* Service Header */}
-                    <div className="mb-6">
-                      <div className="flex items-start justify-between mb-4">
-                        <div className="w-12 h-12 bg-gradient-to-r from-cyan-500 to-purple-500 rounded-xl flex items-center justify-center">
-                          <Brain className="w-6 h-6 text-white" />
-                        </div>
-                        <div className="text-xs bg-gradient-to-r from-cyan-500 to-purple-500 text-white px-3 py-1 rounded-full font-medium">
-                          {service.type}
-                        </div>
-                      </div>
-                      
-                      <h3 className="text-xl font-bold text-white mb-2 group-hover:text-cyan-400 transition-colors duration-300">
-                        {service.name}
-                      </h3>
-                      
-                      <p className="text-white/70 text-sm leading-relaxed">
-                        {service.description}
-                      </p>
-                    </div>
-
-                    {/* Service Features */}
-                    <div className="mb-6">
-                      <h4 className="text-sm font-semibold text-white/90 mb-3">Key Features</h4>
-                      <div className="space-y-2">
-                        {service.features.slice(0, 3).map((feature, featureIndex) => (
-                          <div key={featureIndex} className="flex items-center gap-2 text-sm text-white/70">
-                            <CheckCircle className="w-4 h-4 text-cyan-400 flex-shrink-0" />
-                            <span>{feature}</span>
-                          </div>
-                        ))}
-                        {service.features.length > 3 && (
-                          <div className="text-xs text-cyan-400">
-                            +{service.features.length - 3} more features
-                          </div>
-                        )}
-                      </div>
-                    </div>
-
-                    {/* Service Benefits */}
-                    <div className="mb-6">
-                      <h4 className="text-sm font-semibold text-white/90 mb-3">Benefits</h4>
-                      <div className="space-y-2">
-                        {service.benefits.slice(0, 2).map((benefit, benefitIndex) => (
-                          <div key={benefitIndex} className="flex items-center gap-2 text-sm text-white/70">
-                            <ZapIcon className="w-4 h-4 text-yellow-400 flex-shrink-0" />
-                            <span>{benefit}</span>
-                          </div>
-                        ))}
-                      </div>
-                    </div>
-
-                    {/* Service Footer */}
-                    <div className="mt-auto">
-                      <div className="flex items-center justify-between mb-4">
-                        <div className="text-2xl font-bold text-cyan-400">
-                          {service.pricing.starter}
-                        </div>
-                        <div className="text-xs text-white/50">
-                          Starting from
-                        </div>
-                      </div>
-                      
-                      <button
-                        onClick={() => handleServiceClick(service)}
-                        className="w-full group/btn relative px-4 py-3 bg-gradient-to-r from-cyan-500/20 to-purple-500/20 border border-cyan-400/30 text-cyan-400 font-medium rounded-xl transition-all duration-300 hover:from-cyan-500/30 hover:to-purple-500/30 hover:border-cyan-400/50 hover:scale-105"
-                      >
-                        <span className="flex items-center justify-center gap-2">
-                          Learn More
-                          <ExternalLink className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform duration-300" />
-                        </span>
-                      </button>
-                    </div>
-
-                    {/* Hover Effect Overlay */}
-                    <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/5 to-purple-500/5 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
-                  </div>
-                </motion.div>
-              ))}
-            </div>
+            {isLoading ? (
+              <ServiceCardSkeleton count={9} />
+            ) : (
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                {getFilteredServices().map((service, index) => (
+                  <EnhancedServiceCard
+                    key={service.id}
+                    id={service.id}
+                    name={service.name}
+                    tagline={service.tagline || service.description.substring(0, 100) + '...'}
+                    description={service.description}
+                    category={service.category}
+                    type={service.type}
+                    pricing={service.pricing}
+                    features={service.features}
+                    benefits={service.benefits}
+                    useCases={service.useCases}
+                    marketSize={service.marketSize}
+                    targetAudience={service.targetAudience}
+                    competitiveAdvantage={service.competitiveAdvantage}
+                    slug={service.slug}
+                    featured={index < 3}
+                    priority={index < 3 ? 'high' : index < 6 ? 'medium' : 'low'}
+                    onCardClick={handleServiceClick}
+                  />
+                ))}
+              </div>
+            )}
 
             {/* Load More Button */}
             {getFilteredServices().length > 12 && (
@@ -527,7 +493,8 @@ const Homepage2045: React.FC = () => {
           </div>
         </section>
       </main>
-    </Layout>
+      </Layout>
+    </>
   );
 };
 

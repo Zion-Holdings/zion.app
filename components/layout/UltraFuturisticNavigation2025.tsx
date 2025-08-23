@@ -37,6 +37,8 @@ import {
 } from 'lucide-react';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
+import EnhancedSearch from '../ui/EnhancedSearch';
+import ThemeToggle from '../ui/ThemeToggle';
 
 // Define Node type for DOM event handling
 type Node = HTMLElement | null;
@@ -416,7 +418,10 @@ const UltraFuturisticNavigation2025: React.FC = () => {
 
             {/* Right Side Actions */}
             <div className="flex items-center space-x-4">
-              {/* Search */}
+              {/* Theme Toggle */}
+              <ThemeToggle />
+              
+              {/* Enhanced Search */}
               <div className="relative" ref={searchRef}>
                 <button
                   onClick={() => setIsSearchOpen(!isSearchOpen)}
@@ -432,26 +437,9 @@ const UltraFuturisticNavigation2025: React.FC = () => {
                       animate={{ opacity: 1, y: 0, scale: 1 }}
                       exit={{ opacity: 0, y: 10, scale: 0.95 }}
                       transition={{ duration: 0.2 }}
-                      className="absolute top-full right-0 mt-2 w-80 bg-gray-900/95 backdrop-blur-xl border border-cyan-400/20 rounded-2xl shadow-2xl shadow-cyan-500/10 p-4"
+                      className="absolute top-full right-0 mt-2 w-96 bg-gray-900/95 backdrop-blur-xl border border-cyan-400/20 rounded-2xl shadow-2xl shadow-cyan-500/10 p-4"
                     >
-                      <form onSubmit={handleSearch} className="space-y-4">
-                        <div className="relative">
-                          <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-gray-400" />
-                          <input
-                            type="text"
-                            value={searchQuery}
-                            onChange={(e) => setSearchQuery(e.target.value)}
-                            placeholder="Search services, solutions..."
-                            className="w-full pl-10 pr-4 py-2 bg-gray-800/50 border border-gray-700/50 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-cyan-400/50 focus:border-transparent"
-                          />
-                        </div>
-                        <button
-                          type="submit"
-                          className="w-full px-4 py-2 bg-gradient-to-r from-cyan-500 to-purple-600 text-white font-medium rounded-lg hover:from-cyan-600 hover:to-purple-700 transition-all duration-200"
-                        >
-                          Search
-                        </button>
-                      </form>
+                      <EnhancedSearch />
                     </motion.div>
                   )}
                 </AnimatePresence>
