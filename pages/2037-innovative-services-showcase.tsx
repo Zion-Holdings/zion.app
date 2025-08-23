@@ -1,12 +1,10 @@
-import React from 'react';
-import Head from 'next/head';
+import React, { useState } from 'react';
+import SEO from '../components/SEO';
 import { motion } from 'framer-motion';
 import { 
-  Search, Grid, List, Filter,
-  Brain, Atom, Shield, Target, Rocket,
-  ArrowRight, Check, Star, TrendingUp,
-  Building, Cpu, Database, Cloud, Lock,
-  Globe, Zap, Users, BarChart3
+  Brain, Atom, Rocket, Shield, Zap, Target, Star,
+  ArrowRight, Check, TrendingUp, Users, Globe, Cpu,
+  Database, Cloud, Lock, Settings, Eye, Award, Clock
 } from 'lucide-react';
 
 // Import our new 2037 service data
@@ -21,35 +19,78 @@ const contact = {
   website: 'https://ziontechgroup.com'
 };
 
-// Helper function to get icon based on category
-const getIconForCategory = (category: string) => {
-  const categoryLower = category.toLowerCase();
-  if (categoryLower.includes('ai') || categoryLower.includes('consciousness')) return Brain;
-  if (categoryLower.includes('quantum')) return Atom;
-  if (categoryLower.includes('autonomous')) return Zap;
-  if (categoryLower.includes('cloud') || categoryLower.includes('infrastructure')) return Cloud;
-  if (categoryLower.includes('security') || categoryLower.includes('cyber')) return Shield;
-  if (categoryLower.includes('operations')) return Settings;
-  if (categoryLower.includes('neural') || categoryLower.includes('network')) return Cpu;
-  return Rocket;
-};
+const ServiceCard = ({ service, index }: { service: any; index: number }) => (
+  <motion.div
+    initial={{ opacity: 0, y: 50 }}
+    animate={{ opacity: 1, y: 0 }}
+    transition={{ duration: 0.5, delay: index * 0.1 }}
+    className="relative group"
+  >
+    <div className={`absolute inset-0 bg-gradient-to-r ${service.color || 'from-gray-600 to-gray-700'} rounded-2xl blur-xl group-hover:blur-2xl transition-all duration-500 opacity-20`}></div>
+    <div className={`relative bg-gradient-to-r ${service.color ? service.color.replace('from-', 'from-').replace('to-', 'to-') : 'from-gray-600 to-gray-700'} bg-opacity-10 border border-opacity-30 rounded-2xl p-8 hover:border-opacity-50 transition-all duration-300 h-full`}>
+      <div className="flex items-start justify-between mb-6">
+        <div className="text-4xl">{service.icon}</div>
+        {service.popular && (
+          <span className="px-3 py-1 bg-gradient-to-r from-yellow-500 to-orange-500 text-white text-xs font-semibold rounded-full">
+            Popular
+          </span>
+        )}
+      </div>
+      
+      <h3 className="text-2xl font-bold text-white mb-3">{service.name}</h3>
+      <p className="text-gray-300 mb-6 text-sm leading-relaxed">{service.description}</p>
+      
+      <div className="space-y-3 mb-6">
+        {service.features.slice(0, 4).map((feature: string, idx: number) => (
+          <div key={idx} className="flex items-center space-x-2">
+            <Check className="w-4 h-4 text-green-400 flex-shrink-0" />
+            <span className="text-gray-300 text-sm">{feature}</span>
+          </div>
+        ))}
+      </div>
+      
+      <div className="flex items-center justify-between mb-6">
+        <div>
+          <span className="text-3xl font-bold text-white">{service.price}</span>
+          <span className="text-gray-400 text-sm">{service.period}</span>
+        </div>
+        <div className="text-right">
+          <div className="flex items-center space-x-1 text-yellow-400">
+            {[...Array(5)].map((_, i) => (
+              <Star key={i} className={`w-4 h-4 ${i < Math.floor(service.rating) ? 'fill-current' : ''}`} />
+            ))}
+          </div>
+          <span className="text-gray-400 text-xs">{service.rating}/5 ({service.reviews} reviews)</span>
+        </div>
+      </div>
+      
+      <div className="space-y-3 mb-6 text-xs text-gray-400">
+        <div className="flex justify-between">
+          <span>Setup Time:</span>
+          <span>{service.setupTime || 'N/A'}</span>
+        </div>
+        <div className="flex justify-between">
+          <span>Trial:</span>
+          <span>{service.trialDays || 0} days</span>
+        </div>
+        <div className="flex justify-between">
+          <span>Customers:</span>
+          <span>{service.customers ? service.customers.toLocaleString() : '0'}</span>
+        </div>
+      </div>
+      
+      <a 
+        href={service.link} 
+        className="block w-full text-center py-3 bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-semibold rounded-lg hover:from-cyan-600 hover:to-blue-700 transition-all duration-300 transform hover:scale-105"
+      >
+        Learn More
+      </a>
+    </div>
+  </motion.div>
+);
 
-// Helper function to get color based on category
-const getColorForCategory = (category: string) => {
-  const categoryLower = category.toLowerCase();
-  if (categoryLower.includes('ai') || categoryLower.includes('consciousness')) return 'from-purple-500 to-pink-500';
-  if (categoryLower.includes('quantum')) return 'from-blue-500 to-cyan-500';
-  if (categoryLower.includes('autonomous')) return 'from-green-500 to-emerald-500';
-  if (categoryLower.includes('cloud') || categoryLower.includes('infrastructure')) return 'from-indigo-500 to-blue-500';
-  if (categoryLower.includes('security') || categoryLower.includes('cyber')) return 'from-red-500 to-orange-500';
-  if (categoryLower.includes('operations')) return 'from-yellow-500 to-orange-500';
-  if (categoryLower.includes('neural') || categoryLower.includes('network')) return 'from-violet-500 to-purple-500';
-  return 'from-cyan-500 to-blue-500';
-};
-
-const ServiceCard = ({ service, index }: { service: any; index: number }) => {
-  const IconComponent = getIconForCategory(service.category);
-  const colorClass = getColorForCategory(service.category);
+const ServiceShowcase = () => {
+  const [activeCategory, setActiveCategory] = useState('all');
   
   return (
     <motion.div
@@ -297,9 +338,107 @@ const ServicesShowcase2037: React.FC = () => {
         </div>
       </section>
 
-      {/* Contact Section */}
-      <ContactSection />
-    </Layout>
+      {/* Stats Section */}
+      <section className="py-20 px-4 bg-gradient-to-b from-black via-gray-900/50 to-black">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold mb-8 bg-gradient-to-r from-cyan-400 to-purple-600 bg-clip-text text-transparent">
+              Impact & Results
+            </h2>
+            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+              Our innovative services deliver measurable results and transform businesses across industries
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <motion.div 
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5 }}
+              className="text-center"
+            >
+              <div className="text-4xl font-bold text-cyan-400 mb-2">500+</div>
+              <div className="text-gray-300">Active Customers</div>
+            </motion.div>
+            
+            <motion.div 
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.1 }}
+              className="text-center"
+            >
+              <div className="text-4xl font-bold text-purple-400 mb-2">4.8/5</div>
+              <div className="text-gray-300">Average Rating</div>
+            </motion.div>
+            
+            <motion.div 
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+              className="text-center"
+            >
+              <div className="text-4xl font-bold text-blue-400 mb-2">60%</div>
+              <div className="text-gray-300">Cost Reduction</div>
+            </motion.div>
+            
+            <motion.div 
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.3 }}
+              className="text-center"
+            >
+              <div className="text-4xl font-bold text-green-400 mb-2">5x</div>
+              <div className="text-gray-300">Efficiency Gain</div>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* Contact CTA */}
+      <section className="py-20 px-4">
+        <div className="max-w-4xl mx-auto text-center">
+          <h2 className="text-4xl md:text-5xl font-bold mb-8 bg-gradient-to-r from-cyan-400 to-purple-600 bg-clip-text text-transparent">
+            Ready to Transform Your Business?
+          </h2>
+          <p className="text-xl text-gray-300 mb-12 max-w-2xl mx-auto">
+            Join the future of technology with Zion Tech Group. Let's discuss how our innovative 2037 services can drive your success.
+          </p>
+          
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+            <div className="text-center">
+              <div className="text-3xl mb-2">📞</div>
+              <div className="font-semibold text-white mb-2">Call Us</div>
+              <a href={`tel:${contactInfo.mobile}`} className="text-cyan-400 hover:text-cyan-300 transition-colors">
+                {contactInfo.mobile}
+              </a>
+            </div>
+            
+            <div className="text-center">
+              <div className="text-3xl mb-2">✉️</div>
+              <div className="font-semibold text-white mb-2">Email Us</div>
+              <a href={`mailto:${contactInfo.email}`} className="text-cyan-400 hover:text-cyan-300 transition-colors">
+                {contactInfo.email}
+              </a>
+            </div>
+            
+            <div className="text-center">
+              <div className="text-3xl mb-2">📍</div>
+              <div className="font-semibold text-white mb-2">Visit Us</div>
+              <div className="text-gray-400 text-sm">{contactInfo.address}</div>
+            </div>
+          </div>
+          
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <a href="/contact" className="px-8 py-4 bg-gradient-to-r from-cyan-500 to-purple-600 text-white font-semibold rounded-lg hover:from-cyan-600 hover:to-purple-700 transition-all duration-300 transform hover:scale-105">
+              Get Started Today
+            </a>
+            <a href="/services" className="px-8 py-4 border-2 border-cyan-400 text-cyan-400 font-semibold rounded-lg hover:bg-cyan-400 hover:text-black transition-all duration-300 transform hover:scale-105">
+              View All Services
+            </a>
+          </div>
+        </div>
+      </section>
+    </div>
   );
 };
 

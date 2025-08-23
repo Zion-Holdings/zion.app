@@ -1,1 +1,1 @@
-export { default } from '@/pages/academy/Storybook';
+export { default } from '../../src/pages/academy/Storybook';

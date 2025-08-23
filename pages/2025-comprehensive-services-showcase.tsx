@@ -2,19 +2,15 @@ import React, { useState, useEffect } from 'react';
 import SEO from '../components/SEO';
 import { motion, AnimatePresence } from 'framer-motion';
 import { 
-  Search, Grid, List, Filter,
-  Brain, Atom, Shield, Target, Rocket,
-  ArrowRight, Check, Palette, Heart, Truck, GraduationCap,
-  Building, Globe, Lock, Server, Cloud, Database,
-  Smartphone, Mail, Calendar, DollarSign, Clipboard,
-  Star, Users, TrendingUp, Zap, Cpu, Phone, MapPin
+  Brain, Building, Target, Cpu, Shield, 
+  ArrowRight, Check, Star, Phone, Mail, MapPin,
+  TrendingUp, Users, Zap, Globe, Lock
 } from 'lucide-react';
 
 // Import our new service data
-import { advancedEnterpriseSolutions2025 } from '../data/2025-advanced-enterprise-solutions';
-import { innovativeAIAutomationServices2025 } from '../data/2025-innovative-ai-automation-services';
-import { innovativeITInfrastructureServices2025 } from '../data/2025-innovative-it-infrastructure-services';
-import { innovativeMicroSaasSolutions2025 } from '../data/2025-innovative-micro-saas-solutions';
+import { innovativeITServicesExpansion2025V3 } from '../data/2025-innovative-it-services-expansion-v3';
+import { innovativeMicroSaasExpansionV32025 } from '../data/2025-innovative-micro-saas-expansion-v3';
+import { innovativeAIServicesExpansion2025V3 } from '../data/2025-innovative-ai-services-expansion-v3';
 
 // Import existing service data
 import { realMicroSaasServices } from '../data/real-micro-saas-services';

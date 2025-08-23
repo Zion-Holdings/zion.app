@@ -39,7 +39,7 @@ const categories = [
     name: 'Space Technology',
     icon: <Rocket className="w-6 h-6" />,
     color: 'from-pink-500 to-rose-500',
-    description: 'Next-generation space exploration and mining'
+    description: 'ArrowRight-generation space exploration and mining'
   },
   {
     id: 'cybersecurity',

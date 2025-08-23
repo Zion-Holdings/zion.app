@@ -1,6 +1,6 @@
 import React from 'react';
 import Head from 'next/head';
-import EnhancedNavigation2025 from './EnhancedNavigation2025';
+import UltraFuturisticNavigation2045 from './UltraFuturisticNavigation2045';
 import UltraFuturisticFooter2044 from './UltraFuturisticFooter2044';
 
 interface UltraFuturisticLayout2045Props {

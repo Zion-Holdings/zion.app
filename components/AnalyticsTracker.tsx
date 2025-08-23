@@ -1,159 +1,50 @@
 import React, { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
 
-interface AnalyticsEvent {
-  event: string;
-  category: string;
-  action: string;
-  label?: string;
-  value?: number;
-  timestamp: number;
-  page: string;
-  userAgent: string;
-  referrer: string;
+// Extend Window interface for Google Analytics
+declare global {
+  interface Window {
+    dataLayer: any[];
+    gtag: (...args: any[]) => void;
+  }
 }
 
-interface ConversionGoal {
-  id: string;
-  name: string;
-  type: 'page_view' | 'click' | 'form_submit' | 'scroll' | 'time_on_page';
-  target: string;
-  value: number;
-  achieved: boolean;
+interface AnalyticsTrackerProps {
+  trackingId?: string;
+  enableDebug?: boolean;
 }
 
-const AnalyticsTracker: React.FC = () => {
+const AnalyticsTracker: React.FC<AnalyticsTrackerProps> = ({ 
+  trackingId = process.env.NEXT_PUBLIC_GA_ID || 'G-XXXXXXXXXX',
+  enableDebug = false 
+}) => {
   const router = useRouter();
-  const [events, setEvents] = useState<AnalyticsEvent[]>([]);
-  const [conversionGoals, setConversionGoals] = useState<ConversionGoal[]>([
-    {
-      id: 'homepage_visit',
-      name: 'Homepage Visit',
-      type: 'page_view',
-      target: '/',
-      value: 1,
-      achieved: false
-    },
-    {
-      id: 'services_view',
-      name: 'Services Page View',
-      type: 'page_view',
-      target: '/services',
-      value: 5,
-      achieved: false
-    },
-    {
-      id: 'contact_click',
-      name: 'Contact Button Click',
-      type: 'click',
-      target: 'contact-button',
-      value: 10,
-      achieved: false
-    },
-    {
-      id: 'form_submit',
-      name: 'Contact Form Submit',
-      type: 'form_submit',
-      target: 'contact-form',
-      value: 25,
-      achieved: false
-    },
-    {
-      id: 'scroll_depth',
-      name: 'Scroll Depth 75%',
-      type: 'scroll',
-      target: '75%',
-      value: 15,
-      achieved: false
-    },
-    {
-      id: 'time_on_page',
-      name: 'Time on Page 2min',
-      type: 'time_on_page',
-      target: '120',
-      value: 20,
-      achieved: false
-    }
-  ]);
-  const [sessionStart, setSessionStart] = useState<number>(Date.now());
-  const [pageViews, setPageViews] = useState<number>(0);
-  const [uniquePages, setUniquePages] = useState<Set<string>>(new Set());
-  const [isVisible, setIsVisible] = useState<boolean>(false);
 
   useEffect(() => {
-    // Initialize analytics
-    initializeAnalytics();
-    
-    // Track page views
-    trackPageView();
-    
-    // Track user engagement
-    trackUserEngagement();
-    
-    // Track conversions
-    trackConversions();
-    
-    // Track performance
-    trackPerformance();
-    
-    // Track errors
-    trackErrors();
-    
-    return () => {
-      // Cleanup
-      cleanupAnalytics();
-    };
-  }, [router.asPath]);
+    // Initialize Google Analytics
+    if (typeof window !== 'undefined' && trackingId !== 'G-XXXXXXXXXX') {
+      // Google Analytics 4
+      const script = document.createElement('script');
+      script.async = true;
+      script.src = `https://www.googletagmanager.com/gtag/js?id=${trackingId}`;
+      document.head.appendChild(script);
 
-  const initializeAnalytics = () => {
-    // Set session start time
-    const sessionId = sessionStorage.getItem('zion_analytics_session');
-    if (!sessionId) {
-      const newSessionId = `session_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`;
-      sessionStorage.setItem('zion_analytics_session', newSessionId);
-      setSessionStart(Date.now());
-    } else {
-      const sessionData = JSON.parse(sessionId);
-      setSessionStart(sessionData.startTime);
-    }
-    
-    // Track user agent and referrer
-    trackUserInfo();
-  };
+      window.dataLayer = window.dataLayer || [];
+      function gtag(...args: any[]) {
+        window.dataLayer.push(args);
+      }
+      gtag('js', new Date());
+      gtag('config', trackingId, {
+        page_title: document.title,
+        page_location: window.location.href,
+      });
 
-  const trackPageView = () => {
-    const event: AnalyticsEvent = {
-      event: 'page_view',
-      category: 'engagement',
-      action: 'page_view',
-      label: router.asPath,
-      value: 1,
-      timestamp: Date.now(),
-      page: router.asPath,
-      userAgent: navigator.userAgent,
-      referrer: document.referrer
-    };
-    
-    addEvent(event);
-    setPageViews(prev => prev + 1);
-    setUniquePages(prev => new Set([...prev, router.asPath]));
-    
-    // Track to Google Analytics if available
-            if (typeof window !== 'undefined' && 'gtag' in window) {
-          (window as { gtag: Function }).gtag('config', 'GA_MEASUREMENT_ID', {
-            page_path: router.asPath,
-            page_title: document.title
-          });
-        }
-  };
-
-  const trackUserEngagement = () => {
-    // Track scroll depth
-    let maxScroll = 0;
-    const trackScroll = () => {
-      const scrollPercent = Math.round((window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100);
-      if (scrollPercent > maxScroll) {
-        maxScroll = scrollPercent;
+      // Track page views on route changes
+      const handleRouteChange = (url: string) => {
+        gtag('config', trackingId, {
+          page_title: document.title,
+          page_location: url,
+        });
         
         // Track scroll milestones
         if (scrollPercent >= 25 && maxScroll < 50) {

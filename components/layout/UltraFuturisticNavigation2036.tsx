@@ -2,16 +2,10 @@ import React, { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
 import { motion, AnimatePresence } from 'framer-motion';
 import { 
-  Menu, ChevronDown, X, Phone, Mail, MapPin,
-  Rocket, BookOpen,
-  DollarSign, BarChart3, Star, 
-  Cpu, 
-  Search, Grid, 
-  Zap,
-  FileText,
-  Award,
-  HelpCircle,
-  BookOpenCheck
+  Menu, ChevronDown, X, ArrowRight,
+  BookOpen, DollarSign, BarChart3, Users, Star, 
+  Building, Play, Calculator,
+  Grid, FileText, Code, Video
 } from 'lucide-react';
 import Link from 'next/link';
 
@@ -73,13 +67,13 @@ const navigationItems: NavigationItem[] = [
         name: 'AI & Machine Learning', 
         href: '/ai-services', 
         description: 'Advanced AI solutions',
-        icon: <Cpu className="w-4 h-4" />
+        icon: <Play className="w-4 h-4" />
       },
       { 
         name: 'Quantum Technology', 
         href: '/quantum-services', 
         description: 'Quantum computing solutions',
-        icon: <Cpu className="w-4 h-4" />
+        icon: <Play className="w-4 h-4" />
       },
       { 
         name: 'Space Technology', 
@@ -97,7 +91,15 @@ const navigationItems: NavigationItem[] = [
         name: 'Specialized Solutions', 
         href: '/solutions', 
         description: 'Industry-specific solutions',
-        icon: <Star className="w-4 h-4" />
+        icon: <Play className="w-4 h-4" />
+      },
+      { 
+        name: 'Innovative 2025 Services', 
+        href: '/innovative-2025-services-showcase', 
+        description: 'Cutting-edge 2025 innovations',
+        icon: <Star className="w-4 h-4" />,
+        featured: true,
+        badge: 'New'
       }
     ]
   },
@@ -140,20 +142,9 @@ const navigationItems: NavigationItem[] = [
       { 
         name: 'About Us', 
         href: '/about', 
-        description: 'Company information',
-        icon: <Star className="w-4 h-4" />
-      },
-      { 
-        name: 'Contact', 
-        href: '/contact', 
-        description: 'Get in touch',
-        icon: <Mail className="w-4 h-4" />
-      },
-      { 
-        name: 'Partners', 
-        href: '/partners', 
-        description: 'Partnership opportunities',
-        icon: <Star className="w-4 h-4" />
+        description: 'Our story and mission',
+        icon: <Users className="w-4 h-4" />,
+        featured: true
       },
       {
         name: 'Leadership',
@@ -165,39 +156,6 @@ const navigationItems: NavigationItem[] = [
         name: 'Careers',
         href: '/careers',
         description: 'Join our team',
-        icon: <Star className="w-4 h-4" />
-      }
-    ]
-  },
-  {
-    name: 'Resources',
-    href: '/resources',
-    icon: <MessageCircle className="w-5 h-5" />,
-    description: 'Knowledge & insights',
-    category: 'resources',
-    children: [
-      {
-        name: 'Blog',
-        href: '/blog',
-        description: 'Latest insights',
-        icon: <MessageCircle className="w-4 h-4" />
-      },
-      {
-        name: 'Case Studies',
-        href: '/case-studies',
-        description: 'Success stories',
-        icon: <Star className="w-4 h-4" />
-      },
-      {
-        name: 'White Papers',
-        href: '/white-papers',
-        description: 'In-depth research',
-        icon: <Calculator className="w-4 h-4" />
-      },
-      {
-        name: 'Webinars',
-        href: '/webinars',
-        description: 'Live events',
         icon: <Play className="w-4 h-4" />
       }
     ]
@@ -207,10 +165,9 @@ const navigationItems: NavigationItem[] = [
 const UltraFuturisticNavigation2036: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
-  const [searchQuery, setSearchQuery] = useState('');
-  const [isSearchOpen, setIsSearchOpen] = useState(false);
-  const searchRef = useRef<HTMLDivElement>(null);
-  const mobileMenuRef = useRef<HTMLDivElement>(null);
+  const [isScrolled, setIsScrolled] = useState(false);
+  const navRef = useRef<HTMLElement>(null);
+  const dropdownRefs = useRef<{ [key: string]: HTMLDivElement | null }>({});
 
   // Close mobile menu when clicking outside
   useEffect(() => {
@@ -224,144 +181,246 @@ const UltraFuturisticNavigation2036: React.FC = () => {
     return () => document.removeEventListener('mousedown', handleClickOutside);
   }, []);
 
-  // Close search when clicking outside
   useEffect(() => {
-    const handleClickOutside = (event: MouseEvent) => {
-      if (searchRef.current && !searchRef.current.contains(event.target as HTMLElement)) {
-        setIsSearchOpen(false);
+    document.addEventListener('keydown', handleKeyDown);
+    return () => document.removeEventListener('keydown', handleKeyDown);
+  }, [handleKeyDown]);
+
+  // Enhanced dropdown animation variants
+  const dropdownVariants = {
+    hidden: { 
+      opacity: 0, 
+      y: -10,
+      scale: 0.95
+    },
+    visible: { 
+      opacity: 1, 
+      y: 0,
+      scale: 1,
+      transition: {
+        duration: 0.2,
+        ease: "easeOut" as const
       }
-    };
-
-    document.addEventListener('mousedown', handleClickOutside);
-    return () => document.removeEventListener('mousedown', handleClickOutside);
-  }, []);
-
-
-
-  // Handle escape key
-  useEffect(() => {
-    const handleEscape = (event: KeyboardEvent) => {
-      if (event.key === 'Escape') {
-        setIsOpen(false);
-        setActiveDropdown(null);
-        setIsSearchOpen(false);
-      }
-    };
-
-    document.addEventListener('keydown', handleEscape);
-    return () => document.removeEventListener('keydown', handleEscape);
-  }, []);
-
-  // Filter navigation items based on search
-  const filteredItems = navigationItems.filter(item =>
-    item.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
-    item.description?.toLowerCase().includes(searchQuery.toLowerCase()) ||
-    item.children?.some(child => 
-      child.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
-      child.description?.toLowerCase().includes(searchQuery.toLowerCase())
-    )
-  );
+    }
+  };
 
   return (
     <nav 
-      className="fixed top-0 left-0 right-0 z-50 bg-black/80 backdrop-blur-xl border-b border-cyan-400/20"
+      ref={navRef}
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        isScrolled 
+          ? 'bg-black/90 backdrop-blur-md border-b border-white/10' 
+          : 'bg-transparent'
+      }`}
       role="navigation"
       aria-label="Main navigation"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-16">
+        <div className="flex justify-between items-center h-16 lg:h-20">
           {/* Logo */}
           <div className="flex-shrink-0">
             <Link 
               href="/" 
-              className="flex items-center space-x-2 text-cyan-400 hover:text-cyan-300 transition-colors"
-              aria-label="Zion Tech Group Home"
+              className="flex items-center space-x-2 group"
+              aria-label="Zion Tech Group - Home"
             >
-              <div className="w-8 h-8 bg-gradient-to-r from-cyan-400 to-blue-500 rounded-lg flex items-center justify-center">
-                <Zap className="w-5 h-5 text-white" />
+              <div className="w-10 h-10 bg-gradient-to-r from-cyan-500 to-purple-600 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform">
+                <span className="text-white font-bold text-lg">Z</span>
               </div>
-              <span className="text-xl font-bold">Zion Tech Group</span>
+              <span className="text-xl font-bold bg-gradient-to-r from-cyan-400 to-purple-600 bg-clip-text text-transparent">
+                Zion Tech Group
+              </span>
             </Link>
           </div>
 
           {/* Desktop Navigation */}
-          <div className="hidden lg:flex items-center space-x-8">
+          <div className="hidden lg:flex lg:items-center lg:space-x-8">
             {navigationItems.map((item) => (
-              <div key={item.name} className="relative group">
+              <div key={item.name} className="relative" ref={(el) => {
+                dropdownRefs.current[item.name] = el;
+              }}>
                 <button
-                  className="flex items-center space-x-1 text-gray-300 hover:text-white transition-colors py-2 px-3 rounded-lg hover:bg-white/5 focus:outline-none focus:ring-2 focus:ring-cyan-400 focus:ring-offset-2 focus:ring-offset-black"
-                  onMouseEnter={() => setActiveDropdown(item.name)}
-                  onMouseLeave={() => setActiveDropdown(null)}
-                  onFocus={() => setActiveDropdown(item.name)}
-                  onBlur={() => setActiveDropdown(null)}
+                  onClick={() => setActiveDropdown(activeDropdown === item.name ? null : item.name)}
+                  onKeyDown={(e) => {
+                    if (e.key === 'Escape') {
+                      setActiveDropdown(null);
+                    }
+                  }}
+                  className={`group flex items-center space-x-1 px-3 py-2 text-sm font-medium rounded-md transition-all duration-200 ${
+                    activeDropdown === item.name
+                      ? 'text-cyan-400 bg-cyan-400/10'
+                      : 'text-gray-300 hover:text-white hover:bg-white/5'
+                  }`}
                   aria-expanded={activeDropdown === item.name}
-                  aria-haspopup="true"
+                  aria-haspopup={!!item.children}
                   aria-label={`${item.name} menu`}
                 >
-                  {item.icon}
+                  {item.icon && <span className="w-4 h-4" aria-hidden="true">{item.icon}</span>}
                   <span>{item.name}</span>
-                  {item.badge && (
-                    <span className="ml-2 px-2 py-1 text-xs bg-cyan-500 text-white rounded-full">
-                      {item.badge}
-                    </span>
+                  {item.children && (
+                    <ChevronDown 
+                      className={`w-4 h-4 transition-transform duration-200 ${
+                        activeDropdown === item.name ? 'rotate-180' : ''
+                      }`} 
+                      aria-hidden="true"
+                    />
                   )}
-                  <ChevronDown className="w-4 h-4 transition-transform group-hover:rotate-180" />
+                </button>
+
+                {/* Desktop Dropdown */}
+                {item.children && (
+                  <AnimatePresence>
+                    {activeDropdown === item.name && (
+                      <motion.div
+                        initial="hidden"
+                        animate="visible"
+                        exit="hidden"
+                        variants={dropdownVariants}
+                        className="absolute top-full left-0 mt-2 w-80 bg-black/95 backdrop-blur-xl border border-white/10 rounded-xl shadow-2xl z-50"
+                      >
+                        <div className="p-4">
+                          <div className="grid grid-cols-1 gap-2">
+                            {item.children.map((child) => (
+                              <Link
+                                key={child.name}
+                                href={normalizeHref(child.href)}
+                                className="group flex items-start space-x-3 p-3 rounded-lg hover:bg-white/5 transition-all duration-200"
+                                onClick={() => setActiveDropdown(null)}
+                              >
+                                <div className="w-8 h-8 bg-gradient-to-r from-cyan-500/20 to-purple-500/20 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform">
+                                  {child.icon}
+                                </div>
+                                <div className="flex-1 min-w-0">
+                                  <div className="flex items-center space-x-2">
+                                    <span className="text-sm font-medium text-white group-hover:text-cyan-400 transition-colors">
+                                      {child.name}
+                                    </span>
+                                    {child.featured && (
+                                      <span className="px-2 py-1 text-xs bg-gradient-to-r from-cyan-500 to-purple-500 text-white rounded-full">
+                                        Featured
+                                      </span>
+                                    )}
+                                  </div>
+                                  {child.description && (
+                                    <p className="text-xs text-gray-400 mt-1 line-clamp-2">
+                                      {child.description}
+                                    </p>
+                                  )}
+                                </div>
+                                <ArrowRight className="w-4 h-4 text-gray-500 group-hover:text-cyan-400 transition-colors" />
+                              </Link>
+                            ))}
+                          </div>
+                        </div>
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
+                )}
+              </div>
+            ))}
+          </div>
+
+          {/* Desktop CTA Buttons */}
+          <div className="hidden lg:flex lg:items-center lg:space-x-4">
+            <Link href="/contact">
+              <button className="px-4 py-2 text-sm font-medium text-cyan-400 hover:text-white hover:bg-cyan-400/10 rounded-lg transition-all duration-200">
+                Contact
+              </button>
+            </Link>
+            <Link href="/get-started">
+              <button className="px-4 py-2 text-sm font-medium bg-gradient-to-r from-cyan-500 to-purple-600 text-white rounded-lg hover:from-cyan-600 hover:to-purple-700 transition-all duration-200 transform hover:scale-105">
+                Get Started
+              </button>
+            </Link>
+          </div>
+
+          {/* Mobile Menu Button */}
+          <button
+            className="lg:hidden p-2 text-white hover:text-cyan-400 transition-colors"
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            aria-label="Toggle mobile menu"
+            aria-expanded={mobileMenuOpen}
+          >
+            {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+          </button>
+        </div>
+      </div>
+
+      {/* Mobile Navigation */}
+      <AnimatePresence>
+        {mobileMenuOpen && (
+          <motion.div
+            initial={{ opacity: 0, x: '100%' }}
+            animate={{ opacity: 1, x: 0 }}
+            exit={{ opacity: 0, x: '100%' }}
+            transition={{ type: 'tween', duration: 0.3 }}
+            className="fixed top-0 right-0 h-full w-80 bg-black/95 backdrop-blur-xl border-l border-white/10 z-50 lg:hidden overflow-y-auto"
+          >
+            <div className="p-6">
+              {/* Mobile Menu Header */}
+              <div className="flex items-center justify-between mb-8">
+                <div className="flex items-center space-x-3">
+                  <div className="w-8 h-8 bg-gradient-to-r from-cyan-400 to-purple-500 rounded-lg"></div>
+                  <span className="text-white font-bold text-lg">ZionTech Group</span>
+                </div>
+                <button
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="p-2 text-white hover:text-cyan-400 transition-colors"
+                  aria-label="Close mobile menu"
+                >
+                  <X className="w-6 h-6" />
                 </button>
               </div>
 
               {/* Mobile Search */}
-              <div className="p-4 border-b border-white/10">
-                <div className="relative">
-                  <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-400" />
-                  <input
-                    type="text"
-                    placeholder="Search services..."
-                    className="w-full pl-10 pr-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:border-transparent"
-                  />
-                </div>
+              <div className="mb-6">
+                <EnhancedSearch />
               </div>
 
-                {/* Dropdown Menu */}
-                <AnimatePresence>
-                  {activeDropdown === item.name && (
-                    <motion.div
-                      initial={{ opacity: 0, y: 10, scale: 0.95 }}
-                      animate={{ opacity: 1, y: 0, scale: 1 }}
-                      exit={{ opacity: 0, y: 10, scale: 0.95 }}
-                      transition={{ duration: 0.15 }}
-                      className="absolute top-full left-0 mt-2 w-80 bg-black/95 backdrop-blur-xl border border-cyan-400/20 rounded-xl shadow-2xl shadow-cyan-500/10"
-                      onMouseEnter={() => setActiveDropdown(item.name)}
-                      onMouseLeave={() => setActiveDropdown(null)}
+              {/* Mobile Navigation Items */}
+              <div className="space-y-4">
+                {navigationItems.map((item) => (
+                  <div key={item.name}>
+                    <button
+                      className="w-full flex items-center justify-between p-3 text-left text-white hover:bg-white/5 rounded-lg transition-colors"
+                      onClick={() => setActiveDropdown(activeDropdown === item.name ? null : item.name)}
+                      aria-expanded={activeDropdown === item.name}
                     >
-                      <div className="p-4">
-                        <div className="grid gap-3">
+                      <div className="flex items-center space-x-3">
+                        {item.icon}
+                        <span>{item.name}</span>
+                        {item.badge && (
+                          <span className="px-2 py-1 text-xs bg-gradient-to-r from-cyan-500 to-purple-500 text-white rounded-full">
+                            {item.badge}
+                          </span>
+                        )}
+                      </div>
+                      <ChevronDown className={`w-4 h-4 transition-transform duration-300 ${activeDropdown === item.name ? 'rotate-180' : ''}`} />
+                    </button>
+
+                    {/* Mobile Dropdown */}
+                    <AnimatePresence>
+                      {activeDropdown === item.name && (
+                        <motion.div
+                          initial={{ opacity: 0, height: 0 }}
+                          animate={{ opacity: 1, height: 'auto' }}
+                          exit={{ opacity: 0, height: 0 }}
+                          className="ml-4 mt-2 space-y-2 overflow-hidden"
+                        >
                           {item.children?.map((child) => (
                             <Link
                               key={child.name}
                               href={normalizeHref(child.href)}
-                              className={`flex items-start space-x-3 p-3 rounded-lg transition-all duration-200 ${
-                                child.featured 
-                                  ? 'bg-gradient-to-r from-cyan-500/20 to-blue-500/20 border border-cyan-400/30' 
-                                  : 'hover:bg-white/5'
-                              }`}
-                              onClick={() => setActiveDropdown(null)}
+                              className="flex items-center space-x-3 p-3 text-gray-300 hover:text-white hover:bg-white/5 rounded-lg transition-colors"
+                              onClick={() => setMobileMenuOpen(false)}
                             >
-                              <div className="flex-shrink-0 mt-1">
-                                {child.icon}
-                              </div>
-                              <div className="flex-1 min-w-0">
-                                <p className="text-sm font-medium text-white">
-                                  {child.name}
-                                  {child.featured && (
-                                    <span className="ml-2 inline-flex items-center px-2 py-0.5 rounded text-xs font-medium bg-cyan-500 text-white">
-                                      Featured
-                                    </span>
-                                  )}
-                                </p>
-                                <p className="text-sm text-gray-400 mt-1">
-                                  {child.description}
-                                </p>
-                              </div>
+                              {child.icon}
+                              <span className="text-sm">{child.name}</span>
+                              {child.featured && (
+                                <span className="px-2 py-1 text-xs bg-gradient-to-r from-cyan-500 to-purple-500 text-white rounded-full">
+                                  Featured
+                                </span>
+                              )}
                             </Link>
                           ))}
                         </motion.div>
@@ -373,204 +432,18 @@ const UltraFuturisticNavigation2036: React.FC = () => {
             ))}
           </div>
 
-          {/* Right side actions */}
-          <div className="flex items-center space-x-4">
-            {/* Search Button */}
-            <button
-              onClick={() => setIsSearchOpen(!isSearchOpen)}
-              className="p-2 text-gray-400 hover:text-white transition-colors rounded-lg hover:bg-white/5 focus:outline-none focus:ring-2 focus:ring-cyan-400 focus:ring-offset-2 focus:ring-offset-black"
-              aria-label="Open search"
-              aria-expanded={isSearchOpen}
-            >
-              <Search className="w-5 h-5" />
-            </button>
-
-            {/* Contact Button */}
-            <Link
-              href="/contact"
-              className="hidden sm:inline-flex items-center px-4 py-2 bg-gradient-to-r from-cyan-500 to-blue-600 text-white text-sm font-medium rounded-lg hover:from-cyan-600 hover:to-blue-700 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-cyan-400 focus:ring-offset-2 focus:ring-offset-black"
-              aria-label="Contact us"
-            >
-              Contact Us
-            </Link>
-
-            {/* Mobile menu button */}
-            <button
-              onClick={() => setIsOpen(!isOpen)}
-              className="lg:hidden p-2 text-gray-400 hover:text-white transition-colors rounded-lg hover:bg-white/5 focus:outline-none focus:ring-2 focus:ring-cyan-400 focus:ring-offset-2 focus:ring-offset-black"
-              aria-label="Toggle mobile menu"
-              aria-expanded={isOpen}
-              aria-controls="mobile-menu"
-            >
-              {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-            </button>
-          </div>
-        </div>
-
-        {/* Search Bar */}
-        <AnimatePresence>
-          {isSearchOpen && (
-            <motion.div
-              ref={searchRef}
-              initial={{ opacity: 0, height: 0 }}
-              animate={{ opacity: 1, height: 'auto' }}
-              exit={{ opacity: 0, height: 0 }}
-              transition={{ duration: 0.2 }}
-              className="py-4 border-t border-cyan-400/20"
-            >
-              <div className="relative">
-                <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-400" />
-                <input
-                  type="text"
-                  placeholder="Search services, solutions, and more..."
-                  value={searchQuery}
-                  onChange={(e) => setSearchQuery(e.target.value)}
-                  className="w-full pl-10 pr-4 py-3 bg-white/5 border border-cyan-400/30 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-cyan-400 focus:border-transparent"
-                  aria-label="Search"
-                />
-              </div>
-              
-              {/* Search Results */}
-              {searchQuery && (
-                <div className="mt-4 max-h-96 overflow-y-auto">
-                  <div className="grid gap-2">
-                    {filteredItems.map((item) => (
-                      <div key={item.name} className="p-3 bg-white/5 rounded-lg border border-cyan-400/20">
-                        <Link
-                          href={normalizeHref(item.href)}
-                          className="block text-white hover:text-cyan-400 transition-colors"
-                          onClick={() => {
-                            setIsSearchOpen(false);
-                            setSearchQuery('');
-                          }}
-                        >
-                          <div className="flex items-center space-x-3">
-                            {item.icon}
-                            <div>
-                              <p className="font-medium">{item.name}</p>
-                              <p className="text-sm text-gray-400">{item.description}</p>
-                            </div>
-                          </div>
-                        </Link>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              )}
-            </motion.div>
-          )}
-        </AnimatePresence>
-      </div>
-
-      {/* Mobile Menu */}
-      <AnimatePresence>
-        {isOpen && (
-          <motion.div
-            ref={mobileMenuRef}
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: 'auto' }}
-            exit={{ opacity: 0, height: 0 }}
-            transition={{ duration: 0.3 }}
-            className="lg:hidden bg-black/95 backdrop-blur-xl border-t border-cyan-400/20"
-            id="mobile-menu"
-            role="menu"
-            aria-label="Mobile navigation menu"
-          >
-            <div className="px-4 py-6 space-y-6">
-              {/* Contact Info */}
-              <div className="bg-gradient-to-r from-cyan-500/10 to-blue-500/10 border border-cyan-400/20 rounded-lg p-4">
-                <h3 className="text-sm font-medium text-cyan-400 mb-3">Contact Information</h3>
-                <div className="space-y-2 text-sm text-gray-300">
-                  <div className="flex items-center space-x-2">
-                    <Phone className="w-4 h-4 text-cyan-400" />
-                    <a href={`tel:${contactInfo.mobile}`} className="hover:text-cyan-400 transition-colors">
-                      {contactInfo.mobile}
-                    </a>
-                  </div>
-                  <div className="flex items-center space-x-2">
-                    <Mail className="w-4 h-4 text-cyan-400" />
-                    <a href={`mailto:${contactInfo.email}`} className="hover:text-cyan-400 transition-colors">
-                      {contactInfo.email}
-                    </a>
-                  </div>
-                  <div className="flex items-start space-x-2">
-                    <MapPin className="w-4 h-4 text-cyan-400 mt-0.5" />
-                    <span>{contactInfo.address}</span>
-                  </div>
-                </div>
-              </div>
-
-              {/* Navigation Items */}
-              {navigationItems.map((item) => (
-                <div key={item.name} className="space-y-2">
-                  <Link
-                    href={normalizeHref(item.href)}
-                    className="flex items-center justify-between p-3 text-white hover:text-cyan-400 hover:bg-white/5 rounded-lg transition-all duration-200"
-                    onClick={() => setIsOpen(false)}
-                    role="menuitem"
-                  >
-                    <div className="flex items-center space-x-3">
-                      {item.icon}
-                      <span className="font-medium">{item.name}</span>
-                    </div>
-                    {item.badge && (
-                      <span className="px-2 py-1 text-xs bg-cyan-500 text-white rounded-full">
-                        {item.badge}
-                      </span>
-                    )}
-                  </Link>
-                  
-                  {/* Mobile Submenu */}
-                  {item.children && (
-                    <div className="ml-6 space-y-1">
-                      {item.children.map((child) => (
-                        <Link
-                          key={child.name}
-                          href={normalizeHref(child.href)}
-                          className="flex items-center space-x-3 p-2 text-gray-400 hover:text-cyan-400 hover:bg-white/5 rounded-lg transition-all duration-200"
-                          onClick={() => setIsOpen(false)}
-                          role="menuitem"
-                        >
-                          {child.icon}
-                          <span className="text-sm">{child.name}</span>
-                          {child.featured && (
-                            <span className="ml-auto px-2 py-0.5 text-xs bg-cyan-500 text-white rounded-full">
-                              Featured
-                            </span>
-                          )}
-                        </Link>
-                      ))}
-                    </div>
-                  )}
-                </div>
-              ))}
-
               {/* Mobile CTA */}
-              <div className="pt-4 border-t border-cyan-400/20">
-                <Link
-                  href="/contact"
-                  className="block w-full text-center px-4 py-3 bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-medium rounded-lg hover:from-cyan-600 hover:to-blue-700 transition-all duration-200"
-                  onClick={() => setIsOpen(false)}
-                  role="menuitem"
-                >
-                  Get Started Today
+              <div className="mt-8 pt-6 border-t border-white/10">
+                <Link href="/contact" onClick={() => setMobileMenuOpen(false)}>
+                  <button className="w-full px-4 py-3 bg-gradient-to-r from-cyan-500 to-purple-500 text-white rounded-lg font-medium hover:from-cyan-600 hover:to-purple-600 transition-all duration-300">
+                    Contact Us
+                  </button>
                 </Link>
-                <div className="flex space-x-2">
-                  <a
-                    href="tel:+1-302-464-0950"
-                    className="flex-1 flex items-center justify-center space-x-2 p-3 bg-white/10 text-white rounded-lg hover:bg-white/20 transition-colors duration-200"
-                  >
-                    <Phone className="w-4 h-4" />
-                    <span className="text-sm">Call</span>
-                  </a>
-                  <a
-                    href="mailto:kleber@ziontechgroup.com"
-                    className="flex-1 flex items-center justify-center space-x-2 p-3 bg-white/10 text-white rounded-lg hover:bg-white/20 transition-colors duration-200"
-                  >
-                    <Mail className="w-4 h-4" />
-                    <span className="text-sm">Email</span>
-                  </a>
-                </div>
+                <Link href="/get-started" onClick={() => setMobileMenuOpen(false)}>
+                  <button className="w-full px-4 py-3 text-sm font-medium bg-gradient-to-r from-cyan-500 to-purple-600 text-white rounded-lg hover:from-cyan-600 hover:to-purple-700 transition-all duration-200 transform hover:scale-105">
+                    Get Started
+                  </button>
+                </Link>
               </div>
             </div>
           </motion.div>

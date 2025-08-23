@@ -81,7 +81,7 @@ const Revolutionary2045FuturisticServicesShowcase: React.FC = () => {
     },
     {
       title: "Quantum Cybersecurity Platform 2045",
-      subtitle: "Next-generation quantum-resistant security solutions",
+      subtitle: "ArrowRight-generation quantum-resistant security solutions",
       description: "Protect your digital assets with our quantum-resistant cybersecurity platform that uses advanced encryption algorithms and AI-powered threat detection.",
       icon: <Shield className="w-20 h-20" />,
       color: "from-red-600 via-pink-600 to-purple-600",
@@ -145,7 +145,7 @@ const Revolutionary2045FuturisticServicesShowcase: React.FC = () => {
     },
     {
       name: "Quantum Internet Security Gateway 2045",
-      description: "Next-generation quantum internet security with advanced encryption and threat detection",
+      description: "ArrowRight-generation quantum internet security with advanced encryption and threat detection",
       icon: <Shield className="w-8 h-8" />,
       color: "from-red-600 to-pink-700",
       link: "/quantum-internet-security-gateway-2045",

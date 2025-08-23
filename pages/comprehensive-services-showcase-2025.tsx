@@ -1,16 +1,12 @@
 import React from 'react';
-import { Layout } from '../components/layout/Layout';
+import Layout from '../components/layout/Layout';
+import { motion } from 'framer-motion';
 import { 
-  Brain, Rocket, Shield, Zap, Target, Atom, BookOpen, ArrowRight,
-  Truck, DollarSign, BarChart3, Globe, Users, Star, Sparkles, 
-  Cpu, Lock, Cloud, Settings, Eye, Award, Clock, Heart, Lightbulb,
-  Search, Grid, List, TrendingUp, Shield as ShieldIcon, Globe as GlobeIcon,
-  User, ShoppingCart, Bell, HelpCircle, FileText, Video, Headphones, 
-  Code, Database, Network, Server, Monitor, Smartphone,
-  Camera, Gamepad2, Palette, Music, Film, BookOpenCheck,
-  Building, MessageCircle, Sparkles as SparklesIcon, Zap as ZapIcon,
-  Target as TargetIcon, Atom as AtomIcon, Brain as BrainIcon
+  Sparkles, ArrowRight, CheckCircle, Star, Users, 
+  Zap, Shield, Brain, Atom, Rocket, Globe, Building,
+  Target, TrendingUp, Award, Cpu, Database, Lock, Satellite
 } from 'lucide-react';
+import Link from 'next/link';
 
 const ComprehensiveServicesShowcase: React.FC = () => {
   const serviceCategories = [
@@ -19,14 +15,19 @@ const ComprehensiveServicesShowcase: React.FC = () => {
       icon: <Brain className="w-8 h-8 text-cyan-400" />,
       description: 'Revolutionary AI solutions from consciousness evolution to autonomous operations',
       services: [
-        { name: 'AI Consciousness Evolution 2029', href: '/ai-consciousness-evolution-2029', featured: true },
-        { name: 'AI Autonomous Business Operations', href: '/ai-autonomous-business-operations-platform', featured: true },
-        { name: 'AI Autonomous Customer Service', href: '/ai-autonomous-customer-service', featured: true },
-        { name: 'AI Business Intelligence Suite', href: '/ai-business-intelligence-suite' },
-        { name: 'AI Content Generator', href: '/ai-content-generator' },
-        { name: 'AI Financial Intelligence', href: '/ai-financial-intelligence' }
-      ],
-      color: 'from-cyan-500 to-blue-600'
+        {
+          name: "AI Consciousness Evolution Platform 2045",
+          description: "Revolutionary platform for developing conscious AI systems",
+          path: "/ai-consciousness-evolution-2045",
+          features: ["Consciousness Mapping", "Ethical AI Development", "Neural Evolution"]
+        },
+        {
+          name: "Quantum AI Cognitive Platform 2045",
+          description: "Quantum-powered cognitive computing solutions",
+          path: "/quantum-ai-cognitive-2045",
+          features: ["Quantum Cognition", "Neural Networks", "Advanced Analytics"]
+        }
+      ]
     },
     {
       name: 'Quantum Computing',
@@ -159,9 +160,37 @@ const ComprehensiveServicesShowcase: React.FC = () => {
           </div>
         </section>
 
-        {/* Services Overview */}
-        <section className="py-20 px-4">
-          <div className="max-w-7xl mx-auto">
+        {/* Success Metrics */}
+        <section className="py-20">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+              {successMetrics.map((item, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: index * 0.1 }}
+                  viewport={{ once: true }}
+                  className="text-center"
+                >
+                  <div className="w-16 h-16 bg-gradient-to-br from-purple-500 to-blue-600 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                    {item.icon}
+                  </div>
+                  <div className="text-3xl lg:text-4xl font-bold text-white mb-2">
+                    {item.metric}
+                  </div>
+                  <div className="text-gray-400 font-medium">
+                    {item.label}
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Featured Technologies */}
+        <section className="py-20 bg-black/50">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
