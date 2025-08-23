@@ -41,6 +41,7 @@ import { realMarketServices } from '../../data/real-market-services';
 import { real2029Q2Additions } from '../../data/real-2029-q2-additions';
 import { real2029Q3Additions } from '../../data/real-2029-q3-additions';
 import { real2029Q4Additions } from '../../data/real-2029-q4-additions';
+<<<<<<< HEAD
 import { real2030Q1Additions } from '../../data/real-2030-q1-additions';
 import { enterpriseITSolutions } from '../../data/2034-enterprise-it-solutions';
 import { innovativeMicroSaasSolutions } from '../../data/2034-innovative-micro-saas-solutions';
@@ -54,6 +55,8 @@ import { aiAutonomousEcosystemServices2029 } from '../../data/2029-ai-autonomous
 import { emergingTechBreakthroughServices2029 } from '../../data/2029-emerging-tech-breakthroughs';
 import { practicalBusinessSolutionServices2029 } from '../../data/2029-practical-business-solutions';
 import { real2032Q1Additions } from '../../data/real-2032-q1-additions';
+=======
+>>>>>>> origin/cursor/add-services-pricing-q4-2029
 
 type Service = typeof enhancedRealMicroSaasServices[number];
 
@@ -99,6 +102,7 @@ function getAllServices(): Service[] {
 		.concat(realMarketServices as unknown as Service[])
 		.concat(real2029Q2Additions as unknown as Service[])
 		.concat(real2029Q3Additions as unknown as Service[])
+<<<<<<< HEAD
 		.concat(real2029Q4Additions as unknown as Service[])
 		.concat(real2030Q1Additions as unknown as Service[])
 		.concat(real2030Q2Additions as unknown as Service[])
@@ -118,6 +122,9 @@ function getAllServices(): Service[] {
 		.concat(aiAutonomousEcosystemServices2029Additions as unknown as Service[])
 		.concat(emergingTechBreakthroughServices2029Additions as unknown as Service[])
 		.concat(practicalBusinessSolutionServices2029Additions as unknown as Service[]);
+=======
+		.concat(real2029Q4Additions as unknown as Service[]);
+>>>>>>> origin/cursor/add-services-pricing-q4-2029
 }
 
 function toSlug(value: string): string {

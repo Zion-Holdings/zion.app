@@ -37,17 +37,7 @@ import { real2028ServiceExpansions } from '../../data/real-2028-service-expansio
 import { real2029Q1Additions } from '../../data/real-2029-q1-additions';
 import { real2029Q2Additions } from '../../data/real-2029-q2-additions';
 import { real2029Q3Additions } from '../../data/real-2029-q3-additions';
-import { real2030Q1Additions } from '../../data/real-2030-q1-additions';
-import { real2031MicroSaasAdditions } from '../../data/real-2031-micro-saas-additions';
-import { real2031ITServicesAdditions } from '../../data/real-2031-it-services-additions';
-import { real2031AIServicesAdditions } from '../../data/real-2031-ai-services-additions';
-import { real2030Q2Additions } from '../../data/real-2030-q2-additions';
-import { real2027Q3Additions } from '../../data/real-2027-q3-additions';
-import { professionalServices } from '../../data/professional-services';
-import { real2032ServiceExpansions } from '../../data/real-2032-service-expansions';
-import { real2035Q1Additions } from '../../data/real-2035-q1-additions';
-import { real2035Q2Additions } from '../../data/real-2035-q2-additions';
-import { real2025Q4AugmentedBatch } from '../../data/real-2025-q4-augmented-batch';
+import { real2029Q4Additions } from '../../data/real-2029-q4-additions';
 
 function toSlug(value: string) {
   return value.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
@@ -169,23 +159,8 @@ export default function ServicesIndexPage() {
       real2029Q1Additions as unknown[],
       real2029Q2Additions as unknown[],
       real2029Q3Additions as unknown[],
-      real2030Q1Additions as unknown[],
-      real2030Q2Additions as unknown[],
-      real2031MicroSaasAdditions as unknown[],
-      real2031ITServicesAdditions as unknown[],
-      real2031AIServicesAdditions as unknown[],
-      real2027Q3Additions as unknown[],
-      professionalServices as unknown[],
-      real2032ServiceExpansions as unknown[],
-      real2035Q1Additions as unknown[],
-      real2035Q2AdditionsExtra as unknown[],
-      real2025ExtraServices as unknown[],
-      real2026Q4ExpansionsV2 as unknown[],
-      real2026Q4ExpansionsV3 as unknown[],
-      real2036InnovativeServices as unknown[],
-      real2036SpecializedServices as unknown[]
-    )
-    .concat(real2036ServiceExpansions as unknown[]);
+      real2029Q4Additions as unknown[]
+    );
   const byCategory: Record<string, unknown[]> = {};
   for (const c of categories) byCategory[c] = [];
   // Normalize various category labels into our main buckets
