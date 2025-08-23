@@ -104,12 +104,19 @@ const EnhancedFooter2025: React.FC = () => {
   ];
 
   const socialLinks = [
+<<<<<<< HEAD
+    { name: 'LinkedIn', href: 'https://linkedin.com/company/zion-tech-group', icon: Linkedin },
+    { name: 'GitHub', href: 'https://github.com/Zion-Holdings', icon: Github },
+    { name: 'Twitter', href: 'https://twitter.com/ziontechgroup', icon: Twitter },
+    { name: 'YouTube', href: 'https://youtube.com/@ziontechgroup', icon: Youtube }
+=======
     { icon: Linkedin, href: 'https://linkedin.com/company/ziontechgroup', label: 'LinkedIn' },
     { icon: Twitter, href: 'https://twitter.com/ziontechgroup', label: 'Twitter' },
     { icon: Github, href: 'https://github.com/Zion-Holdings', label: 'GitHub' },
     { icon: Youtube, href: 'https://youtube.com/@ziontechgroup', label: 'YouTube' },
     { icon: Facebook, href: 'https://facebook.com/ziontechgroup', label: 'Facebook' },
     { icon: Instagram, href: 'https://instagram.com/ziontechgroup', label: 'Instagram' }
+>>>>>>> origin/cursor/website-audit-content-update-and-deployment-217f
   ];
 
   const quickLinks = [

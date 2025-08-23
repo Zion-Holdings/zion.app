@@ -55,17 +55,30 @@ const navigationItems: NavigationItem[] = [
     icon: <Target className="w-5 h-5" />,
     description: 'Industry-specific solutions',
     children: [
+<<<<<<< HEAD
+      { name: 'Enterprise Solutions', href: '/solutions/enterprise', icon: <Building className="w-4 h-4" /> },
+      { name: 'Healthcare Solutions', href: '/solutions/healthcare', icon: <Heart className="w-4 h-4" /> },
+      { name: 'Financial Solutions', href: '/solutions/financial', icon: <DollarSign className="w-4 h-4" /> },
+      { name: 'Manufacturing Solutions', href: '/solutions/manufacturing', icon: <Cog className="w-4 h-4" /> },
+      { name: 'Retail Solutions', href: '/retail-technology-solutions', icon: <ShoppingCart className="w-4 h-4" /> },
+      { name: 'Government Solutions', href: '/government-technology-solutions', icon: <ShieldCheck className="w-4 h-4" /> }
+=======
       { label: 'Enterprise Solutions', href: '/enterprise-solutions' },
       { label: 'Startup Solutions', href: '/startup-solutions' },
       { label: 'Government Solutions', href: '/government-solutions' },
       { label: 'Healthcare Solutions', href: '/healthcare-solutions' },
       { label: 'Financial Solutions', href: '/financial-solutions' },
       { label: 'Manufacturing AI', href: '/manufacturing-ai-solutions' }
+>>>>>>> origin/cursor/website-audit-content-update-and-deployment-217f
     ]
   },
   {
     name: 'Company',
     href: '/about',
+<<<<<<< HEAD
+    icon: <Building className="w-5 h-5" />,
+    description: 'About Zion Tech Group',
+=======
     icon: Users,
     children: [
       { label: 'About Us', href: '/about' },
@@ -77,6 +90,7 @@ const navigationItems: NavigationItem[] = [
     label: 'Resources',
     href: '/resources',
     icon: FileText,
+>>>>>>> origin/cursor/website-audit-content-update-and-deployment-217f
     children: [
       { name: 'About Us', href: '/about', icon: <Info className="w-4 h-4" /> },
       { name: 'Our Mission', href: '/mission', icon: <Target className="w-4 h-4" /> },
