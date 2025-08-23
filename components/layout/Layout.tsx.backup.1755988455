@@ -75,8 +75,17 @@ export default function Layout({ children }: LayoutProps) {
     <div className="min-h-screen bg-black text-white relative overflow-x-hidden">
       {/* Skip to content link for accessibility */}
       <a href="#main" className="skip-link">Skip to main content</a>
+<<<<<<< HEAD
+      
+      {/* Enhanced Futuristic Background */}
+      <UltraAdvancedFuturisticBackground2036 
+        intensity="medium" 
+        theme="quantum"
+      />
+=======
       {/* Futuristic Background */}
       <UltraAdvancedFuturisticBackground2036 intensity="medium" theme="quantum" interactive={true} />
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-ed16
       
       {/* Layout Structure */}
       <div className="relative z-10">

@@ -75,12 +75,20 @@ const navigationItems: NavigationItem[] = [
         featured: true
       },
       { 
+<<<<<<< HEAD
+        name: '2036 Innovations', 
+        href: '/innovative-2036-services-showcase', 
+        description: 'Latest 2036 innovations and services',
+        icon: <Star className="w-4 h-4" />,
+        featured: true
+=======
         name: 'Ultimate 2036 Showcase', 
         href: '/ultimate-2036-futuristic-services-showcase', 
         description: 'Latest futuristic services',
         icon: <Sparkles className="w-4 h-4" />,
         featured: true,
         badge: 'NEW'
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-ed16
       },
       { 
         name: 'AI & Machine Learning', 

@@ -51,8 +51,17 @@ import { real2025ExtraServices } from '../../data/real-2025-extra-services';
 import { real2026Q4ExpansionsV2 } from '../../data/real-2026-q4-expansions-v2';
 import { real2036ServiceExpansions } from '../../data/real-2036-service-expansions';
 import { real2026Q4ExpansionsV3 } from '../../data/real-2026-q4-expansions-v3';
+<<<<<<< HEAD
+import { real2036MicroSaasAdditions } from '../../data/real-2036-micro-saas-additions';
+import { real2036ITServicesAdditions } from '../../data/real-2036-it-services-additions';
+import { real2036AIServicesAdditions } from '../../data/real-2036-ai-services-additions';
+import { real2036InnovativeServicesAdditions } from '../../data/real-2036-innovative-services-additions';
+import { real2036SpaceTechAdditions } from '../../data/real-2036-space-tech-additions';
+import { real2036CybersecurityAdditions } from '../../data/real-2036-cybersecurity-additions';
+=======
 import { real2036InnovativeServices } from '../../data/real-2036-innovative-services';
 import { real2036EmergingTechServices } from '../../data/real-2036-emerging-tech-services';
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-ed16
 
 function toSlug(value: string) {
   return value.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
@@ -185,11 +194,34 @@ export default function ServicesIndexPage() {
       real2035Q2AdditionsExtra as unknown[],
       real2025ExtraServices as unknown[],
       real2026Q4ExpansionsV2 as unknown[],
+<<<<<<< HEAD
+      real2036ServiceExpansions as unknown[],
+      real2036MicroSaasAdditions as unknown[],
+      real2036ITServicesAdditions as unknown[],
+      real2036AIServicesAdditions as unknown[],
+      real2036InnovativeServicesAdditions as unknown[],
+      real2036SpaceTechAdditions as unknown[],
+      real2036CybersecurityAdditions as unknown[]
+    );
+
+  // Transform services to match the expected format
+  const transformedServices = all.map(transformServiceData);
+  
+  // Get valid services with pricing
+  const validServices = transformedServices.filter((service: Service) => service.price && typeof service.price === 'string');
+
+  // Group services by category
+  const servicesByCategory = categories.reduce((acc, category) => {
+    acc[category] = validServices.filter((service: any) => 
+      service.category && service.category.toLowerCase().includes(category.toLowerCase().replace(/\s+/g, ''))
+    );
+=======
       real2026Q4ExpansionsV3 as unknown[],
       real2036InnovativeServices as unknown[],
       real2036EmergingTechServices as unknown[]
     )
     .concat(real2036ServiceExpansions as unknown[]);
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-ed16
   const byCategory: Record<string, unknown[]> = {};
   for (const c of categories) byCategory[c] = [];
   // Normalize various category labels into our main buckets

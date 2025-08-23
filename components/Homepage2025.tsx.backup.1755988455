@@ -1,7 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import Layout from './layout/Layout';
 import UltraFuturisticServiceCard2026 from './ui/UltraFuturisticServiceCard2026';
+<<<<<<< HEAD
+import { motion } from 'framer-motion';
+=======
 import { Sparkles, Grid } from 'lucide-react';
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-ed16
 
 const Homepage2025: React.FC = () => {
   const [isLoading, setIsLoading] = useState(true);
@@ -384,10 +388,21 @@ const Homepage2025: React.FC = () => {
               viewport={{ once: true }}
             >
               Our Services
+<<<<<<< HEAD
+            </motion.h2>
+            <motion.div 
+              className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.4 }}
+              viewport={{ once: true }}
+            >
+=======
             </h2>
             
             {/* Featured Services Grid */}
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-ed16
               <UltraFuturisticServiceCard2026
                 service={{
                   id: 'ai-ml',
