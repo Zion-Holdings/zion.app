@@ -364,7 +364,7 @@ const Homepage2040: React.FC = () => {
               </div>
               <div className="flex items-center justify-center gap-3 text-pink-400">
                 <MapPin className="w-6 h-6" />
-                <span className="font-semibold text-sm">{contactInfo.address}</span>
+                <span className="text-sm">{contactInfo.address}</span>
               </div>
             </div>
 
