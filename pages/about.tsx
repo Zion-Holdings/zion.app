@@ -1,9 +1,24 @@
-import React from 'react';
-
-export default function AboutPage() {
-  return <div>About Zion</div>;
-}
-=======
 export default function About(){
   return <div style={{padding:20}}>About Zion</div>
 }
+=======
+import type { NextPage } from 'next';
+import Head from 'next/head';
+
+const About: NextPage = () => {
+  return (
+    <div>
+      <Head>
+        <title>About - Zion Tech Solutions</title>
+        <meta name="description" content="About page" />
+      </Head>
+      
+      <main>
+        <h1>About</h1>
+        <p>This page is under construction.</p>
+      </main>
+    </div>
+  );
+};
+
+export default About;
