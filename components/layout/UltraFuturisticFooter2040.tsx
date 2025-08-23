@@ -19,28 +19,10 @@ const UltraFuturisticFooter2040: React.FC = () => {
 
   const socialLinks = [
     {
-      name: 'LinkedIn',
-      href: 'https://linkedin.com/company/ziontechgroup',
-      icon: Linkedin,
-      color: 'hover:text-blue-400'
-    },
-    {
-      name: 'Twitter',
-      href: 'https://twitter.com/ziontechgroup',
-      icon: Twitter,
-      color: 'hover:text-sky-400'
-    },
-    {
       name: 'GitHub',
       href: 'https://github.com/ziontechgroup',
       icon: Github,
       color: 'hover:text-gray-400'
-    },
-    {
-      name: 'YouTube',
-      href: 'https://youtube.com/@ziontechgroup',
-      icon: Youtube,
-      color: 'hover:text-red-400'
     }
   ];
 

@@ -6,7 +6,7 @@ import {
   Menu, X, ChevronDown, ChevronRight, Home, Rocket, Target, Building, BookOpen, MessageCircle,
   Brain, Atom, Shield, Cloud, BarChart, Code, Rocket as RocketIcon, Users, Info, Briefcase,
   Heart, DollarSign, Cog, FileText, Calendar, Lightbulb, HelpCircle, Monitor, Zap, Star,
-  Settings, Globe, Lock, Server, Database, Network, Palette, Cpu, Layers, Globe2, Truck
+  Settings, Globe, Lock, Server, Database, Network, Palette, Cpu, Layers, Globe2, Truck, Accessibility
 } from 'lucide-react';
 
 interface SidebarItem {
@@ -99,6 +99,19 @@ const sidebarItems: SidebarItem[] = [
       { name: 'Support Center', href: '/support', icon: <HelpCircle className="w-4 h-4" /> },
       { name: 'Status Page', href: '/status', icon: <Monitor className="w-4 h-4" /> },
       { name: 'Developer Resources', href: '/developer-resources', icon: <Code className="w-4 h-4" /> }
+    ]
+  },
+  {
+    name: 'Compliance & Accessibility',
+    href: '/compliance',
+    icon: <Shield className="w-5 h-5" />,
+    description: 'Enterprise compliance and accessibility solutions',
+    children: [
+      { name: 'SOC 2 Compliance', href: '/soc2-compliance-automation', icon: <Shield className="w-4 h-4" /> },
+      { name: 'GDPR Compliance', href: '/privacy-compliance-automation', icon: <Lock className="w-4 h-4" /> },
+      { name: 'Accessibility Tools', href: '/accessibility', icon: <Accessibility className="w-4 h-4" /> },
+      { name: 'Compliance Monitoring', href: '/compliance', icon: <Monitor className="w-4 h-4" /> },
+      { name: 'Privacy Portal', href: '/privacy-request-portal', icon: <Users className="w-4 h-4" /> }
     ]
   }
 ];
