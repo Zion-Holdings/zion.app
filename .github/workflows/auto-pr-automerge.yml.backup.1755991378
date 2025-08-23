@@ -1,3 +1,23 @@
+<<<<<<< HEAD
+name: Auto Pr Automerge
+
+on:
+  workflow_dispatch: {}
+  schedule:
+    - cron: '*/10 * * * *'
+
+permissions:
+  contents: write
+  actions: read
+
+jobs:
+  main:
+    name: Main Job
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Checkout repository
+=======
 name: Auto PR + Automerge
 
 on:
@@ -18,10 +38,26 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
+>>>>>>> origin/cursor/deploy-autonomous-cloud-automations-and-sync-c342
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
 
+<<<<<<< HEAD
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci --no-audit --no-fund
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+=======
       - name: Create or update PR to main
         id: cpr
         uses: actions/github-script@v7
@@ -105,3 +141,4 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
           pull-request-number: ${{ steps.cpr.outputs.pr_number }}
           merge-method: squash
+>>>>>>> origin/cursor/deploy-autonomous-cloud-automations-and-sync-c342
