@@ -8,7 +8,8 @@ import {
   Zap,
   TrendingUp, Award, CheckCircle, Clock,
   Search, X as CloseIcon,
-  Target, BookOpen, Calendar, Video, FileText
+  Target, BookOpen, Calendar, Video, FileText,
+  Cpu, Globe, Lock, Settings
 } from 'lucide-react';
 
 const contactInfo = {
@@ -97,68 +98,52 @@ const sidebarSections = [
       { name: 'Financial Analytics', href: '/automated-financial-analytics-platform' },
       { name: 'Project Management', href: '/intelligent-project-management-suite' },
       { name: 'Business Intelligence', href: '/ai-business-intelligence-suite' },
-      { name: 'Marketing Automation', href: '/ai-autonomous-marketing-platform' },
-      { name: 'Customer Service AI', href: '/ai-customer-service' },
-      { name: 'HR & Recruitment', href: '/ai-hr-recruitment' },
-      { name: 'Legal Contract Analysis', href: '/ai-legal-contract-analyzer' }
+      { name: 'Marketing Automation', href: '/ai-autonomous-marketing-platform' }
     ]
   },
   {
-    title: 'Solutions',
+    title: 'Industry Solutions',
     icon: <Target className="w-5 h-5" />,
     color: 'text-orange-400',
     items: [
-      { name: 'Healthcare & Biotech', href: '/biotech-ai' },
-      { name: 'Financial Services', href: '/billing-analytics' },
-      { name: 'Manufacturing AI', href: '/autonomous-manufacturing' },
+      { name: 'Healthcare Solutions', href: '/healthcare-solutions', badge: 'Hot' },
+      { name: 'Financial Services', href: '/financial-solutions', badge: 'Popular' },
+      { name: 'Manufacturing AI', href: '/manufacturing-ai-solutions', badge: 'New' },
       { name: 'Retail Technology', href: '/retail-technology-solutions' },
-      { name: 'Education Technology', href: '/training' },
-      { name: 'Government Solutions', href: '/enterprise-solutions-showcase' },
-      { name: 'Energy & Utilities', href: '/quantum-energy' },
-      { name: 'Transportation & Logistics', href: '/quantum-logistics' },
-      { name: 'Real Estate Technology', href: '/real-estate-technology-solutions' },
-      { name: 'Entertainment & Media', href: '/entertainment-media-solutions' },
-      { name: 'Space Technology', href: '/space-technology' },
-      { name: 'Biotech & Healthcare', href: '/biotech-ai' }
+      { name: 'Government Tech', href: '/government-technology-solutions' },
+      { name: 'Energy & Utilities', href: '/energy-utilities-solutions' },
+      { name: 'Education Technology', href: '/education-technology-solutions' },
+      { name: 'Entertainment & Media', href: '/entertainment-media-solutions' }
     ]
   },
   {
-    title: 'Resources',
+    title: 'Resources & Support',
     icon: <BookOpen className="w-5 h-5" />,
-    color: 'text-cyan-400',
+    color: 'text-purple-400',
     items: [
-      { name: 'Documentation', href: '/docs' },
-      { name: 'API Reference', href: '/api-documentation' },
+      { name: 'API Documentation', href: '/api', badge: 'New' },
+      { name: 'Technical Docs', href: '/docs' },
+      { name: 'Webinars', href: '/webinars' },
       { name: 'Case Studies', href: '/case-studies' },
-      { name: 'Blog & News', href: '/blog' },
+      { name: 'Blog', href: '/blog' },
+      { name: 'Training', href: '/training' },
       { name: 'Support Center', href: '/support' },
-      { name: 'Training & Certification', href: '/training' },
-      { name: 'Community Forum', href: '/community' },
-      { name: 'Developer Resources', href: '/developer-resources' },
-      { name: 'Research & Development', href: '/research-development' },
-      { name: 'White Papers', href: '/white-papers' },
-      { name: 'Performance Reports', href: '/reports' },
-      { name: 'Market Analysis', href: '/market-pricing' },
-      { name: 'Services Advertising', href: '/services-advertising' }
+      { name: 'Developer Resources', href: '/developer-resources' }
     ]
   },
   {
     title: 'Company',
     icon: <Users className="w-5 h-5" />,
-    color: 'text-pink-400',
+    color: 'text-gray-400',
     items: [
       { name: 'About Us', href: '/about' },
-      { name: 'Leadership Team', href: '/leadership' },
       { name: 'Careers', href: '/careers' },
-      { name: 'News & Press', href: '/news' },
+      { name: 'News', href: '/news' },
       { name: 'Partners', href: '/partners' },
       { name: 'Investors', href: '/investors' },
-      { name: 'Contact Us', href: '/contact' },
-      { name: 'Locations', href: '/locations' },
-      { name: 'Sustainability', href: '/sustainability' },
-      { name: 'Diversity & Inclusion', href: '/diversity-inclusion' },
-      { name: 'Terms of Service', href: '/terms' },
-      { name: 'Privacy Policy', href: '/privacy' }
+      { name: 'Contact', href: '/contact' },
+      { name: 'Privacy Policy', href: '/privacy' },
+      { name: 'Terms of Service', href: '/terms' }
     ]
   }
 ];
