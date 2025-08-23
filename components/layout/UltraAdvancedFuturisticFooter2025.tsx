@@ -37,12 +37,12 @@ const footerSections: FooterSection[] = [
   {
     title: 'Solutions',
     links: [
-      { label: 'Healthcare & Biotech', href: '/solutions/healthcare', description: 'Medical technology' },
-      { label: 'Financial Services', href: '/solutions/financial', description: 'Fintech solutions' },
-      { label: 'Manufacturing', href: '/solutions/manufacturing', description: 'Industry 4.0' },
-      { label: 'Retail & E-commerce', href: '/solutions/retail', description: 'Digital commerce' },
-      { label: 'Government', href: '/solutions/government', description: 'Public sector' },
-      { label: 'Education', href: '/solutions/education', description: 'EdTech solutions' }
+      { label: 'Healthcare & Biotech', href: '/healthcare-solutions', description: 'Medical technology' },
+      { label: 'Financial Services', href: '/financial-solutions', description: 'Fintech solutions' },
+      { label: 'Manufacturing', href: '/manufacturing-ai-solutions', description: 'Industry 4.0' },
+      { label: 'Retail & E-commerce', href: '/retail-technology-solutions', description: 'Digital commerce' },
+      { label: 'Government', href: '/government-technology-solutions', description: 'Public sector' },
+      { label: 'Education', href: '/education-technology-solutions', description: 'EdTech solutions' }
     ]
   },
   {
@@ -53,6 +53,7 @@ const footerSections: FooterSection[] = [
       { label: 'Careers', href: '/careers', description: 'Join our team' },
       { label: 'News & Updates', href: '/news', description: 'Latest company news' },
       { label: 'Case Studies', href: '/case-studies', description: 'Success stories' },
+      { label: 'Partners', href: '/partners', description: 'Strategic partnerships' },
       { label: 'Contact', href: '/contact', description: 'Get in touch' }
     ]
   },
@@ -64,7 +65,9 @@ const footerSections: FooterSection[] = [
       { label: 'Webinars', href: '/webinars', description: 'Educational content' },
       { label: 'Documentation', href: '/docs', description: 'Technical guides' },
       { label: 'API Reference', href: '/api-documentation', description: 'Developer resources' },
-      { label: 'Support', href: '/support', description: 'Help & assistance' }
+      { label: 'Support', href: '/support', description: 'Help & assistance' },
+      { label: 'Training', href: '/training', description: 'Learn our platforms' },
+      { label: 'Community', href: '/community', description: 'Connect with users' }
     ]
   }
 ];

@@ -4,7 +4,9 @@ import {
   Menu, X, Search, ChevronDown, ChevronRight, 
   Home, Briefcase, Users, BookOpen, Phone, 
   Globe, Zap, Shield, Brain, Rocket, Building,
-  Target, Heart, Cpu, Cloud
+  Target, Heart, Cpu, Cloud, Award, Newspaper,
+  CheckCircle, HelpCircle, FileText, GraduationCap,
+  BarChart3, Link as LinkIcon
 } from 'lucide-react';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
@@ -79,6 +81,18 @@ const navigationItems: NavigationItem[] = [
         href: '/services?category=cloud',
         icon: <Cloud className="w-4 h-4" />,
         description: 'Cloud computing and infrastructure'
+      },
+      {
+        label: 'Data & Analytics',
+        href: '/services?category=data-analytics',
+        icon: <BarChart3 className="w-4 h-4" />,
+        description: 'Data insights and analytics'
+      },
+      {
+        label: 'Blockchain & Web3',
+        href: '/services?category=blockchain',
+        icon: <LinkIcon className="w-4 h-4" />,
+        description: 'Decentralized technology solutions'
       }
     ]
   },
@@ -90,41 +104,111 @@ const navigationItems: NavigationItem[] = [
     children: [
       {
         label: 'Healthcare & Biotech',
-        href: '/solutions/healthcare',
+        href: '/healthcare-solutions',
         icon: <Heart className="w-4 h-4" />,
         description: 'Advanced healthcare solutions'
       },
       {
         label: 'Financial Services',
-        href: '/solutions/financial',
+        href: '/financial-solutions',
         icon: <Zap className="w-4 h-4" />,
         description: 'Financial technology solutions'
       },
       {
         label: 'Manufacturing',
-        href: '/solutions/manufacturing',
+        href: '/manufacturing-ai-solutions',
         icon: <Cpu className="w-4 h-4" />,
         description: 'Smart manufacturing solutions'
       },
       {
         label: 'Retail & E-commerce',
-        href: '/solutions/retail',
+        href: '/retail-technology-solutions',
         icon: <Globe className="w-4 h-4" />,
         description: 'Digital commerce solutions'
+      },
+      {
+        label: 'Government',
+        href: '/government-technology-solutions',
+        icon: <Building className="w-4 h-4" />,
+        description: 'Public sector solutions'
+      },
+      {
+        label: 'Education',
+        href: '/education-technology-solutions',
+        icon: <GraduationCap className="w-4 h-4" />,
+        description: 'EdTech solutions'
+      },
+      {
+        label: 'Energy & Utilities',
+        href: '/energy-utilities-solutions',
+        icon: <Zap className="w-4 h-4" />,
+        description: 'Energy sector solutions'
       }
     ]
   },
   {
-    label: 'About',
+    label: 'Company',
     href: '/about',
     icon: <Users className="w-4 h-4" />,
-    description: 'Learn about our mission and team'
+    description: 'Learn about our mission and team',
+    children: [
+      {
+        label: 'About Us',
+        href: '/about',
+        icon: <Users className="w-4 h-4" />,
+        description: 'Our mission and values'
+      },
+      {
+        label: 'Careers',
+        href: '/careers',
+        icon: <Award className="w-4 h-4" />,
+        description: 'Join our team'
+      },
+      {
+        label: 'News & Updates',
+        href: '/news',
+        icon: <Newspaper className="w-4 h-4" />,
+        description: 'Latest company news'
+      },
+      {
+        label: 'Case Studies',
+        href: '/case-studies',
+        icon: <CheckCircle className="w-4 h-4" />,
+        description: 'Success stories'
+      }
+    ]
   },
   {
     label: 'Resources',
     href: '/resources',
     icon: <BookOpen className="w-4 h-4" />,
-    description: 'Whitepapers, case studies, and insights'
+    description: 'Whitepapers, case studies, and insights',
+    children: [
+      {
+        label: 'Blog',
+        href: '/blog',
+        icon: <BookOpen className="w-4 h-4" />,
+        description: 'Industry insights and updates'
+      },
+      {
+        label: 'Documentation',
+        href: '/docs',
+        icon: <FileText className="w-4 h-4" />,
+        description: 'Technical guides and API docs'
+      },
+      {
+        label: 'Support',
+        href: '/support',
+        icon: <HelpCircle className="w-4 h-4" />,
+        description: 'Help and assistance'
+      },
+      {
+        label: 'Training',
+        href: '/training',
+        icon: <GraduationCap className="w-4 h-4" />,
+        description: 'Learn our platforms'
+      }
+    ]
   },
   {
     label: 'Contact',
