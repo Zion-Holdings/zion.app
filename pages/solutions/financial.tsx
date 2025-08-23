@@ -1,8 +1,10 @@
 import React from 'react';
-import Layout from '../../components/layout/Layout';
-import { motion } from 'framer-motion';
-import { TrendingUp, Sparkles, Zap, Target, Users, Award, Clock, CheckCircle, DollarSign, Shield } from 'lucide-react';
-import Link from 'next/link';
+import Head from 'next/head';
+import { 
+  DollarSign, Brain, Shield, Zap, BarChart3, Cpu, 
+  CheckCircle, ArrowRight, Star, TrendingUp, Award, Clock
+} from 'lucide-react';
+import UltraFuturisticBackground from '../../components/ui/UltraFuturisticBackground';
 
 const FinancialSolutionsPage: React.FC = () => {
   const solutions = [
@@ -50,12 +52,20 @@ const FinancialSolutionsPage: React.FC = () => {
   ];
 
   return (
-    <Layout 
-      title="Financial Services Solutions - Zion Tech Group"
-      description="Revolutionary financial solutions with AI consciousness, quantum trading, and autonomous investment intelligence. Leading the future of fintech innovation."
-      keywords="financial solutions, AI risk assessment, quantum trading, investment AI, blockchain finance, Zion Tech Group"
-    >
-      <div className="min-h-screen bg-gradient-to-br from-black via-gray-900 to-black">
+    <>
+      <Head>
+        <title>Financial Services Solutions | Zion Tech Group</title>
+        <meta name="description" content="Revolutionary AI and quantum-powered financial solutions. Advanced trading algorithms, analytics, and blockchain infrastructure for the future of finance." />
+        <meta name="keywords" content="financial AI, quantum trading, fintech, blockchain, regtech, financial analytics" />
+        <meta property="og:title" content="Financial Services Solutions | Zion Tech Group" />
+        <meta property="og:description" content="Revolutionary AI and quantum-powered financial solutions for the future of finance." />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://ziontechgroup.com/solutions/financial" />
+        <link rel="canonical" href="https://ziontechgroup.com/solutions/financial" />
+      </Head>
+
+      <UltraFuturisticBackground>
+        <div className="min-h-screen bg-black text-white relative z-10">
         {/* Hero Section */}
         <section className="relative pt-32 pb-20 overflow-hidden">
           <div className="absolute inset-0 bg-gradient-to-r from-green-900/20 to-emerald-900/20"></div>
@@ -277,8 +287,9 @@ const FinancialSolutionsPage: React.FC = () => {
             </motion.div>
           </div>
         </section>
-      </div>
-    </Layout>
+        </div>
+      </UltraFuturisticBackground>
+    </>
   );
 };
 

@@ -22,14 +22,16 @@ interface PerformanceMetrics {
   fcp: number; // First Contentful Paint
 }
 
-interface PerformanceAlert {
-  id: string;
-  type: 'warning' | 'error' | 'info';
-  message: string;
-  metric: string;
-  value: number;
-  threshold: number;
-  timestamp: Date;
+interface PerformanceEntryExtended extends PerformanceEntry {
+  processingStart?: number;
+  value?: number;
+}
+
+interface PerformanceData {
+  timestamp: number;
+  metrics: PerformanceMetrics;
+  score: number;
+  grade: 'A' | 'B' | 'C' | 'D' | 'F';
 }
 
 interface PerformanceMonitorProps {

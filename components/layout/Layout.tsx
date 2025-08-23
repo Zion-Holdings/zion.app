@@ -2,8 +2,8 @@ import React from 'react';
 import UltraFuturisticNavigation2040 from './UltraFuturisticNavigation2040';
 import EnhancedSidebar2025 from './EnhancedSidebar2025';
 import UltraFuturisticBackground2045 from '../backgrounds/UltraFuturisticBackground2045';
-import TopContactBar from './TopContactBar';
-import PerformanceMonitor from '../EnhancedPerformanceMonitor';
+import EnhancedPerformanceMonitor from '../EnhancedPerformanceMonitor';
+import EnhancedPerformanceOptimizer from '../EnhancedPerformanceOptimizer';
 import AccessibilityEnhancer from '../EnhancedAccessibilityEnhancer';
 import CookieConsentBanner from '../CookieConsentBanner';
 
@@ -57,23 +57,40 @@ export const Layout: React.FC<LayoutProps> = ({
           Skip to main content
         </a>
 
-        <UltraFuturisticNavigation2040 />
-        
-        {/* Top Contact Bar */}
-        <TopContactBar />
-        
-        {/* Navigation */}
-        <UltraFuturisticNavigation2045 />
-        
-        {/* Sidebar */}
-        <EnhancedSidebar2025 
-          isOpen={sidebarOpen} 
-          onClose={() => setSidebarOpen(false)} 
-        />
-        
-        {/* Main Content */}
-        <div className="relative z-10">
-          {children}
+      {/* Accessibility and Performance Tools */}
+      <AccessibilityEnhancer />
+      <EnhancedPerformanceMonitor />
+      <EnhancedPerformanceOptimizer />
+      
+      {/* Cookie Consent Banner */}
+      <CookieConsentBanner />
+      
+      {/* Service Worker Update Notification */}
+      <div id="sw-update-notification" className="hidden fixed bottom-4 right-4 bg-cyan-600 text-white p-4 rounded-lg shadow-lg z-50 max-w-sm">
+        <div className="flex items-start gap-3">
+          <div className="flex-shrink-0">
+            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+          </div>
+          <div className="flex-1">
+            <h4 className="font-semibold mb-1">Update Available</h4>
+            <p className="text-sm text-cyan-100 mb-3">A new version of Zion Tech Group is available.</p>
+            <div className="flex gap-2">
+              <button 
+                onClick={() => window.location.reload()} 
+                className="bg-white text-cyan-600 px-3 py-1 rounded text-sm font-medium hover:bg-cyan-500 transition-colors"
+              >
+                Update Now
+              </button>
+              <button 
+                onClick={() => document.getElementById('sw-update-notification')?.classList.add('hidden')} 
+                className="text-cyan-100 hover:text-white text-sm transition-colors"
+              >
+                Later
+              </button>
+            </div>
+          </div>
         </div>
         
         <UltraFuturisticFooter2040 />

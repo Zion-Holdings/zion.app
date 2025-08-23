@@ -11,9 +11,9 @@ import {
 } from 'lucide-react';
 
 // Import our new service data
-import { advancedEnterpriseSolutions2025 } from '../data/2025-advanced-enterprise-solutions';
-import { innovativeAIAutomationServices2025 } from '../data/2025-innovative-ai-automation-services';
-import { innovativeITInfrastructureServices2025 } from '../data/2025-innovative-it-infrastructure-services';
+import { advancedBusinessIntelligenceServices2025 } from '../data/2025-advanced-business-intelligence-services';
+import { advancedAIAutomationServices2025 } from '../data/2025-advanced-ai-automation-services';
+import { innovative2025ITInfrastructureServices } from '../data/2025-innovative-it-infrastructure-services';
 import { innovativeMicroSaasSolutions2025 } from '../data/2025-innovative-micro-saas-solutions';
 
 // Import existing service data
@@ -21,16 +21,13 @@ import { realMicroSaasServices } from '../data/real-micro-saas-services';
 import { innovativeAIServices } from '../data/innovative-ai-services';
 import { enterpriseITServices } from '../data/enterprise-it-services';
 
-// Create unified services array
-const allServices = [
-  ...advancedEnterpriseSolutions2025,
-  ...innovativeAIAutomationServices2025,
-  ...innovativeITInfrastructureServices2025,
-  ...innovativeMicroSaasSolutions2025,
-  ...realMicroSaasServices,
-  ...innovativeAIServices,
-  ...enterpriseITServices
-];
+  const allServices = [
+    ...advancedBusinessIntelligenceServices2025,
+    ...advancedAIAutomationServices2025,
+    ...innovative2025ITInfrastructureServices,
+    ...innovativeMicroSaasSolutions2025,
+    ...cuttingEdgeAIServices2025
+  ];
 
 // Service categories
 const categories = [

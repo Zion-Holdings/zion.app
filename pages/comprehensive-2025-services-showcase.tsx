@@ -73,9 +73,9 @@ const Comprehensive2025ServicesShowcase: React.FC = () => {
   return (
     <div className="min-h-screen bg-black text-white">
       <SEO 
-        title="Comprehensive 2025 Services Showcase | Zion Tech Group"
-        description="Discover our comprehensive range of innovative 2025 micro SAAS, IT, and AI services. From quantum computing to space technology, we offer cutting-edge solutions for modern businesses."
-        keywords="micro SAAS, AI services, quantum technology, space technology, IT solutions, enterprise services, 2025 innovations"
+        title="Comprehensive 2025 Services Showcase - Zion Tech Group"
+        description="Explore our comprehensive portfolio of innovative AI automation, IT infrastructure, micro SAAS solutions, and cutting-edge AI services. Transform your business with Zion Tech Group."
+        keywords={["AI automation", "IT infrastructure", "micro SAAS", "AI services", "business solutions", "technology services"]}
         image="https://ziontechgroup.com/og-image-2025-services.jpg"
       />
 

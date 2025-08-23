@@ -1,8 +1,10 @@
 import React from 'react';
-import Layout from '../../components/layout/Layout';
-import { motion } from 'framer-motion';
-import { Cpu, Sparkles, Zap, Target, Users, Award, Clock, CheckCircle, Settings, Factory } from 'lucide-react';
-import Link from 'next/link';
+import Head from 'next/head';
+import { 
+  Cpu, Brain, Shield, Zap, BarChart3, Settings, 
+  CheckCircle, ArrowRight, Star, TrendingUp, Award, Clock
+} from 'lucide-react';
+import UltraFuturisticBackground from '../../components/ui/UltraFuturisticBackground';
 
 const ManufacturingSolutionsPage: React.FC = () => {
   const solutions = [
@@ -50,12 +52,20 @@ const ManufacturingSolutionsPage: React.FC = () => {
   ];
 
   return (
-    <Layout 
-      title="Manufacturing Solutions - Zion Tech Group"
-      description="Revolutionary manufacturing solutions with AI consciousness, quantum computing, and autonomous production intelligence. Leading the future of smart manufacturing."
-      keywords="manufacturing solutions, AI manufacturing, quantum manufacturing, autonomous production, smart factory, Zion Tech Group"
-    >
-      <div className="min-h-screen bg-gradient-to-br from-black via-gray-900 to-black">
+    <>
+      <Head>
+        <title>Manufacturing Solutions | Zion Tech Group</title>
+        <meta name="description" content="Revolutionary AI and IoT-powered manufacturing solutions. Smart factory optimization, predictive analytics, and digital twin technology for Industry 4.0." />
+        <meta name="keywords" content="manufacturing AI, smart factory, IoT manufacturing, Industry 4.0, predictive maintenance, digital twin" />
+        <meta property="og:title" content="Manufacturing Solutions | Zion Tech Group" />
+        <meta property="og:description" content="Revolutionary AI and IoT-powered manufacturing solutions for Industry 4.0." />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://ziontechgroup.com/solutions/manufacturing" />
+        <link rel="canonical" href="https://ziontechgroup.com/solutions/manufacturing" />
+      </Head>
+
+      <UltraFuturisticBackground>
+        <div className="min-h-screen bg-black text-white relative z-10">
         {/* Hero Section */}
         <section className="relative pt-32 pb-20 overflow-hidden">
           <div className="absolute inset-0 bg-gradient-to-r from-blue-900/20 to-indigo-900/20"></div>
@@ -277,8 +287,9 @@ const ManufacturingSolutionsPage: React.FC = () => {
             </motion.div>
           </div>
         </section>
-      </div>
-    </Layout>
+        </div>
+      </UltraFuturisticBackground>
+    </>
   );
 };
 

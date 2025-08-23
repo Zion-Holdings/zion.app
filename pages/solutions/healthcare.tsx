@@ -4,6 +4,7 @@ import {
   Heart, Brain, Shield, Zap, BarChart3, Cpu, 
   CheckCircle, ArrowRight, Star, TrendingUp, Award, Clock
 } from 'lucide-react';
+import UltraFuturisticBackground from '../../components/ui/UltraFuturisticBackground';
 
 const HealthcareSolutionsPage: React.FC = () => {
   const solutions = [
@@ -158,8 +159,9 @@ const HealthcareSolutionsPage: React.FC = () => {
             </button>
           </div>
         </section>
-      </div>
-    </Layout>
+        </div>
+      </UltraFuturisticBackground>
+    </>
   );
 };
 

@@ -406,46 +406,32 @@ module.exports = {
         'inner-soft': 'inset 0 2px 4px 0 rgba(0, 0, 0, 0.06)',
         'inner-medium': 'inset 0 2px 8px 0 rgba(0, 0, 0, 0.1)',
       },
-      borderRadius: {
-        '4xl': '2rem',
-        '5xl': '2.5rem',
-        '6xl': '3rem',
+      ringColor: {
+        'cyan': {
+          500: '#06b6d4',
+        },
       },
-      transitionDuration: {
-        '400': '400ms',
-        '600': '600ms',
-        '800': '800ms',
-        '1000': '1000ms',
+      ringWidth: {
+        '1': '1px',
+        '2': '2px',
+        '4': '4px',
       },
-      transitionTimingFunction: {
-        'bounce-in': 'cubic-bezier(0.68, -0.55, 0.265, 1.55)',
-        'smooth': 'cubic-bezier(0.4, 0, 0.2, 1)',
-        'spring': 'cubic-bezier(0.175, 0.885, 0.32, 1.275)',
+      ringOffsetWidth: {
+        '2': '2px',
       },
-      zIndex: {
-        '60': '60',
-        '70': '70',
-        '80': '80',
-        '90': '90',
-        '100': '100',
+      ringOffsetColor: {
+        'black': '#000000',
+        'white': '#ffffff',
       },
-      // Accessibility improvements
-      minHeight: {
-        'touch': '44px',
-        'touch-lg': '48px',
-      },
-      minWidth: {
-        'touch': '44px',
-        'touch-lg': '48px',
-      },
-      // Custom utilities for accessibility
-      outline: {
-        'focus': '2px solid #3b82f6',
-        'focus-high-contrast': '3px solid #ffff00',
-      },
-      outlineOffset: {
-        'focus': '2px',
-        'focus-high-contrast': '3px',
+      container: {
+        center: true,
+        padding: {
+          DEFAULT: '1rem',
+          sm: '2rem',
+          lg: '4rem',
+          xl: '5rem',
+          '2xl': '6rem',
+        },
       },
     },
   },
