@@ -3,6 +3,8 @@ import { useState } from 'react';
 import { useMessaging } from '@/context/MessagingContext';
 import { MainNavigation } from './MainNavigation';
 import { Logo } from '@/components/header/Logo';
+import { Container } from '@/components/Container';
+import { useTranslation } from 'react-i18next';
 import { Menu, X } from 'lucide-react';
 import { MobileMenu } from '@/components/header/MobileMenu';
 import { useIsMobile } from '@/hooks/use-mobile';
@@ -23,8 +25,14 @@ export function AppHeader() {
   
   return (
     <>
-      <header className="sticky top-0 z-50 w-full border-b border-green-700/20 bg-gray-900/90 backdrop-blur-md">
-        <div className="container flex h-16 items-center px-4 sm:px-6">
+      <header
+        style={{ "--nav-height": "64px" } as React.CSSProperties}
+        className={cn(
+          "sticky top-0 z-50 w-full border-b border-border bg-background/90 backdrop-blur-md text-foreground",
+          { "bg-red-500": mobileMenuOpen }
+        )}
+      >
+        <Container className="flex h-16 items-center">
           <Logo />
           <div className="ml-6 flex-1 hidden md:block">
             <MainNavigation unreadCount={unreadCount} />
@@ -46,8 +54,43 @@ export function AppHeader() {
               )}
             </button>
           </div>
-          
-        </div>
+
+          <PointsBadge />
+          {!isLoggedIn && (
+            <div className="ml-4 relative z-10 flex items-center">
+              <Link
+                href="/auth/login"
+                className="text-sm font-medium text-foreground/70 hover:text-foreground"
+                aria-label={t('auth.login')}
+                data-testid="login-link"
+                onClick={(e) => {
+                  e.preventDefault();
+                  // For the main login link, we might not have a specific returnTo beyond current page,
+                  // or we could default to dashboard.
+                  // For consistency with how sub-menus now set it:
+                  router.push({ pathname: '/auth/login', query: { returnTo: router.asPath } }, undefined, { shallow: true });
+                  openLoginModal(router.asPath);
+                }}
+              >
+                {t('auth.login')}
+              </Link>
+              <Link
+                href="/signup"
+                className="ml-2 text-sm font-medium text-foreground/70 hover:text-foreground"
+                aria-label={t('auth.signup')}
+                data-testid="signup-nav-link"
+              >
+                {t('auth.signup')}
+              </Link>
+            </div>
+          )}
+          {/* User avatar menu */}
+          {isLoggedIn && (
+            <div className="ml-4">
+              <UserMenu />
+            </div>
+          )}
+        </Container>
       </header>
       
       {/* Mobile menu - positioned outside of header to prevent overlap issues */}

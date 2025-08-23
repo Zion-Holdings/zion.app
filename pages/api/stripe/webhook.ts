@@ -36,7 +36,8 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     if (orderId) {
       try {
         const file = path.join(process.cwd(), 'data', 'orders.json');
-        const orders = JSON.parse(fs.readFileSync(file, 'utf8')) as any[];
+        const fileContent = fs.readFileSync(file, 'utf8');
+        const orders = JSON.parse(typeof fileContent === 'string' ? fileContent : String(fileContent)) as any[];
         const idx = orders.findIndex(o => o.id === orderId);
         if (idx !== -1) {
           orders[idx].status = 'paid';
@@ -53,7 +54,8 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
         const file = path.join(process.cwd(), 'data', 'points.json');
         let ledger: any[] = [];
         try {
-          ledger = JSON.parse(fs.readFileSync(file, 'utf8'));
+          const fileContent = fs.readFileSync(file, 'utf8');
+          ledger = JSON.parse(String(fileContent));
         } catch (readError) {
           // Log the error for debugging but continue with empty ledger
           logErrorToProduction('Failed to read points file:', { data: readError });
