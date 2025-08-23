@@ -4,7 +4,7 @@ import Head from 'next/head';
 export default function FacebookRedirect() {
 	useEffect(() => {
 		if (typeof window !== 'undefined') {
-			window.location.replace('https://www.facebook.com/ziontechgroup');
+			window.location.replace('https://www.facebook.com/profile.php?id=ziontechgroup');
 		}
 	}, []);
 
