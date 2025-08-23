@@ -1,0 +1,18 @@
+{
+<<<<<<< HEAD
+  "generatedAt": "2025-08-08T17:26:49.592Z",
+=======
+  "generatedAt": "2025-08-08T17:32:06.070Z",
+>>>>>>> ddd80f5afc (chore(automation): sync changes from automation at 2025-08-08T17:32:06.365Z)
+  "totalEntries": 6,
+  "categories": {
+    "technicalDecisions": 3,
+    "conventions": 2,
+    "constraints": 1
+  },
+  "confidenceDistribution": {
+    "high": 3,
+    "medium": 2,
+    "low": 1
+  }
+}
