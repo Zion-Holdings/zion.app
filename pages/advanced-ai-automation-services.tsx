@@ -3,15 +3,13 @@ import Head from 'next/head';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { 
-  CheckCircle, ArrowRight, Star, TrendingUp, Phone, Zap, DollarSign, 
-  Shield, Mail, MapPin, Rocket, Brain, Sparkles, Atom, Dna, Users, 
-  Globe, Cpu, Target, Microscope, Lock, Cloud, BarChart3, Settings, 
-  Eye, Award, Clock, Heart, Lightbulb, Target as TargetIcon, 
-  Zap as ZapIcon, Shield as ShieldIcon, Globe as GlobeIcon,
-  Search, Code, TestTube, Server, Database, Network, Shield as SecurityIcon
+  CheckCircle, ArrowRight, Star, TrendingUp, Phone, 
+  Mail, MapPin, Brain, Sparkles, Users, 
+  BarChart3, Settings, Shield,
+  Code, TestTube, Server, Database, Network, Award
 } from 'lucide-react';
 import Layout from '../components/layout/Layout';
-import { advancedAIAutomationServices2025 } from '../data/2025-advanced-ai-automation-services';
+import { advancedAIAutomationServices } from '../data/2025-advanced-ai-automation-services';
 
 const contactInfo = {
   mobile: '+1 302 464 0950',
@@ -31,7 +29,7 @@ const serviceCategories = [
   {
     title: 'AI Development Tools',
     description: 'Advanced AI-powered development and testing automation',
-    services: advancedAIAutomationServices2025.filter(s => s.category === 'AI Development Tools'),
+    services: advancedAIAutomationServices.filter(s => s.category === 'AI Development Tools'),
     icon: Code,
     color: 'from-emerald-500 to-teal-600',
     features: ['Code Review Automation', 'AI Testing', 'DevOps Intelligence']
@@ -39,7 +37,7 @@ const serviceCategories = [
   {
     title: 'AI Testing & Quality Assurance',
     description: 'Intelligent testing automation with AI-driven insights',
-    services: advancedAIAutomationServices2025.filter(s => s.category === 'AI Testing & Quality Assurance'),
+    services: advancedAIAutomationServices.filter(s => s.category === 'AI Testing & Quality Assurance'),
     icon: TestTube,
     color: 'from-purple-500 to-indigo-600',
     features: ['Test Generation', 'Performance Testing', 'Quality Assurance']
@@ -47,7 +45,7 @@ const serviceCategories = [
   {
     title: 'AI DevOps & Infrastructure',
     description: 'Self-managing infrastructure with AI optimization',
-    services: advancedAIAutomationServices2025.filter(s => s.category === 'AI DevOps & Infrastructure'),
+    services: advancedAIAutomationServices.filter(s => s.category === 'AI DevOps & Infrastructure'),
     icon: Server,
     color: 'from-blue-500 to-indigo-600',
     features: ['Infrastructure Management', 'Deployment Optimization', 'Performance Monitoring']
@@ -55,15 +53,15 @@ const serviceCategories = [
   {
     title: 'AI Cybersecurity',
     description: 'Proactive threat detection and response with AI',
-    services: advancedAIAutomationServices2025.filter(s => s.category === 'AI Cybersecurity'),
-    icon: SecurityIcon,
+    services: advancedAIAutomationServices.filter(s => s.category === 'AI Cybersecurity'),
+    icon: Shield,
     color: 'from-red-500 to-pink-600',
     features: ['Threat Detection', 'Incident Response', 'Security Automation']
   },
   {
     title: 'AI Data Management',
     description: 'Intelligent data infrastructure with AI automation',
-    services: advancedAIAutomationServices2025.filter(s => s.category === 'AI Data Management'),
+    services: advancedAIAutomationServices.filter(s => s.category === 'AI Data Management'),
     icon: Database,
     color: 'from-cyan-500 to-blue-600',
     features: ['Pipeline Management', 'Quality Assurance', 'Governance Automation']
@@ -286,8 +284,8 @@ export default function AdvancedAIAutomationServices() {
                           <h4 className="text-xl font-semibold text-white mb-2">{service.name}</h4>
                           <p className="text-gray-300 text-sm mb-4">{service.tagline}</p>
                           <div className="flex items-center justify-between mb-4">
-                            <span className="text-2xl font-bold text-white">{service.price}</span>
-                            <span className="text-gray-400">{service.period}</span>
+                            <span className="text-2xl font-bold text-white">${service.price.monthly}/month</span>
+                            <span className="text-gray-400">${service.price.yearly}/year</span>
                           </div>
                           <p className="text-gray-300 text-sm mb-4">{service.description}</p>
                           <div className="space-y-2 mb-6">
