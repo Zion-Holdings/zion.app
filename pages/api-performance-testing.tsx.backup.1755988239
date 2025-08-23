@@ -1,6 +1,10 @@
 import React from 'react';
+<<<<<<< HEAD
+import SEO from '../components/SEO';
+=======
 import Head from 'next/head';
 import Link from 'next/link';
+>>>>>>> origin/cursor/analyze-improve-and-deploy-application-dace
 import { Check, ExternalLink } from 'lucide-react';
 
 export default function ApiPerformanceTestingPage() {
@@ -16,6 +20,10 @@ export default function ApiPerformanceTestingPage() {
 
 	return (
 		<>
+<<<<<<< HEAD
+			<SEO title="API Performance Testing" description="Load, latency and regression testing-as-a-service with CI and SLOs." />
+			<main id="main" className="container mx-auto px-4 py-24">
+=======
 			<Head>
 				<title>{title}</title>
 				<meta name="description" content={description} />
@@ -34,6 +42,7 @@ export default function ApiPerformanceTestingPage() {
 			</section>
 
 			<main id="main" className="container mx-auto px-4 pb-24">
+>>>>>>> origin/cursor/analyze-improve-and-deploy-application-dace
 				<section className="max-w-5xl mx-auto">
 					<h1 className="text-4xl font-extrabold tracking-tight">API Performance Testing</h1>
 					<p className="mt-4 text-lg text-gray-300">Ship with confidence using automated performance tests and guardrails integrated into your pipeline.</p>

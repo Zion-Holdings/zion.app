@@ -1,5 +1,11 @@
+<<<<<<< HEAD
+import React, { useState } from 'react';
+import SEO from '../components/SEO';
+import Layout from '../components/layout/Layout';
+=======
 import React from 'react';
 import Head from 'next/head';
+>>>>>>> origin/cursor/analyze-improve-and-deploy-application-dace
 import { motion } from 'framer-motion';
 import { 
   Search, Grid, List, Filter,
@@ -145,6 +151,16 @@ const ServiceShowcase = () => {
   const filteredServices = getFilteredServices();
 
   return (
+<<<<<<< HEAD
+    <Layout>
+      <SEO
+        title="2037 Innovative Services Showcase | Zion Tech Group"
+        description="Discover our cutting-edge 2037 services portfolio featuring AI governance, quantum security, edge computing, and innovative micro SAAS solutions. Transform your business with next-generation technology."
+        keywords={["2037 services", "AI governance", "quantum security", "edge computing", "micro SAAS", "innovative technology", "Zion Tech Group"]}
+        canonical="https://ziontechgroup.com/2037-innovative-services-showcase"
+      />
+
+=======
     <div className="min-h-screen bg-black text-white">
       <Head>
         <title>2037 Innovative Services Showcase - Zion Tech Group</title>
@@ -152,6 +168,7 @@ const ServiceShowcase = () => {
         <meta name="keywords" content="AI consciousness, quantum computing, autonomous systems, micro SAAS, innovative services, 2037 technology" />
       </Head>
       
+>>>>>>> origin/cursor/analyze-improve-and-deploy-application-dace
       {/* Hero Section */}
       <section className="min-h-screen flex items-center justify-center px-4 relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-gray-900 via-black to-gray-900"></div>

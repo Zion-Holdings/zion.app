@@ -1,4 +1,8 @@
+<<<<<<< HEAD
+import React from 'react';
+=======
 import React, { useState } from 'react';
+>>>>>>> origin/cursor/analyze-improve-and-deploy-application-dace
 import Head from 'next/head';
 import { motion } from 'framer-motion';
 import { 
