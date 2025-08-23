@@ -1,81 +1,11 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  // Enable React strict mode for better development experience
-  reactStrictMode: true,
-  
-  // Optimize images with modern formats
-  images: {
-    formats: ['image/webp', 'image/avif'],
-    deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048, 3840],
-    imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
-    minimumCacheTTL: 60,
-    dangerouslyAllowSVG: true,
-    contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
-  },
-  
-  // Enable experimental features for better performance
-  experimental: {
-    optimizeCss: true,
-    optimizePackageImports: ['lucide-react', 'framer-motion'],
-    serverActions: {
-      allowedOrigins: ['ziontechgroup.com', 'localhost:3000'],
-    },
-  },
-  
-  // Webpack optimizations
-  webpack: (config, { dev, isServer }) => {
-    // Optimize bundle size
-    if (!dev && !isServer) {
-      config.optimization.splitChunks = {
-        chunks: 'all',
-        cacheGroups: {
-          vendor: {
-            test: /[\\/]node_modules[\\/]/,
-            name: 'vendors',
-            chunks: 'all',
-            priority: 10,
-          },
-          common: {
-            name: 'common',
-            minChunks: 2,
-            chunks: 'all',
-            priority: 5,
-            reuseExistingChunk: true,
-          },
-        },
-      };
-    }
-    
-    // Optimize SVG handling
-    config.module.rules.push({
-      test: /\.svg$/,
-      use: ['@svgr/webpack'],
-    });
-    
-    return config;
-  },
-  
-  // Enable compression
-  compress: true,
-  
-  // Enable powered by header removal
-  poweredByHeader: false,
-  
-  // Optimize bundle analyzer
-  ...(process.env.ANALYZE === 'true' && {
-    webpack: (config) => {
-      config.plugins.push(
-        new (require('webpack-bundle-analyzer').BundleAnalyzerPlugin)({
-          analyzerMode: 'static',
-          openAnalyzer: false,
-        })
-      );
-      return config;
-    },
-  }),
-  
-  // Enable PWA features
-  async headers() {
+  // Enable static export for Next.js 14
+  output: 'export',
+  trailingSlash: true,
+  productionBrowserSourceMaps: false,
+  images: { unoptimized: true },
+  async redirects() {
     return [
       {
         source: '/(.*)',
