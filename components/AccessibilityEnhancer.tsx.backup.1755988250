@@ -169,6 +169,13 @@ const AccessibilityEnhancer: React.FC<AccessibilityEnhancerProps> = ({ children 
         }
       }
 
+<<<<<<< HEAD
+      // Toggle accessibility panel
+      if (event.key === 'F1') {
+        event.preventDefault();
+        setShowAccessibilityPanel(!showAccessibilityPanel);
+      }
+=======
   // Focus management
   const handleFocusChange = useCallback((e: globalThis.FocusEvent) => {
     const target = e.target as HTMLElement;
@@ -177,6 +184,7 @@ const AccessibilityEnhancer: React.FC<AccessibilityEnhancerProps> = ({ children 
       announceToScreenReader(`Focused on ${target.textContent || target.tagName.toLowerCase()}`);
     }
   }, []);
+>>>>>>> origin/cursor/analyze-improve-and-deploy-application-fcb2
 
       // Escape key to close panels
       if (event.key === 'Escape') {

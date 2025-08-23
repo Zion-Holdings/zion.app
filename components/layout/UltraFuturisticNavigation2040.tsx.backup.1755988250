@@ -2,6 +2,12 @@ import React, { useState, useEffect, useRef, useCallback, useMemo } from 'react'
 import Link from 'next/link';
 import { motion, AnimatePresence } from 'framer-motion';
 import { 
+<<<<<<< HEAD
+  Menu, X, Search, ChevronDown, Zap, Globe, Lock, 
+  Phone, Mail, MapPin, ArrowRight, Star, Users, Award, Sparkles, Target
+} from 'lucide-react';
+import ThemeToggle from '../ThemeToggle';
+=======
   Menu, ChevronDown, X, Phone, Mail, ArrowRight,
   Brain, Rocket, Target, Atom, Shield,
   BarChart3, Star, 
@@ -12,6 +18,7 @@ import {
   BookOpen, FileText, Handshake, Sun, Moon
 } from 'lucide-react';
 import EnhancedSearch from '../EnhancedSearch';
+>>>>>>> origin/cursor/analyze-improve-and-deploy-application-fcb2
 
 interface NavigationItem {
   label: string;
@@ -245,7 +252,18 @@ const UltraFuturisticNavigation2040: React.FC<UltraFuturisticNavigation2040Props
   const [isOpen, setIsOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
   const [isScrolled, setIsScrolled] = useState(false);
+<<<<<<< HEAD
+  const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
+  const [searchQuery, setSearchQuery] = useState('');
+  const [notifications, setNotifications] = useState(3); // Mock notification count
+  
+  const mobileMenuRef = useRef<HTMLDivElement>(null);
+  const searchRef = useRef<HTMLDivElement>(null);
+  const searchInputRef = useRef<HTMLInputElement>(null);
+  const router = useRouter();
+=======
   const [isDarkMode, setIsDarkMode] = useState(true);
+>>>>>>> origin/cursor/analyze-improve-and-deploy-application-fcb2
 
   // Memoized animation variants for better performance
   const navVariants = useMemo(() => ({
@@ -263,6 +281,13 @@ const UltraFuturisticNavigation2040: React.FC<UltraFuturisticNavigation2040Props
     setIsScrolled(window.scrollY > 20);
   }, []);
 
+<<<<<<< HEAD
+  // Handle click outside mobile menu
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, [handleScroll]);
+=======
   // Dark mode effect
   useEffect(() => {
     const savedMode = localStorage.getItem('dark-mode');
@@ -283,6 +308,7 @@ const UltraFuturisticNavigation2040: React.FC<UltraFuturisticNavigation2040Props
   const toggleDropdown = (name: string) => {
     setActiveDropdown(activeDropdown === name ? null : name);
   };
+>>>>>>> origin/cursor/analyze-improve-and-deploy-application-fcb2
 
   // Close mobile menu when route changes
   useEffect(() => {
@@ -437,6 +463,15 @@ const UltraFuturisticNavigation2040: React.FC<UltraFuturisticNavigation2040Props
             ))}
           </div>
 
+<<<<<<< HEAD
+          {/* Right Side Actions */}
+          <div className="flex items-center space-x-4">
+            {/* Search Button */}
+            <button
+              onClick={() => setIsSearchOpen(!isSearchOpen)}
+              className="p-2 text-gray-400 hover:text-white transition-colors duration-200"
+              aria-label="Search"
+=======
           {/* Search and Dark Mode */}
           <div className="hidden lg:flex items-center space-x-4">
             <EnhancedSearch />
@@ -456,6 +491,7 @@ const UltraFuturisticNavigation2040: React.FC<UltraFuturisticNavigation2040Props
             <Link
               href="/revolutionary-2040-2041-pricing-showcase"
               className="px-6 py-3 bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-semibold rounded-xl hover:from-cyan-600 hover:to-blue-700 transition-all duration-300 transform hover:scale-105 shadow-lg shadow-cyan-500/25"
+>>>>>>> origin/cursor/analyze-improve-and-deploy-application-fcb2
             >
               <Search className="w-5 h-5" />
             </button>
