@@ -234,6 +234,10 @@
   schedule = "17 */6 * * *"
 
 [[scheduled.functions]]
+<<<<<<< HEAD
+  name = "monetization-orchestrator"
+  schedule = "*/30 * * * *" # every 30 minutes
+=======
   name = "deps-auto-upgrade-runner"
   schedule = "0 3 * * *"
 
@@ -241,6 +245,7 @@
 [[scheduled.functions]]
   name = "unused-media-scanner"
   schedule = "*/10 * * * *"
+>>>>>>> origin/cursor/invent-and-deploy-autonomous-cloud-automations-8a44
 
 [[scheduled.functions]]
   name = "ui-evolution-beautify"
@@ -251,6 +256,10 @@
   schedule = "*/5 * * * *"
 
 [[scheduled.functions]]
+<<<<<<< HEAD
+  name = "autonomous-invention-orchestrator"
+  schedule = "*/30 * * * *"
+=======
   name = "license-compliance-auditor"
   schedule = "0 2 * * 1"
 
@@ -299,3 +308,4 @@
 [[scheduled.functions]]
   name = "seo-schema-runner"
   schedule = "*/15 * * * *"
+>>>>>>> origin/cursor/invent-and-deploy-autonomous-cloud-automations-8a44
