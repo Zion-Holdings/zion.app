@@ -1,5 +1,8 @@
+<<<<<<< HEAD
+=======
 import { PrismaClient } from '@prisma/client';
 import type { Product } from '@/types/product';
+>>>>>>> origin/7dxqey-codex/fix-missing-product-export-from-@prisma/client
 import type { NextApiRequest, NextApiResponse } from 'next';
 import { applyCorsHeaders } from '@/middleware/cors';
 import { logInfo, logErrorToProduction } from '@/utils/productionLogger';

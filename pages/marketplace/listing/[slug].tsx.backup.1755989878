@@ -6,6 +6,26 @@ import Head from 'next/head';
 import Link from 'next/link';
 import { RatingStars } from '@/components/RatingStars';
 import ProductReviews from '@/components/ProductReviews';
+<<<<<<< HEAD
+import { ProductGallery } from '@/components/gallery/ProductGallery';
+import { useRouter } from 'next/router';
+import { useDispatch } from 'react-redux';
+import type { AppDispatch } from '@/store';
+import { addItem } from '@/store/cartSlice';
+import { toast } from '@/hooks/use-toast';
+import { getBreadcrumbsForPath } from '@/utils/routeUtils';
+import BreadcrumbJsonLd from '@/components/BreadcrumbJsonLd';
+import { logInfo, logWarn, logErrorToProduction } from '@/utils/productionLogger';
+import { fetchProducts, validateProductData, ensureProductIntegrity } from '@/services/marketplace';
+import { AppLayout } from '@/layout/AppLayout';
+import {
+  Breadcrumb,
+  BreadcrumbList,
+  BreadcrumbItem,
+  BreadcrumbLink,
+  BreadcrumbSeparator,
+} from '@/components/ui/breadcrumb';
+=======
 import type { Product } from '@/types/product';
 
 // Alias the Prisma generated Product model type.
@@ -47,6 +67,7 @@ const RatingStarsDisplay: React.FC<RatingStarsProps> = ({ value, count }) => {
     </div>
   );
 };
+>>>>>>> origin/7dxqey-codex/fix-missing-product-export-from-@prisma/client
 
 interface ListingPageProps {
   listing: ProductListing | null;
