@@ -21,7 +21,11 @@ const items = [
 export default function NewServices() {
 	return (
 		<UltraFuturisticBackground intensity="high" variant="quantum">
-			<SEO title="New Services | Zion Tech Group" description="Explore our latest micro SAAS, IT, and AI solutions with transparent pricing." canonical="https://ziontechgroup.com/new-services/" />
+			        <SEO data={{
+          pageTitle: "New Services | Zion Tech Group",
+          pageDescription: "Explore our latest micro SAAS, IT, and AI solutions with transparent pricing.",
+          pageKeywords: ["new services", "micro SAAS", "IT solutions", "AI solutions", "Zion Tech Group"]
+        }} />
 			<div className="container mx-auto px-4 py-16 text-white">
 				<div className="text-center max-w-3xl mx-auto">
 					<h1 className="text-4xl md:text-6xl font-bold bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">New Services</h1>

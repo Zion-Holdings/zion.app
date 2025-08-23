@@ -14,9 +14,14 @@ import { revolutionary2045AdvancedITServices } from '../data/revolutionary-2045-
 import { revolutionary2045AdvancedAIServices } from '../data/revolutionary-2045-advanced-ai-services';
 
 // Import our new innovative 2025 services
-import { innovativeAIAutonomousEcosystemServices2025 } from '../data/2025-innovative-ai-autonomous-ecosystem';
+import { innovativeAIAutonomousEcosystem2025 } from '../data/2025-innovative-ai-autonomous-ecosystem';
 import { cuttingEdgeITInfrastructureInnovations2025 } from '../data/2025-cutting-edge-it-infrastructure-innovations';
 import { innovativeMicroSaasBreakthroughs2025 } from '../data/2025-innovative-micro-saas-breakthroughs';
+
+// Import our new 2026 advanced services
+import { advancedInnovativeMicroSaasServices2026 } from '../data/2026-advanced-innovative-micro-saas-services';
+import { cuttingEdgeITInfrastructureServices2026 } from '../data/2026-cutting-edge-it-infrastructure-services';
+import { emergingTechnologySpaceServices2026 } from '../data/2026-emerging-technology-space-services';
 
 const Homepage2046: React.FC = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -51,9 +56,12 @@ const Homepage2046: React.FC = () => {
     ...revolutionary2045AdvancedRealMicroSaas,
     ...revolutionary2045AdvancedITServices,
     ...revolutionary2045AdvancedAIServices,
-    ...innovativeAIAutonomousEcosystemServices2025,
+    ...innovativeAIAutonomousEcosystem2025,
     ...cuttingEdgeITInfrastructureInnovations2025,
-    ...innovativeMicroSaasBreakthroughs2025
+    ...innovativeMicroSaasBreakthroughs2025,
+    ...advancedInnovativeMicroSaasServices2026,
+    ...cuttingEdgeITInfrastructureServices2026,
+    ...emergingTechnologySpaceServices2026
   ];
 
   // Get featured services for rotation
@@ -62,10 +70,11 @@ const Homepage2046: React.FC = () => {
   // Filter services by category
   const getFilteredServices = () => {
     if (selectedCategory === 'all') return allRevolutionaryServices;
-    return allRevolutionaryServices.filter(service => 
-      service.category.toLowerCase().includes(selectedCategory.toLowerCase()) ||
-      (service as any).type?.toLowerCase().includes(selectedCategory.toLowerCase())
-    );
+    return allRevolutionaryServices.filter(service => {
+      const category = Array.isArray(service.category) ? service.category.join(' ') : service.category;
+      return category.toLowerCase().includes(selectedCategory.toLowerCase()) ||
+        (service as any).type?.toLowerCase().includes(selectedCategory.toLowerCase());
+    });
   };
 
   const categories = [
@@ -74,7 +83,9 @@ const Homepage2046: React.FC = () => {
     { id: 'quantum', name: 'Quantum Technology', icon: AtomIcon, color: 'from-blue-500 to-indigo-500', count: allRevolutionaryServices.filter(s => s.category.includes('Quantum')).length },
     { id: 'cybersecurity', name: 'Cybersecurity', icon: ShieldIcon, color: 'from-red-500 to-orange-500', count: allRevolutionaryServices.filter(s => s.category.includes('Security')).length },
     { id: 'business', name: 'Business Solutions', icon: Target, color: 'from-emerald-500 to-teal-500', count: allRevolutionaryServices.filter(s => (s as any).type === 'Micro SAAS' || s.category.includes('Business')).length },
-    { id: 'it', name: 'IT Infrastructure', icon: Cpu, color: 'from-yellow-500 to-orange-500', count: allRevolutionaryServices.filter(s => s.category.includes('IT') || s.category.includes('Infrastructure')).length }
+    { id: 'it', name: 'IT Infrastructure', icon: Cpu, color: 'from-yellow-500 to-orange-500', count: allRevolutionaryServices.filter(s => s.category.includes('IT') || s.category.includes('Infrastructure')).length },
+    { id: 'space', name: 'Space Technology', icon: Satellite, color: 'from-indigo-500 to-purple-500', count: allRevolutionaryServices.filter(s => s.category.includes('Space') || (s as any).type === 'Space Technology').length },
+    { id: 'emerging', name: 'Emerging Tech', icon: Rocket, color: 'from-pink-500 to-rose-500', count: allRevolutionaryServices.filter(s => (s as any).type === 'Emerging Technology').length }
   ];
 
   const features = [
@@ -87,7 +98,7 @@ const Homepage2046: React.FC = () => {
   ];
 
   const stats = [
-    { number: "5000+", label: "Innovative Services", icon: Star },
+    { number: `${allRevolutionaryServices.length}+`, label: "Innovative Services", icon: Star },
     { number: "99.99%", label: "Uptime Guarantee", icon: TrendingUp },
     { number: "24/7", label: "AI Support Available", icon: Brain },
     { number: "300+", label: "Countries Served", icon: Globe }

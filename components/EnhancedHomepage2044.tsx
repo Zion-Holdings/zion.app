@@ -180,7 +180,14 @@ const EnhancedHomepage2044: React.FC = () => {
 
   return (
     <>
-      <EnhancedSEO />
+      <EnhancedSEO
+        title="Zion Tech Group - Revolutionary AI & IT Services 2044"
+        description="Discover the future of technology with Zion Tech Group's revolutionary AI, quantum computing, and IT infrastructure services. Transform your business with cutting-edge solutions."
+        keywords="AI services, quantum computing, IT infrastructure, cybersecurity, micro SAAS, business automation, Zion Tech Group, 2044 technology, artificial intelligence, machine learning"
+        ogImage="https://ziontechgroup.com/og-image.jpg"
+        canonicalUrl="https://ziontechgroup.com"
+        twitterCard="summary_large_image"
+      />
       
       {/* Structured Data */}
       <script

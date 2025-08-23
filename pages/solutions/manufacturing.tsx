@@ -71,7 +71,7 @@ const ManufacturingSolutionsPage: React.FC = () => {
         <link rel="canonical" href="https://ziontechgroup.com/solutions/manufacturing" />
       </Head>
 
-      <UltraFuturisticBackground variant="quantum">
+      <UltraFuturisticBackground>
         <div className="min-h-screen bg-black text-white relative z-10">
         {/* Hero Section */}
         <section className="pt-32 pb-20 px-4 sm:px-6 lg:px-8">
@@ -183,8 +183,8 @@ const ManufacturingSolutionsPage: React.FC = () => {
             </button>
           </div>
         </section>
-      </div>
-        </UltraFuturisticBackground>
+        </div>
+      </UltraFuturisticBackground>
     </>
   );
 };

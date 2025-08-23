@@ -4,7 +4,7 @@ import {
   Heart, Brain, Shield, Zap, BarChart3, Cpu, 
   CheckCircle, ArrowRight, Star, TrendingUp, Award, Clock
 } from 'lucide-react';
-import UltraFuturisticBackground2045 from '../../components/backgrounds/UltraFuturisticBackground2045';
+import UltraFuturisticBackground from '../../components/ui/UltraFuturisticBackground';
 
 const HealthcareSolutionsPage: React.FC = () => {
   const solutions = [
@@ -71,9 +71,8 @@ const HealthcareSolutionsPage: React.FC = () => {
         <link rel="canonical" href="https://ziontechgroup.com/solutions/healthcare" />
       </Head>
 
-              <UltraFuturisticBackground2045 />
-
-      <div className="min-h-screen bg-black text-white relative z-10">
+      <UltraFuturisticBackground>
+        <div className="min-h-screen bg-black text-white relative z-10">
         {/* Hero Section */}
         <section className="pt-32 pb-20 px-4 sm:px-6 lg:px-8">
           <div className="max-w-7xl mx-auto text-center">
@@ -184,7 +183,8 @@ const HealthcareSolutionsPage: React.FC = () => {
             </button>
           </div>
         </section>
-      </div>
+        </div>
+      </UltraFuturisticBackground>
     </>
   );
 };

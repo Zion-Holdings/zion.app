@@ -10,6 +10,7 @@ import {
 
 // Import our new 2025 service data
 import { advancedAIAutomationServices2025 } from '../data/2025-advanced-ai-automation-services';
+import { innovative2025ITInfrastructureServices } from '../data/2025-innovative-it-infrastructure-services';
 import { innovativeMicroSaasSolutions2025 } from '../data/2025-innovative-micro-saas-solutions';
 import { cuttingEdgeAIServices2025 } from '../data/2025-cutting-edge-ai-services';
 import { innovative2025AIAutonomousServices } from '../data/2025-innovative-ai-autonomous-services';
@@ -95,6 +96,13 @@ import { cuttingEdgeInnovativeServices2025 } from '../data/2025-cutting-edge-inn
 import { advancedITInfrastructureSolutions2025 } from '../data/2025-advanced-it-infrastructure-solutions';
 import { advancedAIAutomationSolutions2025 } from '../data/2025-advanced-ai-automation-solutions';
 
+
+
+// Import our new 2025 innovative services
+import { advancedInnovativeServices2025 } from '../data/2025-advanced-innovative-services-expansion';
+import { cuttingEdgeEnterpriseServices2025 } from '../data/2025-cutting-edge-enterprise-services';
+import { specializedIndustrySolutions2025 } from '../data/2025-specialized-industry-solutions';
+
 // Import existing service data
 import { realMicroSaasServices } from '../data/real-micro-saas-services';
 import { innovativeAIServices } from '../data/innovative-ai-services';
@@ -138,9 +146,11 @@ const getServiceDescription = (service: any) => {
 // Create unified services array
 const allServices = [
   // Our new 2025 services
+  ...advancedAIAutomationServices2025,
+  ...innovative2025ITInfrastructureServices,
   ...realInnovativeMicroSaasServices2025,
   ...innovativeITInfrastructureServices2025,
-      ...innovativeAIServices2025Expansion,
+  ...innovativeAIServices2025Expansion,
   ...innovativeMicroSaasSolutions2025,
   ...cuttingEdgeAIServices2025,
   ...realEnterpriseMicroSaas2025,
@@ -220,6 +230,14 @@ const allServices = [
   // Our new 2025 cutting-edge innovative services expansion
   ...cuttingEdgeInnovativeServices2025,
   ...advancedITInfrastructureSolutions2025,
+  
+  // Our new 2025 innovative AI services expansion
+  ...innovativeAIServices2025Expansion,
+  
+  // Our new 2025 innovative services
+  ...advancedInnovativeServices2025,
+  ...cuttingEdgeEnterpriseServices2025,
+  ...specializedIndustrySolutions2025,
   
   // Our new 2025 ultimate innovative services
   ...ultimateInnovativeServices2025,
