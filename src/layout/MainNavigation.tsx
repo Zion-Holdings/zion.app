@@ -26,17 +26,32 @@ export function MainNavigation({ isAdmin = false, unreadCount = 0, className }: 
     {
       key: 'services',
       href: '/services',
-      matches: (path: string) => path.startsWith('/services') || path.startsWith('/micro-saas-services')
+      matches: (path: string) => path.startsWith('/services')
     },
     {
       key: 'ai-services',
-      href: '/micro-saas-services',
-      matches: (path: string) => path.startsWith('/micro-saas-services')
+      href: '/ai-services',
+      matches: (path: string) => path.startsWith('/ai-services')
+    },
+    {
+      key: 'it-services',
+      href: '/it-services',
+      matches: (path: string) => path.startsWith('/it-services')
+    },
+    {
+      key: 'micro-saas',
+      href: '/micro-saas',
+      matches: (path: string) => path.startsWith('/micro-saas')
     },
     {
       key: 'marketplace',
       href: '/marketplace',
       matches: (path: string) => path.startsWith('/marketplace')
+    },
+    {
+      key: 'categories',
+      href: '/categories',
+      matches: (path: string) => path.startsWith('/categories')
     },
     {
       key: 'talent',
