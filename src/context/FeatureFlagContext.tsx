@@ -1,12 +1,14 @@
 import React, { createContext, useContext, useEffect, useState } from 'react';
 import { UnleashClient } from 'unleash-proxy-client';
 
-// The upstream types are not available in this environment. Define a minimal
-// Variant interface that mirrors the shape returned by `getVariant`.
+// Variant type is not exported from the client typings
 export interface Variant {
   name: string;
   enabled?: boolean;
-  payload?: { type: string; value: string };
+  payload?: {
+    type: string;
+    value: string;
+  };
 }
 
 interface FeatureFlagContextValue {
@@ -23,25 +25,24 @@ export function FeatureFlagProvider({ children }: { children: React.ReactNode })
   const [ready, setReady] = useState(false);
 
   useEffect(() => {
-    // `unleash-proxy-client` exposes a start method that returns a Promise. We
-    // mark the provider as ready once the client has started.
-    const startClient = async () => {
-      try {
-        await (client as any).start();
-      } finally {
-        setReady(true);
-      }
-    };
-
-    startClient();
+    const c: any = client;
+    if (typeof c.on === 'function') {
+      c.on('ready', () => setReady(true));
+    } else {
+      setReady(true);
+    }
+    if (typeof c.start === 'function') {
+      c.start();
+    }
   }, [client]);
 
   const isEnabled = (name: string) => (ready ? client.isEnabled(name) : false);
-  const getVariant = (name: string) => (ready ? client.getVariant(name) : { name: 'disabled' } as Variant);
+  const getVariant = (name: string) =>
+    ready ? (client as any).getVariant?.(name) ?? { name: 'disabled' } : { name: 'disabled' };
   const track = (event: string) => {
-    const anyClient = client as any;
-    if (typeof anyClient.track === 'function') {
-      anyClient.track(event);
+    const c: any = client;
+    if (typeof c.track === 'function') {
+      c.track(event);
     }
   };
 

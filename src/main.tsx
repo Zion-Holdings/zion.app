@@ -12,6 +12,7 @@ import './utils/globalFetchInterceptor';
 // Import i18n configuration
 import './i18n';
 import { LanguageProvider } from '@/context/LanguageContext';
+import { CurrencyProvider } from '@/context/CurrencyContext';
 import { LanguageDetectionPopup } from './components/LanguageDetectionPopup';
 import { WhitelabelProvider } from '@/context/WhitelabelContext';
 import { AppLayout } from '@/layout/AppLayout';
@@ -25,7 +26,6 @@ import { AnalyticsProvider } from './context/AnalyticsContext';
 import { ViewModeProvider } from './context/ViewModeContext';
 import { CartProvider } from './context/CartContext';
 import { registerServiceWorker } from './serviceWorkerRegistration';
-import { FeatureFlagProvider } from './context/FeatureFlagContext';
 
 // Initialize a React Query client with global error handling
 const queryClient = new QueryClient({
@@ -50,20 +50,20 @@ try {
             <Router>
               <AuthProvider>
                 <NotificationProvider>
-                  <FeatureFlagProvider>
-                    <AnalyticsProvider>
-                    <LanguageProvider authState={{ isAuthenticated: false, user: null }}>
-                      <ViewModeProvider>
-                        <CartProvider>
-                          <AppLayout>
-                            <App />
-                          </AppLayout>
-                        </CartProvider>
-                      </ViewModeProvider>
-                      <LanguageDetectionPopup />
-                    </LanguageProvider>
+                  <AnalyticsProvider>
+                    <CurrencyProvider>
+                      <LanguageProvider authState={{ isAuthenticated: false, user: null }}>
+                        <ViewModeProvider>
+                          <CartProvider>
+                            <AppLayout>
+                              <App />
+                            </AppLayout>
+                          </CartProvider>
+                        </ViewModeProvider>
+                        <LanguageDetectionPopup />
+                      </LanguageProvider>
+                    </CurrencyProvider>
                   </AnalyticsProvider>
-                  </FeatureFlagProvider>
                 </NotificationProvider>
               </AuthProvider>
             </Router>

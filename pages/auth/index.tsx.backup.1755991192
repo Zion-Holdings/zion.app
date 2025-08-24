@@ -1,0 +1,15 @@
+<<<<<<< HEAD
+import EnhancedLayout from '../../components/layout/EnhancedLayout';
+
+export default function AuthIndex() {
+  return (
+    <EnhancedLayout>
+      <div className="py-10">Auth</div>
+    </EnhancedLayout>
+  );
+}
+=======
+export default function AuthIndex() {
+  return <div>Auth</div>;
+}
+>>>>>>> origin/cursor/build-it-service-provider-directory-page-d0d3
