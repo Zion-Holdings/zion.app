@@ -1,0 +1,61 @@
+name: Repo Knowledge Graph
+
+on:
+  schedule:
+    - cron: '0 0 * * *'
+  workflow_dispatch: {}
+
+concurrency:
+permissions:
+  contents: write
+  actions: read
+
+  group: "github.workflow-${{ github.ref }}"
+  cancel-in-progress: true
+
+  contents: write
+
+jobs:
+main:
+  runs-on: ubuntu-latest
+  name: Main Job
+  steps:
+    name: Checkout repository
+    uses: actions/checkout@v4
+    with:
+      fetch-depth: 0
+    name: Setup Node.js
+    uses: actions/setup-node@v4
+    with:
+      node-version: 20
+      cache: npm
+    name: Install dependencies
+    run: npm ci --no-audit --no-fund
+    name: Run tests
+    run: npm test
+    name: Build project
+    run: npm run build
+
+  graph:
+        - name: Checkout
+        uses: actions/checkout@v4
+          fetch-depth: 0
+        - name: Setup Node
+        uses: actions/setup-node@v4
+          node-version: '20'
+          cache: npm
+        - name: Install dependencies
+        run: npm ci
+        - name: Build repo knowledge graph
+        run: node automation/repo-knowledge-graph.cjs || true
+        - name: Commit and push graph
+        run: |
+          if [ -n "$(git status --porcelain)" ]; then
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add data/reports/repo-knowledge-graph.json || true
+            git commit -m "chore(automation): update repo knowledge graph [skip ci]" || true
+            git push origin HEAD:$(git rev-parse --abbrev-ref HEAD) || true
+          else
+            echo "No changes to push"
+          fi

@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
-import { z } from "zod";
+import * as z from "zod";
 import { LockKeyhole } from "lucide-react";
 
 import { supabase } from "@/integrations/supabase/client";
@@ -18,6 +18,8 @@ import {
   FormMessage,
 } from "@/components/ui/form";
 import { toast } from "@/hooks/use-toast";
+import { Header } from "@/components/Header";
+import { Footer } from "@/components/Footer";
 import { cleanupAuthState } from "@/utils/authUtils";
 
 // Form validation schema
@@ -34,18 +36,18 @@ const updatePasswordSchema = z
     path: ["confirmPassword"],
   });
 
-type UpdatePasswordFormValues = z.infer<typeof updatePasswordSchema>;
+type UpdatePasswordFormValues = any;
 
 export default function UpdatePassword() {
   const [isLoading, setIsLoading] = useState(false);
-  const [accessToken, setAccessToken] = useState<string | null>(null);
-  const [error, setError] = useState<string | null>(null);
+  const [accessToken, setAccessToken] = useState(null as string | null);
+  const [error, setError] = useState(null as string | null);
   const [success, setSuccess] = useState(false);
   const navigate = useNavigate();
   const location = useLocation();
 
   // Initialize react-hook-form
-  const form = useForm<UpdatePasswordFormValues>({
+  const form = useForm({
     resolver: zodResolver(updatePasswordSchema),
     defaultValues: {
       password: "",
@@ -123,15 +125,9 @@ export default function UpdatePassword() {
     }
   };
 
-  const onInvalid = (errors: any) => {
-    const firstError = Object.keys(errors)[0] as keyof UpdatePasswordFormValues;
-    if (firstError) {
-      form.setFocus(firstError);
-    }
-  };
-
   return (
     <>
+      <Header />
       <div className="flex min-h-screen bg-zion-blue">
         <div className="flex-1 flex flex-col justify-center px-4 py-12 sm:px-6 lg:px-20 xl:px-24">
           <div className="mx-auto w-full max-w-sm lg:w-96">
@@ -173,7 +169,7 @@ export default function UpdatePassword() {
                 </div>
               ) : (
                 <Form {...form}>
-                  <form onSubmit={form.handleSubmit(onSubmit, onInvalid)} className="space-y-6">
+                  <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
                     <FormField
                       control={form.control}
                       name="password"
@@ -183,10 +179,8 @@ export default function UpdatePassword() {
                           <FormControl>
                             <Input
                               type="password"
-                              placeholder="Enter password"
-                              aria-label="New password"
-                              aria-invalid={!!form.formState.errors.password}
                               className="bg-zion-blue text-white placeholder:text-zion-slate border-zion-blue-light focus:border-zion-purple"
+                              placeholder="••••••••"
                               disabled={isLoading}
                               {...field}
                             />
@@ -205,10 +199,8 @@ export default function UpdatePassword() {
                           <FormControl>
                             <Input
                               type="password"
-                              placeholder="Enter password"
-                              aria-label="Confirm password"
-                              aria-invalid={!!form.formState.errors.confirmPassword}
                               className="bg-zion-blue text-white placeholder:text-zion-slate border-zion-blue-light focus:border-zion-purple"
+                              placeholder="••••••••"
                               disabled={isLoading}
                               {...field}
                             />
@@ -255,6 +247,7 @@ export default function UpdatePassword() {
           </div>
         </div>
       </div>
+      <Footer />
     </>
   );
 }

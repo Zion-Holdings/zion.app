@@ -1,0 +1,38 @@
+name: Auto Content Generator
+
+on:
+  workflow_dispatch: {}
+  schedule:
+    - cron: '*/30 * * * *'
+  push:
+    branches: [ main ]
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install deps
+        run: npm ci --no-audit --no-fund
+
+      - name: Generate auto content
+        run: npm run auto:generate
+
+      - name: Commit changes
+        run: |
+          git config user.email "bot@zion.app"
+          git config user.name "Zion Bot"
+          git add -A
+          git commit -m "chore(auto): generate auto content" || echo "No changes"
+          git push

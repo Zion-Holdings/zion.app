@@ -10,7 +10,7 @@ import { Navigate } from "react-router-dom";
 
 export default function ServiceDescriptionGenerator() {
   const { isAuthenticated, isLoading } = useAuth();
-  const [generatedDescription, setGeneratedDescription] = useState<string | null>(null);
+  const [generatedDescription, setGeneratedDescription] = useState(null as string | null);
   
   // Show loading while checking authentication
   if (isLoading) {

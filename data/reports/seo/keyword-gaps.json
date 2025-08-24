@@ -1,0 +1,51 @@
+{
+  "generatedAt": "2025-08-24T07:48:20.168Z",
+  "heuristics": {
+    "missing": [
+      "pricing",
+      "marketplace",
+      "remote",
+      "ai",
+      "automation",
+      "security",
+      "scale",
+      "performance",
+      "talent",
+      "jobs"
+    ],
+    "keywordCoverage": {
+      "import": 7,
+      "from": 7,
+      "next": 7,
+      "head": 7,
+      "link": 6,
+      "export": 4,
+      "default": 4,
+      "function": 4,
+      "placeholder": 4,
+      "return": 4,
+      "main": 4,
+      "update": 3,
+      "type": 2,
+      "nextpage": 2,
+      "react": 2,
+      "contact": 1,
+      "usestate": 1,
+      "const": 1,
+      "formdata": 1,
+      "setformdata": 1,
+      "favicon": 1,
+      "index": 1,
+      "arrowright": 1,
+      "checkcircle": 1,
+      "star": 1,
+      "users": 1,
+      "services": 1,
+      "brain": 1,
+      "cloud": 1,
+      "code": 1,
+      "shield": 1,
+      "globe": 1
+    }
+  }
+}

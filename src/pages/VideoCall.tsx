@@ -9,13 +9,18 @@ import { Button } from '@/components/ui/button';
 import { toast } from 'sonner';
 
 export default function VideoCall() {
-  // useParams is typed as `any` in this environment due to missing type
-  // definitions, so avoid passing a type argument to prevent TS2347.
   const { roomId } = useParams();
   const navigate = useNavigate();
   const [isJoining, setIsJoining] = useState(false);
   const [hasJoined, setHasJoined] = useState(false);
-  const [participants, setParticipants] = useState<Array<{
+  const [participants, setParticipants] = useState([
+    {
+      id: 'user-1',
+      name: 'You',
+      isVideoEnabled: true,
+      isMuted: false
+    }
+  ] as Array<{
     id: string;
     name: string;
     avatar?: string;
@@ -23,14 +28,7 @@ export default function VideoCall() {
     isVideoEnabled?: boolean;
     isScreenSharing?: boolean;
     isHost?: boolean;
-  }>>([
-    {
-      id: 'user-1',
-      name: 'You',
-      isVideoEnabled: true,
-      isMuted: false
-    }
-  ]);
+  }>);
 
   const handleJoinCall = () => {
     setIsJoining(true);

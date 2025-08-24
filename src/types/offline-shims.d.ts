@@ -1,58 +1,78 @@
-declare module 'react' {
-  const React: any;
-  export default React;
-  // Basic overloads for useRef to handle common cases
-  export function useRef<T>(initialValue: T): { current: T };
-  export function useRef<T>(initialValue: T | null): { current: T | null };
-  export function useRef<T = undefined>(initialValue?: T): { current: T | undefined };
-  export const useEffect: any;
-  export type Dispatch<A> = (value: A) => void;
-  export type SetStateAction<S> = S | ((prevState: S) => S);
-  export function useState<S>(
-    initialState: S | (() => S)
-  ): [S, Dispatch<SetStateAction<S>>];
-  export function createContext<T>(defaultValue: T): any;
-  export function useContext<T>(context: any): T;
-  export const useMemo: any;
-  export const useCallback: any;
-  export function useId(): string;
-  // Generic definition to allow usage like forwardRef<HTMLDivElement, Props>()
-  export function forwardRef<T, P = {}>(
-    render: (props: P, ref: Ref<T>) => ReactElement | null
-  ): any;
-  export const Fragment: any;
-  export const StrictMode: any;
-  export const Suspense: any;
-  export const cloneElement: any;
-  export type ReactNode = any;
-  export type ReactElement = any;
-  export type ComponentType<P = {}> = (props: P) => any;
-  export type FC<P = {}> = (props: P) => any;
-  export type ComponentProps<T = any> = any;
-  export type ComponentPropsWithoutRef<T = any> = any;
-  export type PropsWithoutRef<T = any> = any;
-  export type ComponentPropsWithRef<T = any> = any;
-  export type HTMLAttributes<T = any> = any;
-  export type ButtonHTMLAttributes<T = any> = any;
-  export type SVGProps<T = any> = any;
-  export type ChangeEvent<T = any> = any;
-  export type MouseEvent<T = any> = any;
-  export type DragEvent<T = any> = any;
-  export type FormEvent<T = any> = any;
-  export type KeyboardEvent<T = any> = any;
-  export type SyntheticEvent<T = any> = any;
-  export type Ref<T = any> = any;
-  export type LegacyRef<T = any> = any;
-  export type ElementRef<T = any> = any;
-  export type CSSProperties = Record<string, string | number | undefined>;
-}
+// Minimal type declarations for offline development
 
-declare module 'react-dom' {
-  export * from 'react-dom/index';
+// React stubs
+declare module 'react' {
+  export type FC<P = any> = (props: P) => any;
+  export type ReactNode = any;
+  export interface ChangeEvent<T = any> extends Event { target: T }
+  export interface FormEvent<T = any> extends Event {}
+  export interface KeyboardEvent<T = any> extends Event {}
+  export interface MutableRefObject<T = any> { current: T }
+  export type RefCallback<T> = (instance: T | null) => void;
+  export type Ref<T> = MutableRefObject<T> | RefCallback<T> | null;
+  export type LegacyRef<T> = Ref<T>;
+  export function useState<S = any>(initial?: S): [S, (value: S) => void];
+  export function useEffect(fn: () => any, deps?: any[]): void;
+  export function useRef<T = any>(initial: T): { current: T };
+  const react: any;
+  export default react;
 }
 
 declare module 'react/jsx-runtime' {
-  export const jsx: any;
-  export const jsxs: any;
-  export const Fragment: any;
+  export {};
+}
+
+declare module 'react-dom' {
+  export function render(...args: any[]): any;
+  const reactDom: any;
+  export default reactDom;
+}
+
+declare module 'react-router-dom' {
+  export function useParams<T = any>(): T;
+  export function useNavigate(): any;
+  export const Link: any;
+  export const Route: any;
+  export const Routes: any;
+  export const Navigate: any;
+  const rr: any;
+  export default rr;
+}
+
+declare module 'react-hook-form' {
+  export function useForm<T = any>(...args: any[]): any;
+  const rhf: any;
+  export default rhf;
+}
+
+declare module '@hookform/resolvers/zod' {
+  export function zodResolver(...args: any[]): any;
+}
+
+declare module '@tanstack/react-query' {
+  export function useQuery<T = any>(...args: any[]): any;
+  export function useMutation<T = any>(...args: any[]): any;
+  const rq: any;
+  export default rq;
+}
+
+declare module 'jspdf' {
+  export class jsPDF {
+    constructor(...args: any[]);
+    [key: string]: any;
+  }
+  export default jsPDF;
+}
+
+declare module 'zod' {
+  export type infer<T> = any;
+  const z: any;
+  export { z };
+  export default z;
+}
+
+// Fallback for other modules
+declare module '*' {
+  const value: any;
+  export default value;
 }

@@ -1,0 +1,75 @@
+name: Link Check
+
+on:
+<<<<<<< HEAD
+  workflow_dispatch: {}
+  schedule:
+    - cron: "0 3 * * 1"  # Mondays at 03:00 UTC
+  pull_request:
+    paths:
+      - '**/*.html'
+      - '**/*.md'
+      - '**/*.tsx'
+      - '**/*.ts'
+      - '**/*.js'
+      - '**/*.jsx'
+
+jobs:
+  link-check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install deps
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+      - name: Run link audit
+        env:
+          START_URL: ${{ secrets.LINK_AUDIT_URL }}
+        run: |
+          if [ -z "$START_URL" ]; then echo "Set secrets.LINK_AUDIT_URL" && exit 1; fi
+          python -m link_auditor.cli crawl "$START_URL" --max-pages 5000 --concurrency 12 --timeout 15 --include-external --output-dir ./link_audit_report
+      - name: Upload report
+        uses: actions/upload-artifact@v4
+        with:
+          name: link_audit_report
+          path: link_audit_report
+=======
+  push:
+    branches: [ main, master ]
+  schedule:
+    - cron: '0 * * * *'
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - name: Install deps
+        run: npm ci --no-audit --no-fund
+      - name: Run link checker
+        run: node automation/link-checker.cjs
+      - name: Commit report
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          if [[ -n "$(git status --porcelain)" ]]; then
+            git add -A
+            git commit -m "chore(automation): update link check report [skip ci]"
+            git push
+          else
+            echo "No changes to commit"
+          fi
+>>>>>>> origin/cursor/create-responsive-talent-onboarding-form-e178

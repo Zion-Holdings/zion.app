@@ -3,6 +3,7 @@ import { useParams, useNavigate, Link } from "react-router-dom";
 import { format } from "date-fns";
 import { useAuth } from "@/hooks/useAuth";
 import { useProjects } from "@/hooks/useProjects";
+import { AppHeader } from "@/components/layout/AppHeader";
 import { Footer } from "@/components/Footer";
 import { SEO } from "@/components/SEO";
 import { ProtectedRoute } from "@/components/ProtectedRoute";
@@ -45,7 +46,7 @@ import {
   CheckCircle2,
   Clock,
   FileText,
-  Layers,
+  LayersIcon,
   MessageSquare,
   Video,
   User,
@@ -53,16 +54,14 @@ import {
 } from "lucide-react";
 
 function ProjectDetailsContent() {
-  // useParams may be untyped in this environment, so avoid passing a
-  // type argument and cast the result instead to prevent TS2347 errors.
-  const { projectId } = useParams() as { projectId?: string };
+  const { projectId } = useParams();
   const { user } = useAuth();
   const navigate = useNavigate();
   const { getProjectById, updateProjectStatus } = useProjects();
   
-  const [project, setProject] = useState<Project | null>(null);
+  const [project, setProject] = useState(null as Project | null);
   const [isLoading, setIsLoading] = useState(true);
-  const [notes, setNotes] = useState<any[]>([]);
+  const [notes, setNotes] = useState([] as any[]);
   const [newNote, setNewNote] = useState("");
   const [isSubmittingNote, setIsSubmittingNote] = useState(false);
   const [activeTab, setActiveTab] = useState("details");
@@ -242,6 +241,7 @@ function ProjectDetailsContent() {
         title={`Project: ${project.job?.title || 'Project Details'} | Zion AI Marketplace`} 
         description="View and manage your project details and collaboration."
       />
+      <AppHeader />
       <main className="container mx-auto px-4 py-8">
         <div className="mb-6">
           <div className="flex flex-col md:flex-row justify-between md:items-center gap-4 mb-2">
@@ -316,7 +316,7 @@ function ProjectDetailsContent() {
               {isActiveProject && (
                 <Button variant="default" asChild>
                   <Link to={`/project/${project.id}/milestones`}>
-                    <Layers className="mr-2 h-4 w-4" /> Milestones
+                    <LayersIcon className="mr-2 h-4 w-4" /> Milestones
                   </Link>
                 </Button>
               )}
