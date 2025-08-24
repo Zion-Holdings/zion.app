@@ -1,0 +1,21 @@
+default {
+  plugins: {
+    '@tailwindcss/postcss': {},
+    'autoprefixer': {},
+    'cssnano': process.env.NODE_ENV === 'production' ? {
+      preset: ['default', {
+        discardComments: {
+          removeAll: true,
+        },
+        normalizeWhitespace: true,
+        colormin: true,
+        minifyFontValues: true,
+        minifySelectors: true,
+      }]
+    } : false,
+  },
+<<<<<<< HEAD
+};
+=======
+}; 
+>>>>>>> 5e27e402e0b68b9c85b868b0fd8919518fd31198

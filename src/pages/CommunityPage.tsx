@@ -104,7 +104,7 @@ export default function CommunityPage() {
         title="Community Forum | Zion AI Marketplace"
         description="Join the Zion AI Marketplace community forum. Ask questions, share knowledge, and connect with other AI professionals."
         keywords="community, forum, discussion, AI marketplace, questions, answers"
-        canonical="https://app.ziontechgroup.com/community"
+        canonical="https://ziontechgroup.com/community"
       />
       
       <div className="container py-8">

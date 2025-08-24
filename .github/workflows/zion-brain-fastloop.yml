@@ -1,0 +1,39 @@
+name: Zion Brain Fast Loop
+
+on:
+  schedule:
+    - cron: '*/15 * * * *'
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+jobs:
+  fast-loop:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+      - run: npm ci --prefer-offline --no-audit --no-fund
+      - name: Run autonomy and chain tuner
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+        run: |
+          node scripts/zion-cloud-autonomy.cjs
+          node scripts/zion-chain-tuner.cjs
+      - name: Push updates
+        run: |
+          if [[ -n "$(git status --porcelain)" ]]; then
+            git config user.name "zion-brain-bot"
+            git config user.email "bot@users.noreply.github.com"
+            git add -A
+            git commit -m "[fastloop] Autonomy + chain tuning updates"
+            git push
+          else
+            echo "No changes to push"
+          fi

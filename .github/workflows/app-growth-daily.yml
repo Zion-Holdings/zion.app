@@ -1,0 +1,34 @@
+name: App Growth Daily
+
+on:
+  schedule:
+    - cron: '15 14 * * *' # daily at 14:15 UTC
+  workflow_dispatch:
+
+jobs:
+  app-growth:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run App Growth orchestrator (single cycle)
+        run: node automation/app-growth-orchestrator.cjs once | cat
+
+      - name: Upload app growth reports and logs
+        uses: actions/upload-artifact@v4
+        with:
+          name: app-growth-reports
+          path: |
+            data/reports/app-growth/**/*
+            automation/logs/**/*.log
+          if-no-files-found: ignore

@@ -1,0 +1,5 @@
+{
+  "title": "favicon.ico",
+  "description": "import Head from 'next/head'; import Link from 'next/link'; export default function Placeholder() {   return (     <main className=\"min-h-sc",
+  "keywords": "favicon, import, head, from, next, link, export, default, function, placeholder, return, main"
+}
