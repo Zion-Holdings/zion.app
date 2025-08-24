@@ -24,6 +24,7 @@ export interface InnovativeAIService {
   competitors: string[];
   marketSize: string;
   growthRate: string;
+  variant?: string;
   contactInfo: {
     mobile: string;
     email: string;

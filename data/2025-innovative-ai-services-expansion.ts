@@ -1,7 +1,6 @@
 import { ServiceVariant } from '../types/service-variants';
 
 export interface InnovativeAIServicesExpansion {
->>>>>>> 916d02471c24718d698d51219f240472f9d52b96
   id: string;
   name: string;
   tagline: string;
@@ -80,7 +79,7 @@ export const innovativeAIServicesExpansion: InnovativeAIServicesExpansion[] = [
     competitors: ['Jasper, Copy.ai, Writesonic, ContentBot, Rytr'],
     marketSize: '$15B AI content generation market',
     growthRate: '35% annual growth',
-    variant: 'ai-services',
+    variant: 'ai-futuristic',
     contactInfo: {
       mobile: '+1 302 464 0950',
       email: 'kleber@ziontechgroup.com',
@@ -131,7 +130,7 @@ export const innovativeAIServicesExpansion: InnovativeAIServicesExpansion[] = [
     competitors: ['Intercom, Zendesk, Freshdesk, Drift, Intercom'],
     marketSize: '$18B customer service automation market',
     growthRate: '30% annual growth',
-    variant: 'ai-services',
+    variant: 'ai-futuristic',
     contactInfo: {
       mobile: '+1 302 464 0950',
       email: 'kleber@ziontechgroup.com',
@@ -182,7 +181,7 @@ export const innovativeAIServicesExpansion: InnovativeAIServicesExpansion[] = [
     competitors: ['Tableau, Power BI, Qlik, Looker, Sisense'],
     marketSize: '$22B business intelligence market',
     growthRate: '28% annual growth',
-    variant: 'ai-services',
+    variant: 'ai-futuristic',
     contactInfo: {
       mobile: '+1 302 464 0950',
       email: 'kleber@ziontechgroup.com',
@@ -233,7 +232,7 @@ export const innovativeAIServicesExpansion: InnovativeAIServicesExpansion[] = [
     competitors: ['UiPath, Automation Anywhere, Blue Prism, Microsoft Power Automate, Zapier'],
     marketSize: '$13B process automation market',
     growthRate: '32% annual growth',
-    variant: 'ai-services',
+    variant: 'ai-futuristic',
     contactInfo: {
       mobile: '+1 302 464 0950',
       email: 'kleber@ziontechgroup.com',
@@ -284,7 +283,7 @@ export const innovativeAIServicesExpansion: InnovativeAIServicesExpansion[] = [
     competitors: ['CrowdStrike, SentinelOne, Darktrace, Cylance, FireEye'],
     marketSize: '$16B AI cybersecurity market',
     growthRate: '38% annual growth',
-    variant: 'ai-services',
+    variant: 'ai-futuristic',
     contactInfo: {
       mobile: '+1 302 464 0950',
       email: 'kleber@ziontechgroup.com',
@@ -297,6 +296,6 @@ export const innovativeAIServicesExpansion: InnovativeAIServicesExpansion[] = [
     customers: 89,
     rating: 4.9,
     reviews: 67
->>>>>>> 916d02471c24718d698d51219f240472f9d52b96
+
   }
 ];
