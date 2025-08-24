@@ -1,148 +1,173 @@
 
-import React from "react";
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
-import { Link } from "react-router-dom";
+import React from 'react';
+import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
+import { Button } from '@/components/ui/button';
 import { 
-  ArrowRight, 
-  Users, 
   Zap, 
-  Settings, 
-  Search, 
-  MessageSquare, 
-  Smartphone, 
-  Calendar,
-  BookOpen,
-  Code,
+  Users, 
+  Briefcase, 
   Building,
-  Clock
-} from "lucide-react";
+  ArrowRight,
+  Sparkles
+} from 'lucide-react';
+
+const ctaItems = [
+  {
+    icon: Zap,
+    title: "Launch Your Project",
+    description: "Get started with AI-powered project matching and expert talent",
+    action: "Start Project",
+    href: "/match",
+    color: "from-zion-purple to-zion-purple-dark",
+    bgColor: "bg-zion-purple/10",
+    borderColor: "border-zion-purple/30"
+  },
+  {
+    icon: Users,
+    title: "Join as Talent",
+    description: "Showcase your skills and connect with global opportunities",
+    action: "Create Profile",
+    href: "/signup",
+    color: "from-zion-cyan to-zion-cyan-dark",
+    bgColor: "bg-zion-cyan/10",
+    borderColor: "border-zion-cyan/30"
+  },
+  {
+    icon: Briefcase,
+    title: "Hire AI Experts",
+    description: "Access specialized AI talent for your next breakthrough",
+    action: "Browse AI Talent",
+    href: "/zion-hire-ai",
+    color: "from-zion-blue to-zion-blue-dark",
+    bgColor: "bg-zion-blue/10",
+    borderColor: "border-zion-blue/30"
+  },
+  {
+    icon: Building,
+    title: "Enterprise Solutions",
+    description: "Custom solutions for large organizations and teams",
+    action: "Learn More",
+    href: "/enterprise",
+    color: "from-zion-green to-zion-green-dark",
+    bgColor: "bg-zion-green/10",
+    borderColor: "border-zion-green/30"
+  }
+];
 
 export function FeatureCTAs() {
-  const features = [
-    {
-      title: "AI Talent Matching",
-      description: "Our AI-powered matching algorithm connects you with the perfect talent or job based on skills, experience, and preferences.",
-      icon: <Search className="h-10 w-10 p-2 rounded-md bg-blue-100 text-blue-700" />,
-      link: "/marketplace",
-      badge: "Popular",
-      details: "Leveraging advanced machine learning, our matching system analyzes over 100+ data points to create perfect connections between talents and opportunities."
-    },
-    {
-      title: "Talent Directory",
-      description: "Browse our extensive database of verified AI and tech specialists, filtered by expertise and availability.",
-      icon: <Users className="h-10 w-10 p-2 rounded-md bg-purple-100 text-purple-700" />,
-      link: "/talent",
-      details: "Every talent in our directory undergoes a rigorous verification process to ensure quality, authenticity, and reliability."
-    },
-    {
-      title: "Services Marketplace",
-      description: "Discover professional tech and AI services for your business needs, from development to consulting.",
-      icon: <Zap className="h-10 w-10 p-2 rounded-md bg-cyan-100 text-cyan-700" />,
-      link: "/services",
-      badge: "New",
-      details: "From on-demand IT support to specialized AI development, our marketplace offers verified services with transparent pricing and reviews."
-    },
-    {
-      title: "Equipment Catalog",
-      description: "Find specialized hardware and tech equipment for AI development and research.",
-      icon: <Settings className="h-10 w-10 p-2 rounded-md bg-amber-100 text-amber-700" />,
-      link: "/equipment",
-      details: "Access cutting-edge technology with flexible options to buy, rent, or lease specialized equipment for your tech projects."
-    },
-    {
-      title: "Community Hub",
-      description: "Connect with like-minded professionals, share insights, and stay updated with industry trends.",
-      icon: <MessageSquare className="h-10 w-10 p-2 rounded-md bg-emerald-100 text-emerald-700" />,
-      link: "/community",
-      details: "Join thousands of tech professionals in discussions, AMAs with industry leaders, and exclusive community events."
-    },
-    {
-      title: "Mobile Experience",
-      description: "Take Zion with you on the go with our mobile app for iOS and Android devices.",
-      icon: <Smartphone className="h-10 w-10 p-2 rounded-md bg-indigo-100 text-indigo-700" />,
-      link: "/mobile-launch",
-      badge: "Featured",
-      details: "Manage your projects, communicate with clients or talents, and receive real-time updates wherever you are."
-    },
-    {
-      title: "Enterprise Solutions",
-      description: "Custom-branded hiring portal, dedicated talent pool, and powerful admin controls for your organization.",
-      icon: <Building className="h-10 w-10 p-2 rounded-md bg-pink-100 text-pink-700" />,
-      link: "/enterprise",
-      details: "Scale your talent acquisition with white-labeled solutions, analytics dashboards, and dedicated account managers."
-    },
-    {
-      title: "Developer Tools",
-      description: "Access our API documentation, SDKs, and integration guides to build on top of the Zion platform.",
-      icon: <Code className="h-10 w-10 p-2 rounded-md bg-gray-100 text-gray-700" />,
-      link: "/developers",
-      details: "Leverage our robust API with comprehensive documentation, code examples, and developer support."
-    },
-    {
-      title: "Learning Resources",
-      description: "Access tutorials, courses, and documentation to enhance your skills in AI and tech.",
-      icon: <BookOpen className="h-10 w-10 p-2 rounded-md bg-teal-100 text-teal-700" />,
-      link: "/blog",
-      details: "From beginner guides to advanced technical content, our learning resources help you stay at the cutting edge of technology."
-    },
-    {
-      title: "Project Management",
-      description: "Streamlined tools to manage projects, track milestones, and ensure successful delivery.",
-      icon: <Calendar className="h-10 w-10 p-2 rounded-md bg-red-100 text-red-700" />,
-      link: "/dashboard/projects",
-      details: "Our intuitive project management tools help you track progress, manage deliverables, and ensure timely completion."
-    },
-    {
-      title: "Zion Hire AI",
-      description: "AI-powered recruiting assistant to streamline your hiring process and find better matches.",
-      icon: <Clock className="h-10 w-10 p-2 rounded-md bg-violet-100 text-violet-700" />,
-      link: "/zion-hire-ai",
-      badge: "Premium",
-      details: "Automate screening, improve candidate matching, and enhance the hiring experience with our AI recruiting solution."
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.1,
+        delayChildren: 0.2
+      }
     }
-  ];
+  };
+
+  const itemVariants = {
+    hidden: { y: 20, opacity: 0 },
+    visible: {
+      y: 0,
+      opacity: 1,
+      transition: { duration: 0.5 }
+    }
+  };
 
   return (
-    <section className="py-16 bg-gradient-to-b from-background to-background/90">
+    <section className="py-20 bg-gradient-to-b from-zion-blue to-zion-blue-dark">
       <div className="container mx-auto px-4">
-        <div className="mb-12 text-center">
-          <h2 className="text-3xl font-bold tracking-tight mb-3">Discover Zion's Powerful Features</h2>
-          <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-            Explore our comprehensive suite of tools designed to transform how you connect, collaborate, and create in the tech ecosystem.
+        {/* Section Header */}
+        <motion.div 
+          className="text-center mb-16"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+        >
+          <div className="inline-flex items-center gap-2 bg-zion-purple/20 px-4 py-2 rounded-full mb-6">
+            <Sparkles className="w-4 h-4 text-zion-purple" />
+            <span className="text-zion-purple text-sm font-medium">Get Started Today</span>
+          </div>
+          <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+            Ready to Transform Your <span className="text-transparent bg-clip-text bg-gradient-to-r from-zion-cyan to-zion-purple">Tech Journey</span>?
+          </h2>
+          <p className="text-xl text-zion-slate-light max-w-3xl mx-auto leading-relaxed">
+            Choose your path and unlock the power of global tech collaboration. 
+            Whether you're hiring, building, or growing, Zion has you covered.
           </p>
-        </div>
-        
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {features.map((feature, index) => (
-            <Card key={index} className="overflow-hidden transition-all duration-300 hover:shadow-lg hover:border-primary/50">
-              <CardHeader className="pb-2">
-                <div className="flex justify-between items-start">
-                  {feature.icon}
-                  {feature.badge && (
-                    <Badge variant="secondary" className="bg-primary/20 text-primary">
-                      {feature.badge}
-                    </Badge>
-                  )}
+        </motion.div>
+
+        {/* CTA Grid */}
+        <motion.div 
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16"
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+        >
+          {ctaItems.map((item, index) => (
+            <motion.div
+              key={index}
+              className="group relative"
+              variants={itemVariants}
+            >
+              <div className={`${item.bgColor} ${item.borderColor} border-2 p-8 rounded-2xl h-full hover:transform hover:scale-105 transition-all duration-300 hover:shadow-2xl`}>
+                <div className={`w-16 h-16 rounded-2xl bg-gradient-to-r ${item.color} p-4 mb-6 group-hover:scale-110 transition-transform duration-300`}>
+                  <item.icon className="w-8 h-8 text-white" />
                 </div>
-                <CardTitle className="mt-4">{feature.title}</CardTitle>
-                <CardDescription className="line-clamp-2">{feature.description}</CardDescription>
-              </CardHeader>
-              <CardContent>
-                <p className="text-sm text-muted-foreground">{feature.details}</p>
-              </CardContent>
-              <CardFooter>
-                <Button asChild className="w-full gap-1">
-                  <Link to={feature.link}>
-                    <span>Explore {feature.title}</span>
-                    <ArrowRight className="h-4 w-4" />
+                <h3 className="text-xl font-bold text-white mb-4">{item.title}</h3>
+                <p className="text-zion-slate-light mb-6 leading-relaxed">{item.description}</p>
+                <Button
+                  asChild
+                  className={`w-full bg-gradient-to-r ${item.color} hover:scale-105 transition-transform duration-200`}
+                >
+                  <Link to={item.href} className="flex items-center justify-center gap-2">
+                    {item.action}
+                    <ArrowRight className="w-4 h-4" />
                   </Link>
                 </Button>
-              </CardFooter>
-            </Card>
+              </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
+
+        {/* Bottom CTA */}
+        <motion.div 
+          className="text-center"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.4 }}
+        >
+          <div className="bg-zion-blue-light/10 backdrop-blur-sm rounded-3xl p-12 border border-zion-purple/20 max-w-4xl mx-auto">
+            <h3 className="text-3xl font-bold text-white mb-4">
+              Still Have Questions?
+            </h3>
+            <p className="text-zion-slate-light text-lg mb-8 max-w-2xl mx-auto">
+              Our team is here to help you get started and make the most of Zion's powerful platform.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Button
+                asChild
+                size="lg"
+                className="bg-gradient-to-r from-zion-purple to-zion-purple-dark hover:from-zion-purple-light hover:to-zion-purple text-lg px-8 py-4"
+              >
+                <Link to="/contact">Contact Support</Link>
+              </Button>
+              <Button
+                asChild
+                size="lg"
+                variant="outline"
+                className="border-zion-cyan text-zion-cyan hover:bg-zion-cyan hover:text-zion-blue-dark text-lg px-8 py-4"
+              >
+                <Link to="/docs">View Documentation</Link>
+              </Button>
+            </div>
+          </div>
+        </motion.div>
       </div>
     </section>
   );
