@@ -1,1 +1,1 @@
-export default function Page() { return <div className="py-8">cloud-computing-strategies</div>; }
+export default function PlaceholderPage() { return null; }

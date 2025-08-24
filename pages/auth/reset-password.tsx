@@ -1,3 +1,1 @@
-export default function ResetPassword() {
-  return <div className="py-8">Reset Password</div>;
-}
+export default function PlaceholderPage() { return null; }

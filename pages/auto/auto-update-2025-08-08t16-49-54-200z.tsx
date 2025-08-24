@@ -1,1 +1,1 @@
-export default function Page(){return <div className="py-8">auto-update</div>;}
+export default function PlaceholderPage() { return null; }

@@ -1,1 +1,1 @@
-export default function Page() { return <div className="py-8">data-analytics-implementation</div>; }
+export default function PlaceholderPage() { return null; }

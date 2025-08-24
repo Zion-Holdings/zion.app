@@ -1,3 +1,1 @@
-export default function Contact() {
-  return <div className="py-8">Contact us</div>;
-}
+export default function PlaceholderPage() { return null; }
