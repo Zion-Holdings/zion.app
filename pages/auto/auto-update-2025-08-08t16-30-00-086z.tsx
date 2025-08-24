@@ -1,8 +1,20 @@
-export default function AutoUpdate_163000_086Z() {
+import type { NextPage } from 'next';
+import Head from 'next/head';
+
+const AutoUpdate20250808t163000086z: NextPage = () => {
   return (
-    <div className="py-12">
-      <h1 className="text-2xl font-bold">Auto Update</h1>
-      <p className="mt-2 text-gray-600">2025-08-08T16:30:00.086Z</p>
+    <div>
+      <Head>
+        <title>AutoUpdate20250808t163000086z - Zion Tech Solutions</title>
+        <meta name="description" content="AutoUpdate20250808t163000086z page" />
+      </Head>
+      
+      <main>
+        <h1>AutoUpdate20250808t163000086z</h1>
+        <p>This page is under construction.</p>
+      </main>
     </div>
   );
-}
+};
+
+export default AutoUpdate20250808t163000086z;

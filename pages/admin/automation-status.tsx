@@ -1,13 +1,20 @@
+import type { NextPage } from 'next';
 import Head from 'next/head';
 
-export default function AutomationStatusPage() {
+const AutomationStatus: NextPage = () => {
   return (
-    <>
-      <Head><title>Automation Status - Zion</title></Head>
-      <div className="py-12">
-        <h1 className="text-3xl font-bold">Automation Status</h1>
-        <p className="mt-2 text-gray-600">Coming soon.</p>
-      </div>
-    </>
+    <div>
+      <Head>
+        <title>AutomationStatus - Zion Tech Solutions</title>
+        <meta name="description" content="AutomationStatus page" />
+      </Head>
+      
+      <main>
+        <h1>AutomationStatus</h1>
+        <p>This page is under construction.</p>
+      </main>
+    </div>
   );
-}
+};
+
+export default AutomationStatus;
