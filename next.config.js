@@ -12,8 +12,6 @@ const nextConfig = {
   // Environment configuration
   env: {
     NEXT_PUBLIC_APP_URL: process.env.NEXT_PUBLIC_APP_URL || 'http://localhost:3000',
-    NEXT_PUBLIC_SUPABASE_URL: process.env.NEXT_PUBLIC_SUPABASE_URL,
-    NEXT_PUBLIC_SUPABASE_ANON_KEY: process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY,
   },
 
   // Optimized image handling
@@ -30,13 +28,19 @@ const nextConfig = {
 
   // Experimental features for better performance
   experimental: {
-    optimizeCss: true,
-    optimizePackageImports: ['lucide-react', '@radix-ui/react-icons'],
+    optimizeCss: false,
+    optimizePackageImports: ['lucide-react'],
     esmExternals: 'loose',
   },
 
   // Webpack configuration
   webpack: (config, { dev, isServer }) => {
+    // Exclude contracts directory from build
+    config.resolve.alias = {
+      ...config.resolve.alias,
+      'contracts': false,
+    };
+
     // Basic optimizations
     if (!dev && !isServer) {
       config.optimization = {

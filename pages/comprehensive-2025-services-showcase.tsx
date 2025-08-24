@@ -7,8 +7,7 @@ import {
   ChevronRight, ExternalLink, TrendingUp, BarChart3, Cloud, Network,
   Search, Filter, Grid, List, Star as StarIcon, Eye, Heart, Share2
 } from 'lucide-react';
-import EnhancedNavigation from '../components/EnhancedNavigation';
-import EnhancedFooter from '../components/EnhancedFooter';
+import Layout from '../components/Layout';
 import { innovative2025MicroSaasExpansionV3 } from '../data/2025-innovative-micro-saas-expansion-v3';
 
 export default function Comprehensive2025ServicesShowcase() {
@@ -71,17 +70,16 @@ export default function Comprehensive2025ServicesShowcase() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950 text-white overflow-hidden">
-      <Head>
-        <title>Comprehensive 2025 Innovative Services Showcase — Zion Tech Group</title>
-        <meta name="description" content="Explore our comprehensive collection of innovative micro SAAS services, AI solutions, quantum technologies, and cutting-edge IT services. Transform your business with Zion Tech Group." />
-        <meta property="og:title" content="Comprehensive 2025 Innovative Services Showcase — Zion Tech Group" />
-        <meta property="og:description" content="Explore our comprehensive collection of innovative micro SAAS services, AI solutions, quantum technologies, and cutting-edge IT services." />
-        <meta name="keywords" content="micro SAAS, AI services, quantum computing, cybersecurity, edge computing, space technology, neural interfaces, Zion Tech Group" />
-        <link rel="canonical" href="https://ziontechgroup.com/comprehensive-2025-services-showcase" />
-      </Head>
-
-      <EnhancedNavigation />
+    <Layout>
+      <div className="min-h-screen bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950 text-white overflow-hidden">
+        <Head>
+          <title>Comprehensive 2025 Innovative Services Showcase — Zion Tech Group</title>
+          <meta name="description" content="Explore our comprehensive collection of innovative micro SAAS services, AI solutions, quantum technologies, and cutting-edge IT services. Transform your business with Zion Tech Group." />
+          <meta property="og:title" content="Comprehensive 2025 Innovative Services Showcase — Zion Tech Group" />
+          <meta property="og:description" content="Explore our comprehensive collection of innovative micro SAAS services, AI solutions, quantum technologies, and cutting-edge IT services." />
+          <meta name="keywords" content="micro SAAS, AI services, quantum computing, cybersecurity, edge computing, space technology, neural interfaces, Zion Tech Group" />
+          <link rel="canonical" href="https://ziontechgroup.com/comprehensive-2025-services-showcase" />
+        </Head>
 
       {/* Hero Section */}
       <section className="relative py-20 px-6">
@@ -361,7 +359,7 @@ export default function Comprehensive2025ServicesShowcase() {
         </div>
       </section>
 
-      <EnhancedFooter />
-    </div>
+      </div>
+    </Layout>
   );
 }
