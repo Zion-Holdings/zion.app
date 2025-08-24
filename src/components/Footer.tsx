@@ -1,4 +1,4 @@
-import { FooterNewsletter } from "@/components/FooterNewsletter";
+// FooterNewsletter component removed - not available
 import { Twitter, Linkedin, Facebook, Instagram, Github, Mail, Phone, MapPin } from "lucide-react";
 import { Link } from "react-router-dom";
 
@@ -213,7 +213,7 @@ export function Footer() {
             <p className="text-zion-slate-light text-sm mb-4">
               Get the latest insights on technology trends and innovations.
             </p>
-            <FooterNewsletter />
+            {/* FooterNewsletter component removed - not available */}
           </div>
         </div>
 

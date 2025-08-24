@@ -134,7 +134,7 @@ export default function ServicesOverview() {
         title="Services - Zion Tech Group" 
         description="Comprehensive technology services including AI, quantum computing, cybersecurity, and industry solutions."
         keywords="AI services, quantum computing, cybersecurity, IT infrastructure, industry solutions"
-        canonical="https://ziontechgroup.com/services"
+        url="https://ziontechgroup.com/services"
       />
 
       {/* Hero Section */}

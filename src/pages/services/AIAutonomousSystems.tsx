@@ -157,7 +157,7 @@ export default function AIAutonomousSystems() {
         title="AI & Autonomous Systems - Zion Tech Group" 
         description="Revolutionary AI systems that operate independently and transform business operations across industries."
         keywords="AI autonomous systems, artificial intelligence, machine learning, business automation"
-        canonical="https://ziontechgroup.com/services/ai-autonomous-systems"
+        url="https://ziontechgroup.com/services/ai-autonomous-systems"
       />
 
       {/* Hero Section */}
