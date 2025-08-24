@@ -398,6 +398,30 @@ export default function ServicesPage() {
                   Micro SAAS
                 </div>
               </motion.div>
+              
+              {/* Revolutionary Services Banner */}
+              <motion.div
+                initial={{ opacity: 0, scale: 0.9 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.8, delay: 0.6 }}
+                className="mt-8"
+              >
+                <div className="bg-gradient-to-r from-purple-500/20 via-pink-500/20 to-red-500/20 border border-purple-500/30 rounded-2xl p-6 backdrop-blur-xl">
+                  <div className="flex flex-col md:flex-row items-center justify-between gap-4">
+                    <div className="text-left">
+                      <h3 className="text-2xl font-bold text-white mb-2">🚀 Revolutionary 2025 Services</h3>
+                      <p className="text-gray-300">
+                        Explore our latest breakthrough services including AI Consciousness, Quantum Internet, Space Technology, and more!
+                      </p>
+                    </div>
+                    <Link href="/revolutionary-2025-services-showcase">
+                      <button className="bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white px-8 py-3 rounded-xl font-semibold transition-all duration-300 transform hover:scale-105 whitespace-nowrap">
+                        View Revolutionary Services →
+                      </button>
+                    </Link>
+                  </div>
+                </div>
+              </motion.div>
             </motion.div>
 
             {/* Enhanced Search and Filters */}
