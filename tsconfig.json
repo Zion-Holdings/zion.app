@@ -36,7 +36,7 @@
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
-    "types": ["react", "react-dom"]
+    "types": ["react", "react-dom", "node"]
   },
   "include": [
     "src"
