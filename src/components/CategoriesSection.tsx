@@ -1,35 +1,35 @@
 
 import { GradientHeading } from "./GradientHeading";
 import { Link } from "react-router-dom";
-import { Briefcase, HardDrive, Lightbulb, Users } from "lucide-react";
+import { Briefcase, HardDrive, Lightbulb, Users, Brain, Cloud, Zap, TrendingUp } from "lucide-react";
 
 const categories = [
   {
-    title: "Services",
-    description: "On-demand IT support, consulting, development, and more",
-    icon: <Briefcase className="w-10 h-10" />,
-    link: "/services",
+    title: "AI Services",
+    description: "Cutting-edge AI solutions, chatbots, and machine learning",
+    icon: <Brain className="w-10 h-10" />,
+    link: "/ai-services",
     color: "from-purple-500 to-indigo-600",
   },
   {
-    title: "Talents",
-    description: "Connect with AI experts, developers, and tech specialists",
-    icon: <Users className="w-10 h-10" />,
-    link: "/talent",
+    title: "Micro SAAS",
+    description: "Cloud-based software solutions for modern businesses",
+    icon: <Cloud className="w-10 h-10" />,
+    link: "/micro-saas",
     color: "from-cyan-500 to-blue-600",
   },
   {
-    title: "Equipment",
-    description: "Rent or buy specialized hardware, servers, and devices",
-    icon: <HardDrive className="w-10 h-10" />,
-    link: "/equipment",
+    title: "IT Services",
+    description: "Infrastructure, security, and technical consulting",
+    icon: <Zap className="w-10 h-10" />,
+    link: "/all-services",
     color: "from-amber-500 to-orange-600",
   },
   {
-    title: "Innovation",
-    description: "Discover cutting-edge solutions and tech breakthroughs",
-    icon: <Lightbulb className="w-10 h-10" />,
-    link: "/category/innovation",
+    title: "Digital Transformation",
+    description: "Business modernization and digital strategy",
+    icon: <TrendingUp className="w-10 h-10" />,
+    link: "/all-services",
     color: "from-emerald-500 to-green-600",
   },
 ];
@@ -38,6 +38,18 @@ const specialServices = [
   {
     title: "IT Onsite Services",
     link: "/it-onsite-services"
+  },
+  {
+    title: "All Services",
+    link: "/all-services"
+  },
+  {
+    title: "AI Solutions",
+    link: "/ai-services"
+  },
+  {
+    title: "SAAS Platforms",
+    link: "/micro-saas"
   }
 ];
 
