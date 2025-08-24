@@ -1,5 +1,13 @@
 import ServicePage, { getStaticProps as getSlugStaticProps } from './services/[slug]';
 
+<<<<<<< HEAD
+export async function getStaticProps() {
+	return (getSlugStaticProps as any)({ params: { slug: 'ai-sales-intelligence-platform' } });
+}
+
+export default function AISalesIntelligencePlatform(props: any) {
+	return <ServicePage {...props} />;
+=======
 export default function AISalesIntelligencePlatform() {
 	return (
 		<ServiceLanding
@@ -22,4 +30,5 @@ export default function AISalesIntelligencePlatform() {
 			canonical="https://ziontechgroup.com/ai-sales-intelligence-platform"
 		/>
 	);
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-adc1
 }

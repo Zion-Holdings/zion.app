@@ -1,25 +1,26 @@
 import React from 'react';
-import Head from 'next/head';
-import UltraFuturisticBackground from '../components/ui/UltraFuturisticBackground';
+import ServiceLanding from '../components/sections/ServiceLanding';
 
-export default function AIConsciousnessEvolutionPage() {
+export default function AIConsciousnessEvolution2025() {
 	return (
-		<UltraFuturisticBackground>
-			<Head>
-				<title>AI Consciousness Evolution | Zion Tech Group</title>
-				<meta name="description" content="Exploring emotional intelligence, self-awareness, and governance frameworks for advanced AI systems." />
-				<link rel="canonical" href="https://ziontechgroup.com/ai-consciousness-evolution-2025" />
-			</Head>
-			<div className="container mx-auto px-4 py-24 text-white space-y-6">
-				<h1 className="text-4xl md:text-6xl font-bold bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">AI Consciousness Evolution</h1>
-				<p className="text-gray-300 max-w-3xl">This thought-leadership page outlines principles, risks, and safeguards for developing AI systems that exhibit signs of agency, memory, and emotional intelligence. It covers governance, observability, and alignment strategies suitable for enterprises.</p>
-				<ul className="list-disc list-inside text-gray-300 space-y-2">
-					<li>Emotional state modelling and measurement</li>
-					<li>Memory, identity, and continuity safeguards</li>
-					<li>Alignment guardrails and human-in-the-loop controls</li>
-					<li>Responsible research roadmap (2025+)</li>
-				</ul>
-			</div>
-		</UltraFuturisticBackground>
+		<ServiceLanding
+			title="AI Consciousness Evolution 2025"
+			slug="ai-consciousness-evolution-2025"
+			description="Applied research and productization of affective computing, theory-of-mind modeling, and reflective agents. Build empathetic systems that understand context and intent."
+			subtitle="From narrow tasks to contextual understanding with emotional intelligence."
+			pricePerMonthUSD={4999}
+			implementationWeeks="Implementation: 6–12 weeks"
+			roiNote="Strategic R&D with demonstrable prototypes and IP"
+			features={[
+				"Affective signals and sentiment grounding",
+				"Self-reflection loops and memory consolidation",
+				"Safety layers for alignment and guardrails",
+				"Evaluation harness for subjective tasks",
+				"Multi-modal context fusion (text, voice, UI)",
+				"Partnered research roadmap and governance"
+			]}
+			industries={["R&D", "Healthcare", "Education", "Assistive Tech"]}
+			canonical="https://ziontechgroup.com/ai-consciousness-evolution-2025"
+		/>
 	);
 }
