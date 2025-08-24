@@ -11,6 +11,7 @@ import { QuickAccess } from "@/components/home/QuickAccess";
 import { FeatureCTAs } from "@/components/home/FeatureCTAs";
 import { FeatureHighlights } from "@/components/home/FeatureHighlights";
 import { ITServiceRequestHero } from "@/components/home/ITServiceRequestHero";
+import { StatsSection } from "@/components/home/StatsSection";
 
 export default function Home() {
   return (
@@ -27,6 +28,8 @@ export default function Home() {
       <HeroSection />
       
       <QuickAccess />
+      
+      <StatsSection />
       
       <FeatureCTAs />
       
