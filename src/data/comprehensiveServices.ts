@@ -156,6 +156,30 @@ export const SERVICE_CATEGORIES: ServiceCategory[] = [
     icon: '📊',
     color: 'from-blue-500 to-cyan-600',
     count: 0
+  },
+  {
+    id: 'space-tech',
+    name: 'Space Technology',
+    description: 'Advanced space and satellite technology solutions',
+    icon: '🚀',
+    color: 'from-indigo-500 to-purple-600',
+    count: 0
+  },
+  {
+    id: 'biotech-ai',
+    name: 'Biotech AI',
+    description: 'AI-powered biotechnology and pharmaceutical solutions',
+    icon: '🧬',
+    color: 'from-pink-500 to-rose-600',
+    count: 0
+  },
+  {
+    id: 'autonomous-tech',
+    name: 'Autonomous Technology',
+    description: 'Self-driving vehicles and autonomous systems',
+    icon: '🚗',
+    color: 'from-blue-500 to-cyan-600',
+    count: 0
   }
 ];
 
@@ -3014,6 +3038,231 @@ export const MICRO_SERVICES: MicroService[] = [
     rating: 4.7,
     reviewCount: 123,
     aiScore: 93,
+    featured: true,
+    popular: true,
+    contactInfo: {
+      email: 'kleber@ziontechgroup.com',
+      phone: '+1 302 464 0950',
+      website: 'https://ziontechgroup.com'
+    }
+  },
+  {
+    id: 'ai-robotics-automation',
+    title: 'AI Robotics & Industrial Automation',
+    description: 'Intelligent robotics solutions with AI-powered automation for manufacturing, logistics, and industrial processes.',
+    category: 'ai-services',
+    subcategory: 'Robotics & Automation',
+    price: 75000,
+    currency: 'USD',
+    pricingModel: 'project-based',
+    features: [
+      'AI-powered robot control systems',
+      'Computer vision integration',
+      'Predictive maintenance',
+      'Safety monitoring and compliance',
+      'Integration with existing systems',
+      'Remote monitoring and control',
+      'Custom robot programming'
+    ],
+    benefits: [
+      'Increase production efficiency by 60%',
+      'Reduce operational costs by 40%',
+      'Improve workplace safety',
+      '24/7 operation capability',
+      'Scalable automation solutions'
+    ],
+    marketPrice: '$50,000 - $150,000',
+    deliveryTime: '20-28 weeks',
+    tags: ['AI Robotics', 'Industrial Automation', 'Computer Vision', 'Manufacturing', 'Safety'],
+    author: {
+      name: 'Zion Robotics Solutions',
+      id: 'zion-robotics-solutions',
+      verified: true
+    },
+    images: ['https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&auto=format'],
+    rating: 4.9,
+    reviewCount: 34,
+    aiScore: 96,
+    featured: true,
+    popular: false,
+    contactInfo: {
+      email: 'kleber@ziontechgroup.com',
+      phone: '+1 302 464 0950',
+      website: 'https://ziontechgroup.com'
+    }
+  },
+  {
+    id: 'space-tech-satellite-solutions',
+    title: 'Space Technology & Satellite Solutions',
+    description: 'Advanced space technology solutions including satellite communication, space data analytics, and orbital optimization.',
+    category: 'space-tech',
+    subcategory: 'Satellite Solutions',
+    price: 200000,
+    currency: 'USD',
+    pricingModel: 'project-based',
+    features: [
+      'Satellite communication systems',
+      'Orbital optimization algorithms',
+      'Space data analytics',
+      'Ground station integration',
+      'Mission planning software',
+      'Real-time monitoring',
+      'Regulatory compliance'
+    ],
+    benefits: [
+      'Global communication coverage',
+      'Advanced space data insights',
+      'Optimized satellite operations',
+      'Reduced operational costs',
+      'Future-ready space infrastructure'
+    ],
+    marketPrice: '$150,000 - $500,000',
+    deliveryTime: '32-40 weeks',
+    tags: ['Space Technology', 'Satellite Solutions', 'Orbital Optimization', 'Space Data', 'Communication'],
+    author: {
+      name: 'Zion Space Solutions',
+      id: 'zion-space-solutions',
+      verified: true
+    },
+    images: ['https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&auto=format'],
+    rating: 4.9,
+    reviewCount: 12,
+    aiScore: 99,
+    featured: true,
+    popular: true,
+    contactInfo: {
+      email: 'kleber@ziontechgroup.com',
+      phone: '+1 302 464 0950',
+      website: 'https://ziontechgroup.com'
+    }
+  },
+  {
+    id: 'biotech-ai-drug-discovery',
+    title: 'Biotech AI Drug Discovery Platform',
+    description: 'AI-powered drug discovery platform using machine learning for pharmaceutical research and development.',
+    category: 'biotech-ai',
+    subcategory: 'Drug Discovery',
+    price: 120000,
+    currency: 'USD',
+    pricingModel: 'project-based',
+    features: [
+      'AI molecular modeling',
+      'Drug target identification',
+      'Clinical trial optimization',
+      'Regulatory compliance tools',
+      'Collaborative research platform',
+      'Data security and privacy',
+      'Integration with lab systems'
+    ],
+    benefits: [
+      'Accelerate drug discovery by 10x',
+      'Reduce R&D costs significantly',
+      'Improve success rates',
+      'Faster time to market',
+      'Enhanced research collaboration'
+    ],
+    marketPrice: '$100,000 - $300,000',
+    deliveryTime: '24-32 weeks',
+    tags: ['Biotech', 'AI Drug Discovery', 'Pharmaceuticals', 'Molecular Modeling', 'Clinical Trials'],
+    author: {
+      name: 'Zion Biotech AI',
+      id: 'zion-biotech-ai',
+      verified: true
+    },
+    images: ['https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&auto=format'],
+    rating: 4.9,
+    reviewCount: 28,
+    aiScore: 98,
+    featured: true,
+    popular: true,
+    contactInfo: {
+      email: 'kleber@ziontechgroup.com',
+      phone: '+1 302 464 0950',
+      website: 'https://ziontechgroup.com'
+    }
+  },
+  {
+    id: 'autonomous-vehicles-platform',
+    title: 'Autonomous Vehicles & Transportation Platform',
+    description: 'Complete autonomous vehicle solution with AI navigation, safety systems, and fleet management capabilities.',
+    category: 'autonomous-tech',
+    subcategory: 'Vehicle Platform',
+    price: 180000,
+    currency: 'USD',
+    pricingModel: 'project-based',
+    features: [
+      'AI navigation and pathfinding',
+      'Advanced safety systems',
+      'Fleet management platform',
+      'Real-time monitoring',
+      'Regulatory compliance',
+      'Integration with existing infrastructure',
+      'Custom vehicle programming'
+    ],
+    benefits: [
+      'Reduce transportation costs by 50%',
+      'Improve safety and efficiency',
+      '24/7 operation capability',
+      'Scalable fleet management',
+      'Future-ready transportation'
+    ],
+    marketPrice: '$150,000 - $400,000',
+    deliveryTime: '28-36 weeks',
+    tags: ['Autonomous Vehicles', 'AI Navigation', 'Fleet Management', 'Safety Systems', 'Transportation'],
+    author: {
+      name: 'Zion Autonomous Solutions',
+      id: 'zion-autonomous-solutions',
+      verified: true
+    },
+    images: ['https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&auto=format'],
+    rating: 4.8,
+    reviewCount: 45,
+    aiScore: 95,
+    featured: true,
+    popular: false,
+    contactInfo: {
+      email: 'kleber@ziontechgroup.com',
+      phone: '+1 302 464 0950',
+      website: 'https://ziontechgroup.com'
+    }
+  },
+  {
+    id: 'ai-cybersecurity-zero-trust',
+    title: 'AI-Powered Zero Trust Cybersecurity',
+    description: 'Next-generation cybersecurity platform implementing zero trust architecture with AI-driven threat detection and response.',
+    category: 'cybersecurity',
+    subcategory: 'Zero Trust Security',
+    price: 45000,
+    currency: 'USD',
+    pricingModel: 'monthly',
+    features: [
+      'Zero trust architecture',
+      'AI threat detection',
+      'Identity verification',
+      'Continuous monitoring',
+      'Automated response',
+      'Compliance reporting',
+      'Multi-cloud support'
+    ],
+    benefits: [
+      'Eliminate security breaches',
+      'Reduce security overhead',
+      'Compliance with regulations',
+      'Real-time threat response',
+      'Scalable security solution'
+    ],
+    marketPrice: '$35,000 - $80,000/month',
+    deliveryTime: '12-16 weeks',
+    tags: ['Zero Trust', 'AI Security', 'Cybersecurity', 'Identity Management', 'Compliance'],
+    author: {
+      name: 'Zion Zero Trust Security',
+      id: 'zion-zero-trust-security',
+      verified: true
+    },
+    images: ['https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&auto=format'],
+    rating: 4.9,
+    reviewCount: 67,
+    aiScore: 97,
     featured: true,
     popular: true,
     contactInfo: {
