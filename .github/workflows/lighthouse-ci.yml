@@ -1,0 +1,63 @@
+name: Lighthouse CI
+
+on:
+  push:
+    branches: [ main ]
+  schedule:
+    - cron: '0 */6 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  issues: write
+
+jobs:
+  lhci:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Use Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install http-server
+        run: npm i -g http-server
+
+      - name: Start server
+        run: |
+          nohup http-server -p 8080 -c-1 . >/dev/null 2>&1 &
+          sleep 2
+
+      - name: Run Lighthouse CI
+        id: lhci
+        uses: treosh/lighthouse-ci-action@v11
+        with:
+          urls: |
+            http://localhost:8080/
+          uploadArtifacts: true
+          temporaryPublicStorage: true
+          configPath: ''
+          runs: 1
+          threshold: '{"performance": 0.85, "accessibility": 0.9, "best-practices": 0.9, "seo": 0.9}'
+
+      - name: Create issue on failure
+        if: failure()
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const title = `Lighthouse regression detected (${new Date().toISOString()})`;
+            const body = `Automated Lighthouse run found scores below thresholds.\n\nCheck artifacts in the workflow run for details.`;
+            try {
+              await github.rest.issues.create({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                title,
+                body,
+                labels: ['automated', 'lighthouse']
+              });
+            } catch (e) {
+              core.warning('Failed to create issue: ' + e.message);
+            }

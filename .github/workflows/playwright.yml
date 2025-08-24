@@ -1,0 +1,33 @@
+name: Playwright Tests
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 18
+      - run: npm ci
+      - run: npx prisma db seed
+      - run: npx playwright install --with-deps
+      - run: npm run test:e2e
+      - name: Upload Playwright Report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: playwright-report
+          path: playwright-logs/html-report
+      - name: Send Slack alert on failure
+        if: failure()
+        uses: rtCamp/action-slack-notify@v2
+        env:
+          SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
+          SLACK_COLOR: '#FF0000'
+          SLACK_TITLE: '❌ UI Test Failed on Zion Marketplace'
+          SLACK_MESSAGE: 'Check the GitHub Actions logs or the HTML report.'
