@@ -8,7 +8,7 @@ function runNode(relPath, args = []) {
 }
 
 exports.config = {
-  schedule: '5 */6 * * *',
+  schedule: '*/20 * * * *',
 };
 
 exports.handler = async () => {
@@ -22,7 +22,7 @@ exports.handler = async () => {
     return status;
   }
 
-  logStep('ui:beautify', () => runNode('automation/beautify-ui.cjs'));
+  logStep('venture:once', () => runNode('automation/venture-orchestrator.cjs', ['once']));
   logStep('git:sync', () => runNode('automation/advanced-git-sync.cjs'));
 
   return { statusCode: 200, body: logs.join('\n') };
