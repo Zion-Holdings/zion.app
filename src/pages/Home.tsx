@@ -11,6 +11,7 @@ import { NewsletterSection } from '@/components/NewsletterSection';
 import { TrustedBySection } from '@/components/TrustedBySection';
 import { EnhancedQuickAccess } from '@/components/home/EnhancedQuickAccess';
 import { ComprehensiveServicesShowcase } from '@/components/ComprehensiveServicesShowcase';
+import { EnhancedSearchSection } from '@/components/home/EnhancedSearchSection';
 import { Button } from '@/components/ui/Button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/Card';
 import { Badge } from '@/components/ui/Badge';
@@ -191,6 +192,9 @@ export default function Home() {
             </div>
           </div>
         </section>
+
+        {/* Enhanced Search Section */}
+        <EnhancedSearchSection />
 
         {/* Trusted By Section */}
         <TrustedBySection />
