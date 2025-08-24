@@ -74,8 +74,7 @@
       "node"
     ],
     "jsx": "preserve",
-    "noEmit": true,
-    "isolatedModules": true
+    "noEmit": true
   },
   "include": [
     "next-env.d.ts",
