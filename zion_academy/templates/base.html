@@ -4,22 +4,36 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>{{ title }} - Zion Academy</title>
-        <link rel="stylesheet"
-              href="{{ url_for('static', filename='css/style.css') }}" />
+        <script src="https://cdn.tailwindcss.com"></script>
     </head>
-    <body>
-        <header>
-            <nav>
-                <a href="{{ url_for("index") }}">Home</a>
-                {# Add other navigation links here #}
+    <body class="bg-gray-50 min-h-screen">
+        <header class="bg-white shadow-sm border-b">
+            <nav class="container mx-auto px-4 py-4">
+                <div class="flex items-center justify-between">
+                    <div class="flex items-center space-x-8">
+                        <a href="{{ url_for('index') }}" class="text-xl font-bold text-blue-600 hover:text-blue-800 transition-colors">
+                            Zion Academy
+                        </a>
+                        <div class="hidden md:flex items-center space-x-6">
+                            <a href="{{ url_for('index') }}" class="text-gray-700 hover:text-blue-600 transition-colors">Home</a>
+                            <a href="{{ url_for('course_list') }}" class="text-gray-700 hover:text-blue-600 transition-colors">Courses</a>
+                            <a href="{{ url_for('updates_list') }}" class="text-gray-700 hover:text-blue-600 transition-colors">Updates</a>
+                            <a href="{{ url_for('admin_updates') }}" class="text-gray-700 hover:text-blue-600 transition-colors">Admin</a>
+                        </div>
+                    </div>
+                    <div class="flex items-center space-x-4">
+                        <a href="{{ url_for('user_profile', user_id=1) }}" class="text-gray-700 hover:text-blue-600 transition-colors">Profile</a>
+                    </div>
+                </div>
             </nav>
         </header>
         <main>
             {% block content %}{% endblock %}
         </main>
-        <footer>
-            <p>&copy; 2023 Zion Academy</p>
+        <footer class="bg-gray-800 text-white py-8 mt-16">
+            <div class="container mx-auto px-4 text-center">
+                <p>&copy; 2024 Zion Academy. All rights reserved.</p>
+            </div>
         </footer>
-        <script src="{{ url_for('static', filename='js/script.js') }}"></script>
     </body>
 </html>

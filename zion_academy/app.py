@@ -1,5 +1,6 @@
-from flask import Flask, render_template, request, jsonify
+from flask import Flask, render_template, request, jsonify, session, redirect, url_for
 import os
+from datetime import datetime
 
 # Import db instance from models.py FIRST
 from models import db
@@ -19,7 +20,7 @@ app.config['SECRET_KEY'] = 'dev_secret_key' # IMPORTANT: Change this for product
 db.init_app(app)
 
 # Now that db is initialized with app, import all the models that use this db instance
-from models import User, Category, Course, Lesson, Quiz, Question, Enrollment, Certificate, LessonCompletion
+from models import User, Category, Course, Lesson, Quiz, Question, Enrollment, Certificate, LessonCompletion, Update, UpdateReaction, UpdateComment
 
 @app.cli.command('init-db')
 def init_db_command():
@@ -62,6 +63,19 @@ def seed_db_command():
     seed_data()
     # No need to print here, seed_data() already prints messages.
     print('Database seeding process initiated from CLI command.')
+
+@app.cli.command('seed-updates')
+def seed_updates_command():
+    """Seeds the database with sample updates."""
+    try:
+        from seed_updates import seed_updates
+        seed_updates()
+        print('Update seeding completed successfully!')
+    except ImportError:
+        print('Error: Could not import seed_updates module.')
+        print('Make sure seed_updates.py exists in the same directory.')
+    except Exception as e:
+        print(f'Error seeding updates: {e}')
 
 @app.route('/course/<int:course_id>')
 def course_detail(course_id):
@@ -226,6 +240,238 @@ def user_profile(user_id):
         courses=courses,
         certificates=certificates,
     )
+
+# ----- Updates System Routes -----
+
+@app.route('/updates')
+def updates_list():
+    """Display all updates with preview snippets and engagement features."""
+    # For demo purposes, we'll use a default user_id of 1
+    # In a real app, this would come from session/authentication
+    user_id = session.get('user_id', 1)
+    
+    with app.app_context():
+        # Get user's last visit time
+        user = User.query.get(user_id)
+        last_visit = user.last_visit if user else datetime.min
+        
+        # Get all published updates
+        updates = Update.query.filter_by(is_published=True).order_by(Update.created_at.desc()).all()
+        
+        # Mark updates as new since last visit
+        for update in updates:
+            update.is_new = update.created_at > last_visit
+        
+        # Update user's last visit time
+        if user:
+            user.last_visit = datetime.utcnow()
+            db.session.commit()
+    
+    return render_template('updates_list.html', title='Latest Updates', updates=updates, user_id=user_id)
+
+@app.route('/updates/<int:update_id>')
+def update_detail(update_id):
+    """Display individual update with full content and engagement features."""
+    user_id = session.get('user_id', 1)
+    
+    with app.app_context():
+        update = Update.query.get_or_404(update_id)
+        if not update.is_published:
+            return render_template('404.html', title='Update Not Found'), 404
+        
+        # Get reactions and comments
+        reactions = update.reactions.all()
+        comments = update.comments.order_by(UpdateComment.created_at.desc()).all()
+        
+        # Group reactions by type
+        reaction_counts = {
+            'useful': update.get_reaction_count('useful'),
+            'informative': update.get_reaction_count('informative'),
+            'urgent': update.get_reaction_count('urgent')
+        }
+        
+        # Check if current user has reacted
+        user_reactions = {}
+        if user_id:
+            user_reactions = {r.reaction_type: True for r in update.reactions.filter_by(user_id=user_id).all()}
+    
+    return render_template('update_detail.html', 
+                         title=update.title, 
+                         update=update, 
+                         reactions=reactions,
+                         reaction_counts=reaction_counts,
+                         user_reactions=user_reactions,
+                         comments=comments,
+                         user_id=user_id)
+
+@app.route('/api/updates/<int:update_id>/react', methods=['POST'])
+def api_react_to_update(update_id):
+    """Add or remove a reaction to an update."""
+    data = request.get_json() or {}
+    user_id = data.get('user_id', 1)  # Default for demo
+    reaction_type = data.get('reaction_type')
+    
+    if not reaction_type or reaction_type not in ['useful', 'informative', 'urgent']:
+        return jsonify({'error': 'Invalid reaction type'}), 400
+    
+    with app.app_context():
+        # Check if reaction already exists
+        existing_reaction = UpdateReaction.query.filter_by(
+            user_id=user_id, 
+            update_id=update_id, 
+            reaction_type=reaction_type
+        ).first()
+        
+        if existing_reaction:
+            # Remove reaction (toggle off)
+            db.session.delete(existing_reaction)
+            action = 'removed'
+        else:
+            # Add reaction
+            new_reaction = UpdateReaction(
+                user_id=user_id,
+                update_id=update_id,
+                reaction_type=reaction_type
+            )
+            db.session.add(new_reaction)
+            action = 'added'
+        
+        db.session.commit()
+        
+        # Get updated counts
+        update = Update.query.get(update_id)
+        reaction_counts = {
+            'useful': update.get_reaction_count('useful'),
+            'informative': update.get_reaction_count('informative'),
+            'urgent': update.get_reaction_count('urgent')
+        }
+    
+    return jsonify({
+        'action': action,
+        'reaction_type': reaction_type,
+        'reaction_counts': reaction_counts
+    })
+
+@app.route('/api/updates/<int:update_id>/comment', methods=['POST'])
+def api_comment_on_update(update_id):
+    """Add a comment to an update."""
+    data = request.get_json() or {}
+    user_id = data.get('user_id', 1)  # Default for demo
+    content = data.get('content', '').strip()
+    
+    if not content:
+        return jsonify({'error': 'Comment content is required'}), 400
+    
+    with app.app_context():
+        # Verify update exists and is published
+        update = Update.query.get(update_id)
+        if not update or not update.is_published:
+            return jsonify({'error': 'Update not found'}), 404
+        
+        # Create comment
+        comment = UpdateComment(
+            user_id=user_id,
+            update_id=update_id,
+            content=content
+        )
+        db.session.add(comment)
+        db.session.commit()
+        
+        # Get user info for the response
+        user = User.query.get(user_id)
+        username = user.username if user else f'User {user_id}'
+    
+    return jsonify({
+        'comment_id': comment.id,
+        'content': comment.content,
+        'username': username,
+        'created_at': comment.created_at.isoformat()
+    })
+
+# ----- Admin Routes -----
+
+@app.route('/admin/updates')
+def admin_updates():
+    """Admin interface for managing updates."""
+    with app.app_context():
+        updates = Update.query.order_by(Update.created_at.desc()).all()
+    return render_template('admin_updates.html', title='Manage Updates', updates=updates)
+
+@app.route('/admin/updates/new', methods=['GET', 'POST'])
+def admin_create_update():
+    """Create a new update."""
+    if request.method == 'POST':
+        title = request.form.get('title', '').strip()
+        content = request.form.get('content', '').strip()
+        summary = request.form.get('summary', '').strip()
+        update_type = request.form.get('update_type', 'general')
+        priority = request.form.get('priority', 'normal')
+        is_published = request.form.get('is_published') == 'on'
+        
+        if not title or not content:
+            return render_template('admin_create_update.html', 
+                                title='Create Update',
+                                error='Title and content are required',
+                                form_data=request.form)
+        
+        with app.app_context():
+            update = Update(
+                title=title,
+                content=content,
+                summary=summary,
+                update_type=update_type,
+                priority=priority,
+                is_published=is_published
+            )
+            db.session.add(update)
+            db.session.commit()
+            
+            return redirect(url_for('admin_updates'))
+    
+    return render_template('admin_create_update.html', title='Create Update')
+
+@app.route('/admin/updates/<int:update_id>/edit', methods=['GET', 'POST'])
+def admin_edit_update(update_id):
+    """Edit an existing update."""
+    with app.app_context():
+        update = Update.query.get_or_404(update_id)
+        
+        if request.method == 'POST':
+            title = request.form.get('title', '').strip()
+            content = request.form.get('content', '').strip()
+            summary = request.form.get('summary', '').strip()
+            update_type = request.form.get('update_type', 'general')
+            priority = request.form.get('priority', 'normal')
+            is_published = request.form.get('is_published') == 'on'
+            
+            if not title or not content:
+                return render_template('admin_edit_update.html', 
+                                    title='Edit Update',
+                                    update=update,
+                                    error='Title and content are required')
+            
+            update.title = title
+            update.content = content
+            update.summary = summary
+            update.update_type = update_type
+            update.priority = priority
+            update.is_published = is_published
+            update.updated_at = datetime.utcnow()
+            
+            db.session.commit()
+            return redirect(url_for('admin_updates'))
+        
+        return render_template('admin_edit_update.html', title='Edit Update', update=update)
+
+@app.route('/admin/updates/<int:update_id>/delete', methods=['POST'])
+def admin_delete_update(update_id):
+    """Delete an update."""
+    with app.app_context():
+        update = Update.query.get_or_404(update_id)
+        db.session.delete(update)
+        db.session.commit()
+    
+    return redirect(url_for('admin_updates'))
 
 if __name__ == '__main__':
     app.run(debug=True)

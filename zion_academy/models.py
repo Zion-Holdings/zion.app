@@ -11,9 +11,12 @@ class User(db.Model):
     is_premium = db.Column(db.Boolean, default=False)
     created_at = db.Column(db.DateTime, default=datetime.utcnow)
     profile_badge_url = db.Column(db.String(200), nullable=True)
+    last_visit = db.Column(db.DateTime, default=datetime.utcnow)
 
     enrollments = db.relationship('Enrollment', back_populates='user', cascade="all, delete-orphan")
     certificates = db.relationship('Certificate', backref='user', lazy=True, cascade="all, delete-orphan")
+    update_reactions = db.relationship('UpdateReaction', backref='user', lazy=True, cascade="all, delete-orphan")
+    update_comments = db.relationship('UpdateComment', backref='user', lazy=True, cascade="all, delete-orphan")
 
     def __repr__(self):
         return f'<User {self.username}>'
@@ -121,3 +124,53 @@ class Certificate(db.Model):
 
     def __repr__(self):
         return f'<Certificate {self.id} for U{self.user_id} - C{self.course_id}>'
+
+class Update(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    title = db.Column(db.String(200), nullable=False)
+    content = db.Column(db.Text, nullable=False)
+    summary = db.Column(db.String(300), nullable=True)  # Preview snippet
+    update_type = db.Column(db.String(50), default='general')  # e.g., 'course', 'system', 'announcement'
+    priority = db.Column(db.String(20), default='normal')  # 'low', 'normal', 'high', 'urgent'
+    is_published = db.Column(db.Boolean, default=True)
+    created_at = db.Column(db.DateTime, default=datetime.utcnow)
+    updated_at = db.Column(db.DateTime, default=datetime.utcnow, onupdate=datetime.utcnow)
+    
+    # Relationships
+    reactions = db.relationship('UpdateReaction', backref='update', lazy='dynamic', cascade="all, delete-orphan")
+    comments = db.relationship('UpdateComment', backref='update', lazy='dynamic', cascade="all, delete-orphan")
+    
+    def __repr__(self):
+        return f'<Update {self.title}>'
+    
+    def get_reaction_count(self, reaction_type):
+        """Get count of specific reaction type"""
+        return self.reactions.filter_by(reaction_type=reaction_type).count()
+    
+    def get_total_reactions(self):
+        """Get total reaction count"""
+        return self.reactions.count()
+
+class UpdateReaction(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    user_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)
+    update_id = db.Column(db.Integer, db.ForeignKey('update.id'), nullable=False)
+    reaction_type = db.Column(db.String(20), nullable=False)  # 'useful', 'informative', 'urgent'
+    created_at = db.Column(db.DateTime, default=datetime.utcnow)
+    
+    # Ensure one reaction per user per update
+    __table_args__ = (db.UniqueConstraint('user_id', 'update_id', 'reaction_type'),)
+    
+    def __repr__(self):
+        return f'<UpdateReaction {self.reaction_type} by User {self.user_id} on Update {self.update_id}>'
+
+class UpdateComment(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    user_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)
+    update_id = db.Column(db.Integer, db.ForeignKey('update.id'), nullable=False)
+    content = db.Column(db.Text, nullable=False)
+    created_at = db.Column(db.DateTime, default=datetime.utcnow)
+    updated_at = db.Column(db.DateTime, default=datetime.utcnow, onupdate=datetime.utcnow)
+    
+    def __repr__(self):
+        return f'<UpdateComment {self.id} by User {self.user_id} on Update {self.update_id}>'
