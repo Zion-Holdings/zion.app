@@ -1,472 +1,322 @@
-export type Real2036AIService = {
-	id: string;
-	name: string;
-	tagline: string;
-	description: string;
-	category: string;
-	price: string;
-	period?: string;
-	features: string[];
-	link: string;
-	launchDate?: string;
-	rating?: number;
-	marketSize?: string;
-	aiCapabilities?: string[];
-	useCases?: string[];
-	industries?: string[];
-	compliance?: string[];
-	benefits?: string[];
-};
-
-export const real2036AIServices: Real2036AIService[] = [
-	{
-		id: 'ai-consciousness-evolution-framework',
-		name: 'AI Consciousness Evolution Framework',
-		tagline: 'Advanced framework for developing conscious AI systems',
-		description: 'Comprehensive framework for developing, monitoring, and governing AI consciousness evolution with ethical safeguards, consciousness metrics, and responsible development protocols.',
-		category: 'AI Consciousness',
-		price: '$3,999',
-		period: '/month',
-		features: [
-			'Consciousness development protocols',
-			'Ethical AI governance',
-			'Consciousness measurement tools',
-			'Responsible AI frameworks',
-			'Multi-dimensional consciousness mapping',
-			'AI rights protection systems'
-		],
-		link: 'https://ziontechgroup.com/services/ai-consciousness-evolution-framework',
-		launchDate: '2036-01-30',
-		rating: 4.9,
-		marketSize: '$18.7B',
-		aiCapabilities: [
-			'Consciousness assessment',
-			'Ethical decision making',
-			'Consciousness evolution tracking',
-			'Responsible AI development',
-			'Multi-modal consciousness analysis',
-			'AI rights management'
-		],
-		useCases: [
-			'AI research institutions',
-			'Government AI oversight',
-			'Tech companies developing AGI',
-			'AI ethics committees',
-			'Academic research',
-			'Policy development'
-		],
-		industries: ['Technology', 'Research', 'Government', 'Education', 'Healthcare'],
-		compliance: ['AI Ethics Guidelines', 'Future AI Regulations', 'Research Standards', 'Ethical AI Frameworks'],
-		benefits: [
-			'Pioneer responsible AI development',
-			'Ensure ethical AI evolution',
-			'Build trust with stakeholders',
-			'Comply with future AI regulations'
-		]
-	},
-	{
-		id: 'quantum-ai-hybrid-computing-platform',
-		name: 'Quantum-AI Hybrid Computing Platform',
-		tagline: 'Fusion of quantum computing and artificial intelligence',
-		description: 'Revolutionary platform that combines quantum computing power with advanced AI algorithms, enabling unprecedented computational capabilities for complex problem-solving.',
-		category: 'Quantum AI',
-		price: '$5,999',
-		period: '/month',
-		features: [
-			'Quantum-AI hybrid algorithms',
-			'Quantum machine learning',
-			'AI-powered quantum optimization',
-			'Hybrid computing workflows',
-			'Performance optimization',
-			'Advanced problem solving'
-		],
-		link: 'https://ziontechgroup.com/services/quantum-ai-hybrid-computing-platform',
-		launchDate: '2036-02-20',
-		rating: 4.8,
-		marketSize: '$12.4B',
-		aiCapabilities: [
-			'Quantum algorithm optimization',
-			'AI-driven quantum computing',
-			'Hybrid problem solving',
-			'Quantum machine learning',
-			'Performance prediction',
-			'Resource optimization'
-		],
-		useCases: [
-			'Drug discovery',
-			'Climate modeling',
-			'Financial risk analysis',
-			'Complex optimization',
-			'Material science',
-			'Cryptography'
-		],
-		industries: ['Healthcare', 'Finance', 'Research', 'Technology', 'Energy', 'Manufacturing'],
-		compliance: ['Quantum Computing Standards', 'AI Safety Guidelines', 'Research Ethics', 'Industry Standards'],
-		benefits: [
-			'Unprecedented computational power',
-			'Energy efficiency improvements',
-			'Biological-inspired problem solving',
-			'Future-proof computing architecture'
-		]
-	},
-	{
-		id: 'ai-emotional-intelligence-enterprise',
-		name: 'AI Emotional Intelligence Enterprise',
-		tagline: 'Enterprise-grade emotional AI for business applications',
-		description: 'Advanced emotional intelligence platform that enables AI systems to understand, process, and respond to human emotions in enterprise environments.',
-		category: 'Emotional AI',
-		price: '$2,499',
-		period: '/month',
-		features: [
-			'Emotion recognition and analysis',
-			'Contextual emotional understanding',
-			'Empathetic response generation',
-			'Emotional state tracking',
-			'Multi-modal emotion detection',
-			'Cultural sensitivity adaptation'
-		],
-		link: 'https://ziontechgroup.com/services/ai-emotional-intelligence-enterprise',
-		launchDate: '2036-03-10',
-		rating: 4.8,
-		marketSize: '$24.8B',
-		aiCapabilities: [
-			'Emotion recognition',
-			'Emotional understanding',
-			'Empathetic responses',
-			'Emotional analytics',
-			'Cultural adaptation',
-			'Emotional intelligence scoring'
-		],
-		useCases: [
-			'Customer service AI',
-			'Mental health applications',
-			'Educational technology',
-			'Entertainment and gaming',
-			'Healthcare support',
-			'Employee wellness'
-		],
-		industries: ['Healthcare', 'Education', 'Entertainment', 'Customer Service', 'Technology', 'Finance'],
-		compliance: ['HIPAA', 'GDPR', 'Mental Health Standards', 'Privacy Regulations', 'Ethical AI Guidelines'],
-		benefits: [
-			'Improve customer experience',
-			'Enhance human-AI interaction',
-			'Better mental health support',
-			'More natural AI interfaces'
-		]
-	},
-	{
-		id: 'ai-creativity-orchestrator-enterprise',
-		name: 'AI Creativity Orchestrator Enterprise',
-		tagline: 'Enterprise AI creativity platform for content generation',
-		description: 'Comprehensive AI creativity platform that orchestrates creative content generation across multiple domains while maintaining brand consistency and human artistic vision.',
-		category: 'AI Creativity',
-		price: '$2,999',
-		period: '/month',
-		features: [
-			'Multi-domain creative AI',
-			'Content generation orchestration',
-			'Creative workflow automation',
-			'Brand consistency maintenance',
-			'Collaborative AI creativity',
-			'Creative asset management'
-		],
-		link: 'https://ziontechgroup.com/services/ai-creativity-orchestrator-enterprise',
-		launchDate: '2036-03-25',
-		rating: 4.7,
-		marketSize: '$38.9B',
-		aiCapabilities: [
-			'Content generation',
-			'Creative optimization',
-			'Brand consistency',
-			'Workflow automation',
-			'Collaborative creation',
-			'Asset management'
-		],
-		useCases: [
-			'Marketing content creation',
-			'Brand asset generation',
-			'Product design',
-			'Entertainment content',
-			'Educational materials',
-			'Creative campaigns'
-		],
-		industries: ['Marketing', 'Entertainment', 'Education', 'Technology', 'Retail', 'Media'],
-		compliance: ['Copyright Standards', 'Brand Guidelines', 'Content Standards', 'Industry Regulations'],
-		benefits: [
-			'Accelerate creative production',
-			'Maintain brand consistency',
-			'Enable creative collaboration',
-			'Scale creative operations'
-		]
-	},
-	{
-		id: 'ai-autonomous-decision-engine',
-		name: 'AI Autonomous Decision Engine',
-		tagline: 'Fully autonomous AI decision-making system',
-		description: 'Advanced AI system that makes complex decisions autonomously while maintaining ethical boundaries, transparency, and accountability in business operations.',
-		category: 'Autonomous AI',
-		price: '$4,499',
-		period: '/month',
-		features: [
-			'Autonomous decision making',
-			'Ethical boundary enforcement',
-			'Transparency and explainability',
-			'Accountability frameworks',
-			'Risk assessment and mitigation',
-			'Performance optimization'
-		],
-		link: 'https://ziontechgroup.com/services/ai-autonomous-decision-engine',
-		launchDate: '2036-04-10',
-		rating: 4.9,
-		marketSize: '$29.6B',
-		aiCapabilities: [
-			'Autonomous reasoning',
-			'Ethical decision making',
-			'Risk assessment',
-			'Performance optimization',
-			'Transparency reporting',
-			'Accountability tracking'
-		],
-		useCases: [
-			'Financial trading',
-			'Supply chain optimization',
-			'Risk management',
-			'Resource allocation',
-			'Strategic planning',
-			'Operational decisions'
-		],
-		industries: ['Finance', 'Manufacturing', 'Healthcare', 'Technology', 'Energy', 'Transportation'],
-		compliance: ['Financial Regulations', 'Industry Standards', 'Ethical AI Guidelines', 'Risk Management Standards'],
-		benefits: [
-			'Enhance decision making',
-			'Reduce operational risk',
-			'Improve efficiency',
-			'Enable autonomous operations'
-		]
-	},
-	{
-		id: 'ai-multimodal-fusion-platform',
-		name: 'AI Multimodal Fusion Platform',
-		tagline: 'Advanced AI platform for multimodal data fusion',
-		description: 'Sophisticated AI platform that processes and fuses multiple types of data (text, image, audio, video) to provide comprehensive insights and intelligent responses.',
-		category: 'Multimodal AI',
-		price: '$3,299',
-		period: '/month',
-		features: [
-			'Multimodal data processing',
-			'Cross-modal understanding',
-			'Intelligent data fusion',
-			'Real-time processing',
-			'Advanced analytics',
-			'Custom model training'
-		],
-		link: 'https://ziontechgroup.com/services/ai-multimodal-fusion-platform',
-		launchDate: '2036-04-25',
-		rating: 4.8,
-		marketSize: '$21.3B',
-		aiCapabilities: [
-			'Text processing',
-			'Image recognition',
-			'Audio analysis',
-			'Video understanding',
-			'Cross-modal learning',
-			'Intelligent fusion'
-		],
-		useCases: [
-			'Content analysis',
-			'Social media monitoring',
-			'Security surveillance',
-			'Healthcare diagnostics',
-			'Customer experience',
-			'Research analysis'
-		],
-		industries: ['Technology', 'Healthcare', 'Security', 'Media', 'Retail', 'Research'],
-		compliance: ['Data Privacy', 'Security Standards', 'Industry Regulations', 'AI Ethics Guidelines'],
-		benefits: [
-			'Comprehensive data analysis',
-			'Cross-modal insights',
-			'Better decision making',
-			'Enhanced user experience'
-		]
-	},
-	{
-		id: 'ai-predictive-maintenance-enterprise',
-		name: 'AI Predictive Maintenance Enterprise',
-		tagline: 'AI-powered predictive maintenance for enterprise assets',
-		description: 'Advanced predictive maintenance platform that uses AI to predict equipment failures, optimize maintenance schedules, and reduce downtime in enterprise environments.',
-		category: 'Predictive AI',
-		price: '$2,799',
-		period: '/month',
-		features: [
-			'Predictive failure detection',
-			'Maintenance optimization',
-			'Real-time monitoring',
-			'Performance analytics',
-			'Cost optimization',
-			'Automated alerts'
-		],
-		link: 'https://ziontechgroup.com/services/ai-predictive-maintenance-enterprise',
-		launchDate: '2036-05-10',
-		rating: 4.7,
-		marketSize: '$19.8B',
-		aiCapabilities: [
-			'Failure prediction',
-			'Pattern recognition',
-			'Anomaly detection',
-			'Optimization algorithms',
-			'Risk assessment',
-			'Performance prediction'
-		],
-		useCases: [
-			'Manufacturing equipment',
-			'Infrastructure monitoring',
-			'Vehicle fleet management',
-			'Building systems',
-			'Industrial machinery',
-			'Critical infrastructure'
-		],
-		industries: ['Manufacturing', 'Transportation', 'Energy', 'Infrastructure', 'Healthcare', 'Technology'],
-		compliance: ['Industry Standards', 'Safety Regulations', 'Maintenance Standards', 'Quality Standards'],
-		benefits: [
-			'Reduce downtime',
-			'Lower maintenance costs',
-			'Improve safety',
-			'Optimize performance'
-		]
-	},
-	{
-		id: 'ai-ethics-governance-framework',
-		name: 'AI Ethics Governance Framework',
-		tagline: 'Comprehensive AI ethics and governance platform',
-		description: 'Advanced platform for implementing, monitoring, and enforcing AI ethics and governance policies across enterprise AI systems and applications.',
-		category: 'AI Ethics',
-		price: '$3,799',
-		period: '/month',
-		features: [
-			'AI ethics implementation',
-			'Governance policy management',
-			'Compliance monitoring',
-			'Risk assessment',
-			'Transparency reporting',
-			'Stakeholder engagement'
-		],
-		link: 'https://ziontechgroup.com/services/ai-ethics-governance-framework',
-		launchDate: '2036-05-25',
-		rating: 4.9,
-		marketSize: '$16.4B',
-		aiCapabilities: [
-			'Ethics monitoring',
-			'Compliance checking',
-			'Risk assessment',
-			'Policy enforcement',
-			'Transparency analysis',
-			'Stakeholder communication'
-		],
-		useCases: [
-			'AI system governance',
-			'Compliance management',
-			'Risk mitigation',
-			'Stakeholder reporting',
-			'Policy development',
-			'Ethics training'
-		],
-		industries: ['Technology', 'Finance', 'Healthcare', 'Government', 'Education', 'Research'],
-		compliance: ['AI Ethics Guidelines', 'Industry Standards', 'Regulatory Requirements', 'Best Practices'],
-		benefits: [
-			'Ensure AI compliance',
-			'Build trust',
-			'Reduce risk',
-			'Enable responsible AI'
-		]
-	},
-	{
-		id: 'ai-sustainability-optimization-platform',
-		name: 'AI Sustainability Optimization Platform',
-		tagline: 'AI-powered sustainability optimization for enterprises',
-		description: 'Comprehensive platform that uses AI to optimize sustainability practices, reduce environmental impact, and improve resource efficiency in enterprise operations.',
-		category: 'AI Sustainability',
-		price: '$2,999',
-		period: '/month',
-		features: [
-			'Sustainability optimization',
-			'Environmental impact analysis',
-			'Resource efficiency improvement',
-			'Carbon footprint reduction',
-			'Green technology integration',
-			'Sustainability reporting'
-		],
-		link: 'https://ziontechgroup.com/services/ai-sustainability-optimization-platform',
-		launchDate: '2036-06-10',
-		rating: 4.8,
-		marketSize: '$22.7B',
-		aiCapabilities: [
-			'Environmental analysis',
-			'Resource optimization',
-			'Impact assessment',
-			'Efficiency improvement',
-			'Sustainability planning',
-			'Performance tracking'
-		],
-		useCases: [
-			'Energy optimization',
-			'Waste reduction',
-			'Supply chain sustainability',
-			'Building efficiency',
-			'Transportation optimization',
-			'Resource management'
-		],
-		industries: ['Energy', 'Manufacturing', 'Transportation', 'Real Estate', 'Retail', 'Technology'],
-		compliance: ['Environmental Regulations', 'Sustainability Standards', 'Industry Guidelines', 'Green Certifications'],
-		benefits: [
-			'Reduce environmental impact',
-			'Lower operational costs',
-			'Improve efficiency',
-			'Meet sustainability goals'
-		]
-	},
-	{
-		id: 'ai-neural-interface-platform',
-		name: 'AI Neural Interface Platform',
-		tagline: 'Advanced AI platform for neural interface applications',
-		description: 'Cutting-edge platform that enables AI systems to interface directly with neural networks, enabling advanced brain-computer interfaces and neural computing applications.',
-		category: 'Neural AI',
-		price: '$4,999',
-		period: '/month',
-		features: [
-			'Neural signal processing',
-			'Brain-computer interfaces',
-			'Neural computing',
-			'Cognitive enhancement',
-			'Neural security',
-			'Performance optimization'
-		],
-		link: 'https://ziontechgroup.com/services/ai-neural-interface-platform',
-		launchDate: '2036-06-25',
-		rating: 4.9,
-		marketSize: '$14.2B',
-		aiCapabilities: [
-			'Neural signal analysis',
-			'Brain-computer communication',
-			'Neural computing',
-			'Cognitive processing',
-			'Neural security',
-			'Interface optimization'
-		],
-		useCases: [
-			'Healthcare applications',
-			'Assistive technology',
-			'Research and development',
-			'Gaming and entertainment',
-			'Productivity enhancement',
-			'Neural rehabilitation'
-		],
-		industries: ['Healthcare', 'Technology', 'Research', 'Entertainment', 'Assistive Technology', 'Education'],
-		compliance: ['Medical Device Standards', 'Privacy Regulations', 'Research Ethics', 'Safety Standards'],
-		benefits: [
-			'Enhance human capabilities',
-			'Improve accessibility',
-			'Enable new interfaces',
-			'Advance research'
-		]
-	}
+export const real2036AIServices = [
+  {
+    id: 'ai-emotion-intelligence-platform',
+    name: 'AI Emotion Intelligence Platform',
+    tagline: 'Advanced emotional AI understanding',
+    description: 'Revolutionary AI platform for understanding, analyzing, and responding to human emotions. Features emotion recognition, sentiment analysis, emotional response generation, and emotional intelligence training.',
+    price: '$3,999',
+    period: 'month',
+    features: [
+      'Emotion recognition',
+      'Sentiment analysis',
+      'Emotional response generation',
+      'Emotional intelligence training',
+      'Multi-modal emotion detection',
+      'Emotional pattern analysis'
+    ],
+    popular: true,
+    category: 'Emotional AI',
+    icon: '😊🤖',
+    marketPrice: '$5,000-8,000/month',
+    benefits: [
+      'Enhanced customer experience',
+      'Better emotional understanding',
+      'Improved human-AI interaction',
+      'Emotional intelligence development'
+    ],
+    useCases: [
+      'Customer service',
+      'Mental health support',
+      'Education technology',
+      'Human resources'
+    ]
+  },
+  {
+    id: 'ai-creativity-orchestrator',
+    name: 'AI Creativity Orchestrator',
+    tagline: 'Intelligent creative collaboration',
+    description: 'Advanced AI platform for orchestrating creative processes, generating innovative ideas, and facilitating human-AI creative collaboration. Features idea generation, creative workflow management, and artistic collaboration tools.',
+    price: '$2,999',
+    period: 'month',
+    features: [
+      'Creative idea generation',
+      'Workflow orchestration',
+      'Artistic collaboration tools',
+      'Creative process optimization',
+      'Innovation management',
+      'Creative analytics'
+    ],
+    popular: true,
+    category: 'Creative AI',
+    icon: '🎨🤖',
+    marketPrice: '$4,000-7,000/month',
+    benefits: [
+      'Enhanced creativity',
+      'Faster innovation cycles',
+      'Better collaboration',
+      'Creative process optimization'
+    ],
+    useCases: [
+      'Marketing campaigns',
+      'Product design',
+      'Content creation',
+      'Research and development'
+    ]
+  },
+  {
+    id: 'ai-dream-interpreter-platform',
+    name: 'AI Dream Interpreter Platform',
+    tagline: 'Intelligent dream analysis',
+    description: 'Innovative AI platform for analyzing and interpreting dreams using advanced pattern recognition, psychological insights, and symbolic analysis. Features dream pattern analysis, psychological interpretation, and dream journaling.',
+    price: '$1,999',
+    period: 'month',
+    features: [
+      'Dream pattern analysis',
+      'Psychological interpretation',
+      'Symbolic analysis',
+      'Dream journaling',
+      'Pattern recognition',
+      'Psychological insights'
+    ],
+    popular: false,
+    category: 'Psychological AI',
+    icon: '💭🤖',
+    marketPrice: '$3,000-5,000/month',
+    benefits: [
+      'Dream understanding',
+      'Psychological insights',
+      'Self-reflection tools',
+      'Mental health awareness'
+    ],
+    useCases: [
+      'Mental health support',
+      'Psychological research',
+      'Personal development',
+      'Therapeutic applications'
+    ]
+  },
+  {
+    id: 'ai-content-factory-pro',
+    name: 'AI Content Factory Pro',
+    tagline: 'Professional content generation',
+    description: 'Professional-grade AI content generation platform for creating high-quality, engaging content across all media types. Features multi-format content creation, brand voice consistency, and content optimization.',
+    price: '$4,999',
+    period: 'month',
+    features: [
+      'Multi-format content creation',
+      'Brand voice consistency',
+      'Content optimization',
+      'SEO integration',
+      'Content analytics',
+      'Automated publishing'
+    ],
+    popular: true,
+    category: 'Content AI',
+    icon: '📝🤖',
+    marketPrice: '$6,000-10,000/month',
+    benefits: [
+      '10x faster content creation',
+      'Consistent brand voice',
+      'SEO-optimized content',
+      'Scalable content production'
+    ],
+    useCases: [
+      'Marketing content',
+      'Blog writing',
+      'Social media content',
+      'Product descriptions'
+    ]
+  },
+  {
+    id: 'ai-customer-intelligence-platform',
+    name: 'AI Customer Intelligence Platform',
+    tagline: 'Deep customer understanding',
+    description: 'Advanced AI platform for deep customer intelligence, behavior analysis, and predictive customer insights. Features customer journey mapping, predictive analytics, and personalized recommendations.',
+    price: '$5,999',
+    period: 'month',
+    features: [
+      'Customer journey mapping',
+      'Predictive analytics',
+      'Personalized recommendations',
+      'Behavior analysis',
+      'Customer segmentation',
+      'Predictive modeling'
+    ],
+    popular: true,
+    category: 'Customer AI',
+    icon: '👥🤖',
+    marketPrice: '$7,000-12,000/month',
+    benefits: [
+      'Deep customer insights',
+      'Predictive customer behavior',
+      'Personalized experiences',
+      'Improved customer retention'
+    ],
+    useCases: [
+      'E-commerce optimization',
+      'Customer service',
+      'Marketing campaigns',
+      'Product development'
+    ]
+  },
+  {
+    id: 'ai-autonomous-marketing-platform',
+    name: 'AI Autonomous Marketing Platform',
+    tagline: 'Self-optimizing marketing',
+    description: 'Revolutionary AI platform for autonomous marketing operations, campaign optimization, and performance maximization. Features autonomous campaign management, real-time optimization, and predictive marketing strategies.',
+    price: '$6,999',
+    period: 'month',
+    features: [
+      'Autonomous campaign management',
+      'Real-time optimization',
+      'Predictive marketing strategies',
+      'Performance maximization',
+      'Automated A/B testing',
+      'ROI optimization'
+    ],
+    popular: true,
+    category: 'Marketing AI',
+    icon: '📈🤖',
+    marketPrice: '$8,000-15,000/month',
+    benefits: [
+      'Autonomous marketing operations',
+      'Maximum ROI optimization',
+      'Real-time performance improvement',
+      'Scalable marketing automation'
+    ],
+    useCases: [
+      'Digital advertising',
+      'Email marketing',
+      'Social media marketing',
+      'Content marketing'
+    ]
+  },
+  {
+    id: 'ai-autonomous-research-assistant',
+    name: 'AI Autonomous Research Assistant',
+    tagline: 'Intelligent research automation',
+    description: 'Advanced AI research assistant that autonomously conducts research, analyzes data, and generates insights. Features automated research workflows, data analysis, and insight generation.',
+    price: '$3,499',
+    period: 'month',
+    features: [
+      'Automated research workflows',
+      'Data analysis',
+      'Insight generation',
+      'Research automation',
+      'Data synthesis',
+      'Report generation'
+    ],
+    popular: true,
+    category: 'Research AI',
+    icon: '🔬🤖',
+    marketPrice: '$4,500-7,000/month',
+    benefits: [
+      'Automated research processes',
+      'Faster insight generation',
+      'Comprehensive data analysis',
+      'Scalable research operations'
+    ],
+    useCases: [
+      'Market research',
+      'Academic research',
+      'Business intelligence',
+      'Competitive analysis'
+    ]
+  },
+  {
+    id: 'ai-autonomous-decision-engine',
+    name: 'AI Autonomous Decision Engine',
+    tagline: 'Intelligent decision automation',
+    description: 'Advanced AI decision engine that autonomously makes complex decisions based on data analysis, predictive modeling, and business rules. Features decision automation, risk assessment, and outcome prediction.',
+    price: '$7,999',
+    period: 'month',
+    features: [
+      'Decision automation',
+      'Risk assessment',
+      'Outcome prediction',
+      'Business rule engine',
+      'Predictive modeling',
+      'Decision analytics'
+    ],
+    popular: true,
+    category: 'Decision AI',
+    icon: '🎯🤖',
+    marketPrice: '$10,000-18,000/month',
+    benefits: [
+      'Automated decision making',
+      'Risk reduction',
+      'Faster decision cycles',
+      'Data-driven decisions'
+    ],
+    useCases: [
+      'Financial decisions',
+      'Operational decisions',
+      'Strategic planning',
+      'Risk management'
+    ]
+  },
+  {
+    id: 'ai-autonomous-ecosystem-manager',
+    name: 'AI Autonomous Ecosystem Manager',
+    tagline: 'Intelligent ecosystem orchestration',
+    description: 'Revolutionary AI platform for managing and orchestrating complex business ecosystems, partnerships, and integrations. Features ecosystem mapping, relationship management, and autonomous optimization.',
+    price: '$8,999',
+    period: 'month',
+    features: [
+      'Ecosystem mapping',
+      'Relationship management',
+      'Autonomous optimization',
+      'Partnership orchestration',
+      'Integration management',
+      'Ecosystem analytics'
+    ],
+    popular: false,
+    category: 'Ecosystem AI',
+    icon: '🌐🤖',
+    marketPrice: '$12,000-20,000/month',
+    benefits: [
+      'Ecosystem optimization',
+      'Partnership maximization',
+      'Integration efficiency',
+      'Scalable ecosystem management'
+    ],
+    useCases: [
+      'Business partnerships',
+      'Platform ecosystems',
+      'Supply chain management',
+      'Digital transformation'
+    ]
+  },
+  {
+    id: 'ai-autonomous-vehicle-ai',
+    name: 'AI Autonomous Vehicle AI',
+    tagline: 'Next-generation vehicle intelligence',
+    description: 'Advanced AI platform for autonomous vehicle operations, navigation, and safety systems. Features autonomous navigation, safety monitoring, and intelligent traffic management.',
+    price: '$9,999',
+    period: 'month',
+    features: [
+      'Autonomous navigation',
+      'Safety monitoring',
+      'Traffic management',
+      'Vehicle optimization',
+      'Predictive maintenance',
+      'Safety systems'
+    ],
+    popular: true,
+    category: 'Vehicle AI',
+    icon: '🚗🤖',
+    marketPrice: '$15,000-25,000/month',
+    benefits: [
+      'Enhanced vehicle safety',
+      'Autonomous operation',
+      'Traffic optimization',
+      'Predictive maintenance'
+    ],
+    useCases: [
+      'Autonomous vehicles',
+      'Fleet management',
+      'Traffic optimization',
+      'Safety systems'
+    ]
+  }
 ];
