@@ -36,23 +36,6 @@
       "./node_modules/@types"
     ]
   },
-  "include": [
-    "src/main.tsx",
-    "src/App.tsx",
-    "src/App.css",
-    "src/index.css",
-    "src/pages/MicroSaasServices.tsx",
-    "src/pages/PricingPage.tsx",
-    "src/data/microSaasServices.ts",
-    "src/types/listings.ts"
-  ],
-  "exclude": [
-    "node_modules",
-    "src/components",
-    "src/hooks",
-    "src/store",
-    "src/pages/**/*",
-    "!src/pages/MicroSaasServices.tsx",
-    "!src/pages/PricingPage.tsx"
-  ]
+  "include": ["src"],
+  "references": [{ "path": "./tsconfig.node.json" }]
 }
