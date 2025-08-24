@@ -24,6 +24,16 @@ export function MainNavigation({ isAdmin = false, unreadCount = 0, className }: 
       matches: (path: string) => path === '/'
     },
     {
+      key: 'about',
+      href: '/about',
+      matches: (path: string) => path === '/about'
+    },
+    {
+      key: 'services',
+      href: '/services',
+      matches: (path: string) => path.startsWith('/services')
+    },
+    {
       key: 'marketplace',
       href: '/marketplace',
       matches: (path: string) => path.startsWith('/marketplace')
@@ -44,9 +54,19 @@ export function MainNavigation({ isAdmin = false, unreadCount = 0, className }: 
       matches: (path: string) => path.startsWith('/equipment')
     },
     {
+      key: 'green-it',
+      href: '/green-it',
+      matches: (path: string) => path === '/green-it'
+    },
+    {
       key: 'community',
       href: '/community',
       matches: (path: string) => path.startsWith('/community') || path.startsWith('/forum')
+    },
+    {
+      key: 'blog',
+      href: '/blog',
+      matches: (path: string) => path.startsWith('/blog')
     }
   ];
 

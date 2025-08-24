@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Header } from "@/components/Header";
+import { AppHeader } from "@/layout/AppHeader";
 import { Footer } from "@/components/Footer";
 import { SEO } from "@/components/SEO";
 import { GradientHeading } from "@/components/GradientHeading";
@@ -131,10 +131,11 @@ export default function Contact() {
     <>
       <SEO
         title="Contact Zion - Get in Touch"
-        description="Have questions or want to learn more? Contact the Zion team about our AI and tech marketplace platform."
-        keywords="contact Zion, AI marketplace support, tech platform contact"
-        canonical="https://app.ziontechgroup.com/contact"
+        description="Contact Zion Tech Group for support, partnerships, or general inquiries. We're here to help with your AI and tech needs."
+        keywords="contact Zion, support, help, inquiry, partnership"
+        canonical="https://ziontechgroup.com/contact"
       />
+      <AppHeader />
       <main className="min-h-screen bg-zion-blue pt-24 pb-20">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">

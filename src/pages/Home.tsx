@@ -19,7 +19,7 @@ export default function Home() {
         title="Zion - The Tech & AI Marketplace" 
         description="Discover top AI and tech talent, services, and equipment in one place."
         keywords="AI, technology, marketplace, services, talent"
-        canonical="https://app.ziontechgroup.com/"
+        canonical="https://ziontechgroup.com/"
       />
 
       <ITServiceRequestHero />

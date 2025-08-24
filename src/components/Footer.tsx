@@ -6,8 +6,8 @@ export function Footer() {
   return (
     <footer className="bg-zion-blue-dark border-t border-zion-blue-light pt-12 pb-8">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          <div>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
+          <div className="lg:col-span-2">
             <div className="mb-4">
               <span className="text-2xl font-bold bg-gradient-to-r from-zion-cyan via-zion-purple-light to-zion-purple bg-clip-text text-transparent">ZION</span>
             </div>
@@ -93,11 +93,14 @@ export function Footer() {
           </div>
 
           <div>
-            <h3 className="text-white font-semibold mb-4 text-lg">Subscribe to our newsletter</h3>
-            <p className="text-zion-slate-light mb-4">
-              Stay updated with the latest news on tech, AI, and marketplace opportunities.
-            </p>
-            <FooterNewsletter />
+            <h3 className="text-white font-semibold mb-4 text-lg">Resources</h3>
+            <ul className="space-y-2">
+              <li><Link to="/help" className="text-zion-slate-light hover:text-zion-cyan transition-colors">Help Center</Link></li>
+              <li><Link to="/api-docs" className="text-zion-slate-light hover:text-zion-cyan transition-colors">API Documentation</Link></li>
+              <li><Link to="/developers" className="text-zion-slate-light hover:text-zion-cyan transition-colors">Developer Portal</Link></li>
+              <li><Link to="/community" className="text-zion-slate-light hover:text-zion-cyan transition-colors">Community</Link></li>
+              <li><Link to="/ai-matcher" className="text-zion-slate-light hover:text-zion-cyan transition-colors">AI Matcher</Link></li>
+            </ul>
           </div>
         </div>
 
