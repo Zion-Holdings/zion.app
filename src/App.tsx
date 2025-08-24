@@ -9,6 +9,7 @@ import { Toaster } from "./components/ui/toaster";
 import { Toaster as SonnerToaster } from "./components/ui/sonner";
 import { PageLoader } from "./components/ui/LoadingSpinner";
 import { FloatingCTA } from "./components/FloatingCTA";
+import { Footer } from "./components/Footer";
 import {
   AuthRoutes,
   DashboardRoutes,
@@ -109,6 +110,14 @@ function EnhancedSuspenseFallback() {
     />
   );
 }
+
+// Error Boundary Component
+class ErrorBoundary extends React.Component<
+  { children: React.ReactNode },
+  { hasError: boolean; error?: Error }
+> {
+  constructor(props: { children: React.ReactNode }) {
+    super(props);
     this.state = { hasError: false };
   }
 
@@ -171,6 +180,7 @@ const App = () => {
           </Suspense>
           
           {/* Global Components */}
+          <Footer />
           <FloatingCTA />
           <Toaster />
           <SonnerToaster position="top-right" />
@@ -178,5 +188,6 @@ const App = () => {
       </WhitelabelProvider>
     </ErrorBoundary>
   );
+};
 
 export default App;
