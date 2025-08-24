@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Header } from "@/components/Header";
+import { AppHeader } from "@/layout/AppHeader";
 import { Footer } from "@/components/Footer";
 import { SEO } from "@/components/SEO";
 import { GradientHeading } from "@/components/GradientHeading";

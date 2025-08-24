@@ -41,12 +41,30 @@ const OpenAppRedirect = React.lazy(() => import('./pages/OpenAppRedirect'));
 const ContactPage = React.lazy(() => import('./pages/Contact'));
 const ZionHireAI = React.lazy(() => import('./pages/ZionHireAI'));
 const RequestQuotePage = React.lazy(() => import('./pages/RequestQuote'));
+const AboutPage = React.lazy(() => import('./pages/About'));
+const HelpCenterPage = React.lazy(() => import('./pages/HelpCenterPage'));
+const CareersPage = React.lazy(() => import('./pages/Careers'));
+const PrivacyPage = React.lazy(() => import('./pages/Privacy'));
+const TermsPage = React.lazy(() => import('./pages/Terms'));
+const ForgotPasswordPage = React.lazy(() => import('./pages/ForgotPassword'));
+const SitemapPage = React.lazy(() => import('./pages/Sitemap'));
+const GreenITPage = React.lazy(() => import('./pages/GreenIT'));
 
 const baseRoutes = [
   { path: '/', element: <Home /> },
+  { path: '/about', element: <AboutPage /> },
+  { path: '/contact', element: <ContactPage /> },
+  { path: '/help', element: <HelpCenterPage /> },
+  { path: '/faq', element: <HelpCenterPage /> },
+  { path: '/careers', element: <CareersPage /> },
+  { path: '/privacy', element: <PrivacyPage /> },
+  { path: '/terms', element: <TermsPage /> },
+  { path: '/sitemap', element: <SitemapPage /> },
+  { path: '/green-it', element: <GreenITPage /> },
   { path: '/match', element: <AIMatcherPage /> },
   { path: '/login', element: <Login /> },
   { path: '/signup', element: <Signup /> },
+  { path: '/forgot-password', element: <ForgotPasswordPage /> },
   { path: '/talent', element: <TalentDirectory /> },
   { path: '/talents', element: <TalentsPage /> },
   { path: '/services', element: <ServicesPage /> },
@@ -58,7 +76,6 @@ const baseRoutes = [
   { path: '/mobile-launch', element: <MobileLaunchPage /> },
   { path: '/open-app', element: <OpenAppRedirect /> },
   { path: '/community', element: <CommunityPage /> },
-  { path: '/contact', element: <ContactPage /> },
   { path: '/partners', element: <PartnersPage /> },
   { path: '/zion-hire-ai', element: <ZionHireAI /> },
   { path: '/hire-ai', element: <ZionHireAI /> },
