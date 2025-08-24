@@ -42,6 +42,10 @@ const specialServices = [
   {
     title: "Comprehensive Services",
     link: "/comprehensive-services"
+  },
+  {
+    title: "Services Pricing",
+    link: "/services-pricing"
   }
 ];
 
