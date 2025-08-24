@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { useRouter } from 'next/router';
-import ErrorPage from 'next/error';
+import { useParams } from 'react-router-dom';
 import { ProfileLoadingState } from '@/components/profile/ProfileLoadingState';
 import type { TalentProfile as TalentProfileType } from '@/types/talent';
 import { ProfileErrorState } from '@/components/profile/ProfileErrorState';
@@ -10,8 +9,7 @@ interface TalentProfileWithSocial extends TalentProfileType {
 }
 
 const TalentProfilePage: React.FC = () => {
-  const router = useRouter();
-  const { id } = router.query as { id?: string };
+  const { id } = useParams();
   const [profile, setProfile] = useState<TalentProfileWithSocial | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
@@ -44,12 +42,12 @@ const TalentProfilePage: React.FC = () => {
   }, [id]);
 
   if (loading) return <ProfileLoadingState />;
-  if (error || !profile) return <ErrorPage statusCode={404} />;
+  if (error || !profile) return <ProfileErrorState error={error || 'Profile not found'} />;
 
   return (
     <main className="min-h-screen bg-zion-blue py-8 text-white">
       <div className="container mx-auto px-4 space-y-4">
-        <h1 className="text-3xl font-bold" data-testid="profile-name">
+        <h1 className="title" data-testid="profile-name">
           {profile.full_name}
         </h1>
         {profile.skills && profile.skills.length > 0 && (
