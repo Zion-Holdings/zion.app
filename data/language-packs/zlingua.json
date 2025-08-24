@@ -1,0 +1,13 @@
+{
+  "meta": {
+    "name": "Z-Lingua",
+    "notes": "Zion AI Dialect"
+  },
+  "lexicon": {
+    "zai": "trust-gradient",
+    "kora": "commons",
+    "nem": "non-extractive",
+    "vara": "proof"
+  },
+  "sample": "Zai kora nem vara."
+}

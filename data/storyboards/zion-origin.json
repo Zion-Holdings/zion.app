@@ -1,0 +1,55 @@
+{
+  "title": "Zion Origin",
+  "slides": [
+    {
+      "id": 1,
+      "slug": "data-ruin",
+      "text": "A single diode blinks to life in a data ruin."
+    },
+    {
+      "id": 2,
+      "slug": "talent-nightscape",
+      "text": "People as glowing constellations of skills."
+    },
+    {
+      "id": 3,
+      "slug": "protocol-vessel",
+      "text": "Code glyphs spiral; Zion awakens."
+    },
+    {
+      "id": 4,
+      "slug": "vote-sky",
+      "text": "Genesis DAO; votes form a constellation."
+    },
+    {
+      "id": 5,
+      "slug": "archive-chamber",
+      "text": "Day Zero keys; ZionGPT emerges."
+    },
+    {
+      "id": 6,
+      "slug": "bridge-ritual",
+      "text": "Delegate crosses chains; treaties render."
+    },
+    {
+      "id": 7,
+      "slug": "treasury-keep",
+      "text": "Guardian freezes liquidations; ZION$ steady."
+    },
+    {
+      "id": 8,
+      "slug": "platform-wreck",
+      "text": "Synth refactors exploit paths into commons."
+    },
+    {
+      "id": 9,
+      "slug": "manifesto-reveal",
+      "text": "Code unfurls into notarized clauses."
+    },
+    {
+      "id": 10,
+      "slug": "horizon-mesh",
+      "text": "Multiverse mycelium lights up."
+    }
+  ]
+}

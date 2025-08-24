@@ -1,0 +1,45 @@
+name: NFT Pack Generator
+
+on:
+  schedule:
+    - cron: '*/30 * * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: nft-pack-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  nft-pack:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install deps
+        run: npm ci --ignore-scripts
+
+      - name: Generate NFT pack
+        run: node automation/nft-pack-generator.cjs | cat
+
+      - name: Commit and push changes
+        run: |
+          if [ -n "$(git status --porcelain)" ]; then
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add -A
+            git commit -m "chore(nft): generate sample NFT pack [skip ci]"
+            git push origin HEAD:main
+          else
+            echo "No changes to push"
+          fi

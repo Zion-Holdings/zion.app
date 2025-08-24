@@ -1,0 +1,31 @@
+{
+  "generatedAt": "2025-08-09T17:25:56.393Z",
+  "outputs": [
+    "docs/lore/bible.md",
+    "docs/storyboards/zion-origin.md",
+    "docs/prompts/zion-prompts.md",
+    "docs/voiceovers/zion-origin.txt",
+    "data/storyboards/zion-origin.json",
+    "docs/prompts/the-synth-dossier-operator.md",
+    "data/language-packs/esperanto.json",
+    "data/language-packs/latin.json",
+    "data/language-packs/zlingua.json",
+    "public/nft/genesis-key-021.json"
+  ],
+  "routesSuggested": [
+    "/media/lore",
+    "/universe/genesis"
+  ],
+  "scenes": [
+    "Data Ruin",
+    "Talent Nightscape",
+    "Protocol Vessel",
+    "Vote Sky",
+    "Archive Chamber",
+    "Bridge Ritual",
+    "Treasury Keep",
+    "Platform Wreck",
+    "Manifesto Reveal",
+    "Horizon Mesh"
+  ]
+}
