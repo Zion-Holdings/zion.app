@@ -21,7 +21,12 @@ import {
   MapPin,
   ExternalLink,
   ChevronDown,
-  ChevronRight
+  ChevronRight,
+  Sparkles,
+  Cpu,
+  Cloud,
+  TrendingUp,
+  Building2
 } from 'lucide-react';
 
 interface SidebarSection {
@@ -77,40 +82,41 @@ const sidebarSections: SidebarSection[] = [
     icon: <Zap className="w-5 h-5" />,
     items: [
       {
+        id: 'comprehensive-services',
+        title: 'Comprehensive Services',
+        href: '/comprehensive-services',
+        icon: <Database className="w-4 h-4" />,
+        description: 'Full-service technology solutions',
+        badge: 'Popular'
+      },
+      {
         id: 'ai-services',
         title: 'AI Services',
         href: '/ai-services',
-        icon: <Zap className="w-4 h-4" />,
+        icon: <Sparkles className="w-4 h-4" />,
         description: 'Artificial Intelligence solutions',
         badge: 'New'
       },
       {
-        id: 'cybersecurity',
-        title: 'Cybersecurity',
-        href: '/cybersecurity',
-        icon: <Shield className="w-4 h-4" />,
-        description: 'Security and protection services'
+        id: 'micro-saas',
+        title: 'Micro SAAS',
+        href: '/micro-saas',
+        icon: <Cpu className="w-4 h-4" />,
+        description: 'Custom software solutions'
       },
       {
-        id: 'it-support',
-        title: 'IT Support',
-        href: '/it-support',
-        icon: <Settings className="w-4 h-4" />,
-        description: 'Technical support and maintenance'
-      },
-      {
-        id: 'enterprise',
+        id: 'enterprise-solutions',
         title: 'Enterprise Solutions',
-        href: '/enterprise',
-        icon: <Briefcase className="w-4 h-4" />,
+        href: '/enterprise-solutions',
+        icon: <Building2 className="w-4 h-4" />,
         description: 'Large-scale business solutions'
       },
       {
-        id: 'comprehensive',
-        title: 'Comprehensive Services',
-        href: '/comprehensive',
-        icon: <Database className="w-4 h-4" />,
-        description: 'Full-service technology solutions'
+        id: 'services-pricing',
+        title: 'Services Pricing',
+        href: '/services-pricing',
+        icon: <TrendingUp className="w-4 h-4" />,
+        description: 'Transparent pricing plans'
       }
     ]
   },
@@ -139,6 +145,13 @@ const sidebarSections: SidebarSection[] = [
         href: '/privacy',
         icon: <Shield className="w-4 h-4" />,
         description: 'Data protection and privacy'
+      },
+      {
+        id: 'terms',
+        title: 'Terms of Service',
+        href: '/terms',
+        icon: <Shield className="w-4 h-4" />,
+        description: 'Service terms and conditions'
       }
     ]
   },
@@ -168,6 +181,13 @@ const sidebarSections: SidebarSection[] = [
         href: '/partners',
         icon: <Users className="w-4 h-4" />,
         description: 'Strategic partnerships'
+      },
+      {
+        id: 'sitemap',
+        title: 'Sitemap',
+        href: '/sitemap',
+        icon: <Database className="w-4 h-4" />,
+        description: 'Site structure overview'
       }
     ]
   }
@@ -228,10 +248,10 @@ export function MainSidebar({ isOpen, onClose }: MainSidebarProps) {
         {/* Header */}
         <div className="flex items-center justify-between p-4 border-b border-zion-purple/20">
           <div className="flex items-center gap-3">
-            <div className="w-8 h-8 bg-zion-cyan rounded-lg flex items-center justify-center">
-              <Zap className="w-5 h-5 text-zion-blue-dark" />
+            <div className="w-8 h-8 bg-gradient-to-br from-zion-cyan to-zion-purple rounded-lg flex items-center justify-center">
+              <Sparkles className="w-5 h-5 text-white" />
             </div>
-            <h2 className="text-xl font-bold text-white">Zion Tech</h2>
+            <h2 className="text-xl font-bold text-white">Zion Tech Group</h2>
           </div>
           <Button
             variant="ghost"
@@ -320,15 +340,15 @@ export function MainSidebar({ isOpen, onClose }: MainSidebarProps) {
           <div className="space-y-3">
             <div className="flex items-center gap-2 text-zion-slate-light text-sm">
               <Phone className="w-4 h-4" />
-              <span>+1 (555) 123-4567</span>
+              <span>+1 302 464 0950</span>
             </div>
             <div className="flex items-center gap-2 text-zion-slate-light text-sm">
               <Mail className="w-4 h-4" />
-              <span>info@ziontechgroup.com</span>
+              <span>kleber@ziontechgroup.com</span>
             </div>
             <div className="flex items-center gap-2 text-zion-slate-light text-sm">
               <MapPin className="w-4 h-4" />
-              <span>Innovation City, IC</span>
+              <span>Middletown DE 19709</span>
             </div>
           </div>
           

@@ -13,6 +13,7 @@ const Contact = React.lazy(() => import('./pages/Contact'));
 const NotFound = React.lazy(() => import('./pages/NotFound'));
 const HelpCenter = React.lazy(() => import('./pages/HelpCenter'));
 const Cookies = React.lazy(() => import('./pages/Cookies'));
+const Sitemap = React.lazy(() => import('./pages/Sitemap'));
 
 // Import new service pages
 const ComprehensiveServicesPage = React.lazy(() => import('./pages/ComprehensiveServicesPage'));
@@ -87,6 +88,7 @@ const baseRoutes = [
   { path: '/contact', element: <Contact /> },
   { path: '/help', element: <HelpCenter /> },
   { path: '/cookies', element: <Cookies /> },
+  { path: '/sitemap', element: <Sitemap /> },
   { path: '/comprehensive-services', element: <ComprehensiveServicesPage /> },
   { path: '/services-pricing', element: <ServicesPricingPage /> },
   { path: '/ai-services', element: <AIServicesPage /> },

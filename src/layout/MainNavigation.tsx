@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Menu, X, Search, User, ShoppingCart, Bell, Globe, Sparkles, PanelLeft } from 'lucide-react';
+import { Menu, X, Search, User, ShoppingCart, Bell, Globe, Sparkles, PanelLeft, ChevronDown } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Badge } from '@/components/ui/badge';
@@ -15,6 +15,7 @@ export function MainNavigation({ onSidebarToggle }: MainNavigationProps) {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
+  const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
   const location = useLocation();
 
   useEffect(() => {
@@ -28,6 +29,7 @@ export function MainNavigation({ onSidebarToggle }: MainNavigationProps) {
 
   useEffect(() => {
     setIsOpen(false);
+    setActiveDropdown(null);
   }, [location]);
 
   const handleSearch = (e: React.FormEvent) => {
@@ -39,14 +41,46 @@ export function MainNavigation({ onSidebarToggle }: MainNavigationProps) {
   };
 
   const navigationItems = [
-    { name: 'Home', href: '/' },
-    { name: 'Marketplace', href: '/marketplace' },
-    { name: 'Services', href: '/services' },
-    { name: 'Talent', href: '/talent' },
-    { name: 'Equipment', href: '/equipment' },
-    { name: 'About', href: '/about' },
-    { name: 'Contact', href: '/contact' },
+    { 
+      name: 'Home', 
+      href: '/',
+      type: 'link'
+    },
+    { 
+      name: 'Services', 
+      href: '/comprehensive-services',
+      type: 'dropdown',
+      dropdownItems: [
+        { name: 'Comprehensive Services', href: '/comprehensive-services', description: 'Full-service IT solutions' },
+        { name: 'AI Services', href: '/ai-services', description: 'AI-powered solutions and consulting' },
+        { name: 'Micro SAAS', href: '/micro-saas', description: 'Custom software solutions' },
+        { name: 'Enterprise Solutions', href: '/enterprise-solutions', description: 'Large-scale business solutions' },
+        { name: 'Services Pricing', href: '/services-pricing', description: 'Transparent pricing plans' }
+      ]
+    },
+    { 
+      name: 'About', 
+      href: '/about',
+      type: 'link'
+    },
+    { 
+      name: 'Contact', 
+      href: '/contact',
+      type: 'link'
+    },
+    { 
+      name: 'Help', 
+      href: '/help',
+      type: 'link'
+    }
   ];
+
+  const isActiveRoute = (href: string) => {
+    if (href === '/') {
+      return location.pathname === '/';
+    }
+    return location.pathname.startsWith(href);
+  };
 
   return (
     <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
@@ -75,7 +109,7 @@ export function MainNavigation({ onSidebarToggle }: MainNavigationProps) {
                 <Sparkles className="w-5 h-5 text-white" />
               </div>
               <span className="text-xl font-bold bg-gradient-to-r from-zion-cyan to-zion-purple bg-clip-text text-transparent">
-                Zion Tech
+                Zion Tech Group
               </span>
             </Link>
           </div>
@@ -83,17 +117,66 @@ export function MainNavigation({ onSidebarToggle }: MainNavigationProps) {
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
             {navigationItems.map((item) => (
-              <Link
-                key={item.name}
-                to={item.href}
-                className={`text-sm font-medium transition-colors ${
-                  location.pathname === item.href
-                    ? 'text-zion-cyan'
-                    : 'text-zion-slate-light hover:text-zion-cyan'
-                }`}
-              >
-                {item.name}
-              </Link>
+              <div key={item.name} className="relative">
+                {item.type === 'dropdown' ? (
+                  <div
+                    className="relative"
+                    onMouseEnter={() => setActiveDropdown(item.name)}
+                    onMouseLeave={() => setActiveDropdown(null)}
+                  >
+                    <button
+                      className={`flex items-center space-x-1 text-sm font-medium transition-colors ${
+                        isActiveRoute(item.href)
+                          ? 'text-zion-cyan'
+                          : 'text-zion-slate-light hover:text-zion-cyan'
+                      }`}
+                    >
+                      <span>{item.name}</span>
+                      <ChevronDown className="w-4 h-4" />
+                    </button>
+                    
+                    {/* Dropdown Menu */}
+                    <AnimatePresence>
+                      {activeDropdown === item.name && (
+                        <motion.div
+                          initial={{ opacity: 0, y: -10 }}
+                          animate={{ opacity: 1, y: 0 }}
+                          exit={{ opacity: 0, y: -10 }}
+                          className="absolute top-full left-0 mt-2 w-80 bg-zion-blue-dark/95 backdrop-blur-md border border-zion-blue-light/20 rounded-lg shadow-xl z-50"
+                        >
+                          <div className="p-4 space-y-3">
+                            {item.dropdownItems?.map((dropdownItem) => (
+                              <Link
+                                key={dropdownItem.name}
+                                to={dropdownItem.href}
+                                className="block p-3 rounded-md hover:bg-zion-blue-light/10 transition-colors group"
+                              >
+                                <div className="font-medium text-white group-hover:text-zion-cyan transition-colors">
+                                  {dropdownItem.name}
+                                </div>
+                                <div className="text-sm text-zion-slate-light group-hover:text-zion-slate-200 transition-colors">
+                                  {dropdownItem.description}
+                                </div>
+                              </Link>
+                            ))}
+                          </div>
+                        </motion.div>
+                      )}
+                    </AnimatePresence>
+                  </div>
+                ) : (
+                  <Link
+                    to={item.href}
+                    className={`text-sm font-medium transition-colors ${
+                      isActiveRoute(item.href)
+                        ? 'text-zion-cyan'
+                        : 'text-zion-slate-light hover:text-zion-cyan'
+                    }`}
+                  >
+                    {item.name}
+                  </Link>
+                )}
+              </div>
             ))}
           </div>
 
@@ -175,17 +258,35 @@ export function MainNavigation({ onSidebarToggle }: MainNavigationProps) {
               {/* Mobile Navigation */}
               <div className="space-y-2">
                 {navigationItems.map((item) => (
-                  <Link
-                    key={item.name}
-                    to={item.href}
-                    className={`block px-3 py-2 rounded-md text-sm font-medium transition-colors ${
-                      location.pathname === item.href
-                        ? 'text-zion-cyan bg-zion-blue-light/10'
-                        : 'text-zion-slate-light hover:text-zion-cyan hover:bg-zion-blue-light/10'
-                    }`}
-                  >
-                    {item.name}
-                  </Link>
+                  <div key={item.name}>
+                    {item.type === 'dropdown' ? (
+                      <div className="space-y-2">
+                        <div className="px-3 py-2 text-sm font-medium text-zion-cyan border-l-2 border-zion-cyan">
+                          {item.name}
+                        </div>
+                        {item.dropdownItems?.map((dropdownItem) => (
+                          <Link
+                            key={dropdownItem.name}
+                            to={dropdownItem.href}
+                            className="block px-6 py-2 text-sm text-zion-slate-light hover:text-zion-cyan hover:bg-zion-blue-light/10 transition-colors"
+                          >
+                            {dropdownItem.name}
+                          </Link>
+                        ))}
+                      </div>
+                    ) : (
+                      <Link
+                        to={item.href}
+                        className={`block px-3 py-2 rounded-md text-sm font-medium transition-colors ${
+                          isActiveRoute(item.href)
+                            ? 'text-zion-cyan bg-zion-blue-light/10'
+                            : 'text-zion-slate-light hover:text-zion-cyan hover:bg-zion-blue-light/10'
+                        }`}
+                      >
+                        {item.name}
+                      </Link>
+                    )}
+                  </div>
                 ))}
               </div>
 
@@ -197,7 +298,6 @@ export function MainNavigation({ onSidebarToggle }: MainNavigationProps) {
                 </Button>
                 <Button variant="ghost" className="w-full justify-start text-zion-slate-light hover:text-zion-cyan">
                   <Bell className="w-4 h-4 mr-2" />
-                  <User className="w-4 h-4 mr-2" />
                   Notifications
                 </Button>
                 <Button variant="ghost" className="w-full justify-start text-zion-slate-light hover:text-zion-cyan">
