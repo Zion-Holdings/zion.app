@@ -1,3 +1,1 @@
-export default function Verify() {
-  return <div className="py-8">Verify</div>;
-}
+export default function PlaceholderPage() { return null; }

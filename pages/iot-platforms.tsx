@@ -1,3 +1,1 @@
-export default function IoTPlatforms() {
-  return <div className="py-8">IoT Platforms</div>;
-}
+export default function PlaceholderPage() { return null; }

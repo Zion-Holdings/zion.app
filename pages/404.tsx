@@ -1,3 +1,1 @@
-export default function NotFound() {
-  return <div className="py-8">404 - Page not found</div>;
-}
+export default function Custom404() { return null; }
