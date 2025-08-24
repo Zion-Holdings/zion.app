@@ -31,7 +31,7 @@ export function MainNavigation({ isAdmin = false, unreadCount = 0, className }: 
     {
       key: 'services',
       href: '/services',
-      matches: (path: string) => path.startsWith('/services')
+      matches: (path: string) => path.startsWith('/services') || path.startsWith('/it-onsite-services')
     },
     {
       key: 'talent',
@@ -41,22 +41,17 @@ export function MainNavigation({ isAdmin = false, unreadCount = 0, className }: 
     {
       key: 'equipment',
       href: '/equipment',
-      matches: (path:string) => path.startsWith('/equipment')
+      matches: (path: string) => path.startsWith('/equipment')
+    },
+    {
+      key: 'portfolio',
+      href: '/portfolio',
+      matches: (path: string) => path.startsWith('/portfolio')
     },
     {
       key: 'community',
       href: '/community',
       matches: (path: string) => path.startsWith('/community') || path.startsWith('/forum')
-    },
-    {
-      key: 'about',
-      href: '/about',
-      matches: (path: string) => path === '/about'
-    },
-    {
-      key: 'contact',
-      href: '/contact',
-      matches: (path: string) => path === '/contact'
     }
   ];
 

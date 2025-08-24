@@ -1,138 +1,174 @@
+import React from 'react';
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { SEO } from "@/components/SEO";
-import { GradientHeading } from "@/components/GradientHeading";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Search, BookOpen, MessageCircle, Phone, Mail, FileText, Users, Settings, Shield, Zap } from "lucide-react";
+import { BookOpen, Users, Settings, Shield, MessageSquare, FileText, Video, Phone } from "lucide-react";
 import { Link } from "react-router-dom";
 
 export default function HelpCenter() {
   const helpCategories = [
     {
+      icon: <BookOpen className="h-8 w-8" />,
       title: "Getting Started",
-      description: "Learn the basics of using Zion's platform",
-      icon: BookOpen,
-      color: "from-zion-cyan to-zion-blue",
-      link: "/help/getting-started"
+      description: "Learn the basics of using Zion Tech Group",
+      articles: [
+        "Creating your first account",
+        "Setting up your profile",
+        "Navigating the marketplace",
+        "Understanding the platform"
+      ],
+      link: "/help/getting-started",
+      color: "from-blue-500 to-cyan-500"
     },
     {
-      title: "Account & Profile",
-      description: "Manage your account settings and profile",
-      icon: Settings,
-      color: "from-zion-purple to-zion-purple-dark",
-      link: "/help/account-profile"
+      icon: <Users className="h-8 w-8" />,
+      title: "User Management",
+      description: "Manage your account and profile settings",
+      articles: [
+        "Updating profile information",
+        "Managing notifications",
+        "Account security settings",
+        "Privacy controls"
+      ],
+      link: "/help/user-management",
+      color: "from-purple-500 to-pink-500"
     },
     {
-      title: "Marketplace",
-      description: "How to buy, sell, and navigate the marketplace",
-      icon: Zap,
-      color: "from-zion-green to-zion-cyan",
-      link: "/help/marketplace"
+      icon: <Settings className="h-8 w-8" />,
+      title: "Platform Features",
+      description: "Master all the features and tools",
+      articles: [
+        "AI talent matching",
+        "Project management tools",
+        "Payment and billing",
+        "Communication features"
+      ],
+      link: "/help/platform-features",
+      color: "from-green-500 to-emerald-500"
     },
     {
-      title: "Talent & Hiring",
-      description: "Find talent and get hired on the platform",
-      icon: Users,
-      color: "from-zion-orange to-zion-red",
-      link: "/help/talent-hiring"
+      icon: <Shield className="h-8 w-8" />,
+      title: "Safety & Security",
+      description: "Stay safe and secure on our platform",
+      articles: [
+        "Verification processes",
+        "Dispute resolution",
+        "Payment protection",
+        "Reporting issues"
+      ],
+      link: "/help/safety-security",
+      color: "from-red-500 to-orange-500"
     },
     {
-      title: "Payments & Billing",
-      description: "Understanding payment methods and billing",
-      icon: Shield,
-      color: "from-zion-blue to-zion-purple",
-      link: "/help/payments-billing"
+      icon: <MessageSquare className="h-8 w-8" />,
+      title: "Communication",
+      description: "Learn how to communicate effectively",
+      articles: [
+        "Messaging system",
+        "Video calls",
+        "Project collaboration",
+        "Feedback and reviews"
+      ],
+      link: "/help/communication",
+      color: "from-indigo-500 to-blue-500"
     },
     {
-      title: "API & Integration",
-      description: "Developer resources and API documentation",
-      icon: FileText,
-      color: "from-zion-purple to-zion-cyan",
-      link: "/help/api-integration"
+      icon: <FileText className="h-8 w-8" />,
+      title: "Documentation",
+      description: "Access detailed guides and references",
+      articles: [
+        "API documentation",
+        "Developer guides",
+        "Integration tutorials",
+        "Best practices"
+      ],
+      link: "/help/documentation",
+      color: "from-yellow-500 to-orange-500"
     }
   ];
 
   const quickActions = [
     {
-      title: "Contact Support",
-      description: "Get help from our support team",
-      icon: MessageCircle,
-      action: "mailto:support@ziontechgroup.com",
-      external: true
+      icon: <Video className="h-6 w-6" />,
+      title: "Video Tutorials",
+      description: "Watch step-by-step guides",
+      link: "/help/video-tutorials"
     },
     {
-      title: "Schedule a Call",
-      description: "Book a consultation with our experts",
-      icon: Phone,
-      action: "/contact",
-      external: false
+      icon: <Phone className="h-6 w-6" />,
+      title: "Live Support",
+      description: "Get help in real-time",
+      link: "/contact"
     },
     {
-      title: "Live Chat",
-      description: "Chat with us in real-time",
-      icon: MessageCircle,
-      action: "#",
-      external: false
+      icon: <FileText className="h-6 w-6" />,
+      title: "Knowledge Base",
+      description: "Search our articles",
+      link: "/help/knowledge-base"
     }
   ];
 
   return (
     <>
-      <SEO 
-        title="Help Center - Zion Tech Group Support" 
-        description="Get help and support for using Zion's AI and technology marketplace platform." 
-        keywords="help center, support, Zion Tech Group, customer service, FAQ, documentation"
-        canonical="https://ziontechgroup.com/help"
+      <SEO
+        title="Help Center | Zion Tech Group"
+        description="Get help and support for Zion Tech Group platform. Find tutorials, guides, and resources to make the most of our marketplace."
+        keywords="help center, support, tutorials, guides, Zion Tech Group, tech marketplace"
+        canonical="https://ziontechgroup.com/help-center"
       />
       <Header />
       <main className="min-h-screen bg-zion-blue pt-24 pb-20">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          {/* Hero Section */}
           <div className="text-center mb-16">
-            <GradientHeading>Help Center</GradientHeading>
-            <p className="mt-4 text-zion-slate-light text-xl max-w-3xl mx-auto">
-              Find answers, get support, and learn how to make the most of Zion's platform
+            <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">
+              Help Center
+            </h1>
+            <p className="text-xl text-zion-slate-light max-w-3xl mx-auto">
+              Everything you need to know about using Zion Tech Group. Find answers, tutorials, and support resources.
             </p>
           </div>
 
-          {/* Search Section */}
+          {/* Search Bar */}
           <div className="max-w-2xl mx-auto mb-16">
             <div className="relative">
-              <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 text-zion-slate-light w-5 h-5" />
               <input
                 type="text"
-                placeholder="Search for help articles, guides, and support..."
-                className="w-full pl-12 pr-4 py-4 bg-zion-blue-dark border border-zion-blue-light rounded-lg text-white placeholder-zion-slate-light focus:outline-none focus:border-zion-purple"
+                placeholder="Search for help articles, tutorials, or guides..."
+                className="w-full px-6 py-4 bg-zion-blue-dark border border-zion-purple/20 rounded-lg text-white placeholder-zion-slate-light focus:outline-none focus:ring-2 focus:ring-zion-purple focus:border-transparent"
               />
+              <Button className="absolute right-2 top-2 bg-zion-purple hover:bg-zion-purple-light">
+                Search
+              </Button>
             </div>
           </div>
 
           {/* Quick Actions */}
           <div className="mb-16">
             <h2 className="text-2xl font-bold text-white mb-8 text-center">Quick Actions</h2>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               {quickActions.map((action, index) => (
-                <div key={index} className="bg-zion-blue-dark border border-zion-blue-light rounded-lg p-6 hover:border-zion-purple transition-colors">
-                  <div className="flex items-center mb-4">
-                    <action.icon className="w-8 h-8 text-zion-cyan mr-3" />
-                    <h3 className="text-xl font-semibold text-white">{action.title}</h3>
-                  </div>
-                  <p className="text-zion-slate-light mb-4">{action.description}</p>
-                  {action.external ? (
-                    <a
-                      href={action.action}
-                      className="inline-flex items-center text-zion-cyan hover:text-zion-purple transition-colors"
-                    >
-                      Get Started →
-                    </a>
-                  ) : (
-                    <Link
-                      to={action.action}
-                      className="inline-flex items-center text-zion-cyan hover:text-zion-purple transition-colors"
-                    >
-                      Get Started →
-                    </Link>
-                  )}
-                </div>
+                <Card key={index} className="bg-zion-blue-dark border-zion-purple/20 hover:border-zion-purple/40 transition-colors">
+                  <CardContent className="p-6">
+                    <div className="flex items-center space-x-4">
+                      <div className="text-zion-cyan">
+                        {action.icon}
+                      </div>
+                      <div className="flex-1">
+                        <h3 className="text-lg font-semibold text-white mb-2">{action.title}</h3>
+                        <p className="text-zion-slate-light text-sm mb-3">{action.description}</p>
+                        <Link 
+                          to={action.link}
+                          className="text-zion-cyan hover:text-zion-cyan-light text-sm font-medium"
+                        >
+                          Learn more →
+                        </Link>
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
               ))}
             </div>
           </div>
@@ -142,39 +178,101 @@ export default function HelpCenter() {
             <h2 className="text-2xl font-bold text-white mb-8 text-center">Help Categories</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {helpCategories.map((category, index) => (
-                <div key={index} className="bg-zion-blue-dark border border-zion-blue-light rounded-lg p-6 hover:border-zion-purple transition-all hover:shadow-lg">
-                  <div className="flex items-center mb-4">
-                    <div className={`p-3 rounded-lg bg-gradient-to-r ${category.color} mr-4`}>
-                      <category.icon className="w-6 h-6 text-white" />
+                <Card key={index} className="bg-zion-blue-dark border-zion-purple/20 hover:border-zion-purple/40 transition-colors group">
+                  <CardHeader className="pb-4">
+                    <div className="flex items-center space-x-4 mb-4">
+                      <div className={`p-3 rounded-lg bg-gradient-to-r ${category.color} text-white`}>
+                        {category.icon}
+                      </div>
+                      <div>
+                        <CardTitle className="text-xl text-white">{category.title}</CardTitle>
+                        <CardDescription className="text-zion-slate-light">
+                          {category.description}
+                        </CardDescription>
+                      </div>
                     </div>
-                    <h3 className="text-xl font-semibold text-white">{category.title}</h3>
-                  </div>
-                  <p className="text-zion-slate-light mb-4">{category.description}</p>
-                  <Link
-                    to={category.link}
-                    className="inline-flex items-center text-zion-cyan hover:text-zion-purple transition-colors"
-                  >
-                    Learn More →
-                  </Link>
-                </div>
+                  </CardHeader>
+                  <CardContent>
+                    <ul className="space-y-2 mb-6">
+                      {category.articles.map((article, articleIndex) => (
+                        <li key={articleIndex} className="text-zion-slate-light text-sm flex items-center">
+                          <span className="w-2 h-2 bg-zion-cyan rounded-full mr-3"></span>
+                          {article}
+                        </li>
+                      ))}
+                    </ul>
+                    <Link 
+                      to={category.link}
+                      className="inline-flex items-center text-zion-cyan hover:text-zion-cyan-light font-medium group-hover:translate-x-1 transition-transform"
+                    >
+                      View all articles →
+                    </Link>
+                  </CardContent>
+                </Card>
               ))}
             </div>
           </div>
 
-          {/* Contact Section */}
-          <div className="bg-zion-blue-dark border border-zion-blue-light rounded-xl p-8 md:p-12 text-center">
-            <h2 className="text-3xl font-bold text-white mb-6">Still need help?</h2>
-            <p className="text-zion-slate-light text-lg mb-8 max-w-2xl mx-auto">
-              Our support team is here to help you succeed. Don't hesitate to reach out for personalized assistance.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button className="bg-gradient-to-r from-zion-purple to-zion-purple-dark hover:from-zion-purple-light hover:to-zion-purple" asChild>
-                <Link to="/contact">Contact Support</Link>
-              </Button>
-              <Button variant="outline" className="border-zion-purple text-zion-purple hover:bg-zion-purple hover:text-white" asChild>
-                <Link to="/faq">View FAQ</Link>
-              </Button>
+          {/* Popular Articles */}
+          <div className="mb-16">
+            <h2 className="text-2xl font-bold text-white mb-8 text-center">Popular Articles</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {[
+                "How to create a winning talent profile",
+                "Understanding the AI matching algorithm",
+                "Best practices for project collaboration",
+                "Setting up secure payments",
+                "Managing project milestones",
+                "Resolving disputes effectively"
+              ].map((article, index) => (
+                <Card key={index} className="bg-zion-blue-dark border-zion-purple/20 hover:border-zion-purple/40 transition-colors">
+                  <CardContent className="p-6">
+                    <h3 className="text-lg font-semibold text-white mb-3">{article}</h3>
+                    <Link 
+                      to={`/help/article/${index + 1}`}
+                      className="text-zion-cyan hover:text-zion-cyan-light text-sm font-medium"
+                    >
+                      Read article →
+                    </Link>
+                  </CardContent>
+                </Card>
+              ))}
             </div>
+          </div>
+
+          {/* Contact Support */}
+          <div className="text-center">
+            <Card className="bg-zion-blue-dark border-zion-purple/20 max-w-2xl mx-auto">
+              <CardHeader>
+                <CardTitle className="text-2xl text-zion-cyan">
+                  Need more help?
+                </CardTitle>
+                <CardDescription className="text-zion-slate-light">
+                  Our support team is available 24/7 to assist you.
+                </CardDescription>
+              </CardHeader>
+              <CardContent>
+                <div className="space-y-4">
+                  <p className="text-zion-slate-light">
+                    Can't find what you're looking for? Contact our support team directly.
+                  </p>
+                  <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                    <Link
+                      to="/contact"
+                      className="inline-flex items-center justify-center px-6 py-3 bg-zion-purple text-white font-medium rounded-lg hover:bg-zion-purple-light transition-colors"
+                    >
+                      Contact Support
+                    </Link>
+                    <Link
+                      to="/faq"
+                      className="inline-flex items-center justify-center px-6 py-3 border border-zion-purple text-zion-cyan font-medium rounded-lg hover:bg-zion-purple/10 transition-colors"
+                    >
+                      View FAQ
+                    </Link>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
           </div>
         </div>
       </main>
