@@ -40,12 +40,8 @@ const specialServices = [
     link: "/it-onsite-services"
   },
   {
-    title: "Enhanced Services",
-    link: "/enhanced-services"
-  },
-  {
-    title: "Services Comparison",
-    link: "/services-comparison"
+    title: "Comprehensive Services",
+    link: "/comprehensive-services"
   }
 ];
 
