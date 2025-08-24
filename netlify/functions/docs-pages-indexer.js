@@ -1,25 +1,16 @@
-const path = require('path');
-const { spawnSync } = require('child_process');
+exports.handler = async function() {
+  const { execSync } = require('child_process');
+  try {
+    execSync('node automation/docs-pages-indexer.cjs || true', { stdio: 'inherit', shell: true });
+    execSync('node scripts/generate-sitemap.js || true', { stdio: 'inherit', shell: true });
+    execSync('git config user.name "zion-bot" && git config user.email "bot@zion.app" && git add -A && (git commit -m "chore(index): refresh docs/pages index and sitemap [ci skip]" || true) && (git push origin main || true)', { stdio: 'inherit', shell: true });
+    return { statusCode: 200, body: JSON.stringify({ ok: true, task: 'docs-pages-indexer' }) };
+  } catch (e) {
+    return { statusCode: 200, body: JSON.stringify({ ok: false, error: String(e) }) };
+  }
+};
 
-function runNode(relativePath, args = []) {
-  const abs = path.resolve(__dirname, '..', '..', relativePath);
-  const res = spawnSync('node', [abs, ...args], { stdio: 'pipe', encoding: 'utf8' });
-  return { status: res.status || 0, stdout: res.stdout || '', stderr: res.stderr || '' };
-}
-
-exports.handler = async () => {
-  const logs = [];
-  const step = (name, fn) => {
-    logs.push(`\n=== ${name} ===`);
-    const { status, stdout, stderr } = fn();
-    if (stdout) logs.push(stdout);
-    if (stderr) logs.push(stderr);
-    logs.push(`exit=${status}`);
-    return status;
-  };
-
-  step('docs-pages-indexer', () => runNode('automation/docs-pages-indexer.cjs'));
-  step('git:sync', () => runNode('automation/advanced-git-sync.cjs'));
-
-  return { statusCode: 200, headers: { 'content-type': 'text/plain' }, body: logs.join('\n') };
+exports.config = {
+  // Run every 4 hours
+  schedule: '0 */4 * * *',
 };
