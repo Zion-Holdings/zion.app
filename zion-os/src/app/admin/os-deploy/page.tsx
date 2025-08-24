@@ -2,6 +2,25 @@
 
 import { useState } from "react";
 import { FeatureKeys } from "@/lib/zod";
+import { 
+  Rocket, 
+  Globe, 
+  Settings, 
+  Shield, 
+  Users, 
+  CreditCard,
+  Building2,
+  Languages,
+  Coins,
+  Crown,
+  MapPin,
+  Flag,
+  CheckCircle,
+  AlertCircle,
+  Play,
+  Zap,
+  Sparkles
+} from "lucide-react";
 
 export default function AdminDeployPage() {
   const [loading, setLoading] = useState(false);
@@ -46,74 +65,311 @@ export default function AdminDeployPage() {
     (event.target as HTMLFormElement).reset();
   }
 
+  const getVerticalIcon = (vertical: string) => {
+    switch (vertical) {
+      case "HEALTH": return <Shield className="w-5 h-5 text-blue-400" />;
+      case "EDUCATION": return <Building2 className="w-5 h-5 text-green-400" />;
+      case "LAW": return <Shield className="w-5 h-5 text-purple-400" />;
+      case "GOV": return <Users className="w-5 h-5 text-red-400" />;
+      default: return <Globe className="w-5 h-5 text-gray-400" />;
+    }
+  };
+
+  const getGovernanceIcon = (type: string) => {
+    switch (type) {
+      case "ADMIN": return <Crown className="w-5 h-5 text-yellow-400" />;
+      case "DAO_LITE": return <Users className="w-5 h-5 text-blue-400" />;
+      case "DAO_FULL": return <Zap className="w-5 h-5 text-purple-400" />;
+      default: return <Crown className="w-5 h-5 text-gray-400" />;
+    }
+  };
+
   return (
-    <div className="space-y-6">
-      <h1 className="text-2xl font-semibold">Unified Deployment</h1>
-      <form onSubmit={onSubmit} className="grid grid-cols-1 md:grid-cols-2 gap-6">
-        <div className="space-y-3">
-          <label className="block">Instance Name<input name="instanceName" required className="mt-1 w-full bg-zinc-900 border border-white/10 rounded p-2" /></label>
-          <div className="grid grid-cols-2 gap-3">
-            <label className="block">Domain<input name="domain" placeholder="zion.example.com" className="mt-1 w-full bg-zinc-900 border border-white/10 rounded p-2" /></label>
-            <label className="block">Subdomain<input name="subdomain" placeholder="latam" className="mt-1 w-full bg-zinc-900 border border-white/10 rounded p-2" /></label>
+    <div className="space-y-8">
+      {/* Header Section */}
+      <div className="text-center space-y-4 pb-8 border-b border-white/10">
+        <div className="flex items-center justify-center gap-3 mb-4">
+          <div className="p-3 bg-blue-500/20 rounded-full">
+            <Rocket className="w-8 h-8 text-blue-400" />
           </div>
-          <div className="grid grid-cols-2 gap-3">
-            <label className="block">Vertical<select name="vertical" className="mt-1 w-full bg-zinc-900 border border-white/10 rounded p-2">
-              <option>GENERAL</option>
-              <option>HEALTH</option>
-              <option>EDUCATION</option>
-              <option>LAW</option>
-              <option>GOV</option>
-            </select></label>
-            <label className="block">Default Language<input name="defaultLanguage" defaultValue="en" className="mt-1 w-full bg-zinc-900 border border-white/10 rounded p-2" /></label>
-          </div>
-          <div className="grid grid-cols-2 gap-3">
-            <label className="block">Token System<select name="tokenSystem" className="mt-1 w-full bg-zinc-900 border border-white/10 rounded p-2">
-              <option value="SHARED">ZION$ Shared</option>
-              <option value="LOCAL">Local</option>
-            </select></label>
-            <label className="block">Governance<select name="governanceType" className="mt-1 w-full bg-zinc-900 border border-white/10 rounded p-2">
-              <option value="ADMIN">Admin</option>
-              <option value="DAO_LITE">DAO-lite</option>
-              <option value="DAO_FULL">Full DAO</option>
-            </select></label>
-          </div>
-          <div className="grid grid-cols-2 gap-3">
-            <label className="block">Region<input name="region" className="mt-1 w-full bg-zinc-900 border border-white/10 rounded p-2" /></label>
-            <label className="block">Country<input name="country" className="mt-1 w-full bg-zinc-900 border border-white/10 rounded p-2" /></label>
-          </div>
+          <h1 className="text-4xl font-bold bg-gradient-to-r from-white to-white/80 bg-clip-text text-transparent">
+            Unified Deployment
+          </h1>
         </div>
+        <p className="text-xl text-white/70 max-w-2xl mx-auto">
+          Launch sovereign AI-powered digital economies with comprehensive configuration options
+        </p>
+      </div>
 
-        <div className="space-y-4">
-          <div>
-            <div className="font-semibold mb-2">Feature Toggles</div>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
-              {FeatureKeys.map((k) => (
-                <label key={k} className="flex items-center gap-2 text-sm">
-                  <input type="checkbox" name={k} />
-                  <span>{labelFor(k)}</span>
+      <form onSubmit={onSubmit} className="space-y-8">
+        {/* Basic Configuration Card */}
+        <div className="bg-white/5 backdrop-blur-sm rounded-xl border border-white/10 p-6">
+          <div className="flex items-center gap-3 mb-6">
+            <div className="p-2 bg-blue-500/20 rounded-lg">
+              <Globe className="w-5 h-5 text-blue-400" />
+            </div>
+            <h2 className="text-2xl font-semibold">Basic Configuration</h2>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="space-y-4">
+              <label className="block">
+                <span className="block text-sm font-medium text-white/80 mb-2">Instance Name</span>
+                <input 
+                  name="instanceName" 
+                  required 
+                  className="w-full bg-zinc-900/50 border border-white/20 rounded-lg p-3 text-white placeholder-white/40 focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 transition-all duration-200" 
+                  placeholder="Enter instance name"
+                />
+              </label>
+              
+              <div className="grid grid-cols-2 gap-4">
+                <label className="block">
+                  <span className="block text-sm font-medium text-white/80 mb-2">Domain</span>
+                  <input 
+                    name="domain" 
+                    placeholder="zion.example.com" 
+                    className="w-full bg-zinc-900/50 border border-white/20 rounded-lg p-3 text-white placeholder-white/40 focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 transition-all duration-200" 
+                  />
                 </label>
-              ))}
+                <label className="block">
+                  <span className="block text-sm font-medium text-white/80 mb-2">Subdomain</span>
+                  <input 
+                    name="subdomain" 
+                    placeholder="latam" 
+                    className="w-full bg-zinc-900/50 border border-white/20 rounded-lg p-3 text-white placeholder-white/40 focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 transition-all duration-200" 
+                  />
+                </label>
+              </div>
             </div>
-          </div>
-          <div>
-            <div className="font-semibold mb-2">Optional Add-ons</div>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-sm">
-              <label className="flex items-center gap-2"><input type="checkbox" name="sovereignTreasury" /> Sovereign DAO treasury</label>
-              <label className="flex items-center gap-2"><input type="checkbox" name="dualGovernance" /> Dual governance (local + global)</label>
-              <label className="flex items-center gap-2"><input type="checkbox" name="aiModeration" /> AI moderation system</label>
-              <label className="flex items-center gap-2"><input type="checkbox" name="affiliatePanel" /> Gov/institution affiliate panel</label>
-              <label className="block col-span-2">Payment Gateway<select name="paymentGateway" className="mt-1 w-full bg-zinc-900 border border-white/10 rounded p-2">
-                <option value="">None</option>
-                <option value="stripe">Stripe</option>
-                <option value="coinbase-commerce">Coinbase Commerce</option>
-              </select></label>
+
+            <div className="space-y-4">
+              <label className="block">
+                <span className="block text-sm font-medium text-white/80 mb-2">Vertical</span>
+                <div className="relative">
+                  <select 
+                    name="vertical" 
+                    className="w-full bg-zinc-900/50 border border-white/20 rounded-lg p-3 text-white focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 transition-all duration-200 appearance-none"
+                  >
+                    <option>GENERAL</option>
+                    <option>HEALTH</option>
+                    <option>EDUCATION</option>
+                    <option>LAW</option>
+                    <option>GOV</option>
+                  </select>
+                  <div className="absolute right-3 top-1/2 transform -translate-y-1/2 pointer-events-none">
+                    <svg className="w-4 h-4 text-white/40" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                    </svg>
+                  </div>
+                </div>
+              </label>
+              
+              <label className="block">
+                <span className="block text-sm font-medium text-white/80 mb-2">Default Language</span>
+                <input 
+                  name="defaultLanguage" 
+                  defaultValue="en" 
+                  className="w-full bg-zinc-900/50 border border-white/20 rounded-lg p-3 text-white focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 transition-all duration-200" 
+                />
+              </label>
             </div>
           </div>
         </div>
 
-        <div className="md:col-span-2 flex items-center gap-3">
-          <button disabled={loading} className="px-4 py-2 rounded bg-zion-blue text-white disabled:opacity-50">{loading ? "Deploying..." : "Deploy Instance"}</button>
-          {message && <div className="text-sm opacity-80">{message}</div>}
+        {/* Governance & Token System Card */}
+        <div className="bg-white/5 backdrop-blur-sm rounded-xl border border-white/10 p-6">
+          <div className="flex items-center gap-3 mb-6">
+            <div className="p-2 bg-purple-500/20 rounded-lg">
+              <Crown className="w-5 h-5 text-purple-400" />
+            </div>
+            <h2 className="text-2xl font-semibold">Governance & Economy</h2>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <label className="block">
+              <span className="block text-sm font-medium text-white/80 mb-2">Token System</span>
+              <div className="relative">
+                <select 
+                  name="tokenSystem" 
+                  className="w-full bg-zinc-900/50 border border-white/20 rounded-lg p-3 text-white focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 transition-all duration-200 appearance-none"
+                >
+                  <option value="SHARED">ZION$ Shared</option>
+                  <option value="LOCAL">Local</option>
+                </select>
+                <div className="absolute right-3 top-1/2 transform -translate-y-1/2 pointer-events-none">
+                  <svg className="w-4 h-4 text-white/40" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                  </svg>
+                </div>
+              </div>
+            </label>
+            
+            <label className="block">
+              <span className="block text-sm font-medium text-white/80 mb-2">Governance Type</span>
+              <div className="relative">
+                <select 
+                  name="governanceType" 
+                  className="w-full bg-zinc-900/50 border border-white/20 rounded-lg p-3 text-white focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 transition-all duration-200 appearance-none"
+                >
+                  <option value="ADMIN">Admin</option>
+                  <option value="DAO_LITE">DAO-lite</option>
+                  <option value="DAO_FULL">Full DAO</option>
+                </select>
+                <div className="absolute right-3 top-1/2 transform -translate-y-1/2 pointer-events-none">
+                  <svg className="w-4 h-4 text-white/40" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                  </svg>
+                </div>
+              </div>
+            </label>
+          </div>
+        </div>
+
+        {/* Location & Region Card */}
+        <div className="bg-white/5 backdrop-blur-sm rounded-xl border border-white/10 p-6">
+          <div className="flex items-center gap-3 mb-6">
+            <div className="p-2 bg-green-500/20 rounded-lg">
+              <MapPin className="w-5 h-5 text-green-400" />
+            </div>
+            <h2 className="text-2xl font-semibold">Location & Region</h2>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <label className="block">
+              <span className="block text-sm font-medium text-white/80 mb-2">Region</span>
+              <input 
+                name="region" 
+                className="w-full bg-zinc-900/50 border border-white/20 rounded-lg p-3 text-white placeholder-white/40 focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 transition-all duration-200" 
+                placeholder="e.g., North America"
+              />
+            </label>
+            
+            <label className="block">
+              <span className="block text-sm font-medium text-white/80 mb-2">Country</span>
+              <input 
+                name="country" 
+                className="w-full bg-zinc-900/50 border border-white/20 rounded-lg p-3 text-white placeholder-white/40 focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 transition-all duration-200" 
+                placeholder="e.g., United States"
+              />
+            </label>
+          </div>
+        </div>
+
+        {/* Feature Toggles Card */}
+        <div className="bg-white/5 backdrop-blur-sm rounded-xl border border-white/10 p-6">
+          <div className="flex items-center gap-3 mb-6">
+            <div className="p-2 bg-orange-500/20 rounded-lg">
+              <Sparkles className="w-5 h-5 text-orange-400" />
+            </div>
+            <h2 className="text-2xl font-semibold">Feature Toggles</h2>
+          </div>
+          
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            {FeatureKeys.map((k) => (
+              <label key={k} className="flex items-center gap-3 p-3 bg-white/5 rounded-lg border border-white/10 hover:border-white/20 transition-colors cursor-pointer">
+                <input type="checkbox" name={k} className="w-4 h-4 text-blue-600 bg-zinc-900 border-white/20 rounded focus:ring-blue-500 focus:ring-2" />
+                <span className="text-sm text-white/90">{labelFor(k)}</span>
+              </label>
+            ))}
+          </div>
+        </div>
+
+        {/* Optional Add-ons Card */}
+        <div className="bg-white/5 backdrop-blur-sm rounded-xl border border-white/10 p-6">
+          <div className="flex items-center gap-3 mb-6">
+            <div className="p-2 bg-yellow-500/20 rounded-lg">
+              <Zap className="w-5 h-5 text-yellow-400" />
+            </div>
+            <h2 className="text-2xl font-semibold">Optional Add-ons</h2>
+          </div>
+          
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+            <div className="space-y-4">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                <label className="flex items-center gap-3 p-3 bg-white/5 rounded-lg border border-white/10 hover:border-white/20 transition-colors cursor-pointer">
+                  <input type="checkbox" name="sovereignTreasury" className="w-4 h-4 text-blue-600 bg-zinc-900 border-white/20 rounded focus:ring-blue-500 focus:ring-2" />
+                  <span className="text-sm text-white/90">Sovereign DAO treasury</span>
+                </label>
+                <label className="flex items-center gap-3 p-3 bg-white/5 rounded-lg border border-white/10 hover:border-white/20 transition-colors cursor-pointer">
+                  <input type="checkbox" name="dualGovernance" className="w-4 h-4 text-blue-600 bg-zinc-900 border-white/20 rounded focus:ring-blue-500 focus:ring-2" />
+                  <span className="text-sm text-white/90">Dual governance</span>
+                </label>
+                <label className="flex items-center gap-3 p-3 bg-white/5 rounded-lg border border-white/10 hover:border-white/20 transition-colors cursor-pointer">
+                  <input type="checkbox" name="aiModeration" className="w-4 h-4 text-blue-600 bg-zinc-900 border-white/20 rounded focus:ring-blue-500 focus:ring-2" />
+                  <span className="text-sm text-white/90">AI moderation</span>
+                </label>
+                <label className="flex items-center gap-3 p-3 bg-white/5 rounded-lg border border-white/10 hover:border-white/20 transition-colors cursor-pointer">
+                  <input type="checkbox" name="affiliatePanel" className="w-4 h-4 text-blue-600 bg-zinc-900 border-white/20 rounded focus:ring-blue-500 focus:ring-2" />
+                  <span className="text-sm text-white/90">Affiliate panel</span>
+                </label>
+              </div>
+            </div>
+            
+            <div className="space-y-4">
+              <label className="block">
+                <span className="block text-sm font-medium text-white/80 mb-2">Payment Gateway</span>
+                <div className="relative">
+                  <select 
+                    name="paymentGateway" 
+                    className="w-full bg-zinc-900/50 border border-white/20 rounded-lg p-3 text-white focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 transition-all duration-200 appearance-none"
+                  >
+                    <option value="">None</option>
+                    <option value="stripe">Stripe</option>
+                    <option value="coinbase-commerce">Coinbase Commerce</option>
+                  </select>
+                  <div className="absolute right-3 top-1/2 transform -translate-y-1/2 pointer-events-none">
+                    <svg className="w-4 h-4 text-white/40" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                    </svg>
+                  </div>
+                </div>
+              </label>
+            </div>
+          </div>
+        </div>
+
+        {/* Deployment Action */}
+        <div className="bg-gradient-to-r from-blue-600/20 to-purple-600/20 backdrop-blur-sm rounded-xl border border-blue-500/30 p-6">
+          <div className="flex items-center justify-between">
+            <div className="space-y-2">
+              <h3 className="text-xl font-semibold text-white">Ready to Deploy?</h3>
+              <p className="text-white/70">Your Zion ecosystem will be deployed with the selected configuration</p>
+            </div>
+            <button 
+              disabled={loading} 
+              className="flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-semibold rounded-xl transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed shadow-lg hover:shadow-xl"
+            >
+              {loading ? (
+                <>
+                  <div className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin"></div>
+                  <span>Deploying...</span>
+                </>
+              ) : (
+                <>
+                  <Play className="w-5 h-5" />
+                  <span>Deploy Instance</span>
+                </>
+              )}
+            </button>
+          </div>
+          
+          {message && (
+            <div className={`mt-4 p-4 rounded-lg border ${
+              message.includes('failed') 
+                ? 'bg-red-500/20 border-red-500/30 text-red-300' 
+                : 'bg-green-500/20 border-green-500/30 text-green-300'
+            }`}>
+              <div className="flex items-center gap-2">
+                {message.includes('failed') ? (
+                  <AlertCircle className="w-5 h-5" />
+                ) : (
+                  <CheckCircle className="w-5 h-5" />
+                )}
+                <span className="font-medium">{message}</span>
+              </div>
+            </div>
+          )}
         </div>
       </form>
     </div>
