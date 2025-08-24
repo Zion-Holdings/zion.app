@@ -20,6 +20,8 @@ import {
   CommunityRoutes,
   DeveloperRoutes
 } from './routes';
+
+// Lazy load all pages
 const Home = React.lazy(() => import('./pages/Home'));
 const AIMatcherPage = React.lazy(() => import('./pages/AIMatcher'));
 const TalentDirectory = React.lazy(() => import('./pages/TalentDirectory'));
@@ -42,6 +44,16 @@ const ContactPage = React.lazy(() => import('./pages/Contact'));
 const ZionHireAI = React.lazy(() => import('./pages/ZionHireAI'));
 const RequestQuotePage = React.lazy(() => import('./pages/RequestQuote'));
 
+// New service pages
+const ServicesOverview = React.lazy(() => import('./pages/services/ServicesOverview'));
+const AIAutonomousSystems = React.lazy(() => import('./pages/services/AIAutonomousSystems'));
+const QuantumTechnology = React.lazy(() => import('./pages/services/QuantumTechnology'));
+const Cybersecurity = React.lazy(() => import('./pages/services/Cybersecurity'));
+
+// Company pages
+const About = React.lazy(() => import('./pages/About'));
+const Mission = React.lazy(() => import('./pages/Mission'));
+
 const baseRoutes = [
   { path: '/', element: <Home /> },
   { path: '/match', element: <AIMatcherPage /> },
@@ -49,7 +61,7 @@ const baseRoutes = [
   { path: '/signup', element: <Signup /> },
   { path: '/talent', element: <TalentDirectory /> },
   { path: '/talents', element: <TalentsPage /> },
-  { path: '/services', element: <ServicesPage /> },
+  { path: '/services', element: <ServicesOverview /> },
   { path: '/it-onsite-services', element: <ITOnsiteServicesPage /> },
   { path: '/categories', element: <Categories /> },
   { path: '/equipment', element: <EquipmentPage /> },
@@ -65,6 +77,15 @@ const baseRoutes = [
   { path: '/request-quote', element: <RequestQuotePage /> },
   { path: '/blog', element: <Blog /> },
   { path: '/blog/:slug', element: <BlogPost /> },
+  
+  // Service routes
+  { path: '/services/ai-autonomous-systems', element: <AIAutonomousSystems /> },
+  { path: '/services/quantum-technology', element: <QuantumTechnology /> },
+  { path: '/services/cybersecurity', element: <Cybersecurity /> },
+  
+  // Company routes
+  { path: '/about', element: <About /> },
+  { path: '/mission', element: <Mission /> },
 ];
 
 const App = () => {
