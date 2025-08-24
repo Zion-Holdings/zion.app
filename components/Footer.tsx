@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import NewsletterSignup from './NewsletterSignup';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -31,7 +32,8 @@ const Footer = () => {
     legal: [
       { name: 'Privacy Policy', href: '/privacy-policy' },
       { name: 'Terms of Service', href: '/terms-of-service' },
-      { name: 'Cookie Policy', href: '/cookie-policy' }
+      { name: 'Cookie Policy', href: '/cookie-policy' },
+      { name: 'Cookie Settings', href: '#', isButton: true }
     ]
   };
 
@@ -152,12 +154,24 @@ const Footer = () => {
             <ul className="space-y-2">
               {footerLinks.legal.map((link) => (
                 <li key={link.name}>
-                  <Link 
-                    href={link.href}
-                    className="text-gray-400 hover:text-white transition-colors duration-200"
-                  >
-                    {link.name}
-                  </Link>
+                  {link.isButton ? (
+                    <button 
+                      onClick={() => {
+                        localStorage.removeItem('cookie-consent');
+                        window.location.reload();
+                      }}
+                      className="text-gray-400 hover:text-white transition-colors duration-200 text-left w-full"
+                    >
+                      {link.name}
+                    </button>
+                  ) : (
+                    <Link 
+                      href={link.href}
+                      className="text-gray-400 hover:text-white transition-colors duration-200"
+                    >
+                      {link.name}
+                    </Link>
+                  )}
                 </li>
               ))}
             </ul>
@@ -166,22 +180,7 @@ const Footer = () => {
 
         {/* Newsletter Signup */}
         <div className="border-t border-gray-800 pt-8 mb-8">
-          <div className="max-w-md">
-            <h3 className="text-lg font-semibold mb-3">Stay Updated</h3>
-            <p className="text-gray-400 mb-4 text-sm">
-              Get the latest updates on our services, products, and industry insights.
-            </p>
-            <div className="flex space-x-2">
-              <input
-                type="email"
-                placeholder="Enter your email"
-                className="flex-1 px-4 py-2 bg-gray-800 border border-gray-700 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-              />
-              <button className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-lg font-medium transition-colors duration-200">
-                Subscribe
-              </button>
-            </div>
-          </div>
+          <NewsletterSignup />
         </div>
 
         {/* Bottom Footer */}
