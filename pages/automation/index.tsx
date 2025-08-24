@@ -96,6 +96,16 @@ export default function AutomationHub() {
             <p className="text-white/70">Performs safe dependency updates and syncs to main.</p>
             <a className="text-cyan-300 underline" href="/.netlify/functions/dependency-intelligence-upgrader" target="_blank" rel="noopener">Trigger / View</a>
           </li>
+          <li className="rounded-lg bg-white/5 border border-white/10 p-5">
+            <h2 className="text-xl font-bold">Smart Redirects</h2>
+            <p className="text-white/70">Heals internal 404s by proposing and committing safe redirects.</p>
+            <a className="text-cyan-300 underline" href="/.netlify/functions/smart-redirects" target="_blank" rel="noopener">Trigger / View</a>
+          </li>
+          <li className="rounded-lg bg-white/5 border border-white/10 p-5">
+            <h2 className="text-xl font-bold">Automation Catalog</h2>
+            <p className="text-white/70">Live index of functions and automation scripts.</p>
+            <a className="text-cyan-300 underline" href="/.netlify/functions/automation-catalog" target="_blank" rel="noopener">Open</a>
+          </li>
         </ul>
       </main>
     </div>
