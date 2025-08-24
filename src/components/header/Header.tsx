@@ -10,14 +10,8 @@ import { useWhitelabel } from '@/context/WhitelabelContext';
 import { EnhancedSearchInput } from "@/components/search/EnhancedSearchInput";
 import { generateSearchSuggestions } from "@/data/marketplaceData";
 import { useNavigate } from "react-router-dom";
-import { Menu, X, Sparkles, ChevronDown } from 'lucide-react';
-import { Button } from '@/components/ui/button';
-import { 
-  DropdownMenu, 
-  DropdownMenuContent, 
-  DropdownMenuItem, 
-  DropdownMenuTrigger 
-} from '@/components/ui/dropdown-menu';
+import { Button } from "@/components/ui/button";
+import { Menu, X, ChevronDown, Sparkles, Zap, Brain, Shield } from "lucide-react";
 
 export interface HeaderProps {
   hideLogin?: boolean;
@@ -52,11 +46,11 @@ export function Header({ hideLogin = false, customLogo, customTheme }: HeaderPro
     borderColor: `${effectiveTheme.primaryColor}20`
   } : {};
 
-  // Handle scroll effect
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20);
+      setIsScrolled(window.scrollY > 10);
     };
+
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
@@ -72,14 +66,18 @@ export function Header({ hideLogin = false, customLogo, customTheme }: HeaderPro
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
   };
+
+  const closeMobileMenu = () => {
+    setIsMobileMenuOpen(false);
+  };
   
   return (
     <>
       <header 
         className={`sticky top-0 z-50 w-full transition-all duration-300 ${
           isScrolled 
-            ? 'bg-zion-slate-dark/95 backdrop-blur-xl border-b border-zion-purple/30 shadow-2xl shadow-zion-purple/20' 
-            : 'bg-zion-slate-dark/80 backdrop-blur-md border-b border-zion-purple/20'
+            ? 'bg-zion-blue-dark/95 backdrop-blur-xl border-b border-zion-purple/30 shadow-2xl shadow-zion-purple/20' 
+            : 'bg-zion-blue-dark/90 backdrop-blur-md border-b border-zion-purple/20'
         }`}
         style={headerStyle}
       >
@@ -87,82 +85,127 @@ export function Header({ hideLogin = false, customLogo, customTheme }: HeaderPro
           <Logo customLogo={customLogo} customColor={effectiveTheme?.primaryColor} />
 
           {/* Desktop Navigation */}
-          <div className="ml-6 flex-1 hidden lg:block">
-            <MainNavigation />
-          </div>
-
-          {/* Services Dropdown */}
-          <div className="hidden lg:block ml-4">
-            <DropdownMenu>
-              <DropdownMenuTrigger asChild>
-                <Button 
-                  variant="ghost" 
-                  className="text-white hover:bg-zion-purple/20 hover:text-zion-cyan transition-colors"
-                >
-                  <Sparkles className="h-4 w-4 mr-2" />
-                  Services
-                  <ChevronDown className="h-4 w-4 ml-1" />
-                </Button>
-              </DropdownMenuTrigger>
-              <DropdownMenuContent 
-                align="center" 
-                className="w-80 bg-zion-slate-dark border-zion-purple/30 backdrop-blur-xl"
+          <nav className="hidden lg:flex ml-8 flex-1 items-center space-x-8">
+            <div className="flex items-center space-x-6">
+              <Link 
+                to="/" 
+                className="text-zion-slate-light hover:text-zion-cyan transition-colors duration-200 font-medium"
               >
-                <div className="grid grid-cols-2 gap-2 p-2">
-                  <DropdownMenuItem asChild>
-                    <Link to="/services" className="flex items-center gap-3 p-3 rounded-lg hover:bg-zion-purple/20">
-                      <div className="p-2 bg-gradient-to-br from-purple-500 to-pink-500 rounded-lg">
-                        <Sparkles className="h-4 w-4 text-white" />
+                Home
+              </Link>
+              
+              <div className="relative group">
+                <button className="flex items-center space-x-1 text-zion-slate-light hover:text-zion-cyan transition-colors duration-200 font-medium">
+                  <span>Services</span>
+                  <ChevronDown className="h-4 w-4" />
+                </button>
+                <div className="absolute top-full left-0 mt-2 w-80 bg-zion-blue-dark/95 backdrop-blur-xl border border-zion-purple/30 rounded-xl shadow-2xl shadow-zion-purple/20 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-2 group-hover:translate-y-0">
+                  <div className="p-4">
+                    <div className="grid grid-cols-2 gap-4">
+                      <div>
+                        <h3 className="text-zion-cyan font-semibold mb-3 flex items-center">
+                          <Zap className="h-4 w-4 mr-2" />
+                          Core Services
+                        </h3>
+                        <div className="space-y-2">
+                          <Link to="/services" className="block text-zion-slate-light hover:text-zion-cyan transition-colors text-sm">
+                            IT & AI Services
+                          </Link>
+                          <Link to="/it-onsite-services" className="block text-zion-slate-light hover:text-zion-cyan transition-colors text-sm">
+                            Onsite Services
+                          </Link>
+                          <Link to="/equipment" className="block text-zion-slate-light hover:text-zion-cyan transition-colors text-sm">
+                            Equipment
+                          </Link>
+                        </div>
                       </div>
                       <div>
-                        <div className="font-medium text-white">All Services</div>
-                        <div className="text-sm text-zion-slate-light">Complete service catalog</div>
+                        <h3 className="text-zion-purple font-semibold mb-3 flex items-center">
+                          <Sparkles className="h-4 w-4 mr-2" />
+                          Micro SAAS
+                        </h3>
+                        <div className="space-y-2">
+                          <Link to="/micro-saas-services" className="block text-zion-slate-light hover:text-zion-cyan transition-colors text-sm">
+                            All Services
+                          </Link>
+                          <Link to="/micro-saas-services?category=AI" className="block text-zion-slate-light hover:text-zion-cyan transition-colors text-sm">
+                            AI Solutions
+                          </Link>
+                          <Link to="/micro-saas-services?category=IT" className="block text-zion-slate-light hover:text-zion-cyan transition-colors text-sm">
+                            IT Solutions
+                          </Link>
+                        </div>
                       </div>
-                    </Link>
-                  </DropdownMenuItem>
-                  
-                  <DropdownMenuItem asChild>
-                    <Link to="/services?category=AI Services" className="flex items-center gap-3 p-3 rounded-lg hover:bg-zion-purple/20">
-                      <div className="p-2 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-lg">
-                        <Brain className="h-4 w-4 text-white" />
-                      </div>
-                      <div>
-                        <div className="font-medium text-white">AI Services</div>
-                        <div className="text-sm text-zion-slate-light">AI-powered solutions</div>
-                      </div>
-                    </Link>
-                  </DropdownMenuItem>
-                  
-                  <DropdownMenuItem asChild>
-                    <Link to="/services?category=IT Services" className="flex items-center gap-3 p-3 rounded-lg hover:bg-zion-purple/20">
-                      <div className="p-2 bg-gradient-to-br from-green-500 to-emerald-500 rounded-lg">
-                        <Settings className="h-4 w-4 text-white" />
-                      </div>
-                      <div>
-                        <div className="font-medium text-white">IT Services</div>
-                        <div className="text-sm text-zion-slate-light">Technical support & solutions</div>
-                      </div>
-                    </Link>
-                  </DropdownMenuItem>
-                  
-                  <DropdownMenuItem asChild>
-                    <Link to="/services?category=Micro SAAS" className="flex items-center gap-3 p-3 rounded-lg hover:bg-zion-purple/20">
-                      <div className="p-2 bg-gradient-to-br from-orange-500 to-red-500 rounded-lg">
-                        <Building className="h-4 w-4 text-white" />
-                      </div>
-                      <div>
-                        <div className="font-medium text-white">Micro SAAS</div>
-                        <div className="text-sm text-zion-slate-light">Business software solutions</div>
-                      </div>
-                    </Link>
-                  </DropdownMenuItem>
+                    </div>
+                  </div>
                 </div>
-              </DropdownMenuContent>
-            </DropdownMenu>
-          </div>
+              </div>
+
+              <div className="relative group">
+                <button className="flex items-center space-x-1 text-zion-slate-light hover:text-zion-cyan transition-colors duration-200 font-medium">
+                  <span>Solutions</span>
+                  <ChevronDown className="h-4 w-4" />
+                </button>
+                <div className="absolute top-full left-0 mt-2 w-80 bg-zion-blue-dark/95 backdrop-blur-xl border border-zion-purple/30 rounded-xl shadow-2xl shadow-zion-purple/20 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-2 group-hover:translate-y-0">
+                  <div className="p-4">
+                    <div className="grid grid-cols-2 gap-4">
+                      <div>
+                        <h3 className="text-zion-cyan font-semibold mb-3 flex items-center">
+                          <Brain className="h-4 w-4 mr-2" />
+                          AI & Tech
+                        </h3>
+                        <div className="space-y-2">
+                          <Link to="/zion-hire-ai" className="block text-zion-slate-light hover:text-zion-cyan transition-colors text-sm">
+                            Zion Hire AI
+                          </Link>
+                          <Link to="/match" className="block text-zion-slate-light hover:text-zion-cyan transition-colors text-sm">
+                            AI Matcher
+                          </Link>
+                          <Link to="/talent" className="block text-zion-slate-light hover:text-zion-cyan transition-colors text-sm">
+                            Talent Directory
+                          </Link>
+                        </div>
+                      </div>
+                      <div>
+                        <h3 className="text-zion-purple font-semibold mb-3 flex items-center">
+                          <Shield className="h-4 w-4 mr-2" />
+                          Enterprise
+                        </h3>
+                        <div className="space-y-2">
+                          <Link to="/enterprise" className="block text-zion-slate-light hover:text-zion-cyan transition-colors text-sm">
+                            Enterprise Solutions
+                          </Link>
+                          <Link to="/partners" className="block text-zion-slate-light hover:text-zion-cyan transition-colors text-sm">
+                            Partnerships
+                          </Link>
+                          <Link to="/request-quote" className="block text-zion-slate-light hover:text-zion-cyan transition-colors text-sm">
+                            Get Quote
+                          </Link>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <Link 
+                to="/community" 
+                className="text-zion-slate-light hover:text-zion-cyan transition-colors duration-200 font-medium"
+              >
+                Community
+              </Link>
+              
+              <Link 
+                to="/blog" 
+                className="text-zion-slate-light hover:text-zion-cyan transition-colors duration-200 font-medium"
+              >
+                Blog
+              </Link>
+            </div>
+          </nav>
 
           {/* Search Bar */}
-          <form onSubmit={handleSubmit} className="hidden md:block w-64 mx-4">
+          <form onSubmit={handleSubmit} className="hidden md:block w-80 mx-6">
             <EnhancedSearchInput
               value={query}
               onChange={setQuery}
@@ -175,7 +218,7 @@ export function Header({ hideLogin = false, customLogo, customTheme }: HeaderPro
           </form>
 
           {/* Right Side Actions */}
-          <div className="flex items-center gap-2">
+          <div className="flex items-center gap-3">
             <LanguageSelector />
             {!hideLogin && <UserMenu />}
             
@@ -183,166 +226,115 @@ export function Header({ hideLogin = false, customLogo, customTheme }: HeaderPro
             <Button
               variant="ghost"
               size="sm"
-              className="lg:hidden text-white hover:bg-zion-purple/20 hover:text-zion-cyan"
+              className="lg:hidden p-2 text-zion-slate-light hover:text-zion-cyan hover:bg-zion-purple/10"
               onClick={toggleMobileMenu}
             >
-              {isMobileMenuOpen ? (
-                <X className="h-5 w-5" />
-              ) : (
-                <Menu className="h-5 w-5" />
-              )}
+              {isMobileMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
             </Button>
           </div>
         </div>
 
-        {/* Mobile Menu */}
-        {isMobileMenuOpen && (
-          <div className="lg:hidden border-t border-zion-purple/20 bg-zion-slate-dark/95 backdrop-blur-xl">
-            <div className="container px-4 py-4">
-              {/* Mobile Search */}
-              <form onSubmit={handleSubmit} className="mb-4">
-                <EnhancedSearchInput
-                  value={query}
-                  onChange={setQuery}
-                  onSelectSuggestion={(text) => {
-                    navigate(`/search?q=${encodeURIComponent(text)}`);
-                    setQuery("");
-                    setIsMobileMenuOpen(false);
-                  }}
-                  searchSuggestions={searchSuggestions}
-                />
-              </form>
+        {/* Mobile Search Bar */}
+        <div className="lg:hidden border-t border-zion-purple/20 bg-zion-blue-dark/50">
+          <div className="container px-4 py-3">
+            <form onSubmit={handleSubmit}>
+              <EnhancedSearchInput
+                value={query}
+                onChange={setQuery}
+                onSelectSuggestion={(text) => {
+                  navigate(`/search?q=${encodeURIComponent(text)}`);
+                  setQuery("");
+                  closeMobileMenu();
+                }}
+                searchSuggestions={searchSuggestions}
+              />
+            </form>
+          </div>
+        </div>
+      </header>
 
-              {/* Mobile Navigation */}
-              <nav className="space-y-2">
-                <Link
-                  to="/"
-                  className="block px-3 py-2 text-white hover:bg-zion-purple/20 hover:text-zion-cyan rounded-lg transition-colors"
-                  onClick={() => setIsMobileMenuOpen(false)}
+      {/* Mobile Navigation Menu */}
+      {isMobileMenuOpen && (
+        <div className="lg:hidden fixed inset-0 z-40 bg-black/50 backdrop-blur-sm">
+          <div className="fixed inset-y-0 right-0 w-80 bg-zion-blue-dark/95 backdrop-blur-xl border-l border-zion-purple/30 shadow-2xl shadow-zion-purple/20">
+            <div className="flex flex-col h-full">
+              <div className="flex items-center justify-between p-4 border-b border-zion-purple/20">
+                <h2 className="text-xl font-semibold text-white">Menu</h2>
+                <Button
+                  variant="ghost"
+                  size="sm"
+                  onClick={closeMobileMenu}
+                  className="text-zion-slate-light hover:text-zion-cyan"
                 >
-                  Home
-                </Link>
-                
-                <Link
-                  to="/services"
-                  className="block px-3 py-2 text-white hover:bg-zion-purple/20 hover:text-zion-cyan rounded-lg transition-colors"
-                  onClick={() => setIsMobileMenuOpen(false)}
-                >
-                  All Services
-                </Link>
-                
-                <Link
-                  to="/marketplace"
-                  className="block px-3 py-2 text-white hover:bg-zion-purple/20 hover:text-zion-cyan rounded-lg transition-colors"
-                  onClick={() => setIsMobileMenuOpen(false)}
-                >
-                  Marketplace
-                </Link>
-                
-                <Link
-                  to="/talent"
-                  className="block px-3 py-2 text-white hover:bg-zion-purple/20 hover:text-zion-cyan rounded-lg transition-colors"
-                  onClick={() => setIsMobileMenuOpen(false)}
-                >
-                  Talent
-                </Link>
-                
-                <Link
-                  to="/equipment"
-                  className="block px-3 py-2 text-white hover:bg-zion-purple/20 hover:text-zion-cyan rounded-lg transition-colors"
-                  onClick={() => setIsMobileMenuOpen(false)}
-                >
-                  Equipment
-                </Link>
-                
-                <Link
-                  to="/community"
-                  className="block px-3 py-2 text-white hover:bg-zion-purple/20 hover:text-zion-cyan rounded-lg transition-colors"
-                  onClick={() => setIsMobileMenuOpen(false)}
-                >
-                  Community
-                </Link>
-                
-                <Link
-                  to="/contact"
-                  className="block px-3 py-2 text-white hover:bg-zion-purple/20 hover:text-zion-cyan rounded-lg transition-colors"
-                  onClick={() => setIsMobileMenuOpen(false)}
-                >
-                  Contact
-                </Link>
+                  <X className="h-5 w-5" />
+                </Button>
+              </div>
+              
+              <nav className="flex-1 p-4 space-y-6">
+                <div>
+                  <h3 className="text-zion-cyan font-semibold mb-3">Services</h3>
+                  <div className="space-y-2 ml-4">
+                    <Link to="/services" onClick={closeMobileMenu} className="block text-zion-slate-light hover:text-zion-cyan transition-colors">
+                      IT & AI Services
+                    </Link>
+                    <Link to="/micro-saas-services" onClick={closeMobileMenu} className="block text-zion-slate-light hover:text-zion-cyan transition-colors">
+                      Micro SAAS Services
+                    </Link>
+                    <Link to="/it-onsite-services" onClick={closeMobileMenu} className="block text-zion-slate-light hover:text-zion-cyan transition-colors">
+                      Onsite Services
+                    </Link>
+                    <Link to="/equipment" onClick={closeMobileMenu} className="block text-zion-slate-light hover:text-zion-cyan transition-colors">
+                      Equipment
+                    </Link>
+                  </div>
+                </div>
+
+                <div>
+                  <h3 className="text-zion-purple font-semibold mb-3">Solutions</h3>
+                  <div className="space-y-2 ml-4">
+                    <Link to="/zion-hire-ai" onClick={closeMobileMenu} className="block text-zion-slate-light hover:text-zion-cyan transition-colors">
+                      Zion Hire AI
+                    </Link>
+                    <Link to="/match" onClick={closeMobileMenu} className="block text-zion-slate-light hover:text-zion-cyan transition-colors">
+                      AI Matcher
+                    </Link>
+                    <Link to="/talent" onClick={closeMobileMenu} className="block text-zion-slate-light hover:text-zion-cyan transition-colors">
+                      Talent Directory
+                    </Link>
+                    <Link to="/enterprise" onClick={closeMobileMenu} className="block text-zion-slate-light hover:text-zion-cyan transition-colors">
+                      Enterprise
+                    </Link>
+                  </div>
+                </div>
+
+                <div>
+                  <h3 className="text-zion-cyan font-semibold mb-3">Company</h3>
+                  <div className="space-y-2 ml-4">
+                    <Link to="/community" onClick={closeMobileMenu} className="block text-zion-slate-light hover:text-zion-cyan transition-colors">
+                      Community
+                    </Link>
+                    <Link to="/blog" onClick={closeMobileMenu} className="block text-zion-slate-light hover:text-zion-cyan transition-colors">
+                      Blog
+                    </Link>
+                    <Link to="/partners" onClick={closeMobileMenu} className="block text-zion-slate-light hover:text-zion-cyan transition-colors">
+                      Partners
+                    </Link>
+                    <Link to="/contact" onClick={closeMobileMenu} className="block text-zion-slate-light hover:text-zion-cyan transition-colors">
+                      Contact
+                    </Link>
+                  </div>
+                </div>
               </nav>
 
-              {/* Mobile Services Quick Links */}
-              <div className="mt-6 pt-4 border-t border-zion-purple/20">
-                <h4 className="text-sm font-medium text-zion-cyan mb-3 px-3">Quick Services</h4>
-                <div className="grid grid-cols-2 gap-2">
-                  <Link
-                    to="/services?category=AI Services"
-                    className="flex items-center gap-2 px-3 py-2 text-sm text-zion-slate-light hover:bg-zion-purple/20 hover:text-zion-cyan rounded-lg transition-colors"
-                    onClick={() => setIsMobileMenuOpen(false)}
-                  >
-                    <Brain className="h-4 w-4" />
-                    AI Services
-                  </Link>
-                  
-                  <Link
-                    to="/services?category=IT Services"
-                    className="flex items-center gap-2 px-3 py-2 text-sm text-zion-slate-light hover:bg-zion-purple/20 hover:text-zion-cyan rounded-lg transition-colors"
-                    onClick={() => setIsMobileMenuOpen(false)}
-                  >
-                    <Settings className="h-4 w-4" />
-                    IT Services
-                  </Link>
-                  
-                  <Link
-                    to="/services?category=Micro SAAS"
-                    className="flex items-center gap-2 px-3 py-2 text-sm text-zion-slate-light hover:bg-zion-purple/20 hover:text-zion-cyan rounded-lg transition-colors"
-                    onClick={() => setIsMobileMenuOpen(false)}
-                  >
-                    <Building className="h-4 w-4" />
-                    Micro SAAS
-                  </Link>
-                  
-                  <Link
-                    to="/services?category=Development"
-                    className="flex items-center gap-2 px-3 py-2 text-sm text-zion-slate-light hover:bg-zion-purple/20 hover:text-zion-cyan rounded-lg transition-colors"
-                    onClick={() => setIsMobileMenuOpen(false)}
-                  >
-                    <Code className="h-4 w-4" />
-                    Development
-                  </Link>
-                </div>
+              <div className="p-4 border-t border-zion-purple/20">
+                <Button className="w-full bg-zion-cyan text-zion-slate hover:bg-zion-cyan/90">
+                  Get Started
+                </Button>
               </div>
             </div>
           </div>
-        )}
-      </header>
+        </div>
+      )}
     </>
   );
 }
-
-// Missing icon components
-const Brain = ({ className, ...props }: any) => (
-  <svg className={className} fill="none" stroke="currentColor" viewBox="0 0 24 24" {...props}>
-    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
-  </svg>
-);
-
-const Settings = ({ className, ...props }: any) => (
-  <svg className={className} fill="none" stroke="currentColor" viewBox="0 0 24 24" {...props}>
-    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
-    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-  </svg>
-);
-
-const Building = ({ className, ...props }: any) => (
-  <svg className={className} fill="none" stroke="currentColor" viewBox="0 0 24 24" {...props}>
-    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
-  </svg>
-);
-
-const Code = ({ className, ...props }: any) => (
-  <svg className={className} fill="none" stroke="currentColor" viewBox="0 0 24 24" {...props}>
-    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
-  </svg>
-);

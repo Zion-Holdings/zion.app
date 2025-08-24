@@ -1,218 +1,178 @@
 import React from 'react';
-import { Button } from '@/components/ui/button';
-import { Badge } from '@/components/ui/badge';
-import { Link } from 'react-router-dom';
+import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
 import { 
   ArrowRight, 
   Play, 
   Sparkles, 
   Zap, 
   Brain, 
-  Shield,
-  TrendingUp,
+  Shield, 
+  Globe, 
+  ChevronDown,
+  Star,
   Users,
-  Star
-} from 'lucide-react';
+  TrendingUp
+} from "lucide-react";
 
 export function EnhancedHeroSection() {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-zion-blue-dark via-zion-slate to-zion-blue">
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-zion-blue-dark via-zion-slate to-zion-blue-dark">
       {/* Animated Background Elements */}
-      <div className="absolute inset-0 overflow-hidden">
-        {/* Floating Orbs */}
-        <div className="absolute top-20 left-20 w-72 h-72 bg-zion-purple/20 rounded-full filter blur-3xl animate-pulse float"></div>
-        <div className="absolute bottom-20 right-20 w-96 h-96 bg-zion-cyan/20 rounded-full filter blur-3xl animate-pulse float" style={{ animationDelay: '2s' }}></div>
-        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-zion-blue/20 rounded-full filter blur-3xl animate-pulse float" style={{ animationDelay: '4s' }}></div>
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        {/* Floating geometric shapes */}
+        <div className="absolute top-20 left-10 w-32 h-32 bg-zion-cyan/10 rounded-full animate-float"></div>
+        <div className="absolute top-40 right-20 w-24 h-24 bg-zion-purple/10 rounded-full animate-float delay-1000"></div>
+        <div className="absolute bottom-20 left-1/4 w-20 h-20 bg-zion-blue/10 rounded-full animate-float delay-2000"></div>
         
-        {/* Grid Pattern */}
-        <div className="absolute inset-0 bg-[linear-gradient(rgba(34,221,210,0.1)_1px,transparent_1px),linear-gradient(90deg,rgba(34,221,210,0.1)_1px,transparent_1px)] bg-[size:50px_50px] opacity-20"></div>
+        {/* Cyber grid overlay */}
+        <div className="absolute inset-0 cyber-grid opacity-20"></div>
         
-        {/* Animated Lines */}
+        {/* Animated lines */}
         <div className="absolute top-0 left-0 w-full h-full">
           <div className="absolute top-1/4 left-0 w-full h-px bg-gradient-to-r from-transparent via-zion-cyan to-transparent animate-pulse"></div>
-          <div className="absolute top-3/4 left-0 w-full h-px bg-gradient-to-r from-transparent via-zion-purple to-transparent animate-pulse" style={{ animationDelay: '1s' }}></div>
+          <div className="absolute top-1/2 left-0 w-full h-px bg-gradient-to-r from-transparent via-zion-purple to-transparent animate-pulse delay-1000"></div>
+          <div className="absolute top-3/4 left-0 w-full h-px bg-gradient-to-r from-transparent via-zion-blue to-transparent animate-pulse delay-2000"></div>
         </div>
       </div>
 
-      <div className="container mx-auto px-4 relative z-10">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
-          {/* Left Content */}
-          <div className="text-center lg:text-left space-y-8">
-            {/* Badges */}
-            <div className="flex flex-wrap justify-center lg:justify-start gap-3">
-              <Badge className="bg-zion-purple/20 text-zion-cyan border-zion-purple/30 px-4 py-2 text-sm animate-pulse">
-                <Sparkles className="w-4 h-4 mr-2" />
-                New Micro SAAS Services
-              </Badge>
-              <Badge className="bg-zion-cyan/20 text-white border-zion-cyan/30 px-4 py-2 text-sm">
-                <Brain className="w-4 h-4 mr-2" />
-                AI-Powered Solutions
-              </Badge>
-              <Badge className="bg-zion-blue/20 text-zion-cyan border-zion-blue/30 px-4 py-2 text-sm">
-                <Shield className="w-4 h-4 mr-2" />
-                Enterprise Grade
-              </Badge>
-            </div>
+      {/* Main Content */}
+      <div className="relative z-10 container mx-auto px-4 text-center">
+        {/* Badge */}
+        <div className="inline-flex items-center gap-2 bg-zion-cyan/10 text-zion-cyan px-6 py-3 rounded-full text-sm font-medium mb-8 border border-zion-cyan/20 hover:border-zion-cyan/40 transition-all duration-300 hover:bg-zion-cyan/20">
+          <Sparkles className="h-4 w-4 animate-pulse" />
+          <span className="neon-text">New Micro SAAS Services Available</span>
+        </div>
 
-            {/* Main Heading */}
-            <div className="space-y-6">
-              <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight">
-                <span className="block text-white mb-2">Transform Your</span>
-                <span className="block bg-gradient-to-r from-zion-cyan via-zion-purple to-zion-blue bg-clip-text text-transparent neon-pulse">
-                  Business with AI
-                </span>
-              </h1>
-              
-              <p className="text-xl md:text-2xl text-zion-slate-light max-w-2xl mx-auto lg:mx-0 leading-relaxed">
-                Discover cutting-edge micro SAAS services, IT solutions, and intelligent automation tools designed to drive innovation and growth.
-              </p>
-            </div>
+        {/* Main Heading */}
+        <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight mb-8">
+          <span className="block bg-gradient-to-r from-zion-cyan via-zion-purple to-zion-blue bg-clip-text text-transparent neon-pulse">
+            ZION
+          </span>
+          <span className="block text-2xl md:text-4xl lg:text-5xl text-white mt-4 font-normal">
+            The Future of Tech & AI
+          </span>
+        </h1>
 
-            {/* Stats */}
-            <div className="grid grid-cols-3 gap-6 max-w-md mx-auto lg:mx-0">
-              <div className="text-center">
-                <div className="text-2xl font-bold text-zion-cyan mb-1">50+</div>
-                <div className="text-sm text-zion-slate-light">AI Services</div>
-              </div>
-              <div className="text-center">
-                <div className="text-2xl font-bold text-zion-purple mb-1">1000+</div>
-                <div className="text-sm text-zion-slate-light">Happy Clients</div>
-              </div>
-              <div className="text-center">
-                <div className="text-2xl font-bold text-zion-blue mb-1">99.9%</div>
-                <div className="text-sm text-zion-slate-light">Uptime</div>
-              </div>
-            </div>
+        {/* Subtitle */}
+        <p className="text-xl md:text-2xl lg:text-3xl text-zion-slate-light mb-12 max-w-5xl mx-auto leading-relaxed">
+          Discover the world's most comprehensive marketplace for AI talent, micro SAAS services, 
+          and cutting-edge technology solutions. Transform your business with our innovative platform.
+        </p>
 
-            {/* CTA Buttons */}
-            <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-              <Button 
-                size="lg" 
-                className="bg-gradient-to-r from-zion-purple to-zion-purple-dark hover:from-zion-purple-light hover:to-zion-purple text-white px-8 py-4 text-lg font-semibold hover:scale-105 transition-all duration-300 neon-glow"
-                asChild
-              >
-                <Link to="/micro-saas-services">
-                  Explore Services <ArrowRight className="ml-2 h-5 w-5" />
-                </Link>
-              </Button>
-              <Button 
-                variant="outline" 
-                size="lg"
-                className="border-zion-cyan text-zion-cyan hover:bg-zion-cyan/10 px-8 py-4 text-lg font-semibold hover:scale-105 transition-all duration-300"
-                asChild
-              >
-                <Link to="/contact">
-                  <Play className="mr-2 h-5 w-5" />
-                  Watch Demo
-                </Link>
-              </Button>
-            </div>
+        {/* CTA Buttons */}
+        <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16">
+          <Button 
+            asChild 
+            size="lg" 
+            className="bg-gradient-to-r from-zion-cyan to-zion-blue hover:from-zion-cyan/90 hover:to-zion-blue/90 text-zion-slate font-semibold px-8 py-6 text-lg hover-lift hover-glow transition-all duration-300"
+          >
+            <Link to="/micro-saas-services">
+              <Zap className="h-6 w-6 mr-3" />
+              Explore Services
+              <ArrowRight className="h-6 w-6 ml-3 group-hover:translate-x-1 transition-transform" />
+            </Link>
+          </Button>
+          
+          <Button 
+            asChild 
+            size="lg" 
+            variant="outline" 
+            className="border-2 border-zion-purple text-zion-purple hover:bg-zion-purple hover:text-white font-semibold px-8 py-6 text-lg hover-lift transition-all duration-300"
+          >
+            <Link to="/request-quote">
+              <Users className="h-6 w-6 mr-3" />
+              Get Started
+            </Link>
+          </Button>
+        </div>
 
-            {/* Trust Indicators */}
-            <div className="pt-8">
-              <p className="text-zion-slate-light text-sm mb-4">Trusted by leading companies worldwide</p>
-              <div className="flex items-center justify-center lg:justify-start gap-6 opacity-60">
-                <div className="flex items-center gap-1">
-                  <Star className="h-4 w-4 text-yellow-400 fill-current" />
-                  <span className="text-white text-sm">4.9/5 Rating</span>
-                </div>
-                <div className="flex items-center gap-1">
-                  <Users className="h-4 w-4 text-zion-cyan" />
-                  <span className="text-white text-sm">10K+ Users</span>
-                </div>
-                <div className="flex items-center gap-1">
-                  <TrendingUp className="h-4 w-4 text-green-400" />
-                  <span className="text-white text-sm">24/7 Support</span>
-                </div>
-              </div>
+        {/* Stats Section */}
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-16">
+          <div className="text-center group">
+            <div className="text-3xl md:text-4xl font-bold text-zion-cyan mb-2 group-hover:scale-110 transition-transform duration-300">
+              500+
             </div>
+            <div className="text-zion-slate-light text-sm md:text-base">Micro SAAS Services</div>
           </div>
+          <div className="text-center group">
+            <div className="text-3xl md:text-4xl font-bold text-zion-purple mb-2 group-hover:scale-110 transition-transform duration-300">
+              10K+
+            </div>
+            <div className="text-zion-slate-light text-sm md:text-base">AI Professionals</div>
+          </div>
+          <div className="text-center group">
+            <div className="text-3xl md:text-4xl font-bold text-zion-blue mb-2 group-hover:scale-110 transition-transform duration-300">
+              99.9%
+            </div>
+            <div className="text-zion-slate-light text-sm md:text-base">Uptime Guarantee</div>
+          </div>
+          <div className="text-center group">
+            <div className="text-3xl md:text-4xl font-bold text-zion-cyan mb-2 group-hover:scale-110 transition-transform duration-300">
+              24/7
+            </div>
+            <div className="text-zion-slate-light text-sm md:text-base">Support Available</div>
+          </div>
+        </div>
 
-          {/* Right Content - 3D Cards */}
-          <div className="relative hidden lg:block">
-            <div className="relative space-y-6">
-              {/* Main Service Card */}
-              <div className="relative transform rotate-3 hover:rotate-0 transition-transform duration-500">
-                <div className="bg-zion-blue-dark/80 backdrop-blur-sm border border-zion-purple/50 rounded-2xl p-6 shadow-2xl shadow-zion-purple/20 hover:shadow-zion-purple/40 transition-all duration-500 hover:scale-105">
-                  <div className="flex items-center gap-3 mb-4">
-                    <div className="w-12 h-12 bg-gradient-to-br from-zion-purple to-zion-cyan rounded-full flex items-center justify-center">
-                      <Brain className="w-6 h-6 text-white" />
-                    </div>
-                    <div>
-                      <h3 className="text-white font-bold">AI Chatbot Builder</h3>
-                      <p className="text-zion-slate-light text-sm">No-code AI solutions</p>
-                    </div>
-                  </div>
-                  <div className="space-y-2">
-                    <div className="flex items-center gap-2 text-sm">
-                      <div className="w-2 h-2 bg-zion-cyan rounded-full"></div>
-                      <span className="text-zion-slate-light">Advanced NLP</span>
-                    </div>
-                    <div className="flex items-center gap-2 text-sm">
-                      <div className="w-2 h-2 bg-zion-purple rounded-full"></div>
-                      <span className="text-zion-slate-light">Multi-language</span>
-                    </div>
-                    <div className="flex items-center gap-2 text-sm">
-                      <div className="w-2 h-2 bg-zion-blue rounded-full"></div>
-                      <span className="text-zion-slate-light">Analytics Dashboard</span>
-                    </div>
-                  </div>
-                  <div className="mt-4 pt-4 border-t border-zion-purple/20">
-                    <div className="flex items-center justify-between">
-                      <span className="text-zion-cyan font-bold">$299/mo</span>
-                      <Badge className="bg-zion-purple/20 text-zion-cyan border-zion-purple/30">
-                        Popular
-                      </Badge>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              {/* Secondary Service Card */}
-              <div className="relative transform -rotate-3 hover:rotate-0 transition-transform duration-500 ml-12">
-                <div className="bg-zion-blue-dark/60 backdrop-blur-sm border border-zion-cyan/50 rounded-2xl p-6 shadow-2xl shadow-zion-cyan/20 hover:shadow-zion-cyan/40 transition-all duration-500 hover:scale-105">
-                  <div className="flex items-center gap-3 mb-4">
-                    <div className="w-12 h-12 bg-gradient-to-br from-zion-cyan to-zion-blue rounded-full flex items-center justify-center">
-                      <Shield className="w-6 h-6 text-white" />
-                    </div>
-                    <div>
-                      <h3 className="text-white font-bold">Cybersecurity Audit</h3>
-                      <p className="text-zion-slate-light text-sm">Complete security assessment</p>
-                    </div>
-                  </div>
-                  <div className="space-y-2">
-                    <div className="flex items-center gap-2 text-sm">
-                      <div className="w-2 h-2 bg-zion-cyan rounded-full"></div>
-                      <span className="text-zion-slate-light">Penetration Testing</span>
-                    </div>
-                    <div className="flex items-center gap-2 text-sm">
-                      <div className="w-2 h-2 bg-zion-blue rounded-full"></div>
-                      <span className="text-zion-slate-light">Compliance Review</span>
-                    </div>
-                  </div>
-                  <div className="mt-4 pt-4 border-t border-zion-cyan/20">
-                    <div className="flex items-center justify-between">
-                      <span className="text-zion-cyan font-bold">$3,500</span>
-                      <Badge className="bg-zion-cyan/20 text-white border-zion-cyan/30">
-                        One-time
-                      </Badge>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              {/* Floating Elements */}
-              <div className="absolute -top-10 -right-10 w-20 h-20 bg-zion-purple/30 rounded-full animate-pulse"></div>
-              <div className="absolute -bottom-10 -left-10 w-16 h-16 bg-zion-cyan/30 rounded-full animate-pulse" style={{ animationDelay: '2s' }}></div>
+        {/* Service Categories Preview */}
+        <div className="mb-16">
+          <h3 className="text-2xl font-semibold text-white mb-8">Our Service Categories</h3>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto">
+            <div className="group p-4 rounded-lg bg-zion-blue-dark/30 hover:bg-zion-cyan/20 transition-all duration-300 hover:scale-105 border border-zion-blue-light/20 hover:border-zion-cyan/50">
+              <Brain className="h-8 w-8 text-zion-cyan mx-auto mb-2 group-hover:scale-110 transition-transform" />
+              <span className="text-zion-slate-light text-sm text-center block group-hover:text-zion-cyan transition-colors">AI Services</span>
+            </div>
+            <div className="group p-4 rounded-lg bg-zion-blue-dark/30 hover:bg-zion-cyan/20 transition-all duration-300 hover:scale-105 border border-zion-blue-light/20 hover:border-zion-cyan/50">
+              <Shield className="h-8 w-8 text-zion-cyan mx-auto mb-2 group-hover:scale-110 transition-transform" />
+              <span className="text-zion-slate-light text-sm text-center block group-hover:text-zion-cyan transition-colors">IT Solutions</span>
+            </div>
+            <div className="group p-4 rounded-lg bg-zion-blue-dark/30 hover:bg-zion-cyan/20 transition-all duration-300 hover:scale-105 border border-zion-blue-light/20 hover:border-zion-cyan/50">
+              <Zap className="h-8 w-8 text-zion-cyan mx-auto mb-2 group-hover:scale-110 transition-transform" />
+              <span className="text-zion-slate-light text-sm text-center block group-hover:text-zion-cyan transition-colors">Automation</span>
+            </div>
+            <div className="group p-4 rounded-lg bg-zion-blue-dark/30 hover:bg-zion-cyan/20 transition-all duration-300 hover:scale-105 border border-zion-blue-light/20 hover:border-zion-cyan/50">
+              <Globe className="h-8 w-8 text-zion-cyan mx-auto mb-2 group-hover:scale-110 transition-transform" />
+              <span className="text-zion-slate-light text-sm text-center block group-hover:text-zion-cyan transition-colors">Integration</span>
             </div>
           </div>
         </div>
+
+        {/* Trust Indicators */}
+        <div className="mb-16">
+          <p className="text-zion-slate-light mb-6">Trusted by leading companies worldwide</p>
+          <div className="flex flex-wrap justify-center items-center gap-8 opacity-60">
+            <div className="text-zion-cyan font-bold text-xl">TechCorp</div>
+            <div className="text-zion-purple font-bold text-xl">InnovateAI</div>
+            <div className="text-zion-blue font-bold text-xl">DataFlow</div>
+            <div className="text-zion-cyan font-bold text-xl">CloudTech</div>
+          </div>
+        </div>
+
+        {/* Scroll Indicator */}
+        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+          <ChevronDown className="h-6 w-6 text-zion-cyan" />
+        </div>
       </div>
 
-      {/* Scroll Indicator */}
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-        <div className="w-6 h-10 border-2 border-zion-cyan rounded-full flex justify-center">
-          <div className="w-1 h-3 bg-zion-cyan rounded-full mt-2 animate-pulse"></div>
+      {/* Floating Action Cards */}
+      <div className="absolute top-1/4 right-8 hidden lg:block">
+        <div className="glass-effect p-4 rounded-lg border border-zion-cyan/20 hover:border-zion-cyan/50 transition-all duration-300 hover:scale-105">
+          <div className="flex items-center gap-3">
+            <div className="w-3 h-3 bg-zion-cyan rounded-full animate-pulse"></div>
+            <span className="text-zion-cyan text-sm font-medium">Live AI Matching</span>
+          </div>
+          <div className="text-white text-xs mt-2">Currently processing 1,247 matches</div>
+        </div>
+      </div>
+
+      <div className="absolute bottom-1/4 left-8 hidden lg:block">
+        <div className="glass-effect p-4 rounded-lg border border-zion-purple/20 hover:border-zion-purple/50 transition-all duration-300 hover:scale-105">
+          <div className="flex items-center gap-3">
+            <Star className="h-4 w-4 text-zion-purple" />
+            <span className="text-zion-purple text-sm font-medium">New Services</span>
+          </div>
+          <div className="text-white text-xs mt-2">12 new micro SAAS services added this week</div>
         </div>
       </div>
     </section>
