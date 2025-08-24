@@ -1,0 +1,29 @@
+name: Autonomous Advertise & Sync
+
+on:
+  schedule:
+    - cron: '0 7 * * *'
+  workflow_dispatch:
+
+jobs:
+  advertise:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - run: npm ci
+      - name: Ensure homepage includes Autonomous section
+        run: |
+          grep -q "Autonomous Cloud Automations" pages/index.tsx && echo "Homepage OK" || (echo "Homepage missing; failing" && exit 1)
+      - name: Commit no-op to trigger deployments if needed
+        run: |
+          git config user.name "github-actions"
+          git config user.email "github-actions@users.noreply.github.com"
+          echo "last-run: $(date -u +%FT%TZ)" > .autonomous-last-run
+          git add .autonomous-last-run
+          git commit -m "chore(autonomous): daily advertise & sync marker [skip ci]" || echo "No changes"
+          git push || echo "No push"

@@ -1,0 +1,70 @@
+import type { NextPage } from 'next';
+import Head from 'next/head';
+
+const ServicesIndex: NextPage = () => {
+  const serviceCategories = [
+    {
+      title: "AI & Machine Learning Services",
+      description: "Cutting-edge artificial intelligence solutions for modern businesses",
+      services: [
+        { name: "AI Model Development", href: "/services/ai-model-development", price: "$5,000 - $50,000", description: "Custom AI models and machine learning solutions" },
+        { name: "Business Intelligence", href: "/services/business-intelligence", price: "$3,000 - $25,000", description: "Data analytics and business intelligence platforms" },
+        { name: "Data Analytics", href: "/services/data-analytics", price: "$2,500 - $20,000", description: "Advanced data analytics and visualization solutions" },
+        { name: "Data Pipeline Engineering", href: "/services/data-pipeline-engineering", price: "$4,000 - $35,000", description: "Scalable data processing and ETL pipelines" }
+      ]
+    },
+    {
+      title: "Cloud & Infrastructure Services",
+      description: "Scalable cloud solutions and infrastructure management",
+      services: [
+        { name: "Cloud Migration Services", href: "/services/cloud-migration-services", price: "$10,000 - $100,000", description: "Seamless cloud migration and optimization" },
+        { name: "Cloud Services", href: "/services/cloud-services", price: "$5,000 - $75,000", description: "Multi-cloud management and optimization" },
+        { name: "System Administration", href: "/services/system-administration", price: "$3,000 - $25,000", description: "24/7 system monitoring and management" },
+        { name: "Performance Optimization", href: "/services/performance-optimization", price: "$2,500 - $20,000", description: "Application and infrastructure performance tuning" }
+      ]
+    },
+    {
+      title: "Development & Engineering Services",
+      description: "Full-stack development and engineering solutions",
+      services: [
+        { name: "Web Application Development", href: "/services/web-application-development", price: "$8,000 - $80,000", description: "Custom web applications and platforms" },
+        { name: "Mobile App Development", href: "/services/mobile-app-development", price: "$10,000 - $100,000", description: "iOS and Android mobile applications" },
+        { name: "API Development", href: "/services/api-development", price: "$3,000 - $30,000", description: "RESTful APIs and microservices" },
+        { name: "Database Design", href: "/services/database-design", price: "$2,500 - $25,000", description: "Database architecture and optimization" }
+      ]
+    },
+    {
+      title: "Security & Quality Services",
+      description: "Comprehensive security and quality assurance solutions",
+      services: [
+        { name: "Network Security", href: "/services/network-security", price: "$5,000 - $50,000", description: "Cybersecurity and network protection" },
+        { name: "Security Auditing", href: "/services/security-auditing", price: "$3,000 - $25,000", description: "Security assessments and compliance" },
+        { name: "Quality Assurance Testing", href: "/services/quality-assurance-testing", price: "$2,500 - $20,000", description: "Comprehensive testing and QA services" }
+      ]
+    },
+    {
+      title: "Design & User Experience",
+      description: "User-centered design and experience optimization",
+      services: [
+        { name: "UI/UX Design", href: "/services/ui-ux-design", price: "$3,000 - $30,000", description: "User interface and experience design" },
+        { name: "Technical Documentation", href: "/services/technical-documentation", price: "$1,500 - $15,000", description: "Technical writing and documentation" }
+      ]
+    }
+  ];
+
+  return (
+    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-indigo-50">
+      <Head>
+        <title>Index - Zion Tech Solutions</title>
+        <meta name="description" content="Index page" />
+      </Head>
+      
+      <main>
+        <h1>Index</h1>
+        <p>This page is under construction.</p>
+      </main>
+    </div>
+  );
+};
+
+export default Index;

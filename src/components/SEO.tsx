@@ -1,54 +1,84 @@
-
-import { Helmet } from "react-helmet-async";
+import React from 'react';
+import { Helmet } from 'react-helmet-async';
 
 interface SEOProps {
-  title: string;
-  description: string;
+  title?: string;
+  description?: string;
   keywords?: string;
-  ogImage?: string;
-  ogUrl?: string;
-  canonical?: string;
-  noindex?: boolean;
+  image?: string;
+  url?: string;
 }
 
-export function SEO({
-  title,
-  description,
-  keywords,
-  // Default to the Google Drive image URL
-  ogImage = "https://drive.google.com/uc?export=view&id=0B0iuzhpa3pD7X0RzZ2lmclN3Ymc",
-  ogUrl,
-  canonical,
-  noindex,
+export function HomePageSEO({ 
+  title = "Zion Tech Group - Professional IT Services & Solutions",
+  description = "Leading provider of AI, web development, mobile apps, cloud solutions, and cybersecurity services. Expert talent, cutting-edge technology, and innovative solutions for your business.",
+  keywords = "IT services, AI solutions, web development, mobile apps, cloud computing, cybersecurity, software development, Zion Tech Group",
+  image = "/og-image.jpg",
+  url = "https://ziontechgroup.com"
 }: SEOProps) {
-  const siteTitle = "Zion - The Future of Tech & AI Marketplace";
-  const fullTitle = title ? `${title} | ${siteTitle}` : siteTitle;
-  
   return (
     <Helmet>
-      <title>{fullTitle}</title>
+      <title>{title}</title>
       <meta name="description" content={description} />
-      {keywords && <meta name="keywords" content={keywords} />}
+      <meta name="keywords" content={keywords} />
       
-      {/* Open Graph / Facebook */}
-      <meta property="og:type" content="website" />
-      <meta property="og:title" content={fullTitle} />
+      {/* Open Graph */}
+      <meta property="og:title" content={title} />
       <meta property="og:description" content={description} />
-      <meta property="og:image" content={ogImage} />
-      {ogUrl && <meta property="og:url" content={ogUrl} />}
+      <meta property="og:image" content={image} />
+      <meta property="og:url" content={url} />
+      <meta property="og:type" content="website" />
+      <meta property="og:site_name" content="Zion Tech Group" />
       
       {/* Twitter */}
       <meta name="twitter:card" content="summary_large_image" />
-      <meta name="twitter:site" content="@lovable_dev" />
-      <meta name="twitter:title" content={fullTitle} />
+      <meta name="twitter:title" content={title} />
       <meta name="twitter:description" content={description} />
-      <meta name="twitter:image" content={ogImage} />
+      <meta name="twitter:image" content={image} />
+      
+      {/* Additional Meta Tags */}
+      <meta name="robots" content="index, follow" />
+      <meta name="author" content="Zion Tech Group" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      
+      {/* Favicon */}
+      <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+      <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
       
       {/* Canonical URL */}
-      {canonical && <link rel="canonical" href={canonical} />}
+      <link rel="canonical" href={url} />
+    </Helmet>
+  );
+}
+
+export function SEO({ 
+  title = "Zion Tech Group",
+  description = "Professional IT services and solutions",
+  keywords = "IT services, technology solutions",
+  image = "/og-image.jpg",
+  url = "https://ziontechgroup.com"
+}: SEOProps) {
+  return (
+    <Helmet>
+      <title>{title}</title>
+      <meta name="description" content={description} />
+      <meta name="keywords" content={keywords} />
       
-      {/* No index directive for search engines if needed */}
-      {noindex && <meta name="robots" content="noindex" />}
+      {/* Open Graph */}
+      <meta property="og:title" content={title} />
+      <meta property="og:description" content={description} />
+      <meta property="og:image" content={image} />
+      <meta property="og:url" content={url} />
+      <meta property="og:type" content="website" />
+      
+      {/* Twitter */}
+      <meta name="twitter:card" content="summary_large_image" />
+      <meta name="twitter:title" content={title} />
+      <meta name="twitter:description" content={description} />
+      <meta name="twitter:image" content={image} />
+      
+      {/* Canonical URL */}
+      <link rel="canonical" href={url} />
     </Helmet>
   );
 }

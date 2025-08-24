@@ -1,0 +1,61 @@
+name: Auto Merge to Main
+
+on:
+  push:
+    branches:
+      - cursor/deploy-autonomous-cloud-automations-and-sync-c342
+  workflow_run:
+    workflows: ["CI"]
+    types:
+      - completed
+
+
+concurrency:
+permissions:
+  contents: write
+  actions: read
+
+  group: "github.workflow-${{ github.ref }}"
+  cancel-in-progress: "true
+
+  contents: write
+  pull-requests: write
+
+jobs:
+main:
+  runs-on: ubuntu-latest
+  name: Main Job
+  steps:
+    name: Checkout repository
+    uses: actions/checkout@v4
+    with:
+      fetch-depth: 0
+    name: Setup Node.js
+    uses: actions/setup-node@v4
+    with:
+      node-version: 20
+      cache: npm
+    name: Install dependencies
+    run: npm ci --no-audit --no-fund
+    name: Run tests
+    run: npm test
+    name: Build project
+    run: npm run build
+
+
+  merge-to-main:
+      ${{ github.event_name == 'workflow_run' &&
+          github.event.workflow_run.conclusion == 'success' }}
+        - name: Checkout
+        uses: actions/checkout@v4
+          fetch-depth: 0"
+        - name: Configure git"
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+        - name: Merge branch into main
+        run: |
+          git fetch origin main
+          git checkout main
+          git merge --no-ff --no-edit origin/cursor/deploy-autonomous-cloud-automations-and-sync-c342 || true
+          git push origin HEAD:$(git rev-parse --abbrev-ref HEAD)

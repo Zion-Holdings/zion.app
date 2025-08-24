@@ -1,0 +1,121 @@
+version: 1.0
+tasks:
+  - name: setup_context
+    run: |
+      echo "Setting up context..."
+      # Prioritize CODEX_TARGET_FILE_PATH if available
+      if [ -n "$CODEX_TARGET_FILE_PATH" ]; then
+        echo "Target file path provided: $CODEX_TARGET_FILE_PATH"
+        if [ -f "$CODEX_TARGET_FILE_PATH" ]; then
+          echo "File content will be read from $CODEX_TARGET_FILE_PATH"
+          # Output the file path for the next step to use
+          echo "$CODEX_TARGET_FILE_PATH" > target_file_path.txt
+        else
+          echo "Error: CODEX_TARGET_FILE_PATH ($CODEX_TARGET_FILE_PATH) does not exist."
+          # Fallback or error handling: For now, create an empty placeholder to avoid breaking downstream
+          echo "Using fallback: no specific file content."
+          echo "" > target_file_path.txt # No specific file, or handle error
+        fi
+      else
+        # Fallback: If no specific file path, run ESLint to find issues (original behavior)
+        echo "No target file path. Running ESLint to detect errors."
+        eslint ./src --ext .js,.jsx,.ts,.tsx -f json > eslint-report.json
+        # The extract_code_from_eslint step will handle this report
+        echo "" > target_file_path.txt # Indicate no specific file path from env
+      fi
+
+      if [ -n "$CODEX_ERROR_LOG_SNIPPET" ]; then
+        echo "Error log snippet provided."
+        echo "$CODEX_ERROR_LOG_SNIPPET" > error_log_snippet.txt
+      else
+        echo "No error log snippet provided."
+        echo "No specific error log provided." > error_log_snippet.txt
+      fi
+
+  - name: extract_code_from_file
+    run: |
+      TARGET_FILE_PATH=$(cat target_file_path.txt)
+      if [ -n "$TARGET_FILE_PATH" ] && [ -f "$TARGET_FILE_PATH" ]; then
+        echo "Reading content from $TARGET_FILE_PATH"
+        cat "$TARGET_FILE_PATH" > source_code.txt
+      else
+        echo "No valid target file path from env. Proceeding to ESLint based extraction or empty content."
+        # Ensure source_code.txt exists, even if empty, if no file path or ESLint report is used
+        echo "" > source_code.txt
+      fi
+
+  - name: extract_code_from_eslint # Original behavior if no direct file
+    # This step only runs effectively if eslint-report.json was created in setup_context
+    run: |
+      TARGET_FILE_PATH=$(cat target_file_path.txt)
+      if [ -z "$TARGET_FILE_PATH" ] && [ -f "eslint-report.json" ]; then
+        echo "Extracting code based on ESLint report."
+        # Assuming extractFailingCode.js can find the most relevant file from eslint-report.json
+        # and also output the name of that file for apply_patch.
+        # This script would need modification to output the filename it processed.
+        node extractFailingCode.js eslint-report.json > eslint_extracted_code.txt
+        # Placeholder for actual file path determination from eslint report by extractFailingCode.js
+        # For now, if eslint is used, we might not know the exact file to patch back.
+        # This makes targeted patching harder without modifying extractFailingCode.js
+        # Let's assume for now extractFailingCode.js also writes the identified file to eslint_target_file.txt
+        # e.g. node extractFailingCode.js eslint-report.json > eslint_extracted_code.txt --output-file-path eslint_target_file.txt
+        # If not, the patch will go to a generic file.
+        cp eslint_extracted_code.txt source_code.txt # Use this code for fixing
+        # If extractFailingCode.js could provide the file path:
+        # if [ -f "eslint_target_file.txt" ]; then cat eslint_target_file.txt > target_file_path.txt; fi
+      elif [ -z "$TARGET_FILE_PATH" ]; then # No file and no eslint report
+        echo "No specific file and no ESLint report to process. Source code will be empty."
+        echo "" > source_code.txt
+      else
+        echo "Skipping ESLint extraction, specific file already processed."
+      fi
+
+  - name: fix_code
+    uses: openai:codex
+    with:
+      prompt: |
+        You are an expert React/Next.js developer.
+        Error Log (if available):
+        ```
+        ${{ steps.setup_context.outputs.error_log_snippet || 'N/A' }}
+        ```
+        Target File Path (if specific): ${{ steps.setup_context.outputs.target_file_path || 'N/A' }}
+
+        Analyze the error log and fix the relevant code in the following content.
+        If no specific file path is provided, assume the code is a general snippet from ESLint.
+        Comment on each change made. Only output the fixed code.
+
+        ```typescript
+        ${{ steps.extract_code_from_file.outputs.source_code || steps.extract_code_from_eslint.outputs.source_code }}
+        ```
+      temperature: 0.3
+      max_tokens: 1500 # Increased tokens for potentially larger files/context
+
+  - name: apply_patch
+    run: |
+      TARGET_FILE_PATH=$(cat target_file_path.txt)
+      if [ -n "$TARGET_FILE_PATH" ] && [ -f "$TARGET_FILE_PATH" ]; then
+        echo "Applying patch to $TARGET_FILE_PATH"
+        echo "${{ steps.fix_code.output }}" > "$TARGET_FILE_PATH"
+      else
+        # Fallback if no specific file was identified (e.g. from ESLint without file path output)
+        echo "No specific target file path to apply patch. Writing to ./src/fixed-snippet.js (fallback)"
+        echo "${{ steps.fix_code.output }}" > ./src/fixed-snippet.js
+      fi
+
+  - name: test_patch
+    run: |
+      # It's crucial that tests run against the actual modified code.
+      # If a specific file was patched, 'npm test' should cover it.
+      # If using Jest, can target tests related to the patched file:
+      # TARGET_FILE_PATH=$(cat target_file_path.txt)
+      # if [ -n "$TARGET_FILE_PATH" ]; then
+      #   npm test -- "$TARGET_FILE_PATH"
+      # else
+      #   npm test
+      # fi
+      npm test
+
+  - name: deploy_if_passed
+    run: |
+      [ $? -eq 0 ] && npm run deploy
