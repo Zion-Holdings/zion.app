@@ -1,0 +1,63 @@
+{
+  "generatedAt": "2025-08-11T23:01:19.803Z",
+  "summary": {
+    "pages": 8,
+    "edges": 13,
+    "orphans": 0
+  },
+  "orphans": [],
+  "samples": [
+    {
+      "from": "/automation",
+      "to": "/reports/ai-trends"
+    },
+    {
+      "from": "/",
+      "to": "/main/front"
+    },
+    {
+      "from": "/",
+      "to": "/automation"
+    },
+    {
+      "from": "/",
+      "to": "/newsroom"
+    },
+    {
+      "from": "/",
+      "to": "/site-health"
+    },
+    {
+      "from": "/main/front",
+      "to": "/"
+    },
+    {
+      "from": "/main/front",
+      "to": "/automation"
+    },
+    {
+      "from": "/main/front",
+      "to": "/site-health"
+    },
+    {
+      "from": "/main/front",
+      "to": "/reports/seo"
+    },
+    {
+      "from": "/main/front",
+      "to": "/reports/ai-trends"
+    },
+    {
+      "from": "/main/front",
+      "to": "/newsroom"
+    },
+    {
+      "from": "/main/front",
+      "to": "/front"
+    },
+    {
+      "from": "/main/front",
+      "to": "/main/front"
+    }
+  ]
+}

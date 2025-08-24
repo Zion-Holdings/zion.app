@@ -132,7 +132,8 @@ function writeTriggerArtifacts(results, functionNames) {
   // Also touch a simple timestamp file to ensure diff-friendly change
   const stampPath = path.join(process.cwd(), 'automation', 'netlify-build-stamp.txt');
   fs.writeFileSync(stampPath, `Triggered at ${new Date().toISOString()}\n`);
-  return [latestPath, datedPath, stampPath];
+  // Only return stamp to avoid .gitignore issues for logs
+  return [stampPath];
 }
 
 function gitCommitAndPush(filesToAdd) {
