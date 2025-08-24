@@ -1,302 +1,158 @@
-import React, { useEffect, useState, useCallback, useRef } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import { LoadingSpinner } from '@/components/ui/loading-spinner';
+import React, { useEffect, useState } from 'react';
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
+import { Badge } from '@/components/ui/badge';
+import { Progress } from '@/components/ui/progress';
+import { AlertTriangle, CheckCircle, Clock, Zap } from 'lucide-react';
 
-// Lazy Image Component with Intersection Observer
-interface LazyImageProps {
-  src: string;
-  alt: string;
-  className?: string;
-  placeholder?: string;
-  threshold?: number;
-  rootMargin?: string;
+interface PerformanceMetrics {
+  fcp: number;
+  lcp: number;
+  fid: number;
+  cls: number;
+  ttfb: number;
+  overall: number;
 }
 
-export function LazyImage({ 
-  src, 
-  alt, 
-  className = '', 
-  placeholder = '/images/placeholder.jpg',
-  threshold = 0.1,
-  rootMargin = '50px'
-}: LazyImageProps) {
-  const [isLoaded, setIsLoaded] = useState(false);
-  const [isInView, setIsInView] = useState(false);
-  const [imageSrc, setImageSrc] = useState(placeholder);
-
-  const imageRef = useRef<HTMLImageElement>(null);
-
-  const handleIntersection = useCallback((entries: IntersectionObserverEntry[]) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        setIsInView(true);
-        setImageSrc(src);
-      }
-    });
-  }, [src]);
+export function PerformanceOptimizer() {
+  const [metrics, setMetrics] = useState<PerformanceMetrics | null>(null);
+  const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
-    const observer = new IntersectionObserver(handleIntersection, {
-      threshold,
-      rootMargin,
-    });
-
-    if (imageRef.current) {
-      observer.observe(imageRef.current);
+    // Only show in development or when explicitly enabled
+    if (import.meta.env.DEV || localStorage.getItem('showPerformance') === 'true') {
+      setIsVisible(true);
+      measurePerformance();
     }
-
-    return () => observer.disconnect();
-  }, [handleIntersection, threshold, rootMargin]);
-
-  const handleLoad = () => {
-    setIsLoaded(true);
-  };
-
-  const handleError = () => {
-    // Fallback to placeholder on error
-    setImageSrc(placeholder);
-    setIsLoaded(true);
-  };
-
-  return (
-    <div className={`relative overflow-hidden ${className}`}>
-      <img
-        ref={imageRef}
-        src={imageSrc}
-        alt={alt}
-        onLoad={handleLoad}
-        onError={handleError}
-        className={`w-full h-full object-cover transition-opacity duration-500 ${
-          isLoaded ? 'opacity-100' : 'opacity-0'
-        }`}
-      />
-      
-      {!isLoaded && (
-        <div className="absolute inset-0 bg-zion-blue-dark/20 flex items-center justify-center">
-          <LoadingSpinner size="md" variant="pulse" />
-        </div>
-      )}
-      
-      {/* Loading shimmer effect */}
-      {!isLoaded && (
-        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-zion-blue-light/20 to-transparent animate-pulse" />
-      )}
-    </div>
-  );
-}
-
-// Virtual Scrolling Component for Large Lists
-interface VirtualListProps<T> {
-  items: T[];
-  renderItem: (item: T, index: number) => React.ReactNode;
-  itemHeight: number;
-  containerHeight: number;
-  overscan?: number;
-}
-
-export function VirtualList<T>({ 
-  items, 
-  renderItem, 
-  itemHeight, 
-  containerHeight, 
-  overscan = 5 
-}: VirtualListProps<T>) {
-  const [scrollTop, setScrollTop] = useState(0);
-  const containerRef = useRef<HTMLDivElement>(null);
-
-  const totalHeight = items.length * itemHeight;
-  const startIndex = Math.max(0, Math.floor(scrollTop / itemHeight) - overscan);
-  const endIndex = Math.min(
-    items.length,
-    Math.ceil((scrollTop + containerHeight) / itemHeight) + overscan
-  );
-
-  const visibleItems = items.slice(startIndex, endIndex);
-  const offsetY = startIndex * itemHeight;
-
-  const handleScroll = useCallback((e: React.UIEvent<HTMLDivElement>) => {
-    setScrollTop(e.currentTarget.scrollTop);
   }, []);
 
-  return (
-    <div
-      ref={containerRef}
-      style={{ height: containerHeight, overflow: 'auto' }}
-      onScroll={handleScroll}
-    >
-      <div style={{ height: totalHeight, position: 'relative' }}>
-        <div style={{ transform: `translateY(${offsetY}px)` }}>
-          {visibleItems.map((item, index) => (
-            <div key={startIndex + index} style={{ height: itemHeight }}>
-              {renderItem(item, startIndex + index)}
-            </div>
-          ))}
-        </div>
-      </div>
-    </div>
-  );
-}
-
-// Performance Monitor Component
-export function PerformanceMonitor() {
-  const [metrics, setMetrics] = useState({
-    fcp: 0,
-    lcp: 0,
-    fid: 0,
-    cls: 0,
-  });
-
-  useEffect(() => {
+  const measurePerformance = () => {
     if ('PerformanceObserver' in window) {
-      // First Contentful Paint
-      const fcpObserver = new PerformanceObserver((list) => {
+      // Measure Core Web Vitals
+      const observer = new PerformanceObserver((list) => {
         const entries = list.getEntries();
-        const fcp = entries[entries.length - 1];
-        setMetrics(prev => ({ ...prev, fcp: fcp.startTime }));
-      });
-      fcpObserver.observe({ entryTypes: ['paint'] });
-
-      // Largest Contentful Paint
-      const lcpObserver = new PerformanceObserver((list) => {
-        const entries = list.getEntries();
-        const lcp = entries[entries.length - 1];
-        setMetrics(prev => ({ ...prev, lcp: lcp.startTime }));
-      });
-      lcpObserver.observe({ entryTypes: ['largest-contentful-paint'] });
-
-      // First Input Delay
-      const fidObserver = new PerformanceObserver((list) => {
-        const entries = list.getEntries();
-        const fid = entries[entries.length - 1];
-        const fidEntry = fid as any;
-        setMetrics(prev => ({ ...prev, fid: fidEntry.processingStart - fidEntry.startTime }));
-      });
-      fidObserver.observe({ entryTypes: ['first-input'] });
-
-      // Cumulative Layout Shift
-      const clsObserver = new PerformanceObserver((list) => {
-        let clsValue = 0;
-        for (const entry of list.getEntries()) {
-          const layoutShiftEntry = entry as any;
-          if (!layoutShiftEntry.hadRecentInput) {
-            clsValue += layoutShiftEntry.value;
+        entries.forEach((entry) => {
+          if (entry.entryType === 'largest-contentful-paint') {
+            updateMetrics('lcp', entry.startTime);
+          } else if (entry.entryType === 'first-input') {
+            const firstInputEntry = entry as PerformanceEventTiming;
+            updateMetrics('fid', firstInputEntry.processingStart - firstInputEntry.startTime);
           }
-        }
-        setMetrics(prev => ({ ...prev, cls: clsValue }));
+        });
       });
-      clsObserver.observe({ entryTypes: ['layout-shift'] });
 
-      return () => {
-        fcpObserver.disconnect();
-        lcpObserver.disconnect();
-        fidObserver.disconnect();
-        clsObserver.disconnect();
-      };
+      observer.observe({ entryTypes: ['largest-contentful-paint', 'first-input'] });
+
+      // Measure other metrics
+      setTimeout(() => {
+        const navigation = performance.getEntriesByType('navigation')[0] as PerformanceNavigationTiming;
+        if (navigation) {
+          updateMetrics('ttfb', navigation.responseStart - navigation.requestStart);
+        }
+      }, 1000);
     }
-  }, []);
+  };
 
-  // Only show in development
-  if (process.env.NODE_ENV !== 'development') {
-    return null;
-  }
+  const updateMetrics = (key: keyof PerformanceMetrics, value: number) => {
+    setMetrics(prev => {
+      if (!prev) return null;
+      const newMetrics = { ...prev, [key]: value };
+      
+      // Calculate overall score
+      const scores = [
+        newMetrics.fcp < 1800 ? 100 : Math.max(0, 100 - (newMetrics.fcp - 1800) / 10),
+        newMetrics.lcp < 2500 ? 100 : Math.max(0, 100 - (newMetrics.lcp - 2500) / 25),
+        newMetrics.fid < 100 ? 100 : Math.max(0, 100 - (newMetrics.fid - 100) / 2),
+        newMetrics.cls < 0.1 ? 100 : Math.max(0, 100 - newMetrics.cls * 1000),
+        newMetrics.ttfb < 800 ? 100 : Math.max(0, 100 - (newMetrics.ttfb - 800) / 8)
+      ];
+      
+      newMetrics.overall = Math.round(scores.reduce((a, b) => a + b, 0) / scores.length);
+      
+      return newMetrics;
+    });
+  };
+
+  const getScoreColor = (score: number) => {
+    if (score >= 90) return 'bg-green-500';
+    if (score >= 70) return 'bg-yellow-500';
+    return 'bg-red-500';
+  };
+
+  const getScoreIcon = (score: number) => {
+    if (score >= 90) return <CheckCircle className="h-4 w-4 text-green-500" />;
+    if (score >= 70) return <Clock className="h-4 w-4 text-yellow-500" />;
+    return <AlertTriangle className="h-4 w-4 text-red-500" />;
+  };
+
+  if (!isVisible || !metrics) return null;
 
   return (
-    <div className="fixed bottom-4 left-4 bg-zion-blue-dark/90 backdrop-blur-sm border border-zion-purple/30 rounded-lg p-3 text-xs text-white z-50">
-      <div className="font-mono space-y-1">
-        <div>FCP: {metrics.fcp.toFixed(0)}ms</div>
-        <div>LCP: {metrics.lcp.toFixed(0)}ms</div>
-        <div>FID: {metrics.fid.toFixed(0)}ms</div>
-        <div>CLS: {metrics.cls.toFixed(3)}</div>
-      </div>
-    </div>
+    <Card className="fixed bottom-4 right-4 w-80 z-50 bg-background/95 backdrop-blur-sm border-zion-cyan/20">
+      <CardHeader className="pb-2">
+        <CardTitle className="flex items-center gap-2 text-sm">
+          <Zap className="h-4 w-4 text-zion-cyan" />
+          Performance Monitor
+          <Badge variant="outline" className="ml-auto">
+            {metrics.overall}/100
+          </Badge>
+        </CardTitle>
+        <CardDescription className="text-xs">
+          Core Web Vitals & Performance Metrics
+        </CardDescription>
+      </CardHeader>
+      <CardContent className="space-y-3">
+        <div className="space-y-2">
+          <div className="flex justify-between text-xs">
+            <span>First Contentful Paint</span>
+            <span className="font-mono">{Math.round(metrics.fcp)}ms</span>
+          </div>
+          <Progress value={Math.min(100, (metrics.fcp / 1800) * 100)} className="h-1" />
+        </div>
+        
+        <div className="space-y-2">
+          <div className="flex justify-between text-xs">
+            <span>Largest Contentful Paint</span>
+            <span className="font-mono">{Math.round(metrics.lcp)}ms</span>
+          </div>
+          <Progress value={Math.min(100, (metrics.lcp / 2500) * 100)} className="h-1" />
+        </div>
+        
+        <div className="space-y-2">
+          <div className="flex justify-between text-xs">
+            <span>First Input Delay</span>
+            <span className="font-mono">{Math.round(metrics.fid)}ms</span>
+          </div>
+          <Progress value={Math.min(100, (metrics.fid / 100) * 100)} className="h-1" />
+        </div>
+        
+        <div className="space-y-2">
+          <div className="flex justify-between text-xs">
+            <span>Cumulative Layout Shift</span>
+            <span className="font-mono">{metrics.cls.toFixed(3)}</span>
+          </div>
+          <Progress value={Math.min(100, (metrics.cls / 0.1) * 100)} className="h-1" />
+        </div>
+        
+        <div className="space-y-2">
+          <div className="flex justify-between text-xs">
+            <span>Time to First Byte</span>
+            <span className="font-mono">{Math.round(metrics.ttfb)}ms</span>
+          </div>
+          <Progress value={Math.min(100, (metrics.ttfb / 800) * 100)} className="h-1" />
+        </div>
+        
+        <div className="pt-2 border-t border-border">
+          <div className="flex items-center justify-between">
+            <span className="text-xs font-medium">Overall Score</span>
+            <div className="flex items-center gap-2">
+              {getScoreIcon(metrics.overall)}
+              <span className={`text-sm font-bold ${getScoreColor(metrics.overall).replace('bg-', 'text-')}`}>
+                {metrics.overall}
+              </span>
+            </div>
+          </div>
+        </div>
+      </CardContent>
+    </Card>
   );
-}
-
-// Debounced Search Hook
-export function useDebounce<T>(value: T, delay: number): T {
-  const [debouncedValue, setDebouncedValue] = useState<T>(value);
-
-  useEffect(() => {
-    const handler = setTimeout(() => {
-      setDebouncedValue(value);
-    }, delay);
-
-    return () => {
-      clearTimeout(handler);
-    };
-  }, [value, delay]);
-
-  return debouncedValue;
-}
-
-// Throttled Scroll Hook
-export function useThrottledScroll(callback: () => void, delay: number) {
-  const lastRun = useRef(Date.now());
-
-  useEffect(() => {
-    const handler = () => {
-      if (Date.now() - lastRun.current >= delay) {
-        callback();
-        lastRun.current = Date.now();
-      }
-    };
-
-    window.addEventListener('scroll', handler);
-    return () => window.removeEventListener('scroll', handler);
-  }, [callback, delay]);
-}
-
-// Preload Critical Resources
-export function PreloadCriticalResources() {
-  useEffect(() => {
-    // Preload critical CSS
-    const criticalCSS = document.createElement('link');
-    criticalCSS.rel = 'preload';
-    criticalCSS.as = 'style';
-    criticalCSS.href = '/src/index.css';
-    document.head.appendChild(criticalCSS);
-
-    // Preload critical fonts
-    const font = document.createElement('link');
-    font.rel = 'preload';
-    font.as = 'font';
-    font.href = '/fonts/orbitron.woff2';
-    font.crossOrigin = 'anonymous';
-    document.head.appendChild(font);
-
-    // Preload critical images
-    const criticalImages = [
-      '/images/zion-logo.png',
-      '/images/zion-homepage-og.jpg'
-    ];
-
-    criticalImages.forEach(src => {
-      const img = document.createElement('link');
-      img.rel = 'preload';
-      img.as = 'image';
-      img.href = src;
-      document.head.appendChild(img);
-    });
-  }, []);
-
-  return null;
-}
-
-// Service Worker Registration
-export function ServiceWorkerRegistration() {
-  useEffect(() => {
-    if ('serviceWorker' in navigator) {
-      window.addEventListener('load', () => {
-        navigator.serviceWorker.register('/sw.js')
-          .then((registration) => {
-            console.log('SW registered: ', registration);
-          })
-          .catch((registrationError) => {
-            console.log('SW registration failed: ', registrationError);
-          });
-      });
-    }
-  }, []);
-
-  return null;
 }

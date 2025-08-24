@@ -1,45 +1,60 @@
 /** @type {import('tailwindcss').Config} */
-export default {
+module.exports = {
+  darkMode: ["class"],
   content: [
-    './src/**/*.{js,ts,jsx,tsx}',
-    './index.html',
+    './pages/**/*.{ts,tsx}',
+    './components/**/*.{ts,tsx}',
+    './app/**/*.{ts,tsx}',
+    './src/**/*.{ts,tsx}',
   ],
   theme: {
     extend: {
       colors: {
-        'zion-blue': '#172d67',
-        'zion-blue-dark': '#0f1a3d',
+        border: "hsl(var(--border))",
+        input: "hsl(var(--input))",
+        ring: "hsl(var(--ring))",
+        background: "hsl(var(--background))",
+        foreground: "hsl(var(--foreground))",
+        primary: {
+          DEFAULT: "hsl(var(--primary))",
+          foreground: "hsl(var(--primary-foreground))",
+        },
+        secondary: {
+          DEFAULT: "hsl(var(--secondary))",
+          foreground: "hsl(var(--secondary-foreground))",
+        },
+        destructive: {
+          DEFAULT: "hsl(var(--destructive))",
+          foreground: "hsl(var(--destructive-foreground))",
+        },
+        muted: {
+          DEFAULT: "hsl(var(--muted))",
+          foreground: "hsl(var(--muted-foreground))",
+        },
+        accent: {
+          DEFAULT: "hsl(var(--accent))",
+          foreground: "hsl(var(--accent-foreground))",
+        },
+        popover: {
+          DEFAULT: "hsl(var(--popover))",
+          foreground: "hsl(var(--popover-foreground))",
+        },
+        card: {
+          DEFAULT: "hsl(var(--card))",
+          foreground: "hsl(var(--card-foreground))",
+        },
+        // Zion brand colors
         'zion-cyan': '#22ddd2',
-        'zion-cyan-light': '#4de8e0',
+        'zion-blue': '#2e73ea',
         'zion-purple': '#8c15e9',
-        'zion-purple-light': '#a855f7',
-        'zion-slate': '#64748b',
-        'zion-slate-light': '#94a3b8',
+        'zion-blue-dark': '#172d67',
       },
-      fontFamily: {
-        'orbitron': ['Orbitron', 'monospace'],
-      },
-      animation: {
-        'float': 'float 6s ease-in-out infinite',
-        'glow': 'glow 2s ease-in-out infinite alternate',
-        'neon-pulse': 'neonPulse 1.5s ease-in-out infinite alternate',
-      },
-      keyframes: {
-        float: {
-          '0%, 100%': { transform: 'translateY(0px)' },
-          '50%': { transform: 'translateY(-20px)' },
-        },
-        glow: {
-          '0%': { boxShadow: '0 0 5px #22ddd2, 0 0 10px #22ddd2, 0 0 15px #22ddd2' },
-          '100%': { boxShadow: '0 0 10px #22ddd2, 0 0 20px #22ddd2, 0 0 30px #22ddd2' }
-        },
-        neonPulse: {
-          '0%': { textShadow: '0 0 5px #22ddd2, 0 0 10px #22ddd2, 0 0 15px #22ddd2' },
-          '100%': { textShadow: '0 0 10px #22ddd2, 0 0 20px #22ddd2, 0 0 30px #22ddd2' }
-        },
+      borderRadius: {
+        lg: "var(--radius)",
+        md: "calc(var(--radius) - 2px)",
+        sm: "calc(var(--radius) - 4px)",
       },
     },
   },
   plugins: [],
 }
-

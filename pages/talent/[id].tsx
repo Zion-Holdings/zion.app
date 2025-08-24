@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { useParams, useNavigate } from 'react-router-dom';
+import { useRouter } from 'next/router';
 import { ProfileLoadingState } from '@/components/profile/ProfileLoadingState';
 import type { TalentProfile as TalentProfileType } from '@/types/talent';
 import { ProfileErrorState } from '@/components/profile/ProfileErrorState';
@@ -8,20 +8,24 @@ interface TalentProfileWithSocial extends TalentProfileType {
   social?: Record<string, string>;
 }
 
+// Simple error component for 404
 const ErrorPage: React.FC<{ statusCode: number }> = ({ statusCode }) => (
-  <div className="min-h-screen bg-zion-blue flex items-center justify-center">
-    <div className="text-center text-white">
+  <div className="min-h-screen bg-zion-blue flex items-center justify-center text-white">
+    <div className="text-center">
       <h1 className="text-6xl font-bold mb-4">{statusCode}</h1>
-      <p className="text-xl">
-        {statusCode === 404 ? 'Page not found' : 'Something went wrong'}
+      <p className="text-xl mb-4">
+        {statusCode === 404 ? 'Talent not found' : 'Something went wrong'}
+      </p>
+      <p className="text-zion-cyan">
+        The talent profile you're looking for doesn't exist or has been removed.
       </p>
     </div>
   </div>
 );
 
 const TalentProfilePage: React.FC = () => {
-  const { id } = useParams();
-  const navigate = useNavigate();
+  const router = useRouter();
+  const { id } = router.query as { id?: string };
   const [profile, setProfile] = useState<TalentProfileWithSocial | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
@@ -54,22 +58,7 @@ const TalentProfilePage: React.FC = () => {
   }, [id]);
 
   if (loading) return <ProfileLoadingState />;
-  if (error || !profile) {
-    return (
-      <div className="min-h-screen bg-zion-blue flex items-center justify-center text-white">
-        <div className="text-center">
-          <h1 className="text-4xl font-bold mb-4">404</h1>
-          <p className="text-xl mb-4">Talent not found</p>
-          <button 
-            onClick={() => navigate('/')}
-            className="bg-zion-purple hover:bg-zion-purple-dark px-6 py-2 rounded-md"
-          >
-            Return to Home
-          </button>
-        </div>
-      </div>
-    );
-  }
+  if (error || !profile) return <ErrorPage statusCode={404} />;
 
   return (
     <main className="min-h-screen bg-zion-blue py-8 text-white">
