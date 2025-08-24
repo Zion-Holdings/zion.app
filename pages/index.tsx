@@ -131,12 +131,12 @@ export default function HomePage() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950 text-white overflow-hidden">
       <Head>
-        <title>Zion Tech Group — Leading-Edge Technology Solutions & Autonomous Innovation Platform</title>
-        <meta name="description" content="Zion Tech Group delivers cutting-edge AI, quantum computing, cybersecurity, and digital transformation solutions. Leading the future of autonomous innovation." />
-        <meta property="og:title" content="Zion Tech Group — Leading-Edge Technology Solutions" />
-        <meta property="og:description" content="Cutting-edge AI, quantum computing, cybersecurity, and digital transformation solutions. Leading the future of autonomous innovation." />
+        <title>Zion Tech Group — AI-Powered Cloud Automation & Autonomous Deployment Platform</title>
+        <meta name="description" content="Zion Tech Group delivers AI-powered cloud automation and autonomous deployment solutions. Automate content generation and infrastructure updates with intelligent agents that work 24/7." />
+        <meta property="og:title" content="Zion Tech Group — AI-Powered Cloud Automation Platform" />
+        <meta property="og:description" content="AI-powered cloud automation and autonomous deployment solutions. Automate content generation and infrastructure updates with intelligent agents." />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="keywords" content="AI, quantum computing, cybersecurity, digital transformation, autonomous systems, technology solutions" />
+        <meta name="keywords" content="AI automation, cloud automation, autonomous deployment, content generation, infrastructure optimization, AI agents" />
         <link rel="canonical" href="https://ziontechgroup.com" />
       </Head>
 
@@ -161,7 +161,7 @@ export default function HomePage() {
               Zion Tech Group
             </h1>
             <p className="text-xl md:text-2xl text-white/80 max-w-3xl mx-auto leading-relaxed">
-              Leading-edge technology solutions and autonomous innovation platform
+              AI-powered cloud automation and autonomous deployment platform
             </p>
           </motion.div>
 
@@ -171,10 +171,47 @@ export default function HomePage() {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="mb-12"
           >
-            <p className="text-lg text-white/70 max-w-2xl mx-auto mb-8">
-              Empowering businesses with cutting-edge AI, quantum computing, cybersecurity, 
-              and digital transformation solutions that drive innovation and growth.
-            </p>
+            {/* Clear Tagline */}
+            <div className="mb-8">
+              <h2 className="text-2xl md:text-3xl font-bold text-cyan-400 mb-4">
+                Autonomous Cloud Automations
+              </h2>
+              <p className="text-lg text-white/90 max-w-2xl mx-auto mb-6">
+                AI-powered deployment of updates across your cloud infrastructure
+              </p>
+              <p className="text-base text-white/70 max-w-3xl mx-auto">
+                Automate content generation and deployment effortlessly with self-improving, cloud-native agents that continuously optimize your systems.
+              </p>
+            </div>
+
+            {/* How It Works Section */}
+            <div className="mb-8 p-6 rounded-2xl border border-white/10 bg-white/5 backdrop-blur-sm">
+              <h3 className="text-lg font-semibold text-white mb-4">How It Works</h3>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-sm">
+                <div className="flex flex-col items-center text-center">
+                  <div className="w-12 h-12 rounded-full bg-gradient-to-r from-blue-500 to-cyan-500 flex items-center justify-center mb-2">
+                    <Brain className="w-6 h-6 text-white" />
+                  </div>
+                  <h4 className="font-medium text-white mb-1">AI Analysis</h4>
+                  <p className="text-white/70">Intelligent agents analyze your infrastructure and identify optimization opportunities</p>
+                </div>
+                <div className="flex flex-col items-center text-center">
+                  <div className="w-12 h-12 rounded-full bg-gradient-to-r from-purple-500 to-pink-500 flex items-center justify-center mb-2">
+                    <Rocket className="w-6 h-6 text-white" />
+                  </div>
+                  <h4 className="font-medium text-white mb-1">Automated Deployment</h4>
+                  <p className="text-white/70">Updates are automatically generated, tested, and deployed to your cloud environment</p>
+                </div>
+                <div className="flex flex-col items-center text-center">
+                  <div className="w-12 h-12 rounded-full bg-gradient-to-r from-emerald-500 to-teal-500 flex items-center justify-center mb-2">
+                    <Shield className="w-6 h-6 text-white" />
+                  </div>
+                  <h4 className="font-medium text-white mb-1">Continuous Monitoring</h4>
+                  <p className="text-white/70">24/7 oversight with safety guardrails and real-time performance optimization</p>
+                </div>
+              </div>
+            </div>
+
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <button className="px-8 py-4 bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700 rounded-full font-semibold text-lg transition-all duration-300 transform hover:scale-105 hover:shadow-2xl flex items-center justify-center gap-2">
                 Get Started
@@ -204,6 +241,100 @@ export default function HomePage() {
             transition={{ duration: 7, repeat: Infinity, ease: "easeInOut" }}
             className="absolute bottom-40 left-1/4 w-2 h-2 bg-blue-400 rounded-full opacity-60"
           />
+        </div>
+      </section>
+
+      {/* Autonomous Capabilities Section */}
+      <section className="py-20 px-6">
+        <div className="max-w-7xl mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-white to-blue-100 bg-clip-text text-transparent">
+              Autonomous Intelligence at Work
+            </h2>
+            <p className="text-xl text-white/70 max-w-3xl mx-auto">
+              Our AI agents work 24/7 to continuously improve your cloud infrastructure and applications
+            </p>
+          </motion.div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <motion.div
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+            >
+              <h3 className="text-2xl font-bold text-white mb-6">How Autonomous Agents Work</h3>
+              <div className="space-y-6">
+                <div className="flex items-start gap-4">
+                  <div className="w-12 h-12 rounded-full bg-gradient-to-r from-blue-500 to-cyan-500 flex items-center justify-center flex-shrink-0">
+                    <Brain className="w-6 h-6 text-white" />
+                  </div>
+                  <div>
+                    <h4 className="text-lg font-semibold text-white mb-2">Continuous Analysis</h4>
+                    <p className="text-white/70">AI agents constantly monitor your systems, analyzing performance, security, and optimization opportunities in real-time.</p>
+                  </div>
+                </div>
+                <div className="flex items-start gap-4">
+                  <div className="w-12 h-12 rounded-full bg-gradient-to-r from-purple-500 to-pink-500 flex items-center justify-center flex-shrink-0">
+                    <Code className="w-6 h-6 text-white" />
+                  </div>
+                  <div>
+                    <h4 className="text-lg font-semibold text-white mb-2">Intelligent Code Generation</h4>
+                    <p className="text-white/70">Automatically generate, test, and deploy code improvements, bug fixes, and performance optimizations.</p>
+                  </div>
+                </div>
+                <div className="flex items-start gap-4">
+                  <div className="w-12 h-12 rounded-full bg-gradient-to-r from-emerald-500 to-teal-500 flex items-center justify-center flex-shrink-0">
+                    <Server className="w-6 h-6 text-white" />
+                  </div>
+                  <div>
+                    <h4 className="text-lg font-semibold text-white mb-2">Seamless Deployment</h4>
+                    <p className="text-white/70">Zero-downtime deployments with automatic rollback capabilities and comprehensive testing before production.</p>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, x: 30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+              className="relative"
+            >
+              <div className="p-8 rounded-2xl border border-white/10 bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-xl">
+                <h4 className="text-xl font-bold text-white mb-4">Real-Time Benefits</h4>
+                <div className="space-y-4">
+                  <div className="flex items-center gap-3">
+                    <CheckCircle className="w-5 h-5 text-emerald-400 flex-shrink-0" />
+                    <span className="text-white/80">24/7 system monitoring and optimization</span>
+                  </div>
+                  <div className="flex items-center gap-3">
+                    <CheckCircle className="w-5 h-5 text-emerald-400 flex-shrink-0" />
+                    <span className="text-white/80">Automatic security updates and patches</span>
+                  </div>
+                  <div className="flex items-center gap-3">
+                    <CheckCircle className="w-5 h-5 text-emerald-400 flex-shrink-0" />
+                    <span className="text-white/80">Performance improvements without human intervention</span>
+                  </div>
+                  <div className="flex items-center gap-3">
+                    <CheckCircle className="w-5 h-5 text-emerald-400 flex-shrink-0" />
+                    <span className="text-white/80">Continuous content generation and SEO optimization</span>
+                  </div>
+                  <div className="flex items-center gap-3">
+                    <CheckCircle className="w-5 h-5 text-emerald-400 flex-shrink-0" />
+                    <span className="text-white/80">Proactive issue detection and resolution</span>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+          </div>
         </div>
       </section>
 
