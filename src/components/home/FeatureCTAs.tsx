@@ -16,11 +16,20 @@ import {
   BookOpen,
   Code,
   Building,
-  Clock
+  Clock,
+  Lightbulb
 } from "lucide-react";
 
 export function FeatureCTAs() {
   const features = [
+    {
+      title: "Micro SAAS Services",
+      description: "Comprehensive suite of AI, IT, and specialized micro SAAS solutions for modern businesses.",
+      icon: <Lightbulb className="h-10 w-10 p-2 rounded-md bg-emerald-100 text-emerald-700" />,
+      link: "/micro-saas-services",
+      badge: "New",
+      details: "From AI content generation to blockchain development, our micro SAAS services provide enterprise-grade solutions with flexible pricing models."
+    },
     {
       title: "AI Talent Matching",
       description: "Our AI-powered matching algorithm connects you with the perfect talent or job based on skills, experience, and preferences.",
@@ -116,7 +125,7 @@ export function FeatureCTAs() {
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {features.map((feature, index) => (
-            <Card key={index} className="overflow-hidden transition-all duration-300 hover:shadow-lg hover:border-primary/50">
+            <Card key={index} className="overflow-hidden transition-all duration-300 hover:shadow-lg hover:border-primary/50 hover-lift glass-dark border border-zion-blue-light/30">
               <CardHeader className="pb-2">
                 <div className="flex justify-between items-start">
                   {feature.icon}

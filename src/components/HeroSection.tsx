@@ -8,15 +8,33 @@ export function HeroSection() {
   const { t } = useTranslation();
   return (
     <section className="relative overflow-hidden py-20 md:py-32">
-      {/* Background gradient effect */}
-      <div className="absolute inset-0 bg-gradient-to-b from-zion-blue-dark via-zion-blue to-zion-blue-light opacity-80"></div>
+      {/* Enhanced background gradient effect */}
+      <div className="absolute inset-0 bg-gradient-to-br from-zion-blue-dark via-zion-slate to-zion-purple opacity-90"></div>
       
-      {/* Animated floating particles */}
+      {/* Futuristic animated elements */}
       <div className="absolute inset-0">
-        <div className="absolute top-1/4 left-1/4 w-2 h-2 rounded-full bg-zion-purple-light opacity-40 animate-pulse"></div>
-        <div className="absolute top-1/3 right-1/3 w-3 h-3 rounded-full bg-zion-cyan opacity-30 animate-pulse"></div>
-        <div className="absolute bottom-1/4 left-1/2 w-2 h-2 rounded-full bg-zion-purple opacity-40 animate-pulse"></div>
-        <div className="absolute top-1/2 right-1/4 w-4 h-4 rounded-full bg-zion-cyan-light opacity-20 animate-pulse"></div>
+        {/* Floating orbs */}
+        <div className="absolute top-1/4 left-1/4 w-4 h-4 rounded-full bg-zion-purple-light opacity-60 animate-pulse float"></div>
+        <div className="absolute top-1/3 right-1/3 w-6 h-6 rounded-full bg-zion-cyan opacity-50 animate-pulse float delay-1000"></div>
+        <div className="absolute bottom-1/4 left-1/2 w-3 h-3 rounded-full bg-zion-purple opacity-60 animate-pulse float delay-2000"></div>
+        <div className="absolute top-1/2 right-1/4 w-5 h-5 rounded-full bg-zion-cyan-light opacity-40 animate-pulse float delay-3000"></div>
+        
+        {/* Matrix rain effect */}
+        <div className="absolute top-0 left-0 w-full h-full overflow-hidden opacity-10">
+          <div className="matrix-rain text-zion-cyan text-xs font-mono">
+            {Array.from({ length: 50 }, (_, i) => (
+              <div key={i} className="absolute" style={{ left: `${Math.random() * 100}%`, animationDelay: `${Math.random() * 20}s` }}>
+                {Array.from({ length: 20 }, (_, j) => (
+                  <div key={j} className="mb-2 opacity-80">01</div>
+                ))}
+              </div>
+            ))}
+          </div>
+        </div>
+        
+        {/* Glowing lines */}
+        <div className="absolute top-1/3 left-0 w-full h-px bg-gradient-to-r from-transparent via-zion-cyan to-transparent opacity-30"></div>
+        <div className="absolute bottom-1/3 left-0 w-full h-px bg-gradient-to-r from-transparent via-zion-purple to-transparent opacity-30"></div>
       </div>
       
       <div className="container relative z-10 px-4 mx-auto text-center">

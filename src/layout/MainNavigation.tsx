@@ -29,6 +29,16 @@ export function MainNavigation({ isAdmin = false, unreadCount = 0, className }: 
       matches: (path: string) => path.startsWith('/marketplace')
     },
     {
+      key: 'services',
+      href: '/services',
+      matches: (path: string) => path.startsWith('/services')
+    },
+    {
+      key: 'micro-saas',
+      href: '/micro-saas-services',
+      matches: (path: string) => path.startsWith('/micro-saas-services')
+    },
+    {
       key: 'categories',
       href: '/categories',
       matches: (path: string) => path.startsWith('/categories')

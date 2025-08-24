@@ -155,6 +155,105 @@
     animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
   }
 
+  /* Futuristic animations */
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-20px);
+    }
+  }
+
+  @keyframes glow {
+    0%, 100% {
+      box-shadow: 0 0 20px rgba(34, 221, 210, 0.3);
+    }
+    50% {
+      box-shadow: 0 0 40px rgba(34, 221, 210, 0.6), 0 0 60px rgba(34, 221, 210, 0.3);
+    }
+  }
+
+  @keyframes neon-pulse {
+    0%, 100% {
+      text-shadow: 0 0 5px rgba(34, 221, 210, 0.8), 0 0 10px rgba(34, 221, 210, 0.6), 0 0 15px rgba(34, 221, 210, 0.4);
+    }
+    50% {
+      text-shadow: 0 0 10px rgba(34, 221, 210, 1), 0 0 20px rgba(34, 221, 210, 0.8), 0 0 30px rgba(34, 221, 210, 0.6);
+    }
+  }
+
+  @keyframes matrix-rain {
+    0% {
+      transform: translateY(-100vh);
+    }
+    100% {
+      transform: translateY(100vh);
+    }
+  }
+
+  .float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  .glow {
+    animation: glow 2s ease-in-out infinite alternate;
+  }
+
+  .neon-pulse {
+    animation: neon-pulse 2s ease-in-out infinite;
+  }
+
+  .matrix-rain {
+    animation: matrix-rain 20s linear infinite;
+  }
+
+  /* Futuristic gradients */
+  .bg-futuristic-gradient {
+    background: linear-gradient(135deg, 
+      rgba(34, 221, 210, 0.1) 0%, 
+      rgba(140, 21, 233, 0.1) 25%, 
+      rgba(46, 115, 234, 0.1) 50%, 
+      rgba(34, 221, 210, 0.1) 75%, 
+      rgba(140, 21, 233, 0.1) 100%
+    );
+  }
+
+  .bg-neon-gradient {
+    background: linear-gradient(45deg, 
+      rgba(34, 221, 210, 0.2), 
+      rgba(140, 21, 233, 0.2), 
+      rgba(46, 115, 234, 0.2)
+    );
+  }
+
+  /* Glassmorphism effects */
+  .glass {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .glass-dark {
+    background: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  /* Hover effects */
+  .hover-lift {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .hover-lift:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+  }
+
+  .hover-glow:hover {
+    box-shadow: 0 0 30px rgba(34, 221, 210, 0.5);
+  }
+
   /* Custom scrollbar for webkit browsers */
   ::-webkit-scrollbar {
     width: 10px;
