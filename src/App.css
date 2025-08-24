@@ -1,44 +1,62 @@
-<<<<<<< HEAD
-/* App.css - Basic styling for the application */
+/* Global styles for the Zion Tech Group application */
 
-.app {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
 }
 
-.main-content {
-  flex: 1;
+::-webkit-scrollbar-track {
+  background: #172d67;
 }
 
-/* Loading overlay styles */
-.loading-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: rgba(0, 0, 0, 0.8);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 9999;
-  color: white;
-  font-size: 1.2rem;
+::-webkit-scrollbar-thumb {
+  background: #8c15e9;
+  border-radius: 4px;
 }
 
-/* Basic responsive utilities */
-@media (max-width: 768px) {
-  .mobile-hidden {
-    display: none;
+::-webkit-scrollbar-thumb:hover {
+  background: #b971f2;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Focus styles */
+*:focus {
+  outline: 2px solid #22ddd2;
+  outline-offset: 2px;
+}
+
+/* Loading animation */
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
   }
 }
 
-@media (min-width: 769px) {
-  .desktop-hidden {
-    display: none;
-  }
-=======
+.animate-pulse {
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* Glass morphism effect */
+.glass {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Hover effects */
+.hover-lift {
+  transition: transform 0.2s ease-in-out;
+}
+
+.hover-lift:hover {
+  transform: translateY(-4px);
 /* Global styles for the Zion Tech Group application */
 
 /* Custom scrollbar */
@@ -106,5 +124,5 @@ html {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
->>>>>>> cfb04f63b138e721e668a86f56f120d011c10c16
+
 }
