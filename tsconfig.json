@@ -1,106 +1,21 @@
 {
   "compilerOptions": {
-    "target": "ES2017",
+    "target": "ES2020",
     "useDefineForClassFields": true,
-    "lib": [
-      "ES2024",
-      "DOM",
-      "DOM.Iterable",
-      "WebWorker",
-      "WebWorker.Iterable"
-    ],
+    "lib": ["ES2020", "DOM", "DOM.Iterable"],
     "module": "esnext",
     "skipLibCheck": true,
-    "importHelpers": false,
-    "noEmitHelpers": false,
-    "baseUrl": ".",
-    "paths": {
-      "@/*": [
-        "./src/*"
-<<<<<<< HEAD
-=======
-      ],
-      "@/pages/*": [
-        "./src/pages/*"
-      ],
-      "@/components/*": [
-        "./src/components/*"
-      ],
-      "@/types/*": [
-        "./src/types/*"
-      ],
-      "@/utils/*": [
-        "./src/utils/*"
-      ],
-      "@/services/*": [
-        "./src/services/*"
-      ],
-      "@/styles/*": [
-        "./src/styles/*"
->>>>>>> cursor/enhance-app-with-new-services-and-futuristic-design-8cc4
-      ]
-    },
-    /* Bundler mode */
     "moduleResolution": "bundler",
-    "esModuleInterop": true,
-    "allowSyntheticDefaultImports": true,
+    "allowImportingTsExtensions": true,
     "resolveJsonModule": true,
+    "isolatedModules": true,
+    "noEmit": true,
+    "jsx": "react-jsx",
     "strict": false,
     "noUnusedLocals": false,
     "noUnusedParameters": false,
-    "noFallthroughCasesInSwitch": true,
-    "noUncheckedIndexedAccess": false,
-    "noImplicitReturns": false,
-    "allowJs": true,
-    "incremental": true,
-    "jsx": "react-jsx",
-    "typeRoots": [
-<<<<<<< HEAD
-      "./node_modules/@types"
-    ]
+    "noFallthroughCasesInSwitch": true
   },
-  "include": ["src"],
-  "references": [{ "path": "./tsconfig.node.json" }]
-=======
-      "./node_modules/@types",
-      "./src/types"
-    ],
-    "types": [
-      "node"
-    ],
-    "jsx": "preserve",
-    "noEmit": true,
-    "isolatedModules": true,
-    "forceConsistentCasingInFileNames": true
-  },
-  "include": [
-    "src/**/*.ts",
-    "src/**/*.tsx",
-    "src/**/*.d.ts"
-  ],
-  "exclude": [
-    "node_modules",
-    "zion.app/recovered-content/**",
-    "contracts/**",
-    "dao/**",
-    "zion-os/**",
-    "zion_academy/**",
-    "packages/**",
-    "monitoring/**",
-    "scripts/**",
-    "server/**",
-    "cypress/**",
-    "**/*.disabled/**",
-    "__tests__.disabled/**",
-    "plugins.disabled/**",
-    "test.disabled/**",
-    "services.disabled.temp/**",
-    "data.temp/**",
-    "src_backup/**",
-    "components/**",
-    "pages/**",
-    "data/**",
-    "utils/**"
-  ]
->>>>>>> cursor/enhance-app-with-new-services-and-futuristic-design-8cc4
+  "include": ["src/App.tsx", "src/main.tsx", "src/index.css", "src/pages/Home.tsx", "src/pages/Services.tsx", "src/pages/About.tsx", "src/pages/Contact.tsx"],
+  "exclude": ["node_modules", "src/components", "src/layout", "src/hooks", "src/lib", "src/data", "src/types", "src/pages/Blog.tsx", "src/pages/Careers.tsx", "src/pages/FAQ.tsx", "src/pages/GreenIT.tsx", "src/pages/HelpCenter.tsx", "src/pages/Privacy.tsx", "src/pages/Sitemap.tsx", "src/pages/Terms.tsx", "src/pages/talent"]
 }
