@@ -1,0 +1,47 @@
+name: Content Automation
+
+on:
+  schedule:
+    - cron: '*/30 * * * *'
+  push:
+    branches: [ main ]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install deps
+        run: npm ci
+
+      - name: Generate indexes and RSS
+        env:
+          SITE_URL: https://zion.app
+        run: |
+          npm run content:all
+
+      - name: Commit changes
+        run: |
+          git config user.name "zion-automation"
+          git config user.email "automation@ziontechgroup.com"
+          if [ -n "$(git status --porcelain)" ]; then
+            git add -A
+            git commit -m "chore(content): auto-generate indexes and rss"
+            git push
+          else
+            echo "No changes"
+          fi
