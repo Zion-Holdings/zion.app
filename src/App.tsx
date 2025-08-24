@@ -1,9 +1,9 @@
 import React from 'react';
 import { Suspense } from 'react';
 import { Routes, Route } from 'react-router-dom';
-import './index.css';
+import './App.css';
 
-// Import only the working pages
+// Import all pages including enhanced services
 const Home = React.lazy(() => import('./pages/Home'));
 const AIMatcherPage = React.lazy(() => import('./pages/AIMatcher'));
 const TalentDirectory = React.lazy(() => import('./pages/TalentDirectory'));
@@ -27,6 +27,7 @@ const ZionHireAI = React.lazy(() => import('./pages/ZionHireAI'));
 const RequestQuotePage = React.lazy(() => import('./pages/RequestQuote'));
 const EnhancedServicesPage = React.lazy(() => import('./pages/EnhancedServicesPage'));
 const ServicesPricingPage = React.lazy(() => import('./pages/ServicesPricingPage'));
+const ExpandedServicesPage = React.lazy(() => import('./pages/ExpandedServicesPage'));
 const About = React.lazy(() => import('./pages/About'));
 const NotFound = React.lazy(() => import('./pages/NotFound'));
 
@@ -52,6 +53,7 @@ const baseRoutes = [
   { path: '/hire-ai', element: <ZionHireAI /> },
   { path: '/request-quote', element: <RequestQuotePage /> },
   { path: '/enhanced-services', element: <EnhancedServicesPage /> },
+  { path: '/expanded-services', element: <ExpandedServicesPage /> },
   { path: '/services-pricing', element: <ServicesPricingPage /> },
   { path: '/blog', element: <Blog /> },
   { path: '/blog/:slug', element: <BlogPost /> },

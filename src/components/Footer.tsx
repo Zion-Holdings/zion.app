@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from "react-router-dom";
 import { Facebook, Twitter, Instagram, Github, Linkedin, Mail, Phone, MapPin } from "lucide-react";
+import { FooterNewsletter } from "./FooterNewsletter";
 
 export function Footer() {
   return (
@@ -74,10 +75,18 @@ export function Footer() {
           <div>
             <h3 className="text-white font-semibold mb-4 text-lg">Marketplace</h3>
             <ul className="space-y-2">
-              <li><Link to="/comprehensive-services" className="text-zion-slate-light hover:text-zion-cyan transition-colors">Services</Link></li>
+              <li><Link to="/marketplace" className="text-zion-slate-light hover:text-zion-cyan transition-colors">Products</Link></li>
+              <li><Link to="/services" className="text-zion-slate-light hover:text-zion-cyan transition-colors">Services</Link></li>
+              <li><Link to="/comprehensive-services" className="text-zion-slate-light hover:text-zion-cyan transition-colors">Comprehensive Services</Link></li>
               <li><Link to="/ai-services" className="text-zion-slate-light hover:text-zion-cyan transition-colors">AI Services</Link></li>
-              <li><Link to="/micro-saas" className="text-zion-slate-light hover:text-zion-slate-light transition-colors">Micro SAAS</Link></li>
+              <li><Link to="/micro-saas" className="text-zion-slate-light hover:text-zion-cyan transition-colors">Micro SAAS</Link></li>
+              <li><Link to="/micro-saas-services" className="text-zion-slate-light hover:text-zion-cyan transition-colors">Micro SAAS Services</Link></li>
               <li><Link to="/enterprise-solutions" className="text-zion-slate-light hover:text-zion-cyan transition-colors">Enterprise</Link></li>
+              <li><Link to="/talent" className="text-zion-slate-light hover:text-zion-cyan transition-colors">Talent</Link></li>
+              <li><Link to="/equipment" className="text-zion-slate-light hover:text-zion-cyan transition-colors">Equipment</Link></li>
+              <li><Link to="/categories" className="text-zion-slate-light hover:text-zion-cyan transition-colors">Categories</Link></li>
+              <li><Link to="/green-it" className="text-zion-slate-light hover:text-zion-cyan transition-colors">Green IT</Link></li>
+              <li><Link to="/it-onsite-services" className="text-zion-slate-light hover:text-zion-cyan transition-colors">IT Onsite Services</Link></li>
               <li><Link to="/services-pricing" className="text-zion-slate-light hover:text-zion-cyan transition-colors">Pricing</Link></li>
             </ul>
           </div>
@@ -92,25 +101,24 @@ export function Footer() {
             </ul>
           </div>
 
-          {/* Contact Info */}
+          {/* Support & Resources */}
           <div>
-            <h3 className="text-white font-semibold mb-4 text-lg">Contact Info</h3>
-            <div className="space-y-3">
-              <div className="flex items-center space-x-2">
-                <Phone className="h-4 w-4 text-zion-cyan" />
-                <span className="text-zion-slate-light">+1 302 464 0950</span>
-              </div>
-              <div className="flex items-center space-x-2">
-                <Mail className="h-4 w-4 text-zion-cyan" />
-                <span className="text-zion-slate-light">kleber@ziontechgroup.com</span>
-              </div>
-              <div className="flex items-center space-x-2">
-                <MapPin className="h-4 w-4 text-zion-cyan" />
-                <span className="text-zion-slate-light text-sm">
-                  364 E Main St STE 1008<br />
-                  Middletown DE 19709
-                </span>
-              </div>
+            <h3 className="text-white font-semibold mb-4 text-lg">Support & Resources</h3>
+            <ul className="space-y-2">
+              <li><Link to="/help" className="text-zion-slate-light hover:text-zion-cyan transition-colors">Help Center</Link></li>
+              <li><Link to="/support" className="text-zion-slate-light hover:text-zion-cyan transition-colors">Support</Link></li>
+              <li><Link to="/zion-hire-ai" className="text-zion-slate-light hover:text-zion-cyan transition-colors">AI Hiring</Link></li>
+              <li><Link to="/request-quote" className="text-zion-slate-light hover:text-zion-cyan transition-colors">Request Quote</Link></li>
+              <li><Link to="/community" className="text-zion-slate-light hover:text-zion-cyan transition-colors">Community</Link></li>
+            </ul>
+            
+            {/* Newsletter */}
+            <div className="mt-6">
+              <h4 className="text-white font-semibold mb-3 text-sm">Newsletter</h4>
+              <p className="text-zion-slate-light mb-3 text-xs">
+                Stay updated with the latest tech and AI opportunities.
+              </p>
+              <FooterNewsletter />
             </div>
           </div>
         </div>

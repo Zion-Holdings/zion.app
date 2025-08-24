@@ -1,18 +1,14 @@
 
 import React from 'react';
 import { Link } from "react-router-dom";
-<<<<<<< HEAD
-import { Briefcase, HardDrive, Lightbulb, Users, TrendingUp } from "lucide-react";
-=======
-import { Briefcase, HardDrive, Lightbulb, Users, Zap, Shield, Cloud, Database, TrendingUp, Cpu, LinkIcon } from "lucide-react";
->>>>>>> origin/main
+import { Briefcase, HardDrive, Lightbulb, Users, Brain, Shield, Globe, Database, Network, Zap, Leaf, Eye, CreditCard, ArrowRight, TrendingUp } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 const categories = [
   {
     title: "Enhanced Services",
     description: "AI, cybersecurity, cloud, and specialized IT solutions",
     icon: <Briefcase className="w-10 h-10" />,
-<<<<<<< HEAD
     link: "/enhanced-services",
     color: "from-purple-500 to-indigo-600",
   },
@@ -25,13 +21,13 @@ const categories = [
   },
   {
     title: "Talents",
-=======
-    link: "/comprehensive-services",
-    color: "from-purple-500 to-indigo-600",
+    description: "Connect with AI experts, developers, and tech specialists",
+    icon: <Users className="w-10 h-10" />,
+    link: "/talent",
+    color: "from-cyan-500 to-blue-600",
   },
   {
     title: "AI Solutions",
->>>>>>> origin/main
     description: "Connect with AI experts, developers, and tech specialists",
     icon: <Users className="w-10 h-10" />,
     link: "/ai-services",
@@ -44,8 +40,6 @@ const categories = [
     link: "/enterprise-solutions",
     color: "from-amber-500 to-orange-600",
   },
-<<<<<<< HEAD
-=======
   {
     title: "Innovation",
     description: "Discover cutting-edge solutions and tech breakthroughs",
@@ -53,7 +47,6 @@ const categories = [
     link: "/comprehensive-services",
     color: "from-emerald-500 to-green-600",
   },
->>>>>>> origin/main
 ];
 
 const specialServices = [
@@ -76,58 +69,83 @@ const specialServices = [
   {
     title: "Enterprise Solutions",
     link: "/enterprise-solutions"
+  },
+  {
+    title: "Advanced Technology Services",
+    link: "/expanded-services"
   }
 ];
 
-const serviceCategories = [
+const advancedCategories = [
   {
-    title: "AI & Automation",
-    description: "Intelligent automation and AI solutions",
-    icon: <Zap className="w-8 h-8" />,
-    color: "from-purple-500 to-indigo-600",
-    link: "/ai-services"
+    title: "AI & Machine Learning",
+    icon: <Brain className="w-6 h-6" />,
+    description: "Process automation, NLP, computer vision",
+    link: "/expanded-services?category=AI%20%26%20Machine%20Learning",
+    color: "from-purple-500 to-pink-600"
   },
   {
     title: "Cybersecurity",
-    description: "Advanced security and protection services",
-    icon: <Shield className="w-8 h-8" />,
-    color: "from-red-500 to-pink-600",
-    link: "/comprehensive-services"
+    icon: <Shield className="w-6 h-6" />,
+    description: "Zero-trust, threat detection, compliance",
+    link: "/expanded-services?category=Cybersecurity",
+    color: "from-red-500 to-orange-600"
   },
   {
     title: "Cloud & DevOps",
-    description: "Cloud infrastructure and development operations",
-    icon: <Cloud className="w-8 h-8" />,
-    color: "from-blue-500 to-cyan-600",
-    link: "/enterprise-solutions"
+    icon: <Globe className="w-6 h-6" />,
+    description: "Multi-cloud, automation, orchestration",
+    link: "/expanded-services?category=Cloud%20%26%20DevOps",
+    color: "from-blue-500 to-cyan-600"
   },
   {
     title: "Data & Analytics",
-    description: "Big data processing and business intelligence",
-    icon: <Database className="w-8 h-8" />,
-    color: "from-green-500 to-emerald-600",
-    link: "/comprehensive-services"
-  },
-  {
-    title: "Digital Transformation",
-    description: "Modernize your business with digital solutions",
-    icon: <TrendingUp className="w-8 h-8" />,
-    color: "from-yellow-500 to-orange-600",
-    link: "/enterprise-solutions"
-  },
-  {
-    title: "IoT & Edge Computing",
-    description: "Internet of Things and edge computing solutions",
-    icon: <Cpu className="w-8 h-8" />,
-    color: "from-indigo-500 to-purple-600",
-    link: "/comprehensive-services"
+    icon: <Database className="w-6 h-6" />,
+    description: "Real-time processing, BI, ML integration",
+    link: "/expanded-services?category=Data%20%26%20Analytics",
+    color: "from-green-500 to-emerald-600"
   },
   {
     title: "Blockchain & Web3",
-    description: "Decentralized solutions and smart contracts",
-    icon: <LinkIcon className="w-8 h-8" />,
-    color: "from-teal-500 to-blue-600",
-    link: "/comprehensive-services"
+    icon: <Network className="w-6 h-6" />,
+    description: "DeFi, smart contracts, DApps",
+    link: "/expanded-services?category=Blockchain%20%26%20Web3",
+    color: "from-indigo-500 to-purple-600"
+  },
+  {
+    title: "IoT & Edge Computing",
+    icon: <HardDrive className="w-6 h-6" />,
+    description: "Edge platforms, device management",
+    link: "/expanded-services?category=IoT%20%26%20Edge%20Computing",
+    color: "from-yellow-500 to-orange-600"
+  },
+  {
+    title: "Quantum Computing",
+    icon: <Zap className="w-6 h-6" />,
+    description: "Strategy, algorithms, cryptography",
+    link: "/expanded-services?category=Quantum%20Computing",
+    color: "from-pink-500 to-rose-600"
+  },
+  {
+    title: "Green Tech",
+    icon: <Leaf className="w-6 h-6" />,
+    description: "Sustainability, energy efficiency",
+    link: "/expanded-services?category=Green%20Tech%20%26%20Sustainability",
+    color: "from-emerald-500 to-teal-600"
+  },
+  {
+    title: "AR/VR & Metaverse",
+    icon: <Eye className="w-6 h-6" />,
+    description: "Virtual worlds, digital twins",
+    link: "/expanded-services?category=AR%2FVR%20%26%20Metaverse",
+    color: "from-violet-500 to-purple-600"
+  },
+  {
+    title: "FinTech & Banking",
+    icon: <CreditCard className="w-6 h-6" />,
+    description: "Digital banking, payments, lending",
+    link: "/expanded-services?category=FinTech%20%26%20Digital%20Banking",
+    color: "from-blue-600 to-indigo-600"
   }
 ];
 
@@ -148,7 +166,7 @@ export function CategoriesSection({ showTitle = true }: CategoriesSectionProps) 
           </div>
         )}
         
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
           {categories.map((category) => (
             <Link 
               key={category.title} 
@@ -167,6 +185,45 @@ export function CategoriesSection({ showTitle = true }: CategoriesSectionProps) 
             </Link>
           ))}
         </div>
+
+        {/* Advanced Technology Services Section */}
+        <div className="mb-12">
+          <div className="text-center mb-8">
+            <h3 className="text-2xl font-bold text-white mb-4">Advanced Technology Services</h3>
+            <p className="text-zion-slate-light text-lg max-w-3xl mx-auto">
+              Cutting-edge micro SAAS solutions and professional IT services designed to transform your business
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4 mb-6">
+            {advancedCategories.map((category) => (
+              <Link 
+                key={category.title}
+                to={category.link}
+                className="group block"
+              >
+                <div className="rounded-lg overflow-hidden border border-zion-blue-light bg-zion-blue-dark p-4 transition-all duration-300 hover:border-zion-purple/50 hover:translate-y-[-3px]">
+                  <div className={`rounded-full w-12 h-12 bg-gradient-to-br ${category.color} flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300`}>
+                    <div className="text-white">
+                      {category.icon}
+                    </div>
+                  </div>
+                  <h4 className="text-white text-sm font-semibold mb-1">{category.title}</h4>
+                  <p className="text-zion-slate-light text-xs">{category.description}</p>
+                </div>
+              </Link>
+            ))}
+          </div>
+
+          <div className="text-center">
+            <Link to="/expanded-services">
+              <Button className="bg-gradient-to-r from-zion-purple to-zion-cyan hover:from-zion-purple-dark hover:to-zion-cyan-dark text-white">
+                Explore All Advanced Services
+                <ArrowRight className="w-4 h-4 ml-2" />
+              </Button>
+            </Link>
+          </div>
+        </div>
         
         <div className="mt-8">
           <h3 className="text-center text-xl font-bold text-white mb-6">Featured Services</h3>
@@ -181,17 +238,17 @@ export function CategoriesSection({ showTitle = true }: CategoriesSectionProps) 
               </Link>
             ))}
             <Link 
-              to="/comprehensive-services"
-              className="px-6 py-3 bg-gradient-to-r from-zion-purple to-zion-purple-dark hover:from-zion-purple-light hover:to-zion-purple border border-zion-purple/50 hover:border-zion-purple rounded-full text-white transition-colors duration-300"
+              to="/services-pricing"
+              className="px-6 py-3 bg-zion-purple hover:bg-zion-purple-dark border border-zion-purple/50 hover:border-zion-purple rounded-full text-white transition-all duration-300"
             >
-              View All Services
+              View Pricing
             </Link>
           </div>
         </div>
         
         <div className="mt-12 flex justify-center">
           <Link 
-            to="/comprehensive-services" 
+            to="/categories" 
             className="text-zion-cyan border-b border-zion-cyan hover:border-zion-cyan-dark transition-colors"
           >
             View All Categories →
