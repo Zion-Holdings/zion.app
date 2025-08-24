@@ -4,84 +4,66 @@ import { Button } from '@/components/ui/button';
 import { TrustedBySection } from '@/components/TrustedBySection';
 import { QuoteFormSection } from '@/components/QuoteFormSection';
 import { 
-  Brain, 
-  Bot, 
-  Zap, 
-  Shield, 
   BarChart3, 
+  Database, 
+  TrendingUp, 
+  PieChart, 
   Users, 
   Globe, 
-  Lock,
+  Zap,
   ArrowRight,
   CheckCircle,
   Star,
   Clock,
-  DollarSign
+  DollarSign,
+  Network,
+  HardDrive,
+  Smartphone,
+  Brain,
+  Eye,
+  Server
 } from 'lucide-react';
 
-const aiServices = [
+const analyticsServices = [
   {
     id: 1,
-    title: "AI-Powered Customer Support Automation",
-    description: "Transform your customer service with intelligent chatbots and automated support systems that provide 24/7 assistance.",
+    title: "Big Data Analytics & Business Intelligence",
+    description: "Transform raw data into actionable insights with advanced analytics and visualization solutions.",
     features: [
-      "Natural language processing for human-like conversations",
-      "Multi-language support for global customers",
-      "Integration with existing CRM systems",
-      "Real-time learning and improvement",
-      "Analytics and performance insights"
+      "Data warehouse design and implementation",
+      "ETL pipeline development",
+      "Interactive dashboards and reports",
+      "Real-time data processing",
+      "Advanced analytics and modeling"
     ],
-    price: 2800,
+    price: 6500,
     currency: "$",
-    duration: "4-6 weeks",
-    icon: <Bot className="w-8 h-8" />,
-    category: "Customer Experience",
+    duration: "8-12 weeks",
+    icon: <BarChart3 className="w-8 h-8" />,
+    category: "Business Intelligence",
     benefits: [
-      "Reduce support costs by up to 60%",
-      "Improve customer satisfaction scores",
-      "24/7 availability without additional staff",
-      "Scalable support during peak periods"
+      "Improve decision-making with data-driven insights",
+      "Identify new business opportunities",
+      "Optimize operational efficiency",
+      "Enhance customer understanding"
     ]
   },
   {
     id: 2,
-    title: "AI-Powered Content Generation",
-    description: "Create high-quality, engaging content automatically for marketing, documentation, and creative projects.",
-    features: [
-      "SEO-optimized content creation",
-      "Multiple content formats (blogs, social media, emails)",
-      "Brand voice consistency",
-      "Plagiarism-free original content",
-      "Content performance analytics"
-    ],
-    price: 2200,
-    currency: "$",
-    duration: "2-3 weeks",
-    icon: <Zap className="w-8 h-8" />,
-    category: "Content Marketing",
-    benefits: [
-      "10x faster content creation",
-      "Consistent brand messaging",
-      "SEO optimization built-in",
-      "Cost-effective content strategy"
-    ]
-  },
-  {
-    id: 3,
     title: "AI-Powered Predictive Analytics",
     description: "Leverage machine learning to predict trends, optimize decisions, and reduce business risks.",
     features: [
-      "Advanced forecasting models",
+      "Predictive modeling and forecasting",
+      "Machine learning algorithm development",
       "Risk assessment and mitigation",
       "Customer behavior prediction",
-      "Market trend analysis",
-      "Real-time data processing"
+      "Market trend analysis"
     ],
-    price: 3800,
+    price: 7800,
     currency: "$",
-    duration: "6-8 weeks",
-    icon: <BarChart3 className="w-8 h-8" />,
-    category: "Business Intelligence",
+    duration: "10-14 weeks",
+    icon: <Brain className="w-8 h-8" />,
+    category: "Predictive Analytics",
     benefits: [
       "Improve decision accuracy by 40%",
       "Reduce operational risks",
@@ -90,146 +72,226 @@ const aiServices = [
     ]
   },
   {
-    id: 4,
-    title: "AI-Powered Business Process Automation",
-    description: "Streamline operations with intelligent automation that learns and improves over time.",
+    id: 3,
+    title: "Real-Time Data Streaming & Analytics",
+    description: "Process and analyze data in real-time for instant insights and immediate action.",
     features: [
-      "RPA with AI enhancement",
-      "Process optimization recommendations",
-      "Exception handling and learning",
-      "Integration with existing systems",
-      "Performance monitoring and reporting"
+      "Real-time data pipeline development",
+      "Stream processing architecture",
+      "Live dashboard creation",
+      "Event-driven analytics",
+      "Performance monitoring and optimization"
+    ],
+    price: 5500,
+    currency: "$",
+    duration: "6-10 weeks",
+    icon: <Zap className="w-8 h-8" />,
+    category: "Real-Time Analytics",
+    benefits: [
+      "Immediate response to business events",
+      "Real-time monitoring and alerting",
+      "Improved customer experience",
+      "Faster decision-making"
+    ]
+  },
+  {
+    id: 4,
+    title: "Data Engineering & ETL Solutions",
+    description: "Build robust data pipelines and ETL processes for reliable data processing and transformation.",
+    features: [
+      "Data pipeline architecture design",
+      "ETL/ELT process development",
+      "Data quality and validation",
+      "Performance optimization",
+      "Monitoring and alerting systems"
     ],
     price: 4800,
     currency: "$",
-    duration: "8-10 weeks",
-    icon: <Brain className="w-8 h-8" />,
-    category: "Process Optimization",
+    duration: "6-8 weeks",
+    icon: <Database className="w-8 h-8" />,
+    category: "Data Engineering",
     benefits: [
-      "Reduce manual work by 70%",
-      "Improve process accuracy",
-      "Faster processing times",
-      "Cost savings and efficiency gains"
+      "Reliable data processing",
+      "Improved data quality",
+      "Faster data delivery",
+      "Reduced maintenance overhead"
     ]
   },
   {
     id: 5,
-    title: "AI Ethics & Governance Framework",
-    description: "Ensure responsible AI implementation with comprehensive ethics policies and governance structures.",
+    title: "Customer Analytics & Segmentation",
+    description: "Deep dive into customer behavior and create targeted segmentation strategies.",
     features: [
-      "AI ethics policy development",
-      "Bias detection and mitigation",
-      "Transparency and explainability",
-      "Compliance framework design",
-      "Ongoing monitoring and auditing"
+      "Customer journey mapping",
+      "Behavioral analysis and segmentation",
+      "Churn prediction and prevention",
+      "Customer lifetime value analysis",
+      "Personalization strategies"
     ],
-    price: 6800,
+    price: 4200,
     currency: "$",
-    duration: "10-12 weeks",
-    icon: <Shield className="w-8 h-8" />,
-    category: "Compliance & Ethics",
+    duration: "4-6 weeks",
+    icon: <Users className="w-8 h-8" />,
+    category: "Customer Analytics",
     benefits: [
-      "Build trust with stakeholders",
-      "Ensure regulatory compliance",
-      "Mitigate AI risks and biases",
-      "Future-proof your AI strategy"
+      "Improved customer retention",
+      "Better marketing ROI",
+      "Enhanced customer experience",
+      "Increased customer lifetime value"
     ]
   },
   {
     id: 6,
-    title: "AI Strategy & Implementation Consulting",
-    description: "Strategic guidance to help businesses leverage AI for competitive advantage and growth.",
+    title: "Financial Analytics & Risk Management",
+    description: "Comprehensive financial analysis and risk assessment for informed decision-making.",
     features: [
-      "AI readiness assessment",
-      "Technology roadmap development",
-      "Implementation planning",
-      "Change management support",
-      "ROI measurement framework"
+      "Financial performance analysis",
+      "Risk modeling and assessment",
+      "Fraud detection systems",
+      "Compliance monitoring",
+      "Financial forecasting"
     ],
-    price: 7500,
+    price: 7200,
     currency: "$",
-    duration: "12-16 weeks",
-    icon: <Globe className="w-8 h-8" />,
-    category: "Strategic Consulting",
+    duration: "8-12 weeks",
+    icon: <TrendingUp className="w-8 h-8" />,
+    category: "Financial Analytics",
     benefits: [
-      "Clear AI implementation roadmap",
-      "Maximize ROI on AI investments",
-      "Competitive advantage through AI",
-      "Risk mitigation and success planning"
+      "Better financial decision-making",
+      "Reduced financial risks",
+      "Improved compliance",
+      "Enhanced fraud detection"
+    ]
+  },
+  {
+    id: 7,
+    title: "Marketing Analytics & Attribution",
+    description: "Measure marketing effectiveness and optimize campaigns with data-driven insights.",
+    features: [
+      "Marketing campaign analysis",
+      "Attribution modeling",
+      "ROI measurement and optimization",
+      "A/B testing and experimentation",
+      "Marketing automation insights"
+    ],
+    price: 3800,
+    currency: "$",
+    duration: "4-6 weeks",
+    icon: <PieChart className="w-8 h-8" />,
+    category: "Marketing Analytics",
+    benefits: [
+      "Improved marketing ROI",
+      "Better campaign optimization",
+      "Enhanced customer targeting",
+      "Data-driven marketing decisions"
+    ]
+  },
+  {
+    id: 8,
+    title: "Operational Analytics & Performance Monitoring",
+    description: "Monitor and optimize business operations with real-time performance analytics.",
+    features: [
+      "KPI dashboard development",
+      "Performance monitoring systems",
+      "Process optimization analysis",
+      "Resource utilization tracking",
+      "Operational efficiency metrics"
+    ],
+    price: 4500,
+    currency: "$",
+    duration: "6-8 weeks",
+    icon: <Server className="w-8 h-8" />,
+    category: "Operational Analytics",
+    benefits: [
+      "Improved operational efficiency",
+      "Reduced costs and waste",
+      "Better resource allocation",
+      "Enhanced productivity"
     ]
   }
 ];
 
-const aiTechnologies = [
-  "Machine Learning & Deep Learning",
-  "Natural Language Processing (NLP)",
-  "Computer Vision & Image Recognition",
-  "Predictive Analytics & Forecasting",
-  "Robotic Process Automation (RPA)",
-  "Recommendation Systems",
-  "Sentiment Analysis",
-  "Anomaly Detection"
+const analyticsTechnologies = [
+  "Apache Spark & Hadoop",
+  "Python & R for Analytics",
+  "Tableau & Power BI",
+  "Apache Kafka & Flink",
+  "TensorFlow & PyTorch",
+  "SQL & NoSQL Databases",
+  "Apache Airflow",
+  "Kubernetes & Docker"
 ];
 
-const industries = [
-  "Healthcare & Life Sciences",
-  "Financial Services & Banking",
+const dataSources = [
+  "Structured Databases",
+  "Unstructured Data",
+  "Real-Time Streams",
+  "Cloud Data Sources",
+  "IoT Device Data",
+  "Social Media Feeds",
+  "API Integrations",
+  "Legacy Systems"
+];
+
+const industrySolutions = [
+  "Healthcare Analytics",
+  "Financial Services",
   "Retail & E-commerce",
-  "Manufacturing & Logistics",
-  "Education & Training",
-  "Real Estate & Construction",
-  "Media & Entertainment",
+  "Manufacturing",
+  "Transportation & Logistics",
+  "Energy & Utilities",
+  "Telecommunications",
   "Government & Public Sector"
 ];
 
-export default function AIServicesPage() {
+export default function DataAnalyticsServicesPage() {
   return (
     <>
       {/* Hero Section */}
       <section className="py-20 bg-gradient-to-br from-zion-blue via-zion-blue-dark to-zion-purple">
         <div className="container mx-auto px-4 text-center">
           <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
-            AI-Powered Solutions for
+            Data Analytics &
             <span className="block text-transparent bg-clip-text bg-gradient-to-r from-zion-cyan to-zion-purple-light">
-              Modern Businesses
+              Business Intelligence
             </span>
           </h1>
           <p className="text-xl text-zion-slate-light mb-8 max-w-3xl mx-auto">
-            Transform your business with cutting-edge AI solutions designed to drive innovation, 
-            efficiency, and competitive advantage. From automation to predictive analytics, 
-            we deliver intelligent solutions that scale with your business.
+            Transform your business with data-driven insights and advanced analytics solutions. 
+            From predictive modeling to real-time dashboards, we help you unlock the full 
+            potential of your data for strategic decision-making and growth.
           </p>
           <div className="flex flex-wrap justify-center gap-4">
             <Link to="/request-quote">
               <Button size="lg" className="bg-gradient-to-r from-zion-purple to-zion-purple-dark hover:from-zion-purple-light hover:to-zion-purple text-white px-8 py-3">
-                Get AI Solution Quote
+                Get Analytics Quote
                 <ArrowRight className="ml-2 w-5 h-5" />
               </Button>
             </Link>
             <Link to="/contact">
               <Button variant="outline" size="lg" className="border-zion-cyan text-zion-cyan hover:bg-zion-cyan/10 px-8 py-3">
-                Schedule AI Consultation
+                Analytics Consultation
               </Button>
             </Link>
           </div>
         </div>
       </section>
 
-      {/* AI Services Grid */}
+      {/* Analytics Services Grid */}
       <section className="py-20 bg-zion-blue-dark">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-              Comprehensive AI Services
+              Comprehensive Analytics Services
             </h2>
             <p className="text-zion-slate-light text-lg max-w-2xl mx-auto">
-              Choose from our range of AI services designed to address specific business challenges 
-              and drive measurable results.
+              Choose from our range of data analytics services designed to address specific 
+              business challenges and drive data-driven decision-making.
             </p>
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {aiServices.map((service) => (
+            {analyticsServices.map((service) => (
               <div key={service.id} className="bg-zion-blue border border-zion-blue-light rounded-lg p-6 hover:border-zion-purple/50 transition-all duration-300 hover:translate-y-[-5px]">
                 <div className="flex items-center mb-4">
                   <div className="p-3 bg-gradient-to-br from-zion-purple to-zion-purple-dark rounded-lg mr-4">
@@ -281,24 +343,24 @@ export default function AIServicesPage() {
         </div>
       </section>
 
-      {/* AI Technologies */}
+      {/* Analytics Technologies */}
       <section className="py-20 bg-zion-blue">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-              Advanced AI Technologies
+              Advanced Analytics Technologies
             </h2>
             <p className="text-zion-slate-light text-lg max-w-2xl mx-auto">
-              We leverage cutting-edge AI technologies to deliver innovative solutions 
-              that address complex business challenges.
+              We leverage cutting-edge analytics technologies and tools to deliver 
+              powerful insights and scalable solutions.
             </p>
           </div>
           
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-            {aiTechnologies.map((tech, index) => (
+            {analyticsTechnologies.map((tech, index) => (
               <div key={index} className="text-center p-6 bg-zion-blue-dark border border-zion-blue-light rounded-lg hover:border-zion-purple/50 transition-all duration-300">
                 <div className="w-16 h-16 bg-gradient-to-br from-zion-purple to-zion-purple-dark rounded-full flex items-center justify-center mx-auto mb-4">
-                  <Brain className="w-8 h-8 text-white" />
+                  <BarChart3 className="w-8 h-8 text-white" />
                 </div>
                 <h3 className="text-white font-semibold text-sm">{tech}</h3>
               </div>
@@ -307,24 +369,50 @@ export default function AIServicesPage() {
         </div>
       </section>
 
-      {/* Industries We Serve */}
+      {/* Data Sources */}
       <section className="py-20 bg-zion-blue-dark">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-              Industries We Serve
+              Data Sources We Handle
             </h2>
             <p className="text-zion-slate-light text-lg max-w-2xl mx-auto">
-              Our AI solutions are tailored to meet the unique challenges and opportunities 
-              across diverse industry sectors.
+              We work with diverse data sources to create comprehensive analytics 
+              solutions that provide complete business insights.
             </p>
           </div>
           
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-            {industries.map((industry, index) => (
+            {dataSources.map((source, index) => (
               <div key={index} className="text-center p-6 bg-zion-blue border border-zion-blue-light rounded-lg hover:border-zion-purple/50 transition-all duration-300">
                 <div className="w-16 h-16 bg-gradient-to-br from-zion-cyan to-zion-blue rounded-full flex items-center justify-center mx-auto mb-4">
-                  <Users className="w-8 h-8 text-white" />
+                  <Database className="w-8 h-8 text-white" />
+                </div>
+                <h3 className="text-white font-semibold text-sm">{source}</h3>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Industry Solutions */}
+      <section className="py-20 bg-zion-blue">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+              Industry-Specific Solutions
+            </h2>
+            <p className="text-zion-slate-light text-lg max-w-2xl mx-auto">
+              Our analytics solutions are tailored to meet the unique challenges 
+              and opportunities across diverse industry sectors.
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+            {industrySolutions.map((industry, index) => (
+              <div key={index} className="text-center p-6 bg-zion-blue-dark border border-zion-blue-light rounded-lg hover:border-zion-purple/50 transition-all duration-300">
+                <div className="w-16 h-16 bg-gradient-to-br from-zion-purple to-zion-cyan rounded-full flex items-center justify-center mx-auto mb-4">
+                  <Globe className="w-8 h-8 text-white" />
                 </div>
                 <h3 className="text-white font-semibold text-sm">{industry}</h3>
               </div>
@@ -333,39 +421,39 @@ export default function AIServicesPage() {
         </div>
       </section>
 
-      {/* Why Choose ZionTech for AI */}
-      <section className="py-20 bg-zion-blue">
+      {/* Why Choose ZionTech for Analytics */}
+      <section className="py-20 bg-zion-blue-dark">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-              Why Choose ZionTech Group for AI Solutions?
+              Why Choose ZionTech Group for Analytics?
             </h2>
             <p className="text-zion-slate-light text-lg max-w-2xl mx-auto">
-              We combine deep AI expertise with industry knowledge to deliver 
-              solutions that drive real business value.
+              We combine deep analytics expertise with industry knowledge to deliver 
+              solutions that drive measurable business value.
             </p>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="text-center p-6">
               <div className="w-20 h-20 bg-gradient-to-br from-zion-purple to-zion-purple-dark rounded-full flex items-center justify-center mx-auto mb-6">
                 <Star className="w-10 h-10 text-white" />
               </div>
-              <h3 className="text-white text-xl font-bold mb-3">Proven Expertise</h3>
+              <h3 className="text-white text-xl font-bold mb-3">Data Scientists</h3>
               <p className="text-zion-slate-light">
-                Over 5 years of experience in AI implementation across multiple industries 
-                with a track record of successful projects.
+                PhD-level data scientists and certified analytics professionals 
+                with extensive experience in enterprise analytics.
               </p>
             </div>
             
             <div className="text-center p-6">
               <div className="w-20 h-20 bg-gradient-to-br from-zion-cyan to-zion-blue rounded-full flex items-center justify-center mx-auto mb-6">
-                <Lock className="w-10 h-10 text-white" />
+                <Eye className="w-10 h-10 text-white" />
               </div>
-              <h3 className="text-white text-xl font-bold mb-3">Enterprise Security</h3>
+              <h3 className="text-white text-xl font-bold mb-3">Proven Results</h3>
               <p className="text-zion-slate-light">
-                Bank-level security standards with SOC 2 compliance and enterprise-grade 
-                data protection for all AI solutions.
+                Successfully delivered analytics solutions for 300+ businesses 
+                with average ROI improvements of 150%.
               </p>
             </div>
             
@@ -373,40 +461,40 @@ export default function AIServicesPage() {
               <div className="w-20 h-20 bg-gradient-to-br from-zion-purple to-zion-cyan rounded-full flex items-center justify-center mx-auto mb-6">
                 <Zap className="w-10 h-10 text-white" />
               </div>
-              <h3 className="text-white text-xl font-bold mb-3">Rapid Deployment</h3>
+              <h3 className="text-white text-xl font-bold mb-3">End-to-End Solutions</h3>
               <p className="text-zion-slate-light">
-                Agile development methodology with rapid prototyping and deployment 
-                to get your AI solution running quickly.
+                Complete analytics lifecycle from data collection to insights 
+                delivery with ongoing support and optimization.
               </p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Pricing Information */}
-      <section className="py-20 bg-zion-blue-dark">
+      {/* Analytics Pricing */}
+      <section className="py-20 bg-zion-blue">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-              Transparent AI Solution Pricing
+              Transparent Analytics Pricing
             </h2>
             <p className="text-zion-slate-light text-lg max-w-2xl mx-auto">
-              Competitive pricing for enterprise-grade AI solutions with flexible 
-              payment options and ROI guarantees.
+              Competitive pricing for enterprise-grade analytics solutions with 
+              flexible payment options and ROI guarantees.
             </p>
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-            <div className="bg-zion-blue border border-zion-blue-light rounded-lg p-8 text-center">
-              <h3 className="text-white text-2xl font-bold mb-4">Starter AI</h3>
+            <div className="bg-zion-blue-dark border border-zion-blue-light rounded-lg p-8 text-center">
+              <h3 className="text-white text-2xl font-bold mb-4">Analytics Starter</h3>
               <div className="text-4xl font-bold text-zion-cyan mb-6">
-                $2,200<span className="text-lg text-zion-slate-light">/project</span>
+                $3,800<span className="text-lg text-zion-slate-light">/project</span>
               </div>
               <ul className="text-zion-slate-light space-y-2 mb-8">
-                <li>Basic AI implementation</li>
-                <li>Standard features</li>
+                <li>Basic analytics setup</li>
+                <li>Standard dashboards</li>
+                <li>Data visualization</li>
                 <li>Email support</li>
-                <li>2-week delivery</li>
               </ul>
               <Link to="/request-quote">
                 <Button className="w-full bg-gradient-to-r from-zion-purple to-zion-purple-dark hover:from-zion-purple-light hover:to-zion-purple text-white">
@@ -421,15 +509,15 @@ export default function AIServicesPage() {
                   Most Popular
                 </span>
               </div>
-              <h3 className="text-white text-2xl font-bold mb-4">Professional AI</h3>
+              <h3 className="text-white text-2xl font-bold mb-4">Analytics Professional</h3>
               <div className="text-4xl font-bold text-white mb-6">
-                $4,800<span className="text-lg text-zion-slate-light">/project</span>
+                $7,800<span className="text-lg text-zion-slate-light">/project</span>
               </div>
               <ul className="text-white space-y-2 mb-8">
-                <li>Advanced AI features</li>
-                <li>Custom integrations</li>
+                <li>Advanced analytics</li>
+                <li>Predictive modeling</li>
+                <li>Real-time dashboards</li>
                 <li>Priority support</li>
-                <li>6-8 week delivery</li>
               </ul>
               <Link to="/request-quote">
                 <Button className="w-full bg-white text-zion-purple hover:bg-zion-slate-light">
@@ -438,16 +526,16 @@ export default function AIServicesPage() {
               </Link>
             </div>
             
-            <div className="bg-zion-blue border border-zion-blue-light rounded-lg p-8 text-center">
-              <h3 className="text-white text-2xl font-bold mb-4">Enterprise AI</h3>
+            <div className="bg-zion-blue-dark border border-zion-blue-light rounded-lg p-8 text-center">
+              <h3 className="text-white text-2xl font-bold mb-4">Analytics Enterprise</h3>
               <div className="text-4xl font-bold text-zion-cyan mb-6">
-                $12,000<span className="text-lg text-zion-slate-light">/project</span>
+                $15,000<span className="text-lg text-zion-slate-light">/project</span>
               </div>
               <ul className="text-zion-slate-light space-y-2 mb-8">
-                <li>Full AI transformation</li>
-                <li>Custom development</li>
-                <li>24/7 dedicated support</li>
-                <li>12-16 week delivery</li>
+                <li>Full analytics transformation</li>
+                <li>Custom AI models</li>
+                <li>24/7 monitoring</li>
+                <li>Dedicated team</li>
               </ul>
               <Link to="/request-quote">
                 <Button className="w-full bg-gradient-to-r from-zion-purple to-zion-purple-dark hover:from-zion-purple-light hover:to-zion-purple text-white">
@@ -460,14 +548,14 @@ export default function AIServicesPage() {
       </section>
 
       {/* Contact Information */}
-      <section className="py-20 bg-zion-blue">
+      <section className="py-20 bg-zion-blue-dark">
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
-            Ready to Transform Your Business with AI?
+            Ready to Transform Your Business with Data?
           </h2>
           <p className="text-zion-slate-light text-lg mb-8 max-w-2xl mx-auto">
-            Contact our AI experts today to discuss how we can help you leverage 
-            artificial intelligence for business growth and innovation.
+            Contact our analytics experts today to discuss how we can help you 
+            unlock the power of your data for strategic growth.
           </p>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto mb-12">
@@ -506,12 +594,12 @@ export default function AIServicesPage() {
           <div className="flex flex-wrap justify-center gap-4">
             <Link to="/request-quote">
               <Button size="lg" className="bg-gradient-to-r from-zion-purple to-zion-purple-dark hover:from-zion-purple-light hover:to-zion-purple text-white px-8 py-3">
-                Request AI Solution Quote
+                Request Analytics Quote
               </Button>
             </Link>
             <Link to="/contact">
               <Button variant="outline" size="lg" className="border-zion-cyan text-zion-cyan hover:bg-zion-cyan/10 px-8 py-3">
-                Schedule AI Consultation
+                Schedule Analytics Consultation
               </Button>
             </Link>
           </div>
