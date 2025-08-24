@@ -3,9 +3,6 @@
   publish = ".next"
   functions = "netlify/functions"
 
-[[plugins]]
-  package = "@netlify/plugin-nextjs"
-
 [build.environment]
   NODE_OPTIONS = "--max-old-space-size=6144 --openssl-legacy-provider"
 
