@@ -21,7 +21,6 @@ const CookiesPage = React.lazy(() => import('./pages/Cookies'));
 const AccessibilityPage = React.lazy(() => import('./pages/Accessibility'));
 
 // Our comprehensive services pages
-const ComprehensiveServicesPage = React.lazy(() => import('./pages/ComprehensiveServicesPage'));
 const ServiceDetailPage = React.lazy(() => import('./pages/ServiceDetailPage'));
 const PricingPage = React.lazy(() => import('./pages/PricingPage'));
 
@@ -47,7 +46,6 @@ const baseRoutes = [
   { path: '/cookies', element: <CookiesPage /> },
   { path: '/accessibility', element: <AccessibilityPage /> },
   // Our comprehensive services routes
-  { path: '/comprehensive-services', element: <ComprehensiveServicesPage /> },
   { path: '/services/:id', element: <ServiceDetailPage /> },
   { path: '/pricing', element: <PricingPage /> },
   // Additional service routes
