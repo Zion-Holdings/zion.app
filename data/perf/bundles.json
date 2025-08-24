@@ -1,0 +1,126 @@
+{
+  "generatedAt": "2025-08-24T10:41:10.448Z",
+  "totalBytes": 43886888,
+  "topFiles": [
+    {
+      "file": ".next/static/chunks/framework-6d18543c2c368b0c.js",
+      "size": 141008
+    },
+    {
+      "file": ".next/static/chunks/main-ed90b046ce1f61d7.js",
+      "size": 115006
+    },
+    {
+      "file": ".next/static/chunks/495-fa3876d1cb65519b.js",
+      "size": 110283
+    },
+    {
+      "file": ".next/server/chunks/495.js",
+      "size": 110050
+    },
+    {
+      "file": ".next/server/middleware.js",
+      "size": 100496
+    },
+    {
+      "file": ".next/static/chunks/polyfills-c67a75d1b6f99dc8.js",
+      "size": 91460
+    },
+    {
+      "file": ".next/static/chunks/pages/index-3c14f79ba47115b5.js",
+      "size": 50922
+    },
+    {
+      "file": ".next/server/chunks/209.js",
+      "size": 29355
+    },
+    {
+      "file": ".next/server/chunks/664.js",
+      "size": 20649
+    },
+    {
+      "file": ".next/static/chunks/pages/contact-74b2df3ffeec2845.js",
+      "size": 12549
+    },
+    {
+      "file": ".next/static/chunks/530-44efaa94b036fbd6.js",
+      "size": 11975
+    },
+    {
+      "file": ".next/server/chunks/530.js",
+      "size": 11309
+    },
+    {
+      "file": ".next/static/chunks/pages/about-218bbd913ef87856.js",
+      "size": 10692
+    },
+    {
+      "file": ".next/server/edge-runtime-webpack.js",
+      "size": 6606
+    },
+    {
+      "file": ".next/static/chunks/996-f63e9faf058fa8be.js",
+      "size": 6566
+    },
+    {
+      "file": ".next/server/chunks/908.js",
+      "size": 6114
+    },
+    {
+      "file": ".next/static/chunks/pages/offline-8cc6f10e3fcf2c5e.js",
+      "size": 5009
+    },
+    {
+      "file": ".next/server/middleware-build-manifest.js",
+      "size": 3351
+    },
+    {
+      "file": ".next/server/chunks/514.js",
+      "size": 3028
+    },
+    {
+      "file": ".next/static/chunks/webpack-fd8027ecb5121007.js",
+      "size": 1772
+    },
+    {
+      "file": ".next/server/webpack-runtime.js",
+      "size": 1546
+    },
+    {
+      "file": ".next/static/bwAYMzkO4a6tbNC7FNMDr/_buildManifest.js",
+      "size": 1489
+    },
+    {
+      "file": ".next/server/pages/_error.js",
+      "size": 1326
+    },
+    {
+      "file": ".next/static/chunks/pages/reports/updates/update-2025-08-15-0457-577d6dd1662e595a.js",
+      "size": 1169
+    },
+    {
+      "file": ".next/static/chunks/pages/reports/updates/update-2025-08-15-0507-74568e3cf1f945ca.js",
+      "size": 1169
+    },
+    {
+      "file": ".next/static/chunks/pages/reports/updates/update-2025-08-15-0508-a3eea226d53ed3a5.js",
+      "size": 1165
+    },
+    {
+      "file": ".next/static/chunks/pages/apple-touch-icon.png-75cb304b4b66dfd4.js",
+      "size": 1081
+    },
+    {
+      "file": ".next/static/chunks/pages/www.google-analytics.com-65e707edf6ec58af.js",
+      "size": 1080
+    },
+    {
+      "file": ".next/static/chunks/pages/favicon.ico-759f4fac7d72bfae.js",
+      "size": 1017
+    },
+    {
+      "file": ".next/server/chunks/337.js",
+      "size": 795
+    }
+  ]
+}
