@@ -20,6 +20,8 @@ import SearchPage from "@/pages/SearchPage";
 import ProjectRoom from "@/pages/ProjectRoom";
 import VideoCall from "@/pages/VideoCall";
 import Checkout from "@/pages/Checkout";
+import FAQ from "@/pages/FAQ";
+import HelpCenterPage from "@/pages/HelpCenterPage";
 
 const MarketplaceRoutes = () => {
   return (
@@ -69,6 +71,12 @@ const MarketplaceRoutes = () => {
       
       {/* Search Route */}
       <Route path="/search" element={<SearchPage />} />
+
+      {/* FAQ Route */}
+      <Route path="/faq" element={<FAQ />} />
+
+      {/* Help Center Route */}
+      <Route path="/help" element={<HelpCenterPage />} />
 
       {/* Checkout Route - accessible even in staging */}
       <Route

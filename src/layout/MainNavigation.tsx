@@ -47,6 +47,16 @@ export function MainNavigation({ isAdmin = false, unreadCount = 0, className }: 
       key: 'community',
       href: '/community',
       matches: (path: string) => path.startsWith('/community') || path.startsWith('/forum')
+    },
+    {
+      key: 'faq',
+      href: '/faq',
+      matches: (path: string) => path === '/faq'
+    },
+    {
+      key: 'help',
+      href: '/help',
+      matches: (path: string) => path === '/help'
     }
   ];
 

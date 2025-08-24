@@ -98,6 +98,14 @@ export const publicPages: SitemapItem[] = [
     lastmod: currentDate,
   },
   {
+    path: '/help',
+    label: 'Help Center',
+    description: 'Comprehensive help and support resources',
+    priority: 0.7,
+    changeFreq: 'monthly',
+    lastmod: currentDate,
+  },
+  {
     path: '/terms',
     label: 'Terms of Service',
     description: 'Terms and conditions for using Zion',
