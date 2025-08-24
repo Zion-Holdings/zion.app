@@ -1,8 +1,8 @@
-export default function Contact() {
+export default function ContactPage() {
   return (
     <div>
-      <h1 className="text-2xl font-semibold">Contact</h1>
-      <p className="text-sm text-gray-600">Reach us at hello@zion.ai</p>
+      <h1 className="text-xl font-semibold mb-2">Contact</h1>
+      <p className="opacity-80">Get in touch. Contact form coming soon.</p>
     </div>
   );
 }

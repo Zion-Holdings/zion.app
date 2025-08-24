@@ -1,8 +1,8 @@
-export default function ForgotPassword() {
+export default function ForgotPasswordPage() {
   return (
-    <div>
-      <h1 className="text-2xl font-semibold">Forgot Password</h1>
-      <p className="text-sm text-gray-600">Reset instructions will be available soon.</p>
+    <div className="max-w-md">
+      <h1 className="text-xl font-semibold mb-2">Forgot Password</h1>
+      <p className="opacity-80">Reset flow coming soon.</p>
     </div>
   );
 }

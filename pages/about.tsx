@@ -1,8 +1,8 @@
-export default function About() {
+export default function AboutPage() {
   return (
     <div>
-      <h1 className="text-2xl font-semibold">About Zion</h1>
-      <p className="text-sm text-gray-600">Building the AI marketplace for talent and teams.</p>
+      <h1 className="text-xl font-semibold mb-2">About Zion</h1>
+      <p className="opacity-80">Learn more about our mission. Content coming soon.</p>
     </div>
   );
 }

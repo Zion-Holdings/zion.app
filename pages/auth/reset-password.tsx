@@ -1,8 +1,8 @@
-export default function ResetPassword() {
+export default function ResetPasswordPage() {
   return (
-    <div>
-      <h1 className="text-2xl font-semibold">Reset Password</h1>
-      <p className="text-sm text-gray-600">Enter your new password.</p>
+    <div className="max-w-md">
+      <h1 className="text-xl font-semibold mb-2">Reset Password</h1>
+      <p className="opacity-80">Enter your new password. Feature coming soon.</p>
     </div>
   );
 }

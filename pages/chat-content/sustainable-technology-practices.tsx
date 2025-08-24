@@ -1,8 +1,8 @@
-export default function SustainableTechnologyPractices() {
+export default function SustainableTechnologyPracticesPage() {
   return (
     <div>
-      <h1 className="text-2xl font-semibold">Sustainable Technology Practices</h1>
-      <p className="text-sm text-gray-600">Content coming soon.</p>
+      <h1 className="text-xl font-semibold mb-2">Sustainable Technology Practices</h1>
+      <p className="opacity-80">Article content coming soon.</p>
     </div>
   );
 }

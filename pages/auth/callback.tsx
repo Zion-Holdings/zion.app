@@ -1,8 +1,8 @@
-export default function AuthCallback() {
+export default function OAuthCallbackPage() {
   return (
-    <div>
-      <h1 className="text-2xl font-semibold">Auth Callback</h1>
-      <p className="text-sm text-gray-600">Processing sign-in...</p>
+    <div className="max-w-md">
+      <h1 className="text-xl font-semibold mb-2">Signing you in…</h1>
+      <p className="opacity-80">Completing authentication. You will be redirected shortly.</p>
     </div>
   );
 }

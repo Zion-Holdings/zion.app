@@ -1,8 +1,8 @@
-export default function EnhancedHome() {
+export default function EnhancedHomePage() {
   return (
     <div>
-      <h1 className="text-2xl font-semibold">Enhanced Home</h1>
-      <p className="text-sm text-gray-600">This is an enhanced home experience.</p>
+      <h1 className="text-xl font-semibold mb-2">Enhanced Home</h1>
+      <p className="opacity-80">Enhanced landing experience coming soon.</p>
     </div>
   );
 }
