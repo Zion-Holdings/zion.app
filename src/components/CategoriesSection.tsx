@@ -14,7 +14,8 @@ import {
   Brain,
   Rocket,
   Target,
-  Star
+  Star,
+  Lightbulb
 } from 'lucide-react';
 import { GradientHeading } from './GradientHeading';
 
@@ -28,12 +29,20 @@ const categories = [
     features: ["Neural Networks", "Computer Vision", "NLP", "Predictive Analytics"]
   },
   {
-    title: "Web Development",
-    description: "Modern web applications and platforms",
-    icon: <Code className="w-8 h-8" />,
-    color: "from-zion-cyan to-zion-cyan-dark",
-    link: "/expanded-services?category=web-development",
-    features: ["React", "Node.js", "Full-Stack", "Progressive Web Apps"]
+    title: "Micro SAAS",
+    description: "Innovative software solutions and business automation tools",
+    icon: <Lightbulb className="w-10 h-10" />,
+    link: "/micro-saas-services",
+    color: "from-emerald-500 to-green-600",
+    features: ["AI Solutions", "Business Automation", "Cloud Services", "Enterprise Tools"]
+  },
+  {
+    title: "Talents",
+    description: "Connect with AI experts, developers, and tech specialists",
+    icon: <Users className="w-10 h-10" />,
+    link: "/talent",
+    color: "from-cyan-500 to-blue-600",
+    features: ["AI Experts", "Developers", "Tech Specialists", "Consultants"]
   },
   {
     title: "Mobile Development",
@@ -82,6 +91,25 @@ const categories = [
     color: "from-indigo-500 to-purple-600",
     link: "/expanded-services?category=enterprise",
     features: ["ERP Systems", "CRM", "Workflow Automation", "Integration"]
+  }
+];
+
+const specialServices = [
+  {
+    title: "IT Onsite Services",
+    link: "/it-onsite-services"
+  },
+  {
+    title: "AI Chatbot Builder",
+    link: "/micro-saas-services#ai-chatbot-builder"
+  },
+  {
+    title: "Cloud Migration Pro",
+    link: "/micro-saas-services#cloud-migration-pro"
+  },
+  {
+    title: "Cybersecurity Suite",
+    link: "/micro-saas-services#cybersecurity-suite"
   }
 ];
 
