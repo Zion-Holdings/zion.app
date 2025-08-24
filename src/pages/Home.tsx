@@ -53,9 +53,6 @@ export default function Home() {
       {/* Enhanced Quick Access */}
       <EnhancedQuickAccess />
       
-      {/* Enhanced Search Section */}
-      <EnhancedSearchSection />
-      
       {/* Feature CTAs */}
       <FeatureCTAs />
       
