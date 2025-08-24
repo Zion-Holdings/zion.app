@@ -101,7 +101,7 @@ export default function PricingPage() {
       );
 
   const getDiscountedPrice = (price: number) => {
-    return billingCycle === 'yearly' ? Math.round(price * 10 * 0.8) : price;
+    return billingCycle === 'yearly' ? Math.round(price * 0.8) : price;
   };
 
   return (
@@ -114,7 +114,7 @@ export default function PricingPage() {
           </h1>
           <p className="text-xl md:text-2xl text-zion-slate-light mb-8 max-w-4xl mx-auto">
             Choose the perfect plan for your business. All our micro SAAS services come with 
-            enterprise-grade features at startup-friendly prices.
+            flexible pricing and enterprise-grade features at startup prices.
           </p>
           
           {/* Billing Toggle */}
@@ -122,21 +122,22 @@ export default function PricingPage() {
             <span className={`text-lg ${billingCycle === 'monthly' ? 'text-white' : 'text-zion-slate-light'}`}>
               Monthly
             </span>
-            <Button
-              variant="outline"
-              size="sm"
-              className={`relative ${billingCycle === 'yearly' ? 'bg-white text-zion-blue' : 'border-white text-white'}`}
+            <button
               onClick={() => setBillingCycle(billingCycle === 'monthly' ? 'yearly' : 'monthly')}
+              className={`relative inline-flex h-8 w-16 items-center rounded-full transition-colors ${
+                billingCycle === 'yearly' ? 'bg-zion-purple' : 'bg-zion-slate-light'
+              }`}
             >
-              <div className="flex items-center gap-2">
-                {billingCycle === 'yearly' && (
-                  <Badge className="absolute -top-2 -right-2 bg-green-500 text-white text-xs">
-                    Save 20%
-                  </Badge>
-                )}
-                {billingCycle === 'yearly' ? 'Yearly' : 'Monthly'}
-              </div>
-            </Button>
+              <span
+                className={`inline-block h-6 w-6 transform rounded-full bg-white transition-transform ${
+                  billingCycle === 'yearly' ? 'translate-x-8' : 'translate-x-1'
+                }`}
+              />
+            </button>
+            <span className={`text-lg ${billingCycle === 'yearly' ? 'text-white' : 'text-zion-slate-light'}`}>
+              Yearly
+              <Badge className="ml-2 bg-green-500 text-white">Save 20%</Badge>
+            </span>
           </div>
         </div>
       </div>
@@ -175,7 +176,7 @@ export default function PricingPage() {
                   <ul className="text-left space-y-3 mb-8">
                     {pricingFeatures[key as keyof typeof pricingFeatures].map((feature, index) => (
                       <li key={index} className="flex items-center">
-                        <CheckCircle className="h-4 w-4 text-green-500 mr-2 flex-shrink-0" />
+                        <CheckCircle className="h-4 w-4 text-green-500 mr-3 flex-shrink-0" />
                         <span className="text-sm">{feature}</span>
                       </li>
                     ))}
@@ -190,7 +191,7 @@ export default function PricingPage() {
         </div>
       </section>
 
-      {/* Service Pricing by Category */}
+      {/* Services by Category */}
       <section className="py-20 bg-gray-50">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
@@ -203,7 +204,7 @@ export default function PricingPage() {
           </div>
           
           <Tabs defaultValue="all" className="w-full" onValueChange={(value) => setSelectedCategory(value)}>
-            <TabsList className="grid w-full grid-cols-9 bg-zion-blue-dark border-zion-blue-light">
+            <TabsList className="grid w-full grid-cols-9 bg-zion-blue border-zion-blue-light mb-8">
               <TabsTrigger value="all" className="text-white">All</TabsTrigger>
               {MICRO_SAAS_CATEGORIES.map((category) => {
                 const IconComponent = categoryIcons[category.label as keyof typeof categoryIcons];
@@ -219,7 +220,7 @@ export default function PricingPage() {
             <TabsContent value={selectedCategory} className="mt-8">
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 {filteredServices.map((service) => (
-                  <Card key={service.id} className="bg-white hover:shadow-lg transition-all duration-300 hover:scale-105">
+                  <Card key={service.id} className="bg-white border-zion-blue-light hover:border-zion-purple/50 transition-all duration-300 hover:scale-105">
                     <div className="relative">
                       <img 
                         src={service.images[0]} 
@@ -248,23 +249,26 @@ export default function PricingPage() {
                         </Badge>
                       </div>
                       <div className="flex items-center justify-between mb-4">
-                        <div>
-                          <div className="text-2xl font-bold text-zion-blue">
-                            ${getDiscountedPrice(service.price)}
-                            <span className="text-sm text-gray-500">
-                              /{billingCycle === 'yearly' ? 'year' : 'month'}
-                            </span>
-                          </div>
-                          {billingCycle === 'yearly' && (
-                            <div className="text-sm text-green-600">
-                              Save ${Math.round(service.price * 12 * 0.2)} annually
-                            </div>
-                          )}
+                        <div className="text-2xl font-bold text-zion-blue">
+                          ${getDiscountedPrice(service.price)}
+                          <span className="text-sm text-gray-500">/{billingCycle === 'monthly' ? 'month' : 'month (billed yearly)'}</span>
                         </div>
-                        <Button size="sm" className="bg-zion-purple hover:bg-zion-purple-dark">
-                          Learn More
-                        </Button>
+                        {billingCycle === 'yearly' && (
+                          <Badge className="bg-green-500 text-white">
+                            Save ${Math.round(service.price * 0.2)}/month
+                          </Badge>
+                        )}
                       </div>
+                      <div className="space-y-2 mb-4">
+                        {service.tags.slice(0, 3).map((tag, index) => (
+                          <Badge key={index} variant="outline" className="mr-2 text-xs">
+                            {tag}
+                          </Badge>
+                        ))}
+                      </div>
+                      <Button className="w-full bg-zion-purple hover:bg-zion-purple-dark">
+                        Get Started
+                      </Button>
                     </CardContent>
                   </Card>
                 ))}
@@ -282,7 +286,7 @@ export default function PricingPage() {
               Feature Comparison
             </h2>
             <p className="text-gray-600 text-lg max-w-3xl mx-auto">
-              See how our plans stack up against each other and the competition
+              See what's included in each plan and choose the one that fits your needs
             </p>
           </div>
           
@@ -300,21 +304,21 @@ export default function PricingPage() {
                 {comparisonFeatures.map((feature, index) => (
                   <tr key={index} className="border-b border-gray-200">
                     <td className="p-4 font-medium">{feature}</td>
-                    <td className="p-4 text-center">
+                    <td className="text-center p-4">
                       {index < 4 ? (
                         <CheckCircle className="h-5 w-5 text-green-500 mx-auto" />
                       ) : (
                         <X className="h-5 w-5 text-red-500 mx-auto" />
                       )}
                     </td>
-                    <td className="p-4 text-center">
-                      {index < 7 ? (
+                    <td className="text-center p-4">
+                      {index < 8 ? (
                         <CheckCircle className="h-5 w-5 text-green-500 mx-auto" />
                       ) : (
                         <X className="h-5 w-5 text-red-500 mx-auto" />
                       )}
                     </td>
-                    <td className="p-4 text-center">
+                    <td className="text-center p-4">
                       <CheckCircle className="h-5 w-5 text-green-500 mx-auto" />
                     </td>
                   </tr>
@@ -377,14 +381,14 @@ export default function PricingPage() {
       </section>
 
       {/* Contact Section */}
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-gray-50">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-zion-blue mb-4">
               Ready to Get Started?
             </h2>
             <p className="text-gray-600 text-lg max-w-3xl mx-auto">
-              Get in touch with our team to discuss your needs and find the perfect plan for your business
+              Contact our team to discuss your needs and get a custom quote for your business
             </p>
           </div>
           
