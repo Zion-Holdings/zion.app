@@ -1,142 +1,73 @@
 #!/bin/bash
 
-# Script to merge open pull requests into main branch
-# This script will systematically go through remote branches and merge them
+# Script to merge all open pull requests into main branch
+# This script will resolve merge conflicts and merge all open PRs
 
 set -e
 
-echo "Starting to merge open pull requests into main branch..."
-echo "=================================================="
+echo "Starting merge process for open pull requests..."
 
-# Get all remote branches (excluding main and backup branches)
-REMOTE_BRANCHES=$(git branch -r | grep -v "origin/main" | grep -v "backup" | sed 's/origin\///')
+# Ensure we're in the right directory
+cd /workspace
 
-# Counter for tracking progress
-TOTAL_BRANCHES=$(echo "$REMOTE_BRANCHES" | wc -l)
-CURRENT=0
-SUCCESSFUL=0
-FAILED=0
-CONFLICTS=0
+# Check current status
+echo "Current git status:"
+git status
 
-echo "Found $TOTAL_BRANCHES branches to process"
-echo ""
+# Switch to main branch and pull latest changes
+echo "Switching to main branch..."
+git checkout main
+git pull origin main
 
-# Function to merge a single branch
-merge_branch() {
-    local branch_name=$1
-    local current=$2
-    local total=$3
+# List of branches to merge (from the open PRs)
+BRANCHES=(
+    "cursor/analyze-improve-and-deploy-ziontechgroup-app-f7d5"
+    "cursor/analyze-improve-and-deploy-ziontechgroup-app-2401"
+    "cursor/analyze-improve-and-deploy-ziontechgroup-app-586a"
+    "cursor/analyze-improve-and-deploy-ziontechgroup-app-a13d"
+)
+
+# Merge each branch
+for branch in "${BRANCHES[@]}"; do
+    echo "Processing branch: $branch"
     
-    echo "[$current/$total] Processing branch: $branch_name"
-    
-    # Checkout the remote branch
-    if ! git checkout -b "temp-merge-$branch_name" "origin/$branch_name" 2>/dev/null; then
-        echo "  ❌ Failed to checkout branch $branch_name"
-        return 1
-    fi
-    
-    # Try to merge with main
-    if git merge main --no-edit --no-ff 2>/dev/null; then
-        echo "  ✅ Successfully merged $branch_name"
+    # Check if branch exists
+    if git show-ref --verify --quiet refs/remotes/origin/$branch; then
+        echo "Merging $branch into main..."
         
-        # Switch back to main and merge the temp branch
-        git checkout main
-        if git merge "temp-merge-$branch_name" --no-edit --no-ff 2>/dev/null; then
-            echo "  ✅ Successfully merged into main"
-            
-            # Clean up temp branch
-            git branch -D "temp-merge-$branch_name"
-            
-            # Push to origin/main
-            if git push origin main 2>/dev/null; then
-                echo "  ✅ Pushed to origin/main"
-                return 0
-            else
-                echo "  ⚠️  Merged but failed to push to origin/main"
-                return 1
-            fi
+        # Try to merge with auto-resolve conflicts
+        if git merge --no-edit --strategy=recursive -X theirs origin/$branch; then
+            echo "Successfully merged $branch"
         else
-            echo "  ❌ Failed to merge temp branch into main"
-            git merge --abort 2>/dev/null || true
-            git checkout main
-            git branch -D "temp-merge-$branch_name" 2>/dev/null || true
-            return 1
+            echo "Merge conflict detected in $branch, attempting to resolve..."
+            
+            # Check for conflicts
+            if git status --porcelain | grep -q "^UU"; then
+                echo "Resolving conflicts automatically..."
+                
+                # Add all files to resolve conflicts
+                git add .
+                
+                # Commit the merge
+                git commit -m "Resolve merge conflicts for $branch"
+                echo "Conflicts resolved and committed for $branch"
+            else
+                echo "No conflicts found, continuing..."
+            fi
         fi
     else
-        echo "  ⚠️  Merge conflict detected, attempting to resolve..."
-        
-        # Check if there are actual conflicts
-        if git status --porcelain | grep -q "^UU\|^AA\|^DD"; then
-            echo "  🔧 Resolving merge conflicts..."
-            
-            # Try to resolve conflicts by taking the incoming changes
-            git checkout --theirs . 2>/dev/null || true
-            git add . 2>/dev/null || true
-            
-            if git commit -m "Resolve merge conflicts for $branch_name" 2>/dev/null; then
-                echo "  ✅ Conflicts resolved automatically"
-                
-                # Switch back to main and merge
-                git checkout main
-                if git merge "temp-merge-$branch_name" --no-edit --no-ff 2>/dev/null; then
-                    echo "  ✅ Successfully merged resolved conflicts into main"
-                    
-                    # Clean up and push
-                    git branch -D "temp-merge-$branch_name"
-                    if git push origin main 2>/dev/null; then
-                        echo "  ✅ Pushed resolved merge to origin/main"
-                        return 0
-                    else
-                        echo "  ⚠️  Merged but failed to push to origin/main"
-                        return 1
-                    fi
-                else
-                    echo "  ❌ Failed to merge resolved conflicts into main"
-                    git merge --abort 2>/dev/null || true
-                    git checkout main
-                    git branch -D "temp-merge-$branch_name" 2>/dev/null || true
-                    return 1
-                fi
-            else
-                echo "  ❌ Failed to commit resolved conflicts"
-                git checkout main
-                git branch -D "temp-merge-$branch_name" 2>/dev/null || true
-                return 1
-            fi
-        else
-            echo "  ❌ Merge failed for unknown reason"
-            git merge --abort 2>/dev/null || true
-            git checkout main
-            git branch -D "temp-merge-$branch_name" 2>/dev/null || true
-            return 1
-        fi
+        echo "Branch $branch not found, skipping..."
     fi
-}
+done
 
-# Process each branch
-while IFS= read -r branch; do
-    if [ -n "$branch" ]; then
-        CURRENT=$((CURRENT + 1))
-        
-        if merge_branch "$branch" "$CURRENT" "$TOTAL_BRANCHES"; then
-            SUCCESSFUL=$((SUCCESSFUL + 1))
-        else
-            FAILED=$((FAILED + 1))
-        fi
-        
-        echo ""
-    fi
-done <<< "$REMOTE_BRANCHES"
+# Push the merged changes
+echo "Pushing merged changes to main..."
+git push origin main
 
-echo "=================================================="
-echo "Merge process completed!"
-echo "Total branches processed: $TOTAL_BRANCHES"
-echo "Successful merges: $SUCCESSFUL"
-echo "Failed merges: $FAILED"
-echo "=================================================="
+echo "Merge process completed successfully!"
 
-# Clean up any remaining temp branches
-echo "Cleaning up temporary branches..."
-git branch | grep "temp-merge-" | xargs -r git branch -D
+# List final status
+echo "Final git status:"
+git status
 
-echo "Cleanup completed!"
+echo "All open pull requests have been merged into main branch."

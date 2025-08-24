@@ -7,6 +7,8 @@ import {
   GraduationCap, Leaf, Shield, ArrowRight, Star, CheckCircle,
   Users, Globe, Cpu, Database, Network, Target
 } from 'lucide-react';
+import UltraAdvancedFuturisticBackground from '../components/ui/UltraAdvancedFuturisticBackground';
+import { expandedMicroSaasServices } from '../data/expanded-micro-saas-services';
 
 const SolutionsPage: React.FC = () => {
   const industrySolutions = [
@@ -181,7 +183,7 @@ const SolutionsPage: React.FC = () => {
   ];
 
   return (
-    <UltraFuturisticBackground>
+    <UltraAdvancedFuturisticBackground>
       <div className="min-h-screen">
         <Head>
           <title>Solutions - Zion Tech Group | Revolutionary AI, Quantum Computing & Emerging Technology Solutions</title>
@@ -377,43 +379,9 @@ const SolutionsPage: React.FC = () => {
               </motion.div>
             ))}
           </div>
-        </div>
-      </section>
-
-      {/* CTA Section */}
-      <section className="py-20 px-4 bg-gradient-to-r from-green-900/20 to-emerald-900/20">
-        <div className="max-w-4xl mx-auto text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-          >
-            <h2 className="text-4xl font-bold text-white mb-6">
-              Ready to Transform Your Industry?
-            </h2>
-            <p className="text-xl text-gray-300 mb-8">
-              Let's discuss how our industry-specific solutions can drive innovation and growth for your organization.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link
-                href="/contact"
-                className="bg-gradient-to-r from-green-500 to-emerald-600 text-white px-8 py-4 rounded-full text-lg font-semibold hover:shadow-2xl hover:shadow-green-500/25 transition-all duration-300"
-              >
-                Start Your Transformation
-                <ArrowRight className="inline-block ml-2 w-5 h-5" />
-              </Link>
-              <Link
-                href="/services"
-                className="border border-white/30 hover:border-white/50 text-white px-8 py-4 rounded-full text-lg font-semibold transition-all duration-300 backdrop-blur-md hover:bg-white/10"
-              >
-                View All Services
-              </Link>
-            </div>
-          </motion.div>
-        </div>
-      </section>
-    </Layout>
+        </section>
+      </div>
+    </UltraAdvancedFuturisticBackground>
   );
 };
 

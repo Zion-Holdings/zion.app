@@ -190,52 +190,34 @@ export default function MarketPricing() {
   };
 
   return (
-    <div className="min-h-screen bg-black text-white">
-      {/* Hero Section */}
-      <section className="relative py-20 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto text-center">
-          <motion.h1 
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="text-5xl md:text-7xl font-bold bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 bg-clip-text text-transparent mb-6"
-          >
-            Market Pricing Analysis
-          </motion.h1>
-          <motion.p 
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-xl md:text-2xl text-gray-300 max-w-4xl mx-auto mb-12"
-          >
-            Comprehensive analysis of market positioning, competitive pricing, and strategic advantages 
-            across AI consciousness, quantum computing, and autonomous systems.
-          </motion.p>
-          
-          {/* Market Selector */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
-            className="flex flex-wrap gap-3 justify-center mb-8"
-          >
-            {markets.map((market) => (
-              <button
-                key={market.id}
-                onClick={() => setSelectedMarket(market.id)}
-                className={`flex items-center gap-2 px-6 py-3 rounded-full font-medium transition-all duration-300 ${
-                  selectedMarket === market.id
-                    ? 'bg-gradient-to-r from-cyan-500 to-blue-600 text-white'
-                    : 'bg-white/10 text-gray-300 hover:bg-white/20 hover:text-white'
-                }`}
-              >
-                {market.icon}
-                {market.name}
-              </button>
-            ))}
-          </motion.div>
-        </div>
-      </section>
+    <UltraAdvancedFuturisticBackground>
+      <Head>
+        <title>Market Pricing & Competitor References | Zion Tech Group</title>
+        <meta name="description" content="Transparent market pricing references and competitor links for AI, security, analytics, and cloud services." />
+        <link rel="canonical" href="https://ziontechgroup.com/market-pricing" />
+      </Head>
+      <div className="min-h-screen pt-24 pb-20 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-5xl mx-auto space-y-8">
+          <div className="bg-black/30 rounded-2xl border border-sky-500/30 p-6">
+            <h2 className="text-2xl font-semibold mb-2">Status Pages & Incident Comms</h2>
+            <ul className="list-disc list-inside text-slate-300 space-y-1">
+              <li>Statuspage: <a className="text-cyan-400 underline" href={`https://www.atlassian.com/software/statuspage/pricing`} target="_blank" rel="noopener noreferrer">atlassian.com/software/statuspage/pricing</a></li>
+              <li>Freshstatus: <a className="text-cyan-400 underline" href={`https://freshstatus.io/pricing`} target="_blank" rel="noopener noreferrer">freshstatus.io/pricing</a></li>
+              <li>Better Uptime: <a className="text-cyan-400 underline" href={`https://betterstack.com/better-uptime/pricing`} target="_blank" rel="noopener noreferrer">betterstack.com/better-uptime/pricing</a></li>
+            </ul>
+            <div className="text-sm text-slate-400 mt-3">Typical SMB budgets: $0–$300/month depending on incidents and subscribers.</div>
+          </div>
+
+          <div className="bg-black/30 rounded-2xl border border-indigo-500/30 p-6">
+            <h2 className="text-2xl font-semibold mb-2">DNS Monitoring & Hygiene</h2>
+            <ul className="list-disc list-inside text-slate-300 space-y-1">
+              <li>DNS Spy (archived reference): <a className="text-cyan-400 underline" href={`https://dnsspy.io`} target="_blank" rel="noopener noreferrer">dnsspy.io</a></li>
+              <li>Better Uptime DNS monitors: <a className="text-cyan-400 underline" href={`https://betterstack.com/better-uptime`} target="_blank" rel="noopener noreferrer">betterstack.com/better-uptime</a></li>
+            </ul>
+            <div className="text-sm text-slate-400 mt-3">Typical SMB budgets: $10–$100/month depending on domains and checks.</div>
+          </div>
+          <h1 className="text-4xl md:text-6xl font-bold bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">Market Pricing & References</h1>
+          <p className="text-slate-300">Below are easy-to-verify vendor references and typical pricing ranges to help you benchmark our offerings.</p>
 
           <div className="space-y-6">
             <div className="bg-black/30 rounded-2xl border border-sky-500/30 p-6">
@@ -246,16 +228,6 @@ export default function MarketPricing() {
                 <li>Promptfoo: <a className="text-cyan-400 underline" href={`https://www.promptfoo.dev/pricing`} target="_blank" rel="noopener noreferrer">promptfoo.dev/pricing</a></li>
               </ul>
               <div className="text-sm text-slate-400 mt-3">Typical SMB budgets: $50–$800/month depending on test volume and team size.</div>
-            </div>
-
-            <div className="bg-black/30 rounded-2xl border border-cyan-500/30 p-6">
-              <h2 className="text-2xl font-semibold mb-2">AI Guardrails & Safety</h2>
-              <ul className="list-disc list-inside text-slate-300 space-y-1">
-                				                <li>OpenAI Safety: <a className="text-cyan-400 underline" href={`https://openai.com/safety`} target="_blank" rel="noopener noreferrer">openai.com/safety</a></li>
-                <li>Anthropic RAI: <a className="text-cyan-400 underline" href={`https://www.anthropic.com/news`} target="_blank" rel="noopener noreferrer">anthropic.com/news</a> (policy updates)</li>
-                <li>Guardrails libraries: <a className="text-cyan-400 underline" href={`https://github.com/guardrails-ai/guardrails`} target="_blank" rel="noopener noreferrer">github.com/guardrails-ai/guardrails</a></li>
-              </ul>
-              <div className="text-sm text-slate-400 mt-3">Typical SMB budgets: $0–$500/month for hosted tools; internal policies recommended.</div>
             </div>
             <div className="bg-black/30 rounded-2xl border border-cyan-500/30 p-6">
               <h2 className="text-2xl font-semibold mb-2">LLM & AI Platforms</h2>
@@ -304,17 +276,6 @@ export default function MarketPricing() {
               <div className="text-sm text-slate-400 mt-3">Typical SMB budgets: $200–$10,000/month depending on traffic and workloads.</div>
             </div>
 
-            <div className="bg-black/30 rounded-2xl border border-rose-500/30 p-6">
-              <h2 className="text-2xl font-semibold mb-2">PDF & Document Generation</h2>
-              <ul className="list-disc list-inside text-slate-300 space-y-1">
-                <li>DocRaptor pricing: <a className="text-cyan-400 underline" href={`https://docraptor.com`} target="_blank" rel="noopener noreferrer">docraptor.com</a></li>
-                <li>PDFMonkey pricing: <a className="text-cyan-400 underline" href={`https://www.pdfmonkey.io/pricing`} target="_blank" rel="noopener noreferrer">pdfmonkey.io/pricing</a></li>
-                <li>CloudConvert: <a className="text-cyan-400 underline" href={`https://cloudconvert.com/pricing`} target="_blank" rel="noopener noreferrer">cloudconvert.com/pricing</a></li>
-                <li>Gotenberg (self-hosted): <a className="text-cyan-400 underline" href={`https://gotenberg.dev`} target="_blank" rel="noopener noreferrer">gotenberg.dev</a></li>
-              </ul>
-              <div className="text-sm text-slate-400 mt-3">Typical SMB budgets: $15–$200/month depending on volume and features.</div>
-            </div>
-
             <div className="bg-black/30 rounded-2xl border border-pink-500/30 p-6">
               <h2 className="text-2xl font-semibold mb-2">Contact Center & Voice AI</h2>
               <ul className="list-disc list-inside text-slate-300 space-y-1">
@@ -323,26 +284,6 @@ export default function MarketPricing() {
                 <li>ElevenLabs: <a className="text-cyan-400 underline" href={`https://elevenlabs.io/pricing`} target="_blank" rel="noopener noreferrer">elevenlabs.io/pricing</a></li>
               </ul>
               <div className="text-sm text-slate-400 mt-3">Typical SMB budgets: $50–$1,500/month by minutes, languages, and concurrency.</div>
-            </div>
-
-            <div className="bg-black/30 rounded-2xl border border-amber-500/30 p-6">
-              <h2 className="text-2xl font-semibold mb-2">Kubernetes & FinOps</h2>
-              <ul className="list-disc list-inside text-slate-300 space-y-1">
-                <li>Kubecost pricing: <a className="text-cyan-400 underline" href={`https://www.kubecost.com/pricing`} target="_blank" rel="noopener noreferrer">kubecost.com/pricing</a></li>
-                <li>CloudZero pricing: <a className="text-cyan-400 underline" href={`https://www.cloudzero.com/pricing`} target="_blank" rel="noopener noreferrer">cloudzero.com/pricing</a></li>
-                <li>Finout pricing: <a className="text-cyan-400 underline" href={`https://www.finout.io/pricing`} target="_blank" rel="noopener noreferrer">finout.io/pricing</a></li>
-              </ul>
-              <div className="text-sm text-slate-400 mt-3">Typical SMB budgets: $99–$2,000/month based on clusters and spend.</div>
-            </div>
-
-            <div className="bg-black/30 rounded-2xl border border-emerald-500/30 p-6">
-              <h2 className="text-2xl font-semibold mb-2">Identity & Access</h2>
-              <ul className="list-disc list-inside text-slate-300 space-y-1">
-                <li>Auth0 pricing: <a className="text-cyan-400 underline" href={`https://auth0.com/pricing`} target="_blank" rel="noopener noreferrer">auth0.com/pricing</a></li>
-                <li>Okta pricing: <a className="text-cyan-400 underline" href={`https://www.okta.com/pricing/`} target="_blank" rel="noopener noreferrer">okta.com/pricing</a></li>
-                <li>Azure AD pricing: <a className="text-cyan-400 underline" href={`https://azure.microsoft.com/pricing/details/active-directory/`} target="_blank" rel="noopener noreferrer">azure.microsoft.com/pricing/details/active-directory</a></li>
-              </ul>
-              <div className="text-sm text-slate-400 mt-3">Typical SMB budgets: $50–$1,000/month by MAUs and features.</div>
             </div>
 
             <div className="bg-black/30 rounded-2xl border border-cyan-500/30 p-6">
@@ -505,6 +446,259 @@ export default function MarketPricing() {
                 </div>
               </motion.div>
             ))}
+          </div>
+
+          <div className="space-y-6">
+            <div className="bg-black/30 rounded-2xl border border-sky-500/30 p-6">
+              <h2 className="text-2xl font-semibold mb-2">Monitoring & Incident Response</h2>
+              <ul className="list-disc list-inside text-slate-300 space-y-1">
+                <li>Datadog: <a className="text-cyan-400 underline" href={`https://www.datadoghq.com/pricing/`} target="_blank" rel="noopener noreferrer">datadoghq.com/pricing</a></li>
+                <li>New Relic: <a className="text-cyan-400 underline" href={`https://newrelic.com/pricing`} target="_blank" rel="noopener noreferrer">newrelic.com/pricing</a></li>
+                <li>PagerDuty: <a className="text-cyan-400 underline" href={`https://www.pagerduty.com/pricing/`} target="_blank" rel="noopener noreferrer">pagerduty.com/pricing</a></li>
+              </ul>
+              <div className="text-sm text-slate-400 mt-3">Typical SMB budgets: $50–$1,000/month depending on host count and alerting.</div>
+            </div>
+
+            <div className="bg-black/30 rounded-2xl border border-rose-500/30 p-6">
+              <h2 className="text-2xl font-semibold mb-2">Feature Flags & Progressive Delivery</h2>
+              <ul className="list-disc list-inside text-slate-300 space-y-1">
+                <li>LaunchDarkly: <a className="text-cyan-400 underline" href={`https://launchdarkly.com/pricing/`} target="_blank" rel="noopener noreferrer">launchdarkly.com/pricing</a></li>
+                <li>GrowthBook: <a className="text-cyan-400 underline" href={`https://www.growthbook.io/pricing`} target="_blank" rel="noopener noreferrer">growthbook.io/pricing</a></li>
+                <li>Flagsmith: <a className="text-cyan-400 underline" href={`https://www.flagsmith.com/pricing`} target="_blank" rel="noopener noreferrer">flagsmith.com/pricing</a></li>
+              </ul>
+              <div className="text-sm text-slate-400 mt-3">Typical SMB budgets: $50–$800/month by environments and MAUs.</div>
+            </div>
+
+            <div className="bg-black/30 rounded-2xl border border-teal-500/30 p-6">
+              <h2 className="text-2xl font-semibold mb-2">CI/CD & Platforms</h2>
+              <ul className="list-disc list-inside text-slate-300 space-y-1">
+                <li>GitHub Actions: <a className="text-cyan-400 underline" href={`https://github.com/pricing`} target="_blank" rel="noopener noreferrer">github.com/pricing</a></li>
+                <li>CircleCI: <a className="text-cyan-400 underline" href={`https://circleci.com/pricing/`} target="_blank" rel="noopener noreferrer">circleci.com/pricing</a></li>
+                <li>Render: <a className="text-cyan-400 underline" href={`https://render.com/pricing`} target="_blank" rel="noopener noreferrer">render.com/pricing</a></li>
+              </ul>
+              <div className="text-sm text-slate-400 mt-3">Typical SMB budgets: $0–$500/month for moderate pipelines and environments.</div>
+            </div>
+
+            <div className="bg-black/30 rounded-2xl border border-blue-500/30 p-6">
+              <h2 className="text-2xl font-semibold mb-2">Feature Flags & Experimentation</h2>
+              <ul className="list-disc list-inside text-slate-300 space-y-1">
+                <li>LaunchDarkly: <a className="text-cyan-400 underline" href={`https://launchdarkly.com/pricing`} target="_blank" rel="noopener noreferrer">launchdarkly.com/pricing</a></li>
+                <li>GrowthBook: <a className="text-cyan-400 underline" href={`https://www.growthbook.io/pricing`} target="_blank" rel="noopener noreferrer">growthbook.io/pricing</a></li>
+                <li>Optimizely: <a className="text-cyan-400 underline" href={`https://www.optimizely.com/pricing/`} target="_blank" rel="noopener noreferrer">optimizely.com/pricing</a></li>
+              </ul>
+              <div className="text-sm text-slate-400 mt-3">Typical SMB budgets: $50–$1,500/month depending on MAUs and flags.</div>
+            </div>
+
+            <div className="bg-black/30 rounded-2xl border border-green-500/30 p-6">
+              <h2 className="text-2xl font-semibold mb-2">A/B Testing & CRO</h2>
+              <ul className="list-disc list-inside text-slate-300 space-y-1">
+                <li>VWO pricing: <a className="text-cyan-400 underline" href={`https://vwo.com/plans/`} target="_blank" rel="noopener noreferrer">vwo.com/plans</a></li>
+                <li>Convert: <a className="text-cyan-400 underline" href={`https://www.convert.com/pricing/`} target="_blank" rel="noopener noreferrer">convert.com/pricing</a></li>
+                <li>Optimizely Web: <a className="text-cyan-400 underline" href={`https://www.optimizely.com/pricing/`} target="_blank" rel="noopener noreferrer">optimizely.com/pricing</a></li>
+              </ul>
+              <div className="text-sm text-slate-400 mt-3">Typical SMB budgets: $49–$499/month based on visitors and experiments.</div>
+            </div>
+
+            <div className="bg-black/30 rounded-2xl border border-red-500/30 p-6">
+              <h2 className="text-2xl font-semibold mb-2">Incident Management & On-Call</h2>
+              <ul className="list-disc list-inside text-slate-300 space-y-1">
+                <li>PagerDuty pricing: <a className="text-cyan-400 underline" href={`https://www.pagerduty.com/pricing/`} target="_blank" rel="noopener noreferrer">pagerduty.com/pricing</a></li>
+                <li>Opsgenie pricing: <a className="text-cyan-400 underline" href={`https://www.atlassian.com/software/opsgenie/pricing`} target="_blank" rel="noopener noreferrer">atlassian.com/software/opsgenie/pricing</a></li>
+                <li>FireHydrant pricing: <a className="text-cyan-400 underline" href={`https://www.firehydrant.com/pricing/`} target="_blank" rel="noopener noreferrer">firehydrant.com/pricing</a></li>
+              </ul>
+              <div className="text-sm text-slate-400 mt-3">Typical SMB budgets: $10–$500/month per responder depending on features.</div>
+            </div>
+
+            <div className="bg-black/30 rounded-2xl border border-amber-500/30 p-6">
+              <h2 className="text-2xl font-semibold mb-2">SEO & Content</h2>
+              <ul className="list-disc list-inside text-slate-300 space-y-1">
+                <li>Ahrefs pricing: <a className="text-cyan-400 underline" href={`https://ahrefs.com/pricing`} target="_blank" rel="noopener noreferrer">ahrefs.com/pricing</a></li>
+                <li>Semrush pricing: <a className="text-cyan-400 underline" href={`https://www.semrush.com/pricing/`} target="_blank" rel="noopener noreferrer">semrush.com/pricing</a></li>
+                <li>Clearscope pricing: <a className="text-cyan-400 underline" href={`https://www.clearscope.io/pricing`} target="_blank" rel="noopener noreferrer">clearscope.io/pricing</a></li>
+              </ul>
+              <div className="text-sm text-slate-400 mt-3">Typical SMB budgets: $100–$500/month depending on seats and projects.</div>
+            </div>
+
+            <div className="bg-black/30 rounded-2xl border border-rose-500/30 p-6">
+              <h2 className="text-2xl font-semibold mb-2">Ecommerce Reviews & UGC</h2>
+              <ul className="list-disc list-inside text-slate-300 space-y-1">
+                <li>Yotpo pricing: <a className="text-cyan-400 underline" href={`https://www.yotpo.com/pricing/`} target="_blank" rel="noopener noreferrer">yotpo.com/pricing</a></li>
+                <li>Judge.me pricing: <a className="text-cyan-400 underline" href={`https://judge.me/pricing`} target="_blank" rel="noopener noreferrer">judge.me/pricing</a></li>
+                <li>Loox pricing: <a className="text-cyan-400 underline" href={`https://loox.app/pricing`} target="_blank" rel="noopener noreferrer">loox.app/pricing</a></li>
+              </ul>
+              <div className="text-sm text-slate-400 mt-3">Typical SMB budgets: $9–$199/month based on features and order volume.</div>
+            </div>
+
+            <div className="bg-black/30 rounded-2xl border border-cyan-500/30 p-6">
+              <h2 className="text-2xl font-semibold mb-2">Scheduling & Appointments</h2>
+              <ul className="list-disc list-inside text-slate-300 space-y-1">
+                <li>Calendly pricing: <a className="text-cyan-400 underline" href={`https://calendly.com/pricing`} target="_blank" rel="noopener noreferrer">calendly.com/pricing</a></li>
+                <li>Cal.com pricing: <a className="text-cyan-400 underline" href={`https://cal.com/pricing`} target="_blank" rel="noopener noreferrer">cal.com/pricing</a></li>
+                <li>Acuity pricing: <a className="text-cyan-400 underline" href={`https://www.squarespace.com/pricing/acuity-scheduling`} target="_blank" rel="noopener noreferrer">squarespace.com/pricing/acuity-scheduling</a></li>
+              </ul>
+              <div className="text-sm text-slate-400 mt-3">Typical SMB budgets: $10–$200/month depending on calendars and reminders.</div>
+            </div>
+
+            <div className="bg-black/30 rounded-2xl border border-violet-500/30 p-6">
+              <h2 className="text-2xl font-semibold mb-2">Learning Management (LMS)</h2>
+              <ul className="list-disc list-inside text-slate-300 space-y-1">
+                <li>TalentLMS pricing: <a className="text-cyan-400 underline" href={`https://www.talentlms.com/pricing`} target="_blank" rel="noopener noreferrer">talentlms.com/pricing</a></li>
+                <li>Docebo pricing: <a className="text-cyan-400 underline" href={`https://www.docebo.com/pricing/`} target="_blank" rel="noopener noreferrer">docebo.com/pricing</a></li>
+                <li>LearnWorlds pricing: <a className="text-cyan-400 underline" href={`https://www.learnworlds.com/pricing/`} target="_blank" rel="noopener noreferrer">learnworlds.com/pricing</a></li>
+              </ul>
+              <div className="text-sm text-slate-400 mt-3">Typical SMB budgets: $60–$600/month depending on seats and content.</div>
+            </div>
+
+            <div className="bg-black/30 rounded-2xl border border-indigo-500/30 p-6">
+              <h2 className="text-2xl font-semibold mb-2">Developer Productivity</h2>
+              <ul className="list-disc list-inside text-slate-300 space-y-1">
+                <li>Sentry pricing: <a className="text-cyan-400 underline" href={`https://sentry.io/pricing/`} target="_blank" rel="noopener noreferrer">sentry.io/pricing</a></li>
+                <li>Linear pricing: <a className="text-cyan-400 underline" href={`https://linear.app/pricing`} target="_blank" rel="noopener noreferrer">linear.app/pricing</a></li>
+                <li>Postman pricing: <a className="text-cyan-400 underline" href={`https://www.postman.com/pricing/`} target="_blank" rel="noopener noreferrer">postman.com/pricing</a></li>
+              </ul>
+              <div className="text-sm text-slate-400 mt-3">Typical SMB budgets: $0–$300/month per team depending on usage.</div>
+            </div>
+          </div>
+
+          {/* New categories with verified links */}
+          <div className="space-y-6">
+            <div className="bg-black/30 rounded-2xl border border-indigo-500/30 p-6">
+              <h2 className="text-2xl font-semibold mb-2">Affiliate & Partnerships</h2>
+              <ul className="list-disc list-inside text-slate-300 space-y-1">
+                <li>Refersion pricing: <a className="text-cyan-400 underline" href={`https://www.refersion.com/pricing`} target="_blank" rel="noopener noreferrer">refersion.com/pricing</a></li>
+                <li>LeadDyno pricing: <a className="text-cyan-400 underline" href={`https://www.leaddyno.com/pricing`} target="_blank" rel="noopener noreferrer">leaddyno.com/pricing</a></li>
+                <li>PartnerStack pricing: <a className="text-cyan-400 underline" href={`https://partnerstack.com/pricing`} target="_blank" rel="noopener noreferrer">partnerstack.com/pricing</a></li>
+              </ul>
+              <div className="text-sm text-slate-400 mt-3">Typical SMB budgets: $49–$500/month by affiliates and orders.</div>
+            </div>
+
+            <div className="bg-black/30 rounded-2xl border border-rose-500/30 p-6">
+              <h2 className="text-2xl font-semibold mb-2">Returns & Post‑Purchase</h2>
+              <ul className="list-disc list-inside text-slate-300 space-y-1">
+                <li>Loop Returns: <a className="text-cyan-400 underline" href={`https://www.loopreturns.com/pricing`} target="_blank" rel="noopener noreferrer">loopreturns.com/pricing</a></li>
+                <li>Returnly: <a className="text-cyan-400 underline" href={`https://returnly.com/`} target="_blank" rel="noopener noreferrer">returnly.com</a></li>
+                <li>AfterShip Returns: <a className="text-cyan-400 underline" href={`https://www.aftership.com/returns-center/pricing`} target="_blank" rel="noopener noreferrer">aftership.com/returns-center/pricing</a></li>
+              </ul>
+              <div className="text-sm text-slate-400 mt-3">Typical SMB budgets: $29–$299/month by orders and features.</div>
+            </div>
+
+            <div className="bg-black/30 rounded-2xl border border-emerald-500/30 p-6">
+              <h2 className="text-2xl font-semibold mb-2">Helpdesk & ITSM</h2>
+              <ul className="list-disc list-inside text-slate-300 space-y-1">
+                <li>Freshdesk pricing: <a className="text-cyan-400 underline" href={`https://freshdesk.com/pricing`} target="_blank" rel="noopener noreferrer">freshdesk.com/pricing</a></li>
+                <li>Zendesk pricing: <a className="text-cyan-400 underline" href={`https://www.zendesk.com/pricing/`} target="_blank" rel="noopener noreferrer">zendesk.com/pricing</a></li>
+                <li>Jira Service Management: <a className="text-cyan-400 underline" href={`https://www.atlassian.com/software/jira/service-management/pricing`} target="_blank" rel="noopener noreferrer">atlassian.com/.../pricing</a></li>
+              </ul>
+              <div className="text-sm text-slate-400 mt-3">Typical SMB budgets: $19–$1,000/month based on agents and SLAs.</div>
+            </div>
+          </div>
+
+          <div className="space-y-6">
+            <div className="bg-black/30 rounded-2xl border border-sky-500/30 p-6">
+              <h2 className="text-2xl font-semibold mb-2">CDP & Reverse ETL</h2>
+              <ul className="list-disc list-inside text-slate-300 space-y-1">
+                <li>Segment: <a className="text-cyan-400 underline" href={`https://segment.com/pricing/`} target="_blank" rel="noopener noreferrer">segment.com/pricing</a></li>
+                <li>RudderStack: <a className="text-cyan-400 underline" href={`https://www.rudderstack.com/pricing/`} target="_blank" rel="noopener noreferrer">rudderstack.com/pricing</a></li>
+                <li>Hightouch (Reverse ETL): <a className="text-cyan-400 underline" href={`https://hightouch.com/pricing`} target="_blank" rel="noopener noreferrer">hightouch.com/pricing</a></li>
+                <li>Census (Reverse ETL): <a className="text-cyan-400 underline" href={`https://www.getcensus.com/pricing`} target="_blank" rel="noopener noreferrer">getcensus.com/pricing</a></li>
+              </ul>
+              <div className="text-sm text-slate-400 mt-3">Typical SMB budgets: $100–$1,500/month depending on sources, destinations, and MAUs.</div>
+            </div>
+
+            <div className="bg-black/30 rounded-2xl border border-rose-500/30 p-6">
+              <h2 className="text-2xl font-semibold mb-2">Returns & Logistics</h2>
+              <ul className="list-disc list-inside text-slate-300 space-y-1">
+                <li>Loop Returns pricing: <a className="text-cyan-400 underline" href={`https://www.loopreturns.com/pricing`} target="_blank" rel="noopener noreferrer">loopreturns.com/pricing</a></li>
+                <li>AfterShip Returns: <a className="text-cyan-400 underline" href={`https://www.aftership.com/returns-center/pricing`} target="_blank" rel="noopener noreferrer">aftership.com/returns-center/pricing</a></li>
+              </ul>
+              <div className="text-sm text-slate-400 mt-3">Typical SMB budgets: $29–$299/month depending on orders and policies.</div>
+            </div>
+
+            <div className="bg-black/30 rounded-2xl border border-emerald-500/30 p-6">
+              <h2 className="text-2xl font-semibold mb-2">Feature Flags & Experiments</h2>
+              <ul className="list-disc list-inside text-slate-300 space-y-1">
+                <li>LaunchDarkly: <a className="text-cyan-400 underline" href={`https://launchdarkly.com/pricing/`} target="_blank" rel="noopener noreferrer">launchdarkly.com/pricing</a></li>
+                <li>Flagsmith: <a className="text-cyan-400 underline" href={`https://www.flagsmith.com/pricing`} target="_blank" rel="noopener noreferrer">flagsmith.com/pricing</a></li>
+                <li>Split.io: <a className="text-cyan-400 underline" href={`https://www.split.io/pricing/`} target="_blank" rel="noopener noreferrer">split.io/pricing</a></li>
+              </ul>
+              <div className="text-sm text-slate-400 mt-3">Typical SMB budgets: $50–$800/month depending on flags and MAUs.</div>
+            </div>
+          </div>
+
+          <div className="bg-black/30 rounded-2xl border border-emerald-500/30 p-6">
+            <h2 className="text-2xl font-semibold mb-2">Synthetic Monitoring & Browser Automation</h2>
+            <ul className="list-disc list-inside text-slate-300 space-y-1">
+              <li>Checkly pricing: <a className="text-cyan-400 underline" href={`https://www.checklyhq.com/pricing/`} target="_blank" rel="noopener noreferrer">checklyhq.com/pricing</a></li>
+              <li>Browserless pricing: <a className="text-cyan-400 underline" href={`https://www.browserless.io/pricing`} target="_blank" rel="noopener noreferrer">browserless.io/pricing</a></li>
+              <li>Grafana Cloud k6: <a className="text-cyan-400 underline" href={`https://grafana.com/products/cloud/k6/`} target="_blank" rel="noopener noreferrer">grafana.com/products/cloud/k6</a></li>
+            </ul>
+            <div className="text-sm text-slate-400 mt-3">Typical SMB budgets: $20–$500/month depending on checks, regions, and concurrency.</div>
+          </div>
+
+          <div className="bg-black/30 rounded-2xl border border-violet-500/30 p-6">
+            <h2 className="text-2xl font-semibold mb-2">Email Deliverability & Monitoring</h2>
+            <ul className="list-disc list-inside text-slate-300 space-y-1">
+              <li>GlockApps pricing: <a className="text-cyan-400 underline" href={`https://glockapps.com/pricing/`} target="_blank" rel="noopener noreferrer">glockapps.com/pricing</a></li>
+              <li>Mailgun monitoring: <a className="text-cyan-400 underline" href={`https://www.mailgun.com/pricing/`} target="_blank" rel="noopener noreferrer">mailgun.com/pricing</a></li>
+              <li>Postmaster Tools: <a className="text-cyan-400 underline" href={`https://postmaster.google.com`} target="_blank" rel="noopener noreferrer">postmaster.google.com</a></li>
+            </ul>
+            <div className="text-sm text-slate-400 mt-3">Typical SMB budgets: $15–$300/month plus ESP fees depending on volumes.</div>
+          </div>
+
+          <div className="bg-black/30 rounded-2xl border border-teal-500/30 p-6">
+            <h2 className="text-2xl font-semibold mb-2">Secrets Management & Rotation</h2>
+            <ul className="list-disc list-inside text-slate-300 space-y-1">
+              <li>HashiCorp Vault: <a className="text-cyan-400 underline" href={`https://www.hashicorp.com/products/vault/pricing`} target="_blank" rel="noopener noreferrer">hashicorp.com/products/vault/pricing</a></li>
+              <li>Doppler: <a className="text-cyan-400 underline" href={`https://www.doppler.com/pricing`} target="_blank" rel="noopener noreferrer">doppler.com/pricing</a></li>
+              <li>AWS KMS: <a className="text-cyan-400 underline" href={`https://aws.amazon.com/kms/pricing/`} target="_blank" rel="noopener noreferrer">aws.amazon.com/kms/pricing</a></li>
+            </ul>
+            <div className="text-sm text-slate-400 mt-3">Typical SMB budgets: $0–$1,000/month depending on key volume and audit needs.</div>
+          </div>
+
+          <div className="bg-black/30 rounded-2xl border border-rose-500/30 p-6">
+            <h2 className="text-2xl font-semibold mb-2">PDF Generation & Processing</h2>
+            <ul className="list-disc list-inside text-slate-300 space-y-1">
+              <li>DocRaptor: <a className="text-cyan-400 underline" href={`https://docraptor.com/pricing`} target="_blank" rel="noopener noreferrer">docraptor.com/pricing</a></li>
+              <li>PDFMonkey: <a className="text-cyan-400 underline" href={`https://www.pdfmonkey.io/pricing`} target="_blank" rel="noopener noreferrer">pdfmonkey.io/pricing</a></li>
+              <li>CloudConvert: <a className="text-cyan-400 underline" href={`https://cloudconvert.com/pricing`} target="_blank" rel="noopener noreferrer">cloudconvert.com/pricing</a></li>
+            </ul>
+            <div className="text-sm text-slate-400 mt-3">Typical SMB budgets: $15–$200/month depending on pages and concurrency.</div>
+          </div>
+
+          <div className="text-center text-slate-400 mt-10">
+            Need help benchmarking? <a href="/contact" className="text-cyan-400 underline">Contact us</a> — we align to transparent, vendor-verifiable pricing.
+          </div>
+
+          <div className="space-y-6">
+            <div className="bg-black/30 rounded-2xl border border-teal-500/30 p-6">
+              <h2 className="text-2xl font-semibold mb-2">Observability & Monitoring</h2>
+              <ul className="list-disc list-inside text-slate-300 space-y-1">
+                <li>Datadog pricing: <a className="text-cyan-400 underline" href={`https://www.datadoghq.com/pricing/`} target="_blank" rel="noopener noreferrer">datadoghq.com/pricing</a></li>
+                <li>New Relic pricing: <a className="text-cyan-400 underline" href={`https://newrelic.com/pricing`} target="_blank" rel="noopener noreferrer">newrelic.com/pricing</a></li>
+                <li>Grafana Cloud pricing: <a className="text-cyan-400 underline" href={`https://grafana.com/pricing/`} target="_blank" rel="noopener noreferrer">grafana.com/pricing</a></li>
+              </ul>
+              <div className="text-sm text-slate-400 mt-3">Typical SMB budgets: $50–$2,000/month by host count, metrics, and retention.</div>
+            </div>
+
+            <div className="bg-black/30 rounded-2xl border border-lime-500/30 p-6">
+              <h2 className="text-2xl font-semibold mb-2">Website Performance & RUM</h2>
+              <ul className="list-disc list-inside text-slate-300 space-y-1">
+                <li>SpeedCurve pricing: <a className="text-cyan-400 underline" href={`https://www.speedcurve.com/pricing/`} target="_blank" rel="noopener noreferrer">speedcurve.com/pricing</a></li>
+                <li>Calibre pricing: <a className="text-cyan-400 underline" href={`https://calibreapp.com/pricing`} target="_blank" rel="noopener noreferrer">calibreapp.com/pricing</a></li>
+                <li>Cloudflare Web Analytics: <a className="text-cyan-400 underline" href={`https://www.cloudflare.com/web-analytics/`} target="_blank" rel="noopener noreferrer">cloudflare.com/web-analytics</a></li>
+              </ul>
+              <div className="text-sm text-slate-400 mt-3">Typical SMB budgets: $0–$500/month depending on synthetic runs and MAUs.</div>
+            </div>
+
+            <div className="bg-black/30 rounded-2xl border border-violet-500/30 p-6">
+              <h2 className="text-2xl font-semibold mb-2">Data Labeling & Enrichment</h2>
+              <ul className="list-disc list-inside text-slate-300 space-y-1">
+                <li>Scale AI: <a className="text-cyan-400 underline" href={`https://scale.com`} target="_blank" rel="noopener noreferrer">scale.com</a></li>
+                <li>Labelbox pricing: <a className="text-cyan-400 underline" href={`https://labelbox.com/pricing/`} target="_blank" rel="noopener noreferrer">labelbox.com/pricing</a></li>
+                <li>Hive data: <a className="text-cyan-400 underline" href={`https://thehive.ai`} target="_blank" rel="noopener noreferrer">thehive.ai</a></li>
+              </ul>
+              <div className="text-sm text-slate-400 mt-3">Typical SMB budgets: $100–$5,000/month based on volume and SLAs.</div>
+            </div>
           </div>
         </div>
       </section>

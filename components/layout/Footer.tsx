@@ -12,51 +12,52 @@ const Footer: React.FC = () => {
     website: 'https://ziontechgroup.com'
   };
 
-  const footerSections = [
-    {
-      title: 'Revolutionary Services',
-      links: [
-        { name: 'Quantum AI Platform', href: '/quantum-ai-cognitive' },
-        { name: 'Autonomous Manufacturing', href: '/autonomous-manufacturing' },
-        { name: 'Quantum Cybersecurity', href: '/quantum-cybersecurity' },
-        { name: 'Space Technology', href: '/space-technology' },
-        { name: 'Biotech AI', href: '/biotech-ai' },
-        { name: 'Quantum Trading', href: '/quantum-financial-trading' }
-      ]
-    },
-    {
-      title: 'Technology Solutions',
-      links: [
-        { name: 'AI & Machine Learning', href: '/services?category=AI%20%26%20Machine%20Learning' },
-        { name: 'Blockchain & DeFi', href: '/services?category=Blockchain%20%26%20DeFi' },
-        { name: 'IoT & Smart Cities', href: '/services?category=IoT%20%26%20Smart%20Cities' },
-        { name: 'Cybersecurity', href: '/services?category=Cybersecurity' },
-        { name: 'Cloud Infrastructure', href: '/services?category=Cloud%20Infrastructure' },
-        { name: 'Digital Transformation', href: '/solutions' }
-      ]
-    },
-    {
-      title: 'Industries',
-      links: [
-        { name: 'Financial Services', href: '/solutions#financial' },
-        { name: 'Healthcare', href: '/solutions#healthcare' },
-        { name: 'Manufacturing', href: '/solutions#manufacturing' },
-        { name: 'Government', href: '/solutions#government' },
-        { name: 'Education', href: '/solutions#education' },
-        { name: 'Retail & E-commerce', href: '/solutions#retail' }
-      ]
-    },
-    {
-      title: 'Company',
-      links: [
-        { name: 'About Us', href: '/about' },
-        { name: 'Careers', href: '/careers' },
-        { name: 'News & Updates', href: '/news' },
-        { name: 'Case Studies', href: '/case-studies' },
-        { name: 'Research', href: '/research' },
-        { name: 'Support', href: '/support' }
-      ]
-    }
+  const services = [
+    { name: 'AI & Machine Learning', href: '/services?category=AI%20%26%20Machine%20Learning' },
+    { name: 'Blockchain & Web3', href: '/services?category=Blockchain%20%26%20Web3' },
+    { name: 'Metaverse & VR/AR', href: '/services?category=Metaverse%20%26%20VR%2FAR' },
+    { name: 'IoT & Smart Cities', href: '/services?category=IoT%20%26%20Smart%20Cities' },
+    { name: 'Quantum Computing', href: '/services?category=Quantum%20Computing' },
+    { name: 'Robotics & Automation', href: '/services?category=Robotics%20%26%20Automation' },
+    { name: 'Analytics & Business Intelligence', href: '/services?category=Analytics%20%26%20Business%20Intelligence' },
+    { name: 'Cloud & Infrastructure', href: '/services?category=Cloud%20%26%20Infrastructure' },
+    { name: 'View All Services', href: '/services' }
+  ];
+
+  const solutions = [
+    { name: 'Case Studies', href: '/case-studies' },
+    { name: 'Cloud Platform', href: '/cloud-platform' },
+    { name: 'AI Assistant', href: '/ai-assistant' },
+    { name: 'Analytics', href: '/analytics' },
+    { name: 'Automation', href: '/automation' },
+    { name: 'Micro SaaS', href: '/micro-saas' },
+    { name: 'Resources', href: '/resources' },
+    { name: 'Support', href: '/support' }
+  ];
+
+  const company = [
+    { name: 'About Us', href: '/about' },
+    { name: 'Blog', href: '/blog' },
+    { name: 'Case Studies', href: '/case-studies' },
+    { name: 'Contact', href: '/contact' },
+    { name: 'Pricing', href: '/pricing' },
+    { name: 'Get Quote', href: '/quote' },
+    { name: 'Book Demo', href: '/demo' },
+    { name: 'Live Chat', href: '/chat' },
+    { name: 'Privacy', href: '/privacy' },
+    { name: 'Terms', href: '/terms' },
+    { name: 'Cookies', href: '/cookies' }
+  ];
+
+  const resources = [
+    { name: 'Documentation', href: '/docs' },
+    { name: 'Resources', href: '/resources' },
+    { name: 'Support Center', href: '/support' },
+    { name: 'Blog', href: '/blog' },
+    { name: 'Case Studies', href: '/case-studies' },
+    { name: 'Contact', href: '/contact' },
+    { name: 'Pricing', href: '/pricing' },
+    { name: 'About', href: '/about' }
   ];
 
   const socialLinks = [

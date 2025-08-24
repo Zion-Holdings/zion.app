@@ -1,9 +1,25 @@
 import React from 'react';
 import Head from 'next/head';
-import Link from 'next/link';
-import Breadcrumbs from '../components/Breadcrumbs';
-import RelatedContent from '../components/RelatedContent';
-import QuickNavigation from '../components/QuickNavigation';
+import { motion } from 'framer-motion';
+import { 
+  FileText, 
+  Download, 
+  Calendar, 
+  User, 
+  Tag, 
+  ArrowRight, 
+  TrendingUp,
+  BarChart3,
+  Brain,
+  Atom,
+  Globe,
+  Shield,
+  Zap,
+  Eye,
+  Clock,
+  Award
+} from 'lucide-react';
+import UltraAdvancedFuturisticBackground from '../components/ui/UltraAdvancedFuturisticBackground';
 
 const ReportsPage: React.FC = () => {
   const reports = [
@@ -94,7 +110,7 @@ const ReportsPage: React.FC = () => {
   ];
 
   return (
-    <UltraFuturisticBackground>
+    <UltraAdvancedFuturisticBackground>
       <div className="min-h-screen">
         <Head>
           <title>Research Reports - Zion Tech Group | Industry Analysis & Technology Insights</title>
@@ -354,18 +370,11 @@ const ReportsPage: React.FC = () => {
                   View Research Services
                 </a>
               </div>
-              <h3 className="text-2xl font-semibold mb-3 group-hover:text-cyan-400 transition-colors">
-                {category.name}
-              </h3>
-              <p className="text-white/70 mb-4">{category.description}</p>
-              <span className="text-cyan-400 font-semibold">{category.count}</span>
-            </Link>
-          ))}
-        </div>
-        
-        <RelatedContent currentPage="reports" />
-      </main>
-    </div>
+            </motion.div>
+          </div>
+        </section>
+      </div>
+    </UltraAdvancedFuturisticBackground>
   );
 };
 
