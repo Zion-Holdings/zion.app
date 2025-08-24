@@ -5,6 +5,7 @@ import { BenefitsSection } from "@/components/BenefitsSection";
 import { HowItWorksSection } from "@/components/HowItWorksSection";
 import { NewsletterSection } from "@/components/NewsletterSection";
 import { FeaturedListingsSection } from "@/components/FeaturedListingsSection";
+import { TrustedBySection } from "@/components/TrustedBySection";
 import { SEO } from "@/components/SEO";
 import { HeroSection } from "@/components/HeroSection";
 import { QuickAccess } from "@/components/home/QuickAccess";
@@ -34,6 +35,8 @@ export default function Home() {
       <FeatureCTAs />
       
       <FeatureHighlights />
+      
+      <TrustedBySection />
       
       <CategoriesSection />
       <BenefitsSection />
