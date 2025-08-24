@@ -283,62 +283,41 @@ const nextConfig = {
     // Fix EventEmitter memory leak by increasing max listeners
     // events.EventEmitter.defaultMaxListeners = 20; // Will be set by build script
     
-    // CRITICAL: Add comprehensive polyfills as the very first entry point
+    // CRITICAL: Add environment polyfill as the very first entry point
     if (!isServer) {
       const originalEntry = config.entry;
       config.entry = async () => {
         const entries = await originalEntry();
         
-        // Create comprehensive polyfill array
-        const polyfills = [
-          './src/utils/serverless-polyfill.ts',  // New serverless polyfill
-          './src/utils/env-polyfill.ts'         // Existing env polyfill
-        ];
-        
-        // Add polyfills to every entry point
+        // Add env polyfill to ALL entry points, not just main.js
         Object.keys(entries).forEach(entryName => {
           if (Array.isArray(entries[entryName])) {
-            polyfills.forEach(polyfill => {
-              if (!entries[entryName].includes(polyfill)) {
-                entries[entryName].unshift(polyfill);
-              }
-            });
+            if (!entries[entryName].includes('./src/utils/env-polyfill.ts')) {
+              entries[entryName].unshift('./src/utils/env-polyfill.ts');
+            }
           }
         });
         
         return entries;
       };
 
-      // DISABLED: FINAL NUCLEAR OPTION BannerPlugin causing module resolution issues
-      // The BannerPlugin was injecting absolute paths '/opt/build/repo/src/utils/tslib-polyfill.js'
-      // into third-party node_modules like @walletconnect, @peculiar, etc.
-      // This caused webpack module resolution failures in the Netlify build environment
-      //
-      // Document-level polyfills in _document.tsx will handle runtime errors instead
-
-      // DISABLED: All webpack-level polyfill injection causing module resolution issues
-      // The following approaches were causing third-party node_modules to import absolute paths:
-      // - resolve.alias for tslib
-      // - ProvidePlugin for TypeScript helpers  
-      // - NormalModuleReplacementPlugin for tslib replacement
-      // - BannerPlugin injection into chunks
-      //
-      // Solution: Rely only on document-level and runtime polyfills without webpack interference
-
-      // SIMPLIFIED DefinePlugin 
+      // Add webpack DefinePlugin to inject process.env safely
       config.plugins.push(
         new webpack.DefinePlugin({
           'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV || 'production'),
-          'process.env': JSON.stringify({
-            NODE_ENV: process.env.NODE_ENV || 'production',
-            NEXT_PUBLIC_APP_URL: process.env.NEXT_PUBLIC_APP_URL || '',
-            NEXT_PUBLIC_SUPABASE_URL: process.env.NEXT_PUBLIC_SUPABASE_URL || '',
-            NEXT_PUBLIC_SUPABASE_ANON_KEY: process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || '',
-          }),
+          'process.env.NEXT_PUBLIC_APP_URL': JSON.stringify(process.env.NEXT_PUBLIC_APP_URL || ''),
+          'process.env.NEXT_PUBLIC_SUPABASE_URL': JSON.stringify(process.env.NEXT_PUBLIC_SUPABASE_URL || ''),
+          'process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY': JSON.stringify(process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || ''),
         })
       );
 
-
+      // Add webpack ProvidePlugin to provide process global
+      config.plugins.push(
+        new webpack.ProvidePlugin({
+          process: 'process/browser',
+          Buffer: ['buffer', 'Buffer'],
+        })
+      );
     }
     
     // Development optimizations to prevent memory leaks with 176+ pages
@@ -376,16 +355,9 @@ const nextConfig = {
       });
     }
 
-    // Smart Sentry detection: Disable automatically if would cause build issues
-    const shouldDisableSentry = process.env.SKIP_SENTRY_BUILD === 'true' || 
-                                process.env.CI === 'true' ||
-                                process.env.NODE_ENV === 'production' ||
-                                !process.env.SENTRY_DSN ||
-                                process.env.SENTRY_DSN?.includes('dummy') ||
-                                process.env.SENTRY_DSN?.includes('placeholder');
-    
-    if (shouldDisableSentry) {
-      console.log('🚫 Sentry disabled - using mock implementation (Smart Detection)');
+    // Completely exclude Sentry during CI builds to prevent Node.js import issues
+    if (process.env.SKIP_SENTRY_BUILD === 'true' || process.env.CI === 'true') {
+      console.log('🚫 Sentry disabled for CI build - using mock implementation');
       
       // Use webpack aliases to completely replace all Sentry imports with mocks
       config.resolve.alias = {
@@ -407,40 +379,6 @@ const nextConfig = {
         ...config.resolve.alias,
         'dd-trace': path.resolve(__dirname, 'src/utils/dd-trace-mock.ts'),
       };
-    }
-
-    // PHASE 3: Advanced Performance Optimizations and Error Handling
-    // Enhanced bundle optimization and monitoring capabilities
-
-    // CRITICAL: Minimal serverless environment protection (avoiding read-only property issues)
-    if (isServer) {
-      // Only essential polyfills to avoid property assignment errors
-      if (typeof global !== 'undefined') {
-        // Only set properties that are safe to assign
-        try {
-          Object.defineProperty(global, 'self', { 
-            value: global.self || global, 
-            writable: true, 
-            configurable: true 
-          });
-        } catch (e) { /* ignore if already defined */ }
-        
-        try {
-          Object.defineProperty(global, 'webpackChunk_N_E', { 
-            value: global.webpackChunk_N_E || [], 
-            writable: true, 
-            configurable: true 
-          });
-        } catch (e) { /* ignore if already defined */ }
-      }
-      
-      // Add serverless-specific webpack configuration
-      config.target = 'node';
-      config.externalsPresets = { node: true };
-      
-      // Ensure proper module resolution in serverless
-      config.resolve.conditionNames = ['node', 'require', 'default'];
-      config.resolve.mainFields = ['main', 'module'];
     }
 
     // Exclude native modules from server-side bundling to prevent build errors
@@ -478,12 +416,15 @@ const nextConfig = {
       config.cache = {
         type: 'memory',
         maxGenerations: dev ? 1 : 5,
+        // Disable cacheUnaffected to prevent webpack conflicts
+        cacheUnaffected: false,
       };
     } else {
       // Ensure memory cache is properly configured
       config.cache = {
         type: 'memory',
         maxGenerations: dev ? 1 : 5,
+        cacheUnaffected: false,
       };
     }
 
@@ -494,7 +435,6 @@ const nextConfig = {
         concatenateModules: false, // Disable module concatenation which can cause TDZ issues
         minimize: false, // Disable minimization on server side to preserve variable names
         mangleExports: false,
-        usedExports: false, // Disable to prevent conflict with cacheUnaffected
       };
     }
 
@@ -796,37 +736,6 @@ const nextConfig = {
       // Note: Compression is handled by Netlify and other deployment platforms
       // Removed compression-webpack-plugin to avoid dependency conflicts
     }
-
-    // PERFORMANCE: Add bundle optimization
-    if (!dev) {
-      config.optimization = {
-        ...config.optimization,
-        moduleIds: 'deterministic',
-        chunkIds: 'deterministic',
-        splitChunks: {
-          chunks: 'all',
-          cacheGroups: {
-            vendor: {
-              test: /[\\/]node_modules[\\/]/,
-              name: 'vendors',
-              chunks: 'all',
-              priority: 10,
-            },
-            common: {
-              name: 'common',
-              minChunks: 2,
-              chunks: 'all',
-              priority: 5,
-              reuseExistingChunk: true,
-            },
-          },
-        },
-      };
-    }
-
-    // PERFORMANCE: Tree shaking optimization
-    config.optimization.usedExports = true;
-    config.optimization.sideEffects = false;
 
     return config;
   },
