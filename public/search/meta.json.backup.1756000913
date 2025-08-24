@@ -1,5 +1,7 @@
 [
   {
+<<<<<<< HEAD
+=======
     "route": "/2025-advanced-services-showcase",
     "title": "",
     "h1": ""
@@ -65,6 +67,7 @@
     "h1": "Service not found"
   },
   {
+>>>>>>> origin/cursor/website-audit-and-enhancement-d3ae
     "route": "/_app",
     "title": "",
     "h1": ""
@@ -75,6 +78,8 @@
     "h1": ""
   },
   {
+<<<<<<< HEAD
+=======
     "route": "/about",
     "title": "About Us - Zion Tech Group | AI-Powered Technology Solutions",
     "h1": "About Zion Tech Group"
@@ -275,11 +280,17 @@
     "h1": "2025 Innovative Services"
   },
   {
+>>>>>>> origin/cursor/website-audit-and-enhancement-d3ae
     "route": "/comprehensive-2025-services-showcase",
     "title": "Comprehensive 2025 Innovative Services Showcase — Zion Tech Group",
     "h1": "2025 Innovative Services Showcase"
   },
   {
+<<<<<<< HEAD
+    "route": "/comprehensive-2026-services-showcase",
+    "title": "2026 Comprehensive Services Showcase — Zion Tech Group",
+    "h1": "2026 Comprehensive Services Showcase"
+=======
     "route": "/comprehensive-pricing",
     "title": "Comprehensive Pricing | Zion Tech Group - Micro SaaS Services Pricing & Plans",
     "h1": ""
@@ -413,6 +424,7 @@
     "route": "/index.page",
     "title": "",
     "h1": ""
+>>>>>>> origin/cursor/website-audit-and-enhancement-d3ae
   },
   {
     "route": "/",
@@ -420,6 +432,8 @@
     "h1": "Zion Tech Group"
   },
   {
+<<<<<<< HEAD
+=======
     "route": "/innovative-services-showcase-2025",
     "title": "Innovative Services Showcase 2025 | Zion Tech Group",
     "h1": ""
@@ -540,11 +554,17 @@
     "h1": ""
   },
   {
+>>>>>>> origin/cursor/website-audit-and-enhancement-d3ae
     "route": "/pricing-2025",
     "title": "2025 Pricing & Services — Zion Tech Group",
     "h1": "2025 Pricing & Services"
   },
   {
+<<<<<<< HEAD
+    "route": "/services-advertising-2026",
+    "title": "2026 Services Advertising & Marketing — Zion Tech Group",
+    "h1": "2026 Services Advertising & Marketing"
+=======
     "route": "/pricing-comparison",
     "title": "Pricing Comparison - Zion Tech Group | How We Stack Up Against the Competition",
     "h1": "How We Compare to the Competition"
@@ -3958,5 +3978,6 @@
     "route": "/academy/founder-course",
     "title": "",
     "h1": "Founder Course: Launch Your Zion Instance"
+>>>>>>> origin/cursor/website-audit-and-enhancement-d3ae
   }
 ]
