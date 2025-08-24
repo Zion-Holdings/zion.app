@@ -12,6 +12,7 @@ import { FeatureCTAs } from "@/components/home/FeatureCTAs";
 import { FeatureHighlights } from "@/components/home/FeatureHighlights";
 import { ITServiceRequestHero } from "@/components/home/ITServiceRequestHero";
 import { ServicesOverview } from "@/components/home/ServicesOverview";
+import { ServiceRecommendations } from "@/components/ServiceRecommendations";
 
 export default function Home() {
   return (
@@ -34,6 +35,8 @@ export default function Home() {
       <FeatureHighlights />
       
       <ServicesOverview />
+      
+      <ServiceRecommendations maxRecommendations={6} />
       
       <CategoriesSection />
       <BenefitsSection />

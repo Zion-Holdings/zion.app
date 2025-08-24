@@ -26,6 +26,7 @@ import {
   BarChart3
 } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { ServiceComparisonTool } from '@/components/ServiceComparisonTool';
 
 export default function ExpandedServicesPage() {
   const [searchTerm, setSearchTerm] = useState('');
@@ -358,6 +359,9 @@ export default function ExpandedServicesPage() {
           </div>
         </div>
       </div>
+
+      {/* Service Comparison Tool */}
+      <ServiceComparisonTool maxServices={4} />
 
       {/* Pricing Tiers */}
       <div className="py-16 px-4 bg-white">

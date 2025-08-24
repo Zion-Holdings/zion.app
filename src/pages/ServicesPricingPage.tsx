@@ -28,6 +28,7 @@ import {
   X
 } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { QuoteCalculator } from '@/components/QuoteCalculator';
 
 export default function ServicesPricingPage() {
   const [searchTerm, setSearchTerm] = useState('');
@@ -344,6 +345,9 @@ export default function ServicesPricingPage() {
           </div>
         </div>
       </div>
+
+      {/* Quote Calculator */}
+      <QuoteCalculator />
 
       {/* Why Our Pricing is Competitive */}
       <div className="py-16 px-4">
