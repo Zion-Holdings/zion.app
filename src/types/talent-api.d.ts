@@ -1,4 +1,4 @@
-declare module "@/api/talent" {
-  import type { TalentProfile } from "@/types/talent";
-  export function getTalentBySlug(slug: string): Promise<TalentProfile | null>;
+// Type definitions for talent-api.d;
+export interface talent-api.d {;
+  // TODO: Add proper type definitions;
 }

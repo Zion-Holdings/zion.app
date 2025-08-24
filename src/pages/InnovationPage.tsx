@@ -1,5 +1,9 @@
-import CategoryDetail from './CategoryDetail';
-
-export default function InnovationPage() {
-  return <CategoryDetail slug="innovation" />;
+import React from 'react';
+export function InnovationPage() {
+  return (
+    <div>
+      <h1>Component</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
 }

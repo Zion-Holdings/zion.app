@@ -14,25 +14,18 @@ from .throttling import RedisDailyThrottle
 @api_view(['POST'])
 @permission_classes([IsAuthenticated])
 def generate_key(request):
-    """Generate a new API key for the authenticated user."""
-    prefix, secret = ApiKey.generate_key()
-    name = request.data.get('name', '')
-    hashed = ApiKey.hash_secret(secret)
-    ApiKey.objects.create(user=request.user, name=name, prefix=prefix, hashed_key=hashed)
-    full_key = f"{prefix}.{secret}"
-    return Response({'key': full_key, 'prefix': prefix, 'name': name}, status=status.HTTP_201_CREATED)
+    prefix = secrets.token_hex(4)
+    full_key = prefix + secrets.token_hex(16)
+    hashed = sha256(full_key.encode()).hexdigest()
+    ApiKey.objects.create(user=request.user, prefix=prefix, hashed_key=hashed)
+    return Response({'key': full_key, 'prefix': prefix}, status=status.HTTP_201_CREATED)
 
 @api_view(['POST'])
 @permission_classes([IsAuthenticated])
 def revoke_key(request):
     prefix = request.data.get('prefix')
-    if not prefix:
-        return Response({'error': 'Prefix is required.'}, status=status.HTTP_400_BAD_REQUEST)
-
-    updated = ApiKey.objects.filter(user=request.user, prefix=prefix).update(revoked=True)
-    if updated:
-        return Response({'message': 'API key revoked successfully.'})
-    return Response({'message': 'API key not found or not owned by user.'})
+    ApiKey.objects.filter(user=request.user, prefix=prefix).update(revoked=True)
+    return Response({'detail': 'revoked'})
 
 @api_view(['GET'])
 @authentication_classes([ApiKeyAuthentication])
@@ -45,11 +38,11 @@ def protected_endpoint(request):
 def developer_portal(request):
     context = {}
     if request.method == 'POST' and 'generate' in request.POST:
-        prefix, secret = ApiKey.generate_key()
-        name = request.POST.get('name', '')
-        hashed = ApiKey.hash_secret(secret)
-        ApiKey.objects.create(user=request.user, name=name, prefix=prefix, hashed_key=hashed)
-        context['new_key'] = f"{prefix}.{secret}"
+        prefix = secrets.token_hex(4)
+        full_key = prefix + secrets.token_hex(16)
+        hashed = sha256(full_key.encode()).hexdigest()
+        ApiKey.objects.create(user=request.user, prefix=prefix, hashed_key=hashed)
+        context['new_key'] = full_key
     if request.method == 'POST' and 'revoke' in request.POST:
         pref = request.POST.get('prefix')
         ApiKey.objects.filter(user=request.user, prefix=pref).update(revoked=True)

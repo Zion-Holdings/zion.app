@@ -2,12 +2,34 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
 import type { PerformanceReport } from '@/utils/performance-monitor';
 
-interface PerformanceMetricsRequest extends NextApiRequest {
-  body: PerformanceReport;
+interface PerformanceData {
+  timestamp: string;
+  url: string;
+  userAgent: string;
+  fcp: number;
+  lcp: number;
+  fid: number;
+  cls: number;
+  ttfb: number;
+  sessionId: string;
 }
 
-export default async function handler(
-  req: PerformanceMetricsRequest,
+interface ErrorData {
+  timestamp: string;
+  url: string;
+  userAgent: string;
+  error: string;
+  stack?: string;
+  sessionId: string;
+}
+
+// In-memory storage for demo purposes
+// In production, use a proper database
+let performanceMetrics: PerformanceData[] = [];
+let errorLogs: ErrorData[] = [];
+
+export default function handler(
+  req: NextApiRequest,
   res: NextApiResponse
 ): Promise<void> {
   if (req['method'] !== 'POST') {
@@ -56,34 +78,98 @@ export default async function handler(
             timestamp: Date.now()
           })
         });
-      } catch (analyticsError) {
-        console.error('Failed to send to analytics service:', analyticsError);
-        // Don't fail the request if analytics fails
       }
+    } catch (error) {
+      console.error('Error processing request:', error);
+      res.status(500).json({ 
+        success: false, 
+        message: 'Internal server error' 
+      });
     }
+  } else if (req.method === 'GET') {
+    try {
+      const { type, limit = 100 } = req.query;
+      
+      if (type === 'performance') {
+        const limitedMetrics = performanceMetrics
+          .slice(-Number(limit))
+          .map(metric => ({
+            ...metric,
+            timestamp: new Date(metric.timestamp).toLocaleString()
+          }));
 
-    // Store in memory for development (replace with database in production)
-    if (typeof (global as any).performanceMetrics === 'undefined') {
-      (global as any).performanceMetrics = [];
+        res.status(200).json({
+          success: true,
+          data: limitedMetrics,
+          total: performanceMetrics.length,
+          average: calculateAverages(performanceMetrics)
+        });
+      } else if (type === 'error') {
+        const limitedErrors = errorLogs
+          .slice(-Number(limit))
+          .map(error => ({
+            ...error,
+            timestamp: new Date(error.timestamp).toLocaleString()
+          }));
+
+        res.status(200).json({
+          success: true,
+          data: limitedErrors,
+          total: errorLogs.length
+        });
+      } else if (type === 'summary') {
+        res.status(200).json({
+          success: true,
+          summary: {
+            performance: {
+              total: performanceMetrics.length,
+              average: calculateAverages(performanceMetrics),
+              recent: performanceMetrics.slice(-10).length
+            },
+            errors: {
+              total: errorLogs.length,
+              recent: errorLogs.slice(-10).length
+            }
+          }
+        });
+      } else {
+        res.status(400).json({ 
+          success: false, 
+          message: 'Invalid type parameter' 
+        });
+      }
+    } catch (error) {
+      console.error('Error retrieving data:', error);
+      res.status(500).json({ 
+        success: false, 
+        message: 'Internal server error' 
+      });
     }
-    
-    // Keep only the last 100 reports in memory
-    (global as any).performanceMetrics.push(performanceReport);
-    if ((global as any).performanceMetrics.length > 100) {
-      (global as any).performanceMetrics = (global as any).performanceMetrics.slice(-100);
-    }
-
-    res.status(200).json({ 
-      success: true, 
-      message: 'Performance metrics recorded',
-      metricsCount: performanceReport.metrics.length
-    });
-
-  } catch (error) {
-    console.error('Error processing performance metrics:', error);
-    res.status(500).json({ 
-      error: 'Internal server error',
-      message: 'Failed to process performance metrics'
+  } else {
+    res.setHeader('Allow', ['POST', 'GET']);
+    res.status(405).json({ 
+      success: false, 
+      message: `Method ${req.method} Not Allowed` 
     });
   }
+}
+
+function calculateAverages(metrics: PerformanceData[]) {
+  if (metrics.length === 0) return null;
+
+  const sums = metrics.reduce((acc, metric) => ({
+    fcp: acc.fcp + metric.fcp,
+    lcp: acc.lcp + metric.lcp,
+    fid: acc.fid + metric.fid,
+    cls: acc.cls + metric.cls,
+    ttfb: acc.ttfb + metric.ttfb
+  }), { fcp: 0, lcp: 0, fid: 0, cls: 0, ttfb: 0 });
+
+  return {
+    fcp: Math.round(sums.fcp / metrics.length),
+    lcp: Math.round(sums.lcp / metrics.length),
+    fid: Math.round(sums.fid / metrics.length),
+    cls: Math.round((sums.cls / metrics.length) * 1000) / 1000,
+    ttfb: Math.round(sums.ttfb / metrics.length)
+  };
 }

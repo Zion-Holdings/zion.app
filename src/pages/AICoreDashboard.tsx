@@ -1,31 +1,9 @@
-import { useState } from 'react';
-import { triggerTraining } from '@/services/zionGPTService';
-import { logErrorToProduction } from '@/utils/productionLogger';
-
-export default function AICoreDashboard() {
-  const [status, setStatus] = useState<string>('idle');
-
-  async function startTraining() {
-    setStatus('starting');
-    try {
-      const res = await triggerTraining();
-      setStatus(res.status);
-    } catch (err) {
-      setStatus('error');
-      logErrorToProduction(err instanceof Error ? err.message : String(err), { message: 'Training error' });
-    }
-  }
-
+import React from 'react';
+export function AICoreDashboard() {
   return (
-    <div className="p-6">
-      <h1 className="text-2xl font-bold mb-4">ZionGPT Core</h1>
-      <button
-        className="bg-blue-600 text-white px-4 py-2 rounded"
-        onClick={startTraining}
-      >
-        Trigger Training
-      </button>
-      <p className="mt-4">Status: {status}</p>
+    <div>
+      <h1>Component</h1>
+      <p>Component placeholder</p>
     </div>
   );
 }

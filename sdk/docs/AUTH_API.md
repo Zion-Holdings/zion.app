@@ -8,9 +8,9 @@ _Detailed function definitions, parameters, and return types will be specified h
 
 **Examples:**
 
-*   `loginWithEmail(email, password)`
-*   `loginWithWallet(walletProvider, signature)`
-*   `logout()`
-*   `getUser()`
-*   `refreshToken()`
-*   `ssoLogin(provider)`
+- `loginWithEmail(email, password)`
+- `loginWithWallet(walletProvider, signature)`
+- `logout()`
+- `getUser()`
+- `refreshToken()`
+- `ssoLogin(provider)`

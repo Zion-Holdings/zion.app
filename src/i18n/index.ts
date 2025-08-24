@@ -2,59 +2,26 @@ import i18n from 'i18next';
 import { initReactI18next } from 'react-i18next';
 import LanguageDetector from 'i18next-browser-languagedetector';
 import { safeStorage } from '../utils/safeStorage';
-import { setCookie } from '../utils/cookies';
+import Cookies from 'js-cookie';
 
-import enTranslation from './locales/en/translation.json';
-import enUsTranslation from './locales/en-US/translation.json';
-import esTranslation from './locales/es/translation.json';
-import ptTranslation from './locales/pt/translation.json';
-import frTranslation from './locales/fr/translation.json';
-import arTranslation from './locales/ar/translation.json';
-import {logErrorToProduction} from '@/utils/productionLogger';
+import enTranslation from '../../public/locales/en-US/common.json';
+import esTranslation from '../../public/locales/es-ES/common.json';
 
-
-if (!i18n) {
-  logErrorToProduction("CRITICAL: i18next failed to import. Internationalization will not work.");
-} else {
-  // Initialize i18next
-  i18n
-    .use(LanguageDetector) // Detect user language
-    .use(initReactI18next) // Initialize react-i18next
-    .init({
-      lng: 'en', // Explicitly set initial language to bypass detection issues during server start
-      resources: {
-      en: {
-        translation: enTranslation
-      },
+// Initialize i18next
+i18n
+  .use(LanguageDetector) // Detect user language
+  .use(initReactI18next) // Initialize react-i18next
+  .init({
+    resources: {
       'en-US': {
-        translation: enUsTranslation
-      },
-      es: {
-        translation: esTranslation
+        translation: enTranslation
       },
       'es-ES': {
         translation: esTranslation
-      },
-      fr: {
-        translation: frTranslation
-      },
-      pt: {
-        translation: ptTranslation
-      },
-      ar: {
-        translation: arTranslation
       }
     },
-    fallbackLng: 'en', // Default language
-    preload: ['en-US', 'es-ES'],
-    supportedLngs: ['en', 'en-US', 'es', 'es-ES', 'fr', 'pt', 'ar'],
-    debug: false, // Disabled debug to reduce console noise - enable only when needed
-    // Silence noisy i18next warnings in development logs
-    // logger: {
-    //   log: () => {},
-    //   warn: () => {},
-    //   error: console.error,
-    // },
+    fallbackLng: 'en-US', // Default language
+    debug: process.env.NODE_ENV === 'development',
     interpolation: {
       escapeValue: false, // React already escapes by default
     },
@@ -64,9 +31,10 @@ if (!i18n) {
     nonExplicitSupportedLngs: false, // Don't auto-detect non-explicit languages
     initImmediate: false, // Initialize synchronously to avoid missing key warnings
     detection: {
-      order: ['cookie', 'navigator'], // Keep navigator as a fallback for first-time users
-      lookupCookie: 'i18n_lang',
-      caches: ['cookie'], // Re-enabled cookie caching for better performance
+      order: ['cookie', 'localStorage', 'navigator'],
+      lookupCookie: 'zion_language',
+      lookupLocalStorage: 'zion_language',
+      caches: ['cookie']
     },
   })
   .catch(error => {
@@ -83,45 +51,12 @@ if (!i18n) {
     i18n.on('languageChanged', (lng) => {
       document.documentElement.dir = i18n.dir();
 
-      // Save language preference to cookie and localStorage
-      setCookie('i18n_lang', lng);
-      safeStorage.setItem('i18n_lang', lng);
-
-      // If user is authenticated, save language preference to profile
-      // This will be implemented in the LanguageContext
-    });
-
-  }
-}
-
-// Capture missing translation keys on both client and server
-i18n.on('missingKey', (lngs, namespace, key) => {
-  logErrorToProduction(`Missing translation key: ${key}`, {
-    data: {
-      languages: lngs,
-      namespace,
-    },
-  });
-  // Also persist missing keys on the server for easier debugging
-  if (typeof window === 'undefined') {
-    try {
-      // Use dynamic imports for Node.js modules in server-side environment
-      import('fs').then(async (fs) => {
-        const path = await import('path');
-        const logsDir = path.join(process.cwd(), 'logs');
-        if (!fs.existsSync(logsDir)) {
-          fs.mkdirSync(logsDir, { recursive: true });
-        }
-        const filePath = path.join(logsDir, 'missing-keys.log');
-        const line = `${new Date().toISOString()} ${lngs.join(',')} ${namespace} ${key}\n`;
-        fs.appendFileSync(filePath, line);
-      }).catch(() => {
-        // Fail silently to avoid interfering with app flow
-      });
-    } catch (error) {
-      // Fail silently to avoid interfering with app flow
-    }
-  }
+  // Save language preference to cookie and localStorage
+  Cookies.set('zion_language', lng, { expires: 365 });
+  safeStorage.setItem('zion_language', lng);
+  
+  // If user is authenticated, save language preference to profile
+  // This will be implemented in the LanguageContext
 });
 
 export default i18n;

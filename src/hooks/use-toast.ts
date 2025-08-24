@@ -1,5 +1,5 @@
 import React from 'react';
-// Remove direct import of sonnerToast, rely on globalToastManager
+import { toast as sonnerToast } from 'sonner';
 import { globalToastManager, showToast, ToastType, ToastPriority } from '@/utils/globalToastManager';
 
 const variantStyles = {
@@ -81,13 +81,13 @@ const toastAdapter = (props: ToastProps | string) => {
 
   return globalToastManager.showToast({
     message,
-    ...(toastTitle && { title: toastTitle }),
+    title: toastTitle,
     type,
-    ...(priority && { priority }),
-    ...(duration && { duration }),
+    priority,
+    duration,
     persistent,
-    ...(action && { action }),
-    ...(onRetry && { onRetry }),
+    action,
+    onRetry,
   });
 };
 

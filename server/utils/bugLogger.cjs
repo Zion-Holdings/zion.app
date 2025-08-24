@@ -34,7 +34,7 @@ function logBug({
     logs.push(bugReport);
     fs.mkdirSync(path.dirname(LOG_FILE), { recursive: true });
     fs.writeFileSync(LOG_FILE, JSON.stringify(logs, null, 2));
-  } catch (err) {
+  } catch (_err) {
     console.error('Failed to write bug log:', err);
   }
 }

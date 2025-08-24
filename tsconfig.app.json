@@ -29,7 +29,7 @@
       "next/*": ["../types/next/*"]
     },
     "typeRoots": ["./src/types", "./node_modules/@types"],
-    "types": [],
+    "types": ["node"],
     "composite": true,
     "noEmit": true
   },
