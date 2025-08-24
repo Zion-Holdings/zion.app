@@ -17,9 +17,12 @@ import {
   Code,
   Building,
   Clock,
-  Brain,
-  Server,
-  TrendingUp
+  Bot,
+  Cloud,
+  Shield,
+  BarChart3,
+  Settings as SettingsIcon,
+  Link as LinkIcon
 } from "lucide-react";
 
 export function FeatureCTAs() {
@@ -33,19 +36,76 @@ export function FeatureCTAs() {
       details: "Leveraging advanced machine learning, our matching system analyzes over 100+ data points to create perfect connections between talents and opportunities."
     },
     {
+      title: "Micro SAAS Solutions",
+      description: "Ready-to-use business applications for inventory, CRM, project management, and more.",
+      icon: <Zap className="h-10 w-10 p-2 rounded-md bg-purple-100 text-purple-700" />,
+      link: "/micro-saas-services",
+      badge: "New",
+      isNew: true,
+      details: "25+ micro SAAS solutions starting from $9/month. AI Chatbot Builder, Smart CRM, Inventory Management, and more."
+    },
+    {
+      title: "AI Services",
+      description: "AI-powered solutions for automation, analytics, content optimization, and intelligent decision making.",
+      icon: <Bot className="h-10 w-10 p-2 rounded-md bg-cyan-100 text-cyan-700" />,
+      link: "/micro-saas-services?category=ai",
+      badge: "Featured",
+      isNew: true,
+      details: "AI Chatbot Builder, Content Optimizer, Data Visualization, and custom AI development services."
+    },
+    {
+      title: "IT Services",
+      description: "Professional IT consulting, cloud migration, cybersecurity, and infrastructure management.",
+      icon: <Cloud className="h-10 w-10 p-2 rounded-md bg-indigo-100 text-indigo-700" />,
+      link: "/micro-saas-services?category=it",
+      badge: "Professional",
+      details: "Cloud migration, cybersecurity audits, DevOps automation, and enterprise system integration."
+    },
+    {
+      title: "Security Solutions",
+      description: "Comprehensive cybersecurity services including penetration testing, monitoring, and compliance.",
+      icon: <Shield className="h-10 w-10 p-2 rounded-md bg-red-100 text-red-700" />,
+      link: "/micro-saas-services?category=security",
+      badge: "Critical",
+      details: "24/7 security monitoring, penetration testing, compliance verification, and threat detection."
+    },
+    {
+      title: "Business Automation",
+      description: "Intelligent automation platforms for streamlining business processes and reducing manual work.",
+      icon: <SettingsIcon className="h-10 w-10 p-2 rounded-md bg-green-100 text-green-700" />,
+      link: "/micro-saas-services?category=automation",
+      badge: "Efficient",
+      details: "Workflow automation, RPA solutions, and business process optimization to improve efficiency by 70%."
+    },
+    {
+      title: "Analytics & BI",
+      description: "Business intelligence dashboards, predictive analytics, and data visualization solutions.",
+      icon: <BarChart3 className="h-10 w-10 p-2 rounded-md bg-teal-100 text-teal-700" />,
+      link: "/micro-saas-services?category=analytics",
+      badge: "Insights",
+      details: "Custom BI dashboards, predictive analytics engine, and real-time data visualization tools."
+    },
+    {
+      title: "System Integration",
+      description: "Seamless integration of business systems, APIs, and third-party platform connectors.",
+      icon: <LinkIcon className="h-10 w-10 p-2 rounded-md bg-yellow-100 text-yellow-700" />,
+      link: "/micro-saas-services?category=integration",
+      badge: "Connect",
+      details: "Enterprise system integration, API development, and third-party platform connectors for streamlined workflows."
+    },
+    {
       title: "Talent Directory",
       description: "Browse our extensive database of verified AI and tech specialists, filtered by expertise and availability.",
-      icon: <Users className="h-10 w-10 p-2 rounded-md bg-purple-100 text-purple-700" />,
+      icon: <Users className="h-10 w-10 p-2 rounded-md bg-pink-100 text-pink-700" />,
       link: "/talent",
       details: "Every talent in our directory undergoes a rigorous verification process to ensure quality, authenticity, and reliability."
     },
     {
-      title: "AI Services Hub",
-      description: "Cutting-edge AI solutions including chatbots, image generation, video editing, and data analytics.",
-      icon: <Zap className="h-10 w-10 p-2 rounded-md bg-cyan-100 text-cyan-700" />,
-      link: "/ai-services",
-      badge: "New",
-      details: "From AI chatbots to advanced analytics, our AI services help businesses leverage artificial intelligence for competitive advantage."
+      title: "Services Marketplace",
+      description: "Discover professional tech and AI services for your business needs, from development to consulting.",
+      icon: <Code className="h-10 w-10 p-2 rounded-md bg-orange-100 text-orange-700" />,
+      link: "/services",
+      details: "From on-demand IT support to specialized AI development, our marketplace offers verified services with transparent pricing and reviews."
     },
     {
       title: "Equipment Catalog",
@@ -70,11 +130,11 @@ export function FeatureCTAs() {
       details: "Manage your projects, communicate with clients or talents, and receive real-time updates wherever you are."
     },
     {
-      title: "IT Services Hub",
-      description: "Comprehensive IT solutions including cloud migration, cybersecurity, network infrastructure, and 24/7 support.",
+      title: "Enterprise Solutions",
+      description: "Custom-branded hiring portal, dedicated talent pool, and powerful admin controls for your organization.",
       icon: <Building className="h-10 w-10 p-2 rounded-md bg-pink-100 text-pink-700" />,
-      link: "/it-services",
-      details: "From cloud migration to cybersecurity audits, our IT services help businesses modernize their infrastructure and enhance security."
+      link: "/enterprise",
+      details: "Scale your talent acquisition with white-labeled solutions, analytics dashboards, and dedicated account managers."
     },
     {
       title: "Developer Tools",
@@ -98,53 +158,26 @@ export function FeatureCTAs() {
       details: "Our intuitive project management tools help you track progress, manage deliverables, and ensure timely completion."
     },
     {
-      title: "Micro SAAS Hub",
-      description: "Affordable software solutions for growing businesses including CRM, project management, and marketing tools.",
-      icon: <Zap className="h-10 w-10 p-2 rounded-md bg-violet-100 text-violet-700" />,
-      link: "/micro-saas",
-      badge: "New",
-      details: "Discover powerful, affordable software solutions designed to help your business scale without breaking the bank."
-    },
-    {
       title: "Zion Hire AI",
       description: "AI-powered recruiting assistant to streamline your hiring process and find better matches.",
       icon: <Clock className="h-10 w-10 p-2 rounded-md bg-violet-100 text-violet-700" />,
       link: "/zion-hire-ai",
       badge: "Premium",
       details: "Automate screening, improve candidate matching, and enhance the hiring experience with our AI recruiting solution."
-    },
-    {
-      title: "AI Services & Solutions",
-      description: "Comprehensive AI development, machine learning, and automation services for modern businesses.",
-      icon: <Brain className="h-10 w-10 p-2 rounded-md bg-cyan-100 text-cyan-700" />,
-      link: "/ai-services",
-      badge: "New",
-      details: "From custom AI models to computer vision solutions, we deliver cutting-edge artificial intelligence services."
-    },
-    {
-      title: "IT Infrastructure Services",
-      description: "Enterprise-grade IT solutions including cloud migration, cybersecurity, and managed services.",
-      icon: <Server className="h-10 w-10 p-2 rounded-md bg-blue-100 text-blue-700" />,
-      link: "/it-services",
-      badge: "Featured",
-      details: "Transform your IT infrastructure with our comprehensive cloud, security, and DevOps solutions."
-    },
-    {
-      title: "Digital Transformation",
-      description: "Strategic consulting and implementation for business modernization and digital growth.",
-      icon: <TrendingUp className="h-10 w-10 p-2 rounded-md bg-purple-100 text-purple-700" />,
-      link: "/digital-transformation",
-      badge: "Premium",
-      details: "Navigate the digital age with our comprehensive transformation strategies and implementation services."
     }
   ];
 
   return (
-    <section className="py-16 bg-gradient-to-b from-background to-background/90 cyber-grid relative overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-r from-zion-purple/5 to-zion-cyan/5"></div>
-      <div className="relative container mx-auto px-4">
+    <section className="py-16 bg-gradient-to-b from-background to-background/90 relative overflow-hidden">
+      {/* Animated Background */}
+      <div className="absolute inset-0 overflow-hidden">
+        <div className="absolute top-0 left-1/4 w-96 h-96 bg-zion-purple/5 rounded-full filter blur-3xl animate-pulse"></div>
+        <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-zion-cyan/5 rounded-full filter blur-3xl animate-pulse delay-1000"></div>
+      </div>
+      
+      <div className="container mx-auto px-4 relative z-10">
         <div className="mb-12 text-center">
-          <h2 className="text-3xl font-bold tracking-tight mb-3 glow">Discover Zion's Powerful Features</h2>
+          <h2 className="text-3xl font-bold tracking-tight mb-3">Discover Zion's Powerful Features</h2>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
             Explore our comprehensive suite of tools designed to transform how you connect, collaborate, and create in the tech ecosystem.
           </p>
@@ -152,27 +185,39 @@ export function FeatureCTAs() {
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {features.map((feature, index) => (
-            <Card key={index} className="overflow-hidden transition-all duration-300 hover:shadow-lg hover:border-primary/50 hover:neon-pulse group">
+            <Card 
+              key={index} 
+              className="overflow-hidden transition-all duration-300 hover:shadow-lg hover:border-primary/50 hover:scale-105 hover-lift group"
+            >
               <CardHeader className="pb-2">
                 <div className="flex justify-between items-start">
-                  {feature.icon}
-                  {feature.badge && (
-                    <Badge variant="secondary" className="bg-primary/20 text-primary">
-                      {feature.badge}
-                    </Badge>
-                  )}
+                  <div className="group-hover:scale-110 transition-transform duration-300">
+                    {feature.icon}
+                  </div>
+                  <div className="flex gap-2">
+                    {feature.isNew && (
+                      <Badge variant="secondary" className="bg-green-500/20 text-green-600">
+                        New
+                      </Badge>
+                    )}
+                    {feature.badge && (
+                      <Badge variant="secondary" className="bg-primary/20 text-primary">
+                        {feature.badge}
+                      </Badge>
+                    )}
+                  </div>
                 </div>
-                <CardTitle className="mt-4">{feature.title}</CardTitle>
+                <CardTitle className="mt-4 group-hover:text-primary transition-colors">{feature.title}</CardTitle>
                 <CardDescription className="line-clamp-2">{feature.description}</CardDescription>
               </CardHeader>
               <CardContent>
                 <p className="text-sm text-muted-foreground">{feature.details}</p>
               </CardContent>
               <CardFooter>
-                <Button asChild className="w-full gap-1 hover:neon-pulse transition-all duration-300">
+                <Button asChild className="w-full gap-1 group-hover:bg-primary group-hover:text-primary-foreground transition-colors">
                   <Link to={feature.link}>
                     <span>Explore {feature.title}</span>
-                    <ArrowRight className="h-4 w-4" />
+                    <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
                   </Link>
                 </Button>
               </CardFooter>

@@ -6,115 +6,119 @@ import {
   HardDrive, 
   Lightbulb, 
   Users, 
-  Brain, 
+  Zap, 
   Cloud, 
   Shield, 
-  Database, 
-  Zap, 
-  Code, 
-  Globe, 
-  BarChart3
+  BarChart3, 
+  Settings, 
+  Link as LinkIcon,
+  Code,
+  Bot,
+  Database,
+  Globe,
+  Smartphone,
+  Building
 } from "lucide-react";
-import Cpu from "lucide-react/dist/esm/icons/cpu";
-import Link2 from "lucide-react/dist/esm/icons/link-2";
-import Wifi from "lucide-react/dist/esm/icons/wifi";
 
 const categories = [
   {
-    title: "AI & Machine Learning",
-    description: "Custom AI development, ML model training, and AI strategy consulting",
-    icon: <Brain className="w-10 h-10" />,
-    link: "/category/ai-services",
+    title: "AI Services",
+    description: "AI-powered solutions for automation, analytics, and intelligent decision making",
+    icon: <Bot className="w-10 h-10" />,
+    link: "/micro-saas-services?category=ai",
     color: "from-purple-500 to-indigo-600",
-    services: ["AI Development", "ML Training", "AI Strategy", "Model Optimization"]
+    count: "8+ Services",
+    isNew: true
   },
   {
-    title: "Cloud & Infrastructure",
-    description: "Cloud migration, DevOps automation, and Kubernetes management",
+    title: "IT Services",
+    description: "Professional IT consulting, cloud migration, and infrastructure management",
     icon: <Cloud className="w-10 h-10" />,
-    link: "/category/cloud-services",
+    link: "/micro-saas-services?category=it",
     color: "from-blue-500 to-cyan-600",
-    services: ["Cloud Migration", "DevOps", "Kubernetes", "Infrastructure"]
+    count: "6+ Services",
+    isFeatured: true
   },
   {
-    title: "Cybersecurity",
-    description: "Security audits, compliance frameworks, and incident response planning",
-    icon: <Shield className="w-10 h-10" />,
-    link: "/category/security-services",
-    color: "from-red-500 to-pink-600",
-    services: ["Security Audits", "Compliance", "Penetration Testing", "Incident Response"]
-  },
-  {
-    title: "Data & Analytics",
-    description: "Big data engineering, BI dashboards, and data governance frameworks",
-    icon: <Database className="w-10 h-10" />,
-    link: "/category/data-services",
-    color: "from-green-500 to-emerald-600",
-    services: ["Big Data", "Business Intelligence", "Data Governance", "Analytics"]
-  },
-  {
-    title: "Digital Transformation",
-    description: "Strategic planning, legacy modernization, and process automation",
-    icon: <Zap className="w-10 h-10" />,
-    link: "/category/transformation-services",
-    color: "from-yellow-500 to-orange-600",
-    services: ["Strategy", "Modernization", "Automation", "Transformation"]
-  },
-  {
-    title: "Development Services",
-    description: "Web development, mobile apps, and API integration services",
+    title: "Micro SAAS",
+    description: "Ready-to-use business applications for inventory, CRM, and project management",
     icon: <Code className="w-10 h-10" />,
-    link: "/category/development-services",
+    link: "/micro-saas-services?category=saas",
+    color: "from-emerald-500 to-green-600",
+    count: "5+ Solutions",
+    isPopular: true
+  },
+  {
+    title: "Development",
+    description: "Custom software development, APIs, and mobile applications",
+    icon: <Code className="w-10 h-10" />,
+    link: "/micro-saas-services?category=dev",
+    color: "from-orange-500 to-red-600",
+    count: "4+ Services"
+  },
+  {
+    title: "Analytics",
+    description: "Business intelligence, data visualization, and predictive analytics",
+    icon: <BarChart3 className="w-10 h-10" />,
+    link: "/micro-saas-services?category=analytics",
+    color: "from-teal-500 to-blue-600",
+    count: "3+ Services"
+  },
+  {
+    title: "Security",
+    description: "Cybersecurity audits, penetration testing, and 24/7 monitoring",
+    icon: <Shield className="w-10 h-10" />,
+    link: "/micro-saas-services?category=security",
+    color: "from-red-500 to-pink-600",
+    count: "4+ Services"
+  },
+  {
+    title: "Automation",
+    description: "Business process automation and robotic process automation (RPA)",
+    icon: <Settings className="w-10 h-10" />,
+    link: "/micro-saas-services?category=automation",
     color: "from-indigo-500 to-purple-600",
-    services: ["Web Development", "Mobile Apps", "APIs", "Integration"]
+    count: "3+ Services"
   },
   {
-    title: "IT Support & Management",
-    description: "IT consulting, managed services, and network infrastructure",
-    icon: <Globe className="w-10 h-10" />,
-    link: "/category/it-services",
-    color: "from-gray-500 to-slate-600",
-    services: ["IT Consulting", "Managed Services", "Network Setup", "Support"]
+    title: "Integration",
+    description: "System integration, API development, and third-party platform connectors",
+    icon: <LinkIcon className="w-10 h-10" />,
+    link: "/micro-saas-services?category=integration",
+    color: "from-yellow-500 to-orange-600",
+    count: "3+ Services"
   },
   {
-    title: "Blockchain & Web3",
-    description: "Smart contracts, DeFi protocols, and NFT marketplace development",
-    icon: <Link2 className="w-10 h-10" />,
-    link: "/category/blockchain-services",
-    color: "from-amber-500 to-yellow-600",
-    services: ["Smart Contracts", "DeFi", "NFTs", "Blockchain"]
+    title: "Services",
+    description: "On-demand IT support, consulting, development, and more",
+    icon: <Briefcase className="w-10 h-10" />,
+    link: "/services",
+    color: "from-cyan-500 to-blue-600",
+    count: "10+ Services"
   },
   {
-    title: "IoT & Hardware",
-    description: "IoT solutions, hardware prototyping, and edge computing",
-    icon: <Wifi className="w-10 h-10" />,
-    link: "/category/iot-services",
-    color: "from-teal-500 to-green-600",
-    services: ["IoT Solutions", "Hardware", "Edge Computing", "Prototyping"]
-  },
-  {
-    title: "Talent & Recruitment",
-    description: "AI engineers, data scientists, and tech specialists",
+    title: "Talents",
+    description: "Connect with AI experts, developers, and tech specialists",
     icon: <Users className="w-10 h-10" />,
     link: "/talent",
-    color: "from-cyan-500 to-blue-600",
-    services: ["AI Engineers", "Data Scientists", "DevOps Engineers", "Specialists"]
+    color: "from-pink-500 to-rose-600",
+    count: "100+ Experts"
   },
   {
-    title: "Equipment & Hardware",
-    description: "High-performance workstations, servers, and GPU clusters",
+    title: "Equipment",
+    description: "Rent or buy specialized hardware, servers, and devices",
     icon: <HardDrive className="w-10 h-10" />,
     link: "/equipment",
-    color: "from-orange-500 to-red-600",
-    services: ["Workstations", "Servers", "GPU Clusters", "Infrastructure"]
+    color: "from-amber-500 to-orange-600",
+    count: "50+ Items"
   },
   {
-    title: "Innovation Hub",
-    description: "Cutting-edge solutions and breakthrough technology consulting",
+    title: "Innovation",
+    description: "Discover cutting-edge solutions and tech breakthroughs",
     icon: <Lightbulb className="w-10 h-10" />,
     link: "/category/innovation",
-    color: "from-pink-500 to-rose-600",
-    services: ["Innovation", "Research", "Prototyping", "Consulting"]
+    color: "from-green-500 to-emerald-600",
+    count: "25+ Solutions"
   }
 ];
 
@@ -122,22 +126,52 @@ const specialServices = [
   {
     title: "IT Onsite Services",
     link: "/it-onsite-services",
-    description: "Global IT support and onsite technical services"
+    description: "Global IT support and consulting"
   },
   {
-    title: "AI Strategy Consulting",
-    link: "/category/ai-services",
-    description: "Transform your business with AI implementation"
+    title: "Micro SAAS Solutions",
+    link: "/micro-saas-services",
+    description: "25+ ready-to-use business applications",
+    isNew: true
   },
   {
-    title: "Cybersecurity Assessment",
-    link: "/category/security-services",
-    description: "Comprehensive security audits and protection"
+    title: "AI Development",
+    link: "/micro-saas-services?category=ai",
+    description: "Custom AI solutions and integration",
+    isFeatured: true
   },
   {
     title: "Cloud Migration",
-    link: "/category/cloud-services",
-    description: "Seamless cloud infrastructure transition"
+    link: "/micro-saas-services?category=it",
+    description: "Zero-downtime cloud transformation",
+    isPopular: true
+  }
+];
+
+const quickAccess = [
+  {
+    title: "AI Chatbot Builder",
+    link: "/micro-saas-services?service=ai-chatbot-builder",
+    icon: "🤖",
+    price: "$29/month"
+  },
+  {
+    title: "Smart CRM System",
+    link: "/micro-saas-services?service=customer-relationship",
+    icon: "👥",
+    price: "$19/month"
+  },
+  {
+    title: "Inventory Management",
+    link: "/micro-saas-services?service=inventory-management",
+    icon: "📦",
+    price: "$9/month"
+  },
+  {
+    title: "Security Monitoring",
+    link: "/micro-saas-services?service=security-monitoring",
+    icon: "👁️",
+    price: "$249/month"
   }
 ];
 
@@ -147,63 +181,84 @@ interface CategoriesSectionProps {
 
 export function CategoriesSection({ showTitle = true }: CategoriesSectionProps) {
   return (
-    <section className="py-20 bg-gradient-to-br from-zion-blue via-zion-blue-dark to-zion-slate">
-      <div className="container mx-auto px-4">
+    <section className="py-20 bg-zion-blue relative overflow-hidden">
+      {/* Animated Background Elements */}
+      <div className="absolute inset-0 overflow-hidden">
+        <div className="absolute top-0 left-1/4 w-72 h-72 bg-zion-purple/10 rounded-full filter blur-3xl animate-pulse"></div>
+        <div className="absolute bottom-0 right-1/4 w-72 h-72 bg-zion-cyan/10 rounded-full filter blur-3xl animate-pulse delay-1000"></div>
+      </div>
+      
+      <div className="container mx-auto px-4 relative z-10">
         {showTitle && (
           <div className="text-center mb-16">
-            <GradientHeading>Explore Our Service Ecosystem</GradientHeading>
+            <GradientHeading>Explore Our Ecosystem</GradientHeading>
             <p className="text-zion-slate-light text-lg mt-4 max-w-3xl mx-auto">
-              Discover our comprehensive ecosystem of cutting-edge tech services, AI solutions, 
-              and innovative micro SAAS offerings designed to transform your business
+              Discover our comprehensive ecosystem of tech services, talent, equipment, and innovative solutions
             </p>
           </div>
         )}
         
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 mb-16">
           {categories.map((category) => (
             <Link 
               key={category.title} 
               to={category.link} 
               className="group block"
             >
-              <div className="rounded-xl overflow-hidden h-full border border-zion-blue-light/30 bg-zion-blue-dark/80 backdrop-blur-sm p-6 transition-all duration-300 hover:border-zion-purple/60 hover:translate-y-[-8px] hover:shadow-2xl hover:shadow-zion-purple/20">
-                <div className={`rounded-full w-16 h-16 bg-gradient-to-br ${category.color} flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg`}>
-                  <div className="text-white">
-                    {category.icon}
+              <div className="rounded-lg overflow-hidden h-full border border-zion-blue-light bg-zion-blue-dark p-6 transition-all duration-300 hover:border-zion-purple/50 hover:translate-y-[-5px] hover:shadow-2xl">
+                <div className="flex items-center justify-between mb-4">
+                  <div className={`rounded-full w-16 h-16 bg-gradient-to-br ${category.color} flex items-center justify-center group-hover:scale-110 transition-transform duration-300`}>
+                    <div className="text-white">
+                      {category.icon}
+                    </div>
+                  </div>
+                  <div className="flex gap-2">
+                    {category.isNew && (
+                      <span className="px-2 py-1 bg-green-500/20 text-green-400 text-xs rounded-full">New</span>
+                    )}
+                    {category.isFeatured && (
+                      <span className="px-2 py-1 bg-zion-purple/20 text-zion-purple-light text-xs rounded-full">Featured</span>
+                    )}
+                    {category.isPopular && (
+                      <span className="px-2 py-1 bg-orange-500/20 text-orange-400 text-xs rounded-full">Popular</span>
+                    )}
                   </div>
                 </div>
-                <h3 className="text-white text-xl font-bold mb-3">{category.title}</h3>
-                <p className="text-zion-slate-light text-sm mb-4 leading-relaxed">{category.description}</p>
-                <div className="flex flex-wrap gap-1">
-                  {category.services.slice(0, 3).map((service, index) => (
-                    <span 
-                      key={index}
-                      className="px-2 py-1 bg-zion-purple/20 text-zion-cyan text-xs rounded-full border border-zion-purple/30"
-                    >
-                      {service}
-                    </span>
-                  ))}
-                  {category.services.length > 3 && (
-                    <span className="px-2 py-1 bg-zion-blue-light/20 text-zion-slate-light text-xs rounded-full">
-                      +{category.services.length - 3} more
-                    </span>
-                  )}
+                <h3 className="text-white text-xl font-bold mb-2 group-hover:text-zion-cyan transition-colors">
+                  {category.title}
+                </h3>
+                <p className="text-zion-slate-light mb-3 line-clamp-2">
+                  {category.description}
+                </p>
+                <div className="text-zion-cyan text-sm font-medium">
+                  {category.count}
                 </div>
               </div>
             </Link>
           ))}
         </div>
         
-        <div className="mt-12">
-          <h3 className="text-center text-2xl font-bold text-white mb-8">Featured Services</h3>
+        <div className="mb-12">
+          <h3 className="text-center text-2xl font-bold text-white mb-8">Featured Solutions</h3>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
             {specialServices.map((service) => (
               <Link 
                 key={service.title}
                 to={service.link}
-                className="group p-6 bg-zion-blue-light/10 hover:bg-zion-blue-light/20 border border-zion-purple/30 hover:border-zion-purple/60 rounded-xl text-center transition-all duration-300 hover:translate-y-[-4px] hover:shadow-lg hover:shadow-zion-purple/20"
+                className="group relative overflow-hidden rounded-lg bg-zion-blue-light hover:bg-zion-blue-dark border border-zion-purple/20 hover:border-zion-purple/50 transition-all duration-300 p-4 text-center"
               >
-                <h4 className="text-zion-cyan font-semibold mb-2 group-hover:text-white transition-colors">
+                <div className="flex items-center justify-center mb-3">
+                  {service.isNew && (
+                    <span className="px-2 py-1 bg-green-500/20 text-green-400 text-xs rounded-full mr-2">New</span>
+                  )}
+                  {service.isFeatured && (
+                    <span className="px-2 py-1 bg-zion-purple/20 text-zion-purple-light text-xs rounded-full mr-2">Featured</span>
+                  )}
+                  {service.isPopular && (
+                    <span className="px-2 py-1 bg-orange-500/20 text-orange-400 text-xs rounded-full mr-2">Popular</span>
+                  )}
+                </div>
+                <h4 className="text-white font-semibold mb-2 group-hover:text-zion-cyan transition-colors">
                   {service.title}
                 </h4>
                 <p className="text-zion-slate-light text-sm">
@@ -213,14 +268,32 @@ export function CategoriesSection({ showTitle = true }: CategoriesSectionProps) 
             ))}
           </div>
         </div>
+
+        <div className="mb-12">
+          <h3 className="text-center text-2xl font-bold text-white mb-8">Quick Access - Popular Solutions</h3>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+            {quickAccess.map((item) => (
+              <Link 
+                key={item.title}
+                to={item.link}
+                className="group bg-zion-blue-dark hover:bg-zion-blue-light border border-zion-purple/20 hover:border-zion-purple/50 rounded-lg p-4 text-center transition-all duration-300 hover:scale-105"
+              >
+                <div className="text-3xl mb-3">{item.icon}</div>
+                <h4 className="text-white font-semibold mb-2 group-hover:text-zion-cyan transition-colors">
+                  {item.title}
+                </h4>
+                <div className="text-zion-cyan font-bold">{item.price}</div>
+              </Link>
+            ))}
+          </div>
+        </div>
         
-        <div className="mt-16 flex justify-center">
+        <div className="text-center">
           <Link 
-            to="/categories" 
-            className="group inline-flex items-center px-8 py-4 bg-gradient-to-r from-zion-purple to-zion-purple-dark hover:from-zion-purple-light hover:to-zion-purple text-white font-semibold rounded-full transition-all duration-300 hover:shadow-lg hover:shadow-zion-purple/30 hover:scale-105"
+            to="/micro-saas-services" 
+            className="inline-flex items-center text-zion-cyan border-b border-zion-cyan hover:border-zion-cyan-dark transition-colors text-lg font-medium"
           >
-            Explore All Categories
-            <BarChart3 className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
+            Explore All Services →
           </Link>
         </div>
       </div>
