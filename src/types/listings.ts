@@ -1,6 +1,5 @@
 export interface ProductListing {
   id: string;
-<<<<<<< HEAD
   title: string;
   description: string;
   category: string;
@@ -37,26 +36,4 @@ export interface ProductListing {
   popular?: boolean;
   new?: boolean;
   aiScore?: number;
-=======
-  name: string;
-  description: string;
-  category: string;
-  price: number;
-  rating: number;
-  image: string;
-  features: string[];
-  addons: string[];
-  featured?: boolean;
-  location?: string;
-  availability?: string;
-  created_at?: string;
-  tags?: string[];
-  author?: string;
-  images?: string[];
-  review_count?: number;
-  ai_score?: number;
-  currency?: string;
-  monthly?: boolean;
-  billing_frequency?: string;
->>>>>>> 181cfac2212680d9635253bde265173d9d08eca1
 }
