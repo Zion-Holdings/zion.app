@@ -35,6 +35,17 @@ export default function ServicesAdvertisingPage() {
 					</ul>
 				</section>
 
+<<<<<<< HEAD
+				<section className="space-y-6">
+					<h2 className="text-2xl font-semibold text-white">AI Resume & Cover Letter Builder</h2>
+					<p className="text-slate-300">ATS-optimized resumes and tailored cover letters with role-aware keywording and metric suggestions.</p>
+					<ul className="list-disc list-inside text-slate-300 space-y-1">
+						<li>Typical budget: $8–$25/mo</li>
+						<li>References: {ext('https://www.rezi.ai/pricing')}, {ext('https://resume.io/pricing')}</li>
+						<li>Try: <a href="/services/ai-resume-cover-letter-builder" className="text-cyan-400 underline">ziontechgroup.com/services/ai-resume-cover-letter-builder</a></li>
+					</ul>
+				</section>
+=======
   const pricingRefs = [
     {
       title: 'AI Platforms',
@@ -131,6 +142,7 @@ export default function ServicesAdvertisingPage() {
       note: 'Entry CRM $9–$45/user/mo typical.'
     }
   ];
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-9479
 
 				<section className="space-y-6">
 					<h2 className="text-2xl font-semibold text-white">AI Document Summarizer</h2>
@@ -289,6 +301,16 @@ export default function ServicesAdvertisingPage() {
 					</ul>
 				</section>
 
+<<<<<<< HEAD
+				<section className="space-y-6">
+					<h2 className="text-2xl font-semibold text-white">API Security Scanner</h2>
+					<p className="text-slate-300">OWASP API Top-10 scanning, auth fuzzing and CI gates with remediation diffs and auditor-ready evidence.</p>
+					<ul className="list-disc list-inside text-slate-300 space-y-1">
+						<li>Typical SMB budget: $99–$600/mo</li>
+						<li>References: {ext('https://www.stackhawk.com/pricing/')}, {ext('https://snyk.io/plans/')}, {ext('https://owasp.org/www-project-api-security/')}</li>
+					</ul>
+				</section>
+=======
           <section>
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-6 text-center">New Micro SaaS & IT Solutions</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -333,6 +355,7 @@ export default function ServicesAdvertisingPage() {
               <a href="mailto:kleber@ziontechgroup.com" className="text-gray-300 hover:text-white">Email: kleber@ziontechgroup.com</a>
             </div>
           </section>
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-9479
 
 				<section className="space-y-6">
 					<h2 className="text-2xl font-semibold text-white">Email Deliverability Monitor</h2>

@@ -33,7 +33,12 @@ import { real2026Q3Additions } from '../../data/real-2026-q3-additions';
 import { real2026Q4Additions } from '../../data/real-2026-q4-additions';
 import { real2026Q4NewServices } from '../../data/real-2026-q4-new-services';
 import { real2027Q1Additions } from '../../data/real-2027-q1-additions';
+<<<<<<< HEAD:pages/services/[slug].tsx.backup.1755991636
+import { real2027Q2Additions } from '../../data/real-2027-q2-additions';
+import { real2028ServiceExpansions } from '../../data/real-2028-service-expansions';
+=======
 import { newSaasItAiServices2025 } from '../../data/new-saas-it-ai-services-2025';
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-9479:pages/services/[slug].tsx
 
 import { real2029Q1Additions } from '../../data/real-2029-q1-additions';
 import { realMarketServices } from '../../data/real-market-services';
@@ -126,13 +131,25 @@ function getAllServices(): Service[] {
 		.concat(real2026Q4Additions as unknown as Service[])
 		.concat(real2026Q4NewServices as unknown as Service[])
 		.concat(real2027Q1Additions as unknown as Service[])
+<<<<<<< HEAD:pages/services/[slug].tsx.backup.1755991636
+		.concat(real2027Q2Additions as unknown as Service[])
+		.concat(real2028ServiceExpansions as unknown as Service[])
+		.concat(real2029Q1Additions as unknown as Service[])
+		.concat(realMarketServices as unknown as Service[])
+		.concat(real2029Q2Additions as unknown as Service[])
+		.concat(real2029Q3Additions as unknown as Service[])
+<<<<<<< HEAD
+		.concat(newInnovativeServices2029 as unknown as Service[]);
+=======
 		// Additional sources to cover more service slugs
 		.concat((innovativeMicroSaasServicesV3 as unknown) as Service[])
 		.concat((innovative2026MicroSaasServicesV2 as unknown) as Service[])
 		.concat((ultimateRealMicroSaasServices2025 as unknown) as Service[])
 		.concat((innovativeRealMicroSaasServices2025 as unknown) as Service[]);
+>>>>>>> origin/cursor/website-audit-content-update-and-deployment-d72e
 =======
 		.concat(newSaasItAiServices2025 as unknown as Service[]);
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-9479:pages/services/[slug].tsx
 }
 
 function toSlug(value: string): string {

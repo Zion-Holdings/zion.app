@@ -135,6 +135,10 @@ import { innovativeMicroSaasServices } from '../data/innovative-micro-saas-servi
 import { advancedAIServices } from '../data/advanced-ai-services';
 import { blockchainEmergingTechServices } from '../data/blockchain-emerging-tech-services';
 
+<<<<<<< HEAD
+export default function ServicesPage() {
+  const [searchTerm, setSearchTerm] = useState('');
+=======
 // Import our new service data
 import { enterpriseITSolutions } from '../data/2034-enterprise-it-solutions';
 import { innovativeMicroSaasSolutions } from '../data/2034-innovative-micro-saas-solutions';
@@ -282,6 +286,7 @@ const sortOptions = [
 
 export default function Services() {
   const [searchQuery, setSearchQuery] = useState('');
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-9479
   const [selectedCategory, setSelectedCategory] = useState('all');
   const [viewMode, setViewMode] = useState<'grid' | 'list'>('grid');
   const [sortBy, setSortBy] = useState<'name' | 'price' | 'rating' | 'popularity'>('popularity');
