@@ -225,25 +225,5 @@ export default function Home() {
         </div>
       </SimpleFuturisticBackground>
     </>
-=======
-      <HeroSection />
-      
-      <QuickAccess />
-      
-      <FeatureCTAs />
-      
-      <FeatureHighlights />
-      
-      <TrustIndicators />
-      
-      <SecurityHeaders />
-      
-      <CategoriesSection />
-      <BenefitsSection />
-      <HowItWorksSection />
-      <FeaturedListingsSection />
-      <NewsletterSection />
-    </div>
->>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-9715
   );
 }
