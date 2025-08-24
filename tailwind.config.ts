@@ -3,16 +3,6 @@ import defaultTheme from 'tailwindcss/defaultTheme';
 import plugin from 'tailwindcss/plugin';
 
 const config: Config = {
-<<<<<<< HEAD
-  darkMode: "class",
-  content: [
-    "./pages/**/*.{ts,tsx}",
-    "./components/**/*.{ts,tsx}",
-    "./app/**/*.{ts,tsx}",
-    "./src/**/*.{ts,tsx}",
-  ],
-  safelist: ['border-border'],
-=======
   darkMode: 'class',
   content: [
     './pages/**/*.{ts,tsx}',
@@ -20,7 +10,7 @@ const config: Config = {
     './app/**/*.{ts,tsx}',
     './src/**/*.{ts,tsx}',
   ],
->>>>>>> 6d7be8fce1d5e66d749ea8dd439e0663bfd83322
+  safelist: ['border-border'],
   theme: {
     extend: {
       colors: {
@@ -50,58 +40,44 @@ const config: Config = {
           foreground: 'hsl(var(--accent-foreground))',
         },
         popover: {
-          DEFAULT: 'hsl(var(--popover))',
-          foreground: 'hsl(var(--popover-foreground))',
-        },
-        card: {
-<<<<<<< HEAD
-          DEFAULT: hsl(var(--card)),          foreground: hsl(var(--card-foreground)),        },
-        // Custom Zion colors
-        "zion-blue": {
-          DEFAULT: "#0a0f1f",
-          light: "#1e263b",
-          dark: "#090c1a",
-        },
-        "zion-purple": {
-          DEFAULT: "#a855f7",
-          light: "#d8b4fe",
-          dark: "#9333ea",
-        },
-        "zion-cyan": {
-          DEFAULT: "#00e5ff",
-          light: "#7df9ff",
-          dark: "#00c4cc",
-        },
-        "zion-slate": {
-          DEFAULT: "#94A3B8",
-          light: "#CBD5E1",
-          dark: "#64748B",
-        },
-=======
           DEFAULT: 'hsl(var(--card))',
           foreground: 'hsl(var(--card-foreground))',
         },
+        card: {
+          DEFAULT: 'hsl(var(--card))',
+          foreground: 'hsl(var(--card-foreground))',
+        },
+        // Custom Zion colors (enhanced palette)
         'zion-blue': {
           DEFAULT: '#2e73ea',
           light: '#8ab1f3',
           dark: '#172d67',
         },
         'zion-purple': {
-          DEFAULT: '#a855f7',
-          light: '#c084fc',
-          dark: '#6b21a8',
+          DEFAULT: '#8c15e9',
+          light: '#b971f2',
+          dark: '#530c8b',
         },
         'zion-cyan': {
-          DEFAULT: '#0d9488',
+          DEFAULT: '#22ddd2',
           light: '#7aeae4',
-          dark: '#0f766e',
+          dark: '#14847e',
         },
         'zion-slate': {
           DEFAULT: '#17072b',
           light: '#451582',
           dark: '#000000',
+        },
+        'zion-gold': {
+          DEFAULT: '#ffd700',
+          light: '#ffe55c',
+          dark: '#b8860b',
+        },
+        'zion-emerald': {
+          DEFAULT: '#10b981',
+          light: '#34d399',
+          dark: '#059669',
         }
->>>>>>> 6d7be8fce1d5e66d749ea8dd439e0663bfd83322
       },
       borderRadius: {
         lg: 'var(--radius)',
@@ -124,11 +100,32 @@ const config: Config = {
         'accordion-up': {
           from: { height: 'var(--radix-accordion-content-height)' },
           to: { height: '0' },
+        },
+        'fade-in': {
+          from: { opacity: '0', transform: 'translateY(10px)' },
+          to: { opacity: '1', transform: 'translateY(0)' },
+        },
+        'slide-in': {
+          from: { transform: 'translateX(-100%)' },
+          to: { transform: 'translateX(0)' },
+        },
+        'pulse-glow': {
+          '0%, 100%': { 
+            boxShadow: '0 0 20px rgba(34, 221, 210, 0.5)',
+            transform: 'scale(1)'
+          },
+          '50%': { 
+            boxShadow: '0 0 40px rgba(34, 221, 210, 0.8)',
+            transform: 'scale(1.05)'
+          },
         }
       },
       animation: {
         'accordion-down': 'accordion-down 0.2s ease-out',
         'accordion-up': 'accordion-up 0.2s ease-out',
+        'fade-in': 'fade-in 0.6s ease-out',
+        'slide-in': 'slide-in 0.5s ease-out',
+        'pulse-glow': 'pulse-glow 2s ease-in-out infinite',
       }
     }
   },
@@ -142,6 +139,17 @@ const config: Config = {
         '.ltr': {
           direction: 'ltr',
           textAlign: 'left',
+        },
+        '.text-gradient': {
+          background: 'linear-gradient(135deg, #2e73ea 0%, #8c15e9 50%, #22ddd2 100%)',
+          '-webkit-background-clip': 'text',
+          '-webkit-text-fill-color': 'transparent',
+          'background-clip': 'text',
+        },
+        '.glass-effect': {
+          background: 'rgba(255, 255, 255, 0.1)',
+          'backdrop-filter': 'blur(10px)',
+          border: '1px solid rgba(255, 255, 255, 0.2)',
         }
       };
       addUtilities(newUtilities);
