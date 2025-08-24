@@ -34,7 +34,19 @@ import { real2026Q4NewServices } from '../../data/real-2026-q4-new-services';
 import { real2027Q1Additions } from '../../data/real-2027-q1-additions';
 import { real2027Q2Additions } from '../../data/real-2027-q2-additions';
 import { real2028ServiceExpansions } from '../../data/real-2028-service-expansions';
-import { newRealServices2027 } from '../../data/new-real-services-2027';
+<<<<<<< HEAD
+import { real2029Q1Additions } from '../../data/real-2029-q1-additions';
+import { real2029Q2Additions } from '../../data/real-2029-q2-additions';
+import { real2029Q3Additions } from '../../data/real-2029-q3-additions';
+import { real2030Q1Additions } from '../../data/real-2030-q1-additions';
+import { real2031MicroSaasAdditions } from '../../data/real-2031-micro-saas-additions';
+import { real2031ITServicesAdditions } from '../../data/real-2031-it-services-additions';
+import { real2031AIServicesAdditions } from '../../data/real-2031-ai-services-additions';
+import { real2030Q2Additions } from '../../data/real-2030-q2-additions';
+import { real2027Q3Additions } from '../../data/real-2027-q3-additions';
+import { professionalServices } from '../../data/professional-services';
+import { real2032ServiceExpansions } from '../../data/real-2032-service-expansions';
+import { real2026Q2VerifiedAdditions } from '../../data/real-2026-q2-verified-additions';
 
 function toSlug(value: string) {
   return value.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
@@ -81,7 +93,30 @@ export default function ServicesIndexPage() {
       real2027Q1Additions as unknown[],
       real2027Q2Additions as unknown[],
       real2028ServiceExpansions as unknown[],
-      newRealServices2027 as unknown[]
+      real2029Q1Additions as unknown[],
+      real2029Q2Additions as unknown[],
+      real2029Q3Additions as unknown[],
+      real2030Q1Additions as unknown[],
+      real2031MicroSaasAdditions as unknown[],
+      real2031ITServicesAdditions as unknown[],
+      real2031AIServicesAdditions as unknown[],
+      real2030Q2Additions as unknown[],
+      real2027Q3Additions as unknown[],
+      professionalServices as unknown[],
+      real2032ServiceExpansions as unknown[],
+      real2026Q2VerifiedAdditions as unknown[]
+=======
+      real2029Q1Additions as unknown[],
+      real2029Q2Additions as unknown[],
+      real2029Q3Additions as unknown[],
+      real2030Q1Additions as unknown[],
+      real2030Q2Additions as unknown[],
+      real2031MicroSaasAdditions as unknown[],
+      real2031ITServicesAdditions as unknown[],
+      real2031AIServicesAdditions as unknown[],
+      professionalServices as unknown[],
+      real2032ServiceExpansions as unknown[],
+      real2026Q2VerifiedAdditions as unknown[]
     );
   const byCategory: Record<string, unknown[]> = {};
   for (const c of categories) byCategory[c] = [];

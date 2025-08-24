@@ -54,8 +54,14 @@ import { real2027Q3Additions } from '../../data/real-2027-q3-additions';
 import { aiAutonomousEcosystemServices2029 } from '../../data/2029-ai-autonomous-ecosystem';
 import { emergingTechBreakthroughServices2029 } from '../../data/2029-emerging-tech-breakthroughs';
 import { practicalBusinessSolutionServices2029 } from '../../data/2029-practical-business-solutions';
+<<<<<<< HEAD:temp_components.disabled/services/[slug].tsx.backup.1755992078
 import { real2032AdditionalServices } from '../../data/real-2032-additional-services';
 >>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-1967
+=======
+import { professionalServices } from '../../data/professional-services';
+import { real2032ServiceExpansions } from '../../data/real-2032-service-expansions';
+import { real2026Q2VerifiedAdditions } from '../../data/real-2026-q2-verified-additions';
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-b433:pages/services/[slug].tsx
 
 type Service = typeof enhancedRealMicroSaasServices[number];
 
@@ -77,9 +83,6 @@ function getPriceValue(price: Service['price']): string {
 }
 
 function getAllServices(): Service[] {
-		.concat(real2032ServiceExpansions as unknown as Service[])
-		.concat(real2025Q4FreshAdditions as unknown as Service[]);
-=======
 	return enhancedRealMicroSaasServices
 		.concat(extraServices as Service[], additionalEnhancedServices as Service[])
 		.concat(newlyAddedServices as unknown as Service[])
@@ -93,8 +96,6 @@ function getAllServices(): Service[] {
 		.concat(verifiedRealServices2025Batch2 as unknown as Service[])
 		.concat(realMarketAugmentations2025 as unknown as Service[])
 <<<<<<< HEAD
-		.concat(newDiversifiedServices as unknown as Service[]);
-=======
 		.concat(additionalLiveServices2025 as unknown as Service[])
 		.concat(real2025Q2Additions as unknown as Service[])
 		.concat(augmentedServicesBatch3 as unknown as Service[])
@@ -126,8 +127,9 @@ function getAllServices(): Service[] {
 		.concat(aiAutonomousEcosystemServices2029 as unknown as Service[])
 		.concat(emergingTechBreakthroughServices2029 as unknown as Service[])
 		.concat(practicalBusinessSolutionServices2029 as unknown as Service[])
-		.concat(real2032AdditionalServices as unknown as Service[]);
->>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-1967
+		.concat(professionalServices as unknown as Service[])
+		.concat(real2032ServiceExpansions as unknown as Service[])
+		.concat(real2026Q2VerifiedAdditions as unknown as Service[]);
 }
 
 function toSlug(value: string): string {
