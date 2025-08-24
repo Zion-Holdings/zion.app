@@ -1,32 +1,41 @@
-import { FooterNewsletter } from "@/components/FooterNewsletter";
-import { Twitter, Linkedin, Facebook, Instagram, Github, Mail, Phone, MapPin } from "lucide-react";
-import { Link } from "react-router-dom";
+import React from 'react';
+import { Link } from 'react-router-dom';
+import { Facebook, Twitter, Linkedin, Instagram, Github } from 'lucide-react';
 
-export function Footer() {
+export default function Footer() {
   return (
-    <footer className="bg-zion-blue-dark border-t border-zion-blue-light pt-12 pb-8 relative overflow-hidden">
-      {/* Animated Background Elements */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-zion-cyan to-transparent opacity-50"></div>
-        <div className="absolute bottom-0 left-1/4 w-1 h-full bg-gradient-to-t from-transparent via-zion-purple to-transparent opacity-30"></div>
-        <div className="absolute bottom-0 right-1/4 w-1 h-full bg-gradient-to-t from-transparent via-zion-cyan to-transparent opacity-30"></div>
-        <div className="absolute top-1/2 left-0 w-32 h-32 bg-zion-cyan/5 rounded-full blur-3xl"></div>
-        <div className="absolute top-1/2 right-0 w-32 h-32 bg-zion-cyan/5 rounded-full blur-3xl"></div>
-      </div>
-
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+    <footer className="bg-zion-blue-dark text-white py-12">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Company Info */}
-          <div className="lg:col-span-2">
-            <div className="mb-6">
-              <span className="text-3xl font-bold bg-gradient-to-r from-zion-cyan via-zion-purple-light to-zion-purple bg-clip-text text-transparent">
-                ZION TECH GROUP
+          <div className="lg:col-span-1">
+            <div className="flex items-center space-x-2 mb-4">
+              <div className="w-8 h-8 bg-gradient-to-r from-zion-cyan to-zion-purple rounded-lg flex items-center justify-center">
+                <span className="text-white font-bold text-lg">Z</span>
+              </div>
+              <span className="text-xl font-bold bg-gradient-to-r from-zion-cyan to-zion-purple bg-clip-text text-transparent">
+                Zion Tech Group
               </span>
             </div>
-            <p className="text-zion-slate-light mb-6 max-w-lg text-lg leading-relaxed">
-              Leading provider of innovative IT solutions, AI services, and comprehensive tech services. 
-              Empowering businesses with cutting-edge technology solutions.
+            <p className="text-zion-slate-light mb-6 text-sm leading-relaxed">
+              Empowering businesses with cutting-edge AI, IT solutions, and innovative technology services. 
+              Your trusted partner in digital transformation and technological advancement.
             </p>
+            
+            {/* Contact Info */}
+            <div className="mb-6 space-y-2 text-sm">
+              <p className="text-zion-slate-light">
+                <span className="font-semibold text-zion-cyan">Phone:</span> +1 302 464 0950
+              </p>
+              <p className="text-zion-slate-light">
+                <span className="font-semibold text-zion-cyan">Email:</span> kleber@ziontechgroup.com
+              </p>
+              <p className="text-zion-slate-light">
+                <span className="font-semibold text-zion-cyan">Address:</span> 364 E Main St STE 1008, Middletown DE 19709
+              </p>
+            </div>
+
+            {/* Social Links */}
             <div className="flex space-x-4">
               <a href="https://twitter.com/ziontechgroup" className="text-zion-slate-light hover:text-zion-cyan transition-colors duration-300">
                 <Twitter className="w-5 h-5" />
@@ -51,114 +60,115 @@ export function Footer() {
             <h3 className="text-white font-semibold mb-6 text-lg">Quick Links</h3>
             <ul className="space-y-3">
               <li>
-                <Link to="/comprehensive-services" className="text-zion-slate-light hover:text-zion-cyan transition-colors duration-300 flex items-center gap-2">
-                  <span>All Services</span>
+                <Link to="/ai-services" className="text-zion-slate-light hover:text-zion-cyan transition-colors duration-300">
+                  AI Services
                 </Link>
               </li>
               <li>
-                <Link to="/ai-services" className="text-zion-slate-light hover:text-zion-cyan transition-colors duration-300 flex items-center gap-2">
-                  <span>AI Services</span>
+                <Link to="/cybersecurity-services" className="text-zion-slate-light hover:text-zion-cyan transition-colors duration-300">
+                  Cybersecurity
                 </Link>
               </li>
               <li>
-                <Link to="/cybersecurity-services" className="text-zion-slate-light hover:text-zion-cyan transition-colors duration-300 flex items-center gap-2">
-                  <span>Cybersecurity</span>
+                <Link to="/it-services" className="text-zion-slate-light hover:text-zion-cyan transition-colors duration-300">
+                  IT Services
                 </Link>
               </li>
               <li>
-                <Link to="/services-pricing" className="text-zion-slate-light hover:text-zion-cyan transition-colors duration-300 flex items-center gap-2">
-                  <span>Pricing</span>
+                <Link to="/enterprise-solutions" className="text-zion-slate-light hover:text-zion-cyan transition-colors duration-300">
+                  Enterprise Solutions
                 </Link>
               </li>
               <li>
-                <Link to="/it-onsite-services" className="text-zion-slate-light hover:text-zion-cyan transition-colors duration-300 flex items-center gap-2">
-                  <span>IT Onsite Services</span>
+                <Link to="/about" className="text-zion-slate-light hover:text-zion-cyan transition-colors duration-300">
+                  About Us
+                </Link>
+              </li>
+              <li>
+                <Link to="/contact" className="text-zion-slate-light hover:text-zion-cyan transition-colors duration-300">
+                  Contact
                 </Link>
               </li>
             </ul>
           </div>
 
-          {/* Support & Resources */}
+          {/* Services */}
           <div>
-            <h3 className="text-white font-semibold mb-6 text-lg">Support & Resources</h3>
+            <h3 className="text-white font-semibold mb-6 text-lg">Services</h3>
             <ul className="space-y-3">
               <li>
-                <Link to="/help-center" className="text-zion-slate-light hover:text-zion-cyan transition-colors duration-300 flex items-center gap-2">
-                  <span>Help Center</span>
+                <Link to="/ai-solutions" className="text-zion-slate-light hover:text-zion-cyan transition-colors duration-300">
+                  AI Solutions
                 </Link>
               </li>
               <li>
-                <Link to="/contact" className="text-zion-slate-light hover:text-zion-cyan transition-colors duration-300 flex items-center gap-2">
-                  <span>Contact Support</span>
+                <Link to="/cloud-services" className="text-zion-slate-light hover:text-zion-cyan transition-colors duration-300">
+                  Cloud Services
                 </Link>
               </li>
               <li>
-                <Link to="/about" className="text-zion-slate-light hover:text-zion-cyan transition-colors duration-300 flex items-center gap-2">
-                  <span>About Us</span>
+                <Link to="/data-analytics" className="text-zion-slate-light hover:text-zion-cyan transition-colors duration-300">
+                  Data Analytics
                 </Link>
               </li>
               <li>
-                <Link to="/blog" className="text-zion-slate-light hover:text-zion-cyan transition-colors duration-300 flex items-center gap-2">
-                  <span>Blog & News</span>
+                <Link to="/blockchain" className="text-zion-slate-light hover:text-zion-cyan transition-colors duration-300">
+                  Blockchain
+                </Link>
+              </li>
+              <li>
+                <Link to="/iot-solutions" className="text-zion-slate-light hover:text-zion-cyan transition-colors duration-300">
+                  IoT Solutions
                 </Link>
               </li>
             </ul>
           </div>
-        </div>
 
-        {/* Newsletter Section */}
-        <div className="mb-12">
-          <FooterNewsletter />
-        </div>
-
-        {/* Contact Information */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12 p-6 bg-zion-blue-light/20 rounded-lg border border-zion-blue-light/30">
-          <div className="flex items-center gap-3">
-            <div className="w-10 h-10 bg-zion-cyan/20 rounded-full flex items-center justify-center">
-              <Phone className="w-5 h-5 text-zion-cyan" />
-            </div>
-            <div>
-              <p className="text-zion-slate-light text-sm">Phone</p>
-              <p className="text-white font-medium">+1 302 464 0950</p>
-            </div>
-          </div>
-          
-          <div className="flex items-center gap-3">
-            <div className="w-10 h-10 bg-zion-cyan/20 rounded-full flex items-center justify-center">
-              <Mail className="w-5 h-5 text-zion-cyan" />
-            </div>
-            <div>
-              <p className="text-zion-slate-light text-sm">Email</p>
-              <p className="text-white font-medium">kleber@ziontechgroup.com</p>
-            </div>
-          </div>
-          
-          <div className="flex items-center gap-3">
-            <div className="w-10 h-10 bg-zion-cyan/20 rounded-full flex items-center justify-center">
-              <MapPin className="w-5 h-5 text-zion-cyan" />
-            </div>
-            <div>
-              <p className="text-zion-slate-light text-sm">Address</p>
-              <p className="text-white font-medium">364 E Main St STE 1008<br />Middletown DE 19709</p>
-            </div>
+          {/* Resources */}
+          <div>
+            <h3 className="text-white font-semibold mb-6 text-lg">Resources</h3>
+            <ul className="space-y-3">
+              <li>
+                <Link to="/help-center" className="text-zion-slate-light hover:text-zion-cyan transition-colors duration-300">
+                  Help Center
+                </Link>
+              </li>
+              <li>
+                <Link to="/developers" className="text-zion-slate-light hover:text-zion-cyan transition-colors duration-300">
+                  Developer Portal
+                </Link>
+              </li>
+              <li>
+                <Link to="/sitemap" className="text-zion-slate-light hover:text-zion-cyan transition-colors duration-300">
+                  Sitemap
+                </Link>
+              </li>
+              <li>
+                <Link to="/privacy" className="text-zion-slate-light hover:text-zion-cyan transition-colors duration-300">
+                  Privacy Policy
+                </Link>
+              </li>
+              <li>
+                <Link to="/terms" className="text-zion-slate-light hover:text-zion-cyan transition-colors duration-300">
+                  Terms of Service
+                </Link>
+              </li>
+            </ul>
           </div>
         </div>
 
         {/* Bottom Section */}
-        <div className="pt-8 border-t border-zion-blue-light">
+        <div className="border-t border-zion-blue-light mt-12 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center">
-            <p className="text-zion-slate-light text-sm mb-4 md:mb-0">
-              © {new Date().getFullYear()} Zion Tech Group. All rights reserved.
-            </p>
-            <div className="flex space-x-6">
-              <Link to="/privacy" className="text-zion-slate-light hover:text-zion-cyan text-sm transition-colors duration-300">
-                Privacy Policy
+            <div className="text-zion-slate-light text-sm mb-4 md:mb-0">
+              © 2024 Zion Tech Group. All rights reserved.
+            </div>
+            <div className="flex space-x-6 text-sm">
+              <Link to="/cookies" className="text-zion-slate-light hover:text-zion-cyan transition-colors duration-300">
+                Cookies
               </Link>
-              <Link to="/terms" className="text-zion-slate-light hover:text-zion-cyan text-sm transition-colors duration-300">
-                Terms of Service
-              </Link>
-              <Link to="/cookies" className="text-zion-slate-light hover:text-zion-cyan text-sm transition-colors duration-300">
-                Cookie Policy
+              <Link to="/accessibility" className="text-zion-slate-light hover:text-zion-cyan transition-colors duration-300">
+                Accessibility
               </Link>
             </div>
           </div>

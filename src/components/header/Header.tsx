@@ -4,7 +4,6 @@ import { Link } from 'react-router-dom';
 import { Logo } from './Logo';
 import { UserMenu } from './UserMenu';
 import { LanguageSelector } from './LanguageSelector';
-import { MainNavigation } from '@/layout/MainNavigation';
 import { useAuth } from '@/hooks/useAuth';
 import { useWhitelabel } from '@/context/WhitelabelContext';
 import { EnhancedSearchInput } from "@/components/search/EnhancedSearchInput";
@@ -67,7 +66,7 @@ export function Header({ hideLogin = false, customLogo, customTheme }: HeaderPro
         <Logo customLogo={customLogo} customColor={effectiveTheme?.primaryColor} />
 
         <div className="ml-6 flex-1">
-          <MainNavigation />
+          {/* Navigation removed - using sidebar instead */}
         </div>
         <form onSubmit={handleSubmit} className="hidden md:block w-64 mx-4">
           <EnhancedSearchInput
