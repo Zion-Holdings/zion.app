@@ -10,20 +10,8 @@ import { useWhitelabel } from '@/context/WhitelabelContext';
 import { EnhancedSearchInput } from "@/components/search/EnhancedSearchInput";
 import { generateSearchSuggestions } from "@/data/marketplaceData";
 import { useNavigate } from "react-router-dom";
-import { Button } from "@/components/ui/button";
-import { 
-  Menu, 
-  X, 
-  ChevronDown, 
-  Sparkles, 
-  Zap, 
-  Shield, 
-  BarChart3, 
-  Users, 
-  Building,
-  Globe,
-  Star
-} from "lucide-react";
+import { Button } from '@/components/ui/button';
+import { Sparkles, Menu, X } from 'lucide-react';
 
 export interface HeaderProps {
   hideLogin?: boolean;
@@ -41,8 +29,6 @@ export function Header({ hideLogin = false, customLogo, customTheme }: HeaderPro
   const navigate = useNavigate();
   const [query, setQuery] = useState("");
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const [isScrolled, setIsScrolled] = useState(false);
-  const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
   const searchSuggestions = generateSearchSuggestions();
   
   // If we have a white-label tenant and no specific customTheme is provided,
@@ -79,58 +65,10 @@ export function Header({ hideLogin = false, customLogo, customTheme }: HeaderPro
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
   };
-
-  const closeMobileMenu = () => {
-    setIsMobileMenuOpen(false);
-  };
-
-  const handleDropdownToggle = (dropdown: string) => {
-    setActiveDropdown(activeDropdown === dropdown ? null : dropdown);
-  };
-
-  const megaMenuItems = [
-    {
-      title: "AI & Technology",
-      icon: <Zap className="h-5 w-5 text-zion-cyan" />,
-      description: "Cutting-edge AI solutions and tech services",
-      items: [
-        { name: "AI Development", href: "/services", description: "Custom AI solutions" },
-        { name: "Machine Learning", href: "/services", description: "ML model development" },
-        { name: "AI Integration", href: "/services", description: "Seamless AI integration" },
-        { name: "Zion Hire AI", href: "/zion-hire-ai", description: "AI-powered recruiting" }
-      ]
-    },
-    {
-      title: "Micro SAAS Services",
-      icon: <Sparkles className="h-5 w-5 text-zion-purple-light" />,
-      description: "Innovative micro SAAS solutions",
-      items: [
-        { name: "Business Tools", href: "/micro-saas-services", description: "Productivity & collaboration" },
-        { name: "Security Solutions", href: "/micro-saas-services", description: "Cybersecurity & compliance" },
-        { name: "Analytics Platform", href: "/micro-saas-services", description: "Data visualization & BI" },
-        { name: "Marketing Tools", href: "/micro-saas-services", description: "AI-powered marketing" }
-      ]
-    },
-    {
-      title: "Enterprise Solutions",
-      icon: <Building className="h-5 w-5 text-zion-blue-light" />,
-      description: "Scalable enterprise-grade solutions",
-      items: [
-        { name: "White-label Solutions", href: "/enterprise", description: "Custom branded platforms" },
-        { name: "API Integration", href: "/developers", description: "Developer tools & APIs" },
-        { name: "Consulting Services", href: "/services", description: "Expert IT consulting" },
-        { name: "Onsite Support", href: "/it-onsite-services", description: "Global IT services" }
-      ]
-    }
-  ];
   
   return (
     <header 
-      className={`sticky top-0 z-50 w-full transition-all duration-300 ${
-        isScrolled 
-          ? 'bg-zion-slate-dark/95 backdrop-blur-xl border-b border-zion-cyan/30 shadow-2xl shadow-zion-cyan/10' 
-          : 'bg-zion-slate-dark/90 backdrop-blur-md border-b border-zion-purple/20'
-      }`}
+      className="sticky top-0 z-50 w-full border-b border-zion-purple/20 bg-zion-blue-dark/95 backdrop-blur-md shadow-lg shadow-zion-purple/10"
       style={headerStyle}
     >
       <div className="container flex h-16 items-center px-4 sm:px-6">
@@ -141,8 +79,8 @@ export function Header({ hideLogin = false, customLogo, customTheme }: HeaderPro
           <MainNavigation />
         </div>
 
-        {/* Desktop Search */}
-        <form onSubmit={handleSubmit} className="hidden lg:block w-80 mx-6">
+        {/* Search Bar */}
+        <form onSubmit={handleSubmit} className="hidden md:block w-64 mx-4">
           <EnhancedSearchInput
             value={query}
             onChange={setQuery}
@@ -154,8 +92,8 @@ export function Header({ hideLogin = false, customLogo, customTheme }: HeaderPro
           />
         </form>
 
-        {/* Desktop Right Side */}
-        <div className="flex items-center gap-2 hidden lg:flex">
+        {/* Desktop Actions */}
+        <div className="flex items-center gap-3 hidden md:flex">
           <LanguageSelector />
           {!hideLogin && <UserMenu />}
         </div>
@@ -300,7 +238,109 @@ export function Header({ hideLogin = false, customLogo, customTheme }: HeaderPro
             ))}
           </div>
         </div>
+=======
+        <button
+          onClick={toggleMobileMenu}
+          className="lg:hidden p-2 text-white hover:bg-zion-purple/10 rounded-md transition-colors"
+        >
+          {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+        </button>
+>>>>>>> cursor/enhance-app-with-new-services-and-futuristic-design-da9e
       </div>
+
+      {/* Mobile Menu */}
+      {isMobileMenuOpen && (
+        <div className="lg:hidden bg-zion-blue-dark/98 border-t border-zion-purple/20 backdrop-blur-md">
+          <div className="container px-4 py-6 space-y-4">
+            {/* Mobile Search */}
+            <form onSubmit={handleSubmit} className="w-full">
+              <EnhancedSearchInput
+                value={query}
+                onChange={setQuery}
+                onSelectSuggestion={(text) => {
+                  navigate(`/search?q=${encodeURIComponent(text)}`);
+                  setQuery("");
+                  setIsMobileMenuOpen(false);
+                }}
+                searchSuggestions={searchSuggestions}
+              />
+            </form>
+
+            {/* Mobile Navigation */}
+            <nav className="space-y-2">
+              <Link
+                to="/"
+                onClick={() => setIsMobileMenuOpen(false)}
+                className="block px-4 py-3 text-white hover:bg-zion-purple/10 rounded-lg transition-colors"
+              >
+                Home
+              </Link>
+              <Link
+                to="/micro-saas-services"
+                onClick={() => setIsMobileMenuOpen(false)}
+                className="block px-4 py-3 text-white hover:bg-zion-purple/10 rounded-lg transition-colors"
+              >
+                <div className="flex items-center">
+                  <Sparkles className="w-4 h-4 mr-2 text-zion-cyan" />
+                  Micro SAAS Services
+                </div>
+              </Link>
+              <Link
+                to="/marketplace"
+                onClick={() => setIsMobileMenuOpen(false)}
+                className="block px-4 py-3 text-white hover:bg-zion-purple/10 rounded-lg transition-colors"
+              >
+                Marketplace
+              </Link>
+              <Link
+                to="/talent"
+                onClick={() => setIsMobileMenuOpen(false)}
+                className="block px-4 py-3 text-white hover:bg-zion-purple/10 rounded-lg transition-colors"
+              >
+                Talent
+              </Link>
+              <Link
+                to="/services"
+                onClick={() => setIsMobileMenuOpen(false)}
+                className="block px-4 py-3 text-white hover:bg-zion-purple/10 rounded-lg transition-colors"
+              >
+                Services
+              </Link>
+              <Link
+                to="/equipment"
+                onClick={() => setIsMobileMenuOpen(false)}
+                className="block px-4 py-3 text-white hover:bg-zion-purple/10 rounded-lg transition-colors"
+              >
+                Equipment
+              </Link>
+              <Link
+                to="/community"
+                onClick={() => setIsMobileMenuOpen(false)}
+                className="block px-4 py-3 text-white hover:bg-zion-purple/10 rounded-lg transition-colors"
+              >
+                Community
+              </Link>
+              {user && (
+                <Link
+                  to="/dashboard"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  className="block px-4 py-3 text-white hover:bg-zion-purple/10 rounded-lg transition-colors"
+                >
+                  Dashboard
+                </Link>
+              )}
+            </nav>
+
+            {/* Mobile Actions */}
+            <div className="pt-4 border-t border-zion-purple/20">
+              <div className="flex items-center gap-3">
+                <LanguageSelector />
+                {!hideLogin && <UserMenu />}
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
     </header>
   );
 }
