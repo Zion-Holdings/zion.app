@@ -36,6 +36,12 @@ const ITOnsiteServicesPage = React.lazy(() => import('./pages/ITOnsiteServicesPa
 const OpenAppRedirect = React.lazy(() => import('./pages/OpenAppRedirect'));
 const ThemeTest = React.lazy(() => import('./pages/ThemeTest'));
 const ContactPage = React.lazy(() => import('./pages/Contact'));
+<<<<<<< HEAD:src_backup/App.tsx
+=======
+const ZionHireAI = React.lazy(() => import('./pages/ZionHireAI'));
+const RequestQuotePage = React.lazy(() => import('./pages/RequestQuote'));
+const WishlistPage = React.lazy(() => import('./pages/Wishlist'));
+>>>>>>> origin/c9d4c2-codex/implement-wishlist-functionality:src/App.tsx
 
 const baseRoutes = [
   { path: '/', element: <Home /> },
@@ -59,6 +65,7 @@ const baseRoutes = [
   { path: '/zion-hire-ai', element: <ZionHireAI /> },
   { path: '/hire-ai', element: <ZionHireAI /> },
   { path: '/request-quote', element: <RequestQuotePage /> },
+  { path: '/wishlist', element: <WishlistPage /> },
   { path: '/blog', element: <Blog /> },
   { path: '/blog/:slug', element: <BlogPost /> },
   { path: '/theme-test', element: <ThemeTest /> },

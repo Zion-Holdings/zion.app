@@ -31,10 +31,15 @@ import { initGA } from './lib/gtag';
 import { ErrorBoundary } from './components/ErrorBoundary';
 =======
 import { ViewModeProvider } from './context/ViewModeContext';
+<<<<<<< HEAD:src_backup/main.tsx.backup.1755989904
 import { CartProvider } from './context/CartContext';
 import { UnitProvider } from './context/UnitContext';
 import { registerServiceWorker } from './serviceWorkerRegistration';
 >>>>>>> origin/a12zhz-codex/support-metric--imperial-units
+=======
+import { Provider } from 'react-redux';
+import { store } from './store/store';
+>>>>>>> origin/c9d4c2-codex/implement-wishlist-functionality:src/main.tsx
 
 // Initialize a React Query client with global error handling
 const queryClient = new QueryClient({
@@ -55,6 +60,7 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
     <HelmetProvider>
       <QueryClientProvider client={queryClient}>
+<<<<<<< HEAD:src_backup/main.tsx.backup.1755989904
         <WhitelabelProvider>
           <Router>
             <AuthProvider>
@@ -71,6 +77,9 @@ try {
     <React.StrictMode>
       <HelmetProvider>
         <QueryClientProvider client={queryClient}>
+=======
+        <Provider store={store}>
+>>>>>>> origin/c9d4c2-codex/implement-wishlist-functionality:src/main.tsx
           <WhitelabelProvider>
             <Router>
               <AuthProvider>
@@ -78,6 +87,7 @@ try {
                   <AnalyticsProvider>
                     <LanguageProvider authState={{ isAuthenticated: false, user: null }}>
                       <ViewModeProvider>
+<<<<<<< HEAD:src_backup/main.tsx.backup.1755989904
                         <UnitProvider>
                           <CartProvider>
                             <AppLayout>
@@ -95,6 +105,20 @@ try {
             </AuthProvider>
           </Router>
         </WhitelabelProvider>
+=======
+                        <AppLayout>
+                          <App />
+                        </AppLayout>
+                      </ViewModeProvider>
+                      <LanguageDetectionPopup />
+                    </LanguageProvider>
+                  </AnalyticsProvider>
+                </NotificationProvider>
+              </AuthProvider>
+            </Router>
+          </WhitelabelProvider>
+        </Provider>
+>>>>>>> origin/c9d4c2-codex/implement-wishlist-functionality:src/main.tsx
       </QueryClientProvider>
     </HelmetProvider>
   </React.StrictMode>,
