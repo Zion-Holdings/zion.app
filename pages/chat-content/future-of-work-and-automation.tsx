@@ -1,1 +1,1 @@
-export default function Chat7() { return <div>Chat Content</div>; }
+export default function Page() { return <div>Chat content coming soon.</div>; }

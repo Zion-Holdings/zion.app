@@ -7,10 +7,21 @@ class MyDocument extends Document {
   }
 
   render() {
+    const setInitialTheme = `
+(function() {
+  try {
+    var saved = localStorage.getItem('theme');
+    var prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+    var useDark = saved ? saved === 'dark' : prefersDark;
+    if (useDark) document.documentElement.classList.add('dark');
+  } catch (e) {}
+})();
+`;
     return (
-      <Html lang="en">
+      <Html>
         <Head />
         <body>
+          <script dangerouslySetInnerHTML={{ __html: setInitialTheme }} />
           <Main />
           <NextScript />
         </body>
