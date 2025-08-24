@@ -1,6 +1,6 @@
 
 import { GradientHeading } from "./GradientHeading";
-import { Link } from "react-router-dom";
+import Link from "next/link";
 import { Briefcase, HardDrive, Lightbulb, Users } from "lucide-react";
 
 const categories = [
@@ -10,13 +10,6 @@ const categories = [
     icon: <Briefcase className="w-10 h-10" />,
     link: "/services",
     color: "from-purple-500 to-indigo-600",
-  },
-  {
-    title: "Micro SAAS",
-    description: "AI, IT, and specialized micro SAAS solutions",
-    icon: <Lightbulb className="w-10 h-10" />,
-    link: "/micro-saas-services",
-    color: "from-emerald-500 to-green-600",
   },
   {
     title: "Talents",
@@ -32,6 +25,13 @@ const categories = [
     link: "/equipment",
     color: "from-amber-500 to-orange-600",
   },
+  {
+    title: "Innovation",
+    description: "Discover cutting-edge solutions and tech breakthroughs",
+    icon: <Lightbulb className="w-10 h-10" />,
+    link: "/category/innovation",
+    color: "from-emerald-500 to-green-600",
+  },
 ];
 
 const specialServices = [
@@ -40,8 +40,12 @@ const specialServices = [
     link: "/it-onsite-services"
   },
   {
-    title: "Micro SAAS Services",
-    link: "/micro-saas-services"
+    title: "Comprehensive Services",
+    link: "/comprehensive-services"
+  },
+  {
+    title: "Services Comparison",
+    link: "/services-comparison"
   }
 ];
 
@@ -66,10 +70,10 @@ export function CategoriesSection({ showTitle = true }: CategoriesSectionProps) 
           {categories.map((category) => (
             <Link 
               key={category.title} 
-              to={category.link} 
+              href={category.link} 
               className="group block"
             >
-              <div className="rounded-lg overflow-hidden h-full border border-zion-blue-light bg-zion-blue-dark p-6 transition-all duration-300 hover:border-zion-purple/50 hover:translate-y-[-5px] hover-lift glass-dark backdrop-blur-sm">
+              <div className="rounded-lg overflow-hidden h-full border border-zion-blue-light bg-zion-blue-dark p-6 transition-all duration-300 hover:border-zion-purple/50 hover:translate-y-[-5px]">
                 <div className={`rounded-full w-16 h-16 bg-gradient-to-br ${category.color} flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300`}>
                   <div className="text-white">
                     {category.icon}
@@ -88,33 +92,21 @@ export function CategoriesSection({ showTitle = true }: CategoriesSectionProps) 
             {specialServices.map((service) => (
               <Link 
                 key={service.title}
-                to={service.link}
+                href={service.link}
                 className="px-6 py-3 bg-zion-blue-light hover:bg-zion-blue-dark border border-zion-purple/20 hover:border-zion-purple/50 rounded-full text-zion-cyan transition-all duration-300"
               >
                 {service.title}
               </Link>
             ))}
-            <Link 
-              to="/pricing"
-              className="px-6 py-3 bg-zion-purple hover:bg-zion-purple-dark border border-zion-purple/20 hover:border-zion-purple/50 rounded-full text-white transition-all duration-300"
-            >
-              View Pricing
-            </Link>
           </div>
         </div>
         
-        <div className="mt-12 flex justify-center gap-6">
+        <div className="mt-12 flex justify-center">
           <Link 
-            to="/categories" 
+            href="/categories" 
             className="text-zion-cyan border-b border-zion-cyan hover:border-zion-cyan-dark transition-colors"
           >
             View All Categories →
-          </Link>
-          <Link 
-            to="/pricing" 
-            className="text-zion-cyan border-b border-zion-cyan hover:border-zion-cyan-dark transition-colors"
-          >
-            View Pricing →
           </Link>
         </div>
       </div>

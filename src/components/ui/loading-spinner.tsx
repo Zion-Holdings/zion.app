@@ -1,23 +1,73 @@
 import React from 'react';
-import { motion } from 'framer-motion';
+<<<<<<< HEAD
 import { cn } from '@/lib/utils';
 
 interface LoadingSpinnerProps {
-  size?: 'sm' | 'md' | 'lg' | 'xl';
-  color?: 'primary' | 'secondary' | 'white' | 'custom';
-  customColor?: string;
-  text?: string;
+  size?: "sm" | "md" | "lg" | "xl";
   className?: string;
-  showText?: boolean;
 }
 
-export function LoadingSpinner({
-  size = 'md',
-  color = 'primary',
+export function LoadingSpinner({ size = "md", className }: LoadingSpinnerProps) {
+  const sizeClasses = {
+    sm: "w-4 h-4",
+    md: "w-6 h-6",
+    lg: "w-8 h-8",
+    xl: "w-12 h-12"
+  };
+
+  const textClasses = {
+    sm: "text-xs",
+    md: "text-sm",
+    lg: "text-base",
+    xl: "text-lg"
+  };
+
+  return (
+    <div className={cn("flex items-center justify-center", className)}>
+      <div className="relative">
+        <div className={cn(
+          "animate-spin rounded-full border-2 border-gray-300 border-t-blue-600",
+          sizeClasses[size]
+        )} />
+      </div>
+    </div>
+  );
+}
+
+export function PageLoader({ text = "Loading..." }: { text?: string }) {
+  return (
+    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-gray-900 via-blue-900 to-purple-900">
+      <div className="text-center">
+        <LoadingSpinner size="xl" className="mb-4" />
+        <p className="text-white text-lg">{text}</p>
+      </div>
+    </div>
+  );
+}
+
+export function FullPageLoader({ text = "Loading..." }: { text?: string }) {
+  return (
+    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-gray-900 via-blue-900 to-purple-900">
+      <div className="text-center">
+        <LoadingSpinner size="xl" className="mb-4" />
+        <p className="text-white text-lg">{text}</p>
+=======
+import { motion } from 'framer-motion';
+
+interface LoadingSpinnerProps {
+  size?: 'sm' | 'md' | 'lg' | 'xl';
+  variant?: 'default' | 'pulse' | 'dots' | 'bars' | 'ripple';
+  color?: 'zion' | 'white' | 'custom';
+  customColor?: string;
+  className?: string;
+}
+
+export function LoadingSpinner({ 
+  size = 'md', 
+  variant = 'default',
+  color = 'zion',
   customColor,
-  text = 'Loading...',
-  className,
-  showText = false
+  className = ''
 }: LoadingSpinnerProps) {
   const sizeClasses = {
     sm: 'w-4 h-4',
@@ -27,159 +77,99 @@ export function LoadingSpinner({
   };
 
   const colorClasses = {
-    primary: 'border-zion-purple border-t-transparent',
-    secondary: 'border-zion-cyan border-t-transparent',
-    white: 'border-white border-t-transparent',
-    custom: ''
+    zion: 'border-zion-cyan',
+    white: 'border-white',
+    custom: customColor ? `border-[${customColor}]` : 'border-zion-cyan'
   };
 
-  const textSizes = {
-    sm: 'text-xs',
-    md: 'text-sm',
-    lg: 'text-base',
-    xl: 'text-lg'
-  };
-
-  const spinnerColor = customColor || (color === 'custom' ? undefined : undefined);
-
-  return (
-    <div className={cn('flex flex-col items-center justify-center', className)}>
+  const variants = {
+    default: (
       <motion.div
-        className={cn(
-          'rounded-full border-2 animate-spin',
-          sizeClasses[size],
-          color === 'custom' ? '' : colorClasses[color]
-        )}
-        style={spinnerColor ? { borderColor: spinnerColor, borderTopColor: 'transparent' } : undefined}
-        role="status"
-        aria-label="Loading"
-      >
-        <span className="sr-only">{text}</span>
-      </motion.div>
-      
-      {showText && (
-        <motion.p
-          initial={{ opacity: 0, y: 10 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.2 }}
-          className={cn(
-            'mt-3 text-zion-slate-light font-medium',
-            textSizes[size]
-          )}
-        >
-          {text}
-        </motion.p>
-      )}
-    </div>
-  );
-}
-
-// Pulse loading variant
-export function LoadingPulse({
-  size = 'md',
-  color = 'primary',
-  className
-}: Omit<LoadingSpinnerProps, 'text' | 'showText'>) {
-  const sizeClasses = {
-    sm: 'w-4 h-4',
-    md: 'w-8 h-8',
-    lg: 'w-12 h-12',
-    xl: 'w-16 h-16'
-  };
-
-  const colorClasses = {
-    primary: 'bg-zion-purple',
-    secondary: 'bg-zion-cyan',
-    white: 'bg-white',
-    custom: ''
-  };
-
-  return (
-    <motion.div
-      className={cn(
-        'rounded-full',
-        sizeClasses[size],
-        color === 'custom' ? '' : colorClasses[color],
-        className
-      )}
-      animate={{
-        scale: [1, 1.2, 1],
-        opacity: [0.5, 1, 0.5]
-      }}
-      transition={{
-        duration: 1.5,
-        repeat: Infinity,
-        ease: "easeInOut"
-      }}
-      role="status"
-      aria-label="Loading"
-    >
-      <span className="sr-only">Loading</span>
-    </motion.div>
-  );
-}
-
-// Skeleton loading variant
-export function LoadingSkeleton({
-  className,
-  lines = 3,
-  height = 'h-4'
-}: {
-  className?: string;
-  lines?: number;
-  height?: string;
-}) {
-  return (
-    <div className={cn('space-y-3', className)}>
-      {Array.from({ length: lines }).map((_, index) => (
-        <motion.div
-          key={index}
-          className={cn(
-            'bg-zion-slate-light/20 rounded animate-pulse',
-            height
-          )}
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: index * 0.1 }}
-        />
-      ))}
-    </div>
-  );
-}
-
-// Page loading overlay
-export function LoadingOverlay({
-  text = 'Loading...',
-  showSpinner = true,
-  className
-}: {
-  text?: string;
-  showSpinner?: boolean;
-  className?: string;
-}) {
-  return (
-    <motion.div
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      exit={{ opacity: 0 }}
-      className={cn(
-        'fixed inset-0 z-50 flex items-center justify-center bg-zion-blue-dark/80 backdrop-blur-sm',
-        className
-      )}
-    >
-      <div className="text-center">
-        {showSpinner && (
-          <LoadingSpinner size="xl" color="primary" className="mb-4" />
-        )}
-        <motion.p
-          initial={{ opacity: 0, y: 10 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.2 }}
-          className="text-xl text-white font-medium"
-        >
-          {text}
-        </motion.p>
+        className={`${sizeClasses[size]} border-2 border-t-transparent rounded-full ${colorClasses[color]} ${className}`}
+        animate={{ rotate: 360 }}
+        transition={{ duration: 1, repeat: Infinity, ease: "linear" }}
+      />
+    ),
+    pulse: (
+      <motion.div
+        className={`${sizeClasses[size]} bg-zion-cyan rounded-full ${className}`}
+        animate={{ scale: [1, 1.2, 1], opacity: [1, 0.7, 1] }}
+        transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
+      />
+    ),
+    dots: (
+      <div className={`flex gap-2 ${className}`}>
+        {[0, 1, 2].map((i) => (
+          <motion.div
+            key={i}
+            className={`w-2 h-2 bg-zion-cyan rounded-full`}
+            animate={{ scale: [1, 1.5, 1], opacity: [0.5, 1, 0.5] }}
+            transition={{ duration: 1, repeat: Infinity, delay: i * 0.2 }}
+          />
+        ))}
+>>>>>>> a4b0ef56a21d1919a0e2729e4ba64fbc8c4b3f44
       </div>
-    </motion.div>
+    ),
+    bars: (
+      <div className={`flex gap-1 ${className}`}>
+        {[0, 1, 2, 3].map((i) => (
+          <motion.div
+            key={i}
+            className="w-1 bg-zion-cyan rounded-full"
+            style={{ height: size === 'sm' ? '12px' : size === 'md' ? '16px' : size === 'lg' ? '20px' : '24px' }}
+            animate={{ scaleY: [1, 2, 1] }}
+            transition={{ duration: 1, repeat: Infinity, delay: i * 0.1 }}
+          />
+        ))}
+      </div>
+    ),
+    ripple: (
+      <div className={`relative ${sizeClasses[size]} ${className}`}>
+        <motion.div
+          className={`absolute inset-0 border-2 border-zion-cyan rounded-full`}
+          animate={{ scale: [1, 1.5, 1], opacity: [1, 0, 1] }}
+          transition={{ duration: 2, repeat: Infinity, ease: "easeOut" }}
+        />
+        <motion.div
+          className={`absolute inset-0 border-2 border-zion-cyan rounded-full`}
+          animate={{ scale: [1, 2, 1], opacity: [1, 0, 1] }}
+          transition={{ duration: 2, repeat: Infinity, ease: "easeOut", delay: 0.5 }}
+        />
+      </div>
+    )
+  };
+
+  return variants[variant] || variants.default;
+}
+
+<<<<<<< HEAD
+// Inline loading component
+export function InlineLoader({ text, size = "sm" }: { text?: string; size?: "sm" | "md" | "lg" }) {
+  return (
+    <div className="inline-flex items-center">
+      <LoadingSpinner size={size} />
+      {text && <span className="ml-2 text-sm text-gray-600">{text}</span>}
+    </div>
   );
+=======
+// Convenience components for common use cases
+export function ZionSpinner({ size = 'md', className = '' }: { size?: 'sm' | 'md' | 'lg' | 'xl'; className?: string }) {
+  return <LoadingSpinner size={size} variant="default" color="zion" className={className} />;
+}
+
+export function PulseSpinner({ size = 'md', className = '' }: { size?: 'sm' | 'md' | 'lg' | 'xl'; className?: string }) {
+  return <LoadingSpinner size={size} variant="pulse" color="zion" className={className} />;
+}
+
+export function DotsSpinner({ size = 'md', className = '' }: { size?: 'sm' | 'md' | 'lg' | 'xl'; className?: string }) {
+  return <LoadingSpinner size={size} variant="dots" color="zion" className={className} />;
+}
+
+export function BarsSpinner({ size = 'md', className = '' }: { size?: 'sm' | 'md' | 'lg' | 'xl'; className?: string }) {
+  return <LoadingSpinner size={size} variant="bars" color="zion" className={className} />;
+}
+
+export function RippleSpinner({ size = 'md', className = '' }: { size?: 'sm' | 'md' | 'lg' | 'xl'; className?: string }) {
+  return <LoadingSpinner size={size} variant="ripple" color="zion" className={className} />;
+>>>>>>> a4b0ef56a21d1919a0e2729e4ba64fbc8c4b3f44
 }

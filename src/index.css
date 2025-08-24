@@ -6,89 +6,124 @@
   :root {
     --font-sans: 'Orbitron', system-ui, sans-serif;
 
-    --background: 226 51% 8%;
-    --foreground: 210 40% 98%;
+    --background: 0 0% 7%;
+    --foreground: 142 71% 45%;
 
-    --card: 226 51% 8%;
-    --card-foreground: 210 40% 98%;
+    --card: 0 0% 7%;
+    --card-foreground: 142 71% 45%;
 
-    --popover: 226 51% 8%;
-    --popover-foreground: 210 40% 98%;
+    --popover: 0 0% 7%;
+    --popover-foreground: 142 71% 45%;
 
-    --primary: 271 91% 65%;
-    --primary-foreground: 0 0% 100%;
+    --primary: 216 84% 50%;
+    --primary-foreground: 142 71% 45%;
 
-    --secondary: 186 100% 50%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 0 0% 68%;
+    --secondary-foreground: 0 0% 7%;
 
-    --muted: 223 33% 17%;
-    --muted-foreground: 215 20.2% 65.1%;
+    --muted: 0 0% 68%;
+    --muted-foreground: 215 20% 65%;
 
-    --accent: 271 81% 56%;
-    --accent-foreground: 210 40% 98%;
+    --accent: 228 12% 92%;
+    --accent-foreground: 0 0% 7%;
 
     --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive-foreground: 142 71% 45%;
 
-    --border: 223 33% 17%;
-    --input: 223 33% 17%;
-    --ring: 271 91% 65%;
+    --border: 0 0% 68%;
+    --input: 0 0% 68%;
+    --ring: 216 84% 53%;
 
     --radius: 0.5rem;
 
-    --sidebar-background: 0 0% 98%;
-
-    --sidebar-foreground: 240 5.3% 26.1%;
-
-    --sidebar-primary: 240 5.9% 10%;
-
-    --sidebar-primary-foreground: 0 0% 98%;
-
-    --sidebar-accent: 240 4.8% 95.9%;
-
-    --sidebar-accent-foreground: 240 5.9% 10%;
-
-    --sidebar-border: 220 13% 91%;
-
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --sidebar-background: 228 12% 92%;
+    --sidebar-foreground: 0 0% 7%;
+    --sidebar-primary: 216 84% 53%;
+    --sidebar-primary-foreground: 142 71% 45%;
+    --sidebar-accent: 0 0% 68%;
+    --sidebar-accent-foreground: 0 0% 7%;
+    --sidebar-border: 0 0% 68%;
+    --sidebar-ring: 216 84% 53%;
   }
 
   .dark {
-    --background: 226 51% 6%;
-    --foreground: 210 40% 98%;
+    --background: 0 0% 7%;
+    --foreground: 142 71% 45%;
 
-    --card: 226 51% 6%;
-    --card-foreground: 210 40% 98%;
+    --card: 0 0% 7%;
+    --card-foreground: 142 71% 45%;
 
-    --popover: 226 51% 6%;
-    --popover-foreground: 210 40% 98%;
+    --popover: 0 0% 7%;
+    --popover-foreground: 142 71% 45%;
 
-    --primary: 271 91% 65%;
-    --primary-foreground: 0 0% 100%;
+    --primary: 216 84% 50%;
+    --primary-foreground: 142 71% 45%;
 
-    --secondary: 186 100% 50%;
-    --secondary-foreground: 210 40% 98%;
+    --secondary: 0 0% 68%;
+    --secondary-foreground: 0 0% 7%;
 
-    --muted: 223 33% 17%;
-    --muted-foreground: 215 20.2% 65.1%;
+    --muted: 0 0% 68%;
+    --muted-foreground: 215 20% 65%;
 
-    --accent: 271 81% 56%;
-    --accent-foreground: 210 40% 98%;
+    --accent: 228 12% 92%;
+    --accent-foreground: 0 0% 7%;
 
     --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 142 71% 45%;
+
+    --border: 0 0% 68%;
+    --input: 0 0% 68%;
+    --ring: 216 84% 53%;
+    
+    --sidebar-background: 228 12% 92%;
+    --sidebar-foreground: 0 0% 7%;
+    --sidebar-primary: 216 84% 53%;
+    --sidebar-primary-foreground: 210 40% 98%;
+    --sidebar-accent: 210 40% 96%;
+    --sidebar-accent-foreground: 224 71% 4%;
+    --sidebar-border: 214 32% 91%;
+    --sidebar-ring: 262 83% 58%;
+  }
+
+  .light {
+    --background: 0 0% 100%;
+    --foreground: 224 71% 4%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 224 71% 4%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 224 71% 4%;
+
+    --primary: 262 83% 58%;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 210 40% 96%;
+    --secondary-foreground: 222 47% 11%;
+
+    --muted: 210 40% 96%;
+    --muted-foreground: 215 20% 65%;
+
+    --accent: 210 40% 96%;
+    --accent-foreground: 224 71% 4%;
+
+    --destructive: 0 84% 60%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 223 33% 17%;
-    --input: 223 33% 17%;
-    --ring: 271 91% 65%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 271 91% 65%;
+    --border: 214 32% 91%;
+    --input: 214 32% 91%;
+    --ring: 262 83% 58%;
+
+    --radius: 0.5rem;
+
+    --sidebar-background: 210 40% 96%;
+    --sidebar-foreground: 224 71% 4%;
+    --sidebar-primary: 262 83% 58%;
+    --sidebar-primary-foreground: 210 40% 98%;
+    --sidebar-accent: 210 40% 96%;
+    --sidebar-accent-foreground: 224 71% 4%;
+    --sidebar-border: 214 32% 91%;
+    --sidebar-ring: 262 83% 58%;
   }
 }
 
@@ -101,6 +136,7 @@
     @apply bg-background text-foreground font-sans;
   }
 
+  /* Futuristic Animations */
   @keyframes pulse {
     0%, 100% {
       opacity: 1;
@@ -110,130 +146,33 @@
     }
   }
 
-  .pulse {
-    animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
-  }
-
-  /* Futuristic animations */
-  @keyframes float {
-    0%, 100% {
-      transform: translateY(0px);
-    }
-    50% {
-      transform: translateY(-20px);
-    }
-  }
-
-  @keyframes glow {
-    0%, 100% {
-      box-shadow: 0 0 20px rgba(34, 221, 210, 0.3);
-    }
-    50% {
-      box-shadow: 0 0 40px rgba(34, 221, 210, 0.6), 0 0 60px rgba(34, 221, 210, 0.3);
-    }
-  }
-
   @keyframes neon-pulse {
     0%, 100% {
-      text-shadow: 0 0 5px rgba(34, 221, 210, 0.8), 0 0 10px rgba(34, 221, 210, 0.6), 0 0 15px rgba(34, 221, 210, 0.4);
+      opacity: 1;
+      text-shadow: 0 0 5px currentColor, 0 0 10px currentColor, 0 0 15px currentColor;
     }
     50% {
-      text-shadow: 0 0 10px rgba(34, 221, 210, 1), 0 0 20px rgba(34, 221, 210, 0.8), 0 0 30px rgba(34, 221, 210, 0.6);
+      opacity: 0.8;
+      text-shadow: 0 0 2px currentColor, 0 0 5px currentColor, 0 0 7px currentColor;
     }
-  }
-
-  @keyframes matrix-rain {
-    0% {
-      transform: translateY(-100vh);
-    }
-    100% {
-      transform: translateY(100vh);
-    }
-  }
-
-  .float {
-    animation: float 6s ease-in-out infinite;
-  }
-
-  .glow {
-    animation: glow 2s ease-in-out infinite alternate;
   }
 
   .neon-pulse {
     animation: neon-pulse 2s ease-in-out infinite;
   }
 
-  .matrix-rain {
-    animation: matrix-rain 20s linear infinite;
-  }
-
-  /* Futuristic gradients */
-  .bg-futuristic-gradient {
-    background: linear-gradient(135deg, 
-      rgba(34, 221, 210, 0.1) 0%, 
-      rgba(140, 21, 233, 0.1) 25%, 
-      rgba(46, 115, 234, 0.1) 50%, 
-      rgba(34, 221, 210, 0.1) 75%, 
-      rgba(140, 21, 233, 0.1) 100%
-    );
-  }
-
-  .bg-neon-gradient {
-    background: linear-gradient(45deg, 
-      rgba(34, 221, 210, 0.2), 
-      rgba(140, 21, 233, 0.2), 
-      rgba(46, 115, 234, 0.2)
-    );
-  }
-
-  /* Glassmorphism effects */
-  .glass {
-    background: rgba(255, 255, 255, 0.05);
-    backdrop-filter: blur(20px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-  }
-
-  .glass-dark {
-    background: rgba(0, 0, 0, 0.3);
-    backdrop-filter: blur(20px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-  }
-
-  /* Hover effects */
+  /* Hover Effects */
   .hover-lift {
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
   }
 
   .hover-lift:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(34, 221, 210, 0.3);
   }
 
   .hover-glow:hover {
-    box-shadow: 0 0 30px rgba(34, 221, 210, 0.5);
-  }
-
-  /* Custom scrollbar for webkit browsers */
-  ::-webkit-scrollbar {
-    width: 10px;
-  }
-
-  ::-webkit-scrollbar-track {
-    background: theme('colors.zion.blue.DEFAULT');
-  }
-
-  ::-webkit-scrollbar-thumb {
-    background: theme('colors.zion.purple.dark');
-    border-radius: 5px;
-  }
-
-  ::-webkit-scrollbar-thumb:hover {
-    background: theme('colors.zion.purple.DEFAULT');
-  }
-
-  /* Smooth scrolling */
-  html {
-    scroll-behavior: smooth;
+    box-shadow: 0 0 20px rgba(34, 221, 210, 0.5);
   }
 
   /* LiveKit UI overrides */
