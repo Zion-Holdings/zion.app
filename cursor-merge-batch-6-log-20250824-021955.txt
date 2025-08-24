@@ -1,0 +1,228 @@
+2025-08-24 02:19:56 - 📋 Fetching list of cursor branches...
+2025-08-24 02:19:57 - 📊 Processing branches 1000 to 1199 (total: 2396)
+2025-08-24 02:19:57 - 📋 Processing branch 1001: cursor/enhance-app-with-new-services-and-futuristic-design-6582
+2025-08-24 02:19:57 - 🔄 Attempting to merge cursor/enhance-app-with-new-services-and-futuristic-design-6582 (attempt 1/3)...
+2025-08-24 02:19:57 - 🔄 Syncing with remote main branch...
+2025-08-24 02:19:58 - ✅ Synced with remote main branch
+2025-08-24 02:19:58 - ✅ Successfully merged cursor/enhance-app-with-new-services-and-futuristic-design-6582
+2025-08-24 02:19:59 - ✅ Successfully pushed changes for cursor/enhance-app-with-new-services-and-futuristic-design-6582
+2025-08-24 02:19:59 - ✅ Branch cursor/enhance-app-with-new-services-and-futuristic-design-6582 processed successfully
+2025-08-24 02:19:59 - 📊 Batch progress: 1/200
+2025-08-24 02:19:59 - 📊 Overall progress: 996 successful, 5 failed, 1927 conflicts resolved, 0 skipped
+2025-08-24 02:19:59 - ---
+2025-08-24 02:20:00 - 📋 Processing branch 1002: cursor/enhance-app-with-new-services-and-futuristic-design-65a2
+2025-08-24 02:20:00 - 🔄 Attempting to merge cursor/enhance-app-with-new-services-and-futuristic-design-65a2 (attempt 1/3)...
+2025-08-24 02:20:00 - 🔄 Syncing with remote main branch...
+2025-08-24 02:20:01 - ✅ Synced with remote main branch
+2025-08-24 02:20:01 - ✅ Successfully merged cursor/enhance-app-with-new-services-and-futuristic-design-65a2
+2025-08-24 02:20:02 - ✅ Successfully pushed changes for cursor/enhance-app-with-new-services-and-futuristic-design-65a2
+2025-08-24 02:20:02 - ✅ Branch cursor/enhance-app-with-new-services-and-futuristic-design-65a2 processed successfully
+2025-08-24 02:20:02 - 📊 Batch progress: 2/200
+2025-08-24 02:20:02 - 📊 Overall progress: 997 successful, 5 failed, 1927 conflicts resolved, 0 skipped
+2025-08-24 02:20:02 - ---
+2025-08-24 02:20:03 - 📋 Processing branch 1003: cursor/enhance-app-with-new-services-and-futuristic-design-6683
+2025-08-24 02:20:03 - 🔄 Attempting to merge cursor/enhance-app-with-new-services-and-futuristic-design-6683 (attempt 1/3)...
+2025-08-24 02:20:03 - 🔄 Syncing with remote main branch...
+2025-08-24 02:20:04 - ✅ Synced with remote main branch
+2025-08-24 02:20:05 - ✅ Successfully merged cursor/enhance-app-with-new-services-and-futuristic-design-6683
+2025-08-24 02:20:05 - ✅ Successfully pushed changes for cursor/enhance-app-with-new-services-and-futuristic-design-6683
+2025-08-24 02:20:05 - ✅ Branch cursor/enhance-app-with-new-services-and-futuristic-design-6683 processed successfully
+2025-08-24 02:20:05 - 📊 Batch progress: 3/200
+2025-08-24 02:20:05 - 📊 Overall progress: 998 successful, 5 failed, 1927 conflicts resolved, 0 skipped
+2025-08-24 02:20:05 - ---
+2025-08-24 02:20:06 - 📋 Processing branch 1004: cursor/enhance-app-with-new-services-and-futuristic-design-673c
+2025-08-24 02:20:06 - 🔄 Attempting to merge cursor/enhance-app-with-new-services-and-futuristic-design-673c (attempt 1/3)...
+2025-08-24 02:20:06 - 🔄 Syncing with remote main branch...
+2025-08-24 02:20:07 - ✅ Synced with remote main branch
+2025-08-24 02:20:08 - ✅ Successfully merged cursor/enhance-app-with-new-services-and-futuristic-design-673c
+2025-08-24 02:20:09 - ✅ Successfully pushed changes for cursor/enhance-app-with-new-services-and-futuristic-design-673c
+2025-08-24 02:20:09 - ✅ Branch cursor/enhance-app-with-new-services-and-futuristic-design-673c processed successfully
+2025-08-24 02:20:09 - 📊 Batch progress: 4/200
+2025-08-24 02:20:09 - 📊 Overall progress: 999 successful, 5 failed, 1927 conflicts resolved, 0 skipped
+2025-08-24 02:20:09 - ---
+2025-08-24 02:20:10 - 📋 Processing branch 1005: cursor/enhance-app-with-new-services-and-futuristic-design-6753
+2025-08-24 02:20:10 - 🔄 Attempting to merge cursor/enhance-app-with-new-services-and-futuristic-design-6753 (attempt 1/3)...
+2025-08-24 02:20:10 - 🔄 Syncing with remote main branch...
+2025-08-24 02:20:10 - ✅ Synced with remote main branch
+2025-08-24 02:20:11 - ✅ Successfully merged cursor/enhance-app-with-new-services-and-futuristic-design-6753
+2025-08-24 02:20:12 - ✅ Successfully pushed changes for cursor/enhance-app-with-new-services-and-futuristic-design-6753
+2025-08-24 02:20:12 - ✅ Branch cursor/enhance-app-with-new-services-and-futuristic-design-6753 processed successfully
+2025-08-24 02:20:12 - 📊 Batch progress: 5/200
+2025-08-24 02:20:12 - 📊 Overall progress: 1000 successful, 5 failed, 1927 conflicts resolved, 0 skipped
+2025-08-24 02:20:12 - ---
+2025-08-24 02:20:13 - 📋 Processing branch 1006: cursor/enhance-app-with-new-services-and-futuristic-design-6758
+2025-08-24 02:20:13 - 🔄 Attempting to merge cursor/enhance-app-with-new-services-and-futuristic-design-6758 (attempt 1/3)...
+2025-08-24 02:20:13 - 🔄 Syncing with remote main branch...
+2025-08-24 02:20:14 - ✅ Synced with remote main branch
+2025-08-24 02:20:14 - ✅ Successfully merged cursor/enhance-app-with-new-services-and-futuristic-design-6758
+2025-08-24 02:20:15 - ✅ Successfully pushed changes for cursor/enhance-app-with-new-services-and-futuristic-design-6758
+2025-08-24 02:20:15 - ✅ Branch cursor/enhance-app-with-new-services-and-futuristic-design-6758 processed successfully
+2025-08-24 02:20:15 - 📊 Batch progress: 6/200
+2025-08-24 02:20:15 - 📊 Overall progress: 1001 successful, 5 failed, 1927 conflicts resolved, 0 skipped
+2025-08-24 02:20:15 - ---
+2025-08-24 02:20:16 - 📋 Processing branch 1007: cursor/enhance-app-with-new-services-and-futuristic-design-67e4
+2025-08-24 02:20:16 - 🔄 Attempting to merge cursor/enhance-app-with-new-services-and-futuristic-design-67e4 (attempt 1/3)...
+2025-08-24 02:20:16 - 🔄 Syncing with remote main branch...
+2025-08-24 02:20:17 - ✅ Synced with remote main branch
+2025-08-24 02:20:18 - ✅ Successfully merged cursor/enhance-app-with-new-services-and-futuristic-design-67e4
+2025-08-24 02:20:18 - ✅ Successfully pushed changes for cursor/enhance-app-with-new-services-and-futuristic-design-67e4
+2025-08-24 02:20:18 - ✅ Branch cursor/enhance-app-with-new-services-and-futuristic-design-67e4 processed successfully
+2025-08-24 02:20:18 - 📊 Batch progress: 7/200
+2025-08-24 02:20:18 - 📊 Overall progress: 1002 successful, 5 failed, 1927 conflicts resolved, 0 skipped
+2025-08-24 02:20:18 - ---
+2025-08-24 02:20:19 - 📋 Processing branch 1008: cursor/enhance-app-with-new-services-and-futuristic-design-680a
+2025-08-24 02:20:19 - 🔄 Attempting to merge cursor/enhance-app-with-new-services-and-futuristic-design-680a (attempt 1/3)...
+2025-08-24 02:20:19 - 🔄 Syncing with remote main branch...
+2025-08-24 02:20:20 - ✅ Synced with remote main branch
+2025-08-24 02:20:21 - ✅ Successfully merged cursor/enhance-app-with-new-services-and-futuristic-design-680a
+2025-08-24 02:20:21 - ✅ Successfully pushed changes for cursor/enhance-app-with-new-services-and-futuristic-design-680a
+2025-08-24 02:20:21 - ✅ Branch cursor/enhance-app-with-new-services-and-futuristic-design-680a processed successfully
+2025-08-24 02:20:21 - 📊 Batch progress: 8/200
+2025-08-24 02:20:21 - 📊 Overall progress: 1003 successful, 5 failed, 1927 conflicts resolved, 0 skipped
+2025-08-24 02:20:21 - ---
+2025-08-24 02:20:22 - 📋 Processing branch 1009: cursor/enhance-app-with-new-services-and-futuristic-design-68ea
+2025-08-24 02:20:22 - 🔄 Attempting to merge cursor/enhance-app-with-new-services-and-futuristic-design-68ea (attempt 1/3)...
+2025-08-24 02:20:22 - 🔄 Syncing with remote main branch...
+2025-08-24 02:20:23 - ✅ Synced with remote main branch
+2025-08-24 02:20:24 - ✅ Successfully merged cursor/enhance-app-with-new-services-and-futuristic-design-68ea
+2025-08-24 02:20:25 - ✅ Successfully pushed changes for cursor/enhance-app-with-new-services-and-futuristic-design-68ea
+2025-08-24 02:20:25 - ✅ Branch cursor/enhance-app-with-new-services-and-futuristic-design-68ea processed successfully
+2025-08-24 02:20:25 - 📊 Batch progress: 9/200
+2025-08-24 02:20:25 - 📊 Overall progress: 1004 successful, 5 failed, 1927 conflicts resolved, 0 skipped
+2025-08-24 02:20:25 - ---
+2025-08-24 02:20:26 - 📋 Processing branch 1010: cursor/enhance-app-with-new-services-and-futuristic-design-6a3e
+2025-08-24 02:20:26 - 🔄 Attempting to merge cursor/enhance-app-with-new-services-and-futuristic-design-6a3e (attempt 1/3)...
+2025-08-24 02:20:26 - 🔄 Syncing with remote main branch...
+2025-08-24 02:20:26 - ✅ Synced with remote main branch
+2025-08-24 02:20:27 - ✅ Successfully merged cursor/enhance-app-with-new-services-and-futuristic-design-6a3e
+2025-08-24 02:20:28 - ✅ Successfully pushed changes for cursor/enhance-app-with-new-services-and-futuristic-design-6a3e
+2025-08-24 02:20:28 - ✅ Branch cursor/enhance-app-with-new-services-and-futuristic-design-6a3e processed successfully
+2025-08-24 02:20:28 - 📊 Batch progress: 10/200
+2025-08-24 02:20:28 - 📊 Overall progress: 1005 successful, 5 failed, 1927 conflicts resolved, 0 skipped
+2025-08-24 02:20:28 - ---
+2025-08-24 02:20:29 - 📋 Processing branch 1011: cursor/enhance-app-with-new-services-and-futuristic-design-6a71
+2025-08-24 02:20:29 - 🔄 Attempting to merge cursor/enhance-app-with-new-services-and-futuristic-design-6a71 (attempt 1/3)...
+2025-08-24 02:20:29 - 🔄 Syncing with remote main branch...
+2025-08-24 02:20:29 - ✅ Synced with remote main branch
+2025-08-24 02:20:30 - ✅ Successfully merged cursor/enhance-app-with-new-services-and-futuristic-design-6a71
+2025-08-24 02:20:31 - ✅ Successfully pushed changes for cursor/enhance-app-with-new-services-and-futuristic-design-6a71
+2025-08-24 02:20:31 - ✅ Branch cursor/enhance-app-with-new-services-and-futuristic-design-6a71 processed successfully
+2025-08-24 02:20:31 - 📊 Batch progress: 11/200
+2025-08-24 02:20:31 - 📊 Overall progress: 1006 successful, 5 failed, 1927 conflicts resolved, 0 skipped
+2025-08-24 02:20:31 - ---
+2025-08-24 02:20:32 - 📋 Processing branch 1012: cursor/enhance-app-with-new-services-and-futuristic-design-6ab4
+2025-08-24 02:20:32 - 🔄 Attempting to merge cursor/enhance-app-with-new-services-and-futuristic-design-6ab4 (attempt 1/3)...
+2025-08-24 02:20:32 - 🔄 Syncing with remote main branch...
+2025-08-24 02:20:33 - ✅ Synced with remote main branch
+2025-08-24 02:20:33 - ✅ Successfully merged cursor/enhance-app-with-new-services-and-futuristic-design-6ab4
+2025-08-24 02:20:34 - ✅ Successfully pushed changes for cursor/enhance-app-with-new-services-and-futuristic-design-6ab4
+2025-08-24 02:20:34 - ✅ Branch cursor/enhance-app-with-new-services-and-futuristic-design-6ab4 processed successfully
+2025-08-24 02:20:34 - 📊 Batch progress: 12/200
+2025-08-24 02:20:34 - 📊 Overall progress: 1007 successful, 5 failed, 1927 conflicts resolved, 0 skipped
+2025-08-24 02:20:34 - ---
+2025-08-24 02:20:35 - 📋 Processing branch 1013: cursor/enhance-app-with-new-services-and-futuristic-design-6d41
+2025-08-24 02:20:35 - 🔄 Attempting to merge cursor/enhance-app-with-new-services-and-futuristic-design-6d41 (attempt 1/3)...
+2025-08-24 02:20:35 - 🔄 Syncing with remote main branch...
+2025-08-24 02:20:36 - ✅ Synced with remote main branch
+2025-08-24 02:20:36 - ✅ Successfully merged cursor/enhance-app-with-new-services-and-futuristic-design-6d41
+2025-08-24 02:20:37 - ✅ Successfully pushed changes for cursor/enhance-app-with-new-services-and-futuristic-design-6d41
+2025-08-24 02:20:37 - ✅ Branch cursor/enhance-app-with-new-services-and-futuristic-design-6d41 processed successfully
+2025-08-24 02:20:37 - 📊 Batch progress: 13/200
+2025-08-24 02:20:37 - 📊 Overall progress: 1008 successful, 5 failed, 1927 conflicts resolved, 0 skipped
+2025-08-24 02:20:37 - ---
+2025-08-24 02:20:38 - 📋 Processing branch 1014: cursor/enhance-app-with-new-services-and-futuristic-design-6d80
+2025-08-24 02:20:38 - 🔄 Attempting to merge cursor/enhance-app-with-new-services-and-futuristic-design-6d80 (attempt 1/3)...
+2025-08-24 02:20:38 - 🔄 Syncing with remote main branch...
+2025-08-24 02:20:39 - ✅ Synced with remote main branch
+2025-08-24 02:20:40 - ✅ Successfully merged cursor/enhance-app-with-new-services-and-futuristic-design-6d80
+2025-08-24 02:20:40 - ✅ Successfully pushed changes for cursor/enhance-app-with-new-services-and-futuristic-design-6d80
+2025-08-24 02:20:40 - ✅ Branch cursor/enhance-app-with-new-services-and-futuristic-design-6d80 processed successfully
+2025-08-24 02:20:40 - 📊 Batch progress: 14/200
+2025-08-24 02:20:40 - 📊 Overall progress: 1009 successful, 5 failed, 1927 conflicts resolved, 0 skipped
+2025-08-24 02:20:40 - ---
+2025-08-24 02:20:41 - 📋 Processing branch 1015: cursor/enhance-app-with-new-services-and-futuristic-design-6e06
+2025-08-24 02:20:41 - 🔄 Attempting to merge cursor/enhance-app-with-new-services-and-futuristic-design-6e06 (attempt 1/3)...
+2025-08-24 02:20:41 - 🔄 Syncing with remote main branch...
+2025-08-24 02:20:42 - ✅ Synced with remote main branch
+2025-08-24 02:20:43 - ✅ Successfully merged cursor/enhance-app-with-new-services-and-futuristic-design-6e06
+2025-08-24 02:20:43 - ✅ Successfully pushed changes for cursor/enhance-app-with-new-services-and-futuristic-design-6e06
+2025-08-24 02:20:43 - ✅ Branch cursor/enhance-app-with-new-services-and-futuristic-design-6e06 processed successfully
+2025-08-24 02:20:43 - 📊 Batch progress: 15/200
+2025-08-24 02:20:43 - 📊 Overall progress: 1010 successful, 5 failed, 1927 conflicts resolved, 0 skipped
+2025-08-24 02:20:43 - ---
+2025-08-24 02:20:44 - 📋 Processing branch 1016: cursor/enhance-app-with-new-services-and-futuristic-design-6e47
+2025-08-24 02:20:44 - 🔄 Attempting to merge cursor/enhance-app-with-new-services-and-futuristic-design-6e47 (attempt 1/3)...
+2025-08-24 02:20:44 - 🔄 Syncing with remote main branch...
+2025-08-24 02:20:45 - ✅ Synced with remote main branch
+2025-08-24 02:20:46 - ✅ Successfully merged cursor/enhance-app-with-new-services-and-futuristic-design-6e47
+2025-08-24 02:20:47 - ✅ Successfully pushed changes for cursor/enhance-app-with-new-services-and-futuristic-design-6e47
+2025-08-24 02:20:47 - ✅ Branch cursor/enhance-app-with-new-services-and-futuristic-design-6e47 processed successfully
+2025-08-24 02:20:47 - 📊 Batch progress: 16/200
+2025-08-24 02:20:47 - 📊 Overall progress: 1011 successful, 5 failed, 1927 conflicts resolved, 0 skipped
+2025-08-24 02:20:47 - ---
+2025-08-24 02:20:48 - 📋 Processing branch 1017: cursor/enhance-app-with-new-services-and-futuristic-design-6f74
+2025-08-24 02:20:48 - 🔄 Attempting to merge cursor/enhance-app-with-new-services-and-futuristic-design-6f74 (attempt 1/3)...
+2025-08-24 02:20:48 - 🔄 Syncing with remote main branch...
+2025-08-24 02:20:49 - ✅ Synced with remote main branch
+2025-08-24 02:20:49 - ✅ Successfully merged cursor/enhance-app-with-new-services-and-futuristic-design-6f74
+2025-08-24 02:20:50 - ✅ Successfully pushed changes for cursor/enhance-app-with-new-services-and-futuristic-design-6f74
+2025-08-24 02:20:50 - ✅ Branch cursor/enhance-app-with-new-services-and-futuristic-design-6f74 processed successfully
+2025-08-24 02:20:50 - 📊 Batch progress: 17/200
+2025-08-24 02:20:50 - 📊 Overall progress: 1012 successful, 5 failed, 1927 conflicts resolved, 0 skipped
+2025-08-24 02:20:50 - ---
+2025-08-24 02:20:51 - 📋 Processing branch 1018: cursor/enhance-app-with-new-services-and-futuristic-design-7047
+2025-08-24 02:20:51 - 🔄 Attempting to merge cursor/enhance-app-with-new-services-and-futuristic-design-7047 (attempt 1/3)...
+2025-08-24 02:20:51 - 🔄 Syncing with remote main branch...
+2025-08-24 02:20:52 - ✅ Synced with remote main branch
+2025-08-24 02:20:52 - ✅ Successfully merged cursor/enhance-app-with-new-services-and-futuristic-design-7047
+2025-08-24 02:20:53 - ✅ Successfully pushed changes for cursor/enhance-app-with-new-services-and-futuristic-design-7047
+2025-08-24 02:20:53 - ✅ Branch cursor/enhance-app-with-new-services-and-futuristic-design-7047 processed successfully
+2025-08-24 02:20:53 - 📊 Batch progress: 18/200
+2025-08-24 02:20:53 - 📊 Overall progress: 1013 successful, 5 failed, 1927 conflicts resolved, 0 skipped
+2025-08-24 02:20:53 - ---
+2025-08-24 02:20:54 - 📋 Processing branch 1019: cursor/enhance-app-with-new-services-and-futuristic-design-70ec
+2025-08-24 02:20:54 - 🔄 Attempting to merge cursor/enhance-app-with-new-services-and-futuristic-design-70ec (attempt 1/3)...
+2025-08-24 02:20:54 - 🔄 Syncing with remote main branch...
+2025-08-24 02:20:55 - ✅ Synced with remote main branch
+2025-08-24 02:20:56 - ✅ Successfully merged cursor/enhance-app-with-new-services-and-futuristic-design-70ec
+2025-08-24 02:20:56 - ✅ Successfully pushed changes for cursor/enhance-app-with-new-services-and-futuristic-design-70ec
+2025-08-24 02:20:56 - ✅ Branch cursor/enhance-app-with-new-services-and-futuristic-design-70ec processed successfully
+2025-08-24 02:20:56 - 📊 Batch progress: 19/200
+2025-08-24 02:20:56 - 📊 Overall progress: 1014 successful, 5 failed, 1927 conflicts resolved, 0 skipped
+2025-08-24 02:20:56 - ---
+2025-08-24 02:20:57 - 📋 Processing branch 1020: cursor/enhance-app-with-new-services-and-futuristic-design-713b
+2025-08-24 02:20:57 - 🔄 Attempting to merge cursor/enhance-app-with-new-services-and-futuristic-design-713b (attempt 1/3)...
+2025-08-24 02:20:57 - 🔄 Syncing with remote main branch...
+2025-08-24 02:20:58 - ✅ Synced with remote main branch
+2025-08-24 02:20:59 - ✅ Successfully merged cursor/enhance-app-with-new-services-and-futuristic-design-713b
+2025-08-24 02:20:59 - ✅ Successfully pushed changes for cursor/enhance-app-with-new-services-and-futuristic-design-713b
+2025-08-24 02:20:59 - ✅ Branch cursor/enhance-app-with-new-services-and-futuristic-design-713b processed successfully
+2025-08-24 02:20:59 - 📊 Batch progress: 20/200
+2025-08-24 02:20:59 - 📊 Overall progress: 1015 successful, 5 failed, 1927 conflicts resolved, 0 skipped
+2025-08-24 02:20:59 - ---
+2025-08-24 02:21:00 - 📋 Processing branch 1021: cursor/enhance-app-with-new-services-and-futuristic-design-7153
+2025-08-24 02:21:00 - 🔄 Attempting to merge cursor/enhance-app-with-new-services-and-futuristic-design-7153 (attempt 1/3)...
+2025-08-24 02:21:00 - 🔄 Syncing with remote main branch...
+2025-08-24 02:21:01 - ✅ Synced with remote main branch
+2025-08-24 02:21:02 - ✅ Successfully merged cursor/enhance-app-with-new-services-and-futuristic-design-7153
+2025-08-24 02:21:02 - ✅ Successfully pushed changes for cursor/enhance-app-with-new-services-and-futuristic-design-7153
+2025-08-24 02:21:02 - ✅ Branch cursor/enhance-app-with-new-services-and-futuristic-design-7153 processed successfully
+2025-08-24 02:21:02 - 📊 Batch progress: 21/200
+2025-08-24 02:21:02 - 📊 Overall progress: 1016 successful, 5 failed, 1927 conflicts resolved, 0 skipped
+2025-08-24 02:21:02 - ---
+2025-08-24 02:21:03 - 📋 Processing branch 1022: cursor/enhance-app-with-new-services-and-futuristic-design-7156
+2025-08-24 02:21:03 - 🔄 Attempting to merge cursor/enhance-app-with-new-services-and-futuristic-design-7156 (attempt 1/3)...
+2025-08-24 02:21:03 - 🔄 Syncing with remote main branch...
+2025-08-24 02:21:04 - ✅ Synced with remote main branch
+2025-08-24 02:21:05 - ✅ Successfully merged cursor/enhance-app-with-new-services-and-futuristic-design-7156
+2025-08-24 02:21:05 - ✅ Successfully pushed changes for cursor/enhance-app-with-new-services-and-futuristic-design-7156
+2025-08-24 02:21:05 - ✅ Branch cursor/enhance-app-with-new-services-and-futuristic-design-7156 processed successfully
+2025-08-24 02:21:05 - 📊 Batch progress: 22/200
+2025-08-24 02:21:05 - 📊 Overall progress: 1017 successful, 5 failed, 1927 conflicts resolved, 0 skipped
+2025-08-24 02:21:05 - ---
+2025-08-24 02:21:06 - 📋 Processing branch 1023: cursor/enhance-app-with-new-services-and-futuristic-design-71a0
+2025-08-24 02:21:06 - 🔄 Attempting to merge cursor/enhance-app-with-new-services-and-futuristic-design-71a0 (attempt 1/3)...
+2025-08-24 02:21:06 - 🔄 Syncing with remote main branch...
+2025-08-24 02:21:07 - ✅ Synced with remote main branch
+2025-08-24 02:21:11 - ⚠️  Merge conflict detected for cursor/enhance-app-with-new-services-and-futuristic-design-71a0, attempting to resolve...
+2025-08-24 02:21:11 - 🔧 Resolving merge conflicts for cursor/enhance-app-with-new-services-and-futuristic-design-71a0...
