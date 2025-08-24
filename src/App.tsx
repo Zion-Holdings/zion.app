@@ -16,6 +16,9 @@ const ServicesPricingPage = React.lazy(() => import('./pages/ServicesPricingPage
 const AIServicesPage = React.lazy(() => import('./pages/AIServicesPage'));
 const CybersecurityServicesPage = React.lazy(() => import('./pages/CybersecurityServicesPage'));
 const ServicesComparisonPage = React.lazy(() => import('./pages/ServicesComparisonPage'));
+const MicroSaasServices = React.lazy(() => import('./pages/MicroSaasServices'));
+const ComprehensiveServices = React.lazy(() => import('./pages/ComprehensiveServices'));
+const EnhancedServicesShowcase = React.lazy(() => import('./pages/EnhancedServicesShowcase'));
 
 const baseRoutes = [
   { path: '/', element: <Home /> },
@@ -28,6 +31,9 @@ const baseRoutes = [
   { path: '/ai-services', element: <AIServicesPage /> },
   { path: '/cybersecurity-services', element: <CybersecurityServicesPage /> },
   { path: '/services-comparison', element: <ServicesComparisonPage /> },
+  { path: '/micro-saas-services', element: <MicroSaasServices /> },
+  { path: '/comprehensive-services', element: <ComprehensiveServices /> },
+  { path: '/enhanced-services-showcase', element: <EnhancedServicesShowcase /> },
 ];
 
 const App = () => {
@@ -44,6 +50,6 @@ const App = () => {
       </Suspense>
     </div>
   );
-};
+}
 
 export default App;

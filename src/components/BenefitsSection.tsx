@@ -1,4 +1,4 @@
-
+import React from 'react';
 import { GradientHeading } from "./GradientHeading";
 import { FeatureCard } from "./FeatureCard";
 import { Bot, Clock, Globe, TrendingDown, Sparkles, Shield, Zap, Users, CheckCircle, Star, Award, Rocket } from "lucide-react";
