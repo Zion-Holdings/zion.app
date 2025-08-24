@@ -1,8 +1,24 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { SEO } from '@/components/SEO';
 
+interface FormData {
+  firstName: string;
+  lastName: string;
+  company: string;
+  email: string;
+  phone: string;
+  companySize: string;
+  industry: string;
+  projectType: string[];
+  budget: string;
+  timeline: string;
+  description: string;
+  preferredContact: string;
+  urgency: string;
+}
+
 const RequestQuote = () => {
-  const [formData, setFormData] = useState({
+  const [formData, setFormData] = useState<FormData>({
     firstName: '',
     lastName: '',
     company: '',

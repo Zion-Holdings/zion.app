@@ -1,4 +1,3 @@
-import React from 'react';
 import { SEO } from '@/components/SEO';
 import * as Accordion from '@radix-ui/react-accordion';
 

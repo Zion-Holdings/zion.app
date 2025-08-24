@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { SEO } from '@/components/SEO';
 
 const TalentDirectory = () => {

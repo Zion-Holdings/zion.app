@@ -1,65 +1,69 @@
-import React from 'react';
+import * as React from "react"
+import { Check, ChevronsUpDown } from "lucide-react"
 
-interface SelectProps {
-  value?: string;
-  onValueChange?: (value: string) => void;
-  children: React.ReactNode;
+import { cn } from "@/lib/utils"
+import { Button } from "@/components/ui/button"
+
+export interface SelectProps {
+  options: { value: string; label: string }[]
+  placeholder?: string
+  className?: string
+  onSelect?: (value: string) => void
 }
 
-interface SelectTriggerProps {
-  children: React.ReactNode;
-  className?: string;
-}
+export function Select({ options, placeholder = "Select an option", className, onSelect }: SelectProps) {
+  const [open, setOpen] = React.useState(false)
+  const [selectedValue, setSelectedValue] = React.useState<string>("")
 
-interface SelectContentProps {
-  children: React.ReactNode;
-}
+  const handleSelect = (value: string) => {
+    setSelectedValue(value)
+    setOpen(false)
+    onSelect?.(value)
+  }
 
-interface SelectItemProps {
-  value: string;
-  children: React.ReactNode;
-}
+  const selectedOption = options.find(option => option.value === selectedValue)
 
-interface SelectValueProps {
-  placeholder?: string;
-}
-
-export function Select({ value, onValueChange, children }: SelectProps) {
   return (
-    <div className="relative">
-      {children}
+    <div className={cn("relative", className)}>
+      <Button
+        variant="outline"
+        role="combobox"
+        aria-expanded={open}
+        className="w-full justify-between"
+        onClick={() => setOpen(!open)}
+      >
+        {selectedOption ? selectedOption.label : placeholder}
+        <ChevronsUpDown className="ml-2 h-4 w-4 shrink-0 opacity-50" />
+      </Button>
+      {open && (
+        <div className="absolute top-full left-0 right-0 z-50 mt-1 max-h-60 w-full overflow-auto rounded-md border bg-white shadow-lg">
+          {options.map((option) => (
+            <div
+              key={option.value}
+              className="relative flex w-full cursor-pointer select-none items-center rounded-sm py-1.5 pl-8 pr-2 text-sm outline-none hover:bg-accent hover:text-accent-foreground data-[disabled]:pointer-events-none data-[disabled]:opacity-50"
+              onClick={() => handleSelect(option.value)}
+            >
+              <span className="absolute left-2 flex h-3.5 w-3.5 items-center justify-center">
+                {selectedValue === option.value && (
+                  <Check className="h-4 w-4" />
+                )}
+              </span>
+              {option.label}
+            </div>
+          ))}
+        </div>
+      )}
     </div>
-  );
+  )
 }
 
-export function SelectTrigger({ children, className }: SelectTriggerProps) {
-  return (
-    <button className={`flex items-center justify-between w-full px-3 py-2 border border-zion-slate rounded-lg bg-background text-zion-slate ${className}`}>
-      {children}
-    </button>
-  );
+export interface SelectItemProps {
+  value: string
+  children: React.ReactNode
 }
 
-export function SelectContent({ children }: SelectContentProps) {
-  return (
-    <div className="absolute top-full left-0 w-full mt-1 bg-background border border-zion-slate rounded-lg shadow-lg z-50">
-      {children}
-    </div>
-  );
-}
-
-export function SelectItem({ value, children }: SelectItemProps) {
-  return (
-    <div className="px-3 py-2 hover:bg-zion-blue-light cursor-pointer">
-      {children}
-    </div>
-  );
-}
-
-export function SelectValue({ placeholder }: SelectValueProps) {
-  return (
-    <span className="text-zion-slate">
-      {placeholder || 'Select an option'}
-    </span>
-  );
+export function SelectItem({ children }: SelectItemProps) {
+  return <div className="relative flex w-full cursor-pointer select-none items-center rounded-sm py-1.5 pl-8 pr-2 text-sm outline-none hover:bg-accent hover:text-accent-foreground data-[disabled]:pointer-events-none data-[disabled]:opacity-50">
+    {children}
+  </div>
 }

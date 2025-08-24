@@ -1,62 +1,67 @@
-import React from 'react';
+import * as React from "react"
+import { ChevronDown } from "lucide-react"
 
-interface AccordionProps {
-  type?: 'single' | 'multiple';
-  collapsible?: boolean;
-  children: React.ReactNode;
-}
+import { cn } from "@/lib/utils"
 
-interface AccordionItemProps {
-  value: string;
-  children: React.ReactNode;
-}
+const Accordion = React.forwardRef<
+  React.ElementRef<"div">,
+  React.ComponentPropsWithoutRef<"div">
+>(({ className, ...props }, ref) => (
+  <div
+    ref={ref}
+    className={cn("w-full", className)}
+    {...props}
+  />
+))
+Accordion.displayName = "Accordion"
 
-interface AccordionTriggerProps {
-  children: React.ReactNode;
-  className?: string;
-}
+const AccordionItem = React.forwardRef<
+  React.ElementRef<"div">,
+  React.ComponentPropsWithoutRef<"div">
+>(({ className, ...props }, ref) => (
+  <div
+    ref={ref}
+    className={cn("border-b", className)}
+    {...props}
+  />
+))
+AccordionItem.displayName = "AccordionItem"
 
-interface AccordionContentProps {
-  children: React.ReactNode;
-  className?: string;
-}
+const AccordionTrigger = React.forwardRef<
+  React.ElementRef<"button">,
+  React.ComponentPropsWithoutRef<"button"> & {
+    isOpen?: boolean
+  }
+>(({ className, children, isOpen, ...props }, ref) => (
+  <button
+    ref={ref}
+    className={cn(
+      "flex flex-1 items-center justify-between py-4 font-medium transition-all hover:underline [&[data-state=open]>svg]:rotate-180",
+      className
+    )}
+    {...props}
+  >
+    {children}
+    <ChevronDown className="h-4 w-4 shrink-0 transition-transform duration-200" />
+  </button>
+))
+AccordionTrigger.displayName = "AccordionTrigger"
 
-export function Accordion({ type = 'single', collapsible = false, children }: AccordionProps) {
-  return (
-    <div className="w-full">
+const AccordionContent = React.forwardRef<
+  React.ElementRef<"div">,
+  React.ComponentPropsWithoutRef<"div">
+>(({ className, children, ...props }, ref) => (
+  <div
+    ref={ref}
+    className="overflow-hidden text-sm transition-all data-[state=closed]:animate-accordion-up data-[state=open]:animate-accordion-down"
+    {...props}
+  >
+    <div className={cn("pb-4 pt-0", className)}>
       {children}
     </div>
-  );
-}
+  </div>
+))
 
-export function AccordionItem({ value, children }: AccordionItemProps) {
-  const [isOpen, setIsOpen] = React.useState(false);
-  
-  return (
-    <div className="border border-zion-slate rounded-lg mb-2">
-      {React.Children.map(children, (child) => {
-        if (React.isValidElement(child)) {
-          return React.cloneElement(child, { isOpen, setIsOpen } as any);
-        }
-        return child;
-      })}
-    </div>
-  );
-}
+AccordionContent.displayName = "AccordionContent"
 
-export function AccordionTrigger({ children, className }: AccordionTriggerProps) {
-  return (
-    <button className={`w-full px-4 py-3 text-left flex items-center justify-between hover:bg-zion-blue-light transition-colors ${className || ''}`}>
-      {children}
-      <span className="text-zion-cyan">+</span>
-    </button>
-  );
-}
-
-export function AccordionContent({ children, className }: AccordionContentProps) {
-  return (
-    <div className={`px-4 pb-3 ${className || ''}`}>
-      {children}
-    </div>
-  );
-}
+export { Accordion, AccordionItem, AccordionTrigger, AccordionContent }
