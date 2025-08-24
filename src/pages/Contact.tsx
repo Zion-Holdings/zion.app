@@ -115,15 +115,15 @@ export default function Contact() {
   const offices = [
     {
       name: "Headquarters",
-      address: "123 Tech Avenue, San Francisco, CA 94105",
+      address: "364 E Main St STE 1008 Middletown DE 19709",
       phone: "+1 302 464 0950",
-      email: "commercial@ziontechgroup.com"
+      email: "kleber@ziontechgroup.com"
     },
     {
-      name: "East Coast Office",
-      address: "456 Innovation Street, New York, NY 10001",
+      name: "Support Office",
+      address: "364 E Main St STE 1008 Middletown DE 19709",
       phone: "+1 302 464 0950", 
-      email: "commercial@ziontechgroup.com"
+      email: "support@ziontechgroup.com"
     }
   ];
 
