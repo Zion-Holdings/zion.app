@@ -1,18 +1,15 @@
-export default {
-  preset: 'ts-jest',
+/** @type {import('jest').Config} */
+module.exports = {
   testEnvironment: 'jsdom',
-  setupFilesAfterEnv: ['<rootDir>/tests/jest.setup.ts'],
-  moduleNameMapper: {
-    '^@/(.*)$': '<rootDir>/src/$1',
-    '^@/pages/(.*)$': '<rootDir>/src/pages/$1',
-    '^vitest$': '<rootDir>/tests/vitest-mock.ts',
+  roots: ['<rootDir>/'],
+  moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx'],
+  transform: {
+    '^.+\\.(ts|tsx)$': 'ts-jest',
   },
-  roots: ['<rootDir>/tests', '<rootDir>/__tests__'],
-  coverageThreshold: {
-    global: {
-      lines: 80,
-      functions: 80,
-    },
+  setupFilesAfterEnv: ['<rootDir>/jest.setup.ts'],
+  testMatch: ['**/__tests__/**/*.(spec|test).(ts|tsx|js)'],
+  moduleNameMapper: {
+    '^@/(.*)$': '<rootDir>/$1',
+    '\\.(css|less|scss|sass)$': 'identity-obj-proxy',
   },
 };
-

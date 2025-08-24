@@ -1,0 +1,45 @@
+{
+  "timestamp": "2025-08-11T11:17:39.180Z",
+  "totalFilesEdited": 3,
+  "edits": [
+    {
+      "file": "pages/site-health.tsx",
+      "changes": 1
+    },
+    {
+      "file": "pages/main/front/index.tsx",
+      "changes": 5
+    },
+    {
+      "file": "components/Landing.tsx",
+      "changes": 1
+    }
+  ],
+  "rules": [
+    {
+      "from": "https://github.com/Zion-Holdings/zion.app/actions",
+      "to": "/site-health",
+      "reason": "Replace dead GH Actions link with Site Health dashboard"
+    },
+    {
+      "from": "https://github.com/Zion-Holdings/zion.app/tree/main/docs",
+      "to": "/reports/seo",
+      "reason": "Replace non-existent docs with SEO report dashboard"
+    },
+    {
+      "from": "https://github.com/Zion-Holdings/zion.app/blob/main/docs/CHANGELOG_AI.md",
+      "to": "/newsroom",
+      "reason": "Replace missing changelog with Newsroom updates"
+    },
+    {
+      "from": "https://github.com/Zion-Holdings/zion.app/tree/main/automation",
+      "to": "/automation",
+      "reason": "Replace repo folder with in-site automation hub"
+    },
+    {
+      "from": "https://github.com/Zion-Holdings/zion.app",
+      "to": "/",
+      "reason": "Replace repo root with site home"
+    }
+  ]
+}
