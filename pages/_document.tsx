@@ -1,11 +1,13 @@
 import Document, { Html, Head, Main, NextScript } from 'next/document';
 
-export default class MyDocument extends Document {
+class ZionDocument extends Document {
   render() {
     return (
-      <Html>
-        <Head />
-        <body>
+      <Html lang="en">
+        <Head>
+          <meta name="theme-color" content="#000000" />
+        </Head>
+        <body className="bg-white dark:bg-black text-gray-900 dark:text-gray-100">
           <Main />
           <NextScript />
         </body>
@@ -13,3 +15,5 @@ export default class MyDocument extends Document {
     );
   }
 }
+
+export default ZionDocument;

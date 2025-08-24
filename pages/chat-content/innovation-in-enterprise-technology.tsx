@@ -1,1 +1,1 @@
-export default function Page() { return null; }
+export default function ChatInnovationEnterprise() { return <div>Placeholder</div>; }
