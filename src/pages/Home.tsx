@@ -11,6 +11,8 @@ import { QuickAccess } from "@/components/home/QuickAccess";
 import { FeatureCTAs } from "@/components/home/FeatureCTAs";
 import { FeatureHighlights } from "@/components/home/FeatureHighlights";
 import { ITServiceRequestHero } from "@/components/home/ITServiceRequestHero";
+import { FloatingCTA } from "@/components/FloatingCTA";
+import { TestimonialCarousel } from "@/components/TestimonialCarousel";
 
 export default function Home() {
   return (
@@ -32,11 +34,15 @@ export default function Home() {
       
       <FeatureHighlights />
       
+      <TestimonialCarousel />
+      
       <CategoriesSection />
       <BenefitsSection />
       <HowItWorksSection />
       <FeaturedListingsSection />
       <NewsletterSection />
+      
+      <FloatingCTA />
     </div>
   );
 }
