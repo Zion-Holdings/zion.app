@@ -8,7 +8,7 @@ interface Props {
   fallback?: ReactNode;
 }
 
-interface ErrorState {
+interface State {
   hasError: boolean;
   error?: Error;
 }

@@ -1,31 +1,25 @@
 import React from 'react';
 import { Suspense } from 'react';
 import { Routes, Route } from 'react-router-dom';
+import './App.css';
 
+// Simplified imports - only what's needed for expanded services
 const Home = React.lazy(() => import('./pages/Home'));
-const ServicesPage = React.lazy(() => import('./pages/Services'));
-const MicroSaasServicesPage = React.lazy(() => import('./pages/MicroSaasServicesPage'));
-const ComprehensiveServicesPage = React.lazy(() => import('./pages/ComprehensiveServicesPage'));
-const AIServicesShowcase = React.lazy(() => import('./pages/AIServicesShowcase'));
-const EnterpriseSolutionsPage = React.lazy(() => import('./pages/EnterpriseSolutionsPage'));
-const About = React.lazy(() => import('./pages/About'));
-const Contact = React.lazy(() => import('./pages/Contact'));
+const EnhancedServicesPage = React.lazy(() => import('./pages/EnhancedServicesPage'));
+const ExpandedServicesPage = React.lazy(() => import('./pages/ExpandedServicesPage'));
+const ServicesOverviewPage = React.lazy(() => import('./pages/ServicesOverviewPage'));
 
 const baseRoutes = [
   { path: '/', element: <Home /> },
-  { path: '/services', element: <ServicesPage /> },
-  { path: '/micro-saas-services', element: <MicroSaasServicesPage /> },
-  { path: '/comprehensive-services', element: <ComprehensiveServicesPage /> },
-  { path: '/ai-services', element: <AIServicesShowcase /> },
-  { path: '/enterprise-solutions', element: <EnterpriseSolutionsPage /> },
-  { path: '/about', element: <About /> },
-  { path: '/contact', element: <Contact /> },
+  { path: '/services', element: <EnhancedServicesPage /> },
+  { path: '/expanded-services', element: <ExpandedServicesPage /> },
+  { path: '/services-overview', element: <ServicesOverviewPage /> },
 ];
 
 const App = () => {
   return (
-    <div className="min-h-screen bg-zion-blue-dark">
-      <Suspense fallback={<div className="p-4 text-center text-white">Loading...</div>}>
+    <div className="App">
+      <Suspense fallback={<div className="p-4 text-center">Loading...</div>}>
         <Routes>
           {baseRoutes.map(({ path, element }) => (
             <Route key={path} path={path} element={element} />
