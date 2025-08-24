@@ -1,12 +1,17 @@
 import React, { useState } from 'react';
+import { User, Settings, LogOut, ChevronDown } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { useAuth } from '@/hooks/useAuth';
-import { ChevronDown, User, Settings, LogOut } from 'lucide-react';
 
 export const UserMenu: React.FC = () => {
-  const { user, isAuthenticated, logout } = useAuth();
   const [isOpen, setIsOpen] = useState(false);
+  const { user, isAuthenticated, signOut } = useAuth();
+
+  const handleSignOut = async () => {
+    await signOut();
+    setIsOpen(false);
+  };
 
   if (!isAuthenticated) {
     return (
@@ -15,7 +20,7 @@ export const UserMenu: React.FC = () => {
           Sign In
         </Button>
         <Button size="sm">
-          Get Started
+          Sign Up
         </Button>
       </div>
     );
@@ -23,26 +28,25 @@ export const UserMenu: React.FC = () => {
 
   return (
     <div className="relative">
-      <Button
-        variant="ghost"
+      <button
         onClick={() => setIsOpen(!isOpen)}
-        className="flex items-center space-x-2"
+        className="flex items-center space-x-2 p-2 rounded-lg hover:bg-gray-100 transition-colors"
       >
         <Avatar className="w-8 h-8">
-          <AvatarImage src={user?.avatar} />
+          <AvatarImage src="/default-avatar.png" alt={user?.name || 'User'} />
           <AvatarFallback>
-            {user?.name?.charAt(0) || 'U'}
+            <User className="w-4 h-4" />
           </AvatarFallback>
         </Avatar>
-        <span className="hidden md:block">{user?.name}</span>
+        <span className="text-sm font-medium">{user?.name || 'User'}</span>
         <ChevronDown className="w-4 h-4" />
-      </Button>
+      </button>
 
       {isOpen && (
-        <div className="absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg py-1 z-50 border">
-          <div className="px-4 py-2 border-b">
-            <p className="text-sm font-medium text-gray-900">{user?.name}</p>
-            <p className="text-sm text-gray-500">{user?.email}</p>
+        <div className="absolute right-0 mt-2 w-48 bg-white rounded-lg shadow-lg border border-gray-200 py-2 z-50">
+          <div className="px-4 py-2 text-sm text-gray-700 border-b border-gray-200">
+            <div className="font-medium">{user?.name || 'User'}</div>
+            <div className="text-gray-500">{user?.email}</div>
           </div>
           
           <button className="w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 flex items-center space-x-2">
@@ -56,7 +60,7 @@ export const UserMenu: React.FC = () => {
           </button>
           
           <button
-            onClick={logout}
+            onClick={handleSignOut}
             className="w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 flex items-center space-x-2"
           >
             <LogOut className="w-4 h-4" />
