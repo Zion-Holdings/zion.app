@@ -1108,12 +1108,55 @@ export default function ServicesPage() {
   return (
     <div className="space-y-8">
       {/* Header */}
-      <div className="text-center space-y-4">
-        <h1 className="text-4xl font-bold">Revolutionary Technology Services</h1>
-        <p className="text-xl opacity-80 max-w-3xl mx-auto">
+      <div className="text-center space-y-6">
+        <h1 className="text-5xl font-bold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
+          Revolutionary Technology Services
+        </h1>
+        <p className="text-xl opacity-80 max-w-4xl mx-auto">
           Discover our cutting-edge micro SAAS, IT infrastructure, and AI services that are transforming businesses worldwide. 
-          From autonomous enterprise platforms to quantum cybersecurity, we deliver the future of technology today.
+          From autonomous enterprise platforms to quantum cybersecurity, we deliver the future of technology today with unprecedented value and innovation.
         </p>
+        <div className="flex flex-wrap justify-center gap-4 text-sm">
+          <div className="bg-blue-900/20 px-4 py-2 rounded-full border border-blue-500/30">
+            🚀 50+ Revolutionary Services
+          </div>
+          <div className="bg-green-900/20 px-4 py-2 rounded-full border border-green-500/30">
+            💰 Up to 75% Cost Savings
+          </div>
+          <div className="bg-purple-900/20 px-4 py-2 rounded-full border border-purple-500/30">
+            🤖 AI-First Solutions
+          </div>
+          <div className="bg-orange-900/20 px-4 py-2 rounded-full border border-orange-500/30">
+            ⚡ Instant Deployment
+          </div>
+        </div>
+      </div>
+
+      {/* Value Proposition */}
+      <div className="bg-gradient-to-r from-indigo-900/20 via-purple-900/20 to-pink-900/20 rounded-lg p-8 border border-white/10">
+        <h2 className="text-3xl font-semibold mb-6 text-center">Why Choose Zion Tech Group?</h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="text-center space-y-3">
+            <div className="text-4xl">🎯</div>
+            <h3 className="font-semibold">First-to-Market</h3>
+            <p className="text-sm opacity-80">Pioneering solutions that don't exist elsewhere</p>
+          </div>
+          <div className="text-center space-y-3">
+            <div className="text-4xl">💰</div>
+            <h3 className="font-semibold">Massive Savings</h3>
+            <p className="text-sm opacity-80">Up to 75% cost reduction vs. competitors</p>
+          </div>
+          <div className="text-center space-y-3">
+            <div className="text-4xl">⚡</div>
+            <h3 className="font-semibold">Lightning Fast</h3>
+            <p className="text-sm opacity-80">Deploy in weeks, not months or years</p>
+          </div>
+          <div className="text-center space-y-3">
+            <div className="text-4xl">🔒</div>
+            <h3 className="font-semibold">Enterprise Ready</h3>
+            <p className="text-sm opacity-80">SOC2, GDPR, and enterprise compliance</p>
+          </div>
+        </div>
       </div>
 
       {/* Contact Information */}
