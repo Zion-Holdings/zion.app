@@ -1,1 +1,5 @@
+<<<<<<< HEAD
 {"/_app":"pages/_app.js","/_error":"pages/_error.js","/_document":"pages/_document.js","/about":"pages/about.html","/contact":"pages/contact.html","/":"pages/index.html","/404":"pages/404.html"}
+=======
+{"/_app":"pages/_app.js","/about":"pages/about.html","/apple-touch-icon.png":"pages/apple-touch-icon.png.html","/_error":"pages/_error.js","/_document":"pages/_document.js","/careers":"pages/careers.html","/contact":"pages/contact.html","/favicon.ico":"pages/favicon.ico.html","/privacy":"pages/privacy.html","/reports/updates/update-2025-08-15-0457":"pages/reports/updates/update-2025-08-15-0457.html","/reports/updates/update-2025-08-15-0507":"pages/reports/updates/update-2025-08-15-0507.html","/reports/updates/update-2025-08-15-0508":"pages/reports/updates/update-2025-08-15-0508.html","/services":"pages/services.html","/www.google-analytics.com":"pages/www.google-analytics.com.html","/":"pages/index.html","/404":"pages/404.html"}
+>>>>>>> 6d7be8fce1d5e66d749ea8dd439e0663bfd83322

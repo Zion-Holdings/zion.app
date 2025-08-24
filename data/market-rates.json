@@ -1,0 +1,23 @@
+{
+  "baselines": {
+    "frontend": 45,
+    "backend": 55,
+    "devops": 60,
+    "data": 65,
+    "mobile": 55,
+    "design": 40
+  },
+  "locationIndex": {
+    "usa": 1.15,
+    "canada": 1.1,
+    "europe": 1.05,
+    "brazil": 0.85,
+    "india": 0.75,
+    "nigeria": 0.75,
+    "philippines": 0.7,
+    "singapore": 1.2,
+    "australia": 1.15,
+    "default": 1
+  },
+  "updatedAt": "2025-08-24T07:48:19.800Z"
+}

@@ -1,0 +1,12 @@
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "services",
+  "description": "import React from 'react'; import Head from 'next/head'; import Link from 'next/link'; import { Brain, Cloud, Code, Shield, Globe, Zap, Data",
+  "url": "https://zion.app/services",
+  "isPartOf": {
+    "@type": "WebSite",
+    "name": "Zion",
+    "url": "https://zion.app"
+  }
+}

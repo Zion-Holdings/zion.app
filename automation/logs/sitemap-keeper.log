@@ -6,3 +6,24 @@ npm error To see a list of scripts, run:
 npm error   npm run
 npm error A complete log of this run can be found in: /home/runner/.npm/_logs/2025-08-24T00_59_03_652Z-debug-0.log
 [2025-08-24T00:59:03.728Z] ❌ sitemap generation failed: Command failed: npm run sitemap
+[2025-08-24T07:51:58.617Z] 🚀 Sitemap keeper starting
+[2025-08-24T07:51:58.623Z] ▶ npm run sitemap
+
+> bolt.new.zion.app@0.1.0 sitemap
+> node scripts/generate-sitemap.mjs
+
+node:internal/modules/cjs/loader:1215
+  throw err;
+  ^
+
+Error: Cannot find module '/home/runner/work/zion.app/zion.app/scripts/generate-sitemap.mjs'
+    at Module._resolveFilename (node:internal/modules/cjs/loader:1212:15)
+    at Module._load (node:internal/modules/cjs/loader:1043:27)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:164:12)
+    at node:internal/main/run_main_module:28:49 {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: []
+}
+
+Node.js v20.19.4
+[2025-08-24T07:51:58.782Z] ❌ sitemap generation failed: Command failed: npm run sitemap

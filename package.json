@@ -17,6 +17,7 @@
     "es:index": "node scripts/index-elasticsearch.js"
   },
   "dependencies": {
+<<<<<<< HEAD
     "@hello-pangea/dnd": "^18.0.1",
     "@hookform/resolvers": "^3.3.4",
     "@radix-ui/react-accordion": "^1.1.2",
@@ -124,5 +125,24 @@
   },
   "resolutions": {
     "rimraf": "^5.0.5"
+=======
+    "axios": "^1.6.0",
+    "framer-motion": "^10.16.4",
+    "lucide-react": "^0.292.0",
+    "next": "^13.5.6",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.8.0",
+    "@types/react": "^18.2.0",
+    "@types/react-dom": "^18.2.0",
+    "autoprefixer": "^10.4.21",
+    "eslint": "^8.51.0",
+    "eslint-config-next": "^13.5.6",
+    "postcss": "^8.4.31",
+    "tailwindcss": "^3.3.5",
+    "typescript": "^5.2.2"
+>>>>>>> 6d7be8fce1d5e66d749ea8dd439e0663bfd83322
   }
 }

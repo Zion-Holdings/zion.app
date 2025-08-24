@@ -5,12 +5,18 @@
   "devFiles": [],
   "ampDevFiles": [],
   "lowPriorityFiles": [
+<<<<<<< HEAD
     "static/QnRHg9L8HnCJ6mXoevTYT/_buildManifest.js",
     "static/QnRHg9L8HnCJ6mXoevTYT/_ssgManifest.js"
+=======
+    "static/JyaR-mjTKZKKKe87RPGyJ/_buildManifest.js",
+    "static/JyaR-mjTKZKKKe87RPGyJ/_ssgManifest.js"
+>>>>>>> 6d7be8fce1d5e66d749ea8dd439e0663bfd83322
   ],
   "rootMainFiles": [],
   "pages": {
     "/": [
+<<<<<<< HEAD
       "static/chunks/webpack-7d45971437c161ca.js",
       "static/chunks/framework-8577918a174de4bc.js",
       "static/chunks/main-d93e525c3c0cd2d4.js",
@@ -52,6 +58,102 @@
       "static/chunks/323-fa803c30615e5c1d.js",
       "static/chunks/121-5246b1f2405ccd50.js",
       "static/chunks/pages/contact-f5ff9399d14f45c1.js"
+=======
+      "static/chunks/webpack-fd8027ecb5121007.js",
+      "static/chunks/framework-0c7baedefba6b077.js",
+      "static/chunks/main-61bdcb34eab15593.js",
+      "static/chunks/pages/index-b16d5e6b06ae09d7.js"
+    ],
+    "/_app": [
+      "static/chunks/webpack-fd8027ecb5121007.js",
+      "static/chunks/framework-0c7baedefba6b077.js",
+      "static/chunks/main-61bdcb34eab15593.js",
+      "static/css/d62bdf37e5e4f586.css",
+      "static/chunks/pages/_app-d9d3615df171fa2b.js"
+    ],
+    "/_error": [
+      "static/chunks/webpack-fd8027ecb5121007.js",
+      "static/chunks/framework-0c7baedefba6b077.js",
+      "static/chunks/main-61bdcb34eab15593.js",
+      "static/chunks/pages/_error-ee5b5fb91d29d86f.js"
+    ],
+    "/about": [
+      "static/chunks/webpack-fd8027ecb5121007.js",
+      "static/chunks/framework-0c7baedefba6b077.js",
+      "static/chunks/main-61bdcb34eab15593.js",
+      "static/chunks/996-f63e9faf058fa8be.js",
+      "static/chunks/pages/about-37ed9fa59de32863.js"
+    ],
+    "/apple-touch-icon.png": [
+      "static/chunks/webpack-fd8027ecb5121007.js",
+      "static/chunks/framework-0c7baedefba6b077.js",
+      "static/chunks/main-61bdcb34eab15593.js",
+      "static/chunks/996-f63e9faf058fa8be.js",
+      "static/chunks/pages/apple-touch-icon.png-1803d01ac13d633c.js"
+    ],
+    "/careers": [
+      "static/chunks/webpack-fd8027ecb5121007.js",
+      "static/chunks/framework-0c7baedefba6b077.js",
+      "static/chunks/main-61bdcb34eab15593.js",
+      "static/chunks/996-f63e9faf058fa8be.js",
+      "static/chunks/pages/careers-8f33bcd6e028a388.js"
+    ],
+    "/contact": [
+      "static/chunks/webpack-fd8027ecb5121007.js",
+      "static/chunks/framework-0c7baedefba6b077.js",
+      "static/chunks/main-61bdcb34eab15593.js",
+      "static/chunks/996-f63e9faf058fa8be.js",
+      "static/chunks/pages/contact-8873b141dead3701.js"
+    ],
+    "/favicon.ico": [
+      "static/chunks/webpack-fd8027ecb5121007.js",
+      "static/chunks/framework-0c7baedefba6b077.js",
+      "static/chunks/main-61bdcb34eab15593.js",
+      "static/chunks/996-f63e9faf058fa8be.js",
+      "static/chunks/pages/favicon.ico-d309652a40e71b28.js"
+    ],
+    "/privacy": [
+      "static/chunks/webpack-fd8027ecb5121007.js",
+      "static/chunks/framework-0c7baedefba6b077.js",
+      "static/chunks/main-61bdcb34eab15593.js",
+      "static/chunks/996-f63e9faf058fa8be.js",
+      "static/chunks/pages/privacy-e023e33aae2817d5.js"
+    ],
+    "/reports/updates/update-2025-08-15-0457": [
+      "static/chunks/webpack-fd8027ecb5121007.js",
+      "static/chunks/framework-0c7baedefba6b077.js",
+      "static/chunks/main-61bdcb34eab15593.js",
+      "static/chunks/996-f63e9faf058fa8be.js",
+      "static/chunks/pages/reports/updates/update-2025-08-15-0457-d32b4ed9c38f0e94.js"
+    ],
+    "/reports/updates/update-2025-08-15-0507": [
+      "static/chunks/webpack-fd8027ecb5121007.js",
+      "static/chunks/framework-0c7baedefba6b077.js",
+      "static/chunks/main-61bdcb34eab15593.js",
+      "static/chunks/996-f63e9faf058fa8be.js",
+      "static/chunks/pages/reports/updates/update-2025-08-15-0507-d7cd425432646c88.js"
+    ],
+    "/reports/updates/update-2025-08-15-0508": [
+      "static/chunks/webpack-fd8027ecb5121007.js",
+      "static/chunks/framework-0c7baedefba6b077.js",
+      "static/chunks/main-61bdcb34eab15593.js",
+      "static/chunks/996-f63e9faf058fa8be.js",
+      "static/chunks/pages/reports/updates/update-2025-08-15-0508-67c388374bdcfec6.js"
+    ],
+    "/services": [
+      "static/chunks/webpack-fd8027ecb5121007.js",
+      "static/chunks/framework-0c7baedefba6b077.js",
+      "static/chunks/main-61bdcb34eab15593.js",
+      "static/chunks/996-f63e9faf058fa8be.js",
+      "static/chunks/pages/services-01b58a599e903b4b.js"
+    ],
+    "/www.google-analytics.com": [
+      "static/chunks/webpack-fd8027ecb5121007.js",
+      "static/chunks/framework-0c7baedefba6b077.js",
+      "static/chunks/main-61bdcb34eab15593.js",
+      "static/chunks/996-f63e9faf058fa8be.js",
+      "static/chunks/pages/www.google-analytics.com-d07cc4dbd4cd262a.js"
+>>>>>>> 6d7be8fce1d5e66d749ea8dd439e0663bfd83322
     ]
   },
   "ampFirstPages": []

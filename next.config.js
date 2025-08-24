@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 const path = require('path');
 
 let withSentryConfig = (cfg) => cfg;
@@ -18,14 +19,20 @@ const baseConfig = {
     NEXT_PUBLIC_APP_URL: process.env.NEXT_PUBLIC_APP_URL || 'http://localhost:3000',
   },
 
+=======
+/** @type {import('next').NextConfig} */
+const nextConfig = {
+  reactStrictMode: true,
+  swcMinify: true,
+>>>>>>> 6d7be8fce1d5e66d749ea8dd439e0663bfd83322
   images: {
     domains: ["localhost"],
     unoptimized: true,
   },
-
   compiler: {
     removeConsole: process.env.NODE_ENV === "production",
   },
+<<<<<<< HEAD
 
   webpack: (config, { dev, isServer }) => {
     // Simple webpack configuration
@@ -41,6 +48,8 @@ const baseConfig = {
 
     return config;
   },
+=======
+>>>>>>> 6d7be8fce1d5e66d749ea8dd439e0663bfd83322
 };
 
 module.exports = withSentryConfig(baseConfig);

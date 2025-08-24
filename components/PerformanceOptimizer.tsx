@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import React, { useEffect, useState, useCallback } from 'react';
 import { motion } from 'framer-motion';
 import { Zap, Clock, TrendingUp, Activity, Gauge, Cpu, Database, Network } from 'lucide-react';
@@ -222,15 +223,48 @@ const PerformanceOptimizer: React.FC<PerformanceOptimizerProps> = ({
   }, [measurePerformance]);
 
   // Intersection Observer for lazy loading
+=======
+import React, { useEffect, useRef, useState } from 'react';
+
+interface PerformanceOptimizerProps {
+  children: React.ReactNode;
+  threshold?: number;
+  rootMargin?: string;
+  className?: string;
+  animation?: 'fade-in' | 'slide-up' | 'scale-in' | 'none';
+  delay?: number;
+}
+
+const PerformanceOptimizer: React.FC<PerformanceOptimizerProps> = ({
+  children,
+  threshold = 0.1,
+  rootMargin = '0px',
+  className = '',
+  animation = 'fade-in',
+  delay = 0
+}) => {
+  const [isVisible, setIsVisible] = useState(false);
+  const [hasAnimated, setHasAnimated] = useState(false);
+  const ref = useRef<HTMLDivElement>(null);
+
+>>>>>>> 6d7be8fce1d5e66d749ea8dd439e0663bfd83322
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
         const entry = entries[0];
+<<<<<<< HEAD
         if (entry && entry.isIntersecting && !hasIntersected) {
           setIsVisible(true);
           setHasIntersected(true);
           // Disconnect observer after first intersection
           observer.disconnect();
+=======
+        if (entry && entry.isIntersecting && !hasAnimated) {
+          setTimeout(() => {
+            setIsVisible(true);
+            setHasAnimated(true);
+          }, delay);
+>>>>>>> 6d7be8fce1d5e66d749ea8dd439e0663bfd83322
         }
       },
       {
@@ -239,6 +273,7 @@ const PerformanceOptimizer: React.FC<PerformanceOptimizerProps> = ({
       }
     );
 
+<<<<<<< HEAD
     const element = document.getElementById('performance-optimizer');
     if (element) {
       observer.observe(element);
@@ -415,10 +450,61 @@ const PerformanceOptimizer: React.FC<PerformanceOptimizerProps> = ({
           <li>• Enable gzip compression</li>
         </ul>
       </div>
+=======
+    const currentRef = ref.current;
+    if (currentRef) {
+      observer.observe(currentRef);
+    }
+
+    return () => {
+      if (currentRef) {
+        observer.unobserve(currentRef);
+      }
+    };
+  }, [threshold, rootMargin, delay, hasAnimated]);
+
+  const getAnimationClasses = () => {
+    if (animation === 'none') return '';
+    
+    const baseClasses = 'transition-all duration-700 ease-out';
+    
+    if (!isVisible) {
+      switch (animation) {
+        case 'fade-in':
+          return `${baseClasses} opacity-0`;
+        case 'slide-up':
+          return `${baseClasses} opacity-0 transform translate-y-8`;
+        case 'scale-in':
+          return `${baseClasses} opacity-0 transform scale-95`;
+        default:
+          return baseClasses;
+      }
+    }
+    
+    switch (animation) {
+      case 'fade-in':
+        return `${baseClasses} opacity-100`;
+      case 'slide-up':
+        return `${baseClasses} opacity-100 transform translate-y-0`;
+      case 'scale-in':
+        return `${baseClasses} opacity-100 transform scale-100`;
+      default:
+        return baseClasses;
+    }
+  };
+
+  return (
+    <div
+      ref={ref}
+      className={`${getAnimationClasses()} ${className}`}
+    >
+      {children}
+>>>>>>> 6d7be8fce1d5e66d749ea8dd439e0663bfd83322
     </div>
   );
 };
 
+<<<<<<< HEAD
 // Lazy loading wrapper for images
 export function LazyImage({ 
   src, 
@@ -594,3 +680,6 @@ export function VirtualList<T>({
 }
 
 export default PerformanceOptimizer;
+=======
+export default PerformanceOptimizer;
+>>>>>>> 6d7be8fce1d5e66d749ea8dd439e0663bfd83322
