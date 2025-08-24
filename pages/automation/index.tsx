@@ -12,11 +12,6 @@ export default function AutomationHub() {
         <p className="text-white/70 mb-8">Discover our autonomous, self-healing systems that keep the codebase evergreen. Powered by scheduled cloud functions — no GitHub Actions required.</p>
         <ul className="space-y-4">
           <li className="rounded-lg bg-white/5 border border-white/10 p-5">
-            <h2 className="text-xl font-bold">Meta Accelerator</h2>
-            <p className="text-white/70">Refreshes docs, README, knowledge graph, and TODOs every 2 minutes; commits to main.</p>
-            <a className="text-cyan-300 underline" href="/.netlify/functions/meta-accelerator" target="_blank" rel="noopener">Trigger / View</a>
-          </li>
-          <li className="rounded-lg bg-white/5 border border-white/10 p-5">
             <h2 className="text-xl font-bold">Homepage Updates</h2>
             <p className="text-white/70">Keeps the homepage fresh and the sitemap up to date.</p>
             <a className="text-cyan-300 underline" href="/.netlify/functions/schedule-homepage" target="_blank" rel="noopener">Trigger / View</a>
@@ -72,21 +67,19 @@ export default function AutomationHub() {
             <a className="text-cyan-300 underline" href="/.netlify/functions/hyper-front-index-accelerator" target="_blank" rel="noopener">Trigger / View</a>
           </li>
           <li className="rounded-lg bg-white/5 border border-white/10 p-5">
-            <h2 className="text-xl font-bold">Innovation Lab</h2>
-            <p className="text-white/70">Invents, curates, and promotes fresh ideas across the site.</p>
-            <a className="text-cyan-300 underline" href="/.netlify/functions/innovation-lab" target="_blank" rel="noopener">Trigger / View</a>
+            <h2 className="text-xl font-bold">Dependencies Guardian</h2>
+            <p className="text-white/70">Automates dependency upgrades and syncs to main.</p>
+            <a className="text-cyan-300 underline" href="/.netlify/functions/dependencies-guardian" target="_blank" rel="noopener">Trigger / View</a>
           </li>
-
           <li className="rounded-lg bg-white/5 border border-white/10 p-5">
-            <h2 className="text-xl font-bold">Auto Scheduler</h2>
-            <p className="text-white/70">Smart time-based runner that chooses and executes the best tasks.</p>
-            <a className="text-cyan-300 underline" href="/.netlify/functions/auto-scheduler" target="_blank" rel="noopener">Trigger / View</a>
+            <h2 className="text-xl font-bold">AI Innovator</h2>
+            <p className="text-white/70">Researches AI trends, updates newsroom, graphs, and commits.</p>
+            <a className="text-cyan-300 underline" href="/.netlify/functions/ai-innovator" target="_blank" rel="noopener">Trigger / View</a>
           </li>
-
           <li className="rounded-lg bg-white/5 border border-white/10 p-5">
-            <h2 className="text-xl font-bold">Broken Image Scanner</h2>
-            <p className="text-white/70">Finds broken images, optimizes assets, and syncs fixes.</p>
-            <a className="text-cyan-300 underline" href="/.netlify/functions/broken-image-scanner" target="_blank" rel="noopener">Trigger / View</a>
+            <h2 className="text-xl font-bold">Self‑Healing Guardian</h2>
+            <p className="text-white/70">Scans for issues, auto‑fixes, heals deployments, and pushes.</p>
+            <a className="text-cyan-300 underline" href="/.netlify/functions/self-healing-guardian" target="_blank" rel="noopener">Trigger / View</a>
           </li>
         </ul>
       </main>
