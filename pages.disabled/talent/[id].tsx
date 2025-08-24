@@ -9,7 +9,7 @@ interface TalentProfileWithSocial extends TalentProfileType {
 }
 
 const TalentProfilePage: React.FC = () => {
-  const { id } = useParams() as { id?: string };
+  const { id } = useParams();
   const [profile, setProfile] = useState<TalentProfileWithSocial | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
@@ -42,7 +42,7 @@ const TalentProfilePage: React.FC = () => {
   }, [id]);
 
   if (loading) return <ProfileLoadingState />;
-  if (error || !profile) return <ProfileErrorState error={error} />;
+  if (error || !profile) return <ProfileErrorState error={error || 'Profile not found'} />;
 
   return (
     <main className="min-h-screen bg-zion-blue py-8 text-white">
