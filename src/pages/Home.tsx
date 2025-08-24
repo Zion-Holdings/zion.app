@@ -12,6 +12,7 @@ import { FeatureCTAs } from "@/components/home/FeatureCTAs";
 import { FeatureHighlights } from "@/components/home/FeatureHighlights";
 import { ITServiceRequestHero } from "@/components/home/ITServiceRequestHero";
 import { ServicesOverview } from "@/components/home/ServicesOverview";
+import { MicroSaasShowcase } from "@/components/home/MicroSaasShowcase";
 
 export default function Home() {
   return (
@@ -31,9 +32,11 @@ export default function Home() {
       
       <FeatureCTAs />
       
-      <FeatureHighlights />
+      <MicroSaasShowcase />
       
       <ServicesOverview />
+      
+      <FeatureHighlights />
       
       <CategoriesSection />
       <BenefitsSection />
@@ -41,7 +44,5 @@ export default function Home() {
       <FeaturedListingsSection />
       <NewsletterSection />
     </div>
-  );
-}
   );
 }
