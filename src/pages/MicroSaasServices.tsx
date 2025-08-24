@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import Header from '@/components/Header';
+import React, { useState, useMemo } from 'react';
+import { Header } from '@/components/Header';
 import { SEO } from '@/components/SEO';
 import { MICRO_SAAS_SERVICES, MicroSaasService, getServiceByCategory, getServiceBySubcategory } from '@/data/microSaasServices';
 import { Button } from '@/components/ui/button';

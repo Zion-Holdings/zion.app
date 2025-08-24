@@ -13,11 +13,13 @@ interface SelectTriggerProps {
 
 interface SelectContentProps {
   children: React.ReactNode;
+  className?: string;
 }
 
 interface SelectItemProps {
   value: string;
   children: React.ReactNode;
+  className?: string;
 }
 
 interface SelectValueProps {
@@ -40,17 +42,17 @@ export function SelectTrigger({ children, className }: SelectTriggerProps) {
   );
 }
 
-export function SelectContent({ children }: SelectContentProps) {
+export function SelectContent({ children, className }: SelectContentProps) {
   return (
-    <div className="absolute top-full left-0 w-full mt-1 bg-background border border-zion-slate rounded-lg shadow-lg z-50">
+    <div className={`absolute top-full left-0 w-full mt-1 bg-background border border-zion-slate rounded-lg shadow-lg z-50 ${className}`}>
       {children}
     </div>
   );
 }
 
-export function SelectItem({ value, children }: SelectItemProps) {
+export function SelectItem({ value, children, className }: SelectItemProps) {
   return (
-    <div className="px-3 py-2 hover:bg-zion-blue-light cursor-pointer">
+    <div className={`px-3 py-2 hover:bg-zion-blue-light cursor-pointer ${className}`}>
       {children}
     </div>
   );
