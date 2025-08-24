@@ -59,20 +59,27 @@ export function CategoriesSection({ showTitle = true }: CategoriesSectionProps) 
         )}
         
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {categories.map((category) => (
+          {categories.map((category, index) => (
             <Link 
               key={category.title} 
               to={category.link} 
               className="group block"
+              aria-label={`Explore ${category.title} services`}
             >
-              <div className="rounded-lg overflow-hidden h-full border border-zion-blue-light bg-zion-blue-dark p-6 transition-all duration-300 hover:border-zion-purple/50 hover:translate-y-[-5px]">
-                <div className={`rounded-full w-16 h-16 bg-gradient-to-br ${category.color} flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300`}>
+              <div 
+                className="rounded-lg overflow-hidden h-full border border-zion-blue-light bg-zion-blue-dark p-6 transition-all duration-300 hover:border-zion-purple/50 hover:translate-y-[-5px] hover:shadow-2xl"
+                style={{ animationDelay: `${index * 100}ms` }}
+              >
+                <div className={`rounded-full w-16 h-16 bg-gradient-to-br ${category.color} flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg`}>
                   <div className="text-white">
                     {category.icon}
                   </div>
                 </div>
-                <h3 className="text-white text-xl font-bold mb-2">{category.title}</h3>
-                <p className="text-zion-slate-light">{category.description}</p>
+                <h3 className="text-white text-xl font-bold mb-2 group-hover:text-zion-cyan transition-colors duration-300">{category.title}</h3>
+                <p className="text-zion-slate-light group-hover:text-zion-slate-light/80 transition-colors duration-300">{category.description}</p>
+                <div className="mt-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <div className="w-full h-1 bg-gradient-to-r from-zion-purple to-zion-cyan rounded-full"></div>
+                </div>
               </div>
             </Link>
           ))}

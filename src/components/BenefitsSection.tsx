@@ -39,13 +39,18 @@ export function BenefitsSection() {
         
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
           {benefits.map((benefit, index) => (
-            <FeatureCard
+            <div
               key={index}
-              title={benefit.title}
-              description={benefit.description}
-              icon={benefit.icon}
-              className="bg-zion-blue hover:bg-zion-blue-dark transition-all duration-300"
-            />
+              className="animate-fade-in-up"
+              style={{ animationDelay: `${index * 200}ms` }}
+            >
+              <FeatureCard
+                title={benefit.title}
+                description={benefit.description}
+                icon={benefit.icon}
+                className="bg-zion-blue hover:bg-zion-blue-dark transition-all duration-300 hover:scale-105 hover:shadow-xl transform"
+              />
+            </div>
           ))}
         </div>
       </div>
