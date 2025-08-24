@@ -284,13 +284,13 @@ export default function ExpandedServicesPage() {
                       <div className="flex items-center gap-1">
                         <Star className="h-4 w-4 text-yellow-400 fill-current" />
                         <span className="text-sm">{service.rating}</span>
-                        <span className="text-xs text-zion-cyan-light">({service.reviewCount} reviews)</span>
+                        <span className="text-xs text-zion-cyan-light">({service.review_count} reviews)</span>
                       </div>
-                      {service.aiScore && (
-                        <Badge className="bg-zion-purple/20 text-zion-purple border-zion-purple/30">
-                          AI Score: {service.aiScore}
-                        </Badge>
-                      )}
+                                              {service.ai_score && (
+                          <Badge className="bg-zion-purple/20 text-zion-purple border-zion-purple/30">
+                            AI Score: {service.ai_score}
+                          </Badge>
+                        )}
                     </div>
 
                     {/* Action Buttons */}

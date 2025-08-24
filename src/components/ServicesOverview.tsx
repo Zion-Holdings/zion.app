@@ -113,7 +113,7 @@ export function ServicesOverview() {
                     <div className="flex items-center gap-1 text-zion-cyan-light">
                       <Star className="h-3 w-3" />
                       <span>{service.rating}</span>
-                      <span className="text-xs">({service.reviewCount})</span>
+                      <span className="text-xs">({service.review_count})</span>
                     </div>
                     <span className="font-semibold text-zion-cyan">
                       ${service.price?.toLocaleString()}
