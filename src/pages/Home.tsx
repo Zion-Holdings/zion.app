@@ -2,7 +2,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { ArrowRight, Star, Users, Award, Globe, Zap, Brain, Shield, Cloud, Code, ChartBar, Rocket, CheckCircle, Play } from 'lucide-react';
+import { ArrowRight, Star, Users, Award, Globe, Zap, Brain, Shield, Cloud, Code, BarChart3, Rocket, CheckCircle, Play } from 'lucide-react';
 
 export function Home() {
   const featuredServices = [
@@ -92,15 +92,6 @@ export function Home() {
   ];
 
   return (
-<<<<<<< HEAD
-    <div className="min-h-screen bg-background">
-      <SEO 
-        title="Zion - The Tech & AI Marketplace" 
-        description="Discover top AI and tech talent, services, and equipment in one place."
-        keywords="AI, technology, marketplace, services, talent"
-        canonical="https://ziontechgroup.com/"
-      />
-=======
     <div className="min-h-screen bg-gradient-to-br from-zion-blue-dark via-zion-blue to-zion-blue-light text-white">
       {/* Animated Background Elements */}
       <div className="fixed inset-0 overflow-hidden pointer-events-none">
@@ -108,7 +99,6 @@ export function Home() {
         <div className="absolute top-40 right-20 w-96 h-96 bg-zion-purple/10 rounded-full blur-3xl animate-float" style={{ animationDelay: '2s' }}></div>
         <div className="absolute bottom-20 left-1/3 w-80 h-80 bg-zion-cyan/5 rounded-full blur-3xl animate-float" style={{ animationDelay: '4s' }}></div>
       </div>
->>>>>>> cursor/enhance-app-with-new-services-and-futuristic-design-8cc4
 
       <div className="relative z-10">
         {/* Hero Section */}
@@ -177,11 +167,11 @@ export function Home() {
               viewport={{ once: true }}
               className="text-center mb-16"
             >
-              <h2 className="text-4xl md:text-5xl font-bold mb-6 text-white">
-                Our Featured Services
+              <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-zion-cyan to-zion-purple bg-clip-text text-transparent">
+                Featured Services
               </h2>
               <p className="text-xl text-zion-slate-light max-w-3xl mx-auto">
-                Discover our comprehensive suite of cutting-edge technology solutions designed to transform your business.
+                Discover our cutting-edge solutions that are revolutionizing industries worldwide
               </p>
             </motion.div>
 
@@ -195,49 +185,29 @@ export function Home() {
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.6, delay: index * 0.1 }}
                     viewport={{ once: true }}
-                    className="group bg-zion-blue-light/10 backdrop-blur-md border border-zion-purple/20 rounded-2xl p-6 hover:border-zion-cyan/50 hover:bg-zion-blue-light/20 transition-all duration-300 hover:shadow-2xl hover:shadow-zion-cyan/20"
+                    whileHover={{ y: -10 }}
+                    className="bg-zion-blue-dark/50 backdrop-blur-sm border border-zion-blue-light/20 rounded-xl p-6 hover:border-zion-cyan/40 transition-all duration-300 group"
                   >
-                    <div className={`w-16 h-16 bg-gradient-to-br ${service.color} rounded-2xl mb-4 flex items-center justify-center text-white group-hover:scale-110 transition-transform duration-300`}>
-                      <IconComponent className="w-8 h-8" />
+                    <div className={`w-16 h-16 bg-gradient-to-r ${service.color} rounded-lg flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300`}>
+                      <IconComponent className="w-8 h-8 text-white" />
                     </div>
-                    <h3 className="text-xl font-semibold text-white mb-3 group-hover:text-zion-cyan transition-colors">
-                      {service.title}
-                    </h3>
-                    <p className="text-zion-slate-light mb-4 text-sm">
-                      {service.description}
-                    </p>
-                    <Link
+                    <h3 className="text-xl font-semibold mb-3 text-white">{service.title}</h3>
+                    <p className="text-zion-slate-light mb-4">{service.description}</p>
+                    <Link 
                       to={service.link}
-                      className="inline-flex items-center gap-2 text-zion-cyan hover:text-white transition-colors text-sm font-medium"
+                      className="inline-flex items-center text-zion-cyan hover:text-zion-cyan-light transition-colors group-hover:translate-x-1 transition-transform duration-300"
                     >
-                      Learn More
-                      <ArrowRight className="w-4 h-4" />
+                      Learn More <ArrowRight className="w-4 h-4 ml-2" />
                     </Link>
                   </motion.div>
                 );
               })}
             </div>
-
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.4 }}
-              viewport={{ once: true }}
-              className="text-center mt-12"
-            >
-              <Link
-                to="/services"
-                className="inline-flex items-center gap-2 px-8 py-4 border border-zion-cyan text-zion-cyan rounded-lg text-lg font-semibold hover:bg-zion-cyan hover:text-white transition-all duration-300"
-              >
-                View All Services
-                <ArrowRight className="w-5 h-5" />
-              </Link>
-            </motion.div>
           </div>
         </section>
 
-        {/* Features Section */}
-        <section className="py-24 px-4 sm:px-6 lg:px-8 bg-zion-blue-dark/50">
+        {/* Why Choose Us */}
+        <section className="py-24 px-4 sm:px-6 lg:px-8 bg-zion-blue-dark/30">
           <div className="max-w-7xl mx-auto">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -246,33 +216,31 @@ export function Home() {
               viewport={{ once: true }}
               className="text-center mb-16"
             >
-              <h2 className="text-4xl md:text-5xl font-bold mb-6 text-white">
+              <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-zion-cyan to-zion-purple bg-clip-text text-transparent">
                 Why Choose Zion Tech Group?
               </h2>
               <p className="text-xl text-zion-slate-light max-w-3xl mx-auto">
-                We combine cutting-edge technology with proven expertise to deliver solutions that drive real business value.
+                We combine cutting-edge technology with proven expertise to deliver exceptional results
               </p>
             </motion.div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
               {features.map((feature, index) => {
                 const IconComponent = feature.icon;
                 return (
                   <motion.div
                     key={feature.title}
-                    initial={{ opacity: 0, x: index % 2 === 0 ? -20 : 20 }}
-                    whileInView={{ opacity: 1, x: 0 }}
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.6, delay: index * 0.1 }}
                     viewport={{ once: true }}
-                    className="flex items-start gap-4"
+                    className="text-center"
                   >
-                    <div className={`p-3 bg-zion-purple/20 rounded-lg ${feature.color}`}>
-                      <IconComponent className="w-8 h-8" />
+                    <div className={`w-20 h-20 bg-zion-blue-dark/50 border border-zion-blue-light/20 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:border-zion-cyan/40 transition-all duration-300`}>
+                      <IconComponent className={`w-10 h-10 ${feature.color}`} />
                     </div>
-                    <div>
-                      <h3 className="text-xl font-semibold text-white mb-2">{feature.title}</h3>
-                      <p className="text-zion-slate-light">{feature.description}</p>
-                    </div>
+                    <h3 className="text-xl font-semibold mb-3 text-white">{feature.title}</h3>
+                    <p className="text-zion-slate-light">{feature.description}</p>
                   </motion.div>
                 );
               })}
@@ -280,7 +248,7 @@ export function Home() {
           </div>
         </section>
 
-        {/* Testimonials Section */}
+        {/* Testimonials */}
         <section className="py-24 px-4 sm:px-6 lg:px-8">
           <div className="max-w-7xl mx-auto">
             <motion.div
@@ -290,11 +258,11 @@ export function Home() {
               viewport={{ once: true }}
               className="text-center mb-16"
             >
-              <h2 className="text-4xl md:text-5xl font-bold mb-6 text-white">
+              <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-zion-cyan to-zion-purple bg-clip-text text-transparent">
                 What Our Clients Say
               </h2>
               <p className="text-xl text-zion-slate-light max-w-3xl mx-auto">
-                Don't just take our word for it. Here's what our clients have to say about working with us.
+                Don't just take our word for it - hear from the businesses we've transformed
               </p>
             </motion.div>
 
@@ -306,9 +274,9 @@ export function Home() {
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: index * 0.1 }}
                   viewport={{ once: true }}
-                  className="bg-zion-blue-light/10 backdrop-blur-md border border-zion-purple/20 rounded-2xl p-6 hover:border-zion-cyan/50 hover:bg-zion-blue-light/20 transition-all duration-300"
+                  className="bg-zion-blue-dark/50 backdrop-blur-sm border border-zion-blue-light/20 rounded-xl p-6 hover:border-zion-cyan/40 transition-all duration-300"
                 >
-                  <div className="flex items-center gap-1 mb-4">
+                  <div className="flex items-center mb-4">
                     {[...Array(testimonial.rating)].map((_, i) => (
                       <Star key={i} className="w-5 h-5 text-yellow-400 fill-current" />
                     ))}
@@ -316,7 +284,7 @@ export function Home() {
                   <p className="text-zion-slate-light mb-4 italic">"{testimonial.content}"</p>
                   <div>
                     <div className="font-semibold text-white">{testimonial.name}</div>
-                    <div className="text-zion-cyan text-sm">{testimonial.role}</div>
+                    <div className="text-zion-slate-light text-sm">{testimonial.role}</div>
                   </div>
                 </motion.div>
               ))}
@@ -324,39 +292,37 @@ export function Home() {
           </div>
         </section>
 
-        {/* Call to Action Section */}
+        {/* Call to Action */}
         <section className="py-24 px-4 sm:px-6 lg:px-8">
-          <div className="max-w-7xl mx-auto">
+          <div className="max-w-4xl mx-auto text-center">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
               viewport={{ once: true }}
-              className="text-center"
             >
-              <div className="bg-gradient-to-r from-zion-cyan/20 via-zion-purple/20 to-zion-cyan/20 border border-zion-cyan/30 rounded-2xl p-12 backdrop-blur-md">
-                <h2 className="text-4xl md:text-5xl font-bold mb-4 text-white">
-                  Ready to Transform Your Business?
-                </h2>
-                <p className="text-xl text-zion-slate-light mb-8 max-w-2xl mx-auto">
-                  Let's discuss how our cutting-edge solutions can drive innovation and growth for your organization.
-                </p>
-                <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                  <motion.button
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
-                    className="px-8 py-4 bg-gradient-to-r from-zion-cyan to-zion-purple text-white rounded-lg text-lg font-semibold hover:shadow-xl hover:shadow-zion-cyan/25 transition-all duration-300"
-                  >
-                    Get Free Consultation
-                  </motion.button>
-                  <motion.button
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
-                    className="px-8 py-4 border border-zion-cyan text-zion-cyan rounded-lg text-lg font-semibold hover:bg-zion-cyan hover:text-white transition-all duration-300"
-                  >
-                    View Case Studies
-                  </motion.button>
-                </div>
+              <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-zion-cyan to-zion-purple bg-clip-text text-transparent">
+                Ready to Transform Your Business?
+              </h2>
+              <p className="text-xl text-zion-slate-light mb-8 max-w-2xl mx-auto">
+                Join the future of technology with Zion Tech Group. Let's build something extraordinary together.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <motion.button
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  className="px-8 py-4 bg-gradient-to-r from-zion-cyan to-zion-purple text-white rounded-lg text-lg font-semibold hover:shadow-xl hover:shadow-zion-cyan/25 transition-all duration-300 flex items-center gap-2 justify-center"
+                >
+                  Start Your Project
+                  <ArrowRight className="w-5 h-5" />
+                </motion.button>
+                <motion.button
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  className="px-8 py-4 border border-zion-cyan text-zion-cyan rounded-lg text-lg font-semibold hover:bg-zion-cyan hover:text-white transition-all duration-300 flex items-center gap-2 justify-center"
+                >
+                  Schedule Consultation
+                </motion.button>
               </div>
             </motion.div>
           </div>
