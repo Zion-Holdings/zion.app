@@ -4,6 +4,7 @@ import { useState } from "react";
 
 export function Navigation() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isSearchOpen, setIsSearchOpen] = useState(false);
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-black/80 backdrop-blur-md border-b border-white/10">
@@ -45,16 +46,36 @@ export function Navigation() {
             >
               Docs
             </a>
+            <button 
+              onClick={() => setIsSearchOpen(!isSearchOpen)}
+              className="text-gray-300 hover:text-white p-2 rounded-md transition-colors"
+              aria-label="Search"
+            >
+              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+              </svg>
+            </button>
             <button className="btn-primary text-sm">
               Get Started
             </button>
           </div>
 
           {/* Mobile menu button */}
-          <div className="md:hidden">
+          <div className="md:hidden flex items-center space-x-2">
+            <button 
+              onClick={() => setIsSearchOpen(!isSearchOpen)}
+              className="text-gray-300 hover:text-white p-2 rounded-md transition-colors"
+              aria-label="Search"
+            >
+              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+              </svg>
+            </button>
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="text-gray-300 hover:text-white p-2 rounded-md"
+              className="text-gray-300 hover:text-white p-2 rounded-md transition-colors"
+              aria-label="Toggle mobile menu"
+              aria-expanded={isMobileMenuOpen}
             >
               <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 {isMobileMenuOpen ? (
@@ -66,6 +87,23 @@ export function Navigation() {
             </button>
           </div>
         </div>
+
+        {/* Search Bar */}
+        {isSearchOpen && (
+          <div className="py-4 animate-fade-in">
+            <div className="relative">
+              <input
+                type="text"
+                placeholder="Search Zion OS documentation, features, and more..."
+                className="w-full bg-gray-900/50 border border-white/20 rounded-lg pl-10 pr-4 py-3 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200"
+                autoFocus
+              />
+              <svg className="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+              </svg>
+            </div>
+          </div>
+        )}
 
         {/* Mobile Navigation */}
         {isMobileMenuOpen && (
