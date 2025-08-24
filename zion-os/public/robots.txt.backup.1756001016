@@ -1,0 +1,24 @@
+User-agent: *
+Allow: /
+
+<<<<<<< HEAD
+# Sitemap
+=======
+>>>>>>> origin/cursor/website-audit-and-enhancement-0da5
+Sitemap: https://ziontechgroup.com/sitemap.xml
+
+# Disallow admin and private areas
+Disallow: /admin/
+Disallow: /api/
+Disallow: /_next/
+<<<<<<< HEAD
+Disallow: /private/
+
+# Allow important pages
+Allow: /docs/
+Allow: /multiverse/
+Allow: /community/
+Allow: /contact/
+=======
+Disallow: /private/
+>>>>>>> origin/cursor/website-audit-and-enhancement-0da5
