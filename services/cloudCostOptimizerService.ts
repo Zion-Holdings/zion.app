@@ -138,8 +138,8 @@ class CloudCostOptimizerService {
     const data = [];
 
     for (let i = 0; i < 50; i++) {
-      const instanceType = instanceTypes[Math.floor(Math.random() * instanceTypes.length)];
-      const region = regions[Math.floor(Math.random() * regions.length)];
+      const instanceType = instanceTypes[Math.floor(Math.random() * instanceTypes.length)]!;
+      const region = regions[Math.floor(Math.random() * regions.length)]!;
       const hourlyCost = this.getEC2HourlyCost(instanceType);
       
       data.push({
@@ -179,8 +179,8 @@ class CloudCostOptimizerService {
     const data = [];
 
     for (let i = 0; i < 20; i++) {
-      const instanceType = instanceTypes[Math.floor(Math.random() * instanceTypes.length)];
-      const region = regions[Math.floor(Math.random() * regions.length)];
+      const instanceType = instanceTypes[Math.floor(Math.random() * instanceTypes.length)]!;
+      const region = regions[Math.floor(Math.random() * regions.length)]!;
       const hourlyCost = this.getRDSHourlyCost(instanceType);
       
       data.push({
@@ -440,8 +440,15 @@ class CloudCostOptimizerService {
 
   async getTotalCosts(period: 'hour' | 'day' | 'month' | 'year' = 'month'): Promise<number> {
     const resources = Array.from(this.resources.values());
+    const periodMap: Record<string, keyof typeof resources[0]['cost']> = {
+      'hour': 'hourly',
+      'day': 'daily',
+      'month': 'monthly',
+      'year': 'yearly'
+    };
+    const costKey = periodMap[period];
     return resources.reduce((total, resource) => {
-      return total + resource.cost[period];
+      return total + resource.cost[costKey];
     }, 0);
   }
 

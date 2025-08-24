@@ -414,7 +414,7 @@ export class BlockchainServiceImpl implements BlockchainService {
     const portfolioValue = balance + totalValue + (nftCount * 0.1) + (contractCount * 0.5);
     
     const transactionHistory = Array.from({ length: 30 }, (_, i) => ({
-      date: new Date(Date.now() - i * 24 * 60 * 60 * 1000).toISOString().split('T')[0],
+      date: new Date(Date.now() - i * 24 * 60 * 60 * 1000).toISOString().split('T')[0]!,
       value: Math.random() * 10
     }));
     
@@ -432,7 +432,7 @@ export class BlockchainServiceImpl implements BlockchainService {
 
   async getNetworkStatus(network: string): Promise<NetworkStatus> {
     const statuses: ('online' | 'offline' | 'maintenance')[] = ['online', 'offline', 'maintenance'];
-    const status = statuses[Math.floor(Math.random() * statuses.length)];
+    const status = statuses[Math.floor(Math.random() * statuses.length)]!;
     
     return {
       network,

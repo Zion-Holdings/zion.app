@@ -329,9 +329,10 @@ class AISupplyChainOptimizerService {
 
   private calculateTrend(data: Array<{ date: Date; demand: number }>): number {
     if (data.length < 2) return 0;
-    const firstDemand = data[0].demand;
-    const lastDemand = data[data.length - 1].demand;
-    return (lastDemand - firstDemand) / data.length;
+    const firstPoint = data[0];
+    const lastPoint = data[data.length - 1];
+    if (!firstPoint || !lastPoint) return 0;
+    return (lastPoint.demand - firstPoint.demand) / data.length;
   }
 
   private calculateSeasonality(data: Array<{ date: Date; demand: number }>, period: number): number {

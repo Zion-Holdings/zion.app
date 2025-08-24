@@ -529,7 +529,7 @@ class APIDocGeneratorService {
           headers: {
             'Content-Type': 'application/json'
           },
-          body: this.generateExampleResponse(endpoint.responses[0])
+          body: endpoint.responses[0] ? this.generateExampleResponse(endpoint.responses[0]) : 'No response example available'
         },
         tags: endpoint.tags
       });
