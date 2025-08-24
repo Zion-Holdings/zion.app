@@ -13,33 +13,53 @@ import { FeatureHighlights } from "@/components/home/FeatureHighlights";
 import { ITServiceRequestHero } from "@/components/home/ITServiceRequestHero";
 
 export default function Home() {
+  // Structured data for the home page
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Zion Tech Group",
+    "url": "https://ziontechgroup.com",
+    "description": "The Tech & AI Marketplace - Discover top AI and tech talent, services, and equipment in one place.",
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": "https://ziontechgroup.com/search?q={search_term_string}",
+      "query-input": "required name=search_term_string"
+    },
+    "offers": {
+      "@type": "Offer",
+      "category": "Technology Services",
+      "description": "AI talent matching, IT services, and tech marketplace solutions"
+    }
+  };
+
   return (
     <div className="min-h-screen bg-background">
       <SEO 
-        title="Leading Tech & AI Marketplace - Connect with World-Class Talent & Services" 
-        description="Zion Tech Group is the premier marketplace for AI talent, IT services, and cutting-edge technology solutions. Connect with 10,000+ verified professionals, get 24/7 global IT support, and accelerate your digital transformation."
-        keywords="AI marketplace, tech talent, IT services, software development, artificial intelligence, technology consulting, digital transformation, tech recruitment, AI solutions, enterprise technology, Zion Tech Group"
-        canonical="https://ziontechgroup.com/"
-        type="website"
-        ogImage="https://images.unsplash.com/photo-1518709268805-4e9042af2176?w=1200&h=630&fit=crop&crop=center"
-        tags={["AI", "Technology", "Marketplace", "IT Services", "Digital Transformation"]}
+        title="Zion - The Tech & AI Marketplace" 
+        description="Discover top AI and tech talent, services, and equipment in one place. Global IT support, AI-powered matching, and enterprise solutions for the future of work."
+        keywords="AI marketplace, tech talent, IT services, global IT support, AI matching, tech services, enterprise solutions, talent acquisition, IT consulting, AI development"
+        canonical="/"
+        ogType="website"
+        structuredData={structuredData}
       />
 
-      <ITServiceRequestHero />
+      <main>
+        <ITServiceRequestHero />
 
-      <HeroSection />
-      
-      <QuickAccess />
-      
-      <FeatureCTAs />
-      
-      <FeatureHighlights />
-      
-      <CategoriesSection />
-      <BenefitsSection />
-      <HowItWorksSection />
-      <FeaturedListingsSection />
-      <NewsletterSection />
+        <HeroSection />
+        
+        <QuickAccess />
+        
+        <FeatureCTAs />
+        
+        <FeatureHighlights />
+        
+        <CategoriesSection />
+        <BenefitsSection />
+        <HowItWorksSection />
+        <FeaturedListingsSection />
+        <NewsletterSection />
+      </main>
     </div>
   );
 }

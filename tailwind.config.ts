@@ -76,6 +76,22 @@ const config: Config = {
           light: "#451582",
           dark: "#000000",
         },
+        // Additional colors for enhanced components
+        "zion-green": {
+          DEFAULT: "#10b981",
+          light: "#34d399",
+          dark: "#059669",
+        },
+        "zion-orange": {
+          DEFAULT: "#f59e0b",
+          light: "#fbbf24",
+          dark: "#d97706",
+        },
+        "zion-pink": {
+          DEFAULT: "#ec4899",
+          light: "#f472b6",
+          dark: "#db2777",
+        },
       },
       borderRadius: {
         lg: "var(--radius)",
