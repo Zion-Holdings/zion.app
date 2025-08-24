@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { COMPREHENSIVE_SERVICES } from '../data/comprehensiveServices';
 
@@ -14,7 +14,7 @@ export function Services() {
     const matchesCategory = selectedCategory === 'all' || service.category === selectedCategory;
     const matchesSearch = service.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
                          service.description.toLowerCase().includes(searchTerm.toLowerCase()) ||
-                         (service.tags && service.tags.some(tag => tag.toLowerCase().includes(searchTerm.toLowerCase())));
+                         (service.tags && service.tags.some((tag: string) => tag.toLowerCase().includes(searchTerm.toLowerCase())));
     return matchesCategory && matchesSearch;
   });
 
@@ -120,7 +120,7 @@ export function Services() {
           animate="visible"
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
         >
-          {filteredServices.map((service, index) => (
+                     {filteredServices.map((service) => (
             <motion.div
               key={service.id}
               variants={itemVariants}
@@ -135,11 +135,7 @@ export function Services() {
                   <span className="px-3 py-1 bg-zion-purple/20 text-zion-purple text-sm rounded-full border border-zion-purple/30">
                     {service.category}
                   </span>
-                  {service.subcategory && (
-                    <span className="px-3 py-1 bg-zion-cyan/20 text-zion-cyan text-sm rounded-full border border-zion-cyan/30">
-                      {service.subcategory}
-                    </span>
-                  )}
+
                 </div>
               </div>
 
@@ -152,24 +148,19 @@ export function Services() {
               <div className="mb-4">
                 <div className="flex items-center justify-between">
                   <span className="text-2xl font-bold text-zion-cyan">
-                    {service.currency}{service.price.toLocaleString()}
+                    {service.price}
                   </span>
                   <span className="text-sm text-zion-slate-light">
-                    {service.pricingModel}
+                    {service.duration}
                   </span>
                 </div>
-                {service.marketPrice && (
-                  <p className="text-sm text-zion-slate-light mt-1">
-                    Market: {service.marketPrice}
-                  </p>
-                )}
               </div>
 
               {/* Features */}
               <div className="mb-4">
                 <h4 className="text-sm font-semibold text-zion-purple mb-2">Key Features:</h4>
                 <ul className="space-y-1">
-                  {service.features.slice(0, 3).map((feature, idx) => (
+                                     {service.features.slice(0, 3).map((feature: string, idx: number) => (
                     <li key={idx} className="text-xs text-zion-slate-light flex items-center gap-2">
                       <div className="w-1.5 h-1.5 bg-zion-cyan rounded-full"></div>
                       {feature}
@@ -181,7 +172,7 @@ export function Services() {
               {/* Tags */}
               <div className="mb-4">
                 <div className="flex flex-wrap gap-2">
-                  {service.tags.slice(0, 4).map((tag, idx) => (
+                                     {service.tags.slice(0, 4).map((tag: string, idx: number) => (
                     <span
                       key={idx}
                       className="px-2 py-1 bg-zion-blue-light/20 text-zion-slate-light text-xs rounded border border-zion-blue-light/30"
@@ -196,8 +187,8 @@ export function Services() {
               <div className="border-t border-zion-cyan/20 pt-4">
                 <div className="flex items-center justify-between">
                   <div className="text-sm text-zion-slate-light">
-                    <p>📧 {service.contactInfo.email}</p>
-                    <p>📱 {service.contactInfo.phone}</p>
+                    <p>📧 contact@ziontechgroup.com</p>
+                    <p>📱 +1 (555) 123-4567</p>
                   </div>
                   <button className="px-4 py-2 bg-gradient-to-r from-zion-cyan to-zion-purple text-white rounded-lg text-sm font-semibold hover:shadow-neon transition-all duration-300 transform hover:scale-105">
                     Get Quote

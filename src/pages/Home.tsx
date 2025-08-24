@@ -1,5 +1,5 @@
 
-import React from 'react';
+
 import { ServicesShowcase } from '../components/ServicesShowcase';
 
 export function Home() {
