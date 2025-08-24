@@ -4,7 +4,7 @@ import { Routes, Route } from 'react-router-dom';
 import './App.css';
 import { Header } from './components/Header';
 
-// Import only the existing pages
+// Import existing pages
 const Home = React.lazy(() => import('./pages/Home'));
 const About = React.lazy(() => import('./pages/About'));
 const NotFound = React.lazy(() => import('./pages/NotFound'));
@@ -17,6 +17,17 @@ const AIServicesPage = React.lazy(() => import('./pages/AIServicesPage'));
 const CybersecurityServicesPage = React.lazy(() => import('./pages/CybersecurityServicesPage'));
 const ServicesComparisonPage = React.lazy(() => import('./pages/ServicesComparisonPage'));
 
+// Import new pages from main branch
+const ContactPage = React.lazy(() => import('./pages/Contact'));
+const ZionHireAI = React.lazy(() => import('./pages/ZionHireAI'));
+const RequestQuotePage = React.lazy(() => import('./pages/RequestQuote'));
+const PrivacyPage = React.lazy(() => import('./pages/Privacy'));
+const TermsPage = React.lazy(() => import('./pages/Terms'));
+const CareersPage = React.lazy(() => import('./pages/Careers'));
+const SitemapPage = React.lazy(() => import('./pages/Sitemap'));
+const GreenITPage = React.lazy(() => import('./pages/GreenIT'));
+const HelpCenterPage = React.lazy(() => import('./pages/HelpCenterPage'));
+
 const baseRoutes = [
   { path: '/', element: <Home /> },
   { path: '/about', element: <About /> },
@@ -28,6 +39,16 @@ const baseRoutes = [
   { path: '/ai-services', element: <AIServicesPage /> },
   { path: '/cybersecurity-services', element: <CybersecurityServicesPage /> },
   { path: '/services-comparison', element: <ServicesComparisonPage /> },
+  { path: '/contact', element: <ContactPage /> },
+  { path: '/zion-hire-ai', element: <ZionHireAI /> },
+  { path: '/hire-ai', element: <ZionHireAI /> },
+  { path: '/request-quote', element: <RequestQuotePage /> },
+  { path: '/privacy', element: <PrivacyPage /> },
+  { path: '/terms', element: <TermsPage /> },
+  { path: '/careers', element: <CareersPage /> },
+  { path: '/sitemap', element: <SitemapPage /> },
+  { path: '/green-it', element: <GreenITPage /> },
+  { path: '/help-center', element: <HelpCenterPage /> },
 ];
 
 const App = () => {

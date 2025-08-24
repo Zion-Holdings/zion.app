@@ -5,6 +5,10 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { TrendingUp, Shield, Zap, Users, Globe, Database } from "lucide-react";
+import { SEO } from "@/components/SEO";
+import { BenefitsSection } from "@/components/BenefitsSection";
+import { PerformanceOptimizations } from "@/components/PerformanceOptimizations";
+import { AdvancedAnalytics } from "@/components/AdvancedAnalytics";
 
 export default function Home() {
   const features = [
@@ -48,7 +52,14 @@ export default function Home() {
   ];
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background" id="main-content">
+      <SEO 
+        title="Zion - The Tech & AI Marketplace" 
+        description="Discover top AI and tech talent, services, and equipment in one place."
+        keywords="AI, technology, marketplace, services, talent"
+        canonical="https://ziontechgroup.com/"
+      />
+
       {/* Hero Section */}
       <div className="bg-gradient-to-br from-zion-blue via-zion-blue-dark to-zion-slate-dark text-white">
         <div className="container mx-auto px-4 py-20">
@@ -134,6 +145,19 @@ export default function Home() {
           <CategoriesSection />
         </div>
       </div>
+
+      {/* Benefits Section from main branch */}
+      <BenefitsSection />
+
+      {/* New Performance Section */}
+      <section className="py-16 bg-gradient-to-br from-zion-slate/5 to-zion-blue/5">
+        <PerformanceOptimizations />
+      </section>
+      
+      {/* New Analytics Section */}
+      <section className="py-16">
+        <AdvancedAnalytics />
+      </section>
 
       {/* CTA Section */}
       <div className="py-20 bg-zion-blue text-white">

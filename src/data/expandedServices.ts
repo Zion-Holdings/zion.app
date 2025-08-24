@@ -1,742 +1,128 @@
-export interface ExpandedService {
-  id: string;
+export interface Service {
+  id: number;
   title: string;
   description: string;
   category: string;
-  subcategory: string;
   price: number;
-  currency: string;
-  pricingModel: 'one-time' | 'subscription' | 'usage-based' | 'project-based';
-  features: string[];
-  benefits: string[];
-  useCases: string[];
-  targetAudience: string[];
-  marketPrice: string;
-  contactInfo: {
-    phone: string;
-    email: string;
-    website: string;
-  };
-  tags: string[];
-  author: {
-    name: string;
-    id: string;
-    avatarUrl?: string;
-  };
-  images: string[];
-  createdAt: string;
-  aiScore: number;
   rating: number;
-  reviewCount: number;
-  availability: 'immediate' | '1-2 weeks' | '1 month' | 'custom';
-  deliveryTime: string;
-  supportLevel: 'basic' | 'standard' | 'premium' | 'enterprise';
+  reviews: number;
+  featured?: boolean;
+  images?: string[];
+  reviewCount?: number;
+  aiScore?: number;
+  availability?: string;
+  author?: { name: string };
+  tags?: string[];
 }
 
-export const EXPANDED_SERVICES: ExpandedService[] = [
-  // AI & Machine Learning Services
-  {
-    id: "ai-automation-workflow",
-    title: "AI-Powered Business Process Automation",
-    description: "Transform manual workflows into intelligent, automated processes using cutting-edge AI and machine learning. Reduce operational costs by 60% while improving accuracy and efficiency.",
-    category: "AI & Machine Learning",
-    subcategory: "Process Automation",
-    price: 8500,
-    currency: "$",
-    pricingModel: "project-based",
-    features: [
-      "Custom workflow design and mapping",
-      "AI-powered decision trees and logic",
-      "Integration with existing systems (CRM, ERP, etc.)",
-      "Real-time monitoring and analytics dashboard",
-      "Automated error handling and recovery",
-      "Scalable architecture for business growth"
-    ],
-    benefits: [
-      "60% reduction in manual processing time",
-      "99.9% accuracy in data handling",
-      "24/7 automated operations",
-      "Real-time process visibility and insights",
-      "Compliance and audit trail automation",
-      "Scalable solution for growing businesses"
-    ],
-    useCases: [
-      "Customer onboarding and verification",
-      "Invoice processing and approval workflows",
-      "HR recruitment and screening processes",
-      "Quality control and inspection automation",
-      "Supply chain management optimization"
-    ],
-    targetAudience: [
-      "Medium to large enterprises",
-      "Financial services companies",
-      "Healthcare organizations",
-      "Manufacturing companies",
-      "E-commerce businesses"
-    ],
-    marketPrice: "$8,000 - $15,000",
-    contactInfo: {
-      phone: "+1 302 464 0950",
-      email: "kleber@ziontechgroup.com",
-      website: "https://ziontechgroup.com/ai-automation"
-    },
-    tags: ["AI Automation", "Process Optimization", "Workflow Design", "System Integration", "Business Intelligence"],
-    author: {
-      name: "Zion Tech Group",
-      id: "zion-tech-group",
-      avatarUrl: "https://images.unsplash.com/photo-1568602471122-7832951cc4c5?auto=format&fit=crop&w=100&h=100"
-    },
-    images: ["https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&h=500"],
-    createdAt: "2024-01-15T10:00:00.000Z",
-    aiScore: 96,
-    rating: 4.9,
-    reviewCount: 87,
-    availability: "1-2 weeks",
-    deliveryTime: "4-6 weeks",
-    supportLevel: "premium"
-  },
+export interface Category {
+  id: string;
+  name: string;
+  icon: string;
+  description: string;
+  services: Service[];
+}
 
-  // Cybersecurity Services
+export const EXPANDED_SERVICES: Service[] = [
   {
-    id: "zero-trust-security-framework",
-    title: "Zero-Trust Security Architecture Implementation",
-    description: "Implement enterprise-grade zero-trust security framework that continuously verifies every user, device, and network connection. Protect against modern cyber threats with advanced authentication and monitoring.",
-    category: "Cybersecurity",
-    subcategory: "Security Architecture",
-    price: 12000,
-    currency: "$",
-    pricingModel: "project-based",
-    features: [
-      "Multi-factor authentication (MFA) implementation",
-      "Identity and access management (IAM) system",
-      "Network segmentation and micro-segmentation",
-      "Continuous monitoring and threat detection",
-      "Privileged access management (PAM)",
-      "Security analytics and reporting dashboard"
-    ],
-    benefits: [
-      "Eliminate trust-based security vulnerabilities",
-      "Comply with industry security standards (SOC 2, ISO 27001)",
-      "Real-time threat detection and response",
-      "Reduced attack surface and risk exposure",
-      "Enhanced audit and compliance capabilities",
-      "Scalable security for growing organizations"
-    ],
-    useCases: [
-      "Financial services security compliance",
-      "Healthcare data protection (HIPAA)",
-      "Government contractor security requirements",
-      "Enterprise network security modernization",
-      "Cloud infrastructure security enhancement"
-    ],
-    targetAudience: [
-      "Financial institutions",
-      "Healthcare organizations",
-      "Government contractors",
-      "Large enterprises",
-      "Technology companies"
-    ],
-    marketPrice: "$12,000 - $25,000",
-    contactInfo: {
-      phone: "+1 302 464 0950",
-      email: "kleber@ziontechgroup.com",
-      website: "https://ziontechgroup.com/zero-trust-security"
-    },
-    tags: ["Zero Trust", "Cybersecurity", "IAM", "Network Security", "Compliance"],
-    author: {
-      name: "Zion Tech Group",
-      id: "zion-tech-group",
-      avatarUrl: "https://images.unsplash.com/photo-1510511459019-5dda7724fd87?auto=format&fit=crop&w=100&h=100"
-    },
-    images: ["https://images.unsplash.com/photo-1510511459019-5dda7724fd87?auto=format&fit=crop&w=800&h=500"],
-    createdAt: "2024-01-20T14:30:00.000Z",
-    aiScore: 94,
+    id: 1,
+    title: "AI Development",
+    description: "Custom AI solutions and machine learning models",
+    category: "AI",
+    price: 5000,
     rating: 4.8,
-    reviewCount: 156,
-    availability: "1 month",
-    deliveryTime: "8-12 weeks",
-    supportLevel: "enterprise"
-  },
-
-  // Cloud & DevOps Services
-  {
-    id: "multi-cloud-orchestration",
-    title: "Multi-Cloud Infrastructure Orchestration",
-    description: "Seamlessly manage and optimize workloads across multiple cloud providers (AWS, Azure, GCP) with intelligent automation, cost optimization, and unified monitoring. Achieve 40% cost savings through smart resource allocation.",
-    category: "Cloud & DevOps",
-    subcategory: "Cloud Management",
-    price: 9500,
-    currency: "$",
-    pricingModel: "subscription",
-    features: [
-      "Multi-cloud workload distribution and balancing",
-      "Automated cost optimization and resource scaling",
-      "Unified monitoring and alerting across clouds",
-      "Disaster recovery and backup automation",
-      "Security policy enforcement across platforms",
-      "Performance analytics and optimization recommendations"
-    ],
-    benefits: [
-      "40% reduction in cloud infrastructure costs",
-      "Eliminate vendor lock-in risks",
-      "Improved reliability and disaster recovery",
-      "Centralized management and monitoring",
-      "Automated compliance and security",
-      "Flexible resource allocation and scaling"
-    ],
-    useCases: [
-      "Enterprise cloud migration strategies",
-      "Multi-region application deployment",
-      "Disaster recovery and business continuity",
-      "Cost optimization for large cloud estates",
-      "Compliance and governance across clouds"
-    ],
-    targetAudience: [
-      "Large enterprises with multi-cloud strategies",
-      "Technology companies",
-      "Financial services organizations",
-      "Healthcare providers",
-      "E-commerce platforms"
-    ],
-    marketPrice: "$8,000 - $18,000/month",
-    contactInfo: {
-      phone: "+1 302 464 0950",
-      email: "kleber@ziontechgroup.com",
-      website: "https://ziontechgroup.com/multi-cloud-orchestration"
-    },
-    tags: ["Multi-Cloud", "DevOps", "Cost Optimization", "Infrastructure", "Automation"],
-    author: {
-      name: "Zion Tech Group",
-      id: "zion-tech-group",
-      avatarUrl: "https://images.unsplash.com/photo-1544197150-b99a580bb7a8?auto=format&fit=crop&w=100&h=100"
-    },
-    images: ["https://images.unsplash.com/photo-1544197150-b99a580bb7a8?auto=format&fit=crop&w=800&h=500"],
-    createdAt: "2024-01-18T09:15:00.000Z",
-    aiScore: 92,
-    rating: 4.7,
-    reviewCount: 203,
-    availability: "immediate",
-    deliveryTime: "2-4 weeks",
-    supportLevel: "standard"
-  },
-
-  // Data & Analytics Services
-  {
-    id: "real-time-data-pipeline",
-    title: "Real-Time Data Pipeline & Analytics Platform",
-    description: "Build scalable real-time data processing pipelines that handle millions of events per second with sub-second latency. Enable instant insights and decision-making for your business operations.",
-    category: "Data & Analytics",
-    subcategory: "Real-Time Processing",
-    price: 11000,
-    currency: "$",
-    pricingModel: "project-based",
-    features: [
-      "Real-time data ingestion and processing",
-      "Stream processing with Apache Kafka/Spark",
-      "Real-time analytics and visualization dashboards",
-      "Machine learning model integration",
-      "Data quality monitoring and validation",
-      "Scalable architecture for high-volume data"
-    ],
-    benefits: [
-      "Sub-second latency for real-time insights",
-      "Handle millions of events per second",
-      "Instant decision-making capabilities",
-      "Reduced data processing costs",
-      "Improved customer experience and engagement",
-      "Competitive advantage through speed"
-    ],
-    useCases: [
-      "Financial trading and risk management",
-      "E-commerce personalization and recommendations",
-      "IoT sensor data processing",
-      "Fraud detection and prevention",
-      "Supply chain optimization and monitoring"
-    ],
-    targetAudience: [
-      "Financial services companies",
-      "E-commerce platforms",
-      "IoT device manufacturers",
-      "Telecommunications companies",
-      "Logistics and transportation companies"
-    ],
-    marketPrice: "$10,000 - $20,000",
-    contactInfo: {
-      phone: "+1 302 464 0950",
-      email: "kleber@ziontechgroup.com",
-      website: "https://ziontechgroup.com/real-time-data-pipeline"
-    },
-    tags: ["Real-Time Analytics", "Data Pipeline", "Stream Processing", "Big Data", "Machine Learning"],
-    author: {
-      name: "Zion Tech Group",
-      id: "zion-tech-group",
-      avatarUrl: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=100&h=100"
-    },
-    images: ["https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&h=500"],
-    createdAt: "2024-01-22T16:45:00.000Z",
+    reviews: 127,
+    featured: true,
+    images: ["/images/ai-dev.jpg"],
+    reviewCount: 127,
     aiScore: 95,
-    rating: 4.9,
-    reviewCount: 134,
-    availability: "1-2 weeks",
-    deliveryTime: "6-8 weeks",
-    supportLevel: "premium"
+    availability: "Available",
+    author: { name: "AI Expert" },
+    tags: ["AI", "Machine Learning", "Python"]
   },
-
-  // Blockchain & Web3 Services
   {
-    id: "defi-protocol-development",
-    title: "DeFi Protocol & Smart Contract Development",
-    description: "Build secure, audited DeFi protocols and smart contracts for decentralized finance applications. Includes comprehensive security testing, gas optimization, and multi-chain deployment capabilities.",
-    category: "Blockchain & Web3",
-    subcategory: "DeFi Development",
-    price: 15000,
-    currency: "$",
-    pricingModel: "project-based",
-    features: [
-      "Smart contract development and optimization",
-      "DeFi protocol architecture design",
-      "Security auditing and penetration testing",
-      "Gas optimization and cost reduction",
-      "Multi-chain deployment (Ethereum, Polygon, BSC)",
-      "Frontend dApp development and integration"
-    ],
-    benefits: [
-      "Secure and audited smart contracts",
-      "Optimized gas costs and transaction efficiency",
-      "Multi-chain compatibility and reach",
-      "Professional security standards",
-      "Comprehensive testing and validation",
-      "Ongoing support and maintenance"
-    ],
-    useCases: [
-      "Decentralized exchanges (DEX)",
-      "Lending and borrowing platforms",
-      "Yield farming and staking protocols",
-      "NFT marketplaces and trading platforms",
-      "Cross-chain bridge and interoperability solutions"
-    ],
-    targetAudience: [
-      "DeFi startups and projects",
-      "Cryptocurrency exchanges",
-      "Financial technology companies",
-      "Investment funds and DAOs",
-      "Blockchain gaming companies"
-    ],
-    marketPrice: "$15,000 - $35,000",
-    contactInfo: {
-      phone: "+1 302 464 0950",
-      email: "kleber@ziontechgroup.com",
-      website: "https://ziontechgroup.com/defi-protocol-development"
-    },
-    tags: ["DeFi", "Smart Contracts", "Blockchain", "Web3", "Cryptocurrency"],
-    author: {
-      name: "Zion Tech Group",
-      id: "zion-tech-group",
-      avatarUrl: "https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=100&h=100"
-    },
-    images: ["https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=800&h=500"],
-    createdAt: "2024-01-25T11:20:00.000Z",
-    aiScore: 93,
-    rating: 4.8,
+    id: 2,
+    title: "Web Development",
+    description: "Modern web applications and e-commerce solutions",
+    category: "Web",
+    price: 3000,
+    rating: 4.9,
+    reviews: 89,
+    featured: true,
+    images: ["/images/web-dev.jpg"],
     reviewCount: 89,
-    availability: "1 month",
-    deliveryTime: "10-14 weeks",
-    supportLevel: "premium"
+    aiScore: 88,
+    availability: "Available",
+    author: { name: "Web Developer" },
+    tags: ["React", "Node.js", "TypeScript"]
   },
-
-  // IoT & Edge Computing Services
   {
-    id: "iot-edge-computing-platform",
-    title: "IoT Edge Computing & Device Management Platform",
-    description: "Deploy intelligent edge computing solutions that process data locally on IoT devices, reducing latency and bandwidth costs while enabling real-time decision-making at the edge.",
-    category: "IoT & Edge Computing",
-    subcategory: "Edge Platform",
-    price: 13000,
-    currency: "$",
-    pricingModel: "subscription",
-    features: [
-      "Edge device management and monitoring",
-      "Local data processing and analytics",
-      "Real-time decision-making algorithms",
-      "Secure device-to-cloud communication",
-      "Over-the-air (OTA) updates and management",
-      "Edge AI model deployment and optimization"
-    ],
-    benefits: [
-      "Reduced latency for real-time applications",
-      "Lower bandwidth costs and cloud dependency",
-      "Improved privacy and data security",
-      "Offline operation capabilities",
-      "Scalable IoT device management",
-      "Enhanced reliability and performance"
-    ],
-    useCases: [
-      "Industrial IoT and manufacturing",
-      "Smart cities and infrastructure",
-      "Connected vehicles and transportation",
-      "Healthcare monitoring devices",
-      "Agricultural IoT and precision farming"
-    ],
-    targetAudience: [
-      "Manufacturing companies",
-      "Smart city initiatives",
-      "Automotive companies",
-      "Healthcare device manufacturers",
-      "Agricultural technology companies"
-    ],
-    marketPrice: "$12,000 - $25,000/month",
-    contactInfo: {
-      phone: "+1 302 464 0950",
-      email: "kleber@ziontechgroup.com",
-      website: "https://ziontechgroup.com/iot-edge-computing"
-    },
-    tags: ["IoT", "Edge Computing", "Device Management", "Real-Time Analytics", "Industrial IoT"],
-    author: {
-      name: "Zion Tech Group",
-      id: "zion-tech-group",
-      avatarUrl: "https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?auto=format&fit=crop&w=100&h=100"
-    },
-    images: ["https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?auto=format&fit=crop&w=800&h=500"],
-    createdAt: "2024-01-28T13:10:00.000Z",
-    aiScore: 91,
+    id: 3,
+    title: "Mobile Development",
+    description: "iOS and Android applications",
+    category: "Mobile",
+    price: 4000,
     rating: 4.7,
-    reviewCount: 167,
-    availability: "1-2 weeks",
-    deliveryTime: "8-10 weeks",
-    supportLevel: "standard"
-  },
-
-  // Quantum Computing Services
-  {
-    id: "quantum-computing-consulting",
-    title: "Quantum Computing Strategy & Implementation Consulting",
-    description: "Navigate the quantum computing revolution with expert guidance on strategy, use case identification, and implementation planning. Prepare your organization for quantum advantage in cryptography, optimization, and simulation.",
-    category: "Quantum Computing",
-    subcategory: "Strategy & Consulting",
-    price: 25000,
-    currency: "$",
-    pricingModel: "project-based",
-    features: [
-      "Quantum computing strategy development",
-      "Use case identification and prioritization",
-      "Quantum algorithm design and optimization",
-      "Post-quantum cryptography planning",
-      "Quantum workforce training and development",
-      "Vendor evaluation and selection"
-    ],
-    benefits: [
-      "Early quantum advantage preparation",
-      "Risk mitigation for quantum threats",
-      "Competitive positioning in quantum era",
-      "Expert guidance on quantum technologies",
-      "Strategic roadmap for quantum adoption",
-      "Workforce quantum literacy development"
-    ],
-    useCases: [
-      "Financial portfolio optimization",
-      "Drug discovery and molecular modeling",
-      "Logistics and supply chain optimization",
-      "Cryptography and security planning",
-      "Climate modeling and simulation"
-    ],
-    targetAudience: [
-      "Large financial institutions",
-      "Pharmaceutical companies",
-      "Government agencies",
-      "Technology companies",
-      "Research institutions"
-    ],
-    marketPrice: "$25,000 - $50,000",
-    contactInfo: {
-      phone: "+1 302 464 0950",
-      email: "kleber@ziontechgroup.com",
-      website: "https://ziontechgroup.com/quantum-computing-consulting"
-    },
-    tags: ["Quantum Computing", "Strategy", "Consulting", "Cryptography", "Optimization"],
-    author: {
-      name: "Zion Tech Group",
-      id: "zion-tech-group",
-      avatarUrl: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=100&h=100"
-    },
-    images: ["https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=800&h=500"],
-    createdAt: "2024-01-30T15:30:00.000Z",
-    aiScore: 97,
-    rating: 4.9,
-    reviewCount: 45,
-    availability: "1 month",
-    deliveryTime: "12-16 weeks",
-    supportLevel: "enterprise"
-  },
-
-  // Green Tech & Sustainability Services
-  {
-    id: "green-tech-optimization",
-    title: "Green Technology & Sustainability Optimization",
-    description: "Implement sustainable technology solutions that reduce environmental impact while improving operational efficiency. Achieve carbon neutrality goals through intelligent energy management and green computing practices.",
-    category: "Green Tech & Sustainability",
-    subcategory: "Environmental Optimization",
-    price: 18000,
-    currency: "$",
-    pricingModel: "project-based",
-    features: [
-      "Carbon footprint assessment and monitoring",
-      "Energy-efficient computing infrastructure",
-      "Sustainable software development practices",
-      "Green data center optimization",
-      "Renewable energy integration planning",
-      "Environmental compliance and reporting"
-    ],
-    benefits: [
-      "Achieve carbon neutrality goals",
-      "Reduce energy costs by 30-50%",
-      "Improve brand reputation and ESG scores",
-      "Comply with environmental regulations",
-      "Attract environmentally conscious customers",
-      "Long-term cost savings through efficiency"
-    ],
-    useCases: [
-      "Data center energy optimization",
-      "Software development sustainability",
-      "Cloud infrastructure green computing",
-      "Corporate sustainability reporting",
-      "Environmental compliance management"
-    ],
-    targetAudience: [
-      "Large enterprises with sustainability goals",
-      "Technology companies",
-      "Financial services organizations",
-      "Government agencies",
-      "Educational institutions"
-    ],
-    marketPrice: "$18,000 - $35,000",
-    contactInfo: {
-      phone: "+1 302 464 0950",
-      email: "kleber@ziontechgroup.com",
-      website: "https://ziontechgroup.com/green-tech-optimization"
-    },
-    tags: ["Green Tech", "Sustainability", "Carbon Neutrality", "Energy Efficiency", "ESG"],
-    author: {
-      name: "Zion Tech Group",
-      id: "zion-tech-group",
-      avatarUrl: "https://images.unsplash.com/photo-1568602471122-7832951cc4c5?auto=format&fit=crop&w=100&h=100"
-    },
-    images: ["https://images.unsplash.com/photo-1568602471122-7832951cc4c5?auto=format&fit=crop&w=800&h=500"],
-    createdAt: "2024-02-01T10:15:00.000Z",
-    aiScore: 89,
-    rating: 4.6,
-    reviewCount: 78,
-    availability: "1-2 weeks",
-    deliveryTime: "10-12 weeks",
-    supportLevel: "premium"
-  },
-
-  // AR/VR & Metaverse Services
-  {
-    id: "metaverse-development-platform",
-    title: "Metaverse Development & Virtual Reality Platform",
-    description: "Create immersive metaverse experiences with cutting-edge AR/VR technology. Build virtual worlds, interactive experiences, and digital twins that engage users and create new business opportunities.",
-    category: "AR/VR & Metaverse",
-    subcategory: "Platform Development",
-    price: 22000,
-    currency: "$",
-    pricingModel: "project-based",
-    features: [
-      "3D virtual world creation and design",
-      "AR/VR application development",
-      "Digital twin implementation",
-      "Multi-user virtual environments",
-      "Cross-platform compatibility",
-      "Integration with existing business systems"
-    ],
-    benefits: [
-      "Create new revenue streams",
-      "Enhanced customer engagement",
-      "Virtual collaboration and training",
-      "Innovative marketing and branding",
-      "Competitive advantage in digital space",
-      "Scalable virtual experiences"
-    ],
-    useCases: [
-      "Virtual real estate and property tours",
-      "Virtual events and conferences",
-      "Training and education platforms",
-      "Virtual retail and shopping experiences",
-      "Digital twin for industrial applications"
-    ],
-    targetAudience: [
-      "Real estate companies",
-      "Event organizers and venues",
-      "Educational institutions",
-      "Retail and e-commerce companies",
-      "Manufacturing and industrial companies"
-    ],
-    marketPrice: "$22,000 - $45,000",
-    contactInfo: {
-      phone: "+1 302 464 0950",
-      email: "kleber@ziontechgroup.com",
-      website: "https://ziontechgroup.com/metaverse-development"
-    },
-    tags: ["Metaverse", "AR/VR", "Virtual Reality", "Digital Twin", "3D Development"],
-    author: {
-      name: "Zion Tech Group",
-      id: "zion-tech-group",
-      avatarUrl: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=100&h=100"
-    },
-    images: ["https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=800&h=500"],
-    createdAt: "2024-02-03T14:20:00.000Z",
-    aiScore: 94,
-    rating: 4.8,
-    reviewCount: 112,
-    availability: "1 month",
-    deliveryTime: "14-18 weeks",
-    supportLevel: "premium"
-  },
-
-  // FinTech & Digital Banking Services
-  {
-    id: "digital-banking-platform",
-    title: "Digital Banking & FinTech Platform Development",
-    description: "Build secure, scalable digital banking platforms with modern fintech capabilities including mobile banking, digital payments, lending automation, and regulatory compliance features.",
-    category: "FinTech & Digital Banking",
-    subcategory: "Platform Development",
-    price: 35000,
-    currency: "$",
-    pricingModel: "project-based",
-    features: [
-      "Mobile banking application development",
-      "Digital payment processing systems",
-      "Lending and credit automation",
-      "Regulatory compliance and reporting",
-      "Multi-currency and international support",
-      "Advanced security and fraud detection"
-    ],
-    benefits: [
-      "Modern digital banking capabilities",
-      "Enhanced customer experience and engagement",
-      "Reduced operational costs",
-      "Compliance with banking regulations",
-      "Scalable platform for business growth",
-      "Competitive advantage in fintech space"
-    ],
-    useCases: [
-      "Digital banking transformation",
-      "Neobank platform development",
-      "Payment processing solutions",
-      "Lending platform automation",
-      "Financial services mobile apps"
-    ],
-    targetAudience: [
-      "Traditional banks and credit unions",
-      "Fintech startups",
-      "Financial services companies",
-      "Payment processors",
-      "Lending companies"
-    ],
-    marketPrice: "$35,000 - $75,000",
-    contactInfo: {
-      phone: "+1 302 464 0950",
-      email: "kleber@ziontechgroup.com",
-      website: "https://ziontechgroup.com/digital-banking-platform"
-    },
-    tags: ["FinTech", "Digital Banking", "Mobile Banking", "Payments", "Lending"],
-    author: {
-      name: "Zion Tech Group",
-      id: "zion-tech-group",
-      avatarUrl: "https://images.unsplash.com/photo-1568602471122-7832951cc4c5?auto=format&fit=crop&w=100&h=100"
-    },
-    images: ["https://images.unsplash.com/photo-1568602471122-7832951cc4c5?auto=format&fit=crop&w=800&h=500"],
-    createdAt: "2024-02-05T11:45:00.000Z",
-    aiScore: 96,
-    rating: 4.9,
-    reviewCount: 203,
-    availability: "1 month",
-    deliveryTime: "16-20 weeks",
-    supportLevel: "enterprise"
+    reviews: 156,
+    featured: false,
+    images: ["/images/mobile-dev.jpg"],
+    reviewCount: 156,
+    aiScore: 92,
+    availability: "Available",
+    author: { name: "Mobile Developer" },
+    tags: ["iOS", "Android", "React Native"]
   }
 ];
 
-export const SERVICE_CATEGORIES = [
-  "AI & Machine Learning",
-  "Cybersecurity",
-  "Cloud & DevOps",
-  "Data & Analytics",
-  "Blockchain & Web3",
-  "IoT & Edge Computing",
-  "Quantum Computing",
-  "Green Tech & Sustainability",
-  "AR/VR & Metaverse",
-  "FinTech & Digital Banking"
+export const SERVICE_CATEGORIES: Category[] = [
+  {
+    id: "ai",
+    name: "AI & Machine Learning",
+    icon: "🤖",
+    description: "Advanced AI solutions and ML models",
+    services: EXPANDED_SERVICES.filter(s => s.category === "AI")
+  },
+  {
+    id: "web",
+    name: "Web Development",
+    icon: "🌐",
+    description: "Modern web applications",
+    services: EXPANDED_SERVICES.filter(s => s.category === "Web")
+  },
+  {
+    id: "mobile",
+    name: "Mobile Development",
+    icon: "📱",
+    description: "iOS and Android apps",
+    services: EXPANDED_SERVICES.filter(s => s.category === "Mobile")
+  }
 ];
 
-export const SERVICE_SUBCATEGORIES = {
-  "AI & Machine Learning": [
-    "Process Automation",
-    "Natural Language Processing",
-    "Computer Vision",
-    "Predictive Analytics",
-    "AI Strategy"
-  ],
-  "Cybersecurity": [
-    "Security Architecture",
-    "Penetration Testing",
-    "Incident Response",
-    "Compliance & Governance",
-    "Threat Intelligence"
-  ],
-  "Cloud & DevOps": [
-    "Cloud Management",
-    "DevOps Automation",
-    "Container Orchestration",
-    "Serverless Architecture",
-    "Cloud Migration"
-  ],
-  "Data & Analytics": [
-    "Real-Time Processing",
-    "Business Intelligence",
-    "Data Engineering",
-    "Machine Learning",
-    "Data Governance"
-  ],
-  "Blockchain & Web3": [
-    "DeFi Development",
-    "Smart Contracts",
-    "NFT Platforms",
-    "DApp Development",
-    "Blockchain Infrastructure"
-  ],
-  "IoT & Edge Computing": [
-    "Edge Platform",
-    "Device Management",
-    "Sensor Networks",
-    "Industrial IoT",
-    "Smart Cities"
-  ],
-  "Quantum Computing": [
-    "Strategy & Consulting",
-    "Algorithm Development",
-    "Quantum Software",
-    "Post-Quantum Cryptography",
-    "Quantum Education"
-  ],
-  "Green Tech & Sustainability": [
-    "Environmental Optimization",
-    "Energy Efficiency",
-    "Carbon Management",
-    "Sustainable Development",
-    "ESG Reporting"
-  ],
-  "AR/VR & Metaverse": [
-    "Platform Development",
-    "3D Content Creation",
-    "Virtual Experiences",
-    "Digital Twins",
-    "Immersive Training"
-  ],
-  "FinTech & Digital Banking": [
-    "Platform Development",
-    "Payment Solutions",
-    "Lending Platforms",
-    "RegTech Solutions",
-    "Digital Wallets"
-  ]
+export const CONTACT_INFO = {
+  email: "contact@ziontechgroup.com",
+  phone: "+1 (555) 123-4567",
+  address: "123 Tech Street, Innovation City, IC 12345",
+  mobile: "+1 (555) 123-4567",
+  website: "https://ziontechgroup.com"
 };
+
+export const PRICING_TIERS = [
+  {
+    name: "Starter",
+    price: "$99/month",
+    description: "Perfect for small teams",
+    features: ["Basic support", "Standard features", "5 projects"]
+  },
+  {
+    name: "Professional",
+    price: "$299/month",
+    description: "Ideal for growing businesses",
+    features: ["Priority support", "Advanced features", "Unlimited projects"]
+  },
+  {
+    name: "Enterprise",
+    price: "Custom",
+    description: "Tailored for large organizations",
+    features: ["Dedicated support", "Custom features", "White-label options"]
+  }
+];
