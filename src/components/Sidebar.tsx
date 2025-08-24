@@ -1,173 +1,207 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
+import { cn } from '@/lib/utils';
+import { 
+  Home, 
+  ShoppingCart, 
+  Users, 
+  Settings, 
+  FileText, 
+  MessageSquare, 
+  BarChart3, 
+  HelpCircle,
+  ChevronRight,
+  Building2,
+  Globe,
+  Zap,
+  Shield,
+  Award,
+  BookOpen,
+  Code,
+  Database,
+  Server,
+  MapPin,
+  Calendar,
+  Handshake
+} from 'lucide-react';
 
-export function Sidebar() {
-  const [isCollapsed, setIsCollapsed] = useState(false);
+interface SidebarProps {
+  isOpen?: boolean;
+  onClose?: () => void;
+}
+
+export function Sidebar({ isOpen = false, onClose }: SidebarProps) {
   const location = useLocation();
+  const [expandedSections, setExpandedSections] = useState<string[]>(['marketplace']);
 
-  const navigationItems = [
-    {
-      title: "Main",
-      items: [
-        { path: '/', label: 'Dashboard', icon: '🏠', badge: null },
-        { path: '/services', label: 'Services', icon: '⚡', badge: 'New' },
-        { path: '/comprehensive-services', label: 'All Services', icon: '🚀', badge: null },
-        { path: '/services-comparison', label: 'Compare', icon: '📊', badge: null },
-        { path: '/it-onsite-services', label: 'Onsite IT', icon: '🔧', badge: 'Hot' }
-      ]
-    },
-    {
-      title: "AI & Tech",
-      items: [
-        { path: '/comprehensive-services?category=AI Services', label: 'AI Services', icon: '🤖', badge: null },
-        { path: '/comprehensive-services?category=Micro SAAS', label: 'Micro SAAS', icon: '💻', badge: null },
-        { path: '/comprehensive-services?category=Blockchain & Web3', label: 'Blockchain', icon: '⛓️', badge: null },
-        { path: '/comprehensive-services?category=IoT & Edge Computing', label: 'IoT & Edge', icon: '🌐', badge: null },
-        { path: '/comprehensive-services?category=Emerging Technologies', label: 'Emerging Tech', icon: '🔮', badge: 'Trending' }
-      ]
-    },
-    {
-      title: "Business",
-      items: [
-        { path: '/comprehensive-services?category=IT Services', label: 'IT Services', icon: '🖥️', badge: null },
-        { path: '/comprehensive-services?category=Cybersecurity Services', label: 'Cybersecurity', icon: '🔒', badge: null },
-        { path: '/comprehensive-services?category=Data Science & Analytics', label: 'Data Science', icon: '📈', badge: null }
-      ]
-    },
-    {
-      title: "Support",
-      items: [
-        { path: '/', label: 'Documentation', icon: '📚', badge: null },
-        { path: '/', label: 'Help Center', icon: '❓', badge: null },
-        { path: '/', label: 'Contact Support', icon: '💬', badge: null }
-      ]
-    }
-  ];
+  const toggleSection = (section: string) => {
+    setExpandedSections(prev => 
+      prev.includes(section) 
+        ? prev.filter(s => s !== section)
+        : [...prev, section]
+    );
+  };
 
-  const isActive = (path: string) => {
-    if (path.includes('?')) {
-      const basePath = path.split('?')[0];
-      return location.pathname === basePath;
-    }
-    return location.pathname === path;
+  const navigationItems = {
+    main: [
+      { href: '/', label: 'Home', icon: Home },
+      { href: '/about', label: 'About', icon: Building2 },
+      { href: '/blog', label: 'Blog', icon: FileText },
+      { href: '/contact', label: 'Contact', icon: MessageSquare },
+    ],
+    marketplace: [
+      { href: '/marketplace', label: 'All Products', icon: ShoppingCart },
+      { href: '/services', label: 'Services', icon: Settings },
+      { href: '/talent', label: 'Talent', icon: Users },
+      { href: '/equipment', label: 'Equipment', icon: Server },
+      { href: '/categories', label: 'Categories', icon: Database },
+    ],
+    solutions: [
+      { href: '/ai-solutions', label: 'AI Solutions', icon: Zap },
+      { href: '/it-services', label: 'IT Services', icon: Code },
+      { href: '/green-it', label: 'Green IT', icon: Globe },
+      { href: '/enterprise', label: 'Enterprise', icon: Building2 },
+    ],
+    resources: [
+      { href: '/developers', label: 'Developer Portal', icon: Code },
+      { href: '/api-docs', label: 'API Docs', icon: FileText },
+      { href: '/help-center', label: 'Help Center', icon: HelpCircle },
+      { href: '/sitemap', label: 'Sitemap', icon: MapPin },
+    ],
+    community: [
+      { href: '/community', label: 'Community', icon: Users },
+      { href: '/forum', label: 'Forum', icon: MessageSquare },
+      { href: '/events', label: 'Events', icon: Calendar },
+      { href: '/partners', label: 'Partners', icon: Handshake },
+    ]
+  };
+
+  const renderNavSection = (sectionKey: string, items: any[], title: string, icon: any) => {
+    const isExpanded = expandedSections.includes(sectionKey);
+    
+    return (
+      <div key={sectionKey} className="mb-4">
+        <button
+          onClick={() => toggleSection(sectionKey)}
+          className="flex items-center justify-between w-full p-3 text-left text-zion-slate-light hover:text-zion-cyan transition-colors rounded-lg hover:bg-zion-purple/10"
+        >
+          <div className="flex items-center">
+            {React.createElement(icon, { className: "w-5 h-5 mr-3" })}
+            <span className="font-medium">{title}</span>
+          </div>
+          <ChevronRight 
+            className={cn(
+              "w-4 h-4 transition-transform",
+              isExpanded ? "rotate-90" : ""
+            )} 
+          />
+        </button>
+        
+        {isExpanded && (
+          <div className="ml-8 mt-2 space-y-1">
+            {items.map((item) => {
+              const Icon = item.icon;
+              const isActive = location.pathname === item.href;
+              
+              return (
+                <Link
+                  key={item.href}
+                  to={item.href}
+                  className={cn(
+                    "flex items-center px-3 py-2 text-sm rounded-lg transition-colors",
+                    isActive
+                      ? "bg-zion-purple/20 text-zion-cyan"
+                      : "text-zion-slate-light hover:text-zion-cyan hover:bg-zion-purple/10"
+                  )}
+                >
+                  <Icon className="w-4 h-4 mr-3" />
+                  {item.label}
+                </Link>
+              );
+            })}
+          </div>
+        )}
+      </div>
+    );
   };
 
   return (
-    <aside className={`fixed left-0 top-0 h-full z-40 transition-all duration-300 ease-in-out ${
-      isCollapsed ? 'w-16' : 'w-64'
-    } bg-gradient-to-b from-black/95 via-gray-900/95 to-black/95 backdrop-blur-xl border-r border-cyan-500/30 shadow-2xl shadow-cyan-500/20`}>
-      
-      {/* Animated Background */}
-      <div className="absolute inset-0 bg-gradient-to-b from-cyan-500/5 via-blue-500/5 to-purple-500/5"></div>
-      
-      {/* Grid Pattern */}
-      <div className="absolute inset-0 bg-[linear-gradient(rgba(6,182,212,0.1)_1px,transparent_1px),linear-gradient(90deg,rgba(6,182,212,0.1)_1px,transparent_1px)] bg-[size:20px_20px] opacity-20"></div>
-
-      <div className="relative z-10 h-full flex flex-col">
-        {/* Header */}
-        <div className="flex items-center justify-between p-4 border-b border-cyan-500/30">
-          {!isCollapsed && (
-            <div className="flex items-center space-x-3">
-              <div className="w-8 h-8 bg-gradient-to-br from-cyan-400 to-blue-500 rounded-lg flex items-center justify-center text-white font-bold text-sm shadow-lg shadow-cyan-500/50">
-                Z
-              </div>
-              <span className="text-white font-semibold text-sm">Zion Tech</span>
-            </div>
-          )}
-          
-          <button
-            onClick={() => setIsCollapsed(!isCollapsed)}
-            className="p-2 rounded-lg text-cyan-400 hover:bg-cyan-500/20 transition-colors duration-200"
-          >
-            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              {isCollapsed ? (
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 5l7 7-7 7M5 5l7 7-7 7" />
-              ) : (
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M11 19l-7-7 7-7m8 14l-7-7 7-7" />
-              )}
-            </svg>
-          </button>
+    <aside className={cn(
+      "fixed left-0 top-16 h-full w-64 bg-zion-blue-dark border-r border-zion-blue-light z-40 transform transition-transform duration-300 ease-in-out",
+      isOpen ? "translate-x-0" : "-translate-x-full",
+      "lg:translate-x-0 lg:static lg:z-auto"
+    )}>
+      <div className="p-4">
+        {/* Logo */}
+        <div className="mb-8 p-4">
+          <span className="text-2xl font-bold bg-gradient-to-r from-zion-cyan via-zion-purple-light to-zion-purple bg-clip-text text-transparent">
+            ZION
+          </span>
         </div>
 
         {/* Navigation */}
-        <nav className="flex-1 overflow-y-auto py-4 px-2">
-          {navigationItems.map((section) => (
-            <div key={section.title} className="mb-6">
-              {!isCollapsed && (
-                <h3 className="px-3 mb-3 text-xs font-semibold text-cyan-400 uppercase tracking-wider">
-                  {section.title}
-                </h3>
-              )}
+        <nav className="space-y-2">
+          {/* Main Navigation */}
+          <div className="mb-6">
+            <h3 className="text-xs font-semibold text-zion-slate-light uppercase tracking-wider mb-3 px-3">
+              Main
+            </h3>
+            {navigationItems.main.map((item) => {
+              const Icon = item.icon;
+              const isActive = location.pathname === item.href;
               
-              <ul className="space-y-1">
-                {section.items.map((item) => (
-                  <li key={item.path}>
-                    <Link
-                      to={item.path}
-                      className={`group flex items-center px-3 py-2 rounded-lg transition-all duration-200 ${
-                        isActive(item.path)
-                          ? 'bg-gradient-to-r from-cyan-500/20 to-blue-500/20 text-white border border-cyan-500/50 shadow-lg shadow-cyan-500/30'
-                          : 'text-gray-300 hover:text-white hover:bg-white/10'
-                      }`}
-                    >
-                      <span className="text-lg min-w-[20px]">{item.icon}</span>
-                      
-                      {!isCollapsed && (
-                        <>
-                          <span className="ml-3 flex-1">{item.label}</span>
-                          {item.badge && (
-                            <span className={`px-2 py-1 text-xs rounded-full font-medium ${
-                              item.badge === 'New' 
-                                ? 'bg-green-500/20 text-green-400 border border-green-500/30'
-                                : item.badge === 'Hot'
-                                ? 'bg-red-500/20 text-red-400 border border-red-500/30'
-                                : 'bg-blue-500/20 text-blue-400 border border-blue-500/30'
-                            }`}>
-                              {item.badge}
-                            </span>
-                          )}
-                        </>
-                      )}
-                      
-                      {/* Active Indicator */}
-                      {isActive(item.path) && (
-                        <div className="absolute right-2 w-2 h-2 bg-cyan-400 rounded-full animate-pulse"></div>
-                      )}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          ))}
+              return (
+                <Link
+                  key={item.href}
+                  to={item.href}
+                  className={cn(
+                    "flex items-center px-3 py-2 text-sm rounded-lg transition-colors",
+                    isActive
+                      ? "bg-zion-purple/20 text-zion-cyan"
+                      : "text-zion-slate-light hover:text-zion-cyan hover:bg-zion-purple/10"
+                  )}
+                >
+                  <Icon className="w-4 h-4 mr-3" />
+                  {item.label}
+                </Link>
+              );
+            })}
+          </div>
+
+          {/* Marketplace Section */}
+          {renderNavSection('marketplace', navigationItems.marketplace, 'Marketplace', ShoppingCart)}
+          
+          {/* Solutions Section */}
+          {renderNavSection('solutions', navigationItems.solutions, 'Solutions', Zap)}
+          
+          {/* Resources Section */}
+          {renderNavSection('resources', navigationItems.resources, 'Resources', BookOpen)}
+          
+          {/* Community Section */}
+          {renderNavSection('community', navigationItems.community, 'Community', Users)}
         </nav>
 
-        {/* Footer */}
-        <div className="p-4 border-t border-cyan-500/30">
-          {!isCollapsed ? (
-            <div className="space-y-3">
-              <div className="text-center">
-                <div className="w-10 h-10 mx-auto bg-gradient-to-br from-cyan-500/20 to-blue-500/20 border border-cyan-500/30 rounded-lg flex items-center justify-center">
-                  <span className="text-cyan-400 text-lg">💡</span>
-                </div>
-                <p className="text-xs text-gray-400 mt-2">Need Help?</p>
-              </div>
-              <button className="w-full px-3 py-2 bg-gradient-to-r from-cyan-500 to-blue-500 text-white rounded-lg text-sm font-medium hover:from-cyan-400 hover:to-blue-400 transition-all duration-300">
-                Contact Support
-              </button>
-            </div>
-          ) : (
-            <div className="text-center">
-              <button className="w-8 h-8 mx-auto bg-gradient-to-r from-cyan-500 to-blue-500 rounded-lg flex items-center justify-center text-white text-sm hover:from-cyan-400 hover:to-blue-400 transition-all duration-300">
-                💬
-              </button>
-            </div>
-          )}
+        {/* Quick Actions */}
+        <div className="mt-8 p-4 bg-zion-blue-light/10 rounded-lg border border-zion-purple/20">
+          <h3 className="text-sm font-semibold text-white mb-3">Quick Actions</h3>
+          <div className="space-y-2">
+            <Link
+              to="/request-quote"
+              className="flex items-center px-3 py-2 text-sm bg-zion-cyan hover:bg-zion-cyan-light text-zion-blue-dark rounded-lg transition-colors font-medium"
+            >
+              <Award className="w-4 h-4 mr-2" />
+              Request Quote
+            </Link>
+            <Link
+              to="/contact"
+              className="flex items-center px-3 py-2 text-sm bg-transparent hover:bg-zion-purple/20 text-zion-cyan border border-zion-cyan rounded-lg transition-colors"
+            >
+              <MessageSquare className="w-4 h-4 mr-2" />
+              Get Support
+            </Link>
+          </div>
         </div>
       </div>
-
-      {/* Floating Elements */}
-      <div className="absolute top-1/3 right-2 w-1 h-1 bg-cyan-400 rounded-full animate-ping"></div>
-      <div className="absolute bottom-1/3 right-2 w-1 h-1 bg-blue-400 rounded-full animate-pulse"></div>
     </aside>
   );
 }

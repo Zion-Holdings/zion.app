@@ -1,124 +1,214 @@
 
-import React from 'react';
-import { Link } from 'react-router-dom';
-import GradientHeading from './GradientHeading';
+import { GradientHeading } from "./GradientHeading";
+import { Link } from "react-router-dom";
+import { 
+  Briefcase, 
+  HardDrive, 
+  Lightbulb, 
+  Users, 
+  Cloud, 
+  Database, 
+  TrendingUp, 
+  Cpu, 
+  Link as LinkIcon 
+} from "lucide-react";
 
-interface Category {
-  id: string;
-  name: string;
-  description: string;
-  icon: string;
-  count: number;
-  color: string;
-}
+const categories = [
+  {
+    title: "Services",
+    description: "On-demand IT support, consulting, development, and more",
+    icon: <Briefcase className="w-10 h-10" />,
+    link: "/services",
+    color: "from-purple-500 to-indigo-600",
+  },
+  {
+    title: "Talents",
+    description: "Connect with AI experts, developers, and tech specialists",
+    icon: <Users className="w-10 h-10" />,
+    link: "/talent",
+    color: "from-cyan-500 to-blue-600",
+  },
+  {
+    title: "Equipment",
+    description: "Rent or buy specialized hardware, servers, and devices",
+    icon: <HardDrive className="w-10 h-10" />,
+    link: "/equipment",
+    color: "from-amber-500 to-orange-600",
+  },
+  {
+    title: "Innovation",
+    description: "Discover cutting-edge solutions and tech breakthroughs",
+    icon: <Lightbulb className="w-10 h-10" />,
+    link: "/category/innovation",
+    color: "from-emerald-500 to-green-600",
+  },
+];
 
-const categories: Category[] = [
+const specialServices = [
   {
-    id: 'ai-ml',
-    name: 'AI & Machine Learning',
-    description: 'Cutting-edge artificial intelligence and machine learning solutions',
-    icon: '🤖',
-    count: 8,
-    color: 'from-purple-500 to-indigo-600'
+    title: "IT Onsite Services",
+    link: "/it-onsite-services"
   },
   {
-    id: 'cybersecurity',
-    name: 'Cybersecurity',
-    description: 'Advanced security solutions and threat protection',
-    icon: '🔒',
-    count: 5,
-    color: 'from-red-500 to-pink-600'
+    title: "Comprehensive Services",
+    link: "/comprehensive-services"
   },
   {
-    id: 'cloud-devops',
-    name: 'Cloud & DevOps',
-    description: 'Cloud infrastructure and development operations automation',
-    icon: '☁️',
-    count: 6,
-    color: 'from-blue-500 to-cyan-600'
+    title: "AI Services",
+    link: "/ai-services"
   },
   {
-    id: 'web-development',
-    name: 'Web Development',
-    description: 'Modern web applications and digital solutions',
-    icon: '🌐',
-    count: 4,
-    color: 'from-green-500 to-teal-600'
+    title: "Cybersecurity Services",
+    link: "/cybersecurity-services"
   },
   {
-    id: 'data-analytics',
-    name: 'Data Analytics',
-    description: 'Data processing, analytics, and business intelligence',
-    icon: '📊',
-    count: 3,
-    color: 'from-yellow-500 to-orange-600'
+    title: "Micro SAAS",
+    link: "/micro-saas"
   },
   {
-    id: 'iot-hardware',
-    name: 'IoT & Hardware',
-    description: 'Internet of Things and hardware solutions',
-    icon: '🌐',
-    count: 2,
-    color: 'from-indigo-500 to-purple-600'
+    title: "All Services",
+    link: "/comprehensive-services"
   },
   {
-    id: 'blockchain-web3',
-    name: 'Blockchain & Web3',
-    description: 'Blockchain technology and Web3 solutions',
-    icon: '⛓️',
-    count: 2,
-    color: 'from-gray-500 to-slate-600'
+    title: "Pricing",
+    link: "/services-pricing"
   },
   {
-    id: 'digital-transformation',
-    name: 'Digital Transformation',
-    description: 'End-to-end digital transformation services',
-    icon: '🚀',
-    count: 3,
-    color: 'from-emerald-500 to-green-600'
+    title: "Enterprise Solutions",
+    link: "/enterprise-solutions"
+  },
+  {
+    title: "Innovative Services",
+    link: "/innovative-services"
   }
 ];
 
-export default function CategoriesSection() {
+const serviceCategories = [
+  {
+    title: "Cloud & DevOps",
+    description: "Cloud migration and automation",
+    icon: <Cloud className="w-8 h-8" />,
+    color: "from-blue-500 to-cyan-600",
+    link: "/expanded-services?category=cloud-devops"
+  },
+  {
+    title: "Data & Analytics",
+    description: "Business intelligence and governance",
+    icon: <Database className="w-8 h-8" />,
+    color: "from-green-500 to-emerald-600",
+    link: "/expanded-services?category=data-analytics"
+  },
+  {
+    title: "Digital Transformation",
+    description: "Strategy and modernization",
+    icon: <TrendingUp className="w-8 h-8" />,
+    color: "from-orange-500 to-yellow-600",
+    link: "/expanded-services?category=digital-transformation"
+  },
+  {
+    title: "IoT & Edge",
+    description: "Connected solutions and edge computing",
+    icon: <Cpu className="w-8 h-8" />,
+    color: "from-indigo-500 to-purple-600",
+    link: "/expanded-services?category=iot-edge"
+  },
+  {
+    title: "Blockchain & Web3",
+    description: "Decentralized solutions and smart contracts",
+    icon: <LinkIcon className="w-8 h-8" />,
+    color: "from-teal-500 to-blue-600",
+    link: "/expanded-services?category=blockchain-web3"
+  }
+];
+
+interface CategoriesSectionProps {
+  showTitle?: boolean;
+}
+
+export function CategoriesSection({ showTitle = true }: CategoriesSectionProps) {
   return (
-    <section className="py-20 bg-gradient-to-b from-zion-blue-dark to-zion-blue">
+    <section className="py-20 bg-zion-blue">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-16">
-          <GradientHeading>Explore Categories</GradientHeading>
-          <p className="text-xl text-zion-slate-light mt-4 max-w-3xl mx-auto">
-            Discover our comprehensive ecosystem of tech services, talent, equipment, and innovation
-          </p>
-        </div>
+        {showTitle && (
+          <div className="text-center mb-16">
+            <GradientHeading>Explore Categories</GradientHeading>
+            <p className="text-zion-slate-light text-lg mt-4 max-w-2xl mx-auto">
+              Discover our comprehensive ecosystem of tech services, talent, equipment, and innovation
+            </p>
+          </div>
+        )}
         
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {categories.map((category) => (
-            <Link
-              key={category.id}
-              to={`/services?category=${category.id}`}
+            <Link 
+              key={category.title} 
+              to={category.link} 
               className="group block"
             >
-              <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 text-center hover:bg-white/20 transition-all duration-300 border border-zion-blue-light hover:border-zion-cyan">
-                <div className={`w-16 h-16 bg-gradient-to-br ${category.color} rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300`}>
-                  <span className="text-2xl">{category.icon}</span>
+              <div className="rounded-lg overflow-hidden h-full border border-zion-blue-light bg-zion-blue-dark p-6 transition-all duration-300 hover:border-zion-purple/50 hover:translate-y-[-5px]">
+                <div className={`rounded-full w-16 h-16 bg-gradient-to-br ${category.color} flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300`}>
+                  <div className="text-white">
+                    {category.icon}
+                  </div>
                 </div>
-                
-                <h3 className="text-lg font-semibold text-white mb-2 group-hover:text-zion-cyan transition-colors">
-                  {category.name}
-                </h3>
-                
-                <p className="text-sm text-zion-slate-light mb-3 line-clamp-2">
-                  {category.description}
-                </p>
-                
-                <div className="flex items-center justify-center text-zion-cyan text-sm font-medium">
-                  <span>{category.count} Services</span>
-                  <svg className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                  </svg>
-                </div>
+                <h3 className="text-white text-xl font-bold mb-2">{category.title}</h3>
+                <p className="text-zion-slate-light">{category.description}</p>
               </div>
             </Link>
           ))}
+        </div>
+        
+        <div className="mt-8">
+          <h3 className="text-center text-xl font-bold text-white mb-6">Featured Services</h3>
+          <div className="flex flex-wrap justify-center gap-4">
+            {specialServices.map((service) => (
+              <Link 
+                key={service.title}
+                to={service.link}
+                className="px-6 py-3 bg-zion-blue-light hover:bg-zion-blue-dark border border-zion-purple/20 hover:border-zion-purple/50 rounded-full text-zion-cyan transition-all duration-300"
+              >
+                {service.title}
+              </Link>
+            ))}
+            <Link 
+              to="/comprehensive-services"
+              className="px-6 py-3 bg-gradient-to-r from-zion-purple to-zion-purple-dark hover:from-zion-purple-light hover:to-zion-purple border border-zion-purple/50 hover:border-zion-purple rounded-full text-white transition-all duration-300"
+            >
+              View All Services
+            </Link>
+          </div>
+        </div>
+        
+        <div className="mt-12">
+          <h3 className="text-center text-xl font-bold text-white mb-6">Service Categories</h3>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {serviceCategories.map((category) => (
+              <Link 
+                key={category.title} 
+                to={category.link} 
+                className="group block"
+              >
+                <div className="rounded-lg overflow-hidden h-full border border-zion-blue-light bg-zion-blue-dark p-6 transition-all duration-300 hover:border-zion-purple/50 hover:translate-y-[-5px]">
+                  <div className={`rounded-full w-16 h-16 bg-gradient-to-br ${category.color} flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300`}>
+                    <div className="text-white">
+                      {category.icon}
+                    </div>
+                  </div>
+                  <h3 className="text-white text-xl font-bold mb-2">{category.title}</h3>
+                  <p className="text-zion-slate-light">{category.description}</p>
+                </div>
+              </Link>
+            ))}
+          </div>
+        </div>
+        
+        <div className="mt-12 flex justify-center">
+          <Link 
+            to="/categories" 
+            className="text-zion-cyan border-b border-zion-cyan hover:border-zion-cyan-dark transition-colors"
+          >
+            View All Categories →
+          </Link>
         </div>
       </div>
     </section>
