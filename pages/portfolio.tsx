@@ -1,5 +1,6 @@
 import React from 'react';
 import Head from 'next/head';
+import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { 
   ArrowRight, Brain, Shield, Rocket, Cpu, Database, Atom, Target, Star, 
@@ -119,7 +120,7 @@ export default function PortfolioPage() {
               Our Work
             </h1>
             <p className="text-xl md:text-2xl text-white/80 max-w-3xl mx-auto leading-relaxed mb-8">
-              Revolutionary technology solutions that are transforming industries and pushing the boundaries of what's possible
+                              Revolutionary technology solutions that are transforming industries and pushing the boundaries of what&apos;s possible
             </p>
             <div className="flex flex-wrap justify-center gap-4">
               {categories.map((category) => (
@@ -275,22 +276,22 @@ export default function PortfolioPage() {
               Ready to Start Your Next Project?
             </h2>
             <p className="text-xl text-white/80 mb-8 max-w-2xl mx-auto">
-              Let's collaborate to bring your vision to life with cutting-edge technology solutions that drive real results.
+                              Let&apos;s collaborate to bring your vision to life with cutting-edge technology solutions that drive real results.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a
+              <Link
                 href="/contact"
                 className="px-8 py-4 bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700 rounded-full font-semibold text-lg transition-all duration-300 transform hover:scale-105 hover:shadow-2xl flex items-center justify-center gap-2"
               >
                 Start a Project
                 <ArrowRight className="w-5 h-5" />
-              </a>
-              <a
+              </Link>
+              <Link
                 href="/services"
                 className="px-8 py-4 border border-white/20 hover:border-white/40 rounded-full font-semibold text-lg transition-all duration-300 transform hover:scale-105 backdrop-blur-sm bg-white/5 hover:bg-white/10"
               >
                 Explore Services
-              </a>
+              </Link>
             </div>
           </motion.div>
         </div>

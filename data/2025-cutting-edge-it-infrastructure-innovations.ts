@@ -238,7 +238,6 @@ export const cuttingEdgeITInfrastructureInnovations2025 = [
       'Compliance and audit automation',
       'Custom automation workflows'
     ],
-<<<<<<< HEAD
     popular: true,
     icon: '🏢',
     color: 'from-gray-600 via-slate-600 to-zinc-600',
@@ -248,7 +247,6 @@ export const cuttingEdgeITInfrastructureInnovations2025 = [
     targetAudience: 'Data center operators, Cloud providers, Large enterprises, Colocation facilities',
     trialDays: 21,
     setupTime: '1-2 weeks',
-    category: 'Autonomous Data Center',
     realService: true,
     technology: ['AI/ML, IoT, Predictive Analytics, Automation, Monitoring Systems'],
     integrations: ['Data center equipment, Monitoring tools, Power management, Cooling systems, Security systems'],
@@ -270,33 +268,5 @@ export const cuttingEdgeITInfrastructureInnovations2025 = [
     customers: 134,
     rating: 4.7,
     reviews: 187
-=======
-    benefits: [
-      'Reduce energy costs by 40%',
-      'Improve uptime to 99.999%',
-      'Reduce operational costs by 60%',
-      'Enable 24/7 autonomous operation',
-      'Predict and prevent failures',
-      'Optimize resource utilization',
-      'Reduce carbon footprint',
-      'Scale operations automatically'
-    ],
-    useCases: [
-      'Enterprise data centers',
-      'Cloud service providers',
-      'Colocation facilities',
-      'Edge computing locations',
-      'Government data centers',
-      'Research and educational institutions'
-    ],
-    marketSize: '$16.4B by 2025',
-    targetAudience: 'Data center operators, cloud providers, enterprises with large IT infrastructure',
-    competitiveAdvantage: 'Only fully autonomous data center management platform with AI-driven optimization',
-    contact: 'kleber@ziontechgroup.com',
-    mobile: '+1 302 464 0950',
-    address: '364 E Main St STE 1008 Middletown DE 19709',
-    website: 'https://ziontechgroup.com',
-    slug: '/autonomous-data-center-management-platform'
->>>>>>> origin/main
   }
 ];

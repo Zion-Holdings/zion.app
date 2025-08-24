@@ -1,9 +1,27 @@
 User-agent: *
 Allow: /
 
-# Sitemaps
-Sitemap: https://zion.app/sitemap.xml
-Sitemap: https://zion.app/sitemap.txt
+# Sitemap
+Sitemap: https://ziontechgroup.com/sitemap.xml
 
-# Crawl-delay
+# Disallow admin and private areas
+Disallow: /admin/
+Disallow: /private/
+Disallow: /api/
+Disallow: /_next/
+Disallow: /temp_components/
+
+# Allow important pages
+Allow: /
+Allow: /about
+Allow: /contact
+Allow: /portfolio
+Allow: /pricing-2025
+Allow: /comprehensive-2025-services-showcase
+Allow: /whitepapers
+Allow: /quantum-neural-network-platform
+Allow: /autonomous-business-operations-platform
+Allow: /ai-powered-it-asset-management
+
+# Crawl delay
 Crawl-delay: 1

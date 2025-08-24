@@ -98,6 +98,16 @@ const nextConfig = {
   ],
 
   webpack: (config, { dev, isServer, webpack }) => {
+    // Exclude contracts directory from webpack build
+    config.resolve.alias = {
+      ...config.resolve.alias,
+      'contracts': false,
+    };
+    
+    config.module.rules.push({
+      test: /\.sol$/,
+      use: 'ignore-loader'
+    });
     // Fix EventEmitter memory leak by increasing max listeners
     // events.EventEmitter.defaultMaxListeners = 20; // Will be set by build script
     

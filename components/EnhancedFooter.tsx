@@ -61,16 +61,15 @@ export default function EnhancedFooter() {
   ];
 
   const socialLinks = [
-    { name: 'Twitter', href: 'https://twitter.com/ziontechgroup', icon: Twitter },
     { name: 'LinkedIn', href: 'https://linkedin.com/company/ziontechgroup', icon: Linkedin },
-    { name: 'GitHub', href: 'https://github.com/ziontechgroup', icon: Github },
+    { name: 'GitHub', href: 'https://github.com/Zion-Holdings', icon: Github },
     { name: 'Website', href: 'https://ziontechgroup.com', icon: Globe }
   ];
 
   const contactInfo = [
     { icon: Mail, text: 'kleber@ziontechgroup.com', href: 'mailto:kleber@ziontechgroup.com' },
-    { icon: Phone, text: '+1 (555) 123-4567', href: 'tel:+15551234567' },
-    { icon: MapPin, text: 'Global Operations', href: '#location' }
+    { icon: Phone, text: '+1 (302) 464-0950', href: 'tel:+13024640950' },
+    { icon: MapPin, text: 'Delaware, United States', href: '#location' }
   ];
 
   return (
