@@ -1,7 +1,8 @@
 
 import { GradientHeading } from "./GradientHeading";
 import { Link } from "react-router-dom";
-import { Briefcase, HardDrive, Lightbulb, Users } from "lucide-react";
+import { Briefcase, HardDrive, Lightbulb, Users, ArrowRight, Sparkles } from "lucide-react";
+import { motion } from "framer-motion";
 
 const categories = [
   {
@@ -10,6 +11,10 @@ const categories = [
     icon: <Briefcase className="w-10 h-10" />,
     link: "/services",
     color: "from-purple-500 to-indigo-600",
+    bgColor: "bg-purple-500/10",
+    borderColor: "border-purple-500/20",
+    hoverColor: "hover:border-purple-500/50",
+    stats: "500+ Services"
   },
   {
     title: "Talents",
@@ -17,6 +22,10 @@ const categories = [
     icon: <Users className="w-10 h-10" />,
     link: "/talent",
     color: "from-cyan-500 to-blue-600",
+    bgColor: "bg-cyan-500/10",
+    borderColor: "border-cyan-500/20",
+    hoverColor: "hover:border-cyan-500/50",
+    stats: "10K+ Experts"
   },
   {
     title: "Equipment",
@@ -24,6 +33,10 @@ const categories = [
     icon: <HardDrive className="w-10 h-10" />,
     link: "/equipment",
     color: "from-amber-500 to-orange-600",
+    bgColor: "bg-amber-500/10",
+    borderColor: "border-amber-500/20",
+    hoverColor: "hover:border-amber-500/50",
+    stats: "2K+ Items"
   },
   {
     title: "Innovation",
@@ -31,13 +44,18 @@ const categories = [
     icon: <Lightbulb className="w-10 h-10" />,
     link: "/category/innovation",
     color: "from-emerald-500 to-green-600",
+    bgColor: "bg-emerald-500/10",
+    borderColor: "border-emerald-500/20",
+    hoverColor: "hover:border-emerald-500/50",
+    stats: "100+ Projects"
   },
 ];
 
 const specialServices = [
   {
     title: "IT Onsite Services",
-    link: "/it-onsite-services"
+    link: "/it-onsite-services",
+    icon: <Sparkles className="w-4 h-4" />
   }
 ];
 
@@ -46,62 +64,144 @@ interface CategoriesSectionProps {
 }
 
 export function CategoriesSection({ showTitle = true }: CategoriesSectionProps) {
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.1,
+        delayChildren: 0.2
+      }
+    }
+  };
+
+  const itemVariants = {
+    hidden: { y: 20, opacity: 0 },
+    visible: {
+      y: 0,
+      opacity: 1,
+      transition: {
+        duration: 0.5,
+        ease: "easeOut"
+      }
+    }
+  };
+
+  const cardVariants = {
+    hover: {
+      y: -8,
+      scale: 1.02,
+      transition: {
+        duration: 0.3,
+        ease: "easeOut"
+      }
+    }
+  };
+
   return (
-    <section className="py-20 bg-zion-blue">
-      <div className="container mx-auto px-4">
+    <section className="py-20 bg-gradient-to-br from-zion-blue via-zion-blue-dark to-zion-slate-dark relative overflow-hidden">
+      {/* Background decorative elements */}
+      <div className="absolute inset-0 overflow-hidden">
+        <div className="absolute top-20 left-20 w-64 h-64 border border-zion-cyan/10 rounded-full opacity-30"></div>
+        <div className="absolute bottom-20 right-20 w-48 h-48 border border-zion-purple/10 rotate-45 opacity-30"></div>
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 border border-zion-cyan/5 rounded-full opacity-20"></div>
+      </div>
+
+      <motion.div 
+        className="container mx-auto px-4 relative z-10"
+        variants={containerVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+      >
         {showTitle && (
-          <div className="text-center mb-16">
-            <GradientHeading>Explore Categories</GradientHeading>
-            <p className="text-zion-slate-light text-lg mt-4 max-w-2xl mx-auto">
+          <motion.div 
+            className="text-center mb-16"
+            variants={itemVariants}
+          >
+            <GradientHeading className="text-4xl md:text-5xl mb-6">Explore Categories</GradientHeading>
+            <p className="text-zion-slate-light text-lg md:text-xl mt-4 max-w-3xl mx-auto leading-relaxed">
               Discover our comprehensive ecosystem of tech services, talent, equipment, and innovation
             </p>
-          </div>
+          </motion.div>
         )}
         
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {categories.map((category) => (
-            <Link 
-              key={category.title} 
-              to={category.link} 
-              className="group block"
+        <motion.div 
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8"
+          variants={containerVariants}
+        >
+          {categories.map((category, index) => (
+            <motion.div
+              key={category.title}
+              variants={itemVariants}
+              whileHover="hover"
             >
-              <div className="rounded-lg overflow-hidden h-full border border-zion-blue-light bg-zion-blue-dark p-6 transition-all duration-300 hover:border-zion-purple/50 hover:translate-y-[-5px]">
-                <div className={`rounded-full w-16 h-16 bg-gradient-to-br ${category.color} flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300`}>
-                  <div className="text-white">
-                    {category.icon}
+              <Link 
+                to={category.link} 
+                className="group block h-full"
+              >
+                <div className={`rounded-2xl overflow-hidden h-full border-2 ${category.borderColor} ${category.bgColor} bg-zion-blue-dark/50 backdrop-blur-sm p-6 transition-all duration-300 ${category.hoverColor} hover:shadow-2xl hover:shadow-zion-purple/20`}>
+                  <div className={`rounded-2xl w-20 h-20 bg-gradient-to-br ${category.color} flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg`}>
+                    <div className="text-white">
+                      {category.icon}
+                    </div>
+                  </div>
+                  
+                  <h3 className="text-white text-xl font-bold mb-3 group-hover:text-zion-cyan transition-colors">
+                    {category.title}
+                  </h3>
+                  
+                  <p className="text-zion-slate-light mb-4 leading-relaxed">
+                    {category.description}
+                  </p>
+
+                  <div className="flex items-center justify-between">
+                    <span className="text-xs text-zion-cyan font-medium">
+                      {category.stats}
+                    </span>
+                    <ArrowRight className="w-4 h-4 text-zion-cyan group-hover:translate-x-1 transition-transform" />
                   </div>
                 </div>
-                <h3 className="text-white text-xl font-bold mb-2">{category.title}</h3>
-                <p className="text-zion-slate-light">{category.description}</p>
-              </div>
-            </Link>
+              </Link>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
         
-        <div className="mt-8">
-          <h3 className="text-center text-xl font-bold text-white mb-6">Featured Services</h3>
+        <motion.div 
+          className="mt-12"
+          variants={itemVariants}
+        >
+          <h3 className="text-center text-2xl font-bold text-white mb-8">Featured Services</h3>
           <div className="flex flex-wrap justify-center gap-4">
             {specialServices.map((service) => (
               <Link 
                 key={service.title}
                 to={service.link}
-                className="px-6 py-3 bg-zion-blue-light hover:bg-zion-blue-dark border border-zion-purple/20 hover:border-zion-purple/50 rounded-full text-zion-cyan transition-all duration-300"
+                className="group px-8 py-4 bg-gradient-to-r from-zion-purple/20 to-zion-cyan/20 hover:from-zion-purple/30 hover:to-zion-cyan/30 border border-zion-purple/30 hover:border-zion-purple/50 rounded-full text-zion-cyan transition-all duration-300 hover:shadow-lg hover:shadow-zion-purple/25 transform hover:scale-105 backdrop-blur-sm"
               >
-                {service.title}
+                <span className="flex items-center gap-2">
+                  {service.icon}
+                  {service.title}
+                  <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                </span>
               </Link>
             ))}
           </div>
-        </div>
+        </motion.div>
         
-        <div className="mt-12 flex justify-center">
+        <motion.div 
+          className="mt-16 flex justify-center"
+          variants={itemVariants}
+        >
           <Link 
             to="/categories" 
-            className="text-zion-cyan border-b border-zion-cyan hover:border-zion-cyan-dark transition-colors"
+            className="group inline-flex items-center gap-2 text-zion-cyan border-b-2 border-zion-cyan hover:border-zion-cyan-light transition-colors text-lg font-medium hover:text-zion-cyan-light"
           >
-            View All Categories →
+            Explore All Categories
+            <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
           </Link>
-        </div>
-      </div>
+        </motion.div>
+      </motion.div>
     </section>
   );
 }
