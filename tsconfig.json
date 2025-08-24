@@ -2,17 +2,33 @@
   "compilerOptions": {
     "target": "ES2020",
     "useDefineForClassFields": true,
+<<<<<<< HEAD
+    "lib": ["ES2020", "DOM", "DOM.Iterable"],
+=======
     "lib": [
       "ES2020",
       "DOM",
       "DOM.Iterable"
     ],
+>>>>>>> dd620ef4409d707a58974776442fbda9c1819828
     "module": "ESNext",
     "skipLibCheck": true,
-    "importHelpers": false,
-    "noEmitHelpers": false,
+    "moduleResolution": "bundler",
+    "allowImportingTsExtensions": true,
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "noEmit": true,
+    "jsx": "react-jsx",
+    "strict": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noFallthroughCasesInSwitch": true,
     "baseUrl": ".",
     "paths": {
+<<<<<<< HEAD
+      "@/*": ["./src/*"]
+    }
+=======
       "@/*": [
         "./src/*"
       ]
@@ -37,6 +53,7 @@
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
     "types": ["react", "react-dom"]
+>>>>>>> dd620ef4409d707a58974776442fbda9c1819828
   },
   "include": [
     "src"
