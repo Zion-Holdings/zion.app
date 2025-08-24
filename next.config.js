@@ -1,5 +1,8 @@
+const os = require('os');
+const path = require('path');
+
 const nextConfig = {
-  assetPrefix,
+  assetPrefix: process.env.NODE_ENV === 'production' ? 'https://ziontechgroup.com' : '',
   poweredByHeader: false,
   trailingSlash: false,
   reactStrictMode: true,
@@ -743,4 +746,4 @@ const nextConfig = {
   },
 };
 
-module.exports = withSentryConfig(baseConfig);
+module.exports = nextConfig;
