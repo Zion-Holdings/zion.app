@@ -130,7 +130,7 @@ export const advancedInnovativeServices: AdvancedInnovativeService[] = [
     competitors: ['IBM Quantum, Google Quantum, D-Wave, Rigetti'],
     marketSize: '$6B quantum bio-computing',
     growthRate: '58% YoY',
-    variant: 'quantum-bio-enterprise',
+    variant: 'quantum-iot',
     contactInfo: contact,
     realImplementation: true,
     implementationDetails: 'Quantum algorithm implementations for biological simulations and molecular modeling.',
