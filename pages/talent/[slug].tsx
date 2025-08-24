@@ -1,12 +1,20 @@
-import { useRouter } from 'next/router';
+import type { NextPage } from 'next';
+import Head from 'next/head';
 
-export default function TalentDetails() {
-  const { query } = useRouter();
-  const { slug } = query as { slug?: string };
+const TalentSlugPage: NextPage = () => {
   return (
-    <div className="max-w-3xl mx-auto p-6">
-      <h1 className="text-2xl font-semibold">Talent: {slug}</h1>
-      <p className="text-gray-600">Profile coming soon.</p>
+    <div>
+      <Head>
+        <title>Talent - Zion Tech Solutions</title>
+        <meta name="description" content="Talent page" />
+      </Head>
+      
+      <main>
+        <h1>Talent</h1>
+        <p>This page is under construction.</p>
+      </main>
     </div>
   );
-}
+};
+
+export default TalentSlugPage;

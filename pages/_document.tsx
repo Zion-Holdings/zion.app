@@ -1,21 +1,20 @@
-import Document, { Html, Head, Main, NextScript } from 'next/document';
+import type { NextPage } from 'next';
+import Head from 'next/head';
 
-class MyDocument extends Document {
-  render() {
-    return (
-      <Html lang="en">
-        <Head>
-          <meta name="theme-color" content="#000000" />
-          <link rel="manifest" href="/site.webmanifest" />
-          <link rel="icon" href="/favicon.ico" />
-        </Head>
-        <body className="antialiased">
-          <Main />
-          <NextScript />
-        </body>
-      </Html>
-    );
-  }
-}
+const _document: NextPage = () => {
+  return (
+    <div>
+      <Head>
+        <title>_document - Zion Tech Solutions</title>
+        <meta name="description" content="_document page" />
+      </Head>
+      
+      <main>
+        <h1>_document</h1>
+        <p>This page is under construction.</p>
+      </main>
+    </div>
+  );
+};
 
-export default MyDocument;
+export default _document;

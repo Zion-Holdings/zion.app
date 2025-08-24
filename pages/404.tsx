@@ -1,8 +1,20 @@
-export default function NotFound() {
+import type { NextPage } from 'next';
+import Head from 'next/head';
+
+const NotFoundPage: NextPage = () => {
   return (
-    <div className="max-w-3xl mx-auto p-6">
-      <h1 className="text-2xl font-semibold">404 - Page Not Found</h1>
-      <p className="text-gray-600">Sorry, we couldn’t find what you’re looking for.</p>
+    <div>
+      <Head>
+        <title>404 - Zion Tech Solutions</title>
+        <meta name="description" content="404 page" />
+      </Head>
+      
+      <main>
+        <h1>404</h1>
+        <p>This page is under construction.</p>
+      </main>
     </div>
   );
-}
+};
+
+export default NotFoundPage;
