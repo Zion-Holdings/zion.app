@@ -1,72 +1,55 @@
 {
   "compilerOptions": {
-    "target": "ES2022",
+    "target": "ES2024",
     "useDefineForClassFields": true,
-    "lib": [
-      "ESNext",
-      "DOM",
-      "DOM.Iterable"
-    ],
+    "lib": ["ES2024", "DOM", "DOM.Iterable", "WebWorker", "WebWorker.Iterable"],
     "module": "ESNext",
     "skipLibCheck": true,
+    "importHelpers": false,
+    "noEmitHelpers": false,
     "baseUrl": ".",
     "paths": {
-      "@/*": [
-        "./src/*"
-      ],
-      "@/pages/*": [
-        "./src/pages/*",
-        "./pages/*"
-      ],
-      "@/components/*": [
-        "./src/components/*"
-      ],
-      "@/api/*": [
-        "./src/api/*"
-      ],
-      "axios": [
-        "./src/lib/axios.ts"
-      ],
-      "next-cloudinary": [
-        "./types/next-cloudinary.d.ts"
-      ],
-      "types/*": [
-        "./types/*"
-      ]
+      "@/*": ["./src/*"],
+      "@/pages/*": ["./src/pages/*", "./pages/*"],
+      "@/components/*": ["./src/components/*"],
+      "@/api/*": ["./src/api/*"],
+      "@/types/*": ["./src/types/*", "./types/*"],
+      "@/utils/*": ["./src/utils/*"],
+      "@/hooks/*": ["./src/hooks/*"],
+      "@/context/*": ["./src/context/*"],
+      "@/services/*": ["./src/services/*"],
+      "react-router-dom": ["./src/stubs/react-router-dom.tsx"],
+      "next-cloudinary": ["./types/next-cloudinary.d.ts"],
+      "types/*": ["./types/*"]
     },
     /* Bundler mode */
     "moduleResolution": "bundler",
     "esModuleInterop": true,
-    "allowSyntheticDefaultImports": true,
+    "module": "esnext",
+    "esModuleInterop": true,
+    "moduleResolution": "node",
+    "esModuleInterop": true,
     "resolveJsonModule": true,
-    "isolatedModules": true,
-    /* Linting */
     "strict": true,
-    // "noUnusedLocals": false, // Enable to catch unused local variables
     "noUnusedLocals": false,
-    // "noUnusedParameters": false, // Enable to catch unused function parameters
     "noUnusedParameters": false,
     "noFallthroughCasesInSwitch": true,
+    "noUncheckedIndexedAccess": true,
+    "noImplicitReturns": true,
     "allowJs": true,
     "incremental": true,
-    "types": [],
-    "typeRoots": [
-      "./node_modules/@types",
-      "./types"
-    ],
+    "typeRoots": ["./node_modules/@types", "./types"],
+    "types": ["node"],
     "jsx": "preserve",
-    "allowImportingTsExtensions": true,
-    "noEmit": true
+    "target": "ES2017"
   },
   "include": [
-    "src",
-    "src/types",
-    "pages",
-    "types/**/*.d.ts"
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx"
   ],
   "exclude": [
     "node_modules",
-    "src/components/ui/chart.tsx",
-    "src/store/index.ts"
+    "zion.app/recovered-content/**"
   ]
 }

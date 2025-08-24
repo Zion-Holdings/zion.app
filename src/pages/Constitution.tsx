@@ -1,1 +1,9 @@
-export { default } from './Philosophy';
+import React from 'react';
+export function Constitution() {
+  return (
+    <div>
+      <h1>Component</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

@@ -11,26 +11,21 @@
  * @param {number} [options.page=1] - Page number for pagination.
  * @param {number} [options.limit=20] - Number of items per page.
  * @param {string} [options.category] - Filter by category.
- * @param {string} [options.sortBy] - Field to sort by (e.g., "price_asc", "price_desc", "date_added").
- * @param {string} [options.type] - Filter by type of listing (e.g., "service", "product", "talent_profile", "job_posting").
- * @returns {Promise<Array<object>>} A promise that resolves with an array of product objects.
+ * @param {string} [options.sortBy] - Field to sort by (e.g., "price_asc", "price_desc", "date_added")." * @param {string} [options.type] - Filter by type of listing (e.g., "service", "product", "talent_profile", "job_posting")." * @returns {Promise<Array<object>>} A promise that resolves with an array of product objects."""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
  * @throws {Error} If the request fails.
  */
 async function listProducts(options = {}) {
   const { page = 1, limit = 20, category, sortBy, ...otherFilters } = options;
-  console.log('listProducts called with:', options);
 
   const queryParams = new URLSearchParams({
     page: page.toString(),
-    limit: limit.toString(),
+    limit: limit.toString()
   });
 
   if (category) {
-    queryParams.append('category', category); // TODO: Confirm backend support for 'category' filter
-  }
+    queryParams.append('category', category); // Backend expects a category' query param'  }
   if (sortBy) {
-    queryParams.append('sortBy', sortBy); // TODO: Confirm backend support for 'sortBy'
-  }
+    queryParams.append('sortBy', sortBy); // Matches the sort options used in the UI'  }
   // Append other filters dynamically
   for (const [key, value] of Object.entries(otherFilters)) {
     if (value !== undefined && value !== null) {
@@ -41,8 +36,7 @@ async function listProducts(options = {}) {
   const response = await fetch(`/api/marketplace/products?${queryParams.toString()}`);
 
   if (!response.ok) {
-    const errorData = await response.json().catch(() => ({ message: 'Failed to list products' }));
-    throw new Error(errorData.message || `Failed to list products. Status: ${response.status}`);
+    const errorData = await response.json().catch(() => ({ message: Failed to list products' }));    throw new Error(errorData.message || `Failed to list products. Status: ${response.status}`);
   }
 
   return response.json();
@@ -55,11 +49,9 @@ async function listProducts(options = {}) {
  * @throws {Error} If the request fails.
  */
 async function getProductDetails(productId) {
-  console.log('getProductDetails called for productId:', productId);
 
   if (!productId) {
-    throw new Error('Product ID is required.');
-  }
+    throw new Error('Product ID is required.');  }
 
   const response = await fetch(`/api/marketplace/product/${productId}`);
 
@@ -78,36 +70,26 @@ async function getProductDetails(productId) {
 /**
  * Submits a quote request.
  * @param {object} quoteDetails - The details for the quote request.
- * @param {string} quoteDetails.name - Customer's full name.
- * @param {string} quoteDetails.email - Customer's email address.
- * @param {string} quoteDetails.phone - Customer's phone number.
- * @param {string} quoteDetails.details - A detailed description of the requested service or product.
+ * @param {string} quoteDetails.name - Customer's full name.' * @param {string} quoteDetails.email - Customer's email address.' * @param {string} quoteDetails.phone - Customer's phone number.' * @param {string} quoteDetails.details - A detailed description of the requested service or product.
  * @param {string} [quoteDetails.productId] - If the quote is for a specific existing product/service.
- * @param {string} [quoteDetails.country] - Customer's country.
- * @param {string} [quoteDetails.service] - Specific service being requested if not tied to a `productId`.
+ * @param {string} [quoteDetails.country] - Customer's country.' * @param {string} [quoteDetails.service] - Specific service being requested if not tied to a `productId`.
  * @returns {Promise<object>} A promise that resolves with the response from the quote submission.
  * @throws {Error} If the quote submission fails.
  */
 async function submitQuoteRequest(quoteDetails) {
-  console.log('submitQuoteRequest called with:', quoteDetails);
 
   if (!quoteDetails || !quoteDetails.name || !quoteDetails.email || !quoteDetails.phone || !quoteDetails.details) {
-    throw new Error('Missing required fields in quoteDetails: name, email, phone, details are required.');
-  }
+    throw new Error('Missing required fields in quoteDetails: name, email, phone, details are required.');  }
 
-  const response = await fetch('/api/quotes', {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify(quoteDetails),
+  const response = await fetch('/api/quotes', {'    method: 'POST',    headers: {
+      Content-Type': application/json',    },
+    body: JSON.stringify(quoteDetails)
   });
 
   const responseData = await response.json();
 
   if (!response.ok || !responseData.success) {
-    // If responseData.success is false but response.ok is true, it's a business logic error from the API
-    throw new Error(responseData.error || responseData.message || `Failed to submit quote request. Status: ${response.status}`);
+    // If responseData.success is false but response.ok is true, it's a business logic error from the API'    throw new Error(responseData.error || responseData.message || `Failed to submit quote request. Status: ${response.status}`);
   }
 
   return responseData; // e.g., { success: true, ... }
@@ -122,10 +104,8 @@ async function submitQuoteRequest(quoteDetails) {
  * @throws {Error} If the request fails.
  */
 async function getQuoteStatus(quoteId) {
-  console.log('getQuoteStatus called for quoteId:', quoteId);
   if (!quoteId) {
-    throw new Error('Quote ID is required.');
-  }
+    throw new Error('Quote ID is required.');  }
 
   const response = await fetch(`/api/marketplace/quotes/${quoteId}/status`);
 
@@ -147,18 +127,16 @@ async function getQuoteStatus(quoteId) {
  * @param {number} [options.page=1] - Page number.
  * @param {number} [options.limit=20] - Items per page.
  * @param {string} [options.skill] - Filter by specific skill.
- * @param {string} [options.jobType] - Filter by job type (e.g., "full-time", "contract", "freelance").
- * @param {string} [options.budgetRange] - Filter by budget range.
+ * @param {string} [options.jobType] - Filter by job type (e.g., "full-time", "contract", "freelance")." * @param {string} [options.budgetRange] - Filter by budget range."""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
  * @returns {Promise<Array<object>>} A promise that resolves with an array of job objects.
  * @throws {Error} If the request fails.
  */
 async function listJobs(options = {}) {
-  console.log('listJobs called with options:', options);
   const { page = 1, limit = 20, ...filters } = options;
 
   const params = new URLSearchParams({
     page: page.toString(),
-    limit: limit.toString(),
+    limit: limit.toString()
   });
 
   for (const [key, value] of Object.entries(filters)) {
@@ -170,8 +148,7 @@ async function listJobs(options = {}) {
   const response = await fetch(`/api/marketplace/jobs?${params.toString()}`);
 
   if (!response.ok) {
-    const errorData = await response.json().catch(() => ({ message: 'Failed to list jobs' }));
-    throw new Error(errorData.message || `Failed to list jobs. Status: ${response.status}`);
+    const errorData = await response.json().catch(() => ({ message: Failed to list jobs' }));    throw new Error(errorData.message || `Failed to list jobs. Status: ${response.status}`);
   }
 
   return response.json();
@@ -184,10 +161,8 @@ async function listJobs(options = {}) {
  * @throws {Error} If the request fails.
  */
 async function getJobDetails(jobId) {
-  console.log('getJobDetails called for jobId:', jobId);
   if (!jobId) {
-    throw new Error('Job ID is required.');
-  }
+    throw new Error('Job ID is required.');  }
 
   const response = await fetch(`/api/marketplace/jobs/${jobId}`);
 
@@ -208,19 +183,17 @@ async function getJobDetails(jobId) {
  * @param {object} [options={}] - Filtering and pagination options.
  * @param {number} [options.page=1] - Page number.
  * @param {number} [options.limit=20] - Items per page.
- * @param {string} [options.skills] - Filter by skills (e.g., "React,Node.js").
- * @param {string} [options.experienceLevel] - Filter by experience level.
+ * @param {string} [options.skills] - Filter by skills (e.g., "React,Node.js")." * @param {string} [options.experienceLevel] - Filter by experience level."""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
  * @param {string} [options.availability] - Filter by availability.
  * @returns {Promise<Array<object>>} A promise that resolves with an array of talent profile objects.
  * @throws {Error} If the request fails.
  */
 async function listTalent(options = {}) {
-  console.log('listTalent called with options:', options);
   const { page = 1, limit = 20, ...filters } = options;
 
   const params = new URLSearchParams({
     page: page.toString(),
-    limit: limit.toString(),
+    limit: limit.toString()
   });
 
   for (const [key, value] of Object.entries(filters)) {
@@ -232,8 +205,7 @@ async function listTalent(options = {}) {
   const response = await fetch(`/api/marketplace/talent?${params.toString()}`);
 
   if (!response.ok) {
-    const errorData = await response.json().catch(() => ({ message: 'Failed to list talent' }));
-    throw new Error(errorData.message || `Failed to list talent. Status: ${response.status}`);
+    const errorData = await response.json().catch(() => ({ message: Failed to list talent' }));    throw new Error(errorData.message || `Failed to list talent. Status: ${response.status}`);
   }
 
   return response.json();
@@ -246,10 +218,8 @@ async function listTalent(options = {}) {
  * @throws {Error} If the request fails.
  */
 async function getTalentDetails(talentId) {
-  console.log('getTalentDetails called for talentId:', talentId);
   if (!talentId) {
-    throw new Error('Talent ID is required.');
-  }
+    throw new Error('Talent ID is required.');  }
 
   const response = await fetch(`/api/marketplace/talent/${talentId}`);
 
@@ -264,8 +234,8 @@ async function getTalentDetails(talentId) {
 
   return response.json();
 }
-
-export {
+;
+{
   listProducts,
   getProductDetails,
   submitQuoteRequest,

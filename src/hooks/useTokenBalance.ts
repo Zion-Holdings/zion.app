@@ -1,48 +1,5 @@
-import { useState, useEffect } from 'react';
-import { ethers } from 'ethers';
-
-const ERC20_ABI = [
-  'function balanceOf(address owner) view returns (uint256)',
-  'function decimals() view returns (uint8)'
-];
-
-export function useTokenBalance(
-  address: string | null,
-  tokenAddress: string,
-  provider: ethers.Provider | null
-) {
-  const [balance, setBalance] = useState<string | null>(null);
-
-  useEffect(() => {
-    if (!address || !provider) {
-      setBalance(null);
-      return;
-    }
-
-    let isStale = false;
-
-    async function fetchBalance() {
-      try {
-        const contract = new ethers.Contract(tokenAddress, ERC20_ABI, provider);
-        const [rawBalance, decimals] = await Promise.all([
-          contract.balanceOf(address),
-          contract.decimals()
-        ]);
-        if (!isStale) {
-          setBalance(ethers.formatUnits(rawBalance, decimals));
-        }
-      } catch (err) {
-        console.error('useTokenBalance: failed to fetch balance', err);
-        if (!isStale) setBalance(null);
-      }
-    }
-
-    fetchBalance();
-
-    return () => {
-      isStale = true;
-    };
-  }, [address, tokenAddress, provider]);
-
-  return balance;
-}
+// Hook for useTokenBalance;
+export const useUseTokenBalance: unknown = () => {
+  // TODO: Implement hook logic;
+  return {};
+};

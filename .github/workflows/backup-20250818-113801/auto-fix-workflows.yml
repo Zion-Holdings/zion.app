@@ -1,0 +1,94 @@
+---
+name: Auto-Fix GitHub Actions Workflows
+
+on:
+  workflow_dispatch: {}
+  # schedule:
+  #   - cron: '0 3 * * *' # DISABLED to prevent conflicts with manual fixes
+  # workflow_run:  # DISABLED to prevent automatic triggering
+  #   workflows: ["Comprehensive Test Suite"]
+  #   types: [completed]
+  #   branches: [main, develop]
+
+permissions:
+  contents: write
+  actions: read
+
+concurrency:
+  group: "workflow-fixes"
+  cancel-in-progress: false
+
+jobs:
+  auto-fix:
+    name: Auto-Fix Workflow Issues
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.GITHUB_TOKEN }}
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+      - name: Install dependencies
+        run: npm ci --no-audit --no-fund
+      - name: Check workflow health before fixing
+        id: pre-check
+        run: |
+          echo "Checking workflow health before attempting fixes..."
+          if node automation/check-workflow-health.cjs | grep -q "✅ All workflows are healthy"; then
+            echo "needs-fixing=false" >> $GITHUB_OUTPUT
+            echo "All workflows are already healthy - no fixes needed"
+          else
+            echo "needs-fixing=true" >> $GITHUB_OUTPUT
+            echo "Workflows need fixing - proceeding with repairs"
+          fi
+      - name: Run comprehensive workflow fixer (only if needed)
+        if: steps.pre-check.outputs.needs-fixing == 'true'
+        run: |
+          chmod +x fix-github-actions-comprehensive.sh
+          ./fix-github-actions-comprehensive.sh
+      - name: Validate fixes (only if fixes were applied)
+        if: steps.pre-check.outputs.needs-fixing == 'true'
+        run: |
+          chmod +x validate-workflows-comprehensive.sh
+          ./validate-workflows-comprehensive.sh
+      - name: Check for changes
+        id: check-changes
+        run: |
+          if [ -n "$(git status --porcelain)" ]; then
+            echo "has-changes=true" >> $GITHUB_OUTPUT
+            echo "Changes detected in workflows"
+            git status --porcelain
+          else
+            echo "has-changes=false" >> $GITHUB_OUTPUT
+            echo "No changes detected"
+          fi
+      - name: Commit and push fixes (only if changes exist)
+        if: steps.check-changes.outputs.has-changes == 'true'
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add .github/workflows/*.yml
+          git commit -m "🔧 Auto-fix GitHub Actions workflows - $(date -u +'%Y-%m-%d %H:%M:%S UTC')" || exit 0
+          git push origin HEAD:${{ github.ref }}
+      - name: Create summary
+        run: |
+          echo "## Workflow Auto-Fix Summary" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          if [ "${{ steps.pre-check.outputs.needs-fixing }}" == "false" ]; then
+            echo "**Status:** ✅ All workflows are already healthy - no fixes applied" >> $GITHUB_STEP_SUMMARY
+          elif [ "${{ steps.check-changes.outputs.has-changes }}" == "true" ]; then
+            echo "**Status:** 🔧 Fixed issues and committed changes" >> $GITHUB_STEP_SUMMARY
+          else
+            echo "**Status:** ⚠️ Issues found but no changes were made" >> $GITHUB_STEP_SUMMARY
+          fi
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "**Timestamp:** $(date -u)" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "**Branch:** ${{ github.ref }}" >> $GITHUB_STEP_SUMMARY

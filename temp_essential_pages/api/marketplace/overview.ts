@@ -1,33 +1,50 @@
-import type { NextApiRequest, NextApiResponse } from 'next';
-import { MARKETPLACE_LISTINGS } from '@/data/marketplaceData';
-import * as Sentry from '@sentry/nextjs';
-
-export default function handler(req: NextApiRequest, res: NextApiResponse) {
-  if (req.method !== 'GET') {
-    res.setHeader('Allow', 'GET');
-    return res.status(405).json({ error: `Method ${req.method} not allowed` });
+import { PrismaClient } from @prisma/client';import type { NextApiRequest, NextApiResponse } from 'next';import * as Sentry from @sentry/nextjs';;
+const prisma = new PrismaClient();
+default async function handler(
+  req: NextApiRequest,
+  res: NextApiResponse
+) {
+  if (req.method !== 'GET') {'    res.setHeader('Allow', GET');    return res.status(405).json({ error: `Method ${req.method} Not Allowed` });
   }
 
+  const category = String(req.query.category || ).toLowerCase().trim();
   try {
-    // Limit query param ?limit=
-    const limitParam = parseInt(req.query.limit as string, 10);
-    const listings = Number.isFinite(limitParam)
-      ? MARKETPLACE_LISTINGS.slice(0, Math.max(limitParam, 0))
-      : MARKETPLACE_LISTINGS;
+    const [totalProducts, totalCategories, featuredProducts] = await Promise.all([
+      prisma.product.count(),
+      prisma.product.groupBy({
+        by: ['category'],        _count: {
+          category: true
+        }
+      }),
+      prisma.product.findMany({
+        where: category ? { category } : {},
+        take: 6,
+        orderBy: {
+          createdAt: desc',        },
+        select: {
+          id: true,
+          name: true,
+          description: true,
+          price: true,
+          currency: true,
+          category: true,
+          images: true
+        }
+      })
+    ]);
 
-    return res.status(200).json(listings);
-  } catch (error) {
-    console.error('Error in marketplace overview API:', error);
-    
-    // Log to Sentry
-    Sentry.withScope((scope) => {
-      scope.setTag('api', 'marketplace-overview');
-      scope.setContext('query', req.query);
-      scope.setLevel('error');
-      Sentry.captureException(error);
+    return res.status(200).json({
+      totalProducts,
+      totalCategories: totalCategories.length,
+      featuredProducts,
+      categories: totalCategories.map(cat => ({
+        name: cat.category,
+        count: cat._count.category
+      }))
     });
-    
-    // Return fallback empty array instead of error
-    return res.status(200).json([]);
+  } catch {
+    Sentry.captureException();
+    console.('Error fetching marketplace overview:', );    return res.status(500).json({ : Failed to fetch marketplace overview' });  } finally {
+    await prisma.$disconnect();
   }
 } 

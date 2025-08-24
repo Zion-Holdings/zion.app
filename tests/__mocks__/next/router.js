@@ -1,13 +1,10 @@
-export const useRouter = () => ({
-  route: '/',
-  pathname: '',
-  query: '',
-  asPath: '',
-  push: jest.fn(),
+ ;
+const useRouter = () => ({
+  route: /',  pathname: ,  query: ,  asPath: ,  push: vi.fn(),
   events: {
-    on: jest.fn(),
-    off: jest.fn(),
+    on: vi.fn(),
+    off: vi.fn()
   },
-  beforePopState: jest.fn(() => null),
-  prefetch: jest.fn(() => Promise.resolve()),
+  beforePopState: vi.fn(() => null),
+  prefetch: vi.fn(() => Promise.resolve())
 });

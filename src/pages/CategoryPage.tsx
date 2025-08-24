@@ -1,52 +1,9 @@
-import { useEffect, useState } from 'react';
-import { useRouter } from 'next/router';
-import { CategoryListingPage } from '@/components/CategoryListingPage';
-
-interface ApiResponse {
-  category: { name: string; slug: string; description?: string };
-  items: any[];
-}
-
-export default function CategoryPage() {
-  const router = useRouter();
-  const { slug } = router.query;
-  const [data, setData] = useState<ApiResponse | null>(null);
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    async function load() {
-      if (!slug || typeof slug !== 'string') return;
-      setLoading(true);
-      try {
-        const res = await fetch(`/api/categories/${slug}/items`);
-        if (!res.ok) throw new Error('Failed to load');
-        const json: ApiResponse = await res.json();
-        setData(json);
-        if (json.category?.name) {
-          document.title = `${json.category.name} | Zion Marketplace`;
-        }
-      } catch (e) {
-        console.error('Failed to load category items', e);
-      } finally {
-        setLoading(false);
-      }
-    }
-    load();
-  }, [slug]);
-
-  if (loading) {
-    return <div className="p-6 text-center text-white">Loading...</div>;
-  }
-
-  if (!data) {
-    return <div className="p-6 text-center text-white">Category not found.</div>;
-  }
-
+import React from 'react';
+export function CategoryPage() {
   return (
-    <CategoryListingPage
-      title={data.category.name}
-      description={data.category.description || ''}
-      listings={data.items}
-    />
+    <div>
+      <h1>Component</h1>
+      <p>Component placeholder</p>
+    </div>
   );
 }

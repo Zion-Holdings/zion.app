@@ -1,6 +1,40 @@
-const fs = require('fs');
-const path = require('path');
-const { execSync } = require('child_process');
+
+const winston = require('winston');
+
+const logger = winston.createLogger({
+  level: 'info',
+  format: winston.format.combine(
+    winston.format.timestamp(),
+    winston.format.errors({ stack: true }),
+    winston.format.json()
+  ),
+  defaultMeta: { service: 'automation-script' },
+  transports: [
+    new winston.transports.File({ filename: 'logs/error.log', level: 'error' }),
+    new winston.transports.File({ filename: 'logs/combined.log' })
+  ]
+});
+
+if (process.env.NODE_ENV !== 'production') {
+  logger.add(new winston.transports.Console({
+    format: winston.format.simple()
+  }));
+}
+
+
+class Script {
+  constructor() {
+    this.isRunning = false;
+  }
+
+  async start() {
+    this.isRunning = true;
+    logger.info('Starting Script...');
+    
+    try {
+      const fs = require('fs')
+const _path = require('path')
+const { execSync: _execSync } = require('child_process');
 
 // Files to process - complete list from grep results
 const filesToFix = [
@@ -66,31 +100,31 @@ const patterns = [
   // Import conversions
   {
     from: /import\s+{\s*Link\s*}\s+from\s+"react-router-dom";?/g,
-    to: 'import Link from "next/link";'
+    to: 'import Link from 'next/link';
   },
   {
     from: /import\s+{\s*useParams\s*}\s+from\s+"react-router-dom";?/g,
-    to: 'import { useRouter } from "next/router";'
+    to: 'import { useRouter } from 'next/router';
   },
   {
     from: /import\s+{\s*Navigate\s*}\s+from\s+"react-router-dom";?/g,
-    to: 'import { useRouter } from "next/router";'
+    to: 'import { useRouter } from 'next/router';
   },
   {
     from: /import\s+{\s*useParams,\s*Link\s*}\s+from\s+"react-router-dom";?/g,
-    to: 'import Link from "next/link";\nimport { useRouter } from "next/router";'
+    to: 'import Link from "next/link";\nimport { useRouter } from 'next/router';
   },
   {
     from: /import\s+{\s*Link,\s*useParams\s*}\s+from\s+"react-router-dom";?/g,
-    to: 'import Link from "next/link";\nimport { useRouter } from "next/router";'
+    to: 'import Link from "next/link";\nimport { useRouter } from 'next/router';
   },
   {
     from: /import\s+{\s*Navigate,\s*useParams\s*}\s+from\s+"react-router-dom";?/g,
-    to: 'import { useRouter } from "next/router";'
+    to: 'import { useRouter } from 'next/router';
   },
   {
     from: /import\s+{\s*useParams,\s*Navigate\s*}\s+from\s+"react-router-dom";?/g,
-    to: 'import { useRouter } from "next/router";'
+    to: 'import { useRouter } from 'next/router';
   },
   {
     from: /import\s+Navigate,\s*{\s*Routes,\s*Route\s*}\s+from\s+"react-router-dom";?/g,
@@ -113,8 +147,8 @@ const patterns = [
   {
     from: /const\s+{\s*([^}]+)\s*}\s*=\s*useParams\(\);?/g,
     to: (match, params) => {
-      const router = 'const router = useRouter();';
-      const paramAccess = params.split(',').map(p => {
+      const router = 'const router = useRouter();'
+const paramAccess = params.split(',').map(p => {
         const param = p.trim();
         return `const ${param} = router.query.${param} as string;`;
       }).join('\n  ');
@@ -135,11 +169,10 @@ const patterns = [
     from: /to=["']([^"']+)["']/g,
     to: 'href="$1"'
   }
-];
-
+]
 function fixFile(filePath) {
   try {
-    console.log(`Processing: ${filePath}`);
+    logger.warn(`Processing: ${filePath}`);
     let content = fs.readFileSync(filePath, 'utf8');
     let modified = false;
     
@@ -157,26 +190,63 @@ function fixFile(filePath) {
     
     if (modified) {
       fs.writeFileSync(filePath, content);
-      console.log(`✓ Fixed: ${filePath}`);
+      logger.warn(`✓ Fixed: ${filePath}`);
     } else {
-      console.log(`- No changes needed: ${filePath}`);
+      logger.warn(`- No changes needed: ${filePath}`);
     }
     
-  } catch (error) {
-    console.error(`Error processing ${filePath}:`, error.message);
+  } catch (_error) {
+    logger.error(`Error processing ${filePath}:`, error.message);
   }
 }
 
 // Process all files
-console.log('Starting React Router to Next.js conversion...\n');
+logger.warn('Starting React Router to Next.js conversion...\n');
 
 filesToFix.forEach(filePath => {
   if (fs.existsSync(filePath)) {
     fixFile(filePath);
   } else {
-    console.log(`- File not found: ${filePath}`);
+    logger.warn(`- File not found: ${filePath}`);
   }
 });
 
-console.log('\n✓ Conversion complete!');
-console.log('\nNote: Route component files in src/routes/ need manual conversion to Next.js pages structure.'); 
+logger.warn('\n✓ Conversion complete!');
+logger.warn('\nNote: Route component files in src/routes/ need manual conversion to Next.js pages structure.');
+    } catch (error) {
+      logger.error('Error in Script:', error);
+      throw error;
+    }
+  }
+
+  stop() {
+    this.isRunning = false;
+    logger.info('Stopping Script...');
+  }
+}
+
+// Start the script
+if (require.main === module) {
+  const script = new Script();
+  script.start().catch(error => {
+    logger.error('Failed to start Script:', error);
+    process.exit(1);
+  });
+}
+
+module.exports = Script;
+
+
+// Graceful shutdown handling
+process.on('SIGINT', () => {
+  console.log('\n🛑 Received SIGINT, shutting down gracefully...');
+  // Add cleanup logic here
+  process.exit(0);
+});
+
+process.on('SIGTERM', () => {
+  console.log('\n🛑 Received SIGTERM, shutting down gracefully...');
+  // Add cleanup logic here
+  process.exit(0);
+});
+

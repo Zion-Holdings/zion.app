@@ -1,15 +1,7 @@
-import Categories, { CategoriesProps } from '@/pages/Categories';
-import type { GetStaticProps } from 'next';
-
-export const getStaticProps: GetStaticProps<CategoriesProps> = async () => {
-  const appUrl = process.env.NEXT_PUBLIC_APP_URL || 'http://localhost:3000';
-  try {
-    const res = await fetch(`${appUrl}/api/categories`); // Changed this line
-    const categories = res.ok ? await res.json() : [];
-    return { props: { categories } };
-  } catch {
-    return { props: { categories: [] } };
-  }
-};
-
-export default Categories;
+import React from 'react';
+import Head from 'next/head';
+  return (
+    <>
+      <Head><title>categories - Zion App</title><meta name="description" content="categories page" /></Head><div className="container mx-auto px-4 py-8"><h1 className="text-3xl font-bold mb-6">categories</h1><p className="text-lg mb-4">This page is under construction.</p><div className="mt-4"><a href="/" className="text-blue-600 hover:underline">;
+            ← Back to Home</a></div></div></>;
+  );

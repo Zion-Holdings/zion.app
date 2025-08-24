@@ -27,6 +27,8 @@ jobs:
           context: .
           push: true
           tags: ${{ secrets.REGISTRY_URL }}/zion-app:${{ github.sha }}
+          cache-from: type=registry,ref=${{ secrets.REGISTRY_URL }}/zion-app:cache
+          cache-to: type=registry,ref=${{ secrets.REGISTRY_URL }}/zion-app:cache,mode=max
 
       - name: Install Trivy
         run: |

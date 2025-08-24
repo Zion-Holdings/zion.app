@@ -84,9 +84,9 @@ jobs:
           # Capture full test output from initial and retry phases for context
           echo "Initial Jest Test Output:" > ./failure_logs/test_run_summary.txt
           echo "${{ steps.jest_tests_initial.outputs.stdout }}" >> ./failure_logs/test_run_summary.txt
-          echo "
+           ec
 Initial Jest Test Error Output:" >> ./failure_logs/test_run_summary.txt
-          echo "${{ steps.jest_tests_initial.outputs.stderr }}" >> ./failure_logs/test_run_summary.txt
+
           echo "
 Initial Playwright Test Output:" >> ./failure_logs/test_run_summary.txt
           echo "${{ steps.playwright_tests_initial.outputs.stdout }}" >> ./failure_logs/test_run_summary.txt

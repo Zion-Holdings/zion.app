@@ -1,11 +1,14 @@
 
 import { useState } from "react";
-import { useForm, ControllerRenderProps } from "react-hook-form";
+import { useRouter } from 'next/router';
+import { useForm } from "react-hook-form";
+import type { ControllerRenderProps } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import { LogIn, User, Eye, EyeOff } from "lucide-react";
-import { fireEvent } from '@/lib/analytics';
-import { useAuth } from "@/context/auth/AuthProvider";
+
+import { useAuth } from "@/hooks/useAuth";
+import { loginUser } from "@/services/authService";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import {
@@ -17,30 +20,29 @@ import {
   FormMessage,
 } from "@/components/ui/form";
 import { Alert, AlertDescription } from "@/components/ui/alert";
-import Link from "next/link";
+import { Link, useNavigate } from "react-router-dom";
+import { LoadingOverlay } from "@/components/LoadingOverlay";
 
-import { Checkbox } from "@/components/ui/checkbox";
 // Form validation schema
 const loginSchema = z.object({
   email: z.string().email("Please enter a valid email").min(1, "Email is required"),
   password: z.string().min(6, "Password must be at least 6 characters"),
-  rememberMe: z.boolean(),
 });
-
 
 type LoginFormValues = z.infer<typeof loginSchema>;
 
 export function LoginForm() {
   const { isLoading, login } = useAuth();
+  const navigate = useNavigate();
+  const [searchParams] = useSearchParams();
   const [showPassword, setShowPassword] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   
   const form = useForm<LoginFormValues>({
-    resolver: zodResolver(loginSchema) as any,
+    resolver: zodResolver(loginSchema),
     defaultValues: {
       email: "",
       password: "",
-      rememberMe: false,
     },
   });
 
@@ -49,21 +51,18 @@ export function LoginForm() {
 
     try {
       setIsSubmitting(true);
-      // Pass email and password to the login function
-      const result = await login(data.email, data.password);
-      if (result?.error) {
-        let errorMessage = "Login failed. Please try again."; // Default generic error
-        if (result?.error && result?.error?.message) {
-          if (result.error.message.toLowerCase().includes("email not confirmed")) {
-            errorMessage = "Your email is not confirmed. Please check your inbox for a confirmation link.";
-          } else {
-            errorMessage = result.error.message;
-          }
-        }
-        form.setError("root", { message: errorMessage });
-      } else {
-        fireEvent('login', { method: 'email' });
+      const { res, data: resData } = await loginUser(data.email, data.password);
+      if (!res.ok) {
+        toast.error(resData?.error || "Invalid credentials");
+        return;
       }
+      toast.success("Logged in successfully");
+      if (resData?.token) {
+        document.cookie = `token=${resData.token}; path=/`;
+      }
+      navigate("/");
+    } catch (err) {
+      toast.error("Unable to login. Please try again.");
     } finally {
       setIsSubmitting(false);
     }
@@ -89,7 +88,7 @@ export function LoginForm() {
         <FormField
           control={form.control}
           name="email"
-          render={({ field }: { field: ControllerRenderProps<LoginFormValues, "email"> }) => (
+          render={({ field }) => (
             <FormItem>
               <FormLabel className="text-zion-slate-light">Email address</FormLabel>
               <FormControl>
@@ -109,10 +108,11 @@ export function LoginForm() {
             </FormItem>
           )}
         />
+
         <FormField
           control={form.control}
           name="password"
-          render={({ field }: { field: ControllerRenderProps<LoginFormValues, "password"> }) => (
+          render={({ field }) => (
             <FormItem>
               <FormLabel className="text-zion-slate-light">Password</FormLabel>
               <FormControl>
@@ -149,49 +149,24 @@ export function LoginForm() {
             </FormItem>
           )}
         />
-        <FormField
-          control={form.control}
-          name="rememberMe"
-          render={({ field }: { field: ControllerRenderProps<LoginFormValues, "rememberMe"> }) => (
-            <FormItem className="flex flex-row items-start space-x-3 space-y-0">
-              <FormControl>
-                <Checkbox
-                  checked={field.value}
-                  onCheckedChange={field.onChange}
-                  className="border-zion-blue-light data-[state=checked]:bg-zion-purple data-[state=checked]:text-white"
-                  aria-label="Remember me"
-                />
-              </FormControl>
-              <div className="space-y-1 leading-none">
-                <FormLabel className="text-zion-slate-light">Remember me</FormLabel>
-              </div>
-            </FormItem>
-          )}
-        />
+
         <div className="flex items-center justify-between">
           <div className="text-sm">
-            {/* "Remember me" checkbox is now above, this div can be used for "Forgot Password" if it's still needed */}
-            {/* If "Remember me" was previously here, it's moved. */}
-          </div>
-          <div className="text-sm">
-            <Link href="/forgot-password" className="font-medium text-zion-cyan hover:text-zion-cyan-light">
-              Forgot password?
+            <Link to="/forgot-password" className="font-medium text-zion-cyan hover:text-zion-cyan-light">
+              Forgot your password?
             </Link>
           </div>
         </div>
+
         <Button
           type="submit"
-          className="w-full inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-gradient-to-r from-zion-purple to-zion-purple-dark hover:from-zion-purple-light hover:to-zion-purple focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-zion-purple-light visible"
+          className="w-full bg-gradient-to-r from-zion-purple to-zion-purple-dark hover:from-zion-purple-light hover:to-zion-purple text-white"
           disabled={isLoading || isSubmitting}
         >
           {isLoading || isSubmitting ? "Logging in..." : "Login"}
         </Button>
-        <p className="text-sm text-center mt-4">
-          <Link href="/signup" className="font-medium text-zion-cyan hover:text-zion-cyan-light">
-            Create account
-          </Link>
-        </p>
       </form>
+      <LoadingOverlay visible={isLoading || isSubmitting} />
     </Form>
   );
 }

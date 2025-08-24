@@ -1,42 +1,35 @@
-// tests/__mocks__/@stripe/stripe-js.js
+ 
+// tests/__mocks__/@stripe/stripe-js.js;
 const mockStripeInstance = {
-  elements: jest.fn(options => {
+  elements: vi.fn(_options => {
     return {
-      create: jest.fn(type => ({
-        mount: jest.fn(),
-        destroy: jest.fn(),
-        on: jest.fn(),
-        update: jest.fn(),
-      })),
+      create: vi.fn(_type => ({
+        mount: vi.fn(),
+        destroy: vi.fn(),
+        on: vi.fn(),
+        update: vi.fn()
+      }))
     };
   }),
-  confirmCardPayment: jest.fn(() => Promise.resolve({ paymentIntent: { id: 'pi_mock_core', status: 'succeeded' }, error: null })),
-  createPaymentMethod: jest.fn(() => Promise.resolve({ paymentMethod: { id: 'pm_mock_core' }, error: null })),
-  retrievePaymentIntent: jest.fn(clientSecret => Promise.resolve({ paymentIntent: { id: 'pi_mock_retrieved_core', client_secret: clientSecret, status: 'succeeded' }, error: null })),
-};
-
-const loadStripe = jest.fn(publishableKey => {
+  confirmCardPayment: vi.fn(() => Promise.resolve({ paymentIntent: { id: 'pi_mock_core', status: 'succeeded' }, error: null })),  createPaymentMethod: vi.fn(() => Promise.resolve({ paymentMethod: { id: 'pm_mock_core' }, error: null })),  retrievePaymentIntent: vi.fn(clientSecret => Promise.resolve({ paymentIntent: { id: 'pi_mock_retrieved_core', client_secret: clientSecret, status: 'succeeded' }, error: null })),};
+const loadStripe = vi.fn(_publishableKey => {
   return Promise.resolve(mockStripeInstance);
 });
-
 const resetMocks = () => {
-  mockStripeInstance.elements.mockClear().mockImplementation(options => ({
-    create: jest.fn(type => ({
-      mount: jest.fn(),
-      destroy: jest.fn(),
-      on: jest.fn(),
-      update: jest.fn(),
-    })),
+  mockStripeInstance.elements.mockClear().mockImplementation(_options => ({
+    create: vi.fn(_type => ({
+      mount: vi.fn(),
+      destroy: vi.fn(),
+      on: vi.fn(),
+      update: vi.fn()
+    }))
   }));
-  mockStripeInstance.confirmCardPayment.mockClear().mockResolvedValue({ paymentIntent: { id: 'pi_mock_core', status: 'succeeded' }, error: null });
-  mockStripeInstance.createPaymentMethod.mockClear().mockResolvedValue({ paymentMethod: { id: 'pm_mock_core' }, error: null });
-  mockStripeInstance.retrievePaymentIntent.mockClear().mockImplementation(clientSecret => Promise.resolve({ paymentIntent: { id: 'pi_mock_retrieved_core', client_secret: clientSecret, status: 'succeeded' }, error: null }));
-
-  loadStripe.mockClear().mockImplementation(publishableKey => Promise.resolve(mockStripeInstance));
+  mockStripeInstance.confirmCardPayment.mockClear().mockResolvedValue({ paymentIntent: { id: 'pi_mock_core', status: 'succeeded' }, error: null });  mockStripeInstance.createPaymentMethod.mockClear().mockResolvedValue({ paymentMethod: { id: 'pm_mock_core' }, error: null });  mockStripeInstance.retrievePaymentIntent.mockClear().mockImplementation(clientSecret => Promise.resolve({ paymentIntent: { id: 'pi_mock_retrieved_core', client_secret: clientSecret, status: 'succeeded' }, error: null }));
+  loadStripe.mockClear().mockImplementation(_publishableKey => Promise.resolve(mockStripeInstance));
 };
 
 module.exports = {
   loadStripe,
   __mockStripeInstance: mockStripeInstance,
-  __resetStripeJSMocks: resetMocks,
+  __resetStripeJSMocks: resetMocks
 };

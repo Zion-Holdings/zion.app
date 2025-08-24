@@ -1,29 +1,57 @@
 name: Deploy
 
 on:
-  push:
-    branches: [main]
-  workflow_dispatch:
+  workflow_dispatch: {}
+  schedule:
+    - cron: '*/10 * * * *'
+
+permissions:
+  contents: write
+  actions: read
 
 jobs:
-  deploy:
+  main:
+    name: Main Job
     runs-on: ubuntu-latest
+    timeout-minutes: 20
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - name: Checkout repository
+        uses: actions/checkout@v4
         with:
-          node-version: 20
+          fetch-depth: 0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
           cache: 'npm'
-      - run: npm ci
-      - run: npm run build
+      - name: Install dependencies (for Sentry CLI and potential build step)
+        run: npm ci
+      - name: Build application (to generate sourcemaps for Sentry)
+        env:
+          # Mimic Netlify's production environment as much as possible for consistent sourcemaps
+          # These are illustrative; actual values might need to match netlify.toml production context
+          NODE_ENV: production
+          NEXT_TELEMETRY_DISABLED: '1'
+          # Add other critical NEXT_PUBLIC_ vars if they affect sourcemap generation or IDs
+        run: npm run build # This uses the standard build, not the full optimized-build.cjs
+
       - name: Create Sentry release
         uses: getsentry/action-release@v1
         env:
           SENTRY_AUTH_TOKEN: ${{ secrets.SENTRY_AUTH_TOKEN }}
-          SENTRY_ORG: zion-holdings
-          SENTRY_PROJECT: javascript-nextjs
+          SENTRY_ORG: zion-holdings # Make sure this is your Sentry org slug
+          SENTRY_PROJECT: javascript-nextjs # Make sure this is your Sentry project slug
         with:
           environment: production
-          sourcemaps: './.next'
-          url_prefix: '~/_next'
-      # Additional deployment steps would go here
+          sourcemaps: # Path to sourcemaps
+            - './.next/**/*.js.map'
+            - './.next/static/**/*.js.map' # Common locations for Next.js sourcemaps
+          url_prefix: '~/_next' # Adjust if your assets are served from a different base path e.g. /_next or cdn
+          # version: ${{ github.sha }} # Explicitly set version, defaults to github.sha
+          set_commits: auto # Automatically associate commits with the release
+          # deploy: # Optional: if you want to mark the release as deployed in Sentry
+          # env: production
+          # started_at: ${{ steps.start_time.outputs.time }} # Requires a step to output current time
+          # name: "Netlify Production Deployment"
+

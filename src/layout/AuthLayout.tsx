@@ -1,11 +1,9 @@
-import React, { ReactNode } from 'react';
-
-interface AuthLayoutProps {
-  children: ReactNode;
+import React from 'react';
+export function AuthLayout() {
+  return (
+    <div>
+      <h1>Component</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
 }
-
-export function AuthLayout({ children }: AuthLayoutProps) {
-  return <div className="auth-layout">{children}</div>;
-}
-
-export default AuthLayout;

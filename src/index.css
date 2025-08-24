@@ -1,199 +1,136 @@
-/* Fonts are now loaded via Next.js font optimization in _app.tsx */
-@import './styles/navbar.css';
-@import './styles/responsive.css';
-@import './styles/auth-layout.css';
-@import './styles/performance.css';
-
-@import './styles/OnsiteForm.css';
-/* CSS Custom Properties for Theming */
-:root {
-  --background: hsl(0 0% 100%);
-  --foreground: hsl(0 0% 3.9%);
-  --primary: hsl(240 5.9% 10%);
-  --primary-foreground: hsl(0 0% 98%);
-  --secondary: hsl(240 4.8% 95.9%);
-  --secondary-foreground: hsl(240 5.9% 10%);
-  --card: hsl(0 0% 100%);
-  --card-foreground: hsl(0 0% 3.9%);
-  --border: hsl(0 0% 89.8%);
-  --input: hsl(0 0% 89.8%);
-  --ring: hsl(240 5.9% 10%);
-  --accent: hsl(240 3.7% 15.9%);
-  --accent-foreground: hsl(0 0% 98%);
-}
-
-[data-theme='dark'] {
-  --background: hsl(222, 47%, 8%);
-  --foreground: hsl(0, 0%, 88%);
-  --primary: hsl(188, 85%, 53%);
-  --primary-foreground: hsl(222, 47%, 8%);
-  --secondary: hsl(271, 76%, 53%);
-  --secondary-foreground: hsl(0, 0%, 88%);
-  --card: hsl(220, 30%, 11%);
-  --card-foreground: hsl(0, 0%, 88%);
-  --border: hsl(222, 39%, 17%);
-  --input: hsl(222, 39%, 17%);
-  --ring: hsl(188, 85%, 53%);
-  --accent: hsl(288, 85%, 60%);
-  --accent-foreground: hsl(0, 0%, 88%);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme]) {
-    --background: hsl(222, 47%, 8%);
-    --foreground: hsl(0, 0%, 88%);
-    --primary: hsl(188, 85%, 53%);
-    --primary-foreground: hsl(222, 47%, 8%);
-    --secondary: hsl(271, 76%, 53%);
-    --secondary-foreground: hsl(0, 0%, 88%);
-    --card: hsl(220, 30%, 11%);
-    --card-foreground: hsl(0, 0%, 88%);
-    --border: hsl(222, 39%, 17%);
-    --input: hsl(222, 39%, 17%);
-    --ring: hsl(188, 85%, 53%);
-    --accent: hsl(288, 85%, 60%);
-    --accent-foreground: hsl(0, 0%, 88%);
-  }
-}
-
-/*Scoped Theme Variables for Mobile App */
-.mobile-app {
-  min-height: 100vh; /* Ensure it takes full height */
-}
-
-.mobile-app[data-theme='light'] {
-  --background: hsl(0 0% 100%);
-  --foreground: hsl(0 0% 3.9%);
-  --primary: hsl(240 5.9% 10%);
-  --primary-foreground: hsl(0 0% 98%);
-  --secondary: hsl(240 4.8% 95.9%);
-  --secondary-foreground: hsl(240 5.9% 10%);
-  --card: hsl(0 0% 100%);
-  --card-foreground: hsl(0 0% 3.9%);
-  --border: hsl(0 0% 89.8%);
-  --input: hsl(0 0% 89.8%);
-  --ring: hsl(240 5.9% 10%);
-  --accent: hsl(240 3.7% 15.9%);
-  --accent-foreground: hsl(0 0% 98%);
-
-  background-color: var(--background);
-  color: var(--foreground);
-}
-
-.mobile-app[data-theme='dark'] {
-  --background: hsl(222, 47%, 8%);
-  --foreground: hsl(0, 0%, 88%);
-  --primary: hsl(188, 85%, 53%);
-  --primary-foreground: hsl(222, 47%, 8%);
-  --secondary: hsl(271, 76%, 53%);
-  --secondary-foreground: hsl(0, 0%, 88%);
-  --card: hsl(220, 30%, 11%);
-  --card-foreground: hsl(0, 0%, 88%);
-  --border: hsl(222, 39%, 17%);
-  --input: hsl(222, 39%, 17%);
-  --ring: hsl(188, 85%, 53%);
-  --accent: hsl(288, 85%, 60%);
-  --accent-foreground: hsl(0, 0%, 88%);
-
-  background-color: var(--background);
-  color: var(--foreground);
-}
-
-/* Global layout fixes */
-html,
-body {
-  margin: 0;
-  padding: 0;
-  overflow-x: hidden;
-}
-
-.container {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 1rem;
-  box-sizing: border-box;
-}
-
-
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
   :root {
-    --font-sans: 'Inter', system-ui, sans-serif;
-    --font-heading: 'Montserrat', 'Inter', sans-serif;
+    --font-sans: 'Orbitron', system-ui, sans-serif;
 
-    --background: 222 47% 8%;
-    --foreground: 0 0% 95%;
+    --background: 0 0% 7%;
+    --foreground: 142 71% 45%;
 
-    --card: 220 30% 11%;
-    --card-foreground: 0 0% 88%;
+    --card: 0 0% 7%;
+    --card-foreground: 142 71% 45%;
 
-    --popover: 0 0% 100%; /* Kept existing */
-    --popover-foreground: 224 71% 4%; /* Kept existing */
+    --popover: 0 0% 7%;
+    --popover-foreground: 142 71% 45%;
 
-    --primary: 220 80% 55%;
-    --primary-foreground: 0 0% 100%;
+    --primary: 216 84% 50%;
+    --primary-foreground: 142 71% 45%;
 
-    --secondary: 280 70% 50%;
-    --secondary-foreground: 0 0% 100%;
+    --secondary: 0 0% 68%;
+    --secondary-foreground: 0 0% 7%;
 
-    --muted: 210 40% 96%; /* Kept existing */
-    --muted-foreground: 215 20% 45%; /* Kept existing */
+    --muted: 0 0% 68%;
+    --muted-foreground: 215 20% 65%;
 
-    --accent: 186 65% 55%;
-    --accent-foreground: 222 47% 8%;
+    --accent: 228 12% 92%;
+    --accent-foreground: 0 0% 7%;
 
-    --destructive: 0 84% 60%; /* Kept existing */
-    --destructive-foreground: 210 40% 98%; /* Kept existing */
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 142 71% 45%;
 
-    --border: 222 39% 17%;
-    --input: 222 39% 17%;
-    --ring: 188 85% 53%;
+    --border: 0 0% 68%;
+    --input: 0 0% 68%;
+    --ring: 216 84% 53%;
 
-    /* Accessible primary text/background pair */
-    --bg-primary: 222 47% 8%;
-    --text-primary: 0 0% 100%;
+    --radius: 0.5rem;
+
+    --sidebar-background: 228 12% 92%;
+
+    --sidebar-foreground: 0 0% 7%;
+
+    --sidebar-primary: 216 84% 53%;
+
+    --sidebar-primary-foreground: 142 71% 45%;
+
+    --sidebar-accent: 0 0% 68%;
+
+    --sidebar-accent-foreground: 0 0% 7%;
+
+    --sidebar-border: 0 0% 68%;
+
+    --sidebar-ring: 216 84% 53%;
+  }
+
+  .dark {
+    --background: 0 0% 7%;
+    --foreground: 142 71% 45%;
+
+    --card: 0 0% 7%;
+    --card-foreground: 142 71% 45%;
+
+    --popover: 0 0% 7%;
+    --popover-foreground: 142 71% 45%;
+
+    --primary: 216 84% 50%;
+    --primary-foreground: 142 71% 45%;
+
+    --secondary: 0 0% 68%;
+    --secondary-foreground: 0 0% 7%;
+
+    --muted: 0 0% 68%;
+    --muted-foreground: 215 20% 65%;
+
+    --accent: 228 12% 92%;
+    --accent-foreground: 0 0% 7%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 142 71% 45%;
+
+    --border: 0 0% 68%;
+    --input: 0 0% 68%;
+    --ring: 216 84% 53%;
+    --sidebar-background: 228 12% 92%;
+    --sidebar-foreground: 0 0% 7%;
+    --sidebar-primary: 216 84% 53%;
+    --sidebar-primary-foreground: 142 71% 45%;
+    --sidebar-accent: 0 0% 68%;
+    --sidebar-accent-foreground: 0 0% 7%;
+    --sidebar-border: 0 0% 68%;
+    --sidebar-ring: 216 84% 53%;
+  }
+
+  .light {
+    --background: 0 0% 100%;
+    --foreground: 224 71% 4%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 224 71% 4%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 224 71% 4%;
+
+    --primary: 262 83% 58%;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 210 40% 96%;
+    --secondary-foreground: 222 47% 11%;
+
+    --muted: 210 40% 96%;
+    --muted-foreground: 215 20% 65%;
+
+    --accent: 210 40% 96%;
+    --accent-foreground: 224 71% 4%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 214 32% 91%;
+    --input: 214 32% 91%;
+    --ring: 262 83% 58%;
 
     --radius: 0.5rem;
 
     --sidebar-background: 210 40% 96%;
-
     --sidebar-foreground: 224 71% 4%;
-
     --sidebar-primary: 262 83% 58%;
-
     --sidebar-primary-foreground: 210 40% 98%;
-
     --sidebar-accent: 210 40% 96%;
-
     --sidebar-accent-foreground: 224 71% 4%;
-
     --sidebar-border: 214 32% 91%;
-
     --sidebar-ring: 262 83% 58%;
-
-    /* Variables to be set by themeUtils.ts
-    --primary-color: #3b82f6; (example)
-    --background-color: #ffffff; (example)
-    --text-color: #000000; (example)
-    --accent-color: #3b82f6; (example)
-    --button-color: #3b82f6; (example)
-    --card-background: #f8fafc; (example)
-    */
   }
-
-  /*
-    The .dark and .light classes in :root are no longer needed here
-    as theme colors are applied dynamically via JavaScript using CSS custom properties
-    set on the :root element (document.documentElement).
-    The ThemeProvider component now handles applying these styles.
-    The `document.documentElement.classList.add('dark')` or `document.documentElement.classList.add('light')`
-    is still managed by ThemeProvider for any CSS that might directly depend on these classes,
-    but the color variable definitions themselves are dynamic.
-  */
 }
 
 @layer base {
@@ -202,38 +139,7 @@ body {
   }
 
   body {
-    @apply bg-background text-foreground;
-    font-family: theme('fontFamily.sans');
-  }
-
-  h1, h2, h3, h4, h5, h6 {
-    font-family: theme('fontFamily.heading');
-  }
-
-  h1 {
-    @apply text-4xl md:text-5xl font-extrabold text-secondary mb-6;
-  }
-
-  h2 {
-    @apply text-3xl md:text-4xl font-bold text-primary mb-4;
-  }
-
-  h3 {
-    @apply text-2xl font-semibold text-secondary mb-3;
-  }
-
-  h4,
-  h5,
-  h6 {
-    @apply font-medium text-foreground mb-2;
-  }
-
-  p {
-    @apply text-base text-foreground leading-relaxed mb-4;
-  }
-
-  .content-section {
-    @apply my-12 md:my-16;
+    @apply bg-background text-foreground font-sans;
   }
 
   @keyframes pulse {
@@ -255,27 +161,21 @@ body {
   }
 
   ::-webkit-scrollbar-track {
-    background: var(--card);
+    background: theme('colors["zion-blue"].DEFAULT');
   }
 
   ::-webkit-scrollbar-thumb {
-    background: var(--accent);
+    background: theme('colors["zion-purple"].dark');
     border-radius: 5px;
   }
 
   ::-webkit-scrollbar-thumb:hover {
-    background: var(--accent);
+    background: theme('colors["zion-purple"].DEFAULT');
   }
 
   /* Smooth scrolling */
   html {
     scroll-behavior: smooth;
-    scrollbar-color: var(--accent) var(--card);
-  }
-
-  img {
-    max-width: 100%;
-    height: auto;
   }
 
   /* LiveKit UI overrides */
@@ -310,12 +210,6 @@ body {
     opacity: 1;
   }
 }
-
-@layer components {
-  a {
-    @apply transition-colors duration-200 hover:text-primary;
-  }
-
   @keyframes slide-up {
     from { transform: translateY(100%); }
     to { transform: translateY(0); }
@@ -324,36 +218,3 @@ body {
   .animate-slide-up {
     animation: slide-up 0.3s ease-out;
   }
-
-  /* Mobile optimizations */
-  @media (max-width: 768px) {
-    body {
-      font-size: 0.875rem;
-    }
-
-    button,
-    [role="button"],
-    input,
-    textarea,
-    select {
-      min-height: 44px;
-      padding: 0.75rem;
-    }
-
-    .container {
-      padding-left: 1rem;
-      padding-right: 1rem;
-    }
-  }
-}
-
-.request-btn { background:#00bcd4;color:#fff; }
-.request-textarea { color:#000; }
-.request-textarea::placeholder { color:#777; }
-
-@media (max-width: 640px) {
-  .search-dropdown {
-    max-width: 90vw;
-    left: 5vw;
-  }
-}

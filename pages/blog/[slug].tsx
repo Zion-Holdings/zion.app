@@ -1,160 +1,113 @@
-import React from 'react';
-import ReactMarkdown from 'react-markdown';
-import { useRouter } from 'next/router';
-import { Helmet } from 'react-helmet-async';
-import { NextSeo } from '@/components/NextSeo';
-import { BLOG_POSTS } from '@/data/blog-posts';
-import { OptimizedImage } from '@/components/ui/OptimizedImage';
-import type { BlogPost } from '@/types/blog';
-import type { GetStaticPaths, GetStaticProps } from 'next';
-import fs from 'fs';
-import path from 'path';
+import type { GetServerSideProps, NextPage } from 'next';
+import Head from 'next/head';
+import { useEffect, useMemo } from 'react';
+import { BlogPost } from '@/utils/types/blog';
+import { findPostBySlug, listPublishedPosts } from '@/utils/data/blogStore';
+import PostContent from '@/components/blog/PostContent';
+import ShareButtons from '@/components/blog/ShareButtons';
+import SuggestedArticles from '@/components/blog/SuggestedArticles';
+import CTASection from '@/components/blog/CTASection';
+import LikeButton from '@/components/blog/LikeButton';
 
-function parseMarkdown(filePath: string): BlogPost | null {
-  if (!fs.existsSync(filePath)) {
-    return null;
-  }
-  const raw = fs.readFileSync(filePath, 'utf8');
-  const match = raw.match(/---\n([\s\S]+?)\n---\n([\s\S]*)/);
-  if (!match) return null;
-  const meta = JSON.parse(match[1]);
-  const content = match[2].trim();
-  const slug = path.basename(filePath).replace(/\.md$/, '');
-  return { ...meta, id: slug, slug, content } as BlogPost;
-}
+type Props = { post: BlogPost; all: BlogPost[] };
 
-interface BlogPostPageProps {
-  /**
-   * Preloaded blog post for static generation. Can be null if not found.
-   */
-  initialPost: BlogPost | null;
-}
+const PostPage: NextPage<Props> = ({ post, all }) => {
+  const pageUrl = typeof window === 'undefined' ? '' : window.location.href;
 
-const BlogPostPage: React.FC<BlogPostPageProps> = ({ initialPost }) => {
-  const router = useRouter();
-  const { slug } = router.query;
-  const [post, setPost] = React.useState<BlogPost | null>(initialPost);
-  const [error, setError] = React.useState<string | null>(null);
+  useEffect(() => {
+    // track view
+    fetch(`/api/blog/metrics/${post.id}/views`, { method: 'POST' }).catch(() => {});
+  }, [post.id]);
 
-  React.useEffect(() => {
-    if (initialPost && initialPost.slug === slug) {
-      setPost(initialPost);
-      setError(null); // Clear any previous error
-    } else if (slug) {
-      // This case handles if the slug changes and initialPost is not for the current slug
-      // Or if initialPost was null from getStaticProps (which shouldn't happen if notFound is true)
-      // For now, we will rely on getStaticProps to provide the correct post or a 404.
-      // If initialPost is null and getStaticProps didn't return notFound, that's an inconsistent state.
-      // The previous logic tried a fallback here, but we aim to make getStaticProps authoritative.
-      const directFallback = BLOG_POSTS.find((p) => p.slug === slug) || null;
-      if (directFallback) {
-        setPost(directFallback);
-        setError(null);
-      } else {
-        // If getStaticProps is working correctly, this path (slug exists, no initialPost, no fallback)
-        // should ideally not be hit frequently, as getStaticProps would have returned notFound.
-        // However, to maintain some robustness for dynamic client-side slug changes not triggering a new getStaticProps:
-        setPost(null);
-        setError('Article not found');
+  const toc = useMemo(() => {
+    const headings: { level: number; text: string; id: string }[] = [];
+    const lines = post.body.split('\n');
+    lines.forEach((line) => {
+      const m = /^(#{1,3})\s+(.*)$/.exec(line);
+      if (m) {
+        const level = m[1].length;
+        const text = m[2].trim();
+        const id = text;
+        headings.push({ level, text, id });
       }
-    }
-  }, [slug, initialPost]);
+    });
+    return headings;
+  }, [post.body]);
 
-  if (error) {
-    return <div>{error}</div>;
-  }
-  if (!post) {
-    return <div>Article not found</div>;
-  }
-  const articleLd = {
+  const jsonLd = {
     '@context': 'https://schema.org',
     '@type': 'BlogPosting',
-    headline: post.title,
-    description: post.excerpt,
-    image: post.featuredImage,
-    datePublished: post.publishedDate,
-    author: {
-      '@type': 'Person',
-      name: post.author.name,
-    },
+    headline: post.seo.metaTitle || post.title,
+    description: post.seo.metaDescription,
+    image: post.seo.ogImageUrl || post.coverImageUrl,
+    datePublished: post.publishDate,
+    author: [{ '@type': 'Person', name: post.author }],
+    mainEntityOfPage: { '@type': 'WebPage', '@id': `/blog/${post.slug}` },
   };
-  const body = (post as any).body || post.content;
+
   return (
-    <>
-      <NextSeo
-        title={post.title}
-        description={post.excerpt}
-        openGraph={{
-          title: post.title,
-          description: post.excerpt,
-          images: post.featuredImage
-            ? [{ url: post.featuredImage }]
-            : undefined,
-        }}
-      />
-      <Helmet>
-        <script type="application/ld+json">{JSON.stringify(articleLd)}</script>
-      </Helmet>
-      <main className="prose dark:prose-invert max-w-3xl mx-auto py-8">
-        <h1>{post.title}</h1>
-        {post.excerpt && <p className="lead">{post.excerpt}</p>}
-        <div className="flex items-center gap-3 mb-6">
-          <OptimizedImage
-            src={post.author.avatarUrl}
-            alt={post.author.name}
-            className="w-10 h-10 rounded-full"
-            onError={(e) => {
-              const target = e.currentTarget as HTMLImageElement;
-              target.src = '/images/blog-placeholder.svg';
-            }}
-          />
-          <div>
-            <p className="m-0 font-medium">{post.author.name}</p>
-            {post.author.title && (
-              <p className="m-0 text-sm text-zion-slate-light">
-                {post.author.title}
-              </p>
-            )}
-          </div>
+    <div>
+      <Head>
+        <title>{post.seo.metaTitle || post.title}</title>
+        <meta name="description" content={post.seo.metaDescription} />
+        {post.seo.ogImageUrl || post.coverImageUrl ? (
+          <meta property="og:image" content={post.seo.ogImageUrl || post.coverImageUrl} />
+        ) : null}
+        <meta property="og:title" content={post.seo.metaTitle || post.title} />
+        <meta property="og:description" content={post.seo.metaDescription} />
+        <meta property="og:type" content="article" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={post.seo.metaTitle || post.title} />
+        <meta name="twitter:description" content={post.seo.metaDescription} />
+        {(post.seo.ogImageUrl || post.coverImageUrl) && <meta name="twitter:image" content={post.seo.ogImageUrl || post.coverImageUrl} />}
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+      </Head>
+
+      <article className="mx-auto max-w-3xl">
+        <h1 className="text-3xl font-bold">{post.title}</h1>
+        <div className="text-gray-600 dark:text-gray-300 mt-1">
+          {new Date(post.publishDate).toLocaleDateString()} • {post.author}
         </div>
-        {post.featuredImage && (
-          <OptimizedImage
-            src={post.featuredImage}
-            alt={post.title}
-            className="w-full rounded mb-6"
-            onError={(e) => {
-              const target = e.currentTarget as HTMLImageElement;
-              target.src = '/images/blog-placeholder.svg';
-            }}
-          />
+        {toc.length > 0 && (
+          <nav className="mt-6 p-4 border rounded bg-gray-50 dark:bg-zinc-900">
+            <div className="font-semibold mb-2">On this page</div>
+            <ul className="space-y-1">
+              {toc.map((h, i) => (
+                <li key={i} className={h.level === 1 ? '' : h.level === 2 ? 'ml-3' : 'ml-6'}>
+                  <a href={`#${encodeURIComponent(h.id)}`}>
+                    {h.text}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </nav>
         )}
-        <ReactMarkdown>{body}</ReactMarkdown>
-      </main>
-    </>
+
+        <div className="mt-6">
+          <PostContent body={post.body} />
+        </div>
+
+        <div className="mt-8 flex items-center gap-4">
+          <ShareButtons title={post.title} url={pageUrl || `/blog/${post.slug}`} description={post.seo.metaDescription} onShare={() => fetch(`/api/blog/metrics/${post.id}/shares`, { method: 'POST' }).catch(() => {})} />
+          <LikeButton postId={post.id} initialLikes={post.metrics?.likes || 0} />
+        </div>
+
+        <SuggestedArticles current={post} all={all} />
+
+        <CTASection />
+      </article>
+    </div>
   );
 };
 
-export default BlogPostPage;
-
-export const getStaticPaths: GetStaticPaths = async () => {
-  const dir = path.join(process.cwd(), 'content', 'blog');
-  const files = fs.readdirSync(dir).filter((f) => f.endsWith('.md'));
-  const paths = files.map((f) => ({
-    params: { slug: f.replace(/\.md$/, '') },
-  }));
-  return { paths, fallback: false };
-};
-
-export const getStaticProps: GetStaticProps<BlogPostPageProps> = async ({
-  params,
-}: {
-  params?: { slug?: string };
-}) => {
-  const slug = params?.slug as string;
-  const filePath = path.join(process.cwd(), 'content', 'blog', `${slug}.md`);
-  const post = parseMarkdown(filePath);
-  if (!post) {
+export const getServerSideProps: GetServerSideProps = async (ctx) => {
+  const slug = ctx.params?.slug as string;
+  const post = findPostBySlug(slug);
+  if (!post || post.status !== 'published') {
     return { notFound: true };
   }
-  return { props: { initialPost: post }, revalidate: 60 };
+  const all = listPublishedPosts();
+  return { props: { post, all } };
 };
+
+export default PostPage;

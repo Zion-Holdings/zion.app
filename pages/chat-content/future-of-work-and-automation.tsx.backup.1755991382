@@ -1,0 +1,34 @@
+<<<<<<< HEAD
+export default function Page(){
+<<<<<<< HEAD
+  return <div style={{padding:20}}>Content</div>
+}
+=======
+import type { NextPage } from 'next';
+import Head from 'next/head';
+
+const FutureOfWorkAndAutomation: NextPage = () => {
+  return (
+    <div>
+      <Head>
+        <title>FutureOfWorkAndAutomation - Zion Tech Solutions</title>
+        <meta name="description" content="FutureOfWorkAndAutomation page" />
+      </Head>
+      
+      <main>
+        <h1>FutureOfWorkAndAutomation</h1>
+        <p>This page is under construction.</p>
+      </main>
+    </div>
+  );
+};
+
+export default FutureOfWorkAndAutomation;
+>>>>>>> origin/cursor/deploy-offworld-zion-os-on-ipfs-and-orbitdb-92ee
+=======
+  return <div className="max-w-3xl mx-auto p-6">Future of Work and Automation</div>;
+}
+=======
+export default function Page() { return null }
+>>>>>>> origin/cursor/build-zion-ai-api-developer-documentation-hub-2aa3
+>>>>>>> 5f48a381108fa3a8a43c189dd4b043133ce9307e

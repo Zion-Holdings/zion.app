@@ -1,9 +1,10 @@
-import { Center } from '@chakra-ui/react';
+import React from 'react';
 
-export default function Custom404() {
+export default function NotFoundPage() {
   return (
-    <Center minH="100vh">
-      <h1>404 – Page Not Found</h1>
-    </Center>
+    <div className="container mx-auto px-4 py-20 text-center">
+      <h1 className="text-3xl font-semibold">404 - Page Not Found</h1>
+      <p className="mt-2 text-gray-600 dark:text-gray-300">Sorry, we couldn’t find that page.</p>
+    </div>
   );
 }

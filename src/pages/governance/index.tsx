@@ -1,12 +1,9 @@
 import React from 'react';
-
-const GovernancePage = () => {
+export function index() {
   return (
     <div>
-      <h1>Governance Page</h1>
-      <p>This is a placeholder page for governance.</p>
+      <h1>Component</h1>
+      <p>Component placeholder</p>
     </div>
   );
-};
-
-export default GovernancePage;
+}

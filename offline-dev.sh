@@ -5,6 +5,18 @@ set -e
 
 echo "Setting up offline development environment..."
 
+# If node_modules doesn't exist, attempt an automatic install when online
+if [ ! -d node_modules ]; then
+  if curl -Is --connect-timeout 5 https://registry.npmjs.org >/dev/null 2>&1; then
+    echo "Internet detected. Running setup to install dependencies..."
+    chmod +x setup.sh
+    ./setup.sh npm
+    exit 0
+  else
+    echo "No internet connection detected. Continuing in offline mode."
+  fi
+fi
+
 # Create necessary directories
 mkdir -p src/types
 
@@ -127,6 +139,7 @@ cat > offline.html << 'EOF'
     <div class="info">
       <p>The offline development mode allows you to work on TypeScript code without having installed dependencies.</p>
       <p>However, actual functionality requires the dependencies to be installed.</p>
+      <p>Check <code>next_dev_server.log</code> for errors. After installing dependencies, run <code>npm run fix:loading</code> if needed.</p>
     </div>
   </div>
   

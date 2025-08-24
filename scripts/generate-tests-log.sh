@@ -14,3 +14,4 @@ npm run test -- --ci --json --outputFile="$JSON_RESULTS_FILE" 2>&1 | tee "$LOG_F
 
 echo "Test log saved to $LOG_FILE"
 echo "JSON results saved to $JSON_RESULTS_FILE"
+

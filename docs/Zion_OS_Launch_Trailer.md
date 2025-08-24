@@ -35,4 +35,3 @@ Generate a cinematic, emotional voiceover script for a 90-second trailer about Z
 - **SRT Export** – Use the timeline above to map captions for each voiceover line.
 - **PDF or Google Slides** – Convert this script into slides with visuals.
 - **Text-to-Speech** – Provide the AI voiceover prompt to ElevenLabs, Murf, or Synthesia to generate narration.
-

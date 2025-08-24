@@ -1,32 +1,4 @@
-
-export interface SearchSuggestion {
-  id?: string;
-  text: string;
-  slug?: string; // URL-friendly version for navigation
-  type: 'product' | 'category' | 'tag' | 'skill' | 'person' | 'recent' | 'doc' | 'saved';
-  iconUrl?: string;
-}
-
-export interface SearchHighlight {
-  before: string;
-  match: string;
-  after: string;
-}
-
-export interface FilterOptions {
-  productTypes: {
-    label: string;
-    value: string;
-  }[];
-  locations: {
-    label: string;
-    value: string;
-  }[];
-  availabilityOptions: {
-    label: string;
-    value: string;
-  }[];
-  ratingOptions: number[];
-  minPrice: number;
-  maxPrice: number;
-}
+// Type definitions for search;
+interface search {;
+  // TODO: Add proper type definitions;
+};

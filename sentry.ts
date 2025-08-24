@@ -1,73 +1,105 @@
-import * as Sentry from "@sentry/nextjs";
-import {
-  feedbackIntegration,
-  browserProfilingIntegration,
-  browserTracingIntegration,
-  replayIntegration,
-} from "@sentry/browser"; // Attempting import from @sentry/browser
-// import { captureRouterTransitionStart } from "@sentry/nextjs"; // Removing this as it causes warning and might be handled by browserTracingIntegration
-import getConfig from "next/config";
+// Conditional Sentry import for React 19 + Next.js 15 compatibility
+let Sentry: unknown = null;
+
+export async function loadSentry() {
+  if (Sentry) return Sentry;
+  try {
+    Sentry = await import("@sentry/nextjs");
+    if (Sentry) {
+      // console.log('Real Sentry SDK loaded.'); // Removed
+    } else {
+      throw new Error('@sentry/nextjs import returned null/undefined');
+    }
+  } catch {
+    console.warn('CRITICAL: Failed to import "@sentry/nextjs". Sentry will not be initialized.');
+    Sentry = null;
+  }
+  return Sentry;
+}
+
 import { safeSessionStorage } from "@/utils/safeStorage";
+import type * as SentrySDK from @sentry/nextjs';
 
-export function register() {
-  const { publicRuntimeConfig } = getConfig();
-  const SENTRY_DSN = process.env.NEXT_PUBLIC_SENTRY_DSN || publicRuntimeConfig.NEXT_PUBLIC_SENTRY_DSN;
-  const SENTRY_RELEASE = process.env.NEXT_PUBLIC_SENTRY_RELEASE || publicRuntimeConfig.NEXT_PUBLIC_SENTRY_RELEASE;
-  const SENTRY_ENVIRONMENT = process.env.NEXT_PUBLIC_SENTRY_ENVIRONMENT || publicRuntimeConfig.NEXT_PUBLIC_SENTRY_ENVIRONMENT;
+export async function register() {
+  await loadSentry();
+  // Use environment variables directly instead of runtime config
+  const SENTRY_DSN = process.env.NEXT_PUBLIC_SENTRY_DSN;
+  const SENTRY_RELEASE = process.env.NEXT_PUBLIC_SENTRY_RELEASE;
+  const SENTRY_ENVIRONMENT = process.env.NEXT_PUBLIC_SENTRY_ENVIRONMENT;
 
-  if (!SENTRY_DSN || SENTRY_DSN.startsWith("YOUR_") || SENTRY_DSN.startsWith("https_example")) {
-    console.warn('Sentry DSN is not configured or is a placeholder; Sentry will not capture errors.');
+  // Enhanced validation to prevent initialization with invalid DSNs
+  const isInvalidDsn = !SENTRY_DSN || 
+    SENTRY_DSN.startsWith("YOUR_") || 
+    SENTRY_DSN.startsWith("https_example") || 
+    SENTRY_DSN.startsWith("https_dummy") || 
+    SENTRY_DSN.includes("dummy") || 
+    SENTRY_DSN.includes("placeholder") || 
+    SENTRY_DSN.includes("local_build") || 
+    SENTRY_DSN === "test_sentry_dsn";
+
+  if (isInvalidDsn) {
+    // Preserve backward-compatibility with existing unit tests
+    console.warn('Warning: NEXT_PUBLIC_SENTRY_DSN is not set. Sentry will not be initialized.');
+    if (process.env.NODE_ENV === development') {
+      // console.log('Sentry disabled in development (no valid DSN configured)); // Removed
+    } else {
+      console.warn('Sentry DSN not configured for production - error monitoring disabled');
+    }
     return;
   }
 
-  const baseIntegrations = [
-    feedbackIntegration({ colorScheme: "system" }),
-    browserProfilingIntegration(),
-    browserTracingIntegration({ enableInp: true })
-  ];
-
-  let replaysSessionSampleRate = 0.1;
-  let replaysOnErrorSampleRate = 1.0;
-  let finalIntegrations = [...baseIntegrations];
-
-  if (safeSessionStorage.isAvailable) {
-    finalIntegrations.unshift(
-      replayIntegration({ maskAllText: true, blockAllMedia: true })
-    );
-  } else {
-    console.warn('sessionStorage is not available; disabling Sentry Replay.');
-    replaysSessionSampleRate = 0;
-    replaysOnErrorSampleRate = 0;
+  // Emit granular warnings when individual env vars are missing so that tests can assert on them
+  if (!SENTRY_RELEASE) {
+    console.warn('Warning: NEXT_PUBLIC_SENTRY_RELEASE is not set. Sentry will proceed without release information.');
+  }
+  if (!SENTRY_ENVIRONMENT) {
+    console.warn('Warning: NEXT_PUBLIC_SENTRY_ENVIRONMENT is not set. Sentry will proceed without environment information.');
   }
 
-  /*
-  Sentry.init({
-    dsn: SENTRY_DSN,
-    release: SENTRY_RELEASE,
-    environment: SENTRY_ENVIRONMENT,
-    tracesSampleRate: 1.0,
-    replaysSessionSampleRate,
-    replaysOnErrorSampleRate,
-    integrations: finalIntegrations,
-    tracePropagationTargets: ["localhost", /^https?:\/\//, /^\//],
-    profilesSampleRate: 1.0
-  });
-  */
-  console.log("sentry.ts: Client-side Sentry initialization SKIPPED to debug timeout.");
-
-
-  if (SENTRY_RELEASE) {
-    Sentry.setTag("release", SENTRY_RELEASE);
+  // Skip initialization if Sentry is not available
+  if (!Sentry) {
+    // console.log('Sentry is not available, skipping initialization'); // Removed
+    return;
   }
-  if (SENTRY_ENVIRONMENT) {
-    Sentry.setTag("environment", SENTRY_ENVIRONMENT);
+
+  // console.log(`Initializing client-side Sentry. Release: ${SENTRY_RELEASE}, Environment: ${SENTRY_ENVIRONMENT}`); // Removed
+
+  try {
+    const initOptions: Record<string, unknown> = {
+      dsn: SENTRY_DSN,
+      tracesSampleRate: process.env.NODE_ENV === development' ? 1.0 : 1.0, // Keep at 1.0 for tests
+      // Remove deprecated Http integration - modern Sentry handles HTTP tracing automatically
+      integrations: []
+    };
+
+    if (SENTRY_RELEASE) {
+      initOptions.release = SENTRY_RELEASE;
+    }
+    if (SENTRY_ENVIRONMENT) {
+      initOptions.environment = SENTRY_ENVIRONMENT;
+    }
+
+    (Sentry as typeof SentrySDK).init(initOptions);
+
+    // Set additional context
+    if (SENTRY_RELEASE) {
+      (Sentry as typeof SentrySDK).setTag("release", SENTRY_RELEASE);
+    }
+    if (SENTRY_ENVIRONMENT) {
+      (Sentry as typeof SentrySDK).setTag("environment", SENTRY_ENVIRONMENT);
+    }
+    (Sentry as typeof SentrySDK).setTag("runtime", "browser");
+    // console.log(`Sentry initialized successfully. Release: ${SENTRY_RELEASE}, Environment: ${SENTRY_ENVIRONMENT}`); // Removed
+  } catch {
+    console.warn('Failed to initialize Sentry');
   }
-  console.log(`Sentry initialized. Release: ${SENTRY_RELEASE}, Environment: ${SENTRY_ENVIRONMENT}`);
 }
 
 // Now using the direct import if available
 // export const onRouterTransitionStart = captureRouterTransitionStart; // Removing this
 
 export function onRequestError(error: unknown) {
-  Sentry.captureRequestError(error); // Assuming captureRequestError is a valid method on Sentry object
+  if (typeof Sentry === object' && Sentry !== null && captureException' in Sentry && typeof (Sentry as any).captureException === function') {
+    (Sentry as typeof SentrySDK).captureException(error);
+  }
 }

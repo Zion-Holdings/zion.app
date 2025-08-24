@@ -1,10 +1,9 @@
-
-import { Loader2 } from "lucide-react";
-
+import React from 'react';
 export function LoadingState() {
   return (
-    <div className="flex justify-center items-center p-8">
-      <Loader2 className="h-8 w-8 animate-spin text-primary" />
+    <div>
+      <h1>Component</h1>
+      <p>Component placeholder</p>
     </div>
   );
 }

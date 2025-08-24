@@ -1,34 +1,7 @@
-import Marketplace, { MarketplaceProps } from '../../src/pages/Marketplace';
-import type { GetStaticProps } from 'next';
-import * as Sentry from '@sentry/nextjs';
-
-import { withStaticErrorHandling } from '@/utils/withErrorHandling';
-
-const getStaticPropsImpl: GetStaticProps<MarketplaceProps> = async () => {
-  const appUrl = process.env.NEXT_PUBLIC_APP_URL;
-
-  if (!appUrl || appUrl.includes('localhost')) {
-    console.warn(
-      'NEXT_PUBLIC_APP_URL is not configured for production. Skipping marketplace product fetch.'
-    );
-    return { props: { products: [] }, revalidate: 60 };
-  }
-
-  try {
-    const res = await fetch(`${appUrl}/api/marketplace/overview?limit=20`);
-    if (!res.ok) {
-      const errorText = await res.text();
-      throw new Error(`Failed to fetch marketplace products: ${res.status} ${errorText}`);
-    }
-    const products = await res.json();
-    return { props: { products }, revalidate: 60 };
-  } catch (error: any) {
-    Sentry.captureException(error);
-    console.error(error);
-    return { props: { products: [] }, revalidate: 60 };
-  }
-};
-
-export const getStaticProps = withStaticErrorHandling(getStaticPropsImpl);
-
-export default Marketplace;
+import React from 'react';
+import Head from 'next/head';
+  return (
+    <>
+      <Head><title>marketplace/index - Zion App</title><meta name="description" content="marketplace/index page" /></Head><div className="container mx-auto px-4 py-8"><h1 className="text-3xl font-bold mb-6">marketplace/index</h1><p className="text-lg mb-4">This page is under construction.</p><div className="mt-4"><a href="/" className="text-blue-600 hover:underline">;
+            ← Back to Home</a></div></div></>;
+  );

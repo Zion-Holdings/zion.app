@@ -1,36 +1,9 @@
-import React from "react";
-import { MobileThemeProvider } from "./theme/MobileThemeProvider";
-import { logError } from '@/utils/logError';
-import { useCart } from '@/context/CartContext';
-
-const CartContextTester = () => {
-  try {
-    const cart = useCart();
-    console.log('CartContextTester: useCart() successful', cart);
-    return (
-      <div style={{ position: 'fixed', top: '10px', left: '10px', backgroundColor: 'lightgreen', padding: '5px', zIndex: 9999 }}>
-        CartContextTester: OK
-      </div>
-    );
-  } catch (error) {
-    logError(error, { message: 'CartContextTester: useCart() FAILED!' });
-    return (
-      <div style={{ position: 'fixed', top: '10px', left: '10px', backgroundColor: 'red', color: 'white', padding: '5px', zIndex: 9999 }}>
-        CartContextTester: FAILED - {(error as Error).message}
-      </div>
-    );
-  }
-};
-
-interface MobileAppProps {
-  children: React.ReactNode;
-}
-
-export function MobileApp({ children }: MobileAppProps) {
+import React from 'react';
+export function MobileApp() {
   return (
-    <MobileThemeProvider>
-      <CartContextTester />
-      {children}
-    </MobileThemeProvider>
+    <div>
+      <h1>Component</h1>
+      <p>Component placeholder</p>
+    </div>
   );
 }
