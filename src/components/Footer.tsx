@@ -106,10 +106,7 @@ export function Footer() {
               <li><Link to="/equipment" className="text-zion-slate-light hover:text-zion-cyan transition-colors">Equipment</Link></li>
               <li><Link to="/categories" className="text-zion-slate-light hover:text-zion-cyan transition-colors">Categories</Link></li>
               <li><Link to="/green-it" className="text-zion-slate-light hover:text-zion-cyan transition-colors">Green IT</Link></li>
-<<<<<<< HEAD
-              <li><Link to="/it-onsite-services" className="text-zion-slate-light hover:text-zion-cyan transition-colors">IT Onsite Services</Link></li>
-=======
->>>>>>> 1190166b600d0883f3d21629581161b11801bcbf
+
             </ul>
           </div>
 
@@ -128,31 +125,11 @@ export function Footer() {
 
           {/* Support & Resources */}
           <div>
-<<<<<<< HEAD
-            <h3 className="text-white font-semibold mb-4 text-lg">Support & Resources</h3>
-            <ul className="space-y-2">
-              <li><Link to="/help" className="text-zion-slate-light hover:text-zion-cyan transition-colors">Help Center</Link></li>
-              <li><Link to="/support" className="text-zion-slate-light hover:text-zion-cyan transition-colors">Support</Link></li>
-              <li><Link to="/zion-hire-ai" className="text-zion-slate-light hover:text-zion-cyan transition-colors">AI Hiring</Link></li>
-              <li><Link to="/request-quote" className="text-zion-slate-light hover:text-zion-cyan transition-colors">Request Quote</Link></li>
-              <li><Link to="/community" className="text-zion-slate-light hover:text-zion-cyan transition-colors">Community</Link></li>
-            </ul>
-            
-            {/* Newsletter */}
-            <div className="mt-6">
-              <h4 className="text-white font-semibold mb-3 text-sm">Newsletter</h4>
-              <p className="text-zion-slate-light mb-3 text-xs">
-                Stay updated with the latest tech and AI opportunities.
-              </p>
-              <FooterNewsletter />
-            </div>
-=======
             <h3 className="text-white font-semibold mb-4 text-lg">Subscribe to our newsletter</h3>
             <p className="text-zion-slate-light mb-4">
               Stay updated with the latest news on tech, AI, and marketplace opportunities.
             </p>
             <FooterNewsletter />
->>>>>>> 1190166b600d0883f3d21629581161b11801bcbf
           </div>
         </div>
 
