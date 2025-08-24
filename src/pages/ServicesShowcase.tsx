@@ -1,667 +1,403 @@
-import React from 'react';
-import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
-
-import { 
-  Shield, 
-  Brain, 
-  Cloud, 
-  Zap, 
-  BarChart3, 
-  Phone,
-  Mail,
-  MapPin,
-  ExternalLink,
-  Star,
-  CheckCircle
-} from "lucide-react";
-
-interface ServiceCategory {
-  id: string;
-  name: string;
-  description: string;
-  icon: React.ReactNode;
-  services: Service[];
-}
+import React, { useState } from 'react';
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
+import { Button } from '@/components/ui/button';
+import { Badge } from '@/components/ui/badge';
+import { Input } from '@/components/ui/input';
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
+import { Link } from 'react-router-dom';
+import {
+  Bot,
+  Shield,
+  Cloud,
+  Database,
+  Globe,
+  Smartphone,
+  Monitor,
+  Settings,
+  Users,
+  Zap,
+  Code,
+  Building,
+  ArrowRight
+} from 'lucide-react';
 
 interface Service {
   id: string;
   title: string;
   description: string;
+  category: string;
+  icon: React.ReactNode;
   features: string[];
-  pricing: {
-    startingPrice: number;
-    pricingModel: string;
-    includes: string[];
-  };
   benefits: string[];
-  useCases: string[];
   rating: number;
   reviewCount: number;
+  deliveryTime: string;
+  support: string;
+  price: string;
+  marketPrice: string;
   link: string;
 }
 
-const SERVICE_CATEGORIES: ServiceCategory[] = [
+const SERVICES: Service[] = [
   {
-    id: "ai-ml",
-    name: "AI & Machine Learning",
-    description: "Cutting-edge artificial intelligence and machine learning solutions to transform your business",
-    icon: <Brain className="h-8 w-8 text-blue-500" />,
-    services: [
-      {
-        id: "ai-development",
-        title: "AI Development & Integration",
-        description: "Full-stack AI development services to integrate advanced machine learning models into your existing business systems.",
-        features: [
-          "Custom ML model development",
-          "AI integration with existing systems",
-          "Real-time data processing",
-          "Scalable AI infrastructure",
-          "Model monitoring & optimization"
-        ],
-        pricing: {
-          startingPrice: 5000,
-          pricingModel: "Project-based",
-          includes: [
-            "AI strategy consultation",
-            "Custom model development",
-            "Integration & testing",
-            "Training & documentation",
-            "3 months support"
-          ]
-        },
-        benefits: [
-          "Automate complex decision-making",
-          "Improve operational efficiency",
-          "Gain competitive advantage",
-          "Reduce manual errors",
-          "Scalable AI solutions"
-        ],
-        useCases: [
-          "Predictive analytics",
-          "Process automation",
-          "Customer behavior analysis",
-          "Quality control systems",
-          "Intelligent chatbots"
-        ],
-        rating: 4.9,
-        reviewCount: 124,
-        link: "https://ziontechgroup.com/services/ai-development"
-      },
-      {
-        id: "nlp-solutions",
-        title: "Natural Language Processing (NLP) Solutions",
-        description: "Advanced NLP services including chatbots, sentiment analysis, document processing, and multilingual support systems.",
-        features: [
-          "Multi-language support",
-          "Sentiment analysis",
-          "Document classification",
-          "Entity recognition",
-          "Conversational AI"
-        ],
-        pricing: {
-          startingPrice: 9500,
-          pricingModel: "Project-based",
-          includes: [
-            "NLP model development",
-            "API integration",
-            "Training data preparation",
-            "Performance optimization",
-            "Ongoing maintenance"
-          ]
-        },
-        benefits: [
-          "Improve customer interactions",
-          "Automate document processing",
-          "Multi-language capabilities",
-          "Real-time insights",
-          "Cost-effective automation"
-        ],
-        useCases: [
-          "Customer support chatbots",
-          "Document analysis",
-          "Social media monitoring",
-          "Voice assistants",
-          "Content moderation"
-        ],
-        rating: 4.7,
-        reviewCount: 53,
-        link: "https://ziontechgroup.com/services/nlp-solutions"
-      }
-    ]
+    id: "ai-content-generator",
+    title: "AI Content Generator",
+    description: "Advanced AI-powered content creation for blogs, marketing, and documentation",
+    category: "AI & Machine Learning",
+    icon: <Bot className="h-10 w-10 p-2 rounded-md bg-blue-100 text-blue-700" />,
+    features: ["Multi-language support", "SEO optimization", "Content templates", "Plagiarism checking"],
+    benefits: ["Save 80% time on content creation", "Improve SEO rankings", "Maintain brand voice consistency"],
+    rating: 4.9,
+    reviewCount: 127,
+    deliveryTime: "Instant",
+    support: "24/7 AI support + human assistance",
+    price: "$99/month",
+    marketPrice: "$299/month",
+    link: "/services-showcase"
   },
   {
-    id: "cloud-infrastructure",
-    name: "Cloud & Infrastructure",
-    description: "Scalable cloud solutions and modern infrastructure management for growing businesses",
-    icon: <Cloud className="h-8 w-8 text-green-500" />,
-    services: [
-      {
-        id: "cloud-management",
-        title: "Cloud Infrastructure Management",
-        description: "24/7 monitoring and management of your cloud infrastructure to ensure optimal performance, security, and cost efficiency.",
-        features: [
-          "24/7 infrastructure monitoring",
-          "Cost optimization",
-          "Security management",
-          "Performance tuning",
-          "Disaster recovery"
-        ],
-        pricing: {
-          startingPrice: 3000,
-          pricingModel: "Monthly subscription",
-          includes: [
-            "Infrastructure monitoring",
-            "Security updates",
-            "Performance optimization",
-            "Cost analysis reports",
-            "Emergency support"
-          ]
-        },
-        benefits: [
-          "Reduce operational costs",
-          "Improve system reliability",
-          "Enhanced security posture",
-          "Faster issue resolution",
-          "Scalable infrastructure"
-        ],
-        useCases: [
-          "Multi-cloud environments",
-          "High-availability systems",
-          "Compliance requirements",
-          "Cost optimization",
-          "Performance monitoring"
-        ],
-        rating: 4.7,
-        reviewCount: 92,
-        link: "https://ziontechgroup.com/services/cloud-management"
-      },
-      {
-        id: "edge-computing",
-        title: "Edge Computing & 5G Optimization",
-        description: "Edge computing infrastructure design and 5G network optimization for ultra-low latency applications and IoT deployments.",
-        features: [
-          "Edge node deployment",
-          "5G network optimization",
-          "Low-latency applications",
-          "IoT integration",
-          "Real-time processing"
-        ],
-        pricing: {
-          startingPrice: 15000,
-          pricingModel: "Project-based",
-          includes: [
-            "Edge infrastructure design",
-            "5G optimization",
-            "IoT integration",
-            "Performance testing",
-            "Deployment support"
-          ]
-        },
-        benefits: [
-          "Ultra-low latency",
-          "Improved user experience",
-          "Reduced bandwidth costs",
-          "Enhanced security",
-          "Scalable architecture"
-        ],
-        useCases: [
-          "Autonomous vehicles",
-          "Industrial IoT",
-          "Real-time gaming",
-          "Smart cities",
-          "Healthcare monitoring"
-        ],
-        rating: 4.7,
-        reviewCount: 28,
-        link: "https://ziontechgroup.com/services/edge-computing"
-      }
-    ]
+    id: "cybersecurity-assessment",
+    title: "Cybersecurity Assessment",
+    description: "Comprehensive security audit and vulnerability assessment for your organization",
+    category: "Security",
+    icon: <Shield className="h-10 w-10 p-2 rounded-md bg-red-100 text-red-700" />,
+    features: ["Vulnerability scanning", "Penetration testing", "Compliance checking", "Security reporting"],
+    benefits: ["Identify security gaps", "Meet compliance requirements", "Protect customer data"],
+    rating: 4.8,
+    reviewCount: 89,
+    deliveryTime: "5-7 business days",
+    support: "Dedicated security specialist",
+    price: "$499/assessment",
+    marketPrice: "$1500/assessment",
+    link: "/services-showcase"
   },
   {
-    id: "cybersecurity",
-    name: "Cybersecurity & Compliance",
-    description: "Comprehensive security solutions and regulatory compliance management",
-    icon: <Shield className="h-8 w-8 text-red-500" />,
-    services: [
-      {
-        id: "security-assessment",
-        title: "Cybersecurity Assessment & Protection",
-        description: "Comprehensive security audits and implementation of robust protection systems against modern cyber threats.",
-        features: [
-          "Security vulnerability assessment",
-          "Penetration testing",
-          "Security architecture design",
-          "Incident response planning",
-          "Security awareness training"
-        ],
-        pricing: {
-          startingPrice: 6000,
-          pricingModel: "Project-based",
-          includes: [
-            "Security assessment",
-            "Vulnerability report",
-            "Remediation plan",
-            "Security implementation",
-            "Ongoing monitoring"
-          ]
-        },
-        benefits: [
-          "Protect sensitive data",
-          "Meet compliance requirements",
-          "Reduce security risks",
-          "Build customer trust",
-          "Prevent costly breaches"
-        ],
-        useCases: [
-          "Financial services",
-          "Healthcare organizations",
-          "E-commerce platforms",
-          "Government agencies",
-          "Educational institutions"
-        ],
-        rating: 4.9,
-        reviewCount: 103,
-        link: "https://ziontechgroup.com/services/cybersecurity"
-      },
-      {
-        id: "compliance-management",
-        title: "Data Privacy & GDPR Compliance",
-        description: "Comprehensive data privacy solutions including GDPR compliance, data governance, and privacy-by-design implementation.",
-        features: [
-          "GDPR compliance assessment",
-          "Data governance framework",
-          "Privacy impact assessments",
-          "Data protection implementation",
-          "Compliance monitoring"
-        ],
-        pricing: {
-          startingPrice: 6500,
-          pricingModel: "Project-based",
-          includes: [
-            "Compliance assessment",
-            "Policy development",
-            "Implementation support",
-            "Staff training",
-            "Audit preparation"
-          ]
-        },
-        benefits: [
-          "Avoid regulatory fines",
-          "Build customer trust",
-          "Improve data practices",
-          "Reduce legal risks",
-          "Competitive advantage"
-        ],
-        useCases: [
-          "EU market access",
-          "Healthcare compliance",
-          "Financial regulations",
-          "E-commerce privacy",
-          "Employee data protection"
-        ],
-        rating: 4.6,
-        reviewCount: 76,
-        link: "https://ziontechgroup.com/services/compliance"
-      }
-    ]
-  },
-  {
-    id: "business-automation",
-    name: "Business Automation & RPA",
-    description: "Intelligent automation solutions to streamline operations and improve efficiency",
-    icon: <Zap className="h-8 w-8 text-yellow-500" />,
-    services: [
-      {
-        id: "workflow-automation",
-        title: "No-Code Workflow Automation Platform",
-        description: "Drag-and-drop workflow automation tool that connects 500+ apps and services. Automate repetitive tasks, data synchronization, and business processes without coding.",
-        features: [
-          "Visual workflow designer",
-          "500+ app integrations",
-          "No-code automation",
-          "Real-time monitoring",
-          "Analytics dashboard"
-        ],
-        pricing: {
-          startingPrice: 299,
-          pricingModel: "Monthly subscription",
-          includes: [
-            "Unlimited workflows",
-            "Standard integrations",
-            "Email support",
-            "Basic analytics",
-            "Community forum"
-          ]
-        },
-        benefits: [
-          "Reduce manual work",
-          "Improve accuracy",
-          "Faster processing",
-          "Cost savings",
-          "Scalable automation"
-        ],
-        useCases: [
-          "Lead management",
-          "Invoice processing",
-          "Customer onboarding",
-          "Data synchronization",
-          "Report generation"
-        ],
-        rating: 4.8,
-        reviewCount: 156,
-        link: "https://ziontechgroup.com/services/workflow-automation"
-      },
-      {
-        id: "rpa-solutions",
-        title: "Robotic Process Automation (RPA)",
-        description: "Automate repetitive business processes with intelligent bots that can handle complex workflows and decision-making tasks.",
-        features: [
-          "Intelligent process bots",
-          "Cognitive automation",
-          "Process mining",
-          "Exception handling",
-          "Performance analytics"
-        ],
-        pricing: {
-          startingPrice: 8000,
-          pricingModel: "Project-based",
-          includes: [
-            "Process analysis",
-            "Bot development",
-            "Testing & deployment",
-            "Training & documentation",
-            "Ongoing support"
-          ]
-        },
-        benefits: [
-          "24/7 operation",
-          "Error-free execution",
-          "Scalable automation",
-          "Cost reduction",
-          "Improved compliance"
-        ],
-        useCases: [
-          "Data entry automation",
-          "Invoice processing",
-          "Customer service",
-          "HR operations",
-          "Financial reporting"
-        ],
-        rating: 4.6,
-        reviewCount: 67,
-        link: "https://ziontechgroup.com/services/rpa"
-      }
-    ]
+    id: "cloud-migration",
+    title: "Cloud Migration Service",
+    description: "Seamless migration to cloud platforms with minimal downtime",
+    category: "Cloud & Infrastructure",
+    icon: <Cloud className="h-10 w-10 p-2 rounded-md bg-cyan-100 text-cyan-700" />,
+    features: ["AWS/Azure/GCP migration", "Zero-downtime deployment", "Data migration", "Performance optimization"],
+    benefits: ["Reduce infrastructure costs", "Improve scalability", "Enhanced security"],
+    rating: 4.9,
+    reviewCount: 156,
+    deliveryTime: "2-4 weeks",
+    support: "Migration team + 6 months support",
+    price: "$1999/project",
+    marketPrice: "$5000/project",
+    link: "/services-showcase"
   },
   {
     id: "data-analytics",
-    name: "Data Analytics & Business Intelligence",
-    description: "Transform raw data into actionable insights for data-driven decision making",
-    icon: <BarChart3 className="h-8 w-8 text-purple-500" />,
-    services: [
-      {
-        id: "big-data-analytics",
-        title: "Big Data Analysis & Insights",
-        description: "Transform your raw data into actionable business insights with our advanced analytics and visualization services.",
-        features: [
-          "Data processing & cleaning",
-          "Advanced analytics",
-          "Interactive dashboards",
-          "Predictive modeling",
-          "Real-time insights"
-        ],
-        pricing: {
-          startingPrice: 4500,
-          pricingModel: "Project-based",
-          includes: [
-            "Data analysis setup",
-            "Dashboard development",
-            "Insight generation",
-            "Training & documentation",
-            "Ongoing support"
-          ]
-        },
-        benefits: [
-          "Data-driven decisions",
-          "Identify opportunities",
-          "Improve efficiency",
-          "Customer insights",
-          "Competitive advantage"
-        ],
-        useCases: [
-          "Customer behavior analysis",
-          "Market trend analysis",
-          "Operational optimization",
-          "Risk assessment",
-          "Performance tracking"
-        ],
-        rating: 4.8,
-        reviewCount: 78,
-        link: "https://ziontechgroup.com/services/big-data-analytics"
-      },
-      {
-        id: "customer-analytics",
-        title: "Real-Time Customer Analytics Dashboard",
-        description: "Live customer behavior tracking with heatmaps, session recordings, and conversion funnel analysis. Optimize your website and increase conversion rates.",
-        features: [
-          "Real-time tracking",
-          "Heatmap analysis",
-          "Session recordings",
-          "Conversion funnels",
-          "A/B testing support"
-        ],
-        pricing: {
-          startingPrice: 199,
-          pricingModel: "Monthly subscription",
-          includes: [
-            "Unlimited tracking",
-            "Advanced analytics",
-            "Custom dashboards",
-            "Email support",
-            "API access"
-          ]
-        },
-        benefits: [
-          "Improve conversion rates",
-          "Better user experience",
-          "Data-driven decisions",
-          "Reduce bounce rates",
-          "Increase engagement"
-        ],
-        useCases: [
-          "E-commerce optimization",
-          "Website improvement",
-          "User experience design",
-          "Marketing optimization",
-          "Conversion optimization"
-        ],
-        rating: 4.9,
-        reviewCount: 89,
-        link: "https://ziontechgroup.com/services/customer-analytics"
-      }
-    ]
+    title: "Data Analytics Dashboard",
+    description: "Custom business intelligence dashboards and reporting solutions",
+    category: "Data & Analytics",
+    icon: <Database className="h-10 w-10 p-2 rounded-md bg-green-100 text-green-700" />,
+    features: ["Real-time dashboards", "Custom KPIs", "Automated reporting", "Data visualization"],
+    benefits: ["Make data-driven decisions", "Identify business opportunities", "Improve operational efficiency"],
+    rating: 4.7,
+    reviewCount: 203,
+    deliveryTime: "3-5 weeks",
+    support: "Analytics consultant + training",
+    price: "$299/month",
+    marketPrice: "$799/month",
+    link: "/services-showcase"
+  },
+  {
+    id: "api-development",
+    title: "API Development & Integration",
+    description: "Custom API development and third-party service integration",
+    category: "Development",
+    icon: <Code className="h-10 w-10 p-2 rounded-md bg-purple-100 text-purple-700" />,
+    features: ["RESTful APIs", "GraphQL support", "API documentation", "Testing & monitoring"],
+    benefits: ["Streamline integrations", "Improve system efficiency", "Enable third-party partnerships"],
+    rating: 4.8,
+    reviewCount: 178,
+    deliveryTime: "4-6 weeks",
+    support: "Developer support + maintenance"],
+    price: "$399/project",
+    marketPrice: "$1200/project",
+    link: "/services-showcase"
+  },
+  {
+    id: "network-infrastructure",
+    title: "Network Infrastructure",
+    description: "Design and implement scalable network solutions for enterprises",
+    category: "Infrastructure",
+    icon: <Globe className="h-10 w-10 p-2 rounded-md bg-indigo-100 text-indigo-700" />,
+    features: ["Network design", "Security implementation", "Performance monitoring", "Scalability planning"],
+    benefits: ["Improved network performance", "Enhanced security", "Better scalability"],
+    rating: 4.6,
+    reviewCount: 94,
+    deliveryTime: "6-8 weeks",
+    support: "Network engineer + monitoring"],
+    price: "$799/project",
+    marketPrice: "$2500/project",
+    link: "/services-showcase"
+  },
+  {
+    id: "document-management",
+    title: "Document Management System",
+    description: "Enterprise-grade document organization and collaboration platform",
+    category: "Productivity",
+    icon: <Settings className="h-10 w-10 p-2 rounded-md bg-amber-100 text-amber-700" />,
+    features: ["Version control", "Collaboration tools", "Search & indexing", "Security & compliance"],
+    benefits: ["Improve team collaboration", "Reduce document loss", "Ensure compliance"],
+    rating: 4.5,
+    reviewCount: 67,
+    deliveryTime: "3-4 weeks",
+    support: "Implementation specialist + training"],
+    price: "$149/month",
+    marketPrice: "$399/month",
+    link: "/services-showcase"
+  },
+  {
+    id: "video-production",
+    title: "Video Production Suite",
+    description: "Professional video editing and production services for businesses",
+    category: "Creative",
+    icon: <Monitor className="h-10 w-10 p-2 rounded-md bg-pink-100 text-pink-700" />,
+    features: ["Video editing", "Motion graphics", "Color grading", "Audio enhancement"],
+    benefits: ["Professional quality videos", "Faster production time", "Cost-effective solutions"],
+    rating: 4.7,
+    reviewCount: 112,
+    deliveryTime: "1-2 weeks",
+    support: "Creative director + revisions"],
+    price: "$299/video",
+    marketPrice: "$800/video",
+    link: "/services-showcase"
+  },
+  {
+    id: "ui-ux-design",
+    title: "UI/UX Design Service",
+    description: "User-centered design solutions for web and mobile applications",
+    category: "Design",
+    icon: <Code className="h-10 w-10 p-2 rounded-md bg-teal-100 text-teal-700" />,
+    features: ["User research", "Wireframing", "Prototyping", "Usability testing"],
+    benefits: ["Better user experience", "Higher conversion rates", "Reduced development costs"],
+    rating: 4.9,
+    reviewCount: 245,
+    deliveryTime: "4-8 weeks",
+    support: "Designer + 3 months support"],
+    price: "$599/project",
+    marketPrice: "$1500/project",
+    link: "/services-showcase"
+  },
+  {
+    id: "performance-optimization",
+    title: "Performance Optimization",
+    description: "Speed up your applications and improve user experience",
+    category: "Performance",
+    icon: <Zap className="h-10 w-10 p-2 rounded-md bg-yellow-100 text-yellow-700" />,
+    features: ["Performance audit", "Code optimization", "Database tuning", "CDN setup"],
+    benefits: ["Faster loading times", "Better user engagement", "Improved SEO rankings"],
+    rating: 4.8,
+    reviewCount: 189,
+    deliveryTime: "2-3 weeks",
+    support: "Performance engineer + monitoring"],
+    price: "$399/audit",
+    marketPrice: "$999/audit",
+    link: "/services-showcase"
   }
 ];
 
+const categories = [
+  "All Categories",
+  "AI & Machine Learning",
+  "Security",
+  "Cloud & Infrastructure",
+  "Data & Analytics",
+  "Development",
+  "Infrastructure",
+  "Productivity",
+  "Creative",
+  "Design",
+  "Performance"
+];
+
 export default function ServicesShowcase() {
+  const [searchQuery, setSearchQuery] = useState('');
+  const [selectedCategory, setSelectedCategory] = useState('All Categories');
+  const [sortBy, setSortBy] = useState('rating');
+
+  const filteredServices = SERVICES.filter(service => {
+    const matchesSearch = service.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+                         service.description.toLowerCase().includes(searchQuery.toLowerCase());
+    const matchesCategory = selectedCategory === 'All Categories' || service.category === selectedCategory;
+    return matchesSearch && matchesCategory;
+  });
+
+  const sortedServices = [...filteredServices].sort((a, b) => {
+    switch (sortBy) {
+      case 'rating':
+        return b.rating - a.rating;
+      case 'price':
+        return parseFloat(a.price.replace(/[^0-9.]/g, '')) - parseFloat(b.price.replace(/[^0-9.]/g, ''));
+      case 'delivery':
+        return a.deliveryTime.localeCompare(b.deliveryTime);
+      default:
+        return 0;
+    }
+  });
+
   return (
-    <div className="min-h-screen bg-gradient-to-br from-zinc-50 to-zinc-100 dark:from-zinc-900 dark:to-zinc-800">
-      {/* Hero Section */}
-      <div className="bg-gradient-to-r from-zion-blue to-zion-purple text-white py-20">
-        <div className="container mx-auto px-4 text-center">
-          <h1 className="text-4xl md:text-6xl font-bold mb-6">
-            Comprehensive IT & AI Services
-          </h1>
-          <p className="text-xl md:text-2xl mb-8 max-w-3xl mx-auto">
-            Discover our extensive range of micro SAAS services, IT solutions, and AI-powered tools designed to transform your business operations and drive growth.
-          </p>
-          <div className="flex flex-wrap justify-center gap-4">
-            <Button size="lg" className="bg-white text-zion-blue hover:bg-gray-100">
-              <Phone className="h-5 w-5 mr-2" />
-              Get Free Consultation
-            </Button>
-            <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-zion-blue">
-              <ExternalLink className="h-5 w-5 mr-2" />
-              View All Services
-            </Button>
-          </div>
-        </div>
-      </div>
-
-      {/* Contact Information */}
-      <div className="bg-white dark:bg-zinc-800 py-8 border-b">
-        <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
-            <div className="flex flex-col items-center">
-              <Phone className="h-6 w-6 text-zion-blue mb-2" />
-              <h3 className="font-semibold">Phone</h3>
-              <p className="text-zinc-600 dark:text-zinc-400">+1 302 464 0950</p>
-            </div>
-            <div className="flex flex-col items-center">
-              <Mail className="h-6 w-6 text-zion-blue mb-2" />
-              <h3 className="font-semibold">Email</h3>
-              <p className="text-zinc-600 dark:text-zinc-400">kleber@ziontechgroup.com</p>
-            </div>
-            <div className="flex flex-col items-center">
-              <MapPin className="h-6 w-6 text-zion-blue mb-2" />
-              <h3 className="font-semibold">Address</h3>
-              <p className="text-zinc-600 dark:text-zinc-400">364 E Main St STE 1008<br />Middletown DE 19709</p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      {/* Services Categories */}
+    <div className="min-h-screen bg-gradient-to-br from-gray-900 via-blue-900 to-purple-900">
       <div className="container mx-auto px-4 py-16">
+        {/* Header */}
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            Our Service Categories
-          </h2>
-          <p className="text-xl text-zinc-600 dark:text-zinc-400 max-w-2xl mx-auto">
-            From cutting-edge AI solutions to essential business automation tools, we offer comprehensive services to meet all your technology needs.
+          <h1 className="text-5xl md:text-6xl font-bold text-white mb-6">
+            <span className="gradient-text">Services Showcase</span>
+          </h1>
+          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+            Discover our comprehensive range of professional services designed to accelerate your business growth and digital transformation.
           </p>
         </div>
 
-        {SERVICE_CATEGORIES.map((category) => (
-          <div key={category.id} className="mb-20">
-            <div className="flex items-center mb-8">
-              {category.icon}
-              <div className="ml-4">
-                <h3 className="text-2xl md:text-3xl font-bold">{category.name}</h3>
-                <p className="text-zinc-600 dark:text-zinc-400">{category.description}</p>
-              </div>
+        {/* Filters */}
+        <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-6 mb-12">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+            <div>
+              <label className="block text-sm font-medium text-gray-300 mb-2">Search Services</label>
+              <Input
+                placeholder="Search by title or description..."
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+                className="bg-white/10 border-white/20 text-white placeholder-gray-400"
+              />
             </div>
+            <div>
+              <label className="block text-sm font-medium text-gray-300 mb-2">Category</label>
+              <Select value={selectedCategory} onValueChange={setSelectedCategory}>
+                <SelectTrigger className="bg-white/10 border-white/20 text-white">
+                  <SelectValue />
+                </SelectTrigger>
+                <SelectContent className="bg-gray-800 border-gray-700">
+                  {categories.map(category => (
+                    <SelectItem key={category} value={category} className="text-white hover:bg-gray-700">
+                      {category}
+                    </SelectItem>
+                  ))}
+                </SelectContent>
+              </Select>
+            </div>
+            <div>
+              <label className="block text-sm font-medium text-gray-300 mb-2">Sort By</label>
+              <Select value={sortBy} onValueChange={setSortBy}>
+                <SelectTrigger className="bg-white/10 border-white/20 text-white">
+                  <SelectValue />
+                </SelectTrigger>
+                <SelectContent className="bg-gray-800 border-gray-700">
+                  <SelectItem value="rating" className="text-white hover:bg-gray-700">Highest Rated</SelectItem>
+                  <SelectItem value="price" className="text-white hover:bg-gray-700">Lowest Price</SelectItem>
+                  <SelectItem value="delivery" className="text-white hover:bg-gray-700">Fastest Delivery</SelectItem>
+                </SelectContent>
+              </Select>
+            </div>
+          </div>
+        </div>
 
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-              {category.services.map((service) => (
-                <Card key={service.id} className="hover:shadow-lg transition-shadow">
-                  <CardHeader>
-                    <div className="flex justify-between items-start mb-2">
-                      <CardTitle className="text-xl">{service.title}</CardTitle>
-                      <div className="flex items-center">
-                        <Star className="h-4 w-4 text-yellow-500 fill-current" />
-                        <span className="ml-1 text-sm font-medium">{service.rating}</span>
-                        <span className="ml-1 text-sm text-zinc-500">({service.reviewCount})</span>
-                      </div>
+        {/* Results Count */}
+        <div className="text-center mb-8">
+          <p className="text-gray-300">
+            Showing <span className="text-white font-semibold">{filteredServices.length}</span> services
+            {selectedCategory !== 'All Categories' && (
+              <> in <span className="text-white font-semibold">{selectedCategory}</span></>
+            )}
+          </p>
+        </div>
+
+        {/* Services Grid */}
+        {sortedServices.length > 0 ? (
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
+            {sortedServices.map((service) => (
+              <Card key={service.id} className="overflow-hidden transition-all duration-300 hover:shadow-lg hover:border-primary/50 group bg-white/5 border-white/10 backdrop-blur-sm">
+                <CardHeader className="pb-2">
+                  <div className="flex justify-between items-start">
+                    <div className="group-hover:scale-110 transition-transform duration-300">
+                      {service.icon}
                     </div>
-                    <CardDescription className="text-base">{service.description}</CardDescription>
-                  </CardHeader>
-                  <CardContent className="space-y-6">
-                    {/* Features */}
+                    <Badge variant="secondary" className="bg-primary/20 text-primary">
+                      {service.category}
+                    </Badge>
+                  </div>
+                  <CardTitle className="mt-4 text-white">{service.title}</CardTitle>
+                  <CardDescription className="line-clamp-2 text-gray-300">{service.description}</CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <div className="space-y-3">
                     <div>
-                      <h4 className="font-semibold mb-3 text-zinc-800 dark:text-zinc-200">Key Features</h4>
-                      <ul className="space-y-2">
-                        {service.features.map((feature, index) => (
-                          <li key={index} className="flex items-center text-sm">
-                            <CheckCircle className="h-4 w-4 text-green-500 mr-2 flex-shrink-0" />
+                      <h4 className="text-sm font-semibold text-gray-300 mb-2">Key Features</h4>
+                      <ul className="space-y-1">
+                        {service.features.slice(0, 3).map((feature, index) => (
+                          <li key={index} className="text-xs text-gray-400 flex items-center gap-2">
+                            <div className="w-1.5 h-1.5 bg-primary rounded-full"></div>
                             {feature}
                           </li>
                         ))}
                       </ul>
                     </div>
-
-                    {/* Pricing */}
                     <div>
-                      <h4 className="font-semibold mb-3 text-zinc-800 dark:text-zinc-200">Pricing</h4>
-                      <div className="bg-zinc-50 dark:bg-zinc-700 p-4 rounded-lg">
-                        <div className="flex items-baseline mb-2">
-                          <span className="text-2xl font-bold text-zion-blue">${service.pricing.startingPrice.toLocaleString()}</span>
-                          <span className="ml-2 text-zinc-600 dark:text-zinc-400">starting</span>
-                        </div>
-                        <p className="text-sm text-zinc-600 dark:text-zinc-400 mb-3">{service.pricing.pricingModel}</p>
-                        <ul className="space-y-1">
-                          {service.pricing.includes.map((item, index) => (
-                            <li key={index} className="flex items-center text-sm">
-                              <CheckCircle className="h-3 w-3 text-green-500 mr-2 flex-shrink-0" />
-                              {item}
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
-                    </div>
-
-                    {/* Benefits */}
-                    <div>
-                      <h4 className="font-semibold mb-3 text-zinc-800 dark:text-zinc-200">Benefits</h4>
-                      <div className="flex flex-wrap gap-2">
-                        {service.benefits.map((benefit, index) => (
-                          <Badge key={index} variant="secondary" className="text-xs">
+                      <h4 className="text-sm font-semibold text-gray-300 mb-2">Benefits</h4>
+                      <ul className="space-y-1">
+                        {service.benefits.slice(0, 2).map((benefit, index) => (
+                          <li key={index} className="text-xs text-gray-400 flex items-center gap-2">
+                            <div className="w-1.5 h-1.5 bg-green-400 rounded-full"></div>
                             {benefit}
-                          </Badge>
+                          </li>
                         ))}
+                      </ul>
+                    </div>
+                    <div className="flex justify-between items-center text-sm">
+                      <span className="text-green-400 font-semibold">Zion: {service.price}</span>
+                      <span className="text-gray-500">Market: {service.marketPrice}</span>
+                    </div>
+                    <div className="flex items-center gap-2 text-sm text-gray-400">
+                      <div className="flex items-center gap-1">
+                        <span className="text-yellow-400">★</span>
+                        <span>{service.rating}</span>
+                        <span>({service.reviewCount})</span>
                       </div>
+                      <span>•</span>
+                      <span>{service.deliveryTime}</span>
                     </div>
-
-                    {/* Use Cases */}
-                    <div>
-                      <h4 className="font-semibold mb-3 text-zinc-800 dark:text-zinc-200">Use Cases</h4>
-                      <div className="flex flex-wrap gap-2">
-                        {service.useCases.map((useCase, index) => (
-                          <Badge key={index} variant="outline" className="text-xs">
-                            {useCase}
-                          </Badge>
-                        ))}
-                      </div>
-                    </div>
-
-                    {/* Action Buttons */}
-                    <div className="flex gap-3 pt-4">
-                      <Button className="flex-1 bg-zion-blue hover:bg-zion-blue-dark">
-                        <ExternalLink className="h-4 w-4 mr-2" />
-                        Learn More
-                      </Button>
-                      <Button variant="outline" className="flex-1">
-                        <Phone className="h-4 w-4 mr-2" />
-                        Get Quote
-                      </Button>
-                    </div>
-                  </CardContent>
-                </Card>
-              ))}
-            </div>
+                  </div>
+                </CardContent>
+                <CardFooter>
+                  <Button asChild className="w-full gap-1 group-hover:bg-primary/90 transition-colors">
+                    <Link to={service.link}>
+                      <span>Get Started</span>
+                      <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
+                    </Link>
+                  </Button>
+                </CardFooter>
+              </Card>
+            ))}
           </div>
-        ))}
-      </div>
+        ) : (
+          <div className="text-center py-16">
+            <p className="text-gray-400 text-lg">No services found matching your criteria.</p>
+            <p className="text-gray-500 text-sm mt-2">Try adjusting your search or category filters.</p>
+          </div>
+        )}
 
-      {/* Call to Action */}
-      <div className="bg-gradient-to-r from-zion-purple to-zion-blue text-white py-16">
-        <div className="container mx-auto px-4 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-6">
-            Ready to Transform Your Business?
-          </h2>
-          <p className="text-xl mb-8 max-w-2xl mx-auto">
-            Let our expert team help you choose the right solutions and implement them successfully. Get started with a free consultation today.
+        {/* CTA Section */}
+        <div className="text-center bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-12">
+          <h2 className="text-3xl font-bold text-white mb-4">Ready to Get Started?</h2>
+          <p className="text-gray-300 mb-8 max-w-2xl mx-auto">
+            Contact our team for a custom quote tailored to your specific needs. We'll help you choose the right services and create a solution that fits your budget and timeline.
           </p>
-          <div className="flex flex-wrap justify-center gap-4">
-            <Button size="lg" className="bg-white text-zion-blue hover:bg-gray-100">
-              <Phone className="h-5 w-5 mr-2" />
-              Schedule Free Consultation
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Button asChild size="lg" className="cyber-button">
+              <Link to="/request-quote">
+                <span>Request Custom Quote</span>
+                <ArrowRight className="ml-2 h-5 w-5" />
+              </Link>
             </Button>
-            <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-zion-blue">
-              <Mail className="h-5 w-5 mr-2" />
-              Request Custom Quote
+            <Button asChild size="lg" variant="outline" className="border-primary text-primary hover:bg-primary hover:text-white">
+              <Link to="/contact">
+                <span>Contact Our Team</span>
+                <ArrowRight className="ml-2 h-5 w-5" />
+              </Link>
             </Button>
           </div>
         </div>

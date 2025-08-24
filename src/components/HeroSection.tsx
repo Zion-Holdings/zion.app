@@ -1,174 +1,132 @@
 
-import { Button } from "@/components/ui/button";
-import GradientHeading from "@/components/GradientHeading";
-import { Link } from "react-router-dom";
-import { useTranslation } from "react-i18next";
-import { motion } from "framer-motion";
+import React from 'react';
+import { Button } from '@/components/ui/button';
+import { Link } from 'react-router-dom';
+import { ArrowRight, Sparkles, Zap, Users, Globe, Star, TrendingUp, Shield, Brain, Cloud, Code } from 'lucide-react';
 
 export function HeroSection() {
-  const { t } = useTranslation();
-  
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.2,
-        delayChildren: 0.1
-      }
-    }
-  };
-
-  const itemVariants = {
-    hidden: { y: 20, opacity: 0 },
-    visible: {
-      y: 0,
-      opacity: 1,
-      transition: {
-        duration: 0.6
-      }
-    }
-  };
-
   return (
-    <section className="relative overflow-hidden py-20 md:py-32" role="banner" aria-labelledby="hero-title">
-      {/* Background gradient effect */}
-      <div className="absolute inset-0 bg-gradient-to-b from-zion-blue-dark via-zion-blue to-zion-blue-light opacity-80"></div>
-      
-      {/* Enhanced animated floating particles */}
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-black via-gray-900 to-blue-900">
+      {/* Animated Background */}
       <div className="absolute inset-0">
-        <motion.div 
-          className="absolute top-1/4 left-1/4 w-2 h-2 rounded-full bg-zion-purple-light opacity-40"
-          animate={{
-            y: [0, -20, 0],
-            opacity: [0.3, 0.8, 0.3]
-          }}
-          transition={{
-            duration: 3,
-            repeat: Infinity
-          }}
-        />
-        <motion.div 
-          className="absolute top-1/3 right-1/3 w-3 h-3 rounded-full bg-zion-cyan opacity-30"
-          animate={{
-            y: [0, -20, 0],
-            opacity: [0.3, 0.8, 0.3]
-          }}
-          transition={{
-            duration: 3,
-            repeat: Infinity,
-            delay: 1
-          }}
-        />
-        <motion.div 
-          className="absolute bottom-1/4 left-1/2 w-2 h-2 rounded-full bg-zion-purple opacity-40"
-          animate={{
-            y: [0, -20, 0],
-            opacity: [0.3, 0.8, 0.3]
-          }}
-          transition={{
-            duration: 3,
-            repeat: Infinity,
-            delay: 2
-          }}
-        />
-        <motion.div 
-          className="absolute top-1/2 right-1/4 w-4 h-4 rounded-full bg-zion-cyan-light opacity-20"
-          animate={{
-            y: [0, -20, 0],
-            opacity: [0.3, 0.8, 0.3]
-          }}
-          transition={{
-            duration: 3,
-            repeat: Infinity,
-            delay: 0.5
-          }}
-        />
-
+        <div className="absolute top-0 left-0 w-96 h-96 bg-cyan-500/10 rounded-full blur-3xl animate-pulse"></div>
+        <div className="absolute top-0 right-0 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl animate-pulse animation-delay-1000"></div>
+        <div className="absolute bottom-0 left-1/2 w-96 h-96 bg-purple-500/10 rounded-full blur-3xl animate-pulse animation-delay-2000"></div>
       </div>
 
-      {/* Floating geometric shapes */}
-      <motion.div 
-        className="absolute top-20 right-20 w-32 h-32 border border-zion-cyan/30 rounded-lg rotate-45"
-        animate={{ rotate: [45, 405], opacity: [0.3, 0.6, 0.3] }}
-        transition={{ duration: 20, repeat: Infinity }}
-      />
-      <motion.div 
-        className="absolute bottom-20 left-20 w-24 h-24 border border-zion-purple/30 rounded-full"
-        animate={{ scale: [1, 1.2, 1], opacity: [0.3, 0.6, 0.3] }}
-        transition={{ duration: 15, repeat: Infinity }}
-      />
-      
-      <motion.div 
-        className="container relative z-10 px-4 mx-auto text-center"
-        variants={containerVariants}
-        initial="hidden"
-        animate="visible"
-      >
-        <motion.div variants={itemVariants}>
-          <GradientHeading 
-            className="mb-6 text-5xl md:text-7xl font-bold"
-          >
-            {t('home.hero_title')}
-          </GradientHeading>
-        </motion.div>
+      {/* Grid Pattern */}
+      <div className="absolute inset-0 bg-[linear-gradient(rgba(6,182,212,0.1)_1px,transparent_1px),linear-gradient(90deg,rgba(6,182,212,0.1)_1px,transparent_1px)] bg-[size:50px_50px] opacity-20"></div>
 
-        <motion.p 
-          className="text-xl md:text-2xl text-zion-slate-light mb-10 max-w-3xl mx-auto leading-relaxed"
-          variants={itemVariants}
-        >
-          {t('home.hero_subtitle')}
-        </motion.p>
+      {/* Floating Elements */}
+      <div className="absolute inset-0">
+        <div className="absolute top-20 left-20 w-2 h-2 bg-cyan-400 rounded-full animate-float"></div>
+        <div className="absolute top-40 right-40 w-1 h-1 bg-purple-400 rounded-full animate-float animation-delay-1000"></div>
+        <div className="absolute bottom-40 left-40 w-3 h-3 bg-blue-400 rounded-full animate-float animation-delay-2000"></div>
+      </div>
 
-        <motion.div 
-          className="flex flex-col sm:flex-row justify-center gap-4"
-          variants={itemVariants}
-        >
-          <Button
-            className="bg-gradient-to-r from-zion-purple to-zion-purple-dark hover:from-zion-purple-light hover:to-zion-purple text-lg py-6 px-8 shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300"
-            size="lg"
-            asChild
-          >
-            <Link
-              to="/signup"
-              role="button"
-              aria-label={t('auth.signup')}
-              tabIndex={0}
-              data-testid="hero-signup-btn"
-            >
-              {t('auth.signup')}
+      {/* Moving Lines */}
+      <div className="absolute inset-0">
+        <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-cyan-500 to-transparent animate-slide-in-left"></div>
+        <div className="absolute bottom-0 right-0 w-full h-px bg-gradient-to-l from-transparent via-purple-500 to-transparent animate-slide-in-right"></div>
+      </div>
+
+      <div className="relative z-10 text-center px-4 max-w-6xl mx-auto">
+        {/* Badge */}
+        <div className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-cyan-500/20 to-purple-500/20 border border-cyan-500/30 rounded-full text-cyan-400 text-sm font-medium mb-8 animate-fade-in-up">
+          <Sparkles className="w-4 h-4" />
+          🚀 The Future of Tech is Here
+        </div>
+
+        {/* Main Heading */}
+        <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight">
+          <span className="gradient-text neon-flicker">ZION TECH GROUP</span>
+          <br />
+          <span className="text-3xl md:text-4xl lg:text-5xl text-gray-300 font-normal">
+            Where Innovation Meets Excellence
+          </span>
+        </h1>
+
+        {/* Description */}
+        <p className="text-lg md:text-xl text-gray-300 mb-12 max-w-4xl mx-auto leading-relaxed">
+          Discover cutting-edge AI services, micro SAAS solutions, and enterprise-grade IT infrastructure. 
+          We're not just building the future – we're defining it with every line of code, every algorithm, 
+          and every breakthrough innovation.
+        </p>
+
+        {/* Stats */}
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-12 max-w-4xl mx-auto">
+          <div className="text-center">
+            <div className="text-3xl md:text-4xl font-bold text-cyan-400 mb-2">10K+</div>
+            <div className="text-gray-400 text-sm">Verified Talents</div>
+          </div>
+          <div className="text-center">
+            <div className="text-3xl md:text-4xl font-bold text-purple-400 mb-2">500+</div>
+            <div className="text-gray-400 text-sm">AI Services</div>
+          </div>
+          <div className="text-center">
+            <div className="text-3xl md:text-4xl font-bold text-blue-400 mb-2">50+</div>
+            <div className="text-gray-400 text-sm">Countries</div>
+          </div>
+          <div className="text-center">
+            <div className="text-3xl md:text-4xl font-bold text-green-400 mb-2">4.9★</div>
+            <div className="text-gray-400 text-sm">Rating</div>
+          </div>
+        </div>
+
+        {/* CTA Buttons */}
+        <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16">
+          <Button asChild size="lg" className="cyber-button text-lg px-8 py-4 h-auto">
+            <Link to="/marketplace">
+              <span>Explore Marketplace</span>
+              <ArrowRight className="ml-2 h-5 w-5" />
             </Link>
           </Button>
-          <Link
-            id="browse-marketplace"
-            to="/marketplace"
-            className="border-2 border-zion-cyan text-zion-cyan hover:bg-zion-cyan hover:text-zion-blue-dark active:bg-zion-cyan-light text-lg py-6 px-8 rounded-md inline-flex items-center justify-center transition-all duration-300 hover:shadow-lg transform hover:scale-105"
-            role="button"
-            aria-label={t('home.browse_marketplace')}
-          >
-            {t('home.browse_marketplace')}
-          </Link>
-        </motion.div>
+          <Button asChild variant="outline" size="lg" className="text-lg px-8 py-4 h-auto border-zion-cyan/30 text-zion-cyan hover:bg-zion-cyan/10 hover:border-zion-cyan/50">
+            <Link to="/request-quote">
+              <span>Get Free Quote</span>
+              <Zap className="ml-2 h-5 w-5" />
+            </Link>
+          </Button>
+        </div>
 
-        {/* Trust indicators */}
-        <motion.div 
-          className="mt-12 flex flex-wrap justify-center items-center gap-6 text-zion-slate-light/70"
-          variants={itemVariants}
-        >
-          <div className="flex items-center gap-2">
-            <div className="w-2 h-2 bg-zion-cyan rounded-full"></div>
-            <span className="text-sm">AI-Powered Matching</span>
+        {/* Service Highlights */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16 max-w-5xl mx-auto">
+          <div className="text-center p-6 bg-gradient-to-br from-cyan-500/10 to-transparent border border-cyan-500/20 rounded-xl">
+            <Brain className="w-12 h-12 text-cyan-400 mx-auto mb-4" />
+            <h3 className="text-xl font-semibold text-white mb-2">AI & Machine Learning</h3>
+            <p className="text-gray-400 text-sm">Advanced algorithms, neural networks, and intelligent automation solutions</p>
           </div>
-          <div className="flex items-center gap-2">
-            <div className="w-2 h-2 bg-zion-purple rounded-full"></div>
-            <span className="text-sm">Verified Professionals</span>
+          <div className="text-center p-6 bg-gradient-to-br from-purple-500/10 to-transparent border border-purple-500/20 rounded-xl">
+            <Shield className="w-12 h-12 text-purple-400 mx-auto mb-4" />
+            <h3 className="text-xl font-semibold text-white mb-2">Cybersecurity</h3>
+            <p className="text-gray-400 text-sm">Enterprise-grade security, threat detection, and compliance management</p>
           </div>
-          <div className="flex items-center gap-2">
-            <div className="w-2 h-2 bg-zion-blue rounded-full"></div>
-            <span className="text-sm">Secure Platform</span>
+          <div className="text-center p-6 bg-gradient-to-br from-blue-500/10 to-transparent border border-blue-500/20 rounded-xl">
+            <Cloud className="w-12 h-12 text-blue-400 mx-auto mb-4" />
+            <h3 className="text-xl font-semibold text-white mb-2">Cloud & Infrastructure</h3>
+            <p className="text-gray-400 text-sm">Scalable cloud solutions, DevOps automation, and infrastructure optimization</p>
           </div>
-        </motion.div>
-      </motion.div>
+        </div>
+
+        {/* Trust Indicators */}
+        <div className="text-center">
+          <p className="text-gray-400 text-sm mb-4">Trusted by leading companies worldwide</p>
+          <div className="flex flex-wrap justify-center gap-8 opacity-60">
+            <span className="text-gray-500 font-medium">Microsoft</span>
+            <span className="text-gray-500 font-medium">Google</span>
+            <span className="text-gray-500 font-medium">Amazon</span>
+            <span className="text-gray-500 font-medium">Meta</span>
+            <span className="text-gray-500 font-medium">Netflix</span>
+          </div>
+        </div>
+
+        {/* Scroll Indicator */}
+        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+          <div className="w-6 h-10 border-2 border-gray-400 rounded-full flex justify-center">
+            <div className="w-1 h-3 bg-gray-400 rounded-full mt-2 animate-pulse"></div>
+          </div>
+        </div>
+      </div>
     </section>
   );
 }
