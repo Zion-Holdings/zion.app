@@ -1,0 +1,59 @@
+name: Page Screenshots
+
+on:
+  schedule:
+    - cron: '10 3 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  screenshots:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Build static dist
+        run: |
+          rm -rf dist
+          mkdir -p dist
+          rsync -av --delete \
+            --exclude='.git' \
+            --exclude='.github' \
+            --exclude='node_modules' \
+            --exclude='dist' \
+            ./ dist/ | cat
+      - name: Start local server
+        run: |
+          python3 -m http.server --directory dist 8080 &
+          echo $! > server.pid
+          sleep 2
+      - name: Install Puppeteer
+        run: npm i puppeteer@23
+      - name: Capture screenshots
+        run: |
+          node - <<'NODE'
+          import puppeteer from 'puppeteer';
+          import { promises as fs } from 'node:fs';
+          await fs.mkdir('screens', { recursive: true });
+          const browser = await puppeteer.launch({ args: ['--no-sandbox','--disable-setuid-sandbox']});
+          const page = await browser.newPage();
+          await page.setViewport({ width: 1280, height: 800, deviceScaleFactor: 2 });
+          await page.goto('http://localhost:8080', { waitUntil: 'networkidle2' });
+          await page.screenshot({ path: 'screens/home.png' });
+          await page.goto('http://localhost:8080/#projects', { waitUntil: 'networkidle2' });
+          await page.screenshot({ path: 'screens/projects.png' });
+          await browser.close();
+          console.log('Screenshots captured');
+          NODE
+      - name: Stop server
+        if: always()
+        run: kill $(cat server.pid) || true
+      - name: Commit screenshots
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: 'chore(assets): update screenshots'
+          file_pattern: screens/*.png

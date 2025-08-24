@@ -1,0 +1,31 @@
+{
+  "generatedAt": "2025-08-24T00:59:03.493Z",
+  "totalLinks": 4,
+  "totalRoutes": 3,
+  "missingRoutes": [
+    "/favicon.ico",
+    "/reports/updates/update-2025-08-15-0457",
+    "/reports/updates/update-2025-08-15-0507",
+    "/reports/updates/update-2025-08-15-0508"
+  ],
+  "links": [
+    "/favicon.ico",
+    "/reports/updates/update-2025-08-15-0457",
+    "/reports/updates/update-2025-08-15-0507",
+    "/reports/updates/update-2025-08-15-0508"
+  ],
+  "routes": [
+    "",
+    "/comprehensive-2025-services-showcase",
+    "/pricing-2025"
+  ],
+  "scannedFiles": [
+    "/home/runner/work/zion.app/zion.app/pages/_app.tsx",
+    "/home/runner/work/zion.app/zion.app/pages/_document.tsx",
+    "/home/runner/work/zion.app/zion.app/pages/comprehensive-2025-services-showcase.tsx",
+    "/home/runner/work/zion.app/zion.app/pages/index.tsx",
+    "/home/runner/work/zion.app/zion.app/pages/pricing-2025.tsx",
+    "/home/runner/work/zion.app/zion.app/components/EnhancedServicesShowcase.tsx",
+    "/home/runner/work/zion.app/zion.app/components/EnhancedTestimonialsSection.tsx"
+  ]
+}

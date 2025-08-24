@@ -1,0 +1,498 @@
+{
+  "scannedAt": "2025-08-10T16:01:40.555Z",
+  "totalFiles": 91,
+  "issues": [
+    {
+      "file": "pages/404.tsx",
+      "isPlaceholder": true,
+      "hasHeadTitle": true,
+      "size": 411
+    },
+    {
+      "file": "pages/_app.tsx",
+      "isPlaceholder": false,
+      "hasHeadTitle": false,
+      "size": 181
+    },
+    {
+      "file": "pages/_document.tsx",
+      "isPlaceholder": false,
+      "hasHeadTitle": false,
+      "size": 528
+    },
+    {
+      "file": "pages/about.tsx",
+      "isPlaceholder": true,
+      "hasHeadTitle": true,
+      "size": 403
+    },
+    {
+      "file": "pages/admin/automation-status.tsx",
+      "isPlaceholder": true,
+      "hasHeadTitle": true,
+      "size": 458
+    },
+    {
+      "file": "pages/auth/callback.tsx",
+      "isPlaceholder": true,
+      "hasHeadTitle": true,
+      "size": 418
+    },
+    {
+      "file": "pages/auth/forgot-password.tsx",
+      "isPlaceholder": true,
+      "hasHeadTitle": true,
+      "size": 448
+    },
+    {
+      "file": "pages/auth/index.tsx",
+      "isPlaceholder": true,
+      "hasHeadTitle": true,
+      "size": 403
+    },
+    {
+      "file": "pages/auth/reset-password.tsx",
+      "isPlaceholder": true,
+      "hasHeadTitle": true,
+      "size": 443
+    },
+    {
+      "file": "pages/auth/verify.tsx",
+      "isPlaceholder": true,
+      "hasHeadTitle": true,
+      "size": 408
+    },
+    {
+      "file": "pages/auto/auto-update-2025-08-08t16-07-55-171z.tsx",
+      "isPlaceholder": true,
+      "hasHeadTitle": true,
+      "size": 523
+    },
+    {
+      "file": "pages/auto/auto-update-2025-08-08t16-10-20-249z.tsx",
+      "isPlaceholder": true,
+      "hasHeadTitle": true,
+      "size": 523
+    },
+    {
+      "file": "pages/auto/auto-update-2025-08-08t16-30-00-086z.tsx",
+      "isPlaceholder": true,
+      "hasHeadTitle": true,
+      "size": 523
+    },
+    {
+      "file": "pages/auto/auto-update-2025-08-08t16-30-20-949z.tsx",
+      "isPlaceholder": true,
+      "hasHeadTitle": true,
+      "size": 523
+    },
+    {
+      "file": "pages/auto/auto-update-2025-08-08t16-38-19-257z.tsx",
+      "isPlaceholder": true,
+      "hasHeadTitle": true,
+      "size": 523
+    },
+    {
+      "file": "pages/auto/auto-update-2025-08-08t16-49-54-200z.tsx",
+      "isPlaceholder": true,
+      "hasHeadTitle": true,
+      "size": 523
+    },
+    {
+      "file": "pages/auto/auto-update-2025-08-08t17-23-07-688z.tsx",
+      "isPlaceholder": true,
+      "hasHeadTitle": true,
+      "size": 523
+    },
+    {
+      "file": "pages/blockchain-solutions.tsx",
+      "isPlaceholder": true,
+      "hasHeadTitle": true,
+      "size": 473
+    },
+    {
+      "file": "pages/blog/5g-technology-and-its-impact-on-iot-chat.tsx",
+      "isPlaceholder": true,
+      "hasHeadTitle": true,
+      "size": 628
+    },
+    {
+      "file": "pages/blog/ai-powered-marketplaces-the-future-of-digital-commerce-chat.tsx",
+      "isPlaceholder": true,
+      "hasHeadTitle": true,
+      "size": 710
+    },
+    {
+      "file": "pages/blog/api-first-development-building-scalable-systems-chat.tsx",
+      "isPlaceholder": true,
+      "hasHeadTitle": true,
+      "size": 685
+    },
+    {
+      "file": "pages/blog/augmented-reality-in-enterprise-applications-chat.tsx",
+      "isPlaceholder": true,
+      "hasHeadTitle": true,
+      "size": 675
+    },
+    {
+      "file": "pages/blog/blockchain-technology-in-modern-business-solutions-chat.tsx",
+      "isPlaceholder": true,
+      "hasHeadTitle": true,
+      "size": 700
+    },
+    {
+      "file": "pages/blog/cloud-native-architecture-best-practices-chat.tsx",
+      "isPlaceholder": true,
+      "hasHeadTitle": true,
+      "size": 655
+    },
+    {
+      "file": "pages/blog/cybersecurity-trends-for-2024-and-beyond-chat.tsx",
+      "isPlaceholder": true,
+      "hasHeadTitle": true,
+      "size": 650
+    },
+    {
+      "file": "pages/blog/data-analytics-in-digital-transformation-chat.tsx",
+      "isPlaceholder": true,
+      "hasHeadTitle": true,
+      "size": 655
+    },
+    {
+      "file": "pages/blog/devops-automation-strategies-for-modern-teams-chat.tsx",
+      "isPlaceholder": true,
+      "hasHeadTitle": true,
+      "size": 675
+    },
+    {
+      "file": "pages/blog/digital-twins-revolutionizing-industry-4-0-chat.tsx",
+      "isPlaceholder": true,
+      "hasHeadTitle": true,
+      "size": 660
+    },
+    {
+      "file": "pages/blog/index.tsx",
+      "isPlaceholder": true,
+      "hasHeadTitle": true,
+      "size": 480
+    },
+    {
+      "file": "pages/blog/machine-learning-applications-in-enterprise-software-chat.tsx",
+      "isPlaceholder": true,
+      "hasHeadTitle": true,
+      "size": 710
+    },
+    {
+      "file": "pages/blog/microservices-architecture-benefits-and-challenges-chat.tsx",
+      "isPlaceholder": true,
+      "hasHeadTitle": true,
+      "size": 705
+    },
+    {
+      "file": "pages/blog/quantum-computing-implications-for-business-chat.tsx",
+      "isPlaceholder": true,
+      "hasHeadTitle": true,
+      "size": 670
+    },
+    {
+      "file": "pages/blog/sustainable-technology-green-computing-solutions-chat.tsx",
+      "isPlaceholder": true,
+      "hasHeadTitle": true,
+      "size": 695
+    },
+    {
+      "file": "pages/blog/the-rise-of-edge-computing-in-iot-applications-chat.tsx",
+      "isPlaceholder": true,
+      "hasHeadTitle": true,
+      "size": 670
+    },
+    {
+      "file": "pages/category/ai-consulting-chat.tsx",
+      "isPlaceholder": true,
+      "hasHeadTitle": true,
+      "size": 535
+    },
+    {
+      "file": "pages/category/business-intelligence-chat.tsx",
+      "isPlaceholder": true,
+      "hasHeadTitle": true,
+      "size": 575
+    },
+    {
+      "file": "pages/category/cloud-architecture-chat.tsx",
+      "isPlaceholder": true,
+      "hasHeadTitle": true,
+      "size": 560
+    },
+    {
+      "file": "pages/category/cybersecurity-chat.tsx",
+      "isPlaceholder": true,
+      "hasHeadTitle": true,
+      "size": 540
+    },
+    {
+      "file": "pages/category/data-science-chat.tsx",
+      "isPlaceholder": true,
+      "hasHeadTitle": true,
+      "size": 530
+    },
+    {
+      "file": "pages/category/database-administration-chat.tsx",
+      "isPlaceholder": true,
+      "hasHeadTitle": true,
+      "size": 585
+    },
+    {
+      "file": "pages/category/devops-automation-chat.tsx",
+      "isPlaceholder": true,
+      "hasHeadTitle": true,
+      "size": 555
+    },
+    {
+      "file": "pages/category/mobile-development-chat.tsx",
+      "isPlaceholder": true,
+      "hasHeadTitle": true,
+      "size": 560
+    },
+    {
+      "file": "pages/category/network-engineering-chat.tsx",
+      "isPlaceholder": true,
+      "hasHeadTitle": true,
+      "size": 565
+    },
+    {
+      "file": "pages/category/product-management-chat.tsx",
+      "isPlaceholder": true,
+      "hasHeadTitle": true,
+      "size": 560
+    },
+    {
+      "file": "pages/category/quality-assurance-chat.tsx",
+      "isPlaceholder": true,
+      "hasHeadTitle": true,
+      "size": 555
+    },
+    {
+      "file": "pages/category/system-administration-chat.tsx",
+      "isPlaceholder": true,
+      "hasHeadTitle": true,
+      "size": 575
+    },
+    {
+      "file": "pages/category/technical-writing-chat.tsx",
+      "isPlaceholder": true,
+      "hasHeadTitle": true,
+      "size": 555
+    },
+    {
+      "file": "pages/category/ui-ux-design-chat.tsx",
+      "isPlaceholder": true,
+      "hasHeadTitle": true,
+      "size": 525
+    },
+    {
+      "file": "pages/category/web-development-chat.tsx",
+      "isPlaceholder": true,
+      "hasHeadTitle": true,
+      "size": 545
+    },
+    {
+      "file": "pages/chat-content/ai-powered-business-solutions-discussion.tsx",
+      "isPlaceholder": true,
+      "hasHeadTitle": true,
+      "size": 558
+    },
+    {
+      "file": "pages/chat-content/cloud-computing-strategies.tsx",
+      "isPlaceholder": true,
+      "hasHeadTitle": true,
+      "size": 498
+    },
+    {
+      "file": "pages/chat-content/cybersecurity-best-practices.tsx",
+      "isPlaceholder": true,
+      "hasHeadTitle": true,
+      "size": 508
+    },
+    {
+      "file": "pages/chat-content/data-analytics-implementation.tsx",
+      "isPlaceholder": true,
+      "hasHeadTitle": true,
+      "size": 513
+    },
+    {
+      "file": "pages/chat-content/digital-transformation-insights.tsx",
+      "isPlaceholder": true,
+      "hasHeadTitle": true,
+      "size": 523
+    },
+    {
+      "file": "pages/chat-content/emerging-technology-trends.tsx",
+      "isPlaceholder": true,
+      "hasHeadTitle": true,
+      "size": 498
+    },
+    {
+      "file": "pages/chat-content/future-of-work-and-automation.tsx",
+      "isPlaceholder": true,
+      "hasHeadTitle": true,
+      "size": 503
+    },
+    {
+      "file": "pages/chat-content/innovation-in-enterprise-technology.tsx",
+      "isPlaceholder": true,
+      "hasHeadTitle": true,
+      "size": 538
+    },
+    {
+      "file": "pages/chat-content/sustainable-technology-practices.tsx",
+      "isPlaceholder": true,
+      "hasHeadTitle": true,
+      "size": 528
+    },
+    {
+      "file": "pages/chat-content/technology-implementation-strategies.tsx",
+      "isPlaceholder": true,
+      "hasHeadTitle": true,
+      "size": 548
+    },
+    {
+      "file": "pages/contact.tsx",
+      "isPlaceholder": true,
+      "hasHeadTitle": true,
+      "size": 413
+    },
+    {
+      "file": "pages/enhanced-home.tsx",
+      "isPlaceholder": true,
+      "hasHeadTitle": true,
+      "size": 438
+    },
+    {
+      "file": "pages/iot-platforms.tsx",
+      "isPlaceholder": true,
+      "hasHeadTitle": true,
+      "size": 438
+    },
+    {
+      "file": "pages/services/ai-model-development-chat.tsx",
+      "isPlaceholder": true,
+      "hasHeadTitle": true,
+      "size": 574
+    },
+    {
+      "file": "pages/services/ai-seo-auditor.tsx",
+      "isPlaceholder": true,
+      "hasHeadTitle": true,
+      "size": 524
+    },
+    {
+      "file": "pages/services/api-development-chat.tsx",
+      "isPlaceholder": true,
+      "hasHeadTitle": true,
+      "size": 554
+    },
+    {
+      "file": "pages/services/business-intelligence-chat.tsx",
+      "isPlaceholder": true,
+      "hasHeadTitle": true,
+      "size": 584
+    },
+    {
+      "file": "pages/services/cloud-migration-services-chat.tsx",
+      "isPlaceholder": true,
+      "hasHeadTitle": true,
+      "size": 594
+    },
+    {
+      "file": "pages/services/customer-support-chatbot.tsx",
+      "isPlaceholder": true,
+      "hasHeadTitle": true,
+      "size": 574
+    },
+    {
+      "file": "pages/services/data-pipeline-engineering-chat.tsx",
+      "isPlaceholder": true,
+      "hasHeadTitle": true,
+      "size": 599
+    },
+    {
+      "file": "pages/services/database-design-chat.tsx",
+      "isPlaceholder": true,
+      "hasHeadTitle": true,
+      "size": 554
+    },
+    {
+      "file": "pages/services/instagram-content-scheduler.tsx",
+      "isPlaceholder": true,
+      "hasHeadTitle": true,
+      "size": 589
+    },
+    {
+      "file": "pages/services/landing-page-generator.tsx",
+      "isPlaceholder": true,
+      "hasHeadTitle": true,
+      "size": 564
+    },
+    {
+      "file": "pages/services/mobile-app-development-chat.tsx",
+      "isPlaceholder": true,
+      "hasHeadTitle": true,
+      "size": 584
+    },
+    {
+      "file": "pages/services/network-security-chat.tsx",
+      "isPlaceholder": true,
+      "hasHeadTitle": true,
+      "size": 559
+    },
+    {
+      "file": "pages/services/performance-optimization-chat.tsx",
+      "isPlaceholder": true,
+      "hasHeadTitle": true,
+      "size": 599
+    },
+    {
+      "file": "pages/services/price-intelligence-service.tsx",
+      "isPlaceholder": true,
+      "hasHeadTitle": true,
+      "size": 584
+    },
+    {
+      "file": "pages/services/quality-assurance-testing-chat.tsx",
+      "isPlaceholder": true,
+      "hasHeadTitle": true,
+      "size": 599
+    },
+    {
+      "file": "pages/services/security-auditing-chat.tsx",
+      "isPlaceholder": true,
+      "hasHeadTitle": true,
+      "size": 564
+    },
+    {
+      "file": "pages/services/system-administration-chat.tsx",
+      "isPlaceholder": true,
+      "hasHeadTitle": true,
+      "size": 584
+    },
+    {
+      "file": "pages/services/technical-documentation-chat.tsx",
+      "isPlaceholder": true,
+      "hasHeadTitle": true,
+      "size": 594
+    },
+    {
+      "file": "pages/services/ui-ux-design-chat.tsx",
+      "isPlaceholder": true,
+      "hasHeadTitle": true,
+      "size": 534
+    },
+    {
+      "file": "pages/services/web-application-development-chat.tsx",
+      "isPlaceholder": true,
+      "hasHeadTitle": true,
+      "size": 609
+    }
+  ]
+}

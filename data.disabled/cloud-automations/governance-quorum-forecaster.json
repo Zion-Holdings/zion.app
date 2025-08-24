@@ -1,0 +1,12 @@
+{
+  "name": "Governance Quorum Forecaster",
+  "key": "governance-quorum-forecaster",
+  "startedAt": "2025-08-09T21:39:28.527Z",
+  "finishedAt": "2025-08-09T21:39:28.538Z",
+  "success": true,
+  "metrics": {
+    "output": "/docs/governance-quorum-forecast.md",
+    "globalRequired": 10000000
+  },
+  "error": null
+}

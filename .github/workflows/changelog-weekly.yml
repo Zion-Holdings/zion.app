@@ -1,0 +1,30 @@
+name: Changelog Weekly
+
+on:
+  schedule:
+    - cron: '0 11 * * 1'
+  workflow_dispatch:
+
+jobs:
+  changelog:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - run: npm ci
+      - name: Generate changelog summary (last week)
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          CHANGELOG_SINCE: '1 week ago'
+        run: npx ts-node scripts/changelog-summarizer.ts
+      - name: Commit changelog
+        run: |
+          git config user.name "github-actions"
+          git config user.email "github-actions@users.noreply.github.com"
+          git add public/changelog/latest.md data/reports/changelog/latest.json || true
+          git commit -m "docs(changelog): update weekly changelog [skip ci]" || echo "No changes"
+          git push || echo "No push"

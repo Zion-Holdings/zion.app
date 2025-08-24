@@ -1,0 +1,1211 @@
+<<<<<<< HEAD
+import React, { useState, useEffect, useCallback, Suspense } from 'react';
+import Layout from './layout/Layout';
+=======
+import React, { useEffect, useState, useCallback, Suspense, lazy, useMemo } from 'react';
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-b677
+import { motion, AnimatePresence } from 'framer-motion';
+import { 
+  ArrowRight, Play, TrendingUp, Brain, Shield, Rocket, Globe, Cpu, Database, Atom, Target, Star, Sparkles as SparklesIcon,
+  Brain as BrainIcon, Atom as AtomIcon, Shield as ShieldIcon, Rocket as RocketIcon, Zap, Eye, Heart, Infinity,
+<<<<<<< HEAD
+  CheckCircle, Users, Award, Clock, Loader2
+} from 'lucide-react';
+import EnhancedServiceCard from './ui/EnhancedServiceCard';
+import { ServiceCardSkeleton } from './ui/LoadingSkeleton';
+import EnhancedSEO from './ui/EnhancedSEO';
+=======
+  Users, Building, Cloud, Code, Palette, Lightbulb, Award, Clock, CheckCircle, ArrowUpRight, ChevronRight,
+  ExternalLink, Download, MessageCircle, Phone, Mail, MapPin
+} from 'lucide-react';
+import Head from 'next/head';
+import Image from 'next/image';
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-b677
+
+// Import our new revolutionary services
+import { revolutionary2044AdvancedMicroSaas } from '../data/revolutionary-2044-advanced-micro-saas';
+import { revolutionary2044ITServices } from '../data/revolutionary-2044-it-services';
+import { revolutionary2044AIServices } from '../data/revolutionary-2044-ai-services';
+import { realEnterpriseMicroSaas2025 } from '../data/2025-real-enterprise-micro-saas';
+import { innovativeITInfrastructureServices2025 } from '../data/2025-innovative-it-infrastructure-services';
+import { innovativeAIAutonomousServices2025 } from '../data/2025-innovative-ai-autonomous-services';
+import { realInnovativeMicroSaas2025V2 } from '../data/2025-real-innovative-micro-saas-v2';
+import { innovativeITInfrastructureServices2025V2 } from '../data/2025-innovative-it-infrastructure-services-v2';
+import { innovativeAIAutonomousServices2025V2 } from '../data/2025-innovative-ai-autonomous-services-v2';
+
+// Lazy load components for better performance
+<<<<<<< HEAD
+const TestimonialSection = React.lazy(() => import('./TestimonialSection'));
+
+// Enhanced loading component
+const LoadingSpinner = () => (
+  <div className="flex items-center justify-center p-8">
+    <div className="relative">
+      <div className="w-12 h-12 border-4 border-blue-200 rounded-full animate-spin"></div>
+      <div className="absolute top-0 left-0 w-12 h-12 border-4 border-blue-600 rounded-full animate-ping opacity-75"></div>
+    </div>
+    <span className="ml-3 text-lg font-medium text-gray-700">Loading revolutionary technology...</span>
+  </div>
+);
+=======
+const ServiceCard = lazy(() => import('./ServiceCard'));
+const PerformanceMetrics = lazy(() => import('./PerformanceMetrics'));
+const InteractiveDemo = lazy(() => import('./InteractiveDemo'));
+const PerformanceOptimizer = lazy(() => import('./PerformanceOptimizer'));
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-b677
+
+// Enhanced loading skeleton
+const LoadingSkeleton = () => (
+  <div className="bg-gray-800/50 rounded-2xl p-6 h-64 animate-pulse">
+    <div className="bg-gray-700 h-8 w-3/4 rounded mb-4"></div>
+    <div className="bg-gray-700 h-4 w-full rounded mb-2"></div>
+    <div className="bg-gray-700 h-4 w-2/3 rounded"></div>
+  </div>
+);
+
+const Homepage2045: React.FC = () => {
+  const [isVisible, setIsVisible] = useState(false);
+  const [currentServiceIndex, setCurrentServiceIndex] = useState(0);
+  const [selectedCategory, setSelectedCategory] = useState('all');
+  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+<<<<<<< HEAD
+  const [hoveredService, setHoveredService] = useState<string | null>(null);
+  const [isClient, setIsClient] = useState(false);
+  
+  // Memoize expensive computations
+=======
+  const [isLoading, setIsLoading] = useState(false);
+  const [userInteraction, setUserInteraction] = useState(false);
+  const [currentServiceIndex, setCurrentServiceIndex] = useState(0);
+  const [isMobile, setIsMobile] = useState(false);
+  const [isTablet, setIsTablet] = useState(false);
+  
+  // Memoize services to prevent unnecessary re-renders
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-b677
+  const allRevolutionaryServices = useMemo(() => [
+    ...revolutionary2044AdvancedMicroSaas,
+    ...revolutionary2044ITServices,
+    ...revolutionary2044AIServices,
+    ...realEnterpriseMicroSaas2025,
+    ...innovativeITInfrastructureServices2025,
+<<<<<<< HEAD
+    ...innovativeAIAutonomousServices2025,
+    ...realInnovativeMicroSaas2025V2,
+    ...innovativeITInfrastructureServices2025V2,
+    ...innovativeAIAutonomousServices2025V2
+  ];
+
+  // Get featured services for rotation
+  const featuredServices = allRevolutionaryServices.slice(0, 6);
+
+  // Filter services by category
+  const getFilteredServices = () => {
+=======
+    ...innovativeAIAutonomousServices2025
+  ], []);
+
+  // Enhanced category definitions with better accessibility
+  const categories = useMemo(() => [
+    { 
+      id: 'all', 
+      name: 'All Services', 
+      icon: SparklesIcon, 
+      color: 'from-purple-500 to-pink-500',
+      description: 'View all available services'
+    },
+    { 
+      id: 'ai', 
+      name: 'AI & Consciousness', 
+      icon: BrainIcon, 
+      color: 'from-cyan-500 to-blue-500',
+      description: 'Artificial intelligence and consciousness solutions'
+    },
+    { 
+      id: 'quantum', 
+      name: 'Quantum Technology', 
+      icon: AtomIcon, 
+      color: 'from-blue-500 to-indigo-500',
+      description: 'Quantum computing and technology solutions'
+    },
+    { 
+      id: 'cybersecurity', 
+      name: 'Cybersecurity', 
+      icon: ShieldIcon, 
+      color: 'from-red-500 to-orange-500',
+      description: 'Advanced security and protection solutions'
+    },
+    { 
+      id: 'space', 
+      name: 'Space Technology', 
+      icon: RocketIcon, 
+      color: 'from-indigo-500 to-purple-500',
+      description: 'Space exploration and satellite technology'
+    },
+    { 
+      id: 'enterprise', 
+      name: 'Enterprise Solutions', 
+      icon: Building, 
+      color: 'from-green-500 to-teal-500',
+      description: 'Enterprise-grade business solutions'
+    }
+  ], []);
+
+  // Responsive design detection
+  useEffect(() => {
+    const checkDeviceType = () => {
+      const width = window.innerWidth;
+      setIsMobile(width < 768);
+      setIsTablet(width >= 768 && width < 1024);
+    };
+
+    checkDeviceType();
+    window.addEventListener('resize', checkDeviceType);
+    return () => window.removeEventListener('resize', checkDeviceType);
+  }, []);
+
+  useEffect(() => {
+    setIsVisible(true);
+    
+    // Auto-rotate featured services with better performance
+    const interval = setInterval(() => {
+      setCurrentServiceIndex((prev) => (prev + 1) % 6);
+    }, 8000); // Increased to 8 seconds for better UX
+    
+    // Enhanced mouse tracking with throttling
+    let ticking = false;
+    const handleMouseMove = (e: MouseEvent) => {
+      if (!ticking) {
+        requestAnimationFrame(() => {
+          setMousePosition({ x: e.clientX, y: e.clientY });
+          ticking = false;
+        });
+        ticking = true;
+      }
+    };
+    
+    window.addEventListener('mousemove', handleMouseMove);
+    
+    return () => {
+      clearInterval(interval);
+      window.removeEventListener('mousemove', handleMouseMove);
+    };
+  }, []);
+
+  // Filter services by category with memoization
+  const getFilteredServices = useCallback(() => {
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-b677
+    if (selectedCategory === 'all') return allRevolutionaryServices;
+    return allRevolutionaryServices.filter(service => 
+      service.category.toLowerCase().includes(selectedCategory.toLowerCase()) ||
+      service.type?.toLowerCase().includes(selectedCategory.toLowerCase())
+    );
+  }, [selectedCategory, allRevolutionaryServices]);
+
+<<<<<<< HEAD
+  const categories = [
+    { id: 'all', name: 'All Services', icon: SparklesIcon, color: 'from-purple-500 to-pink-500', count: allRevolutionaryServices.length },
+    { id: 'ai', name: 'AI & Consciousness', icon: BrainIcon, color: 'from-cyan-500 to-blue-500', count: revolutionary2045AdvancedAIServices.length },
+    { id: 'quantum', name: 'Quantum Technology', icon: AtomIcon, color: 'from-blue-500 to-indigo-500', count: allRevolutionaryServices.filter(s => s.category.includes('Quantum')).length },
+    { id: 'cybersecurity', name: 'Cybersecurity', icon: ShieldIcon, color: 'from-red-500 to-orange-500', count: allRevolutionaryServices.filter(s => s.category.includes('Security')).length },
+    { id: 'business', name: 'Business Solutions', icon: Target, color: 'from-emerald-500 to-teal-500', count: allRevolutionaryServices.filter(s => s.type === 'Micro SAAS').length },
+    { id: 'it', name: 'IT Infrastructure', icon: Cpu, color: 'from-yellow-500 to-orange-500', count: revolutionary2045AdvancedITServices.length }
+  ];
+
+    const heroSection = document.querySelector('[data-hero-section]');
+    if (heroSection) {
+      observer.observe(heroSection);
+=======
+  // Enhanced animation variants with better performance
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        duration: 0.6,
+        staggerChildren: 0.08,
+        ease: "easeOut" as const
+      }
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-b677
+    }
+
+<<<<<<< HEAD
+  const stats = [
+    { number: "3000+", label: "Revolutionary Services", icon: Star },
+    { number: "99.99%", label: "Uptime Guarantee", icon: TrendingUp },
+    { number: "24/7", label: "AI Support Available", icon: Brain },
+    { number: "250+", label: "Countries Served", icon: Globe }
+  ];
+
+  const handleGetStarted = useCallback(() => {
+    if (typeof window !== 'undefined') {
+      window.location.href = '/revolutionary-2045-pricing-showcase';
+=======
+  const itemVariants = {
+    hidden: { opacity: 0, y: 30 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.5,
+        ease: "easeOut" as const
+      }
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-b677
+    }
+  }, []);
+
+<<<<<<< HEAD
+  const handleWatchDemo = useCallback(() => {
+    if (typeof window !== 'undefined') {
+      window.location.href = '/services';
+=======
+  const heroVariants = {
+    hidden: { opacity: 0, y: 60 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.8,
+        ease: "easeOut" as const
+      }
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-b677
+    }
+  }, []);
+
+<<<<<<< HEAD
+  const handleServiceClick = useCallback((service: { slug: string }) => {
+    if (typeof window !== 'undefined') {
+      window.location.href = service.slug;
+=======
+  const floatingVariants = {
+    animate: {
+      y: [-8, 8, -8],
+      transition: {
+        duration: 4,
+        repeat: Infinity as any,
+        ease: "easeInOut" as const
+      }
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-b677
+    }
+  }, []);
+
+<<<<<<< HEAD
+  if (!isClient) {
+    return <LoadingSpinner />;
+  }
+
+  return (
+    <Layout>
+      <main className="min-h-screen bg-gradient-to-br from-gray-900 via-black to-gray-900 text-white relative overflow-hidden">
+        {/* Hero Section */}
+        <section 
+          className="min-h-screen flex items-center justify-center px-4 relative overflow-hidden"
+          aria-labelledby="hero-heading"
+        >
+          {/* Enhanced Animated Background */}
+          <div className="absolute inset-0 -z-10">
+            {/* Floating orbs with neon effects */}
+            <div className="absolute top-20 left-20 w-96 h-96 bg-gradient-to-r from-cyan-500/20 to-blue-500/20 rounded-full blur-3xl animate-pulse shadow-[0_0_100px_rgba(6,182,212,0.5)]" aria-hidden="true"></div>
+            <div className="absolute bottom-20 right-20 w-[500px] h-[500px] bg-gradient-to-r from-purple-500/20 to-pink-500/20 rounded-full blur-3xl animate-pulse delay-1000 shadow-[0_0_100px_rgba(168,85,247,0.5)]" aria-hidden="true"></div>
+            <div className="absolute top-1/2 left-1/2 w-80 h-80 bg-gradient-to-r from-emerald-500/20 to-teal-500/20 rounded-full blur-3xl animate-pulse delay-500 shadow-[0_0_100px_rgba(16,185,129,0.5)]" aria-hidden="true"></div>
+            
+            {/* Animated particles with neon trails */}
+            <div className="absolute inset-0" aria-hidden="true">
+              {[...Array(20)].map((_, i) => (
+                <motion.div
+                  key={i}
+                  className="absolute w-2 h-2 bg-cyan-400/40 rounded-full shadow-[0_0_20px_rgba(6,182,212,0.8)]"
+                  animate={{
+                    x: [0, 150, 0],
+                    y: [0, -150, 0],
+                    opacity: [0, 1, 0],
+                    scale: [0, 1.5, 0],
+                  }}
+                  transition={{
+                    duration: 8 + i * 0.3,
+                    repeat: Infinity as never,
+                    delay: i * 0.2,
+                    ease: "easeInOut"
+                  }}
+                  style={{
+                    left: `${Math.random() * 100}%`,
+                    top: `${Math.random() * 100}%`,
+                  }}
+                />
+              ))}
+            </div>
+
+            {/* Grid pattern with neon glow */}
+            <div className="absolute inset-0 opacity-20" aria-hidden="true">
+              <div className="absolute inset-0" style={{
+                backgroundImage: `radial-gradient(circle at 1px 1px, rgba(6,182,212,0.3) 1px, transparent 0)`,
+                backgroundSize: '60px 60px'
+              }}></div>
+            </div>
+
+            {/* Floating geometric shapes */}
+            <motion.div
+              className="absolute top-32 right-32 w-24 h-24 border border-cyan-400/30 rotate-45"
+              animate={{
+                rotate: [45, 405],
+                scale: [1, 1.2, 1],
+                opacity: [0.3, 0.8, 0.3],
+              }}
+              transition={{
+                duration: 10,
+                repeat: Infinity as never,
+                ease: "linear"
+              }}
+              aria-hidden="true"
+            />
+            <motion.div
+              className="absolute bottom-32 left-32 w-16 h-16 border border-purple-400/30 rounded-full"
+              animate={{
+                scale: [1, 1.5, 1],
+                opacity: [0.3, 0.8, 0.3],
+              }}
+              transition={{
+                duration: 8,
+                repeat: Infinity as never,
+                ease: "easeInOut"
+              }}
+=======
+  // Enhanced parallax effect with better performance
+  const getParallaxStyle = useCallback((depth: number) => ({
+    transform: `translate3d(${mousePosition.x * depth * 0.005}px, ${mousePosition.y * depth * 0.005}px, 0)`,
+    willChange: 'transform'
+  }), [mousePosition]);
+
+  // Enhanced contact information
+  const contactInfo = [
+    { icon: Phone, label: 'Call Us', value: '+1 302 464 0950', href: 'tel:+13024640950' },
+    { icon: Mail, label: 'Email Us', value: 'kleber@ziontechgroup.com', href: 'mailto:kleber@ziontechgroup.com' },
+    { icon: MapPin, label: 'Visit Us', value: '364 E Main St STE 1008, Middletown DE 19709', href: '#' }
+  ];
+
+  return (
+    <>
+      <Head>
+        <title>Zion Tech Group - Revolutionary 2045 Technology Solutions | AI Consciousness & Quantum Computing</title>
+        <meta name="description" content="Experience the future of technology with Zion Tech Group's revolutionary AI consciousness, quantum computing, and autonomous solutions. Transform your business with cutting-edge innovation." />
+        <meta name="keywords" content="AI consciousness, quantum computing, autonomous solutions, space technology, cybersecurity, business intelligence, Zion Tech Group, 2045 technology, enterprise solutions" />
+        <meta name="author" content="Zion Tech Group" />
+        <meta name="robots" content="index, follow" />
+        <meta property="og:title" content="Zion Tech Group - Revolutionary 2045 Technology Solutions" />
+        <meta property="og:description" content="Pioneering the future of technology with revolutionary AI consciousness and quantum computing solutions." />
+        <meta property="og:url" content="https://ziontechgroup.com" />
+        <meta property="og:type" content="website" />
+        <meta property="og:image" content="https://ziontechgroup.com/og-image-2045.jpg" />
+        <meta property="og:site_name" content="Zion Tech Group" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Zion Tech Group - Revolutionary 2045 Technology" />
+        <meta name="twitter:description" content="Pioneering the future of technology with revolutionary AI consciousness and quantum computing solutions." />
+        <meta name="twitter:image" content="https://ziontechgroup.com/og-image-2045.jpg" />
+        <link rel="canonical" href="https://ziontechgroup.com" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
+        
+        {/* Preload critical resources */}
+        <link rel="preload" href="/fonts/inter-var.woff2" as="font" type="font/woff2" crossOrigin="anonymous" />
+        <link rel="dns-prefetch" href="//fonts.googleapis.com" />
+        <link rel="dns-prefetch" href="//fonts.gstatic.com" />
+      </Head>
+
+      <div className="min-h-screen bg-black text-white relative overflow-hidden">
+        {/* Hero Section */}
+        <motion.section 
+          className="relative min-h-screen flex items-center justify-center px-4 lg:px-8"
+          variants={heroVariants}
+          initial="hidden"
+          animate="visible"
+          aria-label="Hero section"
+        >
+          {/* Enhanced Animated Background Elements */}
+          <div className="absolute inset-0 overflow-hidden">
+            <motion.div
+              className="absolute top-20 left-20 w-32 h-32 bg-gradient-to-r from-cyan-500/20 to-blue-500/20 rounded-full blur-3xl"
+              variants={floatingVariants}
+              animate="animate"
+              aria-hidden="true"
+            />
+            <motion.div
+              className="absolute top-40 right-32 w-24 h-24 bg-gradient-to-r from-purple-500/20 to-pink-500/20 rounded-full blur-3xl"
+              variants={floatingVariants}
+              animate="animate"
+              style={{ animationDelay: '1s' }}
+              aria-hidden="true"
+            />
+            <motion.div
+              className="absolute bottom-32 left-1/3 w-40 h-40 bg-gradient-to-r from-green-500/20 to-teal-500/20 rounded-full blur-3xl"
+              variants={floatingVariants}
+              animate="animate"
+              style={{ animationDelay: '2s' }}
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-b677
+              aria-hidden="true"
+            />
+          </div>
+
+          <div className="relative z-10 text-center max-w-6xl mx-auto">
+            {/* Enhanced Main Heading */}
+            <motion.h1 
+<<<<<<< HEAD
+              className="text-5xl md:text-7xl lg:text-8xl font-bold bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 bg-clip-text text-transparent mb-6 text-neon-cyan"
+=======
+              className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 bg-clip-text text-transparent mb-6 leading-tight"
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-b677
+              variants={itemVariants}
+            >
+              Zion Tech Group
+            </motion.h1>
+            
+<<<<<<< HEAD
+            <motion.p
+              className="text-3xl md:text-4xl text-gray-300 mb-16 max-w-6xl mx-auto leading-relaxed font-light"
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: isVisible ? 1 : 0, y: isVisible ? 0 : 30 }}
+              transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
+=======
+            <motion.p 
+              className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-gray-300 mb-8 max-w-4xl mx-auto leading-relaxed px-4"
+              variants={itemVariants}
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-b677
+            >
+              Pioneering the future of technology with revolutionary AI consciousness, quantum computing, and autonomous solutions that transform businesses worldwide.
+            </motion.p>
+
+<<<<<<< HEAD
+            <motion.div
+              className="flex flex-col sm:flex-row gap-6 justify-center items-center mb-20"
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: isVisible ? 1 : 0, y: isVisible ? 0 : 30 }}
+              transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
+            >
+              <button 
+                className="group px-12 py-6 bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-bold rounded-3xl hover:from-cyan-600 hover:to-blue-700 transition-all duration-300 transform hover:scale-105 shadow-[0_0_50px_rgba(6,182,212,0.4)] focus:outline-none focus:ring-4 focus:ring-cyan-500/50 text-xl relative overflow-hidden"
+                onClick={handleGetStarted}
+                aria-label="Get started with Zion Tech Group revolutionary services"
+              >
+                <span className="relative z-10 flex items-center">
+                  Experience the Future
+                  <ArrowRight className="w-7 h-7 ml-4 group-hover:translate-x-2 transition-transform duration-300" />
+                </span>
+                <div className="absolute inset-0 bg-gradient-to-r from-cyan-400 to-blue-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-3xl"></div>
+              </button>
+              <button 
+                className="px-12 py-6 border-2 border-cyan-400 text-cyan-400 font-bold rounded-3xl hover:bg-cyan-400 hover:text-black transition-all duration-300 focus:outline-none focus:ring-4 focus:ring-cyan-400/50 text-xl shadow-[0_0_30px_rgba(6,182,212,0.3)] backdrop-blur-sm"
+                onClick={handleWatchDemo}
+                aria-label="Explore our revolutionary services"
+              >
+                <span className="flex items-center">
+                  Explore Services
+                  <Play className="w-7 h-7 ml-4" />
+                </span>
+              </button>
+            </motion.div>
+
+            {/* Featured Service Showcase */}
+            <motion.div
+              className="max-w-6xl mx-auto"
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: isVisible ? 1 : 0, y: isVisible ? 0 : 30 }}
+              transition={{ duration: 0.8, delay: 0.6, ease: "easeOut" }}
+            >
+              <div className="text-center mb-12">
+                <h2 className="text-4xl font-bold text-white mb-4">
+                  Featured Revolutionary Services
+                </h2>
+                <p className="text-xl text-gray-400">
+                  Experience the future of technology with our cutting-edge solutions
+                </p>
+              </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                {featuredServices.map((service, index) => (
+                  <motion.div
+                    key={service.id}
+                    className={`relative group cursor-pointer ${
+                      index === currentServiceIndex ? 'scale-105' : 'scale-100'
+                    } transition-transform duration-500`}
+                    onClick={() => handleServiceClick(service)}
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                    role="button"
+                    tabIndex={0}
+                    onKeyDown={(e) => {
+                      if (e.key === 'Enter' || e.key === ' ') {
+                        handleServiceClick(service);
+                      }
+                    }}
+                    aria-label={`Learn more about ${service.name}`}
+                  >
+                    <div className="relative p-8 bg-gradient-to-br from-gray-900/80 to-gray-800/80 border border-gray-700/50 rounded-3xl backdrop-blur-xl shadow-[0_0_50px_rgba(0,0,0,0.5)] hover:shadow-[0_0_80px_rgba(6,182,212,0.3)] transition-all duration-300 group-hover:border-cyan-500/50">
+                      <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/5 to-blue-500/5 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                      
+                      <div className="relative z-10">
+                        <div className="flex items-center justify-between mb-6">
+                          <div className="w-16 h-16 bg-gradient-to-br from-cyan-500 to-blue-600 rounded-2xl flex items-center justify-center shadow-[0_0_30px_rgba(6,182,212,0.3)]">
+                            <Brain className="w-8 h-8 text-white" />
+                          </div>
+                          <span className="px-3 py-1 bg-gradient-to-r from-purple-500/20 to-pink-500/20 border border-purple-500/30 rounded-full text-purple-300 text-sm font-medium">
+                            {service.type}
+                          </span>
+                        </div>
+                        
+                        <h3 className="text-xl font-bold text-white mb-3 group-hover:text-cyan-400 transition-colors duration-300">
+                          {service.name}
+                        </h3>
+                        
+                        <p className="text-gray-400 text-sm leading-relaxed mb-4">
+                          {service.description.substring(0, 120)}...
+                        </p>
+                        
+                        <div className="flex items-center justify-between">
+                          <span className="text-2xl font-bold text-cyan-400">
+                            {service.pricing?.starter || 'Contact for pricing'}
+                          </span>
+                          <ArrowRight className="w-5 h-5 text-gray-500 group-hover:text-cyan-400 transition-colors duration-300" />
+                        </div>
+                      </div>
+                    </div>
+                  </motion.div>
+                ))}
+              </div>
+            </motion.div>
+          </div>
+        </section>
+
+        {/* Features Section */}
+        <section className="py-24 px-4 relative" aria-labelledby="features-heading">
+          <div className="max-w-7xl mx-auto">
+            <motion.div
+              className="text-center mb-20"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+            >
+              <h2 id="features-heading" className="text-5xl font-bold text-white mb-6">
+                Revolutionary Technology Features
+              </h2>
+              <p className="text-xl text-gray-400 max-w-4xl mx-auto">
+                Experience the cutting-edge features that set our 2045 technology apart from everything else
+              </p>
+            </motion.div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {features.map((feature, index) => (
+                <motion.div
+                  key={feature.title}
+                  className="group relative"
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.8, delay: index * 0.1 }}
+                  viewport={{ once: true }}
+                >
+                  <div className="relative p-8 bg-gradient-to-br from-gray-900/80 to-gray-800/80 border border-gray-700/50 rounded-3xl backdrop-blur-xl shadow-[0_0_50px_rgba(0,0,0,0.5)] hover:shadow-[0_0_80px_rgba(6,182,212,0.3)] transition-all duration-300 group-hover:border-cyan-500/50 group-hover:scale-105">
+                    <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/5 to-blue-500/5 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    
+                    <div className="relative z-10">
+                      <div className="w-16 h-16 bg-gradient-to-br from-cyan-500 to-blue-600 rounded-2xl flex items-center justify-center mb-6 shadow-[0_0_30px_rgba(6,182,212,0.3)] group-hover:shadow-[0_0_50px_rgba(6,182,212,0.5)] transition-all duration-300">
+                        <feature.icon className="w-8 h-8 text-white" />
+                      </div>
+                      
+                      <h3 className="text-xl font-bold text-white mb-4 group-hover:text-cyan-400 transition-colors duration-300">
+                        {feature.title}
+                      </h3>
+                      
+                      <p className="text-gray-400 text-sm leading-relaxed mb-6">
+                        {feature.description}
+                      </p>
+                      
+                      <a
+                        href={feature.href}
+                        className="inline-flex items-center text-cyan-400 hover:text-cyan-300 font-medium transition-colors duration-300 group-hover:translate-x-2"
+                        aria-label={`Learn more about ${feature.title}`}
+                      >
+                        Learn More
+                        <ArrowRight className="w-4 h-4 ml-2" />
+                      </a>
+                    </div>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Stats Section */}
+        <section className="py-24 px-4 relative" aria-labelledby="stats-heading">
+          <div className="max-w-7xl mx-auto">
+            <h2 id="stats-heading" className="sr-only">Company Statistics</h2>
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+              {stats.map((stat, index) => (
+                <motion.div
+                  key={stat.label}
+                  className="text-center group"
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: index * 0.1 }}
+                  whileHover={{ scale: 1.05 }}
+                >
+                  <div className={`text-4xl mb-2 group-hover:scale-110 transition-transform duration-300`}>
+                    {stat.icon}
+                  </div>
+                  <div className={`text-2xl md:text-3xl font-bold ${stat.color} mb-2 group-hover:text-white transition-colors duration-300`}>
+                    {stat.number}
+                  </div>
+                  <div className="text-sm text-gray-400 group-hover:text-gray-300 transition-colors duration-300">
+                    {stat.label}
+                  </div>
+=======
+            {/* Enhanced CTA Buttons */}
+            <motion.div 
+              className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12 px-4"
+              variants={itemVariants}
+            >
+              <Link href="/services" aria-label="Explore our services">
+                <motion.button 
+                  className="group relative px-6 sm:px-8 py-3 sm:py-4 bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-semibold rounded-full text-base sm:text-lg hover:from-cyan-600 hover:to-blue-700 transition-all duration-300 transform hover:scale-105 hover:shadow-2xl hover:shadow-cyan-500/25 focus:outline-none focus:ring-4 focus:ring-cyan-500/50"
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  aria-describedby="explore-services-description"
+                >
+                  <span className="flex items-center gap-2">
+                    Explore Services
+                    <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform" />
+                  </span>
+                  <div className="absolute inset-0 rounded-full bg-gradient-to-r from-cyan-400 to-blue-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-xl -z-10" />
+                </motion.button>
+              </Link>
+              
+              <Link href="/contact" aria-label="Get started with us">
+                <motion.button 
+                  className="px-6 sm:px-8 py-3 sm:py-4 border-2 border-cyan-500/50 text-cyan-400 font-semibold rounded-full text-base sm:text-lg hover:bg-cyan-500/10 hover:border-cyan-400 transition-all duration-300 transform hover:scale-105 focus:outline-none focus:ring-4 focus:ring-cyan-500/50"
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  aria-describedby="get-started-description"
+                >
+                  Get Started
+                </motion.button>
+              </Link>
+            </motion.div>
+
+            {/* Enhanced Stats with better accessibility */}
+            <motion.div 
+              className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 max-w-4xl mx-auto px-4"
+              variants={itemVariants}
+              role="region"
+              aria-label="Company statistics"
+            >
+              {[
+                { number: '500+', label: 'Global Clients', description: 'Satisfied customers worldwide' },
+                { number: '99.9%', label: 'Uptime', description: 'Reliable service availability' },
+                { number: '24/7', label: 'Support', description: 'Round-the-clock assistance' },
+                { number: '2045', label: 'Technology', description: 'Future-ready solutions' }
+              ].map((stat, index) => (
+                <motion.div
+                  key={index}
+                  className="text-center group cursor-pointer"
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: index * 0.1 }}
+                  whileHover={{ y: -5 }}
+                  tabIndex={0}
+                  role="button"
+                  aria-label={`${stat.label}: ${stat.number}`}
+                  aria-describedby={`stat-${index}-description`}
+                >
+                  <div className="text-xl sm:text-2xl md:text-3xl font-bold text-cyan-400 mb-2 group-hover:text-cyan-300 transition-colors">
+                    {stat.number}
+                  </div>
+                  <div className="text-sm text-gray-400 group-hover:text-gray-300 transition-colors">
+                    {stat.label}
+                  </div>
+                  <div id={`stat-${index}-description`} className="sr-only">{stat.description}</div>
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-b677
+                </motion.div>
+              ))}
+            </motion.div>
+
+            {/* Enhanced Contact Information */}
+            <motion.div 
+              className="mt-12 grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-3xl mx-auto px-4"
+              variants={itemVariants}
+              role="region"
+              aria-label="Contact information"
+            >
+              {contactInfo.map((contact, index) => (
+                <motion.a
+                  key={index}
+                  href={contact.href}
+                  className="flex items-center gap-3 p-3 rounded-lg bg-gray-800/30 hover:bg-gray-800/50 transition-colors duration-300 group"
+                  whileHover={{ scale: 1.02 }}
+                  whileTap={{ scale: 0.98 }}
+                  aria-label={`${contact.label}: ${contact.value}`}
+                >
+                  <contact.icon className="w-5 h-5 text-cyan-400 group-hover:text-cyan-300 transition-colors" />
+                  <div className="text-left">
+                    <div className="text-xs text-gray-400 font-medium">{contact.label}</div>
+                    <div className="text-sm text-white group-hover:text-cyan-300 transition-colors">
+                      {contact.value}
+                    </div>
+                  </div>
+                </motion.a>
+              ))}
+            </motion.div>
+          </div>
+        </motion.section>
+
+        {/* Enhanced Featured Services Section */}
+        <motion.section 
+          className="py-16 sm:py-20 px-4 lg:px-8 relative"
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-100px" }}
+          aria-label="Featured services"
+        >
+          <div className="max-w-7xl mx-auto">
+<<<<<<< HEAD
+            <motion.div className="text-center mb-16" variants={itemVariants}>
+              <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 text-neon-cyan">
+                🚀 Revolutionary Technology Solutions
+              </h2>
+              <p className="text-xl text-gray-300 max-w-3xl mx-auto mb-6">
+=======
+            <motion.div className="text-center mb-12 sm:mb-16" variants={itemVariants}>
+              <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-6">
+                Revolutionary Technology Solutions
+              </h2>
+              <p className="text-lg sm:text-xl text-gray-300 max-w-3xl mx-auto px-4">
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-b677
+                Experience the future with our cutting-edge AI consciousness, quantum computing, 
+                and autonomous solutions that transform businesses worldwide.
+              </p>
+              <div className="flex flex-wrap justify-center gap-4 text-sm text-gray-400">
+                <span className="px-3 py-1 bg-cyan-500/10 border border-cyan-500/20 rounded-full">🤖 AI & Machine Learning</span>
+                <span className="px-3 py-1 bg-purple-500/10 border border-purple-500/20 rounded-full">⚛️ Quantum Computing</span>
+                <span className="px-3 py-1 bg-blue-500/10 border border-blue-500/20 rounded-full">☁️ Cloud Infrastructure</span>
+                <span className="px-3 py-1 bg-green-500/10 border border-green-500/20 rounded-full">🔒 Cybersecurity</span>
+                <span className="px-3 py-1 bg-pink-500/10 border border-pink-500/20 rounded-full">📊 Business Intelligence</span>
+              </div>
+            </motion.div>
+
+            {/* Enhanced Category Filter with better accessibility */}
+            <motion.div 
+<<<<<<< HEAD
+              className="flex flex-wrap justify-center gap-4 mb-12" 
+              variants={itemVariants}
+              role="tablist"
+              aria-label="Filter services by category"
+=======
+              className="flex flex-wrap justify-center gap-3 sm:gap-4 mb-12 px-4" 
+              variants={itemVariants}
+              role="tablist"
+              aria-label="Service categories"
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-b677
+            >
+              {categories.map((category) => (
+                <motion.button
+                  key={category.id}
+                  onClick={() => setSelectedCategory(category.id)}
+<<<<<<< HEAD
+                  className={`px-6 py-3 rounded-full font-medium transition-all duration-300 focus:outline-none focus:ring-4 focus:ring-cyan-500/50 ${
+=======
+                  className={`px-4 sm:px-6 py-2 sm:py-3 rounded-full font-medium transition-all duration-300 focus:outline-none focus:ring-4 focus:ring-cyan-500/50 ${
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-b677
+                    selectedCategory === category.id
+                      ? 'bg-gradient-to-r ' + category.color + ' text-white shadow-lg'
+                      : 'bg-gray-800/50 text-gray-300 hover:bg-gray-700/50'
+                  }`}
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  role="tab"
+                  aria-selected={selectedCategory === category.id}
+<<<<<<< HEAD
+                  aria-controls={`services-${category.id}`}
+                >
+                  <span className="flex items-center gap-2">
+                    <category.icon className="w-5 h-5" aria-hidden="true" />
+                    {category.name}
+=======
+                  aria-label={category.description}
+                  tabIndex={selectedCategory === category.id ? 0 : -1}
+                >
+                  <span className="flex items-center gap-2">
+                    <category.icon className="w-4 h-4 sm:w-5 sm:h-5" />
+                    <span className="hidden sm:inline">{category.name}</span>
+                    <span className="sm:hidden">{category.name.split(' ')[0]}</span>
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-b677
+                  </span>
+                </motion.button>
+              ))}
+            </motion.div>
+
+<<<<<<< HEAD
+            {/* Enhanced Services Grid with Suspense */}
+=======
+            {/* Enhanced Services Grid with better loading */}
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-b677
+            <motion.div 
+              className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8"
+              variants={containerVariants}
+              role="tabpanel"
+              id={`services-${selectedCategory}`}
+              aria-label={`${selectedCategory === 'all' ? 'All' : categories.find(c => c.id === selectedCategory)?.name} services`}
+            >
+<<<<<<< HEAD
+              <Suspense fallback={<LoadingFallback />}>
+                {getFilteredServices().slice(0, 9).map((service, index) => (
+                  <motion.div
+                    key={service.id || index}
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: index * 0.1 }}
+                  >
+=======
+              {getFilteredServices().slice(0, isMobile ? 6 : isTablet ? 8 : 9).map((service, index) => (
+                <motion.div
+                  key={service.id || index}
+                  variants={itemVariants}
+                  className="group"
+                  whileHover={{ y: -8 }}
+                  transition={{ duration: 0.3 }}
+                >
+                  <Suspense fallback={<LoadingSkeleton />}>
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-b677
+                    <ServiceCard service={service} />
+                  </motion.div>
+                ))}
+              </Suspense>
+            </motion.div>
+
+            {/* Enhanced View All Services Button */}
+<<<<<<< HEAD
+            <motion.div 
+              className="text-center mt-12"
+              variants={itemVariants}
+            >
+              <Link href="/services" aria-label="View all services">
+=======
+            <motion.div className="text-center mt-12" variants={itemVariants}>
+              <Link href="/services" aria-label="View all available services">
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-b677
+                <motion.button 
+                  className="px-8 py-4 bg-gradient-to-r from-purple-500 to-pink-600 text-white font-semibold rounded-full text-lg hover:from-purple-600 hover:to-pink-700 transition-all duration-300 transform hover:scale-105 focus:outline-none focus:ring-4 focus:ring-purple-500/50"
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                >
+                  <span className="flex items-center gap-2">
+                    View All Services
+                    <ArrowRight className="w-5 h-5" aria-hidden="true" />
+                  </span>
+                </motion.button>
+              </Link>
+            </motion.div>
+          </div>
+        </motion.section>
+
+<<<<<<< HEAD
+        {/* Enhanced Performance Section */}
+        <motion.section 
+          className="py-20 px-4 lg:px-8 bg-gradient-to-br from-gray-900 to-black relative"
+=======
+        {/* Enhanced Technology Showcase */}
+        <motion.section 
+          className="py-16 sm:py-20 px-4 lg:px-8 bg-gradient-to-b from-black to-gray-900/50 relative"
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-b677
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-100px" }}
+<<<<<<< HEAD
+          aria-label="Performance metrics and optimization"
+        >
+          <div className="max-w-7xl mx-auto">
+            <motion.div className="text-center mb-16" variants={itemVariants}>
+              <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+                Unmatched Performance & Reliability
+              </h2>
+              <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+                Our cutting-edge infrastructure delivers exceptional performance, security, and scalability 
+                for your most demanding applications.
+              </p>
+            </motion.div>
+
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+              <motion.div variants={itemVariants}>
+                <Suspense fallback={<LoadingFallback />}>
+                  <PerformanceMetrics />
+                </Suspense>
+              </motion.div>
+              
+              <motion.div variants={itemVariants}>
+                <Suspense fallback={<LoadingFallback />}>
+                  <PerformanceOptimizer />
+                </Suspense>
+              </motion.div>
+=======
+          aria-label="Technology showcase"
+        >
+          <div className="max-w-7xl mx-auto">
+            <motion.div className="text-center mb-12 sm:mb-16" variants={itemVariants}>
+              <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-6">
+                Cutting-Edge Technology Stack
+              </h2>
+              <p className="text-lg sm:text-xl text-gray-300 max-w-3xl mx-auto px-4">
+                Our revolutionary technology combines AI consciousness, quantum computing, 
+                and autonomous systems to deliver unprecedented capabilities.
+              </p>
+            </motion.div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+              {[
+                {
+                  icon: BrainIcon,
+                  title: "AI Consciousness Evolution",
+                  description: "Next-generation AI with emotional intelligence and self-awareness capabilities",
+                  color: "from-cyan-500 to-blue-600",
+                  features: ["Emotional Intelligence", "Self-Awareness", "Adaptive Learning"]
+                },
+                {
+                  icon: AtomIcon,
+                  title: "Quantum Computing Platform",
+                  description: "Quantum-powered solutions for complex computational challenges",
+                  color: "from-blue-500 to-indigo-600",
+                  features: ["Quantum Algorithms", "Superposition", "Entanglement"]
+                },
+                {
+                  icon: ShieldIcon,
+                  title: "Zero-Trust Security",
+                  description: "Advanced cybersecurity with autonomous threat detection and response",
+                  color: "from-red-500 to-orange-600",
+                  features: ["Threat Detection", "Auto-Response", "Continuous Monitoring"]
+                },
+                {
+                  icon: RocketIcon,
+                  title: "Space Technology",
+                  description: "Innovative solutions for space exploration and satellite systems",
+                  color: "from-indigo-500 to-purple-600",
+                  features: ["Satellite Systems", "Space Exploration", "Orbital Mechanics"]
+                },
+                {
+                  icon: Globe,
+                  title: "Global Infrastructure",
+                  description: "Worldwide network with edge computing and autonomous optimization",
+                  color: "from-green-500 to-teal-600",
+                  features: ["Edge Computing", "Global Network", "Auto-Optimization"]
+                },
+                {
+                  icon: Cpu,
+                  title: "Autonomous Systems",
+                  description: "Self-managing and self-optimizing technology infrastructure",
+                  color: "from-purple-500 to-pink-600",
+                  features: ["Self-Management", "Auto-Optimization", "Predictive Maintenance"]
+                }
+              ].map((tech, index) => (
+                <motion.div
+                  key={index}
+                  className="group relative p-6 sm:p-8 bg-gray-800/30 rounded-2xl border border-gray-700/50 hover:border-gray-600/50 transition-all duration-300 hover:bg-gray-800/50 cursor-pointer"
+                  variants={itemVariants}
+                  whileHover={{ y: -8, scale: 1.02 }}
+                  tabIndex={0}
+                  role="button"
+                  aria-label={`Learn more about ${tech.title}`}
+                  aria-describedby={`tech-${index}-description`}
+                >
+                  <div className={`w-14 h-14 sm:w-16 sm:h-16 bg-gradient-to-r ${tech.color} rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300`}>
+                    <tech.icon className="w-7 h-7 sm:w-8 sm:h-8 text-white" />
+                  </div>
+                  <h3 className="text-lg sm:text-xl font-semibold text-white mb-4">{tech.title}</h3>
+                  <p className="text-gray-300 leading-relaxed mb-4" id={`tech-${index}-description`}>{tech.description}</p>
+                  
+                  {/* Enhanced feature list */}
+                  <div className="space-y-2">
+                    {tech.features.map((feature, featureIndex) => (
+                      <div key={featureIndex} className="flex items-center gap-2 text-sm text-gray-400">
+                        <CheckCircle className="w-4 h-4 text-cyan-400" />
+                        {feature}
+                      </div>
+                    ))}
+                  </div>
+                  
+                  {/* Hover Effect */}
+                  <div className={`absolute inset-0 bg-gradient-to-r ${tech.color} opacity-0 group-hover:opacity-5 rounded-2xl transition-opacity duration-300`} />
+                  
+                  {/* Enhanced hover indicator */}
+                  <div className="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <ArrowUpRight className="w-5 h-5 text-cyan-400" />
+                  </div>
+                </motion.div>
+              ))}
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-b677
+            </div>
+          </div>
+        </section>
+
+        {/* Testimonials Section - Lazy Loaded */}
+        <Suspense fallback={<LoadingSpinner />}>
+          <TestimonialSection />
+        </Suspense>
+
+        {/* CTA Section */}
+        <section className="py-24 px-4 relative" aria-labelledby="cta-heading">
+          <div className="max-w-6xl mx-auto text-center">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+            >
+              <h2 id="cta-heading" className="text-5xl font-bold text-white mb-8">
+                Ready to Experience the Future?
+              </h2>
+              <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+                Interact with our revolutionary AI and quantum computing solutions in real-time.
+              </p>
+              
+              <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
+                <button 
+                  className="px-12 py-6 bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-bold rounded-3xl hover:from-cyan-600 hover:to-blue-700 transition-all duration-300 transform hover:scale-105 shadow-[0_0_50px_rgba(6,182,212,0.4)] focus:outline-none focus:ring-4 focus:ring-cyan-500/50 text-xl"
+                  onClick={handleGetStarted}
+                  aria-label="Get started with Zion Tech Group services"
+                >
+                  Get Started Today
+                  <ArrowRight className="w-6 h-6 ml-3 inline" />
+                </button>
+                
+                <button 
+                  className="px-12 py-6 border-2 border-cyan-400 text-cyan-400 font-bold rounded-3xl hover:bg-cyan-400 hover:text-black transition-all duration-300 focus:outline-none focus:ring-4 focus:ring-cyan-400/50 text-xl"
+                  onClick={handleWatchDemo}
+                  aria-label="Schedule a demo of our services"
+                >
+                  Schedule Demo
+                  <Play className="w-6 h-6 ml-3 inline" />
+                </button>
+              </div>
+            </motion.div>
+          </div>
+        </motion.section>
+
+<<<<<<< HEAD
+        {/* Contact Section */}
+        <motion.section 
+          className="py-20 px-4 lg:px-8 relative bg-gradient-to-r from-gray-900 to-black"
+=======
+        {/* Enhanced Call to Action */}
+        <motion.section 
+          className="py-16 sm:py-20 px-4 lg:px-8 text-center relative"
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-b677
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-100px" }}
+          aria-label="Call to action"
+        >
+<<<<<<< HEAD
+          <div className="max-w-6xl mx-auto text-center">
+            <motion.div className="mb-12" variants={itemVariants}>
+              <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 text-neon-purple">
+                🚀 Ready to Transform Your Business?
+              </h2>
+              <p className="text-xl text-gray-300 max-w-3xl mx-auto mb-8">
+                Join 500+ enterprises worldwide who trust Zion Tech Group for their digital transformation journey.
+                Get started today with our revolutionary technology solutions.
+              </p>
+            </motion.div>
+
+=======
+          <div className="max-w-4xl mx-auto">
+            <motion.h2 
+              className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-6"
+              variants={itemVariants}
+            >
+              Ready to Transform Your Business?
+            </motion.h2>
+            <motion.p 
+              className="text-lg sm:text-xl text-gray-300 mb-8 px-4"
+              variants={itemVariants}
+            >
+              Join the future of technology with Zion Tech Group. Our revolutionary solutions 
+              are designed to propel your business into the next generation.
+            </motion.p>
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-b677
+            <motion.div 
+              className="grid md:grid-cols-3 gap-8 mb-12"
+              variants={itemVariants}
+            >
+<<<<<<< HEAD
+              <div className="text-center p-6 bg-gray-800/50 rounded-xl border border-purple-500/20 hover:border-purple-500/40 transition-all duration-300">
+                <div className="text-4xl mb-4">📞</div>
+                <h3 className="text-xl font-semibold text-white mb-2">Call Us</h3>
+                <p className="text-gray-400 mb-4">Speak with our experts</p>
+                <a href="tel:+13024640950" className="text-purple-400 hover:text-purple-300 font-medium">
+                  +1 302 464 0950
+                </a>
+              </div>
+
+              <div className="text-center p-6 bg-gray-800/50 rounded-xl border border-cyan-500/20 hover:border-cyan-500/40 transition-all duration-300">
+                <div className="text-4xl mb-4">✉️</div>
+                <h3 className="text-xl font-semibold text-white mb-2">Email Us</h3>
+                <p className="text-gray-400 mb-4">Get detailed information</p>
+                <a href="mailto:kleber@ziontechgroup.com" className="text-cyan-400 hover:text-cyan-300 font-medium">
+                  kleber@ziontechgroup.com
+                </a>
+              </div>
+
+              <div className="text-center p-6 bg-gray-800/50 rounded-xl border border-pink-500/20 hover:border-pink-500/40 transition-all duration-300">
+                <div className="text-4xl mb-4">📍</div>
+                <h3 className="text-xl font-semibold text-white mb-2">Visit Us</h3>
+                <p className="text-gray-400 mb-4">Our headquarters</p>
+                <p className="text-pink-400 font-medium">
+                  364 E Main St STE 1008<br />
+                  Middletown DE 19709
+                </p>
+              </div>
+            </motion.div>
+
+            <motion.div variants={itemVariants}>
+              <Link href="/contact" className="btn-futuristic glow-purple hover:glow-pink transition-all duration-300">
+                🚀 Start Your Transformation Today
+                <ArrowRight className="ml-2 w-5 h-5" />
+=======
+              <Link href="/contact" aria-label="Start your transformation journey">
+                <motion.button 
+                  className="px-8 py-4 bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-semibold rounded-full text-lg hover:from-cyan-600 hover:to-blue-700 transition-all duration-300 transform hover:scale-105 focus:outline-none focus:ring-4 focus:ring-cyan-500/50"
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                >
+                  <span className="flex items-center gap-2">
+                    Start Your Journey
+                    <ArrowRight className="w-5 h-5" />
+                  </span>
+                </motion.button>
+              </Link>
+              <Link href="/services" aria-label="Learn more about our services">
+                <motion.button 
+                  className="px-8 py-4 border-2 border-cyan-500/50 text-cyan-400 font-semibold rounded-full text-lg hover:bg-cyan-500/10 hover:border-cyan-400 transition-all duration-300 focus:outline-none focus:ring-4 focus:ring-cyan-500/50"
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                >
+                  <span className="flex items-center gap-2">
+                    Learn More
+                    <ExternalLink className="w-5 h-5" />
+                  </span>
+                </motion.button>
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-b677
+              </Link>
+            </motion.div>
+          </div>
+        </motion.section>
+
+        {/* Hidden descriptions for screen readers */}
+        <div className="sr-only">
+          <div id="explore-services-description">Navigate to our comprehensive services page to explore all available solutions</div>
+          <div id="get-started-description">Contact us to begin your transformation journey with Zion Tech Group</div>
+        </div>
+      </div>
+    </>
+  );
+};
+
+export default Homepage2045;
