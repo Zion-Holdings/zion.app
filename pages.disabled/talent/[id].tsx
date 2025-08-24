@@ -9,7 +9,7 @@ interface TalentProfileWithSocial extends TalentProfileType {
 }
 
 const TalentProfilePage: React.FC = () => {
-  const { id } = useParams();
+  const { id } = useParams() as { id?: string };
   const [profile, setProfile] = useState<TalentProfileWithSocial | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
