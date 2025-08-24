@@ -1,3 +1,82 @@
+<<<<<<< HEAD
+import Link from "next/link";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Zion Tech Group - AI-Powered Digital Transformation Solutions",
+  description: "Pioneering the future of digital transformation through innovative AI, blockchain, and cloud solutions. Launch sovereign AI-powered digital economies with one click.",
+  keywords: "AI, digital transformation, blockchain, cloud solutions, machine learning, cybersecurity, enterprise IT, Zion Tech Group",
+  authors: [{ name: "Zion Tech Group" }],
+  openGraph: {
+    title: "Zion Tech Group - AI-Powered Digital Transformation Solutions",
+    description: "Pioneering the future of digital transformation through innovative AI, blockchain, and cloud solutions.",
+    type: "website",
+    locale: "en_US",
+    url: "https://ziontechgroup.com",
+    siteName: "Zion Tech Group",
+    images: [
+      {
+        url: "/og-image.svg",
+        width: 1200,
+        height: 630,
+        alt: "Zion Tech Group - AI-Powered Digital Transformation"
+      }
+    ]
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Zion Tech Group - AI-Powered Digital Transformation Solutions",
+    description: "Pioneering the future of digital transformation through innovative AI, blockchain, and cloud solutions.",
+    images: ["/og-image.svg"]
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+  verification: {
+    google: "your-google-verification-code",
+  },
+};
+
+export default function HomePage() {
+  return (
+    <div className="min-h-screen">
+      {/* Hero Section */}
+      <section className="relative py-20 lg:py-32 overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-br from-blue-600/20 via-purple-600/20 to-blue-800/20"></div>
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6">
+            <span className="bg-gradient-to-r from-blue-400 via-purple-400 to-blue-600 bg-clip-text text-transparent">
+              AI-Powered
+            </span>
+            <br />
+            <span className="text-white">Digital Transformation</span>
+          </h1>
+          <p className="text-xl md:text-2xl text-slate-300 mb-8 max-w-4xl mx-auto leading-relaxed">
+            Transform your business with cutting-edge AI technology. We deliver autonomous systems, 
+            intelligent automation, and next-generation digital solutions that drive growth and innovation.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <a 
+              href="/contact" 
+              className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-200 transform hover:scale-105 shadow-lg"
+            >
+              Get Started Today
+            </a>
+            <a 
+              href="/solutions" 
+              className="border-2 border-slate-400 text-slate-300 hover:text-white hover:border-white px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-200"
+            >
+              Explore Solutions
+            </a>
+=======
 'use client';
 
 import { useState, useEffect } from 'react';
@@ -133,6 +212,7 @@ export default function HomePage() {
                 Explore Services
               </Button>
             </div>
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-434f
           </div>
         </div>
 
@@ -142,6 +222,28 @@ export default function HomePage() {
         <div className="absolute bottom-20 left-1/4 w-16 h-16 bg-cyan-500/20 rounded-full blur-xl animate-pulse delay-500"></div>
       </section>
 
+<<<<<<< HEAD
+      {/* Services Overview */}
+      <section className="py-20 bg-slate-800/50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+              Comprehensive AI Solutions
+            </h2>
+            <p className="text-xl text-slate-300 max-w-3xl mx-auto">
+              From autonomous business operations to advanced AI research, we provide end-to-end solutions 
+              that transform how organizations operate and innovate.
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {/* AI Business Intelligence */}
+            <div className="bg-slate-700/50 rounded-xl p-6 border border-slate-600/50 hover:border-blue-500/50 transition-all duration-300 hover:transform hover:scale-105">
+              <div className="w-12 h-12 bg-gradient-to-r from-blue-500 to-purple-600 rounded-lg flex items-center justify-center mb-4">
+                <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+                </svg>
+=======
       {/* Stats Section */}
       <section className="py-20 px-4 sm:px-6 lg:px-8 bg-black/30 backdrop-blur-sm">
         <div className="max-w-7xl mx-auto">
@@ -158,6 +260,7 @@ export default function HomePage() {
                   {stat.number}
                 </div>
                 <div className="text-gray-400 font-medium text-lg">{stat.label}</div>
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-434f
               </div>
               <h3 className="text-xl font-semibold text-white mb-3">AI Business Intelligence</h3>
               <p className="text-slate-300 mb-4">
@@ -204,6 +307,82 @@ export default function HomePage() {
       </section>
 
       {/* Features Section */}
+<<<<<<< HEAD
+      <section className="py-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+              Why Choose Zion Tech Group?
+            </h2>
+            <p className="text-xl text-slate-300 max-w-3xl mx-auto">
+              We combine cutting-edge technology with deep industry expertise to deliver 
+              solutions that drive real business value.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div>
+              <div className="space-y-6">
+                <div className="flex items-start space-x-4">
+                  <div className="w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                    <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                    </svg>
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-semibold text-white mb-2">Proven Expertise</h3>
+                    <p className="text-slate-300">Over a decade of experience in AI and digital transformation across multiple industries.</p>
+                  </div>
+                </div>
+
+                <div className="flex items-start space-x-4">
+                  <div className="w-8 h-8 bg-purple-500 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                    <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                    </svg>
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-semibold text-white mb-2">Innovation First</h3>
+                    <p className="text-slate-300">We stay ahead of the curve with the latest AI technologies and methodologies.</p>
+                  </div>
+                </div>
+
+                <div className="flex items-start space-x-4">
+                  <div className="w-8 h-8 bg-green-500 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                    <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                    </svg>
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-semibold text-white mb-2">Results-Driven</h3>
+                    <p className="text-slate-300">Every solution is designed to deliver measurable business outcomes and ROI.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className="relative">
+              <div className="bg-gradient-to-br from-blue-600/20 to-purple-600/20 rounded-2xl p-8 border border-slate-600/50">
+                <div className="text-center">
+                  <div className="w-16 h-16 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full flex items-center justify-center mx-auto mb-6">
+                    <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                    </svg>
+                  </div>
+                  <h3 className="text-2xl font-bold text-white mb-4">Ready to Transform?</h3>
+                  <p className="text-slate-300 mb-6">
+                    Join hundreds of organizations that have already transformed their business with our AI solutions.
+                  </p>
+                  <a 
+                    href="/contact" 
+                    className="inline-block bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-6 py-3 rounded-lg font-semibold transition-all duration-200 transform hover:scale-105"
+                  >
+                    Start Your Journey
+                  </a>
+                </div>
+              </div>
+            </div>
+=======
       <section className="py-24 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-20">
@@ -254,11 +433,36 @@ export default function HomePage() {
                 className="animate-fade-in"
               />
             ))}
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-434f
           </div>
         </div>
       </section>
 
       {/* CTA Section */}
+<<<<<<< HEAD
+      <section className="py-20 bg-gradient-to-r from-blue-600/20 to-purple-600/20">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
+            Ready to Accelerate Your Digital Transformation?
+          </h2>
+          <p className="text-xl text-slate-300 mb-8">
+            Let's discuss how our AI-powered solutions can transform your business operations 
+            and drive unprecedented growth.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <a 
+              href="/contact" 
+              className="bg-white text-slate-900 hover:bg-slate-100 px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-200 transform hover:scale-105 shadow-lg"
+            >
+              Schedule a Consultation
+            </a>
+            <a 
+              href="/admin/instances" 
+              className="border-2 border-white text-white hover:bg-white hover:text-slate-900 px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-200"
+            >
+              Access Admin Portal
+            </a>
+=======
       <section className="py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-purple-900/30 to-blue-900/30">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-4xl md:text-6xl font-bold text-white mb-8 text-shadow">
@@ -293,6 +497,7 @@ export default function HomePage() {
             >
               View Case Studies
             </Button>
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-434f
           </div>
         </div>
       </section>

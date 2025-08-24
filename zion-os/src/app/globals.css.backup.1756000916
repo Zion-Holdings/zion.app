@@ -2,6 +2,38 @@
 @tailwind components;
 @tailwind utilities;
 
+<<<<<<< HEAD
+@layer base {
+  :root {
+    --bg: #0f172a;
+    --fg: #ffffff;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+}
+
+@layer components {
+  .gradient-text {
+    @apply bg-gradient-to-r from-blue-400 via-purple-400 to-blue-600 bg-clip-text text-transparent;
+  }
+  
+  .card-hover {
+    @apply transition-all duration-300 hover:transform hover:scale-105;
+  }
+  
+  .button-primary {
+    @apply bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-6 py-3 rounded-lg font-semibold transition-all duration-200 transform hover:scale-105;
+  }
+  
+  .button-secondary {
+    @apply border-2 border-slate-400 text-slate-300 hover:text-white hover:border-white px-6 py-3 rounded-lg font-semibold transition-all duration-200;
+=======
 :root {
   --bg: #0b0e1a;
   --fg: #e6e8f0;
@@ -61,10 +93,16 @@
   
   .animate-slide-in-right {
     animation: slideInRight 0.6s ease-out;
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-434f
   }
 }
 
 @layer utilities {
+<<<<<<< HEAD
+  .text-balance {
+    text-wrap: balance;
+  }
+=======
   .scrollbar-hide {
     -ms-overflow-style: none;
     scrollbar-width: none;
@@ -133,4 +171,5 @@
 
 ::-webkit-scrollbar-thumb:hover {
   background: linear-gradient(45deg, var(--secondary), var(--accent));
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-434f
 }
