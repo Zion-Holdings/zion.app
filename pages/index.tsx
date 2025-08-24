@@ -1,10 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import Head from 'next/head';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { 
-  ArrowRight, Brain, Shield, Rocket, Cpu, Database, Atom, Target, Star, 
-  Sparkles, Zap, Users, Award, Clock, CheckCircle, Globe, Code, Server,
-  ChevronRight, ExternalLink, TrendingUp, BarChart3, Cloud, Network
+  ArrowRight, Brain, Shield, Rocket, Cpu, Database, Atom, Users, 
+  CheckCircle, Network
 } from 'lucide-react';
 import EnhancedNavigation from '../components/EnhancedNavigation';
 import EnhancedFooter from '../components/EnhancedFooter';
@@ -13,58 +12,11 @@ import EnhancedServicesShowcase from '../components/EnhancedServicesShowcase';
 import EnhancedTestimonialsSection from '../components/EnhancedTestimonialsSection';
 
 export default function HomePage() {
-  const [currentFeature, setCurrentFeature] = useState(0);
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
     setIsVisible(true);
-    
-    // Auto-rotate features
-    const interval = setInterval(() => {
-      setCurrentFeature((prev) => (prev + 1) % 6);
-    }, 5000);
-    
-    return () => clearInterval(interval);
   }, []);
-
-  const features = [
-    {
-      icon: Brain,
-      title: "AI Autonomous Ecosystem",
-      description: "Revolutionary autonomous AI solutions that adapt and evolve",
-      color: "from-purple-500 to-pink-500"
-    },
-    {
-      icon: Atom,
-      title: "Quantum AI Neural Networks",
-      description: "Quantum-powered AI with advanced consciousness capabilities",
-      color: "from-blue-500 to-cyan-500"
-    },
-    {
-      icon: Shield,
-      title: "Quantum Cybersecurity",
-      description: "Quantum-resistant security with AI-powered threat detection",
-      color: "from-red-500 to-orange-500"
-    },
-    {
-      icon: Rocket,
-      title: "Space Resource Intelligence",
-      description: "AI-powered space resource discovery and optimization",
-      color: "from-indigo-500 to-purple-500"
-    },
-    {
-      icon: Cpu,
-      title: "Autonomous DevOps",
-      description: "AI-powered DevOps optimization and automation",
-      color: "from-emerald-500 to-teal-500"
-    },
-    {
-      icon: Database,
-      title: "Edge Computing Orchestration",
-      description: "Advanced edge computing optimization platform",
-      color: "from-yellow-500 to-orange-500"
-    }
-  ];
 
   const services = [
     {
