@@ -1,0 +1,4 @@
+import { jsx as _jsx, jsxs as _jsxs } from "react/jsx-runtime";
+export const TrustedBySection = () => {
+    return (_jsx("section", { className: "py-16 bg-gray-100", children: _jsxs("div", { className: "container mx-auto px-4 text-center", children: [_jsx("h2", { className: "text-2xl font-bold text-gray-900 mb-8", children: "Trusted by Leading Companies" }), _jsxs("div", { className: "flex flex-wrap justify-center items-center gap-8 opacity-60", children: [_jsx("div", { className: "text-gray-600 font-semibold", children: "Microsoft" }), _jsx("div", { className: "text-gray-600 font-semibold", children: "Google" }), _jsx("div", { className: "text-gray-600 font-semibold", children: "Amazon" }), _jsx("div", { className: "text-gray-600 font-semibold", children: "Apple" }), _jsx("div", { className: "text-gray-600 font-semibold", children: "Meta" })] })] }) }));
+};
